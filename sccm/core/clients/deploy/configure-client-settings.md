@@ -81,7 +81,7 @@ ms.openlocfilehash: 9e3162e04da90748379145e37f6b378badab97d3
 
  I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero dei criteri per un singolo client, vedere la sezione [Avviare il recupero criteri per un client di Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) in [Come gestire i client in System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
 
-##  <a name="a-namebkmkresultantclientsettingsa-how-to-view-resultant-client-settings"></a><a name="BKMK_ResultantClientSettings"></a> Come visualizzare le impostazioni client risultanti  
+##  <a name="a-namebkmkresultantclientsettingsa-how-to-view-resultant-client-settings"></a><a name="BKMK_ResultantClientSettings"></a> Come visualizzare le impostazioni del client risultanti  
  Una volta distribuite più impostazioni client allo stesso dispositivo, utente o gruppo degli utenti, la definizione delle priorità e la combinazione delle impostazioni possono essere complesse. Usare la procedura seguente per visualizzare le impostazioni del client risultanti calcolate.  
 
 #### <a name="to-view-the-resultant-client-settings"></a>Per visualizzare le impostazioni del client risultanti  

@@ -89,7 +89,7 @@ Le funzionalità di risparmio energia in System Center Configuration Manager con
 
 10. Fare clic su **OK** per chiudere la finestra di dialogo **Impostazioni** *<nome raccolta\>* e applicare la combinazione per il risparmio di energia.  
 
-##  <a name="a-namebkmkplansa-available-power-management-plan-settings"></a><a name="BKMK_Plans"></a>Impostazioni disponibili per le combinazioni per il risparmio di energia  
+##  <a name="a-namebkmkplansa-available-power-management-plan-settings"></a><a name="BKMK_Plans"></a> Available power management plan settings  
  Nella tabella seguente sono elencate le impostazioni di risparmio energia disponibili in Configuration Manager. È possibile configurare impostazioni distinte per quando il computer è alimentato da rete elettrica o alimentato a batteria. A seconda della versione di Windows in uso, alcune impostazioni potrebbero non essere configurabili.  
 
 > [!NOTE]  

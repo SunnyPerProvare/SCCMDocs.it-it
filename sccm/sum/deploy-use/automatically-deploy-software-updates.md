@@ -18,7 +18,7 @@ ms.openlocfilehash: 133f29aa3f515054b23ba70f1a1dfd3eedaa56c8
 
 ---
 
-#  <a name="a-namebkmkautodeploya-automatically-deploy-software-updates"></a><a name="BKMK_AutoDeploy"></a> Distribuire gli aggiornamenti software automaticamente  
+#  <a name="a-namebkmkautodeploya-automatically-deploy-software-updates"></a><a name="BKMK_AutoDeploy"></a> Distribuire automaticamente gli aggiornamenti software  
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 

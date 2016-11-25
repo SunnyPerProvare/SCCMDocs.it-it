@@ -142,7 +142,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
     > [!TIP]  
     >  In caso di errore dell'attività di manutenzione di backup, è possibile riavviare l'attività di backup interrompendo e riavviando il servizio SMS_SITE_BACKUP.  
 
-###  <a name="a-namebkmkdpmbackupa-using-data-protection-manager-to-back-up-your-site-database"></a><a name="BKMK_DPMBackup"></a> Uso di Data Protection Manager per eseguire il backup del database del sito  
+###  <a name="a-namebkmkdpmbackupa-using-data-protection-manager-to-back-up-your-site-database"></a><a name="BKMK_DPMBackup"></a> Utilizzo di Data Protection Manager per eseguire il backup del database del sito  
  È possibile usare System Center 2012 Data Protection Manager (DPM) per eseguire il backup del database del sito. È necessario creare un nuovo gruppo di protezione in DPM per il computer del database del sito. Nella pagina **Seleziona membri del gruppo** della procedura guidata Crea nuovo gruppo protezione dati, selezionare il servizio SMS Writer dall'elenco di origine dei dati, quindi selezionare il database del sito come membro appropriato. Per altre informazioni sull'utilizzo di Data Protection Manager per il backup del database del sito, vedere [Data Protection Manager Documentation Library (Libreria di documentazione di Data Protection Manager)](http://go.microsoft.com/fwlink/?LinkId=272772) in TechNet.  
 
 > [!IMPORTANT]  
@@ -277,7 +277,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 ####  <a name="a-namebkmksqlretentiona-sql-server-change-tracking-retention-period"></a><a name="bkmk_SQLretention"></a> Periodo di memorizzazione del rilevamento modifiche di SQL Server  
  Il rilevamento delle modifiche è abilitato per il database del sito in SQL Server. Il rilevamento delle modifiche consente a Configuration Manager di eseguire query per informazioni sulle modifiche apportate alle tabelle di database in seguito a un momento precedente. Il periodo di memorizzazione specifica per quanto tempo verranno conservate le informazioni di rilevamento delle modifiche. Per impostazione predefinita, il database del sito è configurato per un periodo di memorizzazione di 5 giorni. Quando si ripristina un database del sito, il processo di ripristino viene eseguito in modo diverso a seconda che il backup rientri o meno nel periodo di memorizzazione. Se, ad esempio, nel server di database del sito si verifica un errore e l'ultimo backup risale a 7 giorni fa, il backup è esterno al periodo di memorizzazione.  
 
-####  <a name="a-namebkmkreinita-process-to-reinitialize-site-or-global-data"></a><a name="bkmk_reinit"></a> Processo per reinizializzare dati globali o del sito  
+####  <a name="a-namebkmkreinita-process-to-reinitialize-site-or-global-data"></a><a name="bkmk_reinit"></a> Processo per reinizializzare dati globali o del sito.  
  Il processo per reinizializzare i dati globali o i dati del sito sostituisce i dati esistenti nel database del sito con i dati di un altro database del sito. Quando ad esempio il sito ABC reinizializza i dati dal sito XYZ, vengono eseguiti i seguenti passaggi:  
 
 -   I dati vengono copiati dal sito XYZ al sito ABC.  

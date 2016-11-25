@@ -28,7 +28,7 @@ ms.openlocfilehash: 4b3a3bf206dc273eabf88c680ca00688b6183115
 
 È possibile usare le sequenze attività di System Center Configuration Manager per acquisire e ripristinare i dati sullo stato utente in scenari di distribuzione del sistema operativo in cui si desidera mantenere lo stato utente del sistema operativo corrente. A seconda del tipo di sequenza di attività che si crea, è possibile aggiungervi automaticamente i passaggi di acquisizione e ripristino. In altri scenari potrebbe essere necessario aggiungere manualmente i passaggi di acquisizione e ripristino alla sequenza di attività. Questo argomento fornisce i passaggi che è necessario aggiungere a una sequenza di attività esistente per acquisire e ripristinare i dati dello stato utente.  
 
-##  <a name="a-namebkmkcapturerestoreuserstatea-how-to-capture-and-restore-user-state-data"></a><a name="BKMK_CaptureRestoreUserState"></a>Come acquisire e ripristinare i dati dello stato utente  
+##  <a name="a-namebkmkcapturerestoreuserstatea-how-to-capture-and-restore-user-state-data"></a><a name="BKMK_CaptureRestoreUserState"></a> Come acquisire e ripristinare i dati dello stato utente  
  Per acquisire e ripristinare lo stato utente, è necessario aggiungere i passaggi seguenti alla sequenza di attività:  
 
 -   **Richiedi archiviazione stati**: questo passaggio è necessario solo se si archivia lo stato utente nel punto di migrazione stato.  

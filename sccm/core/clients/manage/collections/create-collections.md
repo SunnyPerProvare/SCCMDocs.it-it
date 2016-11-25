@@ -44,7 +44,7 @@ ms.openlocfilehash: f73f0e58b82d1aab1f64f3695dd5c3a61e933d2a
 
  Per informazioni sulla creazione di raccolte per i computer che eseguono Linux e UNIX, vedere [Come gestire i client per i server Linux e UNIX in System Center Configuration Manager](../../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md).  
 
-##  <a name="a-namebkmk1a-to-create-a-device-collection"></a><a name="BKMK_1"></a>Per creare una raccolta di dispositivi  
+##  <a name="a-namebkmk1a-to-create-a-device-collection"></a><a name="BKMK_1"></a> Per creare una raccolta di dispositivi  
 
 1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 

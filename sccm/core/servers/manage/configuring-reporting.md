@@ -280,7 +280,7 @@ Prima di poter creare, modificare ed eseguire report nella console di System Cen
 ## <a name="upgrading-sql-server"></a>Aggiornamento di SQL Server  
  Al termine dell'aggiornamento di SQL Server e di SQL Server Reporting Services usato come origine dei dati per un punto di Reporting Services, è possibile che si verifichino errori durante l'esecuzione o la modifica dei report dalla console di Configuration Manager. Per una corretta creazione dei report dalla console di Configuration Manager, è necessario rimuovere il ruolo del sistema del sito del punto di Reporting Services per il sito e reinstallarlo. Al termine dell'aggiornamento è tuttavia possibile continuare a eseguire e modificare correttamente i report da un browser Internet.  
 
-##  <a name="a-namebkmkconfigurereportoptionsa-configure-report-options"></a><a name="BKMK_ConfigureReportOptions"></a> Configurare le opzioni dei report  
+##  <a name="a-namebkmkconfigurereportoptionsa-configure-report-options"></a><a name="BKMK_ConfigureReportOptions"></a> Configurare le opzioni report  
  Usare le opzioni dei report per un sito di Configuration Manager per selezionare il punto di Reporting Services predefinito usato per la gestione dei report. Benché sia possibile disporre di più di un punto di Reporting Services in un sito, per la gestione dei report viene utilizzato solo il server di report predefinito selezionato nelle opzioni report. Utilizzare la seguente procedura per configurare le opzioni report per il sito.  
 
 #### <a name="to-configure-report-options"></a>Per configurare le opzioni report  

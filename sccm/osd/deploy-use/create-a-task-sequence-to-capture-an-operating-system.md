@@ -28,10 +28,10 @@ ms.openlocfilehash: 12ea958e18a291a1b88e342b204e633d3bdf869f
 
 Quando si usa una sequenza di attività per distribuire un sistema operativo in un computer in System Center Configuration Manager, il computer installa l'immagine del sistema operativo specificata nella sequenza di attività. Per personalizzare l'immagine del sistema operativo in modo da includere driver, applicazioni, aggiornamenti software e altri elementi specifici, è possibile usare una sequenza di attività di creazione e acquisizione per creare un computer di riferimento e quindi acquisire l'immagine del sistema operativo dal computer di riferimento. Se un computer di riferimento è già disponibile per l'acquisizione, è possibile creare una sequenza di attività personalizzata per acquisire il sistema operativo. Usare le sezioni seguenti per acquisire un sistema operativo personalizzato.  
 
-##  <a name="a-namebkmkbuildcapturetsa-use-a-task-sequence-to-build-and-capture-a-reference-computer"></a><a name="BKMK_BuildCaptureTS"></a>Usare una sequenza di attività per creare e acquisire un computer di riferimento  
+##  <a name="a-namebkmkbuildcapturetsa-use-a-task-sequence-to-build-and-capture-a-reference-computer"></a><a name="BKMK_BuildCaptureTS"></a> Usare una sequenza di attività per creare e acquisire un computer di riferimento  
  La sequenza di attività di creazione e acquisizione partiziona e formatta il computer di riferimento, installa il sistema operativo, oltre al client di Configuration Manager , le applicazioni e gli aggiornamenti software, quindi acquisisce il sistema operativo dal computer di riferimento. I pacchetti associati alla sequenza di attività, ad esempio le applicazioni, devono essere disponibili nei punti di distribuzione prima di creare la sequenza di attività di creazione e acquisizione.  
 
-###  <a name="a-namebkmkcreatepackagesa-prepare-for-operating-system-deployments"></a><a name="BKMK_CreatePackages"></a>Preparativi per le distribuzioni del sistema operativo  
+###  <a name="a-namebkmkcreatepackagesa-prepare-for-operating-system-deployments"></a><a name="BKMK_CreatePackages"></a> Preparativi per le distribuzioni del sistema operativo  
  Esistono molti scenari per la distribuzione di un sistema operativo nei computer dell'ambiente. Nella maggior parte dei casi, è necessario creare una sequenza di attività e selezionare **Installa un pacchetto immagine esistente** nella Creazione guidata della sequenza di attività per installare il sistema operativo, eseguire la migrazione delle impostazioni utente, applicare gli aggiornamenti software e installare le applicazioni. Prima di creare una sequenza di attività per installare un sistema operativo, devono essere disponibili gli elementi seguenti:  
 
 -   **Richiesto**  
@@ -48,7 +48,7 @@ Quando si usa una sequenza di attività per distribuire un sistema operativo in 
 
     -   Le [applicazioni](../../apps/deploy-use/create-applications.md) devono essere aggiunte alla console di Configuration Manager.  
 
-###  <a name="a-namebkmkcreatebuildcapturetsa-create-a-build-and-capture-task-sequence"></a><a name="BKMK_CreateBuildCaptureTS"></a>Creare una sequenza di attività di creazione e acquisizione  
+###  <a name="a-namebkmkcreatebuildcapturetsa-create-a-build-and-capture-task-sequence"></a><a name="BKMK_CreateBuildCaptureTS"></a> Creare una sequenza di attività di creazione e acquisizione  
  Usare la procedura seguente per usare una sequenza di attività per creare un computer di riferimento e acquisire il sistema operativo.  
 
 #### <a name="to-create-a-task-sequence-that-builds-and-captures-an-operating-system-image"></a>Per creare una sequenza di attività che crea e acquisisce un'immagine del sistema operativo  
@@ -145,7 +145,7 @@ Quando si usa una sequenza di attività per distribuire un sistema operativo in 
 
 -   Se il computer di riferimento non è un client di Configuration Manager o si vuole eseguire manualmente la sequenza di attività nel computer di riferimento, eseguire la **Creazione guidata del supporto per la sequenza di attività per creare il supporto di avvio**. Per informazioni su come creare il supporto di avvio, vedere [Creare supporti di avvio](create-bootable-media.md).  
 
-##  <a name="a-namebkmkcaptureexistingrefcomputera-capture-an-operating-system-image-from-an-existing-reference-computer"></a><a name="BKMK_CaptureExistingRefComputer"></a>Acquisire un'immagine del sistema operativo da un computer di riferimento esistente  
+##  <a name="a-namebkmkcaptureexistingrefcomputera-capture-an-operating-system-image-from-an-existing-reference-computer"></a><a name="BKMK_CaptureExistingRefComputer"></a> Acquisire un'immagine del sistema operativo da un computer di riferimento esistente  
  Se si dispone già di un computer di riferimento pronto per l'acquisizione, è possibile creare una sequenza di attività che acquisisce il sistema operativo dal computer di riferimento. A questo scopo, verrà usato il passaggio **Acquisisci immagine del sistema operativo** della sequenza di attività per acquisire una o più immagini da un computer di riferimento e archiviarle in un file di immagine (con estensione wim) nella condivisione di rete specificata. Il computer di riferimento viene avviato in Windows PE tramite un'immagine di avvio e ogni unità disco rigido nel computer di riferimento viene acquisita come immagine separata all'interno del file WIM. Se il computer usato come riferimento include più unità, il file WIM risultante conterrà un'immagine distinta per ogni volume. Vengono acquisiti solo i volumi con formattazione NTFS o FAT32. I volumi con formati diversi e i volumi USB verranno ignorati.  
 
  Usare la procedura seguente per acquisire un'immagine del sistema operativo da un computer di riferimento esistente.  
@@ -192,7 +192,7 @@ Quando si usa una sequenza di attività per distribuire un sistema operativo in 
 
 -   Se il computer di riferimento non è un client di Configuration Manager o si vuole eseguire manualmente la sequenza di attività nel computer di riferimento, eseguire la **Creazione guidata del supporto per la sequenza di attività per creare il supporto di avvio**. Per informazioni su come creare il supporto di avvio, vedere [Creare supporti di avvio](create-bootable-media.md).  
 
-##  <a name="a-namebkmkbuildandcapturetsexamplea-task-sequence-example-to-build-and-capture-an-operating-system-image"></a><a name="BKMK_BuildandCaptureTSExample"></a>Esempio di sequenza di attività per creare e acquisire un'immagine del sistema operativo  
+##  <a name="a-namebkmkbuildandcapturetsexamplea-task-sequence-example-to-build-and-capture-an-operating-system-image"></a><a name="BKMK_BuildandCaptureTSExample"></a> Esempio di sequenza di attività per creare e acquisire un'immagine del sistema operativo  
  Usare la tabella seguente come guida durante la creazione di una sequenza di attività che crea e acquisisce un'immagine del sistema operativo. La tabella sarà utile per decidere la sequenza generale per i passaggi della sequenza di attività e come organizzare e strutturare tali passaggi della sequenza di attività in gruppi logici. La sequenza di attività creata può variare rispetto a questo esempio e contenere più o meno passaggi e gruppi.  
 
 > [!IMPORTANT]  

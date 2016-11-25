@@ -27,7 +27,7 @@ ms.openlocfilehash: 5c2823ddfc873864b7617d730e14742b7451ef0f
 
 Usare le sequenze di attività in System Center Configuration Manager per installare automaticamente l'immagine di un sistema operativo su un computer di destinazione. Creare una sequenza di attività che faccia riferimento a un'immagine di avvio usata per avviare il computer di destinazione, all'immagine del sistema operativo da installare nel computer di destinazione e qualsiasi altro contenuto aggiuntivo, ad esempio altre applicazioni o aggiornamenti software, che si vuole installare. Distribuire quindi la sequenza di attività in una raccolta che contiene il computer di destinazione.  
 
-##  <a name="a-namebkmkinstallosa-create-a-task-sequence-to-install-an-operating-system"></a><a name="BKMK_InstallOS"></a>Creare una sequenza di attività per installare un sistema operativo  
+##  <a name="a-namebkmkinstallosa-create-a-task-sequence-to-install-an-operating-system"></a><a name="BKMK_InstallOS"></a> Creare una sequenza di attività per installare un sistema operativo  
  Esistono molti scenari per la distribuzione di un sistema operativo nei computer dell'ambiente. Nella maggior parte dei casi, è necessario creare una sequenza di attività e selezionare **Installa un pacchetto immagine esistente** nella Creazione guidata della sequenza di attività per installare il sistema operativo, eseguire la migrazione delle impostazioni utente, applicare gli aggiornamenti software e installare le applicazioni. Prima di creare una sequenza di attività per installare un sistema operativo, devono essere disponibili gli elementi seguenti:   
 
 -   **Richiesto**  
@@ -115,7 +115,7 @@ Usare le sequenze di attività in System Center Configuration Manager per instal
 
  Ora è possibile distribuire la sequenza di attività in una raccolta di computer.  Per altre informazioni, vedere [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
 
-##  <a name="a-namebkmkinstallexistingosimagetsexamplea-example-task-sequence-to-install-an-existing-operating-system-image"></a><a name="BKMK_InstallExistingOSImageTSExample"></a>Esempio di sequenza di attività per l'installazione di un'immagine del sistema operativo esistente  
+##  <a name="a-namebkmkinstallexistingosimagetsexamplea-example-task-sequence-to-install-an-existing-operating-system-image"></a><a name="BKMK_InstallExistingOSImageTSExample"></a> Esempio di sequenza di attività per l'installazione di un'immagine del sistema operativo esistente  
  Usare la tabella seguente come guida durante la creazione di una sequenza di attività per la distribuzione di un sistema operativo con un'immagine del sistema operativo esistente. La tabella consente di decidere la sequenza generale per i passaggi della sequenza attività e su come organizzare e strutturare tali passaggi della sequenza attività in gruppi logici. La sequenza di attività creati dall'utente può variare rispetto a questo esempio e può contenere più o meno passaggi della sequenza attività e gruppi.  
 
 > [!IMPORTANT]  

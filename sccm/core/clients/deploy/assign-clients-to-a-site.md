@@ -44,7 +44,7 @@ Dopo l'installazione di un client di System Center Configuration Manager, è nec
 
  Se non è possibile completare l'assegnazione del client al sito, il software client rimarrà installato ma non sarà gestito. Un client è considerato non gestito quando viene installato ma non assegnato a un sito, oppure quando viene assegnato a un sito ma non è in grado di comunicare con un punto di gestione.  
 
-##  <a name="a-namebkmkmanualassignmenta-using-manual-site-assignment-for-computers"></a><a name="BKMK_ManualAssignment"></a> Uso dell'assegnazione manuale al sito per i computer  
+##  <a name="a-namebkmkmanualassignmenta-using-manual-site-assignment-for-computers"></a><a name="BKMK_ManualAssignment"></a> Utilizzo dell'assegnazione manuale del sito per i computer  
  È possibile assegnare manualmente i computer client a un sito utilizzando i due metodi seguenti:  
 
 -   Utilizzare una proprietà di installazione client che specifichi il codice del sito.  
@@ -54,7 +54,7 @@ Dopo l'installazione di un client di System Center Configuration Manager, è nec
 > [!NOTE]  
 >  Se si assegna manualmente un computer client a un codice sito di Configuration Manager inesistente, l'assegnazione al sito avrà esito negativo. Il client resterà installato ma non sarà gestito fino a quando non sarà assegnato a un sito di Configuration Manager valido.  
 
-##  <a name="a-namebkmkautomaticassignmenta-using-automatic-site-assignment-for-computers"></a><a name="BKMK_AutomaticAssignment"></a> Uso dell'assegnazione automatica al sito per i computer  
+##  <a name="a-namebkmkautomaticassignmenta-using-automatic-site-assignment-for-computers"></a><a name="BKMK_AutomaticAssignment"></a> Utilizzo dell'assegnazione automatica del sito per i computer  
  L'assegnazione automatica del sito può verificarsi durante la distribuzione client o quando si seleziona **Trova sito** nella scheda **Avanzate** delle **Proprietà di Configuration Manager** nel Pannello di controllo. Il client di Configuration Manager confronta il proprio percorso di rete con i limiti configurati nella gerarchia di Configuration Manager. Se il percorso di rete del client rientra in un gruppo di limiti abilitato per l'assegnazione del sito, oppure la gerarchia è configurata per un sito di fallback, il client viene automaticamente assegnato a tale sito senza dover specificare un codice del sito.  
 
  È possibile configurare i limiti utilizzando uno o più degli elementi seguenti:  
@@ -86,7 +86,7 @@ Dopo l'installazione di un client di System Center Configuration Manager, è nec
 
 -   Il relativo percorso di rete non rientra in uno dei gruppi di limiti configurati nella gerarchia di Configuration Manager e non è presente alcun sito di fallback per la gerarchia.  
 
-##  <a name="a-namebkmksitecompatibilitya-completing-site-assignment-by-checking-site-compatibility"></a><a name="BKMK_SiteCompatibility"></a> Completamento dell'assegnazione al sito tramite controllo della compatibilità del sito  
+##  <a name="a-namebkmksitecompatibilitya-completing-site-assignment-by-checking-site-compatibility"></a><a name="BKMK_SiteCompatibility"></a> Completamento dell'assegnazione del sito tramite controllo della compatibilità del sito  
  Dopo che un client ha individuato il sito assegnato, vengono controllati sistema operativo e versione del client per verificare che quest'ultimo possa essere gestito da un sito di Configuration Manager. Ad esempio, Configuration Manager non può gestire i client di Configuration Manager 2007, i client di System Center 2012 Configuration Manager o i client che eseguono Windows 2000.  
 
  Mentre l'assegnazione al sito non riesce nel caso in cui si cerchi di assegnare un client su cui è in esecuzione Windows 2000 a un sito di Configuration Manager, quando si assegna un client di Configuration Manager 2007 o un client di System Center 2012 Configuration Manager a un sito di Configuration Manager (ramo corrente), l'assegnazione riesce ed è supportato l'aggiornamento automatico del client. Tuttavia, finché i client di generazione precedente non vengono aggiornati a un client di Configuration Manager (ramo corrente), Configuration Manager non riuscirà a gestire questo client usando le impostazioni, le applicazioni o gli aggiornamenti software del client.  
