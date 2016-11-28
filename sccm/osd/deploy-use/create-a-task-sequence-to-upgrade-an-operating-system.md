@@ -27,7 +27,7 @@ ms.openlocfilehash: fe70a3bfddcc0638a27eccb04324c4e6e2ace1d4
 
 Usare le sequenze di attività in System Center Configuration Manager per aggiornare automaticamente un sistema operativo da Windows 7 o versione successiva a Windows 10 su un computer di destinazione. Creare una sequenza attività che faccia riferimento all'immagine del sistema operativo da installare nel computer di destinazione ed eventuale contenuto aggiuntivo, ad esempio applicazioni o aggiornamenti software che si desidera installare. La sequenza di attività per aggiornare un sistema operativo fa parte dello scenario [Aggiornare Windows alla versione più recente](upgrade-windows-to-the-latest-version.md).  
 
-##  <a name="a-namebkmkupgradeosa-create-a-task-sequence-to-upgrade-an-operating-system"></a><a name="BKMK_UpgradeOS"></a>Creare una sequenza di attività per aggiornare un sistema operativo  
+##  <a name="a-namebkmkupgradeosa-create-a-task-sequence-to-upgrade-an-operating-system"></a><a name="BKMK_UpgradeOS"></a> Creare una sequenza di attività per aggiornare un sistema operativo  
  Per aggiornare il sistema operativo nei computer a Windows 10, è possibile creare una sequenza di attività e selezionare **Aggiorna sistema operativo dal pacchetto di aggiornamento** nella Creazione guidata della sequenza di attività. La procedura guidata aggiungerà i passaggi per aggiornare il sistema operativo, applicare gli aggiornamenti software e installare le applicazioni. Prima di creare la sequenza di attività, devono essere disponibili gli elementi seguenti:  
 
 -   **Richiesto**  

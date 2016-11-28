@@ -235,7 +235,7 @@ Per altre informazioni, vedere la sezione [Informazioni sull'individuazione di r
 
  Ad esempio, è possibile individuare tutti i dispositivi SNMP che utilizzano uno specifico nome di comunità SNMP. Per la stessa esecuzione dell'individuazione, è inoltre possibile disattivare l'individuazione in una subnet specifica. Durante l'esecuzione dell'individuazione, l'individuazione della rete non rileverà i dispositivi SNMP con il nome di comunità specificato nella subnet disattivata.  
 
-####  <a name="a-namebkmkdeterminenettopologya-determine-your-network-topology"></a><a name="BKMK_DetermineNetTopology"></a> Determinazione della topologia di rete  
+####  <a name="a-namebkmkdeterminenettopologya-determine-your-network-topology"></a><a name="BKMK_DetermineNetTopology"></a> Determinare la topologia di rete  
  Per eseguire il mapping della rete, è possibile utilizzare un'individuazione solo per topologia. Questo tipo di individuazione non rileva i potenziali client. L'individuazione di rete solo per topologia si basa su SNMP.  
 
  Quando si esegue il mapping della topologia di rete, è necessario configurare gli **Hop massimi** nella scheda **SNMP** nella finestra di dialogo **Proprietà dell'individuazione della rete** . Con solo pochi hop è possibile controllare la larghezza di banda di rete che viene utilizzata quando viene eseguita l'individuazione. Man mano che l'individuazione di rete avanza, è possibile aumentare il numero di hop per ottenere una migliore comprensione della topologia di rete.  

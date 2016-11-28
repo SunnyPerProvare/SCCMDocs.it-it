@@ -84,7 +84,7 @@ Per pianificare la strategia di migrazione per System Center Configuration Manag
 
     Decidere quando verrà eseguita la migrazione degli oggetti e dei client. Al termine della migrazione è possibile pianificare la rimozione delle autorizzazioni per i server del sito nella gerarchia di origine.  
 
-##  <a name="a-namechecklisthierarchyformigrationa-administrator-checklist-for-hierarchy-migration"></a><a name="Checklist_Hierarchy_for_migration"></a> Elenco di controllo amministratore per la migrazione di gerarchia  
+##  <a name="a-namechecklisthierarchyformigrationa-administrator-checklist-for-hierarchy-migration"></a><a name="Checklist_Hierarchy_for_migration"></a> Elenco di controllo amministratore per la migrazione di una gerarchia  
 Prima di iniziare la migrazione utilizzare il seguente elenco di controllo per la pianificazione di una gerarchia di destinazione.  
 
 -   **Identificare i computer da usare nella gerarchia di destinazione:**  

@@ -76,7 +76,7 @@ Tutte le distribuzioni con questa casella di controllo selezionata e che sono de
 Se si configura un periodo di tolleranza di imposizione e si seleziona la casella di controllo, quando si raggiunge la scadenza dell'installazione dell'applicazione, essa verrà installata nella prima finestra non aziendale che l'utente ha configurato fino al periodo di grazia. Tuttavia l'utente può comunque aprire Software Center e installare l'applicazione in qualsiasi momento. Una volta scaduto il periodo di tolleranza, le distribuzioni scadute torneranno al normale comportamento.
 Opzioni simili sono state aggiunte alla procedura guidata di distribuzione degli aggiornamenti software, alla procedura guidata di creazione delle regole di distribuzione automatica e alle pagine delle proprietà.
 
-##  <a name="a-namedmpdevgausing-configuration-manager-as-a-managed-installer-with-device-guard"></a><a name="dmp_devg"></a> Uso di Configuration Manager come programma di installazione gestito con Device Guard
+##  <a name="a-namedmpdevgausing-configuration-manager-as-a-managed-installer-with-device-guard"></a><a name="dmp_devg"></a>Uso di Configuration Manager come programma di installazione gestito con Device Guard
 
 Controllo dispositivo è una funzionalità di Windows 10 che usa funzioni hardware e software per controllare accuratamente ciò che può essere eseguita sul dispositivo.
 
@@ -101,7 +101,7 @@ Letture di approfondimento:
 - [Conformità e certificazione di Controllo dispositivo](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-certification-and-compliance)
 - [Guida alla distribuzione di Controllo dispositivo](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)
 
- ##  <a name="a-namedmponprema-multiple-device-management-points-for-on-premises-mobile-device-management"></a><a name="dmp_onprem"></a> Punti di gestione dei dispositivi multipli per Gestione dispositivi mobili locali  
+ ##  <a name="a-namedmponprema-multiple-device-management-points-for-on-premises-mobile-device-management"></a><a name="dmp_onprem"></a> Punti di gestione dei dispositivi multipli per la gestione dei dispositivi mobili locale  
  Con la versione Technical Preview 1606, Gestione dispositivi mobili locali supporta una nuova funzionalità di Windows 10 Anniversary Update che configura automaticamente un dispositivo registrato affinché usi più di un punto di gestione periferiche. Questa funzionalità consente al dispositivo il fallback su un altro punto di gestione periferiche quando quello che usa di solito non è disponibile. La funzionalità è operativa solo nei PC in cui è stato installato Windows 10 Anniversary Update.  
 
 ### <a name="try-it-out"></a>Prova subito!  
@@ -229,7 +229,7 @@ Per altre informazioni, vedere [Manage Office 365 ProPlus updates](https://techn
 2. Fare clic su **Aggiornamenti software** e selezionare **Sì** per l'impostazione **Abilita la gestione dell'agente client di Office 365**.
 ## <a name="a-nameosdpreservedriveletterathe-osdpreservedriveletter-task-sequence-variable-has-been-deprecated"></a><a name="osdpreservedriveletter"></a>La variabile della sequenza di attività OSDPreserveDriveLetter è stata deprecata
 La variabile della sequenza di attività OSDPreserveDriveLetter determina se la sequenza di attività usa la lettera di unità acquisita nel file WIM dell'immagine del sistema operativo quando si applica tale immagine a un computer di destinazione. Questa variabile della sequenza di attività è stata deprecata nella versione Technical Preview 1606. Durante la distribuzione del sistema operativo, per impostazione predefinita l'installazione di Windows ora stabilisce qual è la lettera di unità migliore da usare (in genere C:). Se si vuole specificare un'unità diversa da usare, è possibile modificare il percorso nella sequenza di passaggi dell'attività Applica sistema operativo. Passare all'impostazione **Selezionare il percorso in cui applicare questo sistema operativo**, selezionare **Lettera unità logica specifica** e scegliere l'unità che si vuole usare. Nel computer di destinazione deve essere presente un'unità assegnata alla lettera che si sceglie.
-## <a name="a-nameupdatesandservicingachanges-for-the-updates-and-servicing-node"></a><a name="updatesandservicing"></a> Modifiche per il nodo Aggiornamenti e manutenzione
+## <a name="a-nameupdatesandservicingachanges-for-the-updates-and-servicing-node"></a><a name="updatesandservicing"></a>Modifiche per il nodo Aggiornamenti e manutenzione
 Con la versione Technical Preview 1606 sono state introdotte diverse modifiche che si applicano ad aggiornamenti e manutenzione nella console di Configuration Manager:
 - **Modifica del nome del nodo:**
 

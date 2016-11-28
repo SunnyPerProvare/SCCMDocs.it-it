@@ -147,7 +147,7 @@ Per installare un sito che utilizza un gruppo di disponibilità di SQL Server:
 
 3.  Dopo aver fornito queste informazioni, completare l'installazione con il processo e le configurazioni normali.  
 
-##  <a name="a-namebkmkclusterserverupdatesa-service-a-server-cluster"></a><a name="BKMK_ClusterServerUpdates"></a> Assistenza a un cluster di server  
+##  <a name="a-namebkmkclusterserverupdatesa-service-a-server-cluster"></a><a name="BKMK_ClusterServerUpdates"></a> Eseguire la manutenzione di un cluster di server  
 Ora è possibile creare una raccolta che contiene i server in un cluster e quindi configurare le impostazioni del cluster da utilizzare quando si distribuiscono gli aggiornamenti al cluster. È possibile controllare la percentuale di server che sono in linea in dato momento, oltre che configurare script PowerShell di pre-distribuzione e post-distribuzione per eseguire azioni personalizzate.  
 
 **Problemi noti per questa versione:**  
