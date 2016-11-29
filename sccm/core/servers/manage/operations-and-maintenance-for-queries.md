@@ -35,7 +35,7 @@ Leggere gli argomenti seguenti in questa sezione per informazioni su operazioni 
 -   [Come gestire query in System Center Configuration Manager](../../../core/servers/manage/manage-queries.md)  
 
 ## <a name="see-also"></a>Vedere anche  
- [Riferimento tecnico alle query per System Center Configuration Manager](../../../core/servers/manage/queries-technical-reference.md)
+ [Riferimento tecnico per le query per System Center Configuration Manager](../../../core/servers/manage/queries-technical-reference.md)
 
 
 

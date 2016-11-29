@@ -28,14 +28,14 @@ ms.openlocfilehash: 5f8d051a92cd74938f1a5235b37f02ebe0ff542c
 Ogni sito di System Center Configuration Manager installato include un server del sito, ovvero un **server di sistema del sito**. Il sito può includere anche altri server del sistema del sito nei computer remoti rispetto al server del sito.   I server del sistema del sito, ovvero il server del sito o un server del sistema del sito remoto, supportano i **ruoli del sistema del sito**.
 
 
-##  <a name="a-namebkmksiteserversa-site-system-servers"></a><a name="bkmk_siteservers"></a>Server di sistema del sito  
+##  <a name="a-namebkmksiteserversa-site-system-servers"></a><a name="bkmk_siteservers"></a> Server del sistema del sito  
  Quando si installa un ruolo del sistema del sito in un computer, il computer diventa un server del sistema del sito. In ogni sito è possibile installare uno o più server del sistema del sito aggiuntivi. Si può anche scegliere di non installare altri server del sistema del sito ed eseguire tutti i ruoli del sistema del sito direttamente nel computer del server del sito.  Ogni server del sistema del sito supporta uno o più ruoli del sistema del sito e consente di espandere le funzionalità e la capacità di un sito condividendo il carico di elaborazione della CPU immesso dai ruoli del sistema del sito in un server.  
 
  Quando si valuta se aggiungere un server del sistema del sito, verificare che il server soddisfi i prerequisiti per l'uso previsto e che si trovi in un percorso di rete con larghezza di banda sufficiente per comunicare con gli endpoint previsti, inclusi il server del sito, le risorse di dominio, il percorso basato sul cloud, i server del sistema del sito e i client.  
 
  Se si configura il server del sistema del sito con un proxy usato dai ruoli del sistema del sito, vedere [Ruoli del sistema del sito che possono usare un server proxy](#bkmk_proxy)  
 
-##  <a name="a-namebkmkplanrolesa-site-system-roles"></a><a name="bkmk_planroles"></a>Ruoli di sistema del sito  
+##  <a name="a-namebkmkplanrolesa-site-system-roles"></a><a name="bkmk_planroles"></a> Site system roles  
  I ruoli del sistema del sito vengono installati in un computer per fornire altre funzionalità al sito. Alcuni esempi:  
 
 -   Punti di gestione aggiuntivi in modo tale che il sito sia in grado di supportare più dispositivi, fino alla capacità supportata dei siti  
@@ -113,7 +113,7 @@ Dopo l'installazione di un sito, è possibile spostare la posizione di alcuni ru
 
 -   **Punto di Convalida integrità sistema**: questo ruolo di sistema del sito non è più usato con System Center Configuration Manager anche se rimane visibile nella console di Configuration Manager.  
 
-##  <a name="a-namebkmkproxya-site-system-roles-that-can-use-a-proxy-server"></a><a name="bkmk_proxy"></a> Ruoli di sistema del sito che possono usare un server proxy  
+##  <a name="a-namebkmkproxya-site-system-roles-that-can-use-a-proxy-server"></a><a name="bkmk_proxy"></a> Ruoli del sistema del sito che possono usare un server proxy  
  Alcuni ruoli di sistema del sito di Configuration Manager richiedono connessioni a Internet e usano un server proxy se il server di sistema del sito che ospita il ruolo è configurato con questa opzione. In genere, questa connessione viene eseguita nel contesto del **sistema** del computer in cui è installato il ruolo del sistema del sito e non può usare una configurazione proxy per gli account utente tipici. Quando un server proxy è necessario per completare una connessione a Internet, il computer deve essere configurato per l'utilizzo di un server proxy:  
 
 -   È possibile configurare un server proxy quando si installa un ruolo del sistema del sito.  

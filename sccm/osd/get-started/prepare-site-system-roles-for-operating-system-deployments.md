@@ -33,7 +33,7 @@ Per distribuire i sistemi operativi in System Center Configuration Manager, è n
 
  È importante avere sufficienti punti di distribuzione per supportare la distribuzione dei sistemi operativi nei computer. È anche importante pianificare la posizione di questi punti di distribuzione nella gerarchia. La maggior parte delle informazioni sulla pianificazione si trova in [Gestire il contenuto e l'infrastruttura del contenuto](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md). Tuttavia, esistono altre considerazioni sulla pianificazione dei punti di distribuzione specifiche per la distribuzione del sistema operativo.  
 
-###  <a name="a-namebkmkadditionalplanninga-additional-planning-considerations-for-distribution-points"></a><a name="BKMK_AdditionalPlanning"></a> Considerazioni aggiuntive sulla pianificazione dei punti di distribuzione  
+###  <a name="a-namebkmkadditionalplanninga-additional-planning-considerations-for-distribution-points"></a><a name="BKMK_AdditionalPlanning"></a> Considerazioni aggiuntive sulla pianificazione per i punti di distribuzione  
  Di seguito sono descritti altri aspetti della pianificazione da considerare per i punti di distribuzione:  
 
 -   **Come si possono evitare distribuzioni indesiderate del sistema operativo?**  
@@ -133,7 +133,7 @@ Per distribuire i sistemi operativi in System Center Configuration Manager, è n
  Il valore predefinito è 4096 (4k).  
 
 
-###  <a name="a-namebkmkdpmulticasta-configure-distribution-points-to-support-multicast"></a><a name="BKMK_DPMulticast"></a> Configurare i punti di distribuzione per il supporto di multicast  
+###  <a name="a-namebkmkdpmulticasta-configure-distribution-points-to-support-multicast"></a><a name="BKMK_DPMulticast"></a> Configurare i punti di distribuzione per il supporto del multicast  
  Il multicast è un metodo di ottimizzazione della rete che è possibile usare nei punti di distribuzione in cui è probabile che più client scarichino contemporaneamente la stessa immagine del sistema. Quando si usa il multicast, l'immagine del sistema operativo viene scaricata contemporaneamente da più computer mentre il punto di distribuzione ne esegue il multicast, invece di far inviare una copia dei dati dal punto di distribuzione a ogni client in una connessione separata. Per supportare il multicast, è necessario configurare almeno un punto di distribuzione. Per altre informazioni, vedere [Usare multicast per distribuire Windows in rete](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
 
  Prima di distribuire il sistema operativo, è necessario configurare un punto di distribuzione per il supporto di multicast. Utilizzare la seguente procedura per modificare un punto di distribuzione esistente per il supporto di multicast. Per informazioni su come installare un nuovo punto di distribuzione, vedere [Installare e modificare un punto di distribuzione](../../core/servers/deploy/configure/install-and-configure-distribution-points.md).

@@ -75,7 +75,7 @@ Il client di System Center Configuration Manager per Linux e UNIX supporta l'inv
 
  Non tutte le proprietà di queste classi di inventario sono abilitate per i computer Linux e UNIX in Configuration Manager.  
 
-##  <a name="a-namebkmkoperationsforhardwareforlnua-operations-for-hardware-inventory"></a><a name="BKMK_OperationsforHardwareforLnU"></a>Operazioni per l'inventario hardware  
+##  <a name="a-namebkmkoperationsforhardwareforlnua-operations-for-hardware-inventory"></a><a name="BKMK_OperationsforHardwareforLnU"></a> Operazioni per l'inventario hardware  
  Dopo aver raccolto l'inventario hardware dai server Linux e UNIX, è possibile visualizzare e usare tali informazioni con le stesse modalità valide per l'inventario raccolto dagli altri computer:  
 
 -   Usare Esplora inventario risorse per visualizzare informazioni dettagliate relative all'inventario hardware dai server Linux e UNIX  
@@ -92,7 +92,7 @@ Il client di System Center Configuration Manager per Linux e UNIX supporta l'inv
 
  Le azioni per l'inventario hardware vengono immesse nel file di log client **scxcm.log**.  
 
-##  <a name="a-namebkmkcustomhinvforlinuxa-how-to-use-open-management-infrastructure-to-create-custom-hardware-inventory"></a><a name="BKMK_CustomHINVforLinux"></a> Come usare Open Management Infrastructure (OMI) per creare un inventario hardware personalizzato  
+##  <a name="a-namebkmkcustomhinvforlinuxa-how-to-use-open-management-infrastructure-to-create-custom-hardware-inventory"></a><a name="BKMK_CustomHINVforLinux"></a> Come usare OMI (Open Management Infrastructure) per creare un inventario hardware personalizzato  
  Il client per Linux e UNIX supporta l'inventario hardware personalizzato che è possibile creare tramite OMI (Open Management Infrastructure). A tale scopo, seguire questa procedura:  
 
 1.  Creare un provider di inventario personalizzato usando l'origine OMI  
@@ -101,7 +101,7 @@ Il client di System Center Configuration Manager per Linux e UNIX supporta l'inv
 
 3.  Abilitare Configuration Manager per supportare il nuovo provider  
 
-###  <a name="a-namebkmklinuxprovidera-create-a-custom-hardware-inventory-provider-for-linux-and-unix-computers"></a><a name="BKMK_LinuxProvider"></a> Creare un provider di inventario hardware personalizzato per computer Linux e UNIX:  
+###  <a name="a-namebkmklinuxprovidera-create-a-custom-hardware-inventory-provider-for-linux-and-unix-computers"></a><a name="BKMK_LinuxProvider"></a> Creare un provider di inventario hardware personalizzato per i computer Linux e UNIX:  
  Per creare un provider di inventario hardware personalizzato per il client di Configuration Manager per Linux e UNIX, usare **OMI Source - v.1.0.6** e seguire le istruzioni della guida introduttiva a OMI. Questo processo include la creazione di un file MOF (Managed Object Format) che definisce lo schema del nuovo provider. Importare successivamente il file MOF in Configuration Manager per abilitare il supporto della nuova classe di inventario personalizzato.  
 
  Sia OMI Source - v.1.0.6 che la guida introduttiva a OMI sono disponibili per il download dal sito Web di [The Open Group](http://go.microsoft.com/fwlink/p/?LinkId=262317) . È possibile trovare questi download nella scheda **Documents** della pagina Web seguente nel sito Web OpenGroup.org: [Open Management Infrastructure (OMI)](http://go.microsoft.com/fwlink/p/?LinkId=286805).  

@@ -33,7 +33,7 @@ Questo argomento contiene informazioni sulla sicurezza e la privacy per la gesti
 
 -   [Sicurezza e privacy per la distribuzione del sistema operativo in System Center Configuration Manager](../../../osd/plan-design/security-and-privacy-for-operating-system-deployment.md)  
 
-##  <a name="a-namebkmksecuritycontentmanagementa-security-best-practices-for-content-management"></a><a name="BKMK_Security_ContentManagement"></a> Procedure di sicurezza consigliate per la gestione dei contenuti  
+##  <a name="a-namebkmksecuritycontentmanagementa-security-best-practices-for-content-management"></a><a name="BKMK_Security_ContentManagement"></a> Procedure di sicurezza consigliate per la gestione del contenuto  
  Utilizzare le seguenti procedure ottimali di protezione per la gestione dei contenuti:  
 
  **Per i punti di distribuzione in Intranet, considerare i vantaggi e gli svantaggi dell'utilizzo di HTTP e HTTPS** : nella maggior parte degli scenari, l'utilizzo di HTTP e degli account di accesso al pacchetto per l'autorizzazione offre una maggiore protezione rispetto all'utilizzo di HTTPS con la crittografia senza autorizzazione. Se tuttavia sono presenti dati sensibili nel contenuto da crittografare durante il trasferimento, utilizzare HTTPS.  

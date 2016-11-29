@@ -64,7 +64,7 @@ Quando si progetta e implementa la protezione amministrativa per Configuration M
 > [!IMPORTANT]  
 >  I ritardi di replica tra siti possono impedire a un sito di ricevere modifiche per l'amministrazione basata su ruoli. Per informazioni sul monitoraggio della replica del database tra siti, vedere l'argomento [Trasferimenti di dati tra siti in System Center Configuration Manager](../../core/servers/manage/data-transfers-between-sites.md).  
 
-##  <a name="a-namebkmkplanrolesa-security-roles"></a><a name="bkmk_Planroles"></a> Ruoli di sicurezza  
+##  <a name="a-namebkmkplanrolesa-security-roles"></a><a name="bkmk_Planroles"></a> ruoli di sicurezza  
  Usare i ruoli di sicurezza per concedere le autorizzazioni di sicurezza a utenti amministratori. I ruoli di sicurezza sono gruppi di autorizzazioni di sicurezza assegnate agli utenti amministratori in modo che possano eseguire le relative attività amministrative. Le autorizzazioni di sicurezza definiscono le azioni amministrative che un utente amministratore può eseguire e le autorizzazioni concesse per determinati tipi di oggetto. Come procedura consigliata di sicurezza, assegnare i ruoli di sicurezza che forniscono i privilegi minimi.  
 
  In Configuration Manager sono incorporati diversi ruoli di sicurezza per supportare i raggruppamenti tipici di attività amministrative. È possibile creare ruoli di sicurezza personalizzati per soddisfare particolari esigenze aziendali. Esempi di ruoli di sicurezza incorporati:  
@@ -92,7 +92,7 @@ Quando si progetta e implementa la protezione amministrativa per Configuration M
 
 Per informazioni su come creare e configurare i ruoli di sicurezza per l'amministrazione basata su ruoli, vedere le sezioni relative alla [creazione di ruoli di sicurezza personalizzati](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole) e alla [configurazione dei ruoli di sicurezza](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecRole) nell'argomento [Configure role-based administration for System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md) (Configurare l'amministrazione basata su ruoli per System Center Configuration Manager).  
 
-##  <a name="a-namebkmkplancola-collections"></a><a name="bkmk_planCol"></a> Raccolte  
+##  <a name="a-namebkmkplancola-collections"></a><a name="bkmk_planCol"></a> raccolte  
  Le raccolte specificano utente e risorse del computer che un utente amministratore può visualizzare o gestire. Ad esempio, per poter distribuire applicazioni o eseguire il controllo remoto, agli utenti amministratori deve essere assegnato un ruolo di sicurezza che consente l'accesso a una raccolta che include queste risorse. È possibile selezionare raccolte di utenti o dispositivi.  
 
  Per altre informazioni sulle raccolte, vedere [Introduzione alle raccolte in System Center Configuration Manager](../../core/clients/manage/collections/introduction-to-collections.md).  
@@ -109,7 +109,7 @@ Per informazioni su come creare e configurare i ruoli di sicurezza per l'amminis
 
 Per informazioni su come configurare raccolte per l'amministrazione basata su ruoli, vedere la sezione relativa alla [configurazione di raccolte per la gestione della sicurezza](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigColl) nell'argomento [Configure role-based administration for System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md) (Configurare l'amministrazione basata su ruoli per System Center Configuration Manager).  
 
-##  <a name="a-namebkmkplanscopea-security-scopes"></a><a name="bkmk_PlanScope"></a> Ambiti di protezione  
+##  <a name="a-namebkmkplanscopea-security-scopes"></a><a name="bkmk_PlanScope"></a> ambiti di protezione  
  Usare gli ambiti di protezione per fornire agli utenti amministratori l'accesso a oggetti a protezione diretta. Gli ambiti di protezione sono una raccolta denominata di oggetti a protezione diretta che vengono assegnati agli utenti amministratori come gruppo. Tutti gli oggetti a protezione diretta devono essere assegnati a uno o più ambiti di protezione. Configuration Manager ha due ambiti di protezione predefiniti:  
 
 -   **Tutto**: questo ambito di protezione incorporato consente l'accesso a tutti gli ambiti. Non è possibile assegnare gli oggetti a questo ambito di protezione.  

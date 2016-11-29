@@ -85,7 +85,7 @@ Consultare gli amministratori PKI prima di decidere se i client di Configuration
 
 -   La richiesta di controllo dell'elenco CRL per ciascuna connessione a un sistema del sito configurato per l'utilizzo di un certificato PKI è superiore alla richiesta di connessioni più rapide ed elaborazione più efficiente sul client. Inoltre, tale richiesta è superiore al rischio di mancate connessioni ai server da parte dei client nel caso in cui questi ultimi non siano in grado di individuare l'elenco CRL.  
 
-###  <a name="a-namebkmkplanningforrootcasa-planning-for-the-pki-trusted-root-certificates-and-the-certificate-issuers-list"></a><a name="BKMK_PlanningForRootCAs"></a> Pianificazione dei certificati radice attendibili PKI e dell'elenco di autorità di certificazione  
+###  <a name="a-namebkmkplanningforrootcasa-planning-for-the-pki-trusted-root-certificates-and-the-certificate-issuers-list"></a><a name="BKMK_PlanningForRootCAs"></a> Pianificazione di certificati radice trusted PKI e dell'elenco di autorità di certificazione  
 Se i sistemi del sito IIS usano certificati client PKI per l'autenticazione dei client su HTTP o per l'autenticazione e la crittografia dei client su HTTPS, potrebbe essere necessario importare i certificati CA radice come una proprietà del sito. I due scenari sono i seguenti:  
 
 -   I sistemi operativi sono distribuiti tramite Configuration Manager e i punti di gestione accettano solo connessioni client HTTPS.  
@@ -107,7 +107,7 @@ Questi certificati CA radice importati e il certificato CA radice di ogni punto 
 
 Indipendentemente dalla configurazione del sito, potrebbe essere anche richiesta l'importazione di un certificato CA radice quando si esegue la registrazione di dispositivi mobili o computer Mac e il provisioning di computer basati su Intel AMT per reti wireless.  
 
-###  <a name="a-namebkmkplanningforclientcertificateselectiona-planning-for-pki-client-certificate-selection"></a><a name="BKMK_PlanningForClientCertificateSelection"></a> Pianificazione della selezione dei certificati client PKI  
+###  <a name="a-namebkmkplanningforclientcertificateselectiona-planning-for-pki-client-certificate-selection"></a><a name="BKMK_PlanningForClientCertificateSelection"></a> Planning for PKI client certificate selection  
  Se i sistemi del sito IIS usano certificati client PKI per l'autenticazione dei client su HTTP o per l'autenticazione e la crittografia dei client su HTTPS, pianificare la modalità con cui i client basati su Windows selezionano il certificato da usare per Configuration Manager.  
 
 > [!NOTE]  

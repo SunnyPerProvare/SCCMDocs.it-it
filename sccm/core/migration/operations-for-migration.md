@@ -167,7 +167,7 @@ ms.openlocfilehash: 9289dd8983846c27a3f5bd3ae999eed018ae4ccb
 
 4.  Nelle proprietà del processo di migrazione selezionare la scheda **Impostazioni** , modificare il tempo di esecuzione per il processo di migrazione e quindi fare clic su **OK**.  
 
-##  <a name="a-namerunmigrationjobsa-run-migration-jobs"></a><a name="Run_Migration_Jobs"></a> Eseguire processi di migrazione  
+##  <a name="a-namerunmigrationjobsa-run-migration-jobs"></a><a name="Run_Migration_Jobs"></a> Eseguire i processi di migrazione  
  Utilizzare la seguente procedura per eseguire un processo di migrazione non ancora avviato.  
 
 #### <a name="to-run-migration-jobs"></a>Per eseguire i processi di migrazione  
@@ -218,7 +218,7 @@ ms.openlocfilehash: 9289dd8983846c27a3f5bd3ae999eed018ae4ccb
 
 4.  Visualizzare i dettagli e lo stato relativi al processo di migrazione selezionato nelle schede **Riepilogo** e **Oggetti nel processo**.  
 
-##  <a name="a-namebkmkmigrateclientsa-migrate-clients"></a><a name="BKMK_MigrateClients"></a> Eseguire la migrazione di client  
+##  <a name="a-namebkmkmigrateclientsa-migrate-clients"></a><a name="BKMK_MigrateClients"></a> Eseguire la migrazione dei client  
  Dopo aver eseguito la migrazione dei dati per i client da una gerarchia all'altra, ma prima di completare tale operazione, pianificare la migrazione dei client nella gerarchia di destinazione. La migrazione di client da una gerarchia all'altra comporta la disinstallazione del software client di Configuration Manager dai computer assegnati alla gerarchia di origine e l'installazione del software client di Configuration Manager dalla gerarchia di destinazione. Quando si installa il client dalla gerarchia di destinazione si assegna anche il client a un sito primario in tale gerarchia. Per altre informazioni sulla migrazione dei client, vedere [Pianificazione di una strategia di migrazione client in System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md).  
 
 ##  <a name="a-namecompletemigrationa-complete-migration"></a><a name="Complete_Migration"></a> Completare la migrazione  

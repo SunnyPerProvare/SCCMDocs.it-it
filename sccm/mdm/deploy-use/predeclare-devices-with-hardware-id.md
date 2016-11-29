@@ -16,15 +16,15 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5c6cf3c1697b49708aa5192b67b08b700da7dc72
-ms.openlocfilehash: 43d67aa664037c6da83260d5ada8e574510a8f7b
+ms.sourcegitcommit: 6cd640085e90b2945326e3fa942ae9bd7b8f7e24
+ms.openlocfilehash: 2550fef062b5ef508e4c0492a5a9c63ffcb9084a
 
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare dispositivi con i numeri di serie IMEI o iOS
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity) o i numeri di serie iOS. È possibile caricare un file con valori separati da virgola (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi.  Le informazioni importate imposteranno l'**appartenenza** dei dispositivi registrati come "**aziendale**" negli elenchi di dispositivi. È tuttavia necessaria una licenza di Intune per ogni utente che accede al servizio.  
+È possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity) o i numeri di serie iOS. È possibile caricare un file con valori separati da virgola (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi.  Le informazioni importate imposteranno la **proprietà** dei dispositivi registrati come "**Corporate**" negli elenchi di dispositivi. È tuttavia necessaria una licenza di Intune per ogni utente che accede al servizio.  
 
 ## <a name="predeclare-corporate-owned-devices-with-imei-or-ios-serial-number"></a>Predichiarare dispositivi di proprietà dell'azienda con codici IMEI o numeri seriali iOS
 
