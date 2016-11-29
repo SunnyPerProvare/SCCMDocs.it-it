@@ -71,7 +71,7 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente System
 
  Per un elenco dei passaggi della sequenza di attività disponibili, vedere [Passaggi della sequenza di attività](../understand/task-sequence-steps.md).  
 
-##  <a name="a-namebkmkdistributetsa-distribute-content-referenced-by-a-task-sequence"></a><a name="BKMK_DistributeTS"></a> Distribuire il contenuto a cui fa riferimento una sequenza di attività  
+##  <a name="a-namebkmkdistributetsa-distribute-content-referenced-by-a-task-sequence"></a><a name="BKMK_DistributeTS"></a> Distribuire il contenuto a cui fa riferimento una sequenza attività  
  Prima che i client eseguano una sequenza di attività che fa riferimento al contenuto, è necessario distribuire tale contenuto ai punti di distribuzione. In qualsiasi momento, è possibile selezionare la sequenza di attività e distribuire il relativo contenuto per creare un nuovo elenco di pacchetti di riferimento per la distribuzione. Se si apportano modifiche alla sequenza di attività con contenuto aggiornato, è necessario ridistribuire il contenuto prima che diventi disponibile ai client. Usare la seguente procedura per distribuire il contenuto a cui fa riferimento una sequenza di attività.  
 
 #### <a name="to-distribute-referenced-content-to-distribution-points"></a>Per distribuire il contenuto con riferimenti ai punti di distribuzione  
@@ -230,7 +230,7 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente System
 
 11. Completare la procedura guidata.  
 
-##  <a name="a-namebkmkexportimporta-export-and-import-task-sequences"></a><a name="BKMK_ExportImport"></a> Esportare e importare le sequenze di attività  
+##  <a name="a-namebkmkexportimporta-export-and-import-task-sequences"></a><a name="BKMK_ExportImport"></a> Esportare e importare sequenze di attività  
  È possibile esportare e importare sequenze attività con o senza i relativi oggetti, come un'immagine del sistema operativo, un'immagine di avvio, un pacchetto dell'agente client, un pacchetto driver e applicazioni con dipendenze.  
 
  Considerare quanto segue quando si esportano e importano sequenze attività.  

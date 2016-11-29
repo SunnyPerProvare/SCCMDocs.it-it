@@ -56,9 +56,9 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
   
     -   **Avviso**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Avviso**.  
   
-    -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico**.  
+    -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico**.  
   
-    -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico**.   
+    -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico**.   
   
 11. Nella pagina **Applicabilità piattaforma** verificare le eventuali impostazioni non compatibili con le piattaforme supportate selezionate in precedenza. È possibile tornare indietro e rimuovere queste impostazioni oppure continuare.  
   
@@ -220,7 +220,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 |**Nome rete (SSID)**||  
 |**Connessione di rete**|Scegliere **Internet** o **Lavoro**.|  
 |**Autenticazione**|Selezionare il metodo di autenticazione per la connessione:<br><br>- **Aperta**<br>-                    **Condivisa**<br>- **WPA**<br>- **WPA-PSK**<br>- **WPA2**<br>- **WPA2-PSK**|  
-|**Crittografia dei dati**|Scegliere il metodo di crittografia usato dalla connessione. I valori che è possibile selezionare variano a seconda del metodo di **Autenticazione** scelto:<br><br>- **Disattivata**<br>- **WEP**<br>- **TKIP**<br>- **AES**|  
+|**Crittografia dei dati**|Scegliere il metodo di crittografia usato dalla connessione. I valori che è possibile selezionare variano a seconda del metodo di **Autenticazione** scelto:<br><br>- **Disabilitato**<br>- **WEP**<br>- **TKIP**<br>- **AES**|  
 |**Indice chiavi**|Selezionare un indice chiavi da **1** a **4** da usare con l'impostazione di **Crittografia dei dati** **WEP**.|  
 |**Questa rete è connessa a Internet**|Selezionare questa opzione se si desidera specificare le impostazioni proxy che consentono la connessione a Internet dei dispositivi mobili su una connessione wireless.|  
 |**Impostazioni del server proxy**|Specificare le impostazioni **Server** e **Porta** necessarie per **HTTP**, **WAP** e **Socket**.|  

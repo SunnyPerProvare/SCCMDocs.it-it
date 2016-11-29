@@ -54,7 +54,7 @@ ms.openlocfilehash: be845d9f6ad2f92a0235cdb7410654e229448e1b
     > [!TIP]  
     >  È disponibile l'opzione per salvare i criteri di filtro nella scheda **Cerca** e nel gruppo **Salva** .  
 
-##  <a name="a-namebkmk2updategroupa-step-2-create-a-software-update-group-that-contains-the-software-updates"></a><a name="BKMK_2UpdateGroup"></a> Passaggio 2: Creare un gruppo di aggiornamento software contenente gli aggiornamenti software  
+##  <a name="a-namebkmk2updategroupa-step-2-create-a-software-update-group-that-contains-the-software-updates"></a><a name="BKMK_2UpdateGroup"></a> Passaggio 2: Creare un gruppo di aggiornamenti software che contenga gli aggiornamenti software  
  I gruppi di aggiornamento software forniscono un metodo efficace per organizzare gli aggiornamenti software in preparazione per la distribuzione. È possibile aggiungere manualmente aggiornamenti software a un gruppo di aggiornamento software oppure Configuration Manager può aggiungere automaticamente aggiornamenti software a un gruppo di aggiornamento software nuovo o esistente usando un'ADR. Usare le procedure seguenti per aggiungere manualmente gli aggiornamenti software in un nuovo gruppo di aggiornamento software.  
 
 #### <a name="to-manually-add-software-updates-to-a-new-software-update-group"></a>Per aggiungere manualmente gli aggiornamenti software a un nuovo gruppo di aggiornamento software  
@@ -73,7 +73,7 @@ ms.openlocfilehash: be845d9f6ad2f92a0235cdb7410654e229448e1b
 
 7.  Selezionare il gruppo di aggiornamento software, quindi nella scheda **Home** , nel gruppo **Aggiorna** , fare clic su **Mostra membri** per visualizzare un elenco degli aggiornamenti software inclusi nel gruppo.  
 
-##  <a name="a-namebkmk3downloadcontenta-step-3-download-the-content-for-the-software-update-group"></a><a name="BKMK_3DownloadContent"></a> Passaggio 3: Scaricare il contenuto per il gruppo di aggiornamento software  
+##  <a name="a-namebkmk3downloadcontenta-step-3-download-the-content-for-the-software-update-group"></a><a name="BKMK_3DownloadContent"></a> Passaggio 3: Scaricare il contenuto per il gruppo di aggiornamenti software  
  Facoltativamente, prima di distribuire gli aggiornamenti software, è possibile scaricare il contenuto per gli aggiornamenti software inclusi nel gruppo di aggiornamento software. È possibile scegliere di effettuare questa operazione in modo da poter verificare che il contenuto sia disponibile nei punti di distribuzione prima di distribuire gli aggiornamenti software. Ciò consentirà di evitare eventuali problemi imprevisti con la distribuzione del contenuto. È possibile ignorare questo passaggio e il contenuto verrà scaricato e copiato nei punti di distribuzione come parte del processo di distribuzione. Usare la procedura seguente per scaricare il contenuto per gli aggiornamenti software nel gruppo di aggiornamento software.  
 
 
@@ -160,7 +160,7 @@ ms.openlocfilehash: be845d9f6ad2f92a0235cdb7410654e229448e1b
 
 4. Nella scheda **Home** , nel gruppo **Contenuto** , fare clic su **Visualizza stato**.  
 
-##  <a name="a-namebkmk4deployupdategroupa-step-4-deploy-the-software-update-group"></a><a name="BKMK_4DeployUpdateGroup"></a> Passaggio 4: Distribuire il gruppo di aggiornamento software  
+##  <a name="a-namebkmk4deployupdategroupa-step-4-deploy-the-software-update-group"></a><a name="BKMK_4DeployUpdateGroup"></a> Passaggio 4: Distribuire il gruppo di aggiornamenti software  
  Dopo aver determinato quali aggiornamenti software di desidera distribuire e averli aggiunti a un gruppo di aggiornamento software, è possibile distribuire manualmente gli aggiornamenti software nel gruppo di aggiornamento software. Usare la procedura seguente per distribuire manualmente gli aggiornamenti software in un gruppo di aggiornamento software.  
 
 #### <a name="to-manually-deploy-the-software-updates-in-a-software-update-group"></a>Per distribuire manualmente gli aggiornamenti software in un gruppo di aggiornamento software  

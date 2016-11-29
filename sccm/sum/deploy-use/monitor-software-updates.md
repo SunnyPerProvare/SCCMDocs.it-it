@@ -24,7 +24,7 @@ ms.openlocfilehash: fe41807cebf87f4e6bab47e41db0ffe7cc83c5d1
 
 System Center Configuration Manager offre vari modi per monitorare aggiornamenti software, processi e informazioni sulla conformità. Usare le sezioni seguenti per monitorare gli aggiornamenti software.
 
-##  <a name="a-namebkmksualertsa-alerts-for-software-updates"></a><a name="BKMK_SUAlerts"></a> Avvisi per aggiornamenti software  
+##  <a name="a-namebkmksualertsa-alerts-for-software-updates"></a><a name="BKMK_SUAlerts"></a> Avvisi per gli aggiornamenti software  
  È possibile configurare avvisi per gli aggiornamenti software per inviare notifiche agli utenti amministratori quando i livelli di conformità per le distribuzioni degli aggiornamenti software sono al di sotto della percentuale configurata. È possibile configurare avvisi per gli aggiornamenti software nei seguenti punti:  
 
 -   Impostazione ADR: è possibile configurare le impostazioni degli avvisi nella Creazione guidata delle regole di distribuzione automatica e nelle proprietà per ADR.  
@@ -57,10 +57,10 @@ Dopo aver configurato le impostazioni degli avvisi, Configuration Manager genera
 
 3.  Nella scheda **Home** fare clic su **Visualizza stato** nel gruppo **Distribuzione**.  
 
-##  <a name="a-namebkmksureportsa-software-updates-reports"></a><a name="BKMK_SUReports"></a> Report sugli aggiornamenti software  
+##  <a name="a-namebkmksureportsa-software-updates-reports"></a><a name="BKMK_SUReports"></a> Report degli aggiornamenti software  
  I messaggi di stato per gli aggiornamenti software offrono informazioni sulla conformità degli aggiornamenti software e sullo stato di valutazione e applicazione delle distribuzioni di aggiornamenti software. Per visualizzare tali messaggi di stato, è possibile eseguire i report degli aggiornamenti software. Sono disponibili oltre 30 report degli aggiornamenti software predefiniti. Sono organizzati in diverse categorie e forniscono informazioni specifiche sugli aggiornamenti e le distribuzioni di software. Oltre a usare i report preconfigurati, è anche possibile creare report degli aggiornamenti software personalizzati in base alle esigenze dell'azienda. Per altre informazioni, vedere [Operazioni e manutenzione per la creazione di report](../../core/servers/manage/operations-and-maintenance-for-reporting.md).  
 
-##  <a name="a-namebkmkmonitorcontenta-monitor-content"></a><a name="BKMK_MonitorContent"></a> Monitorare il contenuto  
+##  <a name="a-namebkmkmonitorcontenta-monitor-content"></a><a name="BKMK_MonitorContent"></a> Monitoraggio del contenuto  
  È possibile monitorare il contenuto nella console di Configuration Manager per verificare lo stato di tutti i tipi di pacchetti in relazione ai punti di distribuzione associati. Sono inclusi lo stato di convalida del contenuto del pacchetto, lo stato del contenuto assegnato a un gruppo di punti di distribuzione specifico, lo stato del contenuto assegnato a un punto di distribuzione e lo stato di funzionalità facoltative per ogni punto di distribuzione (convalida contenuto, PXE e multicast).  
 
 ###  <a name="a-namebkmkcontentstatusa-content-status-monitoring"></a><a name="BKMK_ContentStatus"></a> Monitoraggio dello stato del contenuto  
@@ -74,7 +74,7 @@ Dopo aver configurato le impostazioni degli avvisi, Configuration Manager genera
 
 3.  Nella scheda **Home** fare clic su **Visualizza stato**. Vengono visualizzate informazioni dettagliate sullo stato per il pacchetto.  
 
-###  <a name="a-namebkmkdpgroupstatusa-distribution-point-group-status"></a><a name="BKMK_DPGroupStatus"></a> Stato del gruppo dei punti di distribuzione  
+###  <a name="a-namebkmkdpgroupstatusa-distribution-point-group-status"></a><a name="BKMK_DPGroupStatus"></a> Stato del gruppo di punti di distribuzione  
  Il nodo **Stato gruppo di punti di distribuzione** nell'area di lavoro **Monitoraggio** fornisce informazioni sui gruppi di punti di distribuzione. È possibile esaminare informazioni generali sul gruppo di punti di distribuzione, quali lo stato, il grado di conformità e le informazioni dettagliate sullo stato. Usare la procedura seguente per visualizzare lo stato del gruppo di punti di distribuzione.  
 
 #### <a name="to-monitor-distribution-point-group-status"></a>Per monitorare lo stato del gruppo di punti di distribuzione  

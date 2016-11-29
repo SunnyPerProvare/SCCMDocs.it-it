@@ -187,7 +187,7 @@ System Center Configuration Manager include un catalogo di driver che è possibi
 
      Fare clic su **OK**.  
 
-###  <a name="a-namebkmkmanagedriversbootimagea-manage-device-drivers-in-a-boot-image"></a><a name="BKMK_ManageDriversBootImage"></a> Gestire i driver di dispositivo in un'immagine d'avvio  
+###  <a name="a-namebkmkmanagedriversbootimagea-manage-device-drivers-in-a-boot-image"></a><a name="BKMK_ManageDriversBootImage"></a> Gestire i driver di dispositivo in un'immagine di avvio  
  È possibile aggiungere i driver di dispositivo Windows importati nel catalogo dei driver alle immagini di avvio. Quando si aggiungono driver di dispositivo a un'immagine di avvio, utilizzare le seguenti linee guida:  
 
 -   Poiché in genere non sono necessari altri tipi di driver, aggiungere solo driver di dispositivi di archiviazione di massa e di schede di rete alle immagini di avvio. I driver non necessari aumentano inutilmente le dimensioni dell'immagine di avvio.  
@@ -249,7 +249,7 @@ System Center Configuration Manager include un catalogo di driver che è possibi
 
  Quando si utilizzano questi passaggi della sequenza attività, è anche possibile specificare la modalità di installazione dei driver di dispositivo nel computer in cui viene distribuito il sistema operativo. Per altre informazioni, vedere [Gestire le sequenze di attività per automatizzare le attività](../deploy-use/manage-task-sequences-to-automate-tasks.md).  
 
-##  <a name="a-namebkmkinstallingdevicediriverstsa-use-task-sequences-to-install-device-drivers-on-computers"></a><a name="BKMK_InstallingDeviceDiriversTS"></a> Usare le sequenze di attività per installare i driver di dispositivo nei computer  
+##  <a name="a-namebkmkinstallingdevicediriverstsa-use-task-sequences-to-install-device-drivers-on-computers"></a><a name="BKMK_InstallingDeviceDiriversTS"></a> Usare le sequenze di attività per installare driver di dispositivo nei computer  
  Utilizzare la procedura seguente per installare i driver di dispositivo durante la distribuzione del sistema operativo.  
 
 #### <a name="use-a-task-sequence-to-install-device-drivers"></a>Usare una sequenza di attività per installare driver di dispositivo  

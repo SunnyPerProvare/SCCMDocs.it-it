@@ -42,8 +42,8 @@ Di seguito sono riportate le domande poste più di frequente sui dati di diagnos
 ###  <a name="a-namebkmknetworka-can-the-data-be-used-to-form-a-network-map"></a><a name="bkmk_network"></a> È possibile usare i dati per formare una mappa di rete?  
  Come illustrato nella descrizione dei livelli di raccolta dati di diagnostica e di utilizzo per System Center Configuration, i dettagli includono informazioni sul fuso orario da ciascun sito. Questo può fornire informazioni approfondite riguardo la georilevazione generale e la dispersione globale dei siti in una gerarchia. Tuttavia, non viene raccolto alcun dettaglio relativo alla rete, ad esempio indirizzi IP o informazioni geografiche più dettagliate.
  - [Dati diagnostici per 1511](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1511)
- - [Dati diagnostici per 1602](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1602)
- - [Dati diagnostici per 1606](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606)
+ - [Dati di diagnostica per la versione 1602](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1602)
+ - [Dati di diagnostica per la versione 1606](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606)
 
 
 ###  <a name="a-namebkmktablesa-can-you-see-data-in-custom-tables"></a><a name="bkmk_tables"></a> È possibile visualizzare i dati in tabelle personalizzate?  

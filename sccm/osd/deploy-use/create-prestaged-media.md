@@ -36,7 +36,7 @@ Il supporto pre-installato contiene l'immagine di avvio usata per avviare il com
 
  Quando viene avviato per la prima volta dopo l'applicazione del supporto pre-installato, il computer avvia Windows PE e si connette a un punto di gestione per trovare la sequenza di attività che completa il processo di distribuzione del sistema operativo. È possibile specificare applicazioni, pacchetti e pacchetti driver da includere come parte del supporto preinstallato. Quando si distribuisce una sequenza di attività che usa un supporto pre-installato, la procedura guidata verifica innanzitutto la presenza di contenuto valido nella cache della sequenza di attività locale. Se non è possibile trovare il contenuto oppure il contenuto è stato rivisto, la procedura guidata scarica il contenuto dal punto di distribuzione.  
 
-##  <a name="a-namebkmkcreateprestagedmediaa-how-to-create-prestaged-media"></a><a name="BKMK_CreatePrestagedMedia"></a> Come creare un supporto preinstallato  
+##  <a name="a-namebkmkcreateprestagedmediaa-how-to-create-prestaged-media"></a><a name="BKMK_CreatePrestagedMedia"></a> Come creare un supporto pre-installato  
  Prima di creare un supporto preinstallato usando la Creazione guidata del supporto per la sequenza attività, assicurarsi che siano soddisfatte tutte le condizioni seguenti:  
 
 |Attività|Descrizione|  
@@ -96,7 +96,7 @@ Il supporto pre-installato contiene l'immagine di avvio usata per avviare il com
 
          Per altre informazioni su questo certificato client usato per le immagini di avvio, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
 
-    -   **Affinità utente dispositivo**: per supportare la gestione basata sugli utenti in Configuration Manager, specificare come si vuole che il supporto associ gli utenti al computer di destinazione. Per altre informazioni su come la distribuzione del sistema operativo supporti l'affinità utente dispositivo, vedere la sezione che illustra come [associare gli utenti a un computer di destinazione](../get-started/associate-users-with-a-destination-computer.md).  
+    -   **Affinità utente dispositivo**: per supportare la gestione basata sugli utenti in Configuration Manager, specificare come si vuole che il supporto associ gli utenti al computer di destinazione. Per altre informazioni su come la distribuzione del sistema operativo supporti l'affinità utente dispositivo, vedere [Associare gli utenti a un computer di destinazione](../get-started/associate-users-with-a-destination-computer.md).  
 
         -   Specificare **Consenti affinità utente dispositivo con approvazione automatica** se si desidera che il supporto associ automaticamente gli utenti al computer di destinazione. Questa funzionalità si basa sulle azioni della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
 

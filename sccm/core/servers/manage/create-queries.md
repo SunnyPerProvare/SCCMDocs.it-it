@@ -101,7 +101,7 @@ Usare le sezioni seguenti di questo argomento per informazioni su come creare o 
 
 4.  Esaminare le informazioni relative alla query da importare e quindi completare la procedura guidata. La nuova query verrà visualizzata nel nodo **Query** nell'area di lavoro **Monitoraggio** .  
 
-##  <a name="a-namebkmkexamplea-example-wql-queries"></a><a name="BKMK_Example"></a> Query WQL di esempio  
+##  <a name="a-namebkmkexamplea-example-wql-queries"></a><a name="BKMK_Example"></a> Example WQL queries  
  Questa sezione contiene query WMI di esempio che è possibile usare nella gerarchia o modificare per altri scopi. Per usare queste query, fare clic su **Mostra linguaggio query** nella finestra di dialogo **Proprietà istruzione query** e quindi copiare e incollare la query nel campo **Istruzione query** .  
 
 > [!TIP]  

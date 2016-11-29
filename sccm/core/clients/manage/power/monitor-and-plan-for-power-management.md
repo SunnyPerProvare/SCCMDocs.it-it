@@ -114,7 +114,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 |-----------------|-------------|  
 |**Dettagli computer**|Fare clic sul collegamento **Fare clic per ulteriori informazioni** per visualizzare informazioni su capacità di risparmio energia, impostazioni di risparmio energia e combinazioni per il risparmio di energia applicate per il computer selezionato.|  
 
-###  <a name="a-namebkmkactivitydetailsa-computer-activity-details-report"></a><a name="BKMK_Activity_Details"></a> Report Dettagli attività computer  
+###  <a name="a-namebkmkactivitydetailsa-computer-activity-details-report"></a><a name="BKMK_Activity_Details"></a> Computer Activity Details report  
  Il report **Dettagli attività computer** visualizza un elenco dei computer attivi o inattivi con le relative funzionalità di sospensione e riattivazione. Questo report viene chiamato dal [Computer Activity Report](#BKMK_Activity) e non è progettato per essere eseguito direttamente dall'amministratore del sito.  
 
  Usare i parametri seguenti per configurare questo report.  
@@ -508,7 +508,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 |-----------------|-------------|  
 |**Dettagli computer**|Fare clic sul collegamento **Fare clic per ulteriori informazioni** per visualizzare informazioni su capacità di risparmio energia, impostazioni di risparmio energia e combinazioni per il risparmio di energia applicate per il computer selezionato.<br /><br /> Per altre informazioni, vedere la sezione [Computer Details Report](#BKMK_Computer_Details) in questo argomento.|  
 
-###  <a name="a-namebkmkinsomniaa-insomnia-report"></a><a name="BKMK_Insomnia"></a> Report errore sospensione  
+###  <a name="a-namebkmkinsomniaa-insomnia-report"></a><a name="BKMK_Insomnia"></a> Insomnia report  
  Il **Report errore sospensione** visualizza un elenco di cause comuni che hanno impedito ai computer di entrare in stato di sospensione o di ibernazione e il numero di computer interessati da ogni causa per un periodo di tempo specificato. Esistono una serie di cause che possono impedire a un computer di entrare in stato di sospensione o ibernazione, ad esempio un processo in esecuzione nel computer, una sessione di Desktop remoto aperta o il fatto che il computer non supporti la sospensione o l'ibernazione. Da questo report è possibile aprire il report **Dettagli errore sospensione del computer** che visualizza un elenco dei computer interessati da ogni causa.  
 
  Il report Report errore sospensione indica i computer come **Non idoneo per essere sospeso** quando non sono in grado di passare allo stato di sospensione e rimangono accesi per l'intero intervallo specificato per il report. Il report indica i computer come **Non idoneo per essere messo in stato di ibernazione** quando non sono in grado di passare allo stato di ibernazione e rimangono accesi per l'intero intervallo specificato per il report.  
@@ -598,7 +598,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 |-----------------|-------------|  
 |**Dettagli impostazioni risparmio energia**|Fare clic sul numero di computer nella colonna **Computer** per visualizzare un elenco di tutti i computer che usano le impostazioni di risparmio energia in tale riga.<br /><br /> Per altre informazioni, vedere la sezione [Power Settings Details Report](#BKMK_Settings_Details) in questo argomento.|  
 
-###  <a name="a-namebkmksettingsdetailsa-power-settings-details-report"></a><a name="BKMK_Settings_Details"></a> Report Dettagli impostazioni risparmio energia  
+###  <a name="a-namebkmksettingsdetailsa-power-settings-details-report"></a><a name="BKMK_Settings_Details"></a> Power Settings Details report  
  Il report **Dettagli impostazioni risparmio energia** visualizza ulteriori informazioni sui computer selezionati nel report **Impostazioni risparmio energia** . Questo report viene chiamato dal report **Impostazioni risparmio energia** e non è progettato per essere eseguito direttamente dall'amministratore del sito.  
 
 #### <a name="required-report-parameters"></a>Parametri obbligatori del report  

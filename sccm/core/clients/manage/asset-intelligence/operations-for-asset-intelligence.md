@@ -308,7 +308,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
     > [!NOTE]  
     >  Il software che viene inviato a System Center Online per la categorizzazione ha uno stato di convalida **In attesa** in un sito di amministrazione centrale, ma viene ancora visualizzato con uno stato di convalida **Senza categoria** nei siti primari figlio.  
 
-##  <a name="a-namebkmkresolvesoftwaredetailsa-resolve-software-details-conflicts"></a><a name="BKMK_ResolveSoftwareDetails"></a> Risolvere i conflitti nei dettagli software  
+##  <a name="a-namebkmkresolvesoftwaredetailsa-resolve-software-details-conflicts"></a><a name="BKMK_ResolveSoftwareDetails"></a> Risolvere i conflitti dei dettagli software  
  Dopo aver ricevuto da System Center Online nuovi dettagli di categorizzazione software aggiornati in conflitto con informazioni sui dettagli software esistenti, è possibile scegliere come risolvere il conflitto. Il software che presenta un conflitto corrente ha uno stato di convalida **Aggiornabile**. Dopo la risoluzione dei conflitti dei dettagli software, le informazioni di categorizzazione software vengono conservate nel catalogo di Asset Intelligence in base all'impostazione specificata. Un conflitto dei dettagli software non si verifica di nuovo per lo stesso valore di categorizzazione software a meno che il valore di System Center Online non cambi dopo la risoluzione del conflitto.  
 
  Attenersi alla procedura seguente per risolvere un conflitto dei dettagli software.  

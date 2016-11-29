@@ -52,7 +52,7 @@ Usare le sezioni seguenti per gestire la peer cache.
 
 -   Aggiornamenti software  
 
-##  <a name="a-namebkmkpeercacheworka-how-does-windows-pe-peer-cache-work"></a><a name="BKMK_PeerCacheWork"></a> Funzionamento della peer cache di Windows PE  
+##  <a name="a-namebkmkpeercacheworka-how-does-windows-pe-peer-cache-work"></a><a name="BKMK_PeerCacheWork"></a> Come funziona la peer cache di Windows PE?  
  Si consideri uno scenario con una filiale che non dispone di un punto di distribuzione ma che invece dispone di vari client abilitati all'uso della peer cache di Windows PE. Si distribuisce la sequenza di attività configurata per l'uso della peer cache in diversi client che sono configurati come parte dell'origine peer cache. Il primo client a eseguire la sequenza di attività trasmette una richiesta di un peer con il contenuto. Poiché non ne trova uno, ottiene il contenuto da un punto di distribuzione attraverso la rete WAN. Il client installa la nuova immagine e archivia il contenuto nella relativa cache del client di Configuration Manager in modo che funzioni come origine peer cache per altri client. Quando il client successivo esegue la sequenza di attività, trasmette una richiesta nella subnet per un’origine peer cache, e il primo client risponde rendendo disponibile il contenuto memorizzato nella cache.  
 
 ##  <a name="a-namebkmkpeercachedeterminea-determine-what-clients-will-be-part-of-the-windows-pe-peer-cache-source"></a><a name="BKMK_PeerCacheDetermine"></a> Determinare quali client faranno parte dell'origine peer cache di Windows PE  

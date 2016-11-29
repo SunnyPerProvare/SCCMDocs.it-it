@@ -28,7 +28,7 @@ ms.openlocfilehash: 1abd28aa4ce4f946f6328f8f7924b5f5a81e640c
 System Center Configuration Manager usa la **replica basata su file** e la **replica di database** per il trasferimento di diversi tipi di informazioni tra siti.  Le sezioni di questo argomento illustrano il modo in cui Configuration Manager sposta i dati tra i siti e come gestire il trasferimento dei dati nella propria rete.  
 
 
-##  <a name="a-namebkmkfileroutea-file-based-replication"></a><a name="bkmk_fileroute"></a> Replica basata su file  
+##  <a name="a-namebkmkfileroutea-file-based-replication"></a><a name="bkmk_fileroute"></a> File-based replication  
  Configuration Manager usa la replica basata su file per trasferire i dati basati su file tra i siti all'interno della gerarchia. Tali dati includono contenuti quali applicazioni e pacchetti che si desidera distribuire in punti di distribuzione nei siti figlio, oltre ai record dei dati di individuazione non elaborati che vengono trasferiti ai siti padre in fase di elaborazione.  
 
  La comunicazione tra siti basata su file usa il protocollo **Server Message Block** (SMB) con la **porta TCP/IP 445**. È possibile specificare configurazioni che includano la limitazione della larghezza di banda e la modalità a impulsi per controllare la quantità di dati trasferiti attraverso la rete, oltre a pianificazioni per controllare quando inviare i dati attraverso la rete.  
@@ -72,7 +72,7 @@ Per gestire una route di replica file, nell'area di lavoro **Amministrazione** e
 
 Per gestire il mittente per un sito, espandere il nodo **Configurazione del sito** nell'area di lavoro **Amministrazione** , selezionare il nodo **Siti** , quindi fare clic su **Proprietà** per il sito che si desidera gestire. Fare clic sulla scheda **Mittente** per modificare la configurazione del mittente.  
 
-##  <a name="a-namebkmkdbrepa-database-replication"></a><a name="bkmk_dbrep"></a> Replica di database  
+##  <a name="a-namebkmkdbrepa-database-replication"></a><a name="bkmk_dbrep"></a> Database replication  
 La replica di database di Configuration Manager usa SQL Server per trasferire i dati e unire le modifiche apportate in un database del sito con le informazioni archiviate nel database in altri siti della gerarchia.  
 
 -   In questo modo, tutti i siti condividono le stesse informazioni  

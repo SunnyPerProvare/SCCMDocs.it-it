@@ -69,7 +69,7 @@ Per pianificare la migrazione client, utilizzare le seguenti informazioni:
 
 Dopo la migrazione del client nella gerarchia di destinazione, non è più possibile gestire il dispositivo utilizzando la gerarchia di origine ed è necessario valutare la rimozione del client dalla gerarchia di origine. Benché non si tratti di un requisito relativo alla migrazione tra gerarchie, questo consente di impedire il rilevamento di un client migrato in un report della gerarchia di origine o un conteggio errato delle risorse tra le due gerarchie durante la migrazione. Quando ad esempio un client migrato rimane nel database del sito di origine, è possibile eseguire un report degli aggiornamenti software che rileva erroneamente il computer come risorsa non gestita, sebbene il computer sia ora gestito dalla gerarchia di destinazione.  
 
-##  <a name="a-nameplanningforclientdatamigrationa-plan-to-handle-data-maintained-on-clients-during-migration"></a><a name="Planning_for_Client_Data_Migration"></a> Pianificare la gestione dei dati mantenuti nei client durante la migrazione  
+##  <a name="a-nameplanningforclientdatamigrationa-plan-to-handle-data-maintained-on-clients-during-migration"></a><a name="Planning_for_Client_Data_Migration"></a> Pianificare la gestione dei dati conservati nei client durante la migrazione  
 Quando si esegue la migrazione di un client dalla gerarchia di origine alle gerarchia di destinazione, alcune informazioni vengono conservate nel dispositivo, mentre altre informazioni non sono più disponibili nel dispositivo dopo la migrazione.  
 
 Le seguenti informazioni vengono conservate nel dispositivo client:  

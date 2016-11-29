@@ -32,7 +32,7 @@ ms.openlocfilehash: c475c560971ab73e8be7671164a010a91bd3f229
 > [!IMPORTANT]  
 >  Si tratta di una funzionalità di versione non definitiva disponibile negli aggiornamenti 1602 e 1606. Le funzionalità di versioni non definitive sono incluse nel prodotto a scopo di test preliminare in un ambiente di produzione, ma non devono essere considerate pronte per l'ambiente di produzione. Per altre informazioni, vedere la sezione relativa all'[abilitazione delle funzionalità facoltative dagli aggiornamenti](../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease).
 > - Dopo aver installato l'aggiornamento 1602, il tipo di funzionalità viene visualizzato come rilasciato anche se si tratta di una funzionalità di versione non definitiva.
-> - Se in seguito si esegue l'aggiornamento dalla versione 1602 alla versione 1606, il tipo di funzionalità viene visualizzato come rilasciato anche se rimane una funzionalità di versione non definitiva.
+> - Se si esegue l'aggiornamento dalla versione 1602 alla versione 1606, il tipo di funzionalità viene visualizzato come rilasciato anche se rimane come funzionalità di versione non definita.
 > - Se si esegue l'aggiornamento dalla versione 1511 direttamente alla versione 1606, il tipo di funzionalità viene visualizzato come funzionalità di versione non definitiva.
 
  Per informazioni su come configurare l'accesso condizionale per i dispositivi registrati e gestiti da Intune o per i PC appartenenti a un dominio e non valutati per verificarne la conformità, vedere [Gestire l'accesso ai servizi in System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md).  

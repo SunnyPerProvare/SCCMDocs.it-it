@@ -27,7 +27,7 @@ ms.openlocfilehash: 59c13b65cf93fa12218336e1a03b8f7c2d82aa5f
 
 Questo argomento contiene informazioni sulla sicurezza e la privacy per l'inventario hardware in System Center Configuration Manager.  
 
-##  <a name="a-namebkmksecurityhardwareinventorya-security-best-practices-for-hardware-inventory"></a><a name="BKMK_Security_HardwareInventory"></a> Procedure di sicurezza consigliate per l'inventario hardware  
+##  <a name="a-namebkmksecurityhardwareinventorya-security-best-practices-for-hardware-inventory"></a><a name="BKMK_Security_HardwareInventory"></a> Procedure consigliate di sicurezza per l'inventario hardware  
  Usare le procedure consigliate di sicurezza seguenti quando vengono raccolti i dati dell'inventario hardware dai client:  
 
 |Procedura di sicurezza consigliata|Altre informazioni|  

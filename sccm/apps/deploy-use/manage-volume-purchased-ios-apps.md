@@ -91,7 +91,7 @@ Nel nodo **Token di Volume Purchase Program di Apple** è ora possibile visualiz
 1.  Nella console di Configuration Manager fare clic su **Raccolta software** > **Gestione applicazioni** > **Informazioni di licenza per le app dello Store**.  
 
 3.  Scegliere l'app che si vuole distribuire quindi nella scheda **Home** nel gruppo **Crea** fare clic su **Crea applicazione**.
-Viene creata un'applicazione di Configuration Manager contenente l'app di Windows Store per le aziende. Sarà quindi possibile distribuire e monitorare l'applicazione come qualsiasi altra applicazione di Configuration Manager.
+Viene creata un'applicazione di Configuration Manager contenente l'archivio di Windows per l'applicazione aziendale. Sarà quindi possibile distribuire e monitorare l'applicazione come qualsiasi altra applicazione di Configuration Manager.
 
     > [!IMPORTANT]  
     > È necessario scegliere lo scopo della distribuzione **Richiesto**. Le installazioni disponibili non sono attualmente supportate.
