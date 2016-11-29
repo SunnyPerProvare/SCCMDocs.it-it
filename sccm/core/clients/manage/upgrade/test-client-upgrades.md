@@ -39,7 +39,7 @@ Per l'aggiornamento del client di Configuration Manager nei PC e nei dispositivi
 > [!TIP]  
 >  Se si esegue l'aggiornamento dell'infrastruttura di server da una versione precedente di Configuration Manager \(ad esempio Configuration Manager 2007 o System Center 2012 Configuration Manager\), è consigliabile completare gli aggiornamenti dei server, tra cui l'installazione di tutti gli aggiornamenti del ramo corrente, prima dell'aggiornamento dei client di Configuration Manager.   L'aggiornamento più recente del ramo corrente contiene la versione più recente del client, quindi è consigliabile eseguire gli aggiornamenti dei client dopo aver installato tutti gli aggiornamenti di Configuration Manager che si vogliono usare.  
 
-##  <a name="a-namebkmkconfiga-to-configure-automatic-client-upgrades-to-use-a-preproduction-collection"></a><a name="BKMK_config"></a> Per configurare gli aggiornamenti client automatici per l'uso di una raccolta di pre-produzione  
+##  <a name="a-namebkmkconfiga-to-configure-automatic-client-upgrades-to-use-a-preproduction-collection"></a><a name="BKMK_config"></a> Per configurare gli aggiornamenti automatici del client per l'uso di una raccolta di pre-produzione  
 
 1. Impostare una raccolta che contiene i computer nei quali si vuole distribuire il client di pre-produzione. Per altre informazioni su questo passo, vedere [How to create collections](..\collections\create-collections.md) (Come creare raccolte).
 

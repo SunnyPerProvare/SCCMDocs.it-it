@@ -26,7 +26,7 @@ ms.openlocfilehash: 83066e1f0e3c6536649e9b74ca13562c9d817619
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-I profili di posta elettronica con Microsoft Intune consentono il provisioning di dispositivi con restrizioni e profili di posta elettronica tramite Exchange ActiveSync. In questo modo gli utenti possono accedere alla posta elettronica aziendale dai propri dispositivi dopo aver eseguito pochissime operazioni di configurazione.  
+I profili di posta elettronica supportano Microsoft Intune per consentire il provisioning di dispositivi con restrizioni e profili di posta elettronica usando Exchange ActiveSync. In questo modo gli utenti possono accedere alla posta elettronica aziendale dai propri dispositivi dopo aver eseguito pochissime operazioni di configurazione.  
 
  È possibile configurare i seguenti tipi di dispositivi con profili di posta elettronica:  
 
@@ -45,7 +45,7 @@ I profili di posta elettronica con Microsoft Intune consentono il provisioning d
 
  Oltre a configurare un account di posta elettronica sul dispositivo, è anche possibile configurare le impostazioni di sincronizzazione per i contatti, i calendari e le attività.  
 
- Quando si crea un profilo di posta elettronica, è possibile includere un'ampia gamma di impostazioni di sicurezza, tra cui certificati per l'identità, la crittografia e la firma, per i quali è stato effettuato il provisioning usando profili certificato in System Center Configuration Manager. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](introduction-to-certificate-profiles.md).  
+ Quando si crea un profilo di posta elettronica, è possibile includere un'ampia gamma di impostazioni di protezione, tra cui i certificati per l'identità, la crittografia e la firma, per i quali è stato effettuato il provisioning usando profili certificato in System Center Configuration Manager. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](introduction-to-certificate-profiles.md).  
 
 
 

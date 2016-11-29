@@ -51,7 +51,7 @@ Con Configuration Manager e Intune è possibile abilitare la registrazione dei d
 
     1.  Usando un browser andare al [portale Apple Push Certificates](http://go.microsoft.com/fwlink/?LinkId=269844) e accedere con il proprio ID Apple aziendale. Questo ID Apple deve essere usato in futuro per rinnovare il certificato APN.  
 
-    2.  Completare la procedura guidata usando il file della richiesta di firma del certificato (con estensione CSR). Scaricare il certificato APNs e salvare il file PEM in locale. Questo file del certificato APN con estensione pem viene usato per stabilire una relazione di trust tra il server Apple Push Notification e l'autorità di gestione del dispositivo mobile di Intune.  
+    2.  Completare la procedura guidata usando il file della richiesta di firma del certificato (con estensione CSR). Scaricare il certificato APNs e salvare il file PEM in locale. Questo file del certificato APN con estensione pem viene usato per stabilire una relazione di trust tra il server Apple Push Notification e l'autorità di gestione dei dispositivi mobili di Intune.  
 
 4.  **Abilitare la registrazione e caricare il certificato APNs** : per abilitare la registrazione iOS, caricare il certificato APNs.  
 

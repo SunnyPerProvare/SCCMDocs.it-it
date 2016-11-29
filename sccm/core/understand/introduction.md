@@ -182,7 +182,7 @@ Configuration Manager usa anche:
 
  Questa procedura di configurazione e i relativi risultati consentono a Trey Research di semplificare la gestione dei client per dispositivi.  
 
-###  <a name="a-namebkmkscenariosimplifya-example-scenario-simplify-client-management-for-devices"></a><a name="BKMK_ScenarioSimplify"></a> Scenario di esempio: semplificare la gestione client per i dispositivi  
+###  <a name="a-namebkmkscenariosimplifya-example-scenario-simplify-client-management-for-devices"></a><a name="BKMK_ScenarioSimplify"></a> Scenario di esempio: semplificare la gestione client per dispositivi  
  Trey Research vuole che tutti i nuovi computer installino automaticamente l'immagine del computer di base dell'azienda, che esegue Windows 7. Dopo che l'immagine del sistema operativo viene installata, i computer devono essere gestiti e monitorati per il software aggiuntivo installato dagli utenti. I computer che archiviano informazioni altamente riservate richiedono criteri di gestione più restrittivi rispetto ad altri computer. Ad esempio, i tecnici del supporto tecnico non devono connettersi da remoto, è necessario usare l'immissione PIN di BitLocker per il riavvio e solo gli amministratori locali possono installare software.  
 
  Davide esegue il mapping di questi requisiti aziendali agli scenari seguenti:  

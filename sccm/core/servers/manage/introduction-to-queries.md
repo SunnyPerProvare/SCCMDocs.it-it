@@ -37,7 +37,7 @@ ms.openlocfilehash: 054f3cc5ba7963231df93ed0ceb973d20b2e8f8e
  È anche possibile importare una query in una regola di query all'interno di una raccolta di Configuration Manager. Per altre informazioni, vedere [How to create collections in System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md) (Come creare le raccolte in System Center Configuration Manager).  
 
 ## <a name="see-also"></a>Vedere anche  
- [Queries technical reference for System Center Configuration Manager](../../../core/servers/manage/queries-technical-reference.md) (Riferimento tecnico per le query per System Center Configuration Manager)
+ [Riferimento tecnico per le query per System Center Configuration Manager](../../../core/servers/manage/queries-technical-reference.md)
 
 
 

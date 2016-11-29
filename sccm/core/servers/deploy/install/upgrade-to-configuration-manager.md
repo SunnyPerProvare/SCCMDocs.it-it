@@ -409,7 +409,7 @@ Nella pagina **Aggiorna** il programma di installazione consente di visualizzare
 
 L'aggiornamento del sito secondario procede in background. Dopo aver completato l'aggiornamento, è possibile confermare lo stato della console di Configuration Manager. Per confermare lo stato, selezionare il server del sito secondario, quindi nella scheda **Home** del gruppo **Sito** fare clic su **Mostra stato installazione**.  
 
-##  <a name="a-namebkmkpostupgradea-perform-post-upgrade-tasks"></a><a name="BKMK_PostUpgrade"></a> Eseguire le attività di post-aggiornamento  
+##  <a name="a-namebkmkpostupgradea-perform-post-upgrade-tasks"></a><a name="BKMK_PostUpgrade"></a> Eseguire le attività successive all'aggiornamento  
 Dopo aver aggiornato un sito a un nuovo Service Pack, si potrebbe dover completare delle attività aggiuntive per completare l'aggiornamento o riconfigurare il sito. Potrebbe essere ad esempio necessario l'aggiornamento dei client di Configuration Manager o delle console di Configuration Manager, tramite la riabilitazione delle repliche di database per i punti di gestione oppure il ripristino delle impostazioni per le funzionalità di Configuration Manager che si usano e che non sono state mantenute dopo l'aggiornamento del Service Pack.  
 
 **Problemi noti:**  
