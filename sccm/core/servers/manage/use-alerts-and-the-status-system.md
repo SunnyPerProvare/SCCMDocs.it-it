@@ -204,7 +204,7 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
 |Configurare le sottoscrizioni e-mail agli avvisi|Vedere la sezione [Management tasks for alerts](#BKMK_Manage) in questo argomento.|  
 |Avvisi di monitoraggio|Vedere la sezione [Avvisi di monitoraggio](#BKMK_MonitorAlerts)|  
 
-###  <a name="a-namebkmkmanagea-management-tasks-for-alerts"></a><a name="BKMK_Manage"></a> Attività di gestione per gli avvisi  
+###  <a name="a-namebkmkmanagea-management-tasks-for-alerts"></a><a name="BKMK_Manage"></a> Management tasks for alerts  
 
 ##### <a name="to-manage-general-alerts"></a>Per gestire gli avvisi generali  
 
@@ -243,7 +243,7 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
 
     -   **Nome avviso**: accettare il nome predefinito o immettere un nuovo nome per l'avviso.  
 
-    -   **Gravità avviso**: scegliere dall'elenco a discesa il livello di gravità che verrà visualizzato nella console di Configuration Manager.  
+    -   **Gravità avviso**: nell'elenco a discesa scegliere il livello di gravità che verrà visualizzato nella console di Configuration Manager.  
 
     -   **Genera avviso**: specificare la percentuale di soglia per l'avviso.  
 

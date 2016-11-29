@@ -29,7 +29,7 @@ Questo argomento illustra la procedura generale di System Center Configuration M
 
  Per informazioni su come aggiornare un computer esistente con una nuova versione di Windows, vedere le sezioni seguenti.  
 
-##  <a name="a-namebkmkplana-plan"></a><a name="BKMK_Plan"></a> Pianificare  
+##  <a name="a-namebkmkplana-plan"></a><a name="BKMK_Plan"></a> Pianificazione  
 
 -   **Pianificare e implementare i requisiti di infrastruttura**  
 
@@ -39,7 +39,7 @@ Questo argomento illustra la procedura generale di System Center Configuration M
 
      Quando si prevede di acquisire le impostazioni dal computer esistente e quindi di ripristinarle nel nuovo sistema operativo, è necessario installare un punto di migrazione stato. Per altre informazioni, vedere [Punto di migrazione dello stato](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_StateMigrationPoints).  
 
-##  <a name="a-namebkmkconfigurea-configure"></a><a name="BKMK_Configure"></a> Configurare  
+##  <a name="a-namebkmkconfigurea-configure"></a><a name="BKMK_Configure"></a> Configura  
 
 1.  **Preparare un'immagine d'avvio**  
 
@@ -66,7 +66,7 @@ Questo argomento illustra la procedura generale di System Center Configuration M
     > [!NOTE]  
     >  In questo scenario, se si acquisisce e si ripristinano le impostazioni e i file dell'utente, è possibile scegliere di usare un punto di migrazione stato o salvare i file in locale. Per altre informazioni, vedere [Gestire lo stato utente](../get-started/manage-user-state.md).  
 
-##  <a name="a-namebkmkdeploya-deploy"></a><a name="BKMK_Deploy"></a> Distribuire  
+##  <a name="a-namebkmkdeploya-deploy"></a><a name="BKMK_Deploy"></a> Distribuisci  
 
 -   Usare uno dei metodi di distribuzione seguenti per distribuire il sistema operativo:  
 

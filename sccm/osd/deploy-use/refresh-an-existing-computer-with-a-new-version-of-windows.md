@@ -29,7 +29,7 @@ Questo argomento illustra la procedura generale in Configuration Manager per ese
 
  Per informazioni su come aggiornare un computer esistente con una nuova versione di Windows, vedere le sezioni seguenti.  
 
-##  <a name="a-namebkmkplana-plan"></a><a name="BKMK_Plan"></a> Pianificare  
+##  <a name="a-namebkmkplana-plan"></a><a name="BKMK_Plan"></a> Pianificazione  
 
 -   **Pianificare e implementare i requisiti di infrastruttura**  
 
@@ -39,7 +39,7 @@ Questo argomento illustra la procedura generale in Configuration Manager per ese
 
      Quando si prevede di acquisire le impostazioni dal computer esistente e quindi di ripristinarle nel nuovo sistema operativo, è necessario installare un punto di migrazione stato. Per altre informazioni, vedere [Punto di migrazione dello stato](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_StateMigrationPoints).  
 
-##  <a name="a-namebkmkconfigurea-configure"></a><a name="BKMK_Configure"></a> Configurare  
+##  <a name="a-namebkmkconfigurea-configure"></a><a name="BKMK_Configure"></a> Configura  
 
 1.  **Preparare un'immagine d'avvio**  
 
@@ -66,7 +66,7 @@ Questo argomento illustra la procedura generale in Configuration Manager per ese
     > [!NOTE]  
     >  In questo scenario, la sequenza di attività formatta e partiziona i dischi rigidi del computer. Per acquisire le impostazioni utente, è necessario usare il punto di migrazione stato e selezionare **Salva impostazioni utente e file in punto di migrazione stato** nella pagina **Migrazione stato** della Creazione guidata della sequenza attività. Se le impostazioni utente e i file vengono salvati localmente, andranno persi quando il disco rigido viene formattato e Configuration Manager non potrà ripristinare le impostazioni. Per altre informazioni, vedere [Gestire lo stato utente](../get-started/manage-user-state.md).  
 
-##  <a name="a-namebkmkdeploya-deploy"></a><a name="BKMK_Deploy"></a> Distribuire  
+##  <a name="a-namebkmkdeploya-deploy"></a><a name="BKMK_Deploy"></a> Distribuisci  
 
 -   Usare uno dei metodi di distribuzione seguenti per distribuire il sistema operativo:  
 

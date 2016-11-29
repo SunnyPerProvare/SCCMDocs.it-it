@@ -118,7 +118,7 @@ Quando si crea un limite, viene assegnato automaticamente un nome basato sul tip
 
 7.  Fare clic su **OK** per chiudere le proprietà del limite e salvare la configurazione.  
 
-##  <a name="a-namebkmkboundarygroupsa-boundary-groups"></a><a name="BKMK_BoundaryGroups"></a> Gruppi di limiti  
+##  <a name="a-namebkmkboundarygroupsa-boundary-groups"></a><a name="BKMK_BoundaryGroups"></a> Boundary groups  
  I gruppi di limiti vengono creati per raggruppare logicamente i percorsi di rete correlati (limiti) e semplificare la gestione dell'infrastruttura. Prima di usare un gruppo di limiti è necessario assegnare i limiti ai gruppi di limiti. I client usano la configurazione del gruppo di limiti per:  
 
 -   Assegnazione automatica del sito  
