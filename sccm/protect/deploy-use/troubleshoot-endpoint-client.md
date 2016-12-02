@@ -236,7 +236,7 @@ Se si verificano problemi con Windows Defender o Endpoint Protection, chiedere a
  **Sintomo**  
 
  Viene visualizzato un messaggio di notifica per informare che **Windows Defender o**  
- **Endpoint Protection non monitora il computer perché il servizio del programma è stato arrestato. È necessario riavviarlo.**  
+ **Endpoint Protection non monitora il computer perché il servizio del programma è stato arrestato. È necessario riavviarlo.**â€  
 
  **Soluzione**  
 
@@ -244,7 +244,7 @@ Se si verificano problemi con Windows Defender o Endpoint Protection, chiedere a
 
 -   Chiudere tutte le applicazioni e riavviare il computer.  
 
-### <a name="step-2-make-sure-the-windows-defender-orbr-endpoint-protection-service-is-set-to-automatic-and-is-started"></a>Passaggio 2: verificare che il servizio Windows Defender o<br />      Endpoint Protection sia impostato su Automatico e che sia avviato  
+### <a name="step-2-make-sure-the-windows-defender-orbr-endpoint-protection-service-is-set-to-automatic-and-is-started"></a>Passaggio 2: verificare che il servizio Windows Defender o<br />      "Endpoint Protectionâ€ sia impostato su Automatico e che sia avviato  
 
 1.  Fare clic su **Start** , cercare **services.msc**e quindi premere **INVIO**.  
 

@@ -40,7 +40,7 @@ ms.openlocfilehash: 1dafd0b61a61a0fd2f2c597b89dea7cd6ac715a8
 
  Se si utilizza un server Web proxy, potrebbe essere necessario configurare le impostazioni proxy per abilitare la comunicazione con il servizio cloud che ospita il punto di distribuzione.  
 
-##  <a name="a-namebkmkconfigwindowsazureandinstalldpa-configure-microsoft-azure-and-install-cloud-based-distribution-points"></a><a name="BKMK_ConfigWindowsAzureandInstallDP"></a>Configurare Microsoft Azure e installare punti di distribuzione basati sul cloud  
+##  <a name="a-namebkmkconfigwindowsazureandinstalldpa-configure-microsoft-azure-and-install-cloud-based-distribution-points"></a><a name="BKMK_ConfigWindowsAzureandInstallDP"></a> Configurare Microsoft Azure e installare punti di distribuzione basati sul cloud  
  Usare le procedure seguenti per configurare Microsoft Azure per il supporto dei punti di distribuzione, quindi installare il punto di distribuzione basato sul cloud in Configuration Manager.  
 
 #### <a name="to-configure-a-cloud-service-in-microsoft-azure-for-a-distribution-point"></a>Per configurare un servizio cloud in Microsoft Azure per un punto di distribuzione  
@@ -109,7 +109,7 @@ ms.openlocfilehash: 1dafd0b61a61a0fd2f2c597b89dea7cd6ac715a8
 
 Per eseguire il mapping del nome del servizio fornito con il certificato di servizio del punto di distribuzione basato sul cloud di Configuration Manager (ad esempio **clouddp1.contoso.com**) nell'FQDN del servizio Microsoft Azure (ad esempio **d1594d4527614a09b934d470.cloudapp.net**), i server DNS su Internet devono disporre di un alias DNS (record CNAME). I client possono quindi risolvere l'FQDN del servizio Microsoft Azure nell'indirizzo IP usando i server DNS su Internet.  
 
-##  <a name="a-namebkmkconfigproxyforclouda-configure-proxy-settings-for-primary-sites-that-manage-cloud-services"></a><a name="BKMK_ConfigProxyforCloud"></a>Configurare le impostazioni proxy per i siti primari che gestiscono servizi cloud  
+##  <a name="a-namebkmkconfigproxyforclouda-configure-proxy-settings-for-primary-sites-that-manage-cloud-services"></a><a name="BKMK_ConfigProxyforCloud"></a> Configurare le impostazioni proxy per i siti primari che gestiscono servizi cloud  
  Quando si usano servizi cloud con Configuration Manager, il sito primario che gestisce il punto di distribuzione basato sul cloud deve essere in grado di connettersi al portale di gestione di Microsoft Azure usando l'account **di sistema** del computer del sito primario. Questa connessione viene effettuata utilizzando il browser Web predefinito sul computer del server del sito primario.  
 
  Potrebbe essere necessario configurare le impostazioni proxy sul server del sito primario che gestisce il punto di distribuzione basato su cloud per consentire al sito primario di accedere a Internet e Microsoft Azure.  

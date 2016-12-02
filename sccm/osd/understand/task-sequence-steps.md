@@ -1124,7 +1124,7 @@ In Configuration Manager versione 1606 è stata inserita la nuova variabile di s
  **Non reimpostare il flag di attivazione**  
  Selezionare questa opzione per impedire a Sysprep di reimpostare il flag di attivazione del prodotto.  
 
-##  <a name="a-namebkmkpreprovisionbitlockera-pre-provision-bitlocker"></a><a name="BKMK_PreProvisionBitLocker"></a> BitLocker pre-provisioning  
+##  <a name="a-namebkmkpreprovisionbitlockera-pre-provision-bitlocker"></a><a name="BKMK_PreProvisionBitLocker"></a> Eseguire il pre-provisioning di BitLocker  
  Usare il passaggio **BitLocker pre-provisioning** della sequenza di attività per abilitare BitLocker in un'unità in Windows PE. Solo lo spazio su disco usato viene crittografato e pertanto i tempi di crittografia sono molto più veloci. È possibile applicare le opzioni di gestione delle chiavi usando il passaggio [Attiva BitLocker](#BKMK_EnableBitLocker) della sequenza di attività dopo l'installazione del sistema operativo. Questo passaggio può essere eseguito solo in Windows PE. Non può essere eseguito in un sistema operativo standard.  
 
 > [!IMPORTANT]  

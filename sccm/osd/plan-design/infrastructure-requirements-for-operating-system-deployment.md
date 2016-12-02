@@ -27,7 +27,7 @@ ms.openlocfilehash: e78cc0d45127df521e362e4cd96b492ddc110a2a
 
 La distribuzione del sistema operativo in System Center Configuration Manager 2012 ha dipendenze esterne e dipendenze all'interno del prodotto. Usare le sezioni seguenti per prepararsi per la distribuzione del sistema operativo.  
 
-##  <a name="a-namebkmkexternaldependenciesa-dependencies-external-to-configuration-manager"></a><a name="BKMK_ExternalDependencies"></a>Dipendenze esterne a Configuration Manager  
+##  <a name="a-namebkmkexternaldependenciesa-dependencies-external-to-configuration-manager"></a><a name="BKMK_ExternalDependencies"></a> Dipendenze esterne a Configuration Manager  
  Di seguito sono riportate informazioni su strumenti esterni, kit di installazione e sistemi operativi richiesti per distribuire sistemi operativi in Configuration Manager.  
 
 ### <a name="windows-adk-for-windows-10"></a>Windows ADK per Windows 10  
@@ -176,7 +176,7 @@ La distribuzione del sistema operativo in System Center Configuration Manager 20
 
 -   Se il provider è installato in un server remoto, è necessario installare WDS nel server del sito e nel provider remoto.  
 
-###  <a name="a-namebkmkwdsanddhcpa-considerations-when-you-have-wds-and-dhcp-on-the-same-server"></a><a name="BKMK_WDSandDHCP"></a> Considerazioni in presenza di WDS e DHCP nello stesso server  
+###  <a name="a-namebkmkwdsanddhcpa-considerations-when-you-have-wds-and-dhcp-on-the-same-server"></a><a name="BKMK_WDSandDHCP"></a> Considerazioni in presenza di Servizi di distribuzione Windows e DHCP nello stesso server  
  Se si prevede di co-ospitare il punto di distribuzione in un server DHCP, prendere in considerazione i seguenti aspetti di configurazione.  
 
 -   È necessario disporre di un server DHCP funzionante con un ambito attivo. I Servizi di distribuzione Windows utilizzano PXE, che richiede un server DHCP.  
@@ -211,7 +211,7 @@ La distribuzione del sistema operativo in System Center Configuration Manager 20
 ##  <a name="a-namebkmksupportedosa-supported-operating-systems"></a><a name="BKMK_SupportedOS"></a> Sistemi operativi supportati  
  Tutti i sistemi operativi Windows indicati come sistemi operativi client supportati in [Sistemi operativi supportati per client e dispositivi](../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md) sono supportati per le distribuzioni del sistema operativo.  
 
-##  <a name="a-namebkmksupporteddiskconfiga-supported-disk-configurations"></a><a name="BKMK_SupportedDiskConfig"></a> Configurazioni supportate per il disco  
+##  <a name="a-namebkmksupporteddiskconfiga-supported-disk-configurations"></a><a name="BKMK_SupportedDiskConfig"></a> Configurazioni del disco supportate  
  Le combinazioni di configurazioni del disco rigido nei computer di riferimento e di destinazione supportate per la distribuzione del sistema operativo di Configuration Manager sono visualizzate nella tabella seguente.  
 
 |Configurazione del disco rigido del computer di riferimento|Configurazione del disco rigido del computer di destinazione|  

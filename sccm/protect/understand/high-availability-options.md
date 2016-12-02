@@ -58,7 +58,7 @@ Opzioni che supportano una disponibilità elevata:
 -   [Hardware consigliato](../../core/plan-design/configs/recommended-hardware.md)
 -   [Sistemi operativi supportati per i server del sistema del sito](../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)  
 
--   [Prerequisiti del sito e del sistema del sito per System Center Configuration Manager](../../core/plan-design/configs/site-and-site-system-prerequisites.md)
+-   [Prerequisiti del sito e del sistema del sito](../../core/plan-design/configs/site-and-site-system-prerequisites.md)
 
 
 ##  <a name="a-namebkmksnha-high-availability-for-sites-and-hierarchies"></a><a name="bkmk_snh"></a> Disponibilità elevata per siti e gerarchie  

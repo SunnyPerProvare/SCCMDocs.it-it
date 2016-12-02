@@ -120,7 +120,7 @@ Le azioni dell'individuazione foresta Active Directory vengono registrate nel fi
 
 Per altre informazioni su come configurare questo metodo di individuazione, vedere [Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md) (Configurare i metodi di individuazione per System Center Configuration Manager)  
 
-##  <a name="a-namebkmkaboutsystema-active-directory-system-discovery"></a><a name="bkmk_aboutSystem"></a> Individuazione sistema Active Directory  
+##  <a name="a-namebkmkaboutsystema-active-directory-system-discovery"></a><a name="bkmk_aboutSystem"></a>Individuazione sistema Active Directory  
 **Configurabile:** sì  
 
 **Abilitata per impostazione predefinita:** no  
@@ -158,7 +158,7 @@ Le azioni dell'individuazione sistema Active Directory vengono registrate nel fi
 
 Per altre informazioni su come configurare questo metodo di individuazione, vedere [Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md) (Configurare i metodi di individuazione per System Center Configuration Manager)  
 
-##  <a name="a-namebkmkaboutusera-active-directory-user-discovery"></a><a name="bkmk_aboutUser"></a> Individuazione utente Active Directory  
+##  <a name="a-namebkmkaboutusera-active-directory-user-discovery"></a><a name="bkmk_aboutUser"></a> Individuazione utenti di Active Directory  
 **Configurabile:** sì  
 
 **Abilitata per impostazione predefinita:** no  
@@ -224,7 +224,7 @@ Le azioni dell'individuazione heartbeat vengono registrate nei percorsi seguenti
 
 Per altre informazioni su come configurare questo metodo di individuazione, vedere [Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md) (Configurare i metodi di individuazione per System Center Configuration Manager)  
 
-##  <a name="a-namebkmkaboutnetworka-network-discovery"></a><a name="bkmk_aboutNetwork"></a> Individuazione della rete  
+##  <a name="a-namebkmkaboutnetworka-network-discovery"></a><a name="bkmk_aboutNetwork"></a> Individuazione rete  
 **Configurabile:** sì  
 
 **Abilitata per impostazione predefinita:** no  
