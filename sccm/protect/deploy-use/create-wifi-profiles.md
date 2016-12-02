@@ -73,7 +73,7 @@ ms.openlocfilehash: 295ccc2ce7c1dae55c45113cc8ff826e30f7079a
 
 -   [Passaggio 8: completare la procedura guidata](#BKMK_Step8)  
 
-##  <a name="a-namebkmkstep1a-step-1-start-the-create-wi-fi-profile-wizard"></a><a name="BKMK_Step1"></a> Passaggio 1: avviare la Creazione guidata profilo Wi-Fi  
+##  <a name="a-namebkmkstep1a-step-1-start-the-create-wi-fi-profile-wizard"></a><a name="BKMK_Step1"></a> Passaggio 1: Avviare la Creazione guidata profilo Wi-Fi  
 
 1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 
@@ -81,7 +81,7 @@ ms.openlocfilehash: 295ccc2ce7c1dae55c45113cc8ff826e30f7079a
 
 3.  Nella scheda **Home** del gruppo **Crea** , fare clic su **Crea profilo Wi-Fi**.  
 
-##  <a name="a-namebkmkstep2a-step-2-provide-general-information-about-the-wi-fi-profile"></a><a name="BKMK_Step2"></a> Passaggio 2: inserire informazioni generali sul profilo Wi-Fi  
+##  <a name="a-namebkmkstep2a-step-2-provide-general-information-about-the-wi-fi-profile"></a><a name="BKMK_Step2"></a> Passaggio 2: Inserire informazioni generali sul profilo Wi-Fi  
 
 1.  Nella pagina **Generale** della Creazione guidata profilo Wi-Fi immette un nome univoco e una descrizione per il profilo Wi-Fi. È possibile usare un massimo di 256 caratteri.  
 
@@ -103,7 +103,7 @@ ms.openlocfilehash: 295ccc2ce7c1dae55c45113cc8ff826e30f7079a
 
     -   **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
 
-##  <a name="a-namebkmkstep3a-step-3-provide-information-about-the-wireless-network"></a><a name="BKMK_Step3"></a> Passaggio 3: inserire informazioni sulla rete wireless  
+##  <a name="a-namebkmkstep3a-step-3-provide-information-about-the-wireless-network"></a><a name="BKMK_Step3"></a> Passaggio 3: Inserire informazioni sulla rete wireless  
 
 1.  Nella pagina **Profilo Wi-Fi** della Creazione guidata profilo Wi-Fi specificare un nome descrittivo per la connessione Internet wireless usando un massimo di 32 caratteri. Questo è il nome che i dispositivi visualizzeranno come nome della rete.  
 
@@ -119,7 +119,7 @@ ms.openlocfilehash: 295ccc2ce7c1dae55c45113cc8ff826e30f7079a
 
 5.  Selezionare **Connetti quando la rete non sta trasmettendo il nome (SSID)**per consentire ai dispositivi di connettersi alla rete quando questa non è visibile nell'elenco delle reti perché è nascosta e non trasmette il suo nome.  
 
-##  <a name="a-namebkmkstep4a-step-4-configure-security-for-the-wi-fi-profile"></a><a name="BKMK_Step4"></a> Passaggio 4: configurare la sicurezza per il profilo Wi-Fi  
+##  <a name="a-namebkmkstep4a-step-4-configure-security-for-the-wi-fi-profile"></a><a name="BKMK_Step4"></a> Passaggio 4: Configurare la sicurezza per il profilo Wi-Fi  
 
 > [!IMPORTANT]  
 >  Se si intende creare un profilo Wi-Fi per la gestione dei dispositivi mobili locale, il ramo corrente di Configuration Manager supporta solo le configurazioni di sicurezza Wi-Fi seguenti:  
@@ -162,19 +162,19 @@ ms.openlocfilehash: 295ccc2ce7c1dae55c45113cc8ff826e30f7079a
 > [!NOTE]  
 >  Prima di selezionare il certificato radice e il certificato client, questi devono essere configurati e distribuiti come un profilo certificato. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](introduction-to-certificate-profiles.md).  
 
-##  <a name="a-namebkmkstep5a-step-5-configure-advanced-settings-for-the-wi-fi-profile"></a><a name="BKMK_Step5"></a> Passaggio 5: configurare le impostazioni avanzate per il profilo Wi-Fi  
+##  <a name="a-namebkmkstep5a-step-5-configure-advanced-settings-for-the-wi-fi-profile"></a><a name="BKMK_Step5"></a> Passaggio 5: Configurare le impostazioni avanzate per il profilo Wi-Fi  
  Nella pagina **Impostazioni avanzate** della Creazione guidata profilo Wi-Fi, specificare le impostazioni avanzate per il profilo Wi-Fi, ad esempio la modalità di autenticazione, le opzioni Single Sign-On e la conformità a FIPS (Federal Information Processing Standards). Per altre informazioni su queste opzioni, vedere la documentazione di Windows.  
 
 > [!NOTE]  
 >  Le impostazioni avanzate potrebbero non essere disponibili, o variare, in base alle opzioni selezionate nella pagina **Configurazione protezione** della procedura guidata.  
 
-##  <a name="a-namebkmkstep6a-step-6-configure-proxy-settings-for-the-wi-fi-profile"></a><a name="BKMK_Step6"></a> Passaggio 6: configurare le impostazioni proxy per il profilo Wi-Fi  
+##  <a name="a-namebkmkstep6a-step-6-configure-proxy-settings-for-the-wi-fi-profile"></a><a name="BKMK_Step6"></a> Passaggio 6: Configurare le impostazioni proxy per il profilo Wi-Fi  
 
 1.  Nella pagina **Impostazioni proxy** della Creazione guidata profilo Wi-Fi, selezionare la casella di controllo **Configura impostazioni proxy per questo profilo Wi-Fi** se la rete wireless in uso usa un server proxy.  
 
 2.  Specificare i dettagli relativi al server proxy e alle relative impostazioni. Per altre informazioni, vedere la documentazione di Windows Server.  
 
-##  <a name="a-namebkmkstep7a-step-7-configure-supported-platforms-for-the-wi-fi-profile"></a><a name="BKMK_Step7"></a> Passaggio 7: configurare le piattaforme supportate per il profilo Wi-Fi  
+##  <a name="a-namebkmkstep7a-step-7-configure-supported-platforms-for-the-wi-fi-profile"></a><a name="BKMK_Step7"></a> Passaggio 7: Configurare le piattaforme supportate per il profilo Wi-Fi  
  Nella pagina **Piattaforme supportate** della Creazione guidata profilo certificato, selezionare i sistemi operativi in cui si desidera installare il profilo Wi-Fi. In alternativa, fare clic su **Seleziona tutto** per installare il profilo Wi-Fi in tutti i sistemi operativi disponibili.  
 
 ##  <a name="a-namebkmkstep8a-step-8-complete-the-wizard"></a><a name="BKMK_Step8"></a> Passaggio 8: completare la procedura guidata  

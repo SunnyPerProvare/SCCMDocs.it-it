@@ -65,7 +65,7 @@ Usare la seguente procedura per aprire le proprietà degli aggiornamenti softwar
    > [!NOTE]  
    >  Nel nodo **Tutti gli aggiornamenti software** Configuration Manager visualizza solo gli aggiornamenti software con classificazione **Errore critico** e **Sicurezza** rilasciati negli ultimi 30 giorni.  
 
-###  <a name="a-namebkmksoftwareupdatesinformationa-review-software-updates-information"></a><a name="BKMK_SoftwareUpdatesInformation"></a> Rivedere le informazioni sugli aggiornamenti software  
+###  <a name="a-namebkmksoftwareupdatesinformationa-review-software-updates-information"></a><a name="BKMK_SoftwareUpdatesInformation"></a> Verificare le informazioni sugli aggiornamenti software  
 Nelle proprietà degli aggiornamenti software, è possibile verificare le informazioni dettagliate su un aggiornamento software. Le informazioni dettagliate non vengono visualizzate quando si seleziona più di un aggiornamento software. Nelle seguenti sezioni vengono descritte le informazioni disponibili per un aggiornamento software selezionato.  
 
 ####  <a name="a-namebkmksoftwareupdatedetailsa-software-update-details"></a><a name="BKMK_SoftwareUpdateDetails"></a> Dettagli sugli aggiornamenti software  

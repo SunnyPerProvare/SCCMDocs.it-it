@@ -172,7 +172,7 @@ ms.openlocfilehash: a439d847adb129a341b33be8e1a1674c72184e77
 
  Per altre informazioni sulla creazione delle variabili della sequenza di attività per computer e raccolte, vedere [Creare variabili della sequenza di attività per computer e raccolte](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_CreateTSVariables).  
 
-###  <a name="a-namebkmktsmediavariablesa-task-sequence-media-variables"></a><a name="BKMK_TSMediaVariables"></a> Variabili dei supporti della sequenza di attività  
+###  <a name="a-namebkmktsmediavariablesa-task-sequence-media-variables"></a><a name="BKMK_TSMediaVariables"></a> Variabili dei supporti per sequenza di attività  
  È possibile specificare variabili per le sequenze attività che vengono eseguite dal supporto. Quando si usa un supporto per la distribuzione del sistema operativo, al momento della creazione del supporto devono essere aggiunte le variabili della sequenza di attività e specificati i relativi valori. Le variabili e i valori correlati vengono memorizzati nel supporto.  
 
 > [!NOTE]  

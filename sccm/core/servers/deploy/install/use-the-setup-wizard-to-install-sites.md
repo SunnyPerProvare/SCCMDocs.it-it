@@ -28,7 +28,7 @@ Per installare un nuovo sito di System Center Configuration Manager usando un'in
 
 Per installare un sito secondario, è necessario installare il sito dall'interno della console di Configuration Manager.  I siti secondari non supportano l'installazione con script dalla riga di comando.
 
-## <a name="a-namebkmkprimarya-install-a-central-administration-site-or-primary-site"></a><a name="bkmk_primary"></a> Installare un sito di amministrazione centrale o primario
+## <a name="a-namebkmkprimarya-install-a-central-administration-site-or-primary-site"></a><a name="bkmk_primary"></a>  Installare un sito di amministrazione centrale o primario
 Usare la procedura seguente per installare un sito di amministrazione centrale, un sito primario o per aggiornare un sito di valutazione a un sito di Configuration Manager con licenza completa.   
 
 Prima di iniziare l'installazione del sito, è consigliabile acquisire una certa familiarità con gli argomenti seguenti:
@@ -37,7 +37,7 @@ Prima di iniziare l'installazione del sito, è consigliabile acquisire una certa
 
 Se si installa un sito di amministrazione centrale come parte di uno scenario di espansione del sito, consultare la sezione relativa all'[espansione di un sito primario autonomo](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_expand) in questo argomento prima di usare la procedura seguente.
 
-### <a name="a-namebkmkinstallpria-to-install-a-primary-or-central-administration-site"></a><a name="bkmk_installpri"></a> Per installare un sito di amministrazione centrale o primario
+### <a name="a-namebkmkinstallpria-to-install-a-primary-or-central-administration-site"></a><a name="bkmk_installpri"></a>   Per installare un sito di amministrazione centrale o primario
 
 1.  Nel computer in cui si vuole installare il sito eseguire **&lt;InstallationMedia\>\SMSSETUP\BIN\X64\Setup.exe** per avviare la procedura di **Installazione guidata di System Center Configuration Manager**.  
 

@@ -92,7 +92,7 @@ Questo argomento illustra le funzionalità, i prodotti e i sistemi operativi rim
 
 -   La gestione fuori banda in System Center 2012 Configuration Manager non è interessata da questa modifica.  
 
-###  <a name="a-namebkmknapa-network-access-protection"></a><a name="bkmk_nap"></a>Protezione accesso alla rete  
+###  <a name="a-namebkmknapa-network-access-protection"></a><a name="bkmk_nap"></a> Protezione accesso alla rete  
  System Center Configuration Manager ha rimosso il supporto per la protezione accesso alla rete. Questa funzionalità è stata deprecata in Windows Server 2012 R2 ed è stata rimossa da Windows 10.  
 
  Per alternative a Protezione accesso alla rete, vedere la sezione **Funzionalità deprecata** di [Panoramica dei criteri di rete e dei servizi di accesso](https://technet.microsoft.com/library/hh831683.aspx).  

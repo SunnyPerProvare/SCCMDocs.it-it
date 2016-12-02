@@ -690,7 +690,7 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |--------------|-----------------|----------------------------|  
 |CMRcViewer.log|Registra informazioni dettagliate sull'attività del visualizzatore controllo remoto.|Nella cartella *%temp%* del computer che esegue il visualizzatore controllo remoto.|  
 
-###  <a name="a-namebkmkreportloga-reporting"></a><a name="BKMK_ReportLog"></a> Reporting  
+###  <a name="a-namebkmkreportloga-reporting"></a><a name="BKMK_ReportLog"></a> Creazione di report  
  Nella tabella seguente sono elencati i file di log di Configuration Manager contenenti informazioni correlate al reporting.  
 
 |Nome registro|Descrizione|Computer con file di log|  

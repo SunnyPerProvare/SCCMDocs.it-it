@@ -46,7 +46,7 @@ I certificati di infrastruttura a chiave pubblica (PKI) potenzialmente necessari
 
  Usare le seguenti sezioni per visualizzare i requisiti del certificato.  
 
-##  <a name="a-namebkmkpkicertificatesforserversa-pki-certificates-for-servers"></a><a name="BKMK_PKIcertificates_for_servers"></a> Certificati PKI per i server  
+##  <a name="a-namebkmkpkicertificatesforserversa-pki-certificates-for-servers"></a><a name="BKMK_PKIcertificates_for_servers"></a> Certificati PKI per server  
 
 |Componente di System Center Configuration Manager|Scopo del certificato|Modello di certificato Microsoft da usare|Informazioni specifiche del certificato|Uso del certificato in System Center Configuration Manager|  
 |-------------------------------------|-------------------------|-------------------------------------------|---------------------------------------------|----------------------------------------------------------|  

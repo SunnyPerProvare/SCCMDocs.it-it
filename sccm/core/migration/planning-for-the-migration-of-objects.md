@@ -121,7 +121,7 @@ Quando si esegue la migrazione da una gerarchia di origine di System Center 2012
 ### <a name="applications"></a>Applicazioni  
  È possibile migrare le applicazioni da una gerarchia di origine supportata di System Center 2012 Configuration Manager o System Center Configuration Manager a una gerarchia di destinazione. Se si riassegna un client dalla gerarchia di origine alle gerarchia di destinazione, il client mantiene la cronologia delle applicazioni precedentemente installate per evitare che il client esegua di nuovo l'applicazione migrata.  
 
-##  <a name="a-namebkmkmigratecollectionsa-planning-to-migrate-collections"></a><a name="BKMK_MigrateCollections"></a>Pianificazione per la migrazione di raccolte  
+##  <a name="a-namebkmkmigratecollectionsa-planning-to-migrate-collections"></a><a name="BKMK_MigrateCollections"></a> Pianificazione per la migrazione di raccolte  
  È possibile eseguire la migrazione dei criteri per le raccolte da una gerarchia di origine supportata di System Center 2012 Configuration Manager o System Center Configuration Manager. A tale scopo, si usa un processo di migrazione basato su oggetti. Quando si esegue la migrazione di una raccolta, vengono trasferite le regole per la raccolta e non le informazioni relative ai membri della raccolta o informazioni o oggetti relativi ai membri della raccolta.  
 
  La migrazione dell'oggetto della raccolta non è supportata quando si esegue la migrazione da una gerarchia di origine di Configuration Manager 2007.  
@@ -144,7 +144,7 @@ Quando si esegue la migrazione da una gerarchia di origine di System Center 2012
 
 -   Driver e pacchetti driver.  
 
-##  <a name="a-nameplanmigratecompliancesettingsa-planning-to-migrate-desired-configuration-management"></a><a name="Plan_Migrate_Compliance_settings"></a> Pianificazione per la migrazione della gestione della configurazione voluta  
+##  <a name="a-nameplanmigratecompliancesettingsa-planning-to-migrate-desired-configuration-management"></a><a name="Plan_Migrate_Compliance_settings"></a> Pianificazione per la migrazione della gestione della configurazione desiderata  
 È possibile eseguire la migrazione di elementi e linee di base di configurazione.  
 
 > [!NOTE]  

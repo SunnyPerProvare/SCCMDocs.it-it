@@ -36,7 +36,7 @@ Prendere in considerazione i requisiti seguenti prima di preparare l'infrastrutt
 >   
 >  -   Windows 10 Enterprise  
 > -   Windows 10 Pro  
-> -   Windows 10 Team \( a partire da Configuration Manager versione 1602\)  
+> -   Windows 10 Team \(a partire da Configuration Manager versione 1602\)  
 > -   Windows 10 Mobile  
 > -   Windows 10 Mobile Enterprise   
 

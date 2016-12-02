@@ -16,8 +16,8 @@ caps.handback.revision: 0
 ms.author: nbigman
 ms.manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: e215b33ca24370ddd0e1b892d6ebe559023852a2
-ms.openlocfilehash: ccea5cb46bf69dbb88f6fcb217a73c7939be0b02
+ms.sourcegitcommit: a65de5feae2ff44f938ce8b7e3c8d23d560bb180
+ms.openlocfilehash: bcea8676c163a8aba1bc7f3364fde52375f52429
 
 
 ---
@@ -131,7 +131,7 @@ ms.openlocfilehash: ccea5cb46bf69dbb88f6fcb217a73c7939be0b02
             >  
             >  I dispositivi che eseguono iOS supportano solo RSA SecurID e MSCHAP v2 per il metodo di autenticazione quando il tipo di connessione è PPTP. Per evitare la segnalazione di errori, distribuire un profilo VPN PPTP distinto nei dispositivi che eseguono iOS.  
 
-               - Le impostazioni **Accesso condizionale** e  **Dominio primario di protezione dei dati aziendali** sono supportate solo quando si usa Configuration Manager senza Intune, a cui è possibile accedere scegliendo **Avanzate**.
+               - Le impostazioni **Accesso condizionale** e  **Dominio primario di protezione dei dati aziendali** sono supportate solo quando si usa Configuration Manager senza Intune, a cui è possibile accedere scegliendo **Avanzate**. Per informazioni su Protezione dei dati aziendali, vedere [Creare un criterio di Windows Information Protection (WIP) con Microsoft Intune](https://technet.microsoft.com/en-us/itpro/windows/keep-secure/create-wip-policy-using-intune).
         
         ![Configurare l'accesso condizionale per VPN](../media/vpn-conditional-access.png)
 
