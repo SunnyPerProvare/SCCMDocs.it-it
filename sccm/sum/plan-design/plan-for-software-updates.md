@@ -1,12 +1,12 @@
 ---
 
-title: Pianificare gli aggiornamenti software | System Center Configuration Manager
-description: "Una pianificazione per l'infrastruttura del punto di aggiornamento software è essenziale prima di usare gli aggiornamenti software in un ambiente di produzione di System Center Configuration Manager."
+title: Pianificare gli aggiornamenti del software | Documentazione Microsoft
+description: "Una pianificazione per l&quot;infrastruttura del punto di aggiornamento software è essenziale prima di usare gli aggiornamenti software in un ambiente di produzione di System Center Configuration Manager."
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 12/07/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 69f2c9c3c098013679e12d8578a780130adb94be
+ms.sourcegitcommit: b1c68b233097ef3a744dd25b3fb919660f0b2244
+ms.openlocfilehash: 16415fb54a2cf91747990c94ffea0076effe525b
 
 
 ---
@@ -34,8 +34,16 @@ Prima di usare gli aggiornamenti software in un ambiente di produzione di System
 
 -   Il punto di aggiornamento software è in grado di supportare fino a 25.000 client quando WSUS è in esecuzione nel computer del punto di aggiornamento software e tale punto coesiste con un altro ruolo del sistema del sito.  
 
--   Il punto di aggiornamento software può supportare fino a 150.000 client quando il computer remoto soddisfa i requisiti di Windows Server Update Services per supportare questo numero di client.   
-    Per impostazione predefinita, Configuration Manager non supporta la configurazione di punti di aggiornamento software come cluster di bilanciamento del carico di rete. È possibile tuttavia usare l'SDK di Configuration Manager per configurare fino a quattro punti di aggiornamento software in un cluster di bilanciamento del carico di rete.  
+-   Il punto di aggiornamento software può supportare fino a 150.000 client se il computer remoto soddisfa i requisiti di WSUS, se WSUS viene usato con Configuration Manager e se si configurano le opzioni seguenti:
+
+    Pool di applicazioni IIS:
+    - Aumentare la lunghezza della coda WsusPool a 2000
+    - Aumentare il limite di memoria privata WsusPool di 4 volte oppure impostarlo su 0 (illimitato)      
+
+    Per informazioni dettagliate sui requisiti hardware per il punto di aggiornamento software, vedere [Recommended hardware for site systems](/sccm/core/plan-design/configs/recommended-hardware#a-namebkmkscalesiesystemsa-site-systems) (Hardware consigliato per i sistemi del sito).
+
+-   Per impostazione predefinita, Configuration Manager non supporta la configurazione di punti di aggiornamento software come cluster di bilanciamento del carico di rete. È possibile tuttavia usare l'SDK di Configuration Manager per configurare fino a quattro punti di aggiornamento software in un cluster di bilanciamento del carico di rete.  
+
 
 ### <a name="capacity-planning-for-software-updates-objects"></a>Pianificazione della capacità per gli oggetti degli aggiornamenti software  
  Utilizzare le seguenti informazioni sulla capacità per la pianificazione degli oggetti degli aggiornamenti software.  
@@ -300,6 +308,6 @@ Quando si pianificano gli aggiornamenti software, vedere [Preparare la gestione 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

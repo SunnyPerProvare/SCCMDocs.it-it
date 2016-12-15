@@ -1,5 +1,5 @@
 ---
-title: Pianificare ruoli di sistema del sito | System Center Configuration Manager
+title: Pianificare i server e i ruoli del sistema | Documentazione Microsoft
 description: Prendere in considerazione i server di sistema del sito e i ruoli di sistema del sito quando si pianifica la gerarchia di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 5f8d051a92cd74938f1a5235b37f02ebe0ff542c
+ms.sourcegitcommit: 2b00cfcec0959716d69a1605018f33d30287fee9
+ms.openlocfilehash: a2e57aac01fff3c28b4acfcf58bcd786bd3e62c4
 
 
 ---
@@ -72,6 +72,8 @@ Dopo l'installazione di un sito, è possibile spostare la posizione di alcuni ru
 -   **Punto di registrazione certificati** : ruolo del sistema del sito che comunica con un server in cui è in esecuzione il servizio Registrazione dispositivi di rete per gestire le richieste di certificato del dispositivo che usano il protocollo Simple Certificate Enrollment Protocol (SCEP).  Questo ruolo è supportato solo nei siti primari e nel sito di amministrazione centrale.   Anche se un unico punto di registrazione certificati può fornire funzionalità a un'intera gerarchia, per consentire il bilanciamento del carico delle richieste di certificati è possibile installare più istanze di questo ruolo in uno o più siti della stessa gerarchia. Quando esistono più istanze in una gerarchia, i client vengono assegnati in modo casuale a uno dei punti di registrazione certificati.  
 
      Ogni punto di registrazione certificati richiede l'accesso a un'istanza separata di un servizio Registrazione dispositivi di rete. È possibile configurare due o più punti di registrazione certificati per usare lo stesso servizio Registrazione dispositivi di rete. Il punto di registrazione certificati non deve inoltre essere installato sullo stesso server che esegue il servizio Registrazione dispositivi di rete.  
+
+- **Punto di connessione del gateway di gestione cloud**: ruolo del sistema del sito per la comunicazione con il [gateway di gestione cloud](/sccm/core/clients/manage/setup-cloud-management-gateway). 
 
 -   **Punto di distribuzione** : ruolo del sistema del sito che contiene file di origine per i client da scaricare, come contenuto di applicazioni, pacchetti software, aggiornamenti software, immagini del sistema operativo e immagini d'avvio. Per impostazione predefinita, questo ruolo viene installato nel computer del server del sito dei nuovi siti primari e secondari quando viene installato il sito, ma non è supportato in un sito di amministrazione centrale.  È possibile installare più istanze di questo ruolo in un sito supportato e in più siti della stessa gerarchia.  Per altre informazioni, vedere [Concetti di base per la gestione dei contenuti in System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) e [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
@@ -150,6 +152,6 @@ I ruoli del sistema del sito seguenti possono usare un server proxy:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 
