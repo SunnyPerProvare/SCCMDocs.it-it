@@ -187,7 +187,7 @@ Nella pagina **Configura impostazioni della modalità tutto schermo per i dispos
     |**Rimuovi**|Elimina l'app selezionata dall'elenco.|  
     |**Importa**|Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.|  
 
-2.  Al termine, fare clic su **Avanti**. È necessario distribuire elementi di configurazione contenenti impostazioni di app conformi e non conformi a raccolte di utenti.
+2.  Al termine, fare clic su **Avanti**. È necessario distribuire a raccolte di utenti elementi di configurazione contenenti impostazioni di app conformi e non conformi.
 
  È possibile usare uno dei report seguenti per monitorare le app conformi e non conformi:  
 
