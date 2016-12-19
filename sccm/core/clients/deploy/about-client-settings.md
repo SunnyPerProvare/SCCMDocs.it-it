@@ -1,8 +1,8 @@
 ---
-title: Impostazioni client | System Center Configuration Manager
+title: Impostazioni client | Documentazione Microsoft
 description: Selezionare le impostazioni client tramite la console di System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/12/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 caps.latest.revision: 15
 caps.handback.revision: 0
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: cbe052891c55dd0c0d58c6e65d783314b0ec8ce9
+ms.sourcegitcommit: 809c7938968b4a6efce6ef37fe7b7baf2c9dd3e7
+ms.openlocfilehash: 1615c183c440b44084651d52bfc50be2d65c2e11
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informazioni sulle impostazioni client in System Center Configuration Manager
@@ -27,82 +27,92 @@ ms.openlocfilehash: cbe052891c55dd0c0d58c6e65d783314b0ec8ce9
 
 Tutte le impostazioni client di System Center Configuration Manager vengono gestite nella console di Configuration Manager nel nodo **Impostazioni client** dell'area di lavoro **Amministrazione**. Con Configuration Manager viene specificato un set di impostazioni predefinite. Quando si modificano le impostazioni client predefinite, tali impostazioni vengono applicate a tutti i client nella gerarchia. È inoltre possibile configurare le impostazioni client personalizzate, che sostituiscono le impostazioni client predefinite quando le si assegnano a raccolte. Per altre informazioni su come configurare le impostazioni client, vedere [How to configure client settings in System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).  
 
- Molte delle impostazioni client non necessitano di spiegazione. Usare le sezioni seguenti per ulteriori informazioni sulle impostazioni client che potrebbe richiedere alcune informazioni prima di essere configurate.  
+ Molte delle impostazioni client non necessitano di spiegazione, mentre altre sono descritte in questo articolo.  
 
-##  <a name="a-namebkmkbitsa-background-intelligent-transfer"></a><a name="BKMK_BITS"></a> Trasferimento intelligente in background  
+## <a name="background-intelligent-transfer"></a>Trasferimento intelligente in background  
 
 -   **Limitare la larghezza di banda di rete massima per i trasferimenti in background BITS**  
 
-     Se questa opzione viene impostata su **True** o **Sì**, i client di Configuration Manager useranno la limitazione della larghezza di banda BITS.  
+   Se questa opzione è impostata su **True** o **Sì**, i client useranno la limitazione della larghezza di banda BITS.  
 
 -   **Ora di inizio dell'intervallo di limitazione**  
 
-     Specificare l'ora di inizio nell'ora locale in cui verrà avviato l'intervallo di limitazione BITS.  
+   Ora di inizio locale per l'intervallo di limitazione BITS.  
 
 -   **Ora di fine dell'intervallo di limitazione**  
 
-     Specificare l'ora di fine nell'ora locale in cui verrà terminato l'intervallo di limitazione BITS. Se questo valore è lo stesso dell' **Ora di inizio dell'intervallo di limitazione**, la limitazione BITS è sempre abilitata.  
+  Ora di fine locale per l'intervallo di limitazione BITS. Se il valore è lo stesso dell'**ora di inizio dell'intervallo di limitazione**, la limitazione BITS è sempre abilitata.  
 
 -   **Velocità massima di trasferimento durante l'intervallo di limitazione (Kbps)**  
 
-     Specificare la velocità massima di trasferimento in (Kbps) che può essere usata dai client di Configuration Manager durante l'intervallo di limitazione BITS specificato.  
+   Specificare la velocità massima di trasferimento che può essere usata dai client durante l'intervallo.  
 
 -   **Consentire i download BITS all'esterno dell'intervallo di limitazione**  
 
-     Selezionare questa opzione per consentire i download BITS all'esterno dell'intervallo di limitazione. Questa opzione consente ai client di Configuration Manager di usare impostazioni BITS separate all'esterno dell'intervallo specificato.  
+   Consente ai client di Configuration Manager di usare impostazioni BITS separate all'esterno dell'intervallo specificato.  
 
 -   **Velocità massima di trasferimento all'esterno dell'intervallo di limitazione (Kbps)**  
 
-     Specificare la velocità massima di trasferimento in (Kbps) che verrà usata dai client di Configuration Manager fuori dell'intervallo di limitazione BITS specificato. È possibile configurare questa opzione solo quando si è scelto di consentire la limitazione BITS all'esterno dell'intervallo specificato.  
+   Velocità massima di trasferimento che verrà usata dai client all'esterno dell'intervallo di limitazione BITS, se è stata selezionata l'opzione che consente la limitazione BITS all'esterno dell'intervallo.  
 
-##  <a name="a-namebkmkclientpolicydevicesettingsa-client-policy"></a><a name="BKMK_ClientPolicyDeviceSettings"></a> Criteri client  
+## <a name="client-cache-settings"></a>Impostazione della cache client
+
+- **Configura BranchCache**
+
+  A partire dalla versione 1606, questa opzione viene usata per configurare il computer client per [BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#branchcache). Per consentire la memorizzazione nella cache BranchCache nel client, impostare **Abilita BranchCache** su **Sì**. 
+
+- **Configurare la dimensione della cache client**
+
+  Nei computer Windows la cache client archivia i file temporanei usati per installare applicazioni e programmi. Selezionare **Sì** per specificare le **Dimensioni cache massime** (MB o percentuale del disco). Se questa opzione è impostata su **No**, il valore predefinito è 5120 MB.
+
+## <a name="client-policy"></a>Criteri client  
 
 -   **Intervallo di polling dei criteri client (minuti)**  
 
-     Specificare la frequenza con cui i client seguenti di Configuration Manager scaricano criteri client:  
+   Specificare la frequenza con cui i client seguenti di Configuration Manager scaricano criteri client:  
 
-    -   Computer Windows (ad esempio, desktop, server, portatili)  
+  -   Computer Windows (ad esempio, desktop, server, portatili)  
 
-    -   Dispositivi mobili registrati da Configuration Manager  
+  -   Dispositivi mobili registrati da Configuration Manager  
 
-    -   Computer Mac  
+  -   Computer Mac  
 
-    -   Computer con sistema operativo Linux o UNIX  
+  -   Computer con sistema operativo Linux o UNIX  
 
 -   **Abilitare il polling dei criteri utente sui client**  
 
-     Se si configura questa impostazione su **True** o **Sì** e Configuration Manager ha individuato l'utente, i client di Configuration Manager nei computer ricevono applicazioni e programmi assegnati all'utente che ha eseguito l'accesso. Per altre informazioni su come individuare utenti, vedere [Individuazione utente Active Directory in Configuration Manager](../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser).  
+   Quando questa opzione viene impostata su **True** o **Sì** e Configuration Manager [ha individuato l'utente](../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser), i client sui computer ricevono applicazioni e programmi destinati all'utente che ha effettuato l'accesso.  
 
-     Poiché il Catalogo applicazioni riceve l'elenco del software disponibile per gli utenti dal server del sito, questa impostazione non deve essere configurata su **True** o **Sì** affinché gli utenti visualizzino e richiedano le applicazioni dal Catalogo applicazioni. Tuttavia, se tale impostazione è **False** o **No**, quanto segue non funzionerà quando gli utenti utilizzeranno il Catalogo applicazioni:  
+   Poiché il Catalogo applicazioni riceve l'elenco del software disponibile per gli utenti dal server del sito, questa impostazione non deve essere configurata su **True** o **Sì** affinché gli utenti visualizzino e richiedano le applicazioni dal Catalogo applicazioni. Tuttavia, se tale impostazione è **False** o **No**, quanto segue non funzionerà quando gli utenti utilizzeranno il Catalogo applicazioni:  
 
-    -   Gli utenti non possono installare le applicazioni che vedono nel Catalogo applicazioni.  
+  -   Gli utenti non possono installare le applicazioni che vedono nel Catalogo applicazioni.  
 
-    -   Gli utenti non visualizzeranno le notifiche relative alle richieste di approvazione delle applicazioni. Al contrario, devono aggiornare il Catalogo applicazioni e verificare lo stato di approvazione.  
+  -   Gli utenti non visualizzeranno le notifiche relative alle richieste di approvazione delle applicazioni. Al contrario, devono aggiornare il Catalogo applicazioni e verificare lo stato di approvazione.  
 
-    -   Gli utenti non riceveranno revisioni e aggiornamenti per le applicazioni che vengono pubblicate nel Catalogo applicazioni. Tuttavia, visualizzeranno le modifiche alle informazioni sulle applicazioni nel Catalogo applicazioni.  
+  -   Gli utenti non riceveranno revisioni e aggiornamenti per le applicazioni che vengono pubblicate nel Catalogo applicazioni. Tuttavia, visualizzeranno le modifiche alle informazioni sulle applicazioni nel Catalogo applicazioni.  
 
-    -   Se si rimuove la distribuzione di un'applicazione dopo che il client ha installato l'applicazione dal catalogo applicazioni, i client continuano a controllare che l'applicazione sia installata per un periodo di tempo fino a 2 giorni.  
+  -   Se si rimuove la distribuzione di un'applicazione dopo che il client ha installato l'applicazione dal catalogo applicazioni, i client continuano a controllare che l'applicazione sia installata per un periodo di tempo fino a 2 giorni.  
 
-     Inoltre, quando questa impostazione è **False** o **No**, gli utenti non riceveranno le applicazioni richieste che si distribuiscono agli utenti o qualsiasi altra operazione di gestione contenuta nei criteri utente.  
+   Inoltre, quando questa impostazione è **False** o **No**, gli utenti non riceveranno le applicazioni richieste che si distribuiscono agli utenti o qualsiasi altra operazione di gestione contenuta nei criteri utente.  
 
-     Questa impostazione viene applicata agli utenti quando i relativi computer si trovano nell'intranet e su Internet; deve essere configurata su **True** o **Sì** se si desidera inoltre abilitare i criteri utente su Internet.  
+   Questa impostazione viene applicata agli utenti quando i relativi computer si trovano nell'intranet e su Internet; deve essere configurata su **True** o **Sì** se si desidera inoltre abilitare i criteri utente su Internet.  
 
 -   **Abilitare le richieste dei criteri utente dai client Internet**  
 
-     Quando il client e il sito sono configurati per la gestione client basata su Internet e si configura questa opzione su **True** o **Sì** e si applicano entrambe le seguenti condizioni, gli utenti ricevono i criteri utente quando il relativo computer si trova su Internet:  
+   Quando il client e il sito sono configurati per la gestione client basata su Internet e si configura questa opzione su **True** o **Sì** e si applicano entrambe le seguenti condizioni, gli utenti ricevono i criteri utente quando il relativo computer si trova su Internet:  
 
-    -   L'impostazione client **Abilita il polling dei criteri utente sui client** è configurata su **True** o **Abilita i criteri utente nei client** è configurata su **Sì**.  
+  -   L'impostazione client **Abilita il polling dei criteri utente sui client** è configurata su **True** o **Abilita i criteri utente nei client** è configurata su **Sì**.  
 
-    -   Il punto di gestione basato su Internet autentica automaticamente l'utente usando l'autenticazione di Windows (Kerberos o NTLM).  
+  -   Il punto di gestione basato su Internet autentica automaticamente l'utente usando l'autenticazione di Windows (Kerberos o NTLM).  
 
-     Se si lascia l'opzione su **False** o **No**o una delle due condizione non riesce, un computer su Internet riceverà solo i criteri computer. In questo scenario, gli utenti possono comunque visualizzare, richiedere e installare applicazioni da un Catalogo applicazioni basato su Internet. Se questa impostazione è **False** **No** ma **Abilita il polling dei criteri utente sui client** è configurato su **True** o **Abilita i criteri utente nei client** è configurato su **Sì**, gli utenti non riceveranno i criteri client finché il computer non è connesso alla intranet.  
+   Se si lascia l'opzione su **False** o **No**o una delle due condizione non riesce, un computer su Internet riceverà solo i criteri computer. In questo scenario, gli utenti possono comunque visualizzare, richiedere e installare applicazioni da un Catalogo applicazioni basato su Internet. Se questa impostazione è **False** **No** ma **Abilita il polling dei criteri utente sui client** è configurato su **True** o **Abilita i criteri utente nei client** è configurato su **Sì**, gli utenti non riceveranno i criteri client finché il computer non è connesso alla intranet.  
 
-     Per altre informazioni sulla gestione client in Internet, vedere [Considerazioni per le comunicazioni client da Internet o da una foresta non attendibile](../../../core/plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan) in  [Comunicazioni tra gli endpoint in System Center Configuration Manager](../../../core/plan-design/hierarchy/communications-between-endpoints.md).  
+   Per altre informazioni sulla gestione client in Internet, vedere [Considerazioni per le comunicazioni client da Internet o da una foresta non attendibile](../../../core/plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan) in  [Comunicazioni tra gli endpoint in System Center Configuration Manager](../../../core/plan-design/hierarchy/communications-between-endpoints.md).  
 
-    > [!NOTE]  
-    >  Le richieste di approvazione dell'applicazione da parte degli utenti non richiedono criteri utente o l'autenticazione dell'utente.  
+  > [!NOTE]  
+  >  Le richieste di approvazione dell'applicazione da parte degli utenti non richiedono criteri utente o l'autenticazione dell'utente.  
 
-##  <a name="a-namebkmkcompliancea-compliance-settings"></a><a name="BKMK_Compliance"></a> Compliance Settings  
+##  <a name="compliance-settings"></a>Impostazioni di conformità  
 
 -   **Valutazione di conformità della pianificazione**  
 
@@ -110,11 +120,9 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
 
 -   **Abilitare i dati e profili utente**  
 
-     Selezionare **Sì** se si desidera distribuire elementi di configurazione di dati e profili utente a computer con Windows 8 nella gerarchia.  
+     Selezionare **Sì**, se si vuole distribuire elementi di configurazione di [dati e profili utente](../../../compliance/deploy-use/create-user-data-and-profiles-configuration-items.md) a computer con Windows 8 nella gerarchia.  
 
-     Per altre informazioni su dati e profili utente, vedere [Come creare elementi di configurazione dei profili e dati utente in System Center Configuration Manager](../../../compliance/deploy-use/create-user-data-and-profiles-configuration-items.md).  
-
-##  <a name="a-namebkmkcomputeragentdevicesettingsa-computer-agent"></a><a name="BKMK_ComputerAgentDeviceSettings"></a> Agente computer  
+## <a name="computer-agent"></a>Agente computer  
 
 -   **Punto per siti Web del Catalogo applicazioni predefinito**  
 
@@ -122,7 +130,7 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
 
     -   Ai client viene assegnato automaticamente un punto per siti Web del Catalogo applicazioni dal relativo sito, se il sito contiene un punto per siti Web del Catalogo applicazioni.  
 
-    -   Protezione contro un server non autorizzato perché ai punti per siti Web del Catalogo applicazioni sull'intranet configurati per HTTPS viene data la preferenza rispetto ai punti per siti Web del Catalogo applicazioni che non sono configurati per HTTPS.  
+    -   Protezione contro un server non autorizzato, perché ai punti per siti Web del Catalogo applicazioni sull'intranet configurati per HTTPS viene data la preferenza rispetto ai punti che non sono configurati per HTTPS.  
 
     -   Quando i client sono configurati per la gestione client basata su Internet e intranet, a essi verrà assegnato un punto per siti Web del Catalogo applicazioni basato su Internet quando si trovano su Internet e un punto per siti Web del catalogo applicazioni basato su intranet quando si trovano sulla intranet.  
 
@@ -247,12 +255,17 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
 
      Se gli aggiornamenti software richiesti devono essere installati senza ritardo al raggiungimento della scadenza configurata, selezionare **Sì** per questa opzione.  
 
-##  <a name="a-namebkmkcomputerrestartdevicesettingsa-computer-restart"></a><a name="BKMK_ComputerRestartDeviceSettings"></a> Riavvio del computer  
+-   **Periodo di tolleranza per l'imposizione dopo la scadenza della distribuzione (ore)** 
+    
+     In alcuni casi, è possibile concedere agli utenti più tempo per l'installazione di distribuzioni di applicazioni o aggiornamenti del software obbligatori, anche oltre eventuali scadenze configurate. In genere questo potrebbe essere necessario quando un computer è stato disattivato per un lungo periodo di tempo ed è necessario installare un numero elevato di distribuzioni di applicazioni o aggiornamenti. Ad esempio, se un utente finale è appena tornato da una vacanza, potrebbe dover attendere un po' tempo mentre vengono installate le distribuzioni delle applicazioni scadute. Per risolvere il problema è possibile definire un periodo di tolleranza di imposizione distribuendo le impostazioni del client di Configuration Manager a una raccolta.
+    È possibile impostare un periodo di tolleranza compreso tra 1 e 120 ore. Questa impostazione viene usata in combinazione con la proprietà di distribuzione **Ritardare l'imposizione di questa distribuzione in base alle preferenze dell'utente**. Per altre informazioni dettagliate, vedere [Deploy applications](/sccm/apps/deploy-use/deploy-applications) (Distribuire applicazioni)
+
+##  <a name="computer-restart"></a>Riavvio del computer  
  Quando si specificano queste impostazioni di riavvio del computer, assicurarsi che il valore per l'intervallo di notifica temporanea di riavvio e quello per l'intervallo del conto alla rovescia finale siano inferiori, in termini di durata, alla finestra di manutenzione più breve applicata al computer.  
 
  Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione in System Center Configuration Manager](../../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-##  <a name="a-namebkmkendpointprotectiondevicesettingsa-endpoint-protection"></a><a name="BKMK_EndpointProtectionDeviceSettings"></a> Endpoint Protection  
+##  <a name="endpoint-protection"></a>Endpoint Protection  
 
 -   **Gestire il client Endpoint Protection nei computer client**  
 
@@ -290,7 +303,7 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
 
      Selezionare **True** o **Sì** se si vuole che Configuration Manager installi solo l'aggiornamento della definizione iniziale nei computer client. Questa impostazione può essere utile per evitare connessioni di rete non necessarie e ridurre la larghezza di banda durante l'installazione iniziale dell'aggiornamento della definizione.  
 
-##  <a name="a-namebkmkhardwareinventorydevicesettingsa-hardware-inventory"></a><a name="BKMK_HardwareInventoryDeviceSettings"></a> Inventario hardware  
+##  <a name="hardware-inventory"></a>Inventario hardware  
 
 -   **Dimensioni massime file MIF personalizzate (KB)**  
 
@@ -316,7 +329,7 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
     > [!NOTE]  
     >  Questa impostazione è disponibile solo nelle impostazioni del client predefinite.  
 
-##  <a name="a-namebkmkmeteredinternetconnetionssettingsa-metered-internet-connections"></a><a name="BKMK_MeteredInternetConnetionsSettings"></a> Connessioni Internet a consumo  
+##  <a name="metered-internet-connections"></a>Connessioni Internet a consumo  
  È possibile gestire la modalità di comunicazione dei computer client Windows 8 con i siti di Configuration Manager quando vengono usate connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.  
 
 > [!NOTE]  
@@ -348,7 +361,7 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
 
     -   **Blocca**: il client di Configuration Manager non prova a comunicare con i siti di Configuration Manager in presenza di una connessione Internet a consumo. Questo è il valore predefinito.  
 
-##  <a name="a-namebkmkpowmgmtdevicesettingsa-power-management"></a><a name="BKMK_PowMgmtDeviceSettings"></a> Risparmio energia  
+##  <a name="power-management"></a>Risparmio energia  
 
 -   **Consentire agli utenti di escludere il dispositivo usato dal risparmio energia**  
 
@@ -376,7 +389,7 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
     > [!IMPORTANT]  
     >  Questo numero deve corrispondere al numero nelle **Proprietà**del sito. Se si modifica questo numero in un'unica posizione, non viene aggiornato automaticamente in un'altra posizione.  
 
-##  <a name="a-namebkmkremotetoolsdevicesettingsa-remote-tools"></a><a name="BKMK_RemoteToolsDeviceSettings"></a> Strumenti remoti  
+##  <a name="remote-tools"></a>Strumenti remoti  
 
 -   **Abilitare controllo remoto nei client** e **Profili delle eccezioni firewall**  
 
@@ -460,7 +473,7 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
 
      Selezionare questa opzione più sicura se si desidera usare l'autenticazione a livello di rete per stabilire connessioni di Desktop remoto nei computer client che eseguono Windows Vista o sistemi operativi successivi. L'autenticazione a livello di rete richiede inizialmente meno risorse del computer remoto perché completa l'autenticazione utente prima di stabilire una connessione di Desktop remoto. Questo metodo è più sicuro perché permette di proteggere il computer da utenti o software dannosi e riduce il rischio di attacchi di tipo Denial of Service.  
 
-##  <a name="a-namebkmksoftwaredeploymentdevicesettingsa-software-deployment"></a><a name="BKMK_SoftwareDeploymentDeviceSettings"></a> Distribuzione software  
+## <a name="software-deployment"></a>Distribuzione software  
 
 -   **Pianificare nuova valutazione per le distribuzioni**  
 
@@ -471,7 +484,7 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
 
      È anche possibile avviare questa azione da un computer client di Configuration Manager selezionando l'azione **Ciclo di valutazione distribuzione applicazione** dalla scheda **Azioni** di **Configuration Manager** nel Pannello di controllo.  
 
-##  <a name="a-namebkmksoftinventorydevicesettingsa-software-inventory"></a><a name="BKMK_SoftInventoryDeviceSettings"></a> Inventario software  
+##  <a name="software-inventory"></a>Inventario software  
 
 -   **Dettaglio report inventario**  
 
@@ -524,7 +537,7 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
         >   
         >  Il valore **Dimensioni massime per tutti i file raccolti (KB)** nella finestra di dialogo **Configura impostazione client** visualizza le dimensioni massime per tutti i file raccolti. Quando viene raggiunta questa dimensione, la raccolta di file verrà interrotta. Tutti i file già raccolti vengono mantenuti e inviati al server del sito.  
 
-        > [!IMPORTANT]  
+        > [!IMPORTANT]
         >  Se si configura l'inventario software per raccogliere molti file di grandi dimensioni, questo potrebbe influire negativamente sulle prestazioni del server di rete e del sito.  
 
          Per informazioni sulla cronologia di inventario, vedere [Come usare Esplora inventario risorse per visualizzare l'inventario software in System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md).  
@@ -543,7 +556,7 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
 
     -   **Nomi di inventario** : fare clic sull'icona Nuovo per aggiungere un nuovo nome di inventario, che verrà sostituito nell'inventario software dal nome selezionato nell'elenco **Nome visualizzato** . È possibile aggiungere più nomi che verranno sostituiti.  
 
-##  <a name="a-namebkmksoftwareupdatesdevicesettinga-software-updates"></a><a name="BKMK_SoftwareUpdatesDeviceSetting"></a> Aggiornamenti software  
+##  <a name="software-updates"></a>Aggiornamenti software  
 
 -   **Abilitare aggiornamento software nei client**  
 
@@ -581,7 +594,7 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
 
      Usare questa impostazione per specificare l'intervallo di tempo per l'impostazione precedente. È possibile immettere un valore compreso tra 1 e 23 e tra 1 e 365 giorni. Per impostazione predefinita, questa impostazione è configurata su 7 giorni.  
 
-##  <a name="a-namebkmkuserdeviceaffinitydevicesettingsa-user-and-device-affinity"></a><a name="BKMK_UserDeviceAffinityDeviceSettings"></a> Affinità dispositivi e utenti  
+##  <a name="user-and-device-affinity"></a>Affinità dispositivi e utenti  
 
 -   **Soglia di utilizzo di affinità utente dispositivo (minuti)**  
 
@@ -598,23 +611,7 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
 
      Selezionare **True** o **Sì** per abilitare Configuration Manager a creare automaticamente affinità utente dispositivo in base alle informazioni raccolte sull'utilizzo.  
 
-## <a name="client-cache-settings"></a>Impostazione della cache client
-
-- **Configurare la dimensione della cache client**
-
-  La cartella cache client viene usata nei computer Windows per archiviare i file temporanei usati per installare applicazioni e programmi. A partire dalla versione 1606, selezionare **Sì** per specificare le dimensioni della cartella cache client usando le impostazioni **Dimensioni massime cache**. Se impostato su **No**, il valore predefinito della dimensione della cartella cache client è 5120 MB.
-
-  Durante l'installazione client è possibile impostare altre proprietà della cache client. Per ulteriori informazioni, vedere [Configure the Client Cache for Configuration Manager Clients](../../../core/clients/manage/manage-clients.md#BKMK_ClientCache).
-
-- **Dimensioni massime della cache (MB)**
-
-  A partire dalla versione 1606, specificare le dimensioni massime della cartella della cache client in megabyte.
-
-- **Dimensioni massime della cache (percentuale del disco)** (a partire dalla versione 1606)
-
-  A partire dalla versione 1606, specificare le dimensioni massime della cartella della cache client come percentuale del disco.
-
-##  <a name="a-namebkmkmobiledevicesusersettingsa-mobile-devices"></a><a name="BKMK_MobileDevicesUserSettings"></a> Dispositivi mobili  
+##  <a name="mobile-devices"></a>Dispositivi mobili  
 
 -   **Profilo di registrazione del dispositivo mobile**  
 
@@ -623,7 +620,7 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
     > [!IMPORTANT]  
     >  Assicurarsi di aver configurato un modello di certificato da usare per la registrazione del dispositivo mobile prima di configurare questa opzione.  
 
-##  <a name="a-namebkmkenrollmentusersettingsa-enrollment"></a><a name="BKMK_EnrollmentUserSettings"></a> Registrazione  
+##  <a name="enrollment"></a>Registrazione  
 
 -   **Profilo di registrazione del dispositivo mobile**  
 
@@ -632,7 +629,7 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
     > [!IMPORTANT]  
     >  Assicurarsi di aver configurato un modello di certificato da usare per la registrazione del dispositivo mobile o per la registrazione del certificato client Mac prima di configurare questa opzione.  
 
-##  <a name="a-namebkmkuserdeviceaffinityusersettingsa-user-and-device-affinity"></a><a name="BKMK_UserDeviceAffinityUserSettings"></a> Affinità dispositivi e utenti  
+## <a name="user-and-device-affinity"></a>Affinità dispositivi e utenti  
 
 -   **Consentire all'utente di definire i dispositivi primari**  
 
@@ -640,6 +637,6 @@ Tutte le impostazioni client di System Center Configuration Manager vengono gest
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

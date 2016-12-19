@@ -1,8 +1,8 @@
 ---
-title: Endpoint Protection | System Center Configuration Manager
+title: Endpoint Protection | Documentazione Microsoft
 description: Informazioni su come gestire i criteri antimalware e la sicurezza di Windows Firewall per i computer client nella gerarchia di Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/9/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: 30ac6f2ec03a4c0d50de700f9ce77f9e50eaf1e0
+ms.sourcegitcommit: 9fcbc0bb9c8ccd4265381ca4db7a363c8ae3b54a
+ms.openlocfilehash: 59313bd6f76433782a79ab3ee9d6240f767fbd76
 
 
 ---
@@ -59,7 +59,7 @@ I computer Windows 10 non richiedono client aggiuntivi per la gestione di Endpoi
 
 
 ## <a name="managing-malware-with-endpoint-protection"></a>Gestione del malware con Endpoint Protection  
- Endpoint Protection in Configuration Manager consente di creare criteri antimalware che contengono impostazioni per le configurazioni del client di Endpoint Protection. È quindi possibile distribuire tali criteri antimalware nei computer client e monitorarli nel nodo **Stato di Endpoint Protection ** dell'area di lavoro **Monitoraggio** oppure usando i report di Configuration Manager.  
+ Endpoint Protection in Configuration Manager consente di creare criteri antimalware che contengono impostazioni per le configurazioni del client di Endpoint Protection. È quindi possibile distribuire tali criteri antimalware nei computer client e monitorarli nel nodo **Stato di Endpoint Protection **, nella sezione **Sicurezza** dell'area di lavoro **Monitoraggio**, oppure usando i report di Configuration Manager.  
 
  Altre informazioni:  
 
@@ -112,6 +112,6 @@ A partire dalla versione 1606 di Configuration Manager (Current Branch), Endpoin
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

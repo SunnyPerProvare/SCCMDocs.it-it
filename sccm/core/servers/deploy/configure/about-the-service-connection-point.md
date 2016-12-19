@@ -1,5 +1,5 @@
 ---
-title: Punto di connessione del servizio | System Center Configuration Manager
+title: Punto di connessione del servizio | Documentazione Microsoft
 description: Informazioni sul ruolo di sistema del sito di Configuration Manager e pianificazione della gamma di usi.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: e30c3d4bbf42e008a3f570c843b2f63251bce158
+ms.sourcegitcommit: 8195abd403d94a96d193289ea6e6bf8880d06078
+ms.openlocfilehash: aaa9a80a8429ab315a25862a78d6eb8733fd2e89
 
 
 ---
@@ -28,7 +28,7 @@ ms.openlocfilehash: e30c3d4bbf42e008a3f570c843b2f63251bce158
 
 Il punto di connessione del servizio di System Center Configuration Manager è un ruolo di sistema del sito che svolge diverse funzioni importanti per la gerarchia. Prima di configurare il punto di connessione del servizio, esaminare e pianificare i diversi usi che potrebbero influire sul modo in cui si configura il ruolo del sistema del sito:  
 
--   **Gestire i dispositivi mobili con Microsoft Intune**: questo ruolo sostituisce il connettore di Microsoft Intune usato dalle versioni precedenti di Configuration Manager e può essere configurato con i dettagli della sottoscrizione di Intune. Vedere [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../../mdm/plan-design/hybrid-mobile-device-management.md) (Gestione di dispositivi mobili ibridi (MDM) con System Center Configuration Manager e Microsoft Intune)  
+-   **Gestire i dispositivi mobili con Microsoft Intune**: questo ruolo sostituisce il connettore di Microsoft Intune usato dalle versioni precedenti di Configuration Manager e può essere configurato con i dettagli della sottoscrizione di Intune. Vedere [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../../mdm/understand/hybrid-mobile-device-management.md) (Gestione di dispositivi mobili ibridi (MDM) con System Center Configuration Manager e Microsoft Intune)  
 
 -   **Gestire i dispositivi mobili con MDM locale**: questo ruolo offre supporto per i dispositivi locali gestiti che non si connettono a Internet. Vedere [Gestire i dispositivi mobili con l'infrastruttura locale in System Center Configuration Manager](../../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md)  
 
@@ -74,9 +74,11 @@ Per usare Configuration Manager Service Manager, nella console passare a **Monit
 
 **Quando il ruolo viene installato in un computer remoto rispetto al server del sito:**  
 
+-   L'account computer del server del sito deve essere un amministratore locale sul computer che ospita una connessione al servizio remoto
+
 -   È necessario configurare il server di sistema del sito che ospita il ruolo con un account di installazione del sistema del sito  
 
--   L'account di installazione del sistema del sito viene usato dal responsabile della distribuzione nel server del sito per trasferire gli aggiornamenti dal punto di connessione del servizio.  
+-   L'account di installazione del sistema del sito viene usato dal responsabile della distribuzione nel server del sito per trasferire gli aggiornamenti dal punto di connessione del servizio
 
 ##  <a name="a-namebkmkurlsa-internet-access-requirements"></a><a name="bkmk_urls"></a> Requisiti per l'accesso a Internet  
 Per abilitare l'operazione, il computer che ospita il punto di connessione del servizio ed eventuali firewall tra il computer e Internet deve passare le comunicazioni tramite la **porta TCP 443** ai seguenti percorsi Internet. Il punto di connessione del servizio supporta anche l'uso di un proxy Web con o senza autenticazione per accedere a questi percorsi.  
@@ -108,8 +110,13 @@ Per abilitare l'operazione, il computer che ospita il punto di connessione del s
 
 -   https://go.microsoft.com/fwlink/?LinkID=619849  
 
+## <a name="install-the-service-connection-point"></a>Installare il punto di connessione del servizio
+Quando si esegue il **programma di installazione** per installare il sito di livello superiore di una gerarchia, viene offerta la possibilità di installare il punto di connessione del servizio.
+
+Dopo l'esecuzione del programma di installazione, o se si reinstalla il ruolo del sistema del sito, usare la procedura guidata **Aggiungi ruoli del sistema del sito** o **Crea server di sistema sito** per installare il sistema del sito in un server del sito di livello superiore della gerarchia, ovvero un sito di amministrazione centrale o un sito primario autonomo.  Entrambe le procedure guidate sono disponibili nella scheda **Home** della console, in **Amministrazione** > **Configurazione del sito** > **Server e ruoli del sistema del sito**.
 
 
-<!--HONumber=Nov16_HO1-->
+
+<!--HONumber=Dec16_HO3-->
 
 

@@ -2,7 +2,7 @@
 title: Pianificare e configurare la gestione delle applicazioni | Documentazione Microsoft
 description: Implementare e configurare le dipendenze necessarie per la distribuzione di applicazioni in System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/06/2016
+ms.date: 12/13/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f1aaaf1c4fba8613b82d2c7a344a4dab572449a6
-ms.openlocfilehash: e9179a16d6fef73c7e50c3cf1dbfdc41623d1d15
+ms.sourcegitcommit: 7634d5326265d7947a01e5b83374f65911e33aeb
+ms.openlocfilehash: 3ab905192c091cb5ad013c8e0c8590597fb0422a
 
 
 ---
@@ -65,7 +65,11 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
  Indipendentemente dalla versione che si sceglie di usare, Software Center viene installato automaticamente quando si installa il client di Configuration Manager nei PC Windows.  
 
     > [!TIP]  
-    >  La versione di Software Center visualizzata dagli utenti si basa sulle impostazioni client di Configuration Manager. Questo offre la flessibilità necessaria per controllare la versione usata in base alle impostazioni client personalizzate che vengono distribuite in una raccolta.  
+    >  La versione di Software Center visualizzata dagli utenti si basa sulle impostazioni client di Configuration Manager. Questo offre la flessibilità necessaria per controllare la versione usata in base alle impostazioni client personalizzate che vengono distribuite in una raccolta. 
+
+    > [!IMPORTANT]
+    > Nei prossimi mesi, verrà pertanto rimossa la versione precedente di Software Center che non sarà disponibile per l'uso.
+    > È possibile configurare i client per l'uso del nuovo Software Center abilitando l'impostazione client **Agente computer** > **Usa il nuovo Software Center**. 
 
 ## <a name="steps-to-install-and-configure-the-application-catalog-and-software-center"></a>Passaggi per installare e configurare il Catalogo applicazioni e Software Center  
 
@@ -130,7 +134,7 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
     Per altre informazioni, cercare i file di log **awebsvcMSI.log** e **portlwebMSI.log**.  
 
 ###  <a name="step-4-configure-the-client-settings-for-the-application-catalog-and-software-center"></a>Passaggio 4: Configurare le impostazioni client per il Catalogo applicazioni e Software Center  
- Questa procedura consente di configurare le impostazioni client predefinite per il Catalogo applicazioni e Software Center che verranno applicate a tutti i dispositivi nella gerarchia. Se si vuole applicare queste impostazioni solo ad alcuni dispositivi, è possibile creare un'impostazione client personalizzata e distribuirla a una raccolta che contenga i dispositivi a cui sono destinate le impostazioni specifiche. Per altre informazioni su come creare un'impostazione client personalizzata, vedere la sezione [How to Create and Deploy Custom Client Settings](../../core/clients/deploy/configure-client-settings.md#BKMK_CustomClientSettings) (Come creare e distribuire impostazioni client personalizzate) nell'articolo [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md) (Come configurare impostazioni client in System Center Configuration Manager).  
+ Questa procedura consente di configurare le impostazioni client predefinite per il Catalogo applicazioni e Software Center che verranno applicate a tutti i dispositivi nella gerarchia. Se si vuole applicare queste impostazioni solo ad alcuni dispositivi, è possibile creare un'impostazione client personalizzata e distribuirla a una raccolta che contenga i dispositivi a cui sono destinate le impostazioni specifiche. Per altre informazioni su come creare un'impostazione client personalizzata, vedere la sezione [How to Create and Deploy Custom Client Settings](../../core/clients/deploy/configure-client-settings.md#create-and-deploy-custom-client-settings) (Come creare e distribuire impostazioni client personalizzate) nell'articolo [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md) (Come configurare impostazioni client in System Center Configuration Manager).  
 
 1.  Nella console di Configuration Manager selezionare **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.  
 
@@ -224,6 +228,6 @@ In Software Center la personalizzazione viene applicata secondo le regole seguen
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

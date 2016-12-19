@@ -1,8 +1,8 @@
 ---
-title: Monitorare Endpoint Protection | System Center Configuration Manager
+title: Monitorare Endpoint Protection | Documentazione Microsoft
 description: Informazioni su come monitorare Endpoint Protection nella gerarchia di System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/9/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: fb5b247ae3fc031cd0beea21b03a45affe3add68
+ms.sourcegitcommit: 9fcbc0bb9c8ccd4265381ca4db7a363c8ae3b54a
+ms.openlocfilehash: 590d95f82a30167dcc0d5191feaa39ecab2b3136
 
 
 ---
@@ -25,13 +25,13 @@ ms.openlocfilehash: fb5b247ae3fc031cd0beea21b03a45affe3add68
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile monitorare Endpoint Protection nella gerarchia di Microsoft System Center 2012 Configuration Manager usando il nodo **Stato Endpoint Protection** dell'area di lavoro **Monitoraggio**, il nodo **Endpoint Protection** dell'area di lavoro **Asset e conformità** e i report.  
+È possibile monitorare Endpoint Protection nella gerarchia di Microsoft System Center Configuration Manager usando il nodo **Stato Endpoint Protection** di **Sicurezza** nell'area di lavoro **Monitoraggio**, il nodo **Endpoint Protection** nell'area di lavoro **Asset e conformità** e usando i report.  
 
 ##  <a name="a-namebkmk1a-how-to-monitor-endpoint-protection-by-using-the-endpoint-protection-status-node"></a><a name="BKMK_1"></a> Come monitorare Endpoint Protection usando il nodo Stato Endpoint Protection  
 
 1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-2.  Nell'area di lavoro **Monitoraggio** fare clic su **Stato Endpoint Protection**.  
+2.  Nell'area di lavoro **Monitoraggio** espandere **Sicurezza** e quindi fare clic su **Stato Endpoint Protection**.  
 
 3.  Nel **raccolta** selezionare la raccolta per cui si desidera visualizzare informazioni sullo stato.  
 
@@ -84,6 +84,6 @@ ms.openlocfilehash: fb5b247ae3fc031cd0beea21b03a45affe3add68
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

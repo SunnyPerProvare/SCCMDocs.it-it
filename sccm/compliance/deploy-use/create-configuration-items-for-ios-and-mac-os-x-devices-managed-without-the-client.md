@@ -1,8 +1,8 @@
 ---
-title: Creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti senza il client di System Center Configuration Manager | System Center Configuration Manager
-description: Usare l'elemento di configurazione iOS e Mac OS X di System Center Configuration Manager per gestire le impostazioni dei dispositivi iOS e Mac OS X.
+title: Creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti senza il client di System Center Configuration Manager | Documentazione Microsoft
+description: Usare l&quot;elemento di configurazione iOS e Mac OS X di System Center Configuration Manager per gestire le impostazioni dei dispositivi iOS e Mac OS X.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/14/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 34fb20b0d793d4b508d4cfc3b45c76a407ff4299
+ms.sourcegitcommit: d023df79e0bcb7d5583224802976a5059c4ee753
+ms.openlocfilehash: ea4024aaa07d40781663725127d64388055c6501
 
 
 ---
@@ -80,8 +80,11 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
 |**Lunghezza minima password (caratteri)**|La lunghezza minima della password.|  
 |**Scadenza password in giorni**|Il numero di giorni prima che sia necessario modificare una password.|  
 |**Numero di password memorizzate**|Impedisce il riutilizzo delle password usate in precedenza.|  
-|**Numero di tentativi di accesso non riusciti prima della cancellazione dei dati dal dispositivo**|Cancella il dispositivo se questo numero di tentativi di accesso ha esito negativo.<br>(solo iOS)|  
-|**Complessità password**|Scegliere se è possibile specificare un PIN, ad esempio "1234", o se è necessario fornire una password complessa.|  
+|**Numero di tentativi di accesso non riusciti prima della cancellazione dei dati dal dispositivo**|Cancella il dispositivo se questo numero di tentativi di accesso ha esito negativo.<br>(solo iOS)| 
+|**Tempo di inattività prima del blocco del dispositivo**|Specifica il numero di minuti di inattività prima del blocco automatico del dispositivo.|
+|**Complessità password**|Scegliere se è possibile specificare un PIN, ad esempio "1234", o se è necessario fornire una password complessa.|
+|**Consenti password semplici**|Specifica che è possibile usare password semplici come "0000" e "1234".|
+|**Sblocco mediante impronta digitale**|Consente di usare un'impronta digitale per sbloccare il dispositivo.|
 
 ###  <a name="device"></a>Dispositivo  
  Queste impostazioni si applicano ai dispositivi iOS e Mac OS X.  
@@ -112,7 +115,7 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
 
 |Nome impostazione|Dettagli|  
 |------------------|-------------|  
-|**Browser predefinito**|È possibile modificare il browser Internet predefinito.|  
+|**Consenti browser Web**|L'utente può usare il Web browser predefinito del dispositivo.|  
 |**Riempimento automatico**|L’utente può modificare le impostazioni di completamento automatico nel browser.|  
 |**Esecuzione script attivo**|Il browser può eseguire script, ad esempio gli script ActiveX.|  
 |**Blocco popup**|Attiva o disattiva il blocco popup del browser.|  
@@ -168,8 +171,7 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
 |**Consenti blocco attivazione (solo modalità di supervisione)**|Usare questa impostazione per abilitare il blocco attivazione iOS Activation per i dispositivi iOS **con supervisione** gestiti. Per altre informazioni sul blocco attivazione, vedere [Gestire il blocco attivazione iOS](../../mdm/deploy-use/manage-ios-activation-lock.md).
 |**Centro di controllo schermata di blocco**|Controlla se l'applicazione di centro di controllo è accessibile quando il dispositivo è bloccato.|  
 |**Visualizzazione notifiche schermata di blocco**|Controlla se è possibile visualizzare le notifiche quando il dispositivo è bloccato.|  
-|**Visualizzazione Oggi schermata di blocco**|Controlla se è possibile visualizzare la vista Today quando il dispositivo è bloccato.|  
-|**Sblocco mediante impronta digitale**|Consente l'utilizzo del sensore di impronta digitale per sbloccare il dispositivo.|  
+|**Visualizzazione Oggi schermata di blocco**|Controlla se è possibile visualizzare la vista Today quando il dispositivo è bloccato.|   
 
 ###  <a name="data-protection"></a>Protezione dati  
  Queste impostazioni si applicano solo ai dispositivi iOS.  
@@ -247,7 +249,7 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
 
     -   **Importa**: importa un elenco di app specificate in un file con valori delimitati da virgole. Nel file usare il formato, il nome dell'app, l'autore e l'ID bundle dell'app.  
 
-2.  Al termine, fare clic su **Avanti**.  
+2.  Al termine, fare clic su **Avanti**. È necessario distribuire a raccolte di utenti elementi di configurazione contenenti impostazioni di app conformi e non conformi.
 
  È possibile usare uno dei report seguenti per monitorare le app conformi e non conformi:  
 
@@ -368,6 +370,6 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

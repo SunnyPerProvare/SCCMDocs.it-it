@@ -1,6 +1,6 @@
 ---
 
-title: Introduzione agli aggiornamenti software | Configuration Manager
+title: Introduzione agli aggiornamenti software | Documentazione Microsoft
 description: Informazioni di base sugli aggiornamenti software in System Center Configuration Manager.
 keywords: 
 author: dougeby
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: e41f91b9f796cb6a1a8eb2a500c7f615e07d60ac
+ms.sourcegitcommit: d8cace9edd58e8fa438dbb43e54e57cd0dc55d2b
+ms.openlocfilehash: 2904b904bbaf155f016f55fbd36af80308a42d76
 
 
 
@@ -29,10 +29,10 @@ Gli aggiornamenti software in System Center Configuration Manager offrono un set
 Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiornamenti software nell'ambiente, vedere [Example scenario to deploy security software updates](../deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md) (Scenario di esempio per distribuire aggiornamenti di sicurezza del software).  
 
 ##  <a name="a-namebkmksynchronizationa-software-updates-synchronization"></a><a name="BKMK_Synchronization"></a> Sincronizzazione degli aggiornamenti software  
- La sincronizzazione degli aggiornamenti software in Configuration Manager usa Microsoft Update per recuperare i metadati degli aggiornamenti software. Il sito di livello superiore, un sito di amministrazione centrale o un sito primario autonomo, vengono sincronizzati con Microsoft Update in base a una pianificazione o quando si avvia manualmente la sincronizzazione dalla console di Configuration Manager. Quando Configuration Manager termina la sincronizzazione degli aggiornamenti software nel sito di livello superiore, la sincronizzazione degli aggiornamenti software viene avviata nei siti figlio, se esistenti. Dopo che la sincronizzazione è stata completata in ogni sito primario o secondario, vengono creati criteri a livello di sito che forniscono ai computer client la posizione dei punti di aggiornamento software.  
+ La sincronizzazione degli aggiornamenti software in Configuration Manager avviene mediante la connessione a Microsoft Update per recuperare i metadati degli aggiornamenti software. Il sito di livello superiore, un sito di amministrazione centrale o un sito primario autonomo, vengono sincronizzati con Microsoft Update in base a una pianificazione o quando si avvia manualmente la sincronizzazione dalla console di Configuration Manager. Quando Configuration Manager termina la sincronizzazione degli aggiornamenti software nel sito di livello superiore, la sincronizzazione degli aggiornamenti software viene avviata nei siti figlio, se esistenti. Dopo che la sincronizzazione è stata completata in ogni sito primario o secondario, vengono creati criteri a livello di sito che forniscono ai computer client la posizione dei punti di aggiornamento software.  
 
 > [!NOTE]  
->  Per impostazione predefinita, gli aggiornamenti software sono abilitati nelle impostazioni client. Se, tuttavia, si imposta l'impostazione client **Abilitare aggiornamento software nei client** su **No** per disabilitare gli aggiornamenti software in una raccolta o nelle impostazioni predefinite, la posizione dei punti di aggiornamento software non viene inviata ai client associati. Per altre informazioni, vedere le impostazioni del client per gli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#BKMK_SoftwareUpdatesDeviceSetting) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
+>  Per impostazione predefinita, gli aggiornamenti software sono abilitati nelle impostazioni client. Se, tuttavia, si imposta l'impostazione client **Abilitare aggiornamento software nei client** su **No** per disabilitare gli aggiornamenti software in una raccolta o nelle impostazioni predefinite, la posizione dei punti di aggiornamento software non viene inviata ai client associati. Per altre informazioni, vedere le impostazioni del client per gli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
 
  Dopo aver ricevuto i criteri, il client avvia un'analisi della conformità degli aggiornamenti software e scrive le informazioni in Strumentazione gestione Windows (WMI). Le informazioni sulla conformità vengono quindi inviate al punto di gestione che le invia infine al server del sito. Per altre informazioni sulla valutazione della conformità, vedere la sezione [Software updates compliance assessment](#BKMK_SUMCompliance) in questo argomento.  
 
@@ -132,11 +132,11 @@ Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiorn
 
  L'analisi per la conformità degli aggiornamenti software, inclusa la relativa pianificazione, può iniziare nei modi seguenti:  
 
--   **Pianificazione dell'analisi degli aggiornamenti software**: l'analisi per la conformità degli aggiornamenti software inizia in base alla pianificazione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#BKMK_SoftwareUpdatesDeviceSetting) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
+-   **Pianificazione dell'analisi degli aggiornamenti software**: l'analisi per la conformità degli aggiornamenti software inizia in base alla pianificazione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
 
 -   **Azione Proprietà di Configuration Manager**: l'utente può avviare l'azione **Ciclo di analisi per aggiornamenti software** o **Ciclo di valutazione distribuzione aggiornamenti software** nella scheda **Azione** della finestra di dialogo **Proprietà di Configuration Manager** nel computer client.  
 
--   **Pianificazione della rivalutazione della distribuzione**: la valutazione della distribuzione e l'analisi per la conformità degli aggiornamenti software iniziano in base alla pianificazione della rivalutazione della distribuzione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#BKMK_SoftwareUpdatesDeviceSetting) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
+-   **Pianificazione della rivalutazione della distribuzione**: la valutazione della distribuzione e l'analisi per la conformità degli aggiornamenti software iniziano in base alla pianificazione della rivalutazione della distribuzione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
 
 -   **Prima del download dei file di aggiornamento**: quando un computer client riceve un criterio di assegnazione per una nuova distribuzione richiesta, Agente client aggiornamenti software scarica i file di aggiornamento software nella cache del client locale. Prima di scaricare i file di aggiornamento software, l'agente client avvia un'analisi per verificare che l'aggiornamento software sia ancora necessario.  
 
@@ -285,6 +285,6 @@ Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiorn
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 
