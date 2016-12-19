@@ -308,6 +308,6 @@ Quando si pianificano gli aggiornamenti software, vedere [Preparare la gestione 
 
 
 
-<!--HONumber=Dec16_HO2-->
+<!--HONumber=Dec16_HO3-->
 
 

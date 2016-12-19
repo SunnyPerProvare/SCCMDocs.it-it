@@ -81,6 +81,6 @@
 9. Nella pagina **Completamento** verificare che gli aggiornamenti software siano stati scaricati correttamente e fare clic su **Chiudi**.  
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 
