@@ -1,11 +1,11 @@
 ---
-title: Distribuire gli aggiornamenti software automaticamente | Configuration Manager
+title: Distribuire automaticamente gli aggiornamenti software | Documentazione Microsoft
 description: Distribuire gli aggiornamenti software automaticamente aggiungendo nuovi aggiornamenti a un gruppo di aggiornamento associato a una distribuzione attiva oppure usando ADR.
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 12/07/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -13,8 +13,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 133f29aa3f515054b23ba70f1a1dfd3eedaa56c8
+ms.sourcegitcommit: 78524abd4c45f0b7402d6f1e85afc60bb72ab0ee
+ms.openlocfilehash: 34b0819957ffcc3711ee354a5b821d78fa7445cb
 
 ---
 
@@ -94,7 +94,7 @@ Usare la procedura seguente per aggiungere aggiornamenti software a un gruppo di
 
     -   **Impostazione condizioni di licenza**: specificare se si desidera distribuire automaticamente gli aggiornamenti software con le condizioni di licenza associate. Alcuni aggiornamenti software includono le condizioni di licenza, ad esempio un Service Pack. Quando si distribuiscono automaticamente gli aggiornamenti software, non vengono visualizzate le condizioni di licenza e non è disponibile un'opzione per accettare tali condizioni. È possibile scegliere di distribuire automaticamente tutti gli aggiornamenti software indipendentemente dalle condizioni di licenza associate o di distribuire solo gli aggiornamenti a cui non sono associate tali condizioni.  
 
-        > [!WARNING]  
+        > [!NOTE]  
         >  Per riesaminare le condizioni di licenza per un aggiornamento software, è possibile selezionare l'aggiornamento nel nodo **Tutti gli aggiornamenti software** dell'area di lavoro **Raccolta software** , quindi nella scheda **Home** del gruppo **Aggiorna** fare clic su **Riesamina licenza**.  
         >   
         >  Per individuare gli aggiornamenti software con le condizioni di licenza associate, è possibile aggiungere la colonna **Condizioni di licenza** al riquadro dei risultati nel nodo **Tutti gli aggiornamenti software** , quindi fare clic sull'intestazione per ordinare la colonna per aggiornamenti software con condizioni di licenza.  
@@ -103,6 +103,9 @@ Usare la procedura seguente per aggiungere aggiornamenti software a un gruppo di
 
     > [!IMPORTANT]  
     >  Il limite dell'ADR è di 1000 aggiornamenti software. Per garantire che i criteri specificati in questa pagina consentano di recuperare meno di 1.000 aggiornamenti software, si consiglia di impostare gli stessi criteri sul nodo **Tutti gli aggiornamenti software** nell'area di lavoro **Raccolta software** .  
+
+    > [!NOTE]
+    > A partire da Configuration Manager versione 1610, è possibile filtrare le dimensioni del contenuto per gli aggiornamenti software nelle regole di distribuzione automatica. Ad esempio, è possibile impostare il filtro **Dimensioni contenuto (KB)** su **< 2048** per scaricare solo gli aggiornamenti software inferiori a 2 MB. Questo filtro impedisce che vengano scaricati in automatico gli aggiornamenti software di grandi dimensioni al fine di migliorare il supporto della manutenzione Windows semplificata di livello inferiore quando la larghezza di banda è limitata. Per informazioni dettagliate, vedere [Configuration Manager and Simplified Windows Servicing on Down Level Operating Systems](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/) (Configuration Manager e manutenzione Windows semplificata su sistemi operativi di livello inferiore).
 
 6.  Nella pagina Pianificazione valutazione specificare se abilitare l'esecuzione dell'ADR in una pianificazione. Quando attivata, fare clic su **Personalizza** per impostare la pianificazione ricorrente.  
 
@@ -137,13 +140,13 @@ Usare la procedura seguente per aggiungere aggiornamenti software a un gruppo di
         > [!NOTE]  
         >  L'orario effettivo di scadenza dell'installazione corrisponde all'ora di scadenza visualizzata più una quantità di tempo casuale di massimo 2 ore. Ciò consente di ridurre il potenziale impatto di un'installazione simultanea degli aggiornamenti software nella distribuzione da parte di tutti i computer client nella raccolta di destinazione.  
         >   
-        >  È possibile configurare l'impostazione **Disabilitare sequenza casuale scadenza** del client **Agente computer** per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti software richiesti. Per altre informazioni, vedere [Computer Agent](../../core/clients/deploy/about-client-settings.md#a-namebkmkcomputeragentdevicesettingsa-computer-agent).  
+        >  È possibile configurare l'impostazione **Disabilitare sequenza casuale scadenza** del client **Agente computer** per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti software richiesti. Per altre informazioni, vedere [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
 8. Nella pagina Esperienza utente, è possibile configurare le seguenti impostazioni:  
 
     -   **Notifiche utente**: specificare se visualizzare la notifica degli aggiornamenti software in Software Center sul computer client in base al **Tempo disponibile software** configurato e se visualizzare le notifiche utente sui computer client.  
 
-    -   **Comportamento scadenza**: specificare il comportamento che deve verificarsi quando si raggiunge la data di scadenza per la distribuzione degli aggiornamenti software. Specificare se installare gli aggiornamenti software nella distribuzione. Inoltre, specificare se eseguire un riavvio del sistema dopo l'installazione dell'aggiornamento software indipendentemente da una finestra di manutenzione configurata. Per altre informazioni sulle finestre di manutenzione, vedere [How to use maintenance windows](../../core/clients/manage/collections/use-maintenance-windows.md) (Come usare le finestre di manutenzione in Configuration Manager).  
+    -   **Comportamento scadenza**: specificare il comportamento che deve verificarsi quando si raggiunge la data di scadenza per la distribuzione degli aggiornamenti software. Specificare se installare gli aggiornamenti software nella distribuzione. Inoltre, specificare se eseguire un riavvio del sistema dopo l'installazione dell'aggiornamento software indipendentemente da una finestra di manutenzione configurata. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
     -   **Comportamento riavvio dispositivo**: specificare se evitare un riavvio del sistema su server e workstation dopo l'installazione degli aggiornamenti software e se è richiesto un riavvio del sistema per completare l'installazione.  
 
@@ -155,9 +158,11 @@ Usare la procedura seguente per aggiungere aggiornamenti software a un gruppo di
         > [!NOTE]  
         >  Quando si distribuisce un aggiornamento software in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta che dispone di una finestra di manutenzione configurata.  
 
-9. Nella pagina Avvisi, configurare la modalità in cui Configuration Manager e System Center Operations Manager genereranno gli avvisi relativi alla distribuzione.  
+    - **Comportamento di rivalutazione della distribuzione degli aggiornamenti software al riavvio**: a partire da Configuration Manager versione 1606, selezionare questa impostazione per configurare le distribuzioni degli aggiornamenti software in modo che i client eseguano un'analisi della conformità degli aggiornamenti software immediatamente dopo l'installazione degli aggiornamenti software e il riavvio. In questo modo, il client controlla la presenza di aggiornamenti software aggiuntivi che diventano applicabili dopo il riavvio e che possono quindi essere installati (e resi conformi) durante la stessa finestra di manutenzione.
 
-    > [!WARNING]  
+9. Nella pagina Avvisi configurare la modalità in cui Configuration Manager e System Center Operations Manager genereranno gli avvisi relativi alla distribuzione.  
+
+    > [!NOTE]  
     >  È possibile riesaminare gli avvisi recenti sugli aggiornamenti software dal nodo **Aggiornamenti software** nell'area di lavoro **Raccolta software** .  
 
 10. Nella pagina Impostazioni download, configurare le seguenti impostazioni:  
@@ -209,7 +214,7 @@ Usare la procedura seguente per aggiungere aggiornamenti software a un gruppo di
 
 15. Nella pagina Riepilogo, esaminare le impostazioni. Per salvare le impostazioni in un modello di distribuzione, fare clic su **Salva come modello**, immettere un nome e selezionare le impostazioni da includere nel modello, quindi fare clic su **Salva**. Per modificare un'impostazione configurata, fare clic sulla pagina della procedura guidata associata e modificare l'impostazione.  
 
-    > [!WARNING]  
+    > [!NOTE]  
     >  Il nome modello può essere composto da caratteri ASCII alfanumerici così come da **\\** (barra rovesciata) o **‘** (virgoletta singola).  
 
 16. Fare clic su **Avanti** per creare l'ADR.  
@@ -269,13 +274,13 @@ Usare la procedura seguente per aggiungere aggiornamenti software a un gruppo di
         > [!NOTE]  
         >  L'orario effettivo di scadenza dell'installazione corrisponde all'ora di scadenza visualizzata più una quantità di tempo casuale di massimo 2 ore. Ciò consente di ridurre il potenziale impatto di un'installazione simultanea degli aggiornamenti software nella distribuzione da parte di tutti i computer client nella raccolta di destinazione.  
         >   
-        >  È possibile configurare l'impostazione **Disabilitare sequenza casuale scadenza** del client **Agente computer** per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti software richiesti. Per altre informazioni, vedere [Computer Agent](../../core/clients/deploy/about-client-settings.md#a-namebkmkcomputeragentdevicesettingsa-computer-agent).  
+        >  È possibile configurare l'impostazione **Disabilitare sequenza casuale scadenza** del client **Agente computer** per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti software richiesti. Per altre informazioni, vedere [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
 6.  Nella pagina Esperienza utente, è possibile configurare le seguenti impostazioni:  
 
     -   **Notifiche utente**: specificare se visualizzare la notifica degli aggiornamenti software in Software Center sul computer client in base al **Tempo disponibile software** configurato e se visualizzare le notifiche utente sui computer client.  
 
-    -   **Comportamento scadenza**: specificare il comportamento che deve verificarsi quando si raggiunge la data di scadenza per la distribuzione degli aggiornamenti software. Specificare se installare gli aggiornamenti software nella distribuzione. Inoltre, specificare se eseguire un riavvio del sistema dopo l'installazione dell'aggiornamento software indipendentemente da una finestra di manutenzione configurata. Per altre informazioni sulle finestre di manutenzione, vedere [How to use maintenance windows](../../core/clients/manage/collections/use-maintenance-windows.md) (Come usare le finestre di manutenzione in Configuration Manager).  
+    -   **Comportamento scadenza**: specificare il comportamento che deve verificarsi quando si raggiunge la data di scadenza per la distribuzione degli aggiornamenti software. Specificare se installare gli aggiornamenti software nella distribuzione. Inoltre, specificare se eseguire un riavvio del sistema dopo l'installazione dell'aggiornamento software indipendentemente da una finestra di manutenzione configurata. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
     -   **Comportamento riavvio dispositivo**: specificare se evitare un riavvio del sistema su server e workstation dopo l'installazione degli aggiornamenti software e se è richiesto un riavvio del sistema per completare l'installazione.  
 
@@ -314,6 +319,6 @@ Per altre informazioni sul processo di distribuzione, vedere [Software update de
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,8 +1,8 @@
 ---
-title: Usare PXE per distribuire Windows in rete | Configuration Manager
+title: Usare PXE per distribuire Windows in rete | Documentazione Microsoft
 description: Usare le distribuzioni del sistema operativo avviate da PXE per aggiornare il sistema operativo di un computer o per installare una nuova versione di Windows in un nuovo computer.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/07/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 4bb62f7479fafac6b57d42cd048fd5bcec29b0e9
+ms.sourcegitcommit: 3f44505c977b511223a083a960f871371c0ff133
+ms.openlocfilehash: b22cdbd42693078caa47f41182ce73ea881c3515
 
 
 ---
@@ -98,6 +98,8 @@ Le distribuzioni del sistema operativo avviate da PXE in System Center Configura
 ##  <a name="how-is-the-boot-image-selected-for-clients-booting-with-pxe"></a>Come viene selezionata l'immagine di avvio per i client avviati con PXE?
 Quando un client viene avviato con PXE Configuration Manager rende disponibile per il client un'immagine di avvio. A partire dalla versione 1606, Configuration Manager usa un'immagine di avvio con un'architettura esattamente corrispondente, se disponibile. Se non è disponibile un'immagine di avvio con l'architettura esatta, Configuration Manager usa un'immagine di avvio con un'architettura compatibile. L'elenco seguente contiene informazioni dettagliate sulle modalità di selezione di un'immagine di avvio per i client avviati con PXE.
 1. Configuration Manager cerca nel database del sito il record di sistema corrispondente all'indirizzo MAC o al SMBIOS del client che sta tentando di eseguire l'avvio.
+    > [!NOTE]
+    > Se un computer assegnato a un sito viene avviato in PXE per un sito diverso, i criteri non sono visibili per il computer. Ad esempio, se un client è già assegnato al sito A, il punto di gestione e il punto di distribuzione nel sito B non saranno in grado di accedere ai criteri dal sito A e il client non riuscirà a completare l'avvio PXE.
 2. Configuration Manager cerca le sequenze di attività che vengono distribuite nel record di sistema menzionato nel passaggio 1.
 3. Nell'elenco di sequenze di attività menzionato nel passaggio 2 Configuration Manager cerca un'immagine di avvio corrispondente all'architettura del client che sta tentando di eseguire l'avvio. Se viene trovata un'immagine di avvio con la stessa architettura, verrà usata quell'immagine.
 
@@ -105,6 +107,6 @@ Quando un client viene avviato con PXE Configuration Manager rende disponibile p
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

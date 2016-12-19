@@ -1,8 +1,8 @@
 ---
-title: Gestire Windows come servizio | Configuration Manager
-description: "Le funzionalità di System Center Configuration Manager consentono di visualizzare lo stato di Windows come servizio nell'ambiente corrente per poterlo mantenere aggiornato."
+title: Gestire Windows as a Service | Documentazione Microsoft
+description: "Le funzionalità di System Center Configuration Manager consentono di visualizzare lo stato di Windows come servizio nell&quot;ambiente corrente per poterlo mantenere aggiornato."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/07/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 0ed06bb30d1277afa71d1eb2d045ea0ebc87912a
+ms.sourcegitcommit: 3f44505c977b511223a083a960f871371c0ff133
+ms.openlocfilehash: 1885968006ef5be1f507e94e0d33918174b1af12
 
 
 ---
@@ -134,14 +134,15 @@ I piani di manutenzione usano solo la classificazione degli aggiornamenti softwa
 
     -   **Specificare lo stato di conformità di Windows a cui applicare questo piano di manutenzione**: selezionare una delle opzioni riportate di seguito.  
 
-        -   **Release Ready (Current Branch)**:  
+        -   **Release Ready (Current Branch)**: nel modello di manutenzione CB, gli aggiornamenti delle funzionalità sono disponibili non appena vengono rilasciati da Microsoft.
 
-        -   **Business Ready (Current Branch for Business**:  
+        -   **Business Ready (Current Branch for Business)**: il ramo di manutenzione CBB viene solitamente usato per ampie distribuzioni. I client Windows 10 nel ramo di manutenzione CBB ricevono la stessa build di Windows 10 di quelli nel ramo CB, ma in un secondo momento.
 
-    -   **Dopo quanti giorni dalla pubblicazione di un nuovo aggiornamento di Microsoft si vuole eseguire la distribuzione nell'ambiente**:  
+    -   **Dopo quanti giorni dalla pubblicazione di un nuovo aggiornamento di Microsoft si vuole eseguire la distribuzione nell'ambiente**: Configuration Manager valuta se includere un aggiornamento nella distribuzione se la data corrente è successiva alla data di rilascio del numero di giorni configurato per questa impostazione.
 
     -   Per le versioni precedenti alla versione 1602 di Configuration Manager, fare clic su **Anteprima** per visualizzare gli aggiornamenti di Windows 10 associati allo stato di conformità.  
 
+    Per altre informazioni, vedere [Rami di manutenzione](https://technet.microsoft.com/itpro/windows/manage/waas-overview#servicing-branches).
 7.  A partire dalla versione 1602 di Configuration Manager, nella pagina Aggiornamenti configurare i criteri di ricerca per filtrare gli aggiornamenti che verranno aggiunti al piano di manutenzione. Verranno aggiunti alla distribuzione associata solo gli aggiornamenti che soddisfano i criteri specificati.  
 
      Fare clic su **Anteprima** per visualizzare gli aggiornamenti che soddisfano i criteri specificati.  
@@ -168,7 +169,7 @@ I piani di manutenzione usano solo la classificazione degli aggiornamenti softwa
         > [!NOTE]  
         >  L'orario effettivo di scadenza dell'installazione corrisponde all'ora di scadenza visualizzata più una quantità di tempo casuale di massimo 2 ore. Ciò consente di ridurre il potenziale impatto di un'installazione simultanea degli aggiornamenti nella distribuzione da parte di tutti i computer client nella raccolta di destinazione.  
         >   
-        >  È possibile configurare l'impostazione **Disabilitare sequenza casuale scadenza** del client **Agente computer** per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti richiesti. Per ulteriori informazioni, vedere [Computer Agent](../../core/clients/deploy/about-client-settings.md#BKMK_ComputerAgentDeviceSettings).  
+        >  È possibile configurare l'impostazione **Disabilitare sequenza casuale scadenza** del client **Agente computer** per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti richiesti. Per ulteriori informazioni, vedere [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
 9. Nella pagina Esperienza utente, è possibile configurare le seguenti impostazioni:  
 
@@ -220,7 +221,12 @@ I piani di manutenzione usano solo la classificazione degli aggiornamenti softwa
  Dopo aver completato la procedura guidata, verrà eseguito il piano di manutenzione. Gli aggiornamenti che soddisfano i criteri specificati vengono aggiunti a un gruppo di aggiornamenti software, scaricati nella raccolta contenuto, nel server del sito, e distribuiti ai punti di distribuzione configurati. Il gruppo di aggiornamenti software viene quindi distribuito ai client inclusi nella raccolta di destinazione.  
 
 ##  <a name="a-namebkmkmodifyservicingplana-modify-a-servicing-plan"></a><a name="BKMK_ModifyServicingPlan"></a> Modificare un piano di manutenzione  
- Dopo aver creato un piano di manutenzione di base dal dashboard di manutenzione di Windows 10 oppure se è necessario modificare le impostazioni per un piano di manutenzione esistente, è possibile passare alle proprietà del piano di manutenzione. Per modificare le proprietà di un piano di manutenzione, seguire la procedura riportata di seguito.  
+Dopo aver creato un piano di manutenzione di base dal dashboard di manutenzione di Windows 10 oppure se è necessario modificare le impostazioni per un piano di manutenzione esistente, è possibile passare alle proprietà del piano di manutenzione.
+
+> [!NOTE]
+> È possibile configurare le impostazioni nelle proprietà per il piano di manutenzione che non sono disponibili nella procedura guidata usata per la creazione del piano di manutenzione. La procedura guidata usa valori predefiniti per le impostazioni di download, le impostazioni di distribuzione e gli avvisi.  
+
+Per modificare le proprietà di un piano di manutenzione, seguire la procedura riportata di seguito.  
 
 #### <a name="to-modify-the-properties-of-a-servicing-plan"></a>Per modificare le proprietà di un piano di manutenzione  
 
@@ -228,10 +234,34 @@ I piani di manutenzione usano solo la classificazione degli aggiornamenti softwa
 
 2.  Nell'area di lavoro Raccolta software espandere **Manutenzione di Windows 10**, fare clic su **Piani di manutenzione**e quindi selezionare il piano di manutenzione che si vuole modificare.  
 
-3.  Nella scheda **Home** fare clic su **Proprietà** per aprire le proprietà del piano di manutenzione selezionato.  
+3.  Nella scheda **Home** fare clic su **Proprietà** per aprire le proprietà del piano di manutenzione selezionato.
+
+    Le impostazioni seguenti sono disponibili nelle proprietà del piano di manutenzione non configurate nella procedura guidata:
+
+    - Impostazioni di distribuzione Nella scheda Impostazioni distribuzione configurare le seguenti impostazioni:  
+
+        -   **Tipo di distribuzione**: specificare il tipo di distribuzione per la distribuzione degli aggiornamenti software. Selezionare **Richiesto** per creare una distribuzione degli aggiornamenti software obbligatoria in cui gli aggiornamenti software vengano automaticamente installati nei client prima della scadenza di un'installazione configurata. Selezionare **Disponibile** per creare una distribuzione degli aggiornamenti software aggiuntiva che gli utenti possano installare da Software Center.  
+
+            > [!IMPORTANT]  
+            >  Dopo aver creato la distribuzione degli aggiornamenti software, non è possibile modificare successivamente il tipo di distribuzione.  
+
+            > [!NOTE]  
+            >  Un gruppo di aggiornamenti software distribuito come **Richiesto** verrà scaricato in background e rispetterà le impostazioni BITS, se configurate.  
+            > I gruppi di aggiornamenti software distribuiti come **Disponibile** verranno invece scaricati in primo piano e ignoreranno le impostazioni BITS.  
+
+        -   **Usa riattivazione LAN per riattivare i client per le distribuzioni richieste**: specificare se abilitare la riattivazione LAN alla scadenza per inviare pacchetti di riattivazione ai computer che richiedono uno o più aggiornamenti software nella distribuzione. Tutti i computer in modalità sospensione all'ora di scadenza dell'installazione verranno riattivati in modo che si possa avviare l'installazione degli aggiornamenti software. I client in modalità sospensione che non richiedono aggiornamenti software nella distribuzione non vengono avviati. Per impostazione predefinita, questa impostazione non viene abilitata ed è disponibile solo quando **Tipo di distribuzione** è impostato su **Richiesto**.  
+
+            > [!WARNING]  
+            >  Prima di usare questa opzione, i computer e le reti devono essere configurati per riattivazione LAN.  
+
+        -   **Livello dettaglio**: specificare il livello di dettaglio per i messaggi di stato segnalati dai computer client.  
+
+    - Impostazioni di download
+
+    - Avvisi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

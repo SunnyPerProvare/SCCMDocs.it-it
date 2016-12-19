@@ -1,11 +1,11 @@
 ---
-title: Assistenza a un gruppo di server | Configuration Manager
+title: Assistenza a un gruppo di server | Documentazione Microsoft
 description: "La console di System Center Configuration Manager invia avvisi e stati per monitorare gli aggiornamenti e la conformità."
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 12/07/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -13,8 +13,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 304a83ea-0f72-437d-9688-2e6e0c7526dd
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: da7a5f1d075eb1fcd7c56b713401bb0f985fa487
+ms.sourcegitcommit: 78524abd4c45f0b7402d6f1e85afc60bb72ab0ee
+ms.openlocfilehash: b89cec7cebb5342da32ec8e11a049edad12f1231
 
 
 ---
@@ -47,8 +47,11 @@ Le impostazioni del gruppo di server vengono configurate nelle proprietà di una
 
 5.  Specificare se usare uno script di pre-distribuzione (svuotamento del nodo) o di post-distribuzione (ripresa del nodo).  
 
+    > [!WARNING]
+    > Gli script personalizzati non sono firmati da Microsoft. È responsabilità dell'utente mantenere l'integrità di questi script.
+
     > [!TIP]  
-    >Di seguito sono riportati alcuni esempi che è possibile usare nei test degli script di pre-distribuzione e post-distribuzione, con cui viene scritta l'ora corrente in un file di testo:  
+    > Di seguito sono riportati alcuni esempi che è possibile usare nei test degli script di pre-distribuzione e post-distribuzione, con cui viene scritta l'ora corrente in un file di testo:  
     >   
     >  **Pre-distribuzione**  
     >   
@@ -85,6 +88,6 @@ Se un computer non può rilasciare un blocco di distribuzione, è possibile rila
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

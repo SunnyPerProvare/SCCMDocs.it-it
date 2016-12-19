@@ -1,5 +1,5 @@
 ---
-title: Windows Defender Advanced Threat Protection | System Center Configuration Manager
+title: Windows Defender Advanced Threat Protection | Documentazione Microsoft
 description: Informazioni su come gestire e monitorare Windows Defender Advanced Threat Protection, un nuovo servizio che consente alle organizzazioni di rispondere agli attacchi avanzati.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: a4ad2d93ecd994fff00dab33084a734252cac651
+ms.sourcegitcommit: 299fada2b6587ace44e635c4f26cc7a482d44843
+ms.openlocfilehash: 880ea4fcb0730f0e9adbc9f142262f241f5df9dc
 
 ---
 # <a name="windows-defender-advanced-threat-protection"></a>Windows Defender Advanced Threat Protection
@@ -38,9 +38,9 @@ Windows Defender ATP è un servizio disponibile nel [Centro sicurezza PC Windows
 
  1.  Accedere al [servizio online Windows Defender ATP](https://securitycenter.windows.com/)   
 
- 2.  Fare clic sulla voce di menu **Caricamento client**.  
+ 2.  Fare clic sulla voce di menu **Endpoint Management** (Gestione Endpoint).  
 
- 3.  Selezionare **System Center Configuration Manager** e fare clic su **Scarica pacchetto**.  
+ 3.  Selezionare **System Center Configuration Manager (current branch) version 1606** (System Center Configuration Manager (Current Branch) versione 1606) e fare clic su **Download package** (Scarica pacchetto).  
 
  4.  Scaricare il file di archivio compresso (zip) ed estrarre il contenuto.
 
@@ -86,7 +86,34 @@ Windows Defender ATP è un servizio disponibile nel [Centro sicurezza PC Windows
         -   **Non caricati**: i criteri sono stati applicati ma l'agente non ha segnalato il caricamento dei criteri  
 
 
+## <a name="how-to-create-and-deploy-an-offboarding-configuration-file"></a>Come creare e distribuire un file di configurazione per l'offboarding  
 
-<!--HONumber=Nov16_HO1-->
+1.  Accedere al [servizio online Windows Defender ATP](https://securitycenter.windows.com/)   
+
+2.  Fare clic sulla voce di menu **Endpoint Management** (Gestione Endpoint).  
+
+3.  Selezionare **System Center Configuration Manager (current branch) version 1606** (System Center Configuration Manager (Current Branch) versione 1606) e fare clic su **Endpoint offboarding** (Offobarding endpoint).  
+
+4.  Scaricare il file di archivio compresso (zip) ed estrarre il contenuto. I file per l'offboarding sono validi per 30 giorni.
+
+5.  Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Protezione endpoint** > **Criteri di Windows Defender ATP** e fare clic su **Creare criteri di Windows Defender ATP**. Verrà visualizzata la Creazione guidata criteri di Windows Defender ATP.  
+
+6.  Digitare il **nome** e la **descrizione** per il criterio di Windows Defender ATP e selezionare **Offboarding**. Fare clic su **Avanti**.  
+
+7.  Usare **Sfoglia** per cercare il file di configurazione fornito dal tenant del servizio cloud Windows Defender ATP dell'organizzazione. Fare clic su **Avanti**.  
+
+8.  Esaminare le informazioni di riepilogo e completare la procedura guidata.  
+
+9.  È ora possibile distribuire i criteri di Windows Defender ATP nei computer client gestiti facendo clic su **Distribuisci**.  
+
+> [!IMPORTANT]
+> I file di configurazione di Windows Defender ATP contengono informazioni sensibili che devono essere protette.
+
+[Windows Defender Advanced Threat Protection](https://technet.microsoft.com/itpro/windows/keep-secure/windows-defender-advanced-threat-protection)
+[Risolvere i problemi di onboarding di Windows Defender Advanced Threat Protection](https://technet.microsoft.com/itpro/windows/keep-secure/troubleshoot-onboarding-windows-defender-advanced-threat-protection)
+
+
+
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Creare applicazioni Windows| System Center Configuration Manager
+title: Creare applicazioni Windows | Documentazione Microsoft
 description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni per i dispositivi Windows.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f776e624c7fff5f52b573e5066a6e7d20396ce91
+ms.sourcegitcommit: 557888d1f1f899e3198c430bbe5ccdd44178f824
+ms.openlocfilehash: 9c80cc42f9ce6775067a89a9f5a63c1bf4a0c7ca
 
 ---
 # <a name="create-windows-applications-with-system-center-configuration-manager"></a>Creare applicazioni Windows con System Center Configuration Manager
@@ -27,9 +27,9 @@ ms.openlocfilehash: f776e624c7fff5f52b573e5066a6e7d20396ce91
 Oltre agli altri requisiti e alle procedure di System Center Configuration Manager per la creazione di un'applicazione, quando si creano e si distribuiscono applicazioni per i dispositivi Windows è necessario tenere presente quanto segue.  
 
 ## <a name="general-considerations"></a>Considerazioni generali  
- Configuration Manager supporta la distribuzione dei tipi di app seguenti:  
+ Configuration Manager supporta la distribuzione dei tipi di file app seguenti:  
 
-|Tipo di dispositivo|File supportati|  
+|Tipo di dispositivo|Tipi di file supportati|  
 |-----------------|---------------------|  
 |Windows RT e Windows RT 8.1|*.appx, \*.appxbundle|  
 |Windows 8.1 e versioni successive registrato come dispositivo mobile|*.appx, \*.appxbundle|  
@@ -38,15 +38,15 @@ Oltre agli altri requisiti e alle procedure di System Center Configuration Manag
 
 |Tipo di dispositivo|Azioni supportate|  
 |-----------------|-----------------------|  
-|Windows 8.1 e versioni successive|Disponibile, Richiesto Disinstalla|  
-|Windows RT|Disponibile, Richiesto, Disinstalla|  
+|Windows 8.1 e versioni successive|disponibile, richiesto, disinstalla|  
+|Windows RT|disponibile, richiesto, disinstalla|  
 
 ## <a name="support-for-universal-windows-platform-uwp-apps"></a>Supporto per app della piattaforma UWP (Universal Windows Platform)  
- Nei dispositivi Windows 10 non è necessario disporre di una chiave di trasferimento locale per installare le app line-of-business. Tuttavia, la chiave del Registro di sistema **HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Appx\AllowAllTrustedApps** deve avere un valore pari a 1 per abilitare il trasferimento locale.  
+ Nei dispositivi Windows 10 non è necessario disporre di una chiave di trasferimento locale per installare le app line-of-business. Per l'abilitazione del trasferimento locale, tuttavia, la chiave del Registro di sistema **HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Appx\AllowAllTrustedApps** deve avere un valore pari a 1.  
 
- Se la chiave del Registro di sistema non è configurata, Configuration Manager imposterà automaticamente questo valore su **1** la prima volta che si distribuisce un'app al dispositivo. Se questo valore è stato impostato su **0**, Configuration Manager può modificare automaticamente il valore e la distribuzione delle app line-of-business avrà esito negativo.  
+ Se la chiave del Registro di sistema non è configurata, Configuration Manager imposta automaticamente questo valore su **1** la prima volta che si distribuisce un'app al dispositivo. Se questo valore è stato impostato su **0**, Configuration Manager non può modificare automaticamente il valore e la distribuzione delle app line-of-business ha esito negativo.  
 
- Le app line-of-business della piattaforma UWP devono essere firmate con un certificato di firma codice attendibile su ogni dispositivo in cui l'applicazione viene distribuita. È possibile usare i certificati da un'infrastruttura a chiave pubblica (PKI) interna o un certificato da una radice pubblica di terze parti installato nel dispositivo.  
+ Le app line-of-business della piattaforma UWP devono essere firmate con un certificato di firma codice attendibile su ogni dispositivo in cui l'app viene distribuita. È possibile usare i certificati da un'infrastruttura a chiave pubblica (PKI) interna o un certificato da una radice pubblica di terze parti installato nel dispositivo.  
 
  Nei dispositivi Windows 10 Mobile, è possibile usare un certificato di firma codice non Symantec per firmare le app universali **.appx** . Per le app **.xap** e per i pacchetti **.appx** compilati per Windows Phone 8.1 che si vuole installare nei dispositivi Windows 10 Mobile, è necessario usare un certificato di firma codice Symantec.  
 
@@ -59,7 +59,7 @@ Oltre agli altri requisiti e alle procedure di System Center Configuration Manag
 
 -   Per il rilevamento delle app vengono usati il codice e la versione prodotto del file.  
 
--   Verrà usato il comportamento di riavvio predefinito dell'app. Configuration Manager non controlla questo comportamento.  
+-   Viene usato il comportamento di riavvio predefinito dell'app. Configuration Manager non controlla questo comportamento.  
 
 -   I pacchetti MSI per utente vengono installati per un singolo utente.  
 
@@ -69,6 +69,6 @@ Oltre agli altri requisiti e alle procedure di System Center Configuration Manag
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

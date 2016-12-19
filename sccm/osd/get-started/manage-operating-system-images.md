@@ -1,8 +1,8 @@
 ---
-title: Gestire le immagini del sistema operativo | Configuration Manager
+title: Gestire le immagini del sistema operativo | Documentazione Microsoft
 description: "Informazioni sui metodi disponibili in Configuration Manager che è possibile usare per gestire le immagini del sistema operativo archiviate nei file Windows Imaging (WIM)."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 3c0801afa6a967faabf186f70685b701ba2a95d8
+ms.sourcegitcommit: 03722ff4f480cd26842e395fe1f7ec8359e2b33e
+ms.openlocfilehash: 6953c3834ca303b949f22436010a87b3da9688dc
 
 
 ---
@@ -85,7 +85,7 @@ Per informazioni sui passaggi necessari per creare un'immagine del sistema opera
  Le immagini del sistema operativo vengono distribuite nei punti di distribuzione allo stesso modo in cui vengono distribuiti gli altri contenuti. Nella maggior parte dei casi, è necessario distribuire l'immagine del sistema operativo almeno in un punto di distribuzione prima di distribuire il sistema operativo. Per informazioni sui passaggi necessari per distribuire un'immagine del sistema operativo, vedere [Distribute content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
 
 ##  <a name="a-namebkmkosimagesapplyupdatesa-apply-software-updates-to-an-operating-system-image"></a><a name="BKMK_OSImagesApplyUpdates"></a> Applicare aggiornamenti software a un'immagine del sistema operativo  
- Periodicamente, vengono rilasciati nuovi aggiornamenti software applicabili al sistema operativo nell'immagine del sistema operativo. Naturalmente, prima di poter applicare aggiornamenti software a un'immagine, è necessario che l'infrastruttura degli aggiornamenti software sia già predisposta e che gli aggiornamenti software siano stati sincronizzati correttamente. Per altre informazioni, vedere [Distribuire gli aggiornamenti software](../../sum/deploy-use/deploy-software-updates.md).  
+ Periodicamente, vengono rilasciati nuovi aggiornamenti software applicabili al sistema operativo nell'immagine del sistema operativo. Prima di poter applicare aggiornamenti software a un'immagine, è necessario che l'infrastruttura degli aggiornamenti software sia già predisposta, che gli aggiornamenti software siano stati sincronizzati correttamente e che gli aggiornamenti software siano stati scaricati nella raccolta contenuto nel server del sito. Per altre informazioni, vedere [Distribuire gli aggiornamenti software](../../sum/deploy-use/deploy-software-updates.md).  
 
  È possibile applicare gli aggiornamenti software applicabili a un'immagine in base a una pianificazione specificata. Nella pianificazione specificata, Configuration Manager applica gli aggiornamenti software selezionati all'immagine del sistema operativo e poi, facoltativamente, distribuisce l'immagine aggiornata ai punti di distribuzione. Le informazioni sull'immagine del sistema operativo, inclusi gli aggiornamenti software applicati al momento dell'importazione, vengono archiviate nel database del sito. Anche gli aggiornamenti software applicati all'immagine dopo che è stata aggiunta vengono archiviati nel database del sito. Quando si avvia la procedura guidata per applicare gli aggiornamenti software all'immagine del sistema operativo, tale procedura recupera un elenco di aggiornamenti software applicabili non ancora applicati all'immagine da selezionare. Configuration Manager copia gli aggiornamenti software dalla raccolta contenuto al server del sito e li applica all'immagine del sistema operativo.  
 
@@ -142,6 +142,6 @@ Per informazioni sui passaggi necessari per creare un'immagine del sistema opera
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

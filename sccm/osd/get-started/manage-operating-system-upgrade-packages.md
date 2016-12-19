@@ -1,8 +1,8 @@
 ---
-title: Gestire pacchetti di aggiornamento del sistema operativo | Configuration Manager
+title: Gestire i pacchetti di aggiornamento del sistema operativo | Documentazione Microsoft
 description: Informazioni su come gestire i pacchetti di aggiornamento del sistema operativo in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 226e283b5d9a04d2a9e0f3ce6894a82a3683d972
+ms.sourcegitcommit: 3f44505c977b511223a083a960f871371c0ff133
+ms.openlocfilehash: 5fef04f26b12bced073332fd1f7b4e7c7bd7d398
 
 
 ---
@@ -63,7 +63,7 @@ Un pacchetto di aggiornamento in System Center Configuration Manager contiene i 
  Le immagini del sistema operativo vengono distribuite nei punti di distribuzione allo stesso modo in cui vengono distribuiti gli altri contenuti. Nella maggior parte dei casi, è necessario distribuire l'immagine del sistema operativo almeno in un punto di distribuzione prima di distribuire il sistema operativo. Per informazioni sui passaggi necessari per distribuire un'immagine del sistema operativo, vedere [Distribute content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
 
 ##  <a name="a-namebkmkosupgradepkgapplyupdatesa-apply-software-updates-to-an-operating-system-upgrade-package"></a><a name="BKMK_OSUpgradePkgApplyUpdates"></a> Applicare gli aggiornamenti software a un pacchetto di aggiornamento del sistema operativo  
- A partire dalla versione 1602 di Configuration Manager, è possibile applicare i nuovi aggiornamenti software all'immagine del sistema operativo nel pacchetto di aggiornamento del sistema operativo. Naturalmente, prima di poter applicare aggiornamenti software a un pacchetto di aggiornamento, è necessario che l'infrastruttura degli aggiornamenti software sia già predisposta e che gli aggiornamenti software siano stati sincronizzati correttamente. Per altre informazioni, vedere [Distribuire gli aggiornamenti software](../../sum/deploy-use/deploy-software-updates.md).  
+ A partire dalla versione 1602 di Configuration Manager, è possibile applicare i nuovi aggiornamenti software all'immagine del sistema operativo nel pacchetto di aggiornamento del sistema operativo. Prima di poter applicare aggiornamenti software a un pacchetto di aggiornamento, è necessario che l'infrastruttura degli aggiornamenti software sia già predisposta, che gli aggiornamenti software siano stati sincronizzati correttamente e che gli aggiornamenti software siano stati scaricati nella raccolta contenuto nel server del sito. Per altre informazioni, vedere [Distribuire gli aggiornamenti software](../../sum/deploy-use/deploy-software-updates.md).  
 
  È possibile applicare gli aggiornamenti software idonei a un pacchetto di aggiornamento in base a una pianificazione specificata. Nella pianificazione specificata Configuration Manager applica gli aggiornamenti software selezionati al pacchetto di aggiornamento del sistema operativo e quindi, facoltativamente, distribuisce il pacchetto aggiornato ai punti di distribuzione. Le informazioni sul pacchetto di aggiornamento del sistema operativo, inclusi gli aggiornamenti software applicati al momento dell'importazione, vengono archiviate nel database del sito. Anche gli aggiornamenti software applicati al pacchetto di aggiornamento dopo che è stato aggiunto vengono archiviati nel database del sito. Quando si avvia la procedura guidata per applicare gli aggiornamenti software al pacchetto di aggiornamento del sistema operativo, viene recuperato un elenco di aggiornamenti software idonei non ancora applicati al pacchetto di aggiornamento da selezionare. Configuration Manager copia gli aggiornamenti software dalla raccolta contenuto al server del sito e li applica al pacchetto di aggiornamento del sistema operativo.  
 
@@ -95,6 +95,6 @@ Un pacchetto di aggiornamento in System Center Configuration Manager contiene i 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

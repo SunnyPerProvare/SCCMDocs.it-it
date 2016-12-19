@@ -1,8 +1,8 @@
 ---
-title: Installare una nuova versione di Windows in un nuovo computer (bare metal) con System Center Configuration Manager
+title: Installare una nuova versione di Windows in un nuovo computer (bare metal) con System Center Configuration Manager | Documentazione Microsoft
 description: Seguire questa procedura in System Center Configuration Manager per installare un sistema operativo in un nuovo computer tramite PXE, OEM o supporti autonomi.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: c672595a06a45bec840f17743636ef6f502af49f
+ms.sourcegitcommit: 06ade037c580d64503e6b8b5c3bf31004ab0650b
+ms.openlocfilehash: 93b3d99e7391feefc3d706f15f0fe8f8df3b75ac
 
 
 ---
@@ -33,7 +33,7 @@ Questo argomento specifica i passaggi generali di System Center Configuration Ma
 
 -   **Pianificare e implementare i requisiti di infrastruttura**  
 
-     Per poter distribuire i sistemi operativi, è necessario soddisfare diversi requisiti di infrastruttura, ad esempio Windows ADK, Servizi di distribuzione Windows (WDS), configurazioni supportate del disco rigido e così via. Per altre informazioni, vedere [Requisiti dell'infrastruttura per la distribuzione del sistema operativo](../plan-design/infrastructure-requirements-for-operating-system-deployment.md)  
+     Per poter distribuire i sistemi operativi, è necessario soddisfare diversi requisiti di infrastruttura, ad esempio Windows ADK, Servizi di distribuzione Windows (WDS), configurazioni supportate del disco rigido e così via. Per altre informazioni, vedere [Requisiti dell'infrastruttura per la distribuzione del sistema operativo](../plan-design/infrastructure-requirements-for-operating-system-deployment.md).
 
 ##  <a name="a-namebkmkconfigurea-configure"></a><a name="BKMK_Configure"></a> Configura  
 
@@ -81,6 +81,6 @@ Questo argomento specifica i passaggi generali di System Center Configuration Ma
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

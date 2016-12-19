@@ -1,12 +1,12 @@
 ---
 
-title: Distribuire manualmente gli aggiornamenti software | Configuration Manager
+title: Distribuire manualmente gli aggiornamenti software | Documentazione Microsoft
 description: Per distribuire manualmente gli aggiornamenti, selezionare gli aggiornamenti dalla console di Configuration Manager e distribuirli manualmente o aggiungere gli aggiornamenti a un gruppo di aggiornamento e distribuire il gruppo.
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 12/07/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: be845d9f6ad2f92a0235cdb7410654e229448e1b
+ms.sourcegitcommit: 78524abd4c45f0b7402d6f1e85afc60bb72ab0ee
+ms.openlocfilehash: d736715f1f2c92b4c91f156ecb8abe3513811a34
 
 
 ---
@@ -228,29 +228,31 @@ ms.openlocfilehash: be845d9f6ad2f92a0235cdb7410654e229448e1b
         > [!NOTE]  
         >  L'orario di scadenza dell'installazione effettivo corrisponde all'orario specifico configurato più una quantità di tempo casuale di massimo 2 ore. Ciò consente di ridurre il potenziale impatto di un'installazione simultanea degli aggiornamenti software nella distribuzione da parte di tutti i computer client nella raccolta di destinazione.  
         >   
-        >  È possibile configurare l'impostazione **Disabilitare sequenza casuale scadenza** del client **Agente computer** per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti software richiesti. Per altre informazioni, vedere [Computer Agent](../../core/clients/deploy/about-client-settings.md#a-namebkmkcomputeragentdevicesettingsa-computer-agent).  
+        >  È possibile configurare l'impostazione **Disabilitare sequenza casuale scadenza** del client **Agente computer** per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti software richiesti. Per altre informazioni, vedere [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
 8.  Nella pagina Esperienza utente, è possibile configurare le seguenti impostazioni:  
 
     -   **Notifiche utente**: specificare se visualizzare la notifica degli aggiornamenti software in Software Center sul computer client in base al **Tempo disponibile software** configurato e se visualizzare le notifiche utente sui computer client. Quando **Tipo di distribuzione** è impostato su **Disponibile** nella pagina Impostazioni distribuzione, non è possibile selezionare **Nascondi in Software Center e nascondi tutte le notifiche**.  
 
-    -   **Comportamento scadenza**: specificare il comportamento che deve verificarsi quando si raggiunge la data di scadenza per la distribuzione degli aggiornamenti software. Specificare se installare gli aggiornamenti software nella distribuzione. Inoltre, specificare se eseguire un riavvio del sistema dopo l'installazione dell'aggiornamento software indipendentemente da una finestra di manutenzione configurata. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](../../core/clients/manage/collections/use-maintenance-windows.md).  
+    -   **Comportamento scadenza**: *disponibile solo quando **Tipo di distribuzione** *è impostato su **Richiesto** *nella pagina Impostazioni distribuzione.*   
+    specificare il comportamento che deve verificarsi quando si raggiunge la data di scadenza per la distribuzione degli aggiornamenti software. Specificare se installare gli aggiornamenti software nella distribuzione. Inoltre, specificare se eseguire un riavvio del sistema dopo l'installazione dell'aggiornamento software indipendentemente da una finestra di manutenzione configurata. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-    -   **Comportamento riavvio dispositivo**: specificare se evitare un riavvio del sistema su server e workstation dopo l'installazione degli aggiornamenti software e se è richiesto un riavvio del sistema per completare l'installazione.  
+    -   **Comportamento riavvio dispositivo**: *disponibile solo quando **Tipo di distribuzione** *è impostato su **Richiesto** *nella pagina Impostazioni distribuzione.*    
+    specificare se evitare un riavvio del sistema su server e workstation dopo l'installazione degli aggiornamenti software e se è richiesto un riavvio del sistema per completare l'installazione.  
 
         > [!IMPORTANT]  
-        >  L'inibizione dei riavvii del sistema può essere utile negli ambienti server o nei casi in cui non si desidera che i computer sui quali si stanno installando gli aggiornamenti software vengano riavviati per impostazione predefinita. Tuttavia, tale soluzione potrebbe lasciare i computer in uno stato non protetto, mentre un riavvio forzato assicura il completamento immediato dell'installazione degli aggiornamenti software. .  
+        >  L'inibizione dei riavvii del sistema può essere utile negli ambienti server o nei casi in cui non si desidera che i computer sui quali si stanno installando gli aggiornamenti software vengano riavviati per impostazione predefinita. Tuttavia, tale soluzione potrebbe lasciare i computer in uno stato non protetto, mentre un riavvio forzato assicura il completamento immediato dell'installazione degli aggiornamenti software.
 
     -   **Gestione filtri di scrittura per dispositivi con Windows Embedded**: quando si distribuiscono aggiornamenti software in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare l'aggiornamento software nella sovrapposizione temporanea e di confermare le modifiche in seguito oppure alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
 
         > [!NOTE]  
         >  Quando si distribuisce un aggiornamento software in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta che dispone di una finestra di manutenzione configurata.  
 
-     È possibile configurare le impostazioni **Comportamento scadenza** e **Comportamento riavvio dispositivo** solo quando **Tipo di distribuzione** è impostato su **Richiesta** nella pagina Impostazioni distribuzione.  
+    - **Comportamento di rivalutazione della distribuzione degli aggiornamenti software al riavvio**: a partire da Configuration Manager versione 1606, selezionare questa impostazione per configurare le distribuzioni degli aggiornamenti software in modo che i client eseguano un'analisi della conformità degli aggiornamenti software immediatamente dopo l'installazione degli aggiornamenti software e il riavvio. In questo modo, il client controlla la presenza di aggiornamenti software aggiuntivi che diventano applicabili dopo il riavvio e che possono quindi essere installati (e resi conformi) durante la stessa finestra di manutenzione.
 
 9. Nella pagina Avvisi configurare la modalità in cui Configuration Manager e System Center Operations Manager genereranno gli avvisi relativi alla distribuzione. È possibile configurare gli avvisi solo quando **Tipo di distribuzione** è impostato su **Richiesta** nella pagina Impostazioni distribuzione.  
 
-    > [!WARNING]  
+    > [!NOTE]  
     >  È possibile riesaminare gli avvisi recenti sugli aggiornamenti software dal nodo **Aggiornamenti software** nell'area di lavoro **Raccolta software** .  
 
 10. Nella pagina Impostazioni download, configurare le seguenti impostazioni:  
@@ -316,6 +318,6 @@ ms.openlocfilehash: be845d9f6ad2f92a0235cdb7410654e229448e1b
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 
