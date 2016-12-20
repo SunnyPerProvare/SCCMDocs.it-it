@@ -1,14 +1,13 @@
-# [Comprendere ed esplorare](understand/software-updates-introduction.md)
-
-## [Introduzione agli aggiornamenti software](understand/software-updates-introduction.md)
+# Comprendere ed esplorare
+## [Introduction to software updates](understand/software-updates-introduction.md) (Introduzione agli aggiornamenti software)
 ## [Icone usate per gli aggiornamenti software](understand/software-updates-icons.md)
 
-# [Pianificare e progettare](plan-design/plan-for-software-updates.md)
-## [Pianificare gli aggiornamenti software](plan-design/plan-for-software-updates.md)
+# Pianificare e progettare
+## [Plan for software updates](plan-design/plan-for-software-updates.md) (Pianificare gli aggiornamenti del software)
 ## [Prerequisiti per aggiornamenti software](plan-design/prerequisites-for-software-updates.md)
 ## [Sicurezza e privacy per gli aggiornamenti software](plan-design/security-and-privacy-for-software-updates.md)
 
-# [Introduzione](get-started/prepare-for-software-updates-management.md)
+# Introduzione
 ## [Preparare la gestione degli aggiornamenti software](get-started/prepare-for-software-updates-management.md)
 ## [Installare un punto di aggiornamento software](get-started/install-a-software-update-point.md)
 ## [Sincronizzare gli aggiornamenti software](get-started/synchronize-software-updates.md)
@@ -17,7 +16,7 @@
 ## [Gestire le impostazioni per gli aggiornamenti software](get-started/manage-settings-for-software-updates.md)
 ## [Rimuovere un punto di aggiornamento software](get-started/remove-a-software-update-point.md)
 
-# [Distribuire e usare](deploy-use/deploy-software-updates.md)
+# Distribuire e usare
 ## [Scaricare gli aggiornamenti software](deploy-use/download-software-updates.md)
 
 ## [Aggiungere aggiornamenti software a un gruppo di aggiornamento](deploy-use/add-software-updates-to-an-update-group.md)
@@ -33,6 +32,6 @@
 ## [Scenario di esempio per distribuire gli aggiornamenti della sicurezza](deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md)
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 
