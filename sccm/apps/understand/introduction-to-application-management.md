@@ -2,7 +2,7 @@
 title: Introduzione alla gestione delle applicazioni | Documentazione Microsoft
 description: Individuare le informazioni di necessarie per gestire e distribuire applicazioni di System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/23/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,8 +18,8 @@ manager: angrobe
 experimental: true
 experiment_id: rob-table-161101
 translationtype: Human Translation
-ms.sourcegitcommit: aa985dcb947803f7bc6d770f80a89a2fe6750681
-ms.openlocfilehash: 4be1fdaeeba2859389ea87b49b8e5891a28d052c
+ms.sourcegitcommit: 5aef08865b232ff2dacec6906098bebf4e42e6b1
+ms.openlocfilehash: 699adb5fac0c625c321db011af6989cc4c0778ec
 
 
 ---
@@ -56,12 +56,12 @@ Questo argomento fornisce una descrizione delle nozioni di base necessarie prima
  Configuration Manager consente di distribuire i tipi di app seguenti:  
 
 - Windows Installer (file *.msi)
-- Pacchetto app Windows (*.appx, \*.appxbundle)
+- Pacchetto app Windows (*.appx, *.appxbundle)
 - Pacchetto app Windows (in Windows Store)
 - Microsoft Application Virtualization 4
 - Microsoft Application Virtualization  5
 - Windows Mobile Cabinet
-- Mac OS X  
+- macOS  
 
 
 Quando poi si gestiscono dispositivi tramite la gestione di dispositivi locale di Microsoft Intune o Configuration Manager, è possibile gestire anche questi tipi di applicazione:
@@ -113,6 +113,6 @@ Quando poi si gestiscono dispositivi tramite la gestione di dispositivi locale d
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

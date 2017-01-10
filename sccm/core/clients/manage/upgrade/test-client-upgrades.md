@@ -1,8 +1,8 @@
 ---
-title: Testare gli aggiornamenti client in una raccolta di pre-produzione | Documentazione Microsoft
+title: Testare gli aggiornamenti client in una raccolta di pre-produzione | Microsoft Docs
 description: Testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/04/2016
+ms.date: 12/12/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,12 +17,12 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 17b36eae97272c408fce20e1f88812dafc984773
-ms.openlocfilehash: bfc53760572e71814ebf0e38ea24c5c4684619ee
+ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
+ms.openlocfilehash: 250c9312b932670c408554f3968ae43ae4f3dbaa
 
 
 ---
-# <a name="how-to-test-client-upgrades-in-a-preproduction-collection-in-system-center-configuration-manager"></a>Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager
+# <a name="how-to-test-client-upgrades-in-a-pre-production-collection-in-system-center-configuration-manager"></a>Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -33,21 +33,15 @@ ms.openlocfilehash: bfc53760572e71814ebf0e38ea24c5c4684619ee
 
  Per testare i client in modalità di pre-produzione sono previsti 3 passaggi di base.  
 
-1.  [Per configurare gli aggiornamenti automatici del client per l'uso di una raccolta di pre-produzione](#BKMK_config) per usare una raccolta di pre-produzione.  
+1.  Configurare gli aggiornamenti automatici del client per usare una raccolta di pre-produzione.  
 
-2.  [Per installare un aggiornamento di Configuration Manager che include una nuova versione del client](#BKMK_install) che include una nuova versione del client. Durante l'installazione, specificare una raccolta di pre-produzione per il nuovo software client.  
+2.  Installare un aggiornamento di Configuration Manager che include una nuova versione del client.  
 
-3.  [Per alzare di livello il nuovo client al livello di produzione](#BKMK_promote) dopo aver completato correttamente i test.  
+3.  Alzare il nuovo client al livello di produzione.  
 
-> [!TIP]  
->  Se si esegue l'aggiornamento dell'infrastruttura di server da una versione precedente di Configuration Manager \(ad esempio Configuration Manager 2007 o System Center 2012 Configuration Manager\), è consigliabile completare gli aggiornamenti dei server, inclusa l'installazione di tutti gli aggiornamenti del ramo corrente. Ciò garantisce di avere a disposizione la versione più recente del software client, prima di aggiornare i client di Configuration Manager.  
+##  <a name="to-configure-automatic-client-upgrades-to-use-a-pre-production-collection"></a>Per configurare gli aggiornamenti automatici del client per usare una raccolta di pre-produzione  
 
-##  <a name="a-namebkmkconfiga-to-configure-automatic-client-upgrades-to-use-a-preproduction-collection"></a><a name="BKMK_config"></a> Per configurare gli aggiornamenti automatici del client per l'uso di una raccolta di pre-produzione  
-
-1. Impostare una raccolta che contiene i computer nei quali si vuole distribuire il client di pre-produzione. Per altre informazioni su questo passo, vedere [How to create collections](..\collections\create-collections.md) (Come creare raccolte).
-
-> [!NOTE]
-> Non includere i computer del gruppo lavoro nelle raccolte di pre-produzione. I computer del gruppo di lavoro non possono usare l'autenticazione richiesta per il punto di distribuzione per accedere al pacchetto client di pre-produzione.   
+1. [Impostare una raccolta](..\collections\create-collections.md) che contiene i computer nei quali si vuole distribuire il client di pre-produzione. Non includere i computer del gruppo lavoro nelle raccolte di pre-produzione, poiché non possono usare l'autenticazione necessaria per il punto di distribuzione per accedere al pacchetto client di pre-produzione.   
 
 1.  Nella console di Configuration Manager aprire **Amministrazione** > **Configurazione del sito** > **Siti** e scegliere **Impostazioni gerarchia**.  
 
@@ -57,8 +51,10 @@ ms.openlocfilehash: bfc53760572e71814ebf0e38ea24c5c4684619ee
 
     -   Immettere il nome di una raccolta da utilizzare come raccolta preproduzione  
 
+![Aggiornamenti automatici del client](media/test-client-upgrades.png)
 
-##  <a name="a-namebkmkinstalla-to-install-a-configuration-manager-update-that-includes-a-new-version-of-the-client"></a><a name="BKMK_install"></a> Per installare un aggiornamento di Configuration Manager che include una nuova versione del client  
+
+##  <a name="to-install-a-configuration-manager-update-that-includes-a-new-version-of-the-client"></a>Per installare un aggiornamento di Configuration Manager che include una nuova versione del client  
 
 1.  Nella console di Configuration Manager aprire **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione**, selezionare un aggiornamento **Disponibile** e quindi scegliere **Installa pacchetto di aggiornamento**  
 
@@ -73,19 +69,19 @@ ms.openlocfilehash: bfc53760572e71814ebf0e38ea24c5c4684619ee
     > [!NOTE]
     > Lo stato della distribuzione nei computer che ospitano i ruoli del sistema del sito in una raccolta di pre-produzione può essere indicato come **Non conforme** anche quando il client è stato distribuito correttamente. Quando si promuove il client al livello di produzione, lo stato della distribuzione è segnalato in modo corretto.
 
-##  <a name="a-namebkmkpromotea-to-promote-the-new-client-to-production"></a><a name="BKMK_promote"></a> Per alzare di livello il nuovo client al livello di produzione  
+##  <a name="to-promote-the-new-client-to-production"></a>Per alzare di livello il nuovo client al livello di produzione  
 
 1.  Nella console di Configuration Manager aprire **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione** e scegliere **Alza di livello il client di pre-produzione**.
 
     > [!TIP]
     > Il pulsante **Alza di livello il client di pre-produzione** è disponibile anche durante il monitoraggio delle distribuzioni dei client nella console da **Monitoraggio** > **Stato del client** > **Distribuzione client di pre-produzione**.
 
-2.  Nella finestra di dialogo esaminare le versioni dei client in produzione e pre-produzione, verificare che sia specificata la raccolta di pre-produzione corretta e quindi fare clic su **Alza di livello**. Fare clic su **Sì**nella finestra di dialogo di conferma.  
+2.  Rivedere le versioni client in produzione e pre-produzione, verificare che sia specificata la raccolta di pre-produzione corretta, fare clic su **Alza di livello** e poi su **Sì**.  
 
-3.  Quando si chiude la finestra di dialogo, la versione aggiornata del client sostituisce quella attualmente in uso nella gerarchia. Sarà quindi possibile aggiornare i client per l'intero sito. Per altre informazioni, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
+3.  Quando si chiude la finestra di dialogo, la versione aggiornata del client sostituirà quella attualmente in uso nella gerarchia. Sarà quindi possibile aggiornare i client per l'intero sito. Per altre informazioni, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

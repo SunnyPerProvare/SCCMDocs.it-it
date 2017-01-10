@@ -2,7 +2,7 @@
 title: Creare applicazioni Windows Phone | Documentazione Microsoft
 description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni per i dispositivi Windows Phone.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/23/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 557888d1f1f899e3198c430bbe5ccdd44178f824
-ms.openlocfilehash: 5cd1ba42afd13e98565d24d1ec8a3ee209e8532c
+ms.sourcegitcommit: 5aef08865b232ff2dacec6906098bebf4e42e6b1
+ms.openlocfilehash: c230212d72e1c00856d6869414f2db927b1b79ad
 
 
 ---
@@ -33,13 +33,14 @@ Oltre agli altri requisiti e alle procedure di System Center Configuration Manag
 |Tipo di dispositivo|Tipi di file supportati|  
 |-----------------|---------------------|  
 |Windows Phone 8|.xap|  
-|Windows Phone 8.1|.xap, .appx, .appxbundle|  
+|Windows Phone 8.1|.xap, .appx, .appxbundle|
+|Windows 10 Mobile|.xap, .appx, .appxbundle|
 
  Sono supportate le azioni di distribuzione seguenti:  
 
 |Tipo di dispositivo|Azioni supportate|  
 |-----------------|-----------------------|  
-|Windows Phone 8 e Windows Phone 8.1|disponibile, richiesto, disinstalla|  
+|Windows Phone 8, Windows Phone 8.1 e Windows 10 Mobile|Disponibile, Richiesto, Disinstalla|  
 
 ## <a name="steps-to-deploy-the-latest-windows-phone-company-portal-app-with-supersedence"></a>Passaggi per distribuire l'app più recente del portale aziendale di Windows Phone con sostituzione  
  Nella tabella seguente vengono forniti i passaggi, i dettagli e ulteriori informazioni per la creazione e distribuzione dell'app del portale aziendale più recente di Windows Phone 8.  
@@ -56,6 +57,6 @@ Oltre agli altri requisiti e alle procedure di System Center Configuration Manag
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

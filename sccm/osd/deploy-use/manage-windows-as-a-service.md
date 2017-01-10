@@ -2,7 +2,7 @@
 title: Gestire Windows as a Service | Documentazione Microsoft
 description: "Le funzionalità di System Center Configuration Manager consentono di visualizzare lo stato di Windows come servizio nell&quot;ambiente corrente per poterlo mantenere aggiornato."
 ms.custom: na
-ms.date: 12/07/2016
+ms.date: 12/21/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3f44505c977b511223a083a960f871371c0ff133
-ms.openlocfilehash: 1885968006ef5be1f507e94e0d33918174b1af12
+ms.sourcegitcommit: 66cd6d099acdd9db2bc913a69993aaf5e17237fe
+ms.openlocfilehash: 79e13074db18a617c7e3fceedaa143dbece90a3d
 
 
 ---
@@ -238,30 +238,45 @@ Per modificare le proprietà di un piano di manutenzione, seguire la procedura r
 
     Le impostazioni seguenti sono disponibili nelle proprietà del piano di manutenzione non configurate nella procedura guidata:
 
-    - Impostazioni di distribuzione Nella scheda Impostazioni distribuzione configurare le seguenti impostazioni:  
+    **Impostazioni distribuzione**: nella scheda Impostazioni distribuzione configurare le impostazioni seguenti:  
 
-        -   **Tipo di distribuzione**: specificare il tipo di distribuzione per la distribuzione degli aggiornamenti software. Selezionare **Richiesto** per creare una distribuzione degli aggiornamenti software obbligatoria in cui gli aggiornamenti software vengano automaticamente installati nei client prima della scadenza di un'installazione configurata. Selezionare **Disponibile** per creare una distribuzione degli aggiornamenti software aggiuntiva che gli utenti possano installare da Software Center.  
+    -   **Tipo di distribuzione**: specificare il tipo di distribuzione per la distribuzione degli aggiornamenti software. Selezionare **Richiesto** per creare una distribuzione degli aggiornamenti software obbligatoria in cui gli aggiornamenti software vengano automaticamente installati nei client prima della scadenza di un'installazione configurata. Selezionare **Disponibile** per creare una distribuzione degli aggiornamenti software aggiuntiva che gli utenti possano installare da Software Center.  
 
-            > [!IMPORTANT]  
-            >  Dopo aver creato la distribuzione degli aggiornamenti software, non è possibile modificare successivamente il tipo di distribuzione.  
+        > [!IMPORTANT]  
+        >  Dopo aver creato la distribuzione degli aggiornamenti software, non è possibile modificare successivamente il tipo di distribuzione.  
 
-            > [!NOTE]  
-            >  Un gruppo di aggiornamenti software distribuito come **Richiesto** verrà scaricato in background e rispetterà le impostazioni BITS, se configurate.  
-            > I gruppi di aggiornamenti software distribuiti come **Disponibile** verranno invece scaricati in primo piano e ignoreranno le impostazioni BITS.  
+        > [!NOTE]  
+        >  Un gruppo di aggiornamenti software distribuito come **Richiesto** verrà scaricato in background e rispetterà le impostazioni BITS, se configurate.  
+        > I gruppi di aggiornamenti software distribuiti come **Disponibile** verranno invece scaricati in primo piano e ignoreranno le impostazioni BITS.  
 
-        -   **Usa riattivazione LAN per riattivare i client per le distribuzioni richieste**: specificare se abilitare la riattivazione LAN alla scadenza per inviare pacchetti di riattivazione ai computer che richiedono uno o più aggiornamenti software nella distribuzione. Tutti i computer in modalità sospensione all'ora di scadenza dell'installazione verranno riattivati in modo che si possa avviare l'installazione degli aggiornamenti software. I client in modalità sospensione che non richiedono aggiornamenti software nella distribuzione non vengono avviati. Per impostazione predefinita, questa impostazione non viene abilitata ed è disponibile solo quando **Tipo di distribuzione** è impostato su **Richiesto**.  
+    -   **Usa riattivazione LAN per riattivare i client per le distribuzioni richieste**: specificare se abilitare la riattivazione LAN alla scadenza per inviare pacchetti di riattivazione ai computer che richiedono uno o più aggiornamenti software nella distribuzione. Tutti i computer in modalità sospensione all'ora di scadenza dell'installazione verranno riattivati in modo che si possa avviare l'installazione degli aggiornamenti software. I client in modalità sospensione che non richiedono aggiornamenti software nella distribuzione non vengono avviati. Per impostazione predefinita, questa impostazione non viene abilitata ed è disponibile solo quando **Tipo di distribuzione** è impostato su **Richiesto**.  
 
-            > [!WARNING]  
-            >  Prima di usare questa opzione, i computer e le reti devono essere configurati per riattivazione LAN.  
+        > [!WARNING]  
+        >  Prima di usare questa opzione, i computer e le reti devono essere configurati per riattivazione LAN.  
 
-        -   **Livello dettaglio**: specificare il livello di dettaglio per i messaggi di stato segnalati dai computer client.  
+    -   **Livello dettaglio**: specificare il livello di dettaglio per i messaggi di stato segnalati dai computer client.  
 
-    - Impostazioni di download
+   **Impostazioni download**: nella scheda Impostazioni download configurare le impostazioni seguenti:  
 
-    - Avvisi
+    -   Specificare se il client scaricherà e installerà gli aggiornamenti software durante una connessione a una rete lenta o mentre usa un percorso di fallback per il contenuto.  
+
+    -   Specificare se il client dovrà scaricare e installare gli aggiornamenti software da un punto di distribuzione di fallback nel caso in cui il contenuto per tali aggiornamenti non fosse disponibile su un punto di distribuzione preferito.  
+
+    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per il download del contenuto. Per altre informazioni su BranchCache, vedere [Concetti di base per la gestione dei contenuti](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
+
+    -   Specificare se far scaricare ai client gli aggiornamenti software da Microsoft Update nel caso in cui gli aggiornamenti non fossero disponibili nei punti di distribuzione.
+    > [!IMPORTANT]
+    > Non usare questa impostazione per gli aggiornamenti di manutenzione di Windows 10. Almeno fino alla versione 1610 di Configuration Manager non sarà possibile scaricare gli aggiornamenti di manutenzione di Windows 10 da Microsoft Update.
+
+    -   Specificare se consentire ai client di eseguire il download dopo una scadenza dell'installazione quando usano connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.   
+
+    **Avvisi**: nella pagina Avvisi configurare la modalità in cui Configuration Manager e System Center Operations Manager genereranno gli avvisi relativi alla distribuzione. È possibile configurare gli avvisi solo quando **Tipo di distribuzione** è impostato su **Richiesta** nella pagina Impostazioni distribuzione.  
+
+    > [!NOTE]  
+    >  È possibile riesaminare gli avvisi recenti sugli aggiornamenti software dal nodo **Aggiornamenti software** nell'area di lavoro **Raccolta software** .  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO4-->
 
 

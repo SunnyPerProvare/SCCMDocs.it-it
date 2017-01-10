@@ -2,7 +2,7 @@
 title: Introduzione alle raccolte | Documentazione Microsoft
 description: Introduzione all&quot;uso delle raccolte in System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/05/2016
+ms.date: 01/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 08a509cacb711ed6d1ae188d5512a026a12417f2
-ms.openlocfilehash: 8a228a55c198df08701f28123696e35cc73fd98c
+ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
+ms.openlocfilehash: fd4c6fd85d12592b3d4f57a48cf6da6c7a668615
 
 
 ---
@@ -25,13 +25,13 @@ ms.openlocfilehash: 8a228a55c198df08701f28123696e35cc73fd98c
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le raccolte in System Center Configuration Manager (noto anche come ConfigMgr e SCCM) consentono di organizzare le risorse in unità gestibili. È possibile creare raccolte in base alle esigenze di gestione dei client e per eseguire operazioni su più risorse contemporaneamente. 
+Le raccolte consentono di organizzare le risorse in unità gestibili. È possibile creare raccolte in base alle esigenze di gestione dei client e per eseguire operazioni su più risorse contemporaneamente. 
 
 La maggior parte delle attività di gestione dipende o richiede l'uso di una o più raccolte. Sebbene sia possibile usare la raccolta predefinita Tutti i sistemi, l'uso di questa raccolta per le attività di gestione non è consigliato. Creare raccolte personalizzate per identificare in modo più specifico i dispositivi o gli utenti per un'attività.  
 
  Le raccolte predefinite e personalizzate vengono visualizzate nei nodi **Raccolte utenti** e **Raccolte dispositivi** nell'area di lavoro **Asset e conformità** nella console di Configuration Manager.  
 
- Le raccolte visualizzate di recente sono disponibili nel nodo **Utenti** e nel nodo **Dispositivi** nell'area di lavoro **Asset e conformità** nella console di Configuration Manager.  
+ Le raccolte visualizzate di recente sono disponibili nel nodo **Utenti** e nel nodo **Dispositivi** nell'area di lavoro **Asset e conformità**.  
 
 Di seguito sono descritti alcuni esempi di uso delle raccolte:  
 
@@ -67,6 +67,6 @@ Di seguito sono descritti alcuni esempi di uso delle raccolte:
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

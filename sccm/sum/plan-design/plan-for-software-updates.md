@@ -6,7 +6,7 @@ keywords:
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 12/07/2016
+ms.date: 01/04/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
 translationtype: Human Translation
-ms.sourcegitcommit: b1c68b233097ef3a744dd25b3fb919660f0b2244
-ms.openlocfilehash: 16415fb54a2cf91747990c94ffea0076effe525b
+ms.sourcegitcommit: 46c8004afee4b18d5c7a2fcc5dac0f7d0d1f823c
+ms.openlocfilehash: 8a5efdce88127c71547c4f5ef85660a2983aa577
 
 
 ---
@@ -82,7 +82,7 @@ Prima di usare gli aggiornamenti software in un ambiente di produzione di System
 
 2.  Il client esegue almeno quattro tentativi a intervalli di 30 minuti. Al quarto tentativo non riuscito, e dopo aver atteso altri due minuti, il client passerà al successivo punto di aggiornamento software nel relativo elenco.  
 
-3.  Al termine di un'analisi eseguita correttamente, il client continuerà a connettersi al punto di aggiornamento software.  
+3.  Il client segue lo stesso processo nel nuovo punto di aggiornamento software. Al termine di un'analisi eseguita correttamente, il client continuerà a connettersi al nuovo punto di aggiornamento software.
 
  Nell'elenco che segue vengono fornite informazioni aggiuntive utili in caso di tentativi di connessione a un punto di aggiornamento software e in scenari di passaggio:  
 
@@ -91,6 +91,13 @@ Prima di usare gli aggiornamenti software in un ambiente di produzione di System
 -   Se la gestione client basata su Internet è abilitata, e sono presenti più punti di aggiornamento software configurati per l'accettazione delle comunicazioni da client su Internet, il processo di passaggio seguirà il processo di nuovi tentativi standard descritto nello scenario precedente.  
 
 -   Uno scenario in cui il processo di analisi viene avviato, ma il client viene spento prima del relativo completamento, non è da considerarsi una condizione di errore di analisi e non rientra nei quattro tentativi disponibili.  
+
+Se l'agente di Windows Update invia a Configuration Manager uno dei codici di errore seguenti, il client tenterà di riconnettersi:  
+
+2149842970, 2147954429, 2149859352, 2149859362, 2149859338, 2149859344, 2147954430, 2147747475, 2149842974, 2149859342, 2149859372, 2149859341, 2149904388, 2149859371, 2149859367, 2149859366, 2149859364, 2149859363, 2149859361, 2149859360, 2149859359, 2149859358, 2149859357, 2149859356, 2149859354, 2149859353, 2149859350, 2149859349, 2149859340, 2149859339, 2149859332, 2149859333, 2149859334, 2149859337, 2149859336, 2149859335
+
+Per conoscere il significato di un codice di errore, convertire il codice di errore decimale in formato esadecimale e cercare il valore esadecimale in un sito, ad esempio [Windows Update Agent - Error Codes Wiki](https://social.technet.microsoft.com/wiki/contents/articles/15260.windows-update-agent-error-codes.aspx) (Agente di Windows Update: wiki codici di errore).
+
 
 ###  <a name="a-namebkmkmanuallyswitchsupsamanually-switch-clients-to-a-new-software-update-point"></a><a name="BKMK_ManuallySwitchSUPs"></a> Passaggio manuale dei client a un nuovo punto di aggiornamento software
 A partire da Configuration Manager versione 1606 è possibile abilitare l'opzione per consentire ai client di Configuration Manager di passare a un nuovo punto di aggiornamento software quando si verificano problemi con il punto di aggiornamento software attivo. Questa opzione comporta modifiche solo se un client riceve più punti di aggiornamento software da un punto di gestione.  
@@ -308,6 +315,6 @@ Quando si pianificano gli aggiornamenti software, vedere [Preparare la gestione 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 
