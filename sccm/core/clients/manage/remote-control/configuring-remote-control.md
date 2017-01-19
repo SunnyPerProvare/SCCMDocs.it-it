@@ -2,7 +2,7 @@
 title: Configurare il controllo remoto | Documentazione Microsoft
 description: Configurare il controllo remoto in System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/12/2016
+ms.date: 12/26/2016
 ms.prod: configuration-manager
 ms.reviewer: dudeso
 ms.suite: na
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 809c7938968b4a6efce6ef37fe7b7baf2c9dd3e7
-ms.openlocfilehash: 6741c6aa11a8a7c868bff36916afe4d066b9924d
+ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
+ms.openlocfilehash: 20c28a625adb69f239b9c0e7673e57dd39e8d561
 
 
 ---
@@ -55,6 +55,21 @@ Per attivare la traduzione della tastiera, in **Controllo remoto di Configuratio
 > I tasti speciali, ad esempio ~!#@$%,, non verranno tradotti correttamente.
 
 
-<!--HONumber=Dec16_HO3-->
+## <a name="keyboard-shortcuts-for-the-remote-control-viewer"></a>Tasti di scelta rapida per il visualizzatore controllo remoto
+
+|Tasti di scelta rapida|Descrizione|  
+|-----------------------|-----------------|  
+|ALT+PGSU|Passa tra i programmi in esecuzione, da sinistra a destra.|  
+|ALT+PGGIÙ|Passa tra i programmi in esecuzione, da destra a sinistra.|  
+|ALT+INS|Scorre i programmi in esecuzione nell'ordine in cui sono stati aperti.|  
+|ALT+HOME|Visualizza il menu **Start** .|  
+|CTRL+ALT+FINE|Visualizza la finestra di dialogo relativa alla sicurezza di Windows (CTRL+ALT+CANC).|  
+|ALT+CANC|Visualizza il menu di Windows.|  
+|CTRL+ALT+Segno di sottrazione (sul tastierino numerico)|Copia la finestra attiva del computer locale negli Appunti del computer remoto.|  
+|CTRL+ALT+Segno di addizione (sul tastierino numerico)|Copia l'intera area della finestra del computer locale negli Appunti del computer remoto.|  
+
+
+
+<!--HONumber=Dec16_HO5-->
 
 
