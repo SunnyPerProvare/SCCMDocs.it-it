@@ -1,6 +1,6 @@
 ---
-title: Distribuire Windows to Go con System Center Configuration Manager
-description: "Informazioni su come eseguire il provisioning di Windows To Go in System Center Configuration Manager per creare un'area di lavoro Windows To Go avviata da un'unità esterna."
+title: Distribuire Windows to Go con System Center Configuration Manager | Microsoft Docs
+description: "Informazioni su come eseguire il provisioning di Windows To Go in System Center Configuration Manager per creare un&quot;area di lavoro Windows To Go avviata da un&quot;unità esterna."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 104355185c5bbb4c15f3b9cc80cf8fa0e529cf6d
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: a8b1a42c43438553cfbb62328bed933378bb344c
 
 
 ---
@@ -450,7 +450,9 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
     -   **Utilizzare un punto di distribuzione remoto quando non sono disponibili punti di distribuzione locali**: specificare se i client possono scaricare il contenuto necessario per la sequenza di attività da punti di distribuzione disponibili in reti lente e inaffidabili.  
 
-    -   **Consenti ai client di utilizzare un percorso origine di fallback per il contenuto**: specificare se consentire ai client di eseguire il fallback e usare un punto di distribuzione non preferito come percorso di origine del contenuto quando il contenuto non è disponibile presso un punto di distribuzione preferito.  
+    -   **Consenti ai client di utilizzare un percorso origine di fallback per il contenuto**:
+        - *Nelle versioni precedenti alla 1610* è possibile selezionare la casella di controllo Consenti percorso origine di fallback per il contenuto per consentire ai client esterni a questi gruppi di limiti di eseguire il fallback e usare il punto di distribuzione come percorso di origine per il contenuto in assenza di altri punti di distribuzione disponibili.
+        - *A partire dalla versione 1610* non è più possibile configurare **Consenti percorso origine di fallback per il contenuto**.  È invece possibile configurare relazioni tra gruppi di limiti per determinare quando un client può iniziare la ricerca di gruppi di limiti aggiuntivi per un percorso di origine del contenuto valido. 
 
 11. Completare la procedura guidata.  
 
@@ -468,6 +470,6 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Elenco di controllo sulla migrazione | System Center Configuration Manager
+title: Elenchi di controllo per migrazione | Microsoft Docs
 description: Per pianificare una strategia di migrazione verso System Center Configuration Manager usare gli elenchi di controllo amministratore.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f3912de04aa3e6196137a7034753013c35180d64
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: 285d1111502ec25b3b75a64d834b65b6898128e8
 
 
 ---
@@ -147,7 +147,7 @@ Utilizzare il seguente elenco di controllo per la migrazione dei dati dalla gera
 
     Ad esempio, quando si esegue la migrazione di contenuto, indipendentemente dal processo di migrazione che si sceglie di utilizzare, è necessario assegnare un sito nella gerarchia di destinazione come responsabile della gestione di tale contenuto. Il sito assegnato potrà accedere al percorso originale del file di origine per tale contenuto ed è responsabile per la distribuzione del contenuto ai punti di distribuzione presenti nella gerarchia di destinazione.  
 
-    Per ulteriori informazioni, vedere la sezione [Create and Edit Migration Jobs for System Center Configuration Manager](../../core/migration/operations-for-migration.md#create_edit_migration_jobs) nell'argomento [Operations for migrating to System Center Configuration Manager](../../core/migration/operations-for-migration.md) .  
+    Per ulteriori informazioni, vedere la sezione [Create and Edit Migration Jobs for System Center Configuration Manager](../../core/migration/operations-for-migration.md#Create_Edit_migration_Jobs) nell'argomento [Operations for migrating to System Center Configuration Manager](../../core/migration/operations-for-migration.md) .  
 
 -   **Eseguire la migrazione dei client nella gerarchia di destinazione:**  
 
@@ -167,7 +167,7 @@ Utilizzare il seguente elenco di controllo per la migrazione dei dati dalla gera
 
     È inoltre possibile aggiornare un punto di distribuzione di Configuration Manager 2007 con percorso condiviso in un server del sito secondario. Tale operazione comporta la rimozione del sito secondario e la presenza di un solo punto di distribuzione nella gerarchia di destinazione.  
 
-    Per informazioni sui punti di distribuzione condivisi, vedere la sezione [Share Distribution Points Between Source and Destination Hierarchies](../../core/migration/planning-a-content-deployment-migration-strategy.md#about_shared_dps_in_migrations) nell'argomento [Planning a content deployment migration strategy in System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md) .  
+    Per informazioni sui punti di distribuzione condivisi, vedere la sezione [Share Distribution Points Between Source and Destination Hierarchies](../../core/migration/planning-a-content-deployment-migration-strategy.md#About_Shared_DPs_in_Migration) nell'argomento [Planning a content deployment migration strategy in System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md) .  
 
 -   **Completare la migrazione:**  
 
@@ -175,6 +175,6 @@ Utilizzare il seguente elenco di controllo per la migrazione dei dati dalla gera
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Funzionalità della versione Technical Preview 1605 per System Center Configuration Manager"
+title: "Funzionalità della versione Technical Preview 1605 per System Center Configuration Manager | Microsoft Docs"
 description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1605 per System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ ms.author: brenduns
 manager: angrobe
 robots: noindex,nofollow
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: 0137d6e2c69480d6de88fbf8fa3450d1699007e5
+ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
+ms.openlocfilehash: 06741d03e208c6f5c8093130780dcdc8f0fcfbf7
 
 ---
 # <a name="capabilities-in-technical-preview-1605-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1605 per System Center Configuration Manager
@@ -273,7 +273,7 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 
 -   La scheda **Applicazioni** è stata suddivisa in tre schede separate: **Aggiornamenti**, **Sistemi operativi** (disponibili in precedenza nell'elenco **Filtri**) e **Applicazioni**.  
 
-##  <a name="a-namebkmkservergroupsa-service-a-server-group"></a><a name="BKMK_ServerGroups"></a> Eseguire la manutenzione di un gruppo di server  
+##  <a name="a-namebkmkservergroupsa-service-a--server-group"></a><a name="BKMK_ServerGroups"></a> Eseguire la manutenzione di un gruppo di server  
  La versione Technical Preview 1511 per System Center Configuration Manager includeva la possibilità di creare una raccolta in cui tutti i dispositivi della raccolta formavano un gruppo di server. Quindi si poteva configurare le impostazioni del gruppo di server da usare per la distribuzione di aggiornamenti software al gruppo di server, controllare la percentuale di computer che venivano aggiornati in qualsiasi momento e configurare gli script di PowerShell di pre-distribuzione e post-distribuzione per eseguire azioni personalizzate.  
 
  La versione Technical Preview 1605 per System Center Configuration Manager aggiunge la possibilità di aggiornare i computer del gruppo di server in un ordine specifico definito dall'utente, aggiunge il monitoraggio avanzato per visualizzare lo stato per i computer del gruppo di server e offre la possibilità di cancellare i blocchi di distribuzione, che si rivela utile quando i client non sono riusciti a installare gli aggiornamenti software e impediscono ad altri client di installare i loro aggiornamenti software.  
@@ -297,7 +297,7 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 
 4.  Nella pagina **Impostazioni gruppo di server** specificare una delle impostazioni seguenti:  
 
-    -   **Consentire a una percentuale di computer di essere aggiornati contemporaneamente**: specifica che solo una determinata percentuale di client sono aggiornati in un determinato momento. Se ad esempio l'insieme ha 10 client e la raccolta viene configurata per aggiornare il 30% dei client contemporaneamente, solo 3 client installeranno gli aggiornamenti software in un determinato momento.  
+    -   **Consentire a una percentuale di computer di essere aggiornati contemporaneamente**: specifica che solo una determinata percentuale di client vengono aggiornati in qualsiasi momento. Se, ad esempio, l'insieme ha 10 client e la raccolta viene configurata per aggiornare il 30% dei client allo stesso tempo, solo 3 client installeranno gli aggiornamenti software in qualsiasi momento.  
 
     -   **Consentire a un numero di computer di essere aggiornati contemporaneamente**: specifica che solo un certo numero di client possono essere aggiornati in un determinato momento.  
 
@@ -472,6 +472,6 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

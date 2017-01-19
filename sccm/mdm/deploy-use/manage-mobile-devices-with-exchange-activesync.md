@@ -1,5 +1,5 @@
 ---
-title: Gestire i dispositivi mobili | System Center Configuration Manager ed Exchange
+title: Gestire i dispositivi mobili | Microsoft Docs
 description: Gestire i dispositivi mobili usando il connettore Exchange Server in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 18da1455796e265af2adb8852c9f2b610dc672a8
+ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
+ms.openlocfilehash: 4a2b60d893e8d430b107a5bc43ec0748177c27c3
 
 
 ---
@@ -27,7 +27,7 @@ ms.openlocfilehash: 18da1455796e265af2adb8852c9f2b610dc672a8
 
 Usare il connettore Exchange Server in System Center Configuration Manager quando si vuole gestire i dispositivi mobili che si connettono a Exchange Server, in locale oppure online, usando il protocollo Exchange ActiveSync e non è possibile registrarli usando Configuration Manager. È possibile configurare le funzionalità di gestione dei dispositivi mobili di Exchange, come la cancellazione remota dati nel dispositivo e il controllo delle impostazioni per più server Exchange, dalla console di Configuration Manager.  
 
- ![configmgr&#45;with&#45;exchange](../../mdm/deploy-use/media/configmgr-with-exchange.png "configmgr-with-exchange")  
+ ![configmgr&#45;con&#45;exchange](../../mdm/deploy-use/media/configmgr-with-exchange.png "configmgr-con-exchange")  
 
  Quando si gestiscono i dispositivi mobili usando il connettore Exchange Server, il connettore non installa il client di Configuration Manager nei dispositivi mobili. Pertanto, alcune funzioni di gestione sono limitate. È ad esempio impossibile installare il software in questi dispositivi o utilizzare gli elementi di configurazione per configurarli. Per altre informazioni sulle diverse funzioni di gestione che è possibile usare con Configuration Manager per i dispositivi mobili, vedere [Scegliere una soluzione di gestione dei dispositivi per System Center Configuration Manager](../../core/plan-design/choose-a-device-management-solution.md).  
 
@@ -138,6 +138,6 @@ Usare il connettore Exchange Server in System Center Configuration Manager quand
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

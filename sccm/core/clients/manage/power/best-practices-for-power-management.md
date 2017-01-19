@@ -1,5 +1,5 @@
 ---
-title: Procedure consigliate per il risparmio energia | System Center Configuration Manager
+title: Procedure consigliate per il risparmio energia | Microsoft Docs
 description: Apprendere le procedure consigliate per il risparmio energia in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f5ddb52585166a3855d18f06aa13e31ea3483c44
+ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
+ms.openlocfilehash: d3cc24c7923141f039dcda26ac27489cb0143e89
 
 
 ---
@@ -79,12 +79,12 @@ In System Center Configuration Manager usare le seguenti procedure consigliate p
 ## <a name="save-or-export-power-management-information-during-the-monitoring-and-planning-phase-of-power-management"></a>Salvare o esportare le informazioni sul risparmio di energia durante la fase di pianificazione e monitoraggio del risparmio energia  
  Le informazioni relative al risparmio energia utilizzate per i report giornalieri vengono conservate nel database del sito di Configuration Manager per 31 giorni.  
 
- Le informazioni relative al risparmio energia utilizzate per i report mensili vengono conservate nel database del sito di Configuration Manager per 13 mesi.  
+ Le informazioni relative al risparmio energia usate per i report mensili vengono conservate nel database del sito di Configuration Manager per 13 mesi.  
 
  Quando si creano report durante le fasi di monitoraggio e pianificazione e di verifica della conformità per il risparmio energia, è necessario salvare o esportare i risultati dei report di cui si vuole conservare i dati per confronti successivi, nel caso vengano in seguito rimossi da Configuration Manager.  
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

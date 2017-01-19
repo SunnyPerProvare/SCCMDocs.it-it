@@ -1,5 +1,5 @@
 ---
-title: "Introduzione alle impostazioni di conformità | System Center Configuration Manager"
+title: "Introduzione alle impostazioni di conformità | Microsoft Docs"
 description: "Informazioni sul funzionamento delle impostazioni di conformità in System Center Configuration Manager. Informazioni anche sui concetti principali che è necessario conoscere."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 395a0927d1ac39f941a504efb0a32c9a70f9477a
+ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
+ms.openlocfilehash: f16c87dfd0c4f80d96aedf7f5f7497f2bbd4752a
 
 
 ---
@@ -86,6 +86,6 @@ Per informazioni dettagliate, vedere [Upgrade Windows devices with the edition u
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

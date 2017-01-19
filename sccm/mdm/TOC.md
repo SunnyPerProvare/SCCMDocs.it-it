@@ -1,14 +1,14 @@
-#  [Comprendere ed esplorare](understand/hybrid-mobile-device-management.md)
+#  Comprendere ed esplorare
 ## [Gestione dei dispositivi mobili ibrida](understand/hybrid-mobile-device-management.md)
 ## [Scegliere Intune o la gestione dei dispositivi mobili ibrida](understand/choose-between-standalone-intune-and-hybrid-mobile-device-management.md)
 ## [Novità nella gestione dei dispositivi mobili ibrida](understand/whats-new-in-hybrid-mobile-device-management.md)
 ## [Gestione dei dispositivi mobili locale](understand/manage-mobile-devices-with-on-premises-infrastructure.md)
 
-# [Pianificare e progettare](plan-design/plan-hybrid-mobile-device-management.md)
+# Pianificare e progettare
 ## [Pianificare la gestione dei dispositivi mobili ibrida](plan-design/plan-hybrid-mobile-device-management.md)
 ## [Pianificare la gestione dei dispositivi mobili locale](plan-design/plan-on-premises-mdm.md)
 
-# [Distribuire e usare](deploy-use/setup-hybrid-mdm.md)
+# Distribuire e usare
 
 ## [Impostare la gestione dei dispositivi mobili ibrida](deploy-use/setup-hybrid-mdm.md)
 ### [iOS e Mac](deploy-use/enroll-hybrid-ios-mac.md)
@@ -33,9 +33,10 @@
 ### [Registrazione in blocco](deploy-use/bulk-enroll-devices-on-premises-mdm.md)
 
 ## [Ritirare, bloccare e ripristinare i dispositivi](deploy-use/wipe-lock-reset-devices.md)
+## [Sincronizzare dispositivi registrati in Intune](deploy-use/sync-intune-device.md)
 ## [Gestire i dispositivi con Exchange](deploy-use/manage-mobile-devices-with-exchange-activesync.md)
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,7 +1,7 @@
 ---
 
-title: Manutenzione degli aggiornamenti software | Configuration Manager
-description: "Per gestire gli aggiornamenti in Configuration Manager, è possibile pianificare l'attività di pulizia di WSUS oppure eseguirla manualmente."
+title: Manutenzione degli aggiornamenti software | Microsoft Docs
+description: "Per gestire gli aggiornamenti in Configuration Manager, è possibile pianificare l&quot;attività di pulizia di WSUS oppure eseguirla manualmente."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 4b0e2e90-aac7-4d06-a707-512eee6e576c
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 1495aa474c39723767ec2d81bc60eb1582ac5504
+ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
+ms.openlocfilehash: 1590c623f7bc2f42a8617f110de5321212732a03
 
 
 
@@ -36,6 +36,6 @@ ms.openlocfilehash: 1495aa474c39723767ec2d81bc60eb1582ac5504
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

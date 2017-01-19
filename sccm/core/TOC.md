@@ -87,7 +87,8 @@
 ##   [Valutare Configuration Manager in un lab](get-started/evaluate-with-lab-environment.md)
 ###  [Configurare un ambiente lab](get-started/set-up-your-lab.md)
 
-##   [Technical Preview](get-started/technical-preview.md)
+##   [Technical Preview](get-started/technical-preview.md) 
+###  [Funzionalità della versione 1612](get-started/capabilities-in-technical-preview-1612.md)
 ###  [Funzionalità della versione 1611](get-started/capabilities-in-technical-preview-1611.md)
 ###  [Funzionalità della versione 1610](get-started/capabilities-in-technical-preview-1610.md)
 ###  [Funzionalità della versione 1609](get-started/capabilities-in-technical-preview-1609.md)

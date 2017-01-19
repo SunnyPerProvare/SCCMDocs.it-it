@@ -1,5 +1,5 @@
 ---
-title: Creare profili di posta elettronica di Exchange ActiveSync | System Center Configuration Manager
+title: Creare profili di posta elettronica di Exchange ActiveSync | Microsoft Docs
 description: Di seguito viene illustrato come creare e configurare i profili di posta elettronica in System Center Configuration Manager che funzionano con Microsoft Intune.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 613ed15742322e2eb90eec3c9f493e3b1755d93a
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: 3ff5d53464c61e0dc1836d032bcb3815bae05d1f
 
 
 ---
@@ -42,7 +42,7 @@ I profili di posta elettronica supportano Microsoft Intune per consentire il pro
 -   Dispositivi iPad che eseguono iOS 5, iOS 6, iOS 7 e iOS 8  
 
 > [!IMPORTANT]  
->  Per distribuire profili in dispositivi iOS, Android Samsung KNOX, Windows Phone e Windows 8.1 o Windows 10, i dispositivi devono essere registrati in Intune. Per informazioni su come registrare i dispositivi, vedere [Gestire i dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).  
+>  Per distribuire profili in dispositivi iOS, Android Samsung KNOX Standard, Windows Phone e Windows 8.1 o Windows 10, tali dispositivi devono essere registrati in Intune. Per informazioni su come registrare i dispositivi, vedere [Gestire i dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).  
 
  Oltre a configurare un account di posta elettronica sul dispositivo, è anche possibile configurare le impostazioni di sincronizzazione per i contatti, i calendari e le attività.  
 
@@ -57,7 +57,7 @@ Avviare la Creazione guidata profilo di posta elettronica di Exchange ActiveSync
 
 2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**, **Accesso risorse aziendali**e quindi fare clic su **Profili di posta elettronica**.  
 
-3.  Nella scheda **Home** del gruppo **Crea** fare clic su **Crea profilo Exchange ActiveSync**. 
+3.  Nella scheda **Home** del gruppo **Crea** fare clic su **Crea profilo Exchange ActiveSync**.
 
 4.  Seguire le istruzioni della procedura guidata   
 
@@ -173,7 +173,7 @@ Avviare la Creazione guidata profilo di posta elettronica di Exchange ActiveSync
         -   **Attività**  
 
 ###  <a name="specify-supported-platforms-for-the-exchange-activesync-email-profile"></a>Specificare le piattaforme supportate per il profilo di posta elettronica di Exchange ActiveSync.  
- 
+
 1.  Nella pagina **Piattaforme supportate** della Creazione guidata profilo di posta elettronica di Exchange ActiveSync selezionare i sistemi operativi in cui verrà installato il profilo oppure fare clic su **Seleziona tutto** per installare il profilo di posta elettronica in tutti i sistemi operativi disponibili.  
 
 2.  Completare la procedura guidata.
@@ -182,6 +182,6 @@ Per informazioni su come distribuire i profili di posta elettronica di Exchange 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

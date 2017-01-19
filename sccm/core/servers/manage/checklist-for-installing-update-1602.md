@@ -1,6 +1,6 @@
 ---
-title: Elenco di controllo per la versione 1602 | System Center Configuration Manager
-description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di System Center Configuration Manager dalla versione 1511 alla versione 1602.
+title: Elenco di controllo per la versione 1602 |Microsoft Docs
+description: Informazioni sulle azioni da intraprendere prima di eseguire l&quot;aggiornamento di System Center Configuration Manager dalla versione 1511 alla versione 1602.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 75f5ddfdc84185ee27bf60416e54d37295928156
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 78f8e9474afe208c5d91d27e8d2a202f4ed6154e
 
 
 ---
@@ -135,6 +135,6 @@ Per altre informazioni, vedere **Passaggio 3: Eseguire il controllo dei prerequi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

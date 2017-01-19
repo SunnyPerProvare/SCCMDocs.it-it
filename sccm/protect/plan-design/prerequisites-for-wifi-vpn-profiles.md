@@ -1,8 +1,8 @@
 ---
-title: Prerequisiti dei profili Wi-Fi e VPN | System Center Configuration Manager
+title: Prerequisiti per i profili Wi-Fi e VPN | Microsoft Docs
 description: Informazioni sulle autorizzazioni di sicurezza necessarie per gestire i profili di certificato, i profili Wi-Fi e VPN in System Center Configuration Manager.
 ms.custom: na
-ms.date: 0201-03-31
+ms.date: 11/23/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5c6cf3c1697b49708aa5192b67b08b700da7dc72
-ms.openlocfilehash: c103735a0f5fab6b800a7e9fb808221aebb102cb
+ms.sourcegitcommit: 31b68ede677df8b86412a334d1d100041a0e659e
+ms.openlocfilehash: 309b0363f9b3ec4a31b8323b9e64c9f73060c281
 
 
 ---
@@ -54,6 +54,6 @@ I profili Wi-Fi e VPN in System Center Configuration Manager hanno solo dipenden
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

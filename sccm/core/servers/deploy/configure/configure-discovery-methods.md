@@ -1,6 +1,6 @@
 ---
-title: Configurare l'individuazione | System Center Configuration Manager
-description: "Configurare i metodi di individuazione da eseguire in un sito di Configuration Manager per trovare le risorse che è possibile gestire dall'infrastruttura di rete e da Active Directory."
+title: Configurare l&quot;individuazione | Microsoft Docs
+description: "Configurare i metodi di individuazione da eseguire in un sito di Configuration Manager per trovare le risorse che è possibile gestire dall&quot;infrastruttura di rete e da Active Directory."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 668da9706bb46e6338e81ed75be5d78ab32561c3
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 2fcc392ba700f871349200166fac715b73788c16
 
 ---
 # <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Configurare i metodi di individuazione per System Center Configuration Manager
@@ -448,6 +448,6 @@ Poiché l'individuazione di rete non crea messaggi per avvisare l'utente quando 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

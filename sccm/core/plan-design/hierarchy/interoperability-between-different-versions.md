@@ -1,5 +1,5 @@
 ---
-title: "Interoperabilità tra versioni | System Center Configuration Manager"
+title: "Interoperabilità tra versioni diverse di Configuration Manager | Microsoft Docs"
 description: "Informazioni su come evitare i conflitti tra più gerarchie di System Center Configuration Manager nella stessa rete."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: db0bf04b73050cb42f8230227c8db6ebfb3c6987
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: 32182f06a90d768c40e29ed8a8e89cb45114bd15
 
 
 ---
@@ -61,12 +61,12 @@ Sono possibili l'installazione e il funzionamento di più gerarchie indipendenti
 
  Per evitare che i client vengano assegnati involontariamente al sito sbagliato in caso di sovrapposizione dei limiti di due gerarchie, configurare i parametri di installazione client di Configuration Manager in modo da assegnare i client a un sito specifico.  
 
-##  <a name="a-namebkmkmixeda-configuration-manager-limitations-in-a-mixed-version-hierarchy"></a><a name="bkmk_mixed"></a> Limitazioni di Configuration Manager in una gerarchia con più versioni  
+##  <a name="a-namebkmkmixeda-configuration-manager-limitations--in-a-mixed-version-hierarchy"></a><a name="bkmk_mixed"></a> Limitazioni di Configuration Manager in una gerarchia con più versioni  
  Durante il processo di aggiornamento di un sito di System Center Configuration Manager, può capitare che in alcuni momenti siti diversi abbiano versioni diverse.  Se ad esempio si esegue l'aggiornamento a una nuova versione di un sito di amministrazione centrale, può capitare che a causa delle finestre di manutenzione del sito uno o più siti primari vengano aggiornati solo in una data o un'ora successiva.  
 
  Quando più siti in un'unica gerarchia eseguono versioni diverse, alcune funzionalità non sono disponibili. Questo può influire sulla gestione degli oggetti di Configuration Manager nella console di Configuration Manager e sulle funzionalità disponibili per i client. In genere, le funzionalità della versione più recente di Configuration Manager non sono accessibili dai siti o dai client che eseguono una versione precedente del Service Pack.  
 
-### <a name="limitations-when-upgrading-configuration-manager"></a>Limitazioni durante l'aggiornamento di Configuration Manager  
+### <a name="limitations-when-upgrading--configuration-manager"></a>Limitazioni durante l'aggiornamento di Configuration Manager  
 
 |Oggetto|Dettagli|  
 |------------|-------------|  
@@ -85,6 +85,6 @@ Sono possibili l'installazione e il funzionamento di più gerarchie indipendenti
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

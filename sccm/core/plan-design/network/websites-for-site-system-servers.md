@@ -1,5 +1,5 @@
 ---
-title: Siti Web per i sistemi del sito | System Center Configuration Manager
+title: Siti Web per i server del sistema del sito | Microsoft Docs
 description: Questa sezione contiene informazioni sui siti Web predefiniti e personalizzati per i server del sistema del sito in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 3f463aa804cb928b29fc26d9af8dede7f65222df
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: 005c9f33367f173993d9626f10a72dd5b0141fbc
 
 
 ---
@@ -135,6 +135,6 @@ Dal momento che la procedura per creare un sito Web personalizzato varia a secon
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,6 +1,6 @@
 ---
-title: Gestire l'accesso alla posta elettronica | System Center Configuration Manager
-description: Informazioni su come usare l'accesso condizionale di System Center Configuration Manager per gestire l'accesso alla posta elettronica di Exchange.
+title: Gestire l&quot;accesso alla posta elettronica | Microsoft Docs
+description: Informazioni su come usare l&quot;accesso condizionale di System Center Configuration Manager per gestire l&quot;accesso alla posta elettronica di Exchange.
 ms.custom: na
 ms.date: 10/04/2016
 ms.prod: configuration-manager
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4544088a-4752-4e3a-aa0a-049f10d8f178
 caps.latest.revision: 24
-author: karthikaraman
-ms.author: karaman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5c6cf3c1697b49708aa5192b67b08b700da7dc72
-ms.openlocfilehash: c1797910f2b7ceda451c2ccb23f66a4b2bd4b6ff
+ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
+ms.openlocfilehash: 0bbe25598f38f9cf3c15375748fee09c43dfb928
 
 
 ---
@@ -37,7 +37,7 @@ Usare l'accesso condizionale di System Center Configuration Manager per gestire 
 
 È possibile controllare l'accesso a Exchange Online ed Exchange locale dal client di posta elettronica predefinito nelle seguenti piattaforme:  
 
--   Android 4.0 e versioni successive, Samsung Knox Standard 4.0 e versioni successive  
+-   Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive  
 
 -   iOS 7.1 e versioni successive  
 
@@ -91,7 +91,7 @@ I browser non supportati verranno bloccati. Non sono supportate le app OWA per i
 
  È possibile bloccare l'accesso alla posta elettronica di Exchange dal client di posta elettronica Exchange ActiveSync integrato dei dispositivi sulle piattaforme seguenti:  
 
--   Android 4.0 e versioni successive, Samsung Knox Standard 4.0 e versioni successive  
+-   Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive  
 
 -   iOS 7.1 e versioni successive  
 
@@ -363,6 +363,6 @@ I browser non supportati verranno bloccati. Non sono supportate le app OWA per i
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

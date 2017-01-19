@@ -1,6 +1,6 @@
 ---
-title: Preparare i server Windows| System Center Configuration Manager
-description: Assicurarsi che un computer soddisfi i prerequisiti per l'uso come server del sito o server di sistema del sito per System Center Configuration Manager.
+title: Preparare i server di Windows | Microsoft Docs
+description: Assicurarsi che un computer soddisfi i prerequisiti per l&quot;uso come server del sito o server di sistema del sito per System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f0a1cc32285fcb792c3f4cdec616668474708404
-ms.openlocfilehash: acf8a401f1ce67a4d8c905c0126c031b97484271
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: bd89f97f4252ddea2d1bf7ab329417477c77868d
 
 
 ---
@@ -42,11 +42,8 @@ Le informazioni contenute in questo articolo offrono una panoramica dei tipi di 
 -   **.NET Framework**: inclusi  
 
     -   ASP.NET  
-
     -   Attivazione HTTP  
-
-    -   Attivazione non HTTP  
-
+    -   Attivazione non HTTP   
     -   Servizi WCF  
 
     Per i diversi ruoli del sistema del sito sono necessarie versioni specifiche di .NET Framework.  
@@ -68,61 +65,37 @@ Le informazioni contenute in questo articolo offrono una panoramica dei tipi di 
  -   **Servizio Registrazione dispositivi di rete** in Servizi certificati Active Directory: questo ruolo di Windows è un prerequisito per l'uso dei profili dei certificati in Configuration Manager.  
 
  -   **Server Web (IIS)**: includono:  
-
     -   Funzionalità HTTP comuni >  
-
         -   Reindirizzamento HTTP  
-
     -   Sviluppo di applicazioni >  
-
         -   Estendibilità .NET  
-
         -   ASP.NET  
-
         -   Estensioni ISAPI  
-
         -   Filtri ISAPI  
-
     -   Strumenti di gestione >  
-
         -   Compatibilità Gestione IIS 6  
-
         -   Compatibilità Metabase IIS 6  
-
         -   Compatibilità WMI IIS 6  
-
     -   Sicurezza >  
-
         -   Filtro richieste  
-
         -   Autenticazione di Windows  
 
  I ruoli del sistema del sito seguenti usano una o più delle configurazioni IIS elencate:  
-
     -   Punto per servizi Web del Catalogo applicazioni  
-
     -   Punto per siti Web del Catalogo applicazioni  
-
     -   Punto di distribuzione  
-
     -   Punto di registrazione  
-
     -   Punto proxy di registrazione  
-
     -   Punto di stato di fallback  
-
     -   Punto di gestione  
-
     -   Punto di aggiornamento software  
-
-    -   Punto di migrazione stato  
+    -   Punto di migrazione stato     
 
     La versione minima di IIS richiesta è la versione fornita dal sistema operativo del server del sito.  
 
     Oltre a queste configurazioni IIS, potrebbe essere necessario configurare [Filtro richieste IIS per i punti di distribuzione](#BKMK_IISFiltering).  
 
 -   **Servizi di distribuzione Windows**: questo ruolo viene usato con la distribuzione del sistema operativo.  
-
 -   **Windows Server Update Services**: questo ruolo è richiesto quando si distribuiscono gli aggiornamenti software.  
 
 ##  <a name="a-namebkmkiisfilteringa-iis-request-filtering-for-distribution-points"></a><a name="BKMK_IISFiltering"></a> Filtro richieste IIS per i punti di distribuzione  
@@ -133,11 +106,8 @@ Le informazioni contenute in questo articolo offrono una panoramica dei tipi di 
  Le estensioni di file seguenti vengono usate da Configuration Manager per applicazioni e pacchetti. Verificare che le configurazioni del filtro richieste non blocchino queste estensioni di file:  
 
 -   PCK  
-
 -   PKG  
-
 -   STA  
-
 -   TAR  
 
 Ad esempio, si possono avere file di origine per una distribuzione del software che includono una cartella denominata **bin**o che contengono un file con estensione **mdb** .  
@@ -167,12 +137,12 @@ Ad esempio, si possono avere file di origine per una distribuzione del software 
 **Punti di distribuzione:** i punti di distribuzione richiedono che i verbi HTTP seguenti siano consentiti:
  - GET
  - HEAD
- - PROFIND
+ - PROPFIND
 
 Per informazioni sulla configurazione del filtro richieste, vedere [Configurare il filtro richieste in IIS](https://technet.microsoft.com/library/hh831621.aspx#Verbs) su TechNet o in una documentazione simile che si applica alla versione di Windows Server che ospita il punto di gestione.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

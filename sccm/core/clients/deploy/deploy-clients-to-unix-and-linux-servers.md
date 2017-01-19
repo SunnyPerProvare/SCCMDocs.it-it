@@ -1,5 +1,5 @@
 ---
-title: Distribuire client UNIX/Linux | System Center Configuration Manager
+title: Distribuire i client UNIX/Linux | Microsoft Docs
 description: Informazioni su come distribuire i client nei server UNIX e Linux in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 15a4e323-9f42-4fea-bb14-f2b905d1f77c
 caps.latest.revision: 9
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 77a0825346b461cdc3b36e5aabcb1e4e83135d6e
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 0e5f65552045e9cef06f5286b0087153751c79b0
 
 
 ---
@@ -148,7 +148,7 @@ Ogni pacchetto di installazione client contiene tutti i file necessari per compl
 
      Se non si utilizza questa proprietà per specificare un certificato PKI, il client utilizza un certificato autofirmato e tutte le comunicazioni ai sistemi del sito avvengono tramite HTTP.  
 
-     Se si specifica un certificato non valido nella riga di comando di installare il client, non vengono restituiti errori. Questo accade perché la convalida dei certificati si verifica dopo l'installazione di client. Quando viene avviato il client, vengono convalidati i certificati con il punto di gestione e se un certificato non viene visualizzato il seguente messaggio di **scxcm.log**, il file di log client Unix e Linux Configuration Manager: **Non riuscito di convalidare il certificato per punto di gestione**. Il percorso predefinito del file di log è:  **/var/opt/microsoft/scxcm.log**.  
+     Se si specifica un certificato non valido nella riga di comando di installazione del client, non vengono restituiti errori Questo accade perché la convalida dei certificati si verifica dopo l'installazione di client. Quando viene avviato il client, vengono convalidati i certificati con il punto di gestione e se un certificato non viene visualizzato il seguente messaggio di **scxcm.log**, il file di log client Unix e Linux Configuration Manager: **Non riuscito di convalidare il certificato per punto di gestione**. Il percorso predefinito del file di log è:  **/var/opt/microsoft/scxcm.log**.  
 
     > [!NOTE]  
     >  È necessario specificare questa proprietà quando si installa un client e usare la proprietà **-mp** per specificare un punto di gestione configurato per accettare solo connessioni client HTTPS.  
@@ -163,7 +163,7 @@ Ogni pacchetto di installazione client contiene tutti i file necessari per compl
 
 -   **-/Nocrlcheck**  
 
-     Facoltativo. Specifica che un client non deve verificare l'elenco di revoche di certificati (CRL) per comunicare tramite HTTPS mediante l'utilizzo di un certificato PKI. Quando questa opzione non è specificata, il client controlla l'elenco CRL prima di stabilire una connessione HTTPS mediante l'utilizzo di certificati PKI. Per ulteriori informazioni sul controllo CRL client, vedere pianificazione di revoche di certificati PKI.  
+     Facoltativo. Specifica che un client non deve verificare l'elenco di revoche di certificati (CRL) per comunicare tramite HTTPS mediante l'utilizzo di un certificato PKI. Quando questa opzione non è specificata, il client controlla l'elenco di revoche di certificati prima di stabilire una connessione HTTPS usando i certificati PKI. Per ulteriori informazioni sul controllo CRL client, vedere pianificazione di revoche di certificati PKI.  
 
      Esempio: -UsePKICert &lt;Percorso completo e nome file\> -certpw &lt;password\> -NoCRLCheck  
 
@@ -207,7 +207,7 @@ Ogni pacchetto di installazione client contiene tutti i file necessari per compl
 
 -   **-rootcerts**  
 
-     Facoltativo. Specifica ulteriori certificati PKI per l'importazione che non fanno parte di una gerarchia di autorità di (certificazione CA) certificazione punti gestione. Se si specificano più certificati nella riga di comando, dovrebbero essere delimitati da virgole.  
+     Facoltativo. Specifica ulteriori certificati PKI per l'importazione che non fanno parte di una gerarchia di autorità di (certificazione CA) certificazione punti gestione. Se si specificano più certificati nella riga di comando, dovranno essere delimitati da virgole.  
 
      Utilizzare questa opzione se si utilizzano certificati client PKI concatenati a un certificato CA radice attendibile per i punti di gestione di siti. I punti di gestione rifiuteranno il client se il certificato client non è concatenato a un certificato radice trusted nell'elenco di autorità di certificazione del sito.  
 
@@ -240,6 +240,6 @@ Ogni pacchetto di installazione client contiene tutti i file necessari per compl
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

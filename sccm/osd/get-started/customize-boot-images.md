@@ -1,6 +1,6 @@
 ---
-title: Personalizzare le immagini d&quot;avvio | Configuration Manager
-description: Informazioni su diversi modi di usare Configuration Manager o lo strumento da riga di comando Gestione e manutenzione immagini distribuzione (DISM) per personalizzare un'immagine d'avvio.
+title: Personalizzare le immagini di avvio | Microsoft Docs
+description: Informazioni su diversi modi di usare Configuration Manager o lo strumento da riga di comando Gestione e manutenzione immagini distribuzione (DISM) per personalizzare un&quot;immagine d&quot;avvio.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 5b78d68087bb5513723e1cc25291f7776d48f7b5
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 9312ad976986f97293d294c12161f78e5d6fee1e
 
 
 ---
@@ -83,7 +83,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
     > [!NOTE]
     >  Per altre informazioni su DISM, vedere l'argomento [DISM - Guida tecnica Gestione e manutenzione immagini distribuzione](http://technet.microsoft.com/library/hh824821.aspx) nella libreria della documentazione TechNet per Windows 8.1 e Windows 8.
 
-5.  Dopo avere montato l'immagine di avvio, usare DISM per aggiungere componenti facoltativi all'immagine di avvio. In Windows PE 5 i componenti facoltativi a 64 bit si trovano in <*Percorso di installazione*>\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs.  
+5.  Dopo avere montato l'immagine di avvio, usare DISM per aggiungere componenti facoltativi all'immagine di avvio. In Windows PE 5 i componenti facoltativi a 64 bit si trovano in <*Percorso di installazione*>\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs.  
 
     > [!NOTE]
     >  Questa procedura usa il seguente percorso per i componenti facoltativi: C:\Programmi (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Ambiente preinstallazione di Windows\amd64\WinPE_OCs. Il percorso da usare potrebbe essere diverso a seconda della versione e delle opzioni di installazione scelte per Windows ADK.  
@@ -205,7 +205,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
     > [!NOTE]
     >  Per altre informazioni su DISM, vedere l'argomento [Documentazione tecnica su Gestione e manutenzione immagini](http://technet.microsoft.com/library/dd744256\(v=ws.10\).aspx) nella libreria della documentazione TechNet per Windows 7.  
 
-5.  Dopo avere montato l'immagine di avvio, usare DISM per aggiungere componenti facoltativi all'immagine di avvio. In Windows PE 3.1, ad esempio, i componenti facoltativi si trovano in <*PercorsoInstallazione*>\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\.  
+5.  Dopo avere montato l'immagine di avvio, usare DISM per aggiungere componenti facoltativi all'immagine di avvio. In Windows PE 3.1, ad esempio, i componenti facoltativi si trovano in <*PercorsoInstallazione*>\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\.  
 
     > [!NOTE]
     >  Questa procedura usa il seguente percorso per i componenti facoltativi: C:\Programmi\Windows AIK\Tools\PETools\amd64\WinPE_FPs. Il percorso da usare potrebbe essere diverso a seconda delle opzioni di installazione e della versione scelte per Windows AIK.  
@@ -303,6 +303,6 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

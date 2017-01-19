@@ -1,5 +1,5 @@
 ---
-title: Aggiornare i client | Mac | System Center Configuration Manager
+title: 'Aggiornare i client | Microsoft Docs | Mac '
 description: Aggiornare i client di System Center Configuration Manager in computer Mac.
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 74c60941-5eae-4905-9e58-252bdb39df96
 caps.latest.revision: 10
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: e2e13d31ccdeba155b4030a78d12b82939394f54
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 03cb801d6de867d3e96b478701783de4f1b09036
 
 
 ---
@@ -105,6 +105,6 @@ Seguire la procedura dettagliata descritta di seguito per aggiornare il client i
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

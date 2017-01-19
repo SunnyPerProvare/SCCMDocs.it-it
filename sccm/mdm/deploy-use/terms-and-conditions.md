@@ -1,5 +1,5 @@
 ---
-title: Terms and Conditions in System Center Configuration Manager
+title: Termini e condizioni in System Center Configuration Manager | Microsoft Docs
 description: Distribuire le condizioni a gruppi di utenti in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4d3f9e6b-4d71-4fc4-9b91-47f1bfbd8c70
 caps.latest.revision: 9
-author: NathBarn
-ms.author: nathbarn
+author: mtillman
+ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: a7b99bed3186ab8ff817ef5f420d7a55d60b1c14
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 2f8b14bef14d82584fd2bf6cdd05018bdd463ce4
 
 
 ---
@@ -89,7 +89,7 @@ ms.openlocfilehash: a7b99bed3186ab8ff817ef5f420d7a55d60b1c14
 
      Nella schermata di stato della distribuzione è possibile selezionare le schede di stato per visualizzare gli utenti con lo stato specificato. È possibile fare clic su **Esegui riepilogo** per aggiornare i dati in tutta la gerarchia. Fare clic su **Aggiorna** per aggiornare i dati nella console  
 
-## <a name="to-view-a-terms-and-conditions-report"></a>Per visualizzare un report Termini e condizioni  
+## <a name="to-view--a-terms-and-conditions-report"></a>Per visualizzare un report Termini e condizioni  
 
 1.  Nella console di Configuration Manager passare a **Monitoraggio** > **Panoramica** > **Creazione report** > **Report**.  
 
@@ -122,6 +122,6 @@ ms.openlocfilehash: a7b99bed3186ab8ff817ef5f420d7a55d60b1c14
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

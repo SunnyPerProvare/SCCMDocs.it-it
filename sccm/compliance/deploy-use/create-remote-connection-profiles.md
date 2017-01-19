@@ -1,5 +1,5 @@
 ---
-title: Creare profili di connessione remota | System Center Configuration Manager
+title: Creare profili di connessione remota | Microsoft Docs
 description: "Usare i profili di connessione remota di System Center Configuration Manager per consentire agli utenti di connettersi in modalità remota ai computer aziendali."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: fd05211959d844c3658e3c5ead70b0c9a7f90116
+ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
+ms.openlocfilehash: 72fc94c6449649656a7e8b81659c2b5cc2551107
 
 
 ---
@@ -81,7 +81,7 @@ Windows Intune è necessario se si vuole che gli utenti si connettano ai propri 
 
 ### <a name="privacy-considerations"></a>Considerazioni sulla privacy  
 
--   Se un utente avvia una connessione a un computer aziendale dal portale dell'azienda, viene scaricato un file con estensione .rdp o .wsrdp contenente il nome del dispositivo e il nome del server Gateway Desktop remoto richiesto per avviare la sessione Desktop remoto. L'estensione del file dipende dal sistema operativo del dispositivo. Ad esempio, i sistemi operativi Windows 7 e Windows 8 usano un file RDP, mentre Windows 8.1 usa un file WSRDP.  
+-   Se un utente avvia una connessione a un computer aziendale dal portale dell'azienda, viene scaricato un file con estensione .rdp o .wsrdp contenente il nome del dispositivo e il nome del server Gateway Desktop remoto richiesto per avviare la sessione Desktop remoto. L'estensione del file dipende dal sistema operativo del dispositivo. Ad esempio, i sistemi operativi Windows 7 e Windows 8 usano un file RDP, mentre Windows 8.1 usa un file WSRDP.  
 
 -   L'utente può scegliere di aprire o salvare il file .rdp. Se l'utente sceglie di aprire il file .rdp, tale file potrebbe essere archiviato nella cache del browser Web in base alle impostazioni di conservazione configurate per il browser. Se l'utente sceglie di salvare il file, il file non viene archiviato nella cache del browser. Il file viene salvato fino a quando l'utente non lo elimina manualmente.  
 
@@ -186,6 +186,6 @@ Distribuire un profilo di connessione remota
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

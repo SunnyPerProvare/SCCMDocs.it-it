@@ -1,8 +1,8 @@
 ---
-title: Proteggere i dati e l'infrastruttura del sito | System Center Configuration Manager
-description: Informazioni su come proteggere le risorse dell'organizzazione da esposizione o attacchi dannosi con System Center Configuration Manager.
+title: Proteggere dati e infrastruttura del sito | Microsoft Docs
+description: Informazioni su come proteggere le risorse dell&quot;organizzazione da esposizione o attacchi dannosi con System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/27/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 366a3626e2ab4894bbb515176890d508761b6561
+ms.sourcegitcommit: 593fbd0587d54490246f48ae54f666bac6b7830d
+ms.openlocfilehash: c80750358d64cf87f8a3ce3a4c4f4030a9dfd742
 
 
 ---
@@ -26,7 +26,7 @@ ms.openlocfilehash: 366a3626e2ab4894bbb515176890d508761b6561
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-Si vuole che gli utenti possano accedere in modo sicuro alle risorse aziendali, affinché sia l'infrastruttura che i dati siano protetti da esposizione o attacchi dannosi. Le informazioni contenute in questi argomenti descrivono come abilitare l'accesso e proteggere le risorse dell'organizzazione.  
+Si vuole che gli utenti possano accedere in modo sicuro alle risorse aziendali, affinché sia l'infrastruttura che i dati siano protetti da esposizione o attacchi dannosi. Le informazioni contenute in questi argomenti descrivono come usare System Center Configuration Manager (noto anche come ConfigMgr o SCCM) per abilitare l'accesso e proteggere le risorse dell'organizzazione.  
 
 -   È possibile ridurre al minimo le operazioni eseguite dagli utenti per connettersi alle risorse aziendali abilitando la connettività VPN con i profili VPN. Informazioni su [Profili VPN in System Center Configuration Manager](../deploy-use/vpn-profiles.md).  
 
@@ -44,6 +44,6 @@ Si vuole che gli utenti possano accedere in modo sicuro alle risorse aziendali, 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

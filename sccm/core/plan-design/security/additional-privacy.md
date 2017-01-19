@@ -1,6 +1,6 @@
 ---
-title: Informativa sulla privacy di System Center Configuration Manager - Libreria di cmdlet di Configuration Manager
-description: Informazioni su come Microsoft raccoglie e usa i dati da un'implementazione di System Center Configuration Manager.
+title: Informativa sulla privacy per System Center Configuration Manager - Altre informazioni | Microsoft Docs
+description: Informazioni su come Microsoft raccoglie e usa i dati da un&quot;implementazione di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -36,8 +36,8 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: bcac4e2b6f8377a27417cb2519814ad9e74ee542
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: 613b7dbf81de84129e113468d554d8430cbc3182
 
 ---
 # <a name="additional-information-about-privacy-for-system-center-configuration-manager"></a>Altre informazioni sulla privacy per System Center Configuration Manager
@@ -97,7 +97,7 @@ Microsoft Cloud Protection Service non raccoglie intenzionalmente informazioni p
 
 Altre informazioni relative ai dati raccolti sono reperibili nella documentazione del prodotto all'indirizzo [http://go.microsoft.com/fwlink/?LinkId=823547](http://go.microsoft.com/fwlink/?LinkId=823547).
 
-## <a name="site-hierarchy-geographical-view-with-bing-maps"></a>Gerarchia dei siti: visualizzazione geografica con Bing Maps
+## <a name="site-hierarchy--geographical-view-with-bing-maps"></a>Gerarchia dei siti: visualizzazione geografica con Bing Maps
 Gerarchia dei siti: la visualizzazione geografica consente di visualizzare la topologia dei server fisici di Configuration Manager con le mappe fornite da Microsoft Bing Maps. Per abilitare questa funzionalità, le informazioni sulla posizione fornite dall'utente vengono inviate dal server al servizio Web di Bing Maps.
 
 Microsoft usa le informazioni per il funzionamento e il miglioramento delle mappe di Microsoft Bing Maps e di altri siti e servizi Microsoft. Per altre informazioni, consultare l'Informativa sulla privacy di Microsoft all'indirizzo http://go.microsoft.com/fwlink/?LinkId=823548.
@@ -114,6 +114,6 @@ Questa funzionalità non è configurata per impostazione predefinita. Gli ammini
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

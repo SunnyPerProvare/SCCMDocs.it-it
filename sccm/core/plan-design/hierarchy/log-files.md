@@ -1,8 +1,8 @@
 ---
-title: File di log | System Center Configuration Manager
+title: File di log per Configuration Manager | Microsoft Docs
 description: Usare i file di log per la risoluzione dei problemi in una gerarchia di System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/01/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: cb27f2f2a6e0b0e3d6fca2d616d8ab806b74f9df
+ms.sourcegitcommit: f36cdecd96d50bd62892b262024e43d64f7c8205
+ms.openlocfilehash: 5b7afc3e00bc8ee317b8d8c3660808c465758f91
 
 
 ---
@@ -70,6 +70,8 @@ In System Center Configuration Manager i componenti client e del server del sito
 
     -   [Registrazione certificato](#BKMK_CertificateEnrollment)  
 
+    - [Gateway di gestione cloud](#cloud-management-gateway)
+
     -   [Impostazioni di conformità e accesso alle risorse aziendali](#BKMK_CompSettingsLog)  
 
     -   [Console di Configuration Manager](#BKMK_ConsoleLog)  
@@ -105,6 +107,8 @@ In System Center Configuration Manager i componenti client e del server del sito
     -   [Aggiornamenti software](#BKMK_SU_NAPLog)  
 
     -   [Riattivazione LAN](#BKMK_WOLLog)  
+
+    -   [Manutenzione di Windows 10](#BKMK_WindowsServicingLog)
 
     -   [Agente di Windows Update](#BKMK_WULog)  
 
@@ -423,11 +427,11 @@ Il client di Configuration Manager per computer Mac registra le informazioni nei
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
 |AppIntentEval.log|Registra informazioni dettagliate sullo stato corrente e previsto delle applicazioni, sulla relativa applicabilità, sulla soddisfazione dei requisiti, sui tipi di distribuzione e sulle dipendenze.|Client|  
-|AppDiscovery.log|Registra informazioni dettagliate sull'individuazione o sul rilevamento di applicazioni nei computer client.|Client|  
+|AppDiscovery.log|Registra informazioni dettagliate sull'individuazione o sul rilevamento di applicazioni nei computer client. |Client|  
 |AppEnforce.log|Registra informazioni dettagliate sulle azioni di imposizione (installazione e disinstallazione) eseguite per applicazioni sul client.|Client|  
 |awebsctl.log|Registra le attività di monitoraggio per il ruolo del sistema del sito punto per servizi Web del Catalogo applicazioni.|Server del sistema del sito|  
 |awebsvcMSI.log|Registra informazioni di installazione dettagliate per il ruolo del sistema del sito punto per servizi Web del Catalogo applicazioni.|Server del sistema del sito|  
-|CCMSDKProvider.log|Registra le attività di SDK di gestione applicazioni.|Client|  
+|Ccmsdkprovider.log|Registra le attività di SDK di gestione applicazioni.|Client|  
 |colleval.log|Registra dettagli sul momento in cui le raccolte vengono create, modificate ed eliminate dall'analizzatore di raccolte.|Server del sistema del sito|  
 |ConfigMgrSoftwareCatalog.log|Registra l'attività del Catalogo applicazioni, che include l'utilizzo di Silverlight.|Client|  
 |portlctl.log|Registra le attività di monitoraggio per il ruolo del sistema del sito punto per siti Web del Catalogo applicazioni.|Server del sistema del sito|  
@@ -449,7 +453,7 @@ Il client di Configuration Manager per computer Mac registra le informazioni nei
 ###  <a name="a-namebkmkailoga-asset-intelligence"></a><a name="BKMK_AILog"></a> Asset Intelligence  
  Nella tabella seguente sono elencati i file di log contenenti informazioni correlate ad Asset Intelligence.  
 
-|Nome log|Descrizione|Computer con file di log|  
+|Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
 |AssetAdvisor.log|Registra le attività delle operazioni di inventario di Asset Intelligence.|Client|  
 |aikbmgr.log|Registra informazioni dettagliate sull'elaborazione di file XML da Posta in arrivo per l'aggiornamento del catalogo di Asset Intelligence.|Server del sito|  
@@ -501,7 +505,16 @@ Il client di Configuration Manager per computer Mac registra le informazioni nei
 |BgbSetup.log|Registra le attività del processo wrapper di installazione del server di notifica durante l'installazione e la disinstallazione.|Punto di gestione|  
 |bgbisapiMSI.log|Registra informazioni dettagliate sull'installazione e sulla disinstallazione del server di notifica.|Punto di gestione|  
 |BgbHttpProxy.log|Registra le attività del proxy HTTP di notifica durante l'inoltro dei messaggi dei client tramite HTTP verso e dal server di notifica.|Client|  
-|CCMNotificationAgent.log|Registra le attività dell'agente di notifica, ad esempio le comunicazioni tra client e server e le informazioni sulle attività ricevute e spedite ad altri agenti client.|Client|  
+|CcmNotificationAgent.log|Registra le attività dell'agente di notifica, ad esempio le comunicazioni tra client e server e le informazioni sulle attività ricevute e spedite ad altri agenti client.|Client|  
+
+### <a name="cloud-management-gateway"></a>Gateway di gestione cloud
+
+Nella tabella seguente sono elencati i file di log contenenti informazioni correlate al gateway di gestione cloud.
+
+|Nome registro|Descrizione|Computer con file di log|  
+|--------------|-----------------|----------------------------|  
+|CloudMgr.log|Registra informazioni dettagliate sulla distribuzione del servizio gateway di gestione cloud, lo stato del servizio in corso e i dati di utilizzo associati al servizio.|Server del sistema del sito|
+|SMS_Cloud_ProxyConnector.log|Registra informazioni dettagliate sull'impostazione di connessioni tra il servizio gateway di gestione cloud e il punto di connessione al gateway di gestione cloud.|Server del sistema del sito|
 
 ###  <a name="a-namebkmkcompsettingsloga-compliance-settings-and-company-resource-access"></a><a name="BKMK_CompSettingsLog"></a> Impostazioni di conformità e accesso alle risorse aziendali  
  Nella tabella seguente sono elencati i file di registro contenenti informazioni relative alle impostazioni di conformità e all'accesso alle risorse aziendali.  
@@ -536,6 +549,7 @@ Il client di Configuration Manager per computer Mac registra le informazioni nei
 |SMSdpmon.log|Registra informazioni dettagliate sulle attività pianificate di monitoraggio dell'integrità del punto di distribuzione configurate su un punto di distribuzione.|Ruolo del sistema del sito|  
 |smsdpprov.log|Registra informazioni dettagliate sull'estrazione di file compressi ricevuti da un sito primario. Questo registro viene generato dal provider WMI del punto di distribuzione remoto.|Computer di punto di distribuzione che non condivide il percorso con il server del sito.|  
 
+
 ###  <a name="a-namebkmkdiscoveryloga-discovery"></a><a name="BKMK_DiscoveryLog"></a> Individuazione  
 Nella tabella seguente sono elencati i file di log contenenti informazioni correlate all'individuazione.  
 
@@ -544,7 +558,7 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |adsgdis.log|Registra le azioni di Individuazione gruppo di protezione Active Directory.|Server del sito|  
 |adsysdis.log|Registra le azioni di individuazione sistema Active Directory.|Server del sito|  
 |adusrdis.log|Registra le azioni di individuazione utente Active Directory.|Server del sito|  
-|ADForestDisc.log|Registra le azioni di individuazione foresta Active Directory.|Server del sito|  
+|ADForestDisc.Log|Registra le azioni di individuazione foresta Active Directory.|Server del sito|  
 |ddm.log|Registra le attività di Gestione individuazione dati.|Server del sito|  
 |InventoryAgent.log|Registra le attività di inventario hardware, inventario software e individuazione heartbeat sul client.|Client|  
 |netdisc.log|Registra le azioni di individuazione della rete.|Server del sito|  
@@ -649,7 +663,7 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |CreateTSMedia.log|Registra informazioni dettagliate sulla creazione del supporto per la sequenza di attività.|Computer che esegue la console di Configuration Manager|  
 |DeployToVhd.log|Registra dettagli relativi al processo di creazione e di modifica del disco rigido virtuale|Computer che esegue la console di Configuration Manager|  
 |Dism.log|Registra azioni di installazione driver o di applicazione aggiornamenti per la manutenzione offline.|Server del sistema del sito|  
-|distmgr.log|Registra informazioni dettagliate sulla configurazione per l'attivazione di un punto di distribuzione per PXE.|Server del sistema del sito|  
+|Distmgr.log|Registra informazioni dettagliate sulla configurazione per l'attivazione di un punto di distribuzione per PXE.|Server del sistema del sito|  
 |DriverCatalog.log|Registra informazioni dettagliate sui driver di dispositivo importati nel catalogo dei driver.|Server del sistema del sito|  
 |mcsisapi.log|Registra informazioni sul trasferimento dei pacchetti multicast e le risposte alle richieste dei client.|Server del sistema del sito|  
 |mcsexec.log|Registra le azioni relative a controllo di integrità, spazio dei nomi, creazione delle sessioni e controllo certificati.|Server del sistema del sito|  
@@ -722,7 +736,7 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |Dmpuploader.log|Registra informazioni dettagliate sul caricamento delle modifiche del database in Microsoft Intune.|Computer con il punto di connessione del servizio|  
 |hman.log|Registra informazioni sull'inoltro dei messaggi.|Server del sito|  
 |objreplmgr.log|Registra l'elaborazione di criteri e assegnazione.|Server del sito primario|  
-|policypv.log|Registra la generazione di tutti i criteri.|Server del sito|  
+|PolicyPV.log|Registra la generazione di tutti i criteri.|Server del sito|  
 |outgoingcontentmanager.log|Registra il contenuto caricato in Microsoft Intune.|Computer con il punto di connessione del servizio|  
 |Sitecomp.log|Registra informazioni dettagliate sull'installazione del punto di connessione del servizio.|Server del sito|  
 |SmsAdminUI.log|Registra l'attività della console di Configuration Manager.|Computer che esegue la console di Configuration Manager|  
@@ -731,11 +745,10 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |Statesys.log|Registra l'elaborazione dei messaggi di gestione dei dispositivi mobili.|Sito primario e sito di amministrazione centrale|  
 
 ###  <a name="a-namebkmksunaploga-software-updates"></a><a name="BKMK_SU_NAPLog"></a> Aggiornamenti software  
- La tabella seguente elenca i file di log contenenti informazioni correlate agli aggiornamenti software.  Inoltre, alcuni dettagli rimangono correlati a Protezione accesso alla rete, una funzionalità che non è più disponibile in System Center Configuration Manager.  
+ La tabella seguente elenca i file di log contenenti informazioni correlate agli aggiornamenti software.  
 
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
-|ccmcca.log|Registra informazioni dettagliate sull'esecuzione della valutazione di conformità basata sull'analisi dei criteri di Protezione accesso alla rete di Configuration Manager e contiene l'elaborazione della correzione per ogni aggiornamento software necessario ai fini della conformità.|Client|  
 |ccmperf.log|Registra le attività di manutenzione e acquisizione dati correlate ai contatori delle prestazioni dei client.|Client|  
 |PatchDownloader.log|Registra informazioni dettagliate sul processo di download degli aggiornamenti software dall'origine degli aggiornamenti alla destinazione del download sul server del sito.|Computer che ospita la console di Configuration Manager da cui vengono avviati i download|  
 |PolicyEvaluator.log|Registra informazioni dettagliate sulla valutazione dei criteri nei computer client, inclusi quelli derivanti dagli aggiornamenti software.|Client|  
@@ -743,13 +756,6 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |ScanAgent.log|Registra informazioni dettagliate sulle richieste di ricerca di aggiornamenti software, sulla posizione di WSUS e sulle azioni correlate.|Client|  
 |SdmAgent.log|Registra informazioni dettagliate sul monitoraggio di aggiornamenti e conformità. Il file di log degli aggiornamenti software, Updateshandler.log, fornisce comunque informazioni più dettagliate sull'installazione degli aggiornamenti software necessari per la conformità.<br /><br /> Questo file di log viene condiviso con le impostazioni di conformità.|Client|  
 |ServiceWindowManager.log|Registra informazioni dettagliate sulla valutazione delle finestre di manutenzione.|Client|  
-|smssha.log|File di log principale del client di Protezione accesso alla rete di Configuration Manager contenente un rendiconto unificato delle informazioni di integrità dei due componenti di Configuration Manager: servizi di posizione (LS) e agente di conformità della configurazione (CCA). Questo file di log contiene inoltre informazioni sulle interazioni tra l'agente integrità sistema di Configuration Manager e l'agente di Protezione accesso alla rete del sistema operativo, oltre che tra l'agente integrità sistema di Configuration Manager e Configuration Compliance Agent, unitamente a Location Services. Offre informazioni sull'esito dell'inizializzazione dell'agente di Protezione accesso alla rete, il rapporto sui dati di integrità e il rapporto sulla risposta di integrità.|Client|  
-|Smsshv.log|È il file di log principale per il punto di Convalida integrità sistema e registra le operazioni di base del servizio Convalida integrità sistema, come l'avanzamento dell'inizializzazione.|Server del sistema del sito|  
-|Smsshvadcacheclient.log|Registra informazioni dettagliate sul recupero dei riferimenti sullo stato di integrità di Configuration Manager da Active Directory Domain Services.|Server del sistema del sito|  
-|SmsSHVCacheStore.log|Registra informazioni dettagliate sull'archivio cache usato per conservare i riferimenti sullo stato di integrità di Protezione accesso alla rete di Configuration Manager recuperati da Active Directory Domain Services, quali la lettura dall'archivio e l'eliminazione delle voci dal file dell'archivio cache locale. L'archivio cache non è configurabile.|Server del sistema del sito|  
-|smsSHVQuarValidator.log|Registra il rapporto del client sulle informazioni di integrità e le operazioni di elaborazione. Per ottenere informazioni complete, modificare la chiave del Registro di sistema **LogLevel** da 1 a 0 nel percorso seguente: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMSSHV\Logging\\@GLOBAL**|Server del sistema del sito|  
-|smsshvregistrysettings.log|Registra ogni modifica dinamica apportata alla configurazione del componente Convalida integrità sistema mentre il servizio è in esecuzione.|Server del sistema del sito|  
-|SMSSHVSetup.log|Registra l'esito positivo o negativo (con il motivo dell'errore) dell'installazione del punto di Convalida integrità sistema.|Server del sistema del sito|  
 |SmsWusHandler.log|Registra informazioni dettagliate sul processo di analisi per lo strumento di inventario per Microsoft Updates.|Client|  
 |StateMessage.log|Registra informazioni dettagliate sui messaggi di stato dell'aggiornamento software creati e inviati al punto di gestione.|Client|  
 |SUPSetup.log|Registra informazioni dettagliate sull'installazione del punto di aggiornamento software. Al termine dell'installazione del punto di aggiornamento software, **Installation was successful** viene scritto nel file di log.|Server del sistema del sito|  
@@ -765,12 +771,37 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
  Nella tabella seguente sono elencati i file di log contenenti informazioni relative all'utilizzo della riattivazione LAN.  
 
 > [!NOTE]  
->  Se si integra la riattivazione LAN usando il proxy di riattivazione, questa attività viene registrata nel client. Ad esempio, vedere CcmExec.log e SleepAgent_&lt;dominio\>@SYSTEM_0.log nella sezione [Operazioni client](#BKMK_ClientOpLogs) di questo argomento.  
+>  Quando si integra la riattivazione LAN usando il proxy di riattivazione, questa attività viene registrata nel client. Ad esempio, vedere CcmExec.log e SleepAgent_&lt;dominio\>@SYSTEM_0.log nella sezione [Operazioni client](#BKMK_ClientOpLogs) di questo argomento.  
 
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
 |wolcmgr.log|Registra informazioni dettagliate sui client ai quali è necessario inviare pacchetti di riattivazione, sul numero di pacchetti di riattivazione inviati e sul numero di pacchetti di riattivazione inviati nuovamente.|Server del sito|  
 |wolmgr.log|Registra informazioni dettagliate sulle procedure di riattivazione, ad esempio sul momento in cui riattivare distribuzioni configurate per la riattivazione LAN.|Server del sito|  
+
+###  <a name="a-namebkmkwindowsservicinglogawindows-10-servicing"></a><a name="BKMK_WindowsServicingLog"></a>Manutenzione di Windows 10  
+ Nella tabella seguente sono elencati i file di log contenenti informazioni correlate alla manutenzione di Windows 10.  
+
+|Nome registro|Descrizione|Computer con file di log|  
+|--------------|-----------------|----------------------------|  
+|ccmperf.log|Registra le attività di manutenzione e acquisizione dati correlate ai contatori delle prestazioni dei client.|Client|  
+|CcmRepair.log|Registra le attività di ripristino dell'agente client.|Client|
+|PatchDownloader.log|Registra informazioni dettagliate sul processo di download degli aggiornamenti software dall'origine degli aggiornamenti alla destinazione del download sul server del sito.|Computer che ospita la console di Configuration Manager da cui vengono avviati i download|  
+|PolicyEvaluator.log|Registra informazioni dettagliate sulla valutazione dei criteri nei computer client, inclusi quelli derivanti dagli aggiornamenti software.|Client|  
+|RebootCoordinator.log|Registra informazioni dettagliate sul coordinamento dei riavvii del sistema nei computer client dopo le installazioni degli aggiornamenti software.|Client|  
+|ScanAgent.log|Registra informazioni dettagliate sulle richieste di ricerca di aggiornamenti software, sulla posizione di WSUS e sulle azioni correlate.|Client|  
+|SdmAgent.log|Registra informazioni dettagliate sul monitoraggio di aggiornamenti e conformità. Il file di log degli aggiornamenti software, Updateshandler.log, fornisce comunque informazioni più dettagliate sull'installazione degli aggiornamenti software necessari per la conformità.<br /><br /> Questo file di log viene condiviso con le impostazioni di conformità.|Client|  
+|ServiceWindowManager.log|Registra informazioni dettagliate sulla valutazione delle finestre di manutenzione.|Client|  
+|setupact.log|File di log primario per la maggior parte degli errori che si verificano durante il processo di installazione di Windows. Il file di log si trova nella cartella *% windir%\$Windows.~BT\sources\panther*.|Client|
+|SmsWusHandler.log|Registra informazioni dettagliate sul processo di analisi per lo strumento di inventario per Microsoft Updates.|Client|  
+|StateMessage.log|Registra informazioni dettagliate sui messaggi di stato dell'aggiornamento software creati e inviati al punto di gestione.|Client|  
+|SUPSetup.log|Registra informazioni dettagliate sull'installazione del punto di aggiornamento software. Al termine dell'installazione del punto di aggiornamento software, **Installation was successful** viene scritto nel file di log.|Server del sistema del sito|  
+|UpdatesDeployment.log|Registra informazioni dettagliate sulle distribuzioni nel client, comprese l'attivazione, la valutazione e l'applicazione degli aggiornamenti software. La registrazione dettagliata visualizza informazioni aggiuntive sull'interazione con l'interfaccia utente del client.|Client|  
+|UpdatesHandler.log|Registra informazioni dettagliate sull'analisi della conformità degli aggiornamenti software e sul download e l'installazione di aggiornamenti software nel client.|Client|  
+|UpdatesStore.log|Registra informazioni dettagliate sullo stato di conformità degli aggiornamenti software ottenuto durante il ciclo di analisi della conformità.|Client|  
+|WCM.log|Registra informazioni dettagliate sulle configurazioni e le connessioni del punto di aggiornamento software e sulle connessioni al server di Windows Server Update Services (WSUS) per categorie di aggiornamento, classificazioni e lingue sottoscritte.|Server del sito|  
+|WSUSCtrl.log|Registra informazioni dettagliate su configurazione, connettività al database e integrità del server WSUS per il sito.|Server del sistema del sito|  
+|wsyncmgr.log|Registra informazioni dettagliate sul processo di sincronizzazione degli aggiornamenti software.|Server del sito|  
+|WUAHandler.log|Registra informazioni dettagliate sull'agente di Windows Update nel client durante la ricerca di aggiornamenti software.|Client|  
 
 ###  <a name="a-namebkmkwuloga-windows-update-agent"></a><a name="BKMK_WULog"></a> Agente di Windows Update  
  Nella tabella seguente sono elencati i file di log contenenti informazioni correlate all'agente di Windows Update.  
@@ -789,6 +820,6 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

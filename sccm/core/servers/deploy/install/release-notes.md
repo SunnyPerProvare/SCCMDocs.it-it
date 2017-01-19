@@ -1,5 +1,5 @@
 ---
-title: Note sulla versione | System Center Configuration Manager
+title: Note sulla versione | Microsoft Docs
 description: Leggere queste note su problemi urgenti non ancora risolti nel prodotto o illustrati in un articolo di Microsoft Knowledge Base.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: 0b6c49f3c5e817f1dbd40b40c78d89c4a018e0f1
+ms.sourcegitcommit: ea723a6694feb2c9584b35498aa9c3519383f08d
+ms.openlocfilehash: a9dc046a54c15d9d299664cd1f2a149383f53489
 
 
 ---
@@ -35,16 +35,31 @@ Con System Center Configuration Manager, le note sulla versione del prodotto son
 
 ## <a name="setup-and-upgrade"></a>Configurazione e aggiornamento  
 
+### <a name="when-installing-a-long-term-service-branch-site-using-version-1606-a-current-branch-site-is-installed"></a>Quando si installa un sito di Long-Term Servicing Branch con la versione 1606, viene installato un sito Current Branch
+Quando si usa il supporto di base della versione 1606 della versione di ottobre 2016 per installare un sito Long-Term Servicing Branch (LTSB), il programma di installazione installa invece un sito Current Branch. Ciò si verifica perché l'opzione per installare un punto di connessione del servizio con l'installazione del sito non è selezionata.
+
+ - Anche se non è richiesto, un punto di connessione del servizio deve essere selezionato per l'installazione di un sito LTSB.
+
+Al termine dell'installazione, il punto di connessione del servizio può essere disinstallato.  Tuttavia, è necessario avere un punto di connessione del servizio in modalità offline o online per inviare i dati di telemetria e ottenere gli aggiornamenti della protezione sia per i siti Current Branch che per i siti LTSB.
+
+Se il sito è stato installato come Current Branch ma originariamente si voleva installare un sito LTSB, è possibile disinstallare il sito e quindi reinstallarlo. In alternativa è possibile chiamare il [Supporto tecnico Microsoft](http://go.microsoft.com/fwlink/?LinkId=243064) per assistenza.  
+
+Per confermare quale tipologia installare, nella console passare a **Amministrazione** > **Configurazione del sito** > **Siti** e aprire **Impostazioni gerarchia**. L'opzione per convertire il sito in un sito Current Branch è disponibile solo quando il sito esegue LTSB.  
+
+**Soluzione alternativa:**  nessuna.   
 
 
-### <a name="the-sql-server-backup-model-in-use-by-configuration-manager-can-change-from-full-to-simple"></a>Il modello di backup di SQL Server usato da Configuration Manager può essere modificato da completo a semplice  
+
+
+
+### <a name="the--sql-server-backup-model-in-use-by-configuration-manager-can-change-from-full-to-simple"></a>Il modello di backup di SQL Server usato da Configuration Manager può essere modificato da completo a semplice  
  Quando si esegue l'aggiornamento a System Center Configuration Manager versione 1511, il modello di backup di SQL Server usato da Configuration Manager può essere modificato da completo a semplice.  
 
 -   Se si usa un'attività di backup di SQL Server personalizzata con il modello di backup completo (invece dell'attività di backup predefinita per Configuration Manager), l'aggiornamento può modificare il modello di backup da completo a semplice.  
 
 **Soluzione alternativa**: dopo l'aggiornamento alla versione 1511, rivedere la configurazione di SQL Server e ripristinarla su completa, se necessario.  
 
-### <a name="when-you-add-a-service-window-to-a-new-site-server-service-windows-that-were-configured-for-another-site-server-are-deleted"></a>Quando si aggiunge una finestra del servizio a un nuovo server del sito, le finestre del servizio che erano state configurate per un altro server del sito vengono eliminate  
+### <a name="when-you-add-a-service-window-to-a-new-site-server-service-windows-that-were---configured-for-another-site-server-are-deleted"></a>Quando si aggiunge una finestra del servizio a un nuovo server del sito, le finestre del servizio che erano state configurate per un altro server del sito vengono eliminate  
  Quando si usano gli intervalli di servizio con System Center Configuration Manager versione 1511, è possibile configurare solo intervalli di servizio per un singolo server del sito in una gerarchia. Dopo aver configurato le finestre del servizio in un server, quando si configura una finestra del servizio in un secondo server del sito, le finestre del servizio del primo server del sito vengono automaticamente eliminate, senza alcun avviso o errore.  
 
 **Soluzione alternativa**: installare l'hotfix dall'[articolo 3142341 della Microsoft Knowledge Base](http://support.microsoft.com/kb/3142341). Questo problema viene risolto anche quando si installa l'aggiornamento 1602 per System Center Configuration Manager.  
@@ -120,6 +135,32 @@ Quando si esegue il programma di installazione dalla cartella CD.Latest creata p
 **Soluzione alternativa:** eseguire una delle operazioni seguenti:
  - Durante l'installazione, scegliere di scaricare i file redist più aggiornati da Microsoft e non usare quelli inclusi nella cartella CD.Latest.
  - Eliminare manualmente la cartella *cd.latest\redist\languagepack\zhh* ed eseguire di nuovo l'installazione.
+
+### <a name="service-connection-tool-throws-an-exception-when-sql-server-is-remote-or-when-shared-memory-is-disabled"></a>Lo strumento di connessione del servizio genera un'eccezione quando SQL Server è in remoto, o quando la memoria condivisa è disabilitata
+A partire dalla versione 1606, lo strumento di connessione del servizio genera un'eccezione quando viene soddisfatta una delle condizioni seguenti:  
+ -  Il database del sito è remoto dal computer che ospita il punto di connessione del servizio e usa una porta non standard, cioè una porta diversa dalla 1433
+ -  Il database del sito è sullo stesso server del punto di connessione del servizio, ma il protocollo SQL **Memoria condivisa** è disabilitato
+
+L'eccezione è simile alla seguente:
+ - *Eccezione non gestita: System.Data.SqlClient.SqlException: Si è verificato un errore correlato alla rete o specifico dell'istanza mentre veniva stabilita una connessione con SQL Server. Il server non è stato trovato o non era accessibile. Verificare che il nome istanza sia corretto e che SQL Server sia configurato per consentire le connessioni remote. (provider: Provider named pipe, errore: 40 - Impossibile aprire una connessione a SQL Server) --*
+
+**Soluzione alternativa**: durante l'uso dello strumento è necessario modificare il Registro di sistema del server che ospita il punto di connessione del servizio per includere informazioni sulla porta di SQL Server:
+
+   1.   Prima di usare lo strumento, modificare la chiave del Registro di sistema seguente e aggiungere il numero della porta in uso al nome di SQL Server:
+    - Chiave: HKLM\Microsoft\SMS\COMPONENTS\SMS_DMP_UPLOADER\
+      - Valore: &lt;Nome SQL Server>
+    - Aggiungere: **,&lt;PORTA>**
+
+    Ad esempio, per aggiungere la porta *15001* a un server denominato *testserver.test.net*, la chiave risultante sarà: ***HKLM\Software\Microsoft\SMS\COMPONENTS\SMS_DMP_UPLOADER\testserver.test.net,15001***
+
+   2.   Dopo aver aggiunto la porta al Registro di sistema, lo strumento dovrebbe funzionare correttamente.  
+
+   3.   Una volta finito di usare lo strumento, sia per **la connessione** che per **l'importazione**, riportare la chiave del Registro di sistema al valore originale.  
+
+
+
+
+
 
 ## <a name="backup-and-recovery"></a>Backup e ripristino
 ### <a name="pre-production-client-is-not-available-after-a-site-restore"></a>Il client di pre\-produzione non è disponibile dopo un ripristino del sito
@@ -250,6 +291,6 @@ Questo problema interessa l'accesso condizionale di System Center Configuration 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

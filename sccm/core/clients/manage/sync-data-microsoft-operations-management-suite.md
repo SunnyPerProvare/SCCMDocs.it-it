@@ -1,5 +1,5 @@
 ---
-title: Sincronizzazione dei dati | Microsoft Operations Management Suite | System Center Configuration Manager
+title: 'Sincronizzare i dati | Microsoft Docs | Microsoft Operations Management Suite '
 description: Sincronizzazione dei dati da System Center Configuration Manager a Microsoft Operations Management Suite.
 ms.custom: na
 ms.date: 10/13/2016
@@ -16,8 +16,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0fbce476b8a9b91a88354fb4abfadfd2526ca5e8
-ms.openlocfilehash: 5786f0734ce186601f5173003b9b133ed6ae8b11
+ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
+ms.openlocfilehash: 0d8944bef9578a41b529a2d53b5a4d0094eaa21c
 
 ---
 # <a name="sync-data-from-configuration-manager-to-the-microsoft-operations-management-suite"></a>Sincronizzazione dei dati da Configuration Manager a Microsoft Operations Management Suite
@@ -54,6 +54,6 @@ Dopo aver collegato Configuration Manager a OMS, è possibile aggiungere o rimuo
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

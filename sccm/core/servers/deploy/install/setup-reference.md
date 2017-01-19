@@ -1,6 +1,6 @@
 ---
-title: Informazioni di riferimento | System Center Configuration Manager
-description: Esaminare le informazioni di riferimento seguenti che consentono di preparare l'installazione di un sito o di una gerarchia di Configuration Manager.
+title: Riferimento per l&quot;installazione | Microsoft Docs
+description: Esaminare le informazioni di riferimento seguenti che consentono di preparare l&quot;installazione di un sito o di una gerarchia di Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 06bab7e01fee2c0b030a2879fa67fd455bf668fe
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: a1f13fcde27baf7d0245682292134f08c4f9f8e6
 
 
 ---
@@ -99,6 +99,6 @@ Per altre informazioni, tra cui la divulgazione dei dettagli raccolti da ogni li
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Configurazione del risparmio energia | System Center Configuration Manager
+title: Configurare il risparmio energia | Microsoft Docs
 description: Configurare il risparmio energia in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: ca1277ba0c2be68a393da930769151e25e997210
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: e111ac2545dd9e0b96a50c10246bb75d286a737a
 
 
 ---
@@ -47,7 +47,7 @@ Prima di poter usare il risparmio energia in System Center Configuration Manager
 
     -   **Consentire il risparmio energia dei dispositivi** : dall'elenco a discesa selezionare **Vero** per abilitare la funzionalità di risparmio energia.  
 
-7.  Configurare le impostazioni client necessarie. Per un elenco di impostazioni client di risparmio energia che è possibile configurare, vedere la sezione [Risparmio energia](../../../../core/clients/deploy/about-client-settings.md#BKMK_PowMgmtDeviceSettings) nell'argomento [Informazioni sulle impostazioni client in Configuration Manager](../../../../core/clients/deploy/about-client-settings.md).  
+7.  Configurare le impostazioni client necessarie. Per un elenco di impostazioni client di risparmio energia che è possibile configurare, vedere la sezione [Risparmio energia](../../../../core/clients/deploy/about-client-settings.md#power-management) nell'argomento [Informazioni sulle impostazioni client in Configuration Manager](../../../../core/clients/deploy/about-client-settings.md).  
 
 8.  Fare clic su **OK** per chiudere la finestra di dialogo **Impostazioni client predefinite** .  
 
@@ -88,6 +88,6 @@ Prima di poter usare il risparmio energia in System Center Configuration Manager
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

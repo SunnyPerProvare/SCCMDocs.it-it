@@ -1,5 +1,5 @@
 ---
-title: "Considerazioni sulla pianificazione dell&quot;automazione delle attività | Configuration Manager"
+title: "Considerazioni di pianificazione per l&quot;automazione delle attività | Microsoft Docs"
 description: "Pianificare prima di automatizzare le attività in System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: a439d847adb129a341b33be8e1a1674c72184e77
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 
 
 ---
@@ -183,7 +183,7 @@ ms.openlocfilehash: a439d847adb129a341b33be8e1a1674c72184e77
 > [!TIP]  
 >  La sequenza di attività scrive l'ID del pacchetto e la riga di comando di preavvio, incluso il valore per eventuali variabili della sequenza di attività, nel file di log CreateTSMedia.log nel computer che esegue la console di Configuration Manager. È possibile rivedere questo file di registro per verificare il valore per le variabili della sequenza di attività.  
 
-##  <a name="a-namebkmktscreatea-create-a-task-sequence"></a><a name="BKMK_TSCreate"></a> Creare una sequenza di attività  
+##  <a name="a-namebkmktscreatea-create-a--task-sequence"></a><a name="BKMK_TSCreate"></a> Creare una sequenza di attività  
  È possibile creare sequenze attività usando la Creazione guidata della sequenza di attività. La procedura guidata consente di creare sequenze attività predefinite che eseguono attività specifiche o sequenze attività personalizzate che possono eseguire molte attività differenti.  
 
  Ad esempio, è possibile creare sequenze attività che generano e acquisiscono un'immagine del sistema operativo di un computer di riferimento, installano un'immagine del sistema operativo esistente su un computer di destinazione oppure creano una sequenza di attività personalizzata che esegue un'attività personalizzata. È possibile usare sequenze attività personalizzate per eseguire distribuzioni del sistema operativo specializzate.  
@@ -288,7 +288,7 @@ ms.openlocfilehash: a439d847adb129a341b33be8e1a1674c72184e77
     > [!NOTE]  
     >  L'account di accesso alla rete non viene mai usato come contesto di sicurezza per eseguire programmi, installare applicazioni, installare aggiornamenti oppure eseguire sequenze attività. L'account di accesso alla rete viene tuttavia usato per l'accesso alle risorse associate in rete.  
 
--   Quando si usa un'immagine di avvio per iniziare una distribuzione di un sistema operativo, Configuration Manager usa l'ambiente Windows PE, che non è un sistema operativo completo. L'ambiente Windows PE usa un nome casuale generato automaticamente che non è membro di nessun dominio. Se non si configura correttamente l'account di accesso alla rete, è possibile che il computer non abbia le autorizzazioni obbligatorie per accedere ai pacchetti di Configuration Manager necessari per completare la sequenza di attività.  
+-   Quando si usa un'immagine di avvio per iniziare una distribuzione di un sistema operativo, Configuration Manager usa l'ambiente Windows PE, che non è un sistema operativo completo. L'ambiente Windows PE usa un nome casuale generato automaticamente che non è membro di nessun dominio. Se non si configura correttamente l'account di accesso alla rete, è possibile che il computer non abbia le autorizzazioni obbligatorie per accedere ai pacchetti di Configuration Manager necessari per completare la sequenza di attività.  
 
 ##  <a name="a-namebkmktscreatemediaa-create-media-for-task-sequences"></a><a name="BKMK_TSCreateMedia"></a> Creare supporti per le sequenze di attività  
  È possibile scrivere le sequenze attività e le dipendenze e i file correlati in diversi tipi di supporto. È inclusa la scrittura su supporti rimovibili, ad esempio un set di DVD o CD o una unità flash USB per i supporti di acquisizione, autonomi e di avvio, o la scrittura in un file di formato Windows Imaging (WIM) per i supporti pre-installati.  
@@ -301,7 +301,7 @@ ms.openlocfilehash: a439d847adb129a341b33be8e1a1674c72184e77
 
 -   **Supporti autonomo**. I supporti autonomi contengono la sequenza di attività e tutti gli oggetti associati necessari per l'esecuzione della sequenza di attività. Le sequenze di attività dei supporti autonomi possono essere eseguite quando Configuration Manager ha limitata o nessuna connettività alla rete. I supporti autonomi possono essere eseguiti nei modi seguenti:  
 
-    -   Se il computer di destinazione non viene avviato, viene usata l'immagine di Windows PE associata alla sequenza di attività a partire dal supporto autonomo e la sequenza di attività ha inizio.  
+    -   Se il computer di destinazione non viene avviato, viene usata l'immagine di Windows PE associata alla sequenza di attività a partire dal supporto autonomo e la sequenza di attività ha inizio.  
 
     -   Il supporto autonomo può essere avviato manualmente se un utente è connesso alla rete e avvia l'installazione.  
 
@@ -326,6 +326,6 @@ ms.openlocfilehash: a439d847adb129a341b33be8e1a1674c72184e77
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

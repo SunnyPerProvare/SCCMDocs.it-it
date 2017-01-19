@@ -1,5 +1,5 @@
 ---
-title: Riattivare i client | System Center Configuration Manager
+title: Riattivare i client | Microsoft Docs
 description: Pianificare la riattivazione dei client in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 52ee82b2-0b91-4829-89df-80a6abc0e63a
 caps.latest.revision: 6
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 154908fd78f0e6c96a8f51026f040bf45dd47979
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 12ee719a6a8b072fab27d083aeb2b8439484058d
 
 ---
 # <a name="plan-how-to-wake-up-clients-in-system-center-configuration-manager"></a>Pianificare la riattivazione dei client in System Center Configuration Manager
@@ -95,10 +95,10 @@ Se si vogliono riattivare i computer per un'installazione software pianificata, 
 |Broadcast con riferimento a subnet|Maggiore percentuale di successo rispetto a unicast se si dispone di computer che cambiano spesso l'indirizzo IP nella stessa subnet.<br /><br /> Non è necessaria nessuna riconfigurazione del commutatore.<br /><br /> Elevata percentuale di compatibilità con schede di computer per tutti gli stati di sospensione, perché i broadcast con riferimento a subnet erano il metodo di trasmissione originale per l'invio di pacchetti di riattivazione.|Soluzione meno sicuro rispetto all'utilizzo di unicast, poiché un utente malintenzionato potrebbe inviare flussi continui di richieste echo di Internet Control Message Protocol (ICMP) da un indirizzo di origine falsificato all'indirizzo di broadcast con riferimento a subnet. Ciò provocherebbe la risposta di tutti gli host a tale indirizzo di origine. Se i router sono configurati per consentire trasmissioni con riferimento a subnet, per motivi di sicurezza è consigliabile la configurazione aggiuntiva:<br /><br /> Configurare i router per consentire solo broadcast diretti IP dal server del sito di Configuration Manager, usando un numero di porta UDP specificato.<br />Configurare Configuration Manager per l'uso del numero di porta non predefinito specificato.<br /><br /> Potrebbe essere richiesta la riconfigurazione di tutti i router coinvolti per abilitare broadcast con riferimento a subnet.<br /><br /> Usa una larghezza di banda di rete maggiore rispetto a trasmissioni unicast.<br /><br /> Supportato solo con IPv4 e non con IPv6.|  
 
 > [!WARNING]  
->  Ci sono rischi di protezione associati a broadcast con riferimento a subnet: un utente malintenzionato potrebbe inviare flussi continui di richieste echo di Internet Control Message Protocol (ICMP) da un indirizzo di origine falsificato all'indirizzo di broadcast con riferimento a subnet, determinando la risposta di tutti gli host a tale indirizzo di origine. Questo tipo di attacco Denial of Service è comunemente denominato attacco smurf e viene in genere limitato non abilitando le broadcast con riferimento a subnet.
+>  Esistono rischi per la sicurezza associati ai broadcast con riferimento a subnet: un utente malintenzionato potrebbe inviare flussi continui di richieste echo di Internet Control Message Protocol (ICMP) da un indirizzo di origine falsificato all'indirizzo di broadcast con riferimento a subnet, determinando la risposta di tutti gli host a tale indirizzo di origine. Questo tipo di attacco Denial of Service è comunemente denominato attacco smurf e viene in genere limitato non abilitando le broadcast con riferimento a subnet.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

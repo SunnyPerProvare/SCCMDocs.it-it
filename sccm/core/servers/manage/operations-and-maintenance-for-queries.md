@@ -1,5 +1,5 @@
 ---
-title: Operazioni e manutenzione per le query | System Center Configuration Manager
+title: Operazioni e manutenzione per le query | Microsoft Docs
 description: Vedere un elenco di argomenti sulle query in System Center Configuration Manager. Si tratta specificatamente di manutenzione e operazioni.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 3720aec5b831585e6399de129f1f138218766ebf
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 82648626882ddd23db0e40cfb18621a5953a1786
 
 
 ---
@@ -39,6 +39,6 @@ Leggere gli argomenti seguenti in questa sezione per informazioni su operazioni 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

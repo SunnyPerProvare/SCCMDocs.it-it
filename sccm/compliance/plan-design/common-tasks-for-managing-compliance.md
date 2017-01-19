@@ -1,5 +1,5 @@
 ---
-title: "Attività comuni per la gestione della conformità | System Center Configuration Manager"
+title: "Attività comuni per la gestione della conformità | Microsoft Docs"
 description: "Informazioni su come usare le impostazioni di conformità in System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: bd70eee176e70c169b6a16ed921bd5022a8a8031
+ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
+ms.openlocfilehash: f62ae116f6f397e7de1da622eea0d9828dd220df
 
 
 ---
@@ -38,6 +38,6 @@ In questa sezione sono disponibili alcuni scenari comuni utili per imparare a us
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

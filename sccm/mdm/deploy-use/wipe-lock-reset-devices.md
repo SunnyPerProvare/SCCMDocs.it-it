@@ -1,5 +1,5 @@
 ---
-title: Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando System Center Configuration Manager
+title: Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando System Center Configuration Manager | Microsoft Docs
 description: Proteggere i dati del dispositivo con cancellazione completa, cancellazione selettiva, blocco remoto o reimpostazione passcode usando System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 770da7bd-02dd-474a-9604-93ff1ea0c1e4
 caps.latest.revision: 18
 caps.handback.revision: 0
-author: NathBarn
-ms.author: nathbarn
+author: mtillman
+ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 49a2220616bb6c6734643885bf969245e4c67c77
+ms.sourcegitcommit: 828e2ac9a3f9bcea1571d24145a1021fdf1091f3
+ms.openlocfilehash: d3dd55b496a124c478f1cf2880a096e2fbdd9145
 
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-using-system-center-configuration-manager"></a>Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando System Center Configuration Manager
@@ -65,9 +65,9 @@ Configuration Manager include funzionalità per la cancellazione selettiva, la c
 |Agente di gestione|Il profilo di gestione viene rimosso.|  
 |Profili di posta elettronica|Per i profili di posta elettronica di cui viene eseguito il provisioning da Intune, vengono rimossi l'account e l'indirizzo di posta elettronica.|  
 
- **Android e Android Samsung KNOX**  
+ **Android e Android Samsung KNOX Standard**  
 
-|Contenuti rimossi quando si disattiva un dispositivo|Android|Samsung KNOX|  
+|Contenuti rimossi quando si disattiva un dispositivo|Android|Samsung KNOX Standard|  
 |--------------------------------------------|-------------|------------------|  
 |App aziendali e dati associati installati usando Configuration Manager e Intune.|Le app e i dati rimangono installati.|Le app vengono disinstallate|  
 |Profili VPN e Wi-Fi|Rimosso.|Rimosso.|  
@@ -195,7 +195,7 @@ Configuration Manager include funzionalità per la cancellazione selettiva, la c
 |Windows 10|Non supportato al momento.|  
 |Windows Phone 8 e Windows Phone 8.1|Supportato|  
 |Windows RT 8.1 e Windows RT|Funzionalità non supportata|  
-|Windows 8.1|Funzionalità non supportata|  
+|Windows 8.1|Non supportato|  
 
 ### <a name="to-reset-the-passcode-on-a-mobile-device-remotely-in-configuration-manager"></a>Per reimpostare il passcode su un dispositivo mobile in modalità remota in Configuration Manager  
 
@@ -243,10 +243,10 @@ Configuration Manager include funzionalità per la cancellazione selettiva, la c
 
 ## <a name="see-also"></a>Vedere anche  
  [Cancellazione selettiva di Windows per la gestione di dati del dispositivo](http://technet.microsoft.com/library/dn486874.aspx)   
- [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../mdm/plan-design/hybrid-mobile-device-management.md) (Gestione di dispositivi mobili ibridi (MDM) con System Center Configuration Manager e Microsoft Intune)
+ [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../mdm/understand/hybrid-mobile-device-management.md) (Gestione di dispositivi mobili ibridi (MDM) con System Center Configuration Manager e Microsoft Intune)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Novità della versione 1606 | System Center Configuration Manager"
+title: "Novità della versione 1606 | Microsoft Docs"
 description: "Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1606 di System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/09/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0fbce476b8a9b91a88354fb4abfadfd2526ca5e8
-ms.openlocfilehash: 8de28e112a2d7faf1d8aca9b7214498e9a65f919
+ms.sourcegitcommit: f6e34e39d267f3bba26d6aa6a912eb4ba4aa3ab2
+ms.openlocfilehash: 16d10bdf1ddd810800e776c33f3f059899b7f92b
 
 ---
 # <a name="what39s-new-in-version-1606-of-system-center-configuration-manager"></a>Novità della versione 1606 di System Center Configuration Manager
@@ -164,11 +164,11 @@ Per informazioni dettagliate, vedere [Preparare i ruoli del sistema del sito per
 ## <a name="compliance-settings"></a>Impostazioni di conformità
 
 ### <a name="smart-lock-setting-for-android-devices"></a>Impostazione di Smart Lock per dispositivi Android
-La nuova impostazione **Consenti Smart Lock e altri agenti di attendibilità** è stata aggiunta all'elemento di configurazione Android e Samsung KNOX.
+La nuova impostazione **Consenti Smart Lock e altri agenti di attendibilità** è stata aggiunta all'elemento di configurazione Android e Samsung KNOX Standard.
 
 L'impostazione consente di controllare la funzionalità Smart Lock su dispositivi compatibili con Android. Questa funzionalità del telefono, talvolta nota anche come agenti di attendibilità, consente di disabilitare o ignorare la password della schermata di blocco del dispositivo se il dispositivo si trova in una posizione attendibile, ad esempio quando è connesso a un dispositivo Bluetooth specifico oppure quando è nelle vicinanze di un tag NFC. È possibile usare questa impostazione per impedire agli utenti finali di configurare Smart Lock.
 
-Per informazioni dettagliate, vedere [Come creare elementi di configurazione per dispositivi Android e Samsung KNOX gestiti senza il client di System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).
+Per informazioni dettagliate, vedere [Creare elementi di configurazione per dispositivi Android e Samsung KNOX Standard gestiti senza il client System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).
 
 ## <a name="device-configuration-and-protection"></a>Configurazione e protezione del dispositivo
 
@@ -218,13 +218,13 @@ Per informazioni dettagliate, vedere [Predichiarare dispositivi con i numeri di 
 
 È ora possibile abilitare il monitoraggio dei servizi di Attestazione dell'integrità per i PC Windows 10 usando solo l'infrastruttura locale, in modo che i computer senza accesso a Internet possano creare report di attestazione dell'integrità dei dispositivi.
 
-Per informazioni dettagliate, vedere [Attestazione dell'integrità per System Center Configuration Manager](../../../core/servers/manage/health-attestation.md#How-to-enable-Health-Attestation-service-communication-on-Configuration-Manager-client-computers).  
+Per informazioni dettagliate, vedere [Attestazione dell'integrità per System Center Configuration Manager](../../../core/servers/manage/health-attestation.md#how-to-enable-health-attestation-service-communication-on-configuration-manager-client-computers).  
 
 ## <a name="remote-control"></a>Controllo remoto
 Offre agli utenti finali la possibilità di accettare o rifiutare il trasferimento di file prima di trasferire il contenuto degli appunti condivisi in una sessione di controllo remoto. Gli utenti finali dovranno concedere l'autorizzazione una sola volta per sessione e il visualizzatore non avrà la possibilità di concedere l'autorizzazione per procedere con il trasferimento dei file. La nuova impostazione è disponibile nell'area di lavoro **Amministrazione**. Passare a **Impostazioni client** quindi aprire il riquadro **Strumenti remoti** in **Impostazioni predefinite**.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

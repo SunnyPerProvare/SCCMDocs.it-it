@@ -1,7 +1,7 @@
 ---
 
-title: Integrazione con Windows Update for Business in Windows 10 | Configuration Manager
-description: Usare Windows Update for Business per mantenere aggiornati i dispositivi dell'organizzazione basati su Windows 10 connessi al servizio Windows Update.
+title: Integrazione con Windows Update for Business in Windows 10 | Microsoft Docs
+description: Usare Windows Update for Business per mantenere aggiornati i dispositivi dell&quot;organizzazione basati su Windows 10 connessi al servizio Windows Update.
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 183315fe-27bd-456f-b2c5-e8d25e05229b
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: c4c6e50d0e1a34653226369cffdc0bde905398fc
+ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
+ms.openlocfilehash: 8bdbacd54632475ac69a0d0a9a34b2567c3daa13
 
 
 ---
@@ -45,7 +45,7 @@ Windows Update for Business (WUfB) consente di mantenere i dispositivi basati su
 
 -   La distribuzione di client completi di Configuration Manager che usa l'infrastruttura di aggiornamenti software non funzionerà per i client connessi a Windows Update for Business per la ricezione degli aggiornamenti.  
 
-## <a name="identify-clients-that-use-wufb-for-windows-10-updates"></a>Identificare i client che usano WUfB per gli aggiornamenti di Windows 10  
+## <a name="identify-clients-that-use--wufb-for-windows-10-updates"></a>Identificare i client che usano WUfB per gli aggiornamenti di Windows 10  
  Usare la procedura seguente per identificare i client che usano WUfB per ottenere gli aggiornamenti di Windows 10, configurare tali client per interrompere l'uso di WSUS per ottenere gli aggiornamenti e distribuire l'impostazione di un agente client per disabilitare il flusso di lavoro di aggiornamenti software per questi client.  
 
  **Prerequisiti**  
@@ -69,6 +69,6 @@ Windows Update for Business (WUfB) consente di mantenere i dispositivi basati su
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

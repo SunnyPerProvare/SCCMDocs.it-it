@@ -1,5 +1,5 @@
 ---
-title: Pianificare Endpoint Protection | System Center Configuration Manager
+title: Pianificare Endpoint Protection | Microsoft Docs
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -14,8 +14,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: 34033e9413a9aa525534d563b94b713dca8ebdf0
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: 927732150b99bbe362a3ed36976b49a716efc14c
 
 
 ---
@@ -87,7 +87,7 @@ Endpoint Protection in Configuration Manager consente di creare criteri antimalw
 A partire dalla versione 1606 di Configuration Manager (Current Branch), Endpoint Protection consente di gestire e monitorare Windows Defender Advanced Threat Protection (ATP). Windows Defender ATP è un nuovo servizio che consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti. Vedere [Windows Defender Advanced Threat Protection](../deploy-use/windows-defender-advanced-threat-protection.md).
 
 ## <a name="endpoint-protection-workflow"></a>Flusso di lavoro di Endpoint Protection  
- Esaminare il diagramma seguente per capire il flusso di lavoro per l'implementazione di Endpoint Protection nella gerarchia di Configuration Manager.  
+ Vedere il diagramma seguente per capire il flusso di lavoro per l'implementazione di Endpoint Protection nella gerarchia di Configuration Manager.  
 
  ![Flusso di lavoro di Endpoint Protection](../media/Endpoint-Protection-Workflow.gif)
 
@@ -111,7 +111,7 @@ A partire dalla versione 1606 di Configuration Manager (Current Branch), Endpoin
 ### <a name="configure-custom-client-settings-for-endpoint-protection"></a>Configurare le impostazioni client personalizzate per Endpoint Protection  
  Quando si configurano le impostazioni client per Endpoint Protection, non usare le impostazioni client predefinite perché applicano le impostazioni a tutti i computer nella gerarchia. Al contrario, configurare le impostazioni client personalizzate e assegnare queste impostazioni a raccolte di computer nella gerarchia.  
 
- Quando si configurano le impostazioni client personalizzate, è possibile effettuare le operazioni seguenti:  
+ Quando si configurano impostazioni client personalizzate, è possibile eseguire le operazioni seguenti:  
 
 -   Personalizzare le impostazioni antimalware e sicurezza per le diverse parti dell'organizzazione.  
 
@@ -124,6 +124,6 @@ A partire dalla versione 1606 di Configuration Manager (Current Branch), Endpoin
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

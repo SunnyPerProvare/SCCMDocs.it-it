@@ -1,5 +1,5 @@
 ---
-title: Introduzione ai profili di posta elettronica | System Center Configuration Manager
+title: Introduzione ai profili di posta elettronica | Microsoft Docs
 description: Informazioni su come usare i profili di posta elettronica per consentire agli utenti di accedere alla posta elettronica aziendale dai propri dispositivi con pochissime operazioni di configurazione.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 83066e1f0e3c6536649e9b74ca13562c9d817619
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: b936a0914f8811f755cbb6983fefc063fbc4f97c
 
 
 ---
@@ -41,7 +41,7 @@ I profili di posta elettronica supportano Microsoft Intune per consentire il pro
 -   Dispositivi iPad che eseguono iOS 5, iOS 6, iOS 7 e iOS 8  
 
 > [!IMPORTANT]  
->  Per distribuire profili in dispositivi iOS, Android Samsung KNOX, Windows Phone e Windows 8.1 o Windows 10, i dispositivi devono essere registrati in Intune. Per informazioni su come registrare i dispositivi, vedere [Gestire i dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).  
+>  Per distribuire profili in dispositivi iOS, Android Samsung KNOX Standard, Windows Phone e Windows 8.1 o Windows 10, tali dispositivi devono essere registrati in Intune. Per informazioni su come registrare i dispositivi, vedere [Gestire i dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).  
 
  Oltre a configurare un account di posta elettronica sul dispositivo, è anche possibile configurare le impostazioni di sincronizzazione per i contatti, i calendari e le attività.  
 
@@ -49,6 +49,6 @@ I profili di posta elettronica supportano Microsoft Intune per consentire il pro
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

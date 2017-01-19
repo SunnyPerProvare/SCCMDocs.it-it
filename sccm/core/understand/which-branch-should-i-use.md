@@ -1,5 +1,5 @@
 ---
-title: Scelta del ramo da usare | System Center Configuration Manager
+title: Scegliere il ramo da usare | Microsoft Docs
 description: Informazioni sulle differenze tra i rami disponibili di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/12/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bbaaf9ed876f7693ea831be7c787dba904197a62
-ms.openlocfilehash: 3957e854e980246c410f7de27caed9d66fc4829f
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: 153caaead350479441d1a94ccaed1b9f3f6c5ffe
 
 
 ---
@@ -74,7 +74,12 @@ L'opzione LTSB non riceve aggiornamenti nella console che offrono nuove funziona
 Per installare LTSB come un nuovo sito o un aggiornamento da un sito di Configuration Manager 2012 supportato, usare il [supporto di base](/sccm/core/servers/manage/updates#baseline-and-update-versions) versione 1606, che è possibile ottenere come un DVD con System Center 2016 o una versione di System Center Configuration Manager (Current Branch e Long-Term Servicing Branch 1606). È possibile usare il supporto di base per installare un nuovo sito che esegue la versione 1606 di Current Branch o che esegue Long-Term Servicing Branch.
 
 > [!TIP]  
-> Per informazioni su System Center 2016, vedere la relativa [documentazione](https://technet.microsoft.com/system-center-docs/System-Center-2016). Questa documentazione indica inoltre come ottenere System Center 2016, che richiede un contratto di licenza Microsoft o diritti analoghi.  È possibile anche ottenere una copia di valutazione di System Center 2016 da [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-system-center-technical-preview).
+> Per informazioni su System Center 2016, vedere la relativa [documentazione](https://technet.microsoft.com/system-center-docs/system-center). Questa documentazione indica inoltre come ottenere System Center 2016, che richiede un contratto di licenza Microsoft o diritti analoghi.
+
+> Per trovare System Center Configuration Manager versione 1606 in Volume Licensing Service Center (VLSC), accedere alla scheda **Downloads and Keys** (Download e chiavi) di [VLSC]((https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx), cercare *system center config* (configurazione System Center), quindi selezionare **System Center Config Mgr (current branch and LTSB 1606)** (System Center Config Mgr (Current Branch e LTSB 1606)).
+
+>
+ È possibile anche ottenere una copia di valutazione di System Center 2016 da [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-system-center-technical-preview).
 
 **Funzionalità di LTSB:**
 -   Riceve gli aggiornamenti nella console che forniscono correzioni critiche per la protezione.
@@ -88,11 +93,11 @@ LTSB si basa su Current Branch 1606, con le limitazioni seguenti:
 - Non riceve gli aggiornamenti per le nuove funzionalità.
 - Non supporta l'aggiunta di una sottoscrizione Microsoft Intune. Ciò impedisce l'uso di:
   - Intune in una configurazione MDM ibrida
- - MDM locale
+ - Software MDM locale
 -   Non supporta l'uso del dashboard Manutenzione pacchetti di Windows 10, dei piani di manutenzione. Non supporta Current Branch e Current Branch for Business di Windows 10
 - Non supporta le versioni future di LTSB di Windows 10 e Windows Server
 -   Non supporta Asset Intelligence
--   Non supporta i punti di distribuzione basati su cloud
+-   Non supporta i punti di distribuzione basati sul cloud
 -   Non supporta Exchange Online come Exchange Connector
 -   Non supporta funzionalità in versione non definitiva
 
@@ -137,6 +142,6 @@ Per altre informazioni, vedere [Technical Preview for System Center Configuratio
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,6 +1,6 @@
 ---
-title: Cartella CD.Latest | System Center Configuration Manager
-description: Informazioni sul nuovo processo di aggiornamento che offre aggiornamenti per il prodotto all'interno della console di Configuration Manager.
+title: Cartella CD.Latest | Microsoft Docs
+description: Informazioni sul nuovo processo di aggiornamento che offre aggiornamenti per il prodotto all&quot;interno della console di Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: fc63227aa4345fb58e7efc15abd55071fb33e5d5
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: dcf56f6b82f89e81d636ea920f36133e245cbb1e
 
 
 ---
@@ -28,6 +28,8 @@ ms.openlocfilehash: fc63227aa4345fb58e7efc15abd55071fb33e5d5
 In System Center Configuration Manager è disponibile un nuovo processo di aggiornamento che offre aggiornamenti per il prodotto all'interno della console di Configuration Manager. Per supportare questo nuovo metodo di aggiornamento di Configuration Manager viene creata una nuova cartella denominata **CD.Latest** che contiene una copia dei file di installazione di Configuration Manager per la versione aggiornata del sito.  
 
 A partire dall'aggiornamento 1606, la cartella CD.Latest contiene una cartella denominata **Redist** che contiene i file ridistribuibili usati e scaricati dal programma di installazione. Questi file corrispondono alla versione dei file di Configuration Manager della cartella CD.Latest. Quando si esegue l'installazione da una cartella CD.Latest, è necessario usare i file che corrispondono alla versione del programma di installazione. A tale scopo è possibile impostare il programma di installazione in modo che scarichi i file nuovi e aggiornati da Microsoft o usi i file della cartella Redist inclusa nella cartella CD.Latest.
+
+Tuttavia il supporto di base, ad esempio la versione di base 1606 rilasciata a ottobre 2016, non include la cartella Redist. La cartella Redist viene creata solo dopo l'installazione di un aggiornamento nella console. Nel frattempo, usare la cartella Redist usata durante l'installazione di siti dal supporto di base.  
 
 > [!TIP]
 > Se non è ancora stata installata la versione 1606, è necessario assicurarsi che i file redist usati siano aggiornati. Se i file redist non sono stati scaricati di recente, consentire al programma di installazione di scaricarli da Microsoft.   
@@ -61,6 +63,6 @@ I file di origine della cartella CD.Latest sono supportati per le operazioni seg
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

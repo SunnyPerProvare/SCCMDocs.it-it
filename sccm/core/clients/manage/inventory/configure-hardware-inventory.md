@@ -1,6 +1,6 @@
 ---
-title: Configurare l'inventario hardware | System Center Configuration Manager
-description: Configurare l'inventario hardware per tutti i client o per una raccolta in System Center Configuration Manager.
+title: Configurare l&quot;inventario hardware | Microsoft Docs
+description: Configurare l&quot;inventario hardware per tutti i client o per una raccolta in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 41bf42228e41785a05359c08e8dfedae48d50e30
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: f39714e53e1b38c162e2c0418356d223432fdd87
 
 
 ---
@@ -51,7 +51,7 @@ Per configurare l'inventario hardware di System Center Configuration Manager per
 
     -   **Pianificazione inventario hardware**: specificare l'intervallo di raccolta dell'inventario hardware da parte dei client. Usare il valore predefinito di **7 giorni** oppure fare clic su **Pianifica** per configurare un intervallo personalizzato.  
 
-7.  Configurare eventuali altre impostazioni client necessarie. Per un elenco di impostazioni client relative all'inventario hardware che è possibile configurare, vedere la sezione [Inventario hardware](../../../../core/clients/deploy/about-client-settings.md#BKMK_HardwareInventoryDeviceSettings) dell'argomento [Informazioni sulle impostazioni client in System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md).  
+7.  Configurare eventuali altre impostazioni client necessarie. Per un elenco di impostazioni client relative all'inventario hardware che è possibile configurare, vedere la sezione [Inventario hardware](../../../../core/clients/deploy/about-client-settings.md#hardware-inventory) dell'argomento [Informazioni sulle impostazioni client in System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md).  
 
 8.  Fare clic su **OK** per chiudere la finestra di dialogo **Impostazioni dispositivo** .  
 
@@ -59,6 +59,6 @@ Per configurare l'inventario hardware di System Center Configuration Manager per
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

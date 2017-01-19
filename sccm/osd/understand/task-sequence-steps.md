@@ -1,8 +1,8 @@
 ---
-title: "Passaggi della sequenza di attività | Configuration Manager"
+title: "Passaggi della sequenza di attività | Microsoft Docs"
 description: "Informazioni sui passaggi della sequenza di attività che è possibile aggiungere a una sequenza di attività di Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/07/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2a45cfb3e00d8078fbf45bdc8a2668b7dd0a62c6
-ms.openlocfilehash: 538cb9795586115ad8b52b44fb82b50a0abdbaa2
+ms.sourcegitcommit: 3f44505c977b511223a083a960f871371c0ff133
+ms.openlocfilehash: 6e324eb97c0e803d382371ace541a4b9f96e6ba3
 
 
 ---
@@ -153,7 +153,7 @@ A una sequenza di attività di Configuration Manager è possibile aggiungere i p
 
  Quando si usa un'immagine del sistema operativo, il passaggio **Applica immagine del sistema operativo** esegue le azioni seguenti.  
 
-1.  Eliminazione di tutti i contenuti nel volume interessato, ad eccezione dei file presenti nella cartella specificata dalla variabile _SMSTSUserStatePath della sequenza di attività.  
+1.  Eliminazione di tutti i contenuti nel volume interessato, ad eccezione dei file presenti nella cartella specificata dalla variabile &#95;SMSTSUserStatePath della sequenza di attività.  
 
 2.  Estrazione dei contenuti del file con estensione wim specificato nella partizione di destinazione specificata.  
 
@@ -169,7 +169,7 @@ A una sequenza di attività di Configuration Manager è possibile aggiungere i p
 
  Quando si usa un pacchetto di installazione del sistema operativo, il passaggio **Applica immagine del sistema operativo** esegue le azioni seguenti.  
 
-1.  Eliminazione di tutti i contenuti nel volume interessato, ad eccezione dei file presenti nella cartella specificata dalla variabile _SMSTSUserStatePath della sequenza di attività.  
+1.  Eliminazione di tutti i contenuti nel volume interessato, ad eccezione dei file presenti nella cartella specificata dalla variabile &#95;SMSTSUserStatePath della sequenza di attività.  
 
 2.  Preparazione del file di risposte:  
 
@@ -627,7 +627,7 @@ Questo passaggio della sequenza di attività può essere eseguito solo in Window
 
 -   Per scaricare in modo dinamico un pacchetto di driver applicabile, usare due passaggi **Scarica contenuto pacchetto** con le condizioni per rilevare il tipo di hardware appropriato per ogni pacchetto driver. Configurare ogni passaggio **Scarica contenuto pacchetto** in modo da usare la stessa variabile e usare la variabile per il valore **Contenuto preconfigurato** durante il passaggio **Aggiorna sistema operativo** .  
 
- Questo passaggio può essere eseguito solo in un sistema operativo standard. Non può essere eseguito in Windows PE.  
+Questo passaggio viene eseguito in un sistema operativo standard o in Windows PE. Tuttavia, l'opzione relativa al salvataggio del pacchetto nella cache del client di Configuration Manager non è supportata in WinPE.
 
 ### <a name="details"></a>Dettagli  
  Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
@@ -1062,8 +1062,12 @@ In Configuration Manager versione 1606 è stata inserita la nuova variabile di s
 
  *Dominio\account*  
 
-##  <a name="a-namebkmkprepareconfigmgrclientforcapturea-prepare-configmgr-client-for-capture"></a><a name="BKMK_PrepareConfigMgrClientforCapture"></a> Prepara client ConfigMgr per l'acquisizione  
- Usare il passaggio **Prepara client ConfigMgr per l'acquisizione** per portare il client di Configuration Manager nel computer di riferimento e prepararlo per l'acquisizione come parte del processo di creazione dell'immagine eseguendo le attività seguenti:  
+## <a name="a-namebkmkprepareconfigmgrclientforcapturea-prepare-configmgr-client-for-capture"></a><a name="BKMK_PrepareConfigMgrClientforCapture"></a> Prepara client ConfigMgr per l'acquisizione  
+Usare il passaggio **Prepara client ConfigMgr per l'acquisizione** per rimuovere il client di Configuration Manager o configurarlo nel computer di riferimento e prepararlo per l'acquisizione nell'ambito del processo di creazione dell'immagine.
+
+A partire da Configuration Manager versione 1610 questo passaggio rimuove completamente il client di Configuration Manager, invece di rimuovere solo le informazioni chiave. Quando la sequenza di attività distribuisce l'immagine del sistema operativo acquisita, verrà installato ogni volta un nuovo client di Configuration Manager.  
+
+Prima di Configuration Manager versione 1610 questo passaggio eseguiva le attività seguenti:  
 
 -   Rimozione della sezione relativa alle proprietà di configurazione del client dal file smscfg.ini nella directory Windows. Queste proprietà includono informazioni specifiche dei client, quali il GUID di Configuration Manager e altri identificatori del client.  
 
@@ -1458,19 +1462,19 @@ In Configuration Manager versione 1606 è stata inserita la nuova variabile di s
 
  La sequenza di attività imposta automaticamente le variabili della sequenza di attività di sola lettura seguenti:  
 
--   _SMSTSMake  
+ -   &#95;SMSTSMake  
 
--   _SMSTSModel  
+ -   &#95;SMSTSModel  
 
--   _SMSTSMacAddresses  
+ -   &#95;SMSTSMacAddresses  
 
--   _SMSTSIPAddresses  
+ -   &#95;SMSTSIPAddresses  
 
--   _SMSTSSerialNumber  
+ -   &#95;SMSTSSerialNumber  
 
--   _SMSTSAssetTag  
+ -   &#95;SMSTSAssetTag  
 
--   _SMSTSUUID  
+ -   &#95;SMSTSUUID  
 
  Questo passaggio può essere eseguito in un sistema operativo standard o in Windows PE. Per altre informazioni sulle variabili della sequenza di attività, vedere [Variabili di azione della sequenza di attività](task-sequence-action-variables.md).  
 
@@ -1485,32 +1489,34 @@ In Configuration Manager versione 1606 è stata inserita la nuova variabile di s
 
 -   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
 
- **Nome**  
+**Nome**  
  Nome breve definito dall'utente per questo passaggio della sequenza di attività.  
 
- **Descrizione**  
+**Descrizione**  
  Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
 
- **Variabili e regole dinamiche**  
+**Variabili e regole dinamiche**  
  Per configurare una variabile dinamica da usare nella sequenza di attività, è possibile aggiungere una regola e quindi specificare un valore per ogni variabile specificata per la regola oppure aggiungere una o più variabili da impostare senza aggiungere una regola. Quando si aggiunge una regola, è possibile scegliere tra le categorie delle regole seguenti:  
 
--   **Computer**: usare questa categoria delle regole per valutare i valori per Tag asset, UUID, Numero di serie o Indirizzo MAC. È possibile configurare più valori e, se un valore restituisce true, la regola restituirà true. La regola seguente, ad esempio, restituisce true se Numero di serie è 5892087, indipendentemente dal fatto che Indirizzo MAC sia 26-78-13-5A-A4-22.  
+ -   **Computer**: usare questa categoria delle regole per valutare i valori per Tag asset, UUID, Numero di serie o Indirizzo MAC. È possibile configurare più valori e, se un valore restituisce true, la regola restituirà true. La regola seguente, ad esempio, restituisce true se Numero di serie è 5892087, indipendentemente dal fatto che Indirizzo MAC sia 26-78-13-5A-A4-22.  
 
      `IF Serial Number = 5892087 OR MAC address = 26-78-13-5A-A4-22 THEN`  
 
 -   **Percorso**: usare questa categoria delle regole per valutare i valori per il gateway predefinito.  
 
--   **Marca e modello**: usare questa categoria delle regole per valutare i valori relativi a marca e modello di un computer. La regola restituisce true solo se entrambi i valori restituiscono true.  
+-   **Marca e modello**: usare questa categoria delle regole per valutare i valori relativi a marca e modello di un computer. La regola restituisce true solo se entrambi i valori restituiscono true.   
+
+    A partire da Configuration Manager versione 1610 è possibile usare asterischi (*****) e un punto interrogativo (**?**) come caratteri jolly, dove ***** corrisponde a più caratteri e **?** corrisponde a un solo carattere. Ad esempio, la stringa "DELL*900?" corrisponde a DELL-ABC-9001 e a DELL9009.
 
 -   **Variabile della sequenza di attività**: usare questa categoria delle regole per aggiungere una variabile della sequenza di attività, una condizione e un valore da valutare. La regola restituisce true quando il valore impostato per la variabile soddisfa la condizione specificata.  
 
- È possibile specificare una o più variabili che verranno impostate per una regola che restituisce true oppure impostare variabili senza usare una regola. È possibile selezionare una delle variabili esistenti o creare una variabile personalizzata.  
+È possibile specificare una o più variabili che verranno impostate per una regola che restituisce true oppure impostare variabili senza usare una regola. È possibile selezionare una delle variabili esistenti o creare una variabile personalizzata.  
 
--   **Variabili della sequenza di attività disponibili**: usare questa impostazione per selezionare una o più variabili da un elenco di variabili esistenti della sequenza di attività. Le variabili di matrice non sono disponibili per la selezione.  
+ -   **Variabili della sequenza di attività disponibili**: usare questa impostazione per selezionare una o più variabili da un elenco di variabili esistenti della sequenza di attività. Le variabili di matrice non sono disponibili per la selezione.  
 
--   **Variabili personalizzate della sequenza di attività**: usare questa impostazione per definire una variabile personalizzata della sequenza di attività. È anche possibile specificare una variabile esistente della sequenza di attività. Ciò risulta utile per specificare una matrice di variabili esistente, ad esempio OSDAdapter, poiché le matrici di variabili non sono incluse nell'elenco di variabili esistenti della sequenza di attività.  
+ -   **Variabili personalizzate della sequenza di attività**: usare questa impostazione per definire una variabile personalizzata della sequenza di attività. È anche possibile specificare una variabile esistente della sequenza di attività. Ciò risulta utile per specificare una matrice di variabili esistente, ad esempio OSDAdapter, poiché le matrici di variabili non sono incluse nell'elenco di variabili esistenti della sequenza di attività.  
 
- Dopo la selezione delle variabili per una regola, è necessario fornire un valore per ogni variabile. La variabile è impostata sul valore specificato quando la regola restituisce true. Per ogni variabile è possibile selezionare **Valore segreto** per nascondere il valore della variabile. Per impostazione predefinita, alcune variabili esistenti nascondono i valori, ad esempio la variabile OSDCaptureAccountPassword della sequenza di attività.  
+Dopo la selezione delle variabili per una regola, è necessario fornire un valore per ogni variabile. La variabile è impostata sul valore specificato quando la regola restituisce true. Per ogni variabile è possibile selezionare **Valore segreto** per nascondere il valore della variabile. Per impostazione predefinita, alcune variabili esistenti nascondono i valori, ad esempio la variabile OSDCaptureAccountPassword della sequenza di attività.  
 
 > [!IMPORTANT]  
 >  Quando si importa una sequenza di attività con il passaggio Imposta variabili dinamiche e **Valore segreto** è selezionato per il valore della variabile, il valore verrà rimosso quando si importa la sequenza di attività. Sarà quindi necessario immettere di nuovo il valore per la variabile dinamica dopo l'importazione della sequenza di attività.  
@@ -1690,6 +1696,6 @@ In Configuration Manager versione 1606 è stata inserita la nuova variabile di s
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

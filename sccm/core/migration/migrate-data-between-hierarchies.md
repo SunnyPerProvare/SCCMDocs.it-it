@@ -1,5 +1,5 @@
 ---
-title: Eseguire la migrazione dei dati | System Center Configuration Manager
+title: Eseguire la migrazione dei dati | Microsoft Docs
 description: Informazioni su come trasferire i dati da una gerarchia di origine a una gerarchia di destinazione di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 658a98cf66d20bacf8d9fa2bedcb3a84d1f242b8
+ms.sourcegitcommit: 5e3d3f4194b06442e34c10988a20fe9ca40ac5d7
+ms.openlocfilehash: f406acc6044c77110035c04e0f147e77830db078
 
 
 ---
@@ -112,6 +112,6 @@ Dopo aver migrato i dati da una gerarchia di origine di Configuration Manager ch
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,6 +1,6 @@
 ---
-title: Pianificazione del processo di migrazione | System Center Configuration Manager
-description: Usare i processi di migrazione per configurare i dati di cui si vuole eseguire la migrazione nell'ambiente di System Center Configuration Manager.
+title: Pianificazione del processo di migrazione | Microsoft Docs
+description: Usare i processi di migrazione per configurare i dati di cui si vuole eseguire la migrazione nell&quot;ambiente di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,8 +18,8 @@ ms.author: brenduns
 manager: angrobe
 robots: noindex
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 21e00064a8ecad3dd1c24b7f02bd0a8a8c36924f
+ms.sourcegitcommit: 5e3d3f4194b06442e34c10988a20fe9ca40ac5d7
+ms.openlocfilehash: 4e1ad4e8a043d1a6ede5dc88ca6b6c703f46e9da
 
 
 ---
@@ -226,7 +226,7 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
 ### <a name="data-selection"></a>Selezione dei dati  
  Quando si crea un processo di migrazione raccolta, è necessario selezionare una o più raccolte. Dopo aver selezionato le raccolte, la Creazione guidata del processo di migrazione consente di visualizzare gli oggetti sono associati alle raccolte. Per impostazione predefinita, viene eseguita la migrazione degli oggetti associati alle raccolte selezionate, ma è possibile cancellare gli oggetti che non si desidera trasferire con quel processo. Quando si cancella un oggetto contenente oggetti dipendenti, anche gli oggetti dipendenti verranno cancellati. Tutti gli oggetti cancellati vengono aggiunti a un elenco di esclusione. Gli oggetti in un elenco di esclusione vengono rimossi dalla selezione automatica per i processi di migrazione futura. È necessario modificare manualmente l'elenco di esclusione per rimuovere gli oggetti che si desidera selezionare automaticamente per la migrazione nei processi di migrazione futura.  
 
-### <a name="site-ownership-for-migrated-content"></a>Proprietà del sito per i contenuti migrati  
+### <a name="site-ownership-for--migrated-content"></a>Proprietà del sito per i contenuti migrati  
  Quando si esegue la migrazione dei contenuti per le distribuzioni, è necessario assegnare l'oggetto contenuto a un sito nella gerarchia di destinazione. Il sito diventa quindi il proprietario di tale contenuto nella gerarchia di destinazione. Benché il sito di livello superiore della gerarchia di destinazione sia il sito che esegue la migrazione dei metadati per il contenuto, è il sito assegnato che accede ai file di origine per il contenuto nella rete.  
 
  Per ridurre al minimo la larghezza di banda di rete utilizzata durante la migrazione, si consiglia di trasferire la proprietà del contenuto al sito disponibile più vicino. Poiché le informazioni sul contenuto vengono condivise globalmente in System Center Configuration Manager, saranno disponibili in ogni sito.  
@@ -252,7 +252,7 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
 
 -   Non eseguire il processo  
 
-### <a name="specify-conflict-resolution-for-migrated-data"></a>Specificare la risoluzione conflitti per i dati di cui è stata eseguita la migrazione  
+### <a name="specify-conflict-resolution-for-migrated-data"></a>Specificare la risoluzione dei conflitti per i dati di cui è stata eseguita la migrazione  
  Per impostazione predefinita, i processi di migrazione non sovrascrivono i dati nel database di destinazione, a meno che il processo di migrazione non sia configurato per ignorare o sovrascrivere i dati precedentemente migrati nel database di destinazione.  
 
 ##  <a name="a-nameaboutcollectionmigration-a-planning-for-collection-migration-jobs"></a><a name="About_Collection_Migration "></a> Pianificazione di processi di migrazione raccolta  
@@ -322,6 +322,6 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

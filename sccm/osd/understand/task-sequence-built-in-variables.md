@@ -1,6 +1,6 @@
 ---
-title: "Variabili predefinite della sequenza di attività |Configuration Manager"
-description: "Le variabili predefinite della sequenza di attività offrono informazioni sull'ambiente in cui è in esecuzione la sequenza di attività. Sono disponibili nel corso dell'intera sequenza di attività."
+title: "Variabili predefinite della sequenza di attività | Microsoft Docs"
+description: "Le variabili predefinite della sequenza di attività offrono informazioni sull&quot;ambiente in cui è in esecuzione la sequenza di attività. Sono disponibili nel corso dell&quot;intera sequenza di attività."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 4b1014bc9a5c17dd571e69e7f5bfdae060a3eb55
+ms.sourcegitcommit: c9fb0fa46058c773eec6ac23999357d35d9f970f
+ms.openlocfilehash: a75adebfe2bbec8f6fe5206561530a720c0bfbf1
 
 
 ---
@@ -27,7 +27,7 @@ ms.openlocfilehash: 4b1014bc9a5c17dd571e69e7f5bfdae060a3eb55
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
- Le variabili predefinite della sequenza di attività sono disponibili in System Center Configuration Manager. Le variabili predefinite forniscono informazioni sull'ambiente in cui è in esecuzione la sequenza di attività e i relativi valori sono disponibili nell'intera sequenza di attività. Le variabili predefinite in genere vengono inizializzate prima dell'esecuzione dei passaggi nella sequenza di attività. Ad esempio, la variabile predefinita **_SMSTSLogPath** è una variabile di ambiente che specifica il percorso usato dai componenti di Configuration Manager per scrivere file di log durante le esecuzioni della sequenza di attività. Qualsiasi passaggio della sequenza di attività può accedere a questa variabile di ambiente. Alcune variabili, tuttavia, come _SMSTSCurrentActionName, vengono valutate prima di ogni passaggio. I valori delle variabili predefinite sono generalmente di sola lettura. I valori vengono letti solo per le variabili predefinite con un nome che inizia con un carattere di sottolineatura.  
+ Le variabili predefinite della sequenza di attività sono disponibili in System Center Configuration Manager. Le variabili predefinite forniscono informazioni sull'ambiente in cui è in esecuzione la sequenza di attività e i relativi valori sono disponibili nell'intera sequenza di attività. Le variabili predefinite in genere vengono inizializzate prima dell'esecuzione dei passaggi nella sequenza di attività. Ad esempio, la variabile predefinita **_SMSTSLogPath** è una variabile di ambiente che specifica il percorso usato dai componenti di Configuration Manager per scrivere file di log durante le esecuzioni della sequenza di attività. Qualsiasi passaggio della sequenza di attività può accedere a questa variabile di ambiente. Alcune variabili, tuttavia, come &#95;SMSTSCurrentActionName, vengono valutate prima di ogni passaggio. I valori delle variabili predefinite sono generalmente di sola lettura. I valori vengono letti solo per le variabili predefinite con un nome che inizia con un carattere di sottolineatura.  
 
 ## <a name="task-sequence-built-in-variable-list"></a>Elenco di variabili predefinite della sequenza di attività  
  Nell'elenco seguente vengono descritte le variabili predefinite disponibili in Configuration Manager:  
@@ -67,9 +67,11 @@ ms.openlocfilehash: 4b1014bc9a5c17dd571e69e7f5bfdae060a3eb55
 |_SMSTSUseSSL|Specifica se la sequenza di attività usa SSL per comunicare con il punto di gestione di Configuration Manager. Se il sito è in esecuzione in modalità nativa, il valore è impostato su **true**.|  
 |_SMSTSWTG|specifica se il computer è in esecuzione come dispositivo Windows To Go.|  
 |OSDPreserveDriveLetter|A partire da Configuration Manager versione 1606, questa variabile della sequenza di attività è stata deprecata. Durante la distribuzione del sistema operativo, per impostazione predefinita l'installazione di Windows stabilisce qual è la lettera di unità migliore da usare (in genere C:). <br /><br />Nelle versioni precedenti la variabile OSDPreverveDriveLetter determina se la sequenza di attività usa la lettera di unità acquisita nel file WIM dell'immagine del sistema operativo quando si applica tale immagine a un computer di destinazione. È possibile impostare il valore per questa variabile su **False** per usare il percorso specificato per l'impostazione **Destinazione** nel passaggio **Applica sistema operativo** . Per altre informazioni, vedere [Apply Operating System Image](task-sequence-steps.md#BKMK_ApplyOperatingSystemImage).|  
+|OSDSetupAdditionalUpgradeOptions|A partire da Configuration Manager versione 1602 è possibile usare questa variabile per specificare opzioni aggiuntive per l'aggiornamento di Installazione di Windows.
 |SMSTSAssignmentsDownloadInterval|Usare questa variabile per specificare il numero di secondi di attesa prima che il client provi a eseguire il tentativo di download dei criteri dopo l'ultimo tentativo che non ha restituito alcun criterio. Per impostazione predefinita, il client attenderà **0** secondi prima di riprovare.<br /><br /> È possibile impostare questa variabile usando un comando di preavvio da un supporto o da PXE.|  
 |SMSTSAssignmentsDownloadRetry|usare questa variabile per specificare il numero di tentativi di download dei criteri da parte del client dopo che durante il primo tentativo non è stato rilevato alcun criterio. Per impostazione predefinita, il client riproverà **0** secondi.<br /><br /> È possibile impostare questa variabile usando un comando di preavvio da un supporto o da PXE.|  
 |SMSTSAssignUsersMode|Specifica in che modo una sequenza di attività associa gli utenti al computer di destinazione. Impostare la variabile su uno dei valori seguenti.<br /><br /> - Auto: la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.<br />- In sospeso: la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione, ma attende l'approvazione dell'utente amministratore prima che la relazione venga impostata.<br />- Disattivata: la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.|  
+|SMSTSDownloadAbortCode|Questa variabile contiene il valore del codice di interruzione per il downloader del programma esterno (specificato nella variabile SMSTSDownloadProgram). Se il programma restituisce un codice di errore uguale al valore della variabile SMSTSDownloadAbortCode, il download del contenuto ha esito negativo e non viene tentato alcun altro metodo di download.
 |SMSTSDownloadProgram|Usare questa variabile per specificare un provider di contenuto alternativo, un programma downloader usato per scaricare il contenuto al posto del downloader predefinito di Configuration Manager. Durante il processo di download di contenuto, la sequenza di attività verifica se nella variabile è indicato un programma downloader specificato. Se specificato, la sequenza di attività esegue il programma per eseguire il download.|  
 |SMSTSDownloadRetryCount|Usare questa variabile per specificare il numero di tentativi eseguiti da Configuration Manager per scaricare contenuto da un punto di distribuzione. Per impostazione predefinita, il client riproverà **2** volte.|  
 |SMSTSDownloadRetryDelay|Usare questa variabile per specificare il numero di secondi di attesa prima che Configuration Manager provi a scaricare il contenuto da un punto di distribuzione. Per impostazione predefinita, il client attenderà **15** secondi prima di riprovare.|  
@@ -80,7 +82,7 @@ ms.openlocfilehash: 4b1014bc9a5c17dd571e69e7f5bfdae060a3eb55
 |SMSTSMPListRequestTimeout|Usare questa variabile per specificare in millisecondi il tempo di attesa di una sequenza di attività prima che ritenti a installare un'applicazione o un aggiornamento software se non è stato possibile recuperare l'elenco dei punti di gestione dai servizi di posizione. Per impostazione predefinita, la sequenza di attività attende 60.000 millisecondi (60 secondi) prima di riprovare a eseguire il passaggio ed effettua fino a tre tentativi. Questa variabile è applicabile solo ai passaggi Installa applicazione e Installa aggiornamenti software della sequenza di attività.|  
 |SMSTSMPListRequestTimeoutEnabled|Usare questa variabile per abilitare le richieste MPList ripetute per aggiornare il client se questo non si trova nella Intranet. <br />Per impostazione predefinita, questa variabile è impostata su True. Quando i client sono su Internet, è possibile impostare questa variabile su False per evitare inutili ritardi. Questa variabile è applicabile solo ai passaggi della sequenza di attività Installa applicazione e Installa aggiornamenti software.|  
 |SMSTSPeerDownload|Usare questa variabile per consentire al client l'impiego della peer cache di Windows PE.<br /><br /> Esempio:<br /><br /> SMSTSPeerDownload = **TRUE** abilita questa funzionalità.|  
-|SMSTSPeerRequestPort|Usare questa variabile per la peer cache di Windows PE per specificare un valore personalizzato per la porta di rete da usare per la trasmissione iniziale quando non si usano le porte predefinite configurate in Impostazioni client (8003 e 8004).|  
+|SMSTSPeerRequestPort|Usare questa variabile per la peer cache di Windows PE per specificare un valore personalizzato per la porta di rete da usare per la trasmissione iniziale quando non si usano le porte predefinite configurate in Impostazioni client (8004).|  
 |SMSTSPersistContent|usare questa variabile per mantenere temporaneamente il contenuto nella cache della sequenza di attività.|  
 |SMSTSPostAction|Specifica un comando che viene eseguito al termine della sequenza di attività. Ad esempio, è possibile usare questa variabile per specificare uno script che abilita i filtri di scrittura nei dispositivi incorporati dopo che la sequenza di attività distribuisce un sistema operativo nel dispositivo.|  
 |SMSTSPreferredAdvertID|Forza una distribuzione di destinazione specifica sul computer di destinazione da eseguire. Può essere impostata tramite un comando di preavvio dai supporti o da PXE. Se questa variabile viene impostata, la sequenza di attività esegue l'override di tutte le distribuzioni richieste.|  
@@ -95,6 +97,6 @@ ms.openlocfilehash: 4b1014bc9a5c17dd571e69e7f5bfdae060a3eb55
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

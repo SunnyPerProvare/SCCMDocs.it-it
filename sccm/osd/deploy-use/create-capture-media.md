@@ -1,6 +1,6 @@
 ---
-title: Creare supporti di acquisizione | Configuration Manager
-description: "Usare la Creazione guidata del supporto per la sequenza di attività per creare supporti di acquisizione in Configuration Manager per acquisire un'immagine del sistema operativo da un computer di riferimento."
+title: Creare supporti di acquisizione | Microsoft Docs
+description: "Usare la Creazione guidata del supporto per la sequenza di attività per creare supporti di acquisizione in Configuration Manager per acquisire un&quot;immagine del sistema operativo da un computer di riferimento."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 604844d073ca3caedbbfc77d76cb3368965980af
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: f948c993099786432b76d1486bbb5eded4ec38eb
 
 
 ---
@@ -83,6 +83,6 @@ Per creare i supporti di acquisizione, usare la Creazione guidata del supporto p
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

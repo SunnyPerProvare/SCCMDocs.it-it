@@ -1,8 +1,8 @@
 ---
-title: Come creare elementi di configurazione per dispositivi Windows 10 gestiti con il client di System Center Configuration Manager | System Center Configuration Manager
-description: Usare l'elemento di configurazione Windows 10 in System Center Configuration Manager per gestire le impostazioni dei computer Windows 10 gestiti dal client di Configuration Manager.
+title: Come creare elementi di configurazione per dispositivi Windows 10 gestiti con il client di System Center Configuration Manager | Microsoft Docs
+description: Usare l&quot;elemento di configurazione Windows 10 in System Center Configuration Manager per gestire le impostazioni dei computer Windows 10 gestiti dal client di Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d5248e7262f758c2de2a1deaf42282d4e77e3e0c
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: 2b24570aa2e9d9aa45584842011dcd49c6e5e8cc
 
 
 ---
@@ -125,7 +125,7 @@ Usare l'elemento di configurazione **Windows 10** in System Center Configuration
 |**Protezione da virus**|Richiede che sia installato e configurato software antivirus.|  
 |**Le firme per la protezione da virus sono aggiornate**|Richiede che i file di firma per il software antivirus nel dispositivo siano aggiornati.|  
 
-### <a name="windows-information-protection-formerly-enterprise-data-protection"></a>Windows Information Protection (noto in precedenza come Enterprise Data Protection)
+### <a name="windows-information-protection"></a>Windows Information Protection
 
 Con l'aumento dei dispositivi personali nell'organizzazione, aumenta anche il rischio di perdita accidentale dei dati tramite app e servizi, ad esempio posta elettronica, social media e cloud pubblico, non controllati dall'organizzazione. È il caso, ad esempio, di un dipendente che invia le immagini di progettazione più recenti dall'account di posta elettronica personale, copia e incolla le informazioni su un prodotto in un tweet o salva il report di una vendita in corso nell'area di archiviazione nel cloud pubblico.
 
@@ -137,6 +137,6 @@ Per informazioni su come configurare Windows Information Protection con Configur
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Schema di Active Directory | System Center Configuration Manager
+title: Pubblicazione dei siti ed estensione dello schema di Active Directory | Microsoft Docs
 description: Estendere lo schema di Active Directory per System Center Configuration Manager per semplificare il processo di distribuzione e configurazione dei client.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,12 +17,12 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d4cdaa646265b2d05ec93aeaefaf3a6e7a2c269f
+ms.sourcegitcommit: 2083a2ca7a199771f26981cdbe04e4e2ef6e8958
+ms.openlocfilehash: 3bd18e2de76d886b275c80d0dce3b824f2598008
 
 
 ---
-# <a name="extend-the-active-directory-schema-for-system-center-configuration-manager"></a>Estendere lo schema di Active Directory per System Center Configuration Manager
+# <a name="prepare-active-directory-for-site-publishing"></a>Preparare Active Directory per la pubblicazione di siti
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -70,7 +70,7 @@ Per l'estensione dello schema per Configuration Manager è necessario:
 
 3.  Per verificare la riuscita dell'estensione dello schema, è possibile esaminare il file di log creato dalla riga di comando usata nel passaggio precedente.  
 
-## <a name="step-2-create-the-system-management-container-and-grant-sites-permissions-to-the-container"></a>Passaggio 2:  Creare il contenitore di System Management e concedere le autorizzazioni per i siti al contenitore  
+## <a name="step-2--create-the-system-management-container-and-grant-sites-permissions-to-the-container"></a>Passaggio 2:  Creare il contenitore di System Management e concedere le autorizzazioni per i siti al contenitore  
  Dopo aver esteso lo schema, è necessario creare un contenitore denominato **System Management** in Active Directory Domain Services:  
 
 -   Questo contenitore viene creato una sola volta in ogni dominio che include un sito primario o secondario che pubblicherà dati in Active Directory  
@@ -114,6 +114,6 @@ Per l'estensione dello schema per Configuration Manager è necessario:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

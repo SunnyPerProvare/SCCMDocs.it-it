@@ -1,5 +1,5 @@
 ---
-title: Sicurezza e privacy dei profili certificato | System Center Configuration Manager
+title: Privacy e sicurezza per i profili certificato | Microsoft Docs
 description: Informazioni sulle procedure di sicurezza consigliate per gestire i profili certificato per utenti e dispositivi in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 06ab159203e3ee2d3b6da726bc7264445dd41488
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: 8673ca3f556feda31aa29653461cd4fbed01409a
 
 
 ---
@@ -52,6 +52,6 @@ In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: c899b4beaa2aae4eb609291dca0e23f3c266627a
-ms.openlocfilehash: 294166af3d5c6062e3508249c767779876b23931
+ms.sourcegitcommit: ffebee1e85008611a9841dc849bea735d15a88c6
+ms.openlocfilehash: 888b6de9fd2b70e8b4f58e32cca7cf5e615d1dca
 
 
 ---
@@ -51,7 +51,8 @@ Per altre informazioni, vedere:
 |-|-|-|  
 |Protezione accesso alla rete (NAP) inclusa in System Center 2012 Configuration Manager|10/07/2015|Versione 1511|  
 |Gestione fuori banda in System Center 2012 Configuration Manager|16/10/2015|Versione 1511|
-|Sequenze attività: <br /> - Converti il disco selezionato in disco dinamico <br /> - Installa strumenti di distribuzione |18/11/2016|Il supporto di queste sequenze attività termina con il primo aggiornamento rilasciato dopo il 01/06/2017|  
+|Sequenze attività: <br /> - Converti il disco selezionato in disco dinamico <br /> - Installa strumenti di distribuzione |18/11/2016|Il supporto di queste sequenze attività termina con il primo aggiornamento rilasciato dopo il 01/06/2017|
+|Il nuovo Software Center ha un aspetto nuovo e moderno, e le app che venivano visualizzate solo nel Catalogo applicazioni dipendente da Silverlight (app disponibili per gli utenti) ora vengono visualizzate in Software Center nella scheda **Applicazioni**. È ancora possibile accedere al Catalogo applicazioni con il collegamento disponibile nella scheda **Stato dell'installazione** di Software Center.<br><br>Nei prossimi mesi, verrà pertanto rimossa la versione precedente di Software Center che non sarà disponibile per l'uso.<br><br>È possibile configurare i client per l'uso del nuovo Software Center abilitando l'impostazione client **Agente computer** > **Usa il nuovo Software Center**.<br><br>Per altre informazioni su Software Center, vedere [Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/plan-design/plan-for-and-configure-application-management).|13/12/2016|In attesa di essere annunciato| 
 
  **Sistemi operativi del server deprecati:**  
 
@@ -111,6 +112,6 @@ Per altre informazioni, vedere:
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

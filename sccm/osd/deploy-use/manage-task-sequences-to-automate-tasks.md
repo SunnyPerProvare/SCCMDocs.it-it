@@ -1,6 +1,6 @@
 ---
-title: "Gestire le sequenze di attività per automatizzare le attività | Configuration Manager"
-description: "È possibile creare, modificare, distribuire, importare ed esportare sequenze di attività per gestirle nell'ambiente System Center Configuration Manager."
+title: "Gestire le sequenze di attività per automatizzare le attività | Microsoft Docs"
+description: "È possibile creare, modificare, distribuire, importare ed esportare sequenze di attività per gestirle nell&quot;ambiente System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 04e4e8193d427289a3b84a14efe18511bf5c9731
+ms.sourcegitcommit: d04d28bbd5116a841c0872cf3f9ca18783dddc78
+ms.openlocfilehash: 417b31fa1feb6d0f674f14ef9e5c7cebd7013916
 
 
 ---
@@ -237,6 +237,8 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente System
 
 -   Le password memorizzate nella sequenza di attività non vengono esportate. Se si esporta e importa una sequenza di attività che contiene password, è necessario modificare la sequenza di attività importata e specificare nuovamente le password. Assicurarsi di specificare le password per le azioni [Aggiunta a dominio o gruppo di lavoro](../understand/task-sequence-steps.md#BKMK_JoinDomainorWorkgroup), [Connetti alla cartella di rete](../understand/task-sequence-steps.md#BKMK_ConnectToNetworkFolder) ed [Esegui riga di comando](../understand/task-sequence-steps.md#BKMK_RunCommandLine) .  
 
+- Quando si esporta una sequenza di attività con il passaggio **Imposta variabili dinamiche**, per le variabili che sono configurate con l'impostazione **Valore segreto** non vengono esportati valori. È necessario immettere nuovamente i valori per tali variabili dopo aver importato la sequenza di attività.
+
 -   Quando si dispone di più siti primari, è consigliabile importare sequenze attività nel sito di amministrazione centrale.  
 
  Usare le procedure seguenti per esportare e importare una sequenza di attività.  
@@ -367,6 +369,6 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente System
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

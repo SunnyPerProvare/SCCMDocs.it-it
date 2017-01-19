@@ -1,6 +1,6 @@
 ---
-title: Valutare System Center Configuration Manager creando un proprio ambiente lab
-description: Creare un ambiente lab per valutare l'uso di System Center Configuration Manager nell'organizzazione.
+title: Valutare System Center Configuration Manager creando un proprio ambiente lab | Microsoft Docs
+description: Creare un ambiente lab per valutare l&quot;uso di System Center Configuration Manager nell&quot;organizzazione.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 363e6a929b72e027d5fff7584905fb552dc695b0
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: e72acbe0a2f5592b5bdf9a3612db62bfb066fadf
 
 
 ---
@@ -64,12 +64,12 @@ Informazioni su come creare un ambiente lab per valutare l'uso di System Center 
 
 -   Informazioni sull'importanza dei ruoli di sicurezza sono disponibili in [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md) (Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager)  
 
--   Conoscenza dei [concetti relativi alla gestione dei contenuti](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#bkmk_Concepts) per affrontare concetti specifici sulla gestione dei contenuti  
+-   Conoscenza dei [concetti relativi alla gestione dei contenuti](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) per affrontare concetti specifici sulla gestione dei contenuti  
 
 -   [Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager](../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md) per supportare correttamente le operazioni quotidiane del processo di distribuzione  
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

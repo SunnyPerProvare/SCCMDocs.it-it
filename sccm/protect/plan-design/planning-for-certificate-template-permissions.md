@@ -1,5 +1,5 @@
 ---
-title: Pianificazione delle autorizzazioni dei modelli di certificato | System Center Configuration Manager
+title: Pianificazione delle autorizzazioni per i modelli di certificato |Microsoft Docs
 description: Informazioni sulla pianificazione delle autorizzazioni necessarie per configurare i modelli di certificato usati da System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 38f4176d40bffd20b9e3076213957765dfb0c7f3
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: 3c3725678561c32fce316ed1209ac8fe73a0eed1
 
 
 ---
@@ -36,7 +36,7 @@ Le informazioni seguenti illustrano come pianificare la modalità di configurazi
 
 -   Lettura per l'account che esegue la console di System Center Configuration Manager  
 
- Per altre informazioni su queste autorizzazioni di sicurezza, vedere [Passaggio 1: Installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze](../deploy-use/certificate-infrastructure.md#BKMK_Step1).  
+ Per altre informazioni su queste autorizzazioni di sicurezza, vedere [Passaggio 1: Installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze](../deploy-use/certificate-infrastructure.md#step-1-install-and-configure-the-network-device-enrollment-service-and-dependencies).  
 
  Se si utilizza questa configurazione predefinita, gli utenti e i dispositivi non possono richiedere direttamente i certificati dai modelli di certificato e tutte le richieste devono essere avviate dal servizio Registrazione dispositivi di rete. È una limitazione importante perché questi modelli di certificato devono essere configurati con **Inserisci nella richiesta** per il soggetto del certificato, il che significa che c'è un rischio di rappresentazione se un utente non autorizzato o un dispositivo danneggiato richiede un certificato. Nella configurazione predefinita, il servizio Registrazione dispositivi di rete deve avviare una richiesta di questo tipo. Rimane tuttavia il rischio di rappresentazione se il servizio che esegue il servizio Registrazione dispositivi di rete viene danneggiato. Per evitare questo rischio, seguire tutte le procedure di protezione consigliate per il servizio Registrazione dispositivi di rete e il computer che esegue questo ruolo dei servizi.  
 
@@ -65,6 +65,6 @@ Le informazioni seguenti illustrano come pianificare la modalità di configurazi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,6 +1,6 @@
 ---
-title: Accesso condizionale | System Center Configuration Manager
-description: Informazioni su come usare l'accesso condizionale in System Center Configuration Manager per proteggere la posta elettronica e altri servizi.
+title: Accesso condizionale | Microsoft Docs
+description: Informazioni su come usare l&quot;accesso condizionale in System Center Configuration Manager per proteggere la posta elettronica e altri servizi.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 76d86613-b87f-4fe5-9236-a573e00b613a
 caps.latest.revision: 26
-author: karthikaraman
-ms.author: karaman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5c6cf3c1697b49708aa5192b67b08b700da7dc72
-ms.openlocfilehash: 2dad04cb429ac854b5455c2af051f6f7caaadd66
+ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
+ms.openlocfilehash: d33a515ad2bf0a7fb8680447f2bf83544f2eb30f
 
 
 ---
@@ -81,7 +81,7 @@ L'accesso condizionale a Exchange Online supporta i dispositivi che eseguono:
 -   Windows 7.0 o Windows 8.1 (se aggiunto a un dominio)
 -   Windows Phone 8.1 e versioni successive
 -   iOS 7.1 e versioni successive
--   Android 4.0 e versioni successive, Samsung Knox Standard 4.0 e versioni successive
+-   Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive
 
  **Inoltre**:
 -   I dispositivi devono essere aggiunti all'area di lavoro, che registra il dispositivo con Azure Active Directory Device Registration Service (AAD DRS).<br />     
@@ -145,7 +145,7 @@ L'accesso condizionale a SharePoint Online supporta i dispositivi che eseguono:
  -   Windows 7.0 o Windows 8.1 (se aggiunto a un dominio)
  -   Windows Phone 8.1 e versioni successive
  -   iOS 7.1 e versioni successive
- -   Android 4.0 e versioni successive, Samsung Knox Standard 4.0 e versioni successive
+ -   Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive
 
  **Inoltre**:
  -   I dispositivi devono essere aggiunti all'area di lavoro, che registra il dispositivo con Azure Active Directory Device Registration Service (AAD DRS).
@@ -184,6 +184,6 @@ L'accesso condizionale a SharePoint Online supporta i dispositivi che eseguono:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

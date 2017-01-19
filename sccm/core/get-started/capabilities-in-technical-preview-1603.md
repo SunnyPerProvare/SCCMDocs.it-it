@@ -1,5 +1,5 @@
 ---
-title: "Funzionalità della versione Technical Preview 1603 per System Center Configuration Manager"
+title: "Funzionalità della versione Technical Preview 1603 per System Center Configuration Manager | Microsoft Docs"
 description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1603 per System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 39a9cde3bd955c84f301d25258b413fecaa4393b
-ms.openlocfilehash: ab9f71700ff80414f7cb8e79f54fba3262f810ff
+ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
+ms.openlocfilehash: 58304fd4d9e205249da873536c25a77a5d6f8fb3
 
 ---
 # <a name="capabilities-in-technical-preview-1603-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1603 per System Center Configuration Manager
@@ -94,6 +94,6 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

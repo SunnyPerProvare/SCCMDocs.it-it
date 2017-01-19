@@ -1,5 +1,5 @@
 ---
-title: Scenari per distribuire sistemi operativi aziendali| Configuration Manager
+title: Scenari di distribuzione di sistemi operativi aziendali | Microsoft Docs
 description: Informazioni su vari scenari per distribuire i sistemi operativi aziendali con System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 0e20ef1fbb6e6447482caa0b936ae968c7250312
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: b1bea8b1b890f7c96a432835d28ad840a9b6873d
 
 
 ---
@@ -67,6 +67,6 @@ In System Center Configuration Manager sono disponibili gli scenari seguenti di 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

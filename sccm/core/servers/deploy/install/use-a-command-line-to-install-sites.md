@@ -1,5 +1,5 @@
 ---
-title: Installazione da riga di comando | System Center Configuration Manager
+title: Installazione dalla riga di comando | Microsoft Docs
 description: Informazioni su come eseguire il programma di installazione di System Center Configuration Manager da un prompt dei comandi per diversi tipi di installazione dei siti.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: ea097188351cd60a13659e2860c5e0a2bac2c069
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: a148fd1fd438efc01418c30b059874cfdfa09725
 
 ---
 # <a name="use-a-command-line-to-install-system-center-configuration-manager-sites"></a>Usare una riga di comando per installare i siti di System Center Configuration Manager
@@ -129,6 +129,6 @@ Quando il programma di installazione avvia l'installazione del sito effettiva, l
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

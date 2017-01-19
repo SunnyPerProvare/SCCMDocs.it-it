@@ -1,5 +1,5 @@
 ---
-title: Completare la migrazione | System Center Configuration Manager
+title: Completare la migrazione | Microsoft Docs
 description: "Informazioni su come completare la migrazione a una gerarchia di destinazione di System Center Configuration Manager dopo che una gerarchia di origine non contiene più dati."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 862a039ada302c9432fc86d68f5ba9aad360f69b
+ms.sourcegitcommit: 5e3d3f4194b06442e34c10988a20fe9ca40ac5d7
+ms.openlocfilehash: 0595ab87222aca543ae67a33c2b9fab780c6160f
 
 
 ---
@@ -62,6 +62,6 @@ Per altre informazioni sui siti di origine e sulla raccolta dati, vedere [Pianif
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

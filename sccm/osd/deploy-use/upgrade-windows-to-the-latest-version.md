@@ -1,6 +1,6 @@
 ---
-title: Aggiornare Windows all&quot;ultima versione | Configuration Manager
-description: Informazioni sull'uso di supporti autonomi o di Software Center in Configuration Manager per eseguire l'aggiornamento di un sistema operativo Windows 7 o versione successiva a Windows 10.
+title: "Aggiornare Windows alla versione più recente | Microsoft Docs"
+description: Informazioni sull&quot;uso di supporti autonomi o di Software Center in Configuration Manager per eseguire l&quot;aggiornamento di un sistema operativo Windows 7 o versione successiva a Windows 10.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: b44258255345c2e5488846736ddc1df48a147616
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 147841212dbb85dd9d4ee7c8a79ca7869584fd99
 
 
 ---
@@ -88,6 +88,6 @@ In questo argomento sono descritti i passaggi da eseguire in System Center Confi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

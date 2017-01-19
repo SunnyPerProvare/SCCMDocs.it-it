@@ -1,6 +1,6 @@
 ---
-title: Preparare la peer cache di Windows PE per ridurre il traffico della rete WAN| Configuration Manager
-description: "La peer cache di Windows PE viene usata in Windows PE per ottenere il contenuto da un peer locale e ridurre al minimo il traffico della rete WAN se non c'è nessun punto di distribuzione locale."
+title: Preparare la peer cache di Windows PE per ridurre il traffico WAN | Microsoft Docs
+description: "La peer cache di Windows PE viene usata in Windows PE per ottenere il contenuto da un peer locale e ridurre al minimo il traffico della rete WAN se non c&quot;è nessun punto di distribuzione locale."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: dc21868f99e17070b25c8b490e86477227a96c8e
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 814c6133a30b1116d05aaeafddb0dfb7fe2a390e
 
 
 ---
@@ -52,17 +52,17 @@ Usare le sezioni seguenti per gestire la peer cache.
 
 -   Aggiornamenti software  
 
-##  <a name="a-namebkmkpeercacheworka-how-does-windows-pe-peer-cache-work"></a><a name="BKMK_PeerCacheWork"></a> Come funziona la peer cache di Windows PE?  
+##  <a name="a-namebkmkpeercacheworka-how-does--windows-pe-peer-cache-work"></a><a name="BKMK_PeerCacheWork"></a> Come funziona la peer cache di Windows PE?  
  Si consideri uno scenario con una filiale che non dispone di un punto di distribuzione ma che invece dispone di vari client abilitati all'uso della peer cache di Windows PE. Si distribuisce la sequenza di attività configurata per l'uso della peer cache in diversi client che sono configurati come parte dell'origine peer cache. Il primo client a eseguire la sequenza di attività trasmette una richiesta di un peer con il contenuto. Poiché non ne trova uno, ottiene il contenuto da un punto di distribuzione attraverso la rete WAN. Il client installa la nuova immagine e archivia il contenuto nella relativa cache del client di Configuration Manager in modo che funzioni come origine peer cache per altri client. Quando il client successivo esegue la sequenza di attività, trasmette una richiesta nella subnet per un’origine peer cache, e il primo client risponde rendendo disponibile il contenuto memorizzato nella cache.  
 
-##  <a name="a-namebkmkpeercachedeterminea-determine-what-clients-will-be-part-of-the-windows-pe-peer-cache-source"></a><a name="BKMK_PeerCacheDetermine"></a> Determinare quali client faranno parte dell'origine peer cache di Windows PE  
+##  <a name="a-namebkmkpeercachedeterminea-determine-what--clients-will-be-part-of-the-windows-pe-peer-cache-source"></a><a name="BKMK_PeerCacheDetermine"></a> Determinare quali client faranno parte dell'origine peer cache di Windows PE  
  Per determinare quali computer selezionare come origine peer cache di Windows PE, è necessario considerare diversi elementi:  
 
 -   L'origine peer cache di Windows PE deve essere un computer desktop che è sempre acceso e disponibile per i client peer cache.  
 
 -   La peer cache di Windows PE ha una dimensione della cache client sufficiente per archiviare le immagini.  
 
-##  <a name="a-namebkmkpeercacherequirementsa-requirements-for-a-client-to-use-a-windows-pe-peer-cache-source"></a><a name="BKMK_PeerCacheRequirements"></a> Requisiti per l'uso di un'origine peer cache di Windows PE da parte di un client  
+##  <a name="a-namebkmkpeercacherequirementsa-requirements-for-a-client-to-use-a--windows-pe-peer-cache-source"></a><a name="BKMK_PeerCacheRequirements"></a> Requisiti per l'uso di un'origine peer cache di Windows PE da parte di un client  
  Per poter usare un'origine peer cache di Windows PE, i client devono soddisfare i requisiti seguenti:  
 
 -   Il client di Configuration Manager deve essere in grado di comunicare attraverso le porte seguenti della rete:  
@@ -144,6 +144,6 @@ Usare le sezioni seguenti per gestire la peer cache.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

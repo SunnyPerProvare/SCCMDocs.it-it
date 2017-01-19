@@ -1,5 +1,5 @@
 ---
-title: Dati di diagnostica per la versione 1606 | System Center Configuration Manager
+title: Dati di diagnostica per la versione 1606 | Microsoft Docs
 description: Informazioni sui livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1606.
 ms.custom: na
 ms.date: 10/06/2016
@@ -34,8 +34,8 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 724b8717b92b460af1c2a92d5e3282b04810325e
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: 3128c556b82d64ea7b36bee55c44979fbf5c84ef
 
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1606-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1606
@@ -52,6 +52,8 @@ Le modifiche rispetto alle versioni precedenti sono contrassegnate da ***[Nuovo]
 
 ##  <a name="a-namebkmkchangea-how-to-change-the-level"></a><a name="bkmk_change"></a> Come cambiare il livello
  Gli amministratori con ambito amministrativo basato sui ruoli che include le autorizzazioni **Modifica** per la classe di oggetti **Sito** possono modificare il livello dei dati raccolti nelle impostazioni dei dati di diagnostica e di utilizzo nella console di Configuration Manager.
+
+   A tale scopo, nella console passare alla scheda Backstage (la scheda in alto a sinistra con la freccia a discesa) e selezionare **Dati di utilizzo**, quindi selezionare il livello di dati che si vuole usare.  
 
 ##  <a name="a-namebkmklevel1a-level-1---basic"></a><a name="bkmk_level1"></a> Livello 1 - Di base
  Il livello di base include i dati sulla gerarchia ed è necessario per consentire il miglioramento dell'esperienza di installazione o aggiornamento, nonché per determinare quali aggiornamenti di Configuration Manager sono applicabili per la gerarchia.
@@ -420,6 +422,6 @@ A partire da System Center Configuration Manager versione 1606, questo livello i
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

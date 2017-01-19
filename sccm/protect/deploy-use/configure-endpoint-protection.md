@@ -1,5 +1,5 @@
 ---
-title: Configurazione di Endpoint Protection | System Center Configuration Manager
+title: Configurare Endpoint Protection | Microsoft Docs
 description: Informazioni su come gestire la sicurezza e i malware nei computer client di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 5905ab3f63a9956909f3d26136a377ca2f65b71c
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: 3678fd1e2ba70ad1cc03a3e0ca294901fae96255
 
 
 ---
@@ -46,6 +46,6 @@ La configurazione di Endpoint Protection prevede cinque passaggi:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

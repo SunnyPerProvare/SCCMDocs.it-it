@@ -1,5 +1,5 @@
 ---
-title: Opzioni relative ai ruoli del sistema del sito | System Center Configuration Manager
+title: Pianificare i server e i ruoli del sistema | Microsoft Docs
 description: Per informazioni dettagliate sui ruoli del sistema del sito di Configuration Manager non di chiara comprensione, vedere questo articolo.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: a3c370dedc23e2eda38bd942b1d5bed91bdc3876
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: 2ff7c8b35538cf475aad665b29a95304d794c4ff
 
 ---
 # <a name="configuration-options-for-site-system-roles-for-system-center-configuration-manager"></a>Opzioni di configurazione per i ruoli del sistema del sito per System Center Configuration Manager
@@ -65,15 +65,12 @@ La maggior parte delle opzioni di configurazione per i ruoli del sistema del sit
  Per informazioni su come configurare il punto di distribuzione per le distribuzioni multicast, vedere [Usare il multicast per distribuire Windows in rete con System Center Configuration Manager](../../../../osd/deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
 
  **Installa e configura IIS, se richiesto da Configuration Manager**  
-
  Selezionare questa opzione per consentire a Configuration Manager di installare e configurare IIS sul sistema del sito, se non già installato. IIS deve essere installato su tutti i punti di distribuzione ed è necessario selezionare questa impostazione per proseguire la procedura guidata.  
 
  **Account di installazione sistema del sito**  
-
  Per i punti di distribuzione installati su un server del sito, solo l'account del computer del server del sito viene supportato per l'uso come Account di installazione sistema del sito.  
 
  **Creare un certificato autofirmato o importare un certificato client PKI**  
-
  Questo certificato ha due scopi:  
 
 1.  Consente l'autenticazione tra il punto di distribuzione e un punto di gestione prima che il punto di distribuzione invii messaggi di stato.  
@@ -93,12 +90,12 @@ Non sono previsti requisiti specifici per il certificato Nome oggetto o Nome alt
 Per altre informazioni sui requisiti dei certificati, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md). Per un esempio di distribuzione di questo certificato, vedere la sezione *Distribuzione del certificato di servizio per i punti di distribuzione* nell'argomento [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
 **Abilita questo punto di distribuzione per il contenuto pre-installato**  
-
 Selezionare questa casella di controllo per abilitare il punto di distribuzione per il contenuto pre-installato. Quando questa casella di controllo è selezionata, è possibile configurare il comportamento della distribuzione del contenuto. È possibile scegliere se preinstallare sempre il contenuto sul punto di distribuzione, se preinstallare il contenuto iniziale per il pacchetto ma utilizzare il processo di distribuzione del contenuto normale in presenza di aggiornamenti del contenuto oppure se usare sempre il processo di distribuzione del contenuto normale per il contenuto nel pacchetto.  
 
 **Gruppi di limiti**  
-
- È possibile associare i gruppi di limiti a un punto di distribuzione. Durante la distribuzione del contenuto, i client devono trovarsi in un gruppo di limiti associato al punto di distribuzione per usarlo come percorso di origine per il contenuto. È possibile selezionare la casella di controllo **Consenti percorso origine di fallback per il contenuto** per consentire ai client esterni a questi gruppi di limiti di eseguire il fallback e utilizzare il punto di distribuzione come un percorso di origine per il contenuto in assenza di altri punti di distribuzione disponibili.  
+ È possibile associare i gruppi di limiti a un punto di distribuzione. Durante la distribuzione del contenuto, i client devono trovarsi in un gruppo di limiti associato al punto di distribuzione per usarlo come percorso di origine per il contenuto.
+ - **Nelle versioni precedenti alla 1610**, è possibile selezionare la casella di controllo **Consenti percorso origine di fallback per il contenuto** per consentire ai client esterni a questi gruppi di limiti di eseguire il fallback e usare il punto di distribuzione come un percorso di origine per il contenuto in assenza di altri punti di distribuzione disponibili.
+ - **A partire dalla versione 1610**, non è più possibile configurare **Consenti percorso origine di fallback per il contenuto**.  È invece possibile configurare relazioni tra gruppi di limiti che determinano quando un client può iniziare a ricercare percorsi di origine del contenuto validi in gruppi di limiti aggiuntivi.
 
 ##  <a name="a-namebkmkenrollmentpointa-enrollment-point"></a><a name="BKMK_Enrollment_Point"></a> Punto di registrazione  
 I punti di registrazione vengono usati per installare i computer Mac e registrare i dispositivi gestiti con la gestione dei dispositivi mobili locali. Per altre informazioni, vedere  
@@ -108,7 +105,6 @@ I punti di registrazione vengono usati per installare i computer Mac e registrar
 -   [Come gli utenti registrano i dispositivi con la gestione di dispositivi mobili locale in System Center Configuration Manager](../../../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md)  
 
 **Connessioni consentite**  
-
  L'impostazione HTTPS viene selezionata automaticamente e richiede un certificato PKI sul server per l'autenticazione tra server e punto proxy di registrazione o punto di servizio fuori banda, nonché per la crittografia dei dati tramite SSL. Per altre informazioni sui requisiti dei certificati, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
 
  Per un esempio di distribuzione del certificato del server e per informazioni sulla relativa configurazione in Internet Information Services (IIS), vedere la sezione *Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS* in [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
@@ -117,14 +113,12 @@ I punti di registrazione vengono usati per installare i computer Mac e registrar
 Per informazioni su come configurare il punto proxy di registrazione per i dispositivi mobili, vedere [Come gli utenti registrano i dispositivi con la gestione di dispositivi mobili locale in System Center Configuration Manager](../../../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md).  
 
 **Connessioni client**  
-
  L'impostazione HTTPS viene selezionata automaticamente e richiede un certificato PKI sul server per l'autenticazione tra server e dispositivi mobili o computer Mac registrati da Configuration Manager e per la crittografia dei dati con Secure Sockets Layer (SSL). Per altre informazioni sui requisiti dei certificati, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
 
  Per un esempio di distribuzione del certificato del server e per informazioni sulla relativa configurazione in Internet Information Services (IIS), vedere la sezione *Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS* in [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
 ##  <a name="a-namebkmkfallbackstatuspointa-fallback-status-point"></a><a name="BKMK_Fallback_Status_Point"></a> Punto di stato di fallback  
 **Numero di messaggi di stato** e **Intervallo di limitazione (in secondi)**  
-
 Sebbene le impostazioni predefinite per queste opzioni (10.000 messaggi di stato e 3.600 secondi per l'intervallo di limitazione) siano sufficienti nella maggior parte dei casi, potrebbe essere necessario modificarli in presenza di entrambe le condizioni seguenti:  
 
 -   Il punto di stato di fallback accetta connessioni solo dalla rete intranet.  
@@ -161,6 +155,6 @@ Non modificare le impostazioni di limitazione per il punto di stato di fallback 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

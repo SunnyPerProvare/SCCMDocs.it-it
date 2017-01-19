@@ -1,5 +1,5 @@
 ---
-title: Configurare le app iOS con i criteri di configurazione delle app | System Center Configuration Manager
+title: Configurare le app iOS con i criteri di configurazione delle app | Microsoft Docs
 description: Questa operazione consente di evitare problemi di configurazione sui dispositivi che eseguono iOS 8 o versione successiva distribuendo i criteri di configurazione delle app agli utenti prima che gli utenti eseguano le app.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,55 +17,60 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 9cbf28afbbe69f9a027ffad2a699b9d6b625e690
+ms.sourcegitcommit: cabd1083a6d7c49ef1bc46c6ec35cffd6d858344
+ms.openlocfilehash: fccf655110c2ed7689c128a0a619838d18b3355a
 
 
 ---
-# <a name="configure-ios-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Configure iOS apps with app configuration policies in System Center Configuration Manager
+# <a name="apply-settings-to-ios-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Applicare le impostazioni alle app iOS con i criteri di configurazione app in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-Usare i criteri di configurazione delle app in System Center Configuration Manager per specificare le impostazioni che potrebbero essere necessarie quando l'utente esegue un'app. Ad esempio, un'app potrebbe richiedere all'utente di specificare:
+È possibile usare i criteri di configurazione delle app in System Center Configuration Manager (Configuration Manager) per distribuire impostazioni che potrebbero essere necessarie quando un utente esegue un'app. Ad esempio, un'app potrebbe richiedere all'utente di specificare i seguenti dettagli:
 - Un numero di porta personalizzato
 - Impostazione della lingua
 - Impostazioni di sicurezza
 - Impostazioni di personalizzazione, ad esempio il logo aziendale
 
-Se queste impostazioni vengono immesse in modo non corretto dall'utente, si può avere un aumento del carico dell'help desk rallentando inoltre l'adozione di nuove app.
-I criteri di configurazione delle app permettono di evitare questi problemi consentendo di distribuire tali impostazioni agli utenti in un criterio prima dell'esecuzione dell'app. Le impostazioni vengono quindi specificate automaticamente e l'utente non deve intraprendere alcuna azione.
-Questi criteri non vengono distribuiti direttamente agli utenti e ai dispositivi, ma vengono associati a un tipo di distribuzione al momento della distribuzione dell'applicazione. Le impostazioni dei criteri vengono usate ogni volta che l'app ne esegue la ricerca (in genere, alla prima esecuzione).
+Se l'utente immette le impostazioni in modo errato, il carico di lavoro per la risoluzione ricade sul supporto tecnico e la distribuzione delle app risulta lenta.
+Per evitare questi problemi, è possibile usare criteri di configurazione delle app per distribuire le impostazioni necessarie agli utenti prima che questi eseguano l'app. Le impostazioni vengono associate a un utente in modo automatico. L'utente non deve eseguire nessuna operazione.
+Per usare un criterio di configurazione delle app in Configuration Manager, anziché distribuire i criteri di configurazione direttamente a utenti e dispositivi si associano i criterio a un tipo di distribuzione quando si distribuisce l'app. Le impostazioni dei criteri vengono applicate ogni volta che l'app ne esegue la ricerca (in genere, alla prima esecuzione dell'app stessa).
 
-I criteri di configurazione delle app sono attualmente disponibili solo per i dispositivi che eseguono iOS 8 e versioni successive e supportano i tipi di applicazioni seguenti:
+I criteri di configurazione delle app sono attualmente disponibili solo per i dispositivi che eseguono iOS 8 e versioni successive e per i tipi di applicazioni seguenti:
 
-- **Pacchetto app per iOS (file *.ipa)**
-- **Pacchetto app per iOS nell'App Store**
+- **Pacchetto app iOS (file *.ipa)**
+- **Pacchetto app iOS nell'App Store**
 
-Per altre informazioni sui tipi di installazione di app, vedere [Introduction to application management](/sccm/apps/understand/introduction-to-application-management) (Introduzione alla gestione delle applicazioni).
+Per altre informazioni sui tipi di installazione delle app, vedere l'[introduzione alla gestione delle applicazioni](/sccm/apps/understand/introduction-to-application-management).
 
 ## <a name="create-an-app-configuration-policy"></a>Creare criteri di configurazione delle app
 
-1. Nella console di Configuration Manager fare clic su **Raccolta software** > **Gestione applicazioni** > **Criteri di configurazione dell'app**.
-3. Nel gruppo **Criteri di configurazione dell'app** della scheda **Home** fare clic su **Creare nuovi criteri di configurazione dell'applicazione**.
-4. Nel pagina **Generale** della **Creazione guidata criteri di configurazione dell'app** specificare le informazioni seguenti:
-    - **Nome**: specificare un nome univoco per il criterio.
-    - **Descrizione**: facoltativamente specificare una descrizione identificativa per il criterio.
-    - **Categorie assegnate per migliorare la ricerca e i filtri**: facoltativamente fare clic su **Categorie** per creare e assegnare le categorie al criterio. In questo modo è più semplice ordinare e trovare gli elementi nella console di Configuration Manager.
-5. Nella pagina **Criteri iOS** scegliere come specificare le informazioni sui criteri di configurazione:
-    - **Specificare le coppie di nome e valore**: è possibile usare questa opzione per i file di elenco di proprietà senza annidamento.
-    Per specificare le coppie di nome/valore
-        - Fare clic su **Nuova** per aggiungere una nuova coppia.
-        - Nella finestra di dialogo **Aggiungere la coppia nome-valore** specificare quanto segue:
-            - **Tipo**: scegliere il tipo di valore da specificare nell'elenco.
-            - **Nome**: immettere il nome della chiave dell'elenco di proprietà per cui si vuole specificare un valore.
-            - **Valore**: immettere il valore che verrà applicato alla chiave immessa.
-        - Selezionare un file di elenco di proprietà: usare questa opzione se si dispone già di un file XML di configurazione app o per file più complessi con annidamento.
-        Per passare a un file di elenco di proprietà
-            - Nel campo **Criteri di configurazione dell'app** immettere le informazioni sull'elenco di proprietà nel formato XML corretto.
-            Per altre informazioni sugli elenchi di proprietà XML, vedere l'articolo relativo agli [elenchi di proprietà XML](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/PropertyLists/UnderstandXMLPlist/UnderstandXMLPlist.html) nella libreria degli sviluppatori iOS.
-            Il formato dell'elenco di proprietà XML varia a seconda dell'app da configurare. Per altre informazioni sul formato esatto da usare, contattare il fornitore dell'app.
-            Intune supporta i tipi di dati seguenti in un elenco di proprietà:
+1. Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Criteri di configurazione dell'app**.
+2. Nella scheda **Home**, nel gruppo **Criteri di configurazione dell'app** fare clic su **Creare nuovi criteri di configurazione dell'applicazione**.
+3. Nella pagina **Generale** della Creazione guidata criteri di configurazione dell'app impostare le seguenti informazioni per i criteri:
+  - **Nome**. Immettere un nome univoco per i criteri.
+  - **Descrizione**. (Facoltativo) Per rendere più semplice l'identificazione dei criteri, è possibile aggiungere una descrizione.
+  - **Categorie assegnate per migliorare la ricerca e i filtri**. (Facoltativo) Per creare e assegnare categorie ai criteri, scegliere **Categorie**. Con le categorie è più semplice trovare e ordinare gli elementi nella console di Configuration Manager.
+4. Nella pagina **Criteri iOS** scegliere come impostare le informazioni sui criteri di configurazione:
+  - **Specify name and value pairs** (Specifica coppie nome/valore). È possibile usare questa opzione per i file elenco di proprietà senza annidamento.
+
+      *Per specificare una coppia nome/valore*
+        1. Scegliere **Nuova** per aggiungere una nuova coppia.
+        2. Nella finestra di dialogo **Add Name/Value Pair** (Aggiungi coppia nome/valore), specificare quanto segue:         - **Tipo**. Scegliere il tipo di valore da specificare nell'elenco.
+            - **Nome**. Immettere il nome della chiave dell'elenco di proprietà per la quale si vuole specificare un valore.
+            - **Valore**. Digitare il valore che verrà applicato alla chiave immessa.
+
+  - **Browse to a property list file** (Passa a un file elenco di proprietà). Usare questa opzione se è già presente un file XML di configurazione app o per file più complessi con annidamento.
+
+    *Per passare a un file elenco di proprietà*
+
+      1.  Nel campo **Criteri di configurazione dell'app** immettere le informazioni sull'elenco di proprietà nel formato XML corretto.
+
+      Per altre informazioni sugli elenchi di proprietà XML, vedere l'articolo relativo agli [elenchi di proprietà XML](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/PropertyLists/UnderstandXMLPlist/UnderstandXMLPlist.html) nella libreria degli sviluppatori iOS.
+
+            The format of the XML property list varies depending on the app you are configuring. Contact the app supplier for details about the format to use.
+            Intune supports the following data types in a property list:
             ```
             <integer>
             <real>
@@ -74,8 +79,8 @@ Per altre informazioni sui tipi di installazione di app, vedere [Introduction to
             <dict>
             <true /> or <false />
             ```
-            Per altre informazioni sui tipi di dati, vedere l'articolo relativo agli [elenchi di proprietà](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PropertyLists/AboutPropertyLists/AboutPropertyLists.html) nella libreria degli sviluppatori iOS.
-            Inoltre, Intune supporta i tipi di token seguenti nell'elenco di proprietà:
+            For more information about data types, see [About Property Lists](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PropertyLists/AboutPropertyLists/AboutPropertyLists.html) in the iOS Developer Library.
+            Intune also supports the following token types in the property list:
             ```
             {{userprincipalname}} - (Example: John@contoso.com)
             {{mail}} - (Example: John@contoso.com)
@@ -89,21 +94,23 @@ Per altre informazioni sui tipi di installazione di app, vedere [Introduction to
 
             The {{ and }} characters are used by token types only and must not be used for other purposes.
             ```
-            È possibile anche fare clic su **Seleziona file** per importare un file XML creato in precedenza.
-6. Fare clic su **Avanti**. È necessario correggere eventuali errori nel codice XML prima di continuare.
-6. Completare la procedura guidata.
 
-Il nuovo criterio di configurazione delle app viene visualizzato nel nodo **Criteri di configurazione dell'app** dell'area di lavoro **Raccolta software**.
+      2.  Per importare un file XML creato in precedenza, scegliere **Seleziona file**.
+6. Scegliere **Avanti**. Se sono presenti errori nel codice XML è necessario correggerli prima di continuare.
+7. Completare i passaggi della procedura guidata.
+
+I nuovi criteri di configurazione app vengono visualizzati nel nodo **Criteri di configurazione dell'app** dell'area di lavoro **Raccolta software**.
 
 ## <a name="associate-an-app-configuration-policy-with-a-configuration-manager-application"></a>Associare un criterio di configurazione delle app a un'applicazione di Configuration Manager
 
-Per associare un criterio di configurazione dell'app alla distribuzione di un'app per iOS, distribuire l'applicazione nel modo usuale tramite la procedura descritta nell'argomento [Distribuire applicazioni](/sccm/apps/deploy-use/deploy-applications).
-Nella pagina **Criteri di configurazione dell'app** della **Distribuzione guidata del software** fare clic su **Nuovo**. Nella finestra di dialogo **Seleziona criteri di configurazione dell'app** scegliere un tipo di distribuzione dell'applicazione e un criterio di configurazione dell'app da associare.
-Quando viene installato il tipo di distribuzione, le impostazioni dei criteri di configurazione dell'app verranno applicate automaticamente.
+Per associare criteri di configurazione delle app alla distribuzione di un'app per iOS, distribuire l'applicazione nel modo consueto con la procedura descritta nell'argomento [Distribuire applicazioni](/sccm/apps/deploy-use/deploy-applications).
+
+Nella pagina **Criteri di configurazione dell'app** della Distribuzione guidata del software fare clic su **Nuovo**. Nella finestra di dialogo **Select App Configuration Policy** (Seleziona criteri di configurazione dell'app) scegliere un tipo di distribuzione dell'applicazione e i criteri di configurazione dell'app ai quali associarla.
+Quando viene installato il tipo di distribuzione, le impostazioni dei criteri di configurazione dell'app vengono applicate automaticamente.
 
 ## <a name="example-format-for-the-mobile-app-configuration-xml-file"></a>Formato di esempio per il file XML di configurazione di app per dispositivi mobili
 
-Quando si crea un file di configurazione di app per dispositivi mobili, è possibile specificare uno o più dei valori seguenti usando il formato:
+Quando si crea un file di configurazione di app per dispositivi mobili, è possibile usare questo formato per specificare uno o più dei seguenti valori:
 
 ```
 <dict>
@@ -132,6 +139,6 @@ Quando si crea un file di configurazione di app per dispositivi mobili, è possi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

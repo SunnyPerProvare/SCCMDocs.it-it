@@ -1,6 +1,6 @@
 ---
-title: Metodi per distribuire i sistemi operativi aziendali| Configuration Manager
-description: "Informazioni sui metodi che è possibile usare per distribuire i sistemi operativi aziendali nell'ambiente System Center Configuration Manager."
+title: Metodi per distribuire i sistemi operativi aziendali | Microsoft Docs
+description: "Informazioni sui metodi che è possibile usare per distribuire i sistemi operativi aziendali nell&quot;ambiente System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 40f6f414ff0a2687f250f101acbae775a777bf8a
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 6cec9275009ac19ad65a03792c1bc4d0c528ea4c
 
 
 ---
@@ -25,7 +25,7 @@ ms.openlocfilehash: 40f6f414ff0a2687f250f101acbae775a777bf8a
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Sono disponibili diversi metodi che è possibile usare per distribuire un sistema operativo nell'ambiente System Center Configuration Manager. 
+Sono disponibili diversi metodi che è possibile usare per distribuire un sistema operativo nell'ambiente System Center Configuration Manager.
 
 -   [Usare PXE per distribuire Windows in rete](use-pxe-to-deploy-windows-over-the-network.md)  
 
@@ -43,6 +43,6 @@ Sono disponibili diversi metodi che è possibile usare per distribuire un sistem
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

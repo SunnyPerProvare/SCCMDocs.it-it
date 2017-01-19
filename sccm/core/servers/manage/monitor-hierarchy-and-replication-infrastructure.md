@@ -1,6 +1,6 @@
 ---
-title: Monitorare la replica | System Center Configuration Manager
-description: Informazioni su come monitorare l'infrastruttura e le operazioni in Configuration Manager usando l'area di lavoro Monitoraggio della console.
+title: Monitorare la replica | Microsoft Docs
+description: Informazioni su come monitorare l&quot;infrastruttura e le operazioni in Configuration Manager usando l&quot;area di lavoro Monitoraggio della console.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: 92ded1197d1dcdd6e5f3a8917718e6232b18bce4
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 132803a1aa9aad5c5462686bd656688418e47d07
 
 
 ---
@@ -55,7 +55,7 @@ Per ridurre al minimo il rischio di errore del sito, se le attività di monitora
 
 
 
-##  <a name="a-namebkmkmonintormgmttasksa-monitor-common-management-tasks-for-configuration-manager"></a><a name="BKMK_MonintorMgmtTasks"></a> Monitorare le attività di gestione comuni per Configuration Manager  
+##  <a name="a-namebkmkmonintormgmttasksa-monitor--common-management-tasks-for-configuration-manager"></a><a name="BKMK_MonintorMgmtTasks"></a> Monitorare le attività di gestione comuni per Configuration Manager  
  Configuration Manager include una funzionalità di monitoraggio predefinita all'interno della console. È possibile monitorare numerose attività, tra cui quelle relative a: aggiornamenti software, risparmio energia e distribuzione del contenuto all'interno della gerarchia.  
 
  Usare le informazioni seguenti per monitorare le attività di Configuration Manager comuni:  
@@ -245,6 +245,6 @@ Le azioni di monitoraggio, aggiornamento e rilevamento con e senza errori vengon
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

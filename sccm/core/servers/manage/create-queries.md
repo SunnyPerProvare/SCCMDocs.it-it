@@ -1,5 +1,5 @@
 ---
-title: Creare query | System Center Configuration Manager
+title: Creare query | Microsoft Docs
 description: Questo argomento illustra come creare e importare query in System Center Configuration Manager. Include query di esempio e suggerimenti.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 1cbba80a73fdd66d84d38e710c02cc79ab972b81
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 89bd798339489071fdb69325c957fefda32621e9
 
 
 ---
@@ -49,7 +49,7 @@ Usare le sezioni seguenti di questo argomento per informazioni su come creare o 
 
 5.  Nell'elenco **Tipo oggetto** selezionare il tipo di oggetto che si vuole che la query restituisca. Nella tabella seguente vengono descritti alcuni esempi del tipo di oggetto che è possibile cercare:  
 
-    |Tipo oggetto|Descrizione|  
+    |Tipo di oggetto|Descrizione|  
     |-----------------|-----------------|  
     |**Risorsa di sistema**|Usare questo tipo di oggetto per cercare attributi di sistema standard, ad esempio il nome NetBIOS di un dispositivo, la versione del client, l'indirizzo IP del client e informazioni su Servizi di dominio Active Directory.|  
     |**Risorsa utente**|Usare questo tipo di oggetto per cercare informazioni utente standard, ad esempio nomi utente, nomi di gruppi di utenti e nomi dei gruppi di sicurezza.|  
@@ -190,6 +190,6 @@ Select SMS_R_System.ClientEdition from SMS_R_System where SMS_R_System.ClientEdi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

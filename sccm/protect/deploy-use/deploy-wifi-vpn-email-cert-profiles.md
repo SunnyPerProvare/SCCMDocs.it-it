@@ -1,5 +1,5 @@
 ---
-title: Distribuire profili Wi-Fi, VPN, di posta elettronica e certificato | System Center Configuration Manager
+title: Distribuire profili Wi-Fi, VPN, certificato e di posta elettronica | Microsoft Docs
 description: Informazioni su come distribuire profili Wi-Fi, VPN, di posta elettronica e certificato in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 7e13c52c135850b1f449cf91bc81425208d16551
+ms.sourcegitcommit: c2e3aef41e9a890d136039f85777ab07284e5c27
+ms.openlocfilehash: 70372d5df13034b48f3e43b766776442f1be5823
 
 ---
 # <a name="deploy-profiles-in-system-center-configuration-manager"></a>Distribuire profili in System Center Configuration Manager
@@ -40,10 +40,10 @@ I profili devono essere distribuiti a una o più raccolte prima di poter essere 
 > -   [Come creare profili certificato in System Center Configuration Manager](create-certificate-profiles.md)    
 
 > [!IMPORTANT]  
->  Quando una distribuzione del profilo Wi-Fi viene rimossa, il profilo Wi-Fi non viene rimosso dai dispositivi client. Se si desidera rimuovere il profilo dai dispositivi, è necessario procedere manualmente.
+>  Quando si rimuove una distribuzione del profilo VPN, il profilo non viene rimosso dai dispositivi client. Se si desidera rimuovere il profilo dai dispositivi, è necessario procedere manualmente.
 >   
 
-## <a name="deploying-profiles"></a>Distribuzione di profili  
+## <a name="deploying--profiles"></a>Distribuzione di profili  
 
 
 1.  Nella console di System Center Configuration Manager fare clic su **Asset e conformità**.  
@@ -75,6 +75,6 @@ I profili devono essere distribuiti a una o più raccolte prima di poter essere 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

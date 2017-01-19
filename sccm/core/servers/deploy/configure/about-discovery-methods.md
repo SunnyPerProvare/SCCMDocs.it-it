@@ -1,5 +1,5 @@
 ---
-title: Metodi di individuazione | System Center Configuration Manager
+title: Metodi di individuazione | Microsoft Docs
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -15,8 +15,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 8bb71e477bb9a265b3485bd3ef8232f6e9933a37
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 223ebc3009b33c43818636a9e19b9b482619550b
 
 ---
 # <a name="about-discovery-methods-for-system-center-configuration-manager"></a>Informazioni sui metodi di individuazione per System Center Configuration Manager
@@ -405,7 +405,7 @@ Quando questi tre metodi di individuazione vengono eseguiti su un sito specifico
 
 Se si configura lo stesso metodo di individuazione per poterlo eseguire su siti diversi di Configuration Manager e poter quindi eseguire una query sui server di Active Directory locali, è possibile configurare ogni sito usando una sola serie di opzioni di individuazione. Poiché i dati di individuazione vengono condivisi con ogni sito della gerarchia, evitare la sovrapposizione tra tali configurazioni per individuare in modo efficiente ogni risorsa una volta sola. Per ambiente più piccoli, si potrebbe prendere in considerazione l'esecuzione di ciascun metodo di individuazione su un solo sito della gerarchia per ridurre il carico amministrativo e la possibilità che più azioni di individuazione individuino di nuovo le stesse risorse. Quando si riduce al minimo il numero di siti che eseguono l'individuazione, è possibile ridurre la larghezza di banda di rete complessiva utilizzata dall'individuazione, nonché il numero totale di DDR che vengono creati e devono essere elaborati dai server del sito.  
 
-Molte delle configurazioni del metodo di individuazione sono di chiara interpretazione Utilizzare le sezioni seguenti per ulteriori informazioni sulle opzioni di individuazione che potrebbe richiedere informazioni aggiuntive prima di essere configurate.  
+Molte delle configurazioni del metodo di individuazione sono di chiara interpretazione  Utilizzare le sezioni seguenti per ulteriori informazioni sulle opzioni di individuazione che potrebbe richiedere informazioni aggiuntive prima di essere configurate.  
 
 È possibile usare le opzioni seguenti con più metodi di individuazione Active Directory:  
 
@@ -501,6 +501,6 @@ Ogni metodo di individuazione supporta un elenco univoco di attributi di Active 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

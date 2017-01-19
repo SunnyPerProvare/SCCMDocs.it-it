@@ -1,5 +1,5 @@
 ---
-title: "Disponibilità elevata | System Center Configuration Manager"
+title: "Disponibilità elevata | Microsoft Docs"
 description: "Informazioni su come distribuire System Center Configuration Manager tramite opzioni che consentono di mantenere un livello elevato di disponibilità dei servizi."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 7d8dff8779fbf146a57f753dee9f98488fa5fa61
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: d3e9afb90cdc85bc7299626b642c52be659e3bdf
 
 ---
 # <a name="high-availability-options-for-system-center-configuration-manager"></a>Opzioni di disponibilità elevata per System Center Configuration Manager
@@ -153,7 +153,7 @@ Opzioni che supportano una disponibilità elevata:
 
  Ogni ruolo di sistema del sito del Catalogo applicazioni fornisce le stesse informazioni rispetto alle altre istanze di tale ruolo, indipendentemente dalla posizione del ruolo di sistema del sito nella gerarchia. Pertanto, quando un client richiede il Catalogo applicazioni e l'impostazione Punto per siti Web del Catalogo applicazioni predefinito del client del dispositivo è stata impostata su Rileva automaticamente, sarà possibile indirizzare il client a un'istanza disponibile usando preferibilmente i server di sistema del sito locali del Catalogo applicazioni, in base alla posizione di rete corrente del client.  
 
- Per altre informazioni su questa impostazione del client e sul funzionamento del rilevamento automatico, vedere la sezione [Computer Agent](../../core/clients/deploy/about-client-settings.md#BKMK_ComputerAgentDeviceSettings) (Agente computer) nell'argomento [About Client Settings in Configuration Manager](../../core/clients/deploy/about-client-settings.md) (Informazioni sulle impostazioni client in Configuration Manager).  
+ Per altre informazioni su questa impostazione del client e sul funzionamento del rilevamento automatico, vedere la sezione [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent) (Agente computer) nell'argomento [About Client Settings in Configuration Manager](../../core/clients/deploy/about-client-settings.md) (Informazioni sulle impostazioni client in Configuration Manager).  
 
 ##  <a name="a-namebkmkclienta-high-availability-for-clients"></a><a name="bkmk_client"></a> Disponibilità elevata per i client  
  **Le operazioni dei client sono autonome:**  
@@ -264,6 +264,6 @@ Opzioni che supportano una disponibilità elevata:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

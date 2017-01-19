@@ -1,5 +1,5 @@
 ---
-title: Monitorare lo stato di distribuzione dei client | System Center Configuration Manager
+title: Monitorare lo stato di distribuzione dei client | Microsoft Docs
 description: Monitorare lo stato di distribuzione dei client in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -13,12 +13,12 @@ ms.topic: get-started-article
 ms.assetid: 20a573b3-53cb-4ed5-bae1-7542f533ed20
 caps.latest.revision: 11
 caps.handback.revision: 0
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 495c95b6add90619881291a551f394511d9eb36d
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 3bc82535955d937e5620ef2963ccc29bfd0124e3
 
 
 ---
@@ -32,8 +32,6 @@ La distribuzione client nel sito richiede tempo e alcune installazioni non riesc
 >  Il modo migliore e più affidabile per monitorare la distribuzione client consiste nell'usare la console di Configuration Manager, come descritto in questo articolo. La sezione **Stato del client** dell'area di lavoro **Monitoraggio** nella console indica lo stato di distribuzione del client con precisione e in tempo reale. È possibile monitorare le distribuzioni client con altri strumenti, ad esempio Server Manager in Windows Server o System Center Operations Manager, ma è possibile ricevere avvisi da normali attività di installazione del client. A causa della modalità di esecuzione del programma di installazione del client (CCMSetup.exe) in vari ambienti, gli altri strumenti potrebbero generare falsi allarmi e avvisi che non riflettono accuratamente lo stato delle distribuzioni client.  
 
  Nell'area di lavoro **Monitoraggio** della console è possibile monitorare i seguenti stati delle distribuzioni client che avvengono all'interno di una raccolta specificata:  
-
--   Non avviato   
 
 -   Conforme  
 
@@ -60,7 +58,7 @@ La distribuzione client nel sito richiede tempo e alcune installazioni non riesc
  Per altre informazioni sulle distribuzioni client di pre-produzione, vedere [Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).
 
  > [!NOTE]
- > Lo stato della distribuzione nei computer che ospitano i ruoli del sistema del sito in una raccolta di pre-produzione può essere indicato come **non avviato** anche quando il client è stato distribuito correttamente. Quando si promuove il client nell'ambiente di produzione, lo stato della distribuzione è segnalato in modo corretto.   
+ > Lo stato della distribuzione nei computer che ospitano i ruoli del sistema del sito in una raccolta di pre-produzione può essere indicato come **Non conforme** anche quando il client è stato distribuito correttamente. Quando si promuove il client al livello di produzione, lo stato della distribuzione è segnalato in modo corretto.   
 
  Per monitorare lo stato dei client distribuiti, vedere [Come monitorare i client in System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md)  
 
@@ -68,6 +66,6 @@ La distribuzione client nel sito richiede tempo e alcune installazioni non riesc
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

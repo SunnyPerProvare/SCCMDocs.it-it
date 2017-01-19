@@ -1,8 +1,8 @@
 ---
-title: Profili VPN in System Center Configuration Manager | System Center Configuration Manager
-description: Di seguito viene illustrato come usare i profili VPN in System Center Configuration Manager per distribuire impostazioni VPN agli utenti dell'organizzazione.
+title: Profili VPN in System Center Configuration Manager | Microsoft Docs
+description: Di seguito viene illustrato come usare i profili VPN in System Center Configuration Manager per distribuire impostazioni VPN agli utenti dell&quot;organizzazione.
 ms.custom: na
-ms.date: 10/10/2016
+ms.date: 11/27/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0fbce476b8a9b91a88354fb4abfadfd2526ca5e8
-ms.openlocfilehash: dda572392884c54b63af09a9fae79c1e73eb3d95
+ms.sourcegitcommit: 593fbd0587d54490246f48ae54f666bac6b7830d
+ms.openlocfilehash: 0ff83aed4d5e19806a8c69f4b45e39a6156dee7e
 
 
 ---
@@ -27,7 +27,7 @@ ms.openlocfilehash: dda572392884c54b63af09a9fae79c1e73eb3d95
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-Usare i profili VPN in System Center Configuration Manager per distribuire impostazioni VPN agli utenti dell'organizzazione. La distribuzione di queste impostazioni consente di ridurre al minimo le operazioni che l'utente finale deve eseguire per connettersi alle risorse nella rete aziendale.  
+Usare i profili VPN in System Center Configuration Manager (noto anche come ConfigMgr o SCCM) per distribuire impostazioni VPN agli utenti dell'organizzazione. La distribuzione di queste impostazioni consente di ridurre al minimo le operazioni che l'utente finale deve eseguire per connettersi alle risorse nella rete aziendale.  
 
  Ad esempio, si supponga di voler effettuare il provisioning di tutti i dispositivi che eseguono il sistema operativo iOS con le impostazioni necessarie per connettersi a una condivisione file nella rete aziendale. È possibile creare un profilo VPN contenente le impostazioni necessarie per connettersi alla rete aziendale e quindi distribuire questo profilo a tutti gli utenti della gerarchia che dispongono di dispositivi iOS. Gli utenti dei dispositivi iOS visualizzeranno la connessione VPN nell'elenco delle reti disponibili e potranno connettersi molto facilmente alla rete.  
 
@@ -76,6 +76,6 @@ Usare i profili VPN in System Center Configuration Manager per distribuire impos
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

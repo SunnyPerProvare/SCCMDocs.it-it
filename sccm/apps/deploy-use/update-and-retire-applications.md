@@ -1,5 +1,5 @@
 ---
-title: Aggiornare e ritirare le applicazioni | System Center Configuration Manager
+title: Aggiornare e ritirare applicazioni | Microsoft Docs
 description: Rivedere, sostituire o disinstallare le applicazioni distribuite tramite System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 5eafaca3317f22b0e0b434d9161785cc90c701b7
+ms.sourcegitcommit: c9fb0fa46058c773eec6ac23999357d35d9f970f
+ms.openlocfilehash: 805e04c447747b4d12350b692880dbc005bd7168
 
 
 ---
@@ -26,23 +26,22 @@ ms.openlocfilehash: 5eafaca3317f22b0e0b434d9161785cc90c701b7
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-Dopo un certo periodo di tempo, è probabile che si voglia apportare modifiche a un'applicazione, disinstallarla o sostituire un'applicazione già distribuita con un'applicazione nuova. System Center Configuration Manager offre le funzionalità seguenti per semplificare queste attività:  
-  
--   **Rivedere le applicazioni**: quando si apportano modifiche a un'applicazione o a un tipo di distribuzione, Configuration Manager mantiene una cronologia delle modifiche. È possibile ripristinare l'applicazione a una revisione precedente in qualsiasi momento. È possibile inoltre visualizzarne le proprietà, ripristinare una revisione precedente di un'applicazione oppure eliminare una revisione precedente.  
+È possibile che in un determinato momento si voglia apportare modifiche a un'applicazione, disinstallarla o sostituire un'applicazione già distribuita con un'applicazione nuova. System Center Configuration Manager offre queste funzionalità, che consentono di aggiornare e ritirare le applicazioni:  
 
-     Per altre informazioni, vedere [Application revisions](/sccm/apps/deploy-use/revise-and-supersede-applications#application-revisions) (Revisioni delle applicazioni).  
+-   **Modificare applicazioni**. Quando si apportano modifiche a un'applicazione o a un tipo di distribuzione, Configuration Manager mantiene una cronologia delle modifiche. È possibile ripristinare l'applicazione a una revisione precedente in qualsiasi momento. È anche possibile visualizzarne le proprietà, ripristinare una revisione precedente o eliminare una revisione precedente di un'applicazione.  
 
--   **Supersede applications** : consente di aggiornare o sostituire applicazioni esistenti usando una relazione di sostituzione. Quando si sostituisce un'applicazione, è possibile specificare un nuovo tipo di distribuzione per sostituire il tipo di distribuzione dell'applicazione sostituita ed è anche possibile specificare se aggiornare o disinstallare l'applicazione sostituita prima che l'applicazione sostitutiva venga installata.  
+  Per altre informazioni, vedere [Application revisions](revise-and-supersede-applications.md#application-revisions) (Revisioni delle applicazioni).  
 
-     Per altre informazioni, vedere [Application revisions](/sccm/apps/deploy-use/revise-and-supersede-applications#application-supersedence) (Sostituzione delle applicazioni).  
+-   **Sostituire applicazioni**. È possibile aggiornare o sostituire applicazioni esistenti usando una relazione di sostituzione. Quando si sostituisce un'applicazione, è possibile specificare un nuovo tipo di distribuzione che andrà a sostituire il tipo di distribuzione dell'applicazione sostituita. È anche possibile impostare l'aggiornamento o la disinstallazione dell'applicazione sostituita prima di installare l'applicazione sostitutiva.  
 
--   **Disinstallare le applicazioni**: Configuration Manager consente di disinstallare un'applicazione in modo semplice. che può essere effettuata in modalità invisibile, senza l'intervento dell'utente finale.  
-  
-Per altre informazioni, vedere [Disinstallare applicazioni](../../apps/deploy-use/uninstall-applications.md).  
-   
+  Per altre informazioni, vedere [Application revisions](revise-and-supersede-applications.md#application-supersedence) (Sostituzione delle applicazioni).  
 
+-   **Disinstallare applicazioni**. Configuration Manager consente di disinstallare un'applicazione in modo semplice. L'operazione può essere effettuata in modalità invisibile, senza l'intervento dell'utente dell'applicazione o del dispositivo.  
+
+  Per altre informazioni, vedere [Disinstallare applicazioni](uninstall-applications.md).  
 
 
-<!--HONumber=Nov16_HO1-->
+
+<!--HONumber=Dec16_HO3-->
 
 

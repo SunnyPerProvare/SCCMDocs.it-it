@@ -1,5 +1,5 @@
 ---
-title: Prerequisiti per gli aggiornamenti software | Configuration Manager
+title: Prerequisiti per gli aggiornamenti software | Microsoft Docs
 description: Informazioni sui prerequisiti per gli aggiornamenti software in System Center Configuration Manager.
 keywords: 
 author: dougeby
@@ -13,8 +13,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: fe56129c09b8936ba59181add86acb239111fea7
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: 179f076f228daa5adf612275a822cd379b0ce1e3
 
 
 ---
@@ -78,7 +78,7 @@ Questo argomento elenca i prerequisiti per gli aggiornamenti software in System 
 
 -   [Impostazioni client per gli aggiornamenti software](../get-started/manage-settings-for-software-updates.md#a-namebkmkclientsettingsa-client-settings-for-software-updates).  
 
--   Argomento [Impostazioni client per gli aggiornamenti software](../../core/clients/deploy/about-client-settings.md#a-namebkmksoftwareupdatesdevicesettinga-software-updates).  
+-   Argomento [Impostazioni client per gli aggiornamenti software](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
 ### <a name="reporting-services-point"></a>Punto di Reporting Services  
  Il ruolo del sistema del sito del punto di Reporting Services può visualizzare i report per gli aggiornamenti software. Questo ruolo è facoltativo ma consigliato. Per altre informazioni su come creare un punto di Reporting Services, vedere [Configurazione della creazione di report](../../core/servers/manage/configuring-reporting.md).  
@@ -114,6 +114,6 @@ Questo argomento elenca i prerequisiti per gli aggiornamenti software in System 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

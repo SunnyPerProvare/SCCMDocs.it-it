@@ -1,5 +1,5 @@
 ---
-title: Informativa sulla privacy di System Center Configuration Manager - Libreria di cmdlet di Configuration Manager
+title: Informativa sulla privacy di System Center Configuration Manager - Libreria di cmdlet di Configuration Manager | Microsoft Docs
 description: Informazioni su come Microsoft raccoglie e usa i dati relativi alla libreria di cmdlet di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 88d11aaed4a0e6575cb859f5dfc3ac425bd2bf38
+ms.sourcegitcommit: 767d0594eb871462df038997ea3b7e29615e05f7
+ms.openlocfilehash: 10d8e8948d66a6b9b74e16a02cfbfc4ced66596c
 
 
 ---
@@ -49,31 +49,10 @@ La funzionalità Dati di Utilizzo è abilitata per impostazione predefinita. Sys
 
  Le modifiche alle impostazioni relative ai dati di utilizzo sono specifiche per il computer in cui vengono apportate.  
 
- Per altre informazioni su come configurare i dati di utilizzo (raccolta), vedere la [documentazione della libreria di cmdlet di System Center Configuration Manager](https://technet.microsoft.com/en-us/library/dn958404.aspx).  
-
-## <a name="update-check"></a>Verifica degli aggiornamenti  
- **Scopo della funzionalità**   
-System Center Configuration Manager Cmdlet Library verifica automaticamente ogni giorno se sono disponibili aggiornamenti per la libreria e invita l'utente a scaricare la libreria aggiornata.  
-
- **Informazioni raccolte, elaborate o trasmesse**   
-Durante la verifica degli aggiornamenti di Cmdlet Library verrà eseguito il download di un file di testo di piccole dimensioni dall'Area download Microsoft per eseguire un controllo della versione.   Questo file non viene archiviato a livello locale.  Cmdlet Library non eseguirà l'aggiornamento automatico del software.  
-
- **Uso delle informazioni**   
-Microsoft usa queste informazioni per migliorare la qualità, la sicurezza e l'integrità dei prodotti e dei servizi offerti.  
-
- **Scelta/controllo**   
-il controllo degli aggiornamenti è abilitato per impostazione predefinita.  La libreria di cmdlet di System Center Configuration Manager include questi cmdlet per il controllo della funzionalità di notifica degli aggiornamenti:  
-
--   `Get-CMCmdletUpdateCheck` scarica la configurazione della funzionalità di aggiornamento e indicherà se i criteri utente verranno sostituiti da criteri di sistema.  
-
--   `Send-CMCmdletUpdateCheck` consente di eseguire una verifica non pianificata degli aggiornamenti. Durante una verifica non pianificata le impostazioni dei criteri non vengono prese in considerazione.  
-
--   `Set-CMCmdletUpdateCheck` consente di configurare le impostazioni per la verifica degli aggiornamenti per singolo utente o per singolo sistema. Per configurare le impostazioni di sistema, è necessario essere un amministratore.  
-
- Per altre informazioni su come configurare il controllo degli aggiornamenti, vedere la [documentazione della libreria di cmdlet di System Center Configuration Manager](https://technet.microsoft.com/en-us/library/dn958404.aspx).  
+ Per altre informazioni su come configurare i dati di utilizzo (raccolta), vedere la [documentazione della libreria di cmdlet di System Center Configuration Manager](https://technet.microsoft.com/en-us/library/dn958404.aspx).   
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

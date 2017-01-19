@@ -1,5 +1,5 @@
 ---
-title: Backup e ripristino | System Center Configuration Manager
+title: Backup e ripristino | Microsoft Docs
 description: Informazioni su come eseguire il backup e ripristinare i siti in caso di errore o perdita di dati in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d02dc47b2a9010d035ceecbbc6bf3d544f4dc1f4
+ms.sourcegitcommit: 828e2ac9a3f9bcea1571d24145a1021fdf1091f3
+ms.openlocfilehash: ce73be3a9fa3876c587bbd7b7cb05acd36c2687e
 
 
 ---
@@ -114,9 +114,9 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
     -   **Unità locali nel server del sito e in SQL Server**: specifica che i file di backup per il sito vengono archiviati nel percorso indicato nell'unità locale del server del sito, mentre i file di backup per il database del sito vengono archiviati nel percorso indicato nell'unità locale del server di database del sito. È necessario creare le cartelle locali prima dell'esecuzione dell'attività di backup. L'account computer del server del sito deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella creata nel server del sito. L'account computer di SQL Server deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella creata nel server di database del sito. Questa opzione è disponibile solo quando il database del sito non è installato nel server del sito.  
 
     > [!NOTE]  
-    >    - L'opzione per selezionare la destinazione di backup è disponibile solo quando si specifica il percorso UNC della destinazione di backup.
+    >   - L'opzione per selezionare la destinazione di backup è disponibile solo quando si specifica il percorso UNC della destinazione di backup.
 
-    >- Il nome della cartella o il nome condivisione usato per la destinazione di backup non supporta l'utilizzo di caratteri Unicode.  
+    > - Il nome della cartella o il nome condivisione usato per la destinazione di backup non supporta l'utilizzo di caratteri Unicode.  
 
 
 6.  Configurare una pianificazione per l'attività di backup del sito. Come procedura ottimale, è consigliabile valutare una pianificazione di backup in orari non lavorativi. Se si dispone di una gerarchia, valutare una pianificazione da eseguire almeno due volte a settimana per garantire la massima conservazione dei dati in caso di errore del sito.  
@@ -189,8 +189,8 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
  Verificare di aver incluso sia la raccolta contenuto sia i percorsi di origine del pacchetto nel backup del file system per il server del sito.  
 
-#### <a name="back-up-custom-software-updates"></a>Backup degli aggiornamenti software personalizzati  
-     System Center Updates Publisher 2011 is a stand-alone tool that lets you publish custom software updates to Windows Server Update Services (WSUS), synchronize the software updates to Configuration Manager, assess software updates compliance, and deploy the custom software updates to clients. Updates Publisher uses a local database for its software update repository. When you use Updates Publisher to manage custom software updates, determine whether you have to include the Updates Publisher database in your backup plan. For more information about Updates Publisher, see [System Center Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=228726) in the System Center TechCenter Library.  
+#### <a name="back-up-custom-software-updates"></a>Eseguire il backup di aggiornamenti software personalizzati  
+ System Center Updates Publisher 2011 è uno strumento autonomo che consente di pubblicare aggiornamenti software personalizzati in Windows Server Update Services (WSUS), sincronizzare gli aggiornamenti software di Configuration Manager, valutare la conformità degli aggiornamenti software e distribuire gli aggiornamenti software personalizzati ai client. Updates Publisher usa un database locale per il relativo repository degli aggiornamenti software. Quando si usa Updates Publisher per gestire gli aggiornamenti software personalizzati, stabilire se è necessario includere il database di Updates Publisher nel piano di backup. Per altre informazioni su Updates Publisher, vedere [System Center Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=228726) nella Libreria TechCenter di System Center.  
 
  Per eseguire il backup del database Updates Publisher usare la procedura seguente.  
 
@@ -206,7 +206,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 ### <a name="user-state-migration-data"></a>Dati di migrazione sullo stato utente  
  È possibile usare le sequenze attività di Configuration Manager per acquisire e ripristinare i dati sullo stato utente in scenari di distribuzione del sistema operativo in cui si desidera mantenere lo stato utente del sistema operativo corrente. Le cartelle che contengono i dati sullo stato dell'utente sono elencate nelle proprietà del punto di migrazione dello stato. Non è previsto il backup di questi dati di migrazione sullo stato utente nell'ambito dell'attività di manutenzione Backup server sito. Come parte del piano di backup, è necessario eseguire manualmente il backup delle cartelle in cui si è specificato di archiviare i dati di migrazione sullo stato dell'utente.   
 
-##### <a name="to-determine-the-folders-used-to-store-user-state-migration-data"></a>Per determinare le cartelle usate per l'archiviazione dei dati di migrazione sullo stato dell'utente  
+#### <a name="to-determine-the-folders-used-to-store-user-state-migration-data"></a>Per determinare le cartelle usate per l'archiviazione dei dati di migrazione sullo stato dell'utente  
 
 1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
@@ -384,7 +384,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Dettagli:** ripristina un sito di amministrazione centrale  
 
- **RecoveryOptions**  
+**RecoveryOptions**  
 
 -   **Nome chiave:** ServerRecoveryOptions  
 
@@ -454,7 +454,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Dettagli:** specifica il percorso del set di backup del database del sito. La chiave **BackupLocation** è richiesta quando viene configurato il valore **1** o **4** per la chiave **ServerRecoveryOptions** e viene configurato il valore **10** per la chiave **DatabaseRecoveryOptions** .  
 
- **Opzioni**  
+**Opzioni**  
 
 -   **Nome chiave:** ProductID  
 
@@ -549,7 +549,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Dettagli:** specifica se partecipare al programma Analisi utilizzo software.  
 
- **SQLConfigOptions**  
+**SQLConfigOptions**  
 
 -   **Nome chiave:** SQLServerName  
 
@@ -597,7 +597,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Dettagli:** ripristina un sito primario  
 
- **RecoveryOptions**  
+**RecoveryOptions**  
 
 -   **Nome chiave:** ServerRecoveryOptions  
 
@@ -653,7 +653,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Dettagli:** specifica il percorso del set di backup del database del sito. La chiave **BackupLocation** è richiesta quando viene configurato il valore **1** o **4** per la chiave **ServerRecoveryOptions** e viene configurato il valore **10** per la chiave **DatabaseRecoveryOptions** .  
 
- **Opzioni**  
+**Opzioni**  
 
 -   **Nome chiave:** ProductID  
 
@@ -748,7 +748,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Dettagli:** specifica se partecipare al programma Analisi utilizzo software.  
 
- **SQLConfigOptions**  
+**SQLConfigOptions**  
 
 -   **Nome chiave:** SQLServerName  
 
@@ -783,7 +783,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. In genere, SSB è configurato per usare la porta TCP 4022, ma sono supportate anche altre porte. È necessario specificare la stessa porta SSB usata prima dell'errore.  
 
- **Hierarchy ExpansionOption**  
+**Hierarchy ExpansionOption**  
 
 -   **Nome chiave:** CCARSiteServer  
 
@@ -812,7 +812,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 ###  <a name="a-namebkmkpostrecoverya-post-recovery-tasks"></a><a name="BKMK_PostRecovery"></a> Attività post-ripristino  
  Dopo aver eseguito il ripristino del sito, è necessario considerare diverse attività post-ripristino prima di completare il ripristino del sito. Usare le seguenti sezioni per completare il processo di ripristino del sito.  
 
-#### <a name="re-enter-user-account-passwords"></a>Immettere nuovamente le password account utente  
+#### <a name="re-enter-user-account-passwords"></a>Immettere di nuovo le password account utente  
  Dopo il ripristino di un server del sito, è necessario immettere nuovamente le password per gli account utente specificati per il sito perché vengono reimpostate durante il ripristino. Gli account vengono elencati nella pagina **Operazione completata** dell'Installazione guidata dopo aver completato il ripristino del sito e vengono salvati in C:\ConfigMgrPostRecoveryActions.html nel server del sito ripristinato.  
 
 ###### <a name="to-re-enter-user-account-passwords-after-site-recovery"></a>Per immettere nuovamente le password account utente dopo il ripristino del sito  
@@ -839,7 +839,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
  Dopo un ripristino del server di sito, è necessario immettere nuovamente le chiavi di trasferimento locale di Windows specificate per il sito perché queste vengono reimpostate durante il ripristino del sito. Dopo aver immesso nuovamente le chiavi di trasferimento locale, il conteggio nella colonna **Attivazioni usate** per le chiavi di trasferimento locale è reimpostato nella console di Configuration Manager. Supponiamo ad esempio che prima dell'errore del sito il conteggio **Attivazioni totali** sia impostato su **100** e **Attivazioni usate** su **90** per il numero di chiavi usate dai dispositivi. Dopo il ripristino del sito, la colonna **Attivazioni totali** visualizza ancora **100**, ma la colonna **Attivazioni usate** visualizza erroneamente **0**. Tuttavia successivamente all'uso da parte di 10 nuovi dispositivi di una chiave di trasferimento locale, non esisteranno chiavi di trasferimento locale residue e per il dispositivo successivo sarà impossibile applicare una chiave di trasferimento locale.  
 
 #### <a name="recreate-the-microsoft-intune-subscription"></a>Ricreare la sottoscrizione di Microsoft Intune  
- Se si ripristina un server del sito di Configuration Manager dopo aver ricreato l'immagine del computer server del sito, la sottoscrizione di Microsoft Intune non viene ripristinata. Dopo aver ripristinato il sito, è necessario ricreare la sottoscrizione. Per ulteriori informazioni, vedere [Configuring the Microsoft Intune subscription](../../mdm/plan-design/hybrid-mobile-device-management.md#bkmk_witsub).  
+ Se si ripristina un server del sito di Configuration Manager dopo aver ricreato l'immagine del computer server del sito, la sottoscrizione di Microsoft Intune non viene ripristinata. Dopo aver ripristinato il sito, è necessario ricreare la sottoscrizione. Per ulteriori informazioni, vedere [Configuring the Microsoft Intune subscription](../../mdm/deploy-use/setup-hybrid-mdm.md#step-3-configure-intune-subscription).  
 
 #### <a name="configure-ssl-for-site-system-roles-that-use-iis"></a>Configurare SSL per i ruoli del sistema del sito che usano IIS  
  Quando si ripristinano sistemi del sito che eseguono IIS e che erano configurati per HTTPS prima dell'errore, è necessario riconfigurare IIS per usare il certificato server Web.  
@@ -913,6 +913,6 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Ricerca di informazioni | System Center Configuration Manager
+title: Cercare informazioni | Microsoft Docs
 description: Ricerca di informazioni su System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 30d2e51635969dbdfc58b959a11c2bcfb8fc7128
-ms.openlocfilehash: 07509457fcc699440649b2540065f1f3619c9a5e
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 6c864cc443801d2a21e06b7d2e7a4784c52ffc1e
 
 
 ---
@@ -66,7 +66,7 @@ Usare le risorse seguenti per altre informazioni su System Center Configuration 
 -   Se si riscontra una maggiore praticità nella ricerca della documentazione archiviata in locale, è possibile selezionare vari argomenti in TechNet e salvarli in locale. **Accedere a TechNet**e quindi nella parte superiore della pagina da salvare in locale fare clic su **Esporta** (accanto a **Stampa**). Verrà quindi visualizzato il banner **Esporta più insiemi di pagine** e sarà possibile aggiungere e rimuovere le pagine desiderate. Fare clic su **Gestisci pagine** per esportarle. Per altre informazioni, fare clic su **Guida** nel banner.  
 
 ###  <a name="a-namebkmkproductgroupbloga-the-system-center-configuration-manager-team-blog"></a><a name="BKMK_ProductGroupBlog"></a> Blog del team di System Center Configuration Manager  
- I team di progettazione e i team associati di Configuration Manager usano [System Center Configuration Manager Team Blog (Blog del team di System Center Configuration Manager)](http://go.microsoft.com/fwlink/?LinkId=191941) per offrire informazioni tecniche e altre notizie su Configuration Manager e le relative tecnologie. I post di questo blog integrano le informazioni di supporto e la documentazione relativa al prodotto.  
+ I team di progettazione e i team associati di Configuration Manager usano [System Center Configuration Manager Team Blog (Blog del team di System Center Configuration Manager)](http://go.microsoft.com/fwlink/?LinkId=191941) per offrire informazioni tecniche e altre notizie su Configuration Manager e le relative tecnologie. I post di questo blog integrano le informazioni di supporto e la documentazione relativa al prodotto.  
 
 ###  <a name="a-namebkmksupportoptionsa-support-options-and-community-resources"></a><a name="BKMK_SupportOptions"></a> Opzioni di supporto e risorse per la community  
  I seguenti collegamenti forniscono informazioni sulle opzioni di supporto e sulle risorse per la community:  
@@ -79,6 +79,6 @@ Usare le risorse seguenti per altre informazioni su System Center Configuration 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

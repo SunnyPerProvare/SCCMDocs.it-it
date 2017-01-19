@@ -1,6 +1,6 @@
 ---
-title: Installare un sito usando il supporto di base della versione 1606 | System Center Configuration Manager
-description: Informazioni sull'uso del supporto di base della versione 1606 per installare o aggiornare siti per System Center Configuration Manager.
+title: Installare un sito usando il supporto di base 1606 | Microsoft Docs
+description: Informazioni sull&quot;uso del supporto di base della versione 1606 per installare o aggiornare siti per System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/12/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5e97fbcdc21022e98b4cbdb198273dfe544a561f
-ms.openlocfilehash: 3df46a00f2208ffa687c8c99ce610266e206eef0
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: a80095fb3b227653126a028ab4ab8f4e2dbd612b
 
 
 ---
@@ -83,7 +83,7 @@ Ad esempio, per installare una versione con licenza di Current Branch si usa:
   **Nome chiave: SABranchOptions**
    -    **SSActive = 1**
    - **CurrentBranch = 1**
- 
+
 
 > [!IMPORTANT]  
 > **SABranchOptions** funziona solo con il programma di installazione del supporto di base. Non è applicabile quando si esegue il programma di installazione dalla cartella CD.Latest di un sito installato in precedenza tramite il supporto di base della versione 1606.
@@ -148,6 +148,6 @@ Usare il programma di installazione di Configuration Manager della cartella CD.L
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

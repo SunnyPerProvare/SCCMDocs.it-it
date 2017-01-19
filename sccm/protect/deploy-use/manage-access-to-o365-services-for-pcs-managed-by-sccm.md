@@ -1,8 +1,8 @@
 ---
-title: Gestire l'accesso ai servizi di O365 per i PC gestiti | System Center Configuration Manager
-description: Informazioni su come configurare l'accesso condizionale per i PC gestiti da System Center Configuration Manager.
+title: Gestire l&quot;accesso ai servizi di Office 365 per computer gestiti | Microsoft Docs
+description: Informazioni su come configurare l&quot;accesso condizionale per i PC gestiti da System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ccdb424a-b603-4ccc-af36-558924248022
 caps.latest.revision: 15
-author: karthikaraman
-ms.author: karaman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5c6cf3c1697b49708aa5192b67b08b700da7dc72
-ms.openlocfilehash: c475c560971ab73e8be7671164a010a91bd3f229
+ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
+ms.openlocfilehash: da5fcd65d7af8d73aa23f4a7d96cd8fc6e48f9dc
 
 
 ---
@@ -30,7 +30,7 @@ ms.openlocfilehash: c475c560971ab73e8be7671164a010a91bd3f229
  A partire dalla versione 1602 di Configuration Manager è possibile configurare l'accesso condizionale per i PC gestiti da System Center Configuration Manager.  
 
 > [!IMPORTANT]  
->  Si tratta di una funzionalità di versione non definitiva disponibile negli aggiornamenti 1602 e 1606. Le funzionalità di versioni non definitive sono incluse nel prodotto a scopo di test preliminare in un ambiente di produzione, ma non devono essere considerate pronte per l'ambiente di produzione. Per altre informazioni, vedere la sezione relativa all'[abilitazione delle funzionalità facoltative dagli aggiornamenti](../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease).
+>  Si tratta di una funzionalità di versione non definitiva disponibile negli aggiornamenti 1602, 1606 e 1610. Le funzionalità di versioni non definitive sono incluse nel prodotto a scopo di test preliminare in un ambiente di produzione, ma non devono essere considerate pronte per l'ambiente di produzione. Per altre informazioni, vedere la sezione relativa all'[abilitazione delle funzionalità facoltative dagli aggiornamenti](../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease).
 > - Dopo aver installato l'aggiornamento 1602, il tipo di funzionalità viene visualizzato come rilasciato anche se si tratta di una funzionalità di versione non definitiva.
 > - Se si esegue l'aggiornamento dalla versione 1602 alla versione 1606, il tipo di funzionalità viene visualizzato come rilasciato anche se rimane come funzionalità di versione non definita.
 > - Se si esegue l'aggiornamento dalla versione 1511 direttamente alla versione 1606, il tipo di funzionalità viene visualizzato come funzionalità di versione non definitiva.
@@ -96,16 +96,16 @@ ms.openlocfilehash: c475c560971ab73e8be7671164a010a91bd3f229
 
  Gruppi di utenti di sicurezza di Active Directory. Questi gruppi di utenti devono essere sincronizzati con Azure Active Directory. È anche possibile configurare questi gruppi nell'interfaccia di amministrazione di Office 365 o nel portale per gli account di Intune.  
 
- È possibile specificare due tipi di gruppi in ogni criterio:  
+ È possibile specificare due tipi di gruppi in ogni criterio. :  
 
--   **Gruppi di destinazione**: gruppi di utenti a cui si applicano i criteri  
+-   **Gruppi di destinazione**: gruppi di utenti a cui si applicano i criteri. Usare lo stesso gruppo per i criteri di conformità e di accesso condizionale.  
 
 -   **Gruppi esentati**: gruppi di utenti che sono esentati dai criteri (facoltativo)  
     Se un utente si trova in entrambi i gruppi, sarà esentato dai criteri.  
 
      Solo i gruppi di destinazione dei criteri di accesso condizionale vengono valutati.  
 
-### <a name="step-3-create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online"></a>Passaggio 3.  Creare criteri di accesso condizionale per Exchange Online e SharePoint Online  
+### <a name="step-3--create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online"></a>Passaggio 3.  Creare criteri di accesso condizionale per Exchange Online e SharePoint Online  
 
 1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 
@@ -126,7 +126,7 @@ ms.openlocfilehash: c475c560971ab73e8be7671164a010a91bd3f229
 6.  In **Gruppi di destinazione**fare clic su **Modifica** per selezionare i gruppi di sicurezza di Azure Active Directory ai quali verranno applicati i criteri.  
 
     > [!NOTE]  
-    >  Ai gruppi di utenti a cui sono applicati i criteri di accesso condizionale devono essere applicati anche i criteri di conformità.  
+    >  È necessario usare lo stesso gruppo di utenti di sicurezza per la distribuzione dei criteri di conformità e il gruppo di destinazione per i criteri di accesso condizionale.  
 
      Facoltativamente, in **Gruppi esentati**fare clic su **Modifica** per selezionare i gruppi di sicurezza di Azure Active Directory esentati da questi criteri.  
 
@@ -148,6 +148,6 @@ ms.openlocfilehash: c475c560971ab73e8be7671164a010a91bd3f229
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

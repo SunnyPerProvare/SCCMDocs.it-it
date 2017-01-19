@@ -1,6 +1,6 @@
 ---
 
-title: Scenario di esempio per distribuire e monitorare gli aggiornamenti software di sicurezza | Configuration Manager
+title: Scenario di esempio per distribuire e monitorare gli aggiornamenti software di sicurezza | Microsoft Docs
 description: Questo scenario di esempio descrive come usare gli aggiornamenti software in Configuration Manager per distribuire e monitorare gli aggiornamenti software di sicurezza rilasciati ogni mese da Microsoft.
 keywords: 
 author: dougeby
@@ -14,8 +14,8 @@ ms.technology:
 ms.service: 
 ms.assetid: c32f757a-02da-43f2-b055-5cfd097d8c43
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: cd03ddda0a39704a5715f7ed8d620daaefb57653
+ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
+ms.openlocfilehash: 0e6e2b3a9455bb6eda437eb1325aaaadb3d83420
 
 
 
@@ -96,6 +96,6 @@ Giorgio ha completato la distribuzione mensile per gli aggiornamenti del softwar
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

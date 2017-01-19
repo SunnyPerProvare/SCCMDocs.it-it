@@ -1,5 +1,5 @@
 ---
-title: "Funzionalità di Technical Preview 1610 per System Center Configuration Manager"
+title: "Funzionalità della versione Technical Preview 1610 per System Center Configuration Manager | Microsoft Docs"
 description: "Informazioni sulle funzionalità disponibili in Technical Preview per System Center Configuration Manager, versione 1610."
 ms.custom: na
 ms.date: 10/21/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: c9fe6961a63495d08a3e58e3ddf46c5d316e2613
-ms.openlocfilehash: 865b5078282bf240aa6a2aef5cb2662f2471fb71
+ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
+ms.openlocfilehash: 6ffcb33e94f942fc9400457d3f16b65e12332956
 
 ---
 # <a name="capabilities-in-technical-preview-1610-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1610 per System Center Configuration Manager
@@ -82,7 +82,6 @@ Per configurare le esclusioni dall'aggiornamento automatico:
 > [!NOTE]
 > Anche se l'interfaccia utente indica che i client non verranno aggiornati, esistono due metodi che è possibile usare per sostituire queste impostazioni. L'installazione push del client e l'installazione manuale del client consentono di sostituire questa configurazione. Per altre informazioni, vedere la sezione seguente.
 
-
 ### <a name="how-to-upgrade-a-client-that-is-in-an-excluded-collection"></a>Come aggiornare un client in una raccolta esclusa
 Se una raccolta è configurata per l'esclusione, i membri di tale raccolta possono aggiornare il software client solo tramite uno dei due metodi che sostituiscono l'esclusione:
  - **Installazione push client**: è possibile usare l'installazione push del client per eseguire l'aggiornamento di un client che appartiene a una raccolta esclusa. Questa operazione è consentita in quanto richiesta dall'amministratore e permette di aggiornare i client lasciando invariata l'esclusione dell'intera raccolta.       
@@ -92,12 +91,80 @@ Se una raccolta è configurata per l'esclusione, i membri di tale raccolta posso
 
 Per altre informazioni su questi metodi di installazione del client, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).
 
+## <a name="windows-defender-configuration-settings"></a>Impostazioni di configurazione di Windows Defender
+
+È ora possibile configurare le impostazioni del client di Windows Defender nei computer Windows 10 registrati in Intune usando gli elementi di configurazione nella console di Configuration Manager.
+
+In particolare, è possibile configurare le seguenti impostazioni di Windows Defender:
+- Consenti il monitoraggio in tempo reale
+- Consenti il monitoraggio del comportamento
+- Abilita Network Inspection System
+- Analizza tutti i download
+- Consenti analisi script
+- Monitora l'attività di file e programmi
+  - File monitorati
+- Giorni di rilevamento del malware risolto
+- Consenti l'accesso all'interfaccia utente client
+- Pianifica un'analisi del sistema
+  - Giorno pianificato
+  - Ora pianificata
+- Pianifica analisi veloce giornaliera
+  - Ora pianificata
+- Limita utilizzo CPU durante un'analisi Analizza file di archivio
+- Analisi dei messaggi di posta elettronica
+- Analizza unità rimovibili
+- Scan mapped drives (Analizza unità mappate)
+- Scan files opened from net shares (Analizza file aperti da condivisioni di rete)
+- Intervallo di aggiornamento della firma
+- Consenti protezione cloud
+- Richiedi agli utenti l'invio dei campioni
+- Rilevamento di applicazioni potenzialmente indesiderate
+- Cartelle e file esclusi
+- Estensioni di file escluse
+- Processi esclusi
+
+> [!NOTE]
+> Queste impostazioni possono essere configurate solo nei computer client che eseguono Windows 10 November Update (1511) e versioni successive.
+
+### <a name="try-it-out"></a>Verifica
+
+1.  Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Impostazioni di conformità** > **Elementi di configurazione** e creare un nuovo **elemento di configurazione**.
+2.  Immettere un nome, quindi selezionare **Windows 8.1 e Windows 10** in **Impostazioni per dispositivi gestiti senza il client di Configuration Manager** e fare clic su **Avanti**.
+3.  Verificare che **tutti i dispositivi Windows 10 a 64 bit** e **tutti i dispositivi Windows 10 a 32 bit** siano selezionati nella pagina **Piattaforme supportate**, quindi fare clic su **Avanti**.
+4.  Selezionare il gruppo di impostazioni **Windows Defender**, quindi fare clic su **Avanti**.
+5.  Configurare le impostazioni desiderate in questa pagina, quindi fare clic su **Avanti**.
+6.  Completare la procedura guidata.
+7.  Aggiungere questo elemento di configurazione a una linea di base di configurazione e distribuire questa linea di base nei computer che eseguono Windows 10 November Update (1511) o versione successiva.
+
+> [!NOTE]
+> Ricordarsi di selezionare la casella di controllo **Monitora e aggiorna impostazioni non conformi** quando si distribuisce la linea di base di configurazione.
+
+## <a name="request-policy-sync-from-administrator-console"></a>Richiedere la sincronizzazione dei criteri dalla console di amministrazione
+
+Ora è possibile richiedere una sincronizzazione dei criteri per un dispositivo mobile dalla console di Configuration Manager, senza dover richiedere la sincronizzazione dal dispositivo stesso. Le informazioni sullo stato della richiesta di sincronizzazione sono disponibili nelle visualizzazioni del dispositivo come nuova colonna, denominata **Remote Sync State** (Stato sincronizzazione remota). Lo stato è visualizzato anche nella sezione **Dati di individuazione** della finestra di dialogo **Proprietà** di ogni dispositivo mobile.
+
+### <a name="try-it-out"></a>Verifica
+
+1.  Nella console di Configuration Manager console passare ad **Asset e conformità** > **Panoramica** > Dispositivi.
+2.  Nel menu **Azioni remote dispositivo** selezionare **Send Sync Request** (Invia richiesta di sincronizzazione).
+
+La sincronizzazione può richiedere da 5 a 10 minuti. Tutte le modifiche ai criteri verranno sincronizzate nel dispositivo. È possibile rilevare lo stato della richiesta di sincronizzazione nella colonna **Remote Sync State** (Stato sincronizzazione remota) nella visualizzazione **Dispositivi** o nella finestra di dialogo **Proprietà** del dispositivo.
+
+## <a name="additional-security-role-support"></a>Supporto di ruoli di sicurezza aggiuntivi
+
+Oltre al ruolo Amministratore completo, anche i ruoli di sicurezza incorporati seguenti hanno ora accesso completo agli elementi nel nodo **Tutti i dispositivi di proprietà dell'azienda**, inclusi i **dispositivi predichiarati**, i **profili di registrazione iOS** e i **profili di registrazione Windows**: •   **Gestione asset** •   **Gestione accesso risorse aziendali**
+
+A queste aree della console di Configuration Manager continua a essere concesso l'accesso in sola lettura al ruolo **Analista di sola lettura**.
+
+## <a name="conditional-access-for-windows-10-vpn-profiles"></a>Accesso condizionale per profili VPN di Windows 10
+
+È ora possibile richiedere la conformità dei dispositivi Windows 10 registrati in Azure Active Directory per poter ottenere l'accesso alla rete VPN tramite i profili VPM di Windows 10 creati nella console di Configuration Manager. Per disporre di questa funzionalità, selezionare la casella di controllo **Abilita l'accesso condizionale per questa connessione VPN** nella pagina **Metodo di autenticazione** della procedura di creazione guidata del profilo VPN e nelle proprietà dei profili VPN di Windows 10. Se si abilita l'accesso condizionale per il profilo, è anche possibile specificare un certificato separato per l'autenticazione Single Sign-On.
 
 ## <a name="see-also"></a>Vedere anche
 [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Riferimento tecnico per i controlli crittografici | System Center Configuration Manager
+title: Riferimento tecnico per i controlli crittografici | Microsoft Docs
 description: Questo argomento illustra come la firma e la crittografia consentono di impedire agli autori di attacchi la lettura dei dati in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 354289f980836f10ebfc770b2408ba02dcb0eecb
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: 0f76ed3dd74a80d9e22cfa743e5aa484f6cd7d97
 
 
 ---
@@ -284,7 +284,6 @@ System Center Configuration Manager usa la firma e la crittografia per protegger
 
 
 
-
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

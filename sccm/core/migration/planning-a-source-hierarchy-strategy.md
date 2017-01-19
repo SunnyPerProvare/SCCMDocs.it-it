@@ -1,5 +1,5 @@
 ---
-title: Strategia per una gerarchia di origine| System Center Configuration Manager
+title: Strategia per la gerarchia di origine | Microsoft Docs
 description: Configurare una gerarchia di origine e raccogliere i dati da un sito di origine prima di configurare un processo di migrazione di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 11ab1dc90c3e26b159346693b8e85a182219daf4
+ms.sourcegitcommit: 5e3d3f4194b06442e34c10988a20fe9ca40ac5d7
+ms.openlocfilehash: 39f258ac271bec53b9a2cb2c8bb376ef5ba23e11
 
 
 ---
@@ -35,7 +35,7 @@ Prima di configurare un processo di migrazione nell'ambiente di System Center Co
 -   [Raccolta dati](#BKMK_Data_Gathering)  
 
 ##  <a name="a-namebkmksourcehierarchiesa-source-hierarchies"></a><a name="BKMK_Source_Hierarchies"></a> Gerarchie di origine  
-Una gerarchia di origine è una gerarchia di Configuration Manager che contiene i dati di cui si vuole eseguire la migrazione. Quando si configura la migrazione e si specifica una gerarchia di origine, specificare il sito di livello superiore della gerarchia di origine. Tale sito viene anche denominato sito di origine. Anche i siti aggiuntivi da cui è possibile eseguire la migrazione dei dati dalla gerarchia di origine vengono denominati siti di origine:  
+Una gerarchia di origine è una gerarchia di Configuration Manager che contiene i dati di cui si vuole eseguire la migrazione. Quando si configura la migrazione e si specifica una gerarchia di origine, specificare il sito di livello superiore della gerarchia di origine. Tale sito viene anche denominato sito di origine. Anche i siti aggiuntivi da cui è possibile eseguire la migrazione dei dati dalla gerarchia di origine vengono denominati siti di origine:  
 
 -   Quando si configura un processo di migrazione per la migrazione dei dati da una gerarchia di origine di Configuration Manager 2007, tale processo viene configurato per eseguire la migrazione dei dati da uno o più siti di origine specifici nella gerarchia di origine.  
 
@@ -102,7 +102,7 @@ Per altre informazioni sulla configurazione di una gerarchia di origine, vedere 
 > [!NOTE]  
 >  Prima di espandere un sito primario autonomo in una gerarchia con un sito di amministrazione centrale, è necessario interrompere la raccolta di tutti i dati. È possibile riconfigurare la raccolta dati al termine dell'espansione del sito.  
 
-### <a name="gather-data-now"></a>Raccogli dati adesso  
+### <a name="gather-data-now"></a>Raccogliere i dati adesso  
  Dopo aver eseguito il processo di raccolta dati iniziale per un sito, questo processo viene ripetuto per individuare gli oggetti aggiornati dall'ultimo ciclo di raccolta dati. È anche possibile eseguire l'azione **Raccogli dati adesso** nella console di Configuration Manager per avviare subito il processo e reimpostare l'ora di inizio del ciclo successivo.  
 
  Al termine del processo di raccolta dati per un sito di origine, è possibile condividere i punti di distribuzione dal sito di origine e configurare i processi di migrazione per eseguire la migrazione dei dati dal sito. La raccolta dati è un processo ripetuto per la migrazione e continua finché non viene modificata la gerarchia di origine oppure si utilizza l'azione **Interrompi raccolta dati** per terminare il processo di raccolta dati per tale sito.  
@@ -116,6 +116,6 @@ Per altre informazioni sulla configurazione di una gerarchia di origine, vedere 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

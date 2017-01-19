@@ -1,8 +1,8 @@
 ---
-title: Prerequisiti dei profili certificato | System Center Configuration Manager
+title: Prerequisiti per i profili certificato | Microsoft Docs
 description: Informazioni sui profili certificato in System Center Configuration Manager e sulle dipendenze esterne e dipendenze nel prodotto.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/27/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: ba42385eb31fffd9f74b35108e71a1ae5a9c71f7
+ms.sourcegitcommit: 593fbd0587d54490246f48ae54f666bac6b7830d
+ms.openlocfilehash: 08fb30da2060728142648f13846be737f98f2276
 
 
 ---
@@ -26,7 +26,7 @@ ms.openlocfilehash: ba42385eb31fffd9f74b35108e71a1ae5a9c71f7
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-I profili certificato in System Center Configuration Manager hanno dipendenze esterne e dipendenze nel prodotto.  
+I profili certificato in System Center Configuration Manager (noto anche come ConfigMgr o SCCM) hanno dipendenze esterne e dipendenze nel prodotto.  
 
 ## <a name="dependencies-external-to-configuration-manager"></a>Dipendenze esterne a Configuration Manager  
 
@@ -49,6 +49,6 @@ I profili certificato in System Center Configuration Manager hanno dipendenze es
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

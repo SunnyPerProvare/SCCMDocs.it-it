@@ -1,5 +1,5 @@
 ---
-title: "Riferimento per le attività di manutenzione | System Center Configuration Manager"
+title: "Riferimento per le attività di manutenzione | Microsoft Docs"
 description: "Leggere le informazioni dettagliate su ogni attività di manutenzione del sito di System Center Configuration Manager in cui le attività sono abilitate per impostazione predefinita."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f88282736c5e1fd3560745933f4c8e2a2268ea77
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 7aee7c89c2857bc59beff7f140f06c4ac82f4294
 
 
 ---
@@ -279,6 +279,6 @@ Questo argomento fornisce informazioni dettagliate su ognuna delle attività di 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

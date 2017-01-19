@@ -1,5 +1,5 @@
 ---
-title: Configurare il client di Endpoint Protection | System Center Configuration Manager
+title: Configurare il client di Endpoint Protection | Microsoft Docs
 description: Informazioni su come configurare le impostazioni client personalizzate per Endpoint Protection che possono essere distribuite alle raccolte di computer nella gerarchia.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: fe342b76569f171855c6c422c7173317381e0103
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: 2d7ec9cc626f3ccfded990cf8ba392c4979adfee
 
 
 ---
@@ -176,6 +176,6 @@ Quando viene distribuita un'immagine che contiene il software client di Endpoint
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,6 +1,6 @@
 ---
-title: Personalizzare le immagini del sistema operativo | Configuration Manager
-description: "Usare le sequenze di attività di acquisizione e compilazione, la configurazione manuale o una combinazione di entrambe per personalizzare un'immagine del sistema operativo."
+title: Personalizzare le immagini del sistema operativo | Microsoft Docs
+description: "Usare le sequenze di attività di acquisizione e compilazione, la configurazione manuale o una combinazione di entrambe per personalizzare un&quot;immagine del sistema operativo."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: e7e0ecf394297799c2a3d0c14e719182b403e1e8
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: c183fbde6de29ccd7c78ae066d305f0e99e37bda
 
 
 ---
@@ -28,7 +28,7 @@ ms.openlocfilehash: e7e0ecf394297799c2a3d0c14e719182b403e1e8
 
 Le immagini di sistema operativo in System Center Configuration Manager sono file WIM e rappresentano una raccolta compressa di cartelle e file di riferimento necessari per installare e configurare un sistema operativo in un computer. Un'immagine personalizzata del sistema operativo viene creata e acquisita da un computer di riferimento configurato con tutti gli strumenti, gli aggiornamenti software, i file di supporto, i file di sistema del sistema operativo necessari e altre applicazioni software. Il livello di configurazione manuale del computer di riferimento dipende dall'utente. È possibile automatizzare completamente la configurazione del computer di riferimento usando una sequenza di attività di creazione e acquisizione, configurare manualmente determinati aspetti del computer di riferimento e quindi automatizzare gli aspetti rimanenti usando sequenze di attività, oppure configurare manualmente il computer di riferimento senza usare le sequenze di attività. Usare le sezioni seguenti per personalizzare un sistema operativo.
 
-##  <a name="a-namebkmkpreparereferencecomputera-prepare-for-the-reference-computer"></a><a name="BKMK_PrepareReferenceComputer"></a> Preparare il computer di riferimento  
+##  <a name="a-namebkmkpreparereferencecomputera-prepare-for-the--reference-computer"></a><a name="BKMK_PrepareReferenceComputer"></a> Preparare il computer di riferimento  
  Prima di acquisire un'immagine del sistema operativo da un computer di riferimento occorre considerare vari aspetti.  
 
 ###  <a name="a-namebkmkrefcomputerdecidea-decide-between-an-automated-or-manual-configuration"></a><a name="BKMK_RefComputerDecide"></a> Scegliere tra una configurazione automatizzata o manuale  
@@ -140,6 +140,6 @@ Le immagini di sistema operativo in System Center Configuration Manager sono fil
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

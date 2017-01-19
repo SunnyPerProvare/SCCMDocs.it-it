@@ -1,5 +1,5 @@
 ---
-title: Installare i ruoli del sistema del sito | Software MDM locale | System Center Configuration Manager
+title: Installare i ruoli di sistema del sito | Microsoft Docs| MDM locale
 description: Installare i ruoli del sistema del sito per la gestione di dispositivi mobili locale in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d6a36acc53b8ccd85395a7543cbd0e361d093840
+ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
+ms.openlocfilehash: 7f3b733390554b8dc149751d8a5dfc3ed3af43bf
 
 
 ---
@@ -74,6 +74,6 @@ La gestione di dispositivi mobili locale di System Center Configuration Manager 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

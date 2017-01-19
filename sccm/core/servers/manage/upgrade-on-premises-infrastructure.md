@@ -1,6 +1,6 @@
 ---
-title: Aggiornare l'infrastruttura locale | System Center Configuration Manager
-description: Informazioni su come aggiornare l'infrastruttura, ad esempio SQL Server e il sistema operativo del sito di sistemi del sito.
+title: Aggiornare l&quot;infrastruttura locale | Microsoft Docs
+description: Informazioni su come aggiornare l&quot;infrastruttura, ad esempio SQL Server e il sistema operativo del sito di sistemi del sito.
 ms.custom: na
 ms.date: 10/28/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: c8115fba0722fc902e60ce201d8a9914036c1245
-ms.openlocfilehash: 1239bf81991bb233a9640606bb47f598a70d5e50
+ms.sourcegitcommit: 8b4c80aa092369ec251757d82a1b4bb2863aa96a
+ms.openlocfilehash: f3742dcb930444bab7eb02374fd77ebd0e455734
 
 
 ---
@@ -78,7 +78,7 @@ Può succedere che, dopo aver aggiornato il server del sito o un server che ospi
 3. Espandere l'albero sotto Radice, selezionare il nodo **SMS** e fare clic su **Sicurezza**.  Assicurarsi che il gruppo **SMS Admins** abbia le autorizzazioni seguenti:
   -     Abilita account
   -     Abilita remoto
-4. Nella scheda **Sicurezza**, sotto il nodo SMS, selezionare il nodo **site_<sitecode>** e fare clic su **Sicurezza**. Assicurarsi che il gruppo **SMS Admins** abbia le autorizzazioni seguenti:
+4. Nella scheda **Sicurezza**, sotto il nodo SMS, selezionare il nodo **site_&lt;sitecode>** e fare clic su **Sicurezza**. Assicurarsi che il gruppo **SMS Admins** abbia le autorizzazioni seguenti:
   -   Esegui metodi
   -   Scrittura provider
   -   Abilita account
@@ -176,6 +176,19 @@ Quando si aggiorna la versione di SQL Server che ospita il database del sito, è
  2. Aggiornare i siti secondari prima di eseguire l’aggiornamento del sito primario padre di un sito secondario.
  3. Aggiornare per ultimo i siti primari padre. Sono inclusi sia i siti primari figlio che fanno riferimento a un sito di amministrazione centrale sia i siti primari autonomi che sono siti di livello superiore di una gerarchia.
 
+**Livello di stima della cardinalità di SQL Server e database del sito:**   
+Quando un database del sito viene aggiornato da una versione precedente di SQL Server, il database mantiene il livello CE (Cardinality Estimation, Stima della cardinalità) SQL esistente se questo corrisponde al minimo consentito per l'istanza di SQL Server. L'aggiornamento di SQL Server con un database a un livello di compatibilità inferiore a quello consentito imposta automaticamente il database al livello di compatibilità più basso consentito da SQL.
+
+La tabella seguente identifica i livelli di compatibilità consigliati per i database del sito di Configuration Manager:
+
+|Versione di SQL Server | Livelli di compatibilità supportati |Livello consigliato|
+|----------------|--------------------|--------|
+| SQL Server 2016| 130, 120, 110, 100 | 130|
+| SQL Server 2014| 120, 110, 100      | 110|
+
+Per identificare il livello di compatibilità CE di SQL Server in uso per il database del sito, eseguire la query SQL seguente sul server di database del sito: **SELECT name, compatibility_level FROM sys.databases**
+
+ Per altre informazioni sui livelli di compatibilità CE di SQL e su come impostarli, vedere [Livello di compatibilità ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/library/bb510680.aspx).
 
 
 **Per altre informazioni su SQL Server, vedere la relativa documentazione di SQL Server su TechNet:**  
@@ -196,6 +209,6 @@ Quando si aggiorna la versione di SQL Server che ospita il database del sito, è
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

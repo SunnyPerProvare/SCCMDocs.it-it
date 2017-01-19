@@ -1,6 +1,6 @@
 ---
-title: Esecuzione del pre-provisioning di BitLocker in Windows PE | Configuration Manager
-description: "L'attività di pre-provisioning di BitLocker in Configuration Manager attiva BitLocker dall'ambiente preinstallazione di Windows prima della distribuzione del sistema operativo."
+title: Pre-provisioning di BitLocker in Windows PE | Microsoft Docs
+description: "L&quot;attività di pre-provisioning di BitLocker in Configuration Manager attiva BitLocker dall&quot;ambiente preinstallazione di Windows prima della distribuzione del sistema operativo."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f047e4a7c9325e0f8662b4f567529fd439c76b0c
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: baca498dbc5b8e168852aa3c18ee23a9c483e69c
 
 
 ---
@@ -63,6 +63,6 @@ Il passaggio della sequenza di attività **pre-provisioning di BitLocker** in Sy
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

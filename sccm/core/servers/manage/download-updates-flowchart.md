@@ -1,5 +1,5 @@
 ---
-title: Diagramma di flusso - Scaricare gli aggiornamenti | System Center Configuration Manager
+title: 'Diagramma di flusso: scaricare gli aggiornamenti | Microsoft Docs'
 description: Consente di visualizzare il processo con il quale un sito con un punto di connessione del servizio in linea scarica gli aggiornamenti nella console.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 96872f92c8c8e76467740a8bb269c172f47be641
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: cd2ef0f0d694937b760d514c2a6a24973810a2b2
 
 
 ---
@@ -31,6 +31,6 @@ Questo flusso di dati consente di visualizzare il processo con il quale un sito 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

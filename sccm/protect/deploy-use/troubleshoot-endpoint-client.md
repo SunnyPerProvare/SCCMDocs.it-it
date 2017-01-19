@@ -1,5 +1,5 @@
 ---
-title: Risoluzione dei problemi di Windows Defender o del client Endpoint Protection | System Center Configuration Manager
+title: Risoluzione dei problemi di Windows Defender o del client Endpoint Protection | Microsoft Docs
 description: Informazioni su come risolvere i problemi con Windows Defender ed Endpoint Protection.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 4d30cd85cb59f8f27704979074470bb06310054b
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: eda5eb85aada88b77166582bb116cc680b2c0631
 
 
 ---
@@ -244,7 +244,7 @@ Se si verificano problemi con Windows Defender o Endpoint Protection, chiedere a
 
 -   Chiudere tutte le applicazioni e riavviare il computer.  
 
-### <a name="step-2-make-sure-the-windows-defender-orbr-endpoint-protection-service-is-set-to-automatic-and-is-started"></a>Passaggio 2: verificare che il servizio Windows Defender o<br />      "Endpoint Protectionâ€ sia impostato su Automatico e che sia avviato  
+### <a name="step-2-make-sure-the-windows-defender-orbr-------endpoint-protection-service-is-set-to-automatic-and-is-started"></a>Passaggio 2: verificare che il servizio Windows Defender o<br />      Endpoint Protection sia impostato su Automatico e che sia avviato  
 
 1.  Fare clic su **Start** , cercare **services.msc**e quindi premere **INVIO**.  
 
@@ -325,6 +325,6 @@ Se si verificano problemi con Windows Defender o Endpoint Protection, chiedere a
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

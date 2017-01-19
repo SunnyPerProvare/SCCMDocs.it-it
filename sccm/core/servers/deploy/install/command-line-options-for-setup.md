@@ -1,5 +1,5 @@
 ---
-title: Impostare le opzioni della riga di comando | System Center Configuration Manager
+title: Opzioni della riga di comando per la configurazione | Microsoft Docs
 description: Usare le informazioni in questo articolo per configurare gli script o installare System Center Configuration Manager dalla riga di comando.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 7d1f55786a42650395fcb66ee4917434feecb630
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: f2b5a1dfa654a30e03bce2b56100bc876358c9fe
 
 ---
 # <a name="command-line-options-for-setup-for-system-center-configuration-manager"></a>Opzioni della riga di comando per il programma di installazione in System Center Configuration Manager
@@ -1260,6 +1260,6 @@ Usare i dettagli seguenti per installare un sito di amministrazione centrale usa
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

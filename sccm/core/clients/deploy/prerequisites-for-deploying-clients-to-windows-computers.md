@@ -1,5 +1,5 @@
 ---
-title: Prerequisiti per la distribuzione di client Windows | System Center Configuration Manager
+title: Prerequisiti per la distribuzione di client Windows | Microsoft Docs
 description: Informazioni sui prerequisiti per la distribuzione di client a computer Windows in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -13,12 +13,12 @@ ms.topic: get-started-article
 ms.assetid: 1a2a9b48-a95b-4643-b00c-b3079584ae2e
 caps.latest.revision: 16
 caps.handback.revision: 0
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 03ae6de34742ed0030e42c13639ef853d6b2bedc
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: cbcffea0fe2b4c8a05d3a835ff1193b528e55762
 
 
 ---
@@ -43,7 +43,7 @@ La distribuzione di client di Configuration Manager nell'ambiente ha le dipenden
 |||  
 |-|-|  
 |Windows Installer versione 3.1.4000.2435|Necessario per supportare l'utilizzo di file di aggiornamento di Windows Installer (MSP) per pacchetti e aggiornamenti software.|  
-|[KB2552033](http://go.microsoft.com/fwlink/p/?LinkId=240048)|Installare questo hotfix nei server del sito che eseguono Windows Server 2008 R2 quando l'installazione push client è abilitata.|  
+|[KB2552033](http://go.microsoft.com/fwlink/p/?LinkId=240048)|Installare questo hotfix nei server del sito che eseguono Windows Server 2008 R2 quando l'installazione push client è abilitata.|  
 |Microsoft Background Intelligent Transfer Service (BITS) versione 2.5|Necessario per consentire i trasferimenti di dati limitati tra il computer client e i sistemi del sito di Configuration Manager. BITS non viene scaricato automaticamente durante l'installazione del client. Quando BITS viene installato nei computer, in genere è necessario un riavvio per completare l'installazione.<br /><br /> La maggior parte dei sistemi operativi include BITS, ma, in caso contrario (ad esempio, in Windows Server 2003 R2 SP2), è necessario installare BITS prima di installare il client di Configuration Manager.|  
 |Utilità di pianificazione di Microsoft|Per completare l'installazione del client, abilitare questo servizio sul client stesso.|  
 
@@ -58,7 +58,7 @@ La distribuzione di client di Configuration Manager nell'ambiente ha le dipenden
 |Microsoft Core XML Services (MSXML) versione 6.20.5002 o successiva|Necessario per supportare l'elaborazione di documenti XML in Windows.|  
 |Compressione differenziale remota Microsoft (RDC)|Necessaria per ottimizzare la trasmissione dei dati attraverso la rete.|  
 |Microsoft Visual C++ 2013 Redistributable versione 12.0.21005.1|Necessario per supportare le operazioni client. Quando questo aggiornamento viene installato nei computer client, potrebbe essere necessario un riavvio per completare l'installazione.|  
-|Microsoft Visual C++ 2005 Redistributable versione 8.0.50727.42|Necessario per supportare le operazioni di Microsoft SQL Server Compact.|  
+|Microsoft Visual C++ 2005 Redistributable versione 8.0.50727.42|Per la versione 1606 e precedenti, necessario per supportare le operazioni di Microsoft SQL Server Compact.|  
 |API per Windows Imaging 6.0.6001.18000|Necessario per consentire a Configuration Manager di gestire i file di immagine Windows (wim).|  
 |Microsoft Policy Platform 1.2.3514.0|Necessario per consentire ai client di valutare le impostazioni di conformità.|  
 |Microsoft Silverlight 5.1.41212.0 (a partire da Configuration Manager versione 1602)|Necessario per supportare l'esperienza utente del sito Web Catalogo applicazioni.|  
@@ -238,6 +238,6 @@ La distribuzione di client di Configuration Manager nell'ambiente ha le dipenden
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

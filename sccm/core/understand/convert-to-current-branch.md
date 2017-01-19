@@ -1,5 +1,5 @@
 ---
-title: Aggiornamento di Long-Term Servicing Branch | System Center Configuration Manager
+title: Aggiornare Long-Term Servicing Branch a Current Branch | Microsoft Docs
 description: Informazioni su come convertire un sito di Long-Term Servicing Branch in un sito di Current Branch.
 ms.custom: na
 ms.date: 10/12/2016
@@ -16,15 +16,15 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 835469e78e83bb54c43e530303d27b0918c531e6
-ms.openlocfilehash: efccff6e2a0b1708d4124648da4e173d41663bd1
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 37fa8da8b4acc3f22c9c435206eedde58d2754f0
 
 ---
 
 
 # <a name="upgrade-the-long-term-servicing-branch-to-the-current-branch"></a>Aggiornare Long-Term Servicing Branch a Current Branch
 
-*Si applica a: System Center Configuration Manager (Long-Term Servicing Branch)* 
+*Si applica a: System Center Configuration Manager (Long-Term Servicing Branch)*
 
 Questo argomento illustra come aggiornare (convertire) un sito e una gerarchia che eseguono Long-Term Servicing Branch (LBTS) di Configuration Manager in Current Branch.
 
@@ -56,6 +56,6 @@ Al termine, il sito viene convertito in Current Branch e sarà possibile usare t
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

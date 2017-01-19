@@ -1,6 +1,6 @@
 ---
-title: Eseguire l'individuazione | System Center Configuration Manager
-description: Leggere la panoramica del processo di individuazione e dei record di dati dell'individuazione.
+title: Eseguire l&quot;individuazione | Microsoft Docs
+description: Leggere la panoramica del processo di individuazione e dei record di dati dell&quot;individuazione.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d73b493318b0a1938d42265ec03369015365addb
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 1d225b9f904215280feef5efd4283cbd51f84577
 
 
 ---
@@ -90,6 +90,6 @@ Quindi, dopo aver stabilito quali metodi usare, vedere le informazioni relative 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

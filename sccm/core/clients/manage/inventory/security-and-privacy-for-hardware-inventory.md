@@ -1,6 +1,6 @@
 ---
-title: Sicurezza e privacy per l'inventario hardware | System Center Configuration Manager
-description: Informazioni sulla sicurezza e la privacy per l'inventario hardware in System Center Configuration Manager.
+title: Privacy e sicurezza per l&quot;inventario hardware | Microsoft Docs
+description: Informazioni sulla sicurezza e la privacy per l&quot;inventario hardware in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 59c13b65cf93fa12218336e1a03b8f7c2d82aa5f
+ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
+ms.openlocfilehash: b12d4a1592ce4601fa1f0a6cd2a539a3664c0c37
 
 
 ---
@@ -33,7 +33,7 @@ Questo argomento contiene informazioni sulla sicurezza e la privacy per l'invent
 |Procedura di sicurezza consigliata|Altre informazioni|  
 |----------------------------|----------------------|  
 |Firmare e crittografare i dati dell'inventario|Quando i client comunicano con i punti di gestione tramite HTTPS, tutti i dati inviati sono crittografati mediante SSL. Tuttavia, quando i computer client usano HTTP per comunicare con i punti di gestione nella rete Intranet, i dati dell'inventario del client e i file raccolti possono essere inviati senza firma e non crittografati. Assicurarsi che la configurazione del sito preveda la firma obbligatoria e l'uso della crittografia. Inoltre, se i client possono supportare l'algoritmo SHA-256, selezionare l'opzione per richiedere SHA-256.|  
-|Non raccogliere file IDMIF e NOIDMIF in ambienti a elevata sicurezza|È possibile utilizzare l'insieme di file IDMIF e NOIDMIF per estendere l'inventario hardware. Se necessario, Configuration Manager crea nuove tabelle o modifica tabelle esistenti nel database di Configuration Manager per contenere le proprietà nei file IDMIF e NOIDMIF. Tuttavia, Configuration Manager non convalida i file IDMIF e NOIDMIF, pertanto questi file potrebbero essere usati per modificare le tabelle che non si vuole modificate. Dati validi potrebbero essere sovrascritti da dati non validi. È anche possibile che vengano aggiunte grandi quantità di dati e l'elaborazione di tali dati potrebbe provocare ritardi in tutte le funzioni di Configuration Manager. Per limitare tali rischi, configurare l'impostazione client dell'inventario hardware **Raccogli file MIF** su **Nessuno**.|  
+|Non raccogliere i file IDMIF e NOIDMIF negli ambienti a elevata sicurezza|È possibile utilizzare l'insieme di file IDMIF e NOIDMIF per estendere l'inventario hardware. Se necessario, Configuration Manager crea nuove tabelle o modifica tabelle esistenti nel database di Configuration Manager per contenere le proprietà nei file IDMIF e NOIDMIF. Tuttavia, Configuration Manager non convalida i file IDMIF e NOIDMIF, pertanto questi file potrebbero essere usati per modificare le tabelle che non si vuole modificate. Dati validi potrebbero essere sovrascritti da dati non validi. È anche possibile che vengano aggiunte grandi quantità di dati e l'elaborazione di tali dati potrebbe provocare ritardi in tutte le funzioni di Configuration Manager. Per limitare tali rischi, configurare l'impostazione client dell'inventario hardware **Raccogli file MIF** su **Nessuno**.|  
 
 ### <a name="security-issues-for-hardware-inventory"></a>Problemi di sicurezza per l'inventario hardware  
  La raccolta dell'inventario espone potenziali vulnerabilità. Gli utenti malintenzionati possono eseguire le attività seguenti:  
@@ -59,6 +59,6 @@ Questo argomento contiene informazioni sulla sicurezza e la privacy per l'invent
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,8 +1,8 @@
 ---
-title: Metodi di installazione client in System Center Configuration Manager
+title: Metodi di installazione client | Microsoft Docs
 description: Informazioni sui metodi di installazione client per System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/23/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.topic: get-started-article
 ms.assetid: 51b5964b-374d-4abc-8619-414a9fffad2d
 caps.latest.revision: 9
 caps.handback.revision: 0
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 169e7871bc1fbc83964ecb17e277d64ce4fd472c
+ms.sourcegitcommit: 593fbd0587d54490246f48ae54f666bac6b7830d
+ms.openlocfilehash: a7d5a04cf34c49246f768f9a4757c5da3b4db31a
 
 
 ---
@@ -26,9 +26,7 @@ ms.openlocfilehash: 169e7871bc1fbc83964ecb17e277d64ce4fd472c
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile usare diversi metodi per installare il software client di System Center Configuration Manager in dispositivi Windows, server UNIX/Linux e computer Mac all'interno dell'azienda. È possibile utilizzare uno o più di tali metodi combinati che consentono di soddisfare le esigenze dell'utente.  
-
- Le sezioni seguenti descrivono i vantaggi e gli svantaggi di ogni metodo di installazione del client per aiutare l'utente a stabilire quale risulti più appropriato per l'azienda.  
+È possibile usare diversi metodi per installare il software client di Configuration Manager (noto anche come ConfigMgr o SCCM). È possibile usare un metodo o una combinazione di metodi. Questo argomento presenta informazioni su ogni metodo e consente quindi di comprendere quale sia più appropriato per l'organizzazione.  
 
 ## <a name="client-push-installation"></a>Installazione push client  
 
@@ -150,6 +148,6 @@ ms.openlocfilehash: 169e7871bc1fbc83964ecb17e277d64ce4fd472c
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

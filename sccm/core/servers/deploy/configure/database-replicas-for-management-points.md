@@ -1,5 +1,5 @@
 ---
-title: Repliche di database dei punti di gestione | System Center Configuration Manager
+title: Repliche di database dei punti di gestione | Microsoft Docs
 description: Usare una replica di database per ridurre il carico della CPU dovuto ai punti di gestione nel server di database del sito.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: a4d8af8662c907eb3b10b9e8dd4d50d954b5c19a
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 130c053c9f2a1817dd85b1f3c01285aab19d59cb
 
 
 ---
@@ -513,6 +513,6 @@ Per supportare la notifica client con una replica di database per un punto di ge
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

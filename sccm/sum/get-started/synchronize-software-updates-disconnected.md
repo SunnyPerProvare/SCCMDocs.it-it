@@ -1,6 +1,6 @@
 ---
 
-title: Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso | Configuration Manager
+title: Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso | Microsoft Docs
 description: Seguire le procedure qui riportate per verificare che la sincronizzazione degli aggiornamenti software sia stata completata nei metadati del server di esportazione, degli aggiornamenti di esportazione e degli aggiornamenti di importazione.
 keywords: 
 author: dougeby
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 1a997c30-8e71-4be5-89ee-41efb2c8d199
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f821433d017f2e14f874eca359df0f38e896ab69
+ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
+ms.openlocfilehash: 73a54ddb896bfa7fb770e02d188a262230762c7f
 
 
 
@@ -111,6 +111,6 @@ Dopo aver sincronizzato gli aggiornamenti software con i criteri appropriati, [g
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

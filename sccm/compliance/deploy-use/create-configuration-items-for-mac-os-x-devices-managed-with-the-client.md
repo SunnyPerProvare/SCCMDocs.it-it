@@ -1,8 +1,8 @@
 ---
-title: Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager | System Center Configuration Manager
-description: Usare l'elemento di configurazione Mac OS X di System Center Configuration Manager per gestire le impostazioni dei dispositivi Mac OS X.
+title: Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager | Microsoft Docs
+description: Usare l&quot;elemento di configurazione Mac OS X di System Center Configuration Manager per gestire le impostazioni dei dispositivi Mac OS X.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 4e5eb84fcbde7797a68a713b30ef809ed26d0210
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: f3d08d7f8efb592383e1099850665a2e9f3b2b5f
 
 
 ---
@@ -173,6 +173,6 @@ Se ora si vuole aggiungere questo elemento di configurazione a una linea di base
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

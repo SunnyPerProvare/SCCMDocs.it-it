@@ -1,6 +1,6 @@
 ---
-title: "Creare una sequenza di attività per installare un sistema operativo | Configuration Manager"
-description: "Usare le sequenze di attività in System Center Configuration Manager per installare automaticamente l'immagine di un sistema operativo o altro contenuto su un computer di destinazione."
+title: "Creare una sequenza di attività per installare un sistema operativo | Microsoft Docs"
+description: "Usare le sequenze di attività in System Center Configuration Manager per installare automaticamente l&quot;immagine di un sistema operativo o altro contenuto su un computer di destinazione."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 5c2823ddfc873864b7617d730e14742b7451ef0f
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 41aa6cf69a746f0ab67d804f1ee0c70db05d65ee
 
 
 ---
@@ -116,14 +116,14 @@ Usare le sequenze di attività in System Center Configuration Manager per instal
  Ora è possibile distribuire la sequenza di attività in una raccolta di computer.  Per altre informazioni, vedere [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
 
 ##  <a name="a-namebkmkinstallexistingosimagetsexamplea-example-task-sequence-to-install-an-existing-operating-system-image"></a><a name="BKMK_InstallExistingOSImageTSExample"></a> Esempio di sequenza di attività per l'installazione di un'immagine del sistema operativo esistente  
- Usare la tabella seguente come guida durante la creazione di una sequenza di attività per la distribuzione di un sistema operativo con un'immagine del sistema operativo esistente. La tabella consente di decidere la sequenza generale per i passaggi della sequenza attività e su come organizzare e strutturare tali passaggi della sequenza attività in gruppi logici. La sequenza di attività creati dall'utente può variare rispetto a questo esempio e può contenere più o meno passaggi della sequenza attività e gruppi.  
+ Usare la tabella seguente come guida durante la creazione di una sequenza di attività per la distribuzione di un sistema operativo con un'immagine del sistema operativo esistente. La tabella sarà utile per decidere la sequenza generale per i passaggi della sequenza di attività e per determinare come organizzare e strutturare tali passaggi in gruppi logici. La sequenza di attività creata può variare rispetto a questo esempio e può contenere un numero minore o maggiore di passaggi e gruppi.  
 
 > [!IMPORTANT]  
->  È sempre necessario utilizzare la creazione guidata sequenza attività per creare questa sequenza di attività.  
+>  Usare sempre la Creazione guidata della sequenza attività per creare questa sequenza di attività.  
 
- Quando si utilizza la creazione guidata sequenza attività per creare questa nuova sequenza attività alcuni nomi passaggio sequenza attività sono diverse rispetto a quello che si sarebbe se sono stati aggiunti manualmente questi passaggi della sequenza attività per una sequenza attività esistente. Nella tabella seguente vengono visualizzate le differenze di denominazione:  
+ Quando si usa la Creazione guidata della sequenza attività per creare questa nuova sequenza di attività, alcuni nomi dei passaggi potrebbero essere diversi rispetto a quelli che verrebbero usati aggiungendo manualmente i passaggi a una sequenza di attività esistente. La tabella seguente mostra le differenze di denominazione:  
 
-|Creare il nome passaggio sequenza attività guidata della sequenza attività|Nome del passaggio equivalente Editor della sequenza attività|  
+|Nome del passaggio della sequenza di attività di Creazione guidata della sequenza di attività|Nome del passaggio equivalente dell'editor delle sequenze di attività|  
 |---------------------------------------------------------|-----------------------------------------------|  
 |Archiviazione dello stato utente richiesta|Richiedi archiviazione stati|  
 |Acquisizione file e impostazioni utente|Acquisisci stato utente|  
@@ -132,33 +132,33 @@ Usare le sequenze di attività in System Center Configuration Manager per instal
 |Disco di partizione 0|Formato e disco partizione|  
 |Ripristinare file e impostazioni utente|Ripristina stato utente|  
 
-|Gruppo sequenza attività o del passaggio|Descrizione|  
+|Passaggio o gruppo di sequenze di attività|Descrizione|  
 |---------------------------------|-----------------|  
-|Acquisire i File e impostazioni - **(nuovo gruppo di sequenze attività)**|Creare un gruppo di sequenze di attività. Un gruppo di sequenze di attività consente di mantenere simile passaggi della sequenza attività per una migliore organizzazione e il controllo degli errori.<br /><br /> Questo gruppo contiene i passaggi necessari per acquisire i file e impostazioni dal sistema operativo del computer di riferimento.|  
-|Acquisisci impostazioni Windows|Utilizzare questo passaggio della sequenza attività per identificare le impostazioni di Microsoft Windows per acquisire dal computer di riferimento. È possibile acquisire il nome del computer, utente e informazioni sull'organizzazione e le impostazioni di fuso orario.|  
-|Acquisisci impostazioni di rete|Utilizzare questo passaggio della sequenza attività per acquisire le impostazioni di rete dal computer di riferimento. È possibile acquisire l'appartenenza al gruppo di lavoro o dominio del computer di riferimento e impostazione delle informazioni relative alla scheda di rete.|  
-|Acquisire i file utente e impostazioni - **(nuovo gruppo sequenza attività secondarie)**|Creare un gruppo di sequenze di attività all'interno di un gruppo di sequenze di attività. Questo gruppo secondario contiene i passaggi necessari per acquisire dati sullo stato utente. Controllano simile passaggi della sequenza attività insieme per una migliore organizzazione e l'errore simile al gruppo iniziale che è stato aggiunto, questa mantiene sottogruppi.|  
-|Archiviazione dello stato utente richiesta|Utilizzare questo passaggio della sequenza attività per richiedere l'accesso a un punto di migrazione stato archiviazione i dati dello stato utente. È possibile configurare questo passaggio della sequenza attività per acquisire o ripristinare le informazioni sullo stato utente.|  
-|Acquisisci file utente e impostazioni|Utilizzare questo passaggio della sequenza attività per utilizzare lo strumento di migrazione stato utente (USMT) per acquisire lo stato utente e impostazioni dal computer di riferimento che riceverà la sequenza di attività associata a questo passaggio di attività. È possibile acquisire le opzioni standard o configurare le opzioni di whish per acquisire.|  
-|Archiviazione dello stato utente di rilascio|Utilizzare questo passaggio della sequenza attività per notificare lo stato punto di migrazione che l'azione di ripristino o acquisizione è stata completata.|  
+|Acquisire i File e impostazioni - **(nuovo gruppo di sequenze attività)**|Creare un gruppo di sequenze di attività. Un gruppo di sequenze di attività consente di mantenere simile passaggi della sequenza attività per una migliore organizzazione e il controllo degli errori.<br /><br /> Questo gruppo contiene i passaggi necessari per l'acquisizione di file e impostazioni dal sistema operativo del computer di riferimento.|  
+|Acquisisci impostazioni Windows|Usare questo passaggio della sequenza di attività per identificare le impostazioni di Microsoft Windows per l'acquisizione dal computer di riferimento. È possibile acquisire il nome computer, informazioni sull'utente e sull'organizzazione e le impostazioni di fuso orario.|  
+|Acquisisci impostazioni di rete|Usare questo passaggio della sequenza di attività per acquisire le impostazioni di rete dal computer di riferimento. È possibile acquisire l'appartenenza al gruppo di lavoro o dominio del computer di riferimento e impostazione delle informazioni relative alla scheda di rete.|  
+|Acquisire i file utente e impostazioni - **(nuovo gruppo sequenza attività secondarie)**|Creare un gruppo di sequenze di attività all'interno di un gruppo di sequenze di attività. Questo sottogruppo contiene i passaggi necessari per acquisire dati dello stato utente. Analogamente al gruppo iniziale aggiunto, questo sottogruppo tiene uniti i passaggi delle sequenze di attività per una migliore organizzazione e un maggiore controllo degli errori.|  
+|Archiviazione dello stato utente richiesta|Usare questo passaggio della sequenza di attività per richiedere l'accesso a un punto di migrazione stato in cui sono archiviati i dati dello stato utente. È possibile configurare questo passaggio della sequenza di attività per acquisire o ripristinare le informazioni sullo stato utente.|  
+|Acquisisci file utente e impostazioni|Usare questo passaggio della sequenza di attività per usare l'Utilità di migrazione stato utente per acquisire lo stato utente e le impostazioni dal computer di riferimento che riceve la sequenza di attività associata a questo passaggio. È possibile acquisire le opzioni standard o configurare le opzioni specifiche da acquisire.|  
+|Rilascia archiviazione stato utente|Utilizzare questo passaggio della sequenza attività per notificare lo stato punto di migrazione che l'azione di ripristino o acquisizione è stata completata.|  
 |Installare il sistema operativo - **(nuovo gruppo di sequenze attività)**|Creare un altro gruppo secondario di sequenze attività. Questo gruppo secondario contiene i passaggi necessari per installare e configurare l'ambiente Windows PE.|  
 |Riavvia in Windows PE|Utilizzare questo passaggio della sequenza attività per specificare le opzioni di riavvio del computer di destinazione che riceve questa sequenza di attività. Questo passaggio viene visualizzato un messaggio all'utente che indica che il computer verrà riavviato affinché possa continuare l'installazione.<br /><br /> Questo passaggio usa la variabile della sequenza di attività **_SMSTSInWinPE** di sola lettura. Se il valore associato è uguale a **false** il passaggio della sequenza attività continua.|  
 |Partizione disco 0|Questo passaggio della sequenza attività specifica le azioni necessarie per formattare il disco rigido nel computer di destinazione. Il numero di disco predefinito è **0**.<br /><br /> Questo passaggio usa la variabile della sequenza di attività **_SMSTSClientCache** di sola lettura. Questo passaggio verrà eseguito se la cache del client di Configuration Manager non esiste.|  
 |Applica sistema operativo|Utilizzare questo passaggio della sequenza attività per installare l'immagine del sistema operativo nel computer di destinazione. Questo passaggio applica tutte le immagini di volume contenute nel file WIM al volume del disco sequenziale corrispondente nel computer di destinazione, dopo aver prima eliminato tutti i file in tale volume (ad eccezione dei file di controllo specifici di Configuration Manager). È possibile specificare un **sysprep** file di risposte e inoltre configurare la partizione del disco viene utilizzata per l'installazione.|  
-|Applica impostazioni Windows|Utilizzare questo passaggio della sequenza attività per configurare le informazioni di configurazione delle impostazioni di Windows per il computer di destinazione. È possibile applicare le impostazioni di windows sono utente e informazioni sull'organizzazione, prodotto o una licenza informazioni chiave, fuso orario e la password di amministratore locale.|  
-|Applica impostazioni di rete|Utilizzare questo passaggio della sequenza attività per specificare le informazioni di configurazione di rete o del gruppo di lavoro per il computer di destinazione. È inoltre possibile specificare se il computer utilizza un server DHCP oppure è possibile assegnare staticamente le informazioni sull'indirizzo IP.|  
+|Applica impostazioni Windows|Usare questo passaggio della sequenza di attività per configurare le informazioni di configurazione delle impostazioni di Windows per il computer di destinazione. Le impostazioni di Windows applicabili sono le informazioni sull'utente e sull'organizzazione, le informazioni sul prodotto o sul codice di licenza, il fuso orario e la password dell'amministratore locale.|  
+|Applica impostazioni di rete|Usare questo passaggio della sequenza di attività per specificare le informazioni di configurazione per la rete o il gruppo di lavoro per il computer di destinazione. È inoltre possibile specificare se il computer utilizza un server DHCP oppure è possibile assegnare staticamente le informazioni sull'indirizzo IP.|  
 |Applica driver dispositivo|Utilizzare questo passaggio della sequenza attività per installare i driver come parte della distribuzione del sistema operativo. È possibile consentire a Installazione di Windows di cercare tutte le categorie di driver esistenti selezionando **Considera i driver di tutte le categorie** oppure limitare le categorie in cui Installazione di Windows esegue la ricerca selezionando **Limita la corrispondenza dei driver in modo da considerare solo i driver delle categorie selezionate**.<br /><br /> Questo passaggio viene utilizzata la proprietà di sola lettura **_SMSTSMediaType** variabile della sequenza attività. Questo passaggio della sequenza attività viene eseguita solo se il valore della variabile non è uguale **FullMedia**.|  
 |Applica pacchetto di driver|Utilizzare questo passaggio della sequenza attività per rendere disponibili per l'utilizzo tutti i driver di dispositivo in un pacchetto driver dal programma di installazione di Windows.|  
-|Installazione del sistema operativo - **(nuovo gruppo di sequenze attività)**|Creare un altro gruppo secondario di sequenze attività. Questo gruppo secondario contiene i passaggi necessari per configurare il sistema operativo installato.|  
+|Installazione del sistema operativo - **(nuovo gruppo di sequenze attività)**|Creare un altro gruppo secondario di sequenze attività. Questo sottogruppo contiene i passaggi necessari per configurare il sistema operativo installato.|  
 |Imposta Windows e ConfigMgr|Usare questo passaggio della sequenza di attività per installare il software client di Configuration Manager. Configuration Manager installa e registra il GUID del client di Configuration Manager. È possibile assegnare i parametri di installazione necessari nella finestra **Proprietà di installazione** .|  
 |Installa aggiornamenti|Usare questo passaggio della sequenza di attività per specificare in che modo gli aggiornamenti software vengono installati nel computer di destinazione. Il computer di destinazione viene valutato alla ricerca di aggiornamenti software applicabili solo in corrispondenza con l'esecuzione di questo passaggio della sequenza di attività, quando il computer di destinazione viene valutato alla ricerca di aggiornamenti software applicabili in modo simile agli altri client gestiti da Configuration Manager.<br /><br /> Questo passaggio usa la variabile della sequenza di attività **_SMSTSMediaType** di sola lettura. Questo passaggio della sequenza di attività viene eseguito solo se il valore della variabile è diverso da **FullMedia**.|  
-|Ripristina file utente e impostazioni - **(Nuovo sottogruppo di sequenze di attività)**|Creare un altro gruppo secondario di sequenze attività. Questo gruppo secondario contiene i passaggi necessari per ripristinare i file e impostazioni utente.|  
+|Ripristina file utente e impostazioni - **(Nuovo sottogruppo di sequenze di attività)**|Creare un altro gruppo secondario di sequenze attività. Questo sottogruppo contiene i passaggi necessari per ripristinare i file utente e le impostazioni.|  
 |Richiedi archiviazione stato utente|Utilizzare questo passaggio della sequenza attività per richiedere l'accesso a un punto di migrazione stato archiviazione i dati dello stato utente.|  
-|Ripristina file utente e impostazioni|Utilizzare questo passaggio della sequenza attività per avviare la stato migrazione utente (USMT) per ripristinare lo stato utente e impostazioni in un computer di destinazione.|  
+|Ripristina file utente e impostazioni|Usare questo passaggio della sequenza di attività per avviare l'Utilità di migrazione stato utente e ripristinare lo stato utente e le impostazioni in un computer di destinazione.|  
 |Archiviazione dello stato utente di rilascio|Usare questo passaggio della sequenza di attività per segnalare al punto di migrazione stato che i dati dello stato utente non sono più necessari.|  
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

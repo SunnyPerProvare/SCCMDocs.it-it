@@ -1,5 +1,5 @@
 ---
-title: Trovare un nome di famiglia di pacchetti (PFN) per una rete VPN per app | System Center Configuration Manager
+title: Trovare un nome della famiglia di pacchetti (PFN) per una VPN per app | Microsoft Docs
 description: "Informazioni sulle due modalità di reperimento di un nome di famiglia di pacchetti in modo che sia possibile configurare una rete VPN per app."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: bad09d52a962ea5dccf55e4e2e485a17d934055a
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: ce50645155ecb14a82d8b982aa69c0f87dd15fbf
 
 ---
 # <a name="find-a-package-family-name-pfn-for-per-app-vpn"></a>Trovare un nome di famiglia di pacchetti (PFN) per una rete VPN per app
@@ -89,6 +89,6 @@ In Edge le informazioni richieste vengono visualizzate, in Internet Explorer far
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

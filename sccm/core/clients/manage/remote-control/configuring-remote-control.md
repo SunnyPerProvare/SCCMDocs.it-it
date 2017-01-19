@@ -2,7 +2,7 @@
 title: Configurare il controllo remoto | Documentazione Microsoft
 description: Configurare il controllo remoto in System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/06/2016
+ms.date: 12/12/2016
 ms.prod: configuration-manager
 ms.reviewer: dudeso
 ms.suite: na
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 88828e68bc4aff216e83807ea8288c7d42c60cbd
-ms.openlocfilehash: cbfa9dc6cb37518c0a561700272cc882b0041350
+ms.sourcegitcommit: 809c7938968b4a6efce6ef37fe7b7baf2c9dd3e7
+ms.openlocfilehash: 6741c6aa11a8a7c868bff36916afe4d066b9924d
 
 
 ---
@@ -26,7 +26,7 @@ ms.openlocfilehash: cbfa9dc6cb37518c0a561700272cc882b0041350
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
- Questa procedura descrive la configurazione delle impostazioni client predefinite per il controllo remoto e si applica a tutti i computer nella gerarchia. Per applicare queste impostazioni solo ad alcuni computer, creare un'impostazione client di dispositivo personalizzata e assegnarla a una raccolta contenente i computer che si vogliono usare in una sessione di controllo remoto. Per altre informazioni, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md). 
+ Questa procedura descrive la configurazione delle impostazioni client predefinite per il controllo remoto. Queste impostazioni si applicano a tutti i computer nella gerarchia. Per applicare queste impostazioni solo ad alcuni computer, assegnare un'impostazione client di dispositivo personalizzata a una raccolta contenente i computer. Per altre informazioni, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md). 
 
 Per usare Assistenza remota o Desktop remoto è necessario installare e configurare questi programmi nel computer che esegue la console di Configuration Manager. Per altre informazioni su come installare e configurare Assistenza remota o Desktop remoto, vedere la documentazione di Windows.  
 
@@ -44,8 +44,17 @@ Per usare Assistenza remota o Desktop remoto è necessario installare e configur
 
  I computer client vengono configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
 
+#### <a name="enable-keyboard-translation"></a>Abilitare la traduzione della tastiera
+
+Per impostazione predefinita Configuration Manager trasmette la posizione del tasto dal percorso del visualizzatore al percorso del condivisore. Ciò può causare problemi per le configurazioni della tastiera diverse tra il visualizzatore e il condivisore. Ad esempio, se un visualizzatore con tastiera inglese digitava "A", la tastiera francese del condivisore generava una "Q". Ora è possibile configurare il controllo remoto in modo che il carattere stesso venga trasmesso dalla tastiera del visualizzatore al condivisore e che il condivisore riceva ciò che il visualizzatore intende digitare.
+
+Per attivare la traduzione della tastiera, in **Controllo remoto di Configuration Manager** scegliere **Azione** e poi scegliere **Enable keyboard translation** (Abilita traduzione tastiera) per trasmettere la posizione del tasto.
+
+> [!NOTE]
+>
+> I tasti speciali, ad esempio ~!#@$%,, non verranno tradotti correttamente.
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

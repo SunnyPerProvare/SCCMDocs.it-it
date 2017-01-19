@@ -1,5 +1,5 @@
 ---
-title: Configurare siti | System Center Configuration Manager
+title: Configurare i siti | Microsoft Docs
 description: "Consultare questo elenco di controllo per verificare di aver tenuto in considerazione le configurazioni più comuni che interessano sia i siti che le gerarchie."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 470efc428045398588345f4546eb27831837715c
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: a6936dac2159118b192a930eecb4595b0f4d4a59
 
 
 ---
@@ -55,6 +55,6 @@ Dopo aver installato il primo sito di System Center Configuration Manager o aver
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

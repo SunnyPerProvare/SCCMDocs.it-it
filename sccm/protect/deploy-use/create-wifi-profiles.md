@@ -2,7 +2,7 @@
 title: Creare profili Wi-Fi | Documentazione Microsoft
 description: Di seguito viene illustrato come usare i profili Wi-Fi in System Center Configuration Manager per distribuire impostazioni di rete wireless agli utenti dell&quot;organizzazione.
 ms.custom: na
-ms.date: 12/04/2016
+ms.date: 12/11/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: e433fc450a2d033c24bc37333dd59fdec41dcdb6
-ms.openlocfilehash: c629d1bf8d17573cdbde783b4ec3264bed3f4b1e
+ms.sourcegitcommit: 22a74f3b12fe4f4559b682a8fcb287863a7686af
+ms.openlocfilehash: 1262cb7d524fdce21f778e2179275bd177e9330f
 
 
 ---
@@ -45,9 +45,9 @@ ms.openlocfilehash: c629d1bf8d17573cdbde783b4ec3264bed3f4b1e
 
 -   Dispositivi IPhone che eseguono iOS 5, iOS 6, iOS 7 e iOS 8  
 
--   Dispositivi IPad che eseguono iOS 5, iOS 6, iOS 7 e iOS 8  
+-   Dispositivi iPad che eseguono iOS 5, iOS 6, iOS 7 e iOS 8  
 
--   Dispositivi Android che eseguono la versione 4  
+-   Dispositivi Android che eseguono la versione 4 o successiva
 
 > [!IMPORTANT]  
 >  Per distribuire i profili nei dispositivi Android, iOS, Windows Phone e nei dispositivi registrati Windows 8.1 o versioni successive, tali dispositivi devono essere registrati in Microsoft Intune. Per informazioni su come registrare i dispositivi, vedere [Registrare i dispositivi per la gestione in Intune](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune).  
@@ -136,6 +136,6 @@ ms.openlocfilehash: c629d1bf8d17573cdbde783b4ec3264bed3f4b1e
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

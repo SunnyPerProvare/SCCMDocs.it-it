@@ -1,6 +1,6 @@
 ---
-title: Introduzione alla distribuzione dei sistemi operativi | Configuration Manager
-description: Consente di comprendere i concetti prima di distribuire sistemi operativi nell'ambiente di Configuration Manager.
+title: Introduzione alla distribuzione del sistema operativo | Microsoft Docs
+description: Consente di comprendere i concetti prima di distribuire sistemi operativi nell&quot;ambiente di Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: ece68bd30e31595226f154fd1148b0ee55feceaf
+ms.sourcegitcommit: 55a9f1caedcfa810e9a97e43626e4cf5fdbcfa0d
+ms.openlocfilehash: 2baa6b7dbd66ab41bc9b67e8f43c313be233153c
 
 
 ---
@@ -25,7 +25,7 @@ ms.openlocfilehash: ece68bd30e31595226f154fd1148b0ee55feceaf
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile usare Configuration Manager per distribuire i sistemi operativi in molti modi diversi. Usare le informazioni in questa sezione per comprendere come distribuire sistemi operativi e automatizzare le attività.
+È possibile usare Configuration Manager per distribuire i sistemi operativi in molti modi diversi. Usare le informazioni in questa sezione per comprendere come distribuire sistemi operativi e automatizzare le attività. 
 
 ##  <a name="a-namebkmkosdeploymentprocessa-the-operating-system-deployment-process"></a><a name="BKMK_OSDeploymentProcess"></a> Processo di distribuzione del sistema operativo  
  Configuration Manager offre diversi metodi con cui è possibile distribuire un sistema operativo. Sono diverse le operazioni che occorre eseguire, indipendentemente dal metodo di distribuzione usato:  
@@ -81,7 +81,7 @@ ms.openlocfilehash: ece68bd30e31595226f154fd1148b0ee55feceaf
 ##  <a name="a-namebkmkbootimagesa-boot-images"></a><a name="BKMK_BootImages"></a> Immagini d'avvio  
  Un'immagine d'avvio in Configuration Manager è un'immagine Windows PE (WinPE) usata durante la distribuzione di un sistema operativo. Le immagini d'avvio vengono usate per avviare un computer in Windows PE, un sistema operativo minimo con componenti e servizi limitati che prepara il computer di destinazione per l'installazione di Windows. Configuration Manager offre due immagini di avvio: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste sono considerate immagini d'avvio predefinite. Le immagini d'avvio create e aggiunte a Configuration Manager dall'utente sono considerate immagini personalizzate. Le immagini d'avvio predefinite possono essere sostituite automaticamente quando si aggiorna Configuration Manager. Per altre informazioni sulle immagini d'avvio, vedere [Gestire le immagini d'avvio con System Center Configuration Manager](../get-started/manage-boot-images.md).  
 
-##  <a name="a-namebkmkosimagesa-operating-system-images"></a><a name="BKMK_OSImages"></a> Immagini del sistema operativo  
+##  <a name="a-namebkmkosimagesa-operating--system-images"></a><a name="BKMK_OSImages"></a> Immagini del sistema operativo  
  Le immagini del sistema operativo in Configuration Manager vengono archiviate in file in formato Windows Imaging (WIM) e rappresentano una raccolta compressa dei file e delle cartelle di riferimento necessari per installare e configurare correttamente un sistema operativo in un computer. Per tutti gli scenari di distribuzione del sistema operativo, è necessario selezionare un'immagine del sistema operativo. È possibile usare l'immagine del sistema operativo predefinita o crearla da un computer di riferimento configurato dall'utente. Per altre informazioni, vedere [Manage operating system images](../get-started/manage-operating-system-images.md) (Gestire le immagini del sistema operativo).  
 
 ##  <a name="a-namebkmkosupgradepackagesa-operating-system-upgrade-packages"></a><a name="BKMK_OSUpgradePackages"></a> Pacchetti di aggiornamento del sistema operativo  
@@ -135,6 +135,6 @@ ms.openlocfilehash: ece68bd30e31595226f154fd1148b0ee55feceaf
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

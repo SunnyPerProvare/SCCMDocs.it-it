@@ -1,8 +1,8 @@
 ---
-title: Amministrare un computer Windows da posizione remota | System Center Configuration Manager
+title: Gestire computer Windows in remoto | Microsoft Docs
 description: Amministrare un computer client Windows da posizione remota tramite System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/16/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 02c11420d3b05ad4eaae31d9413b66459751da70
-ms.openlocfilehash: 51a9b7269993bfa133382b88792ac94032824eed
+ms.sourcegitcommit: 08afca8b422474639cbdb860e555fe0da27361a4
+ms.openlocfilehash: dd794de867e1d0db47be9dc21a6d494087f76bc1
 
 
 ---
@@ -26,29 +26,25 @@ ms.openlocfilehash: 51a9b7269993bfa133382b88792ac94032824eed
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Per amministrare un computer da posizione remota in System Center Configuration Manager seguire la procedura seguente.  
-
- Prima di iniziare a usare il controllo remoto, assicurarsi di aver esaminato le informazioni contenute negli argomenti seguenti:  
+Prima di iniziare a usare il controllo remoto, assicurarsi di aver esaminato le informazioni contenute negli argomenti seguenti:  
 
 -   [Prerequisiti per il controllo remoto in System Center Configuration Manager](../../../../core/clients/manage/remote-control/prerequisites-for-remote-control.md)  
 
 -   [Configurazione del controllo remoto in System Center Configuration Manager](../../../../core/clients/manage/remote-control/configuring-remote-control.md)  
 
- Per avviare il visualizzatore controllo remoto di Configuration Manager è possibile usare uno dei tre metodi seguenti:  
+Di seguito vengono elencati tre modi per avviare il visualizzatore controllo remoto:  
 
--   Tramite la console di Configuration Manager.  
+-   Dalla console di Configuration Manager.  
 
--   Il prompt dei comandi di Windows.  
+-   A un prompt dei comandi di Windows.  
 
--   Nel menu **Start** di Windows in un computer che esegue la console di Configuration Manager dal gruppo di programmi **Microsoft System Center 2012**.  
+-   Dal menu **Start** di Windows in un computer che esegue la console di Configuration Manager dal gruppo di programmi **Microsoft System Center**.  
 
 ### <a name="to-remotely-administer-a-client-computer-from-the-configuration-manager-console"></a>Per amministrare un computer client in remoto dalla console di Configuration Manager  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Dispositivi** oppure **Raccolte di dispositivi**.  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Dispositivi** o su **Raccolte dispositivi**.  
-
-3.  Selezionare il computer che si vuole amministrare in remoto e quindi nel gruppo **Dispositivo** della scheda **Home** fare clic su **Avvia**e quindi su **Controllo remoto**.  
+3.  Selezionare il computer che si vuole gestire in remoto e quindi nel gruppo **Dispositivo** della scheda **Home** selezionare **Avvia** > **Controllo remoto**.  
 
     > [!IMPORTANT]  
     >  Se l'impostazione client **Richiedere all'utente l'autorizzazione di controllo remoto** è impostata su **True**, la connessione si avvia solo quando l'utente del computer remoto risponde affermativamente alla richiesta del controllo remoto. Per altre informazioni, vedere [Configurazione del controllo remoto in System Center Configuration Manager](../../../../core/clients/manage/remote-control/configuring-remote-control.md).  
@@ -56,7 +52,7 @@ Per amministrare un computer da posizione remota in System Center Configuration 
 4.  Quando la finestra **Controllo remoto di Configuration Manager** si apre, è possibile amministrare il computer client in remoto. Per configurare la connessione, usare le opzioni seguenti.  
 
     > [!NOTE]  
-    >  Se il computer a cui ci si connette dispone di più monitor, nella finestra del controllo remoto viene visualizzato ciò che compare su tutti i monitor.  
+    >  Se il computer a cui ci si connette ha diversi monitor, nella finestra del controllo remoto viene visualizzato ciò che compare su tutti i monitor.  
 
     -   **File - Connetti**: esegue la connessione a un altro computer. Questa opzione non è disponibile quando è attiva una sessione di controllo remoto.  
 
@@ -67,7 +63,7 @@ Per amministrare un computer da posizione remota in System Center Configuration 
         > [!NOTE]  
         >  Quando si disconnette una sessione di controllo remoto, il contenuto degli Appunti di Windows nel computer che si sta visualizzando viene eliminato.  
 
-    -   **Visualizza - Schermo intero**: ingrandisce la finestra **Controllo remoto di Configuration Manager** in modo da occupare tutto lo spazio di visualizzazione disponibile.  
+    -   **Visualizza - Schermo intero**: ingrandisce la finestra **Controllo remoto di Configuration Manager**.  
 
         > [!NOTE]  
         >  Per uscire dalla modalità schermo intero, premere CTRL+ALT+INTERR.  
@@ -85,11 +81,9 @@ Per amministrare un computer da posizione remota in System Center Configuration 
 
     -   **Azione - Blocca tastiera e mouse remoti**: blocca la tastiera e il mouse remoti per impedire all'utente di eseguire operazioni nel computer remoto.  
 
-    -   **? - Informazioni su Controllo remoto**: visualizza informazioni sulla versione corrente del visualizzatore controllo remoto.  
+    -   **Guida - Informazioni su Controllo remoto**: visualizza la versione corrente del visualizzatore.  
 
 5.  Gli utenti del computer remoto possono visualizzare altre informazioni sulla sessione di controllo remoto facendo clic sull'icona **Controllo remoto** di Configuration Manager nell'area di notifica di Windows o sull'icona della barra della sessione di controllo remoto.  
-
-6.  Quando la sessione di controllo remoto non è più necessaria, usare uno dei metodi descritti in precedenza per chiuderla.  
 
 ### <a name="to-start-the-remote-control-viewer-from-the-windows-command-line"></a>Per avviare il visualizzatore controllo remoto dalla riga di comando di Windows  
 
@@ -99,13 +93,13 @@ Per amministrare un computer da posizione remota in System Center Configuration 
     >  CmRcViewer.exe supporta le opzioni da riga di comando seguenti:  
     >   
     >  -   *<Indirizzo\>*: specifica il nome NetBIOS, il nome di dominio completo (FQDN) o l'indirizzo IP del computer client a cui ci si vuole connettere.  
-    > -   *<Nome server del sito\>*: specifica il nome del server del sito di System Center 2012 Configuration Manager al quale si vogliono inviare messaggi di stato relativi alla sessione di controllo remoto.  
+    > -   *<Nome server del sito\>*: specifica il nome del server del sito di System Center Configuration Manager al quale si vogliono inviare messaggi di stato relativi alla sessione di controllo remoto.  
     > -   **/?** : visualizza le opzioni da riga di comando per il visualizzatore controllo remoto.  
     >   
     >  **Esempio: CmRcViewer.exe** *<Indirizzo\>* *<\\\nome del server del sito>*  
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

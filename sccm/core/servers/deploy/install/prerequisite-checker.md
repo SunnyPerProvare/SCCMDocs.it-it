@@ -1,6 +1,6 @@
 ---
-title: Controllo dei prerequisiti | System Center Configuration Manager
-description: Informazioni sull'uso di Controllo prerequisiti per identificare e risolvere i problemi che bloccano l'installazione di un sito o del ruolo di sistema del sito.
+title: Controllo prerequisiti | Microsoft Docs
+description: Informazioni sull&quot;uso di Controllo prerequisiti per identificare e risolvere i problemi che bloccano l&quot;installazione di un sito o del ruolo di sistema del sito.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 4c2322ed0805b5f087409ec487ebec9d7c4f10d5
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: f30d7a451f47a3ab1efe6f7ac9c3e0151b8cda96
 
 ---
 # <a name="prerequisite-checker-for-system-center-configuration-manager"></a>Controllo dei prerequisiti per System Center Configuration Manager
@@ -91,7 +91,7 @@ Per altre informazioni sui controlli eseguiti da Controllo prerequisiti, vedere 
 
 2.  Immettere  **prereqchk.exe /LOCAL** per avviare il Controllo prerequisiti ed eseguire tutti i controlli dei prerequisiti sul server.  
 
-## <a name="run-prerequisite-checker-from-a-command-prompt-for-specified-options"></a>Eseguire il Controllo prerequisiti da un prompt dei comandi per le opzioni specificate  
+## <a name="run-prerequisite-checker-from-a-command-prompt--for-specified-options"></a>Eseguire il Controllo prerequisiti da un prompt dei comandi per le opzioni specificate  
 
 1.  Aprire una finestra del prompt dei comandi e modificare le directory in base a una delle posizioni seguenti:  
 
@@ -216,6 +216,6 @@ Per altre informazioni sui controlli eseguiti da Controllo prerequisiti, vedere 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

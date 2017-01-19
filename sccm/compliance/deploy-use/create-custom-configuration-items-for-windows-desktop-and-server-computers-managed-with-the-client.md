@@ -1,8 +1,8 @@
 ---
-title: Creare elementi di configurazione personalizzati per computer desktop e server Windows gestiti con il client di System Center Configuration Manager | System Center Configuration Manager
+title: Creare elementi di configurazione personalizzati per computer desktop e server Windows gestiti con il client di System Center Configuration Manager | Microsoft Docs
 description: "È possibile gestire le impostazioni per i computer e i server Windows usando un elemento di configurazione personalizzato per computer desktop e server Windows."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: bf3d46377d4027832e59e5ce50af90a0770919ea
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: f5509d1ffb88bc128f7be6c74e6b65dc33605c9e
 
 
 ---
@@ -87,7 +87,7 @@ Usare l'elemento di configurazione **personalizzato per computer desktop e serve
 ##  <a name="configure-settings"></a>Configurare le impostazioni  
  Usare questa procedura per configurare le impostazioni nell'elemento di configurazione.  
 
- Impostazioni rappresentano le condizioni aziendali o tecniche che consentono di valutare la conformità nei dispositivi client. È possibile configurare una nuova impostazione o selezionare un'impostazione esistente in un computer di riferimento.  
+ Le impostazioni rappresentano le condizioni aziendali o tecniche usate per valutare la conformità nei dispositivi client. È possibile configurare una nuova impostazione o selezionare un'impostazione esistente in un computer di riferimento.  
 
 1.  Nel **impostazioni** pagina del **Creazione guidata dell'elemento di configurazione**, fare clic su **New**.  
 
@@ -260,7 +260,7 @@ Usare l'elemento di configurazione **personalizzato per computer desktop e serve
 ##  <a name="configure-compliance-rules"></a>Configurare le regole di conformità  
  Usare la procedura seguente per configurare le regole di conformità per l'elemento di configurazione.  
 
- Le regole di conformità specificano le condizioni che definiscono la conformità di un elemento di configurazione. Un'impostazione può essere valutata per la conformità, deve disporre di almeno una regola di conformità. Impostazioni di script WMI e del Registro di sistema consentono di monitorare e aggiornare i valori che risultano non conformi. È possibile creare nuove regole o passare a un'impostazione esistente in un elemento di configurazione per selezionare le regole in esso.  
+ Le regole di conformità consentono di specificare le condizioni che definiscono la conformità di un elemento di configurazione. Prima che sia possibile valutare la conformità di un'impostazione, è necessario che tale impostazione disponga almeno di una regola di conformità. Le impostazioni per WMI, Registro di sistema e script consentono di monitorare e aggiornare i valori che risultano non conformi. È possibile creare nuove regole o passare a un'impostazione esistente in qualsiasi elemento di configurazione per selezionare le regole in essa contenute.  
 
 ### <a name="to-create-a-compliance-rule"></a>Per creare una regola di conformità  
 
@@ -289,15 +289,15 @@ Usare l'elemento di configurazione **personalizzato per computer desktop e serve
 
             |Operator|Altre informazioni|  
             |--------------|----------------------|  
-            |È uguale a|Nessuna informazione aggiuntiva|  
-            |Non è uguale a|Nessuna informazione aggiuntiva|  
+            |Uguale a|Nessuna informazione aggiuntiva|  
+            |Diverso da|Nessuna informazione aggiuntiva|  
             |Maggiore di|Nessuna informazione aggiuntiva|  
             |Minore di|Nessuna informazione aggiuntiva|  
             |Tra|Nessuna informazione aggiuntiva|  
             |Maggiore o uguale a|Nessuna informazione aggiuntiva|  
             |Minore o uguale a|Nessuna informazione aggiuntiva|  
-            |Uno dei|Nella casella di testo, specificare una voce per ogni riga.|  
-            |Nessuno dei|Nella casella di testo, specificare una voce per ogni riga.|  
+            |Uno|Nella casella di testo, specificare una voce per ogni riga.|  
+            |Nessuno|Nella casella di testo, specificare una voce per ogni riga.|  
 
         -   **Monitora e aggiorna le regole non conformi, se supportato** : selezionare questa opzione se si vuole monitorare e aggiornare automaticamente le regole non conformi mediante Configuration Manager. Configuration Manager consente di correggere automaticamente i tipi di regole seguenti:  
 
@@ -359,6 +359,6 @@ Nella pagina **Piattaforme supportate** della **Creazione guidata dell'elemento 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

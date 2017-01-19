@@ -1,6 +1,6 @@
 ---
-title: Usare i servizi cloud | System Center Configuration Manager
-description: Il provisioning delle risorse cloud per System Center Configuration Manager consente di integrare l'infrastruttura locale.
+title: Usare i servizi cloud | Microsoft Docs
+description: Il provisioning delle risorse cloud per System Center Configuration Manager consente di integrare l&quot;infrastruttura locale.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 72e01c23ab597ad5a446492c3dc371aa50b9d949
-ms.openlocfilehash: 9440123f6f13e19723657e7b4d5627f3a349a3b4
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 539ad555b85b7517507c21718dab0b79fdf4dfb8
 
 
 ---
@@ -106,6 +106,6 @@ Per queste funzionalità aggiuntive non è necessario avere una sottoscrizione a
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

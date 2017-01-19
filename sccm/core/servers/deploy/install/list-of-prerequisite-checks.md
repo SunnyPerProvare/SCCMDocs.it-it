@@ -1,5 +1,5 @@
 ---
-title: Controlli dei prerequisiti | System Center Configuration Manager
+title: Controlli dei prerequisiti | Microsoft Docs
 description: Esaminare i controlli dei prerequisiti disponibili per System Center Configuration Manager. Include i controlli per i privilegi di protezione.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 96787d5c4ad92d86ad9172fcfacb92fe4138c7ba
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 9ace6e8fa05122924daaeceddf097ce1db12cf39
 
 
 ---
@@ -66,7 +66,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 
     -   Sito di amministrazione centrale  
 
-**Connessione a SQL Server nel sito di amministrazione centrale**: verifica che l'account utente che esegue l'installazione di Configuration Manager nel sito primario per l'aggiunta a una gerarchia esistente abbia il ruolo **sysadmin** nell'istanza di SQL Server per il sito di amministrazione centrale.  
+**Connessione a SQL Server nel sito di amministrazione centrale**: verifica che l'account utente che esegue l'installazione di Configuration Manager nel sito primario per l'aggiunta a una gerarchia esistente abbia il ruolo **sysadmin** nell'istanza di SQL Server per il sito di amministrazione centrale.  
 
 -   **Gravità:** Errore  
 
@@ -83,7 +83,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
     -   Sito primario  
     -   SQL Server  
 
-**Sistema del sito nella comunicazione con SQL Server**: verifica che un nome dell'entità servizio (SPN) valido venga registrato in Active Directory Domain Services per l'account configurato per eseguire il servizio SQL Server per l'istanza di SQL Server usata per ospitare il database del sito di Configuration Manager. È necessario registrare un SPN valido in Servizi di dominio Active Directory per supportare l'autenticazione Kerberos.  
+**Sistema del sito nella comunicazione con SQL Server**: verifica che un nome dell'entità servizio (SPN) valido venga registrato in Active Directory Domain Services per l'account configurato per eseguire il servizio SQL Server per l'istanza di SQL Server usata per ospitare il database del sito di Configuration Manager. È necessario registrare un SPN valido in Servizi di dominio Active Directory per supportare l'autenticazione Kerberos.  
 
 -   **Gravità:** Avviso  
 
@@ -100,7 +100,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 
     -   SQL Server  
 
-**Diritti di amministratore di sistema di SQL Server**: verifica che l'account utente che esegue l'installazione di Configuration Manager abbia il ruolo **sysadmin** nell'istanza di SQL Server selezionata per l'installazione del database del sito. Questo controllo ha esito negativo anche quando l'installazione non riesce ad accedere all'istanza di SQL Server per verificare le autorizzazioni.  
+**Diritti di amministratore di sistema di SQL Server**: verifica che l'account utente che esegue l'installazione di Configuration Manager abbia il ruolo **sysadmin** nell'istanza di SQL Server selezionata per l'installazione del database del sito. Questo controllo ha esito negativo anche quando l'installazione non riesce ad accedere all'istanza di SQL Server per verificare le autorizzazioni.  
 
 -   **Gravità:** Errore  
 
@@ -108,7 +108,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 
     -   SQL Server  
 
-**Diritti di amministratore di sistema di SQL Server per il sito di riferimento** : verifica che l'account utente che esegue l'installazione di Configuration Manager abbia il ruolo **sysadmin** nell'istanza del ruolo di SQL Server selezionata come database del sito di riferimento.  Le autorizzazioni del ruolo **sysadmin** di SQL Server sono necessarie per modificare il database del sito.  
+**Diritti di amministratore di sistema di SQL Server per il sito di riferimento** : verifica che l'account utente che esegue l'installazione di Configuration Manager abbia il ruolo **sysadmin** nell'istanza del ruolo di SQL Server selezionata come database del sito di riferimento.  Le autorizzazioni del ruolo **sysadmin** di SQL Server sono necessarie per modificare il database del sito.  
 
 -   **Gravità:** Errore  
 
@@ -247,7 +247,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
     -   Sito primario    
     -   Sito secondario  
 
-**Eccezione del firewall per SQL Server**: controlla se Windows Firewall è disattivato o se è presente un'eccezione relativa a Windows Firewall per SQL Server. È necessario consentire l'accesso remoto a sqlservr.exe o alle porte TCP richieste. Per impostazione predefinita, SQL Server è in ascolto sulla porta TCP 1433 e SQL Broker Service usa la porta TCP 4022.  
+**Eccezione del firewall per SQL Server**: controlla se Windows Firewall è disattivato o se è presente un'eccezione relativa a Windows Firewall per SQL Server. È necessario consentire l'accesso remoto a sqlservr.exe o alle porte TCP richieste. Per impostazione predefinita, SQL Server è in ascolto sulla porta TCP 1433 e SQL Broker Service usa la porta TCP 4022.  
 
 -   **Gravità:** Errore  
 
@@ -258,7 +258,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
     -   Sito secondario    
     -   Punto di gestione  
 
-**Eccezione firewall per SQL Server (sito primario autonomo)**: controlla se Windows Firewall è disattivato o se è presente un'eccezione relativa a Windows Firewall per SQL Server. È necessario consentire l'accesso remoto a sqlservr.exe o alle porte TCP richieste. Per impostazione predefinita, SQL Server è in ascolto sulla porta TCP 1433 e SQL Broker Service usa la porta TCP 4022.  
+**Eccezione firewall per SQL Server (sito primario autonomo)**: controlla se Windows Firewall è disattivato o se è presente un'eccezione relativa a Windows Firewall per SQL Server. È necessario consentire l'accesso remoto a sqlservr.exe o alle porte TCP richieste. Per impostazione predefinita, SQL Server è in ascolto sulla porta TCP 1433 e SQL Broker Service usa la porta TCP 4022.  
 
 -   **Gravità:** Avviso  
 
@@ -266,7 +266,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 
     -   Sito primario (solo autonomo)  
 
-**Eccezione del firewall di SQL Server per il punto di gestione**: controlla se Windows Firewall è disattivato o se è presente un'eccezione relativa a Windows Firewall per SQL Server.  
+**Eccezione del firewall di SQL Server per il punto di gestione**: controlla se Windows Firewall è disattivato o se è presente un'eccezione relativa a Windows Firewall per SQL Server.  
 
 -   **Gravità:** Avviso  
 
@@ -320,7 +320,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
     -   Sito primario    
     -   Sito secondario  
 
-**Microsoft XML Core Services 6.0 (MSXML60)**: verifica che nel computer sia installato Microsoft Core XML Services (MSXML) 6.0 o versioni successive.  
+**Microsoft XML Core Services 6.0 (MSXML60)**: verifica che nel computer sia installato Microsoft Core XML Services (MSXML) 6.0 o versioni successive.  
 
 -   **Gravità:** Avviso  
 
@@ -368,7 +368,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
     -   Sito primario    
     -   Sito secondario  
 
-**PowerShell 2.0 nel server del sito**: verifica che Windows PowerShell versione 2.0 o successiva sia installato nel server del sito per Configuration Manager Exchange Connector. Per altre informazioni su PowerShell 2.0, vedere l' [articolo 968930](http://go.microsoft.com/fwlink/p/?LinkId=226450) nella Microsoft Knowledge Base.  
+**PowerShell 2.0 nel server del sito**: verifica che Windows PowerShell versione 2.0 o successiva sia installato nel server del sito per Configuration Manager Exchange Connector. Per altre informazioni su PowerShell 2.0, vedere l' [articolo 968930](http://go.microsoft.com/fwlink/p/?LinkId=226450) nella Microsoft Knowledge Base.  
 
 -   **Gravità:** Avviso  
 
@@ -434,7 +434,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 
     -   Sito primario  
 
-**Il computer del provider SMS ha lo stesso dominio del server del sito**: controlla se un computer che esegue un'istanza del Provider SMS ha lo stesso dominio del server del sito.  
+**Il computer del provider SMS ha lo stesso dominio del server del sito**: controlla se un computer che esegue un'istanza del Provider SMS ha lo stesso dominio del server del sito.  
 
 -   **Gravità:** Errore  
 
@@ -442,7 +442,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 
     -   provider SMS  
 
-**Edizione di SQL Server**: verifica che l'edizione di SQL Server nel sito non sia SQL Server Express.  
+**Edizione di SQL Server**: verifica che l'edizione di SQL Server nel sito non sia SQL Server Express.  
 
 -   **Gravità:** Errore  
 
@@ -450,7 +450,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 
     -   SQL Server  
 
-**SQL Server Express nel sito secondario**: verifica che SQL Server Express possa essere installato correttamente nel computer del server del sito per un sito secondario.  
+**SQL Server Express nel sito secondario**: verifica che SQL Server Express possa essere installato correttamente nel computer del server del sito per un sito secondario.  
 
 -   **Gravità:** Errore  
 
@@ -458,7 +458,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 
     -   Sito secondario  
 
-**SQL Server nel computer del sito secondario**: verifica che SQL Server sia installato nel computer del sito secondario. Non è supportato per installare SQL Server nel sistema del sito remoto.  
+**SQL Server nel computer del sito secondario**: verifica che SQL Server sia installato nel computer del sito secondario. Non è supportato per installare SQL Server nel sistema del sito remoto.  
 
 > [!WARNING]  
 >  La verifica viene eseguita solo quando si configura il programma di installazione in modo che usi un'istanza esistente di SQL Server.  
@@ -469,7 +469,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 
     -   Sito secondario  
 
-**Allocazione di memoria per il processo di SQL Server**: verifica che SQL Server riservi almeno 8 GB di memoria per il sito di amministrazione centrale e per il sito primario e almeno 4 GB di memoria per il sito secondario. Per altre informazioni su come impostare una quantità fissa di memoria tramite SQL Server Management Studio, vedere [Procedura: Impostazione di una quantità di memoria fissa (SQL Server Management Studio)](http://go.microsoft.com/fwlink/p/?LinkId=233759).  
+**Allocazione di memoria per il processo di SQL Server**: verifica che SQL Server riservi almeno 8 GB di memoria per il sito di amministrazione centrale e per il sito primario e almeno 4 GB di memoria per il sito secondario. Per altre informazioni su come impostare una quantità fissa di memoria tramite SQL Server Management Studio, vedere [Procedura: Impostazione di una quantità di memoria fissa (SQL Server Management Studio)](http://go.microsoft.com/fwlink/p/?LinkId=233759).  
 
 > [!NOTE]  
 >  Questo controllo non è applicabile a SQL Server Express in un sito secondario, limitato a 1 GB di memoria riservata  
@@ -480,7 +480,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 
     -   SQL Server  
 
-**Account di esecuzione del servizio SQL Server**: verifica che l'account di accesso per il servizio SQL Server non sia un account utente locale o di tipo LOCAL SERVICE. È necessario configurare il servizio SQL Server per l'utilizzo di un account di dominio valido, di tipo NETWORK SERVICE o LOCAL SYSTEM.  
+**Account di esecuzione del servizio SQL Server**: verifica che l'account di accesso per il servizio SQL Server non sia un account utente locale o di tipo LOCAL SERVICE. È necessario configurare il servizio SQL Server per l'utilizzo di un account di dominio valido, di tipo NETWORK SERVICE o LOCAL SYSTEM.  
 
 -   **Gravità:** Errore  
 
@@ -490,7 +490,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
     -   Sito primario    
     -   Sito secondario  
 
-**Porta TCP di SQL Server**: verifica che TCP sia abilitato per SQL Server e che sia impostato per usare una porta statica.  
+**Porta TCP di SQL Server**: verifica che TCP sia abilitato per SQL Server e che sia impostato per usare una porta statica.  
 
 -   **Gravità:** Errore  
 
@@ -498,7 +498,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 
     -   SQL Server  
 
-**Versione di SQL Server**: verifica che una versione supportata di SQL Server sia installata nel server di database del sito specificato. Per altre informazioni, vedere [Support for SQL Server versions for System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md) (Supporto per le versioni di SQL Server per System Center Configuration Manager).  
+**Versione di SQL Server**: verifica che una versione supportata di SQL Server sia installata nel server di database del sito specificato. Per altre informazioni, vedere [Support for SQL Server versions for System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md) (Supporto per le versioni di SQL Server per System Center Configuration Manager).  
 
 -   **Gravità:** Errore  
 
@@ -554,7 +554,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
     -   Sito di amministrazione centrale    
     -   Sito primario (solo autonomo)  
 
-**Convalida del nome FQDN del computer SQL Server**: verifica che il nome FQDN specificato per il computer SQL Server sia valido.  
+**Convalida del nome FQDN del computer SQL Server**: verifica che il nome FQDN specificato per il computer SQL Server sia valido.  
 
 -   **Gravità:** Errore  
 
@@ -570,7 +570,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 
     -   Sito primario  
 
-**Verifica delle autorizzazioni del server del sito da pubblicare in Active Directory**: verifica che l'account computer per il server del sito abbia autorizzazioni di tipo **Controllo completo** per il contenitore **System Management** nel dominio di Active Directory. Per altre informazioni sulle opzioni di configurazione delle autorizzazioni richieste, vedere [Estendere lo schema di Active Directory per System Center Configuration Manager](../../../../core/plan-design/network/extend-the-active-directory-schema.md).  
+**Verifica delle autorizzazioni del server del sito da pubblicare in Active Directory**: verifica che l'account computer per il server del sito abbia autorizzazioni di tipo **Controllo completo** per il contenitore **System Management** nel dominio di Active Directory. Per altre informazioni sulle opzioni di configurazione delle autorizzazioni richieste, vedere [Estendere lo schema di Active Directory per System Center Configuration Manager](../../../../core/plan-design/network/extend-the-active-directory-schema.md).  
 
 > [!NOTE]  
 >  È possibile ignorare questo avviso se le autorizzazioni sono state verificate manualmente.  
@@ -608,7 +608,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 
     -   provider SMS  
 
-**Gestione remota Windows (WinRM) v1.1**: verifica che WinRM v1.1 sia installato nel server del sito primario o nel computer della console di Configuration Manager per l'esecuzione della console di gestione fuori banda. Per altre informazioni su come scaricare WinRM 1.1, vedere l' [articolo 936059](http://go.microsoft.com/fwlink/p/?LinkId=247166) nella Microsoft Knowledge Base.  
+**Gestione remota Windows (WinRM) v1.1**: verifica che WinRM v1.1 sia installato nel server del sito primario o nel computer della console di Configuration Manager per l'esecuzione della console di gestione fuori banda. Per altre informazioni su come scaricare WinRM 1.1, vedere l' [articolo 936059](http://go.microsoft.com/fwlink/p/?LinkId=247166) nella Microsoft Knowledge Base.  
 
 -   **Gravità:** Avviso  
 
@@ -617,7 +617,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
     -   Sito primario    
     -   Console di Configuration Manager  
 
-**WSUS nel server del sito**: verifica che Windows Server Update Services (WSUS) versione 3.0 Service Pack 2 sia installato nel server del sito. Quando si usa un punto di aggiornamento software in un computer diverso rispetto al server del sito, è necessario installare la console di amministrazione WSUS nel server del sito. Per altre informazioni su WSUS, vedere la pagina Web [Windows Server Update Services](http://go.microsoft.com/fwlink/p/?LinkID=79477) .  
+**WSUS nel server del sito**: verifica che Windows Server Update Services (WSUS) versione 3.0 Service Pack 2 sia installato nel server del sito. Quando si usa un punto di aggiornamento software in un computer diverso rispetto al server del sito, è necessario installare la console di amministrazione WSUS nel server del sito. Per altre informazioni su WSUS, vedere la pagina Web [Windows Server Update Services](http://go.microsoft.com/fwlink/p/?LinkID=79477) .  
 
 -   **Gravità:** Avviso  
 
@@ -629,7 +629,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 ##  <a name="a-namebkmkrequirementsa-prerequisite-checks-for-system-requirements"></a><a name="BKMK_Requirements"></a> Controlli dei prerequisiti per i requisiti di sistema  
  Di seguito sono indicati i controlli dei prerequisiti eseguiti da Controllo prerequisiti per i requisiti di sistema.  
 
-**Controllo del livello di funzionalità del dominio di Active Directory**: verifica che il livello funzionale del dominio di Active Directory sia almeno Windows Server 2008 R2.  
+**Controllo del livello di funzionalità del dominio di Active Directory**: verifica che il livello funzionale del dominio di Active Directory sia almeno Windows Server 2008 R2.  
 
 -   **Gravità:** Avviso  
 
@@ -677,7 +677,7 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 
     -   Sito primario  
 
-**Spazio su disco disponibile nel server del sito**: il computer del server del sito deve avere almeno 5 GB di spazio libero su disco per l'installazione del server del sito. Se si installa il ruolo del sistema del sito Provider SMS nello stesso computer, sarà necessario disporre di 1 GB aggiuntivo di spazio libero.  
+**Spazio su disco disponibile nel server del sito**: il computer del server del sito deve avere almeno 5 GB di spazio libero su disco per l'installazione del server del sito. Se si installa il ruolo del sistema del sito Provider SMS nello stesso computer, sarà necessario disporre di 1 GB aggiuntivo di spazio libero.  
 
 -   **Gravità:** Errore  
 
@@ -763,6 +763,6 @@ Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

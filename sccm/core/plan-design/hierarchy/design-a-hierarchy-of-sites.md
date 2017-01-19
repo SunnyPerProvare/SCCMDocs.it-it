@@ -1,5 +1,5 @@
 ---
-title: Progettare una gerarchia | System Center Configuration Manager
+title: Progettare una gerarchia | Microsoft Docs
 description: "Comprendendo le topologie disponibili e le opzioni di gestione di System Center Configuration Manager è possibile pianificare la gerarchia del sito."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 783fb4d61aab83ad64b9cec332e90d6c9de59f47
-ms.openlocfilehash: b1ed3011356a794b7b0913a1c8f189230d8957b2
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: 000acfec2cd61cc2d69e1bbd555b10fc22a40318
 
 
 ---
@@ -173,7 +173,7 @@ Gli elementi determinanti per stabilire il tipo e il numero di siti da usare in 
 
 -   [Plan for security in System Center Configuration Manager](../../../core/plan-design/security/plan-for-security.md) (Pianificare la sicurezza in System Center Configuration Manager)  
 
--   [Managing network bandwidth](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#bkmk_bandwidth) durante la distribuzione dei contenuti all'interno di un sito  
+-   [Managing network bandwidth](../../../core/plan-design/hierarchy/manage-network-bandwidth.md) durante la distribuzione dei contenuti all'interno di un sito  
 
 
 **Prendere in considerazione configurazioni che si estendono a siti e gerarchie:**  
@@ -188,6 +188,6 @@ Gli elementi determinanti per stabilire il tipo e il numero di siti da usare in 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

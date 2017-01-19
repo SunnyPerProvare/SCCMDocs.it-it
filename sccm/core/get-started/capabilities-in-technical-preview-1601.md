@@ -1,5 +1,5 @@
 ---
-title: "Funzionalità della versione Technical Preview 1601 per System Center Configuration Manager"
+title: "Funzionalità della versione Technical Preview 1601 per System Center Configuration Manager | Microsoft Docs"
 description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1601 per System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: be158c1d893a1c1aae19c6cf2fd3a678a59d4f9e
+ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
+ms.openlocfilehash: 7321645f17a143afe2fd848f45511a374de78c4b
 
 ---
 # <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1601 per System Center Configuration Manager
@@ -211,8 +211,8 @@ Un client è online se è attualmente connesso a un ruolo del sistema del sito d
 
  Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
 
-### <a name="android---kiosk-mode-for-samsung-knoxbr-hybrid"></a>Android - Modalità tutto schermo per Samsung KNOX<br />Ibrido  
- La modalità tutto schermo consente di bloccare un dispositivo per consentire solo l'uso di alcune funzionalità. Ad esempio, è possibile consentire a un dispositivo di eseguire solo un'app gestita specificata o disabilitare i pulsanti del volume in un dispositivo. Queste impostazioni potrebbero essere usate per un modello demo di un dispositivo o per un dispositivo dedicato all'esecuzione di una sola funzione, ad esempio un dispositivo POS. Queste impostazioni non sono disponibili per i dispositivi Samsung KNOX nell'elemento di configurazione **Windows 8.1 e Windows 10** (le impostazioni si applicano solo ai dispositivi Windows 10).  
+### <a name="android---kiosk-mode-for-samsung-knox-standardbr-hybrid"></a>Android - Modalità tutto schermo per Samsung KNOX Standard<br />Ibrido  
+ La modalità tutto schermo consente di bloccare un dispositivo per consentire solo l'uso di alcune funzionalità. Ad esempio, è possibile consentire a un dispositivo di eseguire solo un'app gestita specificata o disabilitare i pulsanti del volume in un dispositivo. Queste impostazioni potrebbero essere usate per un modello demo di un dispositivo o per un dispositivo dedicato all'esecuzione di una sola funzione, ad esempio un dispositivo POS. Queste impostazioni non sono disponibili per i dispositivi Samsung KNOX Standard nell'elemento di configurazione **Windows 8.1 e Windows 10** (le impostazioni si applicano solo ai dispositivi Windows 10).  
 
  Per visualizzare le nuove impostazioni, scegliere **Modalità tutto schermo - Samsung KNOX** nella pagina **Impostazioni dispositivo** dell'elemento di configurazione della **Creazione guidata dell'elemento di configurazione**.  
 
@@ -220,6 +220,6 @@ Un client è online se è attualmente connesso a un ruolo del sistema del sito d
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

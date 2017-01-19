@@ -1,5 +1,5 @@
 ---
-title: Prerequisiti dei profili di posta elettronica | System Center Configuration Manager
+title: Prerequisiti per i profili di posta elettronica | Microsoft Docs
 description: Informazioni sui profili di posta elettronica in System Center Configuration Manager e sulle dipendenze esterne e dipendenze nel prodotto.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 4c6dc38fe3cc8721cec642701a4be78536da4b23
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: a41bec089897717a7e73e751d58275af9e0a5fa3
 
 
 ---
@@ -43,6 +43,6 @@ I profili di posta elettronica in System Center Configuration Manager hanno dipe
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

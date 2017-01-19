@@ -1,5 +1,5 @@
 ---
-title: Transizioni di esempio dello stato di convalida per Asset Intelligence | System Center Configuration Manager
+title: Transizioni dello stato di convalida di esempio per Asset Intelligence | Microsoft Docs
 description: Vedere le transizioni di esempio dello stato di convalida per Asset Intelligence in System Center Configuration Manager
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 72b6c4273c2e9f82b8b30501ad44a1e7985e6d86
+ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
+ms.openlocfilehash: d1e320c6498e034307557e8a182c36cef2de640b
 
 
 ---
@@ -84,6 +84,6 @@ Gli stati di convalida di Asset Intelligence in System Center Configuration Mana
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

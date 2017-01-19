@@ -1,5 +1,5 @@
 ---
-title: Supporto dei server proxy | System Center Configuration Manager
+title: Supporto dei server proxy | Microsoft Docs
 description: Informazioni sul supporto di System Center Configuration Manager per i server proxy usato dai server di sistema del sito e dai client.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: d20c734ba8050037cdf4ae290f72723f34781518
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: 97f9cc792d1fea20c32f38bc98cbdfb9ba90640d
 
 
 ---
@@ -81,7 +81,7 @@ Configurare le impostazioni del server proxy nella pagina Punto di aggiornamento
 
 1.  Nella console di Configuration Manager fare clic su Amministrazione, espandere Configurazione del sito e quindi fare clic su Server e ruoli del sistema del sito.  
 
-2.  Selezionare il server di sistema del sito che si vuole modificare, quindi nel riquadro dei dettagli fare clic con il pulsante destro del mouse su Sistema del sito e scegliere Proprietà.  
+2.  Selezionare il server del sistema del sito che si vuole modificare, quindi nel riquadro dei dettagli fare clic con il pulsante destro del mouse su Sistema del sito, quindi scegliere Proprietà.  
 
 3.  In Proprietà sistema del sito selezionare la scheda Proxy, quindi configurare le impostazioni proxy per il server del sito primario.  
 
@@ -89,6 +89,6 @@ Configurare le impostazioni del server proxy nella pagina Punto di aggiornamento
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

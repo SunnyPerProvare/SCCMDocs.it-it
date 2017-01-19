@@ -1,6 +1,6 @@
 ---
-title: Strumento di registrazione dell'aggiornamento | System Center Configuration Manager
-description: Informazioni su quando e come usare lo strumento di registrazione dell'aggiornamento per importare manualmente un aggiornamento nella console di Configuration Manager.
+title: Strumento di registrazione dell&quot;aggiornamento | Microsoft Docs
+description: Informazioni su quando e come usare lo strumento di registrazione dell&quot;aggiornamento per importare manualmente un aggiornamento nella console di Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 176c1d7055ae8706b92886d59d8a048dd867c18b
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: c729212d38168acfff3f11ea41f3d52b234c70c8
 
 
 ---
@@ -73,6 +73,6 @@ Quando è necessario installare un rilascio fuori programma e il nome file dell'
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

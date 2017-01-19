@@ -1,6 +1,6 @@
 ---
-title: Inventario software | System Center Configuration Manager
-description: Introduzione all'inventario software in System Center Configuration Manager.
+title: Inventario software | Microsoft Docs
+description: Introduzione all&quot;inventario software in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 8d664616e222119f7821a70a7c8f9cdbfca38538
+ms.sourcegitcommit: a468ce93e9536fe3f6bf0fc191ff9764dd1c3343
+ms.openlocfilehash: 401ba6e37d740310d49ab9e96112ce576d7130e4
 
 
 ---
@@ -34,7 +34,7 @@ Usare l'inventario software in System Center Configuration Manager per raccoglie
 
 -   Creare query che restituiscono i dispositivi basati su file presenti nei dispositivi specificati. Per altre informazioni, vedere [Queries technical reference for System Center Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md) (Riferimento tecnico per le query per System Center Configuration Manager).  
 
--   Creare raccolte basate su query basate su file presenti nei dispositivi specificati. Le appartenenze alle raccolte basate su query vengono aggiornate automaticamente in base a una pianificazione. È possibile usare le raccolte per una serie di attività quali la distribuzione software. Per altre informazioni, vedere [Collections technical reference for System Center Configuration Manager](../../../../core/clients/manage/collections/collections-technical-reference.md) (Riferimento tecnico per le raccolte per System Center Configuration Manager).  
+-   Creare raccolte basate su query basate su file presenti nei dispositivi specificati. Le appartenenze alle raccolte basate su query vengono aggiornate automaticamente in base a una pianificazione. È possibile usare le raccolte per una serie di attività quali la distribuzione software. Per altre informazioni, vedere [Introduzione alle raccolte in System Center Configuration Manager](../../../../core/clients/manage/collections/introduction-to-collections.md).  
 
 -   Eseguire i report che consentono di visualizzare informazioni dettagliate specifiche sui dispositivi all'interno dell'organizzazione. Per altre informazioni, vedere [Creazione di report in System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
 
@@ -54,6 +54,7 @@ Usare l'inventario software in System Center Configuration Manager per raccoglie
 
 |Piattaforma|Per i dispositivi di proprietà personale|Per i dispositivi di proprietà dell'azienda|  
 |--------------|---------------------------------|--------------------------------|  
+|Windows 10 senza il client di Configuration Manager|Solo le app gestite|Solo le app gestite| 
 |Windows 8.1 senza il client di Configuration Manager|Solo le app gestite|Solo le app gestite|  
 |Windows Phone 8|Solo le app gestite|Solo le app gestite|  
 |Windows RT|Solo le app gestite|Solo le app gestite|  
@@ -62,6 +63,6 @@ Usare l'inventario software in System Center Configuration Manager per raccoglie
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

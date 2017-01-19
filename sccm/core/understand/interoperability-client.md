@@ -1,8 +1,8 @@
 ---
-title: "Usare il client di interoperabilità estesa con Current Branch | System Center Configuration Manager"
-description: Informazioni sull'uso del client di Long-Term Servicing Branch di Configuration Manager con un sito di Current Branch.
+title: "Usare il client di interoperabilità estesa con Current Branch | Microsoft Docs"
+description: Informazioni sull&quot;uso del client di Long-Term Servicing Branch di Configuration Manager con un sito di Current Branch.
 ms.custom: na
-ms.date: 10/12/2016
+ms.date: 01/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 600086d5-bd9e-4ac1-8ace-c7a62de80dc2
 caps.latest.revision: 0
-author: Brenduns
-ms.author: brenduns
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 Robots: NOINDEX,NOFOLLOW
 translationtype: Human Translation
-ms.sourcegitcommit: 45ef4be7bf0b1c2e99f25ac398265bb71489c17e
-ms.openlocfilehash: a97eb7a637611ba269cf8f16635b8165c19283f1
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 30d0177dc7fcc7f39d00c48067130d587435bf2d
 
 ---
 # <a name="use-the-client-software-from-the-version-1606-baseline-media-for-extended-interoperability-with-future-versions-of-a-current-branch-site"></a>Usare il software client del supporto di base della versione 1606 per l'interoperabilità estesa con le versioni future di un sito di Current Branch
@@ -59,6 +59,6 @@ Nella scheda **Componenti** dell'applicazione alcuni componenti visualizzano val
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

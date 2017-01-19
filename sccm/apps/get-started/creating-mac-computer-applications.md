@@ -1,5 +1,5 @@
 ---
-title: Creare applicazioni per computer Mac | System Center Configuration Manager
+title: Creazione di applicazioni per computer Mac | Microsoft Docs
 description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni per i computer Mac.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 98b36c58506bcb82fe82f842b8c3ed9dbd2a75d1
+ms.sourcegitcommit: 8dcf9f310a4ea8e2f43f2fe79e5e3cfa2c8aeb61
+ms.openlocfilehash: c2feffad39a20519fd86ca9348b0855a51e05aa9
 
 
 ---
@@ -32,7 +32,7 @@ Oltre agli altri requisiti e alle procedure di System Center Configuration Manag
 
 ## <a name="general-considerations"></a>Considerazioni generali  
  È possibile usare System Center Configuration Manager per distribuire applicazioni nei computer Mac che eseguono il client Mac di Configuration Manager. I passaggi per distribuire software nei computer Mac sono simili a quelli utilizzati per distribuire software nei computer Windows. Tuttavia, prima di creare e distribuire applicazioni nei computer Mac gestiti da Configuration Manager, prendere in considerazione quanto segue:  
-  
+
 -   Prima di distribuire pacchetti di applicazioni Mac nei computer Mac, è necessario usare lo strumento **CMAppUtil** in un computer Mac per convertire tali applicazioni in un formato che possa essere letto da Configuration Manager.  
 
 -   Configuration Manager non supporta la distribuzione di applicazioni Mac agli utenti: le distribuzioni devono essere effettuate a un dispositivo. Analogamente, per le distribuzioni di applicazioni Mac, Configuration Manager non supporta l'opzione **Pre-distribuisci il software nel dispositivo primario dell'utente** nella pagina **Impostazioni distribuzione** della procedura Distribuzione guidata del software.  
@@ -71,9 +71,9 @@ Oltre agli altri requisiti e alle procedure di System Center Configuration Manag
 -   Pacchetto di Mac OS X Installer (.pkg)  
 
 -   Applicazione di Mac OS X (.app)  
-  
+
 Dopo aver raccolto informazioni sull'applicazione, **CMAppUtil** crea un file con estensione **.cmmac**. Questo file contiene i file di installazione per il software Mac e le informazioni sui metodi di rilevamento da usare per stabilire se l'applicazione sia stata già installata. **CMAppUtil** è anche in grado di elaborare i file **.dmg** che contengono più applicazioni Mac e di creare tipi di distribuzione diversi per ogni applicazione.  
-  
+
 1.  Copiare il pacchetto di installazione software Mac nella cartella sul computer Mac in cui sono stati estratti i contenuti del file **macclient.dmg** scaricato dall'Area download Microsoft.  
 
 2.  Nello stesso computer Mac, aprire una finestra terminale e spostarsi nella cartella in cui sono stati estratti i contenuti del file **macclient.dmg** .  
@@ -106,9 +106,9 @@ Dopo aver raccolto informazioni sull'applicazione, **CMAppUtil** crea un file co
 ###  <a name="create-a-configuration-manager-application-that-contains-the-mac-software"></a>Creare un'applicazione di Configuration Manager che contenga il software Mac  
 
 Usare la procedura che segue per creare e distribuire un'applicazione per computer Mac gestiti da Configuration Manager.  
-  
+
 1.  Nella console di Configuration Manager fare clic su **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
-  
+
 3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea applicazione**.  
 
 4.  Nella pagina **Generale** della Creazione guidata applicazione selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**.  
@@ -141,9 +141,9 @@ Usare la procedura che segue per creare e distribuire un'applicazione per comput
 
 > [!NOTE]  
 >  Se si è effettuata l'importazione automatica delle informazioni sull'applicazione nella Creazione guidata applicazione, un tipo di distribuzione per l'applicazione potrebbe essere già stato creato.  
-  
+
 1.  Nella console di Configuration Manager fare clic su **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
-  
+
 3.  Selezionare un'applicazione e quindi nel gruppo **Applicazione** della scheda **Home** fare clic su **Crea tipo di distribuzione** per creare un nuovo tipo di distribuzione per questa applicazione.  
 
     > [!NOTE]  
@@ -207,9 +207,9 @@ Usare la procedura che segue per creare e distribuire un'applicazione per comput
 
 > [!NOTE]  
 >  È possibile creare una raccolta che contenga solo i computer Mac. Per farlo, creare una raccolta che usi una regola di query e usare la query WQL di esempio illustrata nell'argomento [Come creare query](../../core/servers/manage/create-queries.md).  
-  
+
  Per altre informazioni, vedere l'argomento relativo alla [distribuzione delle applicazioni](../../apps/deploy-use/deploy-applications.md).  
-  
+
 ###  <a name="step-5-monitor-the-deployment-of-the-mac-application"></a>Passaggio 5: Monitorare la distribuzione dell'applicazione Mac  
  È possibile utilizzare lo stesso processo per monitorare le distribuzioni di applicazioni nei computer Mac delle distribuzioni di applicazioni nei computer Windows.  
 
@@ -217,6 +217,6 @@ Usare la procedura che segue per creare e distribuire un'applicazione per comput
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Procedura di preparazione| MDM locale | System Center Configuration Manager
+title: Passaggi di preparazione | Microsoft Docs | Gestione dei dispositivi mobili locale
 description: Preparare la gestione dei dispositivi con la gestione dei dispositivi mobili locale in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 21bac2eae1aaea5bbd5897fcd4eb2aa11538aac7
+ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
+ms.openlocfilehash: a5c9fa5994f9b7bd13fe53edb6998609852b98ca
 
 
 ---
@@ -47,6 +47,6 @@ La gestione di dispositivi con la gestione dei dispositivi mobili locale in Syst
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

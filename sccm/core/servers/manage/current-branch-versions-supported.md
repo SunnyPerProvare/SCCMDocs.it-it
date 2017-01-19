@@ -1,5 +1,5 @@
 ---
-title: Versioni Current Branch | System Center Configuration Manager
+title: Versioni Current Branch | Microsoft Docs
 description: Informazioni sulla cronologia delle versioni di System Center Configuration Manager e sulle fasi del servizio offerto.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ ms.author: brenduns
 manager: angrobe
 robots: noindex,nofollow
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 2308e1f8bde4a93329dfe6ce96d781fcac1b495a
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: fecbdfa9ad99ca36f419cdda19a14b58f9f2b316
 
 ---
 # <a name="support-for-system-center-configuration-manager-current-branch-versions"></a>Supporto per le versioni di System Center Configuration Manager Current Branch
@@ -44,9 +44,12 @@ Figura 1. Esempio di servizio di manutenzione Current Branch.
 |1511|08/12/2015|12/8/2016|  
 |1602|11/03/2016|3/11/2017|
 |1606|7/22/2016|7/22/2017|
+|1610|18/11/2016|11/18/2017|
+
+Per informazioni sui numeri di versione e la disponibilità come aggiornamento nella console o versione di base, vedere [Versioni di base e di aggiornamento](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions).
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

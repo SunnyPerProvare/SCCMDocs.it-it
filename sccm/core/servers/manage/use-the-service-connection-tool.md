@@ -1,6 +1,6 @@
 ---
-title: Strumento di connessione del servizio | System Center Configuration Manager
-description: Lo strumento consente di connettersi al servizio cloud di Configuration Manager per caricare manualmente le informazioni sull'utilizzo.
+title: Strumento di connessione del servizio | Microsoft Docs
+description: Lo strumento consente di connettersi al servizio cloud di Configuration Manager per caricare manualmente le informazioni sull&quot;utilizzo.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 5fab3a4834f30d48c5c000a7c95c7006eb8e4785
+ms.sourcegitcommit: b4642186e42745640f088b7046e70019616935ea
+ms.openlocfilehash: 9a5cd5ce3ce6868b44768d3cbe7b7c594f44d42c
 
 
 ---
@@ -29,7 +29,10 @@ Usare lo **strumento di connessione del servizio** quando i server del sistema d
 
  Lo strumento consente di connettersi al servizio cloud di Configuration Manager per caricare manualmente le informazioni di utilizzo per la gerarchia e per scaricare gli aggiornamenti. Il caricamento dei dati di utilizzo è necessario per abilitare il servizio cloud in modo che fornisca gli aggiornamenti corretti per la distribuzione.  
 
- **Prerequisiti per l'uso dello strumento di connessione del servizio:**  
+## <a name="prerequisites-for-using-the-service-connection-tool"></a>Prerequisiti per l'uso dello strumento di connessione del servizio
+Di seguito sono elencati i prerequisiti e i problemi noti.
+
+**Prerequisiti:**
 
 -   È installato un punto di connessione del servizio, impostato su **Offline, connessione su richiesta**.  
 
@@ -50,26 +53,6 @@ Usare lo **strumento di connessione del servizio** quando i server del sistema d
 
 
 -   È necessaria un'unità USB con spazio libero sufficiente per l'archiviazione dei file e degli aggiornamenti oppure un altro metodo di trasferimento dei file tra il computer del punto di connessione del servizio e il computer con accesso a Internet. Questo scenario presuppone che i computer del sito e i computer gestiti non abbiano una connessione diretta a Internet.  
-
-**I passaggi principali per l'uso dello strumento di connessione del servizio sono tre:**  
-
-1.  **Preparazione**: in questo passaggio i dati di utilizzo vengono inseriti in un file CAB e archiviati in un'unità USB o in una posizione di trasferimento alternativa specificata.  
-
-2.  **Connessione**: in questo passaggio lo strumento viene eseguito in un computer remoto che si connette a Internet per caricare i dati e scaricare gli aggiornamenti.  
-
-3.  **Importazione**: in questo passaggio vengono importati gli aggiornamenti per Configuration Manager nel sito in modo da visualizzare e quindi installare gli aggiornamenti dalla console di Configuration Manager.  
-
-A partire dalla versione 1606, mentre si è connessi a Microsoft è possibile caricare più file con estensione cab contemporaneamente, ognuno da una gerarchia diversa, e specificare un server proxy e un utente per il server proxy.   
-
-**Per caricare più file con estensione cab:**
- -  Inserire i singoli file con estensione cab da esportare da gerarchie diverse nella stessa cartella. Il nome di ogni file deve essere univoco ed è possibile rinominarli manualmente se necessario.
- -  Quando si esegue il comando per caricare i dati in Microsoft, specificare la cartella che contiene i file con estensione cab. (Prima dell'aggiornamento 1606, era possibile caricare i dati da una sola gerarchia alla volta e lo strumento richiedeva di specificare il nome del file con estensione cab nella cartella).
- -  Quando in seguito si esegue l'attività di importazione nel punto di connessione del servizio di una gerarchia, lo strumento importerà automaticamente solo i dati della gerarchia specifica.  
-
-**Per specificare un server proxy:**  
-È possibile usare i parametri facoltativi seguenti per specificare un server proxy (ulteriori informazioni sull'uso di questi parametri sono disponibili nella sezione Opzioni della riga di comando in questo argomento):
-  - **-proxyserveruri [FQDN_of_proxy_sever]**  Usare questo parametro per specificare il server proxy da usare per la connessione.
-  -  **-proxyusername [username]**  Usare questo parametro quando è necessario specificare un utente per il server proxy.
 
 
 
@@ -98,7 +81,30 @@ Quando si esegue il comando seguente, lo strumento prepara un file CAB che conti
 
 È anche necessario copiare la cartella ServiceConnectionTool con tutto il contenuto nell'unità USB o renderla comunque disponibile nel computer da usare per i passaggi 3 e 4.  
 
-#### <a name="to-use-the-service-connection-tool"></a>Per usare lo strumento di connessione del servizio  
+### <a name="overview"></a>Panoramica
+**I passaggi principali per l'uso dello strumento di connessione del servizio sono tre:**  
+
+1.  **Preparazione**: in questo passaggio i dati di utilizzo vengono inseriti in un file CAB e archiviati in un'unità USB o in una posizione di trasferimento alternativa specificata.  
+
+2.  **Connessione**: in questo passaggio lo strumento viene eseguito in un computer remoto che si connette a Internet per caricare i dati e scaricare gli aggiornamenti.  
+
+3.  **Importazione**: in questo passaggio vengono importati gli aggiornamenti per Configuration Manager nel sito in modo da visualizzare e quindi installare gli aggiornamenti dalla console di Configuration Manager.  
+
+A partire dalla versione 1606, mentre si è connessi a Microsoft è possibile caricare più file con estensione cab contemporaneamente, ognuno da una gerarchia diversa, e specificare un server proxy e un utente per il server proxy.   
+
+**Per caricare più file con estensione cab:**
+ -  Inserire i singoli file con estensione cab da esportare da gerarchie diverse nella stessa cartella. Il nome di ogni file deve essere univoco ed è possibile rinominarli manualmente se necessario.
+ -  Quando si esegue il comando per caricare i dati in Microsoft, specificare la cartella che contiene i file con estensione cab. (Prima dell'aggiornamento 1606, era possibile caricare i dati da una sola gerarchia alla volta e lo strumento richiedeva di specificare il nome del file con estensione cab nella cartella).
+ -  Quando in seguito si esegue l'attività di importazione nel punto di connessione del servizio di una gerarchia, lo strumento importerà automaticamente solo i dati della gerarchia specifica.  
+
+**Per specificare un server proxy:**  
+È possibile usare i parametri facoltativi seguenti per specificare un server proxy (ulteriori informazioni sull'uso di questi parametri sono disponibili nella sezione Opzioni della riga di comando in questo argomento):
+  - **-proxyserveruri [FQDN_of_proxy_sever]**  Usare questo parametro per specificare il server proxy da usare per la connessione.
+  -  **-proxyusername [username]**  Usare questo parametro quando è necessario specificare un utente per il server proxy.
+
+
+
+### <a name="to-use-the-service-connection-tool"></a>Per usare lo strumento di connessione del servizio  
 
 1.  Nel computer che ospita il punto di connessione del servizio:  
 
@@ -156,6 +162,6 @@ Quando si esegue il comando seguente, lo strumento prepara un file CAB che conti
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

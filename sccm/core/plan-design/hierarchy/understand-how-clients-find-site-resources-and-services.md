@@ -1,5 +1,5 @@
 ---
-title: Trovare le risorse del sito | System Center Configuration Manager
+title: Trovare le risorse del sito | Microsoft Docs
 description: Informazioni su come e quando i client di System Center Configuration Manager usano la posizione del servizio per individuare le risorse del sito.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5d718d0f9b8c6121f3124a8ade7507c61b7313f2
-ms.openlocfilehash: cad4ebd3f8fa275d7d2cad9b2b87c32b971c580d
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: b006896091901fab7b141f99f4c95eb22ea61b82
 
 
 ---
@@ -110,7 +110,7 @@ Per le comunicazioni tipiche, un client tenta di usare un punto di gestione dall
 
 1.  Proxy  
 2.  Locale  
-3.  assegnati  
+3.  Assegnato  
 
 Tuttavia, il client usa sempre il punto di gestione assegnato per i messaggi di registrazione e per alcuni messaggi di criteri, anche quando vengono inviate altre comunicazioni a un punto di gestione proxy o locale.  
 
@@ -176,7 +176,6 @@ Per pubblicare punti di gestione in DNS, devono verificarsi le due condizioni se
 **Quando i server DNS supportano gli aggiornamenti automatici**, è possibile configurare Configuration Manager per la pubblicazione automatica dei punti di gestione della Intranet in DNS oppure per la pubblicazione manuale di tali record in DNS. Quando i punti di gestione vengono pubblicati in DNS, il nome FQDN Intranet e il numero di porta corrispondenti sono pubblicati nel record di individuazione del servizio (SRV). La pubblicazione DNS in un sito viene configurata nelle proprietà del componente del punto di gestione dei siti. Per altre informazioni, vedere [Site components for System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md) (Componenti del sito per System Center Configuration Manager).  
 
 **Quando la zona DNS è impostata su "Secure only" (Solo protetti) per gli aggiornamenti dinamici**, solo il primo punto di gestione da pubblicare in DNS è in grado di eseguire correttamente l'operazione con le autorizzazioni predefinite.
-- È possibile aggiungere al gruppo DnsAdmins ogni server che ospita un punto di gestione per assicurare che tali punti di gestione dispongano delle autorizzazioni per la modifica dei relativi record.  
 - Quando soltanto un punto di gestione è in grado di pubblicare e modificare il proprio record DNS, solo se tale punto di gestione rimane integro i client possono ottenere l'elenco completo dei punti di gestione e quindi individuare quello preferito.
 
 
@@ -251,6 +250,6 @@ Se non si desidera che i client trovino un punto di gestione HTTP in WINS, confi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

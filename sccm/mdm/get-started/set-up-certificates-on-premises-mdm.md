@@ -1,5 +1,5 @@
 ---
-title: Configurazione di certificati | Gestione dei dispositivi mobili locale | System Center Configuration Manager
+title: Configurare i certificati| Microsoft Docs | Gestione dei dispositivi mobili locale
 description: Configurare i certificati per le comunicazioni attendibili per la gestione dei dispositivi mobili locale in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 22a01ffa8385413c9671fd282c7337cbb6e2ffa0
+ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
+ms.openlocfilehash: d7aaad9298308b588f1bc13027082bf07066a3c2
 
 
 ---
@@ -174,6 +174,6 @@ La gestione dei dispositivi mobili locale di System Center Configuration Manager
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

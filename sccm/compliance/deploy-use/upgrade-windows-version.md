@@ -1,8 +1,8 @@
 ---
-title: "Aggiornare i dispositivi Windows a una versione più recente | System Center Configuration Manager"
-description: "Aggiornare automaticamente i dispositivi che eseguono Windows 10 Desktop, Windows 10 Mobile, o Windows 10 Holographic all'edizione più recente."
+title: Aggiornare i dispositivi Windows a una nuova versione | Microsoft Docs
+description: "Aggiornare automaticamente i dispositivi che eseguono Windows 10 Desktop, Windows 10 Mobile, o Windows 10 Holographic all&quot;edizione più recente."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 7ee088f6da266742e7836499a7f0e072bf446a62
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: f14dfb77be7b53e74d53e0c1fc7e7f1731952d40
 
 
 ---
@@ -35,12 +35,13 @@ I **criteri di aggiornamento edizione** di System Center Configuration Manager c
 - Windows 10 Holographic
 
 Sono supportati i percorsi di aggiornamento seguenti:
+
 - Da Windows 10 Pro a Windows 10 Enterprise
 - Da Windows 10 Home a Windows 10 Education
 - Da Windows 10 Mobile a Windows 10 Mobile Enterprise
 - Da Windows 10 Holographic Pro a Windows 10 Holographic Enterprise
 
-È necessario che i dispositivi siano registrati in Microsoft Intune. Questa funzionalità non è attualmente compatibile con PC che eseguono il software client di Configuration Manager o con PC che sono gestiti da un software MDM locale.
+I dispositivi devono essere registrati in Microsoft Intune o eseguire il software client di Configuration Manager. Questo criterio non è attualmente compatibile con i PC gestiti mediante MDM locale.
 
 ## <a name="before-you-start"></a>Prima di iniziare  
  Prima di iniziare l'aggiornamento dei dispositivi alla versione più recente, è necessario uno degli elementi seguenti:  
@@ -78,7 +79,7 @@ Sono supportati i percorsi di aggiornamento seguenti:
 
 6.  Completare la procedura guidata.  
 
- I nuovi criteri verranno visualizzati nel nodo **Aggiornamento edizione Windows 10** dell'area di lavoro **Asset e conformità** .  
+I nuovi criteri verranno visualizzati nel nodo **Aggiornamento edizione Windows 10** dell'area di lavoro **Asset e conformità** .  
 
 ## <a name="deploy-the-edition-upgrade-policy"></a>Distribuire i criteri di aggiornamento edizione  
 
@@ -86,14 +87,14 @@ Sono supportati i percorsi di aggiornamento seguenti:
 
 3.  Selezionare i criteri di aggiornamento edizione Windows 10 da distribuire e quindi nel gruppo **Distribuzione** della scheda **Home** fare clic su **Distribuisci**.  
 
-4.  Nella finestra di dialogo **Distribuisci aggiornamento edizione Windows 10** scegliere la raccolta di utenti o dispositivi a cui distribuire i criteri e la pianificazione per la valutazione dei criteri, quindi fare clic su **OK**.  
+4.  Nella finestra di dialogo **Distribuisci aggiornamento edizione Windows 10** scegliere la raccolta di utenti o dispositivi a cui distribuire i criteri e la pianificazione per la valutazione dei criteri, quindi fare clic su **OK**. Per i PC gestiti con il client di Configuration Manager, è necessario distribuire i criteri a una raccolta di dispositivi. Per i PC registrati con Intune, è possibile distribuire i criteri a una raccolta di utenti o di dispositivi. 
 
- È possibile monitorare la distribuzione appena creata dal nodo **Distribuzioni** dell'area di lavoro **Monitoraggio** .  
+È possibile monitorare la distribuzione appena creata dal nodo **Distribuzioni** dell'area di lavoro **Monitoraggio** .  
 
- Quando i criteri raggiungono un PC Windows specificato, il PC verrà riavviato entro due ore per applicare l'aggiornamento. Informare tutti gli utenti interessati dalla distribuzione dei criteri o pianificare la distribuzione dei criteri in ore non lavorative.
+ Quando i criteri raggiungono un PC Windows specificato e vengono valutati, il PC viene riavviato entro due ore per applicare l'aggiornamento. Informare tutti gli utenti interessati dalla distribuzione dei criteri o pianificare la distribuzione dei criteri in ore non lavorative.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

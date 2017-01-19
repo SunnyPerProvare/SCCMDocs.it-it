@@ -1,6 +1,6 @@
 ---
-title: Punto di distribuzione basato sul cloud | System Center Configuration Manager
-description: Informazioni sulle configurazioni e le limitazioni per l'uso di un punto di distribuzione basato sul cloud con System Center Configuration Manager.
+title: Punto di distribuzione basato su cloud | Microsoft Docs
+description: Informazioni sulle configurazioni e le limitazioni per l&quot;uso di un punto di distribuzione basato sul cloud con System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: c1838866241c30598346b84cb36b8bf4967bf7f6
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: 840f7be09f234d598bc7856d53e278665808fef1
 
 
 ---
@@ -215,6 +215,6 @@ Un punto di distribuzione basato su cloud presenta le limitazioni seguenti:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

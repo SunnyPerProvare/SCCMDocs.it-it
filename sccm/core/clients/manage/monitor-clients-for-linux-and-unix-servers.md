@@ -1,8 +1,8 @@
 ---
-title: Monitorare i client | Linux UNIX |System Center Configuration Manager
+title: 'Monitorare i client |System Center Configuration Manager | Linux UNIX '
 description: Monitorare i client su server Linux e UNIX in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/23/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d827cf91-b18f-4ee7-b538-24ba6f003ab9
 caps.latest.revision: 6
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 707cb13bcb62848eb42ca824137a645dfd2f9d82
+ms.sourcegitcommit: 620c1caf50b4859afc8f32490ab7945df810aefd
+ms.openlocfilehash: b2b7c88784eed6fbee6ac1f6348d7d6991df1fbb
 
 
 ---
@@ -35,11 +35,10 @@ ms.openlocfilehash: 707cb13bcb62848eb42ca824137a645dfd2f9d82
 
 -   Dettagli sull'inventario in Esplora inventario risorse  
 
- Le sezioni seguenti forniscono informazioni sull'uso di Esplora inventario risorse e dei report per visualizzare i dettagli relativi ai server Linux e UNIX.  
+ Le sezioni seguenti descrivono come ottenere queste informazioni dettagliate da Esplora inventario risorse e dai report.  
 
-##  <a name="a-namebkmkuseresourceexpforlnua-how-to-use-resource-explorer-to-view-inventory-for-linux-and-unix-servers"></a><a name="BKMK_UseResourceExpforLnU"></a> Come usare Esplora inventario risorse per visualizzare l'inventario per i server Linux e UNIX  
- È possibile visualizzare i dettagli sull'hardware e sul software installato nei server Linux e UNIX usando Esplora inventario risorse.  
-
+##  <a name="a-namebkmkuseresourceexpforlnua-use-resource-explorer-to-view-inventory-for-linux-and-unix-servers"></a><a name="BKMK_UseResourceExpforLnU"></a> Usare Esplora inventario risorse per visualizzare l'inventario per i server Linux e UNIX  
+ 
  Dopo che un client di Configuration Manager invia l'inventario hardware al sito di Configuration Manager, è possibile usare Esplora inventario risorse per visualizzare queste informazioni. Il client di Configuration Manager per Linux e UNIX non aggiunge nuove classi o visualizzazioni per l'inventario in Esplora inventario risorse. I dati di inventario di Linux e UNIX sono mappati a classi WMI esistenti. È possibile visualizzare i dettagli sull'inventario per i server Linux e UNIX nelle classificazioni basate su Windows usando Esplora inventario risorse.  
 
  Ad esempio, è possibile raccogliere l'elenco di tutti i programmi installati in modo nativo presenti nei server Linux e UNIX. Esempi di programmi installati in modo nativo includono **.rpms** in Linux o **.pkgs** in Solaris. Dopo che un inventario è stato inviato da un client Linux o UNIX, è possibile visualizzare l'elenco di tutti i programmi Linux o UNIX installati in modo nativo in Esplora inventario risorse nella console di Configuration Manager.  
@@ -57,6 +56,6 @@ ms.openlocfilehash: 707cb13bcb62848eb42ca824137a645dfd2f9d82
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

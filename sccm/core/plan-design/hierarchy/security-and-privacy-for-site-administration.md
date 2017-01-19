@@ -1,6 +1,6 @@
 ---
-title: Sicurezza e privacy per l'amministrazione dei siti | System Center Configuration Manager
-description: Ottimizzare sicurezza e privacy per l'amministrazione dei siti in System Center Configuration Manager.
+title: Privacy e sicurezza per l&quot;amministrazione dei siti | Microsoft Docs
+description: Ottimizzare sicurezza e privacy per l&quot;amministrazione dei siti in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: be8002edb48506286e18b1fb8c09f92f46ff0e10
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: aca2169c8f5f855e84ca924ca56f6b64bba80fd6
 
 
 ---
@@ -365,6 +365,6 @@ Identificare e seguire le procedure ottimali per la versione di IIS Server. Tutt
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

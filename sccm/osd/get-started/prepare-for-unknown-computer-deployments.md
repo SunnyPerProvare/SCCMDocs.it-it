@@ -1,6 +1,6 @@
 ---
-title: Preparare le distribuzioni in computer sconosciuti | Configuration Manager
-description: Informazioni su come distribuire i sistemi operativi ai computer che non sono gestiti da Configuration Manager nell'ambiente di System Center Configuration Manager.
+title: Preparare le distribuzioni in computer sconosciuti | Microsoft Docs
+description: Informazioni su come distribuire i sistemi operativi ai computer che non sono gestiti da Configuration Manager nell&quot;ambiente di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 1228dc7ebee2f17da9a7ade5641ef73e1891bba9
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: 445e76950f0605da917f3d0e7e71557d969e3c2d
 
 
 ---
@@ -87,6 +87,6 @@ Usare le informazioni di questo argomento per distribuire sistemi operativi a co
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

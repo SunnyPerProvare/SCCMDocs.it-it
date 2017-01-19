@@ -1,6 +1,6 @@
 ---
-title: Usare i supporti di avvio per distribuire Windows in rete | System Center Configuration Manager
-description: Le distribuzioni dei supporti di avvio in System Center Configuration Manager consentono di distribuire il sistema operativo all'avvio del computer di destinazione.
+title: Usare i supporti di avvio per distribuire Windows in rete | Microsoft Docs
+description: Le distribuzioni dei supporti di avvio in System Center Configuration Manager consentono di distribuire il sistema operativo all&quot;avvio del computer di destinazione.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f5bdba0f609f51b988dbfdc0b0c8b204405f834a
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: beb730efbe4d9bae7c4c97f4e587c8919bd79049
 
 
 ---
@@ -49,11 +49,11 @@ Le distribuzioni dei supporti di avvio in System Center Configuration Manager co
 ## <a name="create-the-bootable-media"></a>Creare il supporto di avvio  
  È possibile specificare se il supporto di avvio è un'unità flash USB o un set di CD/DVD. Il computer in cui verrà avviato il supporto deve supportare l'opzione scelta come unità di avvio. Per altre informazioni, vedere [Creare supporti di avvio](create-bootable-media.md).  
 
-##  <a name="a-namebkmkdeploya-install-the-operating-system-from-bootable-media"></a><a name="BKMK_Deploy"></a> Installare il sistema operativo da supporti di avvio  
+##  <a name="a-namebkmkdeploya-install-the-operating-system-from--bootable-media"></a><a name="BKMK_Deploy"></a> Installare il sistema operativo da supporti di avvio  
  Inserire il supporto di avvio in un'unità di avvio del computer e quindi accendere il sistema per installare il sistema operativo.  
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

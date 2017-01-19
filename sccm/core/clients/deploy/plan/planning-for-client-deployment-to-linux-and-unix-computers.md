@@ -1,5 +1,5 @@
 ---
-title: Pianificazione della distribuzione del client in computer Linux e UNIX | System Center Configuration Manager
+title: Pianificazione della distribuzione client in computer Linux e UNIX | Microsoft Docs
 description: Pianificazione della distribuzione del client in computer Linux e UNIX in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -13,12 +13,12 @@ ms.topic: get-started-article
 ms.assetid: 44153689-70e8-42ad-9ae8-17ae35f6a2e3
 caps.latest.revision: 9
 caps.handback.revision: 0
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 7d541d3afc86e1bb887a61d5b8cabce9aef9af57
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: dad941d5984fc7e0b43954b14c3966bb2632ad05
 
 
 ---
@@ -80,17 +80,17 @@ ms.openlocfilehash: 7d541d3afc86e1bb887a61d5b8cabce9aef9af57
 
 |Pacchetto necessario|Descrizione|Versione minima|  
 |----------------------|-----------------|---------------------|  
-|Patch del sistema operativo|Problemi di memoria PAM|112960-48|  
+|Patch richiesta del sistema operativo|Problemi di memoria PAM|112960-48|  
 |SUNWlibC|Sun Workshop Compilers Bundled libC (sparc)|5.9, REV=2002.03.18|  
-|SUNWlibms|Forte sviluppatore in bundle condivisi libm (sparc)|5.9, REV=2001.12.10|  
+|SUNWlibms|Forte Developer Bundled Shared libm (sparc)|5.9, REV=2001.12.10|  
 |Openssl|SMCosslg (sparc)<br /><br /> Sun non offre una versione di OpenSSL per Solaris 9 SPARC. È disponibile una versione di Sunfreeware.|0.9.7g|  
-|PAM|Moduli di autenticazione plug-in<br /><br /> SUNWcsl Core Solaris, (librerie condivise) (sparc)|11.9.0,REV=2002.04.06.15.27|  
+|PAM|Moduli di autenticazione plug-in<br /><br /> SUNWcsl, Core Solaris, (Shared Libs) (sparc)|11.9.0,REV=2002.04.06.15.27|  
 
  **Solaris 10 SPARC**  
 
 |Pacchetto necessario|Descrizione|Versione minima|  
 |----------------------|-----------------|---------------------|  
-|Patch del sistema operativo|Problemi di memoria PAM|117463-05|  
+|Patch richiesta del sistema operativo|Problemi di memoria PAM|117463-05|  
 |SUNWlibC|Sun Workshop Compilers Bundled libC (sparc)|5.10, REV=2004.12.22|  
 |SUNWlibms|Math & Microtasking Libraries (Usr) (sparc)|5.10, REV=2004.11.23|  
 |SUNWlibmsr|Math & Microtasking Libraries (Root) (sparc)|5.10, REV=2004.11.23|  
@@ -103,13 +103,13 @@ ms.openlocfilehash: 7d541d3afc86e1bb887a61d5b8cabce9aef9af57
 
 |Pacchetto necessario|Descrizione|Versione minima|  
 |----------------------|-----------------|---------------------|  
-|Patch del sistema operativo|Problemi di memoria PAM|117464-04|  
-|SUNWlibC|Sun Workshop compilatori collegate libC (i386)|5.10, REV=2004.12.20|  
+|Patch richiesta del sistema operativo|Problemi di memoria PAM|117464-04|  
+|SUNWlibC|Sun Workshop Compilers Bundled libC (i386)|5.10, REV=2004.12.20|  
 |SUNWlibmsr|Math & Microtasking Libraries (Root) (i386)|5.10, REV=2004.12.18|  
-|SUNWcsl|Solaris, (librerie condivise) di base (i386)|11.10.0, REV=2005.01.21.16.34|  
-|SUNWcslr|Librerie Solaris principale (radice) (i386)|11.10.0, REV=2005.01.21.16.34|  
-|Openssl|Librerie di SUNWopenssl; Librerie OpenSSL (Usr) (i386)|11.10.0, REV=2005.01.21.16.34|  
-|PAM|Moduli di autenticazione plug-in<br /><br /> Core SUNWcsr Solaris, (Root)(i386)|11.10.0, REV=2005.01.21.16.34|  
+|SUNWcsl|Core Solaris, (Shared Libs) (i386)|11.10.0, REV=2005.01.21.16.34|  
+|SUNWcslr|Core Solaris Libraries (Root) (i386)|11.10.0, REV=2005.01.21.16.34|  
+|Openssl|SUNWopenssl-libraries; OpenSSL Libraries (Usr) (i386)|11.10.0, REV=2005.01.21.16.34|  
+|PAM|Moduli di autenticazione plug-in<br /><br /> SUNWcsr Core Solaris, (Root)(i386)|11.10.0, REV=2005.01.21.16.34|  
 
  **Solaris 11 SPARC**  
 
@@ -148,7 +148,7 @@ ms.openlocfilehash: 7d541d3afc86e1bb887a61d5b8cabce9aef9af57
 |Pacchetto necessario|Descrizione|Versione minima|  
 |----------------------|-----------------|---------------------|  
 |glibc-2,4-31,30|Libreria condivisa standard C|2.4-31.30|  
-|Openssl|Librerie OpenSSL; Secure Network Communications Protocol|0.9.8a-18.15|  
+|OpenSSL|Librerie OpenSSL; Secure Network Communications Protocol|0.9.8a-18.15|  
 |PAM|Moduli di autenticazione plug-in|0.99.6.3-28.8|  
 
  **SUSE Linux Enterprise Server 11 (i586)**  
@@ -230,7 +230,7 @@ ms.openlocfilehash: 7d541d3afc86e1bb887a61d5b8cabce9aef9af57
 
 |Pacchetto necessario|Descrizione|Versione minima|  
 |----------------------|-----------------|---------------------|  
-|HPUX11i-OE|HP-UX Foundation Operating Environment|B.11.31.0709|  
+|HPUX11i-OE|HP-UX Foundation Operating Environment|B.11.31.0709 |  
 |OS-Core.MinimumRuntime.CORE-SHLIBS|Librerie di sviluppo specifico IA|B.11.31|  
 |SysMgmtMin|Strumenti minimi di distribuzione software|B.11.31.0709|  
 |SysMgmtMin.openssl|Librerie OpenSSL; Secure Network Communications Protocol|A.00.09.08d.002|  
@@ -261,7 +261,7 @@ ms.openlocfilehash: 7d541d3afc86e1bb887a61d5b8cabce9aef9af57
 
  Quando si installa il client Linux e UNIX, è possibile assegnare il client di un certificato PKI che consente di usare HTTPS per comunicare con i siti di Configuration Manager. Se non si assegna un certificato PKI, il client crea un certificato autofirmato e comunica solo tramite HTTP.  
 
- I client che ha forniti un certificato PKI, durante l'installazione utilizzano HTTPS per comunicare con i punti di gestione. Quando un client è in grado di individuare un punto di gestione che supporta HTTPS, eseguirà il fallback per utilizzare HTTP con il certificato PKI fornito.  
+ I client a cui viene fornito un certificato PKI durante l'installazione usano HTTPS per comunicare con i punti di gestione. Se un client non riesce a rilevare un punto di gestione che supporta HTTPS, tornerà a usare HTTP con il certificato PKI fornito.  
 
  Quando un client Linux o UNIX utilizza un certificato PKI non è necessario approvarli. Se un client usa un certificato autofirmato, verificare le impostazioni di gerarchia per l'approvazione client nella console di Configuration Manager. Se non è il metodo di approvazione client **approvare automaticamente tutti i computer (scelta non consigliati)**, è necessario approvare manualmente il client.  
 
@@ -288,7 +288,7 @@ ms.openlocfilehash: 7d541d3afc86e1bb887a61d5b8cabce9aef9af57
 
 -   Red Hat Enterprise Linux versione 4 (x86/x64)  
 
--   Versione Solaris 9 (SPARC) e Solaris 10 (SPARC/x86)  
+-   Solaris versione 9 (SPARC) e Solaris versione 10 (SPARC/x86)  
 
 -   SUSE Linux Enterprise Server versione 9 (x86)  
 
@@ -296,7 +296,7 @@ ms.openlocfilehash: 7d541d3afc86e1bb887a61d5b8cabce9aef9af57
 
  Per gestire questi sistemi operativi con Configuration Manager, è necessario installare il client di Configuration Manager per Linux e UNIX con un'opzione della riga di comando che indichi al client di ignorare la convalida di SHA-256. I client di Configuration Manager eseguiti in queste versioni del sistema operativo operano in una modalità meno sicura rispetto ai client che supportano SHA-256. Questa modalità meno sicura dell'operazione presenta il seguente comportamento:  
 
--   I client non convalidano la firma del server del sito associata al criterio che viene richiesta da un punto di gestione.  
+-   I client non convalidano la firma del server del sito associata ai criteri che richiedono da un punto di gestione.  
 
 -   I client non convalidano l'hash per i pacchetti scaricati da un punto di distribuzione.  
 
@@ -312,6 +312,6 @@ ms.openlocfilehash: 7d541d3afc86e1bb887a61d5b8cabce9aef9af57
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

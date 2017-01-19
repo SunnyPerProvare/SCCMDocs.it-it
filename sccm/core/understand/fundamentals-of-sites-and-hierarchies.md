@@ -1,8 +1,8 @@
 ---
-title: Nozioni fondamentali su siti e gerarchie | System Center Configuration Manager
+title: Nozioni fondamentali su siti e gerarchie | Microsoft Docs
 description: Informazioni di base su siti e gerarchie di System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/08/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 07e10ead8d4b147a4a96b1e5189597e1ac4d4f52
+ms.sourcegitcommit: 1b64b5f6e208b85a5ec2ef02bab34afee451c484
+ms.openlocfilehash: cda27b9478e915bca99f5784ec6bcbedc989e841
 
 
 ---
@@ -61,7 +61,7 @@ Quando si installa System Center Configuration Manager per la prima volta, il pr
  Per informazioni sui diversi ruoli del sistema del sito, vedere [Ruoli del sistema del sito](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md#bkmk_planroles) in [Pianificare i server e i ruoli del sistema del sito per System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md)  
 
 ## <a name="publishing-site-information-to-active-directory-domain-services"></a>Pubblicazione di informazioni sul sito in Servizi di dominio Active Directory  
- Per semplificare la gestione di Configuration Manager, è possibile estendere lo schema di Active Directory in modo da supportare i dettagli usati da Configuration Manager e quindi fare in modo che i siti pubblichino le proprie informazioni principali in Servizi di dominio Active Directory (AD DS). In questo modo, i computer da gestire possono recuperare in modo sicuro le informazioni correlate al sito da un'origine attendibile di Servizi di dominio Active Directory. Le informazioni che possono essere recuperate dai client identificano i siti disponibili, i server del sistema del sito e i servizi forniti dai server del sistema del sito.  
+ Per semplificare la gestione di Configuration Manager, è possibile estendere lo schema di Active Directory in modo da supportare i dettagli usati da Configuration Manager e quindi fare in modo che i siti pubblichino le proprie informazioni principali in Servizi di dominio Active Directory (AD DS). In questo modo, i computer da gestire possono recuperare in modo sicuro le informazioni correlate al sito da un'origine attendibile di Servizi di dominio Active Directory. Le informazioni che possono essere recuperate dai client identificano i siti disponibili, i server del sistema del sito e i servizi forniti dai server del sistema del sito.  
 
  L'**estensione dello schema di Active Directory** avviene una sola volta per ogni foresta e può essere eseguita prima o dopo l'installazione di Configuration Manager.   Quando si estende lo schema, è necessario creare un nuovo contenitore di Active Directory denominato **System Management** in ogni dominio che contiene un sito di Configuration Manager che pubblicherà i dati che dovranno essere trovati dai client. Per altre informazioni, vedere [Estendere lo schema di Active Directory per System Center Configuration Manager](../../core/plan-design/network/extend-the-active-directory-schema.md).  
 
@@ -69,6 +69,6 @@ Quando si installa System Center Configuration Manager per la prima volta, il pr
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

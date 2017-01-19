@@ -1,6 +1,6 @@
 ---
-title: Preparare l'installazione di siti | System Center Configuration Manager
-description: "Leggere queste informazioni dettagliate per risparmiare tempo durante l'installazione di più siti ed evitare errori."
+title: Preparare l&quot;installazione di siti | Microsoft Docs
+description: "Leggere queste informazioni dettagliate per risparmiare tempo durante l&quot;installazione di più siti ed evitare errori."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 6f240f1da4561c05bee974b78f43bfcdba591df6
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 0534d1eb587cb01f35d811d72ddfe6ceb07e5b7c
 
 ---
 # <a name="prepare-to-install-system-center-configuration-manager-sites"></a>Preparare l'installazione di siti di System Center Configuration Manager
@@ -73,7 +73,7 @@ Per installare un sito secondario come sito figlio al di sotto del sito primario
 
 
 
-## <a name="a-namebkmktasksa-common-tasks-to-complete-before-starting-an-install"></a><a name="bkmk_tasks"></a> Attività comuni da completare prima di avviare un'installazione
+## <a name="a-namebkmktasksa--common-tasks-to-complete-before-starting-an-install"></a><a name="bkmk_tasks"></a> Attività comuni da completare prima di avviare un'installazione
 -   Capire la topologia della gerarchia che verrà usata per la distribuzione    
      (vedere [Progettare una gerarchia di siti per System Center Configuration Manager](../../../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md))  
 
@@ -90,7 +90,7 @@ Per installare un sito secondario come sito figlio al di sotto del sito primario
 
 
 
-## <a name="a-namebkmksitecodesa-about-site-names-and-site-codes"></a><a name="bkmk_sitecodes"></a> Informazioni su nomi e codici dei siti
+## <a name="a-namebkmksitecodesa--about-site-names-and-site-codes"></a><a name="bkmk_sitecodes"></a> Informazioni su nomi e codici dei siti
 I codici e i nomi dei siti dei vengono usati per identificare e gestire i siti in una gerarchia di Configuration Manager. Nella console di Configuration Manager il codice e il nome del sito vengono visualizzati nel formato &lt;codice sito\> - &lt;nome sito\>. È necessario che ogni codice di sito usato nella gerarchia sia univoco. Se lo schema di Active Directory viene esteso a Configuration Manager e i siti pubblicano dati, i codici di sito usati in una foresta di Active Directory devono essere univoci, anche se vengono usati in una gerarchia diversa di Configuration Manager o sono stati usati in installazioni precedenti di Configuration Manager. Assicurarsi di pianificare con attenzione i codici e i nomi di sito prima della distribuzione della gerarchia.
 
 ### <a name="specify-a-site-code-and-site-name"></a>Specificare un codice e un nome del sito
@@ -126,7 +126,7 @@ Prima di installare i siti, capire le limitazioni seguenti che si applicano a si
     -   Configuration Manager non consente di spostare un sito primario figlio da una gerarchia per creare un sito primario autonomo o aggiungerlo a un'altra gerarchia. Al contrario, disinstallare il sito primario figlio e reinstallarlo come nuovo sito primario autonomo o come figlio del sito di amministrazione centrale di un'altra gerarchia.  
 
 
-## <a name="a-namebkmkoptionalstepsa-optional-steps-to-run-before-starting-setup"></a><a name="bkmk_optionalsteps"></a> Procedura facoltativa da seguire prima di avviare il programma di installazione
+## <a name="a-namebkmkoptionalstepsa--optional-steps-to-run-before-starting-setup"></a><a name="bkmk_optionalsteps"></a> Procedura facoltativa da seguire prima di avviare il programma di installazione
 **È possibile eseguire manualmente [Downloader di installazione](../../../../core/servers/deploy/install/setup-downloader.md)** per scaricare i file di installazione aggiornati per Configuration Manager.
 
 Se il computer in cui si eseguirà l'installazione non è connesso a Internet o se si prevede di installare più server del sito, considerare di usare il Downloader di installazione per scaricare gli aggiornamenti necessari per i file di installazione:
@@ -148,6 +148,6 @@ Se il computer in cui si eseguirà l'installazione non è connesso a Internet o 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

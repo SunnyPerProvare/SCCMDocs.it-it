@@ -1,5 +1,5 @@
 ---
-title: Installare ruoli del sistema del sito | System Center Configuration Manager
+title: Istallare i ruoli di sistema del sito| Microsoft Docs
 description: Le procedure guidate consentono di aggiungere ruoli del sistema del sito a un server del sistema del sito esistente nel sito.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 780ef516ddc641d53e1d2d4a5f559795cfd22cbb
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 9c930db61139fd089554591f4ca0aa2271fb2289
 
 ---
 # <a name="install-site-system-roles-for-system-center-configuration-manager"></a>Installare ruoli del sistema del sito per System Center Configuration Manager
@@ -84,6 +84,6 @@ Prima di installare il ruolo del sistema del sito Configuration Manager controll
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

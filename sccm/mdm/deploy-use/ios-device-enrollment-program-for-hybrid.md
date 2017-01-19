@@ -1,5 +1,5 @@
 ---
-title: Registrazione al programma DEP (Device Enrollment Program) per iOS per le distribuzioni ibride con Configuration Manager
+title: Registrazione al programma DEP (Device Enrollment Program) per iOS per le distribuzioni ibride con Configuration Manager | Microsoft Docs
 description: Abilitare la registrazione al programma DEP (Device Enrollment Program) per iOS per le distribuzioni ibride in Configuration Manager con Intune.
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 78d44adc-9b1c-4bc6-b72d-e93873916ea6
 caps.latest.revision: 9
-author: NathBarn
-ms.author: nathbarn
+author: mtillman
+ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 730b0e6b0ad9eb0ee3bf58c9419920c3a28a27d1
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 0421589d928a88eee6f4629726fbd0171aba7436
 
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Registrazione al programma DEP (Device Enrollment Program) per iOS per le distribuzioni ibride con Configuration Manager
@@ -91,22 +91,18 @@ Le aziende possono acquistare dispositivi iOS tramite il programma DEP (Device E
 
             -   **Disattiva**: consente la rimozione del profilo di gestione dal menu **Impostazioni**  
 
-            -   Attiva: richiede **Modalità di preparazione** = **Supervisione eseguita**. Disattiva le impostazioni iOS che potrebbero consentire la rimozione del profilo di gestione  
+            -   **Abilita**: richiede **Modalità di preparazione** = **Supervisione eseguita**. Disattiva le impostazioni iOS che potrebbero consentire la rimozione del profilo di gestione  
 
     3.  Nella pagina **Assistente configurazione** configurare le impostazioni che consentono di personalizzare l'Assistente installazione iOS che viene avviato quando il dispositivo viene acceso per la prima volta e quindi fare clic su **Avanti**. Queste impostazioni includono:  
-
         -   **Passcode**: consente di richiedere un passcode durante l'attivazione. Richiedere sempre un passcode, a meno che il dispositivo non sia protetto o l'accesso al dispositivo non venga controllato in altro modo, ad esempio con la modalità tutto schermo, che limita l'uso del dispositivo a una sola app.  
-
         -   **Servizi di posizione**: se l'opzione è abilitata, Assistente configurazione richiede il servizio al momento dell'attivazione  
-
         -   **Ripristina**: se l'opzione è abilitata, Assistente configurazione richiede il backup in iCloud durante l'attivazione  
-
         -   **ID Apple**: è necessario un ID Apple per il download delle app da iOS App Store, incluse le app installate da Intune. Se l'opzione è abilitata, iOS richiede agli utenti un ID Apple quando Intune prova a installare un'applicazione senza ID.  
-
         -   **Termini e condizioni**: se l'opzione è abilitata, Assistente configurazione richiede di accettare i termini e le condizioni Apple durante l'attivazione  
-
+        -   **Touch ID**: se l'opzione è abilitata, Assistente configurazione richiede questo servizio durante l'attivazione
+        -   **Apple Pay**: se l'opzione è abilitata, Assistente configurazione richiede questo servizio durante l'attivazione
+        -   **Zoom**: se l'opzione è abilitata, Assistente configurazione richiede questo servizio durante l'attivazione
         -   **Siri**: se l'opzione è abilitata, Assistente configurazione richiede questo servizio durante l'attivazione  
-
         -   **Inviare i dati di diagnostica ad Apple**: se l'opzione è abilitata, Assistente configurazione richiede questo servizio durante l'attivazione  
 
     4.  Nella pagina **Gestione aggiuntiva** specificare se è possibile usare una connessione USB per le impostazioni di gestione aggiuntive. Quando si seleziona **Richiedi certificato**, è necessario importare un certificato di gestione dello strumento di configurazione di Apple da usare per questo profilo.  Impostare su **Non consentire** per evitare la sincronizzazione di file con iTunes o la gestione tramite Apple Configurator. È consigliabile impostare questa opzione su **Non consentire**, esportare eventuali altre configurazioni da Apple Configurator e quindi eseguire la distribuzione come profilo di configurazione iOS personalizzato anziché usare questa impostazione per consentire la distribuzione manuale con o senza un certificato.  
@@ -128,6 +124,6 @@ Le aziende possono acquistare dispositivi iOS tramite il programma DEP (Device E
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

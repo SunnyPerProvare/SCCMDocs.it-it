@@ -1,5 +1,5 @@
 ---
-title: Trasferimenti di dati | System Center Configuration Manager
+title: Trasferimenti di dati | Microsoft Docs
 description: "Questo argomento spiega in che modo Configuration Manager sposta i dati tra i siti e come si può gestire il trasferimento dei dati in rete."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 1abd28aa4ce4f946f6328f8f7924b5f5a81e640c
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: e290a5491fbd43ddf3ca8f4cf6f122ac862103d1
 
 
 ---
@@ -73,7 +73,7 @@ Per gestire una route di replica file, nell'area di lavoro **Amministrazione** e
 Per gestire il mittente per un sito, espandere il nodo **Configurazione del sito** nell'area di lavoro **Amministrazione** , selezionare il nodo **Siti** , quindi fare clic su **Proprietà** per il sito che si desidera gestire. Fare clic sulla scheda **Mittente** per modificare la configurazione del mittente.  
 
 ##  <a name="a-namebkmkdbrepa-database-replication"></a><a name="bkmk_dbrep"></a> Database replication  
-La replica di database di Configuration Manager usa SQL Server per trasferire i dati e unire le modifiche apportate in un database del sito con le informazioni archiviate nel database in altri siti della gerarchia.  
+La replica di database di Configuration Manager usa SQL Server per trasferire i dati e unire le modifiche apportate in un database del sito con le informazioni archiviate nel database in altri siti della gerarchia.  
 
 -   In questo modo, tutti i siti condividono le stesse informazioni  
 
@@ -230,6 +230,6 @@ Per configurare i controlli di replica per un database del sito, si modificano l
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

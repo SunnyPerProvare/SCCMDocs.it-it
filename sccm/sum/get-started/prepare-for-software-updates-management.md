@@ -1,6 +1,6 @@
 ---
 
-title: Preparare la gestione degli aggiornamenti software | Configuration Manager
+title: Preparare la gestione degli aggiornamenti software | Microsoft Docs
 description: "Per preparare la gestione degli aggiornamenti, completare queste attività per visualizzare i dati di valutazione di conformità nella console di System Center Configuration Manager."
 keywords: 
 author: dougeby
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 01907900-e28b-4cd7-9479-42906416707b
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 54da71905de83133012c124dbc25283258141d6c
+ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
+ms.openlocfilehash: 5c34bd1ea108dffda10c30281fb9c97ba38ae1ae
 
 
 ---
@@ -40,6 +40,6 @@ Dopo aver sincronizzato gli aggiornamenti software, verificare le impostazioni c
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

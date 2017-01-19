@@ -1,5 +1,5 @@
 ---
-title: Comunicazioni tra gli endpoint | System Center Configuration Manager
+title: Comunicazioni tra gli endpoint | Microsoft Docs
 description: "Informazioni sulle modalità di comunicazione dei componenti e sistemi del sito di System Center Configuration Manager in una rete."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: bf485456b4d8f0bffe956006b2a8b3dd8c17a5db
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: 7ab79fb69188fa5fe6b89b070829ec0f918137b9
 
 
 ---
@@ -148,7 +148,7 @@ Configuration Manager supporta anche computer del dominio che non si trovano nel
 
     -   [Gestire i record in conflitto per i client di Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_ConflictingRecords)  
 
-    -   [Account di accesso alla rete](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#bkmk_NAA)  
+    -   [Account di accesso alla rete](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#accounts-used-for-content-management)  
 
     -   [Come installare i client di Configuration Manager sui computer del gruppo di lavoro](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientWorkgroup)  
 
@@ -261,6 +261,6 @@ Per supportare questo scenario, assicurarsi che la risoluzione dei nomi funzioni
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

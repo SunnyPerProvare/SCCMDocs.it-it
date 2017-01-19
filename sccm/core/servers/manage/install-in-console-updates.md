@@ -1,6 +1,6 @@
 ---
-title: Aggiornamenti nella console | System Center Configuration Manager
-description: System Center Configuration Manager si sincronizza con il cloud Microsoft per ottenere aggiornamenti installabili all'interno della console.
+title: Aggiornamenti nella console | Microsoft Docs
+description: System Center Configuration Manager si sincronizza con il cloud Microsoft per ottenere aggiornamenti installabili all&quot;interno della console.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: b9721737b4181d8f5e41224c3e2c32ae41647554
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: 1b7063d45c6dc9b42e5002f684043a8e846416a2
 
 
 ---
@@ -51,11 +51,11 @@ Prima di configurare il punto di connessione del servizio, esaminare e pianifica
 
 -   Il punto di connessione del servizio viene usato per caricare le informazioni di utilizzo relative al sito. Queste informazioni consentono al servizio cloud di Microsoft di identificare gli aggiornamenti disponibili per la versione corrente dell'infrastruttura. Per altre informazioni, vedere [Dati di diagnostica e di utilizzo per System Center Configuration Manager](../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md)  
 
--   Il punto di connessione del servizio viene usato per gestire i dispositivi con Microsoft Intune e con la gestione dei dispositivi mobili locale di Configuration Manager. Per altre informazioni, vedere [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../mdm/plan-design/hybrid-mobile-device-management.md) (Gestione di dispositivi mobili ibridi con System Center Configuration Manager e Microsoft Intune).  
+-   Il punto di connessione del servizio viene usato per gestire i dispositivi con Microsoft Intune e con la gestione dei dispositivi mobili locale di Configuration Manager. Per altre informazioni, vedere [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md) (Gestione di dispositivi mobili ibridi con System Center Configuration Manager e Microsoft Intune).  
 
 Per comprendere ciò che accade quando vengono scaricati gli aggiornamenti, vedere:  
 
--   [Diagramma di flusso - scaricare gli aggiornamenti per System Center Configuration Manager](../../../core/servers/manage/download-updates-flowchart.md).  
+-   [Diagramma di flusso: scaricare gli aggiornamenti per System Center Configuration Manager](../../../core/servers/manage/download-updates-flowchart.md)
 
 -   [Flowchart - Update replication for System Center Configuration Manager](../../../core/servers/manage/update-replication-flowchart.md) (Diagramma di flusso: replica dell'aggiornamento per System Center Configuration Manager)  
 
@@ -69,7 +69,7 @@ Per impostazione predefinita, **Pacchetti di aggiornamento** (SMS_CM_Updatepacka
     - Un utente con questo ruolo di sicurezza e l'accesso all'ambito di protezione **Predefinito** può visualizzare e installare gli aggiornamenti, abilitare le funzionalità durante l'installazione e visualizzare le funzionalità dopo l'installazione dell'aggiornamento ma non può abilitarle dopo l'installazione dell'aggiornamento.
 
 - **Analista di sola lettura** con autorizzazioni **Lettura** :
-  -  Un utente con questo ruolo di sicurezza e l'accesso all'ambito di protezione **Predefinito** può visualizzare gli aggiornamenti ma non installarli e può visualizzare le funzionalità dopo l'installazione dell'aggiornamento ma non può abilitarle.
+  -  Un utente con questo ruolo di sicurezza e l'accesso all'ambito **Predefinito** può visualizzare gli aggiornamenti ma non installarli e può visualizzare le funzionalità dopo l'installazione dell'aggiornamento ma non può abilitarle.
 
 **Riepilogo delle autorizzazioni richieste per gli aggiornamenti e la manutenzione:**   
   - Usare un account cui è assegnato un ruolo di sicurezza che include la classe **Pacchetti di aggiornamento** con entrambe le autorizzazioni **Modifica** e **Lettura** .
@@ -100,13 +100,14 @@ Prima di installare un nuovo aggiornamento dall'interno della console di Configu
 
 - Eseguire l'aggiornamento alla versione 1602 dalla versione 1511 o 1602: vedere [Checklist for installing update 1606](../../../core/servers/manage/checklist-for-installing-update-1606.md) (Elenco di controllo per l'aggiornamento alla versione 1606)  
 
+- Eseguire l'aggiornamento alla versione 1610 dalla versione 1511, 1602 o 1606: vedere [Checklist for installing update 1610](../../../core/servers/manage/checklist-for-installing-update-1610.md) (Elenco di controllo per l'aggiornamento alla versione 1610)  
 
 ###  <a name="a-namebkmkstep2a-step-2-test-the-database-upgrade-before-installing-an-update"></a><a name="bkmk_step2"></a> Passaggio 2: Testare l'aggiornamento del database prima di installare un aggiornamento  
 Prima di installare un nuovo aggiornamento nella gerarchia, ad esempio l'aggiornamento 1602, è necessario testare l'aggiornamento del database del sito. Il nome dell'opzione della riga di comando usata per testare l'installazione di un aggiornamento in un backup del database del sito è **testdbupgrade**.  
 
 A differenza delle versioni precedenti di Configuration Manager, se l'installazione di un aggiornamento non riesce non è necessario eseguire un ripristino del sito, ma si può riprovare l'installazione dell'aggiornamento stesso. Di conseguenza, anche se l'aggiornamento di test del database è meno importante rispetto alle versioni precedenti del prodotto, rimane comunque un'operazione consigliata.  
 
-##### <a name="to-run-testdbupgrade-before-installing-an-update"></a>Per eseguire testdbupgrade prima di installare un aggiornamento  
+#### <a name="to-run-testdbupgrade-before-installing-an-update"></a>Per eseguire testdbupgrade prima di installare un aggiornamento  
 
 1.  Ottenere un set di file di origine dalla cartella **CD.Latest** di un sito che esegue la versione a cui si intende eseguire l'aggiornamento. Potrebbe essere necessario installare prima un sito in un ambiente lab o di test che esegue tale versione di System Center Configuration Manager.  
 
@@ -136,13 +137,13 @@ A differenza delle versioni precedenti di Configuration Manager, se l'installazi
 ###  <a name="a-namebkmkstep3a-step-3-run-the-prerequisite-checker-before-installing-an-update"></a><a name="bkmk_step3"></a> Passaggio 3: Eseguire il controllo dei prerequisiti prima di installare un aggiornamento  
 Prima di installare un aggiornamento, si consiglia di eseguire il controllo dei prerequisiti per l'aggiornamento. Se si esegue il prerequisito prima di installare un aggiornamento:  
 
--   I file di aggiornamento vengono replicati in altri siti prima di installare effettivamente l'aggiornamento  
+-   I file di aggiornamento vengono replicati in altri siti prima dell'installazione dell'aggiornamento  
 
 -   Il controllo dei prerequisiti viene eseguito di nuovo automaticamente quando si sceglie di installare l'aggiornamento  
 
 Successivamente, quando si installa un aggiornamento, è possibile configurare l'aggiornamento in modo che ignori gli avvisi del controllo dei prerequisiti.  
 
-##### <a name="to-run-the-prerequisite-checker-before-installing-an-update"></a>Per eseguire il controllo dei prerequisiti prima di installare un aggiornamento  
+#### <a name="to-run-the-prerequisite-checker-before-installing-an-update"></a>Per eseguire il controllo dei prerequisiti prima di installare un aggiornamento  
 
 1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione**.  
 
@@ -208,12 +209,13 @@ Per monitorare lo stato di avanzamento, usare quanto segue:
 -   Nella console di Configuration Manager: nodo **Monitoraggio** > **Panoramica** > **Stato di aggiornamenti e manutenzione**. Questo nodo mostra solo lo stato di installazione del pacchetto di aggiornamento che si sta installando.  
 
     A partire dalla versione 1606, l'installazione del pacchetto di aggiornamenti è suddivisa nelle fasi seguenti per facilitare il monitoraggio. Per ogni fase sono ora disponibili ulteriori dettagli, incluso il file di log da visualizzare per ulteriori informazioni:  
-    -   **Download** (si applica solo al sito di livello superiore in cui è installato il ruolo del sistema del sito del punto di connessione del servizio)
+    -   **Download**: questa fase si applica solo al sito di livello superiore in cui è installato il ruolo del sistema del sito del punto di connessione del servizio
     -   **Replica**
-    - **Controllo dei prerequisiti**
-    - **Installazione**
+    -   **Controllo dei prerequisiti**
+    -   **Installazione**
+    -   **Post-installazione**: questa fase è disponibile a partire dalla versione 1610
 
--   È possibile visualizzare il file **CMUpdate.log** in **&lt;Directory_installazione_ConfigMgr>\Logs\\**  
+-   È possibile visualizzare il file **CMUpdate.log** in **&lt;<Directory_Installazione_ConfigMgr>\Logs**  
 
 **4. Quando viene completata l'installazione dell'aggiornamento**  
 Quando viene completata l'installazione dell'aggiornamento del primo sito:  
@@ -332,7 +334,7 @@ Per dare il consenso, nella console passare ad **Amministrazione** > **Configura
 Se la gerarchia esegue la versione 1606 o una versione successiva e si installa un aggiornamento che include funzionalità di versioni non definitive, le funzionalità vengono visualizzate nella procedura guidata degli aggiornamenti e della manutenzione insieme alle normali funzionalità incluse nell'aggiornamento:
   - **Se è stato dato il consenso:** è possibile abilitare le funzionalità di versioni non definitive dall'interno della procedura guidata degli aggiornamenti e della manutenzione durante l'installazione dell'aggiornamento. A tale scopo, selezionare le funzionalità di versioni non definitive allo stesso modo in cui si selezionano le altre funzionalità.     
 
-    Facoltativamente, è possibile abilitare una funzionalità di versione non definitiva successivamente dal nodo **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione** > **Funzionalità** della console. A tale scopo, nel nodo Funzionalità selezionare la funzionalità e quindi fare clic su **Attiva**. L'opzione rimane disattivata o non disponibile fino a quando non si concede il consenso.  
+    Facoltativamente, è possibile abilitare una funzionalità di versione non definitiva successivamente dal nodo della console **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione** > **Funzionalità**. A tale scopo, nel nodo Funzionalità selezionare la funzionalità e quindi fare clic su **Attiva**. L'opzione rimane disattivata o non disponibile fino a quando non si concede il consenso.  
   -   **Se non è stato dato il consenso:** durante l'installazione di un aggiornamento, le funzionalità di versioni non definitive sono visibili nella procedura guidata degli aggiornamenti e della manutenzione ma appaiono disattivate e non possono essere abilitate. Dopo l'installazione dell'aggiornamento, è possibile visualizzare le funzionalità nel nodo Funzionalità ma sarà possibile abilitarle solo dopo aver dato il consenso in Impostazioni gerarchia.
 
  > [!TIP]
@@ -344,8 +346,11 @@ Se dopo aver concesso il consenso a un sito primario autonomo si espande la gera
 
  |Funzionalità                    |Aggiunta come versione non definitiva |Aggiunta come funzionalità completa |  
 |----------------------------|---------------------|------------------------|
+| Peer cache per la distribuzione del contenuto ai client |  [Versione 1610](/sccm/core/plan-design/hierarchy/client-peer-cache) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+| Gateway di gestione cloud |  [Versione 1610](/sccm/core/clients/manage/plan-cloud-management-gateway) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+| Dashboard origini dati del client |  [Versione 1610](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Microsoft Operations Management Suite (OMS) Connector  | [Versione 1606](../../../core/clients/manage/sync-data-microsoft-operations-management-suite.md) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Manutenzione di una raccolta compatibile con cluster (manutenzione di un gruppo di server)| [Versione 1602](../../../core/get-started/capabilities-in-technical-preview-1605.md#bkmk_servergroups)|![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+| Manutenzione di una raccolta compatibile con cluster (manutenzione di un gruppo di server)| [Versione 1602](../../../core/get-started/capabilities-in-technical-preview-1605.md#BKMK_ServerGroups)|![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 |Accesso condizionale per i PC gestiti da System Center Configuration Manager | [Versione 1602](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)     |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)                        |
 
 
@@ -369,10 +374,10 @@ In un server del sito è possibile configurare gli intervalli di servizio per co
 
 -   L'account non ha le autorizzazioni corrette di amministrazione basata su ruoli per visualizzare gli aggiornamenti nella console di Configuration Manager.
 
-    Per informazioni sulle autorizzazioni richieste per visualizzare gli aggiornamenti e abilitare le funzionalità dall'interno della console, vedere [Autorizzazioni per la gestione degli aggiornamenti](../../../core/servers/manage/install-in-console-updates.md#Permissions-to-view-and-manage-updates-and-features) in questo argomento.
+    Per informazioni sulle autorizzazioni richieste per visualizzare gli aggiornamenti e abilitare le funzionalità dall'interno della console, vedere [Autorizzazioni per la gestione degli aggiornamenti](../../../core/servers/manage/install-in-console-updates.md#permissions-to-view-and-manage-updates-and-features) in questo argomento.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

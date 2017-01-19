@@ -1,8 +1,8 @@
 ---
-title: Gestire i client | System Center Configuration Manager
+title: Gestire i client | Microsoft Docs
 description: Informazioni su come gestire i client in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3986a992-c175-4b6f-922e-fc561e3d7cb7
 caps.latest.revision: 17
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f777295958e9cbc729e3759d354521c96ae3e8ac
-ms.openlocfilehash: 67a814330123a1615a0663872bf4af64e5b81a84
+ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
+ms.openlocfilehash: dfdb5a95b672d3858d094750625cb5f6ef50700d
 
 
 ---
@@ -140,7 +140,7 @@ Quando un client di System Center Configuration Manager viene installato e asseg
 
          Quando si invia una richiesta di cancellazione, si verifica spesso un ritardo nella ricezione del comando di cancellazione da parte del dispositivo mobile:  
 
-        -   Se il dispositivo mobile viene registrato da Configuration Manager o da Microsoft Intune, il client riceve il comando di cancellazione successivamente al momento del download dei criteri client.  
+        -   Se il dispositivo mobile viene registrato da Configuration Manager o da Microsoft Intune, il client riceve il comando di cancellazione successivamente al momento del download dei criteri client.  
 
         -   Se il dispositivo mobile è gestito dal connettore Exchange Server, esso riceve il comando di cancellazione successivamente, al momento della sincronizzazione con Exchange.  
 
@@ -160,7 +160,7 @@ Quando un client di System Center Configuration Manager viene installato e asseg
 
         Per visualizzare il valore della proprietà nell'elenco dei dispositivi, è necessario aggiungere la colonna alla visualizzazione facendo clic su un'intestazione di colonna e scegliendo **Proprietario dispositivo**.
 
-         Per altre informazioni, vedere [Gestione di dispositivi mobili ibridi con System Center Configuration Manager e Microsoft Intune](../../../mdm/plan-design/hybrid-mobile-device-management.md).  
+         Per altre informazioni, vedere [Gestione di dispositivi mobili ibridi con System Center Configuration Manager e Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md).  
 
 ##  <a name="a-namebkmkmanagingclientsdevicecollectionsnodea-manage-clients-from-the-device-collections-node"></a><a name="BKMK_ManagingClients_DeviceCollectionsNode"></a> Gestire i client dal nodo Raccolte dispositivi  
  Usare la seguente procedura e la seguente tabella per gestire i dispositivi di una raccolta dal nodo **Raccolte dispositivi** dell'area di lavoro **Asset e conformità** .  
@@ -218,7 +218,7 @@ Il client di Configuration Manager scarica il contenuto per il software richiest
 Se il client tenta di scaricare il contenuto per un programma o un'applicazione di dimensioni superiori rispetto a quelle della cache, la distribuzione avrà esito negativo perché la dimensione della cache non è sufficiente e Configuration Manager genera l'ID messaggio di stato 10050. Se in seguito la dimensione della cache viene aumentata, il comportamento del nuovo tentativo di download sarà diverso per un programma richiesto e per un'applicazione richiesta:  
 
 -   Per un programma richiesto: il client non tenterà automaticamente di scaricare il contenuto. È necessario ridistribuire il programma e il pacchetto al client.  
--   Per un'applicazione richiesta: poiché una distribuzione applicazione è basata sullo stato, il client tenterà automaticamente di scaricare il contenuto al successivo download dei criteri client.  
+-   Per un'applicazione richiesta: poiché la distribuzione di un'applicazione è basata sullo stato, il client tenterà automaticamente di scaricare il contenuto al successivo download dei criteri client.  
 
 Se il client tenta di scaricare un pacchetto di dimensioni inferiori rispetto a quelle della cache ma la cache al momento è piena, tutte le distribuzioni richieste eseguiranno altri tentativi finché non sarà disponibile spazio nella cache, non si verificherà un timeout del download oppure non verrà raggiunto il limite di tentativi per gli errori di spazio nella cache. Se in seguito la dimensione della cache viene aumentata, il client di Configuration Manager tenterà di scaricare nuovamente il pacchetto al successivo intervallo tra tentativi. Il client tenterà di scaricare il contenuto ogni quattro ore finché non avrà eseguito 18 tentativi.  
 
@@ -239,7 +239,7 @@ Eseguire il comando CCMSetup.exe dal percorso di origine di installazione e spec
     -   SMSCACHESIZE  
 
         > [!NOTE]
-        > Per la versione 1606, usare le impostazioni della dimensione della cache disponibili in **Impostazioni client** nella console di Configuration Manager anziché SMSCACHESIZE. Per altre informazioni vedere [Impostazioni della cache del client](../../../core/clients/deploy/about-client-settings.md#Client-Cache-Settings).
+        > Per la versione 1606, usare le impostazioni della dimensione della cache disponibili in **Impostazioni client** nella console di Configuration Manager anziché SMSCACHESIZE. Per altre informazioni vedere [Impostazioni della cache del client](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
 
 Per altre informazioni sull'uso di queste proprietà della riga di comando di CCMSetup.exe, vedere [Informazioni sulle proprietà di installazione client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
@@ -264,7 +264,7 @@ Per altre informazioni sull'uso di queste proprietà della riga di comando di CC
     -   SMSCACHESIZE  
 
         > [!NOTE]
-        > Per la versione 1606, usare le impostazioni della dimensione della cache disponibili in **Impostazioni client** nella console di Configuration Manager anziché SMSCACHESIZE. Per altre informazioni vedere [Impostazioni della cache del client](../../../core/clients/deploy/about-client-settings.md#Client-Cache-Settings).
+        > Per la versione 1606, usare le impostazioni della dimensione della cache disponibili in **Impostazioni client** nella console di Configuration Manager anziché SMSCACHESIZE. Per altre informazioni vedere [Impostazioni della cache del client](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
 
        Per altre informazioni sull'uso di queste proprietà della riga di comando di CCMSetup.exe, vedere [Informazioni sulle proprietà di installazione client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
@@ -323,6 +323,7 @@ A partire dalla versione 1606, è possibile modificare la dimensione della carte
 
  Quando Configuration Manager è in grado di risolvere un conflitto usando l'autenticazione di Windows dell'account computer o un certificato PKI proveniente da un'origine attendibile, il conflitto viene automaticamente risolto. Quando tuttavia Configuration Manager non è in grado di risolvere il conflitto, viene usata un'impostazione gerarchia che unisce automaticamente i record in caso di rilevamento di ID hardware duplicati (impostazione predefinita) oppure consente di decidere quando unire, bloccare o creare nuovi record client. Se si decide di gestire manualmente i record duplicati, è necessario risolvere manualmente i record in conflitto usando la console di Configuration Manager.  
 
+
 #### <a name="to-change-the-hierarchy-setting-for-managing-conflicting-records"></a>Per modificare l'impostazione della gerarchia per la gestione dei record in conflitto  
 
 1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
@@ -351,6 +352,18 @@ A partire dalla versione 1606, è possibile modificare la dimensione della carte
     -   **Nuovo** per creare un nuovo record per il record client in conflitto.  
 
     -   **Blocca** per creare un nuovo record per il record client in conflitto, ma contrassegnandolo come bloccato.  
+
+## <a name="manage-duplicate-hardware-identifiers"></a>Gestire gli identificatori di hardware duplicati
+A partire da Configuration Manager versione 1610, è possibile specificare un elenco di ID hardware che verranno ignorati da Configuration Manager ai fini dell'avvio PXE e della registrazione di client. Ciò contribuisce a risolvere due problemi comuni.
+
+1. Molti nuovi dispositivi, ad esempio Surface Pro 3, non includono una porta Ethernet incorporata. In genere viene usato un adattatore da USB a Ethernet per stabilire una connessione cablata per la distribuzione del sistema operativo. Si tratta spesso, tuttavia, di adattatori condivisi, per motivi di costi e usabilità generale. Poiché per identificare il dispositivo viene usato l'indirizzo MAC dell'adattatore, risulta problematico riusare l'adattatore senza interventi aggiuntivi dell'amministratore tra le diverse distribuzioni. In Configuration Manager Current Branch 1610 è ora possibile escludere l'indirizzo MAC dell'adattatore in modo da poterlo riusare facilmente in questo scenario.
+2. Sebbene l'ID SMBIOS dovrebbe essere un identificatore hardware univoco, alcuni dispositivi hardware speciali sono realizzati con ID duplicati. Pur non essendo una soluzione comune come lo scenario dell'adattatore da USB a Ethernet descritto in precedenza, per risolvere questo problema è possibile usare anche l'elenco degli ID hardware.
+
+#### <a name="to-add-hardware-identifiers-for-configuration-manager-to-ignore"></a>Per aggiungere identificatori hardware che Configuration Manager deve ignorare  
+1. Nella console di Configuration Manager andare su **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Siti**.
+2. Nella scheda **Home** , del gruppo **Siti** , fare clic su **Impostazioni gerarchia**.
+3. Andare alla scheda **Approvazione client e record in conflitto**.
+4. Per aggiungere nuovi identificatori hardware, fare clic su **Aggiungi** nella sezione **Identificatori hardware duplicati**.
 
 ##  <a name="a-namebkmkpolicyretrievala-initiate-policy-retrieval-for-a-configuration-manager-client"></a><a name="BKMK_PolicyRetrieval"></a> Avviare il recupero criteri per un client di Configuration Manager  
  Un client di Windows Configuration Manager scarica i relativi criteri client in base a una pianificazione configurata come impostazione client. Tuttavia, è possibile che si desideri avviare un recupero criteri ad hoc dal client, ad esempio in uno scenario di risoluzione dei problemi oppure durante una verifica.  
@@ -440,6 +453,6 @@ A partire dalla versione 1606, è possibile modificare la dimensione della carte
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

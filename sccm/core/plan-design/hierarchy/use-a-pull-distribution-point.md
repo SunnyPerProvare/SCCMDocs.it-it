@@ -1,6 +1,6 @@
 ---
-title: Punto di distribuzione pull | System Center Configuration Manager
-description: Informazioni sulle configurazioni e le limitazioni per l'uso di un punto di distribuzione pull con System Center Configuration Manager.
+title: Punto di distribuzione pull | Microsoft Docs
+description: Informazioni sulle configurazioni e le limitazioni per l&quot;uso di un punto di distribuzione pull con System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6cd640085e90b2945326e3fa942ae9bd7b8f7e24
-ms.openlocfilehash: c1c476b69e955058d315af9853e18bd3b71de723
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: f94d928244699c1c926dca05823f0029c588c7f1
 
 
 ---
@@ -111,10 +111,9 @@ Un punto di distribuzione pull che scarica contenuto da un punto di distribuzion
 
 ## <a name="see-also"></a>Vedere anche  
  [Concetti di base per la gestione dei contenuti in System Center Configuration Manager](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management)   
- 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

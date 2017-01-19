@@ -1,8 +1,8 @@
 ---
-title: Registrazione ibrida di iOS tramite Apple Configurator con Configuration Manager
+title: Registrazione ibrida di iOS tramite Apple Configurator con Configuration Manager | Microsoft Docs
 descriptions: Pre-enroll iOS devices by using Apple Configurator with Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/16/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 61a19d95-83ff-4ad8-9a67-f304d2ba54f2
 caps.latest.revision: 5
-author: NathBarn
-ms.author: nathbarn
+author: mtillman
+ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 19f4880d6e7ba3da2e4bcfe725c1c806ee3b3334
+ms.sourcegitcommit: 0fd410a6572acce685dc6cdb954c1c2d97d5ed8b
+ms.openlocfilehash: 33aebbbe0dc59fc9dcc8bee79d1465566403d204
 
 
 ---
@@ -25,68 +25,57 @@ ms.openlocfilehash: 19f4880d6e7ba3da2e4bcfe725c1c806ee3b3334
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le aziende che acquistano dispositivi iOS per l'uso da parte dei dipendenti possono gestire questi dispositivi tramite Microsoft Intune. È possibile eseguire la registrazione preliminare di dispositivi iOS collegandoli tramite USB a un computer Mac che esegue Apple Configurator. Prima della registrazione è necessario preparare un profilo Intune del dispositivo aziendale registrato nella console di Intune ed esportarlo nel computer Mac. Il processo di registrazione esegue il ripristino delle impostazioni predefinite del dispositivo e configura quest'ultimo attraverso il processo Assistente configurazione. La procedura seguente è consigliata per i dispositivi iOS dedicati, con un solo utente e usati per accedere alla posta elettronica di lavoro e alle risorse aziendali, ad esempio app e dati.  
+Le aziende che acquistano dispositivi iOS per l'uso da parte dei dipendenti possono gestire questi dispositivi tramite Microsoft Intune. Per preparare i dispositivi iOS di proprietà dell'azienda per la registrazione, configurare un profilo di registrazione nella console di Configuration Manager e quindi esportare l'URL del profilo per l'uso da Apple Configurator. Per preparare il dispositivo iOS per la registrazione, connetterlo a un computer Mac tramite cavo USB e usare Apple Configurator per configurarlo. Apple Configurator ripristina le impostazioni predefinite del dispositivo e aggiunge il profilo di registrazione in modo che il dispositivo possa essere registrato quando l'utente lo accende per la prima volta ed esegue il processo di installazione guidata.
 
-##  <a name="a-namebkmksaea-apple-configurator-enrollment-via-setup-assistant"></a><a name="BKMK_SAE"></a> Registrazione con Apple Configurator tramite Assistente configurazione  
- Con Apple Configurator è possibile ripristinare le impostazioni predefinite dei dispositivi iOS in modo da prepararli per poter essere configurati dal nuovo utente del dispositivo.  Per questo metodo è necessario connettere tramite USB il dispositivo iOS a un computer Mac per configurare la registrazione aziendale e si presuppone l'uso di Apple Configurator 2.0.  
+La procedura seguente è consigliata per i dispositivi iOS dedicati, con un solo utente e usati per accedere alla posta elettronica di lavoro e alle risorse aziendali, ad esempio app e dati.  
 
- **Prerequisiti**  
+## <a name="prerequisites"></a>Prerequisiti  
 
 -   Accesso fisico ai dispositivi iOS  
 
 -   Numeri di serie del dispositivo. [Come ottenere un numero di serie iOS](https://support.apple.com/en-us/HT204308)  
 
--   Cavi di connessione USB  
-
 -   Computer Mac con [Apple Configurator 2.0](http://go.microsoft.com/fwlink/?LinkId=518017)  
 
-#### <a name="enable-setup-assistant-enrollment-with-configuration-manager-and-intune"></a>Abilitare la registrazione di Assistente configurazione con Configuration Manager e Intune  
+-   Cavi USB per connettere i dispositivi al computer Mac  
 
-1.  **Aggiungere un profilo di registrazione dispositivo aziendale**   
-    Nella console di Configuration Manager, nell'area di lavoro **Asset e conformità**, espandere **Panoramica**, espandere **Dispositivi di proprietà dell'azienda**, espandere **iOS** e fare clic su **Profili di registrazione**. Fare clic su **Crea profilo** nella scheda **Home** per aprire la procedura guidata Crea profilo. Configurare le impostazioni nelle pagine seguenti:  
+## <a name="step-1-add-a-corporate-owned-device-enrollment-profile"></a>Passaggio 1: Aggiungere un profilo di registrazione dispositivo aziendale
 
-    1.  On the **Generale** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Panoramica** > **Tutti i dispositivi di proprietà dell'azienda** > **iOS** > **Profili di registrazione**. Fare clic su **Crea profilo** per aprire la procedura guidata di creazione del profilo. Configurare le impostazioni nelle seguenti pagine.  
 
-        -   **Nome** : nome del profilo di registrazione dispositivi. (Non visibile agli utenti)  
+2.  Nella pagina **Generale** specificare le informazioni seguenti:  
 
-        -   **Descrizione** : descrizione del profilo di registrazione dispositivi. (Non visibile agli utenti)  
+    -   **Nome** (Non visibile agli utenti)  
 
-        -   **Affinità utente** : specifica la modalità di registrazione dei dispositivi. Per la maggior parte degli scenari di Assistente configurazione, usare **Richiedi affinità utente**.  
+    -   **Descrizione** (Non visibile agli utenti)  
 
-            -   **Richiedi affinità utente**: il dispositivo può essere associato a un utente durante la configurazione iniziale e potrebbe quindi accedere ai dati aziendali e alla posta elettronica come tale utente.  
+    -   **Affinità utente** : specifica la modalità di registrazione dei dispositivi. Per la maggior parte degli scenari di Assistente configurazione, usare **Richiedi affinità utente**.  
 
-            -   **Nessuna affinità utente**: il dispositivo non è associato a un utente. Usare questa associazione per i dispositivi che eseguono attività senza accedere ai dati utente locali. Le app che richiedono l'associazione utente non funzioneranno.  
+        -   **Richiedi affinità utente**: il dispositivo può essere associato a un utente durante la configurazione iniziale e potrebbe quindi accedere ai dati aziendali e alla posta elettronica come tale utente.  
 
-    2.  Nella pagina **Programma di registrazione dispositivi** lasciare deselezionata la casella di controllo **Configurare le impostazioni del programma di registrazione dispositivi per questo profilo** e fare clic su **Avanti**.  
+        -   **Nessuna affinità utente**: il dispositivo non è associato a un utente. Usare questa associazione per i dispositivi che eseguono attività senza accedere ai dati utente locali. Le app che richiedono l'associazione utente non funzioneranno.
 
-    3.  Esaminare il riepilogo e fare clic su Avanti.  
+    Fare clic su **Avanti** per continuare.  
 
-2.  **Aggiungere dispositivi iOS da registrare con Assistente configurazione**   
-    Nella console di Configuration Manager, nell'area di lavoro **Asset e conformità**, espandere **Panoramica**, espandere **Dispositivi di proprietà dell'azienda**, espandere **iOS** e fare clic su **Informazioni sul dispositivo**. e quindi clic su **Aggiungi dispositivi**. È possibile aggiungere dispositivi in due modi:  
+3.  Nella pagina **Programma di registrazione dispositivi** lasciare deselezionata la casella di controllo **Configurare le impostazioni del programma di registrazione dispositivi per questo profilo** e fare clic su **Avanti**.  
 
-    - È possibile **caricare un file CSV contenente i numeri di serie**: creare un elenco delimitato da virgole con estensione csv composto da due colonne senza intestazione, con un limite di 5 MB o 5000 dispositivi per file. Per ogni riga, la prima cella corrisponde al numero di serie e la seconda corrisponde ai dettagli del dispositivo (facoltativi).
+4.  Esaminare il riepilogo e fare clic su **Avanti** per creare il profilo di registrazione. Fare clic su **Chiudi** per completare la procedura guidata. A questo punto è possibile aggiungere i numeri IMEI o i numeri di serie per i dispositivi da registrare.  
 
-  Il file con estensione CSV quando viene visualizzato in un editor di testo viene visualizzato come:  
+## <a name="step-2-predeclare-devices-to-enroll-with-setup-assistant"></a>Passaggio 2: Predichiarare i dispositivi da registrare con Assistente configurazione
 
-    ```  
-    0000000,PO 1234  
-    111111111,PO 1234  
-    ```  
+In questo passaggio i dispositivi vengono predichiarati come proprietà dell'azienda specificando un elenco di identificatori di hardware (IMEI o numeri di serie).
 
-    - È anche possibile **aggiungere manualmente i numeri di serie e i dettagli**: immettere il numero di serie e i dettagli per un massimo di cinque dispositivi  
+Per altre informazioni, vedere [Predichiarare dispositivi con numeri IMEI o di serie iOS](predeclare-devices-with-hardware-id.md). Una volta completata l'attività, tornare a questa pagina per continuare con il passaggio successivo.
 
-    Fare clic su **Avanti**.  
+## <a name="step-3-export-the-profile-to-deploy-to-ios-devices"></a>Passaggio 3: Esportare il profilo da distribuire ai dispositivi iOS
 
-3.  **Selezionare i dispositivi da registrare**   
-    Confermare i dispositivi da registrare. I numeri di serie già registrati o registrati in altro modo non possono essere importati. Fare clic su **Avanti** per continuare.  
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Panoramica** > **Tutti i dispositivi di proprietà dell'azienda** > **iOS** > **Profili di registrazione**.
 
-4.  **Assegnare il profilo**   
-    Specificare il profilo da assegnare ai dispositivi aggiunti dall'elenco dei profili disponibili, esaminare i **Dettagli del profilo di registrazione**, quindi fare clic su **Fine**. I dispositivi aggiunti manualmente possono essere assegnati a qualsiasi profilo di registrazione, ma i dispositivi sincronizzati con DEP devono essere assegnati a un profilo abilitato per DEP.  
+2.  Selezionare il profilo di registrazione da distribuire ai dispositivi mobili e fare clic su **Esporta**.
 
-5.  **Selezionare un profilo da distribuire ai dispositivi iOS**   
-    Nella console di Configuration Manager, nell'area di lavoro **Asset e conformità**, espandere **Panoramica**, espandere **Tutti i dispositivi di proprietà dell'azienda**, espandere **iOS**, fare clic su **Profili di registrazione** e quindi selezionare il profilo da distribuire ai dispositivi mobili. Fare clic su **Esporta...** nella barra delle applicazioni. Copiare e salvare l'**URL del profilo**. Verrà caricato in Apple Configurator in un secondo momento per definire il profilo di Intune usato dai dispositivi iOS.  L'URL del profilo di registrazione è valido per due settimane quando viene esportato. Dopo due settimane, è necessario esportare un nuovo file URL per registrare i dispositivi iOS.  
+3.  Copiare e salvare l'**URL del profilo** in un file modificabile.   
 
-     Per supportare Apple Configurator 2, è necessario modificare l'URL del profilo 2.0. Sostituire:  
+4.  Per supportare Apple Configurator 2, è necessario modificare l'URL del profilo 2.0. Sostituire la parte dell'URL seguente:  
 
     ```  
     https://manage.microsoft.com/EnrollmentServer/Discovery.svc/iOS/ESProxy?id=  
@@ -98,46 +87,58 @@ Le aziende che acquistano dispositivi iOS per l'uso da parte dei dipendenti poss
     ```  
     https://appleconfigurator2.manage.microsoft.com/MDMServiceConfig?id=  
 
-    ```  
+    ```
 
-6.  **Preparare il dispositivo con Apple Configurator**   
-    I dispositivi iOS vengono connessi al computer Mac e registrati per la gestione dei dispositivi mobili.  
+5.  Salvare l'URL del profilo modificato. Verrà usato per aggiungere l'URL del profilo di registrazione in Apple Configurator nella [sezione successiva](#step-4-prepare-the-device-with-apple-configurator).  
 
-    > [!WARNING]  
-    >  Le impostazioni predefinite dei dispositivi verranno ripristinate durante il processo di registrazione.  
+> [!NOTE]
+> L'URL del profilo di registrazione è valido per due settimane quando viene esportato. Dopo due settimane, è necessario esportare un nuovo URL per registrare i dispositivi iOS.
 
-    1.  In un computer Mac aprire **Apple Configurator 2**.  Sulla barra dei menu fare clic su **Apple Configurator 2** e quindi fare clic su **Preferenze**.  
+## <a name="step-4-prepare-the-device-with-apple-configurator"></a>Passaggio 4: Preparare il dispositivo con Apple Configurator
 
-    2.  Nel riquadro delle preferenze selezionare **Server** e fare clic sul simbolo "+" sotto il riquadro a sinistra per avviare la configurazione guidata del server MDM. Fare clic su **Avanti**.  
+Per preparare i dispositivi iOS per la registrazione, collegare ogni dispositivo a un computer Mac e caricare il profilo di registrazione.  
 
-    3.  Immettere il **Nome** e l'**URL di registrazione** per il server MDM di cui al passaggio 5. Fare clic su **Avanti**.  
+> [!WARNING]  
+>  Apple Configurator cancella e reimposta i dispositivi alle configurazioni predefinite.  
 
-         Se si riceve un messaggio di avviso sui requisiti del profilo di attendibilità per Apple TV, è possibile disabilitare senza problemi l'opzione **Trust Profile** facendo clic sulla "X" grigia. Anche gli eventuali avvisi sul certificato Anchor possono essere ignorati. Per continuare, fare clic su **Avanti** fino al termine della procedura guidata.  
+1.  In un computer Mac aprire **Apple Configurator 2**.  
 
-    4.  Nel riquadro **Server** fare clic su "Modifica" accanto al profilo del nuovo server. Assicurarsi che l'URL di registrazione corrisponda esattamente all'URL esportato da Intune. Immettere di nuovo l'URL originale se è diverso e **salvare** il profilo di registrazione esportato da Intune.  
+2.  Sulla barra dei menu fare clic su **Apple Configurator 2** > **Preferenze**.  
 
-    5.  Connettere i dispositivi mobili iOS al computer Apple con un adattatore USB.  
+2.  Nel riquadro delle preferenze selezionare **Server** e fare clic sul simbolo "+" sotto il riquadro a sinistra per avviare la configurazione guidata del server MDM. Fare clic su **Avanti**.  
 
-        > [!WARNING]  
-        >  Le impostazioni predefinite dei dispositivi verranno ripristinate durante il processo di registrazione. È buona norma reimpostare il dispositivo e accenderlo. È consigliabile che sui dispositivi sia visualizzata la schermata Ciao quando si avvia l'Assistente configurazione.  
+3.  Immettere il **Nome** e l'**URL di registrazione** salvati [in precedenza](#step-3-export-the-profile-to-deploy-to-ios-devices). Fare clic su **Avanti**.  
 
-    6.  Fare clic su **Prepara**. Nel riquadro **Prepare iOS Device** (Prepara dispositivo iOS) selezionare **Manuale** e quindi fare clic su **Avanti**.  
+   > [!NOTE]
+   > Se si riceve un messaggio di avviso sui requisiti del profilo di attendibilità per Apple TV, è possibile disabilitare senza problemi l'opzione **Trust Profile** facendo clic sulla "X" grigia. Anche gli eventuali avvisi sul certificato Anchor possono essere ignorati.
 
-    7.  Nel riquadro **Enroll in MDM Server** (Registra nel server MDM) selezionare il nome del server creato e quindi fare clic su **Avanti**.  
+   Per continuare, fare clic su **Avanti** fino al termine della procedura guidata.  
 
-    8.  Nel riquadro **Enroll in MDM Server** (Registra nel server MDM) selezionare il nome del server creato e quindi fare clic su **Avanti**.  
+4.  Nel riquadro **Server** fare clic su "Modifica" accanto al profilo del nuovo server. Assicurarsi che l'URL di registrazione corrisponda esattamente all'URL immesso in precedenza. Se è diverso, immetterlo nuovamente e fare clic su **Salva**.  
 
-    9. Nel riquadro **Create an Organization** (Crea organizzazione) scegliere un'organizzazione in **Organizzazione** oppure crearne una nuova e quindi fare clic su **Avanti**.  
+5.  Con un cavo USB, connettere un dispositivo iOS al computer Mac.  
 
-    10. Nel riquadro **Configure iOS Setup Assistant** (Configura Assistente configurazione iOS) scegliere i passaggi presentati all'utente e quindi fare clic su **Prepara**. Se richiesto, eseguire l'autenticazione per aggiornare le impostazioni di attendibilità.  
+  > [!WARNING]  
+  >  Questo processo ripristina i dispositivi alle configurazioni predefinite. Prima di connettere il dispositivo, reimpostarlo e accenderlo. Come procedura consigliata, il dispositivo deve trovarsi sulla schermata iniziale prima di continuare.  
 
-    11. Terminata la preparazione del dispositivo iOS, è possibile scollegare il cavo USB.  
+6.  Fare clic su **Prepara**. Nel riquadro **Prepare iOS Device** (Prepara dispositivo iOS) selezionare **Manual** (Manuale) e quindi fare clic su **Next** (Avanti).  
 
-7.  **Distribuire i dispositivi**   
-    I dispositivi sono ora pronti per la registrazione aziendale. Spegnere i dispositivi e distribuirli agli utenti. All'accensione dei dispositivi, verrà avviato l'Assistente configurazione e all'utente verrà richiesto di immettere l'account aziendale o dell'istituto di istruzione.
+7.  Nel riquadro **Enroll in MDM Server** (Registra in server MDM) selezionare il nome del server creato e quindi fare clic su **Next** (Avanti).  
+
+9. Nel riquadro **Create an Organization** (Crea organizzazione) scegliere un'organizzazione in **Organizzazione** oppure crearne una nuova e quindi fare clic su **Avanti**.  
+
+10. Nel riquadro **Configure iOS Setup Assistant** (Configura Assistente configurazione iOS) scegliere i passaggi da presentare all'utente e quindi fare clic su **Prepare** (Prepara). Se richiesto, eseguire l'autenticazione per aggiornare le impostazioni di attendibilità.  
+
+11. Al termine dell'operazione, è possibile disconnettere il cavo USB.  
+
+Ripetere questi passaggi per tutti i dispositivi che si vuole preparare per la registrazione.
+
+## <a name="step-5-distribute-devices"></a>Passaggio 5: Distribuire i dispositivi
+
+I dispositivi sono ora pronti per la registrazione aziendale. Spegnere i dispositivi e distribuirli agli utenti. All'accensione dei dispositivi, verrà avviato l'Assistente configurazione e all'utente verrà richiesto di immettere l'account aziendale o dell'istituto di istruzione per iniziare la registrazione.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

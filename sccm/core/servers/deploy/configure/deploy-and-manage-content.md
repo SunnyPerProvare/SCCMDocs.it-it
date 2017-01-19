@@ -1,5 +1,5 @@
 ---
-title: Distribuire contenuto | System Center Configuration Manager
+title: Distribuire il contenuto | Microsoft Docs
 description: "Ecco come è possibile iniziare a distribuire contenuto ai punti di distribuzione per System Center Configuration Manager dopo averli installati."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: c6bf461a762b8aa51678a17cb7b294c803d05f37
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: 36b08285ef78d0acb9ba9c44abe2d57e311d44b3
 
 ---
 # <a name="deploy-and-manage-content-for-system-center-configuration-manager"></a>Distribuire e gestire contenuto per System Center Configuration Manager
@@ -307,43 +307,19 @@ Utilizzare le sezioni seguenti per pre-installare il contenuto.
 
 ##  <a name="a-namebkmkmanagea-manage-the-content-you-have-distributed"></a><a name="bkmk_manage"></a> Gestire il contenuto distribuito  
  Per gestire il contenuto sono disponibili le opzioni seguenti:  
+ - [Aggiornare il contenuto](#update-content)
+ - [Ridistribuire il contenuto](#redistribute-content)
+ - [Rimuovere il contenuto](#remove-content)
+ - [Convalidare il contenuto](#validate-content)
 
-**Aggiornare il contenuto:** quando il percorso del file di origine per una distribuzione viene aggiornato aggiungendo nuovi file o sostituendo i file esistenti con una versione più recente, è possibile aggiornare i file di contenuto nei punti di distribuzione usando l'azione **Aggiorna punti di distribuzione** oppure **Aggiornamento contenuto**:  
-
+### <a name="update-content"></a>Aggiornare il contenuto
+Quando il percorso del file di origine per una distribuzione viene aggiornato aggiungendo nuovi file o sostituendo i file esistenti con una versione più recente, è possibile aggiornare i file di contenuto nei punti di distribuzione usando l'azione **Aggiorna punti di distribuzione** oppure **Aggiorna contenuto**:  
 -   I file di contenuto vengono copiati dal percorso del file di origine alla raccolta contenuto nel sito proprietario dell'origine contenuto del pacchetto  
-
 -   La versione del pacchetto viene incrementata  
-
 -   Ogni istanza della raccolta contenuto nei server del sito e nei punti di distribuzione viene aggiornata solo con i file che sono stati modificati  
 
 > [!WARNING]  
 >  La versione pacchetto per le applicazioni è sempre 1. Quando si aggiorna il contenuto per un tipo di distribuzione applicazione, Configuration Manager crea un nuovo ID contenuto per il tipo di distribuzione e il pacchetto fa riferimento al nuovo ID contenuto.  
-
-**Ridistribuire il contenuto:** è possibile ridistribuire un pacchetto per copiare tutti i file di contenuto del pacchetto nei punti di distribuzione oppure nei gruppi di punti di distribuzione, sovrascrivendo quindi i file esistenti.  
-
- Usare questa operazione per ripristinare i file di contenuto del pacchetto o per inviare di nuovo il contenuto quando la distribuzione iniziale non riesce. È possibile ridistribuire un pacchetto da:  
-
--   Proprietà del pacchetto  
-
--   Proprietà dei punti di distribuzione  
-
--   Proprietà del gruppo di punti di distribuzione.  
-
-**Rimuovere il contenuto:** quando non è più necessario contenuto nei punti di distribuzione, è possibile rimuovere i file di contenuto nel punto di distribuzione.  
-
--   Proprietà del pacchetto  
-
--   Proprietà dei punti di distribuzione  
-
--   Proprietà del gruppo di punti di distribuzione.  
-
- Quando, tuttavia, il contenuto è associato a un altro pacchetto che è stato distribuito nello stesso punto di distribuzione, non è possibile rimuovere il contenuto. È possibile rimuovere il contenuto da:  
-
-**Convalidare il contenuto:** il processo di convalida del contenuto consente di verificare l'integrità dei file di contenuto nei punti di distribuzione. È possibile abilitare la convalida del contenuto in base a una pianificazione oppure è possibile avviare manualmente la convalida del contenuto dalle proprietà dei pacchetti e punti di distribuzione.  
-
- Quando il processo di convalida del contenuto viene avviato, Configuration Manager verifica i file di contenuto nei punti di distribuzione e se l'hash del file non è previsto per i file nel punto di distribuzione crea un messaggio di stato che è possibile verificare nell'area di lavoro **Monitoraggio**.  
-
- Per altre informazioni sulla configurazione della pianificazione di convalida del contenuto, vedere [Distribution point configurations](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs) (Configurazioni dei punti di distribuzione) nell'argomento [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Installare e configurare i punti di distribuzione per System Center Configuration Manager).  
 
 #### <a name="to-update-content-on-distribution-points"></a>Per aggiornare il contenuto nei punti di distribuzione  
 
@@ -372,6 +348,16 @@ Utilizzare le sezioni seguenti per pre-installare il contenuto.
 
     > [!NOTE]  
     >  Quando si aggiorna il contenuto per immagini di avvio, verrà aperto la gestione guidata punti di distribuzione. Rivedere le informazioni sulla pagina **Riepilogo** , quindi completare la procedura guidata per aggiornare il contenuto.  
+
+### <a name="redistribute-content"></a>Ridistribuire il contenuto
+È possibile ridistribuire un pacchetto per copiare tutti i file di contenuto del pacchetto nei punti di distribuzione oppure nei gruppi di punti di distribuzione, sovrascrivendo quindi i file esistenti.  
+
+ Usare questa operazione per ripristinare i file di contenuto del pacchetto o per inviare di nuovo il contenuto quando la distribuzione iniziale non riesce. È possibile ridistribuire un pacchetto da:  
+
+-   Proprietà del pacchetto  
+-   Proprietà dei punti di distribuzione  
+-   Proprietà del gruppo di punti di distribuzione.  
+
 
 #### <a name="to-redistribute-content-from-package-properties"></a>Per ridistribuire il contenuto dalle proprietà del pacchetto  
 
@@ -420,6 +406,23 @@ Utilizzare le sezioni seguenti per pre-installare il contenuto.
     > [!IMPORTANT]  
     >  Il contenuto del pacchetto viene ridistribuito a tutti i punti di distribuzione nel gruppo di punti di distribuzione.  
 
+
+#### <a name="use-the-sdk-to-force-replication-of-content"></a>Usare l'SDK per forzare la replica del contenuto
+È possibile usare il metodo **RetryContentReplication** della classe Strumentazione gestione Windows (WMI) dall'SDK di Configuration Manager per forzare la gestione della distribuzione a copiare il contenuto dal percorso di origine alla raccolta contenuto.  
+
+Usare solo questo metodo per forzare la replica quando è necessario ridistribuire il contenuto dopo che si sono verificati problemi con la normale replica del contenuto, che in genere si verificano usando il nodo di monitoraggio della console.   
+
+Per altre informazioni su questa opzione SDK, vedere [RetryContentReplication Method in Class SMS_CM_UpdatePackages](https://msdn.microsoft.com/library/mt762092(CMSDK.16).aspx) (Metodo RetryContentReplication Method nella classe SMS_CM_UpdatePackages) su MSDN.Microsoft.com.
+
+### <a name="remove-content"></a>Rimuovere il contenuto
+Quando non è più richiesto contenuto nei punti di distribuzione, è possibile rimuovere i file di contenuto nel punto di distribuzione.  
+
+-   Proprietà del pacchetto  
+-   Proprietà dei punti di distribuzione  
+-   Proprietà del gruppo di punti di distribuzione.  
+
+Quando, tuttavia, il contenuto è associato a un altro pacchetto che è stato distribuito nello stesso punto di distribuzione, non è possibile rimuovere il contenuto.  
+
 #### <a name="to-remove-package-content-files-from-distribution-points"></a>Per rimuovere i file di contenuto del pacchetto dai punti di distribuzione  
 
 1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
@@ -464,6 +467,15 @@ Utilizzare le sezioni seguenti per pre-installare il contenuto.
 
 4.  Fare clic sulla scheda **Contenuto** , selezionare il contenuto da rimuovere, fare clic su **Rimuovi**, quindi su **OK**.  
 
+
+### <a name="validate-content"></a>Convalidare il contenuto
+Il processo di convalida del contenuto consente di verificare l'integrità dei file nei punti di distribuzione. È possibile abilitare la convalida del contenuto in base a una pianificazione oppure è possibile avviare manualmente la convalida del contenuto dalle proprietà dei pacchetti e punti di distribuzione.  
+
+ Quando il processo di convalida del contenuto viene avviato, Configuration Manager verifica i file di contenuto nei punti di distribuzione e se l'hash del file non è previsto per i file nel punto di distribuzione crea un messaggio di stato che è possibile verificare nell'area di lavoro **Monitoraggio**.  
+
+ Per altre informazioni sulla configurazione della pianificazione di convalida del contenuto, vedere [Distribution point configurations](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs) (Configurazioni dei punti di distribuzione) nell'argomento [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Installare e configurare i punti di distribuzione per System Center Configuration Manager).  
+
+
 #### <a name="to-initiate-content-validation-for-all-content-on-a-distribution-point"></a>Per avviare la convalida del contenuto per tutti i contenuti in un punto di distribuzione  
 
 1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
@@ -504,6 +516,6 @@ Utilizzare le sezioni seguenti per pre-installare il contenuto.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

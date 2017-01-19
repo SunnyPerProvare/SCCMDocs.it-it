@@ -1,5 +1,5 @@
 ---
-title: "Caratteristiche e funzionalità | System Center Configuration Manager"
+title: "Caratteristiche e funzionalità | Microsoft Docs"
 description: "Informazioni sulle funzionalità di gestione principali di System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: fc40912a3da034ac0e3f84c72593aa4a9df8d057
-ms.openlocfilehash: c558148104b6338e4038bf690491c88e76dfdcaf
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: 851029368d97312ef2766505f933eac72d6950e5
 
 
 ---
@@ -58,7 +58,7 @@ Di seguito sono descritte le funzionalità di gestione principali di System Cent
 
 **Gestione dei dispositivi mobili con Microsoft Intune**  
 
- È possibile usare Configuration Manager per gestire i dispositivi iOS, Android (incluso Samsung KNOX), Windows Phone e Windows con il servizio Microsoft Intune in Internet.
+ È possibile usare Configuration Manager per gestire dispositivi iOS, Android (incluso Samsung KNOX Standard), Windows Phone e Windows con il servizio Microsoft Intune in Internet.
 
  Anche se si usa il servizio Intune, le attività di gestione vengono completate usando il ruolo del sistema del sito del punto di connessione del servizio disponibile tramite la console Configuration Manager. Vedere [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md) (Gestione dei dispositivi mobili (MDM) ibrida con System Center Configuration Manager e Microsoft Intune).  
 
@@ -104,6 +104,6 @@ Di seguito sono descritte le funzionalità di gestione principali di System Cent
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

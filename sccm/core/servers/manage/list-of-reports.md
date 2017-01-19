@@ -1,6 +1,6 @@
 ---
-title: Elenco dei report | System Center Configuration Manager
-description: Esaminare l'elenco dei report inclusi in Configuration Manager. I report vengono visualizzati in diverse categorie.
+title: Elenco dei report | Microsoft Docs
+description: Esaminare l&quot;elenco dei report inclusi in Configuration Manager. I report vengono visualizzati in diverse categorie.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: ef0e136376f4229e531880ad46fc8ce636eb0d8b
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 1480c38a6a3afef76b2e8759eaafd47d28f978f4
 
 
 ---
@@ -793,6 +793,6 @@ System Center Configuration Manager include numerosi report predefiniti, relativ
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

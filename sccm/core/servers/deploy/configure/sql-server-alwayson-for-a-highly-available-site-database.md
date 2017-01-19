@@ -1,5 +1,5 @@
 ---
-title: SQL Server AlwaysOn | System Center Configuration Manager
+title: SQL Server AlwaysOn | Microsoft Docs
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -15,8 +15,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 570e651d486a6120eb062ef845930445596054da
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 9d4d0c741418af29edc586a5d629fc61f86da426
 
 
 ---
@@ -152,15 +152,7 @@ ms.openlocfilehash: 570e651d486a6120eb062ef845930445596054da
 
      Vedere [Visualizzazione o modifica del modello di recupero di un database](https://msdn.microsoft.com/library/ms189272\(v=sql.120\).aspx) nella documentazione di SQL Server. I gruppi di disponibilità supportano solo FULL.  
 
-3.  Usare SQL Server per creare un backup completo del database del sito, quindi:  
-
-    -   Se il server di database del sito corrente non sarà un membro del gruppo di disponibilità o non sarà usato come replica primaria iniziale per il gruppo di disponibilità, ripristinare una copia del database del sito nel server che ospiterà la replica primaria del gruppo.  
-
-    -   Se il server di database del sito corrente sarà un membro del gruppo di disponibilità, pianificare l'uso di questo server come membro di replica primaria del gruppo di disponibilità. In questo caso non è necessario ripristinare una copia del database del sito in questo o altri server.  
-
-    Per informazioni su come completare questo passaggio, vedere [Creare un backup completo del database (SQL Server)](https://msdn.microsoft.com/library/ms187510\(v=sql.120\).aspx) e [Ripristinare un backup del database (SQL Server Management Studio)](https://msdn.microsoft.com/library/ms177429\(v=sql.120\).aspx)nella documentazione di SQL Server.  
-
-4.  Nel server che ospiterà la replica primaria del gruppo usare la **Creazione guidata Gruppo di disponibilità** per creare il gruppo di disponibilità. Nella procedura guidata:  
+3.  Nel server che ospiterà la replica primaria del gruppo usare la **Creazione guidata Gruppo di disponibilità** per creare il gruppo di disponibilità. Nella procedura guidata:  
 
     -   Nella pagina **Seleziona database** selezionare il database per il sito di Configuration Manager  
 
@@ -174,15 +166,15 @@ ms.openlocfilehash: 570e651d486a6120eb062ef845930445596054da
 
     Per altre informazioni, vedere [Usare la Creazione guidata Gruppo di disponibilità](https://msdn.microsoft.com/library/hh403415\(v=sql.120\).aspx) nella documentazione di SQL Server.  
 
-5.  Dopo aver configurato il gruppo di disponibilità, configurare il database del sito nella replica primaria con la proprietà **TRUSTWORTHY** , quindi **abilitare l'integrazione CLR**. Per informazioni sulla configurazione, vedere [Proprietà di database TRUSTWORTHY](https://msdn.microsoft.com/library/ms187861\(v=sql.120\).aspx) e  [Abilitazione dell'integrazione con CLR](https://msdn.microsoft.com/library/ms131048\(v=sql.120\).aspx) nella documentazione di SQL Server.  
+4.  Dopo aver configurato il gruppo di disponibilità, configurare il database del sito nella replica primaria con la proprietà **TRUSTWORTHY** , quindi **abilitare l'integrazione CLR**. Per informazioni sulla configurazione, vedere [Proprietà di database TRUSTWORTHY](https://msdn.microsoft.com/library/ms187861\(v=sql.120\).aspx) e  [Abilitazione dell'integrazione con CLR](https://msdn.microsoft.com/library/ms131048\(v=sql.120\).aspx) nella documentazione di SQL Server.  
 
-6.  Completare le azioni seguenti per configurare ogni replica secondaria nel gruppo di disponibilità:  
+5.  Completare le azioni seguenti per configurare ogni replica secondaria nel gruppo di disponibilità:  
 
     1.  Eseguire il failover manuale della replica primaria corrente in una replica secondaria. Vedere [Eseguire un failover manuale pianificato di un gruppo di disponibilità](https://msdn.microsoft.com/library/hh231018\(v=sql.120\).aspx) nella documentazione di SQL Server.  
 
     2.  Configurare il database nella nuova replica primaria con la proprietà **TRUSTWORTHY** , quindi **abilitare l'integrazione CLR**.  
 
-7.  Dopo che tutte le repliche sono state alzate di livello fino a diventare repliche primarie e dopo aver configurato i database, il gruppo di disponibilità può essere usato con Configuration Manager.  
+6.  Dopo che tutte le repliche sono state alzate di livello fino a diventare repliche primarie e dopo aver configurato i database, il gruppo di disponibilità può essere usato con Configuration Manager.  
 
 
 
@@ -220,15 +212,13 @@ ms.openlocfilehash: 570e651d486a6120eb062ef845930445596054da
 
 2.  Arrestare il sito di Configuration Manager eseguendo **Preinst.exe /stopsite** Vedere [Hierarchy Maintenance Tool (Preinst.exe) for System Center Configuration Manager](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md) (Strumento di manutenzione gerarchia (Preinst.exe) per System Center Configuration Manager).  
 
-3.  Usare SQL Server per creare un backup del database del sito dalla replica primaria e quindi ripristinare il backup nel nuovo server di replica secondaria. Vedere [Creare un backup completo del database](https://msdn.microsoft.com/library/ms187510\(v=sql.120\).aspx) e [Ripristinare un backup del database (SQL Server Management Studio)](https://msdn.microsoft.com/library/ms177429\(v=sql.120\).aspx) nella libreria della documentazione di SQL Server.  
-
-4.  Configurare tutte le repliche secondarie. Completare le azioni seguenti per ogni replica secondaria nel gruppo di disponibilità:  
+3.  Configurare tutte le repliche secondarie. Completare le azioni seguenti per ogni replica secondaria nel gruppo di disponibilità:  
 
     1.  Eseguire il failover manuale della replica primaria nella nuova replica secondaria. Vedere [Eseguire un failover manuale pianificato di un gruppo di disponibilità](https://msdn.microsoft.com/library/hh231018\(v=sql.120\).aspx) nella documentazione di SQL Server.  
 
     2.  Configurare il database nel nuovo server con la proprietà Trustworthy e abilitare l'integrazione CLR. Vedere [Proprietà di database TRUSTWORTHY](https://msdn.microsoft.com/library/ms187861\(v=sql.120\).aspx) e  [Abilitazione dell'integrazione con CLR](https://msdn.microsoft.com/library/ms131048\(v=sql.120\).aspx)nella documentazione di SQL Server.  
 
-5.  Riavviare il sito avviando i servizi di Gestione componenti del sito (**sitecomp**) e **SMS_Executive** .  
+4.  Riavviare il sito avviando i servizi di Gestione componenti del sito (**sitecomp**) e **SMS_Executive** .  
 
 #### <a name="to-remove-a-replica-member-from-the-availability-group"></a>Per rimuovere un membro di replica dal gruppo di disponibilità  
 
@@ -270,6 +260,6 @@ ms.openlocfilehash: 570e651d486a6120eb062ef845930445596054da
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

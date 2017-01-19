@@ -1,5 +1,5 @@
 ---
-title: Eseguire la migrazione del contenuto | System Center Configuration Manager
+title: Eseguire la migrazione del contenuto | Microsoft Docs
 description: Usare i punti di distribuzione per gestire il contenuto durante la migrazione dei dati a una gerarchia di destinazione di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: aa88f18247b49995bff4a4a6f5fd1e1ed70ca214
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: c96fa0995b5de87f50e1146b338058f26daeb624
 
 
 ---
@@ -188,8 +188,23 @@ Per identificare i punti di distribuzione idonei alla riassegnazione nella conso
 
  Per riassegnare il punto di distribuzione, la gerarchia di destinazione utilizza l'account di accesso al sito di origine configurato per raccogliere dati dal provider SMS del sito di origine. Per altre informazioni sulle autorizzazioni e sui prerequisiti aggiuntivi necessari, vedere [Prerequisiti per la migrazione in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
 
+## <a name="migrate-multiple-shared-distribution-points-at-the-same-time"></a>Eseguire la migrazione simultanea di più punti di distribuzione condivisi
+A partire dalla versione 1610, è possibile usare l'opzione **Riassegna punto di distribuzione** in modo che Configuration Manager elabori in parallelo la riassegnazione simultanea di un massimo di 50 punti di distribuzione condivisi. Sono inclusi i punti di distribuzione condivisi dei siti di origine supportati che eseguono:  
+- Configuration Manager 2007
+- System Center 2012 Configuration Manager
+- System Center 2012 R2 Configuration Manager
+- System Center Configuration Manager (sito Current Branch)
+
+Quando i punti di distribuzione vengono riassegnati, per ogni punto di distribuzione è necessario indicare se deve essere aggiornato o riassegnato. Il nome dell'azione e del processo interessato, aggiornamento o riassegnazione, dipende dalla versione di Configuration Manager che il sito di origine esegue. In ogni modo, che si tratti di aggiornamento o di riassegnazione, i risultati finali sono gli stessi. Il punto di distribuzione viene assegnato a uno dei siti Current Branch con il relativo contenuto sul posto.
+
+Prima della versione 1610, Configuration Manager elaborava solo un punto di distribuzione per volta. Ora è possibile riassegnare tutti i punti di distribuzione necessari, considerando però le avvertenze seguenti:  
+- Non è possibile selezionare più punti di distribuzione da riassegnare. Se in coda si trovano tuttavia più punti di distribuzione, Configuration Manager li elabora in parallelo e non attende di aver completato la riassegnazione di uno prima di avviare la riassegnazione del punto successivo.  
+- Per impostazione predefinita vengono elaborati in parallelo e simultaneamente fino a 50 punti di distribuzione. Dopo aver completato la riassegnazione del primo punto di distribuzione, Configuration Manager inizierà a elaborare il 51° punto e così via.  
+- Quando si usa l'SDK di Configuration Manager, è possibile modificare la proprietà **SharedDPImportThreadLimit** per regolare il numero dei punti di distribuzione riassegnati che Configuration Manager può elaborare in parallelo.
+
+
 ##  <a name="a-nameaboutmigratingcontenta-content-ownership-when-migrating-content"></a><a name="About_Migrating_Content"></a> Proprietà del contenuto durante la migrazione del contenuto  
- Quando si esegue la migrazione dei contenuti per le distribuzioni, è necessario assegnare l'oggetto contenuto a un sito nella gerarchia di destinazione. Il sito diventa quindi il proprietario di tale contenuto nella gerarchia di destinazione. Benché il sito di livello superiore della gerarchia di destinazione sia il sito che esegue la migrazione dei metadati per il contenuto, è il sito assegnato che accede ai file di origine per il contenuto nella rete.  
+ Quando si esegue la migrazione dei contenuti per le distribuzioni, è necessario assegnare l'oggetto contenuto a un sito nella gerarchia di destinazione. Il sito diventa quindi il proprietario di tale contenuto nella gerarchia di destinazione. Benché il sito principale della gerarchia di destinazione sia il sito che esegue la migrazione dei metadati per il contenuto, è il sito assegnato che accede ai file di origine per il contenuto nella rete.  
 
  Per ridurre al minimo la larghezza di banda di rete utilizzata durante la migrazione del contenuto, si consiglia di trasferire la proprietà del contenuto a un sito nella gerarchia di destinazione vicina nella rete del percorso del contenuto nella gerarchia di origine. Poiché le informazioni sul contenuto vengono condivise globalmente nella gerarchia di destinazione, saranno disponibili in tutti i siti.  
 
@@ -197,6 +212,6 @@ Per identificare i punti di distribuzione idonei alla riassegnazione nella conso
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

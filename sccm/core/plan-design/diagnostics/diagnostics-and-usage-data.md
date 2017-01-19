@@ -1,5 +1,5 @@
 ---
-title: Dati di utilizzo e di diagnostica | System Center Configuration Manager
+title: Dati di utilizzo e di diagnostica | Microsoft Docs
 description: Informazioni sui dati di utilizzo e di diagnostica raccolti da System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 996efaeb89926b04d2f071cf600dcf45bd2edc89
+ms.sourcegitcommit: 3d113c55726efe674b79ef5ecb26aac8c893cba2
+ms.openlocfilehash: ac3395c82cb570960bf2c3b98cd06e282e64b1a5
 
 
 ---
@@ -43,7 +43,7 @@ System Center Configuration Manager raccoglie dati di utilizzo e di diagnostica 
     - [Dati di diagnostica per 1511](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1511)
     - [Dati di diagnostica per la versione 1602](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1602)
     - [Dati di diagnostica per 1606](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606)  
-    
+    - [Dati di diagnostica per 1610](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1610)  
 
 -   [How diagnostics and usage data is collected by System Center Configuration Manager](../../../core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-collected.md) (Come vengono raccolti i dati di utilizzo e di diagnostica da System Center Configuration Manager)  
 
@@ -58,6 +58,6 @@ System Center Configuration Manager raccoglie dati di utilizzo e di diagnostica 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

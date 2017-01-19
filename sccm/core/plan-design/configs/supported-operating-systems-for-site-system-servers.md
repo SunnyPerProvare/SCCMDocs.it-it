@@ -1,5 +1,5 @@
 ---
-title: Server di sistema del sito supportati| System Center Configuration Manager
+title: Server di sistema del sito supportati | Microsoft Docs
 description: "Informazioni sulle versioni di Windows che è possibile usare per ospitare un sito di System Center Configuration Manager o un ruolo del sistema del sito."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,12 +16,12 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 00d5d8d9ce90b2da79485250d25f943ca1c4547b
+ms.sourcegitcommit: d23b98b362fb016c53974f851c48fa7200d2b2e3
+ms.openlocfilehash: b7c24dee94bca4ce69e0ba8f33129a0b21819d13
 
 
 ---
-# <a name="supported-operating-systems-for-system-center-configuration-manager-site-system-servers"></a>Sistemi operativi supportati per i server del sistema del sito di System Center Configuration Manager
+# <a name="supported-operating-systems-for-system-center-configuration-manager--site-system-servers"></a>Sistemi operativi supportati per i server del sistema del sito di System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -36,7 +36,7 @@ Usare le informazioni di questo argomento con quelle contenute negli articoli re
 
 
 
-## <a name="windows-server-2016---standard-datacenter"></a>Windows Server 2016 - Standard, Datacenter
+## <a name="windows-server-2016-----standard-datacenter"></a>Windows Server 2016 - Standard, Datacenter
 Windows Server 2016 è supportato a partire da Configuration Manager versione 1606 con l'aggiornamento rapido cumulativo KB3186654, o versione di base 1606 rilasciata nell'ottobre del 2016.
 
 **Server del sito:**  
@@ -68,6 +68,8 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 -   Punto proxy di registrazione  
 
 -   Punto di stato di fallback  
+
+-   Punto di gestione
 
 -   Punto di Reporting Services  
 
@@ -114,6 +116,8 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 -   Punto di stato di fallback  
 
+-   Punto di gestione
+
 -   Punto di Reporting Services  
 
 -   Punto di connessione del servizio  
@@ -159,6 +163,8 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 -   Punto di stato di fallback  
 
+-   Punto di gestione
+
 -   Punto di Reporting Services  
 
 -   Punto di connessione del servizio  
@@ -173,8 +179,8 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 -   Punto di migrazione stato  
 
-## <a name="windows-server-2008-r2-with-sp1-x64---standard-enterprise-datacenter"></a>Windows Server 2008 R2 con SP1 (x64) - Standard, Enterprise, Datacenter  
- Windows Server 2008 R2 è ora in modalità di supporto Extended e non più in modalità di supporto Mainstream, come descritto in  [Ciclo di vita del supporto tecnico Microsoft](https://support.microsoft.com/lifecycle). Per altre informazioni sul supporto disponibile in futuro per questi sistemi operativi come server di sistema del sito con Configuration Manager, vedere [Removed and deprecated features for System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md) (Funzionalità rimosse e deprecate per System Center Configuration Manager).  
+## <a name="windows-server-2008-r2-with-sp1-x64-----standard-enterprise-datacenter"></a>Windows Server 2008 R2 con SP1 (x64) - Standard, Enterprise, Datacenter  
+ Windows Server 2008 R2 è ora in modalità di supporto "Extended" e non più in modalità di supporto Mainstream, come descritto in [Criteri relativi al ciclo di vita Microsoft](https://support.microsoft.com/lifecycle). Per altre informazioni sul supporto disponibile in futuro per questi sistemi operativi come server di sistema del sito con Configuration Manager, vedere [Removed and deprecated features for System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md) (Funzionalità rimosse e deprecate per System Center Configuration Manager).  
 
 **Server del sito:**  
 
@@ -206,6 +212,8 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 -   Punto di stato di fallback  
 
+-   Punto di gestione
+
 -   Punto di Reporting Services  
 
 -   Punto di connessione del servizio  
@@ -221,7 +229,7 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 -   Punto di migrazione stato  
 
 ## <a name="windows-server-2008-with-sp2-x86-x64---standard-enterprise-datacenter"></a>Windows Server 2008 con SP2 (x86, x64) - Standard, Enterprise, Datacenter  
- Windows Server 2008 è ora in modalità di supporto Extended e non più in modalità di supporto Maintstream, come descritto in  [Ciclo di vita del supporto tecnico Microsoft](https://support.microsoft.com/lifecycle). Per altre informazioni sul supporto disponibile in futuro per questi sistemi operativi come server di sistema del sito con Configuration Manager, vedere [Removed and deprecated features for System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md) (Funzionalità rimosse e deprecate per System Center Configuration Manager).  
+ Windows Server 2008 è ora in modalità di supporto "Extended" e non più in modalità di supporto Mainstream, come descritto in [Criteri relativi al ciclo di vita Microsoft](https://support.microsoft.com/lifecycle). Per altre informazioni sul supporto disponibile in futuro per questi sistemi operativi come server di sistema del sito con Configuration Manager, vedere [Removed and deprecated features for System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md) (Funzionalità rimosse e deprecate per System Center Configuration Manager).  
 
 **Server del sito:**  
 
@@ -256,6 +264,8 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 -   Punto proxy di registrazione  
 
 -   Punto di stato di fallback  
+
+-   Punto di gestione
 
 -   Punto di Reporting Services  
 
@@ -322,7 +332,7 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 -   I punti di distribuzione in questo sistema operativo non supportano PXE o il multicast  
 
-## <a name="the-server-core-installation-of-windows-server-2012-r2"></a>Installazione Server Core di Windows Server 2012 R2  
+## <a name="the-server-core-installation-of-windows-server-2012-r2"></a>Installazione Server Core di Windows Server 2012 R2  
  Oltre ai sistemi operativi precedenti, l'installazione Server Core di Windows Server 2012 R2 è supportata per l'uso come punto di distribuzione con le limitazioni seguenti:  
 
 -   Sono supportati solo i sistemi x64  
@@ -331,6 +341,6 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Sicurezza e privacy per le query | System Center Configuration Manager
+title: Sicurezza e privacy per le query | Microsoft Docs
 description: Procedure consigliate per la sicurezza e privacy quando si esegue una query per ottenere informazioni dal database del sito.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: e9ac8ce92a2ff5ebcbad852b6bfb291bb99236d4
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 09f7bdaa29a01fb2a38aa223db56b5bce3bc5205
 
 
 ---
@@ -42,6 +42,6 @@ In System Center Configuration Manager le query restituiscono informazioni dal d
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

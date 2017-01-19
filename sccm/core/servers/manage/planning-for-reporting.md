@@ -1,5 +1,5 @@
 ---
-title: Pianificazione della creazione di report | System Center Configuration Manager
+title: Pianificazione della creazione di report | Microsoft Docs
 description: "È importante pianificare la creazione di report in Configuration Manager a partire dalla installazione fino alla sicurezza e alla larghezza di banda di rete."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 894c1e02c6739c6d158c73465b8d4391847a221a
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 119f501057bf44e483be31db20b88326b3d05ebb
 
 
 ---
@@ -70,6 +70,6 @@ La creazione di report in System Center Configuration Manager offre un set di st
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

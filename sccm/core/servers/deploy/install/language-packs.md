@@ -1,5 +1,5 @@
 ---
-title: Language Pack | System Center Configuration Manager
+title: Language Pack | Microsoft Docs
 description: Informazioni sul supporto per le lingue disponibile in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f44ea59b86ace05e6d495aa4311d01518097daf7
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 35d1008752a3275febef46b8817e97afdb91d580
 
 
 ---
@@ -61,7 +61,7 @@ In questo argomento vengono forniti dettagli tecnici sul supporto per le lingue 
 |Lingua client|ID impostazioni locali (LCID)|Codice di tre lettere|  
 |---------------------|------------------------|-----------------------|  
 |Inglese (predefinito)|0409|ENG|  
-|Cinese (tradizionale, Hong Kong SAR)|0c04|ZHH|  
+|Cinese (tradizionale, Hong Kong-R.A.S.)|0c04|ZHH|  
 |Cinese (semplificato)|0804|CHS|  
 |Cinese (tradizionale, Taiwan)|0404|CHT|  
 |Ceco|0405|CSY|  
@@ -96,6 +96,6 @@ In questo argomento vengono forniti dettagli tecnici sul supporto per le lingue 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

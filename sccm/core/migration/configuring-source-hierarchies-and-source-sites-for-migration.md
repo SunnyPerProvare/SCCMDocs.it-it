@@ -1,6 +1,6 @@
 ---
-title: Gerarchie di origine della migrazione | System Center Configuration Manager
-description: Configurare una gerarchia di origine e i siti di origine per eseguire la migrazione dei dati all'ambiente di System Center Configuration Manager.
+title: Gerarchie di origine della migrazione | Microsoft Docs
+description: Configurare una gerarchia di origine e i siti di origine per eseguire la migrazione dei dati all&quot;ambiente di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 75b1515f85787cefc60d98d6f6affa3a447a39f2
+ms.sourcegitcommit: 5e3d3f4194b06442e34c10988a20fe9ca40ac5d7
+ms.openlocfilehash: 1ecac05cb7aba822047bbc519d8a0ca316c600a5
 
 
 ---
@@ -107,6 +107,6 @@ Usare la procedura seguente per configurare siti di origine aggiuntivi per le ge
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

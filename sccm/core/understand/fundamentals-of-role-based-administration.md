@@ -1,6 +1,6 @@
 ---
-title: Nozioni fondamentali di amministrazione basata su ruoli | System Center Configuration Manager
-description: L'amministrazione basata sui ruoli consente di controllare l'accesso amministrativo a Configuration Manager e agli oggetti gestiti.
+title: Concetti base sull&quot;amministrazione basata su ruoli | Microsoft Docs
+description: L&quot;amministrazione basata sui ruoli consente di controllare l&quot;accesso amministrativo a Configuration Manager e agli oggetti gestiti.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 3e70794144caa5a1993cc65089b1076476fc6106
+ms.sourcegitcommit: 6cf3ac76ea3fb9c9b093ed4927255102930bbe26
+ms.openlocfilehash: 5bdfe43c86d5b700c50b4d55d2f3bbb15bb504e9
 
 
 ---
@@ -78,7 +78,7 @@ Quando si progetta e implementa la protezione amministrativa per Configuration M
 > [!TIP]  
 >  È possibile visualizzare l'elenco di ruoli di sicurezza incorporati e i ruoli di sicurezza personalizzati creati, incluse le descrizioni, nella console di Configuration Manager. A tale scopo, nell'area di lavoro **Amministrazione** espandere **Sicurezza**e selezionare **Ruoli di protezione**.  
 
- Ogni ruolo di sicurezza dispone di autorizzazioni specifiche per diversi tipi di oggetto. Ad esempio, il ruolo di sicurezza **Amministratore di applicazioni** ha le seguenti autorizzazioni per le applicazioni: **Approva**, **Crea**, **Elimina**, **Modifica**, **Modifica cartella**, **Sposta oggetto**, **Leggi/Distribuisci**, **Imposta ambito di protezione**. Non è possibile modificare le autorizzazioni per i ruoli di sicurezza incorporati, ma è possibile copiare il ruolo, apportare modifiche e quindi salvare tali modifiche come un nuovo ruolo di sicurezza personalizzato. È inoltre possibile importare ruoli di sicurezza esportati da un'altra gerarchia (ad esempio da una rete di prova). Esaminare i ruoli di sicurezza e le relative autorizzazioni per stabilire se usare i ruoli di sicurezza incorporati o se sia necessario crearne di personalizzati.  
+ Ogni ruolo di sicurezza dispone di autorizzazioni specifiche per diversi tipi di oggetto. Ad esempio, il ruolo di sicurezza **Application MMM** (MMM applicazione) ha le autorizzazioni seguenti per le applicazioni: **Approva**, **Crea**, **Elimina**, **Modifica**, **Modifica cartella**, **Sposta oggetto**, **Read/Deploy** (Leggi/Distribuisci), **Imposta ambito di protezione**. Non è possibile modificare le autorizzazioni per i ruoli di sicurezza incorporati, ma è possibile copiare il ruolo, apportare modifiche e quindi salvare tali modifiche come un nuovo ruolo di sicurezza personalizzato. È inoltre possibile importare ruoli di sicurezza esportati da un'altra gerarchia (ad esempio da una rete di prova). Esaminare i ruoli di sicurezza e le relative autorizzazioni per stabilire se usare i ruoli di sicurezza incorporati o se sia necessario crearne di personalizzati.  
 
  **Usare i seguenti passaggi per la pianificazione dei ruoli di sicurezza:**  
 
@@ -186,7 +186,7 @@ Tra gli oggetti non limitati dagli ambiti di protezione sono inclusi i seguenti:
 
 -   Profili di registrazione dispositivo mobile  
 
--   ruoli di sicurezza  
+-   Ruoli di sicurezza  
 
 -   ambiti di protezione  
 
@@ -212,6 +212,6 @@ Per informazioni su come configurare gli ambiti di protezione per l'amministrazi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -1,6 +1,6 @@
 ---
-title: "Ridimensionamento e scalabilità | System Center Configuration Manager"
-description: Identificare il numero di ruoli del sistema del sito e di siti necessari per supportare i dispositivi nell'ambiente System Center Configuration Manager.
+title: Ridimensionamento e scala | Microsoft Docs
+description: Identificare il numero di ruoli del sistema del sito e di siti necessari per supportare i dispositivi nell&quot;ambiente System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: aeeb902fad7444534cafa7f9cb984ce8764471b0
+ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
+ms.openlocfilehash: 453d934d693d58e98cf800988dff702400daaf95
 
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Numeri di ridimensionamento e scalabilità per System Center Configuration Manager
@@ -190,6 +190,6 @@ Ogni punto di gestione può supportare il numero di dispositivi seguente:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

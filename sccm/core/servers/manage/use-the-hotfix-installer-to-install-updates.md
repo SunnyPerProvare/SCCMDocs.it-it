@@ -1,5 +1,5 @@
 ---
-title: Programma di installazione di hotfix | System Center Configuration Manager
+title: Programma di installazione degli hotfix | Microsoft Docs
 description: Informazioni su quando e come installare gli aggiornamenti usando il programma di installazione degli hotfix per Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 03940a499416ce4231bda5feb8a2e323abdff578
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 8ffc7383e895909e6e6c4b8a7875fd5f0df2220e
 
 
 ---
@@ -40,11 +40,11 @@ Quando è necessario installare un aggiornamento (o hotfix) ricevuto da Microsof
 I bundle di aggiornamenti comprendono più aggiornamenti per una versione specifica di Configuration Manager.  
 Quando un aggiornamento è in bundle, non è possibile installare singoli aggiornamenti da tale bundle.  
 
- Se si pianifica di creare distribuzioni per installare gli aggiornamenti in computer aggiuntivi, è necessario installare il bundle di aggiornamenti in un server del sito di amministrazione centrale o in un server del sito primario.  
+ Se si pianifica di creare distribuzioni per installare gli aggiornamenti in computer aggiuntivi, è necessario installare il bundle di aggiornamenti in un server del sito di amministrazione centrale o del sito primario.  
 
  Quando si esegue il bundle di aggiornamenti, si verifica quanto segue:  
 
--   I file di aggiornamento per ogni componente applicabile vengono estratti dal bundle di aggiornamenti.  
+-   I file di aggiornamento per ciascun componente applicabile vengono estratti dal bundle di aggiornamenti.  
 
 -   Avvia una procedura guidata che descrive il processo per la configurazione degli aggiornamenti e delle opzioni di distribuzione degli aggiornamenti.  
 
@@ -80,7 +80,7 @@ La procedura guidata crea anche distribuzioni che è possibile usare per install
 |File|Dettagli|  
 |----------|-------------|  
 |&lt;Versione prodotto\>-QFE-KB&lt;ID articolo KB\>-&lt;piattaforma\>-&lt;lingua\>.exe|Questo è il file di aggiornamento. La riga di comando per questo file è gestita da Updatesetup.exe.<br /><br /> Ad esempio:<br />CM1511RTM-QFE-KB123456-X64-ENU.exe|  
-|Updatesetup.exe|Questo wrapper .msi gestisce l'installazione del bundle di aggiornamento.<br /><br /> Quando si esegue l'aggiornamento, Updatesetup.exe rileva la lingua di visualizzazione del computer in cui viene eseguito. Per impostazione predefinita, l'interfaccia utente per l'aggiornamento è in inglese. Quando la lingua di visualizzazione è supportata, l'interfaccia utente viene visualizzato nella lingua locale del computer.|  
+|Updatesetup.exe|Questo wrapper .msi gestisce l'installazione del bundle di aggiornamenti.<br /><br /> Quando si esegue l'aggiornamento, Updatesetup.exe rileva la lingua di visualizzazione del computer in cui viene eseguito. Per impostazione predefinita, l'interfaccia utente per l'aggiornamento è in inglese. Quando la lingua di visualizzazione è supportata, l'interfaccia utente viene visualizzato nella lingua locale del computer.|  
 |License_&lt;lingua\>.rtf|Ove applicabile, ogni aggiornamento contiene uno o più file di licenza per le lingue supportate.|  
 |&lt;TipoProdotto&Aggiornamento>-&lt;versione prodotto\>-&lt;ID articolo KB\>-&lt;piattaforma\>.msp|Quando l'aggiornamento si applica alla console o ai client di Configuration Manager, il bundle di aggiornamento include file (.msp) separati della patch di Windows Installer.<br /><br /> Ad esempio:<br /><br /> **Aggiornamento della console di Configuration Manager:** ConfigMgr1511-AdminUI-KB1234567-i386.msp<br /><br /> **Aggiornamento del client:** ConfigMgr1511-client-KB1234567-i386.msp<br />ConfigMgr1511-client-KB1234567-x64.msp|  
 
@@ -114,7 +114,7 @@ Dopo aver installato il bundle di aggiornamento in un server del sito, è possib
 
 |Componente|Istruzioni|  
 |---------------|------------------|  
-|Server del sito|Distribuire gli aggiornamenti in un server del sito remoto quando si sceglie di non installare il bundle di aggiornamento direttamente sul tale server del sito remoto.|  
+|Server del sito|Distribuire gli aggiornamenti in un server del sito remoto quando si sceglie di non installare il bundle di aggiornamenti direttamente sul tale server del sito remoto.|  
 |Database del sito|Per i server del sito remoti, distribuire gli aggiornamenti del server che includono un aggiornamento al database del sito se non si installa il bundle di aggiornamento su tale server del sito remoto.|  
 |Console di Configuration Manager|Dopo l'installazione iniziale della console di Configuration Manager, è possibile installare aggiornamenti per la console di Configuration Manager in ogni computer in cui è in esecuzione la console. Non è possibile modificare il file di installazione della console di Configuration Manager per applicare gli aggiornamenti durante l'installazione iniziale della console.|  
 |Provider SMS remoto|Installare gli aggiornamenti per ciascuna istanza del provider SMS che viene eseguita su un computer diverso dal server del sito dove è stato installato il bundle di aggiornamento.|  
@@ -140,7 +140,7 @@ Dopo aver installato il bundle di aggiornamento in un server del sito, è possib
 
  **Aggiornamento automatico del database del sito**  
 
- Quando si installa il bundle di aggiornamento su un server del sito, è possibile scegliere di aggiornare automaticamente il database del sito quando viene installato l'aggiornamento del server. Tale decisione si applica solo al server del sito in cui si installa il bundle di aggiornamento e non si applica alle distribuzioni create per installare gli aggiornamenti su server del sito remoti.  
+ Quando si installa il bundle di aggiornamento su un server del sito, è possibile scegliere di aggiornare automaticamente il database del sito quando viene installato l'aggiornamento del server. Tale decisione si applica solo al server del sito in cui si installa il bundle di aggiornamenti e non si applica alle distribuzioni create per installare gli aggiornamenti su server del sito remoti.  
 
 > [!NOTE]  
 >  Quando si sceglie di aggiornare automaticamente il database del sito, il processo aggiorna un database indipendentemente dal fatto che sia posizionato sul server del sito o su un computer remoto.  
@@ -168,7 +168,7 @@ Dopo aver installato il bundle di aggiornamento in un server del sito, è possib
 5.  Quando si installa il bundle di aggiornamenti, viene estratto **update.sql** nel percorso seguente nel server del sito: **\\\\&lt;Nome del server\>\SMS_&lt;Codice sito\>\Hotfix\\&lt;Numero KB\>\update.sql**  
 
 ####  <a name="a-namebkmkprovidera-update-a-computer-that-runs-the-sms-provider"></a><a name="bkmk_provider"></a> Aggiornare un computer che esegue il provider SMS  
- Dopo aver installato un pacchetto di aggiornamento che include aggiornamenti per il provider SMS è necessario distribuire l'aggiornamento in ogni computer che esegue il provider SMS. L'unica eccezione a questa situazione è l'istanza del provider SMS precedentemente installato nel server del sito in cui si installa il pacchetto di aggiornamento. L'istanza locale del provider SMS nel server del sito viene aggiornata quando si installa il pacchetto di aggiornamento.  
+ Dopo aver installato un pacchetto di aggiornamento che include aggiornamenti per il provider SMS è necessario distribuire l'aggiornamento in ogni computer che esegue il provider SMS. L'unica eccezione è costituita dall'istanza del provider SMS installata in precedenza nel server del sito in cui si installa il bundle di aggiornamenti. L'istanza locale del provider SMS nel server del sito viene aggiornata quando si installa il bundle di aggiornamenti.  
 
  Se si rimuove e quindi si reinstalla il provider SMS in un computer, sarà necessario reinstallare l'aggiornamento per il provider SMS in tale computer.  
 
@@ -269,6 +269,6 @@ Ad esempio, è possibile usare la riga di comando seguente per aggiornare una co
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

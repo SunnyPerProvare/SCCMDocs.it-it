@@ -1,8 +1,8 @@
 ---
-title: "Creare e distribuire criteri di conformità del dispositivo | System Center Configuration Manager"
+title: "Creare e distribuire criteri di conformità del dispositivo | Microsoft Docs"
 description: "Informazioni su come creare e distribuire criteri di conformità del dispositivo in System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/15/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0cba232e-319f-4ae6-9ffa-4cd76c8bcb29
 caps.latest.revision: 
-author: karthikaraman
-ms.author: karaman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 robots: noindex
 translationtype: Human Translation
-ms.sourcegitcommit: 5c6cf3c1697b49708aa5192b67b08b700da7dc72
-ms.openlocfilehash: bb91f4a711699790bb01f48d32183cf1215b1952
+ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
+ms.openlocfilehash: 4cc7148be602367b579d63535a4938919bacf829
 
 ---
 
@@ -79,7 +79,7 @@ ms.openlocfilehash: bb91f4a711699790bb01f48d32183cf1215b1952
 
 ## <a name="monitor-the-compliance-policy"></a>Monitorare i criteri di conformità
 
-#### <a name="to-view-compliance-results-in-the-configuration-manager-console"></a>Per visualizzare i risultati di conformità nella console di Configuration Manager
+### <a name="to-view-compliance-results-in-the-configuration-manager-console"></a>Per visualizzare i risultati di conformità nella console di Configuration Manager
 
 1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.
 
@@ -98,6 +98,14 @@ ms.openlocfilehash: bb91f4a711699790bb01f48d32183cf1215b1952
     -   **Non conforme**: visualizza un elenco di tutte le regole non conformi all'interno di un criterio, in base al numero di asset interessati. È possibile fare clic su una regola per creare un nodo temporaneo nel nodo **Utenti** o **Dispositivi** dell'area di lavoro **Asset e conformità** che contiene tutti gli utenti o i dispositivi non conformi a questa regola. Quando si seleziona un utente o un dispositivo, il riquadro **Dettagli asset** visualizza gli utenti o i dispositivi interessati dal problema selezionato. Fare doppio clic su un utente o su un dispositivo presente nell'elenco per visualizzare informazioni aggiuntive sul problema.
 
     -   **Sconosciuto**: visualizza un elenco di tutti gli utenti o di tutti i dispositivi che non sono conformi alla distribuzione del criterio selezionata e lo stato del client dei dispositivi.
+
+### <a name="to-view-intune-compliance-policies-charts"></a>Per visualizzare i grafici dei criteri di conformità di Intune
+1. A partire dalla versione 1610 di Configuration Manager, nella console di Configuration Manager fare clic su **Monitoraggio**.
+2. Nell'area di lavoro **Monitoraggio** passare a **Panoramica** > **Impostazioni di conformità** >  **Criteri di conformità**.
+3. Vengono visualizzati i grafici seguenti:
+    - **Overall Device Compliance** (Conformità generale del dispositivo): visualizza la conformità generale dei dispositivi per tutti i criteri di conformità.
+    - **Top Non-Compliance Reasons** (Motivi principali di mancata conformità): visualizza i criteri principali alla base della mancata conformità dei dispositivi.
+4. Fare clic su una sezione di uno dei due grafici per eseguire il drill-down nell'elenco dei dispositivi della categoria corrispondente.
 
 ### <a name="to-view-a-health-attestation-report"></a>Per visualizzare il report di attestazione dell'integrità
 
@@ -214,10 +222,8 @@ ms.openlocfilehash: bb91f4a711699790bb01f48d32183cf1215b1952
   **Supportato in:**
   * Windows 10 e Windows 10 Mobile
 
-  
 
 
-
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

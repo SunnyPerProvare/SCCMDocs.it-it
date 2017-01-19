@@ -1,7 +1,7 @@
 ---
 
-title: Gestire le impostazioni per gli aggiornamenti software | Configuration Manager
-description: Informazioni sulle impostazioni client appropriate per gli aggiornamenti software nel sito successivi all'installazione del punto di aggiornamento software.
+title: Gestire le impostazioni per gli aggiornamenti software | Microsoft Docs
+description: Informazioni sulle impostazioni client appropriate per gli aggiornamenti software nel sito successivi all&quot;installazione del punto di aggiornamento software.
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,8 +14,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 0d484c1a-e903-4bff-9e9b-e452c62e38a8
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 4d7ffc12a3626f35a4481a3dcaed40abc0bbdac0
+ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
+ms.openlocfilehash: 7d37f3c5e398c914482c45ab837fe41d00fce8ea
 
 
 ---
@@ -142,6 +142,6 @@ Per l'inglese (USA), ad esempio, eseguire **\SMSSETUP\BIN\X64\00000409\UpdDwnldC
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

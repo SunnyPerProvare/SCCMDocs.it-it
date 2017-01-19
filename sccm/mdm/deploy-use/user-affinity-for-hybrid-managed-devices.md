@@ -1,6 +1,6 @@
 ---
-title: "Affinità utente per i dispositivi gestiti ibridi in Configuration Manager"
-description: "Configurare l'affinità utente per i dispositivi gestiti in Configuration Manager."
+title: "Affinità utente per i dispositivi gestiti ibridi in Configuration Manager | Microsoft Docs"
+description: "Configurare l&quot;affinità utente per i dispositivi gestiti in Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.reviewer: na
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b5d520a7-e9e5-40ee-91f9-f2684214beb6
 caps.latest.revision: 6
-author: NathBarn
-ms.author: nathbarn
+author: mtillman
+ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 789374b48d27ffaaec5ca02a910ca6e1899b3d3c
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 74dcc0f4e680893db804956615248b7e1230d2b5
 
 ---
 # <a name="user-affinity-for-hybrid-managed-devices-in-configuration-manager"></a>Affinità utente per i dispositivi gestiti ibridi in Configuration Manager
@@ -56,6 +56,6 @@ Quando si configurano profili per i dispositivi di proprietà dell'azienda, l'am
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

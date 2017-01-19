@@ -1,5 +1,5 @@
 ---
-title: Procedure consigliate per le raccolte | System Center Configuration Manager
+title: Procedure consigliate per le raccolte | Microsoft Docs
 description: Apprendere le procedure consigliate per le raccolte in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 8e22f353ba0803a3b1b4d387a8c00fdb98186bf5
+ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
+ms.openlocfilehash: 8f3086adac2c6886316a2fd65b3d471acac9077c
 
 
 ---
@@ -44,6 +44,6 @@ Per le raccolte in System Center Configuration Manager usare le seguenti procedu
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

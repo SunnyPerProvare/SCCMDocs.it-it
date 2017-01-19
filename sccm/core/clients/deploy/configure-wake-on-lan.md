@@ -1,5 +1,5 @@
 ---
-title: Configurare la riattivazione LAN | System Center Configuration Manager
+title: Configurare la riattivazione LAN | Microsoft Docs
 description: Selezionare la riattivazione LAN in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b475a0c8-85d6-4cc4-b11f-32c0cc98239e
 caps.latest.revision: 7
-author: Mtillman
-ms.author: mtillman
+author: nbigman
+ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: b8274f9da1ec82aebf43115236f2409995a0052b
+ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
+ms.openlocfilehash: 09f8bc7ee04ff64934030f825a791bc043341963
 
 ---
 # <a name="how-to-configure-wake-on-lan-in-system-center-configuration-manager"></a>Come configurare la riattivazione LAN in System Center Configuration Manager
@@ -47,7 +47,7 @@ Un computer che riceve le impostazioni client proxy di riattivazione sospenderà
 1. Nella console di Configuration Manager scegliere **Amministrazione > Impostazioni client**.
 2. Fare clic su **Impostazioni client predefinite**, quindi su **Proprietà**.
 3. Selezionare **Risparmio energia** e quindi scegliere **Sì** per **Abilitare il proxy di riattivazione**.
-4. Riesaminare e, se necessario, configurare le altre impostazioni proxy di riattivazione. Per altre informazioni su queste impostazioni, vedere [Impostazioni di risparmio energia](../../../core/clients/deploy/about-client-settings.md#BKMK_PowMgmtDeviceSettings).
+4. Riesaminare e, se necessario, configurare le altre impostazioni proxy di riattivazione. Per altre informazioni su queste impostazioni, vedere [Impostazioni di risparmio energia](../../../core/clients/deploy/about-client-settings.md#power-management).
 5. Fare clic su **OK** per chiudere la finestra di dialogo e su **OK** per chiudere la finestra di dialogo Impostazioni client predefinite.
 
 È possibile utilizzare i seguenti report di riattivazione LAN per monitorare l'installazione e la configurazione del proxy di riattivazione:
@@ -60,6 +60,6 @@ Un computer che riceve le impostazioni client proxy di riattivazione sospenderà
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

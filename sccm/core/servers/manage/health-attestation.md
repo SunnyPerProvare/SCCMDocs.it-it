@@ -1,6 +1,6 @@
 ---
-title: "Attestazione dell'integrità | System Center Configuration Manager"
-description: "Informazioni sulla funzionalità di Attestazione dell'integrità del dispositivo visibile nella console di Configuration Manager."
+title: "Attestazione dell&quot;integrità | Microsoft Docs"
+description: "Informazioni sulla funzionalità di Attestazione dell&quot;integrità del dispositivo visibile nella console di Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 7f3c95983f28d58bd0503570df9dc3b229059e82
+ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
+ms.openlocfilehash: 937a168f79168b3e3a3a578513814abb2b368d9f
 
 
 ---
@@ -85,6 +85,6 @@ Con System Center Configuration Manager (Current Branch) versione 1602, gli ammi
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

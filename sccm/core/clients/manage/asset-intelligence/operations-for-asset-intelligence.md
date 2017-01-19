@@ -1,5 +1,5 @@
 ---
-title: Usare Asset Intelligence | System Center Configuration Manager
+title: Usare Asset Intelligence | Microsoft Docs
 description: "Eseguire attività con Asset Intelligence in System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: 415ab53796b6f335e3f58ebce4b0bb1b6ecfa45e
+ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
+ms.openlocfilehash: 6bfbfbcce6ef5c38164e161d197f5a3fb4b4e353
 
 
 ---
@@ -339,6 +339,6 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

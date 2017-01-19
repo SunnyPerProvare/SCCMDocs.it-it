@@ -1,6 +1,6 @@
 ---
-title: Modificare l'infrastruttura | System Center Configuration Manager
-description: Informazioni su come apportare modifiche o eseguire azioni che interessano l'infrastruttura di Configuration Manager distribuita.
+title: Modificare l&quot;infrastruttura | Microsoft Docs
+description: Informazioni su come apportare modifiche o eseguire azioni che interessano l&quot;infrastruttura di Configuration Manager distribuita.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: fc58e77841baedd45649d676e98c736fa91e5bf2
+ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
+ms.openlocfilehash: fa9881e06abd410438fe5985151309c45f337802
 
 
 ---
@@ -172,6 +172,8 @@ Ad esempio, considerare uno scenario in cui si installa la console di Configurat
 -   **Configurare l'accesso:** quando si sposta il database del sito in un nuovo computer, aggiungere l'account computer del server del sito al gruppo di ** ** amministratori locale nel computer che esegue SQL Server. Se si utilizza un cluster SQL Server per il database del sito, è necessario aggiungere l'account computer al gruppo di **amministratori locali** di ciascun computer nodo cluster Windows Server.  
 
 -   **Abilitare l'integrazione di Common Language Runtime (CLR):**  quando si sposta il database in una nuova istanza di SQL Server o in un nuovo computer SQL Server, è necessario abilitare l'integrazione di Common Language Runtime (CLR). Per abilitare CLR, usare **SQL Server Management Studio** per connettersi all'istanza di SQL Server che ospita il database del sito ed eseguire la stored procedure seguente come query: **sp_configure 'clr enabled',1; reconfigure**.  
+-  **Verificare che il nuovo SQL Server sia in possesso dell'accesso al percorso di backup:** quando si usa un percorso UNC per archiviare il backup del database del sito, dopo lo spostamento del database in un nuovo server, incluso lo spostamento in un gruppo di disponibilità AlwaysOn di SQL Server o in un cluster di SQL Server, verificare che l'account del computer del nuovo SQL Server abbia le autorizzazioni di **scrittura** per il percorso UNC.  
+
 
 > [!IMPORTANT]  
 >  Prima di spostare un database contenente una o più repliche di database per i punti di gestione, è necessario rimuovere innanzitutto le repliche di database. Dopo aver completato lo spostamento del database, è possibile riconfigurare le repliche di database. Per altre informazioni, vedere [Database replicas for management points for System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
@@ -369,6 +371,6 @@ Per informazioni sulle lingue di client e server supportate da Configuration Man
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

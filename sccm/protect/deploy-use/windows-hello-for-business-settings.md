@@ -1,5 +1,5 @@
 ---
-title: Impostazioni di Windows Hello per le aziende | System Center Configuration Manager
+title: Impostazioni di Windows Hello for Business | Microsoft Docs
 description: Informazioni su come integrare Windows Hello per le aziende con System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/10/2016
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2a45cfb3e00d8078fbf45bdc8a2668b7dd0a62c6
-ms.openlocfilehash: 80f586763d034891aac9b87dcb38120602aa2b85
+ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
+ms.openlocfilehash: 1f254ee31bae1c3d7b1506e68c40baf78793bf66
 
 
 ---
@@ -109,7 +109,7 @@ Hello for Business consente di eseguire l'accesso usando un **movimento dell'ute
 
 Si noti che, oltre a questa configurazione, è necessario distribuire anche un profilo certificato, come descritto in [Configurare un profilo certificato](#configure-a-certificate-profile).
 
-### <a name="recommended-approach---configure-a-windows-hello-for-business-profile"></a>Approccio consigliato - Configurare un profilo Windows Hello per aziende  
+### <a name="recommended-approach----configure-a-windows-hello-for-business-profile"></a>Approccio consigliato - Configurare un profilo Windows Hello per aziende  
 
 Nella console di amministrazione, in **Accesso risorse aziendali **, fare clic con il pulsante destro del mouse su **Profili Windows Hello per le aziende** e scegliere **Nuovo** per avviare la creazione guidata del profilo. Specificare le impostazioni richieste dalla procedura guidata, rivedere e confermare le impostazioni nell'ultima pagina, quindi scegliere **Chiudi**. Di seguito è riportato un esempio di come potrebbero essere le impostazioni:  
 
@@ -166,6 +166,6 @@ Per informazioni introduttive sulla gestione delle applicazioni di Configuration
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

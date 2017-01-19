@@ -1,8 +1,8 @@
 ---
-title: Supporto per SQL Server | System Center Configuration Manager
-description: Requisiti di configurazione e della versione di SQL Server per l'hosting di un database del sito di System Center Configuration Manager.
+title: Supporto per SQL Server | Microsoft Docs
+description: Requisiti di configurazione e della versione di SQL Server per l&quot;hosting di un database del sito di System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: b17720021f797d404a89933939427696dfafd7dc
+ms.sourcegitcommit: 814feb4e833230285b4092a8feb6f11a75f2e4f6
+ms.openlocfilehash: ecf790893a5604250810310cfdb09c4cff7d97b6
 
 
 ---
@@ -29,7 +29,6 @@ Ogni sito di System Center Configuration Manager richiede una versione e una con
 
 ##  <a name="a-namebkmkinstancesa-sql-server-instances-and-locations"></a><a name="bkmk_Instances"></a> Istanze e percorsi di SQL Server  
  **Sito di amministrazione centrale e siti primari:**  
-
 Il database del sito deve usare un'installazione completa di SQL Server.  
 
  Il percorso di SQL Server può trovarsi in:  
@@ -49,22 +48,26 @@ Sono supportate le istanze seguenti:
 
 
  **Siti secondari:**  
+ Il database del sito può usare l'istanza predefinita di un'installazione completa di SQL Server o SQL Server Express.  
 
- Il database del sito può usare l'istanza predefinita di un'installazione completa di SQL Server o SQL Server Express  
-
- Il percorso di SQL Server deve trovarsi nel computer server del sito  
+ Il percorso di SQL Server deve trovarsi nel computer server del sito.  
 
 ##  <a name="a-namebkmksqlversionsa-supported-versions-of-sql-server"></a><a name="bkmk_SQLVersions"></a> Versioni supportate di SQL Server  
  In una gerarchia con più siti, diversi siti possono usare versioni diverse di SQL Server per ospitare il database del sito, purché le versioni di SQL Server in uso siano supportate da Configuration Manager.  
 
- Le versioni seguenti di SQL Server sono supportate con System Center Configuration Manager versione 1511 e successive.  
+ Se non specificato diversamente, le versioni seguenti di SQL Server sono supportate con System Center Configuration Manager versione 1511 e successive.  
 
 > [!IMPORTANT]  
 >  L'uso di SQL Server Standard per il database nel sito di amministrazione centrale limita il numero totale di client che una gerarchia può supportare. Vedere [Numeri di ridimensionamento e scalabilità](../../../core/plan-design/configs/size-and-scale-numbers.md).
 
-### <a name="sql-server-2016---standard-enterprise"></a>SQL Server 2016 - Standard, Enterprise  
+### <a name="sql-server-2016-sp1---standard-enterprise"></a>SQL Server 2016 SP1 - Standard, Enterprise  
+È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:  
 
-Supportato per la versione 1606.   
+-   Sito di amministrazione centrale  
+-   Sito primario  
+-   Sito secondario  
+
+### <a name="sql-server-2016---standard-enterprise"></a>SQL Server 2016 - Standard, Enterprise  
 È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:  
 
 -   Sito di amministrazione centrale  
@@ -73,8 +76,6 @@ Supportato per la versione 1606.
 
 
 ### <a name="sql-server-2014-sp2---standard-enterprise"></a>SQL Server 2014 SP2 - Standard, Enterprise  
-
-Supportato per la versione 1511 e versioni successive.  
 È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:  
 
 -   Sito di amministrazione centrale  
@@ -84,8 +85,6 @@ Supportato per la versione 1511 e versioni successive.
 
 
 ### <a name="sql-server-2014-sp1---standard-enterprise"></a>SQL Server 2014 SP1 - Standard, Enterprise  
-
-Supportato per la versione 1511 e versioni successive.  
  È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:  
 
 -   Sito di amministrazione centrale  
@@ -94,8 +93,6 @@ Supportato per la versione 1511 e versioni successive.
 
 
 ### <a name="sql-server-2012-sp3---standard-enterprise"></a>SQL Server 2012 SP3 - Standard, Enterprise  
-
-Supportato per la versione 1511 e versioni successive.  
  È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:  
 
 -   Sito di amministrazione centrale  
@@ -103,9 +100,7 @@ Supportato per la versione 1511 e versioni successive.
 -   Sito secondario  
 
 
-### <a name="sql-server-2012-sp2---standard-enterprise"></a>SQL Server 2012 SP2 - Standard, Enterprise  
-
-Supportato per la versione 1511 e versioni successive.  
+### <a name="sql-server-2012-sp2---standard-enterprise"></a>SQL Server 2012 SP2 - Standard, Enterprise   
  È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:  
 
 -   Sito di amministrazione centrale  
@@ -113,41 +108,41 @@ Supportato per la versione 1511 e versioni successive.
 -   Sito secondario  
 
 
-### <a name="sql-server-2008-r2-sp3---standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3 - Standard, Enterprise, Datacenter  
-
-Supportato per la versione 1511 e versioni successive.    
+### <a name="sql-server-2008-r2-sp3---standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3 - Standard, Enterprise, Datacenter     
 È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:  
 
 -   Sito di amministrazione centrale  
 -   Sito primario  
 -   Sito secondario  
 
-### <a name="sql-server-2016-express"></a>SQL Server 2016 Express
-Supportato per la versione 1606.  
+
+
+### <a name="sql-server-2016-express-sp1"></a>SQL Server 2016 Express SP1  
 È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:
 -   Sito secondario
 
-### <a name="sql-server-2014-express-sp2"></a>SQL Server 2014 Express SP2  
-Supportato per la versione 1511 e versioni successive.  
+### <a name="sql-server-2016-express"></a>SQL Server 2016 Express
+È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:
+-   Sito secondario
+
+
+### <a name="sql-server-2014-express-sp2"></a>SQL Server 2014 Express SP2   
 È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:  
 
 -   Sito secondario  
 
 
-### <a name="sql-server-2014-express-sp1"></a>SQL Server 2014 Express SP1  
- Supportato per la versione 1511 e versioni successive.   
+### <a name="sql-server-2014-express-sp1"></a>SQL Server 2014 Express SP1   
  È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:  
 
 -   Sito secondario  
 
 ### <a name="sql-server-2012-express-sp3"></a>SQL Server 2012 Express SP3  
-Supportato per la versione 1511 e versioni successive.   
 È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:  
 
 -   Sito secondario  
 
-### <a name="sql-server-2012-express-sp2"></a>SQL Server 2012 Express SP2  
- Supportato per la versione 1511 e versioni successive.  
+### <a name="sql-server-2012-express-sp2"></a>SQL Server 2012 Express SP2   
  È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:  
 
 -   Sito secondario  
@@ -187,13 +182,11 @@ Supportato per la versione 1511 e versioni successive.
     -   Sito primario: minimo 8 gigabyte (GB)  
     -   Sito secondario: minimo 4 gigabyte (GB)  
 
- **Trigger nidificati SQL:**  
-
- I[trigger nidificati SQL](http://go.microsoft.com/fwlink/?LinkId=528802) devono essere abilitati.  
+**Trigger nidificati SQL:**  
+I [trigger nidificati SQL](http://go.microsoft.com/fwlink/?LinkId=528802) devono essere abilitati.  
 
  **Integrazione CLR di SQL Server**  
-
-  Il database del sito richiede l'abilitazione di Common Language Runtime (CLR) di SQL Server. Questa funzione viene abilitata automaticamente quando si installa Configuration Manager. Per altre informazioni su CLR, vedere [Introduzione all'integrazione CLR di SQL Server](https://msdn.microsoft.com/library/ms254498\(v=vs.110\).aspx)  
+  Il database del sito richiede l'abilitazione di Common Language Runtime (CLR) di SQL Server. Questa funzione viene abilitata automaticamente quando si installa Configuration Manager. Per altre informazioni su CLR, vedere [Introduzione all'integrazione CLR di SQL Server](https://msdn.microsoft.com/library/ms254498\(v=vs.110\).aspx).  
 
 ##  <a name="a-namebkmkoptionala-optional-configurations-for-sql-server"></a><a name="bkmk_optional"></a> Configurazioni facoltative per SQL Server  
  Le configurazioni seguenti sono facoltative per ogni database che usa un'installazione completa di SQL Server.  
@@ -220,6 +213,10 @@ Per informazioni su come modificare l'account usato dal servizio SQL, vedere [Pr
 **SQL Server Reporting Services:**  
 Necessario per installare un punto di Reporting Services che consente di eseguire i report.  
 
+> [!IMPORTANT]  
+> Dopo aver aggiornato SQL Server da una versione precedente, potrebbe essere visualizzato l'errore seguente: *Report Builder Does Not Exist* (Generatore report inesistente).    
+> Per risolvere questo problema è necessario reinstallare il ruolo di sistema sito del punto di Reporting Services.
+
 **Porte di SQL Server:**  
 Per la comunicazione con il motore di database di SQL Server e per la replica tra siti, è possibile usare le configurazioni di porte SQL Server predefinite o specificare porte personalizzate:  
 
@@ -242,6 +239,6 @@ Per un esempio di come configurare SQL Server per l'uso di una porta specifica, 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

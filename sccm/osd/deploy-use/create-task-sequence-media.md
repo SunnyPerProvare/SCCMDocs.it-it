@@ -1,6 +1,6 @@
 ---
-title: "Creare supporti per sequenza di attività con System Center Configuration Manager"
-description: "È possibile creare supporti per sequenza di attività, ad esempio un CD, per distribuire un sistema operativo in un computer di destinazione nell'ambiente di Configuration Manager."
+title: "Creare supporti per sequenza di attività con System Center Configuration Manager | Microsoft Docs"
+description: "È possibile creare supporti per sequenza di attività, ad esempio un CD, per distribuire un sistema operativo in un computer di destinazione nell&quot;ambiente di Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1134bb2f04152288e72d40b1b1083f415cb4e900
-ms.openlocfilehash: f00defcdb56e37476ac24d8ce25d1dc5fb2f3260
+ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
+ms.openlocfilehash: bd5448d70c2d465347de840cb197d4c33075c90a
 
 
 ---
@@ -72,6 +72,6 @@ ms.openlocfilehash: f00defcdb56e37476ac24d8ce25d1dc5fb2f3260
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 
