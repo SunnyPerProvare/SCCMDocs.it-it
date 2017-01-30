@@ -1,8 +1,8 @@
 ---
-title: Installare una nuova versione di Windows in un nuovo computer (bare metal) con System Center Configuration Manager | Documentazione Microsoft
-description: Seguire questa procedura in System Center Configuration Manager per installare un sistema operativo in un nuovo computer tramite PXE, OEM o supporti autonomi.
+title: Installare Windows in un nuovo computer - Configuration Manager | Microsoft Docs
+description: Usare Configuration Manager per installare un sistema operativo in un nuovo computer (bare metal) tramite PXE, OEM o supporti autonomi.
 ms.custom: na
-ms.date: 12/06/2016
+ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 06ade037c580d64503e6b8b5c3bf31004ab0650b
-ms.openlocfilehash: 93b3d99e7391feefc3d706f15f0fe8f8df3b75ac
+ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
+ms.openlocfilehash: 584dad7d8b05a2da9f7a66b73028ae99ff1a594f
 
 
 ---
@@ -27,7 +27,7 @@ ms.openlocfilehash: 93b3d99e7391feefc3d706f15f0fe8f8df3b75ac
 
 Questo argomento specifica i passaggi generali di System Center Configuration Manager per installare un sistema operativo in un nuovo computer. Per questo scenario è possibile scegliere tra vari metodi di distribuzione diversi, ad esempio PXE, OEM o supporti autonomi. Se non si è sicuri che questo sia lo scenario di distribuzione del sistema operativo più adatto alle proprie esigenze, vedere [Scenari di distribuzione di sistemi operativi aziendali](scenarios-to-deploy-enterprise-operating-systems.md).  
 
- Per informazioni su come aggiornare un computer esistente con una nuova versione di Windows, vedere le sezioni seguenti.  
+Per informazioni su come aggiornare un computer esistente con una nuova versione di Windows, vedere le sezioni seguenti.  
 
 ##  <a name="a-namebkmkplana-plan"></a><a name="BKMK_Plan"></a> Pianificazione  
 
@@ -81,6 +81,6 @@ Questo argomento specifica i passaggi generali di System Center Configuration Ma
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Gestire l&quot;accesso alla posta elettronica | Microsoft Docs
+title: Gestire l&quot;accesso alla posta elettronica di Exchange con Configuration Manager | Microsoft Docs
 description: Informazioni su come usare l&quot;accesso condizionale di System Center Configuration Manager per gestire l&quot;accesso alla posta elettronica di Exchange.
 ms.custom: na
 ms.date: 10/04/2016
@@ -16,12 +16,12 @@ author: andredm7
 ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
-ms.openlocfilehash: 0bbe25598f38f9cf3c15375748fee09c43dfb928
+ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
+ms.openlocfilehash: 26179c0c92773dc0b69be500c165a52e15afc6fd
 
 
 ---
-# <a name="manage-email-access-in-system-center-configuration-manager"></a>Gestire l'accesso alla posta elettronica in System Center Configuration Manager
+# <a name="manage-email-access"></a>Gestire l'accesso alla posta elettronica 
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -237,7 +237,7 @@ I browser non supportati verranno bloccati. Non sono supportate le app OWA per i
 6.  In **Accesso all'applicazione**per Outlook e altre app che usano l'autenticazione moderna è possibile scegliere di limitare l'accesso solo ai dispositivi conformi per le singole piattaforme.  I dispositivi Windows devono essere aggiunti a un dominio oppure devono essere registrati in Intune e conformi.  
 
     > [!TIP]  
-    > Con **Autenticazione moderna** i client Office possono usare l'accesso basato su Active Directory Authentication Library (ADAL).  
+    >  Con**Autenticazione moderna** i client Office possono usare l'accesso basato su Active Directory Authentication Library (ADAL).  
     >   
     >  -   Questo tipo di autenticazione consente ai client Office di usare l'autenticazione basata su browser, nota anche come autenticazione passiva.  Per eseguire l'autenticazione, l'utente viene indirizzato a una pagina Web di accesso.  
     > -   Questo nuovo metodo di accesso offre nuovi scenari, tra cui l'accesso condizionale, basato sulla **conformità del dispositivo** e sull'uso dell' **autenticazione a più fattori** .  
@@ -363,6 +363,6 @@ I browser non supportati verranno bloccati. Non sono supportate le app OWA per i
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

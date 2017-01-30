@@ -1,6 +1,6 @@
 ---
-title: Distribuire l&quot;app Lookout for Work | System Center Configuration Manager
-description: Configurare e distribuire l&quot;app Lookout for Work.
+title: Configurare e distribuire app Lookout for Work | Microsoft Docs
+description: Istruzioni per la configurazione e la distribuzione dell&quot;app Lookout for Work per i dispositivi Android e iOS.
 ms.custom: na
 ms.date: 11/18/2016
 ms.prod: configuration-manager
@@ -16,12 +16,12 @@ author: nathbarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
-ms.openlocfilehash: 947393796043dcc3916a5f8e09898bb8a7cd347d
+ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
+ms.openlocfilehash: 5e7d67855dc7929b19ec1ae32457aa11700be56e
 
 
 ---
-# <a name="configure-and-deploy-lookout-for-work-apps"></a>Configurare e distribuire l'app Lookout for Work
+# <a name="deploy-lookout-for-work-apps"></a>Distribuire app Lookout for Work
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -92,6 +92,6 @@ Quando l'utente apre Lookout for Work sul dispositivo, viene richiesto di attiva
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

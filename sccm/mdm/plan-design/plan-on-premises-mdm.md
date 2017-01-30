@@ -17,8 +17,8 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
-ms.openlocfilehash: cc5b04dc41b13993fca35f202437b71e96bc9cdd
+ms.sourcegitcommit: cec595d473ca2459e43a7fa1c70b7668a8a48986
+ms.openlocfilehash: d529a058968cf99dce77997844b33ff5dc7c0004
 
 
 ---
@@ -43,8 +43,8 @@ Prendere in considerazione i requisiti seguenti prima di preparare l'infrastrutt
 ##  <a name="a-namebkmkintunea-use-of-the--microsoft-intune-subscription"></a><a name="bkmk_intune"></a> Usare la sottoscrizione a Microsoft Intune  
  Per iniziare a usare la gestione dei dispositivi mobili, è necessaria una sottoscrizione a Microsoft Intune. La sottoscrizione è richiesta solo per tenere traccia delle licenze dei dispositivi e non viene usata per gestire o archiviare le informazioni di gestione per i dispositivi. Tutte le attività di gestione vengono eseguite all'interno dell'azienda usando l'infrastruttura di Configuration Manager locale.  
 
-> [!IMPORTANT]  
->  Configuration Manager non supporta l'uso di Microsoft Intune e l'infrastruttura di Configuration Manager locale come autorità di gestione allo stesso tempo. Pertanto, se si imposta la sottoscrizione di Intune per la gestione locale, si disabilita in effetti la gestione di Intune.  
+ > [!NOTE]  
+ > A partire dalla versione 1610, Configuration Manager supporta l'uso di Microsoft Intune e dell'infrastruttura di Configuration Manager locale per gestire simultaneamente i dispositivi mobili.   
 
  Se nel sito sono presenti dispositivi con connessione Internet, è possibile usare il servizio di Intune per notificare ai dispositivi di controllare il punto gestione dei dispositivi per gli aggiornamenti dei criteri. Questo uso di  Intune è rigorosamente riservato alle notifiche per i dispositivi con connessione Internet. I dispositivi senza connessioni Internet (e che non possono essere contattati da Intune) si basano sull'intervallo di polling configurato per controllare le funzioni di gestione con i ruoli di sistema del sito.  
 
@@ -122,6 +122,6 @@ Prendere in considerazione i requisiti seguenti prima di preparare l'infrastrutt
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

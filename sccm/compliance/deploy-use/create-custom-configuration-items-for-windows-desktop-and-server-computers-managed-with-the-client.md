@@ -1,5 +1,5 @@
 ---
-title: Creare elementi di configurazione personalizzati per computer desktop e server Windows gestiti con il client di System Center Configuration Manager | Microsoft Docs
+title: Creare elementi di configurazione per computer Windows gestiti da client - Configuration Manager | Microsoft Docs
 description: "È possibile gestire le impostazioni per i computer e i server Windows usando un elemento di configurazione personalizzato per computer desktop e server Windows."
 ms.custom: na
 ms.date: 11/18/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
-ms.openlocfilehash: f5509d1ffb88bc128f7be6c74e6b65dc33605c9e
+ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
+ms.openlocfilehash: e55883471fde63036c91b315ed6db6dceb315207
 
 
 ---
@@ -359,6 +359,6 @@ Nella pagina **Piattaforme supportate** della **Creazione guidata dell'elemento 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

@@ -17,12 +17,12 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
-ms.openlocfilehash: a41bec089897717a7e73e751d58275af9e0a5fa3
+ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
+ms.openlocfilehash: bdb7f78480f73bc4559c4ff49ecb7b047581780a
 
 
 ---
-# <a name="prerequisites-for-email-profiles-in-system-center-configuration-manager"></a>Prerequisiti per i profili di posta elettronica in System Center Configuration Manager
+# <a name="email-profile-prerequisites"></a>Prerequisiti dei profili di posta elettronica
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -43,6 +43,6 @@ I profili di posta elettronica in System Center Configuration Manager hanno dipe
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti senza il client di System Center Configuration Manager | Documentazione Microsoft
+title: Creare elementi di configurazione per dispositivi iOS e Mac senza client - Configuration Manager | Microsoft Docs
 description: Usare l&quot;elemento di configurazione iOS e Mac OS X di System Center Configuration Manager per gestire le impostazioni dei dispositivi iOS e Mac OS X.
 ms.custom: na
 ms.date: 12/14/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d023df79e0bcb7d5583224802976a5059c4ee753
-ms.openlocfilehash: ea4024aaa07d40781663725127d64388055c6501
+ms.sourcegitcommit: 35e48666f4d1a2363304650f960531fd0630a291
+ms.openlocfilehash: 0614753a68e98675ccae99b792b03481f4ca7ab1
 
 
 ---
@@ -80,7 +80,7 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
 |**Lunghezza minima password (caratteri)**|La lunghezza minima della password.|  
 |**Scadenza password in giorni**|Il numero di giorni prima che sia necessario modificare una password.|  
 |**Numero di password memorizzate**|Impedisce il riutilizzo delle password usate in precedenza.|  
-|**Numero di tentativi di accesso non riusciti prima della cancellazione dei dati dal dispositivo**|Cancella il dispositivo se questo numero di tentativi di accesso ha esito negativo.<br>(solo iOS)| 
+|**Numero di tentativi di accesso non riusciti prima della cancellazione dei dati dal dispositivo**|Cancella il dispositivo se questo numero di tentativi di accesso ha esito negativo.<br>(solo iOS)|
 |**Tempo di inattività prima del blocco del dispositivo**|Specifica il numero di minuti di inattività prima del blocco automatico del dispositivo.|
 |**Complessità password**|Scegliere se è possibile specificare un PIN, ad esempio "1234", o se è necessario fornire una password complessa.|
 |**Consenti password semplici**|Specifica che è possibile usare password semplici come "0000" e "1234".|
@@ -370,6 +370,6 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

@@ -1,5 +1,5 @@
 ---
-title: Creare elementi di configurazione per dispositivi Android e Samsung KNOX Standard gestiti senza il client System Center Configuration Manager | Documentazione Microsoft
+title: Creare elementi di configurazione per Android e Samsung KNOX Standard - Configuration Manager | Microsoft Docs
 description: Usare l&quot;elemento di configurazione Android e Samsung KNOX Standard di System Center Configuration Manager per gestire le impostazioni dei dispositivi.
 ms.custom: na
 ms.date: 12/14/2016
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d023df79e0bcb7d5583224802976a5059c4ee753
-ms.openlocfilehash: c699c9c807f864fe161255522a8d694ab71d1a4e
+ms.sourcegitcommit: 35e48666f4d1a2363304650f960531fd0630a291
+ms.openlocfilehash: 12f5db5839fe66fb07d7055af45f8020abd43e24
 
 
 ---
@@ -109,7 +109,7 @@ Usare l'elemento di configurazione **Android e Samsung KNOX** di System Center C
 
 ### <a name="browser"></a>Browser
 |Impostazioni|Dettagli|  
-|-------------|-------------| 
+|-------------|-------------|
 |**Consenti browser Web**|Specifica se è possibile usare il Web browser predefinito del dispositivo.|
 |**Riempimento automatico**|Specifica se è possibile usare la funzione di riempimento automatico del Web browser.|
 |**Esecuzione script attivo**|Consente al Web browser del dispositivo di eseguire lo script attivo.|
@@ -135,9 +135,9 @@ Usare l'elemento di configurazione **Android e Samsung KNOX** di System Center C
 |**Fotocamera**|Consente l'uso della fotocamera del dispositivo.<br /><br /> Si applica ai dispositivi Android e Samsung KNOX Standard.|  
 |**NFC (Near Field Communication)**|Consente operazioni che usano Near Field Communication (se supportato dal dispositivo).|
 |**YouTube**|Consente l'utilizzo dell'app YouTube sul dispositivo.<br /><br /> Si applica solo ai dispositivi Samsung KNOX Standard.|  
-|**Spegnimento**|Consente lo spegnimento del dispositivo.<br /><br /> Si applica solo ai dispositivi Samsung KNOX Standard.| 
+|**Spegnimento**|Consente lo spegnimento del dispositivo.<br /><br /> Si applica solo ai dispositivi Samsung KNOX Standard.|
 
-### <a name="roaming"></a>Roaming 
+### <a name="roaming"></a>Roaming
 |Impostazioni|Dettagli|  
 |-------------|-------------|
 |**Roaming vocale**|Consente il roaming vocale quando il dispositivo si trova in una rete cellulare.|
@@ -199,6 +199,6 @@ Nella pagina **Configura impostazioni della modalità tutto schermo per i dispos
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

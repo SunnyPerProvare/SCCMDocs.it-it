@@ -1,5 +1,5 @@
 ---
-title: Creare profili certificato | Microsoft Docs
+title: Come creare i profili certificato SCEP | Microsoft Docs
 description: Informazioni su come usare i profili certificato per eseguire il provisioning dei certificati necessari ai dispositivi gestiti in System Center Configuration Manager.
 ms.custom: na
 ms.date: 11/22/2016
@@ -17,12 +17,12 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: fdf0915d937e9555ef4f84797f70391dbf2543d3
-ms.openlocfilehash: 4293cb586046791c0a75c913794cb223b6823a8f
+ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
+ms.openlocfilehash: cb9351fc63e49af611c494ec82a6c8651afae30f
 
 
 ---
-# <a name="how-to-create-scep-certificate-profiles-in-system-center-configuration-manager"></a>Come creare profili certificato SCEP in System Center Configuration Manager
+# <a name="create-certificate-profiles"></a>Creare i profili certificato
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -187,6 +187,6 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

@@ -1,8 +1,8 @@
 ---
-title: Gestire Windows as a Service | Documentazione Microsoft
-description: "Le funzionalità di System Center Configuration Manager consentono di visualizzare lo stato di Windows come servizio nell&quot;ambiente corrente per poterlo mantenere aggiornato."
+title: Gestire Windows distribuito come servizio - Configuration Manager | Microsoft Docs
+description: Visualizzare lo stato di Windows distribuito come servizio usando Configuration Manager, definire piani di manutenzione per formare anelli di distribuzione e visualizzare avvisi quando i client Windows 10 si avvicinano alla scadenza del supporto.
 ms.custom: na
-ms.date: 12/21/2016
+ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 66cd6d099acdd9db2bc913a69993aaf5e17237fe
-ms.openlocfilehash: 79e13074db18a617c7e3fceedaa143dbece90a3d
+ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
+ms.openlocfilehash: b3859bc01c37dab04275028585e892f927606025
 
 
 ---
@@ -26,7 +26,7 @@ ms.openlocfilehash: 79e13074db18a617c7e3fceedaa143dbece90a3d
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
- In System Center Configuration Manager è possibile visualizzare lo stato di Windows come servizio nell'ambiente corrente, creare piani di manutenzione per formare anelli di distribuzione, verificare che i sistemi di rami di Windows 10 correnti siano mantenuti aggiornati quando vengono rilasciate nuove build e visualizzare avvisi quando i client Windows 10 si avvicinano alla scadenza del supporto per la build corrente di Current Branch (CB) o Current Branch for Business (CBB).  
+ In System Center Configuration Manager è possibile visualizzare lo stato di Windows distribuito come servizio nell'ambiente corrente, creare piani di manutenzione per formare anelli di distribuzione, verificare che i sistemi di rami di Windows 10 correnti siano mantenuti aggiornati quando vengono rilasciate nuove build e visualizzare avvisi quando i client Windows 10 si avvicinano alla scadenza del supporto per la build di Current Branch (CB) o Current Branch for Business (CBB).  
 
  Per altre informazioni sulle opzioni di manutenzione di Windows 10, vedere le  [opzioni di manutenzione relative agli aggiornamenti di Windows 10](https://technet.microsoft.com/library/mt598226\(v=vs.85\).aspx).  
 
@@ -277,6 +277,6 @@ Per modificare le proprietà di un piano di manutenzione, seguire la procedura r
 
 
 
-<!--HONumber=Dec16_HO4-->
+<!--HONumber=Jan17_HO4-->
 
 

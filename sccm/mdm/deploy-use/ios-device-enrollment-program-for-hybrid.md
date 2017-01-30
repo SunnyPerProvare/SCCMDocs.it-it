@@ -1,5 +1,5 @@
 ---
-title: Registrazione al programma DEP (Device Enrollment Program) per iOS per le distribuzioni ibride con Configuration Manager | Microsoft Docs
+title: Registrare dispositivi iOS con Device Enrollment Program (DEP) - Configuration Manager | Microsoft Docs
 description: Abilitare la registrazione al programma DEP (Device Enrollment Program) per iOS per le distribuzioni ibride in Configuration Manager con Intune.
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 0421589d928a88eee6f4629726fbd0171aba7436
+ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
+ms.openlocfilehash: 4222ca27e19ade46d53f8cd4598643ddd4fd5c8f
 
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Registrazione al programma DEP (Device Enrollment Program) per iOS per le distribuzioni ibride con Configuration Manager
@@ -124,6 +124,6 @@ Le aziende possono acquistare dispositivi iOS tramite il programma DEP (Device E
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

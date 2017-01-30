@@ -1,5 +1,5 @@
 ---
-title: Registrare i dispositivi usando il manager di registrazione dispositivi con Configuration Manager | Microsoft Docs
+title: Registrare i dispositivi usando il manager di registrazione dispositivi - Configuration Manager | Microsoft Docs
 description: "Registrare i dispositivi di proprietà dell&quot;azienda usando l&quot;account del manager di registrazione dispositivi con System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,8 +16,8 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: ed60b23f7e7a194676cd7b055da9bc3517af8026
+ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
+ms.openlocfilehash: b356d2351b8a28bdca78176fdf0ff3c913a36bd3
 
 
 ---
@@ -92,6 +92,6 @@ Un ristorante vuole adottare tablet POS per il personale di sala e monitor per g
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

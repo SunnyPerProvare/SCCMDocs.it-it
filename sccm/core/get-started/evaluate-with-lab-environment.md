@@ -1,5 +1,5 @@
 ---
-title: Valutare System Center Configuration Manager creando un proprio ambiente lab | Microsoft Docs
+title: Valutare Configuration Manager | Microsoft Docs
 description: Creare un ambiente lab per valutare l&quot;uso di System Center Configuration Manager nell&quot;organizzazione.
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,8 +17,8 @@ author: brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
-ms.openlocfilehash: e72acbe0a2f5592b5bdf9a3612db62bfb066fadf
+ms.sourcegitcommit: 35e48666f4d1a2363304650f960531fd0630a291
+ms.openlocfilehash: ad3c849bd3ebfc6c0aa795e5b49a4850371cda47
 
 
 ---
@@ -70,6 +70,6 @@ Informazioni su come creare un ambiente lab per valutare l'uso di System Center 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 

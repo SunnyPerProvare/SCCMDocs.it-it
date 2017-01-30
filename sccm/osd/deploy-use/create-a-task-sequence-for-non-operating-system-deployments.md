@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
-ms.openlocfilehash: ec146270ef39d48673ae6f3ca405b3f0bd7e8afa
+ms.sourcegitcommit: 6bb2bf0a029bc21e9420ac0ba782e8ea21291896
+ms.openlocfilehash: 692e8331f39f7c9ce78a6b710b8990760bf128c4
 
 
 ---
@@ -27,9 +27,9 @@ ms.openlocfilehash: ec146270ef39d48673ae6f3ca405b3f0bd7e8afa
 
 Le sequenze di attività in System Center Configuration Manager consentono di automatizzare una serie di attività all'interno dell'ambiente. Queste attività sono progettate e testate principalmente per la distribuzione di sistemi operativi.  Configuration Manager ha molte altre funzionalità che è consigliabile usare come tecnologia principale per scenari quali [installazione dell'applicazione](../../apps/understand/introduction-to-application-management.md), [installazione degli aggiornamenti software](../../sum/understand/software-updates-introduction.md), [configurazione delle impostazioni](../../compliance/understand/ensure-device-compliance.md) o automazione personalizzata. È consigliabile anche considerare altre tecnologie di automazione di Microsoft System Center, come ad esempio [Orchestrator](https://technet.microsoft.com/library/hh237242.aspx) e [Service Management Automation](https://technet.microsoft.com/library/dn469260.aspx) .  
 
- La potenza delle sequenze di attività risiede nella loro flessibilità e nel modo in cui è possibile usarle per configurare le impostazioni client, distribuire software, aggiornare i driver, modificare stati utente ed eseguire altre attività indipendenti dalla distribuzione del sistema operativo. È possibile creare una sequenza di attività personalizzata per aggiungere qualsiasi numero di attività. Mentre l'uso di base di sequenze di attività personalizzate per la distribuzione del sistema non operativo è supportata, non è possibile testare tutte le configurazioni possibili e la probabilità che si verifichino problemi aumenta man mano che si sviluppano sequenze di attività più complesse.  
+La potenza delle sequenze di attività risiede nella loro flessibilità e nel modo in cui è possibile usarle per configurare le impostazioni client, distribuire software, aggiornare i driver, modificare stati utente ed eseguire altre attività indipendenti dalla distribuzione del sistema operativo. È possibile creare una sequenza di attività personalizzata per aggiungere qualsiasi numero di attività. È possibile creare una sequenza di attività personalizzata per aggiungere qualsiasi numero di attività. L'uso di sequenze di attività personalizzate per la distribuzione non del sistema operativo è supportato in Configuration Manager. Tuttavia, se una sequenza di attività genera risultati indesiderati o incoerenti, considerare i possibili modi per semplificare l'operazione. È possibile farlo usando la procedura più semplice, dividendo le azioni tra più sequenze di attività, oppure con un approccio graduale alla creazione e al test della sequenza di attività.
 
- La procedura seguente può essere usata in una sequenza di attività personalizzata di distribuzione del sistema non operativo:  
+ La procedura seguente è supportata in una sequenza di attività personalizzata di distribuzione non del sistema operativo:  
 
 -   [Verifica conformità](../understand/task-sequence-steps.md#BKMK_CheckReadiness)  
 
@@ -58,6 +58,6 @@ Le sequenze di attività in System Center Configuration Manager consentono di au
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

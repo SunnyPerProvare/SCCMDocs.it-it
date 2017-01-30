@@ -1,5 +1,5 @@
 ---
-title: Creare profili Wi-Fi | Documentazione Microsoft
+title: Come creare profili Wi-Fi | Microsoft Docs
 description: Di seguito viene illustrato come usare i profili Wi-Fi in System Center Configuration Manager per distribuire impostazioni di rete wireless agli utenti dell&quot;organizzazione.
 ms.custom: na
 ms.date: 12/11/2016
@@ -17,12 +17,12 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 22a74f3b12fe4f4559b682a8fcb287863a7686af
-ms.openlocfilehash: 1262cb7d524fdce21f778e2179275bd177e9330f
+ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
+ms.openlocfilehash: 7d42ec89300d4eb6b02bafb3f83d341f8e3ca0c0
 
 
 ---
-# <a name="how-to-create-wi-fi-profiles-in-system-center-configuration-manager"></a>Come creare profili Wi-Fi in System Center Configuration Manager
+# <a name="create-wi-fi-profiles"></a>Creare profili Wi-Fi
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -136,6 +136,6 @@ ms.openlocfilehash: 1262cb7d524fdce21f778e2179275bd177e9330f
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 
