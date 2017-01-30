@@ -1,8 +1,8 @@
 ---
-title: "Funzionalità della versione Technical Preview 1610 per System Center Configuration Manager | Microsoft Docs"
+title: "Funzionalità della versione Technical Preview 1610 per Configuration Manager"
 description: "Informazioni sulle funzionalità disponibili in Technical Preview per System Center Configuration Manager, versione 1610."
 ms.custom: na
-ms.date: 10/21/2016
+ms.date: 01/23/2017
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
-ms.openlocfilehash: 6ffcb33e94f942fc9400457d3f16b65e12332956
+ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
+ms.openlocfilehash: 59633ce68e2bb2d722900215751f345d6d098721
 
 ---
 # <a name="capabilities-in-technical-preview-1610-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1610 per System Center Configuration Manager
@@ -148,7 +148,7 @@ Ora è possibile richiedere una sincronizzazione dei criteri per un dispositivo 
 1.  Nella console di Configuration Manager console passare ad **Asset e conformità** > **Panoramica** > Dispositivi.
 2.  Nel menu **Azioni remote dispositivo** selezionare **Send Sync Request** (Invia richiesta di sincronizzazione).
 
-La sincronizzazione può richiedere da 5 a 10 minuti. Tutte le modifiche ai criteri verranno sincronizzate nel dispositivo. È possibile rilevare lo stato della richiesta di sincronizzazione nella colonna **Remote Sync State** (Stato sincronizzazione remota) nella visualizzazione **Dispositivi** o nella finestra di dialogo **Proprietà** del dispositivo.
+La sincronizzazione può richiedere da&5; a&10; minuti. Tutte le modifiche ai criteri verranno sincronizzate nel dispositivo. È possibile rilevare lo stato della richiesta di sincronizzazione nella colonna **Remote Sync State** (Stato sincronizzazione remota) nella visualizzazione **Dispositivi** o nella finestra di dialogo **Proprietà** del dispositivo.
 
 ## <a name="additional-security-role-support"></a>Supporto di ruoli di sicurezza aggiuntivi
 
@@ -165,6 +165,6 @@ A queste aree della console di Configuration Manager continua a essere concesso 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 
