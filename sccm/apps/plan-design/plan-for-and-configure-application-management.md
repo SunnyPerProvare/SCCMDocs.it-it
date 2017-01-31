@@ -2,7 +2,7 @@
 title: Pianificare e configurare la gestione delle applicazioni | Documentazione Microsoft
 description: Implementare e configurare le dipendenze necessarie per la distribuzione di applicazioni in System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/13/2016
+ms.date: 01/17/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 7634d5326265d7947a01e5b83374f65911e33aeb
-ms.openlocfilehash: 3ab905192c091cb5ad013c8e0c8590597fb0422a
+ms.sourcegitcommit: d2a12edcc6bc7413558e25b694b69133c2496019
+ms.openlocfilehash: 0a38ea116e589425048f6c46378df46ecc0d375b
 
 
 ---
@@ -33,7 +33,7 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
 |------------------|----------------------|  
 |Internet Information Services (IIS) è richiesto nei server del sistema del sito che eseguono il punto per siti Web del Catalogo applicazioni, il punto per servizi Web del Catalogo applicazioni, il punto di gestione e il punto di distribuzione.|Per altre informazioni su questo requisito, vedere [Configurazioni supportate](../../core/plan-design/configs/supported-configurations.md).|  
 |Dispositivi mobili registrati da Configuration Manager|Quando si firma un'applicazione con codice per distribuirla nei dispositivi mobili, non usare un certificato generato tramite un modello della versione 3 (**Windows Server 2008, Enterprise Edition**). Questo modello di certificato crea un certificato non compatibile con le applicazioni di Configuration Manager per dispositivi mobili.<br /><br /> Se si usano i Servizi certificati Active Directory per firmare con codice applicazioni per dispositivi mobili, non usare un modello di certificato della versione 3.|  
-|Se si vuole creare automaticamente le affinità utente dispositivo, i client devono essere configurati per il controllo degli eventi di accesso.|Configuration Manager legge le due impostazioni seguenti dai criteri di sicurezza locali nei computer client per determinare le affinità utente dispositivo automatiche:<br /><br /><ul><li> **Controlla eventi di accesso account**</li><li>**Controlla eventi di accesso**</li></ul> Per creare automaticamente relazioni tra utenti e dispositivi, verificare che queste due impostazioni siano attivate nei computer client. Per configurare queste impostazioni, è possibile usare i criteri di gruppo di Windows.|  
+|Se si vuole creare automaticamente le affinità utente dispositivo, i client devono essere configurati per il controllo degli eventi di accesso.|Il client Configuration Manager legge gli eventi di accesso di tipo **Riuscito** dal registro eventi di sicurezza del PC per determinare le affinità utente-dispositivo automatiche.  Questi eventi vengono abilitati dai due criteri di controllo seguenti:<br>**Controlla eventi di accesso account**<br>**Controlla eventi di accesso**<br>Per creare automaticamente relazioni tra utenti e dispositivi, verificare che queste due impostazioni siano attivate nei computer client. Per configurare queste impostazioni, è possibile usare i criteri di gruppo di Windows.|  
 
 ## <a name="configuration-manager-dependencies"></a>Dipendenze di Configuration Manager   
 
@@ -79,7 +79,7 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
 |Passaggi|Dettagli|Altre informazioni|  
 |-----------|-------------|----------------------|  
 |**Passaggio 1:** se si intende utilizzare le connessioni HTTPS, assicurarsi di aver distribuito un certificato server Web ai server del sistema del sito.|Distribuire un certificato server Web ai server del sistema del sito che eseguiranno il punto per siti Web del Catalogo applicazioni e il punto per servizi Web del Catalogo applicazioni.<br /><br /> Se si vuole che i client usino il Catalogo applicazione da Internet, distribuire anche un certificato server Web ad almeno un server del sistema del sito del punto di gestione e configurarlo per le connessioni client da Internet.|Per altre informazioni sui requisiti del certificato, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
-|**Passaggio 2:** se si intende utilizzare un certificato PKI del client per le connessioni ai punti di gestione, distribuire un certificato di autenticazione client ai computer client.|Anche se i client non devono utilizzare un certificato PKI del client per connettersi al Catalogo applicazioni, è necessario che si connettano a un punto di gestione prima di poter utilizzare il Catalogo applicazioni. È necessario distribuire un certificato di autenticazione client ai computer client nei seguenti scenari:<br /><br /><ul><li>Tutti i punti di gestione in Intranet accettano solo connessioni client HTTPS.</li><li>I client eseguiranno la connessione al Catalogo applicazioni da Internet.</li></ul>|Per altre informazioni sui requisiti del certificato, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
+|**Passaggio 2:** se si intende utilizzare un certificato PKI del client per le connessioni ai punti di gestione, distribuire un certificato di autenticazione client ai computer client.|Anche se i client non usano un certificato PKI del client per connettersi al Catalogo applicazioni, è necessario che si connettano a un punto di gestione prima di poter usare il Catalogo applicazioni. È necessario distribuire un certificato di autenticazione client ai computer client nei seguenti scenari:<br /><br /><ul><li>Tutti i punti di gestione in Intranet accettano solo connessioni client HTTPS.</li><li>I client eseguiranno la connessione al Catalogo applicazioni da Internet.</li></ul>|Per altre informazioni sui requisiti del certificato, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
 |**Passaggio 3:** installare e configurare il punto per servizi Web del Catalogo applicazioni e il sito Web del Catalogo applicazioni.|È necessario installare entrambi i ruoli del sistema del sito nello stesso sito. Non è necessario installarli nello stesso server del sistema del sito o nella stessa foresta Active Directory. Il punto per servizi Web del Catalogo applicazioni deve trovarsi tuttavia nella stessa foresta del database del sito.|Per altre informazioni sul posizionamento dei ruoli di sistema del sito, vedere [Pianificare i server e i ruoli di sistema del sito](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).<br /><br /> Per configurare il punto di servizi Web del Catalogo applicazioni e il punto di siti Web del Catalogo applicazioni, vedere **Passaggio 3: Installare e configurare i ruoli del sistema del sito del Catalogo applicazioni**.|  
 |**Passaggio 4** : Configurare le impostazioni client per il Catalogo applicazioni e Software Center.|Configurare le impostazioni client predefinite se si desidera che tutti gli utenti abbiano la stessa impostazione. In caso contrario, configurare le impostazioni client personalizzate per raccolte specifiche.|Per altre informazioni sulle impostazioni client, vedere [Informazioni sulle impostazioni client](../../core/clients/deploy/about-client-settings.md).<br /><br /> Per informazioni su come configurare queste impostazioni client, vedere: **Passaggio 4: Configurare le impostazioni client per il Catalogo applicazioni e Software Center**.|  
 |**Passaggio 5** : Verificare che il Catalogo applicazioni sia operativo.|È possibile usare direttamente il Catalogo applicazioni da un browser o da Software Center.|Vedere **Passaggio 5: Verificare che il Catalogo applicazioni sia operativo**.|  
@@ -228,6 +228,6 @@ In Software Center la personalizzazione viene applicata secondo le regole seguen
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 
