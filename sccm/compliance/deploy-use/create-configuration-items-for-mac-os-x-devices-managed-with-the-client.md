@@ -2,7 +2,7 @@
 title: Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager | Microsoft Docs
 description: Usare l&quot;elemento di configurazione Mac OS X di System Center Configuration Manager per gestire le impostazioni dei dispositivi Mac OS X.
 ms.custom: na
-ms.date: 11/18/2016
+ms.date: 12/27/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
-ms.openlocfilehash: f3d08d7f8efb592383e1099850665a2e9f3b2b5f
+ms.sourcegitcommit: 8bbc0d0132fa4276ade8914d5ac3945ef1d12a4b
+ms.openlocfilehash: be7a9464ef4ac6042a46652a325583a355f23846
 
 
 ---
@@ -54,7 +54,11 @@ Usare l'elemento di configurazione **Mac OS X (personalizzato)** di System Cente
 
              Ad esempio, se si desidera modificare le impostazioni per il browser Safari, è possibile utilizzare **com.apple.Safari.plist**.  
 
-        -   **Chiave** : specificare il nome della chiave che si desidera valutare la conformità nei computer Mac. Usare la sintassi seguente: */<dizionario\>/<nomechiave\>*.  
+        -   **Chiave** : specificare il nome della chiave che si desidera valutare la conformità nei computer Mac. Usare la sintassi seguente: 
+        
+            ```
+            */<dictionary\>/<keyname\>*.  
+            ```     
 
             > [!IMPORTANT]  
             >  Il nome chiave fa distinzione tra maiuscole e minuscole e non verrà valutato se è diverso dal nome chiave sul computer Mac. Inoltre, non è possibile modificare il nome chiave dopo che è stato specificato. Se è necessario modificare il nome della chiave, eliminare e ricreare l'impostazione.  
@@ -173,6 +177,6 @@ Se ora si vuole aggiungere questo elemento di configurazione a una linea di base
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

@@ -2,7 +2,7 @@
 title: Configurare l&quot;inventario hardware | Microsoft Docs | dispositivi mobili
 description: Configurare l&quot;inventario hardware per i dispositivi mobili registrati da Microsoft Intune e System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/26/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
-ms.openlocfilehash: 6db22a2ddce1afb471cf8b603c6d98f7f0acbc15
+ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
+ms.openlocfilehash: be954724587e68e92e5d8f5cecd712dfd5df278e
 
 
 ---
@@ -25,9 +25,9 @@ ms.openlocfilehash: 6db22a2ddce1afb471cf8b603c6d98f7f0acbc15
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-In System Center Configuration Manager è possibile raccogliere l'inventario hardware nei dispositivi iOS, Android e Windows usando il connettore Microsoft Intune. Per informazioni su come configurare l'inventario hardware, vedere [Come estendere l'inventario hardware in System Center Configuration Manager](../../../../core/clients/manage/inventory/extend-hardware-inventory.md).  
+In Configuration Manager è possibile raccogliere l'inventario hardware nei dispositivi iOS, Android e Windows usando il connettore Microsoft Intune. Per informazioni su come configurare l'inventario hardware, vedere [Come estendere l'inventario hardware in System Center Configuration Manager](../../../../core/clients/manage/inventory/extend-hardware-inventory.md).  
 
- Per informazioni su come registrare i dispositivi con Microsoft Intune, vedere [Gestire i dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).  
+ Per informazioni su come registrare i dispositivi in Microsoft Intune, vedere [Gestire i dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).  
 
 ## <a name="hardware-inventory-for-mobile-devices"></a>Inventario hardware per dispositivi mobili  
  Nelle tabelle seguenti sono elencate le classi di inventario disponibili per l'inventario hardware nelle piattaforme per dispositivi mobili più comuni.  
@@ -141,6 +141,6 @@ In System Center Configuration Manager è possibile raccogliere l'inventario har
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

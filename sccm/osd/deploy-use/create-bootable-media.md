@@ -2,7 +2,7 @@
 title: Creare supporti di avvio | Microsoft Docs
 description: In Configuration Manager i supporti di avvio semplificano l&quot;installazione di una nuova versione di Windows o la sostituzione di un computer e il trasferimento delle impostazioni.
 ms.custom: na
-ms.date: 12/06/2016
+ms.date: 12/21/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 03722ff4f480cd26842e395fe1f7ec8359e2b33e
-ms.openlocfilehash: a7bdad82dc55b4c0fe7d892ef34cc6aa0dfbf476
+ms.sourcegitcommit: 66cd6d099acdd9db2bc913a69993aaf5e17237fe
+ms.openlocfilehash: 0a4c2b41f899f6e243e7eb825082514114226a8f
 
 
 ---
@@ -47,7 +47,7 @@ I supporti di avvio in Configuration Manager contengono l'immagine d'avvio, i co
 
  Usare la procedura seguente per creare supporti di avvio.  
 
-#### <a name="to-create-bootable-media"></a>Per creare il supporto di avvio  
+### <a name="to-create-bootable-media"></a>Per creare il supporto di avvio  
 
 1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
@@ -146,11 +146,18 @@ I supporti di avvio in Configuration Manager contengono l'immagine d'avvio, i co
 
 10. Completare la procedura guidata.  
 
+## <a name="create-bootable-media-on-a-usb-drive-from-a-network-share"></a>Creare supporti di avvio in un'unità USB da una condivisione di rete
+Le informazioni contenute in questa sezione consentono di creare supporti di avvio in un'unità memoria flash USB quando l'unità non è connessa al computer che esegue la console di Configuration Manager. Per creare il supporto di avvio nell'unità USB, è possibile creare il supporto di avvio della sequenza di attività, montare l'immagine ISO e trasferire i file dall'immagine ISO all'unità USB.
+
+1. [Creare il supporto di avvio della sequenza di attività](#to-create-task-boobable-media). Nella pagina **Tipo di supporto** selezionare **CD/DVD impostato**. La procedura guidata scrive i file di output nella posizione specificata. Ad esempio: **\\\nomeserver\cartella\filedioutput.iso**.  
+2. Preparare l'unità USB rimovibile. L'unità deve essere formattata, vuota e di avvio.
+3. Montare l'immagine ISO dal percorso di condivisione e trasferire i file dall'immagine ISO all'unità USB.
+
 ## <a name="next-steps"></a>Passaggi successivi  
 [Usare i supporti di avvio per distribuire Windows in rete](use-bootable-media-to-deploy-windows-over-the-network.md)  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO4-->
 
 

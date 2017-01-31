@@ -2,7 +2,7 @@
 title: Usare le finestre di manutenzione | Microsoft Docs
 description: Usare le raccolte e le finestre di manutenzione per gestire in modo efficace i client in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 01/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
-ms.openlocfilehash: e59953f41422ee8f79ca054b5ccaccf41bb4e7af
+ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
+ms.openlocfilehash: c0b4fcda6599ed91fe2393b97bdcec6cdfba9b7c
 
 
 ---
@@ -26,9 +26,9 @@ ms.openlocfilehash: e59953f41422ee8f79ca054b5ccaccf41bb4e7af
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le finestre di manutenzione in System Center Configuration Manager consentono agli utenti amministratori di definire un periodo di tempo in cui eseguire diverse operazioni di Configuration Manager sui membri di una raccolta dispositivi. È possibile usare le finestre di manutenzione per garantire che le modifiche alla configurazione client vengano eseguite quando non influiscono sulla produttività dell'organizzazione.  
+Le finestre di manutenzione consentono di definire un periodo di tempo in cui è possibile eseguire le operazioni di Configuration Manager in una raccolta di dispositivi. È possibile usare le finestre di manutenzione per garantire che le modifiche alla configurazione client vengano eseguite quando non influiscono sulla produttività.  
 
- Le seguenti operazioni di Configuration Manager supportano le finestre di manutenzione:  
+ Le finestre di manutenzione sono supportate dalle operazioni seguenti:  
 
 -   Distribuzioni software  
 
@@ -40,46 +40,39 @@ Le finestre di manutenzione in System Center Configuration Manager consentono ag
 
 -   Distribuzioni di sequenze attività  
 
- Le finestre di manutenzione vengono configurate per una raccolta con una data di inizio, un'ora di inizio e di fine e un criterio di ricorrenza. Ogni finestra di manutenzione deve avere una durata inferiore a 24 ore. Per impostazione predefinita, i riavvii del computer causati da una distribuzione non sono consentiti al di fuori di una finestra di manutenzione, ma è possibile sostituire questa impostazione all'interno delle impostazioni relative alla singola distribuzione. Le finestre di manutenzione interessano solo il periodo in cui il programma di distribuzione è in esecuzione. Le applicazioni configurate per il download e l'esecuzione in locale possono scaricare contenuto al di fuori della finestra di manutenzione.  
+ Configurare le finestre di manutenzione con una data di inizio, un'ora di inizio e di fine e un criterio di ricorrenza. La durata massima di una finestra deve essere inferiore a 24 ore. Per impostazione predefinita, i riavvii del computer causati da una distribuzione non sono consentiti al di fuori di una finestra di manutenzione, ma è possibile sostituire questa impostazione. Le finestre di manutenzione interessano solo il periodo in cui il programma di distribuzione è in esecuzione. Le applicazioni configurate per il download e l'esecuzione in locale possono scaricare contenuto al di fuori della finestra.  
 
- Se un computer client è membro di una raccolta di dispositivi per la quale è configurata una finestra di manutenzione, il programma di distribuzione viene eseguito solo se il tempo di esecuzione massimo consentito non supera la durata configurata per la finestra di manutenzione. Se non è possibile eseguire il programma, viene generato un avviso e la distribuzione viene eseguita nuovamente durante la finestra di manutenzione pianificata successiva con tempo disponibile.  
+ Se un computer client è membro di una raccolta di dispositivi per la quale è configurata una finestra di manutenzione, il programma di distribuzione viene eseguito solo se il tempo di esecuzione massimo consentito non supera la durata configurata per la finestra. Se non è possibile eseguire il programma, viene generato un avviso e la distribuzione viene eseguita nuovamente durante la finestra di manutenzione pianificata successiva con tempo disponibile.  
 
 ## <a name="using-multiple-maintenance-windows"></a>Uso di più finestre di manutenzione  
- Quando un computer client appartiene a più raccolte dispositivi con finestre di manutenzione configurate, vengono applicate le seguenti regole:  
+ Quando un computer client appartiene a più raccolte dispositivi con finestre di manutenzione, vengono applicate queste regole:  
 
 -   Se le finestre di manutenzione non si sovrappongono, vengono considerate come due finestre di manutenzione indipendenti.  
 
--   Se le finestre di manutenzione si sovrappongono, vengono considerate come una singola finestra di manutenzione che comprende il periodo di tempo coperto da entrambe le finestre di manutenzione. Se ad esempio due finestre di manutenzione, ognuna della durata di un'ora, si sovrappongono di 30 minuti, la durata effettiva della finestra di manutenzione sarà di 90 minuti.  
+-   Se le finestre di manutenzione si sovrappongono, vengono considerate come una singola finestra di manutenzione che comprende il periodo di tempo coperto da entrambe le finestre di manutenzione. Se ad esempio due finestre, ognuna della durata di un'ora, si sovrappongono di 30 minuti, la durata effettiva della finestra di manutenzione sarà di 90 minuti.  
 
- Se un utente avvia l'installazione di un'applicazione da Software Center, l'applicazione viene installata immediatamente, indipendentemente dalle finestre di manutenzione configurate.  
+ Se un utente avvia l'installazione di un'applicazione da Software Center, l'applicazione viene installata immediatamente, indipendentemente dalle finestre di manutenzione.  
 
  Se la distribuzione di un'applicazione con scopo **Richiesto** raggiunge la scadenza dell'installazione durante l'orario non lavorativo configurato da un utente in Software Center, l'applicazione verrà installata.  
 
 ### <a name="how-to-configure-maintenance-windows"></a>Come configurare le finestre di manutenzione  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Nella console di Configuration Manager scegliere **Asset e conformità**>  **Raccolte dispositivi**.  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Raccolte dispositivi**.  
+3.  Nell'elenco **Raccolte dispositivi** selezionare una raccolta. È impossibile creare finestre di manutenzione per la raccolta **Tutti i sistemi** .  
 
-3.  Nell'elenco **Raccolte dispositivi** selezionare la raccolta per cui si desidera configurare una finestra di manutenzione.  
+4.  Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.  
 
-4.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
+5.  Nella scheda **Finestre di manutenzione** della finestra di dialogo **Proprietà &lt;nome raccolta\>** scegliere l'icona **Nuovo**.  
 
-5.  Nella scheda **Finestre di manutenzione** della finestra di dialogo **&lt;nome raccolta\> Proprietà** fare clic sull'icona **Nuovo**.  
+6.  Completare la finestra di dialogo **&lt;nuova\> pianificazione**.  
 
-    > [!NOTE]  
-    >  È impossibile creare finestre di manutenzione per la raccolta **Tutti i sistemi** .  
+7.  Effettuare una selezione nell'elenco a discesa **Applica pianificazione a**.  
 
-6.  Nella finestra di dialogo **&lt;nuovo\> Pianificazione** specificare un nome, una pianificazione e un criterio di ricorrenza per la finestra di manutenzione. È anche possibile abilitare l'opzione per l'applicazione della pianificazione solo alle sequenze di attività.  
-
-7.  Dall'elenco a discesa **Applica pianificazione a** selezionare se la finestra di manutenzione si applica a tutte le distribuzioni, solo agli aggiornamenti software o solo alle sequenze di task.  
-
-8.  Fare clic su **OK** per chiudere la finestra di dialogo **&lt;nuovo\> Pianificazione** e creare la nuova finestra di manutenzione.  
-
-9. Chiudere la finestra di dialogo **&lt;nome raccolta\> Proprietà**.  
+8.  Scegliere **OK** e quindi chiudere la finestra di dialogo **Proprietà &lt;nome raccolta\>**.  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

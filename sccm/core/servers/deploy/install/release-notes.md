@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: ea723a6694feb2c9584b35498aa9c3519383f08d
-ms.openlocfilehash: a9dc046a54c15d9d299664cd1f2a149383f53489
+ms.sourcegitcommit: c6358d65609605bfef3ac533f4caa0df1cfce0c5
+ms.openlocfilehash: 73208c8e9ec15e96a6caaf20b74c1f94d92a8975
 
 
 ---
@@ -247,6 +247,12 @@ Per impostazione predefinita, la procedura guidata Crea piano di manutenzione vi
 **Soluzione alternativa**:    
 dopo aver creato un piano di manutenzione, aprire le proprietà del piano, passare alla scheda **Pianificazione valutazione**, selezionare **Esegui la regola in base a una pianificazione**, fare clic su **Personalizza** e quindi creare una pianificazione personalizzata. Ad esempio, è possibile impostare l'esecuzione del piano di manutenzione ogni 60 giorni.  
 
+### <a name="when-a-high-risk-deployment-dialog-is-visible-to-a-user-subsequent-high-risk-dialogs-with-a-sooner-deadline-are-not-displayed"></a>Quando viene visualizzata una finestra di dialogo per una distribuzione ad alto rischio, le finestre di dialogo per distribuzione ad alto rischio successive con scadenza più ravvicinata non vengono visualizzate
+Dopo aver creato e distribuito una distribuzione ad alto rischio agli utenti, viene visualizzata una finestra di dialogo per distribuzione ad alto rischio all'utente. Se l'utente non chiude la finestra di dialogo e viene creata e distribuita un'altra distribuzione ad alto rischio con scadenza più ravvicinata rispetto alla prima, l'utente non visualizzerà una finestra di dialogo aggiornata fino alla chiusura della finestra di dialogo originale. Le distribuzioni verranno comunque eseguite in base alle scadenze configurate.
+
+**Soluzione alternativa**:  
+L'utente deve chiudere la finestra di dialogo per la prima distribuzione ad alto rischio per visualizzare la finestra di dialogo per la distribuzione ad alto rischio successiva.
+
 ## <a name="mobile-device-management"></a>Gestione dispositivi mobili  
 
 ### <a name="cannot-create-an-enrollment-profile-on-a-primary-site"></a>Non è possibile creare un profilo di registrazione in un sito primario  
@@ -291,6 +297,6 @@ Questo problema interessa l'accesso condizionale di System Center Configuration 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

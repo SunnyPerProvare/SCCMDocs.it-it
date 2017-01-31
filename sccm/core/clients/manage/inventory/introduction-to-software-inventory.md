@@ -2,7 +2,7 @@
 title: Inventario software | Microsoft Docs
 description: Introduzione all&quot;inventario software in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/26/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: a468ce93e9536fe3f6bf0fc191ff9764dd1c3343
-ms.openlocfilehash: 401ba6e37d740310d49ab9e96112ce576d7130e4
+ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
+ms.openlocfilehash: c9956dd4ef94a1b109d761e44e42f512c42eb8d2
 
 
 ---
@@ -26,31 +26,31 @@ ms.openlocfilehash: 401ba6e37d740310d49ab9e96112ce576d7130e4
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Usare l'inventario software in System Center Configuration Manager per raccogliere informazioni relative ai file contenuti nei dispositivi client dell'organizzazione. Inoltre, l'inventario software può raccogliere i file dai dispositivi client e archiviarli nel server del sito. L'inventario software viene raccolto quando nelle impostazioni client l'impostazione **Abilitare inventario software nei client** è abilitata.  
+Usare l'inventario software per raccogliere informazioni sui file nei dispositivi client. L'inventario software consente anche di raccogliere i file dai dispositivi client e archiviarli nel server del sito. La raccolta dell'inventario software viene eseguita quando si sceglie l'impostazione **Abilitare inventario software nei client** nelle impostazioni client, dove è anche possibile pianificare l'operazione.  
 
- Dopo che l'inventario software è stato abilitato e i client hanno eseguito un ciclo di inventario software, il client invia le informazioni di inventario a un punto di gestione nel sito del client. Il punto di gestione inoltra quindi le informazioni di inventario al server del sito di Configuration Manager, che archivia tali informazioni nel database del sito stesso. L'inventario software viene eseguito nei client in base alla pianificazione specificata nelle impostazioni client.  
+Dopo aver abilitato l'inventario software e completato l'esecuzione di un ciclo di inventario software, il client invia le informazioni a un punto di gestione nel sito del client. Il punto di gestione inoltra quindi le informazioni di inventario al server del sito di Configuration Manager, che archivia tali informazioni nel database del sito.   
 
- È possibile usare numerosi metodi per visualizzare i dati di inventario software raccolti da Configuration Manager, tra cui:  
+ Questi sono i modi disponibili per visualizzare i dati dell'inventario software:  
 
--   Creare query che restituiscono i dispositivi basati su file presenti nei dispositivi specificati. Per altre informazioni, vedere [Queries technical reference for System Center Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md) (Riferimento tecnico per le query per System Center Configuration Manager).  
+-   [Creare query](../../../../core/servers/manage/queries-technical-reference.md) che restituiscono i dispositivi con i file specificati.   
 
--   Creare raccolte basate su query basate su file presenti nei dispositivi specificati. Le appartenenze alle raccolte basate su query vengono aggiornate automaticamente in base a una pianificazione. È possibile usare le raccolte per una serie di attività quali la distribuzione software. Per altre informazioni, vedere [Introduzione alle raccolte in System Center Configuration Manager](../../../../core/clients/manage/collections/introduction-to-collections.md).  
+-   Creare [raccolte basate su query](../../../../core/clients/manage/collections/introduction-to-collections.md) che includono dispositivi con i file specificati.   
 
--   Eseguire i report che consentono di visualizzare informazioni dettagliate specifiche sui dispositivi all'interno dell'organizzazione. Per altre informazioni, vedere [Creazione di report in System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
+-   [Eseguire report](../../../../core/servers/manage/reporting.md) che forniscono dettagli sui file nei dispositivi. 
 
--   Usare Esplora inventario risorse per visualizzare informazioni dettagliate relative ai file di inventario raccolti dai dispositivi client. Per altre informazioni, vedere [How to use Resource Explorer to view software inventory in System Center Configuration Manager](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md) (Come usare Esplora inventario risorse per visualizzare l'inventario software in Configuration Manager).  
+-   Usare [Esplora inventario risorse](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md) per visualizzare informazioni dettagliate relative ai file di inventario raccolti dai dispositivi client.   
 
- Quando si esegue l'inventario software in un dispositivo client, il primo report restituito costituisce sempre l'inventario completo. I report inventario successivi contengono solo informazioni di inventario differenziale. Il server del sito elabora le informazioni di inventario differenziale nell'ordine di ricezione. Se le informazioni di inventario differenziale per un client mancano, il server del sito rifiuta altre informazioni di inventario differenziale e indica al client di eseguire un ciclo di inventario completo.  
+ Quando si esegue l'inventario software in un dispositivo client, il primo report è un inventario completo. I report successivi contengono solo informazioni di inventario differenziale. Il server del sito elabora le informazioni differenziali in ordine di ricezione. Se mancano le informazioni differenziali per un client, il server del sito rifiuta informazioni differenziali aggiuntive e indica al client di eseguire un ciclo di inventario completo.  
 
- Configuration Manager offre un supporto limitato per i computer ad avvio doppio. Configuration Manager può individuare i computer ad avvio doppio ma restituisce solo le informazioni di inventario relative al sistema operativo attivo nel momento in cui è stato eseguito l'inventario.  
+ Configuration Manager può individuare i computer ad avvio doppio ma restituisce solo le informazioni di inventario relative al sistema operativo attivo nel momento in cui è stato eseguito l'inventario.  
 
 ## <a name="software-inventory-for-mobile-devices-enrolled-with-microsoft-intune"></a>Inventario software per dispositivi mobili registrati con Microsoft Intune  
- È possibile raccogliere l'inventario in app installate nei dispositivi mobili. Le app vengono inserite nell'inventario a seconda che il dispositivo sia di proprietà dell'azienda o personale. Per quanto riguarda i dispositivi personali, le uniche app che vengono inserite nell'inventario sono quelle gestite da Microsoft Intune.  
+ È possibile raccogliere l'inventario per le app installate in dispositivi mobili. Le app vengono inserite nell'inventario a seconda che il dispositivo sia di proprietà dell'azienda o personale. Per quanto riguarda i dispositivi personali, le uniche app che vengono inserite nell'inventario sono quelle gestite da Microsoft Intune.  
 
 > [!NOTE]  
->  L'inventario nelle app installate in dispositivi mobili viene eseguito nell'ambito del processo di inventario hardware in Configuration Manager. Per altre informazioni, vedere [How to Configure Hardware Inventory for Mobile Devices Enrolled by Microsoft Intune and Configuration Manager](../../../../core/clients/manage/inventory/mobile-device-hardware-inventory-hybrid.md) (Come configurare l'inventario hardware per i dispositivi mobili registrati tramite Microsoft Intune e System Center Configuration Manager).  
+>  L'inventario per le app installate in dispositivi mobili viene eseguito nell'ambito del processo di [inventario hardware](../../../../core/clients/manage/inventory/mobile-device-hardware-inventory-hybrid.md).  
 
- Nella tabella seguente sono elencate le app di inventario per i dispositivi di proprietà personale o dell'azienda.  
+ Queste sono le app incluse nell'inventario per i dispositivi personali o di proprietà dell'azienda.  
 
 |Piattaforma|Per i dispositivi di proprietà personale|Per i dispositivi di proprietà dell'azienda|  
 |--------------|---------------------------------|--------------------------------|  
@@ -63,6 +63,8 @@ Usare l'inventario software in System Center Configuration Manager per raccoglie
 
 
 
-<!--HONumber=Dec16_HO3-->
+
+
+<!--HONumber=Dec16_HO5-->
 
 

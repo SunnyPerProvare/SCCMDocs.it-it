@@ -2,7 +2,7 @@
 title: Pianificare la migrazione dei client | Microsoft Docs
 description: "Informazioni sulle attività di migrazione dei client da una gerarchia di origine a una gerarchia di destinazione di System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,16 +16,16 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
-ms.openlocfilehash: 11da338af9d7dd4d6f9c5fc1c6c62e277139f852
+ms.sourcegitcommit: ac4576035fda943e38d960dd425d44b7a6ef6a01
+ms.openlocfilehash: b52ca4059dfeed08cabf1f75319da40d6499622f
 
 
 ---
-# <a name="planning-a-client-migration-strategy-in-system-center-configuration-manager"></a>Pianificazione di una strategia di migrazione client in System Center Configuration Manager
+# <a name="plan-a-client-migration-strategy-in-system-center-configuration-manager"></a>Pianificare una strategia di migrazione client in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Per eseguire la migrazione dei client dalla gerarchia di origine a una gerarchia di destinazione di System Center Configuration Manager, è necessario eseguire due attività. È necessario migrare gli oggetti associati al client e quindi reinstallare o riassegnare i client dalla gerarchia di origine alla gerarchia di destinazione. Migrare innanzitutto gli oggetti in modo che siano disponibili al momento della migrazione dei client. Gli oggetti associati al client vengono migrati mediante processi di migrazione. Per informazioni sulla migrazione degli oggetti associati al client, vedere [Pianificazione di una strategia di processo di migrazione in System Center Configuration Manager](../../core/migration/planning-a-migration-job-strategy.md).  
+Per eseguire la migrazione dei client dalla gerarchia di origine a una gerarchia di destinazione di System Center Configuration Manager, è necessario effettuare due attività. È necessario migrare gli oggetti associati al client e quindi reinstallare o riassegnare i client dalla gerarchia di origine alla gerarchia di destinazione. Migrare innanzitutto gli oggetti in modo che siano disponibili al momento della migrazione dei client. Gli oggetti associati al client vengono migrati mediante processi di migrazione. Per informazioni sulla migrazione degli oggetti associati al client, vedere [Pianificazione di una strategia di processo di migrazione in System Center Configuration Manager](../../core/migration/planning-a-migration-job-strategy.md).  
 
  Utilizzare le seguenti sezioni per pianificare la migrazione dei client nella gerarchia di destinazione.  
 
@@ -36,14 +36,14 @@ Per eseguire la migrazione dei client dalla gerarchia di origine a una gerarchia
 -   [Pianificare i dati di inventario e di conformità durante la migrazione](#Planning_for_Inventory_data_migration)  
 
 ##  <a name="a-nameplanningforclientagentmigrationa-plan-to-migrate-clients-to-the-destination-hierarchy"></a><a name="Planning_for_Client_Agent_Migration"></a> Pianificare la migrazione dei client nella gerarchia di destinazione  
- Quando si esegue la migrazione dei client da una gerarchia di origine, il software client nel computer client viene aggiornato in base alla versione prodotto della gerarchia di destinazione:  
+ Quando si esegue la migrazione dei client da una gerarchia di origine, il software client nel computer client viene aggiornato in base alla versione prodotto della gerarchia di destinazione.  
 
 -   **Gerarchia di origine di Configuration Manager 2007:** quando si esegue la migrazione dei client da una gerarchia di origine che esegue una versione supportata di Configuration Manager, il software client esegue l'aggiornamento alla versione client per la gerarchia di destinazione.  
 
 -   **Gerarchia di origine di System Center 2012 Configuration Manager o versione successiva:** quando si esegue la migrazione dei client tra gerarchie della stessa versione di prodotto, non vengono eseguite modifiche o aggiornamenti al software client. Il client esegue invece la riassegnazione dalla gerarchia di origine a un sito della gerarchia di destinazione.  
 
     > [!NOTE]  
-    >  Quando la versione prodotto di una gerarchia non è supportata per la migrazione alla gerarchia di destinazione, aggiornare a una versione prodotto compatibile tutti i siti e i client nella gerarchia di origine. Dopo che la gerarchia di origine è stata aggiornata alla versione prodotto supportata, è possibile eseguire la migrazione tra le gerarchie. Per altre informazioni, vedere la sezione [Versioni di Configuration Manager supportate per la migrazione](../../core/migration/prerequisites-for-migration.md#BKMK_SupportedMigrationVersions) nell'argomento [Prerequisiti per la migrazione in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
+    >  Quando la versione prodotto di una gerarchia non è supportata per la migrazione alla gerarchia di destinazione, aggiornare a una versione prodotto compatibile tutti i siti e i client nella gerarchia di origine. Dopo che la gerarchia di origine è stata aggiornata alla versione prodotto supportata, è possibile eseguire la migrazione tra le gerarchie. Per altre informazioni, vedere [Versioni di Configuration Manager supportate per la migrazione](../../core/migration/prerequisites-for-migration.md#BKMK_SupportedMigrationVersions) in [Prerequisiti per la migrazione in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
 
 Per pianificare la migrazione client, utilizzare le seguenti informazioni:  
 
@@ -51,23 +51,23 @@ Per pianificare la migrazione client, utilizzare le seguenti informazioni:
 
 -   Verificare che il dispositivo che esegue il software client nella gerarchia di origine soddisfi i requisiti hardware minimi ed esegua un sistema operativo supportato dalla versione di Configuration Manager nella gerarchia di destinazione.  
 
--   Prima di eseguire la migrazione di un client, eseguire un processo di migrazione per migrare le informazioni che il client utilizzerà nella gerarchia di destinazione.  
+-   Prima della migrazione di un client, eseguire un processo di migrazione delle informazioni che il client userà nella gerarchia di destinazione.  
 
--   I client che eseguono l'aggiornamento mantengono la cronologia di esecuzione relativa alle distribuzioni per impedire che queste vengano rieseguite inutilmente nella gerarchia di destinazione:  
+-   I client che vengono aggiornati mantengono la cronologia di esecuzione per le distribuzioni. In questo modo si evitano riesecuzioni non necessarie delle distribuzioni nella gerarchia di destinazione.  
 
     -   Per i client di Configuration Manager 2007, viene mantenuta la cronologia di esecuzione degli annunci.  
 
-    -   Con i client di System Center 2012 Configuration Manager o System Center Configuration Manager, viene mantenuta la cronologia di esecuzione delle registrazioni.  
+    -   Per i client System Center 2012 Configuration Manager o System Center Configuration Manager, viene mantenuta la cronologia di esecuzione delle distribuzioni.  
 
--   È possibile migrare i client da siti della gerarchia di origine nell'ordine desiderato. È tuttavia consigliabile optare per una migrazione a più fasi di quantità limitate di client, anziché per un'unica migrazione di ampie quantità di client. Una migrazione a più fasi consente di ridurre i requisiti di larghezza di banda di rete e l'elaborazione del server quando i nuovi client aggiornati inviano tutti i dati di conformità e di inventario iniziali al sito assegnato.  
+-   È possibile migrare i client da siti della gerarchia di origine nell'ordine desiderato. È tuttavia consigliabile optare per una migrazione a più fasi di quantità limitate di client, invece che per un'unica migrazione di ampie quantità di client. Una migrazione a più fasi consente di ridurre i requisiti di larghezza di banda di rete e l'elaborazione del server quando i nuovi client aggiornati inviano tutti i dati di conformità e di inventario iniziali al sito assegnato.  
 
--   Quando si esegue la migrazione dei client di Configuration Manager 2007, il software client esistente viene disinstallato dal computer client e viene installato il software client nuovo.  
+-   Quando si esegue la migrazione dei client Configuration Manager 2007, il software client esistente viene disinstallato dal computer client e viene installato il software client nuovo.  
 
--   Configuration Manager non può eseguire la migrazione di un client di Configuration Manager 2007 in cui è installato il client App-V, se la versione del client App-V non è 4.6 SP1 o successiva.  
+-   Configuration Manager non può eseguire la migrazione di un client Configuration Manager 2007 in cui è installato il client App-V, se la versione del client App-V non è 4.6 SP1 o successiva.  
 
 È possibile monitorare il processo di migrazione client nel nodo **Migrazione** dell'area di lavoro **Amministrazione** nella console di Configuration Manager.  
 
-Dopo la migrazione del client nella gerarchia di destinazione, non è più possibile gestire il dispositivo utilizzando la gerarchia di origine ed è necessario valutare la rimozione del client dalla gerarchia di origine. Benché non si tratti di un requisito relativo alla migrazione tra gerarchie, questo consente di impedire il rilevamento di un client migrato in un report della gerarchia di origine o un conteggio errato delle risorse tra le due gerarchie durante la migrazione. Quando ad esempio un client migrato rimane nel database del sito di origine, è possibile eseguire un report degli aggiornamenti software che rileva erroneamente il computer come risorsa non gestita, sebbene il computer sia ora gestito dalla gerarchia di destinazione.  
+Dopo la migrazione del client nella gerarchia di destinazione, non è più possibile gestire il dispositivo usando la gerarchia di origine ed è necessario valutare la rimozione del client dalla gerarchia di origine. Benché non si tratti di un requisito relativo alla migrazione tra gerarchie, questo consente di impedire il rilevamento di un client migrato in un report della gerarchia di origine o un conteggio errato delle risorse tra le due gerarchie durante la migrazione. Quando ad esempio un client migrato rimane nel database del sito di origine, è possibile eseguire un report degli aggiornamenti software che rileva erroneamente il computer come risorsa non gestita, sebbene il computer sia ora gestito dalla gerarchia di destinazione.  
 
 ##  <a name="a-nameplanningforclientdatamigrationa-plan-to-handle-data-maintained-on-clients-during-migration"></a><a name="Planning_for_Client_Data_Migration"></a> Pianificare la gestione dei dati conservati nei client durante la migrazione  
 Quando si esegue la migrazione di un client dalla gerarchia di origine alle gerarchia di destinazione, alcune informazioni vengono conservate nel dispositivo, mentre altre informazioni non sono più disponibili nel dispositivo dopo la migrazione.  
@@ -105,6 +105,6 @@ I dati di inventario e di conformità del client non vengono salvati quando si e
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

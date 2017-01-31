@@ -1,8 +1,8 @@
 ---
 title: Configurare l&quot;inventario software | Microsoft Docs
-description: Configurare l&quot;inventario software e una cartella di esclusione di inventario in System Center Configuration Manager.
+description: Configurare l&quot;inventario software ed escludere cartelle dall&quot;inventario software in Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 01/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -10,15 +10,15 @@ ms.technology:
 - configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
-ms.assetid: cc226259-0e28-410a-94d3-223bdc948818
-caps.latest.revision: 4
+ms.assetid: f86559de-092a-4ce8-9b43-5d7530e0b763
+caps.latest.revision: 5
 caps.handback.revision: 0
 author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
-ms.openlocfilehash: 7ba943bee7faf417099cde0388649e4907525738
+ms.sourcegitcommit: dacfdf02f04c6bd731ca0fc11e5af371b409c8b4
+ms.openlocfilehash: 1cee12d6f9c406e2438a3ed76674c3498fe9abbd
 
 
 ---
@@ -26,12 +26,28 @@ ms.openlocfilehash: 7ba943bee7faf417099cde0388649e4907525738
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile creare un file nascosto denominato **Skpswi.dat** e inserirlo nella radice di un disco rigido del client per escluderlo dall'inventario software di System Center Configuration Manager. È anche possibile inserire questo file nella radice di qualsiasi struttura di cartelle che si vuole escludere dall'inventario software. Questa procedura può essere usata per disabilitare l'inventario software in una singola workstation o un singolo client di server, ad esempio un file server di grandi dimensioni.  
+ Questa procedura consente di configurare le impostazioni client predefinite per l'inventario software e applicarle a tutti i computer nella gerarchia. Per applicare queste impostazioni solo ad alcuni computer, creare un'impostazione client di dispositivo personalizzata e assegnarla a una raccolta contenente i computer in cui si vuole usare l'inventario software. Per altre informazioni su come creare impostazioni dispositivo personalizzate, vedere [How to configure client settings in System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md) (Come configurare le impostazioni client in System Center Configuration Manager).  
 
-> [!NOTE]  
->  L'inventario software non effettua l'inventario dell'unità del client a meno che questo file non venga eliminato dall'unità nel computer client.  
+## <a name="to-configure-software-inventory"></a>Per configurare l'inventario software  
 
-### <a name="to-exclude-folders-from-software-inventory"></a>Per escludere cartelle dall'inventario software  
+1.  Nella console di Configuration Manager selezionare **Amministrazione** > **Impostazioni client** **Impostazioni client predefinite**.  
+
+4.  Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.  
+
+5.  Nella finestra di dialogo **Impostazioni predefinite** scegliere **Inventario software**.  
+
+6.  Nell'elenco **Impostazioni dispositivo** configurare i valori seguenti:  
+
+    -   **Abilitare inventario software nei client**: selezionare **Vero** dall'elenco a discesa.  
+
+    -   **Pianificare inventario software e raccolta file**: consente di configurare l'intervallo di raccolta di file e inventario software da parte dei client.   
+
+7.  Configurare le impostazioni client necessarie. Per un elenco delle impostazioni client dell'inventario software che è possibile configurare, vedere la sezione [Software Inventory](../../../../core/clients/deploy/about-client-settings.md#software-inventory) (Inventario software) nell'argomento [About client settings in System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
+
+ I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+
+
+## <a name="to-exclude-folders-from-software-inventory"></a>Per escludere cartelle dall'inventario software  
 
 1.  Usando Notepad.exe, creare un file vuoto denominato **Skpswi.dat**.  
 
@@ -39,8 +55,10 @@ ms.openlocfilehash: 7ba943bee7faf417099cde0388649e4907525738
 
 3.  Inserire il file **Skpswi.dat** nella radice di ogni disco rigido o struttura di cartelle del client che si vuole escludere dall'inventario software.  
 
+> [!NOTE]  
+>  L'inventario software non effettua l'inventario dell'unità del client a meno che questo file non venga eliminato dall'unità nel computer client.
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

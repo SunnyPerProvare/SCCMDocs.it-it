@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
-ms.openlocfilehash: fa9881e06abd410438fe5985151309c45f337802
+ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
+ms.openlocfilehash: a5228c4984347be4b115bfa5563791fa2fb7319c
 
 
 ---
@@ -289,7 +289,7 @@ L'account utilizzato per eseguire una reimpostazione del sito deve disporre dell
     -   **Sito primario**: l'account usato per eseguire una reimpostazione del sito deve essere un amministratore locale nel server del sito primario e deve disporre dei privilegi equivalenti al ruolo di sicurezza di amministrazione basato su ruoli **Amministratore completo** . Se il sito primario si trova in una gerarchia con un sito di amministrazione centrale, anche questo account deve essere un amministratore locale nel server del sito di amministrazione centrale.  
 
 **Limitazioni per la reimpostazione del sito**
-  - A partire dalla versione 1602, non è possibile usare una reimpostazione del sito per modificare i Language Pack server o client installati nei siti quando la gerarchia è configurata per supportare i [test degli aggiornamenti client in una raccolta di preproduzione](/sccm/core/clients/manage/upgrade/test-client-upgrades).
+  - A partire dalla versione 1602, non è possibile usare una reimpostazione del sito per modificare i Language Pack server o client installati nei siti quando la gerarchia è configurata per supportare i [test degli aggiornamenti client in una raccolta di pre-produzione](/sccm/core/clients/manage/upgrade/test-client-upgrades).
 
 #### <a name="to-perform-a-site-reset"></a>Per eseguire una reimpostazione del sito  
 
@@ -371,6 +371,6 @@ Per informazioni sulle lingue di client e server supportate da Configuration Man
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

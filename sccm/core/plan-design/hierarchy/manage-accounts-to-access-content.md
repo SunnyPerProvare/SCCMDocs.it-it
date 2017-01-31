@@ -2,7 +2,7 @@
 title: Account per accedere al contenuto | Microsoft Docs
 description: Informazioni sugli account in cui i client accedono al contenuto di System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/4/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 4bf8dbd007f2ff122d1447ffcb2a963579034033
+ms.sourcegitcommit: 4d34a272a93100426cccd2308c5b3b0b0ae94a60
+ms.openlocfilehash: ee83aa6fdbd1a82384a4684055ed72620a3f474e
 
 ---
 # <a name="manage-accounts-to-access-content-in-system-center-configuration-manager"></a>Gestire gli account per l'accesso al contenuto in System Center Configuration Manager
@@ -30,7 +30,7 @@ Prima di distribuire il contenuto in System Center Configuration Manager, è opp
 
      Questo account viene anche usato dai punti di distribuzione pull per ottenere il contenuto da un punto di distribuzione di origine in una foresta remota  
 
--   **Account di accesso ai pacchetti**: per impostazione predefinita, Configuration Manager concede l'accesso al contenuto in un punto di distribuzione agli account di accesso generici Utenti e Amministratori. È tuttavia possibile configurare autorizzazioni aggiuntive per limitare l'accesso.  
+-   **Account di accesso ai pacchetti**: per impostazione predefinita, Configuration Manager concede l'accesso al contenuto in un punto di distribuzione agli account predefiniti **Utenti** e **Amministratori**. È possibile configurare autorizzazioni aggiuntive per limitare l'accesso.  
 
 -   **Account di connessione multicast** : usato per le distribuzioni del sistema operativo.  
 
@@ -120,6 +120,6 @@ Durante la creazione, impostare questo account come account locale e con diritti
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

@@ -2,7 +2,7 @@
 title: Language Pack | Microsoft Docs
 description: Informazioni sul supporto per le lingue disponibile in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 35d1008752a3275febef46b8817e97afdb91d580
+ms.sourcegitcommit: e7075eb675353be130fdcc867d9e4dd1009dab35
+ms.openlocfilehash: 47da3c531289ddf13d357bde8bbda85d79ed2803
 
 
 ---
@@ -27,10 +27,12 @@ ms.openlocfilehash: 35d1008752a3275febef46b8817e97afdb91d580
 
 In questo argomento vengono forniti dettagli tecnici sul supporto per le lingue in System Center Configuration Manager.  
 
-##  <a name="a-namebkmksuplanguagepacksa-supported-operating-system-languages"></a><a name="BKMK_SupLanguagePacks"></a> Lingue del sistema operativo supportate  
- È possibile installare il supporto per le lingue visualizzate seguenti installando i **Language Pack server** o i **Language Pack client** in un sito di amministrazione centrale e nei siti primari. I file dei Language Pack vengono scaricati quando si esegue il programma di installazione come parte del download dei file di prerequisiti e ridistribuibili. È anche possibile usare [Downloader di installazione](setup-downloader.md) per scaricare questi file prima di eseguire il programma di installazione. Durante l'installazione di un sito si selezionano le lingue per server e client da supportare in quel sito scegliendole dai file dei Language Pack disponibili.  
+## <a name="a-namebkmksuplanguagepacksa-supported-operating-system-languages"></a><a name="BKMK_SupLanguagePacks"></a> Lingue del sistema operativo supportate  
+ È possibile installare il supporto per le lingue visualizzate nelle tabelle seguenti installando i **Language Pack server** o i **Language Pack client** in un sito di amministrazione centrale e nei siti primari. Durante il processo di installazione di un sito si selezionano le lingue per server e client da supportare in quel sito scegliendole dai file dei Language Pack disponibili.
 
- Utilizzare la seguente tabella per eseguire il mapping di un ID impostazioni locali in una lingua che si desidera supportare nei server o nei client. Per ulteriori informazioni sugli ID impostazioni locali, vedere [ID impostazioni locali assegnati da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=252609) in MSDN Library.  
+ I file dei Language Pack vengono scaricati quando si esegue il programma di installazione come parte del download dei file di prerequisiti e ridistribuibili. È anche possibile usare [Downloader di installazione](setup-downloader.md) per scaricare questi file prima di eseguire il programma di installazione.   
+
+ Usare la tabella seguente per eseguire il mapping di un ID impostazioni locali con una lingua da supportare nei server o nei computer client. Per altre informazioni sugli ID impostazioni locali, vedere [ID impostazioni locali assegnati da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=252609).  
 
 ### <a name="server-languages"></a>Lingue server  
 
@@ -84,18 +86,18 @@ In questo argomento vengono forniti dettagli tecnici sul supporto per le lingue 
 |Svedese|041d|SVE|  
 |Turco|041f|TRK|  
 
-### <a name="mobile-device-client-languages"></a>Lingue client dispositivo mobile  
- Quando si aggiunge il supporto per lingue per dispositivi mobili, vengono incluse tutte le lingue client dei dispositivi mobili. Non è possibile selezionare singoli Language Pack per il supporto dei dispositivi mobili.  
+### <a name="mobile-device-client-languages"></a>Lingue client per dispositivi mobili  
+ Quando si aggiunge il supporto per le lingue per dispositivi mobili, vengono incluse tutte le lingue client per dispositivi mobili supportate. Non è possibile selezionare singoli Language Pack per il supporto dei dispositivi mobili.  
 
-### <a name="how-to-identify-installed-language-packs"></a>Come identificare i Language Pack installati  
-È possibile identificare i Language Pack installati in un computer che esegue il client di Configuration Manager visualizzando l'ID impostazioni locali (LCID) dei Language Pack installati nel Registro di sistema del computer. Queste informazioni sono disponibili nel seguente percorso:  
+### <a name="identify-installed-language-packs"></a>Identificare i Language Pack installati  
+Per identificare i Language Pack installati in un computer che esegue il client di Configuration Manager, cercare l'ID impostazioni locali (LCID) dei Language Pack installati nel Registro di sistema del computer. Queste informazioni sono disponibili in:
 
--   **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCMSetup\InstalledLangs**  
+ **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCMSetup\InstalledLangs**  
 
-È possibile utilizzare l'inventario hardware per raccogliere queste informazioni e quindi generare un report personalizzato per visualizzare i dettagli relativi alla lingua. Per informazioni sulla raccolta di inventario hardware, vedere [How to configure hardware inventory in System Center Configuration Manager](../../../../core/clients/manage/inventory/configure-hardware-inventory.md) (Come configurare l'inventario hardware in System Center Configuration Manager). Per informazioni sulla creazione di report, vedere la sezione [Manage Configuration Manager reports](../../../../core/servers/manage/operations-and-maintenance-for-reporting.md#BKMK_ManageReports) (Gestire i report di Configuration Manager) nell'argomento [Operations and maintenance for reporting in System Center Configuration Manager](../../../../core/servers/manage/operations-and-maintenance-for-reporting.md) (Operazioni e manutenzione per la creazione di report in System Center Configuration Manager).  
+È possibile utilizzare l'inventario hardware per raccogliere queste informazioni e quindi generare un report personalizzato per visualizzare i dettagli relativi alla lingua. Per informazioni sulla raccolta di inventario hardware, vedere [How to configure hardware inventory in System Center Configuration Manager](../../../../core/clients/manage/inventory/configure-hardware-inventory.md) (Come configurare l'inventario hardware in System Center Configuration Manager). Per informazioni sulla creazione di report, vedere la sezione [Gestire i report di Configuration Manager](../../../../core/servers/manage/operations-and-maintenance-for-reporting.md#BKMK_ManageReports) nell'argomento [Operazioni e manutenzione per la creazione di report in System Center Configuration Manager](../../../../core/servers/manage/operations-and-maintenance-for-reporting.md).  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

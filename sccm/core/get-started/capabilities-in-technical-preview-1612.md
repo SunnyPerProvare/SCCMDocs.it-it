@@ -2,7 +2,7 @@
 title: "Funzionalità della versione Technical Preview 1612 per System Center Configuration Manager | Microsoft Docs"
 description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1612 per System Center Configuration Manager."
 ms.custom: na
-ms.date: 12/16/2016
+ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-other
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 15d442ba52b991ea7888d0113610fe4800424f8d
-ms.openlocfilehash: f0421efbc01443288d3591fa9748a8f71fef8a0d
+ms.sourcegitcommit: e7075eb675353be130fdcc867d9e4dd1009dab35
+ms.openlocfilehash: 2de36316b20b2a7b2937d767e618f4fec1affb69
 
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1612 per System Center Configuration Manager
@@ -67,6 +67,7 @@ Oltre all'installazione e alla configurazione del database del data warehouse, v
   - In un'istanza predefinita o denominata
   - In un *cluster di SQL Server*. Questa configurazione dovrebbe funzionare, ma non è stata testata e il supporto viene offerto secondo il criterio del massimo sforzo.
   - Se condivide il percorso con il database del sito o con il database del punto di Reporting Services. È tuttavia consigliabile installarlo in un server separato.  
+- L'account usato come *Account punto di Reporting Services* deve avere l'autorizzazione **db_datareader** per il database del data warehouse.  
 - Il database non è supportato in un *gruppo di disponibilità SQL Server AlwaysOn*.
 
 ### <a name="install-the-data-warehouse"></a>Installare il data warehouse
@@ -100,6 +101,8 @@ Pagina **Impostazioni di sincronizzazione**:
   - **Intervallo di sincronizzazione (minuti)**: specificare un valore in minuti. Quando l'intervallo termina, viene avviata una nuova sincronizzazione. Supporta un intervallo compreso tra 60 e 1440 minuti (24 ore).
   - **Pianificazione**: specificare i giorni in cui si vuole eseguire la sincronizzazione.
 
+**Accesso al punto di reporting**:   
+Dopo aver installato il ruolo del data warehouse, assicurarsi che l'account usato come *Account punto di Reporting Services* abbia l'autorizzazione **db_datareader** per il database del data warehouse.
 
 #### <a name="troubleshoot-installation-and-data-synchronization"></a>Risoluzione dei problemi di installazione e di sincronizzazione dei dati
 Usare i registri seguenti per analizzare i problemi dell'installazione del punto di servizio Data warehouse o della sincronizzazione dei dati:
@@ -313,6 +316,6 @@ Ora che è possibile configurare l'autenticazione a più fattori (MFA) per la re
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

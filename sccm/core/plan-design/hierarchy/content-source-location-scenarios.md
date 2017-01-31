@@ -2,7 +2,7 @@
 title: Percorso di origine del contenuto | Microsoft Docs
 description: Informazioni sulle impostazioni di System Center Configuration Manager che consentono ai client di individuare il contenuto in una rete lenta.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/3/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,20 +16,20 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
-ms.openlocfilehash: b0f54daecfc3e958d3196f3f0b08606725d86c39
+ms.sourcegitcommit: 7f2fd3e550c7dc1b27996dc309b53f74e8c865e9
+ms.openlocfilehash: a823458dc3b891b1c32d1cb44a96e8cafd376ed5
 
 ---
 # <a name="content-source-location-scenarios-in-system-center-configuration-manager"></a>Scenari del percorso di origine del contenuto in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Nelle versioni precedenti alla versione 1610 System Center Configuration Manager supporta diverse impostazioni che è possibile combinare per definire come e dove i client possono trovare il contenuto quando sono connessi a una rete lenta. Le combinazioni possibili influiscono sui percorsi del contenuto usati dai client, e sulla possibilità di usare correttamente un percorso di fallback quando l'origine preferita del contenuto non è disponibile.  
+Nelle versioni precedenti alla versione 1610, System Center Configuration Manager supporta diverse impostazioni che è possibile combinare per definire come e dove i client possono trovare il contenuto quando sono connessi a una rete lenta. Le combinazioni possibili influiscono sui percorsi del contenuto usati dai client e sulla possibilità di usare correttamente un percorso di fallback quando l'origine preferita del contenuto non è disponibile.  
 
 > [!IMPORTANT]  
-> **Se i siti eseguono la versione 1511, 1602 o 1606**, le informazioni contenute in questo argomento sono valide per l'infrastruttura in uso. Vedere anche [Boundary groups for versions 1511,1602, and 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606) (Gruppi di limiti per le versioni 1511, 1602 e 1606) per informazioni specifiche per i gruppi di limiti con queste versioni di Configuration Manager.
+> **Se i siti eseguono la versione 1511, 1602 o 1606**, le informazioni contenute in questo argomento sono valide per l'infrastruttura in uso. Vedere anche [Gruppi di limiti per System Center Configuration Manager versioni 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606) per informazioni specifiche per i gruppi di limiti con queste versioni di Configuration Manager.
 >
-> **Se i siti eseguono la versione 1610 o versioni successive**, usare le informazioni contenute in [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups) per comprendere in che modo i client individuano i punti di distribuzione con contenuto disponibile.
+> **Se i siti eseguono la versione 1610 o versioni successive**, usare le informazioni contenute in [Definire i limiti del sito e i gruppi di limiti per System Center Configuration Manager](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups) per comprendere in che modo i client individuano i punti di distribuzione con contenuto disponibile.
 
 
 
@@ -37,17 +37,17 @@ Nelle versioni precedenti alla versione 1610 System Center Configuration Manager
 
 **Le tre impostazioni seguenti definiscono il comportamento quando i client richiedono contenuti:**
 
--  **Consenti percorso origine di fallback per il contenuto** (opzione abilitata o non abilitata): questa opzione può essere abilitata nella scheda Gruppi limite di un punto di distribuzione.  L'opzione consente al client di usare un punto di distribuzione configurato come percorso di fallback quando non è disponibile contenuto in un punto di distribuzione preferito.  
+-  **Consenti percorso origine di fallback per il contenuto** (opzione abilitata o non abilitata): questa opzione può essere abilitata nella scheda **Gruppi limite** di un punto di distribuzione. L'opzione consente al client di usare un punto di distribuzione configurato come percorso di fallback quando non è disponibile contenuto in un punto di distribuzione preferito.  
 
  - **Comportamento di distribuzione per la velocità di connessione di rete**: ogni distribuzione è configurata con uno dei comportamenti seguenti da usare quando la connessione al punto di distribuzione è lenta:  
 
     -   **Scarica il contenuto dal punto di distribuzione ed esegui in locale**  
 
-    -   **Non scaricare il contenuto**: questa opzione viene usata solo quando un client usa un percorso di fallback per ottenere il contenuto  
+    -   **Non scaricare il contenuto**: questa opzione viene usata solo quando un client usa un percorso di fallback per ottenere il contenuto.  
 
-    La velocità di connessione per un punto di distribuzione è configurata nella scheda Riferimenti del gruppo di limiti ed è specifica per tale gruppo.  
+    La velocità di connessione per un punto di distribuzione è configurata nella scheda **Riferimenti** di un gruppo di limiti ed è specifica per tale gruppo.  
 
- -  **Distribuzione di pacchetti su richiesta** (nei punti di distribuzione preferiti): questa opzione viene abilitata quando si seleziona l'opzione **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti** nella scheda Impostazioni distribuzione delle proprietà delle applicazioni o di un pacchetto. Quando è abilitata, questa opzione fa in modo che Configuration Manager copi automaticamente il contenuto in un punto di distribuzione preferito in cui ancora non è presente dopo che un client richiede tale contenuto da tale punto di distribuzione.  
+ -  **Distribuzione di pacchetti su richiesta** (nei punti di distribuzione preferiti): questa opzione viene abilitata quando si seleziona l'opzione **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti** nella scheda **Impostazioni distribuzione** delle proprietà delle applicazioni o di un pacchetto. Quando è abilitata, questa opzione fa in modo che Configuration Manager copi automaticamente il contenuto in un punto di distribuzione preferito in cui ancora non è presente dopo che un client richiede tale contenuto da tale punto di distribuzione.  
 
 
  **I requisiti seguenti si applicano a tutti gli scenari:**
@@ -126,11 +126,11 @@ Nelle versioni precedenti alla versione 1610 System Center Configuration Manager
 
 **Dettagli:**  
 
-1.  Il client invia una richiesta di contenuto al punto di gestione  
+1.  Il client invia una richiesta di contenuto al punto di gestione.  
 
 2.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti con contenuto. Nell'elenco non sono disponibili punti di distribuzione preferiti.  
 
-3.  Il client genera il messaggio di errore **Contenuto non disponibile** e passa in modalità Riprova. Ogni ora viene avviata una nuova richiesta di contenuto  
+3.  Il client genera il messaggio di errore **Contenuto non disponibile** e passa in modalità Riprova. Ogni ora viene avviata una nuova richiesta di contenuto.  
 
 ## <a name="scenario-5"></a>Scenario 5  
  In presenza delle configurazioni seguenti:  
@@ -216,7 +216,7 @@ Nelle versioni precedenti alla versione 1610 System Center Configuration Manager
 
 1.  Il client invia una richiesta di contenuto al punto di gestione. Il client include un flag con la richiesta che indica che i punti di distribuzione di fallback sono consentiti.  
 
-2.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti e i punti di distribuzione di fallback con contenuto. Non esistono punti di distribuzione preferiti con contenuto, ma almeno un punto di distribuzione di fallback con contenuto.  
+2.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti e i punti di distribuzione di fallback con contenuto. Non esistono punti di distribuzione preferiti con contenuto, ma esiste almeno un punto di distribuzione di fallback con contenuto.  
 
 3.  Il contenuto non viene scaricato perché la proprietà di distribuzione per quando il client usa un punto di distribuzione di fallback è impostata su **Non scaricare**. Il client genera il messaggio di errore **Contenuto non disponibile** e passa in modalità Riprova. Il client effettua una nuova richiesta di contenuto ogni ora.  
 
@@ -246,7 +246,7 @@ Nelle versioni precedenti alla versione 1610 System Center Configuration Manager
 
 1.  Il client invia una richiesta di contenuto al punto di gestione. Il client include un flag con la richiesta che indica che i punti di distribuzione di fallback sono consentiti.  
 
-2.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti e i punti di distribuzione di fallback con contenuto. Non esistono punti di distribuzione preferiti con contenuto, ma almeno un punto di distribuzione di fallback con contenuto.  
+2.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti e i punti di distribuzione di fallback con contenuto. Non esistono punti di distribuzione preferiti con contenuto, ma esiste almeno un punto di distribuzione di fallback con contenuto.  
 
 3.  Il contenuto viene scaricato da un punto di distribuzione di fallback nell'elenco perché la proprietà di distribuzione per quando il client usa un punto di distribuzione di fallback è impostata su **Scarica e installa il contenuto**. Questa impostazione di distribuzione consente a un client che deve usare un percorso dei contenuti di fallback di ottenere il contenuto da tale percorso.  
 
@@ -256,6 +256,6 @@ Nelle versioni precedenti alla versione 1610 System Center Configuration Manager
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

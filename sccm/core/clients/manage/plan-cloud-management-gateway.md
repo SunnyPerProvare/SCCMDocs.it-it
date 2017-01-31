@@ -1,7 +1,7 @@
 ---
 title: Pianificare il gateway di gestione cloud | Microsoft Docs
 description: 
-ms.date: 11/22/2016
+ms.date: 12/19/2016
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-client
@@ -10,8 +10,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1f8fbd8a16548ab2c34f5d3dac2b439f3908cea9
-ms.openlocfilehash: e6befef692518a5622250af1c71d517b435f9058
+ms.sourcegitcommit: 1df2d8bcd73633ac1d37cc3ef31343be9c5bc95d
+ms.openlocfilehash: 6e2895565e868eb80a8f4f4b46b8a28eb4961e28
 
 ---
 
@@ -19,11 +19,11 @@ ms.openlocfilehash: e6befef692518a5622250af1c71d517b435f9058
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-A partire dalla versione 1610, il gateway di gestione cloud consente di gestire i client di Configuration Manager su Internet in modo semplice. Il servizio gateway di gestione cloud, che viene distribuito in Microsoft Azure e richiede una sottoscrizione di Azure, si connette all'infrastruttura locale di Configuration Manager usando un nuovo ruolo denominato punto di connessione del gateway di gestione cloud. Una volta che è stato completamente distribuito e configurato, i client saranno in grado di accedere ai ruoli di sistema del sito Configuration Manager locale indipendentemente dal fatto che siano connessi alla rete privata interna o su Internet.
+A partire dalla versione 1610, il gateway di gestione cloud consente di gestire i client di Configuration Manager su Internet in modo semplice. Il servizio gateway di gestione cloud viene distribuito in Microsoft Azure e richiede una sottoscrizione di Azure. Si connette all'infrastruttura di Configuration Manager locale usando un nuovo ruolo chiamato punto di connessione del gateway di gestione cloud. Dopo che sarà stato completamente distribuito e configurato, i client potranno accedere ai ruoli del sistema del sito di Configuration Manager locale indipendentemente dal fatto che siano connessi alla rete privata interna o su Internet.
 
 Usare la console di Configuration Manager per distribuire il servizio in Azure, aggiungere il ruolo punto di connessione del gateway di gestione cloud e configurare i ruoli del sistema del sito per consentire il traffico del gateway di gestione cloud. Il gateway di gestione cloud supporta attualmente solo i ruoli punto di gestione e punto di aggiornamento software.
 
-Per autenticare i computer e crittografare le comunicazioni tra i diversi livelli di servizio sono necessari certificati client e certificati Secure Socket Layer (SSL). I computer client ricevono in genere un certificato client mediante l'imposizione dei criteri di gruppo. Per crittografare il traffico tra i client e il server di sistema del sito che ospita i ruoli, è necessario creare un certificato SSL personalizzato mediante un'autorità di certificazione. Oltre a questi due tipi di certificati è anche necessario impostare un certificato di gestione in Azure che consente a Configuration Manager di distribuire il servizio gateway di gestione cloud.
+Per autenticare i computer e crittografare le comunicazioni tra i diversi livelli di servizio sono necessari certificati client e certificati Secure Socket Layer (SSL). I computer client ricevono in genere un certificato client mediante l'imposizione dei criteri di gruppo. Per crittografare il traffico tra i client e il server di sistema del sito che ospita i ruoli, è necessario creare un certificato SSL personalizzato mediante un'autorità di certificazione. È anche necessario configurare un certificato di gestione in Azure che consente a Configuration Manager di distribuire il servizio gateway di gestione cloud.
 
 ## <a name="requirements-for-cloud-management-gateway"></a>Requisiti per il gateway di gestione cloud
 
@@ -35,36 +35,25 @@ Per autenticare i computer e crittografare le comunicazioni tra i diversi livell
 
 -   Certificato di gestione di Azure, utilizzato per l'autenticazione di Configuration Manager con Azure.
 
-## <a name="limitations-of-cloud-management-gateway"></a>Limitazioni del gateway di gestione cloud
+## <a name="specifications-for-cloud-management-gateway"></a>Specifiche per il gateway di gestione cloud
 
--   Il gateway di gestione cloud supporta solo i ruoli punto di gestione e punto di aggiornamento software.
-
+- Ogni istanza del gateway di gestione cloud supporta 4.000 client.
+- È consigliabile creare almeno due istanze del gateway di gestione cloud per aumentare la disponibilità.
+- Il gateway di gestione cloud supporta solo i ruoli punto di gestione e punto di aggiornamento software.
 -   Le funzionalità seguenti in Configuration Manager non sono attualmente supportate dal gateway di gestione cloud:
 
     -   Distribuzione e aggiornamento del client tramite push client
-
     -   Assegnazione automatica del sito
-
     -   Criteri utente
-
     -   Catalogo applicazioni, incluse le richieste di approvazione software
-
     -   Distribuzione completa del sistema operativo
-
     -   Console di Configuration Manager
-
     -   Strumenti remoti
-
     -   Sito Web di Reporting
-
     -   Riattivazione LAN
-
     -   Client Mac, Linux e UNIX
-
     -   Azure Resource Manager
-
     -   Peer cache
-
     -   Gestione dei dispositivi mobili (MDM) locale
 
 ## <a name="cost-of-cloud-management-gateway"></a>Costo del gateway di gestione cloud

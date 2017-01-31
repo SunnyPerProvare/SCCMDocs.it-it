@@ -2,7 +2,7 @@
 title: Raccolta di dati di diagnostica | Microsoft Docs
 description: "Informazioni sulla modalità di raccolta dei dati di utilizzo e di diagnostica di System Center Configuration Manager da parte di questo strumento."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: f0a992139ad1bc516df2f6ea947509e3e4a77c54
+ms.sourcegitcommit: 24a233516058e645df2a43623855665b97b041b0
+ms.openlocfilehash: 9c0165212fe34f460be2ce870d0542b616f3bc4d
 
 
 ---
@@ -27,7 +27,7 @@ ms.openlocfilehash: f0a992139ad1bc516df2f6ea947509e3e4a77c54
 
 Per raccogliere dati di diagnostica e di utilizzo per System Center Configuration Manager, ogni sito primario esegue query di SQL Server su base settimanale. In una gerarchia a più siti, i dati vengono replicati nel sito di amministrazione centrale.  
 
-Nel sito di livello superiore della gerarchia, il ruolo del sistema del sito del punto di connessione del servizio invia queste informazioni quando verifica la presenza di aggiornamenti. Il modo in cui vengono trasferiti i dati dipende dalla modalità del punto di connessione del servizio:  
+Nel sito di livello superiore della gerarchia, il ruolo del sistema del sito del punto di connessione del servizio invia queste informazioni quando verifica la presenza di aggiornamenti. La modalità del punto di connessione del servizio determina il modo in cui vengono trasferiti i dati:  
 
 -   **In modalità online:** i dati di diagnostica e di utilizzo vengono inviati automaticamente dopo una settimana dal punto di connessione del servizio al servizio cloud.  
 
@@ -37,6 +37,6 @@ Per ulteriori informazioni, vedere [About the service connection point in System
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

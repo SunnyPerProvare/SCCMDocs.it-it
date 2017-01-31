@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8dcf9f310a4ea8e2f43f2fe79e5e3cfa2c8aeb61
-ms.openlocfilehash: c2feffad39a20519fd86ca9348b0855a51e05aa9
+ms.sourcegitcommit: ba45f36c517114f7a8d2be8d9056e1b2a800dd4f
+ms.openlocfilehash: ffd66a4047ec253704e9772e2c3e3a4d9db7c46f
 
 
 ---
@@ -25,17 +25,17 @@ ms.openlocfilehash: c2feffad39a20519fd86ca9348b0855a51e05aa9
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Oltre agli altri requisiti e alle procedure di System Center Configuration Manager per la creazione di un'applicazione, quando si creano e si distribuiscono applicazioni per i computer Mac è necessario tenere presente quanto segue.  
+Tenere presenti le seguenti considerazioni quando si creano e si distribuiscono applicazioni per i computer Mac.  
 
 > [!IMPORTANT]  
 >  Le procedure descritte in questo argomento offrono informazioni sulla distribuzione di applicazioni in computer Mac in cui è installato il client di Configuration Manager. I computer Mac registrati con Microsoft Intune non supportano la distribuzione di applicazioni.  
 
 ## <a name="general-considerations"></a>Considerazioni generali  
- È possibile usare System Center Configuration Manager per distribuire applicazioni nei computer Mac che eseguono il client Mac di Configuration Manager. I passaggi per distribuire software nei computer Mac sono simili a quelli utilizzati per distribuire software nei computer Windows. Tuttavia, prima di creare e distribuire applicazioni nei computer Mac gestiti da Configuration Manager, prendere in considerazione quanto segue:  
+ È possibile usare System Center Configuration Manager per distribuire applicazioni nei computer Mac che eseguono il client Mac di Configuration Manager. I passaggi per distribuire software nei computer Mac sono simili a quelli per distribuire software nei computer Windows. Tuttavia, prima di creare e distribuire applicazioni nei computer Mac gestiti da Configuration Manager, prendere in considerazione quanto segue:  
 
 -   Prima di distribuire pacchetti di applicazioni Mac nei computer Mac, è necessario usare lo strumento **CMAppUtil** in un computer Mac per convertire tali applicazioni in un formato che possa essere letto da Configuration Manager.  
 
--   Configuration Manager non supporta la distribuzione di applicazioni Mac agli utenti: le distribuzioni devono essere effettuate a un dispositivo. Analogamente, per le distribuzioni di applicazioni Mac, Configuration Manager non supporta l'opzione **Pre-distribuisci il software nel dispositivo primario dell'utente** nella pagina **Impostazioni distribuzione** della procedura Distribuzione guidata del software.  
+-   Configuration Manager non supporta la distribuzione di applicazioni Mac agli utenti. Le distribuzioni devono essere effettuate a un dispositivo. Analogamente, per le distribuzioni di applicazioni Mac, Configuration Manager non supporta l'opzione **Pre-distribuisci il software nel dispositivo primario dell'utente** nella pagina **Impostazioni distribuzione** della **Distribuzione guidata del software**.  
 
 -   Le applicazioni Mac supportano distribuzioni simulate.  
 
@@ -43,26 +43,26 @@ Oltre agli altri requisiti e alle procedure di System Center Configuration Manag
 
 -   L'opzione per inviare pacchetti di riattivazione quando si distribuisce software non è supportata per i computer Mac.  
 
--   I computer Mac non supportano il Servizio trasferimento intelligente in background (BITS) per scaricare il contenuto dell'applicazione. Se il download dell'applicazione non ha esito positivo, verrà riavviata dall'inizio.  
+-   I computer Mac non supportano il Servizio trasferimento intelligente in background (BITS) per il download del contenuto dell'applicazione. Se il download dell'applicazione non ha esito positivo, verrà riavviato dall'inizio.  
 
 -   Configuration Manager non supporta le condizioni globali quando si creano tipi di distribuzione per i computer Mac.  
 
 ## <a name="steps-to-create-and-deploy-an-application"></a>Passaggi per creare e distribuire un'applicazione  
- Nella tabella seguente vengono forniti i passaggi, i dettagli e ulteriori informazioni per la creazione e distribuzione di applicazioni per computer Mac.  
+ Nella tabella seguente vengono forniti i passaggi, i dettagli e le informazioni per la creazione e la distribuzione di applicazioni per computer Mac.  
 
 |Passaggio|Dettagli|  
 |----------|-------------|  
-|Passaggio 1: Preparare le applicazioni Mac per Configuration Manager|Per poter creare applicazioni di Configuration Manager da pacchetti software Mac, è necessario usare lo strumento **CMAppUtil** in un computer Mac per convertire il software Mac in un file **CMMAC** di Configuration Manager.|  
-|Passaggio 2: Creare un'applicazione di Configuration Manager che contenga il software Mac|Utilizzare la Creazione guidata applicazione per creare un'applicazione per il software Mac.|  
-|Passaggio 3: Creare un tipo di distribuzione per l'applicazione Mac|Questo passaggio è necessario solo se non si effettuata l'importazione automatica di queste informazioni dall'applicazione.|  
-|Passaggio 4: Distribuire l'applicazione Mac|Utilizzare la Distribuzione guidata del software per distribuire l'applicazione nei computer Mac.|  
-|Passaggio 5: Monitorare la distribuzione dell'applicazione Mac|Monitorare le corrette distribuzioni delle applicazioni nei computer Mac.|  
+|**Passaggio 1**: Preparare le applicazioni Mac per Configuration Manager|Per poter creare applicazioni di Configuration Manager da pacchetti software Mac, è necessario usare lo strumento **CMAppUtil** in un computer Mac per convertire il software Mac in un file **CMMAC** di Configuration Manager.|  
+|**Passaggio 2**: Creare un'applicazione di Configuration Manager che contenga il software Mac|Usare la **Creazione guidata applicazione** per creare un'applicazione per il software Mac.|  
+|**Passaggio 3**: Creare un tipo di distribuzione per l'applicazione Mac|Questo passaggio è necessario solo se non si effettuata l'importazione automatica di queste informazioni dall'applicazione.|  
+|**Passaggio 4**: Distribuire l'applicazione Mac|Usare la **Distribuzione guidata del software** per distribuire l'applicazione nei computer Mac.|  
+|**Passaggio 5**: Monitorare la distribuzione dell'applicazione Mac|Monitorare le corrette distribuzioni delle applicazioni nei computer Mac.|  
 
 ## <a name="supplemental-procedures-to-create-and-deploy-applications-for-mac-computers"></a>Procedure supplementari per creare e distribuire applicazioni per computer Mac  
  Usare le procedure che seguono per creare e distribuire applicazioni per computer Mac gestiti da Configuration Manager.  
 
 ###  <a name="step-1-prepare-mac-applications-for-configuration-manager"></a>Passaggio 1: Preparare le applicazioni Mac per Configuration Manager  
- Il processo necessario per creare e distribuire applicazioni di Configuration Manager nei computer Mac è simile al processo di distribuzione per i computer Windows. Tuttavia, prima di creare applicazioni di Configuration Manager che contengono tipi di distribuzione Mac, occorre preparare le applicazioni usando lo strumento **CMAppUtil** . Questo strumento viene scaricato con i file di installazione client Mac. Lo strumento **CMAppUtil** può raccogliere informazioni sull'applicazione, che includono i dati di rilevamento dai seguenti pacchetti Mac:  
+ Il processo per la creazione e la distribuzione di applicazioni di Configuration Manager nei computer Mac è simile al processo di distribuzione per i computer Windows. Tuttavia, prima di creare applicazioni di Configuration Manager che contengono tipi di distribuzione Mac, occorre preparare le applicazioni usando lo strumento **CMAppUtil** . Questo strumento viene scaricato con i file di installazione client Mac. Lo strumento **CMAppUtil** può raccogliere informazioni sull'applicazione, che includono i dati di rilevamento dai seguenti pacchetti Mac:  
 
 -   Immagine disco Apple (.dmg)  
 
@@ -78,16 +78,16 @@ Dopo aver raccolto informazioni sull'applicazione, **CMAppUtil** crea un file co
 
 2.  Nello stesso computer Mac, aprire una finestra terminale e spostarsi nella cartella in cui sono stati estratti i contenuti del file **macclient.dmg** .  
 
-3.  Spostarsi nella cartella **Strumenti** e immettere la seguente riga di comando:  
+3.  Spostarsi nella cartella **Strumenti** e digitare il seguente comando della riga di comando:  
 
      **./CMAppUtil** *<proprietà\>*  
 
-     Ad esempio, se si desidera convertire i contenuti di un file di immagine disco Apple denominato **MySoftware.dmg** memorizzato nella cartella desktop Utenti in un file **cmmac** nella stessa cartella e si desidera creare file **cmmac** per tutte le applicazioni trovate nel file di immagine disco. A tale scopo, utilizzare la seguente riga di comando:  
+     Ad esempio, potrebbe essere necessario convertire i contenuti di un file di immagine disco Apple denominato **MySoftware.dmg** memorizzato nella cartella desktop dell'utente in un file **cmmac** nella stessa cartella, nonché creare file **cmmac** per tutte le applicazioni trovate nel file di immagine disco. A tale scopo, utilizzare la seguente riga di comando:  
 
      **./CMApputil –c /Users/** *<Nome utente\>* **/Desktop/MySoftware.dmg -o /Users/** *<Nome utente\>* **/Desktop -a**  
 
     > [!NOTE]  
-    >  Il nome dell'applicazione deve essere lungo non più di 128 caratteri.  
+    >  Il nome dell'applicazione non deve essere lungo più di 128 caratteri.  
 
      Per configurare le opzioni per **CMAppUtil**, utilizzare le proprietà della riga di comando riportate nella tabella seguente:  
 
@@ -95,9 +95,9 @@ Dopo aver raccolto informazioni sull'applicazione, **CMAppUtil** crea un file co
     |--------------|----------------------|  
     |**-h**|Visualizza le proprietà della riga di comando disponibili.|  
     |**-r**|Visualizza come output **detection.xml** del file **.cmmac** fornito in **stdout**. L'output contiene i parametri di rilevamento e la versione di **CMAppUtil** utilizzata per creare il file **.cmmac** .|  
-    |**-c**|Specificare il file di origine da convertire.|  
-    |**-o**|Questa proprietà deve essere utilizzata in combinazione con la proprietà -c per specificare il percorso di output.|  
-    |**-a**|Utilizzare questa proprietà in combinazione la proprietà -c e il file del disco immagine (**.dmg**) per creare automaticamente file .cmmac per tutte le applicazioni e pacchetti trovati nel file di immagine disco.|  
+    |**-c**|Specifica il file di origine da convertire.|  
+    |**-o**|Specifica il percorso di output in combinazione con la proprietà –c.|  
+    |**-a**|Crea automaticamente file con estensione cmmac in combinazione con la proprietà –c per tutte le applicazioni e i pacchetti nel file di immagine disco.|  
     |**-s**|Ignora la generazione di **detection.xml** se non vengono trovati parametri di rilevamento e forza la creazione del file **.cmmac** senza il file **detection.xml** .|  
     |**-v**|Visualizza un output più dettagliato dallo strumento **CMAppUtil** insieme a informazioni di diagnostica.|  
 
@@ -107,32 +107,32 @@ Dopo aver raccolto informazioni sull'applicazione, **CMAppUtil** crea un file co
 
 Usare la procedura che segue per creare e distribuire un'applicazione per computer Mac gestiti da Configuration Manager.  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
+1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea applicazione**.  
+3.  Nella scheda **Home**, nel gruppo **Crea**, scegliere **Crea applicazione**.  
 
-4.  Nella pagina **Generale** della Creazione guidata applicazione selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**.  
+4.  Nella pagina **Generale** della **Creazione guidata applicazione**selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**.  
 
     > [!NOTE]  
-    >  Selezionare **Specifica manualmente le informazioni dell'applicazione** se si desidera specificare informazioni sull'applicazione manualmente. Per altre informazioni su come specificare manualmente le informazioni, vedere [Come creare applicazioni con System Center Configuration Manager](../../apps/deploy-use/create-applications.md).  
+    >  Se si vogliono specificare informazioni sull'applicazione manualmente, selezionare **Specifica manualmente le informazioni dell'applicazione**. Per altre informazioni su come specificare manualmente le informazioni, vedere [Come creare applicazioni con System Center Configuration Manager](../../apps/deploy-use/create-applications.md).  
 
 5.  Nell'elenco a discesa **Tipo** , selezionare **Mac OS X**.  
 
-6.  Nel campo **Percorso** specificare il percorso UNC nel formato *\\\\<server\>\\<condivisione\>\\<nomefile\>* al file di installazione dell'applicazione Mac (file **CMMAC**) che rileverà le informazioni dell'applicazione. In alternativa, fare clic su **Sfoglia** per individuare e specificare il percorso del file di installazione.  
+6.  Nel campo **Percorso** specificare il percorso UNC nel formato *\\\\<server\>\\<condivisione\>\\<nomefile\>* al file di installazione dell'applicazione Mac (file **CMMAC**) che rileverà le informazioni dell'applicazione. In alternativa, scegliere **Sfoglia** per individuare e specificare il percorso del file di installazione.  
 
     > [!NOTE]  
     >  È necessario accedere al percorso UNC che contiene l'applicazione.  
 
-7.  Fare clic su **Avanti**.  
+7.  Scegliere **Avanti**.  
 
-8.  Nella pagina **Importazione informazioni** della Creazione guidata applicazione, esaminare le informazioni che sono state importate. Se necessario, è possibile fare clic su **Indietro** per tornare indietro e correggere eventuali errori. Fare clic su **Avanti** per continuare.  
+8.  Nella pagina **Importazione informazioni** della **Creazione guidata applicazione** esaminare le informazioni che sono state importate. Se necessario, è possibile scegliere **Indietro** per tornare indietro e correggere eventuali errori. Scegliere **Avanti** per continuare.  
 
-9. Nella pagina **Informazioni generali** della Creazione guidata applicazione, specificare informazioni sull'applicazione quali nome dell'applicazione, commenti, versione e riferimenti facoltativi che consentono di fare riferimento all'applicazione nella console di Configuration Manager.  
+9. Nella pagina **Informazioni generali** della **Creazione guidata applicazione** specificare informazioni sull'applicazione quali nome dell'applicazione, commenti, versione e riferimenti facoltativi che consentono di fare riferimento all'applicazione nella console di Configuration Manager.  
 
     > [!NOTE]  
     >  Alcune delle informazioni dell'applicazione potrebbero essere già presenti in questa pagina se sono state ottenute in precedenza dai file di installazione dell'applicazione.  
 
-10. Fare clic su **Avanti**, riesaminare le informazioni sull'applicazione nella pagina **Riepilogo** e quindi completare la Creazione guidata applicazione.  
+10. Scegliere **Avanti**, riesaminare le informazioni sull'applicazione nella pagina **Riepilogo** e quindi completare la **Creazione guidata applicazione**.  
 
 11. La nuova applicazione viene visualizzata nel nodo **Applicazioni** della console di Configuration Manager.  
 
@@ -140,68 +140,68 @@ Usare la procedura che segue per creare e distribuire un'applicazione per comput
  Usare la procedura che segue per creare un tipo di distribuzione per i computer Mac gestiti da Configuration Manager.  
 
 > [!NOTE]  
->  Se si è effettuata l'importazione automatica delle informazioni sull'applicazione nella Creazione guidata applicazione, un tipo di distribuzione per l'applicazione potrebbe essere già stato creato.  
+>  Se si è effettuata l'importazione automatica delle informazioni sull'applicazione nella **Creazione guidata applicazione**, potrebbe essere già stato creato un tipo di distribuzione per l'applicazione.  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
+1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
 
-3.  Selezionare un'applicazione e quindi nel gruppo **Applicazione** della scheda **Home** fare clic su **Crea tipo di distribuzione** per creare un nuovo tipo di distribuzione per questa applicazione.  
+3.  Selezionare un'applicazione. Quindi, nel gruppo **Applicazione** della scheda **Home** scegliere **Crea tipo di distribuzione** per creare un nuovo tipo di distribuzione per questa applicazione.  
 
     > [!NOTE]  
-    >  È anche possibile avviare la Creazione guidata tipo di distribuzione dalla Creazione guidata applicazione e dalla scheda **Tipi di distribuzione** della finestra di dialogo *Proprietà di***<nome applicazione\>**.  
+    >  È anche possibile avviare la **Creazione guidata tipo di distribuzione** dalla **Creazione guidata applicazione** e dalla scheda **Tipi di distribuzione** della finestra di dialogo *Proprietà\>* **<nome applicazione**.  
 
-4.  Nella pagina **Generale** della Creazione guidata tipo di distribuzione, nell'elenco a discesa **Tipo** , selezionare **Mac OS X**.  
+4.  Nella pagina **Generale** della **Creazione guidata tipo di distribuzione**, nell'elenco a discesa **Tipo**, selezionare **Mac OS X**.  
 
-5.  Nel campo **Percorso** specificare il percorso UNC nel formato \\\\<server\>\\<condivisione\>\\<nomefile\> nel file di installazione dell'applicazione (file **CMMAC**). In alternativa, fare clic su **Sfoglia** per individuare e specificare il percorso del file di installazione.  
+5.  Nel campo **Percorso** specificare il percorso UNC nel formato \\\\<server\>\\<condivisione\>\\<nomefile\> nel file di installazione dell'applicazione (file **CMMAC**). In alternativa, scegliere **Sfoglia** per individuare e specificare il percorso del file di installazione.  
 
     > [!NOTE]  
     >  È necessario accedere al percorso UNC che contiene l'applicazione.  
 
-6.  Fare clic su **Avanti**.  
+6.  Scegliere **Avanti**.  
 
-7.  Nella pagina **Importazione informazioni** della **Creazione guidata tipo di distribuzione**, esaminare le informazioni che sono state importate. Se necessario, fare clic su **Indietro** per tornare indietro e correggere eventuali errori. Fare clic su Avanti per continuare.  
+7.  Nella pagina **Importazione informazioni** della **Creazione guidata tipo di distribuzione**, esaminare le informazioni che sono state importate. Se necessario, scegliere **Indietro** per tornare indietro e correggere eventuali errori. Scegliere **Avanti** per continuare.  
 
 8.  Nella pagina **Informazioni generali** della **Creazione guidata tipo di distribuzione**, specificare informazioni sull'applicazione, come il nome dell'applicazione, commenti e lingue in cui è disponibile il tipo di distribuzione.  
 
     > [!NOTE]  
     >  Alcune delle informazioni sul tipo di distribuzione potrebbero essere già presenti in questa pagina se sono state ottenute in precedenza dai file di installazione dell'applicazione.  
 
-9. Fare clic su **Avanti**.  
+9. Scegliere **Avanti**.  
 
-10. Nella pagina **Requisiti** della Creazione guidata tipo di distribuzione, è possibile specificare le condizioni da soddisfare prima di poter installare il tipo di distribuzione sui computer Mac.  
+10. Nella pagina **Requisiti** della **Creazione guidata tipo di distribuzione** è possibile specificare le condizioni da soddisfare prima di poter installare il tipo di distribuzione nei computer Mac.  
 
-11. Fare clic su **Aggiungi** per aprire la finestra di dialogo **Creazione requisito** e aggiungere un nuovo requisito.  
+11. Scegliere **Aggiungi** per aprire la finestra di dialogo **Creazione requisito** e aggiungere un nuovo requisito.  
 
     > [!NOTE]  
-    >  È anche possibile aggiungere nuovi requisiti nella scheda **Requisiti** della finestra di dialogo *Proprietà di***<nome tipo distribuzione\>**.  
+    >  È anche possibile aggiungere nuovi requisiti nella scheda **Requisiti** della finestra di dialogo *Proprietà di\>*** <nome del tipo di distribuzione**.  
 
 12. Dall'elenco a discesa **Categoria** , selezionare che questo requisito riguarda un dispositivo.  
 
-13. Dall'elenco a discesa **Condizione** selezionare la condizione da utilizzare per valutare se il computer Mac soddisfa i requisiti di installazione. Il contenuto di questo elenco varia a seconda della categoria selezionata.  
+13. Dall'elenco a discesa **Condizione** selezionare la condizione da usare per valutare se il computer Mac soddisfa i requisiti di installazione. Il contenuto di questo elenco varia a seconda della categoria selezionata.  
 
-14. Dall'elenco a discesa **Operatore** scegliere l'operatore da utilizzare per confrontare la condizione selezionata con il valore specificato per valutare se l'utente o il dispositivo soddisfano i requisiti d'installazione. Gli operatori disponibili variano a seconda della condizione selezionata.  
+14. Dall'elenco a discesa **Operatore** scegliere l'operatore da usare per confrontare la condizione selezionata con il valore specificato per valutare se l'utente o il dispositivo soddisfa i requisiti d'installazione. Gli operatori disponibili variano a seconda della condizione selezionata.  
 
-15. Nel campo **Valore** specificare i valori da utilizzare con la condizione e l'operatore selezionati per valutare se l'utente o il dispositivo soddisfano i requisiti d'installazione.  I valori disponibili variano a seconda della condizione e dell'operatore selezionati.  
+15. Nel campo **Valore** specificare i valori da usare con la condizione e l'operatore selezionati per valutare se l'utente o il dispositivo soddisfa i requisiti d'installazione. I valori disponibili variano a seconda della condizione e dell'operatore selezionati.
 
-16. Fare clic su **OK** per salvare la regola requisito e chiudere la finestra di dialogo **Creazione requisito** .  
+16. Scegliere **OK** per salvare la regola requisito e chiudere la finestra di dialogo **Creazione requisito**.  
 
-17. Nella pagina **Requisiti** della **Creazione guidata tipo di distribuzione**fare clic su **Avanti**.  
+17. Nella pagina **Requisiti** della **Creazione guidata tipo di distribuzione** scegliere **Avanti**.  
 
-18. Nella pagina **Riepilogo** della **Creazione guidata tipo di distribuzione**esaminare le azioni che saranno eseguite nella procedura guidata.  Se necessario, fare clic su **Indietro** per tornare indietro e modificare le impostazioni del tipo di distribuzione. Fare clic su **Avanti** per creare il tipo di distribuzione.  
+18. Nella pagina **Riepilogo** della **Creazione guidata tipo di distribuzione**esaminare le azioni che saranno eseguite nella procedura guidata.  Se necessario, scegliere **Indietro** per tornare indietro e modificare le impostazioni del tipo di distribuzione. Scegliere **Avanti** per creare il tipo di distribuzione.  
 
-19. Al termine della pagina **Avanzamento** esaminare le azioni eseguite e fare clic su **Chiudi** per completare la procedura **Creazione guidata tipo di distribuzione**.  
+19. Al termine della pagina **Avanzamento** esaminare le azioni eseguite e scegliere **Chiudi** per completare la **Creazione guidata tipo di distribuzione**.  
 
 20. Se tale procedura guidata è stata avviata da **Creazione guidata applicazione**, verrà visualizzata di nuovo la pagina **Tipi di distribuzione**.  
 
 ###  <a name="deploy-the-mac-application"></a>Distribuire l'applicazione Mac  
- I passaggi per distribuire un'applicazione nei computer Mac sono gli stessi di quelli utilizzati per distribuire un'applicazioni nei computer Windows, tranne per le differenze riportate di seguito.  
+ I passaggi per distribuire un'applicazione nei computer Mac sono gli stessi di quelli per distribuire un'applicazione nei computer Windows, tranne per le differenze riportate di seguito:  
 
 -   La distribuzione di applicazioni in utenti non è supportata.  
 
 -   Le distribuzioni con scopo **Disponibile** non sono supportate.  
 
--   L'opzione **Pre-distribuisci il software nel dispositivo primario dell'utente** nella pagina **Impostazioni distribuzione** della Distribuzione guidata del software non è supportata.  
+-   L'opzione **Pre-distribuisci il software nel dispositivo primario dell'utente** nella pagina **Impostazioni distribuzione** della **Distribuzione guidata del software** non è supportata.  
 
--   Poiché il computer Mac non supportano Software Center, l'impostazione **Notifiche utente** nella pagina **Esperienza utente** della Distribuzione guidata del software viene ignorata.  
+-   Poiché i computer Mac non supportano Software Center, l'impostazione **Notifiche utente** nella pagina **Esperienza utente** della **Distribuzione guidata del software** viene ignorata.  
 
 -   L'opzione per inviare pacchetti di riattivazione quando si distribuisce software non è supportata per i computer Mac.  
 
@@ -211,12 +211,12 @@ Usare la procedura che segue per creare e distribuire un'applicazione per comput
  Per altre informazioni, vedere l'argomento relativo alla [distribuzione delle applicazioni](../../apps/deploy-use/deploy-applications.md).  
 
 ###  <a name="step-5-monitor-the-deployment-of-the-mac-application"></a>Passaggio 5: Monitorare la distribuzione dell'applicazione Mac  
- È possibile utilizzare lo stesso processo per monitorare le distribuzioni di applicazioni nei computer Mac delle distribuzioni di applicazioni nei computer Windows.  
+ Per monitorare le distribuzioni di applicazioni nei computer Mac, è possibile usare lo stesso processo usato per la distribuzione di applicazioni nei computer Windows.  
 
  Per altre informazioni, vedere l'argomento relativo al [monitoraggio delle applicazioni](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

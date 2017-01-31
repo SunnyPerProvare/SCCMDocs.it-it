@@ -2,7 +2,7 @@
 title: Monitorare il contenuto | Microsoft Docs
 description: Informazioni su come monitorare il contenuto distribuito usando la console di Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/4/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
-ms.openlocfilehash: 9a5d2c3a3c6bdca05b5b00fa4d746c437a56ef89
+ms.sourcegitcommit: 4d34a272a93100426cccd2308c5b3b0b0ae94a60
+ms.openlocfilehash: 60f30fd6477f1ee8755e50ceb9cc17d43ef8ea68
 
 ---
 # <a name="monitor-content-you-have-distributed-with-system-center-configuration-manager"></a>Monitorare il contenuto distribuito con System Center Configuration Manager
@@ -156,12 +156,21 @@ A partire dalla versione 1610, è possibile usare il dashboard **Origini dati de
 > [!TIP]  
 > Con la versione 1610, la peer cache e il dashboard Origini dati del client sono funzionalità di versioni non definitive. Per abilitarle, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
-Nella console passare a **Monitoraggio** > **Stato client ** > **Client Data Sources** (Origini dati del client). In questa posizione è possibile selezionare un periodo di tempo da applicare al dashboard. Nella visualizzazione è quindi possibile selezionare il gruppo di limiti o il pacchetto per il quale visualizzare le informazioni. Quando si esaminano le informazioni, passare il puntatore sulla superficie per vedere altri dettagli relativi ai diversi contenuti o origini dei criteri.  
+Nella console passare a **Monitoraggio** > **Stato client ** > **Client Data Sources** (Origini dati del client). In questa posizione è possibile selezionare un periodo di tempo da applicare al dashboard. Nella visualizzazione è quindi possibile selezionare il gruppo di limiti o il pacchetto per il quale visualizzare le informazioni. Quando si esaminano le informazioni, passare il puntatore sulla superficie per vedere altri dettagli relativi ai diversi contenuti o origini dei criteri.
+
+Dettagli:  
+- **Client Content Sources** (Origini contenuto client): visualizza l'origine da cui i client hanno ottenuto il contenuto.
+- **Distribution points** (Punti di distribuzione): visualizza il numero di punti di distribuzione che fanno parte del gruppo di limiti selezionato.
+- **Clients that used a distribution point** (Clienti che hanno usato un punto di distribuzione): questo valore indica quanti client, tra quelli presenti nel gruppo di limiti selezionato, hanno usato un punto di distribuzione per ottenere il contenuto.
+- **Peer Cache sources** (Origini peer cache): per il gruppo di limiti selezionato indica quanti origini di peer cache hanno segnalato la cronologia di download.
+- **Clients that used a peer** (Clienti che hanno usato un peer): questo valore indica quanti client, tra quelli presenti nel gruppo di limiti selezionato, hanno usato un'origine peer cache per ottenere il contenuto.
+
+
 
 È anche possibile usare un nuovo report, **Origini dati client - Riepilogo**, per visualizzare un riepilogo delle origini dati client per ogni gruppo limite.
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

@@ -1,8 +1,8 @@
 ---
-title: Installare siti | Microsoft Docs
-description: Esaminare un elenco di argomenti che consentono di installare per la prima volta System Center Configuration Manager o di aggiungere siti alla gerarchia.
+title: Risorse per l&quot;installazione di siti | Microsoft Docs
+description: Esaminare un elenco di argomenti che consentono di installare System Center Configuration Manager o di aggiungere siti alla gerarchia.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,41 +17,43 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 973daaa168aea64944563c69d13ef44a6e319809
+ms.sourcegitcommit: 9fa9a9b2f57106e36c45248feb400ec125adcad1
+ms.openlocfilehash: 75511c744d7d2bae960273c845ce68f06a82b697
 
 
 ---
-# <a name="installing-system-center-configuration-manager-sites"></a>Installare i siti di System Center Configuration Manager
+# <a name="resources-for-installing-system-center-configuration-manager-sites"></a>Risorse per l'installazione di siti di System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
+Gli argomenti seguenti forniscono le istruzioni per installare System Center Configuration Manager o aggiungere siti alla gerarchia di Configuration Manager esistente.
 
-Quando si è pronti a installare System Center Configuration Manager per la prima volta o ad aggiungere altri siti alla gerarchia, gli argomenti seguenti consentono di eseguire correttamente queste operazioni.
+- [Preparare l'installazione di siti](prepare-to-install-sites.md)
+
+  Questo argomento offre informazioni essenziali che consentono di installare un sito in una gerarchia nuova o esistente. Le informazioni illustrano anche i casi in cui scegliere file di origine non predefiniti, le limitazioni che si applicano a tutti i siti e le azioni facoltative che è possibile eseguire per semplificare le attività quando si installa più di un sito.
+
+- [Prerequisiti per l'installazione di un sito](prerequisites-for-installing-sites.md)
+
+  Informazioni sui diritti utente e le autorizzazioni che l'account deve avere per installare un sito e i prerequisiti correlati per ogni tipo di sito che è possibile installare.
+
+- [Installare siti tramite l'Installazione guidata](use-the-setup-wizard-to-install-sites.md)
+
+  Questo argomento illustra l'installazione guidata di siti e offre informazioni dettagliate sulle opzioni che potrebbero non essere chiare nell'interfaccia utente della procedura guidata.  
+
+- [Installare siti tramite la riga di comando e uno script](use-a-command-line-to-install-sites.md)
+
+  Informazioni su come ottenere uno script per l'installazione del sito e come usarlo per eseguire un'installazione automatica.
+
+- [Installare la console di Configuration Manager](install-consoles.md)
+
+  Questo argomento offre indicazioni su come installare la console di Configuration Manager in un computer in cui non si vogliono installare siti.
+
+- [Eseguire l'aggiornamento da un'installazione di valutazione a un'installazione completa](upgrade-an-evaluation-install-to-a-full-install.md)
+
+  Leggere questo argomento quando si è pronti ad aggiornare il sito di valutazione in un sito di Configuration Manager con licenza completa.
 
 
-[Preparare l'installazione di siti](../../../../core/servers/deploy/install/prepare-to-install-sites.md)    
-Informazioni essenziali che consentono di installare correttamente un sito in una gerarchia nuova o esistente. Sono anche spiegati i casi in cui è necessario usare file di origine diversi, le limitazioni che si applicano a tutti i siti e le azioni facoltative che è possibile eseguire per semplificare le attività quando è necessario installare più siti.
 
-
-[Prerequisiti per l'installazione di un sito](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md)   
-Informazioni sulle autorizzazioni che l'account deve avere per installare un sito e i prerequisiti correlati per ogni tipo di sito che è possibile installare.
-
-
-[Installare siti tramite l'installazione guidata](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md)    
-Questo argomento illustra l'installazione guidata di siti e offre informazioni dettagliate sulle opzioni che potrebbero non essere chiare nell'interfaccia utente della procedura guidata.  
-
-[Installare i siti tramite la riga di comando e uno script](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md)   
-Informazioni su come ottenere uno script per l'installazione del sito e come usarlo per eseguire un'installazione automatica.
-
-[Installare le console di Configuration Manager](../../../../core/servers/deploy/install/install-consoles.md)     
-Questo argomento offre indicazioni su come installare una console di Configuration Manager in un computer in cui non si vogliono installare siti.
-
-[Eseguire l'aggiornamento da un'installazione di valutazione a un'installazione completa](../../../../core/servers/deploy/install/upgrade-an-evaluation-install-to-a-full-install.md)   
-Leggere questo argomento quando si è pronti ad aggiornare il sito di valutazione in un sito di Configuration Manager con licenza completa.
-
-
-
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

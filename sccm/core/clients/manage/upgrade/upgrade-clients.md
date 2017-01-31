@@ -2,7 +2,7 @@
 title: Aggiornare i client | Microsoft Docs
 description: Informazioni su come aggiornare i client in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 01/01/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
+ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
+ms.openlocfilehash: f369bccb1da6d428fb321455272190e1a0439ec3
 
 
 ---
@@ -25,10 +25,10 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile usare diversi metodi per aggiornare il software client di System Center Configuration Manager in computer Windows, server UNIX e Linux e computer Mac all'interno dell'azienda. Le sezioni seguenti descrivono i vantaggi e gli svantaggi di ogni metodo di aggiornamento del client per aiutare l'utente a stabilire quale sia quello più appropriato per la propria organizzazione.  
+È possibile usare diversi metodi per aggiornare il software client di System Center Configuration Manager in computer Windows, server UNIX e Linux e computer Mac. Di seguito sono elencati i principali vantaggi e svantaggi di ogni metodo.  
 
 > [!TIP]  
->  Se si esegue l'aggiornamento dell'infrastruttura di server da una versione precedente di Configuration Manager \(ad esempio Configuration Manager 2007 o System Center 2012 Configuration Manager\), è consigliabile completare gli aggiornamenti dei server, tra cui l'installazione di tutti gli aggiornamenti del ramo corrente, prima dell'aggiornamento dei client di Configuration Manager.   L'aggiornamento più recente del ramo corrente contiene la versione più recente del client, quindi è consigliabile eseguire gli aggiornamenti dei client dopo aver installato tutti gli aggiornamenti di Configuration Manager che si vogliono usare.  
+>  Se si esegue l'aggiornamento dell'infrastruttura di server da una versione precedente di Configuration Manager \(ad esempio Configuration Manager 2007 o System Center 2012 Configuration Manager\), è consigliabile completare gli aggiornamenti dei server, tra cui l'installazione di tutti gli aggiornamenti del ramo corrente, prima dell'aggiornamento dei client di Configuration Manager. In questo modo si disporrà anche della versione più recente del software client.  
 
 ## <a name="group-policy-installation"></a>Installazione tramite Criteri di gruppo  
  **Piattaforma client supportata:** Windows  
@@ -45,11 +45,10 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
 
  **Svantaggi**  
 
--   Può causare traffico di rete elevato se vengono aggiornati molti client.  
+-   Può causare traffico di rete elevato se viene aggiornato un numero elevato di client.  
 
--   Se lo schema di Active Directory non è esteso per Configuration Manager, è necessario usare le impostazioni di Criteri di gruppo per aggiungere le proprietà di installazione del client ai computer presenti nel sito.  
+-   Se lo schema di Active Directory non viene esteso per Configuration Manager, è necessario usare le [impostazioni di Criteri di gruppo](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientGP) per aggiungere le proprietà di installazione del client ai computer presenti nel sito.  
 
- Per altre informazioni, vedere [Come installare i client di Configuration Manager usando i Criteri di gruppo](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientGP).  
 
 ## <a name="logon-script-installation"></a>Installazione tramite script di accesso  
  **Piattaforma client supportata:** Windows  
@@ -64,9 +63,9 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
 
  **Svantaggi**  
 
--   Può causare traffico di rete elevato se vengono aggiornati molti client in un periodo di tempo breve.  
+-   Può causare traffico di rete elevato se viene aggiornato un numero elevato di client in poco tempo.  
 
--   L'aggiornamento in tutti i computer client può richiedere molto tempo se gli utenti non accedono spesso alla rete.  
+-   L'aggiornamento di tutti i computer client può richiedere molto tempo se gli utenti non accedono spesso alla rete.  
 
  Per altre informazioni, vedere [Come installare i client di Configuration Manager usando script di accesso](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientLogonScript).  
 
@@ -105,7 +104,7 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
 
  **Svantaggi**  
 
--   Può causare elevato traffico di rete quando si esegue la distribuzione di client in raccolte di grandi dimensioni.  
+-   Può causare elevato traffico di rete quando si esegue la distribuzione del client in raccolte di grandi dimensioni.  
 
 -   Può essere utilizzato solo per aggiornare il software client nei computer che sono stati individuati e assegnati al sito.  
 
@@ -122,7 +121,7 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
 
 -   Può essere utilizzato per mantenere automaticamente i client presenti nel sito aggiornati alla versione più recente.  
 
--   Richiede un livello di amministrazione minimo da parte dell'utente amministratore.  
+-   Richiede un livello di amministrazione minimo.  
 
  **Svantaggi**  
 
@@ -141,7 +140,7 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
 
  **Vantaggi**  
 
--   Può essere usato per testare nuove versioni client in una raccolta di preproduzione più piccola.  
+-   Può essere usato per testare nuove versioni client in una raccolta di pre-produzione più piccola.  
 
 -   Al termine dei test, i client in pre-produzione vengono alzati di livello alla produzione e aggiornati automaticamente nel sito di Configuration Manager.  
 
@@ -153,6 +152,6 @@ ms.openlocfilehash: c9794b9770e6fa5665af547d6b36559f85ade691
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

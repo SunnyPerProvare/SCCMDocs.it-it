@@ -2,7 +2,7 @@
 title: Usare dati di diagnostica | Microsoft Docs
 description: Informazioni su come Microsoft usa i dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: aa0ee7544e348025a80d32b4a816de6dbec31d7f
+ms.sourcegitcommit: 24a233516058e645df2a43623855665b97b041b0
+ms.openlocfilehash: 9864f6ba7b9a2211c99b1a5d9ebd582e01ccfeb6
 
 
 ---
@@ -25,7 +25,7 @@ ms.openlocfilehash: aa0ee7544e348025a80d32b4a816de6dbec31d7f
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-I dati di diagnostica e di utilizzo raccolti per System Center Configuration Manager offrono un feedback quasi immediato a Microsoft sul funzionamento (o sul mancato funzionamento) del prodotto e vengono usati per adeguare gli aggiornamenti futuri. Microsoft può inoltre vedere dati di configurazione utili per progettare e testare le configurazioni in produzione. Ad esempio:  
+I dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager offrono un feedback quasi immediato a Microsoft sul funzionamento del prodotto e vengono usati per adeguare gli aggiornamenti futuri. Microsoft può inoltre vedere dati di configurazione utili per progettare e testare le configurazioni in produzione. Ad esempio:  
 
 -   Versioni dei server Windows usate dai server del sito  
 
@@ -43,12 +43,12 @@ Altrettanto importante è comprendere in quali situazioni questi dati non vengon
 
 -   Pubblicità basata sui dati disponibili, ad esempio l'utilizzo delle funzionalità o la georilevazione (fuso orario)  
 
-##  <a name="a-namebkmkimprovea-examples-of-how-diagnostics-and-usage-data-is-improving-the-product"></a><a name="bkmk_improve"></a> Esempi di miglioramenti al prodotto con i dati di diagnostica e di utilizzo  
+##  <a name="a-namebkmkimprovea-examples-of-how-diagnostics-and-usage-data-improves-the-product"></a><a name="bkmk_improve"></a> Esempi di miglioramenti al prodotto con i dati di diagnostica e di utilizzo  
 Microsoft usa i dati disponibili per migliorare il prodotto. Di seguito sono indicati alcuni esempi:  
 
 -   **Revisione del supporto per i sistemi operativi del server:**  
 
-     Il supporto iniziale offerto da Current Branch di System Center Configuration Manager includeva un limite per la sequenza temporale del supporto per Windows Server 2008 R2. Dopo aver esaminato i dati di utilizzo dei clienti che hanno eseguito l'aggiornamento a Current Branch di Configuration Manager, è emersa la necessità di modificare ed estendere questa sequenza temporale per supportare l'elevato numero di clienti che ancora usano questo sistema operativo server per ospitare i server del sito e i ruoli del sistema del sito.  
+     Il supporto iniziale offerto da System Center Configuration Manager Current Branch limitava la tempistica di supporto per Windows Server 2008 R2. Dopo aver esaminato i dati di utilizzo dei clienti che hanno eseguito l'aggiornamento a Configuration Manager Current Branch, è emersa la necessità di modificare ed estendere i tempi previsti per supportare i clienti che ancora usano questo sistema operativo server per ospitare i server del sito e i ruoli del sistema del sito.  
 
 -   **Controlli dei prerequisiti migliorati:**  
 
@@ -56,6 +56,6 @@ Microsoft usa i dati disponibili per migliorare il prodotto. Di seguito sono ind
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 
