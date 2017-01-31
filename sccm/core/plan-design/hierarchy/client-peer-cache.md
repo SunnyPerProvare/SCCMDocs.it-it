@@ -2,7 +2,7 @@
 title: Peer cache del client | System Center Configuration Manager
 description: Usare la peer cache per i percorsi di origine del contenuto del client quando si distribuiscono contenuti con System Center Configuration Manager.
 ms.custom: na
-ms.date: 1/3/2017
+ms.date: 1/9/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: e2a72fd9fb9ae5e64b7eb92e1d2106162fc7ea5d
-ms.openlocfilehash: 599ba03a1934b9feb030f27c827625c2c9471d8e
+ms.sourcegitcommit: f3e8cb3a7a4c1de9b8e9866ed192a8a0a7aec106
+ms.openlocfilehash: 86129a7fd5bfac676b5f03336cf97d07747b48d1
 
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
@@ -48,6 +48,8 @@ Per capire come viene usata la peer cache, è possibile visualizzare il dashboar
 
 
 ## <a name="requirements-and-considerations-for-peer-cache"></a>Requisiti e considerazioni per la peer cache
+- È possibile usare la peer cache su qualsiasi sistema operativo Windows supportato come client di Configuration Manager. I sistemi operativi non Windows non sono supportati per la peer cache.
+
 - È necessario configurare il sito con un **Account di accesso alla rete** con **Controllo completo** della cartella della cache in ogni client. Per impostazione predefinita, si tratta di ***%windir%\ccmcache***.
 
 - I client possono trasferire contenuti solo dai client della peer cache che si trovano nel relativo gruppo di limiti corrente.
@@ -67,6 +69,6 @@ In ogni computer abilitato per la peer cache, se Windows Firewall è in uso verr
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO2-->
 
 
