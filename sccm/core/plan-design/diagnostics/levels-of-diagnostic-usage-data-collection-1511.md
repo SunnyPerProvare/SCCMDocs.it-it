@@ -284,6 +284,6 @@ A partire da System Center Configuration Manager versione 1511, questo livello i
 
 
 
-<!--HONumber=Dec16_HO5-->
+<!--HONumber=Feb17_HO1-->
 
 
