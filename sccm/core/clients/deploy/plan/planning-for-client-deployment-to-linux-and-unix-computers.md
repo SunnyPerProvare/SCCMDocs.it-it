@@ -254,7 +254,7 @@ ms.openlocfilehash: dad941d5984fc7e0b43954b14c3966bb2632ad05
 ###  <a name="a-namebkmkservicelocationforlnua-service-location-by-the-client-for-linux-and-unix"></a><a name="BKMK_ServiceLocationforLnU"></a> Posizione del servizio dal client per Linux e UNIX  
  L'attività di individuazione di un server di sistema del sito che offre servizi ai client viene considerato come percorso del servizio. A differenza di un client basato su Windows, il client per Linux e UNIX non utilizza Active Directory per la posizione del servizio. Il client di Configuration Manager per Linux e UNIX non supporta una proprietà client che specifica il suffisso del dominio di un punto di gestione. Al contrario, il client conosciuti da server del sistema del sito aggiuntivi che forniscono servizi ai client da un punto di gestione noti che viene assegnato quando si installa il software client.  
 
- Per altre informazioni sulla posizione del servizio, vedere la sezione [Posizione del servizio e modo in cui i client determinano il relativo punto di gestione assegnato](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#BKMK_Plan_Service_Location) in [](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager.  
+ Per altre informazioni sulla posizione del servizio, vedere la sezione [Posizione del servizio e modo in cui i client determinano il relativo punto di gestione assegnato](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#BKMK_Plan_Service_Location) in [Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 
 ##  <a name="a-namebkmksecurityforlnua-planning-for-security-and-certificates-for-linux-and-unix-servers"></a><a name="BKMK_SecurityforLnU"></a> Pianificazione di sicurezza e certificati per server Linux e UNIX  
  Per comunicazioni autenticate e protette con i siti di Configuration Manager, il client di Configuration Manager per Linux e UNIX usa lo stesso modello per la comunicazione del client di Configuration Manager per Windows.  
@@ -270,16 +270,16 @@ ms.openlocfilehash: dad941d5984fc7e0b43954b14c3966bb2632ad05
  Per informazioni sull'uso dei certificati in Configuration Manager, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
 
 ###  <a name="a-namebkmkaboutcertsforlnua-about-certificates-for-use-by-linux-and-unix-servers"></a><a name="BKMK_AboutCertsforLnU"></a> Informazioni sui certificati per l'uso da server Linux e UNIX  
- Il client di Configuration Manager per Linux e UNIX usa un certificato autofirmato o un certificato x. 509 PKI come i client basati su Windows. Non ci sono modifiche ai requisiti di infrastruttura a chiave pubblica (PKI) per i sistemi del sito di Configuration Manager quando si gestiscono client Linux e UNIX.  
+ Il client di Configuration Manager per Linux e UNIX usa un certificato autofirmato o un certificato x.&509; PKI come i client basati su Windows. Non ci sono modifiche ai requisiti di infrastruttura a chiave pubblica (PKI) per i sistemi del sito di Configuration Manager quando si gestiscono client Linux e UNIX.  
 
- I certificati usati per i client Linux e UNIX che comunicano con i sistemi del sito di Configuration Manager devono essere in formato Public Key Certificate Standard (PKCS #12) e la password deve essere nota, in modo che sia possibile specificarla al client quando si specifica il certificato PKI.  
+ I certificati usati per i client Linux e UNIX che comunicano con i sistemi del sito di Configuration Manager devono essere in formato Public Key Certificate Standard (PKCS&#12;) e la password deve essere nota, in modo che sia possibile specificarla al client quando si specifica il certificato PKI.  
 
  Il client di Configuration Manager per Linux e UNIX supporta un solo certificato PKI. Pertanto, i criteri di selezione del certificato da configurare per un sito di Configuration Manager non sono validi.  
 
 ###  <a name="a-namebkmkconfigcertsforlnua-configuring-certificates-for-linux-and-unix-servers"></a><a name="BKMK_ConfigCertsforLnU"></a> Configurazione dei certificati per server Linux e UNIX  
  Per configurare un client di Configuration Manager per i server Linux e UNIX per usare le comunicazioni HTTPS, è necessario configurare il client per usare un certificato PKI quando si installa il client. Impossibile effettuare il provisioning di un certificato prima dell'installazione del software client.  
 
- Quando si installa un client che utilizza un certificato PKI, si utilizza il parametro della riga di comando **- /usepkicert** per specificare il percorso e nome di un file PKCS #12 che contiene il certificato PKI. È inoltre necessario utilizzare il parametro della riga di comando **- certpw** per specificare la password per il certificato.  
+ Quando si installa un client che utilizza un certificato PKI, si utilizza il parametro della riga di comando **- /usepkicert** per specificare il percorso e nome di un file PKCS&#12; che contiene il certificato PKI. È inoltre necessario utilizzare il parametro della riga di comando **- certpw** per specificare la password per il certificato.  
 
  Se non si specifica **- /usepkicert**, il client genera un certificato autofirmato e tenta di comunicare al server del sistema del sito solo tramite HTTP.  
 
