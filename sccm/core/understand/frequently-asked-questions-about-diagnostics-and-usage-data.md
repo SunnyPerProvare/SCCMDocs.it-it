@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 856ee34621816155d4ad95ed7240cf585e322486
+ms.sourcegitcommit: 4a8d98addcd463eb82d8b7100b44254a10d21992
+ms.openlocfilehash: 7d252fbbdc23ff676b87643408caf977f5636b67
 
 
 ---
@@ -28,7 +28,9 @@ ms.openlocfilehash: 856ee34621816155d4ad95ed7240cf585e322486
 Di seguito sono riportate le domande poste più di frequente sui dati di diagnostica e di utilizzo per System Center Configuration Manager:  
 
 ###  <a name="a-namebkmkoffa-how-do-i-turn-off-telemetry"></a><a name="bkmk_off"></a> Come si può disattivare la telemetria?  
- Il ramo corrente di Configuration Manager deve essere aggiornato a intervalli regolari per supportare le nuove versioni di Windows 10 e Microsoft Intune. Microsoft richiede come minimo il livello di base per i dati di diagnostica e utilizzo per mantenere aggiornato il prodotto, migliorare l'esperienza di aggiornamento e migliorare qualità e sicurezza del prodotto.  
+La disattivazione della telemetria non è supportata. È comunque possibile scegliere il livello di dati di telemetria raccolti e usare un punto di connessione del servizio in modalità offline per gestire quando vengono inviati i dati di telemetria.
+
+Il ramo corrente di Configuration Manager deve essere aggiornato a intervalli regolari per supportare le nuove versioni di Windows 10 e Microsoft Intune. Microsoft richiede come minimo il livello di base per i dati di diagnostica e utilizzo per mantenere aggiornato il prodotto, migliorare l'esperienza di aggiornamento e migliorare qualità e sicurezza del prodotto.
 
 ###  <a name="a-namebkmkretentiona-what-is-the-data-retention-period"></a><a name="bkmk_retention"></a> Qual è il periodo di conservazione dei dati?  
  I dati di diagnostica e utilizzo vengono conservati per un anno.  
@@ -43,7 +45,8 @@ Di seguito sono riportate le domande poste più di frequente sui dati di diagnos
  Come illustrato nella descrizione dei livelli di raccolta dati di diagnostica e di utilizzo per System Center Configuration, i dettagli includono informazioni sul fuso orario da ciascun sito. Questo può fornire informazioni approfondite riguardo la georilevazione generale e la dispersione globale dei siti in una gerarchia. Tuttavia, non viene raccolto alcun dettaglio relativo alla rete, ad esempio indirizzi IP o informazioni geografiche più dettagliate.
  - [Dati diagnostici per 1511](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1511)
  - [Dati di diagnostica per la versione 1602](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1602)
- - [Dati di diagnostica per la versione 1606](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606)
+ - [Dati di diagnostica per 1606](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606)
+ - [Dati di diagnostica per 1610](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1610)
 
 
 ###  <a name="a-namebkmktablesa-can-you-see-data-in-custom-tables"></a><a name="bkmk_tables"></a> È possibile visualizzare i dati in tabelle personalizzate?  
@@ -57,6 +60,6 @@ Di seguito sono riportate le domande poste più di frequente sui dati di diagnos
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

@@ -2,7 +2,7 @@
 title: "Supporto per le funzionalità di Windows | Microsoft Docs"
 description: "Informazioni su quali funzionalità di Windows e di rete sono supportate in System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 29e4f8a70b56b772a54ee858a392533780ccbaf9
+ms.sourcegitcommit: 086efdd180ba3de12f84cabfa6c2abca1fe57537
+ms.openlocfilehash: 3315098f271a5b365914772943094c33f63f25c4
 
 
 ---
@@ -30,11 +30,13 @@ In questo argomento viene illustrato il supporto di System Center Configuration 
 
 
 ##  <a name="a-namebkmkbranchcachea-branchcache"></a><a name="bkmk_branchcache"></a> BranchCache  
-Windows BranchCache è stato integrato in Configuration Manager. È possibile configurare le impostazioni di BranchCache su un tipo di distribuzione per le applicazioni, sulla distribuzione per un pacchetto e per le sequenze attività.  
+Windows BranchCache è integrato in Configuration Manager. È possibile configurare le impostazioni di BranchCache su un tipo di distribuzione per le applicazioni, sulla distribuzione per un pacchetto e per le sequenze attività.  
 
-Quando vengono soddisfatti tutti i requisiti per BranchCache, questa funzionalità abilita i client in remoto per ottenere contenuto da client locali che hanno una cache corrente del contenuto.  
+Quando vengono soddisfatti tutti i requisiti per BranchCache, questa funzionalità abilita i client in remoto per ottenere contenuti dai client locali che hanno una cache corrente del contenuto.  
 
-Ad esempio, quando il primo computer client abilitato per BranchCache richiede contenuto da un punto di distribuzione configurato come server BranchCache, il computer client scarica il contenuto e lo memorizza nella cache. Tale contenuto è quindi reso disponibile ai client presenti sulla stessa subnet che richiedono questo stesso contenuto e tali client memorizzano anche il contenuto nella cache. In tal modo, client successivi sulla stessa subnet non devono scaricare contenuto dal punto di distribuzione e il contenuto viene distribuito tra più client per trasferimenti futuri.  
+Ad esempio, quando il primo computer client abilitato per BranchCache richiede contenuto da un punto di distribuzione configurato come server BranchCache, il computer client scarica il contenuto e lo memorizza nella cache. Il contenuto viene quindi reso disponibile ai client presenti nella stessa subnet da cui è stato richiesto il contenuto
+
+e viene memorizzato nella cache dei client. In tal modo, client successivi sulla stessa subnet non devono scaricare contenuto dal punto di distribuzione e il contenuto viene distribuito tra più client per trasferimenti futuri.  
 
 **Per supportare BranchCache con Configuration Manager:**  
 
@@ -46,11 +48,11 @@ Ad esempio, quando il primo computer client abilitato per BranchCache richiede c
 
 **Per consentire ai client di usare BranchCache:**  
 
--   I client che possono supportare BranchCache devono essere configurati per la modalità distribuita di BranchCache  
+-   I client che possono supportare BranchCache devono essere configurati per la modalità distribuita di BranchCache.  
 
--   L'impostazione del sistema operativo per le impostazioni client BITS deve essere abilitata per supportare BranchCache  
+-   L'impostazione del sistema operativo per le impostazioni client BITS deve essere abilitata per supportare BranchCache.  
 
-**Con Windows BranchCache sono supportati i seguenti sistemi operativi client:**  
+**Configuration Manager supporta i seguenti sistemi operativi client con Windows BranchCache:**  
 
 |Sistema operativo|Dettagli sul supporto|  
 |----------------------|---------------------|  
@@ -71,7 +73,7 @@ Configuration Manager offre il supporto per i client in gruppi di lavoro.
 -   Configuration Manager supporta lo spostamento di un client da un gruppo di lavoro a un dominio o da un dominio a un gruppo di lavoro. Per altre informazioni, vedere la sezione [How to Install Configuration Manager Clients on Workgroup Computers](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientWorkgroup) (Come installare i client di Configuration Manager in computer di gruppi di lavoro) nell'argomento [How to deploy clients to Windows computers in System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-windows-computers.md) (Come distribuire client a computer Windows in System Center Configuration Manager).  
 
 > [!NOTE]  
->  Nonostante i clienti nei gruppi di lavoro siano supportati, tutti i sistemi del sito devono essere membri di un dominio Active Directory supportato.  
+>  Nonostante siano supportati i client nei gruppi di lavoro, tutti i sistemi del sito devono essere membri di un dominio Active Directory supportato.  
 
 
 ##  <a name="a-namebkmmkdatadedupa-data-deduplication"></a><a name="bkmmk_datadedup"></a> Deduplicazione dati  
@@ -89,7 +91,7 @@ Per altre informazioni, vedere [Configuration Manager Distribution Points and Wi
 ##  <a name="a-namebkmkdaa-directaccess"></a><a name="bkmk_DA"></a> DirectAccess  
 Configuration Manager supporta la funzionalità DirectAccess in Windows Server 2008 R2 per la comunicazione tra client e server del sistema del sito.  
 
--   Quando vengono soddisfatti tutti i requisiti per DirectAccess tramite questa funzionalità, i client di Configuration Manager su Internet possono comunicare con il relativo sito assegnato come se fossero nella Intranet.  
+-   Quando vengono soddisfatti tutti i requisiti per DirectAccess, i client di Configuration Manager su Internet possono comunicare con il relativo sito assegnato come se fossero nella intranet.  
 
 -   Per le azioni avviate dal server, ad esempio il controllo remoto e l’installazione push client, il computer di origine (ad esempio il server del sito) deve eseguire IPv6 e questo protocollo deve essere supportato in tutti i dispositivi di rete.  
 
@@ -120,7 +122,9 @@ Configuration Manager non supporta le operazioni seguenti su DirectAccess:
  Network Address Translation (NAT) non è supportato in Configuration Manager, a meno che il sito supporti i client presenti in Internet e il client rilevi che è connesso a Internet. Per altre informazioni sulla gestione client basata su Internet, vedere [Plan for managing Internet-based clients in System Center Configuration Manager](../../../core/clients/deploy/plan/plan-for-managing-internet-based-clients.md) (Pianificare la gestione di client basata su Internet in System Center Configuration Manager).  
 
 ##  <a name="a-namebkmkstoragea-specialized-storage-technology"></a><a name="bkmk_storage"></a> Tecnologia di archiviazione specializzata  
- Configuration Manager funziona con qualsiasi hardware certificato nell'Hardware Compatibility List di Windows per la versione del sistema operativo su cui è installato il componente di Configuration Manager. I ruoli server del sito richiedono file system NTFS in modo che sia possibile impostare le autorizzazioni directory e file. Poiché Configuration Manager presuppone di avere la proprietà completa di un'unità logica, i sistemi del sito eseguiti in computer separati non possono condividere una partizione logica in una tecnologia di archiviazione. Tuttavia, ogni computer può usare una partizione logica separata nella stessa partizione fisica di un dispositivo di archiviazione condivisa.  
+ Configuration Manager funziona con qualsiasi hardware certificato nell'Hardware Compatibility List di Windows per la versione del sistema operativo su cui è installato il componente di Configuration Manager.
+
+I ruoli server del sito richiedono file system NTFS in modo che sia possibile impostare le autorizzazioni directory e file. Poiché Configuration Manager presuppone di avere la proprietà completa di un'unità logica, i sistemi del sito eseguiti in computer separati non possono condividere una partizione logica in una tecnologia di archiviazione. Tuttavia, ogni computer può usare una partizione logica separata nella stessa partizione fisica di un dispositivo di archiviazione condivisa.  
 
  **Considerazioni sul supporto:**  
 
@@ -134,6 +138,6 @@ Configuration Manager non supporta le operazioni seguenti su DirectAccess:
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

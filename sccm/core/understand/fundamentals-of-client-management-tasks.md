@@ -1,8 +1,8 @@
 ---
 title: Concetti di base della gestione dei client | Microsoft Docs
-description: "Informazioni sulle attività che è possibile eseguire per gestire i client di System Center Configuration Manager."
+description: "Informazioni sulle attività da eseguire per gestire i client di System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 9648fc831e21f8a5ee6e12cfe7754933ba9f6239
+ms.sourcegitcommit: 86b90b8e591e1ae4f58cb361a5e544db6b09cce1
+ms.openlocfilehash: 0fee4f4ba462e59859ac93c4218b67cb26bdd6f6
 
 
 ---
@@ -25,16 +25,16 @@ ms.openlocfilehash: 9648fc831e21f8a5ee6e12cfe7754933ba9f6239
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Dopo aver installato i client di System Center Configuration Manager è possibile eseguire diverse attività per la gestione dei client.  Alcune vengono avviate dalla console di Configuration Manager mentre altre possono essere avviate o visualizzate in un client dall'app Configuration Manager dei client nel Pannello di controllo di Windows.  
+Dopo aver installato i client di System Center Configuration Manager è possibile eseguire diverse attività per la gestione dei client.  Alcune delle attività vengono eseguite dalla console di Configuration Manager, altre dall'applicazione client di Configuration Manager. L'applicazione client di Configuration Manager viene installata con il software client di Configuration Manager.
 
-## <a name="the-console"></a>La console  
- Dalla console di Configuration Manager è possibile eseguire diverse attività di gestione dei client, incluse le seguenti:  
+## <a name="configuration-manager-console-tasks"></a>Attività dalla console di Configuration Manager
+ Nella console di Configuration Manager è possibile eseguire diverse attività di gestione dei client:  
 
--   Distribuzione di applicazioni, aggiornamenti software, script di manutenzione e sistemi operativi. È possibile configurare questi elementi per l'installazione in una data e ora specifica oppure renderli disponibili per l'installazione da parte dell'utente in base alla necessità. Si possono anche configurare le applicazioni da disinstallare.  
+-   Distribuzione di applicazioni, aggiornamenti software, script di manutenzione e sistemi operativi. Configurare l'installazione in una data e ora specifica oppure rendere disponibile il software per l'installazione da parte dell'utente in base alla necessità o configurare le applicazioni da disinstallare.  
 
 -   Agevolare la protezione dei computer da malware e minacce alla protezione e notificare eventuali problemi rilevati.  
 
--   Definire le impostazioni di configurazione del client che si desidera monitorare e risolvere eventuali mancate conformità.  
+-   Definire le impostazioni di configurazione del client che si vuole monitorare e risolvere eventuali mancate conformità.  
 
 -   Raccogliere informazioni di inventario hardware e software, incluse le informazioni sul monitoraggio e la riconciliazione delle licenze da Microsoft.  
 
@@ -42,23 +42,23 @@ Dopo aver installato i client di System Center Configuration Manager è possibil
 
 -   Implementare impostazioni di risparmio energia per gestire e monitorare il consumo energetico dei computer.  
 
-Per monitorare queste operazioni quasi in tempo reale, usare la console di Configuration Manager per visualizzare avvisi e informazioni sullo stato. Per acquisire dati e tendenze cronologiche, è possibile usare le capacità di reporting integrate di SQL Reporting Services.  I client inviano i dettagli al sito come stato del client.  Le informazioni sullo stato del client offrono dati sull'integrità e sulle attività del client e possono essere visualizzate nella console o usando i report predefiniti per Configuration Manager. Questi dati consentono di identificare i computer che non rispondono e, in alcuni casi, i problemi possono essere risolti automaticamente.  
+La console di Configuration Manager consente di monitorare le attività precedenti in tempo quasi reale. Le informazioni di notifica e di stato per ogni attività sono disponibili nella console di Configuration Manager. Per acquisire dati e tendenze cronologiche, usare le funzionalità per la creazione di report integrate di SQL Reporting Services. I client inviano i dettagli al sito come stato del client.  Le informazioni sullo stato del client offrono dati sull'integrità e sulle attività del client e possono essere visualizzate nella console o usando i report predefiniti per Configuration Manager. Questi dati consentono di identificare i computer che non rispondono e, in alcuni casi, i problemi vengono risolti automaticamente.  
 
  Per altre informazioni sulle attività di gestione per i client, vedere  [How to manage clients in System Center Configuration Manager](../../core/clients/manage/manage-clients.md) (Come gestire i client in System Center Configuration Manager) e [Come gestire i client per i server Linux e UNIX in System Center Configuration Manager](../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md). Per informazioni sull'uso dei report, vedere   
             [Introduzione ai report in System Center Configuration Manager](../../core/servers/manage/introduction-to-reporting.md).  
 
-## <a name="the-windows-control-panel-app"></a>App Pannello di controllo di Windows  
- Quando si installa il software client di Configuration Manager, nel Pannello di controllo viene installata l'applicazione client di **Configuration Manager**. A differenza del Software Center, questa applicazione è progettata per l'help desk e non per gli utenti finali. Per alcune opzioni di configurazione sono necessarie autorizzazioni amministrative locali e la maggior parte delle opzioni necessita di competenze tecniche relative al funzionamento di Configuration Manager. È possibile usare questa applicazione per eseguire le attività seguenti in un client:  
+## <a name="configuration-manager-client-application"></a>Applicazione client di Configuration Manager  
+ Quando si installa il software client di Configuration Manager, viene installata anche l'applicazione client di Configuration Manager. A differenza di Software Center, l'applicazione client di Configuration Manager è progettata per l'help desk piuttosto che per gli utenti finali. Per alcune opzioni di configurazione sono necessarie autorizzazioni amministrative locali e la maggior parte delle opzioni necessita di competenze tecniche relative al funzionamento dell'applicazione client di Configuration Manager. È possibile usare questa applicazione per eseguire le attività seguenti in un client:  
 
--   Visualizzare le proprietà relative al client, ad esempio numero di build, sito assegnato, punto di gestione con cui comunica e utilizzo di un certificato PKI o un certificato autofirmato da parte del client.  
+-   Visualizzare le proprietà relative al client, ad esempio numero di build, sito assegnato, punto di gestione con cui comunica e uso di un certificato dell'infrastruttura a chiave pubblica (PKI) o un certificato autofirmato da parte del client.  
 
--   Verificare che il client abbia scaricato i criteri client dopo la prima installazione del client e che le impostazioni client siano abilitate o disabilitate come previsto, in base delle impostazioni client configurate nella console di Configuration Manager.  
+-   Verificare che il client abbia scaricato correttamente un criterio client dopo la prima installazione del client. Assicurarsi inoltre che le impostazioni del client vengono abilitate o disabilitate come previsto, in base alle impostazioni client configurate nella console di Configuration Manager.  
 
--   Avviare azioni del client, ad esempio il download dei criteri client, nel caso in cui sia stata apportata una modifica recente ala configurazione nella console di Configuration Manager e non si voglia attendere fino al successivo aggiornamento pianificato.  
+-   Avviare azioni del client. Ad esempio il download dei criteri client, nel caso in cui sia stata apportata una modifica recente alla configurazione nella console di Configuration Manager e non si voglia attendere fino al successivo aggiornamento pianificato.  
 
--   Assegnare manualmente un client a un sito di Configuration Manager oppure provare a individuare un sito e specificare il suffisso DNS per i punti di gestione pubblicati su DNS.  
+-   Assegnare un client a un sito di Configuration Manager o tentare di trovare un sito manualmente. Specificare quindi il suffisso DNS (Domain Name System) per i punti di gestione pubblicati in DNS.  
 
--   Configurare la cache del client che memorizza temporaneamente i file ed eliminare i file nella cache se è necessario più spazio su disco per installare il software.  
+-   Configurare la cache del client per la memorizzazione temporanea dei file. Eliminare quindi i file nella cache, se è necessario più spazio su disco per l'installazione di software.  
 
 -   Configurare le impostazioni per la gestione client basata su Internet.  
 
@@ -66,6 +66,6 @@ Per monitorare queste operazioni quasi in tempo reale, usare la console di Confi
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

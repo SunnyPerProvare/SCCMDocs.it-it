@@ -2,7 +2,7 @@
 title: Privacy e sicurezza dei profili di posta elettronica | Microsoft Docs
 description: Informazioni sulle procedure di sicurezza consigliate per gestire i profili di posta elettronica per i dispositivi in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/28/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
-ms.openlocfilehash: d4977a592d9d49a93b974c129d2729d626ed9280
+ms.sourcegitcommit: 8a5dc7361da34f3e6b926acd35c72c0c0767ce70
+ms.openlocfilehash: 17707f931a4fa58b225ce14f04c2a19648585bc4
 
 
 ---
@@ -26,14 +26,12 @@ ms.openlocfilehash: d4977a592d9d49a93b974c129d2729d626ed9280
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy per i profili di posta elettronica in System Center Configuration Manager.  
-
 ## <a name="security-best-practices-for-email-profiles"></a>Procedure di sicurezza consigliate per i profili di posta elettronica  
  Usare le procedure di sicurezza consigliate seguenti per gestire i profili di posta elettronica per i dispositivi.  
 
 |Procedura di sicurezza consigliata|Altre informazioni|  
 |----------------------------|----------------------|  
-|Se possibile, scegliere le opzioni più sicure per l'infrastruttura di posta elettronica e i sistemi operativi client usati.|I profili di posta elettronica costituiscono un metodo pratico per distribuire e gestire in modo centralizzato le impostazioni di posta elettronica giù supportate dai dispositivi in uso. System Center Configuration Manager non aggiunge funzionalità di posta elettronica.<br /><br /> Identificare, implementare e seguire le procedure di sicurezza consigliate per i dispositivi e l'infrastruttura di posta elettronica.|  
+|Se possibile, scegliere le opzioni più sicure per l'infrastruttura di posta elettronica e i sistemi operativi client usati.|I profili di posta elettronica costituiscono un metodo pratico per distribuire e gestire in modo centralizzato le impostazioni di posta elettronica giù supportate dai dispositivi in uso. Configuration Manager non aggiunge funzionalità di posta elettronica.<br /><br /> Identificare, implementare e seguire le procedure di sicurezza consigliate per i dispositivi e l'infrastruttura di posta elettronica.|  
 
 ## <a name="privacy-information-for-email-profiles"></a>Informazioni sulla privacy per i profili di posta elettronica  
  Per impostazione predefinita, i dispositivi non valutano i profili di posta elettronica. È inoltre necessario configurare i profili di posta elettronica e quindi distribuirli agli utenti.  
@@ -42,6 +40,6 @@ In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

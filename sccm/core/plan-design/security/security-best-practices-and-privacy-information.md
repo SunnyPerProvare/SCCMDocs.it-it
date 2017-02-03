@@ -2,7 +2,7 @@
 title: Procedure consigliate per la sicurezza e informazioni sulla privacy per Configuration Manager | Microsoft Docs
 description: Individuare risorse che offrano procedure consigliate e informazioni sulla privacy per System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 40d8a4f818d1d8fcaf3f87a810a391768d902bf2
+ms.sourcegitcommit: 9e88ed671ce56f19a545b2749b46710d56dac2ae
+ms.openlocfilehash: 135a30085a1a02f75e9a88ed5f9ded06e9c33367
 
 
 ---
@@ -71,6 +71,6 @@ Usare le informazioni seguenti per individuare procedure consigliate e informazi
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

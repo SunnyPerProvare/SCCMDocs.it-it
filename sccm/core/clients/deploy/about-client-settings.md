@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 21eeba4d35f19930f26ed820295d6f142adae1ac
-ms.openlocfilehash: 6c63d63c5b5a7fc1406027dd9380ea799c1aa318
+ms.sourcegitcommit: d7265aec46474ba7fc317ddb5e20b91b7b134585
+ms.openlocfilehash: 36f6eb3fe48e904adf4d04450906fada9b477246
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informazioni sulle impostazioni client in System Center Configuration Manager
@@ -328,7 +328,11 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
     -   I file NOIDMIF devono trovarsi nella cartella Windows\System32\CCM\Inventory\Noidmif.  
 
     > [!NOTE]  
-    >  Questa impostazione è disponibile solo nelle impostazioni del client predefinite.  
+    >  Questa impostazione è disponibile solo nelle impostazioni del client predefinite. 
+
+-   **Ritardo casuale massimo**
+
+    La raccolta di informazioni relative all'hardware viene eseguita con un ritardo casuale fino a due ore in modo che l'operazione non avvenga contemporaneamente in tutti i client. È possibile impostare il ritardo massimo per limitare il periodo durante il quale viene eseguita l'operazione.      
 
 ##  <a name="metered-internet-connections"></a>Connessioni Internet a consumo  
  È possibile gestire la modalità di comunicazione dei computer client Windows 8 con i siti di Configuration Manager quando vengono usate connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.  
@@ -640,6 +644,6 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

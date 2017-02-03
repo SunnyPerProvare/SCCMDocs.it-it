@@ -1,8 +1,8 @@
 ---
-title: Supporto per i domini AD| Microsoft Docs
+title: Domini di Active Directory supportati | Microsoft Docs
 description: Requisiti per l&quot;appartenenza di un sistema del sito di System Center Configuration Manager a un dominio di Active Directory.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,16 +17,16 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 2da3da29eb4dcd3886254c506bd29f38b3ef0ab5
+ms.sourcegitcommit: a3da133205506ba0463dd3207da5ceb5a5d1ab49
+ms.openlocfilehash: ea527a7767b33eaf495e78522364d8a7a47712ca
 
 
 ---
-# <a name="support-for-active-directory-domains-for-system-center-configuration-manager"></a>Supporto per i domini Active Directory per System Center Configuration Manager
+# <a name="supported-active-directory-domains-for-system-center-configuration-manager"></a>Domini di Active Directory supportati per System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Tutti i sistemi del sito di System Center Configuration Manager devono essere membri di un dominio Windows Active Directory supportato. I computer client Configuration Manager possono essere membri del dominio o membri del gruppo di lavoro.  
+Tutti i sistemi del sito di System Center Configuration Manager devono essere membri di un dominio di Windows Server Active Directory supportato. I computer client Configuration Manager possono essere membri del dominio o membri del gruppo di lavoro.  
 
  **Requisiti e limitazioni:**  
 
@@ -66,10 +66,10 @@ La tabella seguente identifica gli scenari supportati per uno spazio dei nomi no
 
  Per consentire a un computer di accedere ai controller di dominio non contigui, è necessario modificare l’attributo **msDS-AllowedDNSSuffixes** di Active Directory nel contenitore dell'oggetto dominio. È necessario aggiungere entrambi i suffissi DNS all'attributo.  
 
- Inoltre, per assicurarsi che l'elenco di ricerca suffissi DNS contenga tutti gli spazi dei nomi DNS distribuiti all'interno dell'organizzazione, è necessario configurare l'elenco di ricerca per ogni computer nel dominio non contiguo. Includere nell'elenco degli spazi dei nomi il suffisso DNS primario del controller di dominio, il nome di dominio DNS ed eventuali spazi dei nomi aggiuntivi per altri server con cui Configuration Manager potrebbe interagire. È possibile usare la console Gestione criteri di gruppo per configurare l'elenco di **ricerca suffisso Domain Name System (DNS)** .  
+ Per assicurarsi che l'elenco di ricerca suffissi DNS contenga tutti gli spazi dei nomi DNS distribuiti all'interno dell'organizzazione, è necessario anche configurare l'elenco di ricerca per ogni computer nel dominio non contiguo. Accertarsi di includere nell'elenco degli spazi dei nomi seguente il suffisso DNS primario del controller di dominio, il nome di dominio DNS ed eventuali spazi dei nomi aggiuntivi per altri server con cui Configuration Manager può interagire. È possibile usare la console Gestione criteri di gruppo per configurare l'elenco di **ricerca suffisso Domain Name System (DNS)** .  
 
 > [!IMPORTANT]  
->  Quando si fa riferimento a un computer in Configuration Manager, immettere il computer usando il suffisso DNS primario. Questo suffisso deve corrispondere al nome di dominio completo registrato come attributo **dnsHostName** nel dominio di Active Directory e nome dell'entità servizio associata al sistema.  
+>  Quando si fa riferimento a un computer in Configuration Manager, immettere il computer usando il suffisso DNS primario. Questo suffisso deve corrispondere al nome di dominio completo registrato come attributo **dnsHostName** nel dominio di Active Directory e al nome dell'entità servizio associata al sistema.  
 
 ##  <a name="a-namebkmkslda-single-label-domains"></a><a name="bkmk_SLD"></a> Domini con etichetta singola  
  Configuration Manager supporta client e sistemi del sito in un nome di dominio con etichetta singola quando vengono soddisfatti i criteri seguenti:  
@@ -78,10 +78,11 @@ La tabella seguente identifica gli scenari supportati per uno spazio dei nomi no
 
      **Ad esempio:** il dominio con etichetta singola di Contoso è configurato per contenere uno spazio dei nomi non contiguo contoso.com in DNS. Pertanto, quando si specifica il suffisso DNS in Configuration Manager per un computer nel dominio Contoso, specificare Contoso.com e non Contoso.  
 
--   Le connessioni DCOM tra i server del sito nel contesto del sistema devono essere stabilite usando l'autenticazione Kerberos.  
+-   Le connessioni DCOM (Distributed Component Object Model) tra i server del sito nel contesto del sistema devono essere stabilite usando l'autenticazione Kerberos.  
+  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

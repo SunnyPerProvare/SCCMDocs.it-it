@@ -1,8 +1,8 @@
 ---
-title: Concetti base sull&quot;amministrazione basata su ruoli | Microsoft Docs
+title: Nozioni fondamentali dell&quot;amministrazione basata su ruoli | Microsoft Docs
 description: L&quot;amministrazione basata sui ruoli consente di controllare l&quot;accesso amministrativo a Configuration Manager e agli oggetti gestiti.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6cf3ac76ea3fb9c9b093ed4927255102930bbe26
-ms.openlocfilehash: 5bdfe43c86d5b700c50b4d55d2f3bbb15bb504e9
+ms.sourcegitcommit: 8e0090bd671e2c566447579974a38474c2f898ea
+ms.openlocfilehash: 1ca51e256ea2f406f393e4b0d3634ea0f6f637bc
 
 
 ---
@@ -25,39 +25,40 @@ ms.openlocfilehash: 5bdfe43c86d5b700c50b4d55d2f3bbb15bb504e9
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-In System Center Configuration Manager l'amministrazione basata su ruoli consente di proteggere l'accesso all'amministrazione di Configuration Manager e agli oggetti gestiti, come raccolte, distribuzioni e siti.   Dopo aver compreso i concetti introdotti in questo argomento è possibile [configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
+Con System Center Configuration Manager si usa l'amministrazione basata su ruoli per proteggere l'accesso necessario per amministrare Configuration Manager. È anche possibile proteggere l'accesso agli oggetti gestiti, come raccolte, distribuzioni e siti. Dopo aver compreso i concetti introdotti in questo argomento è possibile [configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
- Questo modello di amministrazione basata su ruoli definisce e gestisce centralmente le impostazioni di accesso di protezione a livello di gerarchia per tutti i siti e le impostazioni del sito usando quanto segue:  
+ Questo modello di amministrazione basata su ruoli definisce e gestisce centralmente le impostazioni di accesso di sicurezza a livello di gerarchia per tutti i siti e le impostazioni del sito usando quanto segue:  
 
--   I**ruoli di sicurezza** , che vengono assegnati agli utenti (o a gruppi di utenti) amministratori per fornire loro le autorizzazioni per diversi oggetti di Configuration Manager, ad esempio le autorizzazioni per la creazione o la modifica delle impostazioni client.  
+-   I*ruoli di sicurezza* vengono assegnati agli utenti (o a gruppi di utenti) amministratori per fornire loro le autorizzazioni per diversi oggetti di Configuration Manager, ad esempio le autorizzazioni per la creazione o la modifica delle impostazioni client.  
 
--   Gli**ambiti di protezione** , che raggruppano istanze specifiche di oggetti che un utente amministratore ha la responsabilità di gestire, ad esempio, un'applicazione che consente di installare Microsoft Office 2010.  
+-   Gli *ambiti di sicurezza* vengono usati per raggruppare istanze specifiche di oggetti che un utente amministratore ha la responsabilità di gestire, ad esempio un'applicazione che installa Microsoft Office 2010.  
 
--   Le**raccolte** , cioè il modo in cui si specificano i gruppi di utenti e le risorse dispositivi che l'utente amministratore può gestire.  
+-   Le*raccolte* vengono usate per specificare i gruppi di utenti e le risorse dispositivi che l'utente amministratore può gestire.  
 
- La combinazione di ruoli di protezione, ambiti di protezione e raccolte consente di segregare le assegnazioni amministrative che soddisfano i requisiti aziendali e definire l'ambito amministrativo di un utente, ovvero che cosa può visualizzare e gestire l'utente nella distribuzione di Configuration Manager.  
+ Con la combinazione di ruoli di sicurezza, ambiti di sicurezza e raccolte è possibile separare le assegnazioni amministrative in base ai requisiti specifici dell'organizzazione. Nel loro insieme, questi elementi definiscono l'ambito amministrativo di un utente, che rappresenta ciò che l'utente può visualizzare e gestire nella distribuzione di Configuration Manager.  
 
-**L'amministrazione basata su ruoli offre i seguenti vantaggi:**  
+## <a name="benefits-of-role-based-administration"></a>Vantaggi dell'amministrazione basata su ruoli  
 
--   I siti non vengono usati come limiti amministrativi  
+-   I siti non vengono usati come limiti amministrativi.  
 
--   È possibile creare gli utenti amministratori per una gerarchia ed è necessario assegnare loro la protezione una sola volta.  
+-   È possibile creare gli utenti amministratori per una gerarchia ed è necessario assegnare loro le impostazioni di sicurezza una sola volta.  
 
--   Tutte le assegnazioni di protezione vengono replicate e rese disponibili in tutta la gerarchia  
+-   Tutte le assegnazioni di protezione vengono replicate e rese disponibili in tutta la gerarchia.  
 
--   Ci sono diversi ruoli di sicurezza incorporati da assegnare alle tipiche attività amministrative. È possibile creare ruoli di sicurezza personalizzati per soddisfare particolari esigenze aziendali  
+-   Sono disponibili ruoli di sicurezza predefiniti che consentono di assegnare le attività di amministrazione tipiche. È possibile creare ruoli di sicurezza personalizzati per supportare requisiti aziendali specifici.  
 
--   Gli utenti amministratori vedono solo gli oggetti per cui hanno le autorizzazioni di gestione  
+-   Gli utenti amministratori vedono solo gli oggetti di cui dispongono delle autorizzazioni di gestione.  
 
 -   È possibile controllare le azioni di protezione amministrativa.  
 
-Quando si progetta e implementa la protezione amministrativa per Configuration Manager seguire questa procedura per creare un **ambito amministrativo** per un utente amministratore:  
+Quando si progetta e implementa la protezione amministrativa per Configuration Manager, seguire questa procedura per creare un *ambito amministrativo* per un utente amministratore:  
 
 -   [ruoli di sicurezza](#bkmk_Planroles)  
 
 -   [raccolte](#bkmk_planCol)  
 
 -   [ambiti di protezione](#bkmk_PlanScope)  
+
 
  L'ambito amministrativo controlla gli oggetti che un utente amministratore può visualizzare nella console di Configuration Manager e le autorizzazioni dell'utente per tali oggetti. Le configurazione dell'amministrazione basata su ruoli vengono replicate in ogni sito della gerarchia come dati globali e quindi vengono applicate a tutte le connessioni amministrative.  
 
@@ -69,18 +70,20 @@ Quando si progetta e implementa la protezione amministrativa per Configuration M
 
  In Configuration Manager sono incorporati diversi ruoli di sicurezza per supportare i raggruppamenti tipici di attività amministrative. È possibile creare ruoli di sicurezza personalizzati per soddisfare particolari esigenze aziendali. Esempi di ruoli di sicurezza incorporati:  
 
--   **Amministratore completo**: questo ruolo di sicurezza concede tutte le autorizzazioni in Configuration Manager.  
+-   Il ruolo *Amministratore completo* concede tutte le autorizzazioni in Configuration Manager.  
 
--   **Analista asset**: questo ruolo di sicurezza consente agli utenti amministratori di visualizzare i dati raccolti con Asset Intelligence, l'inventario software, l'inventario hardware e la misurazione del software. Gli utenti amministratori possono creare regole di controllo software ed etichette, famiglie e categorie di Asset Intelligence.  
+-   Il ruolo *Analista asset* concede agli utenti amministratori le autorizzazioni per visualizzare i dati raccolti con Asset Intelligence, l'inventario software, l'inventario hardware e la misurazione del software. Gli utenti amministratori possono creare regole di controllo software ed etichette, famiglie e categorie di Asset Intelligence.  
 
--   **Amministratore aggiornamento software**: questo ruolo di sicurezza concede le autorizzazioni per definire e distribuire gli aggiornamenti software. Gli utenti amministratori associati a questo ruolo possono creare raccolte, gruppi di aggiornamento software, distribuzioni e modelli e attivare gli aggiornamenti software per la funzionalità Protezione accesso alla rete (NAP).  
+-   Il ruolo *Amministratore aggiornamento software* concede le autorizzazioni per definire e distribuire gli aggiornamenti software. Gli utenti amministratori associati a questo ruolo possono creare raccolte, gruppi di aggiornamento software, distribuzioni e modelli, oltre a installare gli aggiornamenti software per la funzionalità Protezione accesso alla rete (NAP).  
 
 > [!TIP]  
->  È possibile visualizzare l'elenco di ruoli di sicurezza incorporati e i ruoli di sicurezza personalizzati creati, incluse le descrizioni, nella console di Configuration Manager. A tale scopo, nell'area di lavoro **Amministrazione** espandere **Sicurezza**e selezionare **Ruoli di protezione**.  
+>  È possibile visualizzare l'elenco di ruoli di sicurezza incorporati e i ruoli di sicurezza personalizzati creati, incluse le descrizioni, nella console di Configuration Manager. Per visualizzare i ruoli, nell'area di lavoro **Amministrazione** espandere **Sicurezza** e quindi selezionare **Ruoli di protezione**.  
 
- Ogni ruolo di sicurezza dispone di autorizzazioni specifiche per diversi tipi di oggetto. Ad esempio, il ruolo di sicurezza **Application MMM** (MMM applicazione) ha le autorizzazioni seguenti per le applicazioni: **Approva**, **Crea**, **Elimina**, **Modifica**, **Modifica cartella**, **Sposta oggetto**, **Read/Deploy** (Leggi/Distribuisci), **Imposta ambito di protezione**. Non è possibile modificare le autorizzazioni per i ruoli di sicurezza incorporati, ma è possibile copiare il ruolo, apportare modifiche e quindi salvare tali modifiche come un nuovo ruolo di sicurezza personalizzato. È inoltre possibile importare ruoli di sicurezza esportati da un'altra gerarchia (ad esempio da una rete di prova). Esaminare i ruoli di sicurezza e le relative autorizzazioni per stabilire se usare i ruoli di sicurezza incorporati o se sia necessario crearne di personalizzati.  
+ Ogni ruolo di sicurezza dispone di autorizzazioni specifiche per diversi tipi di oggetto. Ad esempio, il ruolo di sicurezza *Application MMM* (MMM applicazione) ha le autorizzazioni seguenti per le applicazioni: Approva, Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Distribuisci e Imposta ambito di protezione.
 
- **Usare i seguenti passaggi per la pianificazione dei ruoli di sicurezza:**  
+ Non è possibile modificare le autorizzazioni per i ruoli di sicurezza incorporati, ma è possibile copiare il ruolo, apportare modifiche e quindi salvare tali modifiche come un nuovo ruolo di sicurezza personalizzato. È anche possibile importare ruoli di sicurezza esportati da un'altra gerarchia, ad esempio da una rete di test. Esaminare i ruoli di sicurezza e le relative autorizzazioni per stabilire se usare i ruoli di sicurezza predefiniti o se è necessario crearne di personalizzati.  
+
+ ### <a name="to-help-you-plan-for-security-roles"></a>Per facilitare la pianificazione dei ruoli di sicurezza  
 
 1.  Identificare le attività eseguite dagli utenti amministratori in Configuration Manager. Queste attività possono far riferimento a uno o più gruppi di attività di gestione, ad esempio distribuzione di pacchetti e applicazioni, distribuzione di sistemi operativi e impostazioni di conformità, configurazione di siti e protezione, controllo, computer con controllo remoto e raccolta di dati di inventario.  
 
@@ -112,9 +115,9 @@ Per informazioni su come configurare raccolte per l'amministrazione basata su ru
 ##  <a name="a-namebkmkplanscopea-security-scopes"></a><a name="bkmk_PlanScope"></a> ambiti di protezione  
  Usare gli ambiti di protezione per fornire agli utenti amministratori l'accesso a oggetti a protezione diretta. Gli ambiti di protezione sono una raccolta denominata di oggetti a protezione diretta che vengono assegnati agli utenti amministratori come gruppo. Tutti gli oggetti a protezione diretta devono essere assegnati a uno o più ambiti di protezione. Configuration Manager ha due ambiti di protezione predefiniti:  
 
--   **Tutto**: questo ambito di protezione incorporato consente l'accesso a tutti gli ambiti. Non è possibile assegnare gli oggetti a questo ambito di protezione.  
+-   L'ambito di protezione *Tutto* predefinito consente l'accesso a tutti gli ambiti. Non è possibile assegnare gli oggetti a questo ambito di protezione.  
 
--   **Predefinito**: per impostazione predefinita, questo ambito di protezione incorporato viene usato per tutti gli oggetti. Quando si installa Configuration Manager per la prima volta, tutti gli oggetti vengono assegnati a questo ambito di protezione.  
+-   L'ambito di protezione *Predefinito* viene usato per tutti gli oggetti per impostazione predefinita. Quando si installa Configuration Manager per la prima volta, tutti gli oggetti vengono assegnati a questo ambito di protezione.  
 
 Se si desidera limitare gli oggetti che gli utenti amministratori possono visualizzare e gestire, è necessario creare ed usare scopi di protezione personalizzati. Gli ambiti di protezione non supportano una struttura gerarchica e non possono essere nidificati. Gli ambiti di protezione possono contenere uno o più tipi di oggetto, tra cui:  
 
@@ -158,7 +161,7 @@ Se si desidera limitare gli oggetti che gli utenti amministratori possono visual
 
 -   Pacchetti e elementi di impostazioni del dispositivo Windows CE  
 
-Esistono inoltre alcuni oggetti che non è possibile includere negli ambiti di protezione poiché sono protetti solo dai ruoli di sicurezza. Il relativo accesso amministrativo non può essere limitato a un sottoinsieme degli oggetti disponibili. Ad esempio, potrebbe essere presente un utente amministratore che crea gruppi di limiti usati per un sito specifico. Poiché l'oggetto limite non supporta agli ambiti di protezione, non è possibile assegnare a questo utente un ambito di protezione che consente l'accesso solo ai limiti che potrebbero essere associati a tale sito. Poiché un oggetto limite non può essere associato a un ambito di protezione, quando si assegna a un utente un ruolo di sicurezza che include l'accesso a oggetti limite tale utente può accedere a ogni limite presente nella gerarchia.  
+Esistono inoltre alcuni oggetti che non è possibile includere negli ambiti di protezione poiché sono protetti solo dai ruoli di sicurezza. L'accesso amministrativo a questi oggetti non può essere limitato a un sottoinsieme degli oggetti disponibili. Ad esempio, potrebbe essere presente un utente amministratore che crea gruppi di limiti usati per un sito specifico. Poiché l'oggetto limite non supporta agli ambiti di protezione, non è possibile assegnare a questo utente un ambito di protezione che consente l'accesso solo ai limiti che potrebbero essere associati a tale sito. Poiché un oggetto limite non può essere associato a un ambito di protezione, quando si assegna a un utente un ruolo di sicurezza che include l'accesso a oggetti limite tale utente può accedere a ogni limite presente nella gerarchia.  
 
 Tra gli oggetti non limitati dagli ambiti di protezione sono inclusi i seguenti:  
 
@@ -206,12 +209,12 @@ Creare ambiti di protezione quando è necessario limitare l'accesso per separare
 
 -   Si dispone di un gruppo di utenti amministratori che deve essere in grado di visualizzare applicazioni di produzione e applicazioni di prova. Creare un ambito di protezione per le applicazioni di produzione e un altro per le applicazioni di prova.  
 
--   Diversi utenti amministratori richiedono un accesso diverso ad alcune istanze di un tipo di oggetto. Ad esempio, un gruppo di utenti amministratori richiede l'autorizzazione **Lettura** per gruppi di aggiornamenti software specifici e un altro gruppo di utenti amministratori richiede le autorizzazioni **Modifica** e **Elimina** per altri gruppi di aggiornamento software. Creare ambiti di protezione diversi per questi gruppi di aggiornamento software.  
+-   Diversi utenti amministratori richiedono un accesso diverso ad alcune istanze di un tipo di oggetto. Ad esempio, un gruppo di utenti amministratori richiede l'autorizzazione Lettura per gruppi di aggiornamenti software specifici e un altro gruppo di utenti amministratori richiede le autorizzazioni Modifica e Elimina per altri gruppi di aggiornamento software. Creare ambiti di protezione diversi per questi gruppi di aggiornamento software.  
 
 Per informazioni su come configurare gli ambiti di protezione per l'amministrazione basata su ruoli, vedere la sezione relativa alla [configurazione degli ambiti di protezione per un oggetto](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecScope) nell'argomento [Configure role-based administration for System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md) (Configurare l'amministrazione basata su ruoli per System Center Configuration Manager).  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

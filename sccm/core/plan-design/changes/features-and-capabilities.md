@@ -2,7 +2,7 @@
 title: "Caratteristiche e funzionalità | Microsoft Docs"
 description: "Informazioni sulle funzionalità di gestione principali di System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 851029368d97312ef2766505f933eac72d6950e5
+ms.sourcegitcommit: 53b27dcb5c8bb670556fe4cee9e990619a9a63e9
+ms.openlocfilehash: 4691f43dccdf73936107f4635321897b9779bead
 
 
 ---
@@ -40,7 +40,7 @@ Di seguito sono descritte le funzionalità di gestione principali di System Cent
 
  **Impostazioni di conformità**  
 
- Offre un set di strumenti e risorse che consentono di valutare, tenere traccia e correggere la conformità della configurazione dei dispositivi client nell'azienda.  Inoltre, è possibile usare le impostazioni di conformità per configurare una gamma di funzionalità e impostazioni di sicurezza nei dispositivi gestiti. Vedere [Ensure device compliance with System Center Configuration Manager](../../../compliance/understand/ensure-device-compliance.md) (Garantire la conformità dei dispositivi con System Center Configuration Manager).  
+ Offre un set di strumenti e risorse che consentono di valutare, tenere traccia e correggere la conformità della configurazione dei dispositivi client nell'azienda. Inoltre, è possibile usare le impostazioni di conformità per configurare una gamma di funzionalità e impostazioni di sicurezza nei dispositivi gestiti. Vedere [Ensure device compliance with System Center Configuration Manager](../../../compliance/understand/ensure-device-compliance.md) (Garantire la conformità dei dispositivi con System Center Configuration Manager).  
 
  **Endpoint Protection**  
 
@@ -64,11 +64,11 @@ Di seguito sono descritte le funzionalità di gestione principali di System Cent
 
  **Gestione dei dispositivi mobili locale**  
 
- Registra e gestisce i PC e i dispositivi mobili usando l'infrastruttura di Configuration Manager locale e la funzionalità di gestione integrata nelle piattaforme per dispositivi (anziché fare affidamento su un client di Configuration Manager installato separatamente). Attualmente supporta la gestione dei dispositivi Windows 10 Enterprise e Windows 10 Mobile.  Vedere [Manage mobile devices with on-premises infrastructure in System Center Configuration Manager](../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md) (Gestire i dispositivi mobili con l'infrastruttura locale in System Center Configuration Manager).  
+ Registra e gestisce i PC e i dispositivi mobili usando l'infrastruttura di Configuration Manager locale e la funzionalità di gestione integrata nelle piattaforme per dispositivi (anziché fare affidamento su un client di Configuration Manager installato separatamente). Attualmente supporta la gestione dei dispositivi Windows 10 Enterprise e Windows 10 Mobile. Vedere [Manage mobile devices with on-premises infrastructure in System Center Configuration Manager](../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md) (Gestire i dispositivi mobili con l'infrastruttura locale in System Center Configuration Manager).  
 
  **Distribuzione del sistema operativo:**  
 
- Offre uno strumento per creare immagini del sistema operativo. È quindi possibile usare queste immagini per distribuirle nei computer gestiti da Configuration Manager e nei computer non gestiti, usando l'avvio PXE o supporti di avvio, ad esempio un set di CD, un DVD o unità flash USB. Vedere [Introduction to operating system deployment in System Center Configuration Manager](../../../osd/understand/introduction-to-operating-system-deployment.md) (Introduzione alla distribuzione del sistema operativo in System Center Configuration Manager).  
+ Offre uno strumento per creare immagini del sistema operativo. È quindi possibile usare queste immagini per distribuire i sistemi operativi nei computer, usando l'avvio PXE o supporti di avvio, ad esempio un set di CD, DVD o unità flash USB. Si noti che questo vale per i computer gestiti da Configuration Manager, nonché per i computer non gestiti. Vedere [Introduction to operating system deployment in System Center Configuration Manager](../../../osd/understand/introduction-to-operating-system-deployment.md) (Introduzione alla distribuzione del sistema operativo in System Center Configuration Manager).  
 
  **Risparmio energia**  
 
@@ -76,11 +76,11 @@ Di seguito sono descritte le funzionalità di gestione principali di System Cent
 
  **Query**  
 
- Offre uno strumento per recuperare informazioni sulle risorse nella gerarchia e informazioni sui dati di inventario e sui messaggi di stato. È quindi possibile usare queste informazioni per creare report o definire le raccolte di dispositivi o utenti per le impostazioni di distribuzione e configurazione software. Vedere [Introduction to queries in System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md) (Introduzione alle query in System Center Configuration Manager).  
+ Offre uno strumento per recuperare informazioni sulle risorse nella gerarchia e informazioni sui dati di inventario e sui messaggi di stato. È quindi possibile usare queste informazioni per creare report o definire le raccolte di dispositivi o utenti per le impostazioni di distribuzione e configurazione del software. Vedere [Introduction to queries in System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md) (Introduzione alle query in System Center Configuration Manager).  
 
  **Profili di connessione remota**  
 
- Offre un set di strumenti e risorse che consentono di creare, distribuire e monitorare le impostazioni di connessione remota nei dispositivi dell'organizzazione. Distribuendo queste impostazioni, viene ridotto al minimo lo sforzo dell'utente finale necessario per connettersi al computer nella rete aziendale. Vedere [Working with remote connection profiles in System Center Configuration Manager](/sccm/compliance/deploy-use/create-remote-connection-profiles) (Uso di profili di connessione remota in System Center Configuration Manager).  
+ Offre un set di strumenti e risorse che consentono di creare, distribuire e monitorare le impostazioni di connessione remota nei dispositivi dell'organizzazione. Distribuendo queste impostazioni, viene ridotto al minimo l'impegno richiesto agli utenti per connettersi ai computer nella rete aziendale. Vedere [Working with remote connection profiles in System Center Configuration Manager](/sccm/compliance/deploy-use/create-remote-connection-profiles) (Uso di profili di connessione remota in System Center Configuration Manager).  
 
  **Elementi di configurazione di profili e dati utente**  
 
@@ -104,6 +104,6 @@ Di seguito sono descritte le funzionalità di gestione principali di System Cent
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: ae750188b0258122d8561b163a5ecd85c4179f18
+ms.sourcegitcommit: 59e63cf223424f9930524e3ed3833c30dc9ca9a7
+ms.openlocfilehash: f43764acd13b0257481614fc79aebecac75542d7
 
 
 ---
@@ -50,21 +50,22 @@ La creazione di report in System Center Configuration Manager ha dipendenze este
 
 |Versione di SQL Server|Punto di Reporting Services|  
 |------------------------|------------------------------|  
-|SQL Server 2008 SP2 con aggiornamento cumulativo 9 o successivo<br /><br /> Standard<br />Enterprise<br />Datacenter|?|  
-|SQL Server 2008 SP3 con aggiornamento cumulativo 4 o successivo<br /><br /> Standard<br />Enterprise<br />Datacenter|?|  
-|SQL Server 2008 R2 con SP1 e aggiornamento cumulativo 6 o successivo<br /><br /> Standard<br />Enterprise<br />Datacenter|?|  
-|SQL Server 2008 R2 con SP2<br /><br /> Standard<br />Enterprise<br />Datacenter|?|  
+|SQL Server 2008 SP2 con aggiornamento cumulativo 9 o successivo<br /><br /> Standard<br />Enterprise<br />Datacenter|Sì|  
+|SQL Server 2008 SP3 con aggiornamento cumulativo 4 o successivo<br /><br /> Standard<br />Enterprise<br />Datacenter|Sì|  
+|SQL Server 2008 R2 con SP1 e aggiornamento cumulativo 6 o successivo<br /><br /> Standard<br />Enterprise<br />Datacenter|Sì|  
+|SQL Server 2008 R2 con SP2<br /><br /> Standard<br />Enterprise<br />Datacenter|Sì|  
 |SQL Server Express 2008 R2 con SP1 e aggiornamento cumulativo 4 o successivo|Non supportato|  
 |SQL Server Express 2008 R2 con SP2|Non supportato|  
-|SQL Server 2012 e con aggiornamento cumulativo 2 o successivo<br /><br /> Standard<br />Enterprise|?|  
-|SQL Server 2012 con SP1 e nessun aggiornamento cumulativo<br /><br /> Standard<br />Enterprise|?|  
-|SQL Server 2014<br /><br /> Standard<br />Enterprise|?|  
-
+|SQL Server 2012 e con aggiornamento cumulativo 2 o successivo<br /><br /> Standard<br />Enterprise|Sì|  
+|SQL Server 2012 con SP1 e nessun aggiornamento cumulativo<br /><br /> Standard<br />Enterprise|Sì|  
+|SQL Server 2016<br /><br /> Standard<br />Enterprise|Sì|
+|SQL Server 2016<br /><br /> Standard<br />Enterprise|Sì|
+|SQL Server 2016 con SP1<br /><br /> Standard<br />Enterprise|Sì|
 ## <a name="next-steps"></a>Passaggi successivi
 [Operazioni e manutenzione per la creazione di report](operations-and-maintenance-for-reporting.md)
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

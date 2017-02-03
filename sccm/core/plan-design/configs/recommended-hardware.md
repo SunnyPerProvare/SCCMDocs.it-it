@@ -2,7 +2,7 @@
 title: Hardware consigliato | Microsoft Docs
 description: Ottenere consigli su hardware per ridimensionare l&quot;ambiente di System Center Configuration Manager, oltre una distribuzione di base.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 3155c877a14f99e054cfa7ca4afaa73bae3f8cac
+ms.sourcegitcommit: d61c726d9690a1ec512b8dbab74b0f760012c880
+ms.openlocfilehash: 7caee70c327d84f1e016c689f824d843ccdb3b42
 
 
 ---
@@ -32,7 +32,7 @@ I consigli seguenti sono linee guida che consentono di ridimensionare l'ambiente
 
 
 ##  <a name="a-namebkmkscalesiesystemsa-site-systems"></a><a name="bkmk_ScaleSieSystems"></a> Sistemi del sito  
- Questa sezione identifica le configurazioni hardware consigliate per i sistemi del sito di Configuration Manager per le distribuzioni che supportano il numero massimo di client e usano la maggior parte o tutte le funzionalità di Configuration Manager. Le distribuzioni che supportano meno del numero massimo di client e che non usano tutte le funzionalità disponibili possono richiedere meno risorse del computer. In generale, i fattori chiave che limitano le prestazioni dell'intero sistema includono i seguenti, nell'ordine:  
+ Questa sezione illustra le configurazioni hardware consigliate per i sistemi del sito di Configuration Manager per le distribuzioni che supportano il numero massimo di client e usano la maggior parte o tutte le funzionalità di Configuration Manager. Le distribuzioni che supportano meno del numero massimo di client e che non usano tutte le funzionalità disponibili possono richiedere meno risorse del computer. In generale, i fattori chiave che limitano le prestazioni dell'intero sistema includono i seguenti, nell'ordine:  
 
 1.  Prestazioni di I/O su disco  
 
@@ -40,29 +40,29 @@ I consigli seguenti sono linee guida che consentono di ridimensionare l'ambiente
 
 3.  CPU  
 
-Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità dati e una rete Ethernet da 1 Gbps  
+Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità dati e una rete Ethernet da 1 Gbps.  
 
 ###  <a name="a-namebkmkscalesiteservera-site-servers"></a><a name="bkmk_ScaleSiteServer"></a> Server del sito  
 
-|Sito primario autonomo|Nuclei CPU|Memoria (GB)|Allocazione % di memoria per SQL Server|  
+|Sito primario autonomo|CPU (core)|Memoria (GB)|Allocazione di memoria per SQL Server (%)|  
 |-------------------------------|---------------|---------------|----------------------------------------|  
-|Server del sito primario autonomo con ruolo del sito del database sullo stesso server<sup>1</sup>|16|96|80|  
+|Server del sito primario autonomo con un ruolo del sito del database nello stesso server<sup>1</sup>|16|96|80|  
 |Server del sito primario autonomo con un database del sito remoto|8|16|-|  
 |Server di database remoto per un sito primario autonomo|16|64|90|  
-|Server del sito di amministrazione centrale con ruolo del sito del database sullo stesso server<sup>1</sup>|16|96|80|  
+|Server del sito di amministrazione centrale con un ruolo del sito del database nello stesso server<sup>1</sup>|16|96|80|  
 |Server del sito di amministrazione centrale con un database del sito remoto|8|16|-|  
 |Server di database remoto per un sito di amministrazione centrale|16|96|90|  
-|Sito primario figlio con ruolo del sito del database sullo stesso server|16|96|80|  
+|Sito primario figlio con ruolo del sito del database nello stesso server|16|96|80|  
 |Server del sito primario figlio con un database del sito remoto|8|16|-|  
 |Server di database remoto per un sito primario figlio|16|64|90|  
 |Server del sito secondario|8|16|-|  
 
- <sup>1</sup> Quando il server del sito ed SQL Server sono installati nello stesso computer, la distribuzione supporta i valori massimi di [ridimensionamento](/sccm/core/plan-design/configs/size-and-scale-numbers) per siti e client. Tuttavia, questa configurazione può limitare le [Opzioni di disponibilità elevata per System Center Configuration Manager](/sccm/protect/understand/high-availability-options) come l'uso di un cluster di SQL Server.  A causa dei più elevati requisiti I/O necessari per supportare SQL Server e il server del sito di Configuration Manager durante l'esecuzione di entrambi i server nello stesso computer, si consiglia ai clienti con grandi distribuzioni di usare una configurazione con un computer SQL Server remoto.  
+ <sup>1</sup> Quando il server del sito e SQL Server sono installati nello stesso computer, la distribuzione supporta i valori massimi di [ridimensionamento](/sccm/core/plan-design/configs/size-and-scale-numbers) per siti e client. Questa configurazione può però limitare le [opzioni di disponibilità elevata per System Center Configuration Manager](/sccm/protect/understand/high-availability-options) come l'uso di un cluster di SQL Server. A causa dei più elevati requisiti di I/O necessari per supportare SQL Server e il server del sito di Configuration Manager durante l'esecuzione di entrambi i server nello stesso computer, si consiglia ai clienti con grandi distribuzioni di usare una configurazione con un computer SQL Server remoto.  
 
 ###  <a name="a-namebkmkremotesitesystema-remote-site-system-servers"></a><a name="bkmk_RemoteSiteSystem"></a> Server di sistema del sito remoti  
- Le informazioni aggiuntive seguenti sono destinate ai computer che contengono un solo ruolo del sistema del sito. Pianificare delle modifiche quando si installano più ruoli del sistema del sito nello stesso computer.  
+ Le indicazioni seguenti sono destinate ai computer che contengono un solo ruolo del sistema del sito. Pianificare delle modifiche quando si installano più ruoli del sistema del sito nello stesso computer.  
 
-|Ruolo del sistema del sito|Nuclei CPU|Memoria (GB)|Spazio su disco: GB|  
+|Ruolo del sistema del sito|CPU (core)|Memoria (GB)|Spazio su disco (GB)|  
 |----------------------|---------------|---------------|--------------------|  
 |Punto di gestione|4|8|50|  
 |Punto di distribuzione|2|8|Come richiesto dal sistema operativo e per archiviare il contenuto distribuito|  
@@ -72,12 +72,12 @@ Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità da
 
  <sup>1</sup> Il computer che ospita un punto di aggiornamento software richiede le configurazioni seguenti per i pool di applicazioni di IIS:  
 
--   Aumentare la **lunghezza della coda WsusPool** a **2000**  
+-   Aumentare la **lunghezza della coda WsusPool** a **2000**.  
 
--   Aumentare il **limite di memoria privata WsusPool** di 4 volte oppure impostarlo su **0** (illimitato)  
+-   Aumentare il **limite di memoria privata WsusPool** di 4 volte oppure impostarlo su **0** (illimitato).  
 
 ###  <a name="a-namebkmkdiskspacea-disk-space-for-site-systems"></a><a name="bkmk_DiskSpace"></a> Spazio su disco per i sistemi del sito  
- La configurazione e l'allocazione dei dischi contribuisce alle prestazioni di Configuration Manager. Dal momento che ogni ambiente di Configuration Manager è diverso, i valori implementati possono variare rispetto alle linee guida seguenti.  
+ La configurazione e l'allocazione dei dischi contribuisce alle prestazioni di Configuration Manager. Dal momento che ogni ambiente di Configuration Manager è diverso, i valori implementati possono variare rispetto alle indicazioni seguenti.  
 
  Per ottenere migliori prestazioni, posizionare ogni oggetto in un volume RAID dedicato separato. Per tutti i volumi di dati (Configuration Manager e relativi file di database), usare RAID 10 per ottenere le migliori prestazioni.  
 
@@ -90,16 +90,16 @@ Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità da
 |File di database temporaneo (con estensione MDF e LDF)|Secondo le necessità|Secondo le necessità|Secondo le necessità|Secondo le necessità|Secondo le necessità|Secondo le necessità|  
 |Contenuto (condivisioni del punto di distribuzione)|Secondo le necessità<sup>1</sup>|Secondo le necessità<sup>1</sup>|Secondo le necessità<sup>1</sup>|Secondo le necessità<sup>1</sup>|Secondo le necessità<sup>1</sup>|Secondo le necessità<sup>1</sup>|  
 
- <sup>1</sup> Le linee guida relative allo spazio su disco non comprendono informazioni sullo spazio richiesto per il contenuto che si trova nella raccolta contenuto nel server del sito o nel punto di distribuzione. Per informazioni sulla pianificazione della raccolta contenuto, vedere [Raccolta contenuto](../../../core/plan-design/hierarchy/the-content-library.md).  
+ <sup>1</sup> Le indicazioni relative allo spazio su disco non includono lo spazio richiesto per il contenuto che si trova nella raccolta contenuto nel server del sito o nel punto di distribuzione. Per informazioni sulla pianificazione della raccolta contenuto, vedere [Raccolta contenuto](../../../core/plan-design/hierarchy/the-content-library.md).  
 
  Oltre alle informazioni aggiuntive precedenti, prendere in considerazione le linee guida seguenti quando si pianificano i requisiti per lo spazio su disco:  
 
 -   Ogni client richiede circa 5 MB di spazio.  
 
--   Durante la pianificazione della dimensione del database temporaneo per un sito primario, pianificare una dimensione combinata compresa tra il 25% e il 30% del file con estensione MDF del database del sito. Le dimensioni effettive possono essere sensibilmente inferiori o superiori, a seconda dalle prestazioni del server del sito e del volume di dati in ingresso durante periodi di tempo lunghi e brevi.  
+-   Durante la pianificazione della dimensione del database temporaneo per un sito primario, prevedere una dimensione combinata compresa tra il 25% e il 30% del file con estensione MDF del database del sito. Le dimensioni effettive possono essere sensibilmente inferiori o superiori, a seconda dalle prestazioni del server del sito e del volume di dati in ingresso durante periodi di tempo lunghi e brevi.  
 
     > [!NOTE]  
-    >  Quando sono disponibili 50.000 o più client in un sito, usare e o più file mdf del database temporaneo.  
+    >  Quando sono disponibili 50.000 o più client in un sito, prevedere l'uso di quattro o più file mdf del database temporaneo.  
 
 -   Le dimensioni del database temporaneo per un sito di amministrazione centrale sono in genere molto inferiori rispetto a quelle di un sito primario.  
 
@@ -110,16 +110,16 @@ Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità da
     -   SQL Server 2014 Express: 10 GB  
 
 ##  <a name="a-namebkmkscaleclienta-clients"></a><a name="bkmk_ScaleClient"></a> Client  
- Questa sezione identifica le configurazioni hardware consigliate per i computer gestiti dall'installazione del software client di Configuration Manager.  
+ Questa sezione illustra le configurazioni hardware consigliate per i computer gestiti con il software client di Configuration Manager.  
 
 ### <a name="client-for-windows-computers"></a>Client per i computer Windows  
- Di seguito sono indicati i requisiti hardware minimi per i computer basati su Windows gestiti con Configuration Manager, inclusi i sistemi operativi integrati:  
+ Di seguito sono indicati i requisiti hardware minimi per i computer basati su Windows gestiti con Configuration Manager, inclusi i sistemi operativi Embedded:  
 
--   **Processore e memoria**: consultare i requisiti per il processore e la RAM specifici del sistema operativo del computer.  
+-   **Processore e memoria**: vedere i requisiti per il processore e la RAM specifici del sistema operativo del computer.  
 
--   **Spazio su disco**: 500 MB di spazio disponibile su disco, con 5 GB consigliati per la cache del client di Configuration Manager. Se si usano le impostazioni personalizzate per installare il client di Configuration Manager, è necessario meno spazio:  
+-   **Spazio su disco:** 500 MB di spazio disponibile su disco, con 5 GB consigliati per la cache del client di Configuration Manager. Se si usano le impostazioni personalizzate per installare il client di Configuration Manager, è necessario meno spazio:  
 
-    -   Usare la proprietà della riga di comando CCMSetup/skipprereq per evitare di installare i file non necessari per il clent. Ad esempio, **CCMSetup.exe /skipprereq:silverlight.exe** se il client non usa il Catalogo applicazioni.  
+    -   Usare la proprietà della riga di comando CCMSetup /skipprereq per evitare di installare i file non necessari per il clent. Ad esempio, eseguire **CCMSetup.exe /skipprereq:silverlight.exe** se il client non usa il Catalogo applicazioni.  
 
     -   Usare la proprietà Client. msi SMSCACHESIZE per impostare un file di cache inferiore a quello predefinito di 5120 MB. La dimensione minima è 1 MB. Ad esempio, **CCMSetup.exe SMSCachesize=2** crea una cache di 2 MB.  
 
@@ -128,13 +128,15 @@ Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità da
     > [!TIP]  
     >  L'installazione del client con lo spazio minimo su disco è utile per i dispositivi Windows Embedded, che in genere hanno dimensioni di disco inferiori a quelle dei computer Windows standard.  
 
+
+
  Di seguito sono indicati altri requisiti hardware minimi per la funzionalità facoltativa in Configuration Manager.  
 
--   **Distribuzione del sistema operativo**: 384 MB di RAM  
+-   **Distribuzione del sistema operativo:** 384 MB di RAM  
 
--   **Software Center**: processore da 500 MHz  
+-   **Software Center:** processore da 500 MHz  
 
--   **Controllo remoto**: Pentium 4 Hyper-Threaded 3 GHz (core singolo) o CPU comparabile, con almeno un 1 GB di RAM per un'esperienza ottimale  
+-   **Controllo remoto:** Pentium 4 Hyper-Threaded 3 GHz (core singolo) o CPU comparabile, con almeno un 1 GB di RAM per un'esperienza ottimale  
 
 ### <a name="client-for-linux-and-unix"></a>Client per Linux e UNIX  
  Di seguito sono indicati i requisiti minimi per i server Linux e UNIX gestiti con Configuration Manager.  
@@ -154,14 +156,14 @@ Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità da
 
 -   2 GB di RAM  
 
--   2 GB di spazio su disco.  
+-   2 GB di spazio su disco  
 
 |Impostazione DPI|Risoluzione minima|  
 |-----------------|------------------------|  
 |96/100%|1024 x 768|  
 |120/125%|1280 x 960|  
 |144/150%|1600 x 1200|  
-|196/200%|1600 x 2500|  
+|196/200%|2500 x 1600|  
 
  **Supporto per PowerShell:**  
 
@@ -175,9 +177,9 @@ Oltre a PowerShell, sono supportati anche Windows Management Framework (WMF) 3.0
 È possibile installare PowerShell prima o dopo l’installazione della console di Configuration Manager.  
 
 ##  <a name="a-namebkmkscalelaba-lab-deployments"></a><a name="bkmk_ScaleLab"></a> Distribuzioni di lab  
- Seguire questi consigli in termini di requisiti hardware minimi per le distribuzioni di lab e di prova di Configuration Manager. Questi consigli si applicano a tutti i tipi di sito e per l'uso con un massimo di 100 client:  
+ Seguire questi consigli in termini di requisiti hardware minimi per le distribuzioni di lab e di prova di Configuration Manager. Questi consigli si applicano a tutti i tipi di sito, fino a un massimo di 100 client:  
 
-|Ruolo|Nuclei CPU|Memoria (GB)|Spazio su disco (GB)|  
+|Ruolo|CPU (core)|Memoria (GB)|Spazio su disco (GB)|  
 |----------|---------------|-------------------|-----------------------|  
 |Server del sito e di database|2 - 4|7 - 12|100|  
 |Server del sistema del sito|1 - 4|2 - 4|50|  
@@ -185,6 +187,6 @@ Oltre a PowerShell, sono supportati anche Windows Management Framework (WMF) 3.0
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Dec16_HO5-->
 
 

@@ -2,7 +2,7 @@
 title: 'Aggiornare i client | Microsoft Docs | Windows '
 description: Aggiornare i client di System Center Configuration Manager in computer Windows.
 ms.custom: na
-ms.date: 11/18/2016
+ms.date: 01/01/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 828e2ac9a3f9bcea1571d24145a1021fdf1091f3
-ms.openlocfilehash: 8a3028a562aa657ea39a0f5ff763311db6def00a
+ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
+ms.openlocfilehash: a35724a5b839b47904c46361709f248e432eff1e
 
 
 ---
@@ -80,7 +80,7 @@ ms.openlocfilehash: 8a3028a562aa657ea39a0f5ff763311db6def00a
 
 3.  Nella scheda **Home** , del gruppo **Siti** , fare clic su **Impostazioni gerarchia**.  
 
-4.  Nella scheda **Aggiornamento client** della finestra di dialogo **Proprietà delle impostazioni di gerarchia** verificare la versione e la data del client di produzione e assicurarsi che la versione corrisponda a quella che si vuole usare per l'aggiornamento dei computer Windows.  Se la versione del client non è quella prevista, potrebbe essere necessario alzare il livello del client di preproduzione a client di produzione. Per altre informazioni, vedere [How to test client upgrades in a preproduction collection in System Center Configuration Manager](../../../../core/clients/manage/upgrade/test-client-upgrades.md) (Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager).  
+4.  Nella scheda **Aggiornamento client** della finestra di dialogo **Proprietà delle impostazioni di gerarchia** verificare la versione e la data del client di produzione e assicurarsi che la versione corrisponda a quella che si vuole usare per l'aggiornamento dei computer Windows.  Se la versione del client non è quella prevista, potrebbe essere necessario alzare il livello del client di preproduzione a client di produzione. Per altre informazioni, vedere [Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager](../../../../core/clients/manage/upgrade/test-client-upgrades.md).  
 
 5.  Fare clic su **Aggiorna tutti i client nella gerarchia usando il client di produzione** , quindi fare clic su **OK** nella finestra di dialogo di conferma.  
 
@@ -101,6 +101,6 @@ ms.openlocfilehash: 8a3028a562aa657ea39a0f5ff763311db6def00a
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

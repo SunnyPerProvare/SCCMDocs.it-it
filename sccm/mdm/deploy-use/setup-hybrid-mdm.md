@@ -17,8 +17,8 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 48b91e88f78752cf7c05162b701ea2ca2f401de3
-ms.openlocfilehash: 85df3df19f01f8ed6f5240851c47afce01a92880
+ms.sourcegitcommit: 0a6cb36aad455b38db628f26b97e1b4c00adc741
+ms.openlocfilehash: 12ef5c1faf5fe5780ddb7c12cfe6d533e9785f6d
 
 ---
 
@@ -46,7 +46,12 @@ Per informazioni su Intune senza Configuration Manager
 [Vedi documenti di Intune >](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune)
 
 ## <a name="step-1-create-an-mdm-collection"></a>Passaggio 1: Creare una raccolta della gestione dei dispositivi mobili
-La raccolta utenti di Configuration Manager è necessaria per specificare gli utenti che possono registrare i dispositivi nella gestione. Solo le raccolte utenti possono rappresentare una destinazione perché le licenze di Intune vengono assegnate agli utenti. A scopo di test è possibile impostare una **Regola diretta** e aggiungere utenti specifici che possono registrare i dispositivi. Nella console di Configuration Manager scegliere **Asset e conformità** > **Raccolte utenti**, fare clic sulla scheda **Home** > gruppo **Crea** e quindi fare clic su **Crea raccolta utenti**. Per definire gli utenti per una distribuzione più ampia è necessario usare **Regole di query**. Per altre informazioni sulle raccolte, vedere [Come creare le raccolte in System Center Configuration Manager](https://technet.microsoft.com/library/mt629371.aspx).
+È necessaria una raccolta utenti di Configuration Manager per specificare gli utenti che possono registrare i dispositivi nella gestione. È possibile usare solo le raccolte utenti (invece delle raccolte di dispositivi) perché le licenze di Intune vengono assegnate agli utenti.
+
+> [!NOTE]
+> Per registrare i dispositivi con Intune, non è necessario assegnare licenze agli utenti nel portale di Office 365 o nel portale di Azure Active Directory. Tutto ciò che è richiesto è includere gli utenti in una raccolta che venga associata alla sottoscrizione di Intune (in un [passaggio successivo](#step-3-configure-intune-subscription)).
+
+A scopo di test è possibile impostare una **Regola diretta** e aggiungere utenti specifici che possono registrare i dispositivi. Nella console di Configuration Manager scegliere **Asset e conformità** > **Raccolte utenti**, fare clic sulla scheda **Home** > gruppo **Crea** e quindi fare clic su **Crea raccolta utenti**. Per definire gli utenti per una distribuzione più ampia è necessario usare **Regole di query**. Per altre informazioni sulle raccolte, vedere [Come creare le raccolte in System Center Configuration Manager](https://technet.microsoft.com/library/mt629371.aspx).
 
 ![Per creare una raccolta utenti per la gestione dei dispositivi mobili](../media/mdm-create-user-collection.png)
 

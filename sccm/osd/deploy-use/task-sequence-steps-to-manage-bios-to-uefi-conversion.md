@@ -15,8 +15,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 54089ac8aa95154534d010bee8c7e2cbd70d1c7e
-ms.openlocfilehash: 30838ed3ad045f781a748f96c874bf543ea05462
+ms.sourcegitcommit: c92d88517b4e1d54add489a53cd34b0f23be0c4c
+ms.openlocfilehash: 04951b3ed50206941850ddcc893fcf9c9596f89f
 
 
 ---
@@ -28,7 +28,8 @@ In una sequenza di attività esistente per installare un sistema operativo si ag
 
 1. Creare un nuovo gruppo di sequenze di attività dopo aver eseguito la proceduta per acquisire file e impostazioni e prima della procedura di installazione del sistema operativo. Ad esempio, creare un gruppo dopo il gruppo **Acquisisci file e impostazioni** denominato **BIOS-to-UEFI** (Da BIOS a UEFI).
 2. Nella scheda **Opzioni** del nuovo gruppo aggiungere una nuova variabile della sequenza di attività come condizione in cui **_SMSTSBootUEFI** sia **diverso** da **true**. Questa operazione blocca l'esecuzione dei passaggi nel gruppo quando il computer è già in modalità UEFI.
-![Gruppo BIOS to UEFI](../../core/get-started/media/BIOS-to-UEFI-group.png)
+
+   ![Gruppo BIOS-to-UEFI](../../core/get-started/media/BIOS-to-UEFI-group.png)
 3. Nel nuovo gruppo aggiungere il passaggio della sequenza di attività **Riavvia il computer**. In **Specificare cosa eseguire dopo il riavvio:** selezionare **The boot image assigned to this task sequence is selected** (L'immagine di avvio assegnata a questa sequenza di attività è selezionata) per avviare il computer in Windows PE.  
 4. Nella scheda **Opzioni** aggiungere una variabile della sequenza attività come condizione in cui **_SMSTSInWinPE sia uguale a false** Questa operazione blocca l'esecuzione di questo passaggio se il computer è già in Windows PE.
 
@@ -36,14 +37,16 @@ In una sequenza di attività esistente per installare un sistema operativo si ag
 5. Aggiungere un passaggio per avviare lo strumento OEM che convertirà il firmware da BIOS a UEFI. Si tratta in genere di un passaggio della sequenza di attività **Esegui riga di comando** con una riga di comando per avviare lo strumento OEM.
 6.  Aggiungere il passaggio della sequenza attività Formato e disco partizione che partiziona e formatta il disco rigido. Nel passaggio, eseguire le operazioni seguenti:
     1.  Creare la partizione FAT32 che verrà convertita in UEFI prima di installare il sistema operativo. Scegliere **GPT** per **Tipo disco**.
-    ![Passaggio Formato e disco partizione](../../core/get-started/media/format-and-partition-disk.png)
+
+       ![Passaggio Formato e disco partizione](../media/format-and-partition-disk.png)
     2.  Accedere alle proprietà della partizione FAT32. Immettere **TSUEFIDrive** nel campo **Variabile**. Quando la sequenza di attività rileva questa variabile, si avvia la preparazione per la transizione di UEFI prima di riavviare il computer.
-    ![Proprietà della partizione](../../core/get-started/media/partition-properties.png)
+
+       ![Proprietà della partizione](../../core/get-started/media/partition-properties.png)
     3. Creare una partizione NTFS che il motore della sequenza di attività usa per il salvataggio dello stato e per archiviare i file di log.
-6.  Aggiungere il passaggio della sequenza di attività **Riavvia il computer**. In **Specificare cosa eseguire dopo il riavvio:** selezionare **The boot image assigned to this task sequence is selected** (L'immagine di avvio assegnata a questa sequenza di attività è selezionata) per avviare il computer in Windows PE.  
+7.  Aggiungere il passaggio della sequenza di attività **Riavvia il computer**. In **Specificare cosa eseguire dopo il riavvio:** selezionare **The boot image assigned to this task sequence is selected** (L'immagine di avvio assegnata a questa sequenza di attività è selezionata) per avviare il computer in Windows PE.  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

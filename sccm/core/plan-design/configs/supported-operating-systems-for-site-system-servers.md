@@ -2,7 +2,7 @@
 title: Server di sistema del sito supportati | Microsoft Docs
 description: "Informazioni sulle versioni di Windows che è possibile usare per ospitare un sito di System Center Configuration Manager o un ruolo del sistema del sito."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,12 +16,12 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d23b98b362fb016c53974f851c48fa7200d2b2e3
-ms.openlocfilehash: b7c24dee94bca4ce69e0ba8f33129a0b21819d13
+ms.sourcegitcommit: bebbeebba76ab5cf0c517fcb00b7b6a516a08e3e
+ms.openlocfilehash: 12fe730d924979eec2ef55ea80a1fa90b7b47464
 
 
 ---
-# <a name="supported-operating-systems-for-system-center-configuration-manager--site-system-servers"></a>Sistemi operativi supportati per i server del sistema del sito di System Center Configuration Manager
+# <a name="supported-operating-systems-for-system-center-configuration-manager-site-system-servers"></a>Sistemi operativi supportati per i server dei sistemi del sito di System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -36,8 +36,8 @@ Usare le informazioni di questo argomento con quelle contenute negli articoli re
 
 
 
-## <a name="windows-server-2016-----standard-datacenter"></a>Windows Server 2016 - Standard, Datacenter
-Windows Server 2016 è supportato a partire da Configuration Manager versione 1606 con l'aggiornamento rapido cumulativo KB3186654, o versione di base 1606 rilasciata nell'ottobre del 2016.
+## <a name="windows-server-2016-standard-and-datacenter"></a>Windows Server 2016 - Standard e Datacenter
+Windows Server 2016 è supportato a partire da Configuration Manager versione 1606 con l'aggiornamento rapido cumulativo KB3186654 o versione 1606 di base rilasciata nell'ottobre del 2016.
 
 **Server del sito:**  
 
@@ -59,7 +59,7 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 -   Punto di distribuzione  
 
-     I punti di distribuzione supportano alcune configurazioni diverse che hanno ognuna requisiti propri e in alcuni casi supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+     I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
 -   Punto di Endpoint Protection  
 
@@ -85,7 +85,7 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 -   Punto di migrazione stato
 
-## <a name="windows-server-2012-r2-x64---standard-datacenter"></a>Windows Server 2012 R2 (x64) - Standard, Datacenter  
+## <a name="windows-server-2012-r2-x64-standard-and-datacenter"></a>Windows Server 2012 R2 (x64) - Standard e Datacenter  
 **Server del sito:**  
 
 -   Sito di amministrazione centrale  
@@ -106,7 +106,7 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 -   Punto di distribuzione  
 
-     I punti di distribuzione supportano alcune configurazioni diverse che hanno ognuna requisiti propri e in alcuni casi supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+     I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
 -   Punto di Endpoint Protection  
 
@@ -132,7 +132,7 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 -   Punto di migrazione stato  
 
-## <a name="windows-server-2012-x64---standard-datacenter"></a>Windows Server 2012 (x64) - Standard, Datacenter  
+## <a name="windows-server-2012-x64-standard-and-datacenter"></a>Windows Server 2012 (x64) - Standard e Datacenter  
 **Server del sito:**  
 
 -   Sito di amministrazione centrale  
@@ -153,7 +153,7 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 -   Punto di distribuzione  
 
-     I punti di distribuzione supportano alcune configurazioni diverse che hanno ognuna requisiti propri e in alcuni casi supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+     I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
 -   Punto di Endpoint Protection  
 
@@ -179,8 +179,8 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 -   Punto di migrazione stato  
 
-## <a name="windows-server-2008-r2-with-sp1-x64-----standard-enterprise-datacenter"></a>Windows Server 2008 R2 con SP1 (x64) - Standard, Enterprise, Datacenter  
- Windows Server 2008 R2 è ora in modalità di supporto "Extended" e non più in modalità di supporto Mainstream, come descritto in [Criteri relativi al ciclo di vita Microsoft](https://support.microsoft.com/lifecycle). Per altre informazioni sul supporto disponibile in futuro per questi sistemi operativi come server di sistema del sito con Configuration Manager, vedere [Removed and deprecated features for System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md) (Funzionalità rimosse e deprecate per System Center Configuration Manager).  
+## <a name="windows-server-2008-r2-with-sp1-x64-standard-enterprise-and-datacenter"></a>Windows Server 2008 R2 con SP1 (x64) - Standard, Enterprise e Datacenter  
+ Windows Server 2008 R2 è ora in modalità di supporto Extended e non più in modalità di supporto Mainstream, come descritto in [Criteri relativi al ciclo di vita Microsoft](https://support.microsoft.com/lifecycle). Per altre informazioni sul supporto disponibile in futuro per questi sistemi operativi come server di sistema del sito con Configuration Manager, vedere [Funzionalità rimosse e deprecate per System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
 
 **Server del sito:**  
 
@@ -202,7 +202,7 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 -   Punto di distribuzione  
 
-     I punti di distribuzione supportano alcune configurazioni diverse che hanno ognuna requisiti propri e in alcuni casi supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+     I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
 -   Punto di Endpoint Protection  
 
@@ -228,8 +228,8 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 -   Punto di migrazione stato  
 
-## <a name="windows-server-2008-with-sp2-x86-x64---standard-enterprise-datacenter"></a>Windows Server 2008 con SP2 (x86, x64) - Standard, Enterprise, Datacenter  
- Windows Server 2008 è ora in modalità di supporto "Extended" e non più in modalità di supporto Mainstream, come descritto in [Criteri relativi al ciclo di vita Microsoft](https://support.microsoft.com/lifecycle). Per altre informazioni sul supporto disponibile in futuro per questi sistemi operativi come server di sistema del sito con Configuration Manager, vedere [Removed and deprecated features for System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md) (Funzionalità rimosse e deprecate per System Center Configuration Manager).  
+## <a name="windows-server-2008-with-sp2-x86-x64-standard-enterprise-and-datacenter"></a>Windows Server 2008 con SP2 (x86, x64) - Standard, Enterprise e Datacenter  
+ Windows Server 2008 è ora in modalità di supporto Extended e non più in modalità di supporto Mainstream, come descritto in [Criteri relativi al ciclo di vita Microsoft](https://support.microsoft.com/lifecycle). Per altre informazioni sul supporto disponibile in futuro per questi sistemi operativi come server di sistema del sito con Configuration Manager, vedere [Funzionalità rimosse e deprecate per System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
 
 **Server del sito:**  
 
@@ -255,7 +255,7 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
     -   I punti di distribuzione in questo sistema operativo sono supportati per PXE, ma non supportano l'avvio di rete dei computer client in modalità EFI. I computer client con BIOS o con avvio EFI in modalità legacy sono supportati.  
 
-    -   I punti di distribuzione supportano alcune configurazioni diverse che hanno ognuna requisiti propri e in alcuni casi supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+    -   I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
 -   Punto di Endpoint Protection  
 
@@ -281,7 +281,7 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 -   Punto di migrazione stato  
 
-## <a name="windows-10-x86-x64---pro-enterprise"></a>Windows 10 (x86, x64) - Pro, Enterprise  
+## <a name="windows-10-x86-x64-pro-and-enterprise"></a>Windows 10 (x86, x64) - Pro e Enterprise  
 **Server del sistema del sito:**  
 
 -   Punto di distribuzione  
@@ -290,9 +290,9 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
     -   I punti di distribuzione in questa versione del sistema operativo non supportano il multicast.  
 
-    -   I punti di distribuzione supportano alcune configurazioni diverse che hanno ognuna requisiti propri e in alcuni casi supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+    -   I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-## <a name="windows-81-x86-x64---professional-enterprise"></a>Windows 8.1 (x86, x64) - Professional, Enterprise  
+## <a name="windows-81-x86-x64-professional-and-enterprise"></a>Windows 8.1 (x86, x64) - Professional e Enterprise  
 **Server del sistema del sito:**  
 
 -   Punto di distribuzione  
@@ -301,9 +301,9 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
     -   I punti di distribuzione in questa versione del sistema operativo non supportano il multicast.  
 
-    -   I punti di distribuzione supportano alcune configurazioni diverse che hanno ognuna requisiti propri e in alcuni casi supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+    -   I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-## <a name="windows-8-x86-x64---professional-enterprise-distribution-point"></a>Windows 8 (x86, x64) - Punto di distribuzione Professional, Enterprise  
+## <a name="windows-8-x86-x64-professional-and-enterprise"></a>Windows 8 (x86, x64) - Professional e Enterprise
 **Server del sistema del sito:**  
 
 -   Punto di distribuzione  
@@ -312,9 +312,9 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
     -   I punti di distribuzione in questa versione del sistema operativo non supportano il multicast.  
 
-    -   I punti di distribuzione supportano alcune configurazioni diverse che hanno ognuna requisiti propri e in alcuni casi supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+    -   I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-## <a name="windows-7-with-sp1-x86-x64---professional-enterprise-ultimate"></a>Windows 7 con SP1 (x86, x64) - Professional, Enterprise, Ultimate  
+## <a name="windows-7-with-sp1-x86-x64-professional-enterprise-and-ultimate"></a>Windows 7 con SP1 (x86, x64) - Professional, Enterprise e Ultimate  
 **Server del sistema del sito:**  
 
 -   Punto di distribuzione  
@@ -323,24 +323,24 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
     -   I punti di distribuzione in questa versione del sistema operativo non supportano il multicast.  
 
-    -   I punti di distribuzione supportano alcune configurazioni diverse che hanno ognuna requisiti propri e in alcuni casi supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+    -   I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
 ## <a name="the-server-core-installation-of-windows-server-2012"></a>Installazione Server Core di Windows Server 2012  
- Oltre ai sistemi operativi precedenti, l'installazione Server Core di Windows Server 2012 è supportata per l'uso come punto di distribuzione con le limitazioni seguenti:  
+ Oltre ai sistemi operativi precedentemente elencati, l'installazione Server Core di Windows Server 2012 è supportata anche per l'uso come punto di distribuzione con le limitazioni seguenti:  
 
--   Sono supportati solo i sistemi x64  
+-   È supportata solo la versione a 64 bit.  
 
--   I punti di distribuzione in questo sistema operativo non supportano PXE o il multicast  
+-   I punti di distribuzione in questo sistema operativo non supportano PXE o il multicast.
 
 ## <a name="the-server-core-installation-of-windows-server-2012-r2"></a>Installazione Server Core di Windows Server 2012 R2  
- Oltre ai sistemi operativi precedenti, l'installazione Server Core di Windows Server 2012 R2 è supportata per l'uso come punto di distribuzione con le limitazioni seguenti:  
+ Oltre ai sistemi operativi precedentemente elencati, l'installazione Server Core di Windows Server 2012 R2 è supportata anche per l'uso come punto di distribuzione con le limitazioni seguenti:  
 
--   Sono supportati solo i sistemi x64  
+-   È supportata solo la versione a x64 bit.
 
--   I punti di distribuzione in questo sistema operativo non supportano PXE o il multicast  
+-   I punti di distribuzione in questo sistema operativo non supportano PXE o il multicast.  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

@@ -2,7 +2,7 @@
 title: Informativa sulla privacy di System Center Configuration Manager - Libreria di cmdlet di Configuration Manager | Microsoft Docs
 description: Informazioni su come Microsoft raccoglie e usa i dati relativi alla libreria di cmdlet di System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 767d0594eb871462df038997ea3b7e29615e05f7
-ms.openlocfilehash: 10d8e8948d66a6b9b74e16a02cfbfc4ced66596c
+ms.sourcegitcommit: 3d6799ad46e0fe69333aba0662f18c9153c17bda
+ms.openlocfilehash: 3936075555cc0bb370ea6e42c7e720b864d565f7
 
 
 ---
@@ -30,16 +30,16 @@ Questa informativa sulla privacy riguarda le funzionalità di System Center Conf
 
 ## <a name="usage-data"></a>Dati di utilizzo  
  **Scopo della funzionalità**   
-System Center Configuration Manager Cmdlet Library consente di usare i cmdlet e gli script di Windows PowerShell per gestire una gerarchia di Configuration Manager. Oltre a raccogliere informazioni sul modo in cui vengono usati i cmdlet inclusi nella libreria allo scopo di individuare le tendenze e i modelli di utilizzo,  Cmdlet Library raccoglie anche i tipi e i numeri di errori riscontrati durante l'utilizzo dei cmdlet.  
+La libreria di cmdlet di System Center Configuration Manager consente di usare i cmdlet e gli script di Windows PowerShell per gestire una gerarchia di Configuration Manager. Oltre a raccogliere informazioni sul modo in cui vengono usati i cmdlet della libreria per individuare le tendenze e i modelli di utilizzo, la libreria di cmdlet raccoglie anche i tipi e i numeri di errori riscontrati durante l'uso dei cmdlet.  
 
  **Informazioni raccolte, elaborate o trasmesse**   
-i dati di utilizzo raccolti includono quelli sull'avvio, l'arresto e l'interruzione di cmdlet e sull'esecuzione di metriche di attività e di cmdlet deprecati per le operazioni dei provider di SMS correlate ai cmdlet. Si tratta di informazioni che non consentono di identificare l'utente.  Le informazioni sugli errori raccolte includono gli errori restituiti dai cmdlet e i dettagli relativi agli errori delle eccezioni. Alcune segnalazioni con i dettagli sugli errori potrebbero inavvertitamente contenere identificatori individuali, ad esempio il numero di serie di un dispositivo connesso al computer. Cmdlet Library filtra e rende anonime le informazioni contenute nelle segnalazioni errori, al fine di rimuovere eventuali identificatori individuali prima della trasmissione a Microsoft.  
+I dati di utilizzo raccolti includono quelli sull'avvio, l'arresto e l'interruzione di cmdlet e sull'esecuzione di metriche di attività e di cmdlet deprecati per le operazioni dei provider di Systems Management Server (SMS) correlate ai cmdlet. Si tratta di informazioni che non consentono di identificare l'utente.  Le informazioni sugli errori raccolte includono gli errori restituiti dai cmdlet e i dettagli relativi agli errori delle eccezioni. Alcune segnalazioni con i dettagli sugli errori potrebbero inavvertitamente contenere identificatori individuali, come il numero di serie di un dispositivo connesso al computer. La libreria dei cmdlet filtra e rende anonime le informazioni nelle segnalazioni errori, al fine di rimuovere gli identificatori individuali prima della trasmissione a Microsoft.  
 
  **Uso delle informazioni**   
 Microsoft usa queste informazioni per migliorare la qualità, la sicurezza e l'integrità dei prodotti e dei servizi offerti.  
 
  **Scelta/controllo**   
-La funzionalità Dati di Utilizzo è abilitata per impostazione predefinita. System Center Configuration Manager Cmdlet Library include due chiavi del Registro di sistema per controllare questa funzionalità.  
+La funzionalità Dati di Utilizzo è abilitata per impostazione predefinita. La libreria di cmdlet di System Center Configuration Manager ha due chiavi del Registro di sistema che controllano questa funzionalità.  
 
  Per esprimere un rifiuto esplicito, l'utente deve configurare questi due valori delle chiavi del Registro di sistema, uno per ognuno dei provider di Event Tracing for Windows (ETW):  
 
@@ -49,10 +49,10 @@ La funzionalità Dati di Utilizzo è abilitata per impostazione predefinita. Sys
 
  Le modifiche alle impostazioni relative ai dati di utilizzo sono specifiche per il computer in cui vengono apportate.  
 
- Per altre informazioni su come configurare i dati di utilizzo (raccolta), vedere la [documentazione della libreria di cmdlet di System Center Configuration Manager](https://technet.microsoft.com/en-us/library/dn958404.aspx).   
+ Per dettagli su come configurare i dati di utilizzo (raccolta), vedere la [documentazione della libreria di cmdlet di System Center Configuration Manager](https://technet.microsoft.com/en-us/library/dn958404.aspx).   
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 

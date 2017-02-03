@@ -1,7 +1,7 @@
 ---
 title: SQL Server AlwaysOn | Microsoft Docs
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/4/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,8 +15,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 9d4d0c741418af29edc586a5d629fc61f86da426
+ms.sourcegitcommit: 4d34a272a93100426cccd2308c5b3b0b0ae94a60
+ms.openlocfilehash: 5fb6bc0bca5ee590000fd30bd46c765871cf5220
 
 
 ---
@@ -98,9 +98,12 @@ ms.openlocfilehash: 9d4d0c741418af29edc586a5d629fc61f86da426
 
  **Requisiti per i gruppi di disponibilità AlwaysOn usati con System Center Configuration Manager:**  
 
--   Ogni nodo, o replica, nel gruppo di disponibilità deve eseguire una versione di SQL Server supportata da System Center Configuration Manager  
+-  *Versione*: ogni nodo, o replica, nel gruppo di disponibilità deve eseguire una versione di SQL Server supportata da System Center Configuration Manager. Se supportati da SQL Server, diversi nodi del gruppo di disponibilità possono eseguire diverse versioni di SQL Server.   
 
--   Il gruppo di disponibilità deve disporre di una replica primaria e può avere fino a due repliche secondarie sincrone  
+- *Edizione*: è necessario usare un'edizione Enterprise di SQL Server.  In SQL Server 2016 Standard Edition sono stati introdotti i gruppi di disponibilità di base, non supportati da Configuration Manager.
+
+
+-   I gruppi di disponibilità devono disporre di una replica primaria e possono avere fino a due repliche secondarie sincrone.  
 
 -  Dopo aver aggiunto un database a un gruppo di disponibilità, eseguire il failover della replica primaria a una replica secondaria (trasformandola nella nuova replica primaria) e quindi configurare il database come segue:
     - Enable Trustworthy: equal to True
@@ -131,7 +134,9 @@ ms.openlocfilehash: 9d4d0c741418af29edc586a5d629fc61f86da426
         >  System Center Configuration Manager supporta l'uso di repliche del gruppo di disponibilità quando sono impostate su Failover automatico. Tuttavia, è necessario impostare Failover manuale quando si esegue l'installazione per specificare l'uso del database del sito nel gruppo di disponibilità e quando si installano gli aggiornamenti in Configuration Manager, inclusi quelli che non si applicano al database del sito.  
 
   **Limitazioni per i gruppi di disponibilità**
-   - I gruppi di disponibilità sono supportati solo per il database del sito e non per il database di aggiornamento software o il database di report   
+   - Non sono supportati i gruppi di disponibilità di base (introdotti con SQL Server 2016 Standard Edition). Questi gruppi, infatti, non supportano l'accesso in lettura alle repliche secondarie, requisito essenziale per l'uso con Configuration Manager. Per altre informazioni, vedere [Gruppi di disponibilità di base (gruppi di disponibilità AlwaysOn)](https://msdn.microsoft.com/en-us/library/mt614935.aspx).
+
+   - I gruppi di disponibilità sono supportati solo per il database del sito e non per il database di aggiornamento software o il database di report.   
    - Quando si usa un gruppo di disponibilità è necessario configurare manualmente il punto di reporting per usare la replica primaria corrente e non il listener del gruppo di disponibilità. Se la replica primaria esegue il failover a un'altra replica, è necessario riconfigurare il punto di reporting per usare la nuova replica primaria.  
    - Prima di installare gli aggiornamenti, ad esempio la versione 1606, verificare che il gruppo di disponibilità sia impostato sul failover manuale. Dopo l'aggiornamento del sito, è possibile ripristinare la modalità di failover automatico.
 
@@ -260,6 +265,6 @@ ms.openlocfilehash: 9d4d0c741418af29edc586a5d629fc61f86da426
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO1-->
 
 
