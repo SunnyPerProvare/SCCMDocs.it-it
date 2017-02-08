@@ -12,8 +12,8 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4c0e6824-2dfe-4700-b817-d5631e0eb872
 caps.latest.revision: 
-author: nathbarn
-ms.author: nathbarn
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
@@ -93,11 +93,11 @@ Rilevare le minacce alla rete, ad esempio attacchi di tipo man-in-the-middle, e 
 
 ## <a name="next-steps"></a>Passaggi successivi
 Ecco i passaggi principali da seguire per implementare questa soluzione:
-1.  [Configurare la sottoscrizione con la protezione dalle minacce mobili Lookout](set-up-your-subscription-with-lookout.md)
-2.  [Abilitare la connessione MTP di Lookout in Intune](enable-lookout-connection-in-intune.md)
+1.    [Configurare la sottoscrizione con la protezione dalle minacce mobili Lookout](set-up-your-subscription-with-lookout.md)
+2.    [Abilitare la connessione MTP di Lookout in Intune](enable-lookout-connection-in-intune.md)
 3.  [Configurare e distribuire l'app Lookout for Work](configure-and-deploy-lookout-for-work-apps.md)
-4.  [Configurare i criteri di conformità](enable-device-threat-protection-rule-compliance-policy.md)
-5.  [Risoluzione dei problemi di integrazione di Lookout](troubleshoot-lookout-integration.md)
+4.    [Configurare i criteri di conformità](enable-device-threat-protection-rule-compliance-policy.md)
+5.    [Risoluzione dei problemi di integrazione di Lookout](troubleshoot-lookout-integration.md)
 
 
 
