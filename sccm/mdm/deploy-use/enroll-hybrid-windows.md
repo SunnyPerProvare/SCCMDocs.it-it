@@ -16,8 +16,8 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 808327495c66f4e6ad86ab144455014171a453b2
+ms.sourcegitcommit: d242c9ae0ca6e3a3f3bee3a93176b9ab802319ae
+ms.openlocfilehash: a75cba2a6bb280c29f300c8ef2d3fbfbc7a558d2
 
 
 ---
@@ -75,6 +75,8 @@ Con la registrazione automatica è possibile registrare PC Windows 10 e Windows 
 ### <a name="create-dns-alias-for-device-enrollment"></a>Creare l'alias DNS per la registrazione del dispositivo  
  Un Alias DNS (tipo di record CNAME) semplifica la registrazione dei dispositivi perché durante la registrazione del dispositivo il nome del server viene inserito automaticamente. Per creare un alias DNS (tipo di record CNAME), è necessario configurare un record CNAME nei record DNS della società che reindirizzi le richieste inviate a un URL nel dominio della società ai server del servizio cloud di Microsoft.  Ad esempio, se il sito Web della società è contoso.com, si creerà un record CNAME in DNS che reindirizzi EnterpriseEnrollment.contoso.com a EnterpriseEnrollment-s.manage.microsoft.com.  
 
+ Sebbene la creazione di voci DNS CNAME sia facoltativa, i record CNAME semplificano la registrazione per gli utenti. Se non viene trovato alcun record di registrazione CNAME, viene richiesto agli utenti di immettere manualmente il nome del server MDM, [https://enrollment.manage.microsoft.com](https://enrollment.manage.microsoft.com).
+
 |Tipo|Nome dell'host|Punta a|  
 |----------|---------------|---------------|  
 |CNAME|EnterpriseEnrollment.company_domain.com|EnterpriseEnrollment-s.manage.microsoft.com|  
@@ -118,6 +120,6 @@ Con la registrazione automatica è possibile registrare PC Windows 10 e Windows 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 
