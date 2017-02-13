@@ -13,8 +13,8 @@ ms.technology:
 - configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
 translationtype: Human Translation
-ms.sourcegitcommit: 46c8004afee4b18d5c7a2fcc5dac0f7d0d1f823c
-ms.openlocfilehash: fb2fc409c2f734816e4f3bf93d61a748d957ebf0
+ms.sourcegitcommit: 6bb2bf0a029bc21e9420ac0ba782e8ea21291896
+ms.openlocfilehash: df9ad09c4ce0c2a18ee012cd3ace7b1a850df7b4
 
 ---
 
@@ -43,6 +43,18 @@ Per altre informazioni, vedere [Panoramica dei canali di aggiornamento per Offic
 - --->
 
 Nella parte superiore del dashboard, usare l'impostazione a discesa **Raccolta** per filtrare i dati del dashboard in base ai membri di una raccolta specifica.
+
+### <a name="display-data-in-the-office-365-client-management-dashboard"></a>Visualizzare dati nel dashboard di gestione client di Office 365
+I dati visualizzati nel dashboard di gestione client di Office 365 provengono dall'inventario hardware. L'inventario hardware deve essere abilitato ed è necessario selezionare la classe dell'inventario hardware **Office 365 ProPlus Configurations** prima che i dati vengano visualizzati nel dashboard.
+#### <a name="to-display-data-in-the-office-365-client-management-dashboard"></a>Per visualizzare dati nel dashboard di gestione client di Office 365
+1. Abilitare l'inventario hardware, se non è ancora stato fatto. Per altri dettagli, vedere [Configurare l'inventario hardware](\sccm\core\clients\manage\configure-hardware-inventory).
+2. Nella console di Configuration Manager passare a **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.  
+3. Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
+4. Nel **Impostazioni Client predefinite** nella finestra di dialogo fare clic su **l'inventario Hardware**.  
+5. Nel **le impostazioni del dispositivo** elenco, fare clic su **Imposta classi**.  
+6. Nella finestra di dialogo **Classi di inventario hardware** selezionare **Office 365 ProPlus Configurations**.  
+7.  Fare clic su **OK** per salvare le modifiche e chiudere il **classi di inventario Hardware** nella finestra di dialogo.  
+Viene avviato il dashboard di gestione client di Office 365 che visualizza i dati in base all'inventario hardware.
 
 <!---
  On the upper-right side of the dashboard, click **Office 365 Installer** to start the Office 365 Client Installation Wizard to deploy Office 365 apps to clients. For details, see [Deploy Office 365 apps to clients](#deploy-office-365-apps-to-clients).
@@ -108,6 +120,6 @@ Use the Office 365 Client Management dashboard in Configuration Manager to revie
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO3-->
 
 

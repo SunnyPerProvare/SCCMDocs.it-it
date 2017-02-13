@@ -1,8 +1,8 @@
 ---
-title: "Passaggi della sequenza di attività | Microsoft Docs"
+title: "Passaggi della sequenza di attività - Configuration Manager | Microsoft Docs"
 description: "Informazioni sui passaggi della sequenza di attività che è possibile aggiungere a una sequenza di attività di Configuration Manager."
 ms.custom: na
-ms.date: 12/07/2016
+ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3f44505c977b511223a083a960f871371c0ff133
-ms.openlocfilehash: 6e324eb97c0e803d382371ace541a4b9f96e6ba3
+ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
+ms.openlocfilehash: 94eeddd161448aff6e1c7afa542b0cbef1ad4d77
 
 
 ---
@@ -1377,7 +1377,7 @@ Prima di Configuration Manager versione 1610 questo passaggio eseguiva le attivi
  Quando nella riga di comando si specificano file o programmi che non sono già presenti nel computer di destinazione, selezionare questa opzione per specificare il pacchetto di Configuration Manager contenente i file appropriati. Questo pacchetto non richiede alcun programma. Questa opzione non è necessaria se i file specificati esistono nel computer di destinazione.  
 
  **Timeout**  
- Specifica un valore per il tempo concesso da Configuration Manager per l'esecuzione della riga di comando. Questo valore può essere compreso tra 10 e 999 minuti. Il valore predefinito è 15 minuti.  
+ Specifica un valore per il tempo concesso da Configuration Manager per l'esecuzione della riga di comando. Questo valore può essere compreso tra 1 e 999 minuti. Il valore predefinito è 15 minuti.  
 
  Questa opzione è disabilitata per impostazione predefinita.  
 
@@ -1696,6 +1696,6 @@ Dopo la selezione delle variabili per una regola, è necessario fornire un valor
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 
