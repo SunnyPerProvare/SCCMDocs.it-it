@@ -2,7 +2,7 @@
 title: Definizioni malware di Endpoint Protection da una condivisione di rete| Microsoft Docs
 description: "Informazioni su come scaricare manualmente gli aggiornamenti delle definizioni più recenti da Microsoft e configurare i client per scaricare le definizioni."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
