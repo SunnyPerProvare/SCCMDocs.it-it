@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
-ms.openlocfilehash: 1452362c280fed871da81fa8f711a975493b98a0
+ms.sourcegitcommit: 34dded3a8caf8c2be0313bc012cbd8ad2a909fad
+ms.openlocfilehash: 20bcc1cd909eec13eaca0a6de66806bd496f729d
 
 ---
 # <a name="capabilities-in-technical-preview-1701-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1701 per System Center Configuration Manager
@@ -135,6 +135,28 @@ A tale scopo, modificare un file di configurazione in modo che punti al cloud pe
 2.  Dopo aver salvato il file con le due modifiche, riavviare la console di Configuration Manager nello stesso computer e quindi usare la console per installare il connettore OMS. Per installare il connettore, usare le informazioni in [Sincronizzazione dei dati da Configuration Manager a Microsoft Operations Management Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) e selezionare l'**Area di lavoro di Operations Management Suite** che si trova nel cloud di Microsoft Azure per enti pubblici.
 
 3.  Dopo aver installato il connettore OMS, la connessione al cloud per enti pubblici sarà disponibile quando si usa qualsiasi console che si connette al sito.
+
+## <a name="android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm"></a>Non è più necessario specificare le versioni di Android e iOS nella creazione guidata della gestione ibrida dei dispositivi mobili
+
+A partire dalla presente Technical Preview, per la gestione ibrida dei dispositivi mobili non è più necessario indicare versioni specifiche di Android e iOS quando si creano nuovi criteri e profili per i dispositivi gestiti in Intune. È necessario però scegliere uno dei tipi di dispositivo seguenti:
+
+- Android
+- Samsung KNOX Standard 4.0 e versioni successive
+- iPhone
+- iPad
+
+Questa modifica interessa la creazione guidata degli elementi seguenti:
+
+- Elementi di configurazione
+- Criteri di conformità
+- Profili certificato
+- Profili di posta elettronica
+- Profili VPN
+- Profili Wi-Fi
+
+Con questa modifica, le distribuzioni ibride possono offrire il supporto più rapidamente per le nuove versioni di Android e iOS, senza attendere una nuova versione o un'estensione di Configuration Manager. Quando una nuova versione è supportata nella versione autonoma di Intune, gli utenti possono aggiornare i propri dispositivi mobili a tale versione.
+
+Per evitare problemi durante l'aggiornamento da versioni precedenti di Configuration Manager, le versioni dei sistemi operativi dei dispositivi mobili sono ancora disponibili nelle pagine delle proprietà di tali elementi. Se è ancora necessario usare una versione specifica, è possibile creare il nuovo elemento e quindi specificare la versione nella pagina delle proprietà dell'elemento appena creato.
 
 
 

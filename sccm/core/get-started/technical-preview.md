@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8e4ccaf26b83896d12efcbd7ebd4bda4d4bf6675
-ms.openlocfilehash: d7d03c4494338a1d4583b6c82d3d5009b7785cfe
+ms.sourcegitcommit: 916c39133ec3796b9cff97c3c3bdb49dcbb6d7e7
+ms.openlocfilehash: defff3d720363cfb066b120e2b8f58d643a87699
 
 
 ---
@@ -140,6 +140,7 @@ ms.openlocfilehash: d7d03c4494338a1d4583b6c82d3d5009b7785cfe
  |Ospitare gli aggiornamenti software in punti di distribuzione basati sul cloud| [Tech Preview 1701](capabilities-in-technical-preview-1701.md#host-software-updates-on-cloud-based-distribution-points)|![Non aggiunta](media/Red_X.gif) |
  |Convalidare i dati di attestazione dell'integrità del dispositivo tramite punti di gestione| [Tech Preview 1701](capabilities-in-technical-preview-1701.md#validate-device-health-attestation-data-via-management-points)|![Non aggiunta](media/Red_X.gif) |
  |Connettore OMS per il cloud di Microsoft Azure per enti pubblici |[Tech Preview 1701](capabilities-in-technical-preview-1701.md#use-the-oms-connector-for-microsoft-azure-government-cloud) |![Non aggiunta](media/Red_X.gif) |
+ |Non è più necessario specificare le versioni di Android e iOS nella creazione guidata |[Tech Preview 1701](capabilities-in-technical-preview-1701.md#android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm) |![Non aggiunta](media/Red_X.gif) |
  |Accesso ai dati di endpoint OData |[Technical Preview 1612](capabilities-in-technical-preview-1612.md#odata-endpoint-data-access)|![Non aggiunta](media/Red_X.gif)|
  |Punto di servizio Data Warehouse |[Technical Preview 1612](capabilities-in-technical-preview-1612.md#the-data-warehouse-service-point)|![Non aggiunta](media/Red_X.gif)|
  |Strumento di pulizia della raccolta contenuto |[Technical Preview 1612](capabilities-in-technical-preview-1612.md#content-library-cleanup-tool)|![Non aggiunta](media/Red_X.gif)|
@@ -231,6 +232,6 @@ ms.openlocfilehash: d7d03c4494338a1d4583b6c82d3d5009b7785cfe
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Jan17_HO4-->
 
 
