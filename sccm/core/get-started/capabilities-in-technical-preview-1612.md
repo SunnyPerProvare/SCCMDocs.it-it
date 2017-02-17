@@ -1,8 +1,8 @@
 ---
-title: "Funzionalità della versione Technical Preview 1612 per System Center Configuration Manager | Microsoft Docs"
+title: "Funzionalità della versione Technical Preview 1612 per Configuration Manager"
 description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1612 per System Center Configuration Manager."
 ms.custom: na
-ms.date: 1/3/2017
+ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-other
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: e7075eb675353be130fdcc867d9e4dd1009dab35
-ms.openlocfilehash: 2de36316b20b2a7b2937d767e618f4fec1affb69
+ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
+ms.openlocfilehash: cd970dacd29916c2de2db3dd5498b1949f5174e6
 
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1612 per System Center Configuration Manager
@@ -243,7 +243,8 @@ Il supporto per questa funzionalità è attualmente disponibile solo per i PC ch
 In Configuration Manager è stato aggiunto il supporto dei file di installazione rapida per gli aggiornamenti di Windows 10. Se si usa una versione supportata di Windows 10, è ora possibile usare le impostazioni di Configuration Manager per scaricare solo le differenze tra l'aggiornamento cumulativo di Windows 10 del mese corrente e l'aggiornamento cumulativo del mese precedente. Attualmente in Current Branch di Configuration Manager l'aggiornamento cumulativo completo di Windows 10, inclusi tutti gli aggiornamenti dei mesi precedenti, vengono scaricati ogni mese. Grazie ai file di installazione rapida sono possibili download più brevi e tempi di installazione più rapidi per i client.
 
 > [!IMPORTANT]
-> Le impostazioni per il supporto dei file di installazione rapida sono disponibili in Configuration Manager. Questa funzionalità tuttavia è supportata solo da Windows 10 versione 1607 con un aggiornamento che verrà rilasciato all'inizio del 2017 e dalle versioni successive di Windows. Windows 10 versione 1607 senza l'aggiornamento e le versioni precedenti di Windows non supportano i file di installazione rapida.
+> Le impostazioni per il supporto dei file di installazione rapida sono disponibili in Configuration Manager. Questa funzionalità tuttavia è supportata solo da Windows 10 versione 1607 con l'aggiornamento dell'agente di Windows Update incluso negli aggiornamenti rilasciati il 10 gennaio 2017 (Patch Tuesday). Per altre informazioni su questi aggiornamenti, vedere [la pagina del supporto tecnico 10 gennaio 2017 - KB3213986](https://support.microsoft.com/help/4009938/january-10-2017-kb3213986-os-build-14393-693). Sarà possibile avvalersi dei file di installazione rapida dopo il rilascio del prossimo insieme di aggiornamenti, il 14 febbraio 2017. Windows 10 versione 1607 senza l'aggiornamento e le versioni precedenti di Windows non supportano i file di installazione rapida.
+
 
 ### <a name="to-enable-the-download-of-express-installation-files-for-windows-10-updates-on-the-server"></a>Per abilitare il download dei file di installazione rapida per gli aggiornamenti di Windows 10 nel server
 Per avviare la sincronizzazione dei metadati per i file di installazione rapida di Windows 10 è necessario abilitarla nelle proprietà del punto di aggiornamento software.
@@ -316,6 +317,6 @@ Ora che è possibile configurare l'autenticazione a più fattori (MFA) per la re
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO4-->
 
 
