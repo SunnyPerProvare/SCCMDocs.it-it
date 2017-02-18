@@ -17,8 +17,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 35e48666f4d1a2363304650f960531fd0630a291
-ms.openlocfilehash: 854373b56052cee7e63dd71c1b9e7e980af30744
+ms.sourcegitcommit: 06cafc8f7934cde738a87ac1a1da585a9d4e2a99
+ms.openlocfilehash: 534a15279bff96d93ffb6564eeac2835f57f5645
 
 
 ---
@@ -89,13 +89,13 @@ Per altre informazioni, vedere [Gestire i dispositivi mobili con System Center C
 |Distribuzione software|Sì|Sì|Sì||  
 |Monitorare con il punto di stato di fallback|Sì||||  
 |Connessioni ai punti di gestione|Sì||Sì||  
-|Connessioni ai punti di distribuzione|Sì|Sì|Sì||  
+|Connessioni ai punti di distribuzione|Sì||Sì||  
 |Blocco da Configuration Manager|Sì|Sì|Sì||  
 |Inserimento in quarantena e blocco da Exchange Server (e Configuration Manager)||||Sì|  
 |Cancellazione remota| |Sì|Sì|Sì|  
 
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 
