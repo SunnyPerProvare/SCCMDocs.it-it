@@ -2,7 +2,7 @@
 title: 'Scenario di esempio: distribuire i client Windows Embedded | Microsoft Docs'
 description: Scenario di esempio per la distribuzione e la gestione dei client di System Center Configuration Manager in dispositivi con Windows Embedded.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 01/12/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 7b5cd35b22b610902628142d9cc52b8f3d54069d
+ms.sourcegitcommit: a650ad8e7b1f9468dd04165a3e43a89387b5d696
+ms.openlocfilehash: b07af49e2fecf6cc41258c87794ca7952206bb8a
 
 
 ---
@@ -25,11 +25,11 @@ ms.openlocfilehash: 7b5cd35b22b610902628142d9cc52b8f3d54069d
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Questo scenario illustra come è possibile gestire i dispositivi con Windows Embedded che hanno i filtri di scrittura abilitati usando System Center Configuration Manager. Se i dispositivi integrati non supportano i filtri di scrittura, funzionano come client standard di Configuration Manager e non è necessario eseguire i passaggi descritti in questo scenario necessari invece per gestire i filtri di scrittura.  
+Questo scenario illustra come è possibile gestire i dispositivi con Windows Embedded abilitati per i filtri di scrittura con System Center Configuration Manager. Se i dispositivi integrati non supportano i filtri di scrittura, funzionano come client standard di Configuration Manager e queste procedure non sono applicabili.  
 
- Coho Vineyard & Winery sta per aprire un centro visite e vorrebbe installare dei chioschi con Windows Embedded per trasmettere delle presentazioni interattive. L'edificio per il nuovo centro visite non si trova vicino al dipartimento IT, per cui è importante che i chioschi possano essere gestiti in remoto. Oltre a installare il software che trasmetterà le presentazioni interattive, questi dispositivi dovranno eseguire un software di protezione antimalware aggiornato per adempiere alle politica di sicurezza dell'azienda. Per avere la certezza che le presentazioni interattive siano sempre disponibili ai visitatori, i chioschi devono trasmettere 7 giorni a settimana e non si devono verificare tempi di inattività durante gli orari di apertura.  
+Coho Vineyard & Winery sta per aprire un centro visite e deve installare dei chioschi multimediali con Windows Embedded per eseguire delle presentazioni interattive. L'edificio del nuovo centro visite non si trova vicino al reparto IT, per cui i chioschi devono essere gestiti in remoto. Oltre al software per eseguire le presentazioni, questi dispositivi dovranno eseguire un software di protezione antimalware aggiornato, in conformità con le politiche di sicurezza dell'azienda. I chioschi devono essere in funzione 7 giorni alla settimana senza tempi di inattività durante l'orario di apertura del centro visite.  
 
- Coho Vineyard & Winery esegue già Configuration Manager per gestire i dispositivi di rete. Configuration Manager è configurato per eseguire Endpoint Protection e per installare gli aggiornamenti di software e applicazioni. Tuttavia, poiché il team IT non ha mai gestito dispositivi con Windows Embedded, Jane, amministratore di Configuration Manager, esegue un progetto pilota per gestire due chioschi multimediali che si trovano nella sala d'attesa della reception aziendale. Se il progetto pilota esegue con successo la gestione di questi dispositivi, l'ordine di acquisto per i chioschi del centro visite potrà essere approvato.  
+ Coho usa già Configuration Manager per gestire i dispositivi nella rete. Configuration Manager è configurato per eseguire Endpoint Protection e per installare gli aggiornamenti di software e applicazioni. Tuttavia, poiché il team IT non ha mai gestito dispositivi con Windows Embedded in precedenza, Jane, amministratore di Configuration Manager, esegue un progetto pilota per gestire due chioschi multimediali che si trovano nella sala d'attesa della reception.   
 
  Per gestire questi dispositivi con Windows Embedded che hanno i filtri di scrittura abilitati, Jane esegue i passaggi seguenti per installare il client di Configuration Manager, proteggere il client usando Endpoint Protection e installare il software per la presentazione interattiva.  
 
@@ -70,7 +70,7 @@ Questo scenario illustra come è possibile gestire i dispositivi con Windows Emb
 
      Jane sa che occorre sempre un po' di tempo per l'installazione dei client e per reinviare il loro stato al sito. Quindi aspetta un po' prima di confermare l'installazione corretta dei client, la loro assegnazione al sito e la loro visualizzazione come client nella raccolta da lei creata per i dispositivi con Windows Embedded.  
 
-     Per essere più sicura, nei dispositivi con Windows Embedded controlla le proprietà di Configuration Manager nel Pannello di controllo e le confronta con i computer Windows standard che sono gestiti dal sito. Ad esempio, nella scheda **Componenti** , l' **Agente di inventario hardware** visualizza **Abilitato**e nella scheda **Azioni** , sono disponibili 11 azioni che includono **Ciclo di valutazione distribuzione applicazione** e **Ciclo di recupero dati di rilevamento**.  
+     Per essere più sicura, controlla le proprietà di Configuration Manager nel Pannello di controllo nei dispositivi e le confronta con i computer Windows standard gestiti dal sito. Ad esempio, nella scheda **Componenti** , l' **Agente di inventario hardware** visualizza **Abilitato**e nella scheda **Azioni** , sono disponibili 11 azioni che includono **Ciclo di valutazione distribuzione applicazione** e **Ciclo di recupero dati di rilevamento**.  
 
      Sicura che i client sono stati correttamente installati, assegnati e avendo ricevuto i criteri client dal punto di gestione, Jane abilita manualmente i filtri di scrittura seguendo le istruzioni OEM.  
 
@@ -182,6 +182,6 @@ Questo scenario illustra come è possibile gestire i dispositivi con Windows Emb
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO3-->
 
 

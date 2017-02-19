@@ -2,7 +2,7 @@
 title: File di log per Configuration Manager | Microsoft Docs
 description: Usare i file di log per la risoluzione dei problemi in una gerarchia di System Center Configuration Manager.
 ms.custom: na
-ms.date: 11/01/2016
+ms.date: 1/12/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f36cdecd96d50bd62892b262024e43d64f7c8205
-ms.openlocfilehash: 5b7afc3e00bc8ee317b8d8c3660808c465758f91
+ms.sourcegitcommit: be5fd67e37b6ac7b20903e2e0678c1880715ab07
+ms.openlocfilehash: 1e7706156c9226aacf70e6dedb26a0edc93720d1
 
 
 ---
@@ -26,9 +26,9 @@ ms.openlocfilehash: 5b7afc3e00bc8ee317b8d8c3660808c465758f91
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-In System Center Configuration Manager i componenti client e del server del sito registrano le informazioni di processo in singoli file di log. Per impostazione predefinita, la registrazione dei componenti client e server è abilitata in Configuration Manager. È possibile usare le informazioni contenute nei file di log per risolvere i problemi che potrebbero verificarsi all'interno della gerarchia di Configuration Manager.  
+In System Center Configuration Manager i componenti client e del server del sito registrano le informazioni di processo in singoli file di log. È possibile usare le informazioni contenute nei file di log per risolvere i problemi che potrebbero verificarsi all'interno della gerarchia di Configuration Manager. Per impostazione predefinita, la registrazione dei componenti client e server è abilitata in Configuration Manager.   
 
- Nelle sezioni seguenti vengono fornite informazioni dettagliate sui diversi file di log. Usare queste informazioni per visualizzare e monitorare i log dei client e dei server di Configuration Manager per ottenere maggiori dettagli sulle operazioni e identificare le informazioni sugli errori che potrebbero facilitare la risoluzione di eventuali problemi.  
+ Nelle sezioni seguenti vengono fornite informazioni dettagliate sui diversi file di log disponibili. È possibile usare queste informazioni per visualizzare e monitorare i log dei client e dei server di Configuration Manager per ottenere maggiori dettagli sulle operazioni e identificare le informazioni sugli errori che potrebbero facilitare la risoluzione di eventuali problemi.  
 
 -   [Informazioni sui file di log di Configuration Manager](#BKMK_AboutLogs)  
 
@@ -66,11 +66,11 @@ In System Center Configuration Manager i componenti client e del server del sito
 
     -   [Backup e ripristino](#BKMK_BnRLog)  
 
-    -   [Notifica client](#BKMK_BGB)  
+    -   [Registrazione certificato](#BKMK_CertificateEnrollment)
 
-    -   [Registrazione certificato](#BKMK_CertificateEnrollment)  
+    -   [Notifica client](#BKMK_BGB)
 
-    - [Gateway di gestione cloud](#cloud-management-gateway)
+    -   [Gateway di gestione cloud](#cloud-management-gateway)
 
     -   [Impostazioni di conformità e accesso alle risorse aziendali](#BKMK_CompSettingsLog)  
 
@@ -92,13 +92,13 @@ In System Center Configuration Manager i componenti client e del server del sito
 
     -   [Dispositivi mobili](#BKMK_MDMLog)  
 
-    -   [Distribuzione del sistema operativo](#BKMK_OSDLog)  
+    -   [Distribuzione del sistema operativo:](#BKMK_OSDLog)  
 
     -   [Risparmio energia](#BKMK_PowerMgmtLog)  
 
     -   [Controllo remoto](#BKMK_RCLog)  
 
-    -   [Reporting](#BKMK_ReportLog)  
+    -   [Creazione di report](#BKMK_ReportLog)  
 
     -   [Amministrazione basata su ruoli](#BKMK_RBALog)  
 
@@ -115,43 +115,34 @@ In System Center Configuration Manager i componenti client e del server del sito
     -   [Server WSUS](#BKMK_WSUSLog)  
 
 ##  <a name="a-namebkmkaboutlogsa-about-configuration-manager-log-files"></a><a name="BKMK_AboutLogs"></a> Informazioni sui file di log di Configuration Manager  
- Per impostazione predefinita, la maggior parte dei processi in Configuration Manager scrive le informazioni operative in un file di log dedicato al processo. Questi file di log vengono identificati dall’estensione **.LOG** o **.LO_** . Configuration Manager scrive nel file con estensione LOG fino a quando il file non raggiunge la dimensione massima. Quando il log è pieno, il file .LOG viene copiato in un file con lo stesso nome ma con estensione .LO_ e il processo o il componente continua a scrivere nel file .LOG. Quando il file .LOG raggiunge nuovamente la dimensione massima, il file .LO_ viene sovrascritto e il processo si ripete. Alcuni componenti stabiliscono una cronologia per i file di log aggiungendo una data e un timestamp al nome del file di log e mantenendo l'estensione .LOG. Un'eccezione alla dimensione massima e all'utilizzo del file **.LO_** è il client per Linux e UNIX. Per informazioni su come il client per Linux e UNIX usa i file di log, vedere Gestione dei file di log per i client Linux e UNIX nella sezione [Client per Linux e UNIX](#BKMK_LogFilesforLnU) in questo argomento.  
+ La maggior parte dei processi in Configuration Manager scrive le informazioni operative in un file di log dedicato al processo. Questi file di log sono identificati dall'estensione **.log** o **.lo_**. Configuration Manager scrive in un file con estensione .log fino a quando il file non raggiunge la dimensione massima. Quando il log è pieno, il file .log viene copiato in un file con lo stesso nome ma con estensione .lo_ e il processo o il componente continua a scrivere nel file .log. Quando il file .log raggiunge nuovamente la dimensione massima, il file .lo_ viene sovrascritto e il processo si ripete. Alcuni componenti stabiliscono una cronologia per i file di log aggiungendo una data e un timestamp al nome del file di log e mantenendo l'estensione .log. Un'eccezione alla dimensione massima e all'uso del file .lo_ è il client per Linux e UNIX. Per informazioni su come il client per Linux e UNIX usa i file di log, vedere [Gestione dei file di log per i client Linux e UNIX](#BKMK_ManageLinuxLogs) in questo argomento.  
 
- Per visualizzare i log è possibile usare CMTrace, il visualizzatore log di Configuration Manager, disponibile nella cartella **\SMSSETUP\TOOLS** del supporto di origine di Configuration Manager. Lo strumento CMTrace viene inoltre aggiunto a tutte le immagini di avvio aggiunte alla **Raccolta software**.  
+ Per visualizzare i log, usare CMTrace, il visualizzatore log di Configuration Manager, disponibile nella cartella \\SMSSetup\\Tools del supporto di origine di Configuration Manager. Lo strumento CMTrace viene aggiunto a tutte le immagini di avvio aggiunte alla Raccolta software.  
 
-###  <a name="a-namebkmklogoptionsa-configure-logging-options-by-using-the-configuration-manager-service-manager"></a><a name="BKMK_LogOptions"></a> Configurare le opzioni di registrazione usando Configuration Manager Service Manager  
- Configuration Manager supporta opzioni che consentono di modificare il percorso di archiviazione e la dimensione dei file di log.  
+###  <a name="a-namebkmklogoptionsa-configure-logging-options-by-using-configuration-manager-service-manager"></a><a name="BKMK_LogOptions"></a> Configurare le opzioni di registrazione usando Configuration Manager Service Manager  
+ In Configuration Manager è possibile modificare il percorso di archiviazione e la dimensione dei file di log.  
 
- Attenersi alla procedura seguente per usare **Configuration Manager Service Manager** per modificare la dimensione, il nome e il percorso dei file di log e per fare in modo che più componenti scrivano in un unico file di log.  
+ Per modificare la dimensione, il nome e il percorso dei file di log o per fare in modo che più componenti scrivano in un unico file di log, eseguire le operazioni descritte di seguito.  
 
-##### <a name="to-modify-logging-for-a-component"></a>Per modificare la registrazione per un componente:  
+#### <a name="to-modify-logging-for-a-component"></a>Per modificare la registrazione per un componente  
 
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**, quindi fare clic su **Stato sistema** e infine fare clic su **Stato sito** o **Stato componente**.  
-
-2.  Nella scheda **Home** , nel gruppo **Componente** , fare clic su **Avvia** e selezionare **Configuration Manager Service Manager**.  
-
-3.  All'apertura di Configuration Manager Service Manager, connettersi al sito che si desidera gestire.  
-
-     Se non si visualizza il sito che si desidera gestire, fare clic su **Sito**, quindi su **Connetti** e infine immettere il nome del server del sito corretto.  
-
-4.  Espandere il sito e passare a **Componenti** o **Server**in base alla posizione dei componenti che si desidera gestire.  
-
+1.  Nella console di Configuration Manager selezionare **Monitoraggio**, quindi **Stato del sistema** e infine **Stato del sito** o **Stato del componente**.  
+2.  Nella scheda **Home** del gruppo **Componente** selezionare **Avvia**, quindi selezionare **Configuration Manager Service Manager**.  
+3.  All'apertura di Configuration Manager Service Manager, connettersi al sito da gestire. Se non viene visualizzato il sito che si vuole gestire, selezionare **Sito**, quindi selezionare **Connetti** e immettere il nome del server del sito corretto.  
+4.  Espandere il sito e passare a **Componenti** o **Server** in base alla posizione dei componenti da gestire.  
 5.  Nel riquadro a destra selezionare uno o più componenti.  
-
 6.  Scegliere **Registrazione** dal menu **Componente**.  
-
 7.  Nella finestra di dialogo **Registrazione componente di Configuration Manager** completare le opzioni di configurazione disponibili per la selezione effettuata.  
+8.  Selezionare **OK** per salvare la configurazione.  
 
-8.  Fare clic su **OK** per salvare la configurazione.  
-
-###  <a name="a-namebkmkloglocationa-locating-configuration-manager-logs"></a><a name="BKMK_LogLocation"></a> Individuazione dei log di Configuration Manager  
- Per impostazione predefinita, i file di log di Configuration Manager sono archiviati in percorsi diversi a seconda del processo che li ha creati e della configurazione dei sistemi del sito. Dal momento che la posizione del log su un dato computer può variare, usare la funzionalità di ricerca per individuare i file di log desiderati sui computer di Configuration Manager, in modo da risolvere eventuali problemi relativi a uno specifico scenario.  
+###  <a name="a-namebkmkloglocationa-find-configuration-manager-logs"></a><a name="BKMK_LogLocation"></a> Individuare i log di Configuration Manager  
+I file di log di Configuration Manager sono archiviati in diversi percorsi, a seconda del processo che li ha creati e della configurazione dei sistemi del sito. Dal momento che il percorso del log in un computer può variare, usare la funzione di ricerca per trovare i file di log desiderati nei computer di Configuration Manager, in modo da risolvere eventuali problemi relativi a uno specifico scenario.  
 
 ##  <a name="a-namebkmkclientlogsa-configuration-manager-client-logs"></a><a name="BKMK_ClientLogs"></a> Log client di Configuration Manager  
- Nelle sezioni seguenti vengono elencati i file di log relativi alle operazioni client e all'installazione del client.  
+Nelle sezioni seguenti vengono elencati i file di log relativi alle operazioni client e all'installazione del client.  
 
 ###  <a name="a-namebkmkclientoplogsa-client-operations"></a><a name="BKMK_ClientOpLogs"></a> Operazioni client  
- Nella tabella seguente sono elencati i file di log trovati nel client di Configuration Manager.  
+Nella tabella seguente sono elencati i file di log individuati nel client di Configuration Manager.  
 
 |Nome registro|Descrizione|  
 |--------------|-----------------|  
@@ -167,59 +158,59 @@ In System Center Configuration Manager i componenti client e del server del sito
 |CCMSDKProvider.log|Registra le attività per le interfacce dell'SDK client.|  
 |CertificateMaintenance.log|Gestisce i certificati per Servizi di dominio Active Directory e i punti di gestione.|  
 |CIDownloader.log|Registra informazioni dettagliate sui download di definizioni di elementi di configurazione.|  
-|CITaskMgr.log|Registra le attività avviate per ogni applicazione e tipo di distribuzione, ad esempio download di contenuti o azioni di installazione o disinstallazione.|  
+|CITaskMgr.log|Registra le attività avviate per ogni applicazione e tipo di distribuzione, ad esempio download di contenuti e azioni di installazione o disinstallazione.|  
 |ClientAuth.log|Registra l'attività di firma e autenticazione per il client.|  
 |ClientIDManagerStartup.log|Crea e gestisce il GUID del client e identifica le attività eseguite durante l'assegnazione e la registrazione del client.|  
 |ClientLocation.log|Registra le attività relative all'assegnazione del sito client.|  
-|CMHttpsReadiness.log|Registra i risultati dell'esecuzione dello strumento per la preparazione della comunicazione HTTPS di Configuration Manager. Questo strumento consente di verificare se nei computer è presente un certificato PKI per l'autenticazione client utilizzabile per Configuration Manager.|  
+|CMHttpsReadiness.log|Registra i risultati dell'esecuzione dello strumento per la preparazione della comunicazione HTTPS di Configuration Manager. Questo strumento consente di verificare se nei computer è presente un certificato di infrastruttura a chiave pubblica (PKI) per l'autenticazione client utilizzabile con Configuration Manager.|  
 |CmRcService.log|Registra le informazioni per il servizio di controllo remoto.|  
 |ContentTransferManager.log|Pianifica il Servizio trasferimento intelligente in background (BITS) o Server Message Block (SMB) per il download o per l'accesso ai pacchetti.|  
 |DataTransferService.log|Registra tutte le comunicazioni BITS per l'accesso ai criteri o ai pacchetti.|  
-|EndpointProtectionAgent|Registra le informazioni sull'installazione del client di Endpoint Protection e sull'applicazione di criteri antimalware in tale client.|  
+|EndpointProtectionAgent|Registra le informazioni sull'installazione del client di System Center Endpoint Protection e sull'applicazione di criteri antimalware in tale client.|  
 |execmgr.log|Registra informazioni dettagliate sui pacchetti e sulle sequenze attività in esecuzione nel client.|  
 |ExpressionSolver.log|Registra informazioni dettagliate sui metodi di rilevamento avanzati che vengono usati quando si attiva la registrazione debug o dettagliata.|  
 |ExternalEventAgent.log|Registra la cronologia di rilevamento malware di Endpoint Protection e gli eventi relativi allo stato del client.|  
 |FileBITS.log|Registra tutte le attività di accesso al pacchetto SMB.|  
 |FileSystemFile.log|Registra l'attività del provider Strumentazione gestione Windows (WMI) per l'inventario software e la raccolta file.|  
 |FSPStateMessage.log|Registra l'attività per i messaggi di stato inviati dal client al punto di stato di fallback.|  
-|InternetProxy.log|Registra l'attività di utilizzo e configurazione proxy di rete per il client.|  
+|InternetProxy.log|Registra l'attività d'uso e configurazione proxy di rete per il client.|  
 |InventoryAgent.log|Registra le attività di inventario hardware, inventario software e individuazione heartbeat sul client.|  
-|LocationCache.log|Registra l'attività per l'utilizzo e la gestione della cache per l'individuazione per il client.|  
+|LocationCache.log|Registra l'attività per l'uso e la gestione della cache per l'individuazione per il client.|  
 |LocationServices.log|Registra l'attività del client per l'individuazione di punti di gestione, punti di aggiornamento software e punti di distribuzione.|  
-|MaintenanceCoordinator.log|Registra l'attività per l'attività di manutenzione generale per il client.|  
-|Mifprovider.log|Registra l'attività del provider WMI per file .MIF.|  
+|MaintenanceCoordinator.log|Registra l'attività per le attività di manutenzione generale per il client.|  
+|Mifprovider.log|Registra l'attività del provider WMI per i file MIF (Management Information Format).|  
 |mtrmgr.log|Esegue il monitoraggio di tutti i processi di controllo software.|  
 |PolicyAgent.log|Registra le richieste di criteri effettuate usando il servizio di trasferimento dei dati.|  
 |PolicyAgentProvider.log|Registra le modifiche apportate ai criteri.|  
 |PolicyEvaluator.log|Registra informazioni dettagliate sulla valutazione dei criteri nei computer client, inclusi quelli derivanti dagli aggiornamenti software.|  
-|PolicyPlatformClient.log|Registra il processo di monitoraggio, aggiornamento e conformità per tutti i provider disponibili in **%Program Files%\Microsoft Policy Platform**, fatta eccezione per il provider di file.|  
+|PolicyPlatformClient.log|Registra il processo di monitoraggio, aggiornamento e conformità per tutti i provider disponibili in \Program Files\Microsoft Policy Platform, fatta eccezione per il provider di file.|  
 |PolicySdk.log|Registra le attività per le interfacce dell'SDK per il sistema dei criteri.|  
 |Pwrmgmt.log|Registra le informazioni sull'attivazione o la disattivazione e la configurazione delle impostazioni client proxy di riattivazione.|  
-|PwrProvider.log|Registra le attività del provider risparmio energia (PWRInvProvider) ospitato nel servizio Strumentazione gestione Windows (WMI). In tutte le versioni supportate di Windows il provider enumera le impostazioni correnti sui computer durante l'inventario hardware e applica le impostazioni della combinazione per il risparmio di energia.|  
-|SCClient_&lt;dominio\>@&lt;nomeutente\>_1.log|Registra l'attività in Software Center per l'utente specificato nel computer client.|  
-|SCClient_&lt;dominio\>@&lt;nomeutente\>_2.log|Registra l'attività cronologica in Software Center per l'utente specificato nel computer client.|  
+|PwrProvider.log|Registra le attività del provider risparmio energia (PWRInvProvider) ospitato nel servizio WMI. In tutte le versioni supportate di Windows il provider enumera le impostazioni correnti sui computer durante l'inventario hardware e applica le impostazioni della combinazione per il risparmio di energia.|  
+|SCClient_&lt;*dominio*\>@&lt;*nomeutente*\>_1.log|Registra l'attività in Software Center per l'utente specificato nel computer client.|  
+|SCClient_&lt;*dominio*\>@&lt;*nomeutente*\>_2.log|Registra l'attività cronologica in Software Center per l'utente specificato nel computer client.|  
 |Scheduler.log|Registra le attività delle attività pianificate per tutte le operazioni client.|  
-|SCNotify_&lt;dominio\>@&lt;nomeutente\>_1.log|Registra l'attività per la notifica degli utenti riguardo al software per l'utente specificato.|  
-|SCNotify_&lt;dominio\>@&lt;nomeutente\>_1-&lt;data_ora>.log|Registra le informazioni cronologiche per la notifica degli utenti riguardo al software per l'utente specificato.|  
+|SCNotify_&lt;*dominio*\>@&lt;*nomeutente*\>_1.log|Registra l'attività per la notifica degli utenti riguardo al software per l'utente specificato.|  
+|SCNotify_&lt;*dominio*\>@&lt;*nomeutente*\>_1-&lt;*data_ora*>.log|Registra le informazioni cronologiche per la notifica degli utenti riguardo al software per l'utente specificato.|  
 |setuppolicyevaluator.log|Registra la configurazione e la creazione dei criteri dell'inventario in WMI.|  
-|SleepAgent_&lt;dominio\>@&lt;@SYSTEM_0.log|File di log principale per il proxy di riattivazione.|  
-|smscliui.log|Registra l'utilizzo del client di Configuration Manager nel Pannello di controllo.|  
+|SleepAgent_&lt;*dominio*\>@SYSTEM_0.log|File di log principale per il proxy di riattivazione.|  
+|smscliui.log|Registra l'uso del client di Configuration Manager nel Pannello di controllo.|  
 |SrcUpdateMgr.log|Registra l'attività per le applicazioni di Windows Installer installate che vengono aggiornate con i percorsi di origine per i punti di distribuzione correnti.|  
 |StatusAgent.log|Registra i messaggi di stato creati dai componenti client.|  
-|SWMTRReportGen.log|Genera un report dei dati di utilizzo raccolto dall'agente di controllo. Tali dati vengono registrati in Mtrmgr.log.|  
+|SWMTRReportGen.log|Genera un report dei dati d'uso raccolto dall'agente di controllo. Tali dati vengono registrati in Mtrmgr.log.|  
 |UserAffinity.log|Registra informazioni dettagliate relative all'affinità utente dispositivo.|  
-|VirtualApp.log|Registra informazioni specifiche per la valutazione dei tipi di distribuzione di App-V.|  
+|VirtualApp.log|Registra informazioni specifiche per la valutazione dei tipi di distribuzione di Application Virtualization (App-V).|  
 |Wedmtrace.log|Registra le operazioni relative ai filtri di scrittura sui client Windows Embedded.|  
-|wakeprxy-install.log|Registra le informazioni di installazione quando i client ricevono l'opzione di impostazione client per abilitare il proxy di riattivazione.|  
-|wakeprxy-uninstall.log|Registra le informazioni sulla disinstallazione del proxy di riattivazione quando i client ricevono l'opzione di impostazione client per disabilitare il proxy di riattivazione, se è stato precedentemente abilitato.|  
+|wakeprxy-install.log|Registra le informazioni di installazione quando i client ricevono l'opzione di impostazione client per attivare il proxy di riattivazione.|  
+|wakeprxy-uninstall.log|Registra le informazioni sulla disinstallazione del proxy di riattivazione quando i client ricevono l'opzione di impostazione client per disattivare il proxy di riattivazione, se è stato precedentemente attivato.|  
 
 ###  <a name="a-namebkmkclientinstallloga-client-installation-log-files"></a><a name="BKMK_ClientInstallLog"></a> File di log di installazione client  
  Nella tabella seguente sono elencati i file di log contenenti informazioni correlate all'installazione del client di Configuration Manager.  
 
 |Nome registro|Descrizione|  
 |--------------|-----------------|  
-|ccmsetup.log|Registra le attività svolte da **ccmsetup** per l'installazione, l'aggiornamento e la rimozione dei client. Può essere usato per la risoluzione dei problemi di installazione dei client.|  
-|ccmsetup-ccmeval.log|Registra le attività svolte da **ccmsetup** per lo stato del client e il monitoraggio e l'aggiornamento.|  
+|ccmsetup.log|Registra le attività svolte da ccmsetup.exe per l'installazione, l'aggiornamento e la rimozione dei client. Può essere usato per la risoluzione dei problemi di installazione dei client.|  
+|ccmsetup-ccmeval.log|Registra le attività svolte da ccmsetup.exe per lo stato del client e il monitoraggio e l'aggiornamento.|  
 |CcmRepair.log|Registra le attività di ripristino dell'agente client.|  
 |client.msi.log|Registra le attività di installazione eseguite da client.msi. Può essere usato per la risoluzione dei problemi di installazione o rimozione dei client.|  
 
@@ -237,35 +228,35 @@ In System Center Configuration Manager i componenti client e del server del sito
 
 |Nome registro|Dettagli|  
 |--------------|-------------|  
-|scxcm.log|File di log per il servizio principale del client di Configuration Manager per Linux e UNIX (ccmexec.bin). Questo file di log contiene informazioni sull'installazione e le operazioni in corso di ccmexec.bin.<br /><br /> Per impostazione predefinita, questo file di log viene creato nel percorso seguente: **/var/opt/microsoft/scxcm.log**<br /><br /> Per cambiare il percorso del file di log, modificare **/opt/microsoft/configmgr/etc/scxcm.conf** e apportare le modifiche desiderate nel campo **PATH** . Non è necessario riavviare il servizio o il computer client per rendere effettive le modifiche.<br /><br /> È possibile impostare il livello di registrazione su una delle quattro diverse impostazioni seguenti:|  
-|scxcmprovider.log|File di log per il servizio CIM del client di Configuration Manager per Linux e UNIX (omiserver.bin). Questo file di log contiene informazioni sulle operazioni in corso di nwserver.bin.<br /><br /> Per impostazione predefinita, questo file di log viene creato nel percorso seguente: **/var/opt/microsoft/configmgr/scxcmprovider.log**<br /><br /> Per cambiare il percorso del file di log, modificare **/opt/microsoft/omi/etc/scxcmprovider.conf** e apportare le modifiche desiderate nel campo **PATH** . Non è necessario riavviare il servizio o il computer client per rendere effettive le modifiche.<br /><br /> È possibile impostare il livello di registrazione su una delle tre diverse impostazioni seguenti:|  
+|Scxcm.log|File di log per il servizio principale del client di Configuration Manager per Linux e UNIX (ccmexec.bin). Questo file di log contiene informazioni sull'installazione e le operazioni in corso di ccmexec.bin.<br /><br /> Per impostazione predefinita, questo file di log è disponibile in **/var/opt/microsoft/scxcm.log**<br /><br /> Per cambiare il percorso del file di log, modificare **/opt/microsoft/configmgr/etc/scxcm.conf** e apportare le modifiche desiderate nel campo **PATH** . Non è necessario riavviare il servizio o il computer client per rendere effettive le modifiche.<br /><br /> È possibile impostare il livello di registrazione scegliendo tra quattro diverse impostazioni.|  
+|Scxcmprovider.log|File di log per il servizio CIM del client di Configuration Manager per Linux e UNIX (omiserver.bin). Questo file di log contiene informazioni sulle operazioni in corso di nwserver.bin.<br /><br /> Questo log è disponibile in **/var/opt/microsoft/configmgr/scxcmprovider.log**<br /><br /> Per cambiare il percorso del file di log, modificare **/opt/microsoft/omi/etc/scxcmprovider.conf** e apportare le modifiche desiderate nel campo **PATH** . Non è necessario riavviare il servizio o il computer client per rendere effettive le modifiche.<br /><br /> È possibile impostare il livello di registrazione scegliendo fra tre impostazioni.|  
 
- **Entrambi i file di log supportano diversi livelli di registrazione:**  
+ Entrambi i file di log supportano diversi livelli di registrazione:  
 
--   **scxcm.log**: per cambiare il livello di registrazione, modificare **/opt/microsoft/configmgr/etc/scxcm.conf** e impostare ogni istanza del tag **MODULE** sul livello di log desiderato:  
+-   **scxcm.log**. Per impostare il livello di registrazione, modificare **/opt/microsoft/configmgr/etc/scxcm.conf** e sostituire ogni istanza del tag **MODULE** con il livello di registrazione desiderato:  
 
-    -   ERROR: indica i problemi che richiedono attenzione.  
+    -   ERROR: indica i problemi che richiedono attenzione  
 
-    -   WARNING: indica i possibili problemi per le operazioni del client.  
+    -   WARNING: indica i possibili problemi per le operazioni del client  
 
-    -   INFO: registrazione più dettagliata, che indica lo stato di diversi eventi nel client.  
+    -   INFO: registrazione più dettagliata, che indica lo stato di diversi eventi nel client  
 
-    -   TRACE: registrazione dettagliata che viene generalmente usata per diagnosticare i problemi.  
+    -   TRACE: registrazione dettagliata che viene generalmente usata per diagnosticare i problemi  
 
--   **scxcmprovider.log**: per cambiare il livello di registrazione, modificare **/opt/microsoft/omi/etc/scxcmprovider.conf** e impostare ogni istanza del tag **MODULE** sul livello di log desiderato:  
+-   **scxcmprovider.log**. Per impostare il livello di registrazione, modificare **/opt/microsoft/omi/etc/scxcmprovider.conf** e sostituire ogni istanza del tag **MODULE** con il livello di registrazione desiderato:  
 
-    -   ERROR: indica i problemi che richiedono attenzione.  
+    -   ERROR: indica i problemi che richiedono attenzione  
 
-    -   WARNING: indica i possibili problemi per le operazioni del client.  
+    -   WARNING: indica i possibili problemi per le operazioni del client
 
-    -   INFO: registrazione più dettagliata, che indica lo stato di diversi eventi nel client.  
+    -   INFO: registrazione più dettagliata, che indica lo stato di diversi eventi nel client  
 
-In condizioni operative normali, deve essere usato il livello di registrazione ERRORE. Il livello di registrazione ERRORE crea il file di log più piccolo. Quando il livello di registrazione aumenta da ERRORE, ad AVVISO, a INFORMAZIONI e infine a TRACCIA, ogni passaggio avrà come risultato un file di log più grande, poiché nel file verrà scritta una quantità maggiore di dati.  
+In condizioni operative normali, usare il livello di registrazione ERROR. Questo livello di registrazione crea il file di log più piccolo. Quando il livello di registrazione aumenta da ERROR a WARNING, INFO e infine a TRACE, viene creato un file di log più grande, poiché nel file viene scritta una quantità maggiore di dati.  
 
-####  <a name="a-namebkmkmanagelinuxlogsa-manage-log-files-for-the-client-for-linux-and-unix-client"></a><a name="BKMK_ManageLinuxLogs"></a> Gestire i file di log per i client Linux e UNIX  
-Il client per Linux e UNIX non limita la dimensione massima dei file di log client e non copia automaticamente i contenuti dei file **.LOG** in un altro file, ad esempio un file **.LO_** . Se si vuole controllare la dimensione massima dei file di log, implementare un processo per gestire i file di log indipendente dal client di Configuration Manager per Linux e UNIX.  
+####  <a name="a-namebkmkmanagelinuxlogsa-manage-log-files-for-the-linux-and-unix-client"></a><a name="BKMK_ManageLinuxLogs"></a> Gestire i file di log per i client Linux e UNIX  
+Il client per Linux e UNIX non limita la dimensione massima dei file di log client e non copia automaticamente i contenuti dei file .log in un altro file, ad esempio un file .lo_. Se si vuole controllare la dimensione massima dei file di log, implementare un processo per gestire i file di log indipendente dal client di Configuration Manager per Linux e UNIX.  
 
-Ad esempio, è possibile usare il comando standard per Linux e UNIX **logrotate** per gestire la dimensione e la rotazione di file log dei client. Il client di Configuration Manager per Linux e UNIX offre un'interfaccia che consente a **logrotate** di segnalare al client il completamento della rotazione del log, in modo che il client possa riprendere la registrazione nel file di log.  
+Ad esempio, è possibile usare il comando standard per Linux e UNIX **logrotate** per gestire la dimensione e la rotazione di file log dei client. Il client di Configuration Manager per Linux e UNIX dispone di un'interfaccia che consente a **logrotate** di segnalare al client il completamento della rotazione del log, in modo che il client possa riprendere la registrazione nel file di log.  
 
 Per informazioni su **logrotate**, vedere la documentazione per le distribuzioni di Linux e UNIX in uso.  
 
@@ -274,12 +265,12 @@ Il client di Configuration Manager per computer Mac registra le informazioni nei
 
 |Nome registro|Dettagli|  
 |--------------|-------------|  
-|CCMClient-*&lt;data_ora>*.log|Registra le attività correlate alle operazioni del client Mac, inclusi Gestione delle applicazioni, inventario e registrazione degli errori.<br /><br /> Questo file di log si trova nella cartella **/Library/Application Support/Microsoft/CCM/Logs** sul computer Mac.|  
-|CCMAgent-*&lt;data_ora>*.log|Registra le informazioni relative alle operazioni dei client, incluse le operazioni di accesso e disconnessione dell'utente e le attività del computer Mac.<br /><br /> Questo file di log si trova nella cartella **~/Library/Logs** sul computer Mac.|  
-|CCMNotifications-*&lt;data_ora>*.log|Registra le attività correlate alle notifiche di Configuration Manager visualizzate nel computer Mac.<br /><br /> Questo file di log si trova nella cartella **~/Library/Logs** sul computer Mac.|  
-|CCMPrefPane-*&lt;data_ora>*.log|Registra le attività correlate alla finestra di dialogo per le preferenze di Configuration Manager nel computer Mac, che include lo stato generale e la registrazione degli errori.<br /><br /> Questo file di log si trova nella cartella **~/Library/Logs** sul computer Mac.|  
+|CCMClient-&lt;*data_ora*>.log|Registra le attività correlate alle operazioni del client Mac, inclusi gestione delle applicazioni, inventario e registrazione degli errori.<br /><br /> Questo file di log è disponibile nella cartella /Library/Application Support/Microsoft/CCM/Logs sul computer Mac.|  
+|CCMAgent-&lt;*data_ora*>.log|Registra le informazioni relative alle operazioni dei client, incluse le operazioni di accesso e disconnessione dell'utente e le attività del computer Mac.<br /><br /> Questo file di log è disponibile nella cartella ~/Library/Logs sul computer Mac.|  
+|CCMNotifications-&lt;*data_ora*>.log|Registra le attività correlate alle notifiche di Configuration Manager visualizzate nel computer Mac.<br /><br /> Questo file di log è disponibile nella cartella ~/Library/Logs sul computer Mac.|  
+|CCMPrefPane-&lt;*data_ora*>.log|Registra le attività correlate alla finestra di dialogo per le preferenze di Configuration Manager nel computer Mac, che include lo stato generale e la registrazione degli errori.<br /><br /> Questo file di log è disponibile nella cartella ~/Library/Logs sul computer Mac.|  
 
- Il file SMS_DM.log nel server di sistema del sito registra inoltre le comunicazioni tra computer Mac e il punto di gestione abilitato per dispositivi mobili e computer Mac.  
+Il file SMS_DM.log nel server di sistema del sito registra inoltre le comunicazioni tra computer Mac e il punto di gestione impostato per dispositivi mobili e computer Mac.  
 
 ##  <a name="a-namebkmkserverlogsa-configuration-manager-site-server-log-files"></a><a name="BKMK_ServerLogs"></a> File di log del server del sito di Configuration Manager  
  Nelle sezioni seguenti sono elencati i file di log disponibili nel server del sito o correlati a specifici ruoli del sistema del sito.  
@@ -303,11 +294,11 @@ Il client di Configuration Manager per computer Mac registra le informazioni nei
 |compmon.log|Registra lo stato dei thread di componenti monitorati per il server del sito.|Server del sistema del sito|  
 |compsumm.log|Registra le attività del Generatore riepilogo dello stato del componente.|Server del sito|  
 |ComRegSetup.log|Registra l'installazione iniziale dei risultati di registrazione COM per un server del sito.|Server del sistema del sito|  
-|dataldr.log|Registra le informazioni sull'elaborazione dei file MIF (Management Information Format) e dell'inventario hardware nel database di Configuration Manager.|Server del sito|  
+|dataldr.log|Registra le informazioni sull'elaborazione dei file MIF e dell'inventario hardware nel database di Configuration Manager.|Server del sito|  
 |ddm.log|Registra le attività di Gestione individuazione dati.|Server del sito|  
 |despool.log|Registra i trasferimenti delle comunicazioni in arrivo tra siti.|Server del sito|  
 |distmgr.log|Registra informazioni dettagliate su creazione del pacchetto, compressione, replica differenziale e aggiornamenti delle informazioni.|Server del sito|  
-|EPCtrlMgr.log|Registra le informazioni sulla sincronizzazione di informazioni relative a minacce di tipo malware dal server del ruolo del sistema del sito di Endpoint Protection nel database di Configuration Manager.|Server del sito|  
+|EPCtrlMgr.log|Registra le informazioni sulla sincronizzazione di informazioni relative a minacce di tipo malware dal server del ruolo del sistema del sito di Endpoint Protection con il database di Configuration Manager.|Server del sito|  
 |EPMgr.log|Registra lo stato del ruolo del sistema del sito di Endpoint Protection.|Server del sistema del sito|  
 |EPSetup.log|Fornisce informazioni sull'installazione del ruolo del sistema del sito di Endpoint Protection.|Server del sistema del sito|  
 |EnrollSrv.log|Registra le attività relative al processo del servizio di registrazione.|Server del sistema del sito|  
@@ -318,8 +309,8 @@ Il client di Configuration Manager per computer Mac registra le informazioni nei
 |inboxmgr.log|Registra le attività di trasferimento file tra cartelle Posta in arrivo.|Server del sito|  
 |inboxmon.log|Registra l'elaborazione dei file di Posta in arrivo e degli aggiornamenti del contatore delle prestazioni.|Server del sito|  
 |invproc.log|Registra l'inoltro dei file MIF da un sito secondario al sito padre corrispondente.|Server del sito|  
-|migmctrl.log|Registra le informazioni per le azioni di migrazione riguardanti i processi di migrazione, i punti di distribuzione condivisi e gli aggiornamenti dei punti di distribuzione.|Sito principale della gerarchia di Configuration Manager e ogni sito primario figlio<br /><br /> In una gerarchia che include più siti primari, usare il file di log creato nel sito di amministrazione centrale.|  
-|mpcontrol.log|Registra la registrazione del punto di gestione con WINS. Registra la disponibilità del punto di gestione ogni 10 minuti.|Server del sistema del sito|  
+|migmctrl.log|Registra informazioni per le azioni di migrazione riguardanti processi di migrazione, punti di distribuzione condivisi e aggiornamenti dei punti di distribuzione.|Sito principale della gerarchia di Configuration Manager e ogni sito primario figlio.<br /><br /> In una gerarchia che include più siti primari, usare il file di log creato nel sito di amministrazione centrale.|  
+|mpcontrol.log|Registra la registrazione del punto di gestione con WINS (Windows Internet Name Service). Registra la disponibilità del punto di gestione ogni 10 minuti.|Server del sistema del sito|  
 |mpfdm.log|Registra le azioni del componente del punto di gestione che sposta i file client nella cartella INBOXES corrispondente nel server del sito.|Server del sistema del sito|  
 |mpMSI.log|Registra informazioni dettagliate sull'installazione del punto di gestione.|Server del sito|  
 |MPSetup.log|Registra il processo wrapper di installazione del punto di gestione.|Server del sito|  
@@ -331,7 +322,7 @@ Il client di Configuration Manager per computer Mac registra le informazioni nei
 |OfflineServicingMgr.log|Registra le attività di applicazione degli aggiornamenti ai file di immagine del sistema operativo.|Server del sito|  
 |outboxmon.log|Registra l'elaborazione dei file di Posta in uscita e degli aggiornamenti del contatore delle prestazioni.|Server del sito|  
 |PerfSetup.log|Registra i risultati dell'installazione di contatori delle prestazioni.|Server del sistema del sito|  
-|PkgXferMgr.log|Registra le azioni del componente SMS Executive, responsabile per l'invio di contenuto da un sito primario a un punto di distribuzione remoto.|Server del sito|  
+|PkgXferMgr.log|Registra le azioni del componente SMS_Executive, responsabile per l'invio di contenuto da un sito primario a un punto di distribuzione remoto.|Server del sito|  
 |policypv.log|Registra gli aggiornamenti ai criteri del client per riflettere le modifiche apportate alle impostazioni o alle distribuzioni del client.|Server del sito primario|  
 |rcmctrl.log|Registra le attività di replica database tra siti nella gerarchia.|Server del sito|  
 |replmgr.log|Registra la replica di file tra i componenti server del sito e il componente di utilità di pianificazione.|Server del sito|  
@@ -364,13 +355,13 @@ Il client di Configuration Manager per computer Mac registra le informazioni nei
 
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
-|ConfigMgrPrereq.log|Registra attività prerequisite di valutazione e installazione di componenti.|Server del sito|  
+|ConfigMgrPrereq.log|Registra le attività di valutazione e installazione dei componenti dei prerequisiti.|Server del sito|  
 |ConfigMgrSetup.log|Registra l'output dettagliato dell'installazione del server del sito.|Server del sito|  
-|ConfigMgrSetupWizard.log|Registra le informazioni relative all'attività nell'installazione guidata.|Server del sito|  
+|ConfigMgrSetupWizard.log|Registra le informazioni relative all'attività nell'Installazione guidata.|Server del sito|  
 |SMS_BOOTSTRAP.log|Registra le informazioni sullo stato di avanzamento dell'avvio del processo di installazione del sito secondario. I dettagli del processo di configurazione effettivo sono contenuti in ConfigMgrSetup.log.|Server del sito|  
-|smstsvc.log|Registra informazioni su installazione, utilizzo e rimozione di un servizio Windows usato per testare la connettività di rete e le autorizzazioni tra i server, tramite l'account computer del server che ha avviato la connessione.|Server del sito e sistemi del sito|  
+|smstsvc.log|Registra informazioni su installazione, uso e rimozione di un servizio Windows usato per testare la connettività di rete e le autorizzazioni tra i server, tramite l'account computer del server che avvia la connessione.|Server del sito e del server di sistema del sito|  
 
-###  <a name="a-namebkmkfsploga-fallback-status-point-logs-files"></a><a name="BKMK_FSPLog"></a> File di log del punto di stato di fallback  
+###  <a name="a-namebkmkfsploga-fallback-status-point-log-files"></a><a name="BKMK_FSPLog"></a> File di log del punto di stato di fallback  
  Nella tabella seguente sono elencati i file di log contenenti informazioni correlate al punto di stato di fallback.  
 
 |Nome registro|Descrizione|Computer con file di log|  
@@ -379,20 +370,20 @@ Il client di Configuration Manager per computer Mac registra le informazioni nei
 |fspMSI.log|Registra i messaggi generati dall'installazione di un punto di stato di fallback.|Server del sistema del sito|  
 |fspmgr.log|Registra le attività del ruolo del sistema del sito punto di stato di fallback.|Server del sistema del sito|  
 
-###  <a name="a-namebkmkmploga-management-point-logs-files"></a><a name="BKMK_MPLog"></a> File di log del punto di gestione  
+###  <a name="a-namebkmkmploga-management-point-log-files"></a><a name="BKMK_MPLog"></a> File di log del punto di gestione  
  Nella tabella seguente sono elencati i file di log contenenti informazioni correlate al punto di gestione.  
 
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
 |CcmIsapi.log|Registra l'attività di messaggistica client sull'endpoint.|Server del sistema del sito|  
 |MP_CliReg.log|Registra l'attività di registrazione del client elaborata dal punto di gestione.|Server del sistema del sito|  
-|MP_Ddr.log|Registra la conversione di record XML.ddr dai client e li copia nel server del sito.|Server del sistema del sito|  
+|MP_Ddr.log|Registra la conversione di record XML.ddr dai client e quindi li copia nel server del sito.|Server del sistema del sito|  
 |MP_Framework.log|Registra le attività del punto di gestione principale e dei componenti del framework client.|Server del sistema del sito|  
 |MP_GetAuth.log|Registra le attività di autorizzazione del client.|Server del sistema del sito|  
 |MP_GetPolicy.log|Registra le attività di richiesta di criteri dai computer client.|Server del sistema del sito|  
 |MP_Hinv.log|Registra informazioni dettagliate sulla conversione di record di inventario hardware XML dai client e sulla copia di tali file nel server del sito.|Server del sistema del sito|  
 |MP_Location.log|Registra le attività di richiesta per il percorso e di risposta dai client.|Server del sistema del sito|  
-|MP_OOBMgr.log|Registra le attività del punto di gestione correlate alla ricezione OTP da un client.|Server del sistema del sito|  
+|MP_OOBMgr.log|Registra le attività del punto di gestione correlate alla ricezione di un OTP da un client.|Server del sistema del sito|  
 |MP_Policy.log|Registra la comunicazione dei criteri.|Server del sistema del sito|  
 |MP_Relay.log|Registra il trasferimento di file che vengono raccolti dal client.|Server del sistema del sito|  
 |MP_Retry.log|Registra i processi di nuovi tentativi di inventario hardware.|Server del sistema del sito|  
@@ -413,16 +404,16 @@ Il client di Configuration Manager per computer Mac registra le informazioni nei
 |PatchDownloader.log|Registra informazioni dettagliate sul processo di download degli aggiornamenti software dall'origine degli aggiornamenti alla destinazione del download sul server del sito.|Computer che ospita la console di Configuration Manager da cui vengono avviati i download|  
 |ruleengine.log|Registra le informazioni dettagliate sulle regole di distribuzione automatica per l'identificazione, il download di contenuto e la creazione di gruppi di aggiornamento software e distribuzione.|Server del sito|  
 |SUPSetup.log|Registra informazioni dettagliate sull'installazione del punto di aggiornamento software. Al termine dell'installazione del punto di aggiornamento software, **Installation was successful** viene scritto nel file di log.|Server del sistema del sito|  
-|WCM.log|Registra informazioni dettagliate sulla configurazione del punto di aggiornamento software e sulle connessioni al server di Windows Server Update Services (WSUS) per categorie di aggiornamento, classificazioni e lingue sottoscritte.|Server del sito che si connette al server di Windows Server Update Services (WSUS)|  
+|WCM.log|Registra informazioni dettagliate sulla configurazione del punto di aggiornamento software e sulle connessioni al server WSUS per categorie di aggiornamento, classificazioni e lingue sottoscritte.|Server del sito che si connette al server WSUS|  
 |WSUSCtrl.log|Registra informazioni dettagliate su configurazione, connettività al database e integrità del server WSUS per il sito.|Server del sistema del sito|  
 |wsyncmgr.log|Registra informazioni dettagliate sul processo di sincronizzazione degli aggiornamenti software.|Server del sistema del sito|  
-|WUSSyncXML.log|Registra informazioni dettagliate sullo strumento di inventario per il processo di sincronizzazione di Microsoft Update.|Computer client configurato come host di sincronizzazione per lo strumento di inventario per Microsoft Update.|  
+|WUSSyncXML.log|Registra informazioni dettagliate sullo strumento di inventario per il processo di sincronizzazione di Microsoft Update.|Computer client configurato come host di sincronizzazione per lo strumento di inventario per Microsoft Update|  
 
 ##  <a name="a-namebkmkfunctionlogsa-log-files-for-configuration-manager-functionality"></a><a name="BKMK_FunctionLogs"></a> File di log per la funzionalità di Configuration Manager  
- Nelle sezioni seguenti sono elencati i file di log correlati alle diverse funzioni in Configuration Manager.  
+ Nelle sezioni seguenti sono elencati i file di log correlati alle funzioni di Configuration Manager.  
 
 ###  <a name="a-namebkmkappmanageloga-application-management"></a><a name="BKMK_AppManageLog"></a> Gestione delle applicazioni  
- Nella tabella seguente sono elencati i file di log contenenti informazioni correlate a Gestione applicazioni.  
+ Nella tabella seguente sono elencati i file di log contenenti informazioni correlate alla gestione delle applicazioni.  
 
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
@@ -436,12 +427,12 @@ Il client di Configuration Manager per computer Mac registra le informazioni nei
 |ConfigMgrSoftwareCatalog.log|Registra l'attività del Catalogo applicazioni, che include l'utilizzo di Silverlight.|Client|  
 |portlctl.log|Registra le attività di monitoraggio per il ruolo del sistema del sito punto per siti Web del Catalogo applicazioni.|Server del sistema del sito|  
 |portlwebMSI.log|Registra l'attività di installazione MSI per il ruolo del sito Web del Catalogo applicazioni.|Server del sistema del sito|  
-|PrestageContent.log|Registra informazioni dettagliate sull'utilizzo dello strumento ExtractContent.exe in un punto di distribuzione pre-installazione remoto. Questo strumento consente di estrarre contenuto che è stato esportato in un file.|Server del sistema del sito|  
+|PrestageContent.log|Registra informazioni dettagliate sull'uso dello strumento ExtractContent.exe in un punto di distribuzione pre-installazione remoto. Questo strumento consente di estrarre contenuto che è stato esportato in un file.|Server del sistema del sito|  
 |ServicePortalWebService.log|Registra le attività di installazione dei servizi Web del Catalogo applicazioni.|Server del sistema del sito|  
 |ServicePortalWebSite.log|Registra le attività del sito Web del Catalogo applicazioni.|Server del sistema del sito|  
 |SMSdpmon.log|Registra informazioni dettagliate sulle attività pianificate di monitoraggio dell'integrità del punto di distribuzione configurate su un punto di distribuzione.|Server del sito|  
-|SoftwareCatalogUpdateEndpoint.log|Registra le attività per la gestione di URL per il Catalogo di applicazioni indicato nel Software Center.|Client|  
-|SoftwareCenterSystemTasks.log|Registra le attività per la convalida dei componenti dei prerequisiti di Software Center.|Client|  
+|SoftwareCatalogUpdateEndpoint.log|Registra le attività per la gestione di URL per il Catalogo di applicazioni indicato in Software Center.|Client|  
+|SoftwareCenterSystemTasks.log|Registra le attività correlate alla convalida dei componenti dei prerequisiti di Software Center.|Client|  
 
  La tabella seguente elenca i file di log contenenti informazioni correlate alla distribuzione di pacchetti e programmi.  
 
@@ -474,7 +465,7 @@ Il client di Configuration Manager per computer Mac registra le informazioni nei
 |Smswriter.log|Registra informazioni sullo stato del writer VSS di Configuration Manager usato dal processo di backup.|Server del sito|  
 
 ###  <a name="a-namebkmkcertificateenrollmenta-certificate-enrollment"></a><a name="BKMK_CertificateEnrollment"></a> Registrazione certificato  
- Nella tabella seguente sono elencati i file di log di Configuration Manager che contengono informazioni sulla registrazione del certificato che usa il punto di registrazione del certificato e il modulo criteri di Configuration Manager nel server che esegue il servizio Registrazione dispositivi di rete.  
+ Nella tabella seguente sono elencati i file di log di Configuration Manager contenenti informazioni correlate alla registrazione dei certificati. Registrazione certificato usa il punto di registrazione certificati e il modulo criteri di Configuration Manager nel server che esegue il servizio Registrazione dispositivi di rete.  
 
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
@@ -501,11 +492,11 @@ Il client di Configuration Manager per computer Mac registra le informazioni nei
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
 |bgbmgr.log|Registra informazioni dettagliate sulle attività del server del sito relative ad attività di notifica client e all'elaborazione di file online e file di stato delle attività.|Server del sito|  
-|BGBServer.log|Registra le attività del server di notifica, ad esempio le comunicazioni client-server e il push delle attività ai client. Registra inoltre informazioni sulla generazione di file di stato attività e in linea da inviare al server del sito.|Punto di gestione|  
+|BGBServer.log|Registra le attività del server di notifica, ad esempio le comunicazioni client-server e il push delle attività ai client. Registra inoltre informazioni sulla generazione di file di stato attività e online da inviare al server del sito.|Punto di gestione|  
 |BgbSetup.log|Registra le attività del processo wrapper di installazione del server di notifica durante l'installazione e la disinstallazione.|Punto di gestione|  
 |bgbisapiMSI.log|Registra informazioni dettagliate sull'installazione e sulla disinstallazione del server di notifica.|Punto di gestione|  
 |BgbHttpProxy.log|Registra le attività del proxy HTTP di notifica durante l'inoltro dei messaggi dei client tramite HTTP verso e dal server di notifica.|Client|  
-|CcmNotificationAgent.log|Registra le attività dell'agente di notifica, ad esempio le comunicazioni tra client e server e le informazioni sulle attività ricevute e spedite ad altri agenti client.|Client|  
+|CcmNotificationAgent.log|Registra le attività dell'agente di notifica, ad esempio le comunicazioni tra client e server e le informazioni sulle attività ricevute e inviate ad altri agenti client.|Client|  
 
 ### <a name="cloud-management-gateway"></a>Gateway di gestione cloud
 
@@ -513,7 +504,7 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
-|CloudMgr.log|Registra informazioni dettagliate sulla distribuzione del servizio gateway di gestione cloud, lo stato del servizio in corso e i dati di utilizzo associati al servizio.|Server del sistema del sito|
+|CloudMgr.log|Registra informazioni dettagliate sulla distribuzione del servizio gateway di gestione cloud, lo stato del servizio in corso e i dati d'uso associati al servizio.|Server del sistema del sito|
 |SMS_Cloud_ProxyConnector.log|Registra informazioni dettagliate sull'impostazione di connessioni tra il servizio gateway di gestione cloud e il punto di connessione al gateway di gestione cloud.|Server del sistema del sito|
 
 ###  <a name="a-namebkmkcompsettingsloga-compliance-settings-and-company-resource-access"></a><a name="BKMK_CompSettingsLog"></a> Impostazioni di conformità e accesso alle risorse aziendali  
@@ -525,7 +516,7 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |CITaskManager.log|Registra le informazioni sulla pianificazione della attività degli elementi di configurazione.|Client|  
 |DCMAgent.log|Registra le informazioni di alto livello su valutazione, segnalazione dei conflitti e monitoraggio e aggiornamento di applicazioni ed elementi di configurazione.|Client|  
 |DCMReporting.log|Registra le informazioni relative al reporting dei risultati della piattaforma criteri in messaggi di stato per gli elementi di configurazione.|Client|  
-|DcmWmiProvider.log|Registra le informazioni sulla lettura dei synclet degli elementi di configurazione da Windows Management Instrumentation (WMI).|Client|  
+|DcmWmiProvider.log|Registra le informazioni sulla lettura dei synclet degli elementi di configurazione da WMI.|Client|  
 
 ###  <a name="a-namebkmkconsoleloga-configuration-manager-console"></a><a name="BKMK_ConsoleLog"></a> Console di Configuration Manager  
  Nella tabella seguente sono elencati i file di log contenenti informazioni correlate alla console di Configuration Manager.  
@@ -545,9 +536,9 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |CloudMgr.log|Registra informazioni dettagliate sul provisioning dei contenuti, raccogliendo statistiche sull'archiviazione e la larghezza di banda e azioni avviate dall'amministratore per interrompere o avviare il servizio cloud che esegue un punto di distribuzione basato su cloud.|Server del sistema del sito|  
 |DataTransferService.log|Registra tutte le comunicazioni BITS per l'accesso ai criteri o ai pacchetti. Questo registro viene usato anche per la gestione dei contenuti per i punti di distribuzione pull.|Computer configurato come punto di distribuzione pull|  
 |PullDP.log|Registra informazioni dettagliate sul contenuto che il punto di distribuzione pull trasferisce dai punti di distribuzione di origine.|Computer configurato come punto di distribuzione pull|  
-|PrestageContent.log|Registra informazioni dettagliate sull'utilizzo dello strumento ExtractContent.exe in un punto di distribuzione pre-installazione remoto. Questo strumento consente di estrarre contenuto che è stato esportato in un file.|Ruolo del sistema del sito|  
+|PrestageContent.log|Registra informazioni dettagliate sull'uso dello strumento ExtractContent.exe in un punto di distribuzione pre-installazione remoto. Questo strumento consente di estrarre contenuto che è stato esportato in un file.|Ruolo del sistema del sito|  
 |SMSdpmon.log|Registra informazioni dettagliate sulle attività pianificate di monitoraggio dell'integrità del punto di distribuzione configurate su un punto di distribuzione.|Ruolo del sistema del sito|  
-|smsdpprov.log|Registra informazioni dettagliate sull'estrazione di file compressi ricevuti da un sito primario. Questo registro viene generato dal provider WMI del punto di distribuzione remoto.|Computer di punto di distribuzione che non condivide il percorso con il server del sito.|  
+|smsdpprov.log|Registra informazioni dettagliate sull'estrazione di file compressi ricevuti da un sito primario. Questo registro viene generato dal provider WMI del punto di distribuzione remoto.|Computer di punto di distribuzione che non condivide il percorso con il server del sito|  
 
 
 ###  <a name="a-namebkmkdiscoveryloga-discovery"></a><a name="BKMK_DiscoveryLog"></a> Individuazione  
@@ -569,7 +560,7 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
 |EndpointProtectionAgent.log|Registra informazioni dettagliate sull'installazione del client di Endpoint Protection e sull'applicazione di criteri antimalware in tale client.|Client|  
-|EPCtrlMgr.log|Registra informazioni dettagliate sulla sincronizzazione di informazioni relative a minacce di tipo malware dal server del ruolo di Endpoint Protection nel database di Configuration Manager.|Server del sistema del sito|  
+|EPCtrlMgr.log|Registra informazioni dettagliate sulla sincronizzazione di informazioni relative a minacce di tipo malware dal server del ruolo di Endpoint Protection con il database di Configuration Manager.|Server del sistema del sito|  
 |EPMgr.log|Esegue il monitoraggio dello stato del ruolo del sistema del sito di Endpoint Protection.|Server del sistema del sito|  
 |EPSetup.log|Fornisce informazioni sull'installazione del ruolo del sistema del sito di Endpoint Protection.|Server del sistema del sito|  
 
@@ -587,7 +578,7 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
-|dataldr.log|Registra le informazioni sull'elaborazione dei file MIF (Management Information Format) e dell'inventario hardware nel database di Configuration Manager.|Server del sito|  
+|dataldr.log|Registra le informazioni sull'elaborazione dei file MIF e dell'inventario hardware nel database di Configuration Manager.|Server del sito|  
 |invproc.log|Registra l'inoltro dei file MIF da un sito secondario al sito padre corrispondente.|Server del sito secondario|  
 |sinvproc.log|Registra le informazioni sull'elaborazione dei dati di inventario del software nel database del sito.|Server del sito|  
 
@@ -603,7 +594,7 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
-|migmctrl.log|Registra informazioni sulle azioni di migrazione riguardanti processi di migrazione, punti di distribuzione condivisi e aggiornamenti dei punti di distribuzione.|Sito principale della gerarchia di Configuration Manager e ogni sito primario figlio<br /><br /> In una gerarchia che include più siti primari, usare il file di log creato nel sito di amministrazione centrale.|  
+|migmctrl.log|Registra informazioni sulle azioni di migrazione riguardanti processi di migrazione, punti di distribuzione condivisi e aggiornamenti dei punti di distribuzione.|Sito principale della gerarchia di Configuration Manager e ogni sito primario figlio.<br /><br /> In una gerarchia che include più siti primari, usare il file di log creato nel sito di amministrazione centrale.|  
 
 ###  <a name="a-namebkmkmdmloga-mobile-devices"></a><a name="BKMK_MDMLog"></a> Dispositivi mobili  
  Nelle sezioni seguenti vengono elencati i file di log contenenti informazioni correlate alla gestione dei dispositivi mobili.  
@@ -623,7 +614,7 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |SMS_DM.log|Registra le comunicazioni tra dispositivi mobili, computer Mac e il punto di gestione abilitato per dispositivi mobili e computer Mac.|Server del sistema del sito|  
 
 ####  <a name="a-namebkmkexchsrvloga-exchange-server-connector"></a><a name="BKMK_ExchSrvLog"></a> Connettore Exchange Server  
- Nella tabella seguente sono elencati i registri che contengono informazioni relative al connettore Exchange Server.  
+ I log seguenti contengono informazioni relative al connettore Exchange Server.  
 
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
@@ -659,22 +650,22 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
 |CAS.log|Registra informazioni dettagliate quando vengono rilevati punti di distribuzione per il contenuto a cui si fa riferimento.|Client|  
-|ccmsetup.log|Registra le attività svolte da **ccmsetup** per l'installazione, l'aggiornamento e la rimozione dei client. Può essere usato per la risoluzione dei problemi di installazione dei client.|Client|  
+|ccmsetup.log|Registra le attività svolte da ccmsetup per l'installazione, l'aggiornamento e la rimozione dei client. Può essere usato per la risoluzione dei problemi di installazione dei client.|Client|  
 |CreateTSMedia.log|Registra informazioni dettagliate sulla creazione del supporto per la sequenza di attività.|Computer che esegue la console di Configuration Manager|  
-|DeployToVhd.log|Registra dettagli relativi al processo di creazione e di modifica del disco rigido virtuale|Computer che esegue la console di Configuration Manager|  
+|DeployToVhd.log|Registra dettagli relativi al processo di creazione e di modifica del disco rigido virtuale (VHD).|Computer che esegue la console di Configuration Manager|  
 |Dism.log|Registra azioni di installazione driver o di applicazione aggiornamenti per la manutenzione offline.|Server del sistema del sito|  
-|Distmgr.log|Registra informazioni dettagliate sulla configurazione per l'attivazione di un punto di distribuzione per PXE.|Server del sistema del sito|  
+|distmgr.log|Registra informazioni dettagliate sulla configurazione per l'attivazione di un punto di distribuzione per PXE (Pre-Boot eXecution Environment).|Server del sistema del sito|  
 |DriverCatalog.log|Registra informazioni dettagliate sui driver di dispositivo importati nel catalogo dei driver.|Server del sistema del sito|  
 |mcsisapi.log|Registra informazioni sul trasferimento dei pacchetti multicast e le risposte alle richieste dei client.|Server del sistema del sito|  
 |mcsexec.log|Registra le azioni relative a controllo di integrità, spazio dei nomi, creazione delle sessioni e controllo certificati.|Server del sistema del sito|  
-|mcsmgr.log|Registra le modifiche alla configurazione, alla modalità di protezione e alla disponibilità.|Server del sistema del sito|  
+|mcsmgr.log|Registra le modifiche alla configurazione, alla modalità di sicurezza e alla disponibilità.|Server del sistema del sito|  
 |mcsprv.log|Registra l'interazione tra il provider multicast e i Servizi di distribuzione Windows (WDS).|Server del sistema del sito|  
 |MCSSetup.log|Registra informazioni dettagliate sull'installazione del ruolo server multicast.|Server del sistema del sito|  
 |MCSMSI.log|Registra informazioni dettagliate sull'installazione del ruolo server multicast.|Server del sistema del sito|  
 |Mcsperf.log|Registra informazioni dettagliate sull'aggiornamento dei contatori delle prestazioni multicast.|Server del sistema del sito|  
 |MP_ClientIDManager.log|Registra le risposte del punto di gestione alle sequenze attività di richiesta ID client originate dal supporto di avvio o tramite PXE.|Server del sistema del sito|  
 |MP_DriverManager.log|Registra le risposte del punto di gestione alle richieste dell'operazione sequenza di attività Applica automaticamente i driver.|Server del sistema del sito|  
-|OfflineServicingMgr.log|Registra informazioni dettagliate sulle pianificazioni della manutenzione offline e sulle azioni di applicazione aggiornamenti sui file WIM del sistema operativo.|Server del sistema del sito|  
+|OfflineServicingMgr.log|Registra informazioni dettagliate sulle pianificazioni della manutenzione offline e sulle azioni di applicazione aggiornamenti sui file di formato Windows Imaging (WIM) del sistema operativo.|Server del sistema del sito|  
 |Setupact.log|Registra informazioni dettagliate sui registri di Windows Sysprep e di installazione.|Client|  
 |Setupapi.log|Registra informazioni dettagliate sui registri di Windows Sysprep e di installazione.|Client|  
 |Setuperr.log|Registra informazioni dettagliate sui registri di Windows Sysprep e di installazione.|Client|  
@@ -702,7 +693,7 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
-|CMRcViewer.log|Registra informazioni dettagliate sull'attività del visualizzatore controllo remoto.|Nella cartella *%temp%* del computer che esegue il visualizzatore controllo remoto.|  
+|CMRcViewer.log|Registra informazioni dettagliate sull'attività del visualizzatore controllo remoto.|Nella cartella %temp% del computer che esegue il visualizzatore controllo remoto|  
 
 ###  <a name="a-namebkmkreportloga-reporting"></a><a name="BKMK_ReportLog"></a> Creazione di report  
  Nella tabella seguente sono elencati i file di log di Configuration Manager contenenti informazioni correlate al reporting.  
@@ -762,16 +753,16 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |UpdatesDeployment.log|Registra informazioni dettagliate sulle distribuzioni nel client, comprese l'attivazione, la valutazione e l'applicazione degli aggiornamenti software. La registrazione dettagliata visualizza informazioni aggiuntive sull'interazione con l'interfaccia utente del client.|Client|  
 |UpdatesHandler.log|Registra informazioni dettagliate sull'analisi della conformità degli aggiornamenti software e sul download e l'installazione di aggiornamenti software nel client.|Client|  
 |UpdatesStore.log|Registra informazioni dettagliate sullo stato di conformità degli aggiornamenti software ottenuto durante il ciclo di analisi della conformità.|Client|  
-|WCM.log|Registra informazioni dettagliate sulle configurazioni e le connessioni del punto di aggiornamento software e sulle connessioni al server di Windows Server Update Services (WSUS) per categorie di aggiornamento, classificazioni e lingue sottoscritte.|Server del sito|  
+|WCM.log|Registra informazioni dettagliate sulle configurazioni del punto di aggiornamento software e sulle connessioni al server WSUS per categorie di aggiornamento, classificazioni e lingue sottoscritte.|Server del sito|  
 |WSUSCtrl.log|Registra informazioni dettagliate su configurazione, connettività al database e integrità del server WSUS per il sito.|Server del sistema del sito|  
 |wsyncmgr.log|Registra informazioni dettagliate sul processo di sincronizzazione degli aggiornamenti software.|Server del sito|  
 |WUAHandler.log|Registra informazioni dettagliate sull'agente di Windows Update nel client durante la ricerca di aggiornamenti software.|Client|  
 
 ###  <a name="a-namebkmkwolloga-wake-on-lan"></a><a name="BKMK_WOLLog"></a> Riattivazione LAN  
- Nella tabella seguente sono elencati i file di log contenenti informazioni relative all'utilizzo della riattivazione LAN.  
+ Nella tabella seguente sono elencati i file di log contenenti informazioni relative all'uso della riattivazione LAN.  
 
 > [!NOTE]  
->  Quando si integra la riattivazione LAN usando il proxy di riattivazione, questa attività viene registrata nel client. Ad esempio, vedere CcmExec.log e SleepAgent_&lt;dominio\>@SYSTEM_0.log nella sezione [Operazioni client](#BKMK_ClientOpLogs) di questo argomento.  
+>  Quando si integra la riattivazione LAN usando il proxy di riattivazione, questa attività viene registrata nel client. Ad esempio, vedere CcmExec.log e SleepAgent_<*dominio*\>@SYSTEM_0.log nella sezione [Operazioni client](#BKMK_ClientOpLogs) di questo argomento.  
 
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
@@ -789,16 +780,16 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |PolicyEvaluator.log|Registra informazioni dettagliate sulla valutazione dei criteri nei computer client, inclusi quelli derivanti dagli aggiornamenti software.|Client|  
 |RebootCoordinator.log|Registra informazioni dettagliate sul coordinamento dei riavvii del sistema nei computer client dopo le installazioni degli aggiornamenti software.|Client|  
 |ScanAgent.log|Registra informazioni dettagliate sulle richieste di ricerca di aggiornamenti software, sulla posizione di WSUS e sulle azioni correlate.|Client|  
-|SdmAgent.log|Registra informazioni dettagliate sul monitoraggio di aggiornamenti e conformità. Il file di log degli aggiornamenti software, Updateshandler.log, fornisce comunque informazioni più dettagliate sull'installazione degli aggiornamenti software necessari per la conformità.<br /><br /> Questo file di log viene condiviso con le impostazioni di conformità.|Client|  
+|SdmAgent.log|Registra informazioni dettagliate sul monitoraggio di aggiornamenti e conformità. Il file di log degli aggiornamenti software, UpdatesHandler.log, fornisce comunque informazioni più dettagliate sull'installazione degli aggiornamenti software necessari per la conformità.<br /><br /> Questo file di log viene condiviso con le impostazioni di conformità.|Client|  
 |ServiceWindowManager.log|Registra informazioni dettagliate sulla valutazione delle finestre di manutenzione.|Client|  
-|setupact.log|File di log primario per la maggior parte degli errori che si verificano durante il processo di installazione di Windows. Il file di log si trova nella cartella *% windir%\$Windows.~BT\sources\panther*.|Client|
+|setupact.log|File di log primario per la maggior parte degli errori che si verificano durante il processo di installazione di Windows. Il file di log è disponibile nella cartella %windir%\$Windows.~BT\sources\panther.|Client|
 |SmsWusHandler.log|Registra informazioni dettagliate sul processo di analisi per lo strumento di inventario per Microsoft Updates.|Client|  
 |StateMessage.log|Registra informazioni dettagliate sui messaggi di stato dell'aggiornamento software creati e inviati al punto di gestione.|Client|  
 |SUPSetup.log|Registra informazioni dettagliate sull'installazione del punto di aggiornamento software. Al termine dell'installazione del punto di aggiornamento software, **Installation was successful** viene scritto nel file di log.|Server del sistema del sito|  
 |UpdatesDeployment.log|Registra informazioni dettagliate sulle distribuzioni nel client, comprese l'attivazione, la valutazione e l'applicazione degli aggiornamenti software. La registrazione dettagliata visualizza informazioni aggiuntive sull'interazione con l'interfaccia utente del client.|Client|  
-|UpdatesHandler.log|Registra informazioni dettagliate sull'analisi della conformità degli aggiornamenti software e sul download e l'installazione di aggiornamenti software nel client.|Client|  
+|Updateshandler.log|Registra informazioni dettagliate sull'analisi della conformità degli aggiornamenti software e sul download e l'installazione di aggiornamenti software nel client.|Client|  
 |UpdatesStore.log|Registra informazioni dettagliate sullo stato di conformità degli aggiornamenti software ottenuto durante il ciclo di analisi della conformità.|Client|  
-|WCM.log|Registra informazioni dettagliate sulle configurazioni e le connessioni del punto di aggiornamento software e sulle connessioni al server di Windows Server Update Services (WSUS) per categorie di aggiornamento, classificazioni e lingue sottoscritte.|Server del sito|  
+|WCM.log|Registra informazioni dettagliate sulle configurazioni del punto di aggiornamento software e sulle connessioni al server WSUS per categorie di aggiornamento, classificazioni e lingue sottoscritte.|Server del sito|  
 |WSUSCtrl.log|Registra informazioni dettagliate su configurazione, connettività al database e integrità del server WSUS per il sito.|Server del sistema del sito|  
 |wsyncmgr.log|Registra informazioni dettagliate sul processo di sincronizzazione degli aggiornamenti software.|Server del sito|  
 |WUAHandler.log|Registra informazioni dettagliate sull'agente di Windows Update nel client durante la ricerca di aggiornamenti software.|Client|  
@@ -808,7 +799,7 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
-|WindowsUpdate.log|Registra informazioni dettagliate che indicano il momento in cui l'agente di Windows Update si connette al server WSUS e ritenta gli aggiornamenti software per la valutazione della conformità e se vi sono aggiornamenti per i componenti dell'agente.|Client|  
+|WindowsUpdate.log|Registra informazioni dettagliate che indicano il momento in cui l'agente di Windows Update si connette al server WSUS e recupera gli aggiornamenti software per la valutazione della conformità, nonché se vi sono aggiornamenti per i componenti dell'agente.|Client|  
 
 ###  <a name="a-namebkmkwsusloga-wsus-server"></a><a name="BKMK_WSUSLog"></a> Server WSUS  
  Nella tabella seguente sono elencati i file di log contenenti informazioni correlate al server WSUS.  
@@ -816,10 +807,10 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
 |Change.log|Registra informazioni dettagliate sulle informazioni modificate del database del server WSUS.|Server WSUS|  
-|SoftwareDistribution.log|Registra informazioni dettagliate sugli aggiornamenti software sincronizzati dall'origine aggiornamenti configurata al database del server WSUS.|Server WSUS|  
+|SoftwareDistribution.log|Registra informazioni dettagliate sugli aggiornamenti software sincronizzati dall'origine aggiornamenti configurata con il database del server WSUS.|Server WSUS|  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO2-->
 
 
