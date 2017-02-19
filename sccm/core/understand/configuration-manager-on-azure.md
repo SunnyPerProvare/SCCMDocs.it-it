@@ -2,7 +2,7 @@
 title: Configuration Manager in Azure | Microsoft Docs
 description: Informazioni sull&quot;uso di Configuration Manager in un ambiente Azure.
 ms.custom: na
-ms.date: 10/21/2016
+ms.date: 01/30/2017
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 5866c1d9ad88e49b69fa0c863b1ef8748a8c8111
+ms.sourcegitcommit: 264e009952db34a6f4929ecb70dc6857117ce4fe
+ms.openlocfilehash: e8798adc0e479417c682450d181611284c148e6d
 
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager in Azure: domande frequenti
@@ -92,7 +92,7 @@ Anche se Configuration Manager non è stato testato con i servizi di bilanciamen
 In generale, la potenza di calcolo (CPU e memoria) deve soddisfare l'[hardware consigliato per System Center Configuration Manager](/sccm/core/plan-design/configs/recommended-hardware). Esistono tuttavia alcune differenze tra l'hardware del computer standard e le VM di Azure, soprattutto in relazione ai dischi usati da queste VM.  Le dimensioni di VM usate dipendono dalle dimensioni dell'ambiente. Ecco alcuni consigli:
 - Per le distribuzioni di produzione di dimensioni significative è consigliabile usare VM di Azure di classe "**S**" perché possono sfruttare i dischi di archiviazione Premium.  Le VM di classe "S" usano l'archiviazione BLOB e in generale non soddisfano i requisiti di prestazioni necessari per un'esperienza di produzione accettabile.
 - È opportuno usare più dischi di archiviazione Premium per assicurare maggiore scalabilità, con striping nella console di Gestione disco di Windows per ottimizzare il numero di IOPS (operazioni di input/output al secondo).  
-- È consigliabile usare più dischi Premium o di qualità migliore durante la distribuzione iniziale del sito (P30 anziché P20) e 2 x P30 anziché 1 x P30. Se in seguito è necessario ampliare le dimensioni della VM del sito per soddisfare carichi aggiuntivi, è possibile sfruttare la capacità aggiuntiva di CPU e memoria fornita da una VM di dimensioni maggiori. I dischi che possono sfruttare la velocità effettiva di IOPS (operazioni di input/output al secondo) aggiuntiva consentita da queste dimensioni della VM sono quindi già installati.
+- È consigliabile usare più dischi Premium o di qualità migliore durante la distribuzione iniziale del sito (P30 anziché P20) e 2 x P30 anziché 1 x P30 in un volume con striping. Se in seguito è necessario ampliare le dimensioni della VM del sito per soddisfare carichi aggiuntivi, è possibile sfruttare la capacità aggiuntiva di CPU e memoria fornita da una VM di dimensioni maggiori. I dischi che possono sfruttare la velocità effettiva di IOPS (operazioni di input/output al secondo) aggiuntiva consentita da queste dimensioni della VM sono quindi già installati.
 
 
 
@@ -102,18 +102,18 @@ Le tabelle seguenti elencano i conteggi di dischi consigliati nella fase inizial
 
 | Client desktop    |Dimensione VM consigliata|Dischi consigliati|
 |--------------------|-------------------|-----------------|
-|**Fino a 25.000**       |   DS4_V2          |2 x P30            |
-|**Da 25.000 a 50.000**      |   DS13_V2         |2 x P30            |
-|**50.000 a 100.000**     |   DS14_V2         |3 x P30            |
+|**Fino a 25.000**       |   DS4_V2          |2 x P30 (con striping)  |
+|**Da 25.000 a 50.000**      |   DS13_V2         |2 x P30 (con striping)  |
+|**50.000 a 100.000**     |   DS14_V2         |3 x P30 (con striping)  |
 
 
 **Database del sito remoto**: il sito di amministrazione centrale o primario con il database del sito sul server remoto:
 
 | Client desktop    |Dimensione VM consigliata|Dischi consigliati |
 |--------------------|-------------------|------------------|
-|**Fino a 25.000**       | Server del sito: F4S </br>Server di database: DS12_V2 | Server del sito: 1 x P30 </br>Server di database: 2 x P30 |
-|**Da 25.000 a 50.000**      | Server del sito: F4S </br>Server di database: DS13_V2 | Server del sito: 1 x P30 </br>Server di database: 2 x P30 |
-|**50.000 a 100.000**     | Server del sito: F8S </br>Server di database: DS14_V2 | Server del sito: 2 x P30 </br>Server di database: 3 x P30 |
+|**Fino a 25.000**       | Server del sito: F4S </br>Server di database: DS12_V2 | Server del sito: 1 x P30 </br>Server di database: 2 x P30 (con striping)  |
+|**Da 25.000 a 50.000**      | Server del sito: F4S </br>Server di database: DS13_V2 | Server del sito: 1 x P30 </br>Server di database: 2 x P30 (con striping)   |
+|**50.000 a 100.000**     | Server del sito: F8S </br>Server di database: DS14_V2 | Server del sito: 2 x P30 (con striping)   </br>Server di database: 3 x P30 (con striping)   |
 
 Di seguito è riportato un esempio di configurazione per un numero di client compreso tra 50 e 100.000 su DS14_V2 con 3 dischi P30 in un volume con striping, con volumi logici separati per i file di installazione e di database di Configuration Manager:  ![VM)disks](media/vm_disks.png)  
 
@@ -139,9 +139,11 @@ L'approccio alla gestione dei contenuti è molto simile per i server del sito e 
 
 
 ### <a name="while-i-am-ok-with-the-limitations-of-cloud-based-distribution-points-i-dont-want-to-put-my-management-point-into-a-dmz-even-though-that-is-needed-to-support-my-internet-based-clients-do-i-have-any-other-options"></a>Sebbene le limitazioni relative ai punti di distribuzione basati su cloud non rappresentino un problema, non intendo inserire il punto di gestione in una rete perimetrale, anche se ciò è necessario per supportare i client basati su Internet. Sono disponibili altre opzioni?
-Saranno presto disponibili. Con Configuration Manager Technical Preview versione 1606 è stato introdotto il [servizio proxy cloud](/sccm/core/get-started/capabilities-in-technical-preview-1606#a-namecloudproxyacloud-proxy-service-for-managing-clients-on-the-internet). Questo servizio consente di gestire i client di Configuration Manager su Internet in modo semplice. Il servizio, che viene distribuito in Microsoft Azure e richiede una sottoscrizione di Azure, si connette all'infrastruttura di Configuration Manager locale usando un nuovo ruolo, denominato punto del connettore proxy cloud. Dopo aver completato la distribuzione e la configurazione, i client sono in grado di accedere ai ruoli del sistema del sito Configuration Manager locale, indipendentemente dal fatto che siano connessi alla rete privata interna o su Internet.
+Sì. Con Configuration Manager versione 1610, è stato introdotto il [gateway di gestione cloud](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) come funzionalità di versione non definitiva (introdotta inizialmente nella Technical Preview versione 1606 con il nome di [servizio proxy cloud](/sccm/core/get-started/capabilities-in-technical-preview-1606#a-namecloudproxyacloud-proxy-service-for-managing-clients-on-the-internet)).
 
-È possibile avviare il test del proxy del servizio cloud nell'ambiente di test e inviare commenti e suggerimenti per migliorare il servizio.
+Il **gateway di gestione cloud** consente di gestire i client di Configuration Manager su Internet in modo semplice. Il servizio, che viene distribuito in Microsoft Azure e richiede una sottoscrizione di Azure, si connette all'infrastruttura di Configuration Manager locale usando un nuovo ruolo, denominato punto del connettore gateway di gestione cloud. Dopo aver completato la distribuzione e la configurazione, i client sono in grado di accedere ai ruoli del sistema del sito Configuration Manager locale, indipendentemente dal fatto che siano connessi alla rete privata interna o su Internet.
+
+È possibile iniziare a usare il gateway di gestione cloud nel proprio ambiente e inviare commenti e suggerimenti per migliorare il servizio. Per informazioni sulle funzionalità di versioni non definitive, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkprereleasea-use-pre-release-features-from-updates).
 
 ### <a name="i-also-heard-that-you-have-another-new-feature-called-peer-cache-in-the-technical-preview-version-1604-is-that-different-than-branchcache-which-one-should-i-choose"></a>Inoltre, nella Technical Preview versione 1604 è prevista una nuova funzionalità denominata peer cache. È diversa da BranchCache? Qual è l'opzione migliore?
 Sì, è completamente diversa. [Peer cache](/sccm/core/get-started/capabilities-in-technical-preview-1604#bkmk_peercache) è una tecnologia nativa al 100% di Configuration Manager, mentre BranchCache è una funzionalità di Windows. Entrambe possono essere utili. BranchCache usa un broadcast per trovare il contenuto richiesto mentre peer cache usa le impostazioni relative al gruppo di limiti e al flusso di lavoro di distribuzione standard di Configuration Manager.
@@ -180,6 +182,6 @@ Sì, è completamente diversa. [Peer cache](/sccm/core/get-started/capabilities-
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Jan17_HO5-->
 
 

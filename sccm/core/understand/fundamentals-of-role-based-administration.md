@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8e0090bd671e2c566447579974a38474c2f898ea
-ms.openlocfilehash: 1ca51e256ea2f406f393e4b0d3634ea0f6f637bc
+ms.sourcegitcommit: a8cb3c9850b183eec156c37a181c04088b71805e
+ms.openlocfilehash: 40837306816639ff8cea8930fec75b05edc5164a
 
 
 ---
@@ -72,9 +72,9 @@ Quando si progetta e implementa la protezione amministrativa per Configuration M
 
 -   Il ruolo *Amministratore completo* concede tutte le autorizzazioni in Configuration Manager.  
 
--   Il ruolo *Analista asset* concede agli utenti amministratori le autorizzazioni per visualizzare i dati raccolti con Asset Intelligence, l'inventario software, l'inventario hardware e la misurazione del software. Gli utenti amministratori possono creare regole di controllo software ed etichette, famiglie e categorie di Asset Intelligence.  
+-   *Gestione asset* concede le autorizzazioni per gestire il punto di sincronizzazione di Asset Intelligence, le classi di report di Asset Intelligence, l'inventario software e hardware e le regole di controllo.  
 
--   Il ruolo *Amministratore aggiornamento software* concede le autorizzazioni per definire e distribuire gli aggiornamenti software. Gli utenti amministratori associati a questo ruolo possono creare raccolte, gruppi di aggiornamento software, distribuzioni e modelli, oltre a installare gli aggiornamenti software per la funzionalità Protezione accesso alla rete (NAP).  
+-   Il ruolo *Amministratore aggiornamento software* concede le autorizzazioni per definire e distribuire gli aggiornamenti software. Gli utenti amministratori associati a questo ruolo possono creare raccolte, gruppi di aggiornamento software, distribuzioni e modelli.  
 
 > [!TIP]  
 >  È possibile visualizzare l'elenco di ruoli di sicurezza incorporati e i ruoli di sicurezza personalizzati creati, incluse le descrizioni, nella console di Configuration Manager. Per visualizzare i ruoli, nell'area di lavoro **Amministrazione** espandere **Sicurezza** e quindi selezionare **Ruoli di protezione**.  
@@ -215,6 +215,6 @@ Per informazioni su come configurare gli ambiti di protezione per l'amministrazi
 
 
 
-<!--HONumber=Jan17_HO1-->
+<!--HONumber=Jan17_HO5-->
 
 
