@@ -2,7 +2,7 @@
 title: Pianificare e configurare la gestione delle applicazioni | Documentazione Microsoft
 description: Implementare e configurare le dipendenze necessarie per la distribuzione di applicazioni in System Center Configuration Manager.
 ms.custom: na
-ms.date: 01/17/2017
+ms.date: 02/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d2a12edcc6bc7413558e25b694b69133c2496019
-ms.openlocfilehash: 0a38ea116e589425048f6c46378df46ecc0d375b
+ms.sourcegitcommit: 50c08d63e7220a47d21dcbdcd7abafba7c7f5f75
+ms.openlocfilehash: 4eca69f54ec0bca5f1f972d3814ceb87d4a30d67
 
 
 ---
@@ -112,7 +112,7 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
 
 1.  Nella console di Configuration Manager selezionare **Amministrazione** > **Configurazione del sito** > **Server e ruoli del sistema del sito** e scegliere il server da usare per il Catalogo applicazioni.  
 
-3.  Nella scheda **Home**, nel gruppo **Crea**, selezionare **Aggiungi ruoli del sistema del sito**.  
+3.  Nella scheda **Home**, nel gruppo **Server**, scegliere **Aggiungi ruoli del sistema del sito**.  
 
 4.  Nella pagina **Generale** specificare le impostazioni generali per il sistema del sito e quindi scegliere **Avanti**.  
 
@@ -228,6 +228,6 @@ In Software Center la personalizzazione viene applicata secondo le regole seguen
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO1-->
 
 

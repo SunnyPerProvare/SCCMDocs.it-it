@@ -2,7 +2,7 @@
 title: Dati di diagnostica per la versione 1602 | Microsoft Docs
 description: Informazioni sui livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1602.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -34,26 +34,26 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
-ms.openlocfilehash: 0f1be7aec8b15c4c61a325f2afb2caa2332cd31a
+ms.sourcegitcommit: ebbc2b250d651aa8befd7f2458d67bf0f4a8ff10
+ms.openlocfilehash: e54ed320ce95876d29e6dd889dcba2f1f964164c
 
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1602-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1602
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager versione 1602 raccoglie tre livelli di dati di diagnostica e di utilizzo: **Di base**, **Avanzato** e **Completo**. Per impostazione predefinita, per questa funzionalità è impostato il livello avanzato. Le sezioni seguenti forniscono ulteriori dettagli sui dati raccolti per ogni livello.
+System Center Configuration Manager versione 1602 raccoglie tre livelli di dati di diagnostica e di utilizzo: **Di base**, **Avanzato** e **Completo**. Per impostazione predefinita, per questa funzionalità è impostato il livello avanzato. Le sezioni seguenti forniscono ulteriori dettagli sui dati raccolti in ogni livello.
 
 Le modifiche rispetto alle versioni precedenti sono contrassegnate da ***[Nuovo]*** o ***[Aggiornato]***.
 
 > [!IMPORTANT]
->  Configuration Manager non raccoglie codici del sito o nomi di siti, indirizzi IP, nomi utente, nomi di computer, indirizzi fisici o indirizzi di posta elettronica per i livelli di base e avanzato. L'eventuale raccolta di tali informazioni per il livello completo non è intenzionale (dati potenzialmente inclusi nelle informazioni di diagnostica avanzate come file di log o snapshot di memoria) e le informazioni eventualmente raccolte non verranno usate da Microsoft per identificare l'utente, contattare l'utente o per fini pubblicitari.
+>  Configuration Manager non raccoglie codici del sito, nomi di siti, indirizzi IP, nomi utente, nomi di computer, indirizzi fisici o indirizzi di posta elettronica per i livelli di base e avanzato. L'eventuale raccolta di tali informazioni per il livello completo non è intenzionale, ovvero dati potenzialmente inclusi nelle informazioni di diagnostica avanzate come file di log o snapshot di memoria. Le informazioni eventualmente raccolte non verranno usate da Microsoft per identificare l'utente, contattare l'utente o per fini pubblicitari.
 
 ##  <a name="a-namebkmkchangea-how-to-change-the-level"></a><a name="bkmk_change"></a> Come cambiare il livello
- Gli amministratori con ambito amministrativo basato sui ruoli che include le autorizzazioni **Modifica** per la classe di oggetti **Sito** possono modificare il livello dei dati raccolti nelle impostazioni dei dati di diagnostica e di utilizzo nella console di Configuration Manager.
+ Gli amministratori con ambito amministrativo basato sui ruoli che include le autorizzazioni **Modifica** per la classe di oggetti **Sito** possono modificare il livello dei dati raccolti nelle impostazioni Dati di diagnostica e di utilizzo nella console di Configuration Manager.
 
 
-  A tale scopo, nella console passare alla scheda Backstage (la scheda in alto a sinistra con la freccia a discesa) e selezionare **Dati di utilizzo**, quindi selezionare il livello di dati che si vuole usare.  
+  A tale scopo, nella console passare alla scheda Backstage (la scheda in alto a sinistra con la freccia a discesa), selezionare **Dati di utilizzo** e quindi selezionare il livello di dati che si vuole usare.  
 
 ##  <a name="a-namebkmklevel1a-level-1---basic"></a><a name="bkmk_level1"></a> Livello 1 - Di base
  Il livello di base include i dati sulla gerarchia ed è necessario per consentire il miglioramento dell'esperienza di installazione o aggiornamento, nonché per determinare quali aggiornamenti di Configuration Manager sono applicabili per la gerarchia.
@@ -62,23 +62,23 @@ Le modifiche rispetto alle versioni precedenti sono contrassegnate da ***[Nuovo]
 
 
  -   Informazioni sull'installazione:
-    - Build, tipo di installazione, language pack, funzionalità abilitate  
+     - Build, tipo di installazione, Language Pack, funzionalità abilitate  
 
-    - ***[Aggiornato]*** Stato di distribuzione ed errori del pacchetto di aggiornamento, avanzamento del download ed errori dei prerequisiti   
+     - ***[Aggiornato]*** Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti     
 
-    - ***[Nuovo]*** Versione dello script post-aggiornamento
+     - ***[Nuovo]*** Versione dello script post-aggiornamento
 
-    - ***[Nuovo]*** Uso di Fast Ring di aggiornamento
+     - ***[Nuovo]*** Uso di Fast Ring di aggiornamento
 
 -   Metriche delle prestazioni del database (informazioni sull'elaborazione della replica, principali stored procedure di SQL Server per processore e utilizzo del disco)
 
--   Configurazione di base dei database (processori, configurazione del cluster, configurazione delle viste distribuite)
+-   Configurazione di base dei database (processori, configurazione del cluster e configurazione delle viste distribuite)
 
 -   Schema del database di Configuration Manager (hash di tutte le definizioni di oggetti)
 
 -   Numero delle versioni client di Configuration Manager e delle versioni del sistema operativo
 
--   Numero e sistema operativo dei dispositivi gestiti e dei criteri impostati da Exchange Connector
+-   Numero dei sistemi operativi per i dispositivi gestiti e dei criteri impostati da Exchange Connector
 
 -   Numero delle lingue e delle impostazioni locali dei client
 
@@ -88,27 +88,27 @@ Le modifiche rispetto alle versioni precedenti sono contrassegnate da ***[Nuovo]
 
 -   Informazioni di base sul server del sistema del sito (ruoli del sistema del sito usati, stato di Internet e SSL, sistema operativo, processori, computer fisico o macchina virtuale)
 
--   Statistiche di base di individuazione degli utenti (numero di individuazioni di utenti, dimensioni minime/massime/medie dei gruppi)
+-   Statistiche di base di individuazione degli utenti (numero di individuazioni di utenti e dimensioni minime/massime/medie dei gruppi)
 
--   Informazioni di base sulla protezione degli endpoint (versioni client antimalware)
+-   Informazioni di base su Endpoint Protection (versioni client antimalware)
 
--   Conteggi di base per applicazioni e tipi di distribuzione (totale app, totale app con più tipi di distribuzione, totale app con dipendenze, totale app sostituite, numero delle tecnologie di distribuzione in uso)
+-   Conteggi di base per applicazioni e tipi di distribuzione (totale app, totale app con più tipi di distribuzione, totale app con dipendenze, totale app sostituite e numero delle tecnologie di distribuzione in uso)
 
--   Conteggi di base OSD (immagini)
+-   Numero di distribuzioni del sistema operativo di base (immagini)
 
 -   Tipi di punto di distribuzione e di punto di gestione e informazioni di base sulla configurazione (protetto, pre-installato, PXE, multicast, stato di SSL, punti di distribuzione pull/peer, abilitato per MDM, abilitato per SSL e così via)
 
--   Statistiche di telemetria (data/ora di esecuzione, runtime, errori)
+-   Statistiche di telemetria (data/ora di esecuzione, runtime ed errori)
 
 - ***[Nuovo]*** Livello di telemetria configurato, modalità online o offline e configurazione di aggiornamento rapido
 
 - ***[Nuovo]*** Uso di Network Discovery (abilitato o disabilitato)
 - ***[Nuovo]*** Admin Console:
 
-    -  Statistiche sulle connessioni della console (versione del sistema operativo, lingua, SKU e architettura; memoria di sistema, conteggio dei processori logici, ID del sito di connessione, versioni di .NET installate e Language Pack della console)
+    -  Statistiche sulle connessioni della console (versione del sistema operativo, lingua, SKU e architettura, memoria di sistema, conteggio dei processori logici, ID del sito di connessione, versioni di .NET installate e Language Pack della console)
 
 ##  <a name="a-namebkmklevel2a-level-2---enhanced"></a><a name="bkmk_level2"></a> Livello 2 - Avanzato
-Il livello avanzato è quello predefinito dopo l'installazione. Questo livello include i dati raccolti per il livello di base, oltre a dati specifici per le funzionalità (frequenza e durata d'utilizzo), le impostazioni client di Configuration Manager (nome del componente, stato e alcune impostazioni come gli intervalli di polling) e le informazioni di base sugli aggiornamenti software.
+Il livello avanzato è quello predefinito dopo l'installazione. Questo livello include i dati raccolti per il livello di base, oltre a dati specifici per le funzionalità (frequenza e durata d'uso), le impostazioni client di Configuration Manager (nome del componente, stato e alcune impostazioni come gli intervalli di polling) e le informazioni di base sugli aggiornamenti software.
 
 Questo livello è consigliato perché offre a Microsoft i dati minimi necessari per apportare miglioramenti utili nelle versioni future di prodotti e servizi. Con questo livello non vengono raccolti i nomi degli oggetti (siti, utenti, computer o oggetti), dettagli sugli oggetti correlati alla sicurezza o informazioni sulle vulnerabilità come il numero di sistemi che richiedono aggiornamenti software.
 
@@ -116,9 +116,9 @@ A partire da System Center Configuration Manager versione 1602, questo livello i
 
 -   **Gestione delle applicazioni:**
 
-  -   ***[Aggiornato]*** Informazioni di base su utilizzo/destinazione per i tipi di distribuzione usati all'interno dell'organizzazione (utente e dispositivo di destinazione, richiesto o disponibile, app universali)  
+  -   ***[Aggiornato]*** Informazioni di base su utilizzo/destinazione per i tipi di distribuzione usati all'interno dell'organizzazione (utente e dispositivo di destinazione, richiesto o disponibile e app universali)  
 
-  -  ***[Aggiornato]*** Informazioni sulla distribuzione delle applicazioni (installazione/disinstallazione, approvazione richiesta, interazione con l'utente abilitata o disabilitata, dipendenza, sostituzione)  
+  -  ***[Aggiornato]*** Informazioni sulla distribuzione delle applicazioni (installazione/disinstallazione, approvazione richiesta, interazione con l'utente abilitata o disabilitata, dipendenza e sostituzione)  
 
   -   Dati statistici sulle richieste di applicazioni disponibili  
 
@@ -156,9 +156,9 @@ A partire da System Center Configuration Manager versione 1602, questo livello i
 
     -   Numero di regole e distribuzioni create per le impostazioni personalizzate
 
-    -   ***[Aggiornato]*** Conteggio di Simple Certificate Enrollment Protocol, VPN, WiFi, certificato (.pfx) e modelli dei criteri di conformità distribuiti   
+    -   ***[Aggiornato]*** Numero di certificati SCEP (Simple Certificate Enrollment Protocol), VPN, Wi-Fi, certificati (.pfx) e modelli dei criteri di conformità distribuiti   
 
-    -  ***[New]*** Conteggio del certificato SCEP, VPN, Wifi, certificato (.pfx) e distribuzioni dei criteri di conformità per piattaforma
+    -  ***[Nuovo]*** Numero dei certificati SCEP (Simple Certificate Enrollment Protocol), VPN, Wi-Fi, certificati (.pfx) e distribuzioni dei criteri di conformità per piattaforma
 
 -   **Contenuto:**
 
@@ -168,19 +168,19 @@ A partire da System Center Configuration Manager versione 1602, questo livello i
 
     -   Informazioni sui gruppi di punti di distribuzione (numero di pacchetti e punti di distribuzione assegnati a ogni gruppo di punti di distribuzione)
 
-    -   Informazioni di configurazione sui punti di distribuzione (uso di BranchCache, monitoraggio dei punti di distribuzione)
+    -   Informazioni di configurazione sui punti di distribuzione (uso di BranchCache e monitoraggio dei punti di distribuzione)
 
-    -   Informazioni di configurazione di Distribution Manager (thread, intervallo tra tentativi, numero di tentativi, impostazioni sui punti di distribuzione pull)
+    -   Informazioni di configurazione di Distribution Manager (thread, intervallo tra tentativi, numero di tentativi e impostazioni dei punti di distribuzione pull)
 
 -   **Endpoint Protection:**
 
-    -   Utilizzo dei criteri antimalware di EndPoint Protection e di Windows Firewall (numero di criteri univoci assegnati al gruppo; non sono incluse informazioni sulle impostazioni contenute nei criteri)
+    -   Utilizzo dei criteri antimalware di Endpoint Protection e di Windows Firewall (numero di criteri univoci assegnati al gruppo)<br /><br />Non sono incluse informazioni sulle impostazioni contenute nei criteri.
 
     -   Errori di distribuzione di Endpoint Protection (numero di codici di errore di distribuzione dei criteri di Endpoint Protection)
 
     -   Numero di raccolte selezionate per la visualizzazione nel dashboard di Endpoint Protection
 
-    -   Numero di avvisi configurati per funzionalità Endpoint Protection
+    -   Numero di avvisi configurati per la funzionalità Endpoint Protection
 
 -   **Gestione di applicazioni mobili (MAM):**
 
@@ -192,11 +192,11 @@ A partire da System Center Configuration Manager versione 1602, questo livello i
 
 -   **Gestione di dispositivi mobili (MDM):**
 
-    -   Numero di comandi per azioni su dispositivi mobili (blocco, reimpostazione PIN, cancellazione e ritiro dati)
+    -   Numero di azioni eseguite su dispositivi mobili (comandi di blocco, reimpostazione PIN, cancellazione e ritiro dati)
 
-    -   Numero di dispositivi mobili gestiti da Configuration Manager e Microsoft Intune e modalità di registrazione (in blocco, basata sull'utente)
+    -   Numero di dispositivi mobili gestiti da Configuration Manager e Microsoft Intune e modalità di registrazione (in blocco o basata sull'utente)
 
-    -   Pianificazione del polling dei dispositivi mobili e durata dei controlli statistici dei dispositivi mobili
+    -   Pianificazione del polling dei dispositivi mobili e statistiche della durata della registrazione dei dispositivi mobili
 
     -   Numero di criteri per dispositivi mobili
 
@@ -220,7 +220,7 @@ A partire da System Center Configuration Manager versione 1602, questo livello i
 
     -   Numero di immagini di avvio, driver, pacchetti di driver, punti di distribuzione abilitati per il multicast, punti di distribuzione che supportano PXE e sequenze di attività
 
--   **Aggiornamenti del software:**
+-   **Aggiornamenti software:**
 
     -   Numero totale/medio di raccolte con distribuzioni di aggiornamento del software e numero massimo/medio di aggiornamenti distribuiti
 
@@ -228,7 +228,7 @@ A partire da System Center Configuration Manager versione 1602, questo livello i
 
     -   Numero di regole di distribuzione automatica che aggiungono aggiornamenti o ne creano di nuovi in un gruppo esistente
 
-    -   Delta di disponibilità e scadenza usati nelle regole di distribuzione automatica
+    -   Valori differenziali di disponibilità e scadenza usati nelle regole di distribuzione automatica
 
     -   Numero medio e massimo di assegnazioni per ogni aggiornamento
 
@@ -270,16 +270,16 @@ A partire da System Center Configuration Manager versione 1602, questo livello i
 
     -   Numero di raccolte per tipo
 
-    -   ***[Aggiornato]*** Statistiche di valutazione raccolte (durata query, conteggi assegnati e non assegnati, conteggi per tipo, rollover degli ID e uso di regole)
+    -   ***[Aggiornato]*** Statistiche di valutazione raccolte (durata query, conteggi assegnati e non assegnati, conteggi per tipo, rollover degli ID e utilizzo delle regole)
 
-    - ***[Nuovo]***   Periodo di memorizzazione del rilevamento modifiche di SQL
+    - ***[Nuovo]*** Periodo di memorizzazione del rilevamento modifiche di SQL
 
 -   ***[Nuovo] Aggiornamenti del sito:***
 
     - ***[Nuovo]*** Versioni degli hotfix di Configuraton Manager installati
 
 ##  <a name="a-namebkmklevel3a-level-3---full"></a><a name="bkmk_level3"></a> Livello 3 - Completo
-Il livello competo include tutti i dati dei livelli di base e avanzato. Include inoltre informazioni aggiuntive su Endpoint Protection, le percentuali di conformità degli aggiornamenti e informazioni sugli aggiornamenti software.  Questo livello può includere anche informazioni di diagnostica avanzate, come file di sistema e snapshot di memoria, che possono contenere informazioni personali presenti in memoria o nei file di log al momento dell'acquisizione.
+Il livello completo include tutti i dati dei livelli di base e avanzato. Include inoltre informazioni aggiuntive su Endpoint Protection, le percentuali di conformità degli aggiornamenti e informazioni sugli aggiornamenti software. Questo livello può includere anche informazioni di diagnostica avanzate, come file di sistema e snapshot di memoria, che possono contenere informazioni personali presenti in memoria o nei file di log al momento dell'acquisizione.
 
 A partire da System Center Configuration Manager versione 1602, questo livello include i dati seguenti:
 
@@ -289,7 +289,7 @@ A partire da System Center Configuration Manager versione 1602, questo livello i
 
 -   Configurazione dei criteri di Endpoint Protection
 
--   Informazioni sulla distribuzione degli aggiornamenti software (percentuale di distribuzioni assegnate ai client o  ora UTC, aggiornamento obbligatorio/facoltativo/invisibile all'utente, e facoltativi e invisibile all'utente, eliminazione del riavvio)
+-   Informazioni sulla distribuzione degli aggiornamenti software (percentuale di distribuzioni assegnate con client o ora UTC, aggiornamento obbligatorio o facoltativo ed eliminazione del riavvio)
 
 -   Conformità generale delle distribuzioni degli aggiornamenti software
 
@@ -310,12 +310,12 @@ A partire da System Center Configuration Manager versione 1602, questo livello i
 -   Numero minimo/massimo/medio di ore dall'ultima analisi di aggiornamenti software
 
 -   ***[Nuovo]*** Prodotti di aggiornamento software sincronizzati dal punto di aggiornamento software
--   ***[Nuovo]*** Impostazioni di conformità: SCEP, VPN, Wifi e dettagli di configurazione del modello dei criteri di conformità
+-   ***[Nuovo]*** Impostazioni di conformità: dettagli di configurazione SCEP, VPN, Wi-Fi e del modello dei criteri di conformità
 
 -   ***[Nuovo]*** Tipo di criteri di accesso condizionale EAS (blocco o quarantena) per i dispositivi gestiti da Intune
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

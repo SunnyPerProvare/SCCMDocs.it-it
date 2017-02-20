@@ -2,7 +2,7 @@
 title: Aggiornamenti nella console | Microsoft Docs
 description: System Center Configuration Manager si sincronizza con il cloud Microsoft per ottenere aggiornamenti installabili all&quot;interno della console.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 2/1/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
-ms.openlocfilehash: 1b7063d45c6dc9b42e5002f684043a8e846416a2
+ms.sourcegitcommit: 2f90f3204b3c31caaed1359e11451285b21eef50
+ms.openlocfilehash: b3a58503ea4d49825e93ea3a2e9bfedf975145e6
 
 
 ---
@@ -69,7 +69,7 @@ Per impostazione predefinita, **Pacchetti di aggiornamento** (SMS_CM_Updatepacka
     - Un utente con questo ruolo di sicurezza e l'accesso all'ambito di protezione **Predefinito** può visualizzare e installare gli aggiornamenti, abilitare le funzionalità durante l'installazione e visualizzare le funzionalità dopo l'installazione dell'aggiornamento ma non può abilitarle dopo l'installazione dell'aggiornamento.
 
 - **Analista di sola lettura** con autorizzazioni **Lettura** :
-  -  Un utente con questo ruolo di sicurezza e l'accesso all'ambito **Predefinito** può visualizzare gli aggiornamenti ma non installarli e può visualizzare le funzionalità dopo l'installazione dell'aggiornamento ma non può abilitarle.
+  -  Un utente con questo ruolo di sicurezza e l'accesso all'ambito di protezione **Predefinito** può visualizzare gli aggiornamenti ma non installarli e può visualizzare le funzionalità dopo l'installazione dell'aggiornamento ma non può abilitarle.
 
 **Riepilogo delle autorizzazioni richieste per gli aggiornamenti e la manutenzione:**   
   - Usare un account cui è assegnato un ruolo di sicurezza che include la classe **Pacchetti di aggiornamento** con entrambe le autorizzazioni **Modifica** e **Lettura** .
@@ -162,7 +162,7 @@ Successivamente, quando si installa un aggiornamento, è possibile configurare l
 
  Si consiglia di non pianificare l'installazione dell'aggiornamento per ogni sito durante il normale orario di ufficio in modo che il processo di installazione dell'aggiornamento e le azioni per reinstallare i componenti del sito e i ruoli del sistema del sito abbiano un impatto minimo sulle operazioni aziendali.  
 
--   I siti primari figlio avviano automaticamente l'aggiornamento al termine dell'installazione dell'aggiornamento del sito di amministrazione centrale. Questo è il processo predefinito e consigliato. È tuttavia possibile usare [intervalli di servizio per i server del sito](#bkmk_ServiceWindow) per controllare quando vengono installati gli aggiornamenti in un sito primario.  
+-   I siti primari figlio avviano automaticamente l'aggiornamento al termine dell'installazione dell'aggiornamento del sito di amministrazione centrale. Questo è il processo predefinito e consigliato. È tuttavia possibile usare [intervalli di servizio per i server del sito](/sccm/core/servers/manage/service-windows) per controllare quando vengono installati gli aggiornamenti in un sito primario.  
 
 -   Dopo che l'aggiornamento del sito primario padre è completato, è necessario aggiornare manualmente i siti secondari dalla console di Configuration Manager. L'aggiornamento automatico dei server del sito secondario non è supportato.  
 
@@ -354,18 +354,9 @@ Se dopo aver concesso il consenso a un sito primario autonomo si espande la gera
 |Accesso condizionale per i PC gestiti da System Center Configuration Manager | [Versione 1602](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)     |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)                        |
 
 
+## <a name="known-issues"></a>Problemi noti
 
-
-##  <a name="a-namebkmkservicewindowa-service-windows-for-site-servers"></a><a name="bkmk_ServiceWindow"></a> gli intervalli di servizio per i server del sito  
-In un server del sito è possibile configurare gli intervalli di servizio per controllare quando è possibile applicare gli aggiornamenti dell'infrastruttura per Configuration Manager al server del sito.  Ogni server del sito supporta più intervalli e l'intervallo consentito per l'installazione degli aggiornamenti dell'infrastruttura viene determinato con una combinazione di tutti gli intervalli configurati per il server del sito.  
-
-**Per configurare un intervallo di servizio:**  
-
-1.  Nella console di Configuration Manager aprire **Amministrazione** > **Configurazione del sito** > **Siti** e quindi selezionare il server del sito in cui si vuole configurare un intervallo di servizio.  
-
-2.  Successivamente, modificare le **Proprietà** del server del sito e selezionare la scheda **Intervallo di servizio** in cui è possibile impostare uno o più intervalli di servizio per il server del sito.  
-
-##  <a name="a-namebkmkfaqa-why-dont-i-see-certain-updates-in-my-console"></a><a name="bkmk_faq"></a> Perché alcuni aggiornamenti non sono visualizzati nella console?  
+###  <a name="a-namebkmkfaqa-why-dont-i-see-certain-updates-in-my-console"></a><a name="bkmk_faq"></a> Perché alcuni aggiornamenti non sono visualizzati nella console?  
  Se non viene trovato un aggiornamento specifico o se non viene visualizzato alcun aggiornamento nella console dopo una sincronizzazione riuscita con il servizio cloud Microsoft, la causa potrebbe essere:  
 
 -   L'aggiornamento richiede una configurazione non usata dall'infrastruttura oppure la versione corrente del prodotto non soddisfa un prerequisito per la ricezione dell'aggiornamento.  
@@ -376,8 +367,21 @@ In un server del sito è possibile configurare gli intervalli di servizio per co
 
     Per informazioni sulle autorizzazioni richieste per visualizzare gli aggiornamenti e abilitare le funzionalità dall'interno della console, vedere [Autorizzazioni per la gestione degli aggiornamenti](../../../core/servers/manage/install-in-console-updates.md#permissions-to-view-and-manage-updates-and-features) in questo argomento.
 
+### <a name="why-do-i-see-two-updates-for-version-1610"></a>Perché vengono visualizzati due aggiornamenti per la versione 1610?
+Nella console possono talvolta essere visualizzati due aggiornamenti per la versione 1610. Questi aggiornamenti hanno date diverse. Ciò si verifica in presenza di una delle condizioni seguenti:   
+-   È stata installata una versione precedente (ad esempio la 1606) dopo che la versione 1610 è diventata disponibile.
+
+-   La gerarchia esegue la versione 1511 o 1602 e non è stato possibile scaricare la versione 1606.
+
+Sono disponibili due aggiornamenti per la versione 1610 perché questo aggiornamento è stato rilasciato una seconda volta dopo che sono state apportate piccole modifiche ad alcuni file binari. Queste modifiche non influiscono sulla funzionalità di Configuration Manager o sull'aggiornamento.
+
+Quando entrambi gli aggiornamenti sono disponibili nella console, è consigliabile installare quello con la data più recente. Tuttavia, poiché entrambi gli aggiornamenti offrono la stessa funzionalità, se uno è già stato installato non è necessario eseguire altre operazioni.
+-   Se in precedenza si è installato l'aggiornamento meno recente, non è necessario installare anche quello con la data più recente. Se tuttavia si installa l'aggiornamento più recente dopo aver installato il primo, verranno aggiornati i file binari in questione, senza altre modifiche, e non sarà necessario eseguire altre operazioni.
+
+-   Se in precedenza si è installato l'aggiornamento più recente e quindi si installa l'aggiornamento con la data meno recente, non sono comunque necessarie altre operazioni. Questo perché i file binari più recenti che sono già installati non vengono sovrascritti da quelli dell'aggiornamento originale.
 
 
-<!--HONumber=Dec16_HO3-->
+
+<!--HONumber=Feb17_HO1-->
 
 

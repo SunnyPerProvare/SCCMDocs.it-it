@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 3de4d4138c377c1a231947ece956ed6748dacd1f
+ms.sourcegitcommit: 5e5155aa8c03b7e0c200d083024c8fa386f97aa7
+ms.openlocfilehash: cfac2c03c1b71b40c68d8acd5fbd96c5e98caaa9
 
 ---
 # <a name="custom-locations-for-system-center-configuration-manager-site-database-files"></a>Percorsi personalizzati per i file di database del sito di System Center Configuration Manager
@@ -31,20 +31,20 @@ ms.openlocfilehash: 3de4d4138c377c1a231947ece956ed6748dacd1f
 
  **Durante l'installazione** di un nuovo sito primario o di un sito di amministrazione centrale, è possibile:  
 
--   Specificare i percorsi file non predefiniti per il database del sito: il programma di installazione di Configuration Manager crea quindi il database del sito usando tali percorsi.  
+-   **Specificare percorsi file non predefiniti per il database del sito**: il programma di installazione di Configuration Manager crea quindi il database del sito usando questi percorsi.  
 
--   Specificare l'uso di un database di SQL Server creato in precedenza che usi percorsi file personalizzati: il programma di installazione di  Configuration Manager usa tale database con i relativi percorsi file configurati in precedenza.  
+-   **Specificare l'uso di un database di SQL Server creato in precedenza con percorsi file personalizzati**: il programma di installazione di Configuration Manager usa tale database con i relativi percorsi configurati in precedenza.  
 
-**Al termine dell'installazione** , è possibile modificare il percorso dei file di database del sito. A questo scopo, è necessario arrestare il sito e modificare il percorso file in SQL Server:  
+**Al termine dell'installazione**, è possibile modificare il percorso dei file di database del sito. A questo scopo, è necessario arrestare il sito e modificare il percorso file in SQL Server:  
 
 -   Nel server del sito di Configuration Manager interrompere il servizio **SMS_Executive**.  
 
 -   Per istruzioni su come spostare un database utente, consultare la documentazione per la versione di SQL Server in uso. Ad esempio, se si usa SQL Server 2014, vedere [Spostare database utente](https://technet.microsoft.com/library/ms345483\(v=sql.120\).aspx) su TechNet.  
 
--   Dopo aver completato lo spostamento dei file di database, è necessario riavviare il servizio SMS_Executive sul server del sito di Configuration Manager.  
+-   Al termine dello spostamento dei file di database, è necessario riavviare il servizio **SMS_Executive** sul server del sito di Configuration Manager.  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

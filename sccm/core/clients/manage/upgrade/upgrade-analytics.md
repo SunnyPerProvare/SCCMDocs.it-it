@@ -2,10 +2,10 @@
 title: Upgrade Analytics | System Center Configuration Manager
 description: "Integrare Upgrade Analytics con Configuration Manager. Accedere ai dati di compatibilità dell&quot;aggiornamento nella console di amministrazione. Definire i dispositivi di destinazione per l&quot;aggiornamento o la correzione."
 keywords: 
-author: nbigman
-ms.author: nbigman
+author: brenduns
+ms.author: brenduns
 manager: angerobe
-ms.date: 11/23/2016
+ms.date: 12/3/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -13,8 +13,8 @@ ms.technology:
 - configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
 translationtype: Human Translation
-ms.sourcegitcommit: bf28164fc2594d2557db5626a6f52c32ad99a1fe
-ms.openlocfilehash: fa90fa0da348e7cca186ff8066c7a9fa98c57cf5
+ms.sourcegitcommit: 831d8a66c827d246069c7415cdce7a7c4bb95b33
+ms.openlocfilehash: 07747b86bad0d1ce6302521093fc3c4433c59325
 
 
 ---
@@ -73,13 +73,13 @@ Lo script di distribuzione di Upgrade Analytics esegue le operazioni seguenti:
 - Imposta la chiave ID commerciale e le chiavi CommercialDataOptIn e RequestAllAppraiserVersions.  
 - Verifica che i computer degli utenti siano in grado di inviare dati a Microsoft.  
 - Controlla se il computer è in attesa di riavvio.   
-- Verifica che sia installata la versione più recente del pacchetto KB 10.0 (richiede la versione 10.0.14348 o versioni successive).  
+- Verifica che sia installata la versione più recente del pacchetto KB 10.0.x. È richiesta la versione 10.0.14913 o una versione successiva.  
 - Se abilitata, attiva la modalità dettagliata per la risoluzione dei problemi.  
 - Avvia la raccolta dei dati di telemetria necessari a Microsoft per valutare il grado di preparazione dell'organizzazione per l'aggiornamento.  
 - Se abilitata, consente la visualizzazione dello stato dello script in una finestra di comando, offrendo visibilità per i problemi (esito positivo o negativo per ogni passaggio) e/o le operazioni di scrittura nel file di registro.  
-  
+
 ### <a name="to-run-the-upgrade-analytics-deployment-script"></a>Per eseguire lo script di distribuzione di Upgrade Analytics:  
-  
+
 1. Scaricare lo [script di distribuzione di Upgrade Analytics](https://go.microsoft.com/fwlink/?LinkID=822966&clcid=0x409) ed estrarre UpgradeAnalytics.zip. I file nella cartella **Diagnostics** sono necessari solo se si prevede di eseguire lo script in modalità di risoluzione dei problemi.  
 2. Modificare i seguenti parametri in RunConfig.bat:  
 - Percorso di archiviazione per le informazioni del registro. Esempio: % SystemDrive%\UADiagnostics. È possibile archiviare le informazioni del registro in una condivisione file remota o in una directory locale. Se lo script non può creare il file di registro per il percorso specificato, lo crea nell'unità che include la directory di Windows.  
@@ -90,12 +90,12 @@ Lo script di distribuzione di Upgrade Analytics esegue le operazioni seguenti:
     - logMode = 2 - Registrazione solo nel file  
     - Per la risoluzione dei problemi, impostare **isVerboseLogging** su **$true** per generare informazioni di registro che possono facilitare la diagnosi dei problemi. Per impostazione predefinita, **isVerboseLogging** è impostata su **$false**. Per usare questa modalità, verificare che la cartella Diagnostics sia installata nella stessa directory dello script.  
     - Notificare agli utenti se è necessario riavviare il computer. Per impostazione predefinita, questa opzione è disattivata.  
-  
+
 3. Dopo aver completato la modifica dei parametri in RunConfig.bat, eseguire lo script come amministratore.  
-  
-  
+
+
 ## <a name="view-microsoft-upgrade-analytics-properties-in-configuration-manager"></a>Visualizzare le proprietà di Microsoft Upgrade Analytics in Configuration Manager  
-  
+
 1.  Nella console di Configuration manager, passare a **Servizi cloud** e selezionare **Connettore OMS** per aprire la pagina **OMS Connection Properties** (Proprietà connessione OMS).  
 
 2.  In questa pagina sono disponibili due schede:
@@ -113,6 +113,6 @@ Dopo il completamento dell'integrazione di Upgrade Analytics con Configuration M
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

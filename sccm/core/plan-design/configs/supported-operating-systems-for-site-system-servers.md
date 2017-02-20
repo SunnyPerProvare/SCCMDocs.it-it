@@ -2,7 +2,7 @@
 title: Server di sistema del sito supportati | Microsoft Docs
 description: "Informazioni sulle versioni di Windows che è possibile usare per ospitare un sito di System Center Configuration Manager o un ruolo del sistema del sito."
 ms.custom: na
-ms.date: 1/3/2017
+ms.date: 2/1/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bebbeebba76ab5cf0c517fcb00b7b6a516a08e3e
-ms.openlocfilehash: 12fe730d924979eec2ef55ea80a1fa90b7b47464
+ms.sourcegitcommit: 4688b4b12a7afa5fcfdc0e42f984271d98f10316
+ms.openlocfilehash: bb017e575e0318b73cc5ea4e27fd33b1e9c2a02a
 
 
 ---
@@ -37,7 +37,7 @@ Usare le informazioni di questo argomento con quelle contenute negli articoli re
 
 
 ## <a name="windows-server-2016-standard-and-datacenter"></a>Windows Server 2016 - Standard e Datacenter
-Windows Server 2016 è supportato a partire da Configuration Manager versione 1606 con l'aggiornamento rapido cumulativo KB3186654 o versione 1606 di base rilasciata nell'ottobre del 2016.
+A partire dalla versione 1606 con l'hotfix rollup di KB3186654 (o dalla versione 1606 di base rilasciata nell'ottobre del 2016), questo sistema operativo è supportato per i componenti seguenti:
 
 **Server del sito:**  
 
@@ -325,12 +325,12 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
     -   I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-## <a name="the-server-core-installation-of-windows-server-2012"></a>Installazione Server Core di Windows Server 2012  
- Oltre ai sistemi operativi precedentemente elencati, l'installazione Server Core di Windows Server 2012 è supportata anche per l'uso come punto di distribuzione con le limitazioni seguenti:  
 
--   È supportata solo la versione a 64 bit.  
+## <a name="the-server-core-installation-of-windows-server-2016"></a>Installazione Server Core di Windows Server 2016
+A partire dalla versione 1606 con l'hotfix rollup di KB3186654 (o dalla versione 1606 di base rilasciata nell'ottobre del 2016), questo sistema operativo è supportato per l'uso come punto di distribuzione con le limitazioni seguenti:  
+  -   È supportata solo la versione a x64 bit.
+  -   I punti di distribuzione in questo sistema operativo non supportano PXE o il multicast.  
 
--   I punti di distribuzione in questo sistema operativo non supportano PXE o il multicast.
 
 ## <a name="the-server-core-installation-of-windows-server-2012-r2"></a>Installazione Server Core di Windows Server 2012 R2  
  Oltre ai sistemi operativi precedentemente elencati, l'installazione Server Core di Windows Server 2012 R2 è supportata anche per l'uso come punto di distribuzione con le limitazioni seguenti:  
@@ -339,8 +339,15 @@ Windows Server 2016 è supportato a partire da Configuration Manager versione 16
 
 -   I punti di distribuzione in questo sistema operativo non supportano PXE o il multicast.  
 
+## <a name="the-server-core-installation-of-windows-server-2012"></a>Installazione Server Core di Windows Server 2012  
+ Oltre ai sistemi operativi precedentemente elencati, l'installazione Server Core di Windows Server 2012 è supportata anche per l'uso come punto di distribuzione con le limitazioni seguenti:  
+
+-   È supportata solo la versione a 64 bit.  
+
+-   I punti di distribuzione in questo sistema operativo non supportano PXE o il multicast.
 
 
-<!--HONumber=Jan17_HO1-->
+
+<!--HONumber=Feb17_HO1-->
 
 

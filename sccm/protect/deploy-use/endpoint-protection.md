@@ -2,7 +2,7 @@
 title: Endpoint Protection | Documentazione Microsoft
 description: Informazioni su come gestire i criteri antimalware e la sicurezza di Windows Firewall per i computer client nella gerarchia di Configuration Manager.
 ms.custom: na
-ms.date: 01/17/2017
+ms.date: 02/6/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,12 +16,12 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f66288f1c2e0566d5de8686a005624dd81557563
-ms.openlocfilehash: addb315afe3775722a58a16b00d41cbe32a5009c
+ms.sourcegitcommit: 4688b4b12a7afa5fcfdc0e42f984271d98f10316
+ms.openlocfilehash: 90e6d82e7fd1ff0ad4f1d616cc23201769fe26e2
 
 
 ---
-# <a name="endpoint-protection-in-system-center-configuration-manager"></a>Endpoint Protection in System Center Configuration Manager
+# <a name="endpoint-protection"></a>Endpoint Protection
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -38,7 +38,7 @@ Endpoint Protection in System Center Configuration Manager consente di gestire i
 
 -   Inviare notifiche di posta elettronica, usare il monitoraggio integrato nella console e visualizzare report per mantenere gli utenti amministratori informati quando viene rilevato malware nei computer client  
 
-I computer Windows 10 non richiedono client aggiuntivi per la gestione di Endpoint Protection. In computer con Windows 8.1 e versioni precedenti, viene installato il client di Endpoint Protection oltre al client di Configuration Manager. Endpoint Protection può gestire. Il client di Endpoint Protection ha le funzionalità seguenti:  
+A partire da Windows 10 e Windows Server 2016, i computer non richiedono client aggiuntivi per la gestione di Endpoint Protection. In computer con Windows 8.1 e versioni precedenti, viene installato il client di Endpoint Protection oltre al client di Configuration Manager. Il client di Endpoint Protection ha le funzionalità seguenti:  
 
 -   Rilevamento e correzione di spyware e malware  
 
@@ -122,6 +122,6 @@ Usare questa procedura per scaricare il file di immagine contenente il software 
 
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO1-->
 
 

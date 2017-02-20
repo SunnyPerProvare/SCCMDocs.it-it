@@ -16,8 +16,8 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d242c9ae0ca6e3a3f3bee3a93176b9ab802319ae
-ms.openlocfilehash: a75cba2a6bb280c29f300c8ef2d3fbfbc7a558d2
+ms.sourcegitcommit: 76cb0c41865859fd410a187435d73c6a23b0c57e
+ms.openlocfilehash: 7b53b094eeb1d59d052c63831eeab0e10edb5913
 
 
 ---
@@ -57,7 +57,7 @@ Con la registrazione automatica è possibile registrare PC Windows 10 e Windows 
 
 5. Specificare gli URL per Intune:
 
-  - **URL di registrazione MDM**: usare `https://enterpriseenrollment-s.manage.microsoft.com/EnrollmentServer/Discovery.svc` come URL di registrazione MDM.
+  - **URL di registrazione MDM**: usare il valore predefinito.
   - **URL delle condizioni per l'utilizzo di MDM**: usare il valore predefinito. Questo URL visualizza le condizioni per l'utilizzo per gli utenti durante la registrazione dei dispositivi.
   - **URL conformità MDM**: usare il valore predefinito. Se viene rilevato un dispositivo non conforme, insieme a questo URL viene visualizzato il messaggio **Accesso negato**. L'URL indirizza a una pagina che contiene informazioni sul motivo per cui il dispositivo non è conforme a criteri e su come riportarlo in conformità.
 
@@ -75,7 +75,7 @@ Con la registrazione automatica è possibile registrare PC Windows 10 e Windows 
 ### <a name="create-dns-alias-for-device-enrollment"></a>Creare l'alias DNS per la registrazione del dispositivo  
  Un Alias DNS (tipo di record CNAME) semplifica la registrazione dei dispositivi perché durante la registrazione del dispositivo il nome del server viene inserito automaticamente. Per creare un alias DNS (tipo di record CNAME), è necessario configurare un record CNAME nei record DNS della società che reindirizzi le richieste inviate a un URL nel dominio della società ai server del servizio cloud di Microsoft.  Ad esempio, se il sito Web della società è contoso.com, si creerà un record CNAME in DNS che reindirizzi EnterpriseEnrollment.contoso.com a EnterpriseEnrollment-s.manage.microsoft.com.  
 
- Sebbene la creazione di voci DNS CNAME sia facoltativa, i record CNAME semplificano la registrazione per gli utenti. Se non viene trovato alcun record di registrazione CNAME, viene richiesto agli utenti di immettere manualmente il nome del server MDM, [https://enrollment.manage.microsoft.com](https://enrollment.manage.microsoft.com).
+ Sebbene la creazione di voci DNS CNAME sia facoltativa, i record CNAME semplificano la registrazione per gli utenti. Se non viene trovato alcun record di registrazione CNAME, agli utenti viene richiesto di immettere manualmente il nome del server MDM, enrollment.manage.microsoft.com.
 
 |Tipo|Nome dell'host|Punta a|  
 |----------|---------------|---------------|  
@@ -120,6 +120,6 @@ Con la registrazione automatica è possibile registrare PC Windows 10 e Windows 
 
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 

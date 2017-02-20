@@ -2,7 +2,7 @@
 title: Pianificare il provider SMS | Microsoft Docs
 description: Informazioni su come il provider SMS consente di gestire System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 2/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 9b766575739246e05d5affbfeade3c31de95ef98
+ms.sourcegitcommit: 11ac851696ce52642412ca29e4873679d50cf398
+ms.openlocfilehash: 547dc39d5659c7c2e6f1ca670caddc127dbf22c4
 
 
 ---
@@ -25,20 +25,19 @@ ms.openlocfilehash: 9b766575739246e05d5affbfeade3c31de95ef98
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Per la gestione di System Center Configuration Manager, usare una console di Configuration Manager che si connette a un'istanza del **provider SMS**. Per impostazione predefinita, un provider SMS viene installato in un sito di amministrazione centrale o un sito primario, quando si installa il sito.  
+Per la gestione di System Center Configuration Manager, usare una console di Configuration Manager che si connette a un'istanza del **provider SMS**. Per impostazione predefinita, quando si installa un sito di amministrazione centrale o un sito primario, nel server del sito viene installato un provider SMS. 
 
 
 ##  <a name="a-namebkmkplansmsprova-about-the-sms-provider"></a><a name="BKMK_PlanSMSProv"></a> Informazioni sul provider SMS  
  Il provider SMS è un provider di Strumentazione gestione Windows (WMI) che assegna l'accesso di **lettura** e **scrittura** del database di Configuration Manager a un sito:  
 
--   Il gruppo **SMS Admins**  fornisce l'accesso al provider SMS. Configuration Manager crea automaticamente questo gruppo di sicurezza nel server di sito e su ogni computer del provider SMS.  
-
--   Ogni sito di amministrazione centrale e sito primario richiede almeno un provider SMS.  È possibile installare altri provider in base alle esigenze.  
+-   Ogni sito di amministrazione centrale e sito primario richiede almeno un provider SMS. È possibile installare altri provider in base alle esigenze.  
+-   Il gruppo di sicurezza **SMS Admins** fornisce l'accesso al provider SMS. Configuration Manager crea automaticamente questo gruppo nel server del sito e in ogni computer in cui è installata un'istanza del provider SMS.  
 
 -   I siti secondari non supportano il provider SMS.  
 
 
-Ogni console di Configuration Manager, Esplora inventario risorse, gli strumenti e gli script personalizzati usano un provider SMS per consentire agli utenti amministratori di Configuration Manager di accedere alle informazioni archiviate nel database. Il provider SMS non interagisce con i client di Configuration Manager. Quando una console di Configuration Manager si connette a un sito, esegue una query di WMI sul server del sito per individuare un'istanza del provider SMS da usare.  
+Gli utenti amministratori di Configuration Manager usano un provider SMS per accedere alle informazioni archiviate nel database. A questo scopo, gli amministratori possono usare la console di Configuration Manager, Esplora inventario risorse, strumenti e script personalizzati. Il provider SMS non interagisce con i client di Configuration Manager. Quando una console di Configuration Manager si connette a un sito, esegue una query di WMI sul server del sito per individuare un'istanza del provider SMS da usare.  
 
  Il provider SMS consente di imporre la sicurezza di Configuration Manager. Restituisce solo le informazioni che l'utente amministratore che esegue la console di Configuration Manager è autorizzato a visualizzare.  
 
@@ -47,11 +46,11 @@ Ogni console di Configuration Manager, Esplora inventario risorse, gli strumenti
 
  Per informazioni su come gestire il provider SMS, vedere [Manage the SMS Provider](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ManageSMSprovider) in [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md).  
 
- **Prerequisiti per installare il Provider SMS:**  
+## <a name="prerequisites-to-install-the-sms-provider"></a>Prerequisiti per l'installazione del provider SMS  
 
  Per supportare il provider SMS:  
 
--   Il computer deve trovarsi in un dominio con un trust bidirezionale con il server del sito e i sistemi del sito del database del sito.  
+-   Il computer deve trovarsi in un dominio con una relazione di trust bidirezionale con il server del sito e i sistemi del sito del database del sito.  
 
 -   Il computer non può disporre di un ruolo del sistema del sito da un sito differente.  
 
@@ -62,7 +61,7 @@ Ogni console di Configuration Manager, Esplora inventario risorse, gli strumenti
 -   Il computer deve disporre di almeno 650 MB di spazio disponibile su disco per supportare i componenti di Windows Automated Deployment Kit (Windows ADK) installati con il provider SMS. Per altre informazioni su Windows ADK e sul provider SMS, vedere [Requisiti di distribuzione del sistema operativo per il provider SMS](#BKMK_WAIKforSMSProv) in questo argomento.  
 
 ##  <a name="a-namebkmklocationa-sms-provider-locations"></a><a name="bkmk_location"></a> Sedi dei provider SMS  
- Quando si installa un sito, viene installato automaticamente il primo provider SMS per il sito. È possibile specificare una delle seguenti sedi supportate per il provider SMS:  
+ Quando si installa un sito, viene installato automaticamente il primo provider SMS per il sito in questione. È possibile specificare una delle seguenti sedi supportate per il provider SMS:  
 
 -   Il computer del server del sito  
 
@@ -71,7 +70,7 @@ Ogni console di Configuration Manager, Esplora inventario risorse, gli strumenti
 -   Un computer di classe server che non dispone di un provider SMS o un ruolo del sistema del sito da un altro sito  
 
 
-Per visualizzare le sedi di ciascun provider SMS installato in un sito, vedere la scheda **Generale** della finestra di dialogo **Proprietà** del sito.  
+Per visualizzare le sedi di ciascun provider SMS installato in un sito, selezionare la scheda **Generale** della finestra di dialogo **Proprietà** del sito.  
 
  Ogni provider SMS supporta connessioni simultanee da più richieste. Gli unici limiti su queste connessioni sono il numero di connessioni server e le risorse disponibili sul computer del provider SMS per rispondere alle richieste di connessione.  
 
@@ -79,8 +78,7 @@ Per visualizzare le sedi di ciascun provider SMS installato in un sito, vedere l
 
  Usare le informazioni seguenti per identificare i vantaggi e gli svantaggi dell'installazione di un provider SMS in ogni sede supportata:  
 
-
-**Server del sito di Configuration Manager**  
+ **Server del sito di Configuration Manager**  
 
 -   **Vantaggi:**  
 
@@ -105,7 +103,7 @@ Per visualizzare le sedi di ciascun provider SMS installato in un sito, vedere l
 
     -   Il provider SMS usa risorse di sistema e di rete che potrebbero essere dedicate alle operazioni del database del sito.  
 
-    -   Questa sede non rientra nelle opzioni quando il database del sito è ospitato su un'istanza del cluster di SQL Server.  
+    -   Quando il database del sito è ospitato su un'istanza del cluster di SQL Server, non è possibile usare questa sede.  
 
 
 **Computer diverso dal server del sito o dal computer del database del sito**  
@@ -118,16 +116,18 @@ Per visualizzare le sedi di ciascun provider SMS installato in un sito, vedere l
 
 -   **Svantaggi:**  
 
-    -   Le prestazioni del provider SMS potrebbero risultare ridotte a causa del traffico di rete aggiuntivo richiesto per il coordinamento con il server del sito e il computer del database del sito.  
+    -   Le prestazioni del provider SMS possono risultare ridotte a causa dell'attività di rete aggiuntiva richiesta per il coordinamento con il server del sito e il computer del database del sito.  
 
-    -   Questo server deve essere sempre accessibile al computer del database del sito e a tutti i computer su cui è installata la console di Configuration Manager.  
+    -   Questo server deve essere sempre accessibile al computer del database del sito e a tutti i computer in cui è installata la console di Configuration Manager.  
 
     -   Questa sede consente di usare le risorse di sistema altrimenti dedicate ad altri servizi.  
 
 ##  <a name="a-namebkmksmsprovlanguagesa-about-sms-provider-languages"></a><a name="BKMK_SMSProvLanguages"></a> Lingue del provider SMS  
  Il provider SMS funziona indipendentemente dalla lingua di visualizzazione del computer su cui è installato.  
 
- Quando un utente amministratore o un processo di Configuration Manager richiede dei dati tramite il provider SMS, quest'ultimo prova a restituirli in un formato compatibile con la lingua del sistema operativo del computer richiedente. Il provider SMS non traduce le informazioni da una lingua all'altra. Al contrario, quando i dati vengono restituiti per la visualizzazione nella console di Configuration Manager, la relativa lingua di visualizzazione dipenderà dall'origine dell'oggetto e dal tipo di archiviazione.  
+ Quando un utente amministratore o un processo di Configuration Manager richiede dei dati tramite il provider SMS, quest'ultimo prova a restituirli in un formato compatibile con la lingua del sistema operativo del computer richiedente.
+
+Il modo in cui tenta di stabilire una corrispondenza con la lingua è per così dire indiretto. Il provider SMS non traduce le informazioni da una lingua all'altra. Al contrario, quando i dati vengono restituiti per la visualizzazione nella console di Configuration Manager, la relativa lingua di visualizzazione dipenderà dall'origine dell'oggetto e dal tipo di archiviazione.  
 
  Quando i dati relativi a un oggetto vengono memorizzati nel database, le lingue disponibili dipenderanno dagli elementi seguenti:  
 
@@ -145,15 +145,15 @@ Per visualizzare le sedi di ciascun provider SMS installato in un sito, vedere l
 -   Si desidera garantire una disponibilità elevata per il provider SMS.  
 
 
-Quando più provider°SMS sono installati in un sito e viene eseguita una richiesta di connessione, il sito assegna in modo non deterministico ciascuna nuova richiesta di connessione per usare un provider°SMS installato. Non è possibile specificare la sede del provider°SMS da usare con una sessione di connessione specifica.  
+Quando più provider SMS sono installati in un sito e viene eseguita una richiesta di connessione, il sito assegna in modo casuale ogni nuova richiesta di connessione per usare un provider SMS installato. Non è possibile specificare la sede del provider°SMS da usare con una sessione di connessione specifica.  
 
 > [!NOTE]  
->  Considerare i vantaggi e gli svantaggi della sede di ciascun provider°SMS e ponderare queste considerazioni con le informazioni che non si è in grado di controllare, ad esempio quale provider°SMS sarà usato per ciascuna connessione.  
+>  Considerare i vantaggi e gli svantaggi di ciascuna sede del provider SMS e bilanciare queste considerazioni con il fatto che non è possibile controllare quale provider SMS verrà usato per ciascuna connessione.  
 
-Ad esempio, quando si esegue la prima connessione di una console di Configuration Manager a un sito, la connessione esegue una query di WMI sul server del sito per identificare in modo non deterministico un'istanza del provider SMS che sarà usata dalla console. Questa istanza specifica del provider SMS viene usata dalla console di Configuration Manager fino al termine della sessione della console. Se la sessione viene interrotta perché il computer del provider SMS non è più disponibile sulla rete, alla successiva connessione della console di Configuration Manager il sito assegnerà in modo non deterministico un computer del provider SMS alla nuova sessione di connessione. È possibile che sia effettuata un'assegnazione al computer del provider°SMS non disponibile. In tal caso, provare a riconnettere la console di Configuration Manager fino all'assegnazione di un computer del provider SMS disponibile.  
+Ad esempio, quando si esegue la prima connessione di una console di Configuration Manager a un sito, la connessione esegue una query su WMI sul server del sito per identificare un'istanza del provider SMS che sarà usata dalla console. Questa istanza specifica del provider SMS viene usata dalla console di Configuration Manager fino al termine della sessione della console. Se la sessione viene interrotta perché il computer del provider SMS non è più disponibile sulla rete, alla successiva connessione alla console di Configuration Manager il sito ripeterà semplicemente l'attività di identificazione di un'istanza del provider SMS a cui connettersi. È possibile che sia effettuata un'assegnazione al computer del provider°SMS non disponibile. In tal caso, provare a riconnettere la console di Configuration Manager fino all'assegnazione di un computer del provider SMS disponibile.  
 
 ##  <a name="a-namebkmkaboutsmsadminsa-about-the-sms-admins-group"></a><a name="BKMK_AboutSMSAdmins"></a> Gruppo SMS Admins  
- Il gruppo SMS Admins viene usato per fornire l'accesso al provider°SMS agli utenti amministratori. Il gruppo viene creato automaticamente sul server del sito quando si installa il sito e su ogni computer su cui è installato un provider°SMS. Altre informazioni relative al gruppo SMS Admins:  
+ Il gruppo SMS Admins viene usato per fornire l'accesso al provider°SMS agli utenti amministratori. Il gruppo viene creato automaticamente sul server del sito quando si installa il sito e su ogni computer su cui è installato un provider°SMS. Di seguito sono riportate altre informazioni relative al gruppo SMS Admins:  
 
 -   Quando il computer è un server membro, il gruppo SMS Admins viene creato come gruppo locale.  
 
@@ -166,10 +166,10 @@ Affinché un utente possa connettersi a un provider°SMS, il relativo account de
 
 Dopo che un utente ha stabilito una connessione con il provider SMS, l'amministrazione basata su ruoli determina a quali risorse di Configuration Manager tale utente potrà accedere o gestire.  
 
-È possibile visualizzare e configurare i diritti e le autorizzazioni del gruppo SMS Admins usando lo snap-in MMC del controllo WMI. Per impostazione predefinita, **Tutti** dispone della autorizzazioni **Esegui metodi**, **Scrittura provider**, e **Abilita Account** . Dopo che l'utente si è connesso al provider SMS, potrà accedere ai dati nel database del sito in base ai privilegi di sicurezza amministrativi basati su ruoli, come definito nella console di Configuration Manager. Al gruppo SMS Admins vengono concesse in modo esplicito le autorizzazioni **Abilita account** e **Abilita remoto** sullo spazio dei nomi **Root\SMS** .  
+È possibile visualizzare e configurare i diritti e le autorizzazioni del gruppo SMS Admins usando lo snap-in MMC del controllo WMI. Per impostazione predefinita, **Tutti** dispone della autorizzazioni **Esegui metodi**, **Scrittura provider**, e **Abilita Account** . Dopo che l'utente si è connesso al provider SMS, potrà accedere ai dati presenti nel database del sito in base ai privilegi di sicurezza amministrativi basati su ruoli, come definito nella console di Configuration Manager. Al gruppo SMS Admins vengono concesse in modo esplicito le autorizzazioni **Abilita account** e **Abilita remoto** sullo spazio dei nomi **Root\SMS**.  
 
 > [!NOTE]  
->  Ogni utente amministratore che usa una console di Configuration Manager remota richiede autorizzazioni DCOM per l'attivazione remota sul computer del server del sito e sul computer del provider SMS. Sebbene sia possibile garantire questi privilegi a qualsiasi utente o gruppo, si consiglia di concederli al gruppo SMS Admins per semplificare l'amministrazione. Per ulteriori informazioni, vedere la sezione [Configure DCOM permissions for remote Configuration Manager consoles](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) nell'argomento [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md) .  
+>  Ogni utente amministratore che usa una console di Configuration Manager remota richiede autorizzazioni DCOM per l'attivazione remota sul computer del server del sito e sul computer del provider SMS. Anche se è possibile garantire questi privilegi a qualsiasi utente o gruppo, è consigliabile concederli al gruppo SMS Admins per semplificare l'amministrazione. Per ulteriori informazioni, vedere la sezione [Configure DCOM permissions for remote Configuration Manager consoles](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) nell'argomento [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md) .  
 
 
 ##  <a name="a-namebkmksmsprovnamespacea-about-the-sms-provider-namespace"></a><a name="BKMK_SMSProvNamespace"></a> Spazio dei nomi del provider SMS  
@@ -178,29 +178,31 @@ La struttura del provider°SMS è definita dallo schema WMI. Gli spazi dei nomi 
 |Spazio dei nomi|Descrizione|  
 |---------------|-----------------|  
 |Root\SMS\site_*&lt;codice sito\>*|Provider SMS, usato largamente dalla console di Configuration Manager, da Esplora inventario risorse, dagli script e dagli strumenti di Configuration Manager.|  
-|Root\SMS\SMS_ProviderLocation|Fornisce il percorso dei computer del provider SMS per un sito.|  
+|Root\SMS\SMS_ProviderLocation|Percorso dei computer del provider SMS per un sito.|  
 |Root\CIMv2|Percorso di inventario per le informazioni sullo spazio dei nomi WMI durante l'inventario hardware e software.|  
 |Root\CCM|Criteri di configurazione del client di Configuration Manager e dati client.|  
 |root\CIMv2\SMS|Percorso delle classi di report di inventario raccolte da Inventory Client Agent. Queste impostazioni vengono compilate dai client durante la valutazione dei criteri computer e si basano sulla configurazione delle impostazioni client per il computer.|  
 
 ##  <a name="a-namebkmkwaikforsmsprova-operating-system-deployment-requirements-for-the-sms-provider"></a><a name="BKMK_WAIKforSMSProv"></a> Requisiti di distribuzione del sistema operativo per il provider SMS  
-Il provider SMS richiede l'installazione della dipendenza esterna seguente nel computer che esegue il provider SMS per consentire agli utenti di usare le funzioni di distribuzione del sistema operativo tramite la console di Configuration Manager:  
+Nel computer in cui si installa un'istanza del provider SMS deve essere installata la versione di Windows ADK richiesta dalla versione di Configuration Manager che si intende usare.  
 
--   Windows Assessment and Deployment Kit 8.1  
+ -   La versione 1511 di Configuration Manager, ad esempio, richiede la versione Windows 10 RTM (10.0.10240) di Windows ADK.  
 
- Quando si gestiscono le distribuzioni del sistema operativo, Windows ADK consente al provider SMS di completare varie attività, tra cui:  
+ -   Per altre informazioni su questo requisito, vedere [Requisiti dell'infrastruttura per la distribuzione del sistema operativo](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
--   Visualizzare i dettagli del file WIM  
+Quando si gestiscono le distribuzioni del sistema operativo, Windows ADK consente al provider SMS di completare varie attività, tra cui:  
 
--   Aggiungere file driver a immagini di avvio esistenti  
+-   Visualizzazione dei dettagli del file WIM.  
 
--   Creare file ISO di avvio  
+-   Aggiunta di file driver a immagini di avvio esistenti.  
+
+-   Creazione di file ISO di avvio.  
 
 
 L'installazione di Windows ADK può richiedere fino a 650 MB di spazio libero su disco in ogni computer che installa il provider SMS. Questo requisito di una grande quantità di spazio su disco è necessario affinché Configuration Manager installi le immagini di avvio di Windows PE.  
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

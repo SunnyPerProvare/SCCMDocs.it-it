@@ -2,7 +2,7 @@
 title: Gestire le app iOS acquistate con Volume Purchase Program | Microsoft Docs
 description: Distribuire, gestire e tenere traccia delle licenze per le app acquistate tramite l&quot;App Store iOS.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 02/08/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 828e2ac9a3f9bcea1571d24145a1021fdf1091f3
-ms.openlocfilehash: cd9edf61d151ac8334ace0bf668fa4c919d8c75b
+ms.sourcegitcommit: 191e01f6b8a1ef2b9e193abd62d7981e6c977c1d
+ms.openlocfilehash: fb771bc94f49f25cfe01ff67c88572c8f2b18909
 
 
 ---
@@ -91,7 +91,7 @@ Nel nodo **Token di Volume Purchase Program di Apple** è ora possibile visualiz
 1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Informazioni di licenza per le app dello Store**.  
 
 3.  Scegliere l'app che si vuole distribuire e quindi nella scheda **Home** nel gruppo **Crea** scegliere **Crea applicazione**.
-L'applicazione di Configuration Manager creata contiene l'app Windows Store per le aziende. Sarà quindi possibile distribuire e monitorare l'applicazione come qualsiasi altra applicazione di Configuration Manager.
+L'applicazione di Configuration Manager creata contiene l'app iOS acquistata. Sarà quindi possibile distribuire e monitorare l'applicazione come qualsiasi altra applicazione di Configuration Manager.
 
     > [!IMPORTANT]  
     > È necessario scegliere lo scopo della distribuzione **Richiesto**. Le installazioni disponibili non sono attualmente supportate.
@@ -111,6 +111,6 @@ L'applicazione di Configuration Manager creata contiene l'app Windows Store per 
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

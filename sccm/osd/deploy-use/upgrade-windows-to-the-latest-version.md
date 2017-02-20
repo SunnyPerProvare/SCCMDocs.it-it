@@ -1,8 +1,8 @@
 ---
 title: "Aggiornare Windows alla versione più recente | Microsoft Docs"
-description: Informazioni sull&quot;uso di supporti autonomi o di Software Center in Configuration Manager per eseguire l&quot;aggiornamento di un sistema operativo Windows 7 o versione successiva a Windows 10.
+description: Informazioni sull&quot;uso di Configuration Manager per eseguire l&quot;aggiornamento di un sistema operativo Windows 7 o versione successiva a Windows 10.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 02/06/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
-ms.openlocfilehash: 147841212dbb85dd9d4ee7c8a79ca7869584fd99
+ms.sourcegitcommit: 288a4c649f371d9701fe7249449356aa222bf372
+ms.openlocfilehash: 35f04e237efffbdb12893f658950a99dc0b98b85
 
 
 ---
@@ -69,6 +69,9 @@ In questo argomento sono descritti i passaggi da eseguire in System Center Confi
 
      Seguire la procedura descritta in [Creare una sequenza di attività per aggiornare il sistema operativo](create-a-task-sequence-to-upgrade-an-operating-system.md) per automatizzare l'aggiornamento del sistema operativo.  
 
+    > [IMPORTANTE] Quando si usano supporti autonomi, è necessario includere un'immagine di avvio nella sequenza di attività per rendere quest'ultima disponibile nella Creazione guidata del supporto per la sequenza di attività.
+
+
     > [!NOTE]  
     >  In genere si usa la procedura descritta in [Creare una sequenza di attività per aggiornare il sistema operativo](create-a-task-sequence-to-upgrade-an-operating-system.md) per eseguire l'aggiornamento di un sistema operativo a Windows 10. La sequenza di attività include il passaggio Aggiorna sistema operativo, oltre ad altri passaggi e gruppi con i quali gestire il processo di aggiornamento end-to-end. È tuttavia possibile creare una sequenza di attività personalizzata e aggiungere il passaggio della sequenza di attività [Aggiorna sistema operativo](../understand/task-sequence-steps.md#BKMK_UpgradeOS) per aggiornare il sistema operativo. Questo è l'unico passaggio obbligatorio per aggiornare il sistema operativo a Windows 10. Se si sceglie questo metodo, aggiungere anche il passaggio [Riavvia computer](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer) dopo il passaggio Aggiorna sistema operativo per completare l'aggiornamento. Assicurarsi di usare l'impostazione **Il sistema operativo predefinito attualmente installato** per riavviare il computer nel sistema operativo installato anziché in Windows PE.  
 
@@ -88,6 +91,6 @@ In questo argomento sono descritti i passaggi da eseguire in System Center Confi
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO1-->
 
 
