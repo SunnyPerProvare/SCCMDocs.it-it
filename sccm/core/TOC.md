@@ -17,10 +17,10 @@
 ### [Aggiornare Long-Term Servicing Branch a Current Branch](understand/convert-to-current-branch.md)
 ##  [Usare i servizi cloud](understand/use-cloud-services.md)
 ### [Configuration Manager in Azure](understand/configuration-manager-on-azure.md)
+##  [Domande frequenti su prodotto e licenze](understand/product-and-licensing-faq.md)
 ##  [Domande frequenti sui dati di diagnostica e di utilizzo](understand/frequently-asked-questions-about-diagnostics-and-usage-data.md)
 
 #    [Pianificare e progettare](plan-design/get-ready.md)
-
 ##   Modifiche del prodotto
 ###  [Caratteristiche e funzionalità](plan-design/changes/features-and-capabilities.md)
 ###  [Novità rispetto a Configuration Manager 2012](plan-design/changes/what-has-changed-from-configuration-manager-2012.md)
@@ -305,6 +305,6 @@
 ###  [Upgrade analytics](clients/manage/upgrade/upgrade-analytics.md)
 
 
-<!--HONumber=Jan17_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 
