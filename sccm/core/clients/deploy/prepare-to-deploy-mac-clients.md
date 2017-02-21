@@ -30,7 +30,7 @@ Seguire questa procedura per assicurarsi di essere pronti a [distribuire il clie
 
 ## <a name="mac-prerequisites"></a>Prerequisiti Mac
 
-Il pacchetto di installazione del client per Mac non viene fornito con i supporti di Configuration Manager. Scaricare i **client per sistemi operativi aggiuntivi** dall'[Area download Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184).  
+Il pacchetto di installazione del client per Mac non viene fornito con i supporti di Configuration Manager. Scaricare i **client per altri sistemi operativi** dall'[Area download Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184).  
 
 **Versioni supportate:**  
 
@@ -131,7 +131,7 @@ Questi ruoli del sistema del sito devono trovarsi in un sito primario.
 
     1.  Scegliere **HTTPS**.  
 
-    2.  Selezionare **Consenti solo connessione client Internet** o **Allow intranet and Internet client connections** (Consenti connessioni client Intranet e Internet). Per queste opzioni è necessario un valore FQDN Internet o Intranet.  
+    2.  Selezionare **Consenti solo connessione client Internet** o **Consenti connessione client Internet e Intranet**. Per queste opzioni è necessario un valore FQDN Internet o Intranet.  
 
     3.  Selezionare **Consenti ai dispositivi mobili e ai computer Mac l'utilizzo del punto di gestione**.  
 
@@ -139,7 +139,7 @@ Questi ruoli del sistema del sito devono trovarsi in un sito primario.
 
     -   Scegliere **HTTPS**.  
 
-    -   Selezionare **Consenti solo connessione client Internet** o **Allow intranet and Internet client connections** (Consenti connessioni client Intranet e Internet). Per queste opzioni è necessario un valore FQDN Internet o Intranet.  
+    -   Selezionare **Consenti solo connessione client Internet** o **Consenti connessione client Internet e Intranet**. Per queste opzioni è necessario un valore FQDN Internet o Intranet.  
 
     -   Fare clic su **Importa certificato**, selezionare il file del certificato del punto di distribuzione client esportato e specificare la password.  
 

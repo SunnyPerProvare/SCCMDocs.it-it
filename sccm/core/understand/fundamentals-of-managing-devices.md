@@ -35,7 +35,7 @@ System Center Configuration Manager è in grado di gestire due ampie categorie d
 
 ## <a name="managing-devices-with-the-configuration-manager-client"></a>Gestione di dispositivi con il client di Configuration Manager
 
-Esistono due modi per usare il software client di Configuration Manager per la gestione di un dispositivo. Il primo consiste nell'individuare il dispositivo di rete e distribuire il software client in quel dispositivo. Il secondo approccio prevede l'installazione manuale del software client in un nuovo computer e l'aggiunta di tale computer al sito quando questo si unisce alla rete. Per individuare i dispositivi in cui non è installato il software client, eseguire uno o più metodi di individuazione predefiniti. Dopo aver individuato un dispositivo, usare uno dei vari metodi disponibili per installare il software client. Per informazioni sull'uso dell'individuazione, vedere [Eseguire l'individuazione per System Center Configuration Manager](../../core/servers/deploy/configure/run-discovery.md).  
+Esistono due modi per usare il software client di Configuration Manager per la gestione di un dispositivo. Il primo consiste nell'individuare il dispositivo nella rete e distribuire il software client in quel dispositivo. Il secondo modo prevede l'installazione manuale del software client in un nuovo computer e l'aggiunta del computer al sito quando viene aggiunto alla rete. Per individuare i dispositivi in cui non è installato il software client, eseguire uno o più metodi di individuazione predefiniti. Dopo aver individuato un dispositivo, usare uno dei vari metodi disponibili per installare il software client. Per informazioni sull'uso dell'individuazione, vedere [Eseguire l'individuazione per System Center Configuration Manager](../../core/servers/deploy/configure/run-discovery.md).  
 
  Dopo aver individuato i dispositivi supportati per l'esecuzione del software client di Configuration Manager, è possibile usare uno dei diversi metodi per installare il software. Dopo l'installazione del software e l'assegnazione del client a un sito primario, è possibile iniziare a gestire il dispositivo.  I metodi di installazione comuni sono i seguenti:
 
@@ -66,9 +66,9 @@ Esistono due modi per usare il software client di Configuration Manager per la g
 
  -  Possibilità di impostare il client per gli aggiornamenti software e altre operazioni di gestione.
 
- -  Possibilità di registrare i dispositivi mobili utente in modo che siano gestiti da Configuration Manager.  
+ -  Possibilità per gli utenti di registrare i propri dispositivi mobili in modo che siano gestiti da Configuration Manager.  
 
-È possibile creare impostazioni client personalizzate e quindi assegnarle alle raccolte.  I membri della raccolta vengono configurati con le impostazioni personalizzate ed è possibile creare più impostazioni client personalizzate che vengono applicate in base a un ordine numerico specificato.  Se ci sono impostazioni in conflitto, l'impostazione con il numero d'ordine più basso sostituisce le altre impostazioni.  
+È possibile creare impostazioni client personalizzate e quindi assegnarle alle raccolte.  I membri della raccolta sono configurati in modo da avere impostazioni personalizzate ed è possibile creare più impostazioni client personalizzate che vengono applicate in base all'ordine numerico specificato.  Se ci sono impostazioni in conflitto, l'impostazione con il numero d'ordine più basso sostituisce le altre impostazioni.  
 
 Il diagramma seguente illustra un esempio di come creare e applicare le impostazioni client personalizzate.  
 
@@ -81,9 +81,9 @@ Il diagramma seguente illustra un esempio di come creare e applicare le impostaz
  Configuration Manager supporta la gestione di alcuni dispositivi in cui non è installato il software client e che non sono gestiti da Intune. Per altre informazioni, vedere [Gestire i dispositivi mobili con l'infrastruttura locale in System Center Configuration Manager](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md) e [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
 
 ## <a name="user-based-management"></a>Gestione basata sugli utenti  
- Configuration Manager supporta le raccolte di utenti di Servizi di dominio Active Directory. Quando si usa una raccolta utenti, è possibile installare il software in tutti i computer che i membri di tale raccolta usano. Per assicurarsi che il software distribuito venga installato solo nei dispositivi specificati come dispositivi primari dell'utente, impostare l'affinità utente-dispositivo. Un utente può disporre di uno o più dispositivi primari.  
+ Configuration Manager supporta le raccolte di utenti di Active Directory Domain Services. Quando si usa una raccolta utenti, è possibile installare il software in tutti i computer usati dai membri della raccolta. Per assicurarsi che il software distribuito venga installato solo nei dispositivi specificati come dispositivi primari dell'utente, impostare l'affinità utente-dispositivo. Un utente può disporre di uno o più dispositivi primari.  
 
- Per controllare l'esperienza di distribuzione software, gli utenti possono ad esempio usare l'interfaccia client, ovvero **Software Center**. **Software Center** viene automaticamente installato nei computer client e viene eseguito dal menu **Start**. **Software Center** consente agli utenti di gestire il software e di eseguire le attività seguenti:  
+ Uno dei modi in cui gli utenti possono controllare l'esperienza di distribuzione del software consiste nell'usare l'interfaccia client **Software Center**. **Software Center** viene automaticamente installato nei computer client e viene eseguito dal menu **Start**. **Software Center** consente agli utenti di gestire il software e di eseguire le attività seguenti:  
 
 -   Installare software.  
 
@@ -93,7 +93,7 @@ Il diagramma seguente illustra un esempio di come creare e applicare le impostaz
 
 -   Configurare le impostazioni di accesso per il controllo remoto, se il controllo remoto è impostato in Configuration Manager.  
 
--   Configurare le opzioni per il risparmio di energia, se un utente amministratore lo ha impostato.  
+-   Configurare le opzioni per il risparmio di energia, se è stato impostato da un amministratore.  
 
 
  Un collegamento in **Software Center** consente agli utenti di connettersi al **Catalogo applicazioni**, in cui possono cercare, installare e richiedere software. Il **Catalogo applicazioni** viene anche usato per configurare le impostazioni delle preferenze, cancellare i dispositivi mobili e, se è impostato, specificare un dispositivo primario per l'affinità utente-dispositivo.   
