@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d3e6f011527f05b35e411af52d723f459aad66ca
-ms.openlocfilehash: 99b218f23ff8ad0fbac9dbdc28c46829e6800f85
+ms.sourcegitcommit: 3a24fe53cc243294694b779fad4c3ab83ca2ecb7
+ms.openlocfilehash: ae2cc7030c1fc404dcc7392b8c3067fc0f8cafc0
 
 
 ---
@@ -83,7 +83,7 @@ Per usare Configuration Manager Service Manager, nella console passare a **Monit
 -   Il responsabile della distribuzione nel server del sito usa l'account di installazione del sistema del sito per trasferire gli aggiornamenti dal punto di connessione del servizio.
 
 ##  <a name="a-namebkmkurlsa-internet-access-requirements"></a><a name="bkmk_urls"></a> Requisiti per l'accesso a Internet  
-Per abilitare l'operazione, il computer che ospita il punto di connessione del servizio ed eventuali firewall tra il computer e Internet deve passare le comunicazioni tramite la **porta TCP 443** e la **porta TCP 443** ai percorsi Internet seguenti. Il punto di connessione del servizio supporta anche l'uso di un proxy Web (con o senza autenticazione) per accedere a questi percorsi.  
+Per abilitare l'operazione, il computer che ospita il punto di connessione del servizio ed eventuali firewall tra il computer e Internet deve passare le comunicazioni tramite la **porta TCP 443** e la **porta TCP 443** ai percorsi Internet seguenti. Il punto di connessione del servizio supporta anche l'uso di un proxy Web (con o senza autenticazione) per accedere a questi percorsi.  Se è necessario configurare un account proxy Web, vedere [Supporto dei server proxy in System Center Configuration Manager](/sccm/core/plan-design/network/proxy-server-support).
 
 **Aggiornamenti e manutenzione**  
 
@@ -121,6 +121,6 @@ Dopo l'esecuzione del programma di installazione, o se si reinstalla il ruolo de
 
 
 
-<!--HONumber=Feb17_HO1-->
+<!--HONumber=Feb17_HO3-->
 
 
