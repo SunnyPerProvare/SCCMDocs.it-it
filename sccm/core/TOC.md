@@ -35,6 +35,7 @@
 ###  [Prerequisiti del sito e del sistema del sito](plan-design/configs/site-and-site-system-prerequisites.md)
 ###  [Sistemi operativi supportati per i server del sistema del sito](plan-design/configs/supported-operating-systems-for-site-system-servers.md)
 ###  [Sistemi operativi supportati per client e dispositivi](plan-design/configs/supported-operating-systems-for-clients-and-devices.md)
+###  [Supporto per Windows 10 come client](plan-design/configs/support-for-windows-10.md)
 ###  [Sistemi operativi supportati per le console](plan-design/configs/supported-operating-systems-consoles.md)
 ###  [Hardware consigliato](plan-design/configs/recommended-hardware.md)
 ###  [Supporto per le versioni di SQL Server](plan-design/configs/support-for-sql-server-versions.md)
@@ -89,6 +90,7 @@
 ###  [Configurare un ambiente lab](get-started/set-up-your-lab.md)
 
 ##   [Technical Preview](get-started/technical-preview.md)
+<!-- ###  [Capabilities in 1702](get-started/capabilities-in-technical-preview-1702.md) -->
 ###  [Funzionalità della versione 1701](get-started/capabilities-in-technical-preview-1701.md)
 ###  [Funzionalità della versione 1612](get-started/capabilities-in-technical-preview-1612.md)
 ###  [Funzionalità della versione 1611](get-started/capabilities-in-technical-preview-1611.md)
@@ -305,6 +307,6 @@
 ###  [Upgrade analytics](clients/manage/upgrade/upgrade-analytics.md)
 
 
-<!--HONumber=Feb17_HO3-->
+<!--HONumber=Feb17_HO4-->
 
 
