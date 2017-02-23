@@ -2,7 +2,7 @@
 title: Configurare Asset Intelligence | Microsoft Docs
 description: Configurare Asset Intelligence in System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/28/2016
+ms.date: 2/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,8 +13,8 @@ ms.topic: get-started-article
 ms.assetid: 08e0382d-de05-4a76-ba5c-7223173f7066
 caps.latest.revision: 7
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: andredm7
+ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 8a5dc7361da34f3e6b926acd35c72c0c0767ce70
@@ -224,7 +224,7 @@ Asset Intelligence abbina i prodotti specificati nel resoconto delle licenze gen
 
 4.  Nel gruppo **Impostazioni** della scheda **Home** scegliere **Manutenzione sito**. Selezionare un'attività e scegliere **Modifica** per modificare le impostazioni. 
 
-    È consigliabile impostare il periodo di tempo su orari non di punta per il sito. Il periodo di tempo è l'intervallo di tempo in cui è possibile eseguire l'attività. È definito dagli orari specificati in **Avvia dopo** e **Ultima ora di avvio** nella finestra di dialogo **Attività Proprietà** .  
+      È consigliabile impostare il periodo di tempo su orari non di punta per il sito. Il periodo di tempo è l'intervallo di tempo in cui è possibile eseguire l'attività. È definito dagli orari specificati in **Avvia dopo** e **Ultima ora di avvio** nella finestra di dialogo **Attività Proprietà** .  
 
     È possibile avviare immediatamente l'attività selezionando il giorno corrente e impostando **Avvia dopo** su un orario di un paio di minuti successivo all'ora corrente.  
 
