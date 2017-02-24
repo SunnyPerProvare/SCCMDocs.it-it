@@ -2,7 +2,7 @@
 title: Preparare i server di Windows | Microsoft Docs
 description: Assicurarsi che un computer soddisfi i prerequisiti per l&quot;uso come server del sito o server di sistema del sito per System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 2/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: bd89f97f4252ddea2d1bf7ab329417477c77868d
+ms.sourcegitcommit: dd102603356864add4084c6881c39bebcbd635f2
+ms.openlocfilehash: 9b97dedb5d2be0bd2e47260033e6e4361467dc4e
 
 
 ---
@@ -26,7 +26,7 @@ ms.openlocfilehash: bd89f97f4252ddea2d1bf7ab329417477c77868d
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Prima di poter usare un computer Windows come server di sistema del sito per System Center Configuration Manager, è necessario assicurarsi che il computer soddisfi i prerequisiti per l'uso previsto come server del sito o server di sistema del sito.  
+Prima di poter usare un computer Windows come server di sistema del sito per System Center Configuration Manager, è necessario che il computer soddisfi i prerequisiti per l'uso previsto come server del sito o server di sistema del sito.  
 
 -   Questi prerequisiti includono spesso uno o più ruoli o funzionalità di Windows, che vengono abilitati usando Server Manager del computer.  
 
@@ -35,7 +35,7 @@ Prima di poter usare un computer Windows come server di sistema del sito per Sys
 Le informazioni contenute in questo articolo offrono una panoramica dei tipi di configurazioni Windows necessari per il supporto dei sistemi del sito Configuration Manager. Per informazioni dettagliate sulla configurazione dei ruoli di sistema del sito specifico, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).
 
 ##  <a name="a-namebkmkwinfeaturesa-windows-features-and-roles"></a><a name="BKMK_WinFeatures"></a> Ruoli e funzionalità di Windows  
- Quando si configurano i ruoli e le funzionalità di Windows in un computer, potrebbe essere necessario riavviare il computer per completare la configurazione. È consigliabile quindi identificare i computer che ospiteranno i ruoli di sistema del sito prima di installare un sito o un server di sistema del sito di Configuration Manager.
+ Quando si configurano i ruoli e le funzionalità di Windows in un computer, potrebbe essere necessario riavviare il computer per completare la configurazione. È quindi consigliabile identificare i computer che ospiteranno i ruoli del sistema del sito prima di installare un sito di Configuration Manager o un server del sistema del sito.
 ### <a name="features"></a>Caratteristiche  
  le funzionalità di Windows seguenti sono richieste in alcuni server del sistema del sito e devono essere configurate prima di installare un ruolo del sistema del sito nel computer.  
 
@@ -43,12 +43,12 @@ Le informazioni contenute in questo articolo offrono una panoramica dei tipi di 
 
     -   ASP.NET  
     -   Attivazione HTTP  
-    -   Attivazione non HTTP   
-    -   Servizi WCF  
+    -   Attivazione non HTTP  
+    -   Servizi Windows Communication Foundation (WCF)  
 
-    Per i diversi ruoli del sistema del sito sono necessarie versioni specifiche di .NET Framework.  
+    Per i diversi ruoli del sistema del sito sono necessarie versioni diverse di .NET Framework.  
 
-    Dal momento che .NET Framework 4.0 e versioni successive non è compatibile con le versioni precedenti e non riesce a sostituire la versione 3.5 e precedenti, quando sono richieste versioni diverse, pianificare l'abilitazione di ogni versione nello stesso computer.  
+    Dal momento che .NET Framework 4.0 e versioni successive non è compatibile con le versioni precedenti e non può sostituire la versione 3.5 e precedenti, quando sono richieste versioni diverse pianificare l'abilitazione di ogni versione nello stesso computer.  
 
 -   **Servizio trasferimento intelligente in background (BITS)**: i punti di gestione richiedono BITS e le opzioni selezionate automaticamente per supportare la comunicazione con i dispositivi gestiti.  
 
@@ -75,7 +75,7 @@ Le informazioni contenute in questo articolo offrono una panoramica dei tipi di 
     -   Strumenti di gestione >  
         -   Compatibilità Gestione IIS 6  
         -   Compatibilità Metabase IIS 6  
-        -   Compatibilità WMI IIS 6  
+        -   Compatibilità di Windows Management Instrumentation (WMI) con IIS 6  
     -   Sicurezza >  
         -   Filtro richieste  
         -   Autenticazione di Windows  
@@ -99,7 +99,7 @@ Le informazioni contenute in questo articolo offrono una panoramica dei tipi di 
 -   **Windows Server Update Services**: questo ruolo è richiesto quando si distribuiscono gli aggiornamenti software.  
 
 ##  <a name="a-namebkmkiisfilteringa-iis-request-filtering-for-distribution-points"></a><a name="BKMK_IISFiltering"></a> Filtro richieste IIS per i punti di distribuzione  
- Per impostazione predefinita, IIS usa il filtro richieste per bloccare l'accesso di diverse estensioni di file e percorsi di cartelle con la comunicazione HTTP o HTTPS. In un punto di distribuzione, questo impedisce ai client di scaricare i pacchetti che contengono estensioni bloccate o percorsi di cartelle.  
+ Per impostazione predefinita, IIS usa il filtro richieste per bloccare l'accesso di diverse estensioni di file e percorsi di cartelle con la comunicazione HTTP o HTTPS. In un punto di distribuzione questo impedisce ai client di scaricare i pacchetti con estensioni o percorsi di cartelle bloccati.  
 
  Quando i file di origine del pacchetto contengono estensioni bloccate in IIS dalla configurazione del filtro richieste, è necessario configurare il filtro richieste per abilitarle. Per farlo, [modificare la funzionalità del filtro richieste](https://technet.microsoft.com/library/hh831621.aspx) in Gestione IIS nei computer del punto di distribuzione.  
 
@@ -110,19 +110,19 @@ Le informazioni contenute in questo articolo offrono una panoramica dei tipi di 
 -   STA  
 -   TAR  
 
-Ad esempio, si possono avere file di origine per una distribuzione del software che includono una cartella denominata **bin**o che contengono un file con estensione **mdb** .  
+Ad esempio, i file di origine per una distribuzione software potrebbero includere una cartella denominata **bin**o un file con estensione **mdb**.  
 
 -   Per impostazione predefinita, il filtro richieste IIS blocca l'accesso a questi elementi (**bin** è bloccato perché è un segmento nascosto e **mdb** è bloccato come estensione di file).  
 
 -   Quando si usa la configurazione IIS predefinita in un punto di distribuzione, i client che usano BITS non riescono a scaricare questa distribuzione del software dal punto di distribuzione e indicano che sono in attesa del contenuto.  
 
--   Per abilitare il download del contenuto per i client, modificare il **filtro richieste** in Gestione IIS per ogni punto di distribuzione applicabile per consentire l'accesso alle estensioni di file e alle cartelle contenute nei pacchetti e nelle applicazioni distribuiti.  
+-   Per consentire ai client di scaricare il contenuto, modificare il **filtro richieste** in Gestione IIS per ogni punto di distribuzione applicabile per consentire l'accesso alle estensioni di file e alle cartelle presenti nei pacchetti e nelle applicazioni distribuiti.  
 
 > [!IMPORTANT]  
 >  Le modifiche al filtro richieste possono aumentare la superficie di attacco del computer.  
 >   
->  -   Le modifiche apportate a livello server si applicano a tutti i siti Web nel server  
-> -   Le modifiche ai singoli siti Web si applicano solo al sito Web specificato  
+>  -   Le modifiche apportate a livello di server si applicano a tutti i siti Web nel server.  
+> -   Le modifiche ai singoli siti Web si applicano solo al sito Web specificato.  
 >   
 >  La procedura di sicurezza consigliata è l'esecuzione di Configuration Manager in un server Web dedicato. Se è necessario eseguire altre applicazioni nel server Web, usare un sito Web personalizzato per Configuration Manager. Per informazioni, vedere [Siti Web per i server del sistema del sito in System Center Configuration Manager](../../../core/plan-design/network/websites-for-site-system-servers.md).  
 
@@ -139,10 +139,10 @@ Ad esempio, si possono avere file di origine per una distribuzione del software 
  - HEAD
  - PROPFIND
 
-Per informazioni sulla configurazione del filtro richieste, vedere [Configurare il filtro richieste in IIS](https://technet.microsoft.com/library/hh831621.aspx#Verbs) su TechNet o in una documentazione simile che si applica alla versione di Windows Server che ospita il punto di gestione.
+Per informazioni sulla configurazione del filtro richieste, vedere [Configurare il filtro richieste in IIS](https://technet.microsoft.com/library/hh831621.aspx#Verbs) su TechNet o una documentazione simile relativa alla versione di Windows Server che ospita il punto di gestione.
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 

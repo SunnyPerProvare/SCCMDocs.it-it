@@ -2,7 +2,7 @@
 title: Domande frequenti relative al client di Endpoint Protection | Microsoft Docs
 description: Risposte alle domande frequenti su Windows Defender e su Endpoint Protection.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
-ms.openlocfilehash: f0352e59390ade7212a64cf0de883bbb1ca28bab
+ms.sourcegitcommit: 017bd5b899b364fc832c721d63cc7dbad0a11671
+ms.openlocfilehash: b88bc5f734b85527b81e5848deb0617db4c8dfbc
 
 
 ---
@@ -29,39 +29,23 @@ ms.openlocfilehash: f0352e59390ade7212a64cf0de883bbb1ca28bab
 Queste domande frequenti sono destinate a utenti di computer il cui amministratore IT ha distribuito Windows Defender o Endpoint Protection nel computer gestito. Il contenuto illustrato di seguito potrebbe non essere applicabile ad altri software antimalware. Microsoft System Center Endpoint Protection gestisce Windows Defender su Windows 10. Può anche distribuire e gestire il client di Endpoint Protection in computer precedenti Windows 10. Anche se in questo articolo viene descritto Windows Defender, le informazioni si applicano anche a Endpoint Protection.  
 
 -   [Perché è necessario avere un software antivirus e antispyware?](#why-do-i-need-antivirus-and-antispyware-software)  
-
--   [Come stabilire se il computer è infettato da software dannoso?](#how-can-i-tell-if-my-computer-is-infected-with-malicious-software)  
-
+-   [Come stabilire se il computer è infettato da software dannoso?](#how-can-i-tell-if-my-computer-is-infected-with-malicious-software)
+-   [Come si fa a trovare la versione di Windows Defender?](#how-can-i-find-the-version-of-windows-defender)
 -   [Cosa è necessario fare se Windows Defender o Endpoint Protection rileva software dannoso nel computer?](#what-should-i-do-if-windows-defender-or-endpoint-protection-detects-software-on-my-computer)  
-
 -   [Che cos'è un virus?](#what-is-a-virus)  
-
 -   [Che cos'è uno spyware?](#what-is-spyware)  
-
 -   [Qual è la differenza tra virus, spyware e altro software potenzialmente dannoso?](#hat-s-the-difference-between-viruses-spyware-and-other-potentially-harmful-software)  
-
 -   [Da dove provengono virus, spyware e altro software potenzialmente indesiderato?](#where-do-viruses-spyware-and-other-potentially-unwanted-software-come-from)  
-
 -   [È possibile ricevere software dannoso senza esserne a conoscenza?](#can-i-get-malicious-software-without-knowing-it)  
-
 -   [Perché è importante leggere i contratti di licenza prima di installare software?](#why-is-it-important-to-review-license-agreements-before-installing-software)  
-
 -   [Qual è la differenza tra Endpoint Protection e Windows Defender?](#what-s-the-difference-between-endpoint-protection-and-windows-defender)  
-
 -   [Perché Windows Defender non rileva i cookie?](#why-doesn-t-windows-defender-detect-cookies)  
-
 -   [Come è possibile evitare il malware?](#how-can-i-prevent-malware)  
-
 -   [Cosa sono le definizioni di virus e spyware?](#what-are-virus-and-spyware-definitions)  
-
 -   [Come mantenere aggiornate le definizioni di virus e spyware?](#how-do-i-keep-virus-and-spyware-definitions-up-to-date)  
-
 -   [Come si rimuovono o si ripristinano gli elementi messi in quarantena da Windows Defender o Endpoint Protection?](#how-do-i-remove-or-restore-items-quarantined-by-windows-defender-or-endpoint-protection)  
-
 -   [Cos'è la protezione in tempo reale?](#what-is-real-time-protection)  
-
 -   [Come si capisce che Windows Defender o Endpoint Protection è in esecuzione nel computer?](#how-do-i-know-that-windows-defender-or-endpoint-protection-is-running-on-my-computer)
-
 -   [Come si configurano gli avvisi di Windows Defender o Endpoint Protection?](#how-to-set-up-windows-defender-or-endpoint-protection-alerts)  
 
 ##  <a name="why-do-i-need-antivirus-and-antispyware-software"></a>Perché è necessario un software antivirus e antispyware?  
@@ -104,6 +88,9 @@ Queste domande frequenti sono destinate a utenti di computer il cui amministrato
 -   Il computer diventa improvvisamente più lento del solito. Non tutti i problemi di prestazioni del computer sono causati da software dannoso, ma il software dannoso, in particolare lo spyware, può influire in modo significativo.  
 
 Potrebbe essere presente software dannoso nel computer anche senza alcun sintomo. Questo tipo di software può raccogliere informazioni sull'utente e sul computer all'insaputa dell'utente e senza il suo consenso. Per proteggere la privacy di utenti e computer, è consigliabile eseguire sempre Windows Defender o Endpoint Protection.  
+
+## <a name="how-can-i-find-the-version-of-windows-defender"></a>Come si fa a trovare la versione di Windows Defender?
+ Per visualizzare la versione di Windows Defender in esecuzione nel computer, aprire Windows Defender (fare clic su **Start** e cercare **Windows Defender**), fare clic su **Impostazioni**, scorrere fino alla fine delle impostazioni di Windows Defender per trovare **Informazioni sulla versione**.
 
 ##  <a name="what-should-i-do-if-windows-defender-or-endpoint-protection-detects-malicious-software-on-my-computer"></a>Cosa è necessario fare se Windows Defender o Endpoint Protection rileva software dannoso nel computer?  
 
@@ -216,7 +203,7 @@ Per rimuovere facilmente e velocemente tutti gli elementi indesiderati o potenzi
 
 ##  <a name="what-is-real-time-protection"></a>Cos'è la protezione in tempo reale?  
 
- La protezione in tempo reale consente a Windows Defender monitorare costantemente il computer e segnalare la presenza di potenziali minacce, quali virus e spyware che tentano l'installazione o l'esecuzione nel computer. Dato che questa funzionalità è un elemento importante del modo in cui Windows Defender protegge il computer, assicurarsi che la protezione in tempo reale sia sempre attivata. Se la protezione in tempo reale viene disattivata, Windows Defender lo segnala e imposta lo stato del computer su â€œA rischioâ€.  
+ La protezione in tempo reale consente a Windows Defender monitorare costantemente il computer e segnalare la presenza di potenziali minacce, quali virus e spyware che tentano l'installazione o l'esecuzione nel computer. Dato che questa funzionalità è un elemento importante del modo in cui Windows Defender protegge il computer, assicurarsi che la protezione in tempo reale sia sempre attivata. Se la protezione in tempo reale viene disattivata, Windows Defender lo segnala e imposta lo stato del computer su "A rischio".  
 
  Se la protezione in tempo reale rileva una minaccia o una potenziale minaccia, Windows Defender visualizza una notifica. È quindi possibile scegliere una delle opzioni seguenti:  
 
@@ -232,7 +219,7 @@ Per rimuovere facilmente e velocemente tutti gli elementi indesiderati o potenzi
 |Analizza tutti i download|Questa opzione consente di monitorare i file e i programmi scaricati, inclusi i file scaricati automaticamente tramite Windows Internet Explorer e Microsoft Outlook® Express, ad esempio i controlli ActiveX® e i programmi di installazione software. Questi file possono essere scaricati, installati o eseguiti dal browser stesso. Software dannoso, tra cui virus, spyware e altro software potenzialmente indesiderato, può essere incluso in questi file e installato all'insaputa dell'utente.<br /><br /> Con l'opzione di protezione in tempo reale, Windows Defender mantiene costantemente monitorato il computer e controlla l'eventuale presenza di file o programmi dannosi che potrebbero essere stati scaricati. Questa funzionalità di monitoraggio significa che Windows Defender non deve rallentare l'esperienza di esplorazione o per la posta elettronica richiedendo un controllo di tutti i file o programmi da scaricare.|  
 |Monitoraggio dell'attività di file e programmi nel computer|Questa opzione consente di monitorare i file e programmi in esecuzione nel computer e quindi genera avvisi per le eventuali azioni eseguite da tali file e programmi e le azioni eseguite su di essi. Si tratta di un aspetto importante, perché il software dannoso può sfruttare le vulnerabilità nei programmi installati per eseguire software dannoso o indesiderato all'insaputa dell'utente. Ad esempio, un programma spyware può attivarsi automaticamente in background all'avvio di un programma usato di frequente. Windows Defender mantiene monitorati i programmi e genera avvisi se rileva attività sospette.|  
 |Abilita monitoraggio del comportamento|Questa opzione consente di monitorare raccolte di comportamenti per individuare modelli sospetti che potrebbero non essere rilevati dai metodi di rilevamento antivirus tradizionali.|  
-|Abilita Network Inspection System|Questa opzione consente di proteggere il computer dagli exploit â€œzero dayâ€ delle vulnerabilità note, riducendo il periodo di tempo tra l'individuazione di una vulnerabilità e l'applicazione di un aggiornamento.|  
+|Abilita Network Inspection System|Questa opzione consente di proteggere il computer dagli exploit "zero day" delle vulnerabilità note, riducendo il periodo di tempo tra l'individuazione di una vulnerabilità e l'applicazione di un aggiornamento.|  
 
 ### <a name="to-turn-off-real-time-protection"></a>Per disattivare la protezione in tempo reale  
 
@@ -279,6 +266,6 @@ Per rimuovere facilmente e velocemente tutti gli elementi indesiderati o potenzi
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 

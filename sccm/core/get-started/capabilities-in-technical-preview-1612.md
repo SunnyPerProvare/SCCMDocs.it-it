@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
-ms.openlocfilehash: cd970dacd29916c2de2db3dd5498b1949f5174e6
+ms.sourcegitcommit: 3c8f968276cb6d412a4a06cb70f1c8e45e91c605
+ms.openlocfilehash: cd53f093056fbaa2ef6fd88d5451b7698f296569
 
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1612 per System Center Configuration Manager
@@ -50,11 +50,11 @@ Oltre all'installazione e alla configurazione del database del data warehouse, v
 
 | Passaggio         | Dettagli  |
 |:------:|-----------|  
-| **1**  |  Il server del sito trasferisce e archivia i dati nel database del sito.  |  
-| **2** |   In base alla pianificazione e alla configurazione, il punto di servizio Data warehouse recupera dati dal database del sito.  |  
+| **1**  |     Il server del sito trasferisce e archivia i dati nel database del sito.  |  
+| **2** |      In base alla pianificazione e alla configurazione, il punto di servizio Data warehouse recupera dati dal database del sito.  |  
 | **3** |  Il punto di servizio Data warehouse trasferisce e archivia una copia dei dati sincronizzati nel database del data warehouse. |  
 | **A** |  Usando report predefiniti, viene creata una richiesta di dati, che viene passata al punto di Reporting Services tramite SQL Server Reporting Services. |  
-| **B** |   La maggior parte dei report sono usati per informazioni correnti e queste richieste vengono eseguite tramite il database del sito. |  
+| **B** |      La maggior parte dei report sono usati per informazioni correnti e queste richieste vengono eseguite tramite il database del sito. |  
 | **C** | Se un report richiede dati cronologici, tramite un report con *Categoria* corrispondente a **Data warehouse** la richiesta viene eseguita tramite il database del data warehouse.   |  
 
 ### <a name="prerequisites-for-the-data-warehouse-service-point-and-database"></a>Prerequisiti per il punto di servizio e per il database del data warehouse
@@ -85,12 +85,12 @@ Pagina **Generale**: sono necessarie le informazioni generali seguenti:
 - **Impostazioni del database di Configuration Manager:**   
   - **Nome server**: specificare l'FQDN del server che ospita il database del sito. Se non si usa un'istanza predefinita di SQL Server, è necessario specificare l'istanza dopo l'FQDN nel formato seguente: ***&lt;FQDN_SQLServer>\&lt;Nome_istanza>***
   - **Nome database**: specificare il nome del database del sito.
-  - **Verifica** Fare clic su **Verifica** per verificare che la connessione al database del sito funzioni correttamente.
+  -    **Verifica** Fare clic su **Verifica** per verificare che la connessione al database del sito funzioni correttamente.
 </br></br>
 - **Impostazioni del database del data warehouse:**
-  - **Nome server**: specificare l'FQDN del server che ospita il database e il punto di servizio del data warehouse. Se non si usa un'istanza predefinita di SQL Server, è necessario specificare l'istanza dopo l'FQDN nel formato seguente: ***&lt;FQDN_SQLServer>\&lt;Nome_istanza>***
-  - **Nome database**: specificare l'FQDN del database del data warehouse.  Configuration Manager creerà il database con questo nome. Se si specifica un nome di database già esistente nell'istanza di SQL Server, Configuration Manager userà il database corrispondente.
-  - **Verifica** Fare clic su **Verifica** per verificare che la connessione al database del sito funzioni correttamente.
+  -    **Nome server**: specificare l'FQDN del server che ospita il database e il punto di servizio del data warehouse. Se non si usa un'istanza predefinita di SQL Server, è necessario specificare l'istanza dopo l'FQDN nel formato seguente: ***&lt;FQDN_SQLServer>\&lt;Nome_istanza>***
+  -    **Nome database**: specificare l'FQDN del database del data warehouse.  Configuration Manager creerà il database con questo nome. Se si specifica un nome di database già esistente nell'istanza di SQL Server, Configuration Manager userà il database corrispondente.
+  -    **Verifica** Fare clic su **Verifica** per verificare che la connessione al database del sito funzioni correttamente.
 
 Pagina **Impostazioni di sincronizzazione**:   
 - **Impostazioni per i dati:**
@@ -107,7 +107,7 @@ Dopo aver installato il ruolo del data warehouse, assicurarsi che l'account usat
 #### <a name="troubleshoot-installation-and-data-synchronization"></a>Risoluzione dei problemi di installazione e di sincronizzazione dei dati
 Usare i registri seguenti per analizzare i problemi dell'installazione del punto di servizio Data warehouse o della sincronizzazione dei dati:
 - **DWSSMSI.log** e **DWSSSetup.log**: usare questi registri per analizzare gli errori che si verificano durante l'installazione del punto di servizio Data warehouse.
--   **Microsoft.ConfigMgrDataWarehouse.log**: usare questo registro per analizzare la sincronizzazione dei dati tra il database del sito e il database del data warehouse database.
+-     **Microsoft.ConfigMgrDataWarehouse.log**: usare questo registro per analizzare la sincronizzazione dei dati tra il database del sito e il database del data warehouse database.
 
 ### <a name="reporting"></a>Reporting
 Dopo aver installato un ruolo del sistema del sito del Data Warehouse, nel punto di Reporting Services sono disponibili i report seguenti con *Categoria* corrispondente a **Data Warehouse:**
@@ -143,7 +143,7 @@ Per spostare il database del data warehouse in un nuovo SQL Server, procedere co
 
 È possibile esaminare i registri di Configuration Manager seguenti per verificare che il ruolo del sistema del sito sia stato reinstallato correttamente:  
 - **DWSSMSI.log** e **DWSSSetup.log**: usare questi registri per analizzare gli errori che si verificano durante l'installazione del punto di servizio Data warehouse.
--   **Microsoft.ConfigMgrDataWarehouse.log**: usare questo registro per analizzare la sincronizzazione dei dati tra il database del sito e il database del data warehouse database.
+-     **Microsoft.ConfigMgrDataWarehouse.log**: usare questo registro per analizzare la sincronizzazione dei dati tra il database del sito e il database del data warehouse database.
 
 
 ## <a name="content-library-cleanup-tool"></a>Strumento di pulizia della raccolta contenuto
@@ -173,7 +173,7 @@ Lo strumento può essere eseguito in due modalità:
   2. **Modalità di eliminazione**: se si esegue lo strumento con l'opzione **/delete**, lo strumento viene eseguito in modalità di eliminazione.
 
      - Se si esegue lo strumento in questa modalità, il contenuto orfano rilevato nel punto di distribuzione interessato può essere eliminato dalla raccolta contenuto del punto di distribuzione stesso.
-     -  Prima di eliminare ogni file, all'utente viene richiesto di confermare l'eliminazione.  È possibile selezionare **S** per Sì, **N** per No o **Sì a tutti** per ignorare le altre richieste di conferma ed eliminare tutto il contenuto orfano.  
+     -     Prima di eliminare ogni file, all'utente viene richiesto di confermare l'eliminazione.  È possibile selezionare **S** per Sì, **N** per No o **Sì a tutti** per ignorare le altre richieste di conferma ed eliminare tutto il contenuto orfano.  
      </br>
 
      È consigliabile eseguire lo strumento in modalità di simulazione e di esaminare il file di log prima di eseguire lo strumento con l'opzione /delete.  
@@ -206,7 +206,7 @@ In base ai commenti e ai suggerimenti di UserVoice, alla ricerca nella console s
   Molti oggetti ora supportano una nuova colonna denominata **Percorso oggetto**.  Se si include questa colonna nella visualizzazione dei risultati, è possibile vedere il percorso di ogni oggetto. Se ad esempio si esegue la ricerca delle app nel nodo Applicazioni e la ricerca viene eseguita anche nei sottonodi, la colonna *Percorso oggetto* nel riquadro dei risultati visualizzerà il percorso di ogni oggetto restituito.   
 
 - **Conservazione del testo della ricerca:**  
-  Quando si immette testo nella casella di testo di ricerca e quindi si modifica il nodo in cui si esegue la ricerca stessa, il testo digitato viene ora mantenuto e rimane disponibile per l'uso senza che sia necessario digitarlo di nuovo.  
+  Quando si immette testo nella casella di testo di ricerca e quindi si passa dalla ricerca in un sottonodo alla ricerca nel nodo corrente e viceversa, il testo digitato diventa permanente e rimane disponibile per una nuova ricerca senza doverlo digitare di nuovo.
 
 - **Mantenimento della decisione relativa alla ricerca nei sottonodi:**  
  L'opzione selezionata per l'esecuzione della ricerca nel *nodo corrente* o in *tutti i sottonodi* ora viene mantenuta quando si modifica il nodo usato.   Con il nuovo comportamento non è necessario reimpostare costantemente la decisione ogni volta che ci si sposta all'interno della console.  Per impostazione predefinita, quando si apre la console è impostata la ricerca solo nel nodo corrente.
@@ -216,9 +216,9 @@ In base ai commenti e ai suggerimenti di UserVoice, alla ricerca nella console s
 
 ### <a name="try-it-out"></a>Procedura
 Per configurare un elenco di file eseguibili
-1.  Nella pagina delle proprietà di un qualsiasi tipo di distribuzione scegliere la scheda **Installer Handling** (Gestione programma di installazione).
-2.  Fare clic su **Aggiungi** per aggiungere uno o più file eseguibili all'elenco (ad esempio **Edge.exe**)
-3.  Fare clic su **OK** per chiudere la finestra di dialogo delle proprietà del tipo di distribuzione.
+1.    Nella pagina delle proprietà di un qualsiasi tipo di distribuzione scegliere la scheda **Installer Handling** (Gestione programma di installazione).
+2.    Fare clic su **Aggiungi** per aggiungere uno o più file eseguibili all'elenco (ad esempio **Edge.exe**)
+3.    Fare clic su **OK** per chiudere la finestra di dialogo delle proprietà del tipo di distribuzione.
 
 D'ora in avanti se si distribuisce questa applicazione a un utente o a un dispositivo e uno dei file eseguibili aggiunti viene eseguito, per l'utente finale viene visualizzata una finestra di dialogo di Software Center che informa dell'esito negativo dell'installazione a causa dell'esecuzione di un'applicazione.
 
@@ -248,16 +248,16 @@ In Configuration Manager è stato aggiunto il supporto dei file di installazione
 
 ### <a name="to-enable-the-download-of-express-installation-files-for-windows-10-updates-on-the-server"></a>Per abilitare il download dei file di installazione rapida per gli aggiornamenti di Windows 10 nel server
 Per avviare la sincronizzazione dei metadati per i file di installazione rapida di Windows 10 è necessario abilitarla nelle proprietà del punto di aggiornamento software.
-1.  Nella console di Configuration Manager passare a **Amministrazione** > **Configurazione del sito** > **Siti**.
-2.  Selezionare il sito di amministrazione centrale o il sito primario autonomo.
-3.  Nel gruppo **Impostazioni** della scheda **Home** fare clic su **Configura componenti sito**, quindi fare clic su **Punto di aggiornamento software**. Nella scheda **File di aggiornamento** selezionare **Download full files for all approved updates and express installation files for Windows 10** (Download di file completi per tutti gli aggiornamenti approvati e i file di installazione rapida per Windows 10).
+1.    Nella console di Configuration Manager passare a **Amministrazione** > **Configurazione del sito** > **Siti**.
+2.    Selezionare il sito di amministrazione centrale o il sito primario autonomo.
+3.    Nel gruppo **Impostazioni** della scheda **Home** fare clic su **Configura componenti sito**, quindi fare clic su **Punto di aggiornamento software**. Nella scheda **File di aggiornamento** selezionare **Download full files for all approved updates and express installation files for Windows 10** (Download di file completi per tutti gli aggiornamenti approvati e i file di installazione rapida per Windows 10).
 
 ### <a name="to-enable-support-for-clients-to-download-and-install-express-installation-files"></a>Per abilitare il supporto del download e dell'installazione di file di installazione rapida per i client
 Per abilitare il supporto dei file di installazione rapida per i client, è necessario abilitare i file di installazione rapida nei client nella sezione Aggiornamenti rapidi delle impostazioni del client. Questa operazione crea un nuovo listener HTTP che attende le richieste di download dei file di installazione rapida sulla porta specificata. Dopo aver distribuito le impostazioni client per abilitare questa funzionalità nel client, la funzionalità tenterà di scaricare le differenze tra l'aggiornamento cumulativo di Windows 10 del mese corrente e l'aggiornamento cumulativo del mese precedente. Nei client deve essere in esecuzione una versione di Windows 10 che supporti i file di installazione rapida.
-1.  Abilitare il supporto per i file di installazione rapida nelle proprietà del componente del punto di aggiornamento software (procedura precedente).
-2.  Nella console di Configuration Manager passare ad **Amministrazione** > **Impostazioni client**.
-3.  Selezionare le impostazioni client appropriate e quindi nella scheda **Home** fare clic su **Proprietà**.
-4.  Selezionare la pagina **Aggiornamenti software **, selezionare **Sì** nell'impostazione **Abilita l'installazione di aggiornamenti rapidi nei client** e configurare la porta usata dal listener HTTP nel client per l'impostazione **Porta usata per scaricare contenuto per gli aggiornamenti rapidi**.
+1.    Abilitare il supporto per i file di installazione rapida nelle proprietà del componente del punto di aggiornamento software (procedura precedente).
+2.    Nella console di Configuration Manager passare ad **Amministrazione** > **Impostazioni client**.
+3.    Selezionare le impostazioni client appropriate e quindi nella scheda **Home** fare clic su **Proprietà**.
+4.    Selezionare la pagina **Aggiornamenti software **, selezionare **Sì** nell'impostazione **Abilita l'installazione di aggiornamenti rapidi nei client** e configurare la porta usata dal listener HTTP nel client per l'impostazione **Porta usata per scaricare contenuto per gli aggiornamenti rapidi**.
 
 
 ## <a name="odata-endpoint-data-access"></a>Accesso ai dati di endpoint OData
@@ -317,6 +317,6 @@ Ora che è possibile configurare l'autenticazione a più fattori (MFA) per la re
 
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 

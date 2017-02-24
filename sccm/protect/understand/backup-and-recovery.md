@@ -2,7 +2,7 @@
 title: Backup e ripristino | Microsoft Docs
 description: Informazioni su come eseguire il backup e ripristinare i siti in caso di errore o perdita di dati in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,48 +16,50 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 828e2ac9a3f9bcea1571d24145a1021fdf1091f3
-ms.openlocfilehash: ce73be3a9fa3876c587bbd7b7cb05acd36c2687e
-
+ms.sourcegitcommit: 3aa9f2e4d3f7210981b5b84942485de11fe15cb2
+ms.openlocfilehash: a7e052bc0e1c354b75a7f95afdd266ed742ce689
 
 ---
-# <a name="backup-and-recovery-for-system-center-configuration-manager"></a>Backup e ripristino per System Center Configuration Manager
+
+# <a name="backup-and-recovery"></a>Backup e ripristino
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 Preparare gli approcci di backup e ripristino per evitare la perdita di dati. Per i siti di Configuration Manager un approccio di backup e ripristino consente di ripristinare siti e gerarchie più rapidamente e con la minore perdita di dati. Le sezioni di questo argomento possono essere utili per eseguire il backup dei siti e ripristinare un sito in caso di errore del sito o perdita di dati.  
 
--   [Eseguire il backup di un sito di Configuration Manager](#BKMK_SiteBackup)  
 
-    -   [Attività di manutenzione di backup](#BKMK_BackupMaintenanceTask)  
 
-    -   [Utilizzo di Data Protection Manager per eseguire il backup del database del sito](#BKMK_DPMBackup)  
+- [Eseguire il backup di un sito di Configuration Manager](#BKMK_SiteBackup)   
 
-    -   [Archiviazione dello snapshot di backup](#BKMK_ArchivingBackupSnapshot)  
+  - [Attività di manutenzione di backup](#BKMK_BackupMaintenanceTask)   
 
-    -   [Uso del file AfterBackup.bat](#BKMK_UsingAfterBackup)  
+  - [Utilizzo di Data Protection Manager per eseguire il backup del database del sito](#BKMK_DPMBackup)   
 
-    -   [Attività di backup supplementari](#BKMK_SupplementalBackup)  
+  -  [Archiviazione dello snapshot di backup](#BKMK_ArchivingBackupSnapshot)   
 
--   [Ripristinare un sito di Configuration Manager](#BKMK_RecoverSite)  
+  -  [Uso del file AfterBackup.bat](#BKMK_UsingAfterBackup)   
 
-    -   [Determinare le opzioni di ripristino](#BKMK_DetermineRecoveryOptions)  
+  -  [Attività di backup supplementari](#BKMK_SupplementalBackup)   
 
-        -   [Opzioni di ripristino del server del sito](#BKMK_SiteServerRecoveryOptions)  
+-  [Ripristinare un sito di Configuration Manager](#BKMK_RecoverSite)   
 
-        -   [Opzioni di ripristino del database del sito](#BKMK_SiteDatabaseRecoveryOption)  
+  -   [Determinare le opzioni di ripristino](#BKMK_DetermineRecoveryOptions)   
 
-        -   [Periodo di memorizzazione del rilevamento modifiche di SQL Server](#bkmk_SQLretention)  
+         -   [Opzioni di ripristino del server del sito](#BKMK_SiteServerRecoveryOptions)   
 
-        -   [Processo per reinizializzare dati globali o del sito.](#bkmk_reinit)  
+         -   [Opzioni di ripristino del database del sito](#BKMK_SiteDatabaseRecoveryOption)   
 
-        -   [Scenari di ripristino del database del sito](#BKMK_SiteDBRecoveryScenarios)  
+         -   [Periodo di memorizzazione del rilevamento modifiche di SQL Server](#bkmk_SQLretention)   
 
-    -   [Chiavi del file di script di ripristino del sito automatico](#BKMK_UnattendedSiteRecoveryKeys)  
+         -   [Processo per reinizializzare dati globali o del sito.](#bkmk_reinit)   
 
-    -   [Attività post-ripristino](#BKMK_PostRecovery)  
+         -   [Scenari di ripristino del database del sito](#BKMK_SiteDBRecoveryScenarios)  
 
-    -   [Ripristinare un sito secondario](#BKMK_RecoverSecondarySite)  
+  -   [Chiavi del file di script di ripristino del sito automatico](#BKMK_UnattendedSiteRecoveryKeys)  
+
+  -   [Attività post-ripristino](#BKMK_PostRecovery)  
+
+  -   [Ripristinare un sito secondario](#BKMK_RecoverSecondarySite)  
 
 -   [Servizio SMS Writer](#BKMK_SMSWriterService)  
 
@@ -87,7 +89,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 >  Configuration Manager è in grado di ripristinare il database del sito dall'attività di manutenzione di backup di Configuration Manager oppure da un backup del database del sito creato mediante un altro processo. Ad esempio, è possibile ripristinare il database del sito da un backup creato all'interno di un piano di manutenzione di Microsoft SQL Server. È possibile ripristinare il database del sito da un backup creato usando System Center 2012 Data Protection Manager (DPM). Per altre informazioni, vedere [Utilizzo di Data Protection Manager per eseguire il backup del database del sito](#BKMK_DPMBackup).  
 
 ###  <a name="a-namebkmkbackupmaintenancetaska-backup-maintenance-task"></a><a name="BKMK_BackupMaintenanceTask"></a> Attività di manutenzione di backup  
- È possibile automatizzare il backup per i siti di Configuration Manager mediante la programmazione dell'attività di manutenzione Backup server sito predefinita. È possibile eseguire il backup di un sito di amministrazione centrale e di un sito primario, ma per i siti secondari o i server di sistema del sito il backup non è supportato. Durante l'esecuzione del servizio di backup di Configuration Manager vengono seguite le istruzioni definite nel file di controllo del backup (**<CartellaInstallazioneConfigMgr\>\Inboxes\Smsbkup.box\Smsbkup.ctl**). È possibile modificare il file di controllo del backup per modificare il comportamento del servizio di backup. Le informazioni sullo stato di backup del sito vengono scritte nel file **Smsbkup.log** . Questo file viene creato nella cartella di destinazione specificata nelle proprietà dell'attività di manutenzione di Backup server sito.  
+ È possibile automatizzare il backup per i siti di Configuration Manager mediante la programmazione dell'attività di manutenzione Backup server sito predefinita. È possibile eseguire il backup di un sito di amministrazione centrale e di un sito primario, ma per i siti secondari o i server di sistema del sito il backup non è supportato. Durante l'esecuzione del servizio di backup di Configuration Manager vengono seguite le istruzioni definite nel file di controllo del backup (**&lt;CartellaInstallazioneConfigMgr\>\Inboxes\Smsbkup.box\Smsbkup.ctl**). È possibile modificare il file di controllo del backup per modificare il comportamento del servizio di backup. Le informazioni sullo stato di backup del sito vengono scritte nel file **Smsbkup.log** . Questo file viene creato nella cartella di destinazione specificata nelle proprietà dell'attività di manutenzione di Backup server sito.  
 
 
 ##### <a name="to-enable-the-site-backup-maintenance-task"></a>Per attivare l'attività di manutenzione di backup del sito  
@@ -114,7 +116,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
     -   **Unità locali nel server del sito e in SQL Server**: specifica che i file di backup per il sito vengono archiviati nel percorso indicato nell'unità locale del server del sito, mentre i file di backup per il database del sito vengono archiviati nel percorso indicato nell'unità locale del server di database del sito. È necessario creare le cartelle locali prima dell'esecuzione dell'attività di backup. L'account computer del server del sito deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella creata nel server del sito. L'account computer di SQL Server deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella creata nel server di database del sito. Questa opzione è disponibile solo quando il database del sito non è installato nel server del sito.  
 
     > [!NOTE]  
-    >   - L'opzione per selezionare la destinazione di backup è disponibile solo quando si specifica il percorso UNC della destinazione di backup.
+    >    - L'opzione per selezionare la destinazione di backup è disponibile solo quando si specifica il percorso UNC della destinazione di backup.
 
     > - Il nome della cartella o il nome condivisione usato per la destinazione di backup non supporta l'utilizzo di caratteri Unicode.  
 
@@ -137,7 +139,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   Se l'attività di manutenzione Backup server sito è configurata per la creazione di un avviso in caso di errore del backup, è possibile controllare il nodo **Avvisi** nell'area di lavoro **Monitoraggio** per verificare la presenza di errori.  
 
-    -   In <*CartellaInstallazioneConfigMgr*>\Logs esaminare Smsbkup.log per verificare la presenza di avvisi ed errori. Quando il backup del sito viene completato correttamente, viene visualizzato `Backup completed` con un timestamp e un ID messaggio `STATMSG: ID=5035`.  
+    -   In &lt;*CartellaInstallazioneConfigMgr*>\Logs esaminare Smsbkup.log per verificare la presenza di avvisi ed errori. Quando il backup del sito viene completato correttamente, viene visualizzato `Backup completed` con un timestamp e un ID messaggio `STATMSG: ID=5035`.  
 
     > [!TIP]  
     >  In caso di errore dell'attività di manutenzione di backup, è possibile riavviare l'attività di backup interrompendo e riavviando il servizio SMS_SITE_BACKUP.  
@@ -162,7 +164,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 -   Il sito potrebbe non avere alcuno snapshot di backup se, ad esempio, l'attività di manutenzione Backup server sito non fosse completata correttamente. Dal momento che l'attività di backup determina la rimozione dello snapshot di backup precedente prima di avviare il backup dei dati correnti, non ci sarà alcuno snapshot di backup valido.  
 
 ###  <a name="a-namebkmkusingafterbackupa-using-the-afterbackupbat-file"></a><a name="BKMK_UsingAfterBackup"></a> Uso del file AfterBackup.bat  
- Dopo aver eseguito correttamente il backup up del sito, l'attività Backup server sito prova a eseguire automaticamente un file denominato AfterBackup.bat. È necessario creare manualmente il file AfterBackup.bat in <*CartellaInstallazioneConfigMgr*>\Inboxes\Smsbkup. Se un file AfterBackup.bat è già presente ed è memorizzato nella cartella corretta, il file viene eseguito automaticamente al termine dell'attività di backup. Il file AfterBackup.bat consente di archiviare lo snapshot di backup al termine di ogni operazione di backup e di eseguire automaticamente altre attività post-backup che non rientrano nell'attività di manutenzione Backup server sito. Il file AfterBackup.bat integra l'archivio e le operazioni di backup, assicurando che ogni nuovo snapshot di backup sia archiviato. Quando il file AfterBackup.bat non è presente, questo passaggio viene ignorato dall'attività di backup senza effetto sull'operazione di backup. Per verificare che l'attività di backup del sito abbia eseguito correttamente il file AfterBackup.bat, vedere il nodo **Stato componente** nell'area di lavoro **Monitoraggio** e rivedere i messaggi di stato per SMS_SITE_BACKUP. Quando l'attività avvia correttamente il file di comando AfterBackup.bat, viene visualizzato il messaggio ID 5040.  
+ Dopo aver eseguito correttamente il backup up del sito, l'attività Backup server sito prova a eseguire automaticamente un file denominato AfterBackup.bat. È necessario creare manualmente il file AfterBackup.bat in &lt;*CartellaInstallazioneConfigMgr*>\Inboxes\Smsbkup. Se un file AfterBackup.bat è già presente ed è memorizzato nella cartella corretta, il file viene eseguito automaticamente al termine dell'attività di backup. Il file AfterBackup.bat consente di archiviare lo snapshot di backup al termine di ogni operazione di backup e di eseguire automaticamente altre attività post-backup che non rientrano nell'attività di manutenzione Backup server sito. Il file AfterBackup.bat integra l'archivio e le operazioni di backup, assicurando che ogni nuovo snapshot di backup sia archiviato. Quando il file AfterBackup.bat non è presente, questo passaggio viene ignorato dall'attività di backup senza effetto sull'operazione di backup. Per verificare che l'attività di backup del sito abbia eseguito correttamente il file AfterBackup.bat, vedere il nodo **Stato componente** nell'area di lavoro **Monitoraggio** e rivedere i messaggi di stato per SMS_SITE_BACKUP. Quando l'attività avvia correttamente il file di comando AfterBackup.bat, viene visualizzato il messaggio ID 5040.  
 
 > [!TIP]  
 >  Per creare il file AfterBackup.bat per archiviare i file di backup del server del sito, è necessario usare uno strumento di comando copia nel file batch come Robocopy. Ad esempio, è possibile creare il file AfterBackup.bat e aggiungere nella prima riga un stringa simile a quella indicata di seguito: `Robocopy E:\ConfigMgr_Backup \\ServerName\ShareName\ConfigMgr_Backup /MIR`. Per altre informazioni su Robocopy, vedere la pagina Web di riferimento della riga di comando [Robocopy](http://go.microsoft.com/fwlink/p/?LinkId=228408) .  
@@ -214,16 +216,16 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
 3.  Selezionare il sistema del sito che ospita il ruolo migrazione stato, quindi selezionare **Punto di migrazione stato** in **Ruoli sistema del sito**.  
 
-4.  Nella scheda **Ruolo del sito** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
+4.  Nella scheda **Ruolo del sito** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 5.  Nella sezione **Dettagli cartella** della scheda **Generale** vengono elencate le cartelle in cui sono archiviati i dati di migrazione sullo stato dell'utente.  
 
-##  <a name="a-namebkmkrecoversitea-recover-a-configuration-manager-site"></a><a name="BKMK_RecoverSite"></a> Ripristinare un sito di Configuration Manager  
+## <a name="recover-a-configuration-manager-site"></a>Ripristinare un sito di Configuration Manager
  È necessario ripristinare un sito di Configuration Manager ogni volta che si verifica un errore nel sito di Configuration Manager o una perdita di dati nel database del sito. La riparazione e la risincronizzazione dei dati sono le attività principali del ripristino di un sito e sono necessarie per evitare l'interruzione delle operazioni.  
 
 > [!IMPORTANT]  
 >  Quando si ripristina il database per un sito:  
->   
+
 >  -   È necessario usare la stessa versione ed edizione di SQL Server. Ad esempio, il ripristino di un database eseguito in SQL Server dalla versione 2012 alla 2014 non è supportato. Analogamente, non è supportato il ripristino di un database del sito eseguito in SQL Server dall'edizione Standard 2014 all'edizione Enterprise 2014.  
 > -   SQL Server non deve essere impostato sulla **modalità utente singolo**.  
 > -   Assicurarsi che i file MDF e LDF siano validi. Quando si ripristina un sito, non viene eseguita alcuna verifica dello stato dei file da ripristinare.  
@@ -233,7 +235,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
 > [!IMPORTANT]  
 >  Se si esegue il programma di installazione di Configuration Manager dal menu **Start** sul server del sito, l'opzione **Ripristina un sito** non sarà disponibile.  
->   
+
 >  Se sono stati installati aggiornamenti dalla console di Configuration Manager prima di eseguire il backup, non è possibile reinstallare il sito usando il programma di installazione dai supporti di installazione o dal percorso di installazione di Configuration Manager.  
 
 > [!NOTE]  
@@ -243,7 +245,6 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
  Ci sono due aree principali da tenere in considerazione per il ripristino del sito di amministrazione centrale e del server del sito primario di Configuration Manager: il server del sito e il database del sito. Usare le sezioni seguenti per determinare le opzioni da selezionare per lo scenario di ripristino.  
 
 > [!NOTE]  
->  In caso di errore durante un precedente tentativo di ripristino del sito o se si sta cercando di recuperare un sito non completamente disinstallato, è necessario selezionare **Disinstalla il sito di Configuration Manager** nel programma di installazione prima di scegliere di ripristinare il sito. Se il sito in cui si è verificato l'errore dispone di siti figlio, ed è richiesta la disinstallazione del sito, è necessario eliminare manualmente il database da questo sito prima di selezionare l'opzione **Disinstalla il sito di Configuration Manager**, altrimenti il processo di disinstallazione non sarà completato correttamente.  
 
 ####  <a name="a-namebkmksiteserverrecoveryoptionsa-site-server-recovery-options"></a><a name="BKMK_SiteServerRecoveryOptions"></a> Opzioni di ripristino del server del sito  
  È necessario avviare il programma di installazione da una copia della cartella CD.Latest creata esternamente alla cartella di installazione di Configuration Manager. Selezionare quindi l'opzione **Ripristina un sito** . Quando si esegue il programma di installazione, sono disponibili le seguenti opzioni di ripristino per il server del sito in cui si è verificato un errore:  
@@ -275,7 +276,11 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 -   **Ignora ripristino database**: usare questa opzione quando non si è verificata alcuna perdita di dati nel server di database del sito di Configuration Manager. Questa opzione è valida solo quando il database del sito si trova in un computer diverso rispetto al server del sito che si desidera ripristinare.  
 
 ####  <a name="a-namebkmksqlretentiona-sql-server-change-tracking-retention-period"></a><a name="bkmk_SQLretention"></a> Periodo di memorizzazione del rilevamento modifiche di SQL Server  
- Il rilevamento delle modifiche è abilitato per il database del sito in SQL Server. Il rilevamento delle modifiche consente a Configuration Manager di eseguire query per informazioni sulle modifiche apportate alle tabelle di database in seguito a un momento precedente. Il periodo di memorizzazione specifica per quanto tempo verranno conservate le informazioni di rilevamento delle modifiche. Per impostazione predefinita, il database del sito è configurato per un periodo di memorizzazione di 5 giorni. Quando si ripristina un database del sito, il processo di ripristino viene eseguito in modo diverso a seconda che il backup rientri o meno nel periodo di memorizzazione. Se, ad esempio, nel server di database del sito si verifica un errore e l'ultimo backup risale a 7 giorni fa, il backup è esterno al periodo di memorizzazione.  
+ Il rilevamento delle modifiche è abilitato per il database del sito in SQL Server. Il rilevamento delle modifiche consente a Configuration Manager di eseguire query per informazioni sulle modifiche apportate alle tabelle di database in seguito a un momento precedente. Il periodo di memorizzazione specifica per quanto tempo verranno conservate le informazioni di rilevamento delle modifiche. Per impostazione predefinita, il database del sito è configurato per un periodo di memorizzazione di 5 giorni. Quando si ripristina un database del sito, il processo di ripristino viene eseguito in modo diverso a seconda che il backup rientri o meno nel periodo di memorizzazione. Se, ad esempio, nel server di database del sito si verifica un errore e l'ultimo backup risale a 7 giorni fa, il backup è esterno al periodo di memorizzazione.
+
+ Per altre informazioni sui meccanismi interni di rilevamento delle modifiche di SQL Server, vedere i post di blog seguenti del team di SQL Server: [Change Tracking Cleanup - part 1](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-1) (Pulizia del rilevamento modifiche - parte 1) e [Change Tracking Cleanup - part 2](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-2) (Pulizia del rilevamento modifiche - parte 2).
+
+
 
 ####  <a name="a-namebkmkreinita-process-to-reinitialize-site-or-global-data"></a><a name="bkmk_reinit"></a> Processo per reinizializzare dati globali o del sito.  
  Il processo per reinizializzare i dati globali o i dati del sito sostituisce i dati esistenti nel database del sito con i dati di un altro database del sito. Quando ad esempio il sito ABC reinizializza i dati dal sito XYZ, vengono eseguiti i seguenti passaggi:  
@@ -428,7 +433,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** forse  
 
-    -   **Valori:** <ReferenceSiteFQDN\>  
+    -   **Valori:** &lt;FQDNSitoRiferimento\>  
 
     -   **Dettagli:** specifica il sito primario di riferimento usato dal sito di amministrazione centrale per il ripristino dei dati globali se il backup del database è antecedente al periodo di conservazione del rilevamento delle modifiche o se il sito viene ripristinato senza backup.  
 
@@ -442,7 +447,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** no  
 
-    -   **Valori:** <PathToSiteServerBackupSet\>  
+    -   **Valori:** &lt;PercorsoSetBackupServerSito\>  
 
     -   **Dettagli:** specifica il percorso del set di backup del server del sito. Questa chiave è facoltativa quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **2**. Specificare un valore affinché la chiave **SiteServerBackupLocation** ripristini il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
 
@@ -450,7 +455,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** forse  
 
-    -   **Valori:** <PathToSiteDatabaseBackupSet\>  
+    -   **Valori:** &lt;PercorsoSetBackupDatabaseSito\>  
 
     -   **Dettagli:** specifica il percorso del set di backup del database del sito. La chiave **BackupLocation** è richiesta quando viene configurato il valore **1** o **4** per la chiave **ServerRecoveryOptions** e viene configurato il valore **10** per la chiave **DatabaseRecoveryOptions** .  
 
@@ -472,7 +477,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <Codice sito\>  
+    -   **Valori:** &lt;Codice del sito\>  
 
     -   **Dettagli:** tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. È necessario specificare il codice del sito usato dal sito prima dell'errore.  
 
@@ -488,7 +493,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <*PercorsoInstallazioneConfigMgr*>  
+    -   **Values:** &lt;*PercorsoInstallazioneConfigMg*>  
 
     -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
 
@@ -499,7 +504,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <*FQDN del provider SMS*>  
+    -   **Valori:** &lt;*FQDN del provider SMS*>  
 
     -   **Dettagli:** specifica l'FQDN del server che ospiterà il provider SMS. È necessario specificare il server che ospitava il provider SMS prima dell'errore.  
 
@@ -521,7 +526,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <*PercorsoFilePrerequisitiInstallazione*>  
+    -   **Valori:** &lt;*PathToSetupPrerequisiteFiles*>  
 
     -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp** , il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare i file scaricati in precedenza.  
 
@@ -555,7 +560,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** *<NomeServerSQL\>*  
+    -   **Valori:** *&lt;NomeSQLServer\>*  
 
     -   **Dettagli:** nome del server, o nome dell'istanza in cluster, che esegue il sistema SQL Server in cui verrà ospitato il database del sito. È necessario specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.  
 
@@ -569,7 +574,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
          o  
 
-         *<NomeIstanza\>*\\*<NomeDatabaseSito\>*  
+         *&lt;NomeIstanza\>*\\*&lt;NomeDatabaseSito\>*  
 
     -   **Dettagli:** specifica il nome del database di SQL Server da creare o usare per installare il database del sito di amministrazione centrale. È necessario specificare lo stesso nome database usato prima dell'errore.  
 
@@ -580,7 +585,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** no  
 
-    -   **Valori:** <*NumeroPortaSSB*>  
+    -   **Valori:** &lt;*NumeroPortaSSB*>  
 
     -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. In genere, SSB è configurato per usare la porta TCP 4022, ma sono supportate anche altre porte. È necessario specificare la stessa porta SSB usata prima dell'errore.  
 
@@ -641,7 +646,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** no  
 
-    -   **Valori:** <PathToSiteServerBackupSet\>  
+    -   **Valori:** &lt;PercorsoSetBackupServerSito\>  
 
     -   **Dettagli:** specifica il percorso del set di backup del server del sito. Questa chiave è facoltativa quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **2**. Specificare un valore affinché la chiave **SiteServerBackupLocation** ripristini il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
 
@@ -649,7 +654,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** forse  
 
-    -   **Valori:** <PathToSiteDatabaseBackupSet\>  
+    -   **Valori:** &lt;PercorsoSetBackupDatabaseSito\>  
 
     -   **Dettagli:** specifica il percorso del set di backup del database del sito. La chiave **BackupLocation** è richiesta quando viene configurato il valore **1** o **4** per la chiave **ServerRecoveryOptions** e viene configurato il valore **10** per la chiave **DatabaseRecoveryOptions** .  
 
@@ -671,7 +676,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <Codice sito\>  
+    -   **Valori:** &lt;Codice del sito\>  
 
     -   **Dettagli:** tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. È necessario specificare il codice del sito usato dal sito prima dell'errore.  
 
@@ -687,7 +692,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <*PercorsoInstallazioneConfigMgr*>  
+    -   **Values:** &lt;*PercorsoInstallazioneConfigMg*>  
 
     -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
 
@@ -698,7 +703,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <*FQDN del provider SMS*>  
+    -   **Valori:** &lt;*FQDN del provider SMS*>  
 
     -   **Dettagli:** specifica l'FQDN del server che ospiterà il provider SMS. È necessario specificare il server che ospitava il provider SMS prima dell'errore.  
 
@@ -720,7 +725,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <*PercorsoFilePrerequisitiInstallazione*>  
+    -   **Valori:** &lt;*PathToSetupPrerequisiteFiles*>  
 
     -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp** , il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare i file scaricati in precedenza.  
 
@@ -754,7 +759,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** *<NomeServerSQL\>*  
+    -   **Valori:** *&lt;NomeSQLServer\>*  
 
     -   **Dettagli:** nome del server, o nome dell'istanza in cluster, che esegue il sistema SQL Server in cui verrà ospitato il database del sito. È necessario specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.  
 
@@ -768,7 +773,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
          o  
 
-         *<NomeIstanza\>*\\*<NomeDatabaseSito\>*  
+         *&lt;NomeIstanza\>*\\*&lt;NomeDatabaseSito\>*  
 
     -   **Dettagli:** specifica il nome del database di SQL Server da creare o usare per installare il database del sito di amministrazione centrale. È necessario specificare lo stesso nome database usato prima dell'errore.  
 
@@ -779,7 +784,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** no  
 
-    -   **Valori:** <*NumeroPortaSSB*>  
+    -   **Valori:** &lt;*NumeroPortaSSB*>  
 
     -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. In genere, SSB è configurato per usare la porta TCP 4022, ma sono supportate anche altre porte. È necessario specificare la stessa porta SSB usata prima dell'errore.  
 
@@ -789,7 +794,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** forse  
 
-    -   **Valori:** <*CodiceSitoAmministrazioneCentrale*>  
+    -   **Valori:** &lt;*CodiceSitoPerSitoAmministrazioneCentrale*>  
 
     -   **Dettagli:** specifica il sito di amministrazione centrale a cui si collegherà il sito primario quando verrà aggiunto alla gerarchia di Configuration Manager. Questa impostazione è necessaria se il sito primario era collegato a un sito di amministrazione centrale prima dell'errore. È necessario specificare il codice del sito usato dal sito di amministrazione centrale prima dell'errore.  
 
@@ -797,7 +802,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** no  
 
-    -   **Valori:** <*Intervallo*>  
+    -   **Valori:** &lt;*Intervallo*>  
 
     -   **Dettagli:** specifica l'intervallo (in minuti) tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato per CASRetryInterval e quindi tenta nuovamente di eseguire la connessione.  
 
@@ -805,7 +810,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Richiesto:** no  
 
-    -   **Valori:** <*Timeout*>  
+    -   **Valori:** &lt;*Timeout*>  
 
     -   **Dettagli:** specifica il valore di timeout massimo (in minuti) per la connessione di un sito primario al sito di amministrazione centrale. Se ad esempio un sito primario non riesce a connettersi al sito di amministrazione centrale, tale sito primario proverà nuovamente a connettersi al sito di amministrazione centrale in base a CASRetryInterval finché non viene raggiunto il periodo di WaitForCASTimeout. È possibile specificare un valore compreso tra 0 e 100.  
 
@@ -839,7 +844,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
  Dopo un ripristino del server di sito, è necessario immettere nuovamente le chiavi di trasferimento locale di Windows specificate per il sito perché queste vengono reimpostate durante il ripristino del sito. Dopo aver immesso nuovamente le chiavi di trasferimento locale, il conteggio nella colonna **Attivazioni usate** per le chiavi di trasferimento locale è reimpostato nella console di Configuration Manager. Supponiamo ad esempio che prima dell'errore del sito il conteggio **Attivazioni totali** sia impostato su **100** e **Attivazioni usate** su **90** per il numero di chiavi usate dai dispositivi. Dopo il ripristino del sito, la colonna **Attivazioni totali** visualizza ancora **100**, ma la colonna **Attivazioni usate** visualizza erroneamente **0**. Tuttavia successivamente all'uso da parte di 10 nuovi dispositivi di una chiave di trasferimento locale, non esisteranno chiavi di trasferimento locale residue e per il dispositivo successivo sarà impossibile applicare una chiave di trasferimento locale.  
 
 #### <a name="recreate-the-microsoft-intune-subscription"></a>Ricreare la sottoscrizione di Microsoft Intune  
- Se si ripristina un server del sito di Configuration Manager dopo aver ricreato l'immagine del computer server del sito, la sottoscrizione di Microsoft Intune non viene ripristinata. Dopo aver ripristinato il sito, è necessario ricreare la sottoscrizione. Per ulteriori informazioni, vedere [Configuring the Microsoft Intune subscription](../../mdm/deploy-use/setup-hybrid-mdm.md#step-3-configure-intune-subscription).  
+ Se si ripristina un server del sito di Configuration Manager dopo aver ricreato l'immagine del computer server del sito, la sottoscrizione di Microsoft Intune non viene ripristinata. Dopo aver ripristinato il sito, è necessario riconnettersi alla sottoscrizione.  Non creare una nuova richiesta di APN, ma caricare invece il file PEM valido corrente caricato in occasione dell'ultima configurazione o dell'ultimo rinnovo della gestione iOS. Per ulteriori informazioni, vedere [Configuring the Microsoft Intune subscription](../../mdm/deploy-use/setup-hybrid-mdm.md#step-3-configure-intune-subscription).  
 
 #### <a name="configure-ssl-for-site-system-roles-that-use-iis"></a>Configurare SSL per i ruoli del sistema del sito che usano IIS  
  Quando si ripristinano sistemi del sito che eseguono IIS e che erano configurati per HTTPS prima dell'errore, è necessario riconfigurare IIS per usare il certificato server Web.  
@@ -898,7 +903,7 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
  SMS Writer è un servizio che interagisce con Servizio Copia Shadow del volume (VSS) durante il processo di backup. Per la corretta esecuzione del backup del sito di Configuration Manager è necessario che SMS Writer sia in esecuzione.  
 
 ### <a name="purpose"></a>Scopo  
- SMS Writer esegue la registrazione al servizio VSS e associa le interfacce e gli eventi. Quando VSS trasmette gli eventi o invia determinate notifiche a SMS Writer, questo risponde alla notifica ed esegue l'azione appropriata. SMS Writer legge il file di controllo del backup (smsbkup.ctl), disponibile in <*percorso installazione ConfigMgr*>\inboxes\smsbkup.box, e determina i file e i dati di cui eseguire il backup. SMS Writer crea i metadati, composti da vari componenti, in base a tali informazioni e a dati specifici provenienti dalla chiave e dalle sottochiavi di registro SMS. Quando richiesto invia i metadati a VSS. VSS invia quindi i metadati all'applicazione richiedente: Gestione backup di Configuration Manager. Gestione backup seleziona i dati di cui eseguire il backup e li invia a SMS Writer tramite VSS. SMS Writer esegue i passaggi appropriati per la preparazione del backup. Quando VSS è pronto per lo snapshot, invia un evento. A quel punto SMS Writer interrompe tutti i servizi di Configuration Manager e garantisce che le attività di Configuration Manager vengano bloccate durante la creazione dello snapshot. In seguito al completamento dello snapshot, SMS Writer riavvia i servizi e le attività.  
+ SMS Writer esegue la registrazione al servizio VSS e associa le interfacce e gli eventi. Quando VSS trasmette gli eventi o invia determinate notifiche a SMS Writer, questo risponde alla notifica ed esegue l'azione appropriata. SMS Writer legge il file di controllo del backup (smsbkup.ctl), disponibile in &lt;*Percorso installazione ConfigMgr*>\inboxes\smsbkup.box, e determina i file e i dati di cui eseguire il backup. SMS Writer crea i metadati, composti da vari componenti, in base a tali informazioni e a dati specifici provenienti dalla chiave e dalle sottochiavi di registro SMS. Quando richiesto invia i metadati a VSS. VSS invia quindi i metadati all'applicazione richiedente: Gestione backup di Configuration Manager. Gestione backup seleziona i dati di cui eseguire il backup e li invia a SMS Writer tramite VSS. SMS Writer esegue i passaggi appropriati per la preparazione del backup. Quando VSS è pronto per lo snapshot, invia un evento. A quel punto SMS Writer interrompe tutti i servizi di Configuration Manager e garantisce che le attività di Configuration Manager vengano bloccate durante la creazione dello snapshot. In seguito al completamento dello snapshot, SMS Writer riavvia i servizi e le attività.  
 
  Il servizio SMS Writer viene installato automaticamente. Deve essere eseguito quando l'applicazione VSS richiede un backup o un ripristino.  
 
@@ -913,6 +918,6 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO2-->
 
 

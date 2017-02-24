@@ -2,7 +2,7 @@
 title: Gestire le app da Windows Store per le aziende | Microsoft Docs
 description: Gestire e distribuire le app da Windows Store per le aziende usando System Center Configuration Manager.
 ms.custom: na
-ms.date: 11/19/2016
+ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,15 +16,15 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3847a85c11d7b72b84095ba9add563bdf5c49a75
-ms.openlocfilehash: 605cdd01d767dda3467198f5e6539448f9b559f6
+ms.sourcegitcommit: f955b5aadfc617e08d5d933dee8e42de838f83c0
+ms.openlocfilehash: bf2937f5ba86db19d9cb40e2c98cbb8ba365f7eb
 
 ---
 # <a name="manage-apps-from-the-windows-store-for-business-with-system-center-configuration-manager"></a>Gestire le app da Windows Store per le aziende con System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-In [Windows Store per le aziende](https://www.microsoft.com/business-store) è possibile trovare e acquistare app Windows per l'organizzazione, con contratti singoli o multilicenza. Collegando lo Store a Configuration Manager è possibile sincronizzare l'elenco delle app acquistate, visualizzarle nella console di Configuration Manager e distribuirle come qualsiasi altra app.
+In [Windows Store per le aziende](https://www.microsoft.com/business-store) è possibile trovare e acquistare app Windows per l'organizzazione, con contratti singoli o multilicenza. Collegando lo Store a Configuration Manager è possibile sincronizzare l'elenco delle app acquistate con Configuration Manager, visualizzarle nella console di Configuration Manager e distribuirle come qualsiasi altra app.
 
 
 ## <a name="online-and-offline-apps"></a>App online e offline
@@ -74,9 +74,9 @@ Because this is a pre-release feature, before you can connect Configuration Mana
 > [!IMPORTANT]
 > Quando si configura una connessione tra Configuration Manager e Windows Store per le aziende, è necessario specificare una cartella in cui verranno mantenuti i contenuti delle app sincronizzati dall'archivio.
 Per assicurarsi che questa cartella sia protetta e che il relativo contenuto possa essere distribuito ai dispositivi, verificare che siano disponibili le autorizzazioni seguenti:
--   Il computer in cui si installa il ruolo del sistema del sito del punto di connessione del servizio (sito di livello superiore nella gerarchia) deve essere in possesso delle autorizzazioni lettura e scrittura per la cartella specificata quando si usa l'account **Computer$**.
--   L'autore di app deve essere in possesso delle autorizzazioni di lettura per la cartella specificata.
--   L'account **Computer$** di ogni computer che ospita un'istanza del provider SMS deve essere in grado di usare la cartella specificata.
+-    Il computer in cui si installa il ruolo del sistema del sito del punto di connessione del servizio (sito di livello superiore nella gerarchia) deve essere in possesso delle autorizzazioni lettura e scrittura per la cartella specificata quando si usa l'account **Computer$**.
+-    L'autore di app deve essere in possesso delle autorizzazioni di lettura per la cartella specificata.
+-    L'account **Computer$** di ogni computer che ospita un'istanza del provider SMS deve essere in grado di usare la cartella specificata.
 
 
 In Azure Active Directory registrare Configuration Manager come strumento di gestione Applicazione Web o API Web. Si riceverà un ID client che sarà necessario in seguito.
@@ -98,6 +98,9 @@ In Windows Store per le aziende configurare Configuration Manager come strumento
 5.  Scegliere **Attiva** accanto all'applicazione appena importata.
 6.  Nella pagina **Gestisci > Informazioni account** selezionare **Show Offline-Licensed Apps** (Mostra app con licenza offline) per consentire l'acquisto di app con licenza offline.
 
+> [!Note]
+> Se si usano più strumenti di gestione per distribuire le app di Windows Store per le aziende, in precedenza era possibile associarne solo uno a Windows Store per le aziende. Ora è possibile associare più strumenti di gestione allo Store, ad esempio Intune e Configuration Manager.
+
 Aggiungere l'account dello Store in Configuration Manager.
 
 1. Acquistare almeno un'app da Windows Store per le aziende. Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e scegliere **Windows Store per le aziende**.
@@ -107,10 +110,10 @@ Aggiungere l'account dello Store in Configuration Manager.
 
 Modificare le lingue dell'applicazione che verranno visualizzate nel Catalogo applicazioni per il download.
 
-1.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager scegliere **Servizi cloud** > **Aggiornamenti e manutenzione** > **Windows Store per le aziende**.
-2.  Selezionare l'account Windows Store per le aziende e scegliere **Proprietà**.
-3.  Selezionare la scheda **Lingua**.
-4.  Aggiungere o rimuovere le lingue che verranno visualizzate nel Catalogo applicazioni. Selezionare la lingua predefinita del Catalogo applicazioni che verrà resa disponibile agli utenti.
+1.    Nell'area di lavoro **Amministrazione** della console di Configuration Manager scegliere **Servizi cloud** > **Aggiornamenti e manutenzione** > **Windows Store per le aziende**.
+2.    Selezionare l'account Windows Store per le aziende e scegliere **Proprietà**.
+3.    Selezionare la scheda **Lingua**.
+4.    Aggiungere o rimuovere le lingue che verranno visualizzate nel Catalogo applicazioni. Selezionare la lingua predefinita del Catalogo applicazioni che verrà resa disponibile agli utenti.
 
 >[!IMPORTANT]
 >In questa versione, se si modificano le lingue che verranno sincronizzate, è necessario riavviare il servizio SMS Executive nel server del sito prima di rendere effettive le impostazioni della lingua.
@@ -118,17 +121,17 @@ Modificare le lingue dell'applicazione che verranno visualizzate nel Catalogo ap
 
 Modificare la chiave privata del client da Azure Active Directory.
 
-1.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager scegliere **Servizi cloud** > **Aggiornamenti e manutenzione** > **Windows Store per le aziende**.
-2.  Selezionare l'account Windows Store per le aziende e scegliere **Proprietà**.
-3.  Nella finestra di dialogo **Windows Store for Business Account Properties** (Proprietà account Windows Store per le aziende) immettere una nuova chiave nel campo **Client secret key** (Chiave privata client) e scegliere **Verifica**. Al termine della verifica, fare clic su **Applica** e chiudere la finestra di dialogo.
+1.    Nell'area di lavoro **Amministrazione** della console di Configuration Manager scegliere **Servizi cloud** > **Aggiornamenti e manutenzione** > **Windows Store per le aziende**.
+2.    Selezionare l'account Windows Store per le aziende e scegliere **Proprietà**.
+3.    Nella finestra di dialogo **Windows Store for Business Account Properties** (Proprietà account Windows Store per le aziende) immettere una nuova chiave nel campo **Client secret key** (Chiave privata client) e scegliere **Verifica**. Al termine della verifica, fare clic su **Applica** e chiudere la finestra di dialogo.
 
-## <a name="synch-apps-from-the-store-with-configuration-manager"></a>Sincronizzare le app dallo Store con Configuration Manager
+## <a name="sync-apps-from-the-store-with-configuration-manager"></a>Sincronizzare le app dallo Store con Configuration Manager
 
 La sincronizzazione viene eseguita ogni 24 ore, oppure è possibile avviare una sincronizzazione immediata con la procedura seguente:
 
 1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager scegliere **Servizi cloud** > **Aggiornamenti e manutenzione** > **Windows Store per le aziende**.
-3.  Nella scheda **Home** nel gruppo **Sincronizza** scegliere **Sincronizza ora**.
-4.  L'app acquistata viene visualizzata nel nodo **Informazioni di licenza per le app dello Store** dell'area di lavoro **Gestione applicazioni**.
+3.    Nella scheda **Home** nel gruppo **Sincronizza** scegliere **Sincronizza ora**.
+4.    L'app acquistata viene visualizzata nel nodo **Informazioni di licenza per le app dello Store** dell'area di lavoro **Gestione applicazioni**.
 
 
 ## <a name="create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-app"></a>Creare e distribuire un'applicazione di Configuration Manager da un'app di Windows Store per le aziende
@@ -150,6 +153,6 @@ Per ogni app dello Store gestita è possibile visualizzare informazioni che incl
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 

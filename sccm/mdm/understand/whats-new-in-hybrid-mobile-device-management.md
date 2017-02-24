@@ -2,7 +2,7 @@
 title: "Novità della gestione ibrida di dispositivi mobili | Documentazione Microsoft"
 description: "Informazioni sulle nuove funzionalità di gestione dei dispositivi mobili disponibili per le distribuzioni ibride con System Center Configuration Manager e Intune."
 ms.custom: na
-ms.date: 01/12/2017
+ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 07578e3aaa93a06a2fa90e72de2b7c71ce2a14b9
-ms.openlocfilehash: f405514402d7140e26bff6da5e8c2759a80b8a7f
+ms.sourcegitcommit: 7972aa2c39f5b86e69087b1ed5a1c3b50ba69940
+ms.openlocfilehash: f74bd019b5403f3f5702795279759270261ce4db
 
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con System Center Configuration Manager e Microsoft Intune
@@ -34,7 +34,21 @@ Questo articolo illustra le nuove funzionalità di gestione dei dispositivi mobi
 |-|-|
 |**Novità di Microsoft Intune** | In generale, tutte le funzionalità elencate in questa categoria devono funzionare con tutte le versioni di Configuration Manager, incluse le versioni di System Center 2012 R2 Configuration Manager, poiché richiedono solo il servizio Intune e non richiedono altre funzionalità di Configuration Manager.|
 |**Novità di Configuration Manager Technical Preview**| Tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Technical Preview specificata. Per provare queste funzionalità, è necessario installare la versione di Technical Preview specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md).|
-|**Novità di Configuration Manager (Current Branch)**| Tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata, ad esempio la versione 1511 o 1602. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, è necessario eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Upgrade to System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md) (Eseguire l'aggiornamento a System Center Configuration Manager).|
+|**Novità di Configuration Manager (Current Branch)**| Tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata, ad esempio la versione 1511 o 1602. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, è necessario eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere l'articolo relativo agli [aggiornamenti a System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
+
+## <a name="new-hybrid-features-in-february-2017"></a>Nuove funzionalità ibride (febbraio 2017)
+
+### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
+
+Le funzionalità seguenti di Intune introdotte a febbraio 2017 funzionano nelle distribuzioni ibride:
+
+- **Modernizzazione del sito Web del portale aziendale**
+
+  Il sito Web del portale aziendale supporta app rivolte agli utenti che non hanno dispositivi gestiti. Il sito Web si allinea ad altri prodotti e servizi Microsoft usando una nuova combinazione di colori a contrasto, illustrazioni dinamiche e un "menu hamburger" che contiene i dettagli di contatto del supporto tecnico e le informazioni sui dispositivi gestiti esistenti. La pagina di destinazione è stata riorganizzata per evidenziare le app a disposizione degli utenti, con sequenze per le app in evidenza e aggiornate di recente. Nella pagina [UI updates](/intune/whats-new/whats-new-in-intune-app-ui) (Aggiornamenti dell'interfaccia utente) sono disponibili immagini precedenti e successive all'aggiornamento.
+
+- **Nuovo indirizzo del server MDM per dispositivi Windows**
+
+  L'indirizzo del server MDM per la registrazione dei dispositivi Windows e Windows Phone è cambiato da manage.microsoft.com a enrollment.manage.microsoft.com. Comunicare agli utenti di usare enrollment.manage.microsoft.com come indirizzo del server MDM, se richiesto, durante la registrazione di un dispositivo Windows o Windows Phone. Questo aggiornamento richiede anche la sostituzione di qualsiasi CNAME in DNS che reindirizza EnterpriseEnrollment.contoso.com a manage.microsoft.com con un CNAME in DNS che reindirizzi EnterpriseEnrollment.contoso.com a EnterpriseEnrollment-s.manage.microsoft.com. Per altre informazioni su questa modifica, visitare http://aka.ms/intuneenrollsvrchange. 
 
 ## <a name="new-hybrid-features-in-january-2017"></a>Nuove funzionalità ibride (gennaio 2017)
 
@@ -71,20 +85,20 @@ Le funzionalità seguenti di Intune introdotte in dicembre 2016 funzionano nelle
 
   L'app Portale aziendale per Android è ora disponibile in Cina. A causa dell'assenza di Google Play Store in Cina, i dispositivi Android devono ottenere le app da marketplace di app cinesi. L'app Portale aziendale per Android è disponibile per il download negli store seguenti:
 
-  - [Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
-  - [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)
-  - [Tencent](https://go.microsoft.com/fwlink/?linkid=836949)
-  - [Wandoujia](https://go.microsoft.com/fwlink/?linkid=836950)
-  - [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947)
+  -    [Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
+  -    [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)
+  -    [Tencent](https://go.microsoft.com/fwlink/?linkid=836949)
+  -    [Wandoujia](https://go.microsoft.com/fwlink/?linkid=836950)
+  -    [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947)
 
   L'app Portale aziendale per Android usa Google Play Services per comunicare con il servizio Microsoft Intune. Poiché Google Play Services non è ancora disponibile in Cina, per eseguire una delle attività seguenti possono essere necessarie fino a 8 ore.
 
   | Console di amministrazione di Configuration Manager | App Portale aziendale di Intune per Android | Sito Web dell'app Portale aziendale di Intune |
-  |----|----|----|      
-  | Disattiva/Cancella (rimuovere tutti i dati)   | Rimuovere un dispositivo remoto | Rimuovi dispositivo (locale e remoto) |
-  | Disattiva/Cancella (rimuovere i dati aziendali)   | Reimposta dispositivo | Reimposta dispositivo|
+  |----|----|----|        
+  | Disattiva/Cancella (rimuovere tutti i dati)    | Rimuovere un dispositivo remoto | Rimuovi dispositivo (locale e remoto) |
+  | Disattiva/Cancella (rimuovere i dati aziendali)    | Reimposta dispositivo | Reimposta dispositivo|
   | Distribuzioni di app nuove o aggiornate | Installare le app line-of-business disponibili | Reimpostazione del passcode del dispositivo|
-  | Blocco remoto | | |
+  | Blocco remoto    | | |
   | Reimpostazione del passcode | | |        
 
 
@@ -153,9 +167,9 @@ Il supporto per System Center 2012 Configuration Manager SP1 e System Center 201
 Se si esegue una distribuzione ibrida con Configuration Manager 2012 SP1 o R2 RTM, è consigliabile eseguire l'aggiornamento a Configuration Manager (Current Branch) o al Service Pack supportato più recente per Configuration Manager 2012 (R2 SP1 o SP2) prima del 10 aprile 2017 per evitare l'interruzione del servizio.
 
 Risorse aggiuntive:
--   [Eseguire l'aggiornamento a System Center Configuration Manager (Current Branch)](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)
--   [Pianificazione dell'aggiornamento a System Center 2012 R2 Configuration Manager SP1](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningR2SP1Upgrade)
--   [Pianificazione dell'aggiornamento a System Center 2012 Configuration Manager SP2](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningSP2Upgrade)
+-    [Eseguire l'aggiornamento a System Center Configuration Manager (Current Branch)](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)
+-    [Pianificazione dell'aggiornamento a System Center 2012 R2 Configuration Manager SP1](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningR2SP1Upgrade)
+-    [Pianificazione dell'aggiornamento a System Center 2012 Configuration Manager SP2](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningSP2Upgrade)
 
 ### <a name="windows-phone-8-company-portal-upload-deprecated"></a>Il caricamento del portale aziendale per Windows Phone 8 è deprecato
 *25 ottobre 2016*
@@ -170,6 +184,6 @@ L'opzione che consente di caricare un'app Portale aziendale firmata è stata rim
 
 
 
-<!--HONumber=Jan17_HO4-->
+<!--HONumber=Feb17_HO2-->
 
 

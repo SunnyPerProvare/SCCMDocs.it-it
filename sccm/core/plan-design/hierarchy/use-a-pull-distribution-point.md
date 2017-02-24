@@ -2,7 +2,7 @@
 title: Punto di distribuzione pull | Microsoft Docs
 description: Informazioni sulle configurazioni e le limitazioni per l&quot;uso di un punto di distribuzione pull con System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 2/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: f94d928244699c1c926dca05823f0029c588c7f1
+ms.sourcegitcommit: 9b366262ae59a8cb57c0f1760b961194d17bcf52
+ms.openlocfilehash: db5039ff6cb93e3099b096196d49a1f06c315a6b
 
 
 ---
@@ -48,7 +48,7 @@ I punti di distribuzione pull supportano le stesse configurazioni e funzionalit�
 
 -   Quando il Package Transfer Manager conferma la disponibilità del contenuto, viene inviata una notifica al punto di distribuzione pull con la richiesta di scaricare il contenuto. Quando riceve questa notifica, il punto di distribuzione pull tenta di scaricare il contenuto dai relativi punti di distribuzione di origine.  
 
--   Al termine del download del contenuto, lo stato del punto di distribuzione pull viene inviato a un punto di gestione. Se, tuttavia, dopo 60 minuti questo stato non viene ricevuto, viene riattivato Package Transfer Manager e viene eseguita una verifica con il punto di distribuzione pull per confermare se il contenuto è stato scaricato. Se il download del contenuto è in corso, Package Transfer Manager rimane inattivo per 60 minuti prima di eseguire nuovamente una verifica con il punto di distribuzione pull. Questo ciclo continua fino a quando il punto di distribuzione pull non ha completato il trasferimento del contenuto.  
+-   Al termine del download del contenuto, lo stato del punto di distribuzione pull viene inviato a un punto di gestione. Se però dopo 60 minuti questo stato non viene ricevuto, viene riattivato Package Transfer Manager e viene eseguita una verifica sul punto di distribuzione pull per controllare che il contenuto sia stato scaricato. Se il download del contenuto è in corso, Package Transfer Manager rimane inattivo per 60 minuti prima di eseguire nuovamente una verifica con il punto di distribuzione pull. Questo ciclo continua fino a quando il punto di distribuzione pull non ha completato il trasferimento del contenuto.  
 
 **È possibile configurare un punto di distribuzione pull** quando si installa il punto di distribuzione o dopo averlo installato modificando le proprietà del ruolo del sistema del sito del punto di distribuzione.  
 
@@ -67,9 +67,9 @@ I punti di distribuzione pull supportano le stesse configurazioni e funzionalit�
     > [!NOTE]  
     >  Se un punto di distribuzione è configurato come un punto di distribuzione pull, la scheda **Limiti di velocità** non è visibile nelle proprietà del punto di distribuzione.  
 
--   Un punto di distribuzione pull non usa l'opzione **Impostazioni tentativi** per la distribuzione del contenuto. **Impostazioni tentativi** può essere configurata come parte di **Proprietà componente distribuzione software** per ogni sito. Per visualizzare o configurare queste proprietà, nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Configurazione del sito**, quindi selezionare **Siti**. Nel riquadro dei dettagli, selezionare un sito e quindi nella scheda **Home** selezionare **Configura componenti del sito**e selezionare **Distribuzione software**.  
+-   Un punto di distribuzione pull non usa l'opzione **Impostazioni tentativi** per la distribuzione del contenuto. **Impostazioni tentativi** può essere configurata come parte di **Proprietà componente distribuzione software** per ogni sito. Per visualizzare o configurare queste proprietà, nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Configurazione del sito**, quindi selezionare **Siti**. Selezionare un sito nel riquadro dei risultati e quindi selezionare **Configura componenti del sito** nella scheda **Home**. Infine selezionare **Distribuzione software**.  
 
--   Per trasferire contenuto da un punto di distribuzione di origine in una foresta remota, nel computer che ospita il punto di distribuzione pull deve essere installato un client di Configuration Manager ed essere configurato un account di accesso alla rete in grado di accedere al punto di distribuzione di origine.  
+-   Per trasferire contenuto da un punto di distribuzione di origine in una foresta remota, nel computer che ospita il punto di distribuzione pull deve essere installato un client di Configuration Manager. Un account di accesso alla rete che può accedere al punto di distribuzione di origine deve essere configurato per l'utilizzo.  
 
 -   In un computer configurato come un punto di distribuzione pull e che esegue un client di Configuration Manager la versione del client deve essere identica a quella del sito di Configuration Manager che installa il punto di distribuzione pull. Di conseguenza, è necessario usare il componente CCMFramework comune al punto di distribuzione pull e al client di Configuration Manager.  
 
@@ -80,7 +80,7 @@ I punti di distribuzione pull supportano le stesse configurazioni e funzionalit�
 
 -   Un punto di distribuzione pull può essere specificato come un punto di distribuzione di origine per un altro punto di distribuzione pull.  
 
--   Quando si usa Configuration Manager solo i punti di distribuzione che supportano HTTP possono essere specificati come punti di distribuzione di origine.  
+-   Quando si usa la console di Configuration Manager, solo i punti di distribuzione che supportano HTTP possono essere specificati come punti di distribuzione di origine.  
 
 -   È possibile usare Configuration Manager SDK per specificare un punto di distribuzione di origine configurato per HTTPS. Per usare un punto di distribuzione di origine configurato per HTTPS, il percorso del punto di distribuzione pull deve essere condiviso in un computer che esegue il client di Configuration Manager.  
 
@@ -103,7 +103,7 @@ Un punto di distribuzione pull che scarica contenuto da un punto di distribuzion
 ## <a name="about-content-transfers"></a>Informazioni sui trasferimenti di contenuto  
  Per gestire il trasferimento del contenuto, i punti di distribuzione pull usano il componente **CCMFramework** del software client di Configuration Manager.  
 
--   Questa struttura viene installata da **Pulldp.msi** quando si configura il punto di distribuzione come un punto di distribuzione pull e non richiede l'installazione del client di Configuration Manager.  
+-   Questo framework viene installato da **Pulldp.msi** quando si configura il punto di distribuzione come punto di distribuzione pull. Non richiede l'installazione del client di Configuration Manager.  
 
 -   Al termine dell'installazione del punto di distribuzione pull, il servizio CCMExec nel computer del punto di distribuzione deve essere operativo per il funzionamento del punto di distribuzione pull.  
 
@@ -114,6 +114,6 @@ Un punto di distribuzione pull che scarica contenuto da un punto di distribuzion
 
 
 
-<!--HONumber=Dec16_HO3-->
+<!--HONumber=Feb17_HO3-->
 
 
