@@ -2,7 +2,7 @@
 title: Punto di distribuzione basato su cloud | Microsoft Docs
 description: Informazioni sulle configurazioni e le limitazioni per l&quot;uso di un punto di distribuzione basato sul cloud con System Center Configuration Manager.
 ms.custom: na
-ms.date: 2/14/2017
+ms.date: 2/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8800a497a8c1e26b89ad3817ee2c15258bd1d5c5
-ms.openlocfilehash: f9164eeb19027366525ebc41640c82de3a606e4d
+ms.sourcegitcommit: 97051d9c65ef5ea28c94468b24863120624e8de0
+ms.openlocfilehash: b78b3b20a8b317a242cd06f9fda6326f41673915
 
 
 ---
@@ -185,9 +185,7 @@ I client che usano i punti di distribuzione basati sul cloud usano la sequenza s
 
 3.  In assenza di un punto di distribuzione preferito o remoto disponibile, il client può cercare di ottenere il contenuto da un punto di distribuzione basato su cloud.  
 
-    > [!NOTE]  
-        >  I client su Internet che ricevono sia un punto di distribuzione basato su Internet sia un punto di distribuzione basato su cloud come percorsi del contenuto per una distribuzione cercano di recuperare il contenuto solo dal punto di distribuzione basato su Internet. Se il client su Internet non riesce a recuperare il contenuto dal punto di distribuzione basato su Internet, non tenta di accedere al punto di distribuzione basato su cloud.  
-
+    
 
   Quando un client usa un punto di distribuzione basato su cloud come un percorso del contenuto, si autentica a tale punto di distribuzione usando un token di accesso di Configuration Manager. Se il client considera attendibile il certificato del punto di distribuzione basato su cloud di Configuration Manager, può scaricare il contenuto richiesto.  
 
@@ -217,6 +215,6 @@ I client che usano i punti di distribuzione basati sul cloud usano la sequenza s
 
 
 
-<!--HONumber=Feb17_HO3-->
+<!--HONumber=Feb17_HO4-->
 
 
