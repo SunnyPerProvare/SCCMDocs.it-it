@@ -16,8 +16,9 @@ author: nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 4688b4b12a7afa5fcfdc0e42f984271d98f10316
-ms.openlocfilehash: d2d888edf51d46a2dd13ef6b7ed39c066179a088
+ms.sourcegitcommit: bdd7961d9126dc6f3c1ae1fec1842c862e8a7c6d
+ms.openlocfilehash: 12633a7b9f799ffc74e0ee657e091595ed7eaf67
+ms.lasthandoff: 02/22/2017
 
 ---
 # <a name="supported-operating-systems-for-clients-and-devices-for-system-center-configuration-manager"></a>Sistemi operativi supportati per client e dispositivi per System Center Configuration Manager
@@ -34,13 +35,13 @@ ms.openlocfilehash: d2d888edf51d46a2dd13ef6b7ed39c066179a088
 -   Non è consentito installare o eseguire il client di Configuration Manager per Linux o UNIX o il client per Mac nei computer con un account diverso dall'account radice. In caso contrario, i servizi principali potrebbero non funzionare correttamente.  
 
 ##  <a name="windows-computers"></a>Computer Windows  
- È possibile gestire i computer Windows con il client di Configuration Manager incluso in Configuration Manager. Per altre informazioni, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-windows-computers.md).  
+ È possibile usare il client di Configuration Manager incluso con Configuration Manager per gestire i sistemi operativi Windows seguenti. Per altre informazioni, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-windows-computers.md).  
 
 **Sistemi operativi supportati:**  
 
+
 -  **Windows Server 2016** - Standard, Datacenter <sup>1</sup>
   - Questo sistema operativo è supportato a partire da Configuration Manager versione 1606 con l'hotfix rollup di KB3186654 o dalla versione 1606 di base rilasciata nell'ottobre del 2016.  
-
 
 -   **Windows Server 2012 R2** (x64) - Standard, Datacenter <sup>1</sup>    
 
@@ -56,9 +57,8 @@ ms.openlocfilehash: d2d888edf51d46a2dd13ef6b7ed39c066179a088
 
 -   **Windows  Server 2008 con SP2** (x86, x64) - Standard, Enterprise, Datacenter <sup>1</sup>    
 
--   **Windows 10 Enterprise LTSB** (x86, x64) <sup>3</sup>    
-
--   **Windows 10** (x86, x64) - Pro, Enterprise    
+-   **Windows 10**: Pro, Enterprise  
+   Vedere [Support for versions of Windows 10](/sccm/core/plan-design/configs/support-for-windows-10) (Supporto delle versioni di Windows 10) per informazioni dettagliate sulle diverse versioni di rilascio di Windows 10 supportate dalle varie versioni di Configuration Manager.
 
 -   **Windows 8.1** (x86, x64) - Professional, Enterprise    
 
@@ -83,7 +83,6 @@ ms.openlocfilehash: d2d888edf51d46a2dd13ef6b7ed39c066179a088
 
  <sup>2</sup> Per supportare l'installazione push client, il computer che esegue questa versione del sistema operativo deve eseguire il servizio ruolo File server per il ruolo del server Servizi file e archiviazione. Per altre informazioni sull'installazione di funzionalità di Windows in un computer Server Core, vedere [Installare i ruoli e le funzionalità server in un server Server Core](http://go.microsoft.com/fwlink/p/?LinkId=299359) nella libreria TechNet per Windows Server 2012.  
 
- <sup>3</sup> L'uso di questo sistema operativo richiede Configuration Manager versione 1602 o successiva.  
 
 ##  <a name="windows-embedded-computers"></a>Computer Windows Embedded  
  È possibile gestire i dispositivi Windows Embedded installando il software client di Configuration Manager nel dispositivo.  Per altre informazioni, vedere [Planning for client deployment to Windows Embedded devices in System Center Configuration Manager](../../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md) (Pianificazione della distribuzione client a dispositivi con Windows Embedded in System Center Configuration Manager).  
@@ -349,9 +348,4 @@ Configuration Manager supporta la gestione limitata dei dispositivi che si conne
 -   **Exchange Server 2013**  
 
 -   **Exchange Online (Office 365)**: include Business Productivity Online Standard Suite  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

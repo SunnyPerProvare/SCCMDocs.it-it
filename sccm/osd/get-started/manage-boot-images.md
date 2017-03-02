@@ -17,8 +17,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
-ms.openlocfilehash: 3b7125e782b60853e750aeb7ba923490e46a76b0
+ms.sourcegitcommit: 4edf7d09d39fa22fb5812aecc88febd763001eba
+ms.openlocfilehash: 369aa062d0f38eedebc0a7c351a7ce67b53d199b
+ms.lasthandoff: 02/21/2017
 
 
 ---
@@ -29,11 +30,11 @@ ms.openlocfilehash: 3b7125e782b60853e750aeb7ba923490e46a76b0
 Un'immagine d'avvio in Configuration Manager è un'immagine [Windows PE (WinPE)](https://msdn.microsoft.com/library/windows/hardware/dn938389%28v=vs.85%29.aspx) usata durante la distribuzione di un sistema operativo. Le immagini d'avvio vengono usate per avviare un computer in Windows PE, un sistema operativo minimo con componenti e servizi limitati che prepara il computer di destinazione per l'installazione di Windows.  Usare le sezioni seguenti per gestire le immagini d'avvio.
 
 ##  <a name="a-namebkmkbootimagedefaulta-default-boot-images"></a><a name="BKMK_BootImageDefault"></a> Immagini d'avvio predefinite  
- Configuration Manager offre due immagini d'avvio predefinite: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste immagini sono archiviate nel percorso: \\\\*nomeserver*>\SMS_<*codicesito*>\osd\boot\\<*x64 o i386*.  
+ Configuration Manager offre due immagini d'avvio predefinite: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste immagini sono archiviate nel percorso: \\\\*nomeserver*>\SMS_<*codicesito*>\osd\boot\\<*x64*> or <*i386*>.  
 
- Quando si aggiorna Configuration Manager a una nuova versione, Configuration Manager potrebbe sostituire le immagini d'avvio predefinite e le immagini d'avvio personalizzate basate sulle immagini predefinite presenti in questo percorso con i file aggiornati. Le opzioni configurate nelle immagini di avvio predefinite nel sito (ad esempio, i componenti facoltativi) vengono trasmesse quando vengono aggiornate le immagini di avvio, inclusi i driver. Gli oggetti del driver di origine devono essere validi, inclusi i file di origine del driver, altrimenti i driver non verranno aggiunti alle immagini di avvio aggiornate nel sito. Le altre immagini di avvio che non sono basate sulle immagini d'avvio predefinite, anche se basate sulla stessa versione di Windows ADK, non verranno aggiornate. Dopo l'aggiornamento delle immagini di avvio, è necessario ridistribuirle ai punti di distribuzione. Qualsiasi supporto che usi le immagini di avvio dovrà essere ricreato. Se si preferisce non aggiornare automaticamente le immagini di avvio predefinite personalizzate, è necessario archiviarle in un percorso diverso.  
+ Quando si aggiorna Configuration Manager a una nuova versione, Configuration Manager potrebbe sostituire le immagini d'avvio predefinite e le immagini d'avvio personalizzate basate sulle immagini predefinite presenti in questo percorso con i file aggiornati. Le opzioni configurate nelle immagini di avvio predefinite nel sito (ad esempio, i componenti facoltativi) vengono trasmesse quando vengono aggiornate le immagini di avvio, inclusi i driver. Gli oggetti del driver di origine devono essere validi, inclusi i file di origine del driver, altrimenti i driver non verranno aggiunti alle immagini di avvio aggiornate nel sito. Le altre immagini di avvio che non sono basate sulle immagini d'avvio predefinite, anche se basate sulla stessa versione di Windows ADK, non verranno aggiornate. Dopo l'aggiornamento delle immagini di avvio, è necessario ridistribuirle ai punti di distribuzione. Qualsiasi supporto che usi le immagini di avvio dovrà essere ricreato. Se si preferisce non aggiornare automaticamente le immagini di avvio personalizzate/predefinite, è necessario archiviarle in un percorso diverso.  
 
- Lo strumento del registro di traccia di Configuration Manager viene aggiunto a tutte le immagini d'avvio inserite nella **Raccolta software**. In WinPE è possibile avviare lo strumento del registro di traccia di Configuration Manager digitando **CMTrace** al prompt dei comandi.  
+ Lo strumento del registro di traccia di Configuration Manager viene aggiunto a tutte le immagini d'avvio inserite nella **Raccolta software**. In WinPE è possibile avviare lo strumento del registro di traccia di Configuration Manager digitando **CMTrace** al prompt dei comandi.  
 
 ##  <a name="a-namebkmkbootimagecustoma-customize-a-boot-image"></a><a name="BKMK_BootImageCustom"></a> Personalizzare un'immagine d'avvio  
  È possibile personalizzare o [modificare un'immagine d'avvio](#BKMK_ModifyBootImages) dalla console di Configuration Manager basata su una versione di Windows PE dalla versione supportata di Windows ADK. Quando un sito viene aggiornato con una nuova versione e viene installata una nuova versione di Windows ADK, le immagini di avvio personalizzate (non nel percorso dell'immagine di avvio predefinita) non vengono aggiornate con la nuova versione di Windows ADK. In questo caso, non sarà possibile personalizzare le immagini d'avvio nella console di Configuration Manager. Tuttavia, continueranno a funzionare come prima dell'aggiornamento.  
@@ -248,9 +249,4 @@ Un'immagine d'avvio in Configuration Manager è un'immagine [Windows PE (WinPE)]
 1.  Prima di aggiornare l'immagine d'avvio, verificare che il file di risorse della sequenza attività appropriato (tsres.dll) sia contenuto nella cartella di lingua corrispondente. Ad esempio, il file di risorse inglese si trova nel percorso seguente: <*ConfigMgrInstallationFolder*>\OSD\bin\x64\00000409\tsres.dll.  
 
 2.  Come parte del comando di preavvio, impostare la variabile di ambiente SMSTSLanguageFolder sull'ID lingua appropriato. L'ID lingua deve essere specificato usando valori decimali e non esadecimali. Per impostare l'ID lingua su Inglese, è ad esempio necessario specificare il valore decimale 1033 in luogo del valore esadecimale 00000409 utilizzato per il nome della cartella.  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

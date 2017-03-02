@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0c084e9f630a96c7b22c3dbdd72e18ad4a86926d
-ms.openlocfilehash: 9631b5622fec19e0248eb919bc8bd876152f66d7
+ms.sourcegitcommit: 1a3460143628ef297c99c364ded7ebea86d270dd
+ms.openlocfilehash: c266bb753ea69785b674508647c3857b2218cb77
+ms.lasthandoff: 02/18/2017
 
 
 ---
@@ -29,7 +30,7 @@ Usare questo argomento per informazioni sull'esecuzione dell'installazione di Co
 
 Quando si usa il supporto di base della versione 1606, il sito che si installa o a cui si esegue l'aggiornamento è:
 - Un *sito Current Branch* equivalente a un sito installato in precedenza con il supporto di base della versione 1511 e quindi aggiornato alla versione 1606 con l'hotfix rollup 1606 (KB3186654).
--   Un *sito LTSB* equivalente al sito Current Branch che esegue la versione 1606 con l'hotfix rollup 1606 (KB3186654). Il supporto di base include già l'hotfix rollup.  Ma LTSB non supporta tutte le funzionalità e tutte le caratteristiche disponibili con Current Branch, come descritto in dettaglio in [Introduzione a Long-Term Servicing Branch di System Center Configuration Manager](introduction-to-the-ltsb.md).
+-    Un *sito LTSB* equivalente al sito Current Branch che esegue la versione 1606 con l'hotfix rollup 1606 (KB3186654). Il supporto di base include già l'hotfix rollup.  Ma LTSB non supporta tutte le funzionalità e tutte le caratteristiche disponibili con Current Branch, come descritto in dettaglio in [Introduzione a Long-Term Servicing Branch di System Center Configuration Manager](introduction-to-the-ltsb.md).
 
 Se non si ha familiarità con i diversi rami di System Center Configuration Manager, vedere [Which branch of Configuration Manager should I use](which-branch-should-i-use.md) (Scelta del ramo di Configuration Manager da usare).
 
@@ -70,7 +71,7 @@ Il supporto di base della versione 1606 supporta una nuova chiave di file di scr
 Quando si usa uno script automatico per installare un ramo con licenza, è necessario aggiungere la sezione, i nomi delle chiavi e i valori seguenti nella sezione Opzioni dello script. Non è necessario usare questi valori per lo script di installazione di una copia di valutazione Current Branch:  
 
  **SABranchOptions**
--   **Nome chiave: SSActive**
+-     **Nome chiave: SAActive**
   - Valori: 0 o 1.  
   - Dettagli: 0 installa una copia di valutazione senza licenza di Current Branch, 1 installa una versione con licenza.   
 
@@ -81,7 +82,7 @@ Quando si usa uno script automatico per installare un ramo con licenza, è neces
 Ad esempio, per installare una versione con licenza di Current Branch si usa:
 
   **Nome chiave: SABranchOptions**
-   -    **SSActive = 1**
+   -    **SAActive = 1**
    - **CurrentBranch = 1**
 
 
@@ -97,7 +98,7 @@ Per altre informazioni, vedere [Use a command line to install System Center Conf
 Quando si usa il supporto di base della versione 1606 per installare un nuovo sito di uno dei due rami, usare le procedure di pianificazione, preparazione e installazione del sito documentate nell'argomento [Installare i siti di System Center Configuration Manager](/sccm/core/servers/deploy/install/installing-sites), con l'aggiunta delle considerazioni seguenti per l'installazione:
 
 - Durante l'installazione è necessario scegliere il ramo di Configuration Manager che si vuole installare specificando i dettagli del contratto Software Assurance.
--   Nuova installazione tramite script. Per altre informazioni, tornare a "Nuove opzioni di installazione tramite script" in questo articolo.
+-    Nuova installazione tramite script. Per altre informazioni, tornare a "Nuove opzioni di installazione tramite script" in questo articolo.
 
 ## <a name="expand-a-stand-alone-primary-site"></a>Espandere un sito primario autonomo
 È possibile espandere un sito primario autonomo in cui è in esecuzione LTSB.  Il processo non è diverso rispetto a quello usato per un sito di Current Branch, con un'avvertenza:
@@ -111,7 +112,7 @@ Quando si esegue l'aggiornamento da System Center Configuration Manager 2012, us
 
 **Aggiornamento a Current Branch:**
 - Durante l'installazione è necessario scegliere Current Branch, specificando i dettagli del contratto Software Assurance.
--   Nuova installazione tramite script. Per altre informazioni, tornare a "Nuove opzioni di installazione tramite script" in questo articolo.
+-     Nuova installazione tramite script. Per altre informazioni, tornare a "Nuove opzioni di installazione tramite script" in questo articolo.
 
 **Aggiornamento a LTSB:**  
 - Passaggi aggiuntivi da seguire nell'elenco di controllo pre-aggiornamento.
@@ -147,9 +148,4 @@ Per altre informazioni, vedere [Cartella CD.Latest per System Center Configurati
 Per eseguire il backup e il ripristino o eseguire la manutenzione di un sito che esegue LTSB, seguire le linee guida e le procedure in [Backup e ripristino per System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery).  
 
 Usare il programma di installazione di Configuration Manager della cartella CD.Latest del backup del sito LTSB.
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

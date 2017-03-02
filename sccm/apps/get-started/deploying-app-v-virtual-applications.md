@@ -2,7 +2,7 @@
 title: Distribuire applicazioni virtuali App-V | Documentazione Microsoft
 description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni virtuali.
 ms.custom: na
-ms.date: 11/07/2016
+ms.date: 02/16/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0469aad1482c0619794c91bc530d8ec981e8f136
-ms.openlocfilehash: bc79cd157003cc7dcb63f925293c79fe477dd809
+ms.sourcegitcommit: c73373e6f2f28f8ddc197695e4b4e3488c9c1f5b
+ms.openlocfilehash: 0808edbb9a0433dd658d37e8d005c89a4778735c
+ms.lasthandoff: 02/17/2017
 
 
 ---
@@ -66,7 +67,13 @@ Oltre agli altri requisiti e alle procedure di System Center Configuration Manag
      Per poter distribuire correttamente le applicazioni virtuali, è inoltre necessario aggiornare il client App-V 4.6 SP1 con l'hotfix descritto nell'articolo [2645225](http://go.microsoft.com/fwlink/p/?LinkId=237322) della Knowledge Base.  
 
 -   **App-V 5, App-V 5.0 SP1, App-V 5.0 SP2, App-V 5.0 SP3 e App-V 5.1:** per App-V 5.0 SP2 è necessario installare il [pacchetto hotfix 5](https://support.microsoft.com/en-us/kb/2963211) oppure usare App-V 5.0 SP3.  
--   **App-V 5.2**: questa versione è inclusa in Windows 10 (Aggiornamento dell'anniversario e versioni successive).
+-   **App-V 5.2**: questa versione è inclusa in Windows 10 Enterprise (aggiornamento dell'anniversario e versioni successive).
+
+Per altre informazioni su App-V in Windows 10, vedere gli argomenti seguenti:
+
+- [What's new in App-V](https://technet.microsoft.com/itpro/windows/manage/appv-about-appv) (Novità di App-V)
+- [Getting Started with App-V for Windows 10](https://technet.microsoft.com/itpro/windows/manage/appv-getting-started) (Introduzione a App-V per Windows 10)
+- [Upgrading to App-V for Windows 10 from an existing installation](https://technet.microsoft.com/itpro/windows/manage/appv-upgrading-to-app-v-for-windows-10-from-an-existing-installation) (Aggiornamento da un'installazione esistente a App-V per Windows 10)
 
 ##  <a name="steps-to-manage-app-v-virtual-applications"></a>Passaggi per la gestione di applicazioni virtuali App-V  
  Per gestire le applicazioni virtuali App-V, seguire questi passaggi:  
@@ -206,9 +213,4 @@ Configuration Manager supporta la funzionalità SCS (Shared Content Store) di Ap
 Configuration Manager registra le informazioni sulla distribuzione di applicazioni virtuali nei file di log. Per informazioni sui file di log usati dalle applicazioni virtuali e per la gestione di applicazioni di Configuration Manager, vedere [File di log in System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md).  
 
 Per Windows Vista, Windows 7 e Windows 8, i log per il client App-V sono disponibili in C:\ProgramData\Microsoft\Application Virtualization Client.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
