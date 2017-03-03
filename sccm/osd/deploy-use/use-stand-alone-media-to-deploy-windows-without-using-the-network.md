@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: 30ae794381c6894e11b21a8167d0af60463c5279
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -79,9 +80,4 @@ I supporti autonomi in System Center Configuration Manager contengono tutti gli 
 
 ## <a name="install-the-operating-system-from-stand-alone-media"></a>Installare il sistema operativo dal supporto autonomo  
  Inserire il supporto autonomo in un'unità di avvio del computer e quindi accendere il sistema per installare il sistema operativo.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
