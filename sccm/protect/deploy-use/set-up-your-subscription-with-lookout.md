@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
 ms.openlocfilehash: f29d5834b82dd8888cff56fb0ad8024629f829ab
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -90,7 +91,7 @@ Quando un utente è in un gruppo di registrazione, tutti i dispositivi di tale u
 
 ![screenshot della pagina registrazione di Intune Connector](../media/lookout-enrollment.png)
 
-La procedura consigliata prevede l'uso dell'incremento predefinito di 5 minuti per verificare la presenza di nuovi dispositivi.
+La procedura consigliata prevede l'uso dell'incremento predefinito di&5; minuti per verificare la presenza di nuovi dispositivi.
 
 >[!IMPORTANT]
 > Per il nome visualizzato viene fatta distinzione tra maiuscole e minuscole.  Usare il **Nome visualizzato** come illustrato nella pagina **Proprietà** del gruppo di sicurezza nel portale di Azure. Nell'immagine seguente notare le iniziali maiuscole del nome visualizzato nella pagina **Proprietà** del gruppo di sicurezza.  Nel titolo il nome è invece visualizzato tutto in minuscolo e questa forma non deve essere usata per l'immissione nella console di Lookout.
@@ -129,9 +130,4 @@ La protezione dalle minacce per il dispositivo di Lookout usa vari tipi di class
 Dopo aver completato la configurazione, la protezione dalle minacce per il dispositivo di Lookout inizia a eseguire il polling di Azure AD per i dispositivi corrispondenti ai gruppi di registrazione specificati.  Le informazioni sui dispositivi registrati sono disponibili nel modulo Devices (Dispositivi).  Per i dispositivi viene visualizzato lo stato iniziale in sospeso.  Lo stato del dispositivo cambia dopo l'installazione, l'apertura e l'attivazione nel dispositivo dell'app Lookout for Work.  Per informazioni dettagliate su come ottenere l'app Lookout for Work nel dispositivo, vedere l'argomento [Configurare e distribuire l'app Lookout for Work](configure-and-deploy-lookout-for-work-apps.md).
 ## <a name="next-steps"></a>Passaggi successivi
 [Abilitare la connessione a Lookout MTP in Intune](enable-lookout-connection-in-intune.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
