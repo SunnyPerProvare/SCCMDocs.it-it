@@ -16,6 +16,7 @@ ms.assetid: 0d484c1a-e903-4bff-9e9b-e452c62e38a8
 translationtype: Human Translation
 ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
 ms.openlocfilehash: 7d37f3c5e398c914482c45ab837fe41d00fce8ea
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -136,12 +137,7 @@ Per impostazione predefinita, l'elenco di revoche di certificati (CRL) non viene
 Se usato, è necessario attivare il controllo CRL nelle console di Configuration Manager che elaborano gli aggiornamenti software.  
 
 #### <a name="to-enable-crl-checking"></a>Per attivare il controllo CRL  
-Nel computer che esegue il controllo CRL eseguire quanto segue da un prompt dei comandi del DVD del prodotto: **\SMSSETUP\BIN\X64\\**<*lingua*>**\UpdDwnldCfg.exe /checkrevocation**..  
+Nel computer che esegue il controllo CRL eseguire quanto segue da un prompt dei comandi del DVD del prodotto: **\SMSSETUP\BIN\X64\\**<*lingua*>**\UpdDwnldCfg.exe /checkrevocation**.  
 
 Per l'inglese (USA), ad esempio, eseguire **\SMSSETUP\BIN\X64\00000409\UpdDwnldCfg.exe /checkrevocation**  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
