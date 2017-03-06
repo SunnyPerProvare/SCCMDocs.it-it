@@ -36,7 +36,7 @@
 ### [Riferimento tecnico per i controlli crittografici](deploy-use/cryptographic-controls-technical-reference.md)
 
 ## [Endpoint Protection](deploy-use/endpoint-protection.md)
-### [Configurare Endpoint Protection](deploy-use/configure-endpoint-protection.md)
+### [Configurare Endpoint Protection](deploy-use/endpoint-protection-configure.md)
 #### [Ruolo del sistema del sito](deploy-use/endpoint-protection-site-role.md)
 #### [Avvisi](deploy-use/endpoint-configure-alerts.md)
 #### [Aggiornamenti delle definizioni](deploy-use/endpoint-definition-updates.md)
@@ -68,12 +68,13 @@
 ### [Gestire l'accesso a Skype for Business Online](deploy-use/manage-skype-for-business-online-access.md)
 ### [Gestire l'accesso a Dynamics CRM Online](deploy-use/manage-dynamics-crm-online-access.md)
 ### [Gestire l'accesso ai servizi O365 per PC gestiti](deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)
-## [Gestire l'accesso in base a dispositivo, rete e rischio dell'applicazione](deploy-use/manage-access-based-on-device-network-app-risk.md)
-### [Configurare il servizio di protezione dalle minacce per il dispositivo Lookout](deploy-use/set-up-your-subscription-with-lookout.md)
-### [Abilitare Lookout in Intune](deploy-use/enable-lookout-connection-in-intune.md)
-### [Distribuire app Lookout for Work](deploy-use/configure-and-deploy-lookout-for-work-apps.md)
-### [Abilitare criteri di protezione dalle minacce per il dispositivo](deploy-use/enable-device-threat-protection-rule-compliance-policy.md)
-### [Risoluzione dei problemi di integrazione di Lookout](deploy-use/troubleshoot-lookout-integration.md)
+## [Gestire l'accesso in base a dispositivo, rete e rischio dell'applicazione](deploy-use/configuration-manager-mobile-threat-defense.md)
+### [Lookout in Configuration Manager](deploy-use/lookout-mobile-threat-defense-in-configuration-manager.md)
+#### [Configurare il servizio di protezione dalle minacce per il dispositivo Lookout](deploy-use/set-up-your-subscription-with-lookout.md)
+#### [Abilitare Lookout in Intune](deploy-use/enable-lookout-connection-in-intune.md)
+#### [Distribuire app Lookout for Work](deploy-use/configure-and-deploy-lookout-for-work-apps.md)
+#### [Abilitare criteri di protezione dalle minacce per il dispositivo](deploy-use/enable-device-threat-protection-rule-compliance-policy.md)
+#### [Risoluzione dei problemi di integrazione di Lookout](deploy-use/troubleshoot-lookout-integration.md)
 
 ## [Impostazioni di Windows Hello for Business ](deploy-use/windows-hello-for-business-settings.md)
 
@@ -83,8 +84,3 @@
 ### [Monitorare i profili Wi-Fi, di posta elettronica e VPN](deploy-use/monitor-wifi-email-vpn-profiles.md)
 ### [Monitorare i profili dei certificati](deploy-use/monitor-certificate-profiles.md)
 ### [Monitorare Endpoint Protection](deploy-use/monitor-endpoint-protection.md)
-
-
-<!--HONumber=Dec16_HO3-->
-
-
