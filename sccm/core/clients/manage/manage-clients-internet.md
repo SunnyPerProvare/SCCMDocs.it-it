@@ -6,12 +6,13 @@ ms.prod: configuration-manager
 ms.technology:
 - configmgr-client
 ms.assetid: c667d6af-80c4-485f-910c-896c0171fd00
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
 ms.openlocfilehash: 6104107429184f31df12db84089f41df1ef81539
+ms.lasthandoff: 01/24/2017
 
 ---
 
@@ -70,9 +71,4 @@ Svantaggi:
 -   Necessità di esporre l'infrastruttura a Internet.
 
 Per altre informazioni, vedere [Plan for Internet-based client management](plan-internet-based-client-management.md) (Pianificare la gestione client basata su Internet).
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

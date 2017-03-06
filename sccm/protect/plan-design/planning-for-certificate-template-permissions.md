@@ -13,12 +13,13 @@ ms.topic: get-started-article
 ms.assetid: eab0e09d-b09e-4c14-ab14-c5f87472522e
 caps.latest.revision: 5
 caps.handback.revision: 0
-author: Nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
 ms.openlocfilehash: 3c3725678561c32fce316ed1209ac8fe73a0eed1
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -62,9 +63,4 @@ Le informazioni seguenti illustrano come pianificare la modalità di configurazi
     -   Nel server di sistema del sito che ospita il punto di registrazione certificati, creare la chiave seguente del Registro di sistema DWORD per avere un valore di 1: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheckOnlyIfAccountAccessDenied  
 
 3.  Nella CA emittente aggiungere uno o più gruppi di protezione per concedere agli account utente o dispositivo le autorizzazioni Lettura e Registrazione nella scheda **Protezione** delle proprietà del modello di certificato.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -13,12 +13,13 @@ ms.topic: get-started-article
 ms.assetid: 20a573b3-53cb-4ed5-bae1-7542f533ed20
 caps.latest.revision: 11
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
 ms.openlocfilehash: 0ca218e4276699dd9029308e1d8ac524563da7c5
+ms.lasthandoff: 01/03/2017
 
 
 ---
@@ -63,9 +64,4 @@ La distribuzione client nel sito richiede tempo e alcune installazioni non riesc
  Per monitorare lo stato dei client distribuiti, vedere [Come monitorare i client in System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md)  
 
  È possibile usare i report di Configuration Manager per ottenere altre informazioni sullo stato dei client nel proprio sito. Per altre informazioni sull'esecuzione dei report, vedere [Creazione di report in System Center Configuration Manager](../../../core/servers/manage/reporting.md).  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

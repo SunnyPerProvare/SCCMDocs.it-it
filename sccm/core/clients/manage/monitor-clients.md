@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2c8f57cf-1968-48de-87fb-4897432ed6e0
 caps.latest.revision: 23
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
 ms.openlocfilehash: 85afe010e734d20ae1f1479b3edd166c54cc8fd2
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -109,9 +110,4 @@ ms.openlocfilehash: 85afe010e734d20ae1f1479b3edd166c54cc8fd2
 |Verificare che il provider WMI client sia integro|Avviare il servizio Windows Management Instrumentation|La correzione di questo controllo client viene eseguita solo su computer con Windows Server 2003, Windows XP (64 bit) o versioni precedenti.|  
 |Verificare che sia in esecuzione il servizio proxy di riattivazione (Proxy di riattivazione di Configuration Manager)|Avviare il servizio Proxy di riattivazione di Configuration Manager|Questa verifica del client viene eseguita solo se l'impostazione **Risparmio energia**: **Abilitare il proxy di riattivazione** del client è impostata su **Sì** nei sistemi operativi client supportati.|  
 |Verificare che il tipo di avvio del servizio proxy di riattivazione (Proxy di riattivazione di Configuration Manager) sia automatico|Reimpostare il tipo di avvio del servizio Proxy di riattivazione di Configuration Manager su automatico|Questa verifica del client viene eseguita solo se l'impostazione **Risparmio energia**: **Abilitare il proxy di riattivazione** del client è impostata su **Sì** nei sistemi operativi client supportati.|  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

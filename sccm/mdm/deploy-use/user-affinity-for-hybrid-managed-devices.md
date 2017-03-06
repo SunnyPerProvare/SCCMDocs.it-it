@@ -2,7 +2,7 @@
 title: "Affinità utente per i dispositivi gestiti ibridi in Configuration Manager | Microsoft Docs"
 description: "Configurare l&quot;affinità utente per i dispositivi gestiti in Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: 74dcc0f4e680893db804956615248b7e1230d2b5
+ms.lasthandoff: 12/16/2016
 
 ---
 # <a name="user-affinity-for-hybrid-managed-devices-in-configuration-manager"></a>Affinità utente per i dispositivi gestiti ibridi in Configuration Manager
@@ -53,9 +54,4 @@ Quando si configurano profili per i dispositivi di proprietà dell'azienda, l'am
 
 ##  <a name="a-namebkmknouaa-managed-devices-without-user-affinity"></a><a name="BKMK_noUA"></a> Dispositivi gestiti senza affinità utente  
  I dispositivi configurati con **no user affinity** non è supportato il Portale aziendale e non si dovrebbe installare l'app. Il Portale aziendale è progettato per gli utenti che hanno credenziali aziendali e richiedono l'accesso a risorse aziendali personalizzate, ad esempio la posta elettronica. I dispositivi registrati **senza affinità utente** non sono pensati per l'accesso utente dedicato. Chioschi multimediali, POS o dispositivi di utilità condivisi sono casi d'uso tipici per i dispositivi registrati senza affinità utente. Se è necessaria l'affinità utente, verificare che nel profilo di registrazione del dispositivo sia selezionata l'opzione **Affinità utente** prima di registrare il dispositivo. Per modificare lo stato di affinità in un dispositivo è necessario ritirare il dispositivo e quindi registrarlo nuovamente.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

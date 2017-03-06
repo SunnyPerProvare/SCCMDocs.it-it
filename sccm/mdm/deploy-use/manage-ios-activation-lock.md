@@ -2,7 +2,7 @@
 title: Gestire il blocco attivazione iOS | Microsoft Docs
 description: Gestire il blocco attivazione iOS con System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/15/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: a25c6b409ea6501ead762fabb8cc11c62c84885d
 ms.openlocfilehash: cf98bbb9dee6142e8b085dbffcadb3ed712adcb9
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -104,9 +105,4 @@ Per abilitare il blocco attivazione nei dispositivi con supervisione, si usano l
     - I dati di individuazione per il dispositivo nella finestra di dialogo delle proprietà del dispositivo.
     - La colonna **Stato di bypass del blocco attivazione** nella vista **Dispositivi** questa colonna è nascosta.
     - La sezione **Informazioni sulle azioni remote dei dispositivi** nella scheda **Riepilogo** del riquadro dei dettagli, quando è selezionato un dispositivo.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

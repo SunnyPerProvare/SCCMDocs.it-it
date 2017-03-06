@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 caps.latest.revision: 15
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: a1fc9f2db7c9c2b40d986bb39a0b27d6cc699987
 ms.openlocfilehash: 454828d64b5643e57da4cff3aa3f671e8cd157b1
+ms.lasthandoff: 01/05/2017
 
 ---
 # <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>Informazioni sulle proprietà di installazione del client in System Center Configuration Manager
@@ -582,9 +583,4 @@ Esempio: `CCMSetup.exe SMSMP=https://smsmp01.contoso.com`
 |2.5.4.42|G o GN o GivenName|Nome specificato|  
 |2.5.4.43|I o Initials|Iniziali|  
 |2.5.29.17|(nessun valore)|Nome alternativo soggetto|  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

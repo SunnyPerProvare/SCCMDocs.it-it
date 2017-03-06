@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 caps.latest.revision: 15
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: d7265aec46474ba7fc317ddb5e20b91b7b134585
 ms.openlocfilehash: 36f6eb3fe48e904adf4d04450906fada9b477246
+ms.lasthandoff: 12/30/2016
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informazioni sulle impostazioni client in System Center Configuration Manager
@@ -641,9 +642,4 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
 -   **Consentire all'utente di definire i dispositivi primari**  
 
      Specificare se gli utenti sono autorizzati a identificare i propri dispositivi primari dal Catalogo applicazioni nella scheda **Dispositivi personali**.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

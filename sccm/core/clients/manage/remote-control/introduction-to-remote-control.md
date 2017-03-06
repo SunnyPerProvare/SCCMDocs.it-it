@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: 29350919-6a25-446b-a0da-05e8914fbb26
 caps.latest.revision: 4
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
 ms.openlocfilehash: 47bfeec5bd5d9b843e9064560d0cd0b14bd7d6a1
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -37,9 +38,4 @@ Configuration Manager consente anche di configurare le impostazioni client per l
 > -   Il computer che esegue la console di Configuration Manager esegue Windows XP Service Pack 3 ma il computer host non esegue questo sistema operativo. Per altre informazioni, vedere la documentazione di Assistenza remota Windows.  
 
  È possibile avviare una sessione di controllo remoto da qualsiasi raccolta di dispositivi nella console di Configuration Manager, dalla finestra del prompt dei comandi di Windows o dal menu **Start** di Windows.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 52ee82b2-0b91-4829-89df-80a6abc0e63a
 caps.latest.revision: 6
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: 12ee719a6a8b072fab27d083aeb2b8439484058d
+ms.lasthandoff: 12/16/2016
 
 ---
 # <a name="plan-how-to-wake-up-clients-in-system-center-configuration-manager"></a>Pianificare la riattivazione dei client in System Center Configuration Manager
@@ -96,9 +97,4 @@ Se si vogliono riattivare i computer per un'installazione software pianificata, 
 
 > [!WARNING]  
 >  Esistono rischi per la sicurezza associati ai broadcast con riferimento a subnet: un utente malintenzionato potrebbe inviare flussi continui di richieste echo di Internet Control Message Protocol (ICMP) da un indirizzo di origine falsificato all'indirizzo di broadcast con riferimento a subnet, determinando la risposta di tutti gli host a tale indirizzo di origine. Questo tipo di attacco Denial of Service è comunemente denominato attacco smurf e viene in genere limitato non abilitando le broadcast con riferimento a subnet.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

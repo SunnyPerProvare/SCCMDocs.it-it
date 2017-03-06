@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: dce4b640-c92f-401a-9873-ce9aa9262014
 caps.latest.revision: 8
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: 140bbc676fe0e3df1037c6bead2211b84486494b
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -173,9 +174,4 @@ I computer client in System Center Configuration Manager che eseguono Windows Fi
  Se la porta HTTP è la porta 80, la porta HTTPS deve essere la porta 443.  
 
  Se la porta HTTP è diversa, la porta HTTPS deve essere maggiore di 1. Ad esempio, 8530 e 8531.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

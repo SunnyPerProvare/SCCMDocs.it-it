@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 41dcc259-f147-4420-bff2-b65bdf8cff77
 caps.latest.revision: 7
-author: Nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 8a5dc7361da34f3e6b926acd35c72c0c0767ce70
 ms.openlocfilehash: d51670b47aab77cc4e630a6aeaa0744f916bf3b9
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -99,9 +100,4 @@ Uno scenario tipico per System Center Configuration Manager è di installare i c
 -   Il dispositivo è stato bloccato dalla gerarchia di System Center Configuration Manager.  
 
  Per revocare i certificati, il server del sito invia un comando di revoca all'autorità di certificazione emittente. Il motivo della revoca è **Termine operazione**.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

@@ -3,7 +3,7 @@
 title: Registrare in blocco i dispositivi | Microsoft Docs | Gestione dei dispositivi mobili locale
 description: Registrare dispositivi in blocco automaticamente con Gestione dispositivi mobili locali in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -20,6 +20,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
 ms.openlocfilehash: ef68a9f998ea6ff9628e01f6ac622711de68375d
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -165,9 +166,4 @@ Le attività seguenti illustrano come registrare in blocco computer e dispositiv
 -   Avviare la console di Configuration Manager.  
 
 -   Fare clic su **Asset e conformità** > **Panoramica** > **Dispositivi**. Il dispositivo registrato viene visualizzato nell'elenco.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

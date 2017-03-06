@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: ba9b623f-6e86-4006-93f2-83d563de0cd0
 caps.latest.revision: 10
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 08afca8b422474639cbdb860e555fe0da27361a4
 ms.openlocfilehash: d8f25e849a8456f1658c4c7da32be733282bbde8
+ms.lasthandoff: 12/16/2016
 
 ---
 # <a name="how-to-assign-clients-to-a-site-in-system-center-configuration-manager"></a>Come assegnare i client a un sito in System Center Configuration Manager
@@ -162,9 +163,4 @@ Una volta scaricati i criteri client da un punto di gestione nel sito, il client
  I computer client che eseguono il roaming in altri siti (tutti i siti primari e tutti i siti secondari) possono sempre utilizzare i punti di gestione in altri siti per le richieste di percorso dei contenuti. I punti di gestione del sito corrente possono fornire ai client un elenco dei punti di distribuzione che dispongono dei contenuti richiesti dai client.  
 
  Per i computer client configurati per la gestione client basata solo su Internet e per i dispositivi mobili e i computer Mac registrati da Configuration Manager, questi client comunicano solo con i punti di gestione presenti nel sito loro assegnato. Questi client non comunicano mai con i punti di gestione presenti in siti secondari o in altri siti primari.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

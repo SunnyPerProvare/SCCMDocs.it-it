@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2bca3db9-115a-451d-8c93-f073ceefe0c7
 caps.latest.revision: 6
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: a71e37060937f40bcb1bdb1c6165b7799fc72675
 ms.openlocfilehash: a9847e67ab1935fb66824945637ff683c006bdbe
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -99,9 +100,4 @@ Il diagramma seguente illustra un esempio di come creare e applicare le impostaz
  Un collegamento in **Software Center** consente agli utenti di connettersi al **Catalogo applicazioni**, in cui possono cercare, installare e richiedere software. Il **Catalogo applicazioni** viene anche usato per configurare le impostazioni delle preferenze, cancellare i dispositivi mobili e, se è impostato, specificare un dispositivo primario per l'affinità utente-dispositivo.   
 
  Gli utenti possono accedere al **Catalogo applicazioni** anche tramite una sessione Intranet o Internet.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

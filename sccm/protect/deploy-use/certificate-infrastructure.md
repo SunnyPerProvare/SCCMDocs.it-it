@@ -13,12 +13,13 @@ ms.topic: get-started-article
 ms.assetid: 29ae59b7-2695-4a0f-a9ff-4f29222f28b3
 caps.latest.revision: 7
 caps.handback.revision: 0
-author: Nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
 ms.openlocfilehash: 56e0a1923305c5134386623b1e306b8ebd013d53
+ms.lasthandoff: 12/16/2016
 
 ---
 # <a name="certificate-infrastructure"></a>Infrastruttura di certificazione
@@ -191,9 +192,4 @@ ms.openlocfilehash: 56e0a1923305c5134386623b1e306b8ebd013d53
  Ora che sono stati completati i passaggi di configurazione per installare il servizio Registrazione dispositivi di rete e le dipendenze, il punto di registrazione certificati e il modulo criteri di System Center Configuration Manager, è possibile distribuire i certificati agli utenti e ai dispositivi creando e distribuendo profili certificato. Per altre informazioni su come creare profili certificato, vedere [Come creare profili certificato in System Center Configuration Manager](../../protect/deploy-use/create-certificate-profiles.md).  
 
  Se si desidera disinstallare il modulo criteri di System Center Configuration Manager, usare **Programmi e funzionalità** nel Pannello di controllo.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

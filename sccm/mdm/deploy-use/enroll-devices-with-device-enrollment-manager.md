@@ -2,7 +2,7 @@
 title: Registrare i dispositivi usando il manager di registrazione dispositivi - Configuration Manager | Microsoft Docs
 description: "Registrare i dispositivi di proprietà dell&quot;azienda usando l&quot;account del manager di registrazione dispositivi con System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
 ms.openlocfilehash: b356d2351b8a28bdca78176fdf0ff3c913a36bd3
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -89,9 +90,4 @@ Un ristorante vuole adottare tablet POS per il personale di sala e monitor per g
 -   Le credenziali dell'account del manager di registrazione dispositivi eliminato non possono ancora cancellare o disattivare i dispositivi  
 
 -   La relazione dell'account del manager di registrazione dispositivi per eliminato con i dispositivi registrati resta valida, ma non è possibile registrare ulteriori dispositivi
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

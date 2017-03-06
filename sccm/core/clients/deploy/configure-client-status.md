@@ -13,12 +13,13 @@ ms.topic: get-started-article
 ms.assetid: a2275ba2-c83d-43e7-90ed-418963a707fe
 caps.latest.revision: 6
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: 22cc286baa72d3e356a07b91ee0a1be646fa8a9e
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -112,9 +113,4 @@ Prima di poter monitorare lo stato del client di System Center Configuration Man
 4.  Chiudere l'editor del Registro di sistema.  
 
  È inoltre possibile installare i client utilizzando la proprietà di installazione **NotifyOnly** di CCMSetup per escluderli dal monitoraggio e aggiornamento automatico. Per altre informazioni sulla proprietà di installazione dei client, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

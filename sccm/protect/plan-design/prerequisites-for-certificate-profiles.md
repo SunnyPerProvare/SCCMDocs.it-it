@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 0317fd02-3721-4634-b18b-7c976a4e92bf
 caps.latest.revision: 9
-author: Nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 593fbd0587d54490246f48ae54f666bac6b7830d
 ms.openlocfilehash: 08fb30da2060728142648f13846be737f98f2276
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -46,9 +47,4 @@ I profili certificato in System Center Configuration Manager (noto anche come Co
 |Modulo criteri di System Center Configuration Manager installato nel server che esegue il servizio del ruolo del servizio Registrazione dispositivi di rete per servizi certificati Active Directory|Per distribuire i profili certificato, è necessario installare il modulo criteri di System Center Configuration Manager. È possibile trovare questo modulo criteri nel supporto di installazione di System Center Configuration Manager.|  
 |Dati di individuazione|I valori per l'oggetto del certificato e il nome alternativo dell'oggetto vengono specificati da System Center Configuration Manager e recuperati dalle informazioni raccolte dall'individuazione:<br /><br /> Per i certificati utente: individuazione utente Active Directory<br /><br /> Per i certificati computer: individuazione sistema e individuazione della rete Active Directory|  
 |Autorizzazioni di protezione specifiche per la gestione dei profili certificato|L'utente deve disporre delle seguenti autorizzazioni di sicurezza per gestire le impostazioni di accesso alle risorse aziendali, ad esempio profili certificati, profili VPN e profili Wi-Fi:<br /><br /> Per visualizzare e gestire avvisi e report per i profili certificato: **Crea**, **Elimina**, **Modifica**, **Modifica report**, **Lettura**ed **Esegui report** per l'oggetto **Avvisi** .<br /><br /> Per creare e gestire profili certificato: **Criteri autore**, **Modifica report**, **Lettura** ed **Esegui report** per l'oggetto **Profilo certificato** .<br /><br /> Per gestire le distribuzioni di profili Wi-Fi, certificato e VPN: **Distribuisci criteri di configurazione**, **Modifica avviso stato client**, **Lettura**e **Leggi risorsa** per l'oggetto **Raccolta** .<br /><br /> Per gestire tutti i criteri di configurazione: **Crea**, **Elimina**, **Modifica**, **Lettura** e **Imposta ambito di protezione** per l'oggetto **Criteri di configurazione** .<br /><br /> Per eseguire query correlate ai profili certificato: autorizzazione **Lettura** per l'oggetto **Query** .<br /><br /> Per visualizzare le informazioni sui profili certificato nella console di System Center Configuration Manager: autorizzazione **Lettura** per l'oggetto **Sito**.<br /><br /> Per visualizzare i messaggi di stato per i profili certificato: autorizzazione **Lettura** per l'oggetto **Messaggi di stato** .<br /><br /> Per creare e modificare il profilo del certificato CA attendibile: **Criteri autore**, **Modifica report**, **Lettura** ed **Esegui report** per l'oggetto **Profilo certificato CA attendibile** .<br /><br /> Per creare e gestire profili VPN: **Criteri autore**, **Modifica report**, **Lettura** ed **Esegui report** per l'oggetto **Profilo VPN** .<br /><br /> Per creare e gestire profili Wi-Fi: **Criteri autore**, **Modifica report**, **Lettura** ed **Esegui report** per l'oggetto **Profilo Wi-Fi** .<br /><br /> Il ruolo di sicurezza **Gestione accesso risorse aziendali** include queste autorizzazioni necessarie per gestire i profili certificato in System Center Configuration Manager. Per ulteriori informazioni, vedere la sezione **Configure role-based administration** nell'argomento [Configure security in System Center Configuration Manager](../../core/plan-design/security/configure-security.md) .|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

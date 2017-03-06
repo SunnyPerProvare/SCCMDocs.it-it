@@ -2,7 +2,7 @@
 title: Installare i ruoli per la gestione di dispositivi mobili locale - Configuration Manager | Microsoft Docs
 description: Installare i ruoli del sistema del sito per la gestione di dispositivi mobili locale in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
 ms.openlocfilehash: 916b971f851f968f6534ac834bd3182cc61614aa
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -71,9 +72,4 @@ La gestione di dispositivi mobili locale di System Center Configuration Manager 
      Questo consente di trasformare il punto di gestione in un punto di gestione dei dispositivi.  
 
  Una volta aggiunti e configurati i ruoli del sistema del sito per la gestione dei dispositivi moderni, è necessario configurare i server che ospitano i ruoli come endpoint di tipo trusted per la registrazione e la comunicazione con i dispositivi gestiti. Per altre informazioni, vedere [Set up certificates for trusted communications for On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/get-started/set-up-certificates-on-premises-mdm.md) (Configurazione di certificati per comunicazioni attendibili per la gestione di dispositivi mobili locale in System Center Configuration Manager).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

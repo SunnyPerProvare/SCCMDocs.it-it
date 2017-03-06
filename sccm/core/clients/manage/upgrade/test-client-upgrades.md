@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: 49ef2ed2-2e15-4637-8b63-1d5b7f9c17e1
 caps.latest.revision: 10
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
 ms.openlocfilehash: 250c9312b932670c408554f3968ae43ae4f3dbaa
+ms.lasthandoff: 01/03/2017
 
 
 ---
@@ -79,9 +80,4 @@ ms.openlocfilehash: 250c9312b932670c408554f3968ae43ae4f3dbaa
 2.  Rivedere le versioni client in produzione e pre-produzione, verificare che sia specificata la raccolta di pre-produzione corretta, fare clic su **Alza di livello** e poi su **Sì**.  
 
 3.  Quando si chiude la finestra di dialogo, la versione aggiornata del client sostituirà quella attualmente in uso nella gerarchia. Sarà quindi possibile aggiornare i client per l'intero sito. Per altre informazioni, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 
