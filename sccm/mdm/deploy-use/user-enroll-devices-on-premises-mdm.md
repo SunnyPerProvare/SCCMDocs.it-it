@@ -2,7 +2,7 @@
 title: "Modalità di registrazione dei dispositivi con la gestione di dispositivi mobili locale da parte degli utenti - Configuration Manager | Microsoft Docs"
 description: Verificare il modo in cui gli utenti registrano i dispositivi con la gestione dei dispositivi mobili locale in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
-ms.openlocfilehash: 43a30709473939829d82d822503537d448159a1c
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: 7d852843d0d3fe7c9ab0947c4b396cee0a92c754
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -45,7 +46,7 @@ Le attività seguenti illustrano come registrare e verificare la registrazione d
 
 -   [Verificare la registrazione del dispositivo](#bkmk_verify)  
 
-##  <a name="a-namebkmkenrolldeska-enroll-a-windows-10-computer"></a><a name="bkmk_enrollDesk"></a> Registrare un computer Windows 10  
+##  <a name="bkmk_enrollDesk"></a> Registrare un computer Windows 10  
 
 1.  In un computer Windows 10, passare a **Impostazioni**.  
 
@@ -59,7 +60,7 @@ Le attività seguenti illustrano come registrare e verificare la registrazione d
 
 6.  Fare clic su **Ignora** per ricordare le informazioni di accesso; dopo un breve periodo di tempo il dispositivo è connesso.  
 
-##  <a name="a-namebkmkenrollmoba-enroll-a-windows-10-mobile-device"></a><a name="bkmk_enrollMob"></a> Registrare un dispositivo Windows 10 Mobile  
+##  <a name="bkmk_enrollMob"></a> Registrare un dispositivo Windows 10 Mobile  
 
 1.  In un dispositivo Windows 10 Mobile, passare a **Impostazioni**.  
 
@@ -71,18 +72,10 @@ Le attività seguenti illustrano come registrare e verificare la registrazione d
 
 5.  Nella schermata successiva immettere la password e l'indirizzo di posta elettronica dell'ufficio e quindi fare clic su **Accedi**. Dopo un breve periodo di tempo il dispositivo è registrato. Fare clic su **Fatto**.  
 
-##  <a name="a-namebkmkverifya-verify-device-enrollment"></a><a name="bkmk_verify"></a> Verificare la registrazione del dispositivo  
+##  <a name="bkmk_verify"></a> Verificare la registrazione del dispositivo  
  È possibile verificare se i dispositivi sono stati registrati correttamente nella console di Configuration Manager.  
 
 1.  Avviare la console di Configuration Manager.  
 
 2.  Fare clic su **Asset e conformità** > **Panoramica** > **Dispositivi**. Il dispositivo registrato viene visualizzato nell'elenco.  
-
-## <a name="see-also"></a>Vedere anche  
- [Registrare i dispositivi per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/deploy-use/enroll-devices-on-premises-mdm.md)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

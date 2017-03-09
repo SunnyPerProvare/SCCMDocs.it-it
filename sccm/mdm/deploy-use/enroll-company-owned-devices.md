@@ -2,7 +2,7 @@
 title: Registrare dispositivi aziendali - Configuration Manager | Microsoft Docs
 description: Informazioni sui vari metodi per registrare i dispositivi aziendali per le distribuzioni ibride con Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
-ms.openlocfilehash: b797bf2c180478f6a9ee5a7228e8eb94194285ff
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: f0b503d8c9eba2dd1b6eb4c41ec40c001b727326
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -45,12 +46,4 @@ I dispositive aziendali possono essere gestiti in modi diversi a seconda del dis
  ## <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare i dispositivi con i numeri di serie IMEI o iOS
 
 È possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity) o i numeri di serie iOS. È possibile caricare un file con valori delimitati da virgole (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi.  Vedere [Predeclare devices with hardware ID numbers](../../mdm/deploy-use/predeclare-devices-with-hardware-id.md) (Predichiarare i dispositivi con numeri ID hardware).
-
-## <a name="see-also"></a>Vedere anche  
- [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](https://docs.microsoft.com/sccm/mdm/understand/hybrid-mobile-device-management) (Gestione di dispositivi mobili ibridi (MDM) con System Center Configuration Manager e Microsoft Intune)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

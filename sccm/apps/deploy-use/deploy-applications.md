@@ -17,8 +17,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 7be9abadeb51d4f9e862f69c332756b19ce3e110
-ms.openlocfilehash: a52bef3c8d12ffe2d9b13dc79cbc8950d3f36aea
+ms.sourcegitcommit: cb42b6f324dc0019c2109be4d91e0eab4dca4d70
+ms.openlocfilehash: 8c54bc455828712c7f9ea297f26c98c41848cf9c
+ms.lasthandoff: 03/08/2017
 
 
 ---
@@ -84,8 +85,8 @@ Nella pagina **Impostazioni di distribuzione** della Distribuzione guidata del s
 
     > [!NOTE]
     >  Le richieste di approvazione dell'applicazione vengono visualizzate nel nodo **Richieste di approvazione** , in **Gestione applicazioni** , nell'area di lavoro **Raccolta software** . Se una richiesta non viene approvata entro 45 giorni, verrà rimossa. La reinstallazione del client di Configuration Manager potrebbe anche annullare eventuali richieste di approvazione in sospeso.
-    > Dopo avere approvato un'applicazione per l'installazione, è possibile scegliere di negare la richiesta facendo clic su **Nega** nella console di Configuration Manager (in precedenza questo pulsante era disabilitato dopo l'approvazione).
-    > Questa azione non comporta la disinstallazione dell'applicazione dai dispositivi, ma impedisce agli utenti di installare nuove copie dell'applicazione da Software Center.
+    >  Dopo avere approvato un'applicazione per l'installazione, è possibile scegliere di negare la richiesta facendo clic su **Nega** nella console di Configuration Manager (in precedenza questo pulsante era disabilitato dopo l'approvazione).
+    >  Questa azione non comporta la disinstallazione dell'applicazione dai dispositivi, ma impedisce agli utenti di installare nuove copie dell'applicazione da Software Center.
 
 
 
@@ -116,8 +117,7 @@ Quando si distribuiscono applicazioni in dispositivi con Windows Embedded abilit
 
 >[!NOTE]
     >  Quando si distribuisce un'applicazione in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta con una finestra di manutenzione configurata. Per altre informazioni sull'uso delle finestre di manutenzione quando si distribuiscono applicazioni in dispositivi con Windows Embedded, vedere [Create Windows Embedded applications](../../apps/get-started/creating-windows-embedded-applications.md) (Creare applicazioni Windows Embedded).
-
-    >  The options **Software Installation** and **System restart (if required to complete the installation)** are not used if the deployment purpose is set to **Available**. You can also configure the level of notification a user sees when the application is installed.
+    > Le opzioni **Installazione software** e **Riavvio del sistema (se richiesto per completare l'installazione)** non vengono usate se lo scopo della distribuzione è impostato su **Disponibile**. È inoltre possibile configurare il livello di notifica visualizzato dall'utente durante l'installazione dell'applicazione.
 
 ### <a name="specify-alert-options-for-the-deployment"></a>Specificare le opzioni di avviso per la distribuzione
 
@@ -159,9 +159,4 @@ Per una distribuzione ad alto rischio, ad esempio una sequenza di attività che 
 ## <a name="for-more-information"></a>Per ulteriori informazioni:
 - [Impostazioni per gestire le distribuzioni ad alto rischio](../../protect/understand/settings-to-manage-high-risk-deployments.md)
 - [Come configurare le impostazioni client](../../core/clients/deploy/configure-client-settings.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
