@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2117f786-d521-4790-9e8d-ec096c63c9d7
 caps.latest.revision: 8
-author: Nbigman
-ms.author: nbigman
+author: Robstack
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 593fbd0587d54490246f48ae54f666bac6b7830d
-ms.openlocfilehash: c80750358d64cf87f8a3ce3a4c4f4030a9dfd742
+ms.sourcegitcommit: 8679df3f8a3b692391537bacd6144a4f2fae357b
+ms.openlocfilehash: d527cb4bfb55ca50c8d2a0fed7c427af5747fe99
+ms.lasthandoff: 02/09/2017
 
 
 ---
@@ -30,7 +31,7 @@ Si vuole che gli utenti possano accedere in modo sicuro alle risorse aziendali, 
 
 -   È possibile ridurre al minimo le operazioni eseguite dagli utenti per connettersi alle risorse aziendali abilitando la connettività VPN con i profili VPN. Informazioni su [Profili VPN in System Center Configuration Manager](../deploy-use/vpn-profiles.md).  
 
--   I profili Wi-Fi forniscono un set di strumenti e risorse che consentono di creare, distribuire e monitorare le impostazioni di rete wireless nei dispositivi dell'organizzazione. Distribuendo queste impostazioni, è possibile ridurre al minimo lo sforzo richiesto agli utenti finali per connettersi alle reti wireless aziendali. Informazioni su [Profili Wi-Fi in System Center Configuration Manager](../deploy-use/introduction-to-wifi-profiles.md).  
+-   I profili Wi-Fi forniscono un set di strumenti e risorse che consentono di creare, distribuire e monitorare le impostazioni di rete wireless nei dispositivi dell'organizzazione. Distribuendo queste impostazioni, è possibile ridurre al minimo lo sforzo richiesto agli utenti finali per connettersi alle reti wireless aziendali. Informazioni su [Profili Wi-Fi in System Center Configuration Manager](/sccm/protect/deploy-use/create-wifi-profiles).  
 
 -   [Profili certificato in System Center Configuration Manager](../deploy-use/introduction-to-certificate-profiles.md) descrive come eseguire il provisioning dei dispositivi degli utenti con i certificati necessari per connettersi alle risorse aziendali.  
 
@@ -41,9 +42,4 @@ Si vuole che gli utenti possano accedere in modo sicuro alle risorse aziendali, 
 -   I profili di posta elettronica offrono un set di strumenti e risorse per creare, distribuire e monitorare le impostazioni di posta elettronica nei dispositivi. In questo modo, gli utenti possono accedere alla posta elettronica aziendale dai dispositivi personali senza alcuna configurazione. Informazioni su [Profili di posta elettronica in System Center Configuration Manager](../deploy-use/introduction-to-email-profiles.md).  
 
 -   Configuration Manager consente di eseguire l'integrazione con Windows Hello for Business (in precedenza Microsoft Passport for Work), un metodo di accesso alternativo che usa Active Directory o un account di Azure Active Directory per sostituire una password, una smart card o una smart card virtuale. Informazioni su [Impostazioni di Windows Hello for Business in System Center Configuration Manager](../deploy-use/windows-hello-for-business-settings.md).  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

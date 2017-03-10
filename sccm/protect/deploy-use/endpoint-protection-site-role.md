@@ -4,7 +4,7 @@ description: Informazioni su come configurare Endpoint Protection per gestire la
 defintion: 
 definition: 
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 02/14/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,8 +18,9 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 9db108fb2d4d16013f416b8ee87a57ff1c91e21f
-ms.openlocfilehash: 25ce24d16bd55366d23a176b21b38ed53aa40644
+ms.sourcegitcommit: 017bd5b899b364fc832c721d63cc7dbad0a11671
+ms.openlocfilehash: 884b5f2ec3f1aa273128dfeaaf88d969c9d8669d
+ms.lasthandoff: 02/15/2017
 
 
 ---
@@ -60,11 +61,6 @@ ms.openlocfilehash: 25ce24d16bd55366d23a176b21b38ed53aa40644
 
 8.  Completare la procedura guidata.
 
-> [!div class="button"]
-[Passaggio successivo >](endpoint-configure-alerts.md)
-
-> [!div class="button"]
-[Indietro >](endpoint-protection-configure.md)
 
 ## <a name="existing-site-system-server"></a>server del sistema del sito esistente
 
@@ -89,15 +85,4 @@ ms.openlocfilehash: 25ce24d16bd55366d23a176b21b38ed53aa40644
     >  Questa opzione consente di configurare le impostazioni di Cloud Protection Service, precedentemente denominato MAPS, usate per impostazione predefinita. È possibile definire impostazioni personalizzate per ogni criterio antimalware configurato. Per altre informazioni, vedere [How to Create and Deploy Antimalware Policies for Endpoint Protection in Configuration Manager](endpoint-antimalware-policies.md) (Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager).
 
 8.  Completare la procedura guidata.
-
-> [!div class="button"]
-[Passaggio successivo >](endpoint-configure-alerts.md)
-
-> [!div class="button"]
-[Indietro >](endpoint-protection-configure.md)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 
