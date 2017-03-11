@@ -176,7 +176,7 @@
 ###  [Usare lo strumento di connessione del servizio](servers/manage/use-the-service-connection-tool.md)
 ###  [Usare lo strumento di registrazione dell'aggiornamento](servers/manage/use-the-update-registration-tool-to-import-hotfixes.md)
 ###  [Usare il programma di installazione di hotfix](servers/manage/use-the-hotfix-installer-to-install-updates.md)
-<!-- 
+<!--
 ###  [Checklist for installing update 1702](servers/manage/checklist-for-installing-update-1702.md)
 -->
 ###  [Elenco di controllo per l'installazione dell'aggiornamento 1610](servers/manage/checklist-for-installing-update-1610.md)
@@ -185,6 +185,8 @@
 ###  [Checklist for installing update 1602](servers/manage/checklist-for-installing-update-1602.md)
 ###  [Support for current branch versions](servers/manage/current-branch-versions-supported.md)  
 -->
+###  [Supporto per le versioni Current Branch](servers/manage/current-branch-versions-supported.md)  
+
 
 ##   Monitorare l'infrastruttura
 ###  [Usare gli avvisi e il sistema di stato](servers/manage/use-alerts-and-the-status-system.md)
