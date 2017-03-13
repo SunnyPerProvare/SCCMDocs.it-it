@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 7847396fa2ec79a6044c41c1b53572a81692ec8e
-ms.openlocfilehash: 8ab8e504c3881c4dc07ffb569a1f440f4318d689
+ms.sourcegitcommit: 30af3326578d39c6d995672071705bcaeb877e4d
+ms.openlocfilehash: b0def6eb962d243a7ea5910b8d56bbb448b3a2e4
+ms.lasthandoff: 02/23/2017
 
 ---
 # <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Elenco di controllo per installare l'aggiornamento 1606 di System Center Configuration Manager
@@ -124,9 +125,9 @@ Per altre informazioni, vedere [Backup e ripristino per System Center Configurat
 
 Configuration Manager non supporta né il backup di siti secondari né l'aggiornamento di test del database di un sito secondario.   
 
-Non eseguire un aggiornamento di test sul database del sito di produzione. Questa operazione aggiorna il database del sito e potrebbe rendere inutilizzabile il sito. Per altre informazioni, vedere la sezione [Testare l'aggiornamento del database del sito](../../../core/servers/deploy/install/upgrade-to-configuration-manager.md#bkmk_test) in [Eseguire l'aggiornamento a System Center Configuration Manager](../../../core/servers/deploy/install/upgrade-to-configuration-manager.md).  
+Non eseguire un aggiornamento di test sul database del sito di produzione. Questa operazione aggiorna il database del sito e potrebbe rendere inutilizzabile il sito. Per altre informazioni, vedere [Passaggio 2: Testare l'aggiornamento del database prima di installare un aggiornamento](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) in **Prima di installare un aggiornamento nella console**.
 
- **Prevedere una distribuzione pilota nei client:** quando si installa un aggiornamento per il client, è possibile testare il nuovo aggiornamento in un ambiente di pre-produzione prima della distribuzione e dell'aggiornamento di tutti i client attivi.   
+ **Prevedere una distribuzione pilota nei client:** quando si installa un aggiornamento per il client, è possibile testare quel nuovo aggiornamento in un ambiente di pre-produzione prima della distribuzione e dell'aggiornamento di tutti i client attivi.   
 
  Per sfruttare i vantaggi di questa opzione, prima di iniziare l'installazione dell'aggiornamento è necessario configurare il sito in modo da supportare gli aggiornamenti automatici di pre-produzione. Per altre informazioni, vedere [Aggiornare i client in System Center Configuration Manager](../../../core/clients/manage/upgrade/upgrade-clients.md) e   
 [Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).  
@@ -147,9 +148,4 @@ Per altre informazioni, vedere **Passaggio 3: Eseguire il controllo dei prerequi
   È consigliabile pianificare l'installazione dell'aggiornamento per ogni sito al di fuori del normale orario di ufficio in modo che il processo di installazione dell'aggiornamento e le azioni per reinstallare i componenti del sito e i ruoli del sistema del sito abbiano un impatto minimo sulle operazioni aziendali.
 
 Per altre informazioni, vedere [Aggiornamenti per System Center Configuration Manager](../../../core/servers/manage/updates.md).  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

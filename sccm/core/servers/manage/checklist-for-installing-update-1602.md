@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: a2e2bc5e873c48283d18ea6eaa5d1bb351f2a033
-ms.openlocfilehash: 1c3149b4c0247377ad556b6fe594047a6f14b989
+ms.sourcegitcommit: 30af3326578d39c6d995672071705bcaeb877e4d
+ms.openlocfilehash: e73055707454bc052b753c5e74be9674d6aa5b8c
+ms.lasthandoff: 02/23/2017
 
 
 ---
@@ -112,7 +113,7 @@ Per altre informazioni, vedere [Backup e ripristino per System Center Configurat
 -   Se si usano le repliche di database per i punti di gestione in un sito primario, disabilitare la replica prima di creare il backup del database del sito.  
 
 Configuration Manager non supporta né il backup di siti secondari né l'aggiornamento di test del database di un sito secondario.   
-Non eseguire un aggiornamento di test sul database del sito di produzione. Questa operazione aggiorna il database del sito e potrebbe rendere inutilizzabile il sito. Per altre informazioni, vedere la sezione [Testare l'aggiornamento del database del sito](../../../core/servers/deploy/install/upgrade-to-configuration-manager.md#bkmk_test) in [Eseguire l'aggiornamento a System Center Configuration Manager](../../../core/servers/deploy/install/upgrade-to-configuration-manager.md).  
+Non eseguire un aggiornamento di test sul database del sito di produzione. Questa operazione aggiorna il database del sito e potrebbe rendere inutilizzabile il sito. Per altre informazioni, vedere [Passaggio 2: Testare l'aggiornamento del database prima di installare un aggiornamento](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) in **Prima di installare un aggiornamento nella console**.  
 
  **Prevedere una distribuzione pilota nei client:** quando si installa un aggiornamento per il client, è possibile testare quel nuovo aggiornamento in un ambiente di pre-produzione prima della distribuzione e dell'aggiornamento di tutti i client attivi.   
 
@@ -136,9 +137,4 @@ Per altre informazioni, vedere [Aggiornamenti per System Center Configuration Ma
 
 ## <a name="see-also"></a>Vedere anche  
  [Aggiornamenti per System Center Configuration Manager](../../../core/servers/manage/updates.md)
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 
