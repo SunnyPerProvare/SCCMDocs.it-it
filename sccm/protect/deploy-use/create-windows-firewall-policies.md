@@ -2,7 +2,7 @@
 title: Windows Firewall per Endpoint Protection | Microsoft Docs
 description: Questo argomento spiega come creare e distribuire criteri di Windows Firewall per Endpoint Protection in System Center 2012 Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/07/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
 ms.openlocfilehash: 7a02ae3fb102ab85f98d3b7453fc0736e5a11200
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -62,7 +63,7 @@ I criteri di Windows Firewall per Endpoint Protection in System Center 2012 Conf
 
 7.  Verificare che venga visualizzato il nuovo criterio di Windows Firewall nell'elenco **Criteri di Windows Firewall** .  
 
-##  <a name="a-namebkmkassigna-to-deploy-a-windows-firewall-policy"></a><a name="BKMK_Assign"></a> Per distribuire un criterio di Windows Firewall  
+##  <a name="BKMK_Assign"></a> Per distribuire un criterio di Windows Firewall  
 
 1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 
@@ -78,9 +79,4 @@ I criteri di Windows Firewall per Endpoint Protection in System Center 2012 Conf
 
     > [!IMPORTANT]  
     >  Quando si distribuisce un criterio di Windows Firewall in una raccolta, il criterio viene applicato ai computer in un ordine casuale per un periodo di 2 ore per evitare di sovraccaricare la rete.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
