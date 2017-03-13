@@ -16,8 +16,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 7972aa2c39f5b86e69087b1ed5a1c3b50ba69940
-ms.openlocfilehash: f74bd019b5403f3f5702795279759270261ce4db
+ms.sourcegitcommit: 69d3e7d51911d6195c2f62a5e81c0faca38ed306
+ms.openlocfilehash: a8fd3c24f3267ea451f4c94854e8577046efaeca
+ms.lasthandoff: 02/27/2017
 
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con System Center Configuration Manager e Microsoft Intune
@@ -48,7 +49,21 @@ Le funzionalità seguenti di Intune introdotte a febbraio 2017 funzionano nelle 
 
 - **Nuovo indirizzo del server MDM per dispositivi Windows**
 
-  L'indirizzo del server MDM per la registrazione dei dispositivi Windows e Windows Phone è cambiato da manage.microsoft.com a enrollment.manage.microsoft.com. Comunicare agli utenti di usare enrollment.manage.microsoft.com come indirizzo del server MDM, se richiesto, durante la registrazione di un dispositivo Windows o Windows Phone. Questo aggiornamento richiede anche la sostituzione di qualsiasi CNAME in DNS che reindirizza EnterpriseEnrollment.contoso.com a manage.microsoft.com con un CNAME in DNS che reindirizzi EnterpriseEnrollment.contoso.com a EnterpriseEnrollment-s.manage.microsoft.com. Per altre informazioni su questa modifica, visitare http://aka.ms/intuneenrollsvrchange. 
+  L'indirizzo del server MDM per la registrazione dei dispositivi Windows e Windows Phone è cambiato da manage.microsoft.com a enrollment.manage.microsoft.com. Comunicare agli utenti di usare enrollment.manage.microsoft.com come indirizzo del server MDM, se richiesto, durante la registrazione di un dispositivo Windows o Windows Phone. Questo aggiornamento richiede anche la sostituzione di qualsiasi CNAME in DNS che reindirizza EnterpriseEnrollment.contoso.com a manage.microsoft.com con un CNAME in DNS che reindirizzi EnterpriseEnrollment.contoso.com a EnterpriseEnrollment-s.manage.microsoft.com. Per altre informazioni su questa modifica, visitare http://aka.ms/intuneenrollsvrchange.
+
+### <a name="new-in-configuration-manager-technical-preview-1702"></a>Novità di Configuration Manager Technical Preview 1702
+
+- **Supporto di Android for Work**
+
+  È ora possibile gestire i dispositivi Android con Android for Work in ambienti ibridi MDM tramite Configuration Manager Technical Preview 1702. I dispositivi Android supportati possono ora essere registrati come dispositivi Android for Work, che crea un profilo di lavoro nel dispositivo a cui possono essere distribuite le app approvate in Play for Work. È possibile configurare e distribuire anche gli elementi di configurazione, i criteri di conformità e i profili di accesso alle risorse per questi dispositivi.
+
+- **Impostazioni di conformità di app non conformi**
+
+  È ora possibile creare regole di app non conformi per app Android e iOS nei criteri di conformità. Se i dispositivi hanno le applicazioni specificate installate, queste verranno contrassegnate come "non conformi" e non avranno accesso alle risorse aziendali in base ai criteri di accesso condizionale in uso.
+
+- **Creazione e distribuzione del certificato PFX e supporto per S/MIME**
+
+  È ora possibile creare e distribuire i certificati PFX agli utenti in un ambiente ibrido. Questi certificati possono essere quindi usati per la crittografia S/MIME della posta elettronica e la decrittografia da parte di dispositivi che l'utente ha registrato.
 
 ## <a name="new-hybrid-features-in-january-2017"></a>Nuove funzionalità ibride (gennaio 2017)
 
@@ -177,13 +192,8 @@ Risorse aggiuntive:
 L'opzione che consente di caricare un'app Portale aziendale firmata è stata rimossa dalla console di Configuration Manager, poiché il supporto di Intune viene deprecato per Windows 8, Windows Phone 8 e Windows RT e il supporto per il portale aziendale per Windows Phone 8 termina in novembre.  I dispositivi Windows 8, Windows Phone 8 e Windows RT che sono già registrati continueranno a essere supportati, ma la registrazione di dispositivi aggiuntivi con queste piattaforme non sarà più supportata.
 
 
-## <a name="see-also"></a>Vedere anche
+### <a name="see-also"></a>Vedere anche
 
 - [Funzionalità MDM ibride precedenti](whats-new-hybrid-archive.md)
 - [Novità di MDM in System Center 2012 Configuration Manager](https://technet.microsoft.com/library/mt445560.aspx)
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

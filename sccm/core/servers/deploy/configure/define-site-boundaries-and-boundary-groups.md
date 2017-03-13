@@ -2,7 +2,7 @@
 title: Definire i limiti del sito | Microsoft Docs
 description: Di seguito viene spiegato come definire i percorsi di rete nella intranet che possono contenere i dispositivi da gestire.
 ms.custom: na
-ms.date: 12/15/2016
+ms.date: 2/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: edc406adf1fdfab8e821b63dc02f37a30504ecd3
-ms.openlocfilehash: 6135a94e30e8cce8ed4b8d08e5de26c15988b195
+ms.sourcegitcommit: 6d83570e3210709c5ef39b50d9c483f99017664b
+ms.openlocfilehash: 13b79c920a64698660ee1c041b9166646789634c
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -43,7 +44,7 @@ I client nella intranet valutano il relativo percorso di rete corrente e quindi 
 I client in Internet o configurati come client solo per Internet non usano le informazioni relative ai limiti. Questi client non possono usare l'assegnazione automatica del sito e, se il punto di distribuzione è configurato per consentire le connessioni client da Internet, scaricano sempre il contenuto da qualsiasi punto di distribuzione del sito assegnato.  
 
 
-##  <a name="a-namebkmkboundariesa-boundaries"></a><a name="BKMK_Boundaries"></a> Limiti  
+##  <a name="BKMK_Boundaries"></a> Limiti  
  È possibile creare manualmente i singoli limiti. È anche possibile configurare [Active Directory Forest Discovery](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutForest) per il rilevamento automatico e la creazione di limiti per ogni subnet IP e sito Active Directory individuati.  
 
 -   Ciascun limite rappresenta un percorso di rete ed è disponibile da tutti i siti della gerarchia.  
@@ -106,7 +107,7 @@ Quando si crea un limite, viene assegnato automaticamente un nome basato sul tip
 
 7.  Fare clic su **OK** per chiudere le proprietà del limite e salvare la configurazione.  
 
-##  <a name="a-namebkmkboundarygroupsa-boundary-groups"></a><a name="BKMK_BoundaryGroups"></a> Boundary groups
+##  <a name="BKMK_BoundaryGroups"></a> Boundary groups
 > [!IMPORTANT]  
 >  **Le informazioni contenute in questa sezione Gruppi di limiti e nelle sezioni figlio sono valide per la versione 1610 o versioni successive.** Questo contenuto è stato rivisto per descrivere in modo specifico le modifiche di progettazione relative ai gruppi di limiti introdotte con questa versione di aggiornamento.
 >
@@ -117,7 +118,7 @@ La versione 1610 introduce importanti modifiche ai gruppi di limiti e al loro fu
 **Informazioni sui gruppi di limiti:**  
  I gruppi di limiti vengono creati per raggruppare logicamente i percorsi di rete correlati (limiti) e semplificare la gestione dell'infrastruttura. Prima di usare un gruppo di limiti è necessario assegnare i limiti ai gruppi di limiti. I client usano la configurazione del gruppo di limiti per:  
 
--   Assegnazione automatica del sito  
+-   Assegnazione automatica al sito  
 -   Percorso contenuto  
 -   Punti di gestione preferiti. Se si usano i punti di gestione preferiti, è necessario abilitare questa opzione per la gerarchia e non dalla configurazione del gruppo di limiti. Vedere la procedura [Per abilitare l'uso dei punti di gestione preferiti](#to-enable-use-of-preferred-management-points) più avanti in questo argomento.  
 
@@ -126,7 +127,7 @@ Quando si configurano i gruppi di limiti, si aggiungono uno o più limiti al gru
 È possibile trovare [procedure per la gestione dei gruppi di limiti](#procedures-for-boundary-groups) più avanti in questo argomento.
 
 
-###  <a name="a-namebkmkboundarysiteassignmenta-about-site-assignment"></a><a name="BKMK_BoundarySiteAssignment"></a> Informazioni sull'assegnazione del sito  
+###  <a name="BKMK_BoundarySiteAssignment"></a> Informazioni sull'assegnazione del sito  
  È possibile configurare ciascun gruppo di limiti con un sito assegnato per i client.  
 
 -   Un client appena installato che usa l'assegnazione automatica del sito verrà aggiunto al sito assegnato di un gruppo di limiti che contiene il percorso di rete corrente del client.  
@@ -137,7 +138,7 @@ Quando si configurano i gruppi di limiti, si aggiungono uno o più limiti al gru
 
 Per altre informazioni sull'assegnazione dei siti per i client, vedere [Utilizzo dell'assegnazione automatica del sito per i computer](../../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_AutomaticAssignment) in [Come assegnare i client a un sito in System Center Configuration Manager](../../../../core/clients/deploy/assign-clients-to-a-site.md).  
 
-###  <a name="a-namebkmkboundarycontentlocationa-about-content-location"></a><a name="BKMK_BoundaryContentLocation"></a> Informazioni sul percorso del contenuto  
+###  <a name="BKMK_BoundaryContentLocation"></a> Informazioni sul percorso del contenuto  
 Quando si configurano i gruppi di limiti, associare i limiti (percorsi di rete) e i ruoli del sistema del sito, ad esempio i punti di distribuzione, al gruppo di limiti. Questa operazione agevola il collegamento dei client ai server del sistema del sito, come i punti di distribuzione che si trovano vicino ai client nella rete.
 
 È possibile assegnare lo stesso limite a più gruppi di limiti e i server del sistema del sito, ad esempio i punti di distribuzione, possono essere associati a più gruppi limite, rendendoli disponibili per una vasta gamma di percorsi di rete.
@@ -151,33 +152,31 @@ Quando si configura il gruppo di limiti cosiddetto **corrente**, è possibile ag
 
 Se un client non riesce a trovare il contenuto e inizia la ricerca dei percorsi nei gruppi limite adiacenti, il pool di punti di distribuzione disponibili aumenta in modo controllato per quel client.
 
--   Un gruppo limite può avere più di una relazione. Ciò consente di configurare il fallback su diversi gruppi adiacenti a diversi intervalli di tempo.
--   I client eseguiranno il fallback a un gruppo limite solo se è direttamente adiacente al gruppo limite corrente.
--   Se un client fa parte di più gruppi limite, il gruppo limite corrente è definito come un'unione di tutti i gruppi limite del client. Il client può quindi eseguire il fallback a un gruppo adiacente di uno di questi gruppi limite originali.
+-    Un gruppo limite può avere più di una relazione. Ciò consente di configurare il fallback su diversi gruppi adiacenti a diversi intervalli di tempo.
+-     I client eseguiranno il fallback a un gruppo limite solo se è direttamente adiacente al gruppo limite corrente.
+-    Se un client fa parte di più gruppi limite, il gruppo limite corrente è definito come un'unione di tutti i gruppi limite del client. Il client può quindi eseguire il fallback a un gruppo adiacente di uno di questi gruppi limite originali.
 
 Oltre ai collegamenti definiti dall'utente, esiste un collegamento implicito che viene creato automaticamente tra i gruppi limite creato dall'utente e il gruppo limite predefinito, creato automaticamente per ogni sito. Questo collegamento automatico:
--   Viene usato dai client che non si trovano in alcun limite associato a un gruppo di limiti nella gerarchia. I client usano automaticamente il gruppo di limiti predefinito del sito loro assegnato per identificare i percorsi di origine del contenuto validi.
--   Si tratta di un'opzione di fallback predefinita dal gruppo limite corrente al gruppo limite predefinito dei siti, usato dopo 120 minuti.
+-     Viene usato dai client che non si trovano in alcun limite associato a un gruppo di limiti nella gerarchia. I client usano automaticamente il gruppo di limiti predefinito del sito loro assegnato per identificare i percorsi di origine del contenuto validi.
+-     Si tratta di un'opzione di fallback predefinita dal gruppo limite corrente al gruppo limite predefinito dei siti, usato dopo 120 minuti.
 
 **Se il contenuto non è disponibile in un gruppo di limiti corrente:**  
-Se il contenuto richiesto da un client non è disponibile in un'origine di contenuto valida in un gruppo di limiti corrente, il client usa il fallback immediato per cercare il contenuto in un punto di distribuzione di un gruppo di limiti adiacente:   
-- Il fallback immediato avviene per i gruppi di limiti adiacenti configurati con il tempo di fallback più breve. Se non ci sono gruppi di limiti adiacenti con un tempo di fallback più breve, il fallback può interessare il gruppo di limiti del sito predefinito.
-- Dopo il primo set di gruppi di limiti adiacenti, il fallback immediato interessa gruppi di limiti aggiuntivi, in base al tempo di fallback configurato per tali gruppi.
+Se il contenuto richiesto da un client non è disponibile in un'origine di contenuto valida in un gruppo di limiti corrente, il client attende di raggiungere il periodo di fallback di un gruppo di limiti vicino o di un gruppo di limiti predefinito del sito prima di cercare origini contenuto aggiuntive.
 
-Se il contenuto viene distribuito su richiesta ma non è disponibile quando richiesto da un client, viene avviato il processo di trasferimento del contenuto a un punto di distribuzione nel limite corrente. Tuttavia, poiché il contenuto in quel momento non è disponibile, il client usa il fallback immediato a un gruppo di limiti adiacente con il tempo di fallback più breve. Quando il contenuto diventa disponibile nel gruppo di limiti corrente, i client aggiuntivi non usano più il fallback immediato a gruppi adiacenti.
+Se il contenuto viene distribuito su richiesta ma non è disponibile quando richiesto da un client, viene avviato il processo di trasferimento del contenuto a un punto di distribuzione nel limite corrente.  
 
 
 
 **Esempio sull'uso del nuovo modello:**   
 Creare tre gruppi limite che non condividono limiti o server del sistema del sito:
--   Gruppo BG_A con punti di distribuzione DP_A1 e DP_A2 associati al gruppo
--   Gruppo BG_B con punti di distribuzione DP_B1 e DP_B2 associati al gruppo
--   Gruppo BG_C con punti di distribuzione DP_C1 e DP_C2 associati al gruppo
+-    Gruppo BG_A con punti di distribuzione DP_A1 e DP_A2 associati al gruppo
+-    Gruppo BG_B con punti di distribuzione DP_B1 e DP_B2 associati al gruppo
+-    Gruppo BG_C con punti di distribuzione DP_C1 e DP_C2 associati al gruppo
 
 Aggiungere i percorsi di rete dei client come limiti solo al gruppo limite BG_A e configurare le relazioni tra tale gruppo limite e gli altri due gruppi limite:
--   Configurare i punti di distribuzione per il primo gruppo *adiacente* (BG_B) da usare dopo 10 minuti. Questo gruppo contiene i punti di distribuzione DP_B1 e DP_B2. Entrambi sono ben connessi ai percorsi limite dei primi gruppi.
--   Configurare il secondo gruppo *adiacente* (BG_C) da usare dopo 20 minuti. Questo gruppo contiene i punti di distribuzione DP_C1 e DP_C2. Entrambi si trovano a un WAN rispetto agli altri due gruppi limite.
--   Aggiungere anche un punto di distribuzione aggiuntivo che si trova nel server del sito al gruppo limite del sito predefinito di siti. Si tratta della posizione di origine di contenuto meno preferita, ma si trova a livello centrale per tutti i gruppi limite.
+-    Configurare i punti di distribuzione per il primo gruppo *adiacente* (BG_B) da usare dopo 10 minuti. Questo gruppo contiene i punti di distribuzione DP_B1 e DP_B2. Entrambi sono ben connessi ai percorsi limite dei primi gruppi.
+-    Configurare il secondo gruppo *adiacente* (BG_C) da usare dopo 20 minuti. Questo gruppo contiene i punti di distribuzione DP_C1 e DP_C2. Entrambi si trovano a un WAN rispetto agli altri due gruppi limite.
+-    Aggiungere anche un punto di distribuzione aggiuntivo che si trova nel server del sito al gruppo limite del sito predefinito di siti. Si tratta della posizione di origine di contenuto meno preferita, ma si trova a livello centrale per tutti i gruppi limite.
 
     Esempio di gruppi limite e tempi di fallback:
 
@@ -185,10 +184,10 @@ Aggiungere i percorsi di rete dei client come limiti solo al gruppo limite BG_A 
 
 
 Con questa configurazione:
--   Il client inizia la ricerca del contenuto dai punti di distribuzione nel relativo gruppo limite *corrente* (BG_A), cercando in ogni punto di distribuzione per due minuti prima di passare al successivo punto di distribuzione del gruppo limite. Il pool di client dei percorsi di origine del contenuto validi include DP_A1 e DP_A2.
--   Se il client non riesce a trovare il contenuto nel proprio gruppo limite *corrente* dopo 10 minuti di ricerca, aggiunge i punti di distribuzione dal gruppo limite BG_B alla ricerca. Continua quindi a eseguire la ricerca del contenuto da un punto di distribuzione nel proprio pool combinato di punti di distribuzione che include ora i gruppi limite BG_A sia BG_B. Il client continuerà a contattare ogni punto di distribuzione per due minuti prima di passare al successivo punto di distribuzione del pool. Il pool di client dei percorsi di origine del contenuto validi include DP_A1, DP_A2, DP_B1 e DP_B2.
--   Dopo altri 10 minuti (totale di 20 minuti), se il client non ha ancora rilevato un punto di distribuzione con contenuto, espande il proprio pool di punti di distribuzione disponibili per includere i punti del secondo gruppo *adiacente*, il gruppo limite BG_C. Il client ora dispone di 6 punti di distribuzione per la ricerca (DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2) e continua la modifica a un nuovo punto di distribuzione ogni due minuti fino a quando il contenuto non viene trovato.
--   Se il client non ha rilevato il contenuto dopo un totale di 120 minuti, esegue il fallback per includere il *gruppo limite del sito predefinito* nella ricerca. Il pool di punti di distribuzione include ora tutti i punti di distribuzione dei tre gruppi limite configurati e il punto di distribuzione finale situato nel computer server del sito.  Il client continua quindi la ricerca del contenuto, modificando i punti di distribuzione ogni due minuti fino a quando il contenuto non viene trovato.
+-    Il client inizia la ricerca del contenuto dai punti di distribuzione nel relativo gruppo limite *corrente* (BG_A), cercando in ogni punto di distribuzione per due minuti prima di passare al successivo punto di distribuzione del gruppo limite. Il pool di client dei percorsi di origine del contenuto validi include DP_A1 e DP_A2.
+-    Se il client non riesce a trovare il contenuto nel proprio gruppo limite *corrente* dopo 10 minuti di ricerca, aggiunge i punti di distribuzione dal gruppo limite BG_B alla ricerca. Continua quindi a eseguire la ricerca del contenuto da un punto di distribuzione nel proprio pool combinato di punti di distribuzione che include ora i gruppi limite BG_A sia BG_B. Il client continuerà a contattare ogni punto di distribuzione per due minuti prima di passare al successivo punto di distribuzione del pool. Il pool di client dei percorsi di origine del contenuto validi include DP_A1, DP_A2, DP_B1 e DP_B2.
+-    Dopo altri 10 minuti (totale di 20 minuti), se il client non ha ancora rilevato un punto di distribuzione con contenuto, espande il proprio pool di punti di distribuzione disponibili per includere i punti del secondo gruppo *adiacente*, il gruppo limite BG_C. Il client ora dispone di 6 punti di distribuzione per la ricerca (DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2) e continua la modifica a un nuovo punto di distribuzione ogni due minuti fino a quando il contenuto non viene trovato.
+-    Se il client non ha rilevato il contenuto dopo un totale di 120 minuti, esegue il fallback per includere il *gruppo limite del sito predefinito* nella ricerca. Il pool di punti di distribuzione include ora tutti i punti di distribuzione dei tre gruppi limite configurati e il punto di distribuzione finale situato nel computer server del sito.  Il client continua quindi la ricerca del contenuto, modificando i punti di distribuzione ogni due minuti fino a quando il contenuto non viene trovato.
 
 Configurando i vari gruppi adiacenti perché siano disponibili in momenti diversi, è possibile controllare quando i punti di distribuzione specifici vengono aggiunti come percorso di origine del contenuto e quando o se il client esegue il fallback al gruppo limite del sito predefinito come rete di protezione per il contenuto non disponibile in altre posizioni.
 
@@ -197,12 +196,12 @@ Configurando i vari gruppi adiacenti perché siano disponibili in momenti divers
 
 ### <a name="update-existing-boundary-groups-to-the-new-model"></a>Aggiornare i gruppi di limiti esistenti al muovo modello
 Quando si esegue l'aggiornamento alla versione 1610, vengono eseguite automaticamente le configurazioni seguenti. Tali configurazioni sono utili per verificare che il comportamento di fallback corrente rimanga disponibile finché non si configurano i nuovi gruppi limite e le relazioni.
--   Per ogni sito primario viene creato un gruppo di limiti del sito predefinito, denominato ***Default-Site-Boundary-Group&lt;codicesito>.***
--   Punti di distribuzione con l'opzione *Consenti percorso origine di fallback per il contenuto* selezionata e punti di migrazione stato presso siti primari vengono aggiunti al gruppo di limiti *Default-Site-Boundary-Group&lt;codicesito>* di tale sito.
--   Viene creata una copia di ogni gruppo limite esistente che include un server del sito configurato con una connessione lenta. Il nome del nuovo gruppo è ***&lt;nome gruppo limiti originale>-&lt;ID gruppo limiti originale>***:  
-    -   I sistemi del sito che dispongono di una connessione veloce rimangono nel gruppo limite originale.
-    -   Una copia dei sistemi del sito (punti di distribuzione, punti di gestione e punti di migrazione stato) che dispongono di una connessione lenta viene aggiunta alla copia del gruppo di limiti. I sistemi del sito originale configurati con una connessione lenta rimangono nel gruppo di limiti originale per garantire la compatibilità con le versioni precedenti, ma non vengono usati partendo da questo gruppo di limiti.
-    -   Questa copia del gruppo limite non dispone di limiti associati. Tuttavia, viene creato un collegamento fallback tra il gruppo originale e la nuova copia del gruppo limite che presenta l'ora di fallback impostata su zero.  
+-    Per ogni sito primario viene creato un gruppo di limiti del sito predefinito, denominato ***Default-Site-Boundary-Group&lt;codicesito>.***
+-    Punti di distribuzione con l'opzione *Consenti percorso origine di fallback per il contenuto* selezionata e punti di migrazione stato presso siti primari vengono aggiunti al gruppo di limiti *Default-Site-Boundary-Group&lt;codicesito>* di tale sito.
+-    Viene creata una copia di ogni gruppo limite esistente che include un server del sito configurato con una connessione lenta. Il nome del nuovo gruppo è ***&lt;nome gruppo limiti originale>-&lt;ID gruppo limiti originale>***:  
+    -    I sistemi del sito che dispongono di una connessione veloce rimangono nel gruppo limite originale.
+    -    Una copia dei sistemi del sito (punti di distribuzione, punti di gestione e punti di migrazione stato) che dispongono di una connessione lenta viene aggiunta alla copia del gruppo di limiti. I sistemi del sito originale configurati con una connessione lenta rimangono nel gruppo di limiti originale per garantire la compatibilità con le versioni precedenti, ma non vengono usati partendo da questo gruppo di limiti.
+    -     Questa copia del gruppo limite non dispone di limiti associati. Tuttavia, viene creato un collegamento fallback tra il gruppo originale e la nuova copia del gruppo limite che presenta l'ora di fallback impostata su zero.  
 
 
 - **Valido solo per i siti secondari:**
@@ -218,7 +217,7 @@ Configurazione della distribuzione originale per "Non eseguire il programma" in 
 Selezionato     |  Selezionato    |  **Nessun fallback**: usare solo i punti di distribuzione nel gruppo limite corrente       
 Selezionato     |  Non selezionato|  **Nessun fallback**: usare solo i punti di distribuzione nel gruppo limite corrente       
 Non selezionato |  Non selezionato|  **Fallback verso adiacente**: usare i punti di distribuzione nel gruppo limite corrente e quindi aggiungere i punti di distribuzione del gruppo limite adiacente. A meno che non sia configurato un collegamento esplicito al gruppo limite del sito predefinito, i client non eseguono il fallback su questo gruppo.    
-Non selezionato | Selezionato     |   **Fallback normale**: usare i punti di distribuzione nel gruppo limite corrente, quindi quelli del gruppo adiacente e dal gruppo limite del sito predefinito
+Non selezionato | Selezionato        |   **Fallback normale**: usare i punti di distribuzione nel gruppo limite corrente, quindi quelli del gruppo adiacente e dal gruppo limite del sito predefinito
 
  Tutte le altre configurazioni di distribuzione seguiranno il **Fallback normale**.  
 
@@ -228,15 +227,15 @@ Non selezionato | Selezionato     |   **Fallback normale**: usare i punti di dis
 Di seguito sono riportate le modifiche principali ai gruppi limite e alle modalità di ricerca del contenuto da parte dei client introdotte con la versione 1610. Molti di queste modifiche e concetti funzionano in combinazione.
 
 
--   **Le configurazioni Veloce o Lento vengono rimosse:** non è più possibile configurare la velocità o la lentezza dei singoli punti di distribuzione.  Al contrario, ogni sistema del sito associato a un gruppo limite viene trattato ugualmente. Grazie a questa modifica, la scheda **Riferimenti** delle proprietà del gruppo limite non supporta la configurazione Veloce o Lento.
--   **Nuovo gruppo limite predefinito in ogni sito:** ciascun sito primario dispone di un nuovo gruppo limite predefinito denominato ***Default-Site-Boundary-Group&lt;CodiceSito>***.  Quando un client non è presente in un percorso di rete che viene assegnato a un gruppo limite, il client usa i sistemi del sito associati al gruppo predefinito del sito assegnato. Considerare l'uso di questo gruppo limite come sostituzione del concetto di percorso del contenuto di fallback.      
- -  L'opzione **"Allow fallback source locations for content"** (Consenti percorsi di origine di fallback per il contenuto) viene rimossa: la configurazione di un punto di distribuzione da usare per il fallback non avviene più in modo esplicito e le opzioni per impostare questa proprietà vengono rimosse dall'interfaccia utente.
+-    **Le configurazioni Veloce o Lento vengono rimosse:** non è più possibile configurare la velocità o la lentezza dei singoli punti di distribuzione.  Al contrario, ogni sistema del sito associato a un gruppo limite viene trattato ugualmente. Grazie a questa modifica, la scheda **Riferimenti** delle proprietà del gruppo limite non supporta la configurazione Veloce o Lento.
+-     **Nuovo gruppo limite predefinito in ogni sito:** ciascun sito primario dispone di un nuovo gruppo limite predefinito denominato ***Default-Site-Boundary-Group&lt;CodiceSito>***.  Quando un client non è presente in un percorso di rete che viene assegnato a un gruppo limite, il client usa i sistemi del sito associati al gruppo predefinito del sito assegnato. Considerare l'uso di questo gruppo limite come sostituzione del concetto di percorso del contenuto di fallback.      
+ -    L'opzione **"Allow fallback source locations for content"** (Consenti percorsi di origine di fallback per il contenuto) viene rimossa: la configurazione di un punto di distribuzione da usare per il fallback non avviene più in modo esplicito e le opzioni per impostare questa proprietà vengono rimosse dall'interfaccia utente.
 
     Il risultato dell'impostazione **Allow fallback source locations for content** (Consenti percorsi di origine di fallback per il contenuto) in un tipo di distribuzione per le applicazioni cambia. Questa impostazione su un tipo di distribuzione consente ora al client di usare il gruppo limite del sito predefinito come percorso di origine del contenuto.
 
- -  **Relazioni tra gruppi limite:** ciascun gruppo limite può essere collegato a uno o più gruppi limite aggiuntivi. Questi collegamenti costituiscono le relazioni configurate sulla nuova scheda delle proprietà del gruppo limite, denominata **Relationships** (Relazioni):
-    -   Ogni gruppo limite associato direttamente a un client viene chiamato gruppo limite **corrente**.  
-    -   Qualsiasi gruppo limite che un client può usare grazie all'associazione tra il gruppo limite *corrente* e un altro gruppo viene chiamato gruppo limite **adiacente**.
+ -    **Relazioni tra gruppi limite:** ciascun gruppo limite può essere collegato a uno o più gruppi limite aggiuntivi. Questi collegamenti costituiscono le relazioni configurate sulla nuova scheda delle proprietà del gruppo limite, denominata **Relationships** (Relazioni):
+     -    Ogni gruppo limite associato direttamente a un client viene chiamato gruppo limite **corrente**.  
+    -     Qualsiasi gruppo limite che un client può usare grazie all'associazione tra il gruppo limite *corrente* e un altro gruppo viene chiamato gruppo limite **adiacente**.
     -  Nella scheda **Relationships** (Relazioni) è possibile aggiungere gruppi limite da usare come gruppo limite *adiacente*. È anche possibile configurare una quantità di minuti che stabiliste il momento in cui il client che non riesce a trovare il contenuto da un punto di distribuzione nel gruppo *corrente* avvierà la ricerca dei percorsi del contenuto nei gruppi limite *adiacenti*.
 
         Quando si aggiunge o si modifica una configurazione del gruppo limite, è possibile bloccare il fallback su tale gruppo limite dal gruppo corrente che si sta configurando.
@@ -248,7 +247,7 @@ Di seguito sono riportate le modifiche principali ai gruppi limite e alle modali
     Questo comportamento sostituisce ciò che in precedenza veniva definito "fallback per il contenuto".  È possibile eseguire l'override di questo comportamento predefinito di 120 minuti, associando in modo esplicito il gruppo limite del sito predefinito a un gruppo *corrente* e impostando un momento specifico, indicato in minuti, o il blocco completo del fallback per impedirne l'uso.
 
 
--   **I client tentano di ottenere i contenuti da ogni punto di distribuzione per un massimo di 2 minuti:** quando un client cerca un percorso di origine del contenuto, tenta di accedere a ogni punto di distribuzione per 2 minuti prima di passare a un altro punto di distribuzione. Si tratta di una modifica rispetto alle versioni precedenti in cui i client tentavano di connettersi a un punto di distribuzione per un massimo di 2 ore.
+-     **I client tentano di ottenere i contenuti da ogni punto di distribuzione per un massimo di 2 minuti:** quando un client cerca un percorso di origine del contenuto, tenta di accedere a ogni punto di distribuzione per 2 minuti prima di passare a un altro punto di distribuzione. Si tratta di una modifica rispetto alle versioni precedenti in cui i client tentavano di connettersi a un punto di distribuzione per un massimo di 2 ore.
 
     - Il primo punto di distribuzione che un client tenta di usare viene selezionato casualmente dal pool di punti di distribuzione disponibili nel gruppo, o gruppi, limite *corrente* del client.
 
@@ -265,7 +264,7 @@ Di seguito sono riportate le modifiche principali ai gruppi limite e alle modali
 
 
 
-###  <a name="a-namebkmkpreferredmpa-about-preferred-management-points"></a><a name="BKMK_PreferredMP"></a> Informazioni sui punti di gestione preferiti  
+###  <a name="BKMK_PreferredMP"></a> Informazioni sui punti di gestione preferiti  
  I punti di gestione preferiti consentono a un client di identificare un punto di gestione associato al percorso di rete corrente (limite).  
 
 -   Il client prova a usare un punto di gestione preferito dal sito assegnato prima di usare un punto di gestione da questo sito non configurato come preferito.  
@@ -275,7 +274,7 @@ Di seguito sono riportate le modifiche principali ai gruppi limite e alle modali
 > [!NOTE]  
 >  Quando un client esegue il roaming (ossia, modifica i percorsi di rete, ad esempio quando un computer portatile viene spostato in un percorso di ufficio remoto), può usare un punto di gestione (o un punto di gestione proxy) dal sito locale nella nuova posizione prima di provare a usare un punto di gestione del sito assegnato (che include i punti di gestione preferiti).  Per altre informazioni, vedere [Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 
-###   <a name="a-namebkmkboundaryoverlapa-about-overlapping-boundaries"></a><a name="BKMK_BoundaryOverlap"></a> Informazioni sui limiti sovrapposti  
+###   <a name="BKMK_BoundaryOverlap"></a> Informazioni sui limiti sovrapposti  
  Configuration Manager supporta le configurazioni con sovrapposizione dei limiti per il percorso del contenuto:  
 
 -   **Quando un client richiede un contenuto** e il percorso di rete del client appartiene a più gruppi di limiti, Configuration Manager invia al client un elenco di tutti i punti di distribuzione che hanno il contenuto.  
@@ -383,7 +382,7 @@ Le procedure seguenti si applicano alla versione 1610 e alle versioni successive
 
 
 
-##  <a name="a-namebkmkboundarybestpracticesa-best-practices-for-boundaries"></a><a name="BKMK_BoundaryBestPractices"></a> Procedure consigliate per i limiti  
+##  <a name="BKMK_BoundaryBestPractices"></a> Procedure consigliate per i limiti  
 
 -   **Usare una combinazione del numero minimo di limiti che soddisfano le esigenze:**  
    In passato era consigliabile preferire alcuni tipi di limiti rispetto ad altri. Con le modifiche apportate per migliorare le prestazioni, è ora consigliabile usare il tipo o i tipi di limiti più adatti all'ambiente in uso e il numero più basso possibile di limiti, per semplificare le attività di gestione.      
@@ -398,9 +397,4 @@ Le procedure seguenti si applicano alla versione 1610 e alle versioni successive
     -   Un client in un limite membro di due gruppi di limiti con assegnazioni del sito diverse selezionerà in modo casuale il sito a cui aggiungersi, che potrebbe non corrispondere a quello a cui si intende aggiungere il client.  Questa configurazione è definita a limiti sovrapposti.  
 
      La sovrapposizione dei limiti non è un problema per il percorso del contenuto e spesso è la configurazione desiderata che fornisce ai client risorse aggiuntive o percorsi del contenuto che possono usare.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -17,8 +17,9 @@ ms.author: andredm
 manager: angrobe
 robots: noindex
 translationtype: Human Translation
-ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
-ms.openlocfilehash: 4cc7148be602367b579d63535a4938919bacf829
+ms.sourcegitcommit: b1295fff41d99b0bd6fc00ccab7a4b8bbdb60866
+ms.openlocfilehash: dda0916fac15cf768ecc2a44fda3b8939bcd048e
+ms.lasthandoff: 02/27/2017
 
 ---
 
@@ -123,7 +124,7 @@ ms.openlocfilehash: 4cc7148be602367b579d63535a4938919bacf829
     * iOS 6+
     * Android 4.0+
     * Samsung KNOX Standard 4.0+
-* **Richiedi una password per sbloccare un dispositivo inattivo (aggiornamento 1602):** richiede agli utenti di immettere una password per poter accedere al dispositivo bloccato.
+* **Richiedi una password per sbloccare un dispositivo inattivo (aggiornamento&1602;):** richiede agli utenti di immettere una password per poter accedere al dispositivo bloccato.
 
   **Supportato in:**
   * Windows Phone 8+
@@ -131,7 +132,7 @@ ms.openlocfilehash: 4cc7148be602367b579d63535a4938919bacf829
   * Android 4.0+
   * Samsung KNOX Standard 4.0+
 
-* **Minuti di inattività prima che venga richiesta la password (aggiornamento 1602):** Specifica il tempo di inattività prima che l'utente debba immettere nuovamente la password. Impostare il valore su una delle opzioni disponibili: **1 minuto**, **5 minuti**, **15 minuti**, **30 minuti**, **1 ora**.
+* **Minuti di inattività prima che venga richiesta la password (aggiornamento&1602;):** Specifica il tempo di inattività prima che l'utente debba immettere nuovamente la password. Impostare il valore su una delle opzioni disponibili: **1 minuto**, **5 minuti**, **15 minuti**, **30 minuti**, **1 ora**.
 
   Questa regola deve essere usata con **Richiedi una password per sbloccare un dispositivo inattivo**. Il valore impostato qui determina i casi in cui il dispositivo è considerato inattivo e viene bloccato e se la regola  **Richiedi una password per sbloccare un dispositivo inattivo** è impostata su **True**, verrà quindi richiesto all'utente di immettere una password per accedere al dispositivo bloccato.
 
@@ -218,12 +219,14 @@ ms.openlocfilehash: 4cc7148be602367b579d63535a4938919bacf829
   - **L'avvio protetto è abilitato:** quando la funzionalità Avvio protetto è abilitata, viene forzato l'avvio del sistema in uno stato attendibile predefinito. Inoltre, i componenti di base usati per avviare il computer devono avere le firme di crittografia corrette ritenute attendibili dall'organizzazione che ha prodotto il dispositivo. Il firmware UEFI verifica questo aspetto prima di permettere l'avvio del computer. Se uno o più file sono stati manomessi, danneggiandone la firma, il sistema non viene avviato.
   - **La funzionalità antimalware ad esecuzione anticipata è abilitata (l'impostazione si applica solo ai PC):** la funzionalità antimalware ad esecuzione anticipata offre protezione per i computer in rete quando vengono avviati e prima dell'inizializzazione di driver di terze parti.<br />Questa regola è disattivata per impostazione predefinita.
 
+- **App che non possono essere installate nel dispositivo:** se gli utenti installano un'applicazione dall'elenco di app non conformi per l'amministratore, l'installazione viene bloccata quando si cerca di accedere alla posta elettronica aziendale. Questa regola richiede il nome e l'ID dell'app quando si aggiunge un'app all'elenco di app non conformi definito dall'amministratore. È possibile aggiungere anche l'autore dell'app, ma non è obbligatorio.
+
+  **Supportato in:**
+  * iOS 6+
+  * Android 4.0+
+  * Samsung KNOX Standard 4.0+
+
   Per informazioni sul funzionamento del servizio di attestazione dell'integrità, vedere l'argomento relativo al [provider di servizi di configurazione HealthAttestation](https://msdn.microsoft.com/library/dn934876.aspx).
   **Supportato in:**
   * Windows 10 e Windows 10 Mobile
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

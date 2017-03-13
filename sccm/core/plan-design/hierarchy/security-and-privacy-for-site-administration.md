@@ -2,7 +2,7 @@
 title: Privacy e sicurezza per l&quot;amministrazione dei siti | Microsoft Docs
 description: Ottimizzare sicurezza e privacy per l&quot;amministrazione dei siti in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 3/1/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: aca2169c8f5f855e84ca924ca56f6b64bba80fd6
+ms.sourcegitcommit: 168650cca28fe1331e48ea5e8e025e110dda835f
+ms.openlocfilehash: 4ca43db385ea97d5d026c50a799b783096c05d36
+ms.lasthandoff: 03/01/2017
 
 
 ---
@@ -25,24 +26,24 @@ ms.openlocfilehash: aca2169c8f5f855e84ca924ca56f6b64bba80fd6
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-In questo argomento vengono illustrate le informazioni sulla privacy per i siti e la gerarchia di System Center Configuration Manager.
+Questo argomento include informazioni sulla sicurezza e la privacy per i siti e la gerarchia di System Center Configuration Manager.
 
-##  <a name="a-namebkmksecuritysitesa-security-best-practices-for-site-administration"></a><a name="BKMK_Security_Sites"></a> Procedure di protezione ottimali per l'amministrazione del sito  
+##  <a name="BKMK_Security_Sites"></a> Procedure di sicurezza consigliate per l'amministrazione del sito  
  Usare le procedure di sicurezza consigliate seguenti per proteggere i siti e la gerarchia di System Center Configuration Manager.  
 
- **Eseguire l'installazione solo da una fonte attendibile e proteggere il canale di comunicazione tra i supporti di installazione e il server del sito.**  
+ **Eseguire l'installazione solo da un'origine attendibile e proteggere il canale di comunicazione tra i supporti di installazione e il server del sito.**  
 
- Per impedire la manomissione dei file di origine, eseguire l'installazione da una fonte attendibile. Se si archiviano i file in rete, proteggere il percorso di rete.  
+ Per impedire la manomissione dei file di origine, eseguire l'installazione da un'origine attendibile. Se si archiviano i file in rete, proteggere il percorso di rete.  
 
- SE si esegue l'installazione da un percorso di rete, per evitare che un utente malintenzionato manometta i file mentre vengono trasmessi in rete, utilizzare la firma IPsec o SMB tra il percorso di origine dei file di installazione e il server del sito.  
+ Se si esegue l'installazione da un percorso di rete, per evitare che un utente malintenzionato manometta i file mentre vengono trasmessi in rete, usare la firma IPsec o Server Message Block (SMB) tra il percorso di origine dei file di installazione e il server del sito.  
 
- Inoltre, se si utilizza il Downloader di installazione per scaricare i file necessari richiesti dall'installazione, assicurarsi di proteggere anche il percorso in cui tali file vengono memorizzati e proteggere il canale di comunicazione per questo percorso quando si esegue l'installazione.  
+ Inoltre, se si usa il downloader di installazione per scaricare i file necessari richiesti dall'installazione, assicurarsi di proteggere anche il percorso in cui tali file vengono memorizzati e proteggere il canale di comunicazione per questo percorso quando si esegue l'installazione.  
 
  **Estendere lo schema di Active Directory per System Center Configuration Manager e pubblicare i siti in Active Directory Domain Services.**  
 
  Le estensioni dello schema non sono necessarie per eseguire System Center Configuration Manager, ma creano un ambiente più sicuro perché i client e i server del sito di Configuration Manager possono recuperare le informazioni da un'origine attendibile.  
 
- Se i client si trovano in un dominio non attendibile, distribuire i ruoli del sistema del sito seguenti nel dominio dei client:  
+ Se i client si trovano in un dominio non attendibile, distribuire i ruoli del sistema del sito seguenti nei domini dei client:  
 
 -   Punto di gestione  
 
@@ -51,11 +52,11 @@ In questo argomento vengono illustrate le informazioni sulla privacy per i siti 
 -   Punto per siti Web del Catalogo applicazioni  
 
 > [!NOTE]  
->  Un dominio attendibile per Configuration Manager richiede l'autenticazione Kerberos cosicché, se i client si trovano in un'altra foresta che non dispone di un trust tra foreste bidirezionale con la foresta del server del sito, tali client vengono considerati in un dominio non attendibile. Un trust esterno non è sufficiente a questo scopo.  
+>  Un dominio trusted per Configuration Manager richiede l'autenticazione Kerberos. Di conseguenza, se i client si trovano in un'altra foresta che non dispone di un trust tra foreste bidirezionale con la foresta del server del sito, i client vengono considerati in un dominio non attendibile. Un trust esterno non è sufficiente a questo scopo.  
 
  **Utilizzare IPsec per proteggere le comunicazioni tra i server di sistema del sito e siti.**  
 
- Anche se Configuration Manager protegge le comunicazioni tra il server del sito e il computer su cui è in esecuzione SQL Server, Configuration Manager non protegge le comunicazioni tra i ruoli del sistema del sito e SQL Server. Solo alcuni sistemi del sito (il punto di registrazione e il punto per servizi Web del Catalogo applicazioni) possono essere configurati per HTTPS per le comunicazioni all'interno del sito.  
+ Anche se Configuration Manager protegge le comunicazioni tra il server del sito e il computer in cui è in esecuzione SQL Server, Configuration Manager non protegge le comunicazioni tra i ruoli del sistema del sito e SQL Server. Solo alcuni sistemi del sito (il punto di registrazione e il punto per servizi Web del Catalogo applicazioni) possono essere configurati per HTTPS per le comunicazioni all'interno del sito.  
 
  Se non si utilizzano controlli aggiuntivi per proteggere questi canali da server a server, degli utenti malintenzionati potrebbero utilizzare diversi attacchi di spoofing e man-in-the-middle contro i sistemi del sito. Utilizzare la firma SMB quando non è possibile utilizzare IPsec.  
 
@@ -80,11 +81,11 @@ Per garantire la continuità del servizio e dei privilegi minimi, non modificare
 
 Se i client non possono eseguire la query al server di catalogo globale per ottenere informazioni su Configuration Manager, devono basarsi sulla chiave radice attendibile per autenticare i punti di gestione validi. La chiave radice attendibile viene memorizzata nel Registro di sistema client e può essere impostata tramite i criteri di gruppo o la configurazione manuale.  
 
-Se il client non dispone di una copia della chiave radice attendibile prima di contattare un punto di gestione per la prima volta, si affida al primo punto di gestione con cui comunica. Per ridurre il rischio di un errato indirizzamento dei client a un punto di gestione non autorizzato da parte di un utente malintenzionato, è possibile eseguire il pre-provisioning dei client utilizzando la chiave radice attendibile. Per ulteriori informazioni, vedere [Planning for the Trusted Root Key](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRTK).  
+Se il client non dispone di una copia della chiave radice attendibile prima di contattare un punto di gestione per la prima volta, si affida al primo punto di gestione con cui comunica. Per ridurre il rischio di un errato indirizzamento dei client a un punto di gestione non autorizzato da parte di un utente malintenzionato, è possibile eseguire il pre-provisioning dei client utilizzando la chiave radice attendibile. Per altre informazioni, vedere [Pianificare la chiave radice attendibile](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRTK).  
 
 **Utilizzare numeri di porta non predefiniti.**  
 
-Quando si utilizzano numeri di porta non predefiniti, ciò può fornire una protezione aggiuntiva perché rende più difficile per eventuali utenti malintenzionati l'esplorazione dell'ambiente in preparazione a un attacco. Se si decide di usare porte non predefinite, pianificarle prima di installare Configuration Manager e usarle in modo coerente in tutti i siti della gerarchia. Le porte di richiesta client e la riattivazione LAN sono esempi in cui è possibile utilizzare numeri di porta non predefiniti.  
+L'uso di numeri di porta non predefiniti può offrire un'ulteriore protezione perché rende più difficile l'esplorazione dell'ambiente da parte di utenti malintenzionati che preparano un attacco. Se si decide di usare porte non predefinite, pianificarle prima di installare Configuration Manager e usarle in modo coerente in tutti i siti della gerarchia. Le porte di richiesta client e la riattivazione LAN sono esempi in cui è possibile usare numeri di porta non predefiniti.  
 
 **Utilizzare la separazione dei ruoli nei sistemi del sito.**  
 
@@ -92,23 +93,23 @@ Nonostante si possano installare tutti i ruoli del sistema del sito su un comput
 
 **Ridurre il profilo di attacco.**  
 
-Quando si isola ciascun ruolo del sistema del sito su un server diverso, ciò riduce la possibilità che un attacco alle vulnerabilità in un sistema del sito possa essere utilizzato contro un sistema del sito differente. Molti ruoli del sistema del sito richiedono l'installazione di Internet Information Services (IIS) sul sistema del sito e questo aumenta la superficie di attacco. Se occorre combinare i ruoli del sistema del sito per ridurre il consumo hardware, combinare ruoli del sistema del sito IIS solo con altri ruoli che richiedono IIS.  
+L'isolamento di ogni ruolo del sistema del sito in un server diverso riduce la possibilità che un attacco alle vulnerabilità in un sistema del sito possa essere usato contro un sistema del sito differente. Molti ruoli del sistema del sito richiedono l'installazione di Internet Information Services (IIS) nel sistema del sito e questo aumenta la superficie di attacco. Se occorre combinare i ruoli del sistema del sito per ridurre il consumo hardware, combinare ruoli del sistema del sito IIS solo con altri ruoli che richiedono IIS.  
 
 > [!IMPORTANT]  
->  Il ruolo del punto di stato di fallback è un'eccezione. Dato che questo ruolo del sistema del sito accetta dati non autenticati dai client, il ruolo del punto di stato di fallback non deve mai essere assegnato a qualsiasi altro ruolo del sistema del sito di Configuration Manager.  
+>  Il ruolo del punto di stato di fallback è un'eccezione. Poiché questo ruolo del sistema del sito accetta dati non autenticati dai client, è consigliabile non assegnare mai il ruolo del punto di stato di fallback ad altri ruoli del sistema del sito di Configuration Manager.  
 
 
 **Seguire le procedure di protezione ottimali per Windows Server ed eseguire la Configurazione guidata impostazioni di sicurezza su tutti i sistemi del sito.**  
 
-La Configurazione guidata impostazioni di sicurezza (SCW) consente di creare un criterio di protezione applicabile a qualsiasi server della rete. Dopo aver installato il modello di System Center Configuration Manager, Configurazione guidata impostazioni di sicurezza riconosce applicazioni, servizi, porte e ruoli del sistema del sito di Configuration Manager. Consente quindi la comunicazione necessaria per Configuration Manager e blocca le comunicazioni non richieste.  
+La Configurazione guidata impostazioni di sicurezza (SCW) consente di creare un criterio di protezione applicabile a qualsiasi server della rete. Dopo aver installato il modello di System Center Configuration Manager, Configurazione guidata impostazioni di sicurezza riconosce applicazioni, servizi, porte e ruoli del sistema del sito di Configuration Manager. Consente quindi la comunicazione richiesta per Configuration Manager e blocca le comunicazioni non richieste.  
 
-Configurazione guidata impostazioni di sicurezza è inclusa nel toolkit per System Center 2012 Configuration Manager che è possibile scaricare dall'area download di Microsoft: [System Center 2012 - Configuration Manager Component Add-ons and Extensions](http://go.microsoft.com/fwlink/p/?LinkId=251931) (System Center 2012 - Componenti aggiuntivi ed estensioni di Configuration Manager).  
+Configurazione guidata impostazioni di sicurezza è inclusa nel toolkit per System Center 2012 Configuration Manager che è possibile scaricare dall'Area download Microsoft: [System Center 2012 - Configuration Manager Component Add-ons and Extensions](http://go.microsoft.com/fwlink/p/?LinkId=251931) (System Center 2012 - Componenti aggiuntivi ed estensioni di Configuration Manager).  
 
 **Configurare gli indirizzi IP statici per i sistemi del sito.**  
 
 Gli indirizzi IP statici sono più facili da proteggere da attacchi di risoluzione del nome.  
 
-Gli indirizzi IP statici rendono anche più facile la configurazione di IPsec, il che costituisce una procedura di sicurezza consigliata per proteggere la comunicazione tra i sistemi del sito in Configuration Manager.  
+Anche gli indirizzi IP statici semplificano la configurazione di IPsec. L'uso di IPsec è una procedura consigliata per la protezione della comunicazione tra i sistemi dei siti in Configuration Manager.  
 
 **Non installare altre applicazioni sui server del sistema del sito.**  
 
@@ -138,15 +139,15 @@ Limitare l'accesso alla cartella di rete.
 
 Usare la firma SMB o IPsec tra il percorso di rete e il server del sito e tra il computer su cui è in esecuzione la console di Configuration Manager e il server del sito per impedire a un eventuale utente malintenzionato di manomettere i dati esportati. Utilizzare IPsec per crittografare i dati sulla rete per impedire la divulgazione di informazioni.  
 
-**Se un sistema del sito non riesce a effettuare la disinstallazione o smette di funzionare e non può essere ripristinato, rimuovere manualmente i certificati di Configuration Manager per il server da altri server di Configuration Manager.**  
+**Se un sistema del sito non viene disinstallato correttamente o smette di funzionare e non può essere ripristinato, rimuovere manualmente i certificati di Configuration Manager per il server da altri server di Configuration Manager.**  
 
 Per rimuovere il peer disponibile nell'elenco locale, originariamente stabilito con il sistema del sito e i ruoli del sistema del sito, rimuovere manualmente i certificati di Configuration Manager per il server che ha restituito l'errore nell'archivio certificati **Persone attendibili** su altri server del sistema del sito. Ciò è particolarmente importante se si riassegna il server senza riformattarlo.  
 
-Per ulteriori informazioni su questi certificati, vedere la sezione Controlli crittografici per la comunicazione tra server in [Riferimento tecnico per i controlli crittografici per System Center Configuration Manager](../../../protect/deploy-use/cryptographic-controls-technical-reference.md).  
+Per altre informazioni su questi certificati, vedere la sezione **Controlli crittografici per la comunicazione tra server** in [Riferimento tecnico per i controlli crittografici per System Center Configuration Manager](../../../protect/deploy-use/cryptographic-controls-technical-reference.md).  
 
 **Non configurare i sistemi del sito basati su Internet per effettuare il bridging della rete perimetrale e della intranet.**  
 
-Non configurare i server del sistema del sito come multihomed in modo che siano connessi alla rete perimetrale e alla intranet. Nonostante questa configurazione consente ai sistemi del sito basati su Internet di accettare connessioni client da Internet e dalla intranet, essa elimina un limiti di protezione tra la rete perimetrale e la intranet.  
+Non configurare i server del sistema del sito come multihomed in modo che si connettano alla rete perimetrale e alla Intranet. Nonostante questa configurazione consente ai sistemi del sito basati su Internet di accettare connessioni client da Internet e dalla intranet, essa elimina un limiti di protezione tra la rete perimetrale e la intranet.  
 
 **Se il server del sistema del sito si trova su una rete non attendibile (come una rete perimetrale), configurare il server del sito per avviare connessioni al sistema del sito.**  
 
@@ -165,17 +166,17 @@ Per impostazione predefinita, i sistemi del sito avviano connessioni al server d
 
 **Configurazioni da usare se si configura il sito in modo da riattivare i computer per installare il software.**  
 
--   Se si utilizzano i tradizionali pacchetti di riattivazione, utilizzare broadcast unicast invece che con riferimento a subnet  
+-   Se si utilizzano i tradizionali pacchetti di riattivazione, usare broadcast unicast anziché broadcast con riferimento a subnet.  
 
--   Se occorre utilizzare broadcast con riferimento a subnet, configurare i router in modo che consentano broadcast con riferimento a IP provenienti solo dal server del sito e solo su un numero di porta predefinito.  
+-   Se è necessario usare broadcast con riferimento a subnet, configurare i router in modo che consentano broadcast con riferimento a IP provenienti solo dal server del sito e solo su un numero di porta non predefinito.  
 
-Per altre informazioni sulla diversa riattivazione delle tecnologie LAN, vedere [Pianificazione della riattivazione dei client in System Center Configuration Manager](../../../core/clients/deploy/plan/plan-wake-up-clients.md).
+Per altre informazioni sulle diverse tecnologie di riattivazione LAN, vedere [Pianificare la riattivazione dei client in System Center Configuration Manager](../../../core/clients/deploy/plan/plan-wake-up-clients.md).
 
 **Se si utilizza la notifica tramite posta elettronica, configurare l'accesso autenticato al server di posta SMTP.**  
 
-Quando possibile, utilizzare un server di posta elettronica che supporti l'accesso autenticato e l'account computer del server del sito per l'autenticazione. Se è necessario specificare un account utente per l'autenticazione, utilizzare un account che disponga dei privilegi minimi.  
+Quando possibile, usare un server di posta elettronica che supporti l'accesso autenticato e l'account computer del server del sito per l'autenticazione. Se è necessario specificare un account utente per l'autenticazione, utilizzare un account che disponga dei privilegi minimi.  
 
-##  <a name="a-namebkmksecuritysiteservera-security-best-practices-for-the-site-server"></a><a name="BKMK_Security_SiteServer"></a> Procedure di protezione ottimali per il server del sito  
+##  <a name="BKMK_Security_SiteServer"></a> Procedure di sicurezza consigliate per il server del sito  
  Usare le seguenti procedure di sicurezza consigliate per proteggere il server del sito di Configuration Manager.  
 
  **Installare Configuration Manager in un server membro invece che in un controller di dominio.**  
@@ -186,32 +187,32 @@ Quando possibile, utilizzare un server di posta elettronica che supporti l'acces
 
  **Installare i siti secondari, evitando di copiare i file sul server del sito secondario in rete.**  
 
- Quando si esegue l'installazione e si crea un sito secondario, non selezionare l'opzione per copiare i file dal sito padre sul sito secondario oppure utilizzare un percorso di origine della rete. Quando si copiano dei file in rete, un utente malintenzionato esperto potrebbe assumere il controllo del pacchetto di installazione del sito secondario e manomettere i file prima che vengano installati, anche se la tempistica di questa attacco sarebbe difficile da definire. Questo attacco può essere ridotto utilizzando IPsec o SMB quando si trasferiscono i file.  
+ Quando si esegue l'installazione e si crea un sito secondario, non selezionare l'opzione per copiare i file dal sito padre al sito secondario e non usare un percorso di origine di rete. Quando si copiano dei file in rete, un utente malintenzionato esperto potrebbe assumere il controllo del pacchetto di installazione del sito secondario e manomettere i file prima che vengano installati, anche se la tempistica di questa attacco sarebbe difficile da definire. Questo attacco può essere ridotto utilizzando IPsec o SMB quando si trasferiscono i file.  
 
- Invece di copiare i file in rete, sul server del sito secondario, copiare i file di origine da un supporto in una cartella locale. Quindi quando si esegue l'installazione su un sito secondario, nella pagina **File di origine dell'installazione** , selezionare **Utilizza i file di origine nel seguente percorso del computer del sito secondario (più sicuro)**e specificare questa cartella.  
+ Anziché copiare i file in rete, nel server del sito secondario copiare i file di origine dalla cartella dei supporti a una cartella locale. In seguito, quando si esegue l'installazione per creare un sito secondario, nella pagina **File di origine dell'installazione** selezionare **Utilizza i file di origine nel seguente percorso del computer del sito secondario (più sicuro)** e specificare la cartella indicata.  
 
  Per altre informazioni, vedere la sezione relativa all'installazione di un [sito secondario](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_secondary) nell'argomento sull'[installazione dei siti con System Center Configuration Manager](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md).  
 
-##  <a name="a-namebkmksecuritysqlservera-security-best-practices-for-sql-server"></a><a name="BKMK_Security_SQLServer"></a> Procedure di protezione ottimali per SQL Server  
+##  <a name="BKMK_Security_SQLServer"></a> Procedure di sicurezza consigliate per SQL Server  
  Configuration Manager usa SQL Server come database back-end. Se il database è compromesso, gli utenti malintenzionati potrebbero escludere Configuration Manager e accedere a SQL Server direttamente per lanciare attacchi tramite Configuration Manager. Gli attacchi contro SQL Server sono molto rischiosi e devono essere ridotti in modo appropriato.  
 
  Usare le procedure di sicurezza consigliate seguenti per proteggere SQL Server per Configuration Manager.  
 
  **Non usare il server del database del sito di Configuration Manager per l'esecuzione di altre applicazioni di SQL Server.**  
 
- Quando si aumenta l'accesso al server del database del sito di Configuration Manager, aumenta il rischio per i dati di Configuration Manager. Se il database del sito di Configuration Manager è compromesso, anche altre applicazioni sullo stesso computer di SQL Server possono essere a rischio.  
+ Quando si aumenta l'accesso al server del database del sito di Configuration Manager, aumenta il rischio per i dati di Configuration Manager. Se il database del sito di Configuration Manager è compromesso, anche altre applicazioni nello stesso computer di SQL Server possono essere a rischio.  
 
  **Configurare SQL Server per utilizzare l'autenticazione di Windows.**  
 
- Nonostante Configuration Manager acceda al database del sito tramite un account Windows e l'autenticazione di Windows, è comunque possibile configurare SQL Server perché usi la modalità mista di SQL Server. La modalità mista di SQL Server consente ulteriori accessi SQL per accedere al database, cosa non necessaria che aumenta la superficie di attacco.  
+ Nonostante Configuration Manager acceda al database del sito tramite un account Windows e l'autenticazione di Windows, è comunque possibile configurare SQL Server perché usi la modalità mista di SQL Server. La modalità mista di SQL Server consente ulteriori accessi SQL per accedere al database che non sono necessari e aumentano la superficie di attacco.  
 
  **Eseguire passaggi aggiuntivi per assicurarsi che i siti secondari che utilizzano SQL Server Express dispongano degli ultimi aggiornamenti software.**  
 
- Quando si installa un sito primario, Configuration Manager scarica SQL Server Express dall'Area download Microsoft e copia i file nel server del sito primario. Quando si installa un sito secondario e si seleziona l'opzione che installa SQL Server Express, Configuration Manager installa la versione precedentemente scaricata e non verifica se sono disponibili nuove versioni. Per assicurarsi che il sito secondario disponga delle versioni più recenti, eseguire una delle seguenti operazioni:  
+ Quando si installa un sito primario, Configuration Manager scarica SQL Server Express dall'Area download Microsoft e copia i file nel server del sito primario. Quando si installa un sito secondario e si seleziona l'opzione che installa SQL Server Express, Configuration Manager installa la versione precedentemente scaricata e non verifica se sono disponibili nuove versioni. Per assicurarsi che il sito secondario includa le versioni più recenti, eseguire una delle operazioni seguenti:  
 
--   Dopo aver installato il sito secondario, eseguire Windows Update sul server del sito secondario.  
+-   Dopo aver installato il sito secondario, eseguire Windows Update nel server del sito secondario.  
 
--   Prima di installare il sito secondario, installare manualmente SQL Server Express sul computer che eseguirà il server del sito secondario e assicurarsi di installare la versione più recente ed eventuali aggiornamenti software. Quindi installare il sito secondario e selezionare l'opzione per utilizzare un'istanza di SQL Server esistente.  
+-   Prima di installare il sito secondario, installare manualmente SQL Server Express sul computer che eseguirà il server del sito secondario e assicurarsi di installare la versione più recente ed eventuali aggiornamenti software. Quindi installare il sito secondario e selezionare l'opzione per l'uso di un'istanza di SQL Server esistente.  
 
 Eseguire periodicamente Windows Update per questi siti e tutte le versioni installate di SQL Server per assicurarsi che dispongano degli aggiornamenti software più recenti.  
 
@@ -219,39 +220,41 @@ Eseguire periodicamente Windows Update per questi siti e tutte le versioni insta
 
 Identificare e seguire le procedure ottimali per la versione di SQL Server. Tuttavia, prendere in considerazione i seguenti requisiti per Configuration Manager:  
 
--   L'account computer del server del sito deve essere membro del gruppo Administrators sul computer su cui è in esecuzione SQL Server. Se si segue il suggerimento di SQL Server di "eseguire il provisioning di tutte le entità admin esplicitamente", l'account che si usa per eseguire l'installazione nel server del sito deve essere membro del gruppo di utenti di SQL.  
+-   L'account computer del server del sito deve essere membro del gruppo Administrators sul computer su cui è in esecuzione SQL Server. Se si segue il suggerimento di SQL Server di "eseguire il provisioning di tutte le entità admin esplicitamente", l'account che si usa per eseguire l'installazione nel server del sito deve essere membro del gruppo di utenti SQL.  
 
--   Se si installa SQL Server utilizzando un account utente di dominio, assicurarsi che l'account computer del server del sito sia configurato per un nome dell'entità di servizio (SPN) che viene pubblicato nei Servizi di dominio Active Directory. Senza SPN, l'autenticazione Kerberos avrà esito negativo e così anche l'installazione di Configuration Manager.  
+-   Se si installa SQL Server utilizzando un account utente di dominio, assicurarsi che l'account computer del server del sito sia configurato per un nome dell'entità di servizio (SPN) che viene pubblicato nei Servizi di dominio Active Directory. Senza SPN, l'autenticazione Kerberos e l'installazione di Configuration Manager avranno esito negativo.  
 
-##  <a name="a-namebkmksecurityiisa-security-best-practices-for-site-systems-that-run-iis"></a><a name="BKMK_Security_IIS"></a> Procedure di protezione ottimali per i sistemi del sito su cui è in esecuzione IIS  
-Diversi ruoli del sistema del sito in Configuration Manager richiedono IIS. Proteggendo IIS si consente il funzionamento corretto di Configuration Manager e si riduce il rischio di attacchi alla sicurezza. Quando è possibile, ridurre al minimo il numero di server che richiedono IIS. Ad esempio, eseguire solo il numero di punti di gestione richiesti per il supporto della base client, prendendo in considerazione l'alta disponibilità e l'isolamento di rete per la gestione client basata su Internet.  
+##  <a name="BKMK_Security_IIS"></a> Procedure di sicurezza consigliate per i sistemi del sito che eseguono IIS  
+Diversi ruoli del sistema del sito in Configuration Manager richiedono IIS. Il processo di protezione di IIS consente a Configuration Manager di funzionare correttamente e riduce il rischio di attacchi alla sicurezza. Quando è possibile, ridurre al minimo il numero di server che richiedono IIS. Ad esempio, eseguire solo il numero di punti di gestione richiesti per il supporto della base client, prendendo in considerazione l'alta disponibilità e l'isolamento di rete per la gestione client basata su Internet.  
 
  Utilizzare le seguenti procedure di protezione ottimali per proteggere i sistemi del sito che su cui è in esecuzione IIS.  
 
  **Disabilitare le funzioni IIS non necessarie.**  
 
- Installare solo le funzionalità IIS minime per il ruolo del sistema del sito che si installa. Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)  
+ Installare solo le funzionalità IIS minime per il ruolo del sistema del sito che si installa. Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](../../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
 
  **Configurare i ruoli del sistema del sito per richiedere HTTPS.**  
 
  Quando i client si collegano a un sistema del sito utilizzando HTTP invece di HTTP, utilizzano l'autenticazione Windows che potrebbe cercare di utilizzare l'autenticazione NTLM invece dell'autenticazione Kerberos. Quando viene utilizzata l'autenticazione NTLM, i client potrebbero connettersi a un server non autorizzato.  
 
- L'eccezione a questa procedura di protezione ottimale potrebbero essere i punti di distribuzione perché gli account di accesso al pacchetto non funzionano quando il punto di distribuzione è configurato per HTTPS. Gli account di accesso al pacchetto forniscono l'autorizzazione al contenuto, in modo che è possibile limitare gli utenti che possono accedere al contenuto. Per ulteriori informazioni, vedere [Security Best Practices for Content Management](../../../core/plan-design/hierarchy/security-and-privacy-for-content-management.md#BKMK_Security_ContentManagement).  
+ L'eccezione a questa procedura di protezione ottimale potrebbero essere i punti di distribuzione perché gli account di accesso al pacchetto non funzionano quando il punto di distribuzione è configurato per HTTPS. Gli account di accesso al pacchetto forniscono l'autorizzazione al contenuto, in modo che è possibile limitare gli utenti che possono accedere al contenuto. Per altre informazioni, vedere [Procedure di sicurezza consigliate per la gestione del contenuto](../../../core/plan-design/hierarchy/security-and-privacy-for-content-management.md#BKMK_Security_ContentManagement).  
 
 **Configurare un elenco di certificati attendibili (CTL) in IIS per i ruoli del sistema del sito.**  
 
 Ruoli del sistema del sito:  
 
--   Un punto di distribuzione configurato per HTTPS.  
+-   Un punto di distribuzione configurato per HTTPS  
 
--   Una gestione configurata per HTTPS e abilitata per il supporto di dispositivi mobili.  
+-   Un punto di gestione configurato per HTTPS e abilitato per il supporto di dispositivi mobili
 
-Un elenco di certificati attendibili (CTL) è un elenco definito di autorità di certificazione radice attendibile. Quando si utilizza un CTL con Criteri di gruppo e un una distribuzione PKI, il CTL consente di integrare le autorità di certificazione radice attendibili esistenti che sono configurate in rete, come quelle automaticamente installate con Microsoft Windows o aggiunte tramite le autorità di certificazione radice dell'organizzazione (enterprise) di Windows. Tuttavia, quando un CTL è configurato in IIS, definisce un sottoinsieme di tali autorità di certificazione radice attendibili.  
+Un elenco di certificati attendibili (CTL) è un elenco definito di autorità di certificazione radice attendibile. Quando si usa un elenco scopi consentiti ai certificati con Criteri di gruppo e una distribuzione di infrastruttura a chiave pubblica (PKI), l'elenco scopi consentiti ai certificati consente di integrare le autorità di certificazione radice attendibili esistenti configurate nella rete, ad esempio le autorità installate automaticamente con Microsoft Windows o aggiunte tramite le autorità di certificazione radice dell'organizzazione di Windows. Tuttavia, se configurato in IIS, l'elenco scopi consentiti ai certificati definisce un sottoinsieme delle autorità di certificazione radice attendibili.  
 
-Questo sottoinsieme fornisce più controllo sulla protezione perché il CTL limita i certificati client accettati solo a quelli che vengono emessi dall'elenco delle autorità di certificazione nel CTL. Ad esempio, Windows viene fornito con un numero di certificati di autorità di certificazione di terze parti ben note, come VeriSign e Thawte. Per impostazione predefinita, il computer su cui è in esecuzione IIS ritiene attendibili i certificati concatenati a queste autorità di certificazione ben note. Quando IIS non viene configurato con un elenco scopi consentiti per i ruoli del sistema del sito in elenco, tutti i dispositivi che hanno un certificato client emesso da tali autorità di certificazione vengono accettati come client validi di Configuration Manager. Se IIS viene configurato con un CTL che non comprendeva queste autorità di certificazione, le connessioni client vengono rifiutate se il certificato è concatenato a tali autorità. Tuttavia, affinché i client di Configuration Manager vengano accettati per i ruoli del sistema del sito in elenco, occorre configurare IIS con un elenco scopi consentiti che specifichi le autorità di certificazione usate dai client di Configuration Manager.  
+Questo sottoinsieme fornisce più controllo sulla protezione perché il CTL limita i certificati client accettati solo a quelli che vengono emessi dall'elenco delle autorità di certificazione nel CTL. Ad esempio, Windows include diversi certificati di autorità di certificazione di terze parti come VeriSign e Thawte.
+
+Per impostazione predefinita, il computer su cui è in esecuzione IIS ritiene attendibili i certificati concatenati a queste autorità di certificazione ben note. Quando IIS non viene configurato con un elenco scopi consentiti ai certificati per i ruoli del sistema del sito in elenco, tutti i dispositivi che hanno un certificato client emesso da tali autorità di certificazione vengono accettati come client validi di Configuration Manager. Se IIS viene configurato con un CTL che non comprendeva queste autorità di certificazione, le connessioni client vengono rifiutate se il certificato è concatenato a tali autorità. Tuttavia, affinché i client di Configuration Manager vengano accettati per i ruoli del sistema del sito in elenco, occorre configurare IIS con un elenco scopi consentiti che specifichi le autorità di certificazione usate dai client di Configuration Manager.  
 
 > [!NOTE]  
->  Solo i ruoli del sistema del sito in elenco richiedono la configurazione di un elenco scopi consentiti in IIS; l'elenco delle autorità che emettono certificati usato da Configuration Manager per i punti di gestione offre la stessa funzionalità per i computer client quando si collegano ai punti di gestione HTTPS.  
+>  Solo i ruoli del sistema del sito in elenco richiedono la configurazione di un elenco scopi consentiti ai certificati in IIS. L'elenco delle autorità che emettono certificati usato da Configuration Manager per i punti di gestione offre la stessa funzionalità per i computer client quando si collegano ai punti di gestione HTTPS.  
 
 Per ulteriori informazioni su come configurare un elenco di autorità di certificazione attendibili in IIS, consultare la documentazione IIS.  
 
@@ -265,9 +268,9 @@ Sebbene sia possibile ospitare più applicazioni basate su Web sui server IIS ch
 
 Se è necessario eseguire altre applicazioni basate su Web nei sistemi del sito di Configuration Manager, creare un sito Web personalizzato per i sistemi del sito di Configuration Manager.  
 
-**Utilizzare un sito Web personalizzato.**  
+**Usare un sito Web personalizzato.**  
 
-Per i sistemi del sito su cui è in esecuzione IIS, è possibile configurare Configuration Manager per usare un sito Web personalizzato invece del sito Web predefinito per IIS. Se è necessario eseguire altre applicazioni Web sul sistema del sito, è necessario utilizzare un sito Web personalizzato. Questa impostazione vale a livello di sito e non per un sistema del specifico.  
+Per i sistemi del sito su cui è in esecuzione IIS, è possibile configurare Configuration Manager per usare un sito Web personalizzato invece del sito Web predefinito per IIS. Per poter eseguire altre applicazioni Web sul sistema del sito, è necessario usare un sito Web personalizzato. Questa impostazione si applica all'intero sito anziché al sistema del sito specifico.  
 
 Oltre a fornire una protezione aggiuntiva, è necessario utilizzare un sito Web personalizzato se si eseguono altre applicazioni Web sul sistema del sito.  
 
@@ -289,7 +292,7 @@ Ad esempio, le directory virtuali da rimuovere per un punto di distribuzione son
 
 Identificare e seguire le procedure ottimali per la versione di IIS Server. Tuttavia, prendere in considerazione tutti i requisiti che Configuration Manager possiede per i ruoli del sistema del sito specifico. Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](../../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
 
-##  <a name="a-namebkmksecuritymanagementpointa-security-best-practices-for-the-management-point"></a><a name="BKMK_Security_ManagementPoint"></a> Procedure di protezione ottimali per il punto di gestione  
+##  <a name="BKMK_Security_ManagementPoint"></a> Procedure di sicurezza consigliate per il punto di gestione  
  I punti di gestione sono l'interfaccia primaria tra i dispositivi e Configuration Manager. Gli attacchi contro il punto di gestione e il server su cui è in esecuzione sono molto rischiosi e devono essere ridotti in modo appropriato. Applicare tutte le procedure di protezione ottimali appropriate e monitorare eventuali attività inconsuete.  
 
  Usare le procedure di sicurezza consigliate seguenti per proteggere un punto di gestione in Configuration Manager.  
@@ -300,31 +303,31 @@ Identificare e seguire le procedure ottimali per la versione di IIS Server. Tutt
 
  Se si esegue la migrazione da una versione precedente a System Center Configuration Manager, eseguire appena possibile la migrazione del software client nel punto di gestione di System Center Configuration Manager.  
 
-##  <a name="a-namebkmksecurityfspa-security-best-practices-for-the-fallback-status-point"></a><a name="BKMK_Security_FSP"></a> Procedure di protezione ottimali per il punto di stato di fallback  
+##  <a name="BKMK_Security_FSP"></a> Procedure di sicurezza consigliate per il punto di stato di fallback  
  Usare le procedure di sicurezza consigliate seguenti se si installa un punto di stato di fallback in Configuration Manager.  
 
- Per ulteriori informazioni sulla protezione quando si installa un punto di stato di fallback, vedere [Determine Whether You Require a Fallback Status Point](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md#BKMK_Determine_FSP).  
+ Per altre informazioni sulla sicurezza quando si installa un punto di stato di fallback, vedere [Stabilire se è necessario un punto di stato di fallback](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md#BKMK_Determine_FSP).  
 
-**Non eseguire altri ruoli del sistema del sito nel sistema del sito e non installarli su un controller di dominio.**  
+**Non eseguire altri ruoli del sistema del sito nel sistema del sito e non installare il punto di stato di fallback in un controller di dominio.**  
 
  Poiché il punto di stato di fallback è progettato per accettare comunicazioni non autenticate da qualsiasi computer, l'esecuzione di questo ruolo del sistema del sito con altri ruoli oppure su un controller di dominio aumenta in modo notevole il rischio su tale server.  
 
 **Quando si usano i certificati PKI per la comunicazione client in Configuration Manager, installare il punto di stato di fallback prima di installare i client.**  
 
- Se i sistemi del sito di Configuration Manager non accettano la comunicazione client HTTP, è possibile che non si sappia che i client non sono gestiti a causa di problemi di certificato relativi alla PKI. Tuttavia, se i client sono assegnati a un punto di stato di fallback, questi problemi di certificato verranno segnalati dal punto stesso.  
+ Se i sistemi del sito di Configuration Manager non accettano la comunicazione client HTTP, è possibile che non si sappia che i client non sono gestiti a causa di problemi di certificato relativi alla PKI. Tuttavia, se i client sono assegnati a un punto di stato di fallback, questi problemi di certificato vengono segnalati dal punto di stato di fallback.  
 
- Per motivi di protezione, non è possibile assegnare un punto di stato di fallback ai client dopo l'installazione. Questo ruolo può essere assegnato solo durante l'installazione del client.  
+ Per ragioni di sicurezza, non è possibile assegnare un punto di stato di fallback ai client dopo l'installazione. Questo ruolo può essere assegnato solo durante l'installazione del client.  
 
 **È consigliabile evitare l'utilizzo del punto di stato di fallback nella rete perimetrale.**  
 
  Per impostazione predefinita, il punto di stato di fallback accetta dati da qualsiasi client. Anche se un punto di stato di fallback nella rete perimetrale può agevolare la risoluzione dei problemi di client basati su Internet, è necessario bilanciare i vantaggi offerti dalla risoluzione dei problemi e il rischio di un sistema del sito che accetta dati non autenticati in una rete accessibile pubblicamente.  
 
- Se si installa il punto di stato di fallback nella rete perimetrale o in una rete non attendibile, configurare il server del sito in modo che avvii i trasferimenti di dati invece di utilizzare l'impostazione predefinita che consente al punto di stato di fallback di avviare una connessione al server del sito.  
+ Se si installa il punto di stato di fallback nella rete perimetrale o in una rete non attendibile, configurare il server del sito in modo che avvii i trasferimenti di dati invece di usare l'impostazione predefinita che consente al punto di stato di fallback di avviare una connessione al server del sito.  
 
-##  <a name="a-namebkmksecurityissuesclientsa-security-issues-for-site-administration"></a><a name="BKMK_SecurityIssues_Clients"></a> Problemi di sicurezza per l'amministrazione del sito  
+##  <a name="BKMK_SecurityIssues_Clients"></a> Problemi di sicurezza per l'amministrazione del sito  
  Esaminare i problemi di sicurezza seguenti per Configuration Manager:  
 
--   Configuration Manager non dispone di difese contro un utente amministratore autorizzato che usa Configuration Manager per attaccare la rete. Gli utenti amministrativi non autorizzati costituiscono un rischio elevato per la protezione e potrebbero lanciare numerosi attacchi, inclusi i seguenti:  
+-   Configuration Manager non dispone di difese contro un utente amministratore autorizzato che usa Configuration Manager per attaccare la rete. Gli utenti amministratori non autorizzati rappresentano un rischio elevato per la sicurezza e potrebbero eseguire numerosi attacchi, inclusi i seguenti:  
 
     -   Usare la distribuzione di software per installare automaticamente ed eseguire malware in ogni computer client di Configuration Manager dell'organizzazione.  
 
@@ -334,13 +337,13 @@ Identificare e seguire le procedure ottimali per la versione di IIS Server. Tutt
 
     -   Utilizzare un sito nella gerarchia per scrivere dati nei dati di Active Directory di un altro sito.  
 
-    La gerarchia del sito è il limite di protezione. I siti devono essere considerati solo come limiti di gestione.  
+    La gerarchia del sito è il limite di sicurezza. Considerare i siti solo come limiti di gestione.  
 
     Controllare tutte le attività degli utenti amministrativi ed esaminare periodicamente i registri di controllo. Eseguire un'indagine obbligatoria della storia personale di ogni utente amministratore di Configuration Manager prima dell'assunzione e ripetere periodicamente tali indagini come condizione obbligatoria per il mantenimento dell'impiego.  
 
 -   Se il punto di registrazione è compromesso, un utente malintenzionato potrebbe ottenere i certificati per l'autenticazione e rubare le credenziali di utenti che registrano il proprio dispositivo mobile.  
 
-    Il punto di registrazione comunica con un'autorità di certificazione e può creare, modificare ed eliminare gli oggetti di Active Directory. Non installare mai il punto di registrazione nella rete perimetrale e monitorare attività insolite.  
+    Il punto di registrazione comunica con un'autorità di certificazione e può creare, modificare ed eliminare gli oggetti di Active Directory. Non installare mai il punto di registrazione nella rete perimetrale e monitorare sempre le attività insolite.  
 
 -   Se si consentono i criteri utente per la gestione client basata su Internet o si configura il punto per siti Web del Catalogo applicazioni per gli utenti quando si trovano in Internet, si incrementa la superficie di attacco.  
 
@@ -350,21 +353,16 @@ Identificare e seguire le procedure ottimali per la versione di IIS Server. Tutt
 
     Il server del sito di Configuration Manager usa la condivisione Admin$ per la connessione e l'esecuzione di operazioni di servizio nei sistemi del sito. Non disabilitare o rimuovere la condivisione Admin$.  
 
--   Configuraiton Manager usa servizi di risoluzione dei nomi per connettersi ad altri computer e tali servizi sono difficili da proteggere da attacchi alla sicurezza, ad esempio spoofing, manomissioni, ripudio, diffusione di informazioni, Denial of Service ed elevazione dei privilegi.  
+-   I servizi di risoluzione dei nomi usati da Configuration Manager per connettersi ad altri computer sono difficili da proteggere da attacchi alla sicurezza quali spoofing, manomissioni, ripudio, diffusione di informazioni, Denial of Service ed elevazione dei privilegi.  
 
     Identificare e seguire le procedure di protezione ottimali per la versione di DNS e WINS utilizzata per la risoluzione dei nomi.  
 
-##  <a name="a-namebkmkprivacycliientsa-privacy-information-for-discovery"></a><a name="BKMK_Privacy_Cliients"></a> Informazioni sulla privacy per l'individuazione  
- L'individuazione crea i record delle risorse di rete e li archivia nel database di System Center Configuration Manager. I record di dati di individuazione contengono informazioni sul computer, ad esempio indirizzo IP, sistema operativo e nome del computer. I metodi di individuazione di Active Directory possono essere configurati anche per rilevare eventuali informazioni memorizzate in Servizi di dominio Active Directory.  
+##  <a name="BKMK_Privacy_Cliients"></a> Informazioni sulla privacy per l'individuazione  
+ L'individuazione crea i record delle risorse di rete e li archivia nel database di System Center Configuration Manager. I record di dati di individuazione contengono informazioni sui computer, ad esempio gli indirizzi IP, i sistemi operativi e i nomi dei computer. I metodi di individuazione di Active Directory possono essere configurati anche per rilevare eventuali informazioni memorizzate in Servizi di dominio Active Directory.  
 
  L'unico metodo di individuazione abilitato per impostazione predefinita è l'individuazione heartbeat, ma tale metodo consente solo di individuare computer in cui è già installato il software client di System Center Configuration Manager.  
 
- Le informazioni di individuazione non vengono inviate a Microsoft. Le informazioni di individuazione vengono archiviate nel database di Configuration Manager. Le informazioni vengono conservate nel database fino alla relativa eliminazione nell'ambito delle attività di manutenzione del sito **Elimina dati di individuazione obsoleti** eseguite ogni 90 giorni. È possibile configurare l'intervallo di eliminazione.  
+ Le informazioni di individuazione non vengono inviate a Microsoft. Le informazioni di individuazione sono archiviate nel database di Configuration Manager. Le informazioni vengono conservate nel database fino all'eliminazione prevista ogni 90 giorni dall'attività di manutenzione del sito **Elimina dati di individuazione obsoleti**.  
 
  Prima di configurare i metodi di rilevamento aggiuntivi o estendere l'individuazione di Active Directory, valutare i requisiti relativi alla privacy.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

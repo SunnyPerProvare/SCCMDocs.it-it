@@ -2,7 +2,7 @@
 title: Supporto Unicode e ASCII | Microsoft Docs
 description: Informazioni sul supporto di caratteri Unicode e ASCII in oggetti di System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 3/1/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,12 +17,13 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6ed317d45d90758832d4157985dd95d5e253c6fc
-ms.openlocfilehash: 1888ce257232b63e4671aa619da190ea570b8a57
+ms.sourcegitcommit: b35e747c8c297d61bb549b9767c4318f51e5fdb4
+ms.openlocfilehash: 18f1c64c1f27001a0fdfbab4236d09a5bc279272
+ms.lasthandoff: 03/01/2017
 
 
 ---
-# <a name="unicode-and-ascii-support-in-system-center-configuration-manager"></a>Supporto Unicode e ASCII in System Center Configuration Manager
+# <a name="unicode-and-ascii-support-in-system-center-configuration-manager"></a>Supporto per Unicode e ASCII in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -30,13 +31,13 @@ System Center Configuration Manager crea la maggior parte degli oggetti usando i
 
  Nelle seguenti sezioni vengono elencati gli oggetti che devono utilizzare solo i caratteri del set ASCII o che presentano limitazioni aggiuntive.  
 
--   [Oggetti che usano i caratteri ASCII](#BKMK_ASCIIchar)  
+-   [Oggetti che usano caratteri ASCII](#BKMK_ASCIIchar)  
 
 -   [Limitazioni aggiuntive](#BKMK_OtherCharLimitations)  
 
 -   [Oggetti di Configuration Manager non localizzati](#BKMK_LangNonLocalize)  
 
-##  <a name="a-namebkmkasciichara-objects-that-use-ascii-characters"></a><a name="BKMK_ASCIIchar"></a> Oggetti che usano i caratteri ASCII  
+##  <a name="BKMK_ASCIIchar"></a> Oggetti che usano i caratteri ASCII  
  Configuration Manager supporta il set di caratteri ASCII solo quando vengono creati gli oggetti seguenti:  
 
 -   Codice sito  
@@ -46,7 +47,7 @@ System Center Configuration Manager crea la maggior parte degli oggetti usando i
 -   I seguenti account di Configuration Manager:  
 
     > [!NOTE]  
-    >  Questi account supportano i caratteri ASCII e RUS in un sito eseguito in lingua russa.  
+    >  Questi account supportano caratteri ASCII e RUS in un sito eseguito in russo.  
 
     -   Account di installazione push client  
 
@@ -54,7 +55,7 @@ System Center Configuration Manager crea la maggior parte degli oggetti usando i
 
     -   Account di query riferimenti sullo stato di integrità  
 
-    -   Account di connessione database del punto di gestione  
+    -   Account di connessione al database del punto di gestione  
 
     -   Account di accesso alla rete  
 
@@ -62,7 +63,7 @@ System Center Configuration Manager crea la maggior parte degli oggetti usando i
 
     -   Account mittente standard  
 
-    -   Account di installazione sistema del sito  
+    -   Account di installazione del sistema del sito  
 
     -   Account di connessione al punto di aggiornamento software  
 
@@ -73,7 +74,7 @@ System Center Configuration Manager crea la maggior parte degli oggetti usando i
     >   
     >  L'account del punto di Reporting Services supporta Unicode, ad eccezione dei caratteri RUS.  
 
--   FQDN per server e sistemi del sito  
+-   Nome di dominio completo (FQDN) per i server del sito e per i sistemi del sito  
 
 -   Percorso di installazione per Configuration Manager  
 
@@ -101,9 +102,9 @@ System Center Configuration Manager crea la maggior parte degli oggetti usando i
 
     -   La cartella che archivia il backup di Configuration Manager  
 
-    -   La cartella che contiene i file di installazione per la configurazione del sito.  
+    -   La cartella che archivia i file di origine dell'installazione per l'impostazione del sito  
 
-    -   La cartella che contiene i download prerequisiti per l'utilizzo da parte della configurazione  
+    -   La cartella che archivia i download dei prerequisiti per l'uso da parte dell'impostazione  
 
 -   Il percorso dei seguenti oggetti:  
 
@@ -113,7 +114,7 @@ System Center Configuration Manager crea la maggior parte degli oggetti usando i
 
     -   Nome dell'applicazione virtuale  
 
--   I seguenti oggetti per AMT e gestione fuori banda:  
+-   Gli oggetti seguenti per AMT e gestione fuori banda:  
 
     -   FQDN del computer basato su AMT  
 
@@ -131,22 +132,17 @@ System Center Configuration Manager crea la maggior parte degli oggetti usando i
 
     -   Il contenuto dell'archivio dati AMT  
 
--   Nomi file .ISO dei supporti di avvio  
+-   Nomi file ISO dei supporti di avvio  
 
-##  <a name="a-namebkmkothercharlimitationsa-additional-limitations"></a><a name="BKMK_OtherCharLimitations"></a> Limitazioni aggiuntive  
+##  <a name="BKMK_OtherCharLimitations"></a> Limitazioni aggiuntive  
  Di seguito vengono riportate ulteriori limitazioni per i set di caratteri e le versioni delle lingue supportati:  
 
 -   Configuration Manager non supporta la modifica delle impostazioni locali del computer del server del sito.  
 
 -   Un'autorità di certificazione dell'organizzazione (enterprise) non supporta i nomi dei computer client che utilizzano set di caratteri DBCS. I nomi dei computer client che è possibile utilizzare sono limitati dalla limitazione PKI del set di caratteri IA5. Configuration Manager non supporta neppure i nomi di autorità di certificazione (CA) o i valori del nome oggetto che usano DBCS.  
 
-##  <a name="a-namebkmklangnonlocalizea-configuration-manager-objects-that-are-not-localized"></a><a name="BKMK_LangNonLocalize"></a> Oggetti di Configuration Manager non localizzati  
+##  <a name="BKMK_LangNonLocalize"></a> Oggetti di Configuration Manager non localizzati  
  Il database di Configuration Manager supporta Unicode per la maggior parte degli oggetti archiviati e, se possibile, visualizza tali informazioni nella lingua del sistema operativo corrispondente alle impostazioni locali di un computer. Affinché l'interfaccia client o la console di Configuration Manager visualizzi le informazioni nella lingua del sistema operativo del computer, le impostazioni locali del computer devono corrispondere alla lingua di un client o di un server installato in un sito.  
 
  Diversi oggetti di Configuration Manager non supportano i caratteri Unicode, vengono quindi archiviati nel database usando caratteri ASCII oppure presentano limitazioni aggiuntive relative alla lingua. Queste informazioni vengono sempre visualizzate utilizzando il seti di caratteri ASCII o nella lingua in uso al momento della creazione dell'oggetto.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

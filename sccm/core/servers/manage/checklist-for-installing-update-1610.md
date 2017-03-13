@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 73feb75f6727134f977ea2baabf36a832812ccc1
-ms.openlocfilehash: 715dadc10fe86acd7e324ff8f80be057d0e01f11
+ms.sourcegitcommit: 30af3326578d39c6d995672071705bcaeb877e4d
+ms.openlocfilehash: 640fc5ddb4e0a6828901b7f406ca72fc210b2970
+ms.lasthandoff: 02/23/2017
 
 ---
 # <a name="checklist-for-installing-update-1610-for-system-center-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1610 di System Center Configuration Manager
@@ -137,7 +138,7 @@ Per altre informazioni, vedere [Backup e ripristino per System Center Configurat
 
 Configuration Manager non supporta né il backup di siti secondari né l'aggiornamento di test del database di un sito secondario.
 
-Non eseguire un aggiornamento di test sul database del sito di produzione. Questa operazione aggiorna il database del sito e potrebbe rendere inutilizzabile il sito. Per altre informazioni, vedere la sezione [Testare l'aggiornamento del database del sito](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager#bkmk_test) in [Eseguire l'aggiornamento a System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).
+Non eseguire un aggiornamento di test sul database del sito di produzione. Questa operazione aggiorna il database del sito e potrebbe rendere inutilizzabile il sito. Per altre informazioni, vedere [Passaggio 2: Testare l'aggiornamento del database prima di installare un aggiornamento](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) in **Prima di installare un aggiornamento nella console**.
 
 **Pianificare la distribuzione pilota del client:**   
 Quando si installa un aggiornamento per il client, è possibile testare quest'ultimo in un ambiente di pre-produzione prima della distribuzione e dell'aggiornamento di tutti i client attivi.
@@ -167,9 +168,4 @@ A questo punto è possibile avviare l'installazione dell'aggiornamento per la ge
 È consigliabile pianificare l'installazione dell'aggiornamento per ogni sito al di fuori del normale orario di ufficio in modo che il processo di installazione dell'aggiornamento e le azioni per reinstallare i componenti del sito e i ruoli del sistema del sito abbiano un impatto minimo sulle operazioni aziendali.
 
 Per altre informazioni, vedere [Aggiornamenti per System Center Configuration Manager](/sccm/core/servers/manage/updates).
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

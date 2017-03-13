@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 97051d9c65ef5ea28c94468b24863120624e8de0
-ms.openlocfilehash: b78b3b20a8b317a242cd06f9fda6326f41673915
+ms.sourcegitcommit: 3eab8e62ace29c0fcb24d47ec7e398d807347a38
+ms.openlocfilehash: a1d701c77afb4d6317d8a137fdf46422063df085
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -62,7 +63,7 @@ I punti di distribuzione basati sul cloud offrono i seguenti vantaggi aggiuntivi
 
 Un punto di distribuzione basato su cloud presenta le limitazioni seguenti:  
 
--   Non è possibile usare un punto di distribuzione basato su cloud per ospitare i pacchetti di aggiornamento software.  
+-  Se non si usa la versione 1610 con l'hotfix KB4010155, non è possibile usare un punto di distribuzione basato su cloud per ospitare i pacchetti di aggiornamento software. La versione Current Branch successiva alla versione 1610 supporterà questa opzione senza la necessità di installare questo hotfix.  
 
 -   Non è possibile usare un punto di distribuzione basato sul cloud per distribuzioni abilitate per PXE o per il multicast.  
 
@@ -76,7 +77,7 @@ Un punto di distribuzione basato su cloud presenta le limitazioni seguenti:
 
 -   Il punto di distribuzione basato su cloud non può essere configurato come punto di distribuzione pull.  
 
-##  <a name="a-namebkmkprereqsclouddpa-prerequisites-for-cloud-based-distribution-points"></a><a name="BKMK_PrereqsCloudDP"></a> Prerequisiti dei punti di distribuzione basati sul cloud  
+##  <a name="BKMK_PrereqsCloudDP"></a> Prerequisiti dei punti di distribuzione basati sul cloud  
  Un punto di distribuzione basato su cloud richiede i seguenti prerequisiti per l'uso:  
 
 -   Una sottoscrizione di Azure (vedere [Informazioni sulle sottoscrizioni e sui certificati](#BKMK_CloudDPCerts) in questo argomento).
@@ -91,7 +92,7 @@ Un punto di distribuzione basato su cloud presenta le limitazioni seguenti:
 
 -   Un client deve essere in grado di accedere a Internet per usare il punto di distribuzione basato su cloud.  
 
-##  <a name="a-namebkmkclouddpcosta-cost-of-using-cloud-based-distribution"></a><a name="BKMK_CloudDPCost"></a> Costo dell'uso della distribuzione basata sul cloud  
+##  <a name="BKMK_CloudDPCost"></a> Costo dell'uso della distribuzione basata sul cloud  
  Quando si usa un punto di distribuzione basato sul cloud, pianificare i costi dell'archiviazione dei dati e dei download per i trasferimenti eseguiti dai client di Configuration Manager.  
 
  Configuration Manager include opzioni per il controllo dei costi e il monitoraggio dell'accesso ai dati:  
@@ -139,7 +140,7 @@ Un punto di distribuzione basato su cloud presenta le limitazioni seguenti:
 
      Per arrestare un servizio cloud, nella console di Configuration Manager selezionare il punto di distribuzione nel nodo **Punti di distribuzione del cloud** in **Servizi cloud** nell'area di lavoro **Amministrazione** . Scegliere quindi **Arresta servizio** per arrestare il servizio cloud eseguito in Azure.  
 
-##  <a name="a-namebkmkclouddpcertsa-about-subscriptions-and-certificates-for-cloud-based-distribution-points"></a><a name="BKMK_CloudDPCerts"></a> Informazioni sulle sottoscrizioni e sui certificati per i punti di distribuzione basati sul cloud  
+##  <a name="BKMK_CloudDPCerts"></a> Informazioni sulle sottoscrizioni e sui certificati per i punti di distribuzione basati sul cloud  
  I punti di distribuzione basati sul cloud richiedono dei certificati per abilitare Configuration Manager per la gestione del servizio cloud che ospita il punto di distribuzione e per l'accesso al contenuto dal punto di distribuzione da parte dei client. Di seguito sono riportate informazioni generali su questi certificati. Per maggiori dettagli, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
 
  **Certificati**  
@@ -163,7 +164,7 @@ Un punto di distribuzione basato su cloud presenta le limitazioni seguenti:
 
    Per un esempio di distribuzione di questo certificato, vedere la sezione **Distribuzione del certificato di servizio per i punti di distribuzione basati sul cloud** nell'argomento [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
-##  <a name="a-namebkmktasksa-common-management-tasks-for-cloud-based-distribution-points"></a><a name="bkmk_Tasks"></a> Attività di gestione comuni per i punti di distribuzione basati sul cloud  
+##  <a name="bkmk_Tasks"></a> Attività di gestione comuni per i punti di distribuzione basati sul cloud  
 
 -   **Comunicazione tra il server del sito e il punto di distribuzione basato sul cloud**: quando si installa un punto di distribuzione basato sul cloud, è necessario assegnare un sito primario per gestire il trasferimento del contenuto al servizio cloud. Ciò equivale a installare il ruolo del sistema del sito del punto di distribuzione in un sito specifico.  
 
@@ -185,7 +186,7 @@ I client che usano i punti di distribuzione basati sul cloud usano la sequenza s
 
 3.  In assenza di un punto di distribuzione preferito o remoto disponibile, il client può cercare di ottenere il contenuto da un punto di distribuzione basato su cloud.  
 
-    
+
 
   Quando un client usa un punto di distribuzione basato su cloud come un percorso del contenuto, si autentica a tale punto di distribuzione usando un token di accesso di Configuration Manager. Se il client considera attendibile il certificato del punto di distribuzione basato su cloud di Configuration Manager, può scaricare il contenuto richiesto.  
 
@@ -212,9 +213,4 @@ I client che usano i punti di distribuzione basati sul cloud usano la sequenza s
 -   **Disinstallare un punto di distribuzione basato sul cloud**: per eseguire la disinstallazione, selezionare il punto di distribuzione nella console di Configuration Manager e quindi scegliere **Elimina**.  
 
     Quando un punto di distribuzione basato sul cloud viene eliminato da una gerarchia, Configuration Manager rimuove il contenuto dal servizio cloud in Azure.  
-
-
-
-<!--HONumber=Feb17_HO4-->
-
 

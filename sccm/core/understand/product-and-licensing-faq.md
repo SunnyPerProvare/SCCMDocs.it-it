@@ -2,7 +2,7 @@
 title: Domande frequenti sul prodotto e le licenze | Microsoft Docs
 description: Risposte alle domande frequenti sul prodotto e le licenze per System Center Configuration Manager.
 ms.custom: na
-ms.date: 2/17/2017
+ms.date: 2/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 81689631899b626bd33df8853cf82646d7e57afc
-ms.openlocfilehash: 47e35018902c424dc492025bb08bd4df4d81fcbe
-ms.lasthandoff: 02/18/2017
+ms.sourcegitcommit: d8f1a1a5757bbc3e2b0c17b1a89fbd56bbae6019
+ms.openlocfilehash: c1a276ad1ed6d10d286ab389ab3f05ec780c4e58
+ms.lasthandoff: 02/28/2017
 
 
 ---
@@ -32,10 +32,9 @@ Queste domande frequenti si riferiscono alle versioni Current Branch (CB) e Long
 Per altre informazioni sulle funzionalità di System Center Configuration Manager, vedere la pagina del prodotto Microsoft [System Center Configuration Manager](https://www.microsoft.com/cloud-platform/system-center-configuration-manager)
 
 
-## <a name="details"></a>Dettagli
-System Center Configuration Manager è...
 
-## <a name="faq"></a>Domande frequenti
+
+## <a name="system-center-configuration-manager-licensing-faq"></a>Domande frequenti sulle licenze di System Center Configuration Manager
 
 1.    **Che cos'è Current Branch (CB)?**   
 Il Current Branch è la build pronta per la produzione di System Center Configuration Manager che offre un modello di manutenzione attivo. Questo modello di manutenzione è simile all'esperienza con Windows 10 o l'opzione di installazione di Windows Server 2016 Nano Server. Questo metodo supporta i clienti che si muovono al "ritmo del cloud" e vogliono un'innovazione più rapida. Con il modello di manutenzione Current Branch, i clienti di System Center Configuration Manager continueranno a ricevere nuove caratteristiche e funzionalità. Per questo motivo, solo i clienti con sottoscrizione Software Assurance attiva per licenze di System Center Configuration Manager o con diritti di sottoscrizione equivalenti possono installare e usare l'opzione Current Branch di System Center Configuration Manager.

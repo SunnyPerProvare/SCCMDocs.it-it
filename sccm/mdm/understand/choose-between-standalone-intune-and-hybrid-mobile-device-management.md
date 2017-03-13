@@ -2,7 +2,7 @@
 title: Scegliere Intune autonomo o MDM per dispositivi ibridi | Microsoft Docs
 description: Scegliere se distribuire una gestione di dispositivi mobili ibridi con Intune e Configuration Manager o se eseguire Intune autonomamente.
 ms.custom: na
-ms.date: 11/07/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: a5c9e312641d91ff297fbcfa6066a93c2a0e1ee0
-ms.openlocfilehash: 3480484a96e96a191b4f02208fcf838db5cb6ba7
+ms.sourcegitcommit: 84e3896dd05a8c157f4e94625b0eca60aacc11d3
+ms.openlocfilehash: 8f2625aadfd0aed92d9922c7e3c0d3d166a78cdd
+ms.lasthandoff: 02/25/2017
 
 ---
 # <a name="choose-between-microsoft-intune-standalone-and-hybrid-mobile-device-management-with-system-center-configuration-manager"></a>Scegliere tra Microsoft Intune autonomo e la gestione di dispositivi mobili ibridi con System Center Configuration Manager
@@ -44,16 +45,11 @@ Se si deve scegliere tra Intune autonomo e la gestione ibrida, è consigliabile 
 
 -   Controllo degli accessi in base al ruolo: possibilità di limitare l'accesso alle funzioni amministrative in base ai ruoli assegnati.
 
--   Scalabilità: possibilità di distribuire e gestire più di 50.000 dispositivi mobili.
+-   Scalabilità: possibilità di distribuire e gestire oltre 100.000 dispositivi mobili.
 
 -   Unica interfaccia: possibilità di gestire sia i PC client tradizionali che i dispositivi gestiti da Intune tramite la stessa console.
 
 Se si sta iniziando a pianificare la distribuzione di Intune e si ha a disposizione un periodo di diversi mesi per la distribuzione pilota, i test di accettazione e la distribuzione finale, è possibile prendere in considerazione Intune autonomo ora, tenendo conto che gli aggiornamenti del servizio cloud in arrivo includeranno un numero maggiore di funzionalità. Nel corso della prima metà del 2017 Intune autonomo verrà aggiornato con molte delle funzionalità avanzate della distribuzione ibrida con Configuration Manager. Intune autonomo passerà presto alla piattaforma cloud di Microsoft Azure. Con il trasferimento sarà in grado di offrire maggiore scalabilità, accesso basato sui ruoli tramite il portale di Azure, funzioni di creazione di report personalizzati e accesso programmatico tramite l'API di Azure Graph.
 
 È possibile passare dalla gestione ibrida a Intune autonomo o viceversa, ma è necessario l'intervento del supporto tecnico e del personale operativo Microsoft. Dopo la modifica dell'autorità di gestione è anche necessario annullare e ripetere la registrazione di tutti i dispositivi.  Microsoft si sta impegnando per offrire in un aggiornamento di servizio futuro una maggiore efficienza nel passaggio da una configurazione a un'altra.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

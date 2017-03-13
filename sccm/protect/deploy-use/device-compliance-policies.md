@@ -17,8 +17,9 @@ ms.author: andredm
 manager: angrobe
 robots: noindex
 translationtype: Human Translation
-ms.sourcegitcommit: c13c6268fa76ade7feb0981f9c4a6e325e393aca
-ms.openlocfilehash: fd5830fef3759def7806dbbe1802872df19ca939
+ms.sourcegitcommit: b1295fff41d99b0bd6fc00ccab7a4b8bbdb60866
+ms.openlocfilehash: 99d1d14e89903d78167ec2f7d91f8393827bd616
+ms.lasthandoff: 02/27/2017
 
 ---
 # <a name="device-compliance-policies-in-system-center-configuration-manager"></a>Criteri di conformità del dispositivo in System Center Configuration Manager
@@ -40,6 +41,7 @@ I **criteri di conformità** in System Center Configuration Manager definiscono 
 -   Se il dispositivo è jailbroken o rooted  
 
 -   Se la posta elettronica nel dispositivo viene gestita da un criterio Intune o se il dispositivo è segnalato come non integro dal servizio di attestazione dell'integrità del dispositivo Windows.  
+-   App che non possono essere installate nel dispositivo
 
 
  I criteri di conformità vengono distribuiti alle raccolte dell'utente. Quando un criterio di conformità viene distribuito a un utente, la conformità viene controllata su tutti i dispositivi dell’utente.  
@@ -54,7 +56,8 @@ I **criteri di conformità** in System Center Configuration Manager definiscono 
 |**Profilo di posta elettronica**|N/D|N/D|In quarantena|N/D|  
 |**Versione minima del sistema operativo**|In quarantena|In quarantena|In quarantena|In quarantena|  
 |**Versione massima del sistema operativo**|In quarantena|In quarantena|In quarantena|In quarantena|  
-|**Attestazione dell'integrità dei dispositivi (aggiornamento 1602)**|Impostazione non applicabile a Windows 8.1<br /><br /> Windows 10 e Windows 10 Mobile vengono messi in quarantena.|N/D|N/D|N/D|  
+|**Attestazione dell'integrità dei dispositivi (aggiornamento&1602;)**|Impostazione non applicabile a Windows 8.1<br /><br /> Windows 10 e Windows 10 Mobile vengono messi in quarantena.|N/D|N/D|N/D|
+|**App che non possono essere installate**|N/D|N/D|In quarantena|In quarantena|
 
  **Corretto** = la conformità viene forzata dal sistema operativo del dispositivo (ad esempio, l'utente è obbligato a impostare un PIN).  Non riguarda casi in cui l'impostazione non è conforme.  
 
@@ -62,16 +65,10 @@ I **criteri di conformità** in System Center Configuration Manager definiscono 
 
 -   Il dispositivo viene bloccato se l'utente è la destinazione di un criterio di accesso condizionale.  
 
--   Il portale aziendale o il portale web informano l'utente di eventuali problemi di conformità.  
-
+-   Il portale aziendale o il portale web informano l'utente di eventuali problemi di conformità.
 
 ### <a name="next-steps"></a>Passaggi successivi  
 [Create and deploy a device compliance policy](create-compliance-policy.md) (Creare e distribuire criteri di conformità del dispositivo)
 ### <a name="see-also"></a>Vedere anche  
  [Gestire l'accesso ai servizi in System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

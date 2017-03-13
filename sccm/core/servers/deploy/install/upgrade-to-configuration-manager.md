@@ -2,7 +2,7 @@
 title: Eseguire l&quot;aggiornamento a System Center Configuration Manager | Microsoft Docs
 description: Passaggi per eseguire l&quot;aggiornamento sul posto da un sito e da una gerarchia che esegue System Center 2012 Configuration Manager.
 ms.custom: na
-ms.date: 12/16/2016
+ms.date: 2/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6cf3ac76ea3fb9c9b093ed4927255102930bbe26
-ms.openlocfilehash: d4e6a4c128ae077d2a3cb2883d80b6bf71b7f458
+ms.sourcegitcommit: 30af3326578d39c6d995672071705bcaeb877e4d
+ms.openlocfilehash: 8af2a797ad4e87d870bb27873a7428e96f63b76d
+ms.lasthandoff: 02/23/2017
 
 
 ---
@@ -29,8 +30,10 @@ ms.openlocfilehash: d4e6a4c128ae077d2a3cb2883d80b6bf71b7f458
 
  Prima di eseguire l'aggiornamento da System Center 2012 Configuration Manager, è necessario preparare i siti rimuovendo le configurazioni specifiche che possono impedire l'aggiornamento e osservare la sequenza di aggiornamento quando sono coinvolti più siti.  
 
+ > [!TIP]
+ > Quando si gestisce l'infrastruttura del sito e della gerarchia di System Center Configuration Manager, i termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti distinti. Per informazioni su come viene usato ogni termine, vedere [Informazioni su upgrade, aggiornamento e installazione](/sccm/core/understand/upgrade-update-install).
 
-##  <a name="a-namebkmkpatha-in-place-upgrade-paths"></a><a name="bkmk_path"></a> Percorsi di aggiornamento sul posto  
+##  <a name="bkmk_path"></a> Percorsi di aggiornamento sul posto  
 **Aggiornare alla versione 1606**  
 Il 15 dicembre 2016 è stato rilasciato nuovamente il supporto di base della versione 1606, per aggiungere il supporto di scenari di aggiornamento supplementari. La nuova versione supporta l'aggiornamento dei seguenti prodotti a una versione con licenza completa di System Center Configuration Manager versione 1606:  
 -   L'installazione di una valutazione di System Center Configuration Manager versione 1606
@@ -67,7 +70,7 @@ Quando è presente il supporto di base della versione 1511 è possibile aggiorna
 
 -   La migrazione da una versione Technical Preview a una versione con licenza completa non è supportata.  
 
-##  <a name="a-namebkmkchecklista-upgrade-checklists"></a><a name="bkmk_checklist"></a> Eseguire l'aggiornamento degli elenchi di controllo  
+##  <a name="bkmk_checklist"></a> Eseguire l'aggiornamento degli elenchi di controllo  
  Gli elenchi di controllo seguenti possono aiutare a pianificare un aggiornamento a System Center Configuration Manager.  
 
 ### <a name="before-you-upgrade"></a>Prima dell'aggiornamento  
@@ -129,7 +132,7 @@ Prima di disattivare un'attività, registrare la pianificazione dell'attività i
 Per altre informazioni sulle attività di manutenzione del sito, vedere:  
 
 -   System Center 2012 Configuration Manager: [Pianificazione di attività di manutenzione per Configuration Manager](https://technet.microsoft.com/library/gg712686.aspx)  
--   System Center 2012 Configuration Manager: [Reference for maintenance tasks for System Center Configuration Manager](../../../../core/servers/manage/reference-for-maintenance-tasks.md) (Riferimento per attività di manutenzione per System Center Configuration Manager)  
+-   System Center&2012; Configuration Manager: [Reference for maintenance tasks for System Center Configuration Manager](../../../../core/servers/manage/reference-for-maintenance-tasks.md) (Riferimento per attività di manutenzione per System Center Configuration Manager)  
 
 **Eseguire il controllo dei prerequisiti di installazione**:  
 Prima di aggiornare un sito, è possibile eseguire il **controllo dei prerequisiti** in modo indipendente dal programma di installazione per convalidare che il sito soddisfa i prerequisiti. In seguito, quando si aggiorna il sito, viene nuovamente eseguito il controllo dei prerequisiti.  
@@ -225,7 +228,7 @@ Quando si aggiorna un client, il software client corrente viene disinstallato e 
 
 Per informazioni su come aggiornare i client esistenti e su come installare i nuovi client, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
 
-##  <a name="a-namebkmkconsiderationsa-considerations-for-upgrading"></a><a name="bkmk_considerations"></a> Considerazioni sull'aggiornamento  
+##  <a name="bkmk_considerations"></a> Considerazioni sull'aggiornamento  
 **Azioni automatiche**:  
 Quando si esegue l'aggiornamento a System Center Configuration Manager, le azioni seguenti sono automatiche:  
 
@@ -253,7 +256,9 @@ Quando un sito viene aggiornato a System Center Configuration Manager, alcune co
 -   **Pianificazioni dell'esecuzione del riepilogo degli aggiornamenti software:**  
      Le pianificazioni di riepilogo personalizzate per gli aggiornamenti software o i gruppi di aggiornamenti software vengono reimpostate sul valore predefinito di 1 ora. Al termine dell'aggiornamento ripristinare i valori di riepilogo personalizzati sulla frequenza necessaria.  
 
-##  <a name="a-namebkmktesta-test-the-site-database-upgrade"></a><a name="bkmk_test"></a> Testare l'aggiornamento del database del sito  
+##  <a name="bkmk_test"></a> Testare l'aggiornamento del database del sito  
+Le informazioni seguenti si applicano solo quando si aggiorna un versione precedente, ad esempio da System Center 2012 Configuration Manager a System Center Configuration Manager. Se sul sito viene già eseguito System Center Configuration Manager e si sta installando un nuovo aggiornamento, vedere [Passaggio 2: Testare l'aggiornamento del database prima di installare un aggiornamento](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) in **Prima di installare un aggiornamento nella console**.
+
 Prima di aggiornare un sito, testare una copia del database di tale sito per l'aggiornamento.  
 
 Per testare il database per un aggiornamento, ripristinare prima una copia del database del sito in un'istanza di SQL Server che non ospita un sito di Configuration Manager. La versione di SQL Server che si usa per ospitare la copia del database deve essere una versione di SQL Server supportata dalla versione di Configuration Manager, che corrisponde all'origine della copia del database.  
@@ -296,7 +301,7 @@ Utilizzare la procedura seguente in ogni sito di amministrazione centrale e sito
 
 Dopo che una copia del database del sito è stata aggiornata, procedere con l'aggiornamento del sito di Configuration Manager e dei relativi database.  
 
-##  <a name="a-namebkmkupgradea-upgrade-sites"></a><a name="bkmk_upgrade"></a> Aggiornare i siti  
+##  <a name="bkmk_upgrade"></a> Aggiornare i siti  
 Dopo aver completato le configurazioni di pre-aggiornamento del sito, testato l'aggiornamento del database del sito su una copia del database e scaricato i file di prerequisiti e i Language Pack per la versione Service Pack che si pianifica di installare, è possibile aggiornare il sito di Configuration Manager.  
 
 Quando si aggiorna un sito in una gerarchia, si aggiorna innanzitutto il sito di livello superiore della gerarchia. Questo sito di livello superiore è un sito di amministrazione centrale o un sito primario autonomo. Una volta completato l'aggiornamento di un sito di amministrazione centrale, è possibile aggiornare siti primari figlio in qualsiasi ordine si desideri. Dopo aver aggiornato un sito primario, è possibile aggiornare i siti figlio secondari di tale sito oppure aggiornare i siti primari aggiuntivi prima di aggiornare eventuali siti secondari.  
@@ -376,16 +381,11 @@ Nella pagina **Aggiorna** il programma di installazione consente di visualizzare
 
 L'aggiornamento del sito secondario procede in background. Dopo aver completato l'aggiornamento, è possibile confermare lo stato della console di Configuration Manager. Per confermare lo stato, selezionare il server del sito secondario, quindi nella scheda **Home** del gruppo **Sito** fare clic su **Mostra stato installazione**.  
 
-##  <a name="a-namebkmkpostupgradea-perform-post-upgrade-tasks"></a><a name="BKMK_PostUpgrade"></a> Eseguire le attività successive all'aggiornamento  
+##  <a name="BKMK_PostUpgrade"></a> Eseguire le attività successive all'aggiornamento  
 Dopo aver aggiornato un sito a un nuovo Service Pack, si potrebbe dover completare delle attività aggiuntive per completare l'aggiornamento o riconfigurare il sito. Potrebbe essere ad esempio necessario l'aggiornamento dei client di Configuration Manager o delle console di Configuration Manager, tramite la riabilitazione delle repliche di database per i punti di gestione oppure il ripristino delle impostazioni per le funzionalità di Configuration Manager che si usano e che non sono state mantenute dopo l'aggiornamento del Service Pack.  
 
 **Problemi noti per i siti secondari:**  
 - **Durante l'aggiornamento alla versione 1511:** per consentire ai client nei siti secondari di trovare il punto di gestione dal sito secondario, vale a dire dal punto di gestione proxy, aggiungere manualmente il punto di gestione a gruppi di limiti che includono anche i punti di distribuzione nel sito secondario.  
 
 - **Durante l'aggiornamento alla versione 1606 o successive:** i punti di gestione proxy vengono aggiunti automaticamente ai gruppi di limiti che includono i punti di distribuzione nel sito secondario.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
