@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 168650cca28fe1331e48ea5e8e025e110dda835f
-ms.openlocfilehash: 4ca43db385ea97d5d026c50a799b783096c05d36
-ms.lasthandoff: 03/01/2017
+ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
+ms.openlocfilehash: a60b8c103a303dcae0bd66f3060d5a8f17d1cef9
+ms.lasthandoff: 03/04/2017
 
 
 ---
@@ -306,7 +306,8 @@ Identificare e seguire le procedure ottimali per la versione di IIS Server. Tutt
 ##  <a name="BKMK_Security_FSP"></a> Procedure di sicurezza consigliate per il punto di stato di fallback  
  Usare le procedure di sicurezza consigliate seguenti se si installa un punto di stato di fallback in Configuration Manager.  
 
- Per altre informazioni sulla sicurezza quando si installa un punto di stato di fallback, vedere [Stabilire se è necessario un punto di stato di fallback](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md#BKMK_Determine_FSP).  
+ Per ulteriori informazioni sulla protezione quando si installa un punto di stato di fallback, vedere [Determine Whether You Require a Fallback Status Point](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md#determine-if-you-need-a-fallback-status-point).  
+
 
 **Non eseguire altri ruoli del sistema del sito nel sistema del sito e non installare il punto di stato di fallback in un controller di dominio.**  
 
