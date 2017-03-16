@@ -19,6 +19,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
 ms.openlocfilehash: 132803a1aa9aad5c5462686bd656688418e47d07
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -29,7 +30,7 @@ ms.openlocfilehash: 132803a1aa9aad5c5462686bd656688418e47d07
 Per monitorare l'infrastruttura e le operazioni in System Center Configuration Manager, usare l'area di lavoro **Monitoraggio** della console di Configuration Manager.  
 
 > [!NOTE]  
->  L'eccezione in questo percorso è la Migrazione, che viene monitorata direttamente nel nodo **Migrazione** nell'area di lavoro **Amministrazione** . Per altre informazioni, vedere [Operations for migrating to System Center Configuration Manager](../../../core/migration/operations-for-migration.md).  
+>  L'eccezione in questo percorso è la Migrazione, che viene monitorata direttamente nel nodo **Migrazione** nell'area di lavoro **Amministrazione** . Per altre informazioni, vedere [Operazioni per la migrazione a System Center Configuration Manager](../../../core/migration/operations-for-migration.md).  
 
  Oltre a usare la console di Configuration Manager per il monitoraggio, è possibile usare i report di Configuration Manager o visualizzare i file di log di Configuration Manager per i componenti di Configuration Manager. Per informazioni sui report, vedere [Creazione di report in System Center Configuration Manager](../../../core/servers/manage/reporting.md). Per informazioni sui file di log, vedere [File di log in System Center Configuration Manager](../../../core/plan-design/hierarchy/log-files.md).  
 
@@ -55,7 +56,7 @@ Per ridurre al minimo il rischio di errore del sito, se le attività di monitora
 
 
 
-##  <a name="a-namebkmkmonintormgmttasksa-monitor--common-management-tasks-for-configuration-manager"></a><a name="BKMK_MonintorMgmtTasks"></a> Monitorare le attività di gestione comuni per Configuration Manager  
+##  <a name="BKMK_MonintorMgmtTasks"></a> Monitorare le attività di gestione comuni per Configuration Manager  
  Configuration Manager include una funzionalità di monitoraggio predefinita all'interno della console. È possibile monitorare numerose attività, tra cui quelle relative a: aggiornamenti software, risparmio energia e distribuzione del contenuto all'interno della gerarchia.  
 
  Usare le informazioni seguenti per monitorare le attività di Configuration Manager comuni:  
@@ -87,10 +88,10 @@ Vedere [Monitorare l'utilizzo delle app con la misurazione del software in Syste
  Vedere [Monitorare gli aggiornamenti software in System Center Configuration Manager](../../../sum/deploy-use/monitor-software-updates.md).  
 
 
-##  <a name="a-namebkmkmonitorinfrastructurea-monitor-hierarchy-infrastructure-for-configuration-manager"></a><a name="BKMK_MonitorInfrastructure"></a> Monitorare l'infrastruttura della gerarchia per Configuration Manager  
+##  <a name="BKMK_MonitorInfrastructure"></a> Monitorare l'infrastruttura della gerarchia per Configuration Manager  
 Configuration Manager offre diversi metodi per monitorare lo stato e le operazioni della gerarchia. È possibile controllare lo stato del sistema di siti attraverso la gerarchia, monitorare la replica tra siti dalla gerarchia e dalla vista geografica del sito, monitorare i collegamenti di replica tra siti per la replica di database e utilizzare lo strumento Replication Link Analyzer per correggere problemi di replica.  
 
-###  <a name="a-namebkmkshnodea-about-the-site-hierarchy-node"></a><a name="BKMK_SH_Node"></a> Informazioni sul nodo Gerarchia siti  
+###  <a name="BKMK_SH_Node"></a> Informazioni sul nodo Gerarchia siti  
 Il nodo **Gerarchia siti** dell'area di lavoro **Monitoraggio** offre una panoramica della gerarchia e dei collegamenti tra siti di Configuration Manager. È possibile utilizzare due viste:  
 
 -   **Diagramma gerarchia**: consente di visualizzare la gerarchia come mappa topologica semplificata per mostrare solo le informazioni più importanti.  
@@ -126,13 +127,13 @@ L'opzione seguente modifica la vista geografica.
 
      Quando si specifica una posizione, è possibile utilizzare la casella **Percorso** per effettuare la ricerca di un sito specifico nella gerarchia. Una volta selezionato il sito, immettere la posizione come il nome di una città o un indirizzo nella colonna **Percorso** . Configuration Manager usa Bing Maps per risolvere il percorso.  
 
-###  <a name="a-namebkmkmonitorreplinksandstatussa-how-to-monitor-database-replication-links-and-replication-status"></a><a name="BKMK_MonitorRepLinksAndStatuss"></a> Come monitorare lo stato e i collegamenti di replica del database  
+###  <a name="BKMK_MonitorRepLinksAndStatuss"></a> Come monitorare lo stato e i collegamenti di replica del database  
  Oltre ai dettagli di alto livello accessibili dal nodo **Gerarchia siti** nell'area di lavoro **Monitoraggio** , è possibile monitorare i dettagli della replica dei database anche usando il nodo **Replica di database** nell'area di lavoro **Monitoraggio** . Da **Replica di database** è possibile monitorare lo stato dei collegamenti di replica tra siti e i dettagli dell'inizializzazione e della replica per i gruppi di replica nel sito a cui è collegato Configuration Manager.  
 
 > [!TIP]  
 >  Nonostante un nodo **Replica di database** venga visualizzato anche sotto il nodo **Configurazione della gerarchia** nell'area di lavoro **Amministrazione** , da quella posizione non è possibile visualizzare lo stato di replica per i collegamenti di replica del database.  
 
-####  <a name="a-namebkmkmonitorreplicationlinksa-replication-link-status"></a><a name="BKMK_MonitorReplicationLinks"></a> Stato del collegamento di replica  
+####  <a name="BKMK_MonitorReplicationLinks"></a> Stato del collegamento di replica  
 La replica di database tra siti implica la replica di diversi insiemi di informazioni, denominati gruppi di replica. Ogni gruppo di replica viene replicato con priorità di replica diverse. Per impostazione predefinita, i dati contenuti in un gruppo di replica e la frequenza di replica non possono essere modificati.  
 
  Quando un collegamento di replica è attivo e non presenta lo stato di non riuscito o ridotto, tutti i gruppi di replica vengono replicati nel tempo previsto. Quando uno o più gruppi di replica non riescono a completare la replica nel periodo di tempo previsto, il collegamento viene visualizzato come ridotto. I collegamenti ridotti possono comunque funzionare, ma occorre monitorarli per assicurarsi che ritornino allo stato attivo o esaminarli per assicurarsi che non si verifichino ulteriori errori di riduzione o replica.  
@@ -149,7 +150,7 @@ La replica di database tra siti implica la replica di diversi insiemi di informa
 
  Mentre un sito padre sta per effettuare l'aggiornamento a un nuovo Service Pack e si visualizza lo stato del collegamento dal sito figlio, lo stato del collegamento viene visualizzato come attivo. Dopo l'aggiornamento, finché anche il sito figlio è nello stesso Service Pack del sito padre, lo stato del collegamento viene visualizzato come attivo se visualizzato dal sito padre e come in corso di configurazione se visualizzato dal sito figlio.  
 
-####  <a name="a-namebkmkmonitorreplicationstatusa-replication-status"></a><a name="BKMK_MonitorReplicationStatus"></a> Stato della replica  
+####  <a name="BKMK_MonitorReplicationStatus"></a> Stato della replica  
  È possibile utilizzare il nodo **Replica di database** nell'area di lavoro **Monitoraggio** per visualizzare lo stato della replica per un collegamento di replica e i dettagli relativi al database del sito su ciascun sito nel collegamento di replica. È anche possibile visualizzare i dettagli relativi ai gruppi di replica. Per visualizzare i dettagli, selezionare un collegamento di replica e selezionare la scheda appropriata per lo stato di replica che si desidera visualizzare. Di seguito vengono fornite informazioni dettagliate sulle diverse schede per lo stato della replica.  
 
  **Riepilogo**  
@@ -190,7 +191,7 @@ La replica di database tra siti implica la replica di diversi insiemi di informa
 > [!TIP]  
 >  I gruppi di replica per i dati del sito vengono inviati solo dal sito figlio al sito padre. I gruppi di replica per i dati globali vengono replicati in entrambe le direzioni.  
 
-###  <a name="a-namebkmkrlaa-about-the-replication-link-analyzer"></a><a name="BKMK_RLA"></a> Informazioni su Replication Link Analyzer  
+###  <a name="BKMK_RLA"></a> Informazioni su Replication Link Analyzer  
  Configuration Manager include **Replication Link Analyzer** che consente di analizzare e risolvere i problemi di replica. Se la replica non riesce oppure si interrompe ma non viene segnalato l'errore è possibile utilizzare Replication Link Analyzer per monitorare e aggiornare errori nei collegamenti di replica. Replication Link Analyzer può essere usato per risolvere i problemi di replica tra i seguenti computer nella gerarchia di Configuration Manager (la direzione dell'errore di replica non è rilevante):  
 
 -   Tra un server del sito e il server di database del sito.  
@@ -229,7 +230,7 @@ Le azioni di monitoraggio, aggiornamento e rilevamento con e senza errori vengon
 
 -   Con la versione 1511 di System Center Configuration Manager, Replication Link Analyzer genera errori relativi al certificato SQL Server Service Broker per i siti primari aggiornati da System Center 2012 Configuration Manager. Ciò è dovuto a modifiche apportate ai nomi dei certificati introdotte con la versione 1511 per i quali Replication Link Analyzer non è ancora stato aggiornato. È possibile ignorare questi errori.  
 
-###  <a name="a-namebkmkprocsformonitoringreplicationa-procedures-for-monitoring-database-replication"></a><a name="BKMK_ProcsforMonitoringReplication"></a> Procedure per il monitoraggio della replica dei database  
+###  <a name="BKMK_ProcsforMonitoringReplication"></a> Procedure per il monitoraggio della replica dei database  
 
 ##### <a name="to-monitor-high-level-site-to-site-database-replication-status"></a>Per monitorare a livello generale lo stato della replica del database da sito a sito    
 1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
@@ -242,9 +243,4 @@ Le azioni di monitoraggio, aggiornamento e rilevamento con e senza errori vengon
 1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
 2.  Nell'area di lavoro **Monitoraggio** fare clic su **Replica di database**, quindi selezionare il collegamento di replica per il collegamento da monitorare. Quindi, nell'area di lavoro, selezionare la scheda appropriata per visualizzare diversi dettagli relativi allo stato della replica per il collegamento.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
