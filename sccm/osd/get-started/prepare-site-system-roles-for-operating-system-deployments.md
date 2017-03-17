@@ -19,6 +19,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: 1069a18eecbc5f53b74ad89e166e6f2c7b180693
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -28,12 +29,12 @@ ms.openlocfilehash: 1069a18eecbc5f53b74ad89e166e6f2c7b180693
 
 Per distribuire i sistemi operativi in System Center Configuration Manager, è necessario preparare i ruoli di sistema del sito seguenti che richiedono considerazioni e configurazioni specifiche.
 
-##  <a name="a-namebkmkdistributionpointsa-distribution-points"></a><a name="BKMK_DistributionPoints"></a> Punti di distribuzione  
+##  <a name="BKMK_DistributionPoints"></a> Punti di distribuzione  
  Il ruolo del sistema del sito del punto di distribuzione contiene i file di origine che devono essere scaricati dai client, ad esempio il contenuto dell'applicazione, gli aggiornamenti software, le immagini del sistema operativo e le immagini di avvio. È possibile controllare la distribuzione del contenuto usando le opzioni della larghezza di banda, della limitazione e della pianificazione.  
 
  È importante avere sufficienti punti di distribuzione per supportare la distribuzione dei sistemi operativi nei computer. È anche importante pianificare la posizione di questi punti di distribuzione nella gerarchia. La maggior parte delle informazioni sulla pianificazione si trova in [Gestire il contenuto e l'infrastruttura del contenuto](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md). Tuttavia, esistono altre considerazioni sulla pianificazione dei punti di distribuzione specifiche per la distribuzione del sistema operativo.  
 
-###  <a name="a-namebkmkadditionalplanninga-additional-planning-considerations-for-distribution-points"></a><a name="BKMK_AdditionalPlanning"></a> Considerazioni aggiuntive sulla pianificazione per i punti di distribuzione  
+###  <a name="BKMK_AdditionalPlanning"></a> Considerazioni aggiuntive sulla pianificazione per i punti di distribuzione  
  Di seguito sono descritti altri aspetti della pianificazione da considerare per i punti di distribuzione:  
 
 -   **Come si possono evitare distribuzioni indesiderate del sistema operativo?**  
@@ -54,7 +55,7 @@ Per distribuire i sistemi operativi in System Center Configuration Manager, è n
 
      È possibile distribuire un sistema operativo in un punto di distribuzione, ma l'immagine del sistema operativo deve essere ricevuta da un punto di distribuzione diverso.  
 
-###  <a name="a-namebkmkpxedistributionpointa-configuring-distribution-points-to-accept-pxe-requests"></a><a name="BKMK_PXEDistributionPoint"></a> Configurazione dei punti di distribuzione per accettare le richieste PXE  
+###  <a name="BKMK_PXEDistributionPoint"></a> Configurazione dei punti di distribuzione per accettare le richieste PXE  
  Per distribuire i sistemi operativi ai client di Configuration Manager che eseguono richieste di avvio PXE, è necessario configurare uno o più punti di distribuzioni per accettare le richieste PXE. Una volta configurato, il punto di distribuzione risponderà alla richiesta di avvio PXE e stabilirà l'azione appropriata da eseguire per la distribuzione.
 
 > [!IMPORTANT]  
@@ -97,7 +98,7 @@ Per distribuire i sistemi operativi in System Center Configuration Manager, è n
 
 11. Fare clic su **OK** per aggiornare le proprietà del punto di distribuzione.  
 
-###  <a name="a-namebkmkramdisktftpa-customize-the-ramdisk-tftp-block-size-and-window-size-on-pxe-enabled-distribution-points"></a><a name="BKMK_RamDiskTFTP"></a> Personalizzare le dimensioni della finestra e del blocco TFTP RamDisk nei punti di distribuzione abilitati per PXE  
+###  <a name="BKMK_RamDiskTFTP"></a> Personalizzare le dimensioni della finestra e del blocco TFTP RamDisk nei punti di distribuzione abilitati per PXE  
 È possibile personalizzare le dimensioni del blocco TFTP RamDisk e, a partire da Configuration Manager versione 1606, le dimensioni della finestra per i punti di distribuzione abilitati per PXE. Se la rete è stata personalizzata, il download dell'immagine di avvio potrebbe non riuscire a causa di un errore di timeout perché le dimensioni del blocco o della finestra sono troppo grandi. La personalizzazione delle dimensioni della finestra e del blocco TFTP RamDisk consentono di ottimizzare il traffico TFTP quando si usa PXE per soddisfare requisiti di rete specifici.   
 È necessario testare le impostazioni personalizzate nel proprio ambiente per stabilire quale sia la scelta più efficiente.  
 
@@ -133,7 +134,7 @@ Per distribuire i sistemi operativi in System Center Configuration Manager, è n
  Il valore predefinito è 4096 (4k).  
 
 
-###  <a name="a-namebkmkdpmulticasta-configure-distribution-points-to-support-multicast"></a><a name="BKMK_DPMulticast"></a> Configurare i punti di distribuzione per il supporto del multicast  
+###  <a name="BKMK_DPMulticast"></a> Configurare i punti di distribuzione per il supporto del multicast  
  Il multicast è un metodo di ottimizzazione della rete che è possibile usare nei punti di distribuzione in cui è probabile che più client scarichino contemporaneamente la stessa immagine del sistema. Quando si usa il multicast, l'immagine del sistema operativo viene scaricata contemporaneamente da più computer mentre il punto di distribuzione ne esegue il multicast, invece di far inviare una copia dei dati dal punto di distribuzione a ogni client in una connessione separata. Per supportare il multicast, è necessario configurare almeno un punto di distribuzione. Per altre informazioni, vedere [Usare multicast per distribuire Windows in rete](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
 
  Prima di distribuire il sistema operativo, è necessario configurare un punto di distribuzione per il supporto di multicast. Utilizzare la seguente procedura per modificare un punto di distribuzione esistente per il supporto di multicast. Per informazioni su come installare un nuovo punto di distribuzione, vedere [Installare e modificare un punto di distribuzione](../../core/servers/deploy/configure/install-and-configure-distribution-points.md).
@@ -176,7 +177,7 @@ Per distribuire i sistemi operativi in System Center Configuration Manager, è n
 
 6.  Fare clic su **OK**.  
 
-##  <a name="a-namebkmkstatemigrationpointsa-state-migration-point"></a><a name="BKMK_StateMigrationPoints"></a> Punto di migrazione stato  
+##  <a name="BKMK_StateMigrationPoints"></a> Punto di migrazione stato  
  Il punto di migrazione stato archivia i dati sullo stato dell'utente acquisiti in un computer e quindi ripristinati in un altro computer. Tuttavia, quando si acquisiscono le impostazioni utente per una distribuzione del sistema operativo nello stesso computer, ad esempio una distribuzione in cui il sistema operativo viene aggiornato nel computer di destinazione, è possibile scegliere se archiviare i dati nello stesso computer con collegamenti reali oppure usare un punto di migrazione stato. Per alcune distribuzioni ai computer, quando viene creata l'archiviazione stati, Configuration Manager crea automaticamente un'associazione tra l'archiviazione stati e il computer di destinazione. Durante la pianificazione del punto di migrazione stato tenere presenti i seguenti fattori.  
 
 ### <a name="user-state-size"></a>Dimensioni stato utente  
@@ -219,9 +220,4 @@ Per distribuire i sistemi operativi in System Center Configuration Manager, è n
 -   Se il punto di migrazione stato deve rispondere solo alle richieste di ripristino dei dati dello stato utente. Quando si abilita questa opzione, non è possibile utilizzare il punto di migrazione stato per archiviare dati dello stato utente.  
 
  Per i passaggi relativi all'installazione di un ruolo di sistema del sito, vedere [Aggiungere ruoli di sistema del sito](../../core/servers/deploy/configure/add-site-system-roles.md).  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
