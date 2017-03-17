@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: 09f8bc7ee04ff64934030f825a791bc043341963
+ms.lasthandoff: 12/16/2016
 
 ---
 # <a name="how-to-configure-wake-on-lan-in-system-center-configuration-manager"></a>Come configurare la riattivazione LAN in System Center Configuration Manager
@@ -28,7 +29,7 @@ Specificare le impostazioni di riattivazione LAN per System Center Configuration
 
 È possibile integrare la riattivazione LAN usando le impostazioni client proxy di riattivazione. Prima di utilizzare il proxy di riattivazione è tuttavia necessario attivare la riattivazione LAN per il sito e specificare **Utilizza solo pacchetti di riattivazione** e l'opzione **Unicast** per il metodo di trasmissione riattivazione LAN. Questa soluzione di riattivazione supporta anche connessioni ad hoc, ad esempio una connessione desktop remoto.
 
-Utilizzare la prima procedura per configurare un sito primario per la riattivazione LAN. Usare quindi la seconda procedura per configurare le impostazioni client proxy di riattivazione. Questa seconda procedura consente di configurare le impostazioni client predefinite per le impostazioni proxy di riattivazione da applicare a tutti i computer nella gerarchia. Se si desidera applicare queste impostazioni solo ad alcuni computer, creare un'impostazione dispositivo personalizzata e assegnarla a una raccolta che contenga i computer che si desidera configurare per il proxy di riattivazione. Per ulteriori informazioni su come creare impostazioni client personalizzate, vedere [How to configure client settings in System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).
+Utilizzare la prima procedura per configurare un sito primario per la riattivazione LAN. Usare quindi la seconda procedura per configurare le impostazioni client proxy di riattivazione. Questa seconda procedura consente di configurare le impostazioni client predefinite per le impostazioni proxy di riattivazione da applicare a tutti i computer nella gerarchia. Se si desidera applicare queste impostazioni solo ad alcuni computer, creare un'impostazione dispositivo personalizzata e assegnarla a una raccolta che contenga i computer che si desidera configurare per il proxy di riattivazione. Per ulteriori informazioni su come creare impostazioni client personalizzate, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).
 
 Un computer che riceve le impostazioni client proxy di riattivazione sospenderà probabilmente la connessione di rete per 1-3 secondi. Ciò si verifica perché il client deve reimpostare la scheda di interfaccia di rete per abilitare il driver proxy di riattivazione.
 
@@ -57,9 +58,4 @@ Un computer che riceve le impostazioni client proxy di riattivazione sospenderà
 
 > [!TIP]
 > Per verificare il funzionamento del proxy di riattivazione, verificare una connessione a un computer in sospensione. Ad esempio, connettersi a una cartella condivisa nel computer o tentare di connettersi al computer tramite Desktop remoto. Se si usa Direct Access, controllare il funzionamento dei prefissi IPv6 eseguendo le stesse verifiche per un computer in sospensione attualmente in Internet.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
