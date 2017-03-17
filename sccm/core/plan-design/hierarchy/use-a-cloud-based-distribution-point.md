@@ -2,7 +2,7 @@
 title: Punto di distribuzione basato su cloud | Microsoft Docs
 description: Informazioni sulle configurazioni e le limitazioni per l&quot;uso di un punto di distribuzione basato sul cloud con System Center Configuration Manager.
 ms.custom: na
-ms.date: 2/24/2017
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3eab8e62ace29c0fcb24d47ec7e398d807347a38
-ms.openlocfilehash: a1d701c77afb4d6317d8a137fdf46422063df085
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
+ms.openlocfilehash: 489f38d3f88391e42b5271c03151203d22b26d9e
+ms.lasthandoff: 03/04/2017
 
 
 ---
@@ -63,7 +63,7 @@ I punti di distribuzione basati sul cloud offrono i seguenti vantaggi aggiuntivi
 
 Un punto di distribuzione basato su cloud presenta le limitazioni seguenti:  
 
--  Se non si usa la versione 1610 con l'hotfix KB4010155, non è possibile usare un punto di distribuzione basato su cloud per ospitare i pacchetti di aggiornamento software. La versione Current Branch successiva alla versione 1610 supporterà questa opzione senza la necessità di installare questo hotfix.  
+-  Se non si usa la versione 1610 con l'hotfix KB4010155, non è possibile usare un punto di distribuzione basato su cloud per ospitare i pacchetti di aggiornamento software. Questo problema viene risolto a partire dalla versione 1702 e successive.  
 
 -   Non è possibile usare un punto di distribuzione basato sul cloud per distribuzioni abilitate per PXE o per il multicast.  
 

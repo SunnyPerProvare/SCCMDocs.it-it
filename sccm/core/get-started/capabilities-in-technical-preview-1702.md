@@ -16,16 +16,14 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 619899aaf8bde36e2bd62b5ba8a037b8580df198
-ms.openlocfilehash: 58b343aed6ea1d846801aca5e0a95200df1acc94
-ms.lasthandoff: 03/01/2017
+ms.sourcegitcommit: ee7f69bd65152deffb2456d9807e1e8fee8802ec
+ms.openlocfilehash: dd28c8218c77686884bdcff508080185cae97489
+ms.lasthandoff: 03/07/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1702 per System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Technical Preview)*
-
-
 
 Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1702 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
@@ -323,7 +321,7 @@ Quando l'associazione sarà stata completata, il nome dell'account e il nome del
 #### <a name="approve-and-deploy-android-for-work-apps"></a>Approvare e distribuire le applicazioni Android for Work
 Attenersi alla procedura seguente per approvare le applicazioni nello store di Play for Work, sincronizzarle con la console di Configuration Manager e quindi distribuirle ai dispositivi Android for Work gestiti. Per distribuire applicazioni a profili di lavoro degli utenti, è necessario approvarle in Play for Work e quindi sincronizzarle con la console di Configuration Manager.
 
-1. Aprire un browser e passare a: http://www.play.com/work
+1. Aprire un browser e passare a: https://play.google.com/work.
 2. Accedere usando l'account di amministratore di Google associato al tenant di Intune.
 3. Cercare le applicazioni che si vuole distribuire nell'ambiente e fare clic su **Approva** per ognuna di esse.
 4. Nella console di Configuration Manager passare a **Amministratore** > **Panoramica** > **Servizi cloud** > **Android for Work** e fare clic su **Sincronizza**.

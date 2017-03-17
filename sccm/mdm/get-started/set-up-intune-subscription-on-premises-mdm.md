@@ -1,8 +1,8 @@
 ---
-title: Configurare la sottoscrizione a Intune | Microsoft Docs | Locale
+title: Configurare la sottoscrizione a Intune | Microsoft Docs
 description: Configurare una sottoscrizione di Intune per tenere traccia delle licenze per la gestione dei dispositivi mobili locale in System Center Configuration Manager.
 ms.custom: na
-ms.date: 11/18/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 828e2ac9a3f9bcea1571d24145a1021fdf1091f3
-ms.openlocfilehash: 2cc9f59d9d32d149aa477ba61afba0094f302fc4
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: f86eac30ed0eada92ddbd25891d1693ae55b4851
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -38,7 +39,7 @@ La gestione dei dispositivi mobili locale di System Center Configuration Manager
  Intune è obbligatorio per il funzionamento della gestione dei dispositivi mobile locale. È sufficiente [iscriversi](http://www.microsoft.com/en-us/server-cloud/products/microsoft-intune/) per una sottoscrizione di valutazione o a pagamento e andare al passaggio successivo per aggiungere la sottoscrizione a Configuration Manager.  
 
 ##  <a name="add-the-intune-subscription-to-configuration-manager"></a>Aggiungere la sottoscrizione di Intune a Configuration Manager  
- Per aggiungere la sottoscrizione a Configuration Manager, la procedura è fondamentalmente la stessa valida per l'aggiunta della sottoscrizione per la gestione dei dispositivi mobili con Intune. Leggere le note riportate di seguito in merito alle differenze specifiche e seguire le istruzioni in [Per creare la sottoscrizione a Microsoft Intune](../deploy-use/setup-hybrid-mdm.md#step-3-configure-intune-subscription).  
+ Per aggiungere la sottoscrizione a Configuration Manager, la procedura è fondamentalmente la stessa valida per l'aggiunta della sottoscrizione per la gestione dei dispositivi mobili con Intune. Leggere le note riportate di seguito in merito alle differenze specifiche e seguire le istruzioni in [Per creare la sottoscrizione a Microsoft Intune](../deploy-use/setup-hybrid-mdm.md#configure-intune-subscription).  
 
 > [!NOTE]  
 >  Quando si aggiunge la sottoscrizione di Intune, tenere presente quanto segue:  
@@ -67,9 +68,4 @@ La gestione dei dispositivi mobili locale di System Center Configuration Manager
 5.  Se si prevede di gestire computer desktop Windows 10, fare clic con il pulsante destro del mouse su **Sottoscrizione a Microsoft Intune**, fare clic su **Configura piattaforme**e quindi su **Abilita registrazione Windows**.  
 
 6.  Fare clic sulla casella di controllo accanto a **Abilita registrazione Windows**e quindi su **OK**.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

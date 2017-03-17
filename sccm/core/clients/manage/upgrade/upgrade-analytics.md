@@ -13,9 +13,9 @@ ms.technology:
 - configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
 translationtype: Human Translation
-ms.sourcegitcommit: 460089ce58910b68eb0a613bce0166754850844b
-ms.openlocfilehash: 9361c66228cf54eb1daf8138cd03fc8f6139f48d
-ms.lasthandoff: 03/01/2017
+ms.sourcegitcommit: dcbcd57b95f304f007e92ebe2b9aeefb4b579662
+ms.openlocfilehash: 986d0446209f6e7eac1b681066d1b2e2305e1975
+ms.lasthandoff: 03/09/2017
 
 
 ---
@@ -49,8 +49,8 @@ Upgrade Readiness è una soluzione di Microsoft Operations Management Suite (OMS
 
 ### <a name="create-the-connection"></a>Creare la connessione
 
-1.  Nella console di Configuration Manager, scegliere **Amministrazione** > **Servizi cloud** > **Connettore Upgrade Readiness** > **Crea connessione a Upgrade Readiness** per avviare **Aggiungi la connessione guidata a Upgrade Readiness**.
-3.  Nella schermata **Azure Active Directory**, specificare valori per **Tenant**, **ID client ** e **Client Secret Key** (Chiave privata client), quindi selezionare **Avanti**.
+1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Servizi cloud** > **Upgrade Analytics Connector (Connettore Upgrade Analytics)** > **Crea connessione ad Upgrade Analytics** per avviare **Aggiungi la connessione guidata a Upgrade Analytics**.
+3.  Nella schermata **Azure Active Directory** specificare valori per **Tenant**, **ID client ** e **Chiave privata del client** e selezionare **Avanti**.
 4.  Nella schermata **Upgrade Readiness** specificare le impostazioni di connessione in **Sottoscrizione Azure**, **Gruppo di risorse di Azure** e **Area di lavoro di Operations Management Suite**.
 5.  Verificare le impostazioni di connessione nella schermata **Riepilogo** e selezionare **Avanti**.
 

@@ -1,8 +1,8 @@
 ---
-title: Configurare la registrazione dei dispositivi |Microsoft Docs | Gestione dei dispositivi mobili locale
+title: Configurare la registrazione dei dispositivi |Microsoft Docs
 description: Concedere autorizzazioni agli utenti per registrare i dispositivi per la gestione dei dispositivi mobili locale in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
-ms.openlocfilehash: ee2bfd1b0bdd51322819cfef9fb6185642bd8796
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: 1b32d755e23e1b1db2162bb117f45791a95b139b
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -35,7 +36,7 @@ Per consentire agli utenti di registrare i propri dispositivi per la gestione de
 
 -   [Archiviare il certificato radice nei dispositivi da registrare](#bkmk_storeCert)  
 
-##  <a name="a-namebkmkcreateprofa-create-an-enrollment-profile-that-allows-users-to-enroll-modern-devices"></a><a name="bkmk_createProf"></a> Creare un profilo di registrazione che consenta agli utenti di registrare i dispositivi moderni  
+##  <a name="bkmk_createProf"></a> Creare un profilo di registrazione che consenta agli utenti di registrare i dispositivi moderni  
  Per eseguire il push delle impostazioni necessarie per consentire agli utenti di registrare i dispositivi moderni, è possibile aggiungere un nuovo profilo di registrazione alle impostazioni client predefinite, che viene applicato a tutti gli utenti individuati nel sito di Configuration Manager.  
 
 1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Panoramica** > **Impostazioni client**, aprire **Impostazioni client predefinite ** e selezionare **Registrazione**.  
@@ -51,7 +52,7 @@ Per consentire agli utenti di registrare i propri dispositivi per la gestione de
 > [!NOTE]  
 >  Se si vuole distribuire il profilo di registrazione a un sottoinsieme degli utenti individuati, è possibile usare una raccolta di utenti e creare impostazioni client personalizzate per eseguire la distribuzione in tale raccolta. Per informazioni sulla creazione di impostazioni client personalizzate, vedere [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md)  
 
-##  <a name="a-namebkmkaddclienta-set-up-additional-client-settings-for-enrolled-devices"></a><a name="bkmk_addClient"></a> Configurare altre impostazioni client per i dispositivi registrati  
+##  <a name="bkmk_addClient"></a> Configurare altre impostazioni client per i dispositivi registrati  
  Oltre a configurare il profilo di registrazione per dispositivi moderni, è possibile usare altre impostazioni client per configurare i dispositivi quando vengono registrati.  Per informazioni sulla configurazione delle impostazioni client, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  
 
  Non tutte le impostazioni client sono disponibili per la gestione dei dispositivi mobili locale. Current Branch di Configuration Manager supporta solo le configurazioni seguenti per la gestione dei dispositivi mobili locale:  
@@ -65,10 +66,10 @@ Per consentire agli utenti di registrare i propri dispositivi per la gestione de
     > [!NOTE]  
     >  Per la gestione dei dispositivi mobili locale, le impostazioni di distribuzione software possono essere usate solo come impostazioni client predefinite. Le impostazioni di distribuzione software non possono essere usate con le impostazioni client personalizzate in Current Branch di Configuration Manager.  
 
-##  <a name="a-namebkmkenableusersa-enable-users-to-receive-the-modern-device-enrollment-profile"></a><a name="bkmk_enableUsers"></a> Consentire agli utenti di ricevere il profilo di registrazione dei dispositivi moderni  
+##  <a name="bkmk_enableUsers"></a> Consentire agli utenti di ricevere il profilo di registrazione dei dispositivi moderni  
  Per fare in modo che ricevano le impostazioni client modificate con il profilo di registrazione per la gestione dei dispositivi mobili locale, è necessario che gli utenti vengano individuati tramite il metodo di individuazione Active Directory. Per assicurarsi che il profilo di registrazione venga ottenuto da tutti gli utenti che ne hanno bisogno, eseguire l'individuazione degli utenti di Active Directory. Per informazioni sulla procedura di individuazione degli utenti, vedere [Run discovery for System Center Configuration Manager](../../core/servers/deploy/configure/run-discovery.md).  
 
-##  <a name="a-namebkmkstorecerta-store-the-root-certificate-on-devices-to-be-enrolled"></a><a name="bkmk_storeCert"></a> Archiviare il certificato radice nei dispositivi da registrare  
+##  <a name="bkmk_storeCert"></a> Archiviare il certificato radice nei dispositivi da registrare  
  È probabile che gli utenti con dispositivi appartenenti a un dominio abbiano già il certificato radice richiesto per la comunicazione attendibile con i server che ospitano i ruoli del sistema del sito, perché la radice è stata rilasciata come parte del processo di aggiunta al dominio con Active Directory. Per i dispositivi mobili non appartenenti a un dominio sarà necessario installare manualmente il certificato radice nel dispositivo per consentire la registrazione. Questi dispositivi non avranno automaticamente il certificato radice richiesto.  
 
  È necessario fornire al dispositivo il file del certificato esportato per l'installazione manuale. Questa operazione può essere eseguita tramite posta elettronica, OneDrive, una scheda SD, un'unità USB o qualsiasi metodo adatto alle proprie esigenze.  
@@ -88,9 +89,4 @@ Per consentire agli utenti di registrare i propri dispositivi per la gestione de
 6.  Fare clic su **Autorità di certificazione radice attendibili**, fare clic su **OK**e quindi fare clic su **Avanti**.  
 
 7.  Fare clic su **Fine**.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

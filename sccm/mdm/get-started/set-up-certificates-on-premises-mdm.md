@@ -1,8 +1,8 @@
 ---
-title: Configurare i certificati| Microsoft Docs | Gestione dei dispositivi mobili locale
+title: Configurare i certificati | Microsoft Docs
 description: Configurare i certificati per le comunicazioni attendibili per la gestione dei dispositivi mobili locale in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
-ms.openlocfilehash: d7aaad9298308b588f1bc13027082bf07066a3c2
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: ef35e98ccae0c708cd12767eef9f923f211849fb
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -49,7 +50,7 @@ La gestione dei dispositivi mobili locale di System Center Configuration Manager
 
 -   [Esportare il certificato con la stessa radice del certificato del server Web](#bkmk_exportCert)  
 
-##  <a name="a-namebkmkconfigcaa-configure-the-certification-authority-ca-for-crl-publishing"></a><a name="bkmk_configCa"></a> Configurare l'autorità di certificazione (CA) per la pubblicazione CRL  
+##  <a name="bkmk_configCa"></a> Configurare l'autorità di certificazione (CA) per la pubblicazione CRL  
  Per impostazione predefinita, l'autorità di certificazione (CA) usa gli elenchi di revoche di certificati (CRL) basati su LDAP che consentono le connessioni per i dispositivi aggiunti a un dominio. Per fare in modo che i dispositivi non aggiunti a un dominio siano considerati attendibili con certificati rilasciati dalla CA, è necessario aggiungere elenchi CRL basati su HTTP alla CA. Questi certificati sono necessari per le comunicazioni SSL tra i server che ospitano i ruoli del sistema del sito di Configuration Manager e i dispositivi registrati per la gestione dei dispositivi mobili locale.  
 
  Per configurare la CA per la pubblicazione automatica delle informazioni CRL per il rilascio di certificati che consentono connessioni attendibili per i dispositivi aggiunti e non aggiunti a un dominio, seguire questa procedura:  
@@ -76,7 +77,7 @@ La gestione dei dispositivi mobili locale di System Center Configuration Manager
 
 8.  Nella finestra di dialogo Pubblicazione CRL selezionare solo **Delta CRL** e fare clic su **OK**.  
 
-##  <a name="a-namebkmkcerttempla-create-the-web-server-certificate-template-on-the-ca"></a><a name="bkmk_certTempl"></a> Creare il modello di certificato del server Web nella CA  
+##  <a name="bkmk_certTempl"></a> Creare il modello di certificato del server Web nella CA  
  Dopo la pubblicazione del nuovo CRL nella CA, il passaggio successivo consiste nel creare un modello di certificato del server Web. Questo modello è necessario per il rilascio di certificati per i server che ospitano i ruoli del sistema del sito punto di registrazione, punto proxy di registrazione, punto di distribuzione e punto di gestione dispositivi. Questi server saranno gli endpoint SSL per le comunicazioni attendibili tra i ruoli del sistema del sito e i dispositivi registrati.    Per creare il modello di certificato, seguire questa procedura:  
 
 1.  Creare un gruppo di sicurezza denominato **Server MDM ConfigMgr** che contiene i server che eseguono i sistemi del sito che richiedono comunicazioni attendibili con i dispositivi registrati.  
@@ -113,7 +114,7 @@ La gestione dei dispositivi mobili locale di System Center Configuration Manager
 
 12. Nella finestra di dialogo **Attivazione modelli di certificato** selezionare il nuovo modello appena creato, **Server Web MDM ConfigMgr**, quindi fare clic su **OK**.  
 
-##  <a name="a-namebkmkrequestcerta-request-the-web-server-certificate-for-each-site-system-role"></a><a name="bkmk_requestCert"></a> Richiedere il certificato del server Web per ogni ruolo del sistema del sito  
+##  <a name="bkmk_requestCert"></a> Richiedere il certificato del server Web per ogni ruolo del sistema del sito  
  I dispositivi registrati per la gestione dei dispositivi mobili locale devono considerare attendibili gli endpoint SSL che ospitano il punto di registrazione, il punto proxy di registrazione, il punto di distribuzione e il punto di gestione dispositivi.  La procedura seguente mostra come richiedere il certificato del server Web per IIS. È necessario eseguire questa operazione per ogni server (endpoint SSL) che ospita uno dei ruoli del sistema del sito necessari per la gestione dei dispositivi mobili locale.  
 
 1.  Nel server del sito primario aprire il prompt dei comandi con le autorizzazioni di amministratore, digitare **MMC** e premere **INVIO**.  
@@ -132,7 +133,7 @@ La gestione dei dispositivi mobili locale di System Center Configuration Manager
 
  Dato che per ogni server sarà necessario un certificato server Web univoco, occorre ripetere questa procedura per ogni server che ospita uno dei ruoli del sistema del sito necessari per la gestione dei dispositivi mobili locale.  Se un server ospita tutti i ruoli del sistema del sito, è sufficiente richiedere un certificato del server Web.  
 
-##  <a name="a-namebkmkbindcerta-bind-the-certificate-to-the-web-server"></a><a name="bkmk_bindCert"></a> Associare il certificato al server Web  
+##  <a name="bkmk_bindCert"></a> Associare il certificato al server Web  
  A questo punto è necessario che il nuovo certificato venga associato al server Web per ogni server del sistema del sito che ospita i ruoli del sistema del sito necessari per la gestione dei dispositivi mobili locale. Seguire questa procedura per ogni server che ospita i ruoli del sistema del sito di punto di registrazione e punto proxy di registrazione. Se un server ospita tutti i ruoli del sistema del sito, è sufficiente eseguire la procedura una sola volta. Questa operazione non è necessaria per i ruoli del sistema del sito punto di distribuzione e punto di gestione dispositivi perché questi ricevono automaticamente il certificato richiesto durante la registrazione.  
 
 1.  Nel server che ospita il punto di registrazione, il punto proxy di registrazione, il punto di distribuzione o il punto di gestione dispositivi fare clic su **Start** > **Strumenti di amministrazione** > **Gestione IIS**.  
@@ -145,7 +146,7 @@ La gestione dei dispositivi mobili locale di System Center Configuration Manager
 
 5.  Nella console di Gestione IIS, in Connessioni, selezionare il server Web e quindi nel riquadro Azioni a destra fare clic su **Riavvia**.  
 
-##  <a name="a-namebkmkexportcerta-export-the-certificate-with-the-same-root-as-the-web-server-certificate"></a><a name="bkmk_exportCert"></a> Esportare il certificato con la stessa radice del certificato del server Web  
+##  <a name="bkmk_exportCert"></a> Esportare il certificato con la stessa radice del certificato del server Web  
  Servizi certificati Active Directory in genere installa il certificato richiesto dalla CA in tutti i dispositivi aggiunti a un dominio. I dispositivi non aggiunti a un dominio, però, non potranno comunicare con i ruoli del sistema del sito senza il certificato della CA radice. Per ottenere il certificato richiesto per la comunicazione dei dispositivi con i ruoli del sistema del sito, è possibile esportarlo dal certificato associato al server Web.  
 
  Seguire questa procedura per esportare il certificato radice del certificato del server Web.  
@@ -171,9 +172,4 @@ La gestione dei dispositivi mobili locale di System Center Configuration Manager
      Fare clic su **Avanti**.  
 
 9. Verificare le impostazioni e fare clic su **Fine**.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

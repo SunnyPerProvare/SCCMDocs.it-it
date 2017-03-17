@@ -2,7 +2,7 @@
 title: Aggiornamenti nella console | Microsoft Docs
 description: System Center Configuration Manager si sincronizza con il cloud Microsoft per ottenere aggiornamenti installabili all&quot;interno della console.
 ms.custom: na
-ms.date: 2/23/2017
+ms.date: 3/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: a0d4eb601948aa3abb12409f3475d69cacf4a6aa
-ms.openlocfilehash: a2bf28c724f8e07f32a30ab5e0b832b46cf362bb
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
+ms.openlocfilehash: eafa95922485066632a5da522e6c3de69b45050f
+ms.lasthandoff: 03/04/2017
 
 
 ---
@@ -33,7 +33,7 @@ Solo gli aggiornamenti che si applicano all'infrastruttura e alla versione vengo
 
 -   In **modalità online**il punto di connessione si connette automaticamente al servizio cloud Microsoft e scarica gli aggiornamenti applicabili.  
 
-     Per impostazione predefinita, Configuration Manager verifica la disponibilità di nuovi aggiornamenti ogni 24 ore. A partire dalla versione 1602, è anche possibile verificare immediatamente la disponibilità di aggiornamenti scegliendo **Verifica la disponibilità di aggiornamenti** nel nodo **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione** della console di Configuration Manager.  
+     Per impostazione predefinita, Configuration Manager verifica la disponibilità di nuovi aggiornamenti ogni 24 ore. È anche possibile verificare immediatamente la disponibilità di aggiornamenti scegliendo **Verifica la disponibilità di aggiornamenti** nel nodo **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione** della console di Configuration Manager.  
 
 -   In **modalità offline** il punto di connessione del servizio non si connette al servizio cloud Microsoft. È necessario usare manualmente [lo strumento di connessione del servizio per System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md) per scaricare e importare gli aggiornamenti disponibili.  
 
@@ -44,7 +44,7 @@ Dopo aver sincronizzato gli aggiornamenti è possibile visualizzarli nella conso
 
 -   Gli aggiornamenti non installati vengono visualizzati con l'indicazione **Disponibile**.
 
--   Gli aggiornamenti installati vengono visualizzati con l'indicazione **Installato**.  A partire dalla versione 1606 viene visualizzato solo l'aggiornamento installato più di recente. È possibile scegliere il pulsante **Cronologia** della barra multifunzione per visualizzare gli aggiornamenti installati in precedenza.
+-   Gli aggiornamenti installati vengono visualizzati con l'indicazione **Installato**.  Viene visualizzato solo l'aggiornamento installato più di recente. È possibile scegliere il pulsante **Cronologia** della barra multifunzione per visualizzare gli aggiornamenti installati in precedenza.
 
 
 
@@ -61,7 +61,7 @@ Per comprendere meglio ciò che accade quando vengono scaricati gli aggiornament
 -   [Flowchart - Update replication for System Center Configuration Manager](../../../core/servers/manage/update-replication-flowchart.md) (Diagramma di flusso: replica dell'aggiornamento per System Center Configuration Manager)  
 
 ## <a name="assign-permissions-to-view-and-manage-updates-and-features"></a>Assegnare le autorizzazioni per la visualizzazione e la gestione di aggiornamenti e funzionalità
-Prima di installare l'aggiornamento alla versione 1606, per visualizzare gli aggiornamenti nella console è necessario assegnare a un utente un ruolo di sicurezza che include l'autorizzazione **Lettura** nel gruppo di autorizzazioni **Sito**e l'ambito di protezione **Tutto**. A partire dall'aggiornamento 1606 una classe di protezione dell'amministrazione basata sui ruoli denominata **Pacchetti di aggiornamento** concede l'accesso per visualizzare e gestire gli aggiornamenti nella console di Configuration Manager.    
+Perché un utente possa visualizzare gli aggiornamenti nella console, è necessario che abbia un ruolo di protezione di amministrazione basato su ruoli assegnato, che includa una classe di protezione denominata **Pacchetti di protezione**. Questa classe consente l'accesso per visualizzare e gestire gli aggiornamenti nella console di Configuration Manager.    
 
 **Informazioni sulla classe Pacchetti di aggiornamento:**  
 Per impostazione predefinita, **Pacchetti di aggiornamento** (SMS_CM_Updatepackages) fa parte dei seguenti ruoli di sicurezza predefiniti con le autorizzazioni elencate:
@@ -95,13 +95,10 @@ Per impostazione predefinita, **Pacchetti di aggiornamento** (SMS_CM_Updatepacka
 ###  <a name="bkmk_step1"></a> Passaggio 1: Esaminare l'elenco di controllo dell'aggiornamento  
 Esaminare l'elenco di controllo dell'aggiornamento valido per le azioni da eseguire prima di iniziare l'aggiornamento:
 
--   Eseguire l'aggiornamento alla versione 1511 come descritto in [Eseguire l'aggiornamento a System Center Configuration Manager](../../../core/servers/deploy/install/upgrade-to-configuration-manager.md).    
+- Aggiornamento alla versione 1606: vedere [Elenco di controllo per installare l'aggiornamento 1606 di System Center Configuration Manager](../../../core/servers/manage/checklist-for-installing-update-1606.md).  
 
--   Aggiornamento alla versione 1602 dalla versione 1511: vedere [Elenco di controllo per l'aggiornamento di System Center Configuration Manager dalla versione 1511 alla versione 1602](../../../core/servers/manage/checklist-for-installing-update-1602.md).
-
-- Aggiornamento alla versione 1606 dalla versione 1511 o 1602: vedere [Elenco di controllo per installare l'aggiornamento 1606 di System Center Configuration Manager](../../../core/servers/manage/checklist-for-installing-update-1606.md).  
-
-- Aggiornamento alla versione 1610 dalla versione 1511, 1602 o 1606: vedere [Elenco di controllo per l'installazione dell'aggiornamento 1610 di System Center Configuration Manager](../../../core/servers/manage/checklist-for-installing-update-1610.md).  
+- Aggiornamento alla versione 1610 dalla versione 1606: vedere [Elenco di controllo per l'installazione dell'aggiornamento 1610 di System Center Configuration Manager](../../../core/servers/manage/checklist-for-installing-update-1610.md).  
+<!--- Update to 1702 from either 1606 or 1610: See [Checklist for installing update 1702](../../../core/servers/manage/checklist-for-installing-update-1702.md). -->  
 
 ###  <a name="bkmk_step2"></a> Passaggio 2: Testare l'aggiornamento del database prima di installare un aggiornamento  
 Le informazioni contenute in questo passaggio si applicano solo quando si installa un *aggiornamento* per un sito di System Center Configuration Manager. Se si *aggiorna* un sito di System Center 2012 Configuration Manager a System Center Configuration Manager, vedere [Testare l'aggiornamento del database del sito](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager#a-namebkmktesta-test-the-site-database-upgrade).
@@ -172,7 +169,7 @@ Successivamente, quando si installa l'aggiornamento, è possibile configurare l'
 
 -   Quando si usa una console di Configuration Manager dopo l'aggiornamento del sito, viene chiesto di aggiornare la console.  
 
--  Dopo che il server del sito ha completato correttamente l'installazione di un aggiornamento, aggiorna automaticamente tutti i ruoli del sistema del sito applicabili.  L'unica avvertenza a questo proposito riguarda i punti di distribuzione. Quando si installa un aggiornamento a un sito che esegue già la versione 1606 o una versione successiva, i punti di distribuzione non passano più alla modalità offline per l'aggiornamento tutti nello stesso tempo. Il server del sito usa le impostazioni di distribuzione del contenuto del sito stesso per distribuire l'aggiornamento a un subset di punti di distribuzione alla volta. Ne consegue che solo alcuni punti di distribuzione saranno offline per consentire l'installazione dell'aggiornamento. I punti di distribuzione per i quali non è stato avviato l'aggiornamento o che lo hanno completato restano in linea e continuano a fornire contenuto ai client.
+-  Dopo che il server del sito ha completato correttamente l'installazione di un aggiornamento, aggiorna automaticamente tutti i ruoli del sistema del sito applicabili.  L'unica avvertenza a questo proposito riguarda i punti di distribuzione. Quando si installa un aggiornamento, tutti i punti di distribuzione non reinstallano l'aggiornamento e vengono disconnessi per essere aggiornati contemporaneamente. Il server del sito usa le impostazioni di distribuzione del contenuto del sito stesso per distribuire l'aggiornamento a un subset di punti di distribuzione alla volta. Ne consegue che solo alcuni punti di distribuzione saranno offline per consentire l'installazione dell'aggiornamento. I punti di distribuzione per i quali non è stato avviato l'aggiornamento o che lo hanno completato restano in linea e continuano a fornire contenuto ai client.
 
 
 ###  <a name="bkmk_overview"></a> Panoramica dell'installazione degli aggiornamenti nella console  
@@ -185,7 +182,7 @@ Viene visualizzato l'Aggiornamento guidato che mostra un elenco di aree del prod
     -   Gli avvisi relativi ai prerequisiti possono anche arrestare l'installazione dell'aggiornamento. Prima di ritentare l'installazione dell'aggiornamento, è necessario correggere gli avvisi. Per altre informazioni, vedere [Ripetere l'installazione di un aggiornamento non riuscito](#bkmk_retry) .  
     -   Se si seleziona l'opzione **Ignorare eventuali avvisi del controllo dei prerequisiti e installare questo aggiornamento anche in caso di requisiti mancanti**, viene impostata una condizione per l'installazione dell'aggiornamento che ignora gli avvisi relativi ai prerequisiti. Ciò consente di continuare l'installazione dell'aggiornamento. Se non si seleziona questa opzione, l'installazione dell'aggiornamento si arresta quando viene visualizzato un avviso. L'uso di questa opzione non è consigliato, a meno che il controllo dei prerequisiti non sia già stato eseguito in precedenza e non siano già stati corretti gli avvisi relativi ai prerequisiti per un sito.  
 
-      A partire dalla versione 1606, in entrambe le aree di lavoro **Amministrazione** e **Monitoraggio** il nodo Aggiornamenti e manutenzione include un pulsante sulla barra multifunzione denominato **Ignora avvisi dei prerequisiti**. Questo pulsante diventa disponibile quando non viene completata l'installazione di un pacchetto di aggiornamento a causa di avvisi del controllo dei prerequisiti. Ad esempio, se si installa un aggiornamento senza usare l'opzione Ignora avvisi dei prerequisiti della procedura guidata e l'installazione dell'aggiornamento viene interrotta da un avviso relativo ai prerequisiti senza che si siano verificati errori, è possibile scegliere **Ignora avvisi dei prerequisiti** dalla barra multifunzione per riprendere automaticamente l'installazione ignorando gli avvisi dei prerequisiti. Quando si usa questa opzione l'installazione dell'aggiornamento continua automaticamente dopo alcuni minuti.
+      Nelle due aree di lavoro **Amministrazione** e **Monitoraggio** il nodo Aggiornamenti e manutenzione include il pulsante denominato **Ignora avvisi dei prerequisiti** sulla barra multifunzione. Questo pulsante diventa disponibile quando non viene completata l'installazione di un pacchetto di aggiornamento a causa di avvisi del controllo dei prerequisiti. Ad esempio, se si installa un aggiornamento senza usare l'opzione Ignora avvisi dei prerequisiti della procedura guidata e l'installazione dell'aggiornamento viene interrotta da un avviso relativo ai prerequisiti senza che si siano verificati errori, è possibile scegliere **Ignora avvisi dei prerequisiti** dalla barra multifunzione per riprendere automaticamente l'installazione ignorando gli avvisi dei prerequisiti. Quando si usa questa opzione l'installazione dell'aggiornamento continua automaticamente dopo alcuni minuti.
 
 
 
@@ -211,7 +208,7 @@ Per monitorare lo stato di avanzamento, usare quanto segue:
 
 -   Nella console di Configuration Manager: nodo **Monitoraggio** > **Panoramica** > **Stato di aggiornamenti e manutenzione**. Questo nodo indica solo lo stato di installazione del pacchetto di aggiornamento che si sta installando.  
 
-    A partire dalla versione 1606 l'installazione del pacchetto di aggiornamento è suddivisa nelle fasi seguenti per facilitare il monitoraggio. Per ogni fase sono disponibili ulteriori dettagli, incluso il file di log da visualizzare per avere maggiori informazioni:  
+  L'installazione del pacchetto di aggiornamento è suddivisa nelle fasi seguenti per facilitare il monitoraggio. Per ogni fase sono disponibili ulteriori dettagli, incluso il file di log da visualizzare per avere maggiori informazioni:  
     -   **Download**: questa fase si applica solo al sito di livello superiore in cui è installato il ruolo del sistema del sito del punto di connessione del servizio.
     -   **Replica**
     -   **Controllo dei prerequisiti**
@@ -323,36 +320,7 @@ Per visualizzare le funzionalità disponibili e il relativo stato, nella console
 Quando una funzionalità non è facoltativa, viene installata automaticamente e non viene visualizzata nel nodo **Funzionalità** .  
 
 ##  <a name="bkmk_prerelease"></a> Usare le funzionalità di versioni non definitive degli aggiornamenti
-Le funzionalità di versioni non definitive sono incluse nel prodotto a scopo di test preliminare in un ambiente di produzione, ma non devono essere considerate pronte per l'ambiente di produzione. A partire dalla versione 1606, è necessario dare il consenso all'uso delle funzionalità di versioni non definitive in System Center Configuration Manager per poterle selezionare e abilitarne l'uso.  
-
-L'azione di dare il consenso viene eseguita una sola volta per ogni gerarchia e non può essere annullata. Se non viene dato il consenso, non è possibile abilitare le nuove funzionalità di versioni non definitive incluse nell'aggiornamento 1606 o nelle versioni successive dell'aggiornamento.
-
-Per dare il consenso, nella console passare ad **Amministrazione** > **Configurazione del sito** > **Siti**, quindi scegliere **Impostazioni gerarchia**. Nella scheda **Generale** scegliere **Consenso a usare funzionalità di versioni non definitive**.
-
- > [!NOTE]
- > Se sono state abilitate nell'aggiornamento 1602 prima dell'installazione dell'aggiornamento 1606, le funzionalità di versioni non definitive rimangono abilitate dopo l'installazione dell'aggiornamento 1606 anche se non viene dato il consenso al loro utilizzo.
-
-Se la gerarchia esegue la versione 1606 o una versione successiva e si installa un aggiornamento che include funzionalità di versioni non definitive, le funzionalità vengono visualizzate nella procedura guidata degli aggiornamenti e della manutenzione insieme alle normali funzionalità incluse nell'aggiornamento:
-  - **Se è stato dato il consenso:** è possibile abilitare le funzionalità di versioni non definitive dall'interno della procedura guidata degli aggiornamenti e della manutenzione durante l'installazione dell'aggiornamento. A tale scopo, selezionare le funzionalità di versioni non definitive allo stesso modo in cui si selezionano le altre funzionalità.     
-
-    Facoltativamente, è possibile abilitare una funzionalità di versione non definitiva successivamente dal nodo della console **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione** > **Funzionalità**. Scegliere la funzionalità nel nodo **Funzionalità** e quindi scegliere **Attiva**. Questa opzione è disattivata finché non si concede il consenso.  
-  -   **Se non è stato dato il consenso:** durante l'installazione di un aggiornamento, le funzionalità di versioni non definitive sono visibili nella procedura guidata Aggiornamenti e manutenzione ma appaiono disattivate e non possono essere abilitate. Dopo l'installazione dell'aggiornamento, è possibile visualizzare le funzionalità nel nodo **Funzionalità** ma sarà possibile abilitarle solo dopo aver dato il consenso in **Impostazioni gerarchia**.
-
- > [!TIP]
- > Durante l'installazione dell'aggiornamento 1606, le funzionalità di versioni non definitive incluse nell'aggiornamento 1606 non sono visibili nella procedura guidata degli aggiornamenti e della manutenzione e non possono essere abilitate. Dopo l'installazione dell'aggiornamento 1606, è possibile visualizzare le funzionalità di versioni non definitive dell'aggiornamento nel nodo **Funzionalità**.
-
-Se dopo aver dato il consenso a un sito primario autonomo si espande la gerarchia installando un nuovo sito di amministrazione centrale, è necessario dare di nuovo il consenso al sito di amministrazione centrale.
-
-**Per la versione non definitiva sono disponibili le funzionalità seguenti:**
-
- |Funzionalità                    |Aggiunta come versione non definitiva |Aggiunta come funzionalità completa |  
-|----------------------------|---------------------|------------------------|
-| Peer cache per la distribuzione del contenuto ai client |  [Versione 1610](/sccm/core/plan-design/hierarchy/client-peer-cache) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Gateway di gestione cloud |  [Versione 1610](/sccm/core/clients/manage/plan-cloud-management-gateway) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Dashboard origini dati del client |  [Versione 1610](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Microsoft Operations Management Suite Connector  | [Versione 1606](../../../core/clients/manage/sync-data-microsoft-operations-management-suite.md) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Manutenzione di una raccolta compatibile con cluster (manutenzione di un gruppo di server)| [Versione 1602](../../../core/get-started/capabilities-in-technical-preview-1605.md#BKMK_ServerGroups)|![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-|Accesso condizionale per i PC gestiti da System Center Configuration Manager | [Versione 1602](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)     |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)                        |
+Le funzionalità di versioni non definitive sono incluse nel Current Branch a scopo di test preliminare in un ambiente di produzione. Tali funzionalità non devono essere considerate pronte per l'ambiente di produzione, ma possono essere comunque usate in questo ambiente. Per altre informazioni sulle funzionalità di versioni non definitive,ad esempio su come abilitarle nell'ambiente, vedere [Pre-release featuers](/sccm/core/servers/manage/pre-release-features) (Funzionalità di versioni non definitive).                |
 
 
 ## <a name="known-issues"></a>Problemi noti

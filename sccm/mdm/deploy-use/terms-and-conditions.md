@@ -2,7 +2,7 @@
 title: Termini e condizioni in System Center Configuration Manager | Microsoft Docs
 description: Distribuire le condizioni a gruppi di utenti in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,12 +16,13 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 2f8b14bef14d82584fd2bf6cdd05018bdd463ce4
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: d8235db376fc62a7ac00d6e5a27823710630eca6
+ms.lasthandoff: 03/06/2017
 
 
 ---
-# <a name="terms-and-conditions-in-system-center-configuration-manager"></a>Terms and Conditions in System Center Configuration Manager
+# <a name="add-terms-and-conditions-with-system-center-configuration-manager"></a>Aggiungere termini e condizioni con System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -120,8 +121,6 @@ ms.openlocfilehash: 2f8b14bef14d82584fd2bf6cdd05018bdd463ce4
 
      È consigliabile incrementare il numero di versione e richiedere l'accettazione ogni volta che si apportano modifiche significative a termini e condizioni. Non modificare il numero di versione corrente se, ad esempio, si correggono errori di digitazione o si modifica la formattazione.
 
-
-
-<!--HONumber=Dec16_HO3-->
-
+> [!div class="button"]
+ [< Passaggio precedente](configure-intune-subscription.md)  [Passaggio successivo >](create-service-connection-point.md)
 

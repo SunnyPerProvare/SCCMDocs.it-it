@@ -2,7 +2,7 @@
 title: "Riferimento per le attività di manutenzione | Microsoft Docs"
 description: "Leggere le informazioni dettagliate su ogni attività di manutenzione del sito di System Center Configuration Manager in cui le attività sono abilitate per impostazione predefinita."
 ms.custom: na
-ms.date: 2/7/2017
+ms.date: 3/8/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6e19d1239cb61b570203fdd13563d5f8c5afc6ad
-ms.openlocfilehash: d2e53e7c0cd0dd1a97d3620a14a15369e1d7e0ec
+ms.sourcegitcommit: dcbcd57b95f304f007e92ebe2b9aeefb4b579662
+ms.openlocfilehash: 92d3c215569916a5557309d7f488aa88f387da92
+ms.lasthandoff: 03/09/2017
 
 
 ---
@@ -52,6 +53,11 @@ Questo argomento fornisce informazioni dettagliate su ognuna delle attività di 
 -   **Sito primario**: abilitato    
 -   Sito secondario: non disponibile  
 
+**Eliminare la cronologia di download del client obsoleti**: usare questa attività per eliminare i dati della cronologia relativi all'origine dei download usata dai client. Le informazioni sull'origine dei download consentono di popolare il dashboard [Origini dati del client](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard).  
+-  Sito di amministrazione centrale: non disponibile
+-     **Sito primario**: abilitato
+-  Sito secondario: non disponibile
+
 **Elimina operazioni client obsolete**: usare questa attività per eliminare tutti i dati obsoleti per le operazioni client dal database del sito. Sono inclusi ad esempio i dati delle notifiche client obsolete o scadute come le richieste di download dei criteri computer o utente e i dati di Endpoint Protection come le richieste da un utente amministratore che i client ricerchino o scarichino le definizioni aggiornate.
 
 -   **Sito di amministrazione centrale**: abilitato    
@@ -63,6 +69,12 @@ Questo argomento fornisce informazioni dettagliate su ognuna delle attività di 
 -   **Sito di amministrazione centrale**: abilitato   
 -   **Sito primario**: abilitato    
 -   Sito secondario: non disponibile  
+
+**Elimina i dati di traffico del gateway di gestione cloud obsoleti**: usare questa attività per eliminare tutti i dati obsoleti relativi al traffico che passa attraverso il [gateway di gestione cloud](/sccm/core/clients/manage/plan-cloud-management-gateway) dal database del sito. Questo include, ad esempio, i dati relativi al numero di richieste, i byte totali delle richieste, i byte totali delle risposte, il numero di richieste non riuscite e il numero massimo di richieste simultanee.  
+- **Sito di amministrazione centrale**: abilitato
+- **Sito primario**: abilitato
+- Sito secondario: non disponibile
+
 
 **Elimina file raccolti obsoleti**: usare questa attività per eliminare le informazioni obsolete sui file raccolti dal database. Questa attività elimina anche i file raccolti dalla struttura delle cartelle del server del sito nel sito selezionato. Per impostazione predefinita, le cinque copie più recenti dei file raccolti sono archiviate sul server del sito nella directory **Inboxes\sinv.box\FileCol**. Per altre informazioni, vedere [Introduzione all'inventario software in System Center Configuration Manager](/sccm/core/clients/manage/inventory/introduction-to-software-inventory).  
 
@@ -227,6 +239,11 @@ Questa attività funziona solo nelle risorse che sono client di Configuration Ma
 -   **Sito primario**: abilitato    
 -   Sito secondario: non disponibile  
 
+**Elimina i record sullo stato di distribuzione del client orfano**: usare questa attività per ripulire periodicamente la tabella contenente le informazioni sullo stato di distribuzione dei client. Questa attività elimina i record associati a dispositivi obsoleti o non autorizzati.  
+-   **Sito di amministrazione centrale**: abilitato    
+-   **Sito primario**: abilitato    
+-   Sito secondario: non disponibile 
+
 **Elimina revisioni applicazioni non utilizzate**: usare questa attività per eliminare le revisioni applicazione a cui non viene più fatto riferimento. Per altre informazioni, vedere [Come rivedere e sostituire le applicazioni in System Center Configuration Manager](../../../apps/deploy-use/revise-and-supersede-applications.md).  
 
 -   Sito di amministrazione centrale: non disponibile    
@@ -288,9 +305,4 @@ Questi mapping sono memorizzati in una tabella di riferimento rapido. Quando cam
 -   Sito di amministrazione centrale: non disponibile    
 -   **Sito primario**: abilitato    
 -   Sito secondario: non disponibile  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

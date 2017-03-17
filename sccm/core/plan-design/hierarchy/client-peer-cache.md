@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2dd898c9b022c6f0bc243623835af0eece94128f
-ms.openlocfilehash: 95d1671501f672e1d5abe3f0fbbd7d2dfb21e0a3
+ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
+ms.openlocfilehash: 895b8ae58a9fda3fd22f58d77129053df09c4ccb
+ms.lasthandoff: 03/04/2017
 
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
@@ -28,7 +29,7 @@ ms.openlocfilehash: 95d1671501f672e1d5abe3f0fbbd7d2dfb21e0a3
 A partire da System Center Configuration Manager versione 1610, è possibile usare la **peer cache** per gestire la distribuzione del contenuto ai client in posizioni remote. La peer cache è una soluzione integrata di Configuration Manager che consente ai client di condividere i contenuti con altri client direttamente dalla cache locale.   
 
 > [!TIP]  
-> Con la versione 1610, la peer cache e il dashboard Origini dati del client sono funzionalità di versioni non definitive. Per abilitarle, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
+> Introdotti con la versione 1610, la peer cache e il dashboard Origini dati del client sono funzionalità di versioni non definitive. Per abilitarle, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/pre-release-features).
 
  -     Le impostazioni client possono essere usate per abilitare i client per l'uso della peer cache.
  -     Per condividere il contenuto, i client della peer cache devono essere entrambi membri del gruppo di limiti corrente del client in cerca del contenuto. I client della peer cache in gruppi di limiti adiacenti non sono inclusi con il pool dei percorsi di origine del contenuto disponibili quando un client usa il fallback per cercare contenuti da un gruppo di limiti adiacente. Per altre informazioni sui gruppi di limiti correnti e adiacenti, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups).
@@ -66,9 +67,4 @@ Per capire come viene usata la peer cache, è possibile visualizzare il dashboar
   -  **Porta per il download di contenuto da peer (HTTP/HTTPS)**
 
 In ogni computer abilitato per la peer cache, se Windows Firewall è in uso verrà configurato da Configuration Manager per consentire l'uso delle porte configurate.
-
-
-
-<!--HONumber=Feb17_HO4-->
-
 
