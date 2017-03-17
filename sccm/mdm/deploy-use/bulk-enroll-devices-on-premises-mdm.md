@@ -8,7 +8,7 @@ ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
 ms.technology:
-- configmgr-client
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: b36f5e4a-2b57-4d18-83f6-197081ac2a0a
@@ -54,14 +54,14 @@ Le attività seguenti illustrano come registrare in blocco computer e dispositiv
 
 -   [Verificare la registrazione del dispositivo](#bkmk_verifyEnroll)  
 
-##  <a name="a-namebkmkcreatecerta-create-a-certificate-profile"></a><a name="bkmk_createCert"></a> Creare un profilo del certificato  
+##  <a name="bkmk_createCert"></a> Creare un profilo del certificato  
  Il componente principale del pacchetto di registrazione è un profilo del certificato, che viene usato per effettuare automaticamente il provisioning di un certificato radice trusted nel dispositivo da registrare.  Questo certificato radice è necessario per la comunicazione attendibile tra i dispositivi e i ruoli del sistema del sito necessari per Gestione dispositivi mobili locali. Senza il certificato radice, il dispositivo non verrà considerato attendibile nelle connessioni HTTPS tra il dispositivo stesso e i server che ospitano i ruoli del sistema del sito del punto di registrazione, del punto proxy di registrazione, del punto di distribuzione e del punto di gestione dei dispositivi.  
 
  Come parte della preparazione del sistema per Gestione dispositivi mobili locali, esportare un certificato radice che è possibile usare nel profilo del certificato del pacchetto di registrazione. Per istruzioni su come ottenere il certificato radice attendibile, vedere [Export the certificate with the same root as the web server certificate](../../mdm/get-started/set-up-certificates-on-premises-mdm.md#bkmk_exportCert) (Esportare il certificato con la stessa radice del certificato del server Web).  
 
  Usare il certificato radice esportato per creare un profilo del certificato. Per altre informazioni, vedere [How to create certificate profiles in System Center Configuration Manager](../../protect/deploy-use/create-certificate-profiles.md) (Come creare profili di certificato in System Center Configuration Manager).  
 
-##  <a name="a-namecreatewifia-create-a-wi-fi-profile"></a><a name="CreateWifi"></a> Creare un profilo Wi-Fi  
+##  <a name="CreateWifi"></a> Creare un profilo Wi-Fi  
  L'altro componente del pacchetto usato per la registrazione in blocco è il profilo Wi-Fi. Alcuni dispositivi potrebbero non avere la connettività di rete necessaria per supportare la registrazione fino a quando non viene effettuato il provisioning delle impostazioni di rete. Includere un profilo Wi-Fi nel pacchetto di registrazione consente di stabilire la connettività di rete per il dispositivo.  
 
  Per creare un profilo Wi-Fi in Configuration Manager, seguire le istruzioni in [How to create Wi-Fi profiles in System Center Configuration Manager](../../protect/deploy-use/create-wifi-profiles.md) (Come creare profili Wi-Fi in System Center Configuration Manager).  
@@ -78,7 +78,7 @@ Le attività seguenti illustrano come registrare in blocco computer e dispositiv
 >
 > - Anche se Configuration Manager ha un'impostazione per le informazioni del server proxy nel profilo Wi-Fi, non configura il proxy quando il dispositivo viene registrato. Se è necessario configurare un server proxy con i dispositivi registrati, è possibile distribuire le impostazioni usando gli elementi di configurazione dopo che i dispositivi sono stati registrati o creare il secondo pacchetto mediante Progettazione immagine e configurazione di Windows da distribuire insieme al pacchetto per la registrazione in blocco.
 
-##  <a name="a-namebkmkcreateenrolla-create-an-enrollment-profile"></a><a name="bkmk_createEnroll"></a> Creare un profilo di registrazione  
+##  <a name="bkmk_createEnroll"></a> Creare un profilo di registrazione  
  Il profilo di registrazione consente di specificare le impostazioni necessarie per la registrazione dei dispositivi, tra cui un profilo del certificato che effettuerà il provisioning dinamico di un certificato radice trusted nel dispositivo e un profilo Wi-Fi che eseguirà il provisioning delle impostazioni di rete, se necessario.  
 
  Prima di creare un profilo di registrazione, assicurarsi di aver creato un profilo del certificato e un profilo Wi-Fi (se necessario). Per altre informazioni, vedere [Creare un profilo del certificato](#bkmk_createCert) e [Creare un profilo Wi-Fi](#CreateWifi).  
@@ -104,7 +104,7 @@ Le attività seguenti illustrano come registrare in blocco computer e dispositiv
 
 8.  Confermare le impostazioni per il profilo di registrazione e fare clic su **Avanti**. Fare clic su **Chiudi** per uscire dalla procedura guidata.  
 
-##  <a name="a-namebkmkcreateppkga-create-an-enrollment-package-ppkg-file"></a><a name="bkmk_createPpkg"></a> Creare un file del pacchetto di registrazione (ppkg)  
+##  <a name="bkmk_createPpkg"></a> Creare un file del pacchetto di registrazione (ppkg)  
  Il pacchetto di registrazione è il file utilizzato per registrare in blocco i dispositivi per Gestione dispositivi mobili locali.  Questo file deve essere creato con Configuration Manager. È possibile creare tipi simili di pacchetti con Progettazione immagine e configurazione di Windows, ma solo i pacchetti creati in Configuration Manager possono essere utilizzati per registrare i dispositivi per Gestione dispositivi mobili locali dall'inizio alla fine. I pacchetti creati con Progettazione immagine e configurazione di Windows possono fornire solo il nome dell'entità utente (UPN) necessario per la registrazione, ma non eseguire il processo di registrazione effettivo.  
 
  Il processo per creare il pacchetto di registrazione richiede Windows Assessment and Deployment Kit (ADK) per Windows 10.  Nel server in cui è in esecuzione la console di Configuration Manager assicurarsi che sia installata la versione 1511 di Windows ADK. Per altre informazioni, vedere la sezione ADK dell'articolo relativo al [download di kit e strumenti per Windows 10](https://msdn.microsoft.com/windows/hardware/dn913721.aspx).  
@@ -125,7 +125,7 @@ Le attività seguenti illustrano come registrare in blocco computer e dispositiv
 
 4.  Fare clic su **OK**.  
 
-##  <a name="a-namebkmkgetppkga-use-the-package-to-bulk-enroll-a-device"></a><a name="bkmk_getPpkg"></a> Usare il pacchetto per registrare in blocco un dispositivo  
+##  <a name="bkmk_getPpkg"></a> Usare il pacchetto per registrare in blocco un dispositivo  
  È possibile usare il pacchetto per registrare i dispositivi prima o dopo il provisioning del dispositivo tramite la configurazione guidata.   Il pacchetto di registrazione può anche essere incluso come parte di un pacchetto di provisioning dell'OEM (Original Equipment Manufacturer).  
 
  Il pacchetto deve essere distribuito fisicamente al dispositivo per usarlo per la registrazione in blocco. È possibile distribuire il pacchetto di registrazione al dispositivo in vari modi a seconda delle esigenze, tra cui:  
@@ -160,7 +160,7 @@ Le attività seguenti illustrano come registrare in blocco computer e dispositiv
 
 6.  Fare clic sull'account e quindi fare clic su **Sincronizza** per avviare la gestione con Configuration Manager.  
 
-##  <a name="a-namebkmkverifyenrolla-verify-enrollment-of-device"></a><a name="bkmk_verifyEnroll"></a> Verificare la registrazione del dispositivo  
+##  <a name="bkmk_verifyEnroll"></a> Verificare la registrazione del dispositivo  
  È possibile verificare se i dispositivi sono stati registrati correttamente nella console di Configuration Manager.  
 
 -   Avviare la console di Configuration Manager.  
