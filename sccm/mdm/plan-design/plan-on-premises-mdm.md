@@ -29,7 +29,7 @@ ms.lasthandoff: 01/21/2017
 
 Prendere in considerazione i requisiti seguenti prima di preparare l'infrastruttura di Configuration Manager per eseguire la gestione dei dispositivi mobili locale.
 
-##  <a name="a-namebkmkdevicesa-supported-devices"></a><a name="bkmk_devices"></a> Dispositivi supportati  
+##  <a name="bkmk_devices"></a> Dispositivi supportati  
  La gestione di dispositivi mobili locale consente di gestire i dispositivi mobili usando le funzionalità di gestione predefinite nei sistemi operativi dei dispositivi.  La funzionalità di gestione si basa sullo standard Open Mobile Alliance (OMA) Device Management (DM), usato da molte piattaforme per dispositivi per consentire la gestione dei dispositivi.  Nella documentazione e nell'interfaccia utente della console di Configuration Manager questi dispositivi vengono indicati con il termine **dispositivi moderni** per distinguerli da altri dispositivi la cui gestione richiede il client di Configuration Manager.  
 
  > [!NOTE]  
@@ -41,7 +41,7 @@ Prendere in considerazione i requisiti seguenti prima di preparare l'infrastrutt
 > -   Windows 10 Mobile  
 > -   Windows 10 Mobile Enterprise   
 
-##  <a name="a-namebkmkintunea-use-of-the--microsoft-intune-subscription"></a><a name="bkmk_intune"></a> Usare la sottoscrizione a Microsoft Intune  
+##  <a name="bkmk_intune"></a> Usare la sottoscrizione a Microsoft Intune  
  Per iniziare a usare la gestione dei dispositivi mobili, è necessaria una sottoscrizione a Microsoft Intune. La sottoscrizione è richiesta solo per tenere traccia delle licenze dei dispositivi e non viene usata per gestire o archiviare le informazioni di gestione per i dispositivi. Tutte le attività di gestione vengono eseguite all'interno dell'azienda usando l'infrastruttura di Configuration Manager locale.  
 
  > [!NOTE]  
@@ -54,7 +54,7 @@ Prendere in considerazione i requisiti seguenti prima di preparare l'infrastrutt
 
  Per informazioni su come configurare la sottoscrizione di Intune, vedere [Impostare una sottoscrizione di Microsoft Intune per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/set-up-intune-subscription-on-premises-mdm.md).  
 
-##  <a name="a-namebkmkrolesa-required-site-system-roles"></a><a name="bkmk_roles"></a> Ruoli di sistema del sito necessari  
+##  <a name="bkmk_roles"></a> Ruoli di sistema del sito necessari  
  La gestione dei dispositivi mobili locale richiede minimo uno dei ruoli di sistema del sito seguenti:  
 
 -   **Punto proxy di registrazione** per supportare le richieste di registrazione.  
@@ -69,11 +69,11 @@ Prendere in considerazione i requisiti seguenti prima di preparare l'infrastrutt
 
  Questi ruoli del sistema del sito possono essere installati in un unico server del sistema del sito oppure possono essere eseguiti separatamente in server diversi a seconda delle esigenze dell'organizzazione. Ogni server di sistema del sito usato per la gestione dei dispositivi mobili locale deve essere configurato come endpoint HTTPS per comunicare con dispositivi attendibili. Per altre informazioni, vedere [Comunicazioni attendibili richieste](#bkmk_trustedComs).  
 
- Per altre informazioni sulla pianificazione dei ruoli del sistema del sito, vedere [Plan for site system servers and site system roles for System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).  
+ Per altre informazioni sulla pianificazione dei ruoli del sistema del sito, vedere [Pianificare i server e i ruoli del sistema del sito per System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).  
 
- Per altre informazioni su come aggiungere i ruoli del sistema del sito, vedere [Install site system roles for On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md).  
+ Per altre informazioni su come aggiungere i ruoli del sistema del sito, vedere [Installare i ruoli di sistema del sito per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md).  
 
-##  <a name="a-namebkmktrustedcomsa-required-trusted-communications"></a><a name="bkmk_trustedComs"></a> Comunicazioni attendibili necessarie  
+##  <a name="bkmk_trustedComs"></a> Comunicazioni attendibili necessarie  
  La gestione dei dispositivi mobili richiede che i ruoli di sistema del sito siano abilitati per le comunicazioni HTTPS. A seconda delle esigenze, è possibile usare l'autorità di certificazione (CA) dell'azienda per stabilire connessioni attendibili tra server e dispositivi oppure è possibile usare un'autorità di certificazione disponibile pubblicamente come CA attendibile.  In entrambi i casi, è necessario che un certificato server Web sia configurato con IIS nei server del sistema del sito che ospitano i ruoli del sistema del sito richiesti e sarà necessario il certificato radice della CA installato nei dispositivi che devono connettersi a tali server.  
 
  Se si usa la CA dell'azienda per stabilire una comunicazione attendibile, è necessario eseguire le attività seguenti:  
@@ -106,7 +106,7 @@ Prendere in considerazione i requisiti seguenti prima di preparare l'infrastrutt
 
  Per altre informazioni, vedere [Set up certificates for trusted communications for On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
 
-##  <a name="a-namebkmkenrollmenta-enrollment-considerations"></a><a name="bkmk_enrollment"></a> Considerazioni sulla registrazione  
+##  <a name="bkmk_enrollment"></a> Considerazioni sulla registrazione  
  Per abilitare la registrazione di dispositivi per la gestione dei dispositivi mobili locale, gli utenti devono avere l'autorizzazione alla registrazione e i dispositivi devono poter stabilire comunicazioni attendibili con i server di sistema del sito che ospitano i ruoli di sistema del sito necessari.  
 
  La concessione dell'autorizzazione di registrazione degli utenti può essere eseguita con la configurazione di un profilo di registrazione nelle impostazioni client di Configuration Manager. È possibile usare le impostazioni client predefinite per inviare il profilo di registrazione a tutti gli utenti individuati o è possibile impostare il profilo di registrazione nelle impostazioni client personalizzate e inviare le impostazioni a una o più raccolte di utenti.  
