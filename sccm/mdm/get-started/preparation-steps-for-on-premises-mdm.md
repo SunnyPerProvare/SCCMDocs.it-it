@@ -1,13 +1,13 @@
 ---
-title: Passaggi di preparazione | Microsoft Docs | Gestione dei dispositivi mobili locale
+title: Passaggi di preparazione | Microsoft Docs
 description: Preparare la gestione dei dispositivi con la gestione dei dispositivi mobili locale in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
 ms.technology:
-- configmgr-client
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 1ef60106-8f31-46d6-95a6-25a6495f22c7
@@ -16,8 +16,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
-ms.openlocfilehash: a5c9fa5994f9b7bd13fe53edb6998609852b98ca
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: 2ba11c8e2d8214ce9aca7c887fcb539b38da4e84
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -44,9 +45,4 @@ La gestione di dispositivi con la gestione dei dispositivi mobili locale in Syst
 -   [Impostare la registrazione dei dispositivi per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md)  
 
      In questa attività si concedono le autorizzazioni agli utenti per registrare computer e dispositivi e si installa il certificato radice attendibile nei dispositivi (in genere quelli non aggiunti al dominio) per consentire le connessioni HTTPS ai server del sistema del sito.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

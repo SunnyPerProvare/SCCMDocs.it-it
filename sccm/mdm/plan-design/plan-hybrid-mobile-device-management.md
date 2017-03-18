@@ -2,7 +2,7 @@
 title: Pianificare una gestione ibrida di dispositivi mobili | Microsoft Docs
 description: Pianificare una gestione ibrida di dispositivi mobili con System Center Configuration Manager e Microsoft Intune.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,26 +17,24 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 11e24eb24fdb563dd0be4f413b11622ceecab67b
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: 814fb545dae35c582146450c316446c21191002f
+ms.lasthandoff: 03/06/2017
 
 ---
 # <a name="plan-for-hybrid-mobile-device-management-mdm-with-system-center-configuration-manager-and-microsoft-intune"></a>Pianificare una gestione ibrida di dispositivi mobile (MDM) con System Center Configuration Manager e Microsoft Intune
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-La gestione dei dispositivi mobili con Configuration Manager tramite Microsoft Intune supporta le piattaforme seguenti di dispositivi mobili:
+È possibile usare solo una soluzione di gestione, ovvero l'autorità di gestione dei dispositivi mobili, per gestire i dispositivi mobili. Prima di eseguire questa impostazione è consigliabile [scegliere tra Microsoft Intune autonomo e la gestione dei dispositivi mobili ibrida con Configuration Manager](../understand/choose-between-standalone-intune-and-hybrid-mobile-device-management.md).
+
+Inoltre, la pagina [Intune Deployment Planning, Design and Implementation Guide](https://docs.microsoft.com/en-us/intune/plan-design/introduction) (Guida alla pianificazione, progettazione e implementazione della distribuzione di Intune) contiene molte informazioni sui processi di sviluppo di un piano di distribuzione, di progettazione, di caricamento di Intune e di esecuzione di un'implementazione di produzione.
+
+- L'articolo [Supported Device Platforms](supported-device-platforms-for-hybrid.md) (Piattaforme di dispositivi supportate) illustra le piattaforme di dispositivi mobili supportate da Configuration Manager tramite Microsoft Intune.
+
+- L'articolo [Metodi di registrazione dei dispositivi](device-enrollment-methods.md) contiene informazioni su come registrare i dispositivi di proprietà dell'azienda, quelli di proprietà dell'utente e le relative funzionalità supportate.
 
 
-[!INCLUDE[../includes/mdm-supported-devices](../includes/mdm-supported-devices.md)]
-
-È possibile usare solo una soluzione di gestione, ovvero l'autorità di gestione dei dispositivi mobili, per gestire i dispositivi mobili. Prima di eseguire questa impostazione è consigliabile [scegliere tra Microsoft Intune autonomo e la gestione dei dispositivi mobili ibrida con Configuration Manager](../understand/choose-between-standalone-intune-and-hybrid-mobile-device-management.md)
-
-## <a name="next-steps"></a>Passaggi successivi
+### <a name="next-steps"></a>Passaggi successivi
  [Impostare una MDM ibrida](../deploy-use/setup-hybrid-mdm.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -2,7 +2,7 @@
 title: Configurare la gestione dei dispositivi iOS e Mac ibrida con System Center Configuration Manager e Microsoft Intune | Microsoft Docs
 description: Impostare la gestione dei dispositivi iOS con System Center Configuration Manager e Microsoft Intune.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 74c75653e69154ced18d5bc713b1d9b89e88ae64
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: 2288be606d7d586de5dc18d640f295e823daf266
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -68,8 +69,6 @@ Con Configuration Manager e Intune è possibile abilitare la registrazione dei d
 
  Dopo aver completato la configurazione occorre informare gli utenti su come registrare i loro dispositivi. Vedere [Informazioni sull'uso di Microsoft Intune per gli utenti finali](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune). Queste informazioni si applicano ai dispositivi mobili gestiti sia con Microsoft Intune che con Configuration Manager.
 
-
-
-<!--HONumber=Dec16_HO3-->
-
+ > [!div class="button"]
+ [< Passaggio precedente](create-service-connection-point.md)  [Passaggio successivo >](set-up-additional-management.md)
 

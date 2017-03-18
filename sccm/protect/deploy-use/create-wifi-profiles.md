@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: 321b19b2-a093-4b8f-995f-41f74b886eb5
 caps.latest.revision: 13
 caps.handback.revision: 0
-author: Nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
-ms.openlocfilehash: 7d42ec89300d4eb6b02bafb3f83d341f8e3ca0c0
+ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
+ms.openlocfilehash: f1ae976899de1fd3efcbde0c7268f071a5d0218b
+ms.lasthandoff: 03/06/2017
 
 
 ---
@@ -39,15 +40,9 @@ ms.openlocfilehash: 7d42ec89300d4eb6b02bafb3f83d341f8e3ca0c0
 
 -   Dispositivi che eseguono Windows RT 8.1  
 
--   Dispositivi che eseguono Windows Phone 8.1  
-
 -   Dispositivi che eseguono Windows 10 Desktop o Mobile  
 
--   Dispositivi IPhone che eseguono iOS 5, iOS 6, iOS 7 e iOS 8  
-
--   Dispositivi iPad che eseguono iOS 5, iOS 6, iOS 7 e iOS 8  
-
--   Dispositivi Android che eseguono la versione 4 o successiva
+L'articolo [Creare profili Wi-Fi](../../mdm/deploy-use/create-wifi-profiles.md) contiene informazioni su come usare i profili Wi-Fi in Configuration Manager per distribuire le impostazioni di rete wireless agli utenti dei dispositivi mobili.
 
 > [!IMPORTANT]  
 >  Per distribuire i profili nei dispositivi Android, iOS, Windows Phone e nei dispositivi registrati Windows 8.1 o versioni successive, tali dispositivi devono essere registrati in Microsoft Intune. Per informazioni su come registrare i dispositivi, vedere [Registrare i dispositivi per la gestione in Intune](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune).  
@@ -92,7 +87,7 @@ ms.openlocfilehash: 7d42ec89300d4eb6b02bafb3f83d341f8e3ca0c0
     >  Tipi di sicurezza: **WPA2 Enterprise** o **WPA2 Personal**  
     > Tipi di crittografia: **AES** o **TKIP**  
     > Tipi EAP: **Smart Card o altro certificato** o **PEAP**  
-  
+
     > Per i dispositivi Android, i tipi di sicurezza **WPA Personal**, **WPA2 Personal** e **WEP** non sono supportati.  
 
 2.  selezionare il metodo di crittografia usato dalla rete wireless.  
@@ -133,9 +128,4 @@ ms.openlocfilehash: 7d42ec89300d4eb6b02bafb3f83d341f8e3ca0c0
 
 ### <a name="next-steps"></a>Passaggi successivi
  Per informazioni su come distribuire il profilo Wi-Fi, vedere [Come distribuire profili Wi-Fi in System Center Configuration Manager](deploy-wifi-vpn-email-cert-profiles.md).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

@@ -17,8 +17,9 @@ author: andredm7
 ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
-ms.openlocfilehash: c9956dd4ef94a1b109d761e44e42f512c42eb8d2
+ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
+ms.openlocfilehash: 969f2d28649853ddc95860fe72597d6d2c9a94e9
+ms.lasthandoff: 03/04/2017
 
 
 ---
@@ -36,7 +37,7 @@ Dopo aver abilitato l'inventario software e completato l'esecuzione di un ciclo 
 
 -   Creare [raccolte basate su query](../../../../core/clients/manage/collections/introduction-to-collections.md) che includono dispositivi con i file specificati.   
 
--   [Eseguire report](../../../../core/servers/manage/reporting.md) che forniscono dettagli sui file nei dispositivi. 
+-   [Eseguire report](../../../../core/servers/manage/reporting.md) che forniscono dettagli sui file nei dispositivi.
 
 -   Usare [Esplora inventario risorse](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md) per visualizzare informazioni dettagliate relative ai file di inventario raccolti dai dispositivi client.   
 
@@ -44,27 +45,5 @@ Dopo aver abilitato l'inventario software e completato l'esecuzione di un ciclo 
 
  Configuration Manager può individuare i computer ad avvio doppio ma restituisce solo le informazioni di inventario relative al sistema operativo attivo nel momento in cui è stato eseguito l'inventario.  
 
-## <a name="software-inventory-for-mobile-devices-enrolled-with-microsoft-intune"></a>Inventario software per dispositivi mobili registrati con Microsoft Intune  
- È possibile raccogliere l'inventario per le app installate in dispositivi mobili. Le app vengono inserite nell'inventario a seconda che il dispositivo sia di proprietà dell'azienda o personale. Per quanto riguarda i dispositivi personali, le uniche app che vengono inserite nell'inventario sono quelle gestite da Microsoft Intune.  
-
-> [!NOTE]  
->  L'inventario per le app installate in dispositivi mobili viene eseguito nell'ambito del processo di [inventario hardware](../../../../core/clients/manage/inventory/mobile-device-hardware-inventory-hybrid.md).  
-
- Queste sono le app incluse nell'inventario per i dispositivi personali o di proprietà dell'azienda.  
-
-|Piattaforma|Per i dispositivi di proprietà personale|Per i dispositivi di proprietà dell'azienda|  
-|--------------|---------------------------------|--------------------------------|  
-|Windows 10 senza il client di Configuration Manager|Solo le app gestite|Solo le app gestite| 
-|Windows 8.1 senza il client di Configuration Manager|Solo le app gestite|Solo le app gestite|  
-|Windows Phone 8|Solo le app gestite|Solo le app gestite|  
-|Windows RT|Solo le app gestite|Solo le app gestite|  
-|iOS|Solo le app gestite|Tutte le app installate nel dispositivo|  
-|Android|Solo le app gestite|Tutte le app installate nel dispositivo|  
-
-
-
-
-
-<!--HONumber=Dec16_HO5-->
-
+**Dispositivi mobili:** per informazioni sulla raccolta delle informazioni di inventario per le app installate nei dispositivi mobili, vedere [Inventario software per dispositivi mobili registrati con Microsoft Intune](../../../../mdm/deploy-use/software-inventory-mobile-devices.md).
 
