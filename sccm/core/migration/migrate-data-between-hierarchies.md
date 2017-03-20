@@ -19,6 +19,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: a8959c72608a1531fb323176c33a848a4a669b1c
 ms.openlocfilehash: dface33392c2a2a662522656eabf0936b52b28fc
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -42,7 +43,7 @@ Quando si pianifica la strategia di migrazione, tenere presente quanto segue:
 
 -   È possibile spostare i dati da più siti di origine a un singolo sito nella gerarchia di destinazione.  
 
-##  <a name="a-namebkmkmigrationconceptsa-concepts-for-migration"></a><a name="BKMK_MigrationConcepts"></a> Concetti relativi alla migrazione  
+##  <a name="BKMK_MigrationConcepts"></a> Concetti relativi alla migrazione  
  Nell'ambito della migrazione possono essere impiegati i concetti e i termini seguenti.  
 
 |Concetto o termine|Altre informazioni|  
@@ -52,11 +53,11 @@ Quando si pianifica la strategia di migrazione, tenere presente quanto segue:
 |Gerarchia di destinazione|Una gerarchia di System Center Configuration Manager in cui viene eseguita la migrazione per l'importazione dei dati da una gerarchia di origine.|  
 |Raccolta dati|Il processo continuo di rilevamento delle informazioni in una gerarchia di origine che è possibile migrare nella gerarchia di destinazione. Configuration Manager controlla la gerarchia di origine in una pianificazione per rilevare eventuali modifiche alle informazioni contenute nella gerarchia migrate in precedenza e che è possibile aggiornare nella gerarchia di destinazione.<br /><br /> Per altre informazioni, vedere [Raccolta dati](../../core/migration/planning-a-source-hierarchy-strategy.md#BKMK_Data_Gathering) in [Pianificazione di una strategia per la gerarchia di origine in System Center Configuration Manager](../../core/migration/planning-a-source-hierarchy-strategy.md).|  
 |Processi di migrazione|Il processo di configurazione di oggetti specifici da migrare e quindi la gestione della migrazione di tali oggetti nella gerarchia di destinazione.<br /><br /> Per altre informazioni, vedere [Pianificazione di una strategia di processo di migrazione in System Center Configuration Manager](../../core/migration/planning-a-migration-job-strategy.md)|  
-|Migrazione client|Il processo di trasferimento delle informazioni che i client utilizzano dal database del sito di origine al database della gerarchia di destinazione. Tale processo di migrazione dei dati è quindi seguito da un aggiornamento del software client dei dispositivi alla versione del software client dalla gerarchia di destinazione.<br /><br /> Per ulteriori informazioni, vedere [Planning a client migration strategy in System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md).|  
+|Migrazione client|Il processo di trasferimento delle informazioni che i client utilizzano dal database del sito di origine al database della gerarchia di destinazione. Tale processo di migrazione dei dati è quindi seguito da un aggiornamento del software client dei dispositivi alla versione del software client dalla gerarchia di destinazione.<br /><br /> Per ulteriori informazioni, vedere [Pianificazione di una strategia di processo di migrazione in System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md).|  
 |Punti di distribuzione condivisi|I punti di distribuzione della gerarchia di origine che vengono condivisi con la gerarchia di destinazione durante il periodo di migrazione.<br /><br /> Durante il periodo di migrazione, i client assegnati ai siti nella gerarchia di destinazione possono ottenere il contenuto dai punti di distribuzione condivisi.<br /><br /> Per altre informazioni, vedere [Condividere punti di distribuzione tra gerarchie di origine e destinazione](../../core/migration/planning-a-content-deployment-migration-strategy.md#About_Shared_DPs_in_Migration) in [Pianificazione di una strategia di migrazione per la distribuzione del contenuto in System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md).|  
 |Monitoraggio della migrazione|Il processo di monitoraggio delle attività di migrazione. È possibile monitorare lo stato e l'esito migrazione dal nodo **Migrazione** nell'area di lavoro **Amministrazione** .<br /><br /> Per altre informazioni, vedere [Pianificazione del monitoraggio dell'attività di migrazione in System Center Configuration Manager](../../core/migration/planning-to-monitor-migration-activity.md).|  
 |Interrompere la raccolta dati|Il processo di interruzione della raccolta dati dai siti di origine. Quando non sono più disponibili dati da migrare da una gerarchia di origine oppure se si vuole sospendere le attività relative alla migrazione, è possibile configurare la gerarchia di destinazione per l'interruzione della raccolta dati da tale gerarchia.<br /><br /> Per altre informazioni, vedere [Raccolta dati](../../core/migration/planning-a-source-hierarchy-strategy.md#BKMK_Data_Gathering) in [Pianificazione di una strategia per la gerarchia di origine in System Center Configuration Manager](../../core/migration/planning-a-source-hierarchy-strategy.md).|  
-|Pulire i dati della migrazione|Il processo di completamento della migrazione da una gerarchia di origine tramite la rimozione delle informazioni sulla migrazione dal database delle gerarchie di destinazione.<br /><br /> Per altre informazioni, vedere [Planning to complete migration in System Center Configuration Manager](../../core/migration/planning-to-complete-migration.md).|  
+|Pulire i dati della migrazione|Il processo di completamento della migrazione da una gerarchia di origine tramite la rimozione delle informazioni sulla migrazione dal database delle gerarchie di destinazione.<br /><br /> Per altre informazioni, vedere [Pianificazione del completamento della migrazione in System Center Configuration Manager](../../core/migration/planning-to-complete-migration.md).|  
 
 ## <a name="typical-workflow-for-migration"></a>Flusso di lavoro tipico per la migrazione  
 Per configurare un flusso di lavoro per la migrazione:
@@ -75,7 +76,7 @@ Per configurare un flusso di lavoro per la migrazione:
 
 Dopo aver completato la migrazione dei dati da una gerarchia di origine di Configuration Manager che non verrà più usata per gestire l'ambiente, è possibile rimuovere le autorizzazioni di tale infrastruttura e gerarchia di origine.  
 
-##  <a name="a-namebkmkmigrationscenariosa-migration-scenarios"></a><a name="BKMK_MigrationScenarios"></a> Scenari di migrazione  
+##  <a name="BKMK_MigrationScenarios"></a> Scenari di migrazione  
  Configuration Manager supporta gli scenari di migrazione seguenti.  
 
 > [!NOTE]  
@@ -110,9 +111,4 @@ Dopo aver completato la migrazione dei dati da una gerarchia di origine di Confi
 
 ## <a name="see-also"></a>Vedere anche  
  [Iniziare a usare System Center Configuration Manager](../../core/servers/deploy/start-using.md)
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 
