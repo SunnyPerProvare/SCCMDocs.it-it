@@ -2,7 +2,7 @@
 title: "Funzionalità deprecate | Documentazione Microsoft"
 description: "Informazioni su funzionalità, prodotti e sistemi operativi che System Center Configuration Manager non supporta più."
 ms.custom: na
-ms.date: 1/5/2017
+ms.date: 3/9/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1948e2914fff91f156dd8956c018ff0fabcda2f9
-ms.openlocfilehash: 3a1edd1b59676e59d4bfcd4c01a23f7a04f91f4f
+ms.sourcegitcommit: 477ffa5d61d2dfaedf8a3a1f5687e2d72698ad28
+ms.openlocfilehash: cb57a8699081415af7e2e9dc29b0a321f100823d
+ms.lasthandoff: 03/10/2017
 
 
 ---
@@ -58,14 +59,14 @@ Per altre informazioni, vedere:
 
 Dettagli aggiuntivi sulle funzionalità rimosse con la versione 1511 di System Center Configuration Manager:
 
-###  <a name="a-namebkmkamta-out-of-band-management"></a><a name="bkmk_amt"></a> Gestione fuori banda  
+###  <a name="bkmk_amt"></a> Gestione fuori banda  
  Con Configuration Manager, il supporto nativo per computer basati su AMT dalla console di Configuration Manager è stato rimosso.  
 
 -   I computer basati su AMT restano completamente gestiti quando si usa il [componente aggiuntivo Intel SCS per Microsoft System Center Configuration Manager](http://www.intel.com/content/www/us/en/software/setup-configuration-software.html). Il componente aggiuntivo consente di accedere alle funzionalità più recenti per gestire AMT, rimuovendo le limitazioni introdotte fino al momento in cui Configuration Manager è stato in grado di integrare queste modifiche.  
 
 -   La gestione fuori banda in System Center 2012 Configuration Manager non è interessata da questa modifica.  
 
-###  <a name="a-namebkmknapa-network-access-protection"></a><a name="bkmk_nap"></a> Protezione accesso alla rete  
+###  <a name="bkmk_nap"></a> Protezione accesso alla rete  
  System Center Configuration Manager ha rimosso il supporto per la protezione accesso alla rete. Questa funzionalità è stata deprecata in Windows Server 2012 R2 ed è stata rimossa da Windows 10.  
 
  Per alternative a Protezione accesso alla rete, vedere la sezione *Funzionalità deprecata* di [Panoramica dei criteri di rete e dei servizi di accesso](https://technet.microsoft.com/library/hh831683.aspx).  
@@ -76,10 +77,10 @@ Dettagli aggiuntivi sulle funzionalità rimosse con la versione 1511 di System C
 
 |**Sistemi operativi**|**Primo avviso funzionalità deprecata**|**Supporto rimosso** |  
 |-|-|-|  
-|Windows Server 2008|10 luglio 2015|Il supporto termina con il primo aggiornamento rilasciato dopo il 31/12/2016 (vedere la nota 1).|  
+|Windows Server 2008|10 luglio 2015|1511 </br></br>Il supporto come sistema del sito viene rimosso. Vedere nota 1.|  
 |Windows Server 2008 R2|10 luglio 2015|Il supporto termina con il primo aggiornamento rilasciato dopo il 31/12/2016 (vedere la nota 2).|  
 
--   Nota 1: al termine del supporto, questo sistema operativo non sarà più supportato per i server del sito o per la maggior parte dei ruoli del sistema del sito. Questo sistema operativo sarà comunque supportato per il ruolo del sistema del sito del punto di distribuzione, compreso il punto di distribuzione pull, fino all'annuncio della deprecazione del supporto o alla scadenza del periodo di supporto "Extended" del sistema operativo.  
+-   Nota 1: questo sistema operativo non è supportato per i server del sito o ruoli del sistema del sito fatta eccezione per il punto di distribuzione e il punto di distribuzione pull. È possibile continuare a usare questo sistema operativo come punto di distribuzione fino all'annuncio della deprecazione di questo supporto o alla scadenza del periodo di supporto "Extended" di questo sistema operativo. Per altre informazioni, vedere l'argomento relativo ai [problemi di installazione di System Center Configuration Manager CB in Windows Server 2008](https://support.microsoft.com/help/4015095). 
 
 -   Nota 2: al termine del supporto, questo sistema operativo non sarà più supportato per i server del sito o per la maggior parte dei ruoli del sistema del sito. Questo sistema operativo sarà comunque supportato per il punto migrazione stato e per il ruolo del sistema del sito del punto di distribuzione (compresi il punto di distribuzione pull, PXE e il multicast) fino all'annuncio della deprecazione del supporto o alla scadenza del periodo di supporto "Extended" del sistema operativo. A partire dalla versione 1602, è possibile aggiornare sul posto il sistema operativo di un server del sito da Windows Server 2008 R2 a Windows Server 2012 R2.  
 
@@ -110,9 +111,4 @@ Dettagli aggiuntivi sulle funzionalità rimosse con la versione 1511 di System C
 |-|-|-|  
 |SQL Server 2008|10 luglio 2015|Versione 1511|  
 |SQL Server 2008 R2|10 luglio 2015|Il supporto termina con il primo aggiornamento rilasciato dopo il 31/12/2016.|  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

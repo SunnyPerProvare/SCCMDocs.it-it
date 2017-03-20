@@ -2,7 +2,7 @@
 title: Scenario Endpoint Protection protegge i computer da malware | Documentazione Microsoft
 description: Informazioni su come implementare Endpoint Protection in Configuration Manager per proteggere i computer da attacchi malware.
 ms.custom: na
-ms.date: 12/9/2016
+ms.date: 03/13/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,8 +15,9 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 9fcbc0bb9c8ccd4265381ca4db7a363c8ae3b54a
-ms.openlocfilehash: 2cdc57b766b18a6fdf21ec8748172c12b11b08db
+ms.sourcegitcommit: af0aafb4b7209d840676d16723509f399c662aad
+ms.openlocfilehash: b98684d44874ff246e4d675039c6e443aee82a62
+ms.lasthandoff: 03/13/2017
 
 
 ---
@@ -27,7 +28,7 @@ ms.openlocfilehash: 2cdc57b766b18a6fdf21ec8748172c12b11b08db
 
 Questo argomento illustra uno scenario d'esempio di implementazione di Endpoint Protection in Configuration Manager per proteggere i computer di un'organizzazione da attacchi malware.  
 
- In questo scenario Giorgio è l'amministratore di Configuration Manager presso Woodgrove Bank. La banca attualmente usa Microsoft Forefront Endpoint Protection 2010 per proteggere i computer dagli attacchi malware. Inoltre, la banca usa Criteri di gruppo di Windows per garantire che Windows Firewall sia abilitato in tutti i computer dell'azienda e che venga visualizzata una notifica agli utenti quando Windows Firewall blocca un nuovo programma.  
+ In questo scenario Giorgio è l'amministratore di Configuration Manager presso Woodgrove Bank. La banca attualmente usa System Center Endpoint Protection per proteggere i computer dagli attacchi malware. Inoltre, la banca usa Criteri di gruppo di Windows per garantire che Windows Firewall sia abilitato in tutti i computer dell'azienda e che venga visualizzata una notifica agli utenti quando Windows Firewall blocca un nuovo programma.  
 
  A Giorgio è stato chiesto di aggiornare il software antimalware di Woodgrove Bank con System Center Endpoint Protection, in modo che la banca possa trarre vantaggio dalle funzionalità antimalware più recenti e sia in grado di gestire in modo centralizzato la soluzione antimalware dalla console di Configuration Manager. Questa implementazione presenta i requisiti seguenti:  
 
@@ -75,9 +76,4 @@ Questo argomento illustra uno scenario d'esempio di implementazione di Endpoint 
 |Giorgio usa i metodi seguenti per monitorare lo stato di Endpoint Protection e le azioni eseguite da Endpoint Protection:<br /><br /> 1) Tramite il nodo **Stato Endpoint Protection** di **Sicurezza** nell'area di lavoro **Monitoraggio**.<br /><br /> 2) Tramite il nodo **Endpoint Protection** nell'area di lavoro **Asset e conformità**.<br /><br /> 3) Tramite i report predefiniti di Configuration Manager.|Vedere [Come monitorare Endpoint Protection in System Center Configuration Manager](monitor-endpoint-protection.md)|  
 
  Giorgio comunica la corretta implementazione di Endpoint Protection al suo manager e conferma che i computer di Woodgrove Bank sono ora protetti dalla funzionalità antimalware, in base ai requisiti aziendali che gli sono stati specificati.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

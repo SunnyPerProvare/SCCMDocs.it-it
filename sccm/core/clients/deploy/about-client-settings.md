@@ -17,9 +17,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d7265aec46474ba7fc317ddb5e20b91b7b134585
-ms.openlocfilehash: 36f6eb3fe48e904adf4d04450906fada9b477246
-ms.lasthandoff: 12/30/2016
+ms.sourcegitcommit: 289db441899359f3bf3abe5d38896c7acd2045b6
+ms.openlocfilehash: 5eaca19f2b21b1c62b956d2a44d492d3ddd6d10a
+ms.lasthandoff: 03/10/2017
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informazioni sulle impostazioni client in System Center Configuration Manager
@@ -333,7 +333,7 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
 
 -   **Ritardo casuale massimo**
 
-    La raccolta di informazioni relative all'hardware viene eseguita con un ritardo casuale fino a due ore in modo che l'operazione non avvenga contemporaneamente in tutti i client. È possibile impostare il ritardo massimo per limitare il periodo durante il quale viene eseguita l'operazione.      
+    La raccolta di informazioni relative all'hardware viene eseguita con un ritardo casuale fino a quattro ore in modo che l'operazione non avvenga contemporaneamente in tutti i client. È possibile impostare il ritardo massimo per limitare il periodo durante il quale viene eseguita l'operazione.      
 
 ##  <a name="metered-internet-connections"></a>Connessioni Internet a consumo  
  È possibile gestire la modalità di comunicazione dei computer client Windows 8 con i siti di Configuration Manager quando vengono usate connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.  

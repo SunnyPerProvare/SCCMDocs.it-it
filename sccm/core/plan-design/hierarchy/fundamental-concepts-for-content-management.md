@@ -2,7 +2,7 @@
 title: Concetti di base della gestione dei contenuti | Microsoft Docs
 description: "È possibile usare gli strumenti e le opzioni di System Center Configuration Manager per gestire il contenuto da distribuire."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 3/15/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,9 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 83020f532edd7a640f0087aad40789e026f75913
-ms.openlocfilehash: 00751cd03a3dd49718994e31bc396e4e7d29ed2b
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: 766120f5ca79f279a513b62c35a2374c859b253a
+ms.openlocfilehash: 079be3c97e4239f8c5293bed5a2ce13abfbe7798
+ms.lasthandoff: 03/15/2017
 
 
 ---
@@ -63,7 +63,7 @@ Per altre informazioni sugli account, vedere [Gestire gli account per l'accesso 
 -   Configuration Manager supporta fino a cinque versioni incrementali del set di contenuti prima di inviare nuovamente l'intero set di contenuti. Dopo il quinto aggiornamento, la successiva modifica del contenuto impostata fa sì che Configuration Manager crei una nuova versione del set di contenuto. Configuration Manager distribuisce quindi la nuova versione del set di contenuti per sostituire il set precedente e qualsiasi sua versione incrementale. Dopo che il nuovo set di contenuti è stato distribuito, modifiche incrementali successive ai file di origine vengono nuovamente replicate dalla replica differenziale binaria.  
 
 
-La replica differenziale binaria è supportata tra ogni sito padre e figlio in una gerarchia. All'interno di un sito, la replica differenziale binaria è supportata tra il server del sito e i suoi punti di distribuzione. Questo supporto include punti di distribuzione pull, ma non punti di distribuzione basati su cloud. I punti di distribuzione basati su cloud non supportano la replica differenziale binaria per trasferire il contenuto.  
+La replica differenziale binaria è supportata tra ogni sito padre e figlio in una gerarchia. All'interno di un sito la replica differenziale binaria è supportata tra il server del sito e i suoi normali punti di distribuzione. Tuttavia, i punti di distribuzione pull e i punti di distribuzione basati sul cloud non supportano la replica differenziale binaria per trasferire il contenuto. I punti di distribuzione pull supportano i delta a livello di file e il trasferimento dei nuovi file, ma non i blocchi all'interno di un file.
 
 Le applicazioni usano sempre la replica differenziale binaria. Per i pacchetti, la replica differenziale binaria è facoltativa e non è attivata per impostazione predefinita. Per usare la replica differenziale binaria per i pacchetti, è necessario attivare questa funzionalità per ogni pacchetto. A questo scopo, selezionare l'opzione **Abilita replica differenziale binaria** quando si crea un nuovo pacchetto o quando si modifica la scheda **Origine dati** delle proprietà pacchetto.  
 

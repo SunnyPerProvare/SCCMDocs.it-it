@@ -1,7 +1,7 @@
 ---
 title: Pianificare Endpoint Protection | Microsoft Docs
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/07/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,8 +14,9 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
-ms.openlocfilehash: 927732150b99bbe362a3ed36976b49a716efc14c
+ms.sourcegitcommit: 8f4ec982a54cf3cefef310268a54850e70e2e63a
+ms.openlocfilehash: 6c4273dae99ec8db2cf827f463b973e876d0d35b
+ms.lasthandoff: 03/13/2017
 
 
 ---
@@ -92,11 +93,7 @@ A partire dalla versione 1606 di Configuration Manager (Current Branch), Endpoin
  ![Flusso di lavoro di Endpoint Protection](../media/Endpoint-Protection-Workflow.gif)
 
 ## <a name="endpoint-protection-client-for-mac-computers-and-linux-servers"></a>Client di Endpoint Protection per computer Mac e server Linux  
- System Center 2012 include un client di Endpoint Protection per Linux e per i computer Mac. Questi client non vengono installati con Configuration Manager. È necessario invece scaricare i prodotti seguenti da [Microsoft Volume Licensing Service Center](https://www.microsoft.com/licensing/servicecenter/default.aspx).  
-
--   System Center 2012 Endpoint Protection per Mac  
-
--   System Center 2012 Endpoint Protection per Linux  
+ System Center include un client di Endpoint Protection per Linux e per i computer Mac. Questi client non vengono installati con Configuration Manager. È necessario invece scaricare i prodotti seguenti da [Microsoft Volume Licensing Service Center](https://www.microsoft.com/licensing/servicecenter/default.aspx).  
 
 > [!IMPORTANT]  
 >  Per scaricare i file di installazione di Endpoint Protection per Linux e Mac occorre essere titolari di un contratto multilicenza Microsoft.  
@@ -114,16 +111,9 @@ A partire dalla versione 1606 di Configuration Manager (Current Branch), Endpoin
  Quando si configurano impostazioni client personalizzate, è possibile eseguire le operazioni seguenti:  
 
 -   Personalizzare le impostazioni antimalware e sicurezza per le diverse parti dell'organizzazione.  
-
 -   Testare gli effetti dell'esecuzione Endpoint Protection in un piccolo gruppo di computer prima di distribuirlo all'intera gerarchia.  
-
 -   Aggiungere successivamente più client per cadenzare la distribuzione del client di Endpoint Protection.  
 
 ### <a name="distributing-definition-updates-by-using-software-updates"></a>Distribuire gli aggiornamenti delle definizioni tramite gli aggiornamenti software  
  Se si usano gli aggiornamenti software di Configuration Manager per distribuire gli aggiornamenti delle definizioni, è consigliabile inserirli in un pacchetto che non contenga altri aggiornamenti software. In questo modo le dimensioni del pacchetto di aggiornamento definizione più piccoli che consente la replica nei punti di distribuzione più rapidamente.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

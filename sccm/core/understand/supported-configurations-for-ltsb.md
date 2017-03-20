@@ -2,7 +2,7 @@
 title: Configurazioni supportate per LTSB | Microsoft Docs
 description: Funzionamento di sistemi operativi e prodotti dipendenti con Long-Term Servicing Branch di System Center Configuration Manager.
 ms.custom: na
-ms.date: 1/12/2017
+ms.date: 3/9/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 12aa9f0a1ad4ce8acf0b914e9911bb50ba887919
-ms.openlocfilehash: 5b2ab25d7f645ea9eada81d241ef14168b017304
+ms.sourcegitcommit: 477ffa5d61d2dfaedf8a3a1f5687e2d72698ad28
+ms.openlocfilehash: 78dcbf76f21a286506b9c605e2c176714736935b
+ms.lasthandoff: 03/10/2017
 
 
 ---
@@ -38,7 +39,7 @@ I prodotti e le versioni di prodotto non elencati negli argomenti seguenti non s
 **Windows:**
 - Per Windows sono supportati solo gli aggiornamenti di sicurezza e qualitativi.
 - Non viene aggiunto alcun supporto per Current Branch (CB), Current Branch for Business (CBB) o LTSB di Windows 10.
--   Nessun supporto per nuove versioni principali di Windows Server.
+-    Nessun supporto per nuove versioni principali di Windows Server.
 
 **SQL Server:**
 - Per SQL Server sono supportati solo gli aggiornamenti di sicurezza e qualitativi o aggiornamenti secondari come i Service Pack.
@@ -51,13 +52,15 @@ LTSB supporta l'uso dei seguenti sistemi operativi di computer Windows come sist
 - Windows Server 2016
 - Windows Server 2012 (x64) - Standard, Datacenter
 - Windows Server 2008 R2 con SP1 (x64) - Standard, Enterprise, Datacenter
-- Windows Server 2008 con SP2 (x86, x64) - Standard, Enterprise, Datacenter
+- Windows Server 2008 con SP2 (x86, x64): Standard, Enterprise, Datacenter *(Nota 1)*
 - Windows 10 Enterprise 2015 LTSB (x86, x64)
 - Windows 10 Enterprise 2016 LTSB (x86, x64)
 - Windows 8.1 (x86, x64) - Professional, Enterprise
 - Windows 7 con SP1 (x86, x64) - Professional, Enterprise, Ultimate
 - Installazione Server Core di Windows Server 2012
-- Installazione Server Core di Windows Server 2012 R2  
+- Installazione Server Core di Windows Server 2012 R2    
+
+*Nota 1*: questo sistema operativo non è supportato per i server del sito o ruoli del sistema del sito fatta eccezione per il punto di distribuzione e il punto di distribuzione pull. È possibile continuare a usare questo sistema operativo come punto di distribuzione fino all'annuncio della deprecazione di questo supporto o alla scadenza del periodo di supporto "Extended" di questo sistema operativo. Per altre informazioni, vedere l'argomento relativo ai [problemi di installazione di System Center Configuration Manager CB in Windows Server 2008](https://support.microsoft.com/help/4015095).
 
 ## <a name="client-management"></a>Gestione dei client
 Le sezioni seguenti identificano i sistemi operativi client che è possibile gestire con LTSB. LTSB non supporta l'aggiunta di nuovi sistemi operativi come client supportati.
@@ -332,9 +335,4 @@ Le informazioni negli argomenti Current Branch seguenti sono valide per LTSB:
 - [Recommended hardware](/sccm/core/plan-design/configs/recommended-hardware) (Hardware consigliato)
 - [Supporto per le funzionalità e le reti Windows](/sccm/core/plan-design/configs/support-for-windows-features-and-networks)
 - [Supporto per gli ambienti di virtualizzazione](/sccm/core/plan-design/configs/support-for-virtualization-environments)
-
-
-
-<!--HONumber=Jan17_HO2-->
-
 

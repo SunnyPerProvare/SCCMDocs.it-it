@@ -2,7 +2,7 @@
 title: Server di sistema del sito supportati | Microsoft Docs
 description: "Informazioni sulle versioni di Windows che è possibile usare per ospitare un sito di System Center Configuration Manager o un ruolo del sistema del sito."
 ms.custom: na
-ms.date: 2/1/2017
+ms.date: 3/9/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 4688b4b12a7afa5fcfdc0e42f984271d98f10316
-ms.openlocfilehash: bb017e575e0318b73cc5ea4e27fd33b1e9c2a02a
+ms.sourcegitcommit: 477ffa5d61d2dfaedf8a3a1f5687e2d72698ad28
+ms.openlocfilehash: f175e11d9402e7c57c45edb4d5bbe969de5dcdf7
+ms.lasthandoff: 03/10/2017
 
 
 ---
@@ -231,24 +232,9 @@ A partire dalla versione 1606 con l'hotfix rollup di KB3186654 (o dalla versione
 ## <a name="windows-server-2008-with-sp2-x86-x64-standard-enterprise-and-datacenter"></a>Windows Server 2008 con SP2 (x86, x64) - Standard, Enterprise e Datacenter  
  Windows Server 2008 è ora in modalità di supporto Extended e non più in modalità di supporto Mainstream, come descritto in [Criteri relativi al ciclo di vita Microsoft](https://support.microsoft.com/lifecycle). Per altre informazioni sul supporto disponibile in futuro per questi sistemi operativi come server di sistema del sito con Configuration Manager, vedere [Funzionalità rimosse e deprecate per System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
 
-**Server del sito:**  
-
--   Sito di amministrazione centrale  
-
--   Sito primario  
-
--   Sito secondario  
+Questo sistema operativo non è supportato per i server del sito o ruoli del sistema del sito fatta eccezione per il punto di distribuzione e il punto di distribuzione pull. È possibile continuare a usare questo sistema operativo come punto di distribuzione fino all'annuncio della deprecazione di questo supporto o alla scadenza del periodo di supporto "Extended" di questo sistema operativo. Per altre informazioni, vedere l'argomento relativo ai [problemi di installazione di System Center Configuration Manager CB in Windows Server 2008](https://support.microsoft.com/help/4015095).
 
 **Server del sistema del sito:**  
-
--   Punto per servizi Web del Catalogo applicazioni  
-
--   Punto per siti Web del Catalogo applicazioni  
-
--   Punto di sincronizzazione di Asset Intelligence  
-
--   Punto di registrazione certificati  
-
 -   Punto di distribuzione  
 
     -   I punti di distribuzione in questo sistema operativo non supportano il multicast.  
@@ -257,29 +243,7 @@ A partire dalla versione 1606 con l'hotfix rollup di KB3186654 (o dalla versione
 
     -   I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
--   Punto di Endpoint Protection  
 
--   Punto di registrazione  
-
--   Punto proxy di registrazione  
-
--   Punto di stato di fallback  
-
--   Punto di gestione
-
--   Punto di Reporting Services  
-
--   Punto di connessione del servizio  
-
--   Server di database del sito  
-
-     I server di database del sito non sono supportati in un controller di dominio di sola lettura. Per altre informazioni, vedere [Si possono verificare problemi durante l'installazione di SQL Server in un controller di dominio](http://go.microsoft.com/fwlink/p/?LinkId=264856) nella Microsoft Knowledge Base. Inoltre, i server del sito secondario non sono supportati in alcun controller di dominio.  
-
--   Provider_SMS  
-
--   Punto di aggiornamento software  
-
--   Punto di migrazione stato  
 
 ## <a name="windows-10-x86-x64-pro-and-enterprise"></a>Windows 10 (x86, x64) - Pro e Enterprise  
 **Server del sistema del sito:**  
@@ -345,9 +309,4 @@ A partire dalla versione 1606 con l'hotfix rollup di KB3186654 (o dalla versione
 -   È supportata solo la versione a 64 bit.  
 
 -   I punti di distribuzione in questo sistema operativo non supportano PXE o il multicast.
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 
