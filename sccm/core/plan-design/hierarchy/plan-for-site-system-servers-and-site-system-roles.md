@@ -18,6 +18,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: a93ea730c39cce9dc46036f5aa6ece4a62679d0f
 ms.openlocfilehash: 0d16d362b798c194645f987088ba8a95a7be3f19
+ms.lasthandoff: 02/15/2017
 
 
 ---
@@ -28,14 +29,14 @@ ms.openlocfilehash: 0d16d362b798c194645f987088ba8a95a7be3f19
 Ogni sito di System Center Configuration Manager installato include un server del sito, ovvero un **server di sistema del sito**. Il sito può includere anche altri server del sistema del sito nei computer remoti rispetto al server del sito. I server del sistema del sito, ovvero il server del sito o un server del sistema del sito remoto, supportano i **ruoli del sistema del sito**.
 
 
-##  <a name="a-namebkmksiteserversa-site-system-servers"></a><a name="bkmk_siteservers"></a> Server del sistema del sito  
+##  <a name="bkmk_siteservers"></a> Server del sistema del sito  
  Quando si installa un ruolo del sistema del sito in un computer, il computer diventa un server del sistema del sito. In ogni sito è possibile installare uno o più server del sistema del sito aggiuntivi. Si può anche scegliere di non installare altri server del sistema del sito ed eseguire tutti i ruoli del sistema del sito direttamente nel computer del server del sito. Ogni server di sistema del sito supporta uno o più ruoli del sistema del sito. I server supplementari possono essere utili per espandere le funzionalità e la capacità di un sito condividendo il carico di elaborazione della CPU derivante dai ruoli del sistema del sito in un server.  
 
  Quando si valuta se aggiungere un server del sistema del sito, verificare che il server soddisfi i prerequisiti per l'uso previsto. È consigliabile aggiungere un percorso di rete con larghezza di banda sufficiente per comunicare con gli endpoint previsti, inclusi il server del sito, le risorse di dominio, un percorso basato sul cloud, i server del sistema del sito e i client.  
 
  Se si configura il server del sistema del sito con un proxy usato dai ruoli del sistema del sito, vedere [Ruoli del sistema del sito che possono usare un server proxy](#bkmk_proxy).  
 
-##  <a name="a-namebkmkplanrolesa-site-system-roles"></a><a name="bkmk_planroles"></a> Site system roles  
+##  <a name="bkmk_planroles"></a> Site system roles  
  I ruoli del sistema del sito vengono installati in un computer per fornire altre funzionalità al sito. Alcuni esempi:  
 
 -   Punti di gestione aggiuntivi in modo tale che il sito possa supportare più dispositivi, fino alla capacità supportata del sito.  
@@ -102,7 +103,7 @@ Dopo l'installazione di un sito, è possibile spostare la posizione di alcuni ru
 
 -   **Punto di Reporting Services.** Ruolo del sistema del sito che si integra con SQL Server Reporting Services per creare e gestire rapporti per Configuration Manager. Questo ruolo è supportato nei siti primari e nel sito di amministrazione centrale ed è possibile installarne più istanze in un sito supportato. Per altre informazioni, vedere [Pianificazione per la creazione di report in System Center Configuration Manager](../../../core/servers/manage/planning-for-reporting.md).  
 
--   **Punto di connessione del servizio.** Ruolo del sistema del sito usato per gestire i dispositivi mobili con Microsoft Intune e MDM locale. Questo ruolo carica anche i dati di utilizzo dal sito ed è necessario per rendere disponibili gli aggiornamenti per Configuration Manager nella console di Configuration Manager. Una gerarchia supporta una sola istanza di questo ruolo, che deve trovarsi nel sito di livello superiore della gerarchia, ovvero un sito di amministrazione centrale o il sito primario autonomo. Se si espande il sito primario autonomo in una gerarchia più ampia, è necessario disinstallare questo ruolo dal sito primario per poterlo quindi installare nel sito di amministrazione centrale. Per ulteriori informazioni, vedere [About the service connection point in System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+-   **Punto di connessione del servizio.** Ruolo del sistema del sito usato per gestire i dispositivi mobili con Microsoft Intune e MDM locale. Questo ruolo carica anche i dati di utilizzo dal sito ed è necessario per rendere disponibili gli aggiornamenti per Configuration Manager nella console di Configuration Manager. Una gerarchia supporta una sola istanza di questo ruolo, che deve trovarsi nel sito di livello superiore della gerarchia, ovvero un sito di amministrazione centrale o il sito primario autonomo. Se si espande il sito primario autonomo in una gerarchia più ampia, è necessario disinstallare questo ruolo dal sito primario per poterlo quindi installare nel sito di amministrazione centrale. Per ulteriori informazioni, vedere [Informazioni sul punto di connessione del servizio in System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
 
 -   **Punto di aggiornamento software.** Ruolo del sistema del sito che si integra con Windows Server Update Services (WSUS) per fornire aggiornamenti software ai client di Configuration Manager. Questo ruolo è supportato in tutti i siti:  
 
@@ -118,7 +119,7 @@ Dopo l'installazione di un sito, è possibile spostare la posizione di alcuni ru
 
 -   **Punto di Convalida integrità sistema.** Questo ruolo del sistema del sito non è più usato, anche se rimane visibile nella console di Configuration Manager.  
 
-###  <a name="a-namebkmkproxya-site-system-roles-that-can-use-a-proxy-server"></a><a name="bkmk_proxy"></a> Ruoli del sistema del sito che possono usare un server proxy  
+###  <a name="bkmk_proxy"></a> Ruoli del sistema del sito che possono usare un server proxy  
  Alcuni ruoli di sistema del sito di Configuration Manager richiedono connessioni a Internet e usano un server proxy se il server di sistema del sito che ospita il ruolo è configurato con questa opzione. In genere, questa connessione viene eseguita nel contesto del **sistema** del computer in cui è installato il ruolo del sistema del sito. La connessione non può usare una configurazione proxy per gli account utente tipici. Quando un server proxy è necessario per completare una connessione a Internet, il computer deve essere configurato per l'uso di un server proxy:  
 
 -   È possibile configurare un server proxy quando si installa un ruolo del sistema del sito.  
@@ -152,9 +153,4 @@ I ruoli del sistema del sito seguenti possono usare un server proxy:
  Per altre informazioni sui server proxy per i punti di aggiornamento software, vedere la sezione "Impostazioni del server proxy" nell'argomento [Installare e configurare un punto di aggiornamento software](../../../sum/get-started/install-a-software-update-point.md).  
 
 -   **Punto di connessione del servizio.** quando è configurato per essere online (non offline), questo ruolo del sistema del sito si connette a Microsoft Intune e al servizio cloud Microsoft.  
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 
