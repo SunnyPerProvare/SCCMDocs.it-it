@@ -19,6 +19,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 24a233516058e645df2a43623855665b97b041b0
 ms.openlocfilehash: 54ec4886eaad6999cdf3ffff7411942859f1a5b2
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -37,7 +38,7 @@ System Center Configuration Manager raccoglie dati di utilizzo e di diagnostica 
 
  Altre informazioni sui dati di utilizzo e di diagnostica per System Center Configuration Manager sono disponibili negli articoli seguenti:  
 
--   [How diagnostics and usage data is used for System Center Configuration Manager](../../../core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-used.md) (Come vengono usati i dati di utilizzo e di diagnostica per System Center Configuration Manager)  
+-   [Come vengono usati i dati di utilizzo e di diagnostica per System Center Configuration Manager](../../../core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-used.md)  
 
 -   Livelli di raccolta dati utilizzo e di diagnostica:
     - [Dati di diagnostica per 1511](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1511)
@@ -45,19 +46,14 @@ System Center Configuration Manager raccoglie dati di utilizzo e di diagnostica 
     - [Dati di diagnostica per 1606](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606)  
     - [Dati di diagnostica per 1610](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1610)  
 
--   [How diagnostics and usage data is collected by System Center Configuration Manager](../../../core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-collected.md) (Come vengono raccolti i dati di utilizzo e di diagnostica da System Center Configuration Manager)  
+-   [Come vengono raccolti i dati di utilizzo e di diagnostica da System Center Configuration Manager](../../../core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-collected.md)  
 
--   [How to view diagnostics and usage data for System Center Configuration Manager](../../../core/plan-design/diagnostics/view-diagnostics-and-usage-data.md) (Come visualizzare dati di utilizzo e di diagnostica per System Center Configuration Manager)  
+-   [Come visualizzare dati di utilizzo e di diagnostica per System Center Configuration Manager](../../../core/plan-design/diagnostics/view-diagnostics-and-usage-data.md)  
 
--   [Customer Experience Improvement Program (CEIP) for System Center Configuration Manager](../../../core/plan-design/diagnostics/customer-experience-improvement-program-ceip.md) (Analisi utilizzo software per System Center Configuration Manager)  
+-   [Analisi utilizzo software per System Center Configuration Manager](../../../core/plan-design/diagnostics/customer-experience-improvement-program-ceip.md)  
 
--   [Frequently asked questions about diagnostics and usage data for System Center Configuration Manager](../../../core/understand/frequently-asked-questions-about-diagnostics-and-usage-data.md) (Domande frequenti sui dati di utilizzo e di diagnostica per System Center Configuration Manager)  
+-   [Domande frequenti sui dati di utilizzo e di diagnostica per System Center Configuration Manager](../../../core/understand/frequently-asked-questions-about-diagnostics-and-usage-data.md)  
 
 ## <a name="see-also"></a>Vedere anche  
- [About the service connection point in System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md) (Informazioni sul punto di connessione del servizio in System Center Configuration Manager)
-
-
-
-<!--HONumber=Dec16_HO5-->
-
+ [Informazioni sul punto di connessione del servizio in System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md)
 
