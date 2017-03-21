@@ -19,6 +19,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 2e711cce2435957f3e85dad08f17260e1a224fc2
 ms.openlocfilehash: c6448932e91a02984ca57cef0b75c10ea3f43fa1
+ms.lasthandoff: 02/15/2017
 
 
 ---
@@ -32,7 +33,7 @@ Le informazioni disponibili in questo argomento consentono di aggiornare l'infra
 
 - Per aggiornare l'infrastruttura di System Center Configuration Manager a una versione più recente, vedere [Aggiornamenti per System Center Configuration Manager](/sccm/core/servers/manage/updates).
 
-##  <a name="a-namebkmksupconfigupgradesitesrva-upgrade-the-operating-system-of-site-systems"></a><a name="BKMK_SupConfigUpgradeSiteSrv"></a> Aggiornare il sistema operativo dei sistemi del sito  
+##  <a name="BKMK_SupConfigUpgradeSiteSrv"></a> Aggiornare il sistema operativo dei sistemi del sito  
  Configuration Manager supporta l'aggiornamento sul posto del sistema operativo dei server che ospitano un server del sito e dei server remoti che ospitano un ruolo qualsiasi del sistema del sito, nelle situazioni seguenti:  
 
 -   Aggiornamento sul posto a una versione di Service Pack di Windows Server successiva purché il livello di Service Pack di Windows risultante sia comunque supportato da Configuration Manager.  
@@ -148,7 +149,7 @@ Sono solitamente richiesti, ma non sono supportati da Configuration Manager gli 
 
 
 
-##  <a name="a-namebkmksupconfigupgradeclienta-upgrade-the-operating-system-of-configuration-manager-clients"></a><a name="BKMK_SupConfigUpgradeClient"></a> Aggiornare il sistema operativo dei client di Configuration Manager  
+##  <a name="BKMK_SupConfigUpgradeClient"></a> Aggiornare il sistema operativo dei client di Configuration Manager  
  Configuration Manager supporta un aggiornamento sul posto del sistema operativo per client di Configuration Manager nelle situazioni seguenti:  
 
 -   Aggiornamento sul posto a una versione di Service Pack di Windows successiva purché il livello di Service Pack risultante sia comunque supportato da Configuration Manager.  
@@ -157,7 +158,7 @@ Sono solitamente richiesti, ma non sono supportati da Configuration Manager gli 
 
 -   Aggiornamenti di manutenzione da build a build di Windows 10.  Per altre informazioni, vedere [Gestire Windows come servizio con System Center Configuration Manager](../../../osd/deploy-use/manage-windows-as-a-service.md).  
 
-##  <a name="a-namebkmksupconfigupgradedbsrva-upgrade-sql-server-on-the-site-database-server"></a><a name="BKMK_SupConfigUpgradeDBSrv"></a> Aggiornare SQL Server sul server di database del sito  
+##  <a name="BKMK_SupConfigUpgradeDBSrv"></a> Aggiornare SQL Server sul server di database del sito  
   Configuration Manager supporta un aggiornamento sul posto di SQL Server da una versione supportata di SQL sul server di database del sito. Gli scenari di aggiornamento di SQL Server descritti in questa sezione sono supportati da Configuration Manager e includono i requisiti per ogni scenario.
 
  Per informazioni sulle versioni di SQL Server supportate da Configuration Manager, vedere [Supporto per le versioni di SQL Server per System Center Configuration Manager](../../../core/plan-design/configs/support-for-sql-server-versions.md).  
@@ -196,8 +197,8 @@ Per identificare il livello di compatibilità CE di SQL Server in uso per il dat
 
 
 Per altre informazioni su SQL Server, vedere la documentazione di SQL Server su TechNet:
--   [Eseguire l'aggiornamento a SQL Server 2012](http://technet.microsoft.com/library/ms143393\(v=sql.110)
--   [Eseguire l'aggiornamento a SQL Server 2014](http://technet.microsoft.com/library/ms143393\(v=sql.120)  
+-   [Eseguire l'aggiornamento a SQL Server 2012](http://technet.microsoft.com/library/ms143393\(v=sql.110))
+-   [Eseguire l'aggiornamento a SQL Server 2014](http://technet.microsoft.com/library/ms143393\(v=sql.120))  
 -   [Eseguire l'aggiornamento a SQL Server 2016](https://technet.microsoft.com/library/bb677622(v=sql.130))
 
 
@@ -210,9 +211,4 @@ Per altre informazioni su SQL Server, vedere la documentazione di SQL Server su 
 
 > [!NOTE]  
 >  Quando nel sito di amministrazione centrale si passa da SQL Server Standard a SQL Server Enterprise o Datacenter, la partizione del database che limita il numero di client supportati dalla gerarchia non cambia.
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 
