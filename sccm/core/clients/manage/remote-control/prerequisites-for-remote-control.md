@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: c1b2057e-b74f-43fa-a293-763a8f866d3d
 caps.latest.revision: 6
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
 ms.openlocfilehash: eafa0d85935c2009cc63d17b06ed83a4666d7fac
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -65,9 +66,4 @@ Il controllo remoto in System Center Configuration Manager ha dipendenze esterne
 |Il controllo remoto deve essere abilitato per i client|Per impostazione predefinita, il controllo remoto non è abilitato quando si installa Configuration Manager. Per informazioni su come abilitare e configurare il controllo remoto, vedere [Configurazione del controllo remoto in System Center Configuration Manager](../../../../core/clients/manage/remote-control/configuring-remote-control.md).|  
 |Punto di Reporting Services|Prima di poter eseguire report per il controllo remoto, è necessario installare il ruolo del sistema del sito del punto di Reporting Services. Per altre informazioni, vedere [Creazione di report in System Center Configuration Manager](../../../../core/servers/manage/reporting.md).|  
 |Autorizzazioni di sicurezza per la gestione del controllo remoto|Per accedere alle risorse della raccolta e avviare una sessione di controllo remoto dalla console di Configuration Manager: autorizzazioni **Controlla AMT**, **Lettura**, **Leggi risorsa** e **Controllo remoto** per l'oggetto **Raccolta**.<br /><br /> Il ruolo di sicurezza **Operatore strumenti remoti** include queste autorizzazioni necessarie per gestire il controllo remoto in Configuration Manager.<br /><br /> Per altre informazioni, vedere [Configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-role-based-administration.md).<br /><br /> Inoltre, è necessario aggiungere gli utenti a cui si vuole concedere l'autorizzazione per usare il controllo remoto e l'assistenza remota all'elenco delle viste consentite di controllo remoto usando l'opzione **Visualizzatori autorizzati di controllo remoto e assistenza remota** nelle impostazioni client **Strumenti remoti** .|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

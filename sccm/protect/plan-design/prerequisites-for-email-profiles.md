@@ -13,12 +13,13 @@ ms.topic: get-started-article
 ms.assetid: dccf0b73-43bd-4545-8914-114168ebad36
 caps.latest.revision: 5
 caps.handback.revision: 0
-author: Nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
 ms.openlocfilehash: bdb7f78480f73bc4559c4ff49ecb7b047581780a
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -40,9 +41,4 @@ I profili di posta elettronica in System Center Configuration Manager hanno dipe
 |Dipendenza|Altre informazioni|  
 |----------------|----------------------|  
 |Attributo di posta in Active Directory|Se si vuole generare l'indirizzo di posta elettronica degli utenti in un profilo di posta elettronica usando l'indirizzo SMTP primario dell'utente, l'indirizzo deve esistere nell'attributo **mail** di Active Directory.<br /><br /> Per altre informazioni, vedere la documentazione di Windows Server.|
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

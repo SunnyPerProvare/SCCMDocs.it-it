@@ -13,12 +13,13 @@ ms.topic: get-started-article
 ms.assetid: abd45393-d84e-4583-bc80-74bbb3709577
 caps.latest.revision: 7
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: 58251f6a4eebac4cba9f3d51f8d0aaad068c3ab8
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -48,9 +49,4 @@ System Center Configuration Manager supporta l'installazione del client di Confi
 >  Con l'eccezione dei client di Windows Embedded che sono in modalità di manutenzione, anche i client di Configuration Manager che non sono in esecuzione in ambienti virtualizzati usano il ritardo casuale. Quando si è eseguita la distribuzione di molti client, questo comportamento consente di evitare dei picchi nella larghezza di banda di rete e riduce il requisito di elaborazione CPU nei sistemi del sito di Configuration Manager, come il punto di gestione e il server del sito. L'intervallo di ritardo varia in base alle funzionalità di Configuration Manager.  
 >   
 >  Il ritardo casuale è disabilitato per impostazione predefinita per le distribuzioni di applicazioni e gli aggiornamenti software richiesti usando le impostazioni client seguenti: **Agente computer**: **Disabilitare sequenza casuale scadenza**.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

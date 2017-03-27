@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: 272ee86b-d3d9-4fd9-b5c4-73e490e1a1e4
 caps.latest.revision: 6
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
 ms.openlocfilehash: 342a58d2b7439f721381beb43188594b5278043d
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -28,7 +29,7 @@ ms.openlocfilehash: 342a58d2b7439f721381beb43188594b5278043d
 
 In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy per il controllo remoto in System Center 2012 Configuration Manager.  
 
-##  <a name="a-namebkmksecurityhardwareinventorya-security-best-practices-for-remote-control"></a><a name="BKMK_Security_HardwareInventory"></a> Procedure di sicurezza consigliate per il controllo remoto  
+##  <a name="BKMK_Security_HardwareInventory"></a> Procedure di sicurezza consigliate per il controllo remoto  
  Usare le seguenti procedure di sicurezza consigliate quando si gestiscono computer client mediante il controllo remoto.  
 
 |Procedura di sicurezza consigliata|Altre informazioni|  
@@ -54,7 +55,7 @@ In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy
 
      Non vengono inviati messaggi di controllo se anziché installare la console di Configuration Manager si copiano i file binari per il controllo remoto e quindi si esegue il controllo remoto dal prompt dei comandi.  
 
-##  <a name="a-namebkmkprivacyhardwareinventorya-privacy-information-for-remote-control"></a><a name="BKMK_Privacy_HardwareInventory"></a> Informazioni sulla privacy per il controllo remoto  
+##  <a name="BKMK_Privacy_HardwareInventory"></a> Informazioni sulla privacy per il controllo remoto  
  Il controllo remoto consente di visualizzare le sessioni attive nei computer client di Configuration Manager e, potenzialmente, tutte le informazioni archiviate in tali computer. Per impostazione predefinita, il controllo remoto non è abilitato.  
 
  È possibile configurare il controllo remoto in modo da visualizzare in modo evidente un messaggio di preavviso e ottenere il consenso dall'utente prima di iniziare una sessione, ma è anche possibile monitorare gli utenti senza la loro autorizzazione e senza che ne siano consapevoli. È possibile configurare il livello di accesso di sola visualizzazione, in modo che non sia possibile eseguire modifiche durante il controllo remoto, o di controllo completo. Nella sessione di controllo remoto viene visualizzato l'account dell'amministratore connesso, per consentire agli utenti di identificare chi si connette al loro computer.  
@@ -62,9 +63,4 @@ In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy
  Per impostazione predefinita, Configuration Manager concede l'autorizzazione di controllo remoto al gruppo Administrators locale.  
 
  Prima di configurare il controllo remoto, prendere in considerazione i requisiti in vigore relativi alla privacy.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

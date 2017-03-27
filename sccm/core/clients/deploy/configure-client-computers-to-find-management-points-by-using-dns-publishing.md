@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 03cec407-0f9f-454f-a360-b005af738d29
 caps.latest.revision: 6
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: 9eadb91a575323b4c36af14962f370046ea513ce
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -57,9 +58,4 @@ I client in System Center Configuration Manager devono individuare un punto di g
 2.  Nella scheda **Sito** specificare il suffisso DNS di un punto di gestione, quindi fare clic su **OK**.  
 
      Se il sito dispone di più punti di gestione e questi si trovano in più di un dominio, specificare un solo dominio. Quando si connettono a un punto di gestione in questo dominio, i client scaricano un elenco di punti di gestione disponibili, tra cui i punti di gestione provenienti da altri domini.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

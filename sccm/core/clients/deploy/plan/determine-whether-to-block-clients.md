@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 54ef5fbb-521d-4ca5-a1c5-61e6f538d71e
 caps.latest.revision: 8
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: c1b3b3e7fe756ce3e0c82ffc15693999d8e817d2
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -36,7 +37,7 @@ Se un computer client o un dispositivo mobile client non è più considerato att
 
  Se i sistemi del sito accettano connessioni client HTTPS e l'infrastruttura a chiave pubblica (PKI) supporta un elenco di revoche di certificati (CRL), considerare sempre la revoca del certificato come prima linea di difesa contro certificati potenzialmente compromessi. Il blocco dei client in Configuration Manager offre una seconda linea di difesa per la protezione della gerarchia.  
 
-##  <a name="a-namebkmkblockvscrla-considerations-for-blocking-clients"></a><a name="BKMK_Block_vs_CRL"></a> Considerazioni sul blocco dei client  
+##  <a name="BKMK_Block_vs_CRL"></a> Considerazioni sul blocco dei client  
 
 -   Questa opzione è disponibile per le connessioni client HTTP e HTTPS, ma ha protezione limitata quando i client si connettono ai sistemi del sito usando il protocollo HTTP.  
 
@@ -71,9 +72,4 @@ Se un computer client o un dispositivo mobile client non è più considerato att
 
     > [!NOTE]  
     >  È possibile proteggere ulteriormente i sistemi che eseguono IIS da client sconosciuti tramite la configurazione di un elenco di certificati attendibili (CTL) in IIS.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

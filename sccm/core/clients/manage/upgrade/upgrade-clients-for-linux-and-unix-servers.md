@@ -13,12 +13,13 @@ ms.topic: article
 ms.assetid: 7d2bb377-1005-4a55-bd1f-b80a6d0b22e1
 caps.latest.revision: 6
 caps.handback.revision: 0
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: eea9faaac579ecafd67eaac05dc7ee7ca7819db7
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -61,9 +62,4 @@ ms.openlocfilehash: eea9faaac579ecafd67eaac05dc7ee7ca7819db7
      Ad esempio, usare la riga di comando seguente per eseguire lo script: **at -f /tmp/upgrade.sh -m now + 5 minutes**  
 
  Dopo aver correttamente pianificato l'esecuzione dello script **upgrade.sh** , il client invia un messaggio di stato per indicare che la distribuzione software è stata completata correttamente. L'effettiva installazione del client, tuttavia, verrà gestita dal computer dopo il ritardo. Al termine dell'aggiornamento del client, convalidare l'installazione esaminando il file **/var/opt/microsoft/scxcm.log** nel computer client. È anche possibile verificare che il client sia installato e in comunicazione con il sito visualizzando i dettagli per il client nel nodo **Dispositivi** dell'area di lavoro **Asset e conformità** della console di Configuration Manager.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

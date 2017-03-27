@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cf6337a2-700c-47f3-b6f8-5814f9b81e59
 caps.latest.revision: 12
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: c74b553ab76a2b77b0d893151351132da05a640d
 ms.openlocfilehash: 5b75f3296dc20a6766a894f463e958455ca1d65f
+ms.lasthandoff: 01/03/2017
 
 
 ---
@@ -160,10 +161,5 @@ Di seguito sono illustrate le procedure per disinstallare i client Mac e rinnova
     f.  Fare clic su **Save Changes** (Salva modifiche) e chiudere la finestra di dialogo **Keychain Access** (Accesso portachiavi).  
 
 17. Riavviare il computer Mac.  
-
-
-
-
-<!--HONumber=Jan17_HO1-->
 
 

@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 74c60941-5eae-4905-9e58-252bdb39df96
 caps.latest.revision: 10
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
 ms.openlocfilehash: 6bdc5cca01bf5a79a6177d7cf1de96b8ff2c2305
+ms.lasthandoff: 01/24/2017
 
 
 ---
@@ -64,7 +65,7 @@ Seguire la procedura dettagliata descritta di seguito per aggiornare il client i
 
  Se non si usa la registrazione di Configuration Manager, ma si installa il certificato client indipendentemente da Configuration Manager, vedere [Configurare il client aggiornato per usare un certificato esistente](#BKMK_UpgradingClient_MachineEnrollment).  
 
-##  <a name="a-namebkmkupgradingclientmachineenrollmenta-configure-the-upgraded-client-to-use-an-existing-certificate"></a><a name="BKMK_UpgradingClient_MachineEnrollment"></a> Configure the upgraded client to use an existing certificate  
+##  <a name="BKMK_UpgradingClient_MachineEnrollment"></a> Configure the upgraded client to use an existing certificate  
  Eseguire la procedura seguente per impedire che venga eseguita la registrazione guidata computer e per configurare il client aggiornato in modo da usare un certificato client esistente.  
 
 -   Nella console di Configuration Manager creare un elemento di configurazione del tipo **Mac OS X**.  
@@ -102,9 +103,4 @@ Seguire la procedura dettagliata descritta di seguito per aggiornare il client i
 -   Aggiungere l'elemento di configurazione a una linea di base di configurazione, distribuire la linea di base di configurazione in tutti i computer Mac che installano un certificato indipendentemente da Configuration Manager.  
 
  Per altre informazioni su come creare e distribuire elementi di configurazione per computer Mac, vedere [How to create configuration items for Mac OS X devices managed with the System Center Configuration Manager client](../../../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md) (Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager) e [How to deploy configuration baselines in System Center Configuration Manager](../../../../compliance/deploy-use/deploy-configuration-baselines.md) (Come distribuire le linee di base di configurazione in System Center Configuration Manager).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 
