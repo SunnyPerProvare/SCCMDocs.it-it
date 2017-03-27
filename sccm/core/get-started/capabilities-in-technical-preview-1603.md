@@ -15,9 +15,11 @@ caps.latest.revision: 8
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
+robots: noindex,nofollow
 translationtype: Human Translation
 ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: 1d3adcf3310d88b1266388aa03ae5ea03e23f2a5
+ms.lasthandoff: 01/24/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1603-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1603 per System Center Configuration Manager
@@ -34,7 +36,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
  **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
-##  <a name="a-namebkmksc1603a-improvements-to-software-center"></a><a name="BKMK_SC1603"></a> Miglioramenti a Software Center  
+##  <a name="BKMK_SC1603"></a> Miglioramenti a Software Center  
 
 ### <a name="new-tiled-view-for-apps"></a>Nuova visualizzazione affiancata per le app  
  Gli utenti finali possono ora scegliere tra un elenco di app o una visualizzazione affiancata delle app nella scheda **Applicazioni** di Software Center.  
@@ -42,7 +44,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 ### <a name="select-multiple-updates-in-software-center"></a>Selezionare più aggiornamenti in Software Center  
  Nella scheda **Aggiornamenti** di Software Center è ora possibile selezionare più aggiornamenti oppure selezionare **Aggiorna tutto** per iniziare a installare più aggiornamenti contemporaneamente.  
 
-##  <a name="a-namebkmkrc1603a-improvements-to-remote-control"></a><a name="BKMK_RC1603"></a> Miglioramenti del controllo remoto  
+##  <a name="BKMK_RC1603"></a> Miglioramenti del controllo remoto  
 
 ### <a name="limit-shared-clipboard-access-in-a-remote-control-session"></a>Limitare l'accesso agli Appunti condivisi in una sessione di controllo remoto  
  È ora possibile abilitare la nuova impostazione client degli strumenti remoti, **Richiedere all'utente l'autorizzazione per il trasferimento di file negli Appunti condivisi**, per limitare l'accesso agli Appunti condivisi in una sessione di controllo remoto.  
@@ -51,7 +53,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
  Viene così aggiunto un livello di protezione per l'utente finale perché in precedenza, se all'utente che visualizzava veniva concesso il controllo completo sul computer dell'utente finale, questo poteva usare gli Appunti condivisi per trasferire i file dalla sessione al computer locale in modo completamente trasparente all'utente finale.  
 
-##  <a name="a-namebkmkramdisktftpa-customize-the-ramdisk-tftp-block-size-and-window-size-on-pxe-enabled-distribution-points"></a><a name="BKMK_RamDiskTFTP"></a> Personalizzare le dimensioni della finestra e del blocco TFTP RamDisk nei punti di distribuzione abilitati per PXE  
+##  <a name="BKMK_RamDiskTFTP"></a> Personalizzare le dimensioni della finestra e del blocco TFTP RamDisk nei punti di distribuzione abilitati per PXE  
  Nella Technical Preview 1603 è possibile personalizzare le dimensioni della finestra e del blocco TFTP RamDisk per i punti di distribuzione abilitati per PXE. Se la rete è stata personalizzata, il download dell'immagine di avvio potrebbe non riuscire a causa di un errore di timeout perché le dimensioni del blocco o della finestra sono troppo grandi. La personalizzazione delle dimensioni della finestra e del blocco TFTP RamDisk consentono di ottimizzare il traffico TFTP quando si usa PXE per soddisfare requisiti di rete specifici.   
 È necessario testare le impostazioni personalizzate nel proprio ambiente per stabilire quale sia la scelta più efficiente.  
 
@@ -91,9 +93,4 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
      **Valore**: &lt;dimensioni blocco personalizzate\>  
 
  Il valore predefinito è 4096 (4k).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

@@ -36,6 +36,7 @@ translation.priority.ht:
 translationtype: Human Translation
 ms.sourcegitcommit: 688e05aae0e0b15b54835f8d64a98487f4d7b64d
 ms.openlocfilehash: 82bcd1a9fe22bf7ecc2dc5765f64f5198494152e
+ms.lasthandoff: 12/30/2016
 
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1610-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1610
@@ -50,73 +51,71 @@ Le modifiche rispetto alle versioni precedenti sono contrassegnate da ***[Nuovo]
 > [!IMPORTANT]
 >  Configuration Manager non raccoglie codici del sito, nomi di siti, indirizzi IP, nomi utente, nomi di computer, indirizzi fisici o indirizzi di posta elettronica per i livelli di base e avanzato. L'eventuale raccolta di tali informazioni per il livello completo non è intenzionale, ovvero dati potenzialmente inclusi nelle informazioni di diagnostica avanzate come file di log o snapshot di memoria. Le informazioni eventualmente raccolte non verranno usate da Microsoft per identificare l'utente, contattare l'utente o per fini pubblicitari.
 
-##  <a name="a-namebkmkchangea-how-to-change-the-level"></a><a name="bkmk_change"></a> Come cambiare il livello
+##  <a name="bkmk_change"></a> Come cambiare il livello
  Gli amministratori con ambito amministrativo basato sui ruoli che include le autorizzazioni **Modifica** per la classe di oggetti **Sito** possono modificare il livello dei dati raccolti nelle impostazioni Dati di diagnostica e di utilizzo nella console di Configuration Manager.
 
 A partire dalla versione 1610, è possibile modificare il livello di raccolta dati dall'interno della console, passando a **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Siti**. Aprire **Impostazioni gerarchia** e selezionare il livello di dati che si vuole usare.  
 
-##  <a name="a-namebkmklevel1a-level-1---basic"></a><a name="bkmk_level1"></a> Livello 1 - Di base
+##  <a name="bkmk_level1"></a> Livello 1 - Di base
  Il livello di base include i dati sulla gerarchia ed è necessario per consentire il miglioramento dell'esperienza di installazione o aggiornamento, nonché per determinare quali aggiornamenti di Configuration Manager sono applicabili per la gerarchia.
 
  Per System Center Configuration Manager versione 1610, questo livello include:
 
 
- -   Informazioni sull'installazione:
-      - Build, tipo di installazione, Language Pack, funzionalità abilitate  
+-   Informazioni sull'installazione:
+       - Build, tipo di installazione, Language Pack, funzionalità abilitate  
 
-      -   Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti  
+       - Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti     
 
-      -  Versione dello script post-aggiornamento
+       - Versione dello script post-aggiornamento
 
-      -  Uso di Fast Ring di aggiornamento
+       - Uso di Fast Ring di aggiornamento
 
-    -  ***[Nuovo]*** Uso delle versioni non definitive, tipo di supporto di installazione, tipo Branch
+    - ***[Nuovo]*** Uso delle versioni non definitive, tipo di supporto di installazione, tipo Branch
 
     - ***[Nuovo]*** Data di scadenza di Software Assurance
 
+- Metriche delle prestazioni del database (informazioni sull'elaborazione della replica, principali stored procedure di SQL Server per processore e utilizzo del disco)
 
--   Metriche delle prestazioni del database (informazioni sull'elaborazione della replica, principali stored procedure di SQL Server per processore e utilizzo del disco)
+- Configurazione di base dei database (processori, configurazione del cluster e configurazione delle viste distribuite)
 
--   Configurazione di base dei database (processori, configurazione del cluster e configurazione delle viste distribuite)
+- Schema del database di Configuration Manager (hash di tutte le definizioni di oggetti)
 
--   Schema del database di Configuration Manager (hash di tutte le definizioni di oggetti)
+- Numero delle versioni client di Configuration Manager e delle versioni del sistema operativo
 
--   Numero delle versioni client di Configuration Manager e delle versioni del sistema operativo
+- Numero dei sistemi operativi per i dispositivi gestiti e dei criteri impostati da Exchange Connector
 
--   Numero dei sistemi operativi per i dispositivi gestiti e dei criteri impostati da Exchange Connector
+- Numero delle lingue e delle impostazioni locali dei client
 
--   Numero delle lingue e delle impostazioni locali dei client
+- Numero dei dispositivi Windows 10 per ramo e build
 
--   Numero dei dispositivi Windows 10 per ramo e build
+- Dati di base sulla gerarchia dei siti di Configuration Manager (elenco dei siti, tipo, versione, stato, numero di client e fuso orario)
 
--   Dati di base sulla gerarchia dei siti di Configuration Manager (elenco dei siti, tipo, versione, stato, numero di client e fuso orario)
+- Informazioni di base sul server del sistema del sito (ruoli del sistema del sito usati, stato di Internet e SSL, sistema operativo, processori, computer fisico o macchina virtuale)
 
--   Informazioni di base sul server del sistema del sito (ruoli del sistema del sito usati, stato di Internet e SSL, sistema operativo, processori, computer fisico o macchina virtuale)
+- Statistiche di base di individuazione degli utenti (numero di individuazioni di utenti e dimensioni minime/massime/medie dei gruppi)
 
--   Statistiche di base di individuazione degli utenti (numero di individuazioni di utenti e dimensioni minime/massime/medie dei gruppi)
+- Informazioni di base su Endpoint Protection (versioni client antimalware)
 
--   Informazioni di base su Endpoint Protection (versioni client antimalware)
+- Conteggi di base per applicazioni e tipi di distribuzione (totale app, totale app con più tipi di distribuzione, totale app con dipendenze, totale app sostituite e numero delle tecnologie di distribuzione in uso)
 
--   Conteggi di base per applicazioni e tipi di distribuzione (totale app, totale app con più tipi di distribuzione, totale app con dipendenze, totale app sostituite e numero delle tecnologie di distribuzione in uso)
+- Numero di distribuzioni del sistema operativo di base (immagini)
 
--   Numero di distribuzioni del sistema operativo di base (immagini)
+- Tipi di punto di distribuzione e di punto di gestione e informazioni di base sulla configurazione (protetto, pre-installato, PXE, multicast, stato di SSL, punti di distribuzione pull/peer, abilitato per MDM, abilitato per SSL e così via)
 
--   Tipi di punto di distribuzione e di punto di gestione e informazioni di base sulla configurazione (protetto, pre-installato, PXE, multicast, stato di SSL, punti di distribuzione pull/peer, abilitato per MDM, abilitato per SSL e così via)
+- Statistiche di telemetria (data/ora di esecuzione, runtime, errori)
 
--   Statistiche di telemetria (data/ora di esecuzione, runtime, errori)
+- Livello di telemetria configurato, modalità online o offline e configurazione di aggiornamento rapido
 
--  Livello di telemetria configurato, modalità online o offline e configurazione di aggiornamento rapido
+- Uso di Network Discovery (abilitato o disabilitato)
+- Admin Console:
 
--  Uso di Network Discovery (abilitato o disabilitato)
--  Admin Console:
-
-     -  Statistiche sulle connessioni della console (versione del sistema operativo, lingua, SKU e architettura, memoria di sistema, conteggio dei processori logici, ID del sito di connessione, versioni di .NET installate e Language Pack della console)    
-
+     - Statistiche sulle connessioni della console (versione del sistema operativo, lingua, SKU e architettura, memoria di sistema, conteggio dei processori logici, ID del sito di connessione, versioni di .NET installate e Language Pack della console)    
 
 - Versione SQL, livello Service Pack, edizione, ID delle regole di confronto e set di caratteri
 
 
-##  <a name="a-namebkmklevel2a-level-2---enhanced"></a><a name="bkmk_level2"></a> Livello 2 - Avanzato
+##  <a name="bkmk_level2"></a> Livello 2 - Avanzato
 Il livello avanzato è quello predefinito dopo l'installazione. Questo livello include i dati raccolti per il livello di base e dati specifici per le funzionalità (frequenza e durata d'uso), le impostazioni client di Configuration Manager (nome del componente, stato e alcune impostazioni come gli intervalli di polling) e le informazioni di base sugli aggiornamenti software.
 
 Questo livello è consigliato perché offre a Microsoft i dati minimi necessari per apportare miglioramenti utili nelle versioni future di prodotti e servizi. Con questo livello non vengono raccolti i nomi degli oggetti (siti, utenti, computer o oggetti), dettagli sugli oggetti correlati alla sicurezza o informazioni sulle vulnerabilità come il numero di sistemi che richiedono aggiornamenti software.
@@ -265,7 +264,7 @@ Per System Center Configuration Manager versione 1610, questo livello include:
 
     -   Numero di avvisi configurati per la funzionalità Endpoint Protection  
 
-    -   Criteri avanzati di Advanced Threat Protection (ATP) (numero dei criteri e se i criteri sono distribuiti)
+    -     Criteri avanzati di Advanced Threat Protection (ATP) (numero dei criteri e se i criteri sono distribuiti)
 
 
 - **Migrazione:**
@@ -393,7 +392,7 @@ Per System Center Configuration Manager versione 1610, questo livello include:
 
 
 
-##  <a name="a-namebkmklevel3a-level-3---full"></a><a name="bkmk_level3"></a> Livello 3 - Completo
+##  <a name="bkmk_level3"></a> Livello 3 - Completo
 Il livello completo include tutti i dati dei livelli di base e avanzato. Include inoltre informazioni aggiuntive su Endpoint Protection, le percentuali di conformità degli aggiornamenti e informazioni sugli aggiornamenti software.  Questo livello può includere anche informazioni di diagnostica avanzate, come file di sistema e snapshot di memoria, che possono contenere informazioni personali presenti in memoria o nei file di log al momento dell'acquisizione.
 
 Per System Center Configuration Manager versione 1610, questo livello include:
@@ -438,9 +437,4 @@ Per System Center Configuration Manager versione 1610, questo livello include:
 -   Errori di installazione della distribuzione client dettagliati
 
 - ***[Nuovo]*** Dettagli delle applicazioni Windows Store per le aziende (elenco non aggregato di applicazioni sincronizzate, comprendente ID applicazione, stato online o offline e numero totale di licenze acquistate)
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

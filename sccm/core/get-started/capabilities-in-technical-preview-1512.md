@@ -15,9 +15,11 @@ caps.latest.revision: 6
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
+robots: noindex,nofollow
 translationtype: Human Translation
 ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: 7fff6f2807a679b621b736b8ad0b6561fb37affe
+ms.lasthandoff: 01/24/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1512-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1512 per System Center Configuration Manager
@@ -28,7 +30,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
  Di seguito sono riportate le nuove funzionalità disponibili con questa versione.  
 
-##  <a name="a-namebkmkdevicehealtha-device-health-attestation"></a><a name="bkmk_devicehealth"></a> Attestazione dell'integrità dei dispositivi  
+##  <a name="bkmk_devicehealth"></a> Attestazione dell'integrità dei dispositivi  
  A partire dalla versione Technical Preview 1512, gli amministratori possono visualizzare lo stato di attestazione dell'integrità dei dispositivi Windows 10 nella console di Configuration Manager.  Questa funzionalità è disponibile per Configuration Manager e Configuration Manager con Microsoft Intune. L'attestazione dell'integrità dei dispositivi consente all'amministratore di assicurare che i computer client dispongano di configurazioni attendibili di BIOS, TPM e software di avvio. Per supportare l'attestazione dell'integrità dei dispositivi, i dispositivi client devono eseguire Windows 10 con TPM 2 abilitato. L'attestazione dell'integrità dei dispositivi visualizza il numero di dispositivi abilitati per ognuno degli elementi seguenti:  
 
 -   Antimalware ad esecuzione anticipata  
@@ -43,7 +45,7 @@ Nella console vengono inoltre visualizzate le principali impostazioni di attesta
 
 Per poter visualizzare l'attestazione dell'integrità del dispositivo, nella console di Configuration Manager passare all'area di lavoro **Monitoraggio** , fare clic sul nodo **Sicurezza** e quindi su **Attestazione dell'integrità**.  
 
-##  <a name="a-namebkmkviewtermsa-in-console-monitoring-for-terms-and-conditions"></a><a name="bkmk_viewterms"></a> Monitoraggio di termini e condizioni nella console  
+##  <a name="bkmk_viewterms"></a> Monitoraggio di termini e condizioni nella console  
 A partire dalla versione Technical Preview 1512, quando si integra Configuration Manager con Microsoft Intune, è possibile usare la console di Configuration Manager per visualizzare gli utenti che hanno accettato i termini e le condizioni configurati dal reparto IT e quelli che non lo hanno fatto.  
 
 **Per visualizzare le informazioni di riepilogo:**  
@@ -56,7 +58,7 @@ A partire dalla versione Technical Preview 1512, quando si integra Configuration
 
 2.  Nella parte inferiore della console selezionare la scheda **Distribuzioni**, selezionare la distribuzione e quindi fare clic su **Visualizza stato.**  
 
-##  <a name="a-namebkmkeppolicya-improvements-to-endpoint-protection-policy-settings"></a><a name="bkmk_EPpolicy"></a> Miglioramenti delle impostazioni dei criteri di Endpoint Protection  
+##  <a name="bkmk_EPpolicy"></a> Miglioramenti delle impostazioni dei criteri di Endpoint Protection  
 Nella Technical Preview 1512 sono state aggiunte le nuove impostazioni seguenti nei criteri antimalware di Endpoint Protection:  
 
 -   Protezione in tempo reale: **Abilita la protezione per le applicazioni potenzialmente indesiderate al download o prima dell'installazione**  
@@ -90,9 +92,4 @@ Nella Technical Preview 1512 sono state aggiunte le nuove impostazioni seguenti 
 **Prerequisiti per l'uso dei criteri di Endpoint Protection:**  
 
 Per poter usare i criteri di Endpoint Protection, è prima necessario installare e gestire il client Endpoint Protection usando le impostazioni del client di Endpoint Protection. Questa operazione viene eseguita tramite il client di System Center Endpoint Protection per Windows 7, Windows 8, Windows 8.1 o Windows Defender gestito per Windows 10. Vedere [Endpoint Protection in System Center Configuration Manager](../../protect/deploy-use/endpoint-protection.md).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

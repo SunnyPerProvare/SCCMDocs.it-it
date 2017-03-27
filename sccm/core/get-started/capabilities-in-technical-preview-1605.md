@@ -15,10 +15,11 @@ caps.latest.revision: 36
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-robots: noindex,nofollow
 translationtype: Human Translation
 ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: 3af395b84dd6878af9b846b438049e55baf9472e
+ms.lasthandoff: 01/24/2017
+
 
 ---
 # <a name="capabilities-in-technical-preview-1605-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1605 per System Center Configuration Manager
@@ -35,7 +36,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
  **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
-##  <a name="a-namebkmkperappvpna-per-app-vpn-for-windows-10-devices"></a><a name="BKMK_PerAppVPN"></a> VPN per app per dispositivi Windows 10  
+##  <a name="BKMK_PerAppVPN"></a> VPN per app per dispositivi Windows 10  
  Per i dispositivi Windows 10 gestiti tramite Configuration Manager con Intune è possibile aggiungere un elenco di app che aprono automaticamente una connessione VPN che è stata configurata tramite la console di amministrazione di Configuration Manager. È possibile scegliere di limitare il traffico VPN per tali applicazioni oppure continuare a consentire tutto il traffico tramite la connessione VPN.  
 
  **Requisiti**:  
@@ -44,17 +45,17 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
 -   Un profilo VPN di Windows 10 che è stato distribuito ad almeno un dispositivo  
 
-##  <a name="a-namebkmkinstallsua-improvements-to-the-install-software-updates-task-sequence"></a><a name="BKMK_InstallSU"></a> Miglioramenti della sequenza di attività Installa aggiornamenti software  
+##  <a name="BKMK_InstallSU"></a> Miglioramenti della sequenza di attività Installa aggiornamenti software  
  Sono stati apportati i seguenti miglioramenti alla sequenza di attività Installa aggiornamenti software:  
 
 -   È disponibile la nuova variabile di sequenza di attività SMSTSSoftwareUpdateScanTimeout che consente di controllare il timeout dell'analisi degli aggiornamenti software durante il passaggio della sequenza di attività Installa aggiornamenti software. Il valore predefinito è 30 minuti.  
 
 -   Sono stati apportati miglioramenti alla registrazione. Il file di registro smsts.log conterrà nuove voci di log che fanno riferimento ad altri file di log che consentono di risolvere i problemi durante il processo di installazione degli aggiornamenti software.  
 
-##  <a name="a-namebkmkprepareconfigmgrclienta-improvements-to-the-prepare-configmgr-client-for-capture-task-sequence-step"></a><a name="BKMK_PrepareConfigMgrClient"></a> Miglioramenti del passaggio della sequenza di attività Prepara client ConfigMgr per l'acquisizione  
+##  <a name="BKMK_PrepareConfigMgrClient"></a> Miglioramenti del passaggio della sequenza di attività Prepara client ConfigMgr per l'acquisizione  
  Il passaggio Prepara client ConfigMgr a questo punto rimuove completamente il client di Configuration Manager, invece di rimuovere solo le informazioni sulla chiave. Quando la sequenza di attività distribuisce l'immagine del sistema operativo acquisita, verrà installato ogni volta un nuovo client di Configuration Manager.  
 
-##  <a name="a-namebkmkgracea-grace-period-for-required-application-deployments"></a><a name="BKMK_Grace"></a> Periodo di tolleranza per le distribuzioni di applicazioni obbligatorie  
+##  <a name="BKMK_Grace"></a> Periodo di tolleranza per le distribuzioni di applicazioni obbligatorie  
  In alcuni casi è possibile concedere agli utenti più tempo per l'installazione di distribuzioni di applicazioni obbligatorie oltre eventuali scadenze configurate. Ad esempio, se un utente finale è appena tornato da una vacanza, potrebbe dover attendere un po' tempo mentre vengono installate le distribuzioni delle applicazioni scadute. Tuttavia potrà comunque installare l'applicazione immediatamente in qualsiasi momento.  
 
  Per risolvere il problema adesso è possibile definire un **periodo di tolleranza** distribuendo le impostazioni client di Configuration Manager in una raccolta.  
@@ -71,7 +72,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
  Opzioni simili sono state aggiunte alla procedura guidata di distribuzione degli aggiornamenti software, alla procedura guidata di creazione delle regole di distribuzione automatica e alle pagine delle proprietà. Tuttavia non sono attualmente implementate in questa versione Technical Preview.  
 
-##  <a name="a-namebkmkremotea-new-experience-for-remote-device-actions"></a><a name="BKMK_Remote"></a> Nuova esperienza per le azioni dei dispositivi remoti  
+##  <a name="BKMK_Remote"></a> Nuova esperienza per le azioni dei dispositivi remoti  
  È stata migliorata l'esperienza di esecuzione delle azioni dei dispositivi remoti dalla console di Configuration Manager.  
 Azioni comuni come **Ritira/cancella dati**, **Reimpostazione passcode**, **Blocco remoto** e **Bypass del blocco attivazione** sono adesso disponibili nel menu **Azioni remote dispositivo** accessibile dall'area di lavoro **Asset e conformità**.  
 
@@ -87,7 +88,7 @@ Azioni comuni come **Ritira/cancella dati**, **Reimpostazione passcode**, **Bloc
 
  Per altre informazioni sul bypass del blocco attivazione iOS, vedere [Proteggere i dispositivi iOS con il bypass del blocco attivazione per Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock), in particolare la sezione **Problemi noti correnti relativi al bypass del blocco attivazione in Configuration Manager Technical Preview**.  
 
-##  <a name="a-namebkmkwsfba-windows-store-for-business-apps"></a><a name="BKMK_WSFB"></a> Windows Store per le app aziendali  
+##  <a name="BKMK_WSFB"></a> Windows Store per le app aziendali  
  In [Windows Store per le aziende](https://www.microsoft.com/business-store) è possibile trovare e acquistare app per l'organizzazione, singolarmente o con Volume Purchase Program. Connettendo lo Store a Configuration Manager, è possibile gestire le app acquistate con Volume Purchase Program dalla console di Configuration Manager, ad esempio:  
 
 -   È possibile sincronizzare l'elenco di app acquistate con Configuration Manager  
@@ -158,7 +159,7 @@ Azioni comuni come **Ritira/cancella dati**, **Reimpostazione passcode**, **Bloc
 >   
 >  Attualmente non è possibile distribuire le applicazioni con licenza online con Configuration Manager.  
 
-##  <a name="a-namebkmkvpp2a-general-improvements-for-volume-purchased-apps"></a><a name="BKMK_VPP2"></a> Miglioramenti generali per le app acquistate con Volume Purchase Program  
+##  <a name="BKMK_VPP2"></a> Miglioramenti generali per le app acquistate con Volume Purchase Program  
 
 -   In questa versione le app acquistate con Volume Purchase Program dall'archivio di Windows per l'azienda e iOS App Store sono state consolidate nella stessa visualizzazione **Informazioni di licenza per le app dello Store**.  
 
@@ -170,14 +171,14 @@ Azioni comuni come **Ritira/cancella dati**, **Reimpostazione passcode**, **Bloc
 
 -   Il percorso che si usa per ottenere e caricare un token VPP di Apple per le app acquistate con Volume Purchase Program nella console di Configuration Manager è stato modificato. Ora è possibile farlo nell'area di lavoro **Amministrazione** sotto il nodo **Servizi cloud** > **Token di Volume Purchase Program di Apple**.  
 
-##  <a name="a-namebkmkvppa-enterprise-data-protection-edp"></a><a name="BKMK_VPP"></a> Enterprise Data Protection (EDP)  
+##  <a name="BKMK_VPP"></a> Enterprise Data Protection (EDP)  
  È possibile creare elementi di configurazione che consentono di distribuire i criteri di protezione dei dati aziendali (Enterprise Data Protection o EDP), ad esempio consentono di scegliere le app protette, il livello di protezione EDP e come trovare i dati aziendali in rete. Per altre informazioni su EDP, vedere gli argomenti seguenti:  
 
 -   [Proteggere i dati aziendali tramite EDP (Enterprise Data Protection)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-edp)  
 
 -   [Creare e distribuire un criterio di protezione dei dati aziendali (EDP) tramite System Center Configuration Manager](https://technet.microsoft.com/itpro/windows/keep-secure/create-edp-policy-using-sccm)  
 
-##  <a name="a-namebkmkenda-end-users-can-install-apps-from-the-company-portal"></a><a name="BKMK_End"></a> Gli utenti finali possono installare le app dal portale aziendale  
+##  <a name="BKMK_End"></a> Gli utenti finali possono installare le app dal portale aziendale  
  MDM locale è stato introdotto nella versione 1511 di System Center Configuration Manager. Nelle versioni precedenti era possibile distribuire applicazioni per dispositivi Windows 10 gestiti da MDM che avevano installazione **Richiesta** come scopo di distribuzione per dispositivi locali gestiti da MDM.  
 
  In questa versione è possibile distribuire applicazioni con lo scopo di distribuzione **Disponibile** a utenti di computer Windows 10 locali gestiti da MDM e gli utenti possono installare queste applicazioni autonomamente dal portale aziendale.
@@ -268,12 +269,12 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 
      Dopo aver aperto il portale aziendale, verrà visualizzata una finestra di dialogo di autenticazione denominata **System Center Configuration Manager**. Specificare le credenziali Active Directory dell'utente (nella forma user@domain o dominio\utente) per effettuare l'accesso.  
 
-##  <a name="a-namebkmksw1a-new-tabs-for-updates-and-operating-systems-in-software-center"></a><a name="BKMK_SW1"></a> Nuove schede per gli aggiornamenti e i sistemi operativi in Software Center  
+##  <a name="BKMK_SW1"></a> Nuove schede per gli aggiornamenti e i sistemi operativi in Software Center  
  In questa versione sono state apportate le seguenti modifiche per migliorare il layout dell'applicazione Software Center:  
 
 -   La scheda **Applicazioni** è stata suddivisa in tre schede separate: **Aggiornamenti**, **Sistemi operativi** (disponibili in precedenza nell'elenco **Filtri**) e **Applicazioni**.  
 
-##  <a name="a-namebkmkservergroupsa-service-a--server-group"></a><a name="BKMK_ServerGroups"></a> Eseguire la manutenzione di un gruppo di server  
+##  <a name="BKMK_ServerGroups"></a> Eseguire la manutenzione di un gruppo di server  
  La versione Technical Preview 1511 per System Center Configuration Manager includeva la possibilità di creare una raccolta in cui tutti i dispositivi della raccolta formavano un gruppo di server. Quindi si poteva configurare le impostazioni del gruppo di server da usare per la distribuzione di aggiornamenti software al gruppo di server, controllare la percentuale di computer che venivano aggiornati in qualsiasi momento e configurare gli script di PowerShell di pre-distribuzione e post-distribuzione per eseguire azioni personalizzate.  
 
  La versione Technical Preview 1605 per System Center Configuration Manager aggiunge la possibilità di aggiornare i computer del gruppo di server in un ordine specifico definito dall'utente, aggiunge il monitoraggio avanzato per visualizzare lo stato per i computer del gruppo di server e offre la possibilità di cancellare i blocchi di distribuzione, che si rivela utile quando i client non sono riusciti a installare gli aggiornamenti software e impediscono ad altri client di installare i loro aggiornamenti software.  
@@ -340,7 +341,7 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 
 2.  Sulla scheda **Home**, nel gruppo **Distribuzione**, fare clic su **Cancellare i blocchi di distribuzione del gruppo di server**. Quando i client non sono riusciti a installare gli aggiornamenti software e impediscono ad altri client di installare i loro aggiornamenti software, i blocchi di distribuzione possono essere cancellati manualmente.  
 
-##  <a name="a-namebkmkatpa-support-for-windows-defender-advanced-threat-protection-service"></a><a name="BKMK_ATP"></a> Supporto del servizio Windows Defender Advanced Threat Protection  
+##  <a name="BKMK_ATP"></a> Supporto del servizio Windows Defender Advanced Threat Protection  
  Windows Defender Advanced Threat Protection (ATP) è un nuovo servizio che consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti. Altre informazioni su [Windows Defender ATP](https://blogs.windows.com/windowsexperience/2016/03/01/announcing-windows-defender-advanced-threat-protection). Configuration Manager può essere d'aiuto per caricare e monitorare dispositivi client Windows 10 Anniversary Edition gestiti.  
 
 ### <a name="try-it-now"></a>Prova subito!  
@@ -407,7 +408,7 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 
         -   **Non caricato**: i criteri sono stati applicati ma l'agente non ha segnalato il caricamento dei criteri  
 
-##  <a name="a-namebkmkdhaa-on-premises-device-health-attestation"></a><a name="BKMK_DHA"></a> Attestazione dell'integrità del dispositivo locale  
+##  <a name="BKMK_DHA"></a> Attestazione dell'integrità del dispositivo locale  
  L'attestazione dell'integrità per i dispositivi Windows 10 può ora essere configurata per comunicare usando l'infrastruttura locale. Gli amministratori possono specificare se la creazione di report avviene tramite risorse cloud o locali. Se è selezionata l'opzione locale per la creazione di report di attestazione dell'integrità, è possibile specificare un URL per il servizio. In questo modo i PC client senza accesso a Internet possono abilitare e gestire i dispositivi usando l'attestazione dell'integrità.  
 
 ### <a name="enable-health-attestation-for-on-premises-devices"></a>Abilitare l'attestazione dell'integrità per i dispositivi locali  
@@ -417,10 +418,10 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 
 2.  Specificare l' **URL del servizio di attestazione dell'integrità locale**e quindi fare clic su **OK**.  
 
-##  <a name="a-namebkmkrestartoptionsa-new-restart-options-for-windows-10-clients-after-software-update-installation"></a><a name="BKMK_RestartOptions"></a> Nuove opzioni di riavvio per i client Windows 10 dopo l'installazione degli aggiornamenti software  
+##  <a name="BKMK_RestartOptions"></a> Nuove opzioni di riavvio per i client Windows 10 dopo l'installazione degli aggiornamenti software  
  Quando un aggiornamento software che richiede il riavvio viene distribuito tramite Configuration Manager e viene installato in un computer, viene pianificato un riavvio in sospeso e viene visualizzata una finestra di dialogo di riavvio. Attualmente, per Windows 8 e versioni successive, se si arresta o si riavvia il computer tramite le opzioni di risparmio energia di Windows anziché dalla finestra di dialogo di riavvio, la finestra di dialogo di riavvio viene ancora visualizzata dopo il riavvio del computer e sarà necessario riavviare di nuovo il computer in corrispondenza della scadenza configurata. Nella versione Technical Preview, quando c'è un riavvio in sospeso per un aggiornamento software di Configuration Manager, tra le opzioni di risparmio energia di Windows nei computer Windows 10 sono disponibili **Aggiorna e riavvia**e **Aggiorna e arresta**. Dopo che una di queste opzioni è stata usata e il computer è stato riavviato, la finestra di dialogo di riavvio non verrà visualizzata.  
 
-##  <a name="a-namebkmkimeia-pre-declare-corporate-owned-devices-with-imei-or-ios-serial-number"></a><a name="BKMK_IMEI"></a> Pre-dichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS  
+##  <a name="BKMK_IMEI"></a> Pre-dichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS  
  È ora possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity). È possibile caricare un file con valori separati da virgola (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi.  Possono essere importati i numeri di serie anche per i dispositivi iOS.  Le informazioni importate imposteranno la proprietà dei dispositivi registrati come "Aziendale".  È tuttavia necessaria una licenza di Intune per ogni utente che accede al servizio.  
 
 ### <a name="try-it-out"></a>Prova subito!  
@@ -469,9 +470,4 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
      Fare clic su **Avanti**.  
 
 4.  Esaminare i risultati dell'importazione del file. Per i numeri IMEI o i numeri di serie importati in precedenza, i dettagli saranno aggiornati con nuovi dettagli.  Fare clic su **Avanti** per continuare o **Indietro** per mantenere aggiornati i dettagli e completare la procedura guidata.  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 
