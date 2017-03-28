@@ -16,9 +16,9 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
-ms.openlocfilehash: 4222ca27e19ade46d53f8cd4598643ddd4fd5c8f
-ms.lasthandoff: 01/24/2017
+ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
+ms.openlocfilehash: 2ace86cc842d6a3a5b2114c4e4c33c2d65c2f256
+ms.lasthandoff: 03/21/2017
 
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Registrazione al programma DEP (Device Enrollment Program) per iOS per le distribuzioni ibride con Configuration Manager
@@ -35,7 +35,7 @@ Le aziende possono acquistare dispositivi iOS tramite il programma DEP (Device E
 ###  <a name="enable-dep-enrollment-in-configuration-manager-with-intune"></a>Abilitare la registrazione al programma DEP in Configuration Manager con Intune  
 
 1.  **Iniziare a gestire dispositivi iOS con Configuration Manager**   
-    Prima di registrare un dispositivo nel programma DEP (Device Enrollment Program) di iOS, è necessario completare la procedura di [impostazione della gestione dei dispositivi mobili ibrida](../../mdm/deploy-use/setup-hybrid-mdm.md) e la [procedura per il supporto della registrazione di iOS](../deploy-use/setup-hybrid-mdm.md#ios-and-mac-enrollment-setup).
+    Prima di registrare un dispositivo nel programma DEP (Device Enrollment Program) di iOS, è necessario completare la procedura di [impostazione della gestione dei dispositivi mobili ibrida](../../mdm/deploy-use/setup-hybrid-mdm.md) e la [procedura per il supporto della registrazione di iOS](../deploy-use/enroll-hybrid-ios-mac.md).
 
 2.  **Creare una richiesta di token DEP**   
     Nella console di Configuration Manager, nell'area di lavoro **Amministrazione**, espandere **Configurazione della gerarchia**, espandere **Servizi Cloud** e fare clic su **Sottoscrizioni a Windows Intune**. Fare clic su **Crea richiesta token DEP** nella scheda **Home** , su **Sfoglia** per specificare il percorso di download per la richiesta del token DEP e quindi su **Download**. Salvare il file di richiesta di token DEP (con estensione pem) localmente. Il file con estensione pem viene usato per richiedere un token di trust (con estensione p7m) dal portale del programma di registrazione dispositivi di Apple.  

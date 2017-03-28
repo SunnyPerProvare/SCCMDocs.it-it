@@ -17,9 +17,9 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 32190ec39af2cf1568b3d57c2c2f25d9ff2f9e20
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: 8c7bf901caa49c8585a9ed3913d4a5a2aac57013
+ms.openlocfilehash: 82f7db908f83d69a86c82ed97b845ff84e78f8b3
+ms.lasthandoff: 03/21/2017
 
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Profili VPN nei dispositivi mobili in System Center Configuration Manager
@@ -32,8 +32,8 @@ Usare profili VPN in System Center Configuration Manager per distribuire imposta
 
  Quando si crea un profilo VPN, è possibile includere un'ampia gamma di impostazioni di protezione, inclusi i certificati per la convalida server e l'autenticazione client per i quali è stato eseguito il provisioning usando profili certificato in Configuration Manager. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](../../protect/deploy-use/introduction-to-certificate-profiles.md).  
 
- ## <a name="vpn-profiles-when-using-configuration-manager-together-with-intune"></a>Profili VPN usando Configuration Manager insieme a Intune 
- 
+ ## <a name="vpn-profiles-when-using-configuration-manager-together-with-intune"></a>Profili VPN usando Configuration Manager insieme a Intune
+
  Per distribuire i profili nei dispositivi Android, iOS, Windows Phone e Windows 8.1, tali dispositivi devono essere registrati in Microsoft Intune. Anche i dispositivi su altre piattaforme possono essere registrati in Intune. Per informazioni su come eseguire la registrazione, vedere [Gestire i dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx). Questa tabella indica il tipo di connessione supportato per ogni piattaforma del dispositivo:  
 
  |Tipo di connessione|iOS e Mac OS X|Android|Windows 8.1|Windows RT|Windows RT 8.1|Windows Phone 8.1|Windows 10 Desktop e Mobile|  
@@ -91,7 +91,7 @@ Per informazioni generali sulla creazione dei profili VPN, vedere [Come creare p
 
         -   **Memorizza le credenziali utente a ogni accesso**: le credenziali utente vengono memorizzate in modo che l'utente non debba immetterle ogni volta che si connette.  
 
-        -   **Selezionare un certificato client per l'autenticazione client**: selezionare il [certificato SCEP](introduction-to-certificate-profiles.md) client creato in precedenza che verrà usato per autenticare la connessione VPN.   
+        -   **Selezionare un certificato client per l'autenticazione client**: selezionare il [certificato SCEP](create-pfx-certificate-profiles.md) client creato in precedenza che verrà usato per autenticare la connessione VPN.   
 
             > [!NOTE]  
             >  Per i dispositivi iOS, il profilo SCEP selezionato verrà incorporato nel profilo VPN. Per altre piattaforme, viene aggiunta una regola di applicabilità per garantire che il profilo VPN non venga installato se il certificato non è presente o non è conforme.  

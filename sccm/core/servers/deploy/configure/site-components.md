@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 9e170271e1b690289085e80eeff453219bc24010
-ms.openlocfilehash: 9a61162cb992c1947a4ad52b51710740a1b6c4c6
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
+ms.openlocfilehash: 83550fbf0ef1f9adb0bb2c51a4f3c26a7500d352
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -69,7 +69,7 @@ In ogni sito di System Center Configuration Manager è possibile impostare i com
     -   I nomi di domini completamente qualificati (FQDN) specificati per i punti di gestione in Configuration Manager hanno voci host (record A o AAA) in DNS.  
 
     > [!WARNING]  
-    >  Affinché i client trovino punti di gestione pubblicati in DNS, è necessario assegnare i client a un sito specifico invece di usare l'assegnazione sito automatica. Impostare questi client per usare il codice del sito con il suffisso del dominio del relativo punto di gestione. Per altre informazioni, vedere [Individuazione dei punti di gestione](../../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_LocatingMPs) in [Come assegnare i client a un sito in System Center Configuration Manager](../../../../core/clients/deploy/assign-clients-to-a-site.md).  
+    >  Affinché i client trovino punti di gestione pubblicati in DNS, è necessario assegnare i client a un sito specifico invece di usare l'assegnazione sito automatica. Impostare questi client per usare il codice del sito con il suffisso del dominio del relativo punto di gestione. Per altre informazioni, vedere [Individuazione dei punti di gestione](/sccm/core/clients/deploy/assign-clients-to-a-site#locating-management-points) in [Come assegnare i client a un sito in System Center Configuration Manager](/sccm/core/clients/deploy/assign-clients-to-a-site).  
 
      Se i client di Configuration Manager non possono usare Active Directory Domain Services o DNS per trovare i punti di gestione nella Intranet, useranno [WINS](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#bkmk_wins). Il primo punto di gestione installato per il sito viene automaticamente pubblicato in WINS quando viene impostato per accettare le connessioni client HTTP nell'Intranet.  
 
