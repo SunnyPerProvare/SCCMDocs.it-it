@@ -19,6 +19,7 @@ manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 5e6e8a18a8fc705c993177b3c5b4113a351a45a4
 ms.openlocfilehash: 36f7c37e4da3f2bce64a25d266dae57d9fe98c36
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -28,7 +29,7 @@ ms.openlocfilehash: 36f7c37e4da3f2bce64a25d266dae57d9fe98c36
 
 Per pianificare la strategia di migrazione per System Center Configuration Manager usare i seguenti elenchi di controllo amministratore.
 
-##  <a name="a-namechecklistmigraitonplanninga-administrator-checklist-for-migration-planning"></a><a name="Checklist_Migraiton_Planning"></a> Elenco di controllo amministratore per la pianificazione della migrazione  
+##  <a name="Checklist_Migraiton_Planning"></a> Elenco di controllo amministratore per la pianificazione della migrazione  
  Utilizzare il seguente elenco di controllo per la procedura di pianificazione pre-migrazione.  
 
 -   **Valutare l'ambiente corrente:**  
@@ -37,7 +38,7 @@ Per pianificare la strategia di migrazione per System Center Configuration Manag
 
 -   **Esaminare le funzionalità e le modifiche disponibili con la versione di Configuration Manager in uso e sfruttare tali informazioni per progettare la gerarchia di destinazione:**  
 
-    Per altre informazioni, vedere [Fundamentals of System Center Configuration Manager](../../core/understand/fundamentals.md) e [What's new in System Center Configuration Manager](../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md).  
+    Per altre informazioni, vedere [Nozioni fondamentali su System Center Configuration Manager](../../core/understand/fundamentals.md) e [Novità di System Center Configuration Manager](../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md).  
 
 
 -   **Determinare il modello di protezione amministrativa da usare per l'amministrazione basata sui ruoli:**  
@@ -76,7 +77,7 @@ Per pianificare la strategia di migrazione per System Center Configuration Manag
 
     Decidere quando verrà eseguita la migrazione degli oggetti e dei client. Al termine della migrazione è possibile pianificare la rimozione delle autorizzazioni per i server del sito nella gerarchia di origine.  
 
-##  <a name="a-namechecklisthierarchyformigrationa-administrator-checklist-for-hierarchy-migration"></a><a name="Checklist_Hierarchy_for_migration"></a> Elenco di controllo amministratore per la migrazione di una gerarchia  
+##  <a name="Checklist_Hierarchy_for_migration"></a> Elenco di controllo amministratore per la migrazione di una gerarchia  
 Prima di iniziare la migrazione utilizzare il seguente elenco di controllo per la pianificazione di una gerarchia di destinazione.  
 
 -   **Identificare i computer da usare nella gerarchia di destinazione:**  
@@ -113,7 +114,7 @@ Prima di iniziare la migrazione utilizzare il seguente elenco di controllo per l
     -   Controllare che i client di Configuration Manager installati nella gerarchia di destinazione siano in grado di comunicare correttamente con il relativo sito assegnato.  
 
 
-##  <a name="a-namechecklisitmigrationa-administrator-checklist-for-migration"></a><a name="Checklisit_Migration"></a> Elenco di controllo amministratore per la migrazione  
+##  <a name="Checklisit_Migration"></a> Elenco di controllo amministratore per la migrazione  
 Utilizzare il seguente elenco di controllo per la migrazione dei dati dalla gerarchia di origine alla gerarchia di destinazione.  
 
 -   **Abilitare la migrazione nella gerarchia di destinazione:**  
@@ -151,7 +152,7 @@ Utilizzare il seguente elenco di controllo per la migrazione dei dati dalla gera
 
     Quando si esegue la migrazione di un client nella gerarchia di destinazione, il client viene associato ai relativi dati, precedentemente migrati in tale gerarchia di destinazione.  
 
-    Per ulteriori informazioni, vedere [Planning a client migration strategy in System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md).  
+    Per ulteriori informazioni, vedere [Pianificazione di una strategia di processo di migrazione in System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md).  
 
 -   **Aggiornare o riassegnare i punti di distribuzione condivisi:**  
 
@@ -163,10 +164,5 @@ Utilizzare il seguente elenco di controllo per la migrazione dei dati dalla gera
 
 -   **Completare la migrazione:**  
 
-    Dopo aver eseguito la migrazione dei dati e dei client da tutti i siti presenti nella gerarchia di origine e dopo aver aggiornato i punti di distribuzione applicabili, è possibile terminare la migrazione. Per terminare la migrazione, è necessario interrompere la raccolta dei dati per ogni sito di origine nella gerarchia di origine. È quindi possibile eliminare le informazioni di migrazione non necessarie e rimuovere le autorizzazioni per l'infrastruttura della gerarchia di origine. Per altre informazioni, vedere [Planning to complete migration in System Center Configuration Manager](../../core/migration/planning-to-complete-migration.md).  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
+    Dopo aver eseguito la migrazione dei dati e dei client da tutti i siti presenti nella gerarchia di origine e dopo aver aggiornato i punti di distribuzione applicabili, è possibile terminare la migrazione. Per terminare la migrazione, è necessario interrompere la raccolta dei dati per ogni sito di origine nella gerarchia di origine. È quindi possibile eliminare le informazioni di migrazione non necessarie e rimuovere le autorizzazioni per l'infrastruttura della gerarchia di origine. Per altre informazioni, vedere [Pianificazione del completamento della migrazione in System Center Configuration Manager](../../core/migration/planning-to-complete-migration.md).  
 
