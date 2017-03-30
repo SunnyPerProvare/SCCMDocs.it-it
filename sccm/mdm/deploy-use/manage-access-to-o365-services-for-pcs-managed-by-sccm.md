@@ -1,5 +1,5 @@
 ---
-title: Gestire l&quot;accesso ai servizi di Office&365; per computer gestiti | Microsoft Docs
+title: Gestire l&quot;accesso ai servizi di Office 365 per computer gestiti | Microsoft Docs
 description: Informazioni su come configurare l&quot;accesso condizionale per i PC gestiti da System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
@@ -16,9 +16,9 @@ author: andredm7
 ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: b7c55ce5629565cb1e3aede6680ef1796f56cb20
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: 23b1d24e908d04b64c3bbfa518793a44e696d468
+ms.openlocfilehash: e9028a54e538b4ec987dbaeb5ba1ee22ad091728
+ms.lasthandoff: 03/29/2017
 
 
 ---
@@ -51,14 +51,14 @@ ms.lasthandoff: 03/06/2017
 
 -   Windows 8.1  
 
--   Per Windows 10 non è ancora disponibile il supporto completo.  Se si prova a impostare l'accesso condizionale per i PC Windows 10, potrebbero verificarsi alcuni problemi.  Per altri dettagli vedere [Problemi noti](#bkmk_KnownIssues) .  
+-   Windows 10 
 
 ## <a name="configure-conditional-access"></a>Configurare l'accesso condizionale  
  Per configurare l'accesso condizionale, è prima di tutto necessario creare criteri di conformità e configurare criteri di accesso condizionale. Quando si configurano criteri di accesso condizionale per i PC, è possibile richiedere che i PC siano conformi ai criteri di conformità per accedere ai servizi Exchange Online e SharePoint Online.  
 
 ### <a name="prerequisites"></a>Prerequisiti  
 
--   ADFS Sync e un abbonamento a O365. L'abbonamento a Office&365; serve per la configurazione di Exchange Online e SharePoint Online.  
+-   ADFS Sync e un abbonamento a O365. L'abbonamento a Office 365 serve per la configurazione di Exchange Online e SharePoint Online.  
 
 -   Sottoscrizione di Microsoft Intune. La sottoscrizione di Microsoft Intune deve essere configurata nella console di Configuration Manager. È necessario trovarsi in una distribuzione ibrida.  
 
@@ -135,15 +135,16 @@ ms.lasthandoff: 03/06/2017
 
  Gli utenti finali bloccati a causa della mancanza di conformità visualizzeranno le informazioni sulla conformità in Software Center di System Center Configuration Manager e verrà avviata una nuova valutazione dei criteri dopo la risoluzione dei problemi di conformità.  
 
-##  <a name="bkmk_KnownIssues"></a> Problemi noti  
- Quando si usa questa funzionalità, potrebbero verificarsi i problemi seguenti:  
+<!---
+##  <a name="bkmk_KnownIssues"></a> Known issues  
+ You may see the following issues when using this feature:  
 
--   In questo aggiornamento 1602 non viene applicata la conformità di 5 giorni. Anche se il controllo di conformità nel dispositivo dell'utente finale è stato eseguito da più di 5 giorni, gli utenti possono comunque accedere a Office 365 e SharePoint Online.  
+-   In this 1602 update,  the 5 day compliance is not enforced. Even if compliance check on the end-user's device has happened more than 5 days ago, users still can access Office 365 and SharePoint online.  
 
--   Quando un dispositivo non è conforme ai criteri di conformità, il motivo non viene visualizzato automaticamente. L'utente finale deve passare al nuovo Software Center per individuare il motivo della mancanza di conformità. Il motivo viene visualizzato nella sezione Conformità del dispositivo di Software Center.  
+-   When a device is not compliant with the compliance policy, the reason is not automatically displayed. The end- user must go to the new Software Center to find the reason for non-compliance. The reason is displayed in the Device compliance section of the Software Center.  
 
--   Gli utenti di Windows 10 potrebbero visualizzare più errori di accesso quando cercano di raggiungere le risorse di Office 365 e/o SharePoint Online. Si noti che Windows 10 non offre supporto completo per l'accesso condizionale.  
-
+-   Windows 10 users may see multiple access failures when trying to reach O365 and/or SharePoint online resources. Note that conditional access is not fully supported for Windows 10.  
+--->
 ### <a name="see-also"></a>Vedere anche  
  [Proteggere i dati e l'infrastruttura del sito con System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md)
 

@@ -18,9 +18,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
-ms.openlocfilehash: ef68a9f998ea6ff9628e01f6ac622711de68375d
-ms.lasthandoff: 12/16/2016
+ms.sourcegitcommit: 3b1451edaed69a972551bd060293839aa11ec8b2
+ms.openlocfilehash: be9596537e9c80a6d78aa0685d33382bfd242afe
+ms.lasthandoff: 03/28/2017
 
 
 ---
@@ -31,14 +31,15 @@ ms.lasthandoff: 12/16/2016
 
 La registrazione in blocco in Gestione dispositivi mobili locali in System Center Configuration Manager è una modalità di registrazione dei dispositivi più automatizzata rispetto alle registrazione utente, che richiede agli utenti di immettere le credenziali per registrare il dispositivo.  La registrazione in blocco usa un pacchetto di registrazione per autenticare il dispositivo durante la registrazione. Il pacchetto, ovvero un file con estensione ppkg, contiene un profilo del certificato e, facoltativamente, un profilo Wi-Fi se il dispositivo richiede la connettività intranet per supportare la registrazione.  
 
- > [!NOTE]  
+> [!NOTE]  
 >  Il ramo corrente di Configuration Manager supporta la registrazione in Gestione dispositivi mobili locali per i dispositivi che eseguono i sistemi operativi seguenti:  
 >   
->  -   Windows 10 Enterprise  
+> -  Windows 10 Enterprise  
 > -   Windows 10 Pro  
-> -   Windows 10 Team \(a partire da Configuration Manager versione 1602\)  
+> -   Windows 10 Team  
 > -   Windows 10 Mobile  
 > -   Windows 10 Mobile Enterprise
+> -   Windows 10 IoT Enterprise   
 
 Le attività seguenti illustrano come registrare in blocco computer e dispositivi per Gestione dispositivi mobili locali:  
 

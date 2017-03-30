@@ -16,9 +16,9 @@ author: nathbarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
-ms.openlocfilehash: c27d9129b261b166ad7b21aff468d47eba116d67
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: 3b1451edaed69a972551bd060293839aa11ec8b2
+ms.openlocfilehash: 20be68496099a67ad2d475067f073da2cef16c86
+ms.lasthandoff: 03/28/2017
 
 
 ---
@@ -72,7 +72,7 @@ ms.lasthandoff: 03/21/2017
 
 ## <a name="to-monitor-terms-and-conditions"></a>Per monitorare termini e condizioni  
 
-1.  A partire dalla versione 1602, è possibile monitorare le distribuzioni di termini e condizioni nella console di Configuration Manager. Nel riquadro di spostamento della console di Configuration Manager passare a **Monitoraggio** > **Panoramica** > **Distribuzioni**.  
+1.  È possibile monitorare le distribuzioni di termini e condizioni nella console di Configuration Manager. Nel riquadro di spostamento della console di Configuration Manager passare a **Monitoraggio** > **Panoramica** > **Distribuzioni**.  
 
 2.  Selezionare la distribuzione di termini e condizioni dall'elenco delle distribuzioni.  
 
