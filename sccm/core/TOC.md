@@ -97,6 +97,7 @@
 ###  [Configurare un ambiente lab](get-started/set-up-your-lab.md)
 
 ##   [Technical Preview](get-started/technical-preview.md)
+###  [Funzionalità della versione 1703](get-started/capabilities-in-technical-preview-1703.md)
 ###  [Funzionalità della versione 1702](get-started/capabilities-in-technical-preview-1702.md)
 ###  [Funzionalità della versione 1701](get-started/capabilities-in-technical-preview-1701.md)
 ###  [Funzionalità della versione 1612](get-started/capabilities-in-technical-preview-1612.md)
