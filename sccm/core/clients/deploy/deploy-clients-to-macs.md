@@ -16,9 +16,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: c74b553ab76a2b77b0d893151351132da05a640d
-ms.openlocfilehash: 76ce5f413f406088862fb310bbea24140317ca06
-ms.lasthandoff: 01/03/2017
+ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
+ms.openlocfilehash: 9cab5b91a94e8bf2ad96a8a706f46c58e2a3d712
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -28,7 +28,7 @@ ms.lasthandoff: 01/03/2017
 
 Questo argomento descrive come distribuire e gestire il client di Configuration Manager nei computer Mac. Per informazioni sulle configurazioni necessarie prima di distribuire i client nei computer Mac, vedere [Preparare la distribuzione del software client in computer Mac](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients).
 
-Quando si installa un nuovo client per i computer Mac, può essere necessario installare anche gli aggiornamenti di Configuration Manager per riflettere le nuove informazioni client nella console di Configuration Manager. 
+Quando si installa un nuovo client per i computer Mac, può essere necessario installare anche gli aggiornamenti di Configuration Manager per riflettere le nuove informazioni client nella console di Configuration Manager.
 
 In queste procedure sono disponibili due opzioni per l'installazione dei certificati client. Altre informazioni sui certificati client per computer Mac sono disponibili in [Preparare la distribuzione del software client in computer Mac](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients#certificate-requirements).  
 
@@ -84,7 +84,7 @@ In queste procedure sono disponibili due opzioni per l'installazione dei certifi
 >  Per altre informazioni sulle impostazioni client di Configuration Manager, vedere [How to configure client settings in System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md) (Come configurare le impostazioni client in System Center Configuration Manager).  
 
 ## <a name="download-the-client-source-files-for-macs"></a>Scaricare i file di origine del client per i computer Mac  
-  
+
 1.  Scaricare il pacchetto di file del client Mac OS X, **ConfigmgrMacClient.msi**e salvarlo in un computer con sistema operativo Windows.  
 
      Questo file non è incluso nel supporto di installazione di Configuration Manager. È possibile scaricare questo file dall' [Area download Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184).  
@@ -95,7 +95,7 @@ In queste procedure sono disponibili due opzioni per l'installazione dei certifi
 
 4.  Eseguire il file Macclient.dmg nel computer Mac per estrarre i file in una cartella sul disco locale.  
 
-5.  Nella cartella, assicurarsi che i file Ccmsetup e CMClient.pkg vengano estratti e che venga creata una cartella denominata Strumenti che contenga gli strumenti CMDiagnostics, CMUninstall, CMAppUtil e CMEnroll. 
+5.  Nella cartella, assicurarsi che i file Ccmsetup e CMClient.pkg vengano estratti e che venga creata una cartella denominata Strumenti che contenga gli strumenti CMDiagnostics, CMUninstall, CMAppUtil e CMEnroll.
 
     -  **Ccmsetup**: installa il client di Configuration Manager nei computer Mac.  
 
@@ -108,7 +108,7 @@ In queste procedure sono disponibili due opzioni per l'installazione dei certifi
     -   **CMEnroll**: richiede e installa il certificato client per un computer Mac per poter quindi installare il client di Configuration Manager.   
 
 ## <a name="install-the-client-and-then-enroll-the-client-certificate-on-the-mac"></a>Installare il client e registrare il certificato client nel computer Mac  
-  
+
 È possibile registrare singoli client con la [registrazione guidata computer Mac](#enroll-the-client-with-the-mac-computer-enrollment-wizard).
 
 Per automatizzare le operazioni per registrare molti client, usare lo [strumento CMEnroll](#client-and-certificate-automation-with-cmenroll).   
@@ -196,12 +196,12 @@ Usare questa procedura per automatizzare l'installazione del client e la richies
 > -   Il file della distinta base (BOM) e dell'elenco delle proprietà (.plist) creato dall'installazione client di Configuration Manager.  
 > -   Il contenuto della cartella /Library/Application Support/Microsoft/CCM/Logs.  
 >   
->  Le informazioni raccolte da CmDiagnostics vengono aggiunte a un file zip che viene salvato sul desktop del computer e denominato *<nomehost\>***-***<data e ora\>*.zip.  
+>  Le informazioni raccolte da CmDiagnostics vengono aggiunte a un file con estensione zip che viene salvato sul desktop del computer e denominato cmdiag-*<nomehost\>***-***&gt;data e ora\>*.zip.***
 
 
 ##  <a name="use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager"></a>Usare una richiesta di certificato e un metodo di installazione indipendente da Configuration Manager  
 
-Eseguire prima di tutto le attività specifiche seguenti descritte in [Preparare la distribuzione del software client in computer Mac](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients): 
+Eseguire prima di tutto le attività specifiche seguenti descritte in [Preparare la distribuzione del software client in computer Mac](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients):
 
 1. [Distribuire un certificato server Web nei server del sistema del sito](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients#deploy-a-web-server-certificate-to-site-system-servers)
 

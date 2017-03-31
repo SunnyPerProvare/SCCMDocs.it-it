@@ -16,9 +16,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bdd7961d9126dc6f3c1ae1fec1842c862e8a7c6d
-ms.openlocfilehash: 12633a7b9f799ffc74e0ee657e091595ed7eaf67
-ms.lasthandoff: 02/22/2017
+ms.sourcegitcommit: 507bad02c6e028f09a8b0c8a566ac55f7c3942a5
+ms.openlocfilehash: 4afba7b7702aa12b1cfcaf454e23b0dfb3274e7f
+ms.lasthandoff: 03/22/2017
 
 ---
 # <a name="supported-operating-systems-for-clients-and-devices-for-system-center-configuration-manager"></a>Sistemi operativi supportati per client e dispositivi per System Center Configuration Manager
@@ -309,28 +309,30 @@ I file **WBEMDISP.DLL** e **WBEMDISP.TLB** devono essere presenti e registrati n
 -   [Scegliere come gestire i dispositivi](https://docs.microsoft.com/intune/get-started/choose-how-to-manage-devices)  
 -   [Funzionalità di gestione di PC Windows quando si usa il client software di Intune](https://docs.microsoft.com/intune/get-started/windows-pc-management-capabilities-in-microsoft-intune)  
 
-##  <a name="a-namebkmkonpremosa-on-premises-mobile-device-management"></a><a name="bkmk_OnpremOS"></a> Gestione dei dispositivi mobili locale  
+##  <a name="bkmk_OnpremOS"></a> Gestione dei dispositivi mobili locale  
  Configuration Manager include funzionalità predefinite per la gestione dei dispositivi locali senza installare software client.  Per altre informazioni, vedere [Gestire i dispositivi mobili con l'infrastruttura locale in System Center Configuration Manager](../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md).  
 
  **Requisiti e limitazioni:**  
 
--   Nel sito di livello superiore della gerarchia è necessario configurare il **punto di connessione del servizio**  
+-   Nel sito di livello superiore della gerarchia è necessario configurare il **punto di connessione del servizio**.  
 
 **Sistemi operativi supportati:**  
 
--   **Windows 10 Pro** (x86, x64)  
+- **Windows 10 Pro** (x86, x64)  
 
--   **Windows 10 Pro Enterprise** (x86, x64)  
+- **Windows 10 Pro Enterprise** (x86, x64)  
 
--   **Windows 10 IoT Enterprise** (x86, x64)
+- **Windows 10 IoT Enterprise** (x86, x64)
 
--   **Windows 10 Mobile**  
+- **Windows 10 Mobile**  
 
--   **Windows 10 Mobile Enterprise**  
+- **Windows 10 Mobile Enterprise**  
 
--  **Windows 10 IoT Mobile Enterprise**
+- **Windows 10 IoT Mobile Enterprise**
 
-##  <a name="a-namebkmkexsrvconosa-exchange-server-connector"></a><a name="bkmk_ExSrvConOS"></a> Connettore Exchange Server  
+- **Windows 10 Team per Surface Hub**
+
+##  <a name="bkmk_ExSrvConOS"></a> Connettore Exchange Server  
 Configuration Manager supporta la gestione limitata dei dispositivi che si connettono a Exchange Server, senza installare il client di Configuration Manager. Per altre informazioni, vedere [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
 
  **Requisiti e limitazioni:**  

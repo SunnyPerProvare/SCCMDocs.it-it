@@ -2,7 +2,7 @@
 title: Eseguire l&quot;aggiornamento a System Center Configuration Manager | Microsoft Docs
 description: Passaggi per eseguire l&quot;aggiornamento sul posto da un sito e da una gerarchia che esegue System Center 2012 Configuration Manager.
 ms.custom: na
-ms.date: 2/23/2017
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8f4ec982a54cf3cefef310268a54850e70e2e63a
-ms.openlocfilehash: 49e3a9d6f4b8e1afbb76fcba33a7fb58e5a6b13f
-ms.lasthandoff: 03/13/2017
+ms.sourcegitcommit: 6424fb07802b62820b4dc78a58ab30d3b956abef
+ms.openlocfilehash: ca07b46db0967ca03cc5e858b835d2c2108f1210
+ms.lasthandoff: 03/17/2017
 
 
 ---
@@ -34,6 +34,7 @@ ms.lasthandoff: 03/13/2017
  > Quando si gestisce l'infrastruttura del sito e della gerarchia di System Center Configuration Manager, i termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti distinti. Per informazioni su come viene usato ogni termine, vedere [Informazioni su upgrade, aggiornamento e installazione](/sccm/core/understand/upgrade-update-install).
 
 ##  <a name="bkmk_path"></a> Percorsi di aggiornamento sul posto  
+
 **Aggiornare alla versione 1606**  
 Il 15 dicembre 2016 è stato rilasciato nuovamente il supporto di base della versione 1606, per aggiungere il supporto di scenari di aggiornamento supplementari. La nuova versione supporta l'aggiornamento dei seguenti prodotti a una versione con licenza completa di System Center Configuration Manager versione 1606:  
 -   L'installazione di una valutazione di System Center Configuration Manager versione 1606
@@ -78,8 +79,8 @@ Quando è presente il supporto di base della versione 1511 è possibile aggiorna
 
 Esaminare i sistemi operativi server usati per ospitare i ruoli del sistema del sito:  
 
--   Alcuni sistemi operativi meno recenti supportati da System Center 2012 Configuration Manager non sono supportati da System Center Configuration Manager e i ruoli del sistema del sito in questi sistemi operativi devono essere rilocati o rimossi prima dell'aggiornamento  
--   Il controllo dei prerequisiti per Configuration Manager non verifica i prerequisiti per i ruoli del sistema del sito sul server del sito o in computer remoti  
+-   Alcuni sistemi operativi meno recenti supportati da System Center 2012 Configuration Manager non sono supportati da System Center Configuration Manager e i ruoli del sistema del sito in questi sistemi operativi devono essere rilocati o rimossi prima dell'aggiornamento. Consultare la documentazione [Sistemi operativi supportati per i server del sistema del sito](../../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md).   
+-   Il controllo dei prerequisiti per Configuration Manager non verifica i prerequisiti per i ruoli del sistema del sito sul server del sito o in sistemi del sito remoti  
 
 Esaminare i prerequisiti richiesti in ciascun computer che ospita un ruolo del sistema del sito:  
 
@@ -132,7 +133,7 @@ Prima di disattivare un'attività, registrare la pianificazione dell'attività i
 Per altre informazioni sulle attività di manutenzione del sito, vedere:  
 
 -   System Center 2012 Configuration Manager: [Pianificazione di attività di manutenzione per Configuration Manager](https://technet.microsoft.com/library/gg712686.aspx)  
--   System Center&2012; Configuration Manager: [Reference for maintenance tasks for System Center Configuration Manager](../../../../core/servers/manage/reference-for-maintenance-tasks.md) (Riferimento per attività di manutenzione per System Center Configuration Manager)  
+-   System Center 2012 Configuration Manager: [Reference for maintenance tasks for System Center Configuration Manager](../../../../core/servers/manage/reference-for-maintenance-tasks.md) (Riferimento per attività di manutenzione per System Center Configuration Manager)  
 
 **Eseguire il controllo dei prerequisiti di installazione**:  
 Prima di aggiornare un sito, è possibile eseguire il **controllo dei prerequisiti** in modo indipendente dal programma di installazione per convalidare che il sito soddisfa i prerequisiti. In seguito, quando si aggiorna il sito, viene nuovamente eseguito il controllo dei prerequisiti.  

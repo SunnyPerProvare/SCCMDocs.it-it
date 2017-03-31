@@ -17,9 +17,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 7d852843d0d3fe7c9ab0947c4b396cee0a92c754
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: 507bad02c6e028f09a8b0c8a566ac55f7c3942a5
+ms.openlocfilehash: 8c7438c2cc0bc66654eb3e74de10553df53181d9
+ms.lasthandoff: 03/22/2017
 
 
 ---
@@ -29,14 +29,15 @@ ms.lasthandoff: 03/06/2017
 
 Con Gestione dei dispositivi mobili locale di System Center Configuration Manager gli utenti possono registrare i dispositivi se hanno ottenuto l'autorizzazione di registrazione (con le impostazioni client aggiornate) e se i dispositivi hanno il certificato radice necessario per stabilire comunicazioni attendibili con i server che ospitano i ruoli del sistema del sito richiesti. Per altre informazioni su come configurare la registrazione, vedere [Impostare la registrazione dei dispositivi per la Gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md).  
 
- > [!NOTE]  
+> [!NOTE]  
 >  Current Branch di Configuration Manager supporta la registrazione in Gestione dei dispositivi mobili locale per i dispositivi che eseguono i sistemi operativi seguenti:  
 >   
->  -  Windows 10 Enterprise  
+> -  Windows 10 Enterprise  
 > -   Windows 10 Pro  
 > -   Windows 10 Team \(a partire da Configuration Manager versione 1602\)  
 > -   Windows 10 Mobile  
 > -   Windows 10 Mobile Enterprise
+> -   Windows 10 IoT Enterprise   
 
 Le attività seguenti illustrano come registrare e verificare la registrazione di computer e dispositivi per la gestione dei dispositivi mobili locale:  
 

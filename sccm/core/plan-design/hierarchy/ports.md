@@ -2,7 +2,7 @@
 title: Porte usate da Configuration Manager | Microsoft Docs
 description: Informazioni sulle porte necessarie e personalizzabili usate da System Center Configuration Manager per le connessioni.
 ms.custom: na
-ms.date: 3/1/2017
+ms.date: 3/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,9 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6bfc5c0e3c0bdc8408ad2dd2a7807ef3e018ef60
-ms.openlocfilehash: 8cd1c5363ba05dbb35ca5a0daf32979dd8b51b19
-ms.lasthandoff: 03/01/2017
+ms.sourcegitcommit: 4c2906c2a963e0ae92e3c0d223afb7a47377526a
+ms.openlocfilehash: ffc2adb34427aa62f4a377e887c2ff54d47abeff
+ms.lasthandoff: 03/20/2017
 
 
 ---
@@ -603,6 +603,14 @@ Per altre informazioni vedere i [requisiti di accesso Internet](/sccm/core/serve
     -   Servizio SQL Server che usa per impostazione predefinita la porta TCP 1433.  
 
 -   La comunicazione all'interno del sito tra il motore di database di SQL Server e i diversi ruoli di sistema del sito di Configuration Manager usa la porta TCP 1433 per impostazione predefinita.  
+
+- Configuration Manager usa le stesse porte e gli stessi protocolli per comunicare con ciascuna replica del gruppo di disponibilità SQL che ospita il database del sito come se la replica fosse un'istanza autonoma di SQL Server.
+
+Quando si usa Azure e il database del sito si trova dietro un servizio di bilanciamento del carico interno o esterno, configurare le eccezioni firewall seguenti su ciascuna replica e aggiungere regole di bilanciamento del carico per le porte seguenti:
+ - SQL su TCP: TCP 1433
+ - SQL Server Service Broker: TCP 4022
+ - Server Message Block (SMB): TCP 445
+ - Agente mapping endpoint RPC: TCP 135
 
 > [!WARNING]  
 >  Configuration Manager non supporta le porte dinamiche. Poiché per impostazione predefinita le istanze denominate di SQL Server usano le porte dinamiche per le connessioni al motore di database, quando si usa un'istanza denominata è necessario configurare manualmente la porta statica da usare per la comunicazione tra siti.  

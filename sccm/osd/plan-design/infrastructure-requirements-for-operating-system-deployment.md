@@ -16,8 +16,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
-ms.openlocfilehash: 77ac69cecab7aa460001a8d2800e61f20a8565ed
+ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
+ms.openlocfilehash: 562e81df12e46a2332aa5e4de8b7c9e5819bde80
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -27,7 +28,7 @@ ms.openlocfilehash: 77ac69cecab7aa460001a8d2800e61f20a8565ed
 
 La distribuzione del sistema operativo in System Center Configuration Manager 2012 ha dipendenze esterne e dipendenze all'interno del prodotto. Usare le sezioni seguenti per prepararsi per la distribuzione del sistema operativo.  
 
-##  <a name="a-namebkmkexternaldependenciesa-dependencies-external-to-configuration-manager"></a><a name="BKMK_ExternalDependencies"></a> Dipendenze esterne a Configuration Manager  
+##  <a name="BKMK_ExternalDependencies"></a> Dipendenze esterne a Configuration Manager  
  Di seguito sono riportate informazioni su strumenti esterni, kit di installazione e sistemi operativi richiesti per distribuire sistemi operativi in Configuration Manager.  
 
 ### <a name="windows-adk-for-windows-10"></a>Windows ADK per Windows 10  
@@ -104,7 +105,7 @@ La distribuzione del sistema operativo in System Center Configuration Manager 20
 ### <a name="windows-device-drivers"></a>Driver di dispositivo Windows  
  È possibile utilizzare i driver di dispositivo Windows durante l'installazione del sistema operativo nel computer di destinazione e durante l'esecuzione di Windows PE tramite un'immagine di avvio. Per altre informazioni sui driver di dispositivo, vedere [Gestire i driver](../get-started/manage-drivers.md).  
 
-##  <a name="a-namebkmkinternaldependenciesa-configuration-manager-dependencies"></a><a name="BKMK_InternalDependencies"></a> Dipendenze di Configuration Manager  
+##  <a name="BKMK_InternalDependencies"></a> Dipendenze di Configuration Manager  
  Di seguito sono riportate informazioni sui prerequisiti di distribuzione del sistema operativo di Configuration Manager.  
 
 ### <a name="operating-system-image"></a>Immagine del sistema operativo  
@@ -124,10 +125,10 @@ La distribuzione del sistema operativo in System Center Configuration Manager 20
  Per altre informazioni su come installare i punti di distribuzione e gestire il contenuto, vedere [Gestire il contenuto e l'infrastruttura del contenuto](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
 ### <a name="pxe-enabled-distribution-point"></a>Punto di distribuzione che supporta PXE  
- Per distribuire le distribuzioni avviate da PXE, è necessario configurare un punto di distribuzione in modo che accetti le richieste PXE dai client. Per altre informazioni su come configurare il punto di distribuzione, vedere [Configurazioni dei punti di distribuzione](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#a-namebkmkconfigsa-distribution-point-configurations) e individuare la categoria di configurazione PXE nella tabella.  
+ Per distribuire le distribuzioni avviate da PXE, è necessario configurare un punto di distribuzione in modo che accetti le richieste PXE dai client. Per altre informazioni, vedere [Configurare un punto di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#pxe).  
 
 ### <a name="multicast-enabled-distribution-point"></a>Punto di distribuzione abilitato per multicast  
- Per ottimizzare le distribuzioni del sistema operativo tramite multicast, è necessario configurare un punto di distribuzione per il supporto di multicast. Per altre informazioni su come configurare il punto di distribuzione, vedere [Configurazioni dei punti di distribuzione](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#a-namebkmkconfigsa-distribution-point-configurations) e individuare la categoria di configurazione Multicast nella tabella.  
+ Per ottimizzare le distribuzioni del sistema operativo tramite multicast, è necessario configurare un punto di distribuzione per il supporto di multicast. Per altre informazioni, vedere [Configurare un punto di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#multicast).   
 
 ### <a name="state-migration-point"></a>Punto di migrazione stato  
  Quando vengono acquisiti e ripristinati i dati sullo stato dell'utente per distribuzioni side-by-side e di aggiornamento, è necessario configurare un punto di migrazione stato per archiviare i dati sullo stato dell'utente in un altro computer.  
@@ -162,7 +163,7 @@ La distribuzione del sistema operativo in System Center Configuration Manager 20
 ### <a name="security-scopes-for-operating-system-deployments"></a>Ambiti di protezione per le distribuzioni del sistema operativo  
  Utilizzare gli ambiti di protezione per consentire agli utenti amministratori di accedere agli oggetti a protezione diretta utilizzati nelle distribuzioni del sistema operativo, quali immagini di avvio e del sistema operativo, pacchetti driver e pacchetti sequenza attività. Per altre informazioni, vedere [Ambiti di protezione](../../core/understand/fundamentals-of-role-based-administration.md#bkmk_PlanScope).  
 
-##  <a name="a-namebkmkwdsa-windows-deployment-services"></a><a name="BKMK_WDS"></a> Servizi di distribuzione Windows  
+##  <a name="BKMK_WDS"></a> Servizi di distribuzione Windows  
  È necessario installare Servizi di distribuzione Windows (WDS) sullo stesso server dei punti di distribuzione configurati per il supporto PXE o di multicast. Servizi di distribuzione Windows è incluso nel sistema operativo del server. Per le distribuzioni PXE, WDS è il servizio che esegue l'avvio PXE. Quando il punto di distribuzione viene installato e attivato per PXE, Configuration Manager installa un provider in WDS che usa le funzioni di avvio PXE di WDS.  
 
 > [!NOTE]  
@@ -176,7 +177,7 @@ La distribuzione del sistema operativo in System Center Configuration Manager 20
 
 -   Se il provider è installato in un server remoto, è necessario installare WDS nel server del sito e nel provider remoto.  
 
-###  <a name="a-namebkmkwdsanddhcpa-considerations-when-you-have-wds-and-dhcp-on-the-same-server"></a><a name="BKMK_WDSandDHCP"></a> Considerazioni in presenza di Servizi di distribuzione Windows e DHCP nello stesso server  
+###  <a name="BKMK_WDSandDHCP"></a> Considerazioni in presenza di Servizi di distribuzione Windows e DHCP nello stesso server  
  Se si prevede di co-ospitare il punto di distribuzione in un server DHCP, prendere in considerazione i seguenti aspetti di configurazione.  
 
 -   È necessario disporre di un server DHCP funzionante con un ambito attivo. I Servizi di distribuzione Windows utilizzano PXE, che richiede un server DHCP.  
@@ -208,10 +209,10 @@ La distribuzione del sistema operativo in System Center Configuration Manager 20
     > [!NOTE]  
     >  Inoltre, se è necessaria l'autorizzazione DHCP sul server, occorre che la porta del client DHCP 68 sia aperta sul server.  
 
-##  <a name="a-namebkmksupportedosa-supported-operating-systems"></a><a name="BKMK_SupportedOS"></a> Sistemi operativi supportati  
+##  <a name="BKMK_SupportedOS"></a> Sistemi operativi supportati  
  Tutti i sistemi operativi Windows indicati come sistemi operativi client supportati in [Sistemi operativi supportati per client e dispositivi](../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md) sono supportati per le distribuzioni del sistema operativo.  
 
-##  <a name="a-namebkmksupporteddiskconfiga-supported-disk-configurations"></a><a name="BKMK_SupportedDiskConfig"></a> Configurazioni del disco supportate  
+##  <a name="BKMK_SupportedDiskConfig"></a> Configurazioni del disco supportate  
  Le combinazioni di configurazioni del disco rigido nei computer di riferimento e di destinazione supportate per la distribuzione del sistema operativo di Configuration Manager sono visualizzate nella tabella seguente.  
 
 |Configurazione del disco rigido del computer di riferimento|Configurazione del disco rigido del computer di destinazione|  
@@ -237,9 +238,4 @@ La distribuzione del sistema operativo in System Center Configuration Manager 20
 
 ## <a name="next-steps"></a>Passaggi successivi
 [Prepare for operating system deployment](../get-started/prepare-for-operating-system-deployment.md) (Preparare la distribuzione del sistema operativo)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

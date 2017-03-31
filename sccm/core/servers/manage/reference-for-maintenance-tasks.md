@@ -17,9 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dcbcd57b95f304f007e92ebe2b9aeefb4b579662
-ms.openlocfilehash: 92d3c215569916a5557309d7f488aa88f387da92
-ms.lasthandoff: 03/09/2017
+ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
+ms.openlocfilehash: c3ca3b895d54b6dc886068b92b39d0d95c466de2
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -207,6 +207,11 @@ Questa attività si applica ai dispositivi registrati da Microsoft Intune (modal
 -   **Sito primario**: abilitato    
 -   Sito secondario: non disponibile  
 
+**Elimina i record dei pacchetti di registrazione in blocco di MDM scaduti**: usare questa attività per eliminare i certificati di registrazione in blocco precedenti e i profili corrispondenti dopo la scadenza del certificato di registrazione. Per altre informazioni, vedere [Creare i profili certificato](/sccm/protect/deploy-use/create-certificate-profiles).
+-   **Sito di amministrazione centrale**: abilitato
+-   **Sito primario**: abilitato
+-   Sito secondario: non disponibile
+
 **Elimina dati di individuazione client non attivi**: usare questa attività per eliminare dal database i dati di individuazione per i client non attivi. I client sono contrassegnati come non attivi in base a configurazioni relative allo stato client oppure quando riportano il flag obsoleto.
 
 Questa attività funziona solo nelle risorse che sono client di Configuration Manager. È diversa dall'attività **Elimina dati di individuazione obsoleti** che elimina qualsiasi record dei dati di individuazione obsoleti. Quando questa attività viene eseguita su un sito, rimuove i dati dal database da tutti i siti di una gerarchia. Per ulteriori informazioni, vedere [How to configure client status in System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).  
@@ -242,7 +247,7 @@ Questa attività funziona solo nelle risorse che sono client di Configuration Ma
 **Elimina i record sullo stato di distribuzione del client orfano**: usare questa attività per ripulire periodicamente la tabella contenente le informazioni sullo stato di distribuzione dei client. Questa attività elimina i record associati a dispositivi obsoleti o non autorizzati.  
 -   **Sito di amministrazione centrale**: abilitato    
 -   **Sito primario**: abilitato    
--   Sito secondario: non disponibile 
+-   Sito secondario: non disponibile
 
 **Elimina revisioni applicazioni non utilizzate**: usare questa attività per eliminare le revisioni applicazione a cui non viene più fatto riferimento. Per altre informazioni, vedere [Come rivedere e sostituire le applicazioni in System Center Configuration Manager](../../../apps/deploy-use/revise-and-supersede-applications.md).  
 

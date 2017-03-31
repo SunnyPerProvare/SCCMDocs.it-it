@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
-ms.openlocfilehash: 54fc16c104ab25f3650ad1c38a2044abaee96a31
+ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
+ms.openlocfilehash: 4717e0f8eef01501fb5b5790e855c476c1ca4590
+ms.lasthandoff: 03/21/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1607-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1607 per System Center Configuration Manager
@@ -29,7 +30,7 @@ Questo articolo presenta le funzionalità disponibili in Technical Preview per S
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
-## <a name="a-namedmpeditionaimprovements-to-the-windows-10-edition-upgrade-policy"></a><a name="dmp_edition"></a>Miglioramenti ai criteri di aggiornamento edizione di Windows 10
+## <a name="dmp_edition"></a>Miglioramenti ai criteri di aggiornamento edizione di Windows 10
 
 In questa versione sono stati apportati ai criteri i miglioramenti seguenti:
 
@@ -59,7 +60,7 @@ In Software Center la personalizzazione viene applicata secondo le regole seguen
 
 2. Se il ruolo del server del sito punto per siti Web del Catalogo applicazioni è installato, Software Center visualizzerà il nome dell'organizzazione e il colore specificati nelle proprietà del ruolo del server del sito punto per siti Web del Catalogo applicazioni. Per altre informazioni, vedere [Configuration options for Application Catalog website point](../../core/servers/deploy/configure/configuration-options-for-site-system-roles.md#BKMK_ApplicationCatalog_Website) (Opzioni di configurazione per il punto per siti Web del Catalogo applicazioni).
 
-3. Se una sottoscrizione di Microsoft Intune è configurata e connessa all'ambiente Configuration Manager, Software Center visualizzerà il nome dell'organizzazione, il colore e il logo aziendale specificati nelle proprietà della sottoscrizione di Intune. Per ulteriori informazioni, vedere [Configuring the Microsoft Intune subscription](../../mdm/deploy-use/setup-hybrid-mdm.md#step-3-configure-intune-subscription).
+3. Se una sottoscrizione di Microsoft Intune è configurata e connessa all'ambiente Configuration Manager, Software Center visualizzerà il nome dell'organizzazione, il colore e il logo aziendale specificati nelle proprietà della sottoscrizione di Intune. Per altre informazioni, vedere [Configurare la sottoscrizione di Microsoft Intune](/mdm/deploy-use/configure-intune-subscription).
 
 ## <a name="use-the-same-network-adapter-for-multiple-pxe-initiated-deployments"></a>Usare la stessa scheda di rete per più distribuzioni avviate da PXE
 In Technical Preview versione 1607, se si usa una scheda ethernet per creare un'immagine di più dispositivi (ad esempio una scheda ethernet USB usata su più dispositivi), è possibile abilitare una nuova impostazione che consente di immettere gli identificatori hardware per le schede ethernet. Configuration Manager ignora gli identificatori hardware nell'elenco quando si esegue un'installazione di PXE e per la registrazione del client.
@@ -76,9 +77,4 @@ Per altre informazioni su questo problema, vedere il [blog del team di supporto 
 2. Nella scheda **Home** , del gruppo **Siti** , fare clic su **Impostazioni gerarchia**.
 3. Andare alla scheda **Approvazione client e record in conflitto**.
 4. Per aggiungere nuovi identificatori hardware, fare clic su **Aggiungi** nella sezione **Identificatori hardware duplicati**.
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

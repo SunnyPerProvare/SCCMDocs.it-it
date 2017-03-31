@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: a8cb3c9850b183eec156c37a181c04088b71805e
-ms.openlocfilehash: 40837306816639ff8cea8930fec75b05edc5164a
+ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
+ms.openlocfilehash: ddf2ad1cae51c1e36df5a6d86822e2b9abe604e2
+ms.lasthandoff: 03/21/2017
 
 
 ---
@@ -65,7 +66,7 @@ Quando si progetta e implementa la protezione amministrativa per Configuration M
 > [!IMPORTANT]  
 >  I ritardi di replica tra siti possono impedire a un sito di ricevere modifiche per l'amministrazione basata su ruoli. Per informazioni sul monitoraggio della replica del database tra siti, vedere l'argomento [Trasferimenti di dati tra siti in System Center Configuration Manager](../../core/servers/manage/data-transfers-between-sites.md).  
 
-##  <a name="a-namebkmkplanrolesa-security-roles"></a><a name="bkmk_Planroles"></a> ruoli di sicurezza  
+##  <a name="bkmk_Planroles"></a> ruoli di sicurezza  
  Usare i ruoli di sicurezza per concedere le autorizzazioni di sicurezza a utenti amministratori. I ruoli di sicurezza sono gruppi di autorizzazioni di sicurezza assegnate agli utenti amministratori in modo che possano eseguire le relative attività amministrative. Le autorizzazioni di sicurezza definiscono le azioni amministrative che un utente amministratore può eseguire e le autorizzazioni concesse per determinati tipi di oggetto. Come procedura consigliata di sicurezza, assegnare i ruoli di sicurezza che forniscono i privilegi minimi.  
 
  In Configuration Manager sono incorporati diversi ruoli di sicurezza per supportare i raggruppamenti tipici di attività amministrative. È possibile creare ruoli di sicurezza personalizzati per soddisfare particolari esigenze aziendali. Esempi di ruoli di sicurezza incorporati:  
@@ -79,7 +80,7 @@ Quando si progetta e implementa la protezione amministrativa per Configuration M
 > [!TIP]  
 >  È possibile visualizzare l'elenco di ruoli di sicurezza incorporati e i ruoli di sicurezza personalizzati creati, incluse le descrizioni, nella console di Configuration Manager. Per visualizzare i ruoli, nell'area di lavoro **Amministrazione** espandere **Sicurezza** e quindi selezionare **Ruoli di protezione**.  
 
- Ogni ruolo di sicurezza dispone di autorizzazioni specifiche per diversi tipi di oggetto. Ad esempio, il ruolo di sicurezza *Application MMM* (MMM applicazione) ha le autorizzazioni seguenti per le applicazioni: Approva, Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Distribuisci e Imposta ambito di protezione.
+ Ogni ruolo di sicurezza dispone di autorizzazioni specifiche per diversi tipi di oggetto. Ad esempio, il ruolo di sicurezza *Autore applicazioni* ha le autorizzazioni seguenti per le applicazioni: Approva, Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Esegui report e Imposta ambito di protezione.
 
  Non è possibile modificare le autorizzazioni per i ruoli di sicurezza incorporati, ma è possibile copiare il ruolo, apportare modifiche e quindi salvare tali modifiche come un nuovo ruolo di sicurezza personalizzato. È anche possibile importare ruoli di sicurezza esportati da un'altra gerarchia, ad esempio da una rete di test. Esaminare i ruoli di sicurezza e le relative autorizzazioni per stabilire se usare i ruoli di sicurezza predefiniti o se è necessario crearne di personalizzati.  
 
@@ -95,7 +96,7 @@ Quando si progetta e implementa la protezione amministrativa per Configuration M
 
 Per informazioni su come creare e configurare i ruoli di sicurezza per l'amministrazione basata su ruoli, vedere le sezioni relative alla [creazione di ruoli di sicurezza personalizzati](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole) e alla [configurazione dei ruoli di sicurezza](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecRole) nell'argomento [Configure role-based administration for System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md) (Configurare l'amministrazione basata su ruoli per System Center Configuration Manager).  
 
-##  <a name="a-namebkmkplancola-collections"></a><a name="bkmk_planCol"></a> raccolte  
+##  <a name="bkmk_planCol"></a> raccolte  
  Le raccolte specificano utente e risorse del computer che un utente amministratore può visualizzare o gestire. Ad esempio, per poter distribuire applicazioni o eseguire il controllo remoto, agli utenti amministratori deve essere assegnato un ruolo di sicurezza che consente l'accesso a una raccolta che include queste risorse. È possibile selezionare raccolte di utenti o dispositivi.  
 
  Per altre informazioni sulle raccolte, vedere [Introduzione alle raccolte in System Center Configuration Manager](../../core/clients/manage/collections/introduction-to-collections.md).  
@@ -112,7 +113,7 @@ Per informazioni su come creare e configurare i ruoli di sicurezza per l'amminis
 
 Per informazioni su come configurare raccolte per l'amministrazione basata su ruoli, vedere la sezione relativa alla [configurazione di raccolte per la gestione della sicurezza](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigColl) nell'argomento [Configure role-based administration for System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md) (Configurare l'amministrazione basata su ruoli per System Center Configuration Manager).  
 
-##  <a name="a-namebkmkplanscopea-security-scopes"></a><a name="bkmk_PlanScope"></a> ambiti di protezione  
+##  <a name="bkmk_PlanScope"></a> ambiti di protezione  
  Usare gli ambiti di protezione per fornire agli utenti amministratori l'accesso a oggetti a protezione diretta. Gli ambiti di protezione sono una raccolta denominata di oggetti a protezione diretta che vengono assegnati agli utenti amministratori come gruppo. Tutti gli oggetti a protezione diretta devono essere assegnati a uno o più ambiti di protezione. Configuration Manager ha due ambiti di protezione predefiniti:  
 
 -   L'ambito di protezione *Tutto* predefinito consente l'accesso a tutti gli ambiti. Non è possibile assegnare gli oggetti a questo ambito di protezione.  
@@ -212,9 +213,4 @@ Creare ambiti di protezione quando è necessario limitare l'accesso per separare
 -   Diversi utenti amministratori richiedono un accesso diverso ad alcune istanze di un tipo di oggetto. Ad esempio, un gruppo di utenti amministratori richiede l'autorizzazione Lettura per gruppi di aggiornamenti software specifici e un altro gruppo di utenti amministratori richiede le autorizzazioni Modifica e Elimina per altri gruppi di aggiornamento software. Creare ambiti di protezione diversi per questi gruppi di aggiornamento software.  
 
 Per informazioni su come configurare gli ambiti di protezione per l'amministrazione basata su ruoli, vedere la sezione relativa alla [configurazione degli ambiti di protezione per un oggetto](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecScope) nell'argomento [Configure role-based administration for System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md) (Configurare l'amministrazione basata su ruoli per System Center Configuration Manager).  
-
-
-
-<!--HONumber=Jan17_HO5-->
-
 

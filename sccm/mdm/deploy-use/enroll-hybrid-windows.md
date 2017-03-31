@@ -2,7 +2,7 @@
 title: Configurare la gestione di dispositivi Windows ibrida con System Center Configuration Manager e Microsoft Intune | Microsoft Docs
 description: Impostare la gestione dei dispositivi Windows con System Center Configuration Manager e Microsoft Intune.
 ms.custom: na
-ms.date: 03/09/2017
+ms.date: 03/17/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: nathbarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: a8218e23743dafaf8ff1166142cf2dcca1212133
-ms.openlocfilehash: 996d01d3c5d5be4544246a5f321f67b60a8f5508
-ms.lasthandoff: 03/14/2017
+ms.sourcegitcommit: 6424fb07802b62820b4dc78a58ab30d3b956abef
+ms.openlocfilehash: 4189fe34efc2ae134150a89791dc10bbab1b9d02
+ms.lasthandoff: 03/17/2017
 
 
 ---
@@ -80,7 +80,7 @@ Per abilitare la gestione dei dispositivi Windows per PC o dispositivi mobili, u
 4. Fare clic su **OK** per chiudere la finestra di dialogo.  Per semplificare il processo di registrazione tramite il portale aziendale, è necessario creare un alias DNS per la registrazione del dispositivo. È quindi possibile indicare agli utenti come registrare i propri dispositivi.
 
 ### <a name="create-dns-alias-for-device-enrollment"></a>Creare l'alias DNS per la registrazione del dispositivo  
-Un alias DNS (tipo di record CNAME) semplifica agli utenti la registrazione dei propri dispositivi tramite la connessione al servizio, senza richiedere all'utente di immettere un indirizzo del server. Per creare un alias DNS (tipo di record CNAME), è necessario configurare un record CNAME nei record DNS della società che reindirizzi le richieste inviate a un URL nel dominio della società ai server del servizio cloud di Microsoft.  Ad esempio, se il sito Web della società è contoso.com, si creerà un record CNAME in DNS che reindirizzi EnterpriseEnrollment.contoso.com a EnterpriseEnrollment-s.manage.microsoft.com.  
+Un alias DNS (tipo di record CNAME) semplifica agli utenti la registrazione dei propri dispositivi tramite la connessione al servizio, senza richiedere all'utente di immettere un indirizzo del server. Per creare un alias DNS (tipo di record CNAME), è necessario configurare un record CNAME nei record DNS della società che reindirizzi le richieste inviate a un URL nel dominio della società ai server del servizio cloud di Microsoft.  Ad esempio, se il dominio della società è contoso.com, si creerà un record CNAME in DNS che reindirizzi EnterpriseEnrollment.contoso.com a EnterpriseEnrollment-s.manage.microsoft.com.  
 
  Sebbene la creazione di voci DNS CNAME sia facoltativa, i record CNAME semplificano la registrazione per gli utenti. Se non viene trovato alcun record di registrazione CNAME, agli utenti viene richiesto di immettere manualmente il nome del server MDM, enrollment.manage.microsoft.com.
 
@@ -88,7 +88,7 @@ Un alias DNS (tipo di record CNAME) semplifica agli utenti la registrazione dei 
 |----------|---------------|---------------|---|
 |CNAME|EnterpriseEnrollment.company_domain.com|EnterpriseEnrollment-s.manage.microsoft.com| 1 ora|
 
-Se si dispone di più suffissi UPN, è necessario creare un CNAME per ciascun nome di dominio e puntare ciascuno a EnterpriseEnrollment-s.manage.microsoft.com. Ad esempio se gli utenti di Contoso usano name@contoso.com, ma usano anche name@us.contoso.com e name@eu.constoso.com come indirizzo di posta elettronica/UPN, l'amministratore DNS Contoso dovrà creare i CNAME seguenti.
+Se si dispone di più suffissi UPN, è necessario creare un CNAME per ciascun nome di dominio e puntare ciascuno a EnterpriseEnrollment-s.manage.microsoft.com. Ad esempio, se gli utenti di Contoso usano name@contoso.com, ma usano anche name@us.contoso.com e name@eu.constoso.com come indirizzo di posta elettronica/UPN, l'amministratore DNS Contoso dovrà creare i CNAME seguenti.
 
 |Tipo|Nome dell'host|Punta a|TTL|  
 |----------|---------------|---------------|---|

@@ -17,9 +17,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: cec595d473ca2459e43a7fa1c70b7668a8a48986
-ms.openlocfilehash: d529a058968cf99dce77997844b33ff5dc7c0004
-ms.lasthandoff: 01/21/2017
+ms.sourcegitcommit: 507bad02c6e028f09a8b0c8a566ac55f7c3942a5
+ms.openlocfilehash: 544c3bea0c7df96887ee1717f061c39c64b82d01
+ms.lasthandoff: 03/22/2017
 
 
 ---
@@ -35,11 +35,12 @@ Prendere in considerazione i requisiti seguenti prima di preparare l'infrastrutt
  > [!NOTE]  
 >  Configuration Manager (Current Branch) supporta la registrazione nella gestione dei dispositivi mobili locale per i dispositivi che eseguono i sistemi operativi seguenti:  
 >   
->  -   Windows 10 Enterprise  
+> -  Windows 10 Enterprise  
 > -   Windows 10 Pro  
 > -   Windows 10 Team \(a partire da Configuration Manager versione 1602\)  
 > -   Windows 10 Mobile  
-> -   Windows 10 Mobile Enterprise   
+> -   Windows 10 Mobile Enterprise
+> -   Windows 10 IoT Enterprise   
 
 ##  <a name="bkmk_intune"></a> Usare la sottoscrizione a Microsoft Intune  
  Per iniziare a usare la gestione dei dispositivi mobili, è necessaria una sottoscrizione a Microsoft Intune. La sottoscrizione è richiesta solo per tenere traccia delle licenze dei dispositivi e non viene usata per gestire o archiviare le informazioni di gestione per i dispositivi. Tutte le attività di gestione vengono eseguite all'interno dell'azienda usando l'infrastruttura di Configuration Manager locale.  
