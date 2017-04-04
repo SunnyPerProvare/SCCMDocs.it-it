@@ -128,7 +128,7 @@ Di seguito sono illustrate le procedure per disinstallare i client Mac e rinnova
 
     -   **Impostazione selezionata:** fare clic su **Sfoglia** e selezionare lo script di individuazione specificato in precedenza.  
 
-    -   Nel campo **i seguenti valori** immettere **The domain/default pair of (com.microsoft.ccmclient, SMSID) does not exist**.  
+    -   Nel campo **i seguenti valori** immettere **Il dominio/coppia predefinita di (com.microsoft.ccmclient, SMSID) non esiste**.  
 
     -   Abilitare l'opzione **Eseguire lo script di monitoraggio e aggiornamento specificato quando l'impostazione non è conforme**.  
 
