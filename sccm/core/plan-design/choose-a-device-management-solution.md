@@ -17,9 +17,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 06cafc8f7934cde738a87ac1a1da585a9d4e2a99
-ms.openlocfilehash: 534a15279bff96d93ffb6564eeac2835f57f5645
-ms.lasthandoff: 02/09/2017
+ms.sourcegitcommit: 3eb48942c1259d2aa1b3c200fad73b39b11c0b8c
+ms.openlocfilehash: 9989ea1bf4cb74a6286ebae9de7614ed622de5b6
+ms.lasthandoff: 03/30/2017
 
 
 ---
@@ -36,7 +36,7 @@ System Center Configuration Manager, noto anche come ConfgMgr o SCCM, offre dive
 
 ###  <a name="manage-devices-with-the-configuration-manager-client"></a>Gestire i dispositivi con il client di Configuration Manager  
 
-Per usare questa opzione, che offre più funzionalità per la gestione di PC, server e altri dispositivi nell'ambiente in uso, è necessaria l'installazione dell'applicazione client di Configuration Manager nei dispositivi. Per altre informazioni, vedere [Metodi di installazione client in System Center Configuration Manager](/sccm/core/client/deploy/plan/client-installation-methods).  
+Per usare questa opzione, che offre più funzionalità per la gestione di PC, server e altri dispositivi nell'ambiente in uso, è necessaria l'installazione dell'applicazione client di Configuration Manager nei dispositivi. Per altre informazioni, vedere [Metodi di installazione client in System Center Configuration Manager](/sccm/core/clients/deploy/plan/client-installation-methods).  
 
 ###  <a name="manage-devices-with-on-premises-configuration-manager-infrastructure"></a>Gestire i dispositivi con l'infrastruttura locale di Configuration Manager  
 
@@ -76,7 +76,7 @@ Per altre informazioni, vedere [Gestire i dispositivi mobili con System Center C
 
  Per un elenco completo delle piattaforme supportate, vedere [Supported operating systems for clients and devices for System Center Configuration Manager](configs\supported-operating-systems-for-clients-and-devices.md) (Sistemi operativi supportati per client e dispositivi per System Center Configuration Manager).
 
-##  <a name="a-namebkmkcomp2a-compare-mobile-device-management-solutions-based-on-management-functionality"></a><a name="bkmk_comp2"></a> Confrontare le soluzioni di gestione dei dispositivi mobili in base alle funzionalità di gestione  
+##  <a name="bkmk_comp2"></a> Confrontare le soluzioni di gestione dei dispositivi mobili in base alle funzionalità di gestione  
 
 |Funzionalità di gestione|Con il client di Configuration Manager|Configuration Manager con Microsoft Intune (ibrido)|Gestione locale dei dispositivi mobili|Configuration Manager con Exchange|  
 |------------------------------|-------------------------------------------|-------------------------------------------------------------------|-------------------------------|-----------------------------------------|  
