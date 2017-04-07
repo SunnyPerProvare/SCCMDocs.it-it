@@ -2,7 +2,7 @@
 title: Configuration Manager in Azure | Microsoft Docs
 description: Informazioni sull&quot;uso di Configuration Manager in un ambiente Azure.
 ms.custom: na
-ms.date: 01/30/2017
+ms.date: 03/27/2017
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 264e009952db34a6f4929ecb70dc6857117ce4fe
-ms.openlocfilehash: e8798adc0e479417c682450d181611284c148e6d
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 5276ad999fc871496d79e6efff34d5edc6335380
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager in Azure: domande frequenti
@@ -39,11 +40,11 @@ No, si tratta di un servizio IaaS (Infrastruttura come servizio) perché i serve
 
 ### <a name="what-areas-should-i-pay-attention-to-when-considering-a-move-of-my-configuration-manager-infrastructure-to-azure"></a>A quali aree è necessario prestare attenzione quando si valuta la scelta di trasferire l'infrastruttura di Configuration Manager in Azure?
 Ottima domanda. Di seguito sono indicate le aree più importanti nell'ottica di questa decisione; ogni area viene esaminata in una sezione separata di questo argomento:
-1.  Rete
-2.  Disponibilità
-3.  Prestazioni
-4.  Costi
-5.  Esperienza utente
+1.    Rete
+2.    Disponibilità
+3.    Prestazioni
+4.    Costi
+5.    Esperienza utente
 
 ## <a name="networking"></a>Rete
 ### <a name="what-about-networking-requirements-should-i-use-expressroute-or-an-azure-vpn-gateway"></a>Per quanto riguarda i requisiti di rete, è opportuno usare un Gateway VPN di Azure o ExpressRoute?
@@ -145,8 +146,8 @@ Il **gateway di gestione cloud** consente di gestire i client di Configuration M
 
 È possibile iniziare a usare il gateway di gestione cloud nel proprio ambiente e inviare commenti e suggerimenti per migliorare il servizio. Per informazioni sulle funzionalità di versioni non definitive, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkprereleasea-use-pre-release-features-from-updates).
 
-### <a name="i-also-heard-that-you-have-another-new-feature-called-peer-cache-in-the-technical-preview-version-1604-is-that-different-than-branchcache-which-one-should-i-choose"></a>Inoltre, nella Technical Preview versione 1604 è prevista una nuova funzionalità denominata peer cache. È diversa da BranchCache? Qual è l'opzione migliore?
-Sì, è completamente diversa. [Peer cache](/sccm/core/get-started/capabilities-in-technical-preview-1604#bkmk_peercache) è una tecnologia nativa al 100% di Configuration Manager, mentre BranchCache è una funzionalità di Windows. Entrambe possono essere utili. BranchCache usa un broadcast per trovare il contenuto richiesto mentre peer cache usa le impostazioni relative al gruppo di limiti e al flusso di lavoro di distribuzione standard di Configuration Manager.
+### <a name="i-also-heard-that-you-have-another-new-feature-called-peer-cache-introduced-as-a-pre-release-feature-in-version-1610-is-that-different-than-branchcache-which-one-should-i-choose"></a>Inoltre, nella versione 1610 è prevista una nuova funzionalità denominata peer cache, introdotta come funzionalità di versione non definitiva. È diversa da BranchCache? Qual è l'opzione migliore?
+Sì, è completamente diversa. [Peer cache](/sccm/core/plan-design/hierarchy/client-peer-cache) è una tecnologia nativa al 100% di Configuration Manager, mentre BranchCache è una funzionalità di Windows. Entrambe possono essere utili. BranchCache usa un broadcast per trovare il contenuto richiesto mentre peer cache usa le impostazioni relative al gruppo di limiti e al flusso di lavoro di distribuzione standard di Configuration Manager.
 
 È possibile configurare qualsiasi client come origine della peer cache. Quando i punti di gestione forniscono ai client informazioni sui percorsi di origine del contenuto, forniscono informazioni dettagliate su tutte le origini di peer cache che contengono il contenuto e i punti di distribuzione richiesti dal client.
 
@@ -179,9 +180,4 @@ Sì, è completamente diversa. [Peer cache](/sccm/core/get-started/capabilities-
  - Altre informazioni su ExpressRoute: http://azure.microsoft.com/documentation/articles/expressroute-introduction/
 
  
-
-
-
-<!--HONumber=Jan17_HO5-->
-
 

@@ -2,7 +2,7 @@
 title: Note sulla versione - Configuration Manager | Microsoft Docs
 description: Leggere queste note su problemi urgenti non ancora risolti nel prodotto o illustrati in un articolo di Microsoft Knowledge Base.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 3/27/27
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
-ms.openlocfilehash: 9e853c8fda236125717c3912f6f3cb02d6dd1058
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: aca3525fc143b281f41c3d9bd20bb93b1d91f6ce
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -35,7 +36,27 @@ Con System Center Configuration Manager, le note sulla versione del prodotto son
 
 ## <a name="setup-and-upgrade"></a>Configurazione e aggiornamento  
 
+### <a name="after-you-update-a-configuration-manager-console-using-consolesetupexe-from-the-site-server-folder-recent-language-pack-changes-are-not-available"></a>Dopo l'aggiornamento di una console di Configuration Manager tramite ConsoleSetup.exe dalla cartella dei server del sito, le modifiche recenti ai Language Pack non sono disponibili
+<!--  SMS 486420  Applicability should be 1610 and 1702.  -->
+Dopo l'esecuzione di un aggiornamento sul posto di una console usando ConsoleSetup.exe da una cartella di installazione dei server del sito, è possibile che i Language Pack installati di recente non siano disponibili. Questo problema si verifica nelle situazioni seguenti:
+- Il sito esegue la versione 1610 o 1702.
+- La console viene aggiornata sul posto usando ConsoleSetup.exe dalla cartella di installazione del server del sito.
+
+Quando si verifica questo problema, la console reinstallata non usa il set più recente di Language Pack configurati. Non vengono restituiti errori, ma i Language Pack disponibili per la console rimangono invariati.  
+
+**Soluzione alternativa:** disinstallare la console corrente e quindi reinstallarla come nuova installazione. È possibile usare ConsoleSetup.exe dalla cartella di installazione dei server del sito. Durante l'installazione, verificare di selezionare i file dei Language Pack da usare.
+
+
+### <a name="with-version-1702-the-default-site-boundary-group-is-configured-for-use-for-site-assignment"></a>Con la versione 1702, il gruppo di limiti del sito predefinito è configurato per l'assegnazione sito
+<!--  SMS 486380   Applicability should only be to 1702. -->
+Con la versione 1702, la scheda Riferimento dei gruppi di limiti del sito predefiniti contiene la casella di controllo **Utilizza questo gruppo limite per l'assegnazione sito**, riporta il sito come **Sito assegnato** e risulta inattiva per impedire la modifica o la rimozione della configurazione.
+
+**Soluzione temporanea:** Nessuna. È possibile ignorare questa impostazione. Anche se è abilitato per l'assegnazione sito, il gruppo di limiti del sito predefinito non viene usato per questo scopo. Con la versione 1702, questa configurazione assicura che il gruppo di limiti del sito predefinito venga associato al sito corretto.
+
+
+
 ### <a name="when-installing-a-long-term-service-branch-site-using-version-1606-a-current-branch-site-is-installed"></a>Quando si installa un sito di Long-Term Servicing Branch con la versione 1606, viene installato un sito Current Branch
+<!-- Consider move to core content  -->
 Quando si usa il supporto di base della versione 1606 della versione di ottobre 2016 per installare un sito Long-Term Servicing Branch (LTSB), il programma di installazione installa invece un sito Current Branch. Ciò si verifica perché l'opzione per installare un punto di connessione del servizio con l'installazione del sito non è selezionata.
 
  - Anche se non è richiesto, un punto di connessione del servizio deve essere selezionato per l'installazione di un sito LTSB.
@@ -50,21 +71,19 @@ Per confermare quale tipologia installare, nella console passare a **Amministraz
 
 
 
-
-
 ### <a name="the--sql-server-backup-model-in-use-by-configuration-manager-can-change-from-full-to-simple"></a>Il modello di backup di SQL Server usato da Configuration Manager può essere modificato da completo a semplice  
+<!-- Confirm applicability for upgrade to later baselines. 1511 is out of support. 1606 is minmum supported baseline  -->
+
  Quando si esegue l'aggiornamento a System Center Configuration Manager versione 1511, il modello di backup di SQL Server usato da Configuration Manager può essere modificato da completo a semplice.  
 
 -   Se si usa un'attività di backup di SQL Server personalizzata con il modello di backup completo (invece dell'attività di backup predefinita per Configuration Manager), l'aggiornamento può modificare il modello di backup da completo a semplice.  
 
 **Soluzione alternativa**: dopo l'aggiornamento alla versione 1511, rivedere la configurazione di SQL Server e ripristinarla su completa, se necessario.  
 
-### <a name="when-you-add-a-service-window-to-a-new-site-server-service-windows-that-were---configured-for-another-site-server-are-deleted"></a>Quando si aggiunge una finestra del servizio a un nuovo server del sito, le finestre del servizio che erano state configurate per un altro server del sito vengono eliminate  
- Quando si usano gli intervalli di servizio con System Center Configuration Manager versione 1511, è possibile configurare solo intervalli di servizio per un singolo server del sito in una gerarchia. Dopo aver configurato le finestre del servizio in un server, quando si configura una finestra del servizio in un secondo server del sito, le finestre del servizio del primo server del sito vengono automaticamente eliminate, senza alcun avviso o errore.  
 
-**Soluzione alternativa**: installare l'hotfix dall'[articolo 3142341 della Microsoft Knowledge Base](http://support.microsoft.com/kb/3142341). Questo problema viene risolto anche quando si installa l'aggiornamento 1602 per System Center Configuration Manager.  
 
 ### <a name="an-update-is-stuck-with-a-state-of-downloading-in-the-updates-and-servicing-node-of-the-configuration-manager-console"></a>Un aggiornamento è bloccato con stato Download nel nodo Aggiornamenti e manutenzione della console di Configuration Manager  
+<!-- Source bug pending. Consider move to core content.  -->
 Durante il download automatico degli aggiornamenti tramite un punto di connessione del servizio online, un aggiornamento può bloccarsi con stato Download. Quando il download di un aggiornamento è bloccato, le voci simili a quelle seguenti sono incluse nei file di log indicati:  
 
 Log DMPdownloader:  
@@ -83,50 +102,10 @@ ConfigMgrSetup.log
 
 -   **Valore per lo stato**: impostare sul valore decimale **146944** o sul valore esadecimale **0x00023e00**  
 
-### <a name="pre-release-features-introduced-in-system-center-configuration-manager-1602"></a>Funzionalità di versione non definitiva in System Center Configuration Manager 1602  
-
-Le funzionalità di versioni non definitive sono incluse nel prodotto a scopo di test preliminare in un ambiente di produzione, ma non devono essere considerate pronte per l'ambiente di produzione.  
-
-A partire dall'aggiornamento 1606, è necessario concedere il consenso per l'uso delle funzionalità di versioni non definitive. Per altre informazioni, vedere la sezione relativa all'[abilitazione delle funzionalità facoltative dagli aggiornamenti](../../../../core/servers/manage/install-in-console-updates.md).
-
-System Center Configuration Manager versione 1602 introduce due funzionalità di versione non definita:  
-
--   Accesso condizionale per i PC gestiti da System Center Configuration Manager. Per altre informazioni, vedere [Manage access to O365 services for PCs managed by System Center Configuration Manager](../../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md) (Gestire l'accesso ai servizi di O365 per i PC gestiti da System Center Configuration Manager).
-    - Dopo aver installato l'aggiornamento 1602, il tipo di funzionalità viene visualizzato come rilasciato anche se si tratta di funzionalità di versione non definita.
-    - Se si esegue l'aggiornamento dalla versione 1602 alla versione 1606, il tipo di funzionalità viene visualizzato come rilasciato anche se rimane come funzionalità di versione non definita.
-    - Se si esegue l'aggiornamento dalla versione 1511 direttamente alla versione 1606, il tipo di funzionalità viene visualizzato come funzionalità di versione non definita.
-
-
--   Manutenzione di una raccolta compatibile con cluster. Per altre informazioni, vedere [Assistenza a un gruppo di server](../../../../core/get-started/capabilities-in-technical-preview-1605.md#BKMK_ServerGroups) in [Funzionalità nella Technical Preview 1605 per System Center Configuration Manager](../../../../core/get-started/capabilities-in-technical-preview-1605.md).  
-
-
-
-
-### <a name="recovery-options-for-a-secondary-site-are-not-available-in-the-console"></a>Le opzioni di ripristino per un sito secondario non sono disponibili nella console  
-Dopo il ripristino non riuscito di un sito secondario, l'opzione **Ripristina sito secondario** potrebbe non essere più disponibile nella console di Configuration Manager.  
-
-Questo problema interessa System Center Configuration Manager versione 1511 e 1602 e si prevede che venga risolto in un aggiornamento futuro.  
-
-**Soluzione alternativa**: usare uno dei metodi seguenti per ripristinare (reinstallare) il sito secondario:  
-
--   Usare **Preinst.exe** e il comando **/delsite** per rimuovere il sito secondario, quindi reinstallare il sito secondario. Per informazioni su preinst.exe, vedere [Strumento di manutenzione gerarchia (Preinst.exe) per System Center Configuration Manager](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md)  
-
--   Eseguire lo script seguente per avviare il ripristino del sito secondario. Eseguire questo script sul database nel sito primario padre del sito secondario da ripristinare:  
-
-    ```  
-    declare @SiteCode NVARCHAR(3)=N'<replace with secondary site code>'   
-
-    UPDATE Sites SET Status = 9  
-                    , DetailedStatus = 3  
-    FROM Sites WHERE SiteCode = @SiteCode  
-
-    UPDATE SCP SET SCP.Value1 = 9  
-                    , SCP.Value2 = N'3'  
-    FROM SC_SiteDefinition_Property SCP INNER JOIN SC_SiteDefinition SC ON SC.SiteNumber = SCP.SiteNumber  
-    WHERE SC.SiteCode = @SiteCode AND SCP.[Name] = N'Requested Status'  
-  ```  
 
 ###  <a name="setup-fails-when-using-redist-files-from-the-cdlatest-folder-with-a-manifest-verification-error"></a>L'installazione non riesce quando si usano file redist dalla cartella CD.Latest con un errore di verifica del manifesto
+<!-- Source bug pending  -->
+
 Quando si esegue il programma di installazione dalla cartella CD.Latest creata per la versione 1606 e si usano i file redist inclusi nella cartella CD.Latest, il programma di installazione non riesce e restituisce gli errori seguenti nel registro di installazione di Configuration Manager:
 
   - ERRORE: Controllo di hash file non riuscito per defaultcategories.dll
@@ -138,77 +117,38 @@ Quando si esegue il programma di installazione dalla cartella CD.Latest creata p
 
 ### <a name="service-connection-tool-throws-an-exception-when-sql-server-is-remote-or-when-shared-memory-is-disabled"></a>Lo strumento di connessione del servizio genera un'eccezione quando SQL Server è in remoto, o quando la memoria condivisa è disabilitata
 A partire dalla versione 1606, lo strumento di connessione del servizio genera un'eccezione quando viene soddisfatta una delle condizioni seguenti:  
- -  Il database del sito è remoto dal computer che ospita il punto di connessione del servizio e usa una porta non standard, cioè una porta diversa dalla 1433
- -  Il database del sito è sullo stesso server del punto di connessione del servizio, ma il protocollo SQL **Memoria condivisa** è disabilitato
+ -    Il database del sito è remoto dal computer che ospita il punto di connessione del servizio e usa una porta non standard, cioè una porta diversa dalla 1433
+ -     Il database del sito è sullo stesso server del punto di connessione del servizio, ma il protocollo SQL **Memoria condivisa** è disabilitato
 
 L'eccezione è simile alla seguente:
  - *Eccezione non gestita: System.Data.SqlClient.SqlException: Si è verificato un errore correlato alla rete o specifico dell'istanza mentre veniva stabilita una connessione con SQL Server. Il server non è stato trovato o non era accessibile. Verificare che il nome istanza sia corretto e che SQL Server sia configurato per consentire le connessioni remote. (provider: Provider named pipe, errore: 40 - Impossibile aprire una connessione a SQL Server) --*
 
 **Soluzione alternativa**: durante l'uso dello strumento è necessario modificare il Registro di sistema del server che ospita il punto di connessione del servizio per includere informazioni sulla porta di SQL Server:
 
-   1.   Prima di usare lo strumento, modificare la chiave del Registro di sistema seguente e aggiungere il numero della porta in uso al nome di SQL Server:
+   1.    Prima di usare lo strumento, modificare la chiave del Registro di sistema seguente e aggiungere il numero della porta in uso al nome di SQL Server:
     - Chiave: HKLM\Microsoft\SMS\COMPONENTS\SMS_DMP_UPLOADER\
       - Valore: &lt;Nome SQL Server>
     - Aggiungere: **,&lt;PORTA>**
 
     Ad esempio, per aggiungere la porta *15001* a un server denominato *testserver.test.net*, la chiave risultante sarà: ***HKLM\Software\Microsoft\SMS\COMPONENTS\SMS_DMP_UPLOADER\testserver.test.net,15001***
 
-   2.   Dopo aver aggiunto la porta al Registro di sistema, lo strumento dovrebbe funzionare correttamente.  
+   2.    Dopo aver aggiunto la porta al Registro di sistema, lo strumento dovrebbe funzionare correttamente.  
 
-   3.   Una volta finito di usare lo strumento, sia per **la connessione** che per **l'importazione**, riportare la chiave del Registro di sistema al valore originale.  
-
-
+   3.    Una volta finito di usare lo strumento, sia per **la connessione** che per **l'importazione**, riportare la chiave del Registro di sistema al valore originale.  
 
 
 
 
-## <a name="backup-and-recovery"></a>Backup e ripristino
-### <a name="pre-production-client-is-not-available-after-a-site-restore"></a>Il client di pre\-produzione non è disponibile dopo un ripristino del sito
-Con la versione 1602, quando si usano i client di pre-produzione e si ripristina il sito di livello superiore della gerarchia da un backup, la versione del client di pre\-produzione non è disponibile dopo il ripristino del sito.  
-
-**Soluzione alternativa:** dopo il ripristino del sito di livello superiore della gerarchia è necessario copiare manualmente i file del client di pre\-produzione in modo che Configuration Manager possa elaborarli e ripristinarli per l'uso:
-1. Nel computer server del sito di livello superiore copiare il contenuto della cartella *&lt;CM_Install_Location\>\\Client* nella cartella *&lt;CM_Install_Location\>\\StagingClient*.
-
-2. Creare un file vuoto denominato **client.acu** e copiare o incollare il file nella cartella *&lt;CM_Install_Location\>\\Inboxes\\hman.box* nel server del sito. Questo file può essere un file di testo rinominato, purché non abbia più l'estensione txt. Quando il file si trova nella cartella hman.box, la gestione gerarchie nel server del sito avvia ed elabora i file dei client e ripristina le versioni dei file del client di pre\-produzione da usare.
-
-Questo problema è stato risolto nella versione 1606.
+<!-- No current Backup and Recovery relenotes
+## Backup and recovery
+-->
 
 
-## <a name="client-deployment-and-upgrade"></a>Distribuzione e aggiornamento del client  
+<!-- No current  Client deployment and upgrade relenotes
+## Client deployment and upgrade  
+-->
 
-### <a name="expansion-to-central-administration-site-stops-automatic-client-upgrades"></a>L'espansione al sito di amministrazione centrale arresta gli aggiornamenti automatici del client  
-Solo nella versione 1511 non è possibile eseguire aggiornamenti automatici del client per alcun sito espanso da sito primario a sito di amministrazione centrale. Quando il sito viene espanso, il sito autorevole nel pacchetto di aggiornamento del client non viene impostato correttamente sul sito di amministrazione centrale e questo impedisce l'esecuzione degli aggiornamenti automatici del client. Questo problema si verifica solo nella versione 1511. Nella versione 1602 e successive il problema è stato corretto.  
 
-**Soluzione alternativa**: eseguire lo script SQL seguente nel database del sito di amministrazione centrale. Una volta eseguito lo script, gli aggiornamenti automatici del client dovrebbero essere eseguiti normalmente.  
-
-  ```  
-  DECLARE @RootSite AS NVARCHAR(3)  
-  DECLARE @SourceServer AS NVARCHAR(255)  
-  DECLARE @FullClientPkgSource AS NVARCHAR(255)  
-  DECLARE @UpgradePkgSource AS NVARCHAR(255)  
-
-  SELECT @RootSite = SiteCode, @SourceServer = SiteServer  
-  FROM sites  
-  WHERE ISNULL(ReportToSite, N'') = N''  
-
-  SELECT @FullClientPkgSource = N'\\' + @SourceServer + N'\SMS_' + @RootSite + N'\Client'  
-  SELECT @UpgradePkgSource = N'\\' + @SourceServer + N'\SMS_' + @RootSite + N'\ClientUpgrade'  
-
-  UPDATE SMSPackages_G  
-  SET Source = @FullClientPkgSource, SourceSite = @RootSite  
-  WHERE PkgID IN  
-      (SELECT FullPackageID FROM ClientDeploymentSettings)  
-
-  UPDATE SMSPackages_G  
-  SET Source = @UpgradePkgSource, SourceSite = @RootSite  
-  WHERE PkgID IN  
-      (SELECT UpgradePackageID FROM ClientDeploymentSettings)  
-
-  UPDATE ProgramOffers_G  
-  SET SourceSite = @RootSite  
-  WHERE OfferID IN  
-      (SELECT UpgradeAdvertisementID FROM ClientDeploymentSettings)  
-  ```  
 
 ## <a name="operating-system-deployment"></a>Distribuzione del sistema operativo  
 
@@ -294,9 +234,4 @@ Questo avviene solo quando si aggiunge la stessa **raccolta utenti** alla pagina
 Questo problema interessa l'accesso condizionale di System Center Configuration Manager per **Exchange locale** con l'aggiornamento 1602 e verrà risolto in un aggiornamento futuro.  
 
 **Soluzione alternativa**: aggiungere la **raccolta utenti** alla pagina **Raccolte di destinazione** prima di selezionare **Raccolta utenti** nella pagina **Raccolte esentate** oppure evitare di aggiungere la stessa **raccolta utenti** a entrambe le pagine.
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

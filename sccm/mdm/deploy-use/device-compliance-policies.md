@@ -17,9 +17,9 @@ author: andredm7
 ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: ad9ea7b29e03bb514fe23fdf761b312c85c16714
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: bcaa2a9b5474e06bf344dc4fd47dbb160ea36297
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="device-compliance-policies-in-system-center-configuration-manager"></a>Criteri di conformità del dispositivo in System Center Configuration Manager
@@ -40,22 +40,24 @@ I **criteri di conformità** in System Center Configuration Manager definiscono 
 
 -   Se il dispositivo è jailbroken o rooted  
 
--   Se la posta elettronica nel dispositivo viene gestita da un criterio Intune o se il dispositivo è segnalato come non integro dal servizio di attestazione dell'integrità del dispositivo Windows.  
+-   Se la posta elettronica nel dispositivo viene gestita da un criterio Intune o se il dispositivo è segnalato come non integro dal servizio di attestazione dell'integrità del dispositivo Windows.
+-   App che non possono essere installate nel dispositivo.
 
 
  I criteri di conformità vengono distribuiti alle raccolte dell'utente. Quando un criterio di conformità viene distribuito a un utente, la conformità viene controllata su tutti i dispositivi dell’utente.  
 
  Nella tabella seguente sono elencati i tipi di dispositivi supportati dai criteri di conformità e il modo in cui le impostazioni di non conformità vengono gestite quando i criteri vengono usati con i criteri di accesso condizionale.  
 
-|Regola|Windows 8.1 e versioni successive|Windows Phone 8.1 e versioni successive|iOS 6.0 e versioni successive|Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive|  
+|Regola|Windows 8.1 e versioni successive|Windows Phone 8.1 e versioni successive|iOS 6.0 e versioni successive|Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive, Android for Work|  
 |----------|---------------------------|---------------------------------|-----------------------|---------------------------|-----------------------------------------|  
 |**Configurazione di PIN o password**|Corretto|Corretto|Corretto|In quarantena|  
-|**Crittografia dispositivo**|N/D|Corretto|Corretto (impostando il PIN)|In quarantena|  
+|**Crittografia dispositivo**|N/D|Corretto|Corretto (impostando il PIN)|In quarantena<br>(Android for Work sempre crittografato)|  
 |**Dispositivo jailbroken o rooted**|N/D|N/D|In quarantena (non è un'impostazione)|In quarantena (non è un'impostazione)|  
 |**Profilo di posta elettronica**|N/D|N/D|In quarantena|N/D|  
 |**Versione minima del sistema operativo**|In quarantena|In quarantena|In quarantena|In quarantena|  
 |**Versione massima del sistema operativo**|In quarantena|In quarantena|In quarantena|In quarantena|  
-|**Attestazione dell'integrità dei dispositivi (aggiornamento&1602;)**|Impostazione non applicabile a Windows 8.1<br /><br /> Windows 10 e Windows 10 Mobile vengono messi in quarantena.|N/D|N/D|N/D|  
+|**Attestazione dell'integrità dei dispositivi (aggiornamento 1602)**|Impostazione non applicabile a Windows 8.1<br /><br /> Windows 10 e Windows 10 Mobile vengono messi in quarantena.|N/D|N/D|N/D|  
+|**App che non possono essere installate**|N/D|N/D|In quarantena|In quarantena|
 
  **Corretto** = la conformità viene forzata dal sistema operativo del dispositivo (ad esempio, l'utente è obbligato a impostare un PIN).  Non riguarda casi in cui l'impostazione non è conforme.  
 

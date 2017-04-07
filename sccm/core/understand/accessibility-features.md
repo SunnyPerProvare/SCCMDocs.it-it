@@ -2,7 +2,7 @@
 title: "Accessibilità | Microsoft Docs"
 description: "Informazioni sulle funzionalità che rendono System Center Configuration Manager accessibile a persone con particolari esigenze."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 3/27/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bf0ca29a68cb8fbbcacc2acd148c06abf08c5cab
-ms.openlocfilehash: ca1207b8d48ca66096d1bbe674541223c033d895
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 98599b3c188c9e9b508fea79ecf9a2b2348e9288
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="accessibility-features-in-system-center-configuration-manager"></a>Funzionalità di accessibilità in System Center Configuration Manager
@@ -28,15 +29,15 @@ ms.openlocfilehash: ca1207b8d48ca66096d1bbe674541223c033d895
 System Center Configuration Manager include funzionalità che lo rendono accessibile a persone con particolari esigenze.
 
 
-## <a name="a-namebkmkaconsolea-accessibility-features-for-the-configuration-manager-console"></a><a name="bkmk_aconsole"></a> Funzionalità di accessibilità per la console di Configuration Manager  
+## <a name="bkmk_aconsole"></a> Funzionalità di accessibilità per la console di Configuration Manager  
 -   Per accedere a un'area di lavoro, utilizzare i seguenti tasti di scelta rapida:  
 
 |Area di lavoro|Tasti di scelta rapida|  
 |------|--------|  
-|Asset e conformità|CTRL +&1;|  
-|Raccolta software|CTRL +&2;|  
-|monitoring|CTRL +&3;|  
-|Amministrazione|CTRL +&4;|  
+|Asset e conformità|CTRL + 1|  
+|Raccolta software|CTRL + 2|  
+|monitoring|CTRL + 3|  
+|Amministrazione|CTRL + 4|  
 
 -   Per accedere a un menu dell'area di lavoro, premere TAB fino a quando l'icona Espandi/comprimi non viene attivata. Premere quindi FRECCIA GIÙ per accedere al menu dell'area di lavoro.  
 
@@ -46,14 +47,14 @@ System Center Configuration Manager include funzionalità che lo rendono accessi
 
 -   Per accedere alla barra degli indirizzi quando lo stato attivo si trova nel nodo della struttura, usare MAIUSC+TAB tre volte.  
 
--   In una pagina della creazione guidata o delle proprietà, è possibile spostarsi tra le caselle con i tasti di scelta rapida. Premere ALT più il carattere di sottolineatura (ALT+_) per selezionare una casella specifica.  
+-   In una pagina della creazione guidata o delle proprietà, è possibile spostarsi tra le caselle con i tasti di scelta rapida. Premere ALT più il carattere di sottolineatura (ALT+_) per selezionare una casella specifica.     
 
- -  A partire dalla versione 1606, per spostarsi tra i vari nodi di un'area di lavoro è sufficiente immettere la prima lettera del nome di un nodo. Quando si preme il tasto, il cursore si sposta sul nodo successivo che inizia con tale lettera. Se si usa un'utilità per la lettura dello schermo, verrà letto il nome del nodo.
+-  Per spostarsi tra i vari nodi di un'area di lavoro è sufficiente immettere la prima lettera del nome di un nodo. Quando si preme il tasto, il cursore si sposta sul nodo successivo che inizia con tale lettera. Se si usa un'utilità per la lettura dello schermo, verrà letto il nome del nodo.
 
 > [!NOTE]  
 >  Le informazioni riportate in questa sezione sono valide solo per gli utenti che acquistano una licenza di prodotti Microsoft negli Stati Uniti. Se il prodotto non è stato acquistato negli Stati Uniti, è possibile usare la scheda informativa della filiale inclusa nel pacchetto software oppure visitare il [sito Web Microsoft sull'accessibilità](http://go.microsoft.com/fwlink/?LinkId=8431) per informazioni di contatto per i servizi di supporto Microsoft. È possibile contattare la filiale locale per stabilire se i tipi di prodotti e servizi illustrati in questa sezione sono disponibili nell'area di interesse. Le informazioni sull'accesso facilitato sono disponibili in altre lingue, incluso giapponese e francese.  
 
-##  <a name="a-namebkmkahelpa-accessibility-features-for-configuration-manager-help"></a><a name="bkmk_ahelp"></a> Funzionalità di accessibilità per la Guida di Configuration Manager  
+##  <a name="bkmk_ahelp"></a> Funzionalità di accessibilità per la Guida di Configuration Manager  
  La Guida di Configuration Manager include funzionalità che la rendono accessibile a uno spettro più ampio di utenti, inclusi coloro che hanno difficoltà di movimento, visione limitata o altre disabilità.  
 
 |Per eseguire questa operazione|Utilizzare questo tasto di scelta rapida|  
@@ -108,9 +109,4 @@ System Center Configuration Manager include funzionalità che lo rendono accessi
 
     > [!NOTE]  
     >  Se si modifica il carattere degli argomenti della Guida nella finestra della Guida, la modifica avrà effetto anche sul carattere delle pagine Web in Windows Internet Explorer.  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

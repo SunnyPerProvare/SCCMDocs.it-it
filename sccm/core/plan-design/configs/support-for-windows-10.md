@@ -2,7 +2,7 @@
 title: Supporto per Windows 10 | Microsoft Docs
 description: Informazioni su quali versioni di Windows 10 sono supportate per eseguire il client di System Center Configuration Manager.
 ms.custom: na
-ms.date: 2/10/2017
+ms.date: 3/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3702993d6cf9644d5aebaadd168749668fbcb62c
-ms.openlocfilehash: 4b90384621dd20475ab9ea33ea062c24f5ecf5fa
-ms.lasthandoff: 02/22/2017
+ms.sourcegitcommit: 6accec2d356861b273b25ba2b6338d9684a46ff6
+ms.openlocfilehash: 188c6b1d7ae7768bb4075688d7d47607ee83be17
+ms.lasthandoff: 03/29/2017
 
 ---
 # <a name="support-for-windows-10-as-a-client-of-system-center-configuration-manager"></a>Supporto per Windows 10 come client di System Center Configuration Manager
@@ -31,19 +31,24 @@ ms.lasthandoff: 02/22/2017
 - Questo argomento completa l'articolo [Sistemi operativi supportati per client e dispositivi](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices).
 - Se si usa il Long-Term Servicing Branch di Configuration Manager, vedere [Configurazioni supportate per Long-Term Servicing Branch](/sccm/core/understand/supported-configurations-for-ltsb).
 
-Configuration Manager tenta di offrire supporto per ogni nuova versione di Windows 10 appena possibile dopo il rilascio di tale versione di Windows. Poiché i prodotti hanno pianificazioni separate di sviluppo e rilascio, il supporto offerto da Configuration Manager dipende da quando vengono rilasciate le versioni e i rami di ogni prodotto.  
+Configuration Manager tenta di offrire supporto per ogni nuova versione di Windows 10 appena possibile dopo il rilascio di tale versione di Windows. Poiché i prodotti hanno pianificazioni separate di sviluppo e rilascio, il supporto offerto da Configuration Manager dipende da quando vengono rilasciate le versioni e i rami di ogni prodotto.
+
+Ad esempio, una versione di Configuration Manager viene eliminata dalla matrice dopo che termina il [supporto per tale versione](/sccm/core/servers/manage/current-branch-versions-supported). Analogamente, il supporto per le versioni di Windows 10 come Enterprise 2015 LTSB o 1607 (CBB) viene eliminato dalla matrice quando queste vengono rimosse dall'elenco delle configurazioni supportate di Configuration Manager. Per altre informazioni, vedere [Sistemi operativi deprecati](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems).
 
 
 
-|Versioni di Windows 10 |Configuration Manager 1602|Configuration Manager 1606|Configuration Manager 1610|
+|Versioni di Windows 10                    |Configuration Manager 1606          |Configuration Manager 1610          |    Configuration Manager 1702 |
 |---------------------|-----|-----|-----|
-|Enterprise 2015 LTSB |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |
-|1507 <br />Enterprise, Pro | ![Supportato](media/green_check.png)| ![Supportato](media/green_check.png)|![Supportato](media/green_check.png) |
-|1511 <br />Enterprise, Pro <br />(CB), (CBB) |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |
-|Enterprise 2016 LTSB    |![Non supportato](media/Red_X.png) |![Supportato](media/green_check.png) | ![Supportato](media/green_check.png)|
-|1607 <br />Enterprise, Pro<br /> (CB)    |![Non supportato](media/Red_X.png) |![Compatibile con le versioni precedenti](media/blue_compat.png) |![Supportato](media/green_check.png) |
-|1607 <br />Enterprise, Pro <br />(CBB)    |![Non supportato](media/Red_X.png) |![Compatibile con le versioni precedenti](media/Red_X.png) |![Supportato](media/green_check.png) |
+|Enterprise 2015 LTSB                   |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |
+|1507 <br />(*vedere le edizioni*)            |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |
+|1511 (CB), (CBB)<br />(*vedere le edizioni*) |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |
+|Enterprise 2016 LTSB                   |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |
+|1607 (CB)    <br />(*vedere le edizioni*)      |![Compatibile con le versioni precedenti](media/blue_compat.png) |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |
+|1607 (CBB)    <br />(*vedere le edizioni*)      |![Non supportato](media/Red_X.png)   |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |
 
+
+
+**Edizioni:** Enterprise, Pro, Education, Pro Education   
 
 |Chiave|
 |--|

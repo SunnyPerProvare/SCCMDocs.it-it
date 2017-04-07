@@ -2,7 +2,7 @@
 title: Impostazioni client | Documentazione Microsoft
 description: Scegliere le impostazioni client tramite la console di System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/12/2016
+ms.date: 03/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,9 +17,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 289db441899359f3bf3abe5d38896c7acd2045b6
-ms.openlocfilehash: 5eaca19f2b21b1c62b956d2a44d492d3ddd6d10a
-ms.lasthandoff: 03/10/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: bd2cf7b0df4a1f50c006e8280bf59ea91f1b4477
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informazioni sulle impostazioni client in System Center Configuration Manager
@@ -329,7 +329,7 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
     -   I file NOIDMIF devono trovarsi nella cartella Windows\System32\CCM\Inventory\Noidmif.  
 
     > [!NOTE]  
-    >  Questa impostazione è disponibile solo nelle impostazioni del client predefinite. 
+    >  Questa impostazione è disponibile solo nelle impostazioni del client predefinite.
 
 -   **Ritardo casuale massimo**
 
@@ -505,7 +505,7 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
 
     -   Scegliere l'icona **Nuovo** per aggiungere un nuovo tipo di file nell'inventario. In seguito specificare le informazioni seguenti nella finestra di dialogo **Proprietà file in inventario**:  
 
-        -   **Nome**: specificare un nome per il file che si vuole includere nell'inventario. È possibile usare il carattere **\** per rappresentare qualsiasi stringa di testo e il carattere **?** per rappresentare qualsiasi carattere. Ad esempio, se si vuole includere nell'inventario tutti i file con estensione doc, specificare il nome del file **\*.doc**.  
+        -   **Nome**: specificare un nome per il file che si vuole includere nell'inventario. È possibile usare il carattere **\** per rappresentare qualsiasi stringa di testo e il carattere**?**per rappresentare qualsiasi carattere. Ad esempio, se si vuole includere nell'inventario tutti i file con estensione doc, specificare il nome del file**\*.doc**.  
 
         -   **Percorso**: fare clic su **Imposta** per aprire la finestra di dialogo **Proprietà percorso**. È possibile configurare l'inventario software per cercare il file specificato in tutti i dischi rigidi del client, cercare un percorso specifico (ad esempio **:\Cartella**) o una variabile specifica (ad esempio, *%windir%*). È anche possibile cercare tutte le sottocartelle nel percorso specificato.  
 
@@ -528,7 +528,7 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
 
     -   Nella finestra di dialogo **Proprietà file recuperato** immettere le informazioni seguenti:  
 
-        -   **Nome**: specificare un nome per il file che si vuole raccogliere. È possibile usare il carattere **\** per rappresentare qualsiasi stringa di testo e il carattere **?** per rappresentare qualsiasi carattere.  
+        -   **Nome**: specificare un nome per il file che si vuole raccogliere. È possibile usare il carattere **\** per rappresentare qualsiasi stringa di testo e il carattere**?** per rappresentare qualsiasi carattere.  
 
         -   **Percorso**: fare clic su **Imposta** per aprire la finestra di dialogo **Proprietà percorso**. È possibile configurare l'inventario software per cercare il file che si vuole raccogliere in tutti i dischi rigidi del client, cercare un percorso specifico (ad esempio **C:\Cartella**) o una variabile specifica (ad esempio, *%windir%*). È anche possibile cercare tutte le sottocartelle nel percorso specificato.  
 
@@ -601,6 +601,12 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
 -   **Periodo di tempo entro cui verranno installate anche tutte le distribuzioni in sospeso con scadenza in questo periodo**  
 
      Usare questa impostazione per specificare l'intervallo di tempo per l'impostazione precedente. È possibile immettere un valore compreso tra 1 e 23 e tra 1 e 365 giorni. Per impostazione predefinita, questa impostazione è configurata su 7 giorni.  
+
+-   **Abilita l'installazione di file per l'installazione rapida nei client**
+
+-   **Porta usata per scaricare contenuto per i file per l'installazione rapida**
+
+-   **Enable management of the Office 365 Client Again** (Abilita di nuovo la gestione del client Office 365) Usare questa impostazione per abilitare la gestione dell'agente client Office 365. Quando questa opzione è impostata su **Sì**, è possibile configurare le impostazioni di installazione di Office 365, scaricare file dalle reti di distribuzione del contenuto (CDN) e distribuire i file come applicazione in Configuration Manager.
 
 ##  <a name="user-and-device-affinity"></a>Affinità utente-dispositivo  
 

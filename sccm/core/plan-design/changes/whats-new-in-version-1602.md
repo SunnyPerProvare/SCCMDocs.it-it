@@ -15,9 +15,11 @@ caps.latest.revision: 3
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
+robots: noindex,nofollow
 translationtype: Human Translation
-ms.sourcegitcommit: 221228890b12bd6875de51e17a1124303b318201
-ms.openlocfilehash: 0314513bed65457c63508bfe2212e3e52d8d03da
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 9a548f43625a907173e7b967d26356bd80f1c5d9
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Novità della versione 1602 di System Center Configuration Manager
@@ -38,7 +40,7 @@ L'aggiornamento 1602 per System Center Configuration Manager è disponibile solo
 
 ## <a name="site-infrastructure"></a>Infrastruttura del sito  
 
-###  <a name="a-namebkmkupgradeosa-in-place-upgrade-the-operating-system-of-site-servers-that-run-windows-server-2008-r2"></a><a name="bkmk_UpgradeOS"></a>Aggiornamento sul posto del sistema operativo dei server del sito che eseguono Windows Server 2008 R2  
+###  <a name="bkmk_UpgradeOS"></a>Aggiornamento sul posto del sistema operativo dei server del sito che eseguono Windows Server 2008 R2  
  I siti di Configuration Manager che eseguono la versione 1602 o versioni successive supportano l'aggiornamento sul posto del sistema operativo dei server del sito da Windows Server 2008 R2 a Windows Server 2012 R2.  
 
 > [!WARNING]  
@@ -48,7 +50,7 @@ L'aggiornamento 1602 per System Center Configuration Manager è disponibile solo
 
  Per aggiornare un server, usare le procedure di aggiornamento di Windows Server 2012 R2. Non è necessario eseguire un ripristino del server del sito di Configuration Manager dopo l'aggiornamento. Per le procedure di aggiornamento, vedere [Opzioni di aggiornamento per Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) nella documentazione di Windows Server.  
 
-###  <a name="a-namebkmkaoaga-sql-server-alwayson-availability-groups"></a><a name="bkmk_AOAG"></a> Gruppi di disponibilità SQL Server AlwaysOn  
+###  <a name="bkmk_AOAG"></a> Gruppi di disponibilità SQL Server AlwaysOn  
  È possibile usare i gruppi di disponibilità SQL Server AlwaysOn per ospitare il database del sito nei siti primari e nel sito di amministrazione centrale come soluzione a disponibilità elevata e di ripristino di emergenza.  
 
  Per informazioni dettagliate, vedere [SQL Server AlwaysOn per database del sito a disponibilità elevata per System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).  
@@ -173,7 +175,7 @@ Queste app si trovano nel nodo **Applicazioni** della console di Configuration M
 Per informazioni dettagliate, vedere [Attestazione dell'integrità per System Center Configuration Manager](../../../core/servers/manage/health-attestation.md).  
 
 ### <a name="improvements-to-endpoint-protection-antimalware-settings"></a>Miglioramenti delle impostazioni antimalware di Endpoint Protection  
- Nella versione&1602; sono state aggiunte le nuove impostazioni seguenti nei criteri antimalware di Endpoint Protection per Windows Defender:  
+ Nella versione 1602 sono state aggiunte le nuove impostazioni seguenti nei criteri antimalware di Endpoint Protection per Windows Defender:  
 
 -   Protezione in tempo reale: Block potentially unwanted applications at download, prior to installation (Blocca le applicazioni potenzialmente indesiderate al download o prima dell'installazione).  
 
@@ -218,9 +220,4 @@ Configuration Manager può richiedere lo stato del blocco attivazione per i disp
 -   **Non conforme**: gli utenti hanno accettato una versione di termini e condizioni, ma non la versione più recente.  
 
 -   **Sconosciuto**: gli utenti non hanno mai accettato termini e condizioni, inclusi quelli senza un dispositivo registrato.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: b4642186e42745640f088b7046e70019616935ea
-ms.openlocfilehash: 9a5cd5ce3ce6868b44768d3cbe7b7c594f44d42c
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 7a9c5bb9890b00cf3485998aa46286c890429cc0
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -148,9 +149,11 @@ A partire dalla versione 1606, mentre si è connessi a Microsoft è possibile ca
 
 8.  Al termine dell'importazione, è possibile chiudere il prompt dei comandi. Vengono importati solo gli aggiornamenti per la gerarchia applicabile.  
 
-9. Aprire la console di Configuration Manager e passare ad **Amministrazione** >**Servizi cloud** > **Aggiornamenti e manutenzione**. Gli aggiornamenti importati sono ora pronti per l'installazione. Per informazioni sull'installazione degli aggiornamenti, vedere  [Installare gli aggiornamenti nella console per System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
+9. Aprire la console di Configuration Manager e passare ad **Amministrazione** > **Aggiornamenti e manutenzione**. Gli aggiornamenti importati sono ora pronti per l'installazione. Nelle versioni precedenti la 1702, Aggiornamenti e manutenzione si trova in **Amministrazione** > **Servizi cloud**.
 
-## <a name="a-namebkmkcmda-command-line-options"></a><a name="bkmk_cmd"></a> Opzioni della riga di comando  
+ Per informazioni sull'installazione degli aggiornamenti, vedere  [Installare gli aggiornamenti nella console per System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
+
+## <a name="bkmk_cmd"></a> Opzioni della riga di comando  
  Per visualizzare le informazioni della Guida per lo strumento del punto di connessione del servizio, aprire il prompt dei comandi nella cartella che contiene lo strumento ed eseguire il comando:  **serviceconnectiontool.exe**.  
 
 |Opzioni della riga di comando|Dettagli|  
@@ -159,9 +162,4 @@ A partire dalla versione 1606, mentre si è connessi a Microsoft è possibile ca
 |**-connect -usagedatasrc [unità:][percorso] -updatepackdest [unità:][percorso] -proxyserveruri [nome FQDN del server proxy] -proxyusername [nome utente]** <br /> <br /> Se si usa una versione di Configuration Manager precedente alla 1606, è necessario specificare il nome del file con estensione cab e non è possibile usare le opzioni per un server proxy.  I parametri di comando supportati sono: <br /> **-connect -usagedatasrc [unità:][percorso][nome file] -updatepackdest [unità:][percorso]** |Questo comando si connette al servizio cloud di Configuration Manager per caricare i file con estensione cab dei dati di utilizzo dal percorso specificato e per scaricare i pacchetti di aggiornamento disponibili e il contenuto della console. Le opzioni per i server proxy sono facoltative.<br /><br /> Eseguire questo comando come **amministratore locale** in un computer con connessione a Internet.<br /><br /> Esempio per la connessione senza server proxy: **-connect -usagedatasrc D:\USB\ -updatepackdest D:\USB\UpdatePacks** <br /><br /> Esempio per la connessione con server proxy: **-connect -usagedatasrc D:\USB\Usagedata.cab -updatepackdest D:\USB\UpdatePacks -proxyserveruri itgproxy.redmond.corp.microsoft.com -proxyusername Meg** <br /><br /> Se si usa una versione precedente alla 1606, è necessario specificare un nome per il file con estensione cab e non è possibile specificare un server proxy. Usare la riga di comando di esempio seguente: **-connect -usagedatasrc D:\USB\Usagedata.cab -updatepackdest D:\USB\UpdatePacks**|      
 |**-import -updatepacksrc [unità:][percorso]**|Questo comando importa i pacchetti di aggiornamento e il contenuto della console scaricati in precedenza nella console di Configuration Manager.<br /><br /> Eseguire questo comando come **amministratore locale** nel server che ospita il punto di connessione del servizio.<br /><br /> Esempio:  **-import -updatepacksrc D:\USB\UpdatePacks**|  
 |**-export -dest [unità:][percorso][nomefile.csv]**|Questo comando esporta i dati di utilizzo in un file CSV che può essere visualizzato successivamente.<br /><br /> Eseguire questo comando come **amministratore locale** nel server che ospita il punto di connessione del servizio.<br /><br /> Esempio: **-export -dest D:\USB\usagedata.csv**|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

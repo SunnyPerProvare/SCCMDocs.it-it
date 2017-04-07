@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3c8f968276cb6d412a4a06cb70f1c8e45e91c605
-ms.openlocfilehash: cd53f093056fbaa2ef6fd88d5451b7698f296569
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: bcb14a2be312d4d8a4a9c235652c7bf971a7a976
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1612 per System Center Configuration Manager
@@ -182,9 +183,15 @@ Quando si esegue lo strumento di pulizia della raccolta contenuto, indipendentem
 
 
 ### <a name="run-the-tool"></a>Eseguire lo strumento
-Per eseguire lo strumento, aprire un prompt dei comandi amministrativo in una cartella che contiene **ContentLibraryCleanup.exe**.  
+Per eseguire lo strumento:
+1. Aprire un prompt dei comandi amministrativo in una cartella contenente **ContentLibraryCleanup.exe**.  
+2. Immettere quindi una riga di comando che includa le opzioni della riga di comando obbligatorie e le opzioni facoltative che si vogliono usare.
 
-Immettere quindi una riga di comando che includa le opzioni della riga di comando obbligatorie e le opzioni facoltative che si vogliono usare.
+**Problema noto** Quando si esegue lo strumento, se un pacchetto o una distribuzione ha esito negativo o è in corso, è possibile che venga restituito un errore simile al seguente:
+-  *System.InvalidOperationException: non è possibile eseguire la pulizia della raccolta contenuto perché il pacchetto <packageID> non è installato completamente*.
+
+**Soluzione temporanea:** Nessuna. Lo strumento non è in grado di identificare in modo affidabile i file orfani quando il contenuto è in corso o la sua distribuzione ha avuto esito negativo. Di conseguenza, lo strumento non consente di eseguire la pulizia del contenuto fino a quando il problema non viene risolto.
+
 
 
 ### <a name="command-line-switches"></a>Opzioni della riga di comando  
@@ -257,7 +264,7 @@ Per abilitare il supporto dei file di installazione rapida per i client, è nece
 1.    Abilitare il supporto per i file di installazione rapida nelle proprietà del componente del punto di aggiornamento software (procedura precedente).
 2.    Nella console di Configuration Manager passare ad **Amministrazione** > **Impostazioni client**.
 3.    Selezionare le impostazioni client appropriate e quindi nella scheda **Home** fare clic su **Proprietà**.
-4.    Selezionare la pagina **Aggiornamenti software **, selezionare **Sì** nell'impostazione **Abilita l'installazione di aggiornamenti rapidi nei client** e configurare la porta usata dal listener HTTP nel client per l'impostazione **Porta usata per scaricare contenuto per gli aggiornamenti rapidi**.
+4.    Selezionare la pagina **Aggiornamenti software**, selezionare **Sì** nell'impostazione **Abilita l'installazione di aggiornamenti rapidi nei client** e configurare la porta usata dal listener HTTP nel client per l'impostazione **Porta usata per scaricare contenuto per gli aggiornamenti rapidi**.
 
 
 ## <a name="odata-endpoint-data-access"></a>Accesso ai dati di endpoint OData
@@ -314,9 +321,4 @@ Dopo aver apportato queste modifiche alla configurazione, è possibile creare cr
 ## <a name="change-to-configuring-multi-factor-authentication-for-device-enrollment"></a>Modifica alla configurazione dell'autenticazione a più fattori per la registrazione dei dispositivi
 
 Ora che è possibile configurare l'autenticazione a più fattori (MFA) per la registrazione del dispositivo nel portale di Azure, l'opzione di autenticazione a più fattori è stata rimossa nella console di Configuration Manager. Altre informazioni sull'impostazione dell'MFA per la registrazione sono disponibili [in questo argomento su Microsoft Intune](https://docs.microsoft.com/en-us/intune/deploy-use/multi-factor-authentication-azure-active-directory).
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

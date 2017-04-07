@@ -15,8 +15,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 4d34a272a93100426cccd2308c5b3b0b0ae94a60
-ms.openlocfilehash: 5fb6bc0bca5ee590000fd30bd46c765871cf5220
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: aaaab003ddd22f18160d4be63cfeab3a7e7f6b03
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -25,18 +26,28 @@ ms.openlocfilehash: 5fb6bc0bca5ee590000fd30bd46c765871cf5220
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-
  A partire dalla versione 1602 di System Center Configuration Manager, è possibile usare [Gruppi di disponibilità AlwaysOn](https://msdn.microsoft.com/library/hh510230\(v=sql.120\).aspx) di SQL Server per ospitare il database del sito nei siti primari e nel sito di amministrazione centrale come soluzione a disponibilità elevata e di ripristino di emergenza. Il gruppo di disponibilità può essere ospitato localmente o in Microsoft Azure.  
 
  Quando si usa Microsoft Azure per ospitare il gruppo di disponibilità, è possibile aumentare ulteriormente la disponibilità del database del sito usando i gruppi di disponibilità SQL Server AlwaysOn con i set di disponibilità di Azure. Per altre informazioni sui set di disponibilità di Azure, vedere [Gestione della disponibilità delle macchine virtuali](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-manage-availability/).  
 
- Di seguito sono riportati gli scenari supportati con gruppi di disponibilità:  
+ Configuration Manager supporta l'hosting del database del sito in un gruppo di disponibilità SQL che si trova dietro un servizio di bilanciamento del carico interno o esterno. Oltre a configurare le eccezioni del firewall in ciascuna replica, è necessario aggiungere regole di bilanciamento del carico per le porte seguenti:
+  - SQL su TCP: TCP 1433
+  - SQL Server Service Broker: TCP 4022
+  - Server Message Block (SMB): TCP 445
+  - Agente mapping endpoint RPC: TCP 135
+
+
+Di seguito sono riportati gli scenari supportati con gruppi di disponibilità:  
 
 -   È possibile spostare il database del sito nell'istanza predefinita di un gruppo di disponibilità  
 
 -   È possibile aggiungere o rimuovere membri di replica da un gruppo di disponibilità che ospita un database del sito  
 
 -   È possibile spostare il database del sito da un gruppo di disponibilità a un'istanza predefinita o denominata di SQL Server autonomo  
+
+> [!Important]  
+> Quando si usa Microsoft Intune con Configuration Manager in una configurazione ibrida, lo spostamento del database del sito da o verso un gruppo di disponibilità attiva la risincronizzazione dei dati con il cloud. Non è possibile evitare questo problema. 
+
 
 
 > [!NOTE]  
@@ -78,7 +89,7 @@ ms.openlocfilehash: 5fb6bc0bca5ee590000fd30bd46c765871cf5220
     - **consentire le connessioni di sola lettura**
 
 
-##  <a name="a-namebkmkbnra-changes-for-backup-and-recovery-when-you-use-a-sql-server-alwayson-availability-group"></a><a name="bkmk_BnR"></a> Modifiche a Backup e ripristino quando si usa un gruppo di disponibilità SQL Server AlwaysOn  
+##  <a name="bkmk_BnR"></a> Modifiche a Backup e ripristino quando si usa un gruppo di disponibilità SQL Server AlwaysOn  
  **Backup:**  
 
  Quando un database del sito viene eseguito in un gruppo di disponibilità, è necessario continuare a eseguire l'attività di manutenzione predefinita **Backup server sito** per eseguire il backup di impostazioni e file comuni di Configuration Manager, senza usare però i file MDF o LDF creati da tale backup. Pianificare invece backup diretti del database del sito usando SQL Server.  
@@ -93,7 +104,7 @@ ms.openlocfilehash: 5fb6bc0bca5ee590000fd30bd46c765871cf5220
 
  Per altre informazioni sulle attività di backup e ripristino, vedere [Backup e ripristino per System Center Configuration Manager](../../../../protect/understand/backup-and-recovery.md).  
 
-##  <a name="a-namebkmkcreatea-configure-an-availability-group-for-use-with-configuration-manager"></a><a name="bkmk_create"></a> Configurare un gruppo di disponibilità da usare con Configuration Manager  
+##  <a name="bkmk_create"></a> Configurare un gruppo di disponibilità da usare con Configuration Manager  
  Prima di iniziare la procedura seguente, acquisire familiarità con le procedure di SQL Server necessarie per completare la configurazione e con le informazioni seguenti che si applicano ai gruppi di disponibilità configurati per l'uso con Configuration Manager.  
 
  **Requisiti per i gruppi di disponibilità AlwaysOn usati con System Center Configuration Manager:**  
@@ -118,8 +129,7 @@ ms.openlocfilehash: 5fb6bc0bca5ee590000fd30bd46c765871cf5220
     >     ALTER DATABASE cm_ABC SET TRUSTWORTHY ON;  
     >     USE cm_ABC  
     >     EXEC sp_changedbowner 'sa'  
-    >     Exec sp_configure 'max text repl size (B)', 2147483647
-    >     reconfigure
+    >     Exec sp_configure 'max text repl size (B)', 2147483647 reconfigure
 
 
 
@@ -185,7 +195,7 @@ ms.openlocfilehash: 5fb6bc0bca5ee590000fd30bd46c765871cf5220
 
 
 
-##  <a name="a-namebkmkdirecta-move-a-site-database-to-an-availability-group"></a><a name="bkmk_direct"></a> Spostare un database del sito in un gruppo di disponibilità  
+##  <a name="bkmk_direct"></a> Spostare un database del sito in un gruppo di disponibilità  
  È possibile spostare un database di un sito installato in precedenza in un gruppo di disponibilità. Per prima cosa è necessario creare il gruppo di disponibilità e quindi configurare il database per l'operazione nel gruppo di disponibilità.  
 
  Per completare questa procedura, l'account utente che esegue l'installazione di Configuration Manager deve essere un membro del gruppo **Administrators locale** in tutti i computer membri del gruppo di disponibilità.  
@@ -208,7 +218,7 @@ ms.openlocfilehash: 5fb6bc0bca5ee590000fd30bd46c765871cf5220
 
 5.  Dopo aver specificato le informazioni per il nuovo percorso del database, completare l'installazione con il processo e le configurazioni normali.  
 
-##  <a name="a-namebkmkchangea-add-or-remove-members-of-an-active-availability-group"></a><a name="bkmk_change"></a> Aggiungere o rimuovere membri di un gruppo di disponibilità attivo  
+##  <a name="bkmk_change"></a> Aggiungere o rimuovere membri di un gruppo di disponibilità attivo  
  Quando Configuration Manager usa un database del sito ospitato in un gruppo di disponibilità, è possibile rimuovere un membro di replica o aggiungerne un altro, senza superare un nodo primario e due secondari.  
 
 #### <a name="to-add-a-new-replica-member"></a>Per aggiungere un nuovo membro di replica  
@@ -229,7 +239,7 @@ ms.openlocfilehash: 5fb6bc0bca5ee590000fd30bd46c765871cf5220
 
 -   Usare le informazioni contenute in [Rimuovere una replica secondaria da un gruppo di disponibilità](https://msdn.microsoft.com/library/hh213149\(v=sql.120\).aspx) nella documentazione di SQL Server.  
 
-##  <a name="a-namebkmkremovea-move-the-site-database-from-an-availability-group-back-to-a-single-instance-sql-server"></a><a name="bkmk_remove"></a> Spostare il database del sito da un gruppo di disponibilità a un'istanza singola di SQL Server  
+##  <a name="bkmk_remove"></a> Spostare il database del sito da un gruppo di disponibilità a un'istanza singola di SQL Server  
  Usare la procedura seguente se non si vuole più ospitare il database del sito in un gruppo di disponibilità.  
 
 #### <a name="to-move-the-site-database-from-an-availability-group-back-to-a-single-instance-sql-server"></a>Per spostare il database del sito da un gruppo di disponibilità a un'istanza singola di SQL Server  
@@ -262,9 +272,4 @@ ms.openlocfilehash: 5fb6bc0bca5ee590000fd30bd46c765871cf5220
 9. Dopo aver specificato le informazioni per il nuovo percorso del database, completare l'installazione con il processo e le configurazioni normali. Al termine dell'installazione, il sito viene riavviato e inizia a usare il nuovo percorso del database.  
 
 10. Per pulire i server che erano membri del gruppo di disponibilità, seguire le indicazioni riportate in [Rimuovere un gruppo di disponibilità](https://msdn.microsoft.com/library/ff878113\(v=sql.120\).aspx) nella documentazione di SQL Server.
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

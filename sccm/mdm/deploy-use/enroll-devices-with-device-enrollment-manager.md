@@ -2,7 +2,7 @@
 title: Registrare i dispositivi usando il manager di registrazione dispositivi - Configuration Manager | Microsoft Docs
 description: "Registrare i dispositivi di proprietà dell&quot;azienda usando l&quot;account del manager di registrazione dispositivi con System Center Configuration Manager."
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 03/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2905f26e-7859-497d-b995-5ff48261efa2
 caps.latest.revision: 8
-author: mtillman
-ms.author: mtillman
+author: nathbarn
+ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
-ms.openlocfilehash: b356d2351b8a28bdca78176fdf0ff3c913a36bd3
-ms.lasthandoff: 01/24/2017
+ms.sourcegitcommit: 7573590763c68a4c97d388be1e64054c318da9cc
+ms.openlocfilehash: 8c491636925670732e6af67d8c1c741e4793ef96
+ms.lasthandoff: 03/24/2017
 
 
 ---
@@ -26,27 +26,23 @@ ms.lasthandoff: 01/24/2017
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le organizzazioni possono usare System Center Configuration Manager e Intune per gestire un numero elevato di dispositivi mobili con un unico account utente. L'account del *manager di registrazione dispositivi* è uno account speciale di Intune, autorizzato a registrare più di cinque dispositivi.  
+Le organizzazioni possono usare Intune per gestire un numero elevato di dispositivi mobili con un singolo account utente. L'account del *manager di registrazione dispositivi* è un account utente speciale che può registrare un massimo di 1000 dispositivi. Aggiungendo utenti esistenti all'account del manager di registrazione dispositivi si assegnano loro particolari funzionalità. Ogni dispositivo registrato usa una singola licenza. È consigliabile usare i dispositivi registrati tramite questo account come dispositivi condivisi senza affinità utente anziché come dispositivi personali dedicati.  
 
 ## <a name="enroll-corporate-owned-devices-with-the-device-enrollment-manager"></a>Registrare i dispositivi di proprietà dell'azienda con il manager di registrazione dispositivi  
  È possibile assegnare a un gestore del negozio o a un supervisore, ad esempio, un account di manager di registrazione dispositivi per consentire l'esecuzione delle operazioni seguenti:  
 
--   Registrare i dispositivi per la gestione  
-
+-   Registrare un massimo di 1000 dispositivi per la gestione  
 -   Usare l'app Portale aziendale per installare le app aziendali  
-
--   Installare e disinstallare il software  
-
 -   Configurare l'accesso ai dati aziendali  
-
 
 Le limitazioni seguenti si applicano ai dispositivi gestiti usando un account del manager di registrazione dispositivi:
 
 - Il gestore del negozio non può reimpostare il dispositivo dal portale aziendale.  
--  I dispositivi non possono essere aggiunti all'area di lavoro o ad Azure Active Directory. I dispositivi non possono quindi usare l'accesso condizionale.
+- I dispositivi non possono essere aggiunti all'area di lavoro o ad Azure Active Directory. I dispositivi non possono quindi usare l'accesso condizionale.
 -  Per distribuire le app aziendali ai dispositivi gestiti con il manager di registrazione dispositivi, distribuire l'app Portale aziendale come **Installazione richiesta** all'account utente del manager di registrazione dispositivi. Il manager di registrazione dispositivi può quindi avviare l'app Portale aziendale per installare altre app.
 - Per migliorare le prestazioni, nell'app Portale aziendale viene visualizzato solo il dispositivo locale. La gestione remota di altri dispositivi DEM è possibile solo dalla console di Configuration Manager e se ne può occupare l'amministratore
 - Il sito Web del portale aziendale non è disponibile per gli account del manager di registrazione dispositivi. Usare l'app Portale aziendale.
+- (Solo iOS) Se si usa il manager di registrazione dispositivi per registrare i dispositivi iOS, non è possibile usare Apple Configurator o Apple Device Enrollment Program (DEP) per registrare i dispositivi.
 
  **Esempi di scenario con il manager di registrazione dispositivi:**   
 Un ristorante vuole adottare tablet POS per il personale di sala e monitor per gli ordini per il personale di cucina. I dipendenti non hanno quindi bisogno di accedere a dati aziendali o di effettuare l'accesso come utente. L'amministratore di Intune crea un account di manager di registrazione dispositivi e registra i dispositivi di proprietà dell'azienda con tale account. In alternativa, l'amministratore potrebbe concedere le credenziali di manager di registrazione dispositivi a un responsabile del ristorante, per consentirgli di registrare e gestire i dispositivi.  

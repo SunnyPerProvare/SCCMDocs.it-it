@@ -6,7 +6,7 @@ keywords:
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 03/01/2017
+ms.date: 03/28/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -14,9 +14,9 @@ ms.technology:
 - configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
 translationtype: Human Translation
-ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
-ms.openlocfilehash: 505c60409d14a1c5617333ab57caa3cd44195dc6
-ms.lasthandoff: 03/04/2017
+ms.sourcegitcommit: 3c2a07f560e0aa3d2beb7cc50e71c98ac45c27e1
+ms.openlocfilehash: 2a4fa6dcf8691875f5b262d6dc7bf1522d91acfd
+ms.lasthandoff: 03/28/2017
 
 
 ---
@@ -79,9 +79,12 @@ Utilizzare le sezioni seguenti per determinare l'infrastruttura del punto di agg
 -   **Client basati su Internet**: ricevono un elenco di punti di aggiornamento software che è possibile configurare per consentire solo le connessioni da Internet oppure un elenco di punti di aggiornamento software che consentono connessioni client Internet e Intranet.  
 
 ###  <a name="BKMK_SUPSwitching"></a> Passaggio a un nuovo punto di aggiornamento software  
- Se si dispone di più punti di aggiornamento software in un sito, e uno di questi presenta un'anomalia o non è più disponibile, i client si connetteranno a un altro punto di aggiornamento software e continueranno ad analizzare gli ultimi aggiornamenti. Quando un client viene inizialmente assegnato a un punto di aggiornamento software, vi resta assegnato salvo errore durante l'analisi degli aggiornamenti software su quel punto.  
+> [!NOTE]
+> A partire dalla versione 1702, i client usano i gruppi di limiti per trovare un nuovo punto di aggiornamento software se quello corrente non è più disponibile. È possibile aggiungere singoli punti di aggiornamento software a diversi gruppi di limiti per controllare quali server possono essere trovati da un client. Per altre informazioni, vedere la sezione [Punti di aggiornamento software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points) dell'argomento [Configurare gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups).
 
- L'analisi degli aggiornamenti software può avere un esito negativo con una serie di diversi codici di errore relativi a nuovi tentativi o mancati tentativi. In caso di analisi non riuscita con un codice di errore di nuovi tentativi, il client avvia un processo di nuovi tentativi di analisi degli aggiornamenti software sul relativo punto. Le condizioni di alto livello che generano tale codice di errore sono spesso attribuibili a un server WSUS non disponibile o temporaneamente sovraccarico. Quando non è possibile analizzare gli aggiornamenti software, il client utilizza il seguente processo:  
+Se si dispone di più punti di aggiornamento software in un sito, e uno di questi presenta un'anomalia o non è più disponibile, i client si connetteranno a un altro punto di aggiornamento software e continueranno ad analizzare gli ultimi aggiornamenti. Quando un client viene inizialmente assegnato a un punto di aggiornamento software, vi resta assegnato salvo errore durante l'analisi degli aggiornamenti software su quel punto.  
+
+L'analisi degli aggiornamenti software può avere un esito negativo con una serie di diversi codici di errore relativi a nuovi tentativi o mancati tentativi. In caso di analisi non riuscita con un codice di errore di nuovi tentativi, il client avvia un processo di nuovi tentativi di analisi degli aggiornamenti software sul relativo punto. Le condizioni di alto livello che generano tale codice di errore sono spesso attribuibili a un server WSUS non disponibile o temporaneamente sovraccarico. Quando non è possibile analizzare gli aggiornamenti software, il client utilizza il seguente processo:  
 
 1.  Analizza gli aggiornamenti software all'orario pianificato, quando viene avviato attraverso il Pannello di controllo del client oppure utilizzando l'SDK. Se l'analisi ha esito negativo, il client attende 30 minuti per ripetere l'operazione e utilizza lo stesso punto di aggiornamento software.  
 
@@ -145,7 +148,8 @@ Abilitare questa opzione in una raccolta di dispositivi o in un set di dispositi
 -   Per altre informazioni sulle configurazioni supportate per i sistemi del sito di Configuration Manager, vedere [Prerequisiti del sito e di sistema del sito](../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
 
 ###  <a name="BKMK_PlanningForWSUS"></a> Pianificare l'installazione di WSUS  
- Gli aggiornamenti software richiedono che su tutti i server del sistema del sito sia installata una versione supportata di WSUS configurata per il ruolo del sistema sito del punto di aggiornamento software. Inoltre, quando non si installa il punto di aggiornamento software nel server del sito, è necessario installare la console di amministrazione WSUS sul computer del server del sito, se non già installata. In questo modo il server del sito può comunicare con WSUS in esecuzione sul punto di aggiornamento software.  
+
+Gli aggiornamenti software richiedono che su tutti i server del sistema del sito sia installata una versione supportata di WSUS configurata per il ruolo del sistema sito del punto di aggiornamento software. Inoltre, quando non si installa il punto di aggiornamento software nel server del sito, è necessario installare la console di amministrazione WSUS sul computer del server del sito, se non già installata. In questo modo il server del sito può comunicare con WSUS in esecuzione sul punto di aggiornamento software.  
 
  Quando si usa WSUS in Windows Server 2012, è necessario configurare autorizzazioni aggiuntive per consentire a **WSUS Configuration Manager** in Configuration Manager di connettersi al WSUS per eseguire controlli di integrità periodici. Scegliere una delle seguenti opzioni per configurare le autorizzazioni:  
 
@@ -161,9 +165,9 @@ Abilitare questa opzione in una raccolta di dispositivi o in un set di dispositi
  Quando si installa WSUS, è possibile utilizzare il sito Web predefinito IIS esistente o creare un sito Web di WSUS personalizzato. Creare un sito Web personalizzato per WSUS in modo che IIS ospiti i servizi WSUS in un sito Web virtuale dedicato invece di condividere lo stesso sito Web usato dagli altri sistemi del sito di Configuration Manager o da altre applicazioni. Ciò vale soprattutto quando si installa il ruolo del sistema sito del punto di aggiornamento software sul server del sito. Quando si esegue WSUS in Windows Server 2012, WSUS viene configurato, per impostazione predefinita per l'uso della porta 8530 per HTTP e della porta 8531 per HTTPS. Quando viene creato il punto di aggiornamento software in un sito, è necessario specificare queste impostazioni porta.  
 
 ####  <a name="BKMK_WSUSInfrastructure"></a> Uso di un'infrastruttura WSUS esistente  
- È possibile usare un server WSUS che era attivo nell'ambiente prima dell'installazione di Configuration Manager. Quando il punto di aggiornamento software è configurato, è necessario specificare le impostazioni di sincronizzazione. Configuration Manager si connette a WSUS eseguito nel punto di aggiornamento software e configura il server WSUS con le stesse impostazioni. Se il server WSUS era precedentemente sincronizzato con prodotti o classificazioni non configurati come parte delle impostazioni di sincronizzazione del punto di aggiornamento software, i metadati degli aggiornamenti software per i prodotti e le classificazioni vengono sincronizzati per tutti i metadati degli aggiornamenti software nel database di WSUS, indipendentemente dalle impostazioni di sincronizzazione per il punto di aggiornamento software. Ciò potrebbe comportare dei metadati degli aggiornamenti software imprevisti nel database del sito. Lo stesso comportamento sarà registrato in caso di aggiunta di prodotti o classificazioni direttamente nella console di amministrazione di WSUS e di successivo avvio immediato della sincronizzazione. Per impostazione predefinita, Configuration Manager si connette ogni ora a WSUS eseguito in un punto di aggiornamento software e reimposta qualsiasi impostazione modificata al di fuori di Configuration Manager.  
+ È possibile usare un server WSUS che era attivo nell'ambiente prima dell'installazione di Configuration Manager come punto di aggiornamento software. Quando il punto di aggiornamento software è configurato, è necessario specificare le impostazioni di sincronizzazione. Configuration Manager si connette al server WSUS eseguito nel punto di aggiornamento software e lo configura con le stesse impostazioni. Se prima di essere configurato come punto di aggiornamento software il server WSUS è stato sincronizzato con prodotti o classificazioni non configurati come parte delle impostazioni di sincronizzazione del punto di aggiornamento software, i metadati degli aggiornamenti software per i prodotti e le classificazioni vengono sincronizzati per tutti i metadati degli aggiornamenti software nel database di WSUS, indipendentemente dalle impostazioni di sincronizzazione configurate per il punto di aggiornamento software. Ciò potrebbe comportare dei metadati degli aggiornamenti software imprevisti nel database del sito. Lo stesso comportamento sarà registrato in caso di aggiunta di prodotti o classificazioni direttamente nella console di amministrazione di WSUS e di successivo avvio immediato di una sincronizzazione. Per impostazione predefinita, Configuration Manager si connette ogni ora a WSUS in un punto di aggiornamento software e reimposta qualsiasi impostazione modificata al di fuori di Configuration Manager. Per gli aggiornamenti software non conformi ai prodotti e alle classificazioni specificati nelle impostazioni di sincronizzazione sono previste l'impostazione della scadenza e quindi la relativa rimozione dal database del sito.
 
- Per gli aggiornamenti software non conformi ai prodotti e alle classificazioni specificati nelle impostazioni di sincronizzazione sono previste l'impostazione della scadenza e quindi la relativa rimozione dal database del sito.  
+ Quando un server WSUS è configurato come punto di aggiornamento software, non è più possibile usarlo come server WSUS autonomo. Se è necessario un server WSUS autonomo separato, non gestito da Configuration Manager, è necessario configurarlo in un server diverso. 
 
 ####  <a name="BKMK_WSUSAsReplica"></a> Configurare WSUS come server di replica  
  Quando si crea un ruolo del sistema sito del punto di aggiornamento software in un server del sito primario, non è possibile usare un server WSUS configurato come una replica. Se il server WSUS viene configurato come server di replica, Configuration Manager non riesce a configurarlo e non è possibile completare neanche la sincronizzazione di WSUS. Se un punto di aggiornamento software viene creato in un sito secondario, Configuration Manager configura WSUS come server di replica di WSUS eseguito nel punto di aggiornamento software del sito primario padre. Il primo punto di aggiornamento software installato in un sito primario è il punto predefinito. I punti di aggiornamento software aggiuntivi nel sito sono configurati come repliche del punto di aggiornamento software predefinito.  

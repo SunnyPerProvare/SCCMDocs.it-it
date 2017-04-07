@@ -2,7 +2,7 @@
 title: Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando System Center Configuration Manager | Microsoft Docs
 description: Proteggere i dati del dispositivo con cancellazione completa, cancellazione selettiva, blocco remoto o reimpostazione passcode usando System Center Configuration Manager.
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 03/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,13 +13,13 @@ ms.topic: article
 ms.assetid: 770da7bd-02dd-474a-9604-93ff1ea0c1e4
 caps.latest.revision: 18
 caps.handback.revision: 0
-author: mtillman
-ms.author: mtillman
+author: nathbarn
+ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 3aa4c2ad3568cc6ced70a65141a2c103af8b740f
-ms.lasthandoff: 03/06/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: ef020a0409c1f1a68f76ecadc9885801e6c1ad4e
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-using-system-center-configuration-manager"></a>Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando System Center Configuration Manager
@@ -77,19 +77,22 @@ Configuration Manager include funzionalità per la cancellazione selettiva, la c
 |Agente di gestione|Il privilegio di amministratore del dispositivo viene revocato.|Il privilegio di amministratore del dispositivo viene revocato.|  
 |Profili di posta elettronica|Non applicabile.|Per i profili di posta elettronica di cui viene eseguito il provisioning da Intune, vengono rimossi l'account e l'indirizzo di posta elettronica.|  
 
+**Android for Work**
+
+Quando si eseguire la cancellazione selettiva in un dispositivo Android for Work, viene rimosso il profilo di lavoro insieme a tutti i dati, le app e le impostazioni presenti nel profilo di lavoro stesso sul dispositivo in questione. Questo impedisce la gestione del dispositivo con Configuration Manager e Intune. La cancellazione completa non è supportata per Android for Work.
+
  **Windows 10, Windows 8.1, Windows RT 8.1 e Windows RT**  
 
-|Contenuti rimossi quando si disattiva un dispositivo|Windows 10, Windows 8.1 e Windows RT 8.1|Windows RT|  
-|---------------------------------|-------------|-----------|
-|App aziendali e dati associati installati usando Configuration Manager e Intune.|Le app vengono disinstallate e le chiavi di trasferimento locale vengono rimosse. Alle app che usano la cancellazione selettiva di Windows verrà revocata la chiave di crittografia e i dati non saranno più accessibili.|Le chiavi di trasferimento locale vengono rimosse ma le applicazioni rimangono installate.|  
-|Profili VPN e Wi-Fi|Rimosso.|Non applicabile.|  
-|Certificati|Rimossi e revocati.|Non applicabile.|  
-|Impostazioni|Requisiti rimossi.||  
-|Agente di gestione|Non applicabile. L'agente di gestione è incorporato.|Non applicabile. L'agente di gestione è incorporato.|  
-|Profili di posta elettronica|Rimuove le applicazioni di posta elettronica abilitate per EFS, tra cui i messaggi e gli allegati dell'applicazione Windows Mail.|Non applicabile.|  
+|Contenuti rimossi quando si disattiva un dispositivo|Windows 10, Windows 8.1 e Windows RT 8.1|  
+|---------------------------------|-------------|
+|App aziendali e dati associati installati usando Configuration Manager e Intune.|Le app vengono disinstallate e le chiavi di trasferimento locale vengono rimosse. Alle app che usano la cancellazione selettiva di Windows verrà revocata la chiave di crittografia e i dati non saranno più accessibili.|  
+|Profili VPN e Wi-Fi|Rimosso.|  
+|Certificati|Rimossi e revocati.|  
+|Impostazioni|Requisiti rimossi.|
+|Agente di gestione|Non applicabile. L'agente di gestione è incorporato.|  
+|Profili di posta elettronica|Rimuove le applicazioni di posta elettronica abilitate per EFS, tra cui i messaggi e gli allegati dell'applicazione Windows Mail.|  
 
- **Windows 10 Mobile, Windows Phone 8.0 e Windows Phone 8.1**  
-
+ **Windows 10 Mobile, Windows Phone 8.0 e Windows Phone 8.1**
 
  |Contenuti rimossi quando si disattiva un dispositivo|Windows 10 Mobile, Windows Phone 8 e Windows Phone 8.1|  
 |-|-|
@@ -102,53 +105,29 @@ Configuration Manager include funzionalità per la cancellazione selettiva, la c
  Le seguenti impostazioni vengono inoltre rimosse dai dispositivi Windows 10 Mobile e Windows Phone 8.1:  
 
 -   Richiedi una password per sbloccare i dispositivi mobili  
-
 -   Consenti password semplici  
-
 -   Lunghezza minima password  
-
 -   Tipo di password richiesto  
-
 -   Scadenza password (giorni)  
-
 -   Ricorda cronologia password  
-
 -   Numero di errori di accesso ripetuti consentiti prima della cancellazione del dispositivo  
-
 -   Minuti di inattività prima che venga richiesta la password  
-
 -   Tipo di password richiesto - numero minimo di set di caratteri  
-
 -   Consenti dispositivo foto/video  
-
 -   Richiedi crittografia sui dispositivi mobili  
-
 -   Consenti archivi rimovibili  
-
 -   Consenti browser Web  
-
 -   Consenti archivio applicazioni  
-
 -   Consenti acquisizione schermo  
-
 -   Consenti georilevazione  
-
 -   Consenti account Microsoft  
-
 -   Consenti copia e incolla  
-
 -   Consenti tethering Wi-Fi  
-
 -   Consenti connessione automatica agli hotspot Wi-Fi gratuiti  
-
 -   Consenti creazione report degli hotspot Wi-Fi  
-
 -   Consenti ripristino impostazioni predefinite  
-
 -   Consenti Bluetooth  
-
 -   Consenti NFC  
-
 -   Consenti Wi-Fi  
 
 ### <a name="to-initiate-a-remote-wipe-from-the-configuration-manager-console"></a>Per avviare una cancellazione remota dalla console di Configuration Manager  
@@ -192,10 +171,11 @@ Configuration Manager include funzionalità per la cancellazione selettiva, la c
 |Piattaforma|Reimpostazione del passcode|  
 |--------------|--------------------|  
 |iOS|Funzionalità supportata per cancellare il passcode da un dispositivo. Non implica la creazione di un nuovo passcode temporaneo.|  
-|Android|Funzionalità supportata; implica la creazione di un passcode temporaneo.|  
+|Android|Funzionalità supportata; implica la creazione di un passcode temporaneo.|
+|Android for Work | Non supportato|
 |Windows 10|Non supportato al momento.|  
 |Windows Phone 8 e Windows Phone 8.1|Supportato|  
-|Windows RT 8.1 e Windows RT|Funzionalità non supportata|  
+|Windows RT 8.1 |Funzionalità non supportata|  
 |Windows 8.1|Non supportato|  
 
 ### <a name="to-reset-the-passcode-on-a-mobile-device-remotely-in-configuration-manager"></a>Per reimpostare il passcode su un dispositivo mobile in modalità remota in Configuration Manager  
@@ -223,7 +203,7 @@ Configuration Manager include funzionalità per la cancellazione selettiva, la c
 |Android|Supportato|  
 |Windows 10|Non supportato al momento.|  
 |Windows Phone 8 e Windows Phone 8.1|Supportato|  
-|Windows RT 8.1 e Windows RT|Funzionalità supportata se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|  
+|Windows RT 8.1 |Funzionalità supportata se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|  
 |Windows 8.1|Funzionalità supportata se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|  
 
 ### <a name="to-lock-a-mobile-device-remotely-through-the-configuration-manager-console"></a>Per bloccare un dispositivo mobile in modalità remota tramite la console di Configuration Manager  

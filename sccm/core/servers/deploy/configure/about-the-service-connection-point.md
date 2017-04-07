@@ -2,7 +2,7 @@
 title: Punto di connessione del servizio | Documentazione Microsoft
 description: Informazioni sul ruolo di sistema del sito di Configuration Manager e pianificazione della gamma di usi.
 ms.custom: na
-ms.date: 2/7/2017
+ms.date: 3/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3a24fe53cc243294694b779fad4c3ab83ca2ecb7
-ms.openlocfilehash: ae2cc7030c1fc404dcc7392b8c3067fc0f8cafc0
+ms.sourcegitcommit: 6accec2d356861b273b25ba2b6338d9684a46ff6
+ms.openlocfilehash: ad6df047beff670411d203220576b87f7d56d50c
+ms.lasthandoff: 03/29/2017
 
 
 ---
@@ -42,17 +43,18 @@ Il punto di connessione del servizio di System Center Configuration Manager è u
 
   Per informazioni sui dati raccolti da ogni livello e su come modificare il livello di raccolta dopo l'installazione del ruolo, vedere [Dati di diagnostica e di utilizzo ](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data) e selezionare il collegamento corrispondente alla versione di Configuration Manager in uso.  
 
-    Per altre informazioni, vedere [Impostazioni e livelli per i dati di utilizzo](../../../../core/servers/deploy/install/setup-reference.md#bkmk_usage).  
+  Per altre informazioni, vedere [Impostazioni e livelli per i dati di utilizzo](../../../../core/servers/deploy/install/setup-reference.md#bkmk_usage).  
 
 -   **Scaricare gli aggiornamenti applicabili all'infrastruttura di Configuration Manager**: vengono resi disponibili solo gli aggiornamenti rilevanti per l'infrastruttura, in base ai dati di utilizzo caricati.  
 
- **Ogni gerarchia supporta una sola istanza di questo ruolo:**  
+- **Ogni gerarchia supporta una sola istanza di questo ruolo:**  
 
-    -   Il ruolo del sistema del sito può essere installato solo nel sito di livello più alto della gerarchia, ovvero in un sito di amministrazione centrale o in un sito primario autonomo.  
+ -   Il ruolo del sistema del sito può essere installato solo nel sito di livello più alto della gerarchia, ovvero in un sito di amministrazione centrale o in un sito primario autonomo.  
 
-    -   Se si espande un sito primario autonomo in una gerarchia più ampia, è necessario disinstallare questo ruolo dal sito primario per poterlo quindi installare nel sito di amministrazione centrale.  
+  -   Se si espande un sito primario autonomo in una gerarchia più ampia, è necessario disinstallare questo ruolo dal sito primario per poterlo quindi installare nel sito di amministrazione centrale.  
 
-##  <a name="a-namebkmkmodesa-modes-of-operation"></a><a name="bkmk_modes"></a> Modalità di funzionamento  
+
+##  <a name="bkmk_modes"></a> Modalità di funzionamento  
  Il punto di connessione del servizio supporta due modalità di funzionamento:  
 
 -   In **modalità online** il punto di connessione del servizio controlla automaticamente ogni 24 ore se sono presenti aggiornamenti e quindi scarica i nuovi aggiornamenti disponibili per la versione corrente del prodotto e dell'infrastruttura per renderli disponibili nella console di Configuration Manager.  
@@ -82,7 +84,7 @@ Per usare Configuration Manager Service Manager, nella console passare a **Monit
 
 -   Il responsabile della distribuzione nel server del sito usa l'account di installazione del sistema del sito per trasferire gli aggiornamenti dal punto di connessione del servizio.
 
-##  <a name="a-namebkmkurlsa-internet-access-requirements"></a><a name="bkmk_urls"></a> Requisiti per l'accesso a Internet  
+##  <a name="bkmk_urls"></a> Requisiti per l'accesso a Internet  
 Per abilitare l'operazione, il computer che ospita il punto di connessione del servizio ed eventuali firewall tra il computer e Internet deve passare le comunicazioni tramite la **porta TCP 443** e la **porta TCP 443** ai percorsi Internet seguenti. Il punto di connessione del servizio supporta anche l'uso di un proxy Web (con o senza autenticazione) per accedere a questi percorsi.  Se è necessario configurare un account proxy Web, vedere [Supporto dei server proxy in System Center Configuration Manager](/sccm/core/plan-design/network/proxy-server-support).
 
 **Aggiornamenti e manutenzione**  
@@ -119,8 +121,10 @@ Quando si esegue il **programma di installazione** per installare il sito di liv
 
 Dopo l'esecuzione del programma di installazione, o se si reinstalla il ruolo del sistema del sito, usare l'**Aggiunta guidata ruoli del sistema del sito** o la **Creazione guidata server del sistema sito** per installare il sistema del sito in un server nel sito di livello più alto della gerarchia, ovvero il sito di amministrazione centrale o un sito primario autonomo. Entrambe le procedure guidate sono disponibili nella scheda **Home** della console, in **Amministrazione** > **Configurazione del sito** > **Server e ruoli del sistema del sito**.
 
+## <a name="log-files-used-by-the-service-connection-point"></a>File di log usati dal punto di connessione del servizio
+Per visualizzare informazioni sui caricamenti in Microsoft, visualizzare **Dmpuploader.log** nel computer che esegue il punto di connessione del servizio.  Per i download, incluso lo stato di avanzamento dei download degli aggiornamenti, visualizzare **Dmpdownloader.log**. Per l'elenco completo dei log correlati al punto di connessione del servizio, vedere [Punto di connessione del servizio](/sccm/core/plan-design/hierarchy/log-files#BKMK_WITLog) nell'argomento relativo ai file di log di Configuration Manager.
 
-
-<!--HONumber=Feb17_HO3-->
-
+È inoltre possibile usare i diagrammi di flusso seguenti per comprendere il flusso del processo e le voci di log chiave per i download degli aggiornamenti e la replica degli aggiornamenti in altri siti:
+ - [Diagramma di flusso - scaricare gli aggiornamenti](/sccm/core/servers/manage/download-updates-flowchart)
+ - [Diagramma di flusso - replica di aggiornamento](/sccm/core/servers/manage/update-replication-flowchart)
 

@@ -16,8 +16,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
-ms.openlocfilehash: 32af7da62bfe767a21a891338bd778ebf45f2685
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 88a72259bca79f2fa985e86cb57ec7a974bad24d
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -27,7 +28,7 @@ ms.openlocfilehash: 32af7da62bfe767a21a891338bd778ebf45f2685
 
 Usare le sequenze di attività in System Center Configuration Manager per aggiornare automaticamente un sistema operativo da Windows 7 o versione successiva a Windows 10 su un computer di destinazione. Creare una sequenza attività che faccia riferimento all'immagine del sistema operativo da installare nel computer di destinazione ed eventuale contenuto aggiuntivo, ad esempio applicazioni o aggiornamenti software che si desidera installare. La sequenza di attività per aggiornare un sistema operativo fa parte dello scenario [Aggiornare Windows alla versione più recente](upgrade-windows-to-the-latest-version.md).  
 
-##  <a name="a-namebkmkupgradeosa-create-a-task-sequence-to-upgrade-an-operating-system"></a><a name="BKMK_UpgradeOS"></a> Creare una sequenza di attività per aggiornare un sistema operativo  
+##  <a name="BKMK_UpgradeOS"></a> Creare una sequenza di attività per aggiornare un sistema operativo  
  Per aggiornare il sistema operativo nei computer a Windows 10, è possibile creare una sequenza di attività e selezionare **Aggiorna sistema operativo dal pacchetto di aggiornamento** nella Creazione guidata della sequenza di attività. La procedura guidata aggiungerà i passaggi per aggiornare il sistema operativo, applicare gli aggiornamenti software e installare le applicazioni. Prima di creare la sequenza di attività, devono essere disponibili gli elementi seguenti:  
 
 -   **Richiesto**  
@@ -70,6 +71,42 @@ Usare le sequenze di attività in System Center Configuration Manager per aggior
 
 9. Completare la procedura guidata.  
 
+
+
+## <a name="configure-pre-cache-content"></a>Configurare la pre-cache del contenuto
+A partire dalla versione 1702, per le distribuzioni e le sequenze di attività disponibili è possibile scegliere di usare la funzionalità di pre-cache del contenuto. In questo modo, prima che gli utenti installino il contenuto, i client scaricheranno solo il contenuto pertinente.
+> [!TIP]  
+> Introdotta con la versione 1702, la pre-cache è una funzionalità di versione non definitiva. Per abilitarla, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/pre-release-features).
+
+Si supponga ad esempio di voler distribuire una sequenza di attività di aggiornamento sul posto di Windows 10, di volere una sola sequenza di attività per tutti gli utenti e di avere più architetture e/o lingue. Nelle versioni precedenti la 1702, se si crea una distribuzione disponibile, il contenuto viene scaricato quando l'utente fa clic su **Installa** in Software Center. Ciò prolunga il tempo che precede l'avvio dell'installazione. Inoltre, tutto il contenuto a cui viene fatto riferimento nella sequenza di attività viene scaricato. compreso il pacchetto di aggiornamento del sistema operativo per tutte le lingue e per tutte le architetture. Se le dimensioni di ciascun pacchetto sono circa 3 GB, il pacchetto di download può avere dimensioni notevoli.
+
+Con la funzionalità di pre-cache del contenuto è possibile consentire al client di scaricare solo il contenuto applicabile non appena riceve la distribuzione. Pertanto quando l'utente fa clic su **Installa** in Software Center, il contenuto è pronto e l'installazione inizia rapidamente, dato che il contenuto si trova nel disco rigido locale.
+
+### <a name="to-configure-the-pre-cache-feature"></a>Per configurare la funzionalità di pre-cache
+
+1. Creare pacchetti di aggiornamento del sistema operativo per lingue e architetture specifiche. Specificare l'architettura e della lingua nella scheda **Origine dati** del pacchetto. Per la lingua usare la conversione decimale. Ad esempio, 1033 è il valore decimale per l'inglese e 0x0409 è il corrispondente valore esadecimale. Per i dettagli, vedere [Creare una sequenza di attività per aggiornare un sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system).
+
+    I valori relativi all'architettura e alla lingua usati devono rispettare le condizioni dei passaggi della sequenza di attività che verranno creati nel passaggio successivo, per determinare se sia necessario usare la funzionalità di pre-cache per i pacchetti di aggiornamento del sistema operativo.
+2. Creare una sequenza di attività con passaggi condizionali per le diverse lingue e le diverse architetture. Per la versione inglese, ad esempio, è possibile creare un passaggio simile al seguente:
+
+    ![proprietà pre-cache](../media/precacheproperties2.png)
+
+    ![opzioni pre-cache](../media/precacheoptions2.png)  
+
+3. Distribuire la sequenza di attività. Per la funzionalità di pre-cache configurare le impostazioni seguenti:
+    - Nella scheda **Generale** selezionare **Pre-download del contenuto per questa sequenza di attività**.
+    - Nella scheda **Impostazioni di distribuzione** configurare la sequenza di attività selezionando **Disponibile** per **Scopo**. Se si crea una distribuzione **obbligatoria** la funzionalità di pre-cache non funziona.
+    - Per l'impostazione **Pianifica quando questa distribuzione diventerà disponibile** della scheda **Pianificazione**, scegliere un'ora nel futuro che garantisca ai client tempo sufficiente per la funzionalità di pre-cache del contenuto, prima che la distribuzione venga resa disponibile agli utenti. È ad esempio possibile concedere alla funzionalità di pre-cache del contenuto un periodo di 3 ore nel futuro.  
+    - Nella scheda **Punti di distribuzione** configurare le impostazioni **Opzioni di distribuzione**. Se in un client non è stata eseguita la funzione di pre-cache per il contenuto prima che l'utente avvii l'installazione, vengono usate queste impostazioni.
+
+
+### <a name="user-experience"></a>Esperienza utente
+- Quando il client riceve i criteri di distribuzione, avvia la funzione di pre-cache del contenuto, ovvero di tutto il contenuto a cui si fa riferimento (eventuali altri tipi di pacchetti) e del pacchetto di aggiornamento del solo sistema operativo corrispondente a quello del client, in base alle condizioni impostate nella sequenza di attività.
+- Quando la distribuzione viene resa disponibile agli utenti (impostazione nella scheda **Pianificazione** della distribuzione), una notifica informa gli utenti della nuova distribuzione e la distribuzione stessa diventa visibile in Software Center. Per avviare l'installazione l'utente può passare a Software Center e fare clic su **Installa**.
+- Se la funzione di pre-cache del contenuto non è stata eseguita completamente, vengono usate le impostazioni specificate nella scheda **Opzioni di distribuzione** della distribuzione. È consigliabile lasciare un periodo sufficiente tra il momento in cui si crea la distribuzione e l'ora in cui la distribuzione stessa diventa disponibile per gli utenti, per consentire ai client di eseguire in tempo la funzione di pre-cache del contenuto.
+
+
+
 ## <a name="download-package-content-task-sequence-step"></a>Passaggio della sequenza di attività Scaricare il contenuto del pacchetto  
  Il passaggio [Scaricare il contenuto del pacchetto](../understand/task-sequence-steps.md#BKMK_DownloadPackageContent) può essere usato prima del passaggio **Aggiorna sistema operativo** negli scenari seguenti:  
 
@@ -91,9 +128,4 @@ Usare le sequenze di attività in System Center Configuration Manager per aggior
 
 ## <a name="folder-and-files-removed-after-computer-restart"></a>Cartelle e file vengono rimossi dopo il riavvio del computer  
  Quando la sequenza di attività per eseguire l'aggiornamento di un sistema operativo a Windows 10 e tutti gli altri passaggi della sequenza di attività sono stati completati, gli script di post-elaborazione e di rollback non vengono rimossi fino a quando non viene riavviato il computer.  Questi file di script non contengono informazioni riservate.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

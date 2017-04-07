@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 26a362b4e5f25414178cae6843869a54eb99028c
-ms.openlocfilehash: b190b6116fba8080ad4e144e4e349e0926d1340b
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: ef044af5f6b32e4161d54c0ab1fb2ef2d245264b
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -70,7 +70,7 @@ Per altre informazioni, vedere [Support for Current Branch versions](/sccm/core/
 ##  <a name="long-term-servicing-branch-of-system-center-configuration"></a>Long-Term Servicing Branch di System Center Configuration
 Si tratta di un ramo con licenza destinato all'uso nell'ambiente di produzione da parte di clienti di Configuration Manager che usano Current Branch e che hanno lasciato scadere la sottoscrizione Configuration Manager Software Assurance (SA) o diritti di sottoscrizione equivalenti dopo il 1° ottobre 2016. Per altre informazioni su Software Assurance e le opzioni di licenza, vedere [Licenze e rami per System Center Configuration Manager](learn-more-editions.md).
 
-L'opzione LTSB non riceve aggiornamenti nella console che offrono nuove funzionalità o che ottimizzano le funzioni esistenti. Tuttavia, vengono fornite correzioni critiche per la protezione.
+L'opzione LTSB è basata sulla versione 1606. Questo ramo non riceve aggiornamenti nella console che offrono nuove funzionalità o aggiornano funzionalità esistenti. Tuttavia, vengono fornite correzioni critiche per la protezione. Per installare LTSB è necessario usare il [supporto di base](/sccm/core/servers/manage/updates#baseline-and-update-versions) della versione 1606 ricevuto come DVD con System Center 2016 o System Center Configuration Manager.
 
 Per installare LTSB come un nuovo sito o un aggiornamento da un sito di Configuration Manager 2012 supportato, usare il [supporto di base](/sccm/core/servers/manage/updates#baseline-and-update-versions) versione 1606, che è possibile ottenere come un DVD con System Center 2016 o una versione di System Center Configuration Manager (Current Branch e Long-Term Servicing Branch 1606). È possibile usare il supporto di base per installare un nuovo sito che esegue la versione 1606 di Current Branch o che esegue Long-Term Servicing Branch.
 

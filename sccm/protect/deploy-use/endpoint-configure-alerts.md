@@ -2,7 +2,7 @@
 title: Configurare gli avvisi di Endpoint Protection | Microsoft Docs
 description: Informazioni su come configurare gli avvisi di Endpoint Protection in System Center Configuration Manager.
 ms.custom: na
-ms.date: 02/14/2017
+ms.date: 03/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 9b20b50843cadc478d5b75a276d2a24aea30f2ff
-ms.openlocfilehash: 6e7b080c1e1876c0ccef9ce6568ce88b65dfca87
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 7f4329b289b606dee5bf31aad8207de52667229f
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -90,14 +91,15 @@ ms.openlocfilehash: 6e7b080c1e1876c0ccef9ce6568ce88b65dfca87
 
 9. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà***<Nome raccolta\>*.  
 
+## <a name="alert-for-outdated-malware-client"></a>Avviso per client malware obsoleto
+
+A partire da Configuration Manager versione 1702, è possibile configurare un avviso per verificare che i client Endpoint Protection non siano obsoleti. È ora possibile visualizzare **Versione client antimalware** e **Endpoint Protection Deployment Status** (Stato distribuzione Endpoint Protection) passando ad **Asset e conformità** > **Panoramica** > **Dispositivi** > **Tutti i client desktop e di server**. Per controllare un avviso, visualizzare **Avvisi** nell'area di lavoro **Monitoraggio**. Se più del 20% dei client gestiti esegue una versione scaduta del software antimalware, viene visualizzato l'avviso La versione del client antimalware è obsoleta. Questo avviso non viene visualizzato nella scheda **Monitoraggio** > **Panoramica**. Per aggiornare i client antimalware scaduti, abilitare gli aggiornamenti software per i client antimalware.
+
+Per configurare la percentuale oltre la quale viene generato l'avviso, espandere **Monitoraggio** > **Avvisi** > **Tutti gli avvisi**, fare doppio clic su **I client antimalware sono obsoleti** e modificare l'opzione **Genera un avviso se la percentuale di client gestiti con una versione obsoleta del client antimalware è superiore a**.
+
 > [!div class="button"]
 [Passaggio successivo >](endpoint-definition-updates.md)
 
 > [!div class="button"]
 [Indietro >](endpoint-protection-site-role.md)
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

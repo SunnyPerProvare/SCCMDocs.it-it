@@ -2,7 +2,7 @@
 title: Data warehouse | Microsoft Docs
 description: Punto di servizio e database del data warehouse per System Center Configuration Manager
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 3/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
-ms.openlocfilehash: 176d1116c910306f70d9acf934ad90340bcc4fcd
-ms.lasthandoff: 03/04/2017
+ms.sourcegitcommit: 3c2a07f560e0aa3d2beb7cc50e71c98ac45c27e1
+ms.openlocfilehash: 9239f6e749c368835e8594ca2d07378d8555b99e
+ms.lasthandoff: 03/28/2017
 
 
 ---
@@ -54,6 +54,13 @@ Quando viene installato, il ruolo del sistema del sito installa e configura il d
   - Gruppo di disponibilità AlwaysOn di SQL Server: questa configurazione non è supportata.
   - Cluster di SQL Server: i cluster di failover di SQL Server non sono supportati. Questo supporto non è disponibile perché il database del data warehouse non è stato testato in profondità nei cluster di failover di SQL Server.
   - Quando il database del data warehouse è remoto rispetto al database del server del sito, è necessario avere una licenza separata per l'istanza di SQL Server che ospita il database.
+
+> [!IMPORTANT]  
+> Il data warehouse non è supportato se il computer che esegue il punto di servizio del data warehouse o che ospita il database del data warehouse esegue una delle lingue seguenti:
+> - JPN - Giapponese
+> - KOR - Coreano
+> - CHS - Cinese semplificato
+> - CHT - Cinese tradizionale. Il problema verrà risolto in una versione successiva.
 
 
 ## <a name="install-the-data-warehouse"></a>Installare il data warehouse

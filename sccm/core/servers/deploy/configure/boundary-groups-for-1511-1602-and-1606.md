@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 139dcf9bc2a9bd253592b969b6f9d814ffcdfd8e
-ms.openlocfilehash: 6b24d775fe4ca78dfba9645b81096f9228864d99
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 640cdc67f301a81a45bf27f95eb03cbc8754a9aa
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -26,10 +27,10 @@ ms.openlocfilehash: 6b24d775fe4ca78dfba9645b81096f9228864d99
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 Le informazioni contenute in questo argomento si riferiscono specificamente all'uso di gruppi di limiti con le versioni 1511, 1602 e 1606 di System Center Configuration Manager.
-Se si usa la versione 1610 o successiva, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#a-namebkmkboundarygroupsa-boundary-group/) in *Definire i limiti del sito e i gruppi di limiti per System Center Configuration Manager* per ottenere informazioni sull'uso di gruppi di limiti riprogettati.  
+Se si usa la versione 1610 o successiva, vedere [Configurare gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups) per informazioni sull'uso di gruppi di limiti riprogettati.  
 
 
-##  <a name="a-namebkmkboundarygroupsa-boundary-groups"></a><a name="BKMK_BoundaryGroups"></a> Gruppi di limiti  
+##  <a name="BKMK_BoundaryGroups"></a> Boundary groups  
  I gruppi di limiti vengono creati per raggruppare logicamente i percorsi di rete correlati (limiti) e semplificare la gestione dell'infrastruttura. Prima di usare un gruppo di limiti è necessario assegnare i limiti ai gruppi di limiti. I client usano la configurazione del gruppo di limiti per:  
 
 -   Assegnazione automatica al sito  
@@ -122,7 +123,7 @@ Quando si configurano i gruppi di limiti, uno o più limiti vengono aggiunti al 
 
  Le sezioni seguenti forniscono dettagli aggiuntivi sulle configurazioni del gruppo di limiti.  
 
-###  <a name="a-namebkmkboundarysiteassignmenta-about-site-assignment"></a><a name="BKMK_BoundarySiteAssignment"></a> Informazioni sull'assegnazione al sito  
+###  <a name="BKMK_BoundarySiteAssignment"></a> Informazioni sull'assegnazione al sito  
  È possibile configurare ogni gruppo di limiti con un sito assegnato per i client.  
 
 -   Un client appena installato che usa l'assegnazione automatica al sito verrà aggiunto al sito assegnato di un gruppo di limiti che si trova nel percorso di rete corrente del client.  
@@ -137,7 +138,7 @@ Quando si configurano i gruppi di limiti, uno o più limiti vengono aggiunti al 
 
 Per altre informazioni sull'assegnazione di client a un sito, vedere [Utilizzo dell'assegnazione automatica del sito per i computer](../../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_AutomaticAssignment) in [Come assegnare i client a un sito in System Center Configuration Manager](../../../../core/clients/deploy/assign-clients-to-a-site.md).  
 
-###  <a name="a-namebkmkboundarycontentlocationa-about-content-location"></a><a name="BKMK_BoundaryContentLocation"></a> Informazioni sul percorso del contenuto  
+###  <a name="BKMK_BoundaryContentLocation"></a> Informazioni sul percorso del contenuto  
  È possibile configurare ogni gruppo di limiti con uno o più punti di distribuzione e punti di migrazione stato e associare questi stessi punti a più gruppi di limiti.  
 
 -   **Durante la distribuzione del software**, i client richiedono un percorso per il contenuto di distribuzione. Configuration Manager invia al client un elenco dei punti di distribuzione associati a ogni gruppo di limiti che include il percorso di rete corrente del client.  
@@ -146,7 +147,7 @@ Per altre informazioni sull'assegnazione di client a un sito, vedere [Utilizzo d
 
 Questo comportamento consente al client di selezionare il server più vicino da cui trasferire le informazioni di migrazione dello stato o del contenuto.  
 
-###  <a name="a-namebkmkpreferredmpa-about-preferred-management-points"></a><a name="BKMK_PreferredMP"></a> Informazioni sui punti di gestione preferiti  
+###  <a name="BKMK_PreferredMP"></a> Informazioni sui punti di gestione preferiti  
  I punti di gestione preferiti consentono a un client di identificare un punto di gestione associato al percorso di rete corrente (limite).  
 
 -   Il client prova a usare un punto di gestione preferito dal sito assegnato prima di usare un punto di gestione dal sito assegnato che non è configurato come preferito.  
@@ -158,7 +159,7 @@ Questo comportamento consente al client di selezionare il server più vicino da 
 > [!NOTE]  
 >  Quando un client si sposta, come nel caso di un computer portatile spostato in una postazione remota con un nuovo percorso di rete, può usare un punto di gestione (o un punto di gestione proxy) dal sito locale nella nuova posizione prima di provare a usare un punto di gestione dal sito assegnato (che include i punti di gestione preferiti).  Per altre informazioni, vedere [Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 
-###  <a name="a-namebkmkboundaryoverlapa-about-overlapping-boundaries"></a><a name="BKMK_BoundaryOverlap"></a> Informazioni sui limiti sovrapposti  
+###  <a name="BKMK_BoundaryOverlap"></a> Informazioni sui limiti sovrapposti  
  Configuration Manager supporta le configurazioni con sovrapposizione dei limiti per il percorso del contenuto:  
 
 -   **Quando un client richiede un contenuto** e il percorso di rete del client appartiene a più gruppi di limiti, Configuration Manager invia al client un elenco di tutti i punti di distribuzione che hanno il contenuto.  
@@ -167,15 +168,10 @@ Questo comportamento consente al client di selezionare il server più vicino da 
 
 Questo comportamento consente al client di selezionare il server più vicino da cui trasferire le informazioni di migrazione dello stato o del contenuto.  
 
-###  <a name="a-namebkmkboudnarynetworkspeeda-about-network-connection-speed"></a><a name="BKMK_BoudnaryNetworkSpeed"></a> Informazioni sulla velocità di connessione di rete  
+###  <a name="BKMK_BoudnaryNetworkSpeed"></a> Informazioni sulla velocità di connessione di rete  
  È possibile impostare la velocità di connessione di rete per ogni server del sistema del sito in un gruppo di limiti. Questa impostazione si applica ai client che si connettono a un sistema del sito basato sulla configurazione di questo gruppo di limiti. Lo stesso server del sistema del sito può avere una velocità di connessione impostata nei diversi gruppi di limiti.  
 
  Per impostazione predefinita, la velocità di connessione di rete è **Veloce**, ma è possibile modificarla in **Lenta**. La velocità di connessione di rete e la configurazione della distribuzione verificano se un client incluso in un gruppo di limiti associato può scaricare contenuto da un punto di distribuzione.  
 
  Per altre informazioni sul modo in cui la configurazione della velocità di connessione di rete influisce sulla modalità di recupero del contenuto da parte dei client, vedere [Scenari del percorso di origine del contenuto](../../../../core/plan-design/hierarchy/content-source-location-scenarios.md).  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

@@ -17,9 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 766120f5ca79f279a513b62c35a2374c859b253a
-ms.openlocfilehash: 079be3c97e4239f8c5293bed5a2ce13abfbe7798
-ms.lasthandoff: 03/15/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 238e460885b6490b3744690640f9ff040902b35f
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -116,7 +116,8 @@ Per altre informazioni, vedere [Peer cache di Windows PE](../../../osd/get-start
 ## <a name="content-library"></a>Raccolta contenuto  
  La raccolta contenuto è un archivio a istanza singola del contenuto che Configuration Manager usa per ridurre la dimensione complessiva del corpo combinato del contenuto distribuito.  
 
-Altre informazioni sulla [raccolta contenuto](../../../core/plan-design/hierarchy/the-content-library.md).
+- Altre informazioni sulla [raccolta contenuto](../../../core/plan-design/hierarchy/the-content-library.md).
+- Usare lo [strumento per la pulizia della raccolta contenuto](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool) per rimuovere il contenuto non più associato a un'applicazione.  
 
 
 ## <a name="distribution-points"></a>Punti di distribuzione  
@@ -171,7 +172,7 @@ La priorità di distribuzione alta del pacchetto garantisce che il contenuto ven
 **Versione 1610 e successive**   
 I client che non riescono a individuare il contenuto da un punto di distribuzione associato al gruppo limite corrente possono eseguire il fallback per usare i percorsi di origine del contenuto associati a gruppi di limiti adiacenti. Per essere usato per il fallback, un gruppo di limiti adiacente deve avere una relazione definita con il gruppo di limiti corrente del client. Questa relazione include un tempo configurato oltre il quale un client che non riesce a individuare contenuto localmente può includere nella ricerca origini di contenuto dal gruppo di limiti adiacente.
 
-I concetti di punti di distribuzione preferiti non sono più usati e le impostazioni per** Consenti percorso origine di fallback per il contenuto** non sono più disponibili o applicate.
+I concetti di punti di distribuzione preferiti non sono più usati e le impostazioni per**Consenti percorso origine di fallback per il contenuto** non sono più disponibili o applicate.
 
 Per altre informazioni, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
 

@@ -2,7 +2,7 @@
 title: Introduzione ai profili certificato | Microsoft Docs
 description: Informazioni sul funzionamento dei profili certificato in System Center Configuration Manager con Servizi certificati Active Directory.
 ms.custom: na
-ms.date: 12/28/2016
+ms.date: 03/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,12 +16,13 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 8a5dc7361da34f3e6b926acd35c72c0c0767ce70
-ms.openlocfilehash: d51670b47aab77cc4e630a6aeaa0744f916bf3b9
-ms.lasthandoff: 12/30/2016
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: ba1d5b04cb0cb0284525e295a6086a3c0ac67e9f
+ms.lasthandoff: 03/27/2017
 
 
 ---
+
 # <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Introduzione ai profili certificato in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -46,10 +47,10 @@ I profili di certificato forniscono le seguenti funzionalità di gestione:
 ## <a name="types-of-certificate-profiles"></a>Tipi di profili certificato  
  Esistono tre tipi di profilo certificato:  
 
--   **Certificato CA attendibile** : consente di distribuire un certificato della CA radice attendibile o un certificato CA intermedio in modo da formare una catena di certificati quando il dispositivo deve eseguire l'autenticazione a un server.  
+-   **Certificato CA attendibile**: consente di distribuire un certificato della CA radice attendibile o un certificato CA intermedio in modo da formare una catena di certificati quando il dispositivo deve eseguire l'autenticazione a un server.  
 
 -   **Simple Certificate Enrollment Protocol (SCEP)**: consente di richiedere un certificato per un dispositivo o un utente usando il protocollo SCEP e il servizio Registrazione dispositivi di rete in un server che esegue Windows Server 2012 R2.
--   -   **Personal Information Exchange (PFX)**: consente di richiedere un certificato PFX (noto anche come PKCS #12) per un dispositivo o un utente.
+-   **Personal Information Exchange (PFX)**: consente di richiedere un certificato PFX (noto anche come PKCS #12) per un dispositivo o un utente.
 
     > [!NOTE]  
     >  È necessario creare un profilo certificato del tipo **Certificato CA attendibile** prima di poter creare un profilo certificato di tipo **Simple Certificate Enrollment Protocol (SCEP)**.  
@@ -100,4 +101,3 @@ Uno scenario tipico per System Center Configuration Manager è di installare i c
 -   Il dispositivo è stato bloccato dalla gerarchia di System Center Configuration Manager.  
 
  Per revocare i certificati, il server del sito invia un comando di revoca all'autorità di certificazione emittente. Il motivo della revoca è **Termine operazione**.  
-

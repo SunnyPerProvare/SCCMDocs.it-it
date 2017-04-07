@@ -17,9 +17,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
-ms.openlocfilehash: 3c3725678561c32fce316ed1209ac8fe73a0eed1
-ms.lasthandoff: 12/16/2016
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 832be8c9fda727804f57e83768cd8799db722c67
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -37,7 +37,7 @@ Le informazioni seguenti illustrano come pianificare la modalità di configurazi
 
 -   Lettura per l'account che esegue la console di System Center Configuration Manager  
 
- Per altre informazioni su queste autorizzazioni di sicurezza, vedere [Passaggio 1: Installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze](../deploy-use/certificate-infrastructure.md#step-1-install-and-configure-the-network-device-enrollment-service-and-dependencies).  
+ Per altre informazioni su queste autorizzazioni di sicurezza, vedere [Configurazione dell'infrastruttura di certificazione](../deploy-use/certificate-infrastructure.md).  
 
  Se si utilizza questa configurazione predefinita, gli utenti e i dispositivi non possono richiedere direttamente i certificati dai modelli di certificato e tutte le richieste devono essere avviate dal servizio Registrazione dispositivi di rete. È una limitazione importante perché questi modelli di certificato devono essere configurati con **Inserisci nella richiesta** per il soggetto del certificato, il che significa che c'è un rischio di rappresentazione se un utente non autorizzato o un dispositivo danneggiato richiede un certificato. Nella configurazione predefinita, il servizio Registrazione dispositivi di rete deve avviare una richiesta di questo tipo. Rimane tuttavia il rischio di rappresentazione se il servizio che esegue il servizio Registrazione dispositivi di rete viene danneggiato. Per evitare questo rischio, seguire tutte le procedure di protezione consigliate per il servizio Registrazione dispositivi di rete e il computer che esegue questo ruolo dei servizi.  
 

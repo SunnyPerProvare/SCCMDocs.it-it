@@ -2,7 +2,7 @@
 title: "Variabili predefinite della sequenza di attività | Microsoft Docs"
 description: "Le variabili predefinite della sequenza di attività offrono informazioni sull&quot;ambiente in cui è in esecuzione la sequenza di attività. Sono disponibili nel corso dell&quot;intera sequenza di attività."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/26/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: c9fb0fa46058c773eec6ac23999357d35d9f970f
-ms.openlocfilehash: a75adebfe2bbec8f6fe5206561530a720c0bfbf1
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: a3e6cca8d58055cc2d54aff3cb70a276fb40e829
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -51,7 +52,7 @@ ms.openlocfilehash: a75adebfe2bbec8f6fe5206561530a720c0bfbf1
 |_SMSTSMachineName|Archivia e specifica il nome del computer. Archivia il nome del computer che verrà usata dalla sequenza di attività per registrare tutti i messaggio di stato. Per modificar il nome computer nel nuovo sistema operativo, usare la variabile **OSDComputerName** .<br /><br /> Esempio:<br /><br /> **ABC**|  
 |_SMSTSMDataPath|Specifica il percorso definito dalla variabile SMSTSLocalDataDrive. Quando si definisce SMSTSLocalDataDrive prima dell'inizio della sequenza di attività, impostando ad esempio una variabile di raccolta, Configuration Manager definisce la variabile _SMSTSMDataPath dopo aver avviato la sequenza di attività.|  
 |_SMSTSMediaType|Specifica il tipo di supporto usato per avviare l'installazione. Esempi di tipi di supporto sono supporti di avvio, supporti completi, PXE e supporti pre-installati.|  
-|_SMSTSMP|Archivia il nome o l'indirizzo IP di un punto di gestione di Configuration Manager.|  
+|_SMSTSMP|Archivia l'URL o l'indirizzo IP di un punto di gestione di Configuration Manager.|  
 |_SMSTSMPPort|Archivia il numero di porta di un punto di gestione di Configuration Manager.<br /><br /> Esempio:<br /><br /> **80**|  
 |_SMSTSOrgName|Archivia il nome titolo personalizzazione che viene visualizzato in una finestra di dialogo di interfaccia utente relativa all'avanzamento della sequenza di attività.<br /><br /> Esempio:<br /><br /> **Organizzazione XYZ**|  
 |_SMSTSOSUpgradeActionReturnCode|Archivia il valore del codice di uscita restituito dal programma di installazione per indicare l'esito positivo o negativo.  Questa variabile viene impostata durante il passaggio della sequenza di attività di aggiornamento del sistema operativo. Questa variabile è utile con l'opzione della riga di comando /Compat del programma di installazione di Windows 10.<br /><br /> Esempio:<br /><br /> Nei passaggi successivi al completamento di /Compat è possibile eseguire azioni diverse a seconda del codice di uscita (esito positivo o negativo) di questa opzione. In caso di esito positivo è possibile avviare l'aggiornamento o impostare un marcatore all'interno dell'ambiente (ad esempio, aggiungere un file o impostare una chiave del Registro di sistema) da usare in seguito per creare una raccolta di computer pronti per l'aggiornamento o da sottoporre a un'azione specifica prima dell'aggiornamento.|  
@@ -79,6 +80,7 @@ ms.openlocfilehash: a75adebfe2bbec8f6fe5206561530a720c0bfbf1
 |TSErrorOnWarning|Usare questa variabile per specificare se il motore della sequenza di attività considera un avviso come un errore rilevato durante il passaggio della sequenza di attività relativo all'installazione dell'applicazione. La sequenza di attività imposta la variabile _TSAppInstallStatus su **Avviso** quando una o più applicazioni o una dipendenza richiesta non viene installata perché non è stato raggiunto un requisito. Quando si imposta la variabile TSErrorOnWarning su **True** e la variabile _TSAppInstallStatus è impostata su Avviso, l'avviso viene considerato come un errore. Il comportamento predefinito è **False** .|  
 |SMSTSLanguageFolder|usare questa variabile per modificare la lingua di visualizzazione di un'immagine di avvio indipendente dalla lingua.|  
 |SMSTSLocalDataDrive|Specifica la posizione del computer di destinazione in cui vengono archiviati i file temporanei durante l'esecuzione della sequenza di attività.<br /><br /> Questa variabile deve essere impostata prima dell'inizio della sequenza di attività, ad esempio impostando una variabile raccolta. Dopo aver avviato la sequenza di attività, Configuration Manager definisce la variabile _SMSTSMDataPath.|  
+|SMSTSMP|Usare questa variabile per specificare l'URL o l'indirizzo IP del punto di gestione di Configuration Manager.|  
 |SMSTSMPListRequestTimeout|Usare questa variabile per specificare in millisecondi il tempo di attesa di una sequenza di attività prima che ritenti a installare un'applicazione o un aggiornamento software se non è stato possibile recuperare l'elenco dei punti di gestione dai servizi di posizione. Per impostazione predefinita, la sequenza di attività attende 60.000 millisecondi (60 secondi) prima di riprovare a eseguire il passaggio ed effettua fino a tre tentativi. Questa variabile è applicabile solo ai passaggi Installa applicazione e Installa aggiornamenti software della sequenza di attività.|  
 |SMSTSMPListRequestTimeoutEnabled|Usare questa variabile per abilitare le richieste MPList ripetute per aggiornare il client se questo non si trova nella Intranet. <br />Per impostazione predefinita, questa variabile è impostata su True. Quando i client sono su Internet, è possibile impostare questa variabile su False per evitare inutili ritardi. Questa variabile è applicabile solo ai passaggi della sequenza di attività Installa applicazione e Installa aggiornamenti software.|  
 |SMSTSPeerDownload|Usare questa variabile per consentire al client l'impiego della peer cache di Windows PE.<br /><br /> Esempio:<br /><br /> SMSTSPeerDownload = **TRUE** abilita questa funzionalità.|  
@@ -94,9 +96,4 @@ ms.openlocfilehash: a75adebfe2bbec8f6fe5206561530a720c0bfbf1
 |SMSTSSoftwareUpdateScanTimeout| Offre la possibilità di controllare il timeout per l'analisi degli aggiornamenti software durante il passaggio della sequenza di attività [Installa aggiornamenti software](task-sequence-steps.md#BKMK_InstallSoftwareUpdates). Ad esempio, è possibile aumentare il valore predefinito se si devono installare molti aggiornamenti software. Il valore predefinito è 30 minuti. |
 |SMSTSUDAUsers|Specifica l'utente primario del computer di destinazione. Specificare gli utenti usando il formato seguente. Separare più utenti mediante una virgola (,).<br /><br /> Esempio:<br /><br /> **dominio\utenter1, dominio\utente2, dominio\utente3**<br /><br /> Per altre informazioni sull'associazione di utenti al computer di destinazione, vedere [Associate users with a destination computer](../get-started/associate-users-with-a-destination-computer.md) (Associare gli utenti a un computer di destinazione).|  
 |SMSTSWaitForSecondReboot|A partire da Configuration Manager versione 1602, è disponibile questa variabile facoltativa della sequenza di attività, che consente di controllare il comportamento del client quando l'installazione dell'aggiornamento software richiede due riavvii. Questa variabile deve essere impostata prima del passaggio [Installa aggiornamenti software](task-sequence-steps.md#BKMK_InstallSoftwareUpdates) per impedire che una sequenza di attività non riesca a causa di un secondo riavvio dall'installazione dell'aggiornamento software.<br /><br /> Impostare il valore SMSTSWaitForSecondReboot in secondi per specificare la durata della sospensione della sequenza di attività durante il passaggio Installa aggiornamenti software quando si riavvia il computer, per attendere il tempo necessario in caso di un secondo riavvio. <br />Ad esempio, se si imposta SMSTSWaitForSecondReboot su 600, la sequenza di attività viene sospesa per 10 minuti dopo il riavvio prima di eseguire i passaggi aggiuntivi della sequenza di attività. Ciò è utile durante l'installazione di centinaia di aggiornamenti software in un unico passaggio della sequenza di attività Installa aggiornamenti software.|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

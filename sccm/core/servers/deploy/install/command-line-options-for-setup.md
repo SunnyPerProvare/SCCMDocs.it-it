@@ -2,7 +2,7 @@
 title: Opzioni della riga di comando per la configurazione | Microsoft Docs
 description: Usare le informazioni in questo articolo per configurare gli script o per installare System Center Configuration Manager dalla riga di comando.
 ms.custom: na
-ms.date: 13/2017
+ms.date: 03/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 36b1ab794bb1dc80c673bd41dae11f46053f3be3
-ms.openlocfilehash: 55f9fe5c05cd09b9291b6370200c9fbe15699e7d
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 04fe7b3e674287c4255563ab4a308e54d0b6c3aa
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opzioni della riga di comando per il programma di installazione in System Center Configuration Manager
@@ -27,7 +28,7 @@ ms.openlocfilehash: 55f9fe5c05cd09b9291b6370200c9fbe15699e7d
 
  Usare le informazioni seguenti per configurare gli script o installare System Center Configuration Manager dalla riga di comando.  
 
-##  <a name="a-namebkmksetupa-command-line-options-for-setup"></a><a name="bkmk_setup"></a> Opzioni della riga di comando per il programma di installazione  
+##  <a name="bkmk_setup"></a> Opzioni della riga di comando per il programma di installazione  
  **/DEINSTALL**  
  Consente di disinstallare il sito. È necessario eseguire il programma di installazione dal computer del server del sito.  
 
@@ -68,7 +69,7 @@ ms.openlocfilehash: 55f9fe5c05cd09b9291b6370200c9fbe15699e7d
  **/MANAGELANGS <*Percorso script lingue*>**  
  gestisce le lingue installate in un sito installato precedentemente. Per usare questa opzione, è necessario eseguire il programma di installazione da **<*Percorso di installazione di Configuration Manager*>\BIN\X64** nel server del sito e specificare il percorso del file script delle lingue che contiene le impostazioni relative alle lingue. Per altre informazioni sulle opzioni della lingua disponibili nel file script di configurazione della lingua, vedere la sezione [Opzioni della riga di comando per la gestione delle lingue](#bkmk_Lang) in questo argomento.  
 
-##  <a name="a-namebkmklanga-command-line-options-to-manage-languages"></a><a name="bkmk_Lang"></a> Opzioni della riga di comando per la gestione delle lingue  
+##  <a name="bkmk_Lang"></a> Opzioni della riga di comando per la gestione delle lingue  
  **Identification**  
 
 -   **Nome chiave:** Action  
@@ -145,7 +146,7 @@ ms.openlocfilehash: 55f9fe5c05cd09b9291b6370200c9fbe15699e7d
 
     -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp** , il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare i file scaricati in precedenza.  
 
-##  <a name="a-namebkmkunattendeda-unattended-setup-script-file-keys"></a><a name="bkmk_Unattended"></a> Chiavi di file script di installazione automatica  
+##  <a name="bkmk_Unattended"></a> Chiavi di file script di installazione automatica  
  Usare le sezioni seguenti per creare lo script per l'installazione automatica. Gli elenchi mostrano le chiavi dello script di installazione disponibili, i relativi valori, se sono richieste, il tipo di installazione per cui vengono usate e una breve descrizione relativa alla chiave.  
 
 ### <a name="unattended-install-for-a-central-administration-site"></a>Installare automaticamente un sito di amministrazione centrale  
@@ -161,13 +162,21 @@ ms.openlocfilehash: 55f9fe5c05cd09b9291b6370200c9fbe15699e7d
 
     -   **Dettagli:** consente di installare un sito di amministrazione centrale.  
 
+-   **Nome chiave:** CDLatest  
+
+    -   **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.    
+
+    -   **Valori:** 1. Qualsiasi valore diverso da 1 presuppone che non venga usata la cartella CD.Latest.
+
+    -   **Dettagli:** lo script deve includere la chiave e il valore quando si esegue il programma di installazione dal supporto di una cartella CD.Latest allo scopo di installare o ripristinare un sito di amministrazione centrale o primario. Questo valore indica al programma di installazione che viene usato il formato di supporto CD.Latest.
+
 **Opzioni**  
 
 -   **Nome chiave:** ProductID  
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> * o * Eval  
+    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
 
     -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
 
@@ -399,13 +408,21 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Dettagli:** installa un sito primario.  
 
+-   **Nome chiave:** CDLatest  
+
+    -   **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.    
+
+    -   **Valori:** 1. Qualsiasi valore diverso da 1 presuppone che non venga usata la cartella CD.Latest.
+
+    -   **Dettagli:** lo script deve includere la chiave e il valore quando si esegue il programma di installazione dal supporto di una cartella CD.Latest allo scopo di installare o ripristinare un sito di amministrazione centrale o primario. Questo valore indica al programma di installazione che viene usato il formato di supporto CD.Latest.
+
 **Opzioni**  
 
 -   **Nome chiave:** ProductID  
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> * o * Eval  
+    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
 
     -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
 
@@ -489,7 +506,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** no  
 
-    -   **Valori:** <* FQDN del server del sito del punto di gestione*>  
+    -   **Valori:** <*FQDN del server del sito del punto di gestione*>  
 
     -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di gestione.  
 
@@ -717,6 +734,14 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Dettagli:** ripristina un sito di amministrazione centrale.  
 
+-   **Nome chiave:** CDLatest  
+
+    -   **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.    
+
+    -   **Valori:** 1. Qualsiasi valore diverso da 1 presuppone che non venga usata la cartella CD.Latest.
+
+    -   **Dettagli:** lo script deve includere la chiave e il valore quando si esegue il programma di installazione dal supporto di una cartella CD.Latest allo scopo di installare o ripristinare un sito di amministrazione centrale o primario. Questo valore indica al programma di installazione che viene usato il formato di supporto CD.Latest.
+
 **RecoveryOptions**  
 
 -   **Nome chiave:** ServerRecoveryOptions  
@@ -789,7 +814,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> * o * Eval  
+    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
 
     -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
 
@@ -978,6 +1003,14 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
     -   **Valori:** <*RecoverPrimarySite*>  
 
     -   **Dettagli:** ripristina un sito primario.  
+
+-   **Nome chiave:** CDLatest  
+
+    -   **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.    
+
+    -   **Valori:** 1. Qualsiasi valore diverso da 1 presuppone che non venga usata la cartella CD.Latest.
+
+    -   **Dettagli:** lo script deve includere la chiave e il valore quando si esegue il programma di installazione dal supporto di una cartella CD.Latest allo scopo di installare o ripristinare un sito di amministrazione centrale o primario. Questo valore indica al programma di installazione che viene usato il formato di supporto CD.Latest.    
 
 **RecoveryOptions**  
 
@@ -1243,9 +1276,4 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
     -   **Valori:** <*Numero della porta*>  
 
     -   **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

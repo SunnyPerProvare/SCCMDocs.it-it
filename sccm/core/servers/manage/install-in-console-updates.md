@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
-ms.openlocfilehash: eafa95922485066632a5da522e6c3de69b45050f
-ms.lasthandoff: 03/04/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 3b50ada9f63e41d1b6f01009c141b8f361f5180e
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -33,14 +33,14 @@ Solo gli aggiornamenti che si applicano all'infrastruttura e alla versione vengo
 
 -   In **modalità online**il punto di connessione si connette automaticamente al servizio cloud Microsoft e scarica gli aggiornamenti applicabili.  
 
-     Per impostazione predefinita, Configuration Manager verifica la disponibilità di nuovi aggiornamenti ogni 24 ore. È anche possibile verificare immediatamente la disponibilità di aggiornamenti scegliendo **Verifica la disponibilità di aggiornamenti** nel nodo **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione** della console di Configuration Manager.  
+     Per impostazione predefinita, Configuration Manager verifica la disponibilità di nuovi aggiornamenti ogni 24 ore. È anche possibile verificare immediatamente la disponibilità di aggiornamenti scegliendo **Verifica la disponibilità di aggiornamenti** nel nodo **Amministrazione** > **Aggiornamenti e manutenzione** della console di Configuration Manager. Nelle versioni precedenti la 1702, questo nodo si trova in **Amministrazione** > **Servizi cloud**.
 
 -   In **modalità offline** il punto di connessione del servizio non si connette al servizio cloud Microsoft. È necessario usare manualmente [lo strumento di connessione del servizio per System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md) per scaricare e importare gli aggiornamenti disponibili.  
 
 > [!NOTE]  
 >  Oltre agli aggiornamenti ottenuti durante la sincronizzazione con il servizio cloud Microsoft, nella console vengono importate anche le correzioni fuori programma che vengono installate, a discrezione dell'utente, con lo [strumento di registrazione dell'aggiornamento](http://technet.microsoft.com/library/mt691544.aspx).  
 
-Dopo aver sincronizzato gli aggiornamenti è possibile visualizzarli nella console di Configuration Manager passando al nodo **Amministrazione** > **Servizi Cloud** > **Aggiornamenti e manutenzione**:  
+Dopo aver sincronizzato gli aggiornamenti è possibile visualizzarli nella console di Configuration Manager passando al nodo **Amministrazione** > **Aggiornamenti e manutenzione**:  
 
 -   Gli aggiornamenti non installati vengono visualizzati con l'indicazione **Disponibile**.
 
@@ -98,7 +98,8 @@ Esaminare l'elenco di controllo dell'aggiornamento valido per le azioni da esegu
 - Aggiornamento alla versione 1606: vedere [Elenco di controllo per installare l'aggiornamento 1606 di System Center Configuration Manager](../../../core/servers/manage/checklist-for-installing-update-1606.md).  
 
 - Aggiornamento alla versione 1610 dalla versione 1606: vedere [Elenco di controllo per l'installazione dell'aggiornamento 1610 di System Center Configuration Manager](../../../core/servers/manage/checklist-for-installing-update-1610.md).  
-<!--- Update to 1702 from either 1606 or 1610: See [Checklist for installing update 1702](../../../core/servers/manage/checklist-for-installing-update-1702.md). -->  
+
+- Aggiornamento alla versione 1702 dalla versione 1606 o 1610: vedere [Elenco di controllo per l'installazione dell'aggiornamento 1702](../../../core/servers/manage/checklist-for-installing-update-1702.md).
 
 ###  <a name="bkmk_step2"></a> Passaggio 2: Testare l'aggiornamento del database prima di installare un aggiornamento  
 Le informazioni contenute in questo passaggio si applicano solo quando si installa un *aggiornamento* per un sito di System Center Configuration Manager. Se si *aggiorna* un sito di System Center 2012 Configuration Manager a System Center Configuration Manager, vedere [Testare l'aggiornamento del database del sito](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager#a-namebkmktesta-test-the-site-database-upgrade).
@@ -146,7 +147,7 @@ Successivamente, quando si installa l'aggiornamento, è possibile configurare l'
 
 #### <a name="to-run-the-prerequisite-checker-before-installing-an-update"></a>Per eseguire il controllo dei prerequisiti prima di installare un aggiornamento  
 
-1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione**.  
+1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Aggiornamenti e manutenzione**.   
 
 2.  Fare clic con il pulsante destro del mouse sul pacchetto di aggiornamento su cui eseguire il controllo dei prerequisiti.  
 
@@ -203,7 +204,7 @@ Nell'ambito dell'installazione dell'aggiornamento, Configuration Manager esegue 
 **3. Monitorare lo stato di avanzamento degli aggiornamenti durante l'installazione**  
 Per monitorare lo stato di avanzamento, usare quanto segue:  
 
--   Nella console di Configuration Manager: nodo **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione**. Questo nodo mostra lo stato di installazione di tutti i pacchetti di aggiornamento.
+-   Nella console di Configuration Manager: nodo **Amministrazione** > **Aggiornamenti e manutenzione**. Questo nodo mostra lo stato di installazione di tutti i pacchetti di aggiornamento.
 
 
 -   Nella console di Configuration Manager: nodo **Monitoraggio** > **Panoramica** > **Stato di aggiornamenti e manutenzione**. Questo nodo indica solo lo stato di installazione del pacchetto di aggiornamento che si sta installando.  
@@ -241,7 +242,7 @@ Si consiglia di installare l'aggiornamento immediatamente.
 Dopo aver completato l'aggiornamento della console, è possibile verificare che la versione della console e del sito sia corretta. Passare a **Informazioni su System Center Configuration Manager** nell'angolo in alto a sinistra della console.  
 
 ###  <a name="bkmk_toptier"></a> Per avviare l'installazione dell'aggiornamento nel sito di livello superiore  
-Nel livello superiore della gerarchia nella console di Configuration Manager passare ad **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione**, selezionare un aggiornamento **Disponibile** e quindi fare clic su **Installa pacchetto di aggiornamento**.  
+Nel sito del livello superiore della gerarchia, nella console di Configuration Manager passare ad **Amministrazione** > **Aggiornamenti e manutenzione**, selezionare un aggiornamento **Disponibile** e quindi fare clic su **Installa pacchetto di aggiornamento**.  
 
 ###  <a name="bkmk_secondary"></a> Per avviare l'installazione dell'aggiornamento in un sito secondario  
 Dopo aver aggiornato un sito primario padre di un sito secondario, è possibile aggiornare il sito secondario dall'interno della console di Configuration Manager.  A tale scopo, usare l' **aggiornamento guidato per i siti secondari**.  
@@ -268,7 +269,7 @@ Quando si è pronti per ripetere l'installazione di un aggiornamento, selezionar
     -   L'installazione non è riuscita
     -   La replica del contenuto nel sito non è riuscita   
 
-    Passare ad **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione**, selezionare l'aggiornamento e quindi scegliere una delle opzioni seguenti:  
+    Passare ad **Amministrazione** > **Aggiornamenti e manutenzione**, selezionare l'aggiornamento e quindi scegliere una delle opzioni seguenti:  
 
     -   **Riprova** : quando si **riprova** da questo nodo viene avviata nuovamente l'installazione dell'aggiornamento e vengono automaticamente ignorati gli avvisi dei prerequisiti. Se la replica non è riuscita in precedenza, viene anche replicato nuovamente il contenuto dell'aggiornamento.
     - **Ignora avvisi dei prerequisiti**: a partire dalla versione 1606, se l'installazione dell'aggiornamento viene interrotta da un avviso, è possibile scegliere **Ignora avvisi dei prerequisiti**. Questa azione consente di continuare l'installazione dell'aggiornamento dopo alcuni minuti e di usare l'opzione per ignorare gli avvisi relativi ai prerequisiti.   
@@ -315,7 +316,7 @@ Per altre informazioni, vedere [Monitor hierarchy and replication infrastructure
 ##  <a name="bkmk_options"></a> Abilitare le funzionalità facoltative degli aggiornamenti  
 Quando si installa un aggiornamento che include una o più funzionalità facoltative, è possibile abilitare queste funzionalità nella gerarchia.  È possibile farlo durante l'installazione dell'aggiornamento o tornare nella console in un secondo momento e abilitare le funzionalità facoltative.
 
-Per visualizzare le funzionalità disponibili e il relativo stato, nella console passare ad **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione** > **Funzionalità**.
+Per visualizzare le funzionalità disponibili e il relativo stato, nella console passare ad **Amministrazione** > **Aggiornamenti e manutenzione** > **Funzionalità**.
 
 Quando una funzionalità non è facoltativa, viene installata automaticamente e non viene visualizzata nel nodo **Funzionalità** .  
 

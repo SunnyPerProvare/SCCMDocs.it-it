@@ -2,7 +2,7 @@
 title: Strumento di registrazione dell&quot;aggiornamento | Microsoft Docs
 description: Informazioni su quando e come usare lo strumento di registrazione dell&quot;aggiornamento per importare manualmente un aggiornamento nella console di Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: c729212d38168acfff3f11ea41f3d52b234c70c8
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 35a4c201f73469fdfaa5bb8629e91886f7ae8751
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -59,20 +60,15 @@ Quando è necessario installare un rilascio fuori programma e il nome file dell'
 
     -   **&lt;Prodotto\>-&lt;versione prodotto\>-&lt;ID articolo KB\>-ConfigMgr.Update.exe**  
 
-    Dopo la registrazione, l'hotfix, viene visualizzato come nuovo aggiornamento nella console entro 24 ore.  È possibile accelerare il processo in uno dei modi seguenti:  
+    Dopo la registrazione, l'hotfix, viene visualizzato come nuovo aggiornamento nella console entro 24 ore.  È possibile accelerare il processo:
 
-    -   Con la versione 1511: nella console di Configuration Manager passare ad **Amministrazione > Servizi cloud > Aggiornamenti e manutenzione** e quindi selezionare **Avviare immediatamente il processo di individuazione dell'aggiornamento**.  Dopo il completamento del processo di registrazione verrà così avviata immediatamente l'importazione dell'hotfix, rendendolo disponibile nella console.  
-
-    -   Con la versione 1602 e le versioni successive: nella console di Configuration Manager passare ad **Amministrazione > Servizi cloud > Aggiornamenti e manutenzione** e quindi fare clic su **Verifica la disponibilità di aggiornamenti**  
+    - Aprire la console di Configuration Manager, passare ad **Amministrazione** > **Aggiornamenti e manutenzione** e quindi fare clic su **Verifica la disponibilità di aggiornamenti**. Nelle versioni precedenti la 1702, Aggiornamenti e manutenzione si trova in **Amministrazione** > **Servizi cloud**. 
 
     Lo strumento di registrazione dell'aggiornamento registra le azioni in un file con estensione log nel computer locale. Il file di log ha lo stesso nome del file EXE dell'hotfix e viene scritto nella cartella **%SystemRoot%/Temp**.  
 
      Dopo la registrazione dell'aggiornamento, è possibile chiudere lo strumento di registrazione.  
 
-3.  Aprire la console di Configuration Manager e passare ad **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione**. Gli hotfix importati sono ora disponibili per l'installazione. Per informazioni sull'installazione degli aggiornamenti, vedere [Installare gli aggiornamenti nella console per System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md)  
+3.  Aprire la console di Configuration Manager e passare ad **Amministrazione** > **Aggiornamenti e manutenzione**. Gli hotfix importati sono ora disponibili per l'installazione. Nelle versioni precedenti la 1702, Aggiornamenti e manutenzione si trova in **Amministrazione** > **Servizi cloud**.
 
-
-
-<!--HONumber=Dec16_HO3-->
-
+ Per informazioni sull'installazione degli aggiornamenti, vedere [Installare gli aggiornamenti nella console per System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md)  
 

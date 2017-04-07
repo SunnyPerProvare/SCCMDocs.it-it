@@ -2,7 +2,7 @@
 title: Creare supporti autonomi con System Center Configuration Manager | Microsoft Docs
 description: Usare i supporti autonomi per distribuire il sistema operativo in un computer senza connessione a un sito di Configuration Manager o alla rete.
 ms.custom: na
-ms.date: 12/21/2016
+ms.date: 03/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,9 +17,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: ee7f69bd65152deffb2456d9807e1e8fee8802ec
-ms.openlocfilehash: 708525604c3f40cf75b5408c3666193186b7cf50
-ms.lasthandoff: 03/07/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: d4689545ce2be5c16a65b24489f30028a0f90f94
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -97,32 +97,37 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
     -   Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto e il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\filedioutput.iso**  
 
-         Se la capacità del supporto non è sufficiente per archiviare l'intero contenuto, vengono creati più file ed è necessario archiviare il contenuto in più CD o DVD. Quando sono necessari più supporti, Configuration Manager aggiunge un numero di sequenza al nome di ogni file di output creato. Se insieme al sistema operativo si distribuisce un'applicazione e questa non può essere contenuta in un unico supporto, Configuration Manager archivia l'applicazione in più supporti. Quando il supporto autonomo viene eseguito Configuration Manager chiede all'utente il supporto successivo contenente l'applicazione.  
+         Se la capacità del supporto non è sufficiente per archiviare l'intero contenuto, vengono creati più file ed è necessario archiviare il contenuto in più CD o DVD. Quando sono necessari più supporti, Configuration Manager aggiunge un numero di sequenza al nome di ogni file di output creato. Se insieme al sistema operativo si distribuisce un'applicazione e questa non può essere contenuta in un unico supporto, Configuration Manager archivia l'applicazione in più supporti. Quando il supporto autonomo viene eseguito Configuration Manager chiede all'utente il supporto successivo contenente l'applicazione.   
 
-        > [!IMPORTANT]  
-        >  Se si seleziona un'immagine iso esistente, la Creazione guidata del supporto per la sequenza di attività elimina l'immagine dall'unità o dalla condivisione non appena si passa alla pagina successiva della procedura guidata. L'immagine esistente viene eliminata, anche se si annulla la procedura guidata.  
+         > [!IMPORTANT]  
+         >  Se si seleziona un'immagine iso esistente, la Creazione guidata del supporto per la sequenza di attività elimina l'immagine dall'unità o dalla condivisione non appena si passa alla pagina successiva della procedura guidata. L'immagine esistente viene eliminata, anche se si annulla la procedura guidata.  
 
      Fare clic su **Avanti**.  
 
-6.  Nella pagina **Sicurezza** immettere una password complessa per proteggere il supporto e quindi fare clic su **Avanti**. Se si specifica una password, per usare il supporto sarà necessario immetterla.  
+6.  Nella pagina **Sicurezza** scegliere tra le opzioni seguenti e quindi fare clic su **Avanti**:
+    - **Proteggi supporto con password**: immettere una password complessa per proteggere il supporto. Se si specifica una password, per usare il supporto sarà necessario immetterla.  
 
-    > [!IMPORTANT]  
-    >  Nel supporto autonomo vengono crittografate solo le procedure delle sequenze attività e le relative variabili. Il resto del contenuto del supporto non è crittografato. Pertanto, non includere informazioni riservate negli script della sequenza di attività. Archiviare e implementare tutte le informazioni riservate usando variabili della sequenza di attività.  
+        > [!IMPORTANT]  
+        >  Nel supporto autonomo vengono crittografate solo le procedure delle sequenze attività e le relative variabili. Il resto del contenuto del supporto non è crittografato. Pertanto, non includere informazioni riservate negli script della sequenza di attività. Archiviare e implementare tutte le informazioni riservate usando variabili della sequenza di attività.  
 
+    - **Seleziona l'intervallo di date di validità per il supporto autonomo** (disponibile a partire dalla versione 1702): impostare le date facoltative di inizio e scadenza nel supporto. Queste impostazioni sono disabilitate per impostazione predefinita. Le date vengono confrontate con l'ora di sistema nel computer prima che il supporto autonomo venga eseguito. Quando l'ora di sistema è precedente all'ora di inizio o successiva all'ora di scadenza, il supporto autonomo non viene avviato. Queste opzioni sono disponibili anche tramite il cmdlet PowerShell New-CMStandaloneMedia.
 7.  Nella pagina **CD/DVD autonomo** specificare la sequenza di attività che distribuisce il sistema operativo, quindi fare clic su **Avanti**. Per aggiungere contenuto all'elemento multimediale autonomo per le dipendenze dell'applicazione, scegliere **Rileva le dipendenze dell'applicazione associata e aggiungile a questo contenuto multimediale**.
-> [!TIP]
-> Se non vengono visualizzate le dipendenze dell'applicazione previste, deselezionare e selezionare nuovamente l'impostazione **Rileva le dipendenze dell'applicazione associata e aggiungile a questo contenuto multimediale** per aggiornare l'elenco.
+    > [!TIP]
+    > Se non vengono visualizzate le dipendenze dell'applicazione previste, deselezionare e selezionare nuovamente l'impostazione **Rileva le dipendenze dell'applicazione associata e aggiungile a questo contenuto multimediale** per aggiornare l'elenco.
 
-La procedura guidata consente di selezionare solo le sequenze attività associate a un'immagine d'avvio.  
+    La procedura guidata consente di selezionare solo le sequenze attività associate a un'immagine d'avvio.  
 
-8.  Nella pagina **Punti di distribuzione** specificare i punti di distribuzione che includono il contenuto richiesto dalla sequenza di attività e quindi fare clic su **Avanti**.  
+8. Nella pagina **Selezione applicazione**, disponibile a partire dalla versione 1702, specificare il contenuto dell'applicazione da includere nel file del supporto e quindi fare clic su **Avanti**.
+9. Nella pagina **Seleziona pacchetto**, disponibile a partire dalla versione 1702, specificare il contenuto del pacchetto da includere nel file del supporto e quindi fare clic su **Avanti**.
+10. Nella pagina **Selezionare il pacchetto driver**, disponibile a partire dalla versione 1702, specificare il contenuto del pacchetto driver da includere nel file del supporto e quindi fare clic su **Avanti**.
+11.  Nella pagina **Punti di distribuzione** specificare i punti di distribuzione che includono il contenuto richiesto dalla sequenza di attività e quindi fare clic su **Avanti**.  
 
      Configuration Manager visualizzerà solo i punti di distribuzione che includono il contenuto. Per continuare, è necessario distribuire tutto il contenuto associato alla sequenza di attività (immagine d'avvio, immagine del sistema operativo e così via) in almeno un punto di distribuzione. Dopo la distribuzione del contenuto, è possibile riavviare la procedura guidata o rimuovere i punti di distribuzione già selezionati in questa pagina, passare alla pagina precedente e quindi tornare alla pagina **Punti di distribuzione** per aggiornare l'elenco di punti di distribuzione. Per altre informazioni sulla distribuzione di contenuto, vedere [Distribuire il contenuto a cui fa riferimento una sequenza attività](manage-task-sequences-to-automate-tasks.md#BKMK_DistributeTS). Per altre informazioni sui punti di distribuzione e la gestione del contenuto, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
     > [!NOTE]  
     >  È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto nei punti di distribuzione.  
 
-9. Nella pagina **Personalizzazione** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
+12. Nella pagina **Personalizzazione** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
     -   Specificare le variabili usate dalla sequenza di attività per distribuire il sistema operativo.  
 
@@ -133,7 +138,7 @@ La procedura guidata consente di selezionare solo le sequenze attività associat
         > [!TIP]  
         >  Durante la creazione del supporto delle sequenza di attività, tale sequenza scrive l'ID del pacchetto e la riga di comando di preavvio, incluso il valore per eventuali variabili della sequenza di attività, nel file di registro CreateTSMedia.log nel computer che esegue la console di Configuration Manager. È possibile rivedere questo file di registro per verificare il valore per le variabili della sequenza di attività.  
 
-10. Completare la procedura guidata.  
+13. Completare la procedura guidata.  
 
  I file di supporto autonomo (ISO) vengono creati nella cartella di destinazione. Se è stata selezionata l'opzione **CD/DVD autonomo**, è ora possibile copiare i file di output in un set di CD o DVD.  
 

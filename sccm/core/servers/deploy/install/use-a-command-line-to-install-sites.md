@@ -2,7 +2,7 @@
 title: Installazione dalla riga di comando | Microsoft Docs
 description: Informazioni su come eseguire il programma di installazione di System Center Configuration Manager da un prompt dei comandi per vari tipi di installazione del sito.
 ms.custom: na
-ms.date: 3/1/2017
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 34e24deb90a39bf655a2e24d16cdbe07528e6193
-ms.openlocfilehash: 0fb8ba4bb3d4abe66f71cc83312281cecbb92c41
-ms.lasthandoff: 03/01/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: fefa5f3aa12d82b66a251cf0525475496e1e35cf
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="use-a-command-line-to-install-system-center-configuration-manager-sites"></a>Usare una riga di comando per installare i siti di System Center Configuration Manager
@@ -33,7 +33,7 @@ ms.lasthandoff: 03/01/2017
 -   **Installare un sito di amministrazione centrale o un sito primario da un prompt dei comandi**  
   Visualizzare le [opzioni della riga di comando per il programma di installazione](../../../../core/servers/deploy/install/command-line-options-for-setup.md)
 
- -  **Modificare le lingue in uso in un sito di amministrazione centrale o in un sito primario**  
+-  **Modificare le lingue in uso in un sito di amministrazione centrale o in un sito primario**  
     Per modificare le lingue installate in un sito da un prompt dei comandi (comprese le lingue per i dispositivi mobili), è necessario:  
 
      -   Eseguire il programma di installazione da **&lt;PercorsoInstallazioneConfigMgr\>\Bin\X64** nel server del sito,
@@ -44,7 +44,7 @@ ms.lasthandoff: 03/01/2017
 
     Per creare il file script delle lingue, usare le informazioni relative alle [opzioni della riga di comando per la gestione delle lingue](../../../../core/servers/deploy/install/command-line-options-for-setup.md#bkmk_Lang)  
 
- -  **Usare un file script di installazione per le installazioni automatiche del sito o per il ripristino del sito**  
+-  **Usare un file script di installazione per le installazioni automatiche del sito o per il ripristino del sito**  
     È possibile eseguire il programma di installazione da un prompt dei comandi usando uno script di installazione ed eseguire un'installazione automatica del sito. È anche possibile usare questa opzione per ripristinare un sito.    
 
     Per usare uno script con il programma di installazione:  
@@ -58,7 +58,7 @@ ms.lasthandoff: 03/01/2017
     -   Identification    
     -   Opzioni    
     -   SQLConfigOptions    
-    -   HierarchyOptions    
+      -   HierarchyOptions    
     -   CloudConnectorOptions   
 
     Per ripristinare un sito, è necessario includere anche le sezioni seguenti del file script:  
@@ -66,12 +66,11 @@ ms.lasthandoff: 03/01/2017
     -   Identification  
     -   Modello di
 
-    Per altre informazioni sul backup e il ripristino, vedere [Chiavi del file di script di ripristino del sito automatico](../../../../protect/understand/backup-and-recovery.md#BKMK_UnattendedSiteRecoveryKeys) nell'argomento [Backup e ripristino in Configuration Manager](../../../../protect/understand/backup-and-recovery.md).  
+Per altre informazioni sul backup e il ripristino, vedere [Chiavi del file di script di ripristino del sito automatico](../../../../protect/understand/backup-and-recovery.md#BKMK_UnattendedSiteRecoveryKeys) nell'argomento [Backup e ripristino in Configuration Manager](../../../../protect/understand/backup-and-recovery.md).  
 
-    Per un elenco di chiavi e valori da usare in un file script di un'installazione automatica, vedere [Chiavi di file script di installazione automatica](../../../../core/servers/deploy/install/command-line-options-for-setup.md#bkmk_Unattended).  
+Per un elenco di chiavi e valori da usare in un file script di un'installazione automatica, vedere [Chiavi di file script di installazione automatica](../../../../core/servers/deploy/install/command-line-options-for-setup.md#bkmk_Unattended).  
 
 ## <a name="about-the-command-line-script-file"></a>Informazioni sul file script della riga di comando  
-
  Per le installazioni automatiche di Configuration Manager è possibile eseguire il programma di installazione con l'opzione della riga di comando **/SCRIPT** e specificare un file script che contiene le opzioni di installazione. Le attività seguenti sono supportate da questo metodo:  
 
 -   Installare un sito di amministrazione centrale  
@@ -81,6 +80,18 @@ ms.lasthandoff: 03/01/2017
 
 > [!NOTE]  
 >  Non è possibile usare il file script di installazione automatica per aggiornare un sito di valutazione a un'installazione con licenza di Configuration Manager.  
+
+### <a name="the-cdlatest-key-name"></a>Nome chiave CDLatest
+Quando si usano supporti dalla cartella CD.Latest per eseguire un'installazione controllata da script delle quattro opzioni di installazione seguenti, è necessario che lo script includa la chiave **CDLatest** con valore **1**:
+- Install a new central administration site (Installa un nuovo sito di amministrazione centrale)
+- Install a new primary site (Installa un nuovo sito primario)
+- Recover a central administration site (Ripristina un sito di amministrazione centrale)
+- Recover a primary site (Ripristina un sito primario) 
+
+Non è possibile usare questo valore con supporti di installazione ottenuti dal sito Microsoft Volume License.
+Vedere [Opzioni della riga di comando](/sccm/core/servers/deploy/install/command-line-options-for-setup) per informazioni su come usare questo nome chiave nel file di script.
+
+
 
 ### <a name="create-the-script"></a>Creare lo script
 Lo script di installazione viene creato automaticamente quando si [esegue il programma di installazione per installare un sito usando l'interfaccia utente](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md).  Quando si confermano le impostazioni nella pagina **Riepilogo** della procedura guidata, verranno eseguite le operazioni seguenti:  

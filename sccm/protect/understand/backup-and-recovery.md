@@ -2,7 +2,7 @@
 title: Backup e ripristino | Microsoft Docs
 description: Informazioni su come eseguire il backup e ripristinare i siti in caso di errore o perdita di dati in System Center Configuration Manager.
 ms.custom: na
-ms.date: 1/3/2017
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
-ms.openlocfilehash: 67441d0c19114f628e8b4308f58165ba67c738df
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: ea6668ee7ee6b209b659426a0dc2c0be605ceaf1
+ms.lasthandoff: 03/27/2017
 
 ---
 
@@ -110,9 +110,9 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
     > [!IMPORTANT]  
     >  Per impedire la manomissione dei file di backup, archiviare i file in una posizione sicura. Il percorso di backup più sicuro è un'unità locale, che consente di impostare le autorizzazioni del file system NTFS nella cartella. Configuration Manager non esegue la crittografia dei dati di backup archiviati nel percorso di backup.  
 
-    -   **Unità locale nel server del sito per il database e i dati del sito**: specifica che i file di backup per il sito e il database del sito vengono archiviati nel percorso indicato nel disco rigido locale del server del sito. È necessario creare la cartella locale prima dell'esecuzione dell'attività di backup.   L'account di sistema locale nel server del sito deve disporre delle autorizzazioni del file system NTFS di **Scrittura** nella cartella locale per il backup del server del sito. L'account di sistema locale nel computer che esegue SQL Server deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella per il backup database del sito.  
+    -   **Unità locale nel server del sito per il database e i dati del sito**: specifica che i file di backup per il sito e il database del sito vengono archiviati nel percorso indicato nel disco rigido locale del server del sito. È necessario creare la cartella locale prima dell'esecuzione dell'attività di backup. L'account di sistema locale nel server del sito deve disporre delle autorizzazioni del file system NTFS di **Scrittura** nella cartella locale per il backup del server del sito. L'account di sistema locale nel computer che esegue SQL Server deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella per il backup database del sito.  
 
-    -   **Percorso di rete (nome UNC) per il database e i dati del sito**: specifica che i file di backup per il sito e il database del sito vengono archiviati nel percorso UNC indicato. È necessario creare la condivisione prima dell'esecuzione dell'attività di backup. L'account computer del server del sito e l'account computer di SQL Server, se SQL Server è installato in un altro computer, devono disporre delle autorizzazioni **Scrittura** di NTFS e condivisione per la cartella di rete condivisa.  
+    -   **Percorso di rete (nome UNC) per il database e i dati del sito**: specifica che i file di backup per il sito e il database del sito vengono archiviati nel percorso UNC indicato. È necessario creare la condivisione prima dell'esecuzione dell'attività di backup. L'account computer del server del sito e l'account computer di SQL Server, se SQL Server è installato in un altro computer, devono disporre delle autorizzazioni di condivisione e NTFS di **Scrittura** nella cartella di rete condivisa.  
 
     -   **Unità locali nel server del sito e in SQL Server**: specifica che i file di backup per il sito vengono archiviati nel percorso indicato nell'unità locale del server del sito, mentre i file di backup per il database del sito vengono archiviati nel percorso indicato nell'unità locale del server di database del sito. È necessario creare le cartelle locali prima dell'esecuzione dell'attività di backup. L'account computer del server del sito deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella creata nel server del sito. L'account computer di SQL Server deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella creata nel server di database del sito. Questa opzione è disponibile solo quando il database del sito non è installato nel server del sito.  
 
@@ -390,6 +390,14 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
 
     -   **Dettagli:** ripristina un sito di amministrazione centrale  
 
+-   **Nome chiave:** CDLatest  
+
+    -   **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.    
+
+    -   **Valori:** 1. Qualsiasi valore diverso da 1 presuppone che non venga usata la cartella CD.Latest.
+
+    -   **Dettagli:** lo script deve includere la chiave e il valore quando si esegue il programma di installazione dal supporto di una cartella CD.Latest allo scopo di installare o ripristinare un sito di amministrazione centrale o primario. Questo valore indica al programma di installazione che viene usato il formato di supporto CD.Latest.  
+
 **RecoveryOptions**  
 
 -   **Nome chiave:** ServerRecoveryOptions  
@@ -602,6 +610,14 @@ Usare le seguenti sezioni per creare la strategia di backup di Configuration Man
     -   **Valori:** RecoverPrimarySite  
 
     -   **Dettagli:** ripristina un sito primario  
+
+-   **Nome chiave:** CDLatest  
+
+    -   **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.    
+
+    -   **Valori:** 1. Qualsiasi valore diverso da 1 presuppone che non venga usata la cartella CD.Latest.
+
+    -   **Dettagli:** lo script deve includere la chiave e il valore quando si esegue il programma di installazione dal supporto di una cartella CD.Latest allo scopo di installare o ripristinare un sito di amministrazione centrale o primario. Questo valore indica al programma di installazione che viene usato il formato di supporto CD.Latest.
 
 **RecoveryOptions**  
 

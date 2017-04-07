@@ -2,7 +2,7 @@
 title: "Attestazione dell&quot;integrità | Microsoft Docs"
 description: "Informazioni sulla funzionalità di Attestazione dell&quot;integrità del dispositivo visibile nella console di Configuration Manager."
 ms.custom: na
-ms.date: 02/14/2017
+ms.date: 03/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: cb42b6f324dc0019c2109be4d91e0eab4dca4d70
-ms.openlocfilehash: 9d88e93c1382d5804598f2db258f325954e328b1
-ms.lasthandoff: 03/08/2017
+ms.sourcegitcommit: 23b1d24e908d04b64c3bbfa518793a44e696d468
+ms.openlocfilehash: 54b3433a002b8ef29059bab04458138348f95d66
+ms.lasthandoff: 03/29/2017
 
 
 ---
@@ -26,51 +26,60 @@ ms.lasthandoff: 03/08/2017
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Gli amministratori possono visualizzare l'[attestazione dell'integrità del dispositivo di Windows 10](https://technet.microsoft.com/library/mt592023.aspx) nella console di Configuration Manager.  Questa funzionalità è disponibile per i PC e le risorse locali gestite da Configuration Manager e i dispositivi mobili gestiti con Microsoft Intune. Gli amministratori possono specificare se la creazione di report avviene tramite cloud o infrastruttura locale. In questo modo i PC client senza accesso a Internet possono abilitare e monitorare i dispositivi usando l'attestazione dell'integrità. L'attestazione dell'integrità dei dispositivi consente all'amministratore di assicurare che nei computer client siano abilitate le seguenti configurazioni attendibili di BIOS, TPM e software di avvio:  
+Gli amministratori possono visualizzare l'[attestazione dell'integrità del dispositivo di Windows 10](https://technet.microsoft.com/library/mt592023.aspx) nella console di Configuration Manager.  L'attestazione dell'integrità dei dispositivi consente all'amministratore di assicurare che nei computer client siano abilitate le seguenti configurazioni attendibili di BIOS, TPM e software di avvio:  
 
 -   Antimalware ad esecuzione anticipata: l'antimalware ad esecuzione anticipata (ELAM) protegge il computer all'avvio e prima dell'inizializzazione dei driver di terze parti. [Come attivare la funzionalità ELAM](https://gallery.technet.microsoft.com/How-to-turn-on-Early-84552ec5)  
 -   BitLocker: Crittografia unità BitLocker di Windows è un software che consente di crittografare tutti i dati archiviati nel volume del sistema operativo Windows.  [Come attivare BitLocker](https://gallery.technet.microsoft.com/How-to-turn-on-BitLocker-34294d3d)  
 -   Avvio protetto: Avvio protetto è uno standard di sicurezza sviluppato dai membri del settore IT per garantire che i computer vengano avviati usando solo software considerato attendibile dal relativo produttore. [Altre informazioni su Avvio protetto](https://technet.microsoft.com/library/hh824987.aspx)  
 -   Integrità del codice: Integrità del codice è una funzionalità che migliora la sicurezza del sistema operativo convalidando l'integrità di un driver o di un file di sistema ogni volta che viene caricato nella memoria. [Altre informazioni su Integrità del codice](https://technet.microsoft.com/library/dd348642.aspx)  
 
+Questa funzionalità è disponibile per i PC e le risorse locali gestite da Configuration Manager e i dispositivi mobili gestiti con Microsoft Intune. Gli amministratori possono specificare se la creazione di report avviene tramite cloud o infrastruttura locale. Il monitoraggio locale dell'attestazione dell'integrità del dispositivo consente all'amministratore di controllare i PC client senza accesso a Internet.
 
-##  <a name="device-health-attestation"></a>Attestazione dell'integrità dei dispositivi  
- L'attestazione dell'integrità del dispositivo di Configuration Manager visualizza quanto segue:  
+## <a name="enable-health-attestation"></a>Abilitare l'attestazione di integrità
+
+ **Requisiti:**  
+
+-   Dispositivi client che eseguono Windows 10 versione 1607 o Windows Server 2016 versione 1607 con [Attestazione dell'integrità del dispositivo abilitata](https://technet.microsoft.com/windows-server-docs/security/device-health-attestation)
+-    Dispositivi abilitati per TPM 1.2 o TPM 2
+-   Comunicazione tra l'agente client di Configuration Manager e il servizio di attestazione dell'integrità has.spserv.microsoft.com (porta 443) o il punto di gestione dell'attestazione dell'integrità del dispositivo (locale)
+
+### <a name="how-to-enable-health-attestation-service-communication-on-configuration-manager-client-computers"></a>Come abilitare la comunicazione del servizio di attestazione dell'integrità nei computer client di Configuration Manager
+
+Seguire questa procedura per abilitare il monitoraggio dell'attestazione dell'integrità per i dispositivi con connessione a Internet.
+
+1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Panoramica** > **Impostazioni client**.  Selezionare la scheda delle impostazioni di **Agente computer** .  
+2.  Nella finestra di dialogo **Impostazioni predefinite** selezionare **Agente computer** e quindi scorrere fino a **Abilita le comunicazioni con il servizio di attestazione dell'integrità**  
+3.  Impostare l'opzione **Abilita le comunicazioni con il servizio di attestazione dell'integrità** su **Sì**e quindi fare clic su **OK**.  
+4. Definire come destinazione le raccolte di dispositivi che devono comunicare informazioni sull'integrità.
+
+### <a name="how-to-enable-on-premises-health-attestation-service-communication-on-configuration-manager-client-computers"></a>Come abilitare la comunicazione del servizio di attestazione dell'integrità locale nei computer client di Configuration Manager
+Seguire questa procedura per abilitare il monitoraggio dell'attestazione dell'integrità per i dispositivi locali senza connessione a Internet.
+
+A partire da Configuration Manager 1702, è possibile configurare l'URL del servizio locale di attestazione dell'integrità del dispositivo nel punto di gestione, in modo da supportare i dispositivi client che non hanno accesso a Internet.
+
+1. Nella console di Configuration Manager passare ad **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Siti**.
+2. Fare clic con il pulsante destro del mouse sul sito primario o secondario con il punto di gestione che supporta i client locali dell'attestazione dell'integrità del dispositivo e scegliere **Configura componenti del sito** > **Punto di gestione**. Viene visualizzata la pagina **Proprietà del componente del punto di gestione**.
+3. Nella scheda **Opzioni avanzate** selezionare **Aggiungi** e specificare un URL valido del servizio locale di attestazione dell'integrità del dispositivo. È possibile aggiungere più URL. Se vengono specificati più URL locali, i client ricevono il set completo e scelgono in modo casuale quello da usare.
+4.  Nella console di Configuration Manager scegliere **Amministrazione** > **Panoramica** > **Impostazioni client**.  Selezionare la scheda delle impostazioni di **Agente computer** .  
+5.  Nella finestra di dialogo **Impostazioni predefinite** selezionare **Agente computer** e quindi scorrere fino a **Usare il servizio di attestazione dell'integrità locale** e fare clic su **Sì**.
+6. Definire come destinazione le raccolte di dispositivi che devono comunicare informazioni sull'integrità con le impostazioni dell'agente client per abilitare la creazione di report sull'attestazione dell'integrità del dispositivo.
+
+È possibile anche usare le opzioni **Modifica** o **Rimuovi** per modificare o rimuovere gli URL del servizio di attestazione dell'integrità del dispositivo.
+
+> [!NOTE]
+> Se l'attestazione dell'integrità del dispositivo è stata usata prima dell'aggiornamento a Configuration Manager 1702, gli URL locali specificati nelle impostazioni dell'agente client vengono inseriti nelle proprietà del punti di gestione durante l'aggiornamento. I client locali continueranno a usare l'URL specificato nelle impostazioni dell'agente client fino a quando non vengono aggiornati. Passeranno quindi a uno degli URL specificati nel punto di gestione.
+
+## <a name="monitor-device-health-attestation"></a>Monitorare l'attestazione dell'integrità del dispositivo
+
+1.  Per visualizzare l'attestazione dell'integrità del dispositivo, nella console di Configuration Manager passare all'area di lavoro **Monitoraggio** , fare clic sul nodo **Sicurezza** e quindi su **Attestazione dell'integrità**.  
+2.  Viene visualizzato Attestazione dell'integrità dei dispositivi.  
+
+L'attestazione dell'integrità del dispositivo di Configuration Manager visualizza quanto segue:  
 
 -   **Stato dell'attestazione dell'integrità** : mostra la quota di dispositivi nello stato conforme, non conforme, errore e sconosciuto  
 -   **Dispositivi che generano report di attestazione dell'integrità** : mostra la percentuale dei dispositivi che segnalano lo stato di attestazione dell'integrità  
 -   **Dispositivi non conformi per tipo di client** : mostra la quota di dispositivi mobili e computer che non sono conformi  
--   **Impostazioni principali per l'attestazione dell'integrità mancante** : mostra il numero di dispositivi in cui manca l'impostazione per l'attestazione dell'integrità, elencati per impostazione  
+-   **Impostazioni principali per l'attestazione dell'integrità mancante** : mostra il numero di dispositivi in cui manca l'impostazione per l'attestazione dell'integrità, elencati per impostazione
 
- **Requisiti:**  
-
--   Dispositivi client che eseguono Win10  
--   Windows Server 2016 con [Attestazione dell'integrità del dispositivo abilitata](https://technet.microsoft.com/windows-server-docs/security/device-health-attestation)
--    TPM 2 abilitato  
--   Sbloccare la comunicazione tra l'agente client di Configuration Manager e il servizio di Attestazione dell'integrità has.spserv.microsoft.com (port 443)
-
-### <a name="how-to-enable-health-attestation-service-communication-on-configuration-manager-client-computers"></a>Come abilitare la comunicazione del servizio di Attestazione dell'integrità nei computer client di Configuration Manager  
-
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Panoramica** > **Impostazioni client**.  Selezionare la scheda delle impostazioni di **Agente computer** .  
-
-2.  Nella finestra di dialogo **Impostazioni predefinite** selezionare **Agente computer** e quindi scorrere fino a **Abilita le comunicazioni con il servizio di attestazione dell'integrità**  
-
-3.  Impostare l'opzione **Abilita le comunicazioni con il servizio di attestazione dell'integrità** su **Sì**e quindi fare clic su **OK**.  
-
-### <a name="how-to-enable-on-premises-health-attestation-service-communication-on-configuration-manager-client-computers"></a>Come abilitare la comunicazione del servizio di attestazione dell'integrità locale nei computer client di Configuration Manager
-
-
-1. Nella console di Configuration Manager passare ad **Amministrazione** > **Panoramica** > **Impostazioni client**e quindi impostare **Usare il servizio di attestazione dell'integrità locale** su **Sì**.
-
-
-2. Specificare l' **URL del servizio di attestazione dell'integrità locale**e quindi fare clic su **OK**.
-
-## <a name="how-to-view-health-attestation"></a>Come visualizzare Attestazione dell'integrità  
-
-
-1.  Per visualizzare l'attestazione dell'integrità del dispositivo, nella console di Configuration Manager passare all'area di lavoro **Monitoraggio** , fare clic sul nodo **Sicurezza** e quindi su **Attestazione dell'integrità**.  
-
-2.  Viene visualizzato Attestazione dell'integrità dei dispositivi.  
-
- Lo stato di Attestazione dell'integrità del dispositivo client può essere usato per definire le regole per l'accesso condizionale nei criteri di conformità per i dispositivi gestiti da Configuration Manager con Microsoft Intune. Per maggiori dettagli, vedere [Gestire i criteri di conformità del dispositivo in System Center Configuration Manager](/sccm/protect/deploy-use/device-compliance-policies).  
+Lo stato dell'attestazione dell'integrità del dispositivo client può essere usato per definire le regole per l'accesso condizionale nei criteri di conformità per i dispositivi gestiti da Configuration Manager con Microsoft Intune. Per maggiori dettagli, vedere [Gestire i criteri di conformità del dispositivo in System Center Configuration Manager](/sccm/protect/deploy-use/device-compliance-policies).  
 

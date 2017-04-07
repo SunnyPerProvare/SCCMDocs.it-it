@@ -2,7 +2,7 @@
 title: Configurazione dei profili certificato in System Center Configuration Manager | Microsoft Docs
 description: Informazioni su come configurare la registrazione dei certificati in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/10/2016
+ms.date: 03/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,36 +17,28 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
-ms.openlocfilehash: 56e0a1923305c5134386623b1e306b8ebd013d53
-ms.lasthandoff: 12/16/2016
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 859a8da10f55e314b205b7a4a415a1d2a60a920a
+ms.lasthandoff: 03/27/2017
 
 ---
+
 # <a name="certificate-infrastructure"></a>Infrastruttura di certificazione
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
+Di seguito sono riportati passaggi, dettagli e altre informazioni su come configurare i certificati in System Center Configuration Manager. Prima di iniziare, verificare gli eventuali prerequisiti elencati in [Prerequisiti per i profili certificato in System Center Configuration Manager](../../protect/plan-design/prerequisites-for-certificate-profiles.md).  
 
- Di seguito è riportata la tabella per i passaggi, i dettagli e per altre informazioni su come configurare la registrazione certificato in System Center Configuration Manager. Prima di iniziare, verificare gli eventuali prerequisiti elencati in [Prerequisiti per i profili certificato in System Center Configuration Manager](../../protect/plan-design/prerequisites-for-certificate-profiles.md).  
+Usare questi passaggi per configurare l'infrastruttura per i certificati SCEP o PFX.
 
- Dopo avere completato questi passaggi e aver verificato l'installazione, è possibile configurare e distribuire i profili certificato. Per altre informazioni, vedere [Come creare profili certificato in System Center Configuration Manager](../../protect/deploy-use/create-certificate-profiles.md).  
+## <a name="step-1---install-and-configure-the-network-device-enrollment-service-and-dependencies-for-scep-certificates-only"></a>Passaggio 1: installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze (solo per certificati SCEP)
 
-
-**Passaggio 1:** installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze. Il servizio ruolo Servizio registrazione dispositivi di rete per Servizi certificati Active Directory (AD CS) deve essere in esecuzione sul sistema operativo Windows Server 2012 R2.
-     **Importante:** prima di usare il servizio Registrazione dispositivi di rete con System Center Configuration Manager, è necessario completare altri passaggi di configurazione.
-**Passaggio 2:** installare e configurare il punto di registrazione certificati. È necessario installare almeno un punto di registrazione certificati. Il punto di registrazione può essere in un sito di amministrazione centrale o un sito primario.
-**Passaggio 3:** installare il modulo criteri di System Center Configuration Manager. Installare il modulo criteri sul server che esegue il servizio Registrazione dispositivi di rete.
-
-## <a name="supplemental-procedures-to-configure-certificate-enrollment-in-configuration-manager"></a>Procedure aggiuntive per configurare la registrazione dei certificati in Configuration Manager  
- Usare le seguenti informazioni quando i passaggi indicati nella tabella precedente richiedono procedure aggiuntive.  
-
-###  <a name="step-1-install-and-configure-the-network-device-enrollment-service-and-dependencies"></a>Passaggio 1: installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze  
  È necessario installare e configurare il servizio del ruolo Servizio di registrazione dispositivi di rete per Servizi certificati Active Directory (AD CS), modificare le autorizzazioni di sicurezza nei modelli del certificato, distribuire un certificato di autenticazione client PKI (Public Key Infrastructure) e modificare il registro per aumentare il limite della dimensione predefinita di IIS (Internet Information Services). Se necessario, occorre configurare anche l'autorità di certificazione (CA) emittente per consentire un periodo di validità personalizzato.  
 
 > [!IMPORTANT]  
 >  Prima di configurare System Center Configuration Manager per usare il servizio Registrazione dispositivi di rete, verificare l'installazione e la configurazione del servizio stesso. Se queste dipendenze non funzionano correttamente, sarà difficile risolvere problemi di registrazione dei certificati usando System Center Configuration Manager.  
 
-##### <a name="to-install-and-configure-the-network-device-enrollment-service-and-dependencies"></a>Per installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze  
+### <a name="to-install-and-configure-the-network-device-enrollment-service-and-dependencies"></a>Per installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze  
 
 1.  Su un server che esegue Windows Server 2012 R2, installare e configurare il ruolo servizio Registrazione dispositivi di rete per il ruolo del server Servizi certificati Active Directory. Per altre informazioni, vedere [Informazioni aggiuntive sul servizio Registrazione dispositivi di rete](http://go.microsoft.com/fwlink/p/?LinkId=309016) nella libreria Servizi certificati Active Directory in TechNet.  
 
@@ -107,10 +99,12 @@ ms.lasthandoff: 12/16/2016
 
 8.  Verificare che il servizio Registrazione dispositivi di rete sia in funzione usando il seguente collegamento come esempio: **https://server.contoso.com/certsrv/mscep/mscep.dll**. Verrà visualizzata la pagina Web incorporata del servizio Registrazione dispositivi di rete. Questa pagina Web illustra il servizio e spiega che i dispositivi di rete usano l'URL per inviare richieste di certificati.  
 
- Ora che il servizio Registrazione dispositivi di rete e le dipendenze sono configurate, è possibile installare e configurare il punto di registrazione certificati.  
+ Ora che il servizio Registrazione dispositivi di rete e le dipendenze sono configurate, è possibile installare e configurare il punto di registrazione certificati.
 
-###  <a name="step-2-install-and-configure-the-certificate-registration-point"></a>Passaggio 2: installare e configurare il punto di registrazione certificati  
- È necessario installare e configurare almeno un punto di registrazione certificato nella gerarchia di System Center Configuration Manager ed è possibile installare questo ruolo del sistema del sito nel sito dell'amministrazione centrale oppure in un sito primario.  
+
+## <a name="step-2---install-and-configure-the-certificate-registration-point"></a>Passaggio 2: installare e configurare il punto di registrazione certificati.
+
+È necessario installare e configurare almeno un punto di registrazione certificato nella gerarchia di System Center Configuration Manager ed è possibile installare questo ruolo del sistema del sito nel sito dell'amministrazione centrale oppure in un sito primario.  
 
 > [!IMPORTANT]  
 >  Prima di installare il punto di registrazione del certificato, fare riferimento alla sezione **Requisiti del sistema del sito** nell'argomento [Supported configurations for System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md) per i requisiti del sistema operativo e le dipendenze per il punto di registrazione certificati.  
@@ -127,18 +121,23 @@ ms.lasthandoff: 12/16/2016
 
 5.  Nella pagina **Proxy** fare clic su **Avanti**. Il punto di registrazione certificati non usa le impostazioni del proxy Internet.  
 
-6.  Nella pagina **Selezione ruolo del sistema** selezionare **Punto di registrazione certificati** dall'elenco dei ruoli disponibili, quindi fare clic su **Avanti**.  
+6.  Nella pagina **Selezione ruolo del sistema** selezionare **Punto di registrazione certificati** dall'elenco dei ruoli disponibili, quindi fare clic su **Avanti**. 
 
-7.  Nella pagina **Punto di registrazione certificati** accettare o modificare le impostazioni predefinite, quindi fare clic su **Aggiungi**.  
+8. Nella pagina **Modalità di registrazione del certificato** specificare quali richieste devono essere elaborate dal punto di registrazione certificati selezionando **Elabora le richieste di certificati SCEP** o **Elabora le richieste di certificati PFX**. Un punto di registrazione certificati non può elaborare entrambi i tipi di richieste, ma è possibile creare più punti di registrazione se si usano entrambi i tipi di certificato.
 
+7.  Nella pagina **Impostazioni del punto di registrazione certificati** le impostazioni dipendono dal tipo di certificato che verrà elaborato dal punto di registrazione certificati:
+    -   Se si è selezionata l'opzione **Elabora le richieste di certificati SCEP**, configurare quanto segue:
+        -   **Nome sito Web**, **Numero porta HTTPS** e **Nome dell'applicazione virtuale** per il punto di registrazione certificati. In questi campi vengono inseriti automaticamente i valori predefiniti. 
+        -   **URL per il servizio di registrazione dispositivi di rete e il certificato CA radice**: fare clic su **Aggiungi** e nella finestra di dialogo **Aggiungi URL e certificato CA radice** specificare quanto segue:
+            - **URL per il servizio di registrazione dispositivi di rete**: specificare l'URL nel formato seguente: https://*<FQDN_server>*/certsrv/mscep/mscep.dll. Ad esempio, se il FQDN del server che esegue il servizio Registrazione dispositivi di rete è server1.contoso.com, digitare **https://server1.contoso.com/certsrv/mscep/mscep.dll**.
+            - **Certificato CA radice**: Individuare e selezionare il file del certificato (con estensione cer) creato e salvato nel **Passaggio 1: Installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze**. Questo certificato CA radice consente al punto di registrazione certificati di convalidare il certificato di autenticazione client che verrà usato dal modulo criteri di System Center Configuration Manager.  
+    - Se si è selezionata l'opzione **Elabora le richieste di certificati PFX**, configurare quanto segue:
+        - **Autorità di certificazione e account necessario per la connessione a ogni autorità di certificazione**: fare clic su **Aggiungi** e nella finestra di dialogo **Aggiungi un'autorità di certificazione e un account** specificare quanto segue:
+            - **Nome del server dell'autorità di certificazione**: immettere il nome del server dell'autorità di certificazione.
+            - **Account dell'autorità di certificazione**: fare clic su **Imposta** per selezionare o creare l'account che dispone delle autorizzazioni per eseguire la registrazione a modelli nell'autorità di certificazione.
+        - **Account connessione al punto di registrazione certificati**: selezionare o creare l'account che connette il punto di registrazione certificati al database di Configuration Manager. In alternativa, è possibile usare l'account locale del computer che ospita il punto di registrazione certificati.
+        - **Account di pubblicazione di certificati di Active Directory**: selezionare un account o creare un nuovo account che verrà usato per pubblicare i certificati agli oggetti utente in Active Directory.
 8.  Nella finestra di dialogo **Aggiungi URL e certificato CA radice** , specificare quanto segue, quindi fare clic su **OK**:  
-
-    1.  **URL per il servizio di registrazione dispositivi di rete**: specificare l'URL nel formato seguente: https://*<FQDN_server>*/certsrv/mscep/mscep.dll. Ad esempio, se il FQDN del server che esegue il servizio Registrazione dispositivi di rete è server1.contoso.com, digitare **https://server1.contoso.com/certsrv/mscep/mscep.dll**.  
-
-    2.  **Certificato CA radice**: Individuare e selezionare il file del certificato (con estensione cer) creato e salvato nel **Passaggio 1: Installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze**. Questo certificato CA radice consente al punto di registrazione certificati di convalidare il certificato di autenticazione client che verrà usato dal modulo criteri di System Center Configuration Manager.  
-
-    > [!NOTE]  
-    >  Se si usano più server che eseguono il servizio Registrazione dispositivi di rete, fare clic su **Aggiungi** per specificare i dettagli per gli altri server.  
 
 9. Fare clic su **Avanti** e completare la procedura guidata.  
 
@@ -155,10 +154,10 @@ ms.lasthandoff: 12/16/2016
     > [!TIP]  
     >  Questo certificato non è immediatamente disponibile in questa cartella. Potrebbe essere necessario attendere (ad esempio, mezz'ora) prima che System Center Configuration Manager copi il file in questo percorso.  
 
- Ora che il punto di registrazione certificati è installato e configurato, è possibile installare il modulo criteri di System Center Configuration Manager sul server che esegue il servizio Registrazione dispositivi di rete.  
 
-###  <a name="step-3-install-the-configuration-manager-policy-module"></a>Passaggio 3: installare il modulo criteri di Configuration Manager  
- È necessario installare e configurare il modulo criteri di System Center Configuration Manager in ogni server specificato in **Passaggio 2: installare e configurare il punto di registrazione certificati** come **URL per il servizio Registrazione dispositivi di rete** nelle proprietà del punto di registrazione certificati.  
+## <a name="step-3----install-the-system-center-configuration-manager-policy-module-for-scep-certificates-only"></a>Passaggio 3: installare il modulo criteri di System Center Configuration Manager (solo per certificati SCEP).
+
+È necessario installare e configurare il modulo criteri di System Center Configuration Manager in ogni server specificato in **Passaggio 2: installare e configurare il punto di registrazione certificati** come **URL per il servizio Registrazione dispositivi di rete** nelle proprietà del punto di registrazione certificati.  
 
 ##### <a name="to-install-the-policy-module"></a>Per installare il modulo criteri  
 
@@ -168,7 +167,7 @@ ms.lasthandoff: 12/16/2016
 
     -   PolicyModuleSetup.exe  
 
-     Inoltre, se si dispone di una cartella LanguagePack sul supporto di installazione, copiare questa cartella e il relativo contenuto.  
+    Inoltre, se si dispone di una cartella LanguagePack sul supporto di installazione, copiare questa cartella e il relativo contenuto.  
 
 2.  Dalla cartella temporanea, eseguire PolicyModuleSetup.exe per avviare Installazione guidata del modulo criteri di System Center Configuration Manager.  
 
@@ -189,7 +188,8 @@ ms.lasthandoff: 12/16/2016
 
 9. Fare clic su **Avanti** e completare la procedura guidata.  
 
- Ora che sono stati completati i passaggi di configurazione per installare il servizio Registrazione dispositivi di rete e le dipendenze, il punto di registrazione certificati e il modulo criteri di System Center Configuration Manager, è possibile distribuire i certificati agli utenti e ai dispositivi creando e distribuendo profili certificato. Per altre informazioni su come creare profili certificato, vedere [Come creare profili certificato in System Center Configuration Manager](../../protect/deploy-use/create-certificate-profiles.md).  
+ Se si desidera disinstallare il modulo criteri di System Center Configuration Manager, usare **Programmi e funzionalità** nel Pannello di controllo. 
 
- Se si desidera disinstallare il modulo criteri di System Center Configuration Manager, usare **Programmi e funzionalità** nel Pannello di controllo.  
+ 
+Ora che sono stati completati i passaggi di configurazione, si è pronti a distribuire i certificati a utenti e dispositivi creando e distribuendo profili certificato. Per altre informazioni su come creare profili certificato, vedere [Come creare profili certificato in System Center Configuration Manager](../../protect/deploy-use/create-certificate-profiles.md).  
 

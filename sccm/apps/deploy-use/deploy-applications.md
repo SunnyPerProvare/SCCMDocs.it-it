@@ -17,9 +17,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: cb42b6f324dc0019c2109be4d91e0eab4dca4d70
-ms.openlocfilehash: 8c54bc455828712c7f9ea297f26c98c41848cf9c
-ms.lasthandoff: 03/08/2017
+ms.sourcegitcommit: 23b1d24e908d04b64c3bbfa518793a44e696d468
+ms.openlocfilehash: 0eaa1d13e9c273a6649f50d73fb357f04464d94c
+ms.lasthandoff: 03/29/2017
 
 
 ---
@@ -81,6 +81,7 @@ Nella pagina **Impostazioni di distribuzione** della Distribuzione guidata del s
 
 - **Invia pacchetti di riattivazione**: se lo scopo della distribuzione è impostato su **Richiesto** e l'opzione è selezionata, ai computer viene inviato un pacchetto di riattivazione prima dell'installazione della distribuzione. Il pacchetto attiva i computer nel momento in cui scade l'installazione. Prima di usare questa opzione, i computer e le reti devono essere configurati per riattivazione LAN.
 - **Tutti i client devono usare una connessione di rete a consumo per scaricare il contenuto una volta raggiunta la scadenza dell'installazione. Se si abilita questa opzione, potrebbe essere addebitato un costo ulteriore**: questa opzione è disponibile solo per le distribuzioni con lo scopo **Richiesto**.
+- **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione**: per altre informazioni su come configurare un elenco di file eseguibili che impediscano l'installazione di un'applicazione, vedere **Come controllare l'esecuzione di file eseguibili prima di installare un'applicazione** più avanti in questo argomento.
 - **Richiedi l'approvazione dell'amministratore se gli utenti richiedono questa applicazione**: se l'opzione è selezionata, prima dell'installazione dell'applicazione l'amministratore deve approvare tutte le relative richieste degli utenti. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando l'applicazione viene distribuita in una raccolta dispositivi.
 
     > [!NOTE]
@@ -155,6 +156,27 @@ Il tempo di posticipo massimo è sempre basato sui valori di notifica configurat
 Per una distribuzione ad alto rischio, ad esempio una sequenza di attività che distribuisce un sistema operativo, l'esperienza di notifica dell'utente è ora più invasiva. Ogni volta che si riceve una notifica in relazione alla necessità di manutenzione critica del software, anziché una notifica temporanea sulla barra delle applicazioni viene visualizzata nel computer una finestra di dialogo simile alla seguente:
 
 ![Finestra di dialogo del software richiesto](media/client-toast-notification.png)
+
+## <a name="how-to-check-for-running-executable-files-before-installing-an-application"></a>Come controllare l'esecuzione di file eseguibili prima di installare un'applicazione
+
+>[!Tip]
+>Introdotta con la versione 1702, è una funzionalità di versione non definitiva. Per abilitarla, vedere [Funzionalità di versioni non definitive in System Center Configuration Manager](https://docs.microsoft.com/sccm/core/servers/manage/pre-release-features).
+
+Nella finestra di dialogo **Proprietà** di un tipo di distribuzione, nella scheda **Comportamento installazione**, è possibile specificare uno o più file eseguibili che, se in esecuzione, bloccano l'installazione del tipo di distribuzione. L'utente deve chiudere il file eseguibile in esecuzione, che in alternativa può essere chiuso automaticamente per le distribuzioni con scopo richiesto, prima dell'installazione del tipo di distribuzione. Per configurare questa impostazione:
+
+1. Aprire la finestra di dialogo **Proprietà** per qualsiasi tipo di distribuzione.
+2. Nella scheda **Comportamento di installazione** della finestra di dialogo *<deployment type name>* **Proprietà** fare clic su **Aggiungi**.
+3. Nella finestra di dialogo **Aggiungi un file eseguibile/Modifica il file eseguibile** immettere il nome del file eseguibile che, se in esecuzione, bloccherà l'installazione dell'applicazione. Facoltativamente, è anche possibile immettere un nome descrittivo per l'applicazione in modo da identificarla più facilmente nell'elenco.
+4. Fare clic su **OK** e chiudere la finestra di dialogo *<deployment type name>* **Proprietà**.
+5. Se si distribuisce un'applicazione, nella pagina **Impostazioni di distribuzione** della Distribuzione guidata del software selezionare **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione** e continuare la procedura di distribuzione dell'applicazione.
+
+Quando l'applicazione raggiunge i PC client, si verifica il comportamento seguente:
+
+- Se l'applicazione è stata distribuita come **Disponibile** e un utente finale prova a installarla, verrà chiesto di chiudere tutti i file eseguibili in esecuzione specificati, prima di poter procedere con l'installazione.
+
+- Se l'applicazione è stata distribuita come **Richiesta** e l'opzione **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione** è selezionata, verrà visualizzata una finestra di dialogo che informa che i file eseguibili specificati verranno chiusi automaticamente quando viene raggiunta la scadenza dell'installazione dell'applicazione. È possibile pianificare queste finestre di dialogo in **Impostazioni client** > **Agente computer**. Se non si vuole che l'utente finale visualizzi questi messaggi, selezionare **Nascondi in Software Center e nascondi tutte le notifiche** nella scheda **Esperienza utente** delle proprietà di distribuzione.
+
+- Se l'applicazione è stata distribuita come **Richiesta** e l'opzione **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione** non è selezionata, l'installazione dell'applicazione avrà esito negativo se sono in esecuzione una o più applicazioni tra quelle specificate.
 
 ## <a name="for-more-information"></a>Per ulteriori informazioni:
 - [Impostazioni per gestire le distribuzioni ad alto rischio](../../protect/understand/settings-to-manage-high-risk-deployments.md)

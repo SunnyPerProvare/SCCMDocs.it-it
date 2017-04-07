@@ -2,7 +2,7 @@
 title: "Gestire le sequenze di attività per automatizzare le attività | Microsoft Docs"
 description: "È possibile creare, modificare, distribuire, importare ed esportare sequenze di attività per gestirle nell&quot;ambiente System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d04d28bbd5116a841c0872cf3f9ca18783dddc78
-ms.openlocfilehash: 417b31fa1feb6d0f674f14ef9e5c7cebd7013916
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 113fa73bf0bd1b3b8a4754eb1e96549c520d7995
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -29,7 +30,7 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente System
 
  Usare le sezioni seguenti per gestire le sequenze di attività.
 
-##  <a name="a-namebkmkcreatetasksequencea-create-task-sequences"></a><a name="BKMK_CreateTaskSequence"></a> Creare sequenze di attività  
+##  <a name="BKMK_CreateTaskSequence"></a> Creare sequenze di attività  
  Creare sequenze attività usando la Creazione guidata della sequenza di attività. Questa procedura guidata consente di creare i seguenti tipi di sequenze attività:  
 
 |Tipo di sequenza di attività|Altre informazioni|  
@@ -41,7 +42,13 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente System
 |[Sequenza di attività per gestire dischi rigidi virtuali](use-a-task-sequence-to-manage-virtual-hard-disks.md)|Questo tipo di sequenza di attività contiene i passaggi per creare un disco rigido virtuale, includendo l'installazione di un sistema operativo e di applicazioni, che è possibile pubblicare in System Center Virtual Machine Manager (VMM) dalla console di Configuration Manager.|  
 |[Sequenza di attività personalizzata](create-a-custom-task-sequence.md)|Questo tipo di sequenza di attività non aggiunge alcun passaggio alla sequenza di attività. È necessario modificare la sequenza di attività e aggiungervi i passaggi dopo la creazione.|  
 
-##  <a name="a-namebkmkmodifytasksequencea-edit-a-task-sequence"></a><a name="BKMK_ModifyTaskSequence"></a> Modificare una sequenza di attività  
+## <a name="return-to-previous-page-when-a-task-sequence-fails"></a>Tornare alla pagina precedente quando si verifica un errore di una sequenza di attività
+A partire da Configuration Manager versione 1702, è possibile tornare alla pagina precedente quando si esegue una sequenza di attività e si verifica un errore. Prima di questa versione, se si verificava un errore era necessario riavviare la sequenza di attività. È ad esempio possibile usare il pulsante **Precedente** negli scenari seguenti:
+
+- Quando un computer viene avviato in Windows PE, potrebbe essere visualizzata la finestra di dialogo di avvio della sequenza di attività prima che la sequenza stessa sia disponibile. Se in questo scenario si fa clic su Avanti, viene visualizzata la pagina finale della sequenza di attività che informa l'utente che non sono disponibili sequenze di attività. È ora possibile fare clic su **Precedente** per ripetere la ricerca di sequenze di attività. È possibile ripetere questo processo finché la sequenza di attività non è disponibile.
+- Quando si esegue una sequenza di attività ma i pacchetti di contenuto dipendenti non sono ancora disponibili nei punti di distribuzione, la sequenza di attività ha esito negativo. È ora possibile distribuire il contenuto mancante, se non è stato ancora distribuito, o attendere che il contenuto sia disponibile nei punti di distribuzione e quindi fare clic su **Precedente** per ripetere la ricerca di contenuto con la sequenza di attività.
+
+##  <a name="BKMK_ModifyTaskSequence"></a> Modificare una sequenza di attività  
  È possibile modificare una sequenza di attività aggiungendo o rimuovendo passaggi della sequenza di attività, aggiungendo o rimuovendo gruppi di sequenze attività oppure modificando l'ordine dei passaggi. Usare la seguente procedura per modificare una sequenza di attività esistente.  
 
 > [!IMPORTANT]  
@@ -71,7 +78,53 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente System
 
  Per un elenco dei passaggi della sequenza di attività disponibili, vedere [Passaggi della sequenza di attività](../understand/task-sequence-steps.md).  
 
-##  <a name="a-namebkmkdistributetsa-distribute-content-referenced-by-a-task-sequence"></a><a name="BKMK_DistributeTS"></a> Distribuire il contenuto a cui fa riferimento una sequenza attività  
+## <a name="configure-high-impact-task-sequence-settings"></a>Configurare impostazioni della sequenza di attività ad alto impatto
+A partire da Configuration Manager versione 1702, è possibile impostare una sequenza di attività come "ad alto impatto" e personalizzare i messaggi ricevuti dagli utenti quando eseguono la sequenza.
+
+### <a name="set-a-task-sequence-as-a-high-impact-task-sequence"></a>Impostare una sequenza di attività come una sequenza di attività a impatto elevato
+Attenersi alla procedura seguente per impostare una sequenza di attività a impatto elevato.
+> [!NOTE]
+> Qualsiasi sequenza di attività che soddisfi determinate condizioni viene definita automaticamente come a impatto elevato. Per altri dettagli, vedere [Gestire le distribuzioni ad alto rischio](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
+
+1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
+2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
+3. Nella scheda **Notifica utente** selezionare **Questa è una sequenza di attività a impatto elevato**.
+
+### <a name="create-a-custom-notification-for-high-risk-deployments"></a>Creare una notifica personalizzata per le distribuzioni ad alto rischio
+Usare la procedura seguente per creare una notifica personalizzata per le distribuzioni ad alto impatto.
+1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
+2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
+3. Nella scheda **Notifica utente** selezionare **Usa il testo personalizzato**.
+>  [!NOTE]
+>  È possibile impostare il testo della notifica utente solo quando l'opzione **Questa è una sequenza di attività a impatto elevato** è selezionata.
+
+4. Configurare le impostazioni seguenti (massimo 255 caratteri per casella di testo):
+
+  **Testo dell'intestazione della notifica all'utente**: specifica il testo blu che viene visualizzato nella notifica utente di Software Center. Ad esempio, nella notifica utente predefinita questa sezione contiene un testo simile a "Confermare l'aggiornamento del sistema operativo in questo computer".
+
+  **Testo del messaggio di notifica all'utente**: sono presenti tre caselle di testo che specificano il corpo della notifica personalizzata. Tutte le caselle di testo richiedono l'aggiunta di testo.
+  - Prima casella di testo: specifica il corpo principale del testo, in genere contenente le istruzioni per l'utente. Ad esempio, nella notifica utente predefinita questa sezione contiene un testo simile a "L'aggiornamento del sistema operativo potrebbe durare a lungo e richiedere più riavvii del computer".
+  - Seconda casella di testo: specifica il testo in grassetto nel corpo principale del testo. Ad esempio, nella notifica utente predefinita questa sezione contiene un testo simile a "Questo aggiornamento sul posto installa il nuovo sistema operativo ed esegue automaticamente la migrazione di app, dati e impostazioni".
+  - Terza casella di testo: specifica l'ultima riga di testo in grassetto. Ad esempio, nella notifica all'utente predefinita questa sezione contiene un testo simile a "Fare clic su Installa per iniziare, altrimenti fare clic su Annulla".   
+
+  Si supponga di configurare la notifica personalizzata seguente nelle proprietà.
+
+    ![Notifica personalizzata per una sequenza di attività](..\media\user-notification.png)
+
+    Verrà visualizzato il messaggio di notifica seguente quando l'utente finale apre il programma di installazione da Software Center.
+
+    ![Notifica personalizzata per una sequenza di attività](..\media\user-notification-enduser.png)
+
+### <a name="configure-software-center-properties"></a>Configurare le proprietà di Software Center
+Attenersi alla procedura seguente per configurare i dettagli per la sequenza di attività visualizzata in Software Center. Tali dettagli sono solo a scopo informativo.  
+1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
+2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
+3. Nella scheda **Generale** sono disponibili le impostazioni seguenti per Software Center:
+  - **Riavvio necessario**: consente all'utente di sapere se è necessario un riavvio durante l'installazione.
+  - **Dimensioni del download (MB)**: specifica quanti megabyte vengono visualizzati in Software Center per la sequenza di attività.  
+  - **Tempo di esecuzione stimato (minuti)**: specifica il tempo di esecuzione stimato in minuti che viene visualizzato in Software Center per la sequenza di attività.
+
+##  <a name="BKMK_DistributeTS"></a> Distribuire il contenuto a cui fa riferimento una sequenza attività  
  Prima che i client eseguano una sequenza di attività che fa riferimento al contenuto, è necessario distribuire tale contenuto ai punti di distribuzione. In qualsiasi momento, è possibile selezionare la sequenza di attività e distribuire il relativo contenuto per creare un nuovo elenco di pacchetti di riferimento per la distribuzione. Se si apportano modifiche alla sequenza di attività con contenuto aggiornato, è necessario ridistribuire il contenuto prima che diventi disponibile ai client. Usare la seguente procedura per distribuire il contenuto a cui fa riferimento una sequenza di attività.  
 
 #### <a name="to-distribute-referenced-content-to-distribution-points"></a>Per distribuire il contenuto con riferimenti ai punti di distribuzione  
@@ -97,7 +150,7 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente System
 
  È possibile pre-installare il contenuto a cui viene fatto riferimento nella sequenza di attività. Configuration Manager crea un file di contenuto pre-installato e compresso, contenente i file, le relative dipendenze e i metadati associati per il contenuto selezionato. Quindi, è possibile importare manualmente il contenuto in un server del sito, in un sito secondario o in un punto di distribuzione. Per altre informazioni su come pre-installare i file di contenuto, vedere [Prestage content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content) (Pre-installare il contenuto).  
 
-##  <a name="a-namebkmkdeploytsa-deploy-a-task-sequence"></a><a name="BKMK_DeployTS"></a> Distribuire una sequenza di attività  
+##  <a name="BKMK_DeployTS"></a> Distribuire una sequenza di attività  
  Usare la seguente procedura per distribuire una sequenza di attività ai computer in una raccolta.  
 
 > [!WARNING]  
@@ -230,7 +283,7 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente System
 
 11. Completare la procedura guidata.  
 
-##  <a name="a-namebkmkexportimporta-export-and-import-task-sequences"></a><a name="BKMK_ExportImport"></a> Esportare e importare sequenze di attività  
+##  <a name="BKMK_ExportImport"></a> Esportare e importare sequenze di attività  
  È possibile esportare e importare sequenze attività con o senza i relativi oggetti, come un'immagine del sistema operativo, un'immagine di avvio, un pacchetto dell'agente client, un pacchetto driver e applicazioni con dipendenze.  
 
  Considerare quanto segue quando si esportano e importano sequenze attività.  
@@ -297,7 +350,7 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente System
 
  Dopo aver importato la sequenza di attività, modificarla per specificare le password che erano presenti nella sequenza di attività originale. Per motivi di sicurezza, le password non vengono esportate.  
 
-##  <a name="a-namebkmkcreatetsvariablesa-create-task-sequence-variables-for-computers-and-collections"></a><a name="BKMK_CreateTSVariables"></a> Creare le variabili della sequenza di attività per computer e raccolte  
+##  <a name="BKMK_CreateTSVariables"></a> Creare le variabili della sequenza di attività per computer e raccolte  
  È possibile definire variabili della sequenza di attività personalizzate per computer e insiemi. Le variabili definite per un computer vengono definite variabili della sequenza di attività con ambito computer. Le variabili definite per una raccolta vengono definite variabili della sequenza di attività con ambito raccolta. Se si verifica un conflitto, le variabili con ambito computer hanno la precedenza sulle variabili con ambito raccolta. Questo significa che le variabili della sequenza di attività assegnate a un computer specifico assumono automaticamente una priorità maggiore di quelle assegnate alla raccolta che contiene il computer.  
 
  Se ad esempio alla raccolta ABC è assegnata una variabile e al computer XYZ, membro della raccolta ABC, è assegnata una variabile con lo stesso nome, la variabile assegnata al computer XYZ avrà priorità maggiore rispetto a quella assegnata alla raccolta ABC.  
@@ -342,7 +395,7 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente System
 
 6.  Dopo aver aggiunto tutte le variabili alla raccolta, fare clic su **OK**.  
 
-##  <a name="a-namebkmkadditionalactionstsa-additional-actions-to-manage-task-sequences"></a><a name="BKMK_AdditionalActionsTS"></a> Azioni aggiuntive per la gestione delle sequenze di attività  
+##  <a name="BKMK_AdditionalActionsTS"></a> Azioni aggiuntive per la gestione delle sequenze di attività  
  È possibile gestire le sequenze attività usando le azioni aggiuntive disponibili quando si seleziona la sequenza di attività usando la procedura seguente.  
 
 #### <a name="to-select-a-task-sequence-to-manage"></a>Per selezionare una sequenza di attività da gestire  
@@ -366,9 +419,4 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente System
 
 ## <a name="next-steps"></a>Passaggi successivi
 [Scenari di distribuzione di sistemi operativi aziendali](scenarios-to-deploy-enterprise-operating-systems.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

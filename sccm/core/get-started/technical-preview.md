@@ -2,7 +2,7 @@
 title: Technical Preview per System Center Configuration Manager | Microsoft Docs
 description: "Informazioni sulla versione Technical Preview che consente di testare nuove funzionalità in System Center Configuration Manager."
 ms.custom: na
-ms.date: 2/24/2017
+ms.date: 3/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0d1f8eb9274dde96eb4295c007c0f49036d1a3de
-ms.openlocfilehash: e140ef9daad9fb4105cea543115af19a4378c903
-ms.lasthandoff: 02/27/2017
+ms.sourcegitcommit: f326eb961be400187c2dcadd564a7e344dc4b175
+ms.openlocfilehash: 66b57ec07ebaffd63791741c0ac038d14ab5f367
+ms.lasthandoff: 03/29/2017
 
 
 ---
@@ -67,7 +67,10 @@ ms.lasthandoff: 02/27/2017
 -   Sono supportati solo i flag di installazione (opzioni) seguenti:  
 
     -   **/silent**  
-    -   **/testdbupgrade**  
+    -   **/testdbupgrade**    
+
+
+-   Per impostazione predefinita, se si usa Technical Preview, il punto di connessione del servizio viene impostato sulla modalità online quando viene installato e non supporta il passaggio alla modalità offline.
 
 -   Quando applicabile, sono inclusi ulteriori limitazioni o requisiti con i dettagli per ogni versione specifica della Technical Preview  
 
@@ -82,15 +85,15 @@ ms.lasthandoff: 02/27/2017
 
  Per usare la Technical Preview è innanzitutto necessario installare una **versione di base** della build Technical Preview. Dopo l'installazione di una versione di base, sarà quindi possibile usare gli **aggiornamenti nella console** per aggiornare l'installazione con la versione di anteprima più recente.     In genere, le nuove versioni Technical Preview sono disponibili ogni mese.
 
-Ogni versione di anteprima è supportata finché non sono disponibili fino a tre versioni successive. Pertanto, quando viene rilasciata la versione 1702 la versione 1610 non è più supportata, mentre rimangono supportate le versioni 1611, 1612 e 1701. Se tuttavia l'ultima linea di base non rientra nel supporto (come nel caso della versione 1610), è ancora disponibile il supporto per l'installazione di un nuovo sito Technical Preview, purché tale istallazione venga aggiornata a una versione supportata.
+Ogni versione di anteprima è supportata finché non sono disponibili fino a tre versioni successive. Pertanto, quando viene rilasciata la versione 1702 la versione 1610 non è più supportata, mentre rimangono supportate le versioni 1611, 1612 e 1701. Se tuttavia l'ultima linea di base non rientra nel supporto (come nel caso della versione 1610), è ancora disponibile il supporto per l'installazione di un nuovo sito Technical Preview (fino a quando non è disponibile una nuova versione di base), a condizione che tale istallazione venga aggiornata a una versione supportata.
 
 > [!TIP]  
 >  Quando si installa un aggiornamento per la Technical Preview, si aggiorna l'installazione di anteprima alla nuova versione Technical Preview.    Un'installazione Technical Preview non prevede mai la possibilità di eseguire l'aggiornamento a un'installazione del ramo corrente, né di ricevere gli aggiornamenti dalla versione ramo corrente.  
 
  **Versioni di base della Technical Preview attive:**  
- È possibile installare una versione di base per un massimo di 1 anno dopo il rilascio.
+ È possibile installare una versione di base per un massimo di 1 anno dopo il rilascio. Tuttavia, quando si installa un nuovo sito Technical Preview, è consigliabile usare l'ultima versione di base disponibile.
 
--   **Technical Preview 1610**: Configuration Manager Technical Preview 1610 è disponibile sia come aggiornamento nella console per Configuration Manager Technical Preview, sia come nuova versione di base sul sito Web [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
+-   **Technical Preview 1610**: Configuration Manager Technical Preview 1610 è disponibile sia come aggiornamento nella console per Configuration Manager Technical Preview, sia come versione di base nel sito Web [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
 
 
 
@@ -110,37 +113,37 @@ Ogni versione di anteprima è supportata finché non sono disponibili fino a tre
 
  |Funzionalità|Versione Technical Preview|Versione Current Branch|  
  |----------------|---------------------|--------------------|
- |Nuove impostazioni di conformità per i dispositivi iOS|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#new-compliance-settings-for-ios-devices)|![Non aggiunta](media/Red_X.gif)|
- |Creare certificati PFX con il supporto di S/MIME|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#create-pfx-certificates-with-s-mime-support)|![Non aggiunta](media/Red_X.gif)|
- |Controllare l'esecuzione di file eseguibili prima di installare un'applicazione|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#check-for-running-executable-files-before-installing-an-application)|![Non aggiunta](media/Red_X.gif)|
- |Inviare commenti e suggerimenti dalla console di Configuration Manager | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#send-feedback-from-the-configuration-manager-console)    |![Non aggiunta](media/Red_X.gif)  |
- |Modifiche per aggiornamenti e manutenzione  | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#changes-for-updates-and-servicing)  |![Non aggiunta](media/Red_X.gif) |
- |Miglioramenti della peer cache  | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#peer-cache-improvements) |![Non aggiunta](media/Red_X.gif)|
+ |Nuove impostazioni di conformità per i dispositivi iOS|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#new-compliance-settings-for-ios-devices)|[Versione 1702](/sccm/mdm/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client)|
+ |Creare certificati PFX con il supporto di S/MIME|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#create-pfx-certificates-with-s-mime-support)|[Versione 1702](/sccm/mdm/deploy-use/create-pfx-certificate-profiles)|
+ |Controllare l'esecuzione di file eseguibili prima di installare un'applicazione|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#check-for-running-executable-files-before-installing-an-application)|[Versione 1702](/sccm/apps/deploy-use/deploy-applications)|
+ |Inviare commenti e suggerimenti dalla console di Configuration Manager | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#send-feedback-from-the-configuration-manager-console)    |[Versione 1702](/sccm/core/plan-design/changes/whats-new-in-version-1702#send-feedback-from-the-configuration-managercconsole)  |
+ |Modifiche per Aggiornamenti e manutenzione  | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#changes-for-updates-and-servicing)  |[Versione 1702](/sccm/core/plan-design/changes/whats-new-in-version-1702#changes-for-updates-and-servicing) |
+ |Miglioramenti della peer cache  | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#peer-cache-improvements) |[Versione 1702](/sccm/core/plan-design/hierarchy/client-peer-cache)|
  |Uso di Azure Active Directory  | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#azurediscovery) |![Non aggiunta](media/Red_X.gif)|
- |Miglioramenti dei criteri di conformità dei dispositivi per accesso condizionale | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#conditional-access-device-compliance-policy-improvements) |![Non aggiunta](media/Red_X.gif)|
- |Avviso della versione del client antimalware | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#antimalware-client-version-alert) |![Non aggiunta](media/Red_X.gif)|
+ |Miglioramenti dei criteri di conformità dei dispositivi per accesso condizionale | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#conditional-access-device-compliance-policy-improvements) |[Versione 1702](/sccm/mdm/deploy-use/create-compliance-policy)|
+ |Avviso della versione del client antimalware | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#antimalware-client-version-alert) |[Versione 1702](/sccm/protect/deploy-use/endpoint-configure-alerts?branch=live#alert-for-outdated-malware-client)|
  |Valutazione della conformità degli aggiornamenti di Windows Update for Business | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#compliance-assessment-for-windows-update-for-business-updates) |![Non aggiunta](media/Red_X.gif)|
- |Miglioramenti alle impostazioni e ai messaggi di notifica di Software Center per le sequenze di attività a impatto elevato| [Tech Preview 1702](capabilities-in-technical-preview-1702.md#improvements-to-software-center-settings-and-notification-messages-for-high-impact-task-sequences) |![Non aggiunta](media/Red_X.gif)|
- |Supporto per Android for Work| [Tech Preview 1702](capabilities-in-technical-preview-1702.md#android-for-work-support) |![Non aggiunta](media/Red_X.gif)|
- |Miglioramenti dei gruppi di limiti per i punti di aggiornamento software | [Tech Preview 1701](capabilities-in-technical-preview-1701.md#boundary-groups-improvements-for-software-update-points)    |![Non aggiunta](media/Red_X.gif)  |
- |L'inventario hardware raccoglie le informazioni UEFI | [Tech Preview 1701](capabilities-in-technical-preview-1701.md#hardware-inventory-collects-uefi-information)|![Non aggiunta](media/Red_X.gif)  |
- |Miglioramenti alla distribuzione del sistema operativo| [Tech Preview 1701](capabilities-in-technical-preview-1701.md#improvements-to-operating-system-deployment)|![Non aggiunta](media/Red_X.gif)  |
+ |Miglioramenti alle impostazioni e ai messaggi di notifica di Software Center per le sequenze di attività a impatto elevato|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#antimalware-client-version-alert)|[Versione 1702](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#set-a-task-sequence-as-a-high-impact-task-sequence)|
+ |Supporto per Android for Work| [Tech Preview 1702](capabilities-in-technical-preview-1702.md#android-for-work-support) |[Versione 1702](/sccm/mdm/deploy-use/enroll-hybrid-android#enable-android-for-work-enrollment)|
+ |Miglioramenti dei gruppi di limiti per i punti di aggiornamento software | [Tech Preview 1701](capabilities-in-technical-preview-1701.md#boundary-groups-improvements-for-software-update-points)    |[Versione 1702](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points)  |
+ |L'inventario hardware raccoglie le informazioni UEFI | [Tech Preview 1701](capabilities-in-technical-preview-1701.md#hardware-inventory-collects-uefi-information)|[Versione 1702](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#hardware-inventory-collects-uefi-information) |
+ |Miglioramenti alla distribuzione del sistema operativo| [Tech Preview 1701](capabilities-in-technical-preview-1701.md#improvements-to-operating-system-deployment)|[Versione 1702](/sccm/core/plan-design/changes/whats-new-in-version-1702#operating-system-deployment) |
  |Ospitare gli aggiornamenti software in punti di distribuzione basati sul cloud| [Tech Preview 1701](capabilities-in-technical-preview-1701.md#host-software-updates-on-cloud-based-distribution-points)|![Non aggiunta](media/Red_X.gif) |
- |Convalidare i dati di attestazione dell'integrità del dispositivo tramite punti di gestione| [Tech Preview 1701](capabilities-in-technical-preview-1701.md#validate-device-health-attestation-data-via-management-points)|![Non aggiunta](media/Red_X.gif) |
- |Connettore OMS per il cloud di Microsoft Azure per enti pubblici |[Tech Preview 1701](capabilities-in-technical-preview-1701.md#use-the-oms-connector-for-microsoft-azure-government-cloud) |![Non aggiunta](media/Red_X.gif) |
+ |Convalidare i dati di attestazione dell'integrità del dispositivo tramite punti di gestione| [Tech Preview 1701](capabilities-in-technical-preview-1701.md#validate-device-health-attestation-data-via-management-points)| [Versione 1702](/sccm/core/servers/manage/health-attestation) |
+ |Connettore OMS per il cloud di Microsoft Azure per enti pubblici |[Tech Preview 1701](capabilities-in-technical-preview-1701.md#use-the-oms-connector-for-microsoft-azure-government-cloud) |[Versione 1702](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite#fairfaxconfig) |
  |Non è più necessario specificare le versioni di Android e iOS nella creazione guidata |[Tech Preview 1701](capabilities-in-technical-preview-1701.md#android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm) |![Non aggiunta](media/Red_X.gif) |
  |Accesso ai dati di endpoint OData |[Technical Preview 1612](capabilities-in-technical-preview-1612.md#odata-endpoint-data-access)|![Non aggiunta](media/Red_X.gif)|
- |Punto di servizio Data Warehouse |[Technical Preview 1612](capabilities-in-technical-preview-1612.md#the-data-warehouse-service-point)|![Non aggiunta](media/Red_X.gif)|
- |Strumento di pulizia della raccolta contenuto |[Technical Preview 1612](capabilities-in-technical-preview-1612.md#content-library-cleanup-tool)|![Non aggiunta](media/Red_X.gif)|
- |Miglioramenti per la ricerca nella console |[Technical Preview 1612](capabilities-in-technical-preview-1612.md#improvements-for-in-console-search)|![Non aggiunta](media/Red_X.gif)|
- |Evitare l'installazione di un'applicazione se è in esecuzione un programma specifico|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#prevent-installation-of-an-application-if-a-specified-program-is-running)|![Non aggiunta](media/Red_X.gif)|
+ |Punto di servizio Data Warehouse |[Technical Preview 1612](capabilities-in-technical-preview-1612.md#the-data-warehouse-service-point)|[Versione 1702](/sccm/core/servers/manage/data-warehouse)|
+ |Strumento di pulizia della raccolta contenuto |[Technical Preview 1612](capabilities-in-technical-preview-1612.md#content-library-cleanup-tool)|[Versione 1702](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool) |
+ |Miglioramenti per la ricerca nella console |[Technical Preview 1612](capabilities-in-technical-preview-1612.md#improvements-for-in-console-search)|[Versione 1702](/sccm/core/plan-design/changes/whats-new-in-version-1702#improvements-for-in-console-search)|
+ |Evitare l'installazione di un'applicazione se è in esecuzione un programma specifico|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#prevent-installation-of-an-application-if-a-specified-program-is-running)|[Versione 1702](/sccm/apps/deploy-use/deploy-applications)|
  |Nuova notifica di Windows Hello for Business per gli utenti finali|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#new-windows-hello-for-business-notification-for-end-users)|![Non aggiunta](media/Red_X.gif)|
  |Supporto di Windows Store for Business in Configuration Manager|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#windows-store-for-business-support-in-configuration-manager)|![Non aggiunta](media/Red_X.gif)|
- |Tornare alla pagina precedente quando si verifica un errore di una sequenza di attività|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#return-to-previous-page-when-a-task-sequence-fails)|![Non aggiunta](media/Red_X.gif)|
- |Supporto per i file di installazione rapida per gli aggiornamenti di Windows 10|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#express-installation-files-support-for-windows-10-updates)|![Non aggiunta](media/Red_X.gif)|
+ |Tornare alla pagina precedente quando si verifica un errore di una sequenza di attività|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#return-to-previous-page-when-a-task-sequence-fails)|[Versione 1702](/sccm/core/plan-design/changes/whats-new-in-version-1702#operating-system-deployment)|
+ |Supporto per i file di installazione rapida per gli aggiornamenti di Windows 10|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#express-installation-files-support-for-windows-10-updates)|[Versione 1702](/sccm/sum/deploy-use/manage-express-installation-files-for-windows-10-updates)|
  |Onboarding di Azure Active Directory|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#azure-active-directory-onboarding)|![Non aggiunta](media/Red_X.gif)|
-|Modifica alla configurazione dell'autenticazione a più fattori per la registrazione dei dispositivi|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#change-to-configuring-multi-factor-authentication-for-device-enrollment)|![Non aggiunta](media/Red_X.gif)|
-|Pre-cache del contenuto per le distribuzioni e le sequenze di attività |[Technical Preview 1611](capabilities-in-technical-preview-1611.md#pre-cache-content-for-available-deployments-and-task-sequences)|![Non aggiunta](media/Red_X.gif)|
+ |Modifica alla configurazione dell'autenticazione a più fattori per la registrazione dei dispositivi|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#change-to-configuring-multi-factor-authentication-for-device-enrollment)|![Non aggiunta](media/Red_X.gif)|
+ |Pre-cache del contenuto per le distribuzioni e le sequenze di attività |[Technical Preview 1611](capabilities-in-technical-preview-1611.md#pre-cache-content-for-available-deployments-and-task-sequences)|[Versione 1702](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content)|
  |Impostazioni di configurazione di Windows Defender|[Tech Preview 1610](capabilities-in-technical-preview-1610.md#windows-defender-configuration-settings)|[Versione 1610](/sccm/compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client)|
  |Richiedere la sincronizzazione dei criteri dalla console di amministrazione|[Tech Preview 1610](capabilities-in-technical-preview-1610.md#request-policy-sync-from-administrator-console)|[Versione 1610](/sccm/mdm/deploy-use/sync-intune-device)|
  |Supporto di ruoli di sicurezza aggiuntivi per il nodo Dispositivi di proprietà dell'azienda|[Tech Preview 1610](capabilities-in-technical-preview-1610.md#additional-security-role-support)|[Versione 1610](/sccm/mdm/understand/whats-new-in-hybrid-mobile-device-management#new-hybrid-features-in-november-2016)|
@@ -149,8 +152,8 @@ Ogni versione di anteprima è supportata finché non sono disponibili fino a tre
  |Funzionalità migliorate per le finestre di dialogo del software richieste|[Tech Preview 1610](capabilities-in-technical-preview-1610.md#improved-functionality-for-required-software-dialogs)|[Versione 1610](/sccm/apps/deploy-use/deploy-applications)|
  |Negare richieste di applicazioni approvate in precedenza|[Tech Preview 1610](capabilities-in-technical-preview-1610.md#deny-previously-approved-application-requests)|[Versione 1610](/sccm/apps/deploy-use/deploy-applications)|
  |Impedire l'aggiornamento automatico dei client|[Tech Preview 1610](capabilities-in-technical-preview-1610.md#exclude-clients-from-automatic-upgrade)|[Versione 1610](/sccm/core/clients/manage/upgrade/exclude-clients-windows)|
- |Miglioramenti a Endpoint Protection|[Tech Preview 1609](capabilities-in-technical-preview-1609.md#improvements-to-endpoint-protection)|![Non aggiunta](media/Red_X.gif)|
- |Aumento del numero di dispositivi registrati|[Tech Preview 1609](capabilities-in-technical-preview-1609.md#increased-number-of-enrolled-devices)|![Non aggiunta](media/Red_X.gif)|
+ |Miglioramenti a Endpoint Protection|[Tech Preview 1609](capabilities-in-technical-preview-1609.md#improvements-to-endpoint-protection)|[Versione 1610](/sccm/protect/deploy-use/endpoint-antimalware-policies#cloud-protection-service)|
+ |Aumento del numero di dispositivi registrati|[Tech Preview 1609](/sccm/mdm/deploy-use/enable-platform-enrollment)|[Versione 1610](/sccm/mdm/deploy-use/enable-platform-enrollment)|
  |Impostazioni aggiuntive per il DEP di Apple|[Tech Preview 1609](capabilities-in-technical-preview-1609.md#additional-apple-dep-settings)|[Versione 1610](/sccm/mdm/deploy-use/ios-device-enrollment-program-for-hybrid)|
  |Miglioramenti all'integrazione di Windows Store per le aziende con Configuration Manager|[Tech Preview 1609](capabilities-in-technical-preview-1609.md)|[Versione 1610](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)|
  |Nuove impostazioni di conformità per gli elementi di configurazione|[Tech Preview 1609](capabilities-in-technical-preview-1609.md#new-compliance-settings-for-configuration-items)|[Versione 1610](/sccm/compliance/deploy-use/create-configuration-items)|
@@ -158,11 +161,11 @@ Ogni versione di anteprima è supportata finché non sono disponibili fino a tre
  |Tipi di connessione nativa per i profili ibridi VPN di Windows 10|[Tech Preview 1609](capabilities-in-technical-preview-1609.md#native-connection-types-for-windows-10-vpn-hybrid-profiles)|![Non aggiunta](media/Red_X.gif)|
  |Miglioramenti ai gruppi limite|[Tech Preview 1609](capabilities-in-technical-preview-1609.md#improvements-for-boundary-groups)|[Versione 1610](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#BKMK_BoundaryGroups)|
  |Dashboard di Gestione client di Office 365|[Tech Preview 1609](capabilities-in-technical-preview-1609.md#office-365-client-management-dashboard)|[Versione 1610](/sccm/sum/deploy-use/manage-office-365-proplus-updates#office-365-client-management-dashboard)|
- |Distribuire le app di Office 365 ai client|[Tech Preview 1609](capabilities-in-technical-preview-1609.md#deploy-office-365-apps-to-clients)|![Non aggiunta](media/Red_X.gif)|
+ |Distribuire le app di Office 365 ai client|[Tech Preview 1609](capabilities-in-technical-preview-1609.md#deploy-office-365-apps-to-clients)|[Versione 1702](/sccm/sum/deploy-use/manage-office-365-proplus-updates#deploy-office-365-apps)|
  |Miglioramenti alla conversione da BIOS a UEFI|[Tech Preview 1609](capabilities-in-technical-preview-1609.md#BKMK_UEFIConversion)|[Versione 1610](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion)|
  |Grafici di conformità di Intune|[Tech Preview 1609](capabilities-in-technical-preview-1609.md#intune-compliance-charts)|[Versione 1610](/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy)|
  |Miglioramenti del passaggio della sequenza di attività Prepara client ConfigMgr per l'acquisizione|[Tech Preview 1608](capabilities-in-technical-preview-1608.md#improvements-to-the-prepare-configmgr-client-for-capture-task-sequence-step)|[Versione 1610](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareConfigMgrClientforCapture)|
- |Miglioramenti a Software Center|[Tech Preview 1608](capabilities-in-technical-preview-1608.md#improvements-to-software-center)|[1610](/sccm/core/plan-design/changes/whats-new-in-version-1610#general-improvements-to-software-center)|
+ |Miglioramenti a Software Center|[Tech Preview 1608](capabilities-in-technical-preview-1608.md#improvements-to-software-center)|[Versione 1610](/sccm/core/plan-design/changes/whats-new-in-version-1610#general-improvements-to-software-center)|
  |Miglioramenti ad Asset Intelligence|[Tech Preview 1608](capabilities-in-technical-preview-1608.md#improvements-to-asset-intelligence)|![Non aggiunta](media/Red_X.gif)|
  |Traduzione della tastiera di controllo remoto|[Tech Preview 1608](capabilities-in-technical-preview-1608.md#remote-control-keyboard-translation)|![Non aggiunta](media/Red_X.gif)|
  |Miglioramenti al criterio di aggiornamento edizione di Windows 10|[Tech Preview 1607](capabilities-in-technical-preview-1607.md#dmp_edition)|[Versione 1610](/sccm/compliance/deploy-use/upgrade-windows-version)|

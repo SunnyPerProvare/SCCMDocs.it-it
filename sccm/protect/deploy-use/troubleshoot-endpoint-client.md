@@ -17,8 +17,9 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1432568286605d29683416885d7aa522c649016e
-ms.openlocfilehash: fde190f141fb55462755119b533519d05af3f3c3
+ms.sourcegitcommit: 6accec2d356861b273b25ba2b6338d9684a46ff6
+ms.openlocfilehash: 1b096e71f5131214fb4e235e84d0b7f63e566831
+ms.lasthandoff: 03/29/2017
 
 
 ---
@@ -167,8 +168,7 @@ Se si verificano problemi con Windows Defender o Endpoint Protection, chiedere a
 ##  <a name="starting-windows-defender-or-endpoint-protection-service"></a>Avvio del servizio di Windows Defender o Endpoint Protection  
  **Sintomo**  
 
- Viene visualizzato un messaggio di notifica per informare che **Windows Defender o**  
- **Endpoint Protection non monitora il computer perché il servizio del programma è stato arrestato. È necessario riavviarlo.**â€  
+ Viene visualizzato il messaggio seguente: **Il computer non è monitorato da Windows Defender or Endpoint Protection perché il servizio del programma è stato arrestato. È necessario riavviarlo.** 
 
  **Soluzione**  
 
@@ -176,7 +176,7 @@ Se si verificano problemi con Windows Defender o Endpoint Protection, chiedere a
 
 -   Chiudere tutte le applicazioni e riavviare il computer.  
 
-### <a name="step-2-make-sure-the-windows-defender-orbr-------endpoint-protection-service-is-set-to-automatic-and-is-started"></a>Passaggio 2: verificare che il servizio Windows Defender o<br />      Endpoint Protection sia impostato su Automatico e che sia avviato.  
+### <a name="step-2-make-sure-the-windows-defender-or-endpoint-protection-service-is-set-to-automatic-and-is-started"></a>Passaggio 2: verificare che il servizio "Windows Defender" o "Endpoint Protection" sia impostato su Automatico e che sia avviato.  
 
 1.  Fare clic su **Start** , cercare **services.msc**e quindi premere **INVIO**.  
 
@@ -318,9 +318,4 @@ Se si verificano problemi con Windows Defender o Endpoint Protection, chiedere a
  [Endpoint Protection client frequently asked questions](../../protect/deploy-use/endpoint-protection-client-faq.md) (Domande frequenti relative al client Endpoint Protection)   
 
  [Endpoint Protection Client Help](../../protect/deploy-use/endpoint-protection-client-help.md) (Guida del client Endpoint Protection)
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

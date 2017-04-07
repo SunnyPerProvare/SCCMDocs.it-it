@@ -2,7 +2,7 @@
 title: Versioni di SQL Server supportate | Microsoft Docs
 description: Requisiti di configurazione e della versione di SQL Server per l&quot;hosting di un database del sito di System Center Configuration Manager.
 ms.custom: na
-ms.date: 1/3/2017
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 25aa013896ca118f0689b71e5cddcb8baf049c66
-ms.openlocfilehash: 9bf4c1d9ee12da6801470165d33df50b2d08a810
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: ea9edf6392c41e31276900454cd78ce4bc32be7b
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -27,7 +28,7 @@ ms.openlocfilehash: 9bf4c1d9ee12da6801470165d33df50b2d08a810
 
 Ogni sito di System Center Configuration Manager richiede una versione e una configurazione di SQL Server supportate per ospitare il database del sito.  
 
-##  <a name="a-namebkmkinstancesa-sql-server-instances-and-locations"></a><a name="bkmk_Instances"></a> Istanze e percorsi di SQL Server  
+##  <a name="bkmk_Instances"></a> Istanze e percorsi di SQL Server  
  **Sito di amministrazione centrale e siti primari:**  
 Il database del sito deve usare un'installazione completa di SQL Server.  
 
@@ -52,10 +53,13 @@ Sono supportate le istanze seguenti:
 
  È necessario che SQL Server si trovi nel computer del server del sito.  
 
-##  <a name="a-namebkmksqlversionsa-supported-versions-of-sql-server"></a><a name="bkmk_SQLVersions"></a> Versioni supportate di SQL Server  
+##  <a name="bkmk_SQLVersions"></a> Versioni supportate di SQL Server  
  In una gerarchia con più siti, diversi siti possono usare versioni diverse di SQL Server per ospitare il database del sito, purché le versioni di SQL Server in uso siano supportate da Configuration Manager.  
 
- Se non specificato diversamente, le versioni seguenti di SQL Server sono supportate con System Center Configuration Manager versione 1511 e successive.  
+ Se non specificato diversamente, le versioni seguenti di SQL Server sono supportate con tutte le versioni attive di System Center Configuration Manager. Se viene aggiunto il supporto per una nuova versione di SQL Server o del Service Pack, verrà indicata la versione di Configuration Manager che aggiunge tale supporto. Analogamente, se il supporto è deprecato, cercare i dettagli relativi alle versioni di Configuration Manager interessate.   
+ 
+Il supporto per uno specifico Service Pack di SQL Server include gli aggiornamenti cumulativi per tale Service Pack, a meno che un aggiornamento cumulativo non interrompa la compatibilità all'indietro con la versione di base del Service Pack. Quando non è indicata alcuna versione del Service Pack, il supporto riguarda la versione specifica di SQL Server senza Service Pack. Se in futuro viene rilasciato un Service Pack per tale versione, verrà dichiarata un'istruzione di supporto separata prima che sia supportata la nuova versione del Service Pack.
+
 
 > [!IMPORTANT]  
 >  Se si usa SQL Server Standard per il database nel sito di amministrazione centrale, si limita il numero totale di client che una gerarchia può supportare. Vedere [Numeri di ridimensionamento e scalabilità](../../../core/plan-design/configs/size-and-scale-numbers.md).
@@ -109,7 +113,10 @@ Sono supportate le istanze seguenti:
 
 
 ### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3 - Standard, Enterprise, Datacenter     
-È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:  
+  Questa versione di SQL Server non è supportata [a partire dalla versione 1702](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-support-for-sql-server-versions-as-a-site-database).  
+ Rimane supportata quando si usa una versione di Configuration Manager precedente la 1702.
+
+Quando è supportata dalla versione di Configuration Manager in uso, questa versione di SQL Server può essere usata senza una versione di aggiornamento cumulativo minima per i componenti seguenti:  
 
 -   sito di amministrazione centrale  
 -   sito primario
@@ -147,7 +154,7 @@ Sono supportate le istanze seguenti:
 
 -   sito secondario  
 
-##  <a name="a-namebkmksqlconfiga-required-configurations-for-sql-server"></a><a name="bkmk_SQLConfig"></a> Configurazioni necessarie per SQL Server  
+##  <a name="bkmk_SQLConfig"></a> Configurazioni necessarie per SQL Server  
  Le configurazioni seguenti sono necessarie per tutte le installazioni di SQL Server usate per un database del sito, incluso SQL Server Express. Quando Configuration Manager installa SQL Server Express come parte dell'installazione di un sito secondario, queste configurazioni vengono create automaticamente.  
 
  **Versione dell'architettura di SQL Server:**  
@@ -188,7 +195,7 @@ I [trigger nidificati SQL](http://go.microsoft.com/fwlink/?LinkId=528802) devono
  **Integrazione CLR di SQL Server**  
   Il database del sito richiede l'abilitazione di Common Language Runtime (CLR) di SQL Server. Questa funzione viene abilitata automaticamente quando si installa Configuration Manager. Per altre informazioni su CLR, vedere [Introduzione all'integrazione CLR di SQL Server](https://msdn.microsoft.com/library/ms254498\(v=vs.110\).aspx).  
 
-##  <a name="a-namebkmkoptionala-optional-configurations-for-sql-server"></a><a name="bkmk_optional"></a> Configurazioni facoltative per SQL Server  
+##  <a name="bkmk_optional"></a> Configurazioni facoltative per SQL Server  
  Le configurazioni seguenti sono facoltative per ogni database che usa un'installazione completa di SQL Server.  
 
  **Servizio SQL Server:**  
@@ -237,8 +244,9 @@ Se si dispone di un firewall abilitato nel computer che esegue SQL Server, assic
 
 Per un esempio di come configurare SQL Server per l'uso di una porta specifica, vedere [Procedura: Configurazione di un server per l'attesa su una porta TCP specifica (Gestione configurazione SQL Server)](http://go.microsoft.com/fwlink/p/?LinkID=226349) nella Libreria TechNet di SQL Server.  
 
-
-
-<!--HONumber=Jan17_HO1-->
-
+## <a name="upgrade-options-for-sql-server"></a>Opzioni di aggiornamento per SQL Server
+Se è necessario aggiornare la versione di SQL Server, è consigliabile eseguire i metodi seguenti, dal più semplice al più complesso.
+1. [Aggiornare SQL Server sul posto](/sccm/core/servers/manage/upgrade-on-premises-infrastructure#a-namebkmksupconfigupgradedbsrva-upgrade-sql-server-on-the-site-database-server) (scelta consigliata).
+2. Installare una nuova versione di SQL Server in un nuovo computer e quindi [usare l'opzione di spostamento del database](/sccm/core/servers/manage/modify-your-infrastructure#a-namebkmkdbconfiga-modify-the-site-database-configuration) dell'installazione di Configuration Manager in modo che il server del sito punti alla nuova versione di SQL Server.
+3. Usare le funzionalità di [backup e ripristino](/sccm/protect/understand/backup-and-recovery).
 

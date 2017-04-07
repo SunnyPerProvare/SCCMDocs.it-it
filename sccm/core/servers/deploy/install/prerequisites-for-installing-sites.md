@@ -2,7 +2,7 @@
 title: Prerequisiti per i siti | Microsoft Docs
 description: Informazioni sui prerequisiti per l&quot;installazione di diversi tipi di siti di System Center Configuration Manager.
 ms.custom: na
-ms.date: 3/1/2017
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: b6c570d8addbe7df5aace461ee725a7df1d35a31
-ms.openlocfilehash: 76c8bb6d0922fad996e27c04a86cb9b4ad32a810
-ms.lasthandoff: 03/01/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: ff89d4aea6be871e64e0a788f054ba4cadb3e51d
+ms.lasthandoff: 03/27/2017
 
 ---
 # <a name="prerequisites-for-installing-system-center-configuration-manager-sites"></a>Prerequisiti per l'installazione di siti di System Center Configuration Manager
@@ -60,14 +60,14 @@ I prerequisiti seguenti si applicano all'installazione di un sito di amministraz
 - Il server del sito e i computer del database del sito devono soddisfare tutte le configurazioni dei prerequisiti. Prima di avviare il programma di installazione, è possibile [eseguire manualmente Controllo prerequisiti](../../../../core/servers/deploy/install/prerequisite-checker.md) per identificare e risolvere eventuali problemi.  
 
 
-### <a name="bkmk_expand"></a> Espansione di un sito primario autonomo
+### <a name="bkmk_expand"></a> Prerequisiti per l'espansione di un sito primario autonomo
 Un sito primario autonomo deve soddisfare i seguenti prerequisiti ai fini dell'espansione in una gerarchia con un sito di amministrazione centrale:
 
--   **È necessario installare il nuovo supporto di installazione del sito di amministrazione centrale contenente i file di origine che corrisponde alla versione del sito primario autonomo**
+-   **È necessario installare il nuovo sito di amministrazione centrale usando i file inclusi nella cartella CD.Latest (contenente i file di origine), che corrispondono alla versione del sito primario autonomo**
 
-     Per assicurarsi che la versione corrisponda, installare il nuovo sito usando i file di origine presenti nella [cartella CD.Latest](../../../../core/servers/manage/the-cd.latest-folder.md) del sito primario autonomo.
+ Per assicurarsi che la versione corrisponda, usare i file di origine presenti nella [cartella CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder) del sito primario autonomo.
 
-     Per altre informazioni sui file di origine corretti da usare per installare i diversi siti, vedere [Opzioni per l'installazione di diversi tipi di siti](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options) nell'argomento [Preparare l'installazione di siti](../../../../core/servers/deploy/install/prepare-to-install-sites.md).
+ Per altre informazioni sui file di origine corretti da usare per installare i diversi siti, vedere [Opzioni per l'installazione di diversi tipi di siti](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options) nell'argomento [Preparare l'installazione di siti](../../../../core/servers/deploy/install/prepare-to-install-sites.md).
 
 
 -   **Non è possibile configurare il sito primario autonomo per eseguire la migrazione dei dati da un'altra gerarchia di Configuration Manager**  

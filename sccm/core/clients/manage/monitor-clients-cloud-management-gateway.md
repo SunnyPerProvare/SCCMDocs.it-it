@@ -1,17 +1,18 @@
 ---
 title: Monitorare il gateway di gestione cloud - Configuration Manager | Microsoft Docs
 description: 
-ms.date: 11/18/2016
+ms.date: 03/28/2017
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-client
 ms.assetid: 15f72f80-9850-40ce-9c3a-443ba04b6a03
-author: nbigman
-ms.author: nbigman
+author: arob98
+ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: ef12c9b966a1b83b61243311b30e1a925c20d2e3
-ms.openlocfilehash: 4475205c37c20631a189e0c315dc48e288c15ba6
+ms.sourcegitcommit: 199096db7a23fb14db98b95e75246ed254848ab7
+ms.openlocfilehash: df32a7d95799d8ae685fd66e2d9ddf25e32b37d0
+ms.lasthandoff: 03/27/2017
 
 ---
 
@@ -49,16 +50,5 @@ Gli avvisi del traffico in uscita consentono di sapere quando il traffico sta pe
 
 ## <a name="monitor-logs"></a>Monitorare i log
 
-Il servizio gateway di gestione cloud genera voci nel file di log seguenti:
-
--   **Cloudmgr.log**: contiene voci sulla distribuzione del servizio gateway di gestione cloud, sullo stato del servizio in uso e sui dati di utilizzo associati al servizio.
-
--   **SMS\_Cloud\_ProxyConnector.log**: contiene voci sulla configurazione delle connessioni tra il servizio gateway di gestione cloud e il punto di connessione al gateway di gestione cloud.
-
-Per altre informazioni, vedere [Log in Configuration Manager](/sccm/core/plan-design/hierarchy/log-files).
-
-
-
-<!--HONumber=Jan17_HO4-->
-
+Il servizio gateway di gestione cloud genera voci in alcuni file di log. Per altre informazioni, vedere [Log in Configuration Manager](/sccm/core/plan-design/hierarchy/log-files).
 

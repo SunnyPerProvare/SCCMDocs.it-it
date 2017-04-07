@@ -2,7 +2,7 @@
 title: Testare gli aggiornamenti client in una raccolta di pre-produzione | Microsoft Docs
 description: Testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/12/2016
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,9 +17,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 52d2e088b8db3c2e9a0af640ca3db72b9fd7af60
-ms.openlocfilehash: 250c9312b932670c408554f3968ae43ae4f3dbaa
-ms.lasthandoff: 01/03/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 533c8e8b30519d83b8fc7a9d204d51e76974c4b1
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -57,7 +57,7 @@ ms.lasthandoff: 01/03/2017
 
 ##  <a name="to-install-a-configuration-manager-update-that-includes-a-new-version-of-the-client"></a>Per installare un aggiornamento di Configuration Manager che include una nuova versione del client  
 
-1.  Nella console di Configuration Manager aprire **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione**, selezionare un aggiornamento **Disponibile** e quindi scegliere **Installa pacchetto di aggiornamento**  
+1.  Nella console di Configuration Manager aprire **Amministrazione** > **Aggiornamenti e manutenzione**, selezionare un aggiornamento **Disponibile** e quindi scegliere **Installa pacchetto di aggiornamento**. Nelle versioni precedenti la 1702, Aggiornamenti e manutenzione si trova in **Amministrazione** > **Servizi cloud**.
 
      Per altre informazioni sull'installazione degli aggiornamenti, vedere [Aggiornamenti per System Center Configuration Manager](../../../../core/servers/manage/updates.md)  
 
@@ -72,7 +72,7 @@ ms.lasthandoff: 01/03/2017
 
 ##  <a name="to-promote-the-new-client-to-production"></a>Per alzare di livello il nuovo client al livello di produzione  
 
-1.  Nella console di Configuration Manager aprire **Amministrazione** > **Servizi cloud** > **Aggiornamenti e manutenzione** e scegliere **Alza di livello il client di pre-produzione**.
+1.  Nella console di Configuration Manager aprire **Amministrazione** > **Aggiornamenti e manutenzione** e quindi scegliere **Alza di livello il client di pre-produzione**. Nelle versioni precedenti la 1702, Aggiornamenti e manutenzione si trova in **Amministrazione** > **Servizi cloud**.
 
     > [!TIP]
     > Il pulsante **Alza di livello il client di pre-produzione** è disponibile anche durante il monitoraggio delle distribuzioni dei client nella console da **Monitoraggio** > **Stato del client** > **Distribuzione client di pre-produzione**.

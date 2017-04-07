@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1b458284961171f11acc3e84f82749addc1b6afb
-ms.openlocfilehash: 890cc72f7ca0619b48ceae7c3a8c731a62341ef7
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 28593d271603ff9775425327996d844d7ed358cd
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -41,7 +41,7 @@ ms.lasthandoff: 02/28/2017
 
  Dal momento che è possibile eseguire una distribuzione side-by-side di un sito e una gerarchia di System Center Configuration Manager e di un sito o una gerarchia di System Center Configuration Manager 2012 già esistente, si consiglia di pianificare un'azione che impedisca ai client di una delle due versioni di provare a far parte di un sito dell'altra versione.
 
-Se ad esempio due o più gerarchie di Configuration Manager hanno limiti sovrapposti (vedere l'argomento sui [limiti sovrapposti](../../../core/servers/deploy/configure/define-site-boundaries-and-boundary-groups.md#BKMK_BoundaryOverlap)) che includono gli stessi percorsi di rete, la procedura consigliata è assegnare ogni nuovo client a un sito specifico anziché usare l'assegnazione sito automatica. Per informazioni sull'assegnazione sito automatica in System Center Configuration Manager 2012, vedere [How to assign clients to a site in System Center Configuration Manager](../../../core/clients/deploy/assign-clients-to-a-site.md) (Come assegnare i client a un sito in System Center Configuration Manager).  
+Se ad esempio due o più gerarchie di Configuration Manager hanno limiti sovrapposti (vedere [Overlapping boundaries](/sccm/core/servers/deploy/configure/boundary-groups#overlapping-boundaries) (Limiti sovrapposti)) che includono gli stessi percorsi di rete, la procedura consigliata è assegnare ogni nuovo client a un sito specifico anziché usare l'assegnazione sito automatica. Per informazioni sull'assegnazione sito automatica in System Center Configuration Manager 2012, vedere [How to assign clients to a site in System Center Configuration Manager](../../../core/clients/deploy/assign-clients-to-a-site.md) (Come assegnare i client a un sito in System Center Configuration Manager).  
 
  Non è inoltre possibile installare un client di System Center Configuration Manager 2012 in un computer che ospita un ruolo del sistema del sito di System Center Configuration Manager, né installare un client di System Center Configuration Manager in un computer che ospita un ruolo del sistema del sito di System Center Configuration Manager 2012.  
 

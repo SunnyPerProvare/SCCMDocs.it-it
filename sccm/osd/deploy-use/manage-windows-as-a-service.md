@@ -2,7 +2,7 @@
 title: Gestire Windows distribuito come servizio - Configuration Manager | Microsoft Docs
 description: Visualizzare lo stato di Windows distribuito come servizio usando Configuration Manager, definire piani di manutenzione per formare anelli di distribuzione e visualizzare avvisi quando i client Windows 10 si avvicinano alla scadenza del supporto.
 ms.custom: na
-ms.date: 01/23/2017
+ms.date: 03/26/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
-ms.openlocfilehash: b3859bc01c37dab04275028585e892f927606025
+ms.sourcegitcommit: 23b1d24e908d04b64c3bbfa518793a44e696d468
+ms.openlocfilehash: 87c3a35f4688c505f9b659a1bfe62f7a04cc7f11
+ms.lasthandoff: 03/29/2017
 
 
 ---
@@ -32,7 +33,7 @@ ms.openlocfilehash: b3859bc01c37dab04275028585e892f927606025
 
  Usare le sezioni seguenti per gestire Windows come servizio.
 
-##  <a name="a-namebkmkprerequisitesa-prerequisites"></a><a name="BKMK_Prerequisites"></a> Prerequisiti  
+##  <a name="BKMK_Prerequisites"></a> Prerequisiti  
  Per visualizzare i dati nel dashboard di manutenzione di Windows 10 è necessario seguire questa procedura:  
 
 -   I computer Windows 10 devono usare gli aggiornamenti software di Configuration Manager con Windows Server Update Services (WSUS) per la gestione degli aggiornamenti software. Se la gestione degli aggiornamenti software avviene tramite Windows Update per Business o Windows Insider, il computer non viene valutato nei piani di manutenzione di Windows 10. Per altre informazioni, vedere [Integration with Windows Update for Business in Windows 10](../../sum/deploy-use/integrate-windows-update-for-business-windows-10.md).  
@@ -58,7 +59,7 @@ ms.openlocfilehash: b3859bc01c37dab04275028585e892f927606025
 
 -   Assicurarsi che gli aggiornamenti software siano configurati e sincronizzati nella console. Per rendere disponibili gli eventuali aggiornamenti delle funzionalità di Windows 10 nella console di Configuration Manager, è necessario selezionare la classificazione **Aggiornamenti** e sincronizzare gli aggiornamenti software. Per altre informazioni, vedere [Prerequisiti per aggiornamenti software](../../sum/get-started/prepare-for-software-updates-management.md).  
 
-##  <a name="a-namebkmkservicingdashboarda-windows-10-servicing-dashboard"></a><a name="BKMK_ServicingDashboard"></a> Dashboard di manutenzione di Windows 10  
+##  <a name="BKMK_ServicingDashboard"></a> Dashboard di manutenzione di Windows 10  
  Il dashboard di manutenzione di Windows 10 fornisce informazioni sui computer Windows 10 nell'ambiente, piani di manutenzione attivi, informazioni di conformità e così via. I dati disponibili nel dashboard di manutenzione di Windows 10 variano a seconda che il punto di connessione del servizio sia installato o meno. Il dashboard include i riquadri seguenti:  
 
 -   **Riquadro Utilizzo di Windows 10**: fornisce un riepilogo delle build pubbliche di Windows 10. Le build di Windows Insider sono elencate come **altro** insieme ad altre eventuali build che non sono note al sito. Il punto di connessione del servizio scarica i metadati contenenti informazioni sulle build di Windows, dati che vengono messi a confronto con i dati di individuazione.  
@@ -91,7 +92,7 @@ ms.openlocfilehash: b3859bc01c37dab04275028585e892f927606025
 
  Quando un aggiornamento soddisfa i criteri, il piano di manutenzione aggiunge l'aggiornamento al pacchetto di distribuzione, distribuisce il pacchetto nei punti di distribuzione e distribuisce l'aggiornamento nella raccolta in base alle impostazioni configurate nel piano di manutenzione.  È possibile monitorare le distribuzioni nel riquadro piano di monitoraggio del piano del servizio, nel dashboard di manutenzione di Windows 10. Per altre informazioni, vedere [Monitorare gli aggiornamenti software](../../sum/deploy-use/monitor-software-updates.md).  
 
-##  <a name="a-namebkmkservicingplana-windows-10-servicing-plan"></a><a name="BKMK_ServicingPlan"></a> Piano di manutenzione di Windows 10  
+##  <a name="BKMK_ServicingPlan"></a> Piano di manutenzione di Windows 10  
  Quando si distribuisce Windows 10 CB, è possibile creare uno o più piani di manutenzione per definire gli anelli di distribuzione per l'ambiente usato e monitorarli successivamente nel dashboard di manutenzione di Windows 10.   
 I piani di manutenzione usano solo la classificazione degli aggiornamenti software **Aggiornamenti** e non gli aggiornamenti cumulativi per Windows 10. Per tali aggiornamenti è ancora necessario eseguire la distribuzione usando il flusso di lavoro degli aggiornamenti software.  Il piano di manutenzione e gli aggiornamenti software offrono la stessa esperienza all'utente finale, incluse le impostazioni configurate nel piano di manutenzione.  
 
@@ -136,7 +137,9 @@ I piani di manutenzione usano solo la classificazione degli aggiornamenti softwa
 
         -   **Release Ready (Current Branch)**: nel modello di manutenzione CB, gli aggiornamenti delle funzionalità sono disponibili non appena vengono rilasciati da Microsoft.
 
-        -   **Business Ready (Current Branch for Business)**: il ramo di manutenzione CBB viene solitamente usato per ampie distribuzioni. I client Windows 10 nel ramo di manutenzione CBB ricevono la stessa build di Windows 10 di quelli nel ramo CB, ma in un secondo momento.
+        -   **Business Ready (Current Branch for Business)**: il ramo di manutenzione CBB viene in genere usato per distribuzioni di grandi dimensioni. I client Windows 10 nel ramo di manutenzione CBB ricevono la stessa build di Windows 10 di quelli nel ramo CB, ma in un secondo momento.
+
+        Per altre informazioni sui rami di manutenzione e sulle opzioni più adatte alle proprie esigenze, vedere [Rami di manutenzione](https://technet.microsoft.com/itpro/windows/manage/waas-overview#servicing-branches).
 
     -   **Dopo quanti giorni dalla pubblicazione di un nuovo aggiornamento di Microsoft si vuole eseguire la distribuzione nell'ambiente**: Configuration Manager valuta se includere un aggiornamento nella distribuzione se la data corrente è successiva alla data di rilascio del numero di giorni configurato per questa impostazione.
 
@@ -203,7 +206,7 @@ I piani di manutenzione usano solo la classificazione degli aggiornamenti softwa
 
     4.  **Priorità di invio**: specificare la priorità di invio per il pacchetto di distribuzione. Configuration Manager usa la priorità di invio quando invia il pacchetto di distribuzione ai punti di distribuzione. I pacchetti di distribuzione vengono inviati in ordine di priorità: Alta, Media o Bassa. I pacchetti con priorità identiche vengono inviati nell'ordine in cui sono stati creati. Se non esiste nessun backlog, il pacchetto eseguirà l'elaborazione immediatamente indipendentemente dalla relativa priorità.  
 
-11. Nella pagina Punti di distribuzione specificare i punti di distribuzione o i gruppi di punti di distribuzione che ospiteranno i file di aggiornamento. Per altre informazioni sui punti di distribuzione, vedere [Distribution point configurations](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#a-namebkmkconfigsa-distribution-point-configurations).  
+11. Nella pagina Punti di distribuzione specificare i punti di distribuzione o i gruppi di punti di distribuzione che ospiteranno i file di aggiornamento. Per altre informazioni, vedere [Configurare un punto di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_configs).
 
     > [!NOTE]  
     >  Questa pagina è disponibile solo quando si crea un nuovo pacchetto di distribuzione di aggiornamento software.  
@@ -220,7 +223,7 @@ I piani di manutenzione usano solo la classificazione degli aggiornamenti softwa
 
  Dopo aver completato la procedura guidata, verrà eseguito il piano di manutenzione. Gli aggiornamenti che soddisfano i criteri specificati vengono aggiunti a un gruppo di aggiornamenti software, scaricati nella raccolta contenuto, nel server del sito, e distribuiti ai punti di distribuzione configurati. Il gruppo di aggiornamenti software viene quindi distribuito ai client inclusi nella raccolta di destinazione.  
 
-##  <a name="a-namebkmkmodifyservicingplana-modify-a-servicing-plan"></a><a name="BKMK_ModifyServicingPlan"></a> Modificare un piano di manutenzione  
+##  <a name="BKMK_ModifyServicingPlan"></a> Modificare un piano di manutenzione  
 Dopo aver creato un piano di manutenzione di base dal dashboard di manutenzione di Windows 10 oppure se è necessario modificare le impostazioni per un piano di manutenzione esistente, è possibile passare alle proprietà del piano di manutenzione.
 
 > [!NOTE]
@@ -256,17 +259,17 @@ Per modificare le proprietà di un piano di manutenzione, seguire la procedura r
 
     -   **Livello dettaglio**: specificare il livello di dettaglio per i messaggi di stato segnalati dai computer client.  
 
-   **Impostazioni download**: nella scheda Impostazioni download configurare le impostazioni seguenti:  
+    **Impostazioni download**: nella scheda Impostazioni download configurare le impostazioni seguenti:  
 
-    -   Specificare se il client scaricherà e installerà gli aggiornamenti software durante una connessione a una rete lenta o mentre usa un percorso di fallback per il contenuto.  
+    - Specificare se il client scaricherà e installerà gli aggiornamenti software durante una connessione a una rete lenta o mentre usa un percorso di fallback per il contenuto.  
 
-    -   Specificare se il client dovrà scaricare e installare gli aggiornamenti software da un punto di distribuzione di fallback nel caso in cui il contenuto per tali aggiornamenti non fosse disponibile su un punto di distribuzione preferito.  
+    - Specificare se il client dovrà scaricare e installare gli aggiornamenti software da un punto di distribuzione di fallback nel caso in cui il contenuto per tali aggiornamenti non fosse disponibile su un punto di distribuzione preferito.  
 
     -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per il download del contenuto. Per altre informazioni su BranchCache, vedere [Concetti di base per la gestione dei contenuti](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
 
     -   Specificare se far scaricare ai client gli aggiornamenti software da Microsoft Update nel caso in cui gli aggiornamenti non fossero disponibili nei punti di distribuzione.
-    > [!IMPORTANT]
-    > Non usare questa impostazione per gli aggiornamenti di manutenzione di Windows 10. Almeno fino alla versione 1610 di Configuration Manager non sarà possibile scaricare gli aggiornamenti di manutenzione di Windows 10 da Microsoft Update.
+        > [!IMPORTANT]
+        > Non usare questa impostazione per gli aggiornamenti di manutenzione di Windows 10. Almeno fino alla versione 1610 di Configuration Manager non sarà possibile scaricare gli aggiornamenti di manutenzione di Windows 10 da Microsoft Update.
 
     -   Specificare se consentire ai client di eseguire il download dopo una scadenza dell'installazione quando usano connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.   
 
@@ -274,9 +277,4 @@ Per modificare le proprietà di un piano di manutenzione, seguire la procedura r
 
     > [!NOTE]  
     >  È possibile riesaminare gli avvisi recenti sugli aggiornamenti software dal nodo **Aggiornamenti software** nell'area di lavoro **Raccolta software** .  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

@@ -2,7 +2,7 @@
 title: Cartella CD.Latest | Microsoft Docs
 description: Informazioni sul nuovo processo di aggiornamento che offre aggiornamenti per il prodotto all&quot;interno della console di Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: dcf56f6b82f89e81d636ea920f36133e245cbb1e
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: 9cbda4db3c8fcd0bc039e9bb0f490af519b7d04b
+ms.lasthandoff: 03/27/2017
 
 
 ---
@@ -40,11 +41,13 @@ Tuttavia il supporto di base, ad esempio la versione di base 1606 rilasciata a o
 
 -   Eseguire l'attività di backup predefinita di Configuration Manager. La cartella viene creata o aggiornata nel percorso della cartella di backup specificata.  
 
+-  A partire dalla versione 1606, la cartella CD.Latest viene creata quando si installa un nuovo sito usando il supporto di base (come nella versione 1606).
+
 I file di origine della cartella CD.Latest sono supportati per le operazioni seguenti:  
 
-1.  **Backup e ripristino:** la cartella CD.Latest contiene file di origine usati per reinstallare il sito come parte di un ripristino del sito. Per ripristinare un sito di Configuration Manager, il backup del sito deve includere la cartella CD.Latest. L'attività di backup del sito predefinita include automaticamente questa cartella come parte del backup del sito.  
+1.  **Backup e ripristino:** per ripristinare un sito, è necessario usare i file di origine da una cartella CD.Latest corrispondente al sito in questione. Quando si esegue un backup del sito usando l'attività di backup del sito predefinita, la cartella CD.Latest viene inclusa come parte del backup.
 
-    -   **Quando si reinstalla un sito come parte di un ripristino del sito** , è necessario installarlo dalla cartella CD.Latest inclusa nel backup. In questo modo, il sito viene installato usando le versioni dei file che corrispondono al backup del sito e al database del sito.  
+    -   **Quando si reinstalla un sito come parte di un ripristino del sito** , è necessario installarlo dalla cartella CD.Latest inclusa nel backup. In questo modo, il sito viene installato usando le versioni dei file che corrispondono al backup del sito e al database del sito.  Se non si ha accesso alla versione corretta della cartella CD.Latest, è possibile ottenere una cartella CD.Latest con le versioni dei file corrette installando un sito in un ambiente lab e quindi aggiornando tale sito in modo che corrisponda alla versione che si vuole ripristinare.
 
         > [!IMPORTANT]  
         >  Se la cartella CD.Latest corretta e il relativo contenuto non sono disponibili, non è possibile ripristinare un sito che deve essere reinstallato.  
@@ -60,9 +63,4 @@ I file di origine della cartella CD.Latest sono supportati per le operazioni seg
 >   
 >  -   Installazione di un nuovo sito per una nuova gerarchia  
 >  -   Aggiornamento dal sito di Microsoft System Center 2012 Configuration Manager a System Center Configuration Manager
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
