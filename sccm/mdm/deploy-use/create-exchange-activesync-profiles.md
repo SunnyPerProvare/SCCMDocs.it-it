@@ -17,9 +17,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: c90e5ebc2aca3f2133227fa59057aad8db3713f4
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: aa8924a013ebdbee888cab33001fddbe7ad2d67e
+ms.openlocfilehash: a0353c49360cd99bc92b4546e12a52c3d13d1d14
+ms.lasthandoff: 03/30/2017
 
 
 ---
@@ -105,10 +105,6 @@ Avviare la Creazione guidata profilo di posta elettronica di Exchange ActiveSync
 
     -   **Usa S/MIME** (solo per dispositivi iOS): consente di usare la crittografia S/MIME per inviare posta elettronica in uscita. È possibile scegliere una delle opzioni seguenti:
 
-        -   **Certificati di firma:** fare clic su **Seleziona** e quindi selezionare un certificato da usare per la firma. Questa opzione è applicabile solo ai dispositivi iOS.  
-
-            > [!NOTE]  
-            >  Per poter selezionare il certificato di firma, è prima necessario configurarlo come profilo certificato SCEP (Simple Certificate Enrollment Protocol) o PFX. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
         -   **Certificati di crittografia:** fare clic su **Seleziona** e quindi selezionare un certificato da usare per la crittografia. Questa opzione è applicabile solo ai dispositivi iOS. È possibile selezionare solo un certificato PFX da usare come certificato di crittografia.
 
