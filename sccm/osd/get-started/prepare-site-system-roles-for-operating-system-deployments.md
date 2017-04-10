@@ -78,7 +78,7 @@ Per distribuire i sistemi operativi in System Center Configuration Manager, è n
 
 5.  Selezionare **Consenti a questo punto di distribuzione di rispondere alle richieste PXE in ingresso** per abilitare WDS in modo che risponda alle richieste di servizio PXE in ingresso. È possibile usare questa impostazione per attivare e disattivare il servizio senza rimuovere la funzionalità PXE dal punto di distribuzione.  
 
-6.  Per distribuire sistemi operativi a computer non gestiti da Configuration Manager, selezionare **Abilita supporto per computer sconosciuti **.  
+6.  Per distribuire sistemi operativi a computer non gestiti da Configuration Manager, selezionare **Abilita supporto per computer sconosciuti**.  
 
 7.  Selezionare **Richiedi password quando i computer usano PXE**e specificare una password complessa per offrire maggiore sicurezza per le distribuzioni PXE.  
 

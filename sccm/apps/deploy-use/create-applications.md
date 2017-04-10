@@ -142,7 +142,7 @@ La nuova applicazione viene visualizzata nel nodo **Applicazioni** della console
 3.  Selezionare un'applicazione e quindi nel gruppo **Applicazione** della scheda **Home** fare clic su **Crea tipo di distribuzione**.  
 
 > [!TIP]  
->  È anche possibile avviare la Creazione guidata tipo di distribuzione dalla Creazione guidata applicazione e dalla scheda **Tipi di distribuzione** della finestra di dialogo *Proprietà\>*** nome applicazione**.  
+>  È anche possibile avviare la Creazione guidata tipo di distribuzione dalla Creazione guidata applicazione e dalla scheda **Tipi di distribuzione** della finestra di dialogo *Proprietà\>* **nome applicazione**.  
 
 ## <a name="specify-whether-you-want-to-automatically-detect-deployment-type-information-or-manually-set-up-the-information"></a>Specificare se si desidera rilevare automaticamente le informazioni sul tipo di distribuzione o impostare manualmente le informazioni  
  Usare una delle seguenti procedure per rilevare automaticamente o per impostare manualmente le informazioni sul tipo di distribuzione.  
@@ -222,7 +222,7 @@ La nuova applicazione viene visualizzata nel nodo **Applicazioni** della console
     > [!NOTE]  
     >  È anche possibile selezionare **Utilizza uno script personalizzato per rilevare la presenza del tipo di distribuzione**. Per altre informazioni, vedere [Usare uno script personalizzato per determinare la presenza di un tipo di distribuzione](/sccm/apps/deploy-use/create-applications#Use-a-custom-script-to-check-for-the-presence-of-a-deployment-type) in questo argomento.  
 
-2.  Nell'elenco a discesa **Tipo di impostazione** della finestra di dialogo ** Regola di rilevamento**, selezionare il metodo che si vuole usare per rilevare la presenza del tipo di distribuzione. È possibile scegliere tra i seguenti metodi disponibili:  
+2.  Nell'elenco a discesa **Tipo di impostazione** della finestra di dialogo **Regola di rilevamento**, selezionare il metodo che si vuole usare per rilevare la presenza del tipo di distribuzione. È possibile scegliere tra i seguenti metodi disponibili:  
 
     -   **File System**: usare questo metodo per rilevare se è presente un file o una cartella in un dispositivo client, a indicare che l'applicazione è installata.  
 
@@ -337,7 +337,7 @@ La tabella seguente contiene script di esempio di Visual Basic (VB) che è possi
 1.  Nella pagina **Requisiti** della Creazione guidata tipo di distribuzione fare clic su **Aggiungi** per aprire la finestra di dialogo **Creazione requisito** e aggiungere un nuovo requisito.  
 
     > [!NOTE]  
-    >  È anche possibile aggiungere nuovi requisiti nella scheda **Requisiti** della finestra di dialogo *Proprietà di\>*** <nome del tipo di distribuzione**.  
+    >  È anche possibile aggiungere nuovi requisiti nella scheda **Requisiti** della finestra di dialogo *Proprietà di\>* **<nome del tipo di distribuzione**.  
 
 2.  Dall'elenco a discesa **Categoria** selezionare se questo requisito è per un dispositivo o un utente oppure selezionare **Personalizzata** per usare una condizione globale creata in precedenza. Quando si seleziona **Personalizzata**, è inoltre possibile fare clic su **Crea** per creare una nuova condizione globale. Per altre informazioni sulle condizioni globali, vedere [Come creare condizioni globali](../../apps/deploy-use/create-global-conditions.md).  
 
@@ -366,7 +366,7 @@ La tabella seguente contiene script di esempio di Visual Basic (VB) che è possi
 1.  Nella pagina **Dipendenze** della Creazione guidata tipo di distribuzione scegliere **Aggiungi** se si desidera specificare i tipi di distribuzione da installare prima di poter installare questo tipo di distribuzione.  
 
     > [!IMPORTANT]  
-    >  È anche possibile aggiungere nuove dipendenze nella scheda **Dipendenze** della finestra di dialogo *Proprietà di\>*** <nome tipo di distribuzione**.  
+    >  È anche possibile aggiungere nuove dipendenze nella scheda **Dipendenze** della finestra di dialogo *Proprietà di\>* **<nome tipo di distribuzione**.  
 
 2.  Nella finestra di dialogo **Aggiungi dipendenza** scegliere **Aggiungi**.  
 
@@ -405,15 +405,15 @@ La tabella seguente contiene script di esempio di Visual Basic (VB) che è possi
 
 2.  Nell'elenco **Applicazioni** selezionare un'applicazione che contiene un tipo di distribuzione App-V. Quindi nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
 
-3.  Nella finestra di dialogo *Proprietà\>*** <nome applicazione** nella scheda **Tipi di distribuzione** selezionare un tipo di distribuzione App-V e quindi scegliere **Modifica**.  
+3.  Nella finestra di dialogo *Proprietà\>* **<nome applicazione** nella scheda **Tipi di distribuzione** selezionare un tipo di distribuzione App-V e quindi scegliere **Modifica**.  
 
-4.  Se necessario, impostare le opzioni seguenti nella scheda **Contenuto** della finestra di dialogo *<Nome tipo distribuzione\>***Proprietà**:  
+4.  Se necessario, impostare le opzioni seguenti nella scheda **Contenuto** della finestra di dialogo *<Nome tipo distribuzione\>* **Proprietà**:  
 
     -   **Rendi permanente il contenuto nella cache client**: selezionare questa opzione per assicurarsi che il contenuto per questo tipo di distribuzione non venga eliminato dalla cache del client di Configuration Manager.  
 
     -   **Carica contenuto nella cache App-V prima dell'avvio**: selezionare questa opzione per fare in modo che tutto il contenuto per l'applicazione virtuale venga caricato nella cache App-V prima dell'avvio dell'applicazione. La selezione di questa opzione garantisce inoltre che il contenuto dell'applicazione non venga bloccato nella cache e possa essere eliminato in base alle necessità.  
 
-5.  Scegliere **OK** per chiudere la finestra di dialogo *Proprietà\>*** <nome tipo distribuzione**.  
+5.  Scegliere **OK** per chiudere la finestra di dialogo *Proprietà\>* **<nome tipo distribuzione**.  
 
 6.  Scegliere **OK** per chiudere la finestra di dialogo **Proprietà** *<nome applicazione\>*.  
 
@@ -423,11 +423,11 @@ La tabella seguente contiene script di esempio di Visual Basic (VB) che è possi
 
 3.  Nell'elenco **Applicazioni** selezionare un'applicazione che contiene un tipo di distribuzione App-V. Quindi nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
 
-4.  Nella finestra di dialogo *Proprietà\>*** <nome applicazione** nella scheda **Tipi di distribuzione** selezionare un tipo di distribuzione App-V e quindi scegliere **Modifica**.  
+4.  Nella finestra di dialogo *Proprietà\>* **<nome applicazione** nella scheda **Tipi di distribuzione** selezionare un tipo di distribuzione App-V e quindi scegliere **Modifica**.  
 
 5.  Nella finestra di dialogo *Proprietà\>***<Nome tipo di distribuzione**, nella scheda **Pubblicazione**, selezionare gli elementi nell'applicazione virtuale da pubblicare.  
 
-6.  Scegliere **OK** per chiudere la finestra di dialogo *Proprietà\>*** <nome tipo distribuzione**.  
+6.  Scegliere **OK** per chiudere la finestra di dialogo *Proprietà\>* **<nome tipo distribuzione**.  
 
 7.  Scegliere **OK** per chiudere la finestra di dialogo **Proprietà** *<nome applicazione\>*.  
 

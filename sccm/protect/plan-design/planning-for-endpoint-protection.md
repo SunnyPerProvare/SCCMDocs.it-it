@@ -59,7 +59,7 @@ I computer Windows 10 non richiedono client aggiuntivi per la gestione di Endpoi
 
 ## <a name="managing-malware-with-endpoint-protection"></a>Gestione del malware con Endpoint Protection  
 
-Endpoint Protection in Configuration Manager consente di creare criteri antimalware che contengono impostazioni per le configurazioni del client di Endpoint Protection. È quindi possibile distribuire tali criteri antimalware nei computer client e monitorarli nel nodo **Stato di Endpoint Protection ** dell'area di lavoro **Monitoraggio** oppure usando i report di Configuration Manager.  
+Endpoint Protection in Configuration Manager consente di creare criteri antimalware che contengono impostazioni per le configurazioni del client di Endpoint Protection. È quindi possibile distribuire tali criteri antimalware nei computer client e monitorarli nel nodo **Stato di Endpoint Protection** dell'area di lavoro **Monitoraggio** oppure usando i report di Configuration Manager.  
 
  Altre informazioni:  
 
