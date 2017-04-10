@@ -86,9 +86,9 @@ Durante la pianificazione della gestione dei contenuti tenere presente quanto se
 
 -   Quando si usano i punti di distribuzione basati sul cloud, l'accesso al contenuto viene automaticamente limitato all'azienda e non è possibile limitarlo ulteriormente a gruppi o utenti selezionati.  
 
--   Quando si usano i punti di distribuzione basati sul cloud, i client vengono autenticati dal punto di gestione e quindi usano un token di Configuration Manager per accedere ai punti di distribuzione basati sul cloud. Il token è valido per&8; ore. Di conseguenza, se si blocca un client perché non è più attendibile, il client può continuare a scaricare il contenuto da un punto di distribuzione basato sul cloud finché il periodo di validità del token non scade. Al termine di questo periodo, il punto di gestione non creerà un altro token per il client perché il client è bloccato.  
+-   Quando si usano i punti di distribuzione basati sul cloud, i client vengono autenticati dal punto di gestione e quindi usano un token di Configuration Manager per accedere ai punti di distribuzione basati sul cloud. Il token è valido per 8 ore. Di conseguenza, se si blocca un client perché non è più attendibile, il client può continuare a scaricare il contenuto da un punto di distribuzione basato sul cloud finché il periodo di validità del token non scade. Al termine di questo periodo, il punto di gestione non creerà un altro token per il client perché il client è bloccato.  
 
-     Per evitare che un client bloccato scarichi i contenuti in questo periodo di&8; ore, è possibile arrestare il servizio cloud dal nodo **Cloud**, **Configurazione della gerarchia**, nell'area di lavoro **Amministrazione** della console di Configuration Manager.  
+     Per evitare che un client bloccato scarichi i contenuti in questo periodo di 8 ore, è possibile arrestare il servizio cloud dal nodo **Cloud**, **Configurazione della gerarchia**, nell'area di lavoro **Amministrazione** della console di Configuration Manager.  
 
 ##  <a name="BKMK_Privacy_ContentManagement"></a> Informazioni sulla privacy per la gestione dei contenuti  
  Configuration Manager non include dati utente nei file di contenuto, tuttavia un utente amministratore può scegliere di inserirli.  
