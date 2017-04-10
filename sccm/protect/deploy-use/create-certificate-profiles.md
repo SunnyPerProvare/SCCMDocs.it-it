@@ -2,7 +2,7 @@
 title: Come creare i profili certificato SCEP | Microsoft Docs
 description: Informazioni su come usare i profili certificato per eseguire il provisioning dei certificati necessari ai dispositivi gestiti in System Center Configuration Manager.
 ms.custom: na
-ms.date: 11/22/2016
+ms.date: 03/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,11 +17,13 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
-ms.openlocfilehash: cb9351fc63e49af611c494ec82a6c8651afae30f
+ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
+ms.openlocfilehash: f919ac97b24604babca4f70f184220604227eb0e
+ms.lasthandoff: 03/27/2017
 
 
 ---
+
 # <a name="create-certificate-profiles"></a>Creare i profili certificato
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -56,7 +58,9 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
 
 -   **Impostazioni di Simple Certificate Enrollment Protocol (SCEP)**: selezionare questo tipo di profilo certificato se si desidera richiedere un certificato per un utente o un dispositivo utilizzando il Simple Certificate Enrollment Protocol e il servizio del ruolo del servizio Registrazione dispositivi di rete.
 
--   **Scambio informazioni personali -- Impostazioni PKCS #12 (PFX) -- Importa**: selezionare questa opzione per importare un certificato PFX. Per altre informazioni sulla creazione del certificato PFX, vedere [Creare profili certificato PFX](../../protect/deploy-use/create-pfx-certificate-profiles.md).
+-   **Scambio informazioni personali - Impostazioni PKCS #12 (PFX) - Importa**: selezionare questa opzione per importare un certificato PFX. Per altre informazioni sulla creazione del certificato PFX, vedere [Creare profili certificato PFX](../../protect/deploy-use/create-pfx-certificate-profiles.md).
+
+- **Personal Information Exchange - Impostazioni PKCS #12 (PFX) - Crea**: selezionare questa opzione per creare un nuovo profilo certificato PFX. Per altre informazioni sulla creazione del certificato PFX, vedere [Creare profili certificato PFX](../../protect/deploy-use/create-pfx-certificate-profiles.md).
 
 
 
@@ -141,7 +145,7 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
     
    > [!NOTE]  
    > 
-   > La selezione di **Codice IMEI ** o di **Numero di serie** consente di distinguere i diversi dispositivi appartenenti allo stesso utente. Tali dispositivi, ad esempio, potrebbero condividere il nome comune, ma non il codice IMEI o il numero di serie. Se il dispositivo non ha un codice IMEI o un numero di serie, il certificato viene emesso con il nome comune.
+   > La selezione di **Codice IMEI** o di **Numero di serie** consente di distinguere i diversi dispositivi appartenenti allo stesso utente. Tali dispositivi, ad esempio, potrebbero condividere il nome comune, ma non il codice IMEI o il numero di serie. Se il dispositivo non ha un codice IMEI o un numero di serie, il certificato viene emesso con il nome comune.
 
  -   **Nome alternativo oggetto**: specificare in che modo System Center Configuration Manager crea automaticamente i valori per il nome alternativo oggetto (SAN) nella richiesta certificato. Ad esempio, se si seleziona un tipo di certificato utente, è possibile includere il nome dell'entità utente (UPN) nel nome alternativo oggetto.  Se il certificato client verrà usato per eseguire l'autenticazione in un server dei criteri di rete, è necessario impostare il nome alternativo oggetto sul nome dell'entità utente.  
 
@@ -160,7 +164,7 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
 
    Se è stato selezionato un modello di certificato usando **Sfoglia**, potrebbe non essere possibile modificare queste impostazioni senza selezionare un modello di certificato diverso.  
 
-   Il modello di certificato selezionato deve essere configurato con una o entrambe le due opzioni di utilizzo della chiave sopra riportate. In caso contrario, verrà visualizzato il messaggio **Utilizzo chiave in CSR e richiesta di verifica non corrispondono** nel file di registro del punto di registrazione certificati, **Reg.cert.**.  
+   Il modello di certificato selezionato deve essere configurato con una o entrambe le due opzioni di utilizzo della chiave sopra riportate. In caso contrario, verrà visualizzato il messaggio **Utilizzo chiave in CSR e richiesta di verifica non corrispondono** nel file di registro del punto di registrazione certificati, **Reg.cert**.  
 
 
    -   **Dimensione chiave (bits)**: selezionare la dimensione della chiave in bit.  
@@ -183,10 +187,7 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
 ###  <a name="specify-supported-platforms-for-the-certificate-profile"></a>Specificare le piattaforme supportate per il profilo certificato  
 
 1. Nella pagina **Piattaforme supportate** della Creazione guidata profilo certificato, selezionare i sistemi operativi in cui si desidera installare il profilo certificato. In alternativa, fare clic su **Seleziona tutto** per installare il profilo certificato su tutti i sistemi operativi disponibili.
-2. Rivedere le impostazioni nella pagina **Riepilogo** della procedura guidata e scegliere **Fine**. Il nuovo profilo certificato viene visualizzato nel nodo **Profili certificato** nell'area di lavoro **Asset e conformità** e può essere distribuito agli utenti o ai dispositivi come descritto in [How to deploy profiles in System Center Configuration Manager](deploy-wifi-vpn-email-cert-profiles.md)(Come distribuire profili in System Center Configuration Manager).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
-
+2. Rivedere le impostazioni nella pagina **Riepilogo** della procedura guidata e scegliere **Fine**. 
+ 
+ 
+Il nuovo profilo certificato viene visualizzato nel nodo **Profili certificato** nell'area di lavoro **Asset e conformità** e può essere distribuito agli utenti o ai dispositivi come descritto in [How to deploy profiles in System Center Configuration Manager](deploy-wifi-vpn-email-cert-profiles.md)(Come distribuire profili in System Center Configuration Manager).  
