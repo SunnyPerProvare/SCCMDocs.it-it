@@ -17,9 +17,9 @@ author: Nbigman
 ms.author: nbigman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: f919ac97b24604babca4f70f184220604227eb0e
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: aa8924a013ebdbee888cab33001fddbe7ad2d67e
+ms.openlocfilehash: 80a716f5a42a81e5550eb1b5c7f14534e14a4fb7
+ms.lasthandoff: 03/30/2017
 
 
 ---
@@ -59,8 +59,6 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
 -   **Impostazioni di Simple Certificate Enrollment Protocol (SCEP)**: selezionare questo tipo di profilo certificato se si desidera richiedere un certificato per un utente o un dispositivo utilizzando il Simple Certificate Enrollment Protocol e il servizio del ruolo del servizio Registrazione dispositivi di rete.
 
 -   **Scambio informazioni personali - Impostazioni PKCS #12 (PFX) - Importa**: selezionare questa opzione per importare un certificato PFX. Per altre informazioni sulla creazione del certificato PFX, vedere [Creare profili certificato PFX](../../protect/deploy-use/create-pfx-certificate-profiles.md).
-
-- **Personal Information Exchange - Impostazioni PKCS #12 (PFX) - Crea**: selezionare questa opzione per creare un nuovo profilo certificato PFX. Per altre informazioni sulla creazione del certificato PFX, vedere [Creare profili certificato PFX](../../protect/deploy-use/create-pfx-certificate-profiles.md).
 
 
 
