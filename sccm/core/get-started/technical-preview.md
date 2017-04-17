@@ -2,7 +2,7 @@
 title: Technical Preview per System Center Configuration Manager | Microsoft Docs
 description: "Informazioni sulla versione Technical Preview che consente di testare nuove funzionalità in System Center Configuration Manager."
 ms.custom: na
-ms.date: 3/28/2017
+ms.date: 4/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: f326eb961be400187c2dcadd564a7e344dc4b175
-ms.openlocfilehash: 66b57ec07ebaffd63791741c0ac038d14ab5f367
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: 9b31fab8fa93195c60e9026e2df99311aa6e328f
+ms.openlocfilehash: 61d4b7017769609caf8fcb8fcdd510f5a0b5b712
+ms.lasthandoff: 04/03/2017
 
 
 ---
@@ -85,15 +85,16 @@ ms.lasthandoff: 03/29/2017
 
  Per usare la Technical Preview è innanzitutto necessario installare una **versione di base** della build Technical Preview. Dopo l'installazione di una versione di base, sarà quindi possibile usare gli **aggiornamenti nella console** per aggiornare l'installazione con la versione di anteprima più recente.     In genere, le nuove versioni Technical Preview sono disponibili ogni mese.
 
-Ogni versione di anteprima è supportata finché non sono disponibili fino a tre versioni successive. Pertanto, quando viene rilasciata la versione 1702 la versione 1610 non è più supportata, mentre rimangono supportate le versioni 1611, 1612 e 1701. Se tuttavia l'ultima linea di base non rientra nel supporto (come nel caso della versione 1610), è ancora disponibile il supporto per l'installazione di un nuovo sito Technical Preview (fino a quando non è disponibile una nuova versione di base), a condizione che tale istallazione venga aggiornata a una versione supportata.
+Ogni versione di anteprima è supportata finché non sono disponibili fino a tre versioni successive. Pertanto, quando viene rilasciata la versione 1702 la versione 1610 non è più supportata, mentre rimangono supportate le versioni 1611, 1612 e 1701. Quando una linea di base non rientra più nel supporto (come nel caso della versione 1610), è ancora disponibile il supporto per l'installazione di un nuovo sito Technical Preview (fino a quando non è disponibile una nuova versione di base), a condizione che tale istallazione venga aggiornata a una versione supportata. Durante l'aggiornamento, se non viene visualizzata la versione più recente disponibile nella console, eseguire l'aggiornamento alla versione più recente offerta e quindi ripetere il processo fino a quando non è possibile installare la versione più recente della Technical Preview.
 
 > [!TIP]  
 >  Quando si installa un aggiornamento per la Technical Preview, si aggiorna l'installazione di anteprima alla nuova versione Technical Preview.    Un'installazione Technical Preview non prevede mai la possibilità di eseguire l'aggiornamento a un'installazione del ramo corrente, né di ricevere gli aggiornamenti dalla versione ramo corrente.  
 
- **Versioni di base della Technical Preview attive:**  
- È possibile installare una versione di base per un massimo di 1 anno dopo il rilascio. Tuttavia, quando si installa un nuovo sito Technical Preview, è consigliabile usare l'ultima versione di base disponibile.
+**Versioni di base della Technical Preview attive:**  
+È possibile installare una versione di base per un massimo di 1 anno dopo il rilascio. Tuttavia, quando si installa un nuovo sito Technical Preview, è consigliabile usare l'ultima versione di base disponibile.
+-  **Technical Preview 1703**: Configuration Manager Technical Preview 1703 è disponibile sia come aggiornamento nella console per Configuration Manager Technical Preview, sia come nuova versione di base sul sito Web TechNet Evaluation Center.
 
--   **Technical Preview 1610**: Configuration Manager Technical Preview 1610 è disponibile sia come aggiornamento nella console per Configuration Manager Technical Preview, sia come versione di base nel sito Web [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
+-  **Technical Preview 1610**: Configuration Manager Technical Preview 1610 è disponibile sia come aggiornamento nella console per Configuration Manager Technical Preview, sia come versione di base. Se sono disponibili i supporti per l'installazione della versione 1610, è consigliabile scaricare la versione 1703 e installare invece questa versione.
 
 
 
@@ -113,6 +114,13 @@ Ogni versione di anteprima è supportata finché non sono disponibili fino a tre
 
  |Funzionalità|Versione Technical Preview|Versione Current Branch|  
  |----------------|---------------------|--------------------|
+ |Distribuire app iOS acquistate con Volume Purchase Program a raccolte di dispositivi|[Tech Preview 1703](capabilities-in-technical-preview-1703.md#deploy-volume-purchased-ios-apps-to-device-collections)|[Versione 1702](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps)|
+ |Collegamenti diretti alle applicazioni in Software Center|[Tech Preview 1703](capabilities-in-technical-preview-1703.md#direct-links-to-applications-in-software-center)|![Non aggiunta](media/Red_X.gif)
+ |Certificati PFX per i computer client Windows di Configuration Manager|[Tech Preview 1703](capabilities-in-technical-preview-1703.md#pfx-certificates-for-configuration-manager-windows-client-computers)|![Non aggiunta](media/Red_X.gif)|
+ |Configurazione guidata servizi di Azure|[Tech Preview 1703](capabilities-in-technical-preview-1703.md#configure-azure-services-wizard)|![Non aggiunta](media/Red_X.gif)|
+ |Conversione da BIOS a UEFI in una sequenza di attività di aggiornamento del sistema operativo| [Tech Preview 1703](capabilities-in-technical-preview-1703.md#convert-from-bios-to-uefi-during-an-in-place-upgrade) |[Versione 1702](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade)|
+ |Gruppi di sequenze di attività comprimibili| [Tech Preview 1703](capabilities-in-technical-preview-1703.md#collapsible-task-sequence-groups) |![Non aggiunta](media/Red_X.gif)|
+ |Impostazioni client per configurare Windows Analytics per Upgrade Readiness | [Tech Preview 1703](capabilities-in-technical-preview-1703.md#client-settings-to-configure-windows-analytics-for-upgrade-readiness) |![Non aggiunta](media/Red_X.gif)|
  |Nuove impostazioni di conformità per i dispositivi iOS|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#new-compliance-settings-for-ios-devices)|[Versione 1702](/sccm/mdm/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client)|
  |Creare certificati PFX con il supporto di S/MIME|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#create-pfx-certificates-with-s-mime-support)|[Versione 1702](/sccm/mdm/deploy-use/create-pfx-certificate-profiles)|
  |Controllare l'esecuzione di file eseguibili prima di installare un'applicazione|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#check-for-running-executable-files-before-installing-an-application)|[Versione 1702](/sccm/apps/deploy-use/deploy-applications)|

@@ -2,7 +2,7 @@
 title: Creare profili certificato PFX | Microsoft Docs
 description: Informazioni su come usare i file PFX in System Center Configuration Manager per generare i certificati specifici dell&quot;utente che supportano lo scambio di dati crittografati.
 ms.custom: na
-ms.date: 03/30/2017
+ms.date: 04/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,9 +17,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3b1451edaed69a972551bd060293839aa11ec8b2
-ms.openlocfilehash: 2495cef2442706b343bac6d510946c1226b64cfc
-ms.lasthandoff: 03/28/2017
+ms.sourcegitcommit: 26feb0b166beb7e48cb800a5077d00dbc3eec51a
+ms.openlocfilehash: 27435316c6e47531ff989bc8956ca0c874131a0e
+ms.lasthandoff: 04/04/2017
 
 
 ---
@@ -38,7 +38,7 @@ L'argomento [Introduzione ai profili certificato](../../protect/deploy-use/intro
 - Per altri prerequisiti, vedere [Prerequisiti per i profili certificato](../../protect/plan-design/prerequisites-for-certificate-profiles.md).
 
 ## <a name="pfx-certificate-profiles"></a>Profili certificato PFX
-System Center Configuration Manager consente di eseguire il provisioning di file di scambio di informazioni personali (PFX) nei dispositivi dell'utente. I file con estensione pfx possono essere usati per generare certificati specifici dell'utente per supportare lo scambio di dati crittografati. I certificati PFX possono essere creati in Configuration Manager o importati.
+System Center Configuration Manager consente di importare e quindi di eseguire il provisioning di file di scambio di informazioni personali (PFX) nei dispositivi dell'utente. I file con estensione pfx possono essere usati per generare certificati specifici dell'utente per supportare lo scambio di dati crittografati.
 
 > [!TIP]  
 >  La procedura dettagliata che descrive questo processo è disponibile nel post relativo a [come creare e distribuire profili certificato PFX in Configuration Manager](http://blogs.technet.com/b/karanrustagi/archive/2015/09/01/how-to-create-and-deploy-pfx-certificate-profiles-in-configuration-manager.aspx).  
@@ -59,10 +59,10 @@ System Center Configuration Manager consente di eseguire il provisioning di file
 
     -   **Descrizione**: digitare una descrizione che offra una panoramica del profilo certificato e altre informazioni rilevanti per facilitarne l'identificazione nella console di System Center Configuration Manager. È possibile usare un massimo di 256 caratteri.  
 
-    -   **Specificare il tipo di profilo del certificato che si desidera creare**: per i certificati PFX, scegliere uno dei tipi seguenti:  
+    -   **Specificare il tipo di profilo del certificato che si desidera creare**: per i certificati PFX, scegliere:  
 
         -   **Scambio informazioni personali - Impostazioni PKCS #12 (PFX) - Importa**: selezionare questa opzione per importare un certificato PFX.  
-        -   **Personal Information Exchange - Impostazioni PKCS #12 (PFX) - Crea**: selezionare questa opzione per creare un nuovo certificato PFX.
+       
 
 ### <a name="import-a-pfx-certificate"></a>Importare un certificato PFX
 
@@ -107,28 +107,7 @@ Le variabili di script seguenti devono essere modificate per lo script:
    -   $ProfileName = nome del profilo PFX  
    -   ComputerName = nome del computer host   
 
-### <a name="create-a-new-pfx-certificate"></a>Creare un nuovo certificato PFX
 
-Quando si crea e distribuisce un certificato PFX, lo stesso certificato verrà installato in tutti i dispositivi registrati dall'utente.
-
-1. Nella pagina **Piattaforme supportate** della procedura guidata scegliere le piattaforme per dispositivi in cui verrà installato il certificato e quindi fare clic su **Avanti**.
-2. Nella pagina **Autorità di certificazione** della procedura guidata configurare le opzioni seguenti:
-    - **Sito primario**: selezionare il sito primario di Configuration Manager da cui si vuole selezionare un'autorità di certificazione.
-    - **Autorità di certificazione**: dopo aver selezionato un sito primario, selezionare l'autorità di certificazione desiderata dall'elenco e quindi fare clic su **Avanti**.
-3. Nella pagina **Certificato PFX** della procedura guidata configurare le opzioni seguenti:
-    - **Soglia di rinnovo (%)**: specificare la percentuale di durata residua del certificato prima che il dispositivo richieda il rinnovo del certificato.
-    - **Nome modello certificato**: fare clic su **Sfoglia** per selezionare il nome di un modello di certificato che è stato aggiunto a una CA emittente. Per selezionare modelli di certificato, l'account utente usato per eseguire la console di System Center Configuration Manager deve disporre dell'autorizzazione **Lettura** per il modello di certificato. In alternativa, digitare il nome del modello di certificato. 
-    - **Formato nome soggetto**: dall'elenco selezionare in che modo Configuration Manager crea automaticamente il nome del soggetto nella richiesta di certificato. Se il certificato è per un utente, è anche possibile includere l'indirizzo di posta elettronica dell'utente nel nome del soggetto. Scegliere tra **Nome comune** e **Nome distinto completo**.
-    - **Nome alternativo soggetto**: specificare in che modo Configuration Manager crea automaticamente i valori per il nome alternativo del soggetto nella richiesta di certificato. Ad esempio, se si seleziona un tipo di certificato utente, è possibile includere il nome dell'entità utente (UPN) nel nome alternativo oggetto. È possibile scegliere tra:
-        - **Indirizzo di posta elettronica** 
-        - **Nome dell'entità utente (UPN)** 
-    - **Periodo di validità del certificato** - 
-    - **Provider di archiviazione chiavi Windows** (visualizzato solo se si seleziona Windows come piattaforma supportata) 
-        -     **Installa in TPM (Trusted Platform Module) se presente**  
-        -   **Installa in TPM (Trusted Platform Module) in caso di errore** 
-        -   **Installa in Windows Hello for Business oppure genera errore** 
-        -   **Installa nel provider di archiviazione chiavi software** 
-4. Fare clic su **Avanti**.
 
 ### <a name="finish-up"></a>Terminare
 

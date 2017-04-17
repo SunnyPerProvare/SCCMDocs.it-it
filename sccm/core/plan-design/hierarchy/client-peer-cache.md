@@ -2,7 +2,7 @@
 title: Peer cache del client | System Center Configuration Manager
 description: Usare la peer cache per i percorsi di origine del contenuto del client quando si distribuiscono contenuti con System Center Configuration Manager.
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 4/4/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 5298f1c836c1a872862b0e972180ac0c99c59751
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: 26feb0b166beb7e48cb800a5077d00dbc3eec51a
+ms.openlocfilehash: dcd05d7d120f8997562da7d92b38c8b52a512357
+ms.lasthandoff: 04/04/2017
 
 ---
 
@@ -70,7 +70,7 @@ Per capire come viene usata la peer cache, è possibile visualizzare il dashboar
 A partire dalla versione 1702, è possibile usare tre report per visualizzare l'uso della peer cache. Nella console passare a **Monitoraggio** > **Creazione di report** > **Report**. Tutti i report hanno un tipo di **contenuto di distribuzione software**:
 1.  **Rifiuto di contenuto di origine di peer cache**:  
 Usare questo report per visualizzare informazioni sulla frequenza con cui le origini di peer cache in un gruppo di limiti hanno rifiutato una richiesta di contenuto.
- - **Problema noto**: quando si esegue il drill-down in risultati come *MaxCPULoad* o *MaxDiskIO*, è possibile che venga visualizzato un errore per segnalare che il report o i dettagli non possono essere trovati. Per risolvere questo problema, usare i due report seguenti che mostrano direttamente i risultati. 
+ - **Problema noto**: quando si esegue il drill-down in risultati come *MaxCPULoad* o *MaxDiskIO*, è possibile che venga visualizzato un errore per segnalare che il report o i dettagli non possono essere trovati. Per risolvere questo problema, usare i due report seguenti che mostrano direttamente i risultati.
 
 2. **Peer cache source content rejection by condition** (Rifiuto di contenuto di origine di peer cache - per condizione):  
 Usare questo report per visualizzare i dettagli relativi al rifiuto per un tipo di rifiuto o un gruppo di limiti specificato. È possibile specificare quanto segue:
@@ -87,9 +87,11 @@ Usare questo report per visualizzare i dettagli relativi al rifiuto per un tipo 
 
 
 ## <a name="requirements-and-considerations-for-peer-cache"></a>Requisiti e considerazioni per la peer cache
-- È possibile usare la peer cache su qualsiasi sistema operativo Windows supportato come client di Configuration Manager. I sistemi operativi non Windows non sono supportati per la peer cache.
+-   È possibile usare la peer cache su qualsiasi sistema operativo Windows supportato come client di Configuration Manager. I sistemi operativi non Windows non sono supportati per la peer cache.
 
-- I client possono trasferire contenuti solo dai client della peer cache che si trovano nel relativo gruppo di limiti corrente.
+-   I client possono trasferire contenuti solo dai client della peer cache che si trovano nel relativo gruppo di limiti corrente.
+
+-   Ogni sito in cui i client usano la peer cache deve essere configurato con un [account di accesso alla rete](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). L'account viene usato dal computer di origine della peer cache per autenticare le richieste di download dai peer e richiede solo le autorizzazioni utente di dominio per questo scopo.
 
 -     Poiché il limite corrente di un'origine del contenuto della peer cache è determinato dall'ultimo invio dell'inventario hardware di tale client, un client che si sposti in un percorso di rete in un gruppo di limiti diverso potrebbe comunque essere considerato un membro del suo gruppo di limiti precedente ai fini della peer cache. Di conseguenza, a un client potrebbe essere offerta un'origine del contenuto della peer cache che non si trova nel suo immediato percorso di rete. È consigliabile escludere dalla partecipazione all'origine della peer cache i client soggetti a questa configurazione.
 
