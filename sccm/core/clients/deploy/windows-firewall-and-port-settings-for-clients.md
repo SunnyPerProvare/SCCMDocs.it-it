@@ -13,8 +13,8 @@ ms.topic: article
 ms.assetid: dce4b640-c92f-401a-9873-ce9aa9262014
 caps.latest.revision: 8
 caps.handback.revision: 0
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
@@ -31,7 +31,7 @@ I computer client in System Center Configuration Manager che eseguono Windows Fi
 
  Utilizzare le seguenti sezioni per identificare queste funzionalità di gestione e per ulteriori informazioni su come configurare Windows Firewall per le eccezioni.  
 
-##  <a name="a-namebkmkmodifyingwindowsfirewalla-modifying-the-ports-and-programs-permitted-by-windows-firewall"></a><a name="BKMK_ModifyingWindowsFirewall"></a> Modifica delle porte e dei programmi consentiti da Windows Firewall  
+##  <a name="BKMK_ModifyingWindowsFirewall"></a> Modifica delle porte e dei programmi consentiti da Windows Firewall  
  Usare la seguente procedura per modificare le porte e i programmi in Windows Firewall per il client di Configuration Manager.  
 
 #### <a name="to-modify-the-ports-and-programs-permitted-by-windows-firewall"></a>Per modificare le porte e i programmi consentiti da Windows Firewall  

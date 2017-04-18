@@ -12,8 +12,8 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 caps.latest.revision: 15
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: a1fc9f2db7c9c2b40d986bb39a0b27d6cc699987
@@ -27,7 +27,7 @@ ms.lasthandoff: 01/05/2017
 
 Usare il comando CCMSetup.exe di System Center Configuration Manager per installare manualmente il client di Configuration Manager.  
 
-##  <a name="a-nameaboutccmsetupa-about-ccmsetupexe"></a><a name="aboutCCMSetup"></a> Informazioni su CCMSetup.exe  
+##  <a name="aboutCCMSetup"></a> Informazioni su CCMSetup.exe  
  Il comando CCMSetup.exe consente di scaricare i file necessari per installare il client da un punto di gestione o da un percorso di origine. Questi file possono includere:  
 
 -   Il pacchetto Client.msi di Windows Installer che consente di installare il software client.  
@@ -167,7 +167,7 @@ Esempio: `ccmsetup.exe /downloadtimeout:100`
 
 ### <a name="usepkicert"></a>/UsePKICert
 
- Quando viene specificato, il client usa un certificato PKI che include l'autenticazione del client, se disponibile. Se non viene trovato un certificato valido, il client usa una connessione HTTP e un certificato autofirmato, che è il comportamento adottato quando non si usa questa proprietà. 
+ Quando viene specificato, il client usa un certificato PKI che include l'autenticazione del client, se disponibile. Se non viene trovato un certificato valido, il client usa una connessione HTTP e un certificato autofirmato, che è il comportamento adottato quando non si usa questa proprietà.
 
 > [!NOTE]  
 >  In alcuni scenari non è necessario specificare questa proprietà quando si installa un client e si usa comunque un certificato client. Tali scenari includono l'installazione di un client mediante installazione client basata sul punto di aggiornamento software e installazione push client. È tuttavia necessario specificare questa proprietà se si esegue l'installazione manuale di un client e si usa la proprietà **/mp** per specificare un punto di gestione configurato per accettare solo connessioni client HTTPS. È inoltre necessario specificare questa proprietà quando viene installato un client solo per la comunicazione Internet, usando la proprietà CCMALWAYSINF=1 (oltre alle proprietà per il punto di gestione basato su Internet e al codice del sito). Per altre informazioni sulla gestione client basata su Internet, vedere [Considerazioni per le comunicazioni client da Internet o da una foresta non trusted](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan) in [Comunicazioni tra gli endpoint in System Center Configuration Manager](../../plan-design/hierarchy/communications-between-endpoints.md).  
@@ -186,9 +186,9 @@ Esempio: `ccmsetup.exe /downloadtimeout:100`
 
 ### <a name="configltconfiguration-file"></a>/config:&lt;file di configurazione\>
 
-Specificare il nome di un file di testo contenente le proprietà di installazione client. 
+Specificare il nome di un file di testo contenente le proprietà di installazione client.
 
-- Se non si specifica la proprietà **/noservice** di CCMSetup, questo file deve trovarsi nella cartella CCMSetup, ovvero %Windir%\\Ccmsetup per sistemi operativi a 32 e a 64 bit. 
+- Se non si specifica la proprietà **/noservice** di CCMSetup, questo file deve trovarsi nella cartella CCMSetup, ovvero %Windir%\\Ccmsetup per sistemi operativi a 32 e a 64 bit.
 - Se viene specificata la proprietà **/noservice** , questo file deve essere posizionato nella stessa cartella da cui è stato eseguito CCMSetup.exe.  
 
 Esempio: `CCMSetup.exe /config:&lt;Configuration File Name.txt\>`  
@@ -200,7 +200,7 @@ Voce della sezione [Client Install] di esempio: `Install=INSTALL=ALL SMSSITECODE
 ### <a name="skipprereqltfilename"></a>/skipprereq:&lt;nome file\>
 
  Specifica che CCMSetup.exe non deve installare il programma definito come prerequisito se il client di Configuration Manager è installato. Questa proprietà supporta l'immissione di valori multipli. Usare il punto e virgola (;) per separare i valori.  
- 
+
 
  Esempi: `CCMSetup.exe /skipprereq:silverlight.exe` o `CCMSetup.exe /skipprereq:dotnetfx40_client_x86_x64.exe;Silverlight.exe`  
 
@@ -217,7 +217,7 @@ Esempio: `CCMSetup.exe /ExcludeFeatures:ClientUI` non installerà Software Cente
 > [!NOTE]  
 >  Per questa versione, **ClientUI** è l'unico valore supportato con la proprietà **/ExcludeFeatures** .  
 
-##  <a name="a-nameccmsetupreturncodesa-ccmsetupexe-return-codes"></a><a name="ccmsetupReturnCodes"></a> Codici restituiti di CCMSetup.exe  
+##  <a name="ccmsetupReturnCodes"></a> Codici restituiti di CCMSetup.exe  
  Il comando CCMSetup.exe fornisce i seguenti codici restituiti quando viene completato. Per la risoluzione dei problemi, consultare il file ccmsetup.log nel computer client per il contesto e i dettagli aggiuntivi sui codici restituiti.  
 
 |Codice restituito|Significato|  
@@ -229,7 +229,7 @@ Esempio: `CCMSetup.exe /ExcludeFeatures:ClientUI` non installerà Software Cente
 |9|Errore di valutazione dei prerequisiti|  
 |10|Errore di convalida dell'hash manifesto di installazione|  
 
-##  <a name="a-nameclientmsipropsa-clientmsi-properties"></a><a name="clientMsiProps"></a> Proprietà Client.msi  
+##  <a name="clientMsiProps"></a> Proprietà Client.msi  
  Le proprietà seguenti possono modificare il comportamento dell'installazione di client.msi. Se si utilizza il metodo di installazione push del client, è anche possibile specificare le proprietà nella scheda **Client** della finestra di dialogo **Proprietà installazione push client** .  
 
 ### <a name="ccmadmins"></a>CCMADMINS  
@@ -563,7 +563,7 @@ Esempio: `CCMSetup.exe SMSMP=https://smsmp01.contoso.com`
 
  Esempio: `CCMSetup.exe SMSSITECODE=XZY`  
 
-##  <a name="a-namebkmkattributevaluesa-supported-attribute-values-for-the-pki-certificate-selection-criteria"></a><a name="BKMK_attributevalues"></a> Valori attributi supportati per i criteri di selezione del certificato PKI  
+##  <a name="BKMK_attributevalues"></a> Valori attributi supportati per i criteri di selezione del certificato PKI  
  Configuration Manager supporta i valori seguenti di attributi per i criteri di selezione del certificato PKI:  
 
 |Attributo OID|Attributo del nome distinto|Definizione di attributo|  
