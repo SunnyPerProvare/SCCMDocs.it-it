@@ -16,9 +16,9 @@ author: brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6accec2d356861b273b25ba2b6338d9684a46ff6
-ms.openlocfilehash: 188c6b1d7ae7768bb4075688d7d47607ee83be17
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: 2cdd25343cf68a79067a317b820572491a3633a2
+ms.openlocfilehash: 84d6fdcec2c539f0fd3043f01d18e165da8c52c9
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="support-for-windows-10-as-a-client-of-system-center-configuration-manager"></a>Supporto per Windows 10 come client di System Center Configuration Manager
@@ -43,8 +43,9 @@ Ad esempio, una versione di Configuration Manager viene eliminata dalla matrice 
 |1507 <br />(*vedere le edizioni*)            |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |
 |1511 (CB), (CBB)<br />(*vedere le edizioni*) |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |
 |Enterprise 2016 LTSB                   |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |
-|1607 (CB)    <br />(*vedere le edizioni*)      |![Compatibile con le versioni precedenti](media/blue_compat.png) |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |
-|1607 (CBB)    <br />(*vedere le edizioni*)      |![Non supportato](media/Red_X.png)   |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |
+|1607 (CB)    <br />Aggiornamento dell'anniversario<br />(*vedere le edizioni*)      |![Compatibile con le versioni precedenti](media/blue_compat.png) |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |
+|1607 (CBB)    <br />Aggiornamento dell'anniversario<br />(*vedere le edizioni*)      |![Non supportato](media/Red_X.png)   |![Supportato](media/green_check.png) |![Supportato](media/green_check.png) |
+|1703 (CBB)    <br />Creators Update<br />(*vedere le edizioni*)      |![Non supportato](media/Red_X.png)   |![Non supportato](media/Red_X.png) |![Compatibile con le versioni precedenti](media/blue_compat.png) |
 
 
 

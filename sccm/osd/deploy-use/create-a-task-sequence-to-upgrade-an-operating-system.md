@@ -16,9 +16,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 88a72259bca79f2fa985e86cb57ec7a974bad24d
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: d7b13f3dea5a3ae413ca6b8150ec24e1632a4d4d
+ms.openlocfilehash: e63b639836bc38a030a051e80db4b057ab75a0b0
+ms.lasthandoff: 04/12/2017
 
 
 ---
@@ -74,7 +74,7 @@ Usare le sequenze di attività in System Center Configuration Manager per aggior
 
 
 ## <a name="configure-pre-cache-content"></a>Configurare la pre-cache del contenuto
-A partire dalla versione 1702, per le distribuzioni e le sequenze di attività disponibili è possibile scegliere di usare la funzionalità di pre-cache del contenuto. In questo modo, prima che gli utenti installino il contenuto, i client scaricheranno solo il contenuto pertinente.
+A partire dalla versione 1702, per le distribuzioni di sequenze di attività disponibili è possibile scegliere di usare la funzionalità di memorizzazione anticipata nella cache del contenuto. In questo modo, prima che gli utenti installino il contenuto, i client scaricheranno solo il contenuto pertinente.
 > [!TIP]  
 > Introdotta con la versione 1702, la pre-cache è una funzionalità di versione non definitiva. Per abilitarla, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/pre-release-features).
 

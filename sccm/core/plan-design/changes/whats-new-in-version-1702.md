@@ -2,7 +2,7 @@
 title: Nuova versione 1702 | Microsoft Docs
 description: "Ottenere informazioni dettagliate sulle modifiche e le nuove funzionalità introdotte nella versione 1702 di System Center Configuration Manager."
 ms.custom: na
-ms.date: 3/28/2017
+ms.date: 3/31/2017
 ms.reviewer: na
 ms.suite: na
 ms.technology:
@@ -14,23 +14,23 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 15debff961c872ed90c1365d4f8e9946fbc70cdc
-ms.openlocfilehash: 10e0c2108594253a8e6cb39bc47f84c72c073e6c
-ms.lasthandoff: 03/29/2017
+ms.sourcegitcommit: d7b13f3dea5a3ae413ca6b8150ec24e1632a4d4d
+ms.openlocfilehash: 3e97184dc923cd3972c23252c1bc001edb73fe3f
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novità della versione 1702 di System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-L'aggiornamento 1702 per System Center Configuration Manager (Current Branch) è disponibile come aggiornamento nella console per siti installati in precedenza che eseguono la versione 1606 o 1610.
+L'aggiornamento 1702 per System Center Configuration Manager (Current Branch) è disponibile come aggiornamento nella console per siti installati in precedenza che eseguono la versione 1602, 1606 o 1610.
 
 > [!TIP]  
 > Per installare un nuovo sito, è necessario usare una versione base di Configuration Manager.  
 >  Sono disponibili altre informazioni su:    
->  -   [Installing new sites](https://technet.microsoft.com/library/mt590197.aspx) (Installare nuovi siti)  
->  -   [Installing updates at sites](https://technet.microsoft.com/library/mt607046.aspx) (Installare aggiornamenti nei siti)  
->  -   [Baseline and update versions](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions) (Versioni di base e di aggiornamento)  
+>   - [Installing new sites](https://technet.microsoft.com/library/mt590197.aspx) (Installare nuovi siti)  
+>   - [Installing updates at sites](https://technet.microsoft.com/library/mt607046.aspx) (Installare aggiornamenti nei siti)  
+>   - [Baseline and update versions](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions) (Versioni di base e di aggiornamento)  
 
 Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1702 di Configuration Manager.  
 
@@ -189,7 +189,7 @@ Per informazioni dettagliate, vedere [Configure high-impact task sequence settin
 - Quando si esegue una sequenza di attività ma i pacchetti di contenuto dipendenti non sono ancora disponibili nei punti di distribuzione, la sequenza di attività ha esito negativo. È ora possibile distribuire il contenuto mancante, se non è stato ancora distribuito, o attendere che il contenuto sia disponibile nei punti di distribuzione e quindi fare clic su **Precedente** per ripetere la ricerca di contenuto con la sequenza di attività.
 
 ### <a name="pre-cache-content-for-available-deployments-and-task-sequences"></a>Pre-cache del contenuto per le distribuzioni e le sequenze di attività disponibili
-A partire dalla versione 1702, per le distribuzioni e le sequenze di attività disponibili è possibile scegliere di usare la pre-cache del contenuto. Con la funzionalità di pre-cache del contenuto è possibile consentire al client di scaricare solo il contenuto applicabile non appena riceve la distribuzione. Pertanto quando l'utente fa clic su **Installa** in Software Center, il contenuto è pronto e l'installazione inizia rapidamente, dato che il contenuto si trova nel disco rigido locale. Per informazioni dettagliate, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content).
+A partire dalla versione 1702, per le distribuzioni di sequenze di attività disponibili è possibile scegliere di usare la memorizzazione anticipata nella cache del contenuto. Con la funzionalità di pre-cache del contenuto è possibile consentire al client di scaricare solo il contenuto applicabile non appena riceve la distribuzione. Pertanto quando l'utente fa clic su **Installa** in Software Center, il contenuto è pronto e l'installazione inizia rapidamente, dato che il contenuto si trova nel disco rigido locale. Per informazioni dettagliate, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content).
 
 ### <a name="convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>Conversione da BIOS a UEFI durante un aggiornamento sul posto
 Windows 10 Creators Update introduce un semplice strumento di conversione che automatizza il processo di ripartizione del disco rigido per l'hardware abilitato per UEFI e integra lo strumento di conversione nel processo di aggiornamento sul posto da Windows 7 a Windows 10. Quando si usa questo strumento in combinazione con la sequenza di attività di aggiornamento del sistema operativo e con lo strumento OEM che converte il firmware da BIOS a UEFI, è possibile convertire i computer da BIOS a UEFI durante un aggiornamento sul posto a Windows 10 Creators Update. Per informazioni dettagliate, vedere [Passaggi della sequenza di attività per la gestione della conversione da BIOS a UEFI](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).
@@ -216,6 +216,8 @@ Windows 10 ADK viene ora rilevato dalla versione build per garantire maggior sup
 ### <a name="default-boot-image-source-path-can-no-longer-be-changed"></a>Percorso di origine dell'immagine d'avvio predefinita non più modificabile
 Le immagini d'avvio predefinite sono gestite da Configuration Manager e il percorso di origine dell'immagine d'avvio predefinita non può più essere modificato nella console di Configuration Manager o tramite Configuration Manager SDK. È possibile continuare a configurare un percorso di origine personalizzato per le immagini d'avvio personalizzate.
 
+### <a name="default-boot-images-are-regenerated-after-upgrading-configuration-manager-to-a-new-version"></a>Le immagini di avvio predefinite vengono rigenerate dopo l'aggiornamento di Configuration Manager a una nuova versione
+A partire da questa versione, quando si aggiorna la versione di Windows ADK e quindi si usano gli aggiornamenti e le versioni di manutenzione per installare la versione più recente di Configuration Manager, Configuration Manager rigenera le immagini di avvio predefinite. Ciò include la nuova versione di Windows PE dalla versione aggiornata di Windows ADK, la nuova versione del client di Configuration Manager, i driver, le personalizzazioni e così via. Le immagini di avvio personalizzate non vengono modificate. Per altri dettagli, vedere [Gestire le immagini di avvio](/sccm/osd/get-started/manage-boot-images#BKMK_BootImageDefault).
 
 ## <a name="software-updates"></a>Aggiornamenti software
 
@@ -267,16 +269,6 @@ A partire dalla versione 1702, la gestione ibrida dei dispositivi mobili con Mic
 - [Profili di posta elettronica per Android for Work](/sccm/mdm/deploy-use/create-exchange-activesync-profiles)
 - [Criteri di conformità per Android for Work](/sccm/mdm/deploy-use/create-compliance-policy)
 
-
-### <a name="improvements-to-certificate-profiles"></a>Miglioramenti ai profili certificato
-
-È ora possibile creare un profilo certificato PFX che supporta S/MIME e distribuirlo agli utenti.  Il certificato può quindi essere usato per la crittografia S/MIME e l'accesso a tutti i dispositivi iOS registrati dall'utente.
-Per altre informazioni, vedere [Come creare profili certificato PFX](/sccm/mdm/deploy-use/create-pfx-certificate-profiles) e [Profili di posta elettronica di Exchange ActiveSync](/sccm/mdm/deploy-use/create-exchange-activesync-profiles).
-
-Ora è anche possibile specificare più autorità di certificazione (CA) in più ruoli del sistema del sito del punto di registrazione dei certificati e quindi assegnare le richieste di processo dell'autorità di certificazione come parte del profilo certificato.
-Per altre informazioni, vedere [Infrastruttura di certificazione](/sccm/protect/deploy-use/certificate-infrastructure).
-
-Queste nuove funzionalità relative ai certificati non sono ancora in versione definitiva e possono essere soggette a modifiche.
 
 ### <a name="deploy-volume-purchased-ios-apps-to-device-collections"></a>Distribuire app iOS acquistate con Volume Purchase Program a raccolte di dispositivi
 

@@ -16,8 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3b387d78e03cc2d1c535e52016d2de4945328f72
-ms.openlocfilehash: c51cf3b3b7563a82db40405677c2edfb6de47cf1
+ms.sourcegitcommit: d7b13f3dea5a3ae413ca6b8150ec24e1632a4d4d
+ms.openlocfilehash: 7496c8bf11d058c94bc36fd28e9557b6470b61f1
+ms.lasthandoff: 04/12/2017
 
 ---
 # <a name="monitor-content-you-have-distributed-with-system-center-configuration-manager"></a>Monitorare il contenuto distribuito con System Center Configuration Manager
@@ -35,7 +36,7 @@ Usare la console di System Center Configuration Manager per monitorare il conten
 > [!NOTE]  
 >  Configuration Manager monitora solo il contenuto in un punto di distribuzione nella raccolta contenuto. Il contenuto archiviato nel punto di distribuzione in condivisioni pacchetto o personalizzate non è monitorato.  
 
-##  <a name="a-namebkmkcontentstatusa-content-status-monitoring"></a><a name="BKMK_ContentStatus"></a> Monitoraggio dello stato del contenuto  
+##  <a name="BKMK_ContentStatus"></a> Monitoraggio dello stato del contenuto  
  Il nodo **Stato componente** dell'area di lavoro **Monitoraggio** fornisce informazioni sui pacchetti contenuto. Nella console di Configuration Manager è possibile esaminare informazioni quali:  
 
 -   Il nome del pacchetto.  
@@ -151,12 +152,12 @@ Usare la procedura seguente per visualizzare lo stato di configurazione del punt
 4.  Nel riquadro dei risultati fare clic sulla scheda **Dettagli** . Verranno visualizzate le informazioni sullo stato per il punto di distribuzione.  
 
 ## <a name="client-data-sources-dashboard"></a>Dashboard Origini dati del client
-A partire dalla versione 1610, è possibile usare il dashboard **Origini dati del client** per informazioni sull'uso di [Peer Cache](/sccm/core/plan-design/hierarchy/client-peer-cache) nell'ambiente. Questo dashboard diventa visibile nella console dopo che il contenuto è stato scaricato dai client tramite Peer Cache e tale informazione è stata segnalata al sito. Questa operazione può richiedere al massimo 24 ore.
+A partire dalla versione 1610, è possibile usare il dashboard **Origini dati del client** per informazioni sull'uso di [Peer Cache](/sccm/core/plan-design/hierarchy/client-peer-cache) nell'ambiente. Questo dashboard inizierà a visualizzare i dati dopo che il contenuto è stato scaricato dai client e tale informazione viene segnalata al sito. Questa operazione può richiedere al massimo 24 ore.
 
 > [!TIP]  
-> Con la versione 1610, la peer cache e il dashboard Origini dati del client sono funzionalità di versioni non definitive. Per abilitarle, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
+> Con la versione 1610, la peer cache e il dashboard Origini dati del client sono funzionalità di versioni non definitive. Per abilitarle, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease). Il dashboard **Origini dati del client** diventerà visibile solo dopo averlo abilitato. Per la visualizzazione dei dati possono essere necessarie fino a 24 ore dopo l'abilitazione. 
 
-Nella console passare a **Monitoraggio** > **Stato client** > **Origini dati del client**. In questa posizione è possibile selezionare un periodo di tempo da applicare al dashboard. Nella visualizzazione è quindi possibile selezionare il gruppo di limiti o il pacchetto per il quale visualizzare le informazioni. Quando si esaminano le informazioni, passare il puntatore sulla superficie per vedere altri dettagli relativi ai diversi contenuti o origini dei criteri.
+Nella console passare a **Monitoraggio** > **Stato distribuzione** > **Origini dati del client**. In questa posizione è possibile selezionare un periodo di tempo da applicare al dashboard. Nella visualizzazione è quindi possibile selezionare il gruppo di limiti o il pacchetto per il quale visualizzare le informazioni. Quando si esaminano le informazioni, passare il puntatore sulla superficie per vedere altri dettagli relativi ai diversi contenuti o origini dei criteri.
 
 Sono incluse le seguenti informazioni:  
 - **Client Content Sources** (Origini contenuto client): visualizza l'origine da cui i client hanno ottenuto il contenuto.
@@ -168,9 +169,4 @@ Sono incluse le seguenti informazioni:
 
 
 È anche possibile usare un nuovo report, **Client Data Sources - Summarization** (Origini dati del client - Riepilogo), per visualizzare un riepilogo delle origini dati del client per ogni gruppo di limiti.
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

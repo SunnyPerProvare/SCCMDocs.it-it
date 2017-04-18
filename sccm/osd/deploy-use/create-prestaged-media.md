@@ -2,7 +2,7 @@
 title: Creare supporti pre-installati con System Center Configuration Manager | Microsoft Docs
 description: Creare supporti preinstallati in System Center Configuration Manager per semplificare la distribuzione di Windows in diversi scenari.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 04/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
-ms.openlocfilehash: 56cfc5837adf986e5d2bf4a73ef9de3b1f60b4f9
+ms.sourcegitcommit: ae9488a34c6b1e04397c4875de4b3bc607f7116c
+ms.openlocfilehash: 33abf3853d912d423e427db4d35fb4a16167164e
+ms.lasthandoff: 04/11/2017
 
 
 ---
@@ -36,7 +37,7 @@ Il supporto pre-installato contiene l'immagine di avvio usata per avviare il com
 
  Quando viene avviato per la prima volta dopo l'applicazione del supporto pre-installato, il computer avvia Windows PE e si connette a un punto di gestione per trovare la sequenza di attività che completa il processo di distribuzione del sistema operativo. È possibile specificare applicazioni, pacchetti e pacchetti driver da includere come parte del supporto preinstallato. Quando si distribuisce una sequenza di attività che usa un supporto pre-installato, la procedura guidata verifica innanzitutto la presenza di contenuto valido nella cache della sequenza di attività locale. Se non è possibile trovare il contenuto oppure il contenuto è stato rivisto, la procedura guidata scarica il contenuto dal punto di distribuzione.  
 
-##  <a name="a-namebkmkcreateprestagedmediaa-how-to-create-prestaged-media"></a><a name="BKMK_CreatePrestagedMedia"></a> Come creare un supporto pre-installato  
+##  <a name="BKMK_CreatePrestagedMedia"></a> Come creare un supporto pre-installato  
  Prima di creare un supporto preinstallato usando la Creazione guidata del supporto per la sequenza attività, assicurarsi che siano soddisfatte tutte le condizioni seguenti:  
 
 |Attività|Descrizione|  
@@ -47,7 +48,7 @@ Il supporto pre-installato contiene l'immagine di avvio usata per avviare il com
 |Disco rigido nel computer di destinazione|È necessario eseguire la formattazione del disco rigido del computer di destinazione prima che il supporto di pre-installazione venga installato nel disco rigido del computer. Se il disco rigido non è formattato quando viene applicato il supporto, la sequenza di attività che distribuisce il sistema operativo non riuscirà ad avviare il computer di destinazione.|  
 
 > [!NOTE]  
->  La Creazione guidata del supporto per la sequenza di attività imposta la seguente condizione variabile di sequenza di attività nel supporto: **_SMSTSMedia = OEMMedia**. È possibile usare questa condizione nella sequenza di attività.  
+>  La Creazione guidata del supporto per la sequenza di attività imposta la seguente condizione variabile di sequenza di attività nel supporto: **_SMSTSMediaType = OEMMedia**. È possibile usare questa condizione nella sequenza di attività.  
 
  Usare la procedura seguente per creare supporti pre-installati.  
 
@@ -143,9 +144,4 @@ Il supporto pre-installato contiene l'immagine di avvio usata per avviare il com
 
 ## <a name="next-steps"></a>Passaggi successivi
 [Scenari di distribuzione di sistemi operativi aziendali](scenarios-to-deploy-enterprise-operating-systems.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

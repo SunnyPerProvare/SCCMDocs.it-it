@@ -2,7 +2,7 @@
 title: Strumento di connessione del servizio | Microsoft Docs
 description: Lo strumento consente di connettersi al servizio cloud di Configuration Manager per caricare manualmente le informazioni sull&quot;utilizzo.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 4/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 7a9c5bb9890b00cf3485998aa46286c890429cc0
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: 32f7fc4ef9c8e8d3c2ec8eeaf9a3174bad992ffb
+ms.openlocfilehash: 0da80521bf223a765c3731f8ad59623d85a4c9fa
+ms.lasthandoff: 04/08/2017
 
 
 ---
@@ -26,9 +26,9 @@ ms.lasthandoff: 03/27/2017
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Usare lo **strumento di connessione del servizio** quando i server del sistema del sito di Configuration Manager non sono connessi a Internet ma si vuole ottenere comunque gli aggiornamenti più recenti di Configuration Manager.  
+Usare lo **strumento di connessione del servizio** quando il punto di connessione del servizio è in modalità offline oppure quando i server del sistema del sito di Configuration Manager non sono connessi a Internet. Lo strumento consente di mantenere il sito aggiornato con gli aggiornamenti più recenti di Configuration Manager.  
 
- Lo strumento consente di connettersi al servizio cloud di Configuration Manager per caricare manualmente le informazioni di utilizzo per la gerarchia e per scaricare gli aggiornamenti. Il caricamento dei dati di utilizzo è necessario per abilitare il servizio cloud in modo che fornisca gli aggiornamenti corretti per la distribuzione.  
+Quando viene eseguito, lo strumento si connette manualmente al servizio cloud di Configuration Manager per caricare le informazioni di utilizzo per la gerarchia e per scaricare gli aggiornamenti. Il caricamento dei dati di utilizzo è necessario per abilitare il servizio cloud in modo che fornisca gli aggiornamenti corretti per la distribuzione.  
 
 ## <a name="prerequisites-for-using-the-service-connection-tool"></a>Prerequisiti per l'uso dello strumento di connessione del servizio
 Di seguito sono elencati i prerequisiti e i problemi noti.
@@ -85,11 +85,11 @@ Quando si esegue il comando seguente, lo strumento prepara un file CAB che conti
 ### <a name="overview"></a>Panoramica
 **I passaggi principali per l'uso dello strumento di connessione del servizio sono tre:**  
 
-1.  **Preparazione**: in questo passaggio i dati di utilizzo vengono inseriti in un file CAB e archiviati in un'unità USB o in una posizione di trasferimento alternativa specificata.  
+1.  **Preparazione**: questo passaggio viene eseguito nel computer che ospita il punto di connessione del servizio. Quando si esegue lo strumento, i dati di utilizzo vengono inseriti in un file CAB e archiviati in un'unità USB o in una posizione di trasferimento alternativa specificata.  
 
-2.  **Connessione**: in questo passaggio lo strumento viene eseguito in un computer remoto che si connette a Internet per caricare i dati e scaricare gli aggiornamenti.  
+2.  **Connessione**: per questo passaggio lo strumento viene eseguito in un computer remoto che si connette a Internet in modo da poter caricare i dati di utilizzo e poi scaricare gli aggiornamenti.  
 
-3.  **Importazione**: in questo passaggio vengono importati gli aggiornamenti per Configuration Manager nel sito in modo da visualizzare e quindi installare gli aggiornamenti dalla console di Configuration Manager.  
+3.  **Importazione**: questo passaggio viene eseguito nel computer che ospita il punto di connessione del servizio. Quando si esegue lo strumento, gli aggiornamenti scaricati vengono importati e aggiunti al sito in modo da poter visualizzare e quindi installare gli aggiornamenti dalla console di Configuration Manager.  
 
 A partire dalla versione 1606, mentre si è connessi a Microsoft è possibile caricare più file con estensione cab contemporaneamente, ognuno da una gerarchia diversa, e specificare un server proxy e un utente per il server proxy.   
 
