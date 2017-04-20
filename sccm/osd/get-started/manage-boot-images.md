@@ -17,9 +17,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 4edf7d09d39fa22fb5812aecc88febd763001eba
-ms.openlocfilehash: 369aa062d0f38eedebc0a7c351a7ce67b53d199b
-ms.lasthandoff: 02/21/2017
+ms.sourcegitcommit: 0cf2ac6440588ccf4848baa7a195f78e8675447d
+ms.openlocfilehash: c6a1eb9ccaee45eb242fb320cb6b492d1a39d349
+ms.lasthandoff: 04/11/2017
 
 
 ---
@@ -29,19 +29,33 @@ ms.lasthandoff: 02/21/2017
 
 Un'immagine d'avvio in Configuration Manager è un'immagine [Windows PE (WinPE)](https://msdn.microsoft.com/library/windows/hardware/dn938389%28v=vs.85%29.aspx) usata durante la distribuzione di un sistema operativo. Le immagini d'avvio vengono usate per avviare un computer in Windows PE, un sistema operativo minimo con componenti e servizi limitati che prepara il computer di destinazione per l'installazione di Windows.  Usare le sezioni seguenti per gestire le immagini d'avvio.
 
-##  <a name="a-namebkmkbootimagedefaulta-default-boot-images"></a><a name="BKMK_BootImageDefault"></a> Immagini d'avvio predefinite  
- Configuration Manager offre due immagini d'avvio predefinite: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste immagini sono archiviate nel percorso: \\\\*nomeserver*>\SMS_<*codicesito*>\osd\boot\\<*x64*> or <*i386*>.  
+## <a name="BKMK_BootImageDefault"></a> Immagini d'avvio predefinite
+Configuration Manager offre due immagini d'avvio predefinite: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste immagini sono archiviate nel percorso: \\\\*nomeserver*>\SMS_<*codicesito*>\osd\boot\\<*x64*> or <*i386*>. Le immagini di avvio predefinite vengono aggiornate o rigenerate in base all'azione eseguita.
 
- Quando si aggiorna Configuration Manager a una nuova versione, Configuration Manager potrebbe sostituire le immagini d'avvio predefinite e le immagini d'avvio personalizzate basate sulle immagini predefinite presenti in questo percorso con i file aggiornati. Le opzioni configurate nelle immagini di avvio predefinite nel sito (ad esempio, i componenti facoltativi) vengono trasmesse quando vengono aggiornate le immagini di avvio, inclusi i driver. Gli oggetti del driver di origine devono essere validi, inclusi i file di origine del driver, altrimenti i driver non verranno aggiunti alle immagini di avvio aggiornate nel sito. Le altre immagini di avvio che non sono basate sulle immagini d'avvio predefinite, anche se basate sulla stessa versione di Windows ADK, non verranno aggiornate. Dopo l'aggiornamento delle immagini di avvio, è necessario ridistribuirle ai punti di distribuzione. Qualsiasi supporto che usi le immagini di avvio dovrà essere ricreato. Se si preferisce non aggiornare automaticamente le immagini di avvio personalizzate/predefinite, è necessario archiviarle in un percorso diverso.  
+**Usare gli aggiornamenti e le versioni di manutenzione per installare la versione più recente di Configuration Manager** A partire dalla versione 1702, quando si aggiorna la versione di Windows ADK e quindi si usano gli aggiornamenti e le versioni di manutenzione per installare la versione più recente di Configuration Manager, Configuration Manager rigenera le immagini di avvio predefinite. Ciò include la nuova versione di Windows PE dalla versione aggiornata di Windows ADK, la nuova versione del client di Configuration Manager, i driver, le personalizzazioni e così via. Le immagini di avvio personalizzate non vengono modificate.
 
- Lo strumento del registro di traccia di Configuration Manager viene aggiunto a tutte le immagini d'avvio inserite nella **Raccolta software**. In WinPE è possibile avviare lo strumento del registro di traccia di Configuration Manager digitando **CMTrace** al prompt dei comandi.  
+Prima della versione 1702, Configuration Manager aggiorna l'immagine di avvio (boot.wim) esistente con i componenti client, i driver, le personalizzazioni e così via, ma non usa la versione più recente di Windows PE da Windows ADK. È necessario modificare manualmente l'immagine di avvio per usare la nuova versione di Windows ADK.
 
-##  <a name="a-namebkmkbootimagecustoma-customize-a-boot-image"></a><a name="BKMK_BootImageCustom"></a> Personalizzare un'immagine d'avvio  
+**Aggiornamento da Configuration Manager 2012 a Configuration Manager Current Branch (CB)** Quando si esegue l'aggiornamento da Configuration Manager 2012 a Configuration Manager CB usando il processo di installazione, Configuration Manager rigenera le immagini di avvio predefinite. Ciò include la nuova versione di Windows PE dalla versione aggiornata di Windows ADK, la nuova versione del client di Configuration Manager e tutte le personalizzazioni rimangono invariate. Le immagini di avvio personalizzate non vengono modificate.
+
+**Aggiornare i punti di distribuzione con l'immagine di avvio** Quando si usa l'azione **Aggiorna punti di distribuzione** dal nodo **Immagini di avvio** nella console di Configuration Manager, Configuration Manager aggiorna le immagini di avvio predefinite con i componenti client, i driver, le personalizzazioni e così via, ma non usa la versione più recente di Windows PE da Windows ADK. Le immagini di avvio personalizzate non vengono modificate.
+
+Tenere inoltre presente quanto segue per le azioni precedenti:
+- Gli oggetti del driver di origine devono essere validi e inclusi i file di origine del driver, altrimenti i driver non verranno aggiunti alle immagini di avvio nel sito.
+- Le immagini di avvio che non sono basate sulle immagini di avvio predefinite, anche se usano la stessa versione di Windows PE, non verranno modificate.
+- È necessario ridistribuire le immagini di avvio modificate ai punti di distribuzione.
+- È necessario ricreare tutti i supporti che usano le immagini di avvio modificate.
+- Se si preferisce non aggiornare automaticamente le immagini di avvio personalizzate/predefinite, non archiviarle nella posizione predefinita.
+
+> [!NOTE]
+> Lo strumento del registro di traccia di Configuration Manager viene aggiunto a tutte le immagini di avvio inserite nella **Raccolta software**. In Windows PE è possibile avviare lo strumento del registro di traccia di Configuration Manager digitando **CMTrace** al prompt dei comandi.  
+
+##  <a name="BKMK_BootImageCustom"></a> Personalizzare un'immagine d'avvio  
  È possibile personalizzare o [modificare un'immagine d'avvio](#BKMK_ModifyBootImages) dalla console di Configuration Manager basata su una versione di Windows PE dalla versione supportata di Windows ADK. Quando un sito viene aggiornato con una nuova versione e viene installata una nuova versione di Windows ADK, le immagini di avvio personalizzate (non nel percorso dell'immagine di avvio predefinita) non vengono aggiornate con la nuova versione di Windows ADK. In questo caso, non sarà possibile personalizzare le immagini d'avvio nella console di Configuration Manager. Tuttavia, continueranno a funzionare come prima dell'aggiornamento.  
 
  Quando un'immagine di avvio si basa su una versione differente di Windows ADK installata in un sito, è necessario personalizzare le immagini di avvio usando un altro metodo, ad esempio lo strumento della riga di comando Gestione e manutenzione immagini distribuzione, che fa parte di Windows AIK e Windows ADK. Per altre informazioni, vedere [Customize boot images](customize-boot-images.md) (Personalizzare le immagini d'avvio).  
 
-##  <a name="a-namebkmkaddbootimagesa-add-a-boot-image"></a><a name="BKMK_AddBootImages"></a> Aggiungere un'immagine d'avvio  
+##  <a name="BKMK_AddBootImages"></a> Aggiungere un'immagine d'avvio  
 
  Durante l'installazione del sito, Configuration Manager aggiunge automaticamente immagini d'avvio basate su una versione di WinPE dalla versione supportata di Windows ADK. A seconda della versione di Configuration Manager, è possibile aggiungere immagini d'avvio basate su una diversa versione di WinPE dalla versione supportata di Windows ADK.  Quando si prova ad aggiungere un'immagine d'avvio che contiene una versione non supportata di WinPE, si verifica un errore.  
 
@@ -96,7 +110,7 @@ Un'immagine d'avvio in Configuration Manager è un'immagine [Windows PE (WinPE)]
 > [!NOTE]  
 >  Quando si seleziona il nodo **Immagine d'avvio** nella console di Configuration Manager, la colonna **Dimensione (KB)** visualizza la dimensione decompressa per ogni immagine d'avvio. Tuttavia, quando Configuration Manager invia un'immagine d'avvio in rete, invia una copia compressa dell'immagine che è generalmente molto più piccola della dimensione elencata nella colonna **Dimensione (KB)**.  
 
-##  <a name="a-namebkmkdistributebootimagesa-distribute-boot-images-to-a-distribution-point"></a><a name="BKMK_DistributeBootImages"></a> Distribuire immagini d'avvio in un punto di distribuzione  
+##  <a name="BKMK_DistributeBootImages"></a> Distribuire immagini d'avvio in un punto di distribuzione  
  Le immagini di avvio vengono distribuite nei punti di distribuzione nello stesso modo in cui vengono distribuiti gli altri contenuti. Nella maggior parte dei casi, è necessario distribuire l'immagine d'avvio almeno in un punto di distribuzione prima di distribuire il sistema operativo e prima di creare supporti.  
 
 > [!NOTE]  
@@ -110,7 +124,7 @@ Un'immagine d'avvio in Configuration Manager è un'immagine [Windows PE (WinPE)]
 
  Per la procedura di distribuzione di un'immagine d'avvio, vedere [Distribute content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
 
-##  <a name="a-namebkmkmodifybootimagesa-modify-a-boot-image"></a><a name="BKMK_ModifyBootImages"></a> Modificare un'immagine d'avvio  
+##  <a name="BKMK_ModifyBootImages"></a> Modificare un'immagine d'avvio  
  È possibile aggiungere o rimuovere driver di dispositivo dall'immagine o modificare le proprietà associate all'immagine d'avvio. Ad esempio, è possibile aggiungere o rimuovere driver per scheda di rete o per dispositivi di archiviazione di massa. Quando si modificano le immagini di avvio, tenere presente quanto segue:  
 
 -   Per poter aggiungere driver di dispositivo all'immagine d'avvio, è necessario prima importarli e abilitarli nel catalogo dei driver di dispositivo.  
@@ -212,7 +226,7 @@ Un'immagine d'avvio in Configuration Manager è un'immagine [Windows PE (WinPE)]
 
 6.  Dopo aver configurato le proprietà, fare clic su **OK**.  
 
-##  <a name="a-namebkmkbootimagepxea-configure-a-boot-image-to-deploy-from-a-pxe-enabled-distribution-point"></a><a name="BKMK_BootImagePXE"></a> Configurare un'immagine d'avvio per eseguire la distribuzione da un punto di distribuzione che supporta PXE  
+##  <a name="BKMK_BootImagePXE"></a> Configurare un'immagine d'avvio per eseguire la distribuzione da un punto di distribuzione che supporta PXE  
  Prima di usare un'immagine d'avvio per una distribuzione del sistema operativo PXE, è necessario configurare l'immagine d'avvio per la distribuzione da un punto di distribuzione che supporta PXE.  
 
 #### <a name="to-configure-a-boot-image-to-deploy-from-a-pxe-enabled-distribution-point"></a>Per configurare un'immagine d'avvio per eseguire la distribuzione da un punto di distribuzione che supporta PXE  
@@ -232,7 +246,7 @@ Un'immagine d'avvio in Configuration Manager è un'immagine [Windows PE (WinPE)]
 
 6.  Dopo aver configurato le proprietà, fare clic su **OK**.  
 
-##  <a name="a-namebkmkbootimagelanguagea-configure-multiple-languages-for-boot-image-deployment"></a><a name="BKMK_BootImageLanguage"></a> Configurare più lingue per la distribuzione di immagini d'avvio  
+##  <a name="BKMK_BootImageLanguage"></a> Configurare più lingue per la distribuzione di immagini d'avvio  
  Le immagini di avvio sono indipendenti dalla lingua. Questo consente di usare un'unica immagine d'avvio che mostra il testo della sequenza di attività in più lingue, in WinPE, a condizione che si includa il supporto lingua appropriato dai componenti facoltativi di Windows PE e si imposti la variabile della sequenza di attività appropriata per indicare quale lingua può essere visualizzata. La lingua del sistema operativo distribuito non dipende dalla lingua visualizzata in WinPE, indipendentemente dalla versione di Configuration Manager. La lingua visualizzata all'utente viene determinata come segue:  
 
 -   Quando un utente esegue la sequenza di attività da un sistema operativo esistente, Configuration Manager usa automaticamente la lingua configurata per l'utente. Quando la sequenza di attività viene eseguita automaticamente a causa della scadenza di una distribuzione obbligatoria, Configuration Manager usa la lingua del sistema operativo.  
