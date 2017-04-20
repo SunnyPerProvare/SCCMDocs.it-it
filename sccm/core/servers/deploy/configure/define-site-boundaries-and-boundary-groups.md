@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: e9d6f53961c4eb410a56774443e357cca7c18dcc
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: dda2f4c01078fbbd174cbcb30357554c24f6abeb
+ms.openlocfilehash: 0fea1dece0768a2b7bcd3fcedc2288ea2d52e73d
+ms.lasthandoff: 04/17/2017
 
 
 ---
@@ -45,7 +45,7 @@ I client in Internet o configurati come client solo per Internet non usano le in
 
 **Per iniziare:**
 - Come prima operazione, [definire i percorsi di rete come limiti](/sccm/core/servers/deploy/configure/boundaries).
-- Continuare quindi [configurando gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups) per associare i client presenti in tali limiti ai server del sistema del sito che possono usare. 
+- Continuare quindi [configurando gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups) per associare i client presenti in tali limiti ai server del sistema del sito che possono usare.
 
 
 

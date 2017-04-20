@@ -2,7 +2,7 @@
 title: Creare applicazioni server Linux e UNIX | Documentazione Microsoft
 description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni per i dispositivi Linux e UNIX.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 04/13/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,8 +16,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: b599a58f25a868c638b7ee00cefff80b2f71244e
-ms.openlocfilehash: f4373c888434aa6cd22e5f9b871e172cc50a7d30
+ms.sourcegitcommit: 4b9261db93c9bf72c492e3c9be5b30f81835134a
+ms.openlocfilehash: 72ebd8bd29b5ecdd817631e447291c04f49d9808
+ms.lasthandoff: 04/13/2017
 
 
 ---
@@ -145,7 +146,7 @@ Nella seguente tabella vengono elencate le proprietà non supportate per i pacch
 
     -   **Velocità massima di trasferimento durante l'intervallo di limitazione (Kbps)**  
 
-    -   **Velocità massima di trasferimento durante l'intervallo di limitazione (Kbps)**  
+    -   **Velocità massima di trasferimento all'esterno dell'intervallo di limitazione (Kbps)**  
 
 La seguente configurazione per Trasferimento intelligente in background non è supportata e viene ignorata dal client per Linux e UNIX:  
 
@@ -164,9 +165,4 @@ La seguente configurazione per Trasferimento intelligente in background non è s
 
 > [!TIP]  
 >  Se il software che si desidera distribuire è situato in una condivisione NFS (Network File System) a cui il server Linux o UNIX può accedere, non è necessario utilizzare un punto di distribuzione per scaricare il pacchetto. Al contrario, quando si crea un pacchetto non selezionare la casella di controllo per **Questo pacchetto contiene file di origine**. Quindi, quando si configura il programma, specificare la riga di comando appropriata per accedere direttamente al pacchetto nel punto di montaggio NFS.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
