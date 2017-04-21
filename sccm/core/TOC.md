@@ -67,6 +67,7 @@
 
 ##   [Pianificare l'infrastruttura di rete](plan-design/network/configure-firewalls-ports-domains.md)
 ###  [Preparare lo schema di Active Directory](plan-design/network/extend-the-active-directory-schema.md)
+#### [Estensioni dello schema](plan-design/network/schema-extensions.md)
 ###  [Preparare i server di Windows per il supporto dei sistemi del sito](plan-design/network/prepare-windows-servers.md)
 ###  [Siti Web per i server del sistema del sito](plan-design/network/websites-for-site-system-servers.md)
 ###  [Requisiti dei certificati PKI](plan-design/network/pki-certificate-requirements.md)
@@ -138,8 +139,10 @@
 ##   Installare l'infrastruttura
 ###  [Ottenere i supporti di installazione](servers/deploy/install/get-install-media.md)
 ###  Prima di eseguire il programma di installazione
+#### [Riferimento per l'installazione](servers/deploy/install/setup-reference.md)
 #### [Downloader di installazione](servers/deploy/install/setup-downloader.md)
 #### [Controllo prerequisiti](servers/deploy/install/prerequisite-checker.md)
+#### [Controlli dei prerequisiti](servers/deploy/install/list-of-prerequisite-checks.md)
 ###  [Installazione di siti](servers/deploy/install/installing-sites.md)
 #### [Preparare l'installazione di siti](servers/deploy/install/prepare-to-install-sites.md)
 #### [Prerequisiti per l'installazione di siti](servers/deploy/install/prerequisites-for-installing-sites.md)
@@ -150,6 +153,7 @@
 #### [Aggiornare un'installazione di valutazione](servers/deploy/install/upgrade-an-evaluation-install-to-a-full-install.md)
 #### [Eseguire l'aggiornamento a System Center Configuration Manager](servers/deploy/install/upgrade-to-configuration-manager.md)
 #### [Scenari per semplificare l'installazione](servers/deploy/install/scenarios-to-streamline-your-installation.md)
+#### [Disinstallazione di siti e gerarchie](servers/deploy/install/uninstall-sites-and-hierarchies.md)
 
 ##   [Configurare siti e gerarchie](servers/deploy/configure/configure-sites-and-hierarchies.md)
 ###  [Aggiungere ruoli del sistema del sito](servers/deploy/configure/add-site-system-roles.md)
@@ -171,10 +175,24 @@
 ###  [Limiti del sito e gruppi di limiti](servers/deploy/configure/define-site-boundaries-and-boundary-groups.md)
 #### [Limiti](servers/deploy/configure/boundaries.md)
 #### [Gruppi di limiti](servers/deploy/configure/boundary-groups.md)
+#### [Gruppi di limiti per le versioni precedenti alla 1610](servers/deploy/configure/boundary-groups-for-1511-1602-and-1606.md)
 ###  [Usare SQL Server AlwaysOn](servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md)
 ###  [Usare un cluster di SQL Server](servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database.md)
 ###  [Percorsi personalizzati per i file di database](servers/deploy/configure/custom-locations-for-site-database-files.md)
 ###  [Configurare l'amministrazione basata su ruoli](servers/deploy/configure/configure-role-based-administration.md)
+##   Informazioni di riferimento tecnico
+###  [Account](plan-design/hierarchy/accounts.md)
+###  [Comunicazioni tra gli endpoint](plan-design/hierarchy/communications-between-endpoints.md)
+###  [Strumento di manutenzione gerarchia](servers/manage/hierarchy-maintenance-tool-preinst.exe.md)
+###  [Supporto internazionale](plan-design/hierarchy/international-support.md)
+###  [Interoperabilità tra versioni diverse](plan-design/hierarchy/interoperability-between-different-versions.md)
+###  [Language Pack](servers/deploy/install/language-packs.md)
+###  [File di log](plan-design/hierarchy/log-files.md)
+###  [Porte](plan-design/hierarchy/ports.md)
+###  [Supporto dei server proxy](plan-design/network/proxy-server-support.md)
+###  [Note sulla versione](servers/deploy/install/release-notes.md)
+###  [Supporto Unicode e ASCII](plan-design/hierarchy/unicode-and-ascii-support.md)
+
 
 #    Gestire l'infrastruttura
 ##   [Attività di manutenzione](servers/manage/maintenance-tasks.md)
