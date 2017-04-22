@@ -2,7 +2,7 @@
 title: Hardware consigliato | Microsoft Docs
 description: Ottenere consigli su hardware per ridimensionare l&quot;ambiente di System Center Configuration Manager, oltre una distribuzione di base.
 ms.custom: na
-ms.date: 2/28/2017
+ms.date: 3/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,9 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 63ee782a718cf4a66ffe25b022aa317f3e45784c
-ms.openlocfilehash: 6701d5f21e8511ec9cf4fe7bc5804b3e2fdc4c71
-ms.lasthandoff: 02/28/2017
+ms.sourcegitcommit: 8d3791bcf737e63308155787ed23c9cc84e7e99c
+ms.openlocfilehash: fd9f5b25a1e40b5f0df823dcbe9c13a77c534c59
+ms.lasthandoff: 03/31/2017
 
 
 ---
@@ -168,14 +168,12 @@ Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità da
 
  **Supporto per PowerShell:**  
 
- Quando si installa il supporto per PowerShell in un computer che esegue la console di Configuration Manager, è possibile eseguire i cmdlet di PowerShell in tale computer per gestire Configuration Manager. Sono supportate le seguenti versioni minime:  
+ Quando si installa il supporto per PowerShell in un computer che esegue la console di Configuration Manager, è possibile eseguire i cmdlet di PowerShell in tale computer per gestire Configuration Manager.
 
--   PowerShell 3.0  
+ - È supportato PowerShell 3.0 o versione successiva
 
--   PowerShell 4.0  
+Oltre a PowerShell, è supportato anche Windows Management Framework (WMF) 3.0 o versione successiva.   
 
-Oltre a PowerShell, sono supportati anche Windows Management Framework (WMF) 3.0 e 4.0.   
-È possibile installare PowerShell prima o dopo l’installazione della console di Configuration Manager.  
 
 ##  <a name="bkmk_ScaleLab"></a> Distribuzioni di lab  
  Seguire questi consigli in termini di requisiti hardware minimi per le distribuzioni di lab e di prova di Configuration Manager. Questi consigli si applicano a tutti i tipi di sito, fino a un massimo di 100 client:  
