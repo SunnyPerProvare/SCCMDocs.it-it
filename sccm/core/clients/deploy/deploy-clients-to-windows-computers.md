@@ -2,7 +2,7 @@
 title: Distribuire i client Windows | Microsoft Docs
 description: Informazioni su come distribuire i client ai computer Windows in System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/27/2016
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,8 +13,8 @@ ms.topic: get-started-article
 ms.assetid: 341f0d0b-f907-44cf-9e10-e1b41fc15f82
 caps.latest.revision: 13
 caps.handback.revision: 0
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 9555a16d97224a1cf49a426ab225468b07403f60
@@ -29,7 +29,7 @@ ms.lasthandoff: 12/30/2016
 
 Prima di installare i client di Configuration Manager, assicurarsi che siano presenti tutti i [prerequisiti](../../../core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md) e che siano state completate tutte le configurazioni di distribuzione necessarie.   
 
-##  <a name="a-namebkmkclientpusha-how-to-install-clients-with-client-push"></a><a name="BKMK_ClientPush"></a> Come installare i client con l'installazione push client  
+##  <a name="BKMK_ClientPush"></a> Come installare i client con l'installazione push client  
 
 È possibile configurare l'installazione push client per un sito e l'installazione client verrà eseguita automaticamente sui computer individuati all'interno dei limiti configurati del sito quando tali limiti sono configurati come gruppo di limiti. In alternativa, è possibile avviare un'installazione push client eseguendo l'Installazione guidata push client per una raccolta specifica o una risorsa all'interno di una raccolta.  
 
@@ -102,7 +102,7 @@ I file di log client forniscono informazioni più dettagliate per la risoluzione
 > [!NOTE]  
 >  È possibile usare la procedura guidata per installare i client, anche se il sito non è configurato per il push client.  
 
-##  <a name="a-namebkmkclientsupa-how-to-install-clients-with-software-update-based-installation"></a><a name="BKMK_ClientSUP"></a> Come installare i client con l'installazione basata sull'aggiornamento software  
+##  <a name="BKMK_ClientSUP"></a> Come installare i client con l'installazione basata sull'aggiornamento software  
  L'Installazione client basata sull'aggiornamento software pubblica il client in un punto di aggiornamento software come aggiornamento software. Usare questo metodo per una nuova installazione o un aggiornamento.  
 
  Se un computer ha installato il client, Configuration Manager fornisce al client i criteri client, che includono il nome e la porta del server del punto di aggiornamento software da cui ottenere gli aggiornamenti software.   
@@ -161,7 +161,7 @@ Usare le procedure seguenti per configurare i computer senza un client di Config
 
 L'aggiornamento software per il client di Configuration Manager non viene automaticamente aggiornato quando c'è una nuova versione. Se si esegue l'aggiornamento del sito, che include una nuova versione client, è necessario ripetere questa procedura e fare clic su **Sì** per il passaggio 6.  
 
-##  <a name="a-namebkmkclientgpa-how-to-install-clients-with-group-policy"></a><a name="BKMK_ClientGP"></a> Come installare i client con i criteri di gruppo  
+##  <a name="BKMK_ClientGP"></a> Come installare i client con i criteri di gruppo  
  È possibile usare i Criteri di gruppo in Active Directory Domain Services per pubblicare o assegnare il client di Configuration Manager da installare sui computer aziendali. Il client verrà installato all'avvio del computer. Quando si usa Criteri di gruppo, il client viene visualizzato in **Installazione applicazioni** nel Pannello di controllo a disposizione per l'installazione da parte dell'utente.  
 
  Usare il pacchetto di Windows Installer (CCMSetup.msi) per le installazioni basate su Criteri di gruppo. Il file si trova nella cartella **&lt;directory di installazione di ConfigMgr\>\bin\i386** nel server del sito di Configuration Manager. Non è possibile aggiungere proprietà a questo file per modificare il comportamento di installazione.  
@@ -175,7 +175,7 @@ L'aggiornamento software per il client di Configuration Manager non viene automa
 
 Per informazioni sull'utilizzo dei Criteri di gruppo in Servizi di dominio Active Directory per l'installazione del software, fare riferimento alla documentazione di Windows Server.  
 
-##  <a name="a-namebkmkmanuala-how-to-install-clients-manually"></a><a name="BKMK_Manual"></a> Come installare manualmente i client  
+##  <a name="BKMK_Manual"></a> Come installare manualmente i client  
  È possibile installare manualmente il software client nei computer aziendali usando il programma CCMSetup.exe. Questo programma e i relativi file di supporto si trovano nella cartella **Client** all'interno della cartella di installazione di Configuration Manager sul server del sito e sui punti di gestione nel sito. La cartella è condivisa in rete come  
 
  \\\\*&lt;<Nome server del sito\>*\SMS_*&lt;Codice del sito\>*\Client\  
@@ -229,14 +229,14 @@ CCMSetup.exe /MP:mpserver.contoso.com /UsePKICert SMSSITECODE=ABC CCMHOSTNAME=se
 ```  
 Questo esempio sostituisce la configurazione automatica che Active Directory Domain Services è in grado di offrire e non richiede che il percorso di rete del client sia incluso in un gruppo di limiti configurato per l'assegnazione client. Al contrario, l'installazione specifica il sito, un punto di gestione intranet e un punto di gestione basato su Internet, un punto di stato di fallback che accetta connessioni da Internet e l'utilizzo di un certificato PKI client (se disponibile) con il periodo di validità più lungo.  
 
-##  <a name="a-namebkmkclientlogonscripta-how-to-install-clients-with-logon-scripts"></a><a name="BKMK_ClientLogonScript"></a> Come installare i client con gli script di accesso  
+##  <a name="BKMK_ClientLogonScript"></a> Come installare i client con gli script di accesso  
  Configuration Manager supporta gli script di accesso per installare il software client di Configuration Manager. È possibile usare il file di programma **CCMSetup.exe** in uno script di accesso per avviare l'installazione client.  
 
  L'installazione con script di accesso usa gli stessi metodi dell'installazione client manuale. È possibile specificare la proprietà di installazione **/logon** per CCMSsetup.exe, che impedisce l'installazione del client in presenza di una versione del client esistente sul computer. In tal modo è possibile evitare la reinstallazione del client ogni volta che viene eseguito lo script di accesso.  
 
  Se non viene specificata alcuna origine dell'installazione che stia usando la proprietà **/Source** né viene specificato un punto di gestione da cui ottenere l'installazione usando la proprietà **/MP**, CCMSetup.exe può individuare il punto di gestione eseguendo una ricerca in Active Directory Domain Services se lo schema è stato esteso per Configuration Manager e il sito è pubblicato in Active Directory Domain Services. In alternativa, il client può usare DNS o WINS per individuare un punto di gestione.  
 
-##  <a name="a-namebkmkclientappa-how-to-install-clients-with-a-package-and-program"></a><a name="BKMK_ClientApp"></a> Come installare i client con un pacchetto e un programma  
+##  <a name="BKMK_ClientApp"></a> Come installare i client con un pacchetto e un programma  
  È possibile usare Configuration Manager per creare e distribuire un pacchetto e un programma di aggiornamento per il software client di computer selezionati nella gerarchia. Con Configuration Manager viene fornito un file di definizione pacchetto che popola le proprietà del pacchetto con i valori tipici. È possibile personalizzare il comportamento dell'installazione del client specificando proprietà di riga di comando aggiuntive.  
 
 > [!NOTE]  
@@ -285,7 +285,7 @@ Per garantire che il dispositivo rimanga in uno stato gestito dopo l'installazio
 
 3. [Distribuire l'app](/intune/deploy-use/deploy-apps-in-microsoft-intune) ai computer Windows registrati.
 
-##  <a name="a-namebkmkclientimagea-how-to-install-clients-with-a-computer-image"></a><a name="BKMK_ClientImage"></a> Come installare i client con un'immagine di computer  
+##  <a name="BKMK_ClientImage"></a> Come installare i client con un'immagine di computer  
 È possibile preinstallare il software client di Configuration Manager in un computer con immagine master che verrà usato per creare l'immagine per gli altri computer.   
 
 ### <a name="to-prepare-the-client-computer-for-imaging"></a>Per preparare il computer client per la creazione dell'immagine  
@@ -307,7 +307,7 @@ Per garantire che il dispositivo rimanga in uno stato gestito dopo l'installazio
 
 6.  Distribuire l'immagine ai computer di destinazione.  
 
-##  <a name="a-namebkmkclientworkgroupa-how-to-install-clients-on-workgroup-computers"></a><a name="BKMK_ClientWorkgroup"></a> Come installare i client sui computer dei gruppi di lavoro  
+##  <a name="BKMK_ClientWorkgroup"></a> Come installare i client sui computer dei gruppi di lavoro  
  Configuration Manager supporta l'installazione di client per i computer nei gruppi di lavoro. Installare il client nei computer nei gruppi di lavoro usando il metodo specificato in [Come installare manualmente i client di Configuration Manager](#BKMK_Manual).  
 
  Prerequisiti:  
@@ -344,7 +344,7 @@ Controllare i prerequisiti e quindi seguire le istruzioni della sezione [Come in
 
       
 
-##  <a name="a-namebkmkclientinterneta-how-to-install-clients-for-internet-based-client-management"></a><a name="BKMK_ClientInternet"></a> Come installare i client per la gestione client basata su Internet  
+##  <a name="BKMK_ClientInternet"></a> Come installare i client per la gestione client basata su Internet  
  Quando il sito di Configuration Manager supporta la gestione client basata su Internet per client che si trovano a volte sulla intranet e a volte su Internet, sono disponibili due opzioni per l'installazione dei client sulla intranet:  
 
 -   È possibile includere la proprietà Client.msi di CCMHOSTNAME=*&lt;FQDN Internet del punto di gestione basato su Internet\>* quando si installa il client, ad esempio usando l'installazione manuale o push client. Quando si usa questo metodo, è necessario anche assegnare direttamente il client al sito e non è possibile usare l'assegnazione automatica del sito. La sezione [Come installare manualmente i client di Configuration Manager](#BKMK_Manual) in questo argomento fornisce un esempio di questo metodo di configurazione.  
@@ -391,7 +391,7 @@ Controllare i prerequisiti e quindi seguire le istruzioni della sezione [Come in
 
    In questo esempio vengono installati i file di origine client da una cartella sull'unità D con le impostazioni per l'utilizzo di un certificato client PKI e la selezione del certificato con il periodo di validità più lungo per la gestione client Internet esclusiva. Viene inoltre assegnato il client per l'utilizzo del punto di gestione basato su Internet denominato SERVER1 e il punto di stato di fallback basato su Internet nel dominio contoso.com, quindi il client viene assegnato al sito ABC.  
 
-###  <a name="a-namebkmkconfigureibcmmpato-configure-clients-for-internet-based-client-management-after-client-installation"></a><a name="BKMK_ConfigureIBCM_MP"></a> Come configurare i client per la gestione client basata su Internet dopo l'installazione  
+###  <a name="BKMK_ConfigureIBCM_MP"></a> Come configurare i client per la gestione client basata su Internet dopo l'installazione  
  Per assegnare il punto di gestione basato su Internet dopo l'installazione del client, usare una delle seguenti procedure. La prima richiede la configurazione manuale ed è appropriata per alcuni client. La seconda è più appropriata per la configurazione di molti client.  
 
 #### <a name="to-configure-clients-for-internet-based-client-management-after-client-installation-by-assigning-the-internet-based-management-point-in-configuration-manager-properties"></a>Per configurare i client per la gestione client basata su Internet dopo l'installazione tramite l'assegnazione del punto di gestione basato su Internet nelle proprietà di Configuration Manager  
@@ -445,7 +445,7 @@ Controllare i prerequisiti e quindi seguire le istruzioni della sezione [Come in
 
  Potrebbe essere necessario riavviare il client per rendere effettive le modifiche.  
 
-##  <a name="a-namebkmkprovisiona-how-to-provision-client-installation-properties-group-policy-and-software-update-based-client-installation"></a><a name="BKMK_Provision"></a> Come eseguire il provisioning delle proprietà di installazione client (Criteri di gruppo e installazione client basata su aggiornamento software)  
+##  <a name="BKMK_Provision"></a> Come eseguire il provisioning delle proprietà di installazione client (Criteri di gruppo e installazione client basata su aggiornamento software)  
  È possibile usare Criteri di gruppo di Windows per eseguire il provisioning dei computer con le proprietà di installazione client di Configuration Manager. Queste proprietà vengono archiviate nel Registro di sistema del computer e lette al momento dell'installazione del software client. Questa procedura normalmente non è richiesta, ma potrebbe essere necessaria in alcuni scenari di installazione client, come i seguenti:  
 
 -   Si stanno usando le impostazioni dei Criteri di gruppo o i metodi di installazione client basati su aggiornamento software e lo schema di Active Directory per Configuration Manager non è stato esteso.  

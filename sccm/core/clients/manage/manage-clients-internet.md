@@ -1,13 +1,13 @@
 ---
 title: Gestire i client su Internet - Configuration Manager | Microsoft Docs
 description: Informazioni sulla gestione dei client con gateway di gestione cloud e sulla gestione basata su Internet in Configuration Manager.
-ms.date: 11/18/2016
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-client
 ms.assetid: c667d6af-80c4-485f-910c-896c0171fd00
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b

@@ -2,7 +2,7 @@
 title: 'Scenario di esempio: distribuire i client Windows Embedded | Microsoft Docs'
 description: Scenario di esempio per la distribuzione e la gestione dei client di System Center Configuration Manager in dispositivi con Windows Embedded.
 ms.custom: na
-ms.date: 01/12/2016
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na

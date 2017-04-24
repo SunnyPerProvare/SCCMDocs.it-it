@@ -2,7 +2,7 @@
 title: Gestire i client Linux e UNIX | Microsoft Docs
 description: Gestire i client su server Linux e UNIX in System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/26/2016
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,8 +13,8 @@ ms.topic: article
 ms.assetid: 948664f2-239d-47a8-92fc-f8efeebd5796
 caps.latest.revision: 7
 caps.handback.revision: 0
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
@@ -29,7 +29,7 @@ ms.lasthandoff: 12/30/2016
 
 Quando si gestiscono server Linux e UNIX con System Center Configuration Manager, è possibile configurare raccolte, finestre di manutenzione e impostazioni client per semplificare la gestione dei server. Inoltre, anche se il client di Configuration Manager per Linux e UNIX non ha un'interfaccia utente, è possibile forzarne manualmente il polling dei criteri client.
 
-##  <a name="a-namebkmkcollectionsforlnua-collections-of-linux-and-unix-servers"></a><a name="BKMK_CollectionsforLnU"></a> Collections of Linux and UNIX servers  
+##  <a name="BKMK_CollectionsforLnU"></a> Collections of Linux and UNIX servers  
  Usare le raccolte per gestire i gruppi di server Linux e UNIX in modo analogo all'uso delle raccolte per gestire altri tipi di client. Le raccolte possono essere raccolte di appartenenza diretta o basate su query che identificano i sistemi operativi client, le configurazioni hardware o altri dettagli relativi ai client archiviati nel database del sito. Ad esempio, è possibile usare le raccolte che includono server Linux e UNIX per gestire quanto segue:  
 
 -   Impostazioni client  
@@ -48,10 +48,10 @@ Quando si gestiscono server Linux e UNIX con System Center Configuration Manager
 
  Quando si crea una raccolta personalizzata per server Linux e UNIX, includere le query relative alle regole di appartenenza contenenti l'attributo Didascalia per l'attributo Sistema operativo. Per informazioni sulla creazione delle raccolte, vedere [Come creare le raccolte in System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md).  
 
-##  <a name="a-namebkmkmaintenancewindowsforlnua-maintenance-windows-for-linux-and-unix-servers"></a><a name="BKMK_MaintenanceWindowsforLnU"></a> Maintenance windows for Linux and UNIX servers  
+##  <a name="BKMK_MaintenanceWindowsforLnU"></a> Maintenance windows for Linux and UNIX servers  
  Il client di Configuration Manager per i server Linux e UNIX supporta l'uso di [finestre di manutenzione](../../../core/clients/manage/collections/use-maintenance-windows.md). Questo supporto è invariato rispetto a quello per i client basati su Windows.  
 
-##  <a name="a-namebkmkclientsettingsforlnua-client-settings-for-linux-and-unix-servers"></a><a name="BKMK_ClientSettingsforLnU"></a> Client settings for Linux and UNIX servers  
+##  <a name="BKMK_ClientSettingsforLnU"></a> Client settings for Linux and UNIX servers  
  È possibile [configurare le impostazioni client](../../../core/clients/deploy/configure-client-settings.md) che si applicano a server Linux e UNIX in modo analogo alla configurazione delle impostazioni per gli altri client.  
 
  Per impostazione predefinita l'opzione **Impostazioni agente client predefinite** si applica a server Linux e UNIX. È anche possibile creare impostazioni client personalizzate e distribuirle alle raccolte di client specifici.  
@@ -60,7 +60,7 @@ Quando si gestiscono server Linux e UNIX con System Center Configuration Manager
 
  Ad esempio, un'impostazione del dispositivo client personalizzata che abilita e configura le impostazioni di controllo remoto viene ignorata dal server Linux e UNIX, perché il client per Linux e UNIX non supporta il controllo remoto.  
 
-##  <a name="a-namebkmkpolicyforlnua-computer-policy-for-linux-and-unix-servers"></a><a name="BKMK_PolicyforLnU"></a> Computer policy for Linux and UNIX servers  
+##  <a name="BKMK_PolicyforLnU"></a> Computer policy for Linux and UNIX servers  
  Il client per i server Linux e UNIX esegue periodicamente il polling dei criteri del computer nel relativo sito per recuperare informazioni sulle configurazioni richieste e per controllare le distribuzioni.  
 
  È anche possibile imporre il client a un server Linux o UNIX per eseguire il polling immediato dei criteri del computer. A tale scopo, usare le credenziali **root** nel server per eseguire il comando seguente: **/opt/microsoft/configmgr/bin/ccmexec -rs policy**  
@@ -70,7 +70,7 @@ Quando si gestiscono server Linux e UNIX con System Center Configuration Manager
 > [!NOTE]  
 >  Il client di Configuration Manager per Linux e UNIX non richiede né elabora mai i criteri utente.  
 
-##  <a name="a-namebkmkmanagelinuxcertsa-how-to-manage-certificates-on-the-client-for-linux-and-unix"></a><a name="BKMK_ManageLinuxCerts"></a> How to manage certificates on the client for Linux and UNIX  
+##  <a name="BKMK_ManageLinuxCerts"></a> How to manage certificates on the client for Linux and UNIX  
  Dopo aver installato il client per Linux e UNIX, è possibile usare lo strumento **certutil** per aggiornare il client con un nuovo certificato PKI e per importare un nuovo elenco di revoche di certificati (CRL). Quando si installa il client per Linux e UNIX, questo strumento viene inserito in **/opt/microsoft/configmgr/bin/certutil**. 
 
  Per gestire i certificati, in ogni client eseguire lo strumento certutil con una delle opzioni seguenti:  

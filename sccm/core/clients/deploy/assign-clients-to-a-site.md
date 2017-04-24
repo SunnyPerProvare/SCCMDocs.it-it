@@ -2,7 +2,7 @@
 title: Assegnare i client a un sito | Microsoft Docs
 description: Assegnare client a un sito in System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/16/2016
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,8 +12,8 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: ba9b623f-6e86-4006-93f2-83d563de0cd0
 caps.latest.revision: 10
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 08afca8b422474639cbdb860e555fe0da27361a4
@@ -56,7 +56,7 @@ Se non è possibile completare l'assegnazione del client al sito, il software cl
 > [!NOTE]  
 >  Se si assegna manualmente un computer client a un codice sito di Configuration Manager inesistente, l'assegnazione al sito avrà esito negativo.   
 
-##  <a name="a-namebkmkautomaticassignmenta-using-automatic-site-assignment-for-computers"></a><a name="BKMK_AutomaticAssignment"></a> Utilizzo dell'assegnazione automatica del sito per i computer  
+##  <a name="BKMK_AutomaticAssignment"></a> Utilizzo dell'assegnazione automatica del sito per i computer  
  L'assegnazione automatica del sito può verificarsi durante la distribuzione client o quando si seleziona **Trova sito** nella scheda **Avanzate** delle **Proprietà di Configuration Manager** nel Pannello di controllo. Il client di Configuration Manager confronta il proprio percorso di rete con i limiti configurati nella gerarchia di Configuration Manager. Se il percorso di rete del client rientra in un gruppo di limiti abilitato per l'assegnazione del sito, oppure la gerarchia è configurata per un sito di fallback, il client viene automaticamente assegnato a tale sito senza dover specificare un codice del sito.  
 
  È possibile configurare i limiti utilizzando uno o più degli elementi seguenti:  

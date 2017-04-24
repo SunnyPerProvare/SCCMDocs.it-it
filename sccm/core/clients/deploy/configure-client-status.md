@@ -2,7 +2,7 @@
 title: Configurare lo stato del client | Microsoft Docs
 description: Selezionare le impostazioni relative allo stato del client in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,8 +13,8 @@ ms.topic: get-started-article
 ms.assetid: a2275ba2-c83d-43e7-90ed-418963a707fe
 caps.latest.revision: 6
 caps.handback.revision: 0
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
@@ -29,7 +29,7 @@ ms.lasthandoff: 12/16/2016
 
 Prima di poter monitorare lo stato del client di System Center Configuration Manager e risolvere i problemi rilevati, è necessario configurare il sito in modo da specificare i parametri usati per contrassegnare i client come inattivi e configurare le opzioni in modo da ricevere un avviso se l'attività del client scende sotto una specifica soglia. È inoltre possibile disattivare l'opzione che consente di monitorare e aggiornare automaticamente gli eventuali problemi nel computer rilevati dallo stato del client.  
 
-##  <a name="a-namebkmk1a-to-configure-client-status"></a><a name="BKMK_1"></a> Per configurare lo stato del client  
+##  <a name="BKMK_1"></a> Per configurare lo stato del client  
 
 1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
@@ -56,7 +56,7 @@ Prima di poter monitorare lo stato del client di System Center Configuration Man
 
 5.  Fare clic su **OK** per salvare le proprietà e chiudere la finestra di dialogo **Proprietà impostazioni stato client** .  
 
-##  <a name="a-namebkmkschedulea-to-configure-the-schedule-for-client-status"></a><a name="BKMK_Schedule"></a> Per configurare la pianificazione per lo stato del client  
+##  <a name="BKMK_Schedule"></a> Per configurare la pianificazione per lo stato del client  
 
 1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
@@ -67,7 +67,7 @@ Prima di poter monitorare lo stato del client di System Center Configuration Man
     > [!NOTE]  
     >  Quando si modifica pianificazione per gli aggiornamenti dello stato del client, l'aggiornamento non sarà effettivo fino all'aggiornamento dello stato client successivo (per la pianificazione configurata in precedenza).  
 
-##  <a name="a-namebkmk2a-to-configure-alerts-for-client-status"></a><a name="BKMK_2"></a> Per configurare gli avvisi per lo stato del client  
+##  <a name="BKMK_2"></a> Per configurare gli avvisi per lo stato del client  
 
 1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 
@@ -95,7 +95,7 @@ Prima di poter monitorare lo stato del client di System Center Configuration Man
 
 7.  Fare clic su **OK** per chiudere la finestra di dialogo *Proprietà &lt;nome raccolta\>*** **.  
 
-##  <a name="a-namebkmk3a-to-exclude-computers-from-automatic-remediation"></a><a name="BKMK_3"></a> Per escludere i computer da monitoraggio e aggiornamento automatici  
+##  <a name="BKMK_3"></a> Per escludere i computer da monitoraggio e aggiornamento automatici  
 
 1.  Aprire l'editor del Registro di sistema nel computer client per il quale si desidera disattivare il monitoraggio e aggiornamento automatico.  
 
