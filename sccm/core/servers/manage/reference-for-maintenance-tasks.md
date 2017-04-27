@@ -17,9 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
-ms.openlocfilehash: c3ca3b895d54b6dc886068b92b39d0d95c466de2
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: d94acac84f052a01de9d9c9f65f237c0006c45b8
+ms.openlocfilehash: a2d4420c2274a9b1ceb47ffd267849fdb5a55a61
+ms.lasthandoff: 04/26/2017
 
 
 ---
@@ -147,7 +147,7 @@ Questa attività si applica ai dispositivi registrati da Microsoft Intune (modal
 -   **Sito primario**: abilitato    
 -   **Sito secondario**: abilitato  
 
-**Elimina cronologia attività di notifica obsolete**: usare questa attività per eliminare le informazioni relative alle attività di notifica client dal database del sito quando il database non è stato aggiornato per un determinato periodo. Per altre informazioni sulla notifica client, vedere [Attività di distribuzione client per System Center Configuration Manager](../../../core/clients/deploy/client-deployment-tasks.md).  
+**Elimina cronologia attività di notifica obsolete**: usare questa attività per eliminare le informazioni relative alle attività di notifica client dal database del sito quando il database non è stato aggiornato per un determinato periodo. Per altre informazioni sulla notifica client, vedere [Attività di distribuzione client per System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md).  
 
 -   Sito di amministrazione centrale: non disponibile    
 -   **Sito primario**: abilitato    

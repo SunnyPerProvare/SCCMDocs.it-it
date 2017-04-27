@@ -2,7 +2,7 @@
 title: Gestire le raccolte | Microsoft Docs
 description: "Eseguire le attività comuni di gestione delle raccolte in System Center Configuration Manager."
 ms.custom: na
-ms.date: 2/22/2017
+ms.date: 4/25/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: andredm7
 ms.author: andredm
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
-ms.openlocfilehash: b41b50c75f1b89c8fc712b53988bd8e24813106d
+ms.sourcegitcommit: d94acac84f052a01de9d9c9f65f237c0006c45b8
+ms.openlocfilehash: 4d44f98eb0755619cdd2101203a13725186b835b
+ms.lasthandoff: 04/26/2017
 
 
 ---
@@ -40,7 +41,7 @@ Usare le informazioni generali di questo argomento per eseguire le attività di 
 |---------------------|-------------|----------------------|  
 |**Mostra i membri**|Visualizza tutte le risorse che sono membri della raccolta selezionata in un nodo temporaneo nel nodo **Dispositivi** .|Nessuna informazione aggiuntiva.|  
 |**Aggiungi elementi selezionati**|Fornisce le opzioni seguenti per eseguire una delle operazioni indicate:<br /><br /> - <br />                    **Aggiungi elementi selezionati alla raccolta dispositivi esistente**: apre la finestra di dialogo **Seleziona raccolta** in cui è possibile selezionare la raccolta a cui aggiungere i membri della raccolta selezionata. La raccolta selezionata viene inclusa in questa raccolta tramite la regola di appartenenza **Includi raccolte** .<br /><br /> - **Aggiungi elementi selezionati alla nuova raccolta dispositivi**: apre la **Creazione guidata raccolta dispositivi** in cui è possibile creare una nuova raccolta. La raccolta selezionata viene inclusa in questa raccolta tramite la regola di appartenenza **Includi raccolte** .|[Come creare le raccolte in System Center Configuration Manager](../../../../core/clients/manage/collections/create-collections.md)|  
-|**Installa client**|Apre la procedura guidata **Installa client** che usa l'installazione push client per installare un client di Configuration Manager in tutti i computer nella raccolta selezionata.|[Attività di distribuzione client per System Center Configuration Manager](../../../../core/clients/deploy/client-deployment-tasks.md)|  
+|**Installa client**|Apre la procedura guidata **Installa client** che usa l'installazione push client per installare un client di Configuration Manager in tutti i computer nella raccolta selezionata.|[Come distribuire i client nei computer Windows](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md)|  
 |**Gestisci richieste affinità**|Apre la finestra di dialogo **Gestire le richieste di affinità utente dispositivo** in cui è possibile approvare o rifiutare richieste in sospeso per stabilire le affinità utente dispositivo per i dispositivi nella raccolta selezionata.|[Collegare utenti e dispositivi mediante l'affinità utente-dispositivo in System Center Configuration Manager](../../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md)|  
 |**Cancella distribuzioni PXE richieste**|Cancella tutte le distribuzioni di avvio PXE richieste da tutti i membri della raccolta selezionata.|[Introduzione alla distribuzione del sistema operativo](../../../../osd/understand/introduction-to-operating-system-deployment.md)|  
 |**Aggiorna appartenenza**|Valuta l'appartenenza per la raccolta selezionata. Per le raccolte con molti membri, il completamento di questo aggiornamento potrebbe richiedere tempo. Usare l'azione **Aggiorna** per aggiornare la visualizzazione con i nuovi membri delle raccolte dopo il completamento dell'aggiornamento.|Nessuna informazione aggiuntiva.|  
@@ -71,7 +72,7 @@ Usare le informazioni generali di questo argomento per eseguire le attività di 
 |**Simula distribuzione**|Apre la **Simulazione guidata distribuzione applicazione** che consente di testare i risultati di una distribuzione di applicazione senza installare o disinstallare l'applicazione.|[Come simulare distribuzioni di applicazioni con System Center Configuration Manager](../../../../apps/deploy-use/simulate-application-deployments.md)|  
 |**Distribuisci**|Vengono visualizzate le opzioni seguenti:<br /><br /> - **Applicazione** - Apre la **Distribuzione guidata del software** in cui è possibile selezionare e configurare la distribuzione di un'applicazione nella raccolta selezionata.<br /><br /> - <br />                    **Programma** - Apre la **Distribuzione guidata del software** in cui è possibile selezionare e configurare la distribuzione di un pacchetto e un programma nella raccolta selezionata.<br /><br /> - **Linee di base di configurazione** - Apre la finestra di dialogo **Distribuisci linee di base di configurazione** in cui è possibile configurare la distribuzione di una o più linee di base di configurazione nella raccolta selezionata.|[Come distribuire le applicazioni con System Center Configuration Manager](../../../../apps/deploy-use/deploy-applications.md)<br /><br /> [Pacchetti e programmi in System Center Configuration Manager](../../../../apps/deploy-use/packages-and-programs.md)<br /><br /> [Come distribuire linee di base di configurazione in System Center Configuration Manager](../../../../compliance/deploy-use/deploy-configuration-baselines.md)|  
 
-##  <a name="a-namebkmkcollpropa-collection-properties"></a><a name="BKMK_CollProp"></a> Proprietà della raccolta  
+##  <a name="BKMK_CollProp"></a> Proprietà della raccolta  
  Quando si apre la finestra di dialogo **Proprietà** per una raccolta, è possibile visualizzare e configurare le proprietà seguenti per la raccolta.  
 
 |Nome scheda|Altre informazioni|  
@@ -85,9 +86,4 @@ Usare le informazioni generali di questo argomento per eseguire le attività di 
 |**Gruppi di punti di distribuzione**|Consente di associare uno o più gruppi di punti di distribuzione ai membri della raccolta selezionata. Per altre informazioni, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
 |**Sicurezza**|Visualizza gli utenti amministratori che dispongono di autorizzazioni per la raccolta selezionata da ambiti di protezione e ruoli associati.|  
 |**Monitoraggioaggio**|Consente di determinare quando vengono generati avvisi per lo stato del client ed Endpoint Protection. Per altre informazioni, vedere [Come configurare lo stato del client in System Center Configuration Manager](../../../../core/clients/deploy/configure-client-status.md) e [Come monitorare Endpoint Protection in System Center Configuration Manager](../../../../protect/deploy-use/monitor-endpoint-protection.md).|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
