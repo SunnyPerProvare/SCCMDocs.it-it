@@ -58,14 +58,10 @@
 ### [Creare una sequenza di attività personalizzata](deploy-use/create-a-custom-task-sequence.md)
 ### [Creare una sequenza di attività per distribuzioni non di sistema operativo](deploy-use/create-a-task-sequence-for-non-operating-system-deployments.md)
 ### [Passaggi della sequenza di attività per la gestione della conversione da BIOS a UEFI](deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md)
+### [Pre-provisioning di BitLocker in Windows PE](deploy-use/preprovision-bitlocker-in-windows-pe.md)
 
 ## [Creare un supporto per sequenza di attività](deploy-use/create-task-sequence-media.md)
 ### [Creare supporti autonomi](deploy-use/create-stand-alone-media.md)
 ### [Creare supporti pre-installati](deploy-use/create-prestaged-media.md)
 ### [Creare supporti di avvio](deploy-use/create-bootable-media.md)
 ### [Creare supporti di acquisizione](deploy-use/create-capture-media.md)
-
-
-<!--HONumber=Dec16_HO3-->
-
-
