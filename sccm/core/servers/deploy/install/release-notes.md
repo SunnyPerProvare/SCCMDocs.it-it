@@ -17,9 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: aca3525fc143b281f41c3d9bd20bb93b1d91f6ce
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
+ms.openlocfilehash: 44338c705e308896c5203be239c160a8220369a8
+ms.lasthandoff: 04/19/2017
 
 
 ---
@@ -234,4 +234,11 @@ Questo avviene solo quando si aggiunge la stessa **raccolta utenti** alla pagina
 Questo problema interessa l'accesso condizionale di System Center Configuration Manager per **Exchange locale** con l'aggiornamento 1602 e verrà risolto in un aggiornamento futuro.  
 
 **Soluzione alternativa**: aggiungere la **raccolta utenti** alla pagina **Raccolte di destinazione** prima di selezionare **Raccolta utenti** nella pagina **Raccolte esentate** oppure evitare di aggiungere la stessa **raccolta utenti** a entrambe le pagine.
+
+## <a name="endpoint-protection"></a>Endpoint Protection
+<!--  Product Studio bug 485370 added by Nathbarn 04 19 2017 -->
+### <a name="antimalware-policy-fails-to-apply-on-windows-server-2016-core"></a>Non è possibile applicare i criteri antimalware in Windows Server 2016 Core
+Non è possibile applicare i criteri antimalware in Windows Server 2016 Core.  Codice di errore: 0x80070002.  Manca una dipendenza per ConfigSecurityPolicy.exe.
+
+**Soluzione alternativa:**  nessuna.  Come amministratore, è possibile usare i criteri di gruppo per gestire le impostazioni per Windows Server 2016 Core.
 

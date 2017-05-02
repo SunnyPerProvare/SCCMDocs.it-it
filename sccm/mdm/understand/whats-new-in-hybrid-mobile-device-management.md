@@ -16,9 +16,9 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3eb48942c1259d2aa1b3c200fad73b39b11c0b8c
-ms.openlocfilehash: 51560360a0cb7ecb4a2b0d7eaeb4fdd62d6afc13
-ms.lasthandoff: 03/30/2017
+ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
+ms.openlocfilehash: 489defeae18c219fe2f717d5caa1f15bcdaf07cf
+ms.lasthandoff: 04/19/2017
 
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con System Center Configuration Manager e Microsoft Intune
@@ -37,11 +37,31 @@ Questo articolo illustra le nuove funzionalità di gestione dei dispositivi mobi
 |**Novità di Configuration Manager Technical Preview**| Tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Technical Preview specificata. Per provare queste funzionalità, è necessario installare la versione di Technical Preview specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md).|
 |**Novità di Configuration Manager (Current Branch)**| Tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata, ad esempio la versione 1511 o 1602. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, è necessario eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere l'articolo relativo agli [aggiornamenti a System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
 
-## <a name="new-hybrid-features-in-march-2017"></a>Nuove funzionalità ibride (marzo 2017)
+## <a name="april-2017"></a>Aprile 2017
 
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
 
-Le funzionalità di Intune seguenti, introdotte nel mese di marzo 2017, funzionano nelle distribuzioni ibride:
+- **MyApps disponibile per Managed Browser**
+
+  Microsoft MyApps offre ora un supporto migliore all'interno di Managed Browser. Gli utenti di Managed Browser che non sono assegnati alla gestione passeranno direttamente al servizio MyApps, in cui potranno accedere alle app SaaS con provisioning dell'amministratore. Gli utenti assegnati alla gestione di Intune continueranno a poter accedere a MyApps dal segnalibro di Managed Browser incorporato.
+
+- **Nuove icone per Managed Browser e il portale aziendale**
+
+  Managed Browser riceve icone aggiornate per le versioni sia Android che iOS dell'app. La nuova icona conterrà il badge Intune aggiornato per renderla più coerente con altre app in Enterprise Mobility + Security (EM + S). È possibile visualizzare la nuova icona per Managed Browser nella [pagina delle novità dell'interfaccia utente dell'app Intune](/intune/whats-new/whats-new-in-intune-app-ui.md).
+
+  Anche il portale aziendale riceve icone aggiornate per le versioni di Android, iOS e Windows dell'app per migliorare la coerenza con altre applicazioni in EM+S. Queste icone verranno rilasciate gradualmente tra piattaforme da aprile alla fine di maggio.
+
+- **Indicatore dello stato di accesso nel portale aziendale Android**
+
+  Un aggiornamento per l'app del portale aziendale Android mostra un indicatore dello stato di accesso quando l'utente avvia o riprende l'uso dell'app. L'indicatore attraversa nuovi stati, a partire da "Connessione in corso...", quindi "Accesso in corso..." e infine "Verifica dei requisiti di protezione..." prima di consentire all'utente di accedere all'app. È possibile visualizzare le nuove schermate per l'app Portale aziendale di Intune per Android nella [pagina delle novità dell'interfaccia utente dell'app Intune](/intune/whats-new/whats-new-in-intune-app-ui.md).
+
+- **Bloccare l'accesso delle app a SharePoint Online**
+
+    È ora possibile creare un criterio di accesso condizionale basato su app per bloccare l'accesso delle applicazioni, a cui non sono stati applicati criteri di protezione di app, a [SharePoint Online](/InTune/deploy-use/mam-ca-for-sharepoint-online). Nello scenario di accesso condizionale basato su app, è possibile specificare le app che dovranno accedere a SharePoint Online usando il portale di Azure.
+
+## <a name="march-2017"></a>Marzo 2017
+
+### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
 
 - **Nuova esperienza utente per l'app Portale aziendale per Android**
 
@@ -53,7 +73,7 @@ Le funzionalità di Intune seguenti, introdotte nel mese di marzo 2017, funziona
   - Navigazione tra le app: in **Tutte le app** è disponibile una visualizzazione a schede di **In evidenza**, **Tutte** e **Categorie** per una navigazione più semplice.
   - Supporto: le schede **Dispositivi personali** e **Contatta l'IT** sono state aggiornate per migliorare la leggibilità.
 
-  Per altre informazioni su queste modifiche, vedere [Aggiornamenti dell'interfaccia utente per le applicazioni degli utenti finali in Intune](/intune/enduser/whats-new-in-intune-app-ui).
+  Per altre informazioni su queste modifiche, vedere [Aggiornamenti dell'interfaccia utente per le applicazioni degli utenti finali in Intune](/intune/whats-new/whats-new-in-intune-app-ui).
 
 - **Script di firma per l'app Portale aziendale di Windows 10**
 
@@ -109,12 +129,12 @@ Nella versione 1702 di Configuration Manager (Current Branch) sono disponibili a
 
     | Versione di Configuration Manager | Gestione delle licenze dei dispositivi supportata | Tipo di raccolta della distribuzione | Licenza richiesta |
     |-|-|-|-|
-    |Precedente la 1702|Sì|Utente|Licenza utente|
-    |Precedente la 1702|No|Utente|Licenza utente|
+    |Precedente la 1702|Sì|utente|Licenza utente|
+    |Precedente la 1702|No|utente|Licenza utente|
     |Precedente la 1702|Sì|Dispositivo|Licenza utente|
     |Precedente la 1702|No|Dispositivo|Licenza utente|
-    |1702 e versioni successive|Sì|Utente|Licenza utente|
-    |1702 e versioni successive|No|Utente|Licenza utente|
+    |1702 e versioni successive|Sì|utente|Licenza utente|
+    |1702 e versioni successive|No|utente|Licenza utente|
     |1702 e versioni successive|Sì|Dispositivo|Licenza dispositivo|
     |1702 e versioni successive|No|Dispositivo|Licenza utente|
 
@@ -134,11 +154,9 @@ Nella versione 1702 di Configuration Manager (Current Branch) sono disponibili a
 
     Per altre informazioni, vedere [Monitorare la conformità a Mobile Threat Defense](/sccm/mdm/deploy-use/monitor-mobile-threat-defense-compliance).
 
-## <a name="new-hybrid-features-in-february-2017"></a>Nuove funzionalità ibride (febbraio 2017)
+## <a name="february-2017"></a>Febbraio 2017
 
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
-
-Le funzionalità seguenti di Intune introdotte a febbraio 2017 funzionano nelle distribuzioni ibride:
 
 - **Modernizzazione del sito Web del portale aziendale**
 
@@ -166,11 +184,9 @@ Le funzionalità seguenti di Intune introdotte a febbraio 2017 funzionano nelle 
    
     Sono ora disponibili 42 impostazioni iOS aggiuntive che è possibile configurare come parte di un elemento di configurazione. La maggior parte delle impostazioni, 35 in tutto, è stata aggiunta per dispositivi iOS con supervisione. Per altre informazioni, vedere [Nuove impostazioni di conformità per dispositivi iOS](/sccm/core/get-started/capabilities-in-technical-preview-1702#new-compliance-settings-for-ios-devices).
 
-## <a name="new-hybrid-features-in-january-2017"></a>Nuove funzionalità ibride (gennaio 2017)
+## <a name="january-2017"></a>Gennaio 2017
 
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
-
-Le funzionalità seguenti di Intune introdotte in gennaio 2017 funzionano nelle distribuzioni ibride:
 
 - **Supporto di Android 7.1.1**
 
@@ -187,11 +203,9 @@ Le funzionalità seguenti di Intune introdotte in gennaio 2017 funzionano nelle 
   A partire dalla Technical Preview 1701 per la gestione ibrida dei dispositivi mobili, non è più necessario indicare versioni specifiche di Android e iOS quando si creano nuovi criteri e profili per i dispositivi gestiti in Intune. Con questa modifica, le distribuzioni ibride possono offrire il supporto più rapidamente per le nuove versioni di Android e iOS, senza attendere una nuova versione o un'estensione di Configuration Manager. Per altre informazioni, vedere [Non è più necessario specificare le versioni di Android e iOS nella creazione guidata](/sccm/core/get-started/capabilities-in-technical-preview-1701#android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm).
 
 
-## <a name="new-hybrid-features-in-december-2016"></a>Nuove funzionalità ibride (dicembre 2016)
+## <a name="december-2016"></a>Dicembre 2016
 
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
-
-Le funzionalità seguenti di Intune introdotte in dicembre 2016 funzionano nelle distribuzioni ibride.
 
 - **Multi-Factor Authentication al momento dell'iscrizione è stato trasferito nel portale di Azure**
 
@@ -218,11 +232,9 @@ Le funzionalità seguenti di Intune introdotte in dicembre 2016 funzionano nelle
   | Reimpostazione del passcode | | |        
 
 
-## <a name="new-hybrid-features-in-november-2016"></a>Nuove funzionalità ibride (novembre 2016)
+## <a name="november-2016"></a>Novembre 2016
 
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
-
-Le funzionalità seguenti di Intune introdotte in novembre 2016 funzionano nelle distribuzioni ibride.
 
 - **Nuova app Portale aziendale di Microsoft Intune disponibile per dispositivi Windows 10**
 

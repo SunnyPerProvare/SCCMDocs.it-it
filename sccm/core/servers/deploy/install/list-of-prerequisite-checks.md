@@ -2,7 +2,7 @@
 title: Controlli dei prerequisiti | Microsoft Docs
 description: Esaminare i controlli dei prerequisiti disponibili per System Center Configuration Manager. Include i controlli per i privilegi di protezione.
 ms.custom: na
-ms.date: 3/1/2017
+ms.date: 4/17/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,16 +16,16 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 496c1444822a4601fad67f421115a609e976386d
-ms.openlocfilehash: 5a8f4a84ef5b4ccb4434ca8eb260c1c7899207ab
-ms.lasthandoff: 03/01/2017
+ms.sourcegitcommit: dda2f4c01078fbbd174cbcb30357554c24f6abeb
+ms.openlocfilehash: 14834f62ffaa8fcba5ddb7536a0b76e18b557e53
+ms.lasthandoff: 04/17/2017
 
 ---
 # <a name="list-of-prerequisite-checks-for-system-center-configuration-manager"></a>Elenco dei controlli dei prerequisiti per System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponibili. 
+Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponibili.
 
 Per informazioni sull'uso del controllo dei prerequisiti, vedere l'argomento relativo al [controllo dei prerequisiti](prerequisite-checker.md).  
 
@@ -117,7 +117,7 @@ Nella tabella seguente sono elencati i controlli eseguiti dal controllo dei prer
 |**Appartenenza al dominio**|Verifica che il computer di Configuration Manager sia membro di un dominio di Windows.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario, <br>Provider SMS, <br>SQL Server|
 |**Appartenenza al dominio**|Verifica che il computer di Configuration Manager sia membro di un dominio di Windows.|Avviso|Punto di gestione, <br>Punto di distribuzione|
 |**Unità FAT nel server del sito**|Verifica se l'unità disco è formattata con il file system FAT. Per una protezione migliore, installare i componenti del server del sito in unità disco formattate con il file system NTFS.|Avviso|Sito primario|
-|**Spazio su disco disponibile nel server del sito**|Per installare il server del sito, il computer server del sito deve avere almeno 5 GB di spazio libero su disco. Se si installa il ruolo del sistema del sito Provider SMS nello stesso computer, sarà necessario disporre di 1 GB aggiuntivo di spazio libero.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|
+|**Spazio su disco disponibile nel server del sito**|Per installare il server del sito, il computer server del sito deve avere almeno 15 GB di spazio libero su disco. Se si installa il ruolo del sistema del sito Provider SMS nello stesso computer, sarà necessario disporre di 1 GB aggiuntivo di spazio libero.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|
 |**Riavvio del sistema in sospeso**|Verifica se un altro programma necessita del riavvio del server prima dell'esecuzione del programma di installazione.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario, <br>Console di Configuration Manager, <br>Provider SMS, <br>SQL Server, <br>Punto di gestione, <br>Punto di distribuzione|
 |**Controller di dominio di sola lettura**|I server di database del sito e i server dei siti secondari non sono supportati in un controller di dominio di sola lettura. Per altre informazioni, vedere l'articolo relativo ai [problemi riscontrati durante l'installazione di SQL Server in un controller di dominio](http://go.microsoft.com/fwlink/p/?LinkId=264856) nella Microsoft Knowledge Base.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|
 |**Estensioni dello schema**|Determina se lo schema di Servizi di dominio Active Directory è stato esteso e, in tale caso, determina la versione delle estensioni dello schema usate. Le estensioni dello schema di Active Directory di Configuration Manager non sono necessarie per l'installazione del server del sito, ma sono consigliate per un uso più completo di tutte le funzionalità di Configuration Manager. Per altre informazioni sui vantaggi offerti dall'estensione dello schema, vedere [Preparare Active Directory per la pubblicazione di siti](../../../../core/plan-design/network/extend-the-active-directory-schema.md).|Avviso|Sito di amministrazione centrale, <br>Sito primario|

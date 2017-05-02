@@ -13,13 +13,13 @@ ms.topic: article
 ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 caps.latest.revision: 15
 caps.handback.revision: 0
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: bd2cf7b0df4a1f50c006e8280bf59ea91f1b4477
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: 4eee9731a4a27328c47c0d15931cab28cf520a18
+ms.openlocfilehash: d1d2ec7c053d13ebaeb00d0dfeb126716b5f7ae5
+ms.lasthandoff: 04/18/2017
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informazioni sulle impostazioni client in System Center Configuration Manager
@@ -505,7 +505,7 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
 
     -   Scegliere l'icona **Nuovo** per aggiungere un nuovo tipo di file nell'inventario. In seguito specificare le informazioni seguenti nella finestra di dialogo **Proprietà file in inventario**:  
 
-        -   **Nome**: specificare un nome per il file che si vuole includere nell'inventario. È possibile usare il carattere **\** per rappresentare qualsiasi stringa di testo e il carattere**?**per rappresentare qualsiasi carattere. Ad esempio, se si vuole includere nell'inventario tutti i file con estensione doc, specificare il nome del file**\*.doc**.  
+        -   **Nome**: specificare un nome per il file che si vuole includere nell'inventario. È possibile usare il carattere **\** per rappresentare qualsiasi stringa di testo e il carattere **?** per rappresentare qualsiasi carattere. Ad esempio, se si vuole includere nell'inventario tutti i file con estensione doc, specificare il nome del file **\*.doc**.  
 
         -   **Percorso**: fare clic su **Imposta** per aprire la finestra di dialogo **Proprietà percorso**. È possibile configurare l'inventario software per cercare il file specificato in tutti i dischi rigidi del client, cercare un percorso specifico (ad esempio **:\Cartella**) o una variabile specifica (ad esempio, *%windir%*). È anche possibile cercare tutte le sottocartelle nel percorso specificato.  
 
@@ -528,7 +528,7 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
 
     -   Nella finestra di dialogo **Proprietà file recuperato** immettere le informazioni seguenti:  
 
-        -   **Nome**: specificare un nome per il file che si vuole raccogliere. È possibile usare il carattere **\** per rappresentare qualsiasi stringa di testo e il carattere**?** per rappresentare qualsiasi carattere.  
+        -   **Nome**: specificare un nome per il file che si vuole raccogliere. È possibile usare il carattere **\** per rappresentare qualsiasi stringa di testo e il carattere **?** per rappresentare qualsiasi carattere.  
 
         -   **Percorso**: fare clic su **Imposta** per aprire la finestra di dialogo **Proprietà percorso**. È possibile configurare l'inventario software per cercare il file che si vuole raccogliere in tutti i dischi rigidi del client, cercare un percorso specifico (ad esempio **C:\Cartella**) o una variabile specifica (ad esempio, *%windir%*). È anche possibile cercare tutte le sottocartelle nel percorso specificato.  
 

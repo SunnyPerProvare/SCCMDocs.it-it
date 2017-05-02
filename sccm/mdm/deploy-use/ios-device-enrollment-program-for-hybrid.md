@@ -16,9 +16,9 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
-ms.openlocfilehash: 2ace86cc842d6a3a5b2114c4e4c33c2d65c2f256
-ms.lasthandoff: 03/21/2017
+ms.sourcegitcommit: 4eee9731a4a27328c47c0d15931cab28cf520a18
+ms.openlocfilehash: 555da7187b505a926731350d16787bc02d28dad3
+ms.lasthandoff: 04/18/2017
 
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Registrazione al programma DEP (Device Enrollment Program) per iOS per le distribuzioni ibride con Configuration Manager
@@ -75,12 +75,14 @@ Le aziende possono acquistare dispositivi iOS tramite il programma DEP (Device E
             > Per poter richiedere token utente, DEP con affinità utente richiede un endpoint misto/nome utente WS-Trust 1.3 Active Directory Federation Services.
 
             -   **Nessuna affinità utente**: il dispositivo non è associato a un utente. Usare questa associazione per i dispositivi che eseguono attività senza accedere ai dati utente locali. Le app che richiedono l'associazione utente non funzioneranno.  
+             ![Schermata di nome profilo DEP, descrizione e prompt Affinità utente](../media/dep-general.png)
 
-    2.  On the **Programma di registrazione dispositivi** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
+    2.  Nella pagina **Impostazioni del programma di registrazione dispositivi** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
         -   **Reparto**:questa informazione viene visualizzata quando gli utenti toccano "Informazioni sulla configurazione" durante l'attivazione.  
 
-        -   **Numero di telefono per supporto tecnico**: informazione visualizzata quando l'utente fa clic sul pulsante **Richiesta di assistenza** durante l'attivazione.  
+        -   **Numero di telefono per supporto tecnico**: informazione visualizzata quando l'utente fa clic sul pulsante **Richiesta di assistenza** durante l'attivazione.
+       ![Schermata di assegnazione del profilo DEP ai dispositivi iOS](../media/dep-settings.png)
 
         -   **Modalità di preparazione**: questo stato viene impostato durante l'attivazione e non può essere modificato senza ripristinare le impostazioni predefinite del dispositivo:  
 
@@ -105,6 +107,7 @@ Le aziende possono acquistare dispositivi iOS tramite il programma DEP (Device E
         -   **Zoom**: se l'opzione è abilitata, Assistente configurazione richiede questo servizio durante l'attivazione
         -   **Siri**: se l'opzione è abilitata, Assistente configurazione richiede questo servizio durante l'attivazione  
         -   **Inviare i dati di diagnostica ad Apple**: se l'opzione è abilitata, Assistente configurazione richiede questo servizio durante l'attivazione  
+        ![Schermata di assegnazione del profilo DEP ai dispositivi iOS](../media/dep-setup-assistant.png)
 
     4.  Nella pagina **Gestione aggiuntiva** specificare se è possibile usare una connessione USB per le impostazioni di gestione aggiuntive. Quando si seleziona **Richiedi certificato**, è necessario importare un certificato di gestione dello strumento di configurazione di Apple da usare per questo profilo.  Impostare su **Non consentire** per evitare la sincronizzazione di file con iTunes o la gestione tramite Apple Configurator. È consigliabile impostare questa opzione su **Non consentire**, esportare eventuali altre configurazioni da Apple Configurator e quindi eseguire la distribuzione come profilo di configurazione iOS personalizzato anziché usare questa impostazione per consentire la distribuzione manuale con o senza un certificato.  
 
@@ -118,8 +121,11 @@ Le aziende possono acquistare dispositivi iOS tramite il programma DEP (Device E
     Andare nel [portale del programma di registrazione dispositivi](https://deploy.apple.com) (https://deploy.apple.com) e accedere con l'ID Apple aziendale. Passare a **Programma di distribuzione** > **Programma di registrazione dispositivi** > **Gestione dei dispositivi**. Specificare come **scegliere i dispositivi**, indicare le informazioni sul dispositivo e specificare i dettagli in base al **numero di serie**, al **numero di ordine**o **caricando un file CSV**. Quindi, selezionare **Assegna al server**, selezionare il <*NomeServer*> specificato al passaggio 3 e quindi fare clic su **OK**.  
 
 3.  **Sincronizzare i dispositivi gestiti da DEP**   
-    Nell'area di lavoro **cmshort** workspace, passare a **Tutti i dispositivi di proprietà dell'azienda** > **iOS** > **Informazioni sul dispositivo**. Nella scheda **Home** fare clic su **Sincronizzazione DEP**. Viene inviata una richiesta di sincronizzazione ad Apple. Al termine della sincronizzazione, vengono visualizzati i dispositivi gestiti da DEP. Viene aperta la finestra di dialogo **stato di registrazione** dei dispositivi gestiti è **Non contattato** finché il dispositivo non viene acceso e non viene eseguito Assistente configurazione per la registrazione del dispositivo.  
+    Nell'area di lavoro **Asset e conformità**, passare a **Tutti i dispositivi di proprietà dell'azienda** > **Dispositivi predichiarati**. Nella scheda **Home** fare clic su **Sincronizzazione DEP**. Viene inviata una richiesta di sincronizzazione ad Apple. Al termine della sincronizzazione, vengono visualizzati i dispositivi gestiti da DEP.
 
-4.  **Distribuire i dispositivi agli utenti**   
-    Ora è possibile distribuire i dispositivi di proprietà dell'azienda agli utenti. Quando un dispositivo iOS viene attivato, viene registrato per la gestione con Intune.
+4.  **Assegnare il profilo DEP**<br>Nell'area di lavoro **Asset e conformità**, passare a **Tutti i dispositivi di proprietà dell'azienda** > **iOS** > **Profili di registrazione**. Selezionare il profilo di registrazione DEP e quindi, nella scheda **Home**, fare clic su **Assegna a dispositivi**. Selezionare i dispositivi che useranno questo profilo di registrazione, fare clic su **Aggiungi**, quindi fare clic su **OK**.   
+     ![Schermata di assegnazione del profilo DEP ai dispositivi iOS](../media/dep-assign-profile.png)
+
+5.  **Distribuire i dispositivi agli utenti**   
+    Ora è possibile distribuire i dispositivi di proprietà dell'azienda agli utenti. Viene aperta la finestra di dialogo **stato di registrazione** dei dispositivi gestiti è **Non contattato** finché il dispositivo non viene acceso e non viene eseguito Assistente configurazione per la registrazione del dispositivo. Quando un dispositivo iOS viene attivato, viene registrato per la gestione con Intune.
 

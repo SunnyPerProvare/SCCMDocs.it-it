@@ -1,8 +1,8 @@
 ---
-title: Aggiornare i dispositivi Windows a una nuova versione | Microsoft Docs
-description: "Aggiornare automaticamente i dispositivi che eseguono Windows 10 Desktop, Windows 10 Mobile, o Windows 10 Holographic all&quot;edizione più recente."
+title: Aggiornare i dispositivi Windows a una versione differente con Configuration Manager | Microsoft Docs
+description: Aggiornare i dispositivi che eseguono Windows 10 Desktop, Windows 10 Mobile, o Windows 10 Holographic a un&quot;edizione differente con Configuration Manager.
 ms.custom: na
-ms.date: 11/18/2016
+ms.date: 04/18/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,8 +17,9 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
-ms.openlocfilehash: f14dfb77be7b53e74d53e0c1fc7e7f1731952d40
+ms.sourcegitcommit: 4eee9731a4a27328c47c0d15931cab28cf520a18
+ms.openlocfilehash: cfde0a43947013bbd3a1093688cee19fe309fd03
+ms.lasthandoff: 04/18/2017
 
 
 ---
@@ -28,7 +29,7 @@ ms.openlocfilehash: f14dfb77be7b53e74d53e0c1fc7e7f1731952d40
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-I **criteri di aggiornamento edizione** di System Center Configuration Manager consentono di aggiornare automaticamente i dispositivi che eseguono una delle versioni seguenti di Windows 10 a un'edizione più recente:
+I **criteri di aggiornamento edizione** di System Center Configuration Manager consentono di aggiornare automaticamente i dispositivi che eseguono una delle versioni seguenti di Windows 10 a un'edizione differente:
 
 - Windows 10 Desktop
 - Windows 10 Mobile
@@ -92,9 +93,4 @@ I nuovi criteri verranno visualizzati nel nodo **Aggiornamento edizione Windows 
 È possibile monitorare la distribuzione appena creata dal nodo **Distribuzioni** dell'area di lavoro **Monitoraggio** .  
 
  Quando i criteri raggiungono un PC Windows specificato e vengono valutati, il PC viene riavviato entro due ore per applicare l'aggiornamento. Informare tutti gli utenti interessati dalla distribuzione dei criteri o pianificare la distribuzione dei criteri in ore non lavorative.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -17,9 +17,9 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: aa8924a013ebdbee888cab33001fddbe7ad2d67e
-ms.openlocfilehash: a0353c49360cd99bc92b4546e12a52c3d13d1d14
-ms.lasthandoff: 03/30/2017
+ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
+ms.openlocfilehash: bcf337d2abbcd5aad0f99098f6afd4a73ada3a0b
+ms.lasthandoff: 04/19/2017
 
 
 ---
@@ -28,7 +28,7 @@ ms.lasthandoff: 03/30/2017
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-I profili di posta elettronica supportano Microsoft Intune per consentire il provisioning di dispositivi con restrizioni e profili di posta elettronica usando Exchange ActiveSync. In questo modo gli utenti possono accedere alla posta elettronica aziendale dai propri dispositivi dopo aver eseguito pochissime operazioni di configurazione.  
+Usando Microsoft Intune ed Exchange ActiveSync è possibile configurare i dispositivi con profili di posta elettronica e restrizioni. In questo modo gli utenti possono accedere alla posta elettronica aziendale dai propri dispositivi dopo aver eseguito pochissime operazioni di configurazione.  
 
  È possibile configurare i seguenti tipi di dispositivi con profili di posta elettronica:  
 
@@ -40,139 +40,140 @@ I profili di posta elettronica supportano Microsoft Intune per consentire il pro
 - Samsung KNOX Standard (4 e versioni successive)
 - Android for Work
 
-Per distribuire profili di posta elettronica ai dispositivi, è necessario che questi siano registrati in Intune. Per informazioni su come registrare i dispositivi, vedere [Gestire i dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).
+Per distribuire profili di posta elettronica ai dispositivi, è necessario registrare questi ultimi in Intune. Per informazioni su come registrare i dispositivi, vedere [Gestire i dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).
 
->[!NOTE]
->Intune offre due profili di posta elettronica Android for Work, uno per Gmail e uno per Nine Work. Queste app sono disponibili in Google Play Store e possono connettersi a Exchange. Per abilitare la connettività della posta elettronica, distribuire una di queste app nei dispositivi dell'utente. In seguito creare e distribuire il profilo appropriato. Particolari app di posta elettronica, ad esempio Nine Work, potrebbero non essere gratuite. Rivedere i dettagli della licenza dell'app o contattare la società produttrice per chiedere chiarimenti.
+> [!NOTE]
+> Intune offre due profili di posta elettronica Android for Work, uno per Gmail e l'altro per l'app di posta elettronica Nine Work. Queste app sono disponibili in Google Play Store e possono connettersi a Exchange. Per abilitare la connettività della posta elettronica, distribuire una di queste app nei dispositivi dell'utente. In seguito creare e distribuire il profilo appropriato. App di posta elettronica come Nine Work potrebbero non essere gratuite. Rivedere i dettagli della licenza dell'app o contattare la società produttrice per chiedere chiarimenti.
 
- Oltre a configurare un account di posta elettronica sul dispositivo, è anche possibile configurare le impostazioni di sincronizzazione per i contatti, i calendari e le attività.  
+ Oltre a configurare un account di posta elettronica sul dispositivo, è possibile configurare le impostazioni di sincronizzazione per i contatti, i calendari e le attività.  
 
- Quando si crea un profilo di posta elettronica, è possibile includere un'ampia gamma di impostazioni di protezione, tra cui i certificati per l'identità, la crittografia e la firma, per i quali è stato effettuato il provisioning usando profili certificato in System Center Configuration Manager. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).    
+ Quando si crea un profilo di posta elettronica, è possibile includere una vasta gamma di impostazioni di protezione. Queste impostazioni includono certificati per l'identità, la crittografia e la firma, che sono stati configurati usando profili certificato in System Center Configuration Manager. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).    
 
-## <a name="create-a-new-exchange-activesync-email-profile"></a>Creare un nuovo profilo di posta elettronica di Exchange ActiveSync  
+## <a name="create-an-exchange-activesync-email-profile"></a>Creare un profilo di posta elettronica di Exchange ActiveSync  
 
-Avviare la Creazione guidata profilo di posta elettronica di Exchange ActiveSync  
+Per creare un profilo, usare la Creazione guidata profilo di posta elettronica di Exchange ActiveSync. 
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Nella console di Configuration Manager scegliere **Asset e conformità**.  
 
-2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**, **Accesso risorse aziendali**e quindi fare clic su **Profili di posta elettronica**.  
+2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**, **Accesso risorse aziendali** e quindi scegliere **Profili di posta elettronica**.  
 
-3.  Nella scheda **Home** del gruppo **Crea** fare clic su **Crea il profilo di posta elettronica di Exchange ActiveSync**.
-4.  Nella pagina Generale della procedura guidata configurare le opzioni seguenti:
-    - **Nome**: specificare un nome descrittivo per il profilo di posta elettronica.
-    - **Descrizione**: facoltativamente, immettere una descrizione del profilo di posta elettronica che consenta di identificarlo nella console di Configuration Manager.
-    - **Questo profilo di posta elettronica è per Android for Work**: selezionare questa opzione se il profilo di posta elettronica verrà distribuito soltanto a dispositivi Android for Work. Se si seleziona questa casella di controllo, la pagina **Piattaforme supportate** della procedura guidata non viene visualizzata. Vengono configurati soltanto i profili di posta elettronica Android for Work.
-4.  Nella pagina **Exchange ActiveSync** della Creazione guidata profilo di posta elettronica di Exchange ActiveSync specificare le informazioni seguenti:  
+3.  Nella scheda **Home** del gruppo **Crea** scegliere **Crea il profilo di posta elettronica di Exchange ActiveSync** per avviare la procedura guidata.
 
-    -   **Host di Exchange ActiveSync:** specificare il nome host del server Exchange aziendale che ospita i servizi di Exchange ActiveSync.  
+4.  Nella pagina **Generale** della procedura guidata configurare le opzioni seguenti:
 
-    -   **Nome account:** specificare il nome visualizzato dell'account di posta elettronica che verrà visualizzato nei dispositivi degli utenti.  
+    - **Nome**. Specificare un nome descrittivo per il profilo di posta elettronica.
 
-    -   **Nome utente account:** selezionare il modo in cui è configurato il nome utente dell'account di posta elettronica nei dispositivi client. Nell'elenco a discesa è possibile selezionare una delle opzioni seguenti:  
+    - **Descrizione**. Facoltativamente, immettere una descrizione del profilo di posta elettronica che consenta di identificarlo nella console di Configuration Manager.
 
-        -   **Nome entità utente** : usare il nome completo dell'entità utente per accedere a Exchange.  
+    - **Questo profilo di posta elettronica è per Android for Work**. Scegliere questa opzione se si intende distribuire questo profilo di posta elettronica solo ai dispositivi Android for Work. Se si seleziona questa casella, la pagina **Piattaforme supportate** della procedura guidata non viene mostrata. Vengono configurati soltanto i profili di posta elettronica Android for Work.
 
-        -   **Nome account**: usare il nome completo dell'account da Active Directory.
+4.  Nella pagina **Exchange ActiveSync** della procedura guidata specificare le informazioni seguenti:  
 
-        -   **Indirizzo SMTP primario** : usare l'indirizzo SMTP primario usato dagli utenti per accedere a Exchange.  
+    -   **Nome host di Exchange ActiveSync**. Specificare il nome host del server Exchange aziendale che ospita i servizi di Exchange ActiveSync.  
 
-    -   **Indirizzo di posta elettronica:** selezionare la modalità di generazione dell'indirizzo di posta elettronica per l'utente in ogni dispositivo client. Nell'elenco a discesa è possibile selezionare una delle opzioni seguenti:  
+    -   **Nome account**. Specificare il nome visualizzato dell'account di posta elettronica così come verrà mostrato nei dispositivi degli utenti.  
 
-        -   **Indirizzo SMTP primario** : usare l'indirizzo SMTP primario usato dagli utenti per accedere a Exchange.  
+    -   **Nome utente account**. Scegliere la configurazione del nome utente dell'account di posta elettronica sui dispositivi client. Nell'elenco a discesa è possibile scegliere una delle opzioni seguenti:  
 
-        -   **Nome entità utente** : usare come indirizzo di posta elettronica il nome completo dell'entità utente.  
+        -   **Nome entità utente**. Usare il nome completo dell'entità utente per accedere a Exchange.  
 
-    -   **Dominio account:** scegliere una delle seguenti opzioni:  
+        -   **Nome account**. Usare il nome completo dell'account da Active Directory.
+
+        -   **Indirizzo SMTP primario**. Usare l'indirizzo SMTP primario usato dagli utenti per accedere a Exchange.  
+
+    -   **Indirizzo di posta elettronica**. Scegliere la modalità di generazione dell'indirizzo di posta elettronica per l'utente in ogni dispositivo client. Nell'elenco a discesa è possibile scegliere una delle opzioni seguenti:  
+
+        -   **Indirizzo SMTP primario**. Usare l'indirizzo SMTP primario usato dagli utenti per accedere a Exchange.  
+
+        -   **Nome entità utente**. Usare come indirizzo di posta elettronica il nome completo dell'entità utente.  
+
+    -   **Dominio account**. Scegliere una delle seguenti opzioni:  
 
         -   **Ottieni da Active Directory**  
 
         -   **Personalizzato**  
 
-         Questo campo è applicabile solo se nell'elenco a discesa **Nome utente account** è selezionato **Nome account SAM** .  
+         Questo campo è applicabile solo se nell'elenco a discesa **Nome utente account** è selezionato **Nome account SAM**.  
 
-    -   **Metodo di autenticazione:** scegliere uno dei seguenti metodi di autenticazione che verranno usati per autenticare la connessione a Exchange ActiveSync:  
+    -   **Metodo di autenticazione**. scegliere uno dei seguenti metodi di autenticazione che verranno usati per autenticare la connessione a Exchange ActiveSync:  
 
-        -   **Certificati** : verrà usato un certificato di identità per autenticare la connessione a Exchange ActiveSync.  
+        -   **Certificati**. Verrà usato un certificato di identità per autenticare la connessione a Exchange ActiveSync.  
 
-        -   **Nome utente e password** : l'utente del dispositivo deve specificare una password per connettersi a Exchange ActiveSync (il nome utente è configurato come parte del profilo di posta elettronica).  
+        -   **Nome utente e password**. L'utente del dispositivo deve specificare una password per connettersi a Exchange ActiveSync (il nome utente è configurato come parte del profilo di posta elettronica).  
 
-    -   **Certificato di identità:** fare clic su **Seleziona** e quindi selezionare un certificato da usare per l'identità.  
-
-        > [!NOTE]  
-        >  Prima di poter selezionare il certificato di identità, è necessario configurarlo come profilo certificato Simple Certificate Enrollment Protocol (SCEP). Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
-
-         Questa opzione è disponibile solo se in **Metodo di autenticazione** è stata selezionata l'opzione **Certificati**.  
-
-    -   **Usa S/MIME** (solo per dispositivi iOS): consente di usare la crittografia S/MIME per inviare posta elettronica in uscita. È possibile scegliere una delle opzioni seguenti:
-
-
-        -   **Certificati di crittografia:** fare clic su **Seleziona** e quindi selezionare un certificato da usare per la crittografia. Questa opzione è applicabile solo ai dispositivi iOS. È possibile selezionare solo un certificato PFX da usare come certificato di crittografia.
-
-        Se si seleziona sia un certificato di crittografia che un certificato di firma, è necessario che i certificati siano entrambi in formato PFX.
+    -   **Certificato di identità**. Scegliere **Seleziona** e quindi scegliere un certificato da usare per l'identità.  
 
         > [!NOTE]  
-        >  Per poter selezionare i certificati, è prima necessario configurarli come profilo certificato SCEP (Simple Certificate Enrollment Protocol) o PFX. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
+        > Prima di poter scegliere il certificato di identità, è necessario configurarlo come profilo certificato Simple Certificate Enrollment Protocol (SCEP). Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
+         Questa opzione è disponibile solo se in **Metodo di autenticazione** è stata scelta l'opzione **Certificati**.  
 
+    -   **Usa S/MIME**. Consente di usare la crittografia S/MIME per inviare posta elettronica in uscita. Questa opzione è applicabile solo ai dispositivi iOS. È possibile scegliere una delle opzioni seguenti:
 
+        -   **Certificati di crittografia**. Scegliere **Seleziona** e quindi scegliere un certificato da usare per la crittografia. È possibile scegliere solo un certificato PFX da usare come certificato di crittografia.
 
-###   <a name="configure-synchronization-settings-for-the-exchange-activesync-email-profile"></a>Configurare le impostazioni di sincronizzazione per il profilo di posta elettronica di Exchange ActiveSync.  
+        Se si sceglie sia un certificato di crittografia che un certificato di firma, è necessario che i certificati siano entrambi in formato PFX.
 
-1.  Nella pagina **Configura impostazioni di sincronizzazione** della Creazione guidata profilo di posta elettronica di Exchange ActiveSync specificare le informazioni seguenti:  
+        > [!NOTE]  
+        > Per poter scegliere i certificati, è prima necessario configurarli come profilo certificato SCEP o PFX. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
-    -   **Pianifica:** selezionare la pianificazione in base a cui i dispositivi sincronizzeranno i dati dal server di Exchange. Questa opzione è applicabile solo ai dispositivi Windows Phone. È possibile scegliere tra:  
+## <a name="configure-synchronization-settings-for-the-exchange-activesync-email-profile"></a>Configurare le impostazioni di sincronizzazione per il profilo di posta elettronica di Exchange ActiveSync  
 
-        -   **Non configurato** : non viene applicata una pianificazione della sincronizzazione. In questo modo gli utenti possono configurare una pianificazione personalizzata per la sincronizzazione.  
+Nella pagina **Configura impostazioni di sincronizzazione** della Creazione guidata profilo di posta elettronica di Exchange ActiveSync specificare le informazioni seguenti:  
 
-        -   **All'arrivo di messaggi** : i dati quali i messaggi di posta elettronica e gli elementi del calendario verranno sincronizzati automaticamente all'arrivo.  
+-   **Pianificazione**. Scegliere la pianificazione in base a cui i dispositivi sincronizzeranno i dati dal server di Exchange. Questa opzione è applicabile solo ai dispositivi Windows Phone. È possibile scegliere tra:  
 
-        -   **15 minuti** : i dati quali i messaggi di posta elettronica e gli elementi del calendario verranno sincronizzati automaticamente ogni 15 minuti.  
+    -   **Non configurato**. Non viene applicata una pianificazione della sincronizzazione. In questo modo gli utenti possono configurare una pianificazione personalizzata per la sincronizzazione.  
 
-        -   **30 minuti** : i dati quali i messaggi di posta elettronica e gli elementi del calendario verranno sincronizzati automaticamente ogni 30 minuti.  
+    -   **All'arrivo di messaggi**. I dati quali i messaggi di posta elettronica e gli elementi del calendario verranno sincronizzati automaticamente all'arrivo.  
 
-        -   **60 minuti** : i dati quali i messaggi di posta elettronica e gli elementi del calendario verranno sincronizzati automaticamente ogni 60 minuti.  
+    -   **15 minuti**. I dati quali i messaggi di posta elettronica e gli elementi del calendario verranno sincronizzati automaticamente ogni 15 minuti.  
 
-        -   **Manuale** : la sincronizzazione verrà avviata manualmente dall'utente del dispositivo.  
+    -   **30 minuti**. I dati quali i messaggi di posta elettronica e gli elementi del calendario verranno sincronizzati automaticamente ogni 30 minuti.  
 
-    -   **Numero di giorni di messaggi di posta elettronica da sincronizzare:** selezionare il numero di giorni di posta elettronica da sincronizzare. Scegliere uno dei valori seguenti:  
+    -   **60 minuti**. I dati quali i messaggi di posta elettronica e gli elementi del calendario verranno sincronizzati automaticamente ogni 60 minuti.  
 
-        -   **Non configurato** : l'impostazione non viene applicata. In questo modo gli utenti possono configurare la quantità di posta elettronica da scaricare sul dispositivo.  
+    -   **Manuale**. L'utente del dispositivo deve avviare manualmente la sincronizzazione.  
 
-        -   **Illimitata** : viene sincronizzata tutta la posta elettronica disponibile.  
+-   **Numero di giorni di messaggi di posta elettronica da sincronizzare**. Scegliere il numero di giorni di posta elettronica da sincronizzare. Scegliere uno dei valori seguenti:  
 
-        -   **1 giorno**  
+    -   **Non configurato**. L'impostazione non viene applicata. In questo modo gli utenti possono configurare la quantità di posta elettronica da scaricare sul dispositivo.  
 
-        -   **3 giorni**  
+    -   **Illimitato**. Sincronizza tutti i messaggi di posta elettronica disponibili.  
 
-        -   **1 settimana**  
+    -   **1 giorno**  
 
-        -   **2 settimane**  
+    -   **3 giorni**  
 
-        -   **1 mese**  
+    -   **1 settimana**  
 
-    -   **Consentire lo spostamento dei messaggi ad altri account di posta elettronica** : selezionare questa opzione per consentire agli utenti di spostare i messaggi di posta elettronica tra diversi account configurati nel dispositivo. Questa opzione è applicabile solo ai dispositivi iOS.  
+    -   **2 settimane**  
 
-    -   **Consentire l'invio di messaggi di posta elettronica da applicazioni di terze parti** : selezionare questa opzione per consentire agli utenti di inviare messaggi di posta elettronica da alcune applicazioni di posta elettronica di terze parti non predefinite. Questa opzione è applicabile solo ai dispositivi iOS.  
+    -   **1 mese**  
 
-    -   **Sincronizzare gli indirizzi di posta elettronica usati di recente** : selezionare questa opzione per sincronizzare l'elenco di indirizzi di posta elettronica usati di recente sul dispositivo. Questa opzione è applicabile solo ai dispositivi iOS.  
+-   **Consenti di spostare i messaggi negli altri account di posta elettronica**. Scegliere questa opzione per consentire agli utenti di spostare i messaggi di posta elettronica tra i diversi account configurati nel dispositivo. Questa opzione è applicabile solo ai dispositivi iOS.  
 
-    -   **Usare SSL** : selezionare questa opzione per usare la comunicazione Secure Sockets Layer (SSL) durante l'invio di messaggi di posta elettronica, la ricezione di messaggi di posta elettronica e la comunicazione con Exchange Server.  
+-   **Consentire l'invio di messaggi di posta elettronica da applicazioni di terze parti**. Selezionare questa opzione per consentire agli utenti di inviare messaggi di posta elettronica da alcune applicazioni di posta elettronica di terze parti non predefinite. Questa opzione è applicabile solo ai dispositivi iOS.  
 
-    -   **Tipo di contenuto da sincronizzare:** selezionare i tipi di contenuto da sincronizzare nei dispositivi. Questa opzione è applicabile solo ai dispositivi Windows Phone. È possibile scegliere tra:  
+-   **Sincronizza gli indirizzi di posta elettronica utilizzati di recente**. Scegliere questa opzione per sincronizzare l'elenco di indirizzi di posta elettronica usati di recente nel dispositivo. Questa opzione è applicabile solo ai dispositivi iOS.  
 
-        -   **Posta elettronica**  
+-   **Usa SSL**. Scegliere questa opzione per usare la comunicazione Secure Sockets Layer (SSL) per l'invio di messaggi di posta elettronica, la ricezione di messaggi di posta elettronica e la comunicazione con Exchange Server.  
 
-        -   **Contatti**  
+-   **Tipo di contenuti da sincronizzare**. Scegliere i tipi di contenuto da sincronizzare nei dispositivi. Questa opzione è applicabile solo ai dispositivi Windows Phone. È possibile scegliere tra:  
 
-        -   **Calendarioio**  
+    -   **Posta elettronica**  
 
-        -   **Attività**  
+    -   **Contatti**  
 
-###  <a name="specify-supported-platforms-for-the-exchange-activesync-email-profile"></a>Specificare le piattaforme supportate per il profilo di posta elettronica di Exchange ActiveSync.  
+    -   **Calendario**  
 
-1.  Nella pagina **Piattaforme supportate** della Creazione guidata profilo di posta elettronica di Exchange ActiveSync selezionare i sistemi operativi in cui verrà installato il profilo oppure fare clic su **Seleziona tutto** per installare il profilo di posta elettronica in tutti i sistemi operativi disponibili.  
+    -   **Attività**  
 
-2.  Completare la procedura guidata.
+## <a name="specify-supported-platforms-for-the-exchange-activesync-email-profile"></a>Specificare le piattaforme supportate per il profilo di posta elettronica di Exchange ActiveSync  
+
+1.  Nella pagina **Piattaforme supportate** della Creazione guidata profilo di posta elettronica di Exchange ActiveSync scegliere i sistemi operativi in cui verrà installato il profilo. In alternativa, scegliere **Seleziona tutto** per installare il profilo di posta elettronica su tutti i sistemi operativi disponibili.  
+
+2.  Completa la procedura guidata.
 
 Per informazioni su come distribuire i profili di posta elettronica di Exchange ActiveSync, vedere l'argomento sulla [distribuzione dei profili in System Center Configuration Manager](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md).  
 

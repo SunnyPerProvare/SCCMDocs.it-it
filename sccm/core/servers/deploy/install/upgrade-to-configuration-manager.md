@@ -2,7 +2,7 @@
 title: Eseguire l&quot;aggiornamento a System Center Configuration Manager | Microsoft Docs
 description: Passaggi per eseguire l&quot;aggiornamento sul posto da un sito e da una gerarchia che esegue System Center 2012 Configuration Manager.
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 4/19/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 6424fb07802b62820b4dc78a58ab30d3b956abef
-ms.openlocfilehash: ca07b46db0967ca03cc5e858b835d2c2108f1210
-ms.lasthandoff: 03/17/2017
+ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
+ms.openlocfilehash: e75413d0b03681bf7244bd3917cd6099394ee3c9
+ms.lasthandoff: 04/19/2017
 
 
 ---
@@ -75,6 +75,9 @@ Quando è presente il supporto di base della versione 1511 è possibile aggiorna
  Gli elenchi di controllo seguenti possono aiutare a pianificare un aggiornamento a System Center Configuration Manager.  
 
 ### <a name="before-you-upgrade"></a>Prima dell'aggiornamento  
+
+**Esaminare l'ambiente di System Center Configuration Manager 2012** e risolvere i problemi come descritto in dettaglio nell'articolo KB4018655: [Configuration Manager clients reinstall every five hours because of a recurring retry task and may cause an inadvertent client upgrade](https://support.microsoft.com/help/4018655) (Il client di Configuration Manager viene reinstallato ogni cinque ore a causa di un nuovo tentativo ricorrente e potrebbe causare un upgrade involontario del client).
+
 **Assicurarsi che l'ambiente informatico soddisfi le configurazioni supportate** necessarie per eseguire l'aggiornamento a System Center Configuration Manager:  
 
 Esaminare i sistemi operativi server usati per ospitare i ruoli del sistema del sito:  
