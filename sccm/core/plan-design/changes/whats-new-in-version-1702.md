@@ -2,7 +2,7 @@
 title: Nuova versione 1702 | Microsoft Docs
 description: "Ottenere informazioni dettagliate sulle modifiche e le nuove funzionalità introdotte nella versione 1702 di System Center Configuration Manager."
 ms.custom: na
-ms.date: 3/31/2017
+ms.date: 05/02/2017
 ms.reviewer: na
 ms.suite: na
 ms.technology:
@@ -14,16 +14,16 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d7b13f3dea5a3ae413ca6b8150ec24e1632a4d4d
-ms.openlocfilehash: 3e97184dc923cd3972c23252c1bc001edb73fe3f
-ms.lasthandoff: 04/12/2017
+ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
+ms.openlocfilehash: 4616ebb84ae63acbe6af892918aa2dd1a0be4825
+ms.lasthandoff: 05/02/2017
 
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novità della versione 1702 di System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-L'aggiornamento 1702 per System Center Configuration Manager (Current Branch) è disponibile come aggiornamento nella console per siti installati in precedenza che eseguono la versione 1602, 1606 o 1610.
+L'aggiornamento 1702 per System Center Configuration Manager (Current Branch) è disponibile come aggiornamento nella console per siti installati in precedenza che eseguono la versione 1602, 1606 o 1610. È disponibile anche come versione di base da usare durante l'installazione di una nuova distribuzione.
 
 > [!TIP]  
 > Per installare un nuovo sito, è necessario usare una versione base di Configuration Manager.  
@@ -277,12 +277,12 @@ A partire dalla versione 1702, la gestione ibrida dei dispositivi mobili con Mic
 |||||
 |-|-|-|-|
 |Versione di Configuration Manager|Gestione delle licenze dei dispositivi supportata|Tipo di raccolta della distribuzione|Licenza richiesta|
-|Precedente la 1702|Sì|Utente|Licenza utente|
-|Precedente la 1702|No|Utente|Licenza utente|
+|Precedente la 1702|Sì|utente|Licenza utente|
+|Precedente la 1702|No|utente|Licenza utente|
 |Precedente la 1702|Sì|Dispositivo|Licenza utente|
 |Precedente la 1702|No|Dispositivo|Licenza utente|
-|1702 e versioni successive|Sì|Utente|Licenza utente|
-|1702 e versioni successive|No|Utente|Licenza utente|
+|1702 e versioni successive|Sì|utente|Licenza utente|
+|1702 e versioni successive|No|utente|Licenza utente|
 |1702 e versioni successive|Sì|Dispositivo|Licenza dispositivo|
 |1702 e versioni successive|No|Dispositivo|Licenza utente|
 
