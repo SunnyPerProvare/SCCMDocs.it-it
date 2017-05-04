@@ -2,7 +2,7 @@
 title: Cartella CD.Latest | Microsoft Docs
 description: Informazioni sul nuovo processo di aggiornamento che offre aggiornamenti per il prodotto all&quot;interno della console di Configuration Manager.
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 05/02/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: d94acac84f052a01de9d9c9f65f237c0006c45b8
-ms.openlocfilehash: 5fbf1a2605b4915a2f592875a5ac88368160ce87
-ms.lasthandoff: 04/26/2017
+ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
+ms.openlocfilehash: 5c39e09b44500fa2f356f83579bb2fb2c1d0e937
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -41,7 +41,7 @@ Tuttavia il supporto di base, ad esempio la versione di base 1606 rilasciata a o
 
 -   Eseguire l'attività di backup predefinita di Configuration Manager. La cartella viene creata o aggiornata nel percorso della cartella di backup specificata.  
 
--  A partire dalla versione 1606, la cartella CD.Latest viene creata quando si installa un nuovo sito usando il supporto di base (come nella versione 1606).
+-  A partire dalla versione 1606, la cartella CD.Latest viene creata quando si installa un nuovo sito usando il supporto di base (come nella versione 1606 o 1702).
 
 I file di origine della cartella CD.Latest sono supportati per le operazioni seguenti:  
 
