@@ -17,9 +17,9 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: a3e6cca8d58055cc2d54aff3cb70a276fb40e829
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: ae008c91a7387ba76f2bfac13f8feb489a0cc558
+ms.openlocfilehash: f5feccc4f810e1a94bb7dcdd5ad507d84b9c3b4a
+ms.lasthandoff: 04/21/2017
 
 
 ---
@@ -76,6 +76,11 @@ ms.lasthandoff: 03/27/2017
 |SMSTSDownloadProgram|Usare questa variabile per specificare un provider di contenuto alternativo, un programma downloader usato per scaricare il contenuto al posto del downloader predefinito di Configuration Manager. Durante il processo di download di contenuto, la sequenza di attività verifica se nella variabile è indicato un programma downloader specificato. Se specificato, la sequenza di attività esegue il programma per eseguire il download.|  
 |SMSTSDownloadRetryCount|Usare questa variabile per specificare il numero di tentativi eseguiti da Configuration Manager per scaricare contenuto da un punto di distribuzione. Per impostazione predefinita, il client riproverà **2** volte.|  
 |SMSTSDownloadRetryDelay|Usare questa variabile per specificare il numero di secondi di attesa prima che Configuration Manager provi a scaricare il contenuto da un punto di distribuzione. Per impostazione predefinita, il client attenderà **15** secondi prima di riprovare.|  
+|SMSTSDriverReceiveTimeOut|Usare questa variabile per specificare il numero di secondi prima del timeout della connessione al server.|
+|SMSTSDriverRequestConnectTimeOut|Usare questa variabile per specificare il numero di secondi di attesa della connessione al server HTTP quando si richiede il catalogo dei driver durante la procedura sequenza di attività Applica automaticamente i driver. Se la connessione richiede più tempo rispetto all'impostazione del timeout, la richiesta viene annullata. L'impostazione predefinita del timeout è di 60 secondi.|  
+|SMSTSDriverRequestReceiveTimeOut|Usare questa variabile per specificare il numero di secondi di attesa di una risposta a una richiesta di catalogo dei driver durante la procedura sequenza di attività Applica automaticamente i driver. Se la connessione richiede più tempo rispetto all'impostazione del timeout, la richiesta viene annullata. L'impostazione predefinita del timeout è di 480 secondi.|
+|SMSTSDriverRequestResolveTimeOut|Usare questa variabile per specificare il numero di secondi di attesa della risoluzione dei nomi HTTP a una richiesta di catalogo dei driver durante la procedura sequenza di attività Applica automaticamente i driver. Se la connessione richiede più tempo rispetto all'impostazione del timeout, la richiesta viene annullata. L'impostazione predefinita del timeout è di 60 secondi.|
+|SMSTSDriverRequestSendTimeOut|Usare questa variabile per specificare il numero di secondi da usare quando si invia una richiesta di catalogo dei driver durante la procedura sequenza di attività Applica automaticamente i driver. Se richiede più tempo rispetto all'impostazione del timeout, la richiesta viene annullata. L'impostazione predefinita del timeout è di 60 secondi.|
 |SMSTSErrorDialogTimeout|Quando si verifica un errore in una sequenza di attività, viene visualizzata una finestra di dialogo che viene ignorata automaticamente dopo un numero di secondi specificato da questa variabile. Per impostazione predefinita, la finestra di dialogo viene ignorata automaticamente dopo **900** secondi (15 minuti).|  
 |TSErrorOnWarning|Usare questa variabile per specificare se il motore della sequenza di attività considera un avviso come un errore rilevato durante il passaggio della sequenza di attività relativo all'installazione dell'applicazione. La sequenza di attività imposta la variabile _TSAppInstallStatus su **Avviso** quando una o più applicazioni o una dipendenza richiesta non viene installata perché non è stato raggiunto un requisito. Quando si imposta la variabile TSErrorOnWarning su **True** e la variabile _TSAppInstallStatus è impostata su Avviso, l'avviso viene considerato come un errore. Il comportamento predefinito è **False** .|  
 |SMSTSLanguageFolder|usare questa variabile per modificare la lingua di visualizzazione di un'immagine di avvio indipendente dalla lingua.|  

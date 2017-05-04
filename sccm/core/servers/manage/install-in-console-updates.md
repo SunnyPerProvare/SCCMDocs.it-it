@@ -16,9 +16,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 32f7fc4ef9c8e8d3c2ec8eeaf9a3174bad992ffb
-ms.openlocfilehash: 18c199e78750eadc06b9635fa6104d36c2ac018d
-ms.lasthandoff: 04/08/2017
+ms.sourcegitcommit: d94acac84f052a01de9d9c9f65f237c0006c45b8
+ms.openlocfilehash: 29a55948a1897e1345ba14ec685b9288a844feaa
+ms.lasthandoff: 04/26/2017
 
 
 ---
@@ -325,7 +325,7 @@ Quando si abilita una nuova funzionalità o una funzionalità non definitiva, ge
 
 
 ##  <a name="bkmk_prerelease"></a> Usare le funzionalità di versioni non definitive degli aggiornamenti
-Le funzionalità di versioni non definitive sono incluse nel Current Branch a scopo di test preliminare in un ambiente di produzione. Tali funzionalità non devono essere considerate pronte per l'ambiente di produzione, ma possono essere comunque usate in questo ambiente. Per altre informazioni sulle funzionalità di versioni non definitive,ad esempio su come abilitarle nell'ambiente, vedere [Pre-release featuers](/sccm/core/servers/manage/pre-release-features) (Funzionalità di versioni non definitive).                |
+Le funzionalità di versioni non definitive sono incluse nel Current Branch a scopo di test preliminare in un ambiente di produzione. Queste funzionalità non devono essere considerate pronte per l'ambiente di produzione, ma possono essere usate in un ambiente di questo tipo. Per altre informazioni sulle funzionalità di versioni non definitive,ad esempio su come abilitarle nell'ambiente, vedere [Funzionalità di versioni non definitive](/sccm/core/servers/manage/pre-release-features).             
 
 
 ## <a name="known-issues"></a>Problemi noti

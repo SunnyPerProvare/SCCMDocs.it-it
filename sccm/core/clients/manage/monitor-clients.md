@@ -2,7 +2,7 @@
 title: Monitorare i client - Configuration Manager| Microsoft Docs
 description: Informazioni su come monitorare i client in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2c8f57cf-1968-48de-87fb-4897432ed6e0
 caps.latest.revision: 23
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
-ms.openlocfilehash: 85afe010e734d20ae1f1479b3edd166c54cc8fd2
-ms.lasthandoff: 01/24/2017
+ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
+ms.openlocfilehash: 08a4d9b29871b49e3118aef949572cef64940f96
+ms.lasthandoff: 04/24/2017
 
 
 ---
@@ -29,7 +29,7 @@ ms.lasthandoff: 01/24/2017
 
  Dopo aver installato l'applicazione client di System Center Configuration Manager nei computer e dispositivi Windows nel proprio sito, è possibile monitorarne l'integrità e l'attività nella console di Configuration Manager.  
 
-##  <a name="a-namebkmkabouta-about-client-status"></a><a name="bkmk_about"></a> Informazioni sullo stato del client  
+##  <a name="bkmk_about"></a> Informazioni sullo stato del client  
  Configuration Manager offre i seguenti tipi di informazioni come stato del client:  
 
 -   **Stato online del client**: a partire dalla versione 1602 di Configuration Manager questo stato indica se il computer è online. Un computer viene considerato online se è connesso al relativo punto di gestione assegnato.  Per indicare che è online, il client invia i messaggi di tipo ping al punto di gestione. Se il punto di gestione non riceve un messaggio per circa 5 minuti, lo stato del client è considerato offline.  
@@ -42,7 +42,7 @@ ms.lasthandoff: 01/24/2017
 
      È possibile configurare la correzione in modo che venga eseguita su computer specifici, ad esempio, un server di rilevanza critica per l'azienda. Inoltre, se sono presenti voci aggiuntive che si vuole valutare, è possibile usare le impostazioni di conformità di Configuration Manager per offrire una soluzione completa per monitorare l'integrità, il funzionamento e la conformità complessivi dei computer dell'organizzazione. Per altre informazioni sulle impostazioni di conformità, vedere [Pianificazione e configurazione delle impostazioni di conformità in System Center Configuration Manager](../../../compliance/plan-design/plan-for-and-configure-compliance-settings.md).  
 
-##  <a name="a-namebkmkindstatusa-monitor-the-status-of-individual-clients"></a><a name="bkmk_indStatus"></a> Monitorare lo stato dei singoli client  
+##  <a name="bkmk_indStatus"></a> Monitorare lo stato dei singoli client  
 
 1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Dispositivi** oppure scegliere una raccolta in **Raccolte dispositivi**.  
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 01/24/2017
 
 3.  Fare clic su un singolo client nel riquadro elenco per visualizzare altre informazioni di stato nel riquadro dei dettagli, incluse informazioni sull'attività del client e controlli client.  
 
-##  <a name="a-namebkmkallstatusa-monitor-the-status-of-all-clients"></a><a name="bkmk_allStatus"></a> Monitorare lo stato di tutti i client  
+##  <a name="bkmk_allStatus"></a> Monitorare lo stato di tutti i client  
 
 1.  Nella console di Configuration Manager fare clic su **Monitoraggio** > **Stato client**. In questa pagina della console è possibile esaminare le statistiche generali per l'attività client e i controlli client nell'intero sito.  È anche possibile modificare l'ambito delle informazioni scegliendo una raccolta diversa.  
 
@@ -77,7 +77,7 @@ ms.lasthandoff: 01/24/2017
 
  È possibile configurare degli avvisi per inviare una notifica all'utente quando i client controllano i risultati oppure quando l'attività client cade al di sotto di una percentuale specificata di client in una raccolta oppure quando la correzione non viene eseguita correttamente su una percentuale specifica di client. Per informazioni su come configurare lo stato del client, vedere [Come configurare lo stato del client in System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).  
 
-##  <a name="a-namebkmkclienthealtha-checks-and-remediations-made-by-client-check"></a><a name="BKMK_ClientHealth"></a> Controlli e correzioni effettuati dal controllo client  
+##  <a name="BKMK_ClientHealth"></a> Controlli e correzioni effettuati dal controllo client  
  I controlli e le correzioni seguenti possono essere eseguiti dal controllo client.  
 
 |Controllo client|Azione di correzione|Altre informazioni|  
@@ -110,4 +110,7 @@ ms.lasthandoff: 01/24/2017
 |Verificare che il provider WMI client sia integro|Avviare il servizio Windows Management Instrumentation|La correzione di questo controllo client viene eseguita solo su computer con Windows Server 2003, Windows XP (64 bit) o versioni precedenti.|  
 |Verificare che sia in esecuzione il servizio proxy di riattivazione (Proxy di riattivazione di Configuration Manager)|Avviare il servizio Proxy di riattivazione di Configuration Manager|Questa verifica del client viene eseguita solo se l'impostazione **Risparmio energia**: **Abilitare il proxy di riattivazione** del client è impostata su **Sì** nei sistemi operativi client supportati.|  
 |Verificare che il tipo di avvio del servizio proxy di riattivazione (Proxy di riattivazione di Configuration Manager) sia automatico|Reimpostare il tipo di avvio del servizio Proxy di riattivazione di Configuration Manager su automatico|Questa verifica del client viene eseguita solo se l'impostazione **Risparmio energia**: **Abilitare il proxy di riattivazione** del client è impostata su **Sì** nei sistemi operativi client supportati.|  
+
+## <a name="client-deployment-log-files"></a>File di log distribuzione client
+Per informazioni sui file di log usati dalle operazioni di distribuzione e gestione client, vedere [File di log in System Center Configuration Manager](/sccm/core/plan-design/hierarchy/log-files#BKMK_ClientLogs).
 

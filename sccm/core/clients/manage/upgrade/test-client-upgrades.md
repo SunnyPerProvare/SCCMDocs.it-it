@@ -2,7 +2,7 @@
 title: Testare gli aggiornamenti client in una raccolta di pre-produzione | Microsoft Docs
 description: Testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager.
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,13 +13,13 @@ ms.topic: article
 ms.assetid: 49ef2ed2-2e15-4637-8b63-1d5b7f9c17e1
 caps.latest.revision: 10
 caps.handback.revision: 0
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 533c8e8b30519d83b8fc7a9d204d51e76974c4b1
-ms.lasthandoff: 03/27/2017
+ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
+ms.openlocfilehash: 7edd3e46b4813dd50df7d01b367f8e73bb350a7d
+ms.lasthandoff: 04/24/2017
 
 
 ---
@@ -54,6 +54,9 @@ ms.lasthandoff: 03/27/2017
 
 ![Aggiornamenti automatici del client](media/test-client-upgrades.png)
 
+>[!NOTE]
+>Per modificare queste impostazioni, l'account deve essere un membro del ruolo di sicurezza **Amministratore completo** e dell'ambito di protezione **Tutti**.
+
 
 ##  <a name="to-install-a-configuration-manager-update-that-includes-a-new-version-of-the-client"></a>Per installare un aggiornamento di Configuration Manager che include una nuova versione del client  
 
@@ -80,4 +83,7 @@ ms.lasthandoff: 03/27/2017
 2.  Rivedere le versioni client in produzione e pre-produzione, verificare che sia specificata la raccolta di pre-produzione corretta, fare clic su **Alza di livello** e poi su **Sì**.  
 
 3.  Quando si chiude la finestra di dialogo, la versione aggiornata del client sostituirà quella attualmente in uso nella gerarchia. Sarà quindi possibile aggiornare i client per l'intero sito. Per altre informazioni, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
+
+>[!NOTE]
+>Per abilitare il client pre-produzione o per promuovere un client pre-produzione a un client di produzione, l'account deve essere un membro del ruolo di sicurezza che ha le autorizzazioni **Lettura** e **Modifica** per l'oggetto **Pacchetti di aggiornamento**.
 

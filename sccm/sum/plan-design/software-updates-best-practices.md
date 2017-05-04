@@ -14,8 +14,9 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 6d20389a-9de2-4a64-bced-9fc4fa519174
 translationtype: Human Translation
-ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
-ms.openlocfilehash: ea365491dd334980693375fbb7730653af9cd8e4
+ms.sourcegitcommit: d94acac84f052a01de9d9c9f65f237c0006c45b8
+ms.openlocfilehash: 5df20f3703442de1be6220ca2770e182e330c036
+ms.lasthandoff: 04/26/2017
 
 
 
@@ -41,7 +42,7 @@ Questo argomento illustra le procedure consigliate per gli aggiornamenti softwar
  Se i database WSUS e Configuration Manager usano lo stesso SQL Server e condividono la stessa istanza di SQL Server, non è facile determinare l'uso delle risorse tra le due applicazioni. Se per Configuration Manager e WSUS si usano due istanze di SQL Server diverse, è più semplice risolvere e diagnosticare eventuali problemi relativi all'uso delle risorse che possono verificarsi in ogni applicazione.  
 
 ### <a name="specify-the-store-updates-locally-setting-for-the-wsus-installation"></a>Per l'installazione di WSUS specificare l'impostazione "Archivia aggiornamenti in locale"  
- Quando si installa WSUS 3.0, selezionare l'impostazione **Archivia aggiornamenti in locale** . Se questa impostazione è selezionata, le condizioni di licenza associate agli aggiornamenti software vengono scaricate durante il processo di sincronizzazione e archiviate nell'unità disco rigido locale per il server WSUS. Se questa impostazione non è selezionata, i computer client potrebbero non essere in grado di esaminare la conformità degli aggiornamenti software per gli aggiornamenti software che dispongono delle condizioni di licenza. Quando viene installato il punto di aggiornamento software, Gestione sincronizzazione WSUS verifica che l'impostazione sia attivata ogni 60 minuti, per impostazione predefinita.  
+ Quando si installa WSUS, selezionare l'impostazione **Archivia aggiornamenti in locale**. Se questa impostazione è selezionata, le condizioni di licenza associate agli aggiornamenti software vengono scaricate durante il processo di sincronizzazione e archiviate nell'unità disco rigido locale per il server WSUS. Se questa impostazione non è selezionata, i computer client potrebbero non essere in grado di esaminare la conformità degli aggiornamenti software per gli aggiornamenti software che dispongono delle condizioni di licenza. Quando viene installato il punto di aggiornamento software, Gestione sincronizzazione WSUS verifica che l'impostazione sia attivata ogni 60 minuti, per impostazione predefinita.  
 
 ## <a name="operational-best-practices"></a>Procedure operative ottimali  
  Utilizzare le seguenti procedure ottimali durante l'utilizzo degli aggiornamenti software:  
@@ -57,9 +58,4 @@ Questo argomento illustra le procedure consigliate per gli aggiornamenti softwar
 
 ## <a name="see-also"></a>Vedere anche  
  [Plan for software updates in System Center Configuration Manager](../../sum/plan-design/plan-for-software-updates.md) (Pianificare gli aggiornamenti software in System Center Configuration Manager)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

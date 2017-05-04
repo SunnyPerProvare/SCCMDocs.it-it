@@ -17,9 +17,9 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 translationtype: Human Translation
-ms.sourcegitcommit: 4c2906c2a963e0ae92e3c0d223afb7a47377526a
-ms.openlocfilehash: ffc2adb34427aa62f4a377e887c2ff54d47abeff
-ms.lasthandoff: 03/20/2017
+ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
+ms.openlocfilehash: 78caa69e10f5d386daab1e61e484d4d134469708
+ms.lasthandoff: 04/24/2017
 
 
 ---
@@ -552,13 +552,13 @@ Per altre informazioni vedere i [requisiti di accesso Internet](/sccm/core/serve
 
 2.  **Porta alternativa disponibile**: è possibile definire una porta alternativa in Configuration Manager per questo valore. Se è stata definita una porta personalizzata, sostituirla durante la definizione delle informazioni sul filtro IP per i criteri IPsec o per la configurazione dei firewall.  
 
-3.  **Windows Server Update Services (WSUS)**: WSUS può essere installato nel sito Web predefinito (porta 80) o in un sito Web personalizzato (porta 8530).  
+3.  **Windows Server Update Services (WSUS)**: WSUS può essere installato per l'uso delle porte 80/443 o 8530/8531 per la comunicazione client. Quando si esegue WSUS in Windows Server 2012 o Windows Server 2016, WSUS viene configurato per impostazione predefinita per l'uso della porta 8530 per HTTP e della porta 8531 per HTTPS.  
 
      Al termine dell'installazione è possibile modificare la porta. Non è necessario usare lo stesso numero di porta per tutta la gerarchia del sito.  
 
     -   Se la porta HTTP è la porta 80, la porta HTTPS deve essere la porta 443.  
 
-    -   Se la porta HTTP è diversa, la porta HTTPS deve essere uguale o maggiore di 1, ad esempio 8530 e 8531.  
+    -   Se la porta HTTP è diversa, la porta HTTPS deve essere uguale o maggiore di 1, ad esempio 8530 e 8531.   
 
     > [!NOTE]  
     >  Quando si configura il punto di aggiornamento software per l'uso di HTTPS, deve essere aperta anche la porta HTTP. I dati non crittografati, ad esempio il contratto di licenza per aggiornamenti specifici, usano la porta HTTP.  
