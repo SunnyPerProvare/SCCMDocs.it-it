@@ -2,7 +2,7 @@
 title: "Novità della gestione ibrida di dispositivi mobili con Configuration Manager | Microsoft Docs"
 description: "Informazioni sulle nuove funzionalità di gestione dei dispositivi mobili disponibili per le distribuzioni ibride con Configuration Manager e Intune."
 ms.custom: na
-ms.date: 03/28/2017
+ms.date: 04/21/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,10 +15,11 @@ caps.latest.revision: 40
 author: Mtillman
 ms.author: mtillman
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
-ms.openlocfilehash: 489defeae18c219fe2f717d5caa1f15bcdaf07cf
-ms.lasthandoff: 04/19/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: ae008c91a7387ba76f2bfac13f8feb489a0cc558
+ms.openlocfilehash: 0af5ae68353fcf1db846e2e27f3391fe87dcfc42
+ms.contentlocale: it-it
+ms.lasthandoff: 04/21/2017
 
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con System Center Configuration Manager e Microsoft Intune
@@ -57,7 +58,13 @@ Questo articolo illustra le nuove funzionalità di gestione dei dispositivi mobi
 
 - **Bloccare l'accesso delle app a SharePoint Online**
 
-    È ora possibile creare un criterio di accesso condizionale basato su app per bloccare l'accesso delle applicazioni, a cui non sono stati applicati criteri di protezione di app, a [SharePoint Online](/InTune/deploy-use/mam-ca-for-sharepoint-online). Nello scenario di accesso condizionale basato su app, è possibile specificare le app che dovranno accedere a SharePoint Online usando il portale di Azure.
+  È ora possibile creare un criterio di accesso condizionale basato su app per bloccare l'accesso delle applicazioni, a cui non sono stati applicati criteri di protezione di app, a [SharePoint Online](/InTune/deploy-use/mam-ca-for-sharepoint-online). Nello scenario di accesso condizionale basato su app, è possibile specificare le app che dovranno accedere a SharePoint Online usando il portale di Azure.
+
+### <a name="new-in-configuration-manager-technical-preview-1704"></a>Novità di Configuration Manager Technical Preview 1704
+
+- **Configurare le app Android con i criteri di configurazione delle app**
+
+  È possibile usare i criteri di configurazione delle app in System Center Configuration Manager (Configuration Manager) per distribuire impostazioni preconfigurate quando un utente esegue un'app in un dispositivo Android for Work. I criteri di configurazione delle app per Android sono disponibili solo nei dispositivi che eseguono Android for Work e riguardano le applicazioni approvate per lo store Play for Work. Per altre informazioni su come provare questa funzionalità, vedere [Configurare le app Android con i criteri di configurazione delle app](/sccm/core/get-started/capabilities-in-technical-preview-1704#configure-android-apps-with-app-configuration-policies).
 
 ## <a name="march-2017"></a>Marzo 2017
 
