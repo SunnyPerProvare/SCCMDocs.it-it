@@ -438,8 +438,3 @@
 ### [Come determinare lo stato degli annunci](core/servers/manage/how-to-determine-advertisement-status.md)
 
 # [Riferimento di Configuration Manager](reference/configuration-manager-reference.md)
-
-
-<!--HONumber=Jan17_HO3-->
-
-
