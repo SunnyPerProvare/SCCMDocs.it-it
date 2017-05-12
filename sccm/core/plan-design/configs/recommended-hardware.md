@@ -2,7 +2,7 @@
 title: Hardware consigliato | Microsoft Docs
 description: Ottenere consigli su hardware per ridimensionare l&quot;ambiente di System Center Configuration Manager, oltre una distribuzione di base.
 ms.custom: na
-ms.date: 3/30/2017
+ms.date: 05/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 8d3791bcf737e63308155787ed23c9cc84e7e99c
-ms.openlocfilehash: fd9f5b25a1e40b5f0df823dcbe9c13a77c534c59
-ms.lasthandoff: 03/31/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 212628639300e9c361f7cee61b3df6b1cb6874ce
+ms.openlocfilehash: 8dac6df60b07461d6410d305723b3f03fb09fa16
+ms.contentlocale: it-it
+ms.lasthandoff: 05/05/2017
 
 
 ---
@@ -49,7 +50,7 @@ Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità da
 |-------------------------------|---------------|---------------|----------------------------------------|  
 |Server del sito primario autonomo con un ruolo del sito del database nello stesso server<sup>1</sup>|16|96|80|  
 |Server del sito primario autonomo con un database del sito remoto|8|16|-|  
-|Server di database remoto per un sito primario autonomo|16|64|90|  
+|Server di database remoto per un sito primario autonomo|16|72|90|  
 |Server del sito di amministrazione centrale con un ruolo del sito del database nello stesso server<sup>1</sup>|20|128|80|  
 |Server del sito di amministrazione centrale con un database del sito remoto|8|16|-|  
 |Server di database remoto per un sito di amministrazione centrale|16|96|90|  
