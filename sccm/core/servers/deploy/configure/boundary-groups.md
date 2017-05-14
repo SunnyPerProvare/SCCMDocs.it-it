@@ -2,7 +2,7 @@
 title: Definire gruppi di limiti | Microsoft Docs
 description: Informazioni sui gruppi di limiti che collegano i client ai sistemi del sito in System Center Configuration Manager.
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 05/02/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,10 +15,11 @@ caps.latest.revision: 10
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 8da48e89e8376cc23109faa1c74b29a64699aa87
-ms.lasthandoff: 03/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
+ms.openlocfilehash: cb5c8f8f91857bf5f9377a9f871f0d9d9b0cc939
+ms.contentlocale: it-it
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -111,6 +112,8 @@ Se tuttavia il contenuto viene distribuito su richiesta e non è disponibile in 
 A partire dalla versione 1702, i client usano gruppi di limiti per trovare un nuovo punto di aggiornamento software. È possibile aggiungere singoli punti di aggiornamento software a diversi gruppi di limiti per controllare quali server possono essere trovati da un client.
 
 Quando si esegue l'aggiornamento da una versione precedente la 1702, tutti i punti di aggiornamento software esistenti vengono aggiunti al gruppo di limiti predefinito in ogni sito. Ciò consente di mantenere il comportamento di pre-aggiornamento in cui i client selezionano un punto di aggiornamento software dal pool di punti di aggiornamento software disponibili che è stato configurato per la gerarchia.  Questo comportamento viene mantenuto finché non si sceglie di aggiungere singoli punti di aggiornamento software a diversi gruppi di limiti con un comportamento di selezione e fallback controllato.
+
+Se si installa un nuovo sito che esegue la versione 1702 o successiva, è necessario assegnare punti di aggiornamento software a un gruppo di limiti prima che i client possano individuarli e usarli.
 
 
 Il fallback per i punti di aggiornamento software è configurato come altri ruoli del sistema del sito, ma con le avvertenze seguenti:

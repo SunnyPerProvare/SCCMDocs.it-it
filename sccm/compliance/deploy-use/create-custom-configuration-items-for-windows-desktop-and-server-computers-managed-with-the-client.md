@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
-ms.openlocfilehash: e55883471fde63036c91b315ed6db6dceb315207
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31819a1df4e63e1114682490a9b3c3b4e5c99cfa
+ms.openlocfilehash: e040c6b3a951d1bdf5a46dd82f1bd92b45c2e71d
+ms.contentlocale: it-it
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -52,7 +54,7 @@ Usare l'elemento di configurazione **personalizzato per computer desktop e serve
 
  Un metodo di rilevamento in Configuration Manager contiene regole che consentono di rilevare se un'applicazione viene installata in un computer. Questo rilevamento si verifica prima valutazione della conformità dell'elemento di configurazione. Per rilevare se un'applicazione è installata, è possibile rilevare la presenza di un file Windows Installer per l'applicazione, utilizzare uno script personalizzato o selezionare **presupporre sempre l'applicazione viene installata** per valutare l'elemento di configurazione per la conformità, anche se è installata l'applicazione.  
 
- Usare queste procedure per configurare i metodi di rilevamento in System Center 2012 Configuration Manager.  
+ Usare queste procedure per configurare i metodi di rilevamento in System Center Configuration Manager.  
 
 ### <a name="to-detect-an-application-installation-by-using-the-windows-installer-file"></a>Per rilevare l'installazione di un'applicazione utilizzando il File Windows Installer  
 
@@ -101,7 +103,7 @@ Usare l'elemento di configurazione **personalizzato per computer desktop e serve
 
         -   **Query Active Directory**  
 
-             **Prefisso LDAP** - Specificare un prefisso valido per la query di Servizi di dominio Active Directory per valutare la conformità nei computer client. È possibile utilizzare **LDAP: / /** per una o **GC: / /** per eseguire una ricerca nel catalogo globale..  
+             **Prefisso LDAP** - Specificare un prefisso valido per la query di Servizi di dominio Active Directory per valutare la conformità nei computer client. È possibile utilizzare **LDAP: / /** per una o **GC: / /** per eseguire una ricerca nel catalogo globale.  
 
              **Nome distinto (DN)** -specificare il nome distinto dell'oggetto servizi di dominio Active Directory che viene valutata per la conformità nei computer client.  
 
@@ -356,9 +358,4 @@ Nella pagina **Piattaforme supportate** della **Creazione guidata dell'elemento 
 
 ## <a name="complete-the-wizard"></a>Completare la procedura guidata  
  Nella pagina **Riepilogo** della procedura guidata verificare le azioni che verranno eseguite e quindi completare la procedura guidata. Nuovo elemento di configurazione viene visualizzato nel **gli elementi di configurazione** nodo il **asset e conformità** area di lavoro.  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

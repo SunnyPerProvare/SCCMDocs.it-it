@@ -2,7 +2,7 @@
 title: Scegliere il ramo da usare | Microsoft Docs
 description: Informazioni sulle differenze tra i rami disponibili di System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/12/2016
+ms.date: 05/02/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,10 +15,11 @@ caps.latest.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: ef044af5f6b32e4161d54c0ab1fb2ef2d245264b
-ms.lasthandoff: 03/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
+ms.openlocfilehash: f791278b0aa8efc734a894da7dab1704bb567ed0
+ms.contentlocale: it-it
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -29,16 +30,19 @@ ms.lasthandoff: 03/27/2017
 
 A partire da ottobre 2016, sono disponibili tre rami di System Center Configuration Manager. Questo argomento include informazioni utili per scegliere il ramo più adatto alle proprie esigenze.
 
+> [!TIP]  
+> Tutti i siti in una gerarchia devono eseguire lo stesso ramo. Le gerarchie con rami differenti in siti diversi non sono supportate.
+
 ## <a name="current-branch-of-system-center-configuration-manager"></a>Current Branch di System Center Configuration Manager
 Si tratta di un ramo con licenza per l'uso in un ambiente di produzione in cui si desidera poter ottenere le funzionalità più recenti. Usare questo ramo se si dispone di System Center Datacenter, System Center Standard, System Center Configuration Manager o di diritti di sottoscrizione equivalenti. Per altre informazioni su Software Assurance e le opzioni di licenza, vedere [Licenze e rami per System Center Configuration Manager](learn-more-editions.md).
 
 
 >  [!TIP]
-> Current Branch può essere installato anche come copia di valutazione che non richiede una licenza, può essere usata per 180 giorni e supporta l'aggiornamento a una versione con licenza.
+> Current Branch può essere installato come copia di valutazione che non richiede una licenza, può essere usata per 180 giorni e supporta l'aggiornamento a una versione con licenza.
 
 L'opzione Current Branch viene aggiornata diverse volte l'anno con nuove funzionalità. Ogni versione di aggiornamento è supportata per un anno a partire dal relativo rilascio. È necessario aggiornare Current Branch a una versione più recente entro la scadenza di tale periodo di un anno. Gli aggiornamenti alle versioni più recenti sono disponibili come aggiornamenti nella console.
 
-Per installare Current Branch come nuovo sito o aggiornamento da System Center 2012 Configuration Manager con Service Pack 2 o System Center 2012 R2 Configuration Manager con Service Pack 1, usare il [supporto di base](/sccm/core/servers/manage/updates#baseline-and-update-versions) per System Center Configuration Manager che viene fornito come DVD con System Center 2016 o che è disponibile come parte di una versione autonoma di System Center Configuration Manager. L'accesso a questo supporto dipende dalla licenza di System Center Configuration Manager.
+Per installare Current Branch come nuovo sito o aggiornamento da System Center 2012 Configuration Manager con Service Pack 2 o System Center 2012 R2 Configuration Manager con Service Pack 1, usare il [supporto di base](/sccm/core/servers/manage/updates#baseline-and-update-versions) per System Center Configuration Manager che viene fornito come DVD con System Center 2016 o che è disponibile come parte di una versione autonoma di System Center Configuration Manager. L'accesso a questo supporto dipende dalla licenza di System Center Configuration Manager. Le versioni di base più recenti, ad esempio la 1702, non supportano l'installazione di LTSB.
 
 È anche possibile usare il supporto di base per installare un nuovo sito come copia di valutazione di Current Branch. Se si vuole installare solo una copia di valutazione, è possibile ottenere il software dal sito Web [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection).
 
@@ -139,4 +143,15 @@ Per altre informazioni, vedere [Technical Preview per System Center Configuratio
 **Opzioni di aggiornamento**
 -    È possibile installare qualsiasi aggiornamento nella console per una nuova versione Technical Preview.
 -    Non è possibile convertire Technical Preview in Current Branch o LTSB.
+
+
+## <a name="identify-your-branch-and-version"></a>Identificare il ramo e la versione in uso
+Visualizzando le informazioni sulla versione per un sito di Configuration Manager, è anche possibile visualizzare il ramo.
+
+**Versione**   
+Per controllare la versione del sito, nella console passare a **Informazioni su System Center Configuration Manager** nell'angolo in alto a sinistra della console dove viene visualizzata la **Versione sito**. Per un elenco completo delle versioni del sito, vedere []().
+
+**Ramo**  
+Per verificare il ramo del sito (LTSB o Current Branch), nella console passare ad **Amministrazione** > **Configurazione del sito** > **Siti** e aprire **Impostazioni gerarchia**. Se è disponibile un'opzione per la conversione in Current Branch e tale opzione è attiva, il sito esegue la versione LTSB. Se il sito esegue Current Branch, questa opzione è disabilitata.
+Per informazioni sulle diverse versioni di Configuration Manager, vedere "Versioni di base e di aggiornamento" nell'argomento [Aggiornamenti per System Center Configuration Manager](/sccm/core/servers/manage/updates).
 

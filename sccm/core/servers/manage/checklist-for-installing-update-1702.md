@@ -2,7 +2,7 @@
 title: Elenco di controllo per la versione 1702 | System Center Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l&quot;aggiornamento di System Center Configuration Manager alla versione 1702.
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 05/02/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,10 +15,11 @@ caps.latest.revision: 7
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: dd54a5668f8df73b0724f5c15a1a6a83f8fe8496
-ms.lasthandoff: 03/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
+ms.openlocfilehash: c4ace452d62d4fa08f4457cb1735718ca4bd016d
+ms.contentlocale: it-it
+ms.lasthandoff: 05/02/2017
 
 ---
 # <a name="checklist-for-installing-update-1702-for-system-center-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1702 di System Center Configuration Manager
@@ -26,6 +27,9 @@ ms.lasthandoff: 03/27/2017
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 Quando si usa System Center Configuration Manager Current Branch, è possibile installare l'aggiornamento nella console per la versione 1702 per aggiornare la gerarchia da una versione precedente.
+
+> [!TIP]  
+La versione 1702 è disponibile anche come [supporto di base](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions) che è possibile usare per installare il primo sito di una nuova gerarchia.
 
 Per ottenere l'aggiornamento per la versione 1702, è necessario usare un ruolo del sistema del sito del punto di connessione del servizio nel sito principale della gerarchia. Questo può essere in modalità online o offline. Dopo che la gerarchia ha scaricato il pacchetto di aggiornamento da Microsoft, questo è disponibile nella console, in **Amministrazione &gt; Panoramica &gt; Servizi cloud &gt; Aggiornamenti e manutenzione**.
 

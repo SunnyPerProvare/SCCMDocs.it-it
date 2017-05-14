@@ -1,8 +1,8 @@
 ---
 title: Installare un sito usando il supporto di base 1606 | Microsoft Docs
-description: Informazioni sull&quot;uso del supporto di base della versione 1606 per installare o aggiornare siti per System Center Configuration Manager.
+description: Installare o aggiornare Long-Term Servicing Branch per System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/12/2016
+ms.date: 05/01/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,10 +15,11 @@ caps.latest.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 1a3460143628ef297c99c364ded7ebea86d270dd
-ms.openlocfilehash: c266bb753ea69785b674508647c3857b2218cb77
-ms.lasthandoff: 02/18/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 31819a1df4e63e1114682490a9b3c3b4e5c99cfa
+ms.openlocfilehash: 39653604ba5fd8e1fe9dd4d42889221d983f9bec
+ms.contentlocale: it-it
+ms.lasthandoff: 05/02/2017
 
 
 ---
@@ -26,13 +27,18 @@ ms.lasthandoff: 02/18/2017
 
 *Si applica a: System Center Configuration Manager (Current Branch), (Long-Term Servicing Branch)*
 
-Usare questo argomento per informazioni sull'esecuzione dell'installazione di Configuration Manager quando si usa il supporto di base della versione 1606 da Microsoft System Center 2016 o System Center Configuration Manager (Current Branch e Long-Term Servicing Branch 1606). È possibile usare questo supporto per installare un nuovo sito o per eseguire l'aggiornamento da System Center Configuration Manager 2012 con Service Pack 2 o da System Center Configuration Manager 2012 R2 con Service Pack 1. Durante l'installazione, è possibile scegliere di installare Current Branch o Long-Term Servicing Branch (LTSB).
+Quando si esegue il programma di installazione dal supporto di base della versione 1606 per Configuration Manager, è possibile installare Long-Term Servicing Branch o un sito di Current Branch di System Center Configuration Manager.
+
+Il supporto di base è disponibile su DVD come parte di Microsoft System Center 2016 o in System Center Configuration Manager Current Branch e Long-Term Servicing Branch 1606. Per informazioni sui supporti di base, vedere [Baseline and update versions](/sccm/core/servers/manage/updates#baseline-and-udpate-versions) (Versioni base e di aggiornamento).
+
 
 Quando si usa il supporto di base della versione 1606, il sito che si installa o a cui si esegue l'aggiornamento è:
 - Un *sito Current Branch* equivalente a un sito installato in precedenza con il supporto di base della versione 1511 e quindi aggiornato alla versione 1606 con l'hotfix rollup 1606 (KB3186654).
 -    Un *sito LTSB* equivalente al sito Current Branch che esegue la versione 1606 con l'hotfix rollup 1606 (KB3186654). Il supporto di base include già l'hotfix rollup.  Ma LTSB non supporta tutte le funzionalità e tutte le caratteristiche disponibili con Current Branch, come descritto in dettaglio in [Introduzione a Long-Term Servicing Branch di System Center Configuration Manager](introduction-to-the-ltsb.md).
 
 Se non si ha familiarità con i diversi rami di System Center Configuration Manager, vedere [Which branch of Configuration Manager should I use](which-branch-should-i-use.md) (Scelta del ramo di Configuration Manager da usare).
+
+
 
 
 ## <a name="changes-to-setup-with-the-1606-baseline-media"></a>Modifiche all'installazione con il supporto di base della versione 1606
@@ -98,6 +104,7 @@ Per altre informazioni, vedere [Use a command line to install System Center Conf
 Quando si usa il supporto di base della versione 1606 per installare un nuovo sito di uno dei due rami, usare le procedure di pianificazione, preparazione e installazione del sito documentate nell'argomento [Installare i siti di System Center Configuration Manager](/sccm/core/servers/deploy/install/installing-sites), con l'aggiunta delle considerazioni seguenti per l'installazione:
 
 - Durante l'installazione è necessario scegliere il ramo di Configuration Manager che si vuole installare specificando i dettagli del contratto Software Assurance.
+- Tutti i siti di una gerarchia devono eseguire lo stesso ramo. Non è supportata una gerarchia con una combinazione di LTSB e Current Branch in siti diversi.
 -    Nuova installazione tramite script. Per altre informazioni, tornare a "Nuove opzioni di installazione tramite script" in questo articolo.
 
 ## <a name="expand-a-stand-alone-primary-site"></a>Espandere un sito primario autonomo

@@ -16,10 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
-ms.openlocfilehash: 44338c705e308896c5203be239c160a8220369a8
-ms.lasthandoff: 04/19/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 7a6c89254d01f4074e5c170b20338686178ebdd3
+ms.openlocfilehash: 59946d1328be1606ba7c4dab647e814c1b4e638a
+ms.contentlocale: it-it
+ms.lasthandoff: 04/28/2017
 
 
 ---
@@ -216,6 +217,12 @@ L'esecuzione della cancellazione completa nei dispositivi Windows 10 RTM (versio
 Quando un amministratore distribuisce un insieme di termini in più raccolte utente e un utente è membro di più di una di queste raccolte, tale utente visualizzerà più copie di termini identici all'apertura del portale aziendale.  Se, ad esempio, un utente denominato "UtenteEsempio" è un membro di due diverse raccolte di utenti, denominate "DipendentiAzienda1" e "DipendentiAzienda2" e i termini e le condizioni denominati "CondizioniAziendali" vengono distribuiti sia a DipendentiAzienda1 sia a DipendentiAzienda2, UtenteEsempio vedrà due set identici di CondizioniAziendali nella pagina di accettazione delle condizioni. Considerato che gli utenti possono solo accettare o rifiutare tutte le condizioni, non vi è alcun rischio di trovarsi in uno stato di accettazione ambiguo in cui l'utente ha sia accettato che rifiutato le condizioni. Il report di accettazione di termini e condizioni includerà una sola riga per ogni set di condizioni per ogni utente, quindi nel report non possono esserci errori. L'unico effetto riscontrato dall'utente è la visualizzazione di due insiemi di condizioni nella pagina di accettazione.  
 
 **Soluzione alternativa**: assicurarsi che ogni utente sia incluso solo in solo una raccolta in cui vengono distribuite le condizioni.  
+
+### <a name="android-for-work-email-profiles-that-use-certificate-authentication-are-not-applied-to-devices"></a>I profili di posta elettronica Android for Work che usano l'autenticazione del certificato non vengono applicati ai dispositivi
+<!--  487657 -->
+Quando si crea un profilo di posta elettronica Android for Work, per l'autenticazione sono disponibili due opzioni. La prima consiste nell'uso del nome utente e della password, l'altra nell'uso di certificati. A questo punto, l'opzione "certificati" non funziona. Se il profilo viene creato con il metodo di autenticazione impostato su **certificati**, tale profilo non viene applicato al dispositivo e all'utente verrà chiesto di immettere manualmente i dettagli dell'account di posta elettronica.
+
+**SOLUZIONE ALTERNATIVA**: nessuna. Gli amministratori devono usare l'opzione **nome utente e password** o attendere fino alla risoluzione del problema.
 
 ## <a name="reports-and-monitoring"></a>Report e monitoraggio  
 
