@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
-ms.openlocfilehash: cb5c8f8f91857bf5f9377a9f871f0d9d9b0cc939
+ms.sourcegitcommit: d940fd1bbf96767d44f8c55315e814be55a83897
+ms.openlocfilehash: 5684fd4fbfd0ffb8f3ffbcfa122eef3dafd77327
 ms.contentlocale: it-it
-ms.lasthandoff: 05/02/2017
+ms.lasthandoff: 05/08/2017
 
 
 ---
@@ -111,7 +111,7 @@ Se tuttavia il contenuto viene distribuito su richiesta e non è disponibile in 
 ## <a name="software-update-points"></a>Punti di aggiornamento software
 A partire dalla versione 1702, i client usano gruppi di limiti per trovare un nuovo punto di aggiornamento software. È possibile aggiungere singoli punti di aggiornamento software a diversi gruppi di limiti per controllare quali server possono essere trovati da un client.
 
-Quando si esegue l'aggiornamento da una versione precedente la 1702, tutti i punti di aggiornamento software esistenti vengono aggiunti al gruppo di limiti predefinito in ogni sito. Ciò consente di mantenere il comportamento di pre-aggiornamento in cui i client selezionano un punto di aggiornamento software dal pool di punti di aggiornamento software disponibili che è stato configurato per la gerarchia.  Questo comportamento viene mantenuto finché non si sceglie di aggiungere singoli punti di aggiornamento software a diversi gruppi di limiti con un comportamento di selezione e fallback controllato.
+Quando si esegue l'aggiornamento da una versione precedente la 1702, tutti i punti di aggiornamento software esistenti vengono aggiunti al gruppo di limiti predefinito in ogni sito. Ciò consente di mantenere il comportamento di pre-aggiornamento in cui i client selezionano un punto di aggiornamento software dal pool di punti di aggiornamento software disponibili che è stato configurato per la gerarchia.  Questo comportamento viene mantenuto finché non si sceglie di aggiungere singoli punti di aggiornamento software a gruppi di limiti diversi per un comportamento di selezione e fallback controllato.
 
 Se si installa un nuovo sito che esegue la versione 1702 o successiva, è necessario assegnare punti di aggiornamento software a un gruppo di limiti prima che i client possano individuarli e usarli.
 
