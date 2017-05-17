@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 88649111ea3a38c027efb4952211546afd0bf27e
 ms.openlocfilehash: 58beef440db8e019a06ce7c4c8eaabc8e85ce954
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -110,9 +112,4 @@ Per estendere lo schema per Configuration Manager:
  Dopo avere configurato il contenitore, avere ottenuto le autorizzazioni e avere installato un sito primario di Configuration Manager, è possibile configurare il sito per la pubblicazione di dati in Active Directory.  
 
  Per altre informazioni sulla pubblicazione, vedere [Pubblicare i dati del sito per System Center Configuration Manager](../../../core/servers/deploy/configure/publish-site-data.md).  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

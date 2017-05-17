@@ -13,14 +13,16 @@ ms.service:
 ms.technology:
 - configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 78524abd4c45f0b7402d6f1e85afc60bb72ab0ee
 ms.openlocfilehash: d736715f1f2c92b4c91f156ecb8abe3513811a34
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
 
-#  <a name="a-namebkmkmanualdeploya-manually-deploy-software-updates"></a><a name="BKMK_ManualDeploy"></a> Distribuire manualmente gli aggiornamenti software  
+#  <a name="BKMK_ManualDeploy"></a> Distribuire manualmente gli aggiornamenti software  
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -28,7 +30,7 @@ ms.openlocfilehash: d736715f1f2c92b4c91f156ecb8abe3513811a34
 
  Le sezioni seguenti descrivono i passaggi per distribuire manualmente gli aggiornamenti software.  
 
-##  <a name="a-namebkmk1searchcriteriaa-step-1-specify-search-criteria-for-software-updates"></a><a name="BKMK_1SearchCriteria"></a> Passaggio 1: Specificare i criteri di ricerca per gli aggiornamenti software  
+##  <a name="BKMK_1SearchCriteria"></a> Passaggio 1: Specificare i criteri di ricerca per gli aggiornamenti software  
  Esistono potenzialmente migliaia di aggiornamenti software visualizzati nella console di Configuration Manager. Il primo passaggio del flusso di lavoro per la distribuzione manuale degli aggiornamenti software consiste nell'identificare gli aggiornamenti software che si desidera distribuire. Ad esempio, si potrebbero fornire criteri che recuperino tutti gli aggiornamenti software richiesti su oltre 50 dispositivi client e che abbiano **Sicurezza** o **Errore critico** come classificazione di aggiornamento software.  
 
 > [!IMPORTANT]  
@@ -54,7 +56,7 @@ ms.openlocfilehash: d736715f1f2c92b4c91f156ecb8abe3513811a34
     > [!TIP]  
     >  È disponibile l'opzione per salvare i criteri di filtro nella scheda **Cerca** e nel gruppo **Salva** .  
 
-##  <a name="a-namebkmk2updategroupa-step-2-create-a-software-update-group-that-contains-the-software-updates"></a><a name="BKMK_2UpdateGroup"></a> Passaggio 2: Creare un gruppo di aggiornamenti software che contenga gli aggiornamenti software  
+##  <a name="BKMK_2UpdateGroup"></a> Passaggio 2: Creare un gruppo di aggiornamenti software che contenga gli aggiornamenti software  
  I gruppi di aggiornamento software forniscono un metodo efficace per organizzare gli aggiornamenti software in preparazione per la distribuzione. È possibile aggiungere manualmente aggiornamenti software a un gruppo di aggiornamento software oppure Configuration Manager può aggiungere automaticamente aggiornamenti software a un gruppo di aggiornamento software nuovo o esistente usando un'ADR. Usare le procedure seguenti per aggiungere manualmente gli aggiornamenti software in un nuovo gruppo di aggiornamento software.  
 
 #### <a name="to-manually-add-software-updates-to-a-new-software-update-group"></a>Per aggiungere manualmente gli aggiornamenti software a un nuovo gruppo di aggiornamento software  
@@ -73,7 +75,7 @@ ms.openlocfilehash: d736715f1f2c92b4c91f156ecb8abe3513811a34
 
 7.  Selezionare il gruppo di aggiornamento software, quindi nella scheda **Home** , nel gruppo **Aggiorna** , fare clic su **Mostra membri** per visualizzare un elenco degli aggiornamenti software inclusi nel gruppo.  
 
-##  <a name="a-namebkmk3downloadcontenta-step-3-download-the-content-for-the-software-update-group"></a><a name="BKMK_3DownloadContent"></a> Passaggio 3: Scaricare il contenuto per il gruppo di aggiornamenti software  
+##  <a name="BKMK_3DownloadContent"></a> Passaggio 3: Scaricare il contenuto per il gruppo di aggiornamenti software  
  Facoltativamente, prima di distribuire gli aggiornamenti software, è possibile scaricare il contenuto per gli aggiornamenti software inclusi nel gruppo di aggiornamento software. È possibile scegliere di effettuare questa operazione in modo da poter verificare che il contenuto sia disponibile nei punti di distribuzione prima di distribuire gli aggiornamenti software. Ciò consentirà di evitare eventuali problemi imprevisti con la distribuzione del contenuto. È possibile ignorare questo passaggio e il contenuto verrà scaricato e copiato nei punti di distribuzione come parte del processo di distribuzione. Usare la procedura seguente per scaricare il contenuto per gli aggiornamenti software nel gruppo di aggiornamento software.  
 
 
@@ -160,7 +162,7 @@ ms.openlocfilehash: d736715f1f2c92b4c91f156ecb8abe3513811a34
 
 4. Nella scheda **Home** , nel gruppo **Contenuto** , fare clic su **Visualizza stato**.  
 
-##  <a name="a-namebkmk4deployupdategroupa-step-4-deploy-the-software-update-group"></a><a name="BKMK_4DeployUpdateGroup"></a> Passaggio 4: Distribuire il gruppo di aggiornamenti software  
+##  <a name="BKMK_4DeployUpdateGroup"></a> Passaggio 4: Distribuire il gruppo di aggiornamenti software  
  Dopo aver determinato quali aggiornamenti software di desidera distribuire e averli aggiunti a un gruppo di aggiornamento software, è possibile distribuire manualmente gli aggiornamenti software nel gruppo di aggiornamento software. Usare la procedura seguente per distribuire manualmente gli aggiornamenti software in un gruppo di aggiornamento software.  
 
 #### <a name="to-manually-deploy-the-software-updates-in-a-software-update-group"></a>Per distribuire manualmente gli aggiornamenti software in un gruppo di aggiornamento software  
@@ -315,9 +317,4 @@ ms.openlocfilehash: d736715f1f2c92b4c91f156ecb8abe3513811a34
 
 ## <a name="next-steps"></a>Passaggi successivi
 [Monitorare gli aggiornamenti software](monitor-software-updates.md)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

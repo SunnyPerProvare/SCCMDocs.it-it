@@ -15,9 +15,11 @@ caps.latest.revision: 4
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: e592a732259147ee71d404a68982c28e5138e243
 ms.openlocfilehash: 0e982d08d54af39b13f553fc531a200f921e94a6
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="manage-accounts-to-access-content-in-system-center-configuration-manager"></a>Gestire gli account per l'accesso al contenuto in System Center Configuration Manager
@@ -34,7 +36,7 @@ Prima di distribuire il contenuto in System Center Configuration Manager, è opp
 
 -   **Account di connessione multicast**. Usato per le distribuzioni del sistema operativo.  
 
-##  <a name="a-namebkmknaaa-network-access-account"></a><a name="bkmk_NAA"></a> Account di accesso alla rete  
+##  <a name="bkmk_NAA"></a> Account di accesso alla rete  
  I computer client usano l'account di accesso alla rete quando non possono usare il proprio account computer locale per accedere al contenuto nei punti di distribuzione. Ad esempio, si applica a client e computer di gruppi di lavoro di domini non attendibili. Questo account può anche essere usato durante la distribuzione del sistema operativo quando il computer che installa il sistema operativo non dispone ancora di un account computer nel dominio.  
 
 -   I client usano solo l'account di accesso alla rete per l'accesso alle risorse della rete.  
@@ -66,7 +68,7 @@ Concedere a questo account le autorizzazioni minime appropriate per accedere al 
 
 3.  Scegliere la scheda **Account di accesso alla rete**. Configurare uno o più account e quindi scegliere **OK**.  
 
-##  <a name="a-namebkmkpaaa-package-access-accounts"></a><a name="bkmk_Paa"></a> Account di accesso ai pacchetti  
+##  <a name="bkmk_Paa"></a> Account di accesso ai pacchetti  
  Gli account di accesso ai pacchetti consentono di impostare le autorizzazioni del file system NTFS per specificare gli utenti e i gruppi di utenti che possono accedere al contenuto dei pacchetti nei punti di distribuzione. Per impostazione predefinita, Configuration Manager concede l'accesso solo agli account generici **Utenti** e **Amministratori**. È tuttavia possibile controllare l'accesso per i computer client usando gruppi o account di Windows aggiuntivi. I dispositivi mobili non usano gli account di accesso ai pacchetti perché recuperano sempre il contenuto dei pacchetti in modo anonimo.  
 
  Per impostazione predefinita, quando Configuration Manager copia i file di contenuto in un pacchetto in un punto di distribuzione, garantisce l'accesso di **Lettura** al gruppo **Utenti** locale e **Controllo completo** al gruppo **Amministratori** locale. Le autorizzazioni effettive necessarie dipendono dal pacchetto. Se si dispone di client in gruppi di lavoro o in foreste non trusted, tali client usano l'account di accesso alla rete per accedere al contenuto del pacchetto. Assicurarsi che l'account di accesso alla rete disponga delle autorizzazioni per il pacchetto utilizzando gli account di accesso al pacchetto definiti.  
@@ -102,7 +104,7 @@ Concedere a questo account le autorizzazioni minime appropriate per accedere al 
     > [!NOTE]  
     >  Quando si aggiunge un nome utente per l'account e Configuration Manager trova sia un account utente locale sia un account utente di dominio con tale nome, Configuration Manager imposta i diritti di accesso per l'account utente di dominio.  
 
-##  <a name="a-namebkmkmultia-multicast-connection-account"></a><a name="bkmk_multi"></a> Account di connessione multicast  
+##  <a name="bkmk_multi"></a> Account di connessione multicast  
  L'account di connessione multicast viene usato dai punti di distribuzione configurati per consentire al multicast di leggere le informazioni dal database del sito.  
 
 -   Specificare un account da usare quando si configurano le connessioni del database di Configuration Manager per il multicast.  
@@ -119,9 +121,4 @@ Durante la creazione, impostare questo account come account locale e con diritti
 
 > [!IMPORTANT]  
 >  Non concedere a questo account i diritti interattivi per l'accesso.  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

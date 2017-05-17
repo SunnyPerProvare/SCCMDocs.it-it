@@ -16,9 +16,11 @@ caps.latest.revision: 21
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
 ms.openlocfilehash: 9085a4daed409eeff4c95e5c467f123d0a38147a
+ms.contentlocale: it-it
+ms.lasthandoff: 12/16/2016
 
 
 
@@ -73,9 +75,4 @@ ms.openlocfilehash: 9085a4daed409eeff4c95e5c467f123d0a38147a
 -   Aggiornamenti distribuiti da Microsoft Malware Protection Center: questo metodo consente di scaricare gli aggiornamenti delle definizioni da Microsoft Malware Protection Center.
 
 -   [Aggiornamenti dalle condivisioni file UNC](endpoint-definitions-network.md): con questo metodo è possibile salvare gli aggiornamenti più recenti del motore e delle definizioni in una condivisione in rete. I client possono quindi accedere alla rete per installare gli aggiornamenti.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

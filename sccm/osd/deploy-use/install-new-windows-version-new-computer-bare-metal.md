@@ -15,9 +15,11 @@ caps.latest.revision: 8
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: 584dad7d8b05a2da9f7a66b73028ae99ff1a594f
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -29,13 +31,13 @@ Questo argomento specifica i passaggi generali di System Center Configuration Ma
 
 Per informazioni su come aggiornare un computer esistente con una nuova versione di Windows, vedere le sezioni seguenti.  
 
-##  <a name="a-namebkmkplana-plan"></a><a name="BKMK_Plan"></a> Pianificazione  
+##  <a name="BKMK_Plan"></a> Pianificazione  
 
 -   **Pianificare e implementare i requisiti di infrastruttura**  
 
      Per poter distribuire i sistemi operativi, è necessario soddisfare diversi requisiti di infrastruttura, ad esempio Windows ADK, Servizi di distribuzione Windows (WDS), configurazioni supportate del disco rigido e così via. Per altre informazioni, vedere [Requisiti dell'infrastruttura per la distribuzione del sistema operativo](../plan-design/infrastructure-requirements-for-operating-system-deployment.md).
 
-##  <a name="a-namebkmkconfigurea-configure"></a><a name="BKMK_Configure"></a> Configura  
+##  <a name="BKMK_Configure"></a> Configura  
 
 1.  **Preparare un'immagine d'avvio**  
 
@@ -59,7 +61,7 @@ Per informazioni su come aggiornare un computer esistente con una nuova versione
 
      Usare una sequenza di attività per automatizzare l'installazione del sistema operativo nella rete. Usare i passaggi in [Creare una sequenza di attività per installare un sistema operativo](create-a-task-sequence-to-install-an-operating-system.md) per creare la sequenza di attività per distribuire il sistema operativo. A seconda del metodo di distribuzione scelto, potrebbero essere necessarie considerazioni aggiuntive per la sequenza di attività.  
 
-##  <a name="a-namebkmkdeploya-deploy"></a><a name="BKMK_Deploy"></a> Distribuisci  
+##  <a name="BKMK_Deploy"></a> Distribuisci  
 
 -   Usare uno dei metodi di distribuzione seguenti per distribuire il sistema operativo:  
 
@@ -78,9 +80,4 @@ Per informazioni su come aggiornare un computer esistente con una nuova versione
 -   **Monitorare la distribuzione della sequenza di attività**  
 
      Per monitorare la distribuzione della sequenza di attività per l'installazione del sistema operativo, vedere [Monitorare le distribuzioni del sistema operativo](monitor-operating-system-deployments.md).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

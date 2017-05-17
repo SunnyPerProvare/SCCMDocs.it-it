@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
 ms.openlocfilehash: deed112cca011b3b410c1197b7abf0f36a864f3c
+ms.contentlocale: it-it
+ms.lasthandoff: 01/03/2017
 
 
 ---
@@ -48,9 +50,4 @@ Questa procedura consente di configurare le impostazioni client predefinite per 
 7.  Configurare altre [impostazioni client di inventario hardware](../../../../core/clients/deploy/about-client-settings.md#hardware-inventory) necessarie.  
 
 I dispositivi client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

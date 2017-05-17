@@ -15,9 +15,11 @@ caps.latest.revision: 3
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: d1bf0fdc3e735eb31492476fd46f008620150c0b
 ms.openlocfilehash: 8f951805c2fc25059965c15c94934c0f8546735c
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="upgrade-an-evaluation-installation-of-system-center-configuration-manager-to-a-full-installation"></a>Aggiornare un'installazione di valutazione di System Center Configuration Manager a un'installazione completa
@@ -52,9 +54,4 @@ Prerequisiti per l'aggiornamento di una versione di valutazione a una versione c
 
     > [!NOTE]  
     >  È possibile che la barra del titolo di una console di Configuration Manager che rimane connessa al sito aggiornato indichi che nel sito è ancora attiva la versione di valutazione finché non si riconnette la console al sito.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

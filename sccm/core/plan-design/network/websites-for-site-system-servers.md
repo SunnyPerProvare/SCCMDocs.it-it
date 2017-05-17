@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 26bbec1e8d6c53ce297689ba4390b9347229eb15
 ms.openlocfilehash: 886ff3b8e867fc340c79648a57feae81653b0ccd
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -34,7 +36,7 @@ Alcuni ruoli del sistema del sito di Configuration Manager richiedono Microsoft 
 
 
 
-##  <a name="a-namebkmkwhat2knowa-what-to-know-before-choosing-to-use-custom-websites"></a><a name="BKMK_What2Know"></a> Cosa è necessario sapere prima di scegliere di usare i siti Web personalizzati  
+##  <a name="BKMK_What2Know"></a> Cosa è necessario sapere prima di scegliere di usare i siti Web personalizzati  
  Per impostazione predefinita, i ruoli del sistema del sito usano il **sito Web predefinito** in IIS. Questa configurazione viene definita automaticamente quando si installa il ruolo del sistema del sito. Tuttavia, nei siti primari è possibile scegliere di usare i siti Web personalizzati. Quando si usano siti Web personalizzati:  
 
 -   I siti Web personalizzati sono abilitati per l'intero sito, non per i singoli server o ruoli del sistema del sito.  
@@ -132,9 +134,4 @@ Dal momento che la procedura per creare un sito Web personalizzato varia a secon
     2.  Avviare il sito Web **SMSWEB**.  
 
     3.  Riavviare il servizio **SMS_SITE_COMPONENT_MANAGER** nel server del sito.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

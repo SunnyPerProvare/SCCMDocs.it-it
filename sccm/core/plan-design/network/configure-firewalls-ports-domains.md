@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: bd20983eeca47bdd63e0385440e6c8d64901b902
 ms.openlocfilehash: 4a2a8f96a900a2c4959ae3ff59232771ece95991
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -34,9 +36,4 @@ Per preparare la rete al supporto di System Center Configuration Manager, pianif
 |**Domini e i servizi** che i client e i server del sito possono avere necessità di usare.|Le funzionalità di Configuration Manager possono richiedere che i client e i server del sito abbiano accesso a servizi e domini specifici su Internet, ad esempio Windowsudpate.microsoft.com o il servizio Microsoft Intune.<br /><br /> Se si usa Microsoft Intune per gestire i dispositivi mobili, è necessario anche configurare l'accesso a [porte e domini richiesti da Intune.](https://docs.microsoft.com/en-us/intune/get-started/network-infrastructure-requirements-for-microsoft-intune)|  
 |**Server proxy** per i server del sistema del sito e per le comunicazioni client. È possibile specificare i server proxy per diversi client e server di sistema del sito.|Dal momento che queste configurazioni vengono eseguite in fase di installazione di un ruolo del sistema del sito o un client, è sufficiente essere a conoscenza delle configurazioni del server proxy per riferimento futuro quando si configurano i ruoli del sistema del sito e i client.<br /><br /> Se non si è certi se per la distribuzione sarà necessario usare i server proxy, esaminare [Supporto dei server proxy in System Center Configuration Manager](../../../core/plan-design/network/proxy-server-support.md) per conoscere i ruoli del sistema del sito e le operazioni del client che possono usare un server proxy.|   
 |  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

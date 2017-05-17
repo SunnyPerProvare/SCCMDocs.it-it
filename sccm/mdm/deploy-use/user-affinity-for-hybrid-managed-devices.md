@@ -15,9 +15,10 @@ caps.latest.revision: 6
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
 ms.openlocfilehash: 74dcc0f4e680893db804956615248b7e1230d2b5
+ms.contentlocale: it-it
 ms.lasthandoff: 12/16/2016
 
 ---
@@ -27,7 +28,7 @@ ms.lasthandoff: 12/16/2016
 
 Quando si configurano profili per i dispositivi di proprietà dell'azienda, l'amministratore può specificare se i dispositivi gestiti possono avere un'*affinità utente* che identifica un utente specifico con il dispositivo.  
 
-##  <a name="a-namebkmkioscpa-managed-devices-with-user-affinity"></a><a name="BKMK_iOSCP"></a> Dispositivi gestiti con affinità utente  
+##  <a name="BKMK_iOSCP"></a> Dispositivi gestiti con affinità utente  
  I dispositivi configurati con **user affinity** possono installare ed eseguire l'app Portale aziendale per scaricare le app e gestire i dispositivi. Quando gli utenti ricevono i dispositivi, devono eseguire alcuni passaggi supplementari per completare l'Assistente configurazione e installare l'app Portale aziendale.  
 
 #### <a name="how-to-enroll-ios-devices-with-user-affinity"></a>Come registrare i dispositivi iOS con l'affinità utente  
@@ -52,6 +53,6 @@ Quando si configurano profili per i dispositivi di proprietà dell'azienda, l'am
 
 8.  La registrazione è stata completata. Ora si può usare il dispositivo con il set completo di funzionalità.  
 
-##  <a name="a-namebkmknouaa-managed-devices-without-user-affinity"></a><a name="BKMK_noUA"></a> Dispositivi gestiti senza affinità utente  
+##  <a name="BKMK_noUA"></a> Dispositivi gestiti senza affinità utente  
  I dispositivi configurati con **no user affinity** non è supportato il Portale aziendale e non si dovrebbe installare l'app. Il Portale aziendale è progettato per gli utenti che hanno credenziali aziendali e richiedono l'accesso a risorse aziendali personalizzate, ad esempio la posta elettronica. I dispositivi registrati **senza affinità utente** non sono pensati per l'accesso utente dedicato. Chioschi multimediali, POS o dispositivi di utilità condivisi sono casi d'uso tipici per i dispositivi registrati senza affinità utente. Se è necessaria l'affinità utente, verificare che nel profilo di registrazione del dispositivo sia selezionata l'opzione **Affinità utente** prima di registrare il dispositivo. Per modificare lo stato di affinità in un dispositivo è necessario ritirare il dispositivo e quindi registrarlo nuovamente.
 

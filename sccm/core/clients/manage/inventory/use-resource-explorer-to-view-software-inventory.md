@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
 ms.openlocfilehash: 6189726bbcade8229e0b2e929ebedeefdbf266a4
+ms.contentlocale: it-it
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -53,9 +55,4 @@ ms.openlocfilehash: 6189726bbcade8229e0b2e929ebedeefdbf266a4
 
 4.  È possibile fare clic con il pulsante destro del mouse su qualsiasi elemento nel riquadro di destra della finestra Esplora inventario risorse e quindi scegliere **Proprietà** per visualizzare le informazioni di inventario raccolte in un formato più leggibile.  
  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

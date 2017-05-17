@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 7b6674f331c82cc7899b8661cf38b9d3022cf21b
 ms.openlocfilehash: 647826e9d340d3ef97abab0dba51041a3727dedc
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -64,7 +66,7 @@ Usare uno o più metodi di individuazione in System Center Configuration Manager
 
 -   Distribuzione delle impostazioni client e delle configurazioni associate.
 
-##  <a name="a-namebkmkddrsa-about-discovery-data-records"></a><a name="BKMK_DDRs"></a> Informazioni sui record dei dati di individuazione  
+##  <a name="BKMK_DDRs"></a> Informazioni sui record dei dati di individuazione  
  I record dei dati di individuazione sono file creati da un metodo di individuazione. Tali file contengono informazioni su una risorsa che è possibile gestire in Configuration Manager, ad esempio computer, utenti e, in alcuni casi, l'infrastruttura di rete. Questi vengono elaborati nei siti primari o nei siti di amministrazione centrale. Dopo l'immissione nel database delle informazioni sulle risorse contenute nel record dei dati di individuazione, questo viene eliminato e le informazioni vengono replicate come dati globali in tutti i siti della gerarchia.  
 
  Il sito in cui viene elaborato un record dei dati di individuazione dipende dalle informazioni contenute:  
@@ -87,9 +89,4 @@ Gli argomenti seguenti offrono informazioni basilari per l'uso corretto dei meto
 -   [Selezionare i metodi di individuazione da usare per System Center Configuration Manager](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md)  
 
 Quindi, dopo aver stabilito quali metodi usare, vedere le informazioni relative all'impostazione di ogni metodo nell'argomento [Configurare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

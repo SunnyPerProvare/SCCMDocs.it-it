@@ -13,9 +13,11 @@ ms.service:
 ms.technology:
 - configmgr-sum
 ms.assetid: 1a997c30-8e71-4be5-89ee-41efb2c8d199
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: fd9c1e9418ff1956c6ef98753e23a293440179be
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 
@@ -108,9 +110,4 @@ ms.openlocfilehash: fd9c1e9418ff1956c6ef98753e23a293440179be
 Dopo aver sincronizzato gli aggiornamenti software per la prima volta o dopo che sono stati resi disponibili nuovi prodotti o classificazioni, è necessario [configurare le classificazioni e i prodotti nuovi](configure-classifications-and-products.md) per sincronizzare gli aggiornamenti software con i nuovi criteri.
 
 Dopo aver sincronizzato gli aggiornamenti software con i criteri appropriati, [gestire le impostazioni per gli aggiornamenti software](manage-settings-for-software-updates.md).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

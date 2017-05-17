@@ -15,9 +15,11 @@ caps.latest.revision: 3
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 099345d59891841a336cbada896ec349751fecd3
 ms.openlocfilehash: 54e54409a1792c7e28620a5e3cea3e8d8695c7d4
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="package-transfer-manager-in-system-center-configuration-manager"></a>Package Transfer Manager in System Center Configuration Manager
@@ -87,9 +89,4 @@ Le informazioni seguenti descrivono come Package Transfer Manager gestisce il tr
     -   **Punto di distribuzione standard:** al termine del trasferimento dei file a ogni punto di distribuzione remoto designato, Package Transfer Manager verifica l'hash del contenuto nel punto di distribuzione e quindi comunica a Distribution Manager che la distribuzione è completata.  
 
     -   **Punto di distribuzione pull:** dopo il completamento del download del contenuto, il punto di distribuzione pull verifica l'hash del contenuto e quindi invia un messaggio di stato al punto di gestione dei siti per segnalare la corretta esecuzione dell'operazione. Se dopo 60 minuti il messaggio di stato non viene ricevuto, Package Transfer Manager viene riattivato ed esegue una verifica del punto di distribuzione pull per determinare se tale punto ha scaricato il contenuto. Se il download del contenuto è in corso, Package Transfer Manager rimane in modalità di sospensione per altri 60 minuti prima di eseguire nuovamente una verifica del punto di distribuzione pull. Questo ciclo continua fino a quando il punto di distribuzione pull non ha completato il trasferimento del contenuto.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

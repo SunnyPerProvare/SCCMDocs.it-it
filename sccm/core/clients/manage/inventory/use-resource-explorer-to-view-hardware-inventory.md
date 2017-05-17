@@ -15,9 +15,11 @@ caps.latest.revision: 7
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
 ms.openlocfilehash: 6265ee70b70a715862b1651d2f3760bef096ee8a
+ms.contentlocale: it-it
+ms.lasthandoff: 01/03/2017
 
 
 ---
@@ -49,10 +51,5 @@ ms.openlocfilehash: 6265ee70b70a715862b1651d2f3760bef096ee8a
 3.  Scegliere il computer che contiene l'inventario da visualizzare e quindi nel gruppo **Dispositivi** della scheda **Home** scegliere **Avvia** >  **Esplora inventario risorse**.   
 
 4.  Fare clic con il pulsante destro del mouse su qualsiasi elemento nel riquadro di destra della finestra **Esplora inventario risorse** e quindi scegliere **Proprietà** per aprire la finestra di dialogo *<Nome elemento\>***Proprietà** per visualizzare le informazioni di inventario raccolte in un formato più leggibile.  
-
-
-
-
-<!--HONumber=Jan17_HO1-->
 
 

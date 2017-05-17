@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
 ms.openlocfilehash: 5682cacb43af5bf9248446f1c35b08f137bdae9d
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -90,9 +92,4 @@ Nella procedura seguente si apprenderà come aggiungere questo elemento di confi
  Per esaminare rapidamente le statistiche di conformità per questa distribuzione, nell'area di lavoro **Monitoraggio** fare clic su **Distribuzioni**. Nella parte inferiore della schermata è visualizzato un grafico **Statistiche conformità** .  
 
  Per informazioni più dettagliate su come monitorare le linee di base di configurazione, vedere [Monitor compliance settings](../../compliance/deploy-use/monitor-compliance-settings.md) (Monitorare le impostazioni di conformità).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

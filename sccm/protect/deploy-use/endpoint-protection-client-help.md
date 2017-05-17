@@ -15,9 +15,11 @@ caps.latest.revision: 6
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 017bd5b899b364fc832c721d63cc7dbad0a11671
 ms.openlocfilehash: 212c73fcb947c3b56da6055bf47fe078301ad90d
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -59,9 +61,4 @@ Per visualizzare le impostazioni di Windows Defender, cercare `Windows Defender`
 ### <a name="see-also"></a>Vedere anche  
  [Domande frequenti relative al client Endpoint Protection](endpoint-protection-client-faq.md)   
  [Troubleshooting Windows Defender or Endpoint Protection client](troubleshoot-endpoint-client.md) (Risoluzione dei problemi di Windows Defender o del client di Endpoint Protection)
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

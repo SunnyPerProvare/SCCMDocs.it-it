@@ -15,9 +15,11 @@ caps.latest.revision: 5
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 860815010068422f2d8854ed2d574c24cc386891
 ms.openlocfilehash: 63a3c2ef66c80d1da9b50e67166a2196cf1b081b
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Configurare i metodi di individuazione per System Center Configuration Manager
@@ -44,7 +46,7 @@ Configurare i metodi di individuazione da eseguire in un sito di System Center C
 4.  Scegliere **OK** per salvare la configurazione.  
 
 
-##  <a name="a-namebkmkconfigadforestdisca-configure-active-directory-forest-discovery"></a><a name="BKMK_ConfigADForestDisc"></a> Configurare l'individuazione foresta Active Directory  
+##  <a name="BKMK_ConfigADForestDisc"></a> Configurare l'individuazione foresta Active Directory  
 Per completare la configurazione dell'individuazione foresta Active Directory, è necessario configurare le impostazioni in due posizioni:  
 
 -   Nel nodo **Metodi di individuazione** è possibile:
@@ -98,7 +100,7 @@ Usare le procedure seguenti per attivare l'individuazione foresta Active Directo
 
 4.  Al termine della configurazione della foresta per l'uso con l'individuazione della foresta Active Directory, scegliere **OK** per salvare la configurazione.  
 
-##  <a name="a-namebkmkconfigaddiscgenerala-configure-active-directory-discovery-for-computers-users-or-groups"></a><a name="BKMK_ConfigADDiscGeneral"></a> Configurare l'individuazione Active Directory per computer, utenti o gruppi  
+##  <a name="BKMK_ConfigADDiscGeneral"></a> Configurare l'individuazione Active Directory per computer, utenti o gruppi  
  Usare le informazioni nelle sezioni seguenti per configurare l'individuazione di computer, utenti o gruppi. Si useranno questi metodi di individuazione:  
 
 -   Individuazione gruppo Active Directory  
@@ -210,7 +212,7 @@ Usare le procedure seguenti per attivare l'individuazione foresta Active Directo
 
 8.  Al termine della configurazione dell'individuazione utente Active Directory per questo sito, scegliere **OK** per salvare la configurazione.  
 
-##  <a name="a-namebkmkconfighbdisca-configure-heartbeat-discovery"></a><a name="BKMK_ConfigHBDisc"></a> Configurare l'individuazione heartbeat  
+##  <a name="BKMK_ConfigHBDisc"></a> Configurare l'individuazione heartbeat  
  Per impostazione predefinita, l'individuazione heartbeat è abilitata quando si installa un sito primario di Configuration Manager. È quindi necessario configurare solo la pianificazione della frequenza di invio dei record dei dati di individuazione heartbeat a un punto di gestione da parte dei client quando non si vuole usare la frequenza predefinita di sette giorni.  
 
 > [!NOTE]  
@@ -226,10 +228,10 @@ Usare le procedure seguenti per attivare l'individuazione foresta Active Directo
 
 4.  Configurare la frequenza con cui i client inviano i record dei dati di individuazione heartbeat, quindi scegliere **OK** per salvare la configurazione.  
 
-##  <a name="a-namebkmkconfignetworkdisca-configure-network-discovery"></a><a name="BKMK_ConfigNetworkDisc"></a> Configurare l'individuazione di rete  
+##  <a name="BKMK_ConfigNetworkDisc"></a> Configurare l'individuazione di rete  
  Utilizzare le informazioni nelle sezioni riportate di seguito per configurare l'individuazione della rete.  
 
-###  <a name="a-namebkmkaboutconfignetworkdisca-about-configuring-network-discovery"></a><a name="BKMK_AboutConfigNetworkDisc"></a> Informazioni sulla configurazione dell'individuazione di rete  
+###  <a name="BKMK_AboutConfigNetworkDisc"></a> Informazioni sulla configurazione dell'individuazione di rete  
  Prima di configurare l'individuazione della rete, è necessaria una comprensione dei concetti seguenti:  
 
 -   Livelli disponibili per l'individuazione della rete  
@@ -244,14 +246,14 @@ Per altre informazioni, vedere [Informazioni sull'individuazione di rete](../../
 
  Ad esempio, è possibile individuare tutti i dispositivi SNMP (Simple Network Management Protocol) che usano uno specifico nome di comunità SNMP. Per la stessa esecuzione dell'individuazione, è inoltre possibile disattivare l'individuazione in una subnet specifica. Durante l'esecuzione dell'individuazione, l'individuazione della rete non rileverà i dispositivi SNMP con il nome di comunità specificato nella subnet disattivata.  
 
-####  <a name="a-namebkmkdeterminenettopologya-determine-your-network-topology"></a><a name="BKMK_DetermineNetTopology"></a> Determinare la topologia di rete  
+####  <a name="BKMK_DetermineNetTopology"></a> Determinare la topologia di rete  
  Per eseguire il mapping della rete, è possibile utilizzare un'individuazione solo per topologia. Questo tipo di individuazione non rileva i potenziali client. L'individuazione di rete solo per topologia si basa su SNMP.  
 
  Quando si esegue il mapping della topologia di rete, è necessario configurare gli **Hop massimi** nella scheda **SNMP** nella finestra di dialogo **Proprietà dell'individuazione della rete**. Con solo pochi hop è possibile controllare la larghezza di banda di rete che viene utilizzata quando viene eseguita l'individuazione. Man mano che l'individuazione di rete avanza, è possibile aumentare il numero di hop per ottenere una migliore comprensione della topologia di rete.  
 
  Dopo aver compreso la topologia di rete, è possibile configurare proprietà aggiuntive per l'individuazione di rete per individuare potenziali client e i relativi sistemi operativi, mentre si utilizzano le configurazioni disponibili per limitare i segmenti di rete in cui l'individuazione di rete è in grado di effettuare la ricerca.  
 
-####  <a name="a-namebkmklimitbysubneta-limit-searches-by-using-subnets"></a><a name="BKMK_LimitBySubnet"></a> Limitare le ricerche mediante subnet  
+####  <a name="BKMK_LimitBySubnet"></a> Limitare le ricerche mediante subnet  
  È possibile configurare l'individuazione di rete per effettuare la ricerca in subnet specifiche durante un ciclo di individuazione. Per impostazione predefinita, l'individuazione di rete effettua la ricerca nella subnet del server che esegue l'individuazione. Eventuali altre subnet configurate e abilitate si applicano esclusivamente alle opzioni di ricerca SNMP e DHCP (Dynamic Host Configuration Protocol). Per la ricerca nei domini, l'individuazione di rete non è limitata dalle configurazioni per subnet.  
 
  Se si specificano una o più subnet nella scheda **Subnet** della finestra di dialogo **Proprietà dell'individuazione della rete** , la ricerca viene effettuata solo nelle subnet che sono contrassegnate con **Attivato** .  
@@ -264,7 +266,7 @@ Per altre informazioni, vedere [Informazioni sull'individuazione di rete](../../
 
 -   Le query basate su dominio possono individuare risorse che si trovano nella subnet.  
 
-####  <a name="a-namebkmksearchbydomaina-search-a-specific-domain"></a><a name="BKMK_SearchByDomain"></a> Eseguire ricerche in un dominio specifico  
+####  <a name="BKMK_SearchByDomain"></a> Eseguire ricerche in un dominio specifico  
  È possibile configurare l'individuazione di rete per effettuare la ricerca in un dominio specifico o in un insieme di domini durante l'esecuzione dell'individuazione. Per impostazione predefinita, l'individuazione di rete effettua la ricerca nel dominio locale del server che esegue l'individuazione.  
 
  Se si specificano uno o più domini nella scheda **Domini** della finestra di dialogo **Proprietà dell'individuazione della rete** , viene effettuata la ricerca solo nei domini che sono contrassegnati con **Attivato** .  
@@ -277,7 +279,7 @@ Per altre informazioni, vedere [Informazioni sull'individuazione di rete](../../
 
 -   I server DHCP possono comunque rispondere con un elenco di risorse presenti nel dominio.  
 
-####  <a name="a-namebkmklimitbysnmpnamea-limit-searches-by-using-snmp-community-names"></a><a name="BKMK_LimitBySNMPname"></a> Limitare le ricerche usando i nomi comunità SNMP  
+####  <a name="BKMK_LimitBySNMPname"></a> Limitare le ricerche usando i nomi comunità SNMP  
  L'individuazione di rete viene configurata per effettuare la ricerca in una comunità SNMP specifica o in un insieme di comunità durante l'esecuzione dell'individuazione. Per impostazione predefinita, è configurato per l'utilizzo il nome comunità di **Pubblico** .  
 
  L'individuazione di rete utilizza i nomi comunità per accedere ai router che sono dispositivi SNMP. Un router può fornire l'individuazione di rete con informazioni su altri router e subnet che sono collegati al primo router.  
@@ -290,7 +292,7 @@ Per altre informazioni, vedere [Informazioni sull'individuazione di rete](../../
 > [!NOTE]  
 >  Oltre a usare il nome comunità SNMP, è possibile specificare l'indirizzo IP o il nome risolvibile di un dispositivo SNMP specifico. Questa operazione può essere eseguita nella scheda **Dispositivi SNMP** della finestra di dialogo **Proprietà dell'individuazione della rete**.  
 
-####  <a name="a-namebkmksearchbydhcpa-search-a-specific-dhcp-server"></a><a name="BKMK_SearchByDHCP"></a> Eseguire ricerche in un server DHCP specifico  
+####  <a name="BKMK_SearchByDHCP"></a> Eseguire ricerche in un server DHCP specifico  
  È possibile configurare l'individuazione di rete per l'utilizzo di un server DHCP specifico o di più server per individuare i client DHCP durante l'esecuzione dell'individuazione.  
 
  L'individuazione di rete effettua la ricerca in ogni server DHCP specificato nella scheda **DHCP** della finestra di dialogo **Proprietà dell'individuazione della rete** . Se il server che sta eseguendo l'individuazione esegue il lease dell'indirizzo IP da un server DHCP, è possibile configurare l'individuazione per effettuare la ricerca in quel server DHCP selezionando la casella **Includi il server DHCP per il cui utilizzo è configurato il server di sito**.  
@@ -298,7 +300,7 @@ Per altre informazioni, vedere [Informazioni sull'individuazione di rete](../../
 > [!NOTE]  
 >  Per configurare correttamente un server DHCP nell'individuazione di rete, l'ambiente deve supportare IPv4. Non è possibile configurare l'individuazione di rete per utilizzare un server DHCP in un ambiente IPv6 nativo.  
 
-###  <a name="a-namebkmkhowtoconfignetdisca-how-to-configure-network-discovery"></a><a name="BKMK_HowToConfigNetDisc"></a> Come configurare l'individuazione di rete  
+###  <a name="BKMK_HowToConfigNetDisc"></a> Come configurare l'individuazione di rete  
  Utilizzare le seguenti procedure per individuare in primo luogo la topologia di rete, quindi per configurare l'individuazione di rete e individuare potenziali client utilizzando una o più delle opzioni di individuazione di rete disponibili.  
 
 ##### <a name="to-determine-your-network-topology"></a>Per determinare la topologia di rete  
@@ -407,7 +409,7 @@ Per altre informazioni, vedere [Informazioni sull'individuazione di rete](../../
 
 12. Scegliere **OK** per salvare le configurazioni.  
 
-###  <a name="a-namebkmkhowtoverifynetdisca-how-to-verify-that-network-discovery-has-finished"></a><a name="BKMK_HowToVerifyNetDisc"></a> Come verificare il completamento dell'individuazione di rete  
+###  <a name="BKMK_HowToVerifyNetDisc"></a> Come verificare il completamento dell'individuazione di rete  
  Il tempo necessario per il completamento dell'individuazione di rete può variare in base a diversi fattori. Questi fattori possono includere uno o più dei seguenti elementi:  
 
 -   La dimensione della rete  
@@ -454,9 +456,4 @@ Poiché l'individuazione di rete non crea messaggi per avvisare l'utente quando 
     -   Descrizione: **Il componente è stato avviato**  
 
     Queste informazioni verificano l'avvio dell'individuazione della rete. Se queste informazioni non sono presenti, ripianificare l'individuazione della rete.  
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

@@ -15,9 +15,11 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ROBOTS: NOINDEX, NOFOLLOW
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 831d8a66c827d246069c7415cdce7a7c4bb95b33
 ms.openlocfilehash: 19e3099773f887129374413482702de3f4b0a36f
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="what39s-new-in-version-1610-of-system-center-configuration-manager"></a>Novità della versione 1610 di System Center Configuration Manager
@@ -314,9 +316,4 @@ Per informazioni dettagliate, vedere [Elementi di configurazione per dispositivi
 
 #### <a name="device-capability-settings"></a>Impostazioni relative alle funzionalità dei dispositivi
 - **Consenti connessione automatica agli hotspot Wi-Fi gratuiti**
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

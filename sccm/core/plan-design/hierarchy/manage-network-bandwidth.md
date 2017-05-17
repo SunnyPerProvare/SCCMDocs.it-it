@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 37e4f27fcea0bbdd39c9fd3ab38aa46e3059f73a
 ms.openlocfilehash: d9dff97126c34a726677de60dd7647370c553b6e
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -26,7 +28,7 @@ ms.openlocfilehash: d9dff97126c34a726677de60dd7647370c553b6e
 # <a name="manage-network-bandwidth-for-content"></a>Gestire la larghezza di banda della rete per il contenuto
 Per gestire più facilmente la larghezza di banda della rete usata per il processo di gestione del contenuto di System Center Configuration Manager, è possibile usare i controlli predefiniti per la pianificazione e la limitazione della larghezza di banda della rete. È inoltre possibile usare contenuto pre-installato. Le sezioni seguenti includono informazioni più dettagliate su queste opzioni.
 
-##  <a name="a-namebkmkplanningforthrottlingascheduling-and-throttling"></a><a name="BKMK_PlanningForThrottling"></a>Pianificazione e limitazione della larghezza di banda della rete  
+##  <a name="BKMK_PlanningForThrottling"></a>Pianificazione e limitazione della larghezza di banda della rete  
 
  Quando si crea un pacchetto, cambiare il percorso di origine del contenuto oppure aggiornare il contenuto nel punto di distribuzione; i file vengono copiati dal percorso di origine sulla raccolta contenuto nel server del sito. Quindi, il contenuto viene copiato dalla raccolta contenuto nel server del sito alla raccolta contenuto nei punti di distribuzione. Quando i file origine di contenuto vengono aggiornati e i file di origine sono già stati distribuiti, Configuration Manager recupera solo i file nuovi o aggiornati e li invia al punto di distribuzione.
 
@@ -41,7 +43,7 @@ Per gestire più facilmente la larghezza di banda della rete usata per il proces
 
 Per altre informazioni, vedere [Installare e configurare punti di distribuzione per System Center Configuration Manager](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points).  
 
-##  <a name="a-namebkmkprestagingcontentaprestaged-content"></a><a name="BKMK_PrestagingContent"></a>Contenuto pre-installato  
+##  <a name="BKMK_PrestagingContent"></a>Contenuto pre-installato  
  Prima di distribuire il contenuto, è possibile pre-installarlo in modo da aggiungere i file alla raccolta contenuto in un server del sito o in un punto di distribuzione. Poiché si trovano già nella raccolta, i file di contenuto non vengono trasferiti attraverso la rete quando si distribuisce il contenuto. È possibile pre-installare i file di contenuto per applicazioni e pacchetti.  
 
 Nella console di Configuration Manager selezionare il contenuto che si vuole pre-installare e quindi usare la **Creazione guidata file di contenuto pre-installazione**. In questo modo, viene creato un file di contenuto pre-installato e compresso, che contiene i file e i metadati associati per il contenuto. Quindi, è possibile importare manualmente il contenuto in un server del sito o in punto di distribuzione. Tenere presente quanto segue:  
@@ -58,7 +60,7 @@ Facoltativamente, è possibile configurare il punto di distribuzione come **pre-
 
 -   Usare sempre il processo standard di distribuzione per il contenuto nel pacchetto.  
 
-###  <a name="a-namebkmkdeterminetoprestagecontentadetermine-whether-to-prestage-content"></a><a name="BKMK_DetermineToPrestageContent"></a>Determinare se pre-installare il contenuto  
+###  <a name="BKMK_DetermineToPrestageContent"></a>Determinare se pre-installare il contenuto  
  Prendere in considerazione la pre-installazione di contenuto per applicazioni e pacchetti nei seguenti scenari:  
 
 -   **Per risolvere il problema relativo alla limitazione della larghezza di banda della rete dal server del sito a un punto di distribuzione.** Se la pianificazione e la limitazione della larghezza di banda della rete non sono sufficienti per soddisfare le esigenze di larghezza di banda, valutare l'opportunità di pre-installare il contenuto nel punto di distribuzione. Per ogni punto di distribuzione è disponibile l'impostazione **Abilita questo punto di distribuzione per il contenuto pre-installato** che è possibile configurare nelle proprietà del punto di distribuzione. Quando si abilita questa opzione, il punto di distribuzione viene individuato come punto di distribuzione pre-installato ed è possibile scegliere come gestire il contenuto in base al pacchetto.  
@@ -75,9 +77,4 @@ Facoltativamente, è possibile configurare il punto di distribuzione come **pre-
     >  Le opzioni precedenti sono applicabili in base al pacchetto e vengono usate solo quando un punto di distribuzione è identificato come pre-installato. I punti di distribuzione che non sono stati identificati come pre-installati ignorano queste impostazioni. In questo caso, il contenuto sempre viene distribuito in rete dal server del sito ai punti di distribuzione.  
 
 -   **Ripristinare la raccolta contenuto in un server del sito.** Quando un server del sito restituisce un errore, le informazioni sui pacchetti e le applicazioni contenute nella raccolta contenuto vengono ripristinate nel database del sito come parte del processo di ripristino, ma i file della raccolta contenuto non vengono ripristinati come parte del processo. Se non si ha un backup del file system per ripristinare la raccolta contenuto, è possibile creare un file di contenuto pre-installato da un altro sito che contiene i pacchetti e le applicazioni necessari. È quindi possibile estrarre il file di contenuto pre-installato sul server del sito ripristinato. Per altre informazioni sul backup e il ripristino del server del sito, vedere [Backup e ripristino per System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery).  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

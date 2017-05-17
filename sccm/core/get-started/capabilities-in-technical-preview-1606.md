@@ -15,9 +15,11 @@ caps.latest.revision: 31
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: a84d3ab55066d26c3199ea374d8beb472d66f43f
+ms.contentlocale: it-it
+ms.lasthandoff: 01/24/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1606-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1606 per System Center Configuration Manager
@@ -36,7 +38,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
-## <a name="a-namedmpcategorya-automatically-categorize-devices-into-collections"></a><a name="dmp_category"></a> Categorizzazione automatica dei dispositivi in raccolte
+## <a name="dmp_category"></a> Categorizzazione automatica dei dispositivi in raccolte
 È possibile creare categorie di dispositivi da usare per inserire automaticamente i dispositivi nelle raccolte di dispositivi quando si usa Configuration Manager con Microsoft Intune. Agli utenti verrà quindi richiesto di scegliere una categoria di dispositivo quando eseguono la registrazione di un dispositivo in Intune. È anche possibile modificare la categoria di un dispositivo dalla console di Configuration Manager.
 
 **Importante:** questa funzionalità può essere usata con la versione di Microsoft Intune di **giugno 2016**. Verificare che l'installazione sia aggiornata a questa versione prima di tentare queste procedure.
@@ -59,7 +61,7 @@ Quando si associa una raccolta a una categoria di dispositivo, tutti i dispositi
 2.  Selezionare un dispositivo nell'elenco **Dispositivi** quindi, sulla scheda **Home**, nel gruppo **Dispositivo**, fare clic su **Cambia categoria**.
 3.  Nella finestra di dialogo **Modifica categoria di dispositivi** scegliere la categoria da applicare al dispositivo e fare clic su **OK**.
 
-## <a name="a-namedmpgracea-enforcement-grace-period-for-required-application-and-software-update-deployments"></a><a name="dmp_grace"></a> Periodo di tolleranza di imposizione per le distribuzioni di applicazioni e aggiornamenti software obbligatori
+## <a name="dmp_grace"></a> Periodo di tolleranza di imposizione per le distribuzioni di applicazioni e aggiornamenti software obbligatori
 
 In alcuni casi è possibile concedere agli utenti più tempo per l'installazione di distribuzioni di applicazioni o aggiornamenti del software obbligatori, superando eventuali scadenze configurate. In genere questo potrebbe essere necessario quando un computer è stato disattivato per un lungo periodo di tempo ed è necessario installare un numero elevato di distribuzioni di applicazioni o aggiornamenti.
 Ad esempio, se un utente finale è appena tornato da una vacanza, potrebbe dover attendere un po' tempo mentre vengono installate le distribuzioni delle applicazioni scadute.
@@ -76,7 +78,7 @@ Tutte le distribuzioni con questa casella di controllo selezionata e che sono de
 Se si configura un periodo di tolleranza di imposizione e si seleziona la casella di controllo, quando si raggiunge la scadenza dell'installazione dell'applicazione, essa verrà installata nella prima finestra non aziendale che l'utente ha configurato fino al periodo di grazia. Tuttavia l'utente può comunque aprire Software Center e installare l'applicazione in qualsiasi momento. Una volta scaduto il periodo di tolleranza, le distribuzioni scadute torneranno al normale comportamento.
 Opzioni simili sono state aggiunte alla procedura guidata di distribuzione degli aggiornamenti software, alla procedura guidata di creazione delle regole di distribuzione automatica e alle pagine delle proprietà.
 
-##  <a name="a-namedmpdevgausing-configuration-manager-as-a-managed-installer-with-device-guard"></a><a name="dmp_devg"></a>Uso di Configuration Manager come programma di installazione gestito con Device Guard
+##  <a name="dmp_devg"></a>Uso di Configuration Manager come programma di installazione gestito con Device Guard
 
 Controllo dispositivo è una funzionalità di Windows 10 che usa funzioni hardware e software per controllare accuratamente ciò che può essere eseguita sul dispositivo.
 
@@ -101,7 +103,7 @@ Letture di approfondimento:
 - [Conformità e certificazione di Controllo dispositivo](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-certification-and-compliance)
 - [Guida alla distribuzione di Controllo dispositivo](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)
 
- ##  <a name="a-namedmponprema-multiple-device-management-points-for-on-premises-mobile-device-management"></a><a name="dmp_onprem"></a> Punti di gestione dei dispositivi multipli per la gestione dei dispositivi mobili locale  
+ ##  <a name="dmp_onprem"></a> Punti di gestione dei dispositivi multipli per la gestione dei dispositivi mobili locale  
  Con la versione Technical Preview 1606, Gestione dispositivi mobili locali supporta una nuova funzionalità di Windows 10 Anniversary Update che configura automaticamente un dispositivo registrato affinché usi più di un punto di gestione periferiche. Questa funzionalità consente al dispositivo il fallback su un altro punto di gestione periferiche quando quello che usa di solito non è disponibile. La funzionalità è operativa solo nei PC in cui è stato installato Windows 10 Anniversary Update.  
 
 ### <a name="try-it-out"></a>Prova subito!  
@@ -112,7 +114,7 @@ Letture di approfondimento:
 
 Per informazioni su come preparare il sito e registrare i dispositivi per Gestione dispositivi mobili locali, vedere [Manage mobile devices with on-premises infrastructure in System Center Configuration Manager](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md) (Gestione dei dispositivi mobili con infrastruttura locale in System Center Configuration Manager).  
 
-## <a name="a-namecloudproxyacloud-proxy-service-for-managing-clients-on-the-internet"></a><a name="cloud_proxy"></a>Servizio proxy cloud per la gestione dei client su Internet
+## <a name="cloud_proxy"></a>Servizio proxy cloud per la gestione dei client su Internet
 
 Il servizio proxy cloud offre un modo semplice per gestire i client di Configuration Manager su Internet. Il servizio, che viene distribuito in Microsoft Azure e richiede una sottoscrizione di Azure, si connette all'infrastruttura di Configuration Manager locale usando un nuovo ruolo, denominato punto del connettore proxy cloud. Una volta che è stato completamente distribuito e configurato, i client saranno in grado di accedere ai ruoli di sistema del sito Configuration Manager locale indipendentemente dal fatto che siano connessi alla rete privata interna o su Internet.
 
@@ -217,7 +219,7 @@ Quando il servizio e i ruoli sono completamente configurati, i client interni ot
 
 Quando i client hanno le nuove informazioni di percorso per il servizio proxy cloud, controllare lo stato dei client che non sono più nella rete privata interna ma hanno accesso a Internet. È inoltre possibile monitorare il traffico sul servizio proxy cloud passando ad **Amministrazione > Servizi cloud > Servizio proxy cloud**, selezionando il servizio nel riquadro dell'elenco e visualizzando le informazioni di traffico nel riquadro dei dettagli.   
 
-## <a name="a-namemanageo365amanage-the-office-365-client-agent-in-configuration-manager"></a><a name="manage_o365"></a> Gestione dell'agente del client Office 365 in Configuration Manager  
+## <a name="manage_o365"></a> Gestione dell'agente del client Office 365 in Configuration Manager  
 
 A partire dalla versione Technical Preview 1606 è possibile usare un'impostazione dell'agente client di Configuration Manager, invece dei criteri di gruppo, per consentire ai client di Office 365 di ricevere aggiornamenti da Configuration Manager. Dopo aver configurato questa impostazione e distribuito gli aggiornamenti di Office 365, l'agente client di Configuration Manager comunica con l'agente client di Office 365 al fine di scaricare gli aggiornamenti di Office 365 da un punto di distribuzione e installarli. Configuration Manager rileva inoltre l'impostazione dell'agente client.
 
@@ -229,13 +231,13 @@ Per altre informazioni, vedere [Manage Office 365 ProPlus updates](https://techn
 3. Fare clic su **Aggiornamenti software** e selezionare **Sì** per l'impostazione **Abilita la gestione dell'agente client di Office 365**.  
 
 
-## <a name="a-nameosdpreservedriveletterathe-osdpreservedriveletter-task-sequence-variable-has-been-deprecated"></a><a name="osdpreservedriveletter"></a>La variabile della sequenza di attività OSDPreserveDriveLetter è stata deprecata
+## <a name="osdpreservedriveletter"></a>La variabile della sequenza di attività OSDPreserveDriveLetter è stata deprecata
 La variabile della sequenza di attività OSDPreserveDriveLetter determina se la sequenza di attività usa la lettera di unità acquisita nel file WIM dell'immagine del sistema operativo quando si applica tale immagine a un computer di destinazione.
 - Questa variabile della sequenza di attività è stata deprecata nella versione Technical Preview 1606.
 
 Durante la distribuzione del sistema operativo, per impostazione predefinita l'installazione di Windows ora stabilisce qual è la lettera di unità migliore da usare (in genere C:). Se si vuole specificare un'unità diversa da usare, è possibile modificare il percorso nella sequenza di passaggi dell'attività Applica sistema operativo. Passare all'impostazione **Selezionare il percorso in cui applicare questo sistema operativo**, selezionare **Lettera unità logica specifica** e scegliere l'unità che si vuole usare. Nel computer di destinazione deve essere presente un'unità assegnata alla lettera che si sceglie. 
 
-## <a name="a-nameupdatesandservicingachanges-for-the-updates-and-servicing-node"></a><a name="updatesandservicing"></a>Modifiche per il nodo Aggiornamenti e manutenzione
+## <a name="updatesandservicing"></a>Modifiche per il nodo Aggiornamenti e manutenzione
 Con la versione Technical Preview 1606 sono state introdotte diverse modifiche che si applicano ad aggiornamenti e manutenzione nella console di Configuration Manager:
 - **Modifica del nome del nodo:**
 
@@ -264,9 +266,4 @@ Con la versione Technical Preview 1606 sono state introdotte diverse modifiche c
 -   **Opzioni ridenominate per la fase di pre-produzione:**
 
     Nel nodo Aggiornamenti e manutenzione, il pulsante che era denominato **Opzioni client** è ora stato denominato **Alza di livello il client di pre-produzione**.
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

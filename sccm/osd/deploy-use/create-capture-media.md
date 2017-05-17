@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: 5acf800ff5aebd849e294393337755145a60cca5
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -30,7 +32,7 @@ Il supporto di acquisizione in Configuration Manager consente di acquisire un'im
 
 -   [Creare una sequenza di attività per acquisire un sistema operativo](create-a-task-sequence-to-capture-an-operating-system.md)  
 
-##  <a name="a-namebkmkcreatecapturemediaa-how-to-create-capture-media"></a><a name="BKMK_CreateCaptureMedia"></a> Come creare supporti di acquisizione  
+##  <a name="BKMK_CreateCaptureMedia"></a> Come creare supporti di acquisizione  
  Usare il supporto di acquisizione per acquisire un'immagine del sistema operativo da un computer di riferimento. Il supporto di acquisizione contiene l'immagine di avvio che avvia il computer di riferimento e la sequenza di attività che acquisisce l'immagine del sistema operativo.
 
 Per creare i supporti di acquisizione, usare la Creazione guidata del supporto per la sequenza di attività. Prima di eseguire la procedura guidata, verificare che siano soddisfatte tutte le condizioni seguenti:  
@@ -80,9 +82,4 @@ Per creare i supporti di acquisizione, usare la Creazione guidata del supporto p
         >  È necessario disporre dei diritti di accesso in lettura alla raccolta contenuto nel punto di distribuzione.  
 
 7.  Completare la procedura guidata.  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

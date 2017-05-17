@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: c4f30e4839709722b216262b21d7b51c07d24d1e
 ms.openlocfilehash: dc36be47310d2c2178c974a2b503d0b5f9f6e2ec
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -85,9 +87,4 @@ Configurare le impostazioni del server proxy nella pagina Punto di aggiornamento
 3.  In Proprietà sistema del sito selezionare la scheda **Proxy** e quindi configurare le impostazioni proxy per il server del sito primario.  
 
 4.  Scegliere **OK** per salvare la nuova configurazione del server proxy.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

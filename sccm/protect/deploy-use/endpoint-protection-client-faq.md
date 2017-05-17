@@ -15,9 +15,11 @@ caps.latest.revision: 15
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 017bd5b899b364fc832c721d63cc7dbad0a11671
 ms.openlocfilehash: b88bc5f734b85527b81e5848deb0617db4c8dfbc
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -263,9 +265,4 @@ Per rimuovere facilmente e velocemente tutti gli elementi indesiderati o potenzi
  [Troubleshooting Windows Defender or Endpoint Protection client](troubleshoot-endpoint-client.md) (Risoluzione dei problemi di Windows Defender o del client di Endpoint Protection)   
 
  [Guida del client di Endpoint Protection](endpoint-protection-client-help.md)
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

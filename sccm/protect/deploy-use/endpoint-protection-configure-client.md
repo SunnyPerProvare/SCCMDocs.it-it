@@ -15,9 +15,11 @@ caps.latest.revision: 21
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
 ms.openlocfilehash: 2d7ec9cc626f3ccfded990cf8ba392c4979adfee
+ms.contentlocale: it-it
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -173,9 +175,4 @@ Per altre informazioni, vedere [Manage operating system images with System Cente
 Dopo aver completato i passaggi precedenti, è possibile preparare il computer di riferimento per la creazione dell'immagine. Per altre informazioni, vedere [Manage operating system images with System Center Configuration Manager](/sccm/osd/get-started/manage-operating-system-images) (Gestire le immagini del sistema operativo con System Center Configuration Manager).
 
 Quando viene distribuita un'immagine che contiene il software client di Endpoint Protection, il client segnalerà automaticamente le informazioni al sito di Configuration Manager a cui il computer è assegnato e verranno scaricati e applicati i criteri necessari nel computer client.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

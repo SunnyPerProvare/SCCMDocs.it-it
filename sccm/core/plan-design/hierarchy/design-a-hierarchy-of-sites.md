@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 35e48666f4d1a2363304650f960531fd0630a291
 ms.openlocfilehash: e346e83b0ae0dc7a612cef7a7b9fb1fdb42236bc
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -32,7 +34,7 @@ Quindi, dopo aver considerato le opzioni di gestione del contenuto che consenton
 > [!NOTE]
 > Quando si pianifica una nuova installazione di Configuration Manager, è necessario conoscere le [note sulla versione]( /sccm/core/servers/deploy/install/release-notes) in cui sono descritti nel dettaglio i problemi delle versioni attive. Le note sulla versione si applicano a tutti i rami di Configuration Manager.  Tuttavia, quando si usa il ramo [Technical Preview]( /sccm/core/get-started/technical-preview), nella documentazione si troveranno solo i problemi specifici di tale ramo per ciascuna versione della Technical Preview.  
 
-##  <a name="a-namebkmktopologya-hierarchy-topology"></a><a name="bkmk_topology"></a> Topologia di gerarchia  
+##  <a name="bkmk_topology"></a> Topologia di gerarchia  
  Le topologie di gerarchia variano da un singolo sito primario autonomo a un gruppo di siti primari e secondari connessi con un sito di amministrazione centrale come sito di livello superiore della gerarchia.   Gli elementi determinanti per stabilire il tipo e il numero di siti da usare in una gerarchia sono in genere il numero e il tipo di dispositivi che è necessario supportare, come indicato di seguito:   
 
  **Sito primario autonomo**: usare un sito primario autonomo quando un singolo sito primario è in grado di supportare la gestione di tutti i dispositivi e tutti gli utenti (vedere la sezione relativa ai [numeri di ridimensionamento e scalabilità](/sccm/core/plan-design/configs/size-and-scale-numbers)). Questa topologia funziona anche quando le diverse aree geografiche delle società possono essere gestite correttamente da un singolo sito primario.  Per semplificare la gestione del traffico di rete, è possibile usare punti di gestione preferiti e un'infrastruttura di contenuto accuratamente pianificata (vedere [Concetti di base per la gestione dei contenuti in System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)).  
@@ -57,7 +59,7 @@ Quindi, dopo aver considerato le opzioni di gestione del contenuto che consenton
 
  Le informazioni nelle sezioni seguenti possono essere utili per capire quando usare un sito specifico o l'opzione di gestione dei contenuti al posto di un sito aggiuntivo.  
 
-##  <a name="a-namebkmkchoosecasa-determine-when-to-use-a-central-administration-site"></a><a name="BKMK_ChooseCAS"></a> Determinare quando usare un sito di amministrazione centrale  
+##  <a name="BKMK_ChooseCAS"></a> Determinare quando usare un sito di amministrazione centrale  
  Usare un sito di amministrazione centrale per configurare le impostazioni a livello di gerarchia e per monitorare tutti i siti e gli oggetti nella gerarchia. Questo tipo di sito non gestisce i client direttamente ma coordina la replica dei dati tra i siti, che include la configurazione di siti e client in tutta la gerarchia.  
 
 **Le informazioni seguenti possono essere utili per decidere quando installare un sito di amministrazione centrale:**  
@@ -82,7 +84,7 @@ Quindi, dopo aver considerato le opzioni di gestione del contenuto che consenton
 
 -   È possibile configurare la replica di file e di database per controllare la comunicazione tra siti all'interno della gerarchia. Ciò include la pianificazione della replica di database per i dati del sito e la gestione della larghezza di banda per il trasferimento tra siti dei dati basati su file.  
 
-##  <a name="a-namebkmkchoosepriimarya-determine-when-to-use-a-primary-site"></a><a name="BKMK_ChoosePriimary"></a> Determinare quando usare un sito primario  
+##  <a name="BKMK_ChoosePriimary"></a> Determinare quando usare un sito primario  
  Utilizzare i siti primari per gestire i client. È possibile installare un sito primario come sito primario figlio al di sotto di un sito di amministrazione centrale oppure come primo sito di una nuova gerarchia. Un sito primario che viene installato come primo sito di una gerarchia crea un sito primario autonomo. Sia i siti primari figlio sia i siti primari autonomi supportano siti secondari come siti figlio del sito primario.  
 
  Si consiglia di usare un sito primario per uno dei motivi seguenti:  
@@ -108,7 +110,7 @@ Quindi, dopo aver considerato le opzioni di gestione del contenuto che consenton
 
 -   I siti primari usano la replica di database per comunicare direttamente con il relativo sito di amministrazione centrale (configurato automaticamente quando viene installato un nuovo sito).  
 
-##  <a name="a-namebkmkchoosesecondarya-determine-when-to-use-a-secondary-site"></a><a name="BKMK_ChooseSecondary"></a> Determinare quando usare un sito secondario  
+##  <a name="BKMK_ChooseSecondary"></a> Determinare quando usare un sito secondario  
  Utilizzare i siti secondari per gestire il trasferimento dei dati client e del contenuto di distribuzione su reti a larghezza di banda ridotta.  
 
  Un sito secondario viene gestito da un sito di amministrazione centrale o dal sito primario padre diretto del sito secondario. I siti secondari devono essere collegati a un sito primario e non possono essere spostati in un sito padre differente senza prima disinstallarli e successivamente reinstallarli come siti figlio del nuovo sito primario.
@@ -138,7 +140,7 @@ Quindi, dopo aver considerato le opzioni di gestione del contenuto che consenton
 
 -   Le installazioni dei siti secondari distribuiscono automaticamente un punto di gestione e un punto di distribuzione ubicati sul server del sito secondario.  
 
-##  <a name="a-namebkmkchoosesecondaryordpa-determine-when-to-use-content-management-options"></a><a name="BKMK_ChooseSecondaryorDP"></a> Determinare quando usare le opzioni di gestione dei contenuti  
+##  <a name="BKMK_ChooseSecondaryorDP"></a> Determinare quando usare le opzioni di gestione dei contenuti  
  Se si dispone di client in percorsi di rete remoti, considerare l'utilizzo di una o più opzioni di gestione dei contenuti piuttosto che di un sito primario o secondario. È spesso possibile evitare la necessità di installare un sito usando Windows BranchCache, configurando i punti di distribuzione per il controllo della larghezza di banda o copiando manualmente il contenuto nei punti di distribuzione (preinstallazione del contenuto).  
 
 
@@ -150,7 +152,7 @@ Quindi, dopo aver considerato le opzioni di gestione del contenuto che consenton
 
  Per altre informazioni sulle opzioni di gestione dei contenuti in Configuration Manager, vedere [Fundamental concepts for content management in System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) (Concetti di base per la gestione dei contenuti in System Center Configuration Manager).  
 
-##  <a name="a-namebkmkbeyonda-beyond-hierarchy-topology"></a><a name="bkmk_beyond"></a> Oltre la topologia di gerarchia  
+##  <a name="bkmk_beyond"></a> Oltre la topologia di gerarchia  
  Oltre alla topologia di gerarchia iniziale, valutare quali servizi o funzionalità saranno disponibili dai diversi siti della gerarchia (ruoli del sistema del sito) e come verranno gestite nell'infrastruttura le funzionalità e le configurazioni valide per l'intera gerarchia. Le considerazioni comuni seguenti sono trattate in argomenti separati. Si tratta di considerazioni importanti perché possono influenzare la progettazione della gerarchia o esserne influenzate:  
 
 -   Quando si prepara la [gestione di computer e dispositivi con System Center Configuration Manager](/sccm/core/clients/manage/manage-clients), valutare se i dispositivi gestiti si trovano nell'infrastruttura locale, nel cloud o includono dispositivi di proprietà degli utenti (BYOD).  Valutare anche come verranno gestiti i dispositivi supportati da più opzioni di gestione, ad esempio i computer Windows 10 che possono essere gestiti direttamente da Configuration Manager o tramite l'integrazione in Microsoft Intune.  
@@ -186,9 +188,4 @@ Quindi, dopo aver considerato le opzioni di gestione del contenuto che consenton
 -   [Trasferimenti di dati tra siti in System Center Configuration Manager](../../../core/servers/manage/data-transfers-between-sites.md)  
 
 -   [Fundamentals of role-based administration for System Center Configuration Manager](../../../core/understand/fundamentals-of-role-based-administration.md) (Nozioni di base sull'amministrazione basata su ruoli per System Center Configuration Manager)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

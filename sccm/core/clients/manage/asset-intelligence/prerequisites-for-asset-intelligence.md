@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
 ms.openlocfilehash: 156d6679817b81ca27fbd2b8836431396e1e6b23
+ms.contentlocale: it-it
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -48,9 +50,4 @@ Asset Intelligence in System Center Configuration Manager ha dipendenze esterne 
 |Dipendenze dell'agente client controllo software|Un certo numero di report software di Asset Intelligence si basa sui dati dell'agente client controllo software. Per informazioni sull'abilitazione dell'Agente client controllo software, vedere [Monitorare l'utilizzo delle app con il controllo software in System Center Configuration Manager](../../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).<br /><br /> I dati dei report di Asset Intelligence seguenti si basano sull'agente client controllo software:<br /><br /> Software 07A - programmi eseguibili usati di recente per numero di computer<br />Software 07B - computer che hanno usato di recente un programma eseguibile specifico<br />Software 07C - programmi eseguibili usati di recente in un computer specifico<br />Software 08A - programmi eseguibili usati di recente per numero di utenti<br />Software 08B - utenti che hanno usato di recente un programma eseguibile specifico<br />Software 08C - programmi eseguibili usati di recente da un utente specifico|  
 |Prerequisiti delle classi di report per l'inventario hardware di Asset Intelligence|I report di Asset Intelligence in Configuration Manager dipendono da classi di report di inventario hardware specifiche. Finché le classi di report per l'inventario hardware sono abilitate e i client creano report per l'inventario hardware in base a queste classi, i report di Asset Intelligence associati non contengono dati. Per supportare i requisiti dei report di Asset Intelligence è possibile abilitare le classi di report per l'inventario hardware seguenti:<br /><br /> -   SMS_SystemConsoleUsage<sup>1</sup><br />-   SMS_SystemConsoleUser<sup>1</sup><br />SMS_InstalledSoftware<br />SMS_AutoStartSoftware<br />SMS_BrowserHelperObject<br />Win32_USBDevice<br />SMS_InstalledExecutable<br />SMS_SoftwareShortcut<br />SoftwareLicensingService<br />SoftwareLicensingProduct<br />SMS_SoftwareTag<br /><br /> <sup>1</sup> Per impostazione predefinita, le classi di report per l'inventario hardware **SMS_SystemConsoleUsage** e **SMS_SystemConsoleUser** sono abilitate.<br /><br /> È possibile modificare le classi di report di inventario hardware di Asset Intelligence nell'area di lavoro **Asset e conformità** della console di Configuration Manager, facendo clic sul nodo **Asset Intelligence**. Per altre informazioni, vedere la sezione [Abilitare le classi di report di inventario hardware di Asset Intelligence](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md#BKMK_EnableAssetIntelligence) nell'argomento [Configurazione di Asset Intelligence in Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md).|  
 |Punto di Reporting Services|Perché sia possibile visualizzare i report degli aggiornamenti software, il ruolo del sistema del sito del punto di Reporting Services deve essere installato. Per altre informazioni su come creare un punto di Reporting Services, vedere [Configurazione della creazione di report in Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=232661).|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

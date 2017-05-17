@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: ab2ecb64c9c80b4effed79ba08769c99473db0c4
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -300,9 +302,4 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
     3.  Fare clic sull'immagine di avvio identificata nel passaggio 3.  
 
     4.  Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Aggiorna punti di distribuzione**.  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

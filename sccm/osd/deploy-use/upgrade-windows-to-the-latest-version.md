@@ -15,9 +15,11 @@ caps.latest.revision: 13
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 288a4c649f371d9701fe7249449356aa222bf372
 ms.openlocfilehash: 35f04e237efffbdb12893f658950a99dc0b98b85
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -37,7 +39,7 @@ In questo argomento sono descritti i passaggi da eseguire in System Center Confi
 
  Usare le sezioni seguenti per distribuire sistemi operativi in rete tramite una sequenza di attività.  
 
-##  <a name="a-namebkmkplana-plan"></a><a name="BKMK_Plan"></a> Pianificazione  
+##  <a name="BKMK_Plan"></a> Pianificazione  
 
 -   **Esaminare le limitazioni relative alla sequenza di attività per aggiornare un sistema operativo**  
 
@@ -59,7 +61,7 @@ In questo argomento sono descritti i passaggi da eseguire in System Center Confi
 
      Gli unici prerequisiti per lo scenario di aggiornamento sono la presenza di un punto di distribuzione disponibile per il pacchetto di aggiornamento del sistema operativo ed eventuali altri pacchetti inclusi nella sequenza di attività. Per altre informazioni, vedere [Install or modify a distribution point](../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Installare o modificare un punto di distribuzione).
 
-##  <a name="a-namebkmkconfigurea-configure"></a><a name="BKMK_Configure"></a> Configura  
+##  <a name="BKMK_Configure"></a> Configura  
 
 1.  **Preparare il pacchetto di aggiornamento del sistema operativo**  
 
@@ -75,7 +77,7 @@ In questo argomento sono descritti i passaggi da eseguire in System Center Confi
     > [!NOTE]  
     >  In genere si usa la procedura descritta in [Creare una sequenza di attività per aggiornare il sistema operativo](create-a-task-sequence-to-upgrade-an-operating-system.md) per eseguire l'aggiornamento di un sistema operativo a Windows 10. La sequenza di attività include il passaggio Aggiorna sistema operativo, oltre ad altri passaggi e gruppi con i quali gestire il processo di aggiornamento end-to-end. È tuttavia possibile creare una sequenza di attività personalizzata e aggiungere il passaggio della sequenza di attività [Aggiorna sistema operativo](../understand/task-sequence-steps.md#BKMK_UpgradeOS) per aggiornare il sistema operativo. Questo è l'unico passaggio obbligatorio per aggiornare il sistema operativo a Windows 10. Se si sceglie questo metodo, aggiungere anche il passaggio [Riavvia computer](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer) dopo il passaggio Aggiorna sistema operativo per completare l'aggiornamento. Assicurarsi di usare l'impostazione **Il sistema operativo predefinito attualmente installato** per riavviare il computer nel sistema operativo installato anziché in Windows PE.  
 
-##  <a name="a-namebkmkdeploya-deploy"></a><a name="BKMK_Deploy"></a> Distribuisci  
+##  <a name="BKMK_Deploy"></a> Distribuisci  
 
 -   Usare uno dei metodi di distribuzione seguenti per distribuire il sistema operativo:  
 
@@ -88,9 +90,4 @@ In questo argomento sono descritti i passaggi da eseguire in System Center Confi
 -   **Monitorare la distribuzione della sequenza di attività**  
 
      Per monitorare la distribuzione della sequenza di attività per l'aggiornamento del sistema operativo, vedere [Monitor operating system deployments](monitor-operating-system-deployments.md) (Monitorare le distribuzioni del sistema operativo).  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

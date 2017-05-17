@@ -14,9 +14,11 @@ caps.latest.revision: 8
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 81d7516b814d2db74d4d857871071c8911755754
 ms.openlocfilehash: 6e53f501281e31f2b7df54b9740eac970f108257
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="about-discovery-methods-for-system-center-configuration-manager"></a>Informazioni sui metodi di individuazione per System Center Configuration Manager
@@ -25,7 +27,7 @@ ms.openlocfilehash: 6e53f501281e31f2b7df54b9740eac970f108257
 
 I metodi di individuazione di System Center Configuration Manager consentono di individuare vari dispositivi nella rete o dispositivi e utenti in Active Directory. Per usare un metodo di individuazione in modo efficiente, è importante conoscere le configurazioni disponibili e le rispettive limitazioni.  
 
-##  <a name="a-namebkmkaboutforesta-active-directory-forest-discovery"></a><a name="bkmk_aboutForest"></a> Individuazione foresta Active Directory  
+##  <a name="bkmk_aboutForest"></a> Individuazione foresta Active Directory  
  **Configurabile:** sì  
 
  **Abilitata per impostazione predefinita:** no  
@@ -78,7 +80,7 @@ Le azioni di individuazione foresta Active Directory vengono registrate nei log 
 
 Per altre informazioni su come configurare questo metodo di individuazione, vedere [Configurare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  
 
-##  <a name="a-namebkmkaboutgroupa-active-directory-group-discovery"></a><a name="bkmk_aboutGroup"></a> Individuazione gruppo Active Directory  
+##  <a name="bkmk_aboutGroup"></a> Individuazione gruppo Active Directory  
 **Configurabile:** sì  
 
 **Abilitata per impostazione predefinita:** no  
@@ -120,7 +122,7 @@ Le azioni di Individuazione gruppo Active Directory vengono registrate nel file 
 
 Per altre informazioni su come configurare questo metodo di individuazione, vedere [Configurare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  
 
-##  <a name="a-namebkmkaboutsystema-active-directory-system-discovery"></a><a name="bkmk_aboutSystem"></a>Individuazione sistema Active Directory  
+##  <a name="bkmk_aboutSystem"></a>Individuazione sistema Active Directory  
 **Configurabile:** sì  
 
 **Abilitata per impostazione predefinita:** no  
@@ -158,7 +160,7 @@ Le azioni di Individuazione sistema Active Directory vengono registrate nel file
 
 Per altre informazioni su come configurare questo metodo di individuazione, vedere [Configurare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  
 
-##  <a name="a-namebkmkaboutusera-active-directory-user-discovery"></a><a name="bkmk_aboutUser"></a> Individuazione utente Active Directory  
+##  <a name="bkmk_aboutUser"></a> Individuazione utente Active Directory  
 **Configurabile:** sì  
 
 **Abilitata per impostazione predefinita:** no  
@@ -188,7 +190,7 @@ Le azioni di Individuazione utente Active Directory vengono registrate nel file 
 
 Per altre informazioni su come configurare questo metodo di individuazione, vedere [Configurare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  
 
-##  <a name="a-namebkmkaboutheartbeata-heartbeat-discovery"></a><a name="bkmk_aboutHeartbeat"></a> Individuazione heartbeat  
+##  <a name="bkmk_aboutHeartbeat"></a> Individuazione heartbeat  
 **Configurabile:** sì  
 
 **Abilitata per impostazione predefinita:** sì  
@@ -224,7 +226,7 @@ Le azioni di Individuazione heartbeat vengono registrate nei percorsi seguenti:
 
 Per altre informazioni su come configurare questo metodo di individuazione, vedere [Configurare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  
 
-##  <a name="a-namebkmkaboutnetworka-network-discovery"></a><a name="bkmk_aboutNetwork"></a> Individuazione di rete  
+##  <a name="bkmk_aboutNetwork"></a> Individuazione di rete  
 **Configurabile:** sì  
 
 **Abilitata per impostazione predefinita:** no  
@@ -268,7 +270,7 @@ L'attività di Individuazione di rete viene registrata nel file **Netdisc.log** 
 > [!NOTE]  
 >  In caso di reti complesse e connessioni con larghezza di banda limitata, è possibile che Individuazione di rete venga eseguito lentamente e generi un notevole traffico di rete. È consigliabile eseguire Individuazione di rete solo quando gli altri metodi non sono in grado di individuare le risorse necessarie. Usare ad esempio Individuazione di rete se è necessario individuare i computer del gruppo di lavoro. Non è possibile individuare i computer del gruppo di lavoro usando altri metodi di individuazione.  
 
-###  <a name="a-namebkmknetdisclevelsa-levels-of-network-discovery"></a><a name="BKMK_NetDiscLevels"></a> Livelli di Individuazione di rete  
+###  <a name="BKMK_NetDiscLevels"></a> Livelli di Individuazione di rete  
 Quando si configura Individuazione di rete, è possibile specificare tre diversi livelli:  
 
 |Livello di individuazione|Dettagli|  
@@ -281,7 +283,7 @@ Quando si configura Individuazione di rete, è possibile specificare tre diversi
 
  Ad esempio, quando si usa Individuazione di rete per la prima volta, è possibile iniziare con il livello di topologia per identificare l'infrastruttura di rete. È quindi possibile riconfigurare Individuazione di rete per individuare oggetti e sistemi operativi dei dispositivi. È anche possibile configurare le impostazioni che limitano Individuazione di rete a un intervallo specifico di segmenti di rete. In questo modo, è possibile individuare oggetti nei percorsi di rete richiesti ed evitare traffico di rete superfluo. È inoltre possibile individuare oggetti provenienti da router perimetrali o esterni alla rete.  
 
-###  <a name="a-namebkmknetdiscoptionsa-network-discovery-options"></a><a name="BKMK_NetDiscOptions"></a> Opzioni di Individuazione di rete  
+###  <a name="BKMK_NetDiscOptions"></a> Opzioni di Individuazione di rete  
 Per abilitare Individuazione di rete per la ricerca di dispositivi indirizzabili tramite IP, è necessario configurare una o più delle opzioni seguenti che consentono di specificare come eseguire le query relative ai dispositivi.  
 
 > [!NOTE]  
@@ -329,7 +331,7 @@ Specificare ciascun dispositivo SNMP in cui si desidera che l'individuazione di 
 
 -   Se l'individuazione di rete non viene configurata per l'utilizzo del nome comunità del dispositivo, il dispositivo rifiuta la query basata su SNMP.  
 
-###  <a name="a-namebkmklimitnetdisca-limiting-network-discovery"></a><a name="BKMK_LimitNetDisc"></a> Limitazione dell'individuazione della rete  
+###  <a name="BKMK_LimitNetDisc"></a> Limitazione dell'individuazione della rete  
 Quando l'individuazione di rete esegue query in un dispositivo SNMP perimetrale rispetto alla rete, possono essere individuate informazioni relative alle subnet e ai dispositivi SNMP esterni alla rete. Usare le informazioni seguenti per limitare l'individuazione della rete configurando i dispositivi SNMP con cui può comunicare l'individuazione e specificando i segmenti di rete in cui eseguire le query.  
 
 **Subnet:**  
@@ -374,12 +376,12 @@ Il diagramma seguente illustra i risultati di una query di Individuazione di ret
 > [!WARNING]  
 >  L'aumento del numero di hop router può determinare un aumento significativo delle risorse che è possibile individuare, nonché della larghezza di banda di rete usata da Individuazione di rete.  
 
-##  <a name="a-namebkmkaboutservera-server-discovery"></a><a name="bkmk_aboutServer"></a> Individuazione server  
+##  <a name="bkmk_aboutServer"></a> Individuazione server  
 **Configurabile:** no  
 
 Oltre a questi metodi di individuazione configurabili dall'utente, Configuration Manager usa un processo denominato **Individuazione server** (SMS_WINNT_SERVER_DISCOVERY_AGENT). Questo metodo di individuazione consente di creare record di risorse per i computer che sono sistemi del sito, ad esempio un computer configurato come punto di gestione.  
 
-##  <a name="a-namebkmkshareda-common-features-of-active-directory-group-discovery-system-discovery-and-user-discovery"></a><a name="bkmk_shared"></a> Funzionalità comuni dell'individuazione gruppo, sistema e utente Active Directory  
+##  <a name="bkmk_shared"></a> Funzionalità comuni dell'individuazione gruppo, sistema e utente Active Directory  
 Questa sezione offre informazioni sulle funzionalità comuni dei metodi di individuazione seguenti:  
 
 -   Individuazione gruppo Active Directory  
@@ -421,7 +423,7 @@ Molte delle configurazioni del metodo di individuazione sono di chiara interpret
 
 -   [Cercare attributi di Active Directory personalizzati](#bkmk_customAD)  
 
-###  <a name="a-namebkmkdeltaa-delta-discovery"></a><a name="bkmk_delta"></a> Individuazione differenziale  
+###  <a name="bkmk_delta"></a> Individuazione differenziale  
 Disponibile per:  
 
 -   Individuazione gruppo Active Directory  
@@ -450,7 +452,7 @@ Anche se può rilevare le nuove risorse e le modifiche apportate all'appartenenz
 
 Configurare l'individuazione differenziale nella scheda **Pianificazione del polling** delle proprietà di ciascun metodo di individuazione.  
 
-###  <a name="a-namebkmkstalelogona-filter-stale-computer-records-by-domain-logon"></a><a name="bkmk_stalelogon"></a> Filtrare i record del computer non aggiornati usando l'accesso al dominio  
+###  <a name="bkmk_stalelogon"></a> Filtrare i record del computer non aggiornati usando l'accesso al dominio  
 Disponibile per:  
 
 -   Individuazione gruppo Active Directory  
@@ -472,7 +474,7 @@ Quando si configura il periodo di tempo dopo l'ultimo accesso per questa imposta
 > [!WARNING]  
 >  Quando si configura questo filtro e si **filtrano i record non aggiornati in base alla password del computer**, i computer che soddisfano i criteri di uno dei due filtri vengono esclusi dall'individuazione.  
 
-###  <a name="a-namebkmkstalepassworda-filter-stale-records-by-computer-password"></a><a name="bkmk_stalepassword"></a> Filtrare i record non aggiornati usando la password del computer  
+###  <a name="bkmk_stalepassword"></a> Filtrare i record non aggiornati usando la password del computer  
 Disponibile per:  
 
 -   Individuazione gruppo Active Directory  
@@ -492,7 +494,7 @@ Durante la configurazione di questa opzione, prendere in considerazione l'interv
 > [!WARNING]  
 >  Quando si configura questo filtro e si **filtrano i record non aggiornati in base all'accesso al dominio**, i computer che soddisfano i criteri di uno dei due filtri vengono esclusi dall'individuazione.  
 
-###  <a name="a-namebkmkcustomada-search-customized-active-directory-attributes"></a><a name="bkmk_customAD"></a> Cercare attributi di Active Directory personalizzati  
+###  <a name="bkmk_customAD"></a> Cercare attributi di Active Directory personalizzati  
  Disponibile per:  
 
 -   Individuazione sistema Active Directory  
@@ -502,9 +504,4 @@ Durante la configurazione di questa opzione, prendere in considerazione l'interv
 Ogni metodo di individuazione supporta un elenco univoco di attributi di Active Directory che possono essere individuati.  
 
 È possibile visualizzare e configurare l'elenco degli attributi personalizzati nella scheda **Attributi di Active Directory** nelle finestre di dialogo **Individuazione sistema Active Directory - Proprietà** e **Individuazione utente Active Directory - Proprietà**.  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

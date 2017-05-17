@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: a0bd86587669c32377b1eafa6a890d37e10ac3f6
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -37,7 +39,7 @@ ms.openlocfilehash: a0bd86587669c32377b1eafa6a890d37e10ac3f6
  Vedere le sezioni seguenti per informazioni sull'acquisizione e sul ripristino dei dati utente.
 
 
-##  <a name="a-namebkmkstoringuserdataa-store-user-state-data"></a><a name="BKMK_StoringUserData"></a> Archiviare i dati dello stato utente  
+##  <a name="BKMK_StoringUserData"></a> Archiviare i dati dello stato utente  
  Quando si acquisisce lo stato utente, è possibile archiviare i dati corrispondenti nel computer di destinazione o in un punto di migrazione stato. Per archiviare lo stato utente in un punto di migrazione stato utente, è necessario usare un server di sistema del sito di Configuration Manager che ospita il ruolo di sistema del sito del punto di migrazione stato. Per archiviare lo stato utente nel computer di destinazione, è necessario configurare la sequenza attività in modo da archiviare i dati localmente utilizzando i collegamenti.  
 
 > [!NOTE]  
@@ -54,7 +56,7 @@ ms.openlocfilehash: a0bd86587669c32377b1eafa6a890d37e10ac3f6
 
 -   È possibile specificare i collegamenti reali che possono essere usati per ripristinare i dati utente e la relativa posizione originale. In questo scenario i dati dello stato utente rimangono sull'unità quando viene rimosso il sistema operativo precedente. Dopo aver distribuito il sistema operativo, la sequenza di attività di **ripristino** usa quindi i collegamenti reali per ripristinare i dati dello stato utente nella posizione originale.  
 
-###  <a name="a-namebkmkuserdatasmpa-store-user-data-on-a-state-migration-point"></a><a name="BKMK_UserDataSMP"></a> Archiviare i dati utente in un punto di migrazione stato  
+###  <a name="BKMK_UserDataSMP"></a> Archiviare i dati utente in un punto di migrazione stato  
  Per archiviare i dati dello stato utente in un punto di migrazione stato, è necessario procedere come segue:  
 
 1.  [Configure a state migration point](#BKMK_StateMigrationPoint) per archiviare i dati dello stato utente.  
@@ -71,7 +73,7 @@ ms.openlocfilehash: a0bd86587669c32377b1eafa6a890d37e10ac3f6
 
     -   [Rilascia archiviazione stati](../understand/task-sequence-steps.md#BKMK_ReleaseStateStore) per notificare il completamento dell'azione di ripristino o acquisizione al punto di migrazione stato.  
 
-###  <a name="a-namebkmkuserdatadestinationa-store-user-data-locally"></a><a name="BKMK_UserDataDestination"></a> Archiviare localmente i dati utente  
+###  <a name="BKMK_UserDataDestination"></a> Archiviare localmente i dati utente  
  Per archiviare i dati dello stato utente localmente, è necessario procedere come segue:  
 
 -   [Creare una sequenza di attività per acquisire e ripristinare lo stato utente](../deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md). In particolare, è necessario aggiungere i passaggi della sequenza di attività seguenti per acquisire i dati utente da un computer e ripristinarli in un computer usando collegamenti reali:  
@@ -83,7 +85,7 @@ ms.openlocfilehash: a0bd86587669c32377b1eafa6a890d37e10ac3f6
         > [!NOTE]  
         >  I dati dello stato utente a cui fanno riferimento i collegamenti reali rimangono nel computer dopo che la sequenza attività ha rimosso il sistema operativo precedente. Si tratta dei dati utilizzati per ripristinare lo stato utente quando viene distribuito il nuovo sistema operativo.  
 
-##  <a name="a-namebkmkstatemigrationpointa-configure-a-state-migration-point"></a><a name="BKMK_StateMigrationPoint"></a> Configure a state migration point  
+##  <a name="BKMK_StateMigrationPoint"></a> Configure a state migration point  
  Il punto di migrazione stato archivia i dati sullo stato dell'utente acquisiti in un computer e quindi ripristinati in un altro computer. Tuttavia, quando si acquisiscono le impostazioni utente per una distribuzione del sistema operativo nello stesso computer, ad esempio una distribuzione in cui il sistema operativo viene aggiornato nel computer di destinazione, è possibile archiviare i dati nello stesso computer con collegamenti reali oppure in un punto di migrazione stato. Per alcune distribuzioni di computer, quando viene creata l'archiviazione stati, Configuration Manager crea automaticamente un'associazione tra l'archiviazione stati e il computer di destinazione. Per configurare un punto di migrazione stato per archiviare i dati dello stato utente, è possibile utilizzare i metodi seguenti:  
 
 -   Utilizzare la **Creazione guidata server del sistema sito** per creare un nuovo server di sistema del sito per il punto di migrazione stato.  
@@ -104,7 +106,7 @@ ms.openlocfilehash: a0bd86587669c32377b1eafa6a890d37e10ac3f6
 
  Per altre informazioni sul punto di migrazione stato e sui passaggi per configurarlo, vedere [Punto di migrazione stato](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_StateMigrationPoints).  
 
-##  <a name="a-namebkmkcomputerassociationa-create-a-computer-association"></a><a name="BKMK_ComputerAssociation"></a> Create a computer association  
+##  <a name="BKMK_ComputerAssociation"></a> Create a computer association  
  Creare un'associazione computer per definire una relazione tra un computer di origine e un computer di destinazione quando si installa un sistema operativo su hardware nuovo e si vogliono acquisire e ripristinare le impostazioni dei dati utente. Il computer di origine è un computer esistente gestito da Configuration Manager. Quando si distribuisce il nuovo sistema operativo nel computer di destinazione, il computer di origine contiene lo stato utente di cui viene eseguita la migrazione al computer di destinazione.  
 
 > [!NOTE]  
@@ -128,11 +130,6 @@ ms.openlocfilehash: a0bd86587669c32377b1eafa6a890d37e10ac3f6
 
     -   **Acquisisci e ripristina gli account utente specificati**: questa impostazione consente di acquisire e ripristinare solo gli account specificati. Quando si seleziona questa impostazione, non è possibile creare più associazioni con lo stesso computer di origine.  
 
-##  <a name="a-namebkmkmigrationfailsa-restore-user-state-data-when-an-operating-system-deployment-fails"></a><a name="BKMK_MigrationFails"></a> Ripristinare i dati dello stato utente in caso di errore di distribuzione del sistema operativo  
+##  <a name="BKMK_MigrationFails"></a> Ripristinare i dati dello stato utente in caso di errore di distribuzione del sistema operativo  
  Se la distribuzione del sistema operativo non riesce, usare la funzionalità USMT 10.0 LoadState per recuperare i dati dello stato utente acquisito durante il processo di distribuzione. Sono inclusi i dati memorizzati su un punto di migrazione dello stato o i dati salvati localmente sul computer di destinazione. Per ulteriori informazioni su questa caratteristica di USMT, vedere [Sintassi di LoadState](https://technet.microsoft.com/library/mt299188\(v=vs.85\).aspx).  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

@@ -15,9 +15,11 @@ caps.latest.revision: 6
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
 ms.openlocfilehash: b12d4a1592ce4601fa1f0a6cd2a539a3664c0c37
+ms.contentlocale: it-it
+ms.lasthandoff: 12/16/2016
 
 
 ---
@@ -27,7 +29,7 @@ ms.openlocfilehash: b12d4a1592ce4601fa1f0a6cd2a539a3664c0c37
 
 Questo argomento contiene informazioni sulla sicurezza e la privacy per l'inventario hardware in System Center Configuration Manager.  
 
-##  <a name="a-namebkmksecurityhardwareinventorya-security-best-practices-for-hardware-inventory"></a><a name="BKMK_Security_HardwareInventory"></a> Procedure consigliate di sicurezza per l'inventario hardware  
+##  <a name="BKMK_Security_HardwareInventory"></a> Procedure consigliate di sicurezza per l'inventario hardware  
  Usare le procedure consigliate di sicurezza seguenti quando vengono raccolti i dati dell'inventario hardware dai client:  
 
 |Procedura di sicurezza consigliata|Altre informazioni|  
@@ -48,7 +50,7 @@ Questo argomento contiene informazioni sulla sicurezza e la privacy per l'invent
 
  L'inventario hardware è abilitato per impostazione predefinita come impostazione client.  
 
-##  <a name="a-namebkmkprivacyhardwareinventorya-privacy-information-for-hardware-inventory"></a><a name="BKMK_Privacy_HardwareInventory"></a> Informazioni sulla privacy per l'inventario hardware  
+##  <a name="BKMK_Privacy_HardwareInventory"></a> Informazioni sulla privacy per l'inventario hardware  
  L'inventario hardware consente di recuperare le informazioni archiviate nel Registro di sistema e in WMI nei client di Configuration Manager. L'inventario software consente di individuare tutti i file di un tipo specificato o raccogliere tutti i file specificati dai client. Asset Intelligence migliora le funzionalità di inventario mediante l'estensione dell'inventario hardware e software e l'aggiunta di nuove funzionalità di gestione delle licenze.  
 
  L'inventario hardware è abilitato per impostazione predefinita come impostazione client e le informazioni di WMI raccolte sono determinate dalle opzioni selezionate. L'inventario software è abilitato per impostazione predefinita, ma i file non vengono raccolti per impostazione predefinita. La raccolta di dati di Asset Intelligence viene abilitata automaticamente, anche se è possibile selezionare le classi di report per l'inventario hardware da abilitare.  
@@ -56,9 +58,4 @@ Questo argomento contiene informazioni sulla sicurezza e la privacy per l'invent
  Le informazioni relative all'inventario non vengono inviate a Microsoft. Le informazioni relative all'inventario vengono archiviate nel database di Configuration Manager. Quando i client usano HTTPS per connettersi ai punti di gestione, i dati dell'inventario inviati al sito vengono crittografati durante il trasferimento. Se i client usano HTTP per connettersi ai punti di gestione, è possibile scegliere di abilitare la crittografia dei dati dell'inventario. I dati dell'inventario non vengono memorizzate in forma crittografata nel database. Le informazioni vengono conservate nel database fino alla relativa eliminazione nell'ambito delle attività di manutenzione del sito **Elimina cronologia inventario obsoleta** o **Elimina file raccolti obsoleti** eseguite ogni 90 giorni. È possibile configurare l'intervallo di eliminazione.  
 
  Prima di configurare l'inventario hardware, l'inventario software, la raccolta di file o la raccolta di dati di Asset Intelligence, considerare i requisiti sulla privacy.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

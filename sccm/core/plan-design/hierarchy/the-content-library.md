@@ -15,9 +15,11 @@ caps.latest.revision: 4
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: d31fecdb71b498864df2bce7403a4290ea9700ae
 ms.openlocfilehash: 0fa9f431c00476d71b2b08f92f914d76636d1a27
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="the-content-library-in-system-center-configuration-manager"></a>Raccolta contenuto in System Center Configuration Manager
@@ -64,9 +66,4 @@ Per informazioni su come configurare le impostazioni dell'unità per il punto di
 -   Per evitare l'installazione della raccolta contenuto in un'unità specifica, creare un file vuoto denominato **no_sms_on_drive.sms** e copiarlo nella cartella radice dell'unità prima che venga creata la raccolta contenuto.  
 
 -   Dopo la creazione della raccolta contenuto, usare lo **strumento per il trasferimento della raccolta contenuto** in System Center 2012 R2 Configuration Manager Toolkit per gestire la posizione della raccolta contenuto. Il toolkit è disponibile per il download dall' [Area download Microsoft](http://go.microsoft.com/fwlink/?LinkId=279566).  
-
-
-
-<!--HONumber=Feb17_HO3-->
-
 

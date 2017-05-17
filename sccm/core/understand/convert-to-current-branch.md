@@ -15,9 +15,11 @@ caps.latest.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 60631bc0346bd78d704e7129bb755af504c59b1b
 ms.openlocfilehash: 6e7edc85630d22c5bbba1ff66bd1199903db76db
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 ---
 
@@ -54,9 +56,4 @@ Se il sito esegue LTSB, è possibile usare l'opzione seguente nella console di C
  2. Selezionare l'opzione per eseguire la conversione in Current Branch e quindi scegliere **Applica**.  
 
 Quando il sito è stato convertito in Current Branch, è possibile usare le funzionalità e le caratteristiche precedentemente non disponibili.
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

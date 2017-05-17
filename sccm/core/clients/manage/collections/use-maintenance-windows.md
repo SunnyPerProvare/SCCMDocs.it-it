@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
 ms.openlocfilehash: c0b4fcda6599ed91fe2393b97bdcec6cdfba9b7c
+ms.contentlocale: it-it
+ms.lasthandoff: 01/03/2017
 
 
 ---
@@ -70,9 +72,4 @@ Le finestre di manutenzione consentono di definire un periodo di tempo in cui è
 7.  Effettuare una selezione nell'elenco a discesa **Applica pianificazione a**.  
 
 8.  Scegliere **OK** e quindi chiudere la finestra di dialogo **Proprietà &lt;nome raccolta\>**.  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

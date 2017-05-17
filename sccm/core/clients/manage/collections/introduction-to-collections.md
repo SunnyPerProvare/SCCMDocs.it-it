@@ -15,9 +15,11 @@ caps.latest.revision: 8
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
 ms.openlocfilehash: fd4c6fd85d12592b3d4f57a48cf6da6c7a668615
+ms.contentlocale: it-it
+ms.lasthandoff: 01/03/2017
 
 
 ---
@@ -63,10 +65,5 @@ Di seguito sono descritti alcuni esempi di uso delle raccolte:
 
 ### <a name="custom-collections"></a>Raccolte personalizzate  
  Quando si crea una raccolta personalizzata in Configuration Manager, l'appartenenza di tale raccolta viene determinata da una o più regole di raccolta, come descritto in [Come creare le raccolte in System Center Configuration Manager](../../../../core/clients/manage/collections/create-collections.md). 
-
-
-
-
-<!--HONumber=Jan17_HO1-->
 
 

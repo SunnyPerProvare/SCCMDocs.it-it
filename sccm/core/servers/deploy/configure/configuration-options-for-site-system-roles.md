@@ -15,9 +15,11 @@ caps.latest.revision: 5
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: fff93794afdfa9f890b1f06d6c330d8cffc5796c
 ms.openlocfilehash: b4db5d86cc0ed020ed176feb2e8f1f9dc51a2280
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="configuration-options-for-site-system-roles-for-system-center-configuration-manager"></a>Opzioni di configurazione per i ruoli del sistema del sito per System Center Configuration Manager
@@ -26,7 +28,7 @@ ms.openlocfilehash: b4db5d86cc0ed020ed176feb2e8f1f9dc51a2280
 
 La maggior parte delle opzioni di configurazione per i ruoli del sistema del sito di System Center Configuration Manager è di chiara comprensione o descritta nelle finestre di dialogo o nella procedura guidata durante la configurazione. Le sezioni seguenti illustrano i ruoli del sistema del sito le cui impostazioni possono richiedere informazioni aggiuntive.  
 
-##  <a name="a-namebkmkapplicationcatalogwebsitea-application-catalog-website-point"></a><a name="BKMK_ApplicationCatalog_Website"></a> Punto per siti Web del Catalogo applicazioni  
+##  <a name="BKMK_ApplicationCatalog_Website"></a> Punto per siti Web del Catalogo applicazioni  
  Per informazioni su come configurare il punto per siti Web del Catalogo applicazioni, vedere [Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager](../../../../apps/plan-design/plan-for-and-configure-application-management.md).  
 
  **Connessioni client**  
@@ -45,7 +47,7 @@ La maggior parte delle opzioni di configurazione per i ruoli del sistema del sit
 
  Immettere il nome visualizzato dagli utenti nel Catalogo applicazioni. Queste informazioni di personalizzazione consentono agli utenti di identificare il sito Web come fonte attendibile.  
 
-##  <a name="a-namebkmkapplicationcatalogwebservicea-application-catalog-web-service-point"></a><a name="BKMK_ApplicationCatalog_WebService"></a> Punto per servizi Web del Catalogo applicazioni  
+##  <a name="BKMK_ApplicationCatalog_WebService"></a> Punto per servizi Web del Catalogo applicazioni  
  Per informazioni su come configurare il punto per servizi Web del Catalogo applicazioni, vedere [Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager](../../../../apps/plan-design/plan-for-and-configure-application-management.md).  
 
  **HTTPS**  
@@ -54,10 +56,10 @@ La maggior parte delle opzioni di configurazione per i ruoli del sistema del sit
 
  Per un esempio di distribuzione del certificato del server e per informazioni sulla relativa configurazione in Internet Information Services (IIS), vedere la sezione *Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS* in [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
-##  <a name="a-namebkmkcertificateregistrationpointa-certificate-registration-point"></a><a name="BKMK_CertificateRegistrationPoint"></a> Punto di registrazione certificati  
+##  <a name="BKMK_CertificateRegistrationPoint"></a> Punto di registrazione certificati  
  Per altre informazioni su come configurare il punto di registrazione certificati, vedere [Introduzione ai profili certificato](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
-##  <a name="a-namebkmkdistributionpointa-distribution-point"></a><a name="BKMK_Distribution_Point"></a> Punto di distribuzione  
+##  <a name="BKMK_Distribution_Point"></a> Punto di distribuzione  
  Per altre informazioni su come configurare il punto di distribuzione per la distribuzione del contenuto, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
  Per altre informazioni su come configurare il punto di distribuzione per le distribuzioni di PXE, vedere [Usare PXE per distribuire Windows in rete con System Center Configuration Manager](../../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
@@ -97,7 +99,7 @@ Selezionare questa casella di controllo per abilitare il punto di distribuzione 
  - **Nelle versioni precedenti la 1610** è possibile selezionare la casella di controllo **Consenti percorso origine di fallback per il contenuto** per consentire ai client esterni a questi gruppi di limiti di eseguire il fallback e usare il punto di distribuzione come percorso di origine per il contenuto in assenza di altri punti di distribuzione disponibili.
  - **A partire dalla versione 1610** non è più possibile configurare **Consenti percorso origine di fallback per il contenuto**.  È invece possibile configurare relazioni tra gruppi di limiti che controllano quando un client può iniziare a cercare percorsi di origine del contenuto validi in gruppi di limiti aggiuntivi.
 
-##  <a name="a-namebkmkenrollmentpointa-enrollment-point"></a><a name="BKMK_Enrollment_Point"></a> Punto di registrazione  
+##  <a name="BKMK_Enrollment_Point"></a> Punto di registrazione  
 I punti di registrazione vengono usati per installare i computer Mac e registrare i dispositivi gestiti con la funzionalità di gestione dei dispositivi mobili in locale. Per altre informazioni, vedere  
 
 -   [How to deploy clients to Macs in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-macs.md) (Come distribuire i client nei computer Mac in System Center Configuration Manager)  
@@ -109,7 +111,7 @@ I punti di registrazione vengono usati per installare i computer Mac e registrar
 
  Per un esempio di distribuzione del certificato del server e per informazioni sulla relativa configurazione in Internet Information Services (IIS), vedere la sezione *Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS* in [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
-##  <a name="a-namebkmkenrollmentproxypointa-enrollment-proxy-point"></a><a name="BKMK_Enrollment_Proxy_Point"></a> Punto proxy di registrazione  
+##  <a name="BKMK_Enrollment_Proxy_Point"></a> Punto proxy di registrazione  
 Per altre informazioni su come configurare un punto proxy di registrazione per i dispositivi mobili, vedere [Come gli utenti registrano i dispositivi con la gestione di dispositivi mobili locale in System Center Configuration Manager](../../../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md).  
 
 **Connessioni client**  
@@ -117,7 +119,7 @@ Per altre informazioni su come configurare un punto proxy di registrazione per i
 
  Per un esempio di distribuzione del certificato del server e per informazioni sulla relativa configurazione in Internet Information Services (IIS), vedere la sezione *Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS* in [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
-##  <a name="a-namebkmkfallbackstatuspointa-fallback-status-point"></a><a name="BKMK_Fallback_Status_Point"></a> Punto di stato di fallback  
+##  <a name="BKMK_Fallback_Status_Point"></a> Punto di stato di fallback  
 **Numero di messaggi di stato** e **Intervallo di limitazione (in secondi)**  
 Sebbene le impostazioni predefinite per queste opzioni (10.000 messaggi di stato e 3.600 secondi per l'intervallo di limitazione) siano sufficienti nella maggior parte dei casi, potrebbe essere necessario modificarli in presenza di entrambe le condizioni seguenti:  
 
@@ -152,9 +154,4 @@ Reimpostare i valori di limitazione per il punto di stato di fallback in presenz
 -   Si ritiene che le impostazioni di limitazione correnti determinino un utilizzo elevato della CPU sul server del sito.  
 
 Non modificare le impostazioni di limitazione per il punto di stato di fallback senza aver compreso le conseguenze di tale azione. Ad esempio, se le impostazioni di limitazione vengono aumentate, l'utilizzo della CPU sul server del sito potrebbe crescere contestualmente, rallentando così tutte le operazioni del sito.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

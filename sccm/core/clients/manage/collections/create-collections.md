@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 9555a16d97224a1cf49a426ab225468b07403f60
 ms.openlocfilehash: e28fdeae809cadf78017dd2920e3f1a9484ec8a3
+ms.contentlocale: it-it
+ms.lasthandoff: 12/30/2016
 
 
 ---
@@ -44,7 +46,7 @@ Le raccolte costituiscono raggruppamenti di utenti o dispositivi. Usare le racco
 
  Per informazioni sulla creazione di raccolte per i computer che eseguono Linux e UNIX, vedere [Come gestire i client per i server Linux e UNIX in System Center Configuration Manager](../../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md).  
 
-##  <a name="a-namebkmk1a-to-create-a-device-collection"></a><a name="BKMK_1"></a> Per creare una raccolta di dispositivi  
+##  <a name="BKMK_1"></a> Per creare una raccolta di dispositivi  
 
 1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Raccolte dispositivi**.  
 
@@ -120,7 +122,7 @@ Le raccolte costituiscono raggruppamenti di utenti o dispositivi. Usare le racco
 > [!NOTE]  
 >  È necessario aggiornare o ricaricare la console di Configuration Manager per visualizzare i membri della raccolta. Tuttavia, i membri non compariranno nella raccolta fino a dopo il primo aggiornamento pianificato o fino a quando non si seleziona manualmente **Aggiorna appartenenza** per la raccolta. L'aggiornamento della raccolta può richiedere alcuni minuti.  
 
-##  <a name="a-namebkmk2a-to-create-a-user-collection"></a><a name="BKMK_2"></a> Per creare una raccolta utenti  
+##  <a name="BKMK_2"></a> Per creare una raccolta utenti  
 
 1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Raccolte utenti**.  
 
@@ -192,7 +194,7 @@ Le raccolte costituiscono raggruppamenti di utenti o dispositivi. Usare le racco
 > [!NOTE]  
 >  È necessario aggiornare o ricaricare la console di Configuration Manager per visualizzare i membri della raccolta. Tuttavia, i membri non compariranno nella raccolta fino a dopo il primo aggiornamento pianificato o fino a quando non si seleziona manualmente **Aggiorna appartenenza** per la raccolta. L'aggiornamento della raccolta può richiedere alcuni minuti.  
 
-##  <a name="a-namebkmk3a-to-import-a-collection"></a><a name="BKMK_3"></a> Per importare una raccolta  
+##  <a name="BKMK_3"></a> Per importare una raccolta  
 
 1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Raccolte utenti** oppure **Raccolte dispositivi**.  
 
@@ -206,9 +208,4 @@ Le raccolte costituiscono raggruppamenti di utenti o dispositivi. Usare le racco
     >  Il file che si vuole importare deve essere stato esportato da un sito che esegue la stessa versione di Configuration Manager di quello corrente. Per ulteriori informazioni sull'esportazione di raccolte, vedere [Come gestire le raccolte in System Center Configuration Manager](../../../../core/clients/manage/collections/manage-collections.md).  
 
 6.  Completare la procedura guidata per importare la raccolta. La nuova raccolta viene visualizzata nel nodo **Raccolte utenti** o **Raccolte dispositivi** dell'area di lavoro **Asset e conformità** . Aggiornare o ricaricare la console di Configuration Manager per visualizzare i membri della raccolta appena importata.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

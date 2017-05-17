@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 72263ec5e7104924a1ca46dc2000be9f8568599f
 ms.openlocfilehash: a776667cc9f24bd4a468afea76e466c34ce66864
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -344,9 +346,4 @@ Questo account deve essere un amministratore locale sul computer in cui è insta
 >  Limitare l'ambito dell'account. Ad esempio, creare diverse esecuzioni della sequenza di attività come account per ciascuna sequenza di attività, in modo che nel caso in cui venga compromesso un account, vengano compromessi solo i computer client a cui tale account ha accesso.  
 >   
 >  Se la riga di comando richiede accesso amministrativo nel computer, creare un account amministratore locale unicamente per la sequenza di attività Account RunAs in tutti i computer che eseguiranno la sequenza di attività. Eliminare l'account non appena non è più necessario.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 

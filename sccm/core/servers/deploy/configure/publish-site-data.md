@@ -15,9 +15,11 @@ caps.latest.revision: 8
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: e7629fdf7fdf615fa27894158c3d101432c95a04
 ms.openlocfilehash: bcfb002c503485f03ba27d7346acb61d0d3c6087
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -71,9 +73,4 @@ Per informazioni su come i client trovano un punto di gestione, vedere [Informaz
     >  Se si abilita la pubblicazione di siti in una foresta, è necessario estendere lo schema di Active Directory di tale foresta per Configuration Manager. L'account foresta Active Directory deve disporre delle autorizzazioni di tipo Controllo completo sul contenitore di sistema di tale foresta.  
 
 5.  Dopo aver completato la configurazione di questa foresta per l'utilizzo con il metodo di individuazione della foresta Active Directory, fare clic su **OK** per salvare la configurazione.  
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

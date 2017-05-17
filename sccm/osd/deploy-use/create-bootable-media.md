@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: 9032698fa12bf453041ea06bf330d3b4687c2a97
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -32,7 +34,7 @@ I supporti di avvio in Configuration Manager contengono l'immagine d'avvio, i co
 
 -   [Sostituire un computer esistente e trasferire le impostazioni](replace-an-existing-computer-and-transfer-settings.md)  
 
-##  <a name="a-namebkmkcreatebootablemediaa-create-bootable-media"></a><a name="BKMK_CreateBootableMedia"></a> Creare supporti di avvio  
+##  <a name="BKMK_CreateBootableMedia"></a> Creare supporti di avvio  
  All'avvio dei supporti di avvio, il computer di destinazione viene avviato, si connette alla rete e recupera la sequenza di attività specificata, l'immagine del sistema operativo e qualsiasi altro contenuto necessario dalla rete. Poiché la sequenza di attività non è presente sul supporto, è possibile modificare la sequenza di attività o il contenuto senza dover ricreare il supporto. I pacchetti nei supporti di avvio non sono crittografati. È necessario adottare le misure di sicurezza appropriate, ad esempio l'aggiunta di una password al supporto, per garantire che il contenuto del pacchetto sia protetto da utenti non autorizzati.  
 
  Prima di creare supporti di avvio usando la Creazione guidata del supporto per la sequenza attività, assicurarsi che siano soddisfatte tutte le condizioni seguenti:  
@@ -155,9 +157,4 @@ Le informazioni contenute in questa sezione consentono di creare supporti di avv
 
 ## <a name="next-steps"></a>Passaggi successivi  
 [Usare i supporti di avvio per distribuire Windows in rete](use-bootable-media-to-deploy-windows-over-the-network.md)  
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

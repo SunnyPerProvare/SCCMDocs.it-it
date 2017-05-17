@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: e30538ed925af66e8b7459eb4add9dd992c1ae19
 ms.openlocfilehash: b0f297fddca4252f106dee9d3d5d8911a347825b
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -33,9 +35,4 @@ Per configurare e gestire l'infrastruttura di gestione del contenuto per System 
 -   [Distribuire e gestire contenuto per System Center Configuration Manager](../../../../core/servers/deploy/configure/deploy-and-manage-content.md). La distribuzione del contenuto trasferisce i file e il software ai server del punto di distribuzione in tutta la rete. Oltre al trasferimento semplice, è possibile pre-installare il contenuto. Questo metodo può aiutare a evitare un uso eccessivo della larghezza di banda della rete. Le informazioni contenute in questo argomento consentono di eseguire in modo efficace attività di base come l'invio del contenuto o l'uso del contenuto pre-installato.  
 
 -   [Monitorare il contenuto distribuito con System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md). Quando si distribuisce il contenuto, è possibile monitorarne lo stato all'interno dell'infrastruttura. È anche possibile ridistribuire il contenuto che non riesce a raggiungere i punti di distribuzione o annullare le distribuzioni ancora in corso. Le informazioni contenute in questo argomento illustrano come monitorare il contenuto e spiegano come risolvere alcuni problemi che si verificano quando il trasferimento del contenuto non riesce.  
-
-
-
-<!--HONumber=Feb17_HO2-->
-
 
