@@ -15,10 +15,11 @@ caps.latest.revision:
 author: andredm7
 ms.author: andredm
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: fa5919b72114d71e1fbad74418c662d199827690
-ms.lasthandoff: 03/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 212628639300e9c361f7cee61b3df6b1cb6874ce
+ms.openlocfilehash: 8edf83a0f761dfc16274ce49c3aa2b878c7fe6cd
+ms.contentlocale: it-it
+ms.lasthandoff: 05/05/2017
 
 
 ---
@@ -68,10 +69,11 @@ Nella schermata **Dispositivi** è inoltre possibile selezionare dispositivi spe
 |**Stato minacce**| Sì | Stato corrente della minaccia nel dispositivo. Gli stati possibili sono: **Attivo**, **Risolto** o **Ignorato**. Quest'ultimo stato indica che l'utente ha ignorato la minaccia sul dispositivo, ma che questa è ancora presente. |
 |**Tipo di minaccia**| Sì | Tipo di minaccia del partner Mobile Threat Defense. I valori possibili sono i seguenti: **App**, **File** o **Sistema operativo** |
 |**ID account AAD**| No | Identificatore univoco di Azure Active Directory. |
-|**Classificazione**| Sì | Classificazione della minaccia fornita dal partner Mobile Threat Defense. I valori possibili sono: **Abilitatore radice, Riskware, Adware, Chargeware, Perdita di dati, Trojan, Worm, Virus, Exploit, Backdoor, Bot, App Dropper, Clic illeciti, Posta indesiderata, Spyware, Surveillance-ware, Vulnerabilità, Sconosciuto, Jailbreak radice, Connettività, Illecito telefonico, App con trasferimento locale** |
+|**Classificazione**| Sì | Classificazione della minaccia fornita dal partner Mobile Threat Defense. I valori possibili sono: **Root Enabler, Riskware, Adware, Chargeware, DataLeak, Trojan, Worm, Virus, Exploit, Backdoor, Bot, AppDropper, ClickFraud, Spam, Spyware, SurveillanceWare, Vulnerability, Unknown, Root Jailbrake, Connectivity, TollFraud, SideloadedApp** |
 |**ID dispositivo**| No | ID dell'oggetto Azure Active Directory che rappresenta il dispositivo aggiunto all'area di lavoro con informazioni sulle minacce. |
 |**ID minaccia**| No | Identificatore univoco della minaccia generato dal partner Mobile Threat Defense. L'ID minaccia viene usato per tenere traccia della risoluzione. |
 |**URL della minaccia**| No | Quando presente, l'URL della minaccia fornisce un collegamento alla vista della console di gestione del partner Mobile Threat Defense per la minaccia specifica. |
 
 > [!TIP] 
 > Verificare di abilitare le colonne che non sono **visibili per impostazione predefinita** per visualizzare maggiori dettagli sullo stato di conformità a Mobile Threat Defense dei dispositivi.
+

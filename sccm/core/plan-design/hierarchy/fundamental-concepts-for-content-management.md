@@ -2,7 +2,7 @@
 title: Concetti di base della gestione dei contenuti | Microsoft Docs
 description: "È possibile usare gli strumenti e le opzioni di System Center Configuration Manager per gestire il contenuto da distribuire."
 ms.custom: na
-ms.date: 3/15/2017
+ms.date: 05/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 238e460885b6490b3744690640f9ff040902b35f
-ms.lasthandoff: 03/27/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 212628639300e9c361f7cee61b3df6b1cb6874ce
+ms.openlocfilehash: f73dde64e0e8a0fc49f45b3afb3b8f00c926a820
+ms.contentlocale: it-it
+ms.lasthandoff: 05/05/2017
 
 
 ---
@@ -29,9 +30,12 @@ ms.lasthandoff: 03/27/2017
 
 System Center Configuration Manager supporta un solido sistema di strumenti e opzioni per gestire i contenuti distribuiti, ad esempio applicazioni, pacchetti, aggiornamenti software e sistemi operativi.  
 
- Il contenuto distribuito viene archiviato in entrambi i server del sito e nei server del sistema del sito del punto di distribuzione. Questo contenuto può richiedere una grande quantità di larghezza di banda di rete durante il trasferimento tra i percorsi. Per pianificare e usare l'infrastruttura di gestione dei contenuti in modo efficace, si consiglia di acquisire dimestichezza con le configurazioni e le opzioni disponibili e di valutare come usarle affinché possano adattarsi in modo ottimale all'ambiente di rete e alle esigenze per la distribuzione dei contenuti.  
+Il contenuto distribuito viene archiviato in entrambi i server del sito e nei server del sistema del sito del punto di distribuzione. Questo contenuto può richiedere una grande quantità di larghezza di banda di rete durante il trasferimento tra i percorsi. Per pianificare e usare l'infrastruttura di gestione dei contenuti in modo efficace, si consiglia di acquisire dimestichezza con le configurazioni e le opzioni disponibili e di valutare come usarle affinché possano adattarsi in modo ottimale all'ambiente di rete e alle esigenze per la distribuzione dei contenuti.  
 
-Di seguito sono riportati i concetti di base per la gestione dei contenuti. Se per un concetto sono necessarie informazioni aggiuntive o più complete, vengono forniti collegamenti a tali informazioni.  
+> [!TIP]    
+> È possibile consultare ulteriori informazioni sul processo di distribuzione del contenuto e trovare supporto per la diagnosi e la risoluzione dei problemi generali di distribuzione del contenuto. Vedere [Understanding and Troubleshooting Content Distribution in Microsoft Configuration Manager](https://support.microsoft.com/help/4000401/content-distribution-in-mcm) (Informazioni sulla distribuzione del contenuto in Microsoft Configuration Manager e risoluzione dei problemi) all'indirizzo support.microsoft.com.
+
+Di seguito sono riportati i concetti di base per la gestione dei contenuti. Se per un concetto sono necessarie informazioni aggiuntive o più complete, vengono forniti collegamenti a tali informazioni.
 
 ## <a name="accounts-used-for-content-management"></a>Account usati per la gestione dei contenuti  
  Con la gestione dei contenuti è possibile usare gli account seguenti:  
@@ -172,7 +176,7 @@ La priorità di distribuzione alta del pacchetto garantisce che il contenuto ven
 **Versione 1610 e successive**   
 I client che non riescono a individuare il contenuto da un punto di distribuzione associato al gruppo limite corrente possono eseguire il fallback per usare i percorsi di origine del contenuto associati a gruppi di limiti adiacenti. Per essere usato per il fallback, un gruppo di limiti adiacente deve avere una relazione definita con il gruppo di limiti corrente del client. Questa relazione include un tempo configurato oltre il quale un client che non riesce a individuare contenuto localmente può includere nella ricerca origini di contenuto dal gruppo di limiti adiacente.
 
-I concetti di punti di distribuzione preferiti non sono più usati e le impostazioni per**Consenti percorso origine di fallback per il contenuto** non sono più disponibili o applicate.
+I concetti di punti di distribuzione preferiti non sono più usati e le impostazioni per **Consenti percorso origine di fallback per il contenuto** non sono più disponibili o applicate.
 
 Per altre informazioni, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
 

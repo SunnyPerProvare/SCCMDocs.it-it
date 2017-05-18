@@ -2,7 +2,7 @@
 title: Aggiornare i client | Microsoft Docs
 description: Aggiornare i client di System Center Configuration Manager in computer Windows.
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 05/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: a5b59a1d31d897473262edcd0912ef0fcbedd100
-ms.lasthandoff: 03/06/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 212628639300e9c361f7cee61b3df6b1cb6874ce
+ms.openlocfilehash: 98b8c92e4dad3cef1ed3701b9c0f9111eb9941ea
+ms.contentlocale: it-it
+ms.lasthandoff: 05/05/2017
 
 
 ---
@@ -98,5 +99,8 @@ ms.lasthandoff: 03/06/2017
 
 8.  Se si vuole che il pacchetto di installazione venga copiato nei punti di distribuzione che sono stati abilitati per i contenuti in versione di preproduzione, fare clic su **Distribuisci automaticamente il pacchetto di installazione client nei punti di distribuzione abilitati per i contenuti in versione di preproduzione**.  
 
-9. Fare clic su **OK** per salvare le impostazioni e chiudere la finestra di dialogo **Proprietà delle impostazioni di gerarchia** . I client ricevono queste impostazioni al successivo download dei criteri.  
+9. Fare clic su **OK** per salvare le impostazioni e chiudere la finestra di dialogo **Proprietà delle impostazioni di gerarchia** . I client ricevono queste impostazioni al successivo download dei criteri.
+
+>[!NOTE]
+>Per gli aggiornamenti client vengono rispettate tutte le finestre di manutenzione di Configuration Manager configurate.
 

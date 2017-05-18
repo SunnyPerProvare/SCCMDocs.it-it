@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 96bfa443cd2894bb1c46322cd5f984071916d9a6
-ms.openlocfilehash: 6942f4d74303d8ade8add6cc81da872648f208be
+ms.translationtype: Human Translation
+ms.sourcegitcommit: c5a58d79f81ccdf19ad88dc932e3a52eac2c18ab
+ms.openlocfilehash: 80c43ab93ee5a2de6bf8d7993dfd46f0005d2df8
+ms.contentlocale: it-it
+ms.lasthandoff: 05/09/2017
 
 
 ---
@@ -37,7 +39,7 @@ Per abilitare la migrazione dei dati nell'ambiente di System Center Configuratio
 
 -   [Individuare siti di origine aggiuntivi della gerarchia di origine](#BKBM_ConfigSrcSites)  
 
-##  <a name="a-namebkbmconfigsrchierarchya-specify-a-source-hierarchy-for-migration"></a><a name="BKBM_ConfigSrcHierarchy"></a> Specificare una gerarchia di origine per la migrazione  
+##  <a name="BKBM_ConfigSrcHierarchy"></a> Specificare una gerarchia di origine per la migrazione  
  Per migrare i dati nella gerarchia di destinazione, è necessario specificare una gerarchia di origine supportata contenente i dati da migrare. Per impostazione predefinita, il sito di livello superiore di tale gerarchia diventa un sito di origine della gerarchia di origine. Se si esegue la migrazione da una gerarchia di Configuration Manager 2007, è quindi possibile configurare siti di origine aggiuntivi per la migrazione dopo avere raccolto i dati dal sito di origine iniziale. Se si esegue la migrazione da una gerarchia di System Center 2012 Configuration Manager o di System Center Configuration Manager, non è necessario configurare i siti di origine aggiuntivi per la migrazione dei dati dalla gerarchia di origine. Questo è possibile perché le versioni di Configuration Manager usano un database condiviso disponibile nel sito principale della gerarchia di origine. Il database condiviso include tutte le informazioni che è possibile migrare.  
 
  Usare le procedure seguenti per specificare una gerarchia di origine per la migrazione e per individuare siti di origine aggiuntivi in una gerarchia di Configuration Manager 2007.  
@@ -58,7 +60,7 @@ Per abilitare la migrazione dei dati nell'ambiente di System Center Configuratio
 
 6.  Specificare gli account di accesso del sito di origine che dispongono delle seguenti autorizzazioni:  
 
-    -   Account del sito di origine: autorizzazione **Lettura** per il provider SMS per il sito di livello superiore specificato nella gerarchia di origine.  
+    -   Account del sito di origine: autorizzazione **Lettura** per il provider SMS per il sito di livello superiore specificato nella gerarchia di origine. Per la condivisione e gli aggiornamenti dei punti di distribuzione sono necessarie le autorizzazioni **Modifica** ed **Eliminazione** per il sito nella gerarchia di origine.
 
     -   Account del database del sito di origine: autorizzazioni **Lettura** ed **Esegui** per il database di SQL Server per il sito di livello superiore specificato nella gerarchia di origine.  
 
@@ -70,7 +72,7 @@ Per abilitare la migrazione dei dati nell'ambiente di System Center Configuratio
 
 9. Al termine della raccolta dei dati, fare clic su **Chiudi** per chiudere la finestra di dialogo **Stato raccolta dati** e completare la configurazione.  
 
-##  <a name="a-namebkbmconfigsrcsitesa-identify-additional-source-sites-of-the-source-hierarchy"></a><a name="BKBM_ConfigSrcSites"></a> Individuare siti di origine aggiuntivi della gerarchia di origine  
+##  <a name="BKBM_ConfigSrcSites"></a> Individuare siti di origine aggiuntivi della gerarchia di origine  
  Quando viene configurata una gerarchia di origine supportata, il sito di livello superiore di tale gerarchia viene configurato automaticamente come sito di origine e i dati vengono automaticamente raccolti dal sito. L'azione successiva dipende dalla versione di Configuration Manager eseguita dalla gerarchia di origine:  
 
 -   Per una gerarchia di origine di Configuration Manager 2007, è possibile avviare la migrazione da tale sito di origine iniziale oppure configurare altri siti di origine dalla gerarchia di origine al termine della raccolta dei dati per il sito di origine iniziale. Per migrare i dati disponibili solo da un sito figlio, configurare siti di origine aggiuntivi per una gerarchia di Configuration Manager 2007. Ad esempio, potrebbero essere configurati siti di origine aggiuntivi per raccogliere dati sui contenuti che si vuole migrare quando sono stati creati in un sito figlio nella gerarchia di origine e non sono disponibili nel sito di livello superiore per la gerarchia di origine.  
@@ -93,7 +95,7 @@ Usare la procedura seguente per configurare siti di origine aggiuntivi per le ge
 
 5.  Nella finestra di dialogo **Credenziali del sito di origine** , per gli account di accesso al sito di origine, specificare gli account che dispongono delle seguenti autorizzazioni:  
 
-    -   Account del sito di origine: autorizzazione **Lettura** per il provider SMS per il sito di livello superiore specificato nella gerarchia di origine.  
+    -   Account del sito di origine: autorizzazione **Lettura** per il provider SMS per il sito di livello superiore specificato nella gerarchia di origine. Per la condivisione e gli aggiornamenti dei punti di distribuzione sono necessarie le autorizzazioni **Modifica** ed **Eliminazione** per il sito nella gerarchia di origine.  
 
     -   Account del database del sito di origine: autorizzazioni **Lettura** ed **Esegui** per il database di SQL Server per il sito di livello superiore specificato nella gerarchia di origine.  
 
@@ -104,9 +106,4 @@ Usare la procedura seguente per configurare siti di origine aggiuntivi per le ge
 7. Fare clic su **OK** per salvare la configurazione. Verrà visualizzata la finestra di dialogo **Stato raccolta dati** e la raccolta dei dati inizierà automaticamente.  
 
 8.  Al termine della raccolta dei dati, fare clic su **Chiudi** per completare la configurazione.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

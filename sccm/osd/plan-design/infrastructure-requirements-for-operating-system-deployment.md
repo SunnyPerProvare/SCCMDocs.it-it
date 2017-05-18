@@ -15,10 +15,11 @@ caps.latest.revision: 24
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
-ms.openlocfilehash: 562e81df12e46a2332aa5e4de8b7c9e5819bde80
-ms.lasthandoff: 03/21/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 065b1fcb25d7c7845b6f26e757b36e7fb97ce013
+ms.openlocfilehash: ef4536578456c13de5afaa5cd1977d2e6b4b6bd1
+ms.contentlocale: it-it
+ms.lasthandoff: 05/10/2017
 
 
 ---
@@ -52,6 +53,9 @@ La distribuzione del sistema operativo in System Center Configuration Manager 20
 -   [Scenari di Windows ADK per Windows 10 per i professionisti IT](https://technet.microsoft.com/library/mt280162\(v=vs.85\).aspx)  
 
 -   [Scaricare Windows ADK per Windows 10](https://msdn.microsoft.com/windows/hardware/dn913721.aspx#adkwin10)  
+
+-   [Supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10)  
+
 
 ### <a name="user-state-migration-tool-usmt"></a>Utilità di migrazione stato utente (USMT)  
  Configuration Manager usa un pacchetto USMT che contiene i file di origine di USMT 10 per acquisire e ripristinare lo stato utente nell'ambito della distribuzione del sistema operativo. Il programma di installazione di Configuration Manager crea automaticamente nel sito di livello superiore il pacchetto USMT. USMT 10 consente di acquisire lo stato utente da Windows 7, Windows 8, Windows 8.1 e Windows 10. USMT 10 è distribuito in Windows Assessment and Deployment Kit (Windows ADK) per Windows 10.  

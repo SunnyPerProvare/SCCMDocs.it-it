@@ -2,7 +2,7 @@
 title: Preparare la distribuzione del software client in computer Mac | Microsoft Docs
 description: "Attività di configurazione che precedono la distribuzione del client di Configuration Manager in computer Mac."
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 05/04/2017
 ms.prod: configuration-manager
 ms.reviewer: aaroncz
 ms.suite: na
@@ -15,10 +15,11 @@ caps.latest.revision: 12
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 0900e45115f02861c33fe2abdb046d11fdef3474
-ms.openlocfilehash: 9f51c15adaa850eb8343601ddcd13046480fc9c0
-ms.lasthandoff: 01/03/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: c6a6137fa978e1ea28aefea2aea4e29ba661efd6
+ms.openlocfilehash: b3bb72f81812705b4654e268025074402e89a7cb
+ms.contentlocale: it-it
+ms.lasthandoff: 05/04/2017
 
 
 ---
@@ -100,6 +101,9 @@ Per una distribuzione di esempio che crea e installa questo certificato server W
  Per una distribuzione di esempio che crea e installa il certificato client per i punti di gestione, vedere [Deploying the Client Certificate for Windows Computers](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_client2008_cm2012) (Distribuzione del certificato client per computer Windows)  
 
  Per una distribuzione di esempio che crea e installa il certificato client per i punti di gestione, vedere [Deploying the Client Certificate for Distribution Points](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_clientdistributionpoint2008_cm2012) (Distribuzione del certificato client per punti di distribuzione).  
+
+>[!IMPORTANT]
+>  Per distribuire il client in dispositivi che eseguono macOS Sierra, il nome soggetto del certificato del punto di gestione deve essere configurato correttamente, ad esempio usando il nome FQDN del server del punto di gestione.
 
 ## <a name="prepare-the-client-certificate-template-for-macs"></a>Preparare il modello di certificato client per i computer Mac  
 
