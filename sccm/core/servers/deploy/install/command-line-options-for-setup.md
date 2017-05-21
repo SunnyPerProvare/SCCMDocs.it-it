@@ -15,10 +15,11 @@ caps.latest.revision: 3
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: 04fe7b3e674287c4255563ab4a308e54d0b6c3aa
-ms.lasthandoff: 03/27/2017
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opzioni della riga di comando per il programma di installazione in System Center Configuration Manager
@@ -58,7 +59,7 @@ ms.lasthandoff: 03/27/2017
  Per altre informazioni sui file dei prerequisiti di installazione, vedere la sezione [Downloader di installazione](setup-downloader.md).  
 
  **/SCRIPT <*Percorso script installazione*>**  
- consente di eseguire installazioni automatiche. Quando si usa l'opzione **/SCRIPT** è richiesto un file di inizializzazione dell'installazione. Per altre informazioni su come eseguire l'installazione automatica, vedere [Usare una riga di comando per installare i siti di System Center Configuration Manager](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).  
+ Consente di eseguire installazioni automatiche. Quando si usa l'opzione **/SCRIPT** è richiesto un file di inizializzazione dell'installazione. Per altre informazioni su come eseguire l'installazione automatica, vedere [Usare una riga di comando per installare i siti di System Center Configuration Manager](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).  
 
  **/SDKINST <*FQDN provider SMS*>**  
  Consente di installare il provider SMS nel computer specificato. È necessario specificare il nome di dominio completo (FQDN) per il computer del provider SMS. Per altre informazioni sul provider SMS, vedere [Plan for the SMS Provider for System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md) (Pianificare il provider SMS per System Center Configuration Manager).  
@@ -67,7 +68,7 @@ ms.lasthandoff: 03/27/2017
  Consente di disinstallare il provider SMS nel computer specificato. È necessario specificare l'FQDN per il computer del provider SMS.  
 
  **/MANAGELANGS <*Percorso script lingue*>**  
- gestisce le lingue installate in un sito installato precedentemente. Per usare questa opzione, è necessario eseguire il programma di installazione da **<*Percorso di installazione di Configuration Manager*>\BIN\X64** nel server del sito e specificare il percorso del file script delle lingue che contiene le impostazioni relative alle lingue. Per altre informazioni sulle opzioni della lingua disponibili nel file script di configurazione della lingua, vedere la sezione [Opzioni della riga di comando per la gestione delle lingue](#bkmk_Lang) in questo argomento.  
+ Consente di gestire le lingue installate in un sito installato precedentemente. Per usare questa opzione, è necessario eseguire il programma di installazione da **<*Percorso di installazione di Configuration Manager*>\BIN\X64** nel server del sito e specificare il percorso del file script delle lingue che contiene le impostazioni relative alle lingue. Per altre informazioni sulle opzioni della lingua disponibili nel file script di configurazione della lingua, vedere la sezione [Opzioni della riga di comando per la gestione delle lingue](#bkmk_Lang) in questo argomento.  
 
 ##  <a name="bkmk_Lang"></a> Opzioni della riga di comando per la gestione delle lingue  
  **Identification**  
@@ -176,7 +177,7 @@ ms.lasthandoff: 03/27/2017
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
+    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*>  *o*  Eval  
 
     -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
 
@@ -422,7 +423,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
+    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*>  *o*  Eval  
 
     -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
 
@@ -506,7 +507,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** no  
 
-    -   **Valori:** <*FQDN del server del sito del punto di gestione*>  
+    -   **Valori:** < *FQDN del server del sito del punto di gestione*>  
 
     -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di gestione.  
 
@@ -814,7 +815,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
+    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*>  *o*  Eval  
 
     -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
 

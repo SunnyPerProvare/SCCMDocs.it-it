@@ -15,9 +15,11 @@ caps.latest.revision: 2
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: 59633ce68e2bb2d722900215751f345d6d098721
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1610-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1610 per System Center Configuration Manager
@@ -63,19 +65,19 @@ In qualità di amministratore l'utente è ora in grado di negare una richiesta d
 #### <a name="try-it-out"></a>Procedura
 Per negare la richiesta di un'applicazione approvata:
 
-1.  Nella console di Configuration Manager [creare e distribuire un'applicazione](https://docs.microsoft.com/en-us/sccm/apps/deploy-use/create-applications) che richiede l'approvazione.
-2.  In un computer client aprire Software Center e inviare una richiesta per l'applicazione.
-3.  Nella console di Configuration Manager approvare la richiesta per l'applicazione.
-4.  Negare la richiesta di un'applicazione approvata: nella console di Configuration Manager passare a**Raccolta software** > **Panoramica** > **Gestione applicazioni** > **Richieste di approvazione** e selezionare la richiesta di applicazione che si desidera negare.  Nella barra multifunzione fare clic su **Nega**.
+1.    Nella console di Configuration Manager [creare e distribuire un'applicazione](https://docs.microsoft.com/en-us/sccm/apps/deploy-use/create-applications) che richiede l'approvazione.
+2.    In un computer client aprire Software Center e inviare una richiesta per l'applicazione.
+3.    Nella console di Configuration Manager approvare la richiesta per l'applicazione.
+4.    Negare la richiesta di un'applicazione approvata: nella console di Configuration Manager passare a**Raccolta software** > **Panoramica** > **Gestione applicazioni** > **Richieste di approvazione** e selezionare la richiesta di applicazione che si desidera negare.  Nella barra multifunzione fare clic su **Nega**.
 
 ## <a name="exclude-clients-from-automatic-upgrade"></a>Impedire l'aggiornamento automatico dei client
 Tecnichal Preview 1610 presenta una nuova impostazione che consente di impedire che una raccolta di client installi automaticamente le versioni client aggiornate.  Questa funzione si applica sia all'aggiornamento automatico sia ad altri metodi, ad esempio all'aggiornamento basato sull'aggiornamento software, agli script di accesso e ai criteri di gruppo. Questa opzione può essere utile per una raccolta di computer che richiede particolare attenzione durante l'aggiornamento del client. I client che appartengono a una raccolta esclusa ignorano le richieste di aggiornamento del software client.
 
 ### <a name="configure-exclusion-from-automatic-upgrade"></a>Configurare l'esclusione dall'aggiornamento automatico
 Per configurare le esclusioni dall'aggiornamento automatico:
-1.  Nella console di Configuration Manager aprire **Impostazioni gerarchia** in **Amministrazione > Configurazione del sito > Siti** e quindi selezionare la scheda **Aggiornamento client**.
-2.  Selezionare la casella di controllo **Exclude specified clients from upgrade** (Escludi dall'aggiornamento i client specificati) e **Exclusion collection** (Raccolta di esclusione), quindi selezionare la raccolta da escludere. È possibile selezionare per l'esclusione solo una singola raccolta.
-3.  Fare clic su **OK** per chiudere e salvare la configurazione. Dopo che i client avranno aggiornato i criteri, i client appartenenti alla raccolta esclusa non installeranno più automaticamente gli aggiornamenti per il software client.
+1.    Nella console di Configuration Manager aprire **Impostazioni gerarchia** in **Amministrazione > Configurazione del sito > Siti** e quindi selezionare la scheda **Aggiornamento client**.
+2.    Selezionare la casella di controllo **Exclude specified clients from upgrade** (Escludi dall'aggiornamento i client specificati) e **Exclusion collection** (Raccolta di esclusione), quindi selezionare la raccolta da escludere. È possibile selezionare per l'esclusione solo una singola raccolta.
+3.    Fare clic su **OK** per chiudere e salvare la configurazione. Dopo che i client avranno aggiornato i criteri, i client appartenenti alla raccolta esclusa non installeranno più automaticamente gli aggiornamenti per il software client.
 
   ![Impostazioni per l'esclusione dall'aggiornamento automatico](media/automatic_upgrade_exclusion.png)
 
@@ -128,13 +130,13 @@ In particolare, è possibile configurare le seguenti impostazioni di Windows Def
 
 ### <a name="try-it-out"></a>Verifica
 
-1.  Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Impostazioni di conformità** > **Elementi di configurazione** e creare un nuovo **elemento di configurazione**.
-2.  Immettere un nome, quindi selezionare **Windows 8.1 e Windows 10** in **Impostazioni per dispositivi gestiti senza il client di Configuration Manager** e fare clic su **Avanti**.
-3.  Verificare che **tutti i dispositivi Windows 10 a 64 bit** e **tutti i dispositivi Windows 10 a 32 bit** siano selezionati nella pagina **Piattaforme supportate**, quindi fare clic su **Avanti**.
-4.  Selezionare il gruppo di impostazioni **Windows Defender**, quindi fare clic su **Avanti**.
-5.  Configurare le impostazioni desiderate in questa pagina, quindi fare clic su **Avanti**.
-6.  Completare la procedura guidata.
-7.  Aggiungere questo elemento di configurazione a una linea di base di configurazione e distribuire questa linea di base nei computer che eseguono Windows 10 November Update (1511) o versione successiva.
+1.    Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Impostazioni di conformità** > **Elementi di configurazione** e creare un nuovo **elemento di configurazione**.
+2.    Immettere un nome, quindi selezionare **Windows 8.1 e Windows 10** in **Impostazioni per dispositivi gestiti senza il client di Configuration Manager** e fare clic su **Avanti**.
+3.    Verificare che **tutti i dispositivi Windows 10 a 64 bit** e **tutti i dispositivi Windows 10 a 32 bit** siano selezionati nella pagina **Piattaforme supportate**, quindi fare clic su **Avanti**.
+4.    Selezionare il gruppo di impostazioni **Windows Defender**, quindi fare clic su **Avanti**.
+5.    Configurare le impostazioni desiderate in questa pagina, quindi fare clic su **Avanti**.
+6.    Completare la procedura guidata.
+7.    Aggiungere questo elemento di configurazione a una linea di base di configurazione e distribuire questa linea di base nei computer che eseguono Windows 10 November Update (1511) o versione successiva.
 
 > [!NOTE]
 > Ricordarsi di selezionare la casella di controllo **Monitora e aggiorna impostazioni non conformi** quando si distribuisce la linea di base di configurazione.
@@ -145,14 +147,14 @@ Ora è possibile richiedere una sincronizzazione dei criteri per un dispositivo 
 
 ### <a name="try-it-out"></a>Verifica
 
-1.  Nella console di Configuration Manager console passare ad **Asset e conformità** > **Panoramica** > Dispositivi.
-2.  Nel menu **Azioni remote dispositivo** selezionare **Send Sync Request** (Invia richiesta di sincronizzazione).
+1.    Nella console di Configuration Manager console passare ad **Asset e conformità** > **Panoramica** > Dispositivi.
+2.    Nel menu **Azioni remote dispositivo** selezionare **Send Sync Request** (Invia richiesta di sincronizzazione).
 
-La sincronizzazione può richiedere da&5; a&10; minuti. Tutte le modifiche ai criteri verranno sincronizzate nel dispositivo. È possibile rilevare lo stato della richiesta di sincronizzazione nella colonna **Remote Sync State** (Stato sincronizzazione remota) nella visualizzazione **Dispositivi** o nella finestra di dialogo **Proprietà** del dispositivo.
+La sincronizzazione può richiedere da 5 a 10 minuti. Tutte le modifiche ai criteri verranno sincronizzate nel dispositivo. È possibile rilevare lo stato della richiesta di sincronizzazione nella colonna **Remote Sync State** (Stato sincronizzazione remota) nella visualizzazione **Dispositivi** o nella finestra di dialogo **Proprietà** del dispositivo.
 
 ## <a name="additional-security-role-support"></a>Supporto di ruoli di sicurezza aggiuntivi
 
-Oltre al ruolo Amministratore completo, anche i ruoli di sicurezza incorporati seguenti hanno ora accesso completo agli elementi nel nodo **Tutti i dispositivi di proprietà dell'azienda**, inclusi i **dispositivi predichiarati**, i **profili di registrazione iOS** e i **profili di registrazione Windows**: •   **Gestione asset** •   **Gestione accesso risorse aziendali**
+Oltre al ruolo Amministratore completo, anche i ruoli di sicurezza incorporati seguenti hanno ora accesso completo agli elementi nel nodo **Tutti i dispositivi di proprietà dell'azienda**, inclusi i **dispositivi predichiarati**, i **profili di registrazione iOS** e i **profili di registrazione Windows**: •   **Gestione asset** •    **Gestione accesso risorse aziendali**
 
 A queste aree della console di Configuration Manager continua a essere concesso l'accesso in sola lettura al ruolo **Analista di sola lettura**.
 
@@ -162,9 +164,4 @@ A queste aree della console di Configuration Manager continua a essere concesso 
 
 ## <a name="see-also"></a>Vedere anche
 [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 

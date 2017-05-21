@@ -2,7 +2,7 @@
 title: Note sulla versione - Configuration Manager | Microsoft Docs
 description: Leggere queste note su problemi urgenti non ancora risolti nel prodotto o illustrati in un articolo di Microsoft Knowledge Base.
 ms.custom: na
-ms.date: 03/27/2017
+ms.date: 05/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 7a6c89254d01f4074e5c170b20338686178ebdd3
-ms.openlocfilehash: 59946d1328be1606ba7c4dab647e814c1b4e638a
+ms.sourcegitcommit: d5166b16ffbe46af561b1ce98c0494cc4aaa72a8
+ms.openlocfilehash: 9da6f9678a7fb5c76f365a3522f5e5e0fdfec037
 ms.contentlocale: it-it
-ms.lasthandoff: 04/28/2017
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -145,9 +145,16 @@ L'eccezione è simile alla seguente:
 -->
 
 
-<!-- No current  Client deployment and upgrade relenotes
-## Client deployment and upgrade  
--->
+
+## <a name="client-deployment-and-upgrade"></a>Distribuzione e aggiornamento del client  
+
+### <a name="client-installation-fails-with-error-code-0x8007064c"></a>L'installazione del client non riesce e viene restituito il codice di errore 0x8007064c
+<!--- SMS 486973 -->
+
+Quando si distribuisce il client in computer Windows, l'installazione ha esito negativo. Il file ccmsetup.log contiene la voce "File 'C:\WINDOWS\ccmsetup\Silverlight.exe' returned failure exit code 1612. Fail the installation" seguita da "InstallFromManifest failed 0x8007064c".
+
+**Soluzione alternativa** Il problema è causato da una versione danneggiata di Silverlight installata in precedenza. Per risolvere il problema, provare a eseguire lo strumento seguente sul computer interessato: [https://support.microsoft.com/help/17588/fix-problems-that-block-programs-from-being-installed-or-removed](https://support.microsoft.com/help/17588/fix-problems-that-block-programs-from-being-installed-or-removed) 
+
 
 
 
@@ -247,5 +254,5 @@ Questo problema interessa l'accesso condizionale di System Center Configuration 
 ### <a name="antimalware-policy-fails-to-apply-on-windows-server-2016-core"></a>Non è possibile applicare i criteri antimalware in Windows Server 2016 Core
 Non è possibile applicare i criteri antimalware in Windows Server 2016 Core.  Codice di errore: 0x80070002.  Manca una dipendenza per ConfigSecurityPolicy.exe.
 
-**Soluzione alternativa:**  nessuna.  Come amministratore, è possibile usare i criteri di gruppo per gestire le impostazioni per Windows Server 2016 Core.
+**Soluzione alternativa:** per risolvere questo problema, vedere l'[articolo 4019472 della Knowledge Base](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472) distribuito il 9 maggio 2017. 
 

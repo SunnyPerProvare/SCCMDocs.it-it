@@ -13,10 +13,11 @@ ms.assetid: 409e26e1-7716-4f1d-a0ee-34feabf20792
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
-ms.openlocfilehash: 4616ebb84ae63acbe6af892918aa2dd1a0be4825
-ms.lasthandoff: 05/02/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f4cb711f369698fe8e045f8c83dd96ec6fb29d70
+ms.openlocfilehash: a2954b3c6f9a09b7246347e780c4cfc49ba39ca1
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novità della versione 1702 di System Center Configuration Manager
@@ -172,8 +173,8 @@ I passaggi della sequenza di attività che fanno riferimento a un pacchetto, un 
 ### <a name="hardware-inventory-collects-uefi-information"></a>L'inventario hardware raccoglie le informazioni UEFI
 Una nuova classe di inventario hardware (**SMS_Firmware**) e una nuova proprietà (**UEFI**) sono disponibili per determinare se un computer viene avviato in modalità UEFI. Quando un computer viene avviato in modalità UEFI, la proprietà **UEFI** è impostata su **TRUE**. L'impostazione è abilitata nell'inventario hardware per impostazione predefinita. Per altre informazioni sull'inventario hardware, vedere [How to configure hardware inventory](/sccm/core/clients/manage/inventory/configure-hardware-inventory) (Come configurare l'inventario hardware).
 
-### <a name="improvements-to-software-center-settings-and-notification-messages-for-high-impact-task-sequences"></a>Miglioramenti alle impostazioni e ai messaggi di notifica di Software Center per le sequenze di attività a impatto elevato
-Questa versione include i miglioramenti seguenti alle impostazioni di Software Center e ai messaggi di notifica per le sequenze di attività di distribuzione a impatto elevato:
+### <a name="improvements-to-software-center-warning-messages-for-high-impact-task-sequences"></a>Miglioramenti ai messaggi di avviso di Software Center per le sequenze di attività a impatto elevato
+Questa versione include i miglioramenti seguenti ai messaggi di avviso di Software Center per le sequenze di attività di distribuzione a impatto elevato:
 
 - Nelle proprietà per la sequenza di attività è ora possibile configurare qualsiasi sequenza di attività, comprese le sequenze di attività non del sistema operativo, come distribuzioni ad alto rischio. Qualsiasi sequenza di attività che soddisfi determinate condizioni viene definita automaticamente come a impatto elevato. Per altri dettagli, vedere [Gestire le distribuzioni ad alto rischio](/sccm/protect/understand/settings-to-manage-high-risk-deployments).
 - Nelle proprietà per la sequenza di attività è possibile scegliere di usare il messaggio di notifica predefinito o crearne uno personalizzato per le distribuzioni a impatto elevato.

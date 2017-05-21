@@ -17,8 +17,8 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 4eee9731a4a27328c47c0d15931cab28cf520a18
-ms.openlocfilehash: d1d2ec7c053d13ebaeb00d0dfeb126716b5f7ae5
+ms.sourcegitcommit: ae60eb25383f4bd07faaa1265185a471ee79b1e9
+ms.openlocfilehash: 3d90f16eac59b7069ff2f33170eba85d2cde65ef
 ms.contentlocale: it-it
 ms.lasthandoff: 05/17/2017
 
@@ -215,9 +215,9 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
 
      Se l'immissione PIN di BitLocker è configurata sui computer, questa opzione può ignorare la richiesta di immissione di un PIN quando il computer viene riavviato dopo un'installazione software.  
 
-    -   **Sempre**: Configuration Manager sospende temporaneamente la richiesta di BitLocker di immissione di un PIN al successivo avvio del computer dopo l'installazione di software che richiede un riavvio e al riavvio del computer. Questa impostazione si applica solo ai riavvii del computer avviati da Configuration Manager e non sospende la richiesta di immissione del PIN di BitLocker quando l'utente riavvia il computer. La richiesta di immissione del PIN di BitLocker è ripristinata dopo l'avvio di Windows.  
+    -   **Sempre**: Configuration Manager sospende temporaneamente BitLocker dopo aver installato il software che richiede un riavvio e aver iniziato un riavvio del computer. Questa impostazione si applica solo a un riavvio del computer avviato da Configuration Manager e non sospende la richiesta di immissione del PIN di BitLocker quando l'utente riavvia il computer. La richiesta di immissione del PIN di BitLocker è ripristinata dopo l'avvio di Windows.
 
-    -   **Mai**: Configuration Manager non sospende la richiesta di BitLocker di immissione di un PIN al successivo avvio del computer dopo aver installato software che richiede un riavvio. In questo scenario l'installazione del software non può essere completata fino a quando l'utente immette il PIN per completare il processo di avvio e caricamento standard di Windows.  
+    -   **Mai**: Configuration Manager non sospende BitLocker al successivo avvio del computer dopo aver installato software che richiede un riavvio. In questo scenario, l'installazione del software non può finire fino a quando l'utente immette il PIN per completare il processo di avvio e caricamento standard di Windows.
 
 -   **Il software aggiuntivo gestisce la distribuzione delle applicazioni e degli aggiornamenti software**  
 

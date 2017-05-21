@@ -2,7 +2,7 @@
 title: Gestire le app iOS acquistate con Volume Purchase Program | Microsoft Docs
 description: Distribuire, gestire e tenere traccia delle licenze per le app acquistate tramite l&quot;App Store iOS.
 ms.custom: na
-ms.date: 03/28/2017
+ms.date: 05/12/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,11 @@ caps.handback.revision: 0
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 3c2a07f560e0aa3d2beb7cc50e71c98ac45c27e1
-ms.openlocfilehash: a63acf0d80edba1e965ba8ea99fe90edb8aa2faf
-ms.lasthandoff: 03/28/2017
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f4cb711f369698fe8e045f8c83dd96ec6fb29d70
+ms.openlocfilehash: ce706e938f558406044f7890c80bb7156c3b262b
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="manage-volume-purchased-ios-apps-with-system-center-configuration-manager"></a>Gestire le app iOS acquistate tramite Volume Purchase Program con System Center Configuration Manager
@@ -57,18 +58,19 @@ ms.lasthandoff: 03/28/2017
       Quando si sceglie **Sincronizza** per eseguire una sincronizzazione manuale, verrà sempre eseguita una sincronizzazione completa.  
 -   Se è necessario recuperare o ripristinare il database di Configuration Manager, è consigliabile eseguire in seguito una sincronizzazione manuale per assicurarsi che i dati di licenza sincronizzati siano aggiornati.  
 -   Inoltre, per gestire i dispositivi iOS e distribuire le app è necessario aver importato da Apple un certificato Apple Push Notification service (APNs) valido. Per altre informazioni, vedere [Set up iOS hybrid device management](enroll-hybrid-ios-mac.md) (Configurare la gestione di dispositivi iOS ibrida).  
+-   Configuration Manager supporta l'aggiunta di un numero massimo di 3000 token VPP.
 
 A partire da System Center Configuration Manager 1702, è ora possibile distribuire le applicazioni con licenza sia ai dispositivi che agli utenti. In base alla possibilità dell'app di supportare la gestione delle licenze dei dispositivi, al momento della distribuzione verrà richiesta una licenza appropriata, come indicato di seguito:
 
 |||||
 |-|-|-|-|
 |Versione di Configuration Manager|Gestione delle licenze dei dispositivi supportata|Tipo di raccolta della distribuzione|Licenza richiesta|
-|Precedente la 1702|Sì|Utente|Licenza utente|
-|Precedente la 1702|No|Utente|Licenza utente|
+|Precedente la 1702|Sì|utente|Licenza utente|
+|Precedente la 1702|No|utente|Licenza utente|
 |Precedente la 1702|Sì|Dispositivo|Licenza utente|
 |Precedente la 1702|No|Dispositivo|Licenza utente|
-|1702 e versioni successive|Sì|Utente|Licenza utente|
-|1702 e versioni successive|No|Utente|Licenza utente|
+|1702 e versioni successive|Sì|utente|Licenza utente|
+|1702 e versioni successive|No|utente|Licenza utente|
 |1702 e versioni successive|Sì|Dispositivo|Licenza dispositivo|
 |1702 e versioni successive|No|Dispositivo|Licenza utente|
 
@@ -112,7 +114,7 @@ L'applicazione di Configuration Manager creata contiene l'app Windows Store per 
 
  Quando si crea un'app dal nodo **Informazioni di licenza per le app dello Store**, l'app viene associata alle licenze dal token per l'app selezionata.  Ad esempio, nel nodo possono essere visualizzate due versioni della stessa app. Ciò avviene perché ogni versione dell'app è associata a un diverso token VPP di Apple.  È quindi possibile creare app da ogni token e distribuirle separatamente.
 
- Per revocare una licenza, è necessario modificare l'azione di distribuzione specificando **Disinstalla**. La licenza verrà revocata dopo la disinstallazione dell'app.  
+ Per recuperare una licenza, è necessario creare una nuova distribuzione per l'app con l'azione di distribuzione **Disinstalla**. Non è possibile modificare l'azione di distribuzione nella distribuzione originale. La licenza verrà revocata dopo la disinstallazione dell'app.  
 
 ## <a name="step-3---monitor-ios-vpp-apps"></a>Passaggio 3: Monitorare le app VPP per iOS  
  Il nodo **Informazioni di licenza per le app dello Store** dell'area di lavoro **Libreria software** visualizza le informazioni sulle app iOS acquistate con Volume Purchase Program. Le informazioni includono il numero totale di licenze di cui si è proprietari per ogni app e il numero di licenze distribuite. Sono inoltre visualizzati il token VPP a cui è associata l'app e il tipo di token.

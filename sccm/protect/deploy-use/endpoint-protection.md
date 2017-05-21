@@ -15,9 +15,11 @@ caps.latest.revision: 11
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 4688b4b12a7afa5fcfdc0e42f984271d98f10316
-ms.openlocfilehash: 90e6d82e7fd1ff0ad4f1d616cc23201769fe26e2
+ms.translationtype: Human Translation
+ms.sourcegitcommit: ae60eb25383f4bd07faaa1265185a471ee79b1e9
+ms.openlocfilehash: 3c31271f3e3ae7aa45da03b3d75fd78242330646
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 
 ---
@@ -33,21 +35,15 @@ Endpoint Protection in System Center Configuration Manager consente di gestire i
  L'uso di Endpoint Protection con Configuration Manager offre i vantaggi seguenti:  
 
 -   Configurare criteri antimalware e impostazioni di Windows Firewall e gestire Windows Defender Advanced Threat Protection per gruppi di computer selezionati  
-
 -   Usare gli aggiornamenti software di Configuration Manager per scaricare i file definizioni antimalware più recenti e mantenere aggiornati i computer client  
-
 -   Inviare notifiche di posta elettronica, usare il monitoraggio integrato nella console e visualizzare report per mantenere gli utenti amministratori informati quando viene rilevato malware nei computer client  
 
-A partire da Windows 10 e Windows Server 2016, i computer non richiedono client aggiuntivi per la gestione di Endpoint Protection. In computer con Windows 8.1 e versioni precedenti, viene installato il client di Endpoint Protection oltre al client di Configuration Manager. Il client di Endpoint Protection ha le funzionalità seguenti:  
+A partire da Windows 10 e Windows Server 2016, Windows Defender è già installato nei computer. Per questi sistemi operativi, quando si installa il client di Configuration Manager viene installato anche un client di gestione di Windows Defender. Nei computer con Windows 8.1 e versioni precedenti, il client di Endpoint Protection viene installato con il client di Configuration Manager. Windows Defender e il client di Endpoint Protection hanno le funzionalità seguenti:  
 
 -   Rilevamento e correzione di spyware e malware  
-
 -   Rilevamento e correzione di rootkit  
-
 -   Valutazione delle vulnerabilità critiche e aggiornamenti automatici del motore e delle definizioni  
-
 -   Rilevamento delle vulnerabilità di rete con Network Inspection System  
-
 -   Integrazione con Cloud Protection Service per segnalare malware a Microsoft. Se si partecipa a questo servizio, il client di Endpoint Protection o Windows Defender può scaricare le definizioni più recenti da Malware Protection Center quando in un computer viene rilevato malware non identificato.  
 
 > [!NOTE]  
@@ -59,7 +55,7 @@ A partire da Windows 10 e Windows Server 2016, i computer non richiedono client 
 
 
 ## <a name="managing-malware-with-endpoint-protection"></a>Gestione del malware con Endpoint Protection  
- Endpoint Protection in Configuration Manager consente di creare criteri antimalware che contengono impostazioni per le configurazioni del client di Endpoint Protection. È quindi possibile distribuire tali criteri antimalware nei computer client e monitorarli nel nodo **Stato di Endpoint Protection **, nella sezione **Sicurezza** dell'area di lavoro **Monitoraggio**, oppure usando i report di Configuration Manager.  
+ Endpoint Protection in Configuration Manager consente di creare criteri antimalware che contengono impostazioni per le configurazioni del client di Endpoint Protection. È quindi possibile distribuire tali criteri antimalware nei computer client e monitorarli nel nodo **Stato di Endpoint Protection** , nella sezione **Sicurezza** dell'area di lavoro **Monitoraggio**, oppure usando i report di Configuration Manager.  
 
  Altre informazioni:  
 
@@ -112,16 +108,11 @@ A partire dalla versione 1606 di Configuration Manager (Current Branch), Endpoin
 
 Usare questa procedura per scaricare il file di immagine contenente il software client di Endpoint Protection e la documentazione per computer Mac e server Linux.
 1. Accedere al [Centro servizi per contratti multilicenza](https://www.microsoft.com/licensing/servicecenter/default.aspx).
-2. Selezionare la scheda ** Download e codici** in alto nel sito Web.
+2. Selezionare la scheda  **Download e codici** in alto nel sito Web.
 3. Filtrare in base al prodotto **System Center Endpoint Protection (Current Branch)**.
 4. Fare clic sul collegamento **Download**.
-5. Fare clic su **Continue**. Dovrebbero essere visualizzati vari file, tra i quali uno con il nome: **System Center Endpoint Protection (current branch - version 1606) for Linux OS and Macintosh OS Multilanguage   32/64 bit   1507 MB ISO**.
+5. Fare clic su **Continue**. Dovrebbero essere visualizzati vari file, tra i quali uno con il nome: **System Center Endpoint Protection (current branch - version 1606) for Linux OS and Macintosh OS Multilanguage    32/64 bit    1507 MB    ISO**.
 6. Fare clic sull'icona a forma di freccia per scaricare il file. Il nome del file è **SW_DVD5_Sys_Ctr_Endpnt_Prtctn_1606_MultiLang_EptProt_Lin_Mac_MLF_X21-30777.ISO**.
 
  Per altre informazioni su come installare e gestire i client di Endpoint Protection per i computer Mac e Linux, usare la documentazione di accompagnamento di questi prodotti, disponibile nella cartella **Documentazione** .
-
-
-
-<!--HONumber=Feb17_HO1-->
-
 

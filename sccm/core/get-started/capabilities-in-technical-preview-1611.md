@@ -15,9 +15,11 @@ caps.latest.revision: 2
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: 5e77ebbfd3f3d573d903fe58024a22feb9884e4a
+ms.contentlocale: it-it
+ms.lasthandoff: 05/17/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1611-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1611 per System Center Configuration Manager
@@ -37,7 +39,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
 - ***PowerShell***: quando ci si connette a Windows PowerShell dalla console di Configuration Manager, è possibile ricevere l'errore seguente: **Microsoft.ConfigurationManagement.PowerShell.Types.ps1xml is not digitally signed** (Microsoft.ConfigurationManagement.PowerShell.Types.ps1xml senza firma digitale).  
 
-   È possibile risolvere questo problema sostituendo determinati file con le versioni firmate corrispondenti della versione 1610. Dalla cartella **&lt;directory di installazione>\AdminConsole\bin\** della versione 1610 copiare tutti i file con le estensioni seguenti: **.psd1**, **.ps1xml** e **.psm1**. Incollare questi file nella cartella * * &lt;directory di installazione>\AdminConsole\bin\* * della versione Technical Preview 1611, sovrascrivendo la versione 1611 dei file.
+   È possibile risolvere questo problema sostituendo determinati file con le versioni firmate corrispondenti della versione 1610. Dalla cartella **&lt;directory di installazione>\AdminConsole\bin\** della versione 1610 copiare tutti i file con le estensioni seguenti: **psd1**, **ps1xml** e **psm1**. Incollare questi file nella cartella **&lt;directory di installazione>\AdminConsole\bin\** della versione Technical Preview 1611, sovrascrivendo la versione 1611 dei file.
 
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
@@ -75,9 +77,4 @@ Con la funzionalità di pre-cache del contenuto è possibile consentire al clien
 
 ## <a name="see-also"></a>Vedere anche
 [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager)
-
-
-
-<!--HONumber=Jan17_HO4-->
-
 
