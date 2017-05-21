@@ -272,16 +272,16 @@ ms.lasthandoff: 12/16/2016
  Per informazioni sull'uso dei certificati in Configuration Manager, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
 
 ###  <a name="BKMK_AboutCertsforLnU"></a> Informazioni sui certificati per l'uso da server Linux e UNIX  
- Il client di Configuration Manager per Linux e UNIX usa un certificato autofirmato o un certificato x.&509; PKI come i client basati su Windows. Non ci sono modifiche ai requisiti di infrastruttura a chiave pubblica (PKI) per i sistemi del sito di Configuration Manager quando si gestiscono client Linux e UNIX.  
+ Il client di Configuration Manager per Linux e UNIX usa un certificato autofirmato o un certificato x. 509 PKI come i client basati su Windows. Non ci sono modifiche ai requisiti di infrastruttura a chiave pubblica (PKI) per i sistemi del sito di Configuration Manager quando si gestiscono client Linux e UNIX.  
 
- I certificati usati per i client Linux e UNIX che comunicano con i sistemi del sito di Configuration Manager devono essere in formato Public Key Certificate Standard (PKCS&#12;) e la password deve essere nota, in modo che sia possibile specificarla al client quando si specifica il certificato PKI.  
+ I certificati usati per i client Linux e UNIX che comunicano con i sistemi del sito di Configuration Manager devono essere in formato Public Key Certificate Standard (PKCS #12) e la password deve essere nota, in modo che sia possibile specificarla al client quando si specifica il certificato PKI.  
 
  Il client di Configuration Manager per Linux e UNIX supporta un solo certificato PKI. Pertanto, i criteri di selezione del certificato da configurare per un sito di Configuration Manager non sono validi.  
 
 ###  <a name="BKMK_ConfigCertsforLnU"></a> Configurazione dei certificati per server Linux e UNIX  
  Per configurare un client di Configuration Manager per i server Linux e UNIX per usare le comunicazioni HTTPS, è necessario configurare il client per usare un certificato PKI quando si installa il client. Impossibile effettuare il provisioning di un certificato prima dell'installazione del software client.  
 
- Quando si installa un client che utilizza un certificato PKI, si utilizza il parametro della riga di comando **- /usepkicert** per specificare il percorso e nome di un file PKCS&#12; che contiene il certificato PKI. È inoltre necessario utilizzare il parametro della riga di comando **- certpw** per specificare la password per il certificato.  
+ Quando si installa un client che utilizza un certificato PKI, si utilizza il parametro della riga di comando **- /usepkicert** per specificare il percorso e nome di un file PKCS #12 che contiene il certificato PKI. È inoltre necessario utilizzare il parametro della riga di comando **- certpw** per specificare la password per il certificato.  
 
  Se non si specifica **- /usepkicert**, il client genera un certificato autofirmato e tenta di comunicare al server del sistema del sito solo tramite HTTP.  
 
