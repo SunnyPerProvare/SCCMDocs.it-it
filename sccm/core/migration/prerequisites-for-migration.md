@@ -87,7 +87,7 @@ Di seguito sono elencate le configurazioni necessarie per l'uso della migrazione
 
     -   **Account del sito di origine:** questo account viene usato per l'accesso al provider SMS del sito di origine.  
 
-        -   Per un sito di origine di Configuration Manager&2007; SP2, questo account richiede l'autorizzazione **Lettura** per tutti gli oggetti del sito di origine.  
+        -   Per un sito di origine di Configuration Manager 2007 SP2, questo account richiede l'autorizzazione **Lettura** per tutti gli oggetti del sito di origine.  
 
         -   Per un sito di origine di System Center 2012 Configuration Manager o System Center Configuration Manager, questo account richiede l'autorizzazione **Lettura** per tutti gli oggetti del sito di origine. L'autorizzazione all'account viene concessa tramite l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
@@ -123,7 +123,7 @@ Di seguito sono elencate le configurazioni necessarie per l'uso della migrazione
 
      L' **account di accesso al sito di origine** configurato per la raccolta dei dati dal provider SMS del sito di origine deve disporre delle seguenti autorizzazioni:  
 
-    -   Per aggiornare un punto di distribuzione di Configuration Manager&2007;, l'account richiede le autorizzazioni **Lettura**, **Esecuzione** ed **Eliminazione** per la classe **Sito** nel server del sito di Configuration Manager&2007; per rimuovere correttamente il punto di distribuzione dal sito di origine di Configuration Manager&2007;.  
+    -   Per aggiornare un punto di distribuzione di Configuration Manager 2007, l'account richiede le autorizzazioni **Lettura**, **Esecuzione** ed **Eliminazione** per la classe **Sito** nel server del sito di Configuration Manager 2007 per rimuovere correttamente il punto di distribuzione dal sito di origine di Configuration Manager 2007.  
 
     -   Per riassegnare un punto di distribuzione di System Center 2012 Configuration Manager o System Center Configuration Manager, l'account deve avere l'autorizzazione **Modifica** per l'oggetto **sito** nel sito di origine. È possibile concedere questa autorizzazione all'account utilizzando l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 

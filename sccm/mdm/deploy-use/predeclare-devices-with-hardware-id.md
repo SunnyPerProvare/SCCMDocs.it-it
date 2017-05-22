@@ -64,7 +64,7 @@ Se si caricano numeri di serie di dispositivi iOS di proprietà dell'azienda, è
 
 Il file con estensione csv da usare per identificare i dispositivi in base al codice IMEI o al numero di serie deve essere nel formato seguente, esclusa la riga superiore che viene indicata unicamente a scopo informativo. Ogni riga deve contenere un numero ID, ovvero un numero IMEI o numero di serie iOS. È possibile includere entrambi. I numeri IMEI possono essere usati per dispositivi Android, iOS e Windows. Sono supportati anche i numeri di serie iOS.  Questa tabella contiene dati di esempio:
 
-| Numero IMEI  | Numero di serie iOS  | OS | Dettagli |
+| IMEI #  | Numero di serie iOS #  | OS | Dettagli |
 |------------ |---------------|-----|-----|
 | 123456789012345    |   | WINDOWS | Dispositivo Windows di proprietà dell'azienda|
 |   | A1B2C3D4E5C6 | IOS |     Dispositivo iOS di proprietà dell'azienda|
