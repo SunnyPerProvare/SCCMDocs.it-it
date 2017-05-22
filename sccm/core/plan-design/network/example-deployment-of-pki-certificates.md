@@ -765,7 +765,7 @@ Questa distribuzione del certificato dispone di una sola procedura per creare ed
 
 7.  Scegliere la scheda **Protezione** e quindi rimuovere l'autorizzazione **Registrazione** dai gruppi di sicurezza **Domain Admins** ed **Enterprise Admins**.  
 
-8.  Scegliere **Aggiungi**, specificare il gruppo di sicurezza creato nel passaggio&1;, quindi scegliere **OK**.  
+8.  Scegliere **Aggiungi**, specificare il gruppo di sicurezza creato nel passaggio 1, quindi scegliere **OK**.  
 
 9. Scegliere l'autorizzazione **Registrazione** per questo gruppo e non deselezionare l'autorizzazione **Lettura**.  
 
