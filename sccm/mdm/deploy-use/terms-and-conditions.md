@@ -64,7 +64,7 @@ ms.lasthandoff: 05/17/2017
 
 2.  Nell'elenco **Termini e condizioni** selezionare l'elemento da distribuire e quindi fare clic su **Distribuisci**.  
 
-3.  Fare clic su**Sfoglia** per selezionare la raccolta **** in cui si vogliono distribuire i termini e le condizioni, quindi fare clic su **OK**.  
+3.  Fare clic su**Sfoglia** per selezionare la **raccolta** in cui si vogliono distribuire i termini e le condizioni, quindi fare clic su **OK**.  
 
      Quando i dispositivi di destinazione accedono all'app Portale aziendale, verranno visualizzati i termini e le condizioni distribuiti. Gli utenti devono accettare questi termini prima di poter accedere alle risorse aziendali.  
 
