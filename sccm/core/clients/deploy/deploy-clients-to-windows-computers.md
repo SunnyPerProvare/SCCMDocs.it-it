@@ -250,7 +250,7 @@ Questo esempio sostituisce la configurazione automatica che Active Directory Dom
 
 Usare la procedura seguente per creare un pacchetto e un programma di Configuration Manager che possa essere distribuito nei computer client di Configuration Manager per aggiornare il software client.  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software ** > **Gestione applicazioni** > **Pacchetti**.  
+1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Pacchetti**.  
 
 3.  Nel gruppo **Crea** della scheda **Home** scegliere **Crea pacchetto da definizione**.  
 
