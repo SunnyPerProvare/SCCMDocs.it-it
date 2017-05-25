@@ -40,7 +40,7 @@ Per consentire agli utenti di registrare i propri dispositivi per la gestione de
 ##  <a name="bkmk_createProf"></a> Creare un profilo di registrazione che consenta agli utenti di registrare i dispositivi moderni  
  Per eseguire il push delle impostazioni necessarie per consentire agli utenti di registrare i dispositivi moderni, è possibile aggiungere un nuovo profilo di registrazione alle impostazioni client predefinite, che viene applicato a tutti gli utenti individuati nel sito di Configuration Manager.  
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Panoramica** > **Impostazioni client**, aprire **Impostazioni client predefinite ** e selezionare **Registrazione**.  
+1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Panoramica** > **Impostazioni client**, aprire **Impostazioni client predefinite** e selezionare **Registrazione**.  
 
 2.  In Impostazioni dispositivo specificare l'intervallo di polling per i dispositivi moderni.  
 
