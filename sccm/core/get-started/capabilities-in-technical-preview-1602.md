@@ -58,7 +58,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
 -   Quando si seleziona la classificazione **Aggiornamenti** per la sincronizzazione degli aggiornamenti software, viene visualizzata una finestra di dialogo di avviso per informare gli utenti che è necessario l'[hotfix 3095113](https://support.microsoft.com/kb/3095113) di WSUS per la corretta sincronizzazione degli aggiornamenti software e per il corretto funzionamento della manutenzione di Windows 10.  Nella finestra di dialogo è possibile passare all'articolo della Knowledge Base per l'hotfix.  
 
--   Gli aggiornamenti disponibili di Windows 10 vengono visualizzati ora solo nel nodo **Manutenzione di Windows 10** \ **Tutti gli aggiornamenti di Windows 10** della console di Configuration Manager. Questi aggiornamenti non vengono più visualizzati nel nodo **Aggiornamenti software ** \ **Tutti gli aggiornamenti software**.  
+-   Gli aggiornamenti disponibili di Windows 10 vengono visualizzati ora solo nel nodo **Manutenzione di Windows 10** \ **Tutti gli aggiornamenti di Windows 10** della console di Configuration Manager. Questi aggiornamenti non vengono più visualizzati nel nodo **Aggiornamenti software** \ **Tutti gli aggiornamenti software**.  
 
 -   Quando gli utenti finali avviano un pacchetto di aggiornamento di Windows 10, verrà visualizzata una finestra di dialogo che li informa che stanno per aggiornare il proprio sistema operativo.  
 

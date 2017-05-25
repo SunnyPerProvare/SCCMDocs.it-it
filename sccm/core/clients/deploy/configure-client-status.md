@@ -79,7 +79,7 @@ Prima di poter monitorare lo stato del client di System Center Configuration Man
     > [!NOTE]  
     >  Non è possibile configurare avvisi per raccolte di utenti.  
 
-4.  Nella scheda **Avvisi** della finestra di dialogo *Proprietà&lt;nome raccolta\>*** ** fare clic su **Aggiungi**.  
+4.  Nella scheda **Avvisi** della finestra di dialogo *Proprietà&lt;nome raccolta\>***** fare clic su **Aggiungi**.  
 
     > [!NOTE]  
     >  La scheda **Avvisi** viene visualizzata solo se il ruolo di sicurezza a cui si è associati dispone delle autorizzazioni per gli avvisi.  
@@ -94,7 +94,7 @@ Prima di poter monitorare lo stato del client di System Center Configuration Man
 
     -   **Genera avviso**: specificare la percentuale di soglia per l'avviso.  
 
-7.  Fare clic su **OK** per chiudere la finestra di dialogo *Proprietà &lt;nome raccolta\>*** **.  
+7.  Fare clic su **OK** per chiudere la finestra di dialogo *Proprietà &lt;nome raccolta\>***** .  
 
 ##  <a name="BKMK_3"></a> Per escludere i computer da monitoraggio e aggiornamento automatici  
 
