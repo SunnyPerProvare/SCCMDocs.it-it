@@ -27,7 +27,7 @@ ms.lasthandoff: 05/17/2017
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Il rilascio di versioni di aggiornamento per System Center Configuration Manager (Current Branch) offre nuovi scenari per semplificare l'installazione di una nuova gerarchia in una versione di aggiornamento, ad esempio l'aggiornamento 1610, e per l'aggiornamento da Microsoft System Center 2012 Configuration Manager. 
+Il rilascio di versioni di aggiornamento per System Center Configuration Manager (Current Branch) offre nuovi scenari per semplificare l'installazione di una nuova gerarchia in una versione di aggiornamento, ad esempio l'aggiornamento 1610, e per l'aggiornamento da Microsoft System Center 2012 Configuration Manager.
 
 Gli scenari supportati includono:  
 
@@ -113,9 +113,7 @@ Seguire questa sequenza:
     -   Un sito primario figlio installa gli stessi aggiornamenti installati in un sito di amministrazione centrale.  
     -   I siti secondari non installano le nuove versioni automaticamente. È necessario aggiornarli manualmente dall'interno della console.  
 
-   
-
-    Dopo questo passaggio, quando si installano aggiornamenti nel sito di amministrazione centrale, verranno installati solo siti primari figlio che vengono aggiornati quando consentito dalla rispettiva finestra di manutenzione.  
+  Dopo questo passaggio, quando si installano aggiornamenti nel sito di amministrazione centrale, verranno installati solo siti primari figlio che vengono aggiornati quando consentito dalla rispettiva finestra di manutenzione.  
 
 4.  **Installare la versione di aggiornamento nel sito principale.** Il sito principale viene aggiornato. Dopo che un sito di amministrazione centrale installa la versione di aggiornamento, ogni sito primario figlio installa automaticamente l'aggiornamento a meno che l'installazione non sia bloccata da una finestra di manutenzione.  
 
