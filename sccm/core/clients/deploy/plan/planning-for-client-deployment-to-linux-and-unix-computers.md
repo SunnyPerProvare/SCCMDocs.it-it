@@ -248,7 +248,7 @@ ms.lasthandoff: 12/16/2016
 
  **Firewall requisiti**: Assicurarsi che i firewall non blocchino le comunicazioni attraverso le porte specificate come porte di richiesta client. Il client per Linux e UNIX comunica direttamente con i punti di gestione, i punti di distribuzione e i punti di stato di fallback.  
 
- Per informazioni sulle comunicazioni client e sulle porte di richiesta, vedere  [Configure the Client for Linux and UNIX to Locate Management Points](../../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md#BKMK_ConfigClientMP).  
+ Per informazioni sulle comunicazioni client e sulle porte di richiesta, vedere  [Configurare il Client per Linux e UNIX individuare i punti di gestione](../../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md#BKMK_ConfigClientMP).  
 
 ##  <a name="BKMK_PlanningforCommunicationsforLnU"></a> Pianificazione delle comunicazioni attraverso trust tra foreste per server Linux e UNIX  
  I server Linux e UNIX gestiti con Configuration Manager funzionano come client di un gruppo di lavoro e richiedono configurazioni simili ai client basati su Windows che si trovano in un gruppo di lavoro. Per informazioni sulle comunicazioni da computer che si trovano in gruppi di lavoro, vedere la sezione [Comunicazioni tra foreste Active Directory](../../../../core/plan-design/hierarchy/communications-between-endpoints.md#Plan_Com_X-Forest) nell'argomento [Comunicazioni tra gli endpoint in System Center Configuration Manager](../../../../core/plan-design/hierarchy/communications-between-endpoints.md).  
