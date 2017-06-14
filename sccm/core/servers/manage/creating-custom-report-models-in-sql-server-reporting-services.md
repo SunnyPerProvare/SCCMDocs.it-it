@@ -16,9 +16,10 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
 ms.openlocfilehash: 9951dd9333ebef00c7acd5d72b20a02382e3206c
+ms.contentlocale: it-it
 ms.lasthandoff: 12/16/2016
 
 
@@ -39,7 +40,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 |Definire un'origine dati per un modello di report|Dopo aver creato un progetto modello di report, è necessario definire un'origine dati da cui estrarre i dati aziendali. In genere è il database del sito di Configuration Manager.|Per altre informazioni, vedere la sezione [To define the data source for the report model](#BKMK_DefineReportModelDataSource) in questo argomento.|  
 |Definire una vista origine dati per un modello di report|Al termine della definizione delle origini dati utilizzate nel progetto modello di report, il passaggio successivo consiste nella definizione di una vista origine dati per il progetto. Una vista origine dati è un modello di dati logico basato su uno o più origini dati. Le viste origine dati incapsulano l'accesso agli oggetti fisici, ad esempio tabelle e viste, contenuti in origini dati sottostanti. SQL Server Reporting Services genera il modello di report dalla vista origine dati.<br /><br /> Le viste origine dati facilitano il processo di progettazione del modello, offrendo una rappresentazione utile dei dati specificati. Senza modificare l'origine dati sottostante, è possibile rinominare campi e tabelle, nonché aggiungere campi aggregati e tabelle derivate in una vista origine dati. Per un modello efficiente, aggiungere alla vista origine dati solo le tabelle che si desidera utilizzare.|Per altre informazioni, vedere la sezione [To define the data source view for the report model](#BKMK_DefineReportModelDataSourceView) in questo argomento.|  
 |Creare un modello di report|Un modello di report è un livello superiore di un database che identifica i ruoli, i campi e le entità aziendali. Se è stata eseguita la pubblicazione, utilizzando questi modelli gli utenti di Generatore report possono sviluppare report anche se non hanno familiarità con le strutture del database o se non sono in grado di comprendere e scrivere query. I modelli sono composti da set di elementi report correlati raggruppati con un nome descrittivo, rapporti predefiniti tra gli elementi aziendali e calcoli predefiniti. I modelli vengono definiti utilizzando un linguaggio XML denominato Semantic Model Definition Language (SMDL). L'estensione del nome file per i file del modello di report è SMDL.|Per altre informazioni, vedere la sezione [To create the report model](#BKMK_CreateReportModel) in questo argomento.|  
-|Pubblicare un modello di report|Per creare un report utilizzando il modello appena creato, è necessario pubblicarlo in un server di report. In fase di pubblicazione, l'origine dati e la vista origine dati sono incluse nel modello.|Per altre informazioni, vedere la sezione [To publish the report model for use in SQL Server Reporting Services](#BKMK_PublishReportModel) in questo argomento.|  
+|Pubblicare un modello di report|Per creare un report utilizzando il modello appena creato, è necessario pubblicarlo in un server di report. In fase di pubblicazione, l'origine dati e la vista origine dati sono incluse nel modello.|Per altre informazioni, vedere la sezione [Per pubblicare il modello di report per l'utilizzo in SQL Server Reporting Services](#BKMK_PublishReportModel) in questo argomento.|  
 |Distribuire il modello di report in Configuration Manager|Prima di usare un modello di report personalizzato in **Creazione guidata report** per creare un report basato su modello, è necessario distribuire il modello di report in Configuration Manager.|Per altre informazioni, vedere la sezione [To deploy the custom report model to Configuration Manager](#BKMK_DeployReportModel) in questo argomento.|  
 
 ## <a name="steps-for-creating-a-basic-report-model-in-sql-server-reporting-services"></a>Passaggi per la creazione di un modello di report di base in SQL Server Reporting Services  
@@ -64,7 +65,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
     > [!NOTE]  
     >  Se il riquadro **Esplora soluzioni** non viene visualizzato, fare clic su **Visualizza**, quindi su **Esplora soluzioni**.  
 
-###  <a name="BKMK_DefineReportModelDataSource"></a> To define the data source for the report model  
+###  <a name="BKMK_DefineReportModelDataSource"></a> Per definire la vista dell'origine dati per il modello di report  
 
 1.  Nel riquadro **Esplora soluzioni** di **SQL Server Business Intelligence Development Studio**fare clic con il pulsante destro del mouse su **Origini dati** per selezionare **Aggiungi nuova origine dati**.  
 
@@ -74,7 +75,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 4.  Nella finestra di dialogo **Gestione connessione** specificare le proprietà di connessione seguenti per l'origine dati:  
 
-    -   **Nome server**: digitare il nome del server di database del sito di Configuration Manager oppure selezionarlo nell'elenco. Se si usa un'istanza denominata anziché l'istanza predefinita, digitare &lt;*server database*>\\&lt;*nome istanza*>.  
+    -   **Nome server**: digitare il nome del server di database del sito di Configuration Manager oppure selezionarlo nell'elenco. Se si usa un'istanza denominata anziché l'istanza predefinita, digitare &lt;*server database* >\\&lt;*nome istanza*>.  
 
     -   Selezionare **Usa autenticazione di Windows**.  
 
@@ -93,7 +94,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
     > [!NOTE]  
     >  Per modificare le proprietà di un'origine dati esistente, fare doppio clic sull'origine dati nella cartella **Origini dati** del riquadro **Esplora soluzioni** per visualizzare le proprietà delle origini dati in Progettazione origine dati.  
 
-###  <a name="BKMK_DefineReportModelDataSourceView"></a> To define the data source view for the report model  
+###  <a name="BKMK_DefineReportModelDataSourceView"></a> Per definire la vista dell'origine dati per il modello di report  
 
 1.  In **Esplora soluzioni**fare clic con il pulsante destro del mouse su **Viste origine dati** per selezionare **Aggiungi nuova vista origine dati**.  
 
@@ -132,7 +133,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 8.  Per uscire dalla procedura guidata, fare clic su **Fine**. Il modello di report viene visualizzato nella finestra di progettazione.  
 
-###  <a name="BKMK_PublishReportModel"></a> To publish the report model for use in SQL Server Reporting Services  
+###  <a name="BKMK_PublishReportModel"></a> Per pubblicare il modello di report per l'utilizzo in SQL Server Reporting Services  
 
 1.  In **Esplora soluzioni**fare clic con il pulsante destro del mouse sul modello di report, quindi selezionare **Distribuisci**. Per questo esempio, il modello di report è **Modello_Semplificato.smdl**.  
 
@@ -181,7 +182,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
     > [!IMPORTANT]  
     >  Dopo aver copiato il file del modello di report nel server del sito di Configuration Manager, sarà necessario chiudere e riavviare la console di Configuration Manager prima di usare il modello di report in **Creazione guidata report**.  
 
-##  <a name="AdvancedReportModel"></a> Steps for Creating an Advanced Report Model in SQL Server Reporting Services  
+##  <a name="AdvancedReportModel"></a> Passaggi per la creazione di un modello di report avanzato in SQL Server Reporting Services  
  Usare le procedure seguenti per creare un modello di report avanzato che gli utenti del sito possono usare per compilare report basati su modello specifici in base ai dati presenti in più viste del database di Configuration Manager. Creare un modello di report che fornisca all'autore del report informazioni sui computer client e sul sistema operativo installato in tali computer. Queste informazioni provengono dalle seguenti viste del database di Configuration Manager:  
 
 -   **V_R_System**: contiene informazioni sui computer individuati e sul client di Configuration Manager.  
@@ -209,7 +210,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
     > [!NOTE]  
     >  Se il riquadro **Esplora soluzioni** non viene visualizzato, fare clic su **Visualizza**, quindi su **Esplora soluzioni**.  
 
-#### <a name="to-define-the-data-source-for-the-report-model"></a>To define the data source for the report model  
+#### <a name="to-define-the-data-source-for-the-report-model"></a>Per definire l'origine dati per il modello di report  
 
 1.  Nel riquadro **Esplora soluzioni** di **SQL Server Business Intelligence Development Studio**fare clic con il pulsante destro del mouse su **Origini dati** per selezionare **Aggiungi nuova origine dati**.  
 
@@ -219,7 +220,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 4.  Nella finestra di dialogo **Gestione connessione** specificare le proprietà di connessione seguenti per l'origine dati:  
 
-    -   **Nome server**: digitare il nome del server di database del sito di Configuration Manager oppure selezionarlo nell'elenco. Se si usa un'istanza denominata anziché l'istanza predefinita, digitare &lt;*server database*>\\&lt;*nome istanza*>.  
+    -   **Nome server**: digitare il nome del server di database del sito di Configuration Manager oppure selezionarlo nell'elenco. Se si usa un'istanza denominata anziché l'istanza predefinita, digitare &lt;*server database* >\\&lt;*nome istanza*>.  
 
     -   Selezionare **Usa autenticazione di Windows**.  
 
@@ -238,7 +239,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
     > [!NOTE]  
     >  Per modificare le proprietà di un'origine dati esistente, fare doppio clic sull'origine dati nella cartella **Origini dati** del riquadro **Esplora soluzioni** per visualizzare le proprietà delle origini dati in Progettazione origine dati.  
 
-#### <a name="to-define-the-data-source-view-for-the-report-model"></a>To define the data source view for the report model  
+#### <a name="to-define-the-data-source-view-for-the-report-model"></a>Per definire la vista dell'origine dati per il modello di report  
 
 1.  In **Esplora soluzioni**fare clic con il pulsante destro del mouse su **Viste origine dati** per selezionare **Aggiungi nuova vista origine dati**.  
 
@@ -375,7 +376,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 4.  Dopo avere rinominato gli oggetti, fare clic su **File**, quindi su **Salva tutto**.  
 
-#### <a name="to-publish-the-report-model-for-use-in-sql-server-reporting-services"></a>To publish the report model for use in SQL Server Reporting Services  
+#### <a name="to-publish-the-report-model-for-use-in-sql-server-reporting-services"></a>Per pubblicare il modello di report per l'utilizzo in SQL Server Reporting Services  
 
 1.  In **Esplora soluzioni**fare clic con il pulsante destro del mouse su **Modello_Avanzato.dsv** , quindi scegliere **Distribuisci**.  
 
