@@ -16,9 +16,10 @@ caps.handback.revision: 0
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
+ms.translationtype: Human Translation
 ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
 ms.openlocfilehash: 132803a1aa9aad5c5462686bd656688418e47d07
+ms.contentlocale: it-it
 ms.lasthandoff: 12/16/2016
 
 
@@ -62,7 +63,7 @@ Per ridurre al minimo il rischio di errore del sito, se le attività di monitora
  Usare le informazioni seguenti per monitorare le attività di Configuration Manager comuni:  
 
  **Avvisi**  
-   Vedere [Monitor alerts](../../../core/servers/manage/use-alerts-and-the-status-system.md#BKMK_MonitorAlerts) in [Use alerts and the status system for System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+   Vedere [Avvisi di monitoraggio](../../../core/servers/manage/use-alerts-and-the-status-system.md#BKMK_MonitorAlerts) in [Usare gli avvisi e il sistema di stato per System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
  **Impostazioni di conformità**  
    Vedere [Come monitorare le impostazioni di conformità in System Center Configuration Manager](../../../compliance/deploy-use/monitor-compliance-settings.md).  
