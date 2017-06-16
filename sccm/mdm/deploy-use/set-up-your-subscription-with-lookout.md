@@ -92,7 +92,7 @@ Quando un utente è in un gruppo di registrazione, tutti i dispositivi di tale u
 
 ![screenshot della pagina registrazione di Intune Connector](media/lookout-enrollment.png)
 
-La procedura consigliata prevede l'uso dell'incremento predefinito di&5; minuti per verificare la presenza di nuovi dispositivi.
+La procedura consigliata prevede l'uso dell'incremento predefinito di 5 minuti per verificare la presenza di nuovi dispositivi.
 
 >[!IMPORTANT]
 > Per il nome visualizzato viene fatta distinzione tra maiuscole e minuscole.  Usare il **Nome visualizzato** come illustrato nella pagina **Proprietà** del gruppo di sicurezza nel portale di Azure. Nell'immagine seguente notare le iniziali maiuscole del nome visualizzato nella pagina **Proprietà** del gruppo di sicurezza.  Nel titolo il nome è invece visualizzato tutto in minuscolo e questa forma non deve essere usata per l'immissione nella console di Lookout.

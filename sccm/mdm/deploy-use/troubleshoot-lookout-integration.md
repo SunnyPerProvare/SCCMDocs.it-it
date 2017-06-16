@@ -28,7 +28,7 @@ ms.lasthandoff: 03/06/2017
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 ## <a name="troubleshoot-login-errors"></a>Risolvere i problemi di accesso
-### <a name="403-errors"></a>Errori&403;
+### <a name="403-errors"></a>Errori 403
 Quando si accede alla [console di Lookout MTP](https://aad.lookout.com) può essere visualizzato un errore 403: **You are not authorized to access the service** (Non si dispone dell'autorizzazione per accedere al servizio). Questa situazione può verificarsi quando il nome utente specificato non è membro del gruppo Azure Active Directory (Azure AD) configurato per l'accesso a Lookout MTP.
 
 Lookout MTP consente l'accesso solo agli utenti di un gruppo di Azure AD configurato. Se non si sa quale gruppo è configurato per l'accesso a Lookout MTP, contattare il supporto tecnico di Lookout.
@@ -57,7 +57,7 @@ Questo problema può verificarsi in uno dei seguenti scenari:
 
 ### <a name="device-continues-to-be-reported-as-pending"></a>Il dispositivo continua a essere segnalato come **Pending** (In sospeso)
 
-Se un dispositivo risulta **Pending ** (In sospeso), l'utente finale non ha aperto l'app Lookout for Work e non ha toccato il pulsante **Activate** (Attiva). Per informazioni dettagliate sull'attivazione di dispositivi con l'app Lookout for Work, leggere l'argomento seguente:
+Se un dispositivo risulta **Pending**  (In sospeso), l'utente finale non ha aperto l'app Lookout for Work e non ha toccato il pulsante **Activate** (Attiva). Per informazioni dettagliate sull'attivazione di dispositivi con l'app Lookout for Work, leggere l'argomento seguente:
 
 [Viene richiesto di installare Lookout for Work nel dispositivo Android](http://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
 
