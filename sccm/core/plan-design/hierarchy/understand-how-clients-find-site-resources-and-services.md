@@ -131,7 +131,7 @@ Quando un client non riesce a mettersi in contatto con il primo punto di gestion
 
 Dopo aver stabilito la comunicazione con un punto di gestione, un client continua a usare lo stesso punto di gestione fino a quando:  
 
--   Non sono trascorse&25; ore.  
+-   Non sono trascorse 25 ore.  
 -   Il client non riesce a comunicare con il punto di gestione per cinque tentativi in un periodo di 10 minuti.
 
 A quel punto il client seleziona casualmente un nuovo punto di gestione da usare.  
