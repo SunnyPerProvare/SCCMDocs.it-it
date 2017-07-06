@@ -99,6 +99,8 @@
 ###  [Configurare un ambiente lab](get-started/set-up-your-lab.md)
 
 ##   [Technical Preview](get-started/technical-preview.md)
+###  [Funzionalità della versione 1706](get-started/capabilities-in-technical-preview-1706.md)
+###  [Funzionalità della versione 1705](get-started/capabilities-in-technical-preview-1705.md)
 ###  [Funzionalità della versione 1704](get-started/capabilities-in-technical-preview-1704.md)
 ###  [Funzionalità della versione 1703](get-started/capabilities-in-technical-preview-1703.md)
 ###  [Funzionalità della versione 1702](get-started/capabilities-in-technical-preview-1702.md)
@@ -111,9 +113,10 @@
 ###  [Funzionalità della versione 1607](get-started/capabilities-in-technical-preview-1607.md)
 ###  [Funzionalità della versione 1606](get-started/capabilities-in-technical-preview-1606.md)
 ###  [Funzionalità della versione 1605](get-started/capabilities-in-technical-preview-1605.md)
-###  [Funzionalità della versione 1604](get-started/capabilities-in-technical-preview-1604.md)
-###  [Funzionalità della versione 1603](get-started/capabilities-in-technical-preview-1603.md)
-<!--
+
+<!-- No longer in support, and all features are in the Current Branch
+###  [Capabilities in 1604](get-started/capabilities-in-technical-preview-1604.md)
+###  [Capabilities in 1603](get-started/capabilities-in-technical-preview-1603.md)
 ###  [Capabilities in 1602](get-started/capabilities-in-technical-preview-1602.md)
 ###  [Capabilities in 1601](get-started/capabilities-in-technical-preview-1601.md)
 ###  [Capabilities in 1512](get-started/capabilities-in-technical-preview-1512.md)
@@ -178,7 +181,8 @@
 #### [Limiti](servers/deploy/configure/boundaries.md)
 #### [Gruppi di limiti](servers/deploy/configure/boundary-groups.md)
 #### [Gruppi di limiti per le versioni precedenti alla 1610](servers/deploy/configure/boundary-groups-for-1511-1602-and-1606.md)
-###  [Usare SQL Server AlwaysOn](servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md)
+###  [Prepararsi all'uso di SQL Server Always On](servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md)
+###  [Configurare SQL Server Always On](servers/deploy/configure/configure-aoag.md)
 ###  [Usare un cluster di SQL Server](servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database.md)
 ###  [Percorsi personalizzati per i file di database](servers/deploy/configure/custom-locations-for-site-database-files.md)
 ###  [Configurare l'amministrazione basata su ruoli](servers/deploy/configure/configure-role-based-administration.md)
@@ -204,6 +208,7 @@
 ##   [Aggiornare l'infrastruttura locale](servers/manage/upgrade-on-premises-infrastructure.md)
 ##   [Aggiornamenti per Configuration Manager](servers/manage/updates.md)
 ###  [Installare gli aggiornamenti nella console](servers/manage/install-in-console-updates.md)
+#### [Verificare l'aggiornamento del database](servers/manage/test-database-upgrade.md)
 #### [Diagramma di flusso - scaricare gli aggiornamenti](servers/manage/download-updates-flowchart.md)
 #### [Diagramma di flusso - replica di aggiornamento](servers/manage/update-replication-flowchart.md)
 ###  [Funzionalità di versioni non definitive](servers/manage/pre-release-features.md)
