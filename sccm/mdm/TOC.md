@@ -22,7 +22,7 @@
 
 # Procedure
 ## [Registrare dispositivi di proprietà dell'utente (BYOD)](deploy-use/enroll-user-owned-devices.md)
-## [Enroll corporate-owned devices](deploy-use/enroll-company-owned-devices.md) (Registrare dispositivi di proprietà dell'azienda)
+## [Registrare dispositivi di proprietà dell'azienda](deploy-use/enroll-company-owned-devices.md)
 ### [Registrazione DEP iOS](deploy-use/ios-device-enrollment-program-for-hybrid.md)
 ### [Registrazione di Apple Configurator](deploy-use/ios-hybrid-enrollment-using-apple-configurator.md)
 ### [Manager di registrazione dispositivi](deploy-use/enroll-devices-with-device-enrollment-manager.md)
@@ -54,6 +54,8 @@
 ### [App di Windows Store per le aziende](deploy-use/windows-store-for-business.md)
 
 ## [Gestire una sottoscrizione di Intune](deploy-use/manage-intune-subscriptions.md)
+
+## [Modificare l'autorità MDM](deploy-use/change-mdm-authority.md)
 
 ## Gestire l'accesso alle risorse
 ### [Creare profili Wi-Fi](deploy-use/create-wifi-profiles.md)
