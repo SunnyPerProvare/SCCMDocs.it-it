@@ -1,8 +1,8 @@
 ---
 title: Installare Updates Publisher | Microsoft Docs
-description: Installare System Center Updates Publisher nell&quot;ambiente in uso
+description: Installare System Center Updates Publisher nell'ambiente in uso
 ms.custom: na
-ms.date: 4/29/2017
+ms.date: 07/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ ms.author: brenduns
 manager: angrobe
 robots: NOINDEX, NOFOLLOW
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
-ms.openlocfilehash: 996766d0bd9ab2a3acb1970414f0ae511d97fbff
+ms.sourcegitcommit: 70772ba7d08560aa66abcce29dc6cc6334aa2032
+ms.openlocfilehash: 63ea0383497a3f06870c0907c732010259d1a809
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/03/2017
 
 ---
 # <a name="install-updates-publisher"></a>Installare Updates Publisher
@@ -119,7 +119,7 @@ Poiché questa cartella contiene tutti i file necessari per l'uso di Updates Pub
 Dopo aver completato l'installazione, eseguire il file **UpdatesPublisher.exe** dalla cartella *UpdatesPublisher* per avviare Updates Publisher.
 
 ## <a name="next-steps"></a>Passaggi successivi
- Dopo aver completato l'installazione, è consigliabile [configurare le opzioni](/tools/updates-publisher-options) per Updates Publisher. Per poter usare alcune funzionalità di Updates Publisher, è prima necessario configurare determinate opzioni.
+ Dopo aver completato l'installazione, è consigliabile [configurare le opzioni](updates-publisher-options.md) per Updates Publisher. Per poter usare alcune funzionalità di Updates Publisher, è prima necessario configurare determinate opzioni.
 
- Se, tuttavia, si vogliono usare le impostazioni predefinite e non si pianifica la distribuzione di aggiornamenti in un server di aggiornamento o in dispositivi gestiti, è possibile passare direttamente alla [gestione dei cataloghi di aggiornamenti software](/tools/updates-publisher-catalogs) o alla [creazione di aggiornamenti software](/tools/create-updates-with-updates-publisher) e creare cataloghi di aggiornamento personalizzati.
+ Se, tuttavia, si vogliono usare le impostazioni predefinite e non si pianifica la distribuzione di aggiornamenti in un server di aggiornamento o in dispositivi gestiti, è possibile passare direttamente alla [gestione dei cataloghi di aggiornamenti software](updates-publisher-catalogs.md) o alla [creazione di aggiornamenti software](create-updates-with-updates-publisher.md) e creare cataloghi di aggiornamento personalizzati.
 
