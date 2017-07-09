@@ -16,10 +16,10 @@ ms.author: brenduns
 manager: angrobe
 ROBOTS: NOINDEX, NOFOLLOW
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 831d8a66c827d246069c7415cdce7a7c4bb95b33
-ms.openlocfilehash: 19e3099773f887129374413482702de3f4b0a36f
+ms.sourcegitcommit: db673277d1cc2d24e8dba2439b2b1891c883ebd0
+ms.openlocfilehash: 8b80f4d14eafa4cbbfb083178a118bc0e71f4019
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/16/2017
 
 ---
 # <a name="what39s-new-in-version-1610-of-system-center-configuration-manager"></a>Novità della versione 1610 di System Center Configuration Manager
@@ -143,7 +143,7 @@ Se si configura un periodo di tolleranza di imposizione e si seleziona la casell
 
 
 ## <a name="improved-functionality-in-dialog-boxes-about-required-software"></a>Funzionalità migliorate nelle finestre di dialogo relative al software necessario
-Quando si riceve il software necessario, dall'impostazione **Posponi e ricorda tra** è possibile selezionare un'opzione dall'elenco di valori a discesa seguente: 
+Quando si riceve il software necessario, dall'impostazione **Posponi e ricorda tra:** è possibile selezionare un'opzione dall'elenco di valori a discesa seguente: 
 - **In seguito**. Specifica che le notifiche vengono pianificate in base alle impostazioni di notifica configurate nell'agente client.
 - **Orario fisso**. Specifica che viene pianificata una nuova visualizzazione della notifica dopo l'ora selezionata, ad esempio entro 30 minuti.
 
