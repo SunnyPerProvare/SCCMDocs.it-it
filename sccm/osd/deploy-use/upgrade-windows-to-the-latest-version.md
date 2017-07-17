@@ -1,6 +1,6 @@
 ---
 title: "Aggiornare Windows alla versione più recente | Microsoft Docs"
-description: Informazioni sull&quot;uso di Configuration Manager per eseguire l&quot;aggiornamento di un sistema operativo Windows 7 o versione successiva a Windows 10.
+description: Informazioni sull'uso di Configuration Manager per eseguire l'aggiornamento di un sistema operativo Windows 7 o versione successiva a Windows 10.
 ms.custom: na
 ms.date: 02/06/2017
 ms.prod: configuration-manager
@@ -15,27 +15,29 @@ caps.latest.revision: 13
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 288a4c649f371d9701fe7249449356aa222bf372
-ms.openlocfilehash: 35f04e237efffbdb12893f658950a99dc0b98b85
+ms.translationtype: HT
+ms.sourcegitcommit: 1035dbbf944a3a467d637a4a948a75b0946eb711
+ms.openlocfilehash: 026d61113a918e43ac4395ef092b1931f33f16d3
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 07/11/2017
 
 ---
-# <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>Aggiornare Windows alla versione più recente con System Center Configuration Manager
+# Aggiornare Windows alla versione più recente con System Center Configuration Manager
+<a id="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager" class="xliff"></a>
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-In questo argomento sono descritti i passaggi da eseguire in System Center Configuration Manager per aggiornare un sistema operativo in un computer da Windows 7 o versione successiva a Windows 10. Sono disponibili diversi metodi di distribuzione, ad esempio supporti autonomi o Software Center. Scenario di aggiornamento sul posto a Windows 10  
+Questo argomento descrive i passaggi da eseguire in System Center Configuration Manager per aggiornare un sistema operativo in un computer da Windows 7 o versione successiva a Windows 10 o da Windows Server 2012 a  Windows Server 2016 su un computer di destinazione. Sono disponibili diversi metodi di distribuzione, ad esempio supporti autonomi o Software Center. Scenario di aggiornamento sul posto:  
 
--   Aggiorna il sistema operativo nei computer che attualmente eseguono Windows 7, Windows 8 o Windows 8.1. È anche possibile eseguire aggiornamenti di Windows 10 da build a build. Ad esempio, è possibile aggiornare Windows 10 RTM a Windows 10 versione 1511.  
+-   Aggiorna il sistema operativo nei computer che attualmente eseguono:
+    - Windows 7, Windows 8 o Windows 8.1. È anche possibile eseguire aggiornamenti di Windows 10 da build a build. Ad esempio, è possibile aggiornare Windows 10 RTM a Windows 10 versione 1511.  
+    - Windows Server 2012. È anche possibile eseguire aggiornamenti di Windows Server 2016 da build a build. Per informazioni dettagliate sui percorsi di aggiornamento supportati, vedere [Percorsi di aggiornamento supportati](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths#upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016).    
 
 -   Mantiene applicazioni, impostazioni e dati dell'utente nel computer  
 
 -   Non presenta dipendenze esterne, ad esempio Windows ADK.  
 
--   È in genere più veloce e più flessibile rispetto alle distribuzioni tradizionali del sistema operativo.  
+-   È più veloce e più flessibile rispetto alle distribuzioni tradizionali del sistema operativo.  
 
  Usare le sezioni seguenti per distribuire sistemi operativi in rete tramite una sequenza di attività.  
 
@@ -65,17 +67,17 @@ In questo argomento sono descritti i passaggi da eseguire in System Center Confi
 
 1.  **Preparare il pacchetto di aggiornamento del sistema operativo**  
 
-     Il pacchetto di aggiornamento di Windows 10 contiene i file di origine necessari per aggiornare il sistema operativo nel computer di destinazione. Il pacchetto di aggiornamento deve essere della stessa edizione, architettura e lingua dei client che da aggiornare.  Per altre informazioni, vedere [Manage operating system upgrade packages](../get-started/manage-operating-system-upgrade-packages.md) (Gestire i pacchetti di aggiornamento del sistema operativo).  
+     Il pacchetto di aggiornamento di Windows 10 contiene i file di origine necessari per aggiornare il sistema operativo nel computer di destinazione. Il pacchetto di aggiornamento deve avere la stessa edizione, architettura e lingua dei client da aggiornare.  Per altre informazioni, vedere [Gestire i pacchetti di aggiornamento del sistema operativo](../get-started/manage-operating-system-upgrade-packages.md).  
 
 2.  **Creare una sequenza di attività per aggiornare il sistema operativo**  
 
      Seguire la procedura descritta in [Creare una sequenza di attività per aggiornare il sistema operativo](create-a-task-sequence-to-upgrade-an-operating-system.md) per automatizzare l'aggiornamento del sistema operativo.  
 
-    > [IMPORTANTE] Quando si usano supporti autonomi, è necessario includere un'immagine di avvio nella sequenza di attività per rendere quest'ultima disponibile nella Creazione guidata del supporto per la sequenza di attività.
-
+    > [!IMPORTANT]
+    > Quando si usano supporti autonomi, è necessario includere un'immagine di avvio nella sequenza di attività per rendere quest'ultima disponibile nella Creazione guidata del supporto per la sequenza di attività.
 
     > [!NOTE]  
-    >  In genere si usa la procedura descritta in [Creare una sequenza di attività per aggiornare il sistema operativo](create-a-task-sequence-to-upgrade-an-operating-system.md) per eseguire l'aggiornamento di un sistema operativo a Windows 10. La sequenza di attività include il passaggio Aggiorna sistema operativo, oltre ad altri passaggi e gruppi con i quali gestire il processo di aggiornamento end-to-end. È tuttavia possibile creare una sequenza di attività personalizzata e aggiungere il passaggio della sequenza di attività [Aggiorna sistema operativo](../understand/task-sequence-steps.md#BKMK_UpgradeOS) per aggiornare il sistema operativo. Questo è l'unico passaggio obbligatorio per aggiornare il sistema operativo a Windows 10. Se si sceglie questo metodo, aggiungere anche il passaggio [Riavvia computer](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer) dopo il passaggio Aggiorna sistema operativo per completare l'aggiornamento. Assicurarsi di usare l'impostazione **Il sistema operativo predefinito attualmente installato** per riavviare il computer nel sistema operativo installato anziché in Windows PE.  
+    > In genere si usa la procedura descritta in [Creare una sequenza di attività per aggiornare il sistema operativo](create-a-task-sequence-to-upgrade-an-operating-system.md) per eseguire l'aggiornamento di un sistema operativo a Windows 10. La sequenza di attività include il passaggio Aggiorna sistema operativo, oltre ad altri passaggi e gruppi con i quali gestire il processo di aggiornamento end-to-end. È tuttavia possibile creare una sequenza di attività personalizzata e aggiungere il passaggio della sequenza di attività [Aggiorna sistema operativo](../understand/task-sequence-steps.md#BKMK_UpgradeOS) per aggiornare il sistema operativo. Questo è l'unico passaggio obbligatorio per aggiornare il sistema operativo a Windows 10. Se si sceglie questo metodo, aggiungere anche il passaggio [Riavvia computer](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer) dopo il passaggio Aggiorna sistema operativo per completare l'aggiornamento. Assicurarsi di usare l'impostazione **Il sistema operativo predefinito attualmente installato** per riavviare il computer nel sistema operativo installato anziché in Windows PE.  
 
 ##  <a name="BKMK_Deploy"></a> Distribuisci  
 
@@ -85,7 +87,8 @@ In questo argomento sono descritti i passaggi da eseguire in System Center Confi
 
     -   [Use stand-alone media to deploy Windows without using the network](use-stand-alone-media-to-deploy-windows-without-using-the-network.md) (Usare i supporti autonomi per distribuire Windows senza usare la rete)  
 
-## <a name="monitor"></a>Monitoraggio  
+## Monitoraggio
+<a id="monitor" class="xliff"></a>  
 
 -   **Monitorare la distribuzione della sequenza di attività**  
 
