@@ -2,7 +2,7 @@
 title: Creare supporti autonomi con System Center Configuration Manager | Microsoft Docs
 description: Usare i supporti autonomi per distribuire il sistema operativo in un computer senza connessione a un sito di Configuration Manager o alla rete.
 ms.custom: na
-ms.date: 03/24/2017
+ms.date: 06/07/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: d4689545ce2be5c16a65b24489f30028a0f90f94
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 98f902429ad1b9965a0dc4cc2e1bd071ad5c0779
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/08/2017
 
 
 ---
@@ -36,10 +36,10 @@ Il supporto autonomo in Configuration Manager contiene tutto il necessario per d
 
 -   [Aggiornare Windows alla versione più recente](upgrade-windows-to-the-latest-version.md)  
 
- Il supporto autonomo include la sequenza di attività che consente di automatizzare i passaggi di installazione del sistema operativo e di tutti gli altri contenuti necessari, tra cui immagine d'avvio, immagine del sistema operativo e driver di dispositivo. Poiché tutto il necessario per la distribuzione del sistema operativo è archiviato nel supporto autonomo, lo spazio su disco richiesto per il supporto autonomo è notevolmente superiore allo spazio su disco richiesto per altri tipi di supporti. Quando si creano supporti autonomi in un sito di amministrazione centrale, il client recupererà il relativo codice del sito assegnato da Active Directory. I supporti autonomi creati nei siti figlio assegneranno automaticamente al client il codice del sito per tale sito.  
+Il supporto autonomo include la sequenza di attività che consente di automatizzare i passaggi di installazione del sistema operativo e di tutti gli altri contenuti necessari, tra cui immagine d'avvio, immagine del sistema operativo e driver di dispositivo. Poiché tutto il necessario per la distribuzione del sistema operativo è archiviato nel supporto autonomo, lo spazio su disco richiesto per il supporto autonomo è notevolmente superiore allo spazio su disco richiesto per altri tipi di supporti. Quando si creano supporti autonomi in un sito di amministrazione centrale, il client recupererà il relativo codice del sito assegnato da Active Directory. I supporti autonomi creati nei siti figlio assegneranno automaticamente al client il codice del sito per tale sito.  
 
 ##  <a name="BKMK_CreateStandAloneMedia"></a> Creare supporti autonomi  
- Prima di creare un supporto autonomo usando la Creazione guidata del supporto per la sequenza attività, assicurarsi che siano soddisfatte le condizioni seguenti:  
+Prima di creare un supporto autonomo usando la Creazione guidata del supporto per la sequenza attività, assicurarsi che siano soddisfatte le condizioni seguenti:  
 
 ### <a name="create-a-task-sequence-to-deploy-an-operating-system"></a>Creare una sequenza di attività per distribuire un sistema operativo
 Come parte del supporto autonomo, è necessario specificare la sequenza di attività per distribuire un sistema operativo. Per i passaggi necessari per creare una nuova sequenza di attività, vedere [Creare una sequenza di attività per installare un sistema operativo in System Center Configuration Manager](create-a-task-sequence-to-install-an-operating-system.md).
@@ -54,10 +54,19 @@ Per il supporto autonomo non sono supportate le seguenti azioni:
 - Installazione dinamica dei pacchetti tramite l'attività Installa pacchetti.
 - Installazioni dinamiche delle applicazioni tramite l'attività Installa applicazione.
 
-Se la sequenza di attività per la distribuzione di un sistema operativo include il passaggio [Installa pacchetto](../../osd/understand/task-sequence-steps.md#BKMK_InstallPackage) e si crea il supporto autonomo in un sito di amministrazione centrale, può verificarsi un errore. Il sito di amministrazione centrale non dispone dei criteri di configurazione del client necessari per abilitare l'agente di distribuzione software durante l'esecuzione della sequenza di attività. Nel file CreateTsMedia.log potrebbe essere visualizzato l'errore seguente:<br /><br /> "WMI method SMS_TaskSequencePackage.GetClientConfigPolicies failed (0x80041001)"<br /><br /> Per un supporto autonomo che include il passaggio **Installa pacchetto**, è necessario creare il supporto autonomo in un sito primario in cui l'agente di distribuzione software sia abilitato oppure aggiungere un passaggio [Esegui riga di comando](../understand/task-sequence-steps.md#BKMK_RunCommandLine) dopo il passaggio [Imposta Windows e ConfigMgr](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr) e prima del primo passaggio **Installa pacchetto** nella sequenza di attività. Il passaggio **Esegui riga di comando** esegue un comando WMIC per abilitare l'agente di distribuzione software prima dell'esecuzione del primo passaggio Installa pacchetto. È possibile usare quanto segue nel passaggio della sequenza di attività **Esegui riga di comando** :<br /><br />
-```
-WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE
-```
+> [!NOTE]    
+> Se la sequenza di attività per la distribuzione di un sistema operativo include il passaggio [Installa pacchetto](../../osd/understand/task-sequence-steps.md#BKMK_InstallPackage) e si crea il supporto autonomo in un sito di amministrazione centrale, può verificarsi un errore. Il sito di amministrazione centrale non dispone dei criteri di configurazione del client necessari per abilitare l'agente di distribuzione software durante l'esecuzione della sequenza di attività. Nel file CreateTsMedia.log potrebbe essere visualizzato l'errore seguente:    
+>     
+> "WMI method SMS_TaskSequencePackage.GetClientConfigPolicies failed (0x80041001)"    
+> 
+> Per un supporto autonomo che include il passaggio **Installa pacchetto**, è necessario creare il supporto autonomo in un sito primario in cui l'agente di distribuzione software sia abilitato oppure aggiungere un passaggio [Esegui riga di comando](../understand/task-sequence-steps.md#BKMK_RunCommandLine) dopo il passaggio [Imposta Windows e ConfigMgr](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr) e prima del primo passaggio **Installa pacchetto** nella sequenza di attività. Il passaggio **Esegui riga di comando** esegue un comando WMIC per abilitare l'agente di distribuzione software prima dell'esecuzione del primo passaggio Installa pacchetto. È possibile usare quanto segue nel passaggio della sequenza di attività **Esegui riga di comando** :    
+>    
+> *WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE*
+
+
+> [!IMPORTANT]    
+> Quando si usa il passaggio **Configurare Windows e ConfigMgr** della sequenza di attività del sistema operativo, non selezionare l'impostazione **Usa il pacchetto client di pre-produzione se disponibile** per il supporto autonomo. Se questa impostazione è selezionata e il pacchetto client di preproduzione è disponibile, sarà usato nel supporto autonomo. Questa operazione non è supportata. Per informazioni dettagliate su questa impostazione, vedere [Configurare Windows e ConfigMgr](/sccm/osd/understand/task-sequence-steps#BKMK_SetupWindowsandConfigMgr).
+
 
 ### <a name="distribute-all-content-associated-with-the-task-sequence"></a>Distribuire tutto il contenuto associato alla sequenza di attività
 È necessario distribuire tutto il contenuto richiesto dalla sequenza di attività in almeno un punto di distribuzione. Ciò include l'immagine d'avvio, l'immagine del sistema operativo e altri file associati. La procedura guidata raccoglie le informazioni dal punto di distribuzione quando viene creato il supporto autonomo. È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto per il punto di distribuzione.  Per i dettagli, vedere [Distribuire il contenuto a cui fa riferimento una sequenza attività](manage-task-sequences-to-automate-tasks.md#BKMK_DistributeTS).

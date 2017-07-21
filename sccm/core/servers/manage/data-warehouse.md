@@ -2,7 +2,7 @@
 title: Data warehouse | Microsoft Docs
 description: Punto di servizio e database del data warehouse per System Center Configuration Manager
 ms.custom: na
-ms.date: 3/28/2017
+ms.date: 5/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 3c2a07f560e0aa3d2beb7cc50e71c98ac45c27e1
-ms.openlocfilehash: 9239f6e749c368835e8594ca2d07378d8555b99e
+ms.sourcegitcommit: dc221ddf547c43ab1f25ff83c3c9bb603297ece6
+ms.openlocfilehash: f11a53bbc85b40077b3909568db5ae5552b0456c
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/01/2017
 
 
 ---
@@ -51,6 +51,7 @@ Quando viene installato, il ruolo del sistema del sito installa e configura il d
 - L'account del computer in cui si installa il ruolo del sistema del sito viene usato per sincronizzare i dati con il database del data warehouse. L'account richiede le autorizzazioni seguenti:  
   - **Amministratore** nel computer che ospiterà il database del data warehouse.
   - **DB_owner** per il database del data warehouse.
+  - **DB_reader** ed **execute** per il database del sito dei siti di livello superiore.
 -    Il database del data warehouse è supportato in un'istanza predefinita o denominata di SQL Server 2012 o versioni successive. L'edizione deve essere Enterprise o Datacenter.
   - Gruppo di disponibilità AlwaysOn di SQL Server: questa configurazione non è supportata.
   - Cluster di SQL Server: i cluster di failover di SQL Server non sono supportati. Questo supporto non è disponibile perché il database del data warehouse non è stato testato in profondità nei cluster di failover di SQL Server.

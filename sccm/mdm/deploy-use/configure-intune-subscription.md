@@ -2,7 +2,7 @@
 title: Configurare la sottoscrizione di Intune tramite System Center Configuration Manager | Microsoft Docs
 description: Configurare la sottoscrizione di Intune tramite System Center Configuration Manager.
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 06/02/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 10cc64ae7e4d91f53201c2896b359e77ef04d32d
+ms.sourcegitcommit: 662901e850566756759fcfc61c58f3c0e56bc5aa
+ms.openlocfilehash: 22d890c972d3166f9c7b583d8d3fa917c1897880
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/03/2017
 
 ---
 # <a name="configure-your-intune-subscription-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la sottoscrizione di Intune con System Center Configuration Manager e Microsoft Intune
@@ -53,7 +53,7 @@ La sottoscrizione di Intune esegue le operazioni seguenti:
 5.  Nella pagina **Sottoscrizione** fare clic su **Accedi** e accedere usando l'account aziendale o dell'istituto di istruzione. Nella finestra di dialogo **Impostare l'autorità di gestione dei dispositivi mobili** selezionare la casella di controllo per gestire solo i dispositivi mobili usando Configuration Manager mediante la console di Configuration Manager. Per continuare con la sottoscrizione, è necessario selezionare questa opzione.
 
     > [!IMPORTANT]
-    >  Dopo aver selezionato Configuration Manager come autorità di gestione, non sarà possibile modificarla successivamente in Microsoft Intune.
+    >  Dopo aver selezionato Configuration Manager come autorità di gestione, è possibile cambiare l'autorità di gestione di Microsoft Intune senza dover contattare il supporto Microsoft e senza dover annullare e ripetere la registrazione dei dispositivi gestiti esistenti solo in Configuration Manager versione 1610 o versione successiva e Microsoft Intune versione 1705. Per altre informazioni, vedere [Cambiare l'autorità MDM](/sccm/mdm/deploy-use/change-mdm-authority).
 
 6.  Fare clic sui collegamenti privacy per verificarli e quindi fare clic su **Avanti**.
 

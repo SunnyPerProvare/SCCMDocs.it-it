@@ -16,10 +16,10 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: ae60eb25383f4bd07faaa1265185a471ee79b1e9
-ms.openlocfilehash: 5b5eadd7b4026eae59acceaef43cdacd7a33d3ac
+ms.sourcegitcommit: 255249332350843ba0b78128423482e260974521
+ms.openlocfilehash: 1ea0360b5b182b92e11ea9dfe78b5a3552ae4845
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 05/30/2017
 
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Registrazione al programma DEP (Device Enrollment Program) per iOS per le distribuzioni ibride con Configuration Manager
@@ -123,6 +123,9 @@ Le aziende possono acquistare dispositivi iOS tramite il programma DEP (Device E
 
 3.  **Sincronizzare i dispositivi gestiti da DEP**   
     Nell'area di lavoro **Asset e conformità**, passare a **Tutti i dispositivi di proprietà dell'azienda** > **Dispositivi predichiarati**. Nella scheda **Home** fare clic su **Sincronizzazione DEP**. Viene inviata una richiesta di sincronizzazione ad Apple. Al termine della sincronizzazione, vengono visualizzati i dispositivi gestiti da DEP.
+
+> [!NOTE]
+> Nella configurazione ibrida, l'operazione di sincronizzazione DEP viene attivata manualmente facendo clic su **Sincornizzazione DEP** nella console di Configuration Manager.
 
 4.  **Assegnare il profilo DEP**<br>Nell'area di lavoro **Asset e conformità**, passare a **Tutti i dispositivi di proprietà dell'azienda** > **iOS** > **Profili di registrazione**. Selezionare il profilo di registrazione DEP e quindi, nella scheda **Home**, fare clic su **Assegna a dispositivi**. Selezionare i dispositivi che useranno questo profilo di registrazione, fare clic su **Aggiungi**, quindi fare clic su **OK**.   
      ![Schermata di assegnazione del profilo DEP ai dispositivi iOS](../media/dep-assign-profile.png)

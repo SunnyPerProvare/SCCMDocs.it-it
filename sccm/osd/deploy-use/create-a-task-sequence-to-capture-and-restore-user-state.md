@@ -2,7 +2,7 @@
 title: "Creare una sequenza di attività per acquisire e ripristinare lo stato utente | Microsoft Docs"
 description: "Usare le sequenze di attività di System Center Configuration Manager per acquisire e ripristinare i dati dello stato utente in scenari di distribuzione del sistema operativo."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 06/07/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,9 +16,11 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
-ms.openlocfilehash: fdfbdd1acb1190ca7de9cff2b4b7f916d8dc1272
+ms.translationtype: Human Translation
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 4b3668094d576b1b8710f08b384aa2f7c5eb0cca
+ms.contentlocale: it-it
+ms.lasthandoff: 06/08/2017
 
 
 ---
@@ -28,7 +30,7 @@ ms.openlocfilehash: fdfbdd1acb1190ca7de9cff2b4b7f916d8dc1272
 
 È possibile usare le sequenze attività di System Center Configuration Manager per acquisire e ripristinare i dati sullo stato utente in scenari di distribuzione del sistema operativo in cui si desidera mantenere lo stato utente del sistema operativo corrente. A seconda del tipo di sequenza di attività che si crea, è possibile aggiungervi automaticamente i passaggi di acquisizione e ripristino. In altri scenari potrebbe essere necessario aggiungere manualmente i passaggi di acquisizione e ripristino alla sequenza di attività. Questo argomento fornisce i passaggi che è necessario aggiungere a una sequenza di attività esistente per acquisire e ripristinare i dati dello stato utente.  
 
-##  <a name="a-namebkmkcapturerestoreuserstatea-how-to-capture-and-restore-user-state-data"></a><a name="BKMK_CaptureRestoreUserState"></a> Come acquisire e ripristinare i dati dello stato utente  
+##  <a name="BKMK_CaptureRestoreUserState"></a> Come acquisire e ripristinare i dati dello stato utente  
  Per acquisire e ripristinare lo stato utente, è necessario aggiungere i passaggi seguenti alla sequenza di attività:  
 
 -   **Richiedi archiviazione stati**: questo passaggio è necessario solo se si archivia lo stato utente nel punto di migrazione stato.  
@@ -80,7 +82,7 @@ ms.openlocfilehash: fdfbdd1acb1190ca7de9cff2b4b7f916d8dc1272
 
         -   Fare clic su **Acquisisci tutti i profili utente utilizzando le opzioni standard** per acquisire tutti i profili utente.  
 
-        -   Fare clic su **Personalizza modalità di acquisizione dei profili utente** per specificare i singoli profili utente da acquisire.  
+        -   Fare clic su **Personalizza modalità di acquisizione dei profili utente** per specificare i singoli profili utente da acquisire. Selezionare il file di configurazione (miguser.xml, migsys.xml o migapp.xml) che contiene le informazioni sul profilo utente. Non è possibile usare il file di configurazione config.xml qui, ma è possibile aggiungerlo manualmente alla riga di comando USMT usando le variabili OSDMigrageAdditionalCaptureOptions e OSDMigrateAdditionalRestoreOptions.
 
     -   Selezionare **Abilita la registrazione dettagliata** per specificare la quantità di informazioni da scrivere nei file di log in caso di errore.  
 
@@ -133,7 +135,7 @@ ms.openlocfilehash: fdfbdd1acb1190ca7de9cff2b4b7f916d8dc1272
 
         -   Fare clic su **Ripristina tutti i profili utente acquisiti con le opzioni standard** per ripristinare tutti i profili utente.  
 
-        -   Fare clic su **Personalizza modalità di acquisizione dei profili utente** per ripristinare singoli profili utente.  
+        -   Fare clic su **Personalizza la modalità di ripristino dei profili utente** per ripristinare singoli profili utente. Selezionare il file di configurazione (miguser.xml, migsys.xml o migapp.xml) che contiene le informazioni sul profilo utente. Non è possibile usare il file di configurazione config.xml qui, ma è possibile aggiungerlo manualmente alla riga di comando USMT usando le variabili OSDMigrageAdditionalCaptureOptions e OSDMigrateAdditionalRestoreOptions.
 
     -   Selezionare **Ripristina profili utente del computer locale** per fornire una nuova password per i profili ripristinati. Non è possibile eseguire la migrazione delle password per i profili locali.  
 
@@ -169,9 +171,4 @@ ms.openlocfilehash: fdfbdd1acb1190ca7de9cff2b4b7f916d8dc1272
 
 ## <a name="next-steps"></a>Passaggi successivi
 [Monitorare la distribuzione della sequenza di attività](monitor-operating-system-deployments.md#BKMK_TSDeployStatus)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

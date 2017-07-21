@@ -6,16 +6,18 @@ keywords:
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 05/30/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
 ms.technology:
 - configmgr-sum
 ms.assetid: b099a645-6434-498f-a408-1d438e394396
-translationtype: Human Translation
-ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
-ms.openlocfilehash: 1d9911274fd76942131054231cdcc2bcebbd3fcb
+ms.translationtype: Human Translation
+ms.sourcegitcommit: dc221ddf547c43ab1f25ff83c3c9bb603297ece6
+ms.openlocfilehash: 7d369384d133c90a15e01df50ac53992d61f3873
+ms.contentlocale: it-it
+ms.lasthandoff: 06/01/2017
 
 
 
@@ -34,6 +36,9 @@ ms.openlocfilehash: 1d9911274fd76942131054231cdcc2bcebbd3fcb
 
 > [!IMPORTANT]  
 >  È possibile installare più di un punto di aggiornamento software in un sito. Il primo punto di aggiornamento software installato viene configurato come origine della sincronizzazione che sincronizza gli aggiornamenti da Microsoft Update o da un'origine di sincronizzazione upstream. Gli altri punti di aggiornamento software nel sito sono configurati come repliche del primo punto di aggiornamento software. Pertanto, alcune impostazioni non sono disponibili dopo aver installato e configurato il punto di aggiornamento software iniziale.  
+
+> [!IMPORTANT]  
+>  Non è supportata l'installazione del ruolo del sistema del sito per il punto di aggiornamento software in un server che è stato configurato e usato come server WSUS autonomo o l'uso di un punto di aggiornamento software per gestire direttamente i client WSUS. I server WSUS esistenti sono supportati solo come origini di sincronizzazione upstream per il punto di aggiornamento software attivo. Vedere [Sincronizza da un percorso di origine dati upstream](#BKMK_wsussync)
 
  È possibile aggiungere il ruolo del sistema sito del punto di aggiornamento software a un server del sistema del sito esistente oppure è possibile crearne uno nuovo. Nella pagina **Selezione ruolo del sistema** della **Creazione guidata server del sistema sito** o dell' **Aggiunta guidata ruoli del sistema del sito** , in base al fatto di aver aggiunto il ruolo del sistema sito o un server del sito nuovo o esistente, selezionare **Punto di aggiornamento software**e quindi configurare le impostazioni del punto di aggiornamento software nella procedura guidata. Le impostazioni sono diverse a seconda della versione di Configuration Manager che si usa. Per altre informazioni su come installare i ruoli del sistema del sito, vedere [Installare ruoli del sistema del sito](../../core/servers/deploy/configure/install-site-system-roles.md).  
 
@@ -58,7 +63,7 @@ ms.openlocfilehash: 1d9911274fd76942131054231cdcc2bcebbd3fcb
 ## <a name="wsus-settings"></a>Impostazioni di WSUS  
  È necessario configurare le impostazioni WSUS in diverse pagine della **Creazione guidata server del sistema sito** o dell'**Aggiunta guidata ruoli del sistema del sito** in base alla versione di Configuration Manager in uso e, in alcuni casi, solo nelle proprietà per il punto di aggiornamento software, note anche come Proprietà del componente del punto di aggiornamento software. Utilizzare le informazioni nelle sezioni riportate di seguito per configurare le impostazioni WSUS.  
 
-### <a name="a-namebkmkwsusportawsus-port-settings"></a><a name="BKMK_wsusport"></a>Impostazioni della porta WSUS  
+### <a name="BKMK_wsusport"></a>Impostazioni della porta WSUS  
  È necessario configurare le impostazioni della porta di WSUS nella pagina Punto di aggiornamento software della procedura guidata o nelle proprietà del punto di aggiornamento software. Usare la procedura seguente per determinare le impostazioni della porta usate da Windows Server Update Services.  
 
 #### <a name="to-determine-the-port-settings-used-in-iis"></a>Per determinare le impostazioni della porta usate in IIS  
@@ -95,7 +100,7 @@ ms.openlocfilehash: 1d9911274fd76942131054231cdcc2bcebbd3fcb
     > [!NOTE]  
     >  Se è presente un firewall tra il punto di aggiornamento software e Internet, potrebbe essere necessario configurarlo per accettare le porte HTTP e HTTPS usate per il sito Web WSUS. È inoltre possibile limitare l'accesso al firewall a determinati domini. Per altre informazioni sulla pianificazione di un firewall che supporta aggiornamenti software, vedere [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls).  
 
--   **Sincronizza da un percorso di origine dati upstream**: usare questa impostazione per sincronizzare i metadati degli aggiornamenti software dall'origine sincronizzazione upstream. I siti primari figlio e i siti secondari vengono configurati automaticamente per l'utilizzo dell'URL del sito padre per questa impostazione. È possibile sincronizzare gli aggiornamenti software da un server WSUS esistente. Specificare un URL, ad esempio https://WSUSServer:8531, dove 8531 è la porta utilizzata per connettersi al server WSUS.  
+-   **<a name="BKMK_wsussync"></a>Sincronizza da un percorso di origine dati upstream**: usare questa impostazione per sincronizzare i metadati degli aggiornamenti software dall'origine sincronizzazione upstream. I siti primari figlio e i siti secondari vengono configurati automaticamente per l'utilizzo dell'URL del sito padre per questa impostazione. È possibile sincronizzare gli aggiornamenti software da un server WSUS esistente. Specificare un URL, ad esempio https://WSUSServer:8531, dove 8531 è la porta utilizzata per connettersi al server WSUS.  
 
 -   **Non sincronizzare da Microsoft Update o da origine dati upstream**: usare questa impostazione per sincronizzare manualmente gli aggiornamenti software quando il punto di aggiornamento software nel sito di livello superiore viene disconnesso da Internet. Per altre informazioni, vedere [Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso](synchronize-software-updates-disconnected.md).  
 
@@ -151,9 +156,4 @@ ms.openlocfilehash: 1d9911274fd76942131054231cdcc2bcebbd3fcb
 Il punto di aggiornamento software è stato installato dal sito più in alto della gerarchia di Configuration Manager. Ripetere le procedure descritte in questo argomento per installare il punto di aggiornamento software nei siti figlio.
 
 Dopo aver installato i punti di aggiornamento software, passare a [sincronizzare gli aggiornamenti software](synchronize-software-updates.md).
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

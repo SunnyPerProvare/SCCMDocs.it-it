@@ -5,7 +5,7 @@ keywords:
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 03/24/2017
+ms.date: 05/31/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -13,10 +13,10 @@ ms.technology:
 - configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 016580dc6ee3c5268833db941d42416a976d201c
+ms.sourcegitcommit: dc221ddf547c43ab1f25ff83c3c9bb603297ece6
+ms.openlocfilehash: 744bcb603a02bc7d237ffb3a7f925037b94a23ba
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/01/2017
 
 ---
 
@@ -142,6 +142,9 @@ Questo è particolarmente utile perché gli aggiornamenti di Office 365 non sono
 4. Nella pagina **Import Client Settings** (Importa impostazioni client) scegliere se importare le impostazioni del client di Office 365 da un file di configurazione XML esistente o se specificare manualmente le impostazioni, quindi fare clic su **Avanti**.  
 
     Se già si dispone di un file di configurazione, immettere il percorso del file e andare al passaggio 7. Si noti che è necessario specificare il percorso nel formato &#92;&#92;*server*&#92;*share*&#92;*nomedelfile*.XML.
+    > [!IMPORTANT]    
+    > Il file di configurazione XML deve contenere solo [lingue supportate dal client Office 365 ProPlus](https://technet.microsoft.com/library/cc179219&#40;v=office.16&#41;.aspx).
+
 5. Nella pagina **Client Products** (Prodotti client) selezionare la suite Office 365 in uso, selezionare le applicazioni da includere, selezionare eventuali prodotti aggiuntivi di Office da includere e quindi fare clic su **Avanti**.
 6. Nella pagina **Impostazioni client** scegliere le impostazioni da includere e fare clic su **Avanti**.
 7. Nella pagina **Distribuzione** scegliere se distribuire l'applicazione, quindi fare clic su pagina **Avanti**.  
@@ -151,7 +154,7 @@ Se si sceglie di non distribuire il pacchetto nella procedura guidata, andare al
 10. È possibile distribuire o modificare l'applicazione esattamente come si farebbe con qualsiasi altra applicazione in Configuration Manager da **Raccolta software** > **Panoramica** > **Gestione applicazioni** > **Applicazioni**.   
 
 > [!IMPORTANT]
-> L'app di Office 365 creata e distribuita mediante la Creazione guidata dell'applicazione di Office 365 in Configuration Manager non viene gestita automaticamente da Configuration Manager fino a quando non si abilita l'impostazione dell'agente client degli aggiornamenti software **Enable management of the Office 365 Client Again** (Abilita di nuovo la gestione del client Office 365). Per altre informazioni, vedere [Informazioni sulle impostazioni client](/sccm/core/clients/deploy/about-client-settings).
+> L'app di Office 365 creata e distribuita mediante la Creazione guidata dell'applicazione di Office 365 in Configuration Manager non viene gestita automaticamente da Configuration Manager fino a quando non si abilita l'impostazione dell'agente client degli aggiornamenti software **Enable management of the Office 365 Client Agent** (Abilita la gestione dell'agente client di Office 365). Per altre informazioni, vedere [Informazioni sulle impostazioni client](/sccm/core/clients/deploy/about-client-settings).
 
 >[!NOTE]
 >Dopo la distribuzione delle applicazioni di Office 365, è possibile creare regole di distribuzione automatica per le applicazioni. Per creare una regola di distribuzione automatica per le applicazioni di Office 365, fare clic su **Crea un ADR** nel dashboard di gestione client di Office 365 e selezionare **Office 365 Client** quando si sceglie il prodotto. Per altre informazioni, vedere [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates).

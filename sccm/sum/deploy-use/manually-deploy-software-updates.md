@@ -14,10 +14,10 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 78524abd4c45f0b7402d6f1e85afc60bb72ab0ee
-ms.openlocfilehash: d736715f1f2c92b4c91f156ecb8abe3513811a34
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 2a0d5f12b99689749833c109d4fa399f99451d8a
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/08/2017
 
 
 ---
@@ -236,7 +236,7 @@ ms.lasthandoff: 05/17/2017
 
     -   **Notifiche utente**: specificare se visualizzare la notifica degli aggiornamenti software in Software Center sul computer client in base al **Tempo disponibile software** configurato e se visualizzare le notifiche utente sui computer client. Quando **Tipo di distribuzione** è impostato su **Disponibile** nella pagina Impostazioni distribuzione, non è possibile selezionare **Nascondi in Software Center e nascondi tutte le notifiche**.  
 
-    -   **Comportamento scadenza**: *disponibile solo quando **Tipo di distribuzione** *è impostato su **Richiesto** *nella pagina Impostazioni distribuzione.*   
+    -   **Comportamento scadenza**: *disponibile solo quando **Tipo di distribuzione** *è impostato su **Richiesto**  *nella pagina Impostazioni distribuzione.*   
     specificare il comportamento che deve verificarsi quando si raggiunge la data di scadenza per la distribuzione degli aggiornamenti software. Specificare se installare gli aggiornamenti software nella distribuzione. Inoltre, specificare se eseguire un riavvio del sistema dopo l'installazione dell'aggiornamento software indipendentemente da una finestra di manutenzione configurata. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
     -   **Comportamento riavvio dispositivo**: *disponibile solo quando **Tipo di distribuzione** *è impostato su **Richiesto** *nella pagina Impostazioni distribuzione.*    
@@ -259,15 +259,15 @@ ms.lasthandoff: 05/17/2017
 
 10. Nella pagina Impostazioni download, configurare le seguenti impostazioni:  
 
-    -   Specificare se il client scaricherà e installerà gli aggiornamenti software durante una connessione a una rete lenta o mentre usa un percorso di fallback per il contenuto.  
+    - Specificare se il client scaricherà e installerà gli aggiornamenti software durante una connessione a una rete lenta o mentre usa un percorso di fallback per il contenuto.  
 
-    -   Specificare se il client dovrà scaricare e installare gli aggiornamenti software da un punto di distribuzione di fallback nel caso in cui il contenuto per tali aggiornamenti non fosse disponibile su un punto di distribuzione preferito.  
+    - Specificare se il client dovrà scaricare e installare gli aggiornamenti software da un punto di distribuzione di fallback nel caso in cui il contenuto per tali aggiornamenti non fosse disponibile su un punto di distribuzione preferito.  
 
-    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per il download del contenuto. Per altre informazioni su BranchCache, vedere [Concetti di base per la gestione dei contenuti](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
+    - **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per il download del contenuto. Per altre informazioni su BranchCache, vedere [Concetti di base per la gestione dei contenuti](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
 
-    -   Specificare se far scaricare gli aggiornamenti software da Microsoft Update ai client connessi alla intranet nel caso in cui gli aggiornamenti non fossero disponibili nei punti di distribuzione.  
+    - **Se gli aggiornamenti software non sono disponibili nel punto di distribuzione nei gruppi correnti, adiacenti o del sito, scaricare il contenuto da Microsoft Updates**: selezionare questa impostazione in modo che i client connessi alla intranet scarichino gli aggiornamenti software da Microsoft Update se non sono disponibili nei punti di distribuzione. I client basati su Internet possono sempre passare a Microsoft Update per il contenuto degli aggiornamenti software.
 
-    -   Specificare se consentire ai client di eseguire il download dopo una scadenza dell'installazione quando usano connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.  
+    - Specificare se consentire ai client di eseguire il download dopo una scadenza dell'installazione quando usano connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.  
 
     > [!NOTE]  
     >  I client richiedono il percorso del contenuto da un punto di gestione per gli aggiornamenti software in una distribuzione. Il comportamento di download dipende dalla configurazione del punto di distribuzione, del pacchetto di distribuzione e delle impostazioni in questa pagina. Per altre informazioni, vedere [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md).  

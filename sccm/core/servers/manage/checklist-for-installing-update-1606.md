@@ -2,7 +2,7 @@
 title: Elenco di controllo per la versione 1606 |Microsoft Docs
 description: Informazioni sulle azioni da intraprendere prima di eseguire l&quot;aggiornamento di System Center Configuration Manager dalla versione 1511 o 1602 alla versione 1606.
 ms.custom: na
-ms.date: 2/7/2017
+ms.date: 6/6/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 30af3326578d39c6d995672071705bcaeb877e4d
-ms.openlocfilehash: b0def6eb962d243a7ea5910b8d56bbb448b3a2e4
+ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
+ms.openlocfilehash: a6bda116499845fedff0126e2890755931de85bb
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/13/2017
 
 ---
 # <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Elenco di controllo per installare l'aggiornamento 1606 di System Center Configuration Manager
@@ -78,11 +78,7 @@ Per la replica di database è possibile usare Replication Link Analyzer per riso
 
  **Installare tutti gli aggiornamenti critici disponibili per i sistemi operativi nei computer che ospitano il sito, il server di database del sito e i ruoli del sistema del sito remoto:** prima di installare un aggiornamento per Configuration Manager, installare gli aggiornamenti critici per ogni sistema del sito applicabile. Se un aggiornamento installato richiede un riavvio, riavviare i computer interessati prima di iniziare l'aggiornamento.  
 
- **Disabilitare le repliche di database per i punti di gestione nei siti primari:** Configuration Manager non può aggiornare correttamente un sito primario che dispone di una replica di database per i punti di gestione abilitati. Disabilitare la replica di database prima di:  
-
--   Creare un backup del database del sito per testare l'aggiornamento del database.  
-
--   Installare un aggiornamento per Configuration Manager.  
+ **Disabilitare le repliche di database per i punti di gestione nei siti primari:** Configuration Manager non può aggiornare correttamente un sito primario che dispone di una replica di database per i punti di gestione abilitati. Prima di installare un aggiornamento per Configuration Manager, disabilitare la replica di database.  
 
 Per altre informazioni, vedere [Repliche di database per i punti di gestione per System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
@@ -111,22 +107,23 @@ Per altre informazioni, vedere [Attività di manutenzione per System Center Conf
 
 Per altre informazioni, vedere [Backup e ripristino per System Center Configuration Manager](../../../protect/understand/backup-and-recovery.md).  
 
+<!-- Removed from update guidance 6/6/2017
+ **Test the database upgrade on a copy of the most recent site database backup:** Before you update a System Center Configuration Manager central administration site or primary site, test the site database upgrade process on a copy of the site database.  
 
- **Testare l'aggiornamento del database su una copia del backup più recente del database del sito:** prima di aggiornare un sito di amministrazione centrale di System Center Configuration Manager o un sito primario, testare il processo di aggiornamento del database del sito su una copia del database del sito.  
+-   You should test the site database upgrade process because when you upgrade a site, the site database might be modified.  
 
--   È opportuno testare il processo di aggiornamento del database del sito perché, quando si aggiorna un sito, è possibile che il database del sito venga modificato.  
+-   Although a test database upgrade is not required, it can identify problems for the upgrade before your production database is affected.  
 
--   Anche se non è obbligatorio, un aggiornamento di test del database permette di identificare i problemi relativi all'aggiornamento prima che questi influiscano sul database di produzione.  
+-   A failed site database upgrade can render your site database inoperable and might require a site recovery to restore functionality.  
 
--   Un aggiornamento non riuscito del database del sito può rendere inutilizzabile il database del sito e potrebbe richiedere un ripristino del sito per il relativo ripristino delle funzionalità.  
+-   Although the site database is shared between sites in a hierarchy, plan to test the database at each applicable site before you upgrade that site.  
 
--   Nonostante il database del sito sia condiviso tra i siti nella gerarchia, pianificare un test del database in ciascun sito applicabile prima di aggiornare tale sito.  
+-   If you use database replicas for management points at a primary site, disable replication before you create the backup of the site database.  
 
--   Se si usano le repliche di database per i punti di gestione in un sito primario, disabilitare la replica prima di creare il backup del database del sito.  
+Configuration Manager does not support the backup of secondary sites nor does it support the test upgrade of a secondary site database.   
 
-Configuration Manager non supporta né il backup di siti secondari né l'aggiornamento di test del database di un sito secondario.   
-
-Non eseguire un aggiornamento di test sul database del sito di produzione. Questa operazione aggiorna il database del sito e potrebbe rendere inutilizzabile il sito. Per altre informazioni, vedere [Passaggio 2: Testare l'aggiornamento del database prima di installare un aggiornamento](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) in **Prima di installare un aggiornamento nella console**.
+Do not run a test database upgrade on the production site database. Doing so updates the site database and could render your site inoperable. For more information, For more information, see [Step 2: Test the database upgrade before installing an update](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) from **Before you install an in-console update**.
+-->
 
  **Prevedere una distribuzione pilota nei client:** quando si installa un aggiornamento per il client, è possibile testare quel nuovo aggiornamento in un ambiente di pre-produzione prima della distribuzione e dell'aggiornamento di tutti i client attivi.   
 

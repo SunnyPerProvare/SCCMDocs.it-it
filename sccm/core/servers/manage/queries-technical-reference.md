@@ -15,9 +15,11 @@ caps.latest.revision: 4
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 479a7e902ff19b8ec501ff01c8e56565fd69f51b
+ms.translationtype: Human Translation
+ms.sourcegitcommit: 2087badc9dd1d216352dce232b145a786783ac89
+ms.openlocfilehash: 44f454d2f7c9d317d1ad99ba724931b4631bd11e
+ms.contentlocale: it-it
+ms.lasthandoff: 05/18/2017
 
 
 ---                     
@@ -27,17 +29,12 @@ ms.openlocfilehash: 479a7e902ff19b8ec501ff01c8e56565fd69f51b
 
 In System Center Configuration Manager le query restituiscono informazioni dal database del sito in base ai criteri specificati dall'utente. È possibile usare le query per recuperare informazioni sulle risorse nel sito o sui dati di inventario e sui messaggi di stato.  
 
-## <a name="queries-topics"></a>Argomenti relativi alle query  
- Leggere gli argomenti seguenti per informazioni sull'uso delle query in Configuration Manager.  
+## <a name="topics-about-using-queries-in-configuration-manager"></a>Argomenti sull'uso delle query in Configuration Manager  
+ Leggere gli argomenti seguenti per informazioni sull'uso delle query in Configuration Manager:  
 
 -   [Introduzione alle query in System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md)  
 
 -   [Operazioni e manutenzione per le query in System Center Configuration Manager](../../../core/servers/manage/operations-and-maintenance-for-queries.md)  
 
 -   [Sicurezza e privacy per le query in System Center Configuration Manager](../../../core/servers/manage/security-and-privacy-for-queries.md)  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

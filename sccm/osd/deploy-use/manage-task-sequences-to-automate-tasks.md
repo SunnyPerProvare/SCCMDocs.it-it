@@ -16,10 +16,10 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 113fa73bf0bd1b3b8a4754eb1e96549c520d7995
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 2f3d66362c49d28a52d7f9c535eb0b3b4cc4eaf7
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/08/2017
 
 
 ---
@@ -79,12 +79,70 @@ A partire da Configuration Manager versione 1702, è possibile tornare alla pagi
 
  Per un elenco dei passaggi della sequenza di attività disponibili, vedere [Passaggi della sequenza di attività](../understand/task-sequence-steps.md).  
 
+## <a name="configure-software-center-properties"></a>Configurare le proprietà di Software Center
+Attenersi alla procedura seguente per configurare i dettagli per la sequenza di attività visualizzata in Software Center. Tali dettagli sono solo a scopo informativo.  
+1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
+2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
+3. Nella scheda **Generale** sono disponibili le impostazioni seguenti per Software Center:
+  - **Riavvio necessario**: consente all'utente di sapere se è necessario un riavvio durante l'installazione.
+  - **Dimensioni del download (MB)**: specifica quanti megabyte vengono visualizzati in Software Center per la sequenza di attività.  
+  - **Tempo di esecuzione stimato (minuti)**: specifica il tempo di esecuzione stimato in minuti che viene visualizzato in Software Center per la sequenza di attività.
+
+## <a name="configure-advanced-task-sequence-settings"></a>Configurare impostazioni della sequenza di attività avanzate
+Attenersi alla procedura seguente per configurare i dettagli per la sequenza di attività visualizzata in Software Center. Tali dettagli sono solo a scopo informativo.  
+1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
+2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
+3. Nella scheda **Avanzate** sono disponibili le impostazioni seguenti:
+
+    - **Esegui prima un altro programma**    
+    Selezionare questa casella di controllo per eseguire un altro programma, in un altro pacchetto, prima di eseguire la sequenza di attività. Per impostazione predefinita, questa casella di controllo è deselezionata. Non è necessario annunciare separatamente il programma che deve essere eseguito per primo.
+
+        > [!IMPORTANT]     
+        Questa impostazione si applica solo alle sequenze di attività che vengono eseguite nel sistema operativo completo. Configuration Manager ignora questa impostazione se la sequenza di attività viene avviata tramite PXE o il supporto di avvio.
+
+    - **Pacchetto**     
+        Se si seleziona **Esegui prima un altro programma**, immettere o cercare il pacchetto che contiene il programma da eseguire prima di questa sequenza di attività.
+
+    - **Programma**     
+    Se si seleziona **Esegui prima un altro programma**, selezionare il programma da eseguire prima di questa sequenza di attività dall'elenco a discesa **Programma**.
+
+        > [!NOTE]    
+        > Se l'esecuzione del programma selezionato su un client non riesce, la sequenza di attività non viene eseguita. Se l'esecuzione del programma selezionato avviene correttamente, il programma non verrà eseguito nuovamente, anche se la sequenza di attività viene rieseguita sullo stesso client.
+ 
+    - **Disattiva questa sequenza attività nei computer in cui è distribuita**    
+    Se si seleziona questa opzione tutte le distribuzioni che contengono questa sequenza di attività vengono temporaneamente disabilitate. La sequenza di attività viene rimossa dall'elenco di annunci disponibili per l'esecuzione e non verrà eseguita fino a quando non viene nuovamente abilitata. Questa opzione è deselezionata per impostazione predefinita.
+
+    - **Tempo di esecuzione massimo consentito**    
+    Specifica il tempo massimo (in minuti) previsto per l'esecuzione della sequenza di attività nel computer di destinazione. È necessario inserire un numero intero uguale o maggiore di zero. Per impostazione predefinita, il valore è impostato su 120 minuti.
+
+        > [!IMPORTANT]    
+        > Se si usano finestre di manutenzione per la raccolta in cui viene eseguita la sequenza di attività, è possibile che si verifichi un conflitto se il **Tempo di esecuzione massimo consentito** è superiore alla finestra di manutenzione pianificata. Se il tempo di esecuzione massimo è impostato su **0**, la sequenza di attività inizierà durante la finestra di manutenzione e proseguirà fino al completamento oppure non riuscirà se si chiude la finestra di manutenzione. Pertanto le sequenze di attività con un tempo massimo di esecuzione impostato su **0** potrebbero essere eseguite dopo il termine delle relative finestre di manutenzione. Se il tempo di esecuzione massimo viene impostato su un periodo specifico (diverso da **0**) con durata superiore a quella di tutte le finestre di manutenzione disponibili, la sequenza di attività non verrà eseguita. Per altre informazioni, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).
+ 
+        Se il valore è impostato su **0**, Configuration Manager valuta il tempo di esecuzione massimo consentito in **12** ore (720 minuti) per il controllo dello stato. La sequenza di attività viene avviata a condizione che la durata del conto alla rovescia non superi il valore specificato per la finestra di manutenzione.
+
+    > [!NOTE]    
+    > Se viene raggiunto il tempo di esecuzione massimo, Configuration Manager interrompe la sequenza di attività a condizione che sia impostato per l'esecuzione con diritti amministrativi e che l'opzione Consenti agli utenti di interagire con il programma non sia selezionata. Se la sequenza di attività non viene interrotta, Configuration Manager arresta il monitoraggio dopo il raggiungimento del tempo di esecuzione massimo consentito. 
+
+    - **Usare un'immagine d'avvio**   
+        Selezionare questa opzione per usare l'immagine d'avvio selezionata quando viene eseguita la sequenza di attività. 
+
+        Fare clic su **Sfoglia** per selezionare un'altra immagine d'avvio. Deselezionare questa opzione per disabilitare l'uso dell'immagine d'avvio selezionata quando viene eseguita la sequenza di attività.
+
+    - **Questa sequenza di attività può essere eseguita in qualsiasi piattaforma**     
+        Se questa opzione è selezionata, quando la sequenza di attività viene distribuita Configuration Manager non verifica il tipo di piattaforma del computer di destinazione. Questa opzione è selezionata per impostazione predefinita.
+
+    - **Questa sequenza di attività può essere eseguita solo in piattaforme specifiche**    
+        Specifica i processori, i sistemi operativi e i Service Pack sui quali può essere eseguita la sequenza di attività. Se questa opzione è selezionata, è necessario selezionare almeno una piattaforma dall'elenco. Per impostazione predefinita non è selezionata alcuna piattaforma. Configuration Manager usa queste informazioni quando valuta quali computer di destinazione di una raccolta ricevono la sequenza di attività distribuita.
+
+        > [!NOTE]    
+        > Quando una sequenza di attività viene eseguita da un supporto d'avvio o da Avvio PXE, l'opzione viene ignorata e la sequenza di attività viene eseguita come nel caso in cui sia selezionata l'opzione **Questo programma può essere eseguito in qualsiasi piattaforma**.
+
 ## <a name="configure-high-impact-task-sequence-settings"></a>Configurare impostazioni della sequenza di attività ad alto impatto
 A partire da Configuration Manager versione 1702, è possibile impostare una sequenza di attività come "ad alto impatto" e personalizzare i messaggi ricevuti dagli utenti quando eseguono la sequenza.
 
 ### <a name="set-a-task-sequence-as-a-high-impact-task-sequence"></a>Impostare una sequenza di attività come una sequenza di attività a impatto elevato
 Attenersi alla procedura seguente per impostare una sequenza di attività a impatto elevato.
-> [!NOTE]
+> [!NOTE]    
 > Qualsiasi sequenza di attività che soddisfi determinate condizioni viene definita automaticamente come a impatto elevato. Per altri dettagli, vedere [Gestire le distribuzioni ad alto rischio](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
 
 1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
@@ -96,7 +154,7 @@ Usare la procedura seguente per creare una notifica personalizzata per le distri
 1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
 2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
 3. Nella scheda **Notifica utente** selezionare **Usa il testo personalizzato**.
->  [!NOTE]
+>  [!NOTE]    
 >  È possibile impostare il testo della notifica utente solo quando l'opzione **Questa è una sequenza di attività a impatto elevato** è selezionata.
 
 4. Configurare le impostazioni seguenti (massimo 255 caratteri per casella di testo):
@@ -107,23 +165,15 @@ Usare la procedura seguente per creare una notifica personalizzata per le distri
   - Prima casella di testo: specifica il corpo principale del testo, in genere contenente le istruzioni per l'utente. Ad esempio, nella notifica utente predefinita questa sezione contiene un testo simile a "L'aggiornamento del sistema operativo potrebbe durare a lungo e richiedere più riavvii del computer".
   - Seconda casella di testo: specifica il testo in grassetto nel corpo principale del testo. Ad esempio, nella notifica utente predefinita questa sezione contiene un testo simile a "Questo aggiornamento sul posto installa il nuovo sistema operativo ed esegue automaticamente la migrazione di app, dati e impostazioni".
   - Terza casella di testo: specifica l'ultima riga di testo in grassetto. Ad esempio, nella notifica all'utente predefinita questa sezione contiene un testo simile a "Fare clic su Installa per iniziare, altrimenti fare clic su Annulla".   
+    
+Si supponga di configurare la notifica personalizzata seguente nelle proprietà.
 
-  Si supponga di configurare la notifica personalizzata seguente nelle proprietà.
+![Notifica personalizzata per una sequenza di attività](..\media\user-notification.png)
 
-    ![Notifica personalizzata per una sequenza di attività](..\media\user-notification.png)
+Verrà visualizzato il messaggio di notifica seguente quando l'utente finale apre il programma di installazione da Software Center.
 
-    Verrà visualizzato il messaggio di notifica seguente quando l'utente finale apre il programma di installazione da Software Center.
+![Notifica personalizzata per una sequenza di attività](..\media\user-notification-enduser.png)
 
-    ![Notifica personalizzata per una sequenza di attività](..\media\user-notification-enduser.png)
-
-### <a name="configure-software-center-properties"></a>Configurare le proprietà di Software Center
-Attenersi alla procedura seguente per configurare i dettagli per la sequenza di attività visualizzata in Software Center. Tali dettagli sono solo a scopo informativo.  
-1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
-2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
-3. Nella scheda **Generale** sono disponibili le impostazioni seguenti per Software Center:
-  - **Riavvio necessario**: consente all'utente di sapere se è necessario un riavvio durante l'installazione.
-  - **Dimensioni del download (MB)**: specifica quanti megabyte vengono visualizzati in Software Center per la sequenza di attività.  
-  - **Tempo di esecuzione stimato (minuti)**: specifica il tempo di esecuzione stimato in minuti che viene visualizzato in Software Center per la sequenza di attività.
 
 ##  <a name="BKMK_DistributeTS"></a> Distribuire il contenuto a cui fa riferimento una sequenza attività  
  Prima che i client eseguano una sequenza di attività che fa riferimento al contenuto, è necessario distribuire tale contenuto ai punti di distribuzione. In qualsiasi momento, è possibile selezionare la sequenza di attività e distribuire il relativo contenuto per creare un nuovo elenco di pacchetti di riferimento per la distribuzione. Se si apportano modifiche alla sequenza di attività con contenuto aggiornato, è necessario ridistribuire il contenuto prima che diventi disponibile ai client. Usare la seguente procedura per distribuire il contenuto a cui fa riferimento una sequenza di attività.  
@@ -352,19 +402,22 @@ Attenersi alla procedura seguente per configurare i dettagli per la sequenza di 
  Dopo aver importato la sequenza di attività, modificarla per specificare le password che erano presenti nella sequenza di attività originale. Per motivi di sicurezza, le password non vengono esportate.  
 
 ##  <a name="BKMK_CreateTSVariables"></a> Creare le variabili della sequenza di attività per computer e raccolte  
- È possibile definire variabili della sequenza di attività personalizzate per computer e insiemi. Le variabili definite per un computer vengono definite variabili della sequenza di attività con ambito computer. Le variabili definite per una raccolta vengono definite variabili della sequenza di attività con ambito raccolta. Se si verifica un conflitto, le variabili con ambito computer hanno la precedenza sulle variabili con ambito raccolta. Questo significa che le variabili della sequenza di attività assegnate a un computer specifico assumono automaticamente una priorità maggiore di quelle assegnate alla raccolta che contiene il computer.  
+È possibile definire variabili della sequenza di attività personalizzate per computer e insiemi. Le variabili definite per un computer vengono definite variabili della sequenza di attività con ambito computer. Le variabili definite per una raccolta vengono definite variabili della sequenza di attività con ambito raccolta. Se si verifica un conflitto, le variabili con ambito computer hanno la precedenza sulle variabili con ambito raccolta. Questo significa che le variabili della sequenza di attività assegnate a un computer specifico assumono automaticamente una priorità maggiore di quelle assegnate alla raccolta che contiene il computer.  
 
- Se ad esempio alla raccolta ABC è assegnata una variabile e al computer XYZ, membro della raccolta ABC, è assegnata una variabile con lo stesso nome, la variabile assegnata al computer XYZ avrà priorità maggiore rispetto a quella assegnata alla raccolta ABC.  
+Se ad esempio alla raccolta ABC è assegnata una variabile e al computer XYZ, membro della raccolta ABC, è assegnata una variabile con lo stesso nome, la variabile assegnata al computer XYZ avrà priorità maggiore rispetto a quella assegnata alla raccolta ABC.  
 
- Se si vuole che le variabili con ambito computer e raccolta non siano visibili nella console di Configuration Manager, è possibile nasconderle. Se si desidera che tali variabili non siano più nascoste, sarà necessario eliminarle e ridefinirle senza selezionare l'opzione per nasconderle. Quando si usa l'opzione **Non visualizzare questo valore nella console di Configuration Manager**, il valore della variabile non viene visualizzato, ma può essere usato dalla sequenza di attività quando viene eseguita.  
+Se si vuole che le variabili con ambito computer e raccolta non siano visibili nella console di Configuration Manager, è possibile nasconderle. Se si desidera che tali variabili non siano più nascoste, sarà necessario eliminarle e ridefinirle senza selezionare l'opzione per nasconderle. Quando si usa l'opzione **Non visualizzare questo valore nella console di Configuration Manager**, il valore della variabile non viene visualizzato nella console, ma può essere usato dalla sequenza di attività al momento dell'esecuzione.  
 
- È possibile gestire le variabili per computer in un sito primario oppure in un sito di amministrazione centrale. Configuration Manager non supporta più di 1.000 variabili assegnate per computer.  
+> [!WARNING]    
+> L'impostazione **Non visualizzare questo valore nella console di Configuration Manager** è valida per la console di Configuration Manager, ma i valori delle variabili sono ancora visualizzati nel file di log della sequenza di attività (SMSTS.LOG). 
 
-> [!WARNING]  
+È possibile gestire le variabili per computer in un sito primario oppure in un sito di amministrazione centrale. Configuration Manager non supporta più di 1.000 variabili assegnate per computer.  
+
+> [!IMPORTANT]  
 >  Quando si usano variabili con ambito raccolta per le sequenze attività, considerare quanto segue:  
 >   
->  -   Poiché le modifiche alle raccolte vengono sempre replicate in tutta la gerarchia, qualsiasi modifica apportata alle variabili raccolta verrà applicata non solo ai membri del sito corrente ma a tutti i membri della raccolta in tutta la gerarchia.  
-> -   Quando si elimina una raccolta, questa azione elimina anche le variabili della sequenza di attività configurate per la raccolta.  
+> - Poiché le modifiche alle raccolte vengono sempre replicate in tutta la gerarchia, qualsiasi modifica apportata alle variabili raccolta verrà applicata non solo ai membri del sito corrente ma a tutti i membri della raccolta in tutta la gerarchia.  
+> - Quando si elimina una raccolta, questa azione elimina anche le variabili della sequenza di attività configurate per la raccolta.  
 
  Usare le procedure seguenti per creare variabili della sequenza di attività per un computer o per una raccolta.  
 
@@ -397,7 +450,7 @@ Attenersi alla procedura seguente per configurare i dettagli per la sequenza di 
 6.  Dopo aver aggiunto tutte le variabili alla raccolta, fare clic su **OK**.  
 
 ##  <a name="BKMK_AdditionalActionsTS"></a> Azioni aggiuntive per la gestione delle sequenze di attività  
- È possibile gestire le sequenze attività usando le azioni aggiuntive disponibili quando si seleziona la sequenza di attività usando la procedura seguente.  
+ È possibile gestire le sequenze di attività usando le azioni aggiuntive disponibili quando si seleziona la sequenza di attività.  
 
 #### <a name="to-select-a-task-sequence-to-manage"></a>Per selezionare una sequenza di attività da gestire  
 
@@ -416,7 +469,6 @@ Attenersi alla procedura seguente per configurare i dettagli per la sequenza di 
 |**Attiva**|Attiva la sequenza di attività in modo che possa essere eseguita. Dopo l'attivazione non è necessario ridistribuire una sequenza di attività già distribuita.|  
 |**Crea file di contenuto pre-installazione**|Avvia la Creazione guidata file di contenuto pre-installazione per pre-installare il contenuto della sequenza di attività. Per informazioni su come creare un file di contenuto pre-installato, vedere [Prestage content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content) (Pre-installare il contenuto).|  
 |**Sposta**|Sposta la sequenza di attività selezionata in un'altra cartella.|  
-|**Proprietà**|Apre la finestra di dialogo **Proprietà** per la sequenza di attività selezionata. Usare questa finestra di dialogo per modificare il comportamento dell'oggetto sequenza di attività. Non è possibile usare questa finestra di dialogo per modificare i passaggi della sequenza di attività.|  
 
 ## <a name="next-steps"></a>Passaggi successivi
 [Scenari di distribuzione di sistemi operativi aziendali](scenarios-to-deploy-enterprise-operating-systems.md)

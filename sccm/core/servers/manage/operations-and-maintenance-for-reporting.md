@@ -15,9 +15,11 @@ caps.latest.revision: 5
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: f5a58ba9ecd9b0998c2859b6d3f45e493d7ef3cb
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f62d969dd49fb00b688602128df74b28ff551135
+ms.openlocfilehash: df572cd0c64c82e25164430a53e1b893b3ba3cf5
+ms.contentlocale: it-it
+ms.lasthandoff: 06/07/2017
 
 
 ---
@@ -27,10 +29,10 @@ ms.openlocfilehash: f5a58ba9ecd9b0998c2859b6d3f45e493d7ef3cb
 
 Dopo aver definito l'infrastruttura per la creazione di report in System Center Configuration Manager, è in genere necessario eseguire alcune operazioni per la gestione di report e di sottoscrizioni report.  
 
-##  <a name="a-namebkmkmanagereportsa-manage-configuration-manager-reports"></a><a name="BKMK_ManageReports"></a> Gestire i report di Configuration Manager  
+##  <a name="BKMK_ManageReports"></a> Gestire i report di Configuration Manager  
  Configuration Manager offre oltre 400 report predefiniti che consentono di raccogliere, organizzare e presentare informazioni su utenti, inventario software e hardware, aggiornamenti software, applicazioni, stato del sito e altre operazioni di Configuration Manager all'interno dell'azienda. È possibile utilizzare i report predefiniti come sono oppure è possibile modificare un report in base alle proprie esigenze. È anche possibile creare report personalizzati \-basati su modello e basati su SQL\- secondo le necessità. Usare le sezioni seguenti per gestire i report in Configuration Manager.  
 
-###  <a name="a-namebkmkrunreporta-run-a-configuration-manager-report"></a><a name="BKMK_RunReport"></a> Eseguire un report di Configuration Manager  
+###  <a name="BKMK_RunReport"></a> Eseguire un report di Configuration Manager  
  Report in Configuration Manager vengono archiviati in SQL Server Reporting Services e i dati visualizzati nel report vengono recuperati dal database del sito Configuration Manager. È possibile accedere a report nella console di Configuration Manager o tramite Gestione Report, che è accessibile in un browser web. I report possono essere aperti in qualsiasi computer autorizzato ad accedere al computer che esegue SQL Server Reporting Services ed è necessario di disporre di diritti sufficienti per la visualizzazione dei report. Quando si esegue un report, il titolo, la descrizione e la categoria del report vengono visualizzati nella lingua del sistema operativo locale.  
 
 > [!NOTE]  
@@ -38,6 +40,9 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 
 > [!WARNING]  
 >  Per eseguire i report, è necessario disporre di diritti di **Lettura** per l'autorizzazione **Sito** e per l'autorizzazione **Esegui report** configurata per oggetti specifici.  
+
+> [!IMPORTANT]    
+> Per poter eseguire correttamente i report, deve essere presente un trust bidirezionale per gli utenti di un dominio diverso da quello dell'account al punto Servicies Reporting.
 
 > [!NOTE]  
 >  Gestione report è uno strumento Web di accesso e gestione di report che consente di amministrare una singola istanza di un server di report in un percorso remoto su una connessione HTTP. È possibile utilizzare Gestione report per attività operative, ad esempio, per visualizzare i report, modificare le proprietà del report e gestire sottoscrizioni di report associate. Questo argomento include i passaggi necessari per visualizzare un report e modificare le proprietà dei report in Gestione report, ma per ulteriori informazioni sulle altre opzioni disponibili in Gestione report, vedere [Gestione report](http://go.microsoft.com/fwlink/p/?LinkId=224916) nella documentazione online di SQL Server 2008.  
@@ -73,7 +78,7 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 
 4.  Se sono previsti parametri obbligatori, specificare i parametri, quindi fare clic su **Visualizza report**.  
 
-###  <a name="a-namebkmkmodifyreportpropertiesa-modify-the-properties-for-a-configuration-manager-report"></a><a name="BKMK_ModifyReportProperties"></a> Modificare le proprietà di un report di Configuration Manager  
+###  <a name="BKMK_ModifyReportProperties"></a> Modificare le proprietà di un report di Configuration Manager  
  Nella console di Configuration Manager è possibile visualizzare le proprietà di un report, ad esempio il nome e la descrizione del report. Per modificare le proprietà, usare invece Gestione report. Usare la procedura seguente per modificare le proprietà di un report di Configuration Manager.  
 
 #### <a name="to-modify-report-properties-in-report-manager"></a>Per modificare le proprietà dei report in Gestione report  
@@ -91,7 +96,7 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 
 5.  Al termine, fare clic su **Applica**. Le proprietà del report vengono salvate nel server di report e le proprietà aggiornate del report vengono recuperate dalla console di Configuration Manager.  
 
-###  <a name="a-namebkmkeditreporta-edit-a-configuration-manager-report"></a><a name="BKMK_EditReport"></a> Modificare un report di Configuration Manager  
+###  <a name="BKMK_EditReport"></a> Modificare un report di Configuration Manager  
  Se un report esistente di Configuration Manager non recupera le informazioni necessarie oppure non visualizza il layout o la struttura interessati, è possibile modificare il report in Generatore report.  
 
 > [!NOTE]  
@@ -115,7 +120,7 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 
 4.  Modificare le impostazioni di report appropriate in Generatore report, quindi fare clic su **Salva** per salvare il report nel server di report.  
 
-###  <a name="a-namebkmkcreatemodelbasedreporta-create-a-model-based-report"></a><a name="BKMK_CreateModelBasedReport"></a> Creare un report basato su modello  
+###  <a name="BKMK_CreateModelBasedReport"></a> Creare un report basato su modello  
  Un report basato su modello consente di selezionare in modo interattivo gli elementi da includere nel report. Per altre informazioni su come creare modelli di report personalizzati, vedere [Creazione di modelli di report personalizzati per System Center Configuration Manager in SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md).  
 
 > [!IMPORTANT]  
@@ -157,7 +162,7 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 
 10. Fare clic su **Salva** per salvare il report nel server di report. È possibile eseguire e modificare il nuovo report nel nodo **Report** nell'area di lavoro **Monitoraggio** .  
 
-###  <a name="a-namebkmkcreatesqlbasedreporta-create-a-sql-based-report"></a><a name="BKMK_CreateSQLBasedReport"></a> Creare un report basato su SQL  
+###  <a name="BKMK_CreateSQLBasedReport"></a> Creare un report basato su SQL  
  Un report basato su SQL consente di recuperare i dati che si basano su un'istruzione SQL di report.  
 
 > [!IMPORTANT]  
@@ -200,10 +205,10 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 
 9. Fare clic su **Salva** per salvare il report nel server di report. È possibile eseguire il nuovo report nel nodo **Report** nell'area di lavoro **Monitoraggio** .  
 
-##  <a name="a-namebkmkmanagereportsubscriptionsa-manage-report-subscriptions"></a><a name="BKMK_ManageReportSubscriptions"></a> Gestire le sottoscrizioni report  
+##  <a name="BKMK_ManageReportSubscriptions"></a> Gestire le sottoscrizioni report  
  Le sottoscrizioni report in SQL Server Reporting Services consentono di configurare l'individuazione automatica dei report specificati tramite posta elettronica o in una condivisione file a intervalli pianificati. Usare la **Creazione guidata sottoscrizione** in System Center 2012 Configuration Manager per configurare le sottoscrizioni report.  
 
-###  <a name="a-namebkmkreportsubscriptionfilesharea-create-a-report-subscription-to-deliver-a-report-to-a-file-share"></a><a name="BKMK_ReportSubscriptionFileShare"></a> Creare una sottoscrizione report per recapitare un report a una condivisione file  
+###  <a name="BKMK_ReportSubscriptionFileShare"></a> Creare una sottoscrizione report per recapitare un report a una condivisione file  
  Quando si crea una sottoscrizione report per il recapito di un report in una condivisione file, il report viene copiato nel formato specificato e salvato nella condivisione file specificata. È possibile effettuare la sottoscrizione e richiedere il recapito per un solo report alla volta.  
 
  A differenza dei report ospitati e gestiti da un server di report, i report recapitati a una cartella condivisa sono file statici. Le funzionalità interattive definite per il report non funzionano per i report archiviati come file nel file system. Le funzionalità di interazione vengono rappresentate come elementi statici. Se il report include grafici, verrà utilizzata la presentazione predefinita. Se il report è collegato tramite un altro report, verrà eseguito il rendering del collegamento come testo statico. Se si desidera conservare le funzionalità interattive in un report recapitato, utilizzare invece il recapito tramite posta elettronica. Per altre informazioni sul recapito di posta elettronica, vedere la sezione [Creare una sottoscrizione report per il recapito di un report tramite posta elettronica](#BKMK_ReportSubscriptionEmail) più avanti in questo argomento.  
@@ -284,7 +289,7 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 
 8.  Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata. Verificare se è stata creata correttamente la sottoscrizione report. È possibile visualizzare e modificare le sottoscrizioni report nel nodo **Sottoscrizioni** sotto **Creazione di report** nell'area di lavoro **Monitoraggio** .  
 
-###  <a name="a-namebkmkreportsubscriptionemaila-create-a-report-subscription-to-deliver-a-report-by-email"></a><a name="BKMK_ReportSubscriptionEmail"></a> Creare una sottoscrizione report per recapitare un report tramite posta elettronica  
+###  <a name="BKMK_ReportSubscriptionEmail"></a> Creare una sottoscrizione report per recapitare un report tramite posta elettronica  
  Quando si crea una sottoscrizione report per il recapito di un report tramite posta elettronica, un messaggio di posta elettronica verrà inviato ai destinatari configurati e il report verrà incluso come allegato. Il server di report non convalida gli indirizzi di posta elettronica né ottiene gli indirizzi di posta elettronica da un server di posta elettronica. È necessario conoscere in anticipo gli indirizzi di posta elettronica che si desidera utilizzare. Per impostazione predefinita, è possibile inviare tramite posta elettronica i report a qualsiasi account di posta elettronica valido interno o esterno all'organizzazione. È possibile selezionare una o entrambe le seguenti opzioni di recapito tramite posta elettronica:  
 
 -   Inviare una notifica e un collegamento ipertestuale al report generato.  
@@ -358,9 +363,4 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 -   Nella pagina **Riepilogo** verificare le impostazioni della sottoscrizione report. Fare clic su **Indietro** per modificare le impostazioni oppure su **Avanti** per creare la sottoscrizione report.  
 
 -   Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata. Verificare se è stata creata correttamente la sottoscrizione report. È possibile visualizzare e modificare le sottoscrizioni report nel nodo **Sottoscrizioni** sotto **Creazione di report** nell'area di lavoro **Monitoraggio** .  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -17,10 +17,10 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: ae60eb25383f4bd07faaa1265185a471ee79b1e9
-ms.openlocfilehash: 3d90f16eac59b7069ff2f33170eba85d2cde65ef
+ms.sourcegitcommit: c8717925dba42451b1e241a7c2f59e43896d7d99
+ms.openlocfilehash: 4a169098f30e4a9d708e41ee25c6a400d5ff0e85
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/19/2017
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informazioni sulle impostazioni client in System Center Configuration Manager
@@ -65,7 +65,7 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
 
 - **Configurare la dimensione della cache client**
 
-  Nei computer Windows la cache client archivia i file temporanei usati per installare applicazioni e programmi. Selezionare **Sì** per specificare **Dimensioni massime della cache**, espresse in MB o in percentuale del disco. Se questa opzione è impostata su **No**, il valore predefinito è 5.120 MB.
+  Nei computer Windows la cache client archivia i file temporanei usati per installare applicazioni e programmi. Selezionare **Sì** per specificare **Dimensioni massime della cache**, espresse in MB o in percentuale del disco. La cache client può raggiungere la dimensione massima consentita in MB o in percentuale del disco, adeguandosi **al valore che risulta inferiore**. Se questa opzione è impostata su **No**, il valore predefinito è 5.120 MB.
 
 ## <a name="client-policy"></a>Criteri client  
 
@@ -248,6 +248,10 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
     > -   ID errore **0X87D00327** e la descrizione di **Script non firmato** come errore di stato distribuzione nell'area di lavoro **Monitoraggio** della console di Configuration Manager.  
     > -   I codici di errore e le descrizioni di **0X87D00327** e **Script non firmato** o **0X87D00320** e **L'host script non è stato ancora installato** con il tipo di errore **Errore di individuazione** nei report. Un esempio è **Dettagli degli errori degli elementi di configurazione in una linea di base configurazione per un asset**.  
     > -   Il messaggio **Script is not signed (Error: 87D00327; Source: CCM)** nel file **DcmWmiProvider.log** .  
+
+-   **Mostra notifiche per nuove distribuzioni**  
+
+     Scegliere **Sì** per visualizzare una notifica per le distribuzioni che sono rimaste disponibili per meno di una settimana.  Questo messaggio verrà visualizzato a ogni avvio dell'agente client.
 
 -   **Disabilitare sequenza casuale scadenza**  
 

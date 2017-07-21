@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: a93ea730c39cce9dc46036f5aa6ece4a62679d0f
-ms.openlocfilehash: 0d16d362b798c194645f987088ba8a95a7be3f19
+ms.sourcegitcommit: 0ebda27c0f3848615346c2ecf1ab8b9bb9ab6f0d
+ms.openlocfilehash: 0a3704a2d3b75ed7e0a7f718b681448ab6fc078d
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 05/26/2017
 
 
 ---
@@ -81,7 +81,7 @@ Dopo l'installazione di un sito, è possibile spostare la posizione di alcuni ru
 
 -   **Punto di distribuzione.** Ruolo del sistema del sito che contiene file di origine per i client da scaricare, come contenuto di applicazioni, pacchetti software, aggiornamenti software, immagini del sistema operativo e immagini d'avvio. Per impostazione predefinita, questo ruolo viene installato nel computer del server del sito dei nuovi siti primari e secondari quando viene installato il sito. Questo ruolo non è supportato in un sito di amministrazione centrale. È possibile installare più istanze di questo ruolo in un sito supportato e in più siti della stessa gerarchia. Per altre informazioni, vedere [Concetti di base per la gestione dei contenuti in System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) e [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
--   **Punto di stato di fallback.** Ruolo del sistema del sito che consente di monitorare l'installazione client e di identificare i client che non sono gestiti perché non possono comunicare con il relativo punto di gestione. Anche se questo ruolo è supportato solo nei siti primari, è possibile installarne più istanze in un sito e in più siti della stessa gerarchia. Per altre informazioni, vedere [Content source location scenarios](../../../core/plan-design/hierarchy/content-source-location-scenarios.md).
+-   **Punto di stato di fallback.** Ruolo del sistema del sito che consente di monitorare l'installazione client e di identificare i client che non sono gestiti perché non possono comunicare con il relativo punto di gestione. Anche se questo ruolo è supportato solo nei siti primari, è possibile installarne più istanze in un sito e in più siti della stessa gerarchia.     
 
 
 -   **Punto di Endpoint Protection.** Ruolo del sistema del sito che Configuration Manager usa per accettare le condizioni di licenza di Endpoint Protection e per configurare l'appartenenza predefinita per Cloud Protection Service. Una gerarchia supporta una sola istanza di questo ruolo, che deve trovarsi nel sito di livello superiore della gerarchia, ovvero un sito di amministrazione centrale o il sito primario autonomo. Se si espande il sito primario autonomo in una gerarchia più ampia, è necessario disinstallare questo ruolo dal sito primario per poterlo quindi installare nel sito di amministrazione centrale. Per altre informazioni, vedere [Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  

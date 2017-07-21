@@ -1,6 +1,6 @@
 ---
-title: Gestire l&quot;accesso ai servizi di Office 365 per computer gestiti | Microsoft Docs
-description: Informazioni su come configurare l&quot;accesso condizionale per i PC gestiti da System Center Configuration Manager.
+title: Gestire l'accesso ai servizi di Office 365 per computer gestiti | Microsoft Docs
+description: Informazioni su come configurare l'accesso condizionale per i PC gestiti da System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -16,10 +16,10 @@ author: andredm7
 ms.author: andredm
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 23b1d24e908d04b64c3bbfa518793a44e696d468
-ms.openlocfilehash: e9028a54e538b4ec987dbaeb5ba1ee22ad091728
+ms.sourcegitcommit: c8717925dba42451b1e241a7c2f59e43896d7d99
+ms.openlocfilehash: e78fe989b7ff445717c8320c4eae3900eb46baea
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/19/2017
 
 
 ---
@@ -27,31 +27,25 @@ ms.lasthandoff: 05/17/2017
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-
-
- A partire dalla versione 1602 di Configuration Manager è possibile configurare l'accesso condizionale per i PC gestiti da System Center Configuration Manager.  
+A partire dalla versione 1602 di Configuration Manager è possibile configurare l'accesso condizionale per i PC gestiti da System Center Configuration Manager.  
 
 > [!IMPORTANT]  
->  Si tratta di una funzionalità di versione non definitiva disponibile negli aggiornamenti 1602, 1606 e 1610. Le funzionalità di versioni non definitive sono incluse nel prodotto a scopo di test preliminare in un ambiente di produzione, ma non devono essere considerate pronte per l'ambiente di produzione. Per altre informazioni, vedere la sezione relativa all'[abilitazione delle funzionalità facoltative dagli aggiornamenti](../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease).
+> Si tratta di una funzionalità di versione non definitiva disponibile negli aggiornamenti 1602, 1606 e 1610. Le funzionalità di versioni non definitive sono incluse nel prodotto a scopo di test preliminare in un ambiente di produzione, ma non devono essere considerate pronte per l'ambiente di produzione. Per altre informazioni, vedere la sezione relativa all'[abilitazione delle funzionalità facoltative dagli aggiornamenti](../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease).
 > - Dopo aver installato l'aggiornamento 1602, il tipo di funzionalità viene visualizzato come rilasciato anche se si tratta di una funzionalità di versione non definitiva.
 > - Se si esegue l'aggiornamento dalla versione 1602 alla versione 1606, il tipo di funzionalità viene visualizzato come rilasciato anche se rimane come funzionalità di versione non definita.
 > - Se si esegue l'aggiornamento dalla versione 1511 direttamente alla versione 1606, il tipo di funzionalità viene visualizzato come funzionalità di versione non definitiva.
 
- Per informazioni su come configurare l'accesso condizionale per i dispositivi registrati e gestiti da Intune o per i PC appartenenti a un dominio e non valutati per verificarne la conformità, vedere [Gestire l'accesso ai servizi in System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md).  
-
+Per informazioni su come configurare l'accesso condizionale per i dispositivi registrati e gestiti da Intune o per i PC appartenenti a un dominio e non valutati per verificarne la conformità, vedere [Gestire l'accesso ai servizi in System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md).
 
 ## <a name="supported-services"></a>Servizi supportati  
 
--   Exchange Online  
-
--   SharePoint Online  
+-   Exchange Online
+-   SharePoint Online
 
 ## <a name="supported-pcs"></a>PC supportati  
 
--   Windows 7  
-
--   Windows 8.1  
-
+-   Windows 7
+-   Windows 8.1
 -   Windows 10 
 
 ## <a name="configure-conditional-access"></a>Configurare l'accesso condizionale  
@@ -61,7 +55,7 @@ ms.lasthandoff: 05/17/2017
 
 -   ADFS Sync e un abbonamento a O365. L'abbonamento a Office 365 serve per la configurazione di Exchange Online e SharePoint Online.  
 
--   Sottoscrizione di Microsoft Intune. La sottoscrizione di Microsoft Intune deve essere configurata nella console di Configuration Manager. È necessario trovarsi in una distribuzione ibrida.  
+-   Sottoscrizione di Microsoft Intune. La sottoscrizione di Microsoft Intune deve essere configurata nella console di Configuration Manager. La sottoscrizione di Intune viene usata per trasmettere lo stato di conformità del dispositivo ad Azure Active Directory e per la gestione delle licenze utente.  
 
  I PC devono soddisfare i requisiti seguenti:  
 
@@ -146,6 +140,8 @@ ms.lasthandoff: 05/17/2017
 
 -   Windows 10 users may see multiple access failures when trying to reach O365 and/or SharePoint online resources. Note that conditional access is not fully supported for Windows 10.  
 --->
-### <a name="see-also"></a>Vedere anche  
- [Proteggere i dati e l'infrastruttura del sito con System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md)
+## <a name="see-also"></a>Vedere anche
+
+- [Protect data and site infrastructure with System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md) (Proteggere i dati e l'infrastruttura del sito con System Center Configuration Manager)
+- [Diagramma di flusso per la risoluzione dei problemi di accesso condizionale di Configuration Manager](https://gallery.technet.microsoft.com/Conditional-access-fd747c1a?redir=0)
 

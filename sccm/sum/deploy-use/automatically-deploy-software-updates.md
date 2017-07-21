@@ -12,19 +12,21 @@ ms.service:
 ms.technology:
 - configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
-translationtype: Human Translation
-ms.sourcegitcommit: 78524abd4c45f0b7402d6f1e85afc60bb72ab0ee
-ms.openlocfilehash: 34b0819957ffcc3711ee354a5b821d78fa7445cb
+ms.translationtype: Human Translation
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 804a9d7a32cfbdb498c6748c5d99a1874261c231
+ms.contentlocale: it-it
+ms.lasthandoff: 06/08/2017
 
 ---
 
-#  <a name="a-namebkmkautodeploya-automatically-deploy-software-updates"></a><a name="BKMK_AutoDeploy"></a> Distribuire automaticamente gli aggiornamenti software  
+#  <a name="BKMK_AutoDeploy"></a> Distribuire automaticamente gli aggiornamenti software  
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
  È possibile distribuire gli aggiornamenti software automaticamente aggiungendo nuovi aggiornamenti software a un gruppo di aggiornamento associato con una distribuzione attiva oppure è possibile usare le regole di distribuzione automatica (ADR). Solitamente si usano le regole di distribuzione automatica per distribuire mensilmente gli aggiornamenti software (comunemente noti come aggiornamenti Patch Tuesday) e per la gestione degli aggiornamenti delle definizioni. Per altre informazioni su come determinare qual è il metodo di distribuzione giusto da usare, vedere [Deploy software updates](deploy-software-updates.md) (Distribuire gli aggiornamenti software)
 
-##  <a name="a-namebkmkaddupdatestoexistinggroupa-add-software-updates-to-a-deployed-update-group"></a><a name="BKMK_AddUpdatesToExistingGroup"></a> Aggiungere gli aggiornamenti software a un gruppo di aggiornamento distribuito  
+##  <a name="BKMK_AddUpdatesToExistingGroup"></a> Aggiungere gli aggiornamenti software a un gruppo di aggiornamento distribuito  
 Dopo aver creato e distribuito un gruppo di aggiornamento software, è possibile aggiungere aggiornamenti software a tale gruppo che saranno distribuiti automaticamente.  
 
 > [!IMPORTANT]  
@@ -46,7 +48,7 @@ Usare la procedura seguente per aggiungere aggiornamenti software a un gruppo di
 
 6.  Fare clic sul gruppo di aggiornamento software, quindi nella scheda **Home** del gruppo **Aggiorna** , fare clic su **Mostra membri** per visualizzare un elenco degli aggiornamenti software inclusi nel gruppo.  
 
-##  <a name="a-namebkmkcreateautomaticdeploymentrulea-create-an-automatic-deployment-rule-adr"></a><a name="BKMK_CreateAutomaticDeploymentRule"></a> Creare una regola di distribuzione automatica (ADR)  
+##  <a name="BKMK_CreateAutomaticDeploymentRule"></a> Creare una regola di distribuzione automatica (ADR)  
 È possibile approvare e distribuire automaticamente gli aggiornamenti software usando un'ADR. È possibile fare in modo che la regola aggiunga gli aggiornamenti software a un nuovo gruppo di aggiornamenti software ogni volta che la regola viene eseguita oppure che aggiunga gli aggiornamenti software a un gruppo esistente. Quando una regola viene eseguita e aggiunge gli aggiornamenti software a un gruppo esistente, la regola rimuove tutti gli aggiornamenti software dal gruppo e quindi aggiunge gli aggiornamenti software che soddisfano i criteri definiti al gruppo. Per eseguire un'ADR per trovare i nuovi aggiornamenti software rilasciati ogni giorno e distribuirli nei client, ad esempio, è necessario scegliere l'opzione per creare un nuovo gruppo di aggiornamenti software invece che per aggiungere gli aggiornamenti software a un gruppo esistente.  
 
 > [!WARNING]  
@@ -167,15 +169,15 @@ Usare la procedura seguente per aggiungere aggiornamenti software a un gruppo di
 
 10. Nella pagina Impostazioni download, configurare le seguenti impostazioni:  
 
-    -   Specificare se il client scaricherà e installerà gli aggiornamenti software durante una connessione a una rete lenta o mentre usa un percorso di fallback per il contenuto.  
+    - Specificare se il client scaricherà e installerà gli aggiornamenti software durante una connessione a una rete lenta o mentre usa un percorso di fallback per il contenuto.  
 
-    -   Specificare se il client dovrà scaricare e installare gli aggiornamenti software da un punto di distribuzione di fallback nel caso in cui il contenuto per tali aggiornamenti non fosse disponibile su un punto di distribuzione preferito.  
+    - Specificare se il client dovrà scaricare e installare gli aggiornamenti software da un punto di distribuzione di fallback nel caso in cui il contenuto per tali aggiornamenti non fosse disponibile su un punto di distribuzione preferito.  
 
-    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per il download del contenuto. Per altre informazioni su BranchCache, vedere [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
+    - **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per il download del contenuto. Per altre informazioni su BranchCache, vedere [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
 
-    -   Specificare se far scaricare gli aggiornamenti software da Microsoft Update ai client connessi alla intranet nel caso in cui gli aggiornamenti non fossero disponibili nei punti di distribuzione.  
+    - **Se gli aggiornamenti software non sono disponibili nel punto di distribuzione nei gruppi correnti, adiacenti o del sito, scaricare il contenuto da Microsoft Updates**: selezionare questa impostazione in modo che i client connessi alla Intranet scarichino gli aggiornamenti software da Microsoft Update se non sono disponibili nei punti di distribuzione. I client basati su Internet possono sempre passare a Microsoft Update per il contenuto degli aggiornamenti software.
 
-    -   Specificare se consentire ai client di eseguire il download dopo una scadenza dell'installazione quando usano connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.  
+    - Specificare se consentire ai client di eseguire il download dopo una scadenza dell'installazione quando usano connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.  
 
     > [!NOTE]  
     >  I client richiedono il percorso del contenuto da un punto di gestione per gli aggiornamenti software in una distribuzione. Il comportamento di download dipende dalla configurazione del punto di distribuzione, del pacchetto di distribuzione e delle impostazioni in questa pagina. Per altre informazioni, vedere [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md).  
@@ -221,7 +223,7 @@ Usare la procedura seguente per aggiungere aggiornamenti software a un gruppo di
 
  Dopo aver completato la procedura guidata, verrà eseguita l'ADR. Questa aggiunge gli aggiornamenti software che soddisfano i criteri specificati a un gruppo di aggiornamento software, scarica gli aggiornamenti software nella raccolta contenuto nel server del sito, distribuisce gli aggiornamenti software ai punti di distribuzione configurati e quindi distribuisce il gruppo aggiornamenti software ai client inclusi nella raccolta di destinazione.  
 
-##  <a name="a-namebkmkadddeploymenttoadra-add-a-new-deployment-to-an-existing-adr"></a><a name="BKMK_AddDeploymentToADR"></a> Aggiungere una nuova distribuzione a un'ADR esistente  
+##  <a name="BKMK_AddDeploymentToADR"></a> Aggiungere una nuova distribuzione a un'ADR esistente  
  Dopo aver creato una regola di distribuzione automatica, è possibile aggiungere altre distribuzioni alla regola. Ciò consente di gestire la complessità della distribuzione di aggiornamenti diversi a raccolte differenti. Ogni nuova distribuzione dispone dell'intera gamma di funzionalità e dell’esperienza di monitoraggio della distribuzione.  
 
 #### <a name="to-add-a-new-deployment-to-an-existing-adr"></a>Per aggiungere una nuova distribuzione a un'ADR esistente  
@@ -299,26 +301,21 @@ Usare la procedura seguente per aggiungere aggiornamenti software a un gruppo di
 
 8. Nella pagina Impostazioni download, configurare le seguenti impostazioni:  
 
-    -   Specificare se il client scaricherà e installerà gli aggiornamenti software durante una connessione a una rete lenta o mentre usa un percorso di fallback per il contenuto.  
+    - Specificare se il client scaricherà e installerà gli aggiornamenti software durante una connessione a una rete lenta o mentre usa un percorso di fallback per il contenuto.  
 
-    -   Specificare se il client dovrà scaricare e installare gli aggiornamenti software da un punto di distribuzione di fallback nel caso in cui il contenuto per tali aggiornamenti non fosse disponibile su un punto di distribuzione preferito.  
+    - Specificare se il client dovrà scaricare e installare gli aggiornamenti software da un punto di distribuzione di fallback nel caso in cui il contenuto per tali aggiornamenti non fosse disponibile su un punto di distribuzione preferito.  
 
-    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per il download del contenuto. Per altre informazioni su BranchCache, vedere [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
+    - **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per il download del contenuto. Per altre informazioni su BranchCache, vedere [Concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
 
-    -   Specificare se far scaricare gli aggiornamenti software da Microsoft Update ai client connessi alla intranet nel caso in cui gli aggiornamenti non fossero disponibili nei punti di distribuzione.  
+    - **Se gli aggiornamenti software non sono disponibili nel punto di distribuzione nei gruppi correnti, adiacenti o del sito, scaricare il contenuto da Microsoft Updates**: selezionare questa impostazione in modo che i client connessi alla Intranet scarichino gli aggiornamenti software da Microsoft Update se non sono disponibili nei punti di distribuzione. I client basati su Internet possono sempre passare a Microsoft Update per il contenuto degli aggiornamenti software.
 
-    -   Specificare se consentire ai client di eseguire il download dopo una scadenza dell'installazione quando usano connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.  
+    - Specificare se consentire ai client di eseguire il download dopo una scadenza dell'installazione quando usano connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.  
 
     > [!NOTE]  
-    >  I client richiedono il percorso del contenuto da un punto di gestione per gli aggiornamenti software in una distribuzione. Il comportamento di download dipende dalla configurazione del punto di distribuzione, del pacchetto di distribuzione e delle impostazioni in questa pagina. Per altre informazioni, vedere [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md).  
+    > I client richiedono il percorso del contenuto da un punto di gestione per gli aggiornamenti software in una distribuzione. Il comportamento di download dipende dalla configurazione del punto di distribuzione, del pacchetto di distribuzione e delle impostazioni in questa pagina. Per altre informazioni, vedere [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md).  
 
 Per altre informazioni sul processo di distribuzione, vedere [Software update deployment process](../../sum/understand/software-updates-introduction.md#BKMK_DeploymentProcess).
 
 ## <a name="next-steps"></a>Passaggi successivi
 [Monitorare gli aggiornamenti software](monitor-software-updates.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 
