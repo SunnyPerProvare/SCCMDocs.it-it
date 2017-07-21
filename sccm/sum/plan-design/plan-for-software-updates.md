@@ -1,12 +1,12 @@
 ---
 
 title: Pianificare gli aggiornamenti del software | Microsoft Docs
-description: "Una pianificazione per l&quot;infrastruttura del punto di aggiornamento software è essenziale prima di usare gli aggiornamenti software in un ambiente di produzione di System Center Configuration Manager."
+description: "Una pianificazione per l'infrastruttura del punto di aggiornamento software è essenziale prima di usare gli aggiornamenti software in un ambiente di produzione di System Center Configuration Manager."
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 03/28/2017
+ms.date: 06/27/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
@@ -14,10 +14,10 @@ ms.technology:
 - configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
-ms.openlocfilehash: 703adc87b9498e39a1db71b94f1bc1a05a4889ec
+ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
+ms.openlocfilehash: b5a2fd9f15992c9e5ef8aede64af5446b6852b1a
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/28/2017
 
 
 ---
@@ -294,6 +294,9 @@ Gli aggiornamenti software richiedono che su tutti i server del sistema del sito
 
 -   Se l'aggiornamento software che sostituisce non è stato approvato per la distribuzione nell'ambiente di produzione.  
 
+    > [!NOTE]  
+    >  Quando Configuration Manager imposta un aggiornamento software sostituito su **scaduto**, non imposta l'aggiornamento su **scaduto** in WSUS. Quando tuttavia viene eseguita l'attività di pulizia di WSUS, gli aggiornamenti impostati come **scaduti** in Configuration Manager vengono impostati come **rifiutati** nel server WSUS e l'agente di Windows Update nei computer non analizzerà più questi aggiornamenti. I client continueranno quindi ad eseguire l'analisi per un aggiornamento scaduto fino all'esecuzione dell'attività di pulizia. Per informazioni sull'attività di pulizia di WSUS, vedere [Manutenzione degli aggiornamenti software](/sccm/sum/deploy-use/software-updates-maintenance).
+    
 ###  <a name="BKMK_UpdateLanguages"></a> Lingue  
  Le impostazioni della lingua per il punto di aggiornamento software consentono di configurare le lingue per cui sono sincronizzati i dettagli di riepilogo (metadati degli aggiornamenti software) per gli aggiornamenti software e le lingue dei file di aggiornamento software che saranno scaricate per gli aggiornamenti software.  
 

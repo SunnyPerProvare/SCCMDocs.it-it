@@ -15,11 +15,11 @@ caps.latest.revision: 18
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-experimental: true
-experiment_id: rob-table-161101
-translationtype: Human Translation
-ms.sourcegitcommit: 5aef08865b232ff2dacec6906098bebf4e42e6b1
-ms.openlocfilehash: 699adb5fac0c625c321db011af6989cc4c0778ec
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
+ms.openlocfilehash: 959a36413d06bb225f260bd44c1d3d59efd44e69
+ms.contentlocale: it-it
+ms.lasthandoff: 06/28/2017
 
 
 ---
@@ -37,11 +37,11 @@ Questo argomento fornisce una descrizione delle nozioni di base necessarie prima
 
  Quando l'applicazione viene distribuita ai dispositivi, i **requisiti** stabiliscono il tipo di distribuzione installato nel dispositivo.  
 
- Ovviamente, è possibile eseguire molte altre operazioni con un'applicazione, che verranno descritte nelle varie sezioni di questa guida. La tabella seguente introduce alcuni concetti che è necessario conoscere prima di avviare un'analisi più approfondita. Non tutti questi concetti saranno necessari durante la creazione di specifiche applicazioni:  
+ È possibile eseguire molte altre operazioni con un'applicazione. Altre informazioni su queste operazioni sono disponibili in questa guida. La tabella seguente introduce alcuni concetti che è necessario conoscere prima di avviare un'analisi più approfondita.  
 
 |Concetto|Descrizione|    
 |-|-|  
-|**Requirements**|Nelle versioni precedenti di Configuration Manager spesso veniva creata una raccolta che conteneva i dispositivi in cui distribuire un'applicazione. È ancora possibile usare questo metodo, tuttavia grazie all'uso dei requisiti non è più necessario perché consentono di specificare criteri più specifici in base ai quali installare un'applicazione.<br /><br /> Ad esempio, è possibile indicare che un'applicazione può essere installata soltanto nei dispositivi che eseguono Windows 10. Quindi, l'applicazione potrà essere distribuita in tutti i dispositivi, ma verrà installata solo nei dispositivi che eseguono Windows 10.<br /><br /> Configuration Manager valuta i requisiti per determinare se un'applicazione o uno dei tipi di distribuzione correlati verranno installati. Quindi, determina il tipo di distribuzione corretto usato per installare un'applicazione. Ogni sette giorni, per impostazione predefinita, le regole di requisiti vengono rivalutate per garantire la conformità in base all'impostazione client **Pianificare nuova valutazione per le distribuzioni**.<br /><br /> Per i dettagli, vedere [Create and deploy an application](../../apps/get-started/create-and-deploy-an-application.md) (Creare e distribuire un'applicazione).|  
+|**Requirements**|Nelle versioni precedenti di Configuration Manager spesso veniva creata una raccolta che conteneva i dispositivi in cui distribuire un'applicazione. Anche se è comunque possibile creare una raccolta, con i requisiti è possibile specificare criteri più dettagliati per la distribuzione di un'applicazione.<br /><br /> Ad esempio, è possibile indicare che un'applicazione può essere installata soltanto nei dispositivi che eseguono Windows 10. Quindi, l'applicazione potrà essere distribuita nei dispositivi, ma verrà installata solo nei dispositivi che eseguono Windows 10.<br /><br /> Configuration Manager valuta i requisiti per determinare se un'applicazione o uno dei tipi di distribuzione correlati verranno installati. Quindi, determina il tipo di distribuzione corretto usato per installare un'applicazione. Ogni sette giorni, per impostazione predefinita, le regole di requisiti vengono rivalutate per garantire la conformità in base all'impostazione client **Pianificare nuova valutazione per le distribuzioni**.<br /><br /> Per i dettagli, vedere [Create and deploy an application](../../apps/get-started/create-and-deploy-an-application.md) (Creare e distribuire un'applicazione).|  
 |**Condizioni globali**|I requisiti vengono usati con uno specifico tipo di distribuzione in una singola applicazione, ma è anche possibile creare delle condizioni globali, ossia una raccolta di requisiti predefiniti che è possibile usare con qualsiasi applicazione e tipo di distribuzione.<br /><br /> Configuration Manager contiene un set di condizioni globali predefinite e consente anche di creare set personalizzati.<br /><br /> Per i dettagli, vedere [Create global conditions](../../apps/deploy-use/create-global-conditions.md) (Creare condizioni globali).|  
 |**Distribuzione simulata**|Valuta i requisiti, il metodo di rilevamento e le dipendenze di un'applicazione. Fornisce i risultati senza installare l'applicazione.<br /><br /> Per i dettagli, vedere [Simulate application deployments](../../apps/deploy-use/simulate-application-deployments.md) (Simulare distribuzioni di applicazioni).|  
 |**Azione di distribuzione**|Specifica se installare o disinstallare (se l'operazione è supportata) l'applicazione che si sta distribuendo.<br /><br /> Per i dettagli, vedere [Deploy applications](../../apps/deploy-use/deploy-applications.md) (Distribuire applicazioni).|  
@@ -110,9 +110,4 @@ Quando poi si gestiscono dispositivi tramite la gestione di dispositivi locale d
 -   Script eseguiti in base a una pianificazione ricorrente e che non possono usare la valutazione globale.
 
  Per altre informazioni, vedere [Packages and programs](../../apps/deploy-use/packages-and-programs.md) (Pacchetti e programmi).  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

@@ -1,8 +1,8 @@
 ---
 title: Usare i supporti di avvio per distribuire Windows in rete | Microsoft Docs
-description: Le distribuzioni dei supporti di avvio in System Center Configuration Manager consentono di distribuire il sistema operativo all&quot;avvio del computer di destinazione.
+description: Le distribuzioni dei supporti di avvio in System Center Configuration Manager consentono di distribuire il sistema operativo all'avvio del computer di destinazione.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 6/16/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 999b5409-7e72-48d2-8554-4d44427ce383
 caps.latest.revision: 5
-author: Dougeby
-ms.author: dougeby
+author: mattbriggs
+ms.author: mattbriggs
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
-ms.openlocfilehash: beb730efbe4d9bae7c4c97f4e587c8919bd79049
+ms.translationtype: Human Translation
+ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
+ms.openlocfilehash: 9b20e5e2a66d92038033e816e6fc701581c48a7f
+ms.contentlocale: it-it
+ms.lasthandoff: 06/28/2017
 
 
 ---
@@ -25,35 +27,30 @@ ms.openlocfilehash: beb730efbe4d9bae7c4c97f4e587c8919bd79049
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le distribuzioni dei supporti di avvio in System Center Configuration Manager consentono di distribuire il sistema operativo all'avvio del computer di destinazione. All'avvio del computer di destinazione, viene recuperata la sequenza di attività, l'immagine del sistema operativo e qualsiasi altro contenuto richiesto dalla rete. Poiché tale contenuto non è incluso nel supporto, è possibile aggiornare il contenuto senza dover ricreare il supporto.  
+È possibile distribuire il sistema operativo all'avvio del computer di destinazione usando una distribuzione dei supporti di avvio. Il supporto contiene un puntatore alla sequenza di attività, all'immagine del sistema operativo e ad altri contenuti richiesti dalla rete. All'avvio del computer di destinazione, il computer recupera gli elementi a cui fa riferimento il puntatore del mouse. Con il supporto di avvio senza contenuto, è possibile aggiornare la destinazione senza sostituirlo nel supporto.
 
- È possibile distribuire i sistemi operativi in rete usando il multicast negli scenari di distribuzione del sistema operativo seguenti:  
+È possibile distribuire i sistemi operativi in rete usando il multicast negli scenari di distribuzione del sistema operativo seguenti:
 
--   [Aggiornare un computer esistente con una nuova versione di Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
+-   [Aggiornare un computer esistente con una nuova versione di Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)
 
 -   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
 
 -   [Sostituire un computer esistente e trasferire le impostazioni](replace-an-existing-computer-and-transfer-settings.md)  
 
- Completare i passaggi in uno degli scenari di distribuzione del sistema operativo e quindi fare riferimento alle sezioni seguenti per usare i supporti di avvio per distribuire il sistema operativo.  
+Completare i passaggi in uno degli scenari di distribuzione del sistema operativo e quindi fare riferimento alle sezioni seguenti per usare i supporti di avvio per distribuire il sistema operativo.  
 
 ## <a name="configure-deployment-settings"></a>Configurare le impostazioni di distribuzione  
- Quando si usa un supporto di avvio per avviare il processo di distribuzione del sistema operativo, è necessario configurare la distribuzione per rendere disponibile il sistema operativo per il supporto. È possibile eseguire questa configurazione nella pagina **Impostazioni di distribuzione** della Distribuzione guidata del software o nella scheda **Impostazioni di distribuzione** nelle proprietà della distribuzione.  Per l'impostazione **Rendi disponibile per** , configurare uno degli elementi seguenti:  
+Quando si usa un supporto di avvio per avviare il processo di distribuzione del sistema operativo, configurare la distribuzione per rendere disponibile il sistema operativo per il supporto. È possibile impostare questa opzione nella pagina **Impostazioni di distribuzione** della Distribuzione guidata del software o nella scheda **Impostazioni di distribuzione** nelle proprietà della distribuzione. Per l'impostazione **Rendi disponibile per** , configurare uno degli elementi seguenti:
 
--   **Client di Configuration Manager, supporti e PXE**  
+-   Client di Configuration Manager, supporti e PXE
 
--   **Solo supporti e PXE**  
+-   Solo supporti e PXE
 
--   **Solo supporti e PXE (nascosto)**  
+-   Solo supporti e PXE (nascosto)
 
-## <a name="create-the-bootable-media"></a>Creare il supporto di avvio  
- È possibile specificare se il supporto di avvio è un'unità flash USB o un set di CD/DVD. Il computer in cui verrà avviato il supporto deve supportare l'opzione scelta come unità di avvio. Per altre informazioni, vedere [Creare supporti di avvio](create-bootable-media.md).  
+## <a name="create-the-bootable-media"></a>Creare il supporto di avvio
+È possibile specificare se il supporto di avvio è un'unità flash USB o un set di CD/DVD. Il computer in cui vengono avviati i supporti deve consentire l'opzione scelta come unità di avvio. Per altre informazioni, vedere [Creare supporti di avvio](create-bootable-media.md).  
 
-##  <a name="a-namebkmkdeploya-install-the-operating-system-from--bootable-media"></a><a name="BKMK_Deploy"></a> Installare il sistema operativo da supporti di avvio  
- Inserire il supporto di avvio in un'unità di avvio del computer e quindi accendere il sistema per installare il sistema operativo.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
+##  <a name="BKMK_Deploy"></a> Installare il sistema operativo da supporti di avvio  
+Inserire il supporto di avvio in un'unità di avvio del computer e quindi accendere il sistema per installare il sistema operativo.
 

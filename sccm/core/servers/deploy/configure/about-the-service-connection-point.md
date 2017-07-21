@@ -2,7 +2,7 @@
 title: Punto di connessione del servizio | Documentazione Microsoft
 description: Informazioni sul ruolo di sistema del sito di Configuration Manager e pianificazione della gamma di usi.
 ms.custom: na
-ms.date: 3/30/2017
+ms.date: 6/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 6accec2d356861b273b25ba2b6338d9684a46ff6
-ms.openlocfilehash: ad6df047beff670411d203220576b87f7d56d50c
+ms.sourcegitcommit: 0ec241d07f51b80b84d65676ef1207b31a9a9983
+ms.openlocfilehash: e3d41dc1bb732e887d722f39ee86deaf0aae3240
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/28/2017
 
 
 ---
@@ -91,6 +91,8 @@ Per abilitare l'operazione, il computer che ospita il punto di connessione del s
 **Aggiornamenti e manutenzione**  
 
 -   *.akamaiedge.net  
+
+-   *.akamaitechnologies.com 
 
 -   *.manage.microsoft.com
 

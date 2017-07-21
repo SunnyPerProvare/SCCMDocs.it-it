@@ -2,7 +2,7 @@
 title: "Funzionalità deprecate | Documentazione Microsoft"
 description: "Informazioni su funzionalità, prodotti e sistemi operativi che System Center Configuration Manager non supporta più."
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 06/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 57b9ab13bda0bb5fa5139e52a4c55ef9524e4097
+ms.sourcegitcommit: 0ec241d07f51b80b84d65676ef1207b31a9a9983
+ms.openlocfilehash: e23acf743d8f73afd213c44c3728d1b66d7e558f
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/28/2017
 
 
 ---
@@ -59,7 +59,7 @@ Per altre informazioni, vedere:
 
 -   Nota 1: questo sistema operativo non è supportato per i server del sito o ruoli del sistema del sito fatta eccezione per il punto di distribuzione e il punto di distribuzione pull. È possibile continuare a usare questo sistema operativo come punto di distribuzione fino all'annuncio della deprecazione di questo supporto o alla scadenza del periodo di supporto "Extended" di questo sistema operativo. Per altre informazioni, vedere l'argomento relativo ai [problemi di installazione di System Center Configuration Manager CB in Windows Server 2008](https://support.microsoft.com/help/4015095).
 
--   Nota 2: a partire dalla versione 1702, questo sistema operativo non è supportato per i server del sito o per la maggior parte dei ruoli del sistema del sito, ma continua a essere supportato dalle versioni precedenti la 1702. Questo sistema operativo resta comunque supportato per il punto migrazione stato e per il ruolo del sistema del sito del punto di distribuzione (compresi il punto di distribuzione pull, PXE e il multicast) fino all'annuncio della deprecazione del supporto o alla scadenza del periodo di supporto "Extended" del sistema operativo. A partire dalla versione 1602, è possibile aggiornare sul posto il sistema operativo di un server del sito da Windows Server 2008 R2 a Windows Server 2012 R2.  
+-   Nota 2: a partire dalla versione 1702, questo sistema operativo non è supportato per i server del sito o per la maggior parte dei ruoli del sistema del sito, ma continua a essere supportato dalle versioni precedenti la 1702. Questo sistema operativo resta comunque supportato per il ruolo del sistema del sito del punto di distribuzione (compresi i punti di distribuzione pull, PXE e il multicast) fino all'annuncio della deprecazione del supporto o alla scadenza del periodo di supporto "Extended" del sistema operativo. A partire dalla versione 1602, è possibile aggiornare sul posto il sistema operativo di un server del sito da Windows Server 2008 R2 a Windows Server 2012 R2.  
 
      Per altre informazioni sull'aggiornamento sul posto del sistema operativo dei server di un sito, vedere la sezione [Aggiornamento sul posto del sistema operativo dei server del sito che eseguono Windows Server 2008 R2](../../../core/plan-design/changes/whats-new-in-version-1602.md#bkmk_UpgradeOS) in [Novità di System Center Configuration Manager](../../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md).
 
@@ -103,7 +103,7 @@ Se è necessario aggiornare la versione di SQL Server, è consigliabile eseguire
 |Gestione fuori banda in System Center 2012 Configuration Manager|16 ottobre 2015|Versione 1511|
 |Sequenze attività: <br /> - OSDPreserveDriveLetter  <br /><br /> Durante la distribuzione del sistema operativo, per impostazione predefinita l'installazione di Windows ora stabilisce qual è la lettera di unità migliore da usare (in genere C:). Se si vuole specificare un'unità diversa da usare, è possibile modificare il percorso nella sequenza di passaggi dell'attività Applica sistema operativo. Passare all'impostazione **Selezionare il percorso in cui applicare questo sistema operativo**, selezionare **Lettera unità logica specifica** e scegliere l'unità che si vuole usare. |20 giugno 2016 |Versione 1606 |
 |Sequenze attività: <br /> - Converti il disco selezionato in disco dinamico <br /> - Installa strumenti di distribuzione |18 novembre 2016|Il supporto di queste sequenze di attività termina con il primo aggiornamento rilasciato dopo il 01/06/2017.|
-|Software Center ha un aspetto nuovo e moderno. Le app che venivano visualizzate solo nel Catalogo applicazioni dipendente da Silverlight (app disponibili per gli utenti) vengono ora visualizzate in Software Center nella scheda **Applicazioni**. È ancora possibile accedere al Catalogo applicazioni con il collegamento disponibile nella scheda **Stato dell'installazione** di Software Center.<br><br>Nei prossimi mesi la versione precedente di Software Center non sarà più disponibile.<br><br>È possibile configurare i client per l'uso del nuovo Software Center abilitando l'impostazione client **Agente computer** > **Usa il nuovo Software Center**.<br><br>Per altre informazioni su Software Center, vedere [Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/plan-design/plan-for-and-configure-application-management).|13 dicembre 2016|In attesa di essere annunciato|
+|Software Center ha un aspetto nuovo e moderno. Le app che venivano visualizzate solo nel Catalogo applicazioni dipendente da Silverlight (app disponibili per gli utenti) vengono ora visualizzate in Software Center nella scheda **Applicazioni**. È ancora possibile accedere al Catalogo applicazioni con il collegamento disponibile nella scheda **Stato dell'installazione** di Software Center.<br><br>Nei prossimi mesi la versione precedente di Software Center non sarà più disponibile.<br><br>È possibile configurare i client per l'uso del nuovo Software Center abilitando l'impostazione client **Agente computer** > **Usa il nuovo Software Center**.<br><br>Per altre informazioni su Software Center, vedere [Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/plan-design/plan-for-and-configure-application-management).|13 dicembre 2016|Il supporto per la versione precedente di Software Center termina con il primo aggiornamento rilasciato dopo il 1° gennaio 2018.|
 |Gestione dei dischi rigidi virtuali in Configuration Manager. </br></br>Ciò include la rimozione delle opzioni per creare un nuovo disco rigido virtuale o per gestire un disco rigido virtuale con una sequenza di attività e la rimozione del nodo Dischi rigidi virtuali dalla console di Configuration Manager. </br></br>Dopo la rimozione di questo supporto, i dischi rigidi virtuali esistenti non verranno eliminati, ma non saranno più accessibili dalla console di Configuration Manager.  |6 gennaio 2017 |Il supporto per dischi rigidi virtuali termina con il primo aggiornamento rilasciato dopo il 01/06/2017.|
 |Strumento di valutazione dell'aggiornamento di System Center Configuration Manager. </br></br>Lo strumento di valutazione dell'aggiornamento dipende da System Center Configuration Manager e da Application Compatibility Toolkit (ACT) 6.x. La versione finale di ACT è stata fornita in Windows 10 v1511 ADK. Dal momento che non saranno pubblicati altri aggiornamenti di ACT, il supporto per lo strumento di valutazione dell'aggiornamento verrà sospeso. </br></br>Lo strumento di valutazione dell'aggiornamento verrà sostituito dalla funzionalità [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics). L'avviso relativo alla deprecazione è stato aggiunto alla [pagina di download per UAT](https://www.microsoft.com/download/details.aspx?id=37145) in data 9/12/2016. |9/12/2016  | 11 luglio 2017 |  
 

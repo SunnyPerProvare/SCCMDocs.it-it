@@ -2,7 +2,7 @@
 title: Server di sistema del sito supportati | Microsoft Docs
 description: "Informazioni sulle versioni di Windows che è possibile usare per ospitare un sito di System Center Configuration Manager o un ruolo del sistema del sito."
 ms.custom: na
-ms.date: 3/9/2017
+ms.date: 06/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 86109f7186422c2b29ee933e827a7d14123e5792
+ms.sourcegitcommit: 0ec241d07f51b80b84d65676ef1207b31a9a9983
+ms.openlocfilehash: be635e4df79b57b6f650287fa3774d2c10613cee
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/28/2017
 
 
 ---
@@ -184,8 +184,8 @@ A partire dalla versione 1606 con l'hotfix rollup di KB3186654 (o dalla versione
 ## <a name="windows-server-2008-r2-with-sp1-x64-standard-enterprise-and-datacenter"></a>Windows Server 2008 R2 con SP1 (x64) - Standard, Enterprise e Datacenter  
  Windows Server 2008 R2 è ora in modalità di supporto Extended e non più in modalità di supporto Mainstream, come descritto in [Criteri relativi al ciclo di vita Microsoft](https://support.microsoft.com/lifecycle). Per altre informazioni sul supporto disponibile in futuro per questi sistemi operativi come server di sistema del sito con Configuration Manager, vedere [Funzionalità rimosse e deprecate per System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
 
- A partire da Configuration Manager versione 1702, questo sistema operativo non è supportato per i server del sito o per la maggior parte dei ruoli del sistema del sito, ma è ancora supportato per il punto migrazione stato e per il ruolo del sistema del sito del punto di distribuzione (compresi il punto di distribuzione pull, PXE e il multicast).
- 
+ A partire da Configuration Manager versione 1702, questo sistema operativo non è supportato per i server del sito o per la maggior parte dei ruoli del sistema del sito, ma è ancora supportato per il ruolo del sistema del sito del punto di distribuzione, compresi il punto di distribuzione pull, PXE e il multicast.
+
  Continua inoltre a essere supportato dalle versioni precedenti la 1702 per i seguenti tipi di server.
 
 

@@ -1,6 +1,6 @@
 ---
 title: Aggiornamenti | Microsoft Docs
-description: Informazioni su un metodo di manutenzione nella console denominato **Aggiornamenti e manutenzione** che semplifica l&quot;individuazione e l&quot;installazione degli aggiornamenti consigliati.
+description: Informazioni su un metodo di manutenzione nella console denominato **Aggiornamenti e manutenzione** che semplifica l'individuazione e l'installazione di aggiornamenti consigliati.
 ms.custom: na
 ms.date: 05/02/2017
 ms.prod: configuration-manager
@@ -17,10 +17,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
-ms.openlocfilehash: a33960fb89b71c0f8128e21a5054f5b63cfc6b17
+ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
+ms.openlocfilehash: 4bc076bba4672d0be0032ec785da20e60b11a6c4
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/28/2017
 
 
 ---
@@ -30,7 +30,7 @@ ms.lasthandoff: 05/17/2017
 
 System Center Configuration Manager usa un metodo di manutenzione nella console denominato **Aggiornamenti e manutenzione** che semplifica l'individuazione e l'installazione degli aggiornamenti consigliati per l'infrastruttura di Configuration Manager. Questo metodo di manutenzione nella console è integrato dagli aggiornamenti fuori programma, ad esempio hotfix per i clienti che devono risolvere problemi che potrebbero essere specifici dell'ambiente in uso.  
 
-> [!TIP]
+> [!TIP]  
 > Quando si gestisce l'infrastruttura del sito e della gerarchia di System Center Configuration Manager, i termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti distinti. Per informazioni su come viene usato ogni termine, vedere [Informazioni su upgrade, aggiornamento e installazione](/sccm/core/understand/upgrade-update-install).
 
 
@@ -85,7 +85,7 @@ Le versioni seguenti di Configuration Manager sono disponibili come versione di 
 | 1511 <br /><br /> 5.00.8325.1000|08/12/2015| 12/8/2016|Sì|No|  
 
 
-*(Nota 1)* Il supporto di base 1606 è disponibile all'interno di Microsoft System Center 2016 o in System Center Configuration Manager Current Branch e Long-Term Servicing Branch 1606.
+*(Nota 1)* Il supporto di base 1606 e 1702 è disponibile all'interno di Microsoft System Center 2016 o in System Center Configuration Manager (Current Branch e Long-Term Servicing Branch) in [Volume License Service Center](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (VLSC). Ad esempio, in VLSC è possibile cercare *System Center Config Mgr (Current Branch e LTSB)*; entrambi i supporti di base delle versioni 1606 e 1702 vengono restituiti e sono disponibili per il download.
 
 Per controllare la versione del sito di Configuration Manager, nella console passare a **Informazioni su System Center Configuration Manager** nell'angolo in alto a sinistra, dove è visualizzata la nuova versione del sito e della console.  
 

@@ -17,10 +17,10 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 071d758f1015d16217a54fe26df5f8f948c818a3
+ms.sourcegitcommit: 6f9e6e93fce95666503907010a5c253158c5de7c
+ms.openlocfilehash: f648d7626af50d95fbaa5a7a2abd821a9c47f5d1
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/07/2017
 
 
 ---
@@ -414,7 +414,7 @@ Questo passaggio della sequenza di attività può essere eseguito solo in Window
 
  Per altre informazioni sulla gestione dello stato utente durante la distribuzione di sistemi operativi, vedere [Manage user state](../get-started/manage-user-state.md) (Gestire lo stato utente).  
 
- È anche possibile usare il passaggio **Acquisisci stato utente** della sequenza di attività insieme ai passaggi **Richiedi archiviazione stati**e**Rilascia archiviazione stati** se si vogliono salvare le impostazioni dello stato o ripristinare tali impostazioni da un punto di migrazione stato nel sito di Configuration Manager.  
+ È anche possibile usare il passaggio **Acquisisci stato utente** della sequenza di attività insieme ai passaggi **Richiedi archiviazione stati **e** Rilascia archiviazione stati** se si vogliono salvare le impostazioni dello stato o ripristinare tali impostazioni da un punto di migrazione stato nel sito di Configuration Manager.  
 
  Il passaggio **Acquisisci stato utente** della sequenza di attività fornisce il controllo su un sottoinsieme limitato delle opzioni USMT più usate. È possibile specificare opzioni aggiuntive da riga di comando usando la variabile OSDMigrateAdditionalCaptureOptions della sequenza di attività.  
 
@@ -629,6 +629,9 @@ Questo passaggio della sequenza di attività può essere eseguito solo in Window
 
 -   Per scaricare in modo dinamico un pacchetto di driver applicabile, usare due passaggi **Scarica contenuto pacchetto** con le condizioni per rilevare il tipo di hardware appropriato per ogni pacchetto driver. Configurare ogni passaggio **Scarica contenuto pacchetto** in modo da usare la stessa variabile e usare la variabile per il valore **Contenuto preconfigurato** durante il passaggio **Aggiorna sistema operativo** .  
 
+> [!NOTE]    
+> Quando si distribuisce una sequenza di attività che contiene il passaggio Scarica contenuto pacchetto, non selezionare **Scaricare tutto il contenuto localmente prima di avviare la sequenza attività** per **Opzioni di distribuzione** nella pagina **Punti di distribuzione** della Distribuzione guidata del software.  
+
 Questo passaggio viene eseguito in un sistema operativo standard o in Windows PE. Tuttavia, l'opzione relativa al salvataggio del pacchetto nella cache del client di Configuration Manager non è supportata in WinPE.
 
 ### <a name="details"></a>Dettagli  
@@ -654,11 +657,11 @@ Questo passaggio viene eseguito in un sistema operativo standard o in Windows PE
  **Inserire nel seguente percorso**  
  Scegliere di salvare il pacchetto in uno dei seguenti percorsi:  
 
--   **Directory di lavoro della sequenza di attività**  
+ -   **Directory di lavoro della sequenza di attività**  
 
--   **Cache del client di Configuration Manager**: usare questa opzione per archiviare il contenuto nella cache del client. Ciò consente al client di fungere da origine della cache peer per gli altri client della cache peer. Per altre informazioni, vedere [Prepare Windows PE peer cache to reduce WAN traffic](../get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md) (Preparare la peer cache di Windows PE per ridurre il traffico della rete WAN)  
+ -   **Cache del client di Configuration Manager**: usare questa opzione per archiviare il contenuto nella cache del client. Ciò consente al client di fungere da origine della cache peer per gli altri client della cache peer. Per altre informazioni, vedere [Prepare Windows PE peer cache to reduce WAN traffic](../get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md) (Preparare la peer cache di Windows PE per ridurre il traffico della rete WAN)  
 
--   **Percorso personalizzato**  
+ -   **Percorso personalizzato**  
 
  **Salvare il percorso come variabile**  
  È possibile salvare il percorso come variabile utilizzabile in un altro passaggio della sequenza di attività. Configuration Manager aggiunge un suffisso numerico al nome della variabile. Se ad esempio si specifica una variabile %*mycontent*% come variabile personalizzata, questa è la radice in cui viene archiviato tutto il contenuto di riferimento, che può essere costituito da più pacchetti. Quando si fa riferimento alla variabile, a quest'ultima viene aggiunto un suffisso numerico. Per il primo pacchetto, ad esempio, verrà fatto riferimento alla variabile %*mycontent01*%. Quando si fa riferimento alla variabile in un passaggio successivo, ad esempio in Aggiorna sistema operativo, viene usato %*mycontent02*% o %*mycontent03*%, dove il numero corrisponde all'ordine in cui il pacchetto è elencato nel passaggio.  
@@ -1280,7 +1283,7 @@ Prima di Configuration Manager versione 1610 questo passaggio eseguiva le attivi
 
  Per altre informazioni sulla gestione dello stato utente durante la distribuzione di sistemi operativi, vedere [Manage user state](../get-started/manage-user-state.md) (Gestire lo stato utente).  
 
- È anche possibile usare il passaggio **Ripristina stato utente** della sequenza di attività insieme ai passaggi **Richiedi archiviazione stati**e**Rilascia archiviazione stati** se si vogliono salvare le impostazioni dello stato o ripristinare tali impostazioni da un punto di migrazione stato nel sito di Configuration Manager. In USMT 3.0 e versioni successive questa opzione decrittografa sempre l'archiviazione stati USMT usando una chiave di crittografia generata e gestita da Configuration Manager.  
+ È anche possibile usare il passaggio **Ripristina stato utente** della sequenza di attività insieme ai passaggi **Richiedi archiviazione stati **e** Rilascia archiviazione stati** se si vogliono salvare le impostazioni dello stato o ripristinare tali impostazioni da un punto di migrazione stato nel sito di Configuration Manager. In USMT 3.0 e versioni successive questa opzione decrittografa sempre l'archiviazione stati USMT usando una chiave di crittografia generata e gestita da Configuration Manager.  
 
  Il passaggio **Ripristina stato utente** della sequenza di attività fornisce il controllo su un sottoinsieme limitato delle opzioni USMT più usate. È possibile specificare opzioni aggiuntive da riga di comando usando la variabile OSDMigrateAdditionalRestoreOptions della sequenza di attività.  
 

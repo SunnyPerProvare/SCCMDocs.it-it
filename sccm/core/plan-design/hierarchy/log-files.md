@@ -2,7 +2,7 @@
 title: File di log per Configuration Manager | Microsoft Docs
 description: Usare i file di log per la risoluzione dei problemi in una gerarchia di System Center Configuration Manager.
 ms.custom: na
-ms.date: 3/28/2017
+ms.date: 7/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,10 +17,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: b991b4ea27e66c233b04f8e65a412404521d89a6
+ms.sourcegitcommit: 5e1bc0063ab3d34410f7dbc773a5eacdd5eb6d2f
+ms.openlocfilehash: 28597cf1cb269fff0872c7f79ef961496aea32ab
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/05/2017
 
 
 ---
@@ -272,7 +272,7 @@ Il client di Configuration Manager per computer Mac registra le informazioni nei
 |CCMNotifications-&lt;*data_ora*>.log|Registra le attività correlate alle notifiche di Configuration Manager visualizzate nel computer Mac.<br /><br /> Questo file di log è disponibile nella cartella ~/Library/Logs sul computer Mac.|  
 |CCMPrefPane-&lt;*data_ora*>.log|Registra le attività correlate alla finestra di dialogo per le preferenze di Configuration Manager nel computer Mac, che include lo stato generale e la registrazione degli errori.<br /><br /> Questo file di log è disponibile nella cartella ~/Library/Logs sul computer Mac.|  
 
-Il file SMS_DM.log nel server di sistema del sito registra inoltre le comunicazioni tra computer Mac e il punto di gestione impostato per dispositivi mobili e computer Mac.  
+Il file SMS_DM.log nel server di sistema del sito registra anche le comunicazioni tra i computer Mac e il punto di gestione impostato per i dispositivi mobili e i computer Mac.  
 
 ##  <a name="BKMK_ServerLogs"></a> File di log del server del sito di Configuration Manager  
  Nelle sezioni seguenti sono elencati i file di log disponibili nel server del sito o correlati a specifici ruoli del sistema del sito.  
@@ -507,7 +507,7 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 ||||
 |-|-|-|
 |Nome registro|Descrizione|Computer con file di log|
-|CloudMgr.log|Registra informazioni dettagliate sulla distribuzione del servizio gateway di gestione cloud, lo stato del servizio in corso e i dati d'uso associati al servizio.<br>È possibile configurare il livello di registrazione modificando il Registro di sistema **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\COMPONENTS\SMS_CLOUD_SERVICES_MANAGER\Logging level**|Cartella **SMS/Logs** nel server del sistema del sito|
+|CloudMgr.log|Registra informazioni dettagliate sulla distribuzione del servizio gateway di gestione cloud, lo stato del servizio in corso e i dati d'uso associati al servizio.<br>È possibile configurare il livello di registrazione modificando il Registro di sistema **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\COMPONENTS\SMS_CLOUD_SERVICES_MANAGER\Logging level**|La cartella *installdir* del server del sito primario o di CAS.|
 |CMGSetup.log o CMG-*RoleInstanceID*-CMGSetup.log<sup>1</sup>|Registra informazioni dettagliate sulla fase 2 della distribuzione del gateway di gestione cloud (distribuzione locale in Azure)<br>È possibile configurare il livello di registrazione usando l'impostazione **Livello di traccia** (**Informazioni** per impostazione predefinita, **Dettagliato**, **Errore**) nella scheda di **configurazione di Servizi cloud nel portale di Azure**.|Cartella **%approot%\logs** sul server di Azure o cartella SMS/Logs nel server del sistema del sito|
 |CMGHttpHandler.log o CMG-*RoleInstanceID*- CMGHttpHandler.log<sup>1</sup>|Registra informazioni dettagliate sul binding del gestore HTTP del gateway di gestione cloud con Internet Information Services in Azure<br>È possibile configurare il livello di registrazione usando l'impostazione **Livello di traccia** (**Informazioni** per impostazione predefinita, **Dettagliato**, **Errore**) nella scheda di **configurazione di Servizi cloud nel portale di Azure**.|Cartella **%approot%\logs** sul server di Azure o cartella SMS/Logs nel server del sistema del sito|
 |CMGService.log o CMG-*RoleInstanceID*- CMGService.log<sup>1</sup>|Registra informazioni dettagliate sul componente di base del servizio gateway di gestione cloud in Azure<br>È possibile configurare il livello di registrazione usando l'impostazione **Livello di traccia** (**Informazioni** per impostazione predefinita, **Dettagliato**, **Errore**) nella scheda di **configurazione di Servizi cloud nel portale di Azure**.|Cartella **%approot%\logs** sul server di Azure o cartella SMS/Logs nel server del sistema del sito|
