@@ -16,10 +16,10 @@ author: nathbarn
 ms.author: nathbarn
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: e6833951db27b227a3ca22925e9d9f4c3fc443fc
-ms.openlocfilehash: e8606b8a9268a0a0668b75070cf35894f4794123
+ms.sourcegitcommit: 5eed004bd38a567dfdd4e392300be656a7abe3f7
+ms.openlocfilehash: c692fad43807e54cecbd7ab60284ea740d60617d
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 05/25/2017
 
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare dispositivi con i numeri di serie IMEI o iOS
@@ -62,9 +62,9 @@ Se si caricano numeri di serie di dispositivi iOS di proprietà dell'azienda, è
 
 ## <a name="format-for-uploading-csv-files"></a>Formato per il caricamento di file con estensione csv
 
-Il file con estensione csv da usare per identificare i dispositivi in base al codice IMEI o al numero di serie deve essere nel formato seguente, esclusa la riga superiore che viene indicata unicamente a scopo informativo. Ogni riga deve contenere un numero ID, ovvero un numero IMEI o numero di serie iOS. È possibile includere entrambi. I numeri IMEI possono essere usati per dispositivi Android, iOS e Windows. Sono supportati anche i numeri di serie iOS.  Questa tabella contiene dati di esempio:
+Il file con estensione csv da usare per identificare i dispositivi in base al codice IMEI o al numero di serie iOS deve essere nel formato seguente, esclusa la riga superiore che viene indicata unicamente a scopo informativo. Ogni riga deve contenere un numero ID, ovvero un numero IMEI o un numero di serie iOS. Per i dispositivi iOS è possibile includere entrambi i valori. I numeri IMEI possono essere usati per dispositivi Android, iOS e Windows. Questa tabella contiene dati di esempio:
 
-| IMEI #  | Numero di serie iOS #  | OS | Dettagli |
+| Numero IMEI  | Numero di serie iOS  | OS | Dettagli |
 |------------ |---------------|-----|-----|
 | 123456789012345    |   | WINDOWS | Dispositivo Windows di proprietà dell'azienda|
 |   | A1B2C3D4E5C6 | IOS |     Dispositivo iOS di proprietà dell'azienda|

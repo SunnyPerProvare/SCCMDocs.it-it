@@ -2,7 +2,7 @@
 title: "Funzionalità di versioni non definitive| Microsoft Docs"
 description: "Funzionalità di versioni non definitive in System Center Configuration Manager"
 ms.custom: na
-ms.date: 4/24/2017
+ms.date: 6/13/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,32 +16,32 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
-ms.openlocfilehash: b12fcb3c372c34ee47306a9b536c3d0c4764b8be
+ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
+ms.openlocfilehash: 988f8da0b221f8c0b470e7a0a8ed995356193f98
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/13/2017
 
 
 ---
 # <a name="pre-release-features-in-system-center-configuration-manager"></a>Funzionalità di versioni non definitive in System Center Configuration Manager
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le funzionalità di versioni non definitive sono incluse nel Current Branch a scopo di test preliminare in un ambiente di produzione. Queste funzionalità sono completamente supportate ma sono ancora in fase di sviluppo e, fino a quando non vengono spostate nella categoria Versioni non definitive, possono essere soggette a modifiche.
+Le funzionalità di versioni non definitive sono incluse nel Current Branch a scopo di test preliminare in un ambiente di produzione. Queste funzionalità sono completamente supportate ma sono ancora in fase di sviluppo e, fino a quando non vengono spostate dalla categoria Versioni non definitive, possono essere soggette a modifiche.
 
  Prima di poter usare le funzionalità di versioni non definitive è necessario dare il consenso all'uso delle funzionalità di versioni non definitive nella console di Configuration Manager per poterle selezionare e abilitarne l'uso.  
 
-L'azione con cui si dà il consenso viene eseguita una sola volta per ogni gerarchia e non può essere annullata. Finché non viene dato il consenso, non è possibile abilitare le nuove funzionalità di versioni non definitive incluse negli aggiornamenti.
+L'azione con cui si dà il consenso viene eseguita una sola volta per ogni gerarchia e non può essere annullata. Finché non viene dato il consenso, non è possibile abilitare le nuove funzionalità di versioni non definitive incluse negli aggiornamenti. Dopo l'attivazione di una funzione non definitiva, non è possibile procedere alla relativa disattivazione.
 
 Per dare il consenso, nella console passare ad **Amministrazione** > **Configurazione del sito** > **Siti** e quindi scegliere **Impostazioni gerarchia**. Nella scheda **Generale** scegliere **Consenso a usare funzionalità di versioni non definitive**.
 
  > [!NOTE]
- > Se sono state abilitate nell'aggiornamento 1602 prima dell'installazione dell'aggiornamento successivo, le funzionalità di versioni non definitive rimangono abilitate anche se non viene dato il consenso all'uso.
+ > Se sono state abilitate dall'aggiornamento 1602 prima dell'installazione dell'aggiornamento successivo, le funzionalità di versioni non definitive rimangono abilitate, anche se non viene dato il consenso all'uso.
 
 Durante l'installazione di un aggiornamento che include funzionalità di versioni non definitive, tali funzionalità sono visibili nella procedura guidata Aggiornamenti e manutenzione insieme alle normali funzionalità incluse nell'aggiornamento:
   - **Se è stato dato il consenso:** è possibile abilitare le funzionalità di versioni non definitive dall'interno della procedura guidata degli aggiornamenti e della manutenzione durante l'installazione dell'aggiornamento. A tale scopo, selezionare le funzionalità di versioni non definitive allo stesso modo in cui si selezionano le altre funzionalità.     
 
     Facoltativamente, è possibile abilitare una funzionalità di versione non definitiva in un secondo momento dal nodo della console **Amministrazione** > **Aggiornamenti e manutenzione** > **Funzionalità**. Nel nodo **Funzionalità** scegliere la voce desiderata e quindi **Attiva**. Questa opzione è disattivata finché non si dà il consenso. Nelle versioni precedenti la 1702, Aggiornamenti e manutenzione si trova in **Amministrazione** > **Servizi cloud**.
-  -   **Se non è stato dato il consenso:** durante l'installazione di un aggiornamento, le funzionalità di versioni non definitive sono visibili nella procedura guidata Aggiornamenti e manutenzione, ma appaiono disattivate e non possono essere abilitate. Dopo l'installazione dell'aggiornamento, le funzionalità sono visibili nel nodo **Funzionalità**, ma è possibile abilitarle solo dopo aver dato il consenso in **Impostazioni gerarchia**.
+  -   **Se non è stato dato il consenso:** durante l'installazione di un aggiornamento, le funzionalità di versioni non definitive sono visibili nella procedura guidata Aggiornamenti e manutenzione, ma appaiono disattivate e non possono essere abilitate. Dopo l'installazione dell'aggiornamento è possibile visualizzare queste funzionalità nel nodo **Funzionalità**. Tuttavia non è possibile abilitarle finché non viene dato il consenso in **Impostazioni gerarchia**.
 
 Se dopo aver dato il consenso a un sito primario autonomo si espande la gerarchia installando un nuovo sito di amministrazione centrale, è necessario dare di nuovo il consenso al sito di amministrazione centrale.
 

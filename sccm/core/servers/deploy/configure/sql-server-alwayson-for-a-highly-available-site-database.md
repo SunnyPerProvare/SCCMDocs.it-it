@@ -1,7 +1,8 @@
 ---
-title: SQL Server AlwaysOn | Microsoft Docs
+title: Always On di SQL Server | Microsoft Docs
+description: "Pianificare l&quot;uso di un gruppo di disponibilità Always On di SQL Server con SCCM."
 ms.custom: na
-ms.date: 1/4/2017
+ms.date: 5/26/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,262 +16,242 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: aaaab003ddd22f18160d4be63cfeab3a7e7f6b03
+ms.sourcegitcommit: dc221ddf547c43ab1f25ff83c3c9bb603297ece6
+ms.openlocfilehash: 188ae877368a6cb2ec9998bff74259b4e5b5e7ce
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/01/2017
 
 
 ---
-# <a name="sql-server-alwayson-for-a-highly-available-site-database-for-system-center-configuration-manager"></a>SQL Server AlwaysOn per database del sito a disponibilità elevata per System Center Configuration Manager
+# <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparare l'uso di gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
+Preparare System Center Configuration Manager all'uso di gruppi di disponibilità Always On di SQL Server come soluzione di disponibilità elevata e ripristino di emergenza per il database del sito.  
+Configuration Manager supporta l'uso di gruppi di disponibilità:
+-     nei siti primari e nel sito di amministrazione centrale;
+-     in locale o in Microsoft Azure.
 
- A partire dalla versione 1602 di System Center Configuration Manager, è possibile usare [Gruppi di disponibilità AlwaysOn](https://msdn.microsoft.com/library/hh510230\(v=sql.120\).aspx) di SQL Server per ospitare il database del sito nei siti primari e nel sito di amministrazione centrale come soluzione a disponibilità elevata e di ripristino di emergenza. Il gruppo di disponibilità può essere ospitato localmente o in Microsoft Azure.  
+Quando si usano i gruppi di disponibilità in Microsoft Azure, è possibile aumentare ulteriormente la disponibilità del database del sito con i *set di disponibilità di Azure*. Per altre informazioni sui set di disponibilità di Azure, vedere [Gestione della disponibilità delle macchine virtuali](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-manage-availability/).
 
- Quando si usa Microsoft Azure per ospitare il gruppo di disponibilità, è possibile aumentare ulteriormente la disponibilità del database del sito usando i gruppi di disponibilità SQL Server AlwaysOn con i set di disponibilità di Azure. Per altre informazioni sui set di disponibilità di Azure, vedere [Gestione della disponibilità delle macchine virtuali](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-manage-availability/).  
+>  [!Important]   
+>  Prima di continuare, acquisire familiarità con la configurazione di SQL Server e dei gruppi di disponibilità di SQL Server. Le informazioni seguenti fanno riferimento alla libreria della documentazione e alle procedure relative a SQL Server.
 
- Configuration Manager supporta l'hosting del database del sito in un gruppo di disponibilità SQL che si trova dietro un servizio di bilanciamento del carico interno o esterno. Oltre a configurare le eccezioni del firewall in ciascuna replica, è necessario aggiungere regole di bilanciamento del carico per le porte seguenti:
-  - SQL su TCP: TCP 1433
-  - SQL Server Service Broker: TCP 4022
-  - Server Message Block (SMB): TCP 445
-  - Agente mapping endpoint RPC: TCP 135
+## <a name="supported-scenarios"></a>Scenari supportati
+Di seguito sono riportati gli scenari supportati per l'uso di gruppi di disponibilità con Configuration Manager. Informazioni dettagliate e procedure per ogni scenario sono reperibili in [Configurare i gruppi di disponibilità per Configuration Manager](/sccm/core/servers/deploy/configure/configure-aoag).
 
 
-Di seguito sono riportati gli scenari supportati con gruppi di disponibilità:  
+-      [Creare un gruppo di disponibilità per l'uso con Configuration Manager](/sccm/core/servers/deploy/configure/configure-aoag#create-and-configure-an-availability-group).
+-     [Configurare un sito per l'uso di un gruppo di disponibilità](/sccm/core/servers/deploy/configure/configure-aoag#configure-a-site-to-use-the-database-in-the-availability-group).
+-     [Aggiungere o rimuovere i membri di replica da un gruppo di disponibilità che ospita un database del sito](/sccm/core/servers/deploy/configure/configure-aoag#add-and-remove-replica-members).
+-     [Spostare un database del sito da un gruppo di disponibilità a un'istanza predefinita o denominata di SQL Server autonomo](/sccm/core/servers/deploy/configure/configure-aoag#stop-using-an-availability-group).
 
--   È possibile spostare il database del sito nell'istanza predefinita di un gruppo di disponibilità  
 
--   È possibile aggiungere o rimuovere membri di replica da un gruppo di disponibilità che ospita un database del sito  
+## <a name="prerequisites"></a>Prerequisiti
+I prerequisiti seguenti si applicano a tutti gli scenari. Se a uno scenario si applicano prerequisiti aggiuntivi, i dettagli verranno forniti con lo scenario specifico.   
 
--   È possibile spostare il database del sito da un gruppo di disponibilità a un'istanza predefinita o denominata di SQL Server autonomo  
+### <a name="configuration-manager-accounts-and-permissions"></a>Account e autorizzazioni di Configuration Manager
+**Server del sito per l'accesso ai membri di replica:**   
+L'account computer del server del sito deve essere un membro del gruppo **Administrators locale** in tutti i computer membri del gruppo di disponibilità.
 
-> [!Important]  
-> Quando si usa Microsoft Intune con Configuration Manager in una configurazione ibrida, lo spostamento del database del sito da o verso un gruppo di disponibilità attiva la risincronizzazione dei dati con il cloud. Non è possibile evitare questo problema. 
+### <a name="sql-server"></a>SQL Server
+**Versione:**  
+Ogni replica nel gruppo di disponibilità deve eseguire una versione di SQL Server supportata dalla versione in uso di Configuration Manager. Se supportati da SQL Server, nodi diversi di un gruppo di disponibilità possono eseguire versioni diverse di SQL Server.
 
+**Edizione:**  
+È necessario usare un'edizione *Enterprise* di SQL Server.
 
+**Account:**  
+Ogni istanza di SQL Server può essere eseguita con un account utente di dominio (**account del servizio**) o di **sistema locale**. Ogni replica in un gruppo può avere una configurazione diversa. Per le [procedure consigliate di SQL Server](/sql/sql-server/install/security-considerations-for-a-sql-server-installation#before-installing-includessnoversionincludesssnoversion-mdmd), usare un account con le autorizzazioni più restrittive possibili.
 
-> [!NOTE]  
->  Per la configurazione e l'uso corretti dei gruppi di disponibilità, è necessario che l'utente abbia una certa familiarità con la configurazione di SQL Server e dei gruppi di disponibilità di SQL Server. Le procedure per System Center Configuration Manager in questo argomento si basano su documentazione aggiuntiva e sulle procedure presenti nella libreria della documentazione di SQL Server.  
+Ad esempio, per configurare gli account del servizio e le autorizzazioni per SQL Server 2016, vedere l'argomento relativo alla [configurazione degli account del servizio e delle autorizzazioni di Windows](/sql/database-engine/configure-windows/configure-windows-service-accounts-and-permissions) in MSDN.
 
- **Problemi noti durante l'utilizzo di gruppi di disponibilità AlwaysOn con Configuration Manager:**  
+  Se si usa l'account di **sistema locale** per eseguire una replica, è necessario configurare l'autenticazione dell'endpoint. Ciò include la delega di diritti per abilitare una connessione all'endpoint del server di replica.
+  -     Delegare i diritti di SQL Server aggiungendo l'account computer di ogni SQL Server come accesso per gli altri server SQL nel nodo e concedendo i diritti di amministratore di sistema per questo account.  
+  -     Delegare i diritti dell'endpoint per ogni server remoto sull'endpoint locale eseguendo lo script seguente in ogni replica:    
 
--   **Tutti i server di replica richiedono un identico percorso di file al momento dell'impostazione di Configuration Manager per l'uso dei gruppi di disponibilità:**  
+              GRANT CONNECT ON endpoint::[endpoint_name]  
+              TO [domain\servername$]
 
-    -   Quando si esegue il programma di installazione di Configuration Manager per reindirizzare il sito per l'uso del database in un gruppo di disponibilità, ogni server di replica secondaria del gruppo deve avere un percorso di file identico a quello usato per ospitare i file di database del sito nella replica primaria corrente. Se non esiste un percorso identico nelle repliche secondarie, il programma di installazione non sarà in grado di aggiungere l'istanza dei gruppi di disponibilità come nuovo percorso del database del sito.  
+Per altre informazioni vedere [Creare un endpoint del mirroring del database per i gruppi di disponibilità Always On](/sql/database-engine/availability-groups/windows/database-mirroring-always-on-availability-groups-powershell).
 
-         In ogni server di replica secondaria, l'account del servizio SQL Server locale deve avere l'autorizzazione **Controllo completo** per questa cartella.  
+### <a name="availability-group-configurations"></a>Configurazioni dei gruppi di disponibilità
+**Membri di replica:**  
+Il gruppo di disponibilità deve disporre di una replica primaria e può avere fino a due repliche secondarie sincrone.  Ogni membro di replica deve:
+-   Usare l' **istanza predefinita**  
+    *A partire dalla versione 1702 è possibile usare un'* ***istanza denominata***.
 
-         I server di replica secondaria richiedono questo percorso file solo durante l'installazione per specificare l'istanza di database nel gruppo di disponibilità.  Dopo aver completato la modifica per usare il database del sito nel gruppo di disponibilità, è possibile eliminare il percorso non usato dai server di replica secondari.  
+-      Avere il valore di **Connessioni nel ruolo primario** impostato su **Sì**
+-      Avere il valore di **Secondario leggibile** impostato su **Sì**  
+-      Essere impostate per il **failover manuale**       
 
-         Prendere ad esempio in considerazione i seguenti scenari:  
+    >  [!TIP]
+    >  Configuration Manager supporta l'uso di repliche del gruppo di disponibilità l'impostazione è **Failover automatico**. Tuttavia **Failover manuale** deve essere impostato quando:
+    >  -  Si esegue il programma di installazione per specificare l'uso del database del sito nel gruppo di disponibilità.
+    >  -  Quando si installa un aggiornamento a Configuration Manager, non solo gli aggiornamenti applicabili al database del sito.  
 
-        -   Si crea un gruppo di disponibilità che usa tre server SQL  
+**Percorso dei membri della replica:**  
+Tutte le repliche in un gruppo di disponibilità devono essere ospitate in locale o in Microsoft Azure. Non sono supportati gruppi che includono un membro locale e un membro in Azure.     
 
-        -   Il server di replica primaria è una nuova installazione di SQL Server 2014.  Per impostazione predefinita, i file MDF e LDF del database vengono archiviati in C:\Programmi\Microsoft SQL Server\MSSQL12. MSSQLSERVER\MSSQL\DATA  
+Quando si imposta un gruppo di disponibilità in Azure e il gruppo si trova dietro un bilanciamento del carico interno o esterno, è necessario che le seguenti porte predefinite siano aperte per abilitare l'accesso del programma di installazione a ogni replica:   
 
-        -   Entrambi i server di replica secondaria sono stati aggiornati a SQL Server 2014 da versioni precedenti e continuano a usare il percorso di file originale per archiviare i file di database: C:\Programmi\Microsoft SQL Server\MSSQL10. MSSQLSERVER\MSSQL\DATA  
+-      Agente mapping endpoint RCP: **TCP 135**   
+-      Server Message Block (SMB): **TCP 445**  
+    *Dopo il trasferimento del database è possibile rimuovere questa porta. A partire dalla versione 1702, questa porta non è più necessaria.*
+-      SQL Server Service Broker: **TCP 4022**
+-      SQL su TCP: **TCP 1433**   
 
-        -   Prima di tentare di spostare il database del sito in questo gruppo di disponibilità, in ogni server di replica secondaria è necessario creare il seguente percorso di file anche se le repliche secondarie non useranno questo percorso: C:\Programmi\Microsoft SQL Server\MSSQL12. MSSQLSERVER\MSSQL\DATA (questo è un duplicato del percorso usato nella replica primaria)  
+Al termine dell'installazione le porte seguenti devono restare accessibili:
+-      SQL Server Service Broker: **TCP 4022**
+-      SQL su TCP: **TCP 1433**
 
-        -   È quindi possibile concedere all'account del servizio SQL Server in ogni replica secondaria l'accesso con controllo completo al percorso di file appena creato nel server  
+A partire dalla versione 1702 è possibile usare porte personalizzate per queste configurazioni. Le stesse porte devono essere usate dall'endpoint e in tutte le repliche nel gruppo di disponibilità.
 
-        -   È ora possibile eseguire correttamente l'installazione di Configuration Manager per indirizzare il sito in modo che usi il database del sito nel gruppo di disponibilità  
 
--   **Quando si esegue il programma di installazione per indirizzare il database del sito in modo che usi il gruppo di disponibilità, nel file ConfigMgrSetup.log possono essere registrati errori simili ai seguenti:**  
+**Listener:**   
+Il gruppo di disponibilità deve avere almeno un **listener del gruppo di disponibilità**. Il nome virtuale di questo listener viene usato quando si configura Configuration Manager per usare il database del sito nel gruppo di disponibilità. Anche se un gruppo di disponibilità può contenere più listener, Configuration Manager può usarne solo uno. Per altre informazioni vedere [Creare o configurare un listener del gruppo di disponibilità (SQL Server)](/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server).
 
-    -   ERRORE: Errore SQL Server: [25000][3906][Microsoft][SQL Server Native Client 11.0][SQL Server]Impossibile aggiornare il database "CM_AAA" perché è di sola lettura.   Installazione di Configuration Manager 1/21/2016 4:54:59 PM  7344 (0x1CB0)  
+**Percorsi di file:**   
+Quando si esegue installazione di Configuration Manager per configurare un sito per l'uso del database in un gruppo di disponibilità, ogni server di replica secondaria deve avere un percorso di file di SQL Server identico a quello dei file di database del sito nella replica primaria corrente.
+-   Se non esiste un percorso identico, non sarà possibile aggiungere l'istanza per il gruppo di disponibilità come nuovo percorso del database del sito.
+-   Inoltre l'account del servizio di SQL Server locale deve avere l'autorizzazione **Controllo completo** per questa cartella.
 
-     Questi errori vengono registrati quando il programma di installazione prova a elaborare i ruoli del database nelle repliche secondarie del gruppo di disponibilità. È possibile ignorare questi errori.
-- **SQL Server che ospitano i gruppi di disponibilità aggiuntivi:**
+I server di replica secondaria richiedono questo percorso file solo durante l'installazione per specificare l'istanza di database nel gruppo di disponibilità. Dopo che l'installazione ha completato la configurazione del database del sito nel gruppo di disponibilità, è possibile eliminare il percorso non usato dai server di replica secondari.
 
-  Prima di installare la versione 1610, quando si usa un gruppo di disponibilità e quindi si esegue l'installazione di Configuration Manager o di un suo aggiornamento, ogni replica in ogni gruppo di disponibilità aggiuntivo negli SQL Server che ospitano il gruppo di disponibilità di Configuration Manager deve avere le configurazioni seguenti:
-    - **failover manuale**
-    - **consentire le connessioni di sola lettura**
+Prendere ad esempio in considerazione i seguenti scenari:
+-    Si crea un gruppo di disponibilità che usa tre server SQL.
 
+-    Il server di replica primaria è una nuova installazione di SQL Server 2014. Per impostazione predefinita, i file MDF e LDF del database vengono archiviati in C:\Programmi\Microsoft SQL Server\MSSQL12. MSSQLSERVER\MSSQL\DATA.
 
-##  <a name="bkmk_BnR"></a> Modifiche a Backup e ripristino quando si usa un gruppo di disponibilità SQL Server AlwaysOn  
- **Backup:**  
+-    Entrambi i server di replica secondaria sono stati aggiornati a SQL Server 2014 da versioni precedenti e continuano a usare il percorso di file originale per archiviare i file di database: C:\Programmi\Microsoft SQL Server\MSSQL10. MSSQLSERVER\MSSQL\DATA.
 
- Quando un database del sito viene eseguito in un gruppo di disponibilità, è necessario continuare a eseguire l'attività di manutenzione predefinita **Backup server sito** per eseguire il backup di impostazioni e file comuni di Configuration Manager, senza usare però i file MDF o LDF creati da tale backup. Pianificare invece backup diretti del database del sito usando SQL Server.  
+-    Prima di tentare di spostare il database del sito in questo gruppo di disponibilità, in ogni server di replica secondaria è necessario creare il seguente percorso di file, anche se le repliche secondarie non useranno questo percorso: C:\Programmi\Microsoft SQL Server\MSSQL12. MSSQLSERVER\MSSQL\DATA. Questo percorso è un duplicato del percorso usato nella replica primaria.
 
- È anche necessario pianificare il monitoraggio e la gestione delle dimensioni del log delle transazioni del database del sito perché il modello di recupero del database è impostato su Completo.  Nel modello di recupero Completo le transazioni non vengono finalizzate fino a quando non viene eseguito un backup completo del database o del log delle transazioni. Un modello di recupero con registrazione completa è un requisito per poter usare il database del sito in un gruppo di disponibilità e deve essere impostato quando si configura il gruppo per l'uso con Configuration Manager. Per altre informazioni sul backup e il ripristino di SQL Server, vedere [Backup e ripristino di database SQL Server](https://msdn.microsoft.com/library/ms187048\(v=sql.120\).aspx) nella documentazione di SQL Server.  
+-    È quindi possibile concedere all'account del servizio SQL Server in ogni replica secondaria l'accesso con controllo completo al percorso di file appena creato nel server.
 
- **Recupero:**  
+-    È ora possibile eseguire correttamente l'installazione di Configuration Manager per configurare il sito in modo che usi il database del sito nel gruppo di disponibilità.
 
- Durante un ripristino del sito, è possibile usare l'opzione di ripristino del sito **Ignora ripristino database (utilizzare questa opzione se non si sono verificati errori nel database del sito)**a condizione che uno dei nodi del gruppo di disponibilità continui a funzionare.  
+**Configurare il database su una nuova replica:**   
+ Il database di ogni replica deve essere impostato con i valori seguenti:
+-     L'**integrazione con CLR** deve essere *abilitata*
+-      **Max text repl size** deve essere *2147483647*
+-      Il proprietario del database deve essere l'*account di amministratore di sistema*
+-      **TRUSTWORTY** deve essere **ON**
+-      **Service Broker** deve essere *abilitato*
 
- Se invece tutti i nodi di un gruppo di disponibilità sono andati perduti, prima di poter ripristinare il sito è necessario ricreare il gruppo di disponibilità poiché System Center Configuration Manager non può ricompilare o ripristinare il nodo di disponibilità.  Dopo aver ricreato il gruppo con un backup ripristinato e riconfigurato, è possibile usare l'opzione di ripristino del sito **Ignora ripristino database (utilizzare questa opzione se non si sono verificati errori nel database del sito)**.  
+È possibile creare queste configurazioni solo su una replica primaria. Per configurare una replica secondaria, è necessario prima eseguire il failover della replica primaria nella replica secondaria per far sì che la replica secondaria diventi la nuova replica primaria.   
 
- Per altre informazioni sulle attività di backup e ripristino, vedere [Backup e ripristino per System Center Configuration Manager](../../../../protect/understand/backup-and-recovery.md).  
+Se necessario, consultare la documentazione di SQL Server per configurare le impostazioni. Ad esempio, vedere [TRUSTWORTHY](/sql/relational-databases/security/trustworthy-database-property) o [Integrazione con CLR](/sql/relational-databases/clr-integration/clr-integration-enabling) nella documentazione di SQL Server.
 
-##  <a name="bkmk_create"></a> Configurare un gruppo di disponibilità da usare con Configuration Manager  
- Prima di iniziare la procedura seguente, acquisire familiarità con le procedure di SQL Server necessarie per completare la configurazione e con le informazioni seguenti che si applicano ai gruppi di disponibilità configurati per l'uso con Configuration Manager.  
+### <a name="verification-script"></a>Script di verifica
+È possibile eseguire lo script seguente per verificare le configurazioni di database per le repliche primarie e secondarie. Prima di risolvere un problema su una replica secondaria, è necessario modificare tale replica secondaria in modo che diventi la replica primaria.
 
- **Requisiti per i gruppi di disponibilità AlwaysOn usati con System Center Configuration Manager:**  
+    SET NOCOUNT ON
 
--  *Versione*: ogni nodo, o replica, nel gruppo di disponibilità deve eseguire una versione di SQL Server supportata da System Center Configuration Manager. Se supportati da SQL Server, diversi nodi del gruppo di disponibilità possono eseguire diverse versioni di SQL Server.   
+    DECLARE @dbname NVARCHAR(128)
 
-- *Edizione*: è necessario usare un'edizione Enterprise di SQL Server.  In SQL Server 2016 Standard Edition sono stati introdotti i gruppi di disponibilità di base, non supportati da Configuration Manager.
+    SELECT @dbname = sd.name FROM sys.sysdatabases sd WHERE sd.dbid = DB_ID()
 
+    IF (@dbname = N'master' OR @dbname = N'model' OR @dbname = N'msdb' OR @dbname = N'tempdb' OR @dbname = N'distribution' ) BEGIN
+    RAISERROR(N'ERROR: Script is targetting a system database.  It should be targeting the DB you created instead.', 0, 1)
+    GOTO Branch_Exit;
+    END ELSE
+    PRINT N'INFO: Targetted database is ' + @dbname + N'.'
 
--   I gruppi di disponibilità devono disporre di una replica primaria e possono avere fino a due repliche secondarie sincrone.  
+    PRINT N'INFO: Running verifications....'
 
--  Dopo aver aggiunto un database a un gruppo di disponibilità, eseguire il failover della replica primaria a una replica secondaria (trasformandola nella nuova replica primaria) e quindi configurare il database come segue:
-    - Enable Trustworthy: equal to True
-    - Enable the Service Broker: equal to True
-    - Set the dbowner: equal to SA
+    IF NOT EXISTS (SELECT * FROM sys.configurations c WHERE c.name = 'clr enabled' AND c.value_in_use = 1)
+    PRINT N'ERROR: CLR is not enabled!'
+    ELSE
+    PRINT N'PASS: CLR is enabled.'
 
-    È possibile eseguire lo script seguente per configurare queste impostazioni, dove cm_ABC è il nome del database del sito:  
+    DECLARE @repltable TABLE (
+    name nvarchar(max),
+    minimum int,
+    maximum int,
+    config_value int,
+    run_value int )
 
-    >     USE master  
-    >     ALTER DATABASE cm_ABC SET NEW_BROKER   
-    >     ALTER DATABASE cm_ABC SET ENABLE_BROKER  
-    >     ALTER DATABASE cm_ABC SET TRUSTWORTHY ON;  
-    >     USE cm_ABC  
-    >     EXEC sp_changedbowner 'sa'  
-    >     Exec sp_configure 'max text repl size (B)', 2147483647 reconfigure
+    INSERT INTO @repltable
+    EXEC sp_configure 'max text repl size (B)'
 
+    IF NOT EXISTS(SELECT * from @repltable where config_value = 2147483647 and run_value = 2147483647 )
+    PRINT N'ERROR: Max text repl size is not correct!'
+    ELSE
+    PRINT N'PASS: Max text repl size is correct.'
 
+    IF NOT EXISTS (SELECT db.owner_sid FROM sys.databases db WHERE db.database_id = DB_ID() AND db.owner_sid = 0x01)
+    PRINT N'ERROR: Database owner is not sa account!'
+    ELSE
+    PRINT N'PASS: Database owner is sa account.'
 
--   Il gruppo di disponibilità deve avere almeno un **listener del gruppo di disponibilità**.  Il nome virtuale di questo listener viene usato quando si configura Configuration Manager per usare il database del sito nel gruppo di disponibilità. Anche se un gruppo di disponibilità può contenere più listener, Configuration Manager può usarne solo uno  
+    IF NOT EXISTS( SELECT * FROM sys.databases db WHERE db.database_id = DB_ID() AND db.is_trustworthy_on = 1 )
+    PRINT N'ERROR: Trustworthy bit is not on!'
+    ELSE
+    PRINT N'PASS: Trustworthy bit is on.'
 
--   Tutte le repliche primarie e secondarie devono:  
-    - Essere impostate per **consentire le connessioni di sola lettura**
-    - Usare l' **istanza predefinita**
-    - Essere impostate per il **failover manuale**  
+    IF NOT EXISTS( SELECT * FROM sys.databases db WHERE db.database_id = DB_ID() AND db.is_broker_enabled = 1 )
+    PRINT N'ERROR: Service broker is not enabled!'
+    ELSE
+    PRINT N'PASS: Service broker is enabled.'
 
-        > [!TIP]  
-        >  System Center Configuration Manager supporta l'uso di repliche del gruppo di disponibilità quando sono impostate su Failover automatico. Tuttavia, è necessario impostare Failover manuale quando si esegue l'installazione per specificare l'uso del database del sito nel gruppo di disponibilità e quando si installano gli aggiornamenti in Configuration Manager, inclusi quelli che non si applicano al database del sito.  
+    IF NOT EXISTS( SELECT * FROM sys.databases db WHERE db.database_id = DB_ID() AND db.is_honor_broker_priority_on = 1 )
+    PRINT N'ERROR: Service broker priority is not set!'
+    ELSE
+    PRINT N'PASS: Service broker priority is set.'
 
-  **Limitazioni per i gruppi di disponibilità**
-   - Non sono supportati i gruppi di disponibilità di base (introdotti con SQL Server 2016 Standard Edition). Questi gruppi, infatti, non supportano l'accesso in lettura alle repliche secondarie, requisito essenziale per l'uso con Configuration Manager. Per altre informazioni, vedere [Gruppi di disponibilità di base (gruppi di disponibilità AlwaysOn)](https://msdn.microsoft.com/en-us/library/mt614935.aspx).
+    PRINT N'Done!'
 
-   - I gruppi di disponibilità sono supportati solo per il database del sito e non per il database di aggiornamento software o il database di report.   
-   - Quando si usa un gruppo di disponibilità è necessario configurare manualmente il punto di reporting per usare la replica primaria corrente e non il listener del gruppo di disponibilità. Se la replica primaria esegue il failover a un'altra replica, è necessario riconfigurare il punto di reporting per usare la nuova replica primaria.  
-   - Prima di installare gli aggiornamenti, ad esempio la versione 1606, verificare che il gruppo di disponibilità sia impostato sul failover manuale. Dopo l'aggiornamento del sito, è possibile ripristinare la modalità di failover automatico.
+    Branch_Exit:
 
+## <a name="limitations-and-known-issues"></a>Limitazioni e problemi noti
+Le limitazioni seguenti si applicano a tutti gli scenari.   
 
+**I gruppi di disponibilità di base non sono supportati:**  
+Introdotti con SQL Server 2016 Standard Edition, [i gruppi di disponibilità di base](https://msdn.microsoft.com/library/mt614935.aspx) non supportano l'accesso in lettura alle repliche secondarie, requisito essenziale per l'uso con Configuration Manager.
 
- **Autorizzazioni necessarie per configurare e usare i gruppi di disponibilità:**  
+**SQL Server che ospitano gruppi di disponibilità aggiuntivi:**   
+Prima della versione 1610 di Configuration Manager, quando un gruppo di disponibilità su un'istanza di SQL Server ospita una o più gruppi di disponibilità in aggiunta al gruppo usato per Configuration Manager, ogni replica in ogni gruppo di disponibilità aggiuntivo deve avere le configurazioni seguenti impostate al momento dell'installazione di Configuration Manager o di un suo aggiornamento:
+-   **failover manuale**
+-     **consentire le connessioni di sola lettura**
 
--   L'account computer del server del sito deve essere un membro del gruppo **Administrators locale** in tutti i computer membri del gruppo di disponibilità.  
+**Uso di database non supportati:**
+-   **Configuration Manager supporta solo il database del sito in un gruppo di disponibilità:** non sono supportati i database seguenti:
+    -   Database di report
+    -   Database WSUS
+-   **Database preesistente:** non è possibile usare il nuovo database creato nella replica. In alternativa, è necessario ripristinare una copia di un database di Configuration Manager esistente nella replica primaria quando si configura un gruppo di disponibilità.
 
-#### <a name="to-configure-an-availability-group-to-host-a-site-database"></a>Per configurare un gruppo di disponibilità per ospitare un database del sito  
+**Errori di installazione in ConfigMgrSetup.log:**  
+Quando si esegue l'installazione per spostare un database del sito in un gruppo di disponibilità, l'installazione tenta di elaborare i ruoli del database nelle repliche secondarie del gruppo di disponibilità e registra errori simili al seguente:
+-   ERRORE: Errore SQL Server: [25000][3906][Microsoft][SQL Server Native Client 11.0][SQL Server]Impossibile aggiornare il database "CM_AAA" perché è di sola lettura. Installazione di Configuration Manager 1/21/2016 4:54:59 PM 7344 (0x1CB0)  
 
-1.  Usare il comando seguente per arrestare il sito di Configuration Manager:  
-     **Preinst.exe /stopsite**  
+Ignorare questi errori.
 
-     Per altre informazioni sull'uso di preinst.exe, vedere [Strumento di manutenzione gerarchia (Preinst.exe) per System Center Configuration Manager](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md).  
+## <a name="changes-for-site-backup"></a>Modifiche per il backup del sito
+**Eseguire il backup dei file di database:**  
+Quando un database del sito viene eseguito in un gruppo di disponibilità, è necessario eseguire l'attività di manutenzione predefinita **Backup server sito** per eseguire il backup di impostazioni e file comuni di Configuration Manager. Non usare tuttavia i file MDF o LDF creati dal backup. Eseguire invece backup diretti di questi file del sito usando SQL Server.
 
-2.  Modificare il modello di backup per il database del sito da **SIMPLE** a **FULL**.  
+**Log delle transazioni:**  
+Il modello di recupero del database del sito deve essere impostato su **Completo** per l'uso in un gruppo di disponibilità. Con questa configurazione pianificare il monitoraggio e la gestione delle dimensioni del log delle transazioni del database del sito. Nel modello di recupero Completo le transazioni non vengono finalizzate fino a quando non viene eseguito un backup completo del database o del log delle transazioni. Per altre informazioni vedere [Backup e ripristino di database SQL Server](/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases) nella documentazione di SQL Server.
 
-     Vedere [Visualizzazione o modifica del modello di recupero di un database](https://msdn.microsoft.com/library/ms189272\(v=sql.120\).aspx) nella documentazione di SQL Server. I gruppi di disponibilità supportano solo FULL.  
+## <a name="changes-for-site-recovery"></a>Modifiche per il ripristino del sito
+È possibile usare l'opzione di ripristino del sito **Ignora ripristino database (usare questa opzione se non si sono verificati errori nel database del sito)** a condizione che almeno uno dei nodi del gruppo di disponibilità continui a funzionare.
 
-3.  Nel server che ospiterà la replica primaria del gruppo usare la **Creazione guidata Gruppo di disponibilità** per creare il gruppo di disponibilità. Nella procedura guidata:  
+ Se invece tutti i nodi di un gruppo di disponibilità sono andati perduti, prima di poter ripristinare il sito è necessario ricreare il gruppo di disponibilità. Configuration Manager non è in grado di ricompilare o ripristinare il nodo di disponibilità. Dopo aver ricreato il gruppo e ripristinato e riconfigurato un backup, è possibile usare l'opzione di ripristino del sito **Ignora ripristino database (usare questa opzione se non si sono verificati errori nel database del sito)**.
 
-    -   Nella pagina **Seleziona database** selezionare il database per il sito di Configuration Manager  
+Per altre informazioni, vedere [Backup e ripristino per System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery).
 
-    -   Nella pagina **Specifica repliche** configurare:  
+## <a name="changes-for-reporting"></a>Modifiche per la creazione di report
+**Installare il punto di Reporting Services:**  
+Il punto di Reporting Services non supporta l'uso del nome virtuale del listener del gruppo di disponibilità o l'hosting del database di Reporting Services in un gruppo di disponibilità Always On di SQL Server:
+-   Per impostazione predefinita, il punto di Reporting Services imposta il **nome del server del database del sito** sul nome virtuale specificato come listener. Modificare questa opzione per specificare un nome di computer e l'istanza di una replica nel gruppo di disponibilità.
+-   Per eseguire l'offload del carico di creazione di report e aumentare la disponibilità quando un nodo di replica è offline, prendere in considerazione l'installazione di altri punti di Reporting Services in ogni nodo di replica e la configurazione di ogni punto di Reporting Services in modo che punti al proprio nome di computer.
 
-        -   **Repliche**: specificare i server che ospiteranno le repliche secondarie  
+Quando si installa un punto di Reporting Services in ogni replica del gruppo di disponibilità, il reporting può sempre connettersi a un server del punto di reporting attivo.
 
-        -   **Listener**: specificare il **Nome DNS del listener** come un nome DNS completo, ad esempio **&lt;Listener_Server> fabrikam.com**. Il nome viene usato quando si configura Configuration Manager per usare il database nel gruppo di disponibilità.
+**Cambiare il punto di Reporting Services usato dalla console:**  
+Per eseguire i report, nella console passare a **Monitoraggio** > **Panoramica** > **Reporting** > **Report**, quindi scegliere **Opzioni report**. Nella finestra di dialogo Opzioni report selezionare il punto di Reporting Services desiderato.
 
-    -   Nella pagina **Seleziona sincronizzazione dati iniziale** selezionare **Completa**. Dopo aver creato il gruppo di disponibilità, la procedura guidata esegue il backup del database primario e del log delle transazioni e li ripristina in ogni server che ospita una replica secondaria. Se non si esegue questo passaggio, è necessario ripristinare una copia del database del sito in ogni server che ospita una replica secondaria e aggiungere manualmente il database al gruppo.  
-
-    Per altre informazioni, vedere [Usare la Creazione guidata Gruppo di disponibilità](https://msdn.microsoft.com/library/hh403415\(v=sql.120\).aspx) nella documentazione di SQL Server.  
-
-4.  Dopo aver configurato il gruppo di disponibilità, configurare il database del sito nella replica primaria con la proprietà **TRUSTWORTHY** , quindi **abilitare l'integrazione CLR**. Per informazioni sulla configurazione, vedere [Proprietà di database TRUSTWORTHY](https://msdn.microsoft.com/library/ms187861\(v=sql.120\).aspx) e  [Abilitazione dell'integrazione con CLR](https://msdn.microsoft.com/library/ms131048\(v=sql.120\).aspx) nella documentazione di SQL Server.  
-
-5.  Completare le azioni seguenti per configurare ogni replica secondaria nel gruppo di disponibilità:  
-
-    1.  Eseguire il failover manuale della replica primaria corrente in una replica secondaria. Vedere [Eseguire un failover manuale pianificato di un gruppo di disponibilità](https://msdn.microsoft.com/library/hh231018\(v=sql.120\).aspx) nella documentazione di SQL Server.  
-
-    2.  Configurare il database nella nuova replica primaria con la proprietà **TRUSTWORTHY** , quindi **abilitare l'integrazione CLR**.  
-
-6.  Dopo che tutte le repliche sono state alzate di livello fino a diventare repliche primarie e dopo aver configurato i database, il gruppo di disponibilità può essere usato con Configuration Manager.  
-
-
-
-
-
-##  <a name="bkmk_direct"></a> Spostare un database del sito in un gruppo di disponibilità  
- È possibile spostare un database di un sito installato in precedenza in un gruppo di disponibilità. Per prima cosa è necessario creare il gruppo di disponibilità e quindi configurare il database per l'operazione nel gruppo di disponibilità.  
-
- Per completare questa procedura, l'account utente che esegue l'installazione di Configuration Manager deve essere un membro del gruppo **Administrators locale** in tutti i computer membri del gruppo di disponibilità.  
-
-#### <a name="to-move-a-site-database-to-an-availability-group"></a>Per spostare un database del sito in un gruppo di disponibilità  
-
-1.  Eseguire l'**installazione di Configuration Manager** da **&lt;cartella di installazione del sito di Configuration Manager\>\BIN\X64\setup.exe**.  
-
-2.  Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito**, quindi fare clic su **Avanti**.  
-
-3.  Selezionare l'opzione **Modifica la configurazione di SQL Server** , quindi fare clic su **Avanti**.  
-
-4.  Riconfigurare quanto segue per il database del sito:  
-
-    -   **Nome server SQL** : immettere il nome virtuale per il listener del gruppo di disponibilità configurato al momento della creazione del gruppo di disponibilità. Il nome virtuale deve essere un nome DNS completo, ad esempio **&lt;endpointServer\>.fabrikam.com**  
-
-    -   **Istanza** : questo valore deve essere vuoto per specificare l'istanza predefinita per il listener del gruppo di disponibilità.  Se è installato il database del sito corrente in un'istanza denominata, questa istanza viene elencata e deve essere cancellata  
-
-    -   **Database** : non modificare il nome visualizzato. È il nome del database del sito corrente.  
-
-5.  Dopo aver specificato le informazioni per il nuovo percorso del database, completare l'installazione con il processo e le configurazioni normali.  
-
-##  <a name="bkmk_change"></a> Aggiungere o rimuovere membri di un gruppo di disponibilità attivo  
- Quando Configuration Manager usa un database del sito ospitato in un gruppo di disponibilità, è possibile rimuovere un membro di replica o aggiungerne un altro, senza superare un nodo primario e due secondari.  
-
-#### <a name="to-add-a-new-replica-member"></a>Per aggiungere un nuovo membro di replica  
-
-1.  Aggiungere il nuovo server come replica secondaria al gruppo di disponibilità. Vedere  [Aggiungere una replica secondaria a un gruppo di disponibilità (SQL Server)](https://msdn.microsoft.com/library/hh213247\(v=sql.120\).aspx)nella libreria della documentazione di SQL Server.  
-
-2.  Arrestare il sito di Configuration Manager eseguendo **Preinst.exe /stopsite** Vedere [Hierarchy Maintenance Tool (Preinst.exe) for System Center Configuration Manager](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md) (Strumento di manutenzione gerarchia (Preinst.exe) per System Center Configuration Manager).  
-
-3.  Configurare tutte le repliche secondarie. Completare le azioni seguenti per ogni replica secondaria nel gruppo di disponibilità:  
-
-    1.  Eseguire il failover manuale della replica primaria nella nuova replica secondaria. Vedere [Eseguire un failover manuale pianificato di un gruppo di disponibilità](https://msdn.microsoft.com/library/hh231018\(v=sql.120\).aspx) nella documentazione di SQL Server.  
-
-    2.  Configurare il database nel nuovo server con la proprietà Trustworthy e abilitare l'integrazione CLR. Vedere [Proprietà di database TRUSTWORTHY](https://msdn.microsoft.com/library/ms187861\(v=sql.120\).aspx) e  [Abilitazione dell'integrazione con CLR](https://msdn.microsoft.com/library/ms131048\(v=sql.120\).aspx)nella documentazione di SQL Server.  
-
-4.  Riavviare il sito avviando i servizi di Gestione componenti del sito (**sitecomp**) e **SMS_Executive** .  
-
-#### <a name="to-remove-a-replica-member-from-the-availability-group"></a>Per rimuovere un membro di replica dal gruppo di disponibilità  
-
--   Usare le informazioni contenute in [Rimuovere una replica secondaria da un gruppo di disponibilità](https://msdn.microsoft.com/library/hh213149\(v=sql.120\).aspx) nella documentazione di SQL Server.  
-
-##  <a name="bkmk_remove"></a> Spostare il database del sito da un gruppo di disponibilità a un'istanza singola di SQL Server  
- Usare la procedura seguente se non si vuole più ospitare il database del sito in un gruppo di disponibilità.  
-
-#### <a name="to-move-the-site-database-from-an-availability-group-back-to-a-single-instance-sql-server"></a>Per spostare il database del sito da un gruppo di disponibilità a un'istanza singola di SQL Server  
-
-1.  Usare il comando seguente per arrestare il sito di Configuration Manager:  
-     **Preinst.exe /stopsite**.  Per altre informazioni, vedere [Strumento di manutenzione gerarchia (Preinst.exe) per System Center Configuration Manager](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md).  
-
-2.  Usare SQL Server per creare un backup completo del database del sito dalla replica primaria. Per informazioni su come completare questo passaggio, vedere [Creare un backup completo del database (SQL Server)](https://msdn.microsoft.com/library/ms187510\(v=sql.120\).aspx) nella documentazione di SQL Server.  
-
-3.  Se il server che ospita la replica primaria del gruppo di disponibilità ora ospita l'istanza singola del database del sito, è possibile ignorare questo passaggio:  
-
-    -   Usare SQL Server per ripristinare il backup del database del sito nel server che ospiterà il database del sito.  Vedere [Ripristinare un backup del database (SQL Server Management Studio)](https://msdn.microsoft.com/library/ms177429\(v=sql.120\).aspx) nella libreria della documentazione di SQL Server.  
-
-4.  Nel database del sito ripristinato modificare il modello di backup per il database del sito da **FULL** a **SIMPLE**.  Vedere [Visualizzazione o modifica del modello di recupero di un database](https://msdn.microsoft.com/library/ms189272\(v=sql.120\).aspx) nella documentazione di SQL Server.  
-
-5.  Eseguire l'**installazione di Configuration Manager** da **&lt;cartella di installazione del sito di Configuration Manager\>\BIN\X64\setup.exe**.  
-
-6.  Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito**, quindi fare clic su **Avanti**.  
-
-7.  Selezionare l'opzione **Modifica la configurazione di SQL Server** , quindi fare clic su **Avanti**.  
-
-8.  Riconfigurare quanto segue per il database del sito:  
-
-    -   **Nome server SQL** : immettere il nome del server che ora ospita il database del sito.  
-
-    -   **Istanza** : specificare l'istanza denominata che ospita il database del sito o lasciare vuoto il campo se il database si trova nell'istanza predefinita.  
-
-    -   **Database** : non modificare il nome visualizzato. È il nome del database del sito corrente.  
-
-9. Dopo aver specificato le informazioni per il nuovo percorso del database, completare l'installazione con il processo e le configurazioni normali. Al termine dell'installazione, il sito viene riavviato e inizia a usare il nuovo percorso del database.  
-
-10. Per pulire i server che erano membri del gruppo di disponibilità, seguire le indicazioni riportate in [Rimuovere un gruppo di disponibilità](https://msdn.microsoft.com/library/ff878113\(v=sql.120\).aspx) nella documentazione di SQL Server.
+## <a name="next-steps"></a>Passaggi successivi
+Dopo avere compreso i prerequisiti, le limitazioni e le modifiche alle attività comuni necessarie quando si usano i gruppi di disponibilità, vedere [Configurare i gruppi di disponibilità per Configuration Manager](/sccm/core/servers/deploy/configure/configure-aoag), per le procedure che consentono di installare e configurare il sito per l'uso di gruppi di disponibilità.
 

@@ -2,7 +2,7 @@
 title: Eseguire l&quot;aggiornamento a System Center Configuration Manager | Microsoft Docs
 description: Passaggi per eseguire l&quot;aggiornamento sul posto da un sito e da una gerarchia che esegue System Center 2012 Configuration Manager.
 ms.custom: na
-ms.date: 05/02/2017
+ms.date: 6/6/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: d940fd1bbf96767d44f8c55315e814be55a83897
-ms.openlocfilehash: 9e58ab8dd892adf25429564adfd6f86849ddcbdf
+ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
+ms.openlocfilehash: 1166b739e1e8d667172d97883f484fdbc3a142c1
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/13/2017
 
 
 ---
@@ -38,11 +38,11 @@ ms.lasthandoff: 05/17/2017
 
 **Eseguire l'aggiornamento alla versione 1702**   
 Quando è presente il supporto di base della versione 1702, è possibile aggiornare i seguenti prodotti a una versione con licenza completa di System Center Configuration Manager versione 1702:   
--      L'installazione di una valutazione di System Center Configuration Manager versione 1702
--      System Center 2012 Configuration Manager con Service Pack 1
--      System Center 2012 Configuration Manager con Service Pack 2
--      System Center 2012 R2 Configuration Manager
--      System Center Configuration Manager 2012 R2 con Service Pack 1
+-     L'installazione di una valutazione di System Center Configuration Manager versione 1702
+-     System Center 2012 Configuration Manager con Service Pack 1
+-     System Center 2012 Configuration Manager con Service Pack 2
+-     System Center 2012 R2 Configuration Manager
+-     System Center Configuration Manager 2012 R2 con Service Pack 1
 
 **Aggiornare alla versione 1606**  
 Il 15 dicembre 2016 è stato rilasciato nuovamente il supporto di base della versione 1606, per aggiungere il supporto di scenari di aggiornamento supplementari. La nuova versione supporta l'aggiornamento dei seguenti prodotti a una versione con licenza completa di System Center Configuration Manager versione 1606:  
@@ -115,7 +115,7 @@ Per altre informazioni, vedere [Windows Update](http://go.microsoft.com/fwlink/p
 I ruoli del sistema del sito seguenti non vengono più usati in System Center Configuration Manager e devono essere disinstallati prima di eseguire l'aggiornamento da System Center 2012 Configuration Manager:  
 
 -   Punto di gestione fuori banda  
--   Punto di convalida integrità servizio  
+-   Punto di Convalida integrità sistema  
 
 **Disabilitare le repliche di database per i punti di gestione nei siti primari:**  
 Configuration Manager non può aggiornare un sito primario che ha una replica del database per i punti di gestione abilitati. Disabilitare la replica di database prima di:  
@@ -271,7 +271,7 @@ Quando un sito viene aggiornato a System Center Configuration Manager, alcune co
      Le pianificazioni di riepilogo personalizzate per gli aggiornamenti software o i gruppi di aggiornamenti software vengono reimpostate sul valore predefinito di 1 ora. Al termine dell'aggiornamento ripristinare i valori di riepilogo personalizzati sulla frequenza necessaria.  
 
 ##  <a name="bkmk_test"></a> Testare l'aggiornamento del database del sito  
-Le informazioni seguenti si applicano solo quando si aggiorna un versione precedente, ad esempio da System Center 2012 Configuration Manager a System Center Configuration Manager. Se sul sito viene già eseguito System Center Configuration Manager e si sta installando un nuovo aggiornamento, vedere [Passaggio 2: Testare l'aggiornamento del database prima di installare un aggiornamento](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) in **Prima di installare un aggiornamento nella console**.
+Le informazioni seguenti si applicano solo quando si aggiorna un versione precedente, ad esempio da System Center 2012 Configuration Manager a System Center Configuration Manager.
 
 Prima di aggiornare un sito, testare una copia del database di tale sito per l'aggiornamento.  
 

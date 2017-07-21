@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: fefa5f3aa12d82b66a251cf0525475496e1e35cf
+ms.sourcegitcommit: f7cd9c71287d62c9f5d36e2f032bc2a6065572ae
+ms.openlocfilehash: 8ff48b08d1abb7481592c0ea076d4efa15c3d8ee
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/06/2017
 
 ---
 # <a name="use-a-command-line-to-install-system-center-configuration-manager-sites"></a>Usare una riga di comando per installare i siti di System Center Configuration Manager
@@ -67,7 +67,7 @@ ms.lasthandoff: 05/17/2017
     -   Identification  
     -   Modello di
 
-Per altre informazioni sul backup e il ripristino, vedere [Chiavi del file di script di ripristino del sito automatico](../../../../protect/understand/backup-and-recovery.md#BKMK_UnattendedSiteRecoveryKeys) nell'argomento [Backup e ripristino in Configuration Manager](../../../../protect/understand/backup-and-recovery.md).  
+Per altre informazioni, vedere [Ripristino automatico del sito per Configuration Manager](/sccm/protect/understand/unattended-recovery).  
 
 Per un elenco di chiavi e valori da usare in un file script di un'installazione automatica, vedere [Chiavi di file script di installazione automatica](../../../../core/servers/deploy/install/command-line-options-for-setup.md#bkmk_Unattended).  
 
@@ -87,7 +87,7 @@ Quando si usano supporti dalla cartella CD.Latest per eseguire un'installazione 
 - Install a new central administration site (Installa un nuovo sito di amministrazione centrale)
 - Install a new primary site (Installa un nuovo sito primario)
 - Recover a central administration site (Ripristina un sito di amministrazione centrale)
-- Recover a primary site (Ripristina un sito primario) 
+- Recover a primary site (Ripristina un sito primario)
 
 Non è possibile usare questo valore con supporti di installazione ottenuti dal sito Microsoft Volume License.
 Vedere [Opzioni della riga di comando](/sccm/core/servers/deploy/install/command-line-options-for-setup) per informazioni su come usare questo nome chiave nel file di script.

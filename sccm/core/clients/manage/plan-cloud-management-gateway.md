@@ -1,7 +1,7 @@
 ---
 title: Pianificare il gateway di gestione cloud | Microsoft Docs
 description: 
-ms.date: 05/16/2017
+ms.date: 06/07/2017
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-client
@@ -10,10 +10,10 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 ms.translationtype: Human Translation
-ms.sourcegitcommit: ae60eb25383f4bd07faaa1265185a471ee79b1e9
-ms.openlocfilehash: b1295891a5567e64b901c79100c2971e526dc874
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: a7380ae781447880ffcba0778694ea62e10c4889
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/08/2017
 
 ---
 
@@ -22,6 +22,9 @@ ms.lasthandoff: 05/17/2017
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 A partire dalla versione 1610, il gateway di gestione cloud consente di gestire i client di Configuration Manager su Internet in modo semplice. Il servizio gateway di gestione cloud viene distribuito in Microsoft Azure e richiede una sottoscrizione di Azure. Si connette all'infrastruttura di Configuration Manager locale usando un nuovo ruolo chiamato punto di connessione del gateway di gestione cloud. Dopo che sarà stato completamente distribuito e configurato, i client potranno accedere ai ruoli del sistema del sito di Configuration Manager locale indipendentemente dal fatto che siano connessi alla rete privata interna o su Internet.
+
+> [!TIP]  
+> Introdotto con la versione 1610, il cloud management gateway è una funzionalità di versione non definitiva. Per abilitarla, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/pre-release-features).
 
 Usare la console di Configuration Manager per distribuire il servizio in Azure, aggiungere il ruolo punto di connessione del gateway di gestione cloud e configurare i ruoli del sistema del sito per consentire il traffico del gateway di gestione cloud. Il gateway di gestione cloud supporta attualmente solo i ruoli punto di gestione e punto di aggiornamento software.
 
@@ -93,11 +96,6 @@ Il gateway di gestione cloud usa le funzionalità di Microsoft Azure seguenti, c
 
     - Per altri dettagli, vedere il costo di utilizzo di una [distribuzione basata sul cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#cost-of-using-cloud-based-distribution).
 
-## <a name="next-steps"></a>Passaggi successivi
-
-[Configurare il gateway di gestione cloud](setup-cloud-management-gateway.md)
-
-
 ## <a name="frequently-asked-questions-about-the-cloud-management-gateway-cmg"></a>Domande frequenti sul gateway di gestione cloud
 
 ### <a name="why-use-the-cloud-management-gateway"></a>Perché usare il gateway di gestione cloud?
@@ -122,7 +120,7 @@ Il gestore del servizio cloud presente nel punto di connessione del servizio ges
 
 Per proteggere il gateway di gestione cloud sono necessari i certificati seguenti:
 
-- **Certificato di gestione**: può trattarsi di qualsiasi certificato, inclusi i certificati autofirmati. È possibile usare un certificato pubblico caricato in Azure AD o un certificato in formato [PFX con chiave privata](/sccm/mdm/deploy-use/create-pfx-certificate-profiles) importato in Configuration Manager per l'autenticazione con Azure AD. 
+- **Certificato di gestione**: può trattarsi di qualsiasi certificato, inclusi i certificati autofirmati. È possibile usare un certificato pubblico caricato in Azure AD o un certificato in formato [PFX con chiave privata](/sccm/mdm/deploy-use/create-pfx-certificate-profiles) importato in Configuration Manager per l'autenticazione con Azure AD.
 - **Certificato del servizio Web**: è consigliabile usare un certificato di un'autorità di certificazione pubblica per ottenere attendibilità nativa dai client. Il record CName deve essere creato nel registro DNS pubblico. I certificati con caratteri jolly non sono supportati.
 - **Certificati dell'autorità di certificazione radice o subordinata**: il gateway di gestione cloud deve eseguire una convalida completa della catena sui certificati PKI del client. Se per l'emissione dei certificati PKI del client si usa un'autorità di certificazione dell'organizzazione e la relativa autorità di certificazione radice o subordinata non è disponibile in Internet, è necessario caricarla nel gateway di gestione cloud.
 
@@ -159,15 +157,17 @@ Il gateway di gestione cloud consente di garantire la protezione nei modi seguen
 
 - Protegge il client degli endpoint di pubblicazione di Configuration Manager con ruoli quali gli endpoint dell'host del punto di gestione e del punto di aggiornamento software in IIS per gestire le richieste client. Ogni endpoint pubblicato del gateway di gestione cloud ha un mapping di URL.
 L'URL esterno è quello usato dal client per comunicare con il gateway di gestione cloud.
-L'URL interno è il punto di connessione del gateway di gestione cloud usato per inoltrare le richieste al server interno. 
+L'URL interno è il punto di connessione del gateway di gestione cloud usato per inoltrare le richieste al server interno.
 
 #### <a name="example"></a>Esempio:
 Quando si abilita il traffico del gateway di gestione cloud su un punto di gestione, Configuration Manager crea a livello interno un set di mapping di URL per ogni server del punto di gestione, ad esempio ccm_system, ccm_incoming e sms_mp.
-L'URL esterno dell'endpoint ccm_system del punto di gestione può essere simile a quanto segue: **https://<CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID>/CCM_System**. L'URL è univoco per ogni punto di gestione. Il client di Configuration Manager inserisce quindi il nome MP abilitato per il gateway di gestione cloud, ad esempio **<CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID>**, nel relativo elenco Internet di punti di gestione. Tutti gli URL esterni pubblicati vengono caricati automaticamente nel gateway di gestione cloud, che è quindi in grado di filtrare gli URL. Tutti i mapping di URL vengono replicati al punto di connessione del gateway di gestione cloud. Quest'ultimo può quindi eseguire l'inoltro ai server interni in base al client che richiede l'URL esterno.
+L'URL esterno dell'endpoint ccm_system del punto di gestione può essere simile a quanto segue: **https://<CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID>/CCM_System**.
+L'URL è univoco per ogni punto di gestione. Il client di Configuration Manager inserisce quindi il nome MP abilitato per il gateway di gestione cloud, ad esempio **<CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID>**, nel relativo elenco Internet di punti di gestione.
+Tutti gli URL esterni pubblicati vengono caricati automaticamente nel gateway di gestione cloud, che è quindi in grado di filtrare gli URL. Tutti i mapping di URL vengono replicati al punto di connessione del gateway di gestione cloud. Quest'ultimo può quindi eseguire l'inoltro ai server interni in base al client che richiede l'URL esterno.
 
-### <a name="what-ports-are-used-by-the-cloud-management-gateway"></a>Quali porte vengono usate dal gateway di gestione cloud? 
+### <a name="what-ports-are-used-by-the-cloud-management-gateway"></a>Quali porte vengono usate dal gateway di gestione cloud?
 
-- Nella rete locale non è necessaria alcuna porta in ingresso. La distribuzione del gateway di gestione cloud determina la creazione automatica di una serie di gateway di gestione cloud. 
+- Nella rete locale non è necessaria alcuna porta in ingresso. La distribuzione del gateway di gestione cloud determina la creazione automatica di una serie di gateway di gestione cloud.
 - Oltre alla 443, per il punto di connessione del gateway di gestione cloud sono necessarie alcune porte in uscita.
 
 |||||
@@ -182,7 +182,7 @@ L'URL esterno dell'endpoint ccm_system del punto di gestione può essere simile 
 
 - Se possibile, configurare il gateway di gestione cloud, il punto di connessione del gateway di gestione cloud e il server del sito di Configuration Manager nella stessa area di rete per ridurre la latenza.
 - Attualmente la connessione tra il client di Configuration Manager e il gateway di gestione cloud non è in grado di riconoscere l'area.
-- Per ottenere la disponibilità elevata, è consigliabile avere almeno due istanze del gateway di gestione cloud e due punti di connessione del gateway di gestione cloud per sito 
+- Per ottenere la disponibilità elevata, è consigliabile avere almeno due istanze del gateway di gestione cloud e due punti di connessione del gateway di gestione cloud per sito
 - È possibile scalare il gateway di gestione cloud per supportare più client mediante l'aggiunta di più istanze di macchine virtuali. Il bilanciamento del carico delle macchine virtuali viene eseguito dall'apposito servizio di Azure AD.
 - Creare altri punti di connessione del gateway di gestione cloud per distribuire il carico tra di essi. Il gateway di gestione cloud gestisce il traffico verso i propri punti di connessione mediante un approccio 'round robin'.
 - Nella versione 1702 il numero di client supportati per istanza di macchina virtuale del gateway di gestione cloud è 6000. Quando il carico di lavoro del canale del gateway di gestione cloud è molto elevato, la richiesta verrà comunque gestita, ma con tempi più lunghi del normale.
@@ -195,4 +195,7 @@ Per la risoluzione dei problemi relativi al traffico client, usare **CMGHttpHand
 
 Per un elenco dei file di log relativi al gateway di gestione cloud, vedere [File di log in Configuration Manager](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/log-files#cloud-management-gateway)
 
+## <a name="next-steps"></a>Passaggi successivi
+
+[Configurare il gateway di gestione cloud](setup-cloud-management-gateway.md)
 
