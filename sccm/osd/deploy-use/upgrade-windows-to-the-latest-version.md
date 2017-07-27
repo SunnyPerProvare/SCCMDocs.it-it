@@ -22,8 +22,7 @@ ms.contentlocale: it-it
 ms.lasthandoff: 07/11/2017
 
 ---
-# Aggiornare Windows alla versione più recente con System Center Configuration Manager
-<a id="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager" class="xliff"></a>
+# <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>Aggiornare Windows alla versione più recente con System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -87,8 +86,7 @@ Questo argomento descrive i passaggi da eseguire in System Center Configuration 
 
     -   [Use stand-alone media to deploy Windows without using the network](use-stand-alone-media-to-deploy-windows-without-using-the-network.md) (Usare i supporti autonomi per distribuire Windows senza usare la rete)  
 
-## Monitoraggio
-<a id="monitor" class="xliff"></a>  
+## <a name="monitor"></a>Monitoraggio  
 
 -   **Monitorare la distribuzione della sequenza di attività**  
 
