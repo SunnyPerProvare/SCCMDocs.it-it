@@ -21,11 +21,11 @@ ms.openlocfilehash: 640cdc67f301a81a45bf27f95eb03cbc8754a9aa
 ms.contentlocale: it-it
 ms.lasthandoff: 05/17/2017
 
-
 ---
 # <a name="boundary-groups-for-system-center-configuration-manager-version-1511-1602-and-1606"></a>Gruppi di limiti per System Center Configuration Manager versioni 1511, 1602 e 1606
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
+<!-- This topic drops from TOC with the release of version 1706 -->
 
 Le informazioni contenute in questo argomento si riferiscono specificamente all'uso di gruppi di limiti con le versioni 1511, 1602 e 1606 di System Center Configuration Manager.
 Se si usa la versione 1610 o successiva, vedere [Configurare gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups) per informazioni sull'uso di gruppi di limiti riprogettati.  

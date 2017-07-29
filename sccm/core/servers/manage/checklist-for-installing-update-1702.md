@@ -1,8 +1,8 @@
 ---
 title: Elenco di controllo per la versione 1702 | System Center Configuration Manager
-description: Informazioni sulle azioni da intraprendere prima di eseguire l&quot;aggiornamento di System Center Configuration Manager alla versione 1702.
+description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di System Center Configuration Manager alla versione 1702.
 ms.custom: na
-ms.date: 6/6/2017
+ms.date: 06/06/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
