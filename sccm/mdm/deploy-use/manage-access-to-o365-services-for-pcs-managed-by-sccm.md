@@ -15,12 +15,11 @@ caps.latest.revision: 15
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c8717925dba42451b1e241a7c2f59e43896d7d99
-ms.openlocfilehash: e78fe989b7ff445717c8320c4eae3900eb46baea
+ms.translationtype: HT
+ms.sourcegitcommit: 5ebdd12672fecc633321a66738a0978f94ba0aa4
+ms.openlocfilehash: aede531a0406c3d30c9cca957896e002ed22ae51
 ms.contentlocale: it-it
-ms.lasthandoff: 06/19/2017
-
+ms.lasthandoff: 07/20/2017
 
 ---
 # <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gestire l'accesso ai servizi di O365 per i PC gestiti da System Center Configuration Manager
@@ -46,7 +45,17 @@ Per informazioni su come configurare l'accesso condizionale per i dispositivi re
 
 -   Windows 7
 -   Windows 8.1
--   Windows 10 
+-   Windows 10
+
+## <a name="supported-windows-servers"></a>Versioni supportate di Windows Server
+
+-   2008 R2
+-   2012
+-   2012 R2
+-   2016
+
+    > [!IMPORTANT]
+    > Per i server Windows Server a cui possono accedere più utenti contemporaneamente, gli stessi criteri di accesso condizionale devono essere distribuiti a tutti gli utenti connessi.
 
 ## <a name="configure-conditional-access"></a>Configurare l'accesso condizionale  
  Per configurare l'accesso condizionale, è prima di tutto necessario creare criteri di conformità e configurare criteri di accesso condizionale. Quando si configurano criteri di accesso condizionale per i PC, è possibile richiedere che i PC siano conformi ai criteri di conformità per accedere ai servizi Exchange Online e SharePoint Online.  
