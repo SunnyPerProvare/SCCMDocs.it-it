@@ -1,8 +1,8 @@
 ---
 title: Prerequisiti per i siti | Microsoft Docs
-description: Informazioni sui prerequisiti per l&quot;installazione di diversi tipi di siti di System Center Configuration Manager.
+description: Informazioni sui prerequisiti per l'installazione di diversi tipi di siti di System Center Configuration Manager.
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: 5
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: ff89d4aea6be871e64e0a788f054ba4cadb3e51d
+ms.translationtype: HT
+ms.sourcegitcommit: 5945abb49fe06c59355805aa94b04d0d445ecbc3
+ms.openlocfilehash: d46a8b66ace45d25da9d86f2e91b19ae1d6875ab
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/24/2017
 
 ---
 # <a name="prerequisites-for-installing-system-center-configuration-manager-sites"></a>Prerequisiti per l'installazione di siti di System Center Configuration Manager
@@ -100,6 +100,19 @@ Un sito primario autonomo deve soddisfare i seguenti prerequisiti ai fini dell'e
 -   **La porta per SQL Server Service Broker tra il sito primario autonomo e il computer che installerà il sito di amministrazione centrale deve essere aperta**  
 
      Per replicare correttamente i dati tra un sito di amministrazione centrale e un sito primario, Configuration Manager richiede una porta aperta tra i due siti per SSB. Quando si installa un sito di amministrazione centrale e si espande un sito primario autonomo, il controllo dei prerequisiti non verifica che la porta specificata per SSB sia aperta nel sito primario.  
+
+**Problemi noti dopo la configurazione dei servizi di Azure:**  
+Quando si usa uno dei seguenti servizi di Azure con Configuration Manager e si prevede di espandere un sito, dopo l'espansione del sito è necessario rimuovere e quindi ricreare la connessione al servizio.
+
+Servizi:  
+-       [Operations Manager Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) (OMS)
+-       [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics)
+-       [Windows Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)
+
+Attenersi a questa procedura per risolvere il problema:
+ 1.    Nella console di Configuration Manager eliminare il servizio di Azure dal nodo dei servizi di Azure.
+ 2.    Nel portale di Azure eliminare il tenant associato al servizio dal nodo dei tenant di Azure Active Directory.  Questa procedura elimina anche l'app Web di Azure AD associata al servizio.  
+ 3.   Riconfigurare la connessione al servizio di Azure per l'uso con Configuration Manager.
 
 
 ## <a name="bkmk_secondary"></a> Siti secondari

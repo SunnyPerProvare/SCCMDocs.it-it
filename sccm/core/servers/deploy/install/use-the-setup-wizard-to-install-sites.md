@@ -1,7 +1,7 @@
 ---
 title: Installazione guidata | Microsoft Docs
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 7/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: 3
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f809c9327db9f298168674add2d09820fdecd1b8
-ms.openlocfilehash: 14b4172ad713a3981b8a5abe182405e271d78c26
+ms.translationtype: HT
+ms.sourcegitcommit: 5945abb49fe06c59355805aa94b04d0d445ecbc3
+ms.openlocfilehash: 678f1b35fe6f7649dacb766f7c671f4ec8ea1435
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/24/2017
 
 ---
 # <a name="use-the-setup-wizard-to-install-system-center-configuration-manager-sites"></a>Usare l'installazione guidata per installare i siti di System Center Configuration Manager
@@ -140,7 +140,9 @@ Se si installa un sito di amministrazione centrale come parte di uno scenario di
 
 12. Nella pagina **Informazioni database** specificare le informazioni seguenti:  
 
-    -   **Nome SQL Server (FQDN):** per impostazione predefinita, il valore è impostato come computer server del sito.  
+    -   **Nome SQL Server (FQDN):** per impostazione predefinita, il valore è impostato come computer server del sito.
+
+     Se si usa una porta personalizzata, aggiungerla al nome FQDN di SQL Server. Per eseguire questa operazione, aggiungere una virgola e quindi il numero di porta dopo il nome FQDN del server.   Ad esempio, se il server è *SQLServer1.fabrikam.com*, per specificare la porta *1551* usare **SQLServer1.fabrikam.com,1551**
 
     -   **Nome dell'istanza:** per impostazione predefinita, il campo è vuoto. Usa l'istanza predefinita di SQL nel computer server del sito.  
 

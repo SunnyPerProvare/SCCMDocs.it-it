@@ -1,5 +1,5 @@
 ---
-title: Requisiti dell&quot;infrastruttura per la distribuzione del sistema operativo | Microsoft Docs
+title: Requisiti dell'infrastruttura per la distribuzione del sistema operativo | Microsoft Docs
 description: Assicurarsi di conoscere le dipendenze esterne e le dipendenze del prodotto prima di usare System Center Configuration Manager 2012 per la distribuzione del sistema operativo.
 ms.custom: na
 ms.date: 10/06/2016
@@ -12,15 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 1dc74219-7ff5-4e3b-b4f6-5aad663bb75b
 caps.latest.revision: 24
-author: Dougeby
-ms.author: dougeby
+author: mattbriggs
+ms.author: mabrigg
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 065b1fcb25d7c7845b6f26e757b36e7fb97ce013
-ms.openlocfilehash: ef4536578456c13de5afaa5cd1977d2e6b4b6bd1
+ms.translationtype: HT
+ms.sourcegitcommit: 1f57c63ceeb13c7f7d760d7ecfb48df749da6770
+ms.openlocfilehash: 167e639cdb9995fd743787cc9fbf364ec70f6ed9
 ms.contentlocale: it-it
-ms.lasthandoff: 05/10/2017
-
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="infrastructure-requirements-for-operating-system-deployment-in-system-center-configuration-manager"></a>Requisiti dell'infrastruttura per la distribuzione del sistema operativo in System Center Configuration Manager
@@ -35,13 +34,15 @@ La distribuzione del sistema operativo in System Center Configuration Manager 20
 ### <a name="windows-adk-for-windows-10"></a>Windows ADK per Windows 10  
  Windows ADK è un insieme di strumenti e documentazione che supporta la configurazione e la distribuzione dei sistemi operativi Windows. Configuration Manager usa Windows ADK per automatizzare l'installazione e acquisire immagini di Windows, eseguire la migrazione di dati e profili utente e così via.  
 
- È necessario installare le seguenti funzionalità di Windows ADK nel server del sito del sito di livello superiore della gerarchia, nel server del sito di ogni sito primario nella gerarchia e nel server del sistema del sito del provider SMS:  
+ È necessario installare le seguenti funzionalità di Windows ADK nel server in sede del sito di livello superiore della gerarchia, nel server del sito di ogni sito primario nella gerarchia e nel server del sistema del sito del provider SMS:  
 
 -   Utilità di migrazione stato utente (USMT) <sup>1</sup>  
 
 -   Strumenti di distribuzione Windows  
 
--   Ambiente preinstallazione di Windows (Windows PE)  
+-   Ambiente preinstallazione di Windows (Windows PE)
+
+Per un elenco delle versioni di Windows ADK 10 che si possono usare con versioni diverse di Configuration Manager, vedere [Supporto per Windows 10 come client](https://docs.microsoft.com/en-us/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk).
 
  <sup>1</sup> USMT non è richiesto nel server del sistema del sito del provider SMS.  
 
@@ -171,7 +172,7 @@ La distribuzione del sistema operativo in System Center Configuration Manager 20
  È necessario installare Servizi di distribuzione Windows (WDS) sullo stesso server dei punti di distribuzione configurati per il supporto PXE o di multicast. Servizi di distribuzione Windows è incluso nel sistema operativo del server. Per le distribuzioni PXE, WDS è il servizio che esegue l'avvio PXE. Quando il punto di distribuzione viene installato e attivato per PXE, Configuration Manager installa un provider in WDS che usa le funzioni di avvio PXE di WDS.  
 
 > [!NOTE]  
->  L'installazione di WDS potrebbe non riuscire se il server richiede un riavvio.  
+>  Se il server richiede un riavvio, l'installazione di WDS potrebbe non riuscire. 
 
  È necessario considerare altre configurazioni di WDS, tra cui:  
 

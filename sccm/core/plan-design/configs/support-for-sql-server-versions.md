@@ -1,6 +1,6 @@
 ---
 title: Versioni di SQL Server supportate | Microsoft Docs
-description: Requisiti di configurazione e della versione di SQL Server per l&quot;hosting di un database del sito di System Center Configuration Manager.
+description: Requisiti di configurazione e della versione di SQL Server per l'hosting di un database del sito di System Center Configuration Manager.
 ms.custom: na
 ms.date: 05/10/2017
 ms.prod: configuration-manager
@@ -15,12 +15,11 @@ caps.latest.revision: 21
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f809c9327db9f298168674add2d09820fdecd1b8
-ms.openlocfilehash: 4166560602edf6eb299511c8b59dc3903e3bfffc
+ms.translationtype: HT
+ms.sourcegitcommit: ef42d1483053e9a6c502f4ebcae5a231aa6ba727
+ms.openlocfilehash: b35e45b9514297e2f9ce405a3244462ed735f39f
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 07/26/2017
 
 ---
 # <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Versioni di SQL Server supportate per System Center Configuration Manager
@@ -204,7 +203,7 @@ Quando è supportata dalla versione di Configuration Manager in uso, questa vers
     -   Per un sito secondario, impostare almeno 4 gigabyte (GB).  
 
 **Trigger nidificati SQL:**  
-I [trigger nidificati SQL](http://go.microsoft.com/fwlink/?LinkId=528802) devono essere abilitati.  
+ I[trigger nidificati SQL](http://go.microsoft.com/fwlink/?LinkId=528802) devono essere abilitati.  
 
  **Integrazione CLR di SQL Server**  
   Il database del sito richiede l'abilitazione di Common Language Runtime (CLR) di SQL Server. Questa funzione viene abilitata automaticamente quando si installa Configuration Manager. Per altre informazioni su CLR, vedere [Introduzione all'integrazione CLR di SQL Server](https://msdn.microsoft.com/library/ms254498\(v=vs.110\).aspx).  

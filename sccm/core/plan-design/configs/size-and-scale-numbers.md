@@ -1,8 +1,8 @@
 ---
 title: Ridimensionamento e scala | Microsoft Docs
-description: Identificare il numero di ruoli del sistema del sito e di siti necessari per supportare i dispositivi nell&quot;ambiente System Center Configuration Manager.
+description: Identificare il numero di ruoli del sistema del sito e di siti necessari per supportare i dispositivi nell'ambiente System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/30/2016
+ms.date: 07/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: 4
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f9c43e26758d5171a6ef56e827b4b054ebc8a5e5
-ms.openlocfilehash: c7ad33339e65e6e00e88f98d6e13baceb98dae77
+ms.translationtype: HT
+ms.sourcegitcommit: 5945abb49fe06c59355805aa94b04d0d445ecbc3
+ms.openlocfilehash: f539e2d282b56e56a9c58c773788325b27ea6b37
 ms.contentlocale: it-it
-ms.lasthandoff: 12/30/2016
+ms.lasthandoff: 07/24/2017
 
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Numeri di ridimensionamento e scalabilità per System Center Configuration Manager
@@ -133,7 +133,7 @@ I numeri del supporto riportati di seguito si basano sull'uso dell'hardware cons
 ###  <a name="bkmk_cas"></a> Gerarchia con un sito di amministrazione centrale  
 Un sito di amministrazione centrale supporta un numero totale di dispositivi che comprende fino al numero di dispositivi elencati per i tre gruppi seguenti:  
 
--   700.000 desktop (computer che eseguono Windows, Linux e UNIX)  
+-   700.000 desktop (computer che eseguono Windows, Linux e UNIX). Vedere anche il supporto per i [dispositivi integrati](#embedded).
 
 -   25.000 dispositivi che eseguono Mac e Windows CE 7.0  
 
@@ -152,7 +152,7 @@ Un sito di amministrazione centrale supporta un numero totale di dispositivi che
 ###  <a name="bkmk_chipri"></a> Sito primario figlio  
 Ogni sito primario figlio in una gerarchia con un sito di amministrazione centrale supporta le quantità seguenti:  
 
--   Un totale di 150.000 client e dispositivi che non sono limitati a un gruppo o tipo specifico, a condizione di non superare il numero supportato per la gerarchia.  
+-   Un totale di 150.000 client e dispositivi che non sono limitati a un gruppo o tipo specifico, a condizione di non superare il numero supportato per la gerarchia. Vedere anche il supporto per i [dispositivi integrati](#embedded).
 
 Ad esempio, un sito primario che supporta 25.000 computer che eseguono Mac e Windows CE 7.0, vale a dire il limite per una gerarchia, può quindi supportare 125.000 computer desktop aggiuntivi, raggiungendo un numero totale di dispositivi supportati pari al limite massimo dei siti figlio primari, ovvero 150.000.
 
@@ -161,7 +161,7 @@ Un sito primario autonomo supporta il numero seguente di dispositivi:
 
 -   Un totale di 175.000 client e dispositivi, senza superare:  
 
-    -   150.000 desktop (computer che eseguono Windows, Linux e UNIX)  
+    -   150.000 desktop (computer che eseguono Windows, Linux e UNIX). Vedere anche il supporto per i [dispositivi integrati](#embedded).
 
     -   25.000 dispositivi che eseguono Mac e Windows CE 7.0
 
@@ -171,7 +171,11 @@ Un sito primario autonomo supporta il numero seguente di dispositivi:
 
         -   150.000 dispositivi basati sul cloud  
 
+
 Ad esempio, un sito primario autonomo che supporta 150.000 desktop e 10.000 Mac o Windows CE 7.0 può supportare solo 15.000 dispositivi aggiuntivi. Questi dispositivi possono essere basati sul cloud o gestiti con software MDM locale.  
+
+### <a name="embedded"></a> Siti primari e dispositivi con Windows Embedded
+I siti primari supportano i dispositivi con Windows Embedded in cui sono abilitati i filtri di scrittura basati su file (FBWF). Se nei dispositivi integrati non sono abilitati filtri di scrittura, un sito primario può supportare un numero di dispositivi integrati non superiore al numero di dispositivi consentito per il sito. Del numero totale di dispositivi supportati da un sito primario, al massimo 10.000 possono essere dispositivi con Windows Embedded quando tali dispositivi sono configurati per le eccezioni riportate nella nota importante in [Pianificazione della distribuzione del client in dispositivi con Windows Embedded in System Center Configuration Manager](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices). Un sito primario supporta solo 3.000 dispositivi con Windows Embedded in cui è abilitato EWF e che non sono configurati per le eccezioni.
 
 ###  <a name="bkmk_sec"></a> Siti secondari  
 I siti secondari supportano le quantità seguenti:  

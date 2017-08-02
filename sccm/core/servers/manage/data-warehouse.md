@@ -15,12 +15,11 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dc221ddf547c43ab1f25ff83c3c9bb603297ece6
-ms.openlocfilehash: f11a53bbc85b40077b3909568db5ae5552b0456c
+ms.translationtype: HT
+ms.sourcegitcommit: ef42d1483053e9a6c502f4ebcae5a231aa6ba727
+ms.openlocfilehash: c421c3495f56503d5cbda7b1a5ab5350a168912d
 ms.contentlocale: it-it
-ms.lasthandoff: 06/01/2017
-
+ms.lasthandoff: 07/26/2017
 
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>Punto di servizio del data warehouse per System Center Configuration Manager
@@ -52,7 +51,7 @@ Quando viene installato, il ruolo del sistema del sito installa e configura il d
   - **Amministratore** nel computer che ospiterà il database del data warehouse.
   - **DB_owner** per il database del data warehouse.
   - **DB_reader** ed **execute** per il database del sito dei siti di livello superiore.
--    Il database del data warehouse è supportato in un'istanza predefinita o denominata di SQL Server 2012 o versioni successive. L'edizione deve essere Enterprise o Datacenter.
+-   Il database del data warehouse è supportato in un'istanza predefinita o denominata di SQL Server 2012 o versioni successive. L'edizione deve essere Enterprise o Datacenter.
   - Gruppo di disponibilità AlwaysOn di SQL Server: questa configurazione non è supportata.
   - Cluster di SQL Server: i cluster di failover di SQL Server non sono supportati. Questo supporto non è disponibile perché il database del data warehouse non è stato testato in profondità nei cluster di failover di SQL Server.
   - Quando il database del data warehouse è remoto rispetto al database del server del sito, è necessario avere una licenza separata per l'istanza di SQL Server che ospita il database.
@@ -78,7 +77,7 @@ Quando si installa il ruolo, Configuration Manager crea il database del data war
 Pagina **Selezione ruolo del sistema**:  
 
 Pagina **Generale**:
--     **Impostazioni di connessione del database del data warehouse di Configuration Manager**:
+-   **Impostazioni di connessione del database del data warehouse di Configuration Manager**:
  - **Nome di dominio completo di SQL**:  
  Specificare il nome di dominio completo (FQDN, Full Qualified Domain Name) del server che ospita il database del punto di servizio del data warehouse.
  - **Nome istanza di SQL Server, se applicabile**:   
@@ -103,15 +102,15 @@ Il ruolo del sistema del sito del data warehouse include i report seguenti, che 
  - **Application Deployment - Historical** (Distribuzione applicazioni - Cronologia):   
  Visualizza i dettagli per la distribuzione di applicazioni per un'applicazione e un computer specifici.
  - **Endpoint Protection and Software Update Compliance - Historical** (Endpoint Protection e Conformità dell'aggiornamento software - Cronologia): visualizza i computer in cui mancano aggiornamenti software.  
- - **General Hardware Inventory - Historical** (Inventario generale hardware - Cronologia):      
+ - **General Hardware Inventory - Historical** (Inventario generale hardware - Cronologia):   
  Visualizza tutto l'inventario dell'hardware per un computer specifico.
- - **General Software Inventory - Historical** (Inventario generale software - Cronologia):      
+ - **General Software Inventory - Historical** (Inventario generale software - Cronologia):   
  Visualizza tutto l'inventario del software per un computer specifico.
- - **Infrastructure Health Overview - Historical** (Panoramica integrità infrastruttura - Cronologia):     
+ - **Infrastructure Health Overview - Historical** (Panoramica integrità infrastruttura - Cronologia):  
  Visualizza una panoramica dell'integrità dell'infrastruttura di Configuration Manager
- - **List of Malware Detected - Historical** (Elenco di malware rilevato - Cronologia):     
+ - **List of Malware Detected - Historical** (Elenco di malware rilevato - Cronologia):    
  Visualizza il malware che è stato rilevato nell'organizzazione.
- - **Software Distribution Summary - Historical** (Riepilogo distribuzione software - Cronologia):     
+ - **Software Distribution Summary - Historical** (Riepilogo distribuzione software - Cronologia):   
  Riepilogo della distribuzione del software per un annuncio e un computer specifici.
 
 
@@ -126,13 +125,13 @@ A differenza di uno spostamento del database del data warehouse, questa modifica
 ## <a name="move-the-data-warehouse-database"></a>Spostare il database del data warehouse
 Per spostare il database del data warehouse in un nuovo SQL Server, procedere come segue:
 
-1.    Usare SQL Server Management Studio per eseguire il backup del database del data warehouse e quindi ripristinare il database in un'istanza di SQL Server nel nuovo computer che ospiterà il data warehouse.   
+1.  Usare SQL Server Management Studio per eseguire il backup del database del data warehouse e quindi ripristinare il database in un'istanza di SQL Server nel nuovo computer che ospiterà il data warehouse.   
 > [!NOTE]     
 > Dopo aver ripristinato il database nel nuovo server, assicurarsi che le autorizzazioni di accesso al database per il nuovo database del data warehouse siano le stesse del data warehouse originale.  
 
-2.    Usare la console di Configuration Manager per rimuovere il ruolo del sistema del sito del punto di servizio del data warehouse dal server corrente.
-3.    Reinstallare il punto di servizio del data warehouse e specificare il nome della nuova istanza di SQL Server e dell'istanza che ospita il database del data warehouse appena ripristinato.
-4.    Dopo l'installazione del ruolo del sistema del sito, lo spostamento è completato.
+2.  Usare la console di Configuration Manager per rimuovere il ruolo del sistema del sito del punto di servizio del data warehouse dal server corrente.
+3.  Reinstallare il punto di servizio del data warehouse e specificare il nome della nuova istanza di SQL Server e dell'istanza che ospita il database del data warehouse appena ripristinato.
+4.  Dopo l'installazione del ruolo del sistema del sito, lo spostamento è completato.
 
 ## <a name="troubleshooting-data-warehouse-issues"></a>Risoluzione dei problemi del data warehouse
 **File di log**:  
@@ -167,7 +166,7 @@ Quando si apre un report del data warehouse, viene restituito l'errore seguente:
     1. Aprire IIS, fare clic su **Certificati del server**, fare clic con il pulsante destro del mouse su **Crea certificato autofirmato** e quindi specificare il "nome descrittivo" del nome del certificato come **Certificato di identificazione SQL Server del data warehouse**. Selezionare l'archivio certificati come **Personale**.
     2. Aprire **Gestione configurazione SQL Server** in **Configurazione di rete SQL Server**, fare clic con il pulsante destro del mouse per selezionare **Proprietà** in **Protocolli per MSSQLSERVERR**. Quindi, nella scheda **Certificato** selezionare **Certificato di identificazione SQL Server del data warehouse** come certificato e salvare le modifiche.  
     3. Aprire **Gestione configurazione SQL Server** in **Servizi di SQL Server**, riavviare **Servizio SQL Server** e **Servizio di creazione report**.
-    4.    Aprire Microsoft Management Console (MMC), aggiungere lo snap-in per **Certificati** e quindi selezionare **Account del computer** per gestire il certificato per l'account del computer locale. Quindi, in MMC espandere la cartella **Personale** > **Certificati** ed esportare **Certificato di identificazione SQL Server del data warehouse** come file **Binario codificato DER x.509 (.CER)**.    
+    4.  Aprire Microsoft Management Console (MMC), aggiungere lo snap-in per **Certificati** e quindi selezionare **Account del computer** per gestire il certificato per l'account del computer locale. Quindi, in MMC espandere la cartella **Personale** > **Certificati** ed esportare **Certificato di identificazione SQL Server del data warehouse** come file **Binario codificato DER x.509 (.CER)**.    
   2.    Nel computer che ospita SQL Server Reporting Services, aprire MMC, aggiungere lo snap-in per **Certificati** e quindi selezionare **Account del computer** per gestire il certificato per l'account del computer locale. Nella cartella **Autorità di certificazione principale attendibili** importare **Certificato di identificazione SQL Server del data warehouse**.
 
 
@@ -178,7 +177,7 @@ Quando si apre un report del data warehouse, viene restituito l'errore seguente:
 
 | Passaggio   | Dettagli  |
 |:------:|-----------|  
-| **1**  |     Il server del sito trasferisce e archivia i dati nel database del sito.  |  
+| **1**  |  Il server del sito trasferisce e archivia i dati nel database del sito.  |  
 | **2**  |      In base alla pianificazione e alla configurazione, il punto di servizio del data warehouse recupera dati dal database del sito.  |  
 | **3**  |  Il punto di servizio del data warehouse trasferisce e archivia una copia dei dati sincronizzati nel database del data warehouse. |  
 **Creazione di report**
