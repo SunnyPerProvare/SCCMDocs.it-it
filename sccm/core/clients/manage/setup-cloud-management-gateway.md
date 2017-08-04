@@ -11,11 +11,11 @@ ms.service:
 ms.technology:
 - configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d5a6fdc9a526c4fc3a9027dcedf1dd66a6fff5a7
-ms.openlocfilehash: 97e1bc6585cee0ff433da0ec0b60b9604cb7348f
+ms.translationtype: HT
+ms.sourcegitcommit: afe0ecc4230733fa76e41bf08df5ccfb221da7c8
+ms.openlocfilehash: df6e809aadd3d69275c137c92629ab8426bbdcb7
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 08/04/2017
 
 ---
 
@@ -43,7 +43,7 @@ Ad esempio, quando si crea il gateway di gestione cloud di Contoso, il nome host
 
 È possibile creare un certificato SSL personalizzato per il gateway di gestione cloud esattamente come si farebbe per un punto di distribuzione basato su cloud. Seguire le istruzioni per la [distribuzione del certificato di servizio per i punti di distribuzione basati su cloud](/sccm/core/plan-design/network/example-deployment-of-pki-certificates) procedendo in modo diverso per le operazioni seguenti:
 
-- Quando si configura il nuovo modello di certificato, assegnare le autorizzazioni **Lettura ** e **Registrazione** al gruppo di protezione impostato per i server di Configuration Manager.
+- Quando si configura il nuovo modello di certificato, assegnare le autorizzazioni **Lettura** e **Registrazione** al gruppo di protezione impostato per i server di Configuration Manager.
 - Quando si richiede un certificato del server Web personalizzato, per il nome comune del certificato specificare un nome di dominio completo che termina con **cloudapp.net** per usare il gateway di gestione cloud nel cloud pubblico di Azure o con **usgovcloudapp.net** per usarlo in Azure Government Cloud.
 
 

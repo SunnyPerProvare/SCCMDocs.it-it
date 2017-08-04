@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9555a16d97224a1cf49a426ab225468b07403f60
-ms.openlocfilehash: e28fdeae809cadf78017dd2920e3f1a9484ec8a3
+ms.translationtype: HT
+ms.sourcegitcommit: 5f1412fb132e3a074742e11f1142b2594146cbe1
+ms.openlocfilehash: 44b4707b1a40624c51decf548d23ddd2164c5833
 ms.contentlocale: it-it
-ms.lasthandoff: 12/30/2016
-
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-create-collections-in-system-center-configuration-manager"></a>Come creare le raccolte in System Center Configuration Manager
@@ -57,65 +56,65 @@ Le raccolte costituiscono raggruppamenti di utenti o dispositivi. Usare le racco
 5.  Nella pagina **Regole di appartenenza** della **Creazione guidata raccolta dispositivi**, nell'elenco **Aggiungi regola**, selezionare il tipo di regola di appartenenza che si vuole usare per questa raccolta. È possibile configurare più regole per ogni raccolta.  
 
         
-        ##### To configure a direct rule  
+##### <a name="to-configure-a-direct-rule"></a>Per configurare una regola diretta  
 
-        1.  Nella pagina **Cerca risorse** della **Creazione guidata regola di appartenenza diretta**specificare le informazioni seguenti:  
+1.  Nella pagina **Cerca risorse** della **Creazione guidata regola di appartenenza diretta**specificare le informazioni seguenti:  
 
-            -   **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Selezionare un valore in **Risorsa di sistema** per cercare i dati di inventario restituiti dai computer client o **Computer sconosciuti** per effettuare una selezione tra i valori restituiti dai computer sconosciuti.  
+-   **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Selezionare un valore in **Risorsa di sistema** per cercare i dati di inventario restituiti dai computer client o **Computer sconosciuti** per effettuare una selezione tra i valori restituiti dai computer sconosciuti.  
 
-            -   **Nome attributo**: selezionare l'attributo associato alla classe di risorse selezionata che si vuole cercare. Ad esempio, per selezionare i computer in base al relativo nome NetBIOS, selezionare **Risorsa di sistema** nell'elenco **Classe di risorse** e **Nome NetBIOS** nell'elenco **Nome attributo** .  
+-   **Nome attributo**: selezionare l'attributo associato alla classe di risorse selezionata che si vuole cercare. Ad esempio, per selezionare i computer in base al relativo nome NetBIOS, selezionare **Risorsa di sistema** nell'elenco **Classe di risorse** e **Nome NetBIOS** nell'elenco **Nome attributo** .  
 
-            -   **Escludere le risorse contrassegnate come obsolete**: se un computer client è contrassegnato come obsoleto, non includere questo valore nei risultati della ricerca.  
+-   **Escludere le risorse contrassegnate come obsolete**: se un computer client è contrassegnato come obsoleto, non includere questo valore nei risultati della ricerca.  
 
-            -   **Escludere le risorse in cui non è installato il client di Configuration Manager**: questi valori non saranno visualizzati nei risultati della ricerca.  
+-   **Escludere le risorse in cui non è installato il client di Configuration Manager**: questi valori non saranno visualizzati nei risultati della ricerca.  
 
-            -   **Valore:** immettere un valore per il quale si vuole cercare il nome di attributo selezionato. È possibile usare il simbolo di percentuale **%** come carattere jolly. Ad esempio, per cercare i computer con un nome NetBIOS che inizia con "M", immettere **M%** in questo campo.  
+-   **Valore:** immettere un valore per il quale si vuole cercare il nome di attributo selezionato. È possibile usare il simbolo di percentuale **%** come carattere jolly. Ad esempio, per cercare i computer con un nome NetBIOS che inizia con "M", immettere **M%** in questo campo.  
 
-        2.  Nella pagina **Seleziona risorse** selezionare le risorse da aggiungere alla raccolta nell'elenco **Risorse** e quindi scegliere **Avanti**.  
+2.  Nella pagina **Seleziona risorse** selezionare le risorse da aggiungere alla raccolta nell'elenco **Risorse** e quindi scegliere **Avanti**.  
 
 
-        ##### To configure a query rule  
+##### <a name="to-configure-a-query-rule"></a>Per configurare una regola di query  
 
-        1.  Nella finestra di dialogo **Proprietà regola di query** specificare le informazioni seguenti:  
+1.  Nella finestra di dialogo **Proprietà regola di query** specificare le informazioni seguenti:  
 
-            -   **Nome**: specificare un nome univoco.  
+-   **Nome**: specificare un nome univoco.  
 
-            -   **Importa istruzione query**: apre la finestra di dialogo **Sfoglia query** nella quale è possibile selezionare una [query di Configuration Manager](../../../../core/servers/manage/create-queries.md) da usare come regola di query per la raccolta.   
+-   **Importa istruzione query**: apre la finestra di dialogo **Sfoglia query** nella quale è possibile selezionare una [query di Configuration Manager](../../../../core/servers/manage/create-queries.md) da usare come regola di query per la raccolta.   
 
-            -   **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Selezionare un valore in **Risorsa di sistema** per cercare i dati di inventario restituiti dai computer client o **Computer sconosciuto** per effettuare una selezione tra i valori restituiti dai computer sconosciuti.  
+-   **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Selezionare un valore in **Risorsa di sistema** per cercare i dati di inventario restituiti dai computer client o **Computer sconosciuto** per effettuare una selezione tra i valori restituiti dai computer sconosciuti.  
 
-            -   **Modifica istruzione query**: apre la finestra di dialogo **Proprietà istruzione query** nella quale è possibile creare una query da usare come regola per la raccolta. Per altre informazioni sulle query, vedere [Riferimento tecnico per le query per System Center Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md).  
+-   **Modifica istruzione query**: apre la finestra di dialogo **Proprietà istruzione query** nella quale è possibile creare una query da usare come regola per la raccolta. Per altre informazioni sulle query, vedere [Riferimento tecnico per le query per System Center Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md).  
 
     
-        ##### To configure an include collection rule  
+##### <a name="to-configure-an-include-collection-rule"></a>Per configurare una regola di inclusione raccolte  
 
-        In the **Select Collections** dialog box, select the collections you want to include in the new collection, then choose **OK**.  
+Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da includere nella nuova raccolta e quindi scegliere **OK**.  
 
-        ##### To configure an exclude collection rule  
+##### <a name="to-configure-an-exclude-collection-rule"></a>Per configurare una regola di esclusione raccolte  
 
-        In the **Select Collections** dialog box, select the collections you want to exclude from the new collection, then choose **OK**.  
+Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da escludere dalla nuova raccolta e quindi scegliere **OK**.  
 
-    -   **Utilizza aggiornamenti incrementali per questa raccolta**: selezionare questa opzione per eseguire periodicamente una scansione e aggiornare solo le risorse nuove o modificate rispetto alla valutazione raccolta precedente, indipendentemente da una valutazione raccolta completa. Gli aggiornamenti incrementali vengono eseguiti a intervalli di 10 minuti.  
+-   **Utilizza aggiornamenti incrementali per questa raccolta**: selezionare questa opzione per eseguire periodicamente una scansione e aggiornare solo le risorse nuove o modificate rispetto alla valutazione raccolta precedente, indipendentemente da una valutazione raccolta completa. Gli aggiornamenti incrementali vengono eseguiti a intervalli di 10 minuti.  
 
-        > [!IMPORTANT]  
-        >  Le raccolte configurate tramite le regole di query che usano le classi seguenti non supportano gli aggiornamenti incrementali:  
-        >   
-        >  -   SMS_G_System_CollectedFile  
-        > -   SMS_G_System_LastSoftwareScan  
-        > -   SMS_G_System_AppClientState  
-        > -   SMS_G_System_DCMDeploymentState  
-        > -   SMS_G_System_DCMDeploymentErrorAssetDetails  
-        > -   SMS_G_System_DCMDeploymentCompliantAssetDetails  
-        > -   SMS_G_System_DCMDeploymentNonCompliantAssetDetails  
-        > -   SMS_G_User_DCMDeploymentCompliantAssetDetails (per raccolte di soli utenti)  
-        > -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails (per raccolte di soli utenti)  
-        > -   SMS_G_System_SoftwareUsageData  
-        > -   SMS_G_System_CI_ComplianceState  
-        > -   SMS_G_System_EndpointProtectionStatus  
-        > -   SMS_GH_System_*  
-        > -   SMS_GEH_System_*  
+> [!IMPORTANT]  
+>  Le raccolte configurate tramite le regole di query che usano le classi seguenti non supportano gli aggiornamenti incrementali:  
+>   
+> -   SMS_G_System_CollectedFile  
+> -   SMS_G_System_LastSoftwareScan  
+> -   SMS_G_System_AppClientState  
+> -   SMS_G_System_DCMDeploymentState  
+> -   SMS_G_System_DCMDeploymentErrorAssetDetails  
+> -   SMS_G_System_DCMDeploymentCompliantAssetDetails  
+> -   SMS_G_System_DCMDeploymentNonCompliantAssetDetails  
+> -   SMS_G_User_DCMDeploymentCompliantAssetDetails (per raccolte di soli utenti)  
+> -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails (per raccolte di soli utenti)  
+> -   SMS_G_System_SoftwareUsageData  
+> -   SMS_G_System_CI_ComplianceState  
+> -   SMS_G_System_EndpointProtectionStatus  
+> -   SMS_GH_System_*  
+> -   SMS_GEH_System_*  
 
-    -   **Pianifica un aggiornamento completo in questa raccolta**: pianificare una regolare valutazione completa dell'appartenenza alla raccolta.  
+-   **Pianifica un aggiornamento completo in questa raccolta**: pianificare una regolare valutazione completa dell'appartenenza alla raccolta.  
 
 6.  Completare la procedura guidata per creare la nuova raccolta. La nuova raccolta viene visualizzata nel nodo **Raccolte dispositivi** dell'area di lavoro **Asset e conformità** .  
 
@@ -134,60 +133,60 @@ Le raccolte costituiscono raggruppamenti di utenti o dispositivi. Usare le racco
 
     -   Nell'elenco **Aggiungi regola** selezionare il tipo di regola di appartenenza che si vuole usare per questa raccolta. È possibile configurare più regole per ogni raccolta.  
 
-         ##### <a name="to-configure-a-direct-rule"></a>Per configurare una regola diretta  
+##### <a name="to-configure-a-direct-rule"></a>Per configurare una regola diretta  
 
-        1.  Nella pagina **Cerca risorse** della **Creazione guidata regola di appartenenza diretta** specificare:  
+1.  Nella pagina **Cerca risorse** della **Creazione guidata regola di appartenenza diretta** specificare:  
 
-            -   **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Effettuare una selezione tra i valori **Risorsa utente** per cercare le informazioni sugli utenti raccolte da Configuration Manager o in **Risorsa gruppo utenti** per cercare le informazioni sui gruppi di utenti raccolte da Configuration Manager.  
+-   **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Effettuare una selezione tra i valori **Risorsa utente** per cercare le informazioni sugli utenti raccolte da Configuration Manager o in **Risorsa gruppo utenti** per cercare le informazioni sui gruppi di utenti raccolte da Configuration Manager.  
 
-            -   **Nome attributo**: selezionare l'attributo associato alla classe di risorse che si vuole cercare. Ad esempio, per selezionare gli utenti in base al nome dell'unità organizzativa (OU), selezionare **Risorsa utente** nell'elenco **Classe di risorse** e **Nome unità organizzativa utente** nell'elenco **Nome attributo** .  
+-   **Nome attributo**: selezionare l'attributo associato alla classe di risorse che si vuole cercare. Ad esempio, per selezionare gli utenti in base al nome dell'unità organizzativa (OU), selezionare **Risorsa utente** nell'elenco **Classe di risorse** e **Nome unità organizzativa utente** nell'elenco **Nome attributo** .  
 
-            -   **Valore:** immettere un valore che si vuole cercare. È possibile usare il simbolo di percentuale **%** come carattere jolly. Ad esempio, per cercare gli utenti nell'unità organizzativa Contoso, immettere **Contoso** in questo campo.  
+-   **Valore:** immettere un valore che si vuole cercare. È possibile usare il simbolo di percentuale **%** come carattere jolly. Ad esempio, per cercare gli utenti nell'unità organizzativa Contoso, immettere **Contoso** in questo campo.  
 
-        2.  Nella pagina **Seleziona risorse** selezionare le risorse da aggiungere alla raccolta nell'elenco **Risorse**.  
+2.  Nella pagina **Seleziona risorse** selezionare le risorse da aggiungere alla raccolta nell'elenco **Risorse**.  
 
-        ##### <a name="to-configure-a-query-rule"></a>Per configurare una regola di query  
+##### <a name="to-configure-a-query-rule"></a>Per configurare una regola di query  
 
-        1.  Nella finestra di dialogo **Proprietà regola di query** specificare:  
+1.  Nella finestra di dialogo **Proprietà regola di query** specificare:  
 
-            -   **Nome**: un nome univoco.  
+-   **Nome**: un nome univoco.  
 
-            -   **Importa istruzione query**: apre la finestra di dialogo **Sfoglia query** nella quale è possibile selezionare una [query di Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md) da usare come regola di query per la raccolta.  
+-   **Importa istruzione query**: apre la finestra di dialogo **Sfoglia query** nella quale è possibile selezionare una [query di Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md) da usare come regola di query per la raccolta.  
 
-            -   **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Effettuare una selezione tra i valori **Risorsa utente** per cercare le informazioni sugli utenti raccolte da Configuration Manager o in **Risorsa gruppo utenti** per cercare le informazioni sui gruppi di utenti raccolte da Configuration Manager.  
+-   **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Effettuare una selezione tra i valori **Risorsa utente** per cercare le informazioni sugli utenti raccolte da Configuration Manager o in **Risorsa gruppo utenti** per cercare le informazioni sui gruppi di utenti raccolte da Configuration Manager.  
 
-            -   **Modifica istruzione query**: apre la finestra di dialogo **Proprietà istruzione query** nella quale è possibile [creare una query](../../../../core/servers/manage/queries-technical-reference.md) da usare come regola per la raccolta.  
+-   **Modifica istruzione query**: apre la finestra di dialogo **Proprietà istruzione query** nella quale è possibile [creare una query](../../../../core/servers/manage/queries-technical-reference.md) da usare come regola per la raccolta.  
 
-        ##### <a name="to-configure-an-include-collection-rule"></a>Per configurare una regola di inclusione raccolte  
+##### <a name="to-configure-an-include-collection-rule"></a>Per configurare una regola di inclusione raccolte  
 
-        Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da includere nella nuova raccolta e quindi scegliere **OK**.  
+Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da includere nella nuova raccolta e quindi scegliere **OK**.  
 
-        ##### <a name="to-configure-an-exclude-collection-rule"></a>Per configurare una regola di esclusione raccolte  
+##### <a name="to-configure-an-exclude-collection-rule"></a>Per configurare una regola di esclusione raccolte  
 
-        Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da escludere dalla nuova raccolta e quindi scegliere **OK**.  
+Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da escludere dalla nuova raccolta e quindi scegliere **OK**.  
 
 
-    -   **Utilizza aggiornamenti incrementali per questa raccolta**: selezionare questa opzione per eseguire periodicamente una scansione e aggiornare solo le risorse nuove o modificate rispetto alla valutazione raccolta precedente, indipendentemente da una valutazione raccolta completa. Gli aggiornamenti incrementali vengono eseguiti a intervalli di 10 minuti.  
+-   **Utilizza aggiornamenti incrementali per questa raccolta**: selezionare questa opzione per eseguire periodicamente una scansione e aggiornare solo le risorse nuove o modificate rispetto alla valutazione raccolta precedente, indipendentemente da una valutazione raccolta completa. Gli aggiornamenti incrementali vengono eseguiti a intervalli di 10 minuti.  
 
-        > [!IMPORTANT]  
-        >  Le raccolte configurate tramite le regole di query che usano le classi seguenti non supportano gli aggiornamenti incrementali:  
-        >   
-        >  -   SMS_G_System_CollectedFile  
-        > -   SMS_G_System_LastSoftwareScan  
-        > -   SMS_G_System_AppClientState  
-        > -   SMS_G_System_DCMDeploymentState  
-        > -   SMS_G_System_DCMDeploymentErrorAssetDetails  
-        > -   SMS_G_System_DCMDeploymentCompliantAssetDetails  
-        > -   SMS_G_System_DCMDeploymentNonCompliantAssetDetails  
-        > -   SMS_G_User_DCMDeploymentCompliantAssetDetails (per raccolte di soli utenti)  
-        > -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails (per raccolte di soli utenti)  
-        > -   SMS_G_System_SoftwareUsageData  
-        > -   SMS_G_System_CI_ComplianceState  
-        > -   SMS_G_System_EndpointProtectionStatus  
-        > -   SMS_GH_System_*  
-        > -   SMS_GEH_System_*  
+> [!IMPORTANT]  
+>  Le raccolte configurate tramite le regole di query che usano le classi seguenti non supportano gli aggiornamenti incrementali:  
+>   
+> -   SMS_G_System_CollectedFile  
+> -   SMS_G_System_LastSoftwareScan  
+> -   SMS_G_System_AppClientState  
+> -   SMS_G_System_DCMDeploymentState  
+> -   SMS_G_System_DCMDeploymentErrorAssetDetails  
+> -   SMS_G_System_DCMDeploymentCompliantAssetDetails  
+> -   SMS_G_System_DCMDeploymentNonCompliantAssetDetails  
+> -   SMS_G_User_DCMDeploymentCompliantAssetDetails (per raccolte di soli utenti)  
+> -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails (per raccolte di soli utenti)  
+> -   SMS_G_System_SoftwareUsageData  
+> -   SMS_G_System_CI_ComplianceState  
+> -   SMS_G_System_EndpointProtectionStatus  
+> -   SMS_GH_System_*  
+> -   SMS_GEH_System_*  
 
-    -   **Pianifica un aggiornamento completo in questa raccolta**: pianificare una regolare valutazione completa dell'appartenenza alla raccolta.  
+-   **Pianifica un aggiornamento completo in questa raccolta**: pianificare una regolare valutazione completa dell'appartenenza alla raccolta.  
 
 6.  Completare la procedura guidata. La nuova raccolta viene visualizzata nel nodo **Raccolte utenti** dell'area di lavoro **Asset e conformità** .  
 
