@@ -15,6 +15,7 @@
 ### [Gestire Long-Term Servicing Branch](understand/manage-the-ltsb.md)
 ### [Aggiornare Long-Term Servicing Branch a Current Branch](understand/convert-to-current-branch.md)
 ##  [Scelta del ramo di Configuration Manager da usare](understand/which-branch-should-i-use.md)
+##  [Client di interoperabilità estesa](understand/interoperability-client.md)
 ##  [Licenze per System Center Configuration Manager](understand/learn-more-editions.md)
 ##  [Usare i servizi cloud](understand/use-cloud-services.md)
 ### [Configuration Manager in Azure](understand/configuration-manager-on-azure.md)
