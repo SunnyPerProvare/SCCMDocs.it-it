@@ -123,3 +123,4 @@ Dopo aver completato l'installazione, eseguire il file **UpdatesPublisher.exe** 
 
  Se, tuttavia, si vogliono usare le impostazioni predefinite e non si pianifica la distribuzione di aggiornamenti in un server di aggiornamento o in dispositivi gestiti, è possibile passare direttamente alla [gestione dei cataloghi di aggiornamenti software](updates-publisher-catalogs.md) o alla [creazione di aggiornamenti software](create-updates-with-updates-publisher.md) e creare cataloghi di aggiornamento personalizzati.
 
+
