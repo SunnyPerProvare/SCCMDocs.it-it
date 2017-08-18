@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: Nbigman
 ms.author: nbigman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: aa8924a013ebdbee888cab33001fddbe7ad2d67e
-ms.openlocfilehash: 80a716f5a42a81e5550eb1b5c7f14534e14a4fb7
+ms.translationtype: HT
+ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
+ms.openlocfilehash: 1e00804d27ecef2aadd8bfa395db1919c46243ee
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 08/02/2017
 
 ---
 
@@ -34,10 +33,16 @@ Usare i profili certificato in Configuration Manager (SCCM) per effettuare il pr
 
 Questo argomento descrive come creare profili certificato SCEP e radice attendibile. Se si vuole creare profili certificato PFX, vedere [Creare profili certificato PFX](../../protect/deploy-use/create-pfx-certificate-profiles.md) .
 
+Per creare un profilo certificato:
 
-## <a name="create-a-new-certificate-profile"></a>Creare un nuovo profilo di certificato  
+1.  Avviare la Creazione guidata profilo certificato.
+1.  Fornire informazioni generali sul certificato.
+1.  Configurare un certificato dell'autorità di certificazione (CA) attendibile.  
+1.  Configurare le informazioni sul certificato SCEP (solo per i certificati SCEP).  
+1.  Specificare le piattaforme supportate per il profilo certificato.
 
-### <a name="start-the-create-certificate-profile-wizard"></a>avviare la Creazione guidata profilo certificato  
+
+## <a name="start-the-create-certificate-profile-wizard"></a>Avviare la Creazione guidata profilo certificato  
 
 1.  Nella console di System Center Configuration Manager fare clic su **Asset e conformità**.  
 
@@ -45,7 +50,7 @@ Questo argomento descrive come creare profili certificato SCEP e radice attendib
 
 3.  Nella scheda **Home** del gruppo **Crea** fare clic su **Crea profilo certificato**.  
 
-### <a name="provide-general-information-about-the-certificate-profile"></a>Fornire informazioni generali sul profilo certificato  
+## <a name="provide-general-information-about-the-certificate-profile"></a>Fornire informazioni generali sul profilo certificato  
 
 Nella pagina **Generale** della Creazione guidata profilo certificato specificare le informazioni seguenti:  
 
@@ -59,11 +64,12 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
 
 -   **Impostazioni di Simple Certificate Enrollment Protocol (SCEP)**: selezionare questo tipo di profilo certificato se si desidera richiedere un certificato per un utente o un dispositivo utilizzando il Simple Certificate Enrollment Protocol e il servizio del ruolo del servizio Registrazione dispositivi di rete.
 
--   **Scambio informazioni personali - Impostazioni PKCS #12 (PFX) - Importa**: selezionare questa opzione per importare un certificato PFX. Per altre informazioni sulla creazione del certificato PFX, vedere [Creare profili certificato PFX](../../protect/deploy-use/create-pfx-certificate-profiles.md).
+-   **Scambio informazioni personali - Impostazioni PKCS #12 (PFX) - Importa**: selezionare questa opzione per importare un certificato PFX. Per altre informazioni sulla creazione del certificato PFX, vedere [Importare profili certificato PFX](/sccm/mdm/deploy-use/import-pfx-certificate-profiles.md).
+
+-   **Personal Information Exchange - Impostazioni PKCS #12 (PFX) - Crea**: selezionare questa opzione per elaborare i certificati PFX usando un'autorità di certificazione. Per altre informazioni sulla creazione del certificato PFX, vedere [Creare profili certificato PFX](/sccm/mdm/deploy-use/create-pfx-certificate-profiles.md).
 
 
-
-### <a name="configure-a-trusted-ca-certificate"></a>Configurare un certificato CA attendibile  
+## <a name="configure-a-trusted-ca-certificate"></a>Configurare un certificato CA attendibile  
 
 > [!IMPORTANT]  
 >  Prima di creare un profilo certificato SCEP è necessario configurare almeno un profilo certificato CA attendibile.    
@@ -89,7 +95,7 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
 2.  Usare il valore **Identificazione personale certificato** per accertarsi di aver importato il certificato corretto.  
 
 
-### <a name="configure-scep-certificate-information-only-for-scep-certificates"></a>Configurare le informazioni sul certificato SCEP (solo per i certificati SCEP)  
+## <a name="configure-scep-certificate-information-only-for-scep-certificates"></a>Configurare le informazioni sul certificato SCEP (solo per i certificati SCEP)  
 
 1.  Nella pagina **Server SCEP** della Creazione guidata profilo certificato specificare gli URL per i server NDES che emetteranno i certificati tramite SCEP. È possibile scegliere di assegnare automaticamente un URL NDES in base alla configurazione del server del sistema del sito del punto di registrazione certificati o aggiungere manualmente gli URL.  
 
@@ -144,7 +150,7 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
     
    > [!NOTE]  
    > 
-   > La selezione di **Codice IMEI** o di **Numero di serie** consente di distinguere i diversi dispositivi appartenenti allo stesso utente. Tali dispositivi, ad esempio, potrebbero condividere il nome comune, ma non il codice IMEI o il numero di serie. Se il dispositivo non ha un codice IMEI o un numero di serie, il certificato viene emesso con il nome comune.
+   > La selezione di **Codice IMEI**  o di **Numero di serie** consente di distinguere i diversi dispositivi appartenenti allo stesso utente. Tali dispositivi, ad esempio, potrebbero condividere il nome comune, ma non il codice IMEI o il numero di serie. Se il dispositivo non ha un codice IMEI o un numero di serie, il certificato viene emesso con il nome comune.
 
  -   **Nome alternativo oggetto**: specificare in che modo System Center Configuration Manager crea automaticamente i valori per il nome alternativo oggetto (SAN) nella richiesta certificato. Ad esempio, se si seleziona un tipo di certificato utente, è possibile includere il nome dell'entità utente (UPN) nel nome alternativo oggetto.  Se il certificato client verrà usato per eseguire l'autenticazione in un server dei criteri di rete, è necessario impostare il nome alternativo oggetto sul nome dell'entità utente.  
 
@@ -183,7 +189,7 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
    >  Se si specifica un certificato CA radice non distribuito all'utente o al dispositivo, System Center Configuration Manager non avvierà la richiesta certificato in fase di configurazione in questo profilo certificato.  
 
 
-###  <a name="specify-supported-platforms-for-the-certificate-profile"></a>Specificare le piattaforme supportate per il profilo certificato  
+##  <a name="specify-supported-platforms-for-the-certificate-profile"></a>Specificare le piattaforme supportate per il profilo certificato  
 
 1. Nella pagina **Piattaforme supportate** della Creazione guidata profilo certificato, selezionare i sistemi operativi in cui si desidera installare il profilo certificato. In alternativa, fare clic su **Seleziona tutto** per installare il profilo certificato su tutti i sistemi operativi disponibili.
 2. Rivedere le impostazioni nella pagina **Riepilogo** della procedura guidata e scegliere **Fine**. 

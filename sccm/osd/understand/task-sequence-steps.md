@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 6f9e6e93fce95666503907010a5c253158c5de7c
-ms.openlocfilehash: f648d7626af50d95fbaa5a7a2abd821a9c47f5d1
+ms.translationtype: HT
+ms.sourcegitcommit: b7461f89f483314bd07248bbc9d5dde85ca6b6c2
+ms.openlocfilehash: e0726febc4c36a26c5e067914734838bf2681e6c
 ms.contentlocale: it-it
-ms.lasthandoff: 07/07/2017
-
+ms.lasthandoff: 08/03/2017
 
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Passaggi della sequenza di attività in System Center Configuration Manager
@@ -1527,9 +1526,9 @@ Dopo la selezione delle variabili per una regola, è necessario fornire un valor
 >  Quando si importa una sequenza di attività con il passaggio Imposta variabili dinamiche e **Valore segreto** è selezionato per il valore della variabile, il valore verrà rimosso quando si importa la sequenza di attività. Sarà quindi necessario immettere di nuovo il valore per la variabile dinamica dopo l'importazione della sequenza di attività.  
 
 ##  <a name="BKMK_SetTaskSequenceVariable"></a> Imposta variabile della sequenza di attività  
- Usare il passaggio **Imposta variabile della sequenza di attività** della sequenza di attività per configurare il valore di una variabile usata con la sequenza di attività.  
+Usare il passaggio **Imposta variabile della sequenza di attività** della sequenza di attività per configurare il valore di una variabile usata con la sequenza di attività.  
 
- Questo passaggio può essere eseguito in un sistema operativo standard o in Windows PE. Le variabili della sequenza di attività vengono lette dalle azioni della sequenza di attività e specificano il comportamento di tali azioni. Per altre informazioni sulle variabili di una sequenza di attività specifica, vedere [Variabili di azione della sequenza di attività](task-sequence-action-variables.md).  
+Questo passaggio può essere eseguito in un sistema operativo standard o in Windows PE. Le variabili della sequenza di attività vengono lette dalle azioni della sequenza di attività e specificano il comportamento di tali azioni. Per altre informazioni sulle variabili di una sequenza di attività specifica, vedere [Variabili di azione della sequenza di attività](task-sequence-action-variables.md).  
 
 ### <a name="details"></a>Dettagli  
  Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
@@ -1553,6 +1552,16 @@ Dopo la selezione delle variabili per una regola, è necessario fornire un valor
 
  **Valore**  
  Valore associato alla variabile della sequenza di attività. Il valore può essere un'altra variabile della sequenza di attività con la sintassi %<varname\>%.  
+
+## <a name="hide-task-sequence-progress"></a>Nascondere l’avanzamento della sequenza di attività
+<!-- 1354291 -->
+Con la versione 1706 è possibile controllare quando visualizzare lo stato della sequenza di attività per gli utenti finali tramite una nuova variabile. Nella sequenza di attività usare il passaggio **Imposta variabile della sequenza attività** per impostare il valore per la variabile **TSDisableProgressUI** per nascondere o visualizzare lo stato della sequenza di attività. È possibile usare più volte il passaggio Imposta variabile della sequenza di attività in una sequenza di attività per modificare il valore della variabile. Ciò consente di visualizzare o nascondere l'avanzamento dello stato della sequenza di attività in varie sezioni della sequenza di attività.
+
+ - **Per nascondere lo stato della sequenza di attività**  
+Nell'editor di sequenze di attività usare il passaggio [Imposta variabile della sequenza di attività](#BKMK_SetTaskSequenceVariable) per impostare il valore della variabile **TSDisableProgressUI** su **True** per nascondere lo stato della sequenza di attività.
+
+ - **Per visualizzare lo stato della sequenza di attività**  
+Nell'editor di sequenze di attività usare il passaggio [Imposta variabile della sequenza di attività](#BKMK_SetTaskSequenceVariable) per impostare il valore della variabile **TSDisableProgressUI** su **False** per visualizzare lo stato della sequenza di attività.
 
 ##  <a name="BKMK_SetupWindowsandConfigMgr"></a> Imposta Windows e ConfigMgr  
  Usare il passaggio **Imposta Windows e ConfigMgr** della sequenza di attività per eseguire la transizione da Windows PE al nuovo sistema operativo. Questo passaggio della sequenza di attività è una parte necessaria di qualsiasi distribuzione del sistema operativo. Installa il client di Configuration Manager nel nuovo sistema operativo e prepara la sequenza di attività per continuare l'esecuzione nel nuovo sistema operativo.  

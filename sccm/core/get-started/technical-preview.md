@@ -2,7 +2,7 @@
 title: Technical Preview per Configuration Manager | Microsoft Docs
 description: "Informazioni sulla versione Technical Preview che consente di testare nuove funzionalità in System Center Configuration Manager."
 ms.custom: na
-ms.date: 06/23/2017
+ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: HT
-ms.sourcegitcommit: 1f57c63ceeb13c7f7d760d7ecfb48df749da6770
-ms.openlocfilehash: 4644928acbb1ae3d7d72f877565589fae435a96b
+ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
+ms.openlocfilehash: 9f814fc2902cef116f6b1e476af5d4cbdfc4e217
 ms.contentlocale: it-it
-ms.lasthandoff: 07/28/2017
+ms.lasthandoff: 08/02/2017
 
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Technical Preview per System Center Configuration Manager
@@ -127,47 +127,47 @@ Ogni versione di anteprima è supportata finché non sono disponibili fino a tre
  |Funzionalità |Versione Technical Preview |Versione Current Branch|  
  |----------------|---------------------|--------------------|
  |Nuove impostazioni dei criteri di gestione delle applicazioni mobili|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#new-mobile-application-management-policy-settings)|![Non aggiunta](media/Red_X.gif)|
- |Gruppi di limiti migliorati per i punti di aggiornamento software|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#improved-boundary-groups-for-software-update-points)|![Non aggiunta](media/Red_X.gif)|
+ |Gruppi di limiti migliorati per i punti di aggiornamento software|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#improved-boundary-groups-for-software-update-points)|[Versione 1706](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points)|
  |Disponibilità elevata per il ruolo del server del sito|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#site-server-role-high-availability) |![Non aggiunta](media/Red_X.gif)|
  |Includere attendibilità per file e cartelle specifici in un criterio di Device Guard|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#include-trust-for-specific-files-and-folders-in-a-device-guard-policy)|![Non aggiunta](media/Red_X.gif)|
  |Nascondere l’avanzamento della sequenza di attività|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#hide-task-sequence-progress)|![Non aggiunta](media/Red_X.gif)|
  |Specificare un percorso del contenuto diverso per il contenuto di installazione e il contenuto di disinstallazione|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#specify-a-different-content-location-for-install-content-and-uninstall-content)|![Non aggiunta](media/Red_X.gif)|
- |Miglioramenti all'accessibilità |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#accessibility-improvements)|![Non aggiunta](media/Red_X.gif)|
+ |Miglioramenti all'accessibilità |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#accessibility-improvements)|[Versione 1706](/sccm/core/understand/accessibility-features)|
  |Supporto per la procedura guidata per i servizi di Azure per Preparazione aggiornamenti |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#changes-to-the-azure-services-wizard-to-support-upgrade-readiness)|![Non aggiunta](media/Red_X.gif)|
- |Nuove impostazioni client per i servizi cloud|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#new-client-settings-for-cloud-services)|![Non aggiunta](media/Red_X.gif)|
- |Creare ed eseguire script di PowerShell dalla console di Configuration Manager|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#create-and-run-powershell-scripts-from-the-configuration-manager-console)|![Non aggiunta](media/Red_X.gif)|
+ |Nuove impostazioni client per i servizi cloud|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#new-client-settings-for-cloud-services)|[Versione 1706](/sccm/core/clients/deploy/deploy-clients-cmg-azure)|
+ |Creare ed eseguire script di PowerShell dalla console di Configuration Manager|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#create-and-run-powershell-scripts-from-the-configuration-manager-console)|[Versione 1706](/sccm/apps/deploy-use/create-deploy-scripts)|
  |Supporto dell'avvio della rete PXE per IPv6 |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#pxe-network-boot-support-for-ipv6)|![Non aggiunta](media/Red_X.gif)|
- |Gestire gli aggiornamenti dei driver di Microsoft Surface |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#manage-microsoft-surface-driver-updates)|![Non aggiunta](media/Red_X.gif)|
- |Configurare i criteri di rinvio di Windows Update for Business |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#configure-windows-update-for-business-deferral-policies)|![Non aggiunta](media/Red_X.gif)|
+ |Gestire gli aggiornamenti dei driver di Microsoft Surface |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#manage-microsoft-surface-driver-updates)|[Versione 1706](/sccm/core/plan-design/changes/whats-new-in-version-1706#manage-microsoft-surface-driver-updates)|
+ |Configurare i criteri di rinvio di Windows Update for Business |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#configure-windows-update-for-business-deferral-policies)|[Versione 1706](/sccm/sum/deploy-use/integrate-windows-update-for-business-windows-10#configure-windows-update-for-business-deferral-policies)|
  |Restrizioni di registrazione di Android e iOS|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#android-and-ios-enrollment-restrictions)|![Non aggiunta](media/Red_X.gif)|
- |Criteri per la gestione dell’applicazione Android for Work per il copia e incolla|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#android-for-work-application-management-policy-for-copy-paste)|![Non aggiunta](media/Red_X.gif)|
- |Nuove impostazioni dell’elemento di configurazione di Windows|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#new-windows-configuration-item-settings)|![Non aggiunta](media/Red_X.gif)|
+ |Criteri per la gestione dell’applicazione Android for Work per il copia e incolla|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#android-for-work-application-management-policy-for-copy-paste)|[Versione 1706](/sccm/mdm/deploy-use/create-configuration-items-for-android-for-work-devices-managed-without-the-client#android-for-work-configuration-item-settings-reference)|
+ |Nuove impostazioni dell’elemento di configurazione di Windows|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#new-windows-configuration-item-settings)|[Versione 1706](/sccm/mdm/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client)|
  |Nuove regole per i criteri di conformità dei dispositivi|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#new-device-compliance-policy-rules)|![Non aggiunta](media/Red_X.gif)|
  |Valutazione dell’Attestazione dell'integrità dei dispositivi per i criteri di conformità per l'accesso condizionale|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#device-health-attestation-assessment-for-compliance-policies-for-conditional-access)|![Non aggiunta](media/Red_X.gif)|
- |Supporto per le autorità di certificazione Entrust|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#support-for-entrust-certification-authorities)|![Non aggiunta](media/Red_X.gif)|
- |Supporto Cisco (IPsec) per i profili VPN di MacOS|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#cisco-ipsec-support-for-macos-vpn-profiles)|![Non aggiunta](media/Red_X.gif)|
- |Nuove funzionalità per Azure AD e la gestione del cloud|[Tech Preview 1705](capabilities-in-technical-preview-1705.md#new-capabilities-for-azure-ad-and-cloud-management)|![Non aggiunta](media/Red_X.gif)|
+ |Supporto per le autorità di certificazione Entrust|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#support-for-entrust-certification-authorities)|[Versione 1706](/sccm/mdm/deploy-use/create-pfx-certificate-profiles)|
+ |Supporto Cisco (IPsec) per i profili VPN di MacOS|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#cisco-ipsec-support-for-macos-vpn-profiles)|[Versione 1706](/sccm/protect/deploy-use/vpn-profiles)|
+ |Nuove funzionalità per la gestione di Azure AD e del cloud|[Tech Preview 1705](capabilities-in-technical-preview-1705.md#new-capabilities-for-azure-ad-and-cloud-management)|[Versione 1706](/sccm/core/plan-design/changes/whats-new-in-version-1706#azure-ad-integration-with-configuration-manager)|
  |Configurare e distribuire i criteri di Windows Defender Application Guard|[Tech Preview 1705](capabilities-in-technical-preview-1705.md#configure-and-deploy-windows-defender-application-guard-policies)|![Non aggiunta](media/Red_X.gif)|
- |Strumento di reimpostazione dell'aggiornamento  |[Tech Preview 1705](capabilities-in-technical-preview-1705.md#update-reset-tool)|![Non aggiunta](media/Red_X.gif)|
- |Supporto per console con DPI elevato  |[Tech Preview 1705](capabilities-in-technical-preview-1705.md#high-dpi-console-support)|![Non aggiunta](media/Red_X.gif)|
- |Miglioramenti della peer cache  |[Tech Preview 1705](capabilities-in-technical-preview-1705.md#peer-cache-improvements) |![Non aggiunta](media/Red_X.gif)|
- |Miglioramenti per i gruppi di disponibilità Always On di SQL Server |[Tech Preview 1705](capabilities-in-technical-preview-1705.md#improvements-for-sql-server-always-on-availability-groups) |![Non aggiunta](media/Red_X.gif)|
- |Notifiche utente migliorate per gli aggiornamenti di Office 365|[Tech Preview 1705](capabilities-in-technical-preview-1705.md#improved-user-notifications-for-office-365-updates) |![Non aggiunta](media/Red_X.gif)|
- |Usare la procedura guidata servizi di Azure per configurare una connessione a OMS|[Tech Preview 1705](capabilities-in-technical-preview-1705.md#use-azure-services-wizard-to-configure-a-connection-to-oms) |![Non aggiunta](media/Red_X.gif)|
+ |Strumento di reimpostazione dell'aggiornamento  |[Tech Preview 1705](capabilities-in-technical-preview-1705.md#update-reset-tool)|[Versione 1706](/sccm/core/servers/manage/update-reset-tool)|
+ |Supporto per console con DPI elevato  |[Tech Preview 1705](capabilities-in-technical-preview-1705.md#high-dpi-console-support)|[Versione 1706](/sccm/core/plan-design/changes/whats-new-in-version-1706#high-dpi-console-support)|
+ |Miglioramenti della peer cache  |[Tech Preview 1705](capabilities-in-technical-preview-1705.md#peer-cache-improvements) |[Versione 1706](/sccm/core/plan-design/hierarchy/client-peer-cache#requirements-and-considerations-for-peer-cache)|
+ |Miglioramenti per i gruppi di disponibilità Always On di SQL Server |[Tech Preview 1705](capabilities-in-technical-preview-1705.md#improvements-for-sql-server-always-on-availability-groups) |[Versione 1706](/sccm/core/plan-design/changes/whats-new-in-version-1706#improvements-for-sql-server-always-on-availability-groups)|
+ |Notifiche utente migliorate per gli aggiornamenti di Office 365|[Tech Preview 1705](capabilities-in-technical-preview-1705.md#improved-user-notifications-for-office-365-updates) |[Versione 1706](/sccm/sum/deploy-use/manage-office-365-proplus-updates#restart-behavior-and-client-notifications-for-office-365-updates)|
+ |Usare la Procedura guidata Servizi di Azure per configurare una connessione a OMS|[Tech Preview 1705](capabilities-in-technical-preview-1705.md#use-azure-services-wizard-to-configure-a-connection-to-oms) |![Non aggiunta](media/Red_X.gif)|
  |Configurare le app Android con i criteri di configurazione delle app  |[Tech Preview 1704](capabilities-in-technical-preview-1704.md#configure-android-apps-with-app-configuration-policies)|![Non aggiunta](media/Red_X.gif)|
- |L'inventario hardware raccoglie le informazioni di Avvio protetto |[Tech Preview 1704](capabilities-in-technical-preview-1704.md#hardware-inventory-collects-secure-boot-information)|![Non aggiunta](media/Red_X.gif)|
+ |L'inventario hardware raccoglie le informazioni di Avvio protetto |[Tech Preview 1704](capabilities-in-technical-preview-1704.md#hardware-inventory-collects-secure-boot-information)|[Versione 1706](/sccm/core/plan-design/changes/whats-new-in-version-1706#hardware-inventory-collects-secure-boot-information)|
  |Aggiungere sequenze di attività figlio a una sequenza di attività|[Tech Preview 1704](capabilities-in-technical-preview-1704.md#add-child-task-sequences-to-a-task-sequence)|![Non aggiunta](media/Red_X.gif)|
- |Ricaricare immagini di avvio con la versione corrente di Windows PE |[Tech Preview 1704](capabilities-in-technical-preview-1704.md#reload-boot-images-with-current-windows-pe-version)|![Non aggiunta](media/Red_X.gif)|
+ |Ricaricare immagini di avvio con la versione corrente di Windows PE |[Tech Preview 1704](capabilities-in-technical-preview-1704.md#reload-boot-images-with-current-windows-pe-version)|[Versione 1706](/sccm/osd/get-started/manage-boot-images#update-distribution-points-with-the-boot-image)|
  |Miglioramenti alla distribuzione del sistema operativo|[Tech Preview 1704](capabilities-in-technical-preview-1704.md#improvements-to-operating-system-deployment)|![Non aggiunta](media/Red_X.gif)|
  |Distribuire app iOS acquistate con Volume Purchase Program a raccolte di dispositivi|[Tech Preview 1703](capabilities-in-technical-preview-1703.md#deploy-volume-purchased-ios-apps-to-device-collections)|[Versione 1702](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps)|
  |Collegamenti diretti alle applicazioni in Software Center|[Tech Preview 1703](capabilities-in-technical-preview-1703.md#direct-links-to-applications-in-software-center)|![Non aggiunta](media/Red_X.gif)
- |Certificati PFX per i computer client Windows di Configuration Manager|[Tech Preview 1703](capabilities-in-technical-preview-1703.md#pfx-certificates-for-configuration-manager-windows-client-computers)|![Non aggiunta](media/Red_X.gif)|
- |Configurazione guidata servizi di Azure|[Tech Preview 1703](capabilities-in-technical-preview-1703.md#configure-azure-services-wizard)|![Non aggiunta](media/Red_X.gif)|
+ |Certificati PFX per i computer client Windows di Configuration Manager|[Tech Preview 1703](capabilities-in-technical-preview-1703.md#pfx-certificates-for-configuration-manager-windows-client-computers)|[Versione 1706](/sccm/protect/deploy-use/create-certificate-profiles)|
+ |Configurazione guidata servizi di Azure|[Tech Preview 1703](capabilities-in-technical-preview-1703.md#configure-azure-services-wizard)|[Versione 1706](/sccm/core/servers/deploy/configure/azure-services-wizard)|
  |Conversione da BIOS a UEFI in una sequenza di attività di aggiornamento del sistema operativo| [Tech Preview 1703](capabilities-in-technical-preview-1703.md#convert-from-bios-to-uefi-during-an-in-place-upgrade) |[Versione 1702](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade)|
- |Gruppi di sequenze di attività comprimibili| [Tech Preview 1703](capabilities-in-technical-preview-1703.md#collapsible-task-sequence-groups) |![Non aggiunta](media/Red_X.gif)|
+ |Gruppi di sequenze di attività comprimibili| [Tech Preview 1703](capabilities-in-technical-preview-1703.md#collapsible-task-sequence-groups) |[Versione 1706](/sccm/core/plan-design/changes/whats-new-in-version-1706#collapsible-task-sequence-groups)|
  |Impostazioni client per configurare Windows Analytics per Upgrade Readiness | [Tech Preview 1703](capabilities-in-technical-preview-1703.md#client-settings-to-configure-windows-analytics-for-upgrade-readiness) |![Non aggiunta](media/Red_X.gif)|
  |Nuove impostazioni di conformità per i dispositivi iOS|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#new-compliance-settings-for-ios-devices)|[Versione 1702](/sccm/mdm/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client)|
- |Creare certificati PFX con il supporto di S/MIME|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#create-pfx-certificates-with-s-mime-support)|[Versione 1702](/sccm/mdm/deploy-use/create-pfx-certificate-profiles)|
+ |Creare certificati PFX con il supporto di S/MIME|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#create-pfx-certificates-with-s-mime-support)|[Versione 1706](/sccm/mdm/deploy-use/create-pfx-certificate-profiles)|
  |Controllare l'esecuzione di file eseguibili prima di installare un'applicazione|[Tech Preview 1702](capabilities-in-technical-preview-1702.md#check-for-running-executable-files-before-installing-an-application)|[Versione 1702](/sccm/apps/deploy-use/deploy-applications)|
  |Inviare commenti e suggerimenti dalla console di Configuration Manager | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#send-feedback-from-the-configuration-manager-console)    |[Versione 1702](/sccm/core/plan-design/changes/whats-new-in-version-1702#send-feedback-from-the-configuration-managercconsole)  |
  |Modifiche per Aggiornamenti e manutenzione  | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#changes-for-updates-and-servicing)  |[Versione 1702](/sccm/core/plan-design/changes/whats-new-in-version-1702#changes-for-updates-and-servicing) |
@@ -194,7 +194,7 @@ Ogni versione di anteprima è supportata finché non sono disponibili fino a tre
  |Supporto di Windows Store for Business in Configuration Manager|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#windows-store-for-business-support-in-configuration-manager)|![Non aggiunta](media/Red_X.gif)|
  |Tornare alla pagina precedente quando si verifica un errore di una sequenza di attività|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#return-to-previous-page-when-a-task-sequence-fails)|[Versione 1702](/sccm/core/plan-design/changes/whats-new-in-version-1702#operating-system-deployment)|
  |Supporto per i file di installazione rapida per gli aggiornamenti di Windows 10|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#express-installation-files-support-for-windows-10-updates)|[Versione 1702](/sccm/sum/deploy-use/manage-express-installation-files-for-windows-10-updates)|
- |Onboarding di Azure Active Directory|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#azure-active-directory-onboarding)|![Non aggiunta](media/Red_X.gif)|
+ |Onboarding di Azure Active Directory|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#azure-active-directory-onboarding)|[Versione 1706](/sccm/core/servers/deploy/configure/azure-services-wizard)|
  |Modifica alla configurazione dell'autenticazione a più fattori per la registrazione dei dispositivi|[Technical Preview 1612](capabilities-in-technical-preview-1612.md#change-to-configuring-multi-factor-authentication-for-device-enrollment)|![Non aggiunta](media/Red_X.gif)|
  |Pre-cache del contenuto per le distribuzioni e le sequenze di attività |[Technical Preview 1611](capabilities-in-technical-preview-1611.md#pre-cache-content-for-available-deployments-and-task-sequences)|[Versione 1702](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content)|
  |Impostazioni di configurazione di Windows Defender|[Tech Preview 1610](capabilities-in-technical-preview-1610.md#windows-defender-configuration-settings)|[Versione 1610](/sccm/compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client)|

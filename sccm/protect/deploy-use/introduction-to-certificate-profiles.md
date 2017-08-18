@@ -2,7 +2,7 @@
 title: Introduzione ai profili certificato | Microsoft Docs
 description: Informazioni sul funzionamento dei profili certificato in System Center Configuration Manager con Servizi certificati Active Directory.
 ms.custom: na
-ms.date: 03/30/2017
+ms.date: 07/25/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,15 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 41dcc259-f147-4420-bff2-b65bdf8cff77
 caps.latest.revision: 7
-author: arob98
-ms.author: angrobe
+author: lleonard-msft
+ms.author: alleonar
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: ba1d5b04cb0cb0284525e295a6086a3c0ac67e9f
+ms.translationtype: HT
+ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
+ms.openlocfilehash: 7b1c0e449f3d1ef42e279e8707df6bf1df163b3f
 ms.contentlocale: it-it
-ms.lasthandoff: 03/27/2017
-
+ms.lasthandoff: 08/02/2017
 
 ---
 
@@ -51,17 +50,24 @@ I profili di certificato forniscono le seguenti funzionalità di gestione:
 -   **Certificato CA attendibile**: consente di distribuire un certificato della CA radice attendibile o un certificato CA intermedio in modo da formare una catena di certificati quando il dispositivo deve eseguire l'autenticazione a un server.  
 
 -   **Simple Certificate Enrollment Protocol (SCEP)**: consente di richiedere un certificato per un dispositivo o un utente usando il protocollo SCEP e il servizio Registrazione dispositivi di rete in un server che esegue Windows Server 2012 R2.
+
+    Per creare un profilo certificato di tipo **Simple Certificate Enrollment Protocol (SCEP)** creare prima un profilo certificato **Certificato CA attendibile**.
+
 -   **Personal Information Exchange (PFX)**: consente di richiedere un certificato PFX (noto anche come PKCS #12) per un dispositivo o un utente.
 
-    > [!NOTE]  
-    >  È necessario creare un profilo certificato del tipo **Certificato CA attendibile** prima di poter creare un profilo certificato di tipo **Simple Certificate Enrollment Protocol (SCEP)**.  
+    Per l'elaborazione delle richieste, è possibile creare profili certificato PFX tramite [importazione delle credenziali](/sccm/mdm/deploy-use/import-pfx-certificate-profiles.md) da certificati esistenti o tramite [definizione di una CA](/sccm/mdm/deploy-use/create-pfx-certificate-profiles.md).
+
+    A partire dalla versione 1706, è possibile usare Microsoft o Entrust come CA per i certificati di **scambio informazioni personali (PFX, Personal Information Exchange)**.
+
 
 ## <a name="requirements-and-supported-platforms"></a>Requisiti e piattaforme supportate  
- Per distribuire i profili certificato che usano SCEP, è necessario installare il punto di registrazione del certificato in un server del sistema del sito nel sito di amministrazione centrale o in un sito primario. È anche necessario installare un modulo criteri per il servizio Registrazione dispositivi di rete (NDES), il Modulo criteri di Configuration Manager, in un server che esegue Windows Server 2012 R2 con il ruolo Servizi certificati Active Directory e NDES attivo e accessibile per i dispositivi che richiedono i certificati. Per i dispositivi registrati da Microsoft Intune, NDES deve essere accessibile da Internet, ad esempio in una rete perimetrale.  
+Per distribuire i profili certificato che usano SCEP, è necessario installare il punto di registrazione del certificato in un server del sistema del sito nel sito di amministrazione centrale o in un sito primario. È anche necessario installare un modulo criteri per il servizio Registrazione dispositivi di rete (NDES), il Modulo criteri di Configuration Manager, in un server che esegue Windows Server 2012 R2 con il ruolo Servizi certificati Active Directory e NDES attivo e accessibile per i dispositivi che richiedono i certificati. Per i dispositivi registrati da Microsoft Intune, NDES deve essere accessibile da Internet, ad esempio in una rete perimetrale.  
 
- Per altre informazioni sul modo in cui il servizio Registrazione dispositivi di rete supporta moduli criteri per consentire la distribuzione di certificati da parte di Configuration Manager, vedere [Uso di un modulo criteri con il servizio Registrazione dispositivi di rete](http://go.microsoft.com/fwlink/p/?LinkId=328657).  
+I certificati PFX richiedono anche un punto di registrazione del certificato in un server del sistema del sito di amministrazione centrale o in un sito primario.  È anche necessario specificare la CA per il certificato e specificare le credenziali di accesso pertinenti.  A partire dalla versione 1706, è possibile specificare Microsoft o Entrust come CA.  
 
- Configuration Manager supporta la distribuzione dei certificati in più archivi di certificati, a seconda dei requisiti, del tipo di dispositivo e del sistema operativo. Sono supportati i dispositivi e i sistemi operativi seguenti:  
+Per altre informazioni sul modo in cui il servizio Registrazione dispositivi di rete supporta moduli criteri per consentire la distribuzione di certificati da parte di Configuration Manager, vedere [Uso di un modulo criteri con il servizio Registrazione dispositivi di rete](http://go.microsoft.com/fwlink/p/?LinkId=328657).  
+
+Configuration Manager supporta la distribuzione dei certificati in più archivi certificati, a seconda dei requisiti, del tipo di dispositivo e del sistema operativo. Sono supportati i dispositivi e i sistemi operativi seguenti:  
 
 -   Windows RT 8.1  
 

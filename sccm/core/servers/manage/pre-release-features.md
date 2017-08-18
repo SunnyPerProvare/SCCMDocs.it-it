@@ -2,7 +2,7 @@
 title: "Funzionalità di versioni non definitive| Microsoft Docs"
 description: "Funzionalità di versioni non definitive in System Center Configuration Manager"
 ms.custom: na
-ms.date: 6/13/2017
+ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,12 +15,11 @@ caps.latest.revision: 36
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
-ms.openlocfilehash: 988f8da0b221f8c0b470e7a0a8ed995356193f98
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 7b594daeed81ef2d991ad06489f9184a69804117
 ms.contentlocale: it-it
-ms.lasthandoff: 06/13/2017
-
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="pre-release-features-in-system-center-configuration-manager"></a>Funzionalità di versioni non definitive in System Center Configuration Manager
@@ -51,9 +50,10 @@ Se dopo aver dato il consenso a un sito primario autonomo si espande la gerarchi
 
  |Funzionalità          |Aggiunta come versione non definitiva | Aggiunta come funzionalità completa|  
 |------------------|---------------------|---------------------|
+| Creare ed eseguire script di PowerShell dalla console di Configuration Manager |  [Versione 1706](/sccm/apps/deploy-use/create-deploy-scripts)|![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Gestione di Device Guard con Configuration Manager |  [Versione 1702](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)|![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Controllare l'esecuzione di file eseguibili prima di installare un'applicazione  |   [Versione 1702](/sccm/apps/deploy-use/deploy-applications#how-to-check-for-running-executable-files-before-installing-an-application) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Punto di servizio del data warehouse  |  [Versione 1702](/sccm/core/servers/manage/data-warehouse) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+| Punto di servizio del data warehouse  |  [Versione 1702](/sccm/core/servers/manage/data-warehouse) |[Versione 1706](/sccm/core/servers/manage/data-warehouse)|
 | Peer cache per la distribuzione del contenuto ai client |  [Versione 1610](/sccm/core/plan-design/hierarchy/client-peer-cache) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Gateway di gestione cloud |  [Versione 1610](/sccm/core/clients/manage/plan-cloud-management-gateway) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Dashboard origini dati del client |  [Versione 1610](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|

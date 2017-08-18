@@ -2,7 +2,7 @@
 title: Gestire le app da Windows Store per le aziende | Microsoft Docs
 description: Gestire e distribuire le app da Windows Store per le aziende usando System Center Configuration Manager.
 ms.custom: na
-ms.date: 7/25/2017
+ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,10 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 ms.translationtype: HT
-ms.sourcegitcommit: ef42d1483053e9a6c502f4ebcae5a231aa6ba727
-ms.openlocfilehash: 93e767c9a115b30d68871baece670977165f55f4
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 369b6a82a20a90ca534f9484c0be71096dd35a30
 ms.contentlocale: it-it
-ms.lasthandoff: 07/26/2017
+ms.lasthandoff: 07/29/2017
 
 ---
 
@@ -85,6 +85,8 @@ Nei PC che eseguono una versione di Windows 10 precedente la versione Creators U
 
 ## <a name="set-up-windows-store-for-business-synchronization"></a>Configurare la sincronizzazione di Windows Store per le aziende
 
+### <a name="for-configuration-manager-versions-prior-to-1706"></a>Per le versioni di Configuration Manager precedenti alla versione 1706
+
 **In Azure Active Directory registrare Configuration Manager come strumento di gestione "Applicazione Web e/o API Web". Questa azione rende disponibile un ID client che sarà necessario in un secondo tempo.**
 1. Nel nodo Active Directory di [https://manage.windowsazure.com](https://manage.windowsazure.com) selezionare Azure Active Directory e quindi fare clic su **Applicazioni** > **Aggiungi**.
 2.  Fare clic su **Aggiungi un'applicazione che l'organizzazione sta sviluppando**.
@@ -110,6 +112,24 @@ Nei PC che eseguono una versione di Windows 10 precedente la versione Creators U
 2.  Nella scheda **Home** nel gruppo **Windows Store per le aziende** fare clic su **Aggiungere un account di Windows Store per le aziende**. 
 3.  Aggiungere l'ID tenant, l'ID client e la chiave client da Azure Active Directory, quindi completare la procedura guidata.
 4. Al termine viene visualizzato l'account configurato nell'elenco di **Windows Store per le aziende** nella console di Configuration Manager.
+
+### <a name="for-configuration-manager-version-1706-and-later"></a>Per Configuration Manager versione 1706 e successive
+
+1. Nella console passare a **Amministrazione** > **Panoramica** > **Cloud Services Management (Gestione dei servizi cloud)** > **Azure** > **Servizi di Azure** e quindi scegliere **Configure Azure Services (Configura servizi di Azure)** per avviare **Azure Services Wizard (Configurazione guidata servizi di Azure)**.
+2. Nella pagina **Servizi di Azure** selezionare il servizio che si vuole configurare e quindi fare clic su **Avanti**.
+3. Nella pagina **Generale** specificare un nome descrittivo per il servizio di Azure e una descrizione facoltativa, quindi fare clic su **Avanti**.
+4. Nella pagina **App** specificare l'ambiente di Azure e quindi fare clic su **Sfoglia** per aprire la finestra **App server**.
+5. Nella finestra **Server App** (App server) selezionare l'app server che si vuole usare e quindi fare clic su **OK**. Le app server sono app Web di Azure che contengono le configurazioni per l'account Azure, inclusi ID del tenant, ID client e una chiave privata per i client. Se non è disponibile un'app server, usare una delle opzioni seguenti:
+    - **Crea:** per creare una nuova app server, fare clic su **Crea**. Specificare un nome descrittivo per l'app e il tenant. Quindi, dopo avere effettuato l'accesso ad Azure, Configuration Manager crea l'app Web in Azure, inclusi l'ID Client e la chiave privata da usare con l'app Web. In un secondo momento, è possibile visualizzare queste informazioni dal portale di Azure.
+    - **Importa:** per usare un'app Web già esistente nella sottoscrizione di Azure, fare clic su **Importa**. Specificare un nome descrittivo per l'app e il tenant, quindi specificare ID tenant, ID client e chiave privata per l'app Web di Azure che si vuole rendere disponibile per l'uso con Configuration Manager. Dopo aver fatto clic su **Verifica** per verificare le informazioni, fare clic su **OK** per continuare. 
+6. Controllare la pagina **Informazioni** ed eseguire gli eventuali passaggi aggiuntivi e le configurazioni indicati. Queste configurazioni sono necessarie per usare il servizio con Configuration Manager. Ad esempio, per configurare Windows Store per le aziende:
+    - In Azure è necessario registrare Configuration Manager come applicazione Web o API Web e registrare l'ID client. È anche necessario specificare una chiave client utilizzabile dallo strumento di gestione, ovvero Configuration Manager.
+    - Nella console di Windows Store per le aziende è necessario configurare Configuration Manager come strumento di gestione dello Store, abilitare il supporto per le app con licenza offline e quindi acquistare almeno un'app. 
+7. Quando si è pronti per continuare, fare clic su **Avanti**.
+8. Nella pagina **Configurazioni dell'applicazione** completare le configurazioni per il catalogo app e la lingua per il servizio, quindi fare clic su **Avanti**.
+9. Al termine della procedura guidata, nella console di Configuration Manager viene indicato che **Windows Store per le aziende** è stato configurato come **Tipo di servizio cloud**.
+
+
 
 
 ## <a name="create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-app"></a>Creare e distribuire un'applicazione di Configuration Manager da un'app di Windows Store per le aziende.

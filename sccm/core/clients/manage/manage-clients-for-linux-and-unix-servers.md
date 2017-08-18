@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
-ms.openlocfilehash: 7a5ff0e75b8cdac68e3854c4f5aba01a7d423e9b
+ms.translationtype: HT
+ms.sourcegitcommit: afe0ecc4230733fa76e41bf08df5ccfb221da7c8
+ms.openlocfilehash: 506df4f7c7baa5f0586a1ddf0cb02b3de9f4d076
 ms.contentlocale: it-it
-ms.lasthandoff: 12/30/2016
-
+ms.lasthandoff: 08/04/2017
 
 ---
 # <a name="how-to-manage-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>Come gestire i client per i server Linux e UNIX in System Center Configuration Manager
@@ -31,7 +30,7 @@ ms.lasthandoff: 12/30/2016
 Quando si gestiscono server Linux e UNIX con System Center Configuration Manager, è possibile configurare raccolte, finestre di manutenzione e impostazioni client per semplificare la gestione dei server. Inoltre, anche se il client di Configuration Manager per Linux e UNIX non ha un'interfaccia utente, è possibile forzarne manualmente il polling dei criteri client.
 
 ##  <a name="BKMK_CollectionsforLnU"></a> Collections of Linux and UNIX servers  
- Usare le raccolte per gestire i gruppi di server Linux e UNIX in modo analogo all'uso delle raccolte per gestire altri tipi di client. Le raccolte possono essere raccolte di appartenenza diretta o basate su query che identificano i sistemi operativi client, le configurazioni hardware o altri dettagli relativi ai client archiviati nel database del sito. Ad esempio, è possibile usare le raccolte che includono server Linux e UNIX per gestire quanto segue:  
+ Usare le raccolte per gestire i gruppi di server Linux e UNIX in modo analogo all'uso delle raccolte per gestire altri tipi di client. Le raccolte possono essere raccolte di appartenenza diretta o raccolte basate su query. Le raccolte basate su query identificano i sistemi operativi client, le configurazioni hardware o altri dettagli relativi ai client archiviati nel database del sito. Ad esempio, è possibile usare le raccolte che includono server Linux e UNIX per gestire le impostazioni seguenti:  
 
 -   Impostazioni client  
 
@@ -43,14 +42,14 @@ Quando si gestiscono server Linux e UNIX con System Center Configuration Manager
 
  Le impostazioni client predefinite per l'inventario hardware includono le informazioni sul sistema operativo di un computer client. È possibile usare la proprietà **Didascalia** della classe **Sistema operativo** per identificare il sistema operativo di un server Linux o UNIX.  
 
- È possibile visualizzare i dettagli relativi ai computer che eseguono il client di Configuration Manager per Linux e UNIX nel nodo Dispositivi dell'area di lavoro Asset e conformità della console di Configuration Manager. Nell'area di lavoro Asset e conformità della console di Configuration Manager è possibile visualizzare il nome del sistema operativo di ogni computer nella colonna **Sistema operativo**.  
+ È possibile visualizzare i dettagli relativi ai computer che eseguono il client di Configuration Manager per Linux e UNIX nel nodo **Dispositivi** dell'area di lavoro **Asset e conformità** della console di Configuration Manager. Nell'area di lavoro **Asset e conformità** della console di Configuration Manager è possibile visualizzare il nome del sistema operativo di ogni computer nella colonna **Sistema operativo**.  
 
- Per impostazione predefinita i server Linux e UNIX sono membri della raccolta **Tutti i sistemi** . È consigliabile creare raccolte personalizzate che includono solo i server Linux e UNIX o un loro subset. Ciò consente di gestire operazioni quali la distribuzione del software o l'assegnazione di impostazioni client ai gruppi di computer applicabili, in modo da poter misurare con precisione l'esito di una distribuzione.   
+ Per impostazione predefinita i server Linux e UNIX sono membri della raccolta **Tutti i sistemi** . È consigliabile creare raccolte personalizzate che includono solo i server Linux e UNIX o un loro subset. Le raccolte personalizzate consentono di gestire operazioni quali la distribuzione del software o l'assegnazione di impostazioni client ai gruppi di computer applicabili, in modo da poter misurare con precisione l'esito di una distribuzione.   
 
  Quando si crea una raccolta personalizzata per server Linux e UNIX, includere le query relative alle regole di appartenenza contenenti l'attributo Didascalia per l'attributo Sistema operativo. Per informazioni sulla creazione delle raccolte, vedere [Come creare le raccolte in System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md).  
 
 ##  <a name="BKMK_MaintenanceWindowsforLnU"></a> Maintenance windows for Linux and UNIX servers  
- Il client di Configuration Manager per i server Linux e UNIX supporta l'uso di [finestre di manutenzione](../../../core/clients/manage/collections/use-maintenance-windows.md). Questo supporto è invariato rispetto a quello per i client basati su Windows.  
+ Il client di Configuration Manager per i server Linux e UNIX supporta l'uso di [finestre di manutenzione](../../../core/clients/manage/collections/use-maintenance-windows.md). Questo supporto è lo stesso dei client basati su Windows.  
 
 ##  <a name="BKMK_ClientSettingsforLnU"></a> Client settings for Linux and UNIX servers  
  È possibile [configurare le impostazioni client](../../../core/clients/deploy/configure-client-settings.md) che si applicano a server Linux e UNIX in modo analogo alla configurazione delle impostazioni per gli altri client.  

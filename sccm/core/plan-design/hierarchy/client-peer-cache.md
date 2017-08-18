@@ -2,7 +2,7 @@
 title: Peer cache del client | System Center Configuration Manager
 description: Usare la peer cache per i percorsi di origine del contenuto del client quando si distribuiscono contenuti con System Center Configuration Manager.
 ms.custom: na
-ms.date: 7/3/2017
+ms.date: 7/31/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,11 +15,11 @@ caps.latest.revision: 3
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: ed6b65a1a5aabc0970cd0333cb033405cf6d2aea
-ms.openlocfilehash: 94802680747a3d371716c1b345b2cba098150716
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 89fcd16887ae77299f9d18472ee6a1ba56794eca
 ms.contentlocale: it-it
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 07/29/2017
 
 ---
 
@@ -94,7 +94,9 @@ Usare questo report per visualizzare i dettagli relativi al rifiuto per un tipo 
 
 -   I client possono trasferire contenuti solo dai client della peer cache che si trovano nel relativo gruppo di limiti corrente.
 
--   Ogni sito in cui i client usano la peer cache deve essere configurato con un [account di accesso alla rete](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). L'account viene usato dal computer di origine della peer cache per autenticare le richieste di download dai peer e richiede solo le autorizzazioni utente di dominio per questo scopo.
+-   Prima della versione 1706, ogni sito in cui i client usano la peer cache doveva essere configurato con un [account di accesso alla rete](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). A partire dalla versione 1706 tale account non è più necessario, con un'eccezione:  se un client usa la peer cache per ottenere ed eseguire una sequenza di attività da Software Center e la sequenza di attività riavvia il client in WinPE.  In questo scenario, quando si trova in WinPE, il client richiede ancora l'account di accesso alla rete, per poter ottenere contenuto accedendo alla peer cache di origine.
+
+    Quando è obbligatorio, l'account di accesso alla rete viene usato dal computer di origine della peer cache per autenticare le richieste di download dai peer. A questo scopo richiede solo le autorizzazioni utente di dominio.
 
 -   Poiché il limite corrente di un'origine del contenuto della peer cache è determinato dall'ultimo invio dell'inventario hardware di tale client, un client che si sposti in un percorso di rete in un gruppo di limiti diverso potrebbe comunque essere considerato un membro del suo gruppo di limiti precedente ai fini della peer cache. Di conseguenza, a un client potrebbe essere offerta un'origine del contenuto della peer cache che non si trova nel suo immediato percorso di rete. È consigliabile escludere dalla partecipazione all'origine della peer cache i client soggetti a questa configurazione.
 

@@ -1,5 +1,4 @@
 ---
-
 title: Configurare le classificazioni e i prodotti per la sincronizzazione | Microsoft Docs
 description: Seguire questi passaggi per configurare le classificazioni e i prodotti per la sincronizzazione nella console di Configuration Manager.
 keywords: 
@@ -13,11 +12,11 @@ ms.service:
 ms.technology:
 - configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
-translationtype: Human Translation
-ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
-ms.openlocfilehash: 6add66e625c790b65edf64216c2262a5d082f820
-
-
+ms.translationtype: HT
+ms.sourcegitcommit: afe0ecc4230733fa76e41bf08df5ccfb221da7c8
+ms.openlocfilehash: 2da61e6e06850b36543b9fd41bd9a7d2368006fb
+ms.contentlocale: it-it
+ms.lasthandoff: 08/04/2017
 
 ---
 #  <a name="configure-classifications-and-products-to-synchronize"></a>configurare le classificazioni e i prodotti per la sincronizzazione  
@@ -51,9 +50,13 @@ ms.openlocfilehash: 6add66e625c790b65edf64216c2262a5d082f820
     > - **Strumenti:** specifica un'utilità o una funzionalità che consente di completare una o più attività.  
     > - **Aggiornamenti cumulativi:** specifica un set cumulativo di aggiornamenti rapidi inclusi nello stesso pacchetto per facilitarne la distribuzione. Questi aggiornamenti rapidi possono includere aggiornamenti della sicurezza, aggiornamenti critici, aggiornamenti e così via. Un aggiornamento cumulativo è relativo in genere a un'area specifica, ad esempio la sicurezza o un componente del prodotto.  
     > - **Aggiornamenti:** specifica un aggiornamento di un'applicazione o un file attualmente installato.  
-    > - **Aggiornamento**: specifica un aggiornamento per le caratteristiche e le funzionalità di Windows 10.  
-    >   
-    >      Per ottenere la classificazione di [aggiornamento](https://support.microsoft.com/kb/3095113), i punti di aggiornamento software e i siti devono eseguire WSUS 4.0 con l'**hotfix 3095113**.  
+    > - **Aggiornamento**: specifica un aggiornamento per le caratteristiche e le funzionalità di Windows 10. Per ottenere la classificazione di [aggiornamento](https://support.microsoft.com/kb/3095113), i punti di aggiornamento software e i siti devono eseguire WSUS 4.0 con l'**hotfix 3095113**.    
+    >       
+
+    > [!NOTE]    
+    > A partire da Configuration Manager versione 1706, è anche possibile selezionare la casella di controllo **Includi i driver di Microsoft Surface e gli aggiornamenti del firmware** per sincronizzare i driver di Microsoft Surface. Tutti i punti di aggiornamento software devono eseguire Windows Server 2016 per sincronizzare correttamente i driver di Surface.     
+    >    
+    > Si tratta di una funzionalità di versione non definitiva. Le funzionalità di versioni non definitive sono incluse nel prodotto a scopo di test preliminare in un ambiente di produzione, ma non devono essere considerate pronte per l'ambiente di produzione. Per rendere disponibile questa funzionalità è necessario attivarla. Per altre informazioni, vedere la sezione relativa all'[abilitazione delle funzionalità facoltative dagli aggiornamenti](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
 5.  Nella scheda **Prodotti** specificare i prodotti per cui si desidera sincronizzare gli aggiornamenti software e quindi fare clic su **Chiudi**.  
 
@@ -63,14 +66,8 @@ ms.openlocfilehash: 6add66e625c790b65edf64216c2262a5d082f820
     >  Se gli aggiornamenti software sono applicabili a più prodotti e almeno uno dei prodotti è selezionato per la sincronizzazione, tutti i prodotti verranno visualizzati nella console di Configuration Manager, anche se alcuni prodotti non sono stati selezionati. Se, ad esempio, Windows Server 2012 è l'unico sistema operativo selezionato e se un aggiornamento software si applica a Windows 8 e a Windows Server 2012, entrambi i prodotti verranno visualizzati nella console di Configuration Manager.  
 
     > [!IMPORTANT]  
-    >  Configuration Manager archivia un elenco di prodotti e di famiglie di prodotti da cui è possibile scegliere quando si installa per la prima volta il punto di aggiornamento software. È possibile che i prodotti e le famiglie di prodotti pubblicati dopo il rilascio di Configuration Manager non siano disponibili per la selezione finché non si completa la sincronizzazione degli aggiornamenti software, che aggiorna l'elenco di prodotti e famiglie di prodotti disponibili tra cui è possibile scegliere.  
-
+    >  Configuration Manager archivia un elenco di prodotti e di famiglie di prodotti tra cui è possibile scegliere quando si installa per la prima volta il punto di aggiornamento software. È possibile che i prodotti e le famiglie di prodotti pubblicati dopo il rilascio di Configuration Manager non siano disponibili per la selezione finché non si completa la sincronizzazione degli aggiornamenti software, che aggiorna l'elenco di prodotti e famiglie di prodotti disponibili tra cui è possibile scegliere.  
 
 ## <a name="next-steps"></a>Passaggi successivi
 Avviare la sincronizzazione degli aggiornamenti software per recuperare gli aggiornamenti software in base ai nuovi criteri. Per informazioni dettagliate, vedere [Sincronizzare gli aggiornamenti software](synchronize-software-updates.md).
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

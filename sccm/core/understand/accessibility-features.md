@@ -2,7 +2,7 @@
 title: "Accessibilità | Microsoft Docs"
 description: "Informazioni sulle funzionalità che rendono System Center Configuration Manager accessibile a persone con particolari esigenze."
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 7/31/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,11 +15,11 @@ caps.latest.revision: 6
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 98599b3c188c9e9b508fea79ecf9a2b2348e9288
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: ca518796477dda149a9f4c0ebd65f0a082eab806
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="accessibility-features-in-system-center-configuration-manager"></a>Funzionalità di accessibilità in System Center Configuration Manager
@@ -31,14 +31,38 @@ System Center Configuration Manager include funzionalità che lo rendono accessi
 
 
 ## <a name="bkmk_aconsole"></a> Funzionalità di accessibilità per la console di Configuration Manager  
--   Per accedere a un'area di lavoro, utilizzare i seguenti tasti di scelta rapida:  
 
-|Area di lavoro|Tasti di scelta rapida|  
-|------|--------|  
-|Asset e conformità|CTRL + 1|  
-|Raccolta software|CTRL + 2|  
-|monitoring|CTRL + 3|  
-|Amministrazione|CTRL + 4|  
+**Combinazioni di tasti e miglioramenti della versione 1706 e delle versioni successive**
+
+|Tasti di scelta rapida|  Scopo|
+|--------|--------|  
+|Ctrl + M|Imposta lo stato attivo sul riquadro principale (centrale).|
+|Ctrl + T|Imposta lo stato attivo sul nodo principale nel riquadro di spostamento. Se il focus era già in questo riquadro, viene impostato sull'ultimo nodo visitato.|
+|Ctrl + I|Imposta lo stato attivo sulla barra di navigazione, sotto la barra multifunzione.|
+|Ctrl + L|Imposta lo stato attivo sul campo **Ricerca**, se disponibile.|
+|Ctrl + D|Imposta lo stato attivo sul riquadro dei dettagli, se disponibile.|
+|ALT     |Sposta lo stato attivo all'interno e al di fuori della barra multifunzione.|
+
+
+- Navigazione migliorata nel riquadro di spostamento quando si digitano le lettere del nome di un nodo.
+- La navigazione tramite tastiera nella vista principale e nella barra multifunzione è ora circolare.
+- La navigazione tramite tastiera nel riquadro dei dettagli è ora circolare. Per tornare al riquadro o all'oggetto precedente, è possibile usare Ctrl + D e poi MAIUSC + TAB.
+- Dopo l'aggiornamento di una vista dell'area di lavoro, il focus è impostato nel riquadro principale dell'area di lavoro.
+- Risolto un problema per abilitare i lettori dello schermo per annunciare i nomi degli elementi dell'elenco.
+- Nomi accessibili aggiunti per più controlli nella pagina che consente ai lettori dello schermo di annunciare informazioni importanti.
+
+
+**Le combinazioni di tasti seguenti sono disponibili per tutte le versioni**
+
+- Per accedere a un'area di lavoro, utilizzare i seguenti tasti di scelta rapida:  
+
+|Tasti di scelta rapida| Area di lavoro|
+|--------|--------|  
+|CTRL+1| Asset e conformità|
+|CTRL+2|  Raccolta software|
+|CTRL+3|  Monitoraggio|
+|CTRL+4|  Amministrazione|
+
 
 -   Per accedere a un menu dell'area di lavoro, premere TAB fino a quando l'icona Espandi/comprimi non viene attivata. Premere quindi FRECCIA GIÙ per accedere al menu dell'area di lavoro.  
 
@@ -56,7 +80,7 @@ System Center Configuration Manager include funzionalità che lo rendono accessi
 >  Le informazioni riportate in questa sezione sono valide solo per gli utenti che acquistano una licenza di prodotti Microsoft negli Stati Uniti. Se il prodotto non è stato acquistato negli Stati Uniti, è possibile usare la scheda informativa della filiale inclusa nel pacchetto software oppure visitare il [sito Web Microsoft sull'accessibilità](http://go.microsoft.com/fwlink/?LinkId=8431) per informazioni di contatto per i servizi di supporto Microsoft. È possibile contattare la filiale locale per stabilire se i tipi di prodotti e servizi illustrati in questa sezione sono disponibili nell'area di interesse. Le informazioni sull'accesso facilitato sono disponibili in altre lingue, incluso giapponese e francese.  
 
 ##  <a name="bkmk_ahelp"></a> Funzionalità di accessibilità per la Guida di Configuration Manager  
- La Guida di Configuration Manager include funzionalità che la rendono accessibile a uno spettro più ampio di utenti, inclusi coloro che hanno difficoltà di movimento, visione limitata o altre disabilità.  
+ La Guida di Configuration Manager include funzionalità che la rendono accessibile a uno spettro più ampio di utenti, inclusi coloro che hanno difficoltà di movimento, soffrono di ipovisione o sono affetti da altre disabilità.  
 
 |Per eseguire questa operazione|Utilizzare questo tasto di scelta rapida|  
 |----------------|--------------------------------|  

@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
-ms.openlocfilehash: da86fc2f61ce8229fb0d3f58a4f8a24d1514b30e
+ms.translationtype: HT
+ms.sourcegitcommit: b7461f89f483314bd07248bbc9d5dde85ca6b6c2
+ms.openlocfilehash: 4d048d4f9ab01b28e6c21a38cca4d82c85030618
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 08/03/2017
 
 ---
 # <a name="create-applications-with-system-center-configuration-manager"></a>Creare applicazioni con System Center Configuration Manager
@@ -39,7 +38,7 @@ Un'applicazione di System Center Configuration Manager contiene i file e le info
 -   Importare un'applicazione da un file.  
 
 > [!NOTE]  
-> L'articolo  [Create applications for mobile devices](../../mdm/deploy-use/create-applications.md) (Creare applicazioni per dispositivi mobili) contiene informazioni dettagliate sulla creazione di applicazioni iOS, Windows Phone e Android.  
+>  L'articolo [Creare applicazioni per dispositivi mobili](../../mdm/deploy-use/create-applications.md) contiene informazioni dettagliate sulla creazione di applicazioni iOS, Windows Phone e Android.  
 
 Usare la procedura seguente per creare le applicazioni e i tipi di distribuzione usando Configuration Manager.  
 
@@ -198,6 +197,14 @@ La nuova applicazione viene visualizzata nel nodo **Applicazioni** della console
 
         > [!IMPORTANT]  
         >  L'account di sistema del computer server del sito deve disporre delle autorizzazioni per il percorso del contenuto specificato.  
+
+    -   **Impostazioni del contenuto di disinstallazione**: specificare una delle opzioni seguenti:
+        - **Uguale al contenuto di installazione**: selezionare questa opzione se il contenuto di installazione e di disinstallazione è lo stesso. Questo è il comportamento predefinito.
+        - **Nessun contenuto di disinstallazione**: selezionare questa opzione se l'applicazione non richiede contenuti per la disinstallazione.
+        - **Diversa dal contenuto di installazione**: selezionare questa opzione se il contenuto di disinstallazione è diverso dal contenuto di installazione.
+
+4. Se si seleziona **Diversa dal contenuto di installazione**, selezionare o immettere il percorso del contenuto dell'applicazione che viene usato per disinstallare l'applicazione.
+5. Fare clic su **OK** per chiudere la finestra di dialogo delle proprietà del tipo di distribuzione.
 
     -   **Rendi permanente il contenuto nella cache client**: selezionare questa opzione per specificare se il contenuto deve essere conservato nella cache del computer client a tempo indeterminato, anche se è già stato eseguito. Anche se questa opzione può risultare utile con alcune distribuzioni, ad esempio con il software basato su Windows Installer per cui deve essere disponibile una copia di origine locale per l'applicazione degli aggiornamenti, ridurrà tuttavia lo spazio disponibile della cache. Se si seleziona questa opzione, una distribuzione di grandi dimensioni potrebbe non riuscire in un momento successivo se lo spazio disponibile della cache non è sufficiente.  
 
@@ -428,7 +435,7 @@ La tabella seguente contiene script di esempio di Visual Basic (VB) che è possi
 
 5.  Nella finestra di dialogo *Proprietà\>***<Nome tipo di distribuzione**, nella scheda **Pubblicazione**, selezionare gli elementi nell'applicazione virtuale da pubblicare.  
 
-6.  Scegliere **OK** per chiudere la finestra di dialogo *Proprietà\>* **<nome tipo distribuzione**.  
+6.  Scegliere **OK** per chiudere la finestra di dialogo *Proprietà\>*  **<nome tipo distribuzione**.  
 
 7.  Scegliere **OK** per chiudere la finestra di dialogo **Proprietà** *<nome applicazione\>*.  
 

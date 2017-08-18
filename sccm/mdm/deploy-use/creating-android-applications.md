@@ -2,7 +2,7 @@
 title: Creare applicazioni Android | Microsoft Docs
 description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni per i dispositivi Android.
 ms.custom: na
-ms.date: 03/27/2017
+ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,18 +16,17 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 ms.translationtype: HT
-ms.sourcegitcommit: 344b55aecd72479b759b40e8252e64a06c5eaba0
-ms.openlocfilehash: 3bfb7364c3de5264a5fa8a684965d9aebeb84719
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 3a89abc81cd70f4e499bf4e3087fd53915377c44
 ms.contentlocale: it-it
-ms.lasthandoff: 07/13/2017
+ms.lasthandoff: 07/29/2017
 
 ---
-# Creare applicazioni Android con System Center Configuration Manager
-<a id="create-android-applications-with-system-center-configuration-manager" class="xliff"></a>
+# <a name="create-android-applications-with-system-center-configuration-manager"></a>Creare applicazioni Android con System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Un'applicazione di System Center Configuration Manager contiene uno o più tipi di distribuzione che comprendono le informazioni e i file di installazione necessari per distribuire software in un dispositivo. Un tipo di distribuzione contiene anche le regole che specificano quando e come deve essere distribuito il software.  
+Le applicazioni di System Center Configuration Manager hanno uno o più tipi di distribuzione. I tipi di distribuzione comprendono i file di installazione e le informazioni necessarie per la distribuzione di software a un dispositivo. Un tipo di distribuzione contiene anche le regole che specificano quando e come deve essere distribuito il software.  
 
  È possibile creare applicazioni usando due metodi:  
 
@@ -37,8 +36,7 @@ Un'applicazione di System Center Configuration Manager contiene uno o più tipi 
 
 Per la procedura necessaria per creare le applicazioni e i tipi di distribuzione di Configuration Manager, vedere [Avviare la Creazione guidata applicazione](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard). Inoltre, quando si creano e si distribuiscono applicazioni per i dispositivi Android, tenere presenti le considerazioni seguenti.  
 
-## Considerazioni generali per le app Android
-<a id="general-considerations-for-android-apps" class="xliff"></a>
+## <a name="general-considerations-for-android-apps"></a>Considerazioni generali per le app Android
 
 Configuration Manager supporta la distribuzione dei seguenti tipi di app per Android:
 
@@ -53,9 +51,8 @@ Sono supportate le azioni di distribuzione seguenti:
 |Android|**Disponibile**, **Richiesto** L'utente deve acconsentire all'installazione e alla disinstallazione.|
 |Android for Work | **Richiesto** |
 
-## Approvare e distribuire le applicazioni Android for Work
-<a id="approve-and-deploy-android-for-work-apps" class="xliff"></a>
-Gli amministratori di Configuration Manager possono anche approvare e distribuire app nel [sito Web Play for Work](https://play.google.com/work) e distribuirle in dispositivi Android for Work gestiti.
+## <a name="approve-and-deploy-android-for-work-apps"></a>Approvare e distribuire le applicazioni Android for Work
+Gli amministratori di Configuration Manager possono anche approvare le app nel [sito Web Play for Work](https://play.google.com/work) e distribuirle in dispositivi Android for Work gestiti.
 
 Attenersi alla procedura seguente per approvare le applicazioni nello store di Play for Work, sincronizzarle con la console di Configuration Manager e quindi distribuirle ai dispositivi Android for Work gestiti. Per distribuire applicazioni a profili di lavoro degli utenti, è necessario approvarle in Play for Work e quindi sincronizzarle con la console di Configuration Manager.
 

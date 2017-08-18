@@ -1,8 +1,8 @@
 ---
 title: Aggiornare i dispositivi Windows a una versione differente con Configuration Manager | Microsoft Docs
-description: Aggiornare i dispositivi che eseguono Windows 10 Desktop, Windows 10 Mobile, o Windows 10 Holographic a un&quot;edizione differente con Configuration Manager.
+description: Aggiornare i dispositivi che eseguono Windows 10 Desktop, Windows 10 Mobile, o Windows 10 Holographic a un'edizione differente con Configuration Manager.
 ms.custom: na
-ms.date: 04/18/2017
+ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4eee9731a4a27328c47c0d15931cab28cf520a18
-ms.openlocfilehash: cfde0a43947013bbd3a1093688cee19fe309fd03
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: cd8c644d07dab0010dc211df8ce4f2dc6e1fa7ae
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 07/29/2017
 
 ---
 
@@ -34,14 +33,14 @@ I **criteri di aggiornamento edizione** di System Center Configuration Manager c
 
 - Windows 10 Desktop
 - Windows 10 Mobile
-- Windows 10 Holographic
+<!-- - Windows 10 Holographic -->
 
 Sono supportati i percorsi di aggiornamento seguenti:
 
 - Da Windows 10 Pro a Windows 10 Enterprise
 - Da Windows 10 Home a Windows 10 Education
 - Da Windows 10 Mobile a Windows 10 Mobile Enterprise
-- Da Windows 10 Holographic Pro a Windows 10 Holographic Enterprise
+<!-- - From Windows 10 Holographic Pro to Windows 10 Holographic Enterprise -->
 
 I dispositivi devono essere registrati in Microsoft Intune o eseguire il software client di Configuration Manager. Questo criterio non è attualmente compatibile con i PC gestiti mediante MDM locale.
 
@@ -50,7 +49,7 @@ I dispositivi devono essere registrati in Microsoft Intune o eseguire il softwar
 
 -   Un codice Product Key valido per installare la nuova versione di Windows in tutti i dispositivi a cui sono destinati i criteri (per sistemi operativi desktop)  
 
--   Un file di licenza da Microsoft che contiene le informazioni sulle licenze per installare la nuova versione di Windows in tutti i dispositivi a cui sono destinati i criteri (per Windows 10 Mobile e Windows 10 Holographic).
+-   Un file di licenza da Microsoft che contiene le informazioni sulle licenze per installare la nuova versione di Windows in tutti i dispositivi a cui sono destinati i criteri (per Windows 10 Mobile<!-- and Windows 10 Holographic-->).
 
 - Per creare e distribuire questo tipo di criteri, è necessario aver assegnato il ruolo di sicurezza **amministratore completo** di Configuration Manager.
 
@@ -68,7 +67,7 @@ I dispositivi devono essere registrati in Microsoft Intune o eseguire il softwar
 
     -   **Descrizione** (facoltativo) - Immettere facoltativamente una descrizione per i criteri che consenta di identificarli nella console di Intune.  
 
-    -   **SKU per aggiornare il dispositivo a** - Nell'elenco a discesa selezionare la versione di Windows 10 Desktop, Windows 10 Holographic o Windows 10 Mobile a cui aggiornare i dispositivi specificati.  
+    -   **SKU per aggiornare il dispositivo a**: nell'elenco a discesa selezionare la versione di Windows 10 Desktop, <!-- Windows 10 Holographic,--> o Windows 10 Mobile a cui aggiornare i dispositivi specificati.  
 
     -   **Informazioni di licenza** - Selezionare una delle opzioni seguenti:  
 
@@ -77,7 +76,7 @@ I dispositivi devono essere registrati in Microsoft Intune o eseguire il softwar
             > [!NOTE]  
             >  Dopo aver creato criteri che contengono un codice Product Key, non è possibile modificare il codice Product Key in un secondo momento, perché il codice viene nascosto per motivi di sicurezza. Per modificare il codice Product Key, è necessario immettere nuovamente l'intero codice.  
 
-        -   **File di licenza** - Fare clic su **Sfoglia** per selezionare un file di licenza valido in formato XML che verrà usato per aggiornare i dispositivi specificati che eseguono sistemi operativi Windows 10 Holographic e Windows 10 Mobile.  
+        -   **File di licenza**: fare clic su **Sfoglia** per selezionare un file di licenza valido in formato XML che verrà usato per aggiornare i dispositivi specificati che eseguono sistemi operativi <!--Windows 10 Holographic and -->Windows 10 Mobile.  
 
 6.  Completare la procedura guidata.  
 
@@ -91,7 +90,15 @@ I nuovi criteri verranno visualizzati nel nodo **Aggiornamento edizione Windows 
 
 4.  Nella finestra di dialogo **Distribuisci aggiornamento edizione Windows 10** scegliere la raccolta di utenti o dispositivi a cui distribuire i criteri e la pianificazione per la valutazione dei criteri, quindi fare clic su **OK**. Per i PC gestiti con il client di Configuration Manager, è necessario distribuire i criteri a una raccolta di dispositivi. Per i PC registrati con Intune, è possibile distribuire i criteri a una raccolta di utenti o di dispositivi. 
 
-È possibile monitorare la distribuzione appena creata dal nodo **Distribuzioni** dell'area di lavoro **Monitoraggio** .  
 
- Quando i criteri raggiungono un PC Windows specificato e vengono valutati, il PC viene riavviato entro due ore per applicare l'aggiornamento. Informare tutti gli utenti interessati dalla distribuzione dei criteri o pianificare la distribuzione dei criteri in ore non lavorative.
+
+## <a name="next-steps"></a>Passaggi successivi
+
+Quando si monitora la distribuzione creata dal nodo **Distribuzioni** dell'area di lavoro **Monitoraggio**, è possibile che vengano visualizzati errori indicanti che la distribuzione non è riuscita, ad esempio:
+- **Non applicabile per questo dispositivo**
+- **Conversione tipo di dati non riuscita**
+
+Questi errori non indicano che la distribuzione non è riuscita. Verificare nel PC di destinazione che l'aggiornamento sia stato completato correttamente.
+
+Quando i criteri raggiungono un PC Windows specificato e vengono valutati, il PC viene riavviato entro due ore per applicare l'aggiornamento. Informare tutti gli utenti interessati dalla distribuzione dei criteri o pianificare la distribuzione dei criteri in ore non lavorative.
 

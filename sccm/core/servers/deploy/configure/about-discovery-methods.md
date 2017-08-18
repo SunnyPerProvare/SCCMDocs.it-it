@@ -1,7 +1,7 @@
 ---
 title: Metodi di individuazione | Microsoft Docs
 ms.custom: na
-ms.date: 2/3/2017
+ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: 8
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 81d7516b814d2db74d4d857871071c8911755754
-ms.openlocfilehash: 6e53f501281e31f2b7df54b9740eac970f108257
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 442e5e1fbddd00248819a8de79adc78929474fc0
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="about-discovery-methods-for-system-center-configuration-manager"></a>Informazioni sui metodi di individuazione per System Center Configuration Manager
@@ -189,6 +189,27 @@ Nella finestra di dialogo **Individuazione utente Active Directory - Proprietà*
 Le azioni di Individuazione utente Active Directory vengono registrate nel file **adusrdis.log** nella cartella **&lt;PercorsoInstallazione\>\LOGS** del server del sito.  
 
 Per altre informazioni su come configurare questo metodo di individuazione, vedere [Configurare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  
+
+## <a name="azureaddisc"></a> Individuazione utente Azure Active Directory
+A partire dalla versione 1706, è possibile usare Individuazione utente Azure Active Directory (Azure AD) quando si configura l'ambiente per l'uso dei servizi di Azure.
+Usare questo metodo di individuazione per cercare in Azure AD gli utenti che eseguono l'autenticazione per l'istanza di Azure AD, in particolare gli attributi seguenti:  
+-   objectId
+-   displayName
+-   mail
+-   mailNickname
+-   onPremisesSecurityIdentifier
+-   userPrincipalName
+-   AAD tenantID
+
+Questo metodo supporta la sincronizzazione completa e la sincronizzazione delta dei dati degli utenti da Azure AD. Queste informazioni possono quindi essere usate con i dati di individuazione raccolti con altri metodi di individuazione.
+
+Le azioni per l'individuazione utente Azure Active Directory vengono registrate nel file SMS_AZUREAD_DISCOVERY_AGENT.log nel server del sito di livello superiore della gerarchia.
+
+Per configurare l'individuazione utente Azure AD, si usa la procedura guidata per i servizi di Azure.  Per informazioni su come configurare questo metodo di individuazione, vedere [Configurare l'individuazione utente Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods).
+
+
+
+
 
 ##  <a name="bkmk_aboutHeartbeat"></a> Individuazione heartbeat  
 **Configurabile:** sì  
@@ -388,7 +409,7 @@ Questa sezione offre informazioni sulle funzionalità comuni dei metodi di indiv
 
 -   Individuazione sistema Active Directory  
 
--   Individuazione utente Active Directory  
+-   individuazione utenti di Active Directory  
 
 > [!NOTE]  
 >  Le informazioni contenute in questa sezione non si applicano a Individuazione foresta Active Directory.  
@@ -407,7 +428,7 @@ Quando ciascuno di questi tre metodi di individuazione viene eseguito su un sito
 
 L'individuazione effettua la ricerca degli oggetti nei percorsi specificati e quindi prova a raccogliere informazioni su tali oggetti. Viene creato un record dei dati di individuazione quando possono essere individuate sufficienti informazioni su una risorsa. Le informazioni richieste variano a seconda del metodo di individuazione utilizzato.  
 
-Se si configura lo stesso metodo di individuazione per poterlo eseguire su siti diversi di Configuration Manager e poter quindi eseguire una query sui server di Active Directory locali, è possibile configurare ogni sito usando una sola serie di opzioni di individuazione. Poiché i dati di individuazione vengono condivisi con ogni sito della gerarchia, evitare la sovrapposizione tra tali configurazioni per individuare in modo efficiente ogni risorsa una volta sola. 
+Se si configura lo stesso metodo di individuazione per poterlo eseguire su siti diversi di Configuration Manager e poter quindi eseguire una query sui server di Active Directory locali, è possibile configurare ogni sito usando una sola serie di opzioni di individuazione. Poiché i dati di individuazione vengono condivisi con ogni sito della gerarchia, evitare la sovrapposizione tra tali configurazioni per individuare in modo efficiente ogni risorsa una volta sola.
 
 Per ambienti di dimensioni più limitate, si può prendere in considerazione l'esecuzione di ogni metodo di individuazione su un solo sito della gerarchia per ridurre il carico amministrativo e la possibilità che vengano individuate più volte le stesse risorse. Quando si riduce a icona il numero di siti che eseguono l'individuazione, è possibile ridurre la larghezza di banda complessiva usata dall'individuazione. È inoltre possibile ridurre il numero totale di record dei dati di individuazione che vengono creati e devono essere elaborati dai server del sito.  
 

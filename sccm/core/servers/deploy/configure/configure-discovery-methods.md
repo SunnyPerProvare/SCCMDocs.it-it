@@ -1,8 +1,8 @@
 ---
-title: Configurare l&quot;individuazione | Microsoft Docs
-description: "Configurare i metodi di individuazione da eseguire in un sito di Configuration Manager per trovare le risorse che è possibile gestire dall&quot;infrastruttura di rete e da Active Directory."
+title: Configurare l'individuazione | Microsoft Docs
+description: "Configurare i metodi di individuazione da eseguire in un sito di Configuration Manager per trovare le risorse che è possibile gestire dall'infrastruttura di rete e da Active Directory."
 ms.custom: na
-ms.date: 2/17/2017
+ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: 5
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 860815010068422f2d8854ed2d574c24cc386891
-ms.openlocfilehash: 63a3c2ef66c80d1da9b50e67166a2196cf1b081b
+ms.translationtype: HT
+ms.sourcegitcommit: 0663ba84762c44a5c303562548499f195bae9e1c
+ms.openlocfilehash: 34a539ceaea6b070f81a28d2c0a9ce388e26cfeb
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 08/01/2017
 
 ---
 # <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Configurare i metodi di individuazione per System Center Configuration Manager
@@ -34,6 +34,8 @@ Configurare i metodi di individuazione da eseguire in un sito di System Center C
 -   L'individuazione server è un metodo di individuazione automatica che consente di individuare i computer usati come sistemi del sito. Non è possibile configurare o disabilitare questo metodo.  
 
 **Per abilitare un metodo di individuazione configurabile:**  
+ > [!NOTE]  
+ > Le informazioni seguenti non si applicano a Individuazione di utenti di Azure Active Directory. Vedere invece [Configurare l'individuazione utenti di Azure AD](#azureaadisc) più avanti in questo argomento.
 
 1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
 
@@ -211,6 +213,14 @@ Usare le procedure seguenti per attivare l'individuazione foresta Active Directo
 7.  Facoltativamente, nella scheda **Attributi di Active Directory** è possibile configurare attributi aggiuntivi di Active Directory per i computer che si desidera individuare. Sono inoltre elencati gli attributi oggetto predefiniti.  
 
 8.  Al termine della configurazione dell'individuazione utente Active Directory per questo sito, scegliere **OK** per salvare la configurazione.  
+
+## <a name="azureaadisc"></a>Configurare l'individuazione utenti di Azure AD
+A partire dalla versione 1706, è possibile configurare Individuazione di utenti di Azure Active Directory quando si connette Configuration Manager alla [sottoscrizione di Azure a ad Azure Active Directory](/sccm/core/servers/deploy/configure/azure-services-wizard).
+
+L'individuazione di utenti di Azure AD viene configurata come parte di *Gestione cloud*. La procedura è illustrata in dettaglio in [Creare l'app Web di Azure da usare con Configuration Manager](/sccm/core/servers/deploy/configure/Azure-services-wizard#webapp) nell'argomento *Configurare i servizi di Azure da usare con Configuration Manager*.
+
+
+
 
 ##  <a name="BKMK_ConfigHBDisc"></a> Configurare l'individuazione heartbeat  
  Per impostazione predefinita, l'individuazione heartbeat è abilitata quando si installa un sito primario di Configuration Manager. È quindi necessario configurare solo la pianificazione della frequenza di invio dei record dei dati di individuazione heartbeat a un punto di gestione da parte dei client quando non si vuole usare la frequenza predefinita di sette giorni.  

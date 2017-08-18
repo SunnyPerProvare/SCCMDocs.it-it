@@ -16,11 +16,11 @@ author: andredm7
 ms.author: andredm
 manager: angrobe
 robots: noindex
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 216d288aa7b7f2b98df86f59355d879366dcd44d
-ms.openlocfilehash: 4baa6e0fe009f5f7dc33f5ab4adb1ec5e5c5271b
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 6630d0170df22f46f14df241ffd8d48266c69263
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/29/2017
 
 ---
 
@@ -277,6 +277,31 @@ ms.lasthandoff: 05/17/2017
       * iOS 6+
       * Android 4.0+
       * Samsung KNOX Standard 4.0+
+<br></br>
+* **Tipo di password richiesto**. Specificare se gli utenti devono creare una password alfanumerica o una password numerica. Per le password alfanumeriche, si specifica anche il numero minimo di set di caratteri che la password deve contenere. I quattro set di caratteri sono: lettere minuscole, lettere maiuscole, simboli e numeri.
+
+    **Supportato in:**
+    * Windows Phone 8+
+    * Windows 8.1+
+    * iOS 6+
+<br></br>
+* **Blocca il debug USB nel dispositivo**. Non è necessario configurare questa impostazione poiché l'esecuzione del debug dell'USB è già stata disabilitata in Android per i dispositivi di lavoro.
+
+    **Supportato in:**
+    * Android 4.0+
+    * Samsung KNOX Standard 4.0+
+<br></br>
+* **Blocca app da origini sconosciute**. Obbligare i dispositivi a impedire l'installazione di app da origini sconosciute. Non è necessario configurare questa impostazione poiché Android per i dispositivi di lavoro limita sempre l'installazione da origini sconosciute.
+
+    **Supportato in:**
+    * Android 4.0+
+    * Samsung KNOX Standard 4.0+
+<br></br>
+* **Rendi obbligatoria l'analisi delle minacce nelle app**. Questa impostazione specifica che la funzionalità dell'app di verifica è abilitata nel dispositivo. 
+
+    **Supportato in:**
+    * Android da 4.2 a 4.4
+    * Samsung KNOX Standard 4.0+
 
 ### <a name="find-an-app-id"></a>Trovare l'ID di un'app
 

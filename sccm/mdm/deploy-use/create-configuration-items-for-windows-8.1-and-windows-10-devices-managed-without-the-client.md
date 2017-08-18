@@ -1,8 +1,8 @@
 ---
 title: Creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti con Intune | Microsoft Docs
-description: Usare l&quot;elemento di configurazione Windows 10 in System Center Configuration Manager per gestire le impostazioni dei computer Windows 10.
+description: Usare l'elemento di configurazione Windows 10 in System Center Configuration Manager per gestire le impostazioni dei computer Windows 10.
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,18 +16,15 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: f75bac7887772119f30654fe15c16a8f993cad75
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: cbfc5f178e72b40526a4cb540f962a3b82203699
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="how-to-create-configuration-items-for-windows-81-and-windows-10-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client System Center Configuration Manager
-||  
-|-|  
-|Questo articolo contiene informazioni sulle [nuove funzionalità introdotte nella versione 1602](https://technet.microsoft.com/library/mt622084.aspx) di System Center Configuration Manager \(Current Branch\). Per usare le nuove funzionalità, è necessario [installare l'aggiornamento 1602](https://technet.microsoft.com/library/mt607046.aspx). Se non è stato eseguito l'aggiornamento alla versione più recente di Configuration Manager, è possibile [scaricare la documentazione per la versione in uso](https://gallery.technet.microsoft.com/Documentation-for-System-ea90eaf1) dalla raccolta TechNet.|  
+
   
  Usare l'elemento di configurazione **Windows 8.1 e Windows 10** di System Center Configuration Manager per gestire le impostazioni per i dispositivi Windows 8.1 e Windows 10 registrati in Microsoft Intune o gestiti localmente da Configuration Manager.  
   
@@ -45,7 +42,7 @@ ms.lasthandoff: 05/17/2017
   
 6.  Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
   
-7.  Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme Windows specifiche che valuteranno l'elemento di configurazione.  
+7.  Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme Windows specifiche per la valutazione dell'elemento di configurazione.  
   
 8.  Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione per Windows 8.1 e Windows 10](#BKMK_Setref) in questo argomento e quindi fare clic su **Avanti**.  
   
@@ -54,7 +51,7 @@ ms.lasthandoff: 05/17/2017
   
 9. In ogni pagina di impostazioni configurare le impostazioni necessarie e specificare se si vuole monitorarle e aggiornarle nel caso non siano conformi nei dispositivi (se questa funzionalità è supportata).  
   
-10. Per ogni gruppo di impostazioni, è anche possibile configurare il livello di gravità che verrà segnalato quando viene trovato un elemento di configurazione non conforme, selezionando uno dei livelli seguenti:  
+10. Per ogni gruppo di impostazioni, è anche possibile configurare il livello di gravità da segnalare quando viene trovato un elemento di configurazione non conforme, selezionando uno dei livelli seguenti:  
   
     -   **Nessuno**: i dispositivi che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
   
@@ -90,7 +87,8 @@ ms.lasthandoff: 05/17/2017
 |**Tempo di inattività prima del blocco del dispositivo**|Specificare la quantità di tempo per cui un dispositivo può rimanere inattivo (senza input dell'utente) prima che venga bloccato.|  
 |**Complessità password**|Scegliere se è possibile specificare un PIN, ad esempio "1234", o se è necessario fornire una password complessa.|  
 |**Qualità password**|Selezionare il livello di complessità delle password necessario e indicare se possono essere usati anche dispositivi biometrici.|  
-|**Invia PIN di ripristino password a Exchange Server**||  
+|**Invia PIN di ripristino password a Exchange Server**|-|
+|**Crittografia dispositivo**|Abilitare la crittografia nei dispositivi di destinazione.|  
   
 ###  <a name="device"></a>Dispositivo  
   
@@ -108,6 +106,11 @@ ms.lasthandoff: 05/17/2017
 |**Registrazione vocale**|Consente l'uso delle funzionalità di registrazione vocale del dispositivo.<br /><br /> (solo Windows 10)|
 |**Cortana**|Consente l'uso dell'Assistente vocale Cortana.<br /><br /> (solo Windows 10)|
 |**Notifiche del centro notifiche**|Consente di attivare o disattivare il riquadro delle notifiche in Windows 10. <br /><br /> (solo Windows 10)|
+|**Modifica delle impostazioni dell'area (solo desktop)**|Impedisce all'utente finale di modificare le impostazioni dell'area del dispositivo.|
+|**Modifica delle impostazioni di risparmio energia e sospensione (solo desktop)**|Impedisce all'utente finale di modificare le impostazioni di risparmio energia e sospensione del dispositivo.|
+|**Modifiche alle impostazioni della lingua (solo desktop)**|Impedisce all'utente finale di modificare le impostazioni della lingua del dispositivo.|
+|**Modifica dell'ora di sistema**|Impedisce all'utente finale di modificare la data e l'ora del dispositivo.|
+|**Modifica del nome dispositivo**|Impedisce all'utente finale di modificare il nome del dispositivo.|
   
 ### <a name="email-management"></a>Gestione della posta elettronica  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.  
@@ -119,7 +122,7 @@ ms.lasthandoff: 05/17/2017
 |**Formati messaggi consentiti**|Specificare se i messaggi di posta elettronica dell’utente possono essere in formato HTML o solo in testo normale.|  
 |**Dimensione massima per la posta elettronica con testo normale (scaricata automaticamente)**|Controlla la dimensione massima dei messaggi di posta elettronica con testo normale quando vengono scaricati automaticamente.|  
 |**Dimensione massima per la posta elettronica HTML (scaricata automaticamente)**|Controlla la dimensione massima dei messaggi di posta elettronica HTML quando vengono scaricati automaticamente.|  
-|**Dimensione massima di un allegato (scaricato automaticamente)**|Controlla la dimensione massima dei messaggi di posta elettronica che verranno scaricati automaticamente.|  
+|**Dimensione massima di un allegato (scaricato automaticamente)**|Configura la dimensione massima dei messaggi di posta elettronica che vengono scaricati automaticamente.|  
 |**Sincronizzazione calendario**|Consentire la sincronizzazione dei calendari con il dispositivo.|  
 |**Account di posta elettronica personalizzato**|Consente di usare un account non Microsoft sul dispositivo.|  
 |**Rendi l'account Microsoft facoltativo nell'applicazione Windows Mail**|Configurare questa opzione per rimuovere il requisito per un account Microsoft in Windows Mail.|  
@@ -131,7 +134,10 @@ ms.lasthandoff: 05/17/2017
 |-------------|-------------|  
 |**Archivio applicazioni**|Consente l'accesso all'archivio applicazioni sul dispositivo.|  
 |**Immettere una password per accedere all'archivio applicazioni**|Gli utenti devono immettere una password per accedere all'archivio applicazioni.|  
-|**Acquisti in-app**|Consente agli utenti di effettuare acquisti in-app.|  
+|**Acquisti in-app**|Consente agli utenti di effettuare acquisti in-app.|
+|**Aggiorna automaticamente le app dallo Store**|Consente l'aggiornamento automatico delle app installate da Windows Store.|
+|**Usa solo lo Store privato**|Abilitare questa opzione per consentire solo agli utenti finali di scaricare app dallo Store privato.|
+|**Avvio di app originate dallo Store**|Consente di disabilitare tutte le app preinstallate nel dispositivo o scaricate da Windows Store.|
   
 ### <a name="browser"></a>Browser  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.  
@@ -157,11 +163,11 @@ ms.lasthandoff: 05/17/2017
 |**Livello di protezione per l'area Intranet**|Configurare il livello di protezione per l'area intranet.|  
 |**Livello di protezione per l'area siti attendibili**|Configurare il livello di protezione per l'area siti attendibili.|  
 |**Livello di protezione per l'area siti con restrizioni**|Configurare il livello di protezione per l'area siti con restrizioni.|  
-|**Spazi dei nomi per l'area intranet**|Configurare siti Web che verranno aggiunti o rimossi dall'area intranet.|  
+|**Spazi dei nomi per l'area intranet**|Configurare siti Web che vengono aggiunti o rimossi dall'area Intranet.|  
 |**Accedi a un sito Intranet nel caso di immissione di una singola parola**|Abilita o disabilita l'impostazione che consente a Internet Explorer di passare automaticamente a un sito Intranet se viene immesso un nome di sito valido senza HTTP precedente:|  
 |**Opzione di menu modalità Enterprise**|Consente agli utenti di attivare e disattivare la modalità Enterprise dal menu **Strumenti** di Internet Explorer.|  
-|**Posizione report di registrazione (URL)**|Specificare un URL in cui verranno registrati i siti Web visitati quando è attiva la modalità Enterprise.|  
-|**Posizione elenco siti modalità Enterprise (URL)**|Specificare il percorso dell'elenco di siti Web che useranno la modalità Enterprise quando è attiva.|  
+|**Posizione report di registrazione (URL)**|Specificare un URL in cui registrare i siti Web visitati quando è attiva la modalità Enterprise.|  
+|**Posizione elenco siti modalità Enterprise (URL)**|Specificare il percorso dell'elenco di siti Web che usano la modalità Enterprise quando è attiva.|  
   
 ###  <a name="cloud"></a>Cloud  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.  
@@ -228,14 +234,14 @@ ms.lasthandoff: 05/17/2017
 |**Connessione rete wireless**|Abilita o disabilita la funzionalità Wi-Fi dei dispositivi.|  
 |**Tethering Wi-Fi**|Consente agli utente di usare il proprio dispositivo come hotspot mobile.|  
 |**Offload dei dati con Wi-Fi quando possibile**|Configurare questa opzione in modo da usare la connessione Wi-Fi nel dispositivo quando possibile.|  
-|**Reporting hotspot Wi-Fi**||  
-|**Configurazione Wi-Fi manuale**||  
+|**Reporting hotspot Wi-Fi**|-|  
+|**Configurazione Wi-Fi manuale**|-|  
   
 #### <a name="to-configure-a-wireless-network-connection"></a>Per configurare una connessione di rete wireless  
   
 1.  Nella pagina **Configurare le impostazioni di comunicazione wireless per dispositivi mobili** fare clic su **Aggiungi**.  
   
-2.  Nella finestra di dialogo **Connessione rete wireless** , specificare le informazioni seguenti sulla connessione wireless che sarà fornita nei dispositivi mobili:  
+2.  Nella finestra di dialogo **Connessione rete wireless** specificare le informazioni sulla connessione wireless seguenti, di cui viene eseguito il provisioning nei dispositivi mobili:  
   
 |Impostazioni|Altre informazioni|  
 |-------------|----------------------|  
@@ -243,7 +249,7 @@ ms.lasthandoff: 05/17/2017
 |**Connessione di rete**|Scegliere **Internet** o **Lavoro**.|  
 |**Autenticazione**|Selezionare il metodo di autenticazione per la connessione:<br /><br /> - **Aperta**<br /><br /> - **Condivisa**<br /><br /> - **WPA**<br /><br /> - **WPA-PSK**<br /><br /> - **WPA2**<br /><br /> - **WPA2-PSK**|  
 |**Crittografia dei dati**|Scegliere il metodo di crittografia usato dalla connessione. I valori che è possibile selezionare variano a seconda del metodo di **Autenticazione** scelto:<br /><br /> - **Disabilitato**<br /><br /> - **WEP**<br /><br /> - **TKIP**<br /><br /> - **AES**|  
-|**Indice chiavi**|Selezionare un indice chiavi da **1** a **4** da usare con l'impostazione di **Crittografia dei dati** **WEP**.|  
+|**Indice chiavi**|Selezionare un indice chiavi da **1** a **4** da usare con l'impostazione di **Crittografia dei dati** corrispondente a **WEP**.|  
 |**Questa rete è connessa a Internet**|Selezionare questa opzione se si desidera specificare le impostazioni proxy che consentono la connessione a Internet dei dispositivi mobili su una connessione wireless.|  
 |**Impostazioni del server proxy**|Specificare le impostazioni **Server** e **Porta** necessarie per **HTTP**, **WAP** e **Socket**.|  
 |**Abilita accesso alla rete 802.1X**|Selezionare questa opzione per proteggere la connessione specificando un tipo di EAP.|  
@@ -258,7 +264,7 @@ ms.lasthandoff: 05/17/2017
   
 -   **File di certificato** - Fare clic su Sfoglia e quindi selezionare il file di certificato con estensione **cer** che si vuole importare.  
   
--   **Archivio di destinazione** - Scegliere uno o più archivi di destinazione da cui sarà aggiunto il certificato importato sul dispositivo mobile:  
+-   **Archivio di destinazione**: scegliere uno o più archivi di destinazione da cui aggiungere il certificato importato nel dispositivo mobile:  
   
     -   **Radice**  
   
@@ -272,7 +278,7 @@ ms.lasthandoff: 05/17/2017
   
     -   **Peer**  
   
--   **Ruolo** - se **SPC** (Certificato autori software) viene selezionato come archivio di destinazione, scegliere il ruolo che verrà associato al certificato:  
+-   **Ruolo**: se **SPC** (Software Publisher Certificate, certificato autori software) viene selezionato come archivio di destinazione, scegliere il ruolo da associare al certificato tra:  
   
     -   **Operatore di telefonia mobile**  
   
@@ -292,11 +298,11 @@ ms.lasthandoff: 05/17/2017
 |-------------|-------------|  
 |**Controllo dell'account utente**|Abilita o disabilita il controllo account utente di Windows sul dispositivo.|  
 |**Firewall di rete**|Attiva o disattiva Windows Firewall.<br /><br /> (solo Windows 8.1)|  
-|**Aggiornamenti (Windows 8.1 e versioni precedenti)**|Scegliere come gli aggiornamenti software di Windows verranno scaricati nel computer. Ad esempio, è possibile scaricare automaticamente gli aggiornamenti, ma consentire all'utente di scegliere quando installarli.|  
-|**Classificazione minima degli aggiornamenti**|Scegliere la classificazione minima degli aggiornamenti che verranno scaricati nei computer Windows: **Nessuno**, **Importante**o **Consigliato**.|  
-|**Aggiornamenti (Windows 10)**|Scegliere come gli aggiornamenti software di Windows verranno scaricati nel computer. Ad esempio, è possibile scaricare automaticamente gli aggiornamenti, ma consentire all'utente di scegliere quando installarli.<br /><br /> (solo Windows 10)|  
-|**Giorno di installazione**|Scegliere il giorno in cui verranno installati gli aggiornamenti.<br /><br /> (solo Windows 10)|  
-|**Ora di installazione**|Scegliere l'ora in cui verranno installati gli aggiornamenti.<br /><br /> (solo Windows 10)|  
+|**Aggiornamenti (Windows 8.1 e versioni precedenti)**|Scegliere la modalità di download degli aggiornamenti software di Windows nei computer. Ad esempio, è possibile scaricare automaticamente gli aggiornamenti, ma consentire all'utente di scegliere quando installarli.|  
+|**Classificazione minima degli aggiornamenti**|Scegliere la classificazione minima degli aggiornamenti scaricati nei computer Windows: **Nessuno**, **Importante**o **Consigliato**.|  
+|**Aggiornamenti (Windows 10)**|Scegliere la modalità di download degli aggiornamenti software di Windows nei computer. Ad esempio, è possibile scaricare automaticamente gli aggiornamenti, ma consentire all'utente di scegliere quando installarli.<br /><br /> (solo Windows 10)|  
+|**Giorno di installazione**|Scegliere il giorno in cui installare gli aggiornamenti.<br /><br /> (solo Windows 10)|  
+|**Ora di installazione**|Scegliere l'ora in cui installare gli aggiornamenti.<br /><br /> (solo Windows 10)|  
 |**SmartScreen**|Abilita o disabilita SmartScreen.|  
 |**Protezione da virus**|Selezionare questa opzione per fare in modo che nel dispositivo sia installato un software antivirus.|  
 |**Le firme per la protezione da virus sono aggiornate**|Selezionare questa opzione per fare in modo che i file delle firme antivirus siano aggiornati.|  
@@ -316,15 +322,15 @@ ms.lasthandoff: 05/17/2017
   
  Non è possibile specificare sia le app conformi che quelle non conformi nello stesso elemento di configurazione.  
   
-#### <a name="to-specify-apps-that-will-be-allowed-or-blocked"></a>Per specificare le app che saranno consentite o bloccate  
+#### <a name="to-specify-apps-that-are-allowed-or-blocked"></a>Per specificare le app consentite o bloccate  
   
-1.  Nella pagina **Elenco app consentite e bloccate** indicare le informazioni seguenti:  
+Nella pagina **Elenco app consentite e bloccate** indicare le informazioni seguenti:  
   
-    |Impostazioni|Altre informazioni|  
+|Impostazioni|Altre informazioni|  
     |-------------|----------------------|  
     |**Elenco delle app bloccate**|Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti non sono autorizzati a installare.|  
-    |**Elenco delle app consentite**|Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti sono autorizzati a installare. L'installazione di qualsiasi altra app verrà bloccata.|  
-    |**Aggiungi**|Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare nel Windows Store.<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app consentite o bloccate.<br /><br /> **Esempio:** cercare l'app **Skype** nell'App Store. L'URL usato sarà**http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51**.|  
+    |**Elenco delle app consentite**|Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti sono autorizzati a installare. L'installazione di qualsiasi altra app viene bloccata.|  
+    |**Aggiungi**|Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare nel Windows Store.<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app consentite o bloccate.<br /><br /> **Esempio:** cercare l'app **Skype** nello store. L'URL usato è **http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51**.|  
     |**Modifica**|Consente di modificare il nome, l'autore e l'URL dell'app selezionata.|  
     |**Rimuovi**|Elimina l'app selezionata dall'elenco.|  
     |**Importa**|Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.|  
@@ -339,7 +345,7 @@ ms.lasthandoff: 05/17/2017
 |**Finestra di manutenzione**|Configura la finestra durante la quale cui è possibile eseguire gli aggiornamenti del dispositivo. È possibile configurare l'ora di inizio della finestra e la durata (tra 1 e 5 ore).|
 |**Azure Operational Insights**|Azure Operational Insights, parte della suite Microsoft Operations Manager, raccoglie, archivia e analizza i dati dei file di log provenienti da dispositivi Windows 10 Team.<br>Per connettersi ad Azure Operational Insights, è necessario specificare un ID e una chiave dell'area di lavoro.| 
 |**Proiezione wireless Miracast**|Abilitare questa opzione per consentire al dispositivo Windows 10 Team di usare dispositivi abilitati per Miracast per attività di progetto.<br>Se questa opzione è abilitata, selezionare da **Scegli un canale Miracast** il canale Miracast usato per il contenuto del progetto.|
-|**Informazioni sulla riunione visualizzate nella schermata iniziale**|Se si abilita questa opzione, è possibile scegliere le informazioni che verranno visualizzate nel riquadro **Riunioni** della **schermata iniziale**. È possibile scegliere:<br><br>- **Mostra solo organizzatore e ora**<br>- **Mostra organizzatore, ora e oggetto (l'oggetto è nascosto per le riunioni private)**|
+|**Informazioni sulla riunione visualizzate nella schermata iniziale**|Se si abilita questa opzione, è possibile scegliere le informazioni da visualizzare nel riquadro **Riunioni** della **schermata iniziale**. È possibile:<br><br>- **Mostra solo organizzatore e ora**<br>- **Mostra organizzatore, ora e oggetto (l'oggetto è nascosto per le riunioni private)**|
 |**URL dell'immagine di sfondo per la schermata di blocco**|Usare questa impostazione per visualizzare uno sfondo personalizzato nella **schermata iniziale** dei dispositivi Windows 10 Team dall'URL specificato.<br>L'immagine deve essere in formato PNG e l'URL deve iniziare con **https://**.| 
   
 ### <a name="windows-information-protection"></a>Windows Information Protection  
@@ -357,7 +363,8 @@ Per informazioni su come configurare la protezione dati con Configuration Manage
 Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e versioni successive.  
   
 |Nome impostazione|Dettagli|  
-|------------------|-------------|  
+|------------------|-------------| 
+|Microsoft Edge|Consentire l'uso del Web browser Edge nel dispositivo.| 
 |**Consenti suggerimenti di ricerca nella barra degli indirizzi**|Consente al motore di ricerca di suggerire siti durante la digitazione delle frasi di ricerca.|  
 |**Consenti l'invio di traffico Intranet a Internet Explorer**||  
 |**Consenti Do Not Track**|Do Not Track informa i siti Web che non si vuole tenere traccia della visita a un sito.|  
@@ -366,7 +373,14 @@ Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e vers
 |**Consenti cookie**|Consentire o disabilitare i cookie.|  
 |**Consenti riempimento automatico**|Consente l'uso della funzionalità di riempimento automatico del browser Edge.|  
 |**Consenti strumento per la gestione delle password**|Consentire l'uso della funzionalità dello strumento per la gestione delle password del browser Edge.|  
-|**Posizione elenco siti modalità Enterprise**|Specifica dove trovare l'elenco di siti Web che verranno aperti in modalità Enterprise. L'elenco non è modificabile dagli utenti.|  
+|**Posizione elenco siti modalità Enterprise**|Specifica dove trovare l'elenco di siti Web che si aprono in modalità Enterprise. L'elenco non è modificabile dagli utenti.|
+|**Blocca l'accesso ai flag Informazioni su**|Impedire l'accesso dell'utente finale alla pagina about:flags in Edge contenente impostazioni sperimentali e per sviluppatori.|
+|**Override del prompt SmartScreen**|Consentire all'utente finale di ignorare gli avvisi del filtro SmartScreen relativi a siti Web potenzialmente dannosi.|
+|**Override del prompt SmartScreen per i file**|Consentire all'utente finale di ignorare gli avvisi del filtro SmartScreen relativi al download di file potenzialmente dannosi.|
+|**Indirizzo IP localhost WebRtc**|Bloccare la visualizzazione dell'indirizzo IP localhost dell'utente quando si effettuano chiamate telefoniche tramite il protocollo Web RTC.|
+|**Motore di ricerca predefinito**|Specificare il motore di ricerca predefinito da usare. Gli utenti finali possono modificare questo valore in qualsiasi momento.|
+|**URL XML OpenSearch**|È possibile usare un file XML OpenSearch per creare un servizio di ricerca per Microsoft Edge.<br>Per altre informazioni, vedere [OpenSearch](https://msdn.microsoft.com/library/windows/desktop/dd940337).|
+|**Homepages (desktop only)** (Home page (solo desktop))|Aggiungere un elenco di siti da usare come home page nel browser Edge (solo desktop).|  
 
 
 ### <a name="windows-defender"></a>Windows Defender
@@ -388,11 +402,11 @@ Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e vers
 |**Analizza file di archivio**|Consente a Defender di analizzare i file archiviati con estensione zip o cab.|
 |**Analizza i messaggi di posta elettronica**|Consente a Defender di analizzare i messaggi di posta elettronica nel momento in cui arrivano al dispositivo.|
 |**Analizza unità rimovibili**|Consente a Defender di analizzare le unità rimovibili, ad esempio le chiavi USB.|
-|**Analizza le unità mappate**|Consente a Defender di analizzare i file nelle unità di rete mappate.<br>Se i file presenti nell'unità sono di sola lettura, Defender non sarà in grado di rimuovere eventuali malware in essi contenuti.|
-|**Analizza file aperti da cartelle di rete condivise**|Consente a Defender di analizzare i file nelle unità di rete condivise, ad esempio quelli a cui è possibile accedere da un percorso UNC.<br>Se i file presenti nell'unità sono di sola lettura, Defender non sarà in grado di rimuovere eventuali malware in essi contenuti.|
+|**Analizza le unità mappate**|Consente a Defender di analizzare i file nelle unità di rete mappate.<br>Se i file presenti nell'unità sono di sola lettura, Defender non è in grado di rimuovere eventuale malware da questi.|
+|**Analizza file aperti da cartelle di rete condivise**|Consente a Defender di analizzare i file nelle unità di rete condivise, ad esempio quelli a cui è possibile accedere da un percorso UNC.<br>Se i file presenti nell'unità sono di sola lettura, Defender non è in grado di rimuovere eventuale malware da questi.|
 |**Intervallo di aggiornamento della firma**|Specifica l'intervallo con cui Defender controlla i nuovi file delle firme.
 |**Consenti protezione cloud**|Consente o impedisce a Microsoft Active Protection Service di ricevere informazioni sull'attività del malware dai dispositivi gestiti. Queste informazioni vengono usate per un futuro miglioramento del servizio.|
-|**Richiedi agli utenti l'invio dei campioni**|Controlla se i file che potrebbero richiedere un'ulteriore analisi da parte di Microsoft per determinarne l'eventuale dannosità vengono automaticamente inviati a Microsoft.|
+|**Richiedi agli utenti l'invio dei campioni**|Controlla se i file che potrebbero richiedere un'ulteriore analisi devono essere inviati automaticamente a Microsoft per determinarne l'eventuale dannosità.|
 |**Rilevamento di applicazioni potenzialmente indesiderate**|Protegge i dispositivi con Windows desktop registrati dall'esecuzione di software classificato da Windows Defender come potenzialmente indesiderato. È possibile proteggere queste applicazioni dall'esecuzione o usare la modalità di controllo per segnalare l'installazione di un'applicazione potenzialmente indesiderata.|
 |**Esclusioni di file e cartelle**|Aggiunge uno o più file e cartelle come C:\Path o %ProgramFiles%\Path\filename.exe all'elenco delle esclusioni. Questi file e cartelle non sono inclusi in alcuna scansione in tempo reale o pianificata.|
 |**Esclusioni di estensioni di file**|Aggiunge una o più estensioni di file, ad esempio jpg o txt, all'elenco delle esclusioni. I file con queste estensioni non vengono inclusi in un'analisi in tempo reale o pianificata.|

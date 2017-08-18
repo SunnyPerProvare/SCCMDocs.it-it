@@ -2,7 +2,7 @@
 title: Impostazioni client | Documentazione Microsoft
 description: Scegliere le impostazioni client tramite la console di System Center Configuration Manager.
 ms.custom: na
-ms.date: 03/24/2017
+ms.date: 08/01/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c8717925dba42451b1e241a7c2f59e43896d7d99
-ms.openlocfilehash: 4a169098f30e4a9d708e41ee25c6a400d5ff0e85
+ms.translationtype: HT
+ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
+ms.openlocfilehash: a8233c361e1a78b14a02f328da445814624e38d8
 ms.contentlocale: it-it
-ms.lasthandoff: 06/19/2017
+ms.lasthandoff: 08/02/2017
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informazioni sulle impostazioni client in System Center Configuration Manager
@@ -55,7 +55,7 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
 
 -   **Velocità massima di trasferimento all'esterno dell'intervallo di limitazione (Kbps)**  
 
-   Specificare la velocità massima di trasferimento che verrà usata dai client fuori dall'intervallo di limitazione BITS, se è stata selezionata l'opzione che consente la limitazione BITS all'esterno dell'intervallo.  
+   Specificare la velocità massima di trasferimento usata dai client fuori dall'intervallo di limitazione BITS, se è stata selezionata l'opzione che consente la limitazione BITS all'esterno dell'intervallo.  
 
 ## <a name="client-cache-settings"></a>Impostazioni della cache dei client
 
@@ -63,9 +63,25 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
 
   A partire dalla versione 1606, questa opzione viene usata per configurare il computer client per [BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#branchcache). Per consentire la memorizzazione nella cache BranchCache nel client, impostare **Abilita BranchCache** su **Sì**.
 
+- **Abilita BranchCache**
+
+Abilita BranchCache nei computer client.
+
+- **Dimensioni massime della cache BranchCache (percentuale del disco)**.
+
 - **Configurare la dimensione della cache client**
 
-  Nei computer Windows la cache client archivia i file temporanei usati per installare applicazioni e programmi. Selezionare **Sì** per specificare **Dimensioni massime della cache**, espresse in MB o in percentuale del disco. La cache client può raggiungere la dimensione massima consentita in MB o in percentuale del disco, adeguandosi **al valore che risulta inferiore**. Se questa opzione è impostata su **No**, il valore predefinito è 5.120 MB.
+  Nei computer Windows la cache client archivia i file temporanei usati per installare applicazioni e programmi. Scegliere **Sì** e quindi specificare:
+    - **Dimensioni massime della cache** (MB). 
+    - **Dimensioni massime della cache** (percentuale del disco).
+La cache client può raggiungere la dimensione massima consentita in MB o in percentuale del disco, adeguandosi **al valore che risulta inferiore**. Se questa opzione è impostata su **No**, il valore predefinito è 5.120 MB.
+
+- **Abilita il client di Configuration Manager nell'intero sistema operativo per condividere i contenuti**
+
+Abilita la peer cache per i client di Configuration Manager. Specificare quindi le informazioni relative alla porta attraverso la quale il client comunica con il computer peer. Configuration Manager configurerà automaticamente le regole di Windows Firewall in modo che questo tipo di traffico sia consentito. Se si usa un firewall diverso, è necessario configurare le regole manualmente.
+
+
+
 
 ## <a name="client-policy"></a>Criteri client  
 
@@ -107,7 +123,7 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
 
   -   Il punto di gestione basato su Internet autentica automaticamente l'utente usando l'autenticazione di Windows (Kerberos o NTLM).  
 
-   Se si lascia l'opzione su **False** o **No**o una delle due condizione non riesce, un computer su Internet riceverà solo i criteri computer. In questo scenario, gli utenti possono comunque visualizzare, richiedere e installare applicazioni da un Catalogo applicazioni basato su Internet. Se questa impostazione è **False** o **No** ma **Abilitare il polling dei criteri utente sui client** è configurato su **True** o **Abilitare i criteri utente nei client** è configurato su **Sì**, gli utenti non riceveranno i criteri client finché il computer non sarà connesso alla intranet.  
+   Se si lascia l'opzione impostata su **False** o **No** o una delle due condizioni non viene soddisfatta, quando il computer è connesso a Internet riceverà solo i criteri computer. In questo scenario, gli utenti possono comunque visualizzare, richiedere e installare applicazioni da un Catalogo applicazioni basato su Internet. Se questa impostazione è **False** o **No** ma **Abilitare il polling dei criteri utente sui client** è configurato su **True** o **Abilitare i criteri utente nei client** è configurato su **Sì**, gli utenti non riceveranno i criteri client finché il computer non sarà connesso alla intranet.  
 
    Per altre informazioni sulla gestione client in Internet, vedere [Considerazioni per le comunicazioni client da Internet o da una foresta non attendibile](../../../core/plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan) in  [Comunicazioni tra gli endpoint in System Center Configuration Manager](../../../core/plan-design/hierarchy/communications-between-endpoints.md).  
 
@@ -118,7 +134,7 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
 
 -   **Valutazione di conformità della pianificazione**  
 
-     Scegliere **Pianifica** per creare la pianificazione predefinita che verrà visualizzata agli utenti quando distribuiscono una linea di base della configurazione. Questo valore può essere configurato per ogni linea di base nella finestra di dialogo **Linea di base configurazione distribuzione** .  
+     Scegliere **Pianifica** per creare la pianificazione predefinita visualizzata dagli utenti quando distribuiscono una linea di base di configurazione. Questo valore può essere configurato per ogni linea di base nella finestra di dialogo **Linea di base configurazione distribuzione** .  
 
 -   **Abilitare i dati e profili utente**  
 
@@ -140,7 +156,7 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
 
      -   Si desidera configurare manualmente il server più vicino per il client o assicurarsi che non si connettano a un server con una connessione di rete lenta.  
 
-     -   Si desidera controllare quali client si connettono a quale server. Questo potrebbe avvenire per motivi di test, di prestazioni o aziendali.  
+     -   Si desidera controllare quali client si connettono a quale server. Questa configurazione può essere usata a scopo di test, per migliorare le prestazioni o per motivi aziendali.  
 
      -   Non si desidera aspettare fino a 25 ore o una modifica di rete affinché i client vengano configurati con un punto per siti Web del Catalogo applicazioni diverso.  
 
@@ -228,7 +244,7 @@ Molte delle impostazioni client non necessitano di spiegazione. Altre sono descr
     -   Per gestire le notifiche dell'agente client e l'installazione delle applicazioni e degli aggiornamenti software, si usa il Software Development Kit (SDK) di Configuration Manager.  
 
     > [!WARNING]  
-    >  Se si seleziona questa opzione quando nessuna di queste condizioni è applicabile, gli aggiornamenti software e le applicazioni richieste non verranno installati nei client. Questa impostazione non impedisce agli utenti di installare le applicazioni del Catalogo applicazioni o pacchetti, programmi e sequenze di attività sui computer client.  
+    >  Se si seleziona questa opzione quando nessuna di queste condizioni è applicabile, gli aggiornamenti software e le applicazioni obbligatorie non vengono installati nei client. Questa impostazione non impedisce agli utenti di installare le applicazioni del Catalogo applicazioni o pacchetti, programmi e sequenze di attività sui computer client.  
 
 -   **Criteri di esecuzione di PowerShell**  
 

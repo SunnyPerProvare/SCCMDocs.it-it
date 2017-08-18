@@ -2,7 +2,7 @@
 title: Data warehouse | Microsoft Docs
 description: Punto di servizio e database del data warehouse per System Center Configuration Manager
 ms.custom: na
-ms.date: 5/31/2017
+ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: HT
-ms.sourcegitcommit: ef42d1483053e9a6c502f4ebcae5a231aa6ba727
-ms.openlocfilehash: c421c3495f56503d5cbda7b1a5ab5350a168912d
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: eedbf12d3bf628666efc90c85a8dfab37e4dc9ab
 ms.contentlocale: it-it
-ms.lasthandoff: 07/26/2017
+ms.lasthandoff: 07/29/2017
 
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>Punto di servizio del data warehouse per System Center Configuration Manager
@@ -27,11 +27,12 @@ ms.lasthandoff: 07/26/2017
 
 A partire dalla versione 1702 è possibile usare il punto di servizio del data warehouse per archiviare e creare report di dati cronologici a lungo termine per la distribuzione di Configuration Manager.
 
-> [!TIP]  
-> Introdotto con la versione 1702, il punto di servizio del data warehouse è una funzionalità di versione non definitiva. Per abilitarla, vedere [Usare le funzionalità di versioni non definitive](/sccm/core/servers/manage/pre-release-features).
+> [!TIP]
+> Il punto di servizio del data warehouse è una funzionalità di versione non definitiva introdotta con la versione 1702. Per abilitarla, vedere [Usare le funzionalità di versioni non definitive](/sccm/core/servers/manage/pre-release-features).
 
-Il data warehouse supporta fino a 2 TB di dati, con timestamp per il rilevamento delle modifiche. L'archiviazione dei dati viene eseguita tramite sincronizzazioni automatizzate dal database del sito di Configuration Manager al database del data warehouse. Queste informazioni diventano quindi accessibili dal punto di Reporting Services.
+> A partire dalla versione 1706, questa funzionalità non è più una funzionalità di versione non definitiva.
 
+Il data warehouse supporta fino a 2 TB di dati, con timestamp per il rilevamento delle modifiche. L'archiviazione dei dati viene eseguita tramite sincronizzazioni automatizzate dal database del sito di Configuration Manager al database del data warehouse. Queste informazioni diventano quindi accessibili dal punto di Reporting Services. I dati sincronizzati con il database del data warehouse vengono mantenuti per tre anni. Periodicamente, un'attività predefinita rimuove i dati che hanno superato i tre anni.
 
 Tra i dati sincronizzati sono inclusi i dati seguenti dai gruppi di dati globali e del sito:
 - Integrità dell'infrastruttura
@@ -46,15 +47,22 @@ Quando viene installato, il ruolo del sistema del sito installa e configura il d
 
 
 ## <a name="prerequisites-for-the-data-warehouse-service-point"></a>Prerequisiti per il punto di servizio del data warehouse
+- Il ruolo del sistema del sito del data warehouse è supportato solo dal sito di livello superiore della gerarchia, che è un sito di amministrazione centrale o un sito primario autonomo.
 - Il computer in cui si installa il ruolo del sistema del sito richiede .NET Framework 4.5.2 o versioni successive.
 - L'account del computer in cui si installa il ruolo del sistema del sito viene usato per sincronizzare i dati con il database del data warehouse. L'account richiede le autorizzazioni seguenti:  
   - **Amministratore** nel computer che ospiterà il database del data warehouse.
   - **DB_owner** per il database del data warehouse.
   - **DB_reader** ed **execute** per il database del sito dei siti di livello superiore.
--   Il database del data warehouse è supportato in un'istanza predefinita o denominata di SQL Server 2012 o versioni successive. L'edizione deve essere Enterprise o Datacenter.
-  - Gruppo di disponibilità AlwaysOn di SQL Server: questa configurazione non è supportata.
-  - Cluster di SQL Server: i cluster di failover di SQL Server non sono supportati. Questo supporto non è disponibile perché il database del data warehouse non è stato testato in profondità nei cluster di failover di SQL Server.
-  - Quando il database del data warehouse è remoto rispetto al database del server del sito, è necessario avere una licenza separata per l'istanza di SQL Server che ospita il database.
+- Il database del data warehouse richiede l'uso di SQL Server 2012 o versione successiva, edizione Standard, Enterprise o Datacenter.
+- Per ospitare il database del sito sono supportate le configurazioni di SQL Server seguenti:  
+  - Istanza predefinita
+  - Istanza denominata
+  - Gruppo di disponibilità Always On di SQL Server
+  - Cluster di failover di SQL Server
+-   Se il database del data warehouse è remoto rispetto al database del server del sito, è necessaria una licenza separata per ogni istanza di SQL Server che ospita il database.
+- Se si usano le [viste distribuite](/sccm/core/servers/manage/data-transfers-between-sites#bkmk_distviews), il ruolo del sistema del sito del punto di servizio del data warehouse deve essere installato nello stesso server che ospita il database dei siti di amministrazione centrale.
+
+
 
 > [!IMPORTANT]  
 > Il data warehouse non è supportato se il computer che esegue il punto di servizio del data warehouse o che ospita il database del data warehouse esegue una delle lingue seguenti:
@@ -65,9 +73,7 @@ Quando viene installato, il ruolo del sistema del sito installa e configura il d
 
 
 ## <a name="install-the-data-warehouse"></a>Installare il data warehouse
-È possibile installare il ruolo del sistema del sito del data warehouse solo nel sito di livello superiore nella gerarchia, ovvero un sito di amministrazione centrale o il sito primario autonomo.
-
-Ogni gerarchia supporta una singola istanza di questo ruolo e può trovarsi in qualsiasi sistema del sito di livello superiore. L'istanza di SQL Server che ospita il database del data warehouse può essere locale nel ruolo del sistema del sito o remota. Anche se il data warehouse funziona con il punto di Reporting Services installato nello stesso sito, non è necessario che i due ruoli del sistema del sito siano installati nello stesso server.   
+Ogni gerarchia supporta un'unica istanza di questo ruolo, in qualsiasi sistema del sito di livello superiore. L'istanza di SQL Server che ospita il database del data warehouse può essere locale nel ruolo del sistema del sito o remota. Anche se il data warehouse funziona con il punto di Reporting Services installato nello stesso sito, non è necessario che i due ruoli del sistema del sito siano installati nello stesso server.   
 
 Per installare il ruolo, usare l'**Aggiunta guidata ruoli del sistema del sito** o la **Creazione guidata server del sistema sito**. Per altre informazioni, vedere [Installare ruoli del sistema del sito](/sccm/core/servers/deploy/configure/install-site-system-roles).  
 
@@ -83,7 +89,8 @@ Pagina **Generale**:
  - **Nome istanza di SQL Server, se applicabile**:   
  Se non si usa un'istanza predefinita di SQL Server, è necessario specificare l'istanza.
  - **Nome database**:   
- Specificare il nome del database del data warehouse.  Configuration Manager creerà il database del data warehouse con questo nome. Se si specifica un nome di database già esistente nell'istanza di SQL Server, Configuration Manager userà il database corrispondente.
+ Specificare il nome del database del data warehouse. Il nome del database non può essere costituito da più di 10 caratteri. La lunghezza del nome supportata verrà aumentata in una versione successiva.
+ Configuration Manager crea il database del data warehouse con questo nome. Se si specifica un nome di database già esistente nell'istanza di SQL Server, Configuration Manager usa il database corrispondente.
  - **Porta di SQL Server usata per la connessione**:   
  Specificare il numero di porta TCP/IP configurato per l'istanza di SQL Server che ospita il database del data warehouse. Questa porta viene usata dal servizio di sincronizzazione del data warehouse per la connessione al database del data warehouse.  
 
@@ -125,7 +132,7 @@ A differenza di uno spostamento del database del data warehouse, questa modifica
 ## <a name="move-the-data-warehouse-database"></a>Spostare il database del data warehouse
 Per spostare il database del data warehouse in un nuovo SQL Server, procedere come segue:
 
-1.  Usare SQL Server Management Studio per eseguire il backup del database del data warehouse e quindi ripristinare il database in un'istanza di SQL Server nel nuovo computer che ospiterà il data warehouse.   
+1.  Usare SQL Server Management Studio per eseguire il backup del database del data warehouse. Ripristinare quindi il database in SQL Server nel nuovo computer che ospita il data warehouse.   
 > [!NOTE]     
 > Dopo aver ripristinato il database nel nuovo server, assicurarsi che le autorizzazioni di accesso al database per il nuovo database del data warehouse siano le stesse del data warehouse originale.  
 
@@ -140,13 +147,13 @@ Usare i log seguenti per analizzare i problemi dell'installazione del punto di s
  - *Microsoft.ConfigMgrDataWarehouse.log*: questo log consente di analizzare la sincronizzazione dei dati tra il database del sito e il database del data warehouse.
 
 **Errore di installazione**  
- L'installazione del punto di servizio del data Warehouse non riesce nel server di sistema di un sito remoto quando il data warehouse è il primo ruolo del sistema del sito installato in tale computer.  
+ L'installazione del punto di servizio del data warehouse non riesce nel server di sistema di un sito remoto se il data warehouse è il primo ruolo del sistema del sito installato in tale computer.  
   - **Soluzione**:   
     Verificare che il computer in cui si installa il punto di servizio del data warehouse ospiti già almeno un altro ruolo del sistema del sito.  
 
 
 **Problemi di sincronizzazione noti**:   
-La sincronizzazione non riesce e restituisce il messaggio seguente nel file *Microsoft.ConfigMgrDataWarehouse.log*: **"failed to populate schema objects"** (non è stato possibile popolare gli oggetti dello schema)  
+La sincronizzazione non riesce e restituisce il messaggio seguente nel file *Microsoft.ConfigMgrDataWarehouse.log*: **"failed to populate schema objects"** (Impossibile popolare gli oggetti dello schema)  
  - **Soluzione**:  
     Verificare che l'account del computer che ospita il ruolo del sistema del sito sia un **db_owner** nel database del data warehouse.
 
@@ -167,7 +174,7 @@ Quando si apre un report del data warehouse, viene restituito l'errore seguente:
     2. Aprire **Gestione configurazione SQL Server** in **Configurazione di rete SQL Server**, fare clic con il pulsante destro del mouse per selezionare **Proprietà** in **Protocolli per MSSQLSERVERR**. Quindi, nella scheda **Certificato** selezionare **Certificato di identificazione SQL Server del data warehouse** come certificato e salvare le modifiche.  
     3. Aprire **Gestione configurazione SQL Server** in **Servizi di SQL Server**, riavviare **Servizio SQL Server** e **Servizio di creazione report**.
     4.  Aprire Microsoft Management Console (MMC), aggiungere lo snap-in per **Certificati** e quindi selezionare **Account del computer** per gestire il certificato per l'account del computer locale. Quindi, in MMC espandere la cartella **Personale** > **Certificati** ed esportare **Certificato di identificazione SQL Server del data warehouse** come file **Binario codificato DER x.509 (.CER)**.    
-  2.    Nel computer che ospita SQL Server Reporting Services, aprire MMC, aggiungere lo snap-in per **Certificati** e quindi selezionare **Account del computer** per gestire il certificato per l'account del computer locale. Nella cartella **Autorità di certificazione principale attendibili** importare **Certificato di identificazione SQL Server del data warehouse**.
+  2.    Nel computer che ospita SQL Server Reporting Services, aprire MMC e aggiungere lo snap-in per **Certificati**. Quindi selezionare per gestire i certificati per **account computer**. Nella cartella **Autorità di certificazione principale attendibili** importare **Certificato di identificazione SQL Server del data warehouse**.
 
 
 ## <a name="data-warehouse-dataflow"></a>Flusso dei dati del data warehouse   

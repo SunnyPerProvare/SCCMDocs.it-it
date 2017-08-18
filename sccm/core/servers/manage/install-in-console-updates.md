@@ -1,6 +1,6 @@
 ---
 title: Aggiornamenti nella console | Microsoft Docs
-description: System Center Configuration Manager si sincronizza con il cloud Microsoft per ottenere aggiornamenti installabili all&quot;interno della console.
+description: System Center Configuration Manager si sincronizza con il cloud Microsoft per ottenere aggiornamenti installabili all'interno della console.
 ms.custom: na
 ms.date: 06/13/2017
 ms.prod: configuration-manager
@@ -15,12 +15,11 @@ caps.latest.revision: 36
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
-ms.openlocfilehash: 34ddb646137aaf1160d850ba7c1e0109f467225d
+ms.translationtype: HT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 2bbc8935bee306ed0bc312cc43b8f5374a8df7ff
 ms.contentlocale: it-it
-ms.lasthandoff: 06/13/2017
-
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Installare gli aggiornamenti nella console per System Center Configuration Manager
@@ -289,6 +288,9 @@ Le attività di post-installazione includono:
 
 ##  <a name="bkmk_retry"></a> Ripetere l'installazione di un aggiornamento non riuscito  
 Quando l'installazione di un aggiornamento non riesce, esaminare i commenti nella console per individuare le possibili soluzioni per gli errori e gli avvisi. Per altre informazioni, è anche possibile visualizzare ConfigMgrPrereq.log nel server del sito. Prima di riprovare l'installazione di un aggiornamento, è necessario correggere gli errori ed è consigliabile correggere anche gli avvisi.  
+
+> [!TIP]  
+> In caso di problemi di download o di replica di un aggiornamento, è possibile usare lo [strumento di reimpostazione dell'aggiornamento](/sccm/core/servers/manage/update-reset-tool). Questo strumento è disponibile nei siti che eseguono la versione 1706 o successiva. 
 
 Quando si è pronti per ripetere l'installazione di un aggiornamento, selezionare l'aggiornamento non riuscito e quindi scegliere un'opzione applicabile. Il nuovo tentativo di installazione dell'aggiornamento varia a seconda del nodo da cui viene riprovato e dal tipo di tentativo usato.  
 

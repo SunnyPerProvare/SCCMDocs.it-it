@@ -1,6 +1,6 @@
 ---
-title: Gestire le immagini d&quot;avvio - Configuration Manager | Microsoft Docs
-description: In Configuration Manager viene illustrato come gestire le immagini d&quot;avvio Windows PE usate durante la distribuzione di un sistema operativo.
+title: Gestire le immagini d'avvio - Configuration Manager | Microsoft Docs
+description: In Configuration Manager viene illustrato come gestire le immagini d'avvio Windows PE usate durante la distribuzione di un sistema operativo.
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0cf2ac6440588ccf4848baa7a195f78e8675447d
-ms.openlocfilehash: c6a1eb9ccaee45eb242fb320cb6b492d1a39d349
+ms.translationtype: HT
+ms.sourcegitcommit: 0663ba84762c44a5c303562548499f195bae9e1c
+ms.openlocfilehash: cc678c1133b1944f55bcad309cf9ede9f0660b57
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 08/01/2017
 
 ---
 # <a name="manage-boot-images-with-system-center-configuration-manager"></a>Gestire le immagini d'avvio con System Center Configuration Manager
@@ -33,15 +32,7 @@ Un'immagine d'avvio in Configuration Manager è un'immagine [Windows PE (WinPE)]
 ## <a name="BKMK_BootImageDefault"></a> Immagini d'avvio predefinite
 Configuration Manager offre due immagini d'avvio predefinite: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste immagini sono archiviate nel percorso: \\\\*nomeserver*>\SMS_<*codicesito*>\osd\boot\\<*x64*> or <*i386*>. Le immagini di avvio predefinite vengono aggiornate o rigenerate in base all'azione eseguita.
 
-**Usare gli aggiornamenti e le versioni di manutenzione per installare la versione più recente di Configuration Manager** A partire dalla versione 1702, quando si aggiorna la versione di Windows ADK e quindi si usano gli aggiornamenti e le versioni di manutenzione per installare la versione più recente di Configuration Manager, Configuration Manager rigenera le immagini di avvio predefinite. Ciò include la nuova versione di Windows PE dalla versione aggiornata di Windows ADK, la nuova versione del client di Configuration Manager, i driver, le personalizzazioni e così via. Le immagini di avvio personalizzate non vengono modificate.
-
-Prima della versione 1702, Configuration Manager aggiorna l'immagine di avvio (boot.wim) esistente con i componenti client, i driver, le personalizzazioni e così via, ma non usa la versione più recente di Windows PE da Windows ADK. È necessario modificare manualmente l'immagine di avvio per usare la nuova versione di Windows ADK.
-
-**Aggiornamento da Configuration Manager 2012 a Configuration Manager Current Branch (CB)** Quando si esegue l'aggiornamento da Configuration Manager 2012 a Configuration Manager CB usando il processo di installazione, Configuration Manager rigenera le immagini di avvio predefinite. Ciò include la nuova versione di Windows PE dalla versione aggiornata di Windows ADK, la nuova versione del client di Configuration Manager e tutte le personalizzazioni rimangono invariate. Le immagini di avvio personalizzate non vengono modificate.
-
-**Aggiornare i punti di distribuzione con l'immagine di avvio** Quando si usa l'azione **Aggiorna punti di distribuzione** dal nodo **Immagini di avvio** nella console di Configuration Manager, Configuration Manager aggiorna le immagini di avvio predefinite con i componenti client, i driver, le personalizzazioni e così via, ma non usa la versione più recente di Windows PE da Windows ADK. Le immagini di avvio personalizzate non vengono modificate.
-
-Tenere inoltre presente quanto segue per le azioni precedenti:
+Per le azioni descritte nelle sezioni seguenti, tenere presente quanto segue:
 - Gli oggetti del driver di origine devono essere validi e inclusi i file di origine del driver, altrimenti i driver non verranno aggiunti alle immagini di avvio nel sito.
 - Le immagini di avvio che non sono basate sulle immagini di avvio predefinite, anche se usano la stessa versione di Windows PE, non verranno modificate.
 - È necessario ridistribuire le immagini di avvio modificate ai punti di distribuzione.
@@ -50,6 +41,21 @@ Tenere inoltre presente quanto segue per le azioni precedenti:
 
 > [!NOTE]
 > Lo strumento del registro di traccia di Configuration Manager viene aggiunto a tutte le immagini di avvio inserite nella **Raccolta software**. In Windows PE è possibile avviare lo strumento del registro di traccia di Configuration Manager digitando **CMTrace** al prompt dei comandi.  
+
+### <a name="use-updates-and-servicing-to-install-the-latest-version-of-configuration-manager"></a>Usare gli aggiornamenti e le versioni di manutenzione per installare la versione più recente di Configuration Manager
+A partire dalla versione 1702, quando si aggiorna la versione di Windows ADK e quindi si usano gli aggiornamenti e le versioni di manutenzione per installare la versione più recente di Configuration Manager, Configuration Manager rigenera le immagini di avvio predefinite. Ciò include la nuova versione di Windows PE dalla versione aggiornata di Windows ADK, la nuova versione del client di Configuration Manager, i driver, le personalizzazioni e così via. Le immagini di avvio personalizzate non vengono modificate.
+
+Prima della versione 1702, Configuration Manager aggiorna l'immagine di avvio (boot.wim) esistente con i componenti client, i driver, le personalizzazioni e così via, ma non usa la versione più recente di Windows PE da Windows ADK. È necessario modificare manualmente l'immagine di avvio per usare la nuova versione di Windows ADK.
+
+### <a name="upgrade-from-configuration-manager-2012-to-configuration-manager-current-branch-cb"></a>Eseguire l'aggiornamento da Configuration Manager 2012 a Configuration Manager Current Branch (CB)
+Quando si esegue l'aggiornamento da Configuration Manager 2012 a Configuration Manager CB tramite il processo di installazione, Configuration Manager rigenera le immagini di avvio predefinite. Ciò include la nuova versione di Windows PE dalla versione aggiornata di Windows ADK, la nuova versione del client di Configuration Manager e tutte le personalizzazioni rimangono invariate. Le immagini di avvio personalizzate non vengono modificate.
+
+### <a name="update-distribution-points-with-the-boot-image"></a>Aggiornare i punti di distribuzione con l'immagine d'avvio
+Quando si usa l'azione **Aggiorna punti di distribuzione** dal nodo **Immagini di avvio** nella console di Configuration Manager, Configuration Manager aggiorna le immagini di avvio predefinite con i componenti client, i driver, le personalizzazioni e così via.    
+
+A partire dal Configuration Manager versione 1706, è possibile scegliere di ricaricare nell'immagine d'avvio la versione più recente di Windows PE (dalla directory di installazione di Windows ADK). La pagina **Generale** dell'Aggiornamento guidato punti di distribuzione offre informazioni sulla versione di Windows ADK installata nel server del sito, sulla versione di Windows ADK dalla quale è stato usato Windows PE nell'immagine d'avvio e sulla versione del client di Configuration Manager. È possibile usare queste informazioni per decidere se ricaricare l'immagine d'avvio. Inoltre la nuova colonna **Versione client** aggiunta alla visualizzazione delle immagini d'avvio nel nodo **Immagini d'avvio** visualizza la versione del client di Configuration Manager usata da ogni immagine d'avvio.    
+
+Le immagini di avvio personalizzate non vengono modificate.
 
 ##  <a name="BKMK_BootImageCustom"></a> Personalizzare un'immagine d'avvio  
  È possibile personalizzare o [modificare un'immagine d'avvio](#BKMK_ModifyBootImages) dalla console di Configuration Manager basata su una versione di Windows PE dalla versione supportata di Windows ADK. Quando un sito viene aggiornato con una nuova versione e viene installata una nuova versione di Windows ADK, le immagini di avvio personalizzate (non nel percorso dell'immagine di avvio predefinita) non vengono aggiornate con la nuova versione di Windows ADK. In questo caso, non sarà possibile personalizzare le immagini d'avvio nella console di Configuration Manager. Tuttavia, continueranno a funzionare come prima dell'aggiornamento.  
@@ -123,7 +129,7 @@ Tenere inoltre presente quanto segue per le azioni precedenti:
 >   
 >  Per altre informazioni sull'uso di PXE per la distribuzione di sistemi operativi, vedere [Usare PXE per distribuire Windows in rete](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
- Per la procedura di distribuzione di un'immagine d'avvio, vedere [Distribute content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
+ Per la procedura di distribuzione di un'immagine d'avvio, vedere [Distribute content](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_distribute).  
 
 ##  <a name="BKMK_ModifyBootImages"></a> Modificare un'immagine d'avvio  
  È possibile aggiungere o rimuovere driver di dispositivo dall'immagine o modificare le proprietà associate all'immagine d'avvio. Ad esempio, è possibile aggiungere o rimuovere driver per scheda di rete o per dispositivi di archiviazione di massa. Quando si modificano le immagini di avvio, tenere presente quanto segue:  
@@ -132,7 +138,7 @@ Tenere inoltre presente quanto segue per le azioni precedenti:
 
 -   Quando si modifica un'immagine d'avvio, l'immagine non modifica i pacchetti associati a cui fa riferimento.  
 
--   Dopo aver apportato delle modifiche a un'immagine d'avvio, è necessario **aggiornarla** nei punti di distribuzione che già la contengono, in modo che sia disponibile la versione più recente dell'immagine. Per ulteriori informazioni, vedere [Manage content you have distributed](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkmanagea-manage-the-content-you-have-distributed).  
+-   Dopo aver apportato delle modifiche a un'immagine d'avvio, è necessario **aggiornarla** nei punti di distribuzione che già la contengono, in modo che sia disponibile la versione più recente dell'immagine. Per ulteriori informazioni, vedere [Manage content you have distributed](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_manage).  
 
  Usare la procedura seguente per modificare un'immagine d'avvio.  
 
@@ -213,7 +219,7 @@ Tenere inoltre presente quanto segue per le azioni precedenti:
         -   Selezionare **Impostazioni punto di distribuzione pre-installazione** per specificare la modalità di distribuzione dell'immagine di avvio nei punti di distribuzione abilitati per il contenuto pre-installato.  
 
             > [!NOTE]  
-            >  Per altre informazioni sui contenuti in versione di preproduzione, vedere [Prestage content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content).  
+            >  Per altre informazioni sui contenuti in versione di preproduzione, vedere [Prestage content](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_prestage).  
 
     -   Nella scheda **Percorsi contenuto** selezionare il punto di distribuzione o il gruppo di punti di distribuzione ed eseguire le seguenti azioni:  
 

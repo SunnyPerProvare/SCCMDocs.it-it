@@ -1,6 +1,6 @@
 ---
 title: "Variabili predefinite della sequenza di attività | Microsoft Docs"
-description: "Le variabili predefinite della sequenza di attività offrono informazioni sull&quot;ambiente in cui è in esecuzione la sequenza di attività. Sono disponibili nel corso dell&quot;intera sequenza di attività."
+description: "Le variabili predefinite della sequenza di attività offrono informazioni sull'ambiente in cui è in esecuzione la sequenza di attività. Sono disponibili nel corso dell'intera sequenza di attività."
 ms.custom: na
 ms.date: 03/26/2017
 ms.prod: configuration-manager
@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: ae008c91a7387ba76f2bfac13f8feb489a0cc558
-ms.openlocfilehash: f5feccc4f810e1a94bb7dcdd5ad507d84b9c3b4a
+ms.translationtype: HT
+ms.sourcegitcommit: b7461f89f483314bd07248bbc9d5dde85ca6b6c2
+ms.openlocfilehash: 32b24b3637dfafe401ea1d9f51b3769aa749f544
 ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 08/03/2017
 
 ---
 # <a name="task-sequence-built-in-variables-in-system-center-configuration-manager"></a>Variabili predefinite della sequenza di attività in System Center Configuration Manager
@@ -83,7 +82,8 @@ ms.lasthandoff: 05/17/2017
 |SMSTSDriverRequestResolveTimeOut|Usare questa variabile per specificare il numero di secondi di attesa della risoluzione dei nomi HTTP a una richiesta di catalogo dei driver durante la procedura sequenza di attività Applica automaticamente i driver. Se la connessione richiede più tempo rispetto all'impostazione del timeout, la richiesta viene annullata. L'impostazione predefinita del timeout è di 60 secondi.|
 |SMSTSDriverRequestSendTimeOut|Usare questa variabile per specificare il numero di secondi da usare quando si invia una richiesta di catalogo dei driver durante la procedura sequenza di attività Applica automaticamente i driver. Se richiede più tempo rispetto all'impostazione del timeout, la richiesta viene annullata. L'impostazione predefinita del timeout è di 60 secondi.|
 |SMSTSErrorDialogTimeout|Quando si verifica un errore in una sequenza di attività, viene visualizzata una finestra di dialogo che viene ignorata automaticamente dopo un numero di secondi specificato da questa variabile. Per impostazione predefinita, la finestra di dialogo viene ignorata automaticamente dopo **900** secondi (15 minuti).|  
-|TSErrorOnWarning|Usare questa variabile per specificare se il motore della sequenza di attività considera un avviso come un errore rilevato durante il passaggio della sequenza di attività relativo all'installazione dell'applicazione. La sequenza di attività imposta la variabile _TSAppInstallStatus su **Avviso** quando una o più applicazioni o una dipendenza richiesta non viene installata perché non è stato raggiunto un requisito. Quando si imposta la variabile TSErrorOnWarning su **True** e la variabile _TSAppInstallStatus è impostata su Avviso, l'avviso viene considerato come un errore. Il comportamento predefinito è **False** .|  
+| TSDisableProgressUI | Usare questa variabile per visualizzare o nascondere lo stato della sequenza di attività in sezioni diverse della sequenza stessa. | 
+|TSErrorOnWarning|Usare questa variabile per specificare se il motore della sequenza di attività considera un avviso come un errore rilevato durante il passaggio della sequenza di attività relativo all'installazione dell'applicazione. La sequenza di attività imposta la variabile _TSAppInstallStatus su **Avviso** quando una o più applicazioni o una dipendenza richiesta non viene installata perché non è stato raggiunto un requisito. Quando si imposta la variabile TSErrorOnWarning su **True** e la variabile _TSAppInstallStatus è impostata su Avviso, l'avviso viene considerato come un errore. Il comportamento predefinito è **False** .| 
 |SMSTSLanguageFolder|usare questa variabile per modificare la lingua di visualizzazione di un'immagine di avvio indipendente dalla lingua.|  
 |SMSTSLocalDataDrive|Specifica la posizione del computer di destinazione in cui vengono archiviati i file temporanei durante l'esecuzione della sequenza di attività.<br /><br /> Questa variabile deve essere impostata prima dell'inizio della sequenza di attività, ad esempio impostando una variabile raccolta. Dopo aver avviato la sequenza di attività, Configuration Manager definisce la variabile _SMSTSMDataPath.|  
 |SMSTSMP|Usare questa variabile per specificare l'URL o l'indirizzo IP del punto di gestione di Configuration Manager.|  
