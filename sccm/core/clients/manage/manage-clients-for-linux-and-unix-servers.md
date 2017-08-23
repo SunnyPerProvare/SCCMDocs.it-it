@@ -1,83 +1,80 @@
 ---
-title: Gestire i client Linux e UNIX | Microsoft Docs
-description: Gestire i client su server Linux e UNIX in System Center Configuration Manager.
+title: "Linux および UNIX クライアントを管理する | Microsoft Docs"
+description: "System Center Configuration Manager で Linux および UNIX サーバーのクライアントを管理します。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 948664f2-239d-47a8-92fc-f8efeebd5796
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: afe0ecc4230733fa76e41bf08df5ccfb221da7c8
 ms.openlocfilehash: 506df4f7c7baa5f0586a1ddf0cb02b3de9f4d076
-ms.contentlocale: it-it
-ms.lasthandoff: 08/04/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-manage-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>Come gestire i client per i server Linux e UNIX in System Center Configuration Manager
+# <a name="how-to-manage-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>System Center Configuration Manager で Linux および UNIX サーバーのクライアントを管理する方法
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Quando si gestiscono server Linux e UNIX con System Center Configuration Manager, è possibile configurare raccolte, finestre di manutenzione e impostazioni client per semplificare la gestione dei server. Inoltre, anche se il client di Configuration Manager per Linux e UNIX non ha un'interfaccia utente, è possibile forzarne manualmente il polling dei criteri client.
+System Center Configuration Manager で Linux および UNIX サーバーを管理する場合、サーバーを管理しやすいように、コレクション、メンテナンス期間、およびクライアント設定を構成できます。 また、Linux および UNIX 用の Configuration Manager クライアントにはユーザー インターフェイスがありませんが、クライアントにクライアント ポリシーの手動ポーリングを強制することもできます。
 
 ##  <a name="BKMK_CollectionsforLnU"></a> Collections of Linux and UNIX servers  
- Usare le raccolte per gestire i gruppi di server Linux e UNIX in modo analogo all'uso delle raccolte per gestire altri tipi di client. Le raccolte possono essere raccolte di appartenenza diretta o raccolte basate su query. Le raccolte basate su query identificano i sistemi operativi client, le configurazioni hardware o altri dettagli relativi ai client archiviati nel database del sito. Ad esempio, è possibile usare le raccolte che includono server Linux e UNIX per gestire le impostazioni seguenti:  
+ コレクションを使用して Linux および UNIX サーバーのグループを管理する方法は、コレクションで他のクライアントの種類を管理する方法と同じです。 コレクションとして使用できるのは、ダイレクト メンバーシップ コレクションまたはクエリ ベースのコレクションです。 クエリ ベースのコレクションでは、クライアント オペレーティング システム、ハードウェア構成、またはサイト データベースに格納されているクライアントに関するその他の詳細情報を識別します。 たとえば、Linux および UNIX サーバーを含むコレクションを使用すると、次の設定を管理できます。  
 
--   Impostazioni client  
+-   クライアント設定  
 
--   Distribuzioni software  
+-   ソフトウェアの展開  
 
--   Imposizione delle finestre di manutenzione  
+-   メンテナンス期間の適用  
 
- Prima di poter identificare un client Linux o UNIX mediante il relativo sistema operativo o la relativa distribuzione, è necessario raccogliere l'[inventario hardware](../../../core/clients/manage/inventory/hardware-inventory-for-linux-and-unix.md) dal client.  
+ Linux または UNIX クライアントをそのオペレーティング システムまたはディストリビューションによって特定するには、そのクライアントから[ハードウェア インベントリ](../../../core/clients/manage/inventory/hardware-inventory-for-linux-and-unix.md)を収集しておく必要があります。  
 
- Le impostazioni client predefinite per l'inventario hardware includono le informazioni sul sistema operativo di un computer client. È possibile usare la proprietà **Didascalia** della classe **Sistema operativo** per identificare il sistema operativo di un server Linux o UNIX.  
+ ハードウェア インベントリの既定のクライアント設定には、クライアント コンピューターのオペレーティング システムに関する情報が含まれます。 **オペレーティング システム** クラスの **キャプション** プロパティを使用すると、Linux または UNIX サーバーのオペレーティング システムを特定できます。  
 
- È possibile visualizzare i dettagli relativi ai computer che eseguono il client di Configuration Manager per Linux e UNIX nel nodo **Dispositivi** dell'area di lavoro **Asset e conformità** della console di Configuration Manager. Nell'area di lavoro **Asset e conformità** della console di Configuration Manager è possibile visualizzare il nome del sistema operativo di ogni computer nella colonna **Sistema operativo**.  
+ Linux および UNIX 用の Configuration Manager クライアントを実行しているコンピューターに関する詳細は、Configuration Manager コンソールの **[資産とコンプライアンス]** ワークスペースの **[デバイス]** ノードで確認できます。 Configuration Manager コンソールの **[資産とコンプライアンス]** ワークスペースでは、**[オペレーティング システム]** 列に、各コンピューターのオペレーティング システムの名前が表示されます。  
 
- Per impostazione predefinita i server Linux e UNIX sono membri della raccolta **Tutti i sistemi** . È consigliabile creare raccolte personalizzate che includono solo i server Linux e UNIX o un loro subset. Le raccolte personalizzate consentono di gestire operazioni quali la distribuzione del software o l'assegnazione di impostazioni client ai gruppi di computer applicabili, in modo da poter misurare con precisione l'esito di una distribuzione.   
+ 既定では、Linux および UNIX サーバーは、 **[すべてのシステム]** コレクションのメンバーです。 Linux および UNIX サーバーのみが含まれるカスタム コレクション、またはそのコレクションのサブセットを作成することをお勧めします。 カスタム コレクションでは、展開の成功を正確に判断できるように、ソフトウェアを展開する、同じようなコンピューターのグループにクライアント設定を割り当てるなどの操作を管理できます。   
 
- Quando si crea una raccolta personalizzata per server Linux e UNIX, includere le query relative alle regole di appartenenza contenenti l'attributo Didascalia per l'attributo Sistema operativo. Per informazioni sulla creazione delle raccolte, vedere [Come creare le raccolte in System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md).  
+ Linux および UNIX サーバーのカスタム コレクションを作成する場合は、オペレーティング システム属性のキャプション属性が含まれるメンバーシップの規則クエリを追加します。 コレクションを作成する方法については、「[System Center Configuration Manager でコレクションを作成する方法](../../../core/clients/manage/collections/create-collections.md)」を参照してください。  
 
 ##  <a name="BKMK_MaintenanceWindowsforLnU"></a> Maintenance windows for Linux and UNIX servers  
- Il client di Configuration Manager per i server Linux e UNIX supporta l'uso di [finestre di manutenzione](../../../core/clients/manage/collections/use-maintenance-windows.md). Questo supporto è lo stesso dei client basati su Windows.  
+ Linux および UNIX サーバー用の Configuration Manager クライアントでは、[メンテナンス期間](../../../core/clients/manage/collections/use-maintenance-windows.md)を使用できます。 このサポートは、Windows ベースのクライアントから変更されていません。  
 
 ##  <a name="BKMK_ClientSettingsforLnU"></a> Client settings for Linux and UNIX servers  
- È possibile [configurare le impostazioni client](../../../core/clients/deploy/configure-client-settings.md) che si applicano a server Linux e UNIX in modo analogo alla configurazione delle impostazioni per gli altri client.  
+ Linux および UNIX サーバーに適用される[クライアント設定](../../../core/clients/deploy/configure-client-settings.md)は、他のクライアントの設定と同じ方法で構成できます。  
 
- Per impostazione predefinita l'opzione **Impostazioni agente client predefinite** si applica a server Linux e UNIX. È anche possibile creare impostazioni client personalizzate e distribuirle alle raccolte di client specifici.  
+ 既定では、 **[既定のクライアント エージェント設定]** が Linux および UNIX サーバーに適用されます。 また、カスタムのクライアント設定を作成し、特定のクライアントのコレクションに展開できます。  
 
- Non sono presenti impostazioni client aggiuntive che si applicano solo ai client Linux e UNIX. Tuttavia, esistono impostazioni client predefinite che non si applicano ai client Linux e UNIX. Il client per Linux e UNIX applica le impostazioni solo per le funzionalità supportate.  
+ Linux および UNIX クライアントにのみ適用される追加のクライアント設定はありません。 ただし、Linux および UNIX クライアントに適用されない既定のクライアント設定は存在します。 Linux と UNIX のクライアントは、それがサポートする機能の設定のみを適用します。  
 
- Ad esempio, un'impostazione del dispositivo client personalizzata che abilita e configura le impostazioni di controllo remoto viene ignorata dal server Linux e UNIX, perché il client per Linux e UNIX non supporta il controllo remoto.  
+ たとえば、リモート コントロール設定を有効にし、構成するカスタムのクライアント デバイス設定は、Linux サーバーと UNIX サーバーでは無視されます。Linux と UNIX のクライアントはリモート コントロールをサポートしないためです。  
 
 ##  <a name="BKMK_PolicyforLnU"></a> Computer policy for Linux and UNIX servers  
- Il client per i server Linux e UNIX esegue periodicamente il polling dei criteri del computer nel relativo sito per recuperare informazioni sulle configurazioni richieste e per controllare le distribuzioni.  
+ Linux および UNIX サーバーのクライアントは、そのサイトを定期的にポーリングしてコンピューター ポリシーを確認し、要求された構成に関する詳細情報を取得して、展開をチェックします。  
 
- È anche possibile imporre il client a un server Linux o UNIX per eseguire il polling immediato dei criteri del computer. A tale scopo, usare le credenziali **root** nel server per eseguire il comando seguente: **/opt/microsoft/configmgr/bin/ccmexec -rs policy**  
+ Linux または UNIX サーバーのクライアントにコンピューター ポリシーのポーリングを直ちに実行するように強制することもできます。 それを実行するには、サーバーで **ルート** 資格情報を使用して、 **/opt/microsoft/configmgr/bin/ccmexec -rs policy**コマンドを実行します。  
 
- I dettagli relativi al polling dei criteri del computer vengono inseriti nel file di log del client condiviso **scxcm.log**.  
+ コンピューター ポリシーのポーリングの詳細が、共有クライアントのログ ファイル **scxcm.log**に入力されます。  
 
 > [!NOTE]  
->  Il client di Configuration Manager per Linux e UNIX non richiede né elabora mai i criteri utente.  
+>  Linux および UNIX 用の Configuration Manager クライアントによって、ユーザー ポリシーの要求や処理が実行されることはありません。  
 
 ##  <a name="BKMK_ManageLinuxCerts"></a> How to manage certificates on the client for Linux and UNIX  
- Dopo aver installato il client per Linux e UNIX, è possibile usare lo strumento **certutil** per aggiornare il client con un nuovo certificato PKI e per importare un nuovo elenco di revoche di certificati (CRL). Quando si installa il client per Linux e UNIX, questo strumento viene inserito in **/opt/microsoft/configmgr/bin/certutil**. 
+ Linux および UNIX 用のクライアントをインストールした後、 **certutil** ツールを使用して、新しい PKI 証明書でクライアントを更新し、新しい証明書失効リスト (CRL) をインポートできます。 Linux および UNIX 用のクライアントをインストールするとき、このツールは **/opt/microsoft/configmgr/bin/certutil** に配置されます。 
 
- Per gestire i certificati, in ogni client eseguire lo strumento certutil con una delle opzioni seguenti:  
+ 証明書を管理するには、各クライアントで、次のいずれかのオプションを指定して certutil を実行します。  
 
-|Opzione|Altre informazioni|  
+|オプション|説明|  
 |------------|----------------------|  
-|importPFX|Usare questa opzione per specificare un certificato per sostituire il certificato attualmente usato da un client.<br /><br /> Quando si usa **-importPFX** è necessario usare anche il parametro della riga di comando **-password** per specificare la password associata al file PKCS#12.<br /><br /> Usare **-rootcerts** per specificare eventuali requisiti aggiuntivi relativi al certificato radice.<br /><br /> Esempio:  **certutil -importPFX &lt;Percorso del certificato PKCS#12> -password &lt;Password certificato\> [-rootcerts &lt;elenco certificati separati da virgola>]**|  
-|-importsitecert|Usare questa opzione per aggiornare il certificato di firma del server del sito che si trova nel server di gestione.<br /><br /> Esempio: **certutil -importsitecert &lt;Percorso del certificato DER\>**|  
-|-importcrl|Usare questa opzione per aggiornare l'elenco di revoche di certificati sul client con uno o più percorsi di file CRL.<br /><br /> Esempio: **certutil -importcrl &lt;percorsi file CRL separati da virgola\>**|  
-
+|importPFX|このオプションを使用すると、証明書を指定して、クライアントが現在使用している証明書と置き換えることができます。<br /><br /> **-importPFX** を使用する場合は、**-password** コマンド ライン パラメーターを使って、PKCS#12 ファイルに関連付けられているパスワードを指定する必要もあります。<br /><br /> 追加のルート証明書の要件を指定するには、 **-rootcerts** を使用します。<br /><br /> 例: **certutil -importPFX &lt;Path to the PKCS#12 certificate> -password &lt;Certificate password\> [-rootcerts &lt;証明書のコンマ区切りの一覧>]**|  
+|-importsitecert|このオプションを使用すると、管理サーバー上にあるサイト サーバー署名証明書を更新できます。<br /><br /> 例: **certutil -importsitecert &lt;DER 証明書のパス\>**|  
+|-importcrl|このオプションを使用すると、1 つ以上の CRL ファイル パスを指定してクライアント上の CRL を更新できます。<br /><br /> 例: **certutil -importcrl &lt;CRL ファイル パスのコンマ区切りの一覧\>**|  

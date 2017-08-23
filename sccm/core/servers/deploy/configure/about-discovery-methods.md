@@ -1,528 +1,525 @@
 ---
-title: Metodi di individuazione | Microsoft Docs
+title: "探索方法 | Microsoft Docs"
 ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ed931751-18f2-4230-a09e-a0a329fbfa1c
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: 442e5e1fbddd00248819a8de79adc78929474fc0
-ms.contentlocale: it-it
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="about-discovery-methods-for-system-center-configuration-manager"></a>Informazioni sui metodi di individuazione per System Center Configuration Manager
+# <a name="about-discovery-methods-for-system-center-configuration-manager"></a>System Center Configuration Manager の探索方法について
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-I metodi di individuazione di System Center Configuration Manager consentono di individuare vari dispositivi nella rete o dispositivi e utenti in Active Directory. Per usare un metodo di individuazione in modo efficiente, è importante conoscere le configurazioni disponibili e le rispettive limitazioni.  
+System Center Configuration Manager の各探索方法では、ネットワーク上のさまざまなデバイス、または Active Directory のデバイスおよびユーザーを検索できます。 探索方法を効率的に使用するには、使用可能な構成および制限について理解する必要があります。  
 
-##  <a name="bkmk_aboutForest"></a> Individuazione foresta Active Directory  
- **Configurabile:** sì  
+##  <a name="bkmk_aboutForest"></a> Active Directory フォレストの探索  
+ **構成可能:** ○  
 
- **Abilitata per impostazione predefinita:** no  
+ **既定で有効:** ×  
 
- Per eseguire questo metodo è possibile usare gli **account** seguenti:  
+ この方法の実行に使用できる**アカウント**は次のとおりです。  
 
--   **Account di individuazione foresta Active Directory** (definito dall'utente)  
+-   **Active Directory フォレスト探索アカウント** (ユーザー定義)  
 
--   **Account computer** del server del sito  
+-   サイト サーバーの**コンピューター アカウント**  
 
-A differenza di altri metodi di individuazione Active Directory, Individuazione foresta Active Directory non individua le risorse che è possibile gestire. Questo metodo individua invece i percorsi di rete che sono configurati in Active Directory e li può convertire in limiti da usare in tutta la gerarchia.  
+Active Directory のその他探索方法とは異なり、Active Directory フォレスト探索は、管理できるリソースを検出しません。 その代わりに、Active Directory で構成されているネットワークの場所を見つけて、階層全体で使用する境界に変換します。  
 
-Quando viene eseguito, il metodo effettua ricerche nella foresta Active Directory locale, in ogni foresta trusted e in ogni altra foresta configurata nel nodo **Foreste Active Directory** della console di Configuration Manager.  
+この方法が実行されると、ローカルの Active Directory フォレスト、信頼されている各フォレスト、および Configuration Manager コンソールの **[Active Directory フォレスト]** ノードで構成した追加の各フォレストを検索します。  
 
-Usare Individuazione foresta Active Directory per eseguire queste operazioni:  
+Active Directory フォレスト探索は、次の目的で使用します。  
 
--   Individuare siti e subnet Active Directory e creare i limiti di Configuration Manager sulla base dei percorsi di rete individuati.  
+-   Active Directory サイトおよびサブネットを探索し、そのネットワークの場所に基づいて、Configuration Manager の境界を作成する。  
 
--   Identificare le supernet assegnate a un sito Active Directory e convertire ogni supernet in un limite di intervallo di indirizzi IP.  
+-   Active Directory サイトに割り当てられているスーパー ネットを特定し、各スーパー ネットを IP アドレス範囲の境界に変換する。  
 
--   Pubblicare in Active Directory Domain Services in una foresta quando la pubblicazione in tale foresta è abilitata e l'account foresta Active Directory specificato dispone di autorizzazioni per tale foresta.  
+-   フォレストの Active Directory Domain Services (AD DS) に探索情報を発行する (フォレストへの発行が有効になっており、指定した Active Directory アカウントにそのフォレストのアクセス許可がある場合)。  
 
-È possibile gestire Individuazione foresta Active Directory nella console di Configuration Manager dai nodi seguenti in **Configurazione della gerarchia** nell'area di lavoro **Amministrazione**:  
+Configuration Manager コンソールで Active Directory フォレスト探索を管理するには、**[管理]** ワークスペースの **[階層の構成]** の下の以下のノードを使います。  
 
--   **Metodi di individuazione**: qui è possibile abilitare Individuazione foresta Active Directory affinché venga eseguita nel sito di livello superiore della gerarchia. È inoltre possibile specificare una pianificazione semplice per l'esecuzione dell'individuazione e configurarla per creare automaticamente limiti dalle subnet IP e dai siti di Active Directory individuati. Il metodo Individuazione foresta Active Directory non può essere eseguito in un sito primario figlio o in un sito secondario.  
+-   **探索方法**:階層の最上位で実行する Active Directory フォレストの探索を有効にすることができます。 探索を実行する簡単なスケジュールを設定したり、検出された IP サブネットと Active Directory サイトから自動的に境界が作成されるように構成することもできます。 Active Directory フォレストの探索を、子プライマリ サイトやセカンダリ サイトで実行することはできません。  
 
--   **Foreste Active Directory**: qui è possibile configurare le foreste Active Directory aggiuntive che si desidera individuare, specificare l'account da utilizzare come account foresta Active Directory per ciascuna foresta e configurare la pubblicazione in ciascun foresta. È anche possibile monitorare il processo di individuazione e aggiungere subnet IP e siti Active Directory a Configuration Manager come limiti e membri di gruppi di limiti.  
+-   **Active Directory フォレスト**:探索したい Active Directory フォレストの追加、各フォレストで使用する Active Directory フォレスト アカウントの指定、見つかった情報の各フォレストへの発行の構成を行えます。 さらに、探索プロセスを監視したり、IP サブネットと Active Directory サイトを Configuration Manager の境界および境界グループのメンバーに追加したりすることもできます。  
 
-Per configurare la pubblicazione delle foreste Active Directory per ogni sito della gerarchia, connettere la console di Configuration Manager al sito principale della gerarchia. La scheda **Pubblicazione** nella finestra di dialogo **Proprietà** di un sito Active Directory può mostrare solo il sito corrente e i relativi siti figlio. Quando la pubblicazione è abilitata per una foresta e lo schema della foresta viene esteso per Configuration Manager, per ogni sito abilitato per la pubblicazione in tale foresta Active Directory vengono pubblicate le informazioni seguenti:  
+階層の各サイトの Active Directory フォレストへの発行を構成するには、まず、Configuration Manager コンソールで、階層の最上位サイトに接続します。 Active Directory サイトの **[プロパティ]** ダイアログ ボックスの **[発行]** タブに、現在のサイトとその子サイトだけが表示されます。 フォレストへの発行が有効になっており、そのフォレストのスキーマを Configuration Manager 用に拡張している場合は、そのフォレストへの発行が有効になっている各サイトの次の情報が発行されます。  
 
--    **SMS-Site-&lt;codice sito>**
+-    **SMS-Site-&lt;サイト コード>**
 
--   **SMS-MP-&lt;codice sito>-&lt;nome del server nel sistema del sito>**  
+-   **SMS-MP-&lt;サイト コード>-&lt;サイト システム サーバー名>**  
 
--   **SMS-SLP-&lt;codice sito>-&lt;nome del server nel sistema del sito>**  
+-   **SMS-SLP-&lt;サイト コード>-&lt;サイト システム サーバー名>**  
 
--   **SMS-&lt;codice sito>-&lt;nome sito o subnet Active Directory>**  
-
-> [!NOTE]  
->  I siti secondari usano sempre l'account computer del server del sito secondario per la pubblicazione in Active Directory. Se si vuole che i siti secondari pubblichino in Active Directory, verificare che l'account computer del server del sito secondario disponga delle autorizzazioni per la pubblicazione in Active Directory. Un sito secondario non è in grado di pubblicare dati in una foresta non trusted.  
-
-> [!CAUTION]  
->  Quando si deseleziona l'opzione per la pubblicazione di un sito in una foresta Active Directory, tutte le informazioni pubblicate in precedenza per il sito, compresi i ruoli del sistema del sito disponibili, vengono rimosse da Active Directory.  
-
-Le azioni di individuazione foresta Active Directory vengono registrate nei log seguenti:  
-
--   Tutte le azioni, tranne quelle relative alla pubblicazione, vengono registrate nel file **ADForestDisc.Log** nella cartella **&lt;PercorsoInstallazione>\Logs** nel server del sito.  
-
--   Le azioni di pubblicazione di Individuazione foresta Active Directory vengono registrate nei file **hman.log** e **sitecomp.log** nella cartella **&lt;PercorsoInstallazione>\Logs** del server del sito.  
-
-Per altre informazioni su come configurare questo metodo di individuazione, vedere [Configurare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  
-
-##  <a name="bkmk_aboutGroup"></a> Individuazione gruppo Active Directory  
-**Configurabile:** sì  
-
-**Abilitata per impostazione predefinita:** no  
-
-Per eseguire questo metodo è possibile usare gli **account** seguenti:  
-
--   **Account di individuazione gruppo Active Directory** (definito dall'utente)  
-
--   **Account computer** del server del sito  
-
-> [!TIP]  
->  Oltre alle informazioni disponibili in questa sezione, vedere [Funzionalità comuni dell'individuazione gruppo, sistema e utente Active Directory](#bkmk_shared).  
-
-Usare questo metodo per eseguire ricerche in Active Directory Domain Services e individuare:  
-
--   Gruppi di sicurezza locali, globali e universali.  
-
--   L'appartenenza dei gruppi.  
-
--   Informazioni limitate sui computer e sugli utenti membri di un gruppo, anche quando un altro metodo non ha precedentemente individuato tali computer e utenti.  
-
-Questo metodo di individuazione ha lo scopo di identificare i gruppi e le relazioni di gruppo dei membri dei gruppi. Per impostazione predefinita, vengono individuati solo i gruppi di protezione. Se si vuole individuare anche l'appartenenza dei gruppi di distribuzione, è necessario selezionare la casella di controllo per l'opzione **Individua l'appartenenza dei gruppi di distribuzione** nella scheda **Opzione** della finestra di dialogo **Individuazione gruppo Active Directory - Proprietà**.  
-
-Individuazione gruppo Active Directory non supporta gli attributi estesi di Active Directory che possono essere identificati con Individuazione sistema Active Directory o Individuazione utente Active Directory. Poiché questo metodo di individuazione non è ottimizzato per l'individuazione di risorse computer e utente, eseguire tale metodo dopo aver eseguito Individuazione sistema Active Directory o Individuazione utente Active Directory. Questo perché il metodo crea un record dei dati di individuazione completo per i gruppi, ma un record limitato per i computer e gli utenti che sono membri di gruppi.  
-
-È possibile configurare gli ambiti di individuazione seguenti per controllare come questo metodo deve ricercare le informazioni:  
-
--   **Percorso**: usare un percorso se si vuole effettuare la ricerca in uno o più contenitori di Active Directory. Questa opzione dell'ambito supporta una ricerca ricorsiva nei contenitori di Active Directory specificati e in ogni contenitore figlio. Questo processo continua finché non vengono più trovati contenitori figlio.  
-
--   **Gruppi**: usare i gruppi se si vuole effettuare la ricerca in uno o più gruppi Active Directory specifici. È possibile configurare **Dominio Active Directory** per usare il dominio e la foresta predefiniti o limitare la ricerca a un singolo controller di dominio. Inoltre, è possibile specificare uno o più gruppi in cui effettuare la ricerca. Se non si specifica almeno un gruppo, viene effettuata la ricerca in tutti i gruppi trovati nel percorso specificato del **Dominio Active Directory** .  
-
-> [!CAUTION]  
->  Quando si configura un ambito di individuazione, scegliere solo i gruppi che è necessario individuare. Questo perché Individuazione gruppo Active Directory prova a individuare ogni membro di ciascun gruppo nell'ambito di individuazione. L'individuazione di gruppi di grandi dimensioni può richiedere un uso estensivo della larghezza di banda e di risorse Active Directory.  
+-   **SMS-&lt;サイト コード>-&lt;Active Directory サイト名またはサブネット>**  
 
 > [!NOTE]  
->  Per poter creare raccolte basate sugli attributi estesi di Active Directory e garantire così risultati di individuazione precisi per computer e utenti, è prima necessario eseguire Individuazione sistema Active Directory o Individuazione utente Active Directory, a seconda di quel che si vuole individuare.  
+>  セカンダリ サイトでは、Active Directory に発行するときに、必ず、セカンダリ サイト サーバーのコンピューター アカウントを使います。 セカンダリ サイトの情報を Active Directory に発行したい場合は、そのセカンダリ サイト サーバーのコンピューター アカウントに Active Directory への発行権限があることを確認してください。 信頼されていないフォレストにセカンダリ サイトからデータを発行することはできません。  
 
-Le azioni di Individuazione gruppo Active Directory vengono registrate nel file **adsgdis.log** nella cartella **&lt;PercorsoInstallazione\>\LOGS** del server del sito.  
+> [!CAUTION]  
+>  Active Directory フォレストにサイトを発行するオプションのチェックボックスをオフにすると、そのサイトの使用可能なサイト システムの役割の情報を含め、すべての情報が Active Directory から削除されます。  
 
-Per altre informazioni su come configurare questo metodo di individuazione, vedere [Configurare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  
+Active Directory フォレストの探索時に行われた処理は、次のログに記録されます。  
 
-##  <a name="bkmk_aboutSystem"></a>Individuazione sistema Active Directory  
-**Configurabile:** sì  
+-   フォレストへの発行に関係のある処理を除くすべての処理: サイト サーバーの **&lt;InstallationPath>\Logs** フォルダーの **ADForestDisc.Log** ファイル  
 
-**Abilitata per impostazione predefinita:** no  
+-   フォレストへの発行に関係のある処理: サイト サーバーの **&lt;InstallationPath>\Logs** フォルダーの **hman.log** ファイルと **sitecomp.log** ファイル  
 
-Per eseguire questo metodo è possibile usare gli **account** seguenti:  
+この探索方法を構成する方法の詳細については、「[Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md)」 (System Center Configuration Manager の探索方法の構成) を参照してください。  
 
--   **Account di individuazione sistema Active Directory** (definito dall'utente)  
+##  <a name="bkmk_aboutGroup"></a> Active Directory グループの探索  
+**構成可能:** ○  
 
--   **Account computer** del server del sito  
+**既定で有効:** ×  
 
-> [!TIP]  
->  Oltre alle informazioni disponibili in questa sezione, vedere [Funzionalità comuni dell'individuazione gruppo, sistema e utente Active Directory](#bkmk_shared).  
+この方法の実行に使用できる**アカウント**は次のとおりです。  
 
-Usare questo metodo di individuazione per cercare nei percorsi di Active Directory Domain Services specificati le risorse del computer che possono essere usate per creare raccolte e query. È anche possibile installare il client di Configuration Manager in un dispositivo individuato usando l'installazione push client.  
+-   **Active Directory グループ探索アカウント** (ユーザー定義)  
 
-Per impostazione predefinita, questo metodo individua informazioni di base relative al computer, tra cui:  
-
--   Nome computer  
-
--   Il sistema operativo e la sua versione  
-
--   Il nome del contenitore Active Directory  
-
--   Indirizzo IP  
-
--   Sito di Active Directory  
-
--   Timestamp dell'ultimo accesso  
-
-Per creare correttamente un record dei dati di individuazione per un computer, Individuazione sistema Active Directory deve essere in grado di identificare l'account computer e quindi risolvere il nome del computer in un indirizzo IP.  
-
-Nella finestra di dialogo **Individuazione sistema Active Directory - Proprietà** della scheda **Attributi di Active Directory** è possibile visualizzare l'elenco completo degli attributi di oggetto predefiniti restituiti da Individuazione sistema Active Directory. È anche possibile configurare il metodo per individuare altri attributi (estesi).  
-
-Le azioni di Individuazione sistema Active Directory vengono registrate nel file **adsysdis.log** nella cartella **&lt;PercorsoInstallazione\>\LOGS** del server del sito.  
-
-Per altre informazioni su come configurare questo metodo di individuazione, vedere [Configurare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  
-
-##  <a name="bkmk_aboutUser"></a> Individuazione utente Active Directory  
-**Configurabile:** sì  
-
-**Abilitata per impostazione predefinita:** no  
-
-Per eseguire questo metodo è possibile usare gli **account** seguenti:  
-
--   **Account di individuazione utente Active Directory** (definito dall'utente)  
-
--   **Account computer** del server del sito  
+-   サイト サーバーの**コンピューター アカウント**  
 
 > [!TIP]  
->  Oltre alle informazioni disponibili in questa sezione, vedere [Funzionalità comuni dell'individuazione gruppo, sistema e utente Active Directory](#bkmk_shared).  
+>  このセクションの情報だけでなく、「[Active Directory グループ、システム、およびユーザー探索の一般的な機能](#bkmk_shared)」を参照してください。  
 
-Usare questo metodo di individuazione per effettuare ricerche in Active Directory Domain Services e identificare gli account utente e gli attributi associati. Per impostazione predefinita, questo metodo individua informazioni di base relative all'account utente, tra cui:  
+この方法は、Active Directory Domain Services を検索して以下のいずれかを特定する場合に使用します。  
 
--   Nome utente  
+-   ローカル、グローバル、およびユニバーサル セキュリティ グループ。  
 
--   Il nome utente univoco (include il nome di dominio)  
+-   グループのメンバーシップ。  
 
--   Dominio  
+-   グループのメンバーのコンピューターやユーザーに関する限られた情報。この情報は、これらのコンピューターやユーザーが別の探索方法で検出されていない場合も返されます。  
 
--   I nomi dei contenitori Active Directory  
+この探索方法は、グループ、およびグループのメンバーの関係を識別するのが目的ですが、 既定では、セキュリティ グループだけが探索されます。 配布グループのメンバーシップも見つける場合は、**[Active Directory Group Discovery Properties (Active Directory グループ探索のプロパティ)]** ダイアログ ボックスの **[オプション]** タブで、**[配布グループのメンバーシップを探索する]** オプションのチェック ボックスをオンにする必要があります。  
 
-Nella finestra di dialogo **Individuazione utente Active Directory - Proprietà** della scheda **Attributi di Active Directory** è possibile visualizzare l'elenco completo degli attributi di oggetto predefiniti restituiti da Individuazione utente Active Directory. È anche possibile configurare il metodo per individuare altri attributi (estesi).
+Active Directory グループ探索は、Active Directory システム探索や Active Directory ユーザー探索で検出可能な Active Directory の拡張属性を返すことはできません。 この探索方法は、コンピューター リソースやユーザー リソース自体の探索用には最適化されていません。そのため、Active Directory システムの探索と Active Directory ユーザーの探索を実行した後で、この探索を実行するようにしてください。 その理由は、この探索方法ではグループについては完全な探索データ レコード (DDR) が作成されるものの、グループのメンバーであるコンピューターおよびユーザーについては限られた DDR しか作成されないためです。  
 
-Le azioni di Individuazione utente Active Directory vengono registrate nel file **adusrdis.log** nella cartella **&lt;PercorsoInstallazione\>\LOGS** del server del sito.  
+次の探索スコープを構成して、この方法で情報がどのように検索されるかを指定することができます。  
 
-Per altre informazioni su come configurare questo metodo di individuazione, vedere [Configurare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  
+-   **場所**:1 つまたは複数の Active Directory コンテナーを検索したい場合に、このスコープを使用します。 指定した Active Directory コンテナーと、その子コンテナーを反復検索することができます。 このプロセスは、それ以上子コンテナーが見つからなくなるまで繰り返されます。  
 
-## <a name="azureaddisc"></a> Individuazione utente Azure Active Directory
-A partire dalla versione 1706, è possibile usare Individuazione utente Azure Active Directory (Azure AD) quando si configura l'ambiente per l'uso dei servizi di Azure.
-Usare questo metodo di individuazione per cercare in Azure AD gli utenti che eseguono l'autenticazione per l'istanza di Azure AD, in particolare gli attributi seguenti:  
+-   [グループ****]:グループは、1 つまたは複数の特定の Active Directory グループを検索する場合に使用します。 **[Active Directory ドメイン]** オプションで、探索スコープを既定のドメインとフォレストに構成するか、個々のドメイン コントローラーに制限します。 さらに、検索するグループを 1 つまたは複数指定することができます。 グループを何も指定しなかった場合は、[Active Directory ドメイン] で指定した場所にあるすべてのグループが検索されます。 ****  
+
+> [!CAUTION]  
+>  探索スコープを構成するときは、探索する必要のあるグループだけを選択してください。 探索スコープにあるすべてのグループのすべてのメンバーが探索されるので、 グループが大きい場合は、大量の帯域幅と Active Directory のリソースが消費される可能性があります。  
+
+> [!NOTE]  
+>  Active Directory の拡張属性に基づいてコレクションを作成する (これにより、コンピューターとユーザーの正確な探索結果を得る) には、探索する内容に応じて、まず Active Directory システム探索または Active Directory ユーザー探索を実行します。  
+
+Active Directory グループの探索時に行われた処理は、サイト サーバーの **&lt;InstallationPath\>\LOGS** フォルダーの **adsgdis.log** ファイルに記録されます。  
+
+この探索方法を構成する方法の詳細については、「[Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md)」 (System Center Configuration Manager の探索方法の構成) を参照してください。  
+
+##  <a name="bkmk_aboutSystem"></a> Active Directory システムの探索  
+**構成可能:** ○  
+
+**既定で有効:** ×  
+
+この方法の実行に使用できる**アカウント**は次のとおりです。  
+
+-   **Active Directory システム探索アカウント** (ユーザー定義)  
+
+-   サイト サーバーの**コンピューター アカウント**  
+
+> [!TIP]  
+>  このセクションの情報だけでなく、「[Active Directory グループ、システム、およびユーザー探索の一般的な機能](#bkmk_shared)」を参照してください。  
+
+この探索方法は、Active Directory Domain Services の指定された場所で、コレクションやクエリの作成に使用できるコンピューター リソースを見つけるために使います。 クライアント プッシュ インストールを使用して、検出されたデバイスに Configuration Manager クライアントをインストールすることもできます。  
+
+既定では、この方法では、コンピューターの次の基本的な情報が探索されます。  
+
+-   コンピューター名  
+
+-   オペレーティング システムのバージョン  
+
+-   Active Directory コンテナー名  
+
+-   IP アドレス  
+
+-   Active Directory サイト  
+
+-   前回のログオンのタイムスタンプ  
+
+コンピューターの DDR を正しく作成するためには、Active Directory システムの探索時に、コンピューター アカウントが識別され、そのコンピューター名が IP アドレスに解決されなければなりません。  
+
+**[Active Directory System Discovery Properties (Active Directory システム探索のプロパティ)]** ダイアログ ボックスの **[Active Directory の属性]** タブで、Active Directory システム探索によって返された既定のオブジェクト属性をすべて一覧表示することができます。 また、追加の (拡張) 属性を探索する方法を構成することもできます。  
+
+Active Directory システムの探索時に行われた処理は、サイト サーバーの **&lt;InstallationPath\>\LOGS** フォルダーの **adsysdis.log** ファイルに記録されます。  
+
+この探索方法を構成する方法の詳細については、「[Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md)」 (System Center Configuration Manager の探索方法の構成) を参照してください。  
+
+##  <a name="bkmk_aboutUser"></a> Active Directory ユーザー探索  
+**構成可能:** ○  
+
+**既定で有効:** ×  
+
+この方法の実行に使用できる**アカウント**は次のとおりです。  
+
+-   **Active Directory ユーザー探索アカウント** (ユーザー定義)  
+
+-   サイト サーバーの**コンピューター アカウント**  
+
+> [!TIP]  
+>  このセクションの情報だけでなく、「[Active Directory グループ、システム、およびユーザー探索の一般的な機能](#bkmk_shared)」を参照してください。  
+
+この探索方法は、Active Directory Domain Services を検索して、ユーザー アカウントとその属性を見つけるために使います。 既定では、この方法では、ユーザー アカウントの次の基本的な情報が探索されます。  
+
+-   ユーザー名  
+
+-   固有なユーザー名 (ドメイン名を含む)  
+
+-   ドメイン  
+
+-   Active Directory コンテナー名  
+
+**[Active Directory User Discovery Properties (Active Directory ユーザー探索のプロパティ]** ダイアログ ボックスの **[Active Directory の属性]** タブで、Active Directory ユーザー探索によって返された既定のオブジェクト属性をすべて一覧表示することができます。 また、追加の (拡張) 属性を探索する方法を構成することもできます。
+
+Active Directory ユーザーの探索時に行われた処理は、サイト サーバーの **&lt;InstallationPath\>\LOGS** フォルダーの **adusrdis.log** ファイルに記録されます。  
+
+この探索方法を構成する方法の詳細については、「[Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md)」 (System Center Configuration Manager の探索方法の構成) を参照してください。  
+
+## <a name="azureaddisc"></a> Azure Active Directory ユーザー探索
+バージョン 1706 以降、Azure サービスを利用するように環境を構成するとき、Azure Active Directory (Azure AD) ユーザー探索を利用できます。
+この探索方法を利用し、次の属性を見つけ、Azure AD のインスタンスに対して認証するユーザーを Azure AD で検索します。  
 -   objectId
 -   displayName
--   mail
+-   メール
 -   mailNickname
 -   onPremisesSecurityIdentifier
 -   userPrincipalName
 -   AAD tenantID
 
-Questo metodo supporta la sincronizzazione completa e la sincronizzazione delta dei dati degli utenti da Azure AD. Queste informazioni possono quindi essere usate con i dati di individuazione raccolti con altri metodi di individuazione.
+この方法は、Azure AD のユーザー データの完全同期と差分同期に対応しています。 この情報は、他の検索方法から回収した検索データと併用できます。
 
-Le azioni per l'individuazione utente Azure Active Directory vengono registrate nel file SMS_AZUREAD_DISCOVERY_AGENT.log nel server del sito di livello superiore della gerarchia.
+Azure AD ユーザー探索のアクションは、階層の最上位層サイト サーバーの SMS_AZUREAD_DISCOVERY_AGENT.log ファイルに記録されます。
 
-Per configurare l'individuazione utente Azure AD, si usa la procedura guidata per i servizi di Azure.  Per informazioni su come configurare questo metodo di individuazione, vedere [Configurare l'individuazione utente Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods).
-
-
+Azure AD ユーザー探索を構成するには、Azure サービス ウィザードを使用します。  この探索方法を構成する方法の詳細については、「[Configure Azure AD User Discovery](/sccm/core/servers/deploy/configure/configure-discovery-methods)」 (Azure AD ユーザー探索の構成) を参照してください。
 
 
 
-##  <a name="bkmk_aboutHeartbeat"></a> Individuazione heartbeat  
-**Configurabile:** sì  
 
-**Abilitata per impostazione predefinita:** sì  
 
-Per eseguire questo metodo è possibile usare gli **account** seguenti:  
+##  <a name="bkmk_aboutHeartbeat"></a> 定期探索  
+**構成可能:** ○  
 
--   **Account computer** del server del sito  
+**既定で有効:** ○  
 
-Il metodo Individuazione heartbeat è diverso dagli altri metodi di individuazione di Configuration Manager. È infatti abilitato per impostazione predefinita e viene eseguito in ogni computer client, anziché su un server del sito, per creare un record dei dati di individuazione. Per i client di dispositivi mobili, questo record dei dati di individuazione viene creato dal punto di gestione usato dal client di dispositivi mobili. Per gestire il record del database dei client di Configuration Manager, non disabilitare Individuazione heartbeat. Oltre a consentire la gestione del record del database, questo metodo può forzare l'individuazione di un computer come nuovo record di risorse oppure ripopolare il record del database di un computer che è stato eliminato dal database.  
+この方法の実行に使用できる**アカウント**は次のとおりです。  
 
-Il metodo Individuazione heartbeat viene eseguito in base a una pianificazione configurata per tutti i client della gerarchia oppure, se chiamato manualmente, in un client specifico tramite l'esecuzione di **Ciclo di recupero dati di rilevamento** nella scheda **Azione** in un programma di Configuration Manager del client. La pianificazione predefinita per Individuazione heartbeat è impostata per l'esecuzione ogni 7 giorni. Se viene modificato l'intervallo di individuazione heartbeat, verificare che l'esecuzione sia più frequente rispetto all'attività di manutenzione del sito **Elimina dati di individuazione obsoleti**, che consente di eliminare i record client inattivi dal database del sito. È possibile configurare l'attività **Elimina dati di individuazione obsoleti** solo per i siti primari.  
+-   サイト サーバーの**コンピューター アカウント**  
 
-Quando viene eseguito, il metodo Individuazione heartbeat crea un record dei dati di individuazione contenente le informazioni correnti del client. Il client copia quindi questo file di piccole dimensioni (di circa 1 KB) in un punto di gestione in modo che un sito primario possa elaborarlo. Il file contiene le informazioni seguenti:  
+定期探索は、Configuration Manager の他の探索方法とは大きく異なります。 定期探索は、既定で有効になっており、DDR を作成するために各クライアント コンピューター (サイト サーバーではなく) で実行されます。 モバイル デバイス クライアントの場合は、この DDR は、そのモバイル デバイス クライアントが使用している管理ポイントによって作成されます。 これは、Configuration Manager クライアントのデータベースのレコードを維持するためです。定期探索を無効にしないでください。 データベースの管理に加えて、この方法では、見つかったコンピューターを新しいリソース レコードとして取り扱うことも、データベースから削除されたコンピューターのレコードを追加し直すこともできます。  
 
--   Percorso di rete  
+定期探索は、階層にあるすべてのクライアントを対象として構成されたスケジュールに従って実行するか、手動で呼び出して、クライアントの Configuration Manager プログラムの **[操作]** タブにある **[探索データ収集サイクル]** を実行することにより、特定のクライアントに対して実行することができます。 既定では、定期探索は 7 日おきに実行されるように設定されています。 この実行間隔を変更する場合は、必ず、"期限切れの探索データの削除" というメンテナンス タスク (サイト データベースから非アクティブなクライアント レコードを削除するタスク) の実行間隔より短くしてください。 **** "期限切れの探索データの削除" タスクは、プライマリ サイトだけで構成できます。 ****  
 
--   Nome NetBIOS  
+定期探索を実行すると、クライアントの現在の情報を含む DDR が作成されます。 その後クライアントは、この小さなファイル (約 1 KB のサイズ) をプライマリ サイトで処理できるように、管理ポイントにコピーします。 このファイルには、次の情報が含まれています。  
 
--   Versione dell'agente client  
+-   ネットワークの場所  
 
--   Dettagli sullo stato operativo  
+-   NetBIOS 名  
 
-Individuazione heartbeat è l'unico metodo di individuazione che offre dettagli relativi allo stato di installazione client, in quanto aggiorna l'attributo client delle risorse di sistema impostando il valore su **Yes**.  
+-   クライアント エージェントのバージョン  
 
-> [!NOTE]  
->  Anche se Individuazione heartbeat è disabilitato, i record dei dati di individuazione vengono comunque creati e inviati per i client di dispositivi mobili attivi. In questo modo, l'attività **Elimina dati di individuazione obsoleti** non influisce sui dispositivi mobili attivi. Infatti, quando l'attività **Elimina dati di individuazione obsoleti** elimina un record del database per un dispositivo mobile, revoca anche il certificato del dispositivo e blocca la connessione del dispositivo mobile ai punti di gestione.  
+-   動作状態の詳細  
 
-Le azioni di Individuazione heartbeat vengono registrate nei percorsi seguenti:  
-
--   Per i client computer, le azioni di Individuazione heartbeat vengono registrate nel client, nel file **InventoryAgent.log** nella cartella *%Windir%\CCM\Logs*.  
-
--   Per i client dispositivi mobili, le azioni di Individuazione heartbeat vengono registrate nel file **DMPRP.log** nella cartella *%Program Files%\CCM\Logs* del punto di gestione usato dal client.  
-
-Per altre informazioni su come configurare questo metodo di individuazione, vedere [Configurare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  
-
-##  <a name="bkmk_aboutNetwork"></a> Individuazione di rete  
-**Configurabile:** sì  
-
-**Abilitata per impostazione predefinita:** no  
-
-Per eseguire questo metodo è possibile usare gli **account** seguenti:  
-
--   **Account computer** del server del sito  
-
-Usare questo metodo per individuare la topologia della rete e i dispositivi di rete che hanno un indirizzo IP. Individuazione di rete cerca nella rete le risorse con IP abilitato eseguendo query in server che eseguono un'implementazione Microsoft di DHCP, cache ARP (Address Resolution Protocol) nei router, dispositivi con SNMP abilitato e domini Active Directory.  
-
-Per usare Individuazione di rete, è necessario prima specificare il *livello* di individuazione da eseguire. È inoltre possibile configurare uno o più meccanismi di individuazione che consentono a Individuazione di rete di eseguire query relative a dispositivi o segmenti di rete. È inoltre possibile configurare impostazioni che consentono di controllare le azioni di individuazione nella rete. Infine, è possibile definire una o più pianificazioni relative all'esecuzione di Individuazione di rete.  
-
-Perché il metodo possa individuare correttamente una risorsa, Individuazione di rete deve identificare l'indirizzo IP e la subnet mask della risorsa. Per identificare la subnet mask di un oggetto vengono usati i metodi seguenti:  
-
--   **Cache ARP del router:** Individuazione di rete esegue una query nella cache ARP di un router per ottenere informazioni sulla subnet. In genere i dati nella cache ARP di un router hanno una durata breve. Pertanto, quando Individuazione di rete esegue una query nella cache ARP, è possibile che la cache ARP non contenga più informazioni sull'oggetto richiesto.  
-
--   **DHCP:** Individuazione di rete esegue una query in ogni server DHCP specificato per individuare i dispositivi per cui il server DHCP ha indicato un lease. Individuazione di rete supporta solo i server DHCP che eseguono l'implementazione Microsoft di DHCP.  
-
--   **Dispositivo SNMP:** Individuazione di rete può eseguire direttamente una query in un dispositivo SNMP. Individuazione di rete può eseguire query in un dispositivo solo se nel dispositivo è installato un agente SNMP locale. È inoltre necessario configurare Individuazione di rete con il nome della community usato dall'agente SNMP.  
-
-Quando rileva un oggetto indirizzabile tramite IP ed è in grado di determinare la subnet mask dell'oggetto, il metodo di individuazione crea un record dei dati di individuazione per l'oggetto. Dal momento che alla rete possono connettersi diversi tipi di dispositivi, Individuazione di rete consente di individuare risorse che non possono supportare il software client di Configuration Manager. Ad esempio, i dispositivi che è possibile individuare ma non gestire includono stampanti e router.  
-
-Individuazione di rete può restituire vari attributi appartenenti al record di individuazione creato. Sono inclusi:  
-
--   Nome NetBIOS  
-
--   Indirizzi IP  
-
--   Dominio risorse  
-
--   Ruoli del sistema  
-
--   Nome comunità SNMP  
-
--   Indirizzi MAC  
-
-L'attività di Individuazione di rete viene registrata nel file **Netdisc.log** in *&lt;PercorsoInstallazione\>\Logs* sul server del sito che esegue l'individuazione.  
-
- Per altre informazioni su come configurare questo metodo di individuazione, vedere [Configurare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  
+クライアントのインストール ステータスの詳細を返すことができる探索方法は、定期探索だけです。 そのためには、クライアントが更新されるように、"システム リソース" 属性を **[はい]** に等しい値に設定します。  
 
 > [!NOTE]  
->  In caso di reti complesse e connessioni con larghezza di banda limitata, è possibile che Individuazione di rete venga eseguito lentamente e generi un notevole traffico di rete. È consigliabile eseguire Individuazione di rete solo quando gli altri metodi non sono in grado di individuare le risorse necessarie. Usare ad esempio Individuazione di rete se è necessario individuare i computer del gruppo di lavoro. Non è possibile individuare i computer del gruppo di lavoro usando altri metodi di individuazione.  
+>  アクティブなモバイル デバイス クライアントの DDR は、定期探索を無効にしても、作成されて送信されます。 そのため、アクティブなモバイル デバイスは、"期限切れの探索データの削除" タスクの影響を受けません。 **** これは、"期限切れの探索データの削除" タスクでデータベースのモバイル デバイスのレコードを削除すると、デバイス証明書を失効させ、モバイル デバイスからの管理ポイントへの接続もブロックすることになるためです。****  
 
-###  <a name="BKMK_NetDiscLevels"></a> Livelli di Individuazione di rete  
-Quando si configura Individuazione di rete, è possibile specificare tre diversi livelli:  
+定期探索時に行われた処理は、次のログに記録されます。  
 
-|Livello di individuazione|Dettagli|  
+-   コンピューター クライアントの場合: クライアントの *%Windir%\CCM\Logs* フォルダーの **InventoryAgent.log** ファイル  
+
+-   モバイル デバイス クライアントの場合: モバイル デバイス クライアントが使用している管理ポイントの *%Program Files%\CCM\Logs* フォルダーの **DMPRP.log** ファイル  
+
+この探索方法を構成する方法の詳細については、「[Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md)」 (System Center Configuration Manager の探索方法の構成) を参照してください。  
+
+##  <a name="bkmk_aboutNetwork"></a> ネットワーク探索  
+**構成可能:** ○  
+
+**既定で有効:** ×  
+
+この方法の実行に使用できる**アカウント**は次のとおりです。  
+
+-   サイト サーバーの**コンピューター アカウント**  
+
+この方法は、ネットワーク トポロジを検出したり、IP アドレスを持つネットワーク上のデバイスを検出するために使います。 ネットワーク探索は、Microsoft の実装の DHCP を実行しているサーバー、ルーターのアドレス解決プロトコル (ARP) キャッシュ、SNMP 対応デバイス、Active Directory ドメインを照会することにより、ネットワークにある IP 対応リソースを見つけます。  
+
+ネットワーク探索を使用するには、まず探索を実行する*レベル*を指定する必要があります。 また、ネットワークのセグメントやデバイスを照会する方法も構成します。 さらに、検索時にネットワークで行われる処理を制御する設定もあります。 最後に、ネットワーク探索を実行するスケジュールを設定します。  
+
+ネットワーク探索でリソースを見つけるには、そのリソースの IP アドレスとサブネット マスクを識別しなければなりません。 次の方法でオブジェクトのサブネット マスクを識別します。  
+
+-   **ルーターの ARP キャッシュ:** ルーターの ARP キャッシュを照会して、サブネット情報を見つけます。 通常、ルーターの ARP キャッシュには、ごく短い時間しかデータが入っていません。 そのため、ネットワーク探索で ARP キャッシュを照会したときに、必要なオブジェクトの情報がなくなっている可能性もあります。  
+
+-   **DHCP:** 指定された DHCP サーバーを照会して、DHCP サーバーがアドレスをリースしたデバイスを見つけます。 ネットワーク探索では、Microsoft の実装の DHCP を実行している DHCP サーバーしか照会できません。  
+
+-   **SNMP デバイス:** SNMP デバイスを直接照会します。 ネットワーク探索時にデバイスを照会するには、そのデバイスにローカル SNMP エージェントがインストールされている必要があります。 また、SNMP エージェントで使われているコミュニティ名を、ネットワーク探索で使用するように構成する必要があります。  
+
+ネットワーク探索時に、IP アドレスを持つことができるオブジェクトが識別され、そのサブネット マスクが判別されると、そのオブジェクトの DDR が作成されます。 通常、ネットワークには多種多様なデバイスが接続されているので、ネットワーク探索で、Configuration Manager クライアント ソフトウェアをインストールできない ( で管理できない) デバイスが見つかることがあります。 たとえば、プリンターやルーターが、このようなデバイスに当てはまります。  
+
+ネットワーク探索では、作成される探索レコードの一部としていくつかの属性を返す場合があります。 次の設定があります。  
+
+-   NetBIOS 名  
+
+-   IP アドレス  
+
+-   リソースのドメイン  
+
+-   システムの役割  
+
+-   SNMP コミュニティ名  
+
+-   MAC アドレス  
+
+ネットワーク探索時に行われた処理は、探索を実行したサイト サーバーの *&lt;InstallationPath\>\Logs* フォルダーの **Netdisc.log** ファイルに記録されます。  
+
+ この探索方法を構成する方法の詳細については、「[Configure discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md)」 (System Center Configuration Manager の探索方法の構成) を参照してください。  
+
+> [!NOTE]  
+>  複雑なネットワークや帯域幅の狭い接続では、ネットワーク探索の実行に時間がかかり、大量のネットワーク トラフィックが発生する可能性があります。 ベスト プラクティスとして、検出しなければならないデバイスが、他の方法で見つからない場合だけ、ネットワーク探索を実行してください。 たとえば、ワークグループのコンピューターを見つけなければならない場合に、ネットワーク探索を実行します。 他の探索方法では、ワークグループのコンピューターが検出されません。  
+
+###  <a name="BKMK_NetDiscLevels"></a> ネットワーク探索のレベル  
+ネットワーク探索を構成するときは、次の 3 つのレベルの 1 つを指定します。  
+
+|探索のレベル|説明|  
 |------------------------|-------------|  
-|Topologia|Questo livello consente di individuare i router e le subnet, ma non di individuare una subnet mask per gli oggetti.|  
-|Topologia e client|Oltre alla topologia, questo livello individua i potenziali client, come computer, e risorse, come stampanti e router. Questo livello di individuazione prova a identificare la subnet mask degli oggetti rilevati.|  
-|Topologia, client e sistema operativo client|Oltre alla topologia e ai potenziali client, questo livello prova a individuare il nome e la versione del sistema operativo del computer. Questo livello utilizza il servizio Browser di Windows e le chiamate di rete Windows.|  
+|トポロジ|ルーターとサブネットを探索しますが、オブジェクトのサブネット マスクは識別しません。|  
+|トポロジとクライアント|トポロジに加え、クライアントになり得るオブジェクト (コンピューターなど) とリソース (プリンターやルーターなど) を探索します。 このレベルではさらに、見つかったオブジェクトのサブネット マスクも特定します。|  
+|トポロジ、クライアント、およびクライアントのオペレーティング システム|トポロジ、クライアントになり得るオブジェクトに加え、コンピューターのオペレーティング システムとバージョンを探索します。 Windows ブラウザーと Windows ネットワークの呼び出しを使用します。|  
 
- Con ciascun livello incrementale, Individuazione di rete incrementa l'attività e l'utilizzo della larghezza di banda di rete. Prima di attivare tutte le funzioni di Individuazione di rete, è consigliabile valutare il traffico di rete che potrebbe essere generato.  
+ レベルが上がるに従って、探索時に行われる処理の量と、消費されるネットワーク帯域幅が増えます。 最も高いレベルに設定する前に、発生する可能性のあるネットワーク トラフィックを考慮してください。  
 
- Ad esempio, quando si usa Individuazione di rete per la prima volta, è possibile iniziare con il livello di topologia per identificare l'infrastruttura di rete. È quindi possibile riconfigurare Individuazione di rete per individuare oggetti e sistemi operativi dei dispositivi. È anche possibile configurare le impostazioni che limitano Individuazione di rete a un intervallo specifico di segmenti di rete. In questo modo, è possibile individuare oggetti nei percorsi di rete richiesti ed evitare traffico di rete superfluo. È inoltre possibile individuare oggetti provenienti da router perimetrali o esterni alla rete.  
+ たとえば、ネットワーク探索を初めて実行するときは、トポロジ レベルに設定して、ネットワーク インフラストラクチャを確認するだけで十分かもしれません。 次に、デバイスやオペレーティング システムを確認しなければならなくなったときに、高いレベルに構成し直します。 ネットワーク探索の対象を特定の範囲のネットワーク セグメントに制限する設定を構成することもできます。 こうすることで、必要なネットワーク上のオブジェクトを検出し、不要なネットワーク トラフィックを回避すると共に、エッジ ルータやネットワーク外のオブジェクトを検出することができます。  
 
-###  <a name="BKMK_NetDiscOptions"></a> Opzioni di Individuazione di rete  
-Per abilitare Individuazione di rete per la ricerca di dispositivi indirizzabili tramite IP, è necessario configurare una o più delle opzioni seguenti che consentono di specificare come eseguire le query relative ai dispositivi.  
+###  <a name="BKMK_NetDiscOptions"></a> ネットワーク探索のオプション  
+ネットワーク探索で、IP アドレスを持つことができるデバイスを見つけるには、デバイスを照会する方法を決める次のオプションを指定する必要があります。  
 
 > [!NOTE]  
->  Individuazione di rete viene eseguito all'interno dell'account computer del server del sito che esegue l'individuazione. Se l'account computer non dispone delle autorizzazioni per un dominio non trusted, nelle configurazioni del dominio e del server DHCP possono verificarsi errori durante l'individuazione delle risorse.  
+>  ネットワーク探索は、探索を実行するサイト サーバーのコンピューター アカウントのコンテキストで実行されます。 コンピューター アカウントに、信頼されていないドメインに対するアクセス許可がないと、ドメインと DHCP サーバーのどちらのオプションを構成した場合も、リソースを見つけることはできません。  
 
 **DHCP:**  
 
-Specificare ciascun server DHCP in cui si desidera che Individuazione di rete esegua le query. Individuazione di rete supporta solo i server DHCP che eseguono l'implementazione Microsoft di DHCP.  
+ネットワーク探索時に照会する各 DHCP サーバーを指定します。 (ネットワーク探索では、Microsoft の実装の DHCP を実行している DHCP サーバーしか照会できません。)  
 
--   Individuazione di rete recupera le informazioni mediante chiamate a procedura remota al database nel server DHCP.  
+-   情報を取得するために、DHCP サーバーにあるデータベースへのリモート プロシージャ コールが使われます。  
 
--   Individuazione di rete può eseguire query in server DHCP a 32 bit e 64 bit per un elenco dei dispositivi registrati in ogni server.  
+-   32 ビットと 64 ビットの両方の DHCP サーバーを照会して、各サーバーに登録されているデバイスのリストを取得できます。  
 
--   Per consentire a Individuazione di rete di eseguire correttamente le query in un server DHCP, l'account computer del server che esegue l'individuazione deve appartenere al gruppo DHCP Users nel server DHCP. Questo livello di accesso esiste ad esempio quando viene soddisfatta una delle seguenti condizioni:  
+-   ネットワーク探索時に DHCP サーバーを照会するには、探索を実行するサーバーのコンピューター アカウントが、DHCP サーバーの DHCP ユーザー グループのメンバーでなければなりません。 これと同じレベルのアクセス権は、次のいずれかの条件を満たした場合に存在することになります。  
 
-    -   Il server DHCP specificato è il server DHCP del server che esegue l'individuazione.  
+    -   指定した DHCP サーバーが、探索を実行するサーバーの DHCP サーバーである。  
 
-    -   Il computer che esegue l'individuazione e il server DHCP sono nello stesso dominio.  
+    -   探索を実行するコンピューターと DHCP サーバーが同じドメインにある。  
 
-    -   Esiste un trust bidimensionale tra il computer che esegue l'individuazione e il server DHCP.  
+    -   探索を実行するコンピューターと DHCP サーバーの間に双方向の信頼関係が成立している。  
 
-    -   Il server del sito appartiene al gruppo DHCP Users.  
+    -   サイト サーバーが DHCP ユーザー グループのメンバーである。  
 
--   Quando Individuazione di rete enumera un server DHCP, non vengono sempre rilevati indirizzi IP statici. Individuazione di rete non individua né indirizzi IP appartenenti a un intervallo di indirizzi IP escluso nel server DHCP né indirizzi IP riservati all'assegnazione manuale.  
+-   ネットワーク探索で、DHCP サーバーが列挙されるときに、常に静的な IP アドレスが検出されるとは限りません。 DHCP サーバーで割り当てから除外するように設定にされている IP アドレスの範囲に当てはまる IP アドレスはネットワーク探索で見つかりません。 手動で割り当てるために予約されている IP アドレスもネットワーク探索で見つかりません。  
 
-**Domini:**  
+**ドメイン:**  
 
-Specificare ciascun dominio in cui si desidera che Individuazione di rete esegua le query.  
+ネットワーク探索時に検索するドメインを指定します。  
 
--   L'account computer del server del sito che esegue l'individuazione deve avere le autorizzazioni di lettura per i controller di dominio in ogni dominio specificato.  
+-   ネットワーク探索を実行するサイト サーバーのコンピューター アカウントは、指定した各ドメインにあるドメイン コントローラーの読み取り権限を持っている必要があります。  
 
--   Per individuare i computer del dominio locale, è necessario abilitare il servizio Browser di computer in almeno un computer presente nella stessa subnet del server del sito che esegue Individuazione di rete.  
+-   ローカル ドメインからコンピューターを見つけるには、ネットワーク探索を実行するサイト サーバーと同じサブネットにある少なくとも 1 台のコンピューターで、コンピューター ブラウザー サービスを有効にする必要があります。  
 
--   Individuazione di rete è in grado di individuare qualsiasi computer che è possibile visualizzare dal server del sito durante l'esplorazione della rete.  
+-   ネットワークを閲覧するときにサイト サーバーから見ることができるコンピューターが検出されます。  
 
--   Individuazione di rete recupera l'indirizzo IP e quindi usa una richiesta echo Internet Control Message Protocol per eseguire il ping di ciascun dispositivo rilevato. Il comando **ping** consente di determinare quali computer sono attualmente attivi.  
+-   見つかったデバイスの IP アドレスを取得し、インターネット制御メッセージ プロトコルのエコー要求を使って、各デバイスを Ping します。 この **ping** コマンドを実行することにより、どのコンピューターが現在アクティブかがわかります。  
 
-**Dispositivi SNMP:**  
+**SNMP デバイス:**  
 
-Specificare ciascun dispositivo SNMP in cui si desidera che l'individuazione di rete esegua le query.  
+ネットワーク探索時に照会する各 SNMP デバイスを指定します。  
 
--   Individuazione di rete recupera il valore ipNetToMediaTable dai dispositivi SNMP che rispondono alla query. Questo valore restituisce matrici di indirizzi IP che corrispondono a computer client o ad altre risorse, come stampanti, router e altri dispositivi indirizzabili tramite IP.  
+-   クエリに応答した SNMP デバイスの ipNetToMediaTable 値が取得されます。 この値は、コンピューターまたは他のリソース (プリンターやルーター、IP アドレスを持つことができる他のデバイス) の IP アドレスの配列です。  
 
--   Per eseguire query in un dispositivo, è necessario specificare l'indirizzo IP o il nome NetBIOS del dispositivo.  
+-   デバイスを照会するには、そのデバイスの IP アドレスか NetBIOS 名を指定する必要があります。  
 
--   Se l'individuazione di rete non viene configurata per l'utilizzo del nome comunità del dispositivo, il dispositivo rifiuta la query basata su SNMP.  
+-   ネットワーク探索でデバイスのコミュニティ名を使用するように構成してください。このように構成しないと、SNMP クエリがデバイスによって拒否されます。  
 
-###  <a name="BKMK_LimitNetDisc"></a> Limitazione dell'individuazione della rete  
-Quando l'individuazione di rete esegue query in un dispositivo SNMP perimetrale rispetto alla rete, possono essere individuate informazioni relative alle subnet e ai dispositivi SNMP esterni alla rete. Usare le informazioni seguenti per limitare l'individuazione della rete configurando i dispositivi SNMP con cui può comunicare l'individuazione e specificando i segmenti di rete in cui eseguire le query.  
+###  <a name="BKMK_LimitNetDisc"></a> ネットワーク探索を制限する  
+ネットワーク探索時に、ネットワークの端にある SNMP デバイスを照会する場合は、ネットワークのすぐ外にあるサブネットと SNMP デバイスの情報を識別することができます。 次の情報を使用してネットワーク探索の範囲を制限するには、ネットワーク探索時に通信する SNMP デバイスと、照会するネットワーク セグメントを構成します。  
 
-**Subnet:**  
+**サブネット:**  
 
-Configurare le subnet in cui l'individuazione di rete esegue le query quando vengono utilizzate le opzioni SNMP e DHCP. Queste due opzioni consentono di eseguire ricerche solo nelle subnet abilitate.  
+ネットワーク探索で [SNMP デバイス] オプションか [DHCP] オプションを使用するときに、照会するサブネットを構成します。 この 2 つのオプションで検索されるのは、有効にしたサブネットだけです。  
 
-Una richiesta DHCP può ad esempio restituire dispositivi che si trovano in percorsi di tutta la rete. Se si vuole individuare esclusivamente i dispositivi di una subnet specifica, definire e abilitare tale subnet nella scheda **Subnet** della finestra di dialogo **Individuazione di rete - Proprietà**. Quando si specificano e si abilitano le subnet, è necessario limitare attività future di individuazione DHCP e SNMP per le subnet.  
-
-> [!NOTE]  
->  Le configurazioni subnet non limitano gli oggetti individuati dall'opzione di individuazione **Domini**.  
-
-**Nomi community SNMP:**  
-
-Per consentire a Individuazione di rete di eseguire correttamente le query in un dispositivo SNMP, configurare questo metodo con il nome community del dispositivo. Se Individuazione di rete non è configurato con il nome community del dispositivo SNMP, il dispositivo rifiuta la query.  
-
-**Numero massimo di hop:**  
-
-Quando viene configurato il numero massimo di hop router, è necessario limitare il numero di router e segmenti di rete in cui Individuazione di rete può eseguire query usando SNMP.  
-
-Il numero di hop configurato limita il numero di segmenti di rete e dispositivi aggiuntivi in cui Individuazione di rete può eseguire query.  
-
-Ad esempio, un'individuazione solo per topologia con **0** (zero) hop router individua la subnet in cui risiede il server di origine, inclusi gli eventuali router in tale subnet.  
-
-Il diagramma seguente illustra i risultati di una query di Individuazione di rete solo per topologia eseguita nel server 1 con 0 hop router specificati: subnet D e Router 1.  
-
- ![Immagine dell'individuazione con zero collegamenti al router](media/Disc-0.gif)  
-
- Il diagramma seguente illustra i risultati di una query di Individuazione di rete per topologia e per client eseguita nel server 1 con 0 hop router specificati: subnet D e Router 1 e tutti i potenziali client della subnet D.  
-
- ![Immagine dell'individuazione con un collegamento al router](media/Disc-1.gif)  
-
- Per capire meglio come gli hop router aggiuntivi possono determinare un aumento del numero di risorse di rete individuate, tenere in considerazione la seguente rete:  
-
- ![Immagine dell'individuazione con due collegamenti al router](media/Disc-2.gif)  
-
- Eseguendo un'individuazione di rete solo per topologia dal server 1 con un hop router i risultati sono i seguenti:  
-
--   Router 1 e subnet 10.1.10.0 (con zero hop)  
-
--   Subnet 10.1.20.0 e 10.1.30.0, subnet A e router 2 (nel primo hop)  
-
-> [!WARNING]  
->  L'aumento del numero di hop router può determinare un aumento significativo delle risorse che è possibile individuare, nonché della larghezza di banda di rete usata da Individuazione di rete.  
-
-##  <a name="bkmk_aboutServer"></a> Individuazione server  
-**Configurabile:** no  
-
-Oltre a questi metodi di individuazione configurabili dall'utente, Configuration Manager usa un processo denominato **Individuazione server** (SMS_WINNT_SERVER_DISCOVERY_AGENT). Questo metodo di individuazione consente di creare record di risorse per i computer che sono sistemi del sito, ad esempio un computer configurato come punto di gestione.  
-
-##  <a name="bkmk_shared"></a> Funzionalità comuni dell'individuazione gruppo, sistema e utente Active Directory  
-Questa sezione offre informazioni sulle funzionalità comuni dei metodi di individuazione seguenti:  
-
--   Individuazione gruppo Active Directory  
-
--   Individuazione sistema Active Directory  
-
--   individuazione utenti di Active Directory  
+たとえば、DHCP サーバーの照会によって、ネットワーク全体のデバイスの情報が返されますが、 特定のサブネットにあるデバイスだけを見つけたい場合は、**[ネットワーク探索のプロパティ]** ダイアログ ボックスの **[サブネット]** タブで、その特定のサブネットを指定して有効にします。 このように設定すると、今後実行される、DHCP サーバーを使用した探索と SNMP 検出タスクの範囲が、指定したサブネットに制限されます。  
 
 > [!NOTE]  
->  Le informazioni contenute in questa sezione non si applicano a Individuazione foresta Active Directory.  
+>  ただし、このサブネットの構成は、**[ドメイン]** オプションを設定した探索で検索されるオブジェクトを制限しません。  
 
-Questi tre metodi di individuazione sono simili in termini di configurazione e funzionamento. Possono individuare computer, utenti e informazioni sulle appartenenze al gruppo delle risorse memorizzate in Active Directory Domain Services. Il processo di individuazione è gestito da un agente di individuazione in esecuzione sul server del sito su ogni sito in cui l'individuazione è configurata per l'esecuzione. È possibile configurare ciascuno di questi metodi di individuazione per effettuare la ricerca in uno o più percorsi di Active Directory. come le istanze di percorso nella foresta locale o nelle foreste remote.  
+**SNMP コミュニティ名:**  
 
-Quando l'individuazione effettua la ricerca di risorse in una foresta non trusted, l'agente di individuazione deve essere in grado di risolvere quanto segue per avere esito positivo:  
+ネットワーク探索で SNMP デバイスを照会するには、ネットワーク探索を構成するときに、そのデバイスのコミュニティ名を指定する必要があります。 SNMP デバイスのコミュニティ名を使用しないと、デバイスによってクエリが拒否されます。  
 
--   Per individuare una risorsa del computer con Individuazione sistema Active Directory, l'agente di individuazione deve essere in grado di risolvere l'FQDN della risorsa. In caso contrario, proverà a risolvere la risorsa con il nome NetBIOS.  
+**最大ホップ数:**  
 
--   Per individuare una risorsa utente o gruppo con Individuazione utente Active Directory o Individuazione gruppo Active Directory, l'agente di individuazione deve essere in grado di risolvere l'FQDN del nome del controller di dominio specificato nel percorso di Active Directory.  
+ネットワーク探索で SNMP を使って照会できるネットワーク セグメントの数とルーターの数を制限します。  
 
-Per ogni percorso specificato, è possibile configurare singole opzioni di ricerca, come l'abilitazione di una ricerca ricorsiva dei contenitori figlio Active Directory del percorso. È anche possibile configurare un account univoco da usare durante la ricerca in tale percorso. Ciò fornisce flessibilità nella configurazione di un metodo di individuazione in un sito per effettuare la ricerca in più percorsi Active Directory in più foreste, senza dover configurare un account singolo che disponga di autorizzazioni per tutti i percorsi.  
+ここで指定するホップの数によって、ネットワーク探索時に照会できる追加のデバイスの数とネットワーク セグメントのが決まります。  
 
-Quando ciascuno di questi tre metodi di individuazione viene eseguito su un sito specifico, il server del sito di Configuration Manager in tale sito contatta il controllo di dominio più vicino nella foresta Active Directory specificata per individuare le risorse Active Directory. Il dominio e la foresta possono trovarsi in qualsiasi modalità Active Directory supportata. L'account che si assegna a ogni istanza di percorso deve avere l'autorizzazione di accesso **Lettura** ai percorsi Active Directory specificati.
+たとえば、探索のレベルをトポロジに設定し、[最大ホップ数] を **0** に設定した場合は、照会元のサーバーが存在するサブネットが探索されます。 そのサブネットにルーターがあれば、それが含まれます。  
 
-L'individuazione effettua la ricerca degli oggetti nei percorsi specificati e quindi prova a raccogliere informazioni su tali oggetti. Viene creato un record dei dati di individuazione quando possono essere individuate sufficienti informazioni su una risorsa. Le informazioni richieste variano a seconda del metodo di individuazione utilizzato.  
+次の図は、探索のレベルをトポロジのみに設定し、[最大ホップ数] を 0 に指定したネットワーク探索クエリをサーバー 1 で実行する例を示しています。この場合、サブネット D とルーター 1 が見つかります。  
 
-Se si configura lo stesso metodo di individuazione per poterlo eseguire su siti diversi di Configuration Manager e poter quindi eseguire una query sui server di Active Directory locali, è possibile configurare ogni sito usando una sola serie di opzioni di individuazione. Poiché i dati di individuazione vengono condivisi con ogni sito della gerarchia, evitare la sovrapposizione tra tali configurazioni per individuare in modo efficiente ogni risorsa una volta sola.
+ ![ルーター ジャンプのない探索のイメージ](media/Disc-0.gif)  
 
-Per ambienti di dimensioni più limitate, si può prendere in considerazione l'esecuzione di ogni metodo di individuazione su un solo sito della gerarchia per ridurre il carico amministrativo e la possibilità che vengano individuate più volte le stesse risorse. Quando si riduce a icona il numero di siti che eseguono l'individuazione, è possibile ridurre la larghezza di banda complessiva usata dall'individuazione. È inoltre possibile ridurre il numero totale di record dei dati di individuazione che vengono creati e devono essere elaborati dai server del sito.  
+ 次の図は、探索のレベルを [トポロジとクライアント] に設定し、[最大ホップ数] を 0 に指定したネットワーク探索クエリをサーバー 1 で実行する例を示しています。この場合、サブネット D とルーター 1、およびサブネット D にある、クライアントになり得るデバイスすべてが見つかります。  
 
-Molte delle configurazioni del metodo di individuazione sono di chiara interpretazione. Usare le sezioni seguenti per approfondimenti sulle opzioni di individuazione che possono richiedere informazioni aggiuntive prima di essere configurate.  
+ ![1 つのルーター ジャンプを含む探索のイメージ](media/Disc-1.gif)  
 
-È possibile usare le opzioni seguenti con più metodi di individuazione Active Directory:  
+ ルーターのホップ数を大きくすると、検出されるネットワーク リソースの数が増える可能性があることを、次のネットワークを例にして説明します。  
 
--   [Individuazione differenziale](#bkmk_delta)  
+ ![2 つのルーター ジャンプを含む探索のイメージ](media/Disc-2.gif)  
 
--   [Filtrare i record del computer non aggiornati usando l'accesso al dominio](#bkmk_stalelogon)  
+ 探索のレベルをトポロジに、[最大ホップ数] を 1 に設定したネットワーク探索をサーバー 1 で実行すると、次のものが検出されます。  
 
--   [Filtrare i record non aggiornati usando la password del computer](#bkmk_stalepassword)  
+-   ルーター 1 とサブネット 10.1.10.0 (最大ホップ数を 0 にした場合も検出されます)  
 
--   [Cercare attributi di Active Directory personalizzati](#bkmk_customAD)  
-
-###  <a name="bkmk_delta"></a> Individuazione differenziale  
-Disponibile per:  
-
--   Individuazione gruppo Active Directory  
-
--   Individuazione sistema Active Directory  
-
--   Individuazione utente Active Directory  
-
-L'individuazione differenziale non è un metodo di individuazione indipendente, ma un'opzione disponibile per i metodi di individuazione applicabili. L'individuazione differenziale esegue la ricerca di specifici attributi di Active Directory che sono stati modificati dopo l'ultimo ciclo di individuazione completa del metodo applicabile. Le modifiche degli attributi vengono inviate al database di Configuration Manager per aggiornare il record di individuazione della risorsa.  
-
-Per impostazione predefinita, l'individuazione differenziale viene eseguita in base a un ciclo da cinque minuti, molto più di frequente rispetto alla pianificazione tipica per un ciclo di individuazione completa.  È possibile eseguire questo ciclo in modo frequente perché l'individuazione differenziale usa un numero inferiore di server del sito e di risorse di rete rispetto a un ciclo di individuazione completa. Quando si usa l'individuazione differenziale, è possibile ridurre la frequenza del ciclo di individuazione completa per tale metodo di individuazione.  
-
-Di seguito sono elencale le modifiche più comuni rilevate dall'individuazione differenziale:  
-
--   Nuovi computer o utenti aggiunti ad Active Directory  
-
--   Modifiche apportate alle informazioni utente e computer di base  
-
--   Nuovi computer o utenti aggiunti a un gruppo  
-
--   Computer o utenti rimossi da un gruppo  
-
--   Modifiche apportate agli oggetti del gruppo di sistema  
-
-Anche se può rilevare le nuove risorse e le modifiche apportate all'appartenenza al gruppo, l'individuazione differenziale non può determinare se una risorsa è stata eliminata da Active Directory. I record dei dati di individuazione creati dall'individuazione differenziale vengono elaborati in modo simile ai record dei dati di individuazione creati da un ciclo di individuazione completa.  
-
-Configurare l'individuazione differenziale nella scheda **Pianificazione del polling** delle proprietà di ciascun metodo di individuazione.  
-
-###  <a name="bkmk_stalelogon"></a> Filtrare i record del computer non aggiornati usando l'accesso al dominio  
-Disponibile per:  
-
--   Individuazione gruppo Active Directory  
-
--   Individuazione sistema Active Directory  
-
-È possibile configurare l'individuazione per escludere i computer con record del computer non aggiornati in base all'ultimo accesso al dominio del computer. Quando è abilitata questa opzione, Individuazione sistema Active Directory valuta ogni computer identificato. L'individuazione gruppo Active Directory valuta ogni computer membro di un gruppo rilevato.  
-
-Per usare questa opzione:  
-
--   I computer devono essere configurati in modo che sia eseguito l'aggiornamento dell'attributo **lastLogonTimeStamp** in Active Directory Domain Services.  
-
--   Il livello di funzionalità del dominio di Active Directory deve essere impostato su Windows Server 2003 o versione successiva.  
-
-Quando si configura il periodo di tempo dopo l'ultimo accesso per questa impostazione, considerare l'intervallo per la replica tra i controller di dominio.  
-
-È possibile configurare i filtri nella scheda **Opzione** delle finestre di dialogo **Individuazione sistema Active Directory - Proprietà** e **Individuazione gruppo Active Directory - Proprietà**. Scegliere l'opzione **Individua solo computer che hanno effettuato l'accesso a un dominio in un periodo di tempo specifico**.  
+-   サブネット 10.1.20.0 と 10.1.30.0、サブネット A、ルーター 2 (1 番目のホップにあります)  
 
 > [!WARNING]  
->  Quando si configura questo filtro e si **filtrano i record non aggiornati in base alla password del computer**, i computer che soddisfano i criteri di uno dei due filtri vengono esclusi dall'individuazione.  
+>  ルーターのホップ数を上げるに従って、検出可能なリソースの数が大幅に増える可能性があります。ただし、消費されるネットワーク帯域幅も大きくなります。  
 
-###  <a name="bkmk_stalepassword"></a> Filtrare i record non aggiornati usando la password del computer  
-Disponibile per:  
+##  <a name="bkmk_aboutServer"></a> サーバー探索  
+**構成可能:** ×  
 
--   Individuazione gruppo Active Directory  
+Configuration Manager では、ユーザーが構成できる探索方法だけでなく、**サーバー探索**というプロセス (SMS_WINNT_SERVER_DISCOVERY_AGENT) も使います。 このプロセスでは、サイト システムのコンピューター (管理ポイントとして構成されているコンピューターなど) のリソースのレコードが作成されます。  
 
--   Individuazione sistema Active Directory  
+##  <a name="bkmk_shared"></a> Active Directory グループの探索、Active Directory システムの探索、Active Directory ユーザーの探索に共通の機能  
+ここでは、次の探索方法に共通する機能ついて説明します。  
 
-È possibile configurare l'individuazione per escludere i computer con record del computer non aggiornati in base all'ultimo aggiornamento della password dell'account computer da parte dal computer. Quando è abilitata questa opzione, Individuazione sistema Active Directory valuta ogni computer identificato. L'individuazione gruppo Active Directory valuta ogni computer membro di un gruppo rilevato.  
+-   Active Directory グループの探索  
 
-Per usare questa opzione:  
+-   Active Directory システムの探索  
 
--   I computer devono essere configurati in modo che sia eseguito l'aggiornamento dell'attributo **pwdLastSet** in Active Directory Domain Services.  
+-   Active Directory ユーザー検出  
 
-Durante la configurazione di questa opzione, prendere in considerazione l'intervallo di aggiornamento a questo attributo oltre all'intervallo di replica tra i controller di dominio.  
+> [!NOTE]  
+>  このセクションの情報は、Active Directory フォレストの探索には当てはまりません。  
 
-È possibile configurare i filtri nella scheda **Opzione** delle finestre di dialogo **Individuazione sistema Active Directory - Proprietà** e **Individuazione gruppo Active Directory - Proprietà**. Scegliere l'opzione **Individua solo computer che hanno aggiornato la password dell'account computer in un periodo di tempo specifico**.  
+この 3 つの探索方法には、同様の構成と操作が使用されます。 それぞれ Active Directory Domain Services に格納されたコンピューター、ユーザー、リソースのグループ メンバーシップに関する情報を探索します。 探索プロセスは、探索を実行するように構成された各サイトのサイト サーバーで実行されている探索エージェントによって管理されます。 どの方法でも、Active Directory の検索する 1 つまたは複数の場所をローカルまたはリモート フォレスト内の場所インスタンスとして構成することができます。  
+
+信頼されていないフォレストでリソースの検索する場合は、次のことが必要です。  
+
+-   Active Directory システムの探索でコンピューター リソースを探索する場合は、探索エージェントが、そのリソースの FQDN を解決できなければなりません。 FQDN を解決できない場合は、NetBIOS 名を解決します。  
+
+-   Active Directory ユーザー探索でユーザーを、または Active Directory グループ探索でグループを探索する場合は、探索エージェントが、Active Directory の場所として指定されたドメイン コントローラーの FQDN を解決できなければなりません。  
+
+指定する場所ごとに、検索オプションを構成することができます。たとえば、Active Directory の子コンテナーの場所を繰り返し検索するオプションがあります。 また、この場所を検索するときに使用する固有なアカウントを構成することもできます。 そのため、複数のフォレスト内の複数の Active Directory の場所を探索する方法を 1 つのサイトで構成できます。すべての場所のアクセス許可を持っている単一のアカウントを構成する必要はありません。  
+
+この 3 つの探索方法のいずれかを特定のサイトで実行すると、そのサイトの Configuration Manager サイト サーバーが、指定された Active Directory フォレスト内の最も近いドメイン コントローラーと通信して、Active Directory のリソースを見つけます。 ドメインとフォレストは、Active Directory のサポートされているどのモードでもかまいません。 それぞれの場所インスタンスに割り当てるアカウントには、指定した Active Directory の場所の**読み取り**アクセス許可が必要です。
+
+まず、指定された場所でオブジェクトが検索され、そのオブジェクトに関する情報が収集されます。 リソースに関する十分な情報が収集されると、DDR が作成されます。 必要な情報は、使用している探索方法によって異なります。  
+
+異なる Configuration Manager サイトでローカルの Active Directory サーバーを照会する同じ探索方法を構成する場合は、サイトごとに別々の探索オプションを構成することができます。 探索データは、階層にあるサイトで共有されるので、構成が重なり合うのを避け、各リソースが一度だけ検出されるようにしてください。
+
+環境の規模が小さい場合は、それぞれの探索方法を階層内の 1 つのサイトだけで実行して、管理上のオーバーヘッドを抑えると共に、同じリソースが何度も検出される危険性を下げてください。 探索を実行するサイトの数を最小に抑えるとき、検索で使用される全体的ネットワーク帯域幅を減らすことができます。 作成後、サイト サーバーで処理する必要がある DDR の全体的数も減らすことができます。  
+
+探索方法の構成の多くは、一目見ただけで、その意味がわかります。 次のセクションでは、探索オプションを実際に構成する前に知っておく必要のある情報を説明します。  
+
+次の表に、Active Directory の複数の探索方法で使用できるオプションを示します。  
+
+-   [差分探索](#bkmk_delta)  
+
+-   [古いコンピューター レコードをドメインへのログオン日時に基づいて除外する](#bkmk_stalelogon)  
+
+-   [古いレコードをコンピューターのパスワードに基づいて除外する](#bkmk_stalepassword)  
+
+-   [Active Directory のカスタマイズされた属性を検索する](#bkmk_customAD)  
+
+###  <a name="bkmk_delta"></a> 差分探索  
+次の探索方法に使用できます。  
+
+-   Active Directory グループの探索  
+
+-   Active Directory システムの探索  
+
+-   Active Directory ユーザー検出  
+
+差分探索は独立した探索方法ではなく、該当する探索方法で選択できるオプションです。 差分探索では、該当する探索方法で完全な探索が最後に実行されてから行われた変更について、特定の Active Directory 属性を検索します。 属性の変更が Configuration Manager データベースに送信されて、リソースの探索レコードが更新されます。  
+
+既定では、差分探索は 5 分間隔で実行されます。 これは、完全な探索の通常のスケジュールよりもかなり高い頻度です。  差分探索では、使用するサイト サーバーおよびネットワーク リソースが完全な探索よりも少ないので、このような頻繁な実行が可能になります。 探索方法で差分探索を使用する場合は、その完全な探索を実行する頻度を下げることができます。  
+
+次に、差分探索を使ってよく検出する変更点をいくつか示します。  
+
+-   Active Directory に追加された新しいコンピューターとユーザー  
+
+-   コンピューターとユーザーの基本的な情報の変更  
+
+-   グループに追加された新しいコンピューターとユーザー  
+
+-   グループから削除されたコンピューターとユーザー  
+
+-   システム グループ オブジェクトに加えられた変更  
+
+差分探索で、新しいリソースとグループのメンバーシップの変更を検出できますが、Active Directory からどの時点でリソースが削除されたかを検出することはできません。 差分探索で生成される DDR は、完全な探索で生成される DDR と同様に処理されます。  
+
+差分検索を構成するには、該当する探索方法のプロパティの [ポーリングのスケジュール] タブを使います。 ****  
+
+###  <a name="bkmk_stalelogon"></a> 古いコンピューター レコードをドメインへのログオン日時に基づいて除外する  
+次の探索方法に使用できます。  
+
+-   Active Directory グループの探索  
+
+-   Active Directory システムの探索  
+
+コンピューターでのドメインへの最後のログオン日時に基づいて、古いコンピューター レコードを持つコンピューターを探索から除外できます。 Active Directory システムの探索でこのオプションを有効にすると、見つかった各コンピューターが評価されます。 Active Directory グループの探索でこのオプションを有効にすると、見つかったグループに属する各コンピューターが評価されます。  
+
+このオプションを使用するには、次のことが必要です。  
+
+-   コンピューターが Active Directory Domain Services の **lastLogonTimeStamp** 属性を更新するように構成されている。  
+
+-   Active Directory ドメインの機能レベルが Windows Server 2003 以降に設定されている。  
+
+この設定に使用する、探索の基準にする最後のログイン日時を構成するときは、ドメイン コントローラー同士のレプリケーション間隔を考慮してください。  
+
+フィルタリングは、**[Active Directory System Discovery Properties (Active Directory システム探索のプロパティ)]** ダイアログ ボックスと **[Active Directory Group Discovery Properties (Active Directory グループの探索のプロパティ)]** ダイアログ ボックスの **[オプション]** タブで構成します。 **[指定した期間内にドメインにログオンしたコンピューターのみ探索する]** オプションを選択します。  
 
 > [!WARNING]  
->  Quando si configura questo filtro e si **filtrano i record non aggiornati in base all'accesso al dominio**, i computer che soddisfano i criteri di uno dei due filtri vengono esclusi dall'individuazione.  
+>  このフィルターと、**古いレコードをコンピューターのパスワードに基づいて除外する**フィルターを有効にした場合は、どちらかのフィルターの基準を満たしたコンピューターが探索から除外されます。  
 
-###  <a name="bkmk_customAD"></a> Cercare attributi di Active Directory personalizzati  
- Disponibile per:  
+###  <a name="bkmk_stalepassword"></a> 古いレコードをコンピューターのパスワードに基づいて除外する  
+次の探索方法に使用できます。  
 
--   Individuazione sistema Active Directory  
+-   Active Directory グループの探索  
 
--   individuazione utenti di Active Directory  
+-   Active Directory システムの探索  
 
-Ogni metodo di individuazione supporta un elenco univoco di attributi di Active Directory che possono essere individuati.  
+コンピューターで最後に更新されたコンピューター アカウントのパスワードに基づいて、古いコンピューター レコードを含むコンピューターを探索から除外します。 Active Directory システムの探索でこのオプションを有効にすると、見つかった各コンピューターが評価されます。 Active Directory グループの探索でこのオプションを有効にすると、見つかったグループに属する各コンピューターが評価されます。  
 
-È possibile visualizzare e configurare l'elenco degli attributi personalizzati nella scheda **Attributi di Active Directory** nelle finestre di dialogo **Individuazione sistema Active Directory - Proprietà** e **Individuazione utente Active Directory - Proprietà**.  
+このオプションを使用するには、次のことが必要です。  
 
+-   コンピューターが Active Directory Domain Services の **pwdLastSet** 属性を更新するように構成されている。  
+
+このオプションを構成するときは、この属性の更新間隔と、ドメイン コントローラー同士のレプリケーション間隔の両方を考慮してください。  
+
+フィルタリングは、**[Active Directory System Discovery Properties (Active Directory システム探索のプロパティ)]** ダイアログ ボックスと **[Active Directory Group Discovery Properties (Active Directory グループの探索のプロパティ)]** ダイアログ ボックスの **[オプション]** タブで構成します。 **[指定した期間内にアカウントのパスワードが更新されたコンピューターのみ探索する]** オプションを選択します。  
+
+> [!WARNING]  
+>  このフィルターと、**古いレコードをドメインへのログイン日時に基づいて除外する**フィルターを有効にした場合は、どちらかのフィルターの基準を満たしたコンピューターが探索から除外されます。  
+
+###  <a name="bkmk_customAD"></a> Active Directory のカスタマイズされた属性を検索する  
+ 次の探索方法に使用できます。  
+
+-   Active Directory システムの探索  
+
+-   Active Directory ユーザー検出  
+
+探索方法ごとに、検出可能な Active Directory 属性の一覧が用意されています。  
+
+カスタマイズされた属性の一覧を表示および構成するには、**[Active Directory System Discovery Properties (Active Directory システム探索のプロパティ)]** ダイアログ ボックス、または **[Active Directory User Discovery Properties (Active Directory ユーザー探索のプロパティ)]** ダイアログボックスの **[Active Directory の属性]** タブを使います。  

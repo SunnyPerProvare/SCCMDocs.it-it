@@ -1,166 +1,162 @@
 ---
-title: Strumento di connessione del servizio | Microsoft Docs
-description: Lo strumento consente di connettersi al servizio cloud di Configuration Manager per caricare manualmente le informazioni sull&quot;utilizzo.
+title: "サービス接続ツール | Microsoft Docs"
+description: "このツールによって、Configuration Manager クラウド サービスに接続し、使用状況の情報を手動でアップロードできます。"
 ms.custom: na
 ms.date: 4/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6e4964c5-43cb-4372-9a89-b62ae6a4775c
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 32f7fc4ef9c8e8d3c2ec8eeaf9a3174bad992ffb
 ms.openlocfilehash: 0da80521bf223a765c3731f8ad59623d85a4c9fa
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usare lo strumento di connessione del servizio per System Center Configuration Manager
+# <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>System Center Configuration Manager のサービス接続ツールの使用
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Usare lo **strumento di connessione del servizio** quando il punto di connessione del servizio è in modalità offline oppure quando i server del sistema del sito di Configuration Manager non sono connessi a Internet. Lo strumento consente di mantenere il sito aggiornato con gli aggiornamenti più recenti di Configuration Manager.  
+サービス接続ポイントがオフライン モードになっている場合、または Configuration Manager のサイト システム サーバーがインターネットに接続されていない場合は、**サービス接続ツール**を使用してください。 このツールは、Configuration Manager に最新の更新プログラムを適用することで、サイトを最新の状態に保つことができます。  
 
-Quando viene eseguito, lo strumento si connette manualmente al servizio cloud di Configuration Manager per caricare le informazioni di utilizzo per la gerarchia e per scaricare gli aggiornamenti. Il caricamento dei dati di utilizzo è necessario per abilitare il servizio cloud in modo che fornisca gli aggiornamenti corretti per la distribuzione.  
+実行時に、ツールを手動で Configuration Manager クラウド サービスに接続し、階層の使用状況の情報をアップロードしたり、更新プログラムをダウンロードしたりすることができます。 ご使用の展開に適切な更新プログラムをクラウド サービスが提供できるようにするには、使用状況データのアップロードが必要です。  
 
-## <a name="prerequisites-for-using-the-service-connection-tool"></a>Prerequisiti per l'uso dello strumento di connessione del servizio
-Di seguito sono elencati i prerequisiti e i problemi noti.
+## <a name="prerequisites-for-using-the-service-connection-tool"></a>サービス接続ツールを使用するための前提条件
+次の前提条件と既知の問題があります。
 
-**Prerequisiti:**
+**必要条件:**
 
--   È installato un punto di connessione del servizio, impostato su **Offline, connessione su richiesta**.  
+-   サービス接続ポイントがインストールされ、 **[オフライン (オンデマンド接続)]**に設定されている必要があります。  
 
--   Lo strumento deve essere eseguito da un prompt dei comandi.  
+-   このツールがコマンド プロンプトから実行される必要があります。  
 
--   Ogni computer in cui viene eseguito lo strumento, ossia il computer del punto di connessione del servizio e il computer connesso a Internet, deve avere un sistema a 64 bit (x64) e avere installato quanto segue:  
+-   ツールを実行する各コンピューター (サービス接続ポイントのコンピューター、およびインターネットに接続されているコンピューター) は、x64 ビット システムである必要があります。また、以下がインストールされている必要もあります。  
 
-    -   File x86 e x64 di **Visual C++ Redistributable** .   Per impostazione predefinita, Configuration Manager installa la versione x64 nel computer che ospita il punto di connessione del servizio.  
+    -   **Visual C++ 再頒布可能パッケージ** x86 と x64 の両方のファイル。   Configuration Manager の既定では、これらのファイルを、サービス接続ポイントをホストする x64 バージョンのコンピューターにインストールします。  
 
-         Per scaricare una copia dei file di Visual C++, visitare [Visual C++ Redistributable Packages per Visual Studio 2013](http://www.microsoft.com/download/details.aspx?id=40784) nell'Area download Microsoft.  
+         Visual C++ ファイルのコピーをダウンロードするには、Microsoft ダウンロード センターの「 [Visual Studio 2013 の Visual C++ 再頒布可能パッケージ](http://www.microsoft.com/download/details.aspx?id=40784) 」にアクセスしてください。  
 
-    -   .NET Framework 4.5.2 o versioni successive.  
+    -   .NET Framework 4.5.2 以降。  
 
--   L'account usato per eseguire lo strumento deve avere:
-    -   Le autorizzazioni di**amministratore locale** nel computer che ospita il punto di connessione del servizio (dove viene eseguito lo strumento).
-    -   Le autorizzazioni di**lettura** per il database del sito.  
-
-
-
--   È necessaria un'unità USB con spazio libero sufficiente per l'archiviazione dei file e degli aggiornamenti oppure un altro metodo di trasferimento dei file tra il computer del punto di connessione del servizio e il computer con accesso a Internet. Questo scenario presuppone che i computer del sito e i computer gestiti non abbiano una connessione diretta a Internet.  
+-   ツールの実行に使用するアカウントには次が必要です。
+    -   サービス接続ポイントをホストするコンピューター (ツールが実行される) の**ローカル管理者** のアクセス許可。
+    -   サイト データベースに対する**読み取り** アクセス許可。  
 
 
 
-## <a name="use-the-service-connection-tool"></a>Usare lo strumento di connessione del servizio  
-
- Lo strumento di connessione del servizio (**serviceconnectiontool.exe**) è disponibile nel supporto di installazione di Configuration Manager nella cartella **%path%\smssetup\tools\ServiceConnectionTool**. Usare sempre lo strumento di connessione del servizio che corrisponde alla versione di Configuration Manager in uso.
+-   ファイルと更新プログラムを格納するための十分な空き領域を持つ USB ドライブ、またはサービス接続ポイントのコンピューターとインターネットに接続しているコンピューターの間でファイルを転送する別の方法が必要になります。 (このシナリオでは、サイトと管理対象のコンピューターはインターネットに直接接続されていないことを想定しています)。  
 
 
- In questa procedura gli esempi della riga di comando usano i nomi file e i percorsi di cartelle seguenti (non è necessario usare questi percorsi e nomi file, si possono usare anche alternative più adatte al proprio ambiente e alle proprie preferenze):  
 
--   Percorso di una chiave USB in cui vengono archiviati i dati per il trasferimento tra server: **D:\USB\\**  
+## <a name="use-the-service-connection-tool"></a>サービス接続ツールの使用  
 
--   Nome del file con estensione cab che contiene i dati esportati dal sito: **UsageData.cab**  
+ サービス接続ツール (**serviceconnectiontool.exe**) は、Configuration Manager インストール メディアの **%path%\smssetup\tools\ServiceConnectionTool** フォルダーにあります。 必ず、使用している Configuration Manager のバージョンに合ったサービス接続ツールを使用してください。
 
--   Nome della cartella vuota in cui verranno archiviati gli aggiornamenti scaricati per Configuration Manager per il trasferimento tra server: **UpdatePacks**  
 
-Nel computer che ospita il punto di connessione del servizio:  
+ この手順では、コマンド ラインの例で、次のファイル名とフォルダーの場所を使用します (これらのパスとファイル名を使用する必要はありません。ご使用の環境や設定に一致する代替のパスとファイル名を使用できます)。  
 
--   Aprire un prompt dei comandi con privilegi amministrativi, quindi passare alla directory nel percorso che contiene **serviceconnectiontool.exe**.  
+-   USB スティック (サーバー間で転送するためデータが格納される場所) へのパス:  **D:\USB\\**  
 
-     Per impostazione predefinita, questo strumento è disponibile nel supporto di installazione di Configuration Manager nella cartella **%path%\smssetup\tools\ServiceConnectionTool**. Per il funzionamento dello strumento di connessione del servizio, tutti i file devono essere nella stessa cartella.  
+-   サイトからエクスポートしたデータが格納される .cab ファイルの名前: **UsageData.cab**  
 
-Quando si esegue il comando seguente, lo strumento prepara un file CAB che contiene informazioni sull'utilizzo e lo copia in una posizione specificata. I dati nel file CAB si basano sul livello dei dati di diagnostica e di utilizzo che il sito è configurato per raccogliere. Vedere [Dati di diagnostica e di utilizzo per System Center Configuration Manager](../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md).  Eseguire questo comando per creare il file CAB:  
+-   サーバー間で転送するため Configuration Manager のダウンロードされた更新プログラムが格納される空のフォルダーの名前: **UpdatePacks**  
+
+サービス接続ポイントをホストするコンピューターで、以下を実行します。  
+
+-   管理者特権でコマンド プロンプトを開き、 **serviceconnectiontool.exe**を格納する場所にディレクトリを変更します。  
+
+     既定では、このツールは Configuration Manager インストール メディアの **%path%\smssetup/tools\ServiceConnectionTool** フォルダーにあります。 サービス接続ツールを動作させるために、このフォルダーにあるすべてのファイルを同一のフォルダー内に配置する必要があります。  
+
+次のコマンドを実行すると、ツールにより、使用状況の情報を含む .cab ファイルが準備されて、指定した場所にコピーされます。 .cab ファイル内のデータは、収集のためにサイトが構成された診断の使用状況データのレベルに基づいています。 (「[System Center Configuration Manager の診断結果と使用状況データ](../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md)」を参照)。  .cab ファイルを作成するには、次のコマンドを実行します。  
 
 -   **serviceconnectiontool.exe -prepare -usagedatadest D:\USB\UsageData.cab**  
 
-È anche necessario copiare la cartella ServiceConnectionTool con tutto il contenuto nell'unità USB o renderla comunque disponibile nel computer da usare per i passaggi 3 e 4.  
+USB ドライブに ServiceConnectionTool フォルダーとその中身をすべてコピーする必要もあります。または、手順 3 と 4 で使用するコンピューターで使用可能にする必要があります。  
 
-### <a name="overview"></a>Panoramica
-**I passaggi principali per l'uso dello strumento di connessione del servizio sono tre:**  
+### <a name="overview"></a>概要
+**サービス接続ツールを使用するための 3 つの主要なステップがあります。**  
 
-1.  **Preparazione**: questo passaggio viene eseguito nel computer che ospita il punto di connessione del servizio. Quando si esegue lo strumento, i dati di utilizzo vengono inseriti in un file CAB e archiviati in un'unità USB o in una posizione di trasferimento alternativa specificata.  
+1.  **準備**: このステップは、サービス接続ポイントをホストするコンピューターで実行されます。 ツールが実行されると、使用状況データが .cab ファイルに格納され、そのファイルが USB ドライブ (または指定した代替の転送場所) に保存されます。  
 
-2.  **Connessione**: per questo passaggio lo strumento viene eseguito in un computer remoto che si connette a Internet in modo da poter caricare i dati di utilizzo e poi scaricare gli aggiornamenti.  
+2.  **接続**: このステップでは、インターネットに接続されたリモート コンピューターでツールを実行し、使用状況データのアップロードおよび更新プログラムのダウンロードを行います。  
 
-3.  **Importazione**: questo passaggio viene eseguito nel computer che ospita il punto di connessione del servizio. Quando si esegue lo strumento, gli aggiornamenti scaricati vengono importati e aggiunti al sito in modo da poter visualizzare e quindi installare gli aggiornamenti dalla console di Configuration Manager.  
+3.  **インポート**: このステップは、サービス接続ポイントをホストするコンピューターで実行されます。 実行すると、ダウンロードした更新プログラムがツールによってインポートされ、サイトに追加されるため、Configuration Manager コンソールから更新プログラムを表示したり、インストールしたりできるようになります。  
 
-A partire dalla versione 1606, mentre si è connessi a Microsoft è possibile caricare più file con estensione cab contemporaneamente, ognuno da una gerarchia diversa, e specificare un server proxy e un utente per il server proxy.   
+バージョン 1606 以降では、Microsoft に接続すると複数の .cab ファイルを (別の階層からそれぞれ) 一度にアップロードして、プロキシ サーバーとプロキシ サーバーのユーザーを指定できます。   
 
-**Per caricare più file con estensione cab:**
- -  Inserire i singoli file con estensione cab da esportare da gerarchie diverse nella stessa cartella. Il nome di ogni file deve essere univoco ed è possibile rinominarli manualmente se necessario.
- -  Quando si esegue il comando per caricare i dati in Microsoft, specificare la cartella che contiene i file con estensione cab. (Prima dell'aggiornamento 1606, era possibile caricare i dati da una sola gerarchia alla volta e lo strumento richiedeva di specificare il nome del file con estensione cab nella cartella).
- -  Quando in seguito si esegue l'attività di importazione nel punto di connessione del servizio di una gerarchia, lo strumento importerà automaticamente solo i dati della gerarchia specifica.  
+**複数の .cab ファイルをアップロードするには**
+ -  個別の階層からエクスポートした各 .cab ファイルを同じフォルダーに配置します。 各ファイルの名前は一意である必要があります。名前は、必要に応じて手動で変更することができます。
+ -  次に、データを Microsoft にアップロードするコマンドを実行する際に、.cab ファイルを含むフォルダーを指定します。 (更新プログラム 1606 より前では、一度にアップロードできるデータは 1 つの階層からだけであり、ツールでフォルダーの .cab ファイルに名前を指定する必要がありました。)
+ -  その後、階層のサービス接続ポイントでインポート タスクを実行すると、ツールで自動的にその階層のデータのみがインポートされます。  
 
-**Per specificare un server proxy:**  
-È possibile usare i parametri facoltativi seguenti per specificare un server proxy (ulteriori informazioni sull'uso di questi parametri sono disponibili nella sezione Opzioni della riga di comando in questo argomento):
-  - **-proxyserveruri [FQDN_of_proxy_sever]**  Usare questo parametro per specificare il server proxy da usare per la connessione.
-  -  **-proxyusername [username]**  Usare questo parametro quando è necessario specificare un utente per il server proxy.
+**プロキシ サーバーを指定するには**  
+次のオプション パラメーターを使用して、プロキシ サーバーを指定できます (これらのパラメーターの使用に関する詳細は、このトピックのコマンド ライン パラメーターのセクションで確認できます)。
+  - **-proxyserveruri [FQDN_of_proxy_sever]**  パラメーターを使用して、この接続に使用するプロキシ サーバーを指定します。
+  -  **-proxyusername [username]**  プロキシ サーバーのユーザーを指定する必要がある場合に、このパラメーターを使用します。
 
 
 
-### <a name="to-use-the-service-connection-tool"></a>Per usare lo strumento di connessione del servizio  
+### <a name="to-use-the-service-connection-tool"></a>サービス接続ツールを使用するには  
 
-1.  Nel computer che ospita il punto di connessione del servizio:  
+1.  サービス接続ポイントをホストするコンピューターで、以下を実行します。  
 
-    -   Aprire un prompt dei comandi con privilegi amministrativi, quindi passare alla directory nel percorso che contiene **serviceconnectiontool.exe**.   
+    -   管理者特権でコマンド プロンプトを開き、 **serviceconnectiontool.exe**を格納する場所にディレクトリを変更します。   
 
-2.  Eseguire il comando seguente per fare in modo che lo strumento prepari un file con estensione cab contenente informazioni sull'utilizzo e lo copi nel percorso specificato:  
+2.  次のコマンドを実行して、ツールで使用状況の情報を含む .cab ファイルを準備し、指定した場所にコピーします。  
 
     -   **serviceconnectiontool.exe -prepare -usagedatadest D:\USB\UsageData.cab**  
 
-    Se si caricano file con estensione cab da più gerarchie contemporaneamente, è necessario che ogni file nella cartella abbia un nome univoco. È possibile rinominare manualmente i file aggiunti nella cartella.
+    1 つ以上の階層から同時に複数の .cab ファイルをアップロードする場合は、フォルダー内の各 .cab ファイルの名前は一意である必要があります。 フォルダーに追加するファイルの名前は手動で変更できます。
 
-    Per visualizzare le informazioni sull'utilizzo raccolte per essere caricate nel servizio cloud di Configuration Manager, eseguire il comando seguente per esportare gli stessi dati come file con estensione csv che può essere visualizzato usando un'applicazione come Excel:  
+    Configuration Manager のクラウド サービスにアップロードするために収集される使用状況情報を表示する場合は、次のコマンドを実行し、.csv ファイルとして同じデータをエクスポートすると、Excel のようなアプリケーションを使用して表示できます。  
 
     -   **serviceconnectiontool.exe -export -dest D:\USB\UsageData.csv**  
 
-3.  Una volta completata la procedura di preparazione, spostare l'unità USB (o trasferire i dati esportati con un altro metodo) in un computer con l'accesso a Internet.  
+3.  準備ステップが完了したら、インターネットに接続しているコンピューターに USB ドライブを移動します (または別の方法でエクスポートされたデータを転送します)。  
 
-4.  Nel computer con l'accesso a Internet aprire un prompt dei comandi con privilegi amministrativi, quindi passare alla directory nel percorso che contiene una copia dello strumento  **serviceconnectiontool.exe** e gli altri file provenienti dalla cartella specificata.  
+4.  インターネットにアクセスできるコンピューターで、管理者特権を使用してコマンド プロンプトを開き、ツール (  **serviceconnectiontool.exe** ) とそのフォルダーのその他のファイルのコピーを格納している場所にディレクトリを変更します。  
 
-5.  Eseguire questo comando per avviare il caricamento delle informazioni di utilizzo e il download degli aggiornamenti per Configuration Manager:  
+5.  次のコマンドを実行し、使用状況情報のアップロードと Configuration Manager の更新プログラムのダウンロードを開始します。  
 
     -   **serviceconnectiontool.exe -connect -usagedatasrc D:\USB -updatepackdest D:\USB\UpdatePacks**
 
-    Per altri esempi di questa riga di comando, vedere la sezione [Opzioni della riga di comando](../../../core/servers/manage/use-the-service-connection-tool.md#bkmk_cmd) più avanti in questo argomento.
+    このコマンドラインのより多くの例については、このトピックで後述する「[コマンド ライン オプション](../../../core/servers/manage/use-the-service-connection-tool.md#bkmk_cmd)」を参照してください。
 
     > [!NOTE]  
-    >  Quando si esegue la riga di comando per connettersi al servizio cloud di Configuration Manager, potrebbe verificarsi un errore simile al seguente:  
+    >  Configuration Manager のクラウド サービスに接続するためのコマンド ラインを実行すると、次のようなエラーが発生する可能性があります。  
     >   
-    >  -   Eccezione non gestita: System.UnauthorizedAccessException:  
+    >  -   ハンドルされない例外: System.UnauthorizedAccessException:  
     >   
-    >      L'accesso al percorso 'C:\  
-    >     Users\br\AppData\Local\Temp\extractmanifestcab\95F8A562.sql' è negato.  
+    >      パス C:\  
+    >     Users\br\AppData\Local\Temp\extractmanifestcab\95F8A562.sql' へのアクセスが拒否されました。  
     >   
-    > Questo errore può essere ignorato senza conseguenze ed è possibile chiudere la finestra di errore e continuare.  
+    > このエラーは無視しても問題ありません。エラー ウィンドウを閉じて、続行することができます。  
 
-6.  Dopo aver scaricato gli aggiornamenti per Configuration Manager, spostare l'unità USB (o trasferire i dati esportati con un altro metodo) nel computer che ospita il punto di connessione del servizio.  
+6.  Configuration Manager の更新プログラムのダウンロードが完了したら、サービス接続ポイントをホストしているコンピューターに USB ドライブを移動します (または別の方法でエクスポートされたデータを転送します)。  
 
-7.  Nel computer che ospita il punto di connessione del servizio aprire un prompt dei comandi con privilegi amministrativi, passare alla directory nel percorso che contiene **serviceconnectiontool.exe**, quindi eseguire il comando seguente:  
+7.  サービス接続ポイントをホストするコンピューターで、管理者特権でコマンド プロンプトを開き、 **serviceconnectiontool.exe**が格納されている場所にディレクトリを変更して、次のコマンドを実行します。  
 
     -   **serviceconnectiontool.exe -import -updatepacksrc D:\USB\UpdatePacks**  
 
-8.  Al termine dell'importazione, è possibile chiudere il prompt dei comandi. Vengono importati solo gli aggiornamenti per la gerarchia applicabile.  
+8.  インポートが完了したら、コマンド プロンプトを閉じることができます。 (該当する階層の更新プログラムのみがインポートされます)。  
 
-9. Aprire la console di Configuration Manager e passare ad **Amministrazione** > **Aggiornamenti e manutenzione**. Gli aggiornamenti importati sono ora pronti per l'installazione. Nelle versioni precedenti la 1702, Aggiornamenti e manutenzione si trova in **Amministrazione** > **Servizi cloud**.
+9. Configuration Manager コンソールを開き、**[管理]** > **[更新とサービス]** の順に移動します。 インポートされた更新プログラムは、インストールできるようになりました  (1702 より前のバージョンでは、[更新とサービス] は、**[管理]** > **[クラウド サービス]** にありました)。
 
- Per informazioni sull'installazione degli aggiornamenti, vedere  [Installare gli aggiornamenti nella console per System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
+ 更新プログラムのインストールの詳細については、「[System Center Configuration Manager のコンソール内の更新プログラムのインストール](../../../core/servers/manage/install-in-console-updates.md)」を参照してください。  
 
-## <a name="bkmk_cmd"></a> Opzioni della riga di comando  
- Per visualizzare le informazioni della Guida per lo strumento del punto di connessione del servizio, aprire il prompt dei comandi nella cartella che contiene lo strumento ed eseguire il comando:  **serviceconnectiontool.exe**.  
+## <a name="bkmk_cmd"></a> コマンド ライン オプション  
+ サービス接続ポイント ツールのヘルプ情報を表示するには、コマンド プロンプトを開き、ツールを格納するフォルダーに移動して、コマンド  **serviceconnectiontool.exe**を実行します。  
 
-|Opzioni della riga di comando|Dettagli|  
+|コマンド ライン オプション|説明|  
 |---------------------------|-------------|  
-|**-prepare -usagedatadest [unità:][percorso][nomefile.cab]**|Questo comando archivia i dati di utilizzo correnti in un file CAB.<br /><br /> Eseguire questo comando come **amministratore locale** nel server che ospita il punto di connessione del servizio.<br /><br /> Esempio:   **-prepare -usagedatadest D:\USB\Usagedata.cab**|    
-|**-connect -usagedatasrc [unità:][percorso] -updatepackdest [unità:][percorso] -proxyserveruri [nome FQDN del server proxy] -proxyusername [nome utente]** <br /> <br /> Se si usa una versione di Configuration Manager precedente alla 1606, è necessario specificare il nome del file con estensione cab e non è possibile usare le opzioni per un server proxy.  I parametri di comando supportati sono: <br /> **-connect -usagedatasrc [unità:][percorso][nome file] -updatepackdest [unità:][percorso]** |Questo comando si connette al servizio cloud di Configuration Manager per caricare i file con estensione cab dei dati di utilizzo dal percorso specificato e per scaricare i pacchetti di aggiornamento disponibili e il contenuto della console. Le opzioni per i server proxy sono facoltative.<br /><br /> Eseguire questo comando come **amministratore locale** in un computer con connessione a Internet.<br /><br /> Esempio per la connessione senza server proxy: **-connect -usagedatasrc D:\USB\ -updatepackdest D:\USB\UpdatePacks** <br /><br /> Esempio per la connessione con server proxy: **-connect -usagedatasrc D:\USB\Usagedata.cab -updatepackdest D:\USB\UpdatePacks -proxyserveruri itgproxy.redmond.corp.microsoft.com -proxyusername Meg** <br /><br /> Se si usa una versione precedente alla 1606, è necessario specificare un nome per il file con estensione cab e non è possibile specificare un server proxy. Usare la riga di comando di esempio seguente: **-connect -usagedatasrc D:\USB\Usagedata.cab -updatepackdest D:\USB\UpdatePacks**|      
-|**-import -updatepacksrc [unità:][percorso]**|Questo comando importa i pacchetti di aggiornamento e il contenuto della console scaricati in precedenza nella console di Configuration Manager.<br /><br /> Eseguire questo comando come **amministratore locale** nel server che ospita il punto di connessione del servizio.<br /><br /> Esempio:  **-import -updatepacksrc D:\USB\UpdatePacks**|  
-|**-export -dest [unità:][percorso][nomefile.csv]**|Questo comando esporta i dati di utilizzo in un file CSV che può essere visualizzato successivamente.<br /><br /> Eseguire questo comando come **amministratore locale** nel server che ospita il punto di connessione del servizio.<br /><br /> Esempio: **-export -dest D:\USB\usagedata.csv**|  
-
+|**-prepare -usagedatadest [drive:][path][filename.cab]**|このコマンドは、現在の使用状況データを .cab ファイルに格納します。<br /><br /> サービス接続ポイントをホストするサーバーで、 **ローカル管理者** としてこのコマンドを実行します。<br /><br /> 例:   **-prepare -usagedatadest D:\USB\Usagedata.cab**|    
+|**-connect -usagedatasrc [drive:][path] -updatepackdest [drive:][path] -proxyserveruri [FQDN of proxy server] -proxyusername [username]** <br /> <br /> 1606 より前のバージョンの Configuration Manager を使用する場合は、.cab ファイルの名前を指定する必要があり、プロキシ サーバーのオプションを使用することはできません。  サポートされているコマンド パラメーターは次のとおりです。 <br /> **-connect -usagedatasrc [drive:][path][filename] -updatepackdest [drive:][path]** |このコマンドは、Configuration Manager のクラウド サービスに接続し、指定した場所から使用状況データの .cab ファイルをアップロードしたり、利用可能な更新パックとコンソールのコンテンツをダウンロードしたりします。 プロキシ サーバーのオプションは省略できます。<br /><br /> インターネットに接続できるコンピューターで、 **ローカル管理者** としてこのコマンドを実行します。<br /><br /> プロキシ サーバーを使用せずに接続する例: **-connect -usagedatasrc D:\USB\ -updatepackdest D:\USB\UpdatePacks** <br /><br /> プロキシ サーバーを使用して接続する例: **-connect -usagedatasrc D:\USB\Usagedata.cab -updatepackdest D:\USB\UpdatePacks -proxyserveruri itgproxy.redmond.corp.microsoft.com -proxyusername Meg** <br /><br /> 1606 より前のバージョンを使用する場合は、.cab ファイルのファイル名を指定する必要があります。また、プロキシ サーバーを指定することはできません。 次のコマンド ラインの例を使用します: **-connect -usagedatasrc D:\USB\Usagedata.cab -updatepackdest D:\USB\UpdatePacks**|      
+|**-import -updatepacksrc [drive:][path]**|このコマンドは、先ほど Configuration Manager コンソールにダウンロードした更新パックとコンソールのコンテンツをインポートします。<br /><br /> サービス接続ポイントをホストするサーバーで、 **ローカル管理者** としてこのコマンドを実行します。<br /><br /> 例:  **-import -updatepacksrc D:\USB\UpdatePacks**|  
+|**-export -dest [drive:][path][filename.csv]**|このコマンドは使用状況データを .csv ファイルにエクスポートします。このファイルでデータを確認できます。<br /><br /> サービス接続ポイントをホストするサーバーで、 **ローカル管理者** としてこのコマンドを実行します。<br /><br /> 例: **-export -dest D:\USB\usagedata.csv**|  

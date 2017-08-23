@@ -1,106 +1,101 @@
 ---
-title: Configurare gli avvisi di Endpoint Protection | Microsoft Docs
-description: Informazioni su come configurare gli avvisi di Endpoint Protection in System Center Configuration Manager.
+title: "Endpoint Protection アラートの構成 | Microsoft Docs"
+description: "System Center Configuration Manager で Endpoint Protection のアラートを構成する方法について説明します。"
 ms.custom: na
 ms.date: 03/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: f504de3e-4caf-455c-80d7-a63f13f4c5d9
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: 7f4329b289b606dee5bf31aad8207de52667229f
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+#  <a name="configure-alerts-for-endpoint-protection-in-configuration-manager"></a>Configuration Manager での Endpoint Protection 用のアラートの構成
 
-#  <a name="configure-alerts-for-endpoint-protection-in-configuration-manager"></a>Configurare gli avvisi di Endpoint Protection in Configuration Manager
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+ Microsoft System Center Configuration Manager で Endpoint Protection アラートを構成して、階層内でのマルウェア感染など、特定のイベントが発生したときに管理ユーザーに通知することができます。 通知は、Configuration Manager コンソールの Endpoint Protection ダッシュボードで、**[監視]** ワークスペースの **[アラート]** ノードに表示されます。また、指定されたユーザーに電子メールで通知を送信することもできます。
 
- È possibile configurare gli avvisi di Endpoint Protection in Microsoft System Center Configuration Manager per notificare agli utenti amministratori se si verificano eventi specifici nella gerarchia, ad esempio un'infezione da malware. Le notifiche vengono visualizzate nel dashboard di Endpoint Protection della console di Configuration Manager nel nodo **Avvisi** dell'area di lavoro **Monitoraggio** o possono essere inviate tramite posta elettronica agli utenti specificati.
-
- Seguire i passaggi e le procedure supplementari seguenti di questo argomento per configurare gli avvisi per Endpoint Protection in Configuration Manager.
+ Configuration Manager で Endpoint Protection 用のアラートを構成するには、このトピックの次の手順と補足手順に従います。
 
 > [!IMPORTANT]
->  Per configurare gli avvisi per Endpoint Protection, è necessario avere l'autorizzazione **Applicazione protezione** per le raccolte.
+>  Endpoint Protection のアラートを構成するコレクションの **[セキュリティ ポリシーの実施]** アクセス許可が必要です。
 
-## <a name="steps-to-configure-alerts-for-endpoint-protection-in-configuration-manager"></a>Procedura per configurare gli avvisi per Endpoint Protection in Configuration Manager
+## <a name="steps-to-configure-alerts-for-endpoint-protection-in-configuration-manager"></a>Configuration Manager で Endpoint Protection 用のアラートを構成する手順
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス** ] をクリックします。
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Raccolte dispositivi**.
+2.  [ **資産とコンプライアンス** ] ワークスペースで [ **デバイス コレクション** ] をクリックします。
 
-3.  Nell'elenco **Raccolte dispositivi** selezionare la raccolta per cui configurare gli avvisi e quindi nel gruppo **Proprietà** della scheda **Home** fare clic su **Proprietà**.
-
-    > [!NOTE]
-    >  Non è possibile configurare avvisi per raccolte di utenti.
-
-4.  Nella scheda **Avvisi** della finestra di dialogo **Proprietà***<Nome raccolta\>* selezionare **Visualizza questa raccolta nel dashboard di Endpoint Protection** se si vogliono visualizzare i dettagli sulle operazioni antimalware per questa raccolta nell'area di lavoro **Monitoraggio** della console di Configuration Manager console.
+3.  **[デバイス コレクション]** 一覧で、アラートを構成するコレクションを選んでから、 **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]** をクリックします。
 
     > [!NOTE]
-    >  Questa opzione non è disponibile per la raccolta **Tutti i sistemi** .
+    >  ユーザーのコレクションに対してアラートを構成することはできません。
 
-5.  Nella scheda **Avvisi** della finestra di dialogo **Proprietà***<Nome raccolta\>* fare clic su **Aggiungi**.
+4.  Configuration Manager コンソールの **[監視]** ワークスペースで、このコレクションのマルウェア対策操作についての詳細を表示する場合は、[*<コレクション名\>***のプロパティ**] ダイアログ ボックスの **[アラート]** タブで、**[このコレクションを Endpoint Protection ダッシュボードに表示する]** を選びます。
 
-6.  Nella sezione **Genera un avviso quando si applicano queste condizioni** della finestra di dialogo **Aggiungi avvisi nuova raccolta**, selezionare gli avvisi che devono essere generati da Configuration Manager se si verificano gli eventi di Endpoint Protection specificati e fare clic su **OK**.
+    > [!NOTE]
+    >  このオプションは、 **[すべてのシステム]** コレクションには選択できません。
 
-7.  Nell'elenco  **Condizioni** della scheda **Avvisi** selezionare ogni avviso di Endpoint Protection e specificare le informazioni seguenti:
+5.  [*<コレクション名\>***のプロパティ**] ダイアログ ボックスの **[アラート]** タブで、**[追加]** をクリックします。
 
-    -   **Nome avviso**: accettare il nome predefinito o immettere un nome nuovo per l'avviso.
+6.  **[コレクションの新しいアラートの追加]** ダイアログ ボックスの **[Generate an alert when these conditions apply]** (これらの条件を満たす場合にアラートを生成する) セクションで、特定の Endpoint Protection イベントが発生したときに Configuration Manager が生成するアラートを選択してから、**[OK]** をクリックします。
 
-    -   **Gravità avviso**: selezionare nell'elenco il livello di avviso da visualizzare nella console di Configuration Manager.
+7.  **[アラート]** タブの **[条件]** 一覧で、Endpoint Protection の各アラートを選択してから、次の情報を指定します。
 
-8.  A seconda dell'avviso selezionato, specificare le informazioni aggiuntive seguenti:
+    -   **アラート名** - 既定の名前を受け入れるか、新しいアラート名を入力します。
 
-    -   **Rilevamento malware**: questo avviso viene generato se viene rilevato un malware in un computer della raccolta monitorata. **Soglia di rilevamento malware**: specifica i livelli di rilevamento di malware in base al quale viene generato questo avviso:
+    -   **アラートの重要度** - この一覧で、Configuration Manager コンソールに表示されるアラート レベルを選択します。
 
-        -   **Alto - Tutti i rilevamenti**: l'avviso viene generato quando ci sono uno o più computer nella raccolta specificata in cui viene rilevato malware, indipendentemente dall'azione eseguita dal client di Endpoint Protection.
+8.  選択したアラートに応じて、次の追加情報を指定します。
 
-        -   **Medio - Rilevato, azione in sospeso**: l'avviso viene generato quando ci sono uno o più computer nella raccolta specificata in cui viene rilevato malware ed è necessario rimuovere il malware manualmente.
+    -   **[マルウェア検出]** - このアラートは、監視するコレクション内のコンピューターでマルウェアが検出されると、生成されます。 **[マルウェア検出のしきい値]** で、このアラートが生成されるマルウェア検出のレベルを指定します。
 
-        -   **Basso - Rilevato, ancora attivo**: l'avviso viene generato quando ci sono uno o più computer nella raccolta specificata in cui viene rilevato malware ancora attivo.
+        -   **[高 - すべて検出]** - Endpoint Protection クライアントが実行する操作に関係なく、指定されたコレクションの 1 台以上のコンピューターでマルウェアが検出されると、アラートが生成されます。
 
-    -   **Attacco malware**: questo avviso viene generato se viene rilevato malware specificato su una percentuale determinata di computer nella raccolta monitorata.
+        -   **[中 - 検出、操作を保留中]** - 指定されたコレクションの 1 台以上のコンピューターでマルウェアが検出されると、アラートが生成されます。マルウェアは、手動で削除する必要があります。
 
-        -   **Percentuale di computer con rilevamento malware**: l'avviso viene generato quando la percentuale di computer della raccolta in cui viene rilevato malware supera la percentuale specificata. Specificare una percentuale compresa tra **1** e **99**.
+        -   **[低 - 検出、操作中]** - 指定されたコレクションの 1 台以上のコンピューターでマルウェアが検出されると、アラートが生成されますが、マルウェアはアクティブなままです。
+
+    -   **[マルウェア大量感染]** - このアラートは、監視するコレクション内の、指定した割合のコンピューターで特定のマルウェアが検出されると、生成されます。
+
+        -   **[マルウェアが検出されたコンピューターの割合]** - コレクション内で、マルウェアが検出されたコンピューターの割合が指定したパーセンテージを超えると、アラートが生成されます。 割合を指定する **1** を通じて **99** です。
 
             > [!NOTE]
-            >  Il valore di percentuale è basato sul numero di computer nella raccolta, ma esclude i computer in cui non è installato un client di Configuration Manager. Include i computer in cui non è ancora installato il client di Endpoint Protection.
+            >  パーセンテージの値は、コレクション内のコンピューターの数に基づきますが、構成マネージャー クライアントがインストールされていないコンピューターは除外されます。 これには Endpoint Protection クライアントがまだインストールされていないコンピューターが含まれます。
 
-    -   **Rilevamento malware ripetuto**: questo avviso viene generato se viene rilevato un malware specifico un numero di volte superiore al numero specificato durante il numero di ore nei computer della raccolta monitorata. Per configurare questo avviso, specificare le informazioni seguenti:
+    -   **[マルウェア連続検出]** - このアラートは、監視するコレクション内のコンピューターで、指定した時間数にわたって指定した回数を超えて特定のマルウェアが検出されると、生成されます。 次の情報を指定して、このアラートを構成します。
 
-        -   **Numero di rilevamenti malware** : l'avviso viene generato quando lo stesso malware viene rilevato nei computer nella raccolta per un numero di volte maggiore di quello specificato. Specificare un numero compreso tra **2** e **32**.
+        -   **マルウェアが検出された回数を超える:** -指定した回数よりも詳細のコレクション内のコンピューターで同じマルウェアが検出されたときに、アラートが生成されます。 値を指定して **2** を通じて **32** です。
 
-        -   **Intervallo per rilevamento (ore)** : specificare l'intervallo di rilevamento (in ore) in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
+        -   **[検出期間 (時間):]** マルウェアの検出の数が行う必要があります (単位は時間) の検出間隔を指定します。 **[1]** から **[168]** までの数で指定します。
 
-    -   **Rilevamento di più malware**: questo avviso viene generato se più di un numero specificato di tipi di malware viene rilevato durante un numero determinato di ore nei computer della raccolta monitorata. Per configurare questo avviso, specificare le informazioni seguenti:
+    -   **[複数のマルウェア検出]** - このアラートは、監視するコレクション内のコンピューターで、指定した時間数にわたって指定した種類の数を超えたマルウェアが検出されると、生成されます。 次の情報を指定して、このアラートを構成します。
 
-        -   **Numero di tipi di malware rilevati** : l'avviso viene generato quando viene rilevato il numero specificato di tipi diversi di malware nei computer nella raccolta. Specificare un numero compreso tra **2** e **32**.
+        -   **[検出されたマルウェアの種類の数:]** 別のマルウェアの種類の指定した数が、コレクション内のコンピューターで検出されたときに、アラートが生成されます。 値を指定して **2** を通じて **32** です。
 
-        -   **Intervallo per rilevamento (ore)** : specificare l'intervallo di rilevamento, in ore, in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
+        -   **[検出期間 (時間):]** マルウェアの検出の数が発生する必要がありますを時間単位では、検出の間隔を指定します。 **[1]** から **[168]** までの数で指定します。
 
-9. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà***<Nome raccolta\>*.  
+9. **[OK]** をクリックして [ *<コレクション名\>***のプロパティ** ] ダイアログ ボックスを閉じます。  
 
-## <a name="alert-for-outdated-malware-client"></a>Avviso per client malware obsoleto
+## <a name="alert-for-outdated-malware-client"></a>期限切れのマルウェア クライアントのアラート
 
-A partire da Configuration Manager versione 1702, è possibile configurare un avviso per verificare che i client Endpoint Protection non siano obsoleti. È ora possibile visualizzare **Versione client antimalware** e **Endpoint Protection Deployment Status** (Stato distribuzione Endpoint Protection) passando ad **Asset e conformità** > **Panoramica** > **Dispositivi** > **Tutti i client desktop e di server**. Per controllare un avviso, visualizzare **Avvisi** nell'area di lavoro **Monitoraggio**. Se più del 20% dei client gestiti esegue una versione scaduta del software antimalware, viene visualizzato l'avviso La versione del client antimalware è obsoleta. Questo avviso non viene visualizzato nella scheda **Monitoraggio** > **Panoramica**. Per aggiornare i client antimalware scaduti, abilitare gli aggiornamenti software per i client antimalware.
+Configuration Manager のバージョン 1702 から、Endpoint Protection クライアントが古くならないようにするためのアラートを構成することができます。 **[資産とコンプライアンス]** > **[概要]** > **[デバイス]** > **[All Desktops and Serve Clients (すべてのデスクトップとサービス クライアント)]** の順に選択して、**[マルウェア対策クライアント バージョン]** と **[Endpoint Protection Deployment Status (Endpoint Protection の展開ステータス)]** を確認できます。 アラートを確認するには、**[監視]** ワークスペースの **[アラート]** を表示します。 20% を超える管理対象クライアントが期限切れバージョンのマルウェア対策ソフトウェアを実行している場合、"マルウェア対策クライアント バージョンが期限切れです" のアラートが表示されます。 このアラートは、**[監視]** > **[概要]** タブには表示されません。 期限切れのマルウェア対策クライアントを更新するには、マルウェア対策クライアントのソフトウェア更新プログラムを有効にします。
 
-Per configurare la percentuale oltre la quale viene generato l'avviso, espandere **Monitoraggio** > **Avvisi** > **Tutti gli avvisi**, fare doppio clic su **I client antimalware sono obsoleti** e modificare l'opzione **Genera un avviso se la percentuale di client gestiti con una versione obsoleta del client antimalware è superiore a**.
-
-> [!div class="button"]
-[Passaggio successivo >](endpoint-definition-updates.md)
+アラートを生成するパーセント値を構成するには、**[監視]** > **[アラート]** > **[すべてのアラート]** を展開し、**[期限切れのマルウェア対策クライアント]** をダブルクリックし、**[管理されたクライアントのうち、期限切れのバージョンのマルウェア対策クライアントを使用しているものが次の割合を超えたら、アラートを生成する]** オプションを変更します。
 
 > [!div class="button"]
-[Indietro >](endpoint-protection-site-role.md)
+[次のステップ >](endpoint-definition-updates.md)
 
+> [!div class="button"]
+[戻る >](endpoint-protection-site-role.md)

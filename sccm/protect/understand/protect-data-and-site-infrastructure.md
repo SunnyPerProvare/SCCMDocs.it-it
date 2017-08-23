@@ -1,46 +1,42 @@
 ---
-title: Proteggere dati e infrastruttura del sito | Microsoft Docs
-description: Informazioni su come proteggere le risorse dell&quot;organizzazione da esposizione o attacchi dannosi con System Center Configuration Manager.
+title: "データとサイト インフラストラクチャの保護 | Microsoft Docs"
+description: "System Center Configuration Manager で組織のリソースを漏洩や悪意のある攻撃から保護する方法について説明します。"
 ms.custom: na
 ms.date: 11/27/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2117f786-d521-4790-9e8d-ec096c63c9d7
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: Robstack
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 8679df3f8a3b692391537bacd6144a4f2fae357b
 ms.openlocfilehash: d527cb4bfb55ca50c8d2a0fed7c427af5747fe99
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="protect-data-and-site-infrastructure-with-system-center-configuration-manager"></a>Proteggere i dati e l'infrastruttura del sito con System Center Configuration Manager
+# <a name="protect-data-and-site-infrastructure-with-system-center-configuration-manager"></a>System Center Configuration Manager でのデータとサイト インフラストラクチャの保護
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
 
-Si vuole che gli utenti possano accedere in modo sicuro alle risorse aziendali, affinché sia l'infrastruttura che i dati siano protetti da esposizione o attacchi dannosi. Le informazioni contenute in questi argomenti descrivono come usare System Center Configuration Manager (noto anche come ConfigMgr o SCCM) per abilitare l'accesso e proteggere le risorse dell'organizzazione.  
+インフラストラクチャとデータの両方が公開や悪意のある攻撃から保護されるように、ユーザーが組織のリソースに安全にアクセスできるようにします。 これらのトピックでは、System Center Configuration Manager (ConfigMgr、SCCM とも呼ばれます) を使用して、安全にアクセスできるようにする方法と、組織のリソースを保護する方法について説明します。  
 
--   È possibile ridurre al minimo le operazioni eseguite dagli utenti per connettersi alle risorse aziendali abilitando la connettività VPN con i profili VPN. Informazioni su [Profili VPN in System Center Configuration Manager](../deploy-use/vpn-profiles.md).  
+-   VPN プロファイルを使用して VPN 接続を有効にすると、企業リソースに接続するためのユーザーの作業を最小化できます。 詳細については、「[System Center Configuration Manager の VPN プロファイル](../deploy-use/vpn-profiles.md)」を参照してください。  
 
--   I profili Wi-Fi forniscono un set di strumenti e risorse che consentono di creare, distribuire e monitorare le impostazioni di rete wireless nei dispositivi dell'organizzazione. Distribuendo queste impostazioni, è possibile ridurre al minimo lo sforzo richiesto agli utenti finali per connettersi alle reti wireless aziendali. Informazioni su [Profili Wi-Fi in System Center Configuration Manager](/sccm/protect/deploy-use/create-wifi-profiles).  
+-   Wi-Fi プロファイルには、組織内のデバイス用にワイヤレス ネットワーク設定を作成して展開し、監視するためのツールとリソースが用意されています。 この設定を展開することにより、エンド ユーザーが会社のワイヤレス ネットワークに接続するときの手間をできるだけ省きます。 詳細については、「[System Center Configuration Manager の Wi-Fi プロファイル](/sccm/protect/deploy-use/create-wifi-profiles)」を参照してください。  
 
--   [Profili certificato in System Center Configuration Manager](../deploy-use/introduction-to-certificate-profiles.md) descrive come eseguire il provisioning dei dispositivi degli utenti con i certificati necessari per connettersi alle risorse aziendali.  
+-   「[System Center Configuration Manager の証明書プロファイル](../deploy-use/introduction-to-certificate-profiles.md)」では、会社のリソースへの接続に必要な証明書を持つユーザーのデバイスをプロビジョニングする方法について説明します。  
 
--   [Endpoint Protection di System Center](../deploy-use/endpoint-protection.md) consente di gestire i criteri antimalware e la sicurezza di Windows Firewall per i computer client.  
+-   [System Center Endpoint Protection](../deploy-use/endpoint-protection.md) を使用して、クライアント コンピューターのマルウェア対策ポリシーと Windows ファイアウォールのセキュリティを管理できます。  
 
--   È possibile usare l'accesso condizionale per proteggere la posta elettronica e altri servizi in dispositivi registrati con Microsoft Intune, come descritto in [Gestire l'accesso ai servizi in System Center Configuration Manager](../deploy-use/manage-access-to-services.md).  
+-   「[System Center Configuration Manager でサービスへのアクセスを管理する](../deploy-use/manage-access-to-services.md)」の説明に従って、条件付きアクセスを使用することにより、Microsoft Intune に登録されているデバイスで、電子メールやその他のサービスをセキュリティで保護できます。  
 
--   I profili di posta elettronica offrono un set di strumenti e risorse per creare, distribuire e monitorare le impostazioni di posta elettronica nei dispositivi. In questo modo, gli utenti possono accedere alla posta elettronica aziendale dai dispositivi personali senza alcuna configurazione. Informazioni su [Profili di posta elettronica in System Center Configuration Manager](../deploy-use/introduction-to-email-profiles.md).  
+-   電子メール プロファイルは、デバイスでの電子メール設定の作成、展開、監視を支援する一連のツールとリソースを提供する拡張機能です。 これにより、ユーザーは最小限の設定で個人のデバイスから会社の電子メールにアクセスできるようになります。 詳細については、「[System Center Configuration Manager の電子メール プロファイル](../deploy-use/introduction-to-email-profiles.md)」を参照してください。  
 
--   Configuration Manager consente di eseguire l'integrazione con Windows Hello for Business (in precedenza Microsoft Passport for Work), un metodo di accesso alternativo che usa Active Directory o un account di Azure Active Directory per sostituire una password, una smart card o una smart card virtuale. Informazioni su [Impostazioni di Windows Hello for Business in System Center Configuration Manager](../deploy-use/windows-hello-for-business-settings.md).  
-
+-   Configuration Manager で、Windows Hello for Business (旧称 Microsoft Passport for Work) を統合できます。これは Active Directory や Azure Active Directory アカウントを使った代替サインイン方法であり、パスワード、スマート カード、または仮想スマート カードに取って代わります。 詳細については、「[System Center Configuration Manager における Windows Hello for Business 設定について](../deploy-use/windows-hello-for-business-settings.md)」を参照してください。  

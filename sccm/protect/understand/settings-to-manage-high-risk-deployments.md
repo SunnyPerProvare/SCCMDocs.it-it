@@ -1,67 +1,60 @@
 ---
-title: Gestire le distribuzioni ad alto rischio | Microsoft Docs
-description: Informazioni su come configurare le impostazioni del sito in System Center Configuration Manager per avvisare gli amministratori nel caso in cui creino una distribuzione ad alto rischio.
+title: "危険度の高い展開の管理 | Microsoft Docs"
+description: "管理者が危険度の高い展開を作成した場合に管理者に警告するように System Center Configuration Manager のサイト設定を構成する方法について説明します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 8d37b983-a964-402c-819d-2512ed2d463b
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
 ms.openlocfilehash: 8b5564f39f07a67a3c9278379ed59ca415603d21
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="settings-to-manage-high-risk-deployments-for-system-center-configuration-manager"></a>Impostazioni per gestire le distribuzioni ad alto rischio per System Center Configuration Manager
+# <a name="settings-to-manage-high-risk-deployments-for-system-center-configuration-manager"></a>System Center Configuration Manager の危険度の高い展開を管理するための設定
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
 
-Con System Center Configuration Manager è possibile configurare le impostazioni del sito in modo da avvisare gli amministratori se creano una distribuzione di sequenze di attività ad alto rischio. Una distribuzione ad alto rischio è:  
+System Center Configuration Manager では、管理者が危険度の高いタスク シーケンスの展開を作成すると警告が表示されるように、サイトの設定を構成することができます。 危険度の高い展開とは次のようなものです。  
 
--   Una distribuzione che viene installata automaticamente  
+-   自動的にインストールされる展開  
 
--   Una distribuzione che può causare potenzialmente risultati indesiderati  
+-   望ましくない結果を引き起こす可能性がある展開  
 
- Ad esempio, una sequenza di attività con scopo impostato su **Obbligatorio** che distribuisce un sistema operativo viene considerata come distribuzione ad alto rischio.  
+ たとえば、オペレーティング システムを展開する**必須**の目的を持つタスク シーケンスは、高危険度と見なされます。  
 
- Per ridurre l'incidenza di distribuzioni ad alto rischio indesiderate, è possibile configurare limiti di dimensioni nelle impostazioni di verifica della distribuzione seguenti:  
+ 望ましくない危険度の高い展開のリスクを減らすためには、これらの展開検証設定でサイズ制限を構成できます。  
 
--   **Limiti delle dimensioni della raccolta**: nascondere raccolte che contengono più client del limite consentito quando si crea una distribuzione.  
+-   **コレクション サイズの制限**: 展開の作成時に、制限より多くのクライアントが含まれているコレクションを非表示にします。  
 
-    -   **Dimensioni predefinite**: per impostazione predefinita, questa impostazione nasconde le raccolte con più client rispetto al limite impostato in fase di creazione della distribuzione. È comunque possibile visualizzare queste raccolte durante la creazione della distribuzione, ma sono nascoste per impostazione predefinita. Il valore predefinito è 100. Immettere un valore pari a 0 per ignorare questa impostazione.  
+    -   **既定サイズ**: この設定は、既定では、展開の作成時に、制限より多くのクライアントが含まれているコレクションを非表示にします。 展開の作成時にもこれらのコレクションを表示できますが、既定で非表示になっています。 既定値は 100 です。 この設定を無視する場合は 0 の値を入力します。  
 
-    -   **Dimensioni massime**: questa impostazione nasconde sempre le raccolte con più client del limite definito in fase di creazione della distribuzione. Il valore predefinito è 0, che consente di ignorare l'impostazione. Il valore per **Dimensioni massime** deve essere superiore al valore per **Dimensione predefinita** .  
+    -   **最大サイズ**: この設定は、展開の作成時に、制限より多くのクライアントが含まれているコレクションを常に非表示にします。 既定値は 0 であり、この設定は無視されます。 **最大サイズ** の値は、 **既定サイズ** の値より大きい必要があります。  
 
-     Ad esempio, si imposta **Dimensioni predefinite** su 100 e **Dimensioni massime** su 1000. Quando si crea una distribuzione ad alto rischio, nella finestra **Seleziona raccolta** verranno visualizzate solo le raccolte che contengono meno di 100 client. Se si deseleziona l'impostazione **Nascondi le raccolte con un numero di membri maggiore della configurazione delle dimensioni minime del sito**, nella finestra vengono visualizzate le raccolte che includono meno di 1000 client.  
+     たとえば、**既定サイズ**を 100、**最大サイズ**を 1000 に設定します。 危険度の高い展開の作成時に、**[コレクションの選択]** ウィンドウには、含まれるクライアント数が 100 未満のコレクションのみが表示されます。 **[メンバー数がサイトの最小サイズ構成を超えるコレクションを非表示にする]** の設定をオフにすると、含まれるクライアント数が 1000 未満のコレクションがウィンドウに表示されます。  
 
--   **Raccolte con i server del sistema del sito**: bloccare le distribuzioni o richiedere la verifica prima della creazione della distribuzione, quando la raccolta di destinazione contiene un computer con un ruolo del sistema del sito. Quando viene bloccata una distribuzione, è necessario selezionare una raccolta diversa che soddisfi i criteri di verifica della distribuzione.  
+-   **サイト システム サーバーを含むコレクション**: 対象のコレクションにサイト システムの役割を持つコンピューターが含まれている場合は、展開をブロックするか、展開を作成する前に検証が必要になります。 展開がブロックされている場合は、展開の検証条件を満たす別のコレクションを選択する必要があります。  
 
 > [!NOTE]  
->  Le distribuzioni ad alto rischio sono sempre limitate alle raccolte personalizzate (quelle create dall'utente) e alla racconta predefinita **Computer sconosciuti** . Quando si crea una distribuzione ad alto rischio, non è possibile selezionare una raccolta predefinita quale **Tutti i sistemi**.  
+>  危険度の高い展開は、常にカスタム コレクション、作成されたコレクション、および組み込みの **不明なコンピューター** コレクションに制限されています。 危険度の高い展開を作成する際、 **すべてのシステム**などの組み込みのコレクションは選択できません。  
 
-### <a name="to-configure-deployment-verification-for-a-site"></a>Per configurare la verifica della distribuzione per un sito  
+### <a name="to-configure-deployment-verification-for-a-site"></a>サイトの展開の検証を構成するには  
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione** >**Configurazione del sito** > **Siti** e quindi selezionare il sito primario da configurare.  
+1.  Configuration Manager コンソールで、**[管理]** >**[サイトの構成]** > **[サイト]** の順に選択して、構成するプライマリ サイトを選択します。  
 
-2.  Nella scheda **Home** nel gruppo **Proprietà** fare clic su **Proprietà** e quindi sulla scheda **Verifica della distribuzione**.  
+2.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択して、**[展開の検証]** タブを選択します。  
 
-3.  Dopo aver impostato le configurazioni da usare, fare clic su **OK** per salvare la configurazione.  
+3.  使用する構成を設定した後は、**[OK]** を選択して構成を保存します。  
 
-### <a name="see-also"></a>Vedere anche  
- [Configure sites and hierarchies for System Center Configuration Manager](../../core/servers/deploy/configure/configure-sites-and-hierarchies.md) (Configurare siti e gerarchie per System Center Configuration Manager)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+### <a name="see-also"></a>関連項目  
+ [System Center Configuration Manager のサイトと階層の構成](../../core/servers/deploy/configure/configure-sites-and-hierarchies.md)

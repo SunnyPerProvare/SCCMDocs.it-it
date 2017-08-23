@@ -1,109 +1,105 @@
 ---
-title: Gerarchie di origine della migrazione | Microsoft Docs
-description: Configurare una gerarchia di origine e i siti di origine per eseguire la migrazione dei dati all&quot;ambiente di System Center Configuration Manager.
+title: "移行ソース階層 | Microsoft Docs"
+description: "System Center Configuration Manager 環境にデータを移行できるように、ソース階層とソース サイトを構成します。"
 ms.custom: na
 ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ccce7cb5-e18f-4337-8adf-2018edca3c00
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c5a58d79f81ccdf19ad88dc932e3a52eac2c18ab
 ms.openlocfilehash: 80c43ab93ee5a2de6bf8d7993dfd46f0005d2df8
-ms.contentlocale: it-it
-ms.lasthandoff: 05/18/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-source-hierarchies-and-source-sites-for-migration-to-system-center-configuration-manager"></a>Configurare gerarchie di origine e siti di origine per la migrazione a System Center Configuration Manager
+# <a name="configure-source-hierarchies-and-source-sites-for-migration-to-system-center-configuration-manager"></a>System Center Configuration Manager に移行するためのソース階層とソース サイトの構成
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Per abilitare la migrazione dei dati nell'ambiente di System Center Configuration Manager, è necessario configurare una gerarchia di origine di Configuration Manager supportata e uno o più siti di origine nella stessa gerarchia che contengono i dati da migrare.  
+System Center Configuration Manager 環境へのデータの移行を有効にするには、移行するデータが含まれている階層内で、サポートされている Configuration Manager ソース階層と 1 つ以上のソース サイトを構成する必要があります。  
 
 > [!NOTE]  
->  Le operazioni di migrazione vengono eseguite nel sito di livello superiore della gerarchia di destinazione. Se la migrazione viene configurata durante l'uso di una console di Configuration Manager connessa a un sito figlio primario, è necessario attendere che la configurazione venga replicata nel sito di amministrazione centrale, che venga avviata e che lo stato venga replicato di nuovo nel sito primario a cui l'utente è connesso.  
+>  移行操作は、移行先の階層内の最上位サイトで実行されます。 プライマリ子サイトに接続されている Configuration Manager コンソールを使用して移行を構成する場合、構成が中央管理サイトにレプリケートされて、開始されてから、再び接続先のプライマリ サイトにステータスがレプリケートされるまでの時間を考慮する必要があります。  
 
- Usare le informazioni e le procedure riportate nelle sezioni seguenti per specificare la gerarchia di origine e aggiungere siti di origine aggiuntivi. Dopo aver completato queste procedure, è possibile creare i processi di migrazione e iniziare a migrare i dati dalla gerarchia di origine alla gerarchia di destinazione.  
+ ソース階層を指定したりソース サイトを追加したりするときに、以下のセクションの情報と手順を参照してください。 これらの手順を完了すると、移行ジョブを作成して、ソース階層から移行先階層へのデータ移行を開始できます。  
 
--   [Specificare una gerarchia di origine per la migrazione](#BKBM_ConfigSrcHierarchy)  
+-   [移行用のソース階層の指定](#BKBM_ConfigSrcHierarchy)  
 
--   [Individuare siti di origine aggiuntivi della gerarchia di origine](#BKBM_ConfigSrcSites)  
+-   [ソース階層の追加のソース サイトの特定](#BKBM_ConfigSrcSites)  
 
-##  <a name="BKBM_ConfigSrcHierarchy"></a> Specificare una gerarchia di origine per la migrazione  
- Per migrare i dati nella gerarchia di destinazione, è necessario specificare una gerarchia di origine supportata contenente i dati da migrare. Per impostazione predefinita, il sito di livello superiore di tale gerarchia diventa un sito di origine della gerarchia di origine. Se si esegue la migrazione da una gerarchia di Configuration Manager 2007, è quindi possibile configurare siti di origine aggiuntivi per la migrazione dopo avere raccolto i dati dal sito di origine iniziale. Se si esegue la migrazione da una gerarchia di System Center 2012 Configuration Manager o di System Center Configuration Manager, non è necessario configurare i siti di origine aggiuntivi per la migrazione dei dati dalla gerarchia di origine. Questo è possibile perché le versioni di Configuration Manager usano un database condiviso disponibile nel sito principale della gerarchia di origine. Il database condiviso include tutte le informazioni che è possibile migrare.  
+##  <a name="BKBM_ConfigSrcHierarchy"></a> 移行用のソース階層の指定  
+ 移行先階層にデータを移行するためには、移行するデータが含まれている、サポートされているソース階層を指定する必要があります。 既定では、その階層の最上位サイトがソース階層のソース サイトとなります。 Configuration Manager 2007 階層から移行する場合、最初のソース サイトからデータを収集した後で、移行用の追加のソース サイトを設定できます。 System Center 2012 Configuration Manager または System Center Configuration Manager 階層から移行する場合、ソース階層からデータを移行するために、追加のソース サイトを設定する必要はありません。 これは、これらのバージョンの Configuration Manager では、ソース階層の最上位サイトで使用できる共有データベースを使用するためです。 共有データベースには、移行できるすべての情報が含まれています。  
 
- Usare le procedure seguenti per specificare una gerarchia di origine per la migrazione e per individuare siti di origine aggiuntivi in una gerarchia di Configuration Manager 2007.  
+ Configuration Manager 2007 階層内で移行用のソース階層を指定して、追加のソース サイトを特定するには、次の手順を使用します。  
 
- Eseguire questa procedura con una console di Configuration Manager connessa alla gerarchia di destinazione:  
+ 移行先階層に接続されている Configuration Manager コンソールを使用して、この手順を実行します。  
 
-### <a name="to-configure-a-source-hierarchy"></a>Per configurare una gerarchia di origine   
+### <a name="to-configure-a-source-hierarchy"></a>ソース階層を構成するには   
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
+1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Migrazione**, quindi fare clic su **Gerarchia di origine**.  
+2.  **[管理]** ワークスペースで、 **[移行]**を展開してから **[ソース階層]**をクリックします。  
 
-3.  Nella scheda **Home** , nel gruppo **Migrazione** , fare clic su **Specifica gerarchia di origine**.  
+3.  [ **ホーム** ] タブの [ **移行** ] グループで、[ **ソース階層の指定**] をクリックします。  
 
-4.  Nella finestra di dialogo **Specifica gerarchia di origine** , per **Gerarchia di origine**, selezionare **Nuova gerarchia di origine**.  
+4.  [ソース階層の指定 **** ] ダイアログ ボックスで、[ソース階層 ****] から [新しいソース階層 ****] を選択します。  
 
-5.  Per **Server di sito di Configuration Manager di livello superiore** immettere il nome o l'indirizzo IP del sito principale di una gerarchia di origine supportata.  
+5.  **[最上位の Configuration Manager サイト サーバー]** には、サポートされているソース階層の最上位サイトの名前または IP アドレスを入力します。  
 
-6.  Specificare gli account di accesso del sito di origine che dispongono delle seguenti autorizzazioni:  
+6.  次の権限を持つソース サイトのアクセス アカウントを指定します。  
 
-    -   Account del sito di origine: autorizzazione **Lettura** per il provider SMS per il sito di livello superiore specificato nella gerarchia di origine. Per la condivisione e gli aggiornamenti dei punti di distribuzione sono necessarie le autorizzazioni **Modifica** ed **Eliminazione** per il sito nella gerarchia di origine.
+    -   ソース サイトのアカウント:ソース階層の指定の最上位サイトの SMS プロバイダーの [読み取り] アクセス許可 **** 配布ポイントの共有とアップグレードには、ソース階層のサイトへの**変更**および**削除**アクセス許可が必要です。
 
-    -   Account del database del sito di origine: autorizzazioni **Lettura** ed **Esegui** per il database di SQL Server per il sito di livello superiore specificato nella gerarchia di origine.  
+    -   ソース サイトのデータベース アカウント:ソース階層で指定された最上位サイトの SQL Server データベースに対する [ **読み取り** ] および [ **実行** ] アクセス許可。  
 
-     Se viene specificato l'uso dell'account computer, Configuration Manager usa l'account computer del sito principale della gerarchia di destinazione. Per questa opzione, verificare che l'account appartenga al gruppo di protezione **Distributed COM Users** nel dominio in cui si trova il sito di livello superiore della gerarchia di origine.  
+     コンピューター アカウントの使用を指定した場合、Configuration Manager では、移行先階層の最上位サイトのコンピューター アカウントを使用します。 このオプションでは、このアカウントが、ソース階層の最上位サイトが存在するドメインの **Distributed COM Users** セキュリティ グループのメンバーであることを確認してください。  
 
-7.  Per condividere i punti di distribuzione tra le gerarchie di origine e di destinazione, selezionare la casella di controllo **Abilita la condivisione dei punti di distribuzione per il server del sito di origine** . Se non si abilita la condivisione dei punti di distribuzione in questo momento, è possibile farlo modificando le credenziali del sito di origine dopo che la raccolta dei dati è terminata.  
+7.  ソース階層と移行先階層間で配布ポイントを共有するには、[ソース サイト サーバーの配布ポイント共有を有効にする] チェック ボックスをオンにします。 **** この時点で配布ポイントの共有を有効にしない場合は、データ収集が完了した後で、ソース サイトの資格情報を編集して有効にできます。  
 
-8.  Fare clic su **OK** per salvare la configurazione. Verrà visualizzata la finestra di dialogo **Stato raccolta dati** e la raccolta dei dati inizierà automaticamente.  
+8.  [ **OK** ] をクリックして構成を保存します。 [データ収集のステータス] ダイアログ ボックスが開いて、データ収集が自動的に開始されます。 ****  
 
-9. Al termine della raccolta dei dati, fare clic su **Chiudi** per chiudere la finestra di dialogo **Stato raccolta dati** e completare la configurazione.  
+9. データの収集が完了したら、[ **閉じる** ] をクリックして [ **データ収集のステータス** ] ダイアログ ボックスを閉じて構成を完了します。  
 
-##  <a name="BKBM_ConfigSrcSites"></a> Individuare siti di origine aggiuntivi della gerarchia di origine  
- Quando viene configurata una gerarchia di origine supportata, il sito di livello superiore di tale gerarchia viene configurato automaticamente come sito di origine e i dati vengono automaticamente raccolti dal sito. L'azione successiva dipende dalla versione di Configuration Manager eseguita dalla gerarchia di origine:  
+##  <a name="BKBM_ConfigSrcSites"></a> ソース階層の追加のソース サイトの特定  
+ サポートされているソース階層の構成時に、階層の最上位サイトが自動的にソース サイトとして構成され、そのサイトから自動的にデータが収集されます。 実行する次の操作は、ソース階層で実行されている Configuration Manager のバージョンによって異なります。  
 
--   Per una gerarchia di origine di Configuration Manager 2007, è possibile avviare la migrazione da tale sito di origine iniziale oppure configurare altri siti di origine dalla gerarchia di origine al termine della raccolta dei dati per il sito di origine iniziale. Per migrare i dati disponibili solo da un sito figlio, configurare siti di origine aggiuntivi per una gerarchia di Configuration Manager 2007. Ad esempio, potrebbero essere configurati siti di origine aggiuntivi per raccogliere dati sui contenuti che si vuole migrare quando sono stati creati in un sito figlio nella gerarchia di origine e non sono disponibili nel sito di livello superiore per la gerarchia di origine.  
+-   Configuration Manager 2007 ソース階層では、最初のソース サイトのデータ収集が終了した後で、最初のソース サイトから移行を開始するか、ソース階層から追加のソース サイトを設定できます。 子サイトからのみ使用できるデータを移行するには、Configuration Manager 2007 階層用に追加のソース サイトを設定します。 たとえば、子サイトで作成され、ソース階層の最上位サイトで使用できないコンテンツを移行する場合、このコンテンツに関するデータを収集するために、追加のソース サイトを構成できます。  
 
--   Per una gerarchia di origine di System Center 2012 Configuration Manager o System Center Configuration Manager, non è necessario selezionare siti di origine aggiuntivi. Questo è possibile perché le versioni di Configuration Manager usano un database condiviso disponibile nel sito principale della gerarchia di origine. Il database condiviso include tutte le informazioni che è possibile migrare da tutti i siti di tale gerarchia di origine. Ciò rende i dati di cui è possibile eseguire la migrazione disponibili nel sito di livello superiore della gerarchia di origine.  
+-   System Center 2012 Configuration Manager または System Center Configuration Manager のソース階層の場合は、追加のソース サイトを構成する必要はありません。 これは、これらのバージョンの Configuration Manager では、ソース階層の最上位サイトで使用できる共有データベースを使用するためです。 共有データベースには、ソース階層のすべてのサイトから移行できるすべての情報が含まれています。 これにより、ソース階層の最上位サイトからデータを移行できます。  
 
-Quando si configurano siti di origine aggiuntivi per una gerarchia di origine di Configuration Manager 2007, è necessario configurare i siti di origine aggiuntivi provenienti dalla gerarchia di origine procedendo dall'alto verso il basso. Prima di configurare uno dei siti figlio come sito di origine, è necessario configurare un sito padre come sito di origine.  
+Configuration Manager 2007 ソース階層の追加のソース サイトを構成する場合、ソース階層の最上位から最下位まで、追加のソース サイトを構成する必要があります。 親サイトをソース サイトとして構成してから、その子サイトのいずれかをソース サイトとして構成する必要があります。  
 
-Usare la procedura seguente per configurare siti di origine aggiuntivi per le gerarchie di origine di Configuration Manager 2007:  
+Configuration Manager 2007 ソース階層の追加ソース サイトを構成するには、次の手順を使用します。  
 
-### <a name="to-identify-additional-source-sites-in-the-source-hierarchy"></a>Per individuare siti di origine aggiuntivi nella gerarchia di origine 
+### <a name="to-identify-additional-source-sites-in-the-source-hierarchy"></a>ソース階層内で追加のソース サイトを特定するには 
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
+1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Migrazione**, quindi fare clic su **Gerarchia di origine**.  
+2.  **[管理]** ワークスペースで、 **[移行]**を展開してから **[ソース階層]**をクリックします。  
 
-3.  Scegliere il sito che si vuole configurare come sito di origine.  
+3.  ソース サイトとして構成するサイトを選択します。  
 
-4.  Nella scheda **Home** , nel gruppo **Sito di origine** , fare clic su **Configura**.  
+4.  [ホーム **** ] タブの [ソース サイト **** ] グループで、[構成 ****] をクリックします。  
 
-5.  Nella finestra di dialogo **Credenziali del sito di origine** , per gli account di accesso al sito di origine, specificare gli account che dispongono delle seguenti autorizzazioni:  
+5.  [ソース サイトの資格情報] ダイアログ ボックスで、ソース サイトのアクセス アカウントに、次のアクセス許可を持っているアカウントを指定します。 ****  
 
-    -   Account del sito di origine: autorizzazione **Lettura** per il provider SMS per il sito di livello superiore specificato nella gerarchia di origine. Per la condivisione e gli aggiornamenti dei punti di distribuzione sono necessarie le autorizzazioni **Modifica** ed **Eliminazione** per il sito nella gerarchia di origine.  
+    -   ソース サイトのアカウント:ソース階層の指定の最上位サイトの SMS プロバイダーの [読み取り] アクセス許可 **** 配布ポイントの共有とアップグレードには、ソース階層のサイトへの**変更**および**削除**アクセス許可が必要です。  
 
-    -   Account del database del sito di origine: autorizzazioni **Lettura** ed **Esegui** per il database di SQL Server per il sito di livello superiore specificato nella gerarchia di origine.  
+    -   ソース サイトのデータベース アカウント:ソース階層で指定された最上位サイトの SQL Server データベースに対する [ **読み取り** ] および [ **実行** ] アクセス許可。  
 
-    Se viene specificato l'uso dell'account computer, Configuration Manager usa l'account computer del sito principale della gerarchia di destinazione. Per questa opzione, verificare che l'account appartenga al gruppo di protezione **Distributed COM Users** nel dominio in cui si trova il sito di livello superiore della gerarchia di origine.  
+    コンピューター アカウントの使用を指定した場合、Configuration Manager では、移行先階層の最上位サイトのコンピューター アカウントを使用します。 このオプションでは、このアカウントが、ソース階層の最上位サイトが存在するドメインの **Distributed COM Users** セキュリティ グループのメンバーであることを確認してください。  
 
-6.  Per condividere i punti di distribuzione tra le gerarchie di origine e di destinazione, selezionare la casella di controllo **Abilita la condivisione dei punti di distribuzione per il server del sito di origine** . Se non si abilita la condivisione dei punti di distribuzione in questo momento, è possibile farlo modificando le credenziali per il sito di origine dopo che la raccolta dei dati è terminata.  
+6.  ソース階層と移行先階層間で配布ポイントを共有するには、[ソース サイト サーバーの配布ポイント共有を有効にする] チェック ボックスをオンにします。 **** この時点で配布ポイントの共有を有効にしない場合は、データ収集が完了した後で、ソース サイトの資格情報を編集して有効にできます。  
 
-7. Fare clic su **OK** per salvare la configurazione. Verrà visualizzata la finestra di dialogo **Stato raccolta dati** e la raccolta dei dati inizierà automaticamente.  
+7. [ **OK** ] をクリックして構成を保存します。 [データ収集のステータス] ダイアログ ボックスが開いて、データ収集が自動的に開始されます。 ****  
 
-8.  Al termine della raccolta dei dati, fare clic su **Chiudi** per completare la configurazione.  
-
+8.  データ収集が終了したら、[閉じる] をクリックして構成を完了します。 ****  

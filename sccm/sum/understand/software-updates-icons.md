@@ -1,6 +1,6 @@
 ---
-title: Icone usate per gli aggiornamenti software | Microsoft Docs
-description: La console di Configuration Manager contiene le icone che indicano uno stato per il gruppo di aggiornamenti software o per l&quot;aggiornamento sincronizzato.
+title: "ソフトウェア更新プログラムに使用されるアイコン | Microsoft Docs"
+description: "Configuration Manager コンソールには、同期された更新プログラムまたはソフトウェア更新プログラム グループの状態を示すアイコンが含まれています。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -9,124 +9,117 @@ ms.date: 10/06/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: 63c5ef72-5715-4d86-85a2-71beba469fab
-translationtype: Human Translation
-ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
 ms.openlocfilehash: 04c5ccc53263b2672096b564695a636bfb28d952
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="icons-used-for-software-updates-in-system-center-configuration-manager"></a>Icone usate per gli aggiornamenti software in System Center Configuration Manager
+# <a name="icons-used-for-software-updates-in-system-center-configuration-manager"></a>System Center Configuration Manager でのソフトウェア更新プログラムに使用されるアイコン
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Gli aggiornamenti software sincronizzati vengono visualizzati nella console di Configuration Manager e la prima colonna per ogni aggiornamento software contiene un'icona che indica uno stato specifico. I gruppi di aggiornamenti software sono rappresentati anche con un'icona che fornisce informazioni sullo stato degli aggiornamenti software contenuti nel gruppo. Questa sezione fornisce informazioni sulle icone di aggiornamento software e sul significato di ogni icona.  
+同期が完了したすべてのソフトウェア更新プログラムは Configuration Manager コンソールに表示され、各ソフトウェア更新プログラムの最初の列には特定の状態を示すアイコンが表示されます。 またソフトウェア更新プログラム グループには、グループに含まれるソフトウェア更新プログラムの状態に関する情報を提供するアイコンが表示されます。 このセクションでは、ソフトウェア更新プログラムのアイコンとそれぞれが表す意味について取り上げます。  
 
-## <a name="icons-for-software-updates"></a>Icone per gli aggiornamenti software  
- Gli aggiornamenti software sincronizzati sono rappresentati da una delle icone seguenti.  
+## <a name="icons-for-software-updates"></a>ソフトウェア更新プログラムのアイコン  
+ 同期されたソフトウェア更新プログラムは、次のいずれかのアイコンで表されます。  
 
-### <a name="normal-icon"></a>Icona Normale  
- ![icona](../media/Normal.jpg "Icona normale") L'icona con la freccia verde rappresenta un aggiornamento software normale.  
+### <a name="normal-icon"></a>［通常］アイコン  
+ ![アイコン](../media/Normal.jpg "[通常] アイコン") 緑色の矢印の付いたアイコンは、通常のソフトウェア更新プログラムを表します。  
 
- **Descrizione:**  
+ **説明:**  
 
- Gli aggiornamenti software normali sono stati sincronizzati e sono disponibili per la distribuzione software.  
+ 通常のソフトウェア更新プログラムは同期済みで、ソフトウェアの展開に利用できます。  
 
- **Problemi operativi:**  
+ **操作上の注意事項 :**  
 
- Non sono presenti problemi operativi.  
+ 操作上の注意事項はありません。  
 
-### <a name="expired-icon"></a>Icona Scaduto  
- ![icona](../media/Expired.jpg "Icona Scaduto") L'icona con la X nera rappresenta un aggiornamento software scaduto. È possibile identificare gli aggiornamenti software scaduti anche visualizzando la colonna **Scaduto** per l'aggiornamento software quando questo viene visualizzato nella console di Configuration Manager.  
+### <a name="expired-icon"></a>［有効期限切れ］アイコン  
+ ![アイコン](../media/Expired.jpg "[有効期限切れ] アイコン") 黒の X 印が付いたアイコンは、期限切れのソフトウェア更新プログラムを表します。 有効期限切れのソフトウェア更新プログラムは、Configuration Manager コンソールに表示されたときにソフトウェア更新プログラムの **[有効期限切れ]** 列を確認することで識別することもできます。  
 
- **Descrizione:**  
+ **説明:**  
 
- Gli aggiornamenti software scaduti erano in precedenza distribuibili ai computer client, ma dopo la scadenza di un aggiornamento software non è possibile creare nuove distribuzioni per gli aggiornamenti software. Gli aggiornamenti software scaduti vengono rimossi dalle distribuzioni attive e non saranno più disponibili per i client.  
+ 有効期限切れのソフトウェア更新プログラムは、以前にクライアント コンピューターに展開可能であったものですが、ソフトウェア更新プログラムの有効期限が切れると、そのソフトウェア更新プログラムの展開を新しく作成することはできなくなります。 有効期限切れのソフトウェア更新プログラムは、アクティブな展開から除外され、クライアントが利用できなくなります。  
 
- **Problemi operativi:**  
+ **操作上の注意事項 :**  
 
- Non sono presenti problemi operativi.
+ 操作上の注意事項はありません。
 
-### <a name="superseded-icon"></a>Icona Sostituito  
- ![icona](../media/Superseded.jpg "Icona Sostituito") L'icona con la stella gialla rappresenta un aggiornamento software sostituito. È possibile identificare gli aggiornamenti software sostituiti anche visualizzando la colonna **Sostituito** per l'aggiornamento software quando questo viene visualizzato nella console di Configuration Manager.  
+### <a name="superseded-icon"></a>［優先］アイコン  
+ ![アイコン](../media/Superseded.jpg "[優先] アイコン") 黄色い星の付いたアイコンは、置き換えられたソフトウェア更新プログラムを表します。 置き換えられたソフトウェア更新プログラムは、Configuration Manager コンソールに表示されるときにソフトウェア更新プログラムの **[優先]** 列を確認して識別することもできます。  
 
- **Descrizione:**  
+ **説明:**  
 
- Gli aggiornamenti software sostituiti sono stati sostituiti con le versioni più recenti dell'aggiornamento software. In genere, un aggiornamento software che sostituisce un altro aggiornamento software offre uno o più dei seguenti vantaggi:  
+ 置き換えられたソフトウェア更新プログラムは、新しいバージョンのソフトウェア更新プログラムによって置き換えられています。 一般的に、別のソフトウェア更新プログラムを置き換えるソフトウェア更新プログラムには、次の 1 つ以上が当てはまります。  
 
--   Migliora o incrementa la correzione fornita da uno o più aggiornamenti software rilasciati in precedenza.  
+-   機能強化、改良、または以前にリリースされた 1 つ以上のソフトウェア更新プログラムで提供される修正への機能追加。  
 
--   Migliora l'efficienza del pacchetto dei file di aggiornamento software, che viene installato nei client se l'aggiornamento software viene approvato per l'installazione. Ad esempio, l'aggiornamento software sostituito potrebbe contenere file che non sono più rilevanti per la correzione o per i sistemi operativi ora supportati dal nuovo aggiornamento software, quindi tali file non sono inclusi nel pacchetto di file di aggiornamento software sostitutivo.  
+-   ソフトウェア更新プログラムのインストールが承認された場合、クライアントにインストールされるソフトウェア更新プログラム ファイル パッケージの効率を改善します。 たとえば、置き換えられたソフトウェア更新プログラムに、修正、新しいソフトウェア更新プログラムでサポートするオペレーティング システムに関連しないファイルが含まれることがあるため、これらのファイルは置き換える方のソフトウェア更新プログラムのファイル パッケージには含まれません。  
 
--   Aggiorna le versioni più recenti di un prodotto o, in altre parole, non è più applicabile alle versioni o configurazioni precedenti di un prodotto. Gli aggiornamenti software possono anche sostituire altri aggiornamenti software se sono state apportate modifiche per espandere il supporto della lingua. Ad esempio, una revisione recente di un aggiornamento prodotto per Microsoft Office potrebbe rimuovere il supporto per un sistema operativo precedente, ma potrebbe aggiungere supporto aggiuntivo per nuove lingue nel rilascio dell'aggiornamento software iniziale.  
+-   より新しいバージョンの製品を更新し、古いバージョンや構成の製品には適用できません。 また、言語サポートを拡張する修正が行われたため、ソフトウェア更新プログラムが他のソフトウェア更新プログラムを置き換えることもあります。 たとえば、Microsoft Office 用の比較的新しいバージョンの製品更新プログラムにより、古いオペレーティング システムがサポートされなくなり、代わりに、初期ソフトウェア更新プログラム リリースで新しい言語が追加サポートされるようになる場合があります。  
 
- Nella scheda Regole di sostituzione delle proprietà del componente del punto di aggiornamento software è possibile specificare come gestire gli aggiornamenti software sostituiti. Per altre informazioni, vedere [Supersedence rules](../plan-design/plan-for-software-updates.md#BKMK_SupersedenceRules).  
+ [ソフトウェアの更新ポイント コンポーネント] プロパティの [置き換えの規則] タブで、置き換えられたソフトウェア更新プログラムの管理方法を指定できます。 詳細については、「 [Supersedence rules](../plan-design/plan-for-software-updates.md#BKMK_SupersedenceRules)」を参照してください。  
 
- **Problemi operativi:**  
+ **操作上の注意事項 :**  
 
- Quando possibile, distribuire l'aggiornamento software sostitutivo ai computer client anziché l'aggiornamento software sostituito. È possibile visualizzare un elenco degli aggiornamenti software che sostituiscono l'aggiornamento software nella scheda **Informazioni di sostituzione** delle proprietà dell'aggiornamento software.  
+ できれば、置き換えられたソフトウェア更新プログラムではなく、置き換えるソフトウェア更新プログラムをクライアント コンピューターに展開してください。 ソフトウェア更新プログラムのプロパティの **[更新プログラムの置き換えに関する情報]** タブで、ソフトウェア更新プログラムを置き換えるソフトウェア更新プログラムの一覧を表示できます。  
 
-### <a name="invalid-icon"></a>Icona Non valido  
- ![Icona](../media/Invalid.jpg "Icona Non valido") L'icona con la X rossa rappresenta un aggiornamento software non valido.  
+### <a name="invalid-icon"></a>［無効］アイコン  
+ ![アイコン](../media/Invalid.jpg "[無効] アイコン") 赤い X 印の付いたアイコンは、使用できないソフトウェア更新プログラムを表します。  
 
- **Descrizione:**  
+ **説明:**  
 
- Gli aggiornamenti software non validi si trovano in una distribuzione attiva, ma per qualche motivo il contenuto (file di aggiornamento software) non è disponibile. Questo stato può verificarsi negli scenari seguenti:  
+ 使用できないソフトウェア更新プログラムがアクティブな展開に含まれていますが、何らかの理由でコンテンツ (ソフトウェア更新ファイル) が利用できません。 この状態が生じる可能性があるシナリオを次に示します。  
 
--   L'aggiornamento software viene distribuito correttamente, ma il file di aggiornamento software viene rimosso dal pacchetto di distribuzione e non è più disponibile.  
+-   ソフトウェア更新プログラムを正常に展開しましたが、展開パッケージからそのソフトウェア更新プログラム ファイルが削除され、使用できなくなりました。  
 
--   Si crea una distribuzione degli aggiornamenti software in un sito e l'oggetto di distribuzione viene replicato correttamente in un sito figlio, ma il pacchetto di distribuzione non viene replicato nel sito figlio.  
+-   サイトでソフトウェア更新プログラムの展開を作成し、展開オブジェクトが子サイトに正常にレプリケートされましたが、展開パッケージが子サイトに正常にレプリケートされていません。  
 
- **Problemi operativi:**  
+ **操作上の注意事項 :**  
 
- Quando non è disponibile contenuto per un aggiornamento software, i client non riescono a installare l'aggiornamento software finché il contenuto non diventa disponibile in un punto di distribuzione. È possibile ridistribuire il contenuto nei punti di distribuzione usando l'azione **Ridistribuisci** . Quando non è disponibile contenuto per un aggiornamento software in una distribuzione creata in un sito padre, l'aggiornamento software deve essere replicato o ridistribuito al sito figlio. Per altre informazioni sulla ridistribuzione di contenuto, vedere [Manage content you have distributed](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage) (Gestire il contenuto distribuito).  
+ ソフトウェア更新プログラムのコンテンツがない場合は、クライアントはコンテンツが配布ポイントで利用可能になるまで、ソフトウェア更新プログラムをインストールできません。 **[再配布]** アクションを使用すると、コンテンツを配布ポイントに再配布できます。 親サイトで作成された展開内のソフトウェア更新プログラムにコンテンツがない場合は、子サイトで、ソフトウェア更新プログラムをレプリケートするか、再配布する必要があります。 コンテンツの再配布について詳しくは、「[Manage content you have distributed](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage)」(再配布したコンテンツの管理) を参照してください。  
 
-### <a name="metadata-only-icon"></a>Icona Solo metadati
- ![Icona](../media/MetadataOnly.png "Icona Solo metadati") L'icona con la freccia blu rappresenta un aggiornamento software solo di metadati.
+### <a name="metadata-only-icon"></a>メタデータのみアイコン
+ ![アイコン](../media/MetadataOnly.png "メタデータのみアイコン") 青い矢印の付いたアイコンは、メタデータのみのソフトウェア更新プログラムを表します。
 
- **Descrizione:**  
+ **説明:**  
 
- Gli aggiornamenti software solo di metadati sono disponibili nella console di Configuration Manager per la creazione di report. Non è possibile distribuire o scaricare gli aggiornamenti software solo di metadati perché un file di aggiornamento software non è associato ai metadati degli aggiornamenti software.  
+ メタデータのみのソフトウェア更新プログラムは、Configuration Manager コンソールでレポートのために利用できます。 メタデータのみのソフトウェア更新プログラムは展開もダウンロードもできません。ソフトウェア更新プログラム ファイルがソフトウェア更新プログラム メタデータには関連付けられていないためです。  
 
- **Problemi operativi:**  
+ **操作上の注意事項 :**  
 
- Gli aggiornamenti software solo di metadati sono disponibili per la creazione di report e non sono destinati alla distribuzione di aggiornamenti software.  
+ メタデータのみのソフトウェア更新プログラムは、レポートのために使用でき、ソフトウェア更新プログラムの展開での使用は想定されていません。  
 
-## <a name="icons-for-software-update-groups"></a>Icone per gruppi di aggiornamenti software  
- I gruppi di aggiornamenti software sono rappresentati da una delle icone seguenti.  
+## <a name="icons-for-software-update-groups"></a>ソフトウェア更新プログラム グループのアイコン  
+ ソフトウェア更新プログラム グループは、次のいずれかのアイコンで表されます。  
 
-### <a name="normal-icon"></a>Icona Normale  
- ![Icona](../media/Normal.jpg "Icona Normale") L'icona con la freccia verde rappresenta un gruppo di aggiornamenti software che include solo gli aggiornamenti software normali.  
+### <a name="normal-icon"></a>［通常］アイコン  
+ ![アイコン](../media/Normal.jpg "[通常] アイコン") 緑色の矢印の付いたアイコンは、通常のソフトウェア更新プログラムのみが含まれるソフトウェア更新プログラム グループを表します。  
 
- **Problemi operativi:**  
+ **操作上の注意事項 :**  
 
- Non sono presenti problemi operativi.  
+ 操作上の注意事項はありません。  
 
-### <a name="expired-icon"></a>Icona Scaduto  
- ![Icona](../media/Expired.jpg "Icona Scaduto") L'icona con la X nera rappresenta un gruppo di aggiornamenti software che include uno o più aggiornamenti software scaduti.  
+### <a name="expired-icon"></a>［有効期限切れ］アイコン  
+ ![アイコン](../media/Expired.jpg "[有効期限切れ] アイコン") 黒い X 印が付いたアイコンは、有効期限切れのソフトウェア更新プログラムが 1 つ以上含まれるソフトウェア更新プログラム グループを表します。  
 
- **Problemi operativi:**  
+ **操作上の注意事項 :**  
 
- Rimuovere o sostituire gli aggiornamenti software scaduti nel gruppo di aggiornamenti software, quando possibile.  
+ できれば、ソフトウェア更新プログラム グループの有効期限切れのソフトウェア更新プログラムを削除するか、置き換えてください。  
 
-### <a name="superseded-icon"></a>Icona Sostituito  
- ![Icona](../media/Superseded.jpg "Icona Sospeso") L'icona con la stella gialla rappresenta un gruppo di aggiornamenti software che include uno o più aggiornamenti software sostituiti.  
+### <a name="superseded-icon"></a>［優先］アイコン  
+ ![アイコン](../media/Superseded.jpg "[優先] アイコン") 黄色い星が付いたアイコンは、1 つ以上の置き換えられるソフトウェア更新プログラムを含むソフトウェア更新プログラム グループを表します。  
 
- **Problemi operativi:**  
+ **操作上の注意事項 :**  
 
- Sostituire l'aggiornamento software sostituito nel gruppo di aggiornamenti software con l'aggiornamento software sostitutivo, quando possibile.  
+ できれば、ソフトウェア更新プログラム グループ内の置き換えられるソフトウェア更新プログラムを、置き換えるソフトウェア更新プログラムに置換してください。  
 
-### <a name="invalid-icon"></a>Icona Non valido  
- ![Icona](../media/Invalid.jpg "Icona Non valido") L'icona con la X rossa rappresenta un gruppo di aggiornamenti software che include uno o più aggiornamenti software non validi.  
+### <a name="invalid-icon"></a>［無効］アイコン  
+ ![アイコン](../media/Invalid.jpg "[無効] アイコン") 赤い X 印の付いたアイコンは、1 つ以上の使用できないソフトウェア更新プログラムが含まれるソフトウェア更新プログラム グループを表します。  
 
- **Problemi operativi:**  
+ **操作上の注意事項 :**  
 
- Quando non è disponibile contenuto per un aggiornamento software, i client non riescono a installare l'aggiornamento software finché il contenuto non diventa disponibile in un punto di distribuzione. È possibile ridistribuire il contenuto nei punti di distribuzione usando l'azione **Ridistribuisci** . Quando non è disponibile contenuto per un aggiornamento software in una distribuzione creata in un sito padre, l'aggiornamento software deve essere replicato o ridistribuito al sito figlio. Per altre informazioni sulla ridistribuzione di contenuto, vedere [Manage content you have distributed](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage) (Gestire il contenuto distribuito).  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+ ソフトウェア更新プログラムのコンテンツがない場合は、クライアントはコンテンツが配布ポイントで利用可能になるまで、ソフトウェア更新プログラムをインストールできません。 **[再配布]** アクションを使用すると、コンテンツを配布ポイントに再配布できます。 親サイトで作成された展開内のソフトウェア更新プログラムにコンテンツがない場合は、子サイトで、ソフトウェア更新プログラムをレプリケートするか、再配布する必要があります。 コンテンツの再配布について詳しくは、「[Manage content you have distributed](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage)」(再配布したコンテンツの管理) を参照してください。  

@@ -1,154 +1,150 @@
 ---
-title: Aggiornare i client | Microsoft Docs
-description: Informazioni su come aggiornare i client in System Center Configuration Manager.
+title: "クライアントのアップグレード | Microsoft Docs"
+description: "System Center Configuration Manager でクライアントをアップグレードする方法について説明します。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 446c83b5-c292-4e74-ba19-0792ac6b3472
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
 ms.openlocfilehash: 4b80e0e688dd6482bc9a7fe111607e258071f45a
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="upgrade-clients-in-system-center-configuration-manager"></a>Aggiornare i client in System Center Configuration Manager
+# <a name="upgrade-clients-in-system-center-configuration-manager"></a>System Center Configuration Manager でのクライアントのアップグレード
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-È possibile usare diversi metodi per aggiornare il software client di System Center Configuration Manager in computer Windows, server UNIX e Linux e computer Mac. Di seguito sono elencati i principali vantaggi e svantaggi di ogni metodo.  
+Windows コンピューター、UNIX/Linux サーバー、および Mac コンピューターで System Center Configuration Manager クライアント ソフトウェアをアップグレードするには、さまざまな方法があります。 各方法の利点と欠点の詳細について以下に説明します。  
 
 > [!TIP]  
->  Se si esegue l'aggiornamento dell'infrastruttura di server da una versione precedente di Configuration Manager \(ad esempio Configuration Manager 2007 o System Center 2012 Configuration Manager\), è consigliabile completare gli aggiornamenti dei server, tra cui l'installazione di tutti gli aggiornamenti del ramo corrente, prima dell'aggiornamento dei client di Configuration Manager. In questo modo si disporrà anche della versione più recente del software client.  
+>  Configuration Manager の以前のバージョン \(Configuration Manager 2007 または System Center 2012 Configuration Manager など\) から、サーバー インフラストラクチャをアップグレードする場合は、Configuration Manager クライアントをアップグレードする前に、現在のすべてのブランチの更新プログラムのインストールを含む、サーバーのアップグレードを完了することをお勧めします。 これにより、クライアント ソフトウェアの最新バージョンも使用できます。  
 
-## <a name="group-policy-installation"></a>Installazione tramite Criteri di gruppo  
- **Piattaforma client supportata:** Windows  
+## <a name="group-policy-installation"></a>グループ ポリシーによるインストール  
+ **サポートされるクライアント プラットフォーム:** Windows  
 
- **Vantaggi**  
+ **長所**  
 
--   Non richiede l'individuazione dei computer prima di poter aggiornare il client.  
+-   クライアントをアップグレードする前に、コンピューターが検出されている必要はありません。  
 
--   Può essere utilizzato per le nuove installazioni di client o per gli aggiornamenti.  
+-   新しいクライアントのインストールまたは更新で使用できます。  
 
--   I computer possono leggere le proprietà di installazione client che sono state pubblicate in Servizi di dominio Active Directory.  
+-   コンピューターは、Active Directory ドメイン サービスに公表されたクライアント インストール プロパティを読み取ることができます。  
 
--   Non richiede la configurazione e il mantenimento di un account di installazione per il computer client previsto.  
+-   目的のクライアント コンピューターのインストール アカウントを構成してメンテナンスを行う必要はありません。  
 
- **Svantaggi**  
+ **短所**  
 
--   Può causare traffico di rete elevato se viene aggiornato un numero elevato di client.  
+-   多数のクライアントをアップグレードする場合、大量のネットワーク トラフィックを発生させる可能性があります。  
 
--   Se lo schema di Active Directory non viene esteso per Configuration Manager, è necessario usare le [impostazioni di Criteri di gruppo](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientGP) per aggiungere le proprietà di installazione del client ai computer presenti nel sito.  
+-   Active Directory スキーマが Configuration Manager 向けに拡張されていない場合、[グループ ポリシー設定](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientGP)を使用してサイト内のコンピューターにクライアント インストール プロパティを追加する必要があります。  
 
 
-## <a name="logon-script-installation"></a>Installazione tramite script di accesso  
- **Piattaforma client supportata:** Windows  
+## <a name="logon-script-installation"></a>ログオン スクリプトによるインストール  
+ **サポートされるクライアント プラットフォーム:** Windows  
 
- **Vantaggi**  
+ **長所**  
 
--   Non richiede l'individuazione dei computer prima di poter installare il client.  
+-   クライアントをインストールする前に、コンピューターが検出されている必要はありません。  
 
--   Può essere utilizzato per le nuove installazioni di client o per gli aggiornamenti.  
+-   新しいクライアントのインストールまたは更新で使用できます。  
 
--   Supporta l'utilizzo di proprietà della riga di comando per CCMSetup.  
+-   CCMSetup のコマンド ライン プロパティを使用してサポートします。  
 
- **Svantaggi**  
+ **短所**  
 
--   Può causare traffico di rete elevato se viene aggiornato un numero elevato di client in poco tempo.  
+-   多数のクライアントをアップグレードする場合、短時間で大量のネットワーク トラフィックを発生させる可能性があります。  
 
--   L'aggiornamento di tutti i computer client può richiedere molto tempo se gli utenti non accedono spesso alla rete.  
+-   ユーザーがネットワークに頻繁にログオンしない場合は、すべてのクライアント コンピューターでアップグレードするのに長時間かかる場合があります。  
 
- Per altre informazioni, vedere [Come installare i client di Configuration Manager usando script di accesso](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientLogonScript).  
+ 詳細については、「[ログオン スクリプトを使用した Configuration Manager クライアントのインストール方法](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientLogonScript)」を参照してください。  
 
-## <a name="manual-installation"></a>Installazione manuale  
- **Piattaforma client supportata:** Windows, UNIX/Linux, Mac OS X  
+## <a name="manual-installation"></a>手動インストール  
+ **サポートされるクライアント プラットフォーム:** Windows、UNIX/Linux、Mac OS X  
 
- **Vantaggi**  
+ **長所**  
 
--   Non richiede l'individuazione dei computer prima di poter aggiornare il client.  
+-   クライアントをアップグレードする前に、コンピューターが検出されている必要はありません。  
 
--   Può essere utile a scopo di test.  
+-   テストの目的で役立ちます。  
 
--   Supporta l'utilizzo di proprietà della riga di comando per CCMSetup.  
+-   CCMSetup のコマンド ライン プロパティを使用してサポートします。  
 
- **Svantaggi**  
+ **短所**  
 
--   Non prevede automazione, pertanto risulta dispendioso in termini di tempo.  
+-   自動化されていないため、時間を削減できます。  
 
- Per altre informazioni, vedere i seguenti argomenti:  
+ 詳細については、以下のトピックを参照してください。  
 
--   [Come installare manualmente i client di Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Manual)  
+-   [Configuration Manager クライアントの手動インストール方法](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Manual)  
 
--   [Come aggiornare i client per i server Linux e UNIX in System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-linux-and-unix-servers.md)  
+-   [System Center Configuration Manager で Linux および UNIX サーバーのクライアントをアップグレードする方法](../../../../core/clients/manage/upgrade/upgrade-clients-for-linux-and-unix-servers.md)  
 
--   [Come aggiornare i client di System Center Configuration Manager in computer Mac](../../../../core/clients/manage/upgrade/upgrade-clients-on-mac-computers.md)  
+-   [System Center Configuration Manager で Mac コンピューター上のクライアントをアップグレードする方法](../../../../core/clients/manage/upgrade/upgrade-clients-on-mac-computers.md)  
 
-## <a name="upgrade-installation-application-management"></a>Installazione aggiornamento (gestione applicazioni)  
- **Piattaforma client supportata:** Windows  
-
-> [!NOTE]  
->  Non è possibile aggiornare i client di Configuration Manager 2007 con questo metodo. In questo scenario è possibile distribuire il client di Configuration Manager come pacchetto dal sito di Configuration Manager 2007 oppure è possibile usare l'aggiornamento automatico del client, che crea e distribuisce automaticamente un pacchetto contenente la versione più recente del client.  
-
- **Vantaggi**  
-
--   Supporta l'utilizzo di proprietà della riga di comando per CCMSetup.  
-
- **Svantaggi**  
-
--   Può causare elevato traffico di rete quando si esegue la distribuzione del client in raccolte di grandi dimensioni.  
-
--   Può essere utilizzato solo per aggiornare il software client nei computer che sono stati individuati e assegnati al sito.  
-
- Per altre informazioni, vedere [Come installare i client di Configuration Manager usando un pacchetto e un programma](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientApp).  
-
-## <a name="automatic-client-upgrade"></a>Aggiornamento automatico del client  
+## <a name="upgrade-installation-application-management"></a>アップグレード インストール (アプリケーション管理)  
+ **サポートされるクライアント プラットフォーム:** Windows  
 
 > [!NOTE]  
->  È possibile usare l'aggiornamento automatico per aggiornare i client di Configuration Manager 2007 a client di System Center Configuration Manager. Un client di Configuration Manager 2007 può eseguire l'assegnazione a un sito di Configuration Manager. Non può tuttavia eseguire altre azioni oltre all'aggiornamento automatico del client.  
+>  この方法では、Configuration Manager 2007 クライアントをアップグレードすることはできません。 このシナリオでは、Configuration Manager 2007 サイトからのパッケージとして Configuration Manager クライアントを展開したり、自動クライアント アップグレードを使用して、最新バージョンのクライアントを含むパッケージを自動的に作成して展開したりできます。  
 
- **Piattaforma client supportata:** Windows  
+ **長所**  
 
- **Vantaggi**  
+-   CCMSetup のコマンド ライン プロパティを使用してサポートします。  
 
--   Può essere utilizzato per mantenere automaticamente i client presenti nel sito aggiornati alla versione più recente.  
+ **短所**  
 
--   Richiede un livello di amministrazione minimo.  
+-   大規模なコレクションに対してクライアントを配布する場合、ネットワーク トラフィックの量が増大する可能性があります。  
 
- **Svantaggi**  
+-   サイトで探索または割り当てられたコンピューター上のクライアント ソフトウェアをアップグレードするときのみ使用できます。  
 
--   Può essere utilizzato solo per aggiornare il software client e non per installare un nuovo client.  
+ 詳細については、「[パッケージとプログラムを使用した Configuration Manager クライアントのインストール方法](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientApp)」を参照してください。  
 
--   Non è adatto per l'aggiornamento di più client contemporaneamente.  
+## <a name="automatic-client-upgrade"></a>自動クライアント アップグレード  
 
--   Si applica a tutti i client presenti nella gerarchia assegnati a un sito. Non può essere definito dalla raccolta.  
+> [!NOTE]  
+>  Configuration Manager 2007 クライアントを System Center Configuration Manager クライアントにアップグレードするために使用できます。 Configuration Manager 2007 クライアントは Configuration Manager サイトに割り当てることができますが、自動クライアント アップグレード以外の操作は実行できません。  
 
--   Opzioni di programmazione limitate.  
+ **サポートされるクライアント プラットフォーム:** Windows  
 
- Per altre informazioni, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
+ **長所**  
 
-## <a name="client-testing"></a>Test di client  
- **Piattaforma client supportata:** Windows  
+-   サイト内のクライアントを自動的に最新バージョンに保つのに使用できます。  
 
- **Vantaggi**  
+-   最小限の管理が必要です。  
 
--   Può essere usato per testare nuove versioni client in una raccolta di pre-produzione più piccola.  
+ **短所**  
 
--   Al termine dei test, i client in pre-produzione vengono alzati di livello alla produzione e aggiornati automaticamente nel sito di Configuration Manager.  
+-   クライアント ソフトウェアのアップグレードにのみ使用できます。新しいクライアントのインストールには使用できません。  
 
- **Svantaggi**  
+-   同時に多くのクライアントをアップグレードするには適していません。  
 
--   Può essere utilizzato solo per aggiornare il software client e non per installare un nuovo client.  
+-   サイトに関連付けられた階層内のすべてのクライアントに対して適用します。 コレクションでスコープを設定することはできません。  
 
- [Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager](../../../../core/clients/manage/upgrade/test-client-upgrades.md)  
+-   スケジュール オプションは限定されています。  
 
+ 詳細については、「[System Center Configuration Manager で Windows コンピューター用クライアントをアップグレードする方法](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md)」を参照してください。  
+
+## <a name="client-testing"></a>クライアントのテスト  
+ **サポートされるクライアント プラットフォーム:** Windows  
+
+ **長所**  
+
+-   小規模な実稼働前環境コレクションで新しいクライアント バージョンをテストするために使用できます。  
+
+-   テストが完了すると、実稼働前環境のクライアントは実稼働環境に昇格され、Configuration Manager サイト全体で自動的にアップグレードされます。  
+
+ **短所**  
+
+-   クライアント ソフトウェアのアップグレードにのみ使用できます。新しいクライアントのインストールには使用できません。  
+
+ [System Center Configuration Manager で実稼働前コレクションのクライアント アップグレードをテストする方法](../../../../core/clients/manage/upgrade/test-client-upgrades.md)  

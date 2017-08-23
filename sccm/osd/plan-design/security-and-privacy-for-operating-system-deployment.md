@@ -1,215 +1,208 @@
 ---
-title: Sicurezza e privacy per la distribuzione del sistema operativo | Microsoft Docs
-description: Informazioni sulle procedure consigliate per sicurezza e privacy per la distribuzione del sistema operativo in System Center Configuration Manager.
+title: "オペレーティング システムの展開に関するセキュリティとプライバシー | Microsoft Docs"
+description: "System Center Configuration Manager のオペレーティング システムの展開でのセキュリティとプライバシーのベスト プラクティスについて説明します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5ee5928f-3d72-4b00-8156-1e0d1030a96c
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: 5632a753fc565312a80b2ed69ce438335b3fad50
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-operating-system-deployment-in-system-center-configuration-manager"></a>Sicurezza e privacy per la distribuzione del sistema operativo in System Center Configuration Manager
+# <a name="security-and-privacy-for-operating-system-deployment-in-system-center-configuration-manager"></a>System Center Configuration Manager のオペレーティング システムの展開でのセキュリティとプライバシー
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-In questo argomento vengono illustrate le informazioni sulla sicurezza e la privacy per la distribuzione del sistema operativo in System Center Configuration Manager.  
+このトピックには、System Center Configuration Manager のオペレーティング システムの展開でのセキュリティとプライバシーの情報が含まれています。  
 
-##  <a name="a-namebkmksecurityhardwareinventorya-security-best-practices-for-operating-system-deployment"></a><a name="BKMK_Security_HardwareInventory"></a> Procedure di sicurezza consigliate per la distribuzione del sistema operativo  
- Usare le seguenti procedure di sicurezza consigliate quando si distribuiscono sistemi operativi con Configuration Manager:  
+##  <a name="BKMK_Security_HardwareInventory"></a> オペレーティング システムの展開におけるセキュリティのベスト プラクティス  
+ Configuration Manager でオペレーティング システムを展開する際、次のセキュリティのベストプラクティスを参考にします。  
 
--   **Implementare i controlli di accesso per proteggere il supporto di avvio**  
+-   **アクセス制御を実装して起動可能なメディアを保護する**  
 
-     Quando si crea un supporto di avvio, assegnare sempre una password per proteggere il supporto. Tuttavia, anche con una password, vengono crittografati solo i file che contengono informazioni sensibili e tutti i file possono essere sovrascritti.  
+     起動可能なメディアを作成するときは、メディアを保護するためにパスワードを常に割り当てます。 しかし、パスワードを割り当てたとしても、機密情報を含むファイルのみが暗号化され、すべてのファイルは上書きすることができます。  
 
-     Controllare l'accesso fisico ai supporti per evitare che un utente malintenzionato utilizzi gli attacchi crittografici per ottenere il certificato di autenticazione client.  
+     メディアに対する物理的アクセスを制御して、攻撃者が暗号化攻撃を使用してクライアント認証証明書を取得することを防ぐことができます。  
 
-     Per evitare che un client installi criteri contenuto o clienti manomessi, viene eseguito l'hashing del contenuto e il contenuto deve essere usato con i criteri originali.  Se l'hash contenuto o il controllo che il contenuto soddisfi i criteri hanno esito negativo, il client non utilizzerà il supporto di avvio. Viene effettuato solo l'hashing del contenuto, ma non dei criteri, che vengono crittografati e protetti quando si specifica una password, cosa che rende più difficile la possibilità di un attacco per la modifica dei criteri.  
+     改ざんされたコンテンツまたはクライアント ポリシーがクライアントにインストールされないように、コンテンツはハッシュ化されます。また、コンテンツは元のポリシーと共に使用する必要があります。  コンテンツのハッシュ化、またはコンテンツがポリシーと一致する確認に失敗した場合、クライアントはその起動可能なメディアを使用しません。 コンテンツのみがハッシュ化されます。ポリシーは、パスワードを指定するときにハッシュ化されず、暗号化され、保護されます。そのため、ポリシーを変更する攻撃が困難になるなりす。  
 
--   **Usare una posizione protetta quando si crea il supporto per le immagini del sistema operativo**  
+-   **オペレーティング システム イメージのメディア作成にセキュリティで保護された場所を使用する**  
 
-     Se degli utenti non autorizzati hanno accesso alla posizione, possono manomettere i file creati o anche utilizzare tutto lo spazio disponibile su disco in modo che la creazione del supporto non riesca.  
+     承認されていないユーザーがその場所にアクセスできると、作成するファイルを改ざんすることもでき、利用可能なディスクスペースを使い果たしてメディアの作成を失敗させることもできます。  
 
--   **Proteggere i file del certificato (PFX) con una password complessa e se si memorizzano in rete, proteggere il canale della rete quando vengono importati in Configuration Manager**  
+-   **強度の高いパスワードで証明書ファイル (.pfx) を保護し、ネットワークに証明書を保存する場合は Configuration Manager にインポートする際のネットワーク チャネルをセキュリティで保護する**  
 
-     Quando si richiede una password per importare il certificato di autenticazione client che si utilizza per il supporto di avvio, il certificato viene protetto da potenziali attacchi.  
+     起動可能なメディアで使用するクライアント認証証明書のインポートにパスワードが必要であれば、攻撃者から証明書を保護するのに役立ちます。  
 
-     Utilizzare la firma SMB o IPsec tra il percorso di rete e il server del sito per impedire all'autore di un attacco di manomettere il file di certificato.  
+     ネットワークの場所とサイト サーバーの間で SMB 署名または IPsec を使用して、攻撃者が証明書ファイルを改ざんするのを防ぎます。  
 
--   **Se il certificato client viene compromesso, bloccare il certificato da Configuration Manager e revocarlo se si tratta di un certificato PKI**  
+-   **クライアント証明書が侵害された場合は、Configuration Manager から証明書をブロックし、PKI 証明書である場合は失効させる**  
 
-     Per distribuire un sistema operativo utilizzando il supporto di avvio e l'avvio PXE, è necessario disporre di un certificato di autenticazione client con una chiave privata. Se tale certificato è compromesso, bloccarlo nel nodo **Certificati** dell'area di lavoro **Amministrazione** , nodo **Sicurezza** .  
+     起動可能なメディアと PXE ブートを使用してオペレーティング システムを展開するには、プライベート キーの付いたクライアント認証証明書が必要です。 証明書が侵害された場合は、[管理] **** ワークスペースの [証明書] **** ノードおよび [セキュリティ] **** ノード内の証明書をブロックします。  
 
--   **Quando il provider SMS è in un computer o più computer diversi dal server del sito, proteggere il canale di comunicazione per proteggere le immagini di avvio**  
+-   **SMS プロバイダーがコンピューター、またはサイト サーバー以外の複数のコンピューターにある場合は、通信チャネルをセキュリティで保護して、ブート イメージを保護する**  
 
-     Quando le immagini di avvio vengono modificate e il provider SMS è in esecuzione su un server che non è il server del sito, le immagini di avvio sono vulnerabili agli attacchi. Proteggere il canale di rete tra questi computer utilizzando la firma SMB o IPsec.  
+     ブート イメージが変更され、SMS プロバイダーがサイト サーバーではないサーバーで実行されていると、ブート イメージが攻撃を受けやすくなります。 SMB 署名または IPsec を使用して、これらのコンピューター間のネットワーク チャネルを保護します。  
 
--   **Abilitare i punti di distribuzione per la comunicazione client PXE solo su segmenti di rete protetta**  
+-   **セキュリティで保護されたネットワーク セグメントでのみ配布ポイントの PXE クライアント通信を有効にする**  
 
-     Quando un client invia una richiesta di avvio PXE, è necessario assicurarsi che la richiesta sia presa in carico da un punto di distribuzione valido che supporta PXE. Questo scenario include i rischi di protezione seguenti:  
+     クライアントが PXE ブートの要求を送信すると、その要求が有効な PXE 対応の配布ポイントでサービスされたものかどうかを確認することはできません。 このシナリオには次のセキュリティ リスクがあります。  
 
-    -   Un punto di distribuzione non autorizzato che risponde alle richieste PXE potrebbe fornire ai client un'immagine manomessa.  
+    -   PXE 要求に応答する偽の配布ポイントが、クライアントに改ざんされたイメージを送信する。  
 
-    -   Un utente malintenzionato potrebbe lanciare un attacco man-in-the-middle contro il protocollo TFTP utilizzato da PXE e inviare codice dannoso con i file del sistema operativo oppure potrebbe creare un client non autorizzato per effettuare richieste TFTP direttamente al punto di distribuzione.  
+    -   攻撃者は PXE で使用される TFTP プロトコルに対して Man-in-the-middle 攻撃 (中間者攻撃) を仕掛けて、オペレーティング システム ファイルと共に悪意のあるコードを送信したり、偽のクライアントを作成して配布ポイントに TFTP を直接要求したりできます。  
 
-    -   Un utente malintenzionato potrebbe utilizzare un client dannoso per avviare un attacco Denial of Service contro il punto di distribuzione.  
+    -   攻撃者は悪意のあるクライアントを使用して、配布ポイントにサービス拒否攻撃を仕掛けることもできます。  
 
-     Utilizzare una difesa in profondità per proteggere i segmenti di rete in cui i client avranno accesso ai punti di distribuzione per le richieste PXE.  
+     徹底的に防御し、クライアントが PXE 要求で配布ポイントにアクセスするネットワーク セグメントを保護します。  
 
     > [!WARNING]  
-    >  In ragioni di tali rischi di sicurezza, non abilitare un punto di distribuzione per la comunicazione PXE quando si trova in una rete non affidabile, come una rete perimetrale.  
+    >  こうしたセキュリティ リスクがあるため、境界ネットワークのような信頼されていないネットワークでは配布ポイントの PXE 通信を有効にしないでください。  
 
--   **Configurare i punti di distribuzione che supportano PXE per rispondere alle richieste PXE solo su interfacce di rete specificate**  
+-   **指定されたネットワーク インターフェイスの PXE 要求のみに応答するように PXE 対応の配布ポイントを構成する**  
 
-     Se si consente al punto di distribuzione di rispondere a richieste PXE su tutte le interfacce di rete, questa configurazione potrebbe esporre il servizio PXE a reti non affidabili.  
+     配布ポイントがすべてのネットワーク インターフェイスの PXE 要求に応答するように構成すると、PXE サービスが信頼されないネットワークにさらされる可能性があります。  
 
--   **Richiedere una password per l'avvio PXE**  
+-   **PXE ブートでパスワードを要求する**  
 
-     Quando si richiede una password per l'avvio PXE, questa configurazione aggiunge un livello aggiuntivo di protezione al processo di avvio PXE, per evitare che client dannosi raggiungano la gerarchia di Configuration Manager.  
+     PXE ブートでパスワードを要求すると、PXE ブート プロセスのセキュリティが一段高まり、偽のクライアントが Configuration Manager 階層に参加するのを防ぐのに役立ちます。  
 
--   **Non includere applicazioni line-of-business o software che contiene dati sensibili in un'immagine che verrà usata per l'avvio PXE o il multicast**  
+-   **基幹業務アプリケーションや機密データの含まれたソフトウェアを、PXE ブートまたはマルチキャストで使用するイメージに含めない**  
 
-     Per i rischi di protezione inerenti coinvolti con l'avvio PXE e il multicast, ridurre i rischi se il computer non autorizzato scarica l'immagine del sistema operativo.  
+     PXE ブートやマルチキャストには特有のセキュリティ リスクがあるため、偽のコンピューターがオペレーティング システム イメージをダウンロードしたときのリスクを軽減します。  
 
--   **Non includere applicazioni line-of-business o software che contiene dati sensibili nei pacchetti software installati usando variabili di sequenze attività**  
+-   **基幹業務アプリケーションや機密データの含まれたソフトウェアを、タスク シーケンス変数を使用してインストールするソフトウェア パッケージに含めない**  
 
-     Quando si distribuiscono pacchetti software utilizzando variabili di sequenze attività, il software potrebbe essere installato su computer e in utenti che non sono autorizzati a ricevere tale software.  
+     タスク シーケンス変数を使用してソフトウェア パッケージを展開すると、ソフトウェアが、そのソフトウェアを受信する承認のないコンピューターおよびユーザーにインストールされる可能性があります。  
 
--   **Quando si esegue la migrazione dello stato utente, proteggere il canale di rete tra il client e il punto di migrazione dello stato usando la firma SMB o IPsec**  
+-   **ユーザー状態を移行するときは、SMB 署名または IPsec を使用して、クライアントと状態移行ポイントの間のネットワーク チャネルをセキュリティで保護する**  
 
-     Dopo la connessione iniziale in HTTP, i dati della migrazione dello stato utente vengono trasferiti tramite SMB.  Se non si protegge il canale di rete, un utente malintenzionato può leggere e modificare questi dati.  
+     最初に HTTP で接続された後、ユーザー状態管理データが SMB を使用して送信されます。  ネットワーク チャネルをセキュリティで保護しないと、攻撃者がこのデータを読み込み変更する可能性があります。  
 
--   **Usare la versione più recente dell'utilità di migrazione stato utente (USMT) supportata da Configuration Manager**  
+-   **Configuration Manager がサポートする最新バージョンのユーザー状態移行ツール (USMT) を使用する**  
 
-     La versione più recente dell'USMT fornisce miglioramenti della protezione e un controllo maggiore durante la migrazione dei dati dello stato utente.  
+     USMT の最新バージョンは、セキュリティ上の改善とユーザー状態データを移行する際のよりすぐれた制御を提供します。  
 
--   **Eliminare manualmente le cartelle nel punto di migrazione dello stato quando vengono rimosse**  
+-   **使用されなくなった状態移行ポイントのフォルダーは手動で削除する**  
 
-     Quando si rimuove una cartella del punto di migrazione dello stato dalle proprietà del punto di migrazione dello stato nella console di Configuration Manager, la cartella fisica non viene eliminata. Per proteggere i dati della migrazione dello stato utente dalla divulgazione di informazioni, è necessario rimuovere la condivisione di rete manualmente ed eliminare la cartella.  
+     Configuration Manager コンソールで状態移行ポイントのプロパティにある状態移行ポイント フォルダーを削除しても、物理フォルダーは削除されません。 情報の漏洩からユーザー状態移行データを守るため、手動でネットワーク共有を削除し、フォルダーを削除する必要があります。  
 
--   **Non configurare il criterio di eliminazione per eliminare immediatamente lo stato utente**  
+-   **削除ポリシーでユーザー状態をすぐに削除するよう構成しない**  
 
-     Se si configura il criterio di eliminazione nel punto di migrazione dello stato per rimuovere i dati contrassegnati per l'eliminazione immediatamente e un utente malintenzionato riesce a recuperare i dati dello stato utente prima che lo faccia il computer valido, i dati dello stato utente verrebbero eliminati immediatamente. Impostare un intervallo **Elimina dopo** abbastanza ampio per verificare il ripristino corretto dei dati dello stato utente.  
+     状態移行ポイントの削除ポリシーで、削除するようマークされたデータをすぐに削除するように構成した場合、有効なコンピューターが取得する前に攻撃者がユーザー状態データを取得してしまうと、ユーザー状態のデータは即座に削除されてしまいます。 **[次の時期以降に削除する]** 間隔を、ユーザー状態のデータの修復が成功したことを確認するのに十分な長さに設定します。  
 
--   **Eliminare manualmente le associazioni computer quando il ripristino dei dati della migrazione dello stato utente è stato completato e verificato**  
+-   **ユーザー状態移行データの復元が完了し確認されたときにコンピューターの関連付けを手動で削除する**  
 
-     Configuration Manager non rimuove automaticamente le associazioni computer. Proteggere l'identificazione dei dati dello stato utente eliminando manualmente le associazioni computer che non sono più necessarie.  
+     Configuration Manager は、コンピューターの関連付けを自動的に削除しません。 必要なくなったコンピューターの関連付けを手動で削除することで、ユーザー状態データが特定されるのを防ぎます。  
 
--   **Eseguire manualmente il backup dei dati della migrazione dello stato utente nel punto di migrazione dello stato**  
+-   **状態移行ポイントのユーザー状態移行データを手動でバックアップする**  
 
-     Il backup di Configuration Manager non include i dati della migrazione dello stato utente.  
+     Configuration Manager バックアップには、ユーザー状態移行データは含まれません。  
 
--   **Ricordare di abilitare BitLocker dopo l'installazione del sistema operativo**  
+-   **オペレーティング システムのインストール後 BitLocker を有効にする**  
 
-     Se un computer supporta BitLocker, è necessario disabilitarlo usando un passaggio della sequenza di attività se si desidera installare il sistema operativo automaticamente. Configuration Manager non abilita BitLocker dopo l'installazione del sistema operativo, quindi è necessario abilitarlo manualmente.  
+     コンピューターが BitLocker をサポートする場合、無人でオペレーティング システムをインストールするには、タスク シーケンス ステップを使用してそれを無効にする必要があります。 Configuration Manager は、オペレーティング システムがインストールされた後 BitLocker を有効にしないため、手動で再度有効にする必要があります。  
 
--   **Implementare i controlli di accesso per proteggere i supporti pre-installati**  
+-   **アクセス制御を実装して事前設定されたメディアを保護する**  
 
-     Controllare l'accesso fisico ai supporti per evitare che un utente malintenzionato utilizzi gli attacchi crittografici per ottenere il certificato di autenticazione client e i dati sensibili.  
+     メディアに対する物理的アクセスを制御して、攻撃者が暗号化攻撃を使用してクライアント認証証明書と機密データを取得することを防ぐことができます。  
 
--   **Implementare i controlli di accesso per proteggere il processo di creazione dell'immagine del computer di riferimento**  
+-   **アクセス制御を実装して参照コンピューターのイメージ プロセスを保護する**  
 
-     Assicurarsi che il computer di riferimento che si utilizza per acquisire le immagini del sistema operativo si trovi in un ambiente protetto con controlli di accesso appropriati, in modo che non possa essere installato e inavvertitamente incluso nell'immagine acquisita del software imprevisto o dannoso. Quando si acquisisce l'immagine, assicurarsi che il percorso di condivisione del file della rete di destinazione sia protetto in modo che l'immagine non possa essere manomessa dopo l'acquisizione.  
+     オペレーティング システム イメージをキャプチャする参照コンピューターが適切なアクセス制御のあるセキュリティで保護された環境にあることを確認し、予期しないソフトウェアまたは悪意のあるソフトウェアがインストールされ、キャプチャされたイメージに知らぬ間に含まれることのないようにします。 イメージをキャプチャする際、展開先ネットワークのファイル共有場所が、キャプチャされた後で改ざんされないよう、セキュリティで保護された場所であることを確認してください。  
 
--   **Installare sempre gli aggiornamenti di protezione più recenti sul computer di riferimento**  
+-   **参照コンピューターに最新のセキュリティの更新を常にインストールする**  
 
-     Quando il computer di riferimento dispone degli aggiornamenti di sicurezza correnti, ciò riduce la vulnerabilità dei nuovi computer quando vengono avviati per la prima volta.  
+     参照コンピューターのセキュリティが最新に更新されていれば、新しいコンピューターが初めて起動したときに攻撃されるリスクを軽減することができます。  
 
--   **Se è necessario distribuire i sistemi operativi in un computer sconosciuto, implementare i controlli di accesso per impedire la connessione alla rete di computer non autorizzati**  
+-   **オペレーティング システムを不明なコンピューターに展開する必要がある場合は、アクセス制御を実装して承認されていないコンピューターがネットワークに接続できないようにする**  
 
-     Nonostante il provisioning di computer sconosciuti fornisca un metodo utile per distribuire nuovi computer su richiesta, questa operazione può anche consentire a un utente malintenzionato di diventare un client affidabile nella rete. Limitare l'accesso fisico alla rete e monitorare i client per rilevare i computer non autorizzati. Inoltre, i computer che rispondono alla distribuzione di sistemi operativi avviata da PXE potrebbero assistere alla distruzione di tutti i dati durante la distribuzione del sistema operativo, che potrebbe portare a una perdita di disponibilità di sistemi che vengono inavvertitamente riformattati.  
+     不明なコンピューターのプロビジョニングは、新しいコンピューターをオンデマンドで展開する便利な方法ですが、攻撃者がネットワークで信頼されたクライアントとなる可能性があります。 ネットワークへの物理アクセスを制限し、クライアントを監視して不正なコンピューターを検出します。 また、PXE によるオペレーティング システムの展開に応答するコンピューターが、オペレーティング システムの展開中に破損したすべてのデータを持つ可能性もあります。この場合、不注意から再フォーマットされたシステムの可用性が失われることがあります。  
 
--   **Abilitare la crittografia per i pacchetti multicast**  
+-   **マルチキャスト パッケージの暗号化を有効にする**  
 
-     Per ogni pacchetto di distribuzione del sistema operativo, è possibile abilitare la crittografia quando Configuration Manager trasferisce il pacchetto usando multicast. Questa configurazione consente di impedire ai computer non autorizzati di partecipare alla sessione multicast e a utenti malintenzionati di manomettere la trasmissione.  
+     Configuration Manager がマルチキャストを使用してパッケージを送信する場合、各オペレーティング システムの展開パッケージに対して暗号化を有効にすることができます。 この構成は、偽のコンピューターがマルチキャスト セッションに参加したり、攻撃者が送信を改ざんしたりするのを防ぐことができます。  
 
--   **Monitorare i punti di distribuzione non autorizzati abilitati per multicast**  
+-   **不正なマルチキャスト対応配布ポイントを監視する**  
 
-     Se degli utenti malintenzionati riescono ad accedere alla rete, possono configurare server multicast non autorizzati per lo spoofing della distribuzione del sistema operativo.  
+     ネットワークへのアクセス権を取得すると、攻撃者は偽のマルチキャスト サーバーを構成してオペレーティング システムの展開を偽装することができます。  
 
--   **Quando si esportano sequenze di attività in un percorso di rete, proteggere il percorso e il canale di rete**  
+-   **ネットワークの場所にタスク シーケンスをエクスポートする際、その場所とネットワーク チャネルをセキュリティで保護する**  
 
-     Limitare l'accesso alla cartella di rete.  
+     ネットワーク フォルダーにアクセスできるユーザーを制限します。  
 
-     Utilizzare la firma SMB o IPsec tra il percorso di rete e il server del sito per impedire all'autore di un attacco di manomettere la sequenza attività esportata.  
+     ネットワークの場所とサイト サーバーの間でSMB 署名または IPsec を使用して、攻撃者がエクスポートしたタスク シーケンスを改ざんするのを防ぎます。  
 
--   **Proteggere il canale di comunicazione quando si carica un disco rigido virtuale in Virtual Machine Manager**  
+-   **バーチャル ハード ディスクを Virtual Machine Manager にアップロードする場合は、通信チャネルのセキュリティを保護する**  
 
-     Per impedire l'eventuale manomissione di dati durante il trasferimento in rete, usare IPsec (Internet Protocol security) o SMB (Server Message Block) tra il computer che esegue la console di Configuration Manager e il computer che esegue Virtual Machine Manager.  
+     ネットワークを介してデータを転送するときは、データの改ざんを防ぐため、Configuration Manager コンソールを実行するコンピューターと Virtual Machine Manager を実行するコンピューター間で、インターネット セキュリティ プロトコル (IPsec) またはサーバー メッセージ ブロック (SMB) を使用してください。  
 
--   **Se è necessario usare l'esecuzione della sequenza attività come account, adottare misure di sicurezza aggiuntive**  
+-   **タスクシーケンスの実行アカウントを使用する必要がある場合は、さらにセキュリティに留意する**  
 
-     Se si utilizza l'esecuzione della sequenza attività come account, attenersi ai seguenti passaggi precauzionali:  
+     タスクシーケンスの実行アカウントを使用する場合は、次の事前措置を講じます。  
 
-    -   Utilizzare un account con autorizzazioni minime.  
+    -   できるだけアクセス許可が制限されたアカウントを使用します。  
 
-    -   Non usare l'account di accesso alla rete per questo account.  
+    -   このアカウントにネットワーク アクセス アカウントを使用しないでください。  
 
-    -   Non modificare mai l'account in amministratore di dominio.  
+    -   このアカウントをドメイン管理者にしない  
 
-     Inoltre:  
+     さらに:  
 
-    -   Non configurare mai profili mobili per questo account. Quando viene eseguita la sequenza di attività, verrà scaricato il profilo mobile per l'account, che rende il profilo vulnerabile all'accesso sul computer locale.  
+    -   このアカウントにローミング プロファイルを構成しない タスク シーケンスを実行するときにアカウントのローミング プロファイルをダウンロードするので、ローカル コンピューターのプロファイルにアクセスされる危険性があります。  
 
-    -   Limitare l'ambito dell'account. Ad esempio, creare diverse esecuzioni della sequenza attività come account per ciascuna sequenza attività, in modo che nel caso in cui venga compromesso un account, vengano compromessi solo i computer client a cui tale account ha accesso. Se la riga di comando richiede accesso amministrativo al computer, creare un account amministratore locale unicamente per l'esecuzione della sequenza attività come account su tutti i computer che eseguiranno la sequenza attività ed eliminare l'account non appena non è più necessario.  
+    -   アカウントのスコープを制限する (たとえば、タスク シーケンスごとに異なるタスク シーケンスの実行アカウントを作成すると、1 つのアカウントが侵害されたときに侵害されるのは、そのアカウントがアクセスできるクライアント コンピューターのみになります。 コマンド ラインにコンピューターの管理者アクセスが必要な場合は、該当するタスク シーケンスを実行するすべてのコンピューターに、タスク シーケンスの別のユーザーとして実行アカウント専用のローカル管理者アカウントを作成し、不要になり次第、そのアカウントを削除することを検討します。)  
 
--   **Limitare e monitorare gli utenti amministrativi a cui è garantito il ruolo di protezione Gestione distribuzione del sistema operativo**  
+-   **オペレーティング システム展開マネージャーのセキュリティの役割を付与された管理ユーザーを制限し監視する**  
 
-     Gli utenti amministratori a cui è garantito il ruolo di protezione Gestione distribuzione del sistema operativo possono creare certificati autofirmati che in seguito possono essere usati per impersonare un client e ottenere criteri client da Configuration Manager.  
+     オペレーティング システム展開マネージャーのセキュリティの役割を付与された管理ユーザーは、自己署名の証明書を作成できるため、これを使用してクライアントを偽装し、Configuration Manager からクライアント ポリシーを取得することができます。  
 
-### <a name="security-issues-for-operating-system-deployment"></a>Problemi di sicurezza per la distribuzione del sistema operativo  
- Nonostante la distribuzione del sistema operativo possa essere un modo utile per distribuire i sistemi operativi e le configurazioni più sicure per i computer sulla rete, presenta i seguenti rischi di sicurezza:  
+### <a name="security-issues-for-operating-system-deployment"></a>オペレーティング システムの展開におけるセキュリティの問題  
+ オペレーティング システム展開は、ネットワークのコンピューターに対してもっとも安全なオペレーティング システムおよび構成を展開する方法かもしれませんが、次のようなセキュリティ リスクもあります。  
 
--   Divulgazione di informazioni e Denial of Service  
+-   情報開示およびサービスの拒否  
 
-     Se un utente malintenzionato riesce a ottenere il controllo dell'infrastruttura di Configuration Manager, potrebbe eseguire qualsiasi sequenza attività, tra cui la formattazione dei dischi rigidi di tutti i computer client. Le sequenze attività possono essere configurate per contenere informazioni sensibili, come gli account che dispongono delle autorizzazioni per raggiungere il dominio e le chiavi di Volume Licensing.  
+     攻撃者が Configuration Manager インフラストラクチャの制御を獲得すると、攻撃者は、全クライアント コンピューターのハード ドライブのフォーマット化などを含む、すべてのタスク シーケンスを実行できるようになります。 タスク シーケンスは、ドメインおよびボリュームのライセンス キーに参加する許可が与えられたアカウントなど、機密情報を取得するように構成することができます。  
 
--   Rappresentazione e aumento di privilegi  
+-   偽装および権限の昇格  
 
-     Le sequenze di attività possono aggiungere un computer a un dominio, operazione che può fornire a un computer non autorizzato l'accesso autenticato alla rete. Un'altra importante considerazioni di sicurezza per la distribuzione del sistema operativo è la protezione del certificato di autenticazione client che viene utilizzato per i supporti della sequenza attività di avvio e per la distribuzione dell'avvio PXE. Quando si acquisisce un certificato di autenticazione client, si da a un utente malintenzionato l'opportunità di ottenere la chiave privata nel certificato e di rappresentare quindi un client valido sulla rete.  
+     タスク シーケンスは、コンピューターをドメインに参加することができます。つまり偽のコンピューターに認証されたネットワーク アクセスを渡してしまう可能性があります。 オペレーティング システムの展開のセキュリティに関してもう 1 つの重要な点は、起動可能なタスク シーケンスのメディアおよび PXE ブートの展開で使用するクライアント認証証明書を保護することです。 クライアント認証証明書をキャプチャすると、攻撃者が証明書のプライベート キーを取得し、ネットワークの有効なクライアントを偽装する機会を与えることになります。  
 
-     Se un utente malintenzionato ottiene il certificato client utilizzato per il supporto della sequenza attività di avvio e per la distribuzione dell'avvio PXE, questo certificato può essere usato per rappresentare un client valido in Configuration Manager. In questo scenario, il computer non autorizzato può scaricare criteri, che possono contenere dati sensibili.  
+     攻撃者が起動可能なタスク シーケンス メディアおよび PXE ブート展開で使用するクライアント証明書を取得すると、この証明書を使用して Configuration Manager の有効なクライアントを偽装することができます。 このシナリオでは、偽のコンピューターは、機密データを含む可能性があるポリシーをダウンロードできます。  
 
-     Se i client utilizzano l'Account di accesso alla rete per accedere a dati archiviati sul punto di migrazione dello stato, tali client condivideranno effettivamente la stessa identità e potranno accedere ai dati di migrazione dello stato da un altro client che utilizza l'Account di accesso alla rete. I dati vengono crittografati in modo che solo il client originale sia in grado di leggerli, ma i dati potrebbero essere alterati o eliminati.  
+     クライアントがネットワーク アクセス アカウントを使用して、状態移行ポイントに保存されているデータにアクセスする場合、このようなクライアントは、効率的に同じ ID を共有します。また、ネットワーク アクセス アカウントを使用する別のクライアントから状態移行データにアクセスできます。 元のクライアントのみが読み取ることができるようにデータは暗号化されますが、データが改ざんされたり削除されたりする可能性があります。  
 
--   L'autenticazione client al punto di migrazione stato viene ottenuta con un token di Configuration Manager emesso dal punto di gestione.  
+-   管理ポイントによって発行される Configuration Manager トークンを使用して、状態移行ポイントに対するクライアント認証を実行できます。  
 
-     Configuration Manager inoltre non limita e non gestisce la quantità di dati archiviati nel punto di migrazione dello stato, quindi è possibile che lo spazio su disco disponibile venga riempito da un utente malintenzionato, provocando un attacco di tipo Denial of Service.  
+     さらに、Configuration Manager は、状態移行ポイントに保存するデータ量の制限や管理をしないため、攻撃者が利用可能なディスク容量を使い果たし、サービス拒否をしかけることもできます。  
 
--   Se si utilizzano le variabili di raccolta, gli amministratori locali saranno in grado di leggere informazioni potenzialmente riservate  
+-   コレクション変数を使用すると、ローカルの管理者が潜在的な機密情報を読み取れる  
 
-     Anche se le variabili di raccolta offrono un metodo flessibile per distribuire i sistemi operativi, è possibile che si verifichi una divulgazione di informazioni.  
+     コレクション変数を使用すると、柔軟にオペレーティング システムを展開できますが、情報が開示される可能性があります。  
 
-##  <a name="a-namebkmkprivacyhardwareinventorya-privacy-information-for-operating-system-deployment"></a><a name="BKMK_Privacy_HardwareInventory"></a> Informazioni sulla privacy per la distribuzione del sistema operativo  
- Oltre a distribuire sistemi operativi in computer privi di sistema operativo, Configuration Manager consente anche di eseguire la migrazione di file e impostazioni utente da un computer all'altro. L'amministratore configura le informazioni da trasferire, inclusi file di dati personali, impostazioni di configurazione e cookie del browser.  
+##  <a name="BKMK_Privacy_HardwareInventory"></a> オペレーティング システムの展開におけるプライバシー情報  
+ オペレーティング システムのないコンピューターにオペレーティング システムを展開する以外にも、Configuration Manager を使用してユーザーのファイルをあるコンピューターから別のコンピューターへ移行できます。 管理者は、個人データ ファイル、構成設定、およびブラウザーのクッキーなど、どの情報を転送するか構成します。  
 
- Le informazioni vengono archiviate in un punto di migrazione dello stato e vengono crittografate durante la trasmissione e l'archiviazione. Le informazioni potranno essere recuperate tramite il nuovo computer associato alle informazioni sullo stato. Se il nuovo computer perde la chiave per il recupero delle informazioni, un amministratore di Configuration Manager con diritto Visualizza informazioni di ripristino negli oggetti di istanza di associazione computer potrà accedere alle informazioni e associarle a un nuovo computer. Dopo il ripristino delle informazioni sullo stato, per impostazione predefinita il nuovo computer elimina i dati dopo un giorno. È possibile configurare il momento in cui il punto di migrazione dello stato rimuoverà i dati contrassegnati per l'eliminazione. Le informazioni sulla migrazione dello stato non vengono archiviati database del sito e non vengono inviate a Microsoft.  
+ 情報は状態移行ポイントに格納され、転送および保存時に暗号化されます。 情報は、状態情報に関連する新規コンピューターで取得することができます。 新規コンピューターが情報を取得するためのキーをなくした場合、コンピューター関連インスタンス オブジェクトの回復情報の表示権限を持つ Configuration Manager 管理者は、情報にアクセスして新規コンピューターに関連付けることができます。 新規コンピューターが状態情報を復元すると、コンピューターは既定で 1 日後にデータを削除します。 状態移行ポイントで、削除の印が付いたデータをいつ削除するか構成できます。 状態移行情報はサイト データベースに格納されず、Microsoft にも送信されません。  
 
- Se si utilizzano supporti di avvio per distribuire immagini del sistema operativo, utilizzare sempre l'opzione predefinita per proteggere con una password il supporto di avvio. La password crittografa eventuali variabili archiviate nella sequenza attività, ma eventuali informazioni non archiviate in una variabile potrebbero essere esposte alla divulgazione.  
+ ブート メディアを使用してオペレーティング システムのイメージを展開する場合は、ブート メディアをパスワード保護する既定のオプションを必ず使用します。 パスワードは、タスク シーケンス内に格納された変数すべてを暗号化します。しかし、変数内に格納されていない情報は開示される恐れがあります。  
 
- Distribuzione sistema operativo può utilizzare sequenze attività per eseguire varie attività durante il processo di distribuzione, che include l'installazione di applicazioni e aggiornamenti software. Quando si configurano le sequenze attività, è necessario inoltre tenere presenti le implicazioni sulla privacy relative all'installazione del software.  
+ オペレーティング システムの展開は、タスク シーケンスを使用して展開プロセス時にさまざまな異なるタスクを実行できます。タスクには、アプリケーションおよびソフトウェア更新プログラムのインストールなどが含まれます。 タスク シーケンスを構成する場合、ソフトウェアのインストールに関するプライバシーについても留意する必要があります。  
 
- Se si carica un disco rigido virtuale in Virtual Machine Manager senza utilizzare prima Sysprep per pulire l'immagine, il disco rigido virtuale caricato potrebbe contenere dati personali dall'immagine originale.  
+ バーチャル ハード ディスクを Virtual Machine Manager にアップロードする前に、Sysprep ツールでイメージをクリーンアップしなかった場合は、そのバーチャル ハード ディスクに、元のイメージにあった個人情報が含まれる可能性があります。  
 
- Configuration Manager non implementa la distribuzione del sistema operativo per impostazione predefinita. Per raccogliere informazioni sullo stato utente o creare sequenze attività o immagini di avvio, saranno necessari alcuni passaggi di configurazione.  
+ Configuration Manager では、既定でオペレーティング システムの展開が実装されないため、ユーザー状態情報の収集や、タスク シーケンスまたはブート イメージの作成を実行する前に、いくつかの構成手順を実施する必要があります。  
 
- Prima di configurare la distribuzione del sistema operativo, prendere in considerazione la tutela della privacy.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+ オペレーティング システムの展開を構成する前に、プライバシー要件を考慮します。  

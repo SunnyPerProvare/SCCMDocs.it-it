@@ -1,74 +1,68 @@
 ---
-title: Creare applicazioni Windows | Documentazione Microsoft
-description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni per i dispositivi Windows.
+title: "Windows アプリケーションの作成 | Microsoft Docs"
+description: "Windows デバイス用アプリケーションを作成して展開するときに検討する必要がある考慮事項について説明します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9181c84e-d74f-44ea-9bb9-f7805eb465fc
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 557888d1f1f899e3198c430bbe5ccdd44178f824
 ms.openlocfilehash: 9c80cc42f9ce6775067a89a9f5a63c1bf4a0c7ca
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-windows-applications-with-system-center-configuration-manager"></a>Creare applicazioni Windows con System Center Configuration Manager
+# <a name="create-windows-applications-with-system-center-configuration-manager"></a>System Center Configuration Manager で Windows アプリケーションを作成する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Oltre agli altri requisiti e alle procedure di System Center Configuration Manager per la creazione di un'applicazione, quando si creano e si distribuiscono applicazioni per i dispositivi Windows è necessario tenere presente quanto segue.  
+アプリケーションを作成するための System Center Configuration Manager の他の要件と手順に加えて、Windows デバイス用アプリケーションを作成および展開するときには次の考慮事項について検討する必要があります。  
 
-## <a name="general-considerations"></a>Considerazioni generali  
- Configuration Manager supporta la distribuzione dei tipi di file app seguenti:  
+## <a name="general-considerations"></a>一般的な考慮事項  
+ Configuration Manager では、次のアプリ ファイルの種類の展開がサポートされています。  
 
-|Tipo di dispositivo|Tipi di file supportati|  
+|デバイスの種類|サポートされているファイルの種類|  
 |-----------------|---------------------|  
-|Windows RT e Windows RT 8.1|*.appx, \*.appxbundle|  
-|Windows 8.1 e versioni successive registrato come dispositivo mobile|*.appx, \*.appxbundle|  
+|Windows RT および Windows RT 8.1|*.appx、\*.appxbundle|  
+|モバイル デバイスとして登録された Windows 8.1 以降|*.appx、\*.appxbundle|  
 
- Sono supportate le azioni di distribuzione seguenti:  
+ 次の展開操作がサポートされています。  
 
-|Tipo di dispositivo|Azioni supportate|  
+|デバイスの種類|サポートされている操作|  
 |-----------------|-----------------------|  
-|Windows 8.1 e versioni successive|disponibile, richiesto, disinstalla|  
-|Windows RT|disponibile, richiesto, disinstalla|  
+|Windows 8.1 以降|利用可能、必須、アンインストール|  
+|Windows RT|利用可能、必須、アンインストール|  
 
-## <a name="support-for-universal-windows-platform-uwp-apps"></a>Supporto per app della piattaforma UWP (Universal Windows Platform)  
- Nei dispositivi Windows 10 non è necessario disporre di una chiave di trasferimento locale per installare le app line-of-business. Per l'abilitazione del trasferimento locale, tuttavia, la chiave del Registro di sistema **HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Appx\AllowAllTrustedApps** deve avere un valore pari a 1.  
+## <a name="support-for-universal-windows-platform-uwp-apps"></a>ユニバーサル Windows プラットフォーム (UWP) アプリのサポート  
+ Windows 10 デバイスで基幹業務アプリをインストールする場合、サイドローディング キーは不要です。 ただし、サイドローディングを有効にするため、レジストリ キー **HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Appx\AllowAllTrustedApps** の値は 1 である必要があります。  
 
- Se la chiave del Registro di sistema non è configurata, Configuration Manager imposta automaticamente questo valore su **1** la prima volta che si distribuisce un'app al dispositivo. Se questo valore è stato impostato su **0**, Configuration Manager non può modificare automaticamente il valore e la distribuzione delle app line-of-business ha esito negativo.  
+ このレジストリ キーが構成されていない場合は、アプリをデバイスに初めて展開する際に、Configuration Manager によってこの値が自動的に **1** に設定されます。 この値を **0**に設定した場合、Configuration Manager は値を自動的には変更することができず、基幹業務アプリの展開は失敗します。  
 
- Le app line-of-business della piattaforma UWP devono essere firmate con un certificato di firma codice attendibile su ogni dispositivo in cui l'app viene distribuita. È possibile usare i certificati da un'infrastruttura a chiave pubblica (PKI) interna o un certificato da una radice pubblica di terze parti installato nel dispositivo.  
+ ユニバーサル Windows プラットフォームの基幹業務アプリは、アプリが展開される各デバイス上で信頼されているコード署名証明書で署名される必要があります。 社内の PKI 基盤からの証明書を使用することも、デバイスにインストールされたサード パーティのパブリック ルート証明書からの証明書を使用することもできます。  
 
- Nei dispositivi Windows 10 Mobile, è possibile usare un certificato di firma codice non Symantec per firmare le app universali **.appx** . Per le app **.xap** e per i pacchetti **.appx** compilati per Windows Phone 8.1 che si vuole installare nei dispositivi Windows 10 Mobile, è necessario usare un certificato di firma codice Symantec.  
+ Windows 10 Mobile デバイス上では、Symantec 以外のコード署名証明書を使用して、ユニバーサル **.appx** アプリに署名することができます。 **.xap** アプリの場合、また Windows 10 Mobile デバイスにインストールする Windows Phone 8.1 用にビルドされた **.appx** パッケージの場合は、Symantec コード署名証明書を使用する必要があります。  
 
-## <a name="deploy-windows-installer-apps-to-enrolled-windows-10-pcs"></a>Distribuire app Windows Installer nei PC Windows 10 registrati  
- Il tipo di programma di installazione **Windows Installer tramite MDM (\*.msi)** consente di creare e distribuire app basate su Windows Installer nei PC registrati che eseguono Windows 10.  
+## <a name="deploy-windows-installer-apps-to-enrolled-windows-10-pcs"></a>登録済みの Windows 10 PC に Windows インストーラー アプリを展開する  
+ **MDM を介した Windows インストーラー (\*.msi)** のインストーラーの種類では、Windows インストーラー ベースのアプリを作成して、Windows 10 を実行する登録済み PC に展開できます。  
 
- Quando si usa questo tipo di programma di installazione, considerare gli aspetti seguenti:  
+ このインストーラーの種類を使用する場合は、次の点を考慮してください。  
 
--   È possibile caricare solo un singolo file con estensione msi.  
+-   拡張子が .msi のファイルを 1 つだけアップロードできます。  
 
--   Per il rilevamento delle app vengono usati il codice e la versione prodotto del file.  
+-   アプリの検出では、ファイルの製品コードと製品バージョンが使用されます。  
 
--   Viene usato il comportamento di riavvio predefinito dell'app. Configuration Manager non controlla questo comportamento.  
+-   アプリの既定の再起動動作が使用されます。 Configuration Manager はこれを制御しません。  
 
--   I pacchetti MSI per utente vengono installati per un singolo utente.  
+-   ユーザー単位の MSI パッケージは単一のユーザーにインストールされます。  
 
--   I pacchetti MSI per computer vengono installati per tutti gli utenti del dispositivo.  
+-   コンピューター単位の MSI パッケージはデバイス上のすべてのユーザーにインストールされます。  
 
--   Gli aggiornamenti delle app sono supportati quando il codice prodotto MSI di ogni versione è lo stesso.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+-   アプリの更新プログラムは、各バージョンの MSI 製品コードが同じである場合にサポートされます。  

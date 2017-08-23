@@ -1,140 +1,133 @@
 ---
-title: Introduzione alla distribuzione del sistema operativo | Microsoft Docs
-description: Consente di comprendere i concetti prima di distribuire sistemi operativi nell&quot;ambiente di Configuration Manager.
+title: "オペレーティング システムの展開の概要 | Microsoft Docs"
+description: "Configuration Manager 環境にオペレーティング システムを展開する前に理解する必要がある概念について説明します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d9a1c545-8301-492c-832f-2c108ff93c77
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 55a9f1caedcfa810e9a97e43626e4cf5fdbcfa0d
 ms.openlocfilehash: 2baa6b7dbd66ab41bc9b67e8f43c313be233153c
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-operating-system-deployment-in-system-center-configuration-manager"></a>Introduzione alla distribuzione del sistema operativo in System Center Configuration Manager
+# <a name="introduction-to-operating-system-deployment-in-system-center-configuration-manager"></a>System Center Configuration Manager のオペレーティング システムの展開の概要
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-È possibile usare Configuration Manager per distribuire i sistemi operativi in molti modi diversi. Usare le informazioni in questa sezione per comprendere come distribuire sistemi operativi e automatizzare le attività. 
+Configuration Manager を使用してオペレーティング システムを展開する方法は数多くあります。 オペレーティング システムを展開し、タスクを自動化する方法については、このセクションの情報を参照してください。 
 
-##  <a name="a-namebkmkosdeploymentprocessa-the-operating-system-deployment-process"></a><a name="BKMK_OSDeploymentProcess"></a> Processo di distribuzione del sistema operativo  
- Configuration Manager offre diversi metodi con cui è possibile distribuire un sistema operativo. Sono diverse le operazioni che occorre eseguire, indipendentemente dal metodo di distribuzione usato:  
+##  <a name="BKMK_OSDeploymentProcess"></a> オペレーティング システム展開プロセス  
+ Configuration Manager では、オペレーティング システムの展開で使用できる数種類の方法を提供します。 次に示す操作は、使用する展開方法に関係なく必要となります。  
 
--   Identificare i driver di dispositivo di Windows necessari per eseguire l'immagine d'avvio o installare l'immagine del sistema operativo da distribuire.  
+-   ブート イメージを起動するか、または展開するオペレーティング システム イメージをインストールするために必要となる Windows デバイス ドライバーを特定します。  
 
--   Identificare l'immagine d'avvio che si vuole usare per avviare il computer di destinazione.  
+-   対象となるコンピューターを起動するのに使用するブート イメージの特定。  
 
--   Usare una sequenza di attività per acquisire un'immagine del sistema operativo che si vuole distribuire. In alternativa, si può usare un'immagine del sistema operativo predefinita.  
+-   タスク シーケンスを使用して、展開するオペレーティング システムのイメージをキャプチャします。 または、既定のオペレーティング システム イメージを使用することができます。  
 
--   Distribuire l'immagine di avvio, l'immagine del sistema operativo e qualsiasi contenuto relativo a un punto di distribuzione.  
+-   ブート イメージ、オペレーティング イメージ、その他関連するコンテンツの配布ポイントへの配布。  
 
--   Creare una sequenza di attività con i passaggi per distribuire l'immagine d'avvio e l'immagine del sistema operativo.  
+-   ブート イメージおよびオペレーティング システム イメージを展開するステップを含むタスク シーケンスを作成します。  
 
--   Distribuire la sequenza di attività in una raccolta di computer.  
+-   コンピューターのコレクションにタスク シーケンスを展開します。  
 
--   Monitorare la distribuzione.  
+-   展開を監視します。  
 
-##  <a name="a-namebkmkosdscenariosa-operating-system-deployment-scenarios"></a><a name="BKMK_OSDScenarios"></a> Scenari di distribuzione del sistema operativo  
- In Configuration Manager sono disponibili molti scenari di distribuzione del sistema operativo che è possibile scegliere a seconda dell'ambiente e dello scopo dell'installazione del sistema operativo.  Ad esempio, è possibile partizionare e formattare un computer esistente con una nuova versione di Windows o aggiornare Windows alla versione più recente. Per determinare il metodo di distribuzione in grado di soddisfare le proprie esigenze, vedere [Scenari di distribuzione di sistemi operativi aziendali](../deploy-use/scenarios-to-deploy-enterprise-operating-systems.md).  È possibile scegliere tra gli scenari di distribuzione del sistema operativo seguenti:  
+##  <a name="BKMK_OSDScenarios"></a> オペレーティング システムの展開シナリオ  
+ Configuration Manager には数多くのオペレーティング システムの展開シナリオがあり、環境やオペレーティング システムをインストールする目的に応じて、そこから選択できます。  たとえば、新しいバージョンの Windows で既存のコンピューターをフォーマットおよびパーティション作成したり、Windows を最新のバージョンにアップグレードしたりすることができます。 ニーズを満たす展開方法の決定に役立てるために、[エンタープライズ オペレーティング システムを展開するシナリオ](../deploy-use/scenarios-to-deploy-enterprise-operating-systems.md)を確認します。  次のオペレーティング システムの展開シナリオから選択できます。  
 
--   [Aggiornare Windows alla versione più recente](../deploy-use/upgrade-windows-to-the-latest-version.md)  
+-   [Windows を最新バージョンにアップグレードする](../deploy-use/upgrade-windows-to-the-latest-version.md)  
 
--   [Aggiornare un computer esistente con una nuova versione di Windows](../deploy-use/refresh-an-existing-computer-with-a-new-version-of-windows.md)  
+-   [新しいバージョンの Windows で既存のコンピューターを更新する](../deploy-use/refresh-an-existing-computer-with-a-new-version-of-windows.md)  
 
--   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](../deploy-use/install-new-windows-version-new-computer-bare-metal.md)  
+-   [新しいコンピューター (ベア メタル) に新しいバージョンの Windows をインストールする](../deploy-use/install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Sostituire un computer esistente e trasferire le impostazioni](../deploy-use/replace-an-existing-computer-and-transfer-settings.md)  
+-   [既存のコンピューターの置き換えと設定の転送](../deploy-use/replace-an-existing-computer-and-transfer-settings.md)  
 
-##  <a name="a-namebkmkosdmethodsa-methods-to-deploy-operating-systems"></a><a name="BKMK_OSDMethods"></a> Metodi per distribuire i sistemi operativi  
- Esistono diversi metodi con cui è possibile distribuire sistemi operativi nei computer client di Configuration Manager.  
+##  <a name="BKMK_OSDMethods"></a> オペレーティングシステムを展開する方法  
+ Configuration Manager クライアント コンピューターにオペレーティング システムを展開するのに使用できる方法にはいくつかあります。  
 
--   **Distribuzioni avviate da PXE**: le distribuzioni avviate da PXE consentono ai computer client di richiedere una distribuzione in rete. In questo metodo di distribuzione l'immagine del sistema operativo e l'immagine di avvio di Windows PE vengono inviate a un punto di distribuzione configurato per accettare le richieste di avvio da PXE. Per altre informazioni, vedere [Usare PXE per distribuire Windows in rete con System Center Configuration Manager](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+-   **PXE による展開**: PXE による展開では、クライアント コンピューターはネットワークを通じて展開を要求できます。 この展開方法では、オペレーティング システム イメージと Windows PE ブート イメージは、PXE ブート要求を許可するように構成された配布ポイントに送信されます。 詳細については、「[System Center Configuration Manager で PXE を使用してネットワーク経由で Windows を展開する](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)」を参照してください。  
 
--   **Rendere disponibili i sistemi operativi in Software Center**: è possibile distribuire un sistema operativo e renderlo disponibile in Software Center. I client di Configuration Manager possono avviare l'installazione del sistema operativo da Software Center. Per altre informazioni, vedere [Sostituire un computer esistente e trasferire le impostazioni](../deploy-use/replace-an-existing-computer-and-transfer-settings.md)  
+-   **オペレーティング システムをソフトウェア センターで使用できるようにする**: オペレーティング システムを展開し、ソフトウェア センターで使用できるようにすることができます。 Configuration Manager クライアントでは、ソフトウェア センターから、オペレーティング システムのインストールを開始できます。 詳細については、「[Replace an existing computer and transfer settings](../deploy-use/replace-an-existing-computer-and-transfer-settings.md)」(既存のコンピューターの置き換えと設定の転送) を参照してください。  
 
--   **Distribuzioni multicast**: le distribuzioni multicast consentono di risparmiare larghezza di banda con l'invio simultaneo di dati a più client anziché inviare una copia dei dati a ogni client su una connessione separata. In questo metodo di distribuzione l'immagine del sistema operativo viene inviata a un punto di distribuzione. L'immagine verrà a sua volta distribuita quando i computer client richiedono la distribuzione. Per altre informazioni, vedere [Usare il multicast per distribuire Windows in rete](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
+-   **マルチキャスト展開**: マルチキャスト展開では、別々の接続で各クライアントにデータのコピーを送信する代わりに、複数のクライアントに同時にデータを送信することで、ネットワークの帯域幅を節約します。 この展開方法では、オペレーティング システム イメージは配布ポイントに送信されます。 クライアント コンピューターから展開が要求されると、イメージが展開されます。 詳細については、「[Use multicast to deploy Windows over the network](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md)」(マルチキャストを使用した、ネットワーク経由での Windows の展開) を参照してください。  
 
--   **Distribuzioni con supporti di avvio**: le distribuzioni con supporti di avvio consentono di distribuire il sistema operativo all'avvio del computer di destinazione. All'avvio del computer di destinazione, viene recuperata la sequenza di attività, l'immagine del sistema operativo e qualsiasi altro contenuto richiesto dalla rete. Poiché tale contenuto non è incluso nel supporto, è possibile aggiornare il contenuto senza dover ricreare il supporto. Per altre informazioni, vedere [Creare supporti di avvio](../deploy-use/create-bootable-media.md).  
+-   **起動可能なメディアによる展開**: 起動可能なメディアによる展開では、セットアップ先のコンピューターの起動と同時にオペレーティング システムを展開できます。 対象となるコンピューターが立ち上がると、タスク シーケンス、オペレーティング システム イメージ、およびその他の要求されたコンテンツをネットワークから取得します。 そのコンテンツはメディアには含まれていないため、メディアを再作成せずにコンテンツを更新することができます。 詳細については、「[起動可能なメディアの作成](../deploy-use/create-bootable-media.md)」を参照してください。  
 
--   **Distribuzioni con supporti autonomi**: le distribuzioni con supporti autonomi consentono di distribuire i sistemi operativi nelle condizioni seguenti:  
+-   **スタンドアロン メディアによる展開**: スタンドアロン メディアによる展開では、次のような状況でオペレーティング システムを展開できます。  
 
-    -   In ambienti dove non è semplice copiare un'immagine del sistema operativo o altri pacchetti di grandi dimensioni sulla rete.  
+    -   オペレーティング システム イメージまたはファイルサイズの大きなパッケージをネットワークを通じてコピーするのが実用的ではない環境。  
 
-    -   In ambienti senza connettività di rete o con connettività di rete a larghezza di banda ridotta.  
+    -   ネットワーク接続がない、または低帯域幅のネットワーク接続しかできない環境。  
 
-     Per altre informazioni, vedere [Creare supporti autonomi](../deploy-use/create-stand-alone-media.md).  
+     詳細については、「[スタンドアロン メディアの作成](../deploy-use/create-stand-alone-media.md)」を参照してください。  
 
--   **Distribuzioni con supporti pre-installati**: le distribuzioni con supporti preinstallati consentono di distribuire un sistema operativo in un computer di cui non è stato effettuato il provisioning completo. Il supporto preinstallato è un file WIM (Windows Imaging Format) che può essere installato in un computer bare metal dal produttore o in un centro di gestione temporanea aziendale non connesso all'ambiente di Configuration Manager.  
+-   **事前設定されたメディアによる展開**: 事前設定されたメディアによる展開では、完全にはプロビジョニングされていないコンピューターにオペレーティング システムを展開できます。 事前設定されたファイルは、Windows Imaging Format (WIM) と呼ばれる形式のファイルであり、製造元によるベア メタル コンピューター、または Configuration Manager 環境に接続していない企業の準備センターにインストールすることができます。  
 
-     Successivamente nell'ambiente di Configuration Manager il computer viene avviato usando l'immagine d'avvio fornita dal supporto, quindi il computer si collega al punto di gestione del sito per le sequenze di attività che completano il processo di download. Questo metodo di distribuzione può ridurre il traffico di rete perché l'immagine di avvio e l'immagine del sistema operativo sono già nel computer di destinazione. È possibile specificare applicazioni, pacchetti e pacchetti driver da includere nel supporto pre-installato. Per altre informazioni, vedere [Creare supporti preinstallati](../deploy-use/create-prestaged-media.md).  
+     その後、Configuration Manager 環境で、メディアが提供するブート イメージを使用してコンピューターが起動し、サイト管理ポイントに接続して利用可能なタスク シーケンスを取得し、ダウンロード プロセスを完了します。 ブート イメージとオペレーティング システム イメージが展開先のコンピューターに存在するので、この展開の方法はネットワーク トラフィックを軽減します。 事前設定メディアに含めるアプリケーション、パッケージ、ドライバー パッケージを指定できます。 詳細については、「[事前設定されたメディアの作成](../deploy-use/create-prestaged-media.md)」を参照してください。  
 
-##  <a name="a-namebkmkbootimagesa-boot-images"></a><a name="BKMK_BootImages"></a> Immagini d'avvio  
- Un'immagine d'avvio in Configuration Manager è un'immagine Windows PE (WinPE) usata durante la distribuzione di un sistema operativo. Le immagini d'avvio vengono usate per avviare un computer in Windows PE, un sistema operativo minimo con componenti e servizi limitati che prepara il computer di destinazione per l'installazione di Windows. Configuration Manager offre due immagini di avvio: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste sono considerate immagini d'avvio predefinite. Le immagini d'avvio create e aggiunte a Configuration Manager dall'utente sono considerate immagini personalizzate. Le immagini d'avvio predefinite possono essere sostituite automaticamente quando si aggiorna Configuration Manager. Per altre informazioni sulle immagini d'avvio, vedere [Gestire le immagini d'avvio con System Center Configuration Manager](../get-started/manage-boot-images.md).  
+##  <a name="BKMK_BootImages"></a> ブート イメージ  
+ Configuration Manager のブート イメージは、オペレーティング システムの展開中に使用される Windows PE (WinPE) のイメージです。 ブート イメージは、WinPE でコンピューターを起動するために使用されます。WinPE は、セットアップ先のコンピューターで Windows のインストールを準備する限られたコンポーネントとサービスが含まれた、最小限のオペレーティング システムです。 Configuration Manager には 2 つのブート イメージがあります。一方は x86 プラットフォームをサポートし、もう一方は x64 プラットフォームをサポートします。 これらは、既定のブート イメージと見なされます。 作成して Configuration Manager に追加したブート イメージは、カスタム イメージと見なされます。 Configuration Manager を更新するときに、既定のブート イメージが自動的に置換されるようにできます。 ブート イメージの詳細については、「[ブート イメージの管理](../get-started/manage-boot-images.md)」を参照してください。  
 
-##  <a name="a-namebkmkosimagesa-operating--system-images"></a><a name="BKMK_OSImages"></a> Immagini del sistema operativo  
- Le immagini del sistema operativo in Configuration Manager vengono archiviate in file in formato Windows Imaging (WIM) e rappresentano una raccolta compressa dei file e delle cartelle di riferimento necessari per installare e configurare correttamente un sistema operativo in un computer. Per tutti gli scenari di distribuzione del sistema operativo, è necessario selezionare un'immagine del sistema operativo. È possibile usare l'immagine del sistema operativo predefinita o crearla da un computer di riferimento configurato dall'utente. Per altre informazioni, vedere [Manage operating system images](../get-started/manage-operating-system-images.md) (Gestire le immagini del sistema operativo).  
+##  <a name="BKMK_OSImages"></a> オペレーティング システム イメージ  
+ Configuration Manager のオペレーティング システム イメージは、Windows Imaging (WIM) ファイル形式で格納され、コンピューターのオペレーティング システムを正常にインストールおよび構成するのに必要な参照ファイルおよびフォルダーのコレクションを圧縮したものです。 オペレーティング システムのすべての展開シナリオで、オペレーティング システム イメージを選択する必要があります。 既定のオペレーティング システム イメージを使用するか、構成する参照コンピューターからオペレーティング システム イメージを構築することができます。 詳細については、「[オペレーティング システム イメージの管理](../get-started/manage-operating-system-images.md)」を参照してください。  
 
-##  <a name="a-namebkmkosupgradepackagesa-operating-system-upgrade-packages"></a><a name="BKMK_OSUpgradePackages"></a> Pacchetti di aggiornamento del sistema operativo  
- I pacchetti di aggiornamento del sistema operativo vengono usati per aggiornare un sistema operativo e sono distribuzioni del sistema operativo avviate dal programma di installazione. I pacchetti di aggiornamento del sistema operativo vengono importati in Configuration Manager da un DVD o da un file ISO montato. Per altre informazioni, vedere [Gestire i pacchetti di aggiornamento del sistema operativo](../get-started/manage-operating-system-upgrade-packages.md).  
+##  <a name="BKMK_OSUpgradePackages"></a> オペレーティング システムのアップグレード パッケージ  
+ オペレーティング システム アップグレード パッケージは、オペレーティング システムをアップグレードするために使用し、セットアップによって開始されるオペレーティング システム展開です。 オペレーティング システム アップグレード パッケージは、DVD またはマウントされている ISO ファイルから、Configuration Manager にインポートします。 詳細については、「[オペレーティング システムのアップグレード パッケージの管理](../get-started/manage-operating-system-upgrade-packages.md)」を参照してください。  
 
-##  <a name="a-namebkmkosdmediaa-media-to-deploy-operating-systems"></a><a name="BKMK_OSDMedia"></a> Supporti per distribuire i sistemi operativi  
- È possibile creare diversi tipi di supporti da usare per distribuire i sistemi operativi. Sono inclusi i supporti di acquisizione usati per acquisire le immagini del sistema operativo e supporti pre-installati, avviabili e autonomi usati per distribuire un sistema operativo. Usando i supporti, è possibile distribuire sistemi operativi nei computer che non dispongono di una connessione di rete o la cui connessione di rete al sito di Configuration Manager ha una larghezza di banda bassa. Per altre informazioni su come usare i supporti, vedere [Create task sequence media](../deploy-use/create-task-sequence-media.md) (Creare supporti per le sequenze di attività).  
+##  <a name="BKMK_OSDMedia"></a> オペレーティングシステムの展開のためのメディア  
+ オペレーティング システムの展開に使用するために作成するメディアには数種類があります。 これには、オペレーティング システム イメージをキャプチャするために使用するキャプチャ メディア、オペレーティング システムを展開するために使用するスタンドアロン メディア、事前設定されたメディア、および起動可能なメディアが含まれます。 メディアを使用することによって、展開の対象となるコンピューターがネットワークに未接続、または Configuration Manager サイトへ低帯域幅で接続していても、オペレーティング システムを展開できます。 タスク シーケンス メディアの使用方法の詳細については、「[Create task sequence media](../deploy-use/create-task-sequence-media.md)」(タスク シーケンス メディアの作成) を参照してください。  
 
-##  <a name="a-namebkmkdevicedriversa-device-drivers"></a><a name="BKMK_DeviceDrivers"></a> Driver di dispositivo  
- È possibile installare i driver del dispositivo nei computer di destinazione senza includerli nell'immagine del sistema operativo in fase di distribuzione. Configuration Manager offre un catalogo dei driver che contiene i riferimenti a tutti i driver di dispositivo importati in Configuration Manager. Il catalogo dei driver si trova nell'area di lavoro **Raccolta software** ed è costituito da due nodi: **Driver** e **Pacchetti driver**. Nel nodo **Driver** vengono elencati tutti i driver sono stati importati nel catalogo dei driver. È possibile usare il nodo per individuare i dettagli di tutti i driver importati, modificare a quale pacchetto driver o immagine di avvio appartiene un driver, abilitare o disabilitare un driver e altro ancora. Per altre informazioni, vedere [Gestire i driver](../get-started/manage-drivers.md).  
+##  <a name="BKMK_DeviceDrivers"></a> デバイス ドライバー  
+ 展開するオペレーティング システム イメージにデバイス ドライバーを含まなくても、対象となるコンピューターにインストールできます。 Configuration Manager は、Configuration Manager にインポートするすべてのデバイス ドライバーへの参照を含むドライバー カタログを提供します。 ドライバー カタログは [ **ソフトウェア ライブラリ** ] ワークスペースに保存されており、2 つのノードで構成されます。 **ドライバー** と **ドライバー パッケージ**。 [ **ドライバー** ] ノードにはドライバー カタログにインポートしたすべてのドライバーが一覧になっています。 このノードを使用して、インポートした各ドライバーの詳細を参照したり、ドライバーが属するドライバー パッケージやブート イメージを変更したり、ドライバーを有効または無効にしたりできます。 詳細については、「[Manage drivers](../get-started/manage-drivers.md)」(ドライバーの管理) を参照してください。  
 
-##  <a name="a-namebkmkosduserstatea-save-and-restore-user-state"></a><a name="BKMK_OSDUserState"></a> Salvare e ripristinare lo stato utente  
- Quando vengono distribuiti i sistemi operativi, è possibile salvare lo stato utente dal computer di destinazione, distribuire il sistema operativo e quindi ripristinare lo stato utente dopo aver distribuito i sistemi operativi. In genere questo processo viene usato quando si aggiorna il sistema operativo in un computer client di Configuration Manager.  
+##  <a name="BKMK_OSDUserState"></a> ユーザー状態の保存と復元  
+ オペレーティング システムを展開する際は、対象となるコンピューターのユーザー状態を保存し、オペレーティング システムを展開して、オペレーティング システムを展開し終わったらユーザー状態を復元することができます。 このプロセスは、通常、Configuration Manager クライアント コンピューターにオペレーティング システムをインストールするときに使用します。  
 
- Le informazioni sullo stato utente vengono acquisite e ripristinate usando le sequenze attività. Quando vengono acquisite le informazioni sullo stato utente, le informazioni possono essere memorizzate in uno dei modi seguenti:  
+ ユーザー状態情報はタスク シーケンスを使用してキャプチャし復元します。 ユーザー状態情報をキャプチャしたら、次のいずれかの方法でこの情報を保存できます。  
 
--   È possibile memorizzare i dati di stato utente in remoto configurando un punto di migrazione stato. La sequenza di attività di acquisizione invia i dati al punto di migrazione stato. Quindi, dopo aver distribuito il sistema operativo, la sequenza di attività di ripristino recupera i dati e ripristina lo stato utente nel computer di destinazione.  
+-   状態移行ポイントを構成することによって、リモートにユーザー状態データを保存することができます。 キャプチャのタスク シーケンスが状態移行ポイントへデータを送信します。 そして、オペレーティング システムが展開されると、復元のタスク シーケンスがデータを取得し、展開先のコンピューターにユーザー状態を復元します。  
 
--   È possibile memorizzare i dati dello stato utente in una posizione specifica in locale. In questo scenario la sequenza di attività di acquisizione copia i dati utente in una posizione specifica nel computer di destinazione. Quindi, dopo aver distribuito il sistema operativo, la sequenza di attività di ripristino recupera i dati utente da tale posizione.  
+-   ユーザー状態データは特定の場所にローカルに保存できます。 このシナリオでは、キャプチャのタスク シーケンスはユーザー データを対象となるコンピューターの特定の場所にコピーします。 そして、オペレーティング システムが展開されると、復元のタスク シーケンスがその場所からユーザー データを取得します。  
 
--   È possibile specificare i collegamenti reali che possono essere usati per ripristinare i dati utente e la relativa posizione originale. In questo scenario i dati dello stato utente rimangono sull'unità quando viene rimosso il sistema operativo precedente. Quindi, dopo aver distribuito il sistema operativo, la sequenza di attività di ripristino usa i collegamenti reali per ripristinare i dati dello stato utente nella posizione originale.  
+-   ユーザー データを元の場所に復元するために使用するハード リンクを指定できます。 このシナリオでは、古いオペレーティング システムが消去されてもユーザー状態データはドライブに保持されます。 そして、オペレーティング システムが展開されると、復元のタスク シーケンスがハード リンクを使用して、元の場所にユーザー状態データを復元します。  
 
- Per altre informazioni, vedere [Gestire lo stato utente](../get-started/manage-user-state.md).  
+ 詳細については、「[Manage user state](../get-started/manage-user-state.md)」(ユーザー状態の管理) を参照してください。  
 
-##  <a name="a-namebkmkunknowncomputera-deploy-to-unknown-computers"></a><a name="BKMK_UnknownComputer"></a> Distribuire a computer sconosciuti  
- È possibile distribuire sistemi operativi in computer non gestiti da Configuration Manager. Non sono presenti record di questi computer nel database di Configuration Manager. Questi computer vengono definiti computer sconosciuti. I computer sconosciuti includono i seguenti:  
+##  <a name="BKMK_UnknownComputer"></a> 不明なコンピューターへの展開  
+ Configuration Manager で管理されていないコンピューターにオペレーティング システムを展開できます。 これらのコンピューターのレコードは Configuration Manager データベースには存在しません。 このようなコンピューターは「不明なコンピューター」と呼ばれます。 不明なコンピューターには次のようなものがあります。  
 
--   Computer in cui non è installato il client di Configuration Manager  
+-   Configuration Manager クライアントがインストールされていないコンピューター  
 
--   Computer che non sono stati importati in Configuration Manager  
+-   Configuration Manager にインポートされていないコンピューター  
 
--   Computer che non sono stati individuati da Configuration Manager  
+-   Configuration Manager で検出されていないコンピューター  
 
- Per altre informazioni, vedere [Operazioni preliminari alle distribuzioni in computer sconosciuti](../get-started/prepare-for-unknown-computer-deployments.md).  
+ 詳細については、「[不明なコンピューターの展開の準備](../get-started/prepare-for-unknown-computer-deployments.md)」を参照してください。  
 
-##  <a name="a-namebkmkudaa-associate-users-with-a-computer"></a><a name="BKMK_UDA"></a> Associare utenti a un computer  
- Quando viene distribuito un sistema operativo, è possibile associare gli utenti con il computer di destinazione per supportare le azioni di affinità utente dispositivo. Quando si associa un utente al computer di destinazione, un utente amministratore può successivamente eseguire le azioni in qualsiasi computer associato all'utente, ad esempio distribuire un'applicazione al computer di un utente specifico. Tuttavia, quando si distribuisce un sistema operativo, non è possibile distribuire il sistema operativo nel computer di un utente specifico. Per altre informazioni, vedere [Associate users with a destination computer](../get-started/associate-users-with-a-destination-computer.md) (Associare gli utenti a un computer di destinazione).  
+##  <a name="BKMK_UDA"></a> ユーザーとデバイスの関連付け  
+ オペレーティング システムを展開する際に、ユーザーを展開先のコンピューターに関連付け、ユーザーとデバイスのアフィニティ操作に対応できます。 ユーザーを展開先のコンピューターに関連付けると、管理者ユーザーが後から、特定のユーザーのコンピューターへのアプリケーションの展開など、そのユーザーに関連付けられたコンピューターに対して操作を実行できます。 しかし、オペレーティング システムを展開する際は、特定のユーザーのコンピューターに対してオペレーティング システムを展開することはできません。 詳細については、「[展開先のコンピューターにユーザーを関連付ける](../get-started/associate-users-with-a-destination-computer.md)」をご覧ください。  
 
-##  <a name="a-namebkmktasksequencesa-use-task-sequences-to-automate-steps"></a><a name="BKMK_TaskSequences"></a> Usare sequenze di attività per automatizzare i passaggi  
- È possibile creare sequenze di attività per eseguire molteplici attività nell'ambiente di Configuration Manager. Le azioni della sequenza di attività sono definite nei singoli passaggi della sequenza. Quando si esegue la sequenza di attività, le azioni di ogni passaggio vengono eseguite a livello di riga di comando senza l'intervento dell'utente. È possibile usare le sequenze di attività per le operazioni seguenti:  
+##  <a name="BKMK_TaskSequences"></a> ステップを自動化するためのタスク シーケンスの使用  
+ Configuration Manager 環境内でさまざまなタスクを実行するためのタスク シーケンスを作成できます。 タスク シーケンス アクションは、シーケンスの個別のステップで定義されます。 タスク シーケンスを実行する際、各ステップの操作がコマンドライン レベルで実行され、ユーザー操作は不要です。 タスク シーケンスを使用して、次のことを行うことができます。  
 
--   [Creare una sequenza di attività per installare un sistema operativo](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md)  
+-   [オペレーティング システムをインストールするタスク シーケンスの作成](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md)  
 
--   [Creare una sequenza di attività per distribuzioni non di sistema operativo](../deploy-use/create-a-task-sequence-for-non-operating-system-deployments.md)  
+-   [オペレーティング システム以外の展開用タスク シーケンスの作成](../deploy-use/create-a-task-sequence-for-non-operating-system-deployments.md)  
 
--   [Creare una sequenza di attività per acquisire un sistema operativo](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md)  
+-   [オペレーティング システムをキャプチャするタスク シーケンスの作成](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md)  
 
--   [Creare una sequenza di attività per acquisire e ripristinare lo stato utente](../deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md)  
+-   [ユーザー状態をキャプチャおよび復元するタスク シーケンスの作成](../deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md)  
 
--   [Creare una sequenza di attività personalizzata](../deploy-use/create-a-custom-task-sequence.md)  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+-   [カスタム タスク シーケンスの作成](../deploy-use/create-a-custom-task-sequence.md)  

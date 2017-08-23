@@ -1,138 +1,134 @@
 ---
-title: "Gestione della conformità nei dispositivi gestiti con Intune |Microsoft Docs"
-description: "Informazioni sulle impostazioni di conformità di System Center Configuration Manager in alcuni scenari comuni."
+title: "Intune で管理されているデバイスでコンプライアンスを管理する | Microsoft Docs"
+description: "いくつかの一般的なシナリオを使用して、System Center Configuration Manager のコンプライアンス設定について説明します。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9e83007f-e81c-4b7e-b47e-b01d7b19cfbc
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 355f6ffec7a77bf03a26f0a1963c2638e67bd75b
-ms.contentlocale: it-it
-ms.lasthandoff: 03/06/2017
-
-
+ms.openlocfilehash: b3a63f6c55c317c9c84d4394dfdcb9f1cbbbc90b
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="managing-compliance-on-devices-managed-with-intune"></a>Gestione della conformità nei dispositivi gestiti con Intune
+# <a name="managing-compliance-on-devices-managed-with-intune"></a>Intune で管理されているデバイスでコンプライアンスを管理する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Questi scenari forniscono un'introduzione all'uso delle impostazioni di conformità di System Center Configuration Manager usando alcuni scenari comuni che potrebbero verificarsi.  
+以下のシナリオでは、一般的なシナリオに従って作業することで、System Center Configuration Manager コンプライアンス設定を使用する方法の概要を説明します。  
 
- Se si ha già familiarità con le impostazioni di conformità, la documentazione dettagliata su tutte le funzionalità disponibili è reperibile nella sezione [Elementi di configurazione per i dispositivi gestiti con Intune](#configuration-items-for-devices-managed-with-intune).  
+ 「[Intune で管理されているデバイスの構成項目](#configuration-items-for-devices-managed-with-intune)」セクションには、コンプライアンス設定に関する知識を既にお持ちの方を対象に、使用しているすべての機能に関する詳細なドキュメントが記載されています。  
 
- L'articolo [Introduzione alle impostazioni di conformità in System Center Configuration Manager](../../compliance/get-started/get-started-with-compliance-settings.md) contiene le nozioni di base sulle impostazioni di conformità e l'articolo [Pianificare e configurare le impostazioni di conformità in System Center Configuration Manager](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) consente di implementare i prerequisiti.  
+ [コンプライアンス設定の使用](../../compliance/get-started/get-started-with-compliance-settings.md)に関する記事では、基本的なコンプライアンス設定について説明しています。また、[コンプライアンス設定の計画と構成](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md)に関する記事は、必要な前提条件の実装に役立ちます。  
 
-## <a name="general-information-for-each-scenario"></a>Informazioni generali per ogni scenario  
- In ogni scenario verrà creato un elemento di configurazione che esegue un'attività specifica. Per aprire la Creazione guidata dell'elemento di configurazione, usare la procedura seguente:  
+## <a name="general-information-for-each-scenario"></a>各シナリオ共通の情報  
+ 各シナリオでは、特定のタスクを実行する構成項目を作成します。 構成項目の作成ウィザードを開き、次の手順に従います。  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Elementi di configurazione**.  
+1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[構成項目]** の順にクリックします。  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
+3.  [ホーム **** ] タブの [作成 **** ] グループで、[構成項目の作成 ****] をクリックします。  
 
-4.  Nella scheda **Generale** della Creazione guidata dell'elemento di configurazione mostrata sotto, specificare un nome e una descrizione per l'elemento di configurazione, quindi scegliere il tipo di elemento di configurazione appropriato per ogni scenario di questo argomento.  
+4.  次のように構成項目の作成ウィザードの **[全般]** タブで、構成項目の名前と説明を指定し、このトピックの各シナリオに適した構成項目の種類を選択します。  
 
-     ![Mostra la pagina generale della creazione guidata dell'elemento di configurazione.](media/Compliance-Settings-Wizard---1.png)  
+     ![構成項目の作成ウィザードの全般ページが表示されます。](media/Compliance-Settings-Wizard---1.png)  
 
-## <a name="scenarios-for-windows-81-and-windows-10-devices-managed-with-intune"></a>Scenari per dispositivi Windows 8.1 e Windows 10 gestiti con Intune  
+## <a name="scenarios-for-windows-81-and-windows-10-devices-managed-with-intune"></a>Intune で管理されている Windows 8.1 および Windows 10 デバイスのシナリオ  
 
-### <a name="scenario-restrict-access-to-the-app-store-on-all-windows-pcs"></a>Scenario: Limitare l'accesso all'App Store in tutti i PC Windows  
- In questo scenario si è l'amministratore IT per una società che gestisce informazioni estremamente riservate. Per questo motivo, si applicano restrizioni alle applicazioni che gli utenti possono installare. Si vuole impedire che gli utenti di tutti i PC Windows 10 scarichino app da Windows Store, quindi si intraprendono le azioni seguenti.  
+### <a name="scenario-restrict-access-to-the-app-store-on-all-windows-pcs"></a>シナリオ: すべての Windows PC でアプリ ストアへのアクセスを制限する  
+ このシナリオでは、あなたは機密性の高い情報を処理する会社の IT 管理者です。 このため、ユーザーがインストールできるアプリを制限します。 Windows 10 PC のすべてのユーザーについて、Windows ストアからのアプリのダウンロードを禁止するために、次の操作を実行します。  
 
-1.  Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Windows 8.1 e Windows 10** , quindi fare clic su **Avanti**.  
+1.  構成項目の作成ウィザードの **[全般]** ページで、構成項目の種類として **[Windows 8.1 および Windows 10]** を選択し、 **[次へ]**をクリックします。  
 
-2.  Nella pagina **Piattaforme supportate** selezionare tutte le piattaforme Windows 10.  
+2.  **[サポートされているプラットフォーム]** ページで、すべての Windows 10 プラットフォームを選択します。  
 
-3.  Nella pagina **Impostazioni dispositivo** selezionare **Store**, quindi fare clic su **Avanti**.  
+3.  **[デバイス設定]** ページで、 **[ストア]**を選択し、 **[次へ]**をクリックします。  
 
-4.  Nella pagina **Store** selezionare **Non consentito** come valore per **Store applicazioni**.  
+4.  **[ストア]** ページで、 **[アプリケーション ストア]** の値として **[禁止]**を選択します。  
 
-5.  Selezionare **Monitora e aggiorna impostazioni non conformi** per assicurarsi che la modifica venga applicata a tutti i PC.  
+5.  **[対応していない設定を修復する]** を選択して、変更がすべての PC に確実に適用されるようにします。  
 
-6.  Completare la procedura guidata per creare l'elemento di configurazione.  
+6.  ウィザードを完了して構成項目を作成します。  
 
- È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
+ これで、「[構成基準の作成と展開に関する一般的なタスク](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md)」トピックの情報を使用して、作成した構成をデバイスに簡単に展開できるようになります。  
 
-## <a name="scenarios-for-windows-phone-devices-managed-with-intune"></a>Scenari per dispositivi Windows Phone gestiti con Intune  
+## <a name="scenarios-for-windows-phone-devices-managed-with-intune"></a>Intune で管理されている Windows Phone デバイスのシナリオ  
 
-### <a name="scenario-disable-the-use-of-screen-capture-on-a-windows-phone"></a>Scenario: Disabilitare l'uso dell'acquisizione schermo in un dispositivo Windows Phone  
- Questo scenario prevede l'uso di dispositivi Windows Phone 8.1 nell'azienda. Questi dispositivi eseguono un'app di vendita che contiene informazioni riservate. Per proteggere l'azienda, si vuole disabilitare l'uso dell'acquisizione schermo nel dispositivo, che potrebbe essere usato per trasmettere informazioni sensibili all'esterno dell'azienda.  
+### <a name="scenario-disable-the-use-of-screen-capture-on-a-windows-phone"></a>シナリオ: Windows Phone で画面のキャプチャの使用を無効にする  
+ このシナリオでは、会社で Windows Phone 8.1 デバイスを使用します。 これらのデバイスでは、機密情報を含む販売アプリを実行します。 会社を保護するため、会社の外部への機密情報の送信に使用される可能性がある、デバイスの画面のキャプチャを使用できないようにします。  
 
-1.  Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Windows Phone** , quindi fare clic su **Avanti**.  
+1.  構成項目の作成ウィザードの **[全般]** ページで、構成項目の種類として **[Windows Phone]** を選択し、 **[次へ]**をクリックします。  
 
-2.  Nella pagina **Piattaforme supportate** selezionare le piattaforme **Tutti i sistemi operativi Windows Phone 8.1**.  
+2.  **[サポートされているプラットフォーム]** ページで、**[すべての Windows Phone 8.1]** プラットフォームを選択します。  
 
-3.  Nella pagina **Impostazioni dispositivo** selezionare **Dispositivo**, quindi fare clic su **Avanti**.  
+3.  **[デバイス設定]** ページで、 **[デバイス]**を選択し、 **[次へ]**をクリックします。  
 
-4.  Nella pagina **Dispositivo** selezionare **Disabilitato** come valore per **Acquisizione schermo**.  
+4.  **[デバイス]** ページで、 **[画面の取り込み]** の値として **[無効]**を選択します。  
 
-5.  Selezionare **Monitora e aggiorna impostazioni non conformi** per assicurarsi che la modifica venga applicata a tutti i dispositivi Windows Phone 8.1.  
+5.  **[対応していない設定を修復する]** を選択して、変更がすべての Windows Phone 8.1 デバイスに確実に適用されるようにします。  
 
-6.  Completare la procedura guidata per creare l'elemento di configurazione.  
+6.  ウィザードを完了して構成項目を作成します。  
 
- È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
+ これで、「[System Center Configuration Manager での構成基準の作成と展開に関する一般的なタスク](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md)」トピックの情報を使用して、作成した構成をデバイスに簡単に展開できるようになります。  
 
-## <a name="scenarios-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Scenari per dispositivi iOS e Mac OS X gestiti con Intune  
+## <a name="scenarios-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Intune で管理されている iOS および Mac OS X デバイスのシナリオ  
 
-### <a name="scenario-disable-the-camera-on-ios-devices"></a>Scenario: Disabilitare la fotocamera sui dispositivi iOS  
- In questo scenario l'azienda produce disegni per nuovi progetti di prodotti, che contengono informazioni sensibili da non divulgare.  Considerato che la società fornisce iPhone o iPad a tutti i dipendenti, si vuole disabilitare l'uso della fotocamera su tali dispositivi per impedire che venga usata per fotografare i disegni.  
+### <a name="scenario-disable-the-camera-on-ios-devices"></a>シナリオ: iOS デバイスでカメラを無効にする  
+ このシナリオでは、会社は、新しい製品デザインのための設計図を作成しています。 ここには、漏えいしてはならない機密情報が含まれています。 会社ではすべての従業員に iPhone または iPad を支給しているため、設計図の撮影に使用されないように、これらのデバイスのカメラを使用できないようにします。  
 
-1.  Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **iOS e Mac OS X** , quindi fare clic su **Avanti**.  
+1.  構成項目の作成ウィザードの **[全般]** ページで、構成項目の種類として **[iOS および Mac OS X]** を選択し、 **[次へ]**をクリックします。  
 
-2.  Nella pagina **Piattaforme supportate** selezionare le piattaforme per tutti i dispositivi iPhone e iPad.  
+2.  **[サポートされているプラットフォーム]** ページで、すべての iPhone および iPad デバイスのプラットフォームを選択します。  
 
-3.  Nella pagina **Impostazioni dispositivo** selezionare **Sicurezza**, quindi fare clic su **Avanti**.  
+3.  **[デバイス設定]** ページで、 **[セキュリティ]**を選択し、 **[次へ]**をクリックします。  
 
-4.  Nella pagina **Sicurezza** selezionare **Non consentito** come valore per **Fotocamera**.  
+4.  **[セキュリティ]** ページで、 **[カメラ]** の値として **[禁止]**を選択します。  
 
-5.  Selezionare **Monitora e aggiorna impostazioni non conformi** per assicurarsi che la modifica venga applicata a tutti i dispositivi iOS.  
+5.  **[対応していない設定を修復する]** を選択して、変更がすべての iOS デバイスに確実に適用されるようにします。  
 
-6.  Completare la procedura guidata per creare l'elemento di configurazione.  
+6.  ウィザードを完了して構成項目を作成します。  
 
- È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
+ これで、「[System Center Configuration Manager での構成基準の作成と展開に関する一般的なタスク](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md)」トピックの情報を使用して、作成した構成をデバイスに簡単に展開できるようになります。  
 
-## <a name="scenarios-for-android-and-samsung-knox-standard-devices-managed-with-intune"></a>Scenari per dispositivi Android e Samsung KNOX Standard gestiti con Intune  
+## <a name="scenarios-for-android-and-samsung-knox-standard-devices-managed-with-intune"></a>Intune で管理されている Android デバイスと Samsung KNOX Standard デバイスのシナリオ  
 
-### <a name="scenario-require-a-password-on-all-android-5-devices"></a>Scenario: Richiedere una password per tutti i dispositivi Android 5  
- In questo scenario verrà creato un elemento di configurazione solo per i dispositivi Android 5 che richiede agli utenti di configurare una password di almeno 6 caratteri nei propri dispositivi. Inoltre, se un utente immette per 5 volte una password errata, i dati del dispositivo vengono cancellati.  
+### <a name="scenario-require-a-password-on-all-android-5-devices"></a>シナリオ: すべての Android 5 デバイスでパスワードを要求する  
+ このシナリオでは、Android 5 デバイスに対してのみ、デバイスで 6 文字以上のパスワードを構成するようにユーザーに要求する構成アイテムを作成します。 さらに、ユーザーが 5 回正しくないパスワードを入力すると、デバイスがワイプされます。  
 
-1.  Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Android e Samsung KNOX** , quindi fare clic su **Avanti**.  
+1.  構成項目の作成ウィザードの **[全般]** ページで、構成項目の種類として **[Android および Samsung KNOX]** を選択し、 **[次へ]**をクリックします。  
 
-2.  Nella pagina **Piattaforme supportate** selezionare solo **Android 5** per assicurarsi che le impostazioni vengano applicate solo a tale piattaforma.  
+2.  **[サポートされているプラットフォーム]** ページで、**[Android 5]** のみを選択します (設定がこのプラットフォームにのみ適用されるようにするため)。  
 
-3.  Nella pagina **Impostazioni dispositivo** selezionare **Password**, quindi fare clic su **Avanti**.  
+3.  **[デバイス設定]** ページで、 **[パスワード]**を選択し、 **[次へ]**をクリックします。  
 
-4.  Nella pagina **Password** configurare le seguenti impostazioni:  
+4.  **[パスワード]** ページで、次の設定を構成します。  
 
-    -   **Richiedi impostazioni password nei dispositivi** > **Richiesta**  
+    -   **[デバイスのパスワードの設定が必要]** > **[必須]**  
 
-    -   **Lunghezza minima password (caratteri)** > **6**  
+    -   **[パスワードの最小文字数]** > **6**  
 
-    -   **Numero di tentativi di accesso non riusciti prima della cancellazione dei dati dal dispositivo** > **5**  
+    -   **[デバイスをワイプするまでのログオン失敗回数]** > **5**  
 
-5.  Completare la procedura guidata per creare l'elemento di configurazione.  
+5.  ウィザードを完了して構成項目を作成します。  
 
- È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
+ これで、「[構成基準の作成と展開に関する一般的なタスク](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md)」トピックの情報を使用して、作成した構成をデバイスに簡単に展開できるようになります。  
 
-## <a name="configuration-items-for-devices-managed-with-intune"></a>Elementi di configurazione per i dispositivi gestiti con Intune
+## <a name="configuration-items-for-devices-managed-with-intune"></a>Intune で管理されているデバイスの構成項目
 
-I tipi di elementi di configurazione di System Center Configuration Manager elencati di seguito sono disponibili per i dispositivi non gestiti dal client di Configuration Manager, ad esempio i dispositivi registrati con Microsoft Intune.  
+次の System Center Configuration Manager 構成項目の種類は、Configuration Manager クライアントで管理されていないでデバイス (Microsoft Intune に登録されているデバイスなど) で利用可能です。  
 
- -   [Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti con Intune](create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)  
+ -   [Intune で管理されている Windows 8.1 および Windows 10 デバイスの構成項目を作成する方法](create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)  
 
- -   [Come creare elementi di configurazione per dispositivi Windows Phone gestiti con Intune ](create-configuration-items-for-windows-phone-devices-managed-without-the-client.md)  
+ -   [Intune で管理されている Windows Phone デバイスの構成項目を作成する方法](create-configuration-items-for-windows-phone-devices-managed-without-the-client.md)  
 
- -   [Come creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti con Intune](create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client.md)  
+ -   [Intune で管理されている iOS および Mac OS X デバイスの構成項目を作成する方法](create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client.md)  
 
- -   [Come creare elementi di configurazione per dispositivi Android e Samsung KNOX Standard gestiti con Intune](create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md)  
-
+ -   [Intune で管理されている Android デバイスと Samsung KNOX Standard デバイスの構成項目を作成する方法](create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md)  

@@ -1,137 +1,134 @@
 ---
-title: "Accessibilità | Microsoft Docs"
-description: "Informazioni sulle funzionalità che rendono System Center Configuration Manager accessibile a persone con particolari esigenze."
+title: "ユーザー補助 | Microsoft Docs"
+description: "障碍のあるユーザーに System Center Configuration Manager を利用してもらうための機能について説明します。"
 ms.custom: na
 ms.date: 7/31/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1cb96666-98bf-49a9-85ca-dbb53f0655e9
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: ca518796477dda149a9f4c0ebd65f0a082eab806
-ms.contentlocale: it-it
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="accessibility-features-in-system-center-configuration-manager"></a>Funzionalità di accessibilità in System Center Configuration Manager
+# <a name="accessibility-features-in-system-center-configuration-manager"></a>System Center Configuration Manager のユーザー補助機能
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
-
-
-System Center Configuration Manager include funzionalità che lo rendono accessibile a persone con particolari esigenze.
+*適用対象: System Center Configuration Manager (Current Branch)*
 
 
-## <a name="bkmk_aconsole"></a> Funzionalità di accessibilità per la console di Configuration Manager  
+System Center Configuration Manager には、障碍のあるユーザーに利用してもらうための機能があります。
 
-**Combinazioni di tasti e miglioramenti della versione 1706 e delle versioni successive**
 
-|Tasti di scelta rapida|  Scopo|
+## <a name="bkmk_aconsole"></a> Configuration Manager コンソールのユーザー補助機能  
+
+**バージョン 1706 以降のショートカットと機能強化**
+
+|ショートカット キー|  目的|
 |--------|--------|  
-|Ctrl + M|Imposta lo stato attivo sul riquadro principale (centrale).|
-|Ctrl + T|Imposta lo stato attivo sul nodo principale nel riquadro di spostamento. Se il focus era già in questo riquadro, viene impostato sull'ultimo nodo visitato.|
-|Ctrl + I|Imposta lo stato attivo sulla barra di navigazione, sotto la barra multifunzione.|
-|Ctrl + L|Imposta lo stato attivo sul campo **Ricerca**, se disponibile.|
-|Ctrl + D|Imposta lo stato attivo sul riquadro dei dettagli, se disponibile.|
-|ALT     |Sposta lo stato attivo all'interno e al di fuori della barra multifunzione.|
+|Ctrl + M|フォーカスをメイン (中央) ウィンドウに設定します。|
+|Ctrl + T|フォーカスをナビゲーション ウィンドウの最上位ノードに設定します。 フォーカスが既にそのウィンドウにある場合、フォーカスは最後にアクセスしたノードに設定されます。|
+|Ctrl + I|フォーカスをリボンの下の階層リンク バーに設定します。|
+|Ctrl + L|フォーカスを **[検索]** フィールドに設定します (使用可能な場合)。|
+|Ctrl + D|フォーカスを [詳細] フィールドに設定します (使用可能な場合)。|
+|Alt     |リボンのフォーカスのインとアウトを変更します。|
 
 
-- Navigazione migliorata nel riquadro di spostamento quando si digitano le lettere del nome di un nodo.
-- La navigazione tramite tastiera nella vista principale e nella barra multifunzione è ora circolare.
-- La navigazione tramite tastiera nel riquadro dei dettagli è ora circolare. Per tornare al riquadro o all'oggetto precedente, è possibile usare Ctrl + D e poi MAIUSC + TAB.
-- Dopo l'aggiornamento di una vista dell'area di lavoro, il focus è impostato nel riquadro principale dell'area di lavoro.
-- Risolto un problema per abilitare i lettori dello schermo per annunciare i nomi degli elementi dell'elenco.
-- Nomi accessibili aggiunti per più controlli nella pagina che consente ai lettori dello schermo di annunciare informazioni importanti.
+- ノード名の文字を入力したときのナビゲーション ウィンドウでのナビゲーションが改善されました。
+- メイン ビューとリボンのキーボード ナビゲーションが循環になりました。
+- 詳細ウィンドウのキーボード ナビゲーションが循環になりました。 前のオブジェクトまたはウィンドウに戻るには、Ctrl + D キーを押してから Shift + TAB キーを押します。
+- [ワークスペース] ビューを更新すると、フォーカスがそのワークスペースのメイン ウィンドウに設定されます。
+- スクリーン リーダーを有効にしてリスト アイテムの名前を読み上げる問題を修正しました。
+- スクリーン リーダーが重要な情報を読み上げられるように、ページ上の複数のコントロールにアクセス可能な名前を追加しました。
 
 
-**Le combinazioni di tasti seguenti sono disponibili per tutte le versioni**
+**以下のキーボード ショートカットはすべてのバージョンで使用できます。**
 
-- Per accedere a un'area di lavoro, utilizzare i seguenti tasti di scelta rapida:  
+- 次のショートカット キーを使用して、ワークスペースにアクセスできます。  
 
-|Tasti di scelta rapida| Area di lavoro|
+|ショートカット キー| ワークスペース|
 |--------|--------|  
-|CTRL+1| Asset e conformità|
-|CTRL+2|  Raccolta software|
-|CTRL+3|  Monitoraggio|
-|CTRL+4|  Amministrazione|
+|Ctrl + 1| 資産とコンプライアンス|
+|Ctrl + 2|  ソフトウェア ライブラリ|
+|Ctrl + 3|  監視|
+|Ctrl + 4|  管理|
 
 
--   Per accedere a un menu dell'area di lavoro, premere TAB fino a quando l'icona Espandi/comprimi non viene attivata. Premere quindi FRECCIA GIÙ per accedere al menu dell'area di lavoro.  
+-   ワークスペース メニューを表示するには、展開/折りたたみのアイコンにフォーカスが移動するまで Tab キーを選択します。 下矢印キーを選択すると、ワークスペースのメニューが開きます。  
 
--   Per spostarsi all'interno di un menu dell'area di lavoro, utilizzare i tasti di direzione.  
+-   ワークスペース メニュー間を移動するには、矢印キーを使用します。  
 
--   Per accedere ad aree diverse dell'area di lavoro, utilizzare il tasto TAB e i tasti MAIUSC+TAB. Per spostarsi all'interno di un'area dell'area di lavoro, ad esempio la barra multifunzione, utilizzare i tasti di direzione.  
+-   ワークスペースの別のエリアに移動するには、Tab キーおよび Shift + Tab キーを使用します。 リボンなどワークスペースのエリア内を移動するには、矢印キーを使用します。  
 
--   Per accedere alla barra degli indirizzi quando lo stato attivo si trova nel nodo della struttura, usare MAIUSC+TAB tre volte.  
+-   フォーカスがツリー ノードにある場合にアドレス バーにアクセスするには、Shift + Tab キーを 3 回押します。  
 
--   In una pagina della creazione guidata o delle proprietà, è possibile spostarsi tra le caselle con i tasti di scelta rapida. Premere ALT più il carattere di sottolineatura (ALT+_) per selezionare una casella specifica.     
+-   ウィザードまたはプロパティ ページでは、キーボード ショートカットを使用してボックスを移動できます。 Alt キーと下線付き文字 (Alt+_) を選択すると、特定のボックスが選択されます。     
 
--  Per spostarsi tra i vari nodi di un'area di lavoro è sufficiente immettere la prima lettera del nome di un nodo. Quando si preme il tasto, il cursore si sposta sul nodo successivo che inizia con tale lettera. Se si usa un'utilità per la lettura dello schermo, verrà letto il nome del nodo.
+-  ワークスペースのさまざまなノードに移動するには、ノード名の最初の文字を入力します。 キーを押すたびに、その文字で始まる次のノードにカーソルが移動します。 スクリーン リーダーを使用している場合は、リーダーがそのノードの名前を読み上げます。
 
 > [!NOTE]  
->  Le informazioni riportate in questa sezione sono valide solo per gli utenti che acquistano una licenza di prodotti Microsoft negli Stati Uniti. Se il prodotto non è stato acquistato negli Stati Uniti, è possibile usare la scheda informativa della filiale inclusa nel pacchetto software oppure visitare il [sito Web Microsoft sull'accessibilità](http://go.microsoft.com/fwlink/?LinkId=8431) per informazioni di contatto per i servizi di supporto Microsoft. È possibile contattare la filiale locale per stabilire se i tipi di prodotti e servizi illustrati in questa sezione sono disponibili nell'area di interesse. Le informazioni sull'accesso facilitato sono disponibili in altre lingue, incluso giapponese e francese.  
+>  このセクションの情報は、米国内で Microsoft 製品のライセンスを入手したユーザーにのみ適用されることがあります。 米国以外でこの製品を入手した場合には、ソフトウェア パッケージに付属している子会社の情報カードを使用するか、または [Microsoft アクセシビリティ Web サイト](http://go.microsoft.com/fwlink/?LinkId=8431)で Microsoft サポート サービスの窓口を参照してください。 このセクションに記載されている製品とサービスが利用できるかどうかを確認するには、各地の子会社にお問い合わせください。 アクセシビリティの情報は、日本語およびフランス語を含むその他の言語でもご覧いただけます。  
 
-##  <a name="bkmk_ahelp"></a> Funzionalità di accessibilità per la Guida di Configuration Manager  
- La Guida di Configuration Manager include funzionalità che la rendono accessibile a uno spettro più ampio di utenti, inclusi coloro che hanno difficoltà di movimento, soffrono di ipovisione o sono affetti da altre disabilità.  
+##  <a name="bkmk_ahelp"></a> Configuration Manager ヘルプのユーザー補助機能  
+ Configuration Manager ヘルプには、操作が困難な方、視覚障碍のあるの低い方、また障碍の他の障碍のある方を含めて幅広いユーザーの方が利用できるようユーザー補助機能が備わっています。  
 
-|Per eseguire questa operazione|Utilizzare questo tasto di scelta rapida|  
+|操作内容|使用するショートカット キー|  
 |----------------|--------------------------------|  
-|Visualizzare la finestra della Guida.|F1|  
-|Spostare il cursore tra il riquadro argomenti della Guida e il riquadro di spostamento (le schede **Sommario**, **Cerca**e **Indice** ).|F6|  
-|Passare da una scheda all'altra (ad esempio, **Sommario**, **Cerca**e **Indice**) nel riquadro di spostamento.|ALT + lettera sottolineata della scheda|  
-|Selezionare il collegamento ipertestuale o il testo nascosto successivo.|Scheda|  
-|Selezionare il collegamento ipertestuale o il testo nascosto precedente.|MAIUSC + TAB|  
-|Eseguire l'azione per Mostra tutto, Nascondi tutto, il testo nascosto o il collegamento ipertestuale selezionato.|INVIO|  
-|Visualizzare il menu **Opzioni** per accedere ai comandi della barra degli strumenti della Guida.|ALT + O|  
-|Nascondere o mostrare il riquadro che contiene le schede **Sommario**, **Cerca** e **Indice**.|ALT + O e quindi premere T|  
-|Mostrare l'argomento precedentemente visualizzato.|ALT + O e quindi premere B|  
-|Visualizzare l'argomento successivo in una sequenza di argomenti visualizzati in precedenza.|ALT + O e quindi premere F|  
-|Tornare alla pagina iniziale specificata.|ALT + O e quindi premere H|  
-|Interrompere l'apertura di un argomento della Guida, ad esempio per interrompere il download di una pagina Web.|Alt+O e quindi premere S|  
-|Aprire la finestra di dialogo **Opzioni Internet** per Windows Internet Explorer, in cui è possibile modificare le impostazioni di accessibilità.|Alt+O e quindi premere I|  
-|Aggiornare l'argomento, ad esempio una pagina Web collegata.|Alt+O e quindi premere R|  
-|Stampare tutti gli argomenti di una cartella o solo l'argomento selezionato.|Alt+O e quindi premere P|  
-|Chiudere la finestra della Guida.|ALT + F4|  
+|ヘルプ ウィンドウを表示する|F1|  
+|ヘルプのトピック ウィンドウとナビゲーション ウィンドウ ([ **目次** ] タブ、[ **検索** ] タブ、および [ **キーワード** ] タブ) の間でカーソルを切り替える|F6|  
+|ナビゲーション ウィンドウでタブ (**[目次]**、**[検索]**、**[キーワード]** タブなど) を切り替える|Alt + タブの下線付き文字|  
+|次の非表示テキストまたはハイパーリンクを選択する|タブ|  
+|前の非表示テキストまたはハイパーリンクを選択する|Shift + Tab|  
+|選択した [すべて表示]、[すべて非表示]、非表示テキスト、またはハイパーリンクに対してアクションを実行する|Enter キー|  
+|任意のヘルプ ツール バー コマンドにアクセスするための [ **オプション** ] メニューを表示する|Alt + O|  
+|**[目次]**、**[検索]**、**[キーワード]** タブを含むウィンドウの表示/非表示を切り替える|Alt + O、続けて T キーを選択|  
+|前に表示したトピックを表示する|Alt + O、続けて B キーを選択|  
+|前に表示した一連のトピックの次のトピックを表示する|Alt + O、続けて F キーを選択|  
+|指定されているホーム ページに戻る|Alt + O、続けて H キーを選択|  
+|ヘルプ ウィンドウでヘルプ トピックが開かないようにする (Web ページのダウンロードを止める場合など)|Alt + O、続けて S キーを選択|  
+|ユーザー補助機能の設定を変更できる、Microsoft Internet Explorer の[ **インターネット オプション** ] ダイアログ ボックスを開く|Alt + O、続けて I キーを選択|  
+|リンクされている Web ページなど、トピックを更新する|Alt + O、続けて R キーを選択|  
+|ヘルプの全トピックまたは選択したトピックのみを印刷する|Alt + O、続けて P キーを選択|  
+|ヘルプ ウィンドウを閉じる|Alt + F4|  
 
-#### <a name="to-change-the-appearance-of-a-help-topic"></a>Per modificare l'aspetto di un argomento della Guida  
+#### <a name="to-change-the-appearance-of-a-help-topic"></a>ヘルプ トピックの表示方法を変更するには  
 
-1.  Per preparare la personalizzazione di colori, stili dei caratteri e dimensioni dei caratteri nella Guida, aprire la finestra della Guida.  
+1.  ヘルプで使用する色、フォント スタイル、フォント サイズをカスタマイズするには、ヘルプ ウィンドウを開きます。  
 
-2.  Scegliere **Opzioni** e quindi scegliere **Opzioni Internet**.  
+2.  **[オプション]**、**[インターネット オプション]** の順に選択します。  
 
-3.  Nella scheda **Generale** scegliere **Accessibilità**. Scegliere **Ignora i colori specificati sulle pagine Web**, **Ignora gli stili dei caratteri specificati sulle pagine Web** e **Ignora le dimensioni dei caratteri specificati sulle pagine Web**. È inoltre possibile utilizzare le impostazioni specificate nel proprio foglio di stile.  
+3.  **[全般]** タブの **[ユーザー補助]** を選択します。 **[Web ページで指定された色を使用しない]**、**[Web ページで指定されたフォント スタイルを使用しない]**、**[Web ページで指定されたフォント サイズを使用しない]** の各チェック ボックスをオンにします。 独自のスタイル シートで指定されている設定の使用を選択することもできます。  
 
-#### <a name="to-change-the-color-of-the-background-or-text-in-help"></a>Per modificare il colore dello sfondo o del testo della Guida  
+#### <a name="to-change-the-color-of-the-background-or-text-in-help"></a>ヘルプの背景色または文字色を変更するには  
 
-1.  Aprire la finestra della Guida.  
+1.  ヘルプ ウィンドウを開きます。  
 
-2.  Scegliere **Opzioni** e quindi scegliere **Opzioni Internet**.  
+2.  **[オプション]**、**[インターネット オプション]** の順に選択します。  
 
-3.  Nella scheda **Generale** scegliere **Accessibilità**. Scegliere quindi **Ignora i colori specificati sulle pagine Web**. È inoltre possibile utilizzare le impostazioni specificate nel proprio foglio di stile.  
+3.  **[全般]** タブの **[ユーザー補助]** を選択します。 次に、**[Web ページで指定された色を使用しない]** チェック ボックスをオンにします。 独自のスタイル シートで指定されている設定の使用を選択することもできます。  
 
-4.  Per personalizzare i colori usati nella Guida in linea, nella scheda **Generale** scegliere **Colori**. Deselezionare la casella di controllo **Usa colori di Windows** e quindi scegliere i colori da usare per il carattere e lo sfondo.  
-
-    > [!NOTE]  
-    >  Se si modifica il colore di sfondo degli argomenti della Guida nella finestra della Guida, la modifica avrà effetto anche sul colore di sfondo delle pagine Web in Windows Internet Explorer.  
-
-#### <a name="to-change-the-font-in-help"></a>Per modificare il carattere nella Guida  
-
-1.  Aprire la finestra della Guida.  
-
-2.  Scegliere **Opzioni** e quindi scegliere **Opzioni Internet**.  
-
-3.  Nella scheda **Generale** scegliere **Accessibilità**. Per usare le stesse impostazioni usate nella propria istanza di Windows Internet Explorer, scegliere **Ignora gli stili dei caratteri specificati sulle pagine Web** e **Ignora le dimensioni dei caratteri specificati sulle pagine Web**. È inoltre possibile utilizzare le impostazioni specificate nel proprio foglio di stile.  
-
-4.  Per personalizzare lo stile del carattere usato nella Guida, nella scheda **Generale** scegliere **Caratteri** e quindi scegliere lo stile del carattere desiderato.  
+4.  ヘルプで使用される色をカスタマイズするには、**[全般]** タブで **[色]** を選択します。 **[Windows の色を使用する]** チェック ボックスをオフにしてから、使用するフォントの色と背景色を選択します。  
 
     > [!NOTE]  
-    >  Se si modifica il carattere degli argomenti della Guida nella finestra della Guida, la modifica avrà effetto anche sul carattere delle pagine Web in Windows Internet Explorer.  
+    >  ヘルプ ウィンドウに表示されるヘルプ トピックの背景色を変更すると、Windows Internet Explorer で Web ページを表示する際の背景色にも影響します。  
 
+#### <a name="to-change-the-font-in-help"></a>ヘルプのフォントを変更するには  
+
+1.  ヘルプ ウィンドウを開きます。  
+
+2.  **[オプション]**、**[インターネット オプション]** の順に選択します。  
+
+3.  **[全般]** タブの **[ユーザー補助]** を選択します。 Windows Internet Explorer で使用されている設定を流用する場合は、**[Web ページで指定されたフォント スタイルを使用しない]** および **[Web ページで指定されたフォント サイズを使用しない]** の両チェック ボックスをオンにします。 独自のスタイル シートで指定されている設定の使用を選択することもできます。  
+
+4.  ヘルプで使用するフォント スタイルをカスタマイズするには、**[全般]** タブの **[フォント]** を選択し、使用するフォント スタイルを選択します。  
+
+    > [!NOTE]  
+    >  ヘルプ ウィンドウに表示されるヘルプ トピックのフォントを変更すると、Windows Internet Explorer で Web ページを表示する際のフォントにも影響します。  

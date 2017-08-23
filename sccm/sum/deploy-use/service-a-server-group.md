@@ -1,6 +1,6 @@
 ---
-title: Assistenza a un gruppo di server | Documentazione Microsoft
-description: "La console di System Center Configuration Manager invia avvisi e stati per monitorare gli aggiornamenti e la conformità."
+title: "サーバー グループの提供 |Microsoft Docs"
+description: "System Center Configuration Manager コンソールには、更新プログラムとコンプライアンスを監視するためのアラートとステータスがあります。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -9,56 +9,54 @@ ms.date: 12/07/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: 304a83ea-0f72-437d-9688-2e6e0c7526dd
-translationtype: Human Translation
-ms.sourcegitcommit: af5f58dd5fe1f19d7a70cb9516af159c6682d194
 ms.openlocfilehash: ae09a02dd5d67113b9a7e2ce146c844efa4caf55
-ms.lasthandoff: 01/07/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
 >[!IMPORTANT]
->Questa è una funzionalità di versione non definitiva che è disponibile in Configuration Manager 1606 e 1610. Le funzionalità di versioni non definitive sono incluse nel prodotto a scopo di test preliminare in un ambiente di produzione, ma non devono essere considerate pronte per l'ambiente di produzione. Per rendere disponibile questa funzionalità è necessario attivarla. Per altre informazioni, vedere la sezione relativa all'[abilitazione delle funzionalità facoltative dagli aggiornamenti](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
+>これは Configuration Manager バージョン 1606 およびバージョン 1610 で使用できるプレリリース機能です。 プレリリース機能は、運用環境での早期テストのためにこの製品に含まれていますが、運用環境で使用することはできません。 使用するには、この機能を有効にする必要があります。 詳細については、「[更新プログラムからプレリリース機能を使用する](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease)」を参照してください。
 
 
-# <a name="service-a-server-group"></a>Assistenza a un gruppo di server
+# <a name="service-a-server-group"></a>サーバー グループの提供
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-A partire da System Center Configuration Manager versione 1606, è possibile configurare le impostazioni di un gruppo di server per una raccolta per definire il numero, la percentuale o l'ordine con cui i computer nella raccolta installeranno gli aggiornamenti software. È anche possibile configurare gli script pre e post distribuzione di PowerShell per eseguire azioni personalizzate.
+System Center Configuration Manager バージョン 1606 以降では、コレクションにサーバー グループの設定を構成して、ソフトウェア更新プログラムをインストールするコレクション内のコンピューターの数、割合、または順序を定義できます。 また、カスタム アクションを実行する展開前および展開後の PowerShell スクリプトも構成できます。
 
-Quando si distribuiscono gli aggiornamenti software in una raccolta in cui sono state configurate le impostazioni del gruppo di server, Configuration Manager determina il numero dei computer nella raccolta che possono installare gli aggiornamenti software in qualsiasi momento e rende disponibile lo stesso numero di blocchi di distribuzione. Solo i computer che ottengono un blocco di distribuzione potranno avviare l'installazione dell'aggiornamento software. Quando un blocco di distribuzione è disponibile, un computer ottiene il blocco di distribuzione, installa gli aggiornamenti software e quindi rilascia il blocco di distribuzione quando l'installazione degli aggiornamenti software viene completata correttamente. In seguito, il blocco di distribuzione diventa disponibile per altri computer. Se un computer non può rilasciare un blocco di distribuzione, è possibile rilasciare manualmente tutti i blocchi di distribuzione del gruppo server per la raccolta.
+サーバー グループの設定が構成されているコレクションにソフトウェア更新プログラムを展開するとき、Configuration Manager は、特定の時点でソフトウェア更新プログラムをインストールできるコレクション内のコンピューターの数を決定し、同じ数の展開ロックを使用できるようにします。 展開ロックを取得したコンピューターだけが、ソフトウェア更新プログラムのインストールを開始します。 展開ロックが利用できる場合、コンピューターは展開ロックを取得し、ソフトウェア更新プログラムをインストールした後、ソフトウェア更新プログラムのインストールが正常に完了したら、展開ロックを解放します。 その後、展開ロックは他のコンピューターで利用できるようになります。 コンピューターが展開ロックを解放できない場合は、ユーザーがコレクションのすべてのサーバー グループの展開ロックを手動で解放できます。
 
 >[!IMPORTANT]
->Tutti i computer della raccolta devono essere assegnati allo stesso sito.
+>コレクション内のすべてのコンピューターを、同じサイトに割り当てる必要があります。
 
-#### <a name="to-create-a-collection-for-a-server-group"></a>Per creare una raccolta per un gruppo di server  
-Le impostazioni del gruppo di server vengono configurate nelle proprietà di una raccolta di dispositivi. Per la manutenzione di un gruppo di server, tutti i membri della raccolta devono essere assegnati allo stesso sito. Per creare una raccolta e configurare le impostazioni del gruppo di server, procedere come segue:
-1.  [Creare una raccolta di dispositivi](../../core/clients/manage/collections/create-collections.md) che contenga i computer del gruppo di server.  
+#### <a name="to-create-a-collection-for-a-server-group"></a>サーバー グループのコレクションを作成するには  
+サーバー グループの設定は、デバイス コレクションのプロパティで構成します。 サーバー グループをサービスするには、コレクション内のすべてのメンバーが同じサイトに割り当てられている必要があります。 コレクションを作成してサーバー グループの設定を構成するには、次の手順のようにします。
+1.  サーバー グループ内のコンピューターを含む[デバイス コレクションを作成](../../core/clients/manage/collections/create-collections.md)します。  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Raccolte di dispositivi**, quindi fare clic con il pulsante destro del mouse sulla raccolta che contiene i computer del gruppo di server e scegliere **Proprietà**.  
+2.  **[資産とコンプライアンス]** ワークスペースで **[デバイス コレクション]** をクリックし、サーバー グループ内のコンピューターを含むコレクションを右クリックして、**[プロパティ]** をクリックします。  
 
-3.  Nella scheda **Generale** selezionare **Tutti i dispositivi fanno parte dello stesso gruppo di server**, quindi fare clic su **Impostazioni**.  
+3.  **[全般]** タブで **[すべてのデバイスが同じサーバー グループに属す]** を選択し、**[設定]** をクリックします。  
 
-4.  Nella pagina **Impostazioni gruppo di server** specificare una delle impostazioni seguenti:  
+4.  **[サーバー グループ設定]** ページで、次のいずれかの設定を指定します。  
 
-    -   **Consentire a una percentuale di computer di essere aggiornati contemporaneamente**: specifica che solo una determinata percentuale di client vengono aggiornati in qualsiasi momento. Se, ad esempio, l'insieme ha 10 client e la raccolta viene configurata per aggiornare il 30% dei client allo stesso tempo, solo 3 client installeranno gli aggiornamenti software in qualsiasi momento.  
+    -   **[同時更新を許可するコンピューターの割合]**: 任意の時点で特定の割合のクライアントのみを更新するように指定します。 たとえば、コレクションに 10 のクライアントがあり、クライアントの 30% を同時に更新するようにコレクションが構成されている場合は、任意の時点で 3 つのクライアントだけがソフトウェア更新プログラムをインストールします。  
 
-    -   **Consentire a un numero di computer di essere aggiornati contemporaneamente**: specifica che solo un certo numero di client possono essere aggiornati in un determinato momento.  
+    -   **[同時更新を許可するコンピューターの数]**: 任意の時点で特定の数のクライアントのみを更新するように指定します。  
 
-    -   **Specifica la sequenza di manutenzione**: specifica che i client nella raccolta saranno aggiornati uno alla volta nella sequenza che viene configurata. Un client installerà gli aggiornamenti software solo dopo che il client che lo precede nell'elenco avrà completato l'installazione degli aggiornamenti.  
+    -   **[メンテナンス シーケンスを指定する]**: コレクション内のクライアントが、構成した順番で 1 つずつ更新されるように指定します。 クライアントは、一覧で前にあるクライアントがソフトウェア更新プログラムのインストールを完了しないと、ソフトウェア更新プログラムをインストールできません。  
 
-5.  Specificare se usare uno script di pre-distribuzione (svuotamento del nodo) o di post-distribuzione (ripresa del nodo).  
+5.  展開前 (ノードのドレイン) スクリプトまたは展開後 (ノードの再開) スクリプトを使用するかどうかを指定します。  
 
     > [!WARNING]
-    > Gli script personalizzati non sono firmati da Microsoft. È responsabilità dell'utente mantenere l'integrità di questi script.
+    > カスタム スクリプトにはマイクロソフトの署名はありません。 これらのスクリプトの整合性は、ユーザーの責任で維持してください。
 
     > [!TIP]  
-    > Di seguito sono riportati alcuni esempi che è possibile usare nei test degli script di pre-distribuzione e post-distribuzione, con cui viene scritta l'ora corrente in un file di testo:  
+    > 次の例は、現在の時刻をテキスト ファイルに書き込む、展開前スクリプトと展開後スクリプトをテストするときに使用できます。  
     >   
-    >  **Pre-distribuzione**  
+    >  **展開前**  
     >   
     >  `#Start`  
     >   
@@ -68,7 +66,7 @@ Le impostazioni del gruppo di server vengono configurate nelle proprietà di una
     >   
     >  `Out-File C:\temp\start.txt`  
     >   
-    >  **Post-distribuzione**  
+    >  **展開後**  
     >   
     >  `#End`  
     >   
@@ -78,16 +76,15 @@ Le impostazioni del gruppo di server vengono configurate nelle proprietà di una
     >   
     >  `Out-File C:\temp\end.txt`  
 
-## <a name="deploy-software-updates-to-the-server-group-and-monitor-status"></a>Distribuire gli aggiornamenti software nel gruppo di server e monitorare lo stato  
-Gli aggiornamenti software vengono distribuiti alla raccolta del gruppo di server tramite il consueto processo di distribuzione. Dopo aver distribuito gli aggiornamenti software, è possibile monitorarne la distribuzione nella console di Configuration Manager.
-1.  [Distribuire gli aggiornamenti software](manually-deploy-software-updates.md) nella raccolta del gruppo di server.   
+## <a name="deploy-software-updates-to-the-server-group-and-monitor-status"></a>ソフトウェア更新プログラムをサーバー グループに展開して状態を監視する  
+サーバー グループのコレクションにソフトウェア更新プログラムを展開するには、標準的な展開プロセスを使用します。 ソフトウェア更新プログラムを展開した後は、Configuration Manager コンソールでソフトウェア更新プログラムの展開を監視できます。
+1.  サーバー グループのコレクションに[ソフトウェア更新プログラムを展開](manually-deploy-software-updates.md)します。   
 
-2.  [Monitorare la distribuzione degli aggiornamenti software](monitor-software-updates.md). Oltre alle viste di monitoraggio standard per la distribuzione degli aggiornamenti software, viene visualizzato lo stato **In attesa del blocco** quando un client è in attesa del proprio turno per installare gli aggiornamenti software. Per altre informazioni, esaminare il file UpdatesDeployment.log.
+2.  [ソフトウェア更新プログラムの展開を監視](monitor-software-updates.md)します。 ソフトウェア更新プログラムの展開の標準の監視ビューに加え、クライアントがソフトウェア更新プログラムをインストールする順番を待機しているときには、**[ロックを待っています]** 状態が表示されます。 詳細は、UpdatesDeployment.log ファイルで確認できます。
 
 
-## <a name="clear-the-deployment-locks-for-computers-in-a-server-group"></a>Cancellare i blocchi di distribuzione per i computer di un gruppo di server  
-Se un computer non può rilasciare un blocco di distribuzione, è possibile rilasciare manualmente tutti i blocchi di distribuzione del gruppo di server per la raccolta. Cancellare i blocchi solo quando una distribuzione è bloccata in fase di aggiornamento dei computer nella raccolta e sono presenti computer che non sono ancora conformi.  
-1.  Nell'area di lavoro **Asset e conformità** fare clic su **Raccolte di dispositivi** e quindi fare clic sulla raccolta per cancellare i blocchi di distribuzione.  
+## <a name="clear-the-deployment-locks-for-computers-in-a-server-group"></a>サーバー グループ内のコンピューターの展開のロックを解除する  
+コンピューターが展開ロックを解放できないときは、ユーザーがコレクションのすべてのサーバー グループの展開ロックを手動で解放できます。 展開がコレクション内のコンピューターの更新でスタックしていて、まだ対応していないコンピューターがある場合にのみ、ロックを解除します。  
+1.  **[資産とコンプライアンス]** ワークスペースで、**[デバイス コレクション]** ノードをクリックしてから、コレクションをクリックして展開のロックを解除します。  
 
-2.  Sulla scheda **Home**, nel gruppo **Distribuzione**, fare clic su **Cancellare i blocchi di distribuzione del gruppo di server**. Quando i client non sono riusciti a installare gli aggiornamenti software e impediscono ad altri client di installare i loro, i blocchi di distribuzione possono essere cancellati manualmente.  
-
+2.  **[ホーム]** タブの **[展開]** グループで、**[サーバー グループ展開のロックを解除]** をクリックします。 クライアントがソフトウェア更新プログラムのインストールに失敗し他のクライアントのソフトウェア更新プログラムのインストールを妨げている場合は、展開のロックを手動でクリアできます。  

@@ -1,99 +1,92 @@
 ---
-title: Monitorare le applicazioni dalla console di System Center Configuration Manager | Microsoft Docs
-description: "Monitorare la distribuzione del software, inclusi gli aggiornamenti, le impostazioni di conformità e le applicazioni usando l&quot;area di lavoro Monitoraggio in Configuration Manager."
+title: "System Center Configuration Manager コンソールからアプリケーションを監視する | Microsoft Docs"
+description: "Configuration Manager の [監視] ワークスペースを使用して、更新プログラム、コンプライアンス設定、アプリケーションなどのソフトウェアの展開を監視します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 784c295c-b8b8-4202-ab9f-665908d49d6d
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: fd7ea34b605d70f2ba9bd40384eb566ec3a87430
 ms.openlocfilehash: 42d21d10489bffe32b875384f8801686239a0ba4
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-applications-from-the-system-center-configuration-manager-console"></a>Monitorare le applicazioni dalla console di System Center Configuration Manager
+# <a name="monitor-applications-from-the-system-center-configuration-manager-console"></a>System Center Configuration Manager コンソールからのアプリケーションの監視
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
 
-In System Center Configuration Manager è possibile monitorare la distribuzione di tutti i software, inclusi gli aggiornamenti software, le impostazioni di conformità, le applicazioni, le sequenze di attività, i pacchetti e i programmi. È possibile monitorare le distribuzioni usando l'area di lavoro **Monitoraggio** nella console di Configuration Manager o usando i report.  
+System Center Configuration Managerでは、ソフトウェア更新プログラム、コンプライアンス設定、アプリケーション、タスク シーケンス、パッケージ、プログラムなど、すべてのソフトウェアの展開を監視できます。 展開の監視には、Configuration Manager コンソールの **[監視]** ワークスペースまたはレポートを使用できます。  
 
- Le applicazioni in Configuration Manager supportano il monitoraggio basato sugli stati, che consente di tenere traccia dell'ultimo stato di distribuzione dell'applicazione per utenti e dispositivi. Questi messaggi di stato visualizzano informazioni sui singoli dispositivi. Ad esempio, se un'applicazione viene distribuita a una raccolta di utenti, è possibile visualizzare lo stato di conformità e lo scopo della distribuzione nella console di Configuration Manager.  
+ Configuration Manager のアプリケーションは状態ベースの監視をサポートしており、ユーザーとデバイスの最新のアプリケーション展開状態を追跡できます。 これらの状態メッセージには、個々のデバイスに関する情報が表示されます。 たとえば、アプリケーションがユーザーのコレクションに展開されている場合、Configuration Manager コンソールを使用して展開のコンプライアンス対応状態と展開の目的を表示できます。  
 
-## <a name="learn-about-compliance-states-in-system-center-configuration-manager"></a>Informazioni sugli stati di conformità in System Center Configuration Manager
- Uno stato di distribuzione dell'applicazione presenta uno dei seguenti stati di conformità:  
+## <a name="learn-about-compliance-states-in-system-center-configuration-manager"></a>System Center Configuration Manager でコンプライアンス状態を確認する
+ アプリケーション展開状態は、以下のいずれかのコンプライアンス対応状態になります。  
 
--   **Operazione riuscita** : la distribuzione dell'applicazione è stata completata oppure l'applicazione risulta già installata.  
+-   [**成功** ] – アプリケーションの展開が成功したか、既にインストールされていることが検出されました。  
 
--   **In corso** : la distribuzione dell'applicazione è in corso.  
+-   [**進行中** ] – アプリケーションの展開が進行中です。  
 
--   **Sconosciuto** : non è possibile stabilire lo stato di distribuzione dell'applicazione. Questo stato non è applicabile per le distribuzioni con scopo **Disponibile**. Questo stato viene in genere visualizzato quando i messaggi di stato dal client non sono ancora stati ricevuti.  
+-   [**不明** ] – アプリケーション展開の状態を判断できませんでした。 この状態は、目的が [ **利用可能**] の展開には表示されません。 この状態は、通常、クライアントからまだ状態メッセージを受信していない場合に表示されます。  
 
--   **Requisiti non soddisfatti** : l'applicazione non è stata distribuita perché non è conforme a una dipendenza o a una regola requisiti oppure perché il sistema operativo in cui è stata distribuita non è applicabile.  
+-   **要件が満たされていません** – アプリケーションが依存関係または要件規則に対応していないため、または展開先のオペレーティング システムが適用されないため、アプリケーションは展開されませんでした。  
 
--   **Errore** : la distribuzione dell'applicazione non è riuscita a causa di un errore.  
+-   [エラー**** ] – エラーのためにアプリケーションを展開できませんでした。  
 
-È possibile visualizzare altre informazioni per ogni stato di conformità, tra cui le sottocategorie all'interno dello stato di conformità e il numero di utenti e dispositivi presenti in tale categoria. Ad esempio, lo stato di conformità **Errore** include le seguenti sottocategorie:  
+コンプライアンス対応状態のサブカテゴリ、階層内のユーザーとデバイスの数などの、各コンプライアンス対応状態の詳細情報を表示できます。 たとえば、[ **エラー** ] コンプライアンス対応状態には、次のサブカテゴリがあります。  
 
--   Errore durante la valutazione dei requisiti  
+-   エラー評価要件  
 
--   Errori relativi al contenuto  
+-   コンテンツ関連のエラー  
 
--   Errori di installazione  
+-   インストール エラー  
 
- Quando si applica più di uno stato di conformità a una distribuzione dell'applicazione, è possibile visualizzare lo stato aggregato che rappresenta la conformità minima. Ad esempio:  
+ アプリケーションの展開に複数のコンプライアンス対応状態が該当するときは、最も低い対応状態を示す集合状態が表示されます。 たとえば、  
 
-    -   Se un utente esegue l'accesso a due dispositivi e l'applicazione viene istallata correttamente in un dispositivo ma non è possibile installarla nel secondo, lo stato di distribuzione aggregato dell'applicazione per tale utente sarà **Errore**.  
+    -   ユーザーが 2 つのデバイスにサインインしており、アプリケーションのインストールが一方のデバイスでは成功したがもう一方のデバイスでは失敗した場合、このユーザーのアプリケーションの総合的な展開状態は **[エラー]** と表示されます。  
 
-    -   Se un'applicazione viene distribuita a tutti gli utenti che eseguono l'accesso a un computer, si otterranno più risultati di distribuzione per tale computer. Se una delle distribuzioni non viene completata, lo stato di distribuzione aggregato per il computer sarà **Errore**.  
+    -   アプリケーションが 1 つのコンピューターにサインインするすべてのユーザーに対して展開された場合は、そのコンピューターについて複数の展開結果が報告されます。 いずれかの展開が失敗すると、このコンピューターの総合的な展開状態は [エラー ****] と表示されます。  
 
-Lo stato di distribuzione per le distribuzioni del pacchetto e del programma non è aggregato.  
+パッケージ展開とプログラム展開の展開状態は統合されません。  
 
- Utilizzare queste sottocategorie per identificare rapidamente eventuali problemi importanti relativi a una distribuzione dell'applicazione. È inoltre possibile visualizzare ulteriori informazioni sui dispositivi che rientrano in una particolare sottocategoria di uno stato di conformità.  
+ これらのサブカテゴリを使用すると、アプリケーション展開の重要な問題を迅速に特定できます。 また、コンプライアンス対応状態の特定のサブカテゴリに分類されるデバイスについて、詳細情報を表示することもできます。  
 
- La gestione di applicazioni in Configuration Manager offre vari report predefiniti che consentono di monitorare le informazioni su applicazioni e distribuzioni. Tali report dispongono della categoria report di **Distribuzione software - Monitoraggio applicazione**.  
+ Configuration Manager のアプリケーション管理には、アプリケーションと展開に関する情報を監視するのに役立つ、多くの組み込みレポートが用意されています。 これらのレポートのレポート カテゴリは、[ソフトウェアの配布 - アプリケーションの監視 ****] です。  
 
- Per altre informazioni sulle modalità di configurazione dei report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+ Configuration Manager でのレポートの構成方法に関して詳しくは、「[System Center Configuration Manager のレポート](../../core/servers/manage/reporting.md)」を参照してください。  
 
-## <a name="monitor-the-state-of-an-application-in-the-configuration-manager-console"></a>Monitorare lo stato di un'applicazione nella console di Configuration Manager  
+## <a name="monitor-the-state-of-an-application-in-the-configuration-manager-console"></a>Configuration Manager コンソールでアプリケーションの状態を監視する  
 
-1.  Nella console di Configuration Manager scegliere **Monitoraggio** > **Distribuzioni**.  
+1.  Configuration Manager コンソールで、**[監視]** > **[展開]** の順に選択します。  
 
-3.  Per rivedere i dettagli di distribuzione per ogni stato di conformità e i dispositivi in tale stato, selezionare una distribuzione e nel gruppo **Distribuzione** della scheda **Home** fare clic su **Visualizza stato** per aprire il riquadro **Stato distribuzione**. In questo riquadro è possibile visualizzare gli asset con il relativo stato di conformità. Scegliere un asset per visualizzare informazioni più dettagliate sul suo stato di distribuzione.  
+3.  各コンプライアンス対応状態の展開の詳細およびそのコンプライアンス対応状態にあるデバイスを確認するには、目的の展開を選択して、**[ホーム]** タブの **[展開]** グループで **[ステータスの表示]** を選択し、**[展開ステータス]** ウィンドウを開きます。 このウィンドウで、各コンプライアンス対応状態にある資産を表示できます。 資産を選択すると、その資産の展開ステータスに関する詳細情報が表示されます。  
 
     > [!NOTE]  
-    >  Il numero di elementi che possono essere visualizzati nel riquadro **Stato di distribuzione** è limitato a 20.000. Per visualizzare più elementi, usare i report di Configuration Manager per visualizzare i dati sullo stato dell'applicazione.  
+    >  **[展開ステータス]** ウィンドウに表示できる項目の数は最大 20,000 です。 さらに多くの項目を表示する必要がある場合は、Configuration Manager レポートを使用してアプリケーションのステータス データを表示してください。  
     >   
-    >  Lo stato dei tipi di distribuzione viene aggregato nel riquadro **Stato distribuzione** . Per visualizzare informazioni più dettagliate sui tipi di distribuzione, utilizzare il report **Errori infrastruttura applicazione** nella categoria di report **Distribuzione software - Monitoraggio applicazione**.  
+    >  展開の種類のステータスは、[展開ステータス **** ] ウィンドウで統合されます。 展開の種類の詳細情報を表示するには、レポート カテゴリ [ソフトウェアの配布 - アプリケーションの監視 **** ] のレポート [アプリケーションのインフラストラクチャ エラー ****] を使用します。  
 
-4.  Per rivedere le informazioni sullo stato generale relative alla distribuzione di un'applicazione, selezionare una distribuzione e scegliere la scheda **Riepilogo** nella finestra **Selected Deployment** (Distribuzione selezionata).  
+4.  アプリケーションの展開に関する全般的なステータス情報を確認するには、目的の展開を選択して、**[選択した展開]** ウィンドウの **[概要]** タブを選択します。  
 
-5.  Per rivedere le informazioni sul tipo di distribuzione delle applicazioni, selezionare una distribuzione e scegliere la scheda **Tipi di distribuzione** nella finestra **Selected Deployment** (Distribuzione selezionata).  
+5.  アプリケーションの展開の種類に関する情報を確認するには、目的の展開を選択し、**[選択した展開]** ウィンドウの **[展開の種類]** タブを選択します。  
 
-Le informazioni visualizzate nel riquadro **Stato distribuzione** dopo aver scelto **Visualizza stato** sono dati in tempo reale ottenuti dal database di Configuration Manager. Le informazioni visualizzate nelle schede **Riepilogo** e **Tipi di distribuzione** sono dati di riepilogo.
+**[ステータスの表示]** を選択した後で **[展開ステータス]** ウィンドウに表示される情報は、Configuration Manager データベースのライブ データです。 **[概要]** タブと **[展開の種類]** タブに表示される情報は概要データです。
 
-Se i dati visualizzati nelle schede **Riepilogo** e **Tipi di distribuzione** non corrispondono ai dati visualizzati nel riquadro **Stato distribuzione**, scegliere **Esegui riepilogo** per aggiornare i dati in queste schede. È possibile configurare l'intervallo di riepilogo distribuzione applicazione predefinito nel modo seguente:  
+**[概要]** タブと **[展開の種類]** タブに表示されるデータが、**[展開ステータス]** ウィンドウに表示されるデータと一致しない場合、**[構成基準の概要]** を選択してタブのデータを更新します。 アプリケーション展開の既定の概要作成間隔を構成するには、次の手順に従います。  
 
-1. Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione del sito** > **Siti**.
+1. Configuration Manager コンソールで、**[管理]** > **[サイトの構成]** > **[サイト]** を選択します。
 
-2. Nell'elenco **Siti** selezionare il sito per cui si vuole configurare l'intervallo di esecuzione del riepilogo e nel gruppo **Impostazioni** della scheda **Home** scegliere **Generatori riepilogo dello stato**.
+2. **[サイト]** 一覧から概要作成間隔を構成するサイトを選択し、**[ホーム]** タブの **[設定]** グループで **[ステータス サマライザー]** を選択します。
 
-3. Nella finestra di dialogo **Generatori riepilogo dello stato** scegliere **Generatore riepilogo distribuzione applicazione** e poi **Modifica**.  
+3. **[ステータス サマライザー]** ダイアログ ボックスで **[アプリケーション展開サマライザー]** を選択し、**[編集]** を選択します。  
 
-4. Nella finestra di dialogo **Application Deployment Summarizer Properties** (Proprietà generatore riepilogo distribuzione applicazione) configurare gli intervalli di esecuzione del riepilogo necessari e scegliere **OK**.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+4. **[アプリケーション展開サマライザーのプロパティ]** ダイアログ ボックスで、必要な概要作成間隔を構成し、**[OK]** をクリックします。  

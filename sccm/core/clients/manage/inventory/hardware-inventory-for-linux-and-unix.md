@@ -1,55 +1,52 @@
 ---
-title: 'Inventario hardware | Microsoft Docs | Linux UNIX '
-description: Informazioni su come usare l&quot;inventario hardware per Linux e UNIX in System Center Configuration Manager.
+title: "ハードウェア インベントリ | Microsoft Docs | Linux UNIX "
+description: "System Center Configuration Manager で Linux および UNIX のハードウェア インベントリを使用する方法について説明します。"
 ms.custom: na
 ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1026d616-2a20-4fb2-8604-d331763937f8
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
-ms.openlocfilehash: cb1ac4f33b9ef291050a3406291b8cc1f112b586
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: b6776fbe0cfca23244d767cffd554a2ef4567a2d
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="hardware-inventory-for-linux-and-unix-in-system-center-configuration-manager"></a>Inventario hardware per Linux e UNIX in System Center Configuration Manager
+# <a name="hardware-inventory-for-linux-and-unix-in-system-center-configuration-manager"></a>System Center Configuration Manager における Linux および UNIX のハードウェア インベントリ
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Il client di System Center Configuration Manager per Linux e UNIX supporta l'inventario hardware. Dopo aver eseguito l'inventario hardware, è possibile visualizzarlo in Esplora inventario risorse o nei report di Configuration Manager e usare le informazioni per creare query e raccolte che consentono le operazioni seguenti:  
+Linux および UNIX 用の System Center Configuration Manager クライアントは、ハードウェア インベントリをサポートします。 ハードウェア インベントリを収集すると、リソース エクスプローラーまたは Configuration Manager レポートでインベントリの表示を実行したり、この情報を使用して以下の操作が可能になるクエリやコレクションを作成したりできます。  
 
--   Distribuzione software  
+-   ソフトウェアの展開  
 
--   Imposizione delle finestre di manutenzione  
+-   メンテナンス期間の適用  
 
--   Distribuzione di impostazioni client personalizzate  
+-   カスタム クライアント設定の展開  
 
- La funzionalità di inventario hardware per server Linux e UNIX usa un server CIM (Common Information Model) basato su standard. Il server CIM viene eseguito come servizio software (o daemon) e fornisce un'infrastruttura di gestione basata sugli standard DMTF (Distributed Management Task Force). Il server CIM fornisce funzionalità simili alle funzionalità CIM WMI (Windows Management Infrastructure) disponibili nei computer basati su Windows.  
+ Linux および UNIX サーバーのハードウェア インベントリでは、標準ベースの Common Information Model (CIM) サーバーを使用します。 CIM サーバーはソフトウェア サービス (またはデーモン) として実行され、分散管理タスク フォース (DMTF) 標準に基づく管理インフラストラクチャを提供します。 CIM サーバーには、Windows ベースのコンピューターで使用可能な Windows Management Infrastructure (WMI) CIM 機能に類似した機能が備わっています。  
 
- A partire dall'aggiornamento cumulativo 1, il client per Linux e UNIX usa **omiserver** versione 1.0.6 open source di **The Open Group**. Prima dell'aggiornamento cumulativo 1, il client usava **nanowbem** come server CIM.  
+ Linux および UNIX 用クライアントでは、累積的な更新プログラム 1 以降は **Open Group** のオープン ソース **omiserver**バージョン 1.0.6 を使用します。 (累積的な更新プログラム 1 より前の場合、クライアントは **nanowbem** を CIM サーバーとして使用していました。)  
 
- Il server CIM viene installato come parte del client per Linux e UNIX. Il client per Linux e UNIX comunica direttamente con il server CIM e non usa l'interfaccia WS-MAN del server CIM. La porta WS-MAN nel server CIM viene disabilitata quando si installa il client. Microsoft ha sviluppato il server CIM che è ora disponibile come open source tramite il progetto OMI (Open Management Infrastructure). Per altre informazioni sul progetto OMI, vedere il sito Web di [The Open Group](http://go.microsoft.com/fwlink/p/?LinkId=262317) .  
+ CIM サーバーは、Linux および UNIX 用クライアントの一部としてインストールされます。 Linux および UNIX 用クライアントは、CIM サーバーと直接通信し、CIM サーバーの WS-MAN インターフェイスは使用しません。 CIM サーバー上の WS-MAN ポートは、クライアントのインストール時には無効です。 Microsoft は、Open Management Infrastructure (OMI) プロジェクトを介してオープン ソースとして利用できる CIM サーバーを開発しました。 Open Management Infrastructure プロジェクトについて詳しくは、「 [Open Group](http://go.microsoft.com/fwlink/p/?LinkId=262317) 」Web サイトをご覧ください。  
 
- L'inventario hardware nei server Linux e UNIX funziona tramite il mapping delle classi e proprietà WMI Win32 esistenti alle classi e proprietà equivalenti per i server Linux e UNIX. Questo mapping uno-a-uno di classi e proprietà consente l'integrazione dell'inventario hardware di Linux e UNIX con Configuration Manager. I dati di inventario dai server Linux e UNIX vengono visualizzati insieme all'inventario dai computer basati su Windows nella console e nei report di Configuration Manager. Ciò offre un'esperienza di gestione eterogenea e coerente.  
+ Linux および UNIX サーバー上のハードウェア インベントリは、既存の Win32 と WMI のクラスとプロパティを、Linux と UNIX サーバーの同等のクラスとプロパティにマッピングすることによって動作します。 このクラスとプロパティの 1 対 1 のマッピングによって、Linux と UNIX のハードウェア インベントリを Configuration Manager と統合できるようになります。 Linux および UNIX サーバーからのインベントリ データは、Windows ベースのコンピューターからのインベントリと一緒に、Configuration Manager コンソールとレポートに表示されます。 これにより、一貫性のある異種管理エクスペリエンスが提供されます。  
 
 > [!TIP]  
->  È possibile usare il valore **Didascalia** per la classe **Sistema operativo** per identificare i diversi sistemi operativi Linux e UNIX nelle query e nelle raccolte.  
+>  **[オペレーティング システム]** クラスの **[キャプション]** 値を使用して、クエリとコレクション内の各種 Linux および UNIX オペレーティング システムを識別できます。  
 
-##  <a name="BKMK_ConfigHardwareforLnU"></a> Configurazione dell'inventario hardware per server Linux e UNIX  
- Per configurare l'inventario hardware, è possibile usare le impostazioni client predefinite o creare impostazioni personalizzate per i dispositivi client. Quando si usano impostazioni personalizzate per i dispositivi client, è possibile configurare le classi e proprietà da raccogliere solo dai server Linux e UNIX. È anche possibile specificare pianificazioni personalizzate per stabilire quando raccogliere inventari completi e differenziali dai server Linux e UNIX.  
+##  <a name="BKMK_ConfigHardwareforLnU"></a> Linux および UNIX サーバーのハードウェア インベントリを構成する  
+ ハードウェア インベントリを構成するには、既定のクライアント設定を使用することもできますし、カスタム クライアント デバイス設定を作成することも可能です。 カスタム クライアント デバイス設定を使用する場合は、ご使用の Linux および UNIX サーバーからのみ収集するクラスとプロパティを構成できます。 また、使用している Linux および UNIX サーバーから、完全なインベントリと差分のインベントリを収集するカスタムのスケジュールを指定できます。  
 
- Il client per Linux e UNIX supporta le seguenti classi di inventario hardware disponibili nei server Linux e UNIX:  
+ Linux および UNIX 用のクライアントでは、Linux および UNIX サーバーで使用できる次のハードウェア インベントリ クラスがサポートされています。  
 
 -   Win32_BIOS  
 
@@ -75,55 +72,54 @@ Il client di System Center Configuration Manager per Linux e UNIX supporta l'inv
 
 -   SMS_Processor  
 
- Non tutte le proprietà di queste classi di inventario sono abilitate per i computer Linux e UNIX in Configuration Manager.  
+ これらのインベントリ クラスのすべてのプロパティが、Configuration Manager の Linux および UNIX コンピューターで有効になるわけではありません。  
 
-##  <a name="BKMK_OperationsforHardwareforLnU"></a> Operazioni per l'inventario hardware  
- Dopo aver raccolto l'inventario hardware dai server Linux e UNIX, è possibile visualizzare e usare tali informazioni con le stesse modalità valide per l'inventario raccolto dagli altri computer:  
+##  <a name="BKMK_OperationsforHardwareforLnU"></a> ハードウェア インベントリの操作  
+ ご使用の Linux および UNIX サーバーからハードウェア インベントリを収集すると、他のコンピューターから収集したインベントリを表示する場合と同じように、その情報を次のように表示および使用できます。  
 
--   Usare Esplora inventario risorse per visualizzare informazioni dettagliate relative all'inventario hardware dai server Linux e UNIX  
+-   リソース エクスプローラーを使用して、Linux および UNIX サーバーからのハードウェア インベントリに関する詳細情報を表示します。  
 
--   Creare query basate su una configurazione hardware specifica  
+-   特定のハードウェア構成に基づいたクエリを作成します。  
 
--   Creare raccolte basate su query secondo configurazioni hardware specifiche  
+-   特定のハードウェア構成に基づいたクエリ ベースのコレクションを作成します。  
 
--   Eseguire i report che consentono di visualizzare informazioni dettagliate specifiche sulle configurazioni hardware  
+-   ハードウェア構成に関する特定の詳細情報を表示するレポートを実行します。  
 
- L'inventario hardware in un server Linux o UNIX viene eseguito in base alla pianificazione configurata nelle impostazioni client. L'intervallo predefinito è di sette giorni. Il client per Linux e UNIX supporta sia cicli di inventario completo che cicli di inventario differenziale.  
+ Linux または UNIX サーバー上のハードウェア インベントリは、クライアント設定で構成したスケジュールに従って実行されます。 既定では、7 日ごとに実行されます。 Linux および UNIX 用クライアントは、完全なインベントリ サイクルと差分インベントリ サイクルの両方をサポートします。  
 
- È anche possibile imporre l'esecuzione immediata dell'inventario hardware per il client in un server Linux o UNIX. Per eseguire l'inventario hardware, in un client usare credenziali **root** per eseguire il comando seguente per avviare un ciclo di inventario hardware: **/opt/microsoft/configmgr/bin/ccmexec -rs hinv**  
+ また Linux または UNIX サーバー上のクライアントにハードウェア インベントリを直ちに実行するように強制することもできます。 ハードウェア インベントリを実行するには、クライアント上で **[ルート]** 資格情報を使用して、ハードウェア インベントリ サイクルを開始する次のコマンドを実行します: **/opt/microsoft/configmgr/bin/ccmexec - rs hinv**  
 
- Le azioni per l'inventario hardware vengono immesse nel file di log client **scxcm.log**.  
+ ハードウェア インベントリの操作は、クライアント ログ ファイル **scxcm.log**に記録されます。  
 
-##  <a name="BKMK_CustomHINVforLinux"></a> Come usare OMI (Open Management Infrastructure) per creare un inventario hardware personalizzato  
- Il client per Linux e UNIX supporta l'inventario hardware personalizzato che è possibile creare tramite OMI (Open Management Infrastructure). A tale scopo, seguire questa procedura:  
+##  <a name="BKMK_CustomHINVforLinux"></a> Open Management Infrastructure を使用してカスタムのハードウェア インベントリを作成する方法  
+ Linux および UNIX 用クライアントは、Open Management Infrastructure (OMI) を使用して作成できるカスタムのハードウェア インベントリをサポートします。 作成するには、次の手順に従います。  
 
-1.  Creare un provider di inventario personalizzato usando l'origine OMI  
+1.  OMI ソースを使用してカスタム インベントリ プロバイダーを作成します  
 
-2.  Configurare i computer in modo che usino il nuovo provider per l'inventario  
+2.  新しいプロバイダーを使用してインベントリをレポートするようにコンピューターを構成します  
 
-3.  Abilitare Configuration Manager per supportare il nuovo provider  
+3.  Configuration Manager で新しいプロバイダーのサポートを有効にする  
 
-###  <a name="BKMK_LinuxProvider"></a> Creare un provider di inventario hardware personalizzato per i computer Linux e UNIX:  
- Per creare un provider di inventario hardware personalizzato per il client di Configuration Manager per Linux e UNIX, usare **OMI Source - v.1.0.6** e seguire le istruzioni della guida introduttiva a OMI. Questo processo include la creazione di un file MOF (Managed Object Format) che definisce lo schema del nuovo provider. Importare successivamente il file MOF in Configuration Manager per abilitare il supporto della nuova classe di inventario personalizzato.  
+###  <a name="BKMK_LinuxProvider"></a> Linux および UNIX コンピューターのカスタム ハードウェア インベントリを作成する:  
+ Linux および UNIX 用の構成マネージャー クライアントのカスタム ハードウェア インベントリ プロバイダーを作成するには、**OMI ソース - v.1.0.6** を使用し、OMI 入門ガイドの指示に従います。 このプロセスには、新しいプロバイダーのスキーマを定義する管理オブジェクト フォーマット (MOF) ファイルの作成が含まれます。 後ほど、この MOF ファイルを Configuration Manager にインポートし、新しいカスタム インベントリ クラスのサポートを有効にします。  
 
- Sia OMI Source - v.1.0.6 che la guida introduttiva a OMI sono disponibili per il download dal sito Web di [The Open Group](http://go.microsoft.com/fwlink/p/?LinkId=262317) . È possibile trovare questi download nella scheda **Documents** della pagina Web seguente nel sito Web OpenGroup.org: [Open Management Infrastructure (OMI)](http://go.microsoft.com/fwlink/p/?LinkId=286805).  
+ OMI ソース- v.1.0.6 およびソース OMI 入門ガイドはどちらも「 [Open Group](http://go.microsoft.com/fwlink/p/?LinkId=262317) 」Web サイトからダウンロードできます。 ダウンロードの場所は、OpenGroup.org の Web サイトの **Open Management Infrastructure (OMI)** Web ページの [[Documents]](http://go.microsoft.com/fwlink/p/?LinkId=286805)タブにあります。  
 
-###  <a name="BKMK_AddProvidertoLinux"></a> Configurare ogni computer che esegue Linux o UNIX con il provider di inventario hardware personalizzato:  
- Dopo aver creato un provider di inventario personalizzato, è necessario copiare e quindi registrare il file della libreria del provider in ogni computer da cui si vuole raccogliere l'inventario.  
+###  <a name="BKMK_AddProvidertoLinux"></a> カスタム ハードウェア インベントリ プロバイダーを使用して Linux または UNIX を実行する各コンピューターを次のように構成します。  
+ カスタム インベントリ プロバイダーを作成した後、収集対象のインベントリが含まれる各コンピューターで、プロバイダー ライブラリ ファイルをコピーして登録する必要があります。  
 
-1.  Copiare la libreria del provider in ogni computer Linux e UNIX da cui si vuole raccogliere l'inventario. Il nome della libreria del provider è simile al seguente: **XYZ_MyProvider.so**  
+1.  インベントリを収集する各 Linux および UNIX コンピューターに対してプロバイダー ライブラリをコピーします。 プロバイダー ライブラリの名前は、 **XYZ_MyProvider.so**のようになります。  
 
-2.  Registrare poi la libreria del provider nel server OMI in ogni computer Linux e UNIX. Il server OMI viene installato nel computer quando si installa il client di Configuration Manager per Linux e UNIX. È necessario tuttavia registrare manualmente i provider personalizzati. Usare la riga di comando seguente per registrare il provider: **/opt/microsoft/omi/bin/omireg XYZ_MyProvider.so**  
+2.  次に、各 Linux および UNIX コンピューター上で、プロバイダー ライブラリを OMI サーバーに登録します。 OMI サーバーは、Linux および UNIX 用の構成マネージャー クライアントをインストールするときにコンピューターにインストールされますが、カスタム プロバイダーは手動で登録する必要があります。 次のコマンドを使用してプロバイダーを登録します: **/opt/microsoft/omi/bin/omireg XYZ_MyProvider.so**  
 
-3.  Dopo aver registrato il nuovo provider, testarlo con lo strumento **omicli** . Lo strumento **omicli** viene installato in ogni computer Linux e UNIX quando si installa il client di Configuration Manager per Linux e UNIX. Ad esempio, eseguire il comando seguente nel computer, in cui **XYZ_MyProvider** è il nome del provider creato: **/opt/microsoft/omi/bin/omicli ei root/cimv2 XYZ_MyProvider**  
+3.  新しいプロバイダーを登録した後に、 **omicli** ツールを使用してプロバイダーをテストします。 **omicli** ツールは、Linux および UNIX 用の構成マネージャー クライアントをインストールするときに各 Linux および UNIX コンピューターにインストールされます。 たとえば、作成したプロバイダーの名前が **XYZ_MyProvider** の場合、コンピューターで次のコマンドを実行します: **/opt/microsoft/omi/bin/omicli ei root/cimv2 XYZ_MyProvider**  
 
-     Per informazioni su **omicli** e sui test dei provider personalizzati, vedere la guida introduttiva a OMI.  
+     **omicli** およびカスタム プロバイダーのテストについては、OMI 入門ガイドをご覧ください。  
 
 > [!TIP]  
->  Usare la distribuzione software per distribuire i provider personalizzati e per registrarli in ogni computer client Linux e UNIX.  
+>  ソフトウェアの配布を使用して、それぞれの Linux および UNIX クライアント コンピューターにおけるカスタム プロバイダーの展開と、カスタム プロバイダーの登録を行います。  
 
-###  <a name="BKMK_AddLinuxProvidertoCM"></a> Abilitare la nuova classe di inventario in Configuration Manager:  
- Prima che Configuration Manager possa elaborare l'inventario fornito dal nuovo provider nei computer Linux e UNIX, è necessario importare il file MOF (Managed Object Format) che definisce lo schema del provider personalizzato.  
+###  <a name="BKMK_AddLinuxProvidertoCM"></a> Configuration Manager で、新しいインベントリ クラスを次のように有効にします。  
+ Configuration Manager で、Linux および UNIX コンピューターの新しいプロバイダーがレポートするインベントリについてレポートを作成するには、その前に、カスタム プロバイダーのスキーマを定義する管理オブジェクト フォーマット (MOF) ファイルをインポートする必要があります。  
 
- Per importare un file MOF personalizzato in Configuration Manager, vedere [Come configurare l'inventario hardware in System Center Configuration Manager](../../../../core/clients/manage/inventory/configure-hardware-inventory.md).  
-
+ カスタム MOF ファイルを Configuration Manager にインポートするには、「[System Center Configuration Manager でハードウェア インベントリを構成する方法](../../../../core/clients/manage/inventory/configure-hardware-inventory.md)」をご覧ください。  

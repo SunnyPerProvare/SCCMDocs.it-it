@@ -1,66 +1,62 @@
 ---
-title: Controllare l&quot;uso del controllo remoto | Microsoft Docs
-description: Controllare l&quot;uso di controllo remoto in System Center Configuration Manager.
+title: "リモート コントロール使用状況の監査 | Microsoft Docs"
+description: "System Center Configuration Manager でリモート コントロール使用状況を監査します。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5c975e69-0cc0-4afd-b7fb-b7182162a933
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
-ms.openlocfilehash: e3082e1d608f60a539fc58b0129132e33c8af833
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 4259ecfca48ccdffa83247e9ab5a65b3f006c5d9
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-audit-remote-control-usage-in-system-center-configuration-manager"></a>Come controllare l'uso di controllo remoto in System Center Configuration Manager
+# <a name="how-to-audit-remote-control-usage-in-system-center-configuration-manager"></a>System Center Configuration Manager でリモート コントロール使用状況を監査する方法
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-È possibile usare i report di System Center Configuration Manager per visualizzare le informazioni di controllo per il controllo remoto.  
+System Center Configuration Manager のレポートを使用して、リモート コントロールの監査情報を表示することができます。  
 
- Per altre informazioni sulle modalità di configurazione dei report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
+ Configuration Manager でのレポートの構成方法に関して詳しくは、「[System Center Configuration Manager のレポート](../../../../core/servers/manage/reporting.md)」をご覧ください。  
 
- I due report seguenti sono disponibili con la categoria **Messaggi di stato - Controllo**:  
+ [ **ステータス メッセージ - 監査** ] のカテゴリでは次の 2 つのレポートが使用できます。  
 
--   **Controllo remoto - Tutti i computer sotto controllo remoto da un utente specifico**: visualizza un riepilogo delle attività di controllo remoto avviate da un utente specifico.  
+-   **リモート コントロール - 特定のユーザーによりリモートで制御されるコンピューターすべて** – 特定のユーザーが開始したリモート コントロール操作の概要が表示されます。  
 
--   **Controllo remoto - Tutte le informazioni sul controllo remoto**: visualizza un riepilogo dei messaggi di stato relativi al controllo remoto dei computer client.  
+-   **リモート コントロール - リモート コントロール情報すべて** – クライアント コンピューターのリモート コントロールに関するステータス メッセージの概要が表示されます。  
 
-### <a name="to-run-the-report-remote-control---all-computers-remote-controlled-by-a-specific-user"></a>Per eseguire il report Controllo remoto - Tutti i computer sotto controllo remoto da un utente specifico  
+### <a name="to-run-the-report-remote-control---all-computers-remote-controlled-by-a-specific-user"></a>[リモート コントロール - 特定のユーザーによりリモートで制御されるコンピューターすべて] レポートを実行するには  
 
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
+1.  Configuration Manager コンソールで、[ **監視** ] をクリックします。  
 
-2.  Nell'area di lavoro **Monitoraggio** espandere **Creazione di report**, quindi fare clic su **Report**.  
+2.  [ **監視** ] ワークスペースで、[ **レポート**] を展開し、[ **レポート**] をクリックします。  
 
-3.  Nel nodo **Report** fare clic sulla colonna **Categoria** per ordinare i report in modo da poter trovare più facilmente quelli nella categoria **Messaggi di stato - Controllo**.  
+3.  **レポート** ノードをクリックして、 **カテゴリ** レポートを並べ替え、カテゴリのレポートをより簡単に見つけられるように列 **ステータス メッセージ - 監査**です。  
 
-4.  Selezionare il report **Controllo remoto - Tutti i computer sotto controllo remoto da un utente specifico**e quindi in **Gruppo Report** nella scheda **Home**fare clic su **Esegui**.  
+4.  レポートを選択して **リモート_コントロール - 特定のユーザーによって制御されるすべてのリモートのコンピューター**, 、、 **ホーム**  タブで、 **レポート グループ**, 、 をクリックして **実行**です。  
 
-5.  Nell'elenco **Nome utente** in **Controllo remoto - Tutti i computer sotto controllo remoto da un utente specifico**specificare l'utente per il quale si vuole visualizzare le informazioni di controllo e quindi fare clic su **Visualizza report**.  
+5.  **ユーザー名** の一覧、 **リモート_コントロール - 特定のユーザーによって制御されるすべてのリモートのコンピューター**, 、クリックして、監査情報をレポートするユーザー指定 **レポートの表示**です。  
 
-6.  Dopo aver visualizzato i dati nel report, chiudere la finestra del report.  
+6.  レポートのデータの確認が終わったら、レポート ウィンドウを閉じます。  
 
-### <a name="to-run-the-report-remote-control---all-remote-control-information"></a>Per eseguire il report Controllo remoto - Tutte le informazioni sul controllo remoto  
+### <a name="to-run-the-report-remote-control---all-remote-control-information"></a>[リモート コントロール - リモート コントロール情報すべて] レポートを実行するには  
 
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
+1.  Configuration Manager コンソールで、[ **監視** ] をクリックします。  
 
-2.  Nell'area di lavoro **Monitoraggio** espandere **Creazione di report**, quindi fare clic su **Report**.  
+2.  [ **監視** ] ワークスペースで、[ **レポート**] を展開し、[ **レポート**] をクリックします。  
 
-3.  Nel nodo **Report** fare clic sulla colonna **Categoria** per ordinare i report in modo da poter trovare più facilmente quelli nella categoria **Messaggi di stato - Controllo**.  
+3.  **[レポート]** ノードで、 **[カテゴリ]** 列をクリックしてレポートを並べ替え、 **[ステータス メッセージ - 監査]**カテゴリのレポートを簡単に見つけられるようにします。  
 
-4.  Selezionare il report **Controllo remoto - Tutte le informazioni sul controllo remoto**e quindi in **Gruppo Report** nella scheda **Home**fare clic su **Esegui** per aprire la finestra **Controllo remoto - Tutte le informazioni sul controllo remoto** .  
+4.  レポートを選択 **リモート_コントロール - リモート_コントロール情報すべて**, 、、 **ホーム**  タブで、 **レポート グループ**, 、 をクリックして **実行** を開くには、 **リモート_コントロール - リモート_コントロール情報すべて** ウィンドウです。  
 
-5.  Dopo aver visualizzato i dati nel report, chiudere la finestra del report.  
-
+5.  レポートのデータの確認が終わったら、レポート ウィンドウを閉じます。  

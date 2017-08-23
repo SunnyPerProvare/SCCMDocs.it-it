@@ -1,96 +1,93 @@
 ---
-title: "Funzionalità della versione Technical Preview 1512 per Configuration Manager"
-description: "Informazioni sulle funzionalità disponibili nelal versione Technical Preview 1512 per System Center Configuration Manager."
+title: "Configuration Manager の Technical Preview 1512 の機能"
+description: "System Center Configuration Manager の Technical Preview バージョン 1512 で使用できる機能について説明します。"
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e4d9e414-1346-4ed4-85d0-64d602b68731
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: noindex,nofollow
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
-ms.openlocfilehash: 7fff6f2807a679b621b736b8ad0b6561fb37affe
-ms.contentlocale: it-it
-ms.lasthandoff: 01/24/2017
-
+ms.openlocfilehash: 5cf8d54fbaa98a75ac2a875a23a43b1d3e5be0dd
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1512-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1512 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1512-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1512 の機能
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*適用対象: System Center Configuration Manager (Technical Preview)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1512 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.  
+この記事では、System Center Configuration Manager の Technical Preview バージョン 1512 で使用できる機能について説明します。 このバージョンをインストールして更新し、新機能を Configuration Manager の Technical Preview サイトに追加できます。 このバージョンの Technical Preview をインストールする前に、説明のトピック「[System Center Configuration Manager の Technical Preview](technical-preview.md)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。  
 
- Di seguito sono riportate le nuove funzionalità disponibili con questa versione.  
+ このバージョンでお試しいただける新機能を次に示します。  
 
-##  <a name="bkmk_devicehealth"></a> Attestazione dell'integrità dei dispositivi  
- A partire dalla versione Technical Preview 1512, gli amministratori possono visualizzare lo stato di attestazione dell'integrità dei dispositivi Windows 10 nella console di Configuration Manager.  Questa funzionalità è disponibile per Configuration Manager e Configuration Manager con Microsoft Intune. L'attestazione dell'integrità dei dispositivi consente all'amministratore di assicurare che i computer client dispongano di configurazioni attendibili di BIOS, TPM e software di avvio. Per supportare l'attestazione dell'integrità dei dispositivi, i dispositivi client devono eseguire Windows 10 con TPM 2 abilitato. L'attestazione dell'integrità dei dispositivi visualizza il numero di dispositivi abilitati per ognuno degli elementi seguenti:  
+##  <a name="bkmk_devicehealth"></a> デバイス正常性構成証明書  
+ Technical Preview 1512 以降、管理者は Configuration Manager コンソールで Windows 10 デバイス正常性構成証明書の状態を確認できます。  この機能は、Configuration Manager および Configuration Manager と Microsoft Intune の併用で利用できます。 デバイス正常性構成証明書により、管理者はクライアント コンピューターの BIOS、TPM、ブート ソフトウェア構成が信頼のおけるものであることを確認できます。 デバイス正常性構成証明書をサポートするために、クライアント デバイスは、TPM 2 を有効にして Win10 を実行している必要があります。 デバイス正常性構成証明書には、次のそれぞれに対応しているデバイスの数が表示されます。  
 
--   Antimalware ad esecuzione anticipata  
+-   起動時マルウェア対策  
 
 -   BitLocker  
 
--   Avvio protetto  
+-   セキュア ブート  
 
--   Integrità del codice  
+-   コードの整合性  
 
-Nella console vengono inoltre visualizzate le principali impostazioni di attestazione dell'integrità mancanti con il numero di dispositivi.  
+コンソールには、最も不足している正常性構成証明書の設定もデバイスの数と共に表示されます。  
 
-Per poter visualizzare l'attestazione dell'integrità del dispositivo, nella console di Configuration Manager passare all'area di lavoro **Monitoraggio** , fare clic sul nodo **Sicurezza** e quindi su **Attestazione dell'integrità**.  
+デバイス正常性構成証明書のプレビューを表示するには、Configuration Manager コンソールで [**監視**] ワークスペースに移動し、[**セキュリティ**] ノードをクリックしてから [**正常性構成証明書**] をクリックします。  
 
-##  <a name="bkmk_viewterms"></a> Monitoraggio di termini e condizioni nella console  
-A partire dalla versione Technical Preview 1512, quando si integra Configuration Manager con Microsoft Intune, è possibile usare la console di Configuration Manager per visualizzare gli utenti che hanno accettato i termini e le condizioni configurati dal reparto IT e quelli che non lo hanno fatto.  
+##  <a name="bkmk_viewterms"></a> 使用条件のコンソール内での監視  
+Technical Preview 1512 以降、Configuration Manager を Microsoft Intune と統合すると、Configuration Manager コンソールを使用して、IT 部門が構成した使用条件に同意したユーザーと同意していないユーザーを表示できます。  
 
-**Per visualizzare le informazioni di riepilogo:**  
+**概要情報を表示するには:**  
 
--   Nella console di Configuration Manager passare a **Monitoraggio** > **Panoramica** > **Distribuzioni** e selezionare la distribuzione dei termini e delle condizioni che si vuole visualizzare.  
+-   Configuration Manager コンソールで [**監視**] > [**概要**] > [**展開**] の順に移動して、表示する使用条件の展開を選びます。  
 
-**Per visualizzare informazioni dettagliate:**  
+**詳細情報を表示するには:**  
 
-1.  Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Impostazioni di conformità** > **Termini e condizioni** e selezionare i termini e condizioni che si vuole visualizzare.  
+1.  Configuration Manager コンソールで、[**資産とコンプライアンス**] > [**概要**] > [**コンプライアンス設定**] > [**使用条件**] の順に移動して、表示する使用条件を選びます。  
 
-2.  Nella parte inferiore della console selezionare la scheda **Distribuzioni**, selezionare la distribuzione e quindi fare clic su **Visualizza stato.**  
+2.  コンソールの下部にある [**展開**] タブを選び、展開を選んだら、[**状態の表示**] をクリックします。  
 
-##  <a name="bkmk_EPpolicy"></a> Miglioramenti delle impostazioni dei criteri di Endpoint Protection  
-Nella Technical Preview 1512 sono state aggiunte le nuove impostazioni seguenti nei criteri antimalware di Endpoint Protection:  
+##  <a name="bkmk_EPpolicy"></a> Endpoint Protection のポリシー設定の機能強化  
+1512 Technical Preview では、Endpoint Protection マルウェア対策ポリシーに次の新しい設定が追加されました。  
 
--   Protezione in tempo reale: **Abilita la protezione per le applicazioni potenzialmente indesiderate al download o prima dell'installazione**  
+-   リアルタイム保護: **望ましくない可能性のあるアプリケーションのダウンロード時およびインストール前のブロック**  
 
-    -   Le applicazioni potenzialmente indesiderate costituiscono una classificazione delle minacce basata sulla reputazione e sull'identificazione attraverso la ricerca. In genere, si tratta di bundler di applicazioni indesiderate o delle relative applicazioni in bundle.  
+    -   望ましくない可能性のあるアプリケーション (PUA) とは、評価および研究主導の識別に基づく脅威の分類の 1 つです。 ほとんどの場合、これらは望ましくないアプリケーションバンドラーか、そのバンドルされたアプリケーションです。  
 
-    -   Per impostazione predefinita, l'impostazione dei criteri di protezione è abilitata (impostata su "Sì"). Quando è abilitata, questa impostazione blocca le applicazioni potenzialmente indesiderate al momento del download e dell'installazione. Tuttavia, è possibile escludere determinati file o cartelle per soddisfare le esigenze specifiche dell'ambiente.  
+    -   この保護ポリシーの設定は既定で有効になっています ([はい] に設定)。 この設定が有効な場合、PUA はダウンロード時とインストール時にブロックされます。 ただし、特定のファイルやフォルダーに環境内の特定のニーズを満たすを除外することができます。  
 
--   Impostazioni di analisi: **Analizza le unità di rete mappate quando si esegue un'analisi completa**  
+-   スキャンの設定: **フル スキャンの実行時にマップされたネットワーク ドライブをスキャンする**  
 
-    -   Questa impostazione garantisce maggiore granularità per l'amministratore, per consentire le analisi su richiesta dei file in rete senza il rischio di analizzare sempre le unità di rete mappate durante un'analisi completa pianificata.  
+    -   この設定により、管理者はより詳細な操作ができるようになり、スケジュールされたフル スキャン中にマップされたネットワーク ドライブが必ずスキャンされるリスクなしに、ネットワーク ファイルのオンデマンド スキャンができるようになります。  
 
-    -   L'opzione **Analizza file di rete** deve essere abilitata ("Sì") perché sia possibile configurare questa impostazione.  
+    -   この設定を構成できるようにするには、設定 [**ネットワーク ファイルをスキャンする**] を最初に有効 ([はい]) にする必要があります。  
 
-    -   L'impostazione predefinita è "No", che indica che durante un'analisi completa non verrà eseguito l'accesso alle unità di rete mappate.  
+    -   既定で、この設定は [いいえ] になっており、マップされたネットワーク ドライブはフル スキャンでアクセスされません。  
 
--   Impostazioni per l'invio automatico dei file di esempio:  
+-   自動サンプル ファイルの送信の設定:  
 
-     Il motore antimalware può richiedere l'invio a Microsoft di file di esempio per un'ulteriore analisi. Per impostazione predefinita, viene sempre visualizzata una richiesta prima dell'invio di tali campioni. Gli amministratori ora possono gestire le impostazioni seguenti per configurare questo comportamento:  
+     マルウェア対策エンジンは、さらに詳しい分析のために Microsoft へのファイルのサンプルの送信を要求することがあります。 既定では、このようなサンプルを送信する前に必ず確認が求められます。 管理者は、この動作を構成する次の設定を管理できるようになりました。  
 
-    -   Avanzate: **Abilitare l'invio automatico di file di esempio per consentire a Microsoft di determinare se alcuni elementi rilevati siano dannosi**: impostare questa opzione su "Sì" per abilitare l'invio automatico dei file di esempio. L'impostazione predefinita è "No", che indica che l'invio automatico dei file di esempio è disabilitato e verrà visualizzata una richiesta agli utenti prima dell'invio dei campioni.   (Questa impostazione è stata introdotta in System Center 2012 R2 Configuration Manager SP1)  
+    -   詳細: **サンプル ファイルの自動送信を有効にして、検出された特定項目が危険かどうかをマイクロソフトが特定できるようにする**: サンプル ファイルの自動送信を有効にするには、この設定を [はい] に変更します。 既定では、この設定は [いいえ] で、サンプル ファイルの自動送信は無効であり、サンプルの送信前にユーザーに確認が求められます。   (この設定は、System Center 2012 R2 Configuration Manager SP1 で初めて導入されました)  
 
-    -   Avanzate: **Consenti agli utenti di modificare le impostazioni di invio automatico dei file di esempio**. Questa impostazione determina se un utente con diritti amministrativi locali in un dispositivo può modificare l'impostazione per l'invio automatico dei file di esempio nell'interfaccia del client. L'impostazione predefinita è "No" e indica che le impostazioni possono essere modificate solo in Configuration Manager e gli amministratori locali di un dispositivo non possono modificare questa configurazione.  
+    -   詳細: **サンプル ファイルの自動送信の設定の変更をユーザーに許可する**: この設定は、デバイス上のローカルの管理者権限を持つユーザーがクライアント インターフェイスでサンプル ファイルの自動送信の設定を変更できるかどうかを決定します。 既定では、この設定は [いいえ] です。つまり、設定は Configuration Manager コンソール内からのみ変更でき、デバイスのローカル管理者はこの構成を変更できません。  
 
-         Ad esempio, di seguito viene illustrata l'impostazione di Windows Defender in Windows 10 configurata dall'amministratore come abilitata e l'utente non è in grado di modificarla:  
+         たとえば、管理者によって設定され、ユーザーが変更を許可されていない Windows 10 の Windows Defender の設定を次に示します。  
 
          ![TechRef&#95;WinDefender](../../core/get-started/media/TechRef_WinDefender.png "TechRef_WinDefender")  
 
-    Inoltre, l'impostazione esistente **Cartelle e file esclusi** nella sezione "Impostazioni di esclusione" del criterio antimalware di Endpoint Protection è stata migliorata per consentire le esclusioni dei dispositivi. Ad esempio, ora è possibile specificare quanto segue come un'esclusione: **\device\mvfs** (per un file system multiversione). I criteri non convalidano il percorso del dispositivo: i criteri di protezione endpoint sono forniti al motore antimalware nel client che deve essere in grado di interpretare la stringa del dispositivo.  
+    さらに、Endpoint Protection マルウェア対策ポリシーの [除外の設定] セクションの既存の **[ファイルとフォルダーを除外する]** 設定が改善され、デバイスを除外できるようになりました。 たとえば、 **\device\mvfs** を除外するよう指定できます (Multiversion File System の場合)。 ポリシーはデバイスのパスを検証しません。Endpoint Protection のポリシー設定は、デバイスの文字列を解釈できるクライアントのマルウェア対策エンジンに提供されます。  
 
-**Prerequisiti per l'uso dei criteri di Endpoint Protection:**  
+**Endpoint Protection ポリシーを使用するための前提条件:**  
 
-Per poter usare i criteri di Endpoint Protection, è prima necessario installare e gestire il client Endpoint Protection usando le impostazioni del client di Endpoint Protection. Questa operazione viene eseguita tramite il client di System Center Endpoint Protection per Windows 7, Windows 8, Windows 8.1 o Windows Defender gestito per Windows 10. Vedere [Endpoint Protection in System Center Configuration Manager](../../protect/deploy-use/endpoint-protection.md).  
-
+Endpoint Protection ポリシーを使用するには、Endpoint Protection クライアント設定を使用して、Endpoint Protection クライアントのインストールと管理をしておく必要があります。 これは、Windows 7、Windows 8、Windows 8.1 用の System Center Endpoint Protection クライアント、または Windows 10 用の管理されている Windows Defender を使用して行います。 「[System Center Configuration Manager での Endpoint Protection](../../protect/deploy-use/endpoint-protection.md)」を参照してください。  

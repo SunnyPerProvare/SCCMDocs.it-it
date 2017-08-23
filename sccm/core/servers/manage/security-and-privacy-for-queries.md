@@ -1,44 +1,40 @@
 ---
-title: Sicurezza e privacy per le query | Microsoft Docs
-description: Procedure consigliate per la sicurezza e privacy quando si esegue una query per ottenere informazioni dal database del sito.
+title: "クエリのセキュリティとプライバシー | Microsoft Docs"
+description: "サイト データベースから情報のクエリを実行するときのセキュリティとプライバシーのベスト プラクティスを理解します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 30080620-20d3-4c38-b8dd-db5516e1acae
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2087badc9dd1d216352dce232b145a786783ac89
 ms.openlocfilehash: e42b13c68ecaeac94245838c2f42e2790799de2b
-ms.contentlocale: it-it
-ms.lasthandoff: 05/18/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-queries-in-system-center-configuration-manager"></a>Sicurezza e privacy per le query in System Center Configuration Manager
+# <a name="security-and-privacy-for-queries-in-system-center-configuration-manager"></a>System Center Configuration Manager のクエリのセキュリティとプライバシー
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-In System Center Configuration Manager le query restituiscono informazioni dal database del sito in base ai criteri specificati dall'utente. Configuration Manager raccoglie le informazioni del database del sito durante il funzionamento standard. Ad esempio, con le informazioni raccolte tramite individuazione o inventario è possibile configurare una query per identificare i dispositivi che soddisfano criteri specifici.  
+System Center Configuration Manager でクエリを使用すると、指定した条件に基づいてサイト データベースの情報を取得できます。 Configuration Manager は、標準操作中にサイト データベース情報を収集します。 たとえば、探索またはインベントリで収集された情報を使用して、特定の条件に合うデバイスを識別するようにクエリを構成することができます。  
 
- Per altre informazioni sulle query, vedere [Introduzione alle query in System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md). Per altre informazioni sulle procedure di sicurezza consigliate e le informazioni sulla privacy per le operazioni di Configuration Manager che raccolgono le informazioni richieste dall'utente usando le query, vedere [Protezione e privacy per System Center Configuration Manager](../../../core/plan-design/security/security-and-privacy.md).  
+ クエリの詳細については、「[System Center Configuration Manager のクエリの概要](../../../core/servers/manage/introduction-to-queries.md)」を参照してください。 クエリを使用して取得できる情報を収集する Configuration Manager 操作に関するセキュリティのベスト プラクティスとプライバシー情報の詳細については、「[System Center Configuration Manager のセキュリティとプライバシー](../../../core/plan-design/security/security-and-privacy.md)」を参照してください。  
 
-## <a name="security-best-practices-for-queries"></a>Procedure di sicurezza consigliate per le query  
- Usare la seguente procedura di sicurezza consigliata per le query.  
+## <a name="security-best-practices-for-queries"></a>クエリについて推奨するセキュリティ運用方法  
+ 以下は、クエリについてのセキュリティのベスト プラクティスです。  
 
-|Procedura di sicurezza consigliata|Altre informazioni|  
+|セキュリティのベスト プラクティス|説明|  
 |----------------------------|----------------------|  
-|Quando si esporta o si importa una query salvata in un percorso di rete, proteggere il percorso e il canale di rete.|Limitare l'accesso alla cartella di rete.<br /><br /> Usare la firma SMB (Server Message Block) o IPsec (Internet Protocol Security) tra il percorso di rete e il server del sito per impedire a un utente malintenzionato di manomettere i dati della query prima dell'importazione.|  
+|ネットワークの場所に保存されているクエリをエクスポートまたはインポートする場合は、場所とネットワーク チャネルをセキュリティで保護します。|ネットワーク フォルダーにアクセスできるユーザーを制限します。<br /><br /> ネットワークの場所とサイト サーバーの間で、サーバー メッセージ ブロック (SMB) 署名またはインターネット プロトコル セキュリティ (IPsec) を使用して、攻撃者によってインポートされる前のクエリ データが改ざんされるのを防止します。|  
 
-## <a name="see-also"></a>Vedere anche  
- [Riferimento tecnico per le query per System Center Configuration Manager](../../../core/servers/manage/queries-technical-reference.md)
-
+## <a name="see-also"></a>関連項目  
+ [System Center Configuration Manager のクエリのテクニカル リファレンス](../../../core/servers/manage/queries-technical-reference.md)

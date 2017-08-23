@@ -1,143 +1,139 @@
 ---
-title: Disinstallare siti | Microsoft Docs
-description: Leggere queste informazioni per disinstallare un sito di System Center Configuration Manager.
+title: "サイトのアンインストール | Microsoft Docs"
+description: "System Center Configuration Manager サイトをアンインストールする場合は、以下の詳細情報をガイドとして使用します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d466edd2-97f0-44c1-a73e-d71abbdbf4a8
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b4c4fc305adbb4acd5bb4941b856a6a4aa648d0f
 ms.openlocfilehash: 6ad06753dc0e1d0958f7131afbf3ecb75eecb2e3
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="uninstall-sites-and-hierarchies-in-system-center-configuration-manager"></a>Disinstallare siti e gerarchie in System Center Configuration Manager
+# <a name="uninstall-sites-and-hierarchies-in-system-center-configuration-manager"></a>System Center Configuration Manager でのサイトと階層のアンインストール
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Leggere le informazioni dettagliate seguenti per disinstallare un sito di System Center Configuration Manager.  
+System Center Configuration Manager サイトをアンインストールする必要がある場合は、以下の詳細情報をガイドとして使用します。  
 
-Per rimuovere le autorizzazioni da una gerarchia con più siti, la sequenza di rimozione è importante. Iniziare dalla disinstallazione dei siti dai livelli bassi della gerarchia e procedere verso i livelli alti:  
+複数のサイトが含まれる階層の使用を停止するには、削除する順序が重要です。 階層の最下位のサイトから上方向へ順にアンインストールを進めます。  
 
-1.  Rimuovere i siti secondari collegati a siti primari.  
-2.  Rimuovere i siti primari.
-3.  Una volta rimossi tutti i siti primari, è possibile disinstallare il sito di amministrazione centrale.  
+1.  プライマリ サイトに接続されているセカンダリ サイトを削除します。  
+2.  プライマリ サイトを削除します。
+3.  すべてのプライマリ サイトを削除したら、中央管理サイトをアンインストールできます。  
 
 
-##  <a name="BKMK_RemoveSecondarysite"></a> Rimuovere un sito secondario da una gerarchia  
-Non è possibile spostare o riassegnare un sito secondario a un nuovo sito primario padre. Per rimuovere un sito secondario da una gerarchia, è necessario eliminarlo dal sito padre diretto. Usare l'Eliminazione guidata sito secondario dalla console di Configuration Manager per rimuovere un sito secondario. Quando si rimuove un sito secondario, è necessario scegliere se eliminarlo o disinstallarlo:  
+##  <a name="BKMK_RemoveSecondarysite"></a> 階層からのセカンダリ サイトの削除  
+セカンダリ サイトを移動したり、セカンダリ サイトを新しい親プライマリ サイトに再割り当てしたりすることはできません。 階層から削除するには、直接の親サイトからセカンダリ サイトを削除する必要があります。 Configuration Manager コンソールのセカンダリ サイトの削除ウィザードを使用して、セカンダリ サイトを削除します。 セカンダリ サイトを削除するときに、セカンダリ サイトを削除するのかアンインストールするのかを選択する必要があります。  
 
--   **Disinstallare il sito secondario**. Usare questa opzione per rimuovere un sito secondario funzionante accessibile dalla rete. Questa opzione disinstalla Configuration Manager dal server del sito secondario, elimina tutte le informazioni relative al sito e alle risorse dalla gerarchia del sito di Configuration Manager. Se Configuration Manager ha installato SQL Server Express come parte dell'installazione del sito secondario, Configuration Manager disinstalla anche SQL Express durante la disinstallazione del sito secondario. Se SQL Server Express è stato installato prima dell'installazione del sito secondario, Configuration Manager non lo disinstalla.  
+-   **セカンダリ サイトをアンインストールする**。 ネットワークからアクセスできる、機能しているセカンダリ サイトを削除するには、このオプションを使用します。 このオプションを使用すると、セカンダリ サイト サーバーから Configuration Manager がアンインストールされてから、Configuration Manager サイト階層からサイトとサイト リソースのすべての情報が削除されます。 Configuration Manager によってセカンダリ サイトのインストールの一部として SQL Server Express がインストールされた場合は、セカンダリ サイトのアンインストール時に Configuration Manager によって SQL Express がアンインストールされます。 セカンダリ サイトのインストール前に SQL Server Express がインストールされた場合は、Configuration Manager によって SQL Server Express はアンインストールされません。  
 
--   **Eliminare il sito secondario**. Usare questa opzione in presenza di una delle seguenti condizioni:  
+-   **セカンダリ サイトを削除する**。 このオプションは、次のいずれかが当てはまる場合に使用します。  
 
-    -   Non è stato possibile installare un sito secondario  
-    -   Il sito secondario continua a essere visualizzato nella console di Configuration Manager anche dopo essere stato disinstallato
+    -   セカンダリ サイトのインストールが失敗した  
+    -   アンインストール後に、セカンダリ サイトが引き続き Configuration Manager コンソールに表示される
 
-    Questa opzione consente di eliminare tutte le informazioni sul sito e sulle relative risorse dalla gerarchia di Configuration Manager, lasciando tuttavia installato Configuration Manager sul server del sito secondario.  
+    このオプションを使用すると、Configuration Manager 階層からサイトとサイト リソースのすべての情報が削除されますが、Configuration Manager はセカンダリ サイト サイバーにインストールされたままになります。  
 
     > [!NOTE]  
-    >  È anche possibile usare lo strumento di manutenzione gerarchia e l'opzione **/DELSITE** per eliminare un sito secondario. Per altre informazioni, vedere [Strumento di manutenzione gerarchia (Preinst.exe) per System Center Configuration Manager](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md).  
+    >  階層のメンテナンス ツールと **/DELSITE** オプションを使用して、セカンダリ サイトを削除することもできます。 詳細については、「[System Center Configuration Manager の階層のメンテナンス ツール (Preinst.exe)](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md)」を参照してください。  
 
-#### <a name="to-uninstall-or-delete-a-secondary-site"></a>Per disinstallare o eliminare un sito secondario  
+#### <a name="to-uninstall-or-delete-a-secondary-site"></a>セカンダリ サイトをアンインストールまたは削除するには  
 
-1.  Verificare che l'utente amministratore che esegue il programma di installazione disponga dei seguenti privilegi di protezione:  
+1.  セットアップを実行する管理ユーザーが、次のセキュリティ権限を持っていることを確認します。  
 
-    -   Diritti amministrativi sul computer del sito secondario  
-    -   Diritti di amministratore locale sul server di database del sito remoto per il sito primario, se è remoto  
-    -   Ruolo di sicurezza Amministratore infrastruttura o Amministratore completo sul sito primario padre  
-    -   Diritti di amministratore di sistema sul database del sito del sito secondario  
+    -   セカンダリ サイト コンピューターの管理者権限  
+    -   プライマリ サイトがリモートの場合は、そのリモート サイト データベース サーバーのローカル管理者権限  
+    -   親プライマリ サイトのインフラストラクチャ管理者または完全な権限を持つ管理者のセキュリティ ロール  
+    -   セカンダリ サイトのサイト データベースの sysadmin 権限  
 
-2.  Nella console di Configuration Manager selezionare **Amministrazione**.  
-3.  Nell'area di lavoro **Amministrazione** espandere **Configurazione del sito** e quindi selezionare **Siti**.  
-4.  Selezionare il server del sito secondario che si vuole rimuovere.  
-5.  Nel gruppo **Sito** della scheda **Home** fare clic su **Elimina**.  
-6.  Nella pagina **Generale** selezionare se disinstallare o eliminare il sito secondario, quindi fare clic su **Avanti**.  
-7.  Nella pagina **Riepilogo** verificare le impostazioni e quindi fare clic su **Avanti**.  
-8.  Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata.  
+2.  Configuration Manager コンソールで、**[管理]** を選択します。  
+3.  **[管理]** ワークスペースで、**[サイトの構成]** を展開して、**[サイト]** を選択します。  
+4.  削除するセカンダリ サイト サーバーを選択します。  
+5.  **[ホーム]** タブの **[サイト]** グループで、**[削除]** をクリックします。  
+6.  [ **全般** ] ページで、セカンダリ サイトをアンインストールするのか削除するのかを選択してから、[ **次へ**] をクリックします。  
+7.  **[概要]** ページで、設定を確認してから **[次へ]** を選択します。  
+8.  **[完了]** ページで **[閉じる]** を選択して、ウィザードを閉じます。  
 
-##  <a name="BKMK_UninstallPrimary"></a> Disinstallare un sito primario  
-È possibile eseguire il programma di installazione di Configuration Manager per disinstallare un sito primario che non ha un sito secondario associato. Prima di disinstallare un sito primario, tenere in considerazione quanto segue:  
+##  <a name="BKMK_UninstallPrimary"></a> プライマリ サイトのアンインストール  
+Configuration Manager のセットアップを実行して、セカンダリ サイトに関連付けられていないプライマリ サイトをアンインストールできます。 プライマリ サイトをアンインストールする前に、次のことを検討してください。  
 
--   Quando i client di Configuration Manager si trovano all'interno dei limiti configurati del sito e il sito primario fa parte di una gerarchia di Configuration Manager, aggiungere tali limiti a un sito primario diverso all'interno della gerarchia prima di disinstallare il sito primario.  
--   Quando il server del sito primario non è più disponibile, è necessario usare lo strumento di manutenzione gerarchia nel sito di amministrazione centrale per eliminare il sito primario dal database del sito. Per altre informazioni, vedere [Strumento di manutenzione gerarchia (Preinst.exe) per System Center Configuration Manager](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md).  
+-   サイトに構成された境界内に Configuration Manager クライアントが配置されており、プライマリ サイトが Configuration Manager の階層に含まれている場合、プライマリ サイトをアンインストールする前に、階層内の別のプライマリ サイトに境界を追加することを検討します。  
+-   プライマリ サイト サーバーが利用できなくなっている場合、中央管理サイトで階層のメンテナンス ツールを使用して、サイト データベースからプライマリ サイトを削除する必要があります。 詳細については、「[System Center Configuration Manager の階層のメンテナンス ツール (Preinst.exe)](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md)」を参照してください。  
 
-Usare la procedura seguente per disinstallare un sito primario.  
+プライマリ サイトをアンインストールするには、次の手順に従います。  
 
-#### <a name="to-uninstall-a-primary-site"></a>Per disinstallare un sito primario  
+#### <a name="to-uninstall-a-primary-site"></a>プライマリ サイトをアンインストールするには  
 
-1.  Verificare che l'utente amministratore che esegue il programma di installazione disponga dei seguenti privilegi di protezione:  
+1.  セットアップを実行する管理ユーザーが、次のセキュリティ権限を持っていることを確認します。  
 
-    -   Diritti di amministratore locale sul server del sito di amministrazione centrale  
-    -   Diritti di amministratore locale sul server di database del sito remoto per il sito di amministrazione centrale, se è remoto
-    -   Diritti di amministratore di sistema sul database del sito del sito di amministrazione centrale  
-    -   Diritti di amministratore locale sul computer del sito primario  
-    -   Diritti di amministratore locale sul server di database del sito remoto per il sito primario, se è remoto  
-    -   Nome utente associato al ruolo di sicurezza Amministratore infrastruttura o Amministratore completo sul sito di amministrazione centrale  
+    -   中央管理サイト サーバーのローカル管理者権限  
+    -   中央管理サイトがリモートの場合は、そのリモート サイト データベース サーバーのローカル管理者権限
+    -   中央管理サイトのサイト データベースの sysadmin 権限  
+    -   プライマリ サイト コンピューターのローカル管理者権限  
+    -   プライマリ サイトがリモートの場合は、そのリモート サイト データベース サーバーのローカル管理者権限  
+    -   中央管理サイトのインフラストラクチャ管理者または完全な権限を持つ管理者のセキュリティ ロールに関連付けられたユーザー名  
 
-2.  Avviare il programma di installazione di Configuration Manager sul server del sito primario usando uno dei metodi seguenti:  
+2.  次のいずれかの方法を使用して、プライマリ サイト サーバーで Configuration Manager のセットアップを起動します。  
 
-    -   In **Avvia** fare clic su **Installazione di Configuration Manager**.  
-    -   Aprire Setup.exe da &lt;*ConfigMgrInstallationMedia*>\SMSSETUP\BIN\X64.  
-    -   Aprire Setup.exe da &lt;*ConfigMgrInstallationPath*>\BIN\X64.  
+    -   **[開始]** で、**[Configuration Manager のセットアップ]** を選択します。  
+    -   &lt;*Configuration Manager のインストール メディア*>\SMSSETUP\BIN\X64 から Setup.exe を開きます。  
+    -   &lt;*Configuration Manager のインストール パス*>\BIN\X64 から Setup.exe を開きます。  
 
-3.  Nella pagina **Prima di iniziare** scegliere **Avanti**.  
-4.  Nella pagina **Attività iniziale** selezionare **Disinstalla un sito di Configuration Manager** e fare clic su **Avanti**.  
-5.  In **Disinstalla il sito di Configuration Manager** specificare se rimuovere il database del sito dal server del sito primario e se rimuovere la console di Configuration Manager. Per impostazione predefinita, il programma di installazione li rimuoverà entrambi.  
-
-    > [!IMPORTANT]  
-    >  Quando un sito secondario è collegato al sito principale, è necessario rimuovere il sito secondario prima di disinstallare il sito principale.  
-
-6.  Fare clic su **Sì** per confermare la disinstallazione del sito primario di Configuration Manager.  
-
-##  <a name="BKMK_UninstallPrimaryDistViews"></a> Disinstallare un sito primario configurato con viste distribuite  
- Prima di disinstallare un sito primario figlio che include viste distribuite attivate per il collegamento di replica al sito di amministrazione centrale, sarà necessario disabilitare le viste distribuite nella gerarchia. Leggere le seguenti informazioni per disattivare le viste distribuite prima di disinstallare un sito primario.  
-
-#### <a name="to-uninstall-a-primary-site-that-is-configured-with-distributed-views"></a>Per disinstallare un sito primario configurato con viste distribuite  
-
-1.  Prima di disinstallare un sito primario, è necessario disattivare le viste distribuite in ogni collegamento della gerarchia tra il sito di amministrazione centrale e un sito primario.  
-2.  Dopo avere disattivato le viste distribuite in ogni collegamento, assicurarsi che i dati del sito primario completino la reinizializzazione nel sito di amministrazione centrale. Per monitorare l'inizializzazione dei dati, nell'area di lavoro **Monitoraggio** della console di Configuration Manager, visualizzare il collegamento nel nodo **Replica di database**.  
-3.  Dopo la reinizializzazione corretta dei dati con il sito di amministrazione centrale, sarà possibile disinstallare il sito primario. Per disinstallare un sito primario, vedere [Disinstallare un sito primario](#BKMK_UninstallPrimary).  
-4.  Dopo la disinstallazione completa del sito primario, sarà possibile riconfigurare le viste distribuite nei collegamenti ai siti primari.  
+3.  **[開始する前に]** ページで、**[次へ]** を選択します。  
+4.  **[はじめに]** ページで **[Configuration Manager サイト サーバーをアンインストールする]** を選択してから、**[次へ]** を選択します。  
+5.  **[Configuration Manager サイトのアンインストール]** で、サイトデータベースをプライマリ サイト サーバーから削除するかどうか、および Configuration Manager コンソールから削除するかどうかを指定します。 既定では、両方の項目が削除されます。  
 
     > [!IMPORTANT]  
-    >  Se si disinstalla il sito primario prima di disattivare le viste distribuite in ogni sito oppure prima della reinizializzazione corretta dei dati dal sito primario nel sito di amministrazione centrale, è possibile che si verifichino errori di replica dei dati tra i siti primari e il sito di amministrazione centrale. In questo scenario è necessario disattivare le viste distribuite per ogni collegamento nella gerarchia del sito e, dopo la reinizializzazione corretta dei dati nel sito di amministrazione centrale, sarà possibile riconfigurare le viste distribuite.  
+    >  セカンダリ サイトがプライマリ サイトに接続されている場合は、プライマリ サイトをアンインストールする前にセカンダリ サイトを削除する必要があります。  
 
-##  <a name="BKMK_UninstallCAS"></a> Disinstallare il sito di amministrazione centrale  
- È possibile eseguire il programma di installazione di Configuration Manager per disinstallare un sito di amministrazione centrale che non ha siti primari figlio. Usare la procedura seguente per disinstallare il sito di amministrazione centrale.  
+6.  **[はい]** をクリックして、Configuration Manager のプライマリ サイトのアンインストールを確定します。  
 
-#### <a name="to-uninstall-a-central-administration-site"></a>Per disinstallare un sito di amministrazione centrale  
+##  <a name="BKMK_UninstallPrimaryDistViews"></a> 分散ビューで構成されたプライマリ サイトのアンインストール  
+ 子プライマリ サイトで中央管理サイトへのレプリケーション リンクの分散ビューが有効になっている場合、この子プライマリ サイトをアンインストールする前に、階層内の分散ビューを無効にする必要があります。 プライマリ サイトをアンインストールする前に分散ビューを無効にするには、次の手順に従います。  
 
-1.  Verificare che l'utente amministratore che esegue il programma di installazione disponga dei seguenti privilegi di protezione:  
+#### <a name="to-uninstall-a-primary-site-that-is-configured-with-distributed-views"></a>分散ビューが構成されたプライマリ サイトをアンインストールするには  
 
-    -   Diritti di amministratore locale sul server del sito di amministrazione centrale  
-    -   Diritti di amministratore locale sul server di database del sito per il sito di amministrazione centrale, se il server di database del sito non è installato nel server del sito 
-
-2.  Avviare il programma di installazione di Configuration Manager sul server del sito di amministrazione centrale usando uno dei metodi seguenti:  
-
-    -   In **Avvia**fare clic su **Installazione di Configuration Manager**.  
-    -   Aprire Setup.exe da &lt;*ConfigMgrInstallationMedia*>\SMSSETUP\BIN\X64.  
-    -   Aprire Setup.exe da &lt;*ConfigMgrInstallationPath*>\BIN\X64.  
-
-3.  Nella pagina **Prima di iniziare** scegliere **Avanti**.  
-4.  Nella pagina **Attività iniziale** selezionare **Disinstalla un sito di Configuration Manager** e fare clic su **Avanti**.  
-5.  In **Disinstalla il sito di Configuration Manager** specificare se rimuovere il database del sito dal server del sito di amministrazione centrale e se rimuovere la console di Configuration Manager. Per impostazione predefinita, il programma di installazione li rimuoverà entrambi.  
+1.  プライマリ サイトをアンインストールする前に、階層内で中央管理サイトとプライマリ サイト間の各リンクの分散ビューを無効にする必要があります。  
+2.  各リンクの分散ビューを無効にしたら、中央管理サイトでプライマリ サイトのデータの再初期化が完了したことを確認します。 Configuration Manager コンソールでデータの初期化を監視するには、**[監視]** ワークスペースで、**[データベース レプリケーション]** ノード内のリンクを表示します。  
+3.  中央管理サイトでデータが正常に再初期化されたら、プライマリ サイトをアンインストールできます。 プライマリ サイトをアンインストールするには、「[プライマリ サイトのアンインストール](#BKMK_UninstallPrimary)」を参照してください。  
+4.  プライマリ サイトが完全にアンインストールされたら、プライマリ サイトへのリンクに分散ビューを再構成できます。  
 
     > [!IMPORTANT]  
-    >  Se al sito di amministrazione centrale è collegato un sito primario, sarà necessario disinstallare il sito primario prima di disinstallare il sito di amministrazione centrale.  
+    >  各サイトで分散ビューを無効にする前にプライマリ サイトをアンインストールした場合や、中央管理サイトでプライマリ サイトのデータが正常に再初期化される前にプライマリ サイトをアンインストールした場合は、プライマリ サイトと中央管理サイト間のデータのレプリケーションが失敗する可能性があります。 この場合は、サイト階層内の各リンクの分散ビューを無効にしてから、中央管理サイトとデータを再初期化した後で、分散ビューを再構成できます。  
 
-6.  Fare clic su **Sì** per confermare la disinstallazione del sito di amministrazione centrale di Configuration Manager.  
+##  <a name="BKMK_UninstallCAS"></a> 中央管理サイトのアンインストール  
+ Configuration Manager のセットアップを実行して、子プライマリ サイトが含まれていない中央管理サイトをアンインストールできます。 中央管理サイトをアンインストールするには、次の手順に従います。  
 
+#### <a name="to-uninstall-a-central-administration-site"></a>中央管理サイトをアンインストールするには  
+
+1.  セットアップを実行する管理ユーザーが、次のセキュリティ権限を持っていることを確認します。  
+
+    -   中央管理サイト サーバーのローカル管理者権限  
+    -   サイト データベース サーバーがサイト サーバーにインストールされていない場合は、中央管理サイト用のサイト データベース サーバーのローカル管理者権限 
+
+2.  次のいずれかの方法を使用して、中央管理サイト サーバーで Configuration Manager のセットアップを起動します。  
+
+    -   [ **開始**] で、[ **Configuration Manager のセットアップ**] をクリックします。  
+    -   &lt;*Configuration Manager のインストール メディア*>\SMSSETUP\BIN\X64 から Setup.exe を開きます。  
+    -   &lt;*Configuration Manager のインストール パス*>\BIN\X64 から Setup.exe を開きます。  
+
+3.  **[開始する前に]** ページで、**[次へ]** を選択します。  
+4.  **[はじめに]** ページで **[Configuration Manager サイト サーバーをアンインストールする]** を選択してから、**[次へ]** を選択します。  
+5.  **[Configuration Manager サイトのアンインストール]** で、サイト データベースを中央管理サイト サーバーから削除するかどうか、および Configuration Manager コンソールから削除するかどうかを指定します。 既定では、両方の項目が削除されます。  
+
+    > [!IMPORTANT]  
+    >  プライマリ サイトが中央管理サイトに接続されている場合は、中央管理サイトをアンインストールする前にプライマリ サイトをアンインストールする必要があります。  
+
+6.  **[はい]** を選択して、Configuration Manager の中央管理サイトのアンインストールを確定します。  

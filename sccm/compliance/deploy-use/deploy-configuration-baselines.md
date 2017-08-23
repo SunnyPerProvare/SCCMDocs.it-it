@@ -1,65 +1,58 @@
 ---
-title: Distribuire linee di base di configurazione | Microsoft Docs
-description: Distribuire le linee di base di configurazione per definire le relative distribuzioni e aggiungere o rimuovere le linee di base dalle distribuzioni.
+title: "構成基準を展開する | Microsoft Docs"
+description: "構成基準を展開し、構成基準の展開の定義や、展開に対する構成基準の追加や削除を行います。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9be8aaf3-075e-4acd-abd2-7459254e16e2
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
 ms.openlocfilehash: 9c9e6b7780c7c10c20a60dbbbf506e916031eb88
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-deploy-configuration-baselines-in-system-center-configuration-manager"></a>Come distribuire linee di base di configurazione in System Center Configuration Manager
+# <a name="how-to-deploy-configuration-baselines-in-system-center-configuration-manager"></a>System Center Configuration Manager で構成基準を展開する方法
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Le linee di base di configurazione in System Center Configuration Manager devono essere distribuite in una o più raccolte di utenti o dispositivi prima che i dispositivi client in tali raccolte possano valutare la relativa conformità in base alla linea di base di configurazione.  
+System Center Configuration Manager の構成基準は、1 つまたは複数のユーザーまたはデバイスのコレクションに展開する必要があります。これにより、これらのコレクションに含まれるクライアント デバイスは、構成基準に対する自らのコンプライアンスを評価できるようになります。  
 
-Usare la finestra di dialogo **Distribuisci linee di base di configurazione** per definire le distribuzioni delle linee di base di configurazione, ad esempio aggiungendo o rimuovendo le linee di base di configurazione dalle distribuzioni e specificando la pianificazione di valutazione.  
+構成基準の展開を定義するには、[構成基準の展開] ダイアログ ボックスを使用します。このダイアログ ボックスでは、展開からの構成基準の追加と削除や評価スケジュールの指定などを行います。 ****  
 
-## <a name="deploy-a-configuration-baseline"></a>Distribuire una linea di base di configurazione  
+## <a name="deploy-a-configuration-baseline"></a>構成基準の展開  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Linee di base di configurazione**.  
+1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[構成基準]** の順にクリックします。  
 
-3.  Nell'elenco **Distribuisci linee di base di configurazione** selezionare la linea di base di configurazione da distribuire e quindi nella scheda **Home** nel gruppo **Distribuzione** fare clic su **Distribuisci**.  
+3.  **構成基準** 一覧で、展開にする構成基準を選択し、、 **ホーム**  タブで、 **展開** グループで、 **展開**です。  
 
-4.  Nella finestra di dialogo **Distribuisci linee di base di configurazione** selezionare le linee di base di configurazione da distribuire nell'elenco **Linee d base di configurazione disponibili** . Fare clic su **Aggiungi** per aggiungere gli elementi selezionati all'elenco **Linee di base di configurazione selezionate** .  
+4.  **構成基準の展開**  ダイアログ ボックスで、展開する構成基準の選択、 **使用可能な構成基準**  ボックスの一覧です。 クリックして **追加** に追加する、 **構成基準を選択した**  ボックスの一覧です。  
 
     > [!IMPORTANT]  
-    >  Se si modifica un elemento di configurazione aggiunto a una linea di base di configurazione distribuita, la conformità dell'elemento di configurazione modificato non viene valutata fino alla successiva ora di valutazione pianificata.  
+    >  展開された構成基準に追加されている構成項目を変更する場合に、その次にスケジュールされた評価時間まで更新された構成項目は対応評価されません。  
 
-5.  Specificare le informazioni aggiuntive seguenti:  
+5.  次の追加情報を指定します。  
 
-    -   **Monitora e aggiorna le regole non conformi, se supportato**: consente di correggere automaticamente tutte le regole non conformi per Strumentazione gestione Windows (WMI), il Registro di sistema, gli script e tutte le impostazioni per i dispositivi mobili registrati da Configuration Manager.  
+    -   **[サポートされている場合は対応していない規則を修復する]** – Windows Management Instrumentation (WMI)、レジストリ、スクリプト、および、Configuration Manager が登録したモバイル デバイスのすべての設定が対応しない規則があれば、自動的に修復します。  
 
-    -   **Consenti monitoraggio e aggiornamento fuori dalla finestra di manutenzione** : se è stata configurata una finestra di manutenzione per la raccolta in cui si distribuisce la linea di base di configurazione, abilitare questa opzione per consentire alle impostazioni di conformità di monitorare e aggiornare il valore fuori dalla finestra di manutenzione. Per altre informazioni sulle finestre di manutenzione, vedere [How to use maintenance windows](/sccm/core/clients/manage/collections/use-maintenance-windows) (Come usare le finestre di manutenzione).  
+    -   **[メンテナンス期間以外の修復を許可する]** – このオプションを有効にすると、構成基準の展開先のコレクションにメンテナンス期間が設定されていても、コンプライアンス設定がメンテナンス期間外に値を修復します。 メンテナンス期間について詳しくは、「[メンテナンス期間を使用する方法](/sccm/core/clients/manage/collections/use-maintenance-windows)」をご覧ください。  
 
-6.  **Genera un avviso**: configura un avviso che viene generato se la conformità della linea di base di configurazione è inferiore a una percentuale specificata in base a una data e un orario specifici. È inoltre possibile specificare se si desidera che un avviso venga inviato a System Center Operations Manager.  
+6.  **[アラートを生成する]** – 構成基準のコンプライアンスが、指定した日付と時刻までに指定した割合に達しなかった場合に生成されるアラートを構成します。 アラートを System Center Operations Manager に送信するかどうかも指定できます。  
 
-7.  **Raccolta** : fare clic su **Sfoglia** per selezionare la raccolta in cui si vuole distribuire la linea di base di configurazione.  
+7.  **[コレクション]** - **[参照]** をクリックして、構成基準を展開するコレクションを選択します。  
 
-8.  **Specificare la pianificazione per la valutazione della conformità per questa linea di base di configurazione**: specifica la pianificazione in base alla quale la linea di base di configurazione distribuita viene valutata nei computer client. Può trattarsi di una pianificazione semplice o personalizzata.  
+8.  **[この構成基準のコンプライアンス評価スケジュールを指定してください]** – 展開された構成基準をクライアント コンピューターで評価するスケジュールを指定します。 簡易スケジュールまたはカスタム スケジュールを使用できます。  
 
     > [!NOTE]  
-    >  Se la linea di base di configurazione viene distribuita in un computer, la relativa conformità viene valutata entro due ore dall'ora di inizio pianificata. Se viene distribuita a un utente, la relativa conformità viene valutata quando l'utente effettua l'accesso.  
+    >  構成基準がコンピューターに展開された場合、スケジュールされた開始時間から 2 時間以内にコンプライアンスが評価されます。 ユーザーに展開された場合、ユーザーがログオンするとコンプライアンスが評価されます。  
 
-9. Fare clic su **OK** per chiudere la finestra di dialogo **Distribuisci linee di base di configurazione** e creare la distribuzione. Per altre informazioni su come monitorare la distribuzione, vedere [Monitor compliance settings](/sccm/compliance/deploy-use/monitor-compliance-settings) (Monitorare le impostazioni di conformità).  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+9. をクリックして **ok** を閉じる、 **構成基準の展開**  ダイアログ ボックスと、展開を作成します。 展開の監視方法の詳細については、「[Monitor compliance settings](/sccm/compliance/deploy-use/monitor-compliance-settings)」 (コンプライアンス設定の監視) をご覧ください。  

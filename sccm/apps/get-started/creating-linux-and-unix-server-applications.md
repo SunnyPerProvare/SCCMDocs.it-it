@@ -1,169 +1,165 @@
 ---
-title: Creare applicazioni server Linux e UNIX | Documentazione Microsoft
-description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni per i dispositivi Linux e UNIX.
+title: "Linux および UNIX のサーバー アプリケーションの作成 | Microsoft Docs"
+description: "Linux および UNIX デバイス用アプリケーションを作成して展開するときに検討する必要がある考慮事項について説明します。"
 ms.custom: na
 ms.date: 04/13/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 79cd131a-1a24-4751-87c8-7f275e45d847
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4b9261db93c9bf72c492e3c9be5b30f81835134a
 ms.openlocfilehash: 72ebd8bd29b5ecdd817631e447291c04f49d9808
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-linux-and-unix-server-applications-with-system-center-configuration-manager"></a>Creare applicazioni server Linux e UNIX con System Center Configuration Manager
+# <a name="create-linux-and-unix-server-applications-with-system-center-configuration-manager"></a>System Center Configuration Manager で Linux および UNIX のサーバー アプリケーションを作成する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Tenere presenti le seguenti considerazioni quando si creano e si distribuiscono applicazioni per computer che eseguono Linux e UNIX.  
+Linux および UNIX を実行するコンピューター用のアプリケーションを作成して展開するときに、以下の考慮事項について留意してください。  
 
-## <a name="general-considerations"></a>Considerazioni generali  
- Il client di Configuration Manager per Linux e UNIX supporta le **distribuzioni software che usano pacchetti e programmi**. Non è possibile distribuire le applicazioni di Configuration Manager nei computer che eseguono Linux e UNIX.  
+## <a name="general-considerations"></a>一般的な考慮事項  
+ Linux および UNIX 用の Configuration Manager クライアントは、**パッケージとプログラムを使用したソフトウェアの展開**をサポートします。 Linux および UNIX を実行しているコンピューターに Configuration Manager アプリケーションを展開することはできません。  
 
- Ecco alcune delle funzionalità disponibili per le distribuzioni software Linux e UNIX.  
+ Linux および UNIX のソフトウェアの展開の機能は次のとおりです。  
 
--   Installazione del software per i server Linux e UNIX, tra cui:  
+-   以下を含む Linux サーバーおよび UNIX サーバー用のソフトウェアのインストール。  
 
-    -   Nuova distribuzione software  
+    -   新しいソフトウェア展開  
 
-    -   Aggiornamenti software per i programmi già presenti in un computer  
+    -   コンピューター上に既に配置されているプログラムのソフトウェア更新プログラム  
 
-    -   Patch del sistema operativo  
+    -   オペレーティング システムの修正プログラム  
 
--   Comandi nativi di Linux e UNIX e script presenti in server Linux e UNIX  
+-   ネイティブの Linux コマンドおよび UNIX コマンドと、Linux サーバーおよび UNIX サーバーに配置されているスクリプト  
 
--   Distribuzioni limitate ai sistemi operativi specificati durante la selezione dell'opzione del programma **Solo sulle piattaforme client specificate**
+-   プログラム オプション [**指定したクライアントのプラットフォームのみ**] を選択すると、指定したオペレーティング システムに制限される展開
 
--   Finestre di manutenzione per verificare quando viene installato il software
+-   ソフトウェアをインストールするタイミングを制御するメンテナンス期間
 
--   Messaggi di stato della distribuzione per monitorare le distribuzioni  
+-   展開を監視するための展開ステータス メッセージ  
 
--   Possibilità per il client di limitare l'uso della rete durante il download del software da un punto di distribuzione  
+-   配布ポイントからソフトウェアをダウンロードするときに、ネットワークの使用帯域幅を調整するためのクライアント用のオプション  
 
-### <a name="differences-between-deploying-to-linux-and-unix-computers-and-deploying-to-windows-devices"></a>Differenze tra la distribuzione in computer Linux e UNIX e la distribuzione in dispositivi Windows
-Di seguito sono illustrate le principali differenze tra la distribuzione di pacchetti e programmi in computer Linux e UNIX e la distribuzione di pacchetti e programmi in dispositivi Windows:  
+### <a name="differences-between-deploying-to-linux-and-unix-computers-and-deploying-to-windows-devices"></a>Linux および UNIX コンピューターへの展開と、Windows デバイスへの展開の相違点
+パッケージとプログラムを Linux コンピューターまたは UNIX コンピューターに展開する場合と Windows デバイスに展開する場合の主な違いは次のとおりです。  
 
-|Configurazione|Dettagli|  
+|構成|説明|  
 |-------------------|-------------|  
-|Usare solo le configurazioni destinate ai computer. Non usare le configurazioni destinate agli utenti.|Il client di Configuration Manager per Linux e UNIX non supporta le configurazioni destinate agli utenti.|  
-|Configurare i programmi per scaricare il software dal punto di distribuzione ed eseguire i programmi dalla cache del client locale.|Il client di Configuration Manager per Linux e UNIX non supporta l'esecuzione di software dal punto di distribuzione. Al contrario, è necessario configurare il software per scaricare il client e quindi eseguire l'installazione.<br /><br /> Per impostazione predefinita, dopo che il client per Linux e UNIX installa il software, tale software viene eliminato dalla cache del client. Tuttavia, i pacchetti configurati con l'opzione **Rendi permanente il contenuto nella cache client** non vengono eliminati dal client e rimangono nella cache dopo l'installazione del software.<br /><br /> Il client per Linux e UNIX non supporta le configurazioni per la cache del client e la dimensione massima di tale cache viene limitata solo dallo spazio libero su disco nel computer client.|  
-|Configurare l'account di accesso alla rete per l'accesso del punto di distribuzione|I computer Linux e UNIX sono progettati per essere utilizzati come computer del gruppo di lavoro. Per accedere ai pacchetti dal punto di distribuzione nel dominio del server del sito di Configuration Manager, è necessario configurare l'account di accesso alla rete per il sito. È necessario specificare questo account come una proprietà del componente di distribuzione software e configurare l'account prima di distribuire il software.<br /><br /> È possibile configurare più account di accesso alla rete in ogni sito. Il client per Linux e UNIX può utilizzare tutti gli account configurati come account di accesso alla rete.<br /><br /> Per altre informazioni, vedere [Site components for System Center Configuration Manager](../../core/servers/deploy/configure/site-components.md).|  
+|コンピューター用の構成のみ使用し、ユーザー用の構成は使用しない|Linux および UNIX 用の Configuration Manager クライアントでは、ユーザー向けの構成はサポートしていません。|  
+|配布ポイントからソフトウェアをダウンロードしてローカル クライアント キャッシュからプログラムを実行するように、プログラムを構成する|Linux および UNIX 用の Configuration Manager クライアントでは、配布ポイントからのソフトウェアの実行をサポートしていません。 代わりに、クライアントにダウンロードしてからインストールするように、ソフトウェアを構成する必要があります。<br /><br /> 既定では、ソフトウェアは、Linux および UNIX 用のクライアントによってインストールされると、クライアントのキャッシュから削除されます。 ただし、[ **クライアント キャッシュの内容を保持する** ] で構成されているパッケージはクライアントから削除されず、ソフトウェアのインストール後もクライアントのキャッシュに残ります。<br /><br /> Linux および UNIX 用のクライアントでは、クライアント キャッシュの構成をサポートしていないため、クライアント キャッシュの最大サイズはクライアント コンピューターの空きディスク領域によってのみ制限されます。|  
+|配布ポイントのアクセスにネットワーク アクセス アカウントを構成する|Linux コンピューターと UNIX コンピューターは、ワークグループ コンピューターとなるように設計されています。 Configuration Manager サイト サーバー ドメイン内の配布ポイントからパッケージにアクセスするためには、サイトにネットワーク アクセス アカウントを構成する必要があります。 このアカウントをソフトウェアの配布コンポーネントのプロパティとして指定し、ソフトウェアを展開する前に構成する必要があります。<br /><br /> 各サイトに複数のネットワーク アクセス アカウントを構成できます。 Linux および UNIX のクライアントでは、構成した各アカウントをネットワーク アクセス アカウントとして使用できます。<br /><br /> 詳細については、「 [Site components for System Center Configuration Manager](../../core/servers/deploy/configure/site-components.md)」をご覧ください。|  
 
- È possibile distribuire pacchetti e programmi nelle raccolte che contengono solo client Linux o UNIX o distribuirli in raccolte che contengono un insieme di tipi di client, ad esempio la **raccolta Tutti i sistemi**. I client non Linux e non UNIX, tuttavia, non installeranno il software o segnaleranno un errore.  
+ パッケージとプログラムは、Linux クライアントのみまたは UNIX クライアントのみが含まれているコレクションに展開したり、[ **すべてのシステム コレクション** ] などのクライアントの種類が混在して含まれているコレクションに展開したりできます。 ただし、非 Linux または UNIX クライアントは、ソフトウェアのインストールまたはエラーの報告を行いません。  
 
- Quando il client di Configuration Manager per Linux e UNIX riceve ed esegue una distribuzione, genera dei messaggi di stato. È possibile visualizzare i messaggi di stato nella console di Configuration Manager oppure usare i report per monitorare lo stato della distribuzione.  
+ Linux および UNIX 用の Configuration Manager クライアントは、展開を受け取って実行すると、ステータス メッセージを生成します。 これらのステータス メッセージを Configuration Manager コンソールに表示できます。また、レポートを使用して展開ステータスを監視できます。  
 
- Per informazioni su come usare pacchetti e programmi, vedere [Pacchetti e programmi in Configuration Manager](../../apps/deploy-use/packages-and-programs.md).  
+ パッケージとプログラムの使用方法の詳細については、「[パッケージとプログラム](../../apps/deploy-use/packages-and-programs.md)」を参照してください。  
 
-##  <a name="configure-packages-programs-and-deployments-for-linux-and-unix-servers"></a>Configurare pacchetti, programmi e distribuzioni per i server Linux e UNIX  
- È possibile creare e distribuire pacchetti e programmi usando le opzioni predefinite disponibili nella console di Configuration Manager. Il client non richiede configurazioni univoche.  
+##  <a name="configure-packages-programs-and-deployments-for-linux-and-unix-servers"></a>Linux サーバーと UNIX サーバーのパッケージ、プログラム、および展開を構成する  
+ パッケージとプログラムを作成して展開するには、Configuration Manager コンソールで既定で使用することができるオプションを利用します。 クライアントには固有の構成は必要ありません。  
 
- Utilizzare le informazioni contenute nelle sezioni seguenti per configurare pacchetti, programmi e distribuzioni.  
+ パッケージ、プログラム、および展開を構成するときに、以下のセクションの情報を参照してください。  
 
-### <a name="packages-and-programs"></a>Pacchetti e programmi  
- Per creare un pacchetto e un programma per un server Linux o UNIX, usare la **Creazione guidata pacchetto e programma** dalla console di Configuration Manager. Il client per Linux e UNIX supporta la maggior parte delle impostazioni di pacchetti e programmi. Tuttavia, alcune impostazioni non sono supportate. Quando si crea o si configura un pacchetto e un programma, considerare quanto segue:  
+### <a name="packages-and-programs"></a>パッケージとプログラム  
+ Linux サーバーまたは UNIX サーバー用のパッケージとプログラムを作成するには、Configuration Manager コンソールで**パッケージとプログラムの作成ウィザード**を使用します。 Linux および UNIX 用のクライアントでは、パッケージとプログラムのほとんどの設定がサポートされています。 ただし、サポートされていない設定がいくつかあります。 パッケージとプログラムを作成または構成するときには、次のことを考慮してください。  
 
--   Includere i tipi di file supportati dai computer di destinazione.  
+-   対象コンピューターでサポートされているファイルの種類を含めます。  
 
--   Definire le righe di comando appropriate per l'uso nel computer di destinazione.  
+-   対象コンピューターでの使用に適したコマンド ラインを定義します。  
 
--   Tenere presente che le impostazioni che interagiscono con gli utenti non sono supportate.  
+-   ユーザーと対話する設定はサポートされないことに留意してください。  
 
-Nella seguente tabella vengono elencate le proprietà non supportate per i pacchetti e programmi:  
+次の表に、パッケージとプログラムのサポートされていないプロパティを示します。  
 
-|Proprietà pacchetto e programma|Comportamento|Altre informazioni|  
+|パッケージとプログラムのプロパティ|動作|説明|  
 |----------------------------------|--------------|----------------------|  
-|Impostazioni di condivisione del pacchetto:<br /><br /> - Tutte le opzioni|Viene generato un errore e l'installazione del software non viene completata|Il client non supporta questa configurazione. Il client deve invece scaricare il software utilizzando HTTP o HTTPS e quindi eseguire la riga di comando dalla cache locale.|  
-|Impostazioni di aggiornamento del pacchetto:<br /><br /> - Disconnetti gli utenti dai punti di distribuzione|Le impostazioni vengono ignorate|Il client non supporta questa configurazione.|  
-|Impostazioni di distribuzione del sistema operativo:<br /><br /> - Tutte le opzioni|Le impostazioni vengono ignorate|Il client non supporta questa configurazione.|  
-|Report:<br /><br /> - Usa le proprietà pacchetto per la corrispondenza MIF di stato<br /><br /> - Usa i campi per la corrispondenza MIF di stato|Le impostazioni vengono ignorate|Il client non supporta l'utilizzo di file MIF di stato.|  
-|**Esegui**:<br /><br /> - Tutte le opzioni|Le impostazioni vengono ignorate|Il client esegue sempre i pacchetti senza interfaccia utente.<br /><br /> Il client ignora tutte le opzioni di configurazione per Esegui.|  
-|Dopo l'esecuzione:<br /><br />- Configuration Manager riavvia il computer<br /><br /> - Riavvio controlli programma<br /><br /> - Configuration Manager disconnette l'utente|Viene generato un errore e l'installazione del software non viene completata|L'impostazione di riavvio del sistema e le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Quando viene utilizzata un'altra impostazione diversa da **Non è necessaria alcuna operazione** , il client genera un errore e continua l'installazione del software, senza eseguire alcuna operazione.|  
-|Requisiti per esecuzione programma:<br /><br /> - Solo se un utente è connesso|Viene generato un errore e l'installazione del software non viene completata|Le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Quando questa opzione è configurata, il client genera un errore e l'installazione del software non viene completata.<br /><br /> Altre opzioni vengono ignorate e l'installazione del software continua.|  
-|Modalità esecuzione:<br /><br /> - Esegui con diritti dell'utente|Le impostazioni vengono ignorate|Le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Tuttavia, il client supporta la configurazione per l'esecuzione con diritti amministrativi.<br /><br /> Quando si specifica l'opzione **Esegui con diritti amministrativi** il client di Configuration Manager usa le relative credenziali radice.<br /><br /> Questa impostazione non genera una voce di registro o errore. Al contrario, l'installazione del software non viene completata quando il client genera un errore per la configurazione dei prerequisiti di **Requisiti per esecuzione programma** = **Solo se un utente è connesso**.|  
-|Consenti agli utenti di visualizzare e interagire con l'installazione del programma|Le impostazioni vengono ignorate|Le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Questa configurazione viene ignorata e l'installazione del software continua.|  
-|Modalità unità:<br /><br /> - Tutte le opzioni|Le impostazioni vengono ignorate|Questa impostazione non è supportata perché il contenuto viene sempre scaricato nel client ed eseguito localmente.|  
-|Esegui prima un altro programma|Viene generato un errore e l'installazione del software non viene completata|L'installazione del programma ricorsivo non è supportata.<br /><br /> Quando un programma viene configurato per eseguire prima un altro programma, è impossibile completare l'installazione del software e l'installazione dell'altro programma non viene avviata.|  
-|Se il programma è assegnato a un computer:<br /><br /> - Esegui una volta per ogni utente che si connette|Le impostazioni vengono ignorate|Le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Tuttavia, il client supporta la configurazione per l'esecuzione unica per il computer.<br /><br /> Questa impostazione non genera una voce di registro o un errore perché sono già stati creati per la configurazione dei prerequisiti di **Requisiti per esecuzione programma** = **Solo se un utente è connesso**.|  
-|Elimina notifiche programma|Le impostazioni vengono ignorate|Il client non implementa un'interfaccia utente.<br /><br /> Quando questa configurazione viene selezionata, viene ignorata e l'installazione del software continua.|  
-|Disattiva il programma nei computer in cui è distribuito|Le impostazioni vengono ignorate|Questa impostazione non è supportata e non influisce sull'installazione del software.|  
-|Consenti l'installazione di questo programma dalla sequenza di attività Installa pacchetto senza che venga distribuito||Il client non supporta le sequenze attività.<br /><br /> Questa impostazione non è supportata e non influisce sull'installazione del software.|  
-|Windows Installer:<br /><br /> - Tutte le opzioni|Le impostazioni vengono ignorate|Il client non supporta le impostazioni o file di Windows Installer.|  
-|Modalità manutenzione OpsMgr:<br /><br /> - Tutte le opzioni|Le impostazioni vengono ignorate|Il client non supporta questa configurazione.|  
+|パッケージ共有の設定:<br /><br /> - すべてのオプション|エラーが生成されて、ソフトウェアのインストールが失敗する|クライアントでは、この構成をサポートしていません。 代わりに、クライアントでは、HTTP または HTTPS を使用してソフトウェアをダウンロードしてから、クライアントのローカル キャッシュからコマンド ラインを実行する必要があります。|  
+|パッケージの更新設定:<br /><br /> - 配布ポイントからユーザーの接続を切断する|設定が無視される|クライアントでは、この構成をサポートしていません。|  
+|オペレーティング システムの展開設定:<br /><br /> - すべてのオプション|設定が無視される|クライアントでは、この構成をサポートしていません。|  
+|レポート:<br /><br /> - MIF のステータスの照合にパッケージのプロパティを使用する<br /><br /> - 次のフィールドを MIF によるステータスの照合に使用する|設定が無視される|クライアントでは、ステータス MIF ファイルの使用をサポートしていません。|  
+|**Run**:<br /><br /> - すべてのオプション|設定が無視される|クライアントでは常に、ユーザー インターフェイスを使用せずにパッケージを実行します。<br /><br /> クライアントでは、実行に関するすべての構成オプションを無視します。|  
+|実行後<br /><br />- Configuration Manager がコンピューターを再起動する<br /><br /> - プログラムが再起動を制御する<br /><br /> - Configuration Manager がユーザーをサインアウトさせる|エラーが生成されて、ソフトウェアのインストールが失敗する|システム再起動の設定とユーザー固有の設定はサポートされていません。<br /><br /> [ **操作の必要なし** ] 以外の設定を使用している場合、クライアントによってエラーが生成されてソフトウェアのインストールが続行されるため、操作は不要です。|  
+|プログラムの実行条件:<br /><br /> - ユーザーがサインインしているときのみ|エラーが生成されて、ソフトウェアのインストールが失敗する|ユーザー固有の設定はサポートされていません。<br /><br /> このオプションを構成している場合、クライアントによってエラーが生成されて、ソフトウェアのインストールは失敗します。<br /><br /> その他のオプションは無視されて、ソフトウェアのインストールが続行されます。|  
+|実行モード:<br /><br /> - ユーザーの権限で実行する|設定が無視される|ユーザー固有の設定はサポートされていません。<br /><br /> ただし、クライアントでは、管理者権限を使って実行する構成はサポートされています。<br /><br /> [**管理者権限で実行する**] を指定すると、Configuration Manager クライアントはそのルート資格情報を使用します。<br /><br /> この設定では、エラーやログ エントリは生成されません。 その代わり、[**プログラムの実行条件**] = 「**Only when a user is signed in**」 (ユーザーがサインインしているときのみ) という前提条件の構成でクライアントのエラーが発生すると、ソフトウェアのインストールは失敗します。|  
+|プログラムのインストールの表示および対話をユーザーに許可する|設定が無視される|ユーザー固有の設定はサポートされていません。<br /><br /> この構成は無視されて、ソフトウェアのインストールが続行されます。|  
+|ドライブ モード:<br /><br /> - すべてのオプション|設定が無視される|コンテンツは常にクライアントにダウンロードされてローカルに実行されるため、この設定はサポートされていません。|  
+|別のプログラムを最初に実行する|エラーが生成されて、ソフトウェアのインストールが失敗する|繰り返しのプログラム インストールはサポートされていません。<br /><br /> 別のプログラムをまず実行するようにプログラムを構成している場合、ソフトウェアのインストールは失敗して、他のプログラムのインストールは開始されません。|  
+|このプログラムがコンピューターに割り当てられるとき<br /><br /> - サインインしたユーザーごとに 1 回実行する|設定が無視される|ユーザー固有の設定はサポートされていません。<br /><br /> ただし、クライアントでは、コンピューターごとに 1 回実行する構成はサポートされています。<br /><br />  **プログラムの実行条件** = **ユーザーがログオンしているときのみ**をサポートします。|  
+|［プログラムの通知を抑制する］|設定が無視される|クライアントでは、ユーザー インターフェイスを実装しません。<br /><br /> この構成を選択している場合、この構成は無視されてソフトウェアのインストールが続行されます。|  
+|展開先のコンピューターでこのプログラムを無効にする|設定が無視される|この設定はサポートされていないため、ソフトウェアのインストールに影響しません。|  
+|このソフトウェアを展開しないで、ソフトウェアのインストール タスク シーケンスからこのプログラムをインストールする||クライアントでは、タスク シーケンスはサポートされていません。<br /><br /> この設定はサポートされていないため、ソフトウェアのインストールに影響しません。|  
+|Windows インストーラー:<br /><br /> - すべてのオプション|設定が無視される|クライアントでは、Windows インストーラー ファイルまたは設定をサポートしていません。|  
+|OpsMgr メンテナンス モード:<br /><br /> - すべてのオプション|設定が無視される|クライアントでは、この構成をサポートしていません。|  
 
-### <a name="deploy-software-to-a-linux-or-unix-server"></a>Distribuire il software in un server Linux o UNIX
- Per distribuire il software in un server Linux o UNIX usando un pacchetto e programma, è possibile usare la **Distribuzione guidata del software** dalla console di Configuration Manager. La maggior parte delle impostazioni di distribuzione è supportata dal client per Linux e UNIX. Tuttavia, alcune impostazioni non sono supportate. Quando si distribuisce il software, considerare quanto segue:  
+### <a name="deploy-software-to-a-linux-or-unix-server"></a>Linux または UNIX サーバーにソフトウェアを展開する
+ パッケージとプログラムを使用して Linux サーバーまたは UNIX サーバーにソフトウェアを展開するには、Configuration Manager コンソールの**ソフトウェアの展開ウィザード**を使用します。 ほとんどの展開設定が Linux および UNIX 用のクライアントでサポートされています。 ただし、サポートされていない設定がいくつかあります。 ソフトウェアを展開するときには、次のことを考慮してください。  
 
--   È necessario effettuare il provisioning del pacchetto in almeno un punto di distribuzione associato al gruppo di limiti configurato per la posizione del contenuto.  
+-   コンテンツの場所に構成されている境界グループに関連付けられた、少なくとも 1 つの配布ポイントにパッケージをプロビジョニングする必要があります。  
 
--   È necessario che il client per Linux e UNIX che riceve questa distribuzione sia in grado di accedere a questo punto di distribuzione dal relativo percorso di rete.  
+-   この展開を受け取る Linux および UNIX 用のクライアントが、そのネットワークの場所からこの配布ポイントにアクセスできる必要があります。  
 
--   Il client per Linux e UNIX scarica il pacchetto dal punto di distribuzione ed esegue il programma nel computer locale.  
+-   Linux および UNIX 用のクライアントは、配布ポイントからパッケージをダウンロードして、ローカル コンピューターでプログラムを実行します。  
 
--   Il client per Linux e UNIX non è in grado di scaricare i pacchetti dalle cartelle condivise. Scarica i pacchetti dai punti di distribuzione abilitati per IIS che supportano HTTP o HTTPS.  
+-   Linux および UNIX 用のクライアントでは、共有フォルダーからパッケージをダウンロードすることはできません。 これらのクライアントでは、HTTP または HTTPS をサポートしている IIS 対応の配布ポイントからパッケージをダウンロードします。  
 
- Nella tabella seguente sono elencate le proprietà per le distribuzioni che non sono supportate:  
+ 次の表に、展開のサポートされていないプロパティを示します。  
 
-|Proprietà di distribuzione|Comportamento|Altre informazioni|  
+|展開のプロパティ|動作|説明|  
 |-------------------------|--------------|----------------------|  
-|Impostazioni di distribuzione - scopo:<br /><br /> - Disponibile<br /><br /> - Richiesto|Le impostazioni vengono ignorate|Le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Tuttavia, il client supporta l'impostazione **Richiesto**, che applica l'ora di installazione pianificata, ma non supporta l'installazione manuale prima di tale ora pianificata.|  
-|Invia pacchetti di riattivazione|Le impostazioni vengono ignorate|Il client non supporta questa configurazione.|  
-|Pianificazione assegnazione:<br /><br /> - connessione<br /><br /> - disconnessione|Viene generato un errore e l'installazione del software non viene completata|Le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Tuttavia, il client supporta l'impostazione **Appena possibile**.|  
-|Impostazioni di notifica:<br /><br /> - Consenti agli utenti di eseguire il programma indipendentemente dalle assegnazioni|Le impostazioni vengono ignorate|Il client non implementa un'interfaccia utente.|  
-|Quando viene raggiunto il periodo di assegnazione pianificato, consentire l'esecuzione delle seguenti attività all'esterno della finestra di manutenzione:<br /><br /> - Riavvio del sistema (se necessario per completare l'installazione)|Viene generato un errore|Il client non supporta un riavvio del sistema.|  
-|Opzione di distribuzione per reti veloci (LAN):<br /><br /> - Esegui programma dal punto di distribuzione|Viene generato un errore e l'installazione del software non viene completata|Il client non è in grado di eseguire il software dal punto di distribuzione ed è necessario che scarichi il programma prima di poterlo eseguire.|  
-|Opzione di distribuzione per l'utilizzo entro i limiti di una rete lenta o non affidabile o l'utilizzo di un percorso di origine di fallback per il contenuto:<br /><br /> - Consenti ai client di condividere il contenuto con altri client nella stessa subnet|Le impostazioni vengono ignorate|Il client non supporta la condivisione del contenuto tra peer.|  
+|展開設定 - 目的:<br /><br /> - 使用可能<br /><br /> - 必須|設定が無視される|ユーザー固有の設定はサポートされていません。<br /><br /> ただし、クライアントでは、スケジュールされているインストール時間を適用する設定 [ **必須** ] をサポートしていますが、そのスケジュールされている時間以前の手動インストールはサポートしていません。|  
+|ウェイクアップ パケットを送信する|設定が無視される|クライアントでは、この構成をサポートしていません。|  
+|割り当てスケジュール:<br /><br /> - ログオン<br /><br /> - ログオフ|エラーが生成されて、ソフトウェアのインストールが失敗する|ユーザー固有の設定はサポートされていません。<br /><br /> ただし、クライアントでは設定 [ **直ちに** ] をサポートしています。|  
+|通知設定:<br /><br /> - 割り当てられたプログラムの個別の実行をユーザーに許可する|設定が無視される|クライアントでは、ユーザー インターフェイスを実装しません。|  
+|予定した割り当て日時に達した場合に、メンテナンス期間外に次の操作の実行を許可する:<br /><br /> - システムの再起動 (インストールの完了に必要な場合)|エラーが生成される|クライアントでは、システムの再起動をサポートしていません。|  
+|高速 (LAN) ネットワークの展開オプション:<br /><br /> - 配布ポイントからプログラムを実行する|エラーが生成されて、ソフトウェアのインストールが失敗する|クライアントでは、配布ポイントからソフトウェアを実行できないため、代わりにプログラムをダウンロードしてから実行する必要があります。|  
+|低速または信頼性の低いネットワーク境界、または代替のコンテンツ ソースの場所の展開オプション:<br /><br /> - 同じサブネットにある他のクライアントとのコンテンツの共有を許可する|設定が無視される|クライアントでは、ピア間のコンテンツ共有をサポートしていません。|  
 
- Per altre informazioni sul percorso del contenuto, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+ コンテンツの場所の詳細については、「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」を参照してください。  
 
- Per altre informazioni sulla creazione di una distribuzione, vedere l'argomento relativo alla [distribuzione delle applicazioni](../../apps/deploy-use/deploy-applications.md).  
+ 展開の作成方法の詳細については、「[アプリケーションの展開](../../apps/deploy-use/deploy-applications.md)」を参照してください。  
 
-##  <a name="manage-network-bandwidth-for-software-downloads-from-distribution-points"></a>Gestione della larghezza di banda di rete per i download di software dai punti di distribuzione  
- Il client per Linux e UNIX supporta i controlli della larghezza di banda di rete durante il download di software da un punto di distribuzione.  
+##  <a name="manage-network-bandwidth-for-software-downloads-from-distribution-points"></a>配布ポイントからソフトウェアをダウンロードするためのネットワーク帯域幅の管理  
+ Linux クライアントと UNIX クライアントは、配布ポイントからソフトウェアをダウンロードするときにネットワーク帯域幅を制御できるようになりました。  
 
- Il client usa le impostazioni BITS (Servizio trasferimento intelligente in background) configurate come impostazioni client in Configuration Manager, ma non implementa il servizio BITS. Al contrario, per limitare l'utilizzo della larghezza di banda di rete, il client controlla la dimensione del blocco della richiesta HTTP e il ritardo tra i blocchi per il download del software.  
+ クライアントは、Configuration Manager でクライアント設定として構成したバックグラウンド インテリジェント転送 (BITS) 設定を使用しますが、BITS は使用しません。 クライアントは、ネットワーク帯域幅の使用を調整するために、ソフトウェア ダウンロードの HTTP 要求チャンクのサイズと、チャンク間の遅延を制御します。  
 
- Per configurare un client per l'utilizzo dei controlli della larghezza di banda di rete, vengono configurate le impostazioni client per **Trasferimento intelligente in background** e quindi applicate al computer client. Per usare i controlli della larghezza di banda, il client deve ricevere le impostazioni client per **Trasferimento intelligente in background** con le impostazioni seguenti configurate come **Sì**:  
+ クライアントでネットワーク帯域幅制御の使用を構成するには、[ **バックグラウンド インテリジェント転送** ] の設定を構成してから、その設定をクライアント コンピューターに適用します。 帯域幅制御を使用するには、クライアントで、次の設定が [**はい**] に構成された [**バックグラウンド インテリジェント転送**] のクライアント設定を受け取る必要があります。  
 
--   **Limitare la larghezza di banda di rete massima per i trasferimenti in background BITS**  
+-   **[BITS バックグラウンド転送の最大ネットワーク帯域幅を制限する]**  
 
- Il client supporta le seguenti configurazioni per il Trasferimento intelligente in background:  
+ クライアントは、バックグラウンド インテリジェント転送の次の構成をサポートしています。  
 
-    -   **Ora di inizio dell'intervallo di limitazione**  
+    -   **[調整期間の開始時間]**  
 
-    -   **Ora di fine dell'intervallo di limitazione**  
+    -   **[調整期間の終了時間]**  
 
-    -   **Velocità massima di trasferimento durante l'intervallo di limitazione (Kbps)**  
+    -   **[調整期間内の最大転送速度 (Kbps)]**  
 
-    -   **Velocità massima di trasferimento all'esterno dell'intervallo di limitazione (Kbps)**  
+    -   **[調整期間外の最大転送速度 (Kbps)]**  
 
-La seguente configurazione per Trasferimento intelligente in background non è supportata e viene ignorata dal client per Linux e UNIX:  
+バックグラウンド インテリジェント転送の次の構成はサポートされていません。Linux および UNIX のクライアントでは無視されます。  
 
--   **Consentire i download BITS all'esterno dell'intervallo di limitazione**  
+-   **[調整期間外に BITS ダウンロードを許可する]**  
 
- Se il download del software sul client da un punto di distribuzione viene interrotto, il client per Linux e UNIX non lo riprende, ma riavvia il download dell'intero pacchetto software.  
+ 配布ポイントからクライアントへのソフトウェアのダウンロードが中断された場合、Linux および UNIX のクライアントでは、ダウンロードを途中から再開せず、 ソフトウェア パッケージ全体のダウンロードを再度開始します。  
 
-##  <a name="configure-operations-for-software-deployments"></a>Configurare le operazioni per le distribuzioni software  
- Come per il client Windows, il client di Configuration Manager per Linux e UNIX individua nuove distribuzioni software quando esegue il polling e verifica la presenza di nuovi criteri. La frequenza con cui il client verifica la presenza di nuovi criteri dipende dalle impostazioni del client. È possibile configurare le finestre di manutenzione in modo che controllino quando si verificano le distribuzioni software.  
+##  <a name="configure-operations-for-software-deployments"></a>ソフトウェア展開の操作の構成  
+ Windows クライアントと同様に、Linux および UNIX 用の Configuration Manager クライアントでは、新しいポリシーをポーリングして確認するときに新しいソフトウェア展開を検出します。 クライアントが新しいポリシーを確認する頻度は、クライアント設定によって異なります。 ソフトウェア展開が実行されるタイミングを制御するように、メンテナンス期間を構成できます。  
 
- È possibile configurare le distribuzioni software per i server Linux e UNIX utilizzando le proprietà del pacchetto, le proprietà del programma e le proprietà di distribuzione.  
+ パッケージ プロパティ、プログラム プロパティ、および展開プロパティを使用すると、Linux サーバーおよび UNIX サーバーへのソフトウェア展開を構成できます。  
 
- Quando il client riceve i criteri per una distribuzione, invia un messaggio di stato. Invia messaggi di stato anche quando l'installazione del software viene avviata e quando viene completata oppure non riesce.  
+ クライアントは、展開のポリシーを受け取ると、ステータス メッセージを送信します。 クライアントは、ソフトウェアのインストールを開始したときと、インストールが終了したとき、または失敗したときにも、ステータス メッセージを送信します。  
 
- I programmi per le distribuzioni software vengono eseguiti con le credenziali radice usate per l'esecuzione del client di Configuration Manager per Linux e UNIX. Il codice di uscita del comando per i programmi viene utilizzato per determinare l'esito positivo o negativo. Un codice di uscita pari a 0 (zero) viene considerato come esito positivo. Inoltre, **stdout** (flusso di output standard) e **stderr** (flusso di errore standard) vengono copiati nel file di log quando il livello del registro viene impostato su INFO o TRACE.  
+ ソフトウェア展開のプログラムは、Linux および UNIX 用の Configuration Manager クライアントの実行に使用される、ルート資格情報を使用して実行されます。 プログラム コマンドの終了コードを使用して、成功または失敗が判別されます。 終了コード 0 (ゼロ) は成功として処理されます。 また、ログ レベルが情報またはトレースに設定されている場合、 **stdout** (standard output stream) と **stderr** (standard error stream) がログ ファイルにコピーされます。  
 
 > [!TIP]  
->  Se il software che si desidera distribuire è situato in una condivisione NFS (Network File System) a cui il server Linux o UNIX può accedere, non è necessario utilizzare un punto di distribuzione per scaricare il pacchetto. Al contrario, quando si crea un pacchetto non selezionare la casella di controllo per **Questo pacchetto contiene file di origine**. Quindi, quando si configura il programma, specificare la riga di comando appropriata per accedere direttamente al pacchetto nel punto di montaggio NFS.  
-
+>  展開するソフトウェアが Linux サーバーまたは UNIX サーバーからアクセスすることができる Network File System(NFS) 共有に配置されている場合、配布ポイントを使用してパッケージをダウンロードする必要はありません。 代わりに、パッケージを作成するときに、チェック ボックス [ **このパッケージにソース ファイルを含める** ] をオフにします。 その後で、プログラムを構成するときに、適切なコマンド ラインを指定して NFS マウント ポイントのパッケージに直接アクセスします。  

@@ -1,63 +1,59 @@
 ---
-title: Privacy e sicurezza per Asset Intelligence | Microsoft Docs
-description: Informazioni sulla sicurezza e la privacy per Asset Intelligence in System Center Configuration Manager.
+title: "資産インテリジェンスのセキュリティとプライバシー | Microsoft Docs"
+description: "System Center Configuration Manager の資産インテリジェンスのセキュリティとプライバシーの情報を確認します。"
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d0c6f7a0-dcae-4e6d-aa28-35d464d97ff7
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
-ms.openlocfilehash: d577a16725c2b167d1ff9f77096018433a2fa580
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: b12054cce52e2b83715a083d78a62e06b5127a2f
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-asset-intelligence-in-system-center-configuration-manager"></a>Sicurezza e privacy per Asset Intelligence in System Center Configuration Manager
+# <a name="security-and-privacy-for-asset-intelligence-in-system-center-configuration-manager"></a>System Center Configuration Manager の資産インテリジェンスのセキュリティとプライバシー
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy per Asset Intelligence in System Center Configuration Manager.  
+このトピックには、System Center Configuration Manager の資産インテリジェンスのセキュリティとプライバシーの情報が含まれています。  
 
-##  <a name="BKMK_Security_AI"></a> Procedura consigliate per la sicurezza per Asset Intelligence  
- Usare le procedure consigliate per la sicurezza seguenti per i casi in cui si usa Asset Intelligence.  
+##  <a name="BKMK_Security_AI"></a> 資産インテリジェンスに関するセキュリティのベスト プラクティス  
+ 資産インテリジェンスを使用する場合は、次のセキュリティ上のベスト プラクティスに従ってください。  
 
-|Procedura di sicurezza consigliata|Altre informazioni|  
+|セキュリティのベスト プラクティス|説明|  
 |----------------------------|----------------------|  
-|Quando si importa un file di licenza (file Microsoft Volume Licensing o file di resoconto licenze generale), proteggere il file e il canale di comunicazione.|Usare le autorizzazioni del file system NTFS per garantire che solo gli utenti autorizzati possano accedere ai file di licenza e usare firme Server Message Block (SMB) per assicurare l'integrità dei dati quando vengono trasferiti al server del sito durante il processo di importazione.|  
-|Usare il principio di autorizzazione con privilegi minimi per importare i file di licenza.|Usare l'amministrazione basata su ruoli per concedere l'autorizzazione Gestisci Asset Intelligence all'utente amministratore che importa i file di licenza. Il ruolo predefinito di Gestione asset include questa autorizzazione.|  
+|ライセンス ファイル (マイクロソフト ボリューム ライセンス ファイル、または一般的なライセンス ステートメント ファイル) をインポートするときは、ファイルと通信チャネルをセキュリティ保護してください。|NTFS ファイルシステムの権限を使って、許可されたユーザーだけがライセンス ファイルにアクセスできるようにします。また、サーバー メッセージ ブロック (SMB) の署名によって、インポートの過程でサイト サーバーに転送されるとき、データの整合性を保つようにします。|  
+|ライセンスのインポートでは最小限の特権という原則を使用してください。|役割に基づいた管理を行って、資産インテリジェンスの管理権限を、ライセンス ファイルをインポートする管理者に付与します。 資産管理者の組み込みロールには次の権限が含まれます。|  
 
-##  <a name="BKMK_Privacy_HardwareInventory"></a> Informazioni sulla privacy per Asset Intelligence  
- Asset Intelligence estende le funzionalità di inventario di Configuration Manager in modo da offrire un livello maggiore di visibilità delle risorse nell'azienda. La raccolta di informazioni di Asset Intelligence non è abilitata automaticamente. È possibile modificare il tipo di informazioni raccolte abilitando le classi di report di inventario hardware. Per altre informazioni, vedere [Configurazione di Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md).  
+##  <a name="BKMK_Privacy_HardwareInventory"></a> 資産インテリジェンスに関するプライバシー情報  
+ 資産インテリジェンスは、企業の資産をより高いレベルから表示するように Configuration Manager のインベントリ機能を拡張します。 資産インテリジェンス情報コレクションは自動で有効化されません。 収集される情報の種類は、ハードウェア インベントリ レポート クラスを有効にすると変更できます。 詳細については、「[System Center Configuration Manager での資産インテリジェンスの構成](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md)」を参照してください。  
 
- Le informazioni di Asset Intelligence vengono archiviate nel database di Configuration Manager analogamente alle informazioni relative all'inventario. Quando i client si connettono ai punti di gestione tramite HTTPS, i dati vengono sempre crittografati durante il trasferimento al punto di gestione. Quando i client si connettono tramite HTTP, è possibile configurare il trasferimento dei dati di inventario in modo che i dati siano firmati e crittografati. I dati di inventario non vengono archiviati in formato crittografato nel database. Le informazioni vengono mantenute nel database fino a quando non vengono eliminate, ogni 90 giorni, dall'attività di manutenzione del sito **Elimina cronologia inventario obsoleta** . È possibile configurare l'intervallo di eliminazione.  
+ 資産インテリジェンス情報は、インベントリ情報と同じ方法で Configuration Manager データベースに保存されます。 HTTPS を使用してクライアントが管理ポイントに接続するときは、データは管理ポイントへの転送中必ず暗号化されます。 HTTP を使用してクライアントが接続するときは、インベントリ データの転送に署名して暗号化するよう構成することができます。 インベントリ データは、暗号化された形式でデータベースに格納されるわけではありません。 情報は、90 日ごとに実行されるサイトのメンテナンス タスク [期限切れのインベントリ履歴の削除] によって削除されるまでデータベースに保持されます。 **** 削除間隔は構成できます。  
 
- Asset Intelligence non invia a Microsoft informazioni su utenti e computer o sull'utilizzo delle licenze. È possibile scegliere di inviare a System Center Online richieste per la categorizzazione, ovvero contrassegnare uno o più titoli software non categorizzati e inviarli a System Center Online per la ricerca e la categorizzazione. Una volta caricato un titolo software, i ricercatori Microsoft identificano, categorizzano e rendono disponibili le informazioni a tutti i clienti che usano il servizio online. È consigliabile considerare le implicazioni per la privacy seguenti relative all'invio di informazioni a System Center Online:  
+ 資産インテリジェンスからは、Microsoft にユーザーおよびコンピューターに関する情報やライセンスの使用状況は送信されません。 System Center Online にカテゴリ化要求を送信することを選択できます。これは、カテゴリ化されていない 1 つまたは複数のソフトウェア タイトルにタグを付け、調査およびカテゴリ化用に System Center Online に送信できることを意味します。 ソフトウェア タイトルがアップロードされたら、マイクロソフトの調査担当者は、ソフトウェアを特定し、カテゴリ化して、オンライン サービスを利用されるすべてのお客様がその知識を利用できるようにします。 System Center Online に送信する情報の次のようなプライバシー問題に注意が必要です。  
 
--   Il caricamento si applica solo alle informazioni dei titoli software generiche (nome, autore e così via) che si sceglie di inviare a System Center Online. Le informazioni relative all'inventario non vengono inviate con un caricamento.  
+-   アップロードは、System Center Online に送信することを選択した一般的なソフトウェア タイトル情報 (名前、発行元など) にのみ適用されます。 アップロードと共にインベントリ情報が送信されるわけではありません。  
 
--   Il caricamento non avviene mai automaticamente e il sistema non è progettato per l'automatizzazione di questa attività. È necessario selezionare manualmente e approvare il caricamento di ogni titolo di software.  
+-   アップロードは決して自動的には行われず、システムはこのタスクが自動化できるように設計されていません。 各ソフトウェア タイトルのアップロードを手動で選択および承認する必要があります。  
 
--   Prima che venga avviato il processo di caricamento, una finestra di dialogo mostra esattamente quali dati verranno caricati.  
+-   実際のアップロード処理が開始される前に、ダイアログ ボックスにアップロードされるデータの内容が表示されます。  
 
--   Le informazioni sulle licenze non vengono inviate a Microsoft. Le informazioni sulle licenze vengono archiviate in un'area separata del database di Configuration Manager e non possono essere inviate a Microsoft.  
+-   ライセンス情報はマイクロソフトに送信されません。 ライセンス情報は Configuration Manager データベースの独立した領域に保存されるため、マイクロソフトに送信することはできません。  
 
--   Tutti i titoli software caricati diventano pubblici, nel senso che le informazioni su una determinata applicazione e la relativa categorizzazione diventano parte del catalogo di Asset Intelligence in System Center Online e possono quindi essere scaricate da altri utenti del catalogo.  
+-   アップロードされたソフトウェア タイトルは、(特定のアプリケーションおよびアプリケーションのカテゴリ化の情報が System Center Online 資産インテリジェンス カタログを構成するものになるという意味で) 公開され、カタログの他の利用者にダウンロードされます。  
 
--   L'origine del titolo software non viene registrata nel catalogo di Asset Intelligence e non viene resa disponibile agli altri clienti. È comunque necessario verificare di non caricare alcun titolo di applicazione che contiene informazioni private.  
+-   ソフトウェア タイトルのソースは資産インテリジェンス カタログには記録されず、他のお客様に入手可能にはなりません。 ただし、プライベートな情報が含まれているアプリケーション タイトルを読み込まないように確認する必要はあります。  
 
--   Non è possibile annullare il caricamento dei dati selezionati.  
+-   アップロードされたデータを取り消すことはできません。  
 
- Prima di configurare la raccolta dati di Asset Intelligence e di scegliere se inviare informazioni a System Center Online, prendere in considerazione i requisiti per la privacy della propria organizzazione.  
-
+ 資産インテリジェンス データ コレクションを構成して情報を System Center Online に送信するかどうかを判断する前に、所属組織のプライバシー要件を考慮してください。  

@@ -1,117 +1,113 @@
 ---
-title: Configurare lo stato del client | Microsoft Docs
-description: Selezionare le impostazioni relative allo stato del client in System Center Configuration Manager.
+title: "クライアント ステータスの構成 | Microsoft Docs"
+description: "System Center Configuration Manager のクライアント ステータス設定を選択します。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: a2275ba2-c83d-43e7-90ed-418963a707fe
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 22cc286baa72d3e356a07b91ee0a1be646fa8a9e
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 060d63ab8bce9c3bb39d2db404580b9f59416d33
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-configure-client-status-in-system-center-configuration-manager"></a>Come configurare lo stato del client in System Center Configuration Manager
+# <a name="how-to-configure-client-status-in-system-center-configuration-manager"></a>System Center Configuration Manager でクライアント ステータスを構成する方法
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Prima di poter monitorare lo stato del client di System Center Configuration Manager e risolvere i problemi rilevati, è necessario configurare il sito in modo da specificare i parametri usati per contrassegnare i client come inattivi e configurare le opzioni in modo da ricevere un avviso se l'attività del client scende sotto una specifica soglia. È inoltre possibile disattivare l'opzione che consente di monitorare e aggiornare automaticamente gli eventuali problemi nel computer rilevati dallo stato del client.  
+monitor System Center Configuration Manager クライアント ステータスを監視し、問題を見つけて解決するには、まず、サイトを構成してクライアントを非アクティブとマークするのに使用するパラメーターを指定し、さらにオプションを構成してクライアント アクティビティが指定されたしきい値以下になった場合にアラートを生成するようにしておく必要があります。 また、コンピューターが、クライアント ステータスが見つけた問題を自動的に修復する機能を無効化することもできます。  
 
-##  <a name="BKMK_1"></a> Per configurare lo stato del client  
+##  <a name="BKMK_1"></a> クライアント ステータスを構成するには  
 
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
+1.  Configuration Manager コンソールで、[ **監視** ] をクリックします。  
 
-2.  Nell'area di lavoro **Monitoraggio** fare clic su **Stato client**, quindi nella scheda **Home** , nel gruppo **Stato client** fare clic su **Impostazioni stato client**.  
+2.  [ **監視** ] ワークスペースで、[ **クライアント ステータス**] をクリックし、次に、[ **ホーム** ] タブの [ **クライアント ステータス** ] グループで、[ **クライアント ステータス設定**] をクリックします。  
 
-3.  Nella finestra di dialogo **Proprietà impostazioni stato client** specificare i seguenti valori per determinare l'attività del client:  
-
-    > [!NOTE]  
-    >  Se nessuna delle impostazioni viene soddisfatta, il client verrà contrassegnato come inattivo.  
-
-    -   **Richieste di criteri client nei seguenti giorni:** specificare il numero di giorni dalla richiesta di criteri da parte del client. Il valore predefinito è **7** giorni.  
-
-    -   **Individuazione heartbeat nei seguenti giorni:** specificare il numero di giorni dall'invio del record di individuazione heartbeat al database del sito da parte del computer client. Il valore predefinito è **7** giorni.  
-
-    -   **Inventario hardware nei seguenti giorni:** specificare il numero di giorni dall'invio del record di inventario hardware al database del sito da parte del computer client. Il valore predefinito è **7** giorni.  
-
-    -   **Inventario software nei seguenti giorni:** specificare il numero di giorni dall'invio del record di inventario software al database del sito da parte del computer client. Il valore predefinito è **7** giorni.  
-
-    -   **Messaggi di stato nei seguenti giorni:** specificare il numero di giorni dall'invio dei messaggi di stato al database del sito da parte del computer client. Il valore predefinito è **7** giorni.  
-
-4.  Nella finestra di dialogo **Proprietà impostazioni stato client** specificare il seguente valore per determinare il periodo di conservazione dei dati di cronologia dello stato del client:  
-
-    -   **Conservare la cronologia dello stato client per il seguente numero di giorni:** specificare il periodo di conservazione della cronologia dello stato del client nel database del sito. Il valore predefinito è **31** giorni.  
-
-5.  Fare clic su **OK** per salvare le proprietà e chiudere la finestra di dialogo **Proprietà impostazioni stato client** .  
-
-##  <a name="BKMK_Schedule"></a> Per configurare la pianificazione per lo stato del client  
-
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
-
-2.  Nell'area di lavoro **Monitoraggio** fare clic su **Stato client**, quindi nella scheda **Home** , nel gruppo **Stato client** fare clic su **Pianifica aggiornamento stato client**.  
-
-3.  Nella finestra di dialogo **Pianifica aggiornamento stato client** configurare l'intervallo di aggiornamento dello stato del client e quindi fare clic su OK.  
+3.  [ **クライアントのステータス設定のプロパティ** ] ダイアログ ボックスで、次の値を指定して、クライアントのアクティビティを判断します。  
 
     > [!NOTE]  
-    >  Quando si modifica pianificazione per gli aggiornamenti dello stato del client, l'aggiornamento non sarà effettivo fino all'aggiornamento dello stato client successivo (per la pianificazione configurata in precedenza).  
+    >  どの設定にも一致しない場合は、クライアントは非アクティブとマークされます。  
 
-##  <a name="BKMK_2"></a> Per configurare gli avvisi per lo stato del client  
+    -   **次の期間中 (日数) に出されたクライアント ポリシー要求:** クライアントが前回ポリシーを要求してからの日数を指定します。 既定値は **7** 日です。  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+    -   **次の期間中 (日数) に実行された定期探索:** クライアント コンピューターが前回サイト データベースに定期探索記録を送信してからの日数を指定します。 既定値は **7** 日です。  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Raccolte dispositivi**.  
+    -   **次の期間中 (日数) に実行されたハードウェア インベントリ:** クライアント コンピューターが前回サイト データベースにハードウェア インベントリの記録を送信してからの日数を指定します。 既定値は **7** 日です。  
 
-3.  Nell'elenco **Raccolte siti** selezionare la raccolta per cui si desiderano configurare gli avvisi e quindi nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
+    -   **次の期間中 (日数) に実行されたソフトウェア インベントリ:** クライアント コンピューターが前回サイト データベースにソフトウェア インベントリの記録を送信してからの日数を指定します。 既定値は **7** 日です。  
+
+    -   **次の期間中 (日数) に出されたステータス メッセージ:** クライアント コンピューターが前回サイト データベースにステータス メッセージを送信してからの日数を指定します。 既定値は **7** 日です。  
+
+4.  [ **クライアントのステータス設定のプロパティ** ] ダイアログ ボックスで、次の値を指定して、クライアント ステータスの履歴データを保持する期間を決定します。  
+
+    -   **クライアント ステータス履歴を保持する日数:** クライアント ステータスの履歴をサイト データベースに保持する日数を指定します。 既定値は **31** 日です。  
+
+5.  **[OK]** をクリックして、プロパティを保存し、[ **クライアント ステータス設定のプロパティ** ] ダイアログ ボックスを閉じます。  
+
+##  <a name="BKMK_Schedule"></a> クライアント ステータスのスケジュールを構成するには  
+
+1.  Configuration Manager コンソールで、[ **監視** ] をクリックします。  
+
+2.  [ **監視** ] ワークスペースで、[ **クライアント ステータス**] をクリックし、次に、[ **ホーム** ] タブの [ **クライアント ステータス** ] グループで、[ **クライアント ステータス更新のスケジュール**] をクリックします。  
+
+3.  [クライアント ステータスの更新スケジュール] ダイアログ ボックスで、クライアント ステータスの更新間隔を構成し、[ **OK** ] をクリックします。  
 
     > [!NOTE]  
-    >  Non è possibile configurare avvisi per raccolte di utenti.  
+    >  クライアント ステータスの更新スケジュールを変更した場合は、以前に構成されたスケジュールでクライアント ステータス更新が次に行われるまで、変更内容は有効になりません。  
 
-4.  Nella scheda **Avvisi** della finestra di dialogo *Proprietà&lt;nome raccolta\>***** fare clic su **Aggiungi**.  
+##  <a name="BKMK_2"></a> クライアント ステータスのアラートを構成するには  
+
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
+
+2.  [ **資産とコンプライアンス** ] ワークスペースで [ **デバイス コレクション**] をクリックします。  
+
+3.  [ **デバイス コレクション** ] の一覧で、アラートを構成するコレクションを選択して、次に、[ **ホーム** ] タブの [ **プロパティ** ] グループで、[ **プロパティ**] をクリックします。  
 
     > [!NOTE]  
-    >  La scheda **Avvisi** viene visualizzata solo se il ruolo di sicurezza a cui si è associati dispone delle autorizzazioni per gli avvisi.  
+    >  ユーザーのコレクションに対してアラートを構成することはできません。  
 
-5.  Nella finestra di dialogo **Aggiungi avvisi nuova raccolta** scegliere gli avvisi che si desidera generare quando le soglie di stato del client scendono sotto un valore specifico e quindi fare clic su **OK**.  
+4.  *[&lt;コレクション名\>***のプロパティ]** ダイアログ ボックスの **[アラート]** タブで、**[追加]** をクリックします。  
 
-6.  Nell'elenco **Condizioni** della scheda **Avvisi** selezionare ogni avviso dello stato del client, quindi specificare le seguenti informazioni.  
+    > [!NOTE]  
+    >  [ **アラート** ] タブは、ユーザーに割り当てられたセキュリティ ロールがアラートを許可している場合にだけ表示されます。  
 
-    -   **Nome avviso**: accettare il nome predefinito o immettere un nuovo nome per l'avviso.  
+5.  [ **新しいコレクション アラートの追加** ] ダイアログ ボックスで、クライアント ステータスのしきい値が特定の値未満になった場合に生成されるアラートを選択して、[ **OK** ] をクリックします。  
 
-    -   **Gravità avviso**: nell'elenco a discesa scegliere il livello di gravità che verrà visualizzato nella console di Configuration Manager.  
+6.  [ **アラート** ] タブの [ **条件** ] の一覧で、各クライアント ステータス アラートを選択し、次の情報を指定します。  
 
-    -   **Genera avviso**: specificare la percentuale di soglia per l'avviso.  
+    -   **アラート名** – 既定の名前を受け入れるか、新しいアラート名を入力します。  
 
-7.  Fare clic su **OK** per chiudere la finestra di dialogo *Proprietà &lt;nome raccolta\>***** .  
+    -   **アラートの重要度** – ドロップダウン リストから、Configuration Manager コンソールに表示されるアラート レベルを選択します。  
 
-##  <a name="BKMK_3"></a> Per escludere i computer da monitoraggio e aggiornamento automatici  
+    -   **アラートの生成** – アラートのしきい値をパーセント値で指定します。  
 
-1.  Aprire l'editor del Registro di sistema nel computer client per il quale si desidera disattivare il monitoraggio e aggiornamento automatico.  
+7.  **[OK]** をクリックして *[&lt;コレクション名\>***のプロパティ]** ダイアログ ボックスを閉じます。  
+
+##  <a name="BKMK_3"></a> コンピューターを自動修復から除外するには  
+
+1.  自動修復を無効化するクライアント コンピューターのレジストリ エディターを開きます。  
 
     > [!WARNING]  
-    >  L'errato utilizzo dell'editor del Registro di sistema può provocare gravi problemi che potrebbero richiedere la reinstallazione del sistema operativo. La risoluzione dei problemi derivanti dall'errato utilizzo dell'editor del Registro di sistema non è garantita. L'utilizzo dell'editor del Registro di sistema è a rischio dell'utente.  
+    >  レジストリ エディターの使用方法を誤ると、重大な問題が発生し、オペレーティング システムの再インストールが必要になることがあります。 レジストリ エディターの使用方法を誤った結果生じた問題については、解決できる保証はありません。 レジストリ エディターは、ご自身の責任において使用してください。  
 
-2.  Passare a **HKEY_LOCAL_MACHINE\Software\Microsoft\CCM\CcmEval\NotifyOnly**.  
+2.  **HKEY_LOCAL_MACHINE\Software\Microsoft\CCM\CcmEval\NotifyOnly** に移動します。  
 
-3.  Immettere uno dei seguenti valori per questa chiave del Registro di sistema:  
+3.  レジストリ キーに次の値を入力します。  
 
-    -   **True**: il computer client non eseguirà automaticamente il monitoraggio e l'aggiornamento di eventuali problemi rilevati. Tuttavia, l'utente riceverà un avviso nell'area di lavoro **Monitoraggio** in caso di problemi con il client.  
+    -   **TRUE** – クライアント コンピューターは、検出された問題を自動的に修復しません。 しかし、クライアントの問題はすべて、[ **監視** ] ワークスペースにアラート表示されます。  
 
-    -   **False**: il computer client eseguirà automaticamente il monitoraggio e l'aggiornamento dei problemi rilevati e l'utente riceverà un avviso nell'area di lavoro **Monitoraggio**. Questa è l'impostazione predefinita.  
+    -   **False** – クライアント コンピューターは見つかった問題を自動的に修復し、**[監視]** ワークスペースに警告を表示します。 これは、既定の設定です。  
 
-4.  Chiudere l'editor del Registro di sistema.  
+4.  レジストリ エディターを閉じます。  
 
- È inoltre possibile installare i client utilizzando la proprietà di installazione **NotifyOnly** di CCMSetup per escluderli dal monitoraggio e aggiornamento automatico. Per altre informazioni sulla proprietà di installazione dei client, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
-
+ CCMSetup の  **NotifyOnly**  インストール プロパティを使用してクライアントをインストールしても、自動修復から除外することができます。 クライアント インストールのプロパティの詳細については、「[System Center Configuration Manager のクライアント インストール プロパティについて](../../../core/clients/deploy/about-client-installation-properties.md)」を参照してください。  

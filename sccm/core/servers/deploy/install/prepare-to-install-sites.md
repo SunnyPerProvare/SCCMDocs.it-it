@@ -1,94 +1,92 @@
 ---
-title: Preparare l&quot;installazione di siti | Microsoft Docs
-description: "Se si prevede di installare più siti di Configuration Manager, queste informazioni consentono di risparmiare tempo ed evitare errori."
+title: "サイトのインストールの準備 | Microsoft Docs"
+description: "複数の Configuration Manager サイトをインストールする予定がある場合は、時間を節約し、エラーを防ぐため、次の情報を参照してください。"
 ms.custom: na
 ms.date: 3/1/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9089e1b5-cba4-42bd-a2de-126ef882a3af
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 73c34d40d70fb3ae5f8702f3d5f1e5b51a1b28a7
 ms.openlocfilehash: 829f2d44a9b8d203a5b753ebb6d8f759b1a05111
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="prepare-to-install-system-center-configuration-manager-sites"></a>Preparare l'installazione di siti di System Center Configuration Manager
+# <a name="prepare-to-install-system-center-configuration-manager-sites"></a>System Center Configuration Manager サイトのインストールを準備する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Per prepararsi a una corretta distribuzione di uno o più siti di System Center Configuration Manager, acquisire familiarità con i dettagli in questo articolo. Questi passaggi possono aiutare a risparmiare tempo durante l'installazione di più siti ed evitare errori che potrebbero richiedere una nuova installazione di uno o più siti.
+1 つ以上の System Center Configuration Manager サイトの適切な展開を準備するには、この記事の詳細を理解してください。 次の手順で、複数のサイトのインストールの時間を節約し、1 つ以上のサイトの再インストールが必要になるような失敗を防ぎます。
 
 > [!TIP]
-> Quando si gestisce l'infrastruttura del sito e della gerarchia di System Center Configuration Manager, i termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti distinti. Per informazioni su come viene usato ogni termine, vedere [Informazioni su upgrade, aggiornamento e installazione](/sccm/core/understand/upgrade-update-install).
+> System Center Configuration Manager のサイトと階層のインフラストラクチャの管理において、*アップグレード*、*更新*、および*インストール* という用語は 3 つの異なる概念を説明するものです。 各用語の使用方法については、「[サイトと階層のインフラストラクチャでのアップグレード、更新、およびインストールについて](/sccm/core/understand/upgrade-update-install)」を参照してください。
 
-## <a name="bkmk_options"></a> Opzioni per l'installazione di diversi tipi di siti
-Quando si installa un nuovo sito di Configuration Manager, la versione dei file di origine che è possibile usare dipende dalla versione dei siti che si trovano già nella gerarchia, se presenti. I metodi di installazione disponibili dipendono dal tipo di sito che si vuole installare.  
+## <a name="bkmk_options"></a> 異なる種類のサイトをインストールするためのオプション
+新しい Configuration Manager サイトをインストールする場合、使用可能なソース ファイルのバージョンは、既に階層内にあるサイトのバージョン (存在する場合) に依存します。 使用可能なインストール方法はインストールするサイトの種類に依存します。  
 
-Prima di installare un sito verificare di aver pianificato la gerarchia e di aver definito il tipo di sito che si vuole installare. Per altre informazioni, vedere [Progettare una gerarchia di siti](../../../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md).
-
-
-### <a name="first-site"></a>Primo sito
-Il primo sito che si installa in una gerarchia è un sito di amministrazione centrale o un sito primario autonomo.
-
-**Supporti di installazione**: per installare un sito di amministrazione centrale o un sito primario autonomo come primo sito di una nuova gerarchia, è necessario [usare una versione di base](../../../../core/servers/manage/updates.md#bkmk_Baselines) di Configuration Manager. Non installare il primo sito di una nuova gerarchia usando i file di origine aggiornati presenti nella [cartella CD.Latest](../../../../core/servers/manage/the-cd.latest-folder.md) di qualsiasi sito.
-
-**Metodo di installazione**: è possibile installare uno dei tipi di sito usando l'[installazione guidata di Configuration Manager](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md) oppure configurare uno script da usare con un'[installazione dalla riga di comando con script](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).
+サイトをインストールする前に、階層を計画していることを確認し、インストールするサイトの種類を理解してください。 詳細については、「[Design a hierarchy of sites](../../../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md)」(サイトの階層の設計) を参照してください。
 
 
-### <a name="additional-sites"></a>Siti aggiuntivi
-Dopo aver installato il sito iniziale, è possibile aggiungere altri siti in qualsiasi momento. Sono disponibili le opzioni seguenti per aggiungere i siti (fino ai [limiti supportati ](../../../../core/plan-design/configs/size-and-scale-numbers.md)):
+### <a name="first-site"></a>最初のサイト
+階層にインストールするこの最初のサイトは、スタンドアロンのプライマリ サイトまたは中央管理サイトのいずれかです。
 
-|Siti attualmente disponibili|Tipo di sito aggiuntivo che è possibile installare|
+**インストール メディア**: 中央管理サイトまたはスタンドアロンのプライマリ サイトを新しい階層で最初のサイトとしてインストールするには、Configuration Manager の[基準バージョンを使用する](../../../../core/servers/manage/updates.md#bkmk_Baselines)必要があります。 サイトの [CD.Latest フォルダー](../../../../core/servers/manage/the-cd.latest-folder.md)から更新されたソース ファイルを使用して、新しい階層の最初のサイトをインストールしないでください。
+
+**インストール方法**: [Configuration Manager のセットアップ ウィザード](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md)を使用していずれかの種類のサイトをインストールするか、[スクリプトを使用してコマンドラインからインストール](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md)するために使用するスクリプトを構成することができます。
+
+
+### <a name="additional-sites"></a>追加のサイト
+最初のサイトをインストールした後、いつでもサイトを追加することができます。 サイトを追加するには次のオプションがあります ([サポートされている制限](../../../../core/plan-design/configs/size-and-scale-numbers.md)以内)。
+
+|既存のサイト|インストール可能な追加サイトの種類|
 |---|---|
-|Sito di amministrazione centrale|Sito primario figlio|
-|Sito primario figlio|Sito secondario|
-|Sito primario autonomo|Sito secondario (è possibile espandere il sito primario, che converte il sito primario autonomo in un sito primario figlio)|
+|中央管理サイト|子プライマリ サイト|
+|子プライマリ サイト|セカンダリ サイト|
+|スタンドアロン プライマリ サイト|セカンダリ サイト (プライマリ サイトを拡張でき、それにより、スタンドアロン プライマリ サイトが子プライマリ サイトに変換されます)|
 
-**Supporti di installazione**: quando si installa un sito di amministrazione centrale per espandere un sito primario autonomo o si installa un nuovo sito primario figlio in una gerarchia esistente, è necessario usare il supporto di installazione (che contiene i file di origine) corrispondente alla versione del sito o dei siti esistenti.
+**インストール メディア**: 中央管理サイトをスタンドアロン プライマリ サイトにインストールして拡張する場合、または新しい子プライマリ サイトを既存の階層にインストールする場合は、既存のサイトのバージョンに対応するインストール メディア (ソース ファイルを格納する) を使用する必要があります。
 
 > [!IMPORTANT]
-> Se sono stati installati gli aggiornamenti nella console che hanno modificato la versione di siti installati in precedenza, non usare i supporti di installazione originale. In uno scenario di questo tipo usare invece i file di origine della [cartella CD.Latest](../../../../core/servers/manage/the-cd.latest-folder.md) di un sito aggiornato. Configuration Manager richiede l'uso di file di origine corrispondenti alla versione del sito esistente a cui si connetterà il nuovo sito.
+> コンソール内の更新プログラムをインストールした結果、以前にインストールしたサイトのバージョンが変更された場合は、元のインストール メディアを使用しないでください。 代わりに、そのシナリオでは、更新されたサイトの [CD.Latest フォルダー](../../../../core/servers/manage/the-cd.latest-folder.md)にあるソース ファイルを使用してください。 Configuration Manager では、新しいサイトが接続する既存のサイトのバージョンに対応したソース ファイルを使用する必要があります。
 
-Un sito secondario deve essere installato dalla console di Configuration Manager. In questo modo, i siti secondari vengono sempre installati usando i file di origine del sito primario padre.
+セカンダリ サイトは、Configuration Manager コンソールからインストールする必要があります。 このように、セカンダリ サイトは常に親プライマリ サイトのソース ファイルを使用してインストールします。
 
-**Metodo di installazione**: il metodo usato per installare altri siti dipende dal tipo di sito che si vuole installare.
--   **Aggiungere un sito di amministrazione centrale**: è possibile usare l'installazione guidata di Configuration Manager o una riga di comando con script per installare il nuovo sito di amministrazione centrale come sito padre per il sito primario autonomo esistente. Per altre informazioni, vedere [Espansione di un sito primario autonomo](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_expand).
--   **Aggiungere un sito primario figlio**: è possibile usare l'installazione guidata di Configuration Manager o un'installazione da riga di comando per aggiungere un sito primario figlio sotto un sito di amministrazione centrale.
--   **Aggiungere un sito secondario**: per installare un sito secondario come sito figlio sotto il sito primario, usare la console di Configuration Manager. Altri metodi non sono supportati per l'aggiunta di siti secondari.
+**インストール方法**: 追加のサイトのインストールに使用する方法は、インストールするサイトの種類によって異なります。
+-   **中央管理サイトを追加する**: Configuration Manager のセットアップ ウィザードまたはスクリプト化されたコマンド ラインを使用すると、既存のスタンドアロン プライマリ サイトに親サイトとして新しい中央管理サイトをインストールすることができます。 詳細については、「[スタンドアロン プライマリ サイトを拡張する](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_expand)」を参照してください。
+-   **子プライマリ サイトを追加する**: Configuration Manager のセットアップ ウィザードまたはコマンド ライン インストールを使用すると、中央管理サイトの下に子プライマリ サイトを追加することができます。
+-   **セカンダリ サイトを追加する**: Configuration Manager コンソールを使用して、プライマリ サイトの下に子サイトとしてセカンダリ サイトをインストールします。 セカンダリ サイトの追加では、その他の方法はサポートされていません。
 
-## <a name="bkmk_tasks"></a> Attività comuni da completare prima di avviare un'installazione
--   **Esaminare la topologia della gerarchia che verrà usata per la distribuzione**    
-Per altre informazioni, vedere [Progettare una gerarchia di siti per System Center Configuration Manager](../../../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md).  
+## <a name="bkmk_tasks"></a> インストールを開始する前に完了する一般的なタスク
+-   **展開に使用する階層トポロジを把握します**    
+詳細については、「[System Center Configuration Manager のサイト階層の設計](../../../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md)」を参照してください。  
 
--   **Preparare e configurare singoli server per soddisfare i prerequisiti e le configurazioni supportate per l'uso con Configuration Manager**         
-Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](../../../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
+-   **Configuration Manager で使用するための前提条件とサポートされる構成を満たす個別のサーバーを準備および構成します**         
+詳細については、「[サイトとサイト システムの前提条件](../../../../core/plan-design/configs/site-and-site-system-prerequisites.md)」をご覧ください。  
 
--   **Installare e configurare SQL Server per ospitare il database del sito**     
-Per altre informazioni, vedere [Versioni di SQL Server supportate per System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md).  
+-   **サイト データベースをホストするように SQL Server をインストールして構成します**     
+詳細については、「[System Center Configuration Manager の SQL Server バージョンのサポート](../../../../core/plan-design/configs/support-for-sql-server-versions.md)」を参照してください。  
 
--   **Preparare l'ambiente di rete per supportare Configuration Manager**      
-Per altre informazioni, vedere [Configurare firewall, porte e domini per System Center Configuration Manager](../../../../core/plan-design/network/configure-firewalls-ports-domains.md).  
+-   **Configuration Manager をサポートするネットワーク環境を準備します**      
+詳細については、「[System Center Configuration Manager のファイアウォール、ポート、ドメインの設定](../../../../core/plan-design/network/configure-firewalls-ports-domains.md)」を参照してください。  
 
-- **Se si usa un'infrastruttura a chiave pubblica (PKI), preparare l'infrastruttura e i certificati**      
-Per altre informazioni, vedere [Requisiti dei certificati PKI per Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).
+- **公開キー基盤 (PKI) を使用する場合は、インフラストラクチャと証明書を準備します**      
+詳細については、「[Configuration Manager での PKI 証明書の要件](../../../../core/plan-design/network/pki-certificate-requirements.md)」をご覧ください。
 
--   **Installare gli ultimi aggiornamenti sulla sicurezza nei computer che verranno usati come server del sito o server di sistema del sito e avviarli quando è necessario**
+-   **サイト サーバーまたはサイト システム サーバーとして使用するコンピューターに最新のセキュリティ更新プログラムをインストールし、必要な場合はそれらを再起動します**
 
-## <a name="bkmk_sitecodes"></a> Informazioni su nomi e codici dei siti
-I codici e i nomi dei siti dei vengono usati per identificare e gestire i siti in una gerarchia di Configuration Manager. Nella console di Configuration Manager il codice e il nome del sito vengono visualizzati nel formato &lt;*codice sito*\> - &lt;*nome sito*\>. È necessario che ogni codice di sito usato nella gerarchia sia univoco. Se lo schema di Active Directory viene esteso a Configuration Manager e i siti pubblicano dati, i codici di sito usati in una foresta di Active Directory devono essere univoci, anche se vengono usati in una gerarchia diversa di Configuration Manager o sono stati usati in installazioni precedenti di Configuration Manager. Assicurarsi di pianificare con attenzione i codici e i nomi di sito prima della distribuzione della gerarchia.
+## <a name="bkmk_sitecodes"></a>  サイト名とサイト コードについて
+サイト コードとサイト名は、Configuration Manager 階層内でサイトを識別および管理するために使用します。 Configuration Manager コンソールには、サイト コードとサイト名が、&lt;*サイト コード*\> - &lt;*サイト名*\>の形式で表示されます。 階層にあるサイトごとに固有なサイト コードが付いている必要があります。 Active Directory スキーマが Configuration Manager 用に拡張されており、サイトがデータを発行する場合は、Active Directory フォレスト内で使用するサイト コードは、必ず固有でなければなりません。サイトが Configuration Manager の別の階層や以前の Configuration Manager のインストールで使用されていても、同じサイト コードを付けることはできません。 階層を展開する前に、どのようなサイト コードとサイト名を使用するかを、十分検討してください。
 
-### <a name="specify-a-site-code-and-site-name"></a>Specificare un codice e un nome del sito
-Quando si esegue l'installazione di Configuration Manager vengono richiesti un codice e un nome di sito per il sito di amministrazione centrale e per ogni installazione di sito primario e secondario. Un codice del sito deve identificare in modo univoco ogni sito nella gerarchia. Poiché il codice del sito viene usato nei nomi di cartella, non usare mai i nomi seguenti per il codice del sito, che includono nomi riservati di Configuration Manager e di Windows:
+### <a name="specify-a-site-code-and-site-name"></a>サイト コードとサイト名の指定
+Configuration Manager セットアップの実行時に、インストールする中央管理サイト、プライマリ サイト、セカンダリ サイトのサイト コードとサイト名を指定する必要があります。 サイト コードは、階層にある各サイトを識別できる固有のコードでなければなりません。 サイト コードはフォルダー名の一部になるので、次の名前 ( Configuration Manager や Windows で予約されている名前など) をサイト コードに使用しないでください。
   -  AUX
   -  CON
   -  NUL
@@ -96,47 +94,46 @@ Quando si esegue l'installazione di Configuration Manager vengono richiesti un c
   -  SMS
 
 > [!NOTE]
-> Il programma di installazione di Configuration Manager non verifica se il codice del sito specificato è già in uso.
+> Configuration Manager セットアップでは、サイト コードが既に使用されていないかどうかは検証されません。
 
-Per specificare il codice per un sito durante l'installazione di Configuration Manager, è necessario immettere tre caratteri alfanumerici. Solo le lettere dalla *A* alla *Z* e i numeri da *0* a *9*, in qualsiasi combinazione, sono consentiti nei codici di sito. La sequenza di lettere o numeri non ha alcun effetto sulla comunicazione tra siti. Ad esempio, non è necessario denominare un sito primario *ABC* e un sito secondario *DEF*.
+Configuration Manager のセットアップの実行中にサイトのサイト コードを指定するときは、必ず 3 文字の英数字を入力してください。 サイト コードでは、文字 *A* から *Z* および数字 *0* から *9* のみを任意の組み合わせで使用できます。 文字や数字の順序は、サイト間の通信には影響しません。 たとえば、プライマリ サイトに *ABC*、セカンダリ サイトに *DEF* という名前を付ける必要はありません。
 
-Il nome del sito è un identificatore di nome descrittivo per il sito. È possibile usare solo i caratteri dalla *A* alla *Z*, dalla *a* alla *z*, da *0* a *9* e il trattino (*-*) nei nomi di sito.
+サイト名とは、サイトを識別するわかりやすい名前のことです。 サイト名には、*A* から *Z*、*a* から *z*、*0* から *9*、およびハイフン (*-*) だけを使用できます。
 
 > [!IMPORTANT]
-> La modifica del codice o del nome del sito dopo l'installazione del sito non è supportata.
+> サイトをインストールした後のサイト コードまたはサイト名の変更はサポートされていません。
 
-### <a name="reuse-a-site-code"></a>Riutilizzare un codice del sito
-I codici di sito non possono essere usati più di una volta in una gerarchia di Configuration Manager per un sito di amministrazione centrale o un sito primario, anche se il sito di origine e il codice del sito sono stati disinstallati. Se si usa di nuovo un codice di sito, si rischiano conflitti tra ID di oggetti nella gerarchia. È possibile riusare il codice del sito per un sito secondario se il sito secondario e il codice del sito non sono più in uso nella gerarchia di Configuration Manager o nella foresta di Active Directory.
+### <a name="reuse-a-site-code"></a>サイト コードの再利用
+Configuration Manager 階層内で中央管理サイトまたはプライマリ サイトにサイト コードを複数回使用することはできません。元のサイトとサイト コードがアンインストールされた場合でも同じです。 サイト コードを再利用すると、オブジェクト ID が階層で競合する危険があります。 セカンダリ サイトやサイト コードを Configuration Manager の階層や Active Directory フォレストで使用しなくなった場合は、そのセカンダリ サイトのサイト コードを再利用することができます。
 
-## <a name="limits-and-restrictions-for-installed-sites"></a>Limiti e restrizioni per i siti installati
-Prima di installare un sito, è importante capire le limitazioni seguenti che si applicano a siti e gerarchie di siti:
--   Dopo avere eseguito l'installazione non è possibile modificare le seguenti proprietà del sito senza disinstallare il sito e quindi reinstallarlo usando i nuovi valori:  
-  -   Directory di installazione dei file di programma  
-  -   Codice sito  
-  -   Descrizione sito  
--   Se la gerarchia include un sito di amministrazione centrale:  
-  -   Configuration Manager non consente di spostare un sito primario figlio da una gerarchia per creare un sito primario autonomo o aggiungerlo a un'altra gerarchia. Disinstallare invece il sito primario figlio e reinstallarlo come nuovo sito primario autonomo o come sito figlio del sito di amministrazione centrale di un'altra gerarchia.  
+## <a name="limits-and-restrictions-for-installed-sites"></a>インストール後のサイトの制限と制約
+サイトをインストールする前に、サイトとサイトの階層に適用される次の制限事項を理解することが重要です。
+-   セットアップの実行後は、サイトをアンインストールしてから新しい値を使用して再インストールしない限り、次のサイトのプロパティを変更することはできません。  
+  -   プログラム ファイルのインストール ディレクトリ  
+  -   サイト コード  
+  -   サイトの説明  
+-   階層に中央管理サイトが含まれている場合:  
+  -   Configuration Manager では、階層から子プライマリ サイトを移動して、スタンドアロン プライマリ サイトを作成したり異なる階層に接続したりすることはできません。 代わりに、子プライマリ サイトをアンインストールし、新しいスタンドアロンのプライマリ サイトまたは別の階層の中央管理サイトの子サイトとして再インストールします。  
 
 
-## <a name="bkmk_optionalsteps"></a> Passaggi facoltativi prima di eseguire l'installazione
-**Eseguire manualmente il [downloader di installazione](../../../../core/servers/deploy/install/setup-downloader.md)**
+## <a name="bkmk_optionalsteps"></a> セットアップを実行する前のオプションの手順
+**セットアップ ダウンローダーを[手動で実行する](../../../../core/servers/deploy/install/setup-downloader.md)**
 
-È possibile eseguire il downloader di installazione per scaricare i file di installazione aggiornati per Configuration Manager. Se il computer in cui si eseguirà l'installazione non è connesso a Internet o se si prevede di installare più server del sito, considerare l'uso del downloader di installazione per scaricare gli aggiornamenti necessari per l'installazione. Altre informazioni:
--  Per impostazione predefinita, il programma di installazione si connette a Internet per scaricare i file di installazione aggiornati.
--  Per impostazione predefinita, i file vengono archiviati nella cartella Redist.
--  È possibile indirizzare il programma di installazione a un percorso nella rete in cui è stata precedentemente memorizzata una copia di questi file.
+Configuration Manager の更新されたセットアップ ファイルをダウンロードするために、セットアップ ダウンローダーを実行することができます。 セットアップを実行するコンピューターがインターネットに接続されていない場合、または複数のサイト サーバーをインストールする場合は、セットアップ ダウンローダーを使用して、セットアップに必要な更新プログラムをダウンロードすることをご検討ください。 追加情報を次に示します。
+-  既定では、セットアップはインターネットに接続して、更新されたセットアップ ファイルをダウンロードします。
+-  既定では、Redist フォルダーにファイルが格納されます。
+-  以前にこれらのファイルのコピーを格納したネットワーク上の場所を指定できます。
 
-**Eseguire manualmente il [controllo dei prerequisiti](../../../../core/servers/deploy/install/prerequisite-checker.md)**
+**前提条件チェッカー[を手動で実行する](../../../../core/servers/deploy/install/prerequisite-checker.md)**
 
-Per identificare e correggere i problemi prima di eseguire il programma di installazione per installare un sito e prima di installare un ruolo del sistema del sito in un server, è possibile eseguire il controllo dei prerequisiti. Il controllo dei prerequisiti consente di garantire che il computer soddisfi i requisiti per ospitare il sito o il ruolo del sistema del sito. Altre informazioni:
- -  Per impostazione predefinita, il programma di installazione esegue il controllo dei prerequisiti.
- -  In caso di errori, il programma di installazione si interrompe finché il problema non è risolto.
+問題を特定して修正するために、セットアップを実行してサイトをインストールする前、およびサーバーにサイト システムの役割をインストールする前に、前提条件チェッカーを実行できます。 前提条件チェッカーにより、コンピューターがサイトまたはサイト システムの役割をホストするための要件を満たしていることを確認できます。 追加情報を次に示します。
+ -  既定では、セットアップは前提条件チェッカーを実行します。
+ -  エラーが発生した場合は、問題が解決するまでセットアップは停止します。
 
-**Identificare le porte facoltative**
+**オプションのポートを特定する**
 
-È possibile identificare le porte facoltative da usare per i client e i sistemi del sito. Altre informazioni:
- -  Per impostazione predefinita, i client e i sistemi del sito usano porte predefinite per la comunicazione.
- -  Durante l'installazione è possibile configurare porte alternative.
+サイト システムとクライアントが使用するオプションのポートを特定できます。 追加情報を次に示します。
+ -  既定では、サイト システムとクライアントは通信に定義済みのポートを使用します。
+ -  セットアップ時に、代替ポートを構成することができます。
 
- Per altre informazioni, vedere [Porte usate in System Center Configuration Manager](../../../../core/plan-design/hierarchy/ports.md).
-
+ 詳細については、「[System Center Configuration Manager で使用されるポート](../../../../core/plan-design/hierarchy/ports.md)」を参照してください。

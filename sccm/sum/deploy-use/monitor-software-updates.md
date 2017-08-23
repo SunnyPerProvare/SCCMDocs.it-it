@@ -1,7 +1,6 @@
 ---
-
-title: Monitorare gli aggiornamenti software | Microsoft Docs
-description: "La console di System Center Configuration Manager invia avvisi e stati per monitorare gli aggiornamenti e la conformità."
+title: "ソフトウェア更新プログラムの監視 | Microsoft Docs"
+description: "System Center Configuration Manager コンソールには、更新プログラムとコンプライアンスを監視するためのアラートとステータスがあります。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -10,97 +9,91 @@ ms.date: 11/10/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: 9afd7b0f-5c8e-48bc-9a65-1f7d74103688
-translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
 ms.openlocfilehash: 956ef263a1c178b5ab5926705859f4b2d0ae5bc7
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-software-updates-in-system-center-configuration-manager"></a>Monitorare gli aggiornamenti software in System Center Configuration Manager
+# <a name="monitor-software-updates-in-system-center-configuration-manager"></a>System Center Configuration Manager でのソフトウェア更新プログラムの監視
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager offre vari modi per monitorare aggiornamenti software, processi e informazioni sulla conformità. Usare le sezioni seguenti per monitorare gli aggiornamenti software.
+System Center Configuration Manager コンソールには、ソフトウェア更新プログラムのオブジェクト、プロセス、コンプライアンスの情報を監視するのに役立つさまざまな手段があります。 以下のセクションではソフトウェア更新プログラムの監視について説明します。
 
-## <a name="software-updates-dashboard"></a>Dashboard Aggiornamenti software
-A partire da Configuration Manager versione 1610, è possibile usare il nuovo dashboard Aggiornamenti software per visualizzare lo stato di conformità corrente dei dispositivi dell'organizzazione e analizzare rapidamente i dati, per vedere quali dispositivi sono a rischio. Per visualizzare il dashboard, scegliere **Monitoraggio** > **Panoramica** > **Sicurezza** > **Software Updates Dashboard** (Dashboard Aggiornamenti software).   
+## <a name="software-updates-dashboard"></a>ソフトウェア更新プログラム ダッシュボード
+Configuration Manager バージョン 1610 以降、ソフトウェア更新プログラム ダッシュボードを使用して、組織内にあるデバイスの現在のコンプライアンス状態を確認し、データをすばやく分析して危険な状態のデバイスを確認できるようになりました。 ダッシュボードを表示するには、**[監視]** > **[概要]** > **[セキュリティ]** > **[ソフトウェア更新プログラム ダッシュボード]** に移動します。   
 
-##  <a name="a-namebkmksualertsa-alerts-for-software-updates"></a><a name="BKMK_SUAlerts"></a> Avvisi per gli aggiornamenti software  
- È possibile configurare avvisi per gli aggiornamenti software per inviare notifiche agli utenti amministratori quando i livelli di conformità per le distribuzioni degli aggiornamenti software sono al di sotto della percentuale configurata. È possibile configurare avvisi per gli aggiornamenti software nei seguenti punti:  
+##  <a name="BKMK_SUAlerts"></a> ソフトウェア更新プログラムのアラート  
+ ソフトウェア更新プログラムのアラートを構成して、構成されている割合 (%) よりもソフトウェア更新プログラムの展開のコンプライアンス レベルが低い場合に管理ユーザーに通知できます。 ソフトウェア更新プログラムの展開のアラートは、次の場所で構成することができます。  
 
--   Impostazione ADR: è possibile configurare le impostazioni degli avvisi nella Creazione guidata delle regole di distribuzione automatica e nelle proprietà per ADR.  
+-   ADR の設定: 自動展開規則の作成ウィザードおよび ADR のプロパティでアラートの設定を構成できます。  
 
--   Impostazione di distribuzione: è possibile configurare le impostazioni degli avvisi nella Distribuzione guidata degli aggiornamenti software e nelle proprietà di distribuzione.  
+-   展開の設定: ソフトウェア更新プログラムの展開ウィザードおよび展開プロパティでアラートの設定を構成できます。  
 
-Dopo aver configurato le impostazioni degli avvisi, Configuration Manager genera un avviso se si verificano le condizioni specificate. È possibile esaminare gli avvisi per gli aggiornamenti software nei seguenti punti:  
+アラートの設定を構成すると、指定されているアラート条件に一致した場合に、Configuration Manager でアラートが生成されます。 ソフトウェア更新プログラムのアラートは、次の場所で確認することができます。  
 
-1.  Gli avvisi recenti sono reperibili nel nodo **Aggiornamenti software** dell'area di lavoro **Raccolta software** .  
+1.  最新のアラートを確認するには、[ソフトウェア ライブラリ **** ] ワークスペースの [ソフトウェア更新プログラム **** ] ノードを使用します。  
 
-2.  Gli avvisi configurati possono essere gestiti nel nodo **Avvisi** dell'area di lavoro **Monitoraggio** .  
+2.  構成されているアラートを管理するには、[監視 **** ] ワークスペースの [アラート **** ] ノードを使用します。  
 
-##  <a name="a-namebkmksusyncstatusa-software-updates-synchronization-status"></a><a name="BKMK_SUSyncStatus"></a> Stato di sincronizzazione degli aggiornamenti software  
- Dopo aver avviato il processo di sincronizzazione, è possibile monitorarlo dalla console di Configuration Manager per tutti i punti di aggiornamento software della gerarchia. Usare la seguente procedura per monitorare il processo di sincronizzazione degli aggiornamenti software.  
+##  <a name="BKMK_SUSyncStatus"></a> ソフトウェア更新プログラムの同期ステータス  
+ 同期プロセスを開始した後に、階層内のすべてのソフトウェア更新プログラムの同期プロセスを Configuration Manager コンソールで監視することができます。 ソフトウェア更新プログラムの同期プロセスを監視するには、次の手順に従います。  
 
-#### <a name="to-monitor-the-software-updates-synchronization-process"></a>Per monitorare il processo di sincronizzazione degli aggiornamenti software  
+#### <a name="to-monitor-the-software-updates-synchronization-process"></a>ソフトウェア更新プログラムの同期プロセスを監視するには  
 
-- Nella console di Configuration Manager, passare a **Monitoraggio** > **Panoramica** > **Stato di sincronizzazione del punto di aggiornamento software**.  
+- Configuration Manager コンソールで、**[監視]** > **[概要]** > **[ソフトウェアの更新ポイントの同期ステータス]** に移動します。  
 
-    I punti di aggiornamento software nella gerarchia di Configuration Manager vengono visualizzati nel riquadro dei risultati. In questa vista è possibile monitorare lo stato di sincronizzazione per tutti i punti di aggiornamento software. Per visualizzare informazioni più dettagliate sul processo di sincronizzazione, è possibile esaminare il file wsyncmgr.log disponibile in <*PercorsoInstallazioneConfigurationManager*>\Logs di ogni server del sito.  
+    Configuration Manager 階層内のソフトウェアの更新ポイントが結果ウィンドウに表示されます。 このビューから、すべてのソフトウェアの更新ポイントの同期ステータスを監視することができます。 同期プロセスの詳細情報を確認するには、各サイト サーバーの <*Configuration Manager のインストール パス*>\Logs にある wsyncmgr.log ファイルを確認してください。  
 
-##  <a name="a-namebkmksudeploystatusa-software-update-deployment-status"></a><a name="BKMK_SUDeployStatus"></a> Stato di distribuzione degli aggiornamenti software  
- Dopo aver distribuito un aggiornamento software singolo o un gruppo di aggiornamenti software, è possibile monitorare lo stato della distribuzione. Usare la procedura seguente per monitorare lo stato della distribuzione di un aggiornamento software o di un gruppo di aggiornamenti software.  
+##  <a name="BKMK_SUDeployStatus"></a> ソフトウェア更新プログラムの展開ステータス  
+ ソフトウェア更新プログラム グループのソフトウェア更新プログラムを展開した後、または個々のソフトウェア更新プログラムを展開した後に、展開ステータスを監視することができます。 ソフトウェア更新プログラム グループまたはソフトウェア更新プログラムの展開ステータスを監視するには、次の手順に従います。  
 
-#### <a name="to-monitor-deployment-status"></a>Per monitorare lo stato di distribuzione  
+#### <a name="to-monitor-deployment-status"></a>展開ステータスを監視するには  
 
-1.  Nella console di Configuration Manager passare a **Monitoraggio** > **Panoramica** > **Distribuzioni**.  
+1.  Configuration Manager コンソールで、**[監視]** > **[概要]** > **[展開]** に移動します。  
 
-2.  Fare clic sull'aggiornamento software o sul gruppo di aggiornamenti software del quale si desidera monitorare lo stato di distribuzione.  
+2.  展開ステータスを監視するソフトウェア更新プログラム グループ、またはソフトウェア更新プログラムをクリックします。  
 
-3.  Nella scheda **Home** fare clic su **Visualizza stato** nel gruppo **Distribuzione**.  
+3.  [ホーム **** ] タブの [展開 **** ] グループで、[ステータスの表示 ****] をクリックします。  
 
-##  <a name="a-namebkmksureportsa-software-updates-reports"></a><a name="BKMK_SUReports"></a> Report degli aggiornamenti software  
- I messaggi di stato per gli aggiornamenti software offrono informazioni sulla conformità degli aggiornamenti software e sullo stato di valutazione e applicazione delle distribuzioni di aggiornamenti software. Per visualizzare tali messaggi di stato, è possibile eseguire i report degli aggiornamenti software. Sono disponibili oltre 30 report degli aggiornamenti software predefiniti. Sono organizzati in diverse categorie e forniscono informazioni specifiche sugli aggiornamenti e le distribuzioni di software. Oltre a usare i report preconfigurati, è anche possibile creare report degli aggiornamenti software personalizzati in base alle esigenze dell'azienda. Per altre informazioni, vedere [Operazioni e manutenzione per la creazione di report](../../core/servers/manage/operations-and-maintenance-for-reporting.md).  
+##  <a name="BKMK_SUReports"></a> ソフトウェア更新プログラムのレポート  
+ ソフトウェアの更新の状態メッセージには、ソフトウェア更新プログラムのコンプライアンスに関する情報と、ソフトウェア更新プログラムの展開についての評価と強制実行状態に関する情報が示されます。 ソフトウェア更新プログラム レポートを実行して、これらの状態メッセージを表示できます。 事前定義されたソフトウェア更新プログラム レポートが 30 種類以上用意されています。 レポートは複数のカテゴリに分類され、ソフトウェア更新プログラムと展開に関する特定の情報のレポートに使用できます。 事前に構成されたレポートを使用するだけでなく、企業のニーズに応じて、ソフトウェア更新プログラムのカスタム レポートを作成することもできます。 詳しくは、「[レポートの操作とメンテナンス](../../core/servers/manage/operations-and-maintenance-for-reporting.md)」を参照してください。  
 
-##  <a name="a-namebkmkmonitorcontenta-monitor-content"></a><a name="BKMK_MonitorContent"></a> Monitoraggio del contenuto  
- È possibile monitorare il contenuto nella console di Configuration Manager per verificare lo stato di tutti i tipi di pacchetti in relazione ai punti di distribuzione associati. Sono inclusi lo stato di convalida del contenuto del pacchetto, lo stato del contenuto assegnato a un gruppo di punti di distribuzione specifico, lo stato del contenuto assegnato a un punto di distribuzione e lo stato di funzionalità facoltative per ogni punto di distribuzione (convalida contenuto, PXE e multicast).  
+##  <a name="BKMK_MonitorContent"></a> コンテンツの監視  
+ Configuration Manager コンソールでコンテンツを監視して、関連する配布ポイントについて、すべての種類のパッケージのステータスを確認できます。 たとえば、パッケージのコンテンツのコンテンツ検証ステータス、特定の配布ポイント グループに割り当てられているコンテンツのステータス、配布ポイントに割り当てられているコンテンツの状態、各配布ポイントのオプション機能 (コンテンツ検証、PXE、マルチキャスト) のステータスなどを確認できます。  
 
-###  <a name="a-namebkmkcontentstatusa-content-status-monitoring"></a><a name="BKMK_ContentStatus"></a> Monitoraggio dello stato del contenuto  
- Il nodo **Stato componente** dell'area di lavoro **Monitoraggio** fornisce informazioni sui pacchetti contenuto. È possibile esaminare le informazioni generali sul pacchetto, lo stato di distribuzione del pacchetto e informazioni dettagliate sullo stato del pacchetto. Usare la procedura seguente per visualizzare lo stato del contenuto.  
+###  <a name="BKMK_ContentStatus"></a> コンテンツのステータスの監視  
+ [監視 **** ] ワークスペースの [コンテンツのステータス **** ] ノードには、コンテンツ パッケージについての情報が表示されます。 パッケージに関する全般情報、パッケージの配布ステータス、およびパッケージに関する詳細なステータス情報を確認することができます。 コンテンツのステータスを表示するには、次の手順に従います。  
 
-#### <a name="to-monitor-content-status"></a>Per monitorare lo stato del contenuto  
+#### <a name="to-monitor-content-status"></a>コンテンツのステータスを監視するには  
 
-1.  Nella console di Configuration Manager passare a **Monitoraggio** > **Panoramica** > **Stato distribuzione** > **Stato contenuto**. Vengono visualizzati i pacchetti.  
+1.  Configuration Manager コンソールで、**[監視]** > **[概要]** > **[配布ステータス]** > **[コンテンツのステータス]** に移動します。 パッケージが表示されます。  
 
-2.  Selezionare il pacchetto di cui visualizzare informazioni dettagliate sullo stato.  
+2.  詳細なステータス情報を確認するパッケージを選択します。  
 
-3.  Nella scheda **Home** fare clic su **Visualizza stato**. Vengono visualizzate informazioni dettagliate sullo stato per il pacchetto.  
+3.  [ホーム **** ] タブで [ステータスの表示 ****] をクリックします。 パッケージのステータスの詳細な情報が表示されます。  
 
-###  <a name="a-namebkmkdpgroupstatusa-distribution-point-group-status"></a><a name="BKMK_DPGroupStatus"></a> Stato del gruppo di punti di distribuzione  
- Il nodo **Stato gruppo di punti di distribuzione** nell'area di lavoro **Monitoraggio** fornisce informazioni sui gruppi di punti di distribuzione. È possibile esaminare informazioni generali sul gruppo di punti di distribuzione, quali lo stato, il grado di conformità e le informazioni dettagliate sullo stato. Usare la procedura seguente per visualizzare lo stato del gruppo di punti di distribuzione.  
+###  <a name="BKMK_DPGroupStatus"></a> 配布ポイント グループのステータス  
+ [監視 **** ] ワークスペースの [配布ポイント グループのステータス **** ] ノードには、配布ポイント グループについての情報が表示されます。 配布ポイント グループに関する全般情報 (配布ポイント グループのステータスやコンプライアンス対応率など) に加え、配布ポイント グループの詳細なステータス情報も確認することができます。 次の手順に従って、配布ポイント グループのステータスを確認します。  
 
-#### <a name="to-monitor-distribution-point-group-status"></a>Per monitorare lo stato del gruppo di punti di distribuzione  
+#### <a name="to-monitor-distribution-point-group-status"></a>配布ポイント グループのステータスを監視するには  
 
-1.  Nella console di Configuration Manager passare a **Monitoraggio** > **Panoramica** > **Stato distribuzione** > **Stato gruppo di punti di distribuzione**. Vengono visualizzati i gruppi di punti di distribuzione.  
+1.  Configuration Manager コンソールで、**[監視]** > **[概要]** > **[配布ステータス]** > **[配布ポイント グループのステータス]** に移動します。 すると、配布ポイント グループが表示されます。  
 
-2.  Selezionare il gruppo di punti di distribuzione di cui visualizzare informazioni dettagliate sullo stato.  
+2.  詳細なステータス情報を確認する配布ポイント グループを選択します。  
 
-3.  Nella scheda **Home** fare clic su **Visualizza stato**. Vengono visualizzate le informazioni dettagliate sullo stato per il gruppo di punti di distribuzione.  
+3.  [ホーム **** ] タブで [ステータスの表示 ****] をクリックします。 配布ポイント グループの詳細なステータス情報が表示されます。  
 
-###  <a name="a-namebkmkdpconfigstatusa-distribution-point-configuration-status"></a><a name="BKMK_DPConfigStatus"></a> Stato di configurazione dei punti di distribuzione  
- Il nodo **Stato di configurazione dei punti di distribuzione** nell'area di lavoro **Monitoraggio** fornisce informazioni sul punto di distribuzione. È possibile esaminare gli attributi abilitati per il punto di distribuzione, come PXE, Multicast e convalida del contenuto. È inoltre possibile visualizzare informazioni dettagliate sullo stato per il punto di distribuzione. Usare la procedura seguente per visualizzare lo stato di configurazione del punto di distribuzione.  
+###  <a name="BKMK_DPConfigStatus"></a> 配布ポイントの構成ステータス  
+ [監視 **** ] ワークスペースの [配布ポイントの構成ステータス **** ] ノードには、配布ポイントについての情報が表示されます。 PXE、マルチキャスト、コンテンツの検証など、配布ポイントでどの属性が有効になっているかを確認できます。 また、配布ポイントの詳細なステータス情報も見ることができます。 次の手順に従って、配布ポイント グループの構成ステータスを確認します。  
 
-#### <a name="to-monitor-distribution-point-configuration-status"></a>Per monitorare lo stato di configurazione del punto di distribuzione  
+#### <a name="to-monitor-distribution-point-configuration-status"></a>配布ポイントの構成ステータスを監視するには  
 
-1.  Nella console di Configuration Manager passare a **Monitoraggio** > **Panoramica** > **Stato distribuzione** > **Stato di configurazione dei punti di distribuzione**. Vengono visualizzati i punti di distribuzione.  
+1.  Configuration Manager コンソールで、**[監視]** > **[概要]** > **[配布ステータス]** > **[配布ポイントの構成のステータス]** に移動します。 すると、配布ポイントが表示されます。  
 
-2.  Selezionare il punto di distribuzione per il quale si desidera visualizzare le informazioni sullo stato.  
+2.  配布ポイント ステータス情報を確認する配布ポイントを選択します。  
 
-3.  Nel riquadro dei risultati fare clic sulla scheda **Dettagli** . Verranno visualizzate le informazioni sullo stato per il punto di distribuzione.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+3.  [結果] ウィンドウで、[詳細 **** ] タブをクリックします。 すると、配布ポイントのステータス情報が表示されます。  

@@ -1,41 +1,37 @@
 ---
-title: Monitorare i client | Microsoft Docs
-description: Informazioni su come monitorare e gestire i client in System Center Configuration Manager.
+title: "クライアントを監視する | Microsoft Docs"
+description: "System Center Configuration Manager でクライアントを監視および管理する方法を説明します。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 110b65b3-2202-466f-bb5d-e5ee282506fc
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 593fbd0587d54490246f48ae54f666bac6b7830d
-ms.openlocfilehash: dbdc74cc2f94553745eb50aeadf6d33a54064c6b
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 828f615e14b2ad40108d0c7afdc050c7d17d4038
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-and-manage-clients-in-system-center-configuration-manager"></a>Monitorare e gestire i client in System Center Configuration Manager
+# <a name="monitor-and-manage-clients-in-system-center-configuration-manager"></a>System Center Configuration Manager でのクライアントの監視と管理
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager, detto anche ConfigMgr or SCCM, offre diversi metodi per monitorare e gestire il software client distribuito nei computer e nei dispositivi della propria organizzazione.  È possibile monitorare i client per controllarne lo stato e, in alcuni casi, Configuration Manager può eseguire la correzione o le correzioni automatiche in base al problema rilevato. La console di Configuration Manager offre anche metodi per gestire i client per i singoli dispositivi o raccolte di dispositivi.  
+System Center Configuration Manager (ConfigMgr または SCCM とも呼ばれます) では、クライアント ソフトウェアが組織のコンピューターとデバイスに展開された後に、クライアント ソフトウェアを監視および管理するためのいくつかの方法が提供されています。  クライアントを監視して、そのステータスを確認できます。また、Configuration Manager では、検出された問題に基づく自動修復 (修正) を実行できる場合もあります。 Configuration Manager コンソールには、個々のデバイスまたはデバイス コレクションのクライアントを管理する方法も用意されています。  
 
- Gli argomenti seguenti forniscono informazioni su come monitorare e gestire i client e offrono altri dettagli per il monitoraggio e la gestione dei client per i server Linux e UNIX:  
+ 次のトピックでは、クライアントの監視および管理方法について説明し、Linux および UNIX サーバー用のクライアントの監視および管理の詳細について説明します。  
 
--   [Come monitorare i client in System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md)  
+-   [System Center Configuration Manager でクライアントを監視する方法](../../../core/clients/manage/monitor-clients.md)  
 
--   [Come monitorare i client per i server Linux e UNIX in System Center Configuration Manager](../../../core/clients/manage/monitor-clients-for-linux-and-unix-servers.md)  
+-   [System Center Configuration Manager で Linux および UNIX サーバーのクライアントを監視する方法](../../../core/clients/manage/monitor-clients-for-linux-and-unix-servers.md)  
 
--   [Come gestire i client in System Center Configuration Manager](../../../core/clients/manage/manage-clients.md)  
+-   [System Center Configuration Manager でクライアントを管理する方法](../../../core/clients/manage/manage-clients.md)  
 
--   [Come gestire i client per i server Linux e UNIX in System Center Configuration Manager](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md)  
-
+-   [System Center Configuration Manager で Linux および UNIX サーバーのクライアントを管理する方法](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md)  

@@ -1,6 +1,6 @@
 ---
-title: Gestire gli aggiornamenti di Office 365 ProPlus | Microsoft Docs
-description: Configuration Manager sincronizza gli aggiornamenti del client di Office 365 dal catalogo di Windows Server Update Services nel server del sito per rendere disponibili gli aggiornamenti per la distribuzione ai client.
+title: "Office 365 ProPlus 更新プログラムの管理 | Microsoft Docs"
+description: "Configuration Manager が WSUS カタログからサイト サーバーに Office 365 のクライアント更新プログラムを同期したら、その更新プログラムをクライアントに展開できるようになります。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -9,172 +9,169 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
-ms.translationtype: HT
-ms.sourcegitcommit: 5d696e3da187d47e0d41c02864d9b5267827e701
 ms.openlocfilehash: 902d7f7216ca7bb585afae587a6706e2332da9d3
-ms.contentlocale: it-it
-ms.lasthandoff: 07/31/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="manage-office-365-proplus-with-configuration-manager"></a>Configuration Manager での Office 365 ProPlus の管理
 
-# <a name="manage-office-365-proplus-with-configuration-manager"></a>Gestire Office 365 ProPlus con Configuration Manager
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+Configuration Manager では、次の方法で Office 365 ProPlus アプリを管理できます。
 
-Configuration Manager consente di gestire le app di Office 365 ProPlus nei modi seguenti:
+- [Office 365 クライアント管理ダッシュボード](#office-365-client-management-dashboard): Configuration Manager バージョン 1610 以降では、Office 365 クライアント管理ダッシュボードから Office 365 クライアントの情報を確認できます。    
 
-- [Dashboard di Gestione client di Office 365](#office-365-client-management-dashboard): a partire da Configuration Manager versione 1610, è possibile esaminare le informazioni sul client di Office 365 dal dashboard di Gestione client di Office 365.    
+- [Office 365 アプリを展開する](#deploy-office-365-apps): バージョン 1702 以降では、Office 365 クライアント管理ダッシュボードから Office 365 インストーラーを起動して、最初の Office 365 アプリのインストール操作をより簡単にすることができます。 ウィザードに従って、Office 365 のインストール設定を構成し、Office コンテンツ配信ネットワーク (CDN) からファイルをダウンロードして、コンテンツを含むスクリプト アプリケーションを作成して展開することができます。    
 
-- [Distribuire app di Office 365](#deploy-office-365-apps): a partire dalla versione 1702, è possibile avviare il programma di installazione di Office 365 dal dashboard di Gestione client di Office 365. In questo modo, viene semplificata l'esperienza iniziale di installazione delle app di Office 365. La procedura guidata consente di configurare le impostazioni di installazione di Office 365, scaricare file dalle reti di distribuzione del contenuto (CDN) e creare e distribuire un'applicazione script con il contenuto.    
+- [Office 365 更新プログラムを展開する](#deploy-office-365-updates): Configuration Manager バージョン 1602 以降では、ソフトウェア更新管理のワークフローを使用して、Office 365 クライアントの更新プログラムを管理できます。 マイクロソフトが Office コンテンツ配信ネットワーク (CDN) に対する新しい Office 365 のクライアント更新プログラムを公開するときには、Windows Server Update Services (WSUS) に対する更新パッケージも公開します。 Configuration Manager が WSUS カタログからサイト サーバーに Office 365 クライアント更新プログラムを同期したら、その更新プログラムをクライアントに展開できるようになります。    
 
-- [Distribuire gli aggiornamenti di Office 365](#deploy-office-365-updates): a partire da Configuration Manager versione 1602, è possibile gestire gli aggiornamenti del client di Office 365 usando il flusso di lavoro di Gestione aggiornamenti software. Quando pubblica un nuovo aggiornamento del client di Office 365 nella rete per la distribuzione di contenuti (CDN) di Office, Microsoft pubblica anche un pacchetto di aggiornamento per Windows Server Update Services (WSUS). Dopo che Configuration Manager ha sincronizzato l'aggiornamento del client di Office 365 dal catalogo di Windows Server Update Services nel server del sito, l'aggiornamento è disponibile per la distribuzione ai client.    
+- [Office 365 更新プログラムのダウンロード対象言語を追加する](#add-languages-for-office-365-update-downloads): バージョン 1610 以降の Configuration Manager では、Office 365 でサポートされている言語であれば、Configuration Manager でサポートされているかどうかに関係なく、その言語の更新プログラムをダウンロード対象に含めることができます。  
 
-- [Aggiungere lingue per i download di aggiornamento di Office 365](#add-languages-for-office-365-update-downloads): a partire da Configuration Manager versione 1610, è possibile aggiungere il supporto per Configuration Manager per scaricare gli aggiornamenti in tutte le lingue supportate da Office 365, indipendentemente dal fatto che tali lingue siano supportate in Configuration Manager.  
-
-- [Modificare il canale di aggiornamento](#change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager): è possibile usare Criteri di gruppo per distribuire ai client di Office 365 la modifica del valore della chiave del Registro di sistema relativa al canale di aggiornamento.
+- [更新チャネルを変更する](#change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager): グループ ポリシーを使用して、レジストリ キー値の変更を Office 365 クライアントに配信して、更新チャネルを変更することができます。
 
 
-## <a name="office-365-client-management-dashboard"></a>Dashboard di Gestione client di Office 365  
-Il dashboard di Gestione client di Office 365 presenta sotto forma di grafico le informazioni seguenti:
+## <a name="office-365-client-management-dashboard"></a>Office 365 クライアント管理ダッシュボード  
+Office 365 クライアント管理ダッシュボードには、次の情報のグラフが表示されます。
 
-- Numero di client di Office 365
-- Versioni dei client di Office 365
-- Lingue dei client di Office 365
-- Canali dei client di Office 365     
-  Per altre informazioni, vedere [Panoramica dei canali di aggiornamento per Office 365 ProPlus](https://technet.microsoft.com/library/mt455210.aspx).
+- Office 365 クライアントの数
+- Office 365 クライアントのバージョン
+- Office 365 クライアントの言語
+- Office 365 クライアントのチャネル     
+  詳細については、「[Office 365 ProPlus 更新プログラム チャネルの概要](https://technet.microsoft.com/library/mt455210.aspx)」をご覧ください。
 
-Per visualizzare il dashboard di Gestione client di Office 365, nella console di Configuration Manager passare a **Raccolta software** > **Panoramica** > **Gestione client di Office 365**. Nella parte superiore del dashboard, usare l'impostazione a discesa **Raccolta** per filtrare i dati del dashboard in base ai membri di una raccolta specifica.
+Office 365 クライアント管理ダッシュボードを表示するには、Configuration Manager コンソールで **[ソフトウェア ライブラリ]** > **[概要]** > **[Office 365 クライアント管理]** に移動します。 ダッシュボードの上部にある [**コレクション**] ドロップダウン設定を使用して、特定のコレクションのメンバーでダッシュボードのデータをフィルター処理します。
 
-### <a name="display-data-in-the-office-365-client-management-dashboard"></a>Visualizzare dati nel dashboard di gestione client di Office 365
-I dati visualizzati nel dashboard di gestione client di Office 365 provengono dall'inventario hardware. Perché i dati vengano visualizzati nel dashboard, è necessario abilitare l'inventario hardware e selezionare la classe **Configurazioni di Office 365 ProPlus** di tale inventario.
-#### <a name="to-display-data-in-the-office-365-client-management-dashboard"></a>Per visualizzare dati nel dashboard di gestione client di Office 365
-1. Abilitare l'inventario hardware, se non è ancora stato fatto. Per altri dettagli, vedere [Configurare l'inventario hardware](\sccm\core\clients\manage\configure-hardware-inventory).
-2. Nella console di Configuration Manager passare a **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.  
-3. Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
-4. Nel **Impostazioni Client predefinite** nella finestra di dialogo fare clic su **l'inventario Hardware**.  
-5. Nel **le impostazioni del dispositivo** elenco, fare clic su **Imposta classi**.  
-6. Nella finestra di dialogo **Classi di inventario hardware** selezionare **Office 365 ProPlus Configurations**.  
-7.  Fare clic su **OK** per salvare le modifiche e chiudere il **classi di inventario Hardware** nella finestra di dialogo.  
-Il dashboard di Gestione client di Office 365 inizia a visualizzare i dati in base all'inventario hardware.
+### <a name="display-data-in-the-office-365-client-management-dashboard"></a>Office 365 クライアント管理ダッシュボードにデータを表示する
+Office 365 クライアント管理ダッシュ ボードに表示されるデータは、ハードウェア インベントリから取得されます。 データがダッシュボードに表示される前に、ハードウェア インベントリを有効にし、**Office 365 ProPlus 構成**ハードウェア インベントリ クラスを選択する必要があります。
+#### <a name="to-display-data-in-the-office-365-client-management-dashboard"></a>Office 365 クライアント管理ダッシュボードにデータを表示するには
+1. ハードウェア インベントリがまだ有効になっていない場合は、有効にします。 詳細については、「[Configure hardware inventory](\sccm\core\clients\manage\configure-hardware-inventory)」(ハードウェア インベントリを構成する) を参照してください。
+2. Configuration Manager コンソールで、**[管理]** > **[クライアント設定]** > **[既定のクライアント設定]** の順に選択します。  
+3. **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
+4. [ **既定のクライアント設定** ] ダイアログ ボックスで、[ **ハードウェア インベントリ** ] をクリックします。  
+5. [ **デバイス設定** ] の一覧で、[ **クラスの設定** ] をクリックします。  
+6. **[ハードウェア インベントリ クラス]** ダイアログ ボックスで、**[Office 365 ProPlus 構成]** を選択します。  
+7.  [ **OK** ] をクリックして変更を保存し、[ **ハードウェア インベントリ クラス** ] ダイアログ ボックスを閉じます。  
+ハードウェア インベントリが報告されると、Office 365 クライアント管理ダッシュボードにデータが表示されます。
 
-## <a name="deploy-office-365-apps"></a>Distribuire app di Office 365  
-A partire dalla versione 1702, per l'installazione iniziale delle app di Office 365 è possibile avviare il programma di installazione di Office 365 dal dashboard di Gestione client di Office 365. La procedura guidata consente di configurare le impostazioni di installazione di Office 365, scaricare file dalle reti di distribuzione del contenuto (CDN) e creare e distribuire un'applicazione script per i file. Finché Office 365 non viene installato nei client, gli aggiornamenti di Office 365 non sono applicabili.
+## <a name="deploy-office-365-apps"></a>Office 365 アプリを展開する  
+バージョン 1702 以降では、最初の Office 365 アプリのインストールのために、Office 365 クライアント管理ダッシュボードから Office 365 インストーラーを起動します。 ウィザードに従って、Office 365 のインストール設定を構成し、Office コンテンツ配信ネットワーク (CDN) からファイルをダウンロードして、そのファイルのスクリプト アプリケーションを作成して展開することができます。 Office 365 がクライアントにインストールされるまでは Office 365 更新プログラムが適用されません。
 
-Per le versioni di Configuration Manager precedenti, è necessario eseguire la procedura seguente per installare le app di Office 365 nei client per la prima volta:
-- Scaricare lo Strumento di distribuzione di Office 365 (ODT)
-- Scaricare i file di origine dell'installazione di Office 365, inclusi tutti i Language Pack necessari.
-- Generare il file Configuration.xml che specifica la versione e il canale corretti di Office.
-- Per eseguire l'installazione di app di Office 365 nei client, creare e distribuire un pacchetto legacy oppure un'applicazione script.
+Configuration Manager の以前のバージョンでは、次の手順で最初にクライアントに Office 365 アプリをインストールする必要があります。
+- Office 365 展開ツール (ODT) のダウンロード
+- Office 365 のインストール ソース ファイルを、必要なすべての言語パックを含めてダウンロードします。
+- Office の正しいバージョンとチャネルを指定する Configuration.xml を生成します。
+- 従来のパッケージまたはスクリプト アプリケーションのどちらかを作成して展開し、クライアントが Office 365 アプリをインストールできるようにします。
 
-### <a name="requirements"></a>Requisiti
-- Il computer che esegue il programma di installazione di Office 365 deve avere accesso a Internet.  
-- L'utente che esegue il programma di installazione di Office 365 deve avere accesso in **lettura** e **scrittura** al percorso dei contenuti specificato nella procedura guidata.
-- Se si riceve l'errore di download 404, copiare i file seguenti nella cartella %temp% dell'utente:
+### <a name="requirements"></a>［要件］
+- Office 365 インストーラーを実行しているコンピューターではインターネット アクセスが必要になります。  
+- Office 365 インストーラーを実行しているユーザーには、ウィザードで示されるコンテンツの場所の共有に対する**読み取り**および**書き込み**アクセス権が必要です。
+- 404 ダウンロード エラーが発生した場合は、次のファイルをユーザーの %temp% フォルダーにコピーします。
   - [releasehistory.xml](http://officecdn.microsoft.com/pr/wsus/releasehistory.cab)
   - [o365client_32bit.xml](http://officecdn.microsoft.com/pr/wsus/ofl.cab)  
 
 
-### <a name="to-deploy-office-365-apps-to-clients-from-the-office-365-client-management-dashboard"></a>Per distribuire app di Office 365 ai client dal dashboard di gestione client di Office 365
-1. Nella console di Configuration Manager passare a **Raccolta software** > **Panoramica** > **Office 365 Client Management** (Gestione Client di Office 365).
-2. Fare clic su **Office 365 Installer** (Programma di installazione di Office 365) nel riquadro in alto a destro. Si apre l'installazione guidata dei client di Office 365.
-3. Nella pagina **Impostazioni applicazione** specificare il nome e la descrizione per l'app, immettere il percorso di download per i file e quindi fare clic su **Avanti**. Il percorso deve essere specificato nel formato &#92;&#92;*server*&#92;*condivisione*.
-4. Nella pagina **Import Client Settings** (Importa impostazioni client) scegliere se importare le impostazioni del client di Office 365 da un file di configurazione XML esistente o se specificare manualmente le impostazioni, quindi fare clic su **Avanti**.  
+### <a name="to-deploy-office-365-apps-to-clients-from-the-office-365-client-management-dashboard"></a>Office 365 クライアント管理ダッシュボードからクライアントに Office 365 アプリを展開するには
+1. Configuration Manager コンソールで [**ソフトウェア ライブラリ**] > [**概要**] > [**Office 365 クライアント管理**] に移動します。
+2. 右上のウィンドウで [**Office 365 インストーラー**] をクリックします。 Office 365 クライアントのインストール ウィザードが開きます。
+3. [**アプリケーションの設定**] ページでアプリの名前と説明を入力し、ファイルをダウンロードする場所を入力して、[**次へ**] をクリックします。 場所は &#92;&#92;*server*&#92;*share* として指定する必要があります。
+4. [**クライアント設定のインポート**] ページで、Office 365 クライアントの設定を既存の XML 構成ファイルからインポートするか、手動で設定を指定するかどうかを選び、[**次へ**] をクリックします。  
 
-    Se già si dispone di un file di configurazione, immettere il percorso del file e andare al passaggio 7. Si noti che è necessario specificare il percorso nel formato &#92;&#92;*server*&#92;*share*&#92;*nomedelfile*.XML.
+    既存の構成ファイルを使用する場合は、ファイルの場所を入力し、ステップ 7 に進みます。 場所は &#92;&#92;*server*&#92;*share*&#92;*filename*.XML の形式で指定する必要があります。
     > [!IMPORTANT]    
-    > Il file di configurazione XML deve contenere solo [lingue supportate dal client Office 365 ProPlus](https://technet.microsoft.com/library/cc179219&#40;v=office.16&#41;.aspx).
+    > XML 構成ファイルには、[Office 365 ProPlus クライアントでサポートされる言語](https://technet.microsoft.com/library/cc179219&#40;v=office.16&#41;.aspx)のみを含める必要があります。
 
-5. Nella pagina **Client Products** (Prodotti client) selezionare la suite Office 365 in uso, selezionare le applicazioni da includere, selezionare eventuali prodotti aggiuntivi di Office da includere e quindi fare clic su **Avanti**.
-6. Nella pagina **Impostazioni client** scegliere le impostazioni da includere e fare clic su **Avanti**.
-7. Nella pagina **Distribuzione** scegliere se distribuire l'applicazione, quindi fare clic su pagina **Avanti**.  
-Se si sceglie di non distribuire il pacchetto nella procedura guidata, andare al passaggio 9.
-8. Configurare il resto delle pagine della procedura guidata come si farebbe per la distribuzione di un'applicazione comune. Per i dettagli, vedere [Create and deploy an application](/sccm/apps/get-started/create-and-deploy-an-application) (Creare e distribuire un'applicazione).
-9. Completare la procedura guidata.
-10. È possibile distribuire o modificare l'applicazione da **Raccolta software** > **Panoramica** > **Gestione applicazioni** > **Applicazioni**.    
+5. [**クライアント プロダクト**] ページで、使用する Office 365 スイートを選び、含めたいアプリケーションを選び、含める必要がある追加の Office 製品を選び、[**次へ**] をクリックします。
+6. [**クライアント設定**] ページで、含める設定を選び、[**次へ**] をクリックします。
+7. [**展開**] ページで、アプリケーションを展開するかどうかを選び[**次へ**] をクリックします。  
+ウィザードでパッケージを展開しないことを選択した場合は、ステップ 9 に進みます。
+8. 一般的なアプリケーション展開の場合と同様に、ウィザードの残りのページを構成します。 詳細については、「[アプリケーションの作成手順と展開手順](/sccm/apps/get-started/create-and-deploy-an-application)」を参照してください。
+9. ウィザードを完了します。
+10. アプリケーションは **[ソフトウェア ライブラリ]** > **[概要]** > **[アプリケーション管理]** > **[アプリケーション]** から展開または編集することができます。    
 
-Dopo la creazione e la distribuzione di applicazioni di Office 365 mediante il programma di installazione di Office 365, Configuration Manager non gestirà gli aggiornamenti di Office per impostazione predefinita. Per consentire ai client Office 365 di ricevere gli aggiornamenti da Configuration Manager, vedere [Distribuire gli aggiornamenti di Office 365 con Configuration Manager](#deploy-office-365-updates-with-configuration-manager).
+Office 365 インストーラーを使用して Office 365 アプリケーションを作成して展開した場合、既定では Configuration Manage で Office 更新プログラムが管理されません。 Office 365 クライアントで Configuration Manager から更新プログラムを受信できるようにする場合は、「[Configuration Manager で Office 365 の更新プログラムを展開する](#deploy-office-365-updates-with-configuration-manager)」を参照してください。
 
 >[!NOTE]
->Dopo la distribuzione delle applicazioni di Office 365, è possibile creare regole di distribuzione automatica per le applicazioni. Per creare una regola di distribuzione automatica per le applicazioni di Office 365, fare clic su **Crea un ADR** nel dashboard di gestione client di Office 365 e selezionare **Office 365 Client** quando si sceglie il prodotto. Per altre informazioni, vedere [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates).
+>Office 365 アプリを展開すると、アプリを維持するための自動展開規則を作成できます。 Office 365 アプリの自動展開規則を作成するには、Office 365 クライアント管理ダッシュボードから **[ADR の作成]** をクリックし、製品を選択する際に **[Office 365 クライアント]** を選択します。 詳細については、「[ソフトウェア更新プログラムの自動展開](/sccm/sum/deploy-use/automatically-deploy-software-updates)」を参照してください。
 
 
-## <a name="deploy-office-365-updates"></a>Distribuire aggiornamenti di Office 365
-Eseguire i passaggi seguenti per distribuire gli aggiornamenti di Office 365 con Configuration Manager:
+## <a name="deploy-office-365-updates"></a>Office 365 更新プログラムを展開する
+Configuration Manager で Office 365 の更新プログラムを展開するには、次の手順を使用します。
 
-1.  [Verificare i requisiti](https://technet.microsoft.com/library/mt628083.aspx) per l'uso di Configuration Manager per la gestione degli aggiornamenti del client di Office 365 nella sezione **Requisiti necessari per gestire gli aggiornamenti client di Office 365 utilizzando Configuration Manager** dell'argomento.  
+1.  Configuration Manager を使用して Office 365 クライアントの更新プログラムを管理するための[要件を確認します](https://technet.microsoft.com/library/mt628083.aspx) (このトピックの「**構成マネージャーを使用して Office 365 クライアントの更新を管理するための要件**」セクションを参照してください)。  
 
-2.  [Configurare i punti di aggiornamento software](../get-started/configure-classifications-and-products.md) per sincronizzare gli aggiornamenti del client di Office 365. Impostare gli **aggiornamenti** per la classificazione e selezionare il **client di Office 365** per il prodotto. Sincronizzare gli aggiornamenti software dopo aver configurato i punti di aggiornamento software per l'uso della classificazione **Aggiornamenti**.
-3.  Abilitare i client di Office 365 per la ricezione di aggiornamenti da Configuration Manager. È possibile eseguire questa operazione usando le impostazioni client di Configuration Manager o Criteri di gruppo. Per abilitare il client usare uno dei metodi seguenti:   
+2.  Office 365 のクライアント更新プログラムを同期するための[ソフトウェア更新ポイントを構成します](../get-started/configure-classifications-and-products.md)。 分類の**更新プログラム**を設定して、製品の **Office 365 クライアント**を選択します。 分類の**更新プログラム**を使用するには、ソフトウェア更新ポイントの構成後にソフトウェア更新プログラムを同期します。
+3.  Office 365 クライアントが Configuration Manager から更新プログラムを受信できるようにします。 そのためには、Configuration Manager クライアント設定またはグループ ポリシーを使用します。 次のいずれかの方法を使用してクライアントを有効にします。   
 
-    **Metodo 1**: a partire dalla versione 1606 di Configuration Manager è possibile usare l'impostazione del client di Configuration Manager per la gestione dell'agente client di Office 365. Dopo aver configurato questa impostazione e distribuito gli aggiornamenti di Office 365, l'agente client di Configuration Manager comunica con l'agente client di Office 365 al fine di scaricare gli aggiornamenti di Office 365 da un punto di distribuzione e installarli. Configuration Manager esegue l'inventario delle impostazioni client di Office 365 ProPlus.    
+    **方法 1**: Configuration Manager バージョン 1606 以降では、Configuration Manager クライアント設定を使用して Office 365 のクライアント エージェントを管理できます。 この設定を構成し、Office 365 の更新プログラムを展開すると、Configuration Manager クライアント エージェントは、Office 365 のクライアント エージェントと通信して、配布ポイントから Office 365 の更新プログラムをダウンロードしてインストールします。 Configuration Manager は、Office 365 ProPlus クライアント エージェント設定のインベントリを取得します。    
 
-      1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Panoramica** > **Impostazioni client**.  
+      1.  Configuration Manager コンソールで、**[管理]** > **[概要]** > **[クライアント設定]** の順にクリックします。  
 
-      2.  Aprire le impostazioni del dispositivo appropriato per abilitare l'agente client. Per altre informazioni sulle impostazioni client predefinite e personalizzate, vedere [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md) (Come configurare le impostazioni client in System Center Configuration Manager).  
+      2.  クライアント エージェントを有効にする適切なデバイスの設定を開きます。 既定およびカスタムのクライアント設定の詳細については、「[System Center Configuration Manager でクライアント設定を構成する方法](../../core/clients/deploy/configure-client-settings.md)」を参照してください。  
 
-      3.  Fare clic su **Aggiornamenti software** e selezionare **Sì** per l'impostazione **Abilita la gestione dell'agente client di Office 365**.  
+      3.  **[ソフトウェアの更新]** を選択し、**[Office 365 クライアント エージェントの管理を有効にする]** の設定に **[はい]** を設定します。  
 
-    **Metodo 2**: [Abilitare i client di Office 365 per la ricezione di aggiornamenti](https://technet.microsoft.com/library/mt628083.aspx#BKMK_EnableClient) da Configuration Manager usando lo Strumento di distribuzione di Office o Criteri di gruppo.  
+    **方法 2**: Office 展開ツールまたはグループ ポリシーを使用して、Configuration Manager から [Office 365 クライアントが更新プログラムを受信できるようにします](https://technet.microsoft.com/library/mt628083.aspx#BKMK_EnableClient)。  
 
-4. [Distribuire gli aggiornamenti di Office 365](deploy-software-updates.md) ai client.   
+4. [Office 365 の更新プログラムをクライアントに展開します](deploy-software-updates.md)。   
 
 > [!Important]
-> È necessario scaricare e distribuire gli aggiornamenti nelle stesse lingue configurate nei client Office 365. Si supponga, ad esempio, di avere un client Office 365 configurato con le lingue en-us e de-de. Si supponga quindi di scaricare e distribuire nel server del sito solo il contenuto en-us di un aggiornamento di Office 365. Quando l'utente avvia l'installazione di questo aggiornamento da Software Center, l'operazione si blocca durante il download del contenuto.   
+> Office 365 クライアントに構成されたものと同じ言語の更新プログラムをダウンロードして展開する必要があります。 たとえば、Office 365 クライアントに en-us と de-de の言語を構成しているとします。 サイト サーバーで、適用可能な Office 365 更新プログラムに対して en-us のコンテンツのみをダウンロードして展開します。 ユーザーがソフトウェア センターからこの更新プログラムのインストールを開始すると、更新プログラムはコンテンツのダウンロード中にハングします。   
 
-## <a name="restart-behavior-and-client-notifications-for-office-365-updates"></a>Comportamento di riavvio e notifiche client per gli aggiornamenti di Office 365
-Quando si distribuisce un aggiornamento a un client di Office 365, il comportamento di riavvio e le notifiche client sono diversi a seconda della versione di Configuration Manager in uso. La tabella seguente offre informazioni sull'esperienza dell'utente finale quando il client riceve un aggiornamento di Office 365:
+## <a name="restart-behavior-and-client-notifications-for-office-365-updates"></a>Office 365 の更新プログラムの動作とクライアント通知を再起動する
+Office 365 クライアントに更新プログラムを展開する場合、再起動の動作とクライアント通知は、Configuration Manager のバージョンによって異なります。 次の表では、クライアントが Office 365 の更新プログラムを受け取るときのエンド ユーザーのエクスペリエンスに関する情報を示します。
 
-|Versione di Configuration Manager |Esperienza utente finale|  
+|Configuration Manager バージョン |エンド ユーザー エクスペリエンス|  
 |----------------|---------------------|
-|Precedente alla 1610|Viene impostato un flag di riavvio e l'aggiornamento viene installato dopo il riavvio del computer.|
-|1610|Le app di Office 365 vengono chiuse senza preavviso prima dell'installazione dell'aggiornamento|
-|1610 con aggiornamento <br/>1702|Viene impostato un flag di riavvio e l'aggiornamento viene installato dopo il riavvio del computer.|
-|1706|Il client riceve notifiche popup e in-app, nonché una finestra di dialogo con il conto alla rovescia prima dell'installazione dell'aggiornamento.|
+|1610 より前|再起動フラグが設定され、コンピューターを再起動した後に、更新プログラムがインストールされます。|
+|1610|Office 365 アプリは、更新プログラムをインストールする前に警告なしにシャットダウンされます|
+|1610 <br/>更新プログラム 1702 を含む|再起動フラグが設定され、コンピューターを再起動した後に、更新プログラムがインストールされます。|
+|1706|クライアントは、ポップアップとアプリ内通知、および更新プログラムをインストールする前にカウント ダウン ダイアログを受け取ります。|
 
 
-## <a name="add-languages-for-office-365-update-downloads"></a>Aggiungere lingue per i download degli aggiornamenti di Office 365
-A partire da Configuration Manager versione 1610, è possibile aggiungere il supporto per Configuration Manager per scaricare gli aggiornamenti in qualsiasi lingua supportata da Office 365, indipendentemente dal fatto che tali lingue siano supportate in Configuration Manager.    
+## <a name="add-languages-for-office-365-update-downloads"></a>Office 365 更新プログラムのダウンロード対象言語を追加する
+バージョン 1610 以降の Configuration Manager では、Office 365 でサポートされている言語であれば、Configuration Manager でサポートされているかどうかに関係なく、その言語の更新プログラムをダウンロード対象に含めることができます。    
 
 > [!IMPORTANT]  
-> La configurazione di lingue aggiuntive per l'aggiornamento di Office 365 è un'impostazione a livello di sito. Dopo l'aggiunta delle lingue in base alla procedura seguente, tutti gli aggiornamenti di Office 365 vengono scaricati in queste lingue, oltre che nelle lingue selezionate nella pagina **Selezione lingua** del Download guidato degli aggiornamenti software o della Distribuzione guidata degli aggiornamenti software.
+> Office 365 更新プログラムの言語を追加するための構成設定はサイト全体に適用されます。 以下の手順に従って言語を追加すると、その言語における Office 365 のすべての更新プログラムが、ソフトウェア更新プログラムの展開ウィザードまたはソフトウェア更新プログラムのダウンロード ウィザードの **[言語の選択]** ページで選択した言語に加えてダウンロードされます。
 
-### <a name="to-add-support-to-download-updates-for-additional-languages"></a>Per aggiungere il supporto per il download degli aggiornamenti in altre lingue
-Seguire questa procedura per il punto di aggiornamento software presso il sito di amministrazione centrale o presso il sito primario autonomo.
-1. Da un prompt dei comandi digitare *wbemtest* come utente amministratore per aprire il Tester di Strumentazione gestione Windows.
-2. Fare clic su **Connetti** e quindi digitare *root\sms\site_&lt;CodiceSito&gt;*.
-3. Fare clic su **Query** e quindi eseguire la query seguente: *select &#42; from SMS_SCI_Component where componentname ="SMS_WSUS_CONFIGURATION_MANAGER"*  
-   ![query WMI](..\media\1-wmiquery.png)
-4. Nel riquadro dei risultati fare doppio clic sull'oggetto con il codice corrispondente al sito di amministrazione centrale o al sito primario autonomo.
-5. Selezionare la proprietà **Props**, fare clic su **Modifica proprietà** e quindi su **Visualizza ogg. incorporati**.
-![Editor di proprietà](..\media\2-propeditor.png)
-6. A partire dal primo risultato della query, aprire tutti gli oggetti fino a individuare quello con **AdditionalUpdateLanguagesForO365** per la proprietà **PropertyName**.
-7. Selezionare **Value2** e fare clic su **Modifica proprietà**.  
-![Modificare la proprietà Value2](..\media\3-queryresult.png)
-8. Aggiungere altre lingue alla proprietà **Value2** e fare clic su **Salva proprietà**.  
-Ad esempio, pt-pt (per Portoghese - Portogallo), af-za (per Afrikaans - Sudafrica), nn-no (per Norvegese Nynorsk - Norvegia) e così via.  
-![Aggiungere lingue in Editor di proprietà](..\media\4-props.png)  
-9. Fare clic su **Chiudi**, fare di nuovo clic su **Chiudi** e quindi fare clic su **Salva proprietà**, su **Salva oggetto** (se si fa clic su **Chiudi** qui, i valori verranno rimossi), su **Chiudi** e infine su **Esci** per chiudere il Tester di Strumentazione gestione Windows.
-10. Nella console di Configuration Manager passare a **Raccolta software** > **Panoramica** > **Office 365 Client Management (Gestione client di Office 365)** > **Office 365 Updates (Aggiornamenti di Office 365)**.
-11. Ora gli aggiornamenti di Office 365 vengono scaricati nelle lingue selezionate nella procedura guidata e configurati in questa procedura. Per verificare che gli aggiornamenti vengano effettivamente scaricati nelle lingue corrette, passare all'origine pacchetto per gli aggiornamenti e cercare i file con il codice lingua nel nome.  
-![Nomi di file con altre lingue](..\media\5-verification.png)
+### <a name="to-add-support-to-download-updates-for-additional-languages"></a>更新プログラムのダウンロード対象言語を追加するには
+以下の手順は、中央管理サイトまたはスタンドアロンのプライマリ サイトにあるソフトウェアの更新ポイントで実行してください。
+1. 管理ユーザーとしてコマンド プロンプトから「*wbemtest*」と入力し、Windows Management Instrumentation テストを開きます。
+2. **[接続]** をクリックして「*root\sms\site_&lt;siteCode&gt;*」と入力します。
+3. **[クエリ]** をクリックして、「*select &#42; from SMS_SCI_Component where componentname ="SMS_WSUS_CONFIGURATION_MANAGER"*」というクエリを実行します。  
+   ![WMI query](..\media\1-wmiquery.png)
+4. 結果ウィンドウで、目的のサイト コード (中央管理サイトまたはスタンドアロンのプライマリ サイト) に該当するオブジェクトをダブルクリックします。
+5. **Props** プロパティを選択し、**[プロパティの編集]** をクリックして、**[埋め込みを表示]** をクリックします。
+![Property editor](..\media\2-propeditor.png)
+6. 1 つ目のクエリ結果から順に各オブジェクトを開いていき、**PropertyName** プロパティが **AdditionalUpdateLanguagesForO365** であるオブジェクトを見つけます。
+7. **[Value2]** を選択し、**[プロパティの編集]** をクリックします。  
+![Edit the Value2 property](..\media\3-queryresult.png)
+8. 新しい言語を **Value2** プロパティに追加して **[プロパティの保存]** をクリックします。  
+たとえば、pt-pt (ポルトガル語 - ポルトガル)、af-za (アフリカーンス語 - 南アフリカ)、nn-no (ノルウェー語 (ニーノシク) - ノルウェー) を追加します。  
+![Add languages in Property Editor](..\media\4-props.png)  
+9. **[閉じる]** をクリックし、再度 **[閉じる]** をクリックして、**[プロパティの保存]** をクリックし、**[オブジェクトの保存]** (ここで **[閉じる]** をクリックした場合は、値が破棄されます) をクリックします。次に、**[閉じる]** をクリックし、**[終了]** をクリックして、Windows Management Instrumentation テストを終了します。
+10. Configuration Manager コンソールで **[ソフトウェア ライブラリ]** > **[概要]** > **[Office 365 クライアント管理]** > **[Office 365 Updates (Office 365 更新プログラム)]** に移動します。
+11. 以後、Office 365 更新プログラムをダウンロードすると、ウィザードで選択した言語およびこの手順で構成した言語の更新プログラムがダウンロードされます。 正しい言語の更新プログラムがダウンロードされたことを確認するには、その更新プログラムのパッケージ ソースにアクセスし、その言語コードを名前に含んだファイルを探します。  
+![Filenames with additional languages](..\media\5-verification.png)
 
 
-## <a name="change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager"></a>Modificare il canale di aggiornamento dopo aver abilitato i client di Office 365 alla ricezione degli aggiornamenti da Configuration Manager
-Per modificare il canale di aggiornamento dopo aver abilitato i client di Office 365 alla ricezione degli aggiornamenti da Configuration Manager, usare Criteri di gruppo per distribuire una modifica del valore della chiave del Registro di sistema ai client di Office 365. Modificare la chiave del Registro di sistema **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\CDNBaseUrl** in modo che usi uno dei valori seguenti:
+## <a name="change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager"></a>Configuration Manager から更新プログラムを適用できるように Office 365 クライアントを設定した後で更新チャネルを変更する
+Configuration Manager から更新プログラムを適用できるように Office 365 クライアントを設定した後で更新チャネルを変更するには、グループ ポリシーを使用して、レジストリ キー値の変更を Office 365 クライアントに配信します。 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\CDNBaseUrl** というレジストリ キーを次のいずれかの値を使用するように変更します。
 
-- Current Channel:  
+- 最新機能提供チャネル:  
   **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60
 
-- Deferred Channel:  
+- 段階的提供チャネル:  
   **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/7ffbc6bf-bc32-4f92-8982-f9dd17fd3114
 
-- First Release per Current Channel:  
+- 最新機能提供チャネルの初回リリース:  
   **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be
 
-- First Release per Deferred Channel:  
+- 段階的提供チャネルの初回リリース:  
   **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/b8f9b850-328d-4355-9145-c59439a0c4cf
 
 
@@ -191,4 +188,3 @@ You can create an application just as you would with any other application in Co
 
 <!--- ## Next steps
 Use the Office 365 Client Management dashboard in Configuration Manager to review Office 365 client information and deploy Office 365 apps. For details, see [Manage Office 365 apps](manage-office-365-apps.md). --->
-

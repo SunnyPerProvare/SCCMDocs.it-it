@@ -1,107 +1,104 @@
 ---
-title: Estensioni dello schema | Microsoft Docs
-description: Estendere lo schema di Active Directory per supportare System Center Configuration Manager.
+title: "スキーマ拡張 | Microsoft Docs"
+description: "System Center Configuration Manager をサポートするように Active Directory スキーマを拡張します。"
 ms.custom: na
 ms.date: 2/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 95c13c00-909f-4fbb-bbaa-1eba9d54d8c5
-caps.latest.revision: 8
-caps.handback.revision: 0
+caps.latest.revision: "8"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: noindex
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 7479e54b5db2eff893bf9fbaf52c104836cda519
 ms.openlocfilehash: 5b5540c35c02df6e3d06e4aa9269b8da3238233e
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="schema-extensions-for-system-center-configuration-manager"></a>Estensioni dello schema per System Center Configuration Manager
+# <a name="schema-extensions-for-system-center-configuration-manager"></a>System Center Configuration Manager のスキーマ拡張
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-È possibile estendere lo schema di Active Directory per supportare Configuration Manager. In questo modo si modifica lo schema di Active Directory di una foresta per aggiungere un nuovo contenitore e vari attributi usati dai siti di Configuration Manager per pubblicare informazioni importanti in Active Directory, dove possono essere usate dai client in modo sicuro. Queste informazioni possono semplificare la distribuzione e la configurazione dei client e consentono loro di trovare facilmente risorse del sito come server con contenuto distribuito o che forniscono vari servizi ai client.  
+Configuration Manager をサポートするように Active Directory スキーマを拡張することができます。 これにより、フォレストの Active Directory スキーマを編集し、新しいコンテナーといくつかの属性を追加します。これらは、Configuration Manager サイトにより、キー情報を Active Directory に発行するために使用されます。Active Directory でクライアントは安全にキー情報を使用できます。 この情報はクライアントの展開と構成を簡略化し、クライアントがサイト リソース (展開するコンテンツがあるサーバーや、クライアントに各種サービスを提供するサーバーなど) を見つけるときに役立ちます。  
 
--   È consigliabile, ma non obbligatorio, estendere lo schema di Active Directory.  
+-   Active Directory スキーマは拡張することをお勧めしますが、必須ではありません。  
 
-Prima di [estendere lo schema di Active Directory](https://msdnstage.redmond.corp.microsoft.com/en-US/library/mt345589\(TechNet.10\).aspx) occorre acquisire familiarità con Active Directory Domain Services e la [modifica dello schema di Active Directory](https://technet.microsoft.com/library/cc759402\(v=ws.10\).aspx).  
+[Active Directory スキーマを拡張する](https://msdnstage.redmond.corp.microsoft.com/en-US/library/mt345589\(TechNet.10\).aspx)前に、Active Directory ドメイン サービスに精通し、 [Active Directory スキーマの変更](https://technet.microsoft.com/library/cc759402\(v=ws.10\).aspx)に慣れておく必要があります。  
 
-## <a name="considerations-for-extending-the-active-directory-schema-for-configuration-manager"></a>Considerazioni relative all'estensione dello schema di Active Directory per Configuration Manager  
+## <a name="considerations-for-extending-the-active-directory-schema-for-configuration-manager"></a>Configuration Manager 向けの Active Directory スキーマの拡張に関する考慮事項  
 
--   Le estensioni dello schema di Active Directory per System Center Configuration Manager sono identiche a quelle usate da Configuration Manager 2007 e Configuration Manager 2012. Se in precedenza si è esteso lo schema per una di queste versioni, non è necessario estendere nuovamente lo schema.  
+-   System Center Configuration Manager 用の Active Directory スキーマの拡張は、Configuration Manager 2007 と Configuration Manager 2012 で使用されているものから変更されていません。 どちらかのバージョンでスキーマを拡張した場合は、もう一度拡張する必要はありません。  
 
--   L'estensione dello schema di Active Directory è un'azione irreversibile a livello di foresta, che può essere eseguita una sola volta.  
+-   スキーマの拡張は、フォレスト全体で 1 回限り行う操作で、元に戻すことはできません。  
 
--   Lo schema può essere esteso solo da un utente membro del gruppo Schema Admins o con autorizzazioni sufficienti per modificare lo schema.  
+-   スキーマを拡張できるのは、スキーマ管理グループのメンバーと、スキーマを変更するのに十分なアクセス許可を委任されたユーザーのみです。  
 
--   Anche se è possibile estendere lo schema prima o dopo l'installazione di Configuration Manager, è preferibile eseguire questa operazione prima di iniziare la configurazione dei siti e delle impostazioni della gerarchia. Questo semplificherà molte delle procedure di configurazione successive.  
+-   スキーマの拡張を行うのは Configuration Manager のセットアップ実行の前でも後でも構いませんが、サイトと階層の設定の構成を始める前に行うことをお勧めします。 これによって、後で行う多くの構成手順が簡単になります。  
 
--   Dopo l'estensione dello schema, il catalogo globale di Active Directory viene replicato in tutta la foresta. Di conseguenza, è consigliabile pianificare l'estensione dello schema in un momento in cui il traffico di replica non possa influire negativamente sugli altri processi dipendenti dalla rete.  
+-   スキーマの拡張後、Active Directory グローバル カタログがフォレスト全体にレプリケートされます。 そのため、レプリケーションのトラフィックにより、ネットワークに依存する他のプロセスに悪影響が及ばない時間帯に、スキーマの拡張をご計画ください。  
 
-    -   Nelle foreste Windows 2000 l'estensione dello schema causa una sincronizzazione completa dell'intero catalogo globale.  
+    -   Windows 2000 フォレストでは、スキーマを拡張するとグローバル カタログ全体が完全に同期化されます。  
 
-    -   A partire dalle foreste di Windows 2003, vengono replicati solo gli attributi appena aggiunti.  
+    -   Windows 2003 フォレスト以降、新しく追加された属性だけが複製されます。  
 
-**Dispositivi e client che non usano lo schema di Active Directory:**  
+**Active Directory スキーマを使用しないデバイスとクライアント:**  
 
--   Dispositivi mobili gestiti dal connettore Exchange Server  
+-   Exchange Server コネクタで管理されているモバイル デバイス  
 
--   Il client per computer Mac  
+-   Mac コンピューター用クライアント  
 
--   Il client per i server Linux e UNIX  
+-   Linux および UNIX サーバー用クライアント  
 
--   Dispositivi mobili registrati da Configuration Manager  
+-   Configuration Manager に登録されたモバイル デバイス  
 
--   Dispositivi mobili registrati da Microsoft Intune  
+-   Microsoft Intune で登録されるモバイル デバイス  
 
--   I client legacy del dispositivo mobile  
+-   モバイル デバイス レガシ クライアント  
 
--   I client Windows configurati solo per la gestione client Internet  
+-   インターネットのみのクライアント管理用に構成した Windows クライアント  
 
--   Client Windows rilevati da Configuration Manager in Internet  
+-   Configuration Manager でインターネットで検出される Windows クライアント  
 
-## <a name="capabilities-that-benefit-from-extending-the-schema"></a>Funzionalità che traggono vantaggio dall'estensione dello schema  
-**Installazione del computer client e assegnazione sito**: quando si installa un nuovo client in un computer Windows, il client cerca le proprietà di installazione in Active Directory Domain Services.  
+## <a name="capabilities-that-benefit-from-extending-the-schema"></a>スキーマの拡張によってメリットを受ける機能  
+**クライアント コンピューターのインストールとサイトの割り当て** - Windows コンピューターに新しいクライアントがインストールされると、クライアントが Active Directory Domain Services を検索して、インストールのプロパティを見つけます。  
 
--   **Soluzioni alternative:** se non si estende lo schema, usare una delle soluzioni alternative seguenti per fornire i dettagli di configurazione necessari per l'installazione nei computer:  
+-   **回避策:** スキーマを拡張しない場合は、次のいずれかのオプションを使って、コンピューターにインストールが必要な構成詳細を提示する必要があります。  
 
-    -   **Usare l'installazione push client**. Prima di usare un metodo di installazione client, assicurarsi che tutti i prerequisiti siano soddisfatti. Per altre informazioni, vedere la sezione "Dipendenze del metodo di installazione" in [Prerequisiti per la distribuzione dei client nei computer Windows](/sccm/core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers).  
+    -   **クライアント プッシュ インストールを使用する**。 クライアント インストール方法を使用する前に、すべての前提条件が満たされていることを確認してください。 詳細については、「[Windows コンピューターにクライアントを展開するための前提条件](/sccm/core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers)」の「インストール方法の依存関係」セクションを参照してください。  
 
-    -   **Installare manualmente i client** e specificare le proprietà di installazione client usando le proprietà della riga di comando di installazione CCMSetup. È necessario includere le seguenti operazioni:  
+    -   **クライアントを手動でインストールし**、CCMSetup インストールのコマンドライン プロパティを使用してクライアント インストールのプロパティを指定する。 以下の手順を実行する必要があります。  
 
-        -   Specificare un punto di gestione o un percorso di origine da cui il computer può scaricare i file di installazione tramite la proprietà CCMSetup **/mp:=&lt;nome computer punto di gestione\>** o **/source:&lt;percorso ai file di origine client\>** nella riga di comando CCMSetup durante l'installazione del client.  
+        -   クライアントのインストール時に CCMSetup コマンド ラインで、CCMSetup プロパティ **/mp:=&lt;管理ポイント名のコンピューター名\>** または **/source:&lt; クライアント ソース ファイルへのパス\>** を使用して、インストール ファイルのダウンロード元となる管理ポイントまたはソース パスを指定します。  
 
-        -   Specificare un elenco di punti di gestione iniziali che il client userà per eseguirne l'assegnazione al sito e quindi scaricare i criteri client e le impostazioni del sito. A tale scopo, usare la proprietà Client.msi SMSMP di CCMSetup.  
+        -   クライアントがサイトを割り当て、クライアントのポリシーとサイト設定をダウンロードするために必要となる初期管理ポイントのリストを指定します。 その際、CCMSetup Client.msi プロパティ SMSMP を使用してください。  
 
-    -   **Pubblicare il punto di gestione in DNS o WINS** e configurare i client per usare questo metodo di individuazione della posizione del servizio.  
+    -   **DNS または WINS に管理ポイントを発行** し、このサービスの場所の方法を使用するようにクライアントを構成します。  
 
-**Configurazione della porta per la comunicazione "client a server"**: durante l'installazione, il client viene configurato con le informazioni della porta archiviate in Active Directory. Se in seguito si modifica la porta per la comunicazione tra client e server di un sito, il client può ottenere l'impostazione della nuova porta da Active Directory Domain Services.  
+**クライアント - サーバー間の通信用のポート構成** - クライアントのインストール時に、Active Directory に格納されているポート情報によって構成されます。 その後にサイトのクライアント - サーバー間の通信ポートが変更された場合は、クライアントは Active Directory Domain Services からこの新しいポート設定を取得できます。  
 
--   **Soluzioni alternative:** Se non si estende lo schema, usare una delle soluzioni alternative seguenti per fornire ai client esistenti la configurazione della nuova porta:  
+-   **回避策:** スキーマを拡張しない場合、以下のいずれかのオプションを使用して既存のクライアントに新しいポート構成を提供します。  
 
-    -   **Reinstallare i client** usando opzioni che configurano la nuova porta.  
+    -   新しいポートを構成するオプションを使用して**クライアントを再インストール**します。  
 
-    -   **Distribuire ai client uno script personalizzato che aggiorna le informazioni sulla porta**. Se i client non possono comunicare con un sito a causa di una modifica di porta, è possibile usare Configuration Manager per distribuire lo script. È ad esempio possibile usare Criteri di gruppo.  
+    -   **ポート情報を更新するカスタム スクリプトをクライアントに展開します**。 ポートが変更されたためにクライアントがサイトと通信できない場合は、Configuration Manager を使用してこのスクリプトを展開することはできません。 たとえば、グループ ポリシーを使用できます。  
 
-**Scenari di distribuzione del contenuto**: quando si crea contenuto in un sito e lo si distribuisce a un altro sito nella gerarchia, il sito ricevente deve essere in grado di verificare la firma dei dati del contenuto firmato. A tale scopo, è necessario l'accesso alla chiave pubblica del sito di origine in cui vengono creati i dati. Quando si estende lo schema di Active Directory per Configuration Manager, viene resa disponibile la chiave pubblica di un sito per tutti i siti nella gerarchia.  
+**コンテンツの展開方法** - 特定のサイトでコンテンツを作成し、そのコンテンツを階層内の別のサイトに展開する場合、受信側のサイトは署名付きコンテンツ データの署名を検証する必要があります。 そのためには、データの作成元のソース サイトの公開キーへのアクセスが必要となります。 Configuration Manager 用に Active Directory スキーマを拡張すると、サイトの公開キーが階層内の全サイトでアクセス可能になります。  
 
--   **Soluzione alternativa:** Se non si estende lo schema di Active Directory, usare lo strumento di manutenzione gerarchia, **preinst.exe**, per scambiare le informazioni sulla chiave di sicurezza tra i siti.  
+-   **回避策:** スキーマを拡張しない場合は、階層のメンテナンス ツール **preinst.exe**を使用して、サイト間でセキュリティ キー情報を交換します。  
 
-     Se ad esempio si prevede di creare il contenuto in un sito primario e di distribuirlo in un sito secondario all'interno di un altro sito primario, è necessario estendere lo schema di Active Directory per consentire al sito secondario di ottenere la chiave pubblica per il sito primario di origine oppure usare preinst.exe per condividere direttamente le chiavi tra i due siti.  
+     たとえば、プライマリ サイトでコンテンツを作成し、別のプライマリ サイト下にあるセカンダリ サイトにそのコンテンツを展開する場合は、セカンダリ サイトでソース プライマリ サイトの公開キーを取得できるように Active Directory スキーマを拡張するか、preinst.exe を使用して 2 つのサイト間で直接キーを共有することができます。  
 
-## <a name="active-directory-attributes-and-classes"></a>Classi e attributi di Active Directory  
-Quando si estende lo schema per System Center Configuration Manager, le classi e gli attributi seguenti vengono aggiunti allo schema e resi disponibili a tutti i siti di Configuration Manager nella foresta Active Directory.  
+## <a name="active-directory-attributes-and-classes"></a>Active Directory 属性とクラス  
+System Center Configuration Manager のスキーマを拡張すると、次のクラスと属性がスキーマに追加され、Active Directory フォレスト内のすべての Configuration Manager サイトで利用できるようになります。  
 
--   Attributi:  
+-   属性:  
 
     -   cn=mS-SMS-Assignment-Site-Code  
 
@@ -122,7 +119,7 @@ Quando si estende lo schema per System Center Configuration Manager, le classi e
     -   cn=MS-SMS-Ranged-IP-Low  
 
     -   cn=MS-SMS-Roaming-Boundaries  
-        in  
+        場所:  
 
     -   cn=MS-SMS-Site-Boundaries  
 
@@ -132,7 +129,7 @@ Quando si estende lo schema per System Center Configuration Manager, le classi e
 
     -   cn=mS-SMS-Version  
 
--   Classi:  
+-   クラス:  
 
     -   cn=MS-SMS-Management-Point  
 
@@ -144,11 +141,10 @@ Quando si estende lo schema per System Center Configuration Manager, le classi e
 
 > [!NOTE]  
 
->  Le estensioni dello schema possono includere attributi e classi ereditati da versioni precedenti del prodotto, ma non usati da System Center Configuration Manager. Ad esempio:  
+>  スキーマの拡張には、旧バージョンの製品から継承され、System Center Configuration Manager では使用されなくなった属性とクラスが含まれる場合があります。 たとえば、  
 
 >   
->  -   Attributo: cn=MS-SMS-Site-Boundaries  
-> -   Classe: cn=MS-SMS-Server-Locator-Point  
+>  -   属性: cn=MS-SMS-Site-Boundaries  
+> -   クラス: cn=MS-SMS-Server-Locator-Point  
 
-Per assicurarsi che gli elenchi precedenti siano aggiornati, esaminare il file **ConfigMgr_ad_schema.LDF** nella cartella **\SMSSETUP\BIN\x64** del supporto di installazione di System Center Configuration Manager.  
-
+上記のリストが最新のものであることをご確認ください。そのためには、System Center Configuration Manager インストール メディアの **\SMSSETUP\BIN\x64** フォルダーから **ConfigMgr_ad_schema.LDF** ファイルを確認します。  

@@ -1,39 +1,35 @@
 ---
-title: Firewall e domini | Microsoft Docs
-description: Configurare firewall, porte e domini per la preparazione alle comunicazioni di System Center Configuration Manager.
+title: "ファイアウォールとドメイン | Microsoft Docs"
+description: "System Center Configuration Manager 通信の準備としてファイアウォール、ポート、ドメインを設定します。"
 ms.custom: na
 ms.date: 2/6/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: d6993bba-f6bd-4639-adbf-efc1c638b2f3
-caps.latest.revision: 15
-caps.handback.revision: 0
+caps.latest.revision: "15"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: bd20983eeca47bdd63e0385440e6c8d64901b902
 ms.openlocfilehash: 4a2a8f96a900a2c4959ae3ff59232771ece95991
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="set-up-firewalls-ports-and-domains-for-system-center-configuration-manager"></a>Configurare firewall, porte e domini per System Center Configuration Manager
+# <a name="set-up-firewalls-ports-and-domains-for-system-center-configuration-manager"></a>System Center Configuration Manager のファイアウォール、ポート、ドメインの設定
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Per preparare la rete al supporto di System Center Configuration Manager, pianificare la configurazione di infrastrutture come i firewall per il passaggio delle comunicazioni usate da Configuration Manager.  
+System Center Configuration Manager をサポートするためにネットワークを準備するには、Configuration Manager で使用される通信をファイアウォールで許可するなど、インフラストラクチャの設定を計画します。  
 
-|Considerazione|Dettagli|  
+|考慮事項|説明|  
 |-------------------|-------------|  
-|**Porte e protocolli** usati da diverse funzionalità di Configuration Manager. Alcune porte sono obbligatorie, mentre altri **domini e servizi** possono essere personalizzati.|La maggior parte delle comunicazioni di Configuration Manager usa porte comuni, ad esempio la porta 80 per HTTP o la 443 per le comunicazioni HTTPS. Tuttavia, [alcuni ruoli del sistema del sito supportano l'uso di siti Web personalizzati](/sccm/core/plan-design/network/websites-for-site-system-servers) e porte personalizzate.<br /><br /> **Prima di distribuire Configuration Manager**, identificare le porte da usare e configurare i firewall in modo appropriato.<br /><br /> **Se è necessario modificare una porta** dopo l'installazione di Configuration Manager, non trascurare l'aggiornamento dei firewall sui dispositivi e sulla rete. Modificare anche la configurazione della porta dall'interno di Configuration Manager.<br /><br /> Per altre informazioni, vedere: </br>- [Come configurare le porte di comunicazione client](../../../core/clients/deploy/configure-client-communication-ports.md) </br>- [Porte usate in Configuration Manager](../../../core/plan-design/hierarchy/ports.md) </br>- [Requisiti di accesso Internet per il punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_urls)|  
-|**Domini e i servizi** che i client e i server del sito possono avere necessità di usare.|Le funzionalità di Configuration Manager possono richiedere che i client e i server del sito abbiano accesso a servizi e domini specifici su Internet, ad esempio Windowsudpate.microsoft.com o il servizio Microsoft Intune.<br /><br /> Se si usa Microsoft Intune per gestire i dispositivi mobili, è necessario anche configurare l'accesso a [porte e domini richiesti da Intune.](https://docs.microsoft.com/en-us/intune/get-started/network-infrastructure-requirements-for-microsoft-intune)|  
-|**Server proxy** per i server del sistema del sito e per le comunicazioni client. È possibile specificare i server proxy per diversi client e server di sistema del sito.|Dal momento che queste configurazioni vengono eseguite in fase di installazione di un ruolo del sistema del sito o un client, è sufficiente essere a conoscenza delle configurazioni del server proxy per riferimento futuro quando si configurano i ruoli del sistema del sito e i client.<br /><br /> Se non si è certi se per la distribuzione sarà necessario usare i server proxy, esaminare [Supporto dei server proxy in System Center Configuration Manager](../../../core/plan-design/network/proxy-server-support.md) per conoscere i ruoli del sistema del sito e le operazioni del client che possono usare un server proxy.|   
+|さまざまな Configuration Manager 機能で使用する**ポートとプロトコル**。 必須のポートと、カスタマイズできる**ドメインとサービス**があります。|ほとんどの Configuration Manager 通信では、HTTP 通信にポート 80、HTTPS 通信にポート 443 など、共通のポートを使用します。 ただし、[一部のサイト システムの役割では、カスタム Web サイトとカスタム ポートの使用をサポート](/sccm/core/plan-design/network/websites-for-site-system-servers)しています。<br /><br /> **Configuration Manager を展開する前に**、使用する予定のポートを特定し、ファイアウォールを適宜設定します。<br /><br /> **Configuration Manager をインストールした後でポートを変更する必要がある場合**、必ずデバイスとネットワークでファイアウォールを更新し、Configuration Manager 内からポートの構成を変更してください。<br /><br /> 詳細については、次をご覧ください。 </br>- [クライアント通信ポートを構成する方法](../../../core/clients/deploy/configure-client-communication-ports.md) </br>- [Configuration Manager で使用されるポート](../../../core/plan-design/hierarchy/ports.md) </br>- [サービス接続ポイントのインターネット アクセス要件](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_urls)|  
+|サイト サーバーとクライアントが使用する可能性のある**ドメインとサービス**。|Configuration Manager 機能では、サイト サーバーおよびクライアントが Windowsudpate.microsoft.com や Microsoft Intune サービスなどのインターネット上の特定のサービスおよびドメインにアクセスする必要がある場合があります。<br /><br /> Microsoft Intune を使用してモバイル デバイスを管理する場合は、[Intune で必要なポートとドメイン](https://docs.microsoft.com/en-us/intune/get-started/network-infrastructure-requirements-for-microsoft-intune)へのアクセスも設定する必要があります。|  
+|サイト システム サーバーとクライアント通信用の**プロキシ サーバー** 。 異なるサイト システム サーバーとクライアントに対して別のプロキシ サーバーを指定することができます。|これらの構成はサイト システムの役割またはクライアントのインストール時に行われるため、サイト システムの役割とクライアントを構成するときに注意が必要なのは、後で参照するプロキシ サーバー構成のみです。<br /><br /> 展開でプロキシ サーバーを使用する必要があるかどうかがわからない場合は、「[System Center Configuration Manager でのプロキシ サーバーのサポート](../../../core/plan-design/network/proxy-server-support.md)」を確認し、プロキシ サーバーを使用できるサイト システムの役割とクライアントの動作についてご理解ください。|   
 |  
-

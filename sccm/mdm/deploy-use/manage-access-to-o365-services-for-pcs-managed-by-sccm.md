@@ -1,53 +1,51 @@
 ---
-title: Gestire l'accesso ai servizi di Office 365 per computer gestiti | Microsoft Docs
-description: Informazioni su come configurare l'accesso condizionale per i PC gestiti da System Center Configuration Manager.
+title: "管理対象 PC の O365 サービスへのアクセスを管理する | Microsoft Docs"
+description: "System Center Configuration Manager で管理されている PC の条件付きアクセスを構成する方法について説明します。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 34024741-edfa-4088-8599-d6bafc331e62
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 5ebdd12672fecc633321a66738a0978f94ba0aa4
 ms.openlocfilehash: aede531a0406c3d30c9cca957896e002ed22ae51
-ms.contentlocale: it-it
-ms.lasthandoff: 07/20/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gestire l'accesso ai servizi di O365 per i PC gestiti da System Center Configuration Manager
+# <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>System Center Configuration Manager で管理されている PC の O365 サービスへのアクセスを管理する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-A partire dalla versione 1602 di Configuration Manager è possibile configurare l'accesso condizionale per i PC gestiti da System Center Configuration Manager.  
+Configuration Manager のバージョン 1602 より、System Center Configuration Manager によって管理されている PC の条件付きアクセスを構成することができます。  
 
 > [!IMPORTANT]  
-> Si tratta di una funzionalità di versione non definitiva disponibile negli aggiornamenti 1602, 1606 e 1610. Le funzionalità di versioni non definitive sono incluse nel prodotto a scopo di test preliminare in un ambiente di produzione, ma non devono essere considerate pronte per l'ambiente di produzione. Per altre informazioni, vedere la sezione relativa all'[abilitazione delle funzionalità facoltative dagli aggiornamenti](../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease).
-> - Dopo aver installato l'aggiornamento 1602, il tipo di funzionalità viene visualizzato come rilasciato anche se si tratta di una funzionalità di versione non definitiva.
-> - Se si esegue l'aggiornamento dalla versione 1602 alla versione 1606, il tipo di funzionalità viene visualizzato come rilasciato anche se rimane come funzionalità di versione non definita.
-> - Se si esegue l'aggiornamento dalla versione 1511 direttamente alla versione 1606, il tipo di funzionalità viene visualizzato come funzionalità di versione non definitiva.
+> これは、更新プログラム 1602、更新プログラム 1606、更新プログラム 1610 で使用できるプレリリース機能です。 プレリリース機能は、運用環境での早期テストのためにこの製品に含まれていますが、運用環境で使用することはできません。 詳細については、「[更新プログラムからプレリリース機能を使用する](../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease)」を参照してください。
+> - 更新プログラム 1602 をインストールすると、プレリリース機能であっても機能の種類はリリース済みとして表示されます。
+> - その後 1602 から 1606 に更新した場合、プレリリース機能のままですが、機能の種類はリリース済みとして表示されます。
+> - バージョン 1511 から 1606 に直接更新した場合、機能の種類はプレリリースとして表示されます。
 
-Per informazioni su come configurare l'accesso condizionale per i dispositivi registrati e gestiti da Intune o per i PC appartenenti a un dominio e non valutati per verificarne la conformità, vedere [Gestire l'accesso ai servizi in System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md).
+Intune によって登録および管理されているデバイスへの条件付きアクセスや、ドメインに参加していてコンプライアンス評価対象ではない PC への条件付きアクセスを構成する方法については、「[System Center Configuration Manager でサービスへのアクセスを管理する](../../protect/deploy-use/manage-access-to-services.md)」を参照してください。
 
-## <a name="supported-services"></a>Servizi supportati  
+## <a name="supported-services"></a>サポートされているサービス  
 
 -   Exchange Online
 -   SharePoint Online
 
-## <a name="supported-pcs"></a>PC supportati  
+## <a name="supported-pcs"></a>サポートされている PC  
 
 -   Windows 7
 -   Windows 8.1
 -   Windows 10
 
-## <a name="supported-windows-servers"></a>Versioni supportate di Windows Server
+## <a name="supported-windows-servers"></a>サポートされている Windows サーバー
 
 -   2008 R2
 -   2012
@@ -55,89 +53,89 @@ Per informazioni su come configurare l'accesso condizionale per i dispositivi re
 -   2016
 
     > [!IMPORTANT]
-    > Per i server Windows Server a cui possono accedere più utenti contemporaneamente, gli stessi criteri di accesso condizionale devono essere distribuiti a tutti gli utenti connessi.
+    > 複数のユーザーが同時にサインインしている可能性のある Windows サーバーについては、サインインしているすべてのユーザーに同じ条件付きアクセス ポリシーを展開する必要があります。
 
-## <a name="configure-conditional-access"></a>Configurare l'accesso condizionale  
- Per configurare l'accesso condizionale, è prima di tutto necessario creare criteri di conformità e configurare criteri di accesso condizionale. Quando si configurano criteri di accesso condizionale per i PC, è possibile richiedere che i PC siano conformi ai criteri di conformità per accedere ai servizi Exchange Online e SharePoint Online.  
+## <a name="configure-conditional-access"></a>条件付きアクセスの構成  
+ 条件付きアクセスをセットアップするには、最初にコンプライアンス ポリシーを作成して、条件付きアクセス ポリシーを構成する必要があります。 コンプライアンス ポリシーに対応している PC のみが Exchange Online サービスと SharePoint Online サービスにアクセスできるように、PC の条件付きアクセス ポリシーを構成できます。  
 
-### <a name="prerequisites"></a>Prerequisiti  
+### <a name="prerequisites"></a>必要条件  
 
--   ADFS Sync e un abbonamento a O365. L'abbonamento a Office 365 serve per la configurazione di Exchange Online e SharePoint Online.  
+-   ADFS の同期と O365 サブスクリプション。 O365 サブスクリプションは、Exchange Online と SharePoint Online のセットアップのためのものです。  
 
--   Sottoscrizione di Microsoft Intune. La sottoscrizione di Microsoft Intune deve essere configurata nella console di Configuration Manager. La sottoscrizione di Intune viene usata per trasmettere lo stato di conformità del dispositivo ad Azure Active Directory e per la gestione delle licenze utente.  
+-   Microsoft Intune サブスクリプション。 Microsoft Intune サブスクリプションは、Configuration Manager コンソールで構成される必要があります。 Azure Active Directory にデバイスのコンプライアンス対応状態を中継するために、また、ユーザー ライセンスのために、Intune サブスクリプションが使用されます。  
 
- I PC devono soddisfare i requisiti seguenti:  
+ PC は、次の要件を満たす必要があります。  
 
--   [Prerequisiti](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1) per la registrazione automatica dei dispositivi con Azure Active Directory  
+-   Azure Active Directory への自動デバイス登録の[前提条件](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1)   
 
-     È possibile registrare i PC con Azure AD tramite i criteri di conformità.  
+     コンプライアンス ポリシーに基づいて Azure AD に PC を登録できます。  
 
-    -   Per i PC Windows 8.1 e Windows 10, è possibile usare un oggetto Criteri di gruppo di Active Directory per configurare i dispositivi per la registrazione automatica con Azure AD.  
+    -   Windows 8.1 と Windows 10 の PC では、Active Directory グループ ポリシーを使用して、Azure AD に自動的に登録するデバイスを構成することができます。  
 
-    -   o   Per i PC Windows 7, è necessario distribuire il pacchetto software di registrazione dei dispositivi nel PC Windows 7 con System Center Configuration Manager. L'argomento [Registrazione automatica dei dispositivi con Azure Active Directory per i dispositivi Windows aggiunti a un dominio](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1) offre informazioni più dettagliate.  
+    -   Windows 7 の PC の場合には、System Center Configuration Manager を利用して Windows 7 PC にデバイス登録ソフトウェア パッケージを展開する必要があります。 詳細については、「[Azure Active Directory への Windows ドメイン参加済みデバイスの自動デバイス登録](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1)」トピックを参照してください。  
 
--   I PC devono usare Office 2013 o Office 2016 con l'autenticazione moderna [abilitata](https://support.office.com/en-US/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a).  
+-   先進認証が [有効になっている](https://support.office.com/en-US/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a)Office 2013 または Office 2016 を使用する必要があります。  
 
- I passaggi descritti di seguito si applicano sia a Exchange Online sia a SharePoint Online  
+ 下記の手順は、Exchange Online と SharePoint Online の両方に適用されます。  
 
-### <a name="step-1-configure-compliance-policy"></a>Passaggio 1. Configurare i criteri di conformità  
- Nella console di Configuration Manager creare criteri di conformità con le regole seguenti:  
+### <a name="step-1-configure-compliance-policy"></a>手順 1. コンプライアンス ポリシーの構成  
+ Configuration Manager コンソールで、次の規則を含むコンプライアンス ポリシーを作成します。  
 
--   Richiedi registrazione in Azure Active Directory: questa regola controlla se il dispositivo dell'utente è aggiunto all'area di lavoro in Azure AD e, in caso contrario, il dispositivo viene registrato automaticamente in Azure AD. La registrazione automatica è supportata solo in Windows 8.1. Per i PC con Windows 7, distribuire un file MSI per eseguire la registrazione automatica. Per informazioni dettagliate, vedere [Registrazione automatica dei dispositivi con Azure Active Directory](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1)  
+-   Azure Active Directory への登録が必要: この規則は、ユーザーのデバイスが Azure AD に社内参加しているかどうかをチェックし、参加していない場合には Azure AD に自動的に登録します。 自動登録がサポートされているのは Windows 8.1 のみです。 Windows 7 PC の場合には、MSI を展開して自動登録を実行します。 詳細については、 [Azure Active Directory への自動デバイス登録](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1)に関する記事を参照してください。  
 
--   **Tutti gli aggiornamenti richiesti installati con una scadenza maggiore di X giorni:** questa regola controlla se il dispositivo dell'utente dispone di tutti gli aggiornamenti necessari (specificati nella regola Richiedi aggiornamenti automatici) entro la scadenza e il periodo di tolleranza specificati dall'utente e installa automaticamente eventuali aggiornamenti necessari in sospeso.  
+-   **必要な更新が特定の日数の期限を過ぎている場合、そのすべてをインストール:** このルールは、ユーザーが指定した期限および猶予期間内の必須のすべての更新 (「Required automatic updates」 (必須の自動更新) ルールで指定) がユーザーのデバイスに含まれているかどうかを確認し、保留されている必須の更新すべてを自動的にインストールします。  
 
--   **Richiedi Crittografia unità BitLocker:** questo è un controllo per verificare se l'unità principale (ad esempio, C:\\) nel dispositivo è crittografata con BitLocker. Se la crittografia Bitlocker non è attivata nel dispositivo primario, l'accesso alla posta elettronica e ai servizi di SharePoint è bloccato.  
+-   **BitLocker ドライブ暗号化が必要:** これは、デバイスのプライマリ ドライブ (C:\\ など) が BitLocker で暗号化されたかどうかをチェックします。 Bitlocker 暗号化がプライマリ デバイスで有効でない場合、電子メール サービスおよび SharePoint サービスへのアクセスがブロックされます。  
 
--   **Richiedi antimalware:** questo è un controllo per verificare se il software antimalware (System Center Endpoint Protection o solo Windows Defender) è abilitato e in esecuzione. Se non è abilitato, l'accesso alla posta elettronica e ai servizi di SharePoint è bloccato.  
+-   **マルウェア対策が必要:** これは、マルウェア対策ソフトウェア (System Center Endpoint Protection または Windows Defender 限定) が有効で実行されているかどうかをチェックします。 無効な場合、電子メール サービスおよび SharePoint サービスへのアクセスがブロックされます。  
 
-### <a name="step-2-evaluate-the-effect-of-conditional-access"></a>Passaggio 2: Valutare l'effetto dell'accesso condizionale  
- Eseguire il report di conformità dell'accesso condizionale. Tale report si trova nella sezione Monitoraggio in Report > Gestione conformità e impostazioni. Il report indica lo stato di conformità di tutti i dispositivi.  Ai dispositivi segnalati come non conformi verrà impedito l'accesso a Exchange Online e SharePoint Online.  
+### <a name="step-2-evaluate-the-effect-of-conditional-access"></a>手順 2. 条件付きアクセスの効果の評価  
+ 条件付きアクセス コンプライアンス レポートを実行します。 このレポートは [レポート] > [コンプライアンスと設定の管理] の [監視] セクションにあります。 これには、すべてのデバイスのコンプライアンス対応状態が表示されます。  非対応としてレポートされたデバイスから Exchange Online および SharePoint Online へのアクセスはブロックされます。  
 
  ![CA&#95;compliance&#95;report](media/CA_compliance_report.png)  
 
-### <a name="configure-active-directory-security-groups"></a>Configurare i gruppi di sicurezza di Active Directory  
- I criteri di accesso condizionale sono destinati a diversi gruppi di utenti in base ai tipi di criteri. Questi gruppi contengono gli utenti a cui saranno destinati i criteri o che ne saranno esenti. Quando a un utente vengono destinati criteri, ogni dispositivo che egli usa deve essere conforme per poter accedere al servizio.  
+### <a name="configure-active-directory-security-groups"></a>Active Directory セキュリティ グループの構成  
+ 条件付きアクセス ポリシーは、ポリシーの種類に応じてユーザーのグループを対象とします。 これらのグループには、ポリシーの対象となるユーザーや、ポリシーから除外されるユーザーが含まれます。 サービスにアクセスするには、ポリシーの対象であるユーザーが使用する各デバイスがポリシーに対応している必要があります。  
 
- Gruppi di utenti di sicurezza di Active Directory. Questi gruppi di utenti devono essere sincronizzati con Azure Active Directory. È anche possibile configurare questi gruppi nell'interfaccia di amministrazione di Office 365 o nel portale per gli account di Intune.  
+ Active Directory セキュリティ ユーザー グループ。 これらのユーザー グループは、Azure Active Directory に同期される必要があります。 これらのグループを Office 365 管理センターまたは Intune アカウント ポータルで構成することもできます。  
 
- È possibile specificare due tipi di gruppi in ogni criterio. :  
+ 各ポリシーには、次の 2 つのグループの種類を指定できます。 :  
 
--   **Gruppi di destinazione**: gruppi di utenti a cui si applicano i criteri. Usare lo stesso gruppo per i criteri di conformità e di accesso condizionale.  
+-   **対象グループ** – ポリシーが適用されるユーザー グループ。 コンプライアンスと条件付きアクセス ポリシーの両方に同じグループを使用してください。  
 
--   **Gruppi esentati**: gruppi di utenti che sono esentati dai criteri (facoltativo)  
-    Se un utente si trova in entrambi i gruppi, sarà esentato dai criteri.  
+-   **例外グループ** – ポリシーから除外されるユーザー グループ (省略可能)  
+    ユーザーが両方に含まれている場合は、ポリシーから除外されます。  
 
-     Solo i gruppi di destinazione dei criteri di accesso condizionale vengono valutati.  
+     条件付きアクセス ポリシーの対象となるグループだけが評価されます。  
 
-### <a name="step-3--create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online"></a>Passaggio 3.  Creare criteri di accesso condizionale per Exchange Online e SharePoint Online  
+### <a name="step-3--create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online"></a>手順 3.  Exchange Online および SharePoint Online の条件付きアクセス ポリシーを作成します。  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、 **[資産とコンプライアンス]**をクリックします。  
 
-2.  Per creare criteri per Exchange Online, selezionare **Abilita criteri di accesso condizionale per Exchange Online**.  
+2.  Exchange Online のポリシーを作成するには、 **[Exchange Online の条件付きアクセス ポリシーを有効にする]**を選びます。  
 
-     Per creare criteri per SharePoint Online, selezionare **Abilita criteri di accesso condizionale per SharePoint Online**.  
+     SharePoint Online のポリシーを作成するには、 **[Exchange Online の条件付きアクセス ポリシーを有効にする]**を選びます。  
 
-3.  Nella scheda **Home** del gruppo **Collegamenti** fare clic su **Configura i criteri di accesso condizionale nella console di Intune**. Potrebbe essere necessario specificare il nome utente e la password dell'account usato per la connessione di Configuration Manager a Intune.  
+3.  [ **ホーム** ] タブの [ **リンク** ] グループで、[ **Intune コンソールでの条件付きアクセス ポリシーの構成**] をクリックします。 Configuration Manager を Intune に接続するために使用されるアカウントのユーザー名とパスワードを指定する必要がある場合があります。  
 
-     Verrà visualizzata la console di amministrazione di Intune.  
+     Intune 管理コンソールが開きます。  
 
-4.  Per Exchange Online, nella console di amministrazione di Microsoft Intune fare clic su **Criteri > Accesso condizionale > Criteri di Exchange Online**.  
+4.  Exchange Online の場合は、Microsoft Intune の管理コンソールで **[ポリシー] > [条件付きアクセス] > [Exchange Online ポリシー]** をクリックします。  
 
-     Per SharePoint Online, nella console di amministrazione di Microsoft Intune fare clic su **Criteri > Accesso condizionale > Criteri di SharePoint Online**.  
+     SharePoint Online の場合は、Microsoft Intune の管理コンソールで **[ポリシー] > [条件付きアクセス] > [SharePoint Online ポリシー]** をクリックします。  
 
-5.  Impostare il requisito per il PC Windows sull'opzione**I dispositivi devono essere conformi**.  
+5.  Windows PC の要件を**[デバイスは準拠デバイスである必要があります]**オプションに設定します。  
 
-6.  In **Gruppi di destinazione**fare clic su **Modifica** per selezionare i gruppi di sicurezza di Azure Active Directory ai quali verranno applicati i criteri.  
+6.  **[対象グループ]**で、 **[変更]** をクリックして、ポリシーを適用する Azure Active Directory セキュリティ グループを選択します。  
 
     > [!NOTE]  
-    >  È necessario usare lo stesso gruppo di utenti di sicurezza per la distribuzione dei criteri di conformità e il gruppo di destinazione per i criteri di accesso condizionale.  
+    >  コンプライアンス ポリシーの展開と条件付きアクセス ポリシーの対象グループに同じセキュリティ ユーザー グループを使用してください。  
 
-     Facoltativamente, in **Gruppi esentati**fare clic su **Modifica** per selezionare i gruppi di sicurezza di Azure Active Directory esentati da questi criteri.  
+     **[例外グループ]**で、必要に応じて **[変更]** をクリックして、このポリシーから除外する Azure Active Directory セキュリティ グループを選択します。  
 
-7.  Fare clic su **Salva** per creare e salvare i criteri.  
+7.  **[保存]** をクリックしてポリシーを作成および保存します  
 
- Gli utenti finali bloccati a causa della mancanza di conformità visualizzeranno le informazioni sulla conformità in Software Center di System Center Configuration Manager e verrà avviata una nuova valutazione dei criteri dopo la risoluzione dei problemi di conformità.  
+ 非対応であるためにブロックされているエンドユーザーに対しては、System Center Configuration Manager ソフトウェア センターにコンプライアンス情報が表示されます。コンプライアンスに関する問題が解決されたら、そのようなエンドユーザーが新しいポリシー評価を開始します。  
 
 <!---
 ##  <a name="bkmk_KnownIssues"></a> Known issues  
@@ -149,8 +147,7 @@ Per informazioni su come configurare l'accesso condizionale per i dispositivi re
 
 -   Windows 10 users may see multiple access failures when trying to reach O365 and/or SharePoint online resources. Note that conditional access is not fully supported for Windows 10.  
 --->
-## <a name="see-also"></a>Vedere anche
+## <a name="see-also"></a>関連項目
 
-- [Protect data and site infrastructure with System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md) (Proteggere i dati e l'infrastruttura del sito con System Center Configuration Manager)
-- [Diagramma di flusso per la risoluzione dei problemi di accesso condizionale di Configuration Manager](https://gallery.technet.microsoft.com/Conditional-access-fd747c1a?redir=0)
-
+- [System Center Configuration Manager でのデータとサイト インフラストラクチャの保護](../../protect/understand/protect-data-and-site-infrastructure.md)
+- [Configuration Manager の条件付きアクセスによるトラブルシューティング フローチャート](https://gallery.technet.microsoft.com/Conditional-access-fd747c1a?redir=0)

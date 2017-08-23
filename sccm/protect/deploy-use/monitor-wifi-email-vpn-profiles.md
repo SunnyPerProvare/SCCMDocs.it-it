@@ -1,75 +1,67 @@
 ---
-title: Monitorare profili di posta elettronica, Wi-Fi e VPN | Microsoft Docs
-description: "Informazioni su come monitorare lo stato di conformità dei profili di posta elettronica, Wi-Fi e VPN in System Center Configuration Manager."
+title: "電子メール、Wi-Fi、VPN のプロファイルの監視 | Microsoft Docs"
+description: "電子メール、Wi-Fi、VPN のプロファイルのコンプライアンス ステータスを System Center Configuration Manager で監視する方法を説明します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e2315b8b-98bc-40e1-8ef9-bfb5e69ab109
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: Nbigman
 ms.author: nbigman
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
 ms.openlocfilehash: 73d941633d270cf9628f8be14e1e56f3c78624b6
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="monitor-email-wi-fi-and-vpn-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager での電子メール、Wi-Fi、VPN のプロファイルの監視
 
-# <a name="monitor-email-wi-fi-and-vpn-profiles-in-system-center-configuration-manager"></a>Monitorare profili di posta elettronica, Wi-Fi e VPN in System Center Configuration Manager
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+階層内のユーザーに System Center Configuration Manager の電子メール、Wi-Fi、VPN のプロファイルを展開した後は、以下の手順に従って、プロファイルのコンプライアンス ステータスを監視できます。  
 
-Dopo aver distribuito i profili di posta elettronica, Wi-Fi o VPN in System Center Configuration Manager agli utenti della gerarchia, è possibile usare le procedure seguenti per monitorare lo stato di conformità del profilo:  
+-   [Configuration Manager コンソールでコンプライアンス評価結果を表示する方法](#BKMK_console)  
 
--   [Come visualizzare i risultati di conformità nella console di Configuration Manager](#BKMK_console)  
+-   [レポートを使用してコンプライアンス評価結果を表示する方法](#BKMK_Reports)  
 
--   [Come visualizzare i risultati di conformità usando i report](#BKMK_Reports)  
+##  <a name="BKMK_console"></a> Configuration Manager コンソールでコンプライアンス評価結果を表示する方法  
+ System Center Configuration Manager コンソールで、展開したプロファイルのコンプライアンスの詳細を表示するには、この手順に従います。  
 
-##  <a name="a-namebkmkconsolea-how-to-view-compliance-results-in-the-configuration-manager-console"></a><a name="BKMK_console"></a> Come visualizzare i risultati di conformità nella console di Configuration Manager  
- Seguire questa procedura per visualizzare i dettagli sulla conformità dei profili distribuiti nella console di System Center Configuration Manager.  
+#### <a name="to-view-compliance-results-in-the-configuration-manager-console"></a>Configuration Manager コンソールでコンプライアンス結果を表示するには  
 
-#### <a name="to-view-compliance-results-in-the-configuration-manager-console"></a>Per visualizzare i risultati di conformità nella console di Configuration Manager  
+1.  System Center Configuration Manager コンソールで、**[監視]** をクリックします。  
 
-1.  Nella console di System Center Configuration Manager fare clic su **Monitoraggio**.  
+2.  [監視] **** ワークスペースで、[展開] ****をクリックします。  
 
-2.  Nell'area di lavoro **Monitoraggio** fare clic su **Distribuzioni**.  
+3.  **[展開]** の一覧で、コンプライアンス情報を確認するプロファイルの展開を選択します。  
 
-3.  Nell'elenco **Distribuzioni** selezionare la distribuzione del profilo di cui si vuole verificare le informazioni sulla conformità.  
+4.  メイン ページで、プロファイルの展開のコンプライアンスに関する概要情報を確認できます。 詳細情報を表示するには、プロファイルの展開を選択してから、**[ホーム]** タブの **[展開]** グループで **[ステータスの表示]** をクリックして、**[展開ステータス]** ページを開きます。  
 
-4.  È possibile vedere le informazioni di riepilogo sulla conformità della distribuzione del profilo nella pagina principale. Per visualizzare informazioni più dettagliate, selezionare la distribuzione del profilo, nella scheda **Home** del gruppo **Distribuzione**, fare clic su **Visualizza stato** per aprire la pagina **Stato distribuzione** .  
+     [展開のステータス] **** ページには次のタブがあります。  
 
-     La pagina **Stato distribuzione** contiene le seguenti schede:  
-
-    -   **Conforme:** visualizza la conformità del profilo in base al numero degli asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** dell'area di lavoro **Asset e conformità** che contiene tutti gli utenti conformi a questo profilo. Il riquadro **Dettagli asset** visualizza utenti che sono conformi al profilo. Fare doppio clic su un utente nell'elenco per visualizzare informazioni aggiuntive.  
+    -   **対応:** 影響を受けた資産の数に基づいて、プロファイルのコンプライアンスが表示されます。 規則をダブルクリックして、[資産とコンプライアンス **** ] ワークスペースの [ユーザー **** ] ノードに、このプロファイルに対応しているすべてのユーザーが含まれた一時ノードを作成できます。 **[資産の詳細]** ウィンドウに、このプロファイルに対応しているユーザーが表示されます。 詳細情報を表示するには、一覧内のユーザーをダブルクリックします。  
 
         > [!IMPORTANT]  
-        >  Un profilo non viene valutato se non è applicabile a un dispositivo client, però viene restituito come conforme.  
+        >  プロファイルをクライアント デバイスに適用できない場合は評価されませんが、対応しているという結果が返されます。  
 
-    -   **Errore:** visualizza l'elenco di tutti gli errori per la distribuzione del profilo selezionata in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** dell'area di lavoro **Asset e conformità** che contiene tutti gli utenti che hanno generato errori con questo profilo. Quando si seleziona un utente, il riquadro **Dettagli asset** visualizza gli utenti interessati dal problema selezionato. Fare doppio clic su un utente nell'elenco per visualizzare informazioni aggiuntive sul problema.  
+    -   **エラー:** 選択したプロファイルの展開で発生したすべてのエラーの一覧が、影響を受けた資産の数に基づいて表示されます。 規則をダブルクリックして、[資産とコンプライアンス **** ] ワークスペースの [ユーザー **** ] ノードに、このプロファイルでエラーが生成されたすべてのユーザーが含まれた一時ノードを作成できます。 ユーザーを選択すると、[資産の詳細 **** ] ウィンドウに、選択した問題に影響を受けているユーザーが表示されます。 問題の詳細情報を表示するには、一覧内のユーザーをダブルクリックします。  
 
-    -   **Non conforme:** visualizza l'elenco di tutte le regole non conformi nel profilo in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** dell'area di lavoro **Asset e conformità** che contiene tutti gli utenti non conformi a questo profilo. Quando si seleziona un utente, il riquadro **Dettagli asset** visualizza gli utenti interessati dal problema selezionato. Fare doppio clic su un utente nell'elenco per visualizzare informazioni aggiuntive sul problema.  
+    -   **非対応:** プロファイルにある非対応の規則とその影響を受けた資産の数の一覧が表示されます。 規則をダブルクリックして、[ **資産とコンプライアンス** ] ワークスペースの [ **ユーザー** ] ノードに一時ノードを作成できます。このノードには、このプロファイルに対応していないすべてのユーザーを含めます。 ユーザーを選択すると、[資産の詳細 **** ] ウィンドウに、選択した問題に影響を受けているユーザーが表示されます。 問題の詳細情報を表示するには、一覧内のユーザーをダブルクリックします。  
 
-    -   **Sconosciuto:** visualizza l'elenco di tutti gli utenti che non sono conformi con la distribuzione del profilo selezionato e lo stato client attuale dei dispositivi.  
+    -   **不明:** 選択したプロファイルの展開でコンプライアンスがレポートされなかったすべてのユーザーの一覧が、デバイスの現在のクライアント ステータスと共に表示されます。  
 
-5.  Nella pagina **Stato distribuzione** è possibile vedere informazioni dettagliate sulla conformità del profilo distribuito. Viene creato un nodo temporaneo nel nodo **Distribuzioni** che consente di ritrovare rapidamente queste informazioni.  
+5.  **[展開ステータス]** ページでは、展開したプロファイルのコンプライアンスの詳細情報を確認できます。 [展開] **** ノードの下に一時ノードが作成されるため、後から再度この情報をすばやく確認できます。  
 
-##  <a name="a-namebkmkreportsa-how-to-view-compliance-results-by-using-reports"></a><a name="BKMK_Reports"></a> Come visualizzare i risultati di conformità usando i report  
- Le impostazioni di conformità, che includono profili in System Center Configuration Manager, includono anche vari report predefiniti che consentono di monitorare le informazioni sui profili. Tali report dispongono della categoria report di **Gestione conformità e impostazioni**.  
+##  <a name="BKMK_Reports"></a> レポートを使用してコンプライアンス評価結果を表示する方法  
+ System Center Configuration Manager のプロファイルを含むコンプライアンス設定には、プロファイルの情報を監視するのに便利なレポートが多数組み込まれています。 これらのレポートには、[コンプライアンスおよび設定管理] ****のカテゴリがあります。  
 
 > [!IMPORTANT]  
->  Usare un carattere jolly (%) quando si usano i parametri **Filtro dispositivo** e **Filtro utente** nei report delle impostazioni di conformità.  
+>  コンプライアンス設定でレポートの [デバイス フィルター **** ] と [ユーザー フィルター **** ] パラメーターを指定するときは、必ず、ワイルドカード (%) 文字を使ってください。  
 
- Per altre informazioni sulle modalità di configurazione dei report in System Center Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+ System Center Configuration Manager でのレポートの構成方法に関して詳しくは、「[System Center Configuration Manager のレポート](../../core/servers/manage/reporting.md)」を参照してください。  

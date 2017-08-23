@@ -1,53 +1,50 @@
 ---
-title: Visualizzare dati di diagnostica | Microsoft Docs
-description: "È possibile visualizzare i dati di diagnostica e di utilizzo per verificare che la gerarchia di System Center Configuration Manager non contenga informazioni riservate."
+title: "診断データの表示 | Microsoft Docs"
+description: "診断および使用状況データを表示して、System Center Configuration Manager 階層に機密情報が含まれていないことを確認します。"
 ms.custom: na
 ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 594eb284-0d93-4c5d-9ae6-f0f71203682a
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 199096db7a23fb14db98b95e75246ed254848ab7
 ms.openlocfilehash: 0932e2b2a4f3e13c35d6b7b0446083f1c233ce03
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-view-diagnostics-and-usage-data-for-system-center-configuration-manager"></a>Come visualizzare dati di diagnostica e di utilizzo per System Center Configuration Manager
+# <a name="how-to-view-diagnostics-and-usage-data-for-system-center-configuration-manager"></a>System Center Configuration Manager の診断および使用状況データを表示する方法
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-È possibile visualizzare i dati di diagnostica e di utilizzo della gerarchia di System Center Configuration Manager per verificare che non siano incluse informazioni sensibili o personali. I dati di telemetria vengono riepilogati e archiviati nella tabella **TEL_TelemetryResults** del database del sito e sono formattati per essere utilizzabili ed efficienti a livello di programmazione. Anche se le opzioni seguenti offrono una visualizzazione dei dati esatti inviati a Microsoft, non sono progettate per l'uso per altri scopi, ad esempio per analisi dei dati.  
+診断および使用状況データを System Center Configuration Manager 階層から表示して、機密情報や個人情報が含まれていないことを確認できます。 利用統計情報のデータは要約され、サイト データベースの **TEL_TelemetryResults** テーブルに保存されます。このデータは、プログラムで使用できる効率的な形式に設定されます。 次のオプションでは Microsoft に送信されたデータが正確に表示されますが、このデータは、データ分析など、別の目的で使用することを意図したものではありません。  
 
-Usare il comando SQL seguente per visualizzare il contenuto di questa tabella e i dati esatti inviati. È anche possibile esportare questi dati in un file di testo:  
+このテーブルの内容を表示し、送信される正確なデータを表示するには、次の SQL コマンドを使用します  (このデータをテキスト ファイルにエクスポートすることもできます)。  
 
 -   **SELECT \* FROM TEL_TelemetryResults**  
 
 > [!NOTE]  
->  Prima di installare la versione 1602, la tabella che archivia i dati di telemetria è **TelemetryResults**.  
+>  バージョン 1602 のインストール前に製品利用統計情報データを格納するテーブルは **TelemetryResults**です。  
 
-Quando il punto di connessione del servizio è in modalità offline, è possibile usare lo strumento di connessione del servizio per esportare i dati di diagnostica e di utilizzo correnti in un file con valori delimitati da virgole (CSV). Eseguire lo strumento di connessione del servizio per il punto di connessione del servizio con il parametro **-Export**.  
+サービス接続ポイントがオフライン モードの場合は、サービス接続ツールを使用して、現在の診断および使用状況データをコンマ区切り値 (CSV) ファイルにエクスポートできます。 サービス接続ポイントで **-Export** パラメーターを使用してサービス接続ツールを実行します。  
 
-##  <a name="bkmk_hashes"></a> Hash unidirezionali  
-Alcuni dati sono costituiti da stringhe di caratteri alfanumerici casuali. Configuration Manager usa l'algoritmo SHA-256, che usa gli hash unidirezionali, per garantire che non vengano raccolti dati potenzialmente sensibili. L'algoritmo lascia i dati in uno stato tale da consentire ancora di usarli per operazioni di correlazione e confronto. Ad esempio, anziché raccogliere i nomi delle tabelle nel database del sito, viene acquisito un hash unidirezionale per ogni nome di tabella. Questo assicura che non siano visibili gli eventuali nomi di tabella personalizzati creati dall'utente o i componenti aggiuntivi del prodotto di altri. È quindi possibile procedere allo stesso modo per acquisire l'hash unidirezionale dei nomi delle tabelle SQL incluse per impostazione predefinita nel prodotto ed eseguire un confronto dei risultati delle due query per determinare eventuali deviazioni dello schema del database da quello predefinito del prodotto. Queste informazioni possono poi essere usate per migliorare gli aggiornamenti che richiedono modifiche allo schema di SQL.  
+##  <a name="bkmk_hashes"></a> 一方向のハッシュ  
+一部のデータは、任意の英数字の文字列で構成されています。 Configuration Manager は、一方向のハッシュを使用する SHA-256 アルゴリズムを使用して、機密データを収集していないことを確認します。 このアルゴリズムでは、収集と比較を目的として引き続きデータを使用できる状態にデータが維持されます。 たとえば、サイト データベースのテーブルの名前を収集するのではなく、テーブル名ごとに一方向のハッシュがキャプチャされます。 これにより、ユーザーが作成したカスタム テーブル名や、他社の製品のアドオンが非表示になります。 その後、製品に既定で付属している SQL テーブルの名前に対して同じ一方向のハッシュを行い、2 つのクエリの結果を比較して、ユーザーのデータベース スキーマと製品の既定値の差異を確認します。 これは、SQL スキーマへの変更が必要な更新プログラムの向上に役立てられます。  
 
-Quando si visualizzano i dati non elaborati, viene visualizzato un valore hash comune in ogni riga di dati. Si tratta dell'ID gerarchia. Questo valore hash viene usato per assicurarsi che i dati siano correlati alla stessa gerarchia senza identificare il cliente o l'origine.  
+生データを表示するときには、共通のハッシュ値がデータの各行に表示されます。 これは階層 ID です。 このハッシュ値は、顧客またはソースを特定せずに、同じ階層内のデータを関連付けるのに使用されます。  
 
-#### <a name="to-see-how-the-one-way-hash-works"></a>Per vedere come funziona l'hash unidirezionale  
+#### <a name="to-see-how-the-one-way-hash-works"></a>一方向のハッシュの動作を確認するには  
 
-1.  Ottenere l'ID gerarchia eseguendo l'istruzione SQL seguente in SQL Management Studio nel database di Configuration Manager: **select [dbo].[fnGetHierarchyID]\(\)**  
+1.  SQL Management Studio で、Configuration Manager データベースに対して、SQL ステートメント **select [dbo].[fnGetHierarchyID]\(\)** を実行して、階層 ID を取得します。  
 
-2.  Usare lo script di Windows PowerShell seguente per eseguire l'hash unidirezionale del GUID ottenuto dal database. A questo punto, è possibile confrontarlo all'ID gerarchia nei dati non elaborati per vedere come vengono nascosti questi dati.  
+2.  以下の Windows PowerShell スクリプトを使用して、データベースから取得した GUID の一方向のハッシュを実行します。 これをデータ階層 ID と比較して、このデータを分かり難くする方法を確認できます。  
 
     ```  
     Param( [Parameter(Mandatory=$True)] [string]$value )  
@@ -68,4 +65,3 @@ Quando si visualizzano i dati non elaborati, viene visualizzato un valore hash c
     $result = [Convert]::ToBase64String($hashedBytes)    
     return $result   
     ```  
-

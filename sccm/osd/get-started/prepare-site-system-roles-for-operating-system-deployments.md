@@ -1,224 +1,220 @@
 ---
-title: Preparare i ruoli del sistema del sito per le distribuzioni del sistema operativo | Microsoft Docs
-description: Prima di distribuire sistemi operativi in System Center Configuration Manager, configurare i ruoli di sistema del sito.
+title: "オペレーティング システムの展開用のサイト システムの役割を準備する | Microsoft Docs"
+description: "System Center Configuration Manager でオペレーティング システムを展開する前に、サイト システムの役割を構成します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 0ef5f3ce-b0e4-4775-b5c2-b245e45b4194
-caps.latest.revision: 11
-caps.handback.revision: 0
+caps.latest.revision: "11"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
 ms.openlocfilehash: 11c0f169afebdb071fefb5ce300fd1ae3481a94f
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="prepare-site-system-roles-for-operating-system-deployments-with-system-center-configuration-manager"></a>Preparare i ruoli del sistema del sito per le distribuzioni del sistema operativo con System Center Configuration Manager
+# <a name="prepare-site-system-roles-for-operating-system-deployments-with-system-center-configuration-manager"></a>System Center Configuration Manager でのオペレーティング システム展開のサイト システムの役割の準備
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Per distribuire i sistemi operativi in System Center Configuration Manager, è necessario preparare i ruoli di sistema del sito seguenti che richiedono considerazioni e configurazioni specifiche.
+System Center Configuration Manager でオペレーティング システムを展開するには、まず特定の構成と考慮が必要な次のサイト システムの役割を準備する必要があります。
 
-##  <a name="BKMK_DistributionPoints"></a> Punti di distribuzione  
- Il ruolo del sistema del sito del punto di distribuzione contiene i file di origine che devono essere scaricati dai client, ad esempio il contenuto dell'applicazione, gli aggiornamenti software, le immagini del sistema operativo e le immagini di avvio. È possibile controllare la distribuzione del contenuto usando le opzioni della larghezza di banda, della limitazione e della pianificazione.  
+##  <a name="BKMK_DistributionPoints"></a> 配布ポイント  
+ 配布ポイントのサイト システムの役割には、クライアントがダウンロードするソース ファイルが含まれます。このソース ファイルには、アプリケーションのコンテンツ、ソフトウェア更新プログラム、オペレーティング システム イメージ、ブート イメージなどがあります。 帯域幅、調整、およびスケジュールのオプションを使って、コンテンツの配布を制御できます。  
 
- È importante avere sufficienti punti di distribuzione per supportare la distribuzione dei sistemi operativi nei computer. È anche importante pianificare la posizione di questi punti di distribuzione nella gerarchia. La maggior parte delle informazioni sulla pianificazione si trova in [Gestire il contenuto e l'infrastruttura del contenuto](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md). Tuttavia, esistono altre considerazioni sulla pianificazione dei punti di distribuzione specifiche per la distribuzione del sistema operativo.  
+ コンピューターへのオペレーティング システムの展開をサポートできるだけの十分な配布ポイントを用意することが重要です。 さらに、階層内でこれらの配布ポイントをどのように配置するかについて計画を立てることも重要です。 この計画に関する情報の大部分は、「[コンテンツとコンテンツ インフラストラクチャの管理](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」にあります。 ただし、オペレーティング システムの展開に応じて、配布ポイントの計画時にはさらに考慮すべき事項があります。  
 
-###  <a name="BKMK_AdditionalPlanning"></a> Considerazioni aggiuntive sulla pianificazione per i punti di distribuzione  
- Di seguito sono descritti altri aspetti della pianificazione da considerare per i punti di distribuzione:  
+###  <a name="BKMK_AdditionalPlanning"></a> 配布ポイントの計画に関する追加の考慮事項  
+ 配布ポイントの計画時にさらに考慮すべき事項は次のとおりです。  
 
--   **Come si possono evitare distribuzioni indesiderate del sistema operativo?**  
+-   **不要なオペレーティング システムの展開を行わないようにする方法**  
 
-     Configuration Manager non distingue i server del sito dagli altri computer di destinazione in una raccolta. Se si distribuisce una sequenza di attività richiesta in una raccolta che contiene un server del sito, questo esegue la sequenza di attività esattamente come qualsiasi altro computer presente nella raccolta. Verificare che la distribuzione del sistema operativo usi una raccolta contenente i client di cui eseguire la distribuzione.  
+     Configuration Manager は、サイト サーバーと、コレクション内の他の展開先のコンピューターを区別しません。 サイト サーバーが含まれているコレクションに、必要なタスク シーケンスを展開すると、そのサイト サーバーは、コレクション内の他のコンピューターと同じ方法でタスク シーケンスを実行します。 オペレーティング システムの展開では、展開を実行するクライアントを含むコレクションを必ず使用してください。  
 
-     È possibile gestire il comportamento relativo alle distribuzioni di sequenze di attività ad alto rischio. Una distribuzione ad alto rischio viene installata automaticamente in un client e può causare risultati imprevisti. È il caso, ad esempio, di una sequenza di attività con scopo impostato su Obbligatorio che distribuisce un sistema operativo. Per ridurre il rischio di una distribuzione ad alto rischio indesiderata, è possibile configurare le impostazioni di verifica della distribuzione. Per altre informazioni, vedere [Impostazioni per gestire distribuzioni ad alto rischio](../../protect/understand/settings-to-manage-high-risk-deployments.md).  
+     危険度の高いタスク シーケンスの展開については、その動作を管理することができます。 危険度の高い展開はクライアントに自動的にインストールされ、望ましくない結果が生じる可能性があります。 たとえば、オペレーティング システムを展開する "必須" の目的を持つタスク シーケンスなどがこれに該当します。 望ましくない危険度の高い展開のリスクを減らすためには、展開検証設定を構成します。 詳細については、「[危険度の高い展開を管理するための設定](../../protect/understand/settings-to-manage-high-risk-deployments.md)」を参照してください。  
 
--   **Quanti computer possono ricevere simultaneamente un'immagine del sistema operativo da un singolo punto di distribuzione?**  
+-   **1 つの配布ポイントからオペレーティング システム イメージを一度に受信できるコンピューターの数**  
 
-     Per stimare il numero di punti di distribuzione necessario, prendere in considerazione la velocità di elaborazione e le operazioni di input/output su disco del punto di distribuzione, la larghezza di banda disponibile nella rete e l'effetto delle dimensioni del pacchetto di immagini su queste risorse. Ad esempio, in una rete Ethernet da 100 megabyte (MB) il numero massimo di computer che possono elaborare un pacchetto di immagini da 4 gigabyte (GB) in un'ora è 11, se non si considerano altri fattori relativi alle risorse server.  
+     必要な配布ポイントの数を見積もるときには、処理速度とディスク I/O、ネットワークの利用可能な帯域幅、およびイメージ パッケージのサイズがこれらのリソースに及ぼす影響について考慮してください。 たとえば、100 メガバイト (MB) のイーサネット ネットワークでは、他のサーバー リソース要因をまったく考慮しない場合、1 時間で 4 ギガバイト (GB) のイメージ パッケージを処理できるコンピューターの最大台数は 11 台になります。  
 
      `100 Megabits/sec = 12.5 Megabytes/sec = 750 Megabytes/min = 45 Gigabytes/hour = 11 images @ 4GB per image.`  
 
-     Se è necessario eseguire la distribuzione di un sistema operativo in un numero specifico di computer in un determinato intervallo di tempo, distribuire l'immagine in un numero appropriato di punti di distribuzione.  
+     一定の時間内に特定の台数のコンピューターにオペレーティング システムを展開する必要がある場合は、適切な数の配布ポイントにイメージを配布します。  
 
--   **È possibile distribuire un sistema operativo in un punto di distribuzione?**  
+-   **配布ポイントにオペレーティング システムを展開できるかどうか**  
 
-     È possibile distribuire un sistema operativo in un punto di distribuzione, ma l'immagine del sistema operativo deve essere ricevuta da un punto di distribuzione diverso.  
+     オペレーティング システムを配布ポイントに展開することはできますが、オペレーティング システム イメージは別の配布ポイントから受信する必要があります。  
 
-###  <a name="BKMK_PXEDistributionPoint"></a> Configurazione dei punti di distribuzione per accettare le richieste PXE  
- Per distribuire i sistemi operativi ai client di Configuration Manager che eseguono richieste di avvio PXE, è necessario configurare uno o più punti di distribuzioni per accettare le richieste PXE. Una volta configurato, il punto di distribuzione risponderà alla richiesta di avvio PXE e stabilirà l'azione appropriata da eseguire per la distribuzione.
+###  <a name="BKMK_PXEDistributionPoint"></a> PXE 要求を受け入れるための配布ポイントの構成  
+ PXE ブート要求を作成する Configuration Manager クライアントにオペレーティング システムを展開するには、PXE 要求を受け入れるように 1 つ以上の配布ポイントを構成する必要があります。 構成された配布ポイントは、PXE ブート要求に応答し、実行する適切な展開アクションを決定します。
 
 > [!IMPORTANT]  
->  [Windows Deployment Services](../plan-design/infrastructure-requirements-for-operating-system-deployment.md#BKMK_WDS) deve essere installato in tutti i punti di distribuzione abilitati per PXE.  
+>  すべての PXE 対応配布ポイントに[Windows Deployment Services](../plan-design/infrastructure-requirements-for-operating-system-deployment.md#BKMK_WDS) をインストールする必要があります。  
 
- Utilizzare la seguente procedura per modificare un punto di distribuzione esistente in modo che possa accettare le richieste PXE. Per informazioni su come installare un nuovo punto di distribuzione, vedere [Install or modify a distribution point](../../core/servers/deploy/configure/install-and-configure-distribution-points.md).  
+ 既存の配布ポイントが PXE 要求を受け入れるように変更するには、以下の手順に従います。 新しい配布ポイントのインストール方法の詳細については、「 [Install or modify a distribution point](../../core/servers/deploy/configure/install-and-configure-distribution-points.md)」を参照してください。  
 
-#### <a name="to-modify-an-existing-distribution-point-to-accept-pxe-requests"></a>Per modificare un punto di distribuzione esistente per accettare le richieste PXE  
+#### <a name="to-modify-an-existing-distribution-point-to-accept-pxe-requests"></a>既存の配布ポイントが PXE 要求を受け入れるように変更するには  
 
-1.  Nella console di Configuration Manager, fare clic su **Amministrazione**, espandere **Panoramica** e fare clic su **Punti di distribuzione**.  
+1.  Configuration Manager コンソールにおいて、**[管理]** をクリックし、**[概要]** を展開して、**[配布ポイント]** をクリックします。  
 
-2.  Selezionare il punto di distribuzione da configurare, quindi nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
+2.  構成する配布ポイントを選択してから、 **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
 
-3.  Nella pagina delle proprietà per il punto di distribuzione fare clic sulla scheda **PXE** . e selezionare **Abilita supporto PXE per i client** per abilitare PXE nel punto di distribuzione.  
+3.  配布ポイントの [プロパティ] ページで、[PXE] タブをクリックします。 **** **[クライアントの PXE サポートを有効にする]** を選択して、この配布ポイントの PXE を有効にします。  
 
-4.  Fare clic su **Sì** nella finestra di dialogo **Controllare le porte richieste per PXE** per confermare che si vuole abilitare PXE. Configuration Manager configura automaticamente le porte predefinite in un firewall di Windows. Se si usa un altro firewall, è necessario configurare manualmente le porte.  
+4.  [スケジュールされたマルチキャストを有効にする] をクリックし、次のオプションを選択します。 **[PXE の必須ポートの確認]** ダイアログ ボックスで **[はい]** をクリックし、PXE を有効にすることを確認します。 Configuration Manager は、Windows ファイアウォールに自動的に既定のポートを構成します。 別のファイアウォールを使用する場合は、手動でポートを構成する必要があります。  
 
     > [!NOTE]  
-    >  Se WDS e DHCP sono installati nello stesso server, è necessario configurare WDS per l'ascolto su una porta diversa, perché DHCP è in ascolto sulla stessa porta. Per altre informazioni, vedere [Considerazioni in presenza di Servizi di distribuzione Windows e DHCP nello stesso server](../plan-design/infrastructure-requirements-for-operating-system-deployment.md#BKMK_WDSandDHCP).  
+    >  WDS と DHCP が同じサーバー上にインストールされている場合は、別のポートでリッスンするように WDS を構成する必要があります (DHCP が同じポートをリッスンするため)。 詳細については、「[同じサーバー上に WDS と DHCP がある場合の考慮事項](../plan-design/infrastructure-requirements-for-operating-system-deployment.md#BKMK_WDSandDHCP)を参照してください。  
 
-5.  Selezionare **Consenti a questo punto di distribuzione di rispondere alle richieste PXE in ingresso** per abilitare WDS in modo che risponda alle richieste di servizio PXE in ingresso. È possibile usare questa impostazione per attivare e disattivare il servizio senza rimuovere la funzionalità PXE dal punto di distribuzione.  
+5.  **[この配布ポイントが受信 PXE 要求に応答できるようにする]** を選択して、WDS が受信 PXE サービス要求に応答できるようにします。 この設定を使用して、配布ポイントから PXE 機能を削除せずにサービスを有効/無効にすることができます。  
 
-6.  Per distribuire sistemi operativi a computer non gestiti da Configuration Manager, selezionare **Abilita supporto per computer sconosciuti**.  
+6.  **[不明なコンピューターのサポートを有効にする]** を選択して、Configuration Manager で管理されていないコンピューターにオペレーティング システムを展開します。  
 
-7.  Selezionare **Richiedi password quando i computer usano PXE**e specificare una password complessa per offrire maggiore sicurezza per le distribuzioni PXE.  
+7.  **[コンピューターで PXE を使用する場合にパスワードを要求する]**を選択して、強力なパスワードを指定して PXE 展開のセキュリティを強化します。  
 
-8.  In the **Affinità utente dispositivo** scegliere la modalità di associazione del punto di distribuzione tra utenti e computer di destinazione per le distribuzioni PXE.  
+8.  In the **[ユーザーとデバイスのアフィニティ]** 一覧から、配布ポイントで PXE 展開先のコンピューターとユーザーをどのように関連付けるかを選択します。  
 
-    -   Selezionare **Non utilizzare l'affinità dispositivo utente** per non associare gli utenti al computer di destinazione.  
+    -   ユーザーと展開先のコンピューターを関連付けない場合は、 **[ユーザーとデバイスのアフィニティを使用しない]** を選択します。  
 
-    -   Selezionare **Consenti affinità dispositivo utente con approvazione manuale** per attendere l'approvazione da un utente amministratore prima di associare gli utenti al computer di destinazione.  
+    -   [ユーザーとデバイスのアフィニティを手動で承認する] を選択すると、ユーザーが対象コンピューターと関連付けられる前に、管理者の承認が必要になります。 ****  
 
-    -   Selezionare **Consenti affinità dispositivo utente con approvazione automatica** per associare automaticamente gli utenti al computer di destinazione senza attendere l'approvazione.  
+    -   [ユーザーとデバイスのアフィニティを自動的に承認する] を選択すると、許可を待たずにユーザーと対象コンピューターが自動的に関連付けられます。 ****  
 
-     Per altre informazioni, vedere [Associare gli utenti a un computer di destinazione](../get-started/associate-users-with-a-destination-computer.md).  
+     詳細については、「[System Center Configuration Manager でユーザーをセットアップ先のコンピューターに関連付ける](../get-started/associate-users-with-a-destination-computer.md)」を参照してください。  
 
-9. specificare se il punto di distribuzione risponde alle richieste PXE da tutte le interfacce di rete o da interfacce di rete specifiche. Se si sceglie di fare in modo che il punto di distribuzione risponda a un'interfaccia di rete specifica, specificare l'indirizzo MAC per ogni interfaccia di rete.  
+9. 配布ポイントがすべてのネットワーク インターフェイスまたは特定のネットワーク インターフェイスからの PXE 要求に応答することを指定します。 配布ポイントを特定のネットワーク インターフェイスに応答させる場合は、各ネットワーク インターフェイスの MAC アドレスを指定します。  
 
-10. Specificare, in secondi, il tempo di attesa del punto di distribuzione prima che risponda alle richieste dei computer quando vengono utilizzati più punti di distribuzione che supportano PXE.  
+10. PXE 対応配布ポイントが複数ある場合に、コンピューターの要求に応答するまでに、この配布ポイントが何秒間待機する必要があるのかを指定します。  
 
-11. Fare clic su **OK** per aggiornare le proprietà del punto di distribuzione.  
+11. [OK] をクリックし、配布ポイントのプロパティを更新します。 ****  
 
-###  <a name="BKMK_RamDiskTFTP"></a> Personalizzare le dimensioni della finestra e del blocco TFTP RamDisk nei punti di distribuzione abilitati per PXE  
-È possibile personalizzare le dimensioni del blocco TFTP RamDisk e, a partire da Configuration Manager versione 1606, le dimensioni della finestra per i punti di distribuzione abilitati per PXE. Se la rete è stata personalizzata, il download dell'immagine di avvio potrebbe non riuscire a causa di un errore di timeout perché le dimensioni del blocco o della finestra sono troppo grandi. La personalizzazione delle dimensioni della finestra e del blocco TFTP RamDisk consentono di ottimizzare il traffico TFTP quando si usa PXE per soddisfare requisiti di rete specifici.   
-È necessario testare le impostazioni personalizzate nel proprio ambiente per stabilire quale sia la scelta più efficiente.  
+###  <a name="BKMK_RamDiskTFTP"></a> PXE 対応配布ポイント上の RamDisk TFTP ブロック サイズとウィンドウ サイズのカスタマイズ  
+Configuration Manager バージョン 1606 では、PXE 対応配布ポイントの RamDisk TFTP ブロック サイズとウィンドウ サイズをカスタマイズできます。 ネットワークをカスタマイズしている場合、ブロックまたはウィンドウのサイズが大きすぎるために、ブート イメージのダウンロードがタイムアウト エラーで失敗する可能性があります。 RamDisk TFTP ブロック サイズとウィンドウ サイズのカスタマイズにより、特定のネットワーク要件に対応する PXE を使用する場合に、TFTP トラフィックを最適化できます。   
+最も効率的な内容を確認するために、環境内でカスタマイズした設定をテストする必要があります。  
 
--   **Dimensioni blocco TFTP**: le dimensioni del blocco corrispondono alle dimensioni dei pacchetti di dati che vengono inviati dal server al client che sta scaricando il file (come descritto in RFC 2347). Dimensioni maggiori del blocco consentono al server di inviare meno pacchetti e di conseguenza si verificano meno ritardi per il round trip tra il server e client. Dimensioni del blocco grandi, tuttavia, comportano la creazione di pacchetti frammentati, che non sono supportati dalla maggior parte delle implementazioni di client PXE.  
+-   **TFTP ブロック サイズ**: ブロック サイズは、ファイルをダウンロードしているクライアントにサーバーによって送信されるデータ パケットのサイズです (RFC 2347 に記載)。 ブロック サイズを大きくすると、サーバーとクライアントの間のラウンド トリップ遅延が少なくなるように、サーバーが送信するパケットを少なくすることができます。 ただし、大きいサイズのブロックにより、ほとんどの PXE クライアントの実装がサポートしていない、断片化されたパケットが生成されます。  
 
--   **Dimensioni finestra TFTP**: TFTP richiede un pacchetto di acknowledgment (ACK) per ogni blocco di dati inviato. Il server non invia il blocco successivo nella sequenza finché non riceve il pacchetto ACK per il blocco precedente. L'uso di finestre TFTP è una funzionalità di Servizi di distribuzione Windows che consente di definire quanti blocchi di dati sono necessari per riempire una finestra. Il server invia i blocchi di dati back-to-back fino a riempire la finestra e quindi il client invia un pacchetto ACK. Aumentando le dimensioni di questa finestra si riduce il numero di ritardi di round trip tra il client e il server, nonché il tempo complessivo necessario per scaricare un'immagine di avvio.  
-
-
-#### <a name="to-modify-the-ramdisk-tftp-window-size"></a>Per modificare le dimensioni della finestra TFTP RamDisk  
-
--   Aggiungere la chiave del Registro di sistema seguente nei punti di distribuzione abilitati per PXE per personalizzare le dimensioni della finestra TFTP RamDisk:  
-
-     **Percorso**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
-    Nome: RamDiskTFTPWindowSize  
-
-     **Tipo**: REG_DWORD  
-
-     **Valore**: &lt;dimensioni finestra personalizzate>  
-
- Il valore predefinito è 1 (1 blocco di dati riempie la finestra)  
-
-#### <a name="to-modify-the-ramdisk-tftp-block-size"></a>Per modificare le dimensioni del blocco TFTP RamDisk  
-
--   Aggiungere la chiave del Registro di sistema seguente nei punti di distribuzione abilitati per PXE per personalizzare le dimensioni della finestra TFTP RamDisk:  
-
-     **Percorso**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
-    Nome: RamDiskTFTPBlockSize  
-
-     **Tipo**: REG_DWORD  
-
-     **Valore**: &lt;dimensioni blocco personalizzate>  
-
- Il valore predefinito è 4096 (4k).  
+-   **TFTP ウィンドウ サイズ**: TFTP では、送信されるデータの各ブロックの確認 (ACK) パケットが必要です。 前のブロックの ACK パケットを受信するまで、サーバーは、シーケンス内の次のブロックを送信しません。 TFTP ウィンドウは、ウィンドウがいっぱいになるまでのデータ ブロックの数を定義できる、Windows 展開サービスの機能です。 サーバーは、ウィンドウがいっぱいになるまでデータ ブロックを連続で送信し、その後クライアントが ACK パケットを送信します。 このウィンドウのサイズを増やすことで、クライアントとサーバーの間のラウンド トリップ遅延回数が減少し、ブート イメージをダウンロードするために必要な全体の時間が短縮します。  
 
 
-###  <a name="BKMK_DPMulticast"></a> Configurare i punti di distribuzione per il supporto del multicast  
- Il multicast è un metodo di ottimizzazione della rete che è possibile usare nei punti di distribuzione in cui è probabile che più client scarichino contemporaneamente la stessa immagine del sistema. Quando si usa il multicast, l'immagine del sistema operativo viene scaricata contemporaneamente da più computer mentre il punto di distribuzione ne esegue il multicast, invece di far inviare una copia dei dati dal punto di distribuzione a ogni client in una connessione separata. Per supportare il multicast, è necessario configurare almeno un punto di distribuzione. Per altre informazioni, vedere [Usare multicast per distribuire Windows in rete](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
+#### <a name="to-modify-the-ramdisk-tftp-window-size"></a>RamDisk TFTP ウィンドウ サイズを変更するには  
 
- Prima di distribuire il sistema operativo, è necessario configurare un punto di distribuzione per il supporto di multicast. Utilizzare la seguente procedura per modificare un punto di distribuzione esistente per il supporto di multicast. Per informazioni su come installare un nuovo punto di distribuzione, vedere [Installare e modificare un punto di distribuzione](../../core/servers/deploy/configure/install-and-configure-distribution-points.md).
+-   RamDisk TFTP ウィンドウ サイズをカスタマイズするには、PXE 対応配布ポイント上に次のレジストリ キーを追加します。  
 
-#### <a name="to-enable-multicast-for-a-distribution-point"></a>Per attivare multicast per un punto di distribuzione  
+     **場所**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
+    名前: RamDiskTFTPWindowSize  
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
+     **型**: REG_DWORD  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Panoramica**, quindi selezionare il nodo **Punti di distribuzione** .  
+     **値**: &lt;カスタマイズされたウィンドウのサイズ>  
 
-3.  Selezionare il punto di distribuzione che si desidera utilizzare per il multicast dell'immagine del sistema operativo.  
+ 既定値は 1 (1 つのデータ ブロックでウィンドウがいっぱいになります)  
 
-4.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
+#### <a name="to-modify-the-ramdisk-tftp-block-size"></a>RamDisk TFTP ブロック サイズを変更するには  
 
-5.  Selezionare la scheda **Multicast** , quindi configurare le seguenti opzioni:  
+-   RamDisk TFTP ウィンドウ サイズをカスタマイズするには、PXE 対応配布ポイント上に次のレジストリ キーを追加します。  
 
-    -   **Abilita multicast**: è necessario selezionare questa opzione per abilitare il supporto del multicast nel punto di distribuzione.  
+     **場所**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
+    名前: RamDiskTFTPBlockSize  
 
-    -   **Account di connessione multicast**: specificare un account per connettersi al database del sito.  
+     **型**: REG_DWORD  
 
-    -   **Impostazioni indirizzo multicast**: specificare gli indirizzi IP usati per l'invio dei dati ai computer di destinazione. Per impostazione predefinita, l'indirizzo IP viene ottenuto da un server DHCP abilitato per la distribuzione di indirizzi multicast. A seconda dell'ambiente di rete, è possibile specificare un intervallo di indirizzi IP compreso tra 239.0.0.0 e 239.255.255.255.  
+     **値**: &lt;カスタマイズされたブロック サイズ>  
 
-        > [!IMPORTANT]  
-        >  Questi indirizzi IP devono essere accessibili ai computer di destinazione che richiedono l'immagine del sistema operativo. Di conseguenza è necessario configurare i router e i firewall tra il computer di destinazione e il server del sito per consentire il traffico multicast.  
+ 既定値は 4096 (4k) です。  
 
-    -   **Intervallo porte UDP**: Specificare l'intervallo di porte UDP per l'invio dei dati ai computer di destinazione.  
+
+###  <a name="BKMK_DPMulticast"></a> マルチキャストをサポートする配布ポイントの構成  
+ マルチキャストは、複数のクライアントが同じオペレーティング システム イメージを同時にダウンロードすることが多い配布ポイントで使用できるネットワーク最適化の方法です。 マルチキャストを使用すると、配布ポイントがデータのコピーを各々のクライアントに別々の接続で送信する代わりに、マルチキャストするため、複数のコンピューターが同時にオペレーティング システム イメージをダウンロードできます。 マルチキャストをサポートするように、1 つ以上の配布ポイントを構成する必要があります。 詳細については、「[Use multicast to deploy Windows over the network](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md)」(マルチキャストを使用した、ネットワーク経由での Windows の展開) を参照してください。  
+
+ オペレーティング システムを展開する前に、マルチキャストをサポートするように配布ポイントを構成する必要があります。 次の手順に従って、マルチキャストサポート用の既存の配布ポイントを変更します。 新しい配布ポイントのインストール方法の詳細については、「 [Install and configure distribution points](../../core/servers/deploy/configure/install-and-configure-distribution-points.md)」(配布ポイントのインストールと構成) を参照してください。
+
+#### <a name="to-enable-multicast-for-a-distribution-point"></a>配布ポイントでマルチキャストを有効にするには  
+
+1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
+
+2.  [ **管理** ] ワークスペースで、[ **概要**] を展開し、[ **配布ポイント** ] ノードを選択します。  
+
+3.  オペレーティング システムのイメージをマルチキャスト用に使用する配布ポイントを選択します。  
+
+4.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
+
+5.  [マルチキャスト] タブを選択し、次のオプションを構成します。 ****  
+
+    -   **マルチキャストを有効にする**: 配布ポイントでマルチキャストをサポートするには、このオプションを選択する必要があります。  
+
+    -   **マルチキャスト接続アカウント**: サイト データベースに接続するアカウントを指定します。  
+
+    -   **マルチキャスト アドレス設定**: 展開先のコンピューターにデータを送信するための IP アドレスを指定します。 既定では、マルチキャスト アドレスの配布が有効になっている DHCP サーバーから IP アドレスを取得します。 ネットワーク環境によって、239.0.0.0 ～ 239.255.255.255 の範囲の IP アドレスを指定できます。  
 
         > [!IMPORTANT]  
-        >  Queste porte devono essere accessibili ai computer di destinazione che richiedono l'immagine del sistema operativo. Di conseguenza è necessario configurare i router e i firewall tra il computer di destinazione e il server del sito per consentire il traffico multicast.  
+        >  IP アドレスは、オペレーティング システムのイメージを要求する対象コンピューターがアクセスできることが必要です。 このため、対象コンピューターとサイト サーバー間のルーターやファイアウォールは、マルチキャスト トラフィックを許可するように構成する必要があります。  
 
-    -   **Abilita multicast pianificato**: specificare come Configuration Manager esegue i controlli per avviare la distribuzione dei sistemi operativi ai computer di destinazione. Fare clic su **Abilita multicast pianificato**, quindi selezionare le seguenti opzioni.  
+    -   UDP ポートの範囲:****対象コンピューターにデータを送信する UDP ポートの範囲を指定します。  
 
-         Nella casella **Ritardo avvio sessione** specificare i minuti di attesa prima che Configuration Manager risponda alla prima richiesta di distribuzione.  
+        > [!IMPORTANT]  
+        >  これらのポートは、オペレーティング システムのイメージを要求する対象コンピューターからアクセスできることが必要です。 このため、対象コンピューターとサイト サーバー間のルーターやファイアウォールは、マルチキャスト トラフィックを許可するように構成する必要があります。  
 
-         Nella casella **Dimensione minima sessione** specificare la quantità di richieste che Configuration Manager deve ricevere prima di avviare la distribuzione del sistema operativo.  
+    -   **スケジュールされたマルチキャストを有効にする**: Configuration Manager がどのように展開先コンピューターへのオペレーティング システムの展開開始日時を制御するかを指定します。 [スケジュールされたマルチキャストを有効にする] をクリックし、次のオプションを選択します。 ****  
 
-    -   **Velocità di trasferimento**: Selezionare la velocità di trasferimento per il download dei dati nei computer di destinazione.  
+         **[セッション開始の待ち時間]** ボックスに、最初の展開要求に応答する前に Configuration Manager が待機する時間 (分) を指定します。  
 
-    -   **Numero massimo di client**: specificare il numero massimo di computer di destinazione per cui è possibile scaricare il sistema operativo da questo punto di distribuzione.  
+         **[最小セッション サイズ]** ボックスで、Configuration Manager がオペレーティング システムの展開を開始する前に受信しなければならない要求数を指定します。  
 
-6.  Fare clic su **OK**.  
+    -   転送速度:****ダウンロード先コンピューターにデータをダウンロードする際の転送速度を選択します。  
 
-##  <a name="BKMK_StateMigrationPoints"></a> Punto di migrazione stato  
- Il punto di migrazione stato archivia i dati sullo stato dell'utente acquisiti in un computer e quindi ripristinati in un altro computer. Tuttavia, quando si acquisiscono le impostazioni utente per una distribuzione del sistema operativo nello stesso computer, ad esempio una distribuzione in cui il sistema operativo viene aggiornato nel computer di destinazione, è possibile scegliere se archiviare i dati nello stesso computer con collegamenti reali oppure usare un punto di migrazione stato. Per alcune distribuzioni ai computer, quando viene creata l'archiviazione stati, Configuration Manager crea automaticamente un'associazione tra l'archiviazione stati e il computer di destinazione. Durante la pianificazione del punto di migrazione stato tenere presenti i seguenti fattori.  
+    -   **最大クライアント数**: この配布ポイントからオペレーティング システムをダウンロードできる展開先のコンピューターの最大数を指定します。  
 
-### <a name="user-state-size"></a>Dimensioni stato utente  
- Le dimensioni dello stato utente influiscono direttamente sull'archiviazione su disco nel punto di migrazione stato e sulle prestazioni di rete durante la migrazione. Tenere presenti le dimensioni dello stato utente e il numero di computer di cui verrà eseguita la migrazione. Tenere presenti anche le impostazioni di cui eseguire la migrazione dal computer. Ad esempio, se nel server è già presente il backup di **Documenti** , potrebbe non essere necessario eseguirne la migrazione nell'ambito della distribuzione dell'immagine. Evitando migrazioni superflue è possibile ridurre le dimensioni generali dello stato utente e diminuire gli effetti sulle prestazioni di rete e sull'archiviazione su disco nel punto di migrazione stato.  
+6.  **[OK]**をクリックします。  
 
-### <a name="user-state-migration-tool"></a>Utilità di migrazione stato utente  
- Per acquisire e ripristinare lo stato utente durante la distribuzione dei sistemi operativi, è necessario utilizzare un pacchetto per Utilità di migrazione stato utente (USMT) che punti ai file di origine USMT. Configuration Manager crea automaticamente questo pacchetto nella console di Configuration Manager in **Raccolta software** > **Gestione applicazioni** > **Pacchetti**. Configuration Manager usa USMT 10.0, che viene distribuito in Windows Assessment and Deployment Kit (Windows ADK), per acquisire lo stato utente da un sistema operativo e ripristinarlo in un altro sistema operativo.  
+##  <a name="BKMK_StateMigrationPoints"></a> 状態移行ポイント  
+ 状態移行ポイントには、あるコンピューターでキャプチャされて別のコンピューターで復元されるユーザー状態データが保存されます。 ただし、セットアップ先のコンピューターでオペレーティング システムを更新する展開など、同じコンピューター上のオペレーティング システム展開のユーザー設定をキャプチャする場合、データをハードリンクを使用して同じコンピューターに保存するか、または状態移行ポイントを使用して保存するかを選択することができます。 一部のコンピューター展開では、状態ストアを作成すると、Configuration Manager によって状態ストアと対象コンピューターの関連付けが自動的に作成されます。 状態移行ポイントを計画する際には、以下の点を検討してください。  
 
- Per una descrizione dei diversi scenari di migrazione per USMT 10.0, vedere [Scenari di migrazione comuni](https://technet.microsoft.com/library/mt299169\(v=vs.85\).aspx).  
+### <a name="user-state-size"></a>ユーザー状態のサイズ  
+ ユーザー状態のサイズは、状態移行ポイントのディスク記憶域や移行中のネットワーク パフォーマンスに直接影響します。 ユーザー状態のサイズおよび移行するコンピューターの台数について検討します。 また、どの設定をコンピューターから移行するのかについても検討します。 たとえば、 **[マイ ドキュメント]** がサーバーに既にバックアップされている場合、通常、イメージの展開の一部として移行する必要はありません。 不必要な移行を避けると、ユーザー状態の全体的なサイズを小さく保ち、ネットワーク パフォーマンスや状態移行ポイントのディスク記憶域に与える影響を軽減できます。  
 
-### <a name="retention-policy"></a>Criteri di conservazione  
- Quando si configura il punto di migrazione stato è possibile specificare l'intervallo di tempo per cui conservare i dati sullo stato utente archiviati al suo interno. L'intervallo di tempo per cui conservare i dati nel punto di migrazione stato dipende da due considerazioni:  
+### <a name="user-state-migration-tool"></a>ユーザー状態移行ツール  
+ オペレーティング システムの展開中にユーザー状態をキャプチャして復元するには、USMT ソース ファイルをポイントするユーザー状態移行ツール (USMT) パッケージを使用する必要があります。 Configuration Manager コンソールの **[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[パッケージ]** でこのパッケージが自動的に作成されます。 Configuration Manager では Windows アセスメント &amp; デプロイメント キット (Windows ADK) で配布される USMT 10.0 を使用して、ユーザー状態を 1 つのオペレーティング システムからキャプチャし、別のオペレーティング システムに復元します。  
 
--   L'effetto dei dati archiviati sull'archiviazione su disco.  
+ USMT 10.0 のさまざまな移行シナリオの詳細については、「 [移行の一般的なシナリオ](https://technet.microsoft.com/library/mt299169\(v=vs.85\).aspx)」を参照してください。  
 
--   La possibilità di conservare i dati per un determinato periodo nel caso in cui sia necessario eseguire un'ulteriore migrazione dei dati.  
+### <a name="retention-policy"></a>ポリシーの保存  
+ 状態移行ポイントを構成するときに、状態移行ポイントに格納されたユーザー状態データを保存する期間を指定することができます。 状態移行ポイントにデータを保存する期間を決定するには、次の 2 つの点を考慮する必要があります。  
 
- La migrazione dello stato avviene in due fasi: acquisizione e ripristino dei dati. Quando si acquisiscono dati, i dati sullo stato utente vengono raccolti e salvati nel punto di migrazione stato. Quando si ripristinano i dati, i dati sullo stato utente vengono recuperati dal punto di migrazione stato e scritti nel computer di destinazione. Quindi, il passaggio della sequenza attività **Rilascia archiviazione stati** rilascia i dati archiviati. Quando i dati vengono rilasciati, viene avviato il timer di conservazione. Se si seleziona l'opzione per eliminare immediatamente i dati migrati, i dati sullo stato utente vengono eliminati non appena vengono rilasciati. Se si seleziona l'opzione per conservare i dati per un determinato periodo di tempo, i dati vengono eliminati dopo il rilascio dei dati sullo stato, al termine dell'intervallo di tempo stabilito. Più è lungo il periodo di conservazione impostato, più spazio su disco potrebbe essere necessario.  
+-   格納されたデータがディスク記憶域に与える影響  
 
-### <a name="select-drive-to-store-user-state-migration-data"></a>Selezionare l'unità in cui archiviare i dati di migrazione sullo stato utente  
- Quando si configura il punto di migrazione stato, è necessario specificare l'unità sul server in cui archiviare i dati sulla migrazione dello stato utente. È possibile selezionare un'unità da un elenco non modificabile di unità. Tuttavia, alcune unità potrebbero rappresentare unità non accessibili in scrittura, ad esempio l'unità CD o un'unità di condivisione non di rete. Inoltre, alcune lettere di unità potrebbero non essere mappate su un'unità del computer. Quando si configura il punto di migrazione stato, è necessario specificare un'unità condivisa e scrivibile.  
+-   データの移行が再度必要になる場合に備えて、データを一時的に保存するための要件  
 
-### <a name="configure-a-state-migration-point"></a>Configurare un punto di migrazione stato  
- Per configurare un punto di migrazione stato per archiviare i dati dello stato utente, è possibile utilizzare i metodi seguenti:  
+ 状態移行は、データのキャプチャとデータの復元の 2 段階で行われます。 データをキャプチャするときに、ユーザー状態データが収集されて状態移行ポイントに保存されます。 データを復元するときに、ユーザー状態データが状態移行ポイントから取得されて対象コンピューターに書き込まれてから、[状態ストアのリリース **** ] タスク シーケンス ステップによって、格納されたデータがリリースされます。 データがリリースされるときに、保存期間の開始として認識されます。 移行データを即時削除するオプションを選択している場合、リリース直後にユーザー状態データが削除されます。 一定期間データを保存するオプションを選択している場合、状態データのリリース後、データは指定期間が経過すると削除されます。 設定した保存期間が長くなるほど、必要なディスク容量も大きくなります。  
 
--   Utilizzare la **Creazione guidata server del sistema sito** per creare un nuovo server di sistema del sito per il punto di migrazione stato.  
+### <a name="select-drive-to-store-user-state-migration-data"></a>ユーザー状態移行データを格納するドライブの選択  
+ 状態移行ポイントを構成するときに、ユーザー状態移行データの格納に使用するサーバー上のドライブを指定する必要があります。 ドライブは、固定リストから選択します。 ただし、CD ドライブなどの書き込みできないドライブや、ネットワーク共有でないドライブが表示されることがあります。 また、コンピューター上のどのドライブにもマップされていないドライブ文字が表示されることもあります。 状態移行ポイントを構成するときには、書き込み可能な共有ドライブを指定する必要があります。  
 
--   Utilizzare l' **Aggiunta guidata ruoli del sistema del sito** per aggiungere un punto di migrazione stato a un server esistente.  
+### <a name="configure-a-state-migration-point"></a>状態移行ポイントを構成する  
+ 次の方法を使用して、ユーザー移行ポイントがユーザー状態データを保存するように構成できます。  
 
- Quando si utilizzano queste procedure guidate, viene richiesto di fornire le informazioni seguenti per il punto di migrazione stato:  
+-   サイト システム サーバーの作成ウィザードを使用して、状態移行ポイント用の新しいサイト システム サーバーを作成します。 ****  
 
--   Cartelle in cui archiviare i dati dello stato utente.  
+-   サイト システムの役割の追加ウィザードを使用して、状態移行ポイントを既存のサーバーに追加します。 ****  
 
--   Numero massimo di client che possono archiviare i dati nel punto di migrazione stato.  
+ これらのウィザードを使用すると、次の状態移行ポイント情報の入力を求められます。  
 
--   Spazio minimo disponibile per il punto di migrazione stato in cui archiviare i dati sullo stato utente.  
+-   ユーザー状態データを保存するフォルダー  
 
--   Criteri di eliminazione per il ruolo. È possibile specificare che i dati dello stato utente vengano eliminati immediatamente dopo il ripristino in un computer o dopo un numero specifico di giorni dopo il ripristino dei dati utente in un computer.  
+-   状態移行ポイントにデータを保存できる最大クライアント数  
 
--   Se il punto di migrazione stato deve rispondere solo alle richieste di ripristino dei dati dello stato utente. Quando si abilita questa opzione, non è possibile utilizzare il punto di migrazione stato per archiviare dati dello stato utente.  
+-   ユーザー状態データを保存するための状態移行ポイントの最低空き領域  
 
- Per i passaggi relativi all'installazione di un ruolo di sistema del sito, vedere [Aggiungere ruoli di sistema del sito](../../core/servers/deploy/configure/add-site-system-roles.md).  
+-   役割の削除ポリシー。 (ユーザー状態データがコンピューターに復元された後、またはユーザー データがコンピューターに復元されて特定の日数が経過した後、直ちにユーザー状態データを削除するように指定できます。)  
 
+-   状態移行ポイントがユーザー状態データの復元要求にのみ応答するかどうか (このオプションを有効にすると、状態移行ポイントを使用してユーザー状態データを保存できません。)  
+
+ サイト システムの役割をインストールする手順については、「[Add site system roles](../../core/servers/deploy/configure/add-site-system-roles.md)」(サイト システムの役割の追加) を参照してください。  

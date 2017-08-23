@@ -1,61 +1,57 @@
 ---
-title: Privacy e sicurezza per l&quot;inventario hardware | Microsoft Docs
-description: Informazioni sulla sicurezza e la privacy per l&quot;inventario hardware in System Center Configuration Manager.
+title: "ハードウェア インベントリのセキュリティとプライバシー | Microsoft Docs"
+description: "System Center Configuration Manager におけるハードウェア インベントリのセキュリティとプライバシーの情報を確認します。"
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 62e20d86-db6d-4a1f-b14a-905a9de31698
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
-ms.openlocfilehash: b12d4a1592ce4601fa1f0a6cd2a539a3664c0c37
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: ec182ec3102e0f4ae8bcf3d1ef843b25510b6ce6
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-hardware-inventory-in-system-center-configuration-manager"></a>Sicurezza e privacy per l'inventario hardware in System Center Configuration Manager
+# <a name="security-and-privacy-for-hardware-inventory-in-system-center-configuration-manager"></a>System Center Configuration Manager におけるハードウェア インベントリのセキュリティとプライバシー
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Questo argomento contiene informazioni sulla sicurezza e la privacy per l'inventario hardware in System Center Configuration Manager.  
+このトピックには、System Center Configuration Manager におけるハードウェア インベントリのセキュリティとプライバシーの情報が含まれています。  
 
-##  <a name="BKMK_Security_HardwareInventory"></a> Procedure consigliate di sicurezza per l'inventario hardware  
- Usare le procedure consigliate di sicurezza seguenti quando vengono raccolti i dati dell'inventario hardware dai client:  
+##  <a name="BKMK_Security_HardwareInventory"></a> ハードウェア インベントリについて推奨するセキュリティ運用方法  
+ ここでは、クライアントからハードウェア インベントリを収集するときの、セキュリティのベスト プラクティスについて説明します。  
 
-|Procedura di sicurezza consigliata|Altre informazioni|  
+|セキュリティのベスト プラクティス|説明|  
 |----------------------------|----------------------|  
-|Firmare e crittografare i dati dell'inventario|Quando i client comunicano con i punti di gestione tramite HTTPS, tutti i dati inviati sono crittografati mediante SSL. Tuttavia, quando i computer client usano HTTP per comunicare con i punti di gestione nella rete Intranet, i dati dell'inventario del client e i file raccolti possono essere inviati senza firma e non crittografati. Assicurarsi che la configurazione del sito preveda la firma obbligatoria e l'uso della crittografia. Inoltre, se i client possono supportare l'algoritmo SHA-256, selezionare l'opzione per richiedere SHA-256.|  
-|Non raccogliere i file IDMIF e NOIDMIF negli ambienti a elevata sicurezza|È possibile utilizzare l'insieme di file IDMIF e NOIDMIF per estendere l'inventario hardware. Se necessario, Configuration Manager crea nuove tabelle o modifica tabelle esistenti nel database di Configuration Manager per contenere le proprietà nei file IDMIF e NOIDMIF. Tuttavia, Configuration Manager non convalida i file IDMIF e NOIDMIF, pertanto questi file potrebbero essere usati per modificare le tabelle che non si vuole modificate. Dati validi potrebbero essere sovrascritti da dati non validi. È anche possibile che vengano aggiunte grandi quantità di dati e l'elaborazione di tali dati potrebbe provocare ritardi in tutte le funzioni di Configuration Manager. Per limitare tali rischi, configurare l'impostazione client dell'inventario hardware **Raccogli file MIF** su **Nessuno**.|  
+|インベントリ データの署名と暗号化|クライアントがHTTPS を使用して管理ポイントと通信するときは、送信されるすべてのデータが SSL を使って暗号化されます。 しかし、クライアント コンピューターが HTTP を使用してイントラネット上の管理ポイントと通信するときは、クライアント インベントリ データや収集されたファイルを署名なしで、暗号化せずに送信することができます。 必ず署名が必要とされ、暗号化が使用されるようにサイトを構成してください。 さらに、クライアントが SHA-256 アルゴリズムをサポートできる場合は、SHA-256 を要求するオプションを選択してください。|  
+|高セキュリティ環境では IDMIF および NOIDMIF ファイルを収集しない|IDMIF および NOIDMIF ファイル コレクションを使用して、ハードウェア インベントリ コレクションを拡張することができます。 必要に応じて、Configuration Manager は、IDMIF ファイルおよび NOIDMIF ファイルのプロパティに合わせて、Configuration Manager データベース内に新規テーブルを作成したり既存のテーブルを変更したりします。 ただし、Configuration Manager は IDMIF および NOIDMIF ファイルを検証しないため、これらのファイルが使用されて、変更したくないテーブルが変更される可能性があります。 有効なデータが無効なデータで上書きされることもあります。 さらに、大量のデータが追加され、このデータの処理が、すべての Configuration Manager 機能で遅延の原因となる可能性があります。 リスクを軽減するには、ハードウェア インベントリのクライアント設定を構成する。 **収集 MIF ファイル** として **None**です。|  
 
-### <a name="security-issues-for-hardware-inventory"></a>Problemi di sicurezza per l'inventario hardware  
- La raccolta dell'inventario espone potenziali vulnerabilità. Gli utenti malintenzionati possono eseguire le attività seguenti:  
+### <a name="security-issues-for-hardware-inventory"></a>ハードウェア インベントリのセキュリティに関する問題  
+ インベントリを収集すると、潜在的な脆弱性が露出します。 攻撃者は、次のような攻撃を行う可能性があります。  
 
--   Inviare dati non validi, che verranno accettati dal punto di gestione anche quando l'impostazione client dell'inventario software è disabilitata e la raccolta di file non è abilitata.  
+-   ソフトウェア インベントリ クライアント設定が無効化され、ファイル コレクションが有効化されていない場合でも、管理ポイントが受け付けてしまう、無効なデータを送信する。  
 
--   Inviare quantità eccessivamente elevate di dati in un singolo file e in un numero elevato di file e potenzialmente causare un attacco Denial of Service .  
+-   単一ファイル、あるいは多くのファイルで極めて大量のデータを送信し、その結果サービス拒否攻撃を引き起こす可能性がある。  
 
--   Accedere a informazioni dell'inventario mentre vengono trasferite a Configuration Manager.  
+-   インベントリ情報が Configuration Manager に転送されたときに、インベントリ情報にアクセスする。  
 
- Poiché un utente con privilegi di amministratore locale può inviare qualsiasi informazione come dati di inventario, non considerare affidabili i dati di inventario raccolti da Configuration Manager.  
+ ローカル管理権限を持つユーザーはどんな情報でもインベントリ データとして送信できるので、Configuration Manager が収集したインベントリ データが必ず正しいとは考えないでください。  
 
- L'inventario hardware è abilitato per impostazione predefinita come impostazione client.  
+ 既定では、ハードウェア インベントリはクライアント設定として有効になっています。  
 
-##  <a name="BKMK_Privacy_HardwareInventory"></a> Informazioni sulla privacy per l'inventario hardware  
- L'inventario hardware consente di recuperare le informazioni archiviate nel Registro di sistema e in WMI nei client di Configuration Manager. L'inventario software consente di individuare tutti i file di un tipo specificato o raccogliere tutti i file specificati dai client. Asset Intelligence migliora le funzionalità di inventario mediante l'estensione dell'inventario hardware e software e l'aggiunta di nuove funzionalità di gestione delle licenze.  
+##  <a name="BKMK_Privacy_HardwareInventory"></a> ハードウェア インベントリに関するプライバシー情報  
+ ハードウェア インベントリを使うと、Configuration Manager クライアントのレジストリと WMI に格納されているすべての情報を取得できます。 ソフトウェア インベントリにより、クライアントにある指定された種類のすべてのファイルの探索、および指定されたすべてのファイルの収集を行うことができます。 資産インテリジェンスは、ハードウェアおよびソフトウェア インベントリを拡張し、新しいライセンス管理機能を追加することで、インベントリの機能を強化します。  
 
- L'inventario hardware è abilitato per impostazione predefinita come impostazione client e le informazioni di WMI raccolte sono determinate dalle opzioni selezionate. L'inventario software è abilitato per impostazione predefinita, ma i file non vengono raccolti per impostazione predefinita. La raccolta di dati di Asset Intelligence viene abilitata automaticamente, anche se è possibile selezionare le classi di report per l'inventario hardware da abilitare.  
+ ハードウェア インベントリは、クライアント設定として既定で有効になっており、収集される WMI 情報は選択するオプションによって決まります。 ソフトウェア インベントリは、既定で有効になっていますが、ファイルは既定では収集されません。 有効にするハードウェア インベントリ レポート クラスを選択することは可能ですが、資産インテリジェンス データ コレクションは自動的に有効化されます。  
 
- Le informazioni relative all'inventario non vengono inviate a Microsoft. Le informazioni relative all'inventario vengono archiviate nel database di Configuration Manager. Quando i client usano HTTPS per connettersi ai punti di gestione, i dati dell'inventario inviati al sito vengono crittografati durante il trasferimento. Se i client usano HTTP per connettersi ai punti di gestione, è possibile scegliere di abilitare la crittografia dei dati dell'inventario. I dati dell'inventario non vengono memorizzate in forma crittografata nel database. Le informazioni vengono conservate nel database fino alla relativa eliminazione nell'ambito delle attività di manutenzione del sito **Elimina cronologia inventario obsoleta** o **Elimina file raccolti obsoleti** eseguite ogni 90 giorni. È possibile configurare l'intervallo di eliminazione.  
+ インベントリ情報がマイクロソフトに送信されることはありません。 インベントリ情報は Configuration Manager データベースに格納されます。 クライアントが HTTPS を使用して管理ポイントに接続する場合、クライアントがサイトに送信するインベントリ データは転送中、暗号化されます。 クライアントが HTTP を使用して管理ポイントに接続する場合は、インベントリの暗号化を有効にするかどうか選択できます。 インベントリ データは、暗号化された形式でデータベースに格納されるわけではありません。 サイトの保守タスクによって削除されるまでに、データベースに情報が保持されます **期限切れのインベントリ履歴の削除** または **期限切れの収集ファイルの削除** 90 日ごとです。 削除間隔は構成できます。  
 
- Prima di configurare l'inventario hardware, l'inventario software, la raccolta di file o la raccolta di dati di Asset Intelligence, considerare i requisiti sulla privacy.  
-
+ ハードウェア インベントリ、ソフトウェア インベントリ、ファイル コレクション、または資産インテリジェンス データ コレクションを構成する前に、プライバシー要件について検討してください。  

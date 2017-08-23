@@ -1,91 +1,87 @@
 ---
-title: Testare gli aggiornamenti client in una raccolta di pre-produzione | Microsoft Docs
-description: Testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager.
+title: "実稼働前コレクションでのクライアント アップグレードのテスト | Microsoft ドキュメント"
+description: "System Center Configuration Manager で実稼働前コレクションのクライアント アップグレードをテストします。"
 ms.custom: na
 ms.date: 05/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 49ef2ed2-2e15-4637-8b63-1d5b7f9c17e1
-caps.latest.revision: 10
-caps.handback.revision: 0
+caps.latest.revision: "10"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 212628639300e9c361f7cee61b3df6b1cb6874ce
 ms.openlocfilehash: 572ef13883f7930e69ec1f1f53c9bfe029898c81
-ms.contentlocale: it-it
-ms.lasthandoff: 05/18/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-test-client-upgrades-in-a-pre-production-collection-in-system-center-configuration-manager"></a>Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager
+# <a name="how-to-test-client-upgrades-in-a-pre-production-collection-in-system-center-configuration-manager"></a>System Center Configuration Manager で実稼働前コレクションのクライアント アップグレードをテストする方法
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-È possibile testare una nuova versione del client di Configuration Manager in una raccolta di pre-produzione prima di aggiornare il resto del sito.  In questo caso, solo i dispositivi che fanno parte della raccolta di pre-produzione vengono aggiornati. Dopo aver testato il client, è possibile alzarlo di livello. In questo modo la nuova versione del software client viene resa disponibile per il resto del sito.
+サイトの他の部分をアップグレードする前に、実稼働前コレクションで新しい Configuration Manager クライアント バージョンをテストできます。  これを行うと、テスト コレクションに含まれるデバイスのみがアップグレードされます。 クライアントをテストし終えた後で、そのクライアントを昇格できます。これにより、サイトの他の部分で新しいバージョンのクライアント ソフトウェアを使用できるようになります。
 
 > [!NOTE]
-> Per alzare di livello un client di test per renderlo disponibile per la produzione, è necessario eseguire l'accesso con un account utente con il ruolo di sicurezza **amministratore completo** e l'ambito di protezione **Tutto**. Per altre informazioni, vedere [Nozioni fondamentali sull'amministrazione basata su ruoli](/sccm/core/understand/fundamentals-of-role-based-administration). È anche necessario accedere a un server connesso al sito di amministrazione centrale o a un sito primario autonomo di livello superiore.
+> テスト クライアントを実稼働環境に昇格させるには、**完全な権限を持つ管理者**のセキュリティ ロールと**すべて**のセキュリティ スコープを持つユーザーとしてログインする必要があります。 詳細については、「[ロール ベース管理の基礎](/sccm/core/understand/fundamentals-of-role-based-administration)」を参照してください。 中央管理サイトまたは最上位のスタンドアロン プライマリ サイトに接続されているサーバーにログインする必要もあります。
 
- Per testare i client in modalità di pre-produzione sono previsti 3 passaggi di base.  
+ 実稼働前環境でのクライアントのテストは、3 つの基本的な手順に従って実行します。  
 
-1.  Configurare gli aggiornamenti automatici del client per usare una raccolta di pre-produzione.  
+1.  自動クライアント アップグレードを構成して実稼働前コレクションを使用します。  
 
-2.  Installare un aggiornamento di Configuration Manager che include una nuova versione del client.  
+2.  新しいバージョンのクライアントを含む Configuration Manager の更新プログラムをインストールします。  
 
-3.  Alzare il nuovo client al livello di produzione.  
+3.  新しいクライアントを実稼働環境に昇格します。  
 
-##  <a name="to-configure-automatic-client-upgrades-to-use-a-pre-production-collection"></a>Per configurare gli aggiornamenti automatici del client per usare una raccolta di pre-produzione  
+##  <a name="to-configure-automatic-client-upgrades-to-use-a-pre-production-collection"></a>自動クライアント アップグレードを構成して実稼働前コレクションを使用するには  
 
-1. [Impostare una raccolta](..\collections\create-collections.md) che contiene i computer nei quali si vuole distribuire il client di pre-produzione. Non includere i computer del gruppo lavoro nelle raccolte di pre-produzione, poiché non possono usare l'autenticazione necessaria per il punto di distribuzione per accedere al pacchetto client di pre-produzione.   
+1. 実稼働前クライアントを展開するコンピューターを含む[コレクションを設定](..\collections\create-collections.md)します。 実稼働前コレクションには、ワークグループ コンピューターを含めないでください。 ワークグループ コンピューターは、配布ポイントで実稼働前クライアント パッケージにアクセスするために必要な認証を使用できません。   
 
-1.  Nella console di Configuration Manager aprire **Amministrazione** > **Configurazione del sito** > **Siti** e scegliere **Impostazioni gerarchia**.  
+1.  Configuration Manager コンソールで、**[管理]** > **[サイトの構成]** > **[サイト]** の順に選択し、**[階層設定]** を選択します。  
 
-     Nella scheda **Aggiornamento client** di **Proprietà impostazioni gerarchia**, eseguite le seguenti operazioni:  
+     **[階層設定のプロパティ]** の **[クライアント アップグレード]**タブで次の操作を実行します。  
 
-    -   Selezionare **Aggiornare tutti i client della raccolta di preproduzione automaticamente utilizzando il client preproduzione**  
+    -   **[実稼働前クライアントを使用して実稼働前コレクション内のすべてのクライアントを自動的にアップグレードする]**を選びます。  
 
-    -   Immettere il nome di una raccolta da utilizzare come raccolta preproduzione  
+    -   実稼働前コレクションとして使用するコレクションの名前を入力します。  
 
-![Aggiornamenti automatici del client](media/test-client-upgrades.png)
+![クライアントのアップグレードをテストする](media/test-client-upgrades.png)
 
 >[!NOTE]
->Per modificare queste impostazioni, l'account deve essere un membro del ruolo di sicurezza **Amministratore completo** e dell'ambito di protezione **Tutti**.
+>これらの設定を変更するには、アカウントが **[完全な権限を持つ管理者]** のセキュリティ ロールと **[すべて]** のセキュリティ スコープのメンバーである必要があります。
 
 
-##  <a name="to-install-a-configuration-manager-update-that-includes-a-new-version-of-the-client"></a>Per installare un aggiornamento di Configuration Manager che include una nuova versione del client  
+##  <a name="to-install-a-configuration-manager-update-that-includes-a-new-version-of-the-client"></a>新しいバージョンのクライアントを含む Configuration Manager の更新プログラムをインストールするには  
 
-1.  Nella console di Configuration Manager aprire **Amministrazione** > **Aggiornamenti e manutenzione**, selezionare un aggiornamento **Disponibile** e quindi scegliere **Installa pacchetto di aggiornamento**. Nelle versioni precedenti la 1702, Aggiornamenti e manutenzione si trova in **Amministrazione** > **Servizi cloud**.
+1.  Configuration Manager コンソールで、**[管理]** > **[更新とサービス]** の順に開き、**利用可能な**更新プログラムを選択して、**[更新パックのインストール]** を選択します  (1702 より前のバージョンでは、[更新とサービス] は、**[管理]** > **[クラウド サービス]** にありました)。
 
-     Per altre informazioni sull'installazione degli aggiornamenti, vedere [Aggiornamenti per System Center Configuration Manager](../../../../core/servers/manage/updates.md)  
+     更新プログラムのインストールの詳細については、「[System Center Configuration Manager の更新プログラム](../../../../core/servers/manage/updates.md)」を参照してください  
 
-2.  Durante l'installazione dell'aggiornamento, nella pagina **Opzioni client** della procedura guidata selezionare **Convalida in una raccolta di pre-produzione**.  
+2.  更新プログラムのインストール中に、ウィザードの **[クライアント オプション]** ページで **[実稼働前コレクションでのテスト]**を選択します。  
 
-3.  Completare il resto della procedura guidata e installare il pacchetto di aggiornamento.  
+3.  ウィザードの残りの手順を完了し、更新パックをインストールします。  
 
-     Dopo aver completato la procedura guidata, i client nella raccolta di pre-produzione inizieranno a distribuire il client aggiornato. È possibile monitorare la distribuzione dei client aggiornati passando a **Monitoraggio** > **Stato del client** > **Distribuzione client di pre-produzione**. Per altre informazioni, vedere [Come monitorare lo stato di distribuzione dei client in System Center Configuration Manager](../../../../core/clients/deploy/monitor-client-deployment-status.md).
+     ウィザードを完了すると、実稼働前コレクション内のクライアントが、更新されたクライアントの展開を開始します。 **[監視]** > **[クライアント ステータス]** > **[実稼働前クライアント展開]**と移動して、アップグレード済みのクライアントの展開を監視できます。 詳細については、「[System Center Configuration Manager でクライアントの展開ステータスを監視する方法](../../../../core/clients/deploy/monitor-client-deployment-status.md)」を参照してください。
 
     > [!NOTE]
-    > Lo stato della distribuzione nei computer che ospitano i ruoli del sistema del sito in una raccolta di pre-produzione può essere indicato come **Non conforme** anche quando il client è stato distribuito correttamente. Quando si promuove il client al livello di produzione, lo stato della distribuzione è segnalato in modo corretto.
+    > 実稼働前コレクションでサイト システムの役割をホストしているコンピューターの展開ステータスは、クライアントが正常に展開された場合でも、**非対応**と報告されることがあります。 クライアントを実稼働環境に昇格すると、展開のステータスが正しく報告されます。
 
-##  <a name="to-promote-the-new-client-to-production"></a>Per alzare di livello il nuovo client al livello di produzione  
+##  <a name="to-promote-the-new-client-to-production"></a>新しいクライアントを実稼働環境に昇格するには  
 
-1.  Nella console di Configuration Manager aprire **Amministrazione** > **Aggiornamenti e manutenzione** e quindi scegliere **Alza di livello il client di pre-produzione**. Nelle versioni precedenti la 1702, Aggiornamenti e manutenzione si trova in **Amministrazione** > **Servizi cloud**.
+1.  Configuration Manager コンソールで、**[管理]** > **[更新とサービス]** の順に開き、**[実稼働前クライアントの昇格]** を選択します  (1702 より前のバージョンでは、[更新とサービス] は、**[管理]** > **[クラウド サービス]** にありました)。
 
     > [!TIP]
-    > Il pulsante **Alza di livello il client di pre-produzione** è disponibile anche durante il monitoraggio delle distribuzioni dei client nella console da **Monitoraggio** > **Stato del client** > **Distribuzione client di pre-produzione**.
+    > **[実稼働前クライアントの昇格]** ボタンは、コンソールの **[監視]** > **[クライアント ステータス]** > **[実稼働前クライアント展開]**で、クライアント展開を監視中である場合も使用することができます。
 
-2.  Rivedere le versioni client in produzione e pre-produzione, verificare che sia specificata la raccolta di pre-produzione corretta, fare clic su **Alza di livello** e poi su **Sì**.  
+2.  実稼働および実稼働前のクライアント バージョンを確認し、正しい実稼働前コレクションが指定されていることを確認して、**[昇格]**、**[はい]** の順にクリックします。  
 
-3.  Quando si chiude la finestra di dialogo, la versione aggiornata del client sostituirà quella attualmente in uso nella gerarchia. Sarà quindi possibile aggiornare i client per l'intero sito. Per altre informazioni, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
+3.  ダイアログ ボックスが閉じた後、階層で使われているクライアントのバージョンが、更新されたクライアントのバージョンに置き換えられます。 その後、サイト全体のクライアントをアップグレードできます。 詳細については、「[System Center Configuration Manager で Windows コンピューター用クライアントをアップグレードする方法](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md)」を参照してください。  
 
 >[!NOTE]
->Per abilitare il client pre-produzione o per promuovere un client pre-produzione a un client di produzione, l'account deve essere un membro del ruolo di sicurezza che ha le autorizzazioni **Lettura** e **Modifica** per l'oggetto **Pacchetti di aggiornamento**.
->Per gli aggiornamenti client vengono rispettate tutte le finestre di manutenzione di Configuration Manager configurate.
-
+>実稼働前クライアントを有効にする、または実稼働前クライアントを実稼働クライアントに昇格するには、アカウントが**更新プログラム パッケージ** オブジェクトを **[読み取り]**、**[変更]** する権限をもつセキュリティ ロールのメンバーである必要があります。
+>Configuration Manager のメンテナンス期間を構成している場合、クライアントのアップグレードではそれが優先されます。

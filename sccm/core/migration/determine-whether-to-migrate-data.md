@@ -1,195 +1,188 @@
 ---
-title: Scegliere quali dati migrare | Microsoft Docs
-description: Informazioni su quali dati possono e non possono essere migrati a System Center Configuration Manager.
+title: "移行するデータの選択 | Microsoft Docs"
+description: "System Center Configuration Manager に移行できるデータと移行できないデータについて説明します。"
 ms.custom: na
 ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 99222dc8-0e1e-4513-8302-7a1acf671e9b
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: d37261c03fddc3d576fcef73fabd7189e4c46d38
 ms.openlocfilehash: 9dc5f6c9f58e1fc33b2dc9dd76737ae23af81993
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="determine-whether-to-migrate-data-to-system-center-configuration-manager"></a>Stabilire se eseguire la migrazione dei dati a System Center Configuration Manager
+# <a name="determine-whether-to-migrate-data-to-system-center-configuration-manager"></a>データを System Center Configuration Manager に移行するかどうかの判断
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-La migrazione in System Center Configuration Manager offre un processo per trasferire i dati e le configurazioni creati dalle versioni supportate di Configuration Manager alla nuova gerarchia.  È possibile usare questo processo per:  
+System Center Configuration Manager の移行では、作成したデータと構成を、サポートされているバージョンの Configuration Manager から新しい階層に転送するためのプロセスが提供されます。  これを使用して、次の操作を実行できます。  
 
--   Combinare più gerarchie in una.  
+-   複数の階層を 1 つに統合する。  
 
--   Spostare dati e configurazioni da una distribuzione lab alla distribuzione di produzione.
+-   データと構成をラボの展開から運用環境の展開に移動する。
 
--   Spostare i dati e la configurazione da una versione precedente di Configuration Manager, ad esempio Configuration Manager 2007 che non dispone di alcun percorso di aggiornamento per System Center Configuration Manager, o da System Center 2012 Configuration Manager, che supporta un percorso di aggiornamento a System Center Configuration Manager.  
+-   System Center Configuration Manager へのアップグレード パスのない Configuration Manager 2007 などの以前のバージョンの Configuration Manager、または System Center 2012 Configuration Manager (System Center Configuration Manager へのアップグレード パスがサポートされている) からデータと構成を移動します。  
 
-A eccezione del ruolo di sistema del sito del punto di distribuzione e dei computer che ospitano i punti di distribuzione, nessuna infrastruttura (compresi siti, ruoli di sistema del sito o computer che ospitano un ruolo di sistema del sito) può eseguire migrazioni, trasferimenti o essere condivisa tra le gerarchie.  
+配布ポイント サイト システムの役割と、配布ポイントをホストするコンピューターを除き、階層間で移行、転送、または共有できるインフラストラクチャ (サイト、サイト システムの役割、またはサイト システムの役割をホストするコンピューターを含む) はありません。  
 
- Anche se non è possibile migrare l'infrastruttura del server, è possibile migrare i client di Configuration Manager da una gerarchia all'altra. La migrazione client comporta la migrazione dei dati utilizzati dai client da una gerarchia di origine a una gerarchia di destinazione e, quindi, l'installazione o la riassegnazione del software client in modo che il client relazioni alla nuova gerarchia.
+ サーバー インフラストラクチャは移行できませんが、階層間で構成マネージャー クライアントを移行することはできます。 クライアントの移行には、ソース階層でクライアントが使用するデータを対象の階層に移行する処理と、クライアントが新しい階層にレポートするようにクライアント ソフトウェアのインストールまたは再割り当てを行う処理が必要です。
 
-Dopo l'installazione di un client nella nuova gerarchia e l'invio dei dati da parte del client, l'ID univoco di Configuration Manager consente a Configuration Manager di associare i dati precedentemente migrati a ogni computer client.  
+クライアントを新しい階層にインストールし、クライアントがそのデータを送信した後は、Configuration Manager で一意の Configuration Manager ID を使用して、以前に移行したデータを各クライアント コンピューターに関連付けることができます。  
 
- La funzionalità offerta dalla migrazione consente di gestire gli investimenti nelle configurazioni e nelle distribuzioni, nonché di usufruire pienamente delle principali modifiche apportate al prodotto introdotte per la prima volta in System Center 2012 Configuration Manager e proseguite in System Center Configuration Manager. Queste modifiche comprendono una gerarchia di Configuration Manager semplificata che usa un numero inferiore di siti e risorse, nonché una migliore elaborazione grazie all'uso di codice nativo a 64 bit eseguito su hardware a 64 bit.  
+ 移行によって提供される機能は、構成と展開にこれまで投資してきた資産を維持しながら、(System Center 2012 Configuration Manager で最初に導入され、System Center Configuration Manager に引き継がれている) 主要な変更点を最大限に活用するのに役立ちます。 これらの変更点には、より少ないサイトとリソースを使用するように簡素化された Configuration Manager 階層、64 ビット ハードウェア上で実行されるネイティブ 64 ビット コードの使用により強化されたプロセッシング機能などが含まれます。  
 
- Per informazioni sulle versioni di Configuration Manager supportate dalla migrazione, vedere [Prerequisites for migration in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md) (Prerequisiti per la migrazione in System Center Configuration Manager).  
+ 移行がサポートされている Configuration Manager のバージョンの詳細については、「[System Center Configuration Manager での移行の前提条件](../../core/migration/prerequisites-for-migration.md)」をご覧ください。  
 
- Le sezioni seguenti possono essere utili per pianificare i dati di cui è possibile o non è possibile eseguire la migrazione:  
+ 次のセクションは、移行できるデータと移行できないデータについて計画する際に役立ちます。  
 
--   [Dati di cui è possibile eseguire la migrazione a System Center Configuration Manager](#Can_Migrate)  
+-   [System Center Configuration Manager に移行可能なデータ](#Can_Migrate)  
 
--   [Dati di cui non è possibile eseguire la migrazione a System Center Configuration Manager](#Cannot_migrate)  
+-   [System Center Configuration Manager に移行できないデータ](#Cannot_migrate)  
 
-##  <a name="a-namecanmigratea-data-that-you-can-migrate-to-system-center-configuration-manager"></a><a name="Can_Migrate"></a> Dati di cui è possibile eseguire la migrazione a System Center Configuration Manager  
- La migrazione può essere applicata alla maggior parte degli oggetti delle gerarchie di Configuration Manager supportate. Le istanze migrate di alcuni oggetti di una versione supportata di Configuration Manager 2007 devono essere modificate per essere conformi al formato oggetti e allo schema di System Center 2012 Configuration Manager.
+##  <a name="Can_Migrate"></a> System Center Configuration Manager に移行可能なデータ  
+ 移行により、サポートされる Configuration Manager 階層間で大部分のオブジェクトを移行できます。 サポートされるバージョンの Configuration Manager 2007 のオブジェクトによっては、System Center 2012 Configuration Manager のスキーマとオブジェクト形式に準拠するように、移行されるインスタンスを変更する必要があります。
 
-Queste modifiche non interessano i dati contenuti nel database del sito di origine. Gli oggetti migrati da una versione supportata di System Center 2012 Configuration Manager o System Center Configuration Manager non richiedono alcuna modifica.  
+この変更は、ソース サイトのデータベース内のデータには影響しません。 サポートされているバージョンの System Center 2012 Configuration Manager または System Center Configuration Manager から移行されたオブジェクトは、変更する必要がありません。  
 
- Di seguito sono elencati gli oggetti di cui è possibile eseguire la migrazione in base alla versione di Configuration Manager nella gerarchia di origine. Alcuni oggetti, ad esempio le query, non possono essere migrati. Per continuare a usare questi oggetti che non vengono migrati, è necessario ricrearli nella nuova gerarchia. Altri oggetti, tra cui alcuni dati client, vengono ricreati automaticamente nella nuova gerarchia durante la gestione dei client in tale gerarchia.  
+ ソース階層の Configuration Manager のバージョンに基づいて移行できるオブジェクトを次に示します。 クエリと同様に、一部のオブジェクトは移行されません。 このような移行されないオブジェクトを引き続き使用するには、新しい階層で再作成する必要があります。 一部のクライアント データを含む、他のオブジェクトは、新しい階層でクライアントを管理するときに自動的に再作成されます。  
 
-### <a name="objects-that-you-can-migrate-from-system-center-2012-configuration-manager-or-system-center-configuration-manager-current-branch"></a>Oggetti di cui è possibile eseguire la migrazione da System Center 2012 Configuration Manager o System Center Configuration Manager Current Branch
+### <a name="objects-that-you-can-migrate-from-system-center-2012-configuration-manager-or-system-center-configuration-manager-current-branch"></a>System Center 2012 Configuration Manager または System Center Configuration Manager の現在のブランチから移行できるオブジェクト
 
--   Annunci  
+-   開示通知 (旧称「提供情報」)  
 
--   Applicazioni per System Center 2012 Configuration Manager e versioni successive  
+-   System Center 2012 Configuration Manager およびそれ以降のバージョン用のアプリケーション  
 
--   Ambiente virtuale App-V di System Center 2012 Configuration Manager e versioni successive  
+-   System Center 2012 Configuration Manager およびそれ以降のバージョンの App-V 仮想環境  
 
--   Personalizzazioni Asset Intelligence  
+-   資産インテリジェンスのカスタマイズ設定  
 
--   Limiti  
+-   境界  
 
--   Raccolte: per eseguire la migrazione delle raccolte da una versione supportata di System Center 2012 Configuration Manager o System Center Configuration Manager, usare un processo di migrazione oggetti.  
+-   コレクション: サポートされているバージョンの System Center 2012 Configuration Manager または System Center Configuration Manager からコレクションを移行するには、オブジェクトの移行ジョブを使用します。  
 
--   Impostazioni di conformità:  
+-   コンプライアンス設定:  
 
-    -   Linee di base di configurazione  
+    -   構成基準  
 
-    -   Elementi di configurazione  
+    -   構成項目  
 
--   Distribuzione del sistema operativo:  
+-   オペレーティング システムの展開:  
 
-    -   Immagini d'avvio  
+    -   ブート イメージ  
 
-    -   Pacchetti driver  
+    -   ドライバー パッケージ  
 
-    -   Driver  
+    -   ドライバー  
 
-    -   Immagini  
+    -   イメージ  
 
-    -   Pacchetti  
+    -   パッケージ  
 
-    -   Sequenze attività  
+    -   タスク シーケンス  
 
--   Risultati ricerca: criteri di ricerca salvati  
+-   検索結果: 保存された検索条件  
 
--   Aggiornamenti software:  
+-   ソフトウェア更新プログラム:  
 
-    -   Distribuzioni  
+    -   展開  
 
-    -   Pacchetti di distribuzione  
+    -   展開パッケージ  
 
-    -   Modelli  
+    -   テンプレート  
 
-    -   Elenchi di aggiornamenti software  
+    -   ソフトウェア更新プログラム一覧  
 
--   Pacchetti di distribuzione software  
+-   ソフトウェアの配布パッケージ  
 
--   Regole di controllo software  
+-   ソフトウェア使用状況測定規則 (旧称「ソフトウェア メータリング規則」)  
 
--   Pacchetti di applicazioni virtuali  
+-   仮想アプリケーション パッケージ  
 
-### <a name="objects-that-you-can-migrate-from-configuration-manager-2007-sp2"></a>Oggetti di cui è possibile eseguire la migrazione da Configuration Manager 2007 SP2
+### <a name="objects-that-you-can-migrate-from-configuration-manager-2007-sp2"></a>Configuration Manager 2007 SP2 から移行できるオブジェクト
 
--   Annunci  
+-   開示通知 (旧称「提供情報」)  
 
--   Applicazioni per System Center 2012 Configuration Manager e versioni successive  
+-   System Center 2012 Configuration Manager およびそれ以降のバージョン用のアプリケーション  
 
--   Ambiente virtuale App-V di System Center 2012 Configuration Manager e versioni successive  
+-   System Center 2012 Configuration Manager およびそれ以降のバージョンの App-V 仮想環境  
 
--   Personalizzazioni Asset Intelligence  
+-   資産インテリジェンスのカスタマイズ設定  
 
--   Limiti  
+-   境界  
 
--   Raccolte: le raccolte vengono migrate da una versione supportata di Configuration Manager 2007 usando un processo di migrazione raccolte.  
+-   コレクション: コレクションの移行ジョブを使用して、サポートされるバージョンの Configuration Manager 2007 からコレクションを移行します。  
 
--   Impostazioni di conformità (definite gestione configurazione desiderata in Configuration Manager 2007):  
+-   コンプライアンス設定 (Configuration Manager 2007 では必要な構成管理とも呼ばれます):  
 
-    -   Linee di base di configurazione  
+    -   構成基準  
 
-    -   Elementi di configurazione  
+    -   構成項目  
 
--   Distribuzione del sistema operativo:  
+-   オペレーティング システムの展開:  
 
-    -   Immagini d'avvio  
+    -   ブート イメージ  
 
-    -   Pacchetti driver  
+    -   ドライバー パッケージ  
 
-    -   Driver  
+    -   ドライバー  
 
-    -   Immagini  
+    -   イメージ  
 
-    -   Pacchetti  
+    -   パッケージ  
 
-    -   Sequenze attività  
+    -   タスク シーケンス  
 
--   Risultati ricerca: cartelle di ricerca  
+-   検索結果: 検索フォルダー  
 
--   Aggiornamenti software:  
+-   ソフトウェア更新プログラム:  
 
-    -   Distribuzioni  
+    -   展開  
 
-    -   Pacchetti di distribuzione  
+    -   展開パッケージ  
 
-    -   Modelli  
+    -   テンプレート  
 
-    -   Elenchi di aggiornamenti software  
+    -   ソフトウェア更新プログラム一覧  
 
--   Pacchetti di distribuzione software  
+-   ソフトウェアの配布パッケージ  
 
--   Regole di controllo software  
+-   ソフトウェア使用状況測定規則 (旧称「ソフトウェア メータリング規則」)  
 
--   Pacchetti di applicazioni virtuali  
+-   仮想アプリケーション パッケージ  
 
-##  <a name="a-namecannotmigratea-data-that-you-cannot-migrate-to-system-center-configuration-manager"></a><a name="Cannot_migrate"></a> Dati di cui non è possibile eseguire la migrazione a System Center Configuration Manager  
- Non è possibile migrare i seguenti tipi di oggetti:  
+##  <a name="Cannot_migrate"></a> System Center Configuration Manager に移行できないデータ  
+ 次の種類のオブジェクトは移行できません。  
 
--   Informazioni di provisioning client AMT  
+-   AMT クライアントのプロビジョニング情報  
 
--   File nei client, inclusi:  
+-   次のような、クライアント上のファイル:  
 
-    -   Dati cronologia e dati di inventario dei client  
+    -   クライアント インベントリおよび履歴データ  
 
-    -   File nella cache del client  
+    -   クライアントのキャッシュ内のファイル  
 
--   Query  
+-   クエリ  
 
--   Istanze e privilegi di protezione di Configuration Manager 2007 per il sito e gli oggetti  
+-   サイトとオブジェクトの Configuration Manager 2007 セキュリティ権限とインスタンス  
 
--   Report di Configuration Manager 2007 provenienti da SQL Server Reporting Services  
+-   SQL Server Reporting Services の Configuration Manager 2007 レポート  
 
--   Report Web di Configuration Manager 2007  
+-   Configuration Manager 2007 の Web レポート  
 
--   Report di System Center 2012 Configuration Manager e System Center Configuration Manager  
+-   System Center 2012 Configuration Manager および System Center Configuration Manager のレポート  
 
--   Amministrazione basata su ruoli di System Center 2012 Configuration Manager e System Center Configuration Manager:  
+-   System Center 2012 Configuration Manager および System Center Configuration Manager のロール ベース管理:  
 
-    -   ruoli di sicurezza  
+    -   セキュリティ ロール  
 
-    -   Ambiti di protezione  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
-
+    -   セキュリティ スコープ  

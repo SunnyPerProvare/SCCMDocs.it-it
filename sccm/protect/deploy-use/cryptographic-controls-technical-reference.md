@@ -1,286 +1,282 @@
 ---
-title: Riferimento tecnico per i controlli crittografici | Microsoft Docs
-description: Questo argomento illustra come la firma e la crittografia consentono di impedire agli autori di attacchi la lettura dei dati in System Center Configuration Manager.
+title: "暗号化コントロールのテクニカル リファレンス | Microsoft Docs"
+description: "System Center Configuration Manager では署名と暗号化を使用して、攻撃者によるデータの読み取りを防ぐことができます。その方法について説明します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0c63dcc5-a1bd-4037-959a-2e6ba0fd1b2c
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
-ms.openlocfilehash: 0f76ed3dd74a80d9e22cfa743e5aa484f6cd7d97
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 09d319ce817c925ac002a27733d2ce35464eeca7
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="cryptographic-controls-technical-reference"></a>Riferimento tecnico per i controlli crittografici
+# <a name="cryptographic-controls-technical-reference"></a>暗号化コントロールのテクニカル リファレンス
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
 
-System Center Configuration Manager usa la firma e la crittografia per proteggere la gestione dei dispositivi nella gerarchia di Configuration Manager. Con la firma, se i dati sono stati modificati in transito vengono scartati. La crittografia consente di impedire a un utente malintenzionato di leggere i dati usando uno strumento di analisi dei protocolli di rete.  
+System Center Configuration Manager では、署名と暗号化を使用して、Configuration Manager 階層内のデバイスの管理を効果的に保護することができます。 署名を使用した場合、転送中にデータが改変されると、そのデータは破棄されます。 暗号化は、攻撃者がネットワーク プロトコル アナライザーを使用してデータを読み取ることを防ぐのに有効です。  
 
- L'algoritmo hash primario usato da Configuration Manager per la firma è SHA-256. Quando due siti di Configuration Manager comunicano tra loro, firmano le comunicazioni con SHA-256. L'algoritmo di crittografia primario implementato in Configuration Manager è 3DES. Questo algoritmo viene usato per archiviare dati nel database di Configuration Manager e per la comunicazione HTTP del client. Quando si usa la comunicazione client in HTTPS, è possibile configurare l'infrastruttura a chiave pubblica (PKI) per usare i certificati RSA con gli algoritmi hash e le lunghezze di chiave massimi documentati nell'argomento relativo ai [requisiti dei certificati PKI per Configuration Manager](../../core/plan-design/network/pki-certificate-requirements.md).  
+ Configuration Manager で使用する署名のハッシュ アルゴリズムは SHA-256 です。 2 つの Configuration Manager サイトが互いに通信するときは、SHA-256 を使用して通信に署名します。 Configuration Manager に実装される主な暗号化アルゴリズムは 3DES です。 このアルゴリズムは、Configuration Manager にデータを格納する場合、およびクライアント HTTP 通信の場合に使用されます。 HTTPS を介したクライアント通信を使用する場合は、公開キー基盤 (PKI) を構成して、「[PKI certificate requirements for System Center Configuration Manager](../../core/plan-design/network/pki-certificate-requirements.md)」 (System Center Configuration Manager での PKI 証明書の要件) で説明している最も強力なハッシュ アルゴリズムおよびキーの最大長を使用した RSA 証明書を使用できます。  
 
- Per la maggior parte delle operazioni crittografiche per i sistemi operativi basati su Windows, Configuration Manager usa gli algoritmi SHA-2, 3DES e AES, RSA dalla libreria CryptoAPI rsaenh.dll di Windows.  
+ Windows ベースのオペレーティング システムの大部分の暗号化操作で、Configuration Manager は、Windows CryptoAPI ライブラリ rsaenh.dll の SHA-2、3DES と AES、RSA アルゴリズムを使用します。  
 
 > [!IMPORTANT]  
->  In [Informazioni sulle vulnerabilità di SSL](#about-ssl-vulnerabilities)sono disponibili informazioni sulle modifiche consigliate in risposta alle vulnerabilità di SSL.  
+>  「[SSL の脆弱性について](#about-ssl-vulnerabilities)」における SSL の脆弱性に対応する推奨される変更点に関する情報をご覧ください。  
 
-##  <a name="cryptographic-controls-for-configuration-manager-operations"></a>Controlli crittografici per le operazioni di Configuration Manager  
- Le informazioni in Configuration Manager possono essere firmate e crittografate, indipendentemente dal fatto che si usino i certificati PKI con Configuration Manager.  
+##  <a name="cryptographic-controls-for-configuration-manager-operations"></a>Configuration Manager の操作での暗号化の制御  
+ Configuration Manager で PKI 証明書を使用するかどうかに関係なく、Configuration Manager 内の情報に署名および暗号化することができます。  
 
-### <a name="policy-signing-and-encryption"></a>Firma e crittografia di criteri  
- Le assegnazioni di criteri client vengono firmate dal certificato di firma del server del sito autofirmato per evitare i rischi di sicurezza di un punto di gestione compromesso che invia criteri manomessi. Questo è importante se si sta usando la gestione client basata su Internet, perché questo ambiente richiede un punto di gestione esposto alla comunicazione Internet.  
+### <a name="policy-signing-and-encryption"></a>ポリシーの署名と暗号化  
+ クライアントのポリシー割り当ては、証明書に署名する自己署名サイト サーバーによって署名されています。これは、侵害された管理ポイントから改ざんされたポリシーが送信されるというセキュリティ上の危険を防止するためです。 この防御策はインターネットベースのクライアント管理を使用している場合に重要となります。これは、この環境ではインターネット接続に公開されている管理ポイントが必要となるためです。  
 
- I criteri vengono crittografati con 3DES quando contengono dati sensibili. I criteri che contengono dati sensibili vengono inviati solo ai client autorizzati. I criteri che non dispongono di dati sensibili non vengono crittografati.  
+ ポリシーに機密データが含まれている場合は、3DES を使用して暗号化されます。 機密データが含まれているポリシーは、承認されているクライアントにのみ送信されます。 機密データが含まれていないポリシーは暗号化されません。  
 
- Quando il criterio viene archiviato nei client, viene crittografato usando l'API di protezione dati (DPAPI).  
+ ポリシーがクライアントに保存されるときは、データ保護アプリケーション プログラミング インターフェイス (DPAPI) を使って暗号化されます。  
 
-### <a name="policy-hashing"></a>Hash criteri  
- Quando i client di Configuration Manager richiedono criteri, per prima cosa ricevono un'assegnazione di criteri in modo da sapere quali criteri verranno applicati, quindi richiedono solo quei corpi di criteri. Ogni assegnazione di criteri contiene l'hash calcolato per il corpo di criteri corrispondente. Il client recupera i corpi di criteri applicabili, quindi calcola l'hash di tale corpo. Se l'hash nel corpo di criteri scaricato non corrisponde all'hash nell'assegnazione di criteri, il client rimuove il corpo di criteri.  
+### <a name="policy-hashing"></a>ポリシーのハッシュ  
+ Configuration Manager クライアントがポリシーを要求する場合、まずポリシー割り当てを受け取るので、自身に適用されるポリシーを認識できます。次に、そのポリシーの本文のみを要求します。 各ポリシー割り当てには、対応するポリシー本文用の算出されたハッシュが含まれます。 クライアントは適切なポリシー本文を取得してから、その本文上でハッシュを計算します。 ダウンロードしたポリシー本文のハッシュがポリシー割り当てのハッシュと一致しない場合、クライアントはポリシー本文を廃棄します。  
 
- L'algoritmo hash per i criteri è SHA-1 e SHA-256.  
+ ポリシー用のハッシュ アルゴリズムは SHA-1 と SHA-256 です。  
 
-### <a name="content-hashing"></a>Hash contenuto  
- Il servizio di Gestione distribuzione nel server del sito genera un hash per i file di contenuto per tutti i pacchetti. Il provider di criteri include l'hash nei criteri di distribuzione software. Quando il client di Configuration Manager scarica il contenuto, il client rigenera l'hash a livello locale e lo confronta con quello specificato nei criteri. Se gli hash corrispondono, il contenuto non è stato alterato e il client lo installa. Se un singolo byte del contenuto è stato modificato, gli hash non corrispondono e il software non verrà installato. Questo controllo consente di verificare che sia installato il software corretto poiché il contenuto effettivo viene confrontato con i criteri.  
+### <a name="content-hashing"></a>コンテンツのハッシュ  
+ サイト サーバー上の配布マネージャー サービスは、すべてのパッケージのコンテンツ ファイルをハッシュします。 ポリシー プロバイダーには、ソフトウェア配布ポリシーのハッシュが含まれます。 Configuration Manager クライアントがコンテンツをダウンロードすると、クライアントはローカルでハッシュを再生成し、ポリシー内のハッシュと比較します。 ハッシュが一致した場合は、コンテンツが改変されていないので、クライアントはコンテンツをインストールします。 コンテンツが 1 バイトでも改変されていると、ハッシュが一致しなくなるため、ソフトウェアはインストールされません。 このチェック機能により、実際のコンテンツがポリシーでクロスチェックされるため、正しいソフトウェアを確実にインストールすることができます。  
 
- L'algoritmo hash predefinito per il contenuto è SHA-256. Per modificare il valore predefinito, vedere la documentazione per il Software Development Kit (SDK) di Configuration Manager.  
+ コンテンツの既定のハッシュ アルゴリズムは SHA-256 です。 この既定値を変更する場合は、Configuration Manager ソフトウェア開発キット (SDK) のドキュメントを参照してください。  
 
- Non tutti i dispositivi sono in grado di supportare l'hash contenuto. Le eccezioni includono:  
+ コンテンツのハッシュをサポートしないデバイスもあります。 この例外には、次のことが含まれます。  
 
--   Client Windows quando trasmettono contenuto App-V.  
+-   App-V コンテンツをストリーミングするときの Windows クライアント。  
 
--   Client Windows Phone, anche se questi client verificano la firma di un'applicazione firmata da una fonte attendibile.  
+-   Windows Phone クライアント: ただし、これらのクライアントは、信頼できるソースで署名されたアプリケーションの署名を検証します。  
 
--   Client Windows RT, anche se questi client verificano la firma di un'applicazione firmata da una fonte attendibile e usano anche la convalida del nome completo del pacchetto.  
+-   Windows RT クライアント: ただし、これらのクライアントは、信頼できるソースで署名されたアプリケーションの署名を検証し、パッケージの完全名 (PFN) の検証も使用します。  
 
--   iOS, anche se questi dispositivi verificano la firma di un'applicazione firmata da un certificato dello sviluppatore proveniente da una fonte attendibile.  
+-   iOS: ただし、これらのデバイスは、信頼できるソースの任意の開発者証明書で署名されたアプリケーションの署名を検証します。  
 
--   Client Nokia, anche se questi client verificano la firma di un'applicazione che usa un certificato autofirmato. In alternativa, la firma di un certificato proveniente da una fonte attendibile e il certificato possono firmare applicazioni Nokia SIS (Symbian Installation Source).  
+-   Nokia クライアント: ただし、これらのクライアントは、自己署名証明書を使用するアプリケーションの署名を検証します。 または、信頼できるソースの証明書の署名と証明書によって、Nokia Symbian Installation Source (SIS) アプリケーションに署名することができます。  
 
--   Android. Questi dispositivi, inoltre, non usano la convalida della firma per l'installazione applicazioni.  
+-   Android。 さらに、これらのデバイスは、アプリケーションのインストールに署名の検証を使用しません。  
 
--   Client eseguiti su versioni di Linux e UNIX che non supportano SHA-256. Per altre informazioni, vedere [Pianificazione della distribuzione client a computer Linux e UNIX in System Center Configuration Manager](../../core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers.md).  
+-   SHA-256 をサポートしていない Linux および UNIX のバージョンで実行されるクライアント。 詳細については、「[System Center Configuration Manager での Linux コンピューターおよび UNIX コンピューターへのクライアント展開の計画](../../core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers.md)」をご覧ください。  
 
-### <a name="inventory-signing-and-encryption"></a>Firma e crittografia dell'inventario  
- L'inventario che i client inviano ai punti di gestione viene sempre firmato dai dispositivi, indipendentemente dalla comunicazioni con i punti di gestione in HTTP o HTTPS. Se usano HTTP, è possibile crittografare questi dati, il che è consigliabile.  
+### <a name="inventory-signing-and-encryption"></a>インベントリの署名と暗号化  
+ クライアントが管理ポイントに送信するインベントリは、管理ポイントとの通信に HTTP または HTTPS のどちらが使用されていても、デバイスによって必ず署名されます。 HTTP が使用される場合は、このデータを暗号化することを選択できます。これは、推奨されるセキュリティのベスト プラクティスです。  
 
-### <a name="state-migration-encryption"></a>Crittografia della migrazione stato  
- I dati memorizzati nei punti di migrazione stato per la distribuzione del sistema operativo vengono sempre crittografati dall'Utilità di migrazione stato utente (USMT) usando 3DES.  
+### <a name="state-migration-encryption"></a>状態移行の暗号化  
+ オペレーティング システム展開用の状態移行ポイントに保存されているデータは、必ずユーザー状態移行ツール (USMT) で 3DES を使用して暗号化されます。  
 
-### <a name="encryption-for-multicast-packages-to-deploy-operating-systems"></a>Crittografia per pacchetti multicast per la distribuzione di sistemi operativi  
- Per ogni pacchetto di distribuzione di sistemi operativi, è possibile abilitare la crittografia quando il pacchetto viene trasferito nei computer usando multicast. La crittografia usa Advanced Encryption Standard (AES). Se si abilita la crittografia, non è necessaria alcuna configurazione aggiuntiva del certificato. Il punto di distribuzione abilitato per multicast genera automaticamente chiavi simmetriche per crittografare il pacchetto. Ogni pacchetto ha una chiave di crittografia diversa. La chiave viene memorizzata nel punto di distribuzione abilitato per multicast usando le API Windows standard. Quando il client si collega alla sessione multicast, lo scambio di chiave avviene su un canale crittografato con il certificato di autenticazione client emesso da PKI (quando il client usa HTTPS) oppure il certificato autofirmato (quando il client usa HTTP). Il client memorizza la chiave solo per la durata della sessione multicast.  
+### <a name="encryption-for-multicast-packages-to-deploy-operating-systems"></a>オペレーティング システムを展開するマルチキャスト パッケージの暗号化  
+ マルチキャストを使用してパッケージをコンピューターに送信する場合、すべてのオペレーティング システムの展開パッケージに対して、暗号化を有効にすることができます。 この暗号化では Advanced Encryption Standard (AES) が使用されます。 暗号化を有効にする場合は、証明書を追加で構成する必要はありません。 マルチキャスト対応の配布ポイントは、パッケージの暗号化のために自動的に対称キーを生成します。 各パッケージには、異なる暗号化キーがあります。 キーは、標準的な Windows API を使用して、マルチキャスト対応の配布ポイントに格納されます。 クライアントがマルチキャスト セッションに接続するとき、PKI 発行のクライアント認証証明書 (クライアントが HTTPS を使用する場合) または自己署名入り証明書 (クライアントが HTTP を使用する場合) で暗号化されたチャネルを通じてキーの交換が実行されます。 クライアントは、マルチキャスト セッション中の場合のみメモリにキーを格納します。  
 
-### <a name="encryption-for-media-to-deploy-operating-systems"></a>Crittografia per i supporti per la distribuzione di sistemi operativi  
- Quando si usano supporti per distribuire sistemi operativi e si specifica una password per proteggere i supporti, le variabili di ambiente sono crittografate usando Advanced Encryption Standard (AES). Gli altri dati presenti sul supporto, inclusi i pacchetti e il contenuto per le applicazioni, non vengono crittografati.  
+### <a name="encryption-for-media-to-deploy-operating-systems"></a>オペレーティング システムを展開するメディアの暗号化  
+ メディアを使用してオペレーティング システムを展開し、メディアを保護するためにパスワードを指定する場合、環境変数は Advanced Encryption Standard (AES) を使用して暗号化されます。 メディア上のその他のデータ (パッケージおよびアプリケーションのコンテンツを含む) は暗号化されません。  
 
-### <a name="encryption-for-content-that-is-hosted-on-cloud-based-distribution-points"></a>Crittografia per il contenuto ospitato nei punti di distribuzione basati su cloud  
- A partire da System Center 2012 Configuration Manager SP1, quando si usano punti di distribuzione basati su cloud, il contenuto caricato su questi punti di distribuzione viene crittografato usando Advanced Encryption Standard (AES) con una chiave di dimensioni 256 bit. Quando si aggiorna, il contenuto viene nuovamente crittografato. Quando i client scaricano il contenuto, esso viene crittografato e protetto tramite la connessione HTTPS.  
+### <a name="encryption-for-content-that-is-hosted-on-cloud-based-distribution-points"></a>クラウドベースの配布ポイントでホストされているコンテンツの暗号化  
+ System Center 2012 Configuration Manager SP1 以降では、クラウドベースの配布ポイントを使用する場合、その配布ポイントにアップロードしたコンテンツは、Advanced Encryption Standard (AES) を使用して 256 ビットのキー サイズで暗号化されます。 コンテンツは、更新するたびに再暗号化されます。 クライアントがコンテンツをダウンロードすると、暗号化され、HTTPS 接続で保護されます。  
 
-### <a name="signing-in-software-updates"></a>Firma negli aggiornamenti software  
- Tutti gli aggiornamenti software devono essere firmati da un autore attendibile per la protezione contro eventuali manomissioni. Nei computer client, l'agente di Windows Update (WUA) esegue la scansione degli aggiornamenti dal catalogo, ma non installerà l'aggiornamento se non riesce a individuare il certificato digitale nell'archivio Autori attendibili nel computer locale. Se il certificato autofirmato è stato usato per la pubblicazione del catalogo degli aggiornamenti, come Autori WSUS autofirmato, il certificato deve trovarsi anche nell'archivio certificati dell'autorità di certificazione radice attendibile nel computer locale affinché venga verificata la validità del certificato stesso. L'agente di Windows Update (WUA) controlla anche se l'impostazione **Criteri di gruppo Consenti contenuto firmato dal percorso del servizio di aggiornamento Microsoft nella rete Intranet** è abilitata nel computer locale. È necessario abilitare questa impostazione dei criteri per l'agente di Windows Update affinché venga eseguita la scansione degli aggiornamenti che sono stati creati e pubblicati con Updates Publisher.  
+### <a name="signing-in-software-updates"></a>ソフトウェア更新プログラムの署名  
+ どのソフトウェア更新プログラムにも、改変を防ぐために、発行元による署名が必要です。 クライアント コンピューターでは、Windows Update エージェント (WUA) がカタログにある更新プログラムをスキャンしますが、ローカル コンピューターの [信頼された発行元] ストアにデジタル証明書が見つからない場合は、更新プログラムはインストールされません。 更新カタログ (WSUS Publishers Self-signed など) の発行時に自己署名入り証明書が使用された場合、証明書の有効性を検証するために、ローカル コンピューターの [信頼されたルート証明機関] 証明書ストアに証明書がある必要があります。 また、WUA では、ローカル コンピューターで **[イントラネットの Microsoft 更新サービスの場所からの署名済みコンテンツを許可する]** グループ ポリシー設定が有効になっているかどうかも確認されます。 Updates Publisher で作成および発行された更新プログラムをスキャンするには、WUA でこのポリシー設定が有効になっている必要があります。  
 
- Quando gli aggiornamenti software vengono pubblicati in System Center Updates Publisher, un certificato digitale firma gli aggiornamenti software quando vengono pubblicati su un server di aggiornamento. È possibile specificare un certificato PKI o configurare Updates Publisher per generare un certificato autofirmato per firmare l'aggiornamento software.  
+ ソフトウェア更新プログラムが System Center Updates Publisher で発行されると、アップデート サーバーに発行されるときに、デジタル証明書によってソフトウェア更新プログラムに署名されます。 ソフトウェア更新プログラムに署名するには、PKI 証明書を指定するか、Updates Publisher によって自己署名入り証明書が生成されるように構成します。  
 
-### <a name="signed-configuration-data-for-compliance-settings"></a>Dati di configurazione firmati per le impostazioni di conformità  
- Quando si importano dati di configurazione, Configuration Manager verifica la firma digitale del file. Se i file non sono stati firmati o il controllo della verifica della firma digitale non riesce, all'utente verrà notificato e richiesto se continuare con l'importazione. Continuare a importare i dati di configurazione solo se si considerano attendibili l'autore e l'integrità dei file.  
+### <a name="signed-configuration-data-for-compliance-settings"></a>コンプライアンス設定のための署名入り構成データ  
+ Configuration Manager では、構成データをインポートするときに、ファイルのデジタル署名を検証します。 ファイルが署名されていない場合、またはデジタル署名の検証チェックが失敗した場合は、警告およびインポートを続行するかどうかを尋ねるメッセージが表示されます。 発行元とファイルの整合性が信頼できる場合にのみ、構成データのインポートを続行します。  
 
-### <a name="encryption-and-hashing-for-client-notification"></a>Crittografia e hash per la notifica client  
- Se si usa la notifica client, tutte le comunicazioni usano TLS e la crittografia più elevata che il server e i sistemi operativi client possano negoziare. Ad esempio, un computer client con Windows 7 e un punto di gestione con Windows Server 2008 R2 possono supportare la crittografia AES a 128 bit, mentre un computer client con Vista sullo stesso punto di gestione negozierà una crittografia 3DES. La stessa negoziazione si verifica per l'hash dei pacchetti che vengono trasferiti durante la notifica client che usa SHA-1 o SHA-2.  
+### <a name="encryption-and-hashing-for-client-notification"></a>クライアント通知の暗号化とハッシュ  
+ クライアント通知を使用する場合、すべての通信は、サーバーとクライアントのオペレーティング システムがネゴシエートできる TLS および最高レベルの暗号化を使用します。 たとえば、Windows 7 を実行するクライアント コンピューターと、Windows Server 2008 R2 を実行する管理ポイントは、128 ビット AES 暗号化をサポートできます。一方、Vista を実行するクライアント コンピューターは同じ管理ポイントに対して、3DES 暗号化まで下げてネゴシエートします。 SHA-1 または SHA-2 を使用してクライアント通知中に転送されるパケットをハッシュする場合、同じネゴシエーションが発生します。  
 
-##  <a name="certificates-used-by-configuration-manager"></a>Certificati usati da Configuration Manager  
- Per un elenco dei certificati di infrastruttura a chiave pubblica (PKI) che possono essere usati da Configuration Manager, i requisiti o le limitazioni speciali e le modalità di utilizzo dei certificati, vedere l'argomento relativo ai [requisiti dei certificati PKI per System Center Configuration Manager](../../core/plan-design/network/pki-certificate-requirements.md). Questo elenco include gli algoritmi hash e le lunghezze di chiave supportati. La maggior parte dei certificati supporta la lunghezza di chiave SHA-256 e a 2.048 bit.  
-
-> [!NOTE]  
->  Tutti i certificati che Configuration Manager usa devono contenere solo caratteri a byte singolo nel nome oggetto o nel nome alternativo oggetto.  
-
- I certificati PKI sono necessari per gli scenari seguenti:  
-
--   Quando si gestiscono client di Configuration Manager su Internet.  
-
--   Quando si gestiscono client di Configuration Manager su dispositivi mobili.  
-
--   Quando si gestiscono computer Mac.  
-
--   Quando si usano punti di distribuzione basati su cloud.  
-
--   Quando si gestiscono computer Intel basati su AMT fuori banda.  
-
- Per la maggior parte delle altre comunicazioni di Configuration Manager che richiedono certificati per l'autenticazione, la firma o la crittografia, Configuration Manager usa automaticamente i certificati PKI se sono disponibili. Se non sono disponibili, Configuration Manager genera certificati autofirmati.  
-
- Configuration Manager non usa i certificati PKI quando gestisce dispositivi mobili con il connettore Exchange Server.  
-
-### <a name="mobile-device-management-and-pki-certificates"></a>Gestione dei dispositivi mobili e certificati PKI  
- Se il dispositivo mobile non è stato bloccato dall'operatore mobile, è possibile usare Configuration Manager o Microsoft Intune per richiedere e installare un certificato client. Questo certificato assicura l'autenticazione reciproca tra il client sul dispositivo mobile e i sistemi del sito di Configuration Manager o i servizi di Microsoft Intune. Se il dispositivo mobile è bloccato, non è possibile usare Configuration Manager o Microsoft Intune per la distribuzione dei certificati.  
-
- Se si abilita l'inventario hardware per i dispositivi mobili, Configuration Manager o Microsoft Intune archivia anche i certificati installati sul dispositivo mobile.  
-
-### <a name="out-of-band-management-and-pki-certificates"></a>Gestione fuori banda e certificati PKI  
- La gestione fuori banda per computer Intel basati su AMT usa almeno due tipi di certificati emessi da PKI: un certificato di provisioning AMT e un certificato server Web.  
-
- Il punto di servizio fuori banda usa un certificato di provisioning AMT per preparare i computer per la gestione fuori banda. I computer basati su AMT su cui verrà effettuato il provisioning devono considerare attendibile il certificato presentato dal punto di gestione fuori banda. Per impostazione predefinita, i computer basati su AMT vengono configurati dal produttore all'utilizzo di autorità di certificazione esterne, come VeriSign, Go Daddy, Comodo e Starfield. Se si acquista un certificato di provisioning da un'autorità di certificazione esterna e si configura Configuration Manager in modo che usi il certificato, i computer basati su AMT considereranno attendibile l'autorità di certificazione del certificato di provisioning e il provisioning verrà eseguito correttamente. Tuttavia, è consigliabile usare un'autorità di certificazione interna per l'emissione del certificato di provisioning AMT.  
-
- I computer basati su AMT eseguono un componente del server Web nel firmware che esegue la crittografia del canale di comunicazione con il punto di servizio fuori banda usando Transport Layer Security (TLS). Nel BIOS AMT non esiste un'interfaccia utente per configurare manualmente un certificato, quindi è necessario disporre di un'autorità di certificazione dell'organizzazione (enterprise) Microsoft che approvi automaticamente le richieste provenienti dai computer basati su AMR richiedenti. La richiesta usa PKCS #10 per il formato della richiesta, che a sua volta usa PKCS #7 per trasmettere le informazioni del certificato al computer basato su AMT.  
-
- Anche se il computer basato su AMT viene autenticato sul computer che lo gestisce, non esiste nessun certificato PKI client corrispondente nel computer che lo gestisce. Al contrario, queste comunicazioni usano l'autenticazione Kerberos o HTTP Digest. Quando si usa HTTP Digest, la crittografia avviene tramite TLS.  
-
- Un tipo di certificato aggiuntivo potrebbe essere necessario per la gestione dei computer basati su AMT fuori banda: un certificato client facoltativo per reti cablate autenticate 802.1X e reti wireless. Il certificato del client potrebbe essere necessario per il computer basato su AMT per l'autenticazione sul server RADIUS. Quando il server RADIUS è configurato per l'autenticazione EAP-TLS, è sempre necessario un certificato client. Quando il server RADIUS è configurato per EAP-TTLS/MSCHAPv2 o PEAPv0/EAP-MSCHAPv2, la configurazione RADIUS specifica se è necessario o meno un certificato client. Questo certificato viene richiesto dal computer basato su AMT usando gli stessi processi della richiesta di certificato del server Web.  
-
-### <a name="operating-system-deployment-and-pki-certificates"></a>Distribuzione del sistema operativo e dei certificati PKI  
- Quando si usa Configuration Manager per distribuire sistemi operativi e un punto di gestione richiede connessioni client HTTPS, anche il computer client deve usare un certificato per comunicare con il punto di gestione, anche se si trova in una fase transitoria come un avvio da supporto per sequenza di attività o in un punto di distribuzione abilitato PXE. Per supportare questo scenario, è necessario creare un certificato di autenticazione client PKI ed esportarlo con la chiave privata, quindi importarlo nelle proprietà del server del sito oltre ad aggiungere il certificato CA principale attendibile del punto di gestione.  
-
- Quando si crea un supporto di avvio, è necessario importare il certificato di autenticazione client. Configurare una password su un supporto di avvio per proteggere la chiave privata e altri dati sensibili configurati nella sequenza di attività. Ogni computer che si avvia dal supporto di avvio presenta lo stesso certificato al punto di gestione, come richiesto per le funzioni client quali la richiesta di criteri client.  
-
- Se si usa l'avvio PXE, è necessario importare il certificato di autenticazione client nel punto di distribuzione abilitato PXE e viene usato lo stesso certificato per ogni client che si avvia da quel punto di distribuzione abilitato PXE. Come procedura di sicurezza consigliata, è necessario richiedere agli utenti che collegano i computer a un servizio PXE di fornire una password per proteggere la chiave privata e altri dati sensibili nelle sequenze attività.  
-
- Se uno dei due certificati di autenticazione client è compromesso, bloccare i certificati nel nodo **Certificati** dell'area di lavoro **Amministrazione** , nodo **Sicurezza** . Per gestire questi certificati, è necessario disporre del diritto **Gestisci il certificato di distribuzione del sistema operativo** .  
-
- Dopo che la distribuzione del sistema operativo e l'installazione di Configuration Manager sono state completate, il client richiederà il certificato di autenticazione client PKI per la comunicazione client HTTPS.  
-
-### <a name="isv-proxy-solutions-and-pki-certificates"></a>Soluzioni proxy ISV e certificati PKI  
- I fornitori di software indipendenti (ISV) possono creare applicazioni per l'estensione di Configuration Manager. Ad esempio, un ISV può creare estensioni per il supporto di piattaforme client non Windows quali Macintosh o UNIX. Tuttavia, se i sistemi del sito richiedono connessioni client HTTPS, anche questi client devono usare i certificati PKI per comunicare con il sito. Configuration Manager offre la possibilità di assegnare un certificato al proxy ISV che consente le comunicazioni tra i client proxy ISV e il punto di gestione. Se si usano le estensioni che richiedono certificati proxy ISV, consultare la documentazione del prodotto in questione. Per altre informazioni sulla creazione di certificati proxy ISV, vedere il kit per sviluppatori (SDK) di Configuration Manager.  
-
- Se il certificato ISV è compromesso, bloccarlo nel nodo **Certificati** dell'area di lavoro **Amministrazione** , nodo **Sicurezza** .  
-
-### <a name="asset-intelligence-and-certificates"></a>Certificati e Asset Intelligence  
- Configuration Manager viene installato con un certificato X.509 usato dal punto di sincronizzazione di Asset Intelligence per connettersi a Microsoft. Configuration Manager usa questo certificato per richiedere un certificato di autenticazione client dal servizio certificati Microsoft. Il certificato di autenticazione client viene installato sul server del sistema sito del punto di sincronizzazione di Asset Intelligence e usato per l'autenticazione del server verso Microsoft. Configuration Manager usa il certificato di autenticazione client per scaricare il catalogo di Asset Intelligence e caricare i titoli software.  
-
- La lunghezza della chiave del certificato è 1.024 bit.  
-
-### <a name="cloud-based-distribution-points-and-certificates"></a>Certificati e punti di distribuzione basati su cloud  
- A partire da System Center 2012 Configuration Manager SP1, i punti di distribuzione basati su cloud richiedono un certificato di gestione (autofirmato o PKI) che viene caricato in Microsoft Azure. Questo certificato di gestione richiede funzionalità di autenticazione server e una lunghezza della chiave del certificato di 2.048 bit. Inoltre, è necessario configurare un certificato di servizio per ciascun punto di distribuzione basato su cloud, che non può essere autofirmato ma che deve disporre di funzionalità di autenticazione server e una lunghezza minima della chiave del certificato di 2.048 bit.  
+##  <a name="certificates-used-by-configuration-manager"></a>Configuration Manager で使用される証明書  
+ Configuration Manager で使用できる公開キー基盤 (PKI) 証明書の一覧、特別な要件または制限、および証明書の使用方法の詳細については、「[PKI certificate requirements for System Center Configuration Manager](../../core/plan-design/network/pki-certificate-requirements.md)」 (System Center Configuration Manager での PKI 証明書の要件) を参照してください。 この一覧には、サポートされるハッシュ アルゴリズムとキーの長さが含まれています。 ほとんどの証明書は、SHA-256 および 2048 ビットのキー長をサポートしています。  
 
 > [!NOTE]  
->  Il certificato di gestione autofirmato è esclusivamente a scopo di test e non è destinato all'uso nelle reti di produzione.  
+>  Configuration Manager を使用するすべての証明書のサブジェクト名またはサブジェクトの別名には、1 バイト文字しか使用できません。  
 
- I client non richiedono un certificato PKI per l'utilizzo di punti di distribuzione basati su cloud; l'autenticazione tra i client e il punto gestione viene eseguita con un certificato autofirmato o un certificato PKI client. Il punto di gestione invia quindi un token di accesso di Configuration Manager al client, che a sua volta lo presenta al punto di distribuzione basato su cloud. Il token è valido per 8 ore.  
+ 次の場合に、PKI 証明書が必要です。  
 
-### <a name="the-microsoft-intune-connector-and-certificates"></a>Certificati e connettore Microsoft Intune  
- Quando Microsoft Intune registra dispositivi mobili, è possibile gestire tali dispositivi in Configuration Manager creando un connettore Microsoft Intune. Il connettore usa un certificato PKI con funzionalità di autenticazione client per autenticare Configuration Manager in Microsoft Intune e per trasferire tutte le informazioni tra di essi usando SSL. La chiave del certificato ha una dimensione di 2.048 bit e usa l'algoritmo hash SHA-1.  
+-   インターネット上の Configuration Manager クライアントを管理する場合。  
 
- Quando si installa il connettore sul server del sito viene creato e archiviato un certificato di firma per chiavi di trasferimento locali, viene creato e archiviato un certificato di crittografia nel punto di registrazione del certificato per crittografare la richiesta di verifica Simple Certificate Enrollment Protocol (SCEP). La chiave di questi certificati ha una dimensione di 2048 bit e questi usano l'algoritmo hash SHA-1.  
+-   モバイル デバイス上の Configuration Manager クライアントを管理する場合。  
 
- Quando Intune registra i dispositivi mobili, viene installato un certificato PKI nel dispositivo mobile. Il certificato dispone di funzionalità di autenticazione client e usa una chiave di 2.048 bit e l'algoritmo hash SHA-1.  
+-   Mac コンピューターを管理する場合  
 
- Questi certificati PKI vengono richiesti, generati e installati automaticamente da Microsoft Intune.  
+-   クラウドベースの配布ポイントを使用する場合  
 
-### <a name="crl-checking-for-pki-certificates"></a>Controllo CRL per i certificati PKI  
- Un elenco di revoche di certificati (CRL) PKI aumenta il carico di elaborazione e amministrativo ma garantisce maggiore sicurezza. Tuttavia, se il controllo CRL è abilitato ma il CRL non è accessibile, la connessione PKI ha esito negativo. Per altre informazioni, vedere [Sicurezza e privacy per System Center Configuration Manager](../../core/plan-design/security/security-and-privacy.md).  
+-   Intel AMT 搭載コンピューターを帯域外で管理する場合。  
 
- Per impostazione predefinita, il controllo dell'elenco di revoche di certificati (CRL) è abilitato in IIS, pertanto se si sta usando un CRL con la distribuzione PKI, non è necessario eseguire ulteriori configurazioni nella maggior parte dei sistemi del sito di Configuration Manager che eseguono IIS. L'eccezione riguarda gli aggiornamenti software, che richiedono un passaggio manuale per l'abilitazione del controllo CRL per verificare le firme sui file di aggiornamento software.  
+ 認証、署名、または暗号化に証明書を必要とするその他ほとんどの Configuration Manager 通信では、Configuration Manager は、使用可能な場合は自動的に PKI 証明書を使用します。 証明書を使用できない場合は、Configuration Manager により自己署名入り証明書が生成されます。  
 
- Per impostazione predefinita, il controllo CRL è abilitato per i computer client che usano connessioni client HTTPS. Per impostazione predefinita, il controllo CRL non è abilitato quando si esegue la console di gestione fuori banda per connettersi a computer basati su AMT. È possibile abilitare tale opzione. Non è possibile disabilitare il controllo CRL per i client su computer Mac in Configuration Manager SP1 o versioni successive.  
+ Exchange Server コネクタを使用してモバイル デバイスを管理する場合、Configuration Manager は PKI 証明書を使用しません。  
 
- Il controllo CRL non è supportato in Configuration Manager per le connessioni seguenti:  
+### <a name="mobile-device-management-and-pki-certificates"></a>モバイル デバイスの管理および PKI 証明書  
+ モバイル デバイスが携帯電話会社によってロックされていない場合は、Configuration Manager または Microsoft Intune を使用してクライアント証明書を要求してインストールできます。 この証明書は、モバイル デバイス上のクライアントと Configuration Manager サイト システムまたは Microsoft Intune サービスとの間に相互認証を提供します。 モバイル デバイスがロックされている場合は、Configuration Manager または Microsoft Intune を使用して証明書を展開することはできません。  
 
--   Connessioni tra server.  
+ モバイル デバイスのハードウェア インベントリを有効にすると、Configuration Manager または Microsoft Intune ではモバイル デバイスにインストールされている証明書もインベントリされます。  
 
--   Dispositivi mobili registrati da Configuration Manager.  
+### <a name="out-of-band-management-and-pki-certificates"></a>帯域外管理および PKI 証明書  
+ Intel AMT ベースのコンピューターでの帯域外管理では、少なくとも AMT プロビジョニング証明書と Web サーバー証明書という 2 種類の PKI 発行の証明書を使用します。  
 
--   Dispositivi mobili registrati da Microsoft Intune.  
+ 帯域外サービス ポイントは、AMT プロビジョニング証明書を使用して帯域外管理用のコンピューターを準備します。 プロビジョニングされる AMT ベースのコンピューターは、帯域外管理ポイントによって提示される証明書を信頼する必要があります。 既定では、コンピューターの製造元が AMT ベースのコンピューターを VeriSign、Go Daddy、Comodo、Starfield などの外部の証明機関 (CA) を使用するように構成します。 外部の CA からプロビジョニング証明書を購入し、このプロビジョニング証明書を使用するように Configuration Manager を構成した場合、AMT ベースのコンピュータがプロビジョニング証明書の CA を信頼するので、プロビジョニングを正常に実行できます。 ただし、推奨されるセキュリティ運用方法は、独自の内部 CA を使用して AMT プロビジョニング証明書を発行することです。  
 
-##  <a name="cryptographic-controls-for-server-communication"></a>Controlli crittografici per la comunicazione tra server  
- Configuration Manager usa i seguenti controlli crittografici per la comunicazione tra server.  
+ AMT ベースのコンピューターは、Web サーバー コンポーネントをファームウェア内で実行します。また、この Web サーバー コンポーネントは、Transport Layer Security (TLS) を使用して、帯域外サービス ポイントとの通信チャネルを暗号化します。 証明書を手動で構成できる AMT BIOS のユーザー インターフェイスはありません。したがって、要求元の AMT ベースのコンピューターからの証明書要求を自動的に承認する Microsoft エンタープライズ証明機関を使用する必要があります。 要求では、要求の形式に PKCS#10 が使用され、次に AMT ベースのコンピューターに証明書情報を送信するために PKCS#7 が使用されます。  
 
-### <a name="server-communication-within-a-site"></a>Comunicazione tra server all'interno di un sito  
- Ogni server del sistema del sito usa un certificato per trasferire i dati ad altri sistemi del sito nello stesso sito di Configuration Manager. Anche alcuni ruoli del sistema del sito usano certificati per l'autenticazione. Ad esempio, se si installa il punto proxy di registrazione su un server e il punto di registrazione su un altro server, questi possono autenticarsi a vicenda usando questo certificato di identità. Quando Configuration Manager usa un certificato per questa comunicazione, se è disponibile un certificato PKI con funzionalità di autenticazione server, lo usa automaticamente. In caso contrario, Configuration Manager genera un certificato autofirmato. Questo certificato autofirmato dispone di funzionalità di autenticazione server, usa SHA-256 e ha una lunghezza chiave di 2.048 bit. Configuration Manager copia il certificato nell'archivio Persone attendibili in altri server del sistema del sito per i quali potrebbe essere necessario verificare l'attendibilità del sistema del sito. I sistemi del sito possono quindi verificare la reciproca attendibilità tramite questi certificati e PeerTrust.  
+ AMT ベースのコンピューターは、それを管理するコンピューターに対して認証されますが、管理しているコンピューターには、対応するクライアント PKI 証明書はありません。 その代わり、これらの通信では、Kerberos または HTTP Digest 認証が使用されます。 HTTP Digest が使用される場合、TLS を使用して暗号化されます。  
 
- Oltre a questo certificato per ogni server del sistema del sito, Configuration Manager genera un certificato autofirmato per la maggior parte dei ruoli del sistema del sito. In presenza di più di un'istanza del ruolo del sistema del sito nello stesso sito, viene condiviso lo stesso certificato. Ad esempio, potrebbero essere presenti più punti di gestione o più punti di registrazione nello stesso sito. Inoltre, il certificato autofirmato usa SHA-256 e ha una lunghezza della chiave di 2.048 bit. Viene inoltre copiato nell'archivio Persone attendibili sui server del sistema del sito che potrebbero doverne verificare l'attendibilità. I seguenti ruoli del sistema del sito generano questo certificato:  
+ 帯域外の AMT ベースのコンピューターの管理には、802.1X 認証ワイヤード (有線) ネットワークおよびワイヤレス ネットワーク用のオプションのクライアント証明書のような、追加の種類の証明書が必要な場合があります。 RADIUS サーバーで認証するために、AMT ベースのコンピューターのクライアント証明書が必要な場合があります。 RADIUS サーバーが EAP-TLS 認証用に構成されている場合、クライアント証明書は常に必要です。 RADIUS サーバーが、EAP-TTLS/MSCHAPv2 または PEAPv0/EAP-MSCHAPv2 用に構成されている場合、クライアント証明書が必要かどうかはその RADIUS 構成によって指定されます。 この証明書は、Web サーバー証明書の要求と同じ処理を使用して、AMT ベースのコンピューターによって要求されます。  
 
--   Punto per servizi Web del Catalogo applicazioni  
+### <a name="operating-system-deployment-and-pki-certificates"></a>オペレーティング システムの展開と PKI 証明書  
+ Configuration Manager を使用してオペレーティング システムを展開していて、管理ポイントが HTTPS を使用したクライアント接続を要求している場合、クライアント コンピューターには管理ポイントと通信するための証明書も必要となります。移行段階にある場合 (タスク シーケンス メディアや PXE 対応配布ポイントから起動中である場合など) でも同様です。 この場合は、PKI クライアント認証証明書を作成し、秘密キーを使用してエクスポートしてから、サイト サーバーのプロパティにインポートし、管理ポイントの信頼されたルート CA の証明書も追加する必要があります。  
 
--   Punto per siti Web del Catalogo applicazioni  
+ 起動可能なメディアを作成する場合は、起動可能なメディアの作成時にクライアント認証証明書をインポートします。 タスク シーケンスで構成した秘密キーやその他の機密データを保護するには、起動可能なメディアにパスワードを構成します。 起動可能なメディアから起動されるすべてのコンピューターは、クライアント ポリシーの要求などのクライアント機能で必要な場合に、同じ証明書を管理ポイントに提示します。  
 
--   Punto di sincronizzazione di Asset Intelligence  
+ PXE ブートを使用する場合は、PXE 対応の配布ポイントにクライアント認証証明書をインポートします。PXE 対応の配布ポイントは、PXE 対応の配布ポイントから起動を行うすべてのクライアントに同じ証明書を使用します。 推奨されるセキュリティのベスト プラクティスとして、タスク シーケンス内の秘密キーおよびその他の機密データを保護するためには、PXE サービスにコンピューターを接続するユーザーに、パスワードの入力を要求します。  
 
--   Punto di registrazione certificati  
+ これらのいずれかのクライアント認証証明書が改ざんされた場合、 **[管理]** ワークスペースの **[証明書]** ノードおよび **[セキュリティ]** ノード内の証明書をブロックします。 これらの証明書を管理するには、 **[オペレーティング システム展開証明書の管理]** 権限が必要です。  
 
--   Punto di Endpoint Protection  
+ オペレーティング システムが展開され、Configuration Manager がインストールされた後は、クライアントが HTTPS クライアント通信を行うために独自の PKI クライアント認証証明書が必要になります。  
 
--   Punto di registrazione  
+### <a name="isv-proxy-solutions-and-pki-certificates"></a>ISV プロキシ ソリューションと PKI 証明書  
+ Independent Software Vendor (ISV) では、Configuration Manager を拡張するアプリケーションを作成できます。 たとえば、ISV では、Windows 以外のクライアント プラットフォーム (Macintosh や UNIX コンピューターなど) をサポートする拡張アプリケーションを作成できます。 ただし、サイト システムに HTTPS クライアント接続が必要な場合、これらのクライアントは、サイトとの通信に PKI 証明書を使用する必要もあります。 Configuration Manager には、ISV プロキシ クライアントと管理ポイントの間の通信を可能にする ISV プロキシに証明書を割り当てる機能が含まれています。 ISV プロキシ証明書を必要とする拡張アプリケーションを使用する場合は、その製品のマニュアルを参照してください。 ISV プロキシ証明書を作成する方法の詳細については、Configuration Manager Software Developer Kit (SDK) を参照してください。  
 
--   Punto di stato di fallback  
+ ISV 証明書が改ざんされた場合は、 **[管理]** ワークスペースの **[証明書]** ノードおよび **[セキュリティ]** ノード内の証明書をブロックします。  
 
--   Punto di gestione  
+### <a name="asset-intelligence-and-certificates"></a>資産インテリジェンスと証明書  
+ Configuration Manager は、Microsoft に接続するために資産インテリジェンス同期ポイントで使用される X.509 証明書と共にインストールされます。 Configuration Manager は、この証明書を使用して、Microsoft 証明書サービスからクライアント認証証明書を要求します。 クライアント認証証明書は、資産インテリジェンス同期ポイント サイト システム サーバーにインストールされます。これは、Microsoft に対してサーバーを認証するときに使用されます。 Configuration Manager は、クライアント認証証明書を使用して、資産インテリジェンス カタログをダウンロードし、ソフトウェア タイトルをアップロードします。  
 
--   Punto di distribuzione abilitato per multicast  
+ この証明書のキーの長さは 1024 ビットです。  
 
--   Punto di servizio fuori banda  
+### <a name="cloud-based-distribution-points-and-certificates"></a>クラウドベースの配布ポイントと証明書  
+ System Center 2012 Configuration Manager SP1 以降では、クラウドベースの配布ポイントには、Microsoft Azure にアップロードする管理証明書 (自己署名または PKI) が必要です。 この管理証明書には、サーバー認証機能とキー長が 2,048 ビットの証明書が必要です。 さらに、各クラウドベースの配布ポイントでサービス証明書を構成する必要があります。このとき、自己署名証明書ではなく、サーバー認証機能があり、キー長が 2,048 ビット以上の証明書を構成する必要があります。  
 
--   Punto di Reporting Services  
+> [!NOTE]  
+>  自己署名管理証明書はテスト目的専用であり、運用ネットワークには使用できません。  
 
--   Punto di aggiornamento software  
+ クライアントがクラウドベースの配布ポイントを使用するには、クライアント PKI 証明書は必要ありません。クライアントは管理ポイントに対して、自己署名証明書またはクライアント PKI 証明書を使用して認証します。 次に、管理ポイントは Configuration Manager アクセス トークンをクライアントに発行し、クライアントはそのトークンをクラウドベースの配布ポイントに提示します。 トークンの有効期間は 8 時間です。  
 
--   Punto di migrazione stato  
+### <a name="the-microsoft-intune-connector-and-certificates"></a>Microsoft Intune コネクタと証明書  
+ Microsoft Intune でモバイル デバイスを登録すると、Microsoft Intune コネクタを作成することにより、Configuration Manager でモバイル デバイスを管理できるようになります。 コネクタは PKI 証明書とクライアント認証機能を使用して Microsoft Intune に対して Configuration Manager を認証し、SSL を使用してすべての情報を転送します。 証明書のキーのサイズは 2,048 ビットであり、SHA-1 ハッシュ アルゴリズムを使用します。  
 
--   Punto di Convalida integrità sistema  
+ コネクタをインストールするときに、サイドローディング キーの署名証明書を作成してサイト サーバーに保存し、Simple Certificate Enrollment Protocol (SCEP) チャレンジを暗号化するための暗号化証明書を作成して証明書登録ポイントに保存します。 これらの証明書のキーのサイズは 2048 ビットで、SHA-1 ハッシュ アルゴリズムを使用します。  
 
--   Connettore Microsoft Intune  
+ Microsoft Intune でモバイル デバイスを登録すると、PKI 証明書がモバイル デバイスにインストールされます。 この証明書にはクライアント認証機能があり、2,048 ビットのキー サイズを使用し、SHA-1 ハッシュ アルゴリズムを使用します。  
 
- Questi certificati vengono gestiti automaticamente da Configuration Manager e generati automaticamente secondo necessità.  
+ このような PKI 証明書は、Microsoft Intune によって要求、生成、およびインストールが自動的に行われます。  
 
- Configuration Manager usa anche un certificato di autenticazione client per inviare messaggi di stato dal punto di distribuzione al punto di gestione. Quando il punto di gestione è configurato solo per connessioni client HTTPS, è necessario usare un certificato PKI. Se il punto di gestione accetta connessioni HTTP, è possibile usare un certificato PKI oppure selezionare l'opzione per l'uso di un certificato autofirmato con funzionalità di autenticazione client, che usi SHA-256 e con una lunghezza della chiave di 2.048 bit.  
+### <a name="crl-checking-for-pki-certificates"></a>PKI 証明書の CRL チェック  
+ PKI の証明書失効リスト (CRL) を使用すると、管理や処理のオーバーヘッドが増加しますが、安全性が高まります。 ただし、CRL チェックが有効にされていて、CRL にアクセスできない場合、PKI 接続は失敗します。 詳細については、「[Security and privacy for System Center Configuration Manager](../../core/plan-design/security/security-and-privacy.md)」 (System Center Configuration Manager のセキュリティとプライバシー) を参照してください。  
 
-### <a name="server-communication-between-sites"></a>Comunicazione server tra siti  
- Configuration Manager trasferisce i dati tra siti usando la replica di database e la replica basata su file. Per altre informazioni, vedere [Comunicazioni tra gli endpoint in System Center Configuration Manager](../../core/plan-design/hierarchy/communications-between-endpoints.md).  
+ IIS では、証明書失効リスト (CRL) が既定で有効になっています。このため、PKI の展開で CRL を使用している場合、IIS を実行するほとんどの Configuration Manager サイト システムでは追加で構成する項目はありません。 ただし、ソフトウェア更新プログラムは例外です。ソフトウェア更新プログラム ファイルの署名を検証するには、手動で CRL チェックを有効にする必要があります。  
 
- Configuration Manager configura automaticamente la replica di database tra siti e usa i certificati PKI con funzionalità di autenticazione server, se disponibili. In caso contrario, Configuration Manager crea dei certificati autofirmati per l'autenticazione server. In entrambi i casi, l'autenticazione tra siti viene stabilita usando i certificati nell'archivio Persone attendibili che usa PeerTrust. Questo archivio certificati viene usato per garantire che solo i computer SQL Server usati dalla gerarchia di Configuration Manager partecipino alla replica tra siti. Mentre i siti primari e il sito di amministrazione centrale possono replicare le modifiche alla configurazione in tutti i siti della gerarchia, i siti secondari possono replicare tali modifiche solo nel proprio sito padre.  
+ クライアント コンピューターで HTTPS クライアント接続を使用する場合、CRL チェックは既定で有効にされます。 帯域外管理コンソールを実行して AMT ベースのコンピューターに接続する場合、CRL チェックは既定で有効になりませんが、このオプションを有効にすることができます。 Configuration Manager SP1 以降では、Mac コンピューターのクライアントで CRL チェックを無効にすることはできません。  
 
- I server del sito stabiliscono la comunicazione tra siti usando uno scambio di chiavi protetto automatico. Il server del sito di origine genera un hash che viene firmato con la chiave privata. Il server del sito di destinazione controlla la firma usando la chiave pubblica e confronta l'hash con un valore generato localmente. Se corrispondono, il sito di destinazione accetta i dati replicati. Se i valori non corrispondono, Configuration Manager rifiuta i dati di replica.  
+ CRL チェックは、Configuration Manager の次の接続ではサポートされません。  
 
- La replica di database in Configuration Manager usa SQL Server Service Broker per trasferire i dati tra siti con i seguenti meccanismi:  
+-   サーバー間の接続。  
 
--   Connessione da SQL Server a SQL Server: usa le credenziali di Windows per l'autenticazione server e certificati autofirmati con 1024 bit per firmare e crittografare i dati tramite Advanced Encryption Standard (AES). Se disponibili, saranno usati certificati PKI con funzionalità di autenticazione server. Il certificato deve trovarsi nell'archivio personale per l'archivio certificati del computer.  
+-   Configuration Manager に登録されたモバイル デバイス。  
 
--   SQL Service Broker: usa certificati autofirmati con 2048 bit per l'autenticazione e per firmare e crittografare i dati tramite Advanced Encryption Standard (AES). Il certificato deve trovarsi nel database master di un computer SQL Server.  
+-   Microsoft Intune に登録されたモバイル デバイス。  
 
- La replica basata su file usa il protocollo Server Message Block (SMB) e SHA-256 per firmare questi dati che non sono crittografati ma non contengono alcun dato sensibile. Per crittografare questi dati, è possibile usare lo standard IPsec, che deve essere implementato indipendentemente da Configuration Manager.  
+##  <a name="cryptographic-controls-for-server-communication"></a>サーバー通信の暗号化制御  
+ Configuration Manager は、サーバー通信のために次の暗号化制御を使用します。  
 
-##  <a name="cryptographic-controls-for-clients-that-use-https-communication-to-site-systems"></a>Controlli crittografici per i client che usano la comunicazione HTTPS con i sistemi del sito  
- Quando i ruoli del sistema del sito accettano connessioni client, è possibile configurarli in modo da accettare connessioni HTTPS e HTTP o solo connessioni HTTPS. I ruoli del sistema del sito che accettano connessioni da Internet accettano solo connessioni client tramite HTTPS.  
+### <a name="server-communication-within-a-site"></a>サイト内でのサーバーの通信  
+ 各サイト システム サーバーは、同じ Configuration Manager サイト内の他のサイト システムにデータを転送するために証明書を使用します。 一部のサイト システムの役割は、認証に証明書も使用します。 たとえば、あるサーバーに登録プロキシ ポイントを、別のサーバーに登録ポイントをインストールした場合、この識別証明書を使用することにより相互に認証することができます。 Configuration Manager がこの通信に証明書を使用するときに、サーバー認証機能がある PKI 証明書を使用できる場合、Configuration Manager はその証明書を自動的に使用します。使用できない場合、Configuration Manager は自己署名証明書を生成します。 この自己署名証明書にはサーバー認証機能があり、SHA-256 を使用します。また、キーの長さは 2048 ビットです。 Configuration Manager は、他のサイト システム サーバー上の信頼されたユーザー ストアに証明書をコピーします。このサーバーは、サイト システムを信頼する必要がある場合があります。 サイト システムは、これらの証明書と PeerTrust を使用することにより、相互に信頼することができます。  
 
- Le connessioni client tramite HTTPS offrono un livello di protezione più elevato mediante l'integrazione con un'infrastruttura a chiave pubblica (PKI) per proteggere la comunicazione tra client e server. Tuttavia, se la configurazione delle connessioni client HTTPS viene eseguita senza una completa comprensione della pianificazione, distribuzione e delle operazioni di PKI, sussisterà un determinato livello di vulnerabilità. Ad esempio, se la CA principale non viene protetta, degli utenti non autorizzati potrebbero compromettere l'attendibilità dell'intera infrastruttura PKI. L'assenza di una distribuzione e gestione dei certificati PKI tramite processi controllati e protetti potrebbe dar luogo a client non gestiti impossibilitati a ricevere pacchetti o aggiornamenti software critici.  
+ 各サイト システム サーバーのこの証明書に加えて、Configuration Manager は、ほとんどのサイト システムの役割に対して、自己署名入り証明書を生成します。 同じサイトに複数のサイト システムの役割のインスタンスがある場合、それらは同じ証明書を共有します。 たとえば、同じサイトに複数の管理ポイントまたは複数の登録ポイントがある場合があります。 この自己署名入り証明書も、SHA-256 を使用し、キーの長さは 2048 ビットです。 これは、それを信頼する必要があるサイト システム サーバー上の信頼されたユーザー ストアにもコピーされます。 次のサイト システムの役割はこの証明書を生成します。  
+
+-   アプリケーション カタログ Web サービス ポイント  
+
+-   アプリケーション カタログ Web サイト ポイント  
+
+-   資産インテリジェンス同期ポイント  
+
+-   証明書登録ポイント  
+
+-   Endpoint Protection ポイント  
+
+-   登録ポイント  
+
+-   フォールバック ステータス ポイント  
+
+-   管理ポイント  
+
+-   マルチキャスト対応の配布ポイント  
+
+-   帯域外サービス ポイント  
+
+-   レポート サービス ポイント  
+
+-   ソフトウェアの更新ポイント  
+
+-   状態移行ポイント  
+
+-   システム正常性検証ツール ポイント  
+
+-   Microsoft Intune コネクタ  
+
+ これらの証明書は、Configuration Manager によって自動的に管理され、必要に応じて自動的に生成されます。  
+
+ また、Configuration Manager は配布ポイントから管理ポイントにステータス メッセージを送信するために、クライアント認証証明書も使用します。 管理ポイントが HTTPS クライアント接続用のみに構成されている場合は、PKI 証明書を使用する必要があります。 管理ポイントが HTTP 接続を受け入れる場合は、PKI 証明書を使用するか、自己署名入り証明書 (クライアント認証機能があり、SHA-256 を使用し、キーの長さが 2048 ビット) を使用するオプションを選択できます。  
+
+### <a name="server-communication-between-sites"></a>サイト間のサーバー通信  
+ Configuration Manager は、データベースのレプリケーションとファイルベースのレプリケーションを使ってサイト間でデータを転送します。 詳細については、「[Communications between endpoints in System Center Configuration Manager](../../core/plan-design/hierarchy/communications-between-endpoints.md)」 (System Center Configuration Manager でのエンドポイント間の通信) をご覧ください。  
+
+ Configuration Manager は、サイト間のデータベース レプリケーションを自動的に構成し、サーバー認証機能を持つ PKI 証明書を使用します (利用できる場合)。利用できない場合、Configuration Manager はサーバー認証のために自己署名入り証明書を作成します。 どちらの場合も、PeerTrust を使用する信頼されたユーザー ストアの証明書を使用して、サイト間の認証が行なわれます。 この証明書ストアは、Configuration Manager 階層で使用される SQL Server コンピューターのみがサイト間レプリケーションに加わるようにするために使用します。 プライマリ サイトと中央管理サイトは、構成の変更を階層内のすべてのサイトにレプリケートできますが、セカンダリ サイトは、親サイトにのみ構成の変更をレプリケートできます。  
+
+ サイト サーバーは、自動的に行われるセキュリティ キーの交換を使用して、サイト間通信を確立します。 送信側のサイト サーバーは、ハッシュを生成し、秘密キーで署名します。 受信側のサイト サーバーは公開キーを使用して署名を確認し、受信したハッシュをローカルで生成された値と比較します。 値が一致した場合、受信側のサイトはレプリケートされたデータを受け入れます。 値が一致しない場合、Configuration Manager はレプリケーション データを拒否します。  
+
+ Configuration Manager のデータベース レプリケーションは、SQL Server Service Broker を使用し、次のメカニズムを使用して、サイト間でデータを転送します。  
+
+-   SQL Server 間の接続: これは、サーバー認証および自己署名入り証明書 (1024 ビット) に Windows 資格情報を使用し、Advanced Encryption Standard (AES) を使用してデータに署名および暗号化します。 サーバー認証機能を持つ PKI 証明書を利用できる場合は、それらが使用されます。 証明書は、コンピューター証明書ストアの個人用ストアに保存されている必要があります。  
+
+-   SQL Service Broker: これは、認証に 2048 ビットの自己署名入り証明書を使用し、Advanced Encryption Standard (AES) を使用してデータに署名および暗号化します。 この証明書は、SQL Server マスター データベースに保存されている必要があります。  
+
+ ファイル ベースのレプリケーションは、サーバー メッセージ ブロック (SMB) プロトコルを使用しており、SHA-256 を使用してこのデータ (暗号化されていないが、機密データが含まれていない) に署名します。 このデータを暗号化する場合は、IPsec を使用できますが、Configuration Manager とは別にそれを実装する必要があります。  
+
+##  <a name="cryptographic-controls-for-clients-that-use-https-communication-to-site-systems"></a>サイト システムに対して HTTPS 通信を使用するクライアントの暗号化制御  
+ サイト システムの役割がクライアント接続を受け入れる場合は、HTTPS 接続および HTTP 接続を受け入れるように、または HTTPS 接続のみを受け入れるように構成できます。 インターネットからの接続を受け入れるサイト システムの役割は、HTTPS を使用したクライアント接続のみを受け入れます。  
+
+ HTTPS 経由のクライアント接続では、クライアント/サーバー間の通信を保護するための公開キー基盤 (PKI) と統合することにより高いレベルのセキュリティが実現されています。 ただし、PKI の計画、展開、および操作をよく理解せずに HTTPS クライアント接続を構成すると、脆弱性が改善されないことがあります。 たとえば、ルート CA を保護していない場合は、攻撃者によって PKI 基盤全体の信頼性が侵害される恐れがあります。 管理されて保護された処理を使用して PKI 証明書を展開および管理できない場合、クライアントが管理されていないクライアントとなり、重要なソフトウェア更新プログラムまたはパッケージを受け取ることができないことがあります。  
 
 > [!IMPORTANT]  
->  I certificati PKI usati per la comunicazione client proteggono la comunicazione solo tra il client e alcuni sistemi del sito. Non proteggono il canale di comunicazione tra il server del sito e i sistemi del sito o tra i server del sito.  
+>  クライアント通信に使用される PKI 証明書は、クライアントといくつかのサイト システム間の通信のみを保護します。 PKI 証明書は、サイト サーバーとサイト システムの間や、サイト サーバー間の通信チャネルを保護しません。  
 
-### <a name="communication-that-is-unencrypted-when-clients-use-https-communication"></a>Comunicazione non crittografata quando i client usano la comunicazione HTTPS  
- Quando i client comunicano con i sistemi del sito usando HTTPS, le comunicazioni sono in genere crittografate tramite SSL. Tuttavia, nelle situazioni seguenti, i client comunicano con i sistemi del sito senza usare la crittografia:  
+### <a name="communication-that-is-unencrypted-when-clients-use-https-communication"></a>クライアントが HTTPS 通信を使用する場合に暗号化されない通信  
+ クライアントが HTTPS を使用してサイト システムと通信する場合、通常、通信は SSL を使用して暗号化されます。 ただし、次のような状況では、クライアントは暗号化を使用せずにサイト システムと通信します。  
 
--   I client non riescono a stabilire una connessione HTTPS sulla intranet e tentano di usare HTTP quando i sistemi del sito consentono tale configurazione  
+-   クライアントがイントラネット上での HTTPS 接続に失敗し、代替で HTTP を使用する (サイト システムがこの構成を許可する場合)。  
 
--   Comunicazione con i seguenti ruoli del sistema del sito:  
+-   次のサイト システムの役割への通信:  
 
-    -   Il client invia messaggi di stato al punto di stato di fallback  
+    -   クライアントが状態メッセージをフォールバック ステータス ポイントに送信する。  
 
-    -   Il client invia richieste PXE al punto di distribuzione abilitato PXE  
+    -   クライアントが PXE 要求を PXE 対応配布ポイントに送信する。  
 
-    -   Il client invia dati di notifica a un punto di gestione  
+    -   クライアントが通知データを管理ポイントに送信する  
 
- I punti di Reporting Services sono configurati per usare HTTP o HTTPS in modo indipendente dalla modalità di comunicazione client.  
+ レポート サービス ポイントは、クライアントの通信モードに関係なく、HTTP または HTTPS を使用するように構成されています。  
 
-##  <a name="cryptographic-controls-for-clients-chat-use-http-communication-to-site-systems"></a>Controlli crittografici per i client che usano la comunicazione HTTPS con i sistemi del sito  
- Per la comunicazione HTTP con i ruoli del sistema del sito i client possono usare i certificati PKI per l'autenticazione client oppure dei certificati autofirmati generati da Configuration Manager. Quando Configuration Manager genera certificati autofirmati, questi hanno un identificatore oggetto personalizzato per la firma e la crittografia e vengono usati per identificare il client in modo univoco. Per tutti i sistemi operativi supportati, ad eccezione di Windows Server 2003, questi certificati autofirmati usano SHA-256 e la loro chiave ha una lunghezza di 2048 bit. Per Windows Server 2003, SHA1 viene usato con una lunghezza della chiave pari a 1024 bit.  
+##  <a name="cryptographic-controls-for-clients-chat-use-http-communication-to-site-systems"></a>サイト システムに対して HTTP 通信を使用するクライアントの暗号化制御  
+ クライアントがサイト システムの役割に対して HTTP 通信を使用する場合、クライアント認証に PKI 証明書、または Configuration Manager が生成した自己署名入り証明書を使用できます。 Configuration Manager が生成した自己署名入り証明書には、署名と暗号化用のカスタム オブジェクト識別子が付いており、この証明書によってクライアントが識別されます。 Windows Server 2003 を除き、サポートされているすべてのオペレーティング システムの自己署名入り証明書で SHA-256 アルゴリズムが使用され、キーの長さは 2048 ビットです。 Windows Server 2003 では、SHA1 アルゴリズムが使用され、キーの長さは 1024 ビットです。  
 
-### <a name="operating-system-deployment-and-self-signed-certificates"></a>Distribuzione del sistema operativo e certificati autofirmati  
- Quando si usa Configuration Manager per distribuire sistemi operativi con certificati autofirmati, anche il computer client deve usare un certificato per comunicare con il punto di gestione, anche se si trova in una fase transitoria come un avvio da supporto per sequenza di attività o in un punto di distribuzione abilitato PXE. Per supportare questo scenario per le connessioni client HTTP, Configuration Manager genera certificati autofirmati con un identificatore oggetto personalizzato per la firma e la crittografia e vengono usati questi certificati per identificare il client in modo univoco. Per tutti i sistemi operativi supportati, ad eccezione di Windows Server 2003, questi certificati autofirmati usano SHA-256 e la loro chiave ha una lunghezza di 2048 bit. Per Windows Server 2003, SHA1 viene usato con una lunghezza della chiave pari a 1024 bit. Per evitare che utenti non autorizzati possano usare dei certificati autofirmati compromessi per impersonare client attendibili, bloccare i certificati nel nodo **Certificati** dell'area di lavoro **Amministrazione** , nodo **Sicurezza** .  
+### <a name="operating-system-deployment-and-self-signed-certificates"></a>オペレーティング システムの展開と自己署名入り証明書  
+ Configuration Manager を使用し、自己署名入り証明書を使用してオペレーティング システムを展開している場合、クライアント コンピューターには管理ポイントと通信するための証明書も必要となります。コンピューターが移行段階にある場合 (タスク シーケンス メディアや PXE 対応配布ポイントから起動中である場合など) でも同様です。 HTTP クライアント接続に対してこのシナリオをサポートするために、Configuration Manager は、署名と暗号化用のカスタム オブジェクト識別子の付いた自己署名入り証明書を生成し、この証明書によってクライアントが識別されるようにします。 Windows Server 2003 を除き、サポートされているすべてのオペレーティング システムの自己署名入り証明書で SHA-256 アルゴリズムが使用され、キーの長さは 2048 ビットです。 Windows Server 2003 では、SHA1 アルゴリズムが使用され、キーの長さは 1024 ビットです。 自己署名証明書が改ざんされた場合は、攻撃者がこれを使用して信頼されたクライアントになりすますことを防ぐため、 **[管理]** ワークスペースの **[証明書]** ノードおよび **[セキュリティ]** ノードで証明書をブロックします。  
 
-### <a name="client-and-server-authentication"></a>Autenticazione server e client  
- Quando si connettono con HTTP i client autenticano i punti di gestione usando Servizi di dominio Active Directory o la chiave radice attendibile di Configuration Manager. I client non autenticano altri ruoli del sistema del sito, ad esempio punto di migrazione stato o punti di aggiornamento software.  
+### <a name="client-and-server-authentication"></a>クライアントおよびサーバーの認証  
+ クライアントが HTTP を使用して接続する場合は、管理ポイントでの認証に Active Directory Domain Services または Configuration Manager の信頼されたルート キーを使用します。 状態移行ポイントやソフトウェアの更新ポイントなどのその他のサイト システムの役割では、クライアントの認証は行なわれません。  
 
- Quando un punto di gestione autentica per la prima volta un client usando il certificato client autofirmato, questo meccanismo fornisce un livello minimo di protezione poiché qualsiasi computer può generare un certificato autofirmato. In questo scenario il processo di identificazione del client deve essere aumentato mediante l'approvazione. Solo i computer attendibili devono essere approvati, automaticamente da Configuration Manager o manualmente da un utente amministratore. Per altre informazioni, vedere [Comunicazioni tra gli endpoint in System Center Configuration Manager](../../core/plan-design/hierarchy/communications-between-endpoints.md).  
+ 管理ポイントが最初に自己署名入りクライアント証明書を使用してクライアントを認証する場合、すべてのコンピューターは自己署名入り証明書を生成できるため、このメカニズムでのセキュリティは最低限のものとなります。 この場合は、クライアントを承認することによって、識別プロセスを強化する必要があります。 信頼されたコンピューターのみを、Configuration Manager によって自動的に承認するか、管理ユーザーによって手動で承認する必要があります。 詳細については、「[Communications between endpoints in System Center Configuration Manager](../../core/plan-design/hierarchy/communications-between-endpoints.md)」 (System Center Configuration Manager でのエンドポイント間の通信) の承認のセクションをご覧ください。  
 
-##  <a name="about-ssl-vulnerabilities"></a>Informazioni sulle vulnerabilità di SSL  
- Per migliorare la sicurezza dei server di Configuration Manager, è consigliabile disabilitare SSL 3.0, abilitare TLS 1.1 e 1.2 e riordinare i pacchetti di crittografia relativi a TLS. Informazioni su come eseguire queste operazioni sono disponibili in [questo articolo della Knowledge Base](https://support.microsoft.com/en-us/kb/245030/). Questa operazione non influenzerà le funzionalità di Configuration Manager.  
-
+##  <a name="about-ssl-vulnerabilities"></a>SSL の脆弱性について  
+ Microsoft では、Configuration Manager サーバーのセキュリティを向上させるため、SSL 3.0 の無効化、TLS 1.1 と 1.2 の有効化、TLS 関連の暗号スイートの並べ替えを実行することを推奨しています。 [このサポート技術情報の記事](https://support.microsoft.com/en-us/kb/245030/)では、これらの操作方法について説明しています。 この操作は、Configuration Manager の機能には影響しません。  

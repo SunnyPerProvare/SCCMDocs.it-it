@@ -1,33 +1,31 @@
 ---
-title: Ottenere Configuration Manager | Documentazione Microsoft
-description: Dove trovare il supporto di installazione per le nuove installazioni di System Center Configuration Manager.
+title: "Configuration Manager の取得 | Microsoft Docs"
+description: "System Center Configuration Manager の新規インストールのインストール メディアを検索する場所。"
 ms.custom: na
 ms.date: 1/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 76c220b6-1824-4e2e-8c61-a719f0b056f1
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 5314bcb434b5b540f80cdfe32002df7b8fed6195
 ms.openlocfilehash: be02514591881049fabc00baae9de70a8380aa9a
-ms.lasthandoff: 01/12/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="where-to-get-installation-media-for-system-center-configuration-manager"></a>Dove ottenere il supporto di installazione per System Center Configuration Manager
+# <a name="where-to-get-installation-media-for-system-center-configuration-manager"></a>System Center Configuration Manager のインストール メディアを取得する場所
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Se si hanno contratti multilicenza di System Center Configuration Manager con Software Assurance, oppure si sono acquistate licenze per contratti multilicenza di System Center Configuration Manager, è possibile scaricare il supporto di origine di base per installare System Center Configuration Manager dal [Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/default.aspx).   
+ソフトウェア アシュアランスを持つ System Center Configuration Manager ボリューム ライセンスがある場合、または System Center Configuration Manager ボリューム ライセンスのライセンスを購入した場合は、[ボリューム ライセンス サービス センター](https://www.microsoft.com/Licensing/servicecenter/default.aspx)から基準ソース メディアをダウンロードし、System Center Configuration Manager をインストールできます。   
 
-Se si vuole acquistare contratti multilicenza per System Center Configuration Manager, contattare il rivenditore Microsoft preferito o vedere [Come acquistare tramite i contratti multilicenza]( https://www.microsoft.com/Licensing/how-to-buy/how-to-buy.aspx). È inoltre possibile scaricare il supporto per installare un'edizione di valutazione di System Center Configuration Manager dal sito Web di [TechNet Evaluation Center]( https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection).
+System Center Configuration Manager のボリューム ライセンスを購入する場合は、推奨のマイクロソフト販売店に問い合わせるか、「[How to purchase through Volume Licensing (ボリューム ライセンスを通じて購入する方法)]( https://www.microsoft.com/Licensing/how-to-buy/how-to-buy.aspx)」を参照してください。 [TechNet Evaluation Center]( https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection) Web サイトからメディアをダウンロードし、System Center Configuration Manager の評価版をインストールすることもできます。
 
-Per informazioni sui supporti di base per Configuration Manager, vedere [Baseline and update versions](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions) (Versioni di base e di aggiornamento).
-
+Configuration Manager の基準メディアの詳細については、「[基準バージョンと更新プログラムのバージョン](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions)」を参照してください。

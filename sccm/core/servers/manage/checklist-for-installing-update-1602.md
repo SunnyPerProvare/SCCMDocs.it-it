@@ -1,141 +1,139 @@
 ---
-title: Elenco di controllo per la versione 1602 |Microsoft Docs
-description: Informazioni sulle azioni da intraprendere prima di eseguire l&quot;aggiornamento di System Center Configuration Manager dalla versione 1511 alla versione 1602.
+title: "1602 のチェックリスト | Microsoft Docs"
+description: "System Center Configuration Manager をバージョン 1511 からバージョン 1602 に更新する前に、実行するアクションについて説明します。"
 ms.custom: na
 ms.date: 2/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b63ef197-01f0-4894-b929-5ef8403c5195
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: NOINDEX, NOFOLLOW
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 30af3326578d39c6d995672071705bcaeb877e4d
-ms.openlocfilehash: e73055707454bc052b753c5e74be9674d6aa5b8c
-ms.contentlocale: it-it
-ms.lasthandoff: 02/23/2017
-
+ms.openlocfilehash: 3e0de56b7a592b105e6a61b3d6654b1d0142584d
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="checklist-for-installing-update-1602-for-system-center-configuration-manager"></a>Elenco di controllo per l'aggiornamento di System Center Configuration Manager dalla versione 1511 alla versione 1602
+# <a name="checklist-for-installing-update-1602-for-system-center-configuration-manager"></a>System Center Configuration Manager の更新プログラム 1602 をインストールするためのチェックリスト
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Prima di aggiornare System Center Configuration Manager dalla versione 1511 alla 1602, esaminare le informazioni e l'elenco di controllo seguenti per le azioni da eseguire prima di iniziare l'aggiornamento.  
+System Center Configuration Manager をバージョン 1511 からバージョン 1602 に更新する前に、次の情報と、更新を開始する前に実行するアクションのチェックリストを確認します。  
 
- **Informazioni sull'installazione dell'aggiornamento 1602:**  
+ **更新プログラム 1602 のインストールについて:**  
 
- L'aggiornamento 1602 può essere installato solo nel sito principale della gerarchia. Ciò significa che l'installazione deve essere avviata dal sito di amministrazione centrale, se disponibile, o dal sito primario autonomo.  
+ 更新プログラム 1602 は、階層の最上位サイトのみにインストールすることができます。 つまり、中央管理サイトがある場合はそこからインストールを開始します。そうでない場合は、スタンドアロン プライマリ サイトからインストールを開始します。  
 
--   I siti primari figlio installano automaticamente l'aggiornamento al termine dell'installazione dell'aggiornamento del sito di amministrazione centrale. È possibile usare le finestre di manutenzione per controllare quando vengono installati gli aggiornamenti in un sito. A partire dal rilascio dell'aggiornamento 1602, le finestre di manutenzione sono chiamate *intervalli di servizio*. Per altre informazioni, vedere [Intervalli di servizio per i server del sito](/sccm/core/servers/manage/service-windows).  
+-   中央管理サイトで更新プログラムのインストールが完了したら、子プライマリ サイトで更新プログラムが自動的にインストールされます。 メンテナンス期間を使用して、サイトが更新プログラムをインストールするタイミングを制御できます。 1602 更新プログラムのリリース以降、メンテナンス期間は "*サービス時間帯*" に名称変更されています。 詳細については、「[サイト サーバーのサービス ウィンドウ](/sccm/core/servers/manage/service-windows)」を参照してください。  
 
--   Dopo che il sito primario padre ha completato l'installazione dell'aggiornamento, è necessario aggiornare manualmente i siti secondari dalla console di Configuration Manager. L'aggiornamento automatico dei server del sito secondario non è supportato.  
+-   プライマリ親サイトが更新プログラムのインストールを完了したら、Configuration Manager コンソール内からセカンダリ サイトを手動で更新する必要があります。 セカンダリ サイト サーバーの自動更新はサポートされていません。  
 
-Quando il server del sito installa l'aggiornamento, i ruoli del sistema del sito installati nel server e quelli installati nei computer remoti vengono aggiornati automaticamente. Pertanto, prima di installare l'aggiornamento, verificare che ogni server del sistema del sito soddisfi i nuovi prerequisiti per il funzionamento con la nuova versione di aggiornamento.  
+サイト サーバーが更新プログラムをインストールすると、サイト サーバーにインストールされたサイト システムの役割と、リモート コンピューターにインストールされたサイト システムの役割が自動的に更新されます。 したがって、更新プログラムをインストールする前に、各サイト システム サーバーが新しい更新プログラムのバージョンの操作の新しい前提条件をすべて満たしていることを確認してください。  
 
-La prima volta che si usa una console di Configuration Manager dopo l'aggiornamento, viene richiesto di aggiornare tale console. A tale scopo, è necessario eseguire l'installazione di Configuration Manager nel computer che ospita la console e scegliere l'opzione per aggiornare la console. Si consiglia di installare al più presto l'aggiornamento della console.  
+更新の完了後に Configuration Manager コンソールを初めて使用する場合、そのコンソールの更新を求められます。 これを行うには、コンソールをホストするコンピューターで Configuration Manager セットアップを実行し、コンソールを更新するオプションを選択する必要があります。 コンソールへの更新プログラムのインストールを遅らせないことをお勧めします。  
 
- **Elenco di controllo:**  
+ **チェックリスト:**  
 
- **Verificare che tutti i siti eseguano una versione supportata di System Center Configuration Manager:** ogni server del sito nella gerarchia deve eseguire System Center Configuration Manager versione 1511 prima di iniziare l'installazione dell'aggiornamento 1602.  
+ **すべてのサイトがサポートされているバージョンの System Center Configuration Manager を実行することを確認する:**  更新プログラム 1602 のインストールを開始するには、階層内の各サイト サーバーが、System Center Configuration Manager バージョン 1511 を実行する必要があります。  
 
- **Controllare le versioni di Microsoft .NET installate nei server del sistema del sito:** quando un sito installa l'aggiornamento 1602, Configuration Manager esegue in automatico l'installazione di .NET Framework 4.5.2 in ogni computer che ospita uno dei seguenti ruoli del sistema del sito, se non è già installato .NET Framework 4.5 o versione successiva:  
+ **サイト システム サーバーにインストールされた Microsoft .NET のバージョンを確認する:** サイトで更新プログラム 1602 がインストールされると、Configuration Manager によって、次のいずれかのサイト システムの役割をホストする各コンピューターに .NET Framework 4.5.2 が自動的にインストールされます (.NET Framework 4.5 以降がまだインストールされていない場合)。  
 
--   Punto proxy di registrazione  
+-   登録プロキシ ポイント  
 
--   Punto di registrazione  
+-   登録ポイント  
 
--   Punto di gestione  
+-   管理ポイント  
 
--   Punto di connessione del servizio  
+-   サービス接続ポイント  
 
-Questa installazione consente di impostare il server del sistema del sito in uno stato di riavvio in sospeso e segnala gli errori al visualizzatore di stato dei componenti di Configuration Manager. Inoltre, le applicazioni .NET sul server possono presentare errori casuali finché il server non viene riavviato.  
+このインストールにより、サイト システム サーバーが再起動保留中の状態になり、Configuration Manager コンポーネント ステータス ビューアーにエラーが報告される場合があります。 さらに、サーバーが再起動されるまで、サーバー上の .NET アプリケーションでランダムにエラーが発生する場合があります。  
 
- Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](../../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
+ 詳細については、「[サイトとサイト システムの前提条件](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)」をご覧ください。  
 
- **Esaminare lo stato del sito e della gerarchia e verificare che non ci siano errori non risolti:** prima di aggiornare un sito, risolvere tutti i problemi operativi per il server del sito, il server di database del sito e i ruoli del sistema del sito installati nei computer remoti. Un aggiornamento del sito può avere esito negativo a causa di problemi operativi esistenti.  
+ **サイトと階層の状態を確認して、解決されていない問題がないことを確認する:** サイトを更新する前に、サイト サーバー、サイト データベース サーバー、リモート コンピューターにインストールされているサイト システムの役割で、運用上のすべての問題を解決します。 運用上の問題があると、サイトの更新が失敗する可能性があります。  
 
-Per ulteriori informazioni, vedere [Usare gli avvisi e il sistema di stato per System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+詳細については、「 [System Center Configuration Manager のアラートとステータス システムの使用](../../../core/servers/manage/use-alerts-and-the-status-system.md)」を参照してください。  
 
- **Esaminare la replica di file e dati tra siti:**  verificare che la replica di file e database tra siti sia funzionante e aggiornata. Eventuali ritardi o backlog in uno dei due ambiti possono complicare o compromettere l'aggiornamento.    
+ **サイト間でファイルとデータのレプリケーションを確認する:**  サイト間のファイルとデータベースのレプリケーションが機能していて最新の状態であることを確認します。 遅延またはバックログにより、円滑で正常な更新が行われない場合があります。    
 
-Per la replica di database è possibile usare Replication Link Analyzer per risolvere i problemi prima di avviare l'aggiornamento.    
+データベース レプリケーションには、更新プログラムを開始する前に問題を解決するために、レプリケーション リンク アナライザーを使用できます。    
 
- Per altre informazioni, vedere [Informazioni su Replication Link Analyzer](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_RLA) nell'argomento [Monitorare l'infrastruttura della gerarchia e di replica in System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md).  
+ 詳細については、「[System Center Configuration Manager での階層とレプリケーション インフラストラクチャの監視](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md)」トピックの「[レプリケーション リンク アナライザーについて](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_RLA)」を参照してください。  
 
- **Installare tutti gli aggiornamenti critici disponibili per i sistemi operativi nei computer che ospitano il sito, il server di database del sito e i ruoli del sistema del sito remoto:** prima di installare un aggiornamento per Configuration Manager, installare gli aggiornamenti critici per ogni sistema del sito applicabile. Se un aggiornamento installato richiede un riavvio, riavviare i computer interessati prima di iniziare l'aggiornamento.  
+ **サイト、サイト データベース サーバー、リモートのサイト システムの役割をホストするコンピューターのオペレーティング システムに適用できる、重要な更新プログラムすべてをインストールする:** Configuration Manager に更新プログラムをインストールする前に、該当する各サイト システムの重要な更新プログラムをすべてインストールします。 更新のインストール時に再起動が必要な場合は、アップグレードを開始する前に該当するコンピューターを再起動します。  
 
- **Disabilitare le repliche di database per i punti di gestione nei siti primari:** Configuration Manager non può aggiornare correttamente un sito primario che dispone di una replica di database per i punti di gestione abilitati. Disabilitare la replica di database prima di:  
+ **プライマリ サイトで管理ポイントのデータベース レプリカを無効にする:** Configuration Manager では、有効になっている管理ポイントのデータベースのレプリカを持つプライマリ サイトを正常に更新することはできません。 次の操作を行う前に、データベースのレプリケーションを無効にしてください。  
 
--   Creare un backup del database del sito per testare l'aggiornamento del database.  
+-   データベースのアップグレードをテストするためにサイト データベースのバックアップを作成する  
 
--   Installare un aggiornamento per Configuration Manager.  
+-   Configuration Manager の更新プログラムをインストールする  
 
-Per altre informazioni, vedere [Repliche di database per i punti di gestione per System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
+詳細については、「[System Center Configuration Manager の管理ポイントのデータベース レプリカ](../../../core/servers/deploy/configure/database-replicas-for-management-points.md)」を参照してください。  
 
- **Riconfigurare i punti di aggiornamento software che usano NLB:** Configuration Manager non è in grado di aggiornare un sito che usa un cluster Bilanciamento carico di rete (NLB) per ospitare i punti di aggiornamento software.  Se si usano cluster NLB per i punti di aggiornamento software, usare Windows PowerShell per rimuovere il cluster NLB.    
+ **NLB を使うソフトウェアの更新ポイントを再構成する:** Configuration Manager では、ネットワーク負荷分散 (NLB) クラスターを使用してソフトウェアの更新ポイントをホストしているサイトを更新できません。  ソフトウェアの更新ポイントに NLB クラスターを使用している場合、Windows PowerShell を使用して NLB クラスターを削除してください。    
 
- Per altre informazioni, vedere [Pianificare gli aggiornamenti software in System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md).  
+ 詳細については、「[System Center Configuration Manager でのソフトウェア更新プログラムの計画](../../../sum/plan-design/plan-for-software-updates.md)」をご覧ください。  
 
- **Disattivare tutte le attività di manutenzione in ogni sito per la durata dell'installazione dell'aggiornamento nel sito in questione:** prima di installare l'aggiornamento, disabilitare le eventuali attività di manutenzione che potrebbero essere eseguite durante il processo di aggiornamento. Queste attività includono, tra le altre, le operazioni seguenti:  
+ **各サイトの更新プログラムのインストールの実行中に、そのサイトのすべてのサイト メンテナンス タスクを無効にする:** 更新プログラムをインストールする前に、更新プロセスがアクティブな期間中に実行されるサイト メンテナンス タスクをすべて無効にします。 たとえば次のタスクが該当します。  
 
--   Backup server sito  
+-   サイト サーバーのバックアップ  
 
--   Elimina operazioni client obsolete  
+-   期限切れのクライアント操作を削除  
 
--   Elimina dati di individuazione obsoleti  
+-   期限切れの探索データの削除  
 
-Quando un'attività di manutenzione del database del sito viene eseguita durante l'installazione dell'aggiornamento, quest'ultima potrebbe avere esito negativo. Prima di disabilitare un'attività, registrarne la pianificazione per poter ripristinare la sua configurazione dopo l'installazione dell'aggiornamento.  
+更新プログラムのインストール中にサイト データベースのメンテナンス タスクを実行すると、更新プログラムのインストールが失敗することができます。 タスクを無効にする前に、更新プログラムをインストールした後で構成を復元できるように、タスクのスケジュールを記録してください。  
 
- Per altre informazioni, vedere [Attività di manutenzione per System Center Configuration Manager](../../../core/servers/manage/maintenance-tasks.md) e [Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md).  
+ 詳細については、「[System Center Configuration Manager のメンテナンス タスク](../../../core/servers/manage/maintenance-tasks.md)」および「[System Center Configuration Manager のメンテナンス タスクのリファレンス](../../../core/servers/manage/reference-for-maintenance-tasks.md)」を参照してください。  
 
- **Creare un backup del database del sito nel sito di amministrazione centrale e nei siti primari:** prima di aggiornare un sito, eseguire il backup del database del sito per assicurarsi di avere un backup corretto da usare in caso di ripristino di emergenza.   
+ 
+            **中央管理サイトとプライマリ サイトでサイト データベースのバックアップを作成する:** サイトを更新する前に、サイト データベースをバックアップして、ディザスター リカバリーに使用する正常なバックアップがあるようにします。   
 
-Per altre informazioni, vedere [Backup e ripristino per System Center Configuration Manager](../../../protect/understand/backup-and-recovery.md).  
+詳細については、「[Backup and recovery for System Center Configuration Manager](../../../protect/understand/backup-and-recovery.md)」 (System Center Configuration Manager のバックアップと回復) をご覧ください。  
 
- **Eseguire il backup di un file Configuration.mof personalizzato:** se si usa un file Configuration.mof personalizzato per definire le classi di dati usate con l'inventario hardware, creare un backup del file prima di aggiornare il sito. Dopo l'aggiornamento, ripristinare il file nel sito con la versione 1602. Quando si aggiorna un sito, il file corrente viene sovrascritto con la versione originale (predefinita) del file. Per altre informazioni sull'uso del file, vedere [Come estendere l'inventario hardware in System Center Configuration Manager](../../../core/clients/manage/inventory/extend-hardware-inventory.md).  
+ **カスタマイズされた Configuration.mof ファイルをバックアップする:** ハードウェア インベントリで使用するデータ クラスを定義するためにカスタマイズされた Configuration.mof ファイルを使用する場合は、サイトを更新する前にこのファイルのバックアップを作成します。 更新の後に、バージョン 1602 サイトにこのファイルを復元します。 サイトを更新するときに、現在のファイルは、ファイルの元の (既定の) バージョンで上書きされます。 このファイルの使用の詳細については、「[System Center Configuration Manager でのハードウェア インベントリの拡張方法](../../../core/clients/manage/inventory/extend-hardware-inventory.md)」を参照してください。  
 
- **Testare l'aggiornamento del database su una copia del backup più recente del database del sito:** prima di aggiornare un sito di amministrazione centrale di System Center Configuration Manager o un sito primario, testare il processo di aggiornamento del database del sito su una copia del database del sito.  
+ **最新のサイト データベース バックアップのコピーで、データベースのアップグレードをテストする:** System Center Configuration Manager の中央管理サイトまたはプライマリ サイトを更新する前に、サイト データベースのコピーでサイト データベースのアップグレード処理をテストします。  
 
--   È opportuno testare il processo di aggiornamento del database del sito perché, quando si aggiorna un sito, è possibile che il database del sito venga modificato.  
+-   サイトのアップグレード時にサイト データベースが変更される可能性があるため、サイト データベースのアップグレード処理をテストしておく必要があります  
 
--   Anche se non è obbligatorio, un aggiornamento di test del database permette di identificare i problemi relativi all'aggiornamento prima che questi influiscano sul database di produzione.  
+-   データベースのアップグレード テストは必須ではありませんが、テストによって、実稼働データベースが影響を受ける前に、アップグレードの問題を特定することができます  
 
--   Un aggiornamento non riuscito del database del sito può rendere inutilizzabile il database del sito e potrebbe richiedere un ripristino del sito per il relativo ripristino delle funzionalità.  
+-   サイト データベースのアップグレードが失敗すると、サイト データベースが運用不可能になり、機能を復元するにはサイトの回復が必要になる可能性があります。  
 
--   Nonostante il database del sito sia condiviso tra i siti nella gerarchia, pianificare un test del database in ciascun sito applicabile prima di aggiornare tale sito.  
+-   サイト データベースは階層内のサイトで共有されますが、そのサイトをアップグレードする前に、該当する各サイトのデータベースをテストするように計画してください。  
 
--   Se si usano le repliche di database per i punti di gestione in un sito primario, disabilitare la replica prima di creare il backup del database del sito.  
+-   プライマリ サイトで管理ポイントにデータベース レプリカを使用する場合、サイト データベースのバックアップを作成する前にレプリケーションを無効にします。  
 
-Configuration Manager non supporta né il backup di siti secondari né l'aggiornamento di test del database di un sito secondario.   
-Non eseguire un aggiornamento di test sul database del sito di produzione. Questa operazione aggiorna il database del sito e potrebbe rendere inutilizzabile il sito. Per altre informazioni, vedere [Passaggio 2: Testare l'aggiornamento del database prima di installare un aggiornamento](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) in **Prima di installare un aggiornamento nella console**.  
+Configuration Manager では、セカンダリ サイトのバックアップとセカンダリ サイト データベースのテスト アップグレードのいずれもサポートされていません。   
+テスト データベースのアップグレードを実稼働サイト データベースで実行することは避けてください。 実行するとサイト データベースが更新され、サイトが機能しなくなる可能性があります。 詳細については、「**コンソール内の更新プログラムをインストールする前に**」の「[手順 2: 更新プログラムをインストールする前のデータベースのアップグレードのテスト](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2)」を参照してください。  
 
- **Prevedere una distribuzione pilota nei client:** quando si installa un aggiornamento per il client, è possibile testare quel nuovo aggiornamento in un ambiente di pre-produzione prima della distribuzione e dell'aggiornamento di tutti i client attivi.   
+ **クライアントのパイロット運用を計画する:** クライアントを更新する更新プログラムをインストールすると、すべてのアクティブなクライアントを展開してアップグレードする前に、実稼働前環境でその新しいクライアントの更新プログラムをテストできます。   
 
- Per sfruttare i vantaggi di questa opzione, è necessario configurare il sito in modo da supportare gli aggiornamenti automatici di pre-produzione prima di iniziare l'installazione dell'aggiornamento. Per altre informazioni, vedere [Aggiornare i client in System Center Configuration Manager](../../../core/clients/manage/upgrade/upgrade-clients.md) e   
-[Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).  
+ このオプションを活用するには、更新プログラムのインストールを開始する前に、実稼働前環境の自動アップグレードをサポートするサイトを構成する必要があります。 詳細については、次を参照してください。「[System Center Configuration Manager でのクライアントのアップグレード](../../../core/clients/manage/upgrade/upgrade-clients.md)」および   
+「[System Center Configuration Manager で実稼働前コレクションのクライアント アップグレードをテストする方法](../../../core/clients/manage/upgrade/test-client-upgrades.md)」。  
 
- **Pianificare l'uso di finestre di manutenzione per controllare quando vengono installati gli aggiornamenti ai server del sito:** è possibile usare le finestre di manutenzione per definire un periodo durante il quale possono essere installati gli aggiornamenti al server del sito. Questo permette di controllare quando i siti nella gerarchia installano l'aggiornamento.   
+ **サイト サーバーで更新プログラムがインストールされるタイミングをメンテナンス期間によって制御することを検討する:** メンテナンス期間を使用して、そのサイト サーバーの更新プログラムをインストールできる期間を定義することができます。 これは、階層内のサイトが更新プログラムをインストールするタイミングの制御に役立ちます。   
 
-A partire dal rilascio dell'aggiornamento 1602, le finestre di manutenzione sono chiamate *intervalli di servizio*. Per altre informazioni, vedere [Intervalli di servizio per i server del sito](/sccm/core/servers/manage/service-windows).  
+1602 更新プログラムのリリース以降、メンテナンス期間は "*サービス時間帯*" に名称変更されています。 詳細については、「[サイト サーバーのサービス ウィンドウ](/sccm/core/servers/manage/service-windows)」を参照してください。  
 
- **Eseguire il controllo dei prerequisiti di installazione:** prima di installare l'aggiornamento 1602, è possibile eseguire il controllo dei prerequisiti in modo indipendente dall'installazione dell'aggiornamento. Quando si installa l'aggiornamento nel sito, il controllo dei prerequisiti viene eseguito nuovamente.  
+ **セットアップ前提条件チェッカーを実行する:**  1602 更新プログラムをインストールする前に、更新プログラムのインストールとは別に前提条件チェッカーを実行することができます。 サイトへの更新プログラムのインストール時に、前提条件チェッカーが再度実行されます。  
 
-Per altre informazioni, vedere **Passaggio 3: Eseguire il controllo dei prerequisiti prima di installare un aggiornamento** nell'argomento [Installare gli aggiornamenti nella console per System Center Configuration Manager](../../../core/servers/manage/updates.md).  
+詳細については、「[System Center Configuration Manager の更新プログラム](../../../core/servers/manage/updates.md)」トピックの「**手順 3: 更新プログラムをインストールする前の前提条件チェッカーの実行**」を参照してください。  
 
 > [!IMPORTANT]  
->  Quando viene eseguito il controllo dei prerequisiti in modo indipendente o nel contesto dell'installazione di un aggiornamento, il processo aggiorna alcuni file di origine del prodotto usati per le attività di manutenzione del sito. Di conseguenza, dopo aver eseguito il controllo dei prerequisiti ma prima di installare l'aggiornamento 1602, se si deve svolgere un'attività di manutenzione del sito, eseguire **Setupwfe.exe** (il programma di installazione di Configuration Manager) dalla cartella CD.Latest nel server del sito.  
+>  前提条件チェッカーを更新プログラムの一部として、または単独で実行すると、サイト メンテナンス タスクに使用される一部の製品ソース ファイルが更新されます。 このため、前提条件チェッカーを実行した後で、1602 更新プログラムをインストールする前に、サイト メンテナンス タスクを実行する必要がある場合は、サイト サーバーの CD.Latest フォルダーから **Setupwfe.exe** (Configuration Manager セットアップ) を実行する必要があります。  
 
- **Aggiornare i siti:** a questo punto è possibile avviare l'installazione dell'aggiornamento per la gerarchia. È consigliabile pianificare l'installazione dell'aggiornamento per ogni sito al di fuori del normale orario di ufficio in modo che il processo di installazione dell'aggiornamento e le azioni per reinstallare i componenti del sito e i ruoli del sistema del sito abbiano un impatto minimo sulle operazioni aziendali.
+ **サイトを更新する:** 階層の更新プログラムのインストールを開始する準備が整いました。 更新プログラムをインストールするプロセス、およびサイトのコンポーネントとサイト システムの役割を再インストールするアクションが業務に及ぼす影響が少ない場合は、各サイトの通常業務時間外に更新プログラムをインストールする計画を立てることをお勧めします。
 
-Per altre informazioni, vedere [Aggiornamenti per System Center Configuration Manager](../../../core/servers/manage/updates.md).  
+詳細については、「[System Center Configuration Manager の更新プログラム](../../../core/servers/manage/updates.md)」を参照してください。  
 
-## <a name="see-also"></a>Vedere anche  
- [Aggiornamenti per System Center Configuration Manager](../../../core/servers/manage/updates.md)
-
+## <a name="see-also"></a>関連項目  
+ [System Center Configuration Manager の更新プログラム](../../../core/servers/manage/updates.md)

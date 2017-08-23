@@ -1,135 +1,128 @@
 ---
-title: Configurare la sicurezza in System Center Configuration Manager | Microsoft Docs
-description: Configurare le opzioni relative alla sicurezza per System Center Configuration Manager.
+title: "System Center Configuration Manager でのセキュリティの構成 | Microsoft Docs"
+description: "System Center Configuration Manager のセキュリティ関連オプションを構成します。"
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 552e7e3d-e584-4a7c-9155-0f796a14b678
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: cf29123923436ed4cefc17c69630fc39989caeb4
 ms.openlocfilehash: 0034381a7a388ddc3eda5e774f3c63d741336301
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-security-in-system-center-configuration-manager"></a>Configurare la sicurezza in System Center Configuration Manager
+# <a name="configure-security-in-system-center-configuration-manager"></a>System Center Configuration Manager でのセキュリティの構成
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Usare le informazioni contenute in questo articolo per configurare le opzioni relative alla sicurezza per System Center Configuration Manager.  
+この記事の情報は、System Center Configuration Manager 用のセキュリティ関連オプションを設定する上で参考になります。  
 
-##  <a name="a-namebkmkconfigureclientpkia-configure-settings-for-client-pki-certificates"></a><a name="BKMK_ConfigureClientPKI"></a> Configurare le impostazioni per i certificati PKI client  
-Se si desidera utilizzare i certificati di infrastruttura a chiave pubblica (PKI) per le connessioni client con i sistemi del sito che utilizzano IIS (Internet Information Services), utilizzare la seguente procedura per configurare le impostazioni relative ai certificati.  
+##  <a name="BKMK_ConfigureClientPKI"></a> クライアント PKI 証明書の設定の構成  
+インターネット インフォメーション サービス (IIS) を使用するサイト システムへのクライアント接続に公開キー基盤 (PKI) 証明書を使用する場合、次の手順に従ってこれらの証明書の設定を構成します。  
 
-#### <a name="to-configure-client-pki-certificate-settings"></a>Per configurare le impostazioni dei certificati PKI client  
+#### <a name="to-configure-client-pki-certificate-settings"></a>クライアント PKI 証明書の設定を構成するには  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Configurazione sito**, scegliere **Siti** e quindi scegliere il sito primario da configurare.  
+2.  [**管理**] ワークスペースで、[**サイトの構成**] を展開して、[**サイト**] を選択してから、構成するプライマリ サイトを選択します。  
 
-3.  Nel gruppo **Proprietà** della scheda **Home** scegliere **Proprietà** e quindi scegliere la scheda **Comunicazione computer client**.  
+3.  [**ホーム**] タブの [**プロパティ**] グループで、[**プロパティ**] を選び、[**クライアント コンピューターの通信方法**] タブを選びます。  
 
-    Questa scheda è disponibile solo in un sito primario. Se la scheda **Comunicazione computer client** non viene visualizzata, verificare di non essere connessi a un sito di amministrazione centrale o a un sito secondario.  
+    このタブは、プライマリ サイトでのみ使用できます。 [クライアント コンピューターの通信方法 **** ] タブが表示されない場合、中央管理サイトまたはセカンダリ サイトに接続されていないことを確認してください。  
 
-4.  Scegliere **Solo HTTPS** per fare in modo che i client assegnati al sito usino sempre un certificato PKI client durante la connessione ai sistemi del sito che usano IIS. In alternativa, scegliere **HTTPS o HTTP** se non è necessario che i client usino i certificati PKI.  
+4.  サイトに割り当てられているクライアントが IIS を使用するサイト システムに接続するときに、常にクライアント PKI 証明書を使用する必要がある場合は、[**HTTPS のみ**] を選びます。 または、クライアントが PKI 証明書を使用する必要がない場合は、[**HTTPS または HTTP**] を選びます。  
 
-5.  Se è stata scelta l'opzione **HTTPS o HTTP**, scegliere **Utilizza certificato client PKI (funzionalità di autenticazione client) quando disponibile** per usare un certificato PKI client per le connessioni HTTP. Il client utilizza questo certificato anziché un certificato autofirmato per l'autenticazione nei sistemi del sito. Questa opzione viene selezionata automaticamente se si sceglie **Solo HTTPS**.  
+5.  [**HTTPS または HTTP**] を選択した場合は、HTTP 接続にクライアント PKI 証明書を使用する際に、[**使用可能な場合はクライアント PKI 証明書 (クライアント認証機能) を使用する**] を選びます。 クライアントは、サイト システムに対する認証に、自己署名入り証明書ではなく、この証明書を使用します。 このオプションは、[**HTTPS のみ**] を選択すると自動的に選択されます。  
 
-    Se i client vengono rilevati in Internet o vengono configurati solo per la gestione client Internet, essi utilizzano sempre un certificato PKI client.  
+    クライアントがインターネット上にあることが検出された場合、またはクライアントがインターネットのみでのクライアント管理向けに構成されている場合、このクライアントは常にクライアント PKI 証明書を使用します。  
 
-6.  Scegliere **Modifica** per configurare il metodo di selezione client scelto nel caso in cui in un client sia disponibile più di un certificato client PKI valido e quindi scegliere **OK**.  
+6.  [**変更**] を選び、クライアントで複数の有効な PKI クライアント証明書が使用可能な場合のために、選択したクライアント選択方法を構成してから、[**OK**] を選びます。  
 
-    Per dettagli sul metodo di selezione del certificato client, vedere [Pianificazione della selezione del certificato client PKI](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForClientCertificateSelection).  
+    クライアント証明書の選択方法の詳細については、「[PKI クライアント証明書の選択の計画](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForClientCertificateSelection)」を参照してください。  
 
-7.  Selezionare o deselezionare la casella di controllo relativa al controllo dell'elenco di revoche di certificati (CRL) da parte dei client.  
+7.  クライアントが証明書失効リスト (CRL) をチェックするかどうかのチェック ボックスを、オンまたはオフにします。  
 
-    Per dettagli sul controllo CRL da parte dei client, vedere [Pianificazione di revoche di certificati PKI](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForCRLs).  
+    クライアントの CRL チェックの詳細については、「[PKI 証明書失効の計画](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForCRLs)」を参照してください。  
 
-8.  Se è necessario specificare i certificati dell'autorità di certificazione radice attendibile (CA) per i client, scegliere **Imposta**, importare i file di certificato della CA radice e quindi scegliere **OK**.  
+8.  クライアントに信頼されたルート証明機関 (CA) 証明書を指定する必要がある場合は、[**設定**] を選び、ルート CA 証明書ファイルをインポートしてから、[**OK**] を選びます。  
 
-    Per dettagli su questa impostazione, vedere [Pianificazione di certificati radice trusted PKI e dell'elenco di autorità di certificazione](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRootCAs).  
+    この設定の詳細については、「[PKI 信頼されたルート証明書と証明書発行者リストの計画](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRootCAs)」を参照してください。  
 
-9. Scegliere **OK** per chiudere la finestra di dialogo delle proprietà per il sito.  
+9. [**OK**] を選び、サイトの [プロパティ] ダイアログ ボックスを閉じます。  
 
-Ripetere questa procedura per tutti i siti primari nella gerarchia.  
+階層内のすべてのプライマリ サイトで、この手順を繰り返します。  
 
-##  <a name="a-namebkmkconfiguresigningencryptiona-configure-signing-and-encryption"></a><a name="BKMK_ConfigureSigningEncryption"></a> Configurare la firma e la crittografia  
-Configurare le impostazioni di firma e crittografia più sicure per i sistemi del sito supportate da tutti i client del sito. Queste impostazioni sono particolarmente importanti quando si consente ai client di comunicare con i sistemi del sito utilizzando i certificati autofirmati tramite HTTP.  
+##  <a name="BKMK_ConfigureSigningEncryption"></a> 署名と暗号化の構成  
+サイト内のすべてのクライアントがサポートすることができるサイト システムに、最も安全な署名設定と暗号化設定を構成します。 これらの設定が特に重要になるのが、自己署名入り証明書を使用してクライアントが HTTP 経由でサイト システムと通信する場合です。  
 
-#### <a name="to-configure-signing-and-encryption-for-a-site"></a>Per configurare la firma e la crittografia per un sito  
+#### <a name="to-configure-signing-and-encryption-for-a-site"></a>サイトに署名と暗号化を構成するには  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Configurazione sito**, scegliere **Siti** e quindi scegliere il sito primario da configurare.  
+2.  [**管理**] ワークスペースで、[**サイトの構成**] を展開して、[**サイト**] を選択してから、構成するプライマリ サイトを選択します。  
 
-3.  Nel gruppo **Proprietà** della scheda **Home** scegliere **Proprietà** e quindi scegliere la scheda **Firma e crittografia** .  
+3.  [**ホーム**] タブの [**プロパティ**] グループで、[**プロパティ**] を選び、[**署名と暗号化**] タブを選びます。  
 
-    Questa scheda è disponibile solo in un sito primario. Se la scheda **Firma e crittografia** non viene visualizzata, verificare di non essere connessi a un sito di amministrazione centrale o a un sito secondario.  
+    このタブは、プライマリ サイトでのみ使用できます。 [署名および暗号化 **** ] タブが表示されない場合、中央管理サイトまたはセカンダリ サイトに接続されていないことを確認してください。  
 
-4.  Configurare le opzioni di firma e crittografia desiderate e quindi scegliere **OK**.  
+4.  必要な署名オプションと暗号化オプションを構成し、[**OK**] を選びます。  
 
     > [!WARNING]  
-    >  Non scegliere **Richiedi SHA-256** prima di aver controllato che tutti i client che è possibile assegnare al sito siano in grado di supportare questo algoritmo hash o che dispongano di un certificato di autenticazione client PKI valido. Potrebbe essere necessario installare aggiornamenti o hotfix nei client per il supporto di SHA-256. Ad esempio, i computer che eseguono Windows Server 2003 SP2 devono installare un hotfix a cui si fa riferimento nell' [articolo della Knowledge Base 938397](http://go.microsoft.com/fwlink/p/?LinkId=226666).  
+    >  [**SHA-256 を必要とする**] を選択する場合は、サイトに割り当てられている可能性があるすべてのクライアントがこのハッシュ アルゴリズムをサポートできること、またはこれらのクライアントに有効な PKI クライアント認証証明書があることを確認してからにしてください。 SHA-256 をサポートするクライアントに対する更新プログラムまたは修正プログラムのインストールが必要な場合があります。 たとえば、Windows Server 2003 SP2 を実行しているコンピューターでは、 [サポート技術情報 938397](http://go.microsoft.com/fwlink/p/?LinkId=226666)に示されている修正プログラムをインストールする必要があります。  
     >   
-    >  Se si sceglie questa opzione e i client non sono in grado di supportare SHA-256 ma usano certificati autofirmati, questi client vengono rifiutati da Configuration Manager. In questo scenario, il componente SMS_MP_CONTROL_MANAGER registra l'ID messaggio 5443.  
+    >  このオプションを選択した場合、クライアントが SHA-256 をサポートしておらず、自己署名入り証明書を使用できないと、Configuration Manager はクライアントを拒否します。 この場合は、SMS_MP_CONTROL_MANAGER コンポーネントにメッセージ ID 5443 が記録されます。  
 
-5.  Scegliere **OK** per chiudere la finestra di dialogo **Proprietà** per il sito.  
+5.  [**OK**] を選び、サイトの [**プロパティ**] ダイアログ ボックスを閉じます。  
 
-Ripetere questa procedura per tutti i siti primari nella gerarchia.  
+階層内のすべてのプライマリ サイトで、この手順を繰り返します。  
 
-##  <a name="a-namebkmkconfigurerbaa-configure-role-based-administration"></a><a name="BKMK_ConfigureRBA"></a> Configurare l'amministrazione basata su ruoli  
-L'amministrazione basata su ruoli combina ruoli di sicurezza, ambiti di protezione e raccolte assegnate per definire l'ambito amministrativo per ogni utente amministratore. L'ambito amministrativo comprende gli oggetti che possono essere visualizzati da un utente amministratore nella console di Configuration Manager, nonché le attività relative a tali oggetti eseguibili dall'utente amministratore. Le configurazioni dell'amministrazione basata su ruoli vengono applicate a tutti i siti della gerarchia.  
+##  <a name="BKMK_ConfigureRBA"></a> 役割に基づいた管理の構成  
+役割に基づいた管理では、セキュリティ ロール、セキュリティ スコープ、および割り当てられたコレクションを組み合わせて、各管理ユーザーの管理スコープを定義します。 管理スコープには、Configuration Manager コンソールで管理ユーザーが表示できるオブジェクト、および管理ユーザーが実行するアクセス許可を持っている、それらのオブジェクトに関連するタスクが含まれます。 役割に基づいた管理の構成は、階層内の各サイトに適用されます。  
 
-Di seguito sono riportati collegamenti alle sezioni pertinenti dell'articolo [Configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../../core/servers/deploy/configure/configure-role-based-administration.md):  
+次のリンクが「[System Center Configuration Manager のロール ベース管理の構成](../../../core/servers/deploy/configure/configure-role-based-administration.md)」の記事から関連するセクションにつながっています。  
 
--   [Creare ruoli di sicurezza personalizzati](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole)  
+-   [カスタム セキュリティ ロールの作成](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole)  
 
--   [Configurare i ruoli di sicurezza](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecRole)  
+-   [セキュリティ ロールの構成](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecRole)  
 
--   [Configurare gli ambiti di protezione per un oggetto](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecScope)  
+-   [オブジェクトのセキュリティ スコープの構成](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecScope)  
 
--   [Configurare le raccolte per la gestione della sicurezza](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigColl)  
+-   [セキュリティを管理するコレクションの構成](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigColl)  
 
--   [Creare un nuovo utente amministratore](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_Create_AdminUser)  
+-   [新しい管理ユーザーの作成](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_Create_AdminUser)  
 
--   [Modificare l'ambito amministrativo di un utente amministratore](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ModAdminUser)  
+-   [管理ユーザーの管理スコープの変更](../../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ModAdminUser)  
 
 > [!IMPORTANT]  
->  L'ambito amministrativo consente di definire gli oggetti e le impostazioni che è possibile assegnare quando si configura l'amministrazione basata su ruoli per un altro utente amministratore. Per informazioni sulla pianificazione dell'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](../../../core/understand/fundamentals-of-role-based-administration.md).  
+>  独自の管理スコープでオブジェクトと設定を定義し、別の管理ユーザーの役割に基づいた権限を構成するときに、これらのオブジェクトと設定を割り当てることができます。 ロール ベース管理の計画方法については、「[System Center Configuration Manager のロール ベース管理の基礎](../../../core/understand/fundamentals-of-role-based-administration.md)」を参照してください。  
 
-##  <a name="a-namebkmkmanageaccountsa-manage-accounts-that-are-used-by-configuration-manager"></a><a name="BKMK_ManageAccounts"></a> Gestire gli account usati da Configuration Manager  
-Configuration Manager supporta gli account di Windows per diverse attività e usi.  
+##  <a name="BKMK_ManageAccounts"></a> Configuration Manager で使用するアカウントの管理  
+Configuration Manager は、Windows アカウントのさまざまなタスクとユーザーをサポートしています。  
 
-Usare la procedura seguente per visualizzare gli account configurati per le diverse attività e per gestire la password usata da Configuration Manager per ogni account.  
+さまざまなタスク用に構成されているアカウントを表示し、各アカウントについて Configuration Manager が使用するパスワードを管理するには、次の手順に従います。  
 
-#### <a name="to-manage-accounts-that-are-used-by-configuration-manager"></a>Per gestire gli account usati da Configuration Manager  
+#### <a name="to-manage-accounts-that-are-used-by-configuration-manager"></a>Configuration Manager で使用するアカウントを管理するには  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Sicurezza** e quindi scegliere **Account** per visualizzare gli account configurati per Configuration Manager.  
+2.  [**管理**] ワークスペースで、[**セキュリティ**] を展開してから、[**アカウント**] を選び、Configuration Manager に構成されたアカウントを表示します。  
 
-3.  Per modificare la password per un account configurato per Configuration Manager, scegliere l'account.  
+3.  Configuration Manager に構成されているアカウントのパスワードを変更するには、そのアカウントを選択します。  
 
-4.  Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.  
+4.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-5.  Scegliere **Imposta** per aprire la finestra di dialogo **Account utente di Windows** e specificare la nuova password che Configuration Manager userà per l'account.  
+5.  [**設定**] を選び、[**Windows ユーザー アカウント**] ダイアログ ボックスを開きます。Configuration Manager のアカウントに使用する新しいパスワードを指定します。  
 
     > [!NOTE]  
-    >  La password specificata deve corrispondere alla password specificata per l'account in Utenti e computer di Active Directory.  
+    >  指定するパスワードが、Active Directory ユーザーとコンピューターのアカウントに指定されているパスワードと一致している必要があります。  
 
-6.  Scegliere **OK** per completare la procedura.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
-
+6.  [**OK**] を選び、手順を完了します。  

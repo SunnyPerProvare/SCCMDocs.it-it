@@ -1,60 +1,56 @@
 ---
-title: Gestire Long Term Servicing Branch | Microsoft Docs
-description: Differenze di gestione per LTSB di System Center Configuration Manager.
+title: "LTSB の管理 | Microsoft Docs"
+description: "System Center Configuration Manager LTSB の管理の変更点"
 ms.custom: na
 ms.date: 05/01/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8da2887a-fd8e-438c-b926-849c121f7fdf
-caps.latest.revision: 0
+caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31819a1df4e63e1114682490a9b3c3b4e5c99cfa
 ms.openlocfilehash: 9c6f349ead906532a7a58df74609de976769e251
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-the-long-term-servicing-branch-of-configuration-manager"></a>Gestire Long Term Servicing Branch di Configuration Manager
+# <a name="manage-the-long-term-servicing-branch-of-configuration-manager"></a>Configuration Manager の Long-Term Servicing Branch の管理
 
-*Si applica a: System Center Configuration Manager (Long-Term Servicing Branch)*
+*適用対象: System Center Configuration Manager (Long-Term Servicing Branch)*
 
-Quando si usa Long-Term Servicing Branch (LTSB) di System Center Configuration Manager, le informazioni riportate di seguito consentono di comprendere modifiche importanti che influiscono sulla modalità di gestione dell'infrastruttura.
+System Center Configuration Manager の Long-Term Servicing Branch (LTSB) を使用する場合は、インフラストラクチャの管理方法に影響する重要な変更点を理解するために、以下の情報が役に立ちます。
 
-Poiché LTSB è equivalente a Current Branch versione 1606 con alcune eccezioni, ad esempio l'integrazione di Intune e le funzionalità correlate al cloud, le attività usate per la pianificazione, la distribuzione, la configurazione e la gestione quotidiana sono per la maggior parte identiche.
+LTSB は Current Branch バージョン 1606 と同等であるため (Intune の統合やクラウド関連の機能などいくつかの例外はあります)、計画、展開、構成、日常の管理のために使用するほとんどのタスクが同じです。
 
-LTSB, ad esempio, supporta lo stesso numero di siti, tipi di sito e client, nonché la stessa infrastruttura generale di Current Branch. È quindi possibile usare le indicazioni disponibili negli argomenti relativi alla pianificazione e alla progettazione dei siti e delle gerarchie per Current Branch. Analogamente, per le funzionalità con LTSB supportate da entrambi i rami, ad esempio gli aggiornamenti software o la distribuzione del sistema operativo, è possibile usare le indicazioni disponibili nelle sezioni corrispondenti della documentazione di Current Branch, tenendo presente che non sono illustrate le modifiche alle funzionalità introdotte dopo la versione 1606 di Current Branch.
+たとえば、LTSB は、Current Branch と同じ数のサイト、サイトの種類、クライアント、全般的なインフラストラクチャをサポートしています。 そのため、Current Branch のサイトおよび階層の計画、設計に関するトピックのガイドを参照できます。 同様に、両方のブランチでサポートされる LTSB の機能 (ソフトウェア更新プログラム、オペレーティング システムの展開など) については、Current Branch ドキュメントの該当するセクションをご覧ください。ただし、Current Branch バージョン 1606 の後に導入された変更や機能は使用できないことに注意してください。
 
-Le sezioni seguenti offrono informazioni sulle attività di gestione che presentano delle differenze.
+同じではない管理タスクの詳細については、次のセクションをご覧ください。
 
-## <a name="updates-and-servicing"></a>Aggiornamenti e manutenzione
-Solo gli aggiornamenti di sicurezza critici vengono resi disponibili come aggiornamenti nella console per LTSB.  
+## <a name="updates-and-servicing"></a>更新プログラムとサービス
+LTSB のコンソール内更新プログラムでは、重要なセキュリティ更新プログラムのみを使用できます。  
 
-Le informazioni sugli aggiornamenti periodici per versioni di Current Branch successive sono visibili nella console, ma questi non vengono resi disponibili per LTSB. Non vengono scaricati e non possono essere installati.
+コンソールには、以降の Current Branch リリース用の通常の更新プログラムに関する情報が表示されますが、LTSB からは使用できません。 更新プログラムはダウンロードされず、インストールすることはできません。
 
-Per supportare gli aggiornamenti di sicurezza critici all'interno della console, per i siti LTSB è necessario usare il [punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point). È possibile configurare questo ruolo del sistema del sito in modalità offline o online, come avviene per Current Branch. LTSB raccoglie e invia gli stessi dati di telemetria e di utilizzo di Current Branch.
+重要なセキュリティ修正プログラムについてコンソール内更新プログラムをサポートするには、LTSB で[サービス接続ポイント](/sccm/core/servers/deploy/configure/about-the-service-connection-point)を使用する必要があります。 Current Branch と同様に、このサイト システムの役割はオフライン モードまたはオンライン モードで構成できます。 LTSB は、Current Branch と同じテレメトリと使用状況データを収集および送信します。
 
-LTSB supporta l'uso del programma di installazione degli aggiornamenti rapidi e dello strumento di registrazione dell'aggiornamento, come documentato per Current Branch.
+LTSB は、Current Branch のドキュメントで説明されているように、Hotfix Installer and Update Registration ツールの使用をサポートしています。
 
-Per informazioni generali sugli aggiornamenti e sulla manutenzione, vedere [Updates for Configuration Manager](/sccm/core/servers/manage/updates) (Aggiornamenti per Configuration Manager).
-
-
-## <a name="changes-for-site-expansion-and-the-cdlatest-folder"></a>Modifiche per l'espansione del sito e cartella CD.Latest
-Quando si esegue LTSB e si espande un sito primario autonomo installando un nuovo sito di amministrazione centrale, è necessario usare il programma di installazione e i file di origine dal supporto di base della versione 1606. Per Current Branch si esegue il programma di installazione e si usano i file di origine della cartella CD.Latest.
-
-Anche se non si esegue il programma di installazione per l'espansione del sito dalla cartella CD.Latest, si continua a usare questa cartella per il ripristino del sito e per installare un nuovo sito primario figlio se il primo sito LTSB è un sito di amministrazione centrale.
-
-Per altre informazioni sull'espansione del sito, vedere [Espandere un sito primario autonomo](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites#expand-a-stand-alone-primary-site). Per altre informazioni sulla cartella CD.Latest, vedere [The CD.Latest folder](/sccm/core/servers/manage/the-cd.latest-folder) (Cartella CD.Latest).
+更新プログラムとサービスの全般的な情報については、「 [Updates for Configuration Manager](/sccm/core/servers/manage/updates)」(Configuration Manager の更新プログラム) を参照してください。
 
 
-## <a name="recovery"></a>Modello di
-Quando si esegue il ripristino, per il sito o il database del sito è necessario ripristinare il ramo originario. Non è possibile ripristinare un database del sito Current Branch con un'installazione LTSB o viceversa.
+## <a name="changes-for-site-expansion-and-the-cdlatest-folder"></a>サイトの拡張と CD.Latest フォルダーの変更
+新しい中央管理サイトをインストールして LTSB を実行し、スタンドアロンのプライマリ サイトを実行する場合、1606 基準メディアのセットアップおよびソース ファイルを使用する必要があります Current Branch の場合、CD.Latest フォルダーのセットアップを実行し、ソース ファイルを使用します。
 
+サイトの拡張には CD.Latest フォルダーのセットアップを実行しませんが、サイトの回復には CD.Latest フォルダーを使用します。また、最初の LTSB サイトが中央管理サイトだったときに、新しい子プライマリ サイトをインストールする場合にも、CD.Latest フォルダーを使用します。
+
+サイトの拡張の詳細については、[スタンドアロン プライマリ サイトの拡張](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites#expand-a-stand-alone-primary-site)に関するページをご覧ください。 CD.Latest フォルダーの詳細については、「[The CD.Latest folder](/sccm/core/servers/manage/the-cd.latest-folder)」(CD.Latest フォルダー) を参照してください。
+
+
+## <a name="recovery"></a>復元
+サイトを復元する場合は、サイトまたはサイト データベースを元のブランチに復元する必要があります。 Current Branch サイト データベースを LTSB インストールに復元することはできません。また、その逆も同様です。

@@ -1,59 +1,52 @@
 ---
-title: Risorse per l&quot;installazione di siti | Microsoft Docs
-description: Esaminare un elenco di argomenti che consentono di installare System Center Configuration Manager o di aggiungere siti alla gerarchia.
+title: "サイト インストール リソース | Microsoft Docs"
+description: "System Center Configuration Manager インストールしたり、階層にサイトを追加したりするときに役立つトピックの一覧を確認します。"
 ms.custom: na
 ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: d0e4ddc3-d9c4-4f5c-8b1f-af098e54f5c8
-caps.latest.revision: 31
-caps.handback.revision: 0
+caps.latest.revision: "31"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 9fa9a9b2f57106e36c45248feb400ec125adcad1
 ms.openlocfilehash: 75511c744d7d2bae960273c845ce68f06a82b697
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="resources-for-installing-system-center-configuration-manager-sites"></a>Risorse per l'installazione di siti di System Center Configuration Manager
+# <a name="resources-for-installing-system-center-configuration-manager-sites"></a>System Center Configuration Manager サイトのインストールのリソース
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Gli argomenti seguenti forniscono le istruzioni per installare System Center Configuration Manager o aggiungere siti alla gerarchia di Configuration Manager esistente.
+System Center Configuration Manager をインストールするか、既存の Configuration Manager 階層にサイトを追加するとき、次のトピックが役に立ちます。
 
-- [Preparare l'installazione di siti](prepare-to-install-sites.md)
+- [サイトのインストールの準備](prepare-to-install-sites.md)
 
-  Questo argomento offre informazioni essenziali che consentono di installare un sito in una gerarchia nuova o esistente. Le informazioni illustrano anche i casi in cui scegliere file di origine non predefiniti, le limitazioni che si applicano a tutti i siti e le azioni facoltative che è possibile eseguire per semplificare le attività quando si installa più di un sito.
+  このトピックでは、新しい階層または既存の階層にサイトをインストールするのに役立つ情報を提供します。 既定以外のソース ファイルをいつ使用すべきか、すべてのサイトに当てはまる制限事項、複数のサイトをインストールする場合に作業を単純化するためのオプション操作などの情報があります。
 
-- [Prerequisiti per l'installazione di un sito](prerequisites-for-installing-sites.md)
+- [サイトをインストールするための前提条件](prerequisites-for-installing-sites.md)
 
-  Informazioni sui diritti utente e le autorizzazioni che l'account deve avere per installare un sito e i prerequisiti correlati per ogni tipo di sito che è possibile installare.
+  サイトをインストールするためにアカウントに必要な権限、インストール可能なサイトの種類ごとの関連前提条件について説明します。
 
-- [Installare siti tramite l'Installazione guidata](use-the-setup-wizard-to-install-sites.md)
+- [セットアップ ウィザードを使用してサイトをインストールする](use-the-setup-wizard-to-install-sites.md)
 
-  Questo argomento illustra l'installazione guidata di siti e offre informazioni dettagliate sulle opzioni che potrebbero non essere chiare nell'interfaccia utente della procedura guidata.  
+  このトピックでは、サイト インストール ウィザードの手順を段階的に説明します。 ウィザードのユーザー インターフェイスではわかりにくいオプションについて説明します。  
 
-- [Installare siti tramite la riga di comando e uno script](use-a-command-line-to-install-sites.md)
+- [コマンド ラインとスクリプトを使用してサイトをインストールする](use-a-command-line-to-install-sites.md)
 
-  Informazioni su come ottenere uno script per l'installazione del sito e come usarlo per eseguire un'installazione automatica.
+  サイトのインストール スクリプトを入手する方法と、それを使用してサイトの無人インストールを実行する方法について説明します。
 
-- [Installare la console di Configuration Manager](install-consoles.md)
+- [Configuration Manager コンソールをインストールする](install-consoles.md)
 
-  Questo argomento offre indicazioni su come installare la console di Configuration Manager in un computer in cui non si vogliono installare siti.
+  このトピックでは、サイトをインストールしないコンピューター上に Configuration Manager コンソールをインストールする方法について解説します。
 
-- [Eseguire l'aggiornamento da un'installazione di valutazione a un'installazione completa](upgrade-an-evaluation-install-to-a-full-install.md)
+- [評価版インストールから完全インストールにアップグレードする](upgrade-an-evaluation-install-to-a-full-install.md)
 
-  Leggere questo argomento quando si è pronti ad aggiornare il sito di valutazione in un sito di Configuration Manager con licenza completa.
-
-
-
-<!--HONumber=Jan17_HO1-->
-
-
+  評価版サイトから完全なライセンス付きの Configuration Manager サイトにアップグレードするには、このトピックを参照してください。

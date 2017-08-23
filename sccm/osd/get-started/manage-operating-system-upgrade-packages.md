@@ -1,100 +1,93 @@
 ---
-title: Gestire i pacchetti di aggiornamento del sistema operativo | Documentazione Microsoft
-description: Informazioni su come gestire i pacchetti di aggiornamento del sistema operativo in System Center Configuration Manager.
+title: "オペレーティング システムのアップグレード パッケージの管理 | Microsoft ドキュメント"
+description: "System Center Configuration Manager でオペレーティング システムのアップグレード パッケージを管理する方法について説明します。"
 ms.custom: na
 ms.date: 12/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b9b22655-b8c1-461f-8047-3a7e906f647a
-caps.latest.revision: 12
-caps.handback.revision: 0
+caps.latest.revision: "12"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 3f44505c977b511223a083a960f871371c0ff133
 ms.openlocfilehash: 5fef04f26b12bced073332fd1f7b4e7c7bd7d398
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-operating-system-upgrade-packages-with-system-center-configuration-manager"></a>Gestire i pacchetti di aggiornamento del sistema operativo con System Center Configuration Manager
+# <a name="manage-operating-system-upgrade-packages-with-system-center-configuration-manager"></a>System Center Configuration Manager でのオペレーティング システムのアップグレード パッケージの管理
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Un pacchetto di aggiornamento in System Center Configuration Manager contiene i file di origine dell'installazione di Windows che vengono usati per eseguire l'aggiornamento di un sistema operativo esistente in un computer. Usare le sezioni seguenti per gestire i pacchetti di aggiornamento del sistema operativo in Configuration Manager.
+System Center Configuration Manager のアップグレード パッケージには、コンピューターの既存のオペレーティング システムのアップグレードに使用される Windows セットアップのソース ファイルが含まれています。 Configuration Manager でオペレーティング システム アップグレード パッケージを管理するには、次のセクションを参照してください。
 
-##  <a name="a-namebkmkaddosupgradepkgsa-add-operating-system-upgrade-packages-to-configuration-manager"></a><a name="BKMK_AddOSUpgradePkgs"></a> Aggiungere pacchetti di aggiornamento del sistema operativo a Configuration Manager  
- Prima di poter usare un pacchetto di aggiornamento del sistema operativo, è necessario aggiungere il pacchetto a un sito di Configuration Manager. Usare la procedura seguente per aggiungere un pacchetto di aggiornamento del sistema operativo a un sito.  
+##  <a name="BKMK_AddOSUpgradePkgs"></a> オペレーティング システムのアップグレード パッケージの Configuration Manager への追加  
+ オペレーティング システムのアップグレード パッケージを使用する前に、パッケージを Configuration Manager サイトに追加しておく必要があります。 オペレーティング システム アップグレード パッケージをサイトに追加するには、次の手順に従います。  
 
-#### <a name="to-add-an-operating-system-upgrade-package"></a>Per aggiungere un pacchetto di aggiornamento del sistema operativo  
+#### <a name="to-add-an-operating-system-upgrade-package"></a>オペレーティング システムのアップグレード パッケージを追加するには  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**e quindi fare clic su **Pacchetti di aggiornamento del sistema operativo**.  
+2.  **[ソフトウェア ライブラリ]** ワークスペースで、 **[オペレーティング システム]**を展開してから、 **[オペレーティング システムのアップグレード パッケージ]**をクリックします。  
 
-3.  Nel gruppo **Crea** della scheda **Home** fare clic su **Aggiungi pacchetto di aggiornamento del sistema operativo** per avviare l'Aggiunta guidata del pacchetto di aggiornamento del sistema operativo.  
+3.  **[ホーム]** タブの **[作成]** グループで、 **[オペレーティング システム アップグレード パッケージの追加]** をクリックして、オペレーティング システム アップグレード パッケージの追加ウィザードを開始します。  
 
-4.  Nella pagina **Origine dati** specificare il percorso di rete dei file di origine dell'installazione per il pacchetto di aggiornamento del sistema operativo. Ad esempio, specificare l'UNC **\\\server\percorso** in cui si trovano i file di origine dell'installazione.  
+4.  **[データ ソース]** ページで、オペレーティング システム アップグレード パッケージのインストール ソース ファイルのネットワーク パスを指定します。 たとえば、インストール ソース ファイルが配置されている UNC **\\\server\path** を指定します。  
 
     > [!NOTE]  
-    >  I file di origine dell'installazione contengono Setup.exe e altri file e cartelle per installare il sistema operativo.  
+    >  インストール ソース ファイルには、オペレーティング システムをインストールするための Setup.exe などのファイルとフォルダーが含まれています。  
 
     > [!IMPORTANT]  
-    >  Limitare l'accesso ai file di origine dell'installazione per impedire manomissioni indesiderate.  
+    >  不要な改ざんを防ぐため、インストール ソース ファイルへのアクセスを制限します。  
 
-5.  Nella pagina **Generale** specificare le seguenti informazioni e quindi fare clic su **Avanti**. Queste informazioni sono utili per scopi di identificazione quando sono presenti più programmi di installazione del sistema operativo.  
+5.  **[全般]** ページで、次の情報を指定してから、 **[次へ]**をクリックします。 この情報は、複数のオペレーティング システムのインストーラーがあるときに区別するために役立ちます。  
 
-    -   **Nome**: specificare il nome del programma di installazione del sistema operativo.  
+    -   [名前]:****オペレーティング システムのインストーラー名を指定します。  
 
-    -   **Versione**: specificare la versione del programma di installazione del sistema operativo.  
+    -   **バージョン**:オペレーティング システムのインストーラーのバージョンを指定します。  
 
-    -   **Commento**: specificare una breve descrizione del programma di installazione del sistema operativo.  
+    -   **コメント**:オペレーティング システムのインストーラーの簡単な説明を指定します。  
 
-6.  Completare la procedura guidata.  
+6.  ウィザードを完了します。  
 
- È ora possibile distribuire il programma di installazione del sistema operativo ai punti di distribuzione a cui hanno accesso le sequenze attività di distribuzione.  
+ これで、展開タスク シーケンスからアクセスされる配布ポイントに、オペレーティング システムのインストーラーを配布できるようになりました。  
 
-##  <a name="a-namebkmkdistributebootimagesa-distribute-operating-system-images-to-a-distribution-point"></a><a name="BKMK_DistributeBootImages"></a> Distribuire immagini del sistema operativo in un punto di distribuzione  
- Le immagini del sistema operativo vengono distribuite nei punti di distribuzione allo stesso modo in cui vengono distribuiti gli altri contenuti. Nella maggior parte dei casi, è necessario distribuire l'immagine del sistema operativo almeno in un punto di distribuzione prima di distribuire il sistema operativo. Per informazioni sui passaggi necessari per distribuire un'immagine del sistema operativo, vedere [Distribute content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
+##  <a name="BKMK_DistributeBootImages"></a> 配布ポイントへのオペレーティング システム イメージの配布  
+ オペレーティング システム イメージは、他のコンテンツを配布するのと同じ方法で配布ポイントに配布されます。 ほとんどの場合、オペレーティング システムを展開する前に、少なくとも 1 つの配布ポイントにオペレーティング システム イメージを配布する必要があります。 オペレーティング システム イメージを配布する手順については、「 [Distribute content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content)」を参照してください。  
 
-##  <a name="a-namebkmkosupgradepkgapplyupdatesa-apply-software-updates-to-an-operating-system-upgrade-package"></a><a name="BKMK_OSUpgradePkgApplyUpdates"></a> Applicare gli aggiornamenti software a un pacchetto di aggiornamento del sistema operativo  
- A partire dalla versione 1602 di Configuration Manager, è possibile applicare i nuovi aggiornamenti software all'immagine del sistema operativo nel pacchetto di aggiornamento del sistema operativo. Prima di poter applicare aggiornamenti software a un pacchetto di aggiornamento, è necessario che l'infrastruttura degli aggiornamenti software sia già predisposta, che gli aggiornamenti software siano stati sincronizzati correttamente e che gli aggiornamenti software siano stati scaricati nella raccolta contenuto nel server del sito. Per altre informazioni, vedere [Distribuire gli aggiornamenti software](../../sum/deploy-use/deploy-software-updates.md).  
+##  <a name="BKMK_OSUpgradePkgApplyUpdates"></a> オペレーティング システム アップグレード パッケージへのソフトウェア更新プログラムの適用  
+ Configuration Manager バージョン 1602 以降では、新しいソフトウェア更新プログラムをオペレーティング システム アップグレード パッケージのオペレーティング システム イメージに適用できます。 アップグレード パッケージにソフトウェア更新プログラムを適用するには、あらかじめソフトウェアの更新のインフラストラクチャを配置し、ソフトウェア更新プログラムを正常に同期し、ソフトウェア更新プログラムをサイト サーバー上のコンテンツ ライブラリにダウンロードしておく必要があります。 詳細については、「[ソフトウェアの更新の展開方法](../../sum/deploy-use/deploy-software-updates.md)」を参照してください。  
 
- È possibile applicare gli aggiornamenti software idonei a un pacchetto di aggiornamento in base a una pianificazione specificata. Nella pianificazione specificata Configuration Manager applica gli aggiornamenti software selezionati al pacchetto di aggiornamento del sistema operativo e quindi, facoltativamente, distribuisce il pacchetto aggiornato ai punti di distribuzione. Le informazioni sul pacchetto di aggiornamento del sistema operativo, inclusi gli aggiornamenti software applicati al momento dell'importazione, vengono archiviate nel database del sito. Anche gli aggiornamenti software applicati al pacchetto di aggiornamento dopo che è stato aggiunto vengono archiviati nel database del sito. Quando si avvia la procedura guidata per applicare gli aggiornamenti software al pacchetto di aggiornamento del sistema operativo, viene recuperato un elenco di aggiornamenti software idonei non ancora applicati al pacchetto di aggiornamento da selezionare. Configuration Manager copia gli aggiornamenti software dalla raccolta contenuto al server del sito e li applica al pacchetto di aggiornamento del sistema operativo.  
+ 指定したスケジュールで、適用可能なソフトウェア更新プログラムをアップグレード パッケージに適用できます。 指定されたスケジュールで、Configuration Manager は選択されたソフトウェア更新プログラムをオペレーティング システム アップグレード パッケージに適用してから、更新されたアップグレード パッケージを必要に応じて配布ポイントに配布します。 インポート時点で適用されたソフトウェア更新プログラムなど、オペレーティング システム アップグレード パッケージに関する情報はサイト データベースに保管されます。 アップグレード パッケージが最初に追加された後にアップグレード パッケージに適用されたソフトウェア更新プログラムもサイト データベースに保管されます。 ソフトウェア更新プログラムをオペレーティング システム アップグレード パッケージに適用するウィザードを開始すると、アップグレード パッケージにまだ適用されていない適用可能なソフトウェア更新プログラムの一覧が取得されますので、その一覧から選択できます。 Configuration Manager は、サイト サーバー上のコンテンツ ライブラリからソフトウェア更新プログラムをコピーし、オペレーティング システム アップグレード パッケージにソフトウェア更新プログラムを適用します。  
 
- Usare la procedura seguente per applicare gli aggiornamenti software a un pacchetto di aggiornamento del sistema operativo.  
+ 次の手順に従って、ソフトウェア更新プログラムをオペレーティング システム アップグレード パッケージに適用します。  
 
-#### <a name="to-apply-software-updates-to-an-operating-system-upgrade-package"></a>Per applicare gli aggiornamenti software a un pacchetto di aggiornamento del sistema operativo  
+#### <a name="to-apply-software-updates-to-an-operating-system-upgrade-package"></a>オペレーティング システム アップグレード パッケージにソフトウェア更新プログラムを適用するには  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**e quindi fare clic su **Pacchetti di aggiornamento del sistema operativo**.  
+2.  **[ソフトウェア ライブラリ]** ワークスペースで、 **[オペレーティング システム]**を展開してから、 **[オペレーティング システムのアップグレード パッケージ]**をクリックします。  
 
-3.  Selezionare il pacchetto di aggiornamento del sistema operativo al quale applicare gli aggiornamenti software.  
+3.  ソフトウェア更新プログラムを適用するオペレーティング システム アップグレード パッケージを選択します。  
 
-4.  Nel gruppo **Pacchetti di aggiornamento del sistema operativo** della scheda **Home** fare clic su **Pianifica aggiornamenti** per avviare la procedura guidata.  
+4.  **[ホーム]** タブの **[オペレーティング システム アップグレード パッケージ]** グループで、 **[更新のスケジュール]** をクリックしてウィザードを開始します。  
 
-5.  Nella pagina **Scegli aggiornamenti** selezionare gli aggiornamenti software da applicare all'immagine del sistema operativo e quindi fare clic su **Avanti**.  
+5.  [ **更新プログラムの選択** ] ページで、オペレーティング システム イメージに適用するソフトウェア更新プログラムを選択してから、[ **次へ**] をクリックします。  
 
-6.  Nella pagina **Imposta pianificazione** specificare le seguenti impostazioni e quindi fare clic su **Avanti**.  
+6.  [ **スケジュールの設定** ] ページで、次の設定を指定してから、[ **次へ**] をクリックします。  
 
-    1.  **Pianificazione**: specificare la pianificazione per l'applicazione degli aggiornamenti software all'immagine del sistema operativo.  
+    1.  **スケジュール**: オペレーティング システム イメージにソフトウェア更新プログラムを適用するスケジュールを指定します。  
 
-    2.  **Continua in caso di errori**: selezionare questa opzione per continuare ad applicare gli aggiornamenti software all'immagine anche quando si verifica un errore.  
+    2.  **エラー時に続行する**: このオプションを選択すると、エラーが発生した場合でも、イメージにソフトウェア更新プログラムがそのまま適用されます。  
 
-    3.  **Distribuisci l'immagine nei punti di distribuzione**: selezionare questa opzione per aggiornare l'immagine del sistema operativo nei punti di distribuzione una volta applicati gli aggiornamenti software.  
+    3.  **イメージを使用して配布ポイントを更新する**: このオプションを選択すると、ソフトウェア更新プログラムが適用された後で、配布ポイントのオペレーティング システム イメージが更新されます。  
 
-7.  Nella pagina **Riepilogo** verificare le informazioni e quindi fare clic su **Avanti**.  
+7.  [ **概要** ] ページで、情報を確認して [ **次へ**] をクリックします。  
 
-8.  Nella pagina **Completamento** verificare che gli aggiornamenti software siano stati applicati correttamente all'immagine del sistema operativo.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+8.  [完了] ページで、オペレーティング システム イメージにソフトウェア更新プログラムが正常に適用されたことを確認します。 ****  

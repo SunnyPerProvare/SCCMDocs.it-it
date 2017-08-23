@@ -1,254 +1,250 @@
 ---
-title: Trovare le risorse del sito | Microsoft Docs
-description: Informazioni su come e quando i client di System Center Configuration Manager usano la posizione del servizio per trovare le risorse del sito.
+title: "サイト リソースを検索する |Microsoft Docs"
+description: "System Center Configuration Manager クライアントがサービスの場所を使用してサイト リソースを検索する方法とタイミングについて説明します。"
 ms.custom: na
 ms.date: 2/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae72df4b-5f5d-4e19-9052-bda28edfbace
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a181171cc1a92ec4519f4e4b34ca3274a0aa0440
 ms.openlocfilehash: 1c9e7ada6a8aa228b30e58865baae0f6e529e6af
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="learn-how-clients-find-site-resources-and-services-for-system-center-configuration-manager"></a>Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager
+# <a name="learn-how-clients-find-site-resources-and-services-for-system-center-configuration-manager"></a>クライアントが System Center Configuration Manager のサイト リソースやサービスを検索する方法を理解する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-I client di System Center Configuration Manager usano un processo denominato *posizione del servizio* per individuare i server del sistema del sito con cui possono comunicare e che offrono i servizi che i client devono usare. Se si comprende come e quando i client usano la posizione del servizio per trovare le risorse del sito, è possibile configurare i siti in modo da supportare correttamente le attività client. Queste configurazioni possono richiedere l'interazione del sito con configurazioni di rete e di dominio come Active Directory Domain Services e DNS. In alternativa possono richiedere la configurazione di soluzioni alternative più complesse.  
+System Center Configuration Manager クライアントは、そのクライアントが使用するように指示されているサービスを提供する、通信可能なサイト システム サーバーの場所を特定するために、*サービスの場所*と呼ばれるプロセスを使用しています。 クライアントがサービスの場所を使用してサイト リソースを検索する方法とそのタイミングを理解すると、クライアント タスクを正しくサポートするようにサイトを構成することができます。 これらの構成では、サイトで Active Directory Domain Services (AD DS) や DNS などのドメインおよびネットワーク構成とやり取りをすることが必要になる場合があります。 または、より複雑な方法を構成することが必要になる場合があります。  
 
- Ecco alcuni esempi di ruoli del sistema del sito che forniscono servizi:
+ サービスを提供するサイト システムの役割の例は次のとおりです。
 
- - Il server del sistema del sito principale per i client.
- - Il punto di gestione.
- - Altri server del sistema del sito con cui il client può comunicare, come i punti di distribuzione e i punti di aggiornamento software.  
+ - クライアントのコア サイト システム サーバー。
+ - 管理ポイント。
+ - 配布ポイントやソフトウェア更新ポイントなど、クライアントが通信できる追加のサイト システム サーバー。  
 
 
 
-##  <a name="bkmk_fund"></a> Nozioni fondamentali sulla posizione del servizio  
- Un client valuta il suo percorso di rete corrente, la preferenza del protocollo di comunicazione e il sito assegnato quando usa la posizione del servizio per trovare un punto di gestione con cui può comunicare.  
+##  <a name="bkmk_fund"></a> Fundamentals of service location  
+ クライアントは、サービスの場所を使用して通信可能な管理ポイントを検索する際に、現在のネットワークの場所、通信プロトコル設定、割り当て済みサイトを評価します。  
 
- **Un client comunica con un punto di gestione per:**  
--   Scaricare informazioni sugli altri punti di gestione per il sito, in modo da creare un *elenco dei punti di gestione* noti per i cicli futuri di individuazione della posizione del servizio.  
--   Caricare i dettagli di configurazione, ad esempio inventario e stato.  
--   Scaricare i criteri che impostano le configurazioni nel client e possono informare il client in merito al software che può o deve installare e altre attività correlate.  
--   Richiedere informazioni su altri ruoli del sistema del sito che forniscono servizi il cui uso è stato configurato nel client. Gli esempi includono i punti di distribuzione per il software che il client può installare o un punto di aggiornamento software da cui ottenere gli aggiornamenti.  
+ **クライアントは、以下の操作を実行するために管理ポイントと通信します。**  
+-   将来のサービスの場所のサイクル用の既知の管理ポイントのリスト ("*管理パック リスト*" と呼ばれる) を構築できるように、サイトの他の管理ポイントに関する情報をダウンロードする。  
+-   インベントリやステータスなどの構成の詳細をアップロードする。  
+-   クライアントに構成を設定し、インストールが可能または必要なソフトウェアや他の関連タスクについてクライアントに通知することができるポリシーをダウンロードする。  
+-   クライアントが使用するように構成されているサービスを提供する追加のサイト システムの役割に関する情報を要求する。 例として、クライアントがインストールできるソフトウェアの配布ポイントや、更新プログラムを取得できるソフトウェア更新ポイントがあります。  
 
-**Un client di Configuration Manager esegue una richiesta di posizione del servizio:**  
--   Ogni 25 ore di funzionamento continuativo.  
--   Quando il client rileva una modifica della propria posizione o configurazione di rete.  
--   Quando il servizio **ccmexec.exe** nel computer, vale a dire il servizio client di base, viene avviato.  
--   Quando il client deve trovare un ruolo del sistema del sito che fornisce un servizio necessario.  
+**Configuration Manager クライアントが、サービスの場所要求を作成します。**  
+-   継続操作中 25 時間ごと。  
+-   クライアントでネットワークの構成または場所の変更が検出された場合。  
+-   コンピューター (コア クライアント サービス) 上で**ccmexec.exe** サービスが開始された場合。  
+-   クライアントで、必要なサービスを提供するサイト システムの役割を特定する必要が生じた場合。  
 
-**Quando un client tenta di individuare i server che ospitano i ruoli del sistema del sito**, usa la posizione del servizio per individuare un ruolo del sistema del sito che supporta il protocollo del client (HTTP o HTTPS). Per impostazione predefinita, i client utilizzano il metodo più sicuro a loro disposizione. Considerare quanto segue:  
+**クライアントは、サイト システムの役割をホストするサーバーを検索しようとするときに**、サービスの場所を使用して、クライアントのプロトコル (HTTP または HTTPS) をサポートするサイト システムの役割を検索します。 既定では、クライアントは最も安全な方法を使用します。 次の点を考慮します。  
 
--   Per usare HTTPS, è necessario disporre di un'infrastruttura a chiave pubblica (PKI) e installare i certificati PKI sui client e sui server. Per informazioni sull'uso dei certificati, vedere [PKI certificate requirements for System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md) (Requisiti dei certificati PKI per System Center Configuration Manager).  
+-   HTTPS を使用するには、公開キー基盤 (PKI) を導入し、クライアントとサーバーに PKI 証明書をインストールする必要があります。 証明書の使用方法については、「[System Center Configuration Manager での PKI 証明書の要件](../../../core/plan-design/network/pki-certificate-requirements.md)」を参照してください。  
 
--   Quando si distribuisce un ruolo del sistema del sito che usa Internet Information Services (IIS) e supporta le comunicazioni dai client, è necessario specificare se i client si connettono al sistema del sito tramite HTTP o HTTPS. Se si usa HTTP, è necessario considerare anche le opzioni di firma e crittografia. Per altre informazioni, vedere [Pianificazione di firma e crittografia](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForSigningEncryption) in [Pianificare la sicurezza in System Center Configuration Manager](../../../core/plan-design/security/plan-for-security.md).  
+-   インターネット インフォメーション サービス (IIS) を使用し、クライアントからの通信をサポートするサイト システムの役割を展開する場合は、そのサイト システムにクライアントが接続するときに HTTP と HTTPS のどちらを使用するかを指定する必要があります HTTP を使用する場合は、署名と暗号化のオプションについても検討してください。 詳しくは、「[System Center Configuration Manager でのセキュリティの計画](../../../core/plan-design/security/plan-for-security.md)」の「[署名と暗号化の計画](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForSigningEncryption)」をご覧ください。  
 
-##  <a name="BKMK_Plan_Service_Location"></a> Posizione del servizio e modo in cui i client determinano il relativo punto di gestione assegnato  
-Quando un client viene assegnato per la prima volta a un sito primario, seleziona un punto di gestione predefinito per tale sito. I siti primari supportano più punti di gestione e ogni client identifica in modo indipendente un punto di gestione come proprio punto di gestione predefinito. Questo punto di gestione predefinito diventa quindi il punto di gestione assegnato di tale client. È anche possibile usare i comandi di installazione client per impostare il punto di gestione assegnato per un client al momento dell'installazione.  
+##  <a name="BKMK_Plan_Service_Location"></a> サービスの場所とクライアントが割り当て済み管理ポイントを特定する方法  
+クライアントが最初にプライマリ サイトへの割り当てを行うときは、そのサイトの既定の管理ポイントが選択されます。 プライマリ サイトは複数の管理ポイントをサポートしており、各クライアントが 1 つの管理ポイントを既定の管理ポイントとして個別に識別します。 その結果、既定の管理ポイントは、そのクライアントの割り当て済み管理ポイントとなります。 (クライアント インストール コマンドを使用して、インストール時にクライアントの割り当て済み管理ポイントを設定することもできます)。  
 
-Un client seleziona un punto di gestione con cui comunicare in base al relativo percorso di rete corrente e alle configurazioni del gruppo di limiti. Anche se ha un punto di gestione assegnato, questo potrebbe non essere il punto di gestione usato dal client.  
+クライアントは、そのクライアントの現在のネットワークの場所および境界グループの構成に基づき、通信する管理ポイントを選択します。 割り当て済み管理ポイントがある場合でも、その管理ポイントをクライアントが使用するとは限りません。  
 
     > [!NOTE]  
     >  A client always uses the assigned management point for registration messages and certain policy messages, even when other communications are sent to a proxy or local management point.  
 
-È possibile usare i punti di gestione preferiti. I punti di gestione preferiti sono punti di gestione del sito assegnato di un client associati a un gruppo di limiti che il client usa per individuare i server del sistema del sito. L'associazione di un punto di gestione preferito a un gruppo di limiti come server del sistema del sito è simile al modo in cui i punti di distribuzione o i punti di migrazione stato sono associati a un gruppo di limiti. Se si abilitano i punti di gestione preferiti per la gerarchia, quando un client usa un punto di gestione dal sito assegnato, verrà effettuato un tentativo di usare un punto di gestione preferito prima di altri punti di gestione dal sito assegnato.  
+優先管理ポイントを使用できます。 優先管理ポイントは、クライアントの割り当て済みサイトの管理ポイントであり、クライアントがサイト システム サーバーを見つけるために使用している境界グループに関連付けられています。 優先管理ポイントは、配布ポイントや状態移行ポイントを境界グループに関連付けるのと同じような方法で、境界グループにサイト システム サーバーとして関連付けられています。 階層の優先管理ポイントを有効にすると、クライアントは、割り当て済みサイトの管理ポイントを使用するときに、割り当て済みサイトの他の管理ポイントを使用する前に優先管理ポイントを使用しようとします。  
 
-Per configurare l'affinità del punto di gestione, è possibile usare anche le informazioni nel blog dedicato all'[affinità del punto di gestione](http://blogs.technet.com/b/jchalfant/archive/2014/09/22/management-point-affinity-added-in-configmgr-2012-r2-cu3.aspx) su TechNet.com. L'affinità del punto di gestione esegue l'override del comportamento predefinito per i punti di gestione assegnati e consente al client di usare uno o più punti di gestione specifici.  
+TechNet.com にある[管理ポイントのアフィニティ](http://blogs.technet.com/b/jchalfant/archive/2014/09/22/management-point-affinity-added-in-configmgr-2012-r2-cu3.aspx)に関するブログの情報を使用して、管理ポイントのアフィニティを構成することもできます。 管理ポイントのアフィニティは、割り当て済み管理ポイントの既定の動作を上書きし、クライアントが特定の 1 つ以上の管理ポイントを使用できるようにします。  
 
-Ogni volta che un client deve contattare un punto di gestione, controlla l'elenco dei punti di gestione archiviato in locale in Windows Management Instrumentation (WMI). Il client crea un elenco di punti di gestione iniziale quando viene installato. Successivamente aggiorna periodicamente l'elenco con informazioni dettagliate su ogni punto di gestione nella gerarchia.  
+クライアントは、管理ポイントへの接続が必要になるたびに、Windows Management Instrumentation (WMI) にローカルに格納している管理パック リストを確認します。 クライアントは、インストール時に最初の管理パック リストを作成します。 その後、クライアントは階層内の各管理ポイントの詳細でリストを定期的に更新します。  
 
-Quando non riesce a trovare un punto di gestione valido nel proprio elenco di punti di gestione, il client esegue una ricerca nelle seguenti origini di posizioni del servizio, in ordine, finché non trova un punto di gestione da usare:  
+クライアントはその管理パック リストで有効な管理ポイントを見つけられない場合、使用できる管理ポイントが見つかるまで、次のサービスの場所のソースを順に検索します。  
 
-1.  Punto di gestione  
-2.  Servizi di dominio Active Directory  
+1.  管理ポイント  
+2.  AD DS  
 3.  DNS  
 4.  WINS  
 
-Dopo avere individuato e contattato un punto di gestione, il client scarica l'elenco corrente dei punti di gestione disponibili nella gerarchia e aggiorna l'elenco locale. Questo vale per i client appartenenti o non appartenenti a un dominio.  
+管理ポイントが見つかって接続に成功した後、クライアントは階層内で使用可能な管理ポイントの現在のリストをダウンロードして、そのローカル管理パック リストを更新します。 これは、ドメインに参加しているクライアントと参加していないクライアントに平等に適用されます。  
 
-Ad esempio, quando un client di Configuration Manager che si trova su Internet si connette a un punto di gestione basato su Internet, il punto di gestione invia a tale client un elenco di punti di gestione basati su Internet disponibili nel sito. Analogamente, anche i client appartenenti a un dominio o in gruppi di lavoro ricevono l'elenco dei punti di gestione che possono usare.  
+たとえば、インターネット上にある Configuration Manager クライアントがインターネットベースの管理ポイントに接続した場合、管理ポイントで、サイト内の使用可能なインターネットベースの管理ポイントのリストがそのクライアントに送信されます。 同様に、ドメインに参加しているクライアントまたはワークグループ内のクライアントは、使用できる管理ポイントのリストも受信します。  
 
-A un client non configurato per Internet non vengono forniti punti di gestione solo per Internet. I client di gruppi di lavoro configurati per Internet comunicano solo con punti di gestione per Internet.  
+インターネット用に構成されていないクライアントには、インターネットのみに接続する管理ポイントが提供されません。 インターネット用に構成されたワークグループ クライアントは、インターネットに接続する管理ポイントとのみ通信します。  
 
-##  <a name="BKMK_MPList"></a> Elenco dei punti di gestione  
-L'elenco dei punti di gestione è l'origine preferita per la posizione del servizio per un client perché si tratta di un elenco dei punti di gestione identificati in precedenza dal client, in ordine di priorità. Questo elenco viene ordinato per client, in base alla relativa posizione di rete al momento dell'aggiornamento dell'elenco, quindi viene archiviato in locale sul client in WMI.  
+##  <a name="BKMK_MPList"></a> 管理パック リスト  
+管理パック リストは、クライアントが以前に特定した管理ポイントの優先順位リストであるため、クライアントのサービスの場所の優先ソースです。 このリストは、クライアントがリストを更新する際に、ネットワークの場所に基づいてクライアントごとにソートされてから、WMI にローカルに保存されます。  
 
-### <a name="building-the-initial-mp-list"></a>Creazione dell'elenco dei punti di gestione iniziale  
-Durante l'installazione del client vengono usate le regole seguenti per creare l'elenco dei punti di gestione iniziale del client:  
+### <a name="building-the-initial-mp-list"></a>最初の管理パック リストの作成  
+クライアントのインストール時に、クライアントの最初の管理パック リストを作成するために次の規則が使用されます。  
 
--   L'elenco iniziale include i punti di gestione specificati durante l'installazione del client (quando si usa l'opzione **SMSMP**= o **/MP**).  
--   Il client esegue una query in Active Directory Domain Services alla ricerca dei punti di gestione pubblicati. Affinché possa essere identificato da Active Directory Domain Services, è necessario che il punto di gestione provenga dal sito assegnato del client e che abbia la stessa versione di prodotto del client.  
--   Se durante l'installazione del client non è stato specificato alcun punto di gestione, e lo schema di Active Directory non è esteso, il client ricerca in DNS e WINS i punti di gestione pubblicati.  
--   Quando il client crea l'elenco iniziale, alcuni punti di gestione nella gerarchia potrebbero non essere noti.  
+-   最初のリストにはクライアントのインストール時に指定される管理ポイントが含まれます (**SMSMP**= または **/MP** オプションを使用する場合)。  
+-   クライアントは、発行された管理ポイントを AD DS にクエリします。 AD DS から特定されるようにするには、管理ポイントがクライアントの割り当て済みサイトにあり、クライアントと同じ製品バージョンである必要があります。  
+-   クライアントのインストール時に管理ポイントが指定されておらず、Active Directory スキーマが拡張されていない場合、クライアントは発行された管理ポイントについて DNS と WINS を確認します。  
+-   クライアントが最初のリストを作成するときに、階層内のいくつかの管理ポイントに関する情報が認識されていない場合があります。  
 
-### <a name="organizing-the-mp-list"></a>Organizzazione dell'elenco dei punti di gestione  
-I client organizzano il proprio elenco dei punti di gestione usando le classificazioni seguenti:  
+### <a name="organizing-the-mp-list"></a>管理パック リストの整理  
+クライアントは、次の分類を使用して管理ポイントのリストを整理します。  
 
--   **Proxy**: un punto di gestione in un sito secondario.  
--   **Locale**: qualsiasi punto di gestione associato al percorso di rete corrente del client, come definito dai limiti del sito. Per i limiti, tenere presente quanto segue:
-    -   Quando un client appartiene a più gruppi di limiti, l'elenco dei punti di gestione locali è determinato dall'unione di tutti i limiti che includono il percorso di rete corrente del client.  
-    -   In genere, i punti di gestione locali sono un sottoinsieme dei punti di gestione assegnati di un client, a meno che il client non si trovi in un percorso di rete associato a un altro sito con punti di gestione che servono i relativi gruppi di limiti.   
+-   **プロキシ**: セカンダリ サイトにある管理ポイント。  
+-   **ローカル**: サイト境界で定義されている、クライアントの現在のネットワークの場所に関連付けられているすべての管理ポイント。 境界については、次の情報にご注意ください。
+    -   クライアントが複数の境界グループに属している場合、ローカル管理ポイントのリストは、クライアントの現在のネットワークの場所を含むすべての境界の和集合から特定されます。  
+    -   通常、ローカル管理ポイントは、クライアントがその境界グループを提供する管理ポイントがある別のサイトに関連付けられているネットワーク上にない限り、クライアントの割り当て済み管理ポイントのサブセットです。   
 
 
--   **Assegnato**: qualsiasi punto di gestione che corrisponde a un sistema del sito per il sito assegnato del client.  
+-   **割り当て済み**: クライアントの割り当て済みサイトのサイト システムであるすべての管理ポイント。  
 
-È possibile usare i punti di gestione preferiti. I punti di gestione di un sito che non sono associati a un gruppo di limiti o che non sono in un gruppo di limiti associato al percorso di rete corrente del client, non sono considerati preferiti. Vengono usati quando il client non riesce a identificare un punto di gestione preferito disponibile.  
+優先管理ポイントを使用できます。 サイトの、境界グループに関連付けられていない管理ポイントや、クライアントの現在のネットワークの場所に関連付けられた境界グループに含まれていない管理ポイントは、優先管理ポイントとは見なされません。 これらは、クライアントが利用可能な優先管理ポイントを識別できないときに使用されます。  
 
-### <a name="selecting-a-management-point-to-use"></a>Selezione di un punto di gestione da usare  
-Per le comunicazioni tipiche, un client tenta di usare un punto di gestione dalle classificazioni nell'ordine seguente, in base al percorso di rete del client:  
+### <a name="selecting-a-management-point-to-use"></a>使用する管理ポイントの選択  
+一般的な通信では、クライアントは、クライアントのネットワークの場所に基づいて、次の順序で分類からの管理ポイントの使用を試みます。  
 
-1.  Proxy  
-2.  Locale  
-3.  Assegnato  
+1.  プロキシ  
+2.  ローカル  
+3.  割り当て済み  
 
-Tuttavia, il client usa sempre il punto di gestione assegnato per i messaggi di registrazione e per alcuni messaggi di criteri, anche quando vengono inviate altre comunicazioni a un punto di gestione proxy o locale.  
+ただし、他の通信がプロキシまたはローカル管理ポイントに送信される場合でも、クライアントは登録メッセージと特定のポリシー メッセージに対して常に割り当て済み管理ポイントを使用します。  
 
-All'interno di ogni classificazione (Proxy, Locale o Assegnato), il client tenta di usare un punto di gestione in base alle preferenze, nell'ordine seguente:  
+各分類 (プロキシ、ローカル、または割り当て済み) 内で、クライアントは、次の優先順で管理ポイントの使用を試みます。  
 
-1.  Idoneo per HTTPS in una foresta trusted o locale (quando il client è configurato per le comunicazioni HTTPS)  
-2.  Idoneo per HTTPS non in una foresta trusted o locale (quando il client è configurato per le comunicazioni HTTPS)  
-3.  Idoneo per HTTP in una foresta trusted o locale  
-4.  Idoneo per HTTP non in una foresta trusted o locale  
+1.  信頼されているフォレストまたはローカル フォレストで HTTPS 対応 (HTTPS 通信用にクライアントが構成されている場合)  
+2.  信頼されているフォレストまたはローカル フォレスト以外で HTTPS 対応 (HTTPS 通信用にクライアントが構成されている場合)  
+3.  信頼されているフォレストまたはローカル フォレストで HTTP 対応  
+4.  信頼されているフォレストまたはローカル フォレスト以外で HTTP 対応  
 
-Dal set di punti di gestione ordinato in base alle preferenze, il client tenta di usare il primo punto di gestione nell'elenco. Questo elenco ordinato di punti di gestione è casuale e non può essere ordinato. L'ordine può cambiare ogni volta che il client aggiorna il proprio elenco dei punti di gestione.  
+優先順にソートされた一連の管理ポイントから、クライアントはリストの最初の管理ポイントの使用を試みます。 管理ポイントのソートされたリストはランダムであり、順序付けできません。 リストの順序は、クライアントがその管理パック リストを更新するたびに変わる場合があります。  
 
-Quando un client non riesce a mettersi in contatto con il primo punto di gestione, tenta ogni punto di gestione successivo nell'elenco. Inizia dai punti di gestione preferiti nella classificazione per poi passare a quelli non preferiti. Se un client non riesce a comunicare con nessun punto di gestione della classificazione, tenta di contattare un punto di gestione preferito della classificazione successiva e così via fino a quando non individua un punto di gestione da usare.  
+クライアントは、最初の管理ポイントとの接続を確立できない場合に、リスト上の連続する各管理ポイントを試みます。 優先されていない管理ポイントを試す前に、分類内の各優先管理ポイントを試みます。 クライアントは、分類内の管理ポイントと正常に通信できない場合、使用する管理ポイントが見つかるまで、次の分類の優先管理ポイントとの通信を試みます。  
 
-Dopo aver stabilito la comunicazione con un punto di gestione, un client continua a usare lo stesso punto di gestione fino a quando:  
+クライアントは、管理ポイントとの通信を確立した後、次の状態になるまでその同じ管理ポイントを使用し続けます。  
 
--   Non sono trascorse 25 ore.  
--   Il client non riesce a comunicare con il punto di gestione per cinque tentativi in un periodo di 10 minuti.
+-   25 時間が経過した。  
+-   クライアントが 10 分の期間にわたって 5 回の試行中に管理ポイントと通信できない。
 
-A quel punto il client seleziona casualmente un nuovo punto di gestione da usare.  
+その後、クライアントは使用する新しい管理ポイントをランダムに選択します。  
 
 ##  <a name="bkmk_ad"></a> Active Directory  
-I client appartenenti a un dominio possono usare Servizi di dominio Active Directory per la posizione del servizio. Questa operazione richiede che i siti [pubblichino dati in Active Directory](http://technet.microsoft.com/library/hh696543.aspx).  
+ドメインに参加しているクライアントは、サービスの場所として AD DS を使用できます。 この場合、 [データを Active Directory に発行する](http://technet.microsoft.com/library/hh696543.aspx)ためのサイトが必要になります。  
 
-Un client può usare Active Directory Domain Services per la posizione del servizio quando si verificano tutte le condizioni seguenti:  
+次のすべての条件に該当する場合、クライアントはサービスの場所として AD DS を使用できます。  
 
--   Lo [schema di Active Directory è stato esteso](https://technet.microsoft.com/library/mt345589.aspx) o è stato esteso per System Center 2012 Configuration Manager.  
--   La [foresta Active Directory è configurata per la pubblicazione](http://technet.microsoft.com/library/hh696542.aspx) e i siti di Configuration Manager sono configurati per la pubblicazione.  
--   Il computer client è membro di un dominio Active Directory ed è in grado di accedere a un server di catalogo globale.  
+-   Active Directory [スキーマが拡張されている](https://technet.microsoft.com/library/mt345589.aspx)、または System Center 2012 Configuration Manager用に拡張された。  
+-   [Active Directory フォレストが発行用に構成されており](http://technet.microsoft.com/library/hh696542.aspx)、Configuration Manager サイトが発行するように構成されている。  
+-   クライアント コンピューターが Active Directory ドメインのメンバーであり、グローバル カタログ サーバーにアクセスできる。  
 
-Se un client non trova un punto di gestione da usare per la posizione del servizio in Active Directory Domain Services, tenta di usare DNS.  
+クライアントは、AD DS からサービスの場所として使用する管理ポイントを見つけられない場合、DNS の使用を試みます。  
 
 ##  <a name="bkmk_dns"></a> DNS  
-I client sulla Intranet possono usare DNS per il percorso del servizio. In questo caso è necessario almeno un sito in una gerarchia per pubblicare informazioni sui punti di gestione in DNS.  
+イントラネット上のクライアントは、サービスの場所として DNS を使用できます。 この場合、DNS に管理ポイントに関する情報を発行するためのサイトが階層内に少なくとも 1 つは必要になります。  
 
-È consigliabile usare DNS per la posizione del servizio in presenza di una delle condizioni seguenti:
--   Lo schema di Active Directory Domain Services non viene esteso per supportare Configuration Manager.
--   I client della Intranet si trovano in una foresta che non è abilitata per la pubblicazione in Configuration Manager.  
--   Sono presenti client nei computer del gruppo di lavoro che non sono configurati per la gestione client basata solo su Internet (un client del gruppo di lavoro configurato per Internet comunicherà solo con i punti di gestione per Internet e non userà DNS per la posizione del servizio).  
--   È possibile [configurare i client per individuare i punti di gestione da DNS](http://technet.microsoft.com/library/gg682055).  
+次の条件のいずれかに該当する場合は、サービスの場所として DNS の使用を検討してください。
+-   AD DS スキーマが Configuration Manager 用に拡張されていない。
+-   イントラネットのクライアントが、Configuration Manager からデータを発行できないフォレストに配置されている。  
+-   クライアントがワークグループ コンピューターにあり、インターネット専用クライアント管理向けに構成されていない。 (インターネット用に構成されたワークグループ クライアントはインターネットに接続する管理ポイントとのみ通信し、サービスの場所として DNS を使用しません。)  
+-   [DNS から管理ポイントを検索するようにクライアントを構成](http://technet.microsoft.com/library/gg682055)できます。  
 
-Quando un sito pubblica i record di individuazione del servizio per i punti di gestione in DNS:  
+サイトで DNS に管理ポイントのサービスの場所レコードを発行する場合:  
 
--   La pubblicazione è applicabile solo ai punti di gestione che accettano le connessioni client dalla rete Intranet.  
--   La pubblicazione aggiunge un record di risorse di posizione del servizio nella zona DNS del computer del punto di gestione. Deve essere presente una voce host corrispondente in DNS per il computer.  
+-   発行は、イントラネットからのクライアント接続を受け入れる管理ポイントにのみ適用できます。  
+-   発行時に、管理ポイント コンピューターの DNS ゾーンにサービスの場所リソース レコード (SRV RR) が追加されます。 DNS には、そのコンピューターに対応するホスト エントリがなければなりません。  
 
-Per impostazione predefinita, i client aggiunti a un dominio cercano in DNS i record dei punti di gestione provenienti dal dominio locale del client. È possibile configurare una proprietà client che specifica un suffisso di dominio per un dominio in cui le informazioni relative ai punti di gestione vengono pubblicate in DNS.  
+既定では、ドメインに参加しているクライアントは、DNS でクライアントのローカル ドメインの管理ポイント レコードを検索します。 DNS に発行された管理ポイント情報があるドメインのドメイン サフィックスを指定するクライアント プロパティを構成することができます。  
 
-Per altre informazioni su come configurare la proprietà client del suffisso DNS, vedere [How to configure client computers to find management points by using DNS publishing in System Center Configuration Manager](../../../core/clients/deploy/configure-client-computers-to-find-management-points-by-using-dns-publishing.md) (Come configurare i computer client per individuare i punti di gestione tramite la pubblicazione DNS in System Center Configuration Manager).  
+クライアントの DNS サフィックスのプロパティを構成する方法については、「[How to configure client computers to find management points by using DNS publishing in System Center Configuration Manager](../../../core/clients/deploy/configure-client-computers-to-find-management-points-by-using-dns-publishing.md)」 (DNS 発行を使用して管理ポイントを検出するようにクライアント コンピューターを構成する方法) を参照してください。  
 
-Se un client non trova un punto di gestione da usare per la posizione del servizio in DNS, tenta di usare WINS.  
+クライアントは、DNS からサービスの場所として使用する管理ポイントを見つけられない場合、WINS の使用を試みます。  
 
-### <a name="publish-management-points-to-dns"></a>Pubblicare punti di gestione in DNS  
-Per pubblicare punti di gestione in DNS, devono verificarsi le due condizioni seguenti:  
+### <a name="publish-management-points-to-dns"></a>管理ポイントを DNS に発行する  
+管理ポイントを DNS に発行するには、次の 2 つの条件を満たさなければなりません。  
 
--   I server DNS supportano i record di risorse di individuazione del servizio usando una versione di BIND corrispondente a 8.1.2.  
--   Gli FQDN Intranet specificati per i punti di gestione in Configuration Manager includono voci host, ad esempio record A, in DNS.  
+-   DNS サーバーに、バージョン 8.1.2 以上の BIND がインストールされ、サービスの場所のリソース レコードを取り扱うことができる。  
+-   Configuration Manager 内の管理ポイント用に指定されたイントラネット FQDN に DNS のホスト エントリ (たとえば A レコード) がある。  
 
 > [!IMPORTANT]  
->  La pubblicazione DNS in Configuration Manager non supporta uno spazio dei nomi indipendente. Se si ha uno spazio dei nomi indipendente, è possibile pubblicare manualmente i punti di gestione in DNS o usare uno degli altri metodi alternativi di individuazione del servizio documentati in questa sezione.  
+>  Configuration Manager の DNS 発行では、不整合のある名前空間はサポートされません。 不整合のある名前空間が存在する場合、手動で DNS に管理ポイントを発行するか、このセクションで説明している別のサービスの場所検出方法のいずれかを使用できます。  
 
-**Quando i server DNS supportano gli aggiornamenti automatici**, è possibile configurare Configuration Manager per la pubblicazione automatica dei punti di gestione della Intranet in DNS oppure per la pubblicazione manuale di tali record in DNS. Quando i punti di gestione vengono pubblicati in DNS, il nome FQDN Intranet e il numero di porta corrispondenti sono pubblicati nel record di individuazione del servizio (SRV). La pubblicazione DNS in un sito viene configurata nelle proprietà del componente del punto di gestione dei siti. Per altre informazioni, vedere [Site components for System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md) (Componenti del sito per System Center Configuration Manager).  
+**DNS サーバーが自動更新をサポートしている場合は**、イントラネットの管理ポイントが DNS に自動的に発行されるように Configuration Manager を構成することも、これらのレコードを DNS に手動で発行することもできます。 DNS に管理ポイントが発行されると、そのイントラネット FQDN とポート番号がサービスの場所 (SRV) レコードで公開されます。 サイトの管理ポイント コンポーネント プロパティで、サイトでの DNS 発行を構成します。 詳細については、「[Site components for System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md)」 (System Center Configuration Manager のサイト コンポーネント) を参照してください。  
 
-**Quando la zona DNS è impostata su "Secure only" (Solo protetti) per gli aggiornamenti dinamici**, solo il primo punto di gestione da pubblicare in DNS riesce a eseguire correttamente l'operazione con le autorizzazioni predefinite.
+**DNS ゾーンが動的更新に対して "セキュアのみ" に設定されている場合**、DNS に発行する最初の管理ポイントのみを既定のアクセス許可で正常に動的更新できます。
 
-Se solo un punto di gestione riesce a pubblicare e modificare il proprio record DNS e il server del punto di gestione è integro, i client possono ottenere l'elenco completo dei punti di gestione e quindi trovare quello preferito.
+正常に発行してその DNS レコードを変更できるのが 1 つの管理ポイントのみで、その管理ポイント サーバーが正常である場合、クライアントはその管理ポイントから完全な管理パック リストを取得し、優先管理ポイントを検索できます。
 
 
-**Quando i server DNS non supportano gli aggiornamenti automatici ma supportano i record di individuazione del servizio**, è possibile pubblicare manualmente i punti di gestione in DNS. A tale scopo, è necessario specificare manualmente il record di risorse di individuazione del servizio (SRV RR) in DNS.  
+**DNS サーバーが自動更新をサポートしていないが、サービスの場所レコードをサポートする場合は**、管理ポイントを DNS に手動で発行することができます。 このためには、サービスの場所リソース レコード (SRV RR) を DNS で手動で指定する必要があります。  
 
-Configuration Manager supporta RFC 2782 per i record relativi alla posizione del servizio. I record hanno il formato seguente: *_Servizio._Proto.Nome TTL Classe SRV Priorità Peso Porta Destinazione*  
+Configuration Manager では、サービスの場所レコードとして RFC 2782 がサポートされます。 これらのレコードは次の形式です: *_Service._Proto.Name TTL Class SRV Priority Weight Port Target*  
 
-Per pubblicare un punto di gestione in Configuration Manager, specificare i valori seguenti:  
+Configuration Manager に管理ポイントを発行するには、次の値を指定します。  
 
--   **_Servizio**: immettere **_mssms_mp**_&lt;codicesito\>, dove &lt;codicesito\> è il codice del sito del punto di gestione.  
--   **._Proto**: specificare **._tcp**.  
--   **.Nome**: immettere il suffisso DNS del punto di gestione, ad esempio **contoso.com**.  
--   **TTL**: immettere **14400**, che corrisponde a quattro ore.  
--   **Classe**: specificare **IN** (in conformità con RFC 1035).  
--   **Priorità**: questo campo non è usato da Configuration Manager.
--   **Peso**: questo campo non è usato da Configuration Manager.  
--   **Porta**: immettere il numero di porta usato dal punto di gestione, ad esempio **80** per HTTP e **443** per HTTPS.  
+-   **_Service**: **_mssms_mp**_&lt;サイトコード\> と入力します。&lt;サイトコード\> は、管理ポイントのサイト コードです。  
+-   **._Proto**: **._tcp**を指定します。  
+-   **.Name**: 管理ポイントの DNS サフィックスを入力します (例: **contoso.com**)。  
+-   **TTL**: 「 **14400**」と入力します (4 時間)。  
+-   **Class**: **IN** を指定します (RFC 1035 に準拠)。  
+-   **Priority**: Configuration Manager ではこのフィールドは使用されません。
+-   **Weight**: Configuration Manager ではこのフィールドは使用されません。  
+-   **Port**: 管理ポイントで使用されるポート番号を入力します。たとえば、HTTP の場合は **80** 、HTTPS の場合は **443** です。  
 
     > [!NOTE]  
-    >  La porta dei record SRV deve corrispondere alla porta di comunicazione usata dal punto di gestione. Per impostazione predefinita si tratta della porta **80** per le comunicazioni HTTP e **443** per le comunicazioni HTTPS.  
+    >  SRV レコードのポートは、管理ポイントで使用する通信ポートと一致する必要があります。 既定では、これは HTTP 通信の場合は **80**、HTTPS 通信の場合は **443** になります。  
 
--   **Destinazione**: immettere il nome di dominio completo Intranet specificato per il sistema del sito configurato con il ruolo del sito del punto di gestione.  
+-   **Target**: 管理ポイント サイトの役割が構成されているサイト システムに指定されているイントラネット FQDN を入力します。  
 
-Se si usa il DNS di Windows Server, è possibile usare la procedura seguente per immettere questo record DNS per i punti di gestione Intranet. Se si usa un'implementazione differente per DNS, usare le informazioni riportate in questa sezione sui valori dei campi e consultare la documentazione relativa al DNS per adattare questa procedura.  
+Windows Server DNS を使用する場合、次の手順に従って、イントラネット管理ポイントにこの DNS レコードを入力します。 DNS の別の実装を使用する場合、このセクションのフィールド値に関する情報を参考にし、その DNS のドキュメントを参照して、この手順を適合させます。  
 
-##### <a name="to-configure-automatic-publishing"></a>Per configurare la pubblicazione automatica:  
+##### <a name="to-configure-automatic-publishing"></a>自動発行を構成するには  
 
-1.  Nella console di Configuration Manager espandere **Amministrazione** > **Configurazione del sito** > **Siti**.  
+1.  Configuration Manager コンソールで、[**管理**] > [**サイトの構成**] > [**サイト**] の順に展開します。  
 
-2.  Selezionare il sito e quindi fare clic su **Configura componenti del sito**.  
+2.  サイトを選択してから、**[サイト コンポーネントの構成]** をクリックします。  
 
-3.  Scegliere **Punto di gestione**.  
+3.  **[管理ポイント]** を選択します。  
 
-4.  Selezionare i punti di gestione da pubblicare. Questa selezione vale per la pubblicazione in Active Directory Domain Services e DNS.  
+4.  発行する管理ポイントを選択します。 (この選択は、AD DS および DNS への発行に適用されます。)  
 
-5.  Selezionare la casella per la pubblicazione in DNS. Questa casella:  
+5.  DNS に発行するボックスをチェックします。 このボックスでは、  
 
-    -   Consente di selezionare i punti di gestione per la pubblicazione in DNS.  
+    -   DNS に発行する管理ポイントを選択できます。  
 
-    -   Non consente di configurare la pubblicazione in Active Directory Domain Services.  
+    -   AD DS への発行は構成しません。  
 
-##### <a name="to-manually-publish-management-points-to-dns-on-windows-server"></a>Per pubblicare manualmente i punti di gestione in DNS in Windows Server  
+##### <a name="to-manually-publish-management-points-to-dns-on-windows-server"></a>Windows Server の DNS に手動で管理ポイントを発行するには  
 
-1.  Nella console di Configuration Manager specificare i nomi FQDN Intranet dei sistemi del sito.  
+1.  Configuration Manager コンソールで、サイト システムのイントラネット FQDN を指定します。  
 
-2.  Nella console di gestione DNS selezionare la zona DNS per il computer del punto di gestione.  
+2.  DNS 管理コンソールで、管理ポイント コンピューターの DNS ゾーンを選択します。  
 
-3.  Verificare che sia presente un record host (A o AAAA) per il nome FQDN Intranet del sistema del sito. Se il record non esiste, crearlo.  
+3.  サイト システムのイントラネット FQDN のホスト レコード (A または AAAA) があることを確認します。 このレコードが存在しない場合は作成します。  
 
-4.  Usando l'opzione **Altri nuovi record**, scegliere **Posizione servizio (SRV)** nella finestra di dialogo **Tipo record di risorse**, scegliere **Crea record**, immettere le informazioni seguenti e infine scegliere **Chiudi**:  
+4.  **[その他の新しいレコード]** オプションを使用して、**[リソース レコードの種類]** ダイアログ ボックスの **[サービスの場所 (SRV)]** を選択して、**[レコードの作成]** を選択し、次の情報を入力して、**[完了]** を選択します。  
 
-    -   **Dominio**: se necessario, immettere il suffisso DNS del punto di gestione, ad esempio **contoso.com**.  
-    -   **Servizio**: digitare **_mssms_mp**_&lt;codicesito\>, dove &lt;codicesito\> è il codice del sito del punto di gestione.  
-    -   **Protocollo**: digitare **_tcp**.  
-    -   **Priorità**: questo campo non è usato da Configuration Manager.  
-    -   **Peso**: questo campo non è usato da Configuration Manager.  
-    -   **Porta**: immettere il numero di porta usato dal punto di gestione, ad esempio **80** per HTTP e **443** per HTTPS.  
+    -   **Domain**: 必要に応じて、管理ポイントの DNS サフィックスを入力します (例: **contoso.com**)。  
+    -   **Service**: **_mssms_mp**_&lt;サイトコード\> と入力します。&lt;サイトコード\> は、管理ポイントのサイト コードです。  
+    -   **Protocol**: 「 **_tcp**」と入力します。  
+    -   **Priority**: Configuration Manager ではこのフィールドは使用されません。  
+    -   **Weight**: Configuration Manager ではこのフィールドは使用されません。  
+    -   **Port**: 管理ポイントで使用されるポート番号を入力します。たとえば、HTTP の場合は **80** 、HTTPS の場合は **443** です。  
 
         > [!NOTE]  
-        >  La porta dei record SRV deve corrispondere alla porta di comunicazione usata dal punto di gestione. Per impostazione predefinita si tratta della porta **80** per le comunicazioni HTTP e **443** per le comunicazioni HTTPS.  
+        >  SRV レコードのポートは、管理ポイントで使用する通信ポートと一致する必要があります。 既定では、これは HTTP 通信の場合は **80**、HTTPS 通信の場合は **443** になります。  
 
-    -   **Host che offre il servizio**: immettere il nome FQDN Intranet specificato per il sistema del sito configurato con il ruolo del sito del punto di gestione.  
+    -   **このサービスを提供しているホスト**: 管理ポイント サイトの役割が構成されているサイト システムに指定されているイントラネット FQDN を入力します。  
 
-Ripetere questi passaggi per ogni punto di gestione della rete Intranet che si desidera pubblicare in DNS.  
+DNS に発行するイントラネットの管理ポイントごとに、上記の手順を繰り返します。  
 
 ##  <a name="bkmk_wins"></a> WINS  
-Quando gli altri meccanismi di individuazione del servizio hanno esito negativo, i client possono trovare un punto di gestione iniziale tramite WINS.  
+他のサービスの場所が見つからない場合は、クライアントは WINS で接続する管理ポイントを探します。  
 
-Per impostazione predefinita, un sito primario pubblica in WINS il primo punto di gestione nel sito configurato per HTTP e il primo punto di gestione configurato per HTTPS.  
+既定では、プライマリ サイトで、HTTP 用に構成されているサイトの最初の管理ポイントと HTTPS 用に構成されている最初の管理ポイントを WINS に発行します。  
 
-Se non si desidera che i client trovino un punto di gestione HTTP in WINS, configurare i client con la proprietà CCMSetup.exe Client.msi **SMSDIRECTORYLOOKUP=NOWINS**.  
-
+クライアントが WINS で HTTP 管理ポイントを探さないようにする場合は、クライアントの CCMSetup.exe の Client.msi のプロパティで **SMSDIRECTORYLOOKUP=NOWINS**と指定します。  

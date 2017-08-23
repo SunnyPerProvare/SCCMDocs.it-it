@@ -1,79 +1,72 @@
 ---
-title: "Garantire la conformità dei dispositivi | Microsoft Docs"
-description: "Gestire la configurazione e la conformità dei dispositivi nell&quot;organizzazione usando System Center Configuration Manager."
+title: "デバイス コンプライアンスの確認 | Microsoft Docs"
+description: "System Center Configuration Manager を使用して、組織内のデバイスの構成とコンプライアンスを管理します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7568c9aa-b99e-4466-bfc8-0301aa376930
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
 ms.openlocfilehash: f7ecfe550d2e28579ea873442b2a68dc1c7c5483
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="ensure-device-compliance-with-system-center-configuration-manager"></a>Garantire la conformità dei dispositivi con System Center Configuration Manager
+# <a name="ensure-device-compliance-with-system-center-configuration-manager"></a>System Center Configuration Manager でのデバイス コンプライアンスの確認
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Le impostazioni di conformità di System Center Configuration Manager offrono gli strumenti e le risorse necessari per gestire la configurazione e la conformità dei dispositivi nell'organizzazione. Questo semplifica il supporto dei requisiti aziendali seguenti:  
+System Center Configuration Manager でのコンプライアンス設定は、組織内のデバイスの構成とコンプライアンスを管理するために必要なツールおよびリソースとなります。 これを利用することで、次の業務要件をサポートできます。  
 
--   Confrontare la configurazione di PC Windows, computer Mac, server e dispositivi mobili gestiti con le configurazioni consigliate create internamente oppure ottenute da altri fornitori.  
+-   管理対象の Windows PC、Mac コンピューター、サーバー、およびモバイル デバイスを、独自に作成したベスト プラクティス構成または他のベンダーから取得したベスト プラクティス構成と比較対照する  
 
--   Identificare le configurazioni di dispositivo non autorizzate  
+-   承認されていないデバイス構成を特定する  
 
--   Creare report di conformità con criteri normativi e criteri di sicurezza interni  
+-   規制に基づくポリシーおよび社内のセキュリティ ポリシーの対応状態を報告する  
 
--   Identificare le vulnerabilità di sicurezza  
+-   セキュリティの脆弱性を識別する  
 
--   Fornire all'help desk le informazioni necessarie per rilevare le possibili cause dei problemi e degli eventi imprevisti segnalati identificando le configurazioni non conformi  
+-   非準拠の構成を識別することで、報告されたインシデントや問題の考えられる原因を検出するための情報をヘルプ デスクに提供する  
 
--   Correggere automaticamente le impostazioni non conformi nei dispositivi mobili  
+-   モバイル デバイスの非準拠の設定を自動的に修復する  
 
--   Correggere la mancata conformità con la distribuzione di applicazioni, pacchetti e programmi o script in una raccolta che viene automaticamente popolata con i dispositivi non conformi  
-
-
-## <a name="get-started"></a>Introduzione  
- Informazioni sulle nozioni fondamentali relative alle impostazioni di conformità e alle attività che è possibile eseguire con esse.  
-
- [Introduzione alle impostazioni di conformità](../../compliance/get-started/get-started-with-compliance-settings.md)  
-
-## <a name="plan-and-design"></a>Pianificare e progettare  
- Prima di iniziare a usare le impostazioni di conformità, assicurarsi di avere implementato i prerequisiti necessari disponibili in questo argomento.  
-
- [Plan for and configure compliance settings](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) (Pianificare e configurare le impostazioni di conformità)  
-
-## <a name="common-tasks"></a>Attività comuni  
- In questa sezione sono disponibili alcuni scenari comuni utili per imparare a usare le impostazioni di conformità in Configuration Manager.  
-
- [Attività comuni per la gestione della conformità](../../compliance/plan-design/common-tasks-for-managing-compliance.md)  
-
-## <a name="remote-connection-profiles"></a>Profili di connessione remota  
- Il tipo di elemento di configurazione consente di configurare i PC degli utenti in modo da effettuare la connessione remota ai computer aziendali quando non sono connessi al dominio o se i computer personali sono connessi su Internet.  
-
- [Create remote connection profiles](/sccm/compliance/deploy-use/create-remote-connection-profiles) (Creare profili di connessione remota)  
-
-## <a name="user-data-and-profiles"></a>Profili e dati utente  
- Il tipo di elemento di configurazione contiene le impostazioni che consentono di gestire il reindirizzamento delle cartelle, i file offline e i profili mobili nei computer che eseguono Windows 8 e versioni successive per gli utenti della gerarchia.  
-
- [Create user data and profiles configuration items](/sccm/compliance/deploy-use/create-user-data-and-profiles-configuration-items) (Creare dati utente ed elementi di configurazione profili)  
-
-## <a name="windows-edition-upgrade-policy"></a>Criteri di aggiornamento dell'edizione Windows  
- I criteri di aggiornamento edizione consentono di aggiornare automaticamente i dispositivi Windows 10 a una versione più recente. È possibile specificare un codice Product Key per aggiornare le versioni desktop di Windows 10 o usare un file di licenza per aggiornare i dispositivi che eseguono Windows 10 Mobile e Windows 10 Holographic.  
-
- [Upgrade Windows devices with the edition upgrade policy](/sccm/compliance/deploy-use/upgrade-windows-version) (Aggiornare i dispositivi Windows con i criteri di aggiornamento edizione)  
+-   非準拠であることが報告されたデバイスが自動的に加えられるコレクションに対して、アプリケーション、パッケージとプログラム、またはスクリプトを展開して、非準拠を修復する  
 
 
+## <a name="get-started"></a>作業開始  
+ コンプライアンス設定の基本事項およびそれらで実行できるタスクについて説明します。  
 
-<!--HONumber=Dec16_HO3-->
+ [コンプライアンス設定を使ってみる](../../compliance/get-started/get-started-with-compliance-settings.md)  
 
+## <a name="plan-and-design"></a>計画と設計  
+ コンプライアンス設定での作業を開始する前に、このトピックで必要な前提条件を実施しておきます。  
 
+ [コンプライアンス設定の計画と構成](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md)  
+
+## <a name="common-tasks"></a>一般的なタスク  
+ このセクションでは、Configuration Manager でのコンプライアンス設定の使用方法に関するいくつかの一般的なシナリオを紹介します。  
+
+ [コンプライアンスを管理するための一般的なタスク](../../compliance/plan-design/common-tasks-for-managing-compliance.md)  
+
+## <a name="remote-connection-profiles"></a>リモート接続プロファイル  
+ この構成項目の種類を使用すると、ユーザーがドメインに接続されていない場合やユーザーの PC がインターネット経由で接続されている場合に、会社用のコンピューターにリモート接続するようにユーザーの PC を構成できます。  
+
+ [リモート接続プロファイルの作成](/sccm/compliance/deploy-use/create-remote-connection-profiles)  
+
+## <a name="user-data-and-profiles"></a>ユーザー データとプロファイル  
+ この構成項目の種類には、階層内のユーザーの Windows 8 以降のコンピューターのフォルダー リダイレクト、オフライン ファイル、およびローミング プロファイルを管理できる設定が含まれています。  
+
+ [ユーザー データとプロファイルの構成項目の作成](/sccm/compliance/deploy-use/create-user-data-and-profiles-configuration-items)  
+
+## <a name="windows-edition-upgrade-policy"></a>Windows エディションのアップグレード ポリシー  
+ エディションのアップグレード ポリシーでは、新しいバージョンに Windows 10 デバイスを自動的にアップグレードできます。 Windows 10 デスクトップ バージョンをアップグレードするためのプロダクト キーを指定したり、Windows 10 Mobile と Windows 10 Holographic を実行しているデバイスをアップグレードするために使用できるライセンス ファイルを指定したりできます。  
+
+ [エディションのアップグレード ポリシーで Windows デバイスをアップグレードする](/sccm/compliance/deploy-use/upgrade-windows-version)  

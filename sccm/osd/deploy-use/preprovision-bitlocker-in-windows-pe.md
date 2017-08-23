@@ -1,68 +1,61 @@
 ---
-title: Pre-provisioning di BitLocker in Windows PE | Microsoft Docs
-description: "L&quot;attività di pre-provisioning di BitLocker in Configuration Manager attiva BitLocker dall&quot;ambiente preinstallazione di Windows prima della distribuzione del sistema operativo."
+title: "Windows PE での BitLocker の事前準備 | Microsoft Docs"
+description: "Configuration Manager の BitLocker の事前準備タスクでは、オペレーティング システムを展開する前に Windows プレインストール環境で BitLocker を有効にします。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c7c94ba0-d709-4129-8077-075a8abaea1c
-caps.latest.revision: 4
-caps.handback.revision: 0
+caps.latest.revision: "4"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: baca498dbc5b8e168852aa3c18ee23a9c483e69c
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="preprovision-bitlocker-in-windows-pe-with-system-center-configuration-manager"></a>Effettuare il pre-provisioning di BitLocker in Windows PE con System Center Configuration Manager
+# <a name="preprovision-bitlocker-in-windows-pe-with-system-center-configuration-manager"></a>System Center Configuration Manager による Windows PE での BitLocker の事前準備
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Il passaggio della sequenza di attività **pre-provisioning di BitLocker** in System Center Configuration Manager consente di attivare BitLocker dall'ambiente preinstallazione di Windows (Windows PE) prima della distribuzione del sistema operativo. Solo lo spazio su disco usato viene crittografato e pertanto i tempi di crittografia sono molto più veloci. Questa operazione viene eseguita applicando una protezione in chiaro generata in modo casuale al volume formattato e crittografando il volume prima di eseguire il processo di installazione di Windows. La possibilità di eseguire il pre-provisioning di BitLocker è stata introdotta in Windows 8 e Windows Server 2012. Tuttavia, è possibile eseguire il pre-provisioning di BitLocker su un disco rigido e installare Windows 7, purché si segua la procedura specifica. Dopo aver completato l'installazione di Windows 7, è necessario impostare una protezione con chiave di BitLocker in quanto il pannello di controllo Windows 7 BitLocker non supporta BitLocker con una protezione in chiaro. È necessario aggiungere una protezione con chiave utilizzando il passaggio **Attiva BitLocker** oppure utilizzando lo strumento della riga di comando manage-bde.exe.  
+System Center Configuration Manager のタスク シーケンスの **BitLocker の事前プロビジョニング** ステップで、オペレーティング システムを展開する前に Windows プレインストール環境 (Windows PE) で BitLocker を有効にすることができます。 使用されているドライブ領域のみが暗号化されるため、暗号化にかかる時間が大幅に短くなります。 Windows のセットアップ プロセスを実行する前に、フォーマットしたボリュームを、無作為に作成されたクリア キーによるキー保護機能を使って暗号化します。 BitLocker を事前プロビジョニングする機能は、Windows 8 と Windows Server 2012 に導入されています。 BitLocker をハード ドライブに事前プロビジョニングして Windows 7 をインストールできますが、これには特別な手順が必要です。 Windows 7 のセットアップが終わったら、BitLocker のキー保護機能を設定する必要があります。これは、Windows 7 の BitLocker コントロール パネルでは、クリア キーによるキー保護と一緒に BitLocker を使えないからです。 したがって、 **BitLocker の有効化** ステップか、manage-bde.exe コマンドライン ツールを使って、キー保護機能を追加する必要があります。  
 
- In generale, è necessario effettuare le seguenti operazioni per eseguire correttamente il pre-provisioning di BitLocker in un computer su cui verrà installato Windows 7:  
+ 通常、BitLocker を事前プロビジョニングして Windows 7 をインストールするには、次の作業を行う必要があります。  
 
--   Riavviare il computer in Windows PE  
+-   Windows PE でコンピューターを再起動します。  
 
     > [!IMPORTANT]  
-    >  Per eseguire il pre-provisioning di BitLocker, è necessario utilizzare un'immagine di avvio con Windows PE 4 o versione successiva. Per altre informazioni sulle versioni Windows PE supportate in Configuration Manager, vedere [Dipendenze esterne a Configuration Manager](../plan-design/infrastructure-requirements-for-operating-system-deployment.md#BKMK_ExternalDependencies).  
+    >  BitLocker を事前プロビジョニングするには、Windows PE 4 以降のブート イメージを使用する必要があります。 Configuration Manage がサポートしている Windows PE のバージョンの詳細については、「[Configuration Manager 外部の依存関係](../plan-design/infrastructure-requirements-for-operating-system-deployment.md#BKMK_ExternalDependencies)」を参照してください。  
 
--   Partizionare e formattare il disco rigido  
+-   ハード ドライブのパーティションを作成してフォーマットします。  
 
--   Eseguire il pre-provisioning di BitLocker  
+-   のタスク シーケンスの  
 
--   Installare Windows 7 con sistema operativo e impostazioni di rete specifiche  
+-   オペレーティング システムとネットワークの特定の設定を行って、Windows 7 をインストールします。  
 
--   Aggiungere una protezione con chiave a BitLocker  
+-   BitLocker にキー保護機能を追加します。  
 
- In Configuration Manager, la modalità consigliata per il pre-provisioning di BitLocker su disco rigido e l'installazione di Windows 7 è di creare una nuova sequenza di attività e selezionare **Installa un pacchetto immagine esistente** nella pagina **Crea nuova sequenza attività** della **Creazione guidata della sequenza attività**. La procedura guidata crea i passaggi della sequenza di attività elencati nella tabella riportata di seguito.  
+ Configuration Manager でハード ドライブに BitLocker を事前プロビジョニングして Windows 7 をインストールする場合、新しいタスク シーケンスを作成して、**タスク シーケンスの作成ウィザード**の **[新しいタスク シーケンスの作成]** ページで **[既存のイメージ パッケージをインストールする]** を選択する方法をお勧めします。 次の表に示すステップから成るタスク シーケンスが作成されます。  
 
 > [!NOTE]  
->  La sequenza di attività potrebbe richiedere passaggi ulteriori a seconda della configurazione delle impostazioni nella procedura guidata. Ad esempio, si potrebbe avere il passaggio **Acquisisci impostazioni Windows** se è stato selezionato **Impostazioni di Microsoft Windows acquisite** nella pagina **Migrazione stato** della procedura guidata.  
+>  ウィザードで選択した設定によっては、他のステップが含まれることがあります。 たとえば、ウィザードの **[状態移行]** ページで **[キャプチャした Microsoft Windows 設定]** を選択した場合は、 **[Windows 設定のキャプチャ]** というステップが追加されます。  
 
-|Passaggio della sequenza di attività|Dettagli|  
+|タスク シーケンスのステップ|説明|  
 |------------------------|-------------|  
-|Disattiva BitLocker|Questo passaggio consente di disattivare la crittografia BitLocker, se è attiva. Per altre informazioni, vedere [Disabilitare BitLocker](../understand/task-sequence-steps.md#BKMK_DisableBitLocker).|  
-|Riavviare il computer in Windows PE|Questo passaggio riavvia il computer in Windows PE eseguendo l'immagine di avvio assegnata alla sequenza di attività. Per eseguire il pre-provisioning di BitLocker, è necessario utilizzare un'immagine di avvio con Windows PE 4 o versione successiva. Per altre informazioni, vedere [Riavviare il computer](../understand/task-sequence-steps.md#BKMK_RestartComputer).|  
-|Disco di partizione 0 - BIOS<br /><br /> Disco di partizione 0 - UEFI|Questi passaggi formattano e partizionano l'unità specificata nel computer di destinazione tramite BIOS o UEFI. La sequenza di attività utilizza UEFI quando rileva che il computer di destinazione è in modalità UEFI. Per altre informazioni, vedere [Formato e partizione del disco](../understand/task-sequence-steps.md#BKMK_FormatandPartitionDisk).|  
-|Eseguire il pre-provisioning di BitLocker|Questo passaggio attiva BitLocker in un'unità mentre si trova in Windows PE. Solo lo spazio su disco utilizzato è crittografato. Poiché nel passaggio precedente il disco rigido è stato partizionato e formattato, non sono presenti dati e la crittografia si completa molto rapidamente. Per altre informazioni, vedere [Pre-provisioning di BitLocker](../understand/task-sequence-steps.md#BKMK_PreProvisionBitLocker).|  
-|Applica sistema operativo|Questo passaggio prepara il file di risposta utilizzato per installare il sistema operativo sul computer di destinazione e imposta la variabile della sequenza di attività OSDTargetSystemDrive sulla lettera di unità della partizione che contiene i file del sistema operativo. Il file di risposta e la variabile vengono utilizzati dal passaggio Imposta Windows e ConfigMgr per installare il sistema operativo. Per altre informazioni, vedere [Apply Operating System Image](../understand/task-sequence-steps.md#BKMK_ApplyOperatingSystemImage).|  
-|Applica impostazioni Windows|Questo passaggio consente di aggiungere le impostazioni di Windows al file di risposta. Il file di risposta viene utilizzato dal passaggio Imposta Windows e ConfigMgr per installare il sistema operativo. Per altre informazioni, vedere [Applicare le impostazioni Windows](../understand/task-sequence-steps.md#BKMK_ApplyWindowsSettings).|  
-|Applica impostazioni di rete|Questo passaggio consente di aggiungere le impostazioni di rete al file di risposta. Il file di risposta viene utilizzato dal passaggio Imposta Windows e ConfigMgr per installare il sistema operativo. Per altre informazioni, vedere [il passaggio Applica impostazioni di rete](../understand/task-sequence-steps.md#BKMK_ApplyNetworkSettings).|  
-|Applica driver dispositivo|Questo passaggio associa e installa i driver come parte della distribuzione del sistema operativo. Per altre informazioni, vedere [Applica automaticamente i driver](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers).|  
-|Imposta Windows e ConfigMgr|Questo passaggio esegue la transizione da Windows PE al nuovo sistema operativo. Questo passaggio della sequenza di attività è una parte necessaria di qualsiasi distribuzione del sistema operativo. Installa il client di Configuration Manager nel nuovo sistema operativo e prepara la sequenza di attività per continuare l'esecuzione nel nuovo sistema operativo. Per altre informazioni, vedere [Impostare Windows e Configuration Manager](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr).|  
-|Attiva BitLocker|Questo passaggio attiva la crittografia BitLocker sul disco rigido e imposta le protezioni con chiave. Poiché per il disco rigido è stato eseguito il pre-provisioning con BitLocker, questo passaggio si completa molto rapidamente. Windows 7 richiede l'aggiunta di una protezione con chiave. Se non si utilizza questo passaggio, è possibile eseguire lo strumento della riga di comando manage-bde.exe per impostare una protezione con chiave. Per altre informazioni, vedere [Abilitare BitLocker](../understand/task-sequence-steps.md#BKMK_EnableBitLocker).|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+|BitLocker の無効化|現在、BitLocker による暗号化が有効になっている場合は、無効にします。 詳細については、「[BitLocker の無効化](../understand/task-sequence-steps.md#BKMK_DisableBitLocker)」を参照してください。|  
+|Windows PE でのコンピューターの再起動|タスク シーケンスに割り当てられている Windows PE ブート イメージを実行することにより、コンピューターを再起動します。 BitLocker を事前プロビジョニングするには、Windows PE 4 以降のブート イメージを使用する必要があります。 詳細については、「[コンピューターの再起動](../understand/task-sequence-steps.md#BKMK_RestartComputer)」を参照してください。|  
+|ディスク 0 のパーティション作成 - BIOS<br /><br /> ディスク 0 のパーティション作成 - UEFI|BIOS または UEFI を使って、目的のコンピューターの指定されたドライブをフォーマットしてパーティションを作成します。 目的のコンピューターが UEFI モードになっている場合は、UEFI が使われます。 詳細については、「[ディスクのフォーマットとパーティション作成](../understand/task-sequence-steps.md#BKMK_FormatandPartitionDisk)」を参照してください。|  
+|のタスク シーケンスの|この手順により、Windows PE で動作している間は、ドライブで BitLocker が有効になります。 ドライブの使用済みの領域だけが暗号化されます。 前のステップでハード ドライブのパーティションを作成してフォーマットしているので、データはありません。したがって、暗号化はすぐに完了します。 詳細については、「[Pre-provision BitLocker](../understand/task-sequence-steps.md#BKMK_PreProvisionBitLocker)」(BitLocker の事前プロビジョニング) を参照してください。|  
+|オペレーティング システムの適用|目的のコンピューターにオペレーティング システムをインストールするための応答ファイルを準備して、タスク シーケンスの OSDTargetSystemDrive 変数を、オペレーティング システム ファイルが含まれているパーティションのドライブ文字に設定します。 この応答ファイルと変数は、Windows と ConfigMgr のセットアップ ステップでオペレーティング システムをインストールするために使われます。 詳細については、「 [Apply Operating System Image](../understand/task-sequence-steps.md#BKMK_ApplyOperatingSystemImage)」を参照してください。|  
+|Windows 設定の適用|応答ファイルに Windows 設定を追加します。 この応答ファイルは、Windows と ConfigMgr のセットアップ ステップでオペレーティング システムをインストールするために使われます。 詳細については、「[Windows 設定の適用](../understand/task-sequence-steps.md#BKMK_ApplyWindowsSettings)」を参照してください。|  
+|ネットワーク設定の適用|応答ファイルにネットワーク設定を追加します。 この応答ファイルは、Windows と ConfigMgr のセットアップ ステップでオペレーティング システムをインストールするために使われます。 詳細については、「[ネットワーク設定の適用](../understand/task-sequence-steps.md#BKMK_ApplyNetworkSettings)」を参照してください。|  
+|デバイス ドライバーの適用|オペレーティング システムの展開の一部としてドライバーを検出してインストールします。 詳細については、「[Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers)」(ドライバーの自動適用) を参照してください。|  
+|Windows と ConfigMgr のセットアップ|Windows PE から新しいパーティション システムに移行します。 このタスク シーケンス ステップはあらゆるオペレーティング システム展開に必要です。 このステップでは、Configuration Manager クライアントを新しいオペレーティング システムにインストールして、新しいオペレーティング システムでタスク シーケンスの実行を継続できるようにします。 詳細については、「[Setup Windows and ConfigMgr](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr)」(Windows と ConfigMgr のセットアップ) を参照してください。|  
+|BitLocker の有効化|BitLocker によるハード ドライブの暗号化を有効にして、キー保護機能を設定します。 ハード ドライブには BitLocker が事前プロビジョニングされているので、このステップはすぐに完了します。 Windows 7 では、キー保護機能を追加する必要があります。 このステップを使用しない場合は、manage-bde.exe コマンドライン ツールを使って、キー保護機能を設定してください。 詳細については、「[BitLocker の有効化](../understand/task-sequence-steps.md#BKMK_EnableBitLocker)」を参照してください。|  

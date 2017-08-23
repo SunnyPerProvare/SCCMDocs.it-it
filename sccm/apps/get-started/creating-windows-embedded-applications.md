@@ -1,58 +1,51 @@
 ---
-title: Creare applicazioni Windows Embedded| Documentazione Microsoft
-description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni per i dispositivi Windows Embedded.
+title: "Windows Embedded アプリケーションの作成 | Microsoft Docs"
+description: "Windows Embedded デバイス用アプリケーションを作成して展開するときに検討する必要がある考慮事項について説明します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 16acfd63-0c40-424c-82f4-8c63f7f1c30b
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 557888d1f1f899e3198c430bbe5ccdd44178f824
 ms.openlocfilehash: cb0c22f3060ba654778dca958d620f1e1725b93c
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-windows-embedded-applications-with-system-center-configuration-manager"></a>Creare applicazioni Windows Embedded con System Center Configuration Manager
+# <a name="create-windows-embedded-applications-with-system-center-configuration-manager"></a>System Center Configuration Manager で Windows Embedded アプリケーションを作成する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Oltre agli altri requisiti e alle procedure di System Center Configuration Manager per la creazione di un'applicazione, quando si creano e si distribuiscono applicazioni per i dispositivi Windows Embedded è necessario tenere presente quanto segue.  
+アプリケーションを作成するための System Center Configuration Manager の他の要件と手順に加えて、Windows Embedded デバイス用アプリケーションを作成および展開するときには次の考慮事項について検討する必要があります。  
 
-## <a name="general-considerations"></a>Considerazioni generali  
+## <a name="general-considerations"></a>一般的な考慮事項  
 
--   Quando si distribuiscono applicazioni a dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare se disabilitare il filtro di scrittura sul dispositivo durante la distribuzione dell'app. È quindi possibile scegliere di riavviare il filtro di scrittura al termine della distribuzione dell'app. Se il filtro di scrittura non è disabilitato, il software viene distribuito a una sovrapposizione temporanea. Questo vuol dire che, a meno che un'altra distribuzione non forzi le modifiche per renderle permanenti, il software non verrà più installato al riavvio del dispositivo.  
+-   書き込みフィルターが有効にされた Windows Embedded デバイスにアプリケーションを展開するときに、アプリケーションの展開中にデバイスで書き込みフィルターを無効にするかどうかを指定できます。 その後、アプリケーションの展開後に書き込みフィルターを再起動するように選択できます。 書き込みフィルターが無効になっていない場合、ソフトウェアは一時オーバーレイに展開されます。 これは、別の展開で変更内容を永続化するよう強制しない限り、デバイスの再起動時にソフトウェアがインストールされないことを意味します。  
 
--   Quando si distribuisce un'applicazione in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta con una finestra di manutenzione configurata. Ciò consente di decidere quando abilitare o disabilitare il filtro di scrittura nonché quando riavviare il dispositivo.  
+-   アプリケーションを Windows Embedded デバイスに展開する場合、デバイスが、メンテナンス期間が構成されたコレクションのメンバーであることを確認します。 これにより、書き込みフィルターを無効または有効にするタイミングと、デバイスを再起動するタイミングを管理できます。  
 
--   L'impostazione che consente di controllare il comportamento del filtro di scrittura è una casella di controllo denominata **Invia modifiche alla scadenza o in una finestra di manutenzione (riavvio necessario)**.  
+-   書き込みフィルターの動作を制御する設定は、[**メンテナンスの期限または期間中の変更を確定する (再起動が必要)**] という名前のチェック ボックスです。  
 
-## <a name="tips-for-deploying-applications"></a>Suggerimenti per la distribuzione di applicazioni  
+## <a name="tips-for-deploying-applications"></a>アプリケーションを展開するためのヒント  
 
-**Usare le applicazioni richieste al posto delle applicazioni disponibili per i dispositivi con Windows Embedded con i filtri di scrittura abilitati.** Poiché gli utenti non possono installare le app da Software Center in un dispositivo con Windows Embedded con i filtri di scrittura abilitati, distribuire sempre le applicazioni con uno scopo della distribuzione **richiesto** al posto di **disponibile** per questi dispositivi. Questo problema in genere non dovrebbe verificarsi perché i computer che eseguono un sistema operativo Windows Embedded spesso eseguono una singola applicazione che deve essere eseguita allo stesso modo per più utenti. Per questo motivo, tali dispositivi vengono gestiti in modo avanzato e vengono bloccati dal reparto IT. Le applicazioni richieste sono particolarmente adatte per questo scenario.
+**書き込みフィルターを有効にした Windows Embedded デバイスで使用できるアプリケーションではなく、必須のアプリケーションを使用する** ユーザーは、書き込みフィルターを有効にした Windows Embedded デバイスのソフトウェア センターからはアプリケーションをインストールできないため、これらのデバイスで**使用できる**アプリケーションではなく、**必須**のアプリケーションの展開の目的で常にアプリケーションを展開します。 通常、これは問題になりません。Windows Embedded オペレーティング システムを実行するコンピューターは、複数のユーザーに対して、1 つのアプリケーションを同じ方法で実行する必要がある場合が多いためです。 そのため、このようなデバイスは IT 部門によって高度に管理され、ロックされています。 必須のアプリケーションは、次のシナリオに最適です。
 
- Se tuttavia gli utenti eseguono più di un'applicazione nei dispositivi incorporati con i filtri di scrittura attivati, illustrare a tali utenti le seguenti limitazioni:  
+ ただし、書き込みフィルターを有効にするときに、ユーザーが組み込みデバイスで複数のアプリケーションを実行する場合、ユーザーには次の制限について説明してください。  
 
--   Gli utenti non possono installare il software richiesto da Software Center.  
+-   ユーザーは、ソフトウェア センターから必要なソフトウェアをインストールできない。  
 
--   Gli utenti non possono modificare l'orario di ufficio nella scheda Opzioni di Software Center.  
+-   ユーザーは、ソフトウェア センターの [オプション] タブで営業時間を変更できない。  
 
--   Gli utenti non possono rimandare l'installazione di un'applicazione richiesta.  
+-   ユーザーは、必須のアプリケーションのインストールを延期できない。  
 
-Gli utenti con diritti limitati inoltre non possono eseguire l'accesso durante un periodo di manutenzione se Configuration Manager sta eseguendo delle modifiche per gli aggiornamenti e le installazioni software. Durante questo periodo, viene visualizzato un messaggio che informa gli utenti che il dispositivo non è disponibile perché è in fase di manutenzione.  
+さらに、Configuration Manager がソフトウェアのインストールおよび更新の変更内容をコミットしている場合、低い権限のユーザーはメンテナンス期間中にログオンできません。 この期間、サービスは稼働しているため、デバイスが使用できないことを示すメッセージがユーザーに表示されます。  
 
-**Se le applicazioni richiedono all'utente di accettare le condizioni di licenza, non distribuire tali applicazioni ai dispositivi con Windows Embedded con filtri di scrittura abilitati.** Quando i filtri di scrittura vengono disabilitati per consentire a Configuration Manager di installare software nei dispositivi incorporati, gli utenti con diritti limitati non possono eseguire l'accesso al dispositivo. Se l'installazione richiede all'utente di accettare le condizioni di licenza, non sarà possibile eseguire questa operazione e l'installazione avrà esito negativo. Assicurarsi di non distribuire software ai dispositivi con Windows Embedded se l'installazione richiede l'interazione dell'utente. È possibile usare l'elenco Piattaforme applicabili per filtrare questi sistemi operativi.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+**アプリケーションのライセンス条項に同意することをユーザーに求める場合、書き込みフィルターを有効にした Windows Embedded デバイスにはアプリケーションを展開しない** Configuration Manager が組み込みデバイスにソフトウェアをインストールできるように書き込みフィルターを無効にすると、低い権限のユーザーはデバイスにログオンできなくなります。 インストールするにはユーザーがライセンス条項に同意する必要がある場合、この操作が不可能になり、インストールは失敗します。 インストールにユーザー操作が必要な場合は、Windows Embedded デバイスにソフトウェアを展開しないでください。 [適用可能なプラットフォーム] リストを使用すると、このようなオペレーティング システムを除外できます。  

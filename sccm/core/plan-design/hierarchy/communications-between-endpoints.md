@@ -1,266 +1,259 @@
 ---
-title: Comunicazioni tra gli endpoint | Microsoft Docs
-description: "Informazioni sulle modalità di comunicazione dei componenti e sistemi del sito di System Center Configuration Manager in una rete."
+title: "エンドポイント間の通信 | Microsoft Docs"
+description: "ネットワーク経由で System Center Configuration Manager サイト システムとコンポーネントがどのように通信するかを説明します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 68fe0e7e-351e-4222-853a-877475adb589
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 2ac9f98dc7b455d3b72d794d4311863186ed53ef
 ms.openlocfilehash: cd94f9ccc7e196b30e5dc7ae9368d073b7cff5d2
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="communications-between-endpoints-in-system-center-configuration-manager"></a>Comunicazioni tra gli endpoint in System Center Configuration Manager
+# <a name="communications-between-endpoints-in-system-center-configuration-manager"></a>System Center Configuration Manager でのエンドポイント間の通信
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
 
-##  <a name="a-nameplanningintra-sitecoma-communications-between-site-systems-in-a-site"></a><a name="Planning_Intra-site_Com"></a> Comunicazioni tra sistemi del sito in un sito  
- Quando i sistemi o componenti del sito di Configuration Manager comunicano in rete con altri sistemi del sito oppure con componenti di Configuration Manager nel sito, usano uno dei protocolli seguenti, a seconda della configurazione del sito:  
+##  <a name="Planning_Intra-site_Com"></a> サイト内のサイト システム間の通信  
+ Configuration Manager サイト システムまたはコンポーネントがサイト内の他のサイト システムまたは Configuration Manager コンポーネントとネットワークを介して通信する場合、サイトの構成方法に応じて次のいずれかのプロトコルが使用されます。  
 
--   Server Message Block (SMB)  
+-   サーバー メッセージ ブロック (SMB)  
 
 -   HTTP  
 
 -   HTTPS  
 
-Con l'eccezione della comunicazione dal server del sito a un punto di distribuzione, le comunicazioni tra server in un sito possono verificarsi in qualsiasi momento e non usano meccanismi per controllare la larghezza di banda di rete. Poiché non è possibile controllare la comunicazione tra sistemi del sito, assicurarsi di installare i server del sistema del sito in posizioni che abbiano reti veloci e ben connesse.  
+サイト サーバーから配布ポイントへの通信を除き、サイト内のサーバー同士がいつ通信するかは決まっておらず、ネットワーク帯域幅も制御できません。 サイト システム間の通信は制御できないので、高速で接続良好なネットワークがある場所にサイト システム サーバーを設置してください。  
 
-Per gestire il trasferimento di contenuto dal server del sito ai punti di distribuzione:  
+サイト サーバーから配布ポイントへのコンテンツの転送を管理する方法は、次のとおりです。  
 
--   Configurare il punto di distribuzione per il controllo della larghezza di banda di rete e la pianificazione. Questi controlli sono simili alle configurazioni usate dagli indirizzi intrasito ed è spesso possibile usare questa configurazione invece di installare un altro sito di Configuration Manager quando la larghezza di banda incide soprattutto sul trasferimento di contenuti su percorsi di rete remoti.  
+-   配布ポイントで使用するネットワーク帯域幅とスケジュールを構成します。 この構成は、サイト間通信のアドレスの構成とよく似ています。通常、リモート ネットワークへのコンテンツの転送が、使用可能な帯域幅に大きく影響する場合に、別の Configuration Manager サイトをインストールする代わりに、この構成を行います。  
 
--   È possibile installare un punto di distribuzione come punto di distribuzione pre-installato. Un punto di distribuzione pre-installato consente di usare contenuto che viene messo manualmente sul server del punto di distribuzione e rimuove il requisito di trasferire i file di contenuto sulla rete.  
+-   配布ポイントを、事前設定済み配布ポイントにすることができます。 配布ポイント サーバーに手動で配置したコンテンツを使用できるので、ネットワークを介してコンテンツ ファイルを転送する必要がなくなります。  
 
-Per altre informazioni, vedere [Gestire la larghezza di banda di rete per la gestione dei contenuti](manage-network-bandwidth.md).
+詳細については、「[コンテンツ管理でのネットワーク帯域幅の管理](manage-network-bandwidth.md)」を参照してください。
 
 
-##  <a name="a-nameplanningclienttositesystema-communications-from-clients-to-site-systems-and-services"></a><a name="Planning_Client_to_Site_System"></a> Comunicazioni da client a sistemi e servizi del sito  
-I client avviano le comunicazioni con i ruoli del sistema del sito, Active Directory Domain Services e servizi online. Per abilitare queste comunicazioni, i firewall devono consentire il traffico di rete tra i client e gli endpoint delle comunicazioni. Gli endpoint includono:  
+##  <a name="Planning_Client_to_Site_System"></a> クライアントからサイト システムとサービスへの通信  
+クライアントはサイト システムの役割、Active Directory Domain Services、およびオンライン サービスへの通信を開始します。 これらの通信を有効にするには、ファイアウォールがクライアントと通信のエンドポイント間のネットワーク トラフィックを許可する必要があります。 エンドポイントは次のとおりです。  
 
--   **Punto per siti Web del Catalogo applicazioni**: supporta la comunicazione HTTP e HTTPS
+-   **アプリケーション カタログ Web サイト ポイント**: HTTP 通信と HTTPS 通信をサポートします。
 
--   **Risorse basate sul cloud**: include Microsoft Azure e Microsoft Intune  
+-   **クラウド ベースのリソース**: Microsoft Azure および Microsoft Intune を含みます。  
 
--   **Modulo criteri di Configuration Manager (NDES)**: supporta la comunicazione HTTP e HTTPS
+-   **Configuration Manager ポリシー モジュール (NDES)**: HTTP 通信と HTTPS 通信をサポートします。
 
--   **Punti di distribuzione**: supporta la comunicazione HTTP e HTTPS, e HTTPS è richiesto dai punti di distribuzione basati sul cloud  
+-   **配布ポイント**: HTTP 通信と HTTPS 通信をサポートします。HTTPS はクラウド ベースの配布ポイントでは必須です。  
 
--   **Punto di stato di fallback**: supporta la comunicazione HTTP  
+-   **フォールバック ステータス ポイント**: HTTP 通信をサポートします。  
 
--   **Punto di gestione**: supporta la comunicazione HTTP e HTTPS  
+-   **管理ポイント**: HTTP 通信と HTTPS 通信をサポートします。  
 
 -   **Microsoft Update**  
 
--   **Punti di aggiornamento software**: supporta la comunicazione HTTP e HTTPS  
+-   **ソフトウェアの更新ポイント**: HTTP 通信と HTTPS 通信をサポートします。  
 
--   **Punto di migrazione stato**: supporta la comunicazione HTTP e HTTPS  
+-   **状態移行ポイント**: HTTP 通信と HTTPS 通信をサポートします。  
 
--   **Vari servizi di dominio**  
+-   **さまざまなドメイン サービス**  
 
-Per poter comunicare con un ruolo del sistema del sito, il client usa la posizione del servizio per individuare un ruolo del sistema del sito che supporta il protocollo del client (HTTP o HTTPS). Per impostazione predefinita, i client usano il metodo più sicuro a loro disposizione:  
+クライアントは、サイト システムの役割と通信する前に、サービスの場所を使用して、クライアントのプロトコル (HTTP または HTTPS) をサポートするサイト システムの役割を検索します。 既定では、クライアントは次のように使用可能な最も安全な方法を使用します。  
 
--   Per usare HTTPS, è necessario disporre di un'infrastruttura a chiave pubblica (PKI) e installare i certificati PKI sui client e sui server. Per informazioni sull'uso dei certificati, vedere [PKI certificate requirements for System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md) (Requisiti dei certificati PKI per System Center Configuration Manager).  
+-   HTTPS を使用するには、公開キー基盤 (PKI) を導入し、クライアントとサーバーに PKI 証明書をインストールする必要があります。 証明書の使用方法については、「[System Center Configuration Manager での PKI 証明書の要件](../../../core/plan-design/network/pki-certificate-requirements.md)」を参照してください。  
 
--   Quando si distribuisce un ruolo del sistema del sito che usa Internet Information Services (IIS) e supporta le comunicazioni dai client, è necessario specificare se i client si connettono al sistema del sito tramite HTTP o HTTPS. Se si usa HTTP, è necessario considerare anche le opzioni di firma e crittografia. Per altre informazioni, vedere [Pianificazione di firma e crittografia](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForSigningEncryption) in [Pianificare la sicurezza in System Center Configuration Manager](../../../core/plan-design/security/plan-for-security.md).  
+-   インターネット インフォメーション サービス (IIS) を使用し、クライアントからの通信をサポートするサイト システムの役割を展開する場合は、そのサイト システムにクライアントが接続するときに HTTP と HTTPS のどちらを使用するかを指定する必要があります HTTP を使用する場合は、署名と暗号化のオプションについても検討してください。 詳細については、「[System Center Configuration Manager でのセキュリティの計画](../../../core/plan-design/security/plan-for-security.md)」の「[署名と暗号化の計画](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForSigningEncryption)」をご覧ください。  
 
-Per informazioni sul processo di posizione del servizio usato dai client, vedere  [Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager](../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
+クライアントが使用するサービスの場所については、「[クライアントが System Center Configuration Manager のサイト リソースやサービスを検索する方法を理解する](../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)」を参照してください。  
 
-Per informazioni dettagliate sulle porte e i protocolli usati dai client per la comunicazione con questi endpoint, vedere [Porte usate in System Center Configuration Manager](../../../core/plan-design/hierarchy/ports.md).  
+これらのエンドポイントへの通信時に、クライアントで使用されるポートとプロトコルの詳細については、「[System Center Configuration Manager で使用されるポート](../../../core/plan-design/hierarchy/ports.md)」を参照してください。  
 
-###  <a name="a-namebkmkclientspana-considerations-for-client-communications-from-the-internet-or-an-untrusted-forest"></a><a name="BKMK_clientspan"></a> Considerazioni per le comunicazioni client da Internet o da una foresta non trusted  
-I seguenti ruoli del sistema del sito installati nei siti primari supportano connessioni da client che si trovano in percorsi non attendibili, come Internet o una foresta non trusted. I siti secondari non supportano le connessioni client da percorsi non attendibili:  
+###  <a name="BKMK_clientspan"></a> インターネットや信頼されていないフォレストからのクライアント通信に関する考慮事項  
+プライマリ サイトにインストールされた次のサイト システムの役割では、インターネットや信頼されていないフォレストなどの信頼されていない場所にあるクライアントからの接続がサポートされます  (セカンダリ サイトでは、信頼されていない場所からのクライアント接続をサポートしていません)。  
 
--   Punto per siti Web del Catalogo applicazioni  
+-   アプリケーション カタログ Web サイト ポイント  
 
--   Modulo criteri di Configuration Manager  
+-   Configuration Manager ポリシー モジュール  
 
--   Punto di distribuzione (HTTPS è richiesto dai punti di distribuzione basati sul cloud)  
+-   配布ポイント (クラウドベースの配布ポイントでは HTTPS が必要)  
 
--   Punto proxy di registrazione  
+-   登録プロキシ ポイント  
 
--   Punto di stato di fallback  
+-   フォールバック ステータス ポイント  
 
--   Punto di gestione  
+-   管理ポイント  
 
--   Punto di aggiornamento software  
+-   ソフトウェアの更新ポイント  
 
-**Informazioni sui sistemi del sito con connessione internet:**   
-Non è necessario che esista una relazione di trust tra la foresta del client e quella del server del sistema del sito. Quando la foresta che contiene il sistema del sito con connessione Internet considera attendibile la foresta che contiene gli account utente, tuttavia, questa configurazione supporta criteri basati sull'utente per i dispositivi su Internet se si abilita l'impostazione client **Abilitare le richieste dei criteri utente dai client Internet** di **Criteri client**.  
+**インターネットに接続するサイト システムについて:**   
+クライアントのフォレストとサイト システム サーバーのフォレストとの間に信頼関係を構築する必要はありません。 ただし、インターネットに接続するサイト システムを含むフォレストがユーザー アカウントを含むフォレストを信頼している状態で、**[クライアント ポリシー]** のクライアント設定 **[インターネット クライアントからのユーザー ポリシー要求を有効にする]** を有効にした場合は、この構成でインターネット上のデバイスのユーザーベース ポリシーがサポートされます。  
 
-Ad esempio, le configurazioni seguenti illustrano quando la gestione client basata su Internet supporta criteri utente per i dispositivi su Internet:  
+たとえば、次のような場合に、インターネット ベースのクライアント管理がインターネット上のデバイス用のユーザー ポリシーを使用します。  
 
--   Il punto di gestione basato su Internet si trova nella rete perimetrale in cui risiede un controller di dominio di sola lettura per autenticare l'utente e un firewall consente pacchetti di Active Directory.  
+-   インターネット ベースの管理ポイントが、ユーザーを認証する読み取り専用ドメイン コントローラーが存在する境界ネットワークにあり、介在するファイアウォールで Active Directory パケットを許可する。  
 
--   L'account utente si trova nella Foresta A (intranet) e il punto di gestione basato su Internet si trova nella Foresta B (la rete perimetrale). La Foresta B considera attendibile la Foresta A e un firewall consente i pacchetti di autenticazione.  
+-   ユーザー アカウントがフォレスト A (イントラネット) にあり、インターネット ベースの管理ポイントがフォレスト B (境界ネットワーク) にある。 フォレスト B がフォレスト A を信頼しており、介在するファイアウォールが認証パケットを許可する。  
 
--   L'account utente e il punto di gestione basato su Internet si trovano nella Foresta A (intranet). Il punto di gestione viene pubblicato su Internet usando un server Web proxy, ad esempio Forefront Threat Management Gateway.  
+-   ユーザー アカウントとインターネット ベースの管理ポイントがフォレスト A (イントラネット) にある。 管理ポイントは、Web プロキシ サーバー (Forefront Threat Management Gateway など) を使用してインターネットに発行される。  
 
 > [!NOTE]  
->  Se l'autenticazione Kerberos ha esito negativo, sarà automaticamente tentata l'autenticazione NTLM.  
+>  Kerberos 認証に失敗すると、自動的に NTLM 認証が試みられます。  
 
-Come mostrato nell'esempio precedente, è possibile posizionare i sistemi del sito basati su Internet nella intranet quando vengono pubblicati su Internet usando un server Web proxy, come ISA Server e Forefront Threat Management Gateway. Questi sistemi del sito possono essere configurati per connessioni client solo da Internet o per connessioni client da Internet e Intranet. Quando si usa un server Web proxy, è possibile configurarlo per il bridging Secure Sockets Layer (SSL) a SSL (più sicuro) o tunneling SSL, come segue:  
+上の例に示すように、インターネット ベースのサイト システムを Web プロキシ サーバー (ISA Server や Forefront Threat Management Gateway など) を使用してインターネットに発行する場合は、それらのサイト システムをイントラネットに配置することができます。 これらのサイト システムは、インターネットからのクライアント接続のみ、またはインターネットとイントラネットの両方を受け付けるように構成できます。 Web プロキシ サーバーを使用する場合は、次のように、SSL (Secure Sockets Layer) から SSL へのブリッジングまたは SSL トンネリングを構成できます。ブリッジングのほうが安全です。  
 
--   **Bridging SSL a SSL:**   
-    La configurazione consigliata quando si usano server Web proxy per la gestione client basata su Internet è il bridging SSL a SSL, che usa la terminazione SSL con l'autenticazione. I computer client devono essere autenticati usando l'autenticazione computer e i client legacy di dispositivi mobili vengono autenticati usando l'autenticazione utente. I dispositivi mobili che vengono registrati da Configuration Manager non supportano il bridging SSL.  
+-   **SSL から SSL へのブリッジング:**   
+    インターネットベースのクライアント管理でプロキシ Web サーバーを使用する場合は、認証と SSL 終了を使用する SSL から SSL へのブリッジングを構成することをお勧めします。 クライアント コンピューターは、コンピューター認証によって、モバイル デバイス レガシ クライアントは、ユーザー認証によって認証されなければなりません。 Configuration Manager によって登録されるモバイル デバイスは、SSL ブリッジングをサポートしていません。  
 
-     Il vantaggio della terminazione SSL sul server Web proxy è che i pacchetti provenienti da Internet sono soggetti alla verifica prima di essere inoltrati alla rete interna. Il server Web proxy autentica la connessione dal client, la termina, quindi apre una nuova connessione autenticata ai sistemi del sito basati su Internet. Quando i client di Configuration Manager usano un server Web proxy, l'identità client (GUID client) viene contenuta in modo protetto all'interno del payload dei pacchetti in modo che il punto di gestione non consideri il server Web proxy come il client. Il bridging HTTP a HTTPS o HTTPS a HTTP non è supportato in Configuration Manager.  
+     プロキシ Web サーバーで SSL 終了を使用する利点は、インターネットからのパケットが内部ネットワークに転送される前に検査されることです。 プロキシ Web サーバーはクライアントからの接続を認証してから終了します。次に、インターネット ベースのサイト システムに認証済みの新しい接続を開きます。 Configuration Manager クライアントでプロキシ Web サーバーが使用される場合、クライアント ID (クライアント GUID) はパケット ペイロード内に安全に格納されるので、管理ポイントではプロキシ Web サーバーはクライアントとは見なされません。 HTTP から HTTPS、または HTTPS から HTTP へのブリッジングは Configuration Manager ではサポートされていません。  
 
--   **Tunneling**:   
-    Se il server Web proxy non può supportare i requisiti per il bridging SSL o se si vuole configurare il supporto Internet per i dispositivi mobili registrati da Configuration Manager, è supportato il tunneling SSL. Si tratta di un'opzione meno sicura perché i pacchetti SSL provenienti da Internet vengono inoltrati ai sistemi del sito senza terminazione SSL e, pertanto, non possono essere verificati per l'eventuale presenza di contenuto dannoso. Quando si usa il tunneling SSL, non sono previsti requisiti di certificato per il server Web proxy.  
+-   **トンネリング**:   
+    プロキシ Web サーバーが SSL ブリッジングの要件をサポートできない場合や、Configuration Manager によって登録されたモバイル デバイスに対してインターネット サポートを構成する場合は、SSL トンネリングもサポートされます。 ただし、この方法は、安全性が低くなります。これは、インターネットからの SSL パケットが SSL 終了なしにサイト システムに転送されるので、悪意のあるコンテンツがないかどうかを検査できないためです。 SSL トンネリングを使用する場合は、プロキシ Web サーバーに証明書は必要ありません。  
 
-##  <a name="a-nameplancomx-foresta-communications-across-active-directory-forests"></a><a name="Plan_Com_X-Forest"></a> Comunicazioni tra foreste Active Directory  
-System Center Configuration Manager supporta siti e gerarchie che si estendono su foreste Active Directory.  
+##  <a name="Plan_Com_X-Forest"></a> 複数の Active Directory フォレスト間での通信  
+System Center Configuration Manager では、複数の Active Directory フォレストにまたがるサイトや階層がサポートされます。  
 
-Configuration Manager supporta anche computer del dominio che non si trovano nella stessa foresta Active Directory del server del sito e computer che appartengono a gruppi di lavoro:  
+Configuration Manager では、サイト サーバーと同じ Active Directory フォレストにはないドメイン コンピューターや、ワークグループのコンピューターもサポートされます。  
 
--   **Per supportare i computer di dominio in una foresta considerata non trusted dalla foresta del server del sito**, è possibile:  
+-   **ご使用のサイト サーバーのフォレストによって信頼されていないフォレスト内のドメイン コンピューターをサポートするために**、以下の操作を実行できます。  
 
-    -   Installare i ruoli del sistema del sito in tale foresta non trusted, con la possibilità di pubblicare le informazioni sul sito in tale foresta di Active Directory  
+    -   サイト情報をその Active Directory フォレストに発行するオプションを使用して、信頼されていないフォレストにサイト システムの役割をインストールします。  
 
-    -   Gestire questi computer come computer di un gruppo di lavoro.  
+    -   これらのコンピューターを、ワークグループ コンピューターであるかのように管理します。  
 
-  Quando si installano i server del sistema del sito in una foresta Active Directory non trusted, la comunicazione tra client e server eseguita dai client della foresta viene mantenuta all'interno di tale foresta e Configuration Manager può autenticare il computer con Kerberos. Quando vengono pubblicate le informazioni del sito sulla foresta del client, i client possono recuperare le informazioni del sito, come ad esempio un elenco di punti di gestione disponibili, dalla relativa foresta Active Directory invece di scaricarle dal punto di gestione assegnato.  
+  信頼されていない Active Directory フォレストにサイト システム サーバーをインストールすると、そのフォレストのクライアントからのクライアントとサーバー間の通信はフォレスト内で保たれ、Configuration Manager が Kerberos 方式でコンピューターを認証できるようになります。 クライアントのフォレストにサイト情報を発行した場合は、クライアントは、利用可能な管理ポイントのリストなどのサイト情報を、割り当て済み管理ポイントからダウンロードする代わりに、Active Directory フォレストから取得できるという利点があります。  
 
   > [!NOTE]  
-  >  Se si desidera gestire i dispositivi su Internet, è possibile installare ruoli del sistema del sito basati su Internet nella rete perimetrale quando i server del sistema del sito si trovano nella foresta Active Directory. In questo scenario non è richiesto un trust bidirezionale tra la rete perimetrale e la foresta del server del sito.  
+  >  インターネット上のデバイスを管理したい場合は、サイト システム サーバーが Active Directory フォレストにあるときは、インターネット ベースのサイト システムの役割を境界ネットワークにインストールできます。 この場合は、境界ネットワークとサイト サーバーのフォレスト間に双方向の信頼関係は必要ありません。  
 
--   **Per supportare i computer in un gruppo di lavoro**, è necessario:  
+-   **ワークグループ内のコンピューターをサポートするには**、以下の操作を実行する必要があります。  
 
-    -   Approvare manualmente i computer del gruppo di lavoro quando questi usano connessioni client HTTP ai ruoli del sistema del sito. Ciò avviene perché Configuration Manager non può autenticare questi computer con Kerberos.  
+    -   サイト システムの役割への HTTP クライアント接続を使用するときに、ワークグループのコンピューターを手動で承認します。 これは、Configuration Manager が Kerberos を使用してこれらのコンピューターを認証できないためです。  
 
-    -   Configurare i client dei gruppi di lavoro per l'uso dell'Account di accesso alla rete in modo che questi computer possano recuperare il contenuto dai punti di distribuzione.  
+    -   これらのコンピューターが配布ポイントからコンテンツを取得できるように、ネットワーク アクセス アカウントを使用するようにワークグループ クライアントを構成します。  
 
-    -   Fornire ai client del gruppo di lavoro un meccanismo alternativo per trovare i punti di gestione. È possibile usare la pubblicazione DNS o WINS oppure assegnare direttamente un punto di gestione. Questo perché tali client non possono recuperare le informazioni del sito da Servizi di dominio Active Directory.  
+    -   ワークグループ クライアントが管理ポイントを検索するための代替手段を提供します。 DNS 発行または WINS を使用することも、管理ポイントを直接割り当てることもできます。 これらのクライアントが Active Directory ドメイン サービスから情報を取得できないためです。  
 
-    Risorse correlate in questa raccolta contenuto:  
+    このコンテンツ ライブラリ内の関連リソース:  
 
-    -   [Gestire i record in conflitto per i client di Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_ConflictingRecords)  
+    -   [Configuration Manager クライアントの競合しているレコードを管理する](../../../core/clients/manage/manage-clients.md#BKMK_ConflictingRecords)  
 
-    -   [Account di accesso alla rete](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#accounts-used-for-content-management)  
+    -   [ネットワーク アクセス アカウント](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#accounts-used-for-content-management)  
 
-    -   [Come installare i client di Configuration Manager sui computer del gruppo di lavoro](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientWorkgroup)  
+    -   [ワークグループ コンピューターへの Configuration Manager クライアントのインストール方法](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientWorkgroup)  
 
-###  <a name="a-namebkmkspana-scenarios-to-support-a-site-or-hierarchy-that-spans-multiple-domains-and-forests"></a><a name="bkmk_span"></a> Scenari di supporto di un sito o una gerarchia che si estende su più domini e foreste  
+###  <a name="bkmk_span"></a> 複数のドメインとフォレストにまたがるサイトまたは階層をサポートするシナリオ  
 
-#### <a name="communication-between-sites-in-a-hierarchy-that-spans-forests"></a>Comunicazione tra siti in una gerarchia che si estende su più foreste  
-Questo scenario richiede un trust tra foreste bidirezionale che supporti l'autenticazione Kerberos.  Se non è presente un trust tra foreste bidirezionale che supporti l'autenticazione Kerberos, Configuration Manager non supporterà il sito figlio nella foresta remota.  
+#### <a name="communication-between-sites-in-a-hierarchy-that-spans-forests"></a>複数のフォレストにまたがっている階層のサイト間の通信  
+このシナリオでは、Kerberos 認証をサポートするように、フォレスト間に双方向の信頼関係が成立している必要があります。  Kerberos 認証をサポートする双方向のフォレスト信頼関係がない場合、Configuration Manager ではリモート フォレスト内の子サイトがサポートされません。  
 
- **Configuration Manager supporta l'installazione di un sito figlio in una foresta remota che ha il trust bidirezionale richiesto con la foresta del sito padre**  
+ **Configuration Manager では、親サイトのフォレストとの必要な双方向の信頼関係があるリモート フォレストへの子サイトのインストールがサポートされます**  
 
--   Ad esempio, è possibile inserire un sito secondario in una foresta diversa da quella del sito primario padre a condizione che sia presente il trust necessario.  
+-   たとえば、必要な信頼関係が成立している限り、プライマリ親サイトとは異なるフォレストにセカンダリ サイトを配置できます。  
 
 > [!NOTE]  
->  Un sito figlio può essere un sito primario (dove il sito di amministrazione centrale è il sito padre) o un sito secondario.  
+>  子サイトは、プライマリ サイト (中央管理サイトが親サイトになります) とセカンダリ サイトのどちらでもかまいません。  
 
-La comunicazione tra siti in Configuration Manager usa la replica di database e i trasferimenti basati su file. Quando si installa un sito, è necessario specificare un account da usare per l'installazione del sito nel server designato. Inoltre, questo account stabilisce e mantiene la comunicazione tra siti.  
+Configuration Manager のサイト間通信には、データベースのレプリケーションとファイルベースの転送を使用します。 サイトをインストールするときに、目的のサーバーにサイトをインストールするアカウントを指定する必要があります。 このアカウントは、サイト間の通信を確立して管理するときにも使います。  
 
-Dopo che il sito è stato installato correttamente e i trasferimenti basati su file e la replica di database sono stati avviati, non sarà necessario eseguire ulteriori configurazioni per la comunicazione con il sito.  
+サイトのインストールが完了し、ファイルベースの転送とデータベースのレプリケーションが開始されたら、サイト間の通信で他に必要な構成はありません。  
 
-**In presenza di un trust tra foreste bidirezionale, Configuration Manager non richiede altri passaggi di configurazione.**  
+**フォレストに双方向の信頼関係がある場合は、Configuration Manager で他に何も構成する必要はありません。**  
 
-Per impostazione predefinita, quando si installa un nuovo sito come figlio di un altro sito, Configuration Manager configura gli elementi seguenti:  
+既定では、新しいサイトを別のサイトの子としてインストールすると、Configuration Manager によって、次の構成が行われます。  
 
--   Una route di replica basata su file tra siti per ogni sito che usa l'account computer del server del sito. Configuration Manager aggiunge l'account computer di ciascun computer al gruppo **SMS_SiteToSiteConnection_&lt;sitecode\>** nel computer di destinazione.  
+-   サイト サーバーのコンピューター アカウントを使用する各サイトのファイルベースのサイト間レプリケーション ルート。 Configuration Manager は、各コンピューターのコンピューター アカウントを、対象コンピューターの **SMS_SiteToSiteConnection_&lt;サイト コード\>** グループに追加します。  
 
--   Replica di database tra il server SQL in ciascun sito.  
+-   各サイトの SQL Server 間のデータベースのレプリケーション。  
 
-È necessario impostare anche le seguenti configurazioni:  
+次の設定も行う必要があります。  
 
--   I firewall e i dispositivi di rete interessati devono consentire i pacchetti di rete richiesti da Configuration Manager.  
+-   介在するファイアウォールとネットワーク デバイスが、Configuration Manager で必要なネットワーク パケットを許可するように設定します。  
 
--   La risoluzione dei nomi deve funzionare tra le foreste.  
+-   フォレスト間で名前が正しく解決されるようにします。  
 
--   Per installare un sito o un ruolo del sistema del sito, è necessario specificare un account con autorizzazioni di amministratore locale sul computer specificato.  
+-   サイトまたはサイト システムの役割をインストールするには、目的のコンピューターのローカル管理者権限のあるアカウントを指定する必要があります。  
 
-#### <a name="communication-in-a-site-that-spans-forests"></a>Comunicazione in un sito che si estende su più foreste  
-Questo scenario non richiede un trust tra foreste bidirezionale.  
+#### <a name="communication-in-a-site-that-spans-forests"></a>複数のフォレストにまたがっているサイト内での通信  
+このシナリオでは、フォレスト間の双方向の信頼関係は必要ありません。  
 
-**I siti primari supportano l'installazione dei ruoli del sistema del sito su computer in foreste remote**.  
+**プライマリ サイトでは、リモート フォレスト内のコンピューターへのサイト システムの役割のインストールがサポートされます**。  
 
--   Il punto per servizi Web del Catalogo applicazioni è l'unica eccezione.  È supportato solo nella stessa foresta del server del sito.  
+-   アプリケーション カタログ Web サービス ポイントは、唯一の例外です。  この場合、サイト サーバーと同じフォレストでのみサポートされます。  
 
--   Quando un ruolo del sistema del sito accetta connessioni da Internet, la procedura ottimale di protezione prevede l'installazione dei ruoli del sistema del sito in una posizione in cui i limiti della foresta forniscono la protezione per il server del sito, ad esempio in una rete perimetrale.  
+-   サイト システムの役割がインターネットからの接続を受け入れる場合は、セキュリティのベスト プラクティスとして、このサイト システムの役割を、フォレストの境界によってサイト サーバーが保護される場所 (境界ネットワークなど) にインストールすることをお勧めします。  
 
-**Per installare un ruolo del sistema del sito in un computer in una foresta non trusted:**  
+**信頼されていないフォレスト内のコンピューターにサイト システムの役割をインストールするには:**  
 
--   È necessario specificare un **account di installazione del sistema del sito** che consente di installare il ruolo del sistema del sito. L'account deve disporre delle credenziali di amministratore locale per la connessione. Installare quindi i ruoli del sistema del sito nel computer specificato.  
+-   サイト システムの役割のインストールに使用される **サイト システムのインストール アカウント**を指定する必要があります  (このアカウントには、接続するためのローカルの管理資格情報が必要です)。指定したコンピューターにサイト システムの役割をインストールします。  
 
--   È necessario selezionare l'opzione del sistema del sito **Richiedi al server del sito di avviare le connessioni al sistema del sito**. In questo modo il server del sito deve stabilire connessioni al server del sistema del sito per il trasferimento di dati. Questo consente di evitare che il computer nella posizione non attendibile avvii un contatto con il server del sito all'interno della rete attendibile. Queste connessioni usano l' **account di installazione del sistema del sito**.  
+-   サイト システムのオプションの [ **サイト サーバーがこのサイト システムへの接続を開始する必要がある**] を選択する必要があります。 この場合、サイト サーバーがサイト システム サーバーへの接続を確立してデータを転送する必要があります。 これで、信頼されていない場所にあるコンピューターが、信頼されたネットワーク内にあるサイト サーバーへの接続を開始するのを防げます。 これらの接続では **サイト システムのインストール アカウント**を使用します。  
 
-**Per usare un ruolo del sistema del sito installato in una foresta non trusted,** i firewall devono consentire il traffico di rete, anche quando il server del sito avvia il trasferimento dei dati.  
+**信頼されていないフォレストにインストールされたサイト システムの役割を使用するには** 、サイト サーバーがデータの転送を開始する場合でも、ファイアウォールがネットワーク トラフィックを許可する必要があります。  
 
-Inoltre, i seguenti ruoli del sistema del sito richiedono l'accesso diretto al database del sito. È quindi necessario che i firewall consentano il traffico applicabile dalla foresta non trusted a SQL Server dei siti:  
+さらに、次のサイト システムの役割ではサイト データベースに直接アクセスする必要があります。 そのため、ファイアウォールは、信頼されていないフォレストからサイトの SQL Server への適用可能なトラフィックを許可する必要があります。  
 
--   Punto di sincronizzazione di Asset Intelligence  
+-   資産インテリジェンス同期ポイント  
 
--   Punto di Endpoint Protection  
+-   Endpoint Protection ポイント  
 
--   Punto di registrazione  
+-   登録ポイント  
 
--   Punto di gestione  
+-   管理ポイント  
 
--   Punto di Reporting Services  
+-   レポート サービス ポイント  
 
--   Punto di migrazione stato  
+-   状態移行ポイント  
 
-Per altre informazioni, vedere [Porte usate in System Center Configuration Manager](../../../core/plan-design/hierarchy/ports.md).  
+詳細については、「[System Center Configuration Manager で使用されるポート](../../../core/plan-design/hierarchy/ports.md)」を参照してください。  
 
-**Potrebbe essere necessario configurare l'accesso del ruolo del sistema del sito al database del sito:**  
+**このサイト データベースにアクセスするようにサイト システムの役割を構成しなければならないことがあります。**  
 
-Il ruolo del sistema del sito del punto di registrazione e il ruolo del sistema del sito del punto di gestione si connettono entrambi al database del sito.  
+管理ポイントと登録ポイントの両方のサイト システムの役割が、サイト データベースに接続します。  
 
--   Per impostazione predefinita, quando questi ruoli vengono installati, Configuration Manager configura l'account computer del nuovo server del sistema del sito come account di connessione per il ruolo del sistema del sito e aggiunge l'account al ruolo del database SQL Server appropriato.  
+-   既定では、これらのサイト システムの役割をインストールするときに、Configuration Manager が新しいサイト システム サーバーのコンピューター アカウントをサイト システムの役割の接続アカウントとして構成し、適切な SQL Server データベースの役割にアカウントを追加します。  
 
--   Quando si installano questi ruoli del sistema del sito in un dominio non attendibile, è necessario configurare l'account di connessione del ruolo del sistema del sito per abilitarne la ricezione delle informazioni dal database.  
+-   これらのサイト システムの役割を信頼されていないドメインにインストールする場合は、サイト システムの役割の接続アカウントを構成し、サイト システムの役割がデータベースから情報を取得できるようにする必要があります。  
 
-Se si configura un account utente di dominio come account di connessione per questi ruoli del sistema del sito, assicurarsi che l'account utente di dominio abbia accesso appropriato al database di SQL Server in quel sito:  
+これらのサイト システムの役割の接続アカウントにドメイン ユーザー アカウントを構成する場合は、そのドメイン ユーザー アカウントに、対象サイトの SQL Server データベースへの適切なアクセス権があることをご確認ください。  
 
--   Punto di gestione: **account di connessione al database del punto di gestione**  
+-   管理ポイント: **管理ポイント データベースの接続アカウント**  
 
--   Punto di registrazione: **account di connessione del punto di registrazione**  
+-   登録ポイント: **登録ポイントの接続アカウント**  
 
-Considerare le seguenti informazioni aggiuntive per la pianificazione di ruoli del sistema del sito in altre foreste:  
+サイト サーバーとは別のフォレストにサイト システムの役割を配置する場合は、次のことも検討してください。  
 
--   Se si esegue Windows Firewall, configurare i profili firewall applicabili per consentire il passaggio delle comunicazioni tra il server di database del sito e i computer installati con i ruoli del sistema del sito remoto. Per informazioni sui profili firewall, vedere [Informazioni sui profili del firewall](http://go.microsoft.com/fwlink/p/?LinkId=233629).  
+-   Windows ファイアウォールを実行する場合は、ファイアウォールの適切なプロファイルで、リモートのサイト システムの役割をインストールするコンピューターとサイト データベース サーバー間の通信を許可するように構成します。 ファイアウォールのプロファイルの詳細については、「[ファイアウォールのプロファイルについて](http://go.microsoft.com/fwlink/p/?LinkId=233629)」をご覧ください。  
 
--   Quando il punto di gestione basato su Internet considera attendibile la foresta che contiene gli account utente, vengono supportati i criteri utente. In caso contrario, sono supportati solo i criteri computer.  
+-   インターネット ベースの管理ポイントが、ユーザー アカウントを含むフォレストを信頼している場合は、ユーザー ポリシーを使用することができます。 信頼していない場合は、コンピューター ポリシーだけを使用できます。  
 
-#### <a name="communication-between-clients-and-site-system-roles-when-the-clients-are-not-in-the-same-active-directory-forest-as-their-site-server"></a>Comunicazione tra client e ruoli del sistema del sito quando i client non si trovano nella stessa foresta Active Directory del relativo server del sito  
-Configuration Manager supporta i seguenti scenari per i client che non si trovano nella stessa foresta del relativo server del sito:  
+#### <a name="communication-between-clients-and-site-system-roles-when-the-clients-are-not-in-the-same-active-directory-forest-as-their-site-server"></a>クライアントがそのサイト サーバーと同じ Active Directory フォレストにない場合のクライアントとサイト システムの役割間の通信  
+Configuration Manager では、サイト サーバーと同じフォレストにないクライアントに対する次のシナリオがサポートされます。  
 
--   È presente un trust tra foreste bidirezionale tra la foresta del client e la foresta del server del sito.  
+-   クライアントのフォレストとサイト サーバーのフォレストとの間に双方向の信頼関係がある。  
 
--   Il server del ruolo del sistema del sito si trova nella stessa foresta del client.  
+-   サイト システムの役割サーバーがクライアントと同じフォレストにある。  
 
--   Il client si trova in un computer di dominio che non dispone di un trust tra foreste bidirezionale con il server del sito e i ruoli del sistema del sito non sono installati nella foresta del client.  
+-   サイト サーバーのフォレストと双方向の信頼関係がないドメイン コンピューターにクライアントがあり、サイト システムの役割はクライアントのフォレストにインストールされていない。  
 
--   Il client si trova in un computer del gruppo di lavoro.  
+-   クライアントがワークグループのコンピューターにある。  
 
-I client in un computer aggiunto a un dominio possono usare Active Directory Domain Services per la posizione del servizio quando il relativo sito è pubblicato nella foresta Active Directory.  
+ドメインに参加しているコンピューターのクライアントは、そのサイト情報が Active Directory フォレストに発行されていると、Active Directory Domain Services をサービスの場所として使用することができます。  
 
-Per pubblicare le informazioni di un sito in un'altra foresta Active Directory, è necessario:  
+サイト情報を別の Active Directory フォレストに発行できるようにするには、次の操作を実行する必要があります。  
 
--   Specificare la foresta, quindi abilitare la pubblicazione in tale foresta nel nodo **Foreste Active Directory** dell'area di lavoro **Amministrazione** .  
+-   フォレストを指定してから、 **[管理]** ワークスペースの **[Active Directory フォレスト]** ノードでそのフォレストへの発行を有効にする必要があります。  
 
--   Configurare ogni sito per la pubblicazione dei relativi dati in Servizi di dominio Active Directory. Questa configurazione consente ai client di tale foresta di recuperare le informazioni del sito e trovare punti di gestione. Per i client che non possono usare Servizi di dominio Active Directory per la posizione del servizio, è possibile usare DNS, WINS o il punto di gestione client assegnato.  
+-   各サイトを、Active Directory ドメイン サービスにデータを発行するように構成します。 このように構成すると、発行先フォレストにあるクライアントが、サイト情報を取得して管理ポイントを見つけられるようになります。 Active Directory Domain Services をサービスの場所として使用できないクライアントでは、DNS、WINS、またはクライアントの割り当て済み管理ポイントを使用できます。  
 
-###  <a name="a-namebkmkxchangea-put-the-exchange-server-connector-in-a-remote-forest"></a><a name="bkmk_xchange"></a> Inserire il connettore Exchange Server in una foresta remota  
-Per supportare questo scenario, assicurarsi che la risoluzione dei nomi funzioni tra le foreste (ad esempio, configurare inoltri DNS) e quando si configura il connettore Exchange Server specificare il nome FQDN Intranet di Exchange Server. Per altre informazioni, vedere [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
-
+###  <a name="bkmk_xchange"></a> リモート フォレストへの Exchange Server コネクタの配置  
+このシナリオに対応するには、フォレスト間で正しく名前が解決されるようにして (たとえば、DNS 転送を構成します)、Exchange Server コネクタを構成するときに Exchange Server のイントラネット FQDN を指定します。 詳細については、「[System Center Configuration Manager と Exchange によるモバイル デバイスの管理](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)」を参照してください。  

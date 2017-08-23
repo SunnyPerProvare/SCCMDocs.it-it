@@ -1,45 +1,41 @@
 ---
-title: File generale di importazione delle licenze di Asset Intelligence di esempio | Microsoft Docs
-description: Usare un file generale delle licenze di Asset Intelligence di esempio in System Center Configuration Manager.
+title: "資産インテリジェンスの一般的ライセンスのインポート ファイルの例 | Microsoft Docs"
+description: "資産インテリジェンスの一般的なライセンス ファイルのサンプルを使用すると、System Center Configuration Manager でソフトウェア ライセンスをインポートするのに役立ちます。"
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e6258333-a783-440b-b1af-f8023b782fbc
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
-ms.openlocfilehash: 6ee39d311108253ece1c9d60c25ac06017867c1f
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 400afbe8c09b80985187a34b0dd0f3f8581c7d4e
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="example-asset-intelligence-general-license-import-file-in-system-center-configuration-manager"></a>File generale di importazione delle licenze di Asset Intelligence di esempio in System Center Configuration Manager
+# <a name="example-asset-intelligence-general-license-import-file-in-system-center-configuration-manager"></a>System Center Configuration Manager における資産インテリジェンスの一般的なライセンス インポート ファイルの例
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Le informazioni di esempio di questo argomento possono essere usate per creare un file di licenze software generale di esempio per importare le licenze software nel catalogo di Asset Intelligence tramite l'Importazione guidata licenze software. È possibile copiare e incollare la tabella seguente in un nuovo foglio di calcolo di Microsoft Excel e salvarlo con estensione di file CSV per usarlo come file generale di importazione delle licenze software di esempio a scopo di test. Quando si crea il file di importazione delle licenze, tutti i campi di intestazione sono necessari, mentre nel foglio di calcolo sono necessari solo i valori dei dati Name, Publisher, Version ed EffectiveQuantity. Per informazioni sull'importazione delle licenze nel catalogo di Asset Intelligence, vedere [Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md) (Configurazione di Asset Intelligence in System Center Configuration Manager).  
+このトピックでは、ソフトウェア ライセンスのインポート ウィザードを使用して、資産インテリジェンス カタログ内にソフトウェア ライセンスをインポートするときに使用できる、一般的なソフトウェア ライセンス ファイルのサンプルを作成する例を示します。 次の表をコピーし、Microsoft Excel の新規スプレッドシートに貼り付けて .csv ファイル拡張子を付けて保存すると、一般的なソフトウェア ライセンス インポート ファイルの例として、テスト目的で使用できます。 ライセンス インポート ファイルを作成するときは、すべてのヘッダー フィールドが必要ですが、スプレッドシートでは、名前、発行元、バージョン、および有効な数量のデータ値のみが必要です。 ソフトウェア ライセンスを資産インテリジェンス カタログにインポートする方法の詳細については、「[System Center Configuration Manager での資産インテリジェンスの構成](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md)」をご覧ください。  
 
-|Nome|Publisher|Version|Language|EffectiveQuantity|PONumber|ResellerName|DateOfPurchase|SupportPurchased|SupportExpirationDate|Comments|  
+|名前|発行者|バージョン|言語|有効な数量|発注番号|販売店名|購入日|サポートの購入|サポートの有効期限|コメント|  
 |----------|---------------|-------------|--------------|-----------------------|--------------|------------------|--------------------|----------------------|---------------------------|--------------|  
-|Titolo software 1|Autore del software|1.01|Inglese|1|Numero acquisto|Nome rivenditore|10/10/2010|0|10/10/2012|Commento|  
-|Titolo software 2|Autore del software|1.02|Inglese|1|Numero acquisto|Nome rivenditore|10/10/2010|0|10/10/2012|Commento|  
-|Titolo software 3|Autore del software|1.03|Inglese|1|Numero acquisto|Nome rivenditore|10/10/2010|0|10/10/2012|Commento|  
-|Titolo software 4|Autore del software|1.04|Inglese|1|Numero acquisto|Nome rivenditore|10/10/2010|0|10/10/2012|Commento|  
-|Titolo software 5|Autore del software|1.05|Inglese|1|Numero acquisto|Nome rivenditore|10/10/2010|0|10/10/2012|Commento|  
-|Titolo software 6|Autore del software|1.06|Inglese|1|Numero acquisto|Nome rivenditore|10/10/2010|0|10/10/2012|Commento|  
-|Titolo software 7|Autore del software|1.07|Inglese|1|Numero acquisto|Nome rivenditore|10/10/2010|0|10/10/2012|Commento|  
-|Titolo software 8|Autore del software|1.08|Inglese|1|Numero acquisto|Nome rivenditore|10/10/2010|0|10/10/2012|Commento|  
-|Titolo software 9|Autore del software|1.09|Inglese|1|Numero acquisto|Nome rivenditore|10/10/2010|0|10/10/2012|Commento|  
-|Titolo software 10|Autore del software|1.10|Inglese|1|Numero acquisto|Nome rivenditore|10/10/2010|0|10/10/2012|Commento|  
-
+|ソフトウェア タイトル 1|ソフトウェア発行元|1.01|英語|1|購入数|販売店名|2010/10/10|0|2012/10/10|コメント|  
+|ソフトウェア タイトル 2|ソフトウェア発行元|1.02|英語|1|購入数|販売店名|2010/10/10|0|2012/10/10|コメント|  
+|ソフトウェア タイトル 3|ソフトウェア発行元|1.03|英語|1|購入数|販売店名|2010/10/10|0|2012/10/10|コメント|  
+|ソフトウェア タイトル 4|ソフトウェア発行元|1.04|英語|1|購入数|販売店名|2010/10/10|0|2012/10/10|コメント|  
+|ソフトウェア タイトル 5|ソフトウェア発行元|1.05|英語|1|購入数|販売店名|2010/10/10|0|2012/10/10|コメント|  
+|ソフトウェア タイトル 6|ソフトウェア発行元|1.06|英語|1|購入数|販売店名|2010/10/10|0|2012/10/10|コメント|  
+|ソフトウェア タイトル 7|ソフトウェア発行元|1.07|英語|1|購入数|販売店名|2010/10/10|0|2012/10/10|コメント|  
+|ソフトウェア タイトル 8|ソフトウェア発行元|1.08|英語|1|購入数|販売店名|2010/10/10|0|2012/10/10|コメント|  
+|ソフトウェア タイトル 9|ソフトウェア発行元|1.09|英語|1|購入数|販売店名|2010/10/10|0|2012/10/10|コメント|  
+|ソフトウェア タイトル 10|ソフトウェア発行元|1.10|英語|1|購入数|販売店名|2010/10/10|0|2012/10/10|コメント|  

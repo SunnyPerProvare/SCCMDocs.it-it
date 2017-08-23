@@ -1,108 +1,103 @@
 ---
-title: Definizioni malware di Endpoint Protection da WSUS | Microsoft Docs
+title: "WSUS からの Endpoint Protection のマルウェア定義 | Microsoft Docs"
 definition: Learn how to configure Windows Server Updates Services to auto-approve definition updates.
 ms.custom: na
 ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: a34d9401-83e4-471d-8e23-b8042fc11c90
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
-ms.openlocfilehash: 3142db9e25f678a0093f305ef11a17bde1990a88
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 0e606b25065fa25c782d1b5f3fbf164e60733353
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="enable-endpoint-protection-malware-definitions-to-download-from-windows-server-update-services-wsus-for-configuration-manager"></a>Configuration Manager で Endpoint Protection のマルウェア定義を Windows Server Update Services (WSUS) からダウンロードできるようにする
 
-# <a name="enable-endpoint-protection-malware-definitions-to-download-from-windows-server-update-services-wsus-for-configuration-manager"></a>Abilitare le definizioni malware di Endpoint Protection da scaricare da Windows Server Update Services (WSUS) per Configuration Manager
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+ マルウェア対策の定義を最新に保つために WSUS を使用する場合は、定義ファイルの更新を自動的に承認するように構成できます。 定義ファイルを最新に保つ方法として Configuration Manager ソフトウェア更新プログラムの使用をお勧めしますが、ユーザーが手動で定義ファイルの更新を開始できるようにする方法として、WSUS を構成することもできます。 次の手順を使用して、WSUS を定義ファイルの更新ソースとして構成します。
 
- Se si usa WSUS per mantenere aggiornate le definizioni antimalware, è possibile configurarlo per l'approvazione automatica degli aggiornamenti delle definizioni. Anche se l'uso degli aggiornamenti software di Configuration Manager è il metodo consigliato per mantenere aggiornate le definizioni, è anche possibile configurare WSUS come metodo per consentire agli utenti di avviare manualmente l'aggiornamento delle definizioni. Usare le procedure seguenti per configurare WSUS come origine degli aggiornamenti delle definizioni.
+## <a name="to-synchronize-endpoint-protection-definition-updates-in-configuration-manager-software-updates"></a>Configuration Manager ソフトウェア更新プログラムで Endpoint Protection の定義ファイルの更新を同期するには
 
-## <a name="to-synchronize-endpoint-protection-definition-updates-in-configuration-manager-software-updates"></a>Per sincronizzare gli aggiornamenti delle definizioni di Endpoint Protection in Configuration Manager
+1.  Configuration Manager コンソールで、[ **管理**] をクリックします。
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione**.
+2.  [ **管理** ] ワークスペースで [ **サイトの構成**] を展開して、[ **サイト**] をクリックします。
 
-2.  Nell'area di lavoro **Amministrazione** , espandere **Configurazione sito**, quindi fare clic su **Siti**.
+3.  ソフトウェアの更新ポイントが含まれているサイトを選びます。 **[設定]** グループで **[サイト コンポーネントの構成]**をクリックし、 **[ソフトウェアの更新ポイント]**をクリックします。
 
-3.  Selezionare il sito contenente il punto di aggiornamento software. Nel gruppo **Impostazioni** fare clic su **Configura componenti del sito**e quindi su **Punto di aggiornamento software**.
+4.  **[ソフトウェアの更新ポイント コンポーネントのプロパティ]** ダイアログ ボックスの **[分類]** タブで、 **[定義ファイルの更新]** チェック ボックスをオンにします。
 
-4.  Nella scheda **Classificazioni** della finestra di dialogo **Proprietà del componente del punto di aggiornamento software** selezionare la casella di controllo **Aggiornamenti delle definizioni** .
+5.  WSUS で更新される **[製品]** を指定します。
 
-5.  Specificare i **Prodotti** aggiornati con WSUS:
+    -   Windows 8.1 以前では、 **[ソフトウェアの更新ポイント コンポーネントのプロパティ]** ダイアログ ボックスの **[製品]** タブで、 **[Forefront Endpoint Protection 2010]** チェック ボックスをオンにします。
 
-    -   Per Windows 8.1 e versioni precedenti, nella scheda **Prodotti** della finestra di dialogo **Proprietà del componente del punto di aggiornamento software** selezionare la casella di controllo **Forefront Endpoint Protection 2010** .
+    -   Windows 10 以降では、 **[ソフトウェアの更新ポイント コンポーネントのプロパティ]** ダイアログ ボックスの **[製品]** タブで、 **[Windows Defender]** と **[Windows Technical Preview 2]** チェック ボックスをオンにします。
 
-    -   Per Windows 10 e versioni successive, nella scheda **Prodotti** della finestra di dialogo **Proprietà del componente del punto di aggiornamento software** selezionare le caselle di controllo **Windows Defender** e **Windows Technical Preview 2** .
+6.  [ **OK** ] をクリックして、[ **[分類]** ] ダイアログ ボックスを閉じます。
 
-6.  Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà del componente del punto di aggiornamento software** .
+ 次の手順を使用して、WSUS サーバーが Configuration Manager 環境に統合されていない場合の Endpoint Protection 更新ファイルを構成します。
 
- Seguire la procedura seguente per configurare gli aggiornamenti di Endpoint Protection se il server WSUS non è integrato nell'ambiente di Configuration Manager.
+## <a name="to-synchronize-endpoint-protection-definition-updates-in-standalone-wsus"></a>スタンドアロン WSUS で Endpoint Protection の定義ファイルの更新を同期するには
 
-## <a name="to-synchronize-endpoint-protection-definition-updates-in-standalone-wsus"></a>Per sincronizzare gli aggiornamenti delle definizioni di Endpoint Protection in un'istanza autonoma di WSUS
+1.  WSUS 管理コンソールで、 **[コンピューター]**を展開して **[オプション]**をクリックし、 **[製品と分類]**をクリックします。
 
-1.  Nella console di amministrazione di WSUS espandere **Computer**, fare clic su **Opzioni**e quindi fare clic su **Prodotti e classificazioni**.
+2.  WSUS で更新される **[製品]** を指定します。
 
-2.  Specificare i **Prodotti** aggiornati con WSUS:
+    -   Windows 8.1 以前では、 **[ソフトウェアの更新ポイント コンポーネントのプロパティ]** ダイアログ ボックスの **[製品]** タブで、 **[Forefront Endpoint Protection 2010]** チェック ボックスをオンにします。
 
-    -   Per Windows 8.1 e versioni precedenti, nella scheda **Prodotti** della finestra di dialogo **Proprietà del componente del punto di aggiornamento software** selezionare la casella di controllo **Forefront Endpoint Protection 2010** .
+    -   Windows 10 以降では、 **[ソフトウェアの更新ポイント コンポーネントのプロパティ]** ダイアログ ボックスの **[製品]** タブで、 **[Windows Defender]** と **[Windows Technical Preview 2]** チェック ボックスをオンにします。
 
-    -   Per Windows 10 e versioni successive, nella scheda **Prodotti** della finestra di dialogo **Proprietà del componente del punto di aggiornamento software** selezionare le caselle di controllo **Windows Defender** e **Windows Technical Preview 2** .
+3.  **[製品と分類]** ダイアログ ボックスの **[分類]** タブで、 **[定義ファイルの更新]** と **[更新プログラム]** チェック ボックスをオンにします。
 
-3.  Nella scheda **Classificazioni** della finestra di dialogo **Prodotti e classificazioni** selezionare le caselle di controllo **Aggiornamenti delle definizioni** e **Aggiornamenti** .
+## <a name="approving-definition-updates"></a>定義ファイルの更新の承認
+ Endpoint Protection 定義ファイルの更新を承認して、WSUS サーバーにダウンロードしてからでないと、使用可能な更新の一覧を要求するクライアントに対して更新を提供することはできません。 クライアントは WSUS サーバーに接続して、適用できる更新プログラムをチェックし、最新の承認済み定義ファイルの更新を要求します。
 
-## <a name="approving-definition-updates"></a>Approvazione degli aggiornamenti delle definizioni
- Gli aggiornamenti delle definizioni di Endpoint Protection devono essere approvati e scaricati nel server WSUS per poter essere offerti ai client che richiedono l'elenco degli aggiornamenti disponibili. I client si connettono al server WSUS per verificare la disponibilità di aggiornamenti applicabili e quindi richiedono gli aggiornamenti delle definizioni approvati più recenti.
+### <a name="to-approve-definitions-and-updates-in-wsus"></a>WSUS で定義ファイルと更新を承認するには
 
-### <a name="to-approve-definitions-and-updates-in-wsus"></a>Per approvare definizioni e aggiornamenti in WSUS
+1.  WSUS 管理コンソールで **[更新]**をクリックし、 **[すべての更新プログラム]** または承認する更新の分類をクリックします。
 
-1.  Nella console di amministrazione di WSUS fare clic su **Aggiornamenti**e quindi su **Tutti gli aggiornamenti** o sulla classificazione degli aggiornamenti da approvare.
+2.  更新の一覧で、インストールを承認する更新を右クリックして **[承認]**をクリックします。
 
-2.  Nell'elenco degli aggiornamenti fare clic con il pulsante destro del mouse su uno o più aggiornamenti da approvare per l'installazione e quindi scegliere **Approva**.
+3.  **[更新プログラムの承認]** ダイアログ ボックスで更新を承認するコンピューター グループを選び、 **[インストールの承認]**をクリックします。
 
-3.  Nella finestra di dialogo **Approva aggiornamenti** selezionare il gruppo di computer per i quali approvare gli aggiornamenti e quindi fare clic su **Approvato per l'installazione**.
+ 手動の承認だけでなく、定義ファイルの更新や Endpoint Protection 更新プログラムの自動承認規則も設定できます。 これによって、WSUS でダウンロードした Endpoint Protection 定義ファイルの更新を自動的に承認するように WSUS を構成します。
 
- Oltre all'approvazione manuale, è anche possibile impostare una regola di approvazione automatica degli aggiornamenti delle definizioni e degli aggiornamenti di Endpoint Protection. In questo modo, WSUS verrà configurato per approvare automaticamente gli aggiornamenti delle definizioni di Endpoint Protection scaricati da WSUS.
+### <a name="to-configure-an-automatic-approval-rule"></a>自動承認規則を構成するには
 
-### <a name="to-configure-an-automatic-approval-rule"></a>Per configurare una regola di approvazione automatica
+1.  WSUS 管理コンソールで **[オプション]**をクリックし、 **[自動承認]**をクリックします。
 
-1.  Nella console di amministrazione di WSUS fare clic su **Opzioni**e quindi su **Approvazioni automatiche**.
+2.  **[更新規則]** タブで **[新しい規則]**をクリックします。
 
-2.  Nella scheda **Regole di aggiornamento** fare clic su **Nuova regola**.
+3.  **[ルールの追加]** ダイアログ ボックスで、 **[ステップ 1: プロパティを選択します]**を選び、 **[更新が特定の分類に含まれる場合]** チェック ボックスをオンにします。
 
-3.  Nella finestra di dialogo **Aggiungi regola** , in **Passaggio 1: selezionare le proprietà**selezionare la casella di controllo **Se l'aggiornamento è in una classificazione specifica** .
+4.  **[ステップ 2: プロパティを変更します]**で **任意の分類**をクリックします。
 
-4.  In **Passaggio 2: modificare le proprietà**fare clic su **qualsiasi classificazione**.
+5.  **[定義ファイルの更新]**以外のすべてのチェック ボックスをオフにし、 **[OK]**をクリックします。
 
-5.  Deselezionare tutte le caselle di controllo ad eccezione di **Aggiornamenti delle definizioni**e quindi fare clic su **OK**.
+6.  **[ルールの追加]** ダイアログ ボックスで、 **[ステップ 1: プロパティを選択します]**を選び、 **[更新が特定の製品に含まれる場合]** チェック ボックスをオンにします。
 
-6.  Nella finestra di dialogo **Aggiungi regola** , in **Passaggio 1: selezionare le proprietà**selezionare la casella di controllo **Se l'aggiornamento è in un prodotto specifico** .
+7.  **[ステップ 2: プロパティを変更します]**で **任意の製品**をクリックします。
 
-7.  In **Passaggio 2: modificare le proprietà**fare clic su **qualsiasi prodotto**.
+8.  Windows 8.1 以前については **[Forefront Endpoint Protection]** 、Windows 10 以降については **[Windows Defender]** 以外のすべてのチェック ボックスをオフにし、 **[OK]**をクリックします。
 
-8.  Deselezionare tutte le caselle di controllo ad eccezione di **Forefront Endpoint Protection** per Windows 8.1 e versioni precedenti o **Windows Defender** per Windows 10 e versioni successive e quindi fare clic su **OK**.
+9. **[ステップ 3: 名前を指定します]**で、規則の名前を入力して **[OK]**をクリックします。
 
-9. In **Passaggio 3: specificare un nome**immettere un nome per la regola e quindi fare clic su **OK**.
-
-10. Nella finestra di dialogo **Approvazioni automatiche** selezionare la casella di controllo per la regola appena creata e quindi fare clic su **Esegui regola**.
+10. **[自動承認]** ダイアログ ボックスで、新しく作成した規則のチェック ボックスをオンにし、 **[規則の実行]**をクリックします。
 
 > [!NOTE]
->  Per ottimizzare le prestazioni nei computer client e server WSUS, rifiutare gli aggiornamenti delle definizioni obsolete. A questo scopo, è possibile configurare l'approvazione automatica per le revisioni e il rifiuto automatico degli aggiornamenti scaduti. Per altre informazioni, vedere l' [articolo 938947 della Microsoft Knowledge Base](http://go.microsoft.com/fwlink/p/?LinkId=204078).
+>  WSUS サーバーとクライアント コンピューターのパフォーマンスを最大化するには、前の定義ファイルの更新を拒否します。 このタスクを実行するには、リビジョンの自動承認と、有効期限が切れた更新プログラムの自動拒否を構成します。 詳細については、 [マイクロソフト サポート技術情報の記事 938947](http://go.microsoft.com/fwlink/p/?LinkId=204078)をご覧ください。
 
 > [!div class="button"]
-[Passaggio successivo >](endpoint-antimalware-policies.md)
+[次のステップ >](endpoint-antimalware-policies.md)
 
 > [!div class="button"]
-[Indietro >](endpoint-configure-alerts.md)
-
+[戻る >](endpoint-configure-alerts.md)

@@ -1,60 +1,56 @@
 ---
-title: Inventario hardware - Configuration Manager | Microsoft Docs
-description: Introduzione all&quot;inventario hardware in System Center Configuration Manager
+title: "ハードウェア インベントリ - Configuration Manager | Microsoft Docs"
+description: "System Center Configuration Manager のハードウェア インベントリの概要について説明します。"
 ms.custom: na
 ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 3969952e-9d05-49c9-82a2-e7e90ccef511
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
-ms.openlocfilehash: a543b945c4727540faa064c068b175ef63cb5a4b
-ms.contentlocale: it-it
-ms.lasthandoff: 01/24/2017
-
-
+ms.openlocfilehash: c64f0b42bff25e8e91cf9101d6fbb538634eab15
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-hardware-inventory-in-system-center-configuration-manager"></a>Introduzione all'inventario hardware in System Center Configuration Manager
+# <a name="introduction-to-hardware-inventory-in-system-center-configuration-manager"></a>System Center Configuration Manager のハードウェア インベントリの概要
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Usare l'inventario hardware in System Center Configuration Manager per raccogliere informazioni relative alla configurazione hardware dei dispositivi client nell'organizzazione. Per raccogliere l'inventario hardware, nelle impostazioni client l'impostazione **Abilitare inventario hardware nei client** deve essere abilitata.  
+System Center Configuration Manager のハードウェア インベントリを使用して、組織内のクライアント デバイスのハードウェア構成に関する情報を収集することができます。 ハードウェア インベントリを収集するには、クライアント設定で [クライアントのハードウェア インベントリを有効にする] を有効にする必要があります。 ****  
 
- Dopo che l'inventario hardware è stato abilitato e il client ha eseguito un ciclo di inventario hardware, il client invia le informazioni di inventario a un punto di gestione nel sito del client. Il punto di gestione inoltra quindi le informazioni di inventario al server del sito di Configuration Manager, che archivia tali informazioni nel database del sito stesso. L'inventario hardware nei client viene eseguito in base alla pianificazione specificata nelle impostazioni client.  
+ ハードウェア インベントリが有効化され、ハードウェア インベントリ サイクルがクライアントによって実行された後、クライアントは情報をクライアント サイトの管理ポイントに送信します。 インベントリ情報は、さらに管理ポイントによって Configuration Manager サイト サーバーに転送され、ここでサイト データベースに保存されます。 ハードウェア インベントリは、クライアント設定で指定されたスケジュールに従って、クライアントに対して実行されます。  
 
- È possibile usare diversi metodi per visualizzare i dati di inventario hardware raccolti da Configuration Manager, tra cui:  
+ Configuration Manager が収集するハードウェア インベントリ データは、各種の方法で見ることができます。 リポジトリには、次のものが含まれます。  
 
--   [Creare query che restituiscono i dispositivi basati su una configurazione hardware specifica](../../../../core/servers/manage/queries-technical-reference.md).  
+-   [特定のハードウェア構成に基づいたデバイスを返すクエリを作成する](../../../../core/servers/manage/queries-technical-reference.md)。  
 
--   [Creare raccolte basate su query secondo una configurazione hardware specifica](../../../../core/clients/manage/collections/introduction-to-collections.md). Le appartenenze alle raccolte basate su query vengono aggiornate automaticamente in base a una pianificazione. È possibile usare le raccolte per numerose attività, tra cui la distribuzione software. .  
+-   [特定のハードウェア構成に基づいたクエリベースのコレクションを作成する](../../../../core/clients/manage/collections/introduction-to-collections.md)。 クエリベースのコレクションのメンバーシップは、スケジュールに従って自動的に更新されます。 コレクションは、ソフトウェアの展開など各種のタスクに使用できます。 。  
 
--   [Eseguire i report che consentono di visualizzare informazioni dettagliate specifiche sulle configurazioni hardware all'interno dell'organizzazione](../../../../core/servers/manage/reporting.md).   
+-   [組織内のハードウェア構成に関する特定の詳細情報を表示するレポートを実行する](../../../../core/servers/manage/reporting.md)。   
 
--   [Usare Esplora inventario risorse](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md) per visualizzare informazioni dettagliate relative all'inventario hardware raccolto dai dispositivi client.   
+-   [リソース エクスプローラーを使用して](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md)、クライアント デバイスから収集された、ハードウェア インベントリに関する詳細情報を表示する。   
 
- Quando si esegue l'inventario hardware in un dispositivo client, i primi dati di inventario restituiti dal client costituiscono sempre l'inventario completo. Le informazioni degli inventari successivi sono solo informazioni di inventario differenziale. Il server del sito elabora le informazioni di inventario differenziale nell'ordine di ricezione. Se le informazioni differenziali per un client mancano, il server del sito rifiuta informazioni differenziali aggiuntive e indica al client di eseguire un ciclo di inventario completo.  
+ ハードウェア インベントリをクライアント デバイス上で実行するときは、最初に返されるインベントリ レポートは必ず、完全なインベントリとなります。 その後のインベントリ情報は差分のデルタ インベントリ情報のみを含みます。 サイト サーバーは受け取った順番に、デルタ インベントリ情報を処理します。 クライアントに関するデルタ情報がない場合は、サイト サーバーはその後のデルタ情報を拒否し、クライアントに完全インベントリ サイクルを実行するように指示します。  
 
- Configuration Manager offre un supporto limitato per i computer ad avvio doppio. Configuration Manager può individuare i computer ad avvio doppio ma restituisce solo le informazioni di inventario relative al sistema operativo attivo al momento dell'esecuzione del ciclo di inventario.  
+ Configuration Manager のデュアル ブート コンピューターに対するサポートは限定的です。 Configuration Manager でデュアル ブート コンピューターを検出することはできますが、返す情報はインベントリ実行時にアクティブだったオペレーティング システムのインベントリ情報のみです。  
 
 > [!NOTE]  
->  Per informazioni su come usare l'inventario hardware con i client che eseguono Linux e UNIX, vedere [Inventario hardware per Linux e UNIX in Configuration Manager](../../../../core/clients/manage/inventory/hardware-inventory-for-linux-and-unix.md).  
+>  Linux および UNIX を実行しているクライアントでハードウェア インベントリを使用する方法については、「[Hardware inventory for Linux and UNIX in System Center Configuration Manager](../../../../core/clients/manage/inventory/hardware-inventory-for-linux-and-unix.md)」(System Center Configuration Manager における Linux および UNIX のハードウェア インベントリ) を参照してください。  
 
-## <a name="extending-configuration-manager-hardware-inventory"></a>Estensione dell'inventario hardware di Configuration Manager  
- Oltre all'inventario hardware predefinito in Configuration Manager è possibile usare uno dei metodi seguenti per estendere l'inventario hardware e raccogliere informazioni aggiuntive:  
+## <a name="extending-configuration-manager-hardware-inventory"></a>Configuration Manager のハードウェア インベントリの拡張  
+ Configuration Manager に組み込まれたハードウェア インベントリに加えて、次の方法のうちの 1 つを使用して、ハードウェア インベントリを拡張し、追加の情報を収集することができます。  
 
-- È possibile abilitare, disabilitare, aggiungere e rimuovere classi di inventario per l'inventario hardware dalla console di Configuration Manager.  
-- Usare file NOIDMIF per raccogliere informazioni sui dispositivi client che non possono essere inclusi nell'inventario da Configuration Manager. È ad esempio raccogliere informazioni sul numeri dispositivo asset che esiste solo come un'etichetta sul dispositivo. Inventario NOIDMIF viene associato automaticamente al dispositivo raccolti dai client.  
-- Usare i file IDMIF per raccogliere informazioni sugli asset non associati a un client di Configuration Manager, ad esempio proiettori, fotocopiatrici e stampanti di rete.  
+- Configuration Manager コンソールでは、ハードウェア インベントリのインベントリ クラスの有効化、無効化、追加、および削除を行うことができます。|  
+- NOIDMIF ファイルは、Configuration Manager ではインベントリできないクライアント デバイスに関する情報を収集するために使用します。 たとえば、デバイス上にラベルとしてのみ存在するデバイス資産番号情報を収集できます。 NOIDMIF のインベントリは、収集元のクライアント デバイスに自動的に関連付けられます。  
+- IDMIF ファイルは、プロジェクター、複写機、ネットワーク プリンターなどの、構成マネージャー クライアントに関連付けられていない資産に関する情報を収集するために使用します。  
 
- Per informazioni su come usare questi metodi per estendere l'inventario hardware di Configuration Manager, vedere [How to configure hardware inventory in System Center Configuration Manager](../../../../core/clients/manage/inventory/configure-hardware-inventory.md) (Come configurare l'inventario hardware in System Center Configuration Manager).  
-
+ これらの方法を使用して Configuration Manager ハードウェア インベントリを拡張する方法については、「[How to configure hardware inventory in System Center Configuration Manager](../../../../core/clients/manage/inventory/configure-hardware-inventory.md)」(System Center Configuration Manager でハードウェア インベントリを構成する方法) を参照してください。  

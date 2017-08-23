@@ -1,220 +1,216 @@
 ---
-title: Creare elementi di configurazione per dispositivi Android e Samsung KNOX Standard gestiti con Intune | Microsoft Docs
-description: Usare l&quot;elemento di configurazione Android e Samsung KNOX Standard di System Center Configuration Manager per gestire le impostazioni dei dispositivi.
+title: "Intune で管理されている Android デバイスと Samsung KNOX Standard デバイスの構成項目を作成する | Microsoft Docs"
+description: "System Center Configuration Manager の Android と Samsung KNOX Standard の構成項目を使用してデバイスの設定を管理します。"
 ms.custom: na
 ms.date: 03/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7b66f3c4-e3bb-4f6a-abd5-55be649ff90d
-caps.latest.revision: 17
-caps.handback.revision: 0
+caps.latest.revision: "17"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4b9261db93c9bf72c492e3c9be5b30f81835134a
 ms.openlocfilehash: c9961c2e9866199571a1b39a7b185cb6bb96f998
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Android e Samsung KNOX gestiti senza il client System Center Configuration Manager
+# <a name="how-to-create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-system-center-configuration-manager-client"></a>System Center Configuration Manager クライアントを使用せずに管理されている Android デバイスと Samsung KNOX デバイスの構成項目を作成する方法
 
-Usare l'elemento di configurazione **Android e Samsung KNOX** di System Center Configuration Manager per gestire le impostazioni per i dispositivi Android e Samsung KNOX registrati in Microsoft Intune o gestiti in locale da Configuration Manager.  
+System Center Configuration Manager の **Android および Samsung KNOX** 構成項目を使用して、Microsoft Intune に登録されているか、Configuration Manager によって内部管理されている Android デバイスおよび Samsung KNOX デバイスの設定を管理します。  
 
-#### <a name="to-create-an-android-and-samsung-knox-configuration-item"></a>Per creare un elemento di configurazione per Android e Samsung KNOX  
+#### <a name="to-create-an-android-and-samsung-knox-configuration-item"></a>Android および Samsung KNOX 構成項目を作成するには  
 
-1. Nella console di Configuration Manager scegliere **Asset e conformità**.  
+1. Configuration Manager コンソールで、**[資産とコンプライアンス]** を選択します。  
 
-2. Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi scegliere **Elementi di configurazione**.  
+2. **[資産とコンプライアンス]** ワークスペースで **[コンプライアンス設定]** を展開して、**[構成項目]** を選択します。  
 
-3. Nella scheda **Home**, nel gruppo **Crea**, scegliere **Crea elemento di configurazione**.  
+3. **[ホーム]** タブの **[作成]** グループで、**[構成項目の作成]** を選択します。  
 
-4. Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
+4. 構成項目の作成ウィザードの **[全般]** ページで、構成項目の名前と、必要に応じて説明を入力します。  
 
-5. In **Specificare il tipo di elemento di configurazione da creare** scegliere **Android e Samsung KNOX**.  
+5. **[作成する構成項目の種類の指定]**で、**[Android および Samsung KNOX]** を選択します。  
 
-6. Scegliere **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
+6. Configuration Manager コンソールで構成項目を検索およびフィルター処理するのに役立つカテゴリを作成して割り当てる場合は、**[カテゴリ]** を選択します。  
 
-7. Nella pagina **Piattaforme supportate** della procedura guidata scegliere le piattaforme Android e Samsung KNOX specifiche che valuteranno l'elemento di configurazione.  
+7. ウィザードの **[サポートされているプラットフォーム]** ページで、構成項目を評価する特定の Android または Samsung KNOX プラットフォームを選択します。  
 
-8. Nella pagina **Impostazioni dispositivo** della creazione guidata scegliere il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione per Android e Samsung KNOX](#BKMK_setref) in questo argomento e scegliere **Avanti**.  
-
-    > [!TIP]  
-    >  Se l'impostazione da modificare non è inclusa nell'elenco, scegliere la casella **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
-
-9. In ogni pagina di impostazioni configurare le impostazioni necessarie. Specificare se si vuole monitorarle e aggiornarle nel caso non siano conformi nei dispositivi (se questa funzionalità è supportata).  
-
-10. Per ogni gruppo di impostazioni, è anche possibile configurare il livello di gravità che verrà segnalato quando viene trovato un elemento di configurazione non conforme, selezionando uno dei livelli seguenti:  
-
-    - **Nessuno**. I dispositivi che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
-
-    - **Informazioni**. I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Informazioni** per i report di Configuration Manager.  
-
-    - **Avviso**. I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Avviso** per i report di Configuration Manager.  
-
-    - **Errore critico**. I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico** per i report di Configuration Manager.  
-
-    - **Errore critico con evento**. I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
-
-11. Nella pagina **Applicabilità piattaforma** della creazione guidata, verificare le eventuali impostazioni non compatibili con le piattaforme supportate scelte in precedenza. È possibile tornare indietro e rimuovere queste impostazioni oppure continuare.  
+8. ウィザードの **[デバイスの設定]** ページで、構成する設定グループを選択します。 このトピックの「[Android と Samsung KNOX の構成項目設定のリファレンス](#BKMK_setref)」で詳細情報を確認し、**[次へ]** をクリックします。  
 
     > [!TIP]  
-    >  Non viene valutata la conformità delle impostazioni non supportate.  
+    >  必要な設定が一覧にない場合は、**[既定の設定グループに含まれない追加の設定を構成する]** ボックスをオンにします。  
 
-12. Completa la procedura guidata.  
+9. 各設定ページで、必要な設定を構成します。 また、設定がデバイスに対応していないときにその設定を修正するかどうかを構成します (これがサポートされている場合)。  
 
- È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
+10. 設定グループごとに、構成項目が非対応であることが検出されたときに報告される重要度を構成することもできます。  
 
-## <a name="android-and-samsung-knox-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione per Android e Samsung KNOX  
+    - **なし**。 このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に非準拠重要度を何も報告しません。  
 
-### <a name="password"></a>Password  
-Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.  
+    - **情報**。 このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**情報**というレベルで非準拠重要度を報告します。  
 
-|Impostazioni|Dettagli|  
+    - **警告**。 このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**警告**というレベルで非準拠重要度を報告します。  
+
+    - **重大**。 このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**重大**というレベルで非準拠重要度を報告します。  
+
+    - **重大 (イベント)**。 このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**重大**というレベルで非準拠重要度を報告します。 重要度のレベルは、アプリケーションのイベント ログでも Windows のイベントとしてログが登録されます。  
+
+11. ウィザードの **[プラットフォームの適用性]** ページで、前に選択したサポート対象プラットフォームと互換性がないすべての設定を確認します。 前に戻ってこれらの設定を削除するか、操作を続行できます。  
+
+    > [!TIP]  
+    >  サポートされていない設定のコンプライアンスは評価されません。  
+
+12. ウィザードを終了します。  
+
+ 新しい構成項目は、 **[資産とコンプライアンス]** ワークスペースの **[構成項目]** ノードに表示されます。  
+
+## <a name="android-and-samsung-knox-configuration-item-settings-reference"></a>Android と Samsung KNOX の構成項目設定のリファレンス  
+
+### <a name="password"></a>パスワード  
+これらの設定は Android と Samsung KNOX の両方のデバイスに適用されます。  
+
+|設定|説明|  
 |-------------|-------------|  
-|**Richiedi impostazioni password nei dispositivi mobili**|Richiede una password nei dispositivi supportati.|  
-|**Lunghezza minima password (caratteri)**|Specifica la lunghezza minima della password.|  
-|**Scadenza password in giorni**|Specifica il numero di giorni prima che sia necessario modificare una password.|  
-|**Numero di password memorizzate**|Impedisce il riutilizzo delle password usate in precedenza.|  
-|**Numero di tentativi di accesso non riusciti prima della cancellazione dei dati dal dispositivo**|Cancella il dispositivo se questo numero di tentativi di accesso ha esito negativo.|  
-|**Tempo di inattività prima del blocco del dispositivo**|Specifica il tempo che deve trascorrere prima che il dispositivo venga bloccato se non è in uso.|
-|**Qualità password**|Specifica il livello di complessità delle password necessario e se possono essere usati dispositivi biometrici.|  
-|**Consenti Smart Lock e altri agenti di attendibilità**|Consente di controllare la funzionalità Smart Lock su dispositivi compatibili con Android. Questa funzionalità del telefono consente di disabilitare o ignorare la password della schermata di blocco del dispositivo se il dispositivo si trova in una posizione attendibile, ad esempio quando è connesso a un dispositivo Bluetooth specifico oppure quando è nelle vicinanze di un tag NFC. È possibile usare questa impostazione per impedire agli utenti di configurare Smart Lock.|
-|**Impronta digitale per lo sblocco (KNOX 5.0+)**|Consente l'uso di un'impronta digitale per sbloccare i dispositivi compatibili.|
+|**デバイスのパスワードの設定が必要**|サポート対象デバイスのパスワードが必要です。|  
+|**パスワードの最小文字数**|パスワードの最小の長さを指定します。|  
+|**パスワードの有効期限 (日数)**|パスワードの変更が必要になるまでの日数を指定します。|  
+|**記憶するパスワードの数**|以前に使用したパスワードを再利用できないようにします。|  
+|**デバイスをワイプするまでのログオン失敗回数**|ログオンの試みがこの回数だけ失敗した場合は、デバイスがワイプされます。|  
+|**デバイスをロックするまでのアイドル時間**|使用されていない場合にデバイスがロックされるまでの時間を指定します。|
+|**パスワードの品質**|必要なレベルのパスワードの複雑さと、生体認証デバイスを使用できるかどうかを指定します。|  
+|**Smart Lock と他の信頼のエージェントを許可する**|互換性のある Android デバイスで Smart Lock 機能が制御できるようになります。 この電話機能では、デバイスが特定の Bluetooth デバイスに接続したときや、NFC タグの近くにある場合など、信頼できる場所にある場合、デバイスのロック画面のパスワードを無効化またはバイパスすることができます。 この設定を使用して、ユーザーが Smart Lock を構成することを禁止できます。|
+|**ロック解除用のフィンガープリント (KNOX 5.0+)**|指紋を使用して互換性のあるデバイスのロックを解除できます。|
 
-### <a name="device"></a>Dispositivo   
+### <a name="device"></a>デバイス   
 
-|Impostazioni|Dettagli|  
+|設定|説明|  
 |------------------|-------------|  
-|**Chiamata vocale**|Abilita o disabilita la funzionalità di composizione vocale sul dispositivo.|
-|**Assistente vocale**|Consente di usare un assistente vocale sul dispositivo.|
-|**Acquisizione schermo**|Consente all'utente di acquisire il contenuto dello schermo sotto forma di immagine.|
-|**Invio dati diagnostici**|Consente al dispositivo di inviare i dati di diagnostica a Google.|
-|**Georilevazione**|Consente al dispositivo di usare informazioni sulla posizione geografica.|
-|**Copia e Incolla**|Consente di usare le funzioni di copia e incolla nel dispositivo.|
-|**Ripristino impostazioni predefinite**|Consente all'utente di eseguire il ripristino delle impostazioni di fabbrica del dispositivo.|  |
-|**Condivisione degli Appunti tra applicazioni**|Consente all'utente di usare gli Appunti per copiare e incollare tra app.|  |
-|**Bluetooth**|Consente l'uso del Bluetooth sul dispositivo.|
+|**音声ダイヤル**|デバイスの音声ダイヤル機能を有効または無効にします。|
+|**音声アシスタント**|デバイスで音声アシスタント ソフトウェアを使用できるようにします。|
+|**画面の取り込み**|ユーザーが画面のコンテンツを画像として取り込めるようにします。|
+|**診断データの送信**|デバイスが Google に診断情報を送信することを許可します。|
+|**位置情報**|デバイスに位置情報の利用を許可します。|
+|**コピーと貼り付け**|デバイスでコピーと貼り付け機能を使用できるようにします。|
+|**出荷時の設定に戻す**|デバイスを出荷時の設定に戻すことができます。|  |
+|**アプリケーション間でのクリップボードの共有**|クリップボードを使用してアプリ間でコピーし、貼り付けることができます。|  |
+|**Bluetooth**|デバイスでの Bluetooth の使用を許可します。|
 
-### <a name="store"></a>Archivio
+### <a name="store"></a>ストア
 
-|Impostazioni|Dettagli|  
+|設定|説明|  
 |------------------|-------------|  
-|**Archivio applicazioni**|Consente all'utente di accedere all'app Google Play Store sul dispositivo.|
+|**アプリケーション ストア**|ユーザーがデバイスで Google Play ストアにアクセスすることを許可します。|
 
-### <a name="browser"></a>Browser
+### <a name="browser"></a>ブラウザー
 
-|Impostazioni|Dettagli|  
+|設定|説明|  
 |------------------|-------------|  
-|**Consenti browser Web**|Consente di usare il Web browser predefinito del dispositivo.|
-|**Riempimento automatico**|Specifica se è possibile usare la funzione di riempimento automatico del Web browser.|
-|**Esecuzione script attivo**|Consente al Web browser del dispositivo di eseguire lo script attivo.|
-|**Blocco popup**|Consente l'uso del blocco popup nel Web browser.|
-|**Cookie**|Consente l'uso dei cookie nel Web browser.|
+|**Web ブラウザーを許可する**|デバイスの既定の Web ブラウザーを使用できます。|
+|**オートフィル**|Web ブラウザーのオートフィル機能を使用できるようにします。|
+|**アクティブ スクリプト**|デバイスの Web ブラウザーでアクティブ スクリプトを使用できます。|
+|**ポップアップ ブロック**|Web ブラウザーでポップアップ ブロックを使用できるようにします。|
+|**Cookie**|デバイスの Web ブラウザーで Cookie を使用できます。|
 
-### <a name="cloud"></a>Cloud  
+### <a name="cloud"></a>クラウド  
 
-|Impostazioni|Dettagli|  
+|設定|説明|  
 |-------------|-------------|  
-|**Backup di Google**|Consente l'uso del backup di Google.|  
-|**Sincronizzazione automatica dell'account Google**|Consente la sincronizzazione automatica delle impostazioni dell'account Google.|  
+|**Google へのバックアップ**|Google バックアップの使用を許可します。|  
+|**Google アカウントの自動同期**|Google アカウントの設定を自動的に同期できるようにします。|  
 
-### <a name="security"></a>Sicurezza  
+### <a name="security"></a>セキュリティ  
 
-|Impostazioni|Dettagli|  
+|設定|説明|  
 |-------------|-------------|  
-|**Messaggistica SMS e MMS**|Consente l'uso della messaggistica SMS e MMS sul dispositivo.|
-|**Archivi rimovibili**|Consente l'uso di archivi rimovibili, ad esempio una scheda SD, sul dispositivo.|
-|**Fotocamera**|Consente l'uso della fotocamera del dispositivo.<br /><br /> Si applica ai dispositivi Android e Samsung KNOX.|
-|**NFC (Near Field Communication)**|Consente attività che usano Near Field Communication (se supportato dal dispositivo).|
-|**YouTube**|Consente l'uso dell'app YouTube sul dispositivo.<br /><br /> Si applica solo ai dispositivi Samsung KNOX.|  
-|**Spegnimento**|Consente lo spegnimento del dispositivo.<br /><br /> Si applica solo ai dispositivi Samsung KNOX.|  
+|**SMS と MMS メッセージング**|デバイスで SMS と MMS メッセージングを使用できるようにします。|
+|**リムーバブル記憶域**|デバイスで SD カードなどのリムーバブル記憶域を使用できます。|
+|**カメラ**|デバイスのカメラを使用できるようにします。<br /><br /> Android と Samsung KNOX のデバイスに適用されます。|
+|**近距離無線通信 (NFC)**|近距離無線通信を使用した作業を許可します (デバイスでサポートされている場合)。|
+|**YouTube**|デバイスで YouTube アプリを使用できます。<br /><br /> Samsung KNOX デバイスのみに適用されます。|  
+|**電源オフ**|デバイスの電源をオフにできるようにします。<br /><br /> Samsung KNOX デバイスのみに適用されます。|  
 
-### <a name="roaming"></a>Roaming
+### <a name="roaming"></a>ローミング
 
-|Impostazioni|Dettagli|  
+|設定|説明|  
 |-------------|-------------|  
-|Roaming vocale|Consente il roaming vocale quando il dispositivo si trova in una rete cellulare.|
-|Roaming dati|Consente il roaming dati quando il dispositivo si trova in una rete cellulare.|
+|音声通話ローミング|デバイスが移動体通信ネットワーク上にある場合の音声通話ローミングを許可します。|
+|データ ローミング|デバイスが移動体通信ネットワーク上にある場合のデータ ローミングを許可します。|
 
 
-### <a name="encryption"></a>Crittografia  
- Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.  
+### <a name="encryption"></a>暗号化  
+ これらの設定は Android と Samsung KNOX の両方のデバイスに適用されます。  
 
-|Impostazioni|Dettagli|  
+|設定|説明|  
 |-------------|-------------|  
-|**Crittografia scheda di memoria**|È necessario che la scheda di memoria del dispositivo sia crittografata.|
-|**Crittografia file nel dispositivo mobile**|Richiede la crittografia dei file sul dispositivo mobile.|  
+|**メモリ カードの暗号化**|デバイスのメモリ カードの暗号化を要求します。|
+|**デバイスのファイルの暗号化**|モバイル デバイス上のファイルを必ず暗号化するようにします。|  
 
-### <a name="wireless-communications"></a>Comunicazioni wireless
+### <a name="wireless-communications"></a>ワイヤレス通信
 
-|Impostazioni|Dettagli|  
+|設定|説明|  
 |-------------|-------------|  
-|**Connessione rete wireless**|Consente l'uso delle funzionalità Wi-Fi sul dispositivo.|
-|**Tethering Wi-Fi**|Consente l'uso del tethering Wi-Fi sul dispositivo.|
+|**ワイヤレス ネットワーク接続**|デバイスの Wi-Fi 機能を使用できるようにします。|
+|**Wi-Fi テザリング**|デバイスで Wi-Fi テザリングを使用できるようにします。|
 
 
-### <a name="compliant-and-noncompliant-apps-android"></a>App conformi e non conformi (Android)  
-È possibile specificare un elenco di app Android conformi oppure non conformi nella società. È quindi possibile usare i report per mostrare i dispositivi nei quali sono installate app non conformi e gli utenti associati.  
+### <a name="compliant-and-noncompliant-apps-android"></a>準拠アプリと非準拠アプリ (Android)  
+社内の準拠している (または準拠していない) Android アプリの一覧を指定できます。 これにより、レポートを使用して、非準拠アプリがインストールされているデバイス、および関連付けられているユーザーを表示できるようになります。  
 
-Non è possibile specificare sia le app conformi che quelle non conformi nello stesso elemento di configurazione.  
+同一の構成アイテム内で準拠アプリと非準拠アプリの両方を指定することはできません。  
 
-#### <a name="to-specify-the-compliant-or-noncompliant-apps-list"></a>Per indicare le app conformi o non conformi  
+#### <a name="to-specify-the-compliant-or-noncompliant-apps-list"></a>準拠アプリまたは非準拠アプリの一覧を指定するには  
 
-Nella pagina **App conformi e non conformi (Android)** specificare le informazioni seguenti:  
+**[準拠アプリと非準拠アプリ (Android)]** ページで、次の情報を指定します。  
 
-|Impostazioni|Altre informazioni|  
+|設定|説明|  
 |-------------|----------------------|  
-|**Elenco app non conformi**|Specifica un elenco di app che verranno segnalate come non conformi, quando vengono installate dagli utenti.|  
-|**Elenco app conformi**|Specifica un elenco di app Mac OS X che gli utenti sono autorizzati a installare. Tutte le altre app installate verranno segnalate come non conformi.|  
-|**Aggiungi**|Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare dalla [sezione delle app di Google Play](https://play.google.com/store/apps).<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app conformi e non conformi.<br /><br /> **Esempio:** cercare **Microsoft Office Mobile**in Google Play. L'URL usato sarà **https://play.google.com/store/apps/details?id=com.microsoft.office.officehub**.|  
-|**Modifica**|Consente di modificare il nome, l'autore e l'URL dell'app selezionata.|  
-|**Rimuovi**|Elimina l'app selezionata dall'elenco.|  
-|**Importa**|Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.|  
+|**非準拠アプリの一覧**|ユーザーがインストールした場合、非準拠として報告するアプリの一覧を指定します。|  
+|**準拠アプリの一覧**|ユーザーにインストールを許可するアプリの一覧を指定します。 インストールされているその他のすべてのアプリは、非準拠として報告されます。|  
+|**[追加]**|選択した一覧にアプリを追加します。 選択した名前と、必要に応じて、アプリの発行者、App Store のアプリへの URL を指定します。<br /><br /> URL を指定するには、[Google Play のアプリ セクション](https://play.google.com/store/apps)で、使用するアプリを検索します。<br /><br /> アプリのページを開き、URL をクリップボードにコピーします。 準拠アプリおよび非準拠アプリの一覧で URL として使用できるようになります。<br /><br /> **例:** Google Play で **Microsoft Office Mobile**を検索します。 **https://play.google.com/store/apps/details?id=com.microsoft.office.officehub** という URL を使用します。|  
+|**編集**|選択したアプリの名前、発行者、および URL を編集できます。|  
+|**削除**|選択したアプリを一覧から削除します。|  
+|**[インポート]**|コンマ区切り値ファイルで指定したアプリの一覧をインポートします。 ファイルの形式、アプリケーション名、発行者、アプリの URL を使用します。|  
 
-## <a name="android-for-work-configuration-items"></a>Elementi di configurazione di Android for Work
-Android for Work ha due gruppi di impostazioni per gli elementi di configurazione:
+## <a name="android-for-work-configuration-items"></a>Android for Work の構成項目
+Android for Work には、構成アイテムに 2 つの設定グループがあります。
 
-- **Password**. Identica alle impostazioni di Android "classico".
+- **パスワード**。 Android "クラシック" の設定と同じです。
 
-- **Profilo di lavoro**. Abilita le impostazioni di Android for Work seguenti:
-  -    **Consenti la condivisione dei dati tra i profili di lavoro e personali**
-  - **Nascondi le notifiche del profilo di lavoro quando il dispositivo è bloccato** (Android 6.0+)
-  -    **Imposta i criteri di autorizzazione predefiniti delle app** (Android 6.0+)
+- **仕事用プロファイル**。 Android for Work の次の設定を有効にします。
+  - **仕事用プロファイルと個人プロファイル間でのデータ共有を許可する**
+  - **デバイスがロックされているときに仕事用プロファイルの通知を表示しない** (Android 6.0 以上)
+  - **アプリの既定のアクセス許可ポリシーを設定する** (Android 6.0 以上)
 
-Per creare un elemento di configurazione nel profilo di lavoro di Android, scegliere **Android for Work** nella pagina **Generale** e configurare le impostazioni per ognuno dei gruppi di impostazioni. Aggiungere l'elemento di configurazione a una linea di base ed eseguire la distribuzione come di consueto. Queste impostazioni verranno applicate solo ai dispositivi registrati come Android for Work e non ai dispositivi registrati come Android.
+Android 仕事用プロファイルで構成アイテムを作成するには、**[全般]** ページで **[Android for Work]** を選び、各設定グループの設定を構成します。 構成アイテムを基準に追加し、通常どおりに展開します。 これらの設定は、Android for Work として登録されたデバイスにのみ適用され、Android として登録されたデバイスには適用されません。
 
-### <a name="kiosk-mode-samsung-knox-only"></a>Modalità tutto schermo (solo per Samsung KNOX)  
-È possibile usare la modalità tutto schermo per bloccare un dispositivo per consentire l'uso solo di alcune funzionalità. Ad esempio, è possibile consentire a un dispositivo di eseguire solo un'app gestita specificata o disabilitare i pulsanti del volume in un dispositivo. Queste impostazioni potrebbero essere usate per un modello demo di un dispositivo. In alternativa, potrebbero essere usate per un dispositivo dedicato all'esecuzione di una sola funzione, come un dispositivo POS.  
+### <a name="kiosk-mode-samsung-knox-only"></a>キオスク モード (Samsung KNOX のみ)  
+キオスク モードを使用すると、特定の機能のみ実行できるようにデバイスをロックできます。 たとえば、指定した 1 つの管理対象アプリの実行のみをデバイスに許可することや、デバイスのボリューム ボタンを無効にすることができます。 このような設定はデバイスの実演モデルに利用されることがあります。 あるいは、POS デバイスなど、1 つだけの機能を実行するためのデバイスに利用されることがあります。  
 
-#### <a name="to-configure-kiosk-mode-for-a-samsung-knox-device"></a>Per configurare la modalità tutto schermo per un dispositivo Samsung KNOX  
+#### <a name="to-configure-kiosk-mode-for-a-samsung-knox-device"></a>Samsung KNOX デバイスのキオスク モードを構成する方法  
 
-1. Nella pagina **Configura impostazioni della modalità tutto schermo per i dispositivi Samsung KNOX** della Creazione guidata dell'elemento di configurazione specificare le informazioni seguenti:  
+1. 構成項目の作成ウィザードの **[Samsung KNOX デバイス用にキオスク モードの設定を構成します]** ページで、次の情報を指定します。  
 
-   |Impostazioni|Altre informazioni|  
+   |設定|説明|  
    |-------------|----------------------|  
-   |**Seleziona app**|Scegliere **Sfoglia** per selezionare un'applicazione Android (con estensione **apk**) che possa essere eseguita quando il dispositivo è in modalità tutto schermo. Non sarà possibile eseguire altre applicazioni nel dispositivo.|  
-   |**Pulsanti volume**|Abilita o disabilita l'uso dei pulsanti del volume nel dispositivo.|  
-   |**Pulsante di riattivazione e sospensione schermo**|Abilita o disabilita il pulsante di riattivazione sospensione dello schermo del dispositivo.|  
+   |**アプリの選択**|**[参照]** を選び、デバイスがキオスク モードのときに実行が許可される Configuration Manager Android アプリケーション (拡張子 **.apk**) を選びます。 他のアプリはデバイスでの実行が許可されません。|  
+   |**音量ボタン**|デバイスのボリューム ボタンの使用を有効または無効にします。|  
+   |**画面のスリープと復帰のボタン**|デバイス上の [画面のスリープ状態の解除] ボタンを有効または無効にします。|  
 
-2. Al termine, scegliere **Avanti**.  
+2. 終了したら、**[次へ]** を選びます。  
 
-## <a name="reports-for-monitoring"></a>Report per il monitoraggio
-È possibile usare uno dei report seguenti per monitorare le app conformi e non conformi:  
+## <a name="reports-for-monitoring"></a>監視用レポート
+次のレポートのいずれかを使用し、準拠アプリと非準拠アプリを監視できます。  
 
-- **Elenco di app e dispositivi non conformi per un utente specificato**. Mostra informazioni sugli utenti e sui dispositivi che dispongono di app installate che non sono conformi ai criteri specificati.  
+- **指定されたユーザーの非対応アプリとデバイスの一覧**。 アプリがインストールされ、指定されたポリシーに準拠していないユーザーとデバイスに関する情報を表示します。  
 
-- **Riepilogo degli utenti con app non conformi**. Mostra informazioni sugli utenti che hanno installato app non conformi ai criteri specificati.  
+- **非対応のアプリを持つユーザーの概要**。 アプリがインストールされ、指定されたポリシーに準拠していないユーザーに関する情報を表示します。  
 
-Per informazioni sull'uso dei report, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+レポートの使用方法の詳細については、「[System Center Configuration Manager のレポート](../../core/servers/manage/reporting.md)」を参照してください。  
 
-## <a name="see-also"></a>Vedere anche  
-[Elementi di configurazione per dispositivi gestiti senza il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)
-
+## <a name="see-also"></a>関連項目  
+[System Center Configuration Manager クライアントを使用せずに管理されているデバイスの構成項目](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

@@ -1,119 +1,112 @@
 ---
-title: Introduzione alla creazione di report | Microsoft Docs
-description: Informazioni sui set di strumenti e risorse disponibili per la gestione della creazione di report in Configuration Manager.
+title: "レポートの概要 | Microsoft Docs"
+description: "Configuration Manager でレポートを管理する際に使用できるツールとリソースについて説明します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 230be984-d2cd-4d53-bd7a-bc24dd93fc22
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
 ms.openlocfilehash: 5846ca3c91626491b03b36dd17b454bb9382a8dc
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-reporting-in-system-center-configuration-manager"></a>Introduzione ai report in System Center Configuration Manager
+# <a name="introduction-to-reporting-in-system-center-configuration-manager"></a>System Center Configuration Manager のレポートの概要
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-La creazione di report in System Center Configuration Manager offre un set di strumenti e risorse che consente di usare le funzionalità avanzate di creazione di report di SQL Server Reporting Services (SSRS), con l'esperienza completa offerta da Generatore report di Reporting Services. La creazione di report consente di raccogliere, organizzare e presentare le informazioni relative agli utenti, all'inventario software e hardware, agli aggiornamenti software, alle applicazioni, allo stato del sito e alle altre operazioni di Configuration Manager all'interno dell'organizzazione. La creazione di report fornisce un numero di report predefiniti che è possibile utilizzare senza modifiche oppure modificare per soddisfare i requisiti ed è possibile creare report personalizzati. Le sezioni seguenti agevolano la pianificazione della creazione di report in Configuration Manager.  
+System Center Configuration Manager のレポートでは、SQL Reporting Services の高度なレポート機能と Reporting Services レポート ビルダーの充実したオーサリング機能を活用するために役立つ一連のツールとリソースを利用できます。 レポートは、組織内のユーザー、ハードウェアおよびソフトウェア インベントリ、ソフトウェアの更新、アプリケーション、サイト ステータス、およびその他の Configuration Manager 操作に関する情報を収集、整理、および提示するのに役立ちます。 レポート機能には、そのまま利用することも、必要に応じて変更することもできる定義済みレポートが多数用意されています。また、カスタム レポートを作成することもできます。 Configuration Manager のレポートを管理す際は、次のセクションを参考にしてください。  
 
-##  <a name="a-namebkmksqlserverreportingservicesa-sql-server-reporting-services"></a><a name="BKMK_SQLServerReportingServices"></a> SQL Server Reporting Services  
- SQL Server Reporting Services fornisce una gamma completa di strumenti e servizi pronti all'uso per creare, distribuire e gestire report per l'azienda e funzionalità di programmazione che consentono di estendere e personalizzare la funzionalità di creazione di report. Reporting Services è una piattaforma per la creazione di report basata su server che fornisce funzionalità di creazione di report complete per una vasta gamma di origini dati.  
+##  <a name="BKMK_SQLServerReportingServices"></a> SQL Server Reporting Services  
+ SQL Server Reporting Services は、各組織のレポートの作成、展開、および管理に役立つ既成の各種ツールとサービス、および、レポート機能の拡張とカスタマイズを可能にするプログラミング機能を提供します。 Reporting Services は、多様なデータ ソースを対象とした総合的レポート機能を提供する、サーバーベースのレポート プラットフォームです。  
 
- Configuration Manager usa SQL Server Reporting Services come soluzione per la creazione di report. L'integrazione con Reporting Services offre i seguenti vantaggi:  
+ Configuration Manager は、SQL Server Reporting Services をレポート ソリューションとして使用します。 この Reporting Services との統合の利点は、次のとおりです。  
 
--   Usa un sistema di creazione di report standard di settore per eseguire query nel database di Configuration Manager.  
+-   Configuration Manager データベースのクエリに業界標準のレポート システムを使用できます。  
 
--   Visualizza i report usando Visualizzatore report di Configuration Manager oppure Gestione report, che è una connessione al report basata su Web.  
+-   Configuration Manager レポート ビューアー、または Web ベースでレポートに接続するレポート マネージャーを使用してレポートを表示できます。  
 
--   Fornisce scalabilità, disponibilità e prestazioni elevate.  
+-   優れたパフォーマンス、可用性、およびスケーラビリティを実現します。  
 
--   Fornisce agli utenti sottoscrizioni ai report; ad esempio, un manager può eseguire una sottoscrizione per ricevere automaticamente tramite posta elettronica un report con i dettagli dello stato dell'implementazione di un aggiornamento software.  
+-   ユーザーがサブスクライブ可能なレポートのサブスクリプション機能を利用できます。たとえば管理者は、ソフトウェア更新プログラムのロールアウト ステータスの詳細を示すレポートにサブスクライブし、毎日自動的に電子メールでレポートを受信することができます。  
 
--   Esporta report che gli utenti possono selezionare in una gamma dei formati più diffusi.  
+-   ユーザーが選択できる各種の標準形式でレポートをエクスポートできます。  
 
- Per ulteriori informazioni su Reporting Services, vedere [SQL Server Reporting Services](http://go.microsoft.com/fwlink/p/?LinkID=212032) nella documentazione online di SQL Server 2008.  
+ Reporting Services の詳細については、SQL Server 2008 オンライン ブックの「 [SQL Server Reporting Services](http://go.microsoft.com/fwlink/p/?LinkID=212032) 」を参照してください。  
 
-##  <a name="a-namebkmkreportingservicespointa-reporting-services-point"></a><a name="BKMK_ReportingServicesPoint"></a> Punto di Reporting Services  
- Il punto di Reporting Services è un ruolo del sistema del sito installato su un server che esegue Microsoft SQL Server Reporting Services. Il punto di Reporting Services copia le definizioni report di Configuration Manager in Reporting Services, crea cartelle report basate sulle categorie report e imposta criteri di sicurezza per le cartelle report e i report basati sulle autorizzazioni basate su ruoli per gli utenti amministratori di Configuration Manager. In un intervallo di 10 minuti, il punto di Reporting Services si collega a Reporting Services per riapplicare i criteri di protezione se sono stati modificati, ad esempio utilizzando la Gestione report. Per ulteriori informazioni su come pianificare e installare un punto di Reporting Services, vedere la seguente documentazione:  
+##  <a name="BKMK_ReportingServicesPoint"></a> レポート サービス ポイント  
+ レポート サービス ポイントはサイト システムの役割の 1 つで、Microsoft SQL Server Reporting Services を実行しているサーバー上にインストールされます。 レポート サービス ポイントは、Configuration Manager レポートの定義を Reporting Services にコピーし、レポート カテゴリを基にレポート フォルダーを作成し、Configuration Manager 管理ユーザーの役割に基づいた権限に従ってレポート フォルダーとレポートのセキュリティ ポリシーを設定します。 レポート マネージャーなどを使用して、10 分間隔でレポート サービス ポイントが Reporting Services に接続し、変更があったセキュリティ ポリシーを再度適用します。 レポート サービス ポイントの計画とインストールの詳細については、次のドキュメントを参照してください。  
 
--   [Planning for reporting in System Center Configuration Manager](planning-for-reporting.md) (Pianificazione per la creazione di report in System Center Configuration Manager)  
+-   [System Center Configuration Manager のレポートの計画](planning-for-reporting.md)  
 
--   [Configuring reporting in System Center Configuration Manager](configuring-reporting.md) (Configurazione della creazione di report in System Center Configuration Manager)  
+-   [System Center Configuration Manager におけるレポートの構成](configuring-reporting.md)  
 
-##  <a name="a-namebkmkconfigurationmanagerreportsa-configuration-manager-reports"></a><a name="BKMK_ConfigurationManagerReports"></a> Report di Configuration Manager  
- Configuration Manager fornisce le definizioni di oltre 400 report in oltre 50 cartelle report, che vengono copiate nella cartella report radice di SQL Server Reporting Services durante il processo di installazione del punto di Reporting Services. I report vengono visualizzati nella console di Configuration Manager e organizzati in sottocartelle in base alla categoria. I report non vengono propagati nella gerarchia di Configuration Manager in alcuna direzione, ma vengono eseguiti solo per il database del sito in cui vengono creati. Tuttavia, poiché Configuration Manager replica i dati globali in tutta la gerarchia, è possibile accedere alle informazioni a livello di gerarchia. Quando un report recupera dati dal database di un sito, ha accesso ai dati del sito per il sito corrente e i relativi siti figlio e ai dati globali per ciascun sito della gerarchia. Come altri oggetti di Configuration Manager, per eseguire o modificare report un utente amministratore deve disporre delle autorizzazioni appropriate. Per eseguire un report, è necessario che un utente amministratore disponga dell'autorizzazione **Esegui report** per l'oggetto. Per creare o modificare un report, è necessario che un utente amministratore disponga dell'autorizzazione **Modifica report** per l'oggetto.  
+##  <a name="BKMK_ConfigurationManagerReports"></a> Configuration Manager レポート  
+ Configuration Manager は、50 以上のレポート フォルダー内の 400 以上のレポートを対象とするレポート定義を提供します。レポート サービス ポイントのインストール過程で、このレポート定義は SQL Server Reporting Services のルート レポート フォルダーにコピーされます。 レポートは Configuration Manager コンソールに表示され、レポート カテゴリに基づくサブフォルダーに整理されます。 レポートは、Configuration Manager 階層の上位や下位へ伝達されることはなく、作成されたデータベースに対してのみ実行されます。 ただし、Configuration Manager はグローバル データを階層全体にレプリケートするため、階層全体の情報にアクセスできます。 レポートがサイト データベースからデータを取得する際に、現在のサイトと子サイトのサイト データ、および階層内の全サイトのグローバル データにアクセスできます。 他の Configuration Manager オブジェクトと同様に、管理ユーザーがレポートの実行や変更を行うには適切なアクセス許可が必要となります。 レポートを実行するには、オブジェクトの "レポートの実行" アクセス許可が必要です。 **** レポートを作成するには、オブジェクトの "レポートの変更" アクセス許可が必要です。 ****  
 
-###  <a name="a-namebkmkcreatingreportsa-creating-and-modifying-reports"></a><a name="BKMK_CreatingReports"></a> Creazione e modifica di report  
- Configuration Manager usa Generatore report di Microsoft SQL Server come strumento esclusivo di creazione e modifica sia per i report basati su modello che per quelli basati su SQL. Quando si crea o si modifica un report nella console di Configuration Manager, viene aperto Generatore report. Per altre informazioni sulla gestione dei report, vedere [Operazioni e manutenzione per la creazione di report in System Center Configuration Manager](operations-and-maintenance-for-reporting.md).  
+###  <a name="BKMK_CreatingReports"></a> レポートの作成と変更  
+ Configuration Manager では、モデルベースのレポートと SQL ベースのレポートの両方を対象に、Microsoft SQL Server レポート ビルダーが専用のオーサリングおよび編集ツールとして使用されます。 Configuration Manager コンソールでレポートの作成または編集を行うと、レポート ビルダーが開きます。 レポートの管理の詳細については、「[System Center Configuration Manager でのレポートの操作とメンテナンス](operations-and-maintenance-for-reporting.md)」を参照してください。  
 
-###  <a name="a-namebkmkrunningreportsa-running-reports"></a><a name="BKMK_RunningReports"></a> Esecuzione di report  
- Quando si esegue un report nella console di Configuration Manager, il Visualizzatore report si apre e si collega a Reporting Services. Dopo aver specificato tutti i parametri di report richiesti, Reporting Services recupera i dati e visualizza i risultati nel Visualizzatore. È possibile inoltre connettersi a SQL Services Reporting Services, connettersi all'origine dati per il sito ed eseguire i report.  
+###  <a name="BKMK_RunningReports"></a> レポートを実行する  
+ Configuration Manager コンソールでレポートを実行すると、レポート ビルダーが開きます。 レポートの必須パラメーターの指定後、Reporting Services がデータを取得してビューアーに結果を表示します。 また、SQL Services Reporting Services に接続し、サイトのデータ ソースにアクセスしてレポートを実行することもできます。  
 
-###  <a name="a-namebkmkreportpromptsa-report-prompts"></a><a name="BKMK_ReportPrompts"></a> Richieste di report  
- Una richiesta o un parametro di report in Configuration Manager è una proprietà dei report che è possibile configurare quando si crea o si modifica un report. Le richieste di report vengono create per limitare o assegnare i dati che recupera un report. Un report può contenere più di una richiesta purché i nomi richiesta siano univoci e contengano solo caratteri alfanumerici conformi alle regole SQL Server per identificatori.  
+###  <a name="BKMK_ReportPrompts"></a> レポートのプロンプト  
+ Configuration Manager のレポート プロンプトまたはレポート パラメーターは、レポートの作成時または変更時に構成可能なレポート プロパティです。 レポート プロンプトは、レポートで取得するデータを制限したり指定したりするために作成します。 レポートには、プロンプト名が固有のものである限りは複数のプロンプトを入れることができ、識別子については SQL Server 規則に準拠する英数字のみが使用できます。  
 
- Quando si esegue un report, la richiesta richiede un valore per un parametro obbligatorio e, in base al valore, recupera i dati del report. Ad esempio, il report **Informazioni computer per un computer specifico** recupera le informazioni computer per un computer specifico e richiede l'utente amministratore per un nome computer. Reporting Services passa il valore specificato per una variabile definita nell'istruzione SQL per il report.  
+ レポートを実行すると、必要なパラメーターの値を要求するプロンプトが表示され、その値に基づいてレポート データが取得されます。 たとえば、[特定のコンピューターのコンピューター情報] レポートは、特定のコンピューターに関するコンピューター情報を取得するため、管理ユーザーがコンピューター名を入力することが求められます。 **** Reporting Services は、レポートの SQL ステートメントで定義されている変数に指定値を渡します。  
 
-###  <a name="a-namebkmkreportlinksa-report-links"></a><a name="BKMK_ReportLinks"></a> Collegamenti ai report  
- I collegamenti al report in Configuration Manager vengono usati in un report di origine per fornire agli utenti amministratori un accesso semplice a dati aggiuntivi, ad esempio informazioni più dettagliate su ognuno degli elementi del report di origine. Se il report di destinazione richiede uno o più richieste da eseguire, il report di origine deve contenere una colonna con i valori appropriati per ciascuna richiesta. È necessario specificare il numero della colonna che fornisce il valore per la richiesta. Ad esempio, è possibile collegare un report che elenca i computer che sono stati individuati di recente a un report che elenca gli ultimi messaggi ricevuti per un computer specifico. Quando viene creato il collegamento, è possibile specificare che la colonna 2 nel report di origine contiene i nomi computer, cosa che costituisce una richiesta obbligatoria per il report di destinazione. Quando viene eseguito il report di origine, vengono visualizzate le icone dei collegamenti a sinistra di ogni riga di dati. Quando si fa clic sull'icona in una riga, il Visualizzatore report passa il valore nella colonna specificata per tale riga come valore di richiesta che è necessario per visualizzare il report di destinazione. Un report può essere configurato con un solo collegamento e tale collegamento può connettersi solo a una risorsa unica di destinazione.  
+###  <a name="BKMK_ReportLinks"></a> レポート リンク  
+ Configuration Manager のレポート リンクをソース レポートで使用して、ソース レポートの各項目の詳細などの追加データへの簡単なアクセスを管理ユーザーに示すことができます。 ターゲット レポートでプロンプトを実行する必要がある場合は、各プロンプトの適切な値の入った列をソース レポートに含める必要があります。 プロンプトの値が含まれている列の番号を指定する必要があります。 たとえば、最近探索されたコンピューターを一覧表示するレポートを、特定のコンピューターに関して最近受信されたメッセージを一覧表示するレポートにリンクするとします。 リンクを作成するときに、ソース レポートの列 2 に、ターゲット レポートに必要なプロンプトであるコンピューター名を格納するように指定できます。 ソース レポートを実行すると、データの各行の左側にリンク アイコンが表示されます。 任意の行のアイコンをクリックすると、その行の指定された列にある値が、ターゲット レポートを表示するために必要なプロンプト値として渡されます。 レポートの構成に使用できるリンクは 1 つのみで、そのリンクは 1 つの対象リソースのみに接続可能です。  
 
 > [!WARNING]  
->  Se si sposta un report di destinazione in una cartella report diversa, cambia il percorso del report di destinazione. Il collegamento del report nel report di origine non viene automaticamente aggiornato con il nuovo percorso e il collegamento del report non funzionerà nel report di origine.  
+>  ターゲット レポートを別のレポート フォルダーに移動すると、ターゲット レポートの場所が変更されます。 ソース レポートのレポート リンクは自動的に新しい場所に更新されず、レポート リンクはソース レポート内では動作しなくなります。  
 
-##  <a name="a-namebkmkreportfoldersa-report-folders"></a><a name="BKMK_ReportFolders"></a> Cartelle report  
- Le cartelle report in System Center Configuration Manager costituiscono un metodo per ordinare e filtrare i report archiviati in Reporting Services. Le cartelle report sono particolarmente utili quando si devono gestire numerosi report. Quando si installa un punto di Reporting Services, i report vengono copiati in Reporting Services e organizzati in più di 50 cartelle report. Le cartelle report sono di sola lettura. Non è possibile modificarle nella console di Configuration Manager.  
+##  <a name="BKMK_ReportFolders"></a> レポート フォルダー  
+ System Center Configuration Manager のレポート フォルダーは、Reporting Services に格納されているレポートを並べ替えてフィルターする手段を提供します。 管理するレポートが多くある場合、レポート フォルダーは特に便利です。 レポート サービス ポイントをインストールすると、レポートが Reporting Services にコピーされ、50 以上のレポート フォルダーに整理されます。 レポート フォルダーは読み取り専用です。 Configuration Manager コンソールで変更することはできません。  
 
-##  <a name="a-namebkmkreportsubscriptionsa-report-subscriptions"></a><a name="BKMK_ReportSubscriptions"></a> Sottoscrizioni report  
- Una sottoscrizione report in Reporting Services è una richiesta ricorrente per recapitare un report a un orario specifico o in risposta a un evento e in un formato file applicazione che viene specificato nella sottoscrizione. Le sottoscrizione forniscono un'alternativa all'esecuzione di un report su richiesta. La creazione di report su richiesta richiede la selezione attiva del report ogni volta che si desidera visualizzare il report. Al contrario, le sottoscrizioni possono essere utilizzate per pianificare e quindi automatizzare il recapito di un report.  
+##  <a name="BKMK_ReportSubscriptions"></a> レポートのサブスクリプション  
+ Reporting Services のレポートのサブスクリプションは、サブスクリプションで指定するアプリケーション ファイル形式のレポートの定期配信またはイベントへの応答としての配信を求める定期要求です。 サブスクリプションは、オンデマンド レポート実行の代替手段となります。 オンデマンド レポートでは、レポートを表示するたびに手動でレポートを選択しなければなりません。 これと対照的に、サブスクリプションはスケジュールを設定して自動的にレポートを配信できます。  
 
- È possibile gestire le sottoscrizioni report nella console di Configuration Manager. Vengono elaborate nel server di report. Le sottoscrizioni vengono distribuite utilizzando le estensioni per il recapito distribuite nel server. Per impostazione predefinita, è possibile creare sottoscrizioni che inviano report a una cartella condivisa o a un indirizzo di posta elettronica. Per altre informazioni sulla gestione delle sottoscrizioni report, vedere [Operazioni e manutenzione per la creazione di report in System Center Configuration Manager](operations-and-maintenance-for-reporting.md).  
+ レポートのサブスクリプションは、Configuration Manager コンソールで管理できます。 レポート サーバーでその処理が行われます。 サブスクリプションの配信には、サーバーに展開される配信拡張機能が使用されます。 既定では、共有フォルダーまたは電子メール アドレスにレポートを送信するサブスクリプションを作成できます。 レポート サブスクリプションの管理の詳細については、「[System Center Configuration Manager でのレポートの操作とメンテナンス](operations-and-maintenance-for-reporting.md)」を参照してください。  
 
-##  <a name="a-namebkmkreportbuildera-report-builder"></a><a name="BKMK_ReportBuilder"></a> Generatore report  
- Configuration Manager usa Generatore report di Microsoft SQL Server Reporting Services come strumento esclusivo di creazione e modifica per i report basati su modello e per quelli basati su SQL. Quando si avvia l'azione per creare o modificare un report nella console di Configuration Manager, si apre Generatore report. Generatore report viene installato automaticamente quando si crea o si modifica un report per la prima volta. Quando si eseguono o modificano report viene aperta la versione di Generatore report associata alla versione installata di SQL Server.  
+##  <a name="BKMK_ReportBuilder"></a> レポート ビルダー  
+ Configuration Manager では、モデルベースのレポートと SQL ベースのレポートの両方を対象に、Microsoft SQL Server Reporting Services レポート ビルダーが専用のオーサリングおよび編集ツールとして使用されます。 Configuration Manager コンソールでレポートの作成操作または編集操作を開始すると、レポート ビルダーが開きます。 レポートの初回作成時または変更時に、レポート ビルダーが自動的にインストールされます。 レポートを実行または編集すると、インストールされているバージョンの SQL Server と関連付けられたバージョンの Report Builder が開きます。  
 
- L'installazione di Generatore report aggiunge il supporto per più di 20 lingue. Quando si esegue Generatore report, i dati vengono visualizzati nella lingua del sistema operativo in esecuzione sul computer locale. Se Generatore report non supporta la lingua, i dati vengono visualizzati in inglese. Generatore report supporta tutte le funzionalità di SQL Server 2008 Reporting Services, tra cui:  
+ レポート ビルダーのインストールにより、20 言語のサポートが追加されます。 レポート ビルダーを実行すると、ローカル コンピューターで実行中のオペレーティング システムの言語でデータが表示されます。 レポート ビルダーがその言語をサポートしない場合は、データは英語で表示されます。 レポート ビルダーは SQL Server 2008 Reporting Services の全機能をサポートします。以下の機能が含まれます。  
 
--   Offre un ambiente di creazione report intuitivo con un aspetto simile a Microsoft Office.  
+-   Microsoft Office のような外観の直観的なレポート オーサリング環境  
 
--   Offre il layout report flessibile di SQL Server 2008 Report Definition Language (RDL).  
+-   SQL Server 2008 レポート定義言語 (RDL) の柔軟なレポート レイアウト  
 
--   Offre vari moduli di visualizzazione dei dati, compresi grafici e indicatori.  
+-   チャートやゲージなど多様なデータ表示形式  
 
--   Fornisce caselle di testo con formattazione completa.  
+-   リッチ形式のテキスト ボックス  
 
--   Effettua l'esportazione in formato Microsoft Word.  
+-   Microsoft Word 形式のエクスポート  
 
- È inoltre possibile aprire Generatore report da SQL Server Reporting Services.  
+ レポート ビルダーは、SQL Server Reporting Services から開くこともできます。  
 
-##  <a name="a-namebkmkreportmodelsa-report-models-in-sql-server-reporting-services"></a><a name="BKMK_ReportModels"></a> Modelli di report in SQL Server Reporting Services  
- SQL Reporting Services in Configuration Manager usa modelli di report per consentire agli utenti amministratori di selezionare dal database elementi da includere nei report basati su modello. Per l'utente amministratore che crea il report, i modelli di report mostrano solo visualizzazioni ed elementi specifici da selezionare. Per creare report basati su modello, deve essere disponibile almeno un modello. I modelli di report dispongono delle seguenti funzionalità:  
+##  <a name="BKMK_ReportModels"></a> SQL Server Reporting Services のレポート モデル  
+ Configuration Manager の SQL Reporting Services では、レポート モデルを使用することで、管理ユーザーがモデルベースのレポートに含める項目をデータベースから容易に選択することができます。 レポートを構築する管理ユーザーには、レポート モデルで指定したビューと項目のみが選択用に表示されます。 モデルベースのレポートを作成するには、少なくとも 1 つのレポート モデルが必要です。 レポート モデルには、次の特長があります。  
 
--   È possibile assegnare campi di database e visualizzazioni con nomi aziendali logici per facilitare la produzione di report. Non è necessario conoscere la struttura del database per la produzione di report.  
+-   データベースのフィールドとビューに論理的な事業名を設定し、レポート生成を効率化することができます。 レポートを生成するには、データベース構造に関する知識は必要ありません。  
 
--   È possibile raggruppare logicamente gli elementi.  
+-   項目は論理的にグループ化できます。  
 
--   È possibile definire relazioni tra elementi.  
+-   項目間のリレーションシップ  
 
--   È possibile proteggere gli elementi del modello in modo che gli utenti amministrativi possano vedere solo i dati che sono autorizzati a vedere.  
+-   モデルの要素にセキュリティ保護を適用することで、管理ユーザーが表示のアクセス許可を持っているデータのみが表示されるように管理できます。  
 
- Nonostante Configuration Manager fornisca modelli di report campione, è anche possibile definire modelli di report per soddisfare i requisiti della propria azienda. Per altre informazioni su come creare modelli di report, vedere [Creazione di modelli di report personalizzati per System Center Configuration Manager in SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md).  
+ Configuration Manager にはレポート モデルのサンプルが用意されていますが、それぞれの業務要件に適したレポート モデルを定義することもできます。 レポート モデルの作成方法の詳細については、「[SQL Server Reporting Services での System Center Configuration Manager のカスタム レポート モデルの作成](creating-custom-report-models-in-sql-server-reporting-services.md)」を参照してください。  
 
-## <a name="next-steps"></a>Passaggi successivi
-[Pianificazione della creazione di report](planning-for-reporting.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+## <a name="next-steps"></a>次のステップ
+[レポートの計画](planning-for-reporting.md)

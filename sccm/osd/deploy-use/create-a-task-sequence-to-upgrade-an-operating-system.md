@@ -1,134 +1,131 @@
 ---
-title: "Creare una sequenza di attività per aggiornare un sistema operativo | Microsoft Docs"
-description: "Usare le sequenze di attività in System Center Configuration Manager per aggiornare automaticamente un sistema operativo da Windows 7 o versione successiva a Windows 10."
+title: "オペレーティング システムをアップグレードするタスク シーケンスの作成 | Microsoft Docs"
+description: "System Center Configuration Manager のタスク シーケンスで、オペレーティング システムを Windows 7 以降から Windows 10 に自動的にアップグレードできます。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7591e386-a9ab-4640-8643-332dce5aa006
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 1035dbbf944a3a467d637a4a948a75b0946eb711
 ms.openlocfilehash: 4a3c69edc85a4ea7501510b6b3f12c72ad3a24ff
-ms.contentlocale: it-it
-ms.lasthandoff: 07/11/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-a-task-sequence-to-upgrade-an-operating-system-in-system-center-configuration-manager"></a>Creare una sequenza di attività per aggiornare un sistema operativo in System Center Configuration Manager
+# <a name="create-a-task-sequence-to-upgrade-an-operating-system-in-system-center-configuration-manager"></a>System Center Configuration Manager のオペレーティング システムをアップグレードするタスク シーケンスを作成する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Usare le sequenze di attività in System Center Configuration Manager per aggiornare automaticamente un sistema operativo da Windows 7 o versione successiva a Windows 10 o da Windows Server 2012 o versione successiva a Windows Server 2016 su un computer di destinazione. Creare una sequenza attività che faccia riferimento all'immagine del sistema operativo da installare nel computer di destinazione ed eventuale contenuto aggiuntivo, ad esempio applicazioni o aggiornamenti software che si desidera installare. La sequenza di attività per aggiornare un sistema operativo fa parte dello scenario [Aggiornare Windows alla versione più recente](upgrade-windows-to-the-latest-version.md).  
+System Center Configuration Manager でタスク シーケンスを使用して、対象のコンピューターでオペレーティング システムを Windows 7 以降から Windows 10 に、または Windows Server 2012 以降から Windows Server 2016 に自動的にアップグレードします。 セットアップ先のコンピューターにインストールするオペレーティング システム イメージと、他に追加でインストールするコンテンツ (アプリケーションやソフトウェア更新プログラムなど) を参照するタスク シーケンスを作成します。 オペレーティング システムをアップグレードするタスク シーケンスは、「[Windows を最新バージョンにアップグレードする](upgrade-windows-to-the-latest-version.md)」シナリオの一部です。  
 
-##  <a name="BKMK_UpgradeOS"></a> Creare una sequenza di attività per aggiornare un sistema operativo  
- Per aggiornare il sistema operativo nei computer, è possibile creare una sequenza di attività e selezionare **Aggiorna sistema operativo dal pacchetto di aggiornamento** nella Creazione guidata della sequenza di attività. La procedura guidata aggiunge i passaggi per aggiornare il sistema operativo, applicare gli aggiornamenti software e installare le applicazioni. Prima di creare la sequenza di attività, devono essere disponibili gli elementi seguenti:    
+##  <a name="BKMK_UpgradeOS"></a> オペレーティング システムをアップグレードするタスク シーケンスの作成  
+ コンピューター上のオペレーティング システムをアップグレードするには、タスク シーケンスを作成し、タスク シーケンスの作成ウィザードで **[オペレーティング システムをアップグレード パッケージからアップグレードする]** を選択します。 ウィザードにより、オペレーティング システムのアップグレード、ソフトウェア更新プログラムの適用、アプリケーションのインストールの各ステップが追加されます。 タスク シーケンスを作成する前に、以下の点を確認しておく必要があります。    
 
--   **Richiesto**  
+-   **必須**  
 
-     - Il [pacchetto di aggiornamento del sistema operativo](../get-started/manage-operating-system-upgrade-packages.md) deve essere disponibile nella console di Configuration Manager.
-     - Quando si esegue l'aggiornamento a Windows Server 2016, è necessario selezionare l'impostazione **Ignore any dismissable compatibility messages** (Ignora eventuali messaggi di compatibilità che possono essere chiusi) nel passaggio della sequenza di attività Aggiorna sistema operativo o l'aggiornamento ha esito negativo.
+     - [オペレーティング システムのアップグレード パッケージ](../get-started/manage-operating-system-upgrade-packages.md) が Configuration Manager コンソールで使用可能である必要があります。
+     - Windows Server 2016 にアップグレードする場合は、オペレーティング システムのアップグレードのタスク シーケンスのステップで、**[Ignore any dismissable compatibility messages]\(互換性に関する却下可能なメッセージをすべて無視する\)** の設定を選択しないと、アップグレードに失敗します。
 
--   **Obbligatorio (se usato)**  
+-   **必須 (使用する場合)**  
 
-    -   Gli [aggiornamenti software](../../sum/get-started/synchronize-software-updates.md) devono essere sincronizzati nella console di Configuration Manager.  
+    -   [ソフトウェア更新プログラム](../../sum/get-started/synchronize-software-updates.md)が Configuration Manager コンソールで同期されている必要があります。  
 
-    -   Le [applicazioni](../../apps/deploy-use/create-applications.md) devono essere aggiunte alla console di Configuration Manager.  
+    -   [アプリケーション](../../apps/deploy-use/create-applications.md)が Configuration Manager コンソールに追加されている必要があります。  
 
-#### <a name="to-create-a-task-sequence-that-upgrades-an-operating-system"></a>Per creare una sequenza di attività che esegua l'aggiornamento di un sistema operativo  
+#### <a name="to-create-a-task-sequence-that-upgrades-an-operating-system"></a>オペレーティング システムをアップグレードするタスク シーケンスを作成するには  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1.  Configuration Manager コンソールで、 **[ソフトウェア ライブラリ]** をクリックします。  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス** ] をクリックします。  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea sequenza di attività** per avviare la Creazione guidata della sequenza di attività.  
+3.  [ **ホーム** ] タブの [ **作成** ] グループで [ **タスク シーケンスの作成** ] をクリックして、タスク シーケンスの作成ウィザードを起動します。  
 
-4.  Nella pagina **Crea una nuova sequenza di attività** fare clic su **Aggiorna sistema operativo dal pacchetto di aggiornamento**e quindi fare clic su **Avanti**.  
+4.  **[新しいタスク シーケンスの作成]** ページで、 **[オペレーティング システムをアップグレード パッケージからアップグレードする]**をクリックしてから、 **[次へ]**をクリックします。  
 
-5.  Nella pagina **Informazioni sequenza di attività** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
+5.  [ **タスク シーケンス情報** ] ページで次の設定を指定し、[ **次へ** ] をクリックします。  
 
-    -   **Nome sequenza di attività**: specificare un nome che identifica la sequenza di attività.  
+    -   **タスク シーケンス名**:タスク シーケンスを識別する名前を指定します。  
 
-    -   **Descrizione**: specificare una descrizione dell'attività eseguita dalla sequenza di attività.  
+    -   **説明**: タスク シーケンスによって実行されるタスクの説明を指定します。  
 
-6.  Nella pagina **Aggiorna il sistema operativo Windows** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
+6.  **[Windows オペレーティング システムのアップグレード]** ページで次の設定を指定し、 **[次へ]**をクリックします。  
 
-    -   **Pacchetto di aggiornamento**: specificare il pacchetto di aggiornamento che contiene i file di origine per l'aggiornamento del sistema operativo. È possibile verificare di avere selezionato il pacchetto di aggiornamento corretto esaminando le informazioni nel riquadro **Proprietà** . Per altre informazioni, vedere [Gestire i pacchetti di aggiornamento del sistema operativo](../get-started/manage-operating-system-upgrade-packages.md).  
+    -   **[アップグレード パッケージ]**: オペレーティング システムのアップグレードのソース ファイルを含むアップグレード パッケージを指定します。 **[プロパティ]** ウィンドウの情報を参照して、正しいアップグレード パッケージが選択されていることを確認できます。 詳細については、「[オペレーティング システムのアップグレード パッケージの管理](../get-started/manage-operating-system-upgrade-packages.md)」を参照してください。  
 
-    -   **Indice edizione**: se sono presenti più indici edizione del sistema operativo nel pacchetto, selezionare l'indice edizione desiderato. Per impostazione predefinita, viene selezionato il primo elemento.  
+    -   **[エディション インデックス]**: 複数のオペレーティング システムのエディション インデックスをパッケージから入手できる場合、希望のエディション インデックスを選択します。 既定では、最初の項目が選択されています。  
 
-    -   **Codice Product Key**: specificare il codice Product Key per il sistema operativo Windows da installare. È possibile specificare i codici Product Key per contratti multilicenza codificati e i codici Product Key standard. Se si usa un codice Product Key non codificato, ogni gruppo di cinque caratteri deve essere separato da un trattino (-). Ad esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX* Se l'aggiornamento è per un'edizione per contratti multilicenza, il codice Product Key non è obbligatorio. Il codice Product Key è necessario solo quando l'aggiornamento è per un'edizione di Windows al dettaglio.  
+    -   **プロダクト キー**: インストールする Windows オペレーティング システムのプロダクト キーを指定します。 エンコードされたボリューム ライセンス キーと標準のプロダクト キーを指定できます。 エンコードされていないプロダクト キーを使用する場合は、5 文字の各グループをダッシュ (-) で区切る必要があります。 例: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX* ボリューム ライセンス版のアップグレードの場合は、プロダクト キーは必要ありません。 製品版の Windows のアップグレードの場合のみ、プロダクト キーが必要です。  
 
-    -   **Ignore any dismissable compatibility messages** (Ignora eventuali messaggi di compatibilità che possono essere chiusi): selezionare questa impostazione se si esegue l'aggiornamento a Windows Server 2016. Se non si seleziona questa impostazione, la sequenza di attività non può essere completata perché il programma di installazione di Windows rimane in attesa che l'utente faccia clic su **Conferma** in una finestra di dialogo di compatibilità delle app di Windows.   
+    -   **[Ignore any dismissable compatibility messages]\(互換性に関する却下可能なメッセージをすべて無視する\)**: Windows Server 2016 にアップグレードする場合は、この設定を選択します。 この設定を選択しないと、Windows アプリの互換性ダイアログで、ユーザーが **[確認]** をクリックするのを Windows セットアップが待機してしまうため、タスク シーケンスを完了できません。   
 
-7.  Nella pagina **Includi aggiornamenti** specificare se installare gli aggiornamenti software necessari, tutti gli aggiornamenti software o nessun aggiornamento software e quindi fare clic su **Avanti**. Se si sceglie di installare gli aggiornamenti software, Configuration Manager installa solo quelli assegnati alle raccolte di cui il computer di destinazione è membro.  
+7.  **[更新プログラムを含める]** ページで、必要なソフトウェア更新プログラム、すべてのソフトウェア更新プログラム、またはソフトウェア更新プログラムなしを指定してから、 **[次へ]** をクリックします。 ソフトウェア更新プログラムをインストールするように指定する場合、Configuration Manager は、セットアップ先のコンピューターがメンバーとなっているコレクション向けのソフトウェア更新プログラムのみをインストールします。  
 
-8.  Nella pagina **Installa applicazioni** specificare le applicazioni da installare nel computer di destinazione e quindi fare clic su **Avanti**. Se si specificano più applicazioni, è possibile specificare che la sequenza di attività continui anche se l'installazione di un'applicazione specifica non riesce.  
+8.  **[アプリケーションのインストール]** ページで、展開先コンピューターにインストールするアプリケーションを指定してから、**[次へ]** をクリックします。 複数のアプリケーションを指定する場合は、特定のアプリケーションのインストールに失敗したときにタスク シーケンスを続行するかどうかも指定することができます。  
 
-9. Completare la procedura guidata.  
+9. ウィザードを完了します。  
 
 
 
-## <a name="configure-pre-cache-content"></a>Configurare la pre-cache del contenuto
-A partire dalla versione 1702, per le distribuzioni di sequenze di attività disponibili è possibile scegliere di usare la funzionalità di memorizzazione anticipata nella cache del contenuto. In questo modo, prima che gli utenti installino il contenuto, i client scaricheranno solo il contenuto pertinente.
+## <a name="configure-pre-cache-content"></a>コンテンツの事前キャッシュを構成する
+バージョン 1702 以降では、タスク シーケンスの利用可能な展開について、事前キャッシュ機能を使うように設定できます。これにより、ユーザーがコンテンツをインストールする前に、関連するコンテンツのみをクライアントにダウンロードさせることができます。
 > [!TIP]  
-> Introdotta con la versione 1702, la pre-cache è una funzionalità di versione non definitiva. Per abilitarla, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/pre-release-features).
+> バージョン 1702 で導入された事前キャッシュは、プレリリース機能です。 有効にするには、「[更新プログラムからのプレリリース機能の使用](/sccm/core/servers/manage/pre-release-features)」をご覧ください。
 
-Si supponga ad esempio di voler distribuire una sequenza di attività di aggiornamento sul posto di Windows 10, di volere una sola sequenza di attività per tutti gli utenti e di avere più architetture e/o lingue. Nelle versioni precedenti la 1702, se si crea una distribuzione disponibile, il contenuto viene scaricato quando l'utente fa clic su **Installa** in Software Center. Ciò prolunga il tempo che precede l'avvio dell'installazione. Inoltre, tutto il contenuto a cui viene fatto riferimento nella sequenza di attività viene scaricato. compreso il pacchetto di aggiornamento del sistema operativo per tutte le lingue e per tutte le architetture. Se le dimensioni di ciascun pacchetto sono circa tre GB, il pacchetto di download può avere dimensioni notevoli.
+たとえば、Windows 10 のインプレース アップグレード タスク シーケンスを展開する場合で、すべてのユーザーに対して必要なタスク シーケンスは 1 つのみで、複数のアーキテクチャおよび/または言語に対応する必要があるとします。 1702 より前のバージョンでは、利用可能な展開を作成した場合、その後ユーザーがソフトウェア センターで [**インストール**] をクリックすると、その時点でコンテンツがダウンロードされます。 この場合は、インストールできる状態になるまで、さらに時間がかかります。 また、タスク シーケンスで参照されているすべてのコンテンツがダウンロードされます。 これには、すべての言語およびアーキテクチャ用のオペレーティング システム アップグレード パッケージが含まれます。 それぞれのサイズが約 3 GB だとすると、ダウンロード パッケージは非常に大きなものとなります。
 
-Con la funzionalità di pre-cache del contenuto è possibile consentire al client di scaricare solo il contenuto applicabile non appena riceve la distribuzione. Pertanto quando l'utente fa clic su **Installa** in Software Center, il contenuto è pronto e l'installazione inizia rapidamente, dato che il contenuto si trova nel disco rigido locale.
+コンテンツの事前キャッシュ機能には、クライアントが展開を受信してすぐに適用可能なコンテンツのみをダウンロードできるようにするオプションが用意されています。 したがって、ユーザーがソフトウェア センターで [**インストール**] をクリックすると、コンテンツはローカルのハード ドライブ上にあるため、コンテンツは準備完了の状態にあり、インストールが迅速に開始されます。
 
-### <a name="to-configure-the-pre-cache-feature"></a>Per configurare la funzionalità di pre-cache
+### <a name="to-configure-the-pre-cache-feature"></a>事前キャッシュ機能を構成するには
 
-1. Creare pacchetti di aggiornamento del sistema operativo per lingue e architetture specifiche. Specificare l'architettura e della lingua nella scheda **Origine dati** del pacchetto. Per la lingua usare la conversione decimale. Ad esempio, 1033 è il valore decimale per l'inglese e 0x0409 è il corrispondente valore esadecimale. Per i dettagli, vedere [Creare una sequenza di attività per aggiornare un sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system).
+1. 特定のアーキテクチャおよび言語に対応したオペレーティング システム アップグレード パッケージを作成します。 パッケージの [**データ ソース**] タブでアーキテクチャと言語を指定します。 言語については、10 進数変換を使用します (たとえば、1033 は英語を表す 10 進数です。これを 16 進数で表すと 0x0409 となります)。 詳細については、「[オペレーティング システムをアップグレードするタスク シーケンスの作成](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system)」を参照してください。
 
-    I valori relativi all'architettura e alla lingua usati devono rispettare le condizioni dei passaggi della sequenza di attività che vengono creati nel passaggio successivo, per determinare se sia necessario usare la funzionalità di pre-cache per i pacchetti di aggiornamento del sistema operativo.
-2. Creare una sequenza di attività con passaggi condizionali per le diverse lingue e le diverse architetture. Per la versione inglese, ad esempio, è possibile creare un passaggio simile al seguente:
+    アーキテクチャと言語の値は、次の手順で作成するタスク シーケンス ステップの条件と照合して、オペレーティング システム アップグレード パッケージの事前キャッシュが必要かどうかを判断するために使用されます。
+2. さまざまな言語およびアーキテクチャに対して条件付きステップを適用するタスク シーケンスを作成します。 たとえば、英語バージョンの場合は、次のようなステップを作成することが可能です。
 
-    ![proprietà pre-cache](../media/precacheproperties2.png)
+    ![事前キャッシュのプロパティ](../media/precacheproperties2.png)
 
-    ![opzioni pre-cache](../media/precacheoptions2.png)  
+    ![事前キャッシュのオプション](../media/precacheoptions2.png)  
 
-3. Distribuire la sequenza di attività. Per la funzionalità di pre-cache configurare le impostazioni seguenti:
-    - Nella scheda **Generale** selezionare **Pre-download del contenuto per questa sequenza di attività**.
-    - Nella scheda **Impostazioni di distribuzione** configurare la sequenza di attività selezionando **Disponibile** per **Scopo**. Se si crea una distribuzione **obbligatoria** la funzionalità di pre-cache non funziona.
-    - Per l'impostazione **Pianifica quando questa distribuzione diventerà disponibile** della scheda **Pianificazione**, scegliere un'ora nel futuro che garantisca ai client tempo sufficiente per la funzionalità di pre-cache del contenuto, prima che la distribuzione venga resa disponibile agli utenti. È ad esempio possibile concedere alla funzionalità di pre-cache del contenuto un periodo di 3 ore nel futuro.  
-    - Nella scheda **Punti di distribuzione** configurare le impostazioni **Opzioni di distribuzione**. Se in un client non è stata eseguita la funzione di pre-cache per il contenuto prima che l'utente avvii l'installazione, vengono usate queste impostazioni.
-
-
-### <a name="user-experience"></a>Esperienza utente
-- Quando il client riceve i criteri di distribuzione, avvia la funzione di pre-cache del contenuto, ovvero di tutto il contenuto a cui si fa riferimento (eventuali altri tipi di pacchetti) e del pacchetto di aggiornamento del solo sistema operativo corrispondente a quello del client, in base alle condizioni impostate nella sequenza di attività.
-- Quando la distribuzione viene resa disponibile agli utenti (impostazione nella scheda **Pianificazione** della distribuzione), una notifica informa gli utenti della nuova distribuzione e la distribuzione stessa diventa visibile in Software Center. Per avviare l'installazione l'utente può passare a Software Center e fare clic su **Installa**.
-- Se la funzione di pre-cache del contenuto non è stata eseguita completamente, vengono usate le impostazioni specificate nella scheda **Opzioni di distribuzione** della distribuzione. È consigliabile lasciare un periodo sufficiente tra il momento in cui si crea la distribuzione e l'ora in cui la distribuzione stessa diventa disponibile per gli utenti, per consentire ai client di eseguire in tempo la funzione di pre-cache del contenuto.
+3. タスク シーケンスを展開します。 事前キャッシュの機能については、次のように構成します。
+    - [**全般**] タブで、[**このタスク シーケンス用のコンテンツを事前にダウンロードする**] を選択します。
+    - [**展開設定**] タブで、[**目的**] を [**利用可能**] にしてタスク シーケンスを構成します。 **必須**の展開を作成する場合、事前キャッシュ機能は動作しません。
+    - [**スケジュール**] タブの [**この展開が使用可能になる日時を指定する**] 設定では、将来の適切な時刻を選択します。これにより、展開をユーザーが利用できるようにする前に、コンテンツを事前キャッシュするのに十分な時間をクライアントに与えます。 たとえば、利用可能時間を 3 時間先に設定することで、コンテンツを事前キャッシュするのに十分な時間を確保することができます。  
+    - [**配布ポイント**] タブで、[**展開オプション**] 設定を構成します。 ユーザーがインストールを開始する前にコンテンツを事前キャッシュしない場合は、これらの設定を使用します。
 
 
+### <a name="user-experience"></a>ユーザー側の表示と操作
+- クライアントは、展開ポリシーを受け取ると、コンテンツの事前キャッシュを開始します。 これには、参照されるすべてのコンテンツ (他のパッケージの種類) と、オペレーティング システム アップグレード パッケージのうち、タスク シーケンスで設定した条件に基づいてクライアントと一致したものが含まれます。
+- ユーザーが展開を利用可能になると (展開の [**スケジュール**] タブの設定)、新しい展開に関する情報をユーザーに提供する通知が表示され、展開がソフトウェア センターで確認可能な状態になります。 ユーザーはソフトウェア センターに移動し、[**インストール**] をクリックしてインストールを開始します。
+- コンテンツが完全に事前キャッシュされていない場合は、展開の [**展開オプション**] タブで指定した設定が使用されます。 展開を作成した時間と、展開をクライアントが利用できるようにする時間との間隔を適切な長さに設定して、コンテンツを事前キャッシュするのに十分な時間をクライアントに与えることをお勧めします。
 
-## <a name="download-package-content-task-sequence-step"></a>Passaggio della sequenza di attività Scaricare il contenuto del pacchetto  
- Il passaggio [Scaricare il contenuto del pacchetto](../understand/task-sequence-steps.md#BKMK_DownloadPackageContent) può essere usato prima del passaggio **Aggiorna sistema operativo** negli scenari seguenti:  
 
--   Si utilizza una singola sequenza di attività di aggiornamento che può funzionare con piattaforme x86 e x64. Per portare a termine la procedura, è necessario includere due passaggi **Scarica contenuto pacchetto** nel gruppo **Preparazione dell'aggiornamento** con le condizioni per rilevare l'architettura client e scaricare solo il pacchetto di aggiornamento del sistema operativo appropriato. Configurare ogni passaggio **Scarica contenuto pacchetto** in modo da usare la stessa variabile e usare la variabile per il percorso del supporto durante il passaggio **Aggiorna sistema operativo** .  
 
--   Per scaricare in modo dinamico un pacchetto di driver applicabile, usare due passaggi **Scarica contenuto pacchetto** con le condizioni per rilevare il tipo di hardware appropriato per ogni pacchetto driver. Configurare ogni passaggio **Scarica contenuto pacchetto** in modo da usare la stessa variabile e usare la variabile per il valore **Contenuto preconfigurato** durante il passaggio **Aggiorna sistema operativo** .  
+## <a name="download-package-content-task-sequence-step"></a>パッケージ コンテンツのダウンロードのタスク シーケンスのステップ  
+ 以下のシナリオでは、**オペレーティング システムのアップグレード**のステップの前に、[パッケージ コンテンツのダウンロード](../understand/task-sequence-steps.md#BKMK_DownloadPackageContent)のステップを使用できます。  
+
+-   X86 と x64 の両方のプラットフォームで動作する 1 つのアップグレード タスク シーケンスを使用します。 これを行うには、クライアント アーキテクチャを検出して、該当するオペレーティング システム アップグレード パッケージのみをダウンロードする条件を含む **[アップグレードの準備]** グループに、2 つの **[パッケージ コンテンツのダウンロード]** ステップを追加します。 同じ変数を使用するようにそれぞれの **[パッケージ コンテンツのダウンロード]** ステップを構成して、 **[オペレーティング システムのアップグレード]** ステップ上のメディア パスにその変数を使用します。  
+
+-   該当するドライバー パッケージを動的にダウンロードするには、ドライバー パッケージごとに適切なハードウェアの種類を検出する条件を含む 2 つの **[パッケージ コンテンツのダウンロード]** ステップを使用します。 同じ変数を使用するようにそれぞれの **[パッケージ コンテンツのダウンロード]** ステップを構成し、 **[オペレーティング システムのアップグレード]** ステップのドライバー セクションの **[ステージング済みコンテンツ]** 値に変数を使用します。  
 
    > [!NOTE]
-   > Quando sono presenti più pacchetti, Configuration Manager aggiunge un suffisso numerico al nome della variabile. Ad esempio, se si specifica una variabile %mycontent% come variabile personalizzata, questa è la radice in cui è archiviato tutto il contenuto di riferimento (può trattarsi anche di più pacchetti). Quando si fa riferimento alla variabile in un passaggio secondario della sequenza, ad esempio Aggiorna sistema operativo, viene usata con un suffisso numerico. In questo esempio, %mycontent01% o %mycontent02% , dove il numero corrisponde all'ordine di elencazione del pacchetto in questo passaggio.
+   > 複数のパッケージがある場合は、Configuration Manager によって、数字のサフィックスが変数名に追加されます。 たとえば、%mycontent% という変数をカスタム変数として指定した場合に、この変数名は、参照コンテンツがすべて格納されているルートになります (複数のパッケージを指定できます)。 これは、オペレーティング システムのアップグレードなどのサブシーケンス ステップで変数を参照するときに、数字のサフィックスと共に使用されます。 この例では、%mycontent01% または %mycontent02% のようになります。各変数の数字は、このステップのパッケージの表示順序に対応しています。
 
-## <a name="optional-post-processing-task-sequence-steps"></a>Passaggi della sequenza attività di post-elaborazione facoltativi  
- Dopo aver creato la sequenza di attività, è possibile aggiungere ulteriori passaggi per disinstallare le applicazioni con problemi di compatibilità noti o aggiungere azioni post-elaborazione da eseguire dopo il riavvio del computer e il corretto aggiornamento a Windows 10. Aggiungere questi passaggi aggiuntivi nel gruppo Post-elaborazione della sequenza di attività.  
+## <a name="optional-post-processing-task-sequence-steps"></a>オプションの後処理のタスク シーケンスのステップ  
+ タスク シーケンスが作成されたら、互換性の問題があることがわかっているアプリケーションをアンインストールするステップを追加するか、コンピューターが再起動して Windows 10 へのアップグレードが成功した後に実行する後処理操作を追加することができます。 これらの追加ステップを、後処理のタスク シーケンスのグループに追加します。  
 
 > [!NOTE]  
->  Poiché questa sequenza di attività non è lineare, esistono condizioni sui passaggi che possono influenzare i risultati della sequenza di attività, a seconda che venga aggiornato correttamente il computer client o che sia necessario ripristinare il computer client alla versione del sistema operativo precedente.  
+>  このタスク シーケンスは線形ではないため、クライアント コンピューターを正常にアップグレードできるかどうかや、クライアント コンピューターを起動時のオペレーティング システムのバージョンにロールバックする必要があるかどうかに応じて、ステップには条件が課され、それらはタスク シーケンスの結果に影響を与える可能性があります。  
 
-## <a name="optional-rollback-task-sequence-steps"></a>Passaggi della sequenza attività di rollback facoltativi  
- Quando si verificano problemi nel processo di aggiornamento dopo il riavvio del computer, il programma di installazione eseguirà il rollback dell'aggiornamento al sistema operativo precedente e la sequenza di attività continuerà con tutti i passaggi nel gruppo Rollback. Dopo aver creato la sequenza di attività, è possibile aggiungere passaggi facoltativi al gruppo Rollback.  
+## <a name="optional-rollback-task-sequence-steps"></a>オプションのロールバックのタスク シーケンスのステップ  
+ コンピューターの再起動後にアップグレード プロセスで問題が生じると、セットアップはアップグレードを前のオペレーティング システムにロールバックし、タスク シーケンスはロールバック グループのステップを続行します。 タスク シーケンスの作成後、ロールバック グループにオプションのステップを追加することができます。  
 
-## <a name="folder-and-files-removed-after-computer-restart"></a>Cartelle e file vengono rimossi dopo il riavvio del computer  
- Quando la sequenza di attività per eseguire l'aggiornamento di un sistema operativo a Windows 10 e tutti gli altri passaggi della sequenza di attività sono stati completati, gli script di post-elaborazione e di rollback non vengono rimossi fino a quando non viene riavviato il computer.  Questi file di script non contengono informazioni riservate.  
-
+## <a name="folder-and-files-removed-after-computer-restart"></a>コンピューターの再起動後に削除されるフォルダーとファイル  
+ オペレーティング システムを Windows 10 にアップグレードするタスク シーケンスとタスク シーケンス内の他のすべてのステップが完了すると、後処理およびロールバックのスクリプトはコンピューターを再起動するまで削除されません。  これらのスクリプト ファイルには、機密情報は含めないでください。  

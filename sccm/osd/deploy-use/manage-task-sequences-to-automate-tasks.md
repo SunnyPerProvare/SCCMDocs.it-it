@@ -1,475 +1,471 @@
 ---
-title: "Gestire le sequenze di attività per automatizzare le attività | Microsoft Docs"
-description: "È possibile creare, modificare, distribuire, importare ed esportare sequenze di attività per gestirle nell&quot;ambiente System Center Configuration Manager."
+title: "タスクを自動化するためのタスク シーケンスの管理 | Microsoft Docs"
+description: "System Center Configuration Manager 環境でタスク シーケンスを作成、編集、展開、インポート、およびエクスポートして管理できます。"
 ms.custom: na
 ms.date: 03/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
 ms.openlocfilehash: 2f3d66362c49d28a52d7f9c535eb0b3b4cc4eaf7
-ms.contentlocale: it-it
-ms.lasthandoff: 06/08/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Gestire le sequenze di attività per automatizzare le attività in System Center Configuration Manager
+# <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>System Center Configuration Manager でのタスクを自動化するためのタスク シーケンスの管理
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Usare le sequenze di attività per automatizzare i passaggi nell'ambiente System Center Configuration Manager. Questi passaggi consentono di distribuire un'immagine del sistema operativo in un computer di destinazione, di creare e acquisire un'immagine del sistema operativo da un set di file di installazione del sistema operativo e di acquisire e ripristinare le informazioni sullo stato utente. Le sequenze di attività si trovano nella console di Configuration Manager in **Raccolta software** > **Sistemi operativi** > **Sequenza di attività**. Il nodo **Sequenza di attività** che include le sottocartelle create viene replicato in tutta la gerarchia di Configuration Manager. Per informazioni sulla pianificazione, vedere [Considerazioni sulla pianificazione per l'automazione delle attività](../plan-design/planning-considerations-for-automating-tasks.md).  
+System Center Configuration Manager 環境のステップを自動化するには、タスク シーケンスを使用します。 こうしたステップでは、オペレーティング システム イメージをセットアップ先のコンピューターに展開し、一連のオペレーティング システム インストール ファイルからオペレーティング システム イメージを構築およびキャプチャし、さらにユーザー状態情報をキャプチャし復元できます。 タスク シーケンスは、Configuration Manager コンソールの **[ソフトウェア ライブラリ]** > **[オペレーティング システム]** > **[タスク シーケンス]** にあります。 **[タスク シーケンス]** ノードは、作成したサブフォルダーを含め、Configuration Manager 階層全体にレプリケートされます。 計画の詳細については、「[タスクの自動化計画に関する考慮事項](../plan-design/planning-considerations-for-automating-tasks.md)」を参照してください。  
 
- Usare le sezioni seguenti per gestire le sequenze di attività.
+ タスク シーケンスを管理するには、次の手順に従います。
 
-##  <a name="BKMK_CreateTaskSequence"></a> Creare sequenze di attività  
- Creare sequenze attività usando la Creazione guidata della sequenza di attività. Questa procedura guidata consente di creare i seguenti tipi di sequenze attività:  
+##  <a name="BKMK_CreateTaskSequence"></a> タスク シーケンスの作成  
+ タスク シーケンスの作成ウィザードを使用して、タスク シーケンスを作成します。 このウィザードでは、次の種類のタスク シーケンスを作成することができます。  
 
-|Tipo di sequenza di attività|Altre informazioni|  
+|タスク シーケンスの種類|説明|  
 |------------------------|----------------------|  
-|[Sequenza di attività per installare un sistema operativo](create-a-task-sequence-to-install-an-operating-system.md)|Questo tipo di sequenza di attività crea i passaggi per installare un sistema operativo, nonché consente di migrare i dati utente, includere gli aggiornamenti software e installare le applicazioni.|  
-|[Sequenza di attività per aggiornare un sistema operativo](create-a-task-sequence-to-upgrade-an-operating-system.md)|Questo tipo di sequenza di attività crea i passaggi per aggiornare un sistema operativo, nonché consente di includere gli aggiornamenti software e installare le applicazioni.|  
-|[Sequenza di attività per acquisire un sistema operativo](create-a-task-sequence-to-capture-an-operating-system.md)|Questo tipo di sequenza di attività crea i passaggi per creare e acquisire un sistema operativo da un computer di riferimento. È possibile includere gli aggiornamenti software e installare le applicazioni nel computer di riferimento prima dell'acquisizione dell'immagine.|  
-|[Sequenza di attività per acquisire e ripristinare lo stato utente](create-a-task-sequence-to-capture-and-restore-user-state.md)|Questa sequenza di attività fornisce i passaggi da aggiungere a una sequenza di attività esistente per acquisire e ripristinare i dati dello stato utente.|  
-|[Sequenza di attività per gestire dischi rigidi virtuali](use-a-task-sequence-to-manage-virtual-hard-disks.md)|Questo tipo di sequenza di attività contiene i passaggi per creare un disco rigido virtuale, includendo l'installazione di un sistema operativo e di applicazioni, che è possibile pubblicare in System Center Virtual Machine Manager (VMM) dalla console di Configuration Manager.|  
-|[Sequenza di attività personalizzata](create-a-custom-task-sequence.md)|Questo tipo di sequenza di attività non aggiunge alcun passaggio alla sequenza di attività. È necessario modificare la sequenza di attività e aggiungervi i passaggi dopo la creazione.|  
+|[オペレーティング システムをインストールするタスク シーケンス](create-a-task-sequence-to-install-an-operating-system.md)|このタスク シーケンスの種類では、オペレーティング システムをインストールするステップを作成すると共に、ユーザー データを移行したり、ソフトウェア更新を含めたり、アプリケーションをインストールしたりするためのオプションも作成します。|  
+|[オペレーティング システムをアップグレードするタスク シーケンス](create-a-task-sequence-to-upgrade-an-operating-system.md)|このタスク シーケンスの種類では、オペレーティング システムをアップグレードするステップを作成すると共に、ソフトウェア更新を含めたり、アプリケーションをインストールしたりするためのオプションも作成します。|  
+|[オペレーティング システムをキャプチャするタスク シーケンス](create-a-task-sequence-to-capture-an-operating-system.md)|このタスク シーケンスの種類では、参照コンピューターからオペレーティング システムを構築およびキャプチャするステップを作成します。 イメージをキャプチャする前に、参照コンピューターにソフトウェアの更新を含めたり、アプリケーションをインストールしたりすることができます。|  
+|[ユーザー状態をキャプチャおよび復元するタスク シーケンス](create-a-task-sequence-to-capture-and-restore-user-state.md)|このタスク シーケンスは、ユーザー状態データをキャプチャし復元するために、既存のタスク シーケンスに追加するステップを提供します。|  
+|[バーチャル ハード ディスクを管理するタスク シーケンス](use-a-task-sequence-to-manage-virtual-hard-disks.md)|このタスク シーケンスの種類は VHD を作成するステップから成っています。これは、Configuration Manager コンソールから System Center Virtual Machine Manager (VMM) に対して発行できるオペレーティング システムとアプリケーションのインストールを行うために含まれています。|  
+|[カスタム タスク シーケンス](create-a-custom-task-sequence.md)|このタスク シーケンスの種類は、タスク シーケンスにステップを追加しません。 カスタム タスク シーケンスを作成後、そのタスク シーケンスを編集し、ステップを追加する必要があります。|  
 
-## <a name="return-to-previous-page-when-a-task-sequence-fails"></a>Tornare alla pagina precedente quando si verifica un errore di una sequenza di attività
-A partire da Configuration Manager versione 1702, è possibile tornare alla pagina precedente quando si esegue una sequenza di attività e si verifica un errore. Prima di questa versione, se si verificava un errore era necessario riavviare la sequenza di attività. È ad esempio possibile usare il pulsante **Precedente** negli scenari seguenti:
+## <a name="return-to-previous-page-when-a-task-sequence-fails"></a>タスク シーケンスが失敗した場合に前のページに戻る
+Configuration Manager バージョン 1702 以降では、タスク シーケンスを実行し、エラーが発生した場合に、前のページに戻ることができます。 これより前のリリースでは、エラーが発生すると、タスク シーケンスを再起動する必要があります。 たとえば、次のシナリオでは **[前へ]** ボタンを使用できます。
 
-- Quando un computer viene avviato in Windows PE, potrebbe essere visualizzata la finestra di dialogo di avvio della sequenza di attività prima che la sequenza stessa sia disponibile. Se in questo scenario si fa clic su Avanti, viene visualizzata la pagina finale della sequenza di attività che informa l'utente che non sono disponibili sequenze di attività. È ora possibile fare clic su **Precedente** per ripetere la ricerca di sequenze di attività. È possibile ripetere questo processo finché la sequenza di attività non è disponibile.
-- Quando si esegue una sequenza di attività ma i pacchetti di contenuto dipendenti non sono ancora disponibili nei punti di distribuzione, la sequenza di attività ha esito negativo. È ora possibile distribuire il contenuto mancante, se non è stato ancora distribuito, o attendere che il contenuto sia disponibile nei punti di distribuzione e quindi fare clic su **Precedente** per ripetere la ricerca di contenuto con la sequenza di attività.
+- Windows PE でコンピューターを起動する場合、タスク シーケンスが使用できるようになる前に、タスク シーケンス ブートス トラップ ダイアログ ボックスが表示される場合があります。 このシナリオで [次へ] をクリックすると、タスク シーケンスの最終ページが表示され、使用できるタスク シーケンスがないことを示すメッセージが示されます。 ここで、**[前へ]** をクリックすれば、使用できるタスク シーケンスをもう一度検索することができます。 タスク シーケンスが使用可能になるまで、このプロセスを繰り返すことができます。
+- タスク シーケンスを実行しても、依存するコンテンツ パッケージが配布ポイントでまだ使用できない場合、タスク シーケンスは失敗します。 存在しないコンテンツを配布するか (そのコンテンツがまだ配布されていない場合)、またはコンテンツが配布ポイントで使用できるようになるまで待機してから、**[前へ]** をクリックしてコンテンツでタスク シーケンスを検索します。
 
-##  <a name="BKMK_ModifyTaskSequence"></a> Modificare una sequenza di attività  
- È possibile modificare una sequenza di attività aggiungendo o rimuovendo passaggi della sequenza di attività, aggiungendo o rimuovendo gruppi di sequenze attività oppure modificando l'ordine dei passaggi. Usare la seguente procedura per modificare una sequenza di attività esistente.  
+##  <a name="BKMK_ModifyTaskSequence"></a> タスク シーケンスの編集  
+ タスク シーケンスは、タスク シーケンス ステップを追加または削除する、タスク シーケンス グループを追加または削除する、あるいはステップの順序を変更するという方法で変更することができます。 既存のタスク シーケンスを変更するには、次の手順に従います。  
 
 > [!IMPORTANT]  
->  Quando si modifica una sequenza di attività creata usando la Creazione guidata della sequenza di attività, il nome del passaggio può indicare l'azione del passaggio o il tipo di passaggio. Ad esempio, è possibile che venga visualizzato un passaggio denominato "Disco di partizione 0" che è l'azione per un passaggio di tipo [Formato e disco partizione](../understand/task-sequence-steps.md#BKMK_FormatandPartitionDisk). Tutti i passaggi della sequenza di attività sono documentati in base al tipo, non necessariamente in base al nome del passaggio visualizzato nell'editor.  
+>  タスク シーケンスの作成ウィザードを使用して作成済みのタスク シーケンスを編集する場合、ステップの名前を、ステップのアクションやステップの種類にすることができます。 たとえば、"Partition disk 0" という名前のステップがあり、それがステップの種類「 [Format and Partition Disk](../understand/task-sequence-steps.md#BKMK_FormatandPartitionDisk)」に対するアクションであるとします。 すべてのタスク シーケンス ステップの内容は、それらの種類によって示され、必ずしもエディターに表示されるステップの名前によって示されるわけではありません。  
 
-#### <a name="to-edit-a-task-sequence"></a>Per modificare una sequenza di attività  
+#### <a name="to-edit-a-task-sequence"></a>タスク シーケンスを編集するには  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1.  Configuration Manager コンソールで、 **[ソフトウェア ライブラリ]** をクリックします。  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2.  **[ソフトウェア ライブラリ]** ワークスペースで **[オペレーティング システム]** を展開して、 [**タスク シーケンス]** をクリックします。  
 
-3.  Nell'elenco **Sequenza di attività** selezionare la sequenza di attività da modificare.  
+3.  **[タスク シーケンス]** 一覧で、編集するタスク シーケンスを選択します。  
 
-4.  Nella scheda **Home** , nel gruppo **Sequenza di attività** , fare clic su **Modifica**e quindi eseguire una delle seguenti operazioni:  
+4.  **[ホーム]** タブの **[タスク シーケンス]** グループで、 **[編集]** をクリックして、次の操作のいずれかを実行します。  
 
-    -   Per aggiungere un passaggio della sequenza di attività, fare clic su **Aggiungi**, selezionare il tipo di passaggio e quindi fare clic sul passaggio della sequenza di attività da aggiungere. Ad esempio, per aggiungere il passaggio Esegui riga di comando, fare clic su **Aggiungi**, selezionare **Generale**e quindi fare clic su **Esegui riga di comando**.  
+    -   タスク シーケンス ステップを追加するには、 **[追加]** をクリックして、ステップの種類を選択し、追加するタスク シーケンス ステップをクリックします。 たとえば、「コマンドラインの実行」ステップを追加するには、 **[追加]** をクリックし、 **[全般]** を選択して、 **[コマンドラインの実行]** をクリックします。  
 
-         Per un elenco di tutti i passaggi della sequenza di attività e dei relativi tipi, vedere la tabella di seguito a questa procedura.  
+         すべてのタスク シーケンス ステップおよびそれらの種類の一覧については、このステップの直後にある表を参照してください。  
 
-    -   Per aggiungere un gruppo alla sequenza di attività, fare clic su **Aggiungi**e quindi su **Nuovo gruppo**. Dopo aver aggiunto un gruppo è quindi possibile aggiungere passaggi al gruppo.  
+    -   グループをタスク シーケンスに追加するには、 **[追加]** をクリックしてから、 **[新しいグループ]** をクリックします。 グループを追加したら、そのグループにステップを追加することができます。  
 
-    -   Per modificare l'ordine dei passaggi e dei gruppi nella sequenza di attività, selezionare il passaggio o gruppo da riordinare e quindi usare le icone **Sposta elemento in alto** o **Sposta elemento in basso** . È possibile spostare solo un passaggio o un gruppo alla volta.  
+    -   タスク シーケンスでステップおよびグループの順序を変更するには、順序を変更するステップまたはグループを選択して、 **項目を上へ移動** するアイコンまたは **項目を下へ移動** するアイコンを使用します。 一度に移動できるステップまたはグループは 1 つのみです。  
 
-    -   Per rimuovere un passaggio o un gruppo, selezionare il passaggio o il gruppo e fare clic su **Rimuovi**.  
+    -   ステップまたはグループを削除するには、ステップまたはグループを選択して **[削除]** をクリックします。  
 
-5.  Fare clic su **OK** per salvare le modifiche.  
+5.  **[OK]** をクリックして変更を保存します。  
 
- Per un elenco dei passaggi della sequenza di attività disponibili, vedere [Passaggi della sequenza di attività](../understand/task-sequence-steps.md).  
+ 使用可能なタスク シーケンス ステップの一覧については、「[タスク シーケンスのステップ](../understand/task-sequence-steps.md)」を参照してください。  
 
-## <a name="configure-software-center-properties"></a>Configurare le proprietà di Software Center
-Attenersi alla procedura seguente per configurare i dettagli per la sequenza di attività visualizzata in Software Center. Tali dettagli sono solo a scopo informativo.  
-1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
-2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
-3. Nella scheda **Generale** sono disponibili le impostazioni seguenti per Software Center:
-  - **Riavvio necessario**: consente all'utente di sapere se è necessario un riavvio durante l'installazione.
-  - **Dimensioni del download (MB)**: specifica quanti megabyte vengono visualizzati in Software Center per la sequenza di attività.  
-  - **Tempo di esecuzione stimato (minuti)**: specifica il tempo di esecuzione stimato in minuti che viene visualizzato in Software Center per la sequenza di attività.
+## <a name="configure-software-center-properties"></a>ソフトウェア センターのプロパティを構成する
+ソフトウェア センターに表示されるタスク シーケンスの詳細を構成するには、次の手順を実行します。 これは参考目的のみの情報です。  
+1. Configuration Manager コンソールの **[ソフトウェア ライブラリ]** > **[オペレーティング システム]** > **[タスク シーケンス]** の順に選択します。
+2. 編集するタスク シーケンスを選択し、**[プロパティ]** をクリックします。
+3. **[全般]** タブでは、ソフトウェア センターの次の設定を使用できます。
+  - **再起動が必要**: インストール時に再起動が必要かどうかをユーザーに通知します。
+  - **ダウンロード サイズ (MB)**: タスク シーケンスについてソフトウェア センターに表示するサイズ (MB) を指定します。  
+  - **推定実行時間 (分)**: タスク シーケンスについてソフトウェア センターに表示する推定実行時間を分単位で指定します。
 
-## <a name="configure-advanced-task-sequence-settings"></a>Configurare impostazioni della sequenza di attività avanzate
-Attenersi alla procedura seguente per configurare i dettagli per la sequenza di attività visualizzata in Software Center. Tali dettagli sono solo a scopo informativo.  
-1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
-2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
-3. Nella scheda **Avanzate** sono disponibili le impostazioni seguenti:
+## <a name="configure-advanced-task-sequence-settings"></a>タスク シーケンスの詳細設定の構成
+ソフトウェア センターに表示されるタスク シーケンスの詳細を構成するには、次の手順を実行します。 これは参考目的のみの情報です。  
+1. Configuration Manager コンソールの **[ソフトウェア ライブラリ]** > **[オペレーティング システム]** > **[タスク シーケンス]** の順に選択します。
+2. 編集するタスク シーケンスを選択し、**[プロパティ]** をクリックします。
+3. **[詳細設定]** タブでは、次の設定を使用できます。
 
-    - **Esegui prima un altro programma**    
-    Selezionare questa casella di controllo per eseguire un altro programma, in un altro pacchetto, prima di eseguire la sequenza di attività. Per impostazione predefinita, questa casella di controllo è deselezionata. Non è necessario annunciare separatamente il programma che deve essere eseguito per primo.
+    - **別のプログラムを最初に実行する**    
+    タスク シーケンスが実行される前に、(別のパッケージの) 別のプログラムを実行する場合は、このチェック ボックスをオンにします。 既定では、このチェック ボックスはオフです。 最初に実行するように指定したプログラムを別個に提供する必要はありません。
 
         > [!IMPORTANT]     
-        Questa impostazione si applica solo alle sequenze di attività che vengono eseguite nel sistema operativo completo. Configuration Manager ignora questa impostazione se la sequenza di attività viene avviata tramite PXE o il supporto di avvio.
+        この設定は、完全なオペレーティング システムで実行されるタスク シーケンスにのみ適用されます タスク シーケンスが PXE またはブート メディアを使用して開始される場合、Configuration Manager ではこの設定が無視されます。
 
-    - **Pacchetto**     
-        Se si seleziona **Esegui prima un altro programma**, immettere o cercare il pacchetto che contiene il programma da eseguire prima di questa sequenza di attività.
+    - **[パッケージ]**     
+        **[別のプログラムを最初に実行する]** を選択した場合は、このタスク シーケンスの前に実行する必要があるプログラムが含まれているパッケージを入力または参照します。
 
-    - **Programma**     
-    Se si seleziona **Esegui prima un altro programma**, selezionare il programma da eseguire prima di questa sequenza di attività dall'elenco a discesa **Programma**.
+    - **[プログラム]**     
+    **[別のプログラムを最初に実行する]** を選択した場合は、このタスク シーケンスの前に実行する必要があるプログラムを、**[プログラム]** ドロップダウン リストから選択します。
 
         > [!NOTE]    
-        > Se l'esecuzione del programma selezionato su un client non riesce, la sequenza di attività non viene eseguita. Se l'esecuzione del programma selezionato avviene correttamente, il programma non verrà eseguito nuovamente, anche se la sequenza di attività viene rieseguita sullo stesso client.
+        > 選択したプログラムをクライアントで実行するのに失敗した場合は、タスク シーケンスは実行されません。 選択したプログラムが正常に実行された場合は、同じクライアントでタスク シーケンスが再実行されても、再び実行されることはありません。
  
-    - **Disattiva questa sequenza attività nei computer in cui è distribuita**    
-    Se si seleziona questa opzione tutte le distribuzioni che contengono questa sequenza di attività vengono temporaneamente disabilitate. La sequenza di attività viene rimossa dall'elenco di annunci disponibili per l'esecuzione e non verrà eseguita fino a quando non viene nuovamente abilitata. Questa opzione è deselezionata per impostazione predefinita.
+    - **[展開先のコンピューターでこのタスク シーケンスを無効にする]**    
+    このオプションを選択すると、このタスク シーケンスを含むすべての展開が一時的に無効になります。 タスク シーケンスは実行可能な提供情報の一覧から削除され、再度有効にされるまで実行されません。 既定では、このオプションは無効になっています。
 
-    - **Tempo di esecuzione massimo consentito**    
-    Specifica il tempo massimo (in minuti) previsto per l'esecuzione della sequenza di attività nel computer di destinazione. È necessario inserire un numero intero uguale o maggiore di zero. Per impostazione predefinita, il valore è impostato su 120 minuti.
+    - **[許可された最長実行時間]**    
+    対象コンピューターでタスク シーケンスが実行されることが予想される最長時間 (分単位) を指定します。 ゼロ以上の整数を使用する必要があります。 既定では、120 分に設定されます。
 
         > [!IMPORTANT]    
-        > Se si usano finestre di manutenzione per la raccolta in cui viene eseguita la sequenza di attività, è possibile che si verifichi un conflitto se il **Tempo di esecuzione massimo consentito** è superiore alla finestra di manutenzione pianificata. Se il tempo di esecuzione massimo è impostato su **0**, la sequenza di attività inizierà durante la finestra di manutenzione e proseguirà fino al completamento oppure non riuscirà se si chiude la finestra di manutenzione. Pertanto le sequenze di attività con un tempo massimo di esecuzione impostato su **0** potrebbero essere eseguite dopo il termine delle relative finestre di manutenzione. Se il tempo di esecuzione massimo viene impostato su un periodo specifico (diverso da **0**) con durata superiore a quella di tutte le finestre di manutenzione disponibili, la sequenza di attività non verrà eseguita. Per altre informazioni, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).
+        > このタスク シーケンスが実行されているコレクションに対してメンテナンス期間を使用している場合は、**[許容最長実行時間]** がスケジュールされたメンテナンス期間より長いと、競合が発生する可能性があります。 最長実行時間が **0** に設定されている場合、タスク シーケンスはメンテナンス期間中に開始され、メンテナンス期間が終了した後、完了するか失敗するまで実行し続けます。 このため、最長実行時間が **0** に設定されているタスク シーケンスは、メンテナンス期間が終了した後も実行し続ける可能性があります。 利用可能なメンテナンス期間よりも長い期間に最長実行時間を設定している (つまり、**0** に設定していない) 場合、タスク シーケンスは実行されません。 詳細については、「[メンテナンス期間を使用する方法](/sccm/core/clients/manage/collections/use-maintenance-windows)」を参照してください。
  
-        Se il valore è impostato su **0**, Configuration Manager valuta il tempo di esecuzione massimo consentito in **12** ore (720 minuti) per il controllo dello stato. La sequenza di attività viene avviata a condizione che la durata del conto alla rovescia non superi il valore specificato per la finestra di manutenzione.
+        この値が **0** に設定されている場合、Configuration Manager は、進行状況を監視するための許容最長実行時間を **12** 時間 (720 分) と評価します。 ただし、カウントダウン期間がメンテナンス期間の値を超えない限り、タスク シーケンスは開始されます。
 
     > [!NOTE]    
-    > Se viene raggiunto il tempo di esecuzione massimo, Configuration Manager interrompe la sequenza di attività a condizione che sia impostato per l'esecuzione con diritti amministrativi e che l'opzione Consenti agli utenti di interagire con il programma non sia selezionata. Se la sequenza di attività non viene interrotta, Configuration Manager arresta il monitoraggio dopo il raggiungimento del tempo di esecuzione massimo consentito. 
+    > この最長実行時間に達した場合、管理者権限で実行するように設定されており、[プログラムとの対話をユーザーに許可する] 設定が選択されていなければ、Configuration Manager はタスク シーケンスを停止します。 タスク シーケンス自体が停止されない場合、Configuration Manager は許容最長実行時間に達してからタスク シーケンスの監視を停止します。 
 
-    - **Usare un'immagine d'avvio**   
-        Selezionare questa opzione per usare l'immagine d'avvio selezionata quando viene eseguita la sequenza di attività. 
+    - **Use a boot image \(ブート イメージの使用\)**   
+        タスク シーケンスが実行されているときに選択したブート イメージを使用する場合は、このオプションを有効にします。 
 
-        Fare clic su **Sfoglia** per selezionare un'altra immagine d'avvio. Deselezionare questa opzione per disabilitare l'uso dell'immagine d'avvio selezionata quando viene eseguita la sequenza di attività.
+        別のブート イメージを選択する場合は、**[参照]** をクリックします。 タスク シーケンスが実行されているときに選択したブート イメージの使用を無効にする場合は、このオプションをオフにします。
 
-    - **Questa sequenza di attività può essere eseguita in qualsiasi piattaforma**     
-        Se questa opzione è selezionata, quando la sequenza di attività viene distribuita Configuration Manager non verifica il tipo di piattaforma del computer di destinazione. Questa opzione è selezionata per impostazione predefinita.
+    - **このタスク シーケンスを任意のプラットフォームで実行可能にする**     
+        このオプションを選択すると、タスク シーケンスが展開されているときに Configuration Manager は対象コンピューターのプラットフォームの種類を確認しません。 既定では、このオプションはオンです。
 
-    - **Questa sequenza di attività può essere eseguita solo in piattaforme specifiche**    
-        Specifica i processori, i sistemi operativi e i Service Pack sui quali può essere eseguita la sequenza di attività. Se questa opzione è selezionata, è necessario selezionare almeno una piattaforma dall'elenco. Per impostazione predefinita non è selezionata alcuna piattaforma. Configuration Manager usa queste informazioni quando valuta quali computer di destinazione di una raccolta ricevono la sequenza di attività distribuita.
+    - **このタスク シーケンスを指定されたクライアント プラットフォームでのみ実行可能にする**    
+        このオプションでは、このタスク シーケンスを実行できるプロセッサ、オペレーティング システムおよび Service Pack を指定します。 このオプションを選択する場合は、リストからプラットフォームを 1 つ以上選択する必要もあります。 既定では、プラットフォームは選択されていません。 Configuration Manager は、コレクション内のどの対象コンピューターが展開されたタスク シーケンスを受信するかを判断するときに、この情報を使用します。
 
         > [!NOTE]    
-        > Quando una sequenza di attività viene eseguita da un supporto d'avvio o da Avvio PXE, l'opzione viene ignorata e la sequenza di attività viene eseguita come nel caso in cui sia selezionata l'opzione **Questo programma può essere eseguito in qualsiasi piattaforma**.
+        > タスク シーケンスがブート メディアから、または PXE ブートによって実行されると、このオプションは無視されて、タスク シーケンスは、**[任意のプラットフォームで実行可能]** オプションが選択されているかのように実行されます。
 
-## <a name="configure-high-impact-task-sequence-settings"></a>Configurare impostazioni della sequenza di attività ad alto impatto
-A partire da Configuration Manager versione 1702, è possibile impostare una sequenza di attività come "ad alto impatto" e personalizzare i messaggi ricevuti dagli utenti quando eseguono la sequenza.
+## <a name="configure-high-impact-task-sequence-settings"></a>影響の大きいタスク シーケンス設定の構成
+Configuration Manager バージョン 1702 以降では、タスク シーケンスを影響の大きいものとして設定し、ユーザーがそのタスク シーケンスを実行したときに表示されるメッセージをカスタマイズすることができます。
 
-### <a name="set-a-task-sequence-as-a-high-impact-task-sequence"></a>Impostare una sequenza di attività come una sequenza di attività a impatto elevato
-Attenersi alla procedura seguente per impostare una sequenza di attività a impatto elevato.
+### <a name="set-a-task-sequence-as-a-high-impact-task-sequence"></a>タスク シーケンスを影響の大きいタスク シーケンスとして設定する
+次の手順を使用して、影響の大きいタスク シーケンスとして設定します。
 > [!NOTE]    
-> Qualsiasi sequenza di attività che soddisfi determinate condizioni viene definita automaticamente come a impatto elevato. Per altri dettagli, vedere [Gestire le distribuzioni ad alto rischio](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
+> 特定の条件を満たす任意のタスク シーケンスは、影響度大として自動的に定義されます。 詳細については、「[System Center Configuration Manager の危険度の高い展開を管理するための設定](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments)」を参照してください。
 
-1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
-2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
-3. Nella scheda **Notifica utente** selezionare **Questa è una sequenza di attività a impatto elevato**.
+1. Configuration Manager コンソールの **[ソフトウェア ライブラリ]** > **[オペレーティング システム]** > **[タスク シーケンス]** の順に選択します。
+2. 編集するタスク シーケンスを選択し、**[プロパティ]** をクリックします。
+3. **[ユーザー通知]** タブの **[これは、インパクトのあるタスク シーケンスです]** をオンにします。
 
-### <a name="create-a-custom-notification-for-high-risk-deployments"></a>Creare una notifica personalizzata per le distribuzioni ad alto rischio
-Usare la procedura seguente per creare una notifica personalizzata per le distribuzioni ad alto impatto.
-1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
-2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
-3. Nella scheda **Notifica utente** selezionare **Usa il testo personalizzato**.
+### <a name="create-a-custom-notification-for-high-risk-deployments"></a>危険度の高い展開のカスタム通知を作成する
+次の手順を使用して、影響の大きい展開のカスタム通知を作成します。
+1. Configuration Manager コンソールの **[ソフトウェア ライブラリ]** > **[オペレーティング システム]** > **[タスク シーケンス]** の順に選択します。
+2. 編集するタスク シーケンスを選択し、**[プロパティ]** をクリックします。
+3. **[ユーザー通知]** タブの **[カスタム テキストを使用する]** をオンにします。
 >  [!NOTE]    
->  È possibile impostare il testo della notifica utente solo quando l'opzione **Questa è una sequenza di attività a impatto elevato** è selezionata.
+>  **[これは、インパクトのあるタスク シーケンスです]** がオンの場合にのみ、ユーザー通知テキストを設定できます。
 
-4. Configurare le impostazioni seguenti (massimo 255 caratteri per casella di testo):
+4. 次の設定を構成します (各テキスト ボックスは最大 255 文字です)。
 
-  **Testo dell'intestazione della notifica all'utente**: specifica il testo blu che viene visualizzato nella notifica utente di Software Center. Ad esempio, nella notifica utente predefinita questa sezione contiene un testo simile a "Confermare l'aggiornamento del sistema operativo in questo computer".
+  **ユーザー通知の見出しテキスト**: ソフトウェア センターのユーザー通知に表示する青色のテキストを指定します。 たとえば、既定のユーザー通知では、このセクションに "このコンピューターのオペレーティング システムをアップグレードすることを確認します" のようなテキストが表示されます。
 
-  **Testo del messaggio di notifica all'utente**: sono presenti tre caselle di testo che specificano il corpo della notifica personalizzata. Tutte le caselle di testo richiedono l'aggiunta di testo.
-  - Prima casella di testo: specifica il corpo principale del testo, in genere contenente le istruzioni per l'utente. Ad esempio, nella notifica utente predefinita questa sezione contiene un testo simile a "L'aggiornamento del sistema operativo potrebbe durare a lungo e richiedere più riavvii del computer".
-  - Seconda casella di testo: specifica il testo in grassetto nel corpo principale del testo. Ad esempio, nella notifica utente predefinita questa sezione contiene un testo simile a "Questo aggiornamento sul posto installa il nuovo sistema operativo ed esegue automaticamente la migrazione di app, dati e impostazioni".
-  - Terza casella di testo: specifica l'ultima riga di testo in grassetto. Ad esempio, nella notifica all'utente predefinita questa sezione contiene un testo simile a "Fare clic su Installa per iniziare, altrimenti fare clic su Annulla".   
+  **ユーザー通知のメッセージ テキスト**: カスタム通知の本文を入力する 3 つのテキスト ボックスがあります。 すべてのテキスト ボックスでテキストを追加する必要があります。
+  - 1 つ目のテキスト ボックス: ユーザーの手順など、テキストのメインの本文を指定します。 たとえば、既定のユーザー通知では、このセクションには "オペレーティング システムのアップグレードには時間がかかります。また、コンピューターが数回再起動される場合があります" のようなテキストが表示されます。
+  - 2 つ目のテキスト ボックス: メインの本文の下に表示される太字のテキストを指定します。 たとえば、既定のユーザー通知では、このセクションに "このインプレース アップグレードでは、新しいオペレーティング システムがインストールされ、アプリ、データ、設定が自動的に移行されます" のようなテキストが表示されます。
+  - 3 つ目のテキスト ボックス: 太字のテキストの下の最終行を指定します。 たとえば、既定のユーザー通知では、このセクションに "インストールを開始するには、開始するには [インストール]、 それ以外の場合は [キャンセル] をクリックしてください" のようなテキストが表示されます。   
     
-Si supponga di configurare la notifica personalizzata seguente nelle proprietà.
+たとえば、プロパティでは次のようなカスタム通知を構成できます。
 
-![Notifica personalizzata per una sequenza di attività](..\media\user-notification.png)
+![タスク シーケンスのカスタム通知](..\media\user-notification.png)
 
-Verrà visualizzato il messaggio di notifica seguente quando l'utente finale apre il programma di installazione da Software Center.
+エンドユーザーがソフトウェア センターからインストールを開くときに、次の通知メッセージが表示されます。
 
-![Notifica personalizzata per una sequenza di attività](..\media\user-notification-enduser.png)
+![タスク シーケンスのカスタム通知](..\media\user-notification-enduser.png)
 
 
-##  <a name="BKMK_DistributeTS"></a> Distribuire il contenuto a cui fa riferimento una sequenza attività  
- Prima che i client eseguano una sequenza di attività che fa riferimento al contenuto, è necessario distribuire tale contenuto ai punti di distribuzione. In qualsiasi momento, è possibile selezionare la sequenza di attività e distribuire il relativo contenuto per creare un nuovo elenco di pacchetti di riferimento per la distribuzione. Se si apportano modifiche alla sequenza di attività con contenuto aggiornato, è necessario ridistribuire il contenuto prima che diventi disponibile ai client. Usare la seguente procedura per distribuire il contenuto a cui fa riferimento una sequenza di attività.  
+##  <a name="BKMK_DistributeTS"></a> タスク シーケンスによって参照されるコンテンツの配布  
+ コンテンツを参照するタスク シーケンスをクライアントで実行する前に、そのコンテンツを配布ポイントに配布する必要があります。 任意の時に、タスク シーケンスを選択してそのコンテンツを配布し、配布用の参照パッケージの新しい一覧を作成することができます。 更新されたコンテンツを持つタスク シーケンスに変更を加える場合、これをクライアントに対して使用可能にする前に、コンテンツを再配布する必要があります。 タスク シーケンスで参照されるコンテンツを配布するには、次の手順に従います。  
 
-#### <a name="to-distribute-referenced-content-to-distribution-points"></a>Per distribuire il contenuto con riferimenti ai punti di distribuzione  
+#### <a name="to-distribute-referenced-content-to-distribution-points"></a>参照コンテンツを配布ポイントに配布するには  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1.  Configuration Manager コンソールで、 **[ソフトウェア ライブラリ]** をクリックします。  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2.  **[ソフトウェア ライブラリ]** ワークスペースで **[オペレーティング システム]** を展開して、 **[タスク シーケンス]** をクリックします。  
 
-3.  Nell'elenco **Sequenza di attività** selezionare la sequenza di attività da distribuire.  
+3.  **[タスク シーケンス]** 一覧で、配布するタスク シーケンスを選択します。  
 
-4.  Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci contenuto** per avviare la Distribuzione guidata contenuto.  
+4.  **[ホーム]** タブの **[展開]** グループで **[コンテンツの配布]** をクリックして、コンテンツの配布ウィザードを起動します。  
 
-5.  Nella pagina **Generale** verificare che la sequenza di attività corrente sia selezionata per la distribuzione e quindi fare clic su **Avanti**.  
+5.  **[全般]** ページで、配布対象のタスク シーケンスが正しく選択されていることを確認して、 **[次へ]** をクリックします。  
 
-6.  Nella pagina **Contenuto** controllare il contenuto da distribuire, come ad esempio l'immagine di avvio a cui fa riferimento la sequenza di attività, e quindi fare clic su **Avanti**.  
+6.  **[コンテンツ]** ページで、配布するコンテンツ (タスク シーケンスによって参照されるブート イメージなど) を確認して、 **[次へ]** をクリックします。  
 
-7.  Nella pagina **Destinazione contenuto** specificare le raccolte, il punto di distribuzione o il gruppo di punti di distribuzione in cui distribuire i contenuti della sequenza di attività e quindi fare clic su **Avanti**.  
+7.  **[コンテンツの配布先]** ページで、タスク シーケンスのコンテンツの配布先となるコレクション、配布ポイント、または配布ポイント グループを指定して、 **[次へ]** をクリックします。  
 
     > [!IMPORTANT]  
-    >  Se la sequenza di attività selezionata fa riferimento a contenuto già distribuito in un punto di distribuzione specifico, tale punto di distribuzione non viene elencato dalla procedura guidata.  
+    >  選択したタスク シーケンスで既に特定の配布ポイントに配布されている参照コンテンツを参照する場合、その配布ポイントはウィザードの一覧には表示されません。  
 
-8.  Completare la procedura guidata.  
+8.  ウィザードを完了します。  
 
- È possibile pre-installare il contenuto a cui viene fatto riferimento nella sequenza di attività. Configuration Manager crea un file di contenuto pre-installato e compresso, contenente i file, le relative dipendenze e i metadati associati per il contenuto selezionato. Quindi, è possibile importare manualmente il contenuto in un server del sito, in un sito secondario o in un punto di distribuzione. Per altre informazioni su come pre-installare i file di contenuto, vedere [Prestage content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content) (Pre-installare il contenuto).  
+ タスク シーケンスで参照されるコンテンツを事前設定できます。 Configuration Manager により、ファイル、関連する依存関係、選択したコンテンツに関連するメタデータを含む、圧縮された事前設定コンテンツ ファイルが作成されます。 次に、サイト サーバー、セカンダリ サイト、または配付ポイントにコンテンツを手動でインポートします。 コンテンツ ファイルを事前設定する方法について詳しくは「 [Prestage content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content)」 (コンテンツの事前設定) を参照してください。  
 
-##  <a name="BKMK_DeployTS"></a> Distribuire una sequenza di attività  
- Usare la seguente procedura per distribuire una sequenza di attività ai computer in una raccolta.  
+##  <a name="BKMK_DeployTS"></a> タスク シーケンスの展開  
+ タスク シーケンスをコレクション内のコンピューターに展開するには、次の手順に従います。  
 
 > [!WARNING]  
->  È possibile gestire il comportamento relativo alle distribuzioni di sequenze di attività ad alto rischio. Una distribuzione ad alto rischio viene installata automaticamente e può causare risultati imprevisti. Ad esempio, una sequenza di attività con scopo impostato su **Obbligatorio** e che distribuisce un sistema operativo viene considerata come distribuzione ad alto rischio. Per altre informazioni, vedere [Impostazioni per gestire distribuzioni ad alto rischio](../../protect/understand/settings-to-manage-high-risk-deployments.md).  
+>  危険度の高いタスク シーケンスの展開については、その動作を管理することができます。 危険度の高い展開とは、展開が自動的にインストールされますが、望ましくない結果が生じる可能性がある展開です。 たとえば、オペレーティング システムを展開する **必須** の目的を持つタスク シーケンスは、危険度の高い展開と見なされます。 詳細については、「[危険度の高い展開を管理するための設定](../../protect/understand/settings-to-manage-high-risk-deployments.md)」を参照してください。  
 
 > [!NOTE]  
->  I messaggi di stato per la distribuzione della sequenza di attività vengono visualizzati nella finestra Messaggio in un sito primario, ma non vengono visualizzati in un sito di amministrazione centrale.  
+>  タスク シーケンスの展開に関する状態メッセージは、プライマリ サイトでは [メッセージ] ウィンドウに表示されますが、中央管理サイトでは表示されません。  
 
-#### <a name="to-deploy-a-task-sequence"></a>Per distribuire una sequenza di attività  
+#### <a name="to-deploy-a-task-sequence"></a>タスク シーケンスを展開するには  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1.  Configuration Manager コンソールで、 **[ソフトウェア ライブラリ]** をクリックします。  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス**] をクリックします。  
 
-3.  Nell'elenco **Sequenza di attività** selezionare la sequenza di attività da distribuire.  
+3.  **[タスク シーケンス]** 一覧で、展開するタスク シーケンスを選択します。  
 
-4.  Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci**.  
+4.  [ **ホーム** ] タブの [ **展開** ] グループで、[ **展開**] をクリックします。  
 
     > [!NOTE]  
-    >  Se l'opzione **Distribuisci** non disponibile, la sequenza di attività presenta un riferimento non valido.  Correggere il riferimento e quindi tentare nuovamente la distribuzione della sequenza di attività.  
+    >  **[展開]** を使用できない場合は、タスク シーケンスに無効な参照が含まれています。  参照を修正してから、あらためて、タスク シーケンスを展開してみてください。  
 
-5.  Nella pagina **Generale** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
+5.  [ **全般** ] ページで、次の情報を指定してから、[ **次へ**] をクリックします。  
 
-    -   **Sequenza di attività**: specificare la sequenza di attività da distribuire. Per impostazione predefinita, in questa casella viene visualizzata la sequenza di attività selezionata.  
+    -   **[タスク シーケンス]**: 展開するタスク シーケンスを指定します。 既定では、このボックスには選んだタスク シーケンスが表示されます。  
 
-    -   **Raccolta**: specificare la raccolta contenente i computer che eseguiranno la sequenza di attività.  
+    -   **[コレクション]**: タスク シーケンスを実行するコンピューターを含むコレクションを指定します。  
 
-         Non distribuire sequenze attività che installano i sistemi operativi nelle raccolte inappropriate, come la raccolta **Tutti i sistemi** . Assicurarsi che la raccolta selezionata contenga solo i computer che si desidera che eseguano la sequenza di attività.  
-
-        > [!NOTE]  
-        >  Quando si esegue una distribuzione ad alto rischio, ad esempio quella del sistema operativo, nella finestra **Seleziona raccolta** vengono visualizzate soltanto le raccolte personalizzate che soddisfano le impostazioni di verifica della distribuzione configurate nelle proprietà del sito. Le distribuzioni ad alto rischio sono sempre limitate alle raccolte personalizzate (quelle create dall'utente) e alla racconta predefinita **Computer sconosciuti** . Quando si crea una distribuzione ad alto rischio, non è possibile selezionare una raccolta predefinita quale **Tutti i sistemi**. Deselezionare **Nascondi le raccolte con un numero di membri maggiore della configurazione delle dimensioni minime del sito** per visualizzare tutte le raccolte personalizzate che contengono un numero di client inferiore rispetto alla dimensione massima configurata. Per altre informazioni, vedere [Impostazioni per gestire distribuzioni ad alto rischio](../../protect/understand/settings-to-manage-high-risk-deployments.md).  
-        >   
-        >  Le impostazioni di verifica della distribuzione sono basate sull'appartenenza attuale della raccolta. Dopo aver distribuito la sequenza di attività, l'appartenenza alla raccolta non viene rivalutata per le impostazioni di distribuzione ad alto rischio.  
-        >   
-        >  Ad esempio, si supponga di impostare **Dimensione predefinita** su 100 e **Dimensione massima** su 1000. Quando si crea una distribuzione ad alto rischio, nella finestra **Seleziona raccolta** verranno visualizzate solo le raccolte che contengono meno di 100 client. Se si deseleziona l'impostazione **Nascondi le raccolte con un numero di membri maggiore della configurazione delle dimensioni minime del sito**, nella finestra vengono visualizzate le raccolte che includono meno di 1000 client.  
-        >   
-        >  Quando si seleziona una raccolta che include un ruolo del sito, sono valide le condizioni seguenti:  
-        >   
-        >  -   Se la raccolta contiene un server di sistema del sito e le impostazioni di verifica della distribuzione sono state configurate in modo da bloccare le raccolte con server di sistema del sito, si verifica un errore e la procedura si arresta.  
-        > -   Se la raccolta include un server di sistema del sito e nelle impostazioni di verifica della distribuzione configurate dall'utente viene riportata la presenza di tali server di sistema del sito, se la raccolta supera la dimensione predefinita oppure se la raccolta include un server, nella distribuzione guidata del software verrà visualizzato un messaggio sul rischio elevato dell'operazione. È necessario accettare di creare una distribuzione ad alto rischio, quindi viene creato un messaggio di stato relativo al controllo.  
-
-    -   **Commenti (facoltativo):**: specificare informazioni aggiuntive che descrivono la distribuzione della sequenza di attività.  
-
-6.  Nella pagina **Impostazioni distribuzione** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
-
-    -   **Scopo**: dall'elenco a discesa scegliere una delle opzioni seguenti:  
-
-        -   **Disponibile**: se si distribuisce la sequenza di attività a un utente, l'utente la vede pubblicata nel Catalogo applicazioni e può richiederla all'occorrenza. Se la sequenza di attività viene distribuita a un dispositivo, l'utente la visualizzerà in Software Center e potrà installarla su richiesta.  
-
-        -   **Richiesto**: la sequenza di attività viene distribuita automaticamente, in base alla pianificazione configurata. Un utente può tuttavia tenere traccia dello stato della distribuzione, a meno che non sia nascosto, e può installare la sequenza di attività prima della scadenza usando Software Center.  
-
-    -   **Distribuisci automaticamente in base alla pianificazione con o senza accesso utente**: questa opzione non è disponibile quando si distribuisce una sequenza di attività.  
-
-    -   **Invia pacchetti di riattivazione**: se lo scopo della distribuzione è impostato su **Richiesto** e questa opzione è selezionata, ai computer verrà inviato un pacchetto di riattivazione prima dell'installazione della distribuzione in modo da riattivare il computer dalla sospensione alla scadenza dell'installazione. Prima di usare questa opzione, i computer e le reti devono essere configurati per riattivazione LAN.  
-
-    -   **Consente a tutti i client che usano una connessione di rete a consumo di scaricare il contenuto una volta raggiunta la scadenza dell'installazione. Se si abilita questa opzione, potrebbe essere addebitato un costo aggiuntivo**: quando una sequenza di attività installa un'applicazione ma non distribuisce un sistema operativo, è possibile specificare se consentire ai client di scaricare il contenuto dopo la scadenza dell'installazione se usano una connessione Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.  
+         オペレーティング システムをインストールするタスク シーケンスを不適切なコレクション ( **すべてのシステム** など) に展開しないでください。 必ず、選択するコレクションにはタスク シーケンスを実行するコンピューターのみが含まれるようにしてください。  
 
         > [!NOTE]  
-        >  Se l'utilizzo di una connessione Internet a consumo potrebbe funzionare per le sequenze attività che non distribuiscono un sistema operativo, non è supportato.  
+        >  危険度の高い展開 (オペレーティング システムなど) を行う際、 **[コレクションの選択]** ウィンドウには、サイトのプロパティで構成されている展開の検証の設定に適合するカスタム コレクションのみが表示されます。 危険度の高い展開は、常にカスタム コレクション、作成されたコレクション、および組み込みの **不明なコンピューター** コレクションに制限されています。 危険度の高い展開を作成する際、 **すべてのシステム**などの組み込みのコレクションは選択できません。 **[メンバー数がサイトの最小サイズ構成を超えるコレクションを非表示にする]** をオフにすると、構成済みの最大サイズよりクライアント数が少ないすべてのカスタム コレクションが表示されます。 詳細については、「[危険度の高い展開を管理するための設定](../../protect/understand/settings-to-manage-high-risk-deployments.md)」を参照してください。  
+        >   
+        >  展開の検証の設定は、コレクションの現在のメンバーシップに基づきます。 タスク シーケンスを展開した後に、コレクションのメンバーシップは危険度の高い展開の設定に対して再評価されません。  
+        >   
+        >  たとえば、**[既定サイズ]** を 100、**[最大サイズ]** を 1000 に設定します。 危険度の高い展開の作成時に、 **[コレクションの選択]** ウィンドウには、含まれるクライアント数が 100 未満のコレクションのみが表示されます。 **[メンバー数がサイトの最小サイズ構成を超えるコレクションを非表示にする]** の設定をオフにすると、含まれるクライアント数が 1000 未満のコレクションがウィンドウに表示されます。  
+        >   
+        >  サイトの役割を含むコレクションを選択すると、次のことが適用されます。  
+        >   
+        >  -   コレクションにサイト システム サーバーが含まれていて、展開の検証の設定で、サイト システム サーバーが含まれるコレクションをブロックするように構成されていると、エラーが発生し続行することができません。  
+        > -   コレクションにサイト システム サーバーが含まれていて、展開の検証の設定で、サイト システム サーバーが含まれている場合に警告するように構成されていると、コレクションのサイズが既定の値を超えている場合、またはコレクションにサーバーが含まれている場合は、ソフトウェアの展開ウィザードに危険度が高いことを通知する警告が表示されます。 この場合、危険度の高い展開を作成することに同意する必要があります。これにより、監査ステータス メッセージが作成されます。  
 
-    -   **Richiedi l'approvazione dell'amministratore se gli utenti richiedono questa applicazione**: questa opzione non è disponibile quando si distribuisce una sequenza di attività.  
+    -   **[コメント (オプション)]**: タスク シーケンスの展開について説明する追加情報を指定します。  
 
-    -   **Rendi disponibile per**: specificare se la sequenza di attività è disponibile per i client di Configuration Manager, i supporti o PXE.  
+6.  **[展開設定]** ページで、次の情報を指定して、 **[次へ]** をクリックします。  
+
+    -   **[目的]**: ドロップダウン リストから、次のいずれかのオプションを選びます。  
+
+        -   **[利用可能]**: タスク シーケンスがユーザーに展開された場合、ユーザーはアプリケーション カタログで発行されたタスク シーケンスを見て、必要に応じて要求できます。 タスク シーケンスがデバイスに展開された場合は、ユーザーはソフトウェア センターでそれを見て、必要に応じてインストールすることができます。  
+
+        -   **[必須]**: タスク シーケンスは、構成されたスケジュールに従って自動的に展開されます。 ただし、ユーザーはタスク シーケンスの展開ステータスを (非表示にされていなければ) 追跡して、ソフトウェア センターを使用してタスク シーケンスを期限前にインストールすることができます。  
+
+    -   **[ユーザーのログインに関係なくスケジュールに従って自動的に展開する]**: このオプションは、タスク シーケンスを展開する場合には使用できません。  
+
+    -   **[ウェイクアップ パケットを送信する]**: 展開目的に **[必須]** が設定されていて、このオプションが選ばれていると、インストールの期限時間にスリープ状態のコンピューターをウェイクさせるために、展開のインストール前にコンピューターにウェイクアップ パケットが送信されます。 このオプションを使用する前に、コンピューターおよびネットワークを Wake On Lan 用に構成する必要があります。  
+
+    -   **[インストールの期限後、クライアントが従量制のインターネット接続を使用してコンテンツをダウンロードできるようにする (追加料金が生じる可能性があります)]**: アプリケーションをインストールし、オペレーティング システムを展開しないタスク シーケンスがある場合、従量制インターネット接続を使用するときに、クライアントがインストールの期限後にコンテンツをダウンロードすることを許可するかどうかを指定できます。 インターネット プロバイダーは、従量制インターネット接続を使用しているときに送受信したデータ量に基づいて課金することがあります。  
+
+        > [!NOTE]  
+        >  従量制インターネット接続は、オペレーティング システムを展開しないタスク シーケンスで使用できる可能性がありますが、サポートされません。  
+
+    -   **[ユーザーがこのアプリケーションを要求した場合に管理者の承認を必要とする]**: タスク シーケンスを展開するときは、このオプションを使用できません。  
+
+    -   **[利用できるようにする項目]**: タスク シーケンスを構成マネージャー クライアント、メディア、または PXE で使用可能にするかどうかを指定します。  
 
         > [!IMPORTANT]  
-        >  Usare l'impostazione **Solo supporti e PXE (nascosto)** per le distribuzioni sequenza di attività automatiche. Selezionare **Consenti distribuzione automatica del sistema operativo** e impostare la variabile SMSTSPreferredAdvertID come parte del supporto affinché il computer venga avviato automaticamente con la distribuzione senza alcuna interazione da parte dell'utente. Per altre informazioni sulle variabili della sequenza di attività, vedere [Variabili predefinite della sequenza di attività](../understand/task-sequence-built-in-variables.md)  
+        >  自動タスク シーケンスの展開に [ **メディアと PXE のみ (非表示)** ] 設定を使用します。 ユーザーの操作なしでコンピューターが展開に自動的に起動されるように、[ **オペレーティング システムの無人展開を許可する** ] を選択し、メディアの一部として SMSTSPreferredAdvertID 変数を設定します。 タスク シーケンス変数の詳細については、「[タスク シーケンス組み込み変数](../understand/task-sequence-built-in-variables.md)」を参照してください。  
 
-7.  Nella pagina **Pianificazione** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
+7.  [ **スケジュール** ] ページで、次の情報を指定して、[ **次へ** ] をクリックします。  
 
     > [!IMPORTANT]  
-    >  Quando un client di Windows PE viene avviato da PXE o da supporti di avvio, il client non valuta le pianificazioni della distribuzione (avvio, scadenza o date di scadenza). Configurare le pianificazioni solo nelle distribuzioni ai client che vengono avviati dal sistema operativo Windows completo. Considerare la possibilità di usare altri metodi, ad esempio le finestre di manutenzione, per controllare le sequenze di attività attive distribuite ai client che vengono avviati da Windows PE.  
+    >  PXE またはブート メディアから Windows PE クライアントを起動した時は、クライアントは展開スケジュールを評価しません (開始、期限切れまたは期限の時間)。 完全な Windows オペレーティング システムから開始されるクライアントへの展開でのスケジュールのみが構成されます。 Windows PE から起動するクライアントに展開されているアクティブなタスク シーケンスを制御するメンテナンス ウィンドウなど、他の方法を使用してください。  
 
-    -   **Pianifica quando questa distribuzione diventerà disponibile**: specificare la data e l'ora in cui la sequenza di attività può essere eseguita nel computer di destinazione. Quando si seleziona la casella di controllo **UTC** , questa impostazione assicura che la sequenza di attività sia disponibile per più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
+    -   **[この展開が使用可能になる日時を指定する]**: タスク シーケンスを対象コンピューターで実行可能にする日時を指定します。 [ **UTC** ] チェック ボックスを選択すると、この設定により、対象コンピューターのローカル時刻に従って、複数の対象コンピューターで、異なる時刻ではなく同じ時刻に、タスク シーケンスが使用可能になります。  
 
-         Se l'ora di avvio è precedente rispetto al tempo necessario, il client scarica la sequenza di attività all'ora di avvio specificata.  
+         必要な時刻よりも開始時刻が早い場合、クライアントは、指定された開始時刻にタスク シーケンスをダウンロードします。  
 
-    -   **Pianifica alla scadenza di questa assegnazione**: specificare la data e l'ora di scadenza della sequenza di attività nel computer di destinazione. Quando si seleziona la casella di controllo **UTC** , questa impostazione assicura che la sequenza di attività scada in più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
+    -   **[この展開の有効期限を指定する]**: タスク シーケンスを対象コンピューターで期限切れにする日時を指定します。 [ **UTC** ] チェック ボックスを選択すると、この設定により、対象コンピューターのローカル時刻に従って、複数の対象コンピューターで、異なる時刻ではなく同じ時刻に、タスク シーケンスが期限切れになります。  
 
-    -   **Pianificazione assegnazione**: specificare quando la sequenza di attività richiesta viene eseguita nel computer di destinazione. È possibile aggiungere più pianificazioni.  
+    -   **[割り当てスケジュール]**: 必須のタスク シーケンスをセットアップ先のコンピューターで実行する日時を指定します。 複数のスケジュールを追加することができます。  
 
-         È possibile specificare la data e l'ora in cui inizia la pianificazione, se la sequenza di attività viene eseguita settimanalmente, mensilmente o a un intervallo personalizzato e se viene eseguita dopo un evento come l'accesso o la disconnessione dal computer.  
+         スケジュールの開始日時、タスク シーケンスを毎週、毎月、カスタム間隔のうちのどの頻度で実行するか、また、タスク シーケンスをイベント (コンピューターへのログインやログオフなど) の後で実行するかどうかを指定することができます。  
 
         > [!NOTE]  
-        >  Se si pianifica un'ora di avvio per una sequenza di attività richiesta precedente alla data e all'ora in cui è disponibile la sequenza di attività, il client di Configuration Manager scarica la sequenza di attività all'ora di avvio pianificata anche se la sequenza di attività è disponibile a un'ora precedente.  
+        >  必須のタスク シーケンスが使用可能になる日時よりも前に開始日時をスケジュールすると、Configuration Manager クライアントは、タスク シーケンスがもっと早い日時に使用可能になっても、スケジュールされた開始時刻にタスク シーケンスをダウンロードします。  
 
-    -   **Riesegui comportamento**: specificare quando viene eseguita nuovamente la sequenza di attività. È possibile specificare una delle opzioni seguenti.  
+    -   **[再実行の動作]**: タスク シーケンスをどのような場合に再実行するかを指定します。 次のいずれかを指定することができます。  
 
-        -   **Non rieseguire mai un programma distribuito**: la sequenza di attività non viene rieseguita nel client se è già stata eseguita in precedenza nel client. Anche se si sono originariamente verificati errori o se sono stati modificati i file della sequenza di attività, la sequenza di attività non viene rieseguita.  
+        -   **[展開されたプログラムを再実行しない]**: 既にクライアントで実行されている場合、タスク シーケンスは再実行されません。 最初に実行が失敗していても、またはタスク シーケンス ファイルが変更されていても、タスク シーケンスは再実行されません。  
 
-        -   **Riesegui sempre un programma**: la sequenza di attività viene rieseguita sempre nel client quando si pianifica la distribuzione, anche se è stata eseguita correttamente in precedenza. Questa impostazione è particolarmente utile quando si usano distribuzioni ricorrenti in cui la sequenza di attività viene regolarmente aggiornata.  
+        -   **[プログラムを常に再実行する]**: 展開がスケジュールされている場合に、既にクライアントで正常に実行されていても、タスク シーケンスが常に再実行されます。 この設定は、特に、タスク シーケンスが定期的に更新される反復的な展開を使用する場合に便利です。  
 
             > [!IMPORTANT]  
-            >  Anche se questa opzione è impostata per impostazione predefinita, non produce alcun effetto fino a quando non si assegna una distribuzione necessaria. Le distribuzioni disponibili possono sempre essere rieseguite da un utente.  
+            >  このオプションは、既定で設定されますが、必要な展開を割り当てるまでは影響を及ぼしません。 使用可能な展開は、いつでもユーザーが再実行することができます。  
 
-        -   **Riesegui se il tentativo precedente non è riuscito**: la sequenza di attività viene rieseguita quando la distribuzione è pianificata solo se la sequenza di attività non è stata eseguita correttamente in precedenza. Questa impostazione è particolarmente utile per le distribuzioni richieste in modo che se ne ritenterà automaticamente l'esecuzione in base alla pianificazione assegnazione se l'ultimo tentativo non è andato a buon fine.  
+        -   **[前回失敗した場合に再実行する]**: 展開がスケジュールされている場合に、前回の実行が失敗していれば、タスク シーケンスが再実行されます。 この設定は、特に、必須の展開で前回の実行が失敗したときに自動的に割り当てスケジュールに従って再試行されるようにする場合に便利です。  
 
-        -   Riesegui se il tentativo precedente è riuscito: la sequenza di attività viene rieseguita solo se è stata eseguita correttamente in precedenza nel client. Questa impostazione è utile quando di usano distribuzioni ricorrenti in cui la sequenza di attività viene regolarmente aggiornata e ogni aggiornamento richiede che quello precedente sia installato correttamente.  
-
-        > [!NOTE]  
-        >  Poiché un utente può rieseguire la distribuzione di una sequenza di attività disponibile, prima di distribuire una sequenza di attività disponibile nell'ambiente di un prodotto, assicurarsi di valutare e testare attentamente cosa accade se un utente riesegue la sequenza di attività più volte.  
-
-8.  Nella pagina **Esperienza utente** specificare le seguenti informazioni, quindi fare clic su **Avanti**.  
-
-    -   **Consenti all'utente di eseguire il programma indipendentemente dalle assegnazioni:**: specificare se l'utente è autorizzato a eseguire una sequenza di attività necessaria in modo indipendente dalle assegnazioni distribuzione.  
-
-    -   **Mostra stato sequenza di attività**: specificare se il client di Configuration Manager visualizza lo stato di avanzamento della sequenza di attività.  
-
-    -   **Installazione software**: specificare se l'utente è autorizzato a installare il software al di fuori di una finestra di manutenzione configurata dopo l'orario pianificato.  
-
-    -   **Riavvio del sistema (se necessario per completare l'installazione)**: specificare se l'utente è autorizzato a riavviare il computer dopo l'installazione software al di fuori di una finestra di manutenzione configurata dopo il periodo di assegnazione.  
-
-    -   **Consenti l'esecuzione della sequenza di attività per il client in Internet:** specificare se la sequenza di attività può essere eseguita in un client basato su Internet rilevato come presente su Internet da Configuration Manager. Le operazioni di installazione di software, quale un sistema operativo, non sono supportate con questa impostazione. Usare questa opzione solo per le sequenze attività generiche basate su script che eseguono operazioni nel sistema operativo standard.  
-
-9. Nella pagina **Avvisi** specificare le impostazioni di avviso desiderate per la distribuzione di questa sequenza di attività e quindi fare clic su **Avanti**.  
-
-10. Nella pagina **Punti di distribuzione** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
-
-    -   **Opzioni di distribuzione:**specificare una delle opzioni seguenti:  
+        -   [前回成功した場合に再実行する]: 前回クライアントで正常に実行された場合にのみ、タスク シーケンスが再実行されます。 この設定は、特に、タスク シーケンスが定期的に更新され、それぞれの更新で前回の更新プログラムが正常にインストールされていることが必要となる反復的な展開を使用する場合に便利です。  
 
         > [!NOTE]  
-        >  Quando si usa il multicast per distribuire un sistema operativo, il contenuto deve essere scaricato nei computer di destinazione quando necessario oppure prima dell'esecuzione della sequenza di attività.  
+        >  ユーザーは使用可能なタスク シーケンスの展開を再実行できるので、使用可能なタスク シーケンスを実稼働環境に展開する前に、ユーザーがタスク シーケンスを何回も再実行した場合にどのようなことが起こるかを慎重に評価およびテストしてください。  
 
-        -   Specificare che i client scaricano contenuto dal punto di distribuzione nel computer di destinazione come richiesto dalla sequenza di attività.  
+8.  [ **ユーザー エクスペリエンス** ] ページで、次の情報を指定して、[ **次へ** ] をクリックします。  
 
-        -   Specificare che i client scaricano tutto il contenuto dal punto di distribuzione nel computer di destinazione prima dell'esecuzione della sequenza di attività. Questa opzione non viene visualizzata se si è specificato che la sequenza di attività è disponibile nelle distribuzioni PXE e dei supporti di avvio (vedere la pagina **Impostazioni distribuzione** ).  
+    -   **[割り当てられたプログラムの個別の実行をユーザーに許可する]**: 必要なタスク シーケンスをユーザーが展開割り当てとは別個に実行できるようにするかどうかを指定します。  
 
-        -   Specificare che i client eseguono il contenuto dal punto di distribuzione. Questa opzione è disponibile solo quando tutti i pacchetti associati con la sequenza di attività vengono abilitati all'utilizzo di una condivisione pacchetto nel punto di distribuzione. Per abilitare il contenuto all'utilizzo di una condivisione pacchetto, vedere la scheda **Accesso dati** nelle **Proprietà** di ciascun pacchetto.  
+    -   **[タスク シーケンスの進行状況の表示]**: 構成マネージャー クライアントでタスク シーケンスの進捗状況を表示するかどうかを指定します。  
 
-    -   **Utilizzare un punto di distribuzione remoto quando non sono disponibili punti di distribuzione locali**: specificare se i client possono scaricare il contenuto necessario per la sequenza di attività da punti di distribuzione disponibili in reti lente e inaffidabili.  
+    -   **[ソフトウェアのインストール]**: スケジュールされている日時以降の構成済みメンテナンス期間外でユーザーがソフトウェアをインストールできるようにするかどうかを指定します。  
 
-11. Completare la procedura guidata.  
+    -   **[システムの再起動 (インストールの完了に必要な場合)]**: ソフトウェアのインストール後に、割り当て日時より後のメンテナンス期間外でユーザーがコンピューターを再起動できるようにするかどうかを指定します。  
 
-##  <a name="BKMK_ExportImport"></a> Esportare e importare sequenze di attività  
- È possibile esportare e importare sequenze attività con o senza i relativi oggetti, come un'immagine del sistema operativo, un'immagine di avvio, un pacchetto dell'agente client, un pacchetto driver e applicazioni con dipendenze.  
+    -   **[クライアントのタスク シーケンスをインターネット上で実行できるようにする]**: Configuration Manager でインターネット上に存在するものとして検出されるインターネット ベースのクライアントでタスク シーケンスを実行できるようにするかどうかを指定します。 オペレーティング システムなどのソフトウェアをインストールする操作は、この設定ではサポートされていません。 このオプションは、標準オペレーティング システムで操作を実行する一般的なスクリプト ベースのタスク シーケンスにのみ使用してください。  
 
- Considerare quanto segue quando si esportano e importano sequenze attività.  
+9. [ **アラート** ] ページで、このタスク シーケンスによる展開に必要なアラート設定を指定して、[ **次へ** ] をクリックします。  
 
--   Le password memorizzate nella sequenza di attività non vengono esportate. Se si esporta e importa una sequenza di attività che contiene password, è necessario modificare la sequenza di attività importata e specificare nuovamente le password. Assicurarsi di specificare le password per le azioni [Aggiunta a dominio o gruppo di lavoro](../understand/task-sequence-steps.md#BKMK_JoinDomainorWorkgroup), [Connetti alla cartella di rete](../understand/task-sequence-steps.md#BKMK_ConnectToNetworkFolder) ed [Esegui riga di comando](../understand/task-sequence-steps.md#BKMK_RunCommandLine) .  
+10. [ **配布ポイント** ] ページで、次の情報を指定して、[ **次へ** ] をクリックします。  
 
-- Quando si esporta una sequenza di attività con il passaggio **Imposta variabili dinamiche**, per le variabili che sono configurate con l'impostazione **Valore segreto** non vengono esportati valori. È necessario immettere nuovamente i valori per tali variabili dopo aver importato la sequenza di attività.
+    -   **[展開オプション]**: 次のいずれかを指定することができます。  
 
--   Quando si dispone di più siti primari, è consigliabile importare sequenze attività nel sito di amministrazione centrale.  
+        > [!NOTE]  
+        >  オペレーティング システムの展開にマルチキャストを使用する場合、必要に応じて、タスク シーケンスの実行前に、コンテンツを対象コンピューターにダウンロードする必要があります。  
 
- Usare le procedure seguenti per esportare e importare una sequenza di attività.  
+        -   タスク シーケンスで必要な場合、クライアントが配布ポイントから対象コンピューターにコンテンツをダウンロードするように指定します。  
 
-#### <a name="to-export-task-sequences"></a>Per esportare sequenze attività  
+        -   タスク シーケンスを実行する前に、クライアントが、配布ポイントから対象コンピューターにすべてのコンテンツをダウンロードするように指定します。 タスク シーケンスを PXE およびブート メディアの展開に使用できるように指定した場合、このオプションは表示されません ([ **展開設定** ] ページを参照してください)。  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+        -   クライアントが配布ポイントからコンテンツを実行するように指定します。 タスク シーケンスに関連付けられたすべてのパッケージが、配布ポイントでパッケージ共有を使用できるように構成されている場合にのみ、このオプションを使用できます。 コンテンツがパッケージ共有を使用できるようにするには、各パッケージの [ **プロパティ** ] の [ **データ アクセス** ] タブを参照してください。  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+    -   **[ローカルの配布ポイントを利用できない場合は、リモートの配布ポイントを使用する]**: クライアントで低速ネットワーク上または信頼性の低いネットワーク上の配布ポイントを使用してタスク シーケンスに必要なコンテンツをダウンロードするかどうかを指定します。  
 
-3.  Nell'elenco **Sequenza di attività** , selezionare le sequenze attività che si desidera esportare. Se si seleziona più di una sequenza di attività, queste vengono memorizzate in un file di esportazione.  
+11. ウィザードを完了します。  
 
-4.  Nella scheda **Home** del gruppo **Sequenza di attività** , fare clic su **Esporta** per avviare l'Esportazione guidata della sequenza di attività.  
+##  <a name="BKMK_ExportImport"></a> タスク シーケンスのエクスポートおよびインポート  
+ タスク シーケンスは、オペレーティング システム イメージ、ブート イメージ、クライアント エージェント パッケージ、ドライバー パッケージ、依存関係があるアプリケーションなど、関連するオブジェクトを含めて、または含めずに、インポートおよびエクスポートすることができます。  
 
-5.  Nella pagina **Generale** specificare le seguenti impostazioni, quindi fare clic su **Avanti**.  
+ タスク シーケンスをエクスポートおよびインポートする際には、次のことを考慮してください。  
 
-    -   Nella casella **File** specificare il percorso e il nome del file di esportazione. Se si immette direttamente il nome del file, assicurarsi di includere l'estensione .zip nel nome del file. Se si seleziona il file di esportazione, la procedura guidata aggiunge automaticamente questa estensione del nome del file.  
+-   タスク シーケンスに含まれているパスワードはエクスポートされません。 パスワードを含むタスク シーケンスをエクスポートおよびインポートする場合は、インポートされたタスク シーケンスを編集して任意のパスワードを再指定する必要があります。 [Join Domain or Workgroup](../understand/task-sequence-steps.md#BKMK_JoinDomainorWorkgroup)、 [Connect To Network Folder](../understand/task-sequence-steps.md#BKMK_ConnectToNetworkFolder)、 [Run Command Line](../understand/task-sequence-steps.md#BKMK_RunCommandLine) アクションに対するパスワードが指定されていることをご確認ください。  
 
-    -   Deselezionare la casella di controllo **Esporta tutte le dipendenze della sequenza di attività** se non si desiderano esportare le dipendenze della sequenza di attività. Per impostazione predefinita, la procedura guidata esegue la scansione di tutti gli oggetti correlati e li esporta con la sequenza di attività. Include tutte le dipendenze per le applicazioni.  
+- **動的変数の設定**手順でタスク シーケンスをエクスポートするとき、**秘密の値**設定で構成された変数の値はエクスポートされません。 タスク シーケンスのインポート後、変数の値を再入力する必要があります。
 
-    -   Deselezionare la casella di controllo **Esporta tutti i contenuti per le sequenze attività selezionate e le dipendenze** se non si desidera copiare il contenuto dall'origine del pacchetto al percorso di esportazione. Se questa casella di controllo è selezionata, l'Importazione guidata della sequenza di attività usa il percorso di importazione come nuovo percorso di origine del pacchetto.  
+-   ベスト プラクティスとして、複数のプライマリ サイトがある場合は、中央管理サイトにタスク シーケンスをインポートしてください。  
 
-    -   Nella casella **Commenti amministratore** aggiungere una descrizione delle sequenze attività da esportare.  
+ タスク シーケンスのエクスポートおよびインポートは、次の手順に従います。  
 
-6.  Completare la procedura guidata.  
+#### <a name="to-export-task-sequences"></a>タスク シーケンスをエクスポートするには  
 
- La procedura guidata crea i seguenti file di output:  
+1.  Configuration Manager コンソールで、 **[ソフトウェア ライブラリ]** をクリックします。  
 
--   Se non si esporta contenuto: un file compresso.  
+2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス**] をクリックします。  
 
--   Se si esporta contenuto: un file compresso e una cartella denominata *export*_files, in cui *export* è il nome del file compresso che contiene il contenuto esportato.  
+3.  [ **タスク シーケンス** ] 一覧で、エクスポートするタスク シーケンスを選択します。 複数のタスク シーケンスを選択すると、それらは 1 つのエクスポート ファイルに保存されます。  
 
- Se si include del contenuto quando si esporta una sequenza di attività, assicurarsi di copiare il file .zip e la cartella *export*_files, altrimenti l'importazione non avrà esito positivo.  
+4.  [ **ホーム** ] タブの [ **タスク シーケンス** ] グループで、[ **エクスポート** ] をクリックして、タスク シーケンスのエクスポート ウィザードを開始します。  
 
-#### <a name="to-import-task-sequences"></a>Per importare sequenze attività  
+5.  [ **全般** ] ページで、次の設定を指定して [ **次へ** ] をクリックします。  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+    -   [ **ファイル** ] ボックスで、エクスポート ファイルの場所と名前を指定します。 ファイル名を直接入力する場合は、必ず .zip 拡張子をファイル名に含めてください。 エクスポート ファイルを参照する場合は、自動的にファイル名の拡張子が追加されます。  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+    -   タスク シーケンスの依存関係をエクスポートしない場合は [ **タスク シーケンスのすべての依存関係をエクスポート** ] チェック ボックスをオフにします。 既定では、すべての関連オブジェクトがスキャンされて、タスク シーケンスと共にエクスポートされます。 これには、アプリケーションに関するあらゆる依存関係が含まれます。  
 
-3.  Nella scheda **Home** del gruppo **Crea** fare clic su **Importa sequenza di attività** per avviare l'Importazione guidata della sequenza di attività.  
+    -   コンテンツをパッケージ ソースからエクスポート場所にコピーしない場合は、[ **選択したタスク シーケンスとその依存関係をすべてエクスポート** ] チェック ボックスをオフにします。 このチェック ボックスを選択すると、タスク シーケンスのインポート ウィザードでインポート パスが新しいパッケージ ソースの場所として使用されます。  
 
-4.  Nella pagina **Generale** specificare il file .zip esportato, quindi fare clic su **Avanti**.  
+    -   [ **管理者のコメント** ] ボックスに、エクスポートするタスク シーケンスの説明を追加します。  
 
-5.  Nella pagina **Contenuto file** , selezionare l'azione richiesta per ogni oggetto da importare. In questa pagina sono visualizzati tutti gli oggetti che verranno importati da Configuration Manager.  
+6.  ウィザードを完了します。  
 
-    -   Se l'oggetto non è mai stata importato, selezionare **Crea nuovo**.  
+ 次の出力ファイルが作成されます。  
 
-    -   Se l'oggetto è stato importato in precedenza, selezionare una delle seguenti azioni:  
+-   コンテンツをエクスポートしない場合: .zip ファイル。  
 
-        -   **Ignorare duplicato** (predefinito): questa azione non importa l'oggetto. Al contrario, la procedura guidata collega l'oggetto esistente alla sequenza di attività.  
+-   コンテンツをエクスポートする場合: *export*_files という名前の .zip ファイル ( *export* は、エクスポートされるコンテンツを含む .zip ファイルの名前)。  
 
-        -   **Sovrascrivi**: questa azione sovrascrive l'oggetto esistente con l'oggetto importato. Per le applicazioni, è possibile aggiungere una revisione per aggiornare l'applicazione esistente o creare una nuova applicazione.  
+ タスク シーケンスをエクスポートするときにコンテンツを含める場合は、必ず .zip ファイルおよび *export*_files フォルダーをコピーしてください。さもないと、インポートが失敗します。  
 
-6.  Completare la procedura guidata.  
+#### <a name="to-import-task-sequences"></a>タスク シーケンスをインポートするには  
 
- Dopo aver importato la sequenza di attività, modificarla per specificare le password che erano presenti nella sequenza di attività originale. Per motivi di sicurezza, le password non vengono esportate.  
+1.  Configuration Manager コンソールで、 **[ソフトウェア ライブラリ]** をクリックします。  
 
-##  <a name="BKMK_CreateTSVariables"></a> Creare le variabili della sequenza di attività per computer e raccolte  
-È possibile definire variabili della sequenza di attività personalizzate per computer e insiemi. Le variabili definite per un computer vengono definite variabili della sequenza di attività con ambito computer. Le variabili definite per una raccolta vengono definite variabili della sequenza di attività con ambito raccolta. Se si verifica un conflitto, le variabili con ambito computer hanno la precedenza sulle variabili con ambito raccolta. Questo significa che le variabili della sequenza di attività assegnate a un computer specifico assumono automaticamente una priorità maggiore di quelle assegnate alla raccolta che contiene il computer.  
+2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス**] をクリックします。  
 
-Se ad esempio alla raccolta ABC è assegnata una variabile e al computer XYZ, membro della raccolta ABC, è assegnata una variabile con lo stesso nome, la variabile assegnata al computer XYZ avrà priorità maggiore rispetto a quella assegnata alla raccolta ABC.  
+3.  [ **ホーム** ] タブの [ **作成** ] グループで、[ **タスク シーケンスのインポート** ] をクリックして、タスク シーケンスのインポート ウィザードを開始します。  
 
-Se si vuole che le variabili con ambito computer e raccolta non siano visibili nella console di Configuration Manager, è possibile nasconderle. Se si desidera che tali variabili non siano più nascoste, sarà necessario eliminarle e ridefinirle senza selezionare l'opzione per nasconderle. Quando si usa l'opzione **Non visualizzare questo valore nella console di Configuration Manager**, il valore della variabile non viene visualizzato nella console, ma può essere usato dalla sequenza di attività al momento dell'esecuzione.  
+4.  [ **全般** ] ページで、エクスポートする .zip ファイルを指定して、[ **次へ** ] をクリックします。  
+
+5.  [ **ファイル コンテンツ** ] ページで、インポートするオブジェクトごとに必要なアクションを選択します。 このページには、Configuration Manager でインポートされるすべてのオブジェクトが表示されます。  
+
+    -   まだオブジェクトがまったくインポートされていない場合は、[ **新規作成** ] を選択します。  
+
+    -   既にオブジェクトがインポートされている場合は、次のいずれかのアクションを選択します。  
+
+        -   **[重複を無視する]** (既定): このアクションでは、オブジェクトはインポートされません。 代わりに、既存のオブジェクトがタスク シーケンスにリンクされます。  
+
+        -   **[上書き]**: このアクションでは、既存のオブジェクトがインポートされたオブジェクトで上書きされます。 アプリケーションについては、リビジョンを追加して既存のアプリケーションを更新したり、新しいアプリケーションを作成したりすることができます。  
+
+6.  ウィザードを完了します。  
+
+ タスク シーケンスをインポートしたら、タスク シーケンスを編集して、元のタスク シーケンスに含まれていたパスワードを指定してください。 セキュリティ上の理由により、パスワードはエクスポートされません。  
+
+##  <a name="BKMK_CreateTSVariables"></a> コンピューターおよびコレクションのタスク シーケンスの変数の作成  
+コンピューターおよびコレクションのカスタム タスク シーケンス変数を定義することができます。 コンピューターについて定義される変数を、コンピューターごとのタスク シーケンス変数といいます。 コレクションについて定義される変数を、コレクションごとのタスク シーケンス変数といいます。 競合が発生する場合は、コンピューターごとの変数がコレクションごとの変数より優先されます。 つまり、特定のコンピューターに自動的に割り当てられるタスク シーケンス変数は、そのコンピューターを含むコレクションに割り当てられる変数よりも優先されるということです。  
+
+たとえば、コレクション ABC で、ある変数がコレクションに割り当てられており、コレクション ABC のメンバーであるコンピューター XYZ に同じ名前の変数が割り当てられている場合、コンピューター XYZ に割り当てられている変数の方がコレクション ABC に割り当てられている変数よりも優先されます。  
+
+コンピューターごとの変数およびコレクションごとの変数を非表示にして、Configuration Manager コンソールに表示されないようにすることができます。 それらの変数が非表示にされなくなるようにする場合は、変数を削除してから、非表示にするオプションを選択せずに再定義する必要があります。 **[この値を Configuration Manager コンソールに表示しない]** オプションを使用すると、コンソールに変数の値は表示されませんが、実行時にタスク シーケンスで引き続き使用できます。  
 
 > [!WARNING]    
-> L'impostazione **Non visualizzare questo valore nella console di Configuration Manager** è valida per la console di Configuration Manager, ma i valori delle variabili sono ancora visualizzati nel file di log della sequenza di attività (SMSTS.LOG). 
+> **[この値を Configuration Manager コンソールに表示しない]** 設定は Configuration Manager コンソールに適用されますが、変数の値はタスク シーケンスのログ ファイル (SMSTS.LOG) に引き続き表示されます。 
 
-È possibile gestire le variabili per computer in un sito primario oppure in un sito di amministrazione centrale. Configuration Manager non supporta più di 1.000 variabili assegnate per computer.  
+コンピューターごとの変数は、プライマリ サイトまたは中央管理サイトで管理することができます。 Configuration Manager では、1 コンピューターあたり 1000 を超える変数の割り当てはサポートされていません。  
 
 > [!IMPORTANT]  
->  Quando si usano variabili con ambito raccolta per le sequenze attività, considerare quanto segue:  
+>  タスク シーケンスにコレクションごとの変数を使用する際には、次のことを考慮してください。  
 >   
-> - Poiché le modifiche alle raccolte vengono sempre replicate in tutta la gerarchia, qualsiasi modifica apportata alle variabili raccolta verrà applicata non solo ai membri del sito corrente ma a tutti i membri della raccolta in tutta la gerarchia.  
-> - Quando si elimina una raccolta, questa azione elimina anche le variabili della sequenza di attività configurate per la raccolta.  
+> - コレクションに対する変更は常に階層全体にレプリケートされるので、コレクション変数に加えられた変更は、現在のサイトのメンバーだけでなく、階層全体のコレクションのすべてのメンバーに適用されます。  
+> - コレクションを削除すると、そのアクションにより、コレクションに構成されているタスク シーケンス変数も削除されます。  
 
- Usare le procedure seguenti per creare variabili della sequenza di attività per un computer o per una raccolta.  
+ コンピューターまたはコレクションのタスク シーケンス変数を作成するには、次の手順に従います。  
 
-#### <a name="to-create-task-sequence-variables-for-a-computer"></a>Per creare variabili della sequenza di attività per un computer  
+#### <a name="to-create-task-sequence-variables-for-a-computer"></a>コンピューターのタスク シーケンス変数を作成するには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
 
-2.  Nell'area di lavoro **Asset e conformità** espandere la raccolta che contiene il computer al quale si desidera aggiungere la variabile.  
+2.  [ **資産とコンプライアンス** ] ワークスペースで、変数の追加先のコンピューターを含むコレクションを展開します。  
 
-3.  Selezionare il computer e fare clic su **Proprietà**.  
+3.  コレクションを選択し、[ **プロパティ** ] をクリックします。  
 
-4.  Nella finestra di dialogo **Proprietà** scegliere la scheda **Variabili** .  
+4.  [ **プロパティ** ] ダイアログ ボックスで、[ **変数** ] タブをクリックします。  
 
-5.  Per ogni variabile da creare, fare clic sull'icona **Nuova** nella finestra di dialogo **<Nuova\> variabile** e specificare il nome e il valore della variabile della sequenza di attività. Deselezionare la casella di controllo **Non visualizzare questo valore nella console di Configuration Manager** se si vuole nascondere le variabili in modo che non vengano riportate nella console di Configuration Manager.  
+5.  作成する変数ごとに、**[<新規\> 変数]** ダイアログ ボックスの **[新規]** アイコンをクリックして、タスク シーケンス変数の名前と値を指定します。 変数を非表示にする場合は、**[この値を Configuration Manager コンソールに表示しない]** チェック ボックスをオフにし、変数が Configuration Manager コンソールに表示されないようにします。  
 
-6.  Dopo aver aggiunto tutte le variabili per il computer, fare clic su **OK**.  
+6.  すべての変数をコンピューターに追加したら、[OK ****] をクリックします。  
 
-#### <a name="to-create-task-sequence-variables-for-a-collection"></a>Per creare variabili della sequenza di attività per una raccolta  
+#### <a name="to-create-task-sequence-variables-for-a-collection"></a>コレクションのタスク シーケンス変数を作成するには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
 
-2.  Nell'area di lavoro **Asset e conformità** selezionare la raccolta alla quale si desidera aggiungere la variabile e fare clic su **Proprietà**.  
+2.  [ **資産とコンプライアンス** ] ワークスペースで、変数の追加先のコレクションを選択して、[ **プロパティ** ] を選択します。  
 
-3.  Nella finestra di dialogo **Proprietà** fare clic sulla scheda **Variabili raccolta** .  
+3.  [ **プロパティ** ] ダイアログ ボックスで、[ **コレクション変数** ] タブをクリックします。  
 
-4.  Per ogni variabile da creare, fare clic sull'icona **Nuova** nella finestra di dialogo **<Nuova\> variabile** e specificare il nome e il valore della variabile della sequenza di attività. Deselezionare la casella di controllo **Non visualizzare questo valore nella console di Configuration Manager** se si vuole nascondere le variabili in modo che non vengano riportate nella console di Configuration Manager.  
+4.  作成する変数ごとに、**[<新規\> 変数]** ダイアログ ボックスの **[新規]** アイコンをクリックして、タスク シーケンス変数の名前と値を指定します。 変数を非表示にする場合は、**[この値を Configuration Manager コンソールに表示しない]** チェック ボックスをオフにし、変数が Configuration Manager コンソールに表示されないようにします。  
 
-5.  È inoltre possibile specificare la priorità in base alla quale Configuration Manager valuterà le variabili della sequenza di attività.  
+5.  必要に応じて、タスク シーケンス変数の評価時に Configuration Manager で使用される優先度を指定します。  
 
-6.  Dopo aver aggiunto tutte le variabili alla raccolta, fare clic su **OK**.  
+6.  すべての変数をコレクションに追加したら、[OK ****] をクリックします。  
 
-##  <a name="BKMK_AdditionalActionsTS"></a> Azioni aggiuntive per la gestione delle sequenze di attività  
- È possibile gestire le sequenze di attività usando le azioni aggiuntive disponibili quando si seleziona la sequenza di attività.  
+##  <a name="BKMK_AdditionalActionsTS"></a> タスク シーケンスを管理する追加のアクション  
+ タスク シーケンスを選択する場合にその他のアクションを使用して、タスク シーケンスを管理することができます。  
 
-#### <a name="to-select-a-task-sequence-to-manage"></a>Per selezionare una sequenza di attività da gestire  
+#### <a name="to-select-a-task-sequence-to-manage"></a>管理するタスク シーケンスを選択するには  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi** , quindi fare clic su **Sequenze attività**.  
+2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム** ] を展開して、[ **タスク シーケンス** ] をクリックします。  
 
-3.  Nell'elenco **Sequenza di attività** selezionare la sequenza di attività che si desidera gestire e quindi selezionare una delle opzioni disponibili.  
+3.  [ **タスク シーケンス** ] 一覧で、管理するタスク シーケンスを選択して、次のいずれかのオプションを選択します。  
 
- Usare la tabella riportata di seguito per ulteriori informazioni su alcune delle azioni aggiuntive per la gestione delle sequenze attività.  
+ タスク シーケンスの管理のためのその他のアクションの詳細については、次の表を参照してください。  
 
-|Azione|Descrizione|  
+|操作|説明|  
 |------------|-----------------|  
-|**Copia**|Crea una copia della sequenza di attività selezionata. Questa azione può risultare utile quando si desidera creare una nuova sequenza di attività basata su una sequenza di attività esistente.<br /><br /> Quando si copia una sequenza di attività in una cartella, la copia viene elencata in tale cartella fino all'aggiornamento del nodo sequenza di attività.  Dopo l'aggiornamento, la copia viene visualizzata nella cartella principale.|  
-|**Disabilitato**|Disattiva la sequenza di attività in modo che non possa essere eseguita nei computer. Le sequenze attività disattivate possono essere distribuite ai computer, ma questi non le eseguono finché non vengono attivate.|  
-|**Attiva**|Attiva la sequenza di attività in modo che possa essere eseguita. Dopo l'attivazione non è necessario ridistribuire una sequenza di attività già distribuita.|  
-|**Crea file di contenuto pre-installazione**|Avvia la Creazione guidata file di contenuto pre-installazione per pre-installare il contenuto della sequenza di attività. Per informazioni su come creare un file di contenuto pre-installato, vedere [Prestage content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content) (Pre-installare il contenuto).|  
-|**Sposta**|Sposta la sequenza di attività selezionata in un'altra cartella.|  
+|**コピー**|選択されたタスク シーケンスのコピーを作成します。 このアクションは、既存のタスク シーケンスを基にして新しいタスク シーケンスを作成する場合に便利です。<br /><br /> タスク シーケンスのコピーをフォルダーに作成すると、そのコピーは、タスク シーケンス ノードが最新の情報に更新されるまで表示されます。  更新後、コピーはルート フォルダーに表示されます。|  
+|**無効化**|タスク シーケンスを無効にしてコンピューターで実行できないようにします。 無効になっているタスク シーケンスは、コンピューターに展開することはできますが、有効になるまでコンピューターでは実行されません。|  
+|**有効化**|タスク シーケンスを有効にして実行できるようにします。 展開済みのタスク シーケンスは、有効にした後に再展開する必要はありません。|  
+|**事前設定コンテンツ ファイルの作成**|タスク シーケンスのコンテンツを事前設定するために、事前設定コンテンツ ファイルの作成ウィザードを起動します。 事前定義済みコンテンツ ファイルの作成方法については、「[Prestage content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content)」 (コンテンツの事前設定) を参照してください。|  
+|**移動**|選択されたタスク シーケンスを別のフォルダーに移動します。|  
 
-## <a name="next-steps"></a>Passaggi successivi
-[Scenari di distribuzione di sistemi operativi aziendali](scenarios-to-deploy-enterprise-operating-systems.md)
-
+## <a name="next-steps"></a>次のステップ
+[エンタープライズ オペレーティング システムを展開するシナリオ](scenarios-to-deploy-enterprise-operating-systems.md)

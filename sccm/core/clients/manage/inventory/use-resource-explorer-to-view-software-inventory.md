@@ -1,58 +1,54 @@
 ---
-title: Visualizzare l&quot;inventario software | Microsoft Docs | Resource Explorer
-description: Usare Esplora inventario software per visualizzare l&quot;inventario software in System Center Configuration Manager.
+title: "ソフトウェア インベントリを表示する | Microsoft Docs | リソース エクスプローラー"
+description: "System Center Configuration Manager でリソース エクスプローラーを使用してソフトウェア インベントリを表示します。"
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b7aa5f6-5ebd-49be-b7f3-4206caadc187
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
-ms.openlocfilehash: 6189726bbcade8229e0b2e929ebedeefdbf266a4
-ms.contentlocale: it-it
-ms.lasthandoff: 12/30/2016
-
-
+ms.openlocfilehash: b76bcf65c61b0a2690a468d375ac95b1334d5298
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-use-resource-explorer-to-view-software-inventory-in-system-center-configuration-manager"></a>Come usare Esplora inventario software per visualizzare l'inventario software in System Center Configuration Manager
+# <a name="how-to-use-resource-explorer-to-view-software-inventory-in-system-center-configuration-manager"></a>System Center Configuration Manager でリソース エクスプローラーを使用してソフトウェア インベントリを表示する方法
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-È possibile usare Esplora inventario risorse in System Center Configuration Manager per visualizzare informazioni relative all'inventario software raccolto dai computer nella gerarchia.  
+System Center Configuration Manager のリソース エクスプローラーを使用して、階層内のコンピューターから収集されたソフトウェア インベントリに関する情報を表示します。  
 
 > [!NOTE]  
->  Esplora inventario risorse non visualizzerà dati di inventario fino al completamento dell'esecuzione di un ciclo di inventario software nel client.  
+>  クライアントでソフトウェア インベントリ サイクルが実行されるまで、リソース エクスプローラーにインベントリ データは表示されません。  
 
- Esplora inventario risorse fornisce le informazioni di inventario software seguenti:  
+ リソース エクスプローラーは、次のソフトウェアのインベントリ情報を提供します。  
 
--   **Software**:  
+-   **ソフトウェア**:  
 
-    -   **File raccolti**: file raccolti durante l'inventario software.  
+    -   **[収集するファイル]** – ソフトウェア インベントリ中に収集されたファイル。  
 
-    -   **Dettagli file**: file di cui è stato eseguito l'inventario durante l'inventario software, che non sono associati a uno specifico prodotto o il produttore.  
+    -   **[ファイルの詳細]** – ソフトウェア インベントリ中にインベントリされた、特定の製品または製造元に関連付けられていないファイル。  
 
-    -   **Ultima analisi software**: data e ora dell'ultimo inventario software e dell'ultima raccolta dei file per il computer client.  
+    -   **[最後のソフトウェア スキャン]** – クライアント コンピューターの最後のソフトウェア インベントリとファイル コレクションの日付と時刻。  
 
-    -   **Dettagli prodotto**: prodotti software inclusi nell'inventario software, raggruppati in base al produttore.  
+    -   **[製品の詳細]** – ソフトウェア インベントリでインベントリされ、製造元別にグループ化されたソフトウェア製品の情報。  
 
-## <a name="to-run-resource-explorer-from-the-configuration-manager-console"></a>Per eseguire Esplora inventario risorse dalla console di Configuration Manager  
+## <a name="to-run-resource-explorer-from-the-configuration-manager-console"></a>Configuration Manager コンソールからリソース エクスプローラーを実行するには  
 
-1.  Nella console di Configuration Manager scegliere **Asset e conformità**.
+1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** を選択します。
 
-2.  Nell'area di lavoro **Asset e conformità** scegliere **Dispositivi** oppure aprire eventuali raccolte che visualizzano dispositivi.  
+2.  **[資産とコンプライアンス]** ワークスペースで **[デバイス]** を選択するか、デバイスを表示するコレクションを開きます。  
 
-3.  Scegliere il computer che contiene l'inventario da visualizzare e quindi nel gruppo **Dispositivi** della scheda **Home** scegliere **Avvia** > **Esplora inventario risorse**.
+3.  表示するインベントリが含まれているコンピューターをクリックしたら、**[ホーム]** タブの **[デバイス]** グループで **[開始]** > **[リソース エクスプローラー ]** の順に選択します。
 
-4.  È possibile fare clic con il pulsante destro del mouse su qualsiasi elemento nel riquadro di destra della finestra Esplora inventario risorse e quindi scegliere **Proprietà** per visualizzare le informazioni di inventario raccolte in un formato più leggibile.  
+4.  [リソース エクスプローラー] の右ペインで、項目のどれかを右クリックしてから、**[プロパティ]** を選択すると、より読みやすい形式で、収集されたインベントリ情報が表示されます。  
  
-

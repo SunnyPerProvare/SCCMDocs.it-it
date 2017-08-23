@@ -1,52 +1,50 @@
 ---
-title: Trovare un nome della famiglia di pacchetti (PFN) per una VPN per app | Microsoft Docs
-description: "Informazioni sulle due modalità di reperimento di un nome di famiglia di pacchetti in modo che sia possibile configurare una rete VPN per app."
+title: "アプリごとの VPN のパッケージ ファミリ名 (PFN) の検索 | Microsoft Docs"
+description: "アプリごとの VPN を構成できるようにするためにパッケージ ファミリ名を検索する 2 つの方法について説明します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 47118499-3d26-4c25-bfde-b129de7eaa59
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Nbigman
 ms.author: nbigman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
 ms.openlocfilehash: ce50645155ecb14a82d8b982aa69c0f87dd15fbf
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="find-a-package-family-name-pfn-for-per-app-vpn"></a>Trovare un nome di famiglia di pacchetti (PFN) per una rete VPN per app
+# <a name="find-a-package-family-name-pfn-for-per-app-vpn"></a>アプリごとの VPN のパッケージ ファミリ名 (PFN) の検索
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
 
-Esistono due modi per trovare un PFN in modo tale da poter configurare una rete VPN per app.
+アプリごとの VPN を構成できるようにするために PFN を検索する 2 つの方法があります。
 
-## <a name="find-a-pfn-for-an-app-thats-installed-on-a-windows-10-computer"></a>Trovare un PFN per un'applicazione installata in un computer Windows 10
+## <a name="find-a-pfn-for-an-app-thats-installed-on-a-windows-10-computer"></a>Windows 10 コンピューターにインストールされているアプリの PFN の検索
 
-Se l'applicazione in uso è già installata in un computer Windows 10, è possibile usare il cmdlet [Get-AppxPackage](https://technet.microsoft.com/library/hh856044.aspx) di PowerShell per recuperare il PFN.
+作業しているアプリが既に Windows 10 コンピューターにインストールされている場合は、[Get-AppxPackage](https://technet.microsoft.com/library/hh856044.aspx) PowerShell コマンドレットを使用して PFN を取得できます。
 
-La sintassi per Get-AppxPackage è:
+Get-AppxPackage の構文は次のとおりです。
 
 ` Parameter Set: __AllParameterSets`
 ` Get-AppxPackage [[-Name] <String> ] [[-Publisher] <String> ] [-AllUsers] [-User <String> ] [ <CommonParameters>]`
 
 > [!NOTE]
-> Può essere necessario eseguire PowerShell come amministratore per poter recuperare il PFN
+> PFN を取得するために管理者として PowerShell を実行することが必要になる場合があります。
 
-Ad esempio, per ottenere informazioni su tutte le app universali installate nel computer usare `Get-AppxPackage`.
+たとえば、コンピューターにインストールされているすべてのユニバーサル アプリの情報を取得するには、`Get-AppxPackage` を使用します。
 
-Per ottenere informazioni su un'applicazione di cui si conosce il nome, o parte del nome, usare `Get-AppxPackage *<app_name>`. Si noti l'utilizzo del carattere jolly, particolarmente utile se non si è certi del nome completo dell'applicazione. Ad esempio, per ottenere le informazioni per OneNote, usare `Get-AppxPackage *OneNote`.
+情報を取得するアプリの名前、または名前の一部がわかっている場合は、`Get-AppxPackage *<app_name>` を使用します。 ワイルドカード文字を使用することもできます。これはアプリの完全な名前がわからない場合に便利です。 OneNote の情報を取得する例では、`Get-AppxPackage *OneNote` を使用します。
 
 
-Queste sono le informazioni recuperate per OneNote:
+OneNote について取得された情報を次に示します。
 
 `Name                   : Microsoft.Office.OneNote`
 
@@ -72,14 +70,14 @@ Queste sono le informazioni recuperate per OneNote:
 
 
 
-## <a name="find-a-pfn-if-the-app-is-not-installed-on-a-computer"></a>Trovare un PFN se l'applicazione non è installata in un computer
+## <a name="find-a-pfn-if-the-app-is-not-installed-on-a-computer"></a>アプリがコンピューターにインストールされていない場合の PFN の検索
 
-1.  Accedere a https://www.microsoft.com/en-us/store/apps
-2.  Immettere il nome dell'applicazione nella barra di ricerca. Nel nostro esempio cercare OneNote.
-3.  Fare clic sul collegamento all'applicazione. Si noti che l'URL a cui si accede ha una serie di lettere alla fine. Nel nostro esempio l'URL è simile al seguente: `https://www.microsoft.com/en-us/store/apps/onenote/9wzdncrfhvjl`
-4.  In un'altra scheda incollare il seguente URL, `https://bspmts.mp.microsoft.com/v1/public/catalog/Retail/Products/<app id>/applockerdata`,  sostituendo `<app id>` con l'ID dell'applicazione ottenuto da https://www.microsoft.com/en-us/store/apps (la serie di lettere alla fine dell'URL nel passaggio 3). Nel nostro esempio con OneNote si deve incollare: `https://bspmts.mp.microsoft.com/v1/public/catalog/Retail/Products/9wzdncrfhvjl/applockerdata`.
+1.  https://www.microsoft.com/en-us/store/apps にアクセスします。
+2.  検索バーで、アプリの名前を入力します。 この例では、OneNote を検索します。
+3.  アプリへのリンクをクリックします。 アクセスする URL の末尾には一連の文字が含まれていることに注意してください。 この例では、URL は次のようになります: `https://www.microsoft.com/en-us/store/apps/onenote/9wzdncrfhvjl`
+4.  別のタブに、次の URL を貼り付けます: `https://bspmts.mp.microsoft.com/v1/public/catalog/Retail/Products/<app id>/applockerdata`。ここで、`<app id>` を、https://www.microsoft.com/en-us/store/apps から取得したアプリ ID (手順 3 の URL の末尾に含まれる一連の文字) で置き換えます。 ここでの OneNote の例では、次の URL を貼り付けます: `https://bspmts.mp.microsoft.com/v1/public/catalog/Retail/Products/9wzdncrfhvjl/applockerdata`
 
-In Microsoft Edge le informazioni richieste vengono visualizzate, in Internet Explorer fare clic su **Apri** per visualizzare le informazioni. Il valore PFN è indicato sulla prima riga. Ecco come appaiono i risultati di questo esempio:
+Microsoft Edge では、必要な情報が表示されます。Internet Explorer では、**[開く]** をクリックすると情報が表示されます。 PFN 値は 1 行目に記述されています。 この例での結果を次に示します。
 
 
 `{`
@@ -88,4 +86,3 @@ In Microsoft Edge le informazioni richieste vengono visualizzate, in Internet Ex
 `  "windowsPhoneLegacyId": "ca05b3ab-f157-450c-8c49-a1f127f5e71d",`
 `  "publisherCertificateName": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"`
 `}`
-

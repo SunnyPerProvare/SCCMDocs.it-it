@@ -1,7 +1,6 @@
 ---
-
-title: Gestire le impostazioni per gli aggiornamenti software | Microsoft Docs
-description: Informazioni sulle impostazioni client appropriate per gli aggiornamenti software nel sito successivi all&quot;installazione del punto di aggiornamento software.
+title: "ソフトウェア更新の設定の管理 | Microsoft Docs"
+description: "ソフトウェア更新ポイントのインストール後の、サイトでのソフトウェア更新プログラムに適したクライアント設定について説明します。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -10,135 +9,130 @@ ms.date: 03/26/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: 0d484c1a-e903-4bff-9e9b-e452c62e38a8
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: fe4a8f56e0b554e206bcc4503a0268dc761ded81
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+#  <a name="BKMK_ManageSUSettings"></a> ソフトウェア更新の設定の管理  
 
-#  <a name="BKMK_ManageSUSettings"></a> Gestire le impostazioni per gli aggiornamenti software  
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+Configuration Manager でソフトウェアの更新を同期したら、以下のセクションで設定を構成および確認します。
 
-Dopo aver sincronizzato gli aggiornamenti software in Configuration Manager, configurare e verificare le impostazioni nelle sezioni seguenti.
-
-##  <a name="BKMK_ClientSettings"></a> Impostazioni client per gli aggiornamenti software  
-Dopo aver installato il punto di aggiornamento software, gli aggiornamenti software vengono abilitati sui client per impostazione predefinita e le impostazioni della pagina **Aggiornamenti software** nelle impostazioni client hanno valori predefiniti. Le impostazioni client sono usate a livello di sito e influiscono sui tempi di esecuzione dell'analisi degli aggiornamenti software ai fini della conformità e su come e quando gli aggiornamenti software vengono installati nei computer client. Prima di distribuire gli aggiornamenti software, verificare che le impostazioni client siano appropriate per gli aggiornamenti software del sito.  
+##  <a name="BKMK_ClientSettings"></a> ソフトウェア更新プログラムのクライアントの設定  
+ソフトウェアの更新ポイントのインストール後に、既定でソフトウェア更新プログラムのクライアントが有効になり、クライアント設定の **[ソフトウェア更新プログラム]** ページには既定値が入ります。 クライアント設定はサイト全体で使用され、ソフトウェア更新プログラムのコンプライアンス対応をいつスキャンするか、ソフトウェア更新プログラムをクライアント コンピューターにいつどのようにインストールするかに影響します。 ソフトウェア更新プログラムを展開する前に、クライアント設定がサイトでのソフトウェア更新プログラムに適していることを確認します。  
 
 > [!IMPORTANT]  
->  L'impostazione **Abilitare aggiornamento software nei client** è abilitata per impostazione predefinita. Se si deseleziona questa impostazione, Configuration Manager rimuoverà i criteri di distribuzione esistenti dal client.  
+>  既定では [ **クライアントのソフトウェア更新プログラムを有効にする** ] 設定が有効です。 この設定をオフにすると、Configuration Manager がクライアントから既存の展開ポリシーを削除します。  
 
-Per informazioni su come configurare le impostazioni client, vedere [Come configurare le impostazioni client](../../core/clients/deploy/configure-client-settings.md).  
+クライアント設定の構成方法については、「[クライアント設定を構成する方法](../../core/clients/deploy/configure-client-settings.md)」を参照してください。  
 
-Per altre informazioni sulle impostazioni client, vedere [Informazioni sulle impostazioni client](../../core/clients/deploy/about-client-settings.md).  
+これらのクライアント設定の詳細については、「[クライアント設定について](../../core/clients/deploy/about-client-settings.md)」を参照してください。  
 
-##  <a name="BKMK_GroupPolicy"></a> Impostazioni di Criteri di gruppo per gli aggiornamenti software  
-Esistono impostazioni di Criteri di gruppo specifiche usate dall'agente di Windows Update (WUA) nei computer client per connettersi a WSUS in esecuzione nel punto di aggiornamento software. Queste impostazioni di Criteri di gruppo vengono usate anche per analizzare la conformità dell'aggiornamento software e per aggiornare automaticamente gli aggiornamenti software e l'agente WUA.
+##  <a name="BKMK_GroupPolicy"></a> ソフトウェア更新プログラムのグループ ポリシー設定  
+クライアント コンピューターで Windows Update エージェント (WUA) が、ソフトウェアの更新ポイントで実行されている WSUS に接続するために使用する専用のグループ ポリシー設定があります。 これらのグループ ポリシー設定は、ソフトウェア更新プログラムのコンプライアンスのためにスキャンを実行する場合、およびソフトウェア更新プログラムおよび WUA を自動的に更新する場合にも使用されます。
 
-### <a name="specify-intranet-microsoft-update-service-location-local-policy"></a>Criteri locali Specifica il percorso del servizio di aggiornamento Microsoft nella rete Intranet  
-Quando viene creato il punto di aggiornamento software per un sito, i client ricevono criteri computer che forniscono il nome server del punto di aggiornamento software e configurano i criteri locali **Specifica il percorso del servizio di aggiornamento Microsoft nella rete Intranet** sul computer. L'agente WUA recupera il nome server specificato nell'impostazione **Impostare il servizio di aggiornamento nella rete Intranet per il rilevamento degli aggiornamenti** e quindi si connette a questo server quando analizza la conformità degli aggiornamenti software. Quando vengono creati i criteri dominio per l'impostazione **Specifica il percorso del servizio di aggiornamento Microsoft nella rete Intranet** , questi sovrascrivono i criteri locali e l'agente WUA potrebbe connettersi a un server diverso rispetto al punto di aggiornamento software. In questo caso, il client potrebbe analizzare la conformità degli aggiornamenti software in base ai diversi prodotti, classificazioni e lingue. Pertanto, non è consigliabile configurare i criteri di Active Directory per i computer client.  
+### <a name="specify-intranet-microsoft-update-service-location-local-policy"></a>[イントラネットの Microsoft 更新サービスの場所を指定する] ローカル ポリシー  
+ソフトウェアの更新ポイントがサイトに作成されると、クライアントはコンピューター ポリシーを受け取ります。このポリシーは、ソフトウェアの更新ポイントのサーバー名を提供し、コンピューターで [イントラネットの Microsoft 更新サービスの場所を指定する **** ] ローカル ポリシーを構成します。 WUA は、[ **更新を検出するためのイントラネットの更新サービスを設定する** ] で指定されたサーバー名を取得し、ソフトウェア更新プログラムの対応をスキャンするときにこのサーバーに接続します。 **[イントラネットの Microsoft 更新サービスの場所を指定する]** 設定に対するドメイン ポリシーが作成されている場合、ローカル ポリシーは上書きされ、WUA がソフトウェアの更新ポイント以外のサーバーに接続する場合があります。 この場合、クライアントは、別の製品、分類、および言語に基づいてソフトウェア更新プログラムの対応をスキャンする可能性があります。 そのため、クライアント コンピューターの Active Directory ポリシーを構成しないでください。  
 
-### <a name="allow-signed-content-from-intranet-microsoft-update-service-location-group-policy"></a>Criteri di gruppo Consenti contenuto firmato dal percorso del servizio di aggiornamento Microsoft nella rete Intranet  
-È necessario abilitare l'impostazione di Criteri di gruppo **Consenti contenuto firmato dal percorso del servizio di aggiornamento Microsoft nella rete Intranet** prima che l'agente WUA sui computer analizzi gli aggiornamenti software creati e pubblicati con System Center Updates Publisher. Quando l'impostazione dei criteri viene abilitata, WUA accetterà gli aggiornamenti software ricevuti tramite un percorso Intranet se gli aggiornamenti software sono firmati nell'archivio certificati **Autori attendibili** sul computer locale. Per ulteriori informazioni sulle impostazioni di Criteri di gruppo necessarie per Updates Publisher, vedere [Updates Publisher 2011 Documentation Library (Libreria della documentazione di Updates Publisher 2011)](http://go.microsoft.com/fwlink/p/?LinkId=232476).  
+### <a name="allow-signed-content-from-intranet-microsoft-update-service-location-group-policy"></a>[イントラネットの Microsoft 更新サービスの場所からの署名済みコンテンツを許可する] グループ ポリシー  
+コンピューター上の WUA が System Center Updates Publisher で作成および発行されたソフトウェア更新プログラムをスキャンする前に、[ **イントラネットの Microsoft 更新サービスの場所からの署名済みコンテンツを許可する** ] グループ ポリシー設定を有効にする必要があります。 この設定が有効になっている場合、WUA は、ローカル コンピューターに格納されている、 **信頼される発行元** の証明書でソフトウェア更新プログラムが署名されていることを条件に、イントラネット上の場所から受信したソフトウェア更新プログラムを受け入れます。 Updates Publisher に必要なグループ ポリシー設定の詳細については、 [Updates Publisher 2011 Documentation Library (Updates Publisher 2011 のドキュメント ライブラリ)](http://go.microsoft.com/fwlink/p/?LinkId=232476)を参照してください。  
 
-### <a name="automatic-updates-configuration"></a>Configurazione di Aggiornamenti automatici  
-Aggiornamenti automatici consente di ricevere aggiornamenti della sicurezza e altri download importanti sui computer client. Aggiornamenti automatici viene configurato tramite l'impostazione di Criteri di gruppo **Configura Aggiornamenti automatici** o tramite il Pannello di controllo sul computer locale. Quando Aggiornamenti automatici viene abilitato, i computer client riceveranno le notifiche degli aggiornamenti e, in base alle impostazioni configurate, i computer client scaricheranno e installeranno gli aggiornamenti necessari. Quando Aggiornamenti automatici coesiste con gli aggiornamenti software, su ogni computer client potrebbero essere visualizzate icone di notifica e notifiche popup per lo stesso aggiornamento. Inoltre, quando è necessario un riavvio, su ogni computer client potrebbe essere visualizzata una finestra di dialogo di riavvio per lo stesso aggiornamento.  
+### <a name="automatic-updates-configuration"></a>自動更新の構成  
+自動更新を使用すると、セキュリティの更新プログラムおよびその他の重要なダウンロードをクライアント コンピューターに取得させることができます。 自動更新は、ローカル コンピューターの [ **自動更新を構成する** ] グループ ポリシー設定またはコントロール パネルで構成します。 自動更新が有効になっている場合、クライアント コンピューターは、更新通知を受け取り、構成された設定によっては、必須の更新のダウンロードおよびインストールも行います。 自動更新とソフトウェア更新プログラムが共存している場合、それぞれが同一の更新について通知アイコンを表示し、表示通知をポップアップ表示します。 また、再起動が必要な場合、それぞれが同一の更新について再起動ダイアログ ボックスを表示します。  
 
-### <a name="self-update"></a>Aggiornamento automatico  
-Quando Aggiornamenti automatici viene abilitato sui computer client, l'agente WUA esegue automaticamente un aggiornamento automatico quando è disponibile una versione più recente o quando si verificano problemi con un componente WUA. Quando Aggiornamenti automatici non è configurato o è disabilitato e i computer client dispongono di una versione precedente dell'agente WUA, i computer client devono eseguire il file di installazione WUA.  
+### <a name="self-update"></a>自己更新  
+クライアント コンピューターの自動更新が有効になっている場合、WUA は、新しいバージョンが利用できるようになったとき、または WUA コンポーネントに問題が発生したときに、自動的に自己更新を実行します。 自動更新が構成されていない場合、または無効になっている場合、およびクライアント コンピューターの WUA のバージョンが古い場合、クライアント コンピューターで WUA インストール ファイルを実行する必要があります。  
 
-## <a name="software-updates-properties"></a>Proprietà degli aggiornamenti software
-Le proprietà degli aggiornamenti software forniscono informazioni sugli aggiornamenti software e sul contenuto associato. È inoltre possibile usare queste proprietà per configurare le impostazioni per gli aggiornamenti software. Quando si aprono le proprietà per più aggiornamenti software, vengono visualizzate solo le schede **Tempo di esecuzione massimo** e **Gravità personalizzata** .   
+## <a name="software-updates-properties"></a>ソフトウェア更新プログラムのプロパティ
+ソフトウェア更新プログラムのプロパティは、ソフトウェア更新プログラムと、関連するコンテンツに関する情報を示します。 これらのプロパティを使用して、ソフトウェア更新プログラムの設定を構成することもできます。 複数のソフトウェア更新プログラムのプロパティを開いた場合、[ **最長実行時間** ] タブと [ **カスタム重要度** ] タブのみが表示されます。   
 
-Usare la seguente procedura per aprire le proprietà degli aggiornamenti software.  
+ソフトウェア更新プロパティを開くには、次の手順に従います。  
 
-#### <a name="to-open-software-update-properties"></a>Per aprire le proprietà degli aggiornamenti software  
+#### <a name="to-open-software-update-properties"></a>ソフトウェア更新プロパティを開くには  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
-2.  Nell'area di lavoro Raccolta software, espandere **Aggiornamenti software**, quindi fare clic su **Tutti gli aggiornamenti software**.  
-3.  Selezionare uno o più aggiornamenti software e quindi nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà** .  
+1.  Configuration Manager コンソールで、[ **ソフトウェア ライブラリ**]をクリックします。  
+2.  [ソフトウェア ライブラリ] ワークスペースで [ **ソフトウェア更新プログラム**] を展開して、[ **すべてのソフトウェア更新プログラム** ] をクリックします。  
+3.  1 つまたは複数のソフトウェア更新プログラムを選択し、[ **ホーム** ] タブの [ **プロパティ** ] グループで、[ **プロパティ** ] をクリックします。  
 
    > [!NOTE]  
-   >  Nel nodo **Tutti gli aggiornamenti software** Configuration Manager visualizza solo gli aggiornamenti software con classificazione **Errore critico** e **Sicurezza** rilasciati negli ultimi 30 giorni.  
+   >  **[すべてのソフトウェア更新プログラム]** ノードで Configuration Manager が表示するソフトウェア更新プログラムは、過去 30 日以内にリリースされた、**[重大]** および **[セキュリティ]** に分類されたソフトウェア更新プログラムのみです。  
 
-###  <a name="BKMK_SoftwareUpdatesInformation"></a> Verificare le informazioni sugli aggiornamenti software  
-Nelle proprietà degli aggiornamenti software, è possibile verificare le informazioni dettagliate su un aggiornamento software. Le informazioni dettagliate non vengono visualizzate quando si seleziona più di un aggiornamento software. Nelle seguenti sezioni vengono descritte le informazioni disponibili per un aggiornamento software selezionato.  
+###  <a name="BKMK_SoftwareUpdatesInformation"></a> ソフトウェア更新プログラムの情報の確認  
+ソフトウェア更新プログラムのプロパティで、ソフトウェア更新プログラムの詳細情報を確認できます。 詳細情報は、複数のソフトウェア更新プログラムを選択した場合は表示されません。 次のセクションでは、選択したソフトウェア更新プログラムについて利用可能な情報を紹介します。  
 
-####  <a name="BKMK_SoftwareUpdateDetails"></a> Dettagli sugli aggiornamenti software  
-Nella scheda **Dettagli aggiornamento** è possibile visualizzare le seguenti informazioni di riepilogo relative all'aggiornamento software selezionato:  
+####  <a name="BKMK_SoftwareUpdateDetails"></a> ソフトウェア更新プログラムの詳細  
+[ **更新プログラムの詳細** ] タブで、選択したソフトウェア更新プログラムに関する次の概要情報を確認できます。  
 
-- **ID bollettino**: specifica l'ID bollettino associato agli aggiornamenti software di sicurezza. È possibile trovare i dettagli relativi al bollettino sulla sicurezza cercando l'ID bollettino nella pagina Web [Bollettini sulla sicurezza](http://go.microsoft.com/fwlink/p/?LinkId=58313) .  
+- **セキュリティ情報 ID**: セキュリティ ソフトウェア更新プログラムに関連するセキュリティ情報 ID を示します。 「 [Microsoft Security Bulletin Search](http://go.microsoft.com/fwlink/p/?LinkId=58313) 」Web ページで、セキュリティ ID を使用して検索し、セキュリティ情報の詳細を確認することができます。  
 
-- **ID articolo**: specifica l'ID articolo per l'aggiornamento software. L'articolo di riferimento fornisce informazioni più dettagliate sull'aggiornamento software e il problema che l'aggiornamento software consente di correggere o migliorare.  
+- **アーティクル ID**: ソフトウェア更新プログラムのアーティクル ID を指定します。 参照記事は、ソフトウェア更新プログラムおよびソフトウェア更新プログラムによって修正または改善される問題の詳細情報を提供します。  
 
-- **Data di revisione**: specifica la data dell'ultima modifica dell'aggiornamento software.  
+- **変更日付**: ソフトウェア更新プログラムが最後に変更された日付を指定します。  
 
-- **Livello di gravità massimo**: specifica il livello di gravità definito dal fornitore per l'aggiornamento software.  
+- **最大重要度評価**: ソフトウェア更新プログラムに対するベンダー定義の重要度評価を指定します。  
 
-- **Descrizione**: fornisce una panoramica della condizione che l'aggiornamento software consente di correggere o migliorare.  
+- **説明**: ソフトウェア更新プログラムによって修正または改善される状況の概要を示します。  
 
-- **Lingue applicabili**: elenca le lingue per cui è applicabile l'aggiornamento software.  
+- **該当言語**: ソフトウェア更新プログラムが適用される言語を一覧表示します。  
 
-- **Prodotti interessati**: elenca i prodotti per cui è applicabile l'aggiornamento software.  
+- **影響を受ける製品**: ソフトウェア更新プログラムが適用される製品を一覧表示します。  
 
-####  <a name="BKMK_ContentInformation"></a> Informazioni sul contenuto  
-Nella scheda **Informazioni sul contenuto** , esaminare le seguenti informazioni sul contenuto che è associato con l'aggiornamento software selezionato:  
+####  <a name="BKMK_ContentInformation"></a> コンテンツ情報  
+[ **コンテンツ情報** ] タブでは、選択したソフトウェア更新プログラムに関連付けられているコンテンツに関する次の情報を確認します。  
 
--   **ID contenuto**: specifica l'ID contenuto per l'aggiornamento software.  
+-   **コンテンツ ID**: ソフトウェア更新プログラムのコンテンツ ID を指定します。  
 
--   **Scaricato**: indica se Configuration Manager ha scaricato i file dell'aggiornamento software.  
+-   **ダウンロード済み**: ソフトウェア更新プログラム ファイルが既に Configuration Manager でダウンロードされたかどうかを示します。  
 
--   **Lingua**: specifica le lingue per l'aggiornamento software.  
+-   **言語**: ソフトウェア更新プログラムの言語を示します。  
 
--   **Percorso di origine**: specifica il percorso dei file di origine dell'aggiornamento software.  
+-   **ソース パス**: ソフトウェア更新プログラムのソース ファイルへのパスを示します。  
 
--   **Dimensione (MB)**: specifica le dimensioni dei file di origine dell'aggiornamento software.  
+-   **サイズ (MB)**: ソフトウェア更新プログラムのソース ファイルのサイズを指定します。  
 
-####  <a name="BKMK_CustomBundleInformation"></a> Informazioni sul bundle personalizzato  
-Nella scheda **Informazioni sul bundle personalizzato** , esaminare le informazioni sul bundle personalizzato per l'aggiornamento software. Quando l'aggiornamento software selezionato contiene aggiornamenti software in bundle contenuti nel file di aggiornamento software, essi vengono visualizzati nella sezione **Informazioni sul bundle** . Questa scheda non visualizza gli aggiornamenti software in bundle che sono visualizzati nella scheda **Informazioni sul contenuto** , come i file di aggiornamento per le diverse lingue.  
+####  <a name="BKMK_CustomBundleInformation"></a> カスタム バンドル情報  
+[ **カスタム バンドル情報** ] タブでは、ソフトウェア更新プログラムのカスタム バンドル情報を確認します。 選択したソフトウェア更新プログラムに、ソフトウェア更新ファイルに組み込まれるバンドル ソフトウェア更新プログラムが含まれている場合は、[ **バンドル情報** ] セクションに表示されます。 [ **コンテンツ情報** ] タブに表示されるバンドル ソフトウェア更新プログラム (各種の言語用の更新ファイルなど) は、このタブには表示されません。  
 
-####  <a name="BKMK_SupersedenceInformation"></a> Informazioni di sostituzione  
-Nella scheda **Informazioni di sostituzione** , è possibile visualizzare le seguenti informazioni sulla sostituzione dell'aggiornamento software:  
+####  <a name="BKMK_SupersedenceInformation"></a> 更新の置き換えに関する情報  
+[ **更新プログラムの置き換えに関する情報** ] タブでは、ソフトウェア更新プログラムの置き換えに関する次の情報を確認することができます。  
 
-- **Questo aggiornamento è stato sostituito dai seguenti aggiornamenti**: specifica gli aggiornamenti software che sostituiscono questo aggiornamento, il che significa che gli aggiornamenti elencati sono più recenti. Nella maggior parte dei casi, si distribuirà uno degli aggiornamenti software che sostituisce l'aggiornamento software in questione. Gli aggiornamenti software che vengono visualizzati nell'elenco contengono collegamenti ipertestuali a pagine Web che forniscono ulteriori informazioni sugli aggiornamenti software. Quando questo aggiornamento non viene sostituito, viene visualizzato **Nessuno** .  
+- **この更新を置き換える更新**: この更新プログラムを置き換えるソフトウェア更新プログラムを示します。つまり、一覧に表示されている更新プログラムの方が新しいことを意味します。 ほとんどの場合、ソフトウェア更新プログラムを置き換えるソフトウェア更新プログラムを展開します。 一覧に表示されているソフトウェア更新プログラムに設定されたハイパーリンクから、ソフトウェア更新プログラムの詳細情報を示す Web ページにアクセスできます。 この更新プログラムが置き換えられない場合は、[ **なし** ] と表示されます。  
 
-- **Questo aggiornamento sostituisce i seguenti aggiornamenti**: specifica gli aggiornamenti software che sono sostituiti da questo aggiornamento software, il che significa che questo aggiornamento software è più recente. Nella maggior parte dei casi, si distribuirà questo aggiornamento software per sostituire gli aggiornamenti software sostituiti. Gli aggiornamenti software che vengono visualizzati nell'elenco contengono collegamenti ipertestuali a pagine Web che forniscono ulteriori informazioni sugli aggiornamenti software. Quando questo aggiornamento non sostituisce eventuali altri aggiornamenti, viene visualizzato **Nessuno** .  
+- **この更新に置き換えられる更新**: このソフトウェア更新プログラムによって置き換えられるソフトウェア更新プログラムを示します。つまり、このソフトウェア更新プログラムの方が新しいことを意味します。 ほとんどの場合、置き換えられるソフトウェア更新プログラムの代わりに、このソフトウェア更新プログラムを展開します。 一覧に表示されているソフトウェア更新プログラムに設定されたハイパーリンクから、ソフトウェア更新プログラムの詳細情報を示す Web ページにアクセスできます。 この更新プログラムによって置き換えられる他の更新プログラムがない場合は、[ **なし** ] と表示されます。  
 
-###  <a name="BKMK_SoftwareUpdatesSettings"></a> Configurare le impostazioni degli aggiornamenti software  
-Nella proprietà, è possibile configurare le impostazioni degli aggiornamenti software per uno o più aggiornamenti software. È possibile configurare la maggior parte delle impostazioni degli aggiornamenti software solo nel sito di amministrazione centrale o nel sito primario autonomo. Le sezioni seguenti consentono di configurare le impostazioni per gli aggiornamenti software.  
+###  <a name="BKMK_SoftwareUpdatesSettings"></a> ソフトウェア更新設定の構成  
+プロパティでは、1 つまたは複数のソフトウェア更新プログラムのソフトウェア更新設定を構成できます。 ほとんどのソフトウェア更新設定は、中央管理サイトまたはスタンドアロン プライマリ サイトでのみ構成できます。 次のセクションでは、ソフトウェア更新設定の構成について説明します。  
 
-####  <a name="BKMK_SetMaxRunTime"></a> Impostare il tempo di esecuzione massimo  
-Nella scheda **Tempo di esecuzione massimo** , impostare la quantità massima di tempo assegnata per completare un aggiornamento software nei computer client. Se l'aggiornamento richiede più tempo del valore del tempo di esecuzione massimo, Configuration Manager crea un messaggio di stato e interrompe il monitoraggio della distribuzione per l'installazione degli aggiornamenti software. È possibile configurare questa impostazione solo nel sito di amministrazione centrale o in un sito primario autonomo.  
+####  <a name="BKMK_SetMaxRunTime"></a> 最長実行時間の設定  
+[ **最長実行時間** ] タブでは、クライアント コンピューターでソフトウェア更新プログラムが完了するまでに割り当てられた最大時間を設定します。 更新が最長実行時間の値を超えると、Configuration Manager によってステータス メッセージが作成され、ソフトウェア更新プログラムのインストールの展開は監視されなくなります。 この設定を構成できるのは、中央管理サイトまたはスタンドアロン プライマリ サイトのみです。  
 
-Configuration Manager usa inoltre questa impostazione per stabilire se avviare l'installazione dell'aggiornamento software all'interno di una finestra di manutenzione configurata. Se il valore del tempo di esecuzione massimo è maggiore del tempo rimanente disponibile nella finestra di manutenzione, l'installazione degli aggiornamenti software viene rimandata fino all'avvio della nuova finestra di manutenzione. Quando più aggiornamenti software devono essere installati su un computer client con una finestra di manutenzione configurata (intervallo di tempo), l'aggiornamento software con il tempo di esecuzione massimo più basso viene installato per primo, poi viene installato quello con il secondo tempo di esecuzione massimo più basso e così via. Prima dell'installazione di ogni aggiornamento software, il client verifica che la finestra di manutenzione disponibile fornirà un tempo sufficiente per installare l'aggiornamento software. Dopo l'avvio dell'installazione di un aggiornamento software, l'installazione continuerà anche se va oltre la fine della finestra di manutenzione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione in System Center Configuration Manager](../../core/clients/manage/collections/use-maintenance-windows.md).  
+Configuration Manager は、この設定を使用して、構成されたメンテナンス期間内でソフトウェア更新プログラムのインストールを開始すべきかどうかを判別します。 最長実行時間の値がメンテナンス期間の利用可能な残り時間を超える場合、ソフトウェア更新プログラムのインストールは、次回のメンテナンス期間が開始するまで延期されます。 構成されたメンテナンス期間 (時間帯) でクライアント コンピューターにインストールされるソフトウェア更新プログラムが複数ある場合は、最大実行時間が最も短いソフトウェア更新プログラムが最初にインストールされ、その後、次に最大実行時間が短いソフトウェア更新プログラムが順にインストールされます。 クライアントは、それぞれのソフトウェア更新プログラムをインストールする前に、使用可能なメンテナンス期間でソフトウェア更新プログラムをインストールするのに十分な時間があるかどうかを確認します。 ソフトウェア更新プログラムのインストールが開始されると、メンテナンス期間が終了してもインストールは続行されます。 メンテナンス期間の詳細については、「[System Center Configuration Manager でメンテナンス期間を使用する方法](../../core/clients/manage/collections/use-maintenance-windows.md)」を参照してください。  
 
-Nella scheda **Tempo di esecuzione massimo** , è possibile visualizzare e configurare le seguenti impostazioni:  
+[ **最長実行時間** ] タブでは、次の設定を確認して構成できます。  
 
-- **Tempo di esecuzione massimo**: specifica il numero massimo di minuti assegnati per il completamento dell'installazione di un aggiornamento software prima che l'installazione stessa non venga più monitorata da Configuration Manager. Questa impostazione viene anche usata per stabilire se resta un tempo sufficiente a disposizione per installare l'aggiornamento prima della fine di una finestra di manutenzione. L'impostazione predefinita è 60 minuti per i Service Pack. Per altri tipi di aggiornamento software, il valore predefinito è 10 minuti se si è eseguito l'aggiornamento a Configuration Manager versione 1511 o successiva e 5 minuti se si è eseguito l'aggiornamento da una versione precedente. I valori possono variare da 5 a 9.999 minuti.  
+- **最長実行時間**: ソフトウェア更新プログラムのインストールを完了するために割り当てられた最大時間 (分単位) を指定します。この時間を過ぎると、Configuration Manager でインストールが監視されなくなります。 この設定は、メンテナンス期間の終了までに更新プログラムをインストールするための十分な時間が残っているかどうかを判断するためにも使用されます。 Service Pack の既定値は 60 分です。 他の種類のソフトウェア更新プログラムの既定値は、Configuration Manager バージョン 1511 以降の新規インストールを実行した場合は 10 分、以前のバージョンからアップグレードした場合は 5 分になります。 設定可能な値の範囲は 5 ～ 9999 分です。  
 
 > [!IMPORTANT]  
->  Assicurarsi di impostare un valore del tempo di esecuzione massimo inferiore al tempo della finestra di manutenzione configurata. In caso contrario, l'installazione dell'aggiornamento software non verrà mai avviata.  
+>  最長実行時間の値は、構成済みのメンテナンス期間よりも小さくしてください。 そうしないと、ソフトウェア更新プログラムのインストールが開始されません。  
 
-####  <a name="BKMK_SetCustomSeverity"></a> Impostare la gravità personalizzata  
-Nelle proprietà dell'aggiornamento software, è possibile usare la scheda **Gravità personalizzata** per configurare i valori di gravità personalizzata per gli aggiornamenti software. Ciò può rivelarsi necessario se i valori di gravità predefiniti non soddisfano le relative esigenze. I valori personalizzati sono elencati nella colonna **Gravità personalizzata** nella console di Configuration Manager. È possibile filtrare gli aggiornamenti software per valori di gravità personalizzata definiti ed è possibile inoltre creare query e rapporti per filtrare questi valori. È possibile configurare questa impostazione solo nel sito di amministrazione centrale o in un sito primario autonomo.  
+####  <a name="BKMK_SetCustomSeverity"></a> カスタム重要度の設定  
+ソフトウェア更新プログラムのプロパティで、[ **カスタム重要度** ] タブを使用して、ソフトウェア更新プログラムのカスタム重要度を構成できます。 この設定は、事前定義された重要度の値が要件に合っていない場合に必要になることがあります。 カスタム値は、Configuration Manager コンソールの **[カスタム重要度]** 列に表示されます。 定義されているカスタム重要度の値に基づいて、ソフトウェア更新プログラムを並べ替えることができます。また、それらの値に基づいてフィルタリングできるクエリやレポートを作成することもできます。 この設定を構成できるのは、中央管理サイトまたはスタンドアロン プライマリ サイトのみです。  
 
-È possibile configurare le seguenti impostazioni nella scheda **Gravità personalizzata** .  
+[ **カスタム重要度** ] タブでは、次の設定を構成することができます。  
 
-- **Gravità personalizzata**: imposta un valore di gravità personalizzato per gli aggiornamenti software. Selezionare **Errore critico**, **Importante**, **Medio**o **Basso** dall'elenco. Per impostazione predefinita, il valore di gravità personalizzato è vuoto.
+- **カスタム重要度**: ソフトウェア更新プログラムに対してカスタム重要度の値を設定します。 一覧で、[ **重大** ]、[ **重要** ]、[ **中程度** ]、または [ **低** ] を選択します。 既定では、カスタム重要度の値は空白です。
 
-## <a name="crl-checking-for-software-updates"></a>Controllo CRL per aggiornamenti software
-Per impostazione predefinita, l'elenco di revoche di certificati (CRL) non viene controllato durante la verifica della firma negli aggiornamenti software di System Center Configuration Manager. Il controllo dell'elenco CRL a ogni utilizzo del certificato offre una maggiore protezione dall'utilizzo di un certificato revocato, ma introduce un ritardo nella connessione e genera un'ulteriore elaborazione nel computer che esegue il controllo CRL.  
+## <a name="crl-checking-for-software-updates"></a>ソフトウェアの更新の CRL チェック
+既定では、System Center Configuration Manager のソフトウェアの更新の署名を検証するときに、証明書失効リスト (CRL) はチェックされません。 証明書が使用されるたびに CRL をチェックすることで、失効済み証明書の使用に対するセキュリティを向上できますが、接続に遅れが発生し、CRL チェックを実行するコンピューターの処理の増加を招くことになります。  
 
-Se usato, è necessario attivare il controllo CRL nelle console di Configuration Manager che elaborano gli aggiornamenti software.  
+CRL チェックを使用する場合は、ソフトウェア更新プログラムを処理する Configuration Manager コンソールでこれを有効にする必要があります。  
 
-#### <a name="to-enable-crl-checking"></a>Per attivare il controllo CRL  
-Nel computer che esegue il controllo CRL eseguire quanto segue da un prompt dei comandi del DVD del prodotto: **\SMSSETUP\BIN\X64\\**<*lingua*>**\UpdDwnldCfg.exe /checkrevocation**.  
+#### <a name="to-enable-crl-checking"></a>CRL チェックを有効にするには  
+CRL チェックを実行するコンピューターで、製品 DVD から、コマンドプロンプトで **\SMSSETUP\BIN\X64\\**<*言語*>**\UpdDwnldCfg.exe /checkrevocation** を実行します。  
 
-Per l'inglese (USA), ad esempio, eseguire **\SMSSETUP\BIN\X64\00000409\UpdDwnldCfg.exe /checkrevocation**  
-
+たとえば、英語 (米国) の場合、**\SMSSETUP\BIN\X64\00000409\UpdDwnldCfg.exe /checkrevocation** を実行します。  

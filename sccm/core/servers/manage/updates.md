@@ -1,153 +1,150 @@
 ---
-title: Aggiornamenti | Microsoft Docs
-description: Informazioni su un metodo di manutenzione nella console denominato **Aggiornamenti e manutenzione** che semplifica l'individuazione e l'installazione di aggiornamenti consigliati.
+title: "更新プログラム | Microsoft Docs"
+description: "推奨更新プログラムを簡単に特定してインストールできる、**更新とサービス**と呼ばれるコンソール内サービス方式について説明します。"
 ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3a832943-580a-4a40-b454-961d0854ac2b
-caps.latest.revision: 51
-caps.handback.revision: 0
+caps.latest.revision: "51"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: d46aca88111d4ee0e96b75ca5a3ec57aa4274d6d
-ms.contentlocale: it-it
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="updates-for-system-center-configuration-manager"></a>Aggiornamenti per System Center Configuration Manager
+# <a name="updates-for-system-center-configuration-manager"></a>System Center Configuration Manager の更新プログラム
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager usa un metodo di manutenzione nella console denominato **Aggiornamenti e manutenzione**. Questo metodo nella console semplifica l'individuazione e l'installazione degli aggiornamenti consigliati per l'infrastruttura di Configuration Manager. La manutenzione nella console è integrata dagli aggiornamenti fuori programma, ad esempio hotfix per i clienti che devono risolvere problemi che potrebbero essere specifici dell'ambiente in uso.  
+System Center Configuration Manager では、**更新とサービス**と呼ばれるコンソール内でのサービス提供方式が採られています。 このコンソール内での方式により、使用している Configuration Manager インフラストラクチャに推奨される更新プログラムを簡単に特定し、インストールすることができます。 コンソール内でのサービス提供は、環境固有の問題を解決する必要があるお客様向けの修正プログラムなど、アウトオブバンドの更新プログラムによって補完されます。  
 
 > [!TIP]  
-> Quando si gestisce l'infrastruttura del sito e della gerarchia di System Center Configuration Manager, i termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti distinti. Per informazioni su come viene usato ogni termine, vedere [Informazioni su upgrade, aggiornamento e installazione](/sccm/core/understand/upgrade-update-install).
+> System Center Configuration Manager のサイトと階層のインフラストラクチャの管理において、*アップグレード*、*更新*、および*インストール* という用語は 3 つの異なる概念を説明するものです。 各用語の使用方法については、「[サイトと階層のインフラストラクチャでのアップグレード、更新、およびインストールについて](/sccm/core/understand/upgrade-update-install)」を参照してください。
 
 
- **Gli argomenti seguenti possono essere utili per capire come individuare e installare i diversi tipi di aggiornamento per System Center Configuration Manager:**  
+ **次のトピックは、System Center Configuration Manager 向けのさまざまな更新プログラムを探してインストールする方法を理解するうえで役立ちます。**  
 
--   [Install in-console updates for System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md) (Installare gli aggiornamenti nella console per System Center Configuration Manager)  
+-   [System Center Configuration Manager のコンソール内の更新プログラムのインストール](../../../core/servers/manage/install-in-console-updates.md)  
 
--   [Use the Service Connection Tool for System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md) (Usare lo strumento di connessione del servizio per System Center Configuration Manager)  
+-   [System Center Configuration Manager のサービス接続ツールの使用](../../../core/servers/manage/use-the-service-connection-tool.md)  
 
--   [Use the Update Registration Tool to import hotfixes to System Center Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md) (Usare lo strumento di registrazione dell'aggiornamento per importare hotfix in System Center Configuration Manager)  
+-   [更新登録ツールを使用して修正プログラムを System Center Configuration Manager にインポートする](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md)  
 
--   [Use the Hotfix Installer to install updates for System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md) (Usare il programma di installazione degli aggiornamenti rapidi per installare gli aggiornamenti per System Center Configuration Manager)  
-
-
-Se si usa il ramo Technical Preview, vedere [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview) per informazioni aggiuntive specifiche relative a tale ramo.
+-   [修正プログラム インストーラーを使用して、System Center Configuration Manager の更新プログラムをインストールする](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md)  
 
 
-##  <a name="bkmk_Baselines"></a> Versioni di base e di aggiornamento  
- La prima versione di System Center Configuration Manager Current Branch è la 1511, ossia una versione di base. Tra le versioni di base più recenti sono incluse la 1606 e la 1702:
+Technical Preview ブランチを使用する場合は、「[System Center Configuration Manager の Technical Preview](/sccm/core/get-started/technical-preview)」でブランチに固有の追加情報を参照してください。
 
--   Usare la versione di base più recente quando si installa un nuovo sito in una nuova gerarchia.  
 
--   Per eseguire l'aggiornamento da System Center 2012 Configuration Manager, si usa una versione baseline. Dopo l'aggiornamento a System Center Configuration Manager, non è più possibile usare le versioni baseline per restare aggiornati, ma solo gli [aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates) per l'aggiornamento alla versione più recente.  
+##  <a name="bkmk_Baselines"></a> 基準バージョンと更新プログラムのバージョン  
+ System Center Configuration Manager の現在のブランチの最初のリリースは、バージョン 1511 です。これが基準バージョンです。 最新の基準バージョンにはバージョン 1606 と 1702 が含まれています。
 
--   Periodicamente vengono rilasciate altre versioni baseline. Quando si usa la versione baseline più recente per installare una nuova gerarchia, si evita di installare una versione non aggiornata di Configuration Manager, seguita da un aggiornamento aggiuntivo dell'infrastruttura per aggiornarla.  
+-   新しい階層に新しいサイトをインストールするときは、最新の基準バージョンを使用してください。  
 
-Dopo avere installato una versione di base, altre versioni di Configuration Manager sono disponibili come aggiornamenti nella console. Gli aggiornamenti nella console aggiornano l'infrastruttura alla versione più recente di Configuration Manager.  
+-   System Center 2012 Configuration Manager からアップグレードする際には基準バージョンを使用します。 System Center Configuration Manager にアップグレードしたら、最新状態を維持するために基準バージョンを使用できなくなり、代わりに[コンソール内更新](/sccm/core/servers/manage/install-in-console-updates)のみを使用して、最新バージョンに更新できます。  
 
--   Installare gli aggiornamenti nella console per aggiornare la versione del sito principale.  
+-   新しい基準バージョンは定期的にリリースされます。 最新の基準バージョンを使用して新しい階層をインストールする場合、古いバージョンの Configuration Manager をインストールした後に、インフラストラクチャの追加のアップグレードを実行して最新の状態にしないでください。  
 
--   Gli aggiornamenti installati nel sito di amministrazione centrale vengono installati automaticamente nei siti primari figlio, a meno che non siano bloccati da una finestra di manutenzione configurata nel sito primario.  
+基準バージョンのインストール後、Configuration Manager の新バージョンはコンソール内の更新プログラムとして提供されます。 コンソール内の更新プログラムにより、インフラストラクチャは最新バージョンの Configuration Manager に更新されます。  
 
--   Si aggiornano manualmente i siti secondari a una nuova versione di aggiornamento dalla console.  
+-   最上位サイトのバージョンを更新するには、コンソール内の更新プログラムをインストールしてください。  
 
-Quando si installa un aggiornamento, questo archivia i file di installazione per la versione nel server del sito, in una cartella denominata CD.Latest. Per altre informazioni su questi file, vedere [Cartella CD.Latest per System Center Configuration Manager](../../../core/servers/manage/the-cd.latest-folder.md).  
+-   中央管理サイトにインストールした更新プログラムは、子のプライマリ サイトに自動的にインストールされます。ただし、プライマリ サイトで構成してあるメンテナンス期間によりブロックされる場合は除きます。  
 
--   I file nella cartella CD.Latest vengono usati durante il ripristino sito e per installare siti aggiuntivi in una gerarchia che non esegue più una versione baseline.  
+-   セカンダリ サイトについては、コンソールから手動で新しい更新プログラムのバージョンに更新する必要があります。  
 
--   Non è possibile usare i file di installazione della cartella CD.Latest per installare il primo sito di una nuova gerarchia oppure per aggiornare un sito da System Center 2012 Configuration Manager.  
+更新プログラムをインストールすると、サイト サーバーの CD.Latest という名前のフォルダーにそのバージョンのインストール ファイルが格納されます。 これらのファイルの詳細については、「[System Center Configuration Manager の CD.Latest フォルダー](../../../core/servers/manage/the-cd.latest-folder.md)」を参照してください。  
 
-Alcuni aggiornamenti per Configuration Manager sono disponibili sia come versione di aggiornamento nella console per l'infrastruttura esistente sia come nuova versione di base.  
+-   CD.Latest フォルダー内のファイルは、サイトの回復中と、基準バージョンが実行されない階層に別のサイトをインストールする際に使用します。  
 
-Le versioni seguenti di Configuration Manager sono disponibili come versione di base, come aggiornamento oppure in entrambe le forme:  
+-   CD.Latest 内のインストール ファイルを使用して新しい階層の最初のサイトをインストールしたり、サイトを System Center 2012 Configuration Manager からアップグレードしたりすることはできません。  
 
-|Versione |Data di disponibilità|[Data di fine supporto](/sccm/core/servers/manage/current-branch-versions-supported) |Versione di base|Aggiornamento nella console|  
+Configuration Manager の一部の更新プログラムは、既存のインフラストラクチャ向けのコンソール内の更新バージョンとして使用することも、新しい基準バージョンとして使用することもできます。  
+
+Configuration Manager の次のバージョンは、基準バージョンと更新バージョンのどちらか一方または両方として利用できます。  
+
+|バージョン |公開日|[サポート終了日](/sccm/core/servers/manage/current-branch-versions-supported) |Baseline|コンソール内の更新プログラム|  
 |-------------|-----------|------------|--------------|------------------------|  
-|[1706](/sccm/core/plan-design/changes/whats-new-in-version-1706)<br /><br /> 5.00.8540.1000|31 luglio 2017|31 luglio 2018|No|Sì|
-|[1702](/sccm/core/plan-design/changes/whats-new-in-version-1702)<br /><br /> 5.00.8498.1000|27 marzo 2017| 27 marzo 2018|Sì|Sì|
-|[1610](/sccm/core/plan-design/changes/whats-new-in-version-1610)<br /><br /> 5.00.8458.1000|18 novembre 2016| 18 novembre 2017|No|Sì|
-|[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606)<br /><br /> 5.00.8412.1000|22 luglio 2016| 22 luglio 2017|No|Sì|
-|[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606) con aggiornamento rapido cumulativo 1606 (KB3186654) </br></br>5.00.8412.1307 *(nota 1)* |12 ottobre 2016| 12 ottobre 2017|Sì|No|
-| 1602<br /><br /> 5.00.8355.1000|11 marzo 2016| 11 marzo 2017|No|Sì| 
-| 1511 <br /><br /> 5.00.8325.1000|8 dicembre 2015| 8 dicembre 2016|Sì|No|  
+|[1706](/sccm/core/plan-design/changes/whats-new-in-version-1706)<br /><br /> 5.00.8540.1000|2017 年 7 月 31 日|2018 年 7 月 31 日|×|○|
+|[1702](/sccm/core/plan-design/changes/whats-new-in-version-1702)<br /><br /> 5.00.8498.1000|2017 年 3 月 27 日| 2018 年 3 月 27 日|○|○|
+|[1610](/sccm/core/plan-design/changes/whats-new-in-version-1610)<br /><br /> 5.00.8458.1000|2016 年 11 月 18 日| 2017 年 11 月 18 日|×|○|
+|[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606)<br /><br /> 5.00.8412.1000|2016 年 7 月 22 日| 2017 年 7 月 22 日|×|○|
+|[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606) と 1606 修正プログラム ロールアップ (KB3186654) </br></br>5.00.8412.1307 *(注 1)* |2016 年 10 月 12 日| 2017 年 10 月 12 日|○|×|
+| 1602<br /><br /> 5.00.8355.1000|2016 年 3 月 11 日| 2017 年 3 月 11 日|×|○| 
+| 1511 <br /><br /> 5.00.8325.1000|2015 年 12 月 8 日| 2016 年 12 月 8 日|○|いいえ|  
 
 
-*(Nota 1)* Il supporto di base 1606 e 1702 è disponibile all'interno di Microsoft System Center 2016 o in System Center Configuration Manager (Current Branch e Long-Term Servicing Branch) in [Volume License Service Center](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (VLSC). Ad esempio, in VLSC è possibile cercare *System Center Config Mgr (Current Branch e LTSB)*; entrambi i supporti di base delle versioni 1606 e 1702 vengono restituiti e sono disponibili per il download.
+*(注 1)* この 1606 および 1702 基準メディアは、Microsoft System Center 2016 または System Center Configuration Manager (Current Branch および Long-Term Servicing Branch) リリースの一部として[ボリューム ライセンス サービス センター](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (VLSC) で使用できます。 たとえば、VLSC で、*System Center Config Mgr (current branch および LTSB)* を検索すると、1606 と 1702 の両方のバージョンの構成基準メディアが返され、ダウンロードできます。
 
-Per controllare la versione del sito di Configuration Manager, nella console passare a **Informazioni su System Center Configuration Manager** nell'angolo in alto a sinistra, dove è visualizzata la nuova versione del sito e della console.  
+お使いの Configuration Manager サイトのバージョンを確認するには、コンソールの左上隅にある **[System Center Configuration Manager について]** に移動してください。ここに新しいサイトとコンソールのバージョンが表示されます。  
 
-##  <a name="bkmk_inconsole"></a> Aggiornamenti e manutenzione nella console  
- Quando si usa un'installazione di System Center Configuration Manager pronta per l'ambiente di produzione, detta anche Current Branch, la maggior parte degli aggiornamenti da installare è disponibile mediante il canale Aggiornamenti e manutenzione. Questo metodo identifica, scarica e rende disponibili gli aggiornamenti applicabili alla versione e alla configurazione correnti dell'infrastruttura e include solo gli aggiornamenti consigliati da Microsoft a tutti i clienti.   
- Sono inclusi:  
+##  <a name="bkmk_inconsole"></a> コンソール内の更新プログラムとサービス  
+ System Center Configuration Manager の運用環境対応バージョン (Current Branch とも呼ばれます) を使用する場合、インストールする更新プログラムのほとんどは、更新プログラムとサービス チャネルを通じて入手できます。 この方式では、現在のインフラストラクチャ バージョンと構成に適用される更新プログラムが特定され、ダウンロードのうえ、利用可能になります。また、Microsoft がすべてのお客様にお勧めする更新プログラムのみが対象となります。   
+ 次の設定があります。  
 
--   Nuove versioni, ad esempio 1610, 1702 o 1706.  
+-   新しいバージョン (バージョン 1610、1702、1706 など)。  
 
--   Aggiornamenti, che includono nuove funzionalità per la versione corrente.
+-   現在のバージョンに対する新機能が含まれる更新プログラム。
 
--   Hotfix, per la versione in uso di Configuration Manager e di cui è consigliata l'installazione a tutti i clienti.
+-   すべてのお客様にインストールしていただく必要のある、使用中の Configuration Manager のバージョン向けの修正プログラム。
 
-Gli aggiornamenti nella console offrono maggiore stabilità e risolvono i problemi comuni. Sostituiscono i tipi di aggiornamento disponibili per le versioni precedenti del prodotto per quanto riguarda Service Pack, aggiornamenti cumulativi e hotfix applicabili a tutti i clienti, nonché l'estensione per Microsoft Intune. Questi aggiornamenti possono riguardare uno o più degli elementi seguenti:  
+コンソール内の更新プログラムにより、安定性が向上し、一般的な問題が解決します。 コンソール内の更新プログラムは、以前の製品バージョンの Service Pack で利用されていた種類の更新プログラムや、累積的な更新プログラム、すべてのお客様が対象の修正プログラム、Microsoft Intune 向けの拡張機能の代わりになるものです。 こうした更新プログラムは以下のものに適用できます。  
 
--   Server del sito di amministrazione centrale e dei siti primari  
+-   プライマリおよび中央管理サイト サーバー  
 
--   Ruoli del sistema del sito e server di sistema del sito  
+-   サイト システムの役割とサイト システム サーバー  
 
--   Istanze del provider SMS  
+-   SMS プロバイダーのインスタンス  
 
--   Console di Configuration Manager  
+-   Configuration Manager コンソール  
 
--   Client di Configuration Manager  
+-   Configuration Manager クライアント  
 
-Configuration Manager individua nuovi aggiornamenti durante la sincronizzazione del ruolo del sistema del sito del punto di connessione del servizio con il servizio cloud di Microsoft e con l'Area download:  
+サービス接続ポイントのサイト システムの役割を Microsoft クラウド サービスおよびダウンロード センターと同期すると、Configuration Manager によって新しい更新プログラムが自動的に検出されます。  
 
--   Quando il punto di connessione del servizio è in modalità online, il sito si sincronizza con Microsoft ogni giorno per identificare automaticamente i nuovi aggiornamenti applicabili all'infrastruttura.  Per scaricare gli aggiornamenti e i file ridistribuibili per gli aggiornamenti, il computer che ospita il ruolo del sistema del sito Punto di connessione del servizio usa il contesto di **sistema** per accedere ai percorsi Internet seguenti: go.microsoft.com e download.microsoft.com. Per informazioni sui percorsi aggiuntivi ai quali si connette il punto di connessione del servizio, vedere [Internet access requirements](../../../core/servers/deploy/configure/about-the-service-connection-point.md#bkmk_urls) (Requisiti per l'accesso a Internet) in [About the service connection point in System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md) (Informazioni sul punto di connessione del servizio in System Center Configuration Manager).  
+-   サービス接続ポイントがオンライン モードになっているとき、サイトは Microsoft と毎日同期され、自分のインフラストラクチャに適用される新しい更新プログラムが自動的に特定されます。  更新プログラムと更新プログラムの再頒布ファイルをダウンロードするために、サービス接続ポイントのサイト システムの役割をホストするコンピューターは、**System** コンテキストを使用して、インターネット上の go.microsoft.com と download.microsoft.com にアクセスします。 サービス接続ポイントが接続するその他の場所については、「[System Center Configuration Manager のサービス接続ポイントについて](../../../core/servers/deploy/configure/about-the-service-connection-point.md)」の「[インターネット アクセス要件](../../../core/servers/deploy/configure/about-the-service-connection-point.md#bkmk_urls)」を参照してください。  
 
--   Quando il punto di connessione del servizio è in modalità offline, è necessario usare lo strumento di connessione del servizio per eseguire manualmente la sincronizzazione con il cloud Microsoft. Per altre informazioni, vedere [Usare lo strumento di connessione del servizio per System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md).  
+-   サービス接続ポイントがオフライン モードになっている場合は、サービス接続ツールを使って Microsoft クラウドと手動で同期してください。 詳細については、「 [System Center Configuration Manager のサービス接続ツールの使用](../../../core/servers/manage/use-the-service-connection-tool.md)」を参照してください。  
 
--   Grazie agli aggiornamenti nella console non è necessario individuare e installare i singoli aggiornamenti, Service Pack e nuove funzionalità in modo indipendente.  
+-   コンソール内の更新プログラムを利用すれば、個々の更新プログラム、Service Pack、新しい機能を個別に特定してインストールする必要がなくなります。  
 
--   Vengono installati solo gli aggiornamenti nella console scelti e durante l'installazione di alcuni aggiornamenti è possibile selezionare le singole funzionalità da abilitare e usare. Per altre informazioni, vedere [Enable optional features from updates](../../../core/servers/manage/install-in-console-updates.md#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).  
+-   選んだコンソール内の更新プログラムだけをインストールすれば済みます。一部の更新プログラムをインストールする際には、有効にして使用する個別の機能を選ぶことができます。 詳細については、「[Enable optional features from updates](../../../core/servers/manage/install-in-console-updates.md#bkmk_options)」 (更新プログラムのオプション機能の有効化) を参照してください。  
 
-Quando si installa un aggiornamento nella console:  
+コンソール内の更新プログラムをインストールする際には、次の処理が行われます。  
 
--   Viene eseguito automaticamente un controllo dei prerequisiti. È anche possibile eseguire questo controllo prima dell'avvio dell'installazione.  
+-   前提条件の確認が自動的に実行されます。 この確認は、インストールの開始前にも実行できます。  
 
--   L'installazione viene eseguita automaticamente nel sito di amministrazione centrale, se presente, e nei siti primari. È possibile controllare quando ogni server del sito primario può aggiornare l'infrastruttura usando gli [intervalli di servizio per i server del sito](../../../core/servers/manage/service-windows.md).  
+-   更新プログラムは中央管理サイト (このサイトが存在する場合) とプライマリ サイトに自動的にインストールされます。 [サイト サーバーのサービス期間](../../../core/servers/manage/service-windows.md)を利用することで、各プライマリ サイト サーバーでインフラストラクチャを更新するタイミングを制御できます。  
 
--   Dopo l'aggiornamento di un server del sito, tutti i ruoli del sistema del sito interessati (incluse le istanze del provider SMS) vengono aggiornati automaticamente. Le console di Configuration Manager chiedono all'utente di aggiornare anche la console stessa dopo l'installazione dell'aggiornamento nel sito.  
+-   サイト サーバーが更新されると、関係するサイト システムの役割がすべて自動的に更新されます (SMS プロバイダーのインスタンスを含む)。 サイトに更新プログラムがインストールされた後で、Configuration Manager コンソールからコンソール ユーザーに対してコンソールの更新を求めるメッセージが表示されます。  
 
--   Se un aggiornamento include il client di Configuration Manager, è possibile scegliere se testare l'aggiornamento in pre-produzione oppure applicare immediatamente l'aggiornamento a tutti i client.  
+-   更新プログラムに Configuration Manager クライアントが含まれている場合は、運用前に更新プログラムをテストするか、すべてのクライアントに更新プログラムを即座に適用するかを選べます。  
 
--   Dopo l'aggiornamento di un sito primario, i siti secondari non vengono aggiornati automaticamente. È invece necessario avviare l'aggiornamento del sito secondario.  
+-   プライマリ サイトが更新されても、セカンダリ サイトは自動的には更新されません。 そのため、セカンダリ サイトの更新を手動で開始する必要があります。  
 
 > [!NOTE]  
->  La versione per la produzione di Center Configuration Manager (Current Branch), Long Term Servicing Branch e la Technical Preview di System Center Configuration Manager sono versioni diverse. Di conseguenza, gli aggiornamenti relativi a un ramo non sono disponibili come aggiornamenti nella console per gli altri rami. Per altre informazioni sui rami disponibili, vedere [Which branch of Configuration Manager should I use?](/sccm/core/understand/which-branch-should-i-use) (Scelta del ramo di Configuration Manager da usare)
+>  System Center Configuration Manager (Current Branch) の実稼働リリース、Long-Term Servicing Branch、および System Center Configuration Manager の Technical Preview は、異なるリリースです。 したがって、1 つのブランチに適用される更新プログラムでは、他のブランチのコンソール内の更新プログラムには使用できません。 使用可能なブランチの詳細については、「[適切な Configuration Manager のブランチを選択する](/sccm/core/understand/which-branch-should-i-use)」を参照してください。
 
-##  <a name="bkmk_outofband"></a> Hotfix fuori programma  
-Alcuni hotfix vengono rilasciati con disponibilità limitata per risolvere problemi specifici oppure sono applicabili a tutti i clienti, ma non possono essere installati usando il metodo nella console. Questi aggiornamenti sono rilasciati fuori programma e non vengono individuati dal servizio cloud Microsoft.  
+##  <a name="bkmk_outofband"></a> アウトオブバンドの修正プログラム  
+修正プログラムによっては、特定の問題に対処するために対象を限定してリリースされるものや、すべてのお客様に適用可能であるものの、コンソール内の方式でインストールできないものもあります。 これらの修正プログラムはアウトオブバンドで提供され、Microsoft クラウド サービスでは検出されません。  
 
-Se si sta tentando di risolvere o correggere un problema relativo alla distribuzione di Configuration Manager, in genere è possibile trovare informazioni sugli hotfix fuori programma nei servizi di assistenza clienti Microsoft, in un articolo della Knowledge Base o nel [blog del team di System Center Configuration Manager](https://blogs.technet.microsoft.com/configmgrteam).  
+通常、アウトオブバンドの修正プログラムについては、Configuration Manager の展開に伴う問題を解決する方法を探しているときに、Microsoft カスタマー サポート サービス、サポート技術情報の記事、[System Center Configuration Manager チーム ブログ](https://blogs.technet.microsoft.com/configmgrteam)を通じて調べることができます。  
 
-Installare questi aggiornamenti manualmente, usando uno dei due metodi seguenti:  
+こうした更新プログラムは、以下の 2 つの方法のどちらかを使用して手動でインストールします。  
 
--   **Strumento di registrazione dell'aggiornamento:** questo strumento importa manualmente l'hotfix nella console di Configuration Manager da cui è poi possibile installare l'aggiornamento come si farebbe con gli aggiornamenti nella console individuati automaticamente. Questo metodo è usato per gli aggiornamenti con la struttura di nome file seguente: **.update.exe**.  Il nome file completo per questo tipo di hotfix è simile a: **&lt;Prodotto\>-&lt;versione prodotto\>-&lt;ID articolo KB\>-ConfigMgr.Update.exe**.  
+-   **更新登録ツール:** このツールを使うと、修正プログラムを手動で Configuration Manager コンソールにインポートできます。その後、自動的に検出されるコンソール内の更新プログラムと同様に、コンソールで更新プログラムをインストールできます。 この方式は、 **.update.exe**というファイル名の構造を持つ更新プログラムに使用されます。  この種の修正プログラムの完全なファイル名は、**&lt;製品\>-&lt;製品バージョン\>-&lt;サポート技術情報の記事 ID\>-ConfigMgr.Update.exe** となります。  
 
-     Per altre informazioni, vedere [Use the Update Registration Tool to import hotfixes to System Center Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md) (Usare lo strumento di registrazione dell'aggiornamento per importare hotfix in System Center Configuration Manager).  
+     詳細については、「[修正プログラムを System Center Configuration Manager にインポートするには、更新登録ツールを使用します](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md)」を参照してください。  
 
--   **Strumento di installazione di hotfix:** questo strumento consente di installare manualmente un hotfix che non è possibile installare usando il metodo nella console. Questo metodo è usato per gli aggiornamenti che hanno la struttura di nome file seguente: **&lt;Prodotto\>-&lt; versione prodotto\>-&lt;ID articolo KB\>-&lt;piattaforma\>-&lt;lingua\>.exe**.
+-   **修正プログラムのインストーラー:** このツールは、コンソール内の方式でインストールできない修正プログラムをインストールするために使用されます。 この方式は、**&lt;製品\>-&lt;製品バージョン\>-&lt;サポート技術情報の記事 ID\>-&lt;プラットフォーム\>-&lt;言語\>.exe** というファイル名の構造を持つ更新プログラムに使用されます。
 
-     Per altre informazioni, vedere [Use the Hotfix Installer to install updates for System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md) (Usare il programma di installazione di hotfix per installare gli aggiornamenti per System Center Configuration Manager).
-
+     詳細については、「[Use the Hotfix Installer to install updates for System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md)」 (修正プログラム インストーラーを使用して、System Center Configuration Manager の更新プログラムをインストールする) を参照してください。

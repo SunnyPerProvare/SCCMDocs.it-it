@@ -1,80 +1,77 @@
 ---
-title: "Funzionalità della versione Technical Preview 1611 per Configuration Manager"
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1611 per System Center Configuration Manager."
+title: "Configuration Manager の Technical Preview 1611 の機能"
+description: "System Center Configuration Manager の Technical Preview バージョン 1611 で使用できる機能について説明します。"
 ms.custom: na
 ms.date: 01/23/2017
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.topic: article
 ms.assetid: d2ad00e8-9f10-41b6-816a-d8542c23a22e
-caps.latest.revision: 2
+caps.latest.revision: "2"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: 5e77ebbfd3f3d573d903fe58024a22feb9884e4a
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1611-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1611 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1611-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1611 の機能
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
-
-
-
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1611 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
-
-**Problemi noti di questa versione Technical Preview:**   
-- ***Stato dei prerequisiti***: quando si installa la versione 1611, lo stato generale dei prerequisiti corrisponde a Controllo prerequisiti superato con avvisi ma i prerequisiti che hanno causato gli avvisi non vengono visualizzati. Ciò può essere causato dai due prerequisiti seguenti:
-  - Opzioni della memoria di creazione indici di SQL
-  - Controlli per la versione di SQL Server supportata  
-
- Poiché si tratta solo di avvisi, possono essere ignorati.
-
-- ***PowerShell***: quando ci si connette a Windows PowerShell dalla console di Configuration Manager, è possibile ricevere l'errore seguente: **Microsoft.ConfigurationManagement.PowerShell.Types.ps1xml is not digitally signed** (Microsoft.ConfigurationManagement.PowerShell.Types.ps1xml senza firma digitale).  
-
-   È possibile risolvere questo problema sostituendo determinati file con le versioni firmate corrispondenti della versione 1610. Dalla cartella **&lt;directory di installazione>\AdminConsole\bin\** della versione 1610 copiare tutti i file con le estensioni seguenti: **psd1**, **ps1xml** e **psm1**. Incollare questi file nella cartella **&lt;directory di installazione>\AdminConsole\bin\** della versione Technical Preview 1611, sovrascrivendo la versione 1611 dei file.
+*適用対象: System Center Configuration Manager (Technical Preview)*
 
 
-**Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
-## <a name="pre-cache-content-for-available-deployments-and-task-sequences"></a>Pre-cache del contenuto per le distribuzioni e le sequenze di attività disponibili
-In questa Technical Preview, per le distribuzioni e le sequenze di attività disponibili è possibile scegliere di usare la funzionalità di pre-cache. In questo modo, prima che gli utenti installino il contenuto, i client scaricheranno solo il contenuto pertinente.
+この記事では、System Center Configuration Manager の Technical Preview バージョン 1611 で使用できる機能について説明します。 このバージョンをインストールして更新し、新機能を Configuration Manager の Technical Preview サイトに追加できます。 このバージョンの Technical Preview をインストールする前に、説明のトピック「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。    
 
-Si supponga ad esempio di voler distribuire una sequenza di attività di aggiornamento sul posto di Windows 10, di volere una sola sequenza di attività per tutti gli utenti e di avere più architetture e/o lingue. Se si crea una distribuzione disponibile in Current Branch, il contenuto viene scaricato quando l'utente fa clic su **Installa** in Software Center. Ciò prolunga il tempo che precede l'avvio dell'installazione. In alternativa, se si crea una sequenza di attività disponibile in Current Branch, viene scaricato tutto il contenuto a cui la sequenza di attività fa riferimento, compreso il pacchetto di aggiornamento del sistema operativo per tutte le lingue e per tutte le architetture. Se le dimensioni di ciascun pacchetto sono circa 3 GB, il pacchetto di download può avere dimensioni notevoli.
+**この Technical Preview の既知の問題:**   
+- ***前提条件の状態***: バージョン 1611 をインストールする場合、前提条件の全体的な状態は、警告付きで合格として表示されます。ただし、警告の原因となった前提条は一覧表示されません。 この状況は、次の 2 つの前提条件によって発生することがあります。
+  - SQL インデックス作成メモリのオプション
+  - SQL Server のバージョンがサポートされているかどうかの確認  
 
-Con la funzionalità di pre-cache del contenuto è possibile consentire al client di scaricare solo il contenuto applicabile non appena riceve la distribuzione. Pertanto quando l'utente fa clic su **Installa** in Software Center, il contenuto è pronto e l'installazione inizia rapidamente, dato che il contenuto si trova nel disco rigido locale.
+ これらは警告にすぎないので、無視することができます。
 
-### <a name="to-configure-the-pre-cache-feature"></a>Per configurare la funzionalità di pre-cache
+- ***PowerShell***: Configuration Manager コンソールから Windows PowerShell に接続する場合に、次のエラーが表示される可能性があります: **Microsoft.ConfigurationManagement.PowerShell.Types.ps1xml がデジタル署名されていない**  
 
-1. Creare pacchetti di aggiornamento del sistema operativo per lingue e architetture specifiche. Specificare l'architettura e della lingua nella scheda **Origine dati** del pacchetto. Per la lingua usare la conversione decimale. Ad esempio, 1033 è il valore decimale per l'inglese e 0x0409 è il corrispondente valore esadecimale. Per i dettagli, vedere [Creare una sequenza di attività per aggiornare un sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system).
-
-    I valori relativi all'architettura e alla lingua usati devono rispettare le condizioni dei passaggi della sequenza di attività che verranno creati nel passaggio successivo, per determinare se sia necessario usare la funzionalità di pre-cache per i pacchetti di aggiornamento del sistema operativo.
-2. Creare una sequenza di attività con passaggi condizionali per le diverse lingue e le diverse architetture. Per la versione inglese, ad esempio, è possibile creare un passaggio simile al seguente:
-
-    ![proprietà pre-cache](media/precacheproperties2.png)
-
-    ![opzioni pre-cache](media/precacheoptions2.png)  
-
-3. Distribuire la sequenza di attività. Per la funzionalità di pre-cache configurare le impostazioni seguenti:
-    - Nella scheda **Generale** selezionare **Pre-download del contenuto per questa sequenza di attività**.
-    - Nella scheda **Impostazioni di distribuzione** configurare la sequenza di attività selezionando **Disponibile** per **Scopo**. Se si crea una distribuzione **obbligatoria** la funzionalità di pre-cache non funziona.
-    - Per l'impostazione **Pianifica quando questa distribuzione diventerà disponibile** della scheda **Pianificazione**, scegliere un'ora nel futuro che garantisca ai client tempo sufficiente per la funzionalità di pre-cache del contenuto, prima che la distribuzione venga resa disponibile agli utenti. È ad esempio possibile concedere alla funzionalità di pre-cache del contenuto un periodo di 3 ore nel futuro.  
-    - Nella scheda **Punti di distribuzione** configurare le impostazioni **Opzioni di distribuzione**. Se in un client non è stata eseguita la funzione di pre-cache per il contenuto prima che l'utente avvii l'installazione, vengono usate queste impostazioni.
+   この問題は、特定のファイルをバージョン 1610 の署名付きバージョンのファイルに置き換えることで解決できます。 バージョン 1610 のインストールの *&lt;install directory>\AdminConsole\bin\** フォルダーから拡張子 **.psd1**、**.ps1xml**、**.psm1** を持つすべてのファイルをコピーします。 これらのファイルを、Technical Preview 1611 がインストールされている *&lt;install directory>\AdminConsole\bin\** フォルダーに貼り付けて、1611 バージョンのファイルを上書きします。
 
 
-### <a name="user-experience"></a>Esperienza utente
-- Quando il client riceve i criteri di distribuzione, avvia la funzione di pre-cache del contenuto, ovvero di tutto il contenuto a cui si fa riferimento (eventuali altri tipi di pacchetti) e del pacchetto di aggiornamento del solo sistema operativo corrispondente a quello del client, in base alle condizioni impostate nella sequenza di attività.
-- Quando la distribuzione viene resa disponibile agli utenti (impostazione nella scheda **Pianificazione** della distribuzione), una notifica informa gli utenti della nuova distribuzione e la distribuzione stessa diventa visibile in Software Center. Per avviare l'installazione l'utente può passare a Software Center e fare clic su **Installa**.
-- Se la funzione di pre-cache del contenuto non è stata eseguita completamente, vengono usate le impostazioni specificate nella scheda **Opzioni di distribuzione** della distribuzione. È consigliabile lasciare un periodo sufficiente tra il momento in cui si crea la distribuzione e l'ora in cui la distribuzione stessa diventa disponibile per gli utenti, per consentire ai client di eseguire in tempo la funzione di pre-cache del contenuto.
+**このバージョンでお試しいただける新機能を次に示します。**  
+
+## <a name="pre-cache-content-for-available-deployments-and-task-sequences"></a>利用可能な展開とタスク シーケンスのコンテンツを事前キャッシュする
+このテクニカル プレビューでは、利用可能な展開とタスク シーケンスについて、事前キャッシュ機能を使用するように設定できます。これにより、ユーザーがコンテンツをインストールする前に、関連するコンテンツのみをクライアントにダウンロードさせることができます。
+
+たとえば、Windows 10 のインプレース アップグレード タスク シーケンスを展開する場合で、すべてのユーザーに対して必要なタスク シーケンスは 1 つのみで、複数のアーキテクチャおよび/または言語に対応する必要があるとします。 Current Branch では、利用可能な展開を作成した場合、その後ユーザーがソフトウェア センターで [**インストール**] をクリックすると、その時点でコンテンツがダウンロードされます。 この場合は、インストールできる状態になるまで、さらに時間がかかります。 あるいは、Current Branch では、利用可能なタスク シーケンスの展開を作成した場合、タスク シーケンスで参照されるすべてのコンテンツがダウンロードされます。 これには、すべての言語およびアーキテクチャ用のオペレーティング システム アップグレード パッケージが含まれます。 各パッケージのサイズが約 3 GB だとすると、ダウンロード パッケージは非常に大きくなものとなります。
+
+コンテンツの事前キャッシュ機能には、クライアントが展開を受信してすぐに適用可能なコンテンツのみをダウンロードできるようにするオプションが用意されています。 したがって、ユーザーがソフトウェア センターで [**インストール**] をクリックすると、コンテンツはローカルのハード ドライブ上にあるため、コンテンツは準備完了の状態にあり、インストールが迅速に開始されます。
+
+### <a name="to-configure-the-pre-cache-feature"></a>事前キャッシュ機能を構成するには
+
+1. 特定のアーキテクチャおよび言語に対応したオペレーティング システム アップグレード パッケージを作成します。 パッケージの [**データ ソース**] タブでアーキテクチャと言語を指定します。 言語については、10 進数変換を使用します (たとえば、1033 は英語を表す 10 進数です。これを 16 進数で表すと 0x0409 となります)。 詳細については、「[オペレーティング システムをアップグレードするタスク シーケンスの作成](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system)」を参照してください。
+
+    アーキテクチャと言語の値は、次の手順で作成するタスク シーケンス ステップの条件と照合してオペレーティング システム アップグレード パッケージの事前キャッシュが必要かどうかを判断するために使用されます。
+2. さまざまな言語およびアーキテクチャに対して条件付きステップを適用するタスク シーケンスを作成します。 たとえば、英語バージョンの場合は、次のようなステップを作成することが可能です。
+
+    ![事前キャッシュのプロパティ](media/precacheproperties2.png)
+
+    ![事前キャッシュのオプション](media/precacheoptions2.png)  
+
+3. タスク シーケンスを展開します。 事前キャッシュの機能については、次のように構成します。
+    - [**全般**] タブで、[**このタスク シーケンス用のコンテンツを事前にダウンロードする**] を選択します。
+    - [**展開設定**] タブで、[**目的**] を [**利用可能**] にしてタスク シーケンスを構成します。 **必須**の展開を作成する場合、事前キャッシュ機能は動作しません。
+    - [**スケジュール**] タブの [**この展開が使用可能になる日時を指定する**] 設定では、将来の適切な時刻を選択します。これにより、展開をユーザーが利用できるようにする前に、コンテンツを事前キャッシュするのに十分な時間をクライアントに与えます。 たとえば、利用可能時間を 3 時間先に設定することで、コンテンツを事前キャッシュするのに十分な時間を確保することができます。  
+    - [**配布ポイント**] タブで、[**展開オプション**] 設定を構成します。 ユーザーがインストールを開始する前にコンテンツを事前キャッシュしない場合は、これらの設定を使用します。
 
 
-## <a name="see-also"></a>Vedere anche
-[Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager)
+### <a name="user-experience"></a>ユーザー側の表示と操作
+- クライアントは、展開ポリシーを受け取ると、コンテンツの事前キャッシュを開始します。 これには、参照されるすべてのコンテンツ (他のパッケージの種類) と、オペレーティング システム アップグレード パッケージのうち、タスク シーケンスで設定した条件に基づいてクライアントと一致したものが含まれます。
+- ユーザーが展開を利用可能になると (展開の [**スケジュール**] タブの設定)、新しい展開に関する情報をユーザーに提供する通知が表示され、展開がソフトウェア センターで確認可能な状態になります。 ユーザーはソフトウェア センターに移動し、[**インストール**] をクリックしてインストールを開始します。
+- コンテンツが完全に事前キャッシュされていない場合は、展開の [**展開オプション**] タブで指定した設定が使用されます。 展開を作成した時間と、展開をクライアントが利用できるようにする時間との間隔を適切な長さに設定して、コンテンツを事前キャッシュするのに十分な時間をクライアントに与えることをお勧めします。
 
+
+## <a name="see-also"></a>関連項目
+[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)

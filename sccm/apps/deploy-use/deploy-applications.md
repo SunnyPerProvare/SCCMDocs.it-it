@@ -1,197 +1,194 @@
 ---
-title: Distribuire applicazioni | Microsoft Docs
-description: Creare un tipo di distribuzione o simulare la distribuzione di un'applicazione usando System Center Configuration Manager.
+title: "アプリケーションの展開 | Microsoft Docs"
+description: "System Center Configuration Manager を使用して、展開の種類を作成するか、アプリケーションの展開をシミュレートします。"
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2629c376-ec43-4f0e-a78b-4223cc9302bf
-caps.latest.revision: 10
-caps.handback.revision: 0
+caps.latest.revision: "10"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: b7461f89f483314bd07248bbc9d5dde85ca6b6c2
 ms.openlocfilehash: f704d1b0ec48e3a7bbea784a7c18de77b21cd0ee
-ms.contentlocale: it-it
-ms.lasthandoff: 08/03/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="deploy-applications-with-system-center-configuration-manager"></a>Distribuire le applicazioni con System Center Configuration Manager
+# <a name="deploy-applications-with-system-center-configuration-manager"></a>System Center Configuration Manager でアプリケーションを展開する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Prima di distribuire un'applicazione di System Center Configuration Manager è necessario creare almeno un tipo di distribuzione per l'applicazione stessa. Per altre informazioni sulla creazione di applicazioni e tipi di distribuzione, vedere [Creare applicazioni](/sccm/apps/deploy-use/create-applications).
+System Center Configuration Manager アプリケーションを展開する前に、アプリケーションの展開の種類を 1 つ以上作成する必要があります。 アプリケーションと展開の種類の作成の詳細については、「[System Center Configuration Manager でアプリケーションを作成する](/sccm/apps/deploy-use/create-applications)」をご覧ください。
 
- È anche possibile simulare la distribuzione di un'applicazione. Questo tipo di distribuzione sottopone a test l'applicabilità di una distribuzione di applicazione nei computer senza installare o disinstallare l'applicazione. Una distribuzione simulata esegue una valutazione del metodo di rilevamento, dei requisiti e delle dipendenze per un tipo di distribuzione e segnala i risultati nel nodo **Distribuzioni** dell'area di lavoro **Monitoraggio**. Per altre informazioni, vedere [Simulare distribuzioni di applicazioni ](/sccm/apps/deploy-use/simulate-application-deployments).
+ アプリケーションの展開をシミュレーションすることもできます。 この展開の種類は、アプリケーションをインストールまたはアンインストールせずに、コンピューターに対するアプリケーションの展開の適用性をテストします。 シミュレーションされた展開は、展開の種類について検出された方法、要件、依存関係を評価し、**[監視]** ワークスペースの **[展開]** ノードに結果を表示します。 詳細については、「[System Center Configuration Manager でアプリケーションの展開をシミュレートする](/sccm/apps/deploy-use/simulate-application-deployments)」をご覧ください。
 
 > [!IMPORTANT]
->  È possibile distribuire (installare o disinstallare) le applicazioni necessarie, ma non pacchetti o aggiornamenti software. I dispositivi registrati con MDM non supportano nemmeno le distribuzioni simulate, l'esperienza utente o le impostazioni di pianificazione.
+>  必要なアプリケーションは展開 (インストールまたはアンインストール) できますが、パッケージやソフトウェア更新プログラムは展開できません。 また、MDM 登録デバイスは、シミュレートされた展開、ユーザー エクスペリエンス、またはスケジュール設定をサポートしていません。
 
-## <a name="deploy-an-application"></a>Distribuire un'applicazione
+## <a name="deploy-an-application"></a>アプリケーションの展開
 
-1.  Nella console di Configuration Manager accedere a **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.
+1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[アプリケーション]** に移動します。
 
-2.  Nell'elenco **Applicazioni** selezionare l'applicazione che si desidera distribuire. Quindi, nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci**.
+2.  [ **アプリケーション** ] 一覧で、展開するアプリケーションを選択します。 次に、 **ホーム**  タブで、 **展開** グループで、 **展開**です。
 
-### <a name="specify-general-information-about-the-deployment"></a>Specificare le informazioni generali sulla distribuzione
+### <a name="specify-general-information-about-the-deployment"></a>展開に関する全般情報を指定する
 
-Nella pagina **Generale** della Distribuzione guidata del software specificare le seguenti informazioni:
+ソフトウェアの展開ウィザードの **[全般]** ページで、次の情報を指定します。
 
-- **Software**  
-Visualizza l'applicazione da distribuire. È possibile fare clic su **Sfoglia** per selezionare un'altra applicazione.
-- **Raccolta**  
-Fare clic su **Sfoglia** per selezionare la raccolta in cui distribuire l'applicazione.
-- **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**  
-Selezionare questa opzione se si vuole archiviare il contenuto dell'applicazione nel gruppo di punti di distribuzione predefiniti della raccolta. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione è disattivata.
-- **Distribuisci automaticamente contenuto per dipendenze**  
-Se l'opzione è attivata e uno dei tipi di distribuzione dell'applicazione contiene dipendenze, anche il contenuto dell'applicazione dipendente viene inviato ai punti di distribuzione.
+- **ソフトウェア**  
+展開するアプリケーションを表示します。 **[参照]** をクリックすると、別のアプリケーションを選択できます。
+- **コレクション**  
+**[参照]** をクリックして、アプリケーションを展開するコレクションを選択します。
+- **このコレクションに関連付けられている既定の配布ポイント グループを使用する**  
+アプリケーション コンテンツをコレクションの既定の配布ポイント グループに保存する場合は、このオプションを選択します。 選択したコレクションが配布ポイント グループと関連付けられていない場合は、このオプションは淡色表示されます。
+- **依存している項目のコンテンツを自動的に配布する**  
+このオプションが有効で、アプリケーションの展開の種類に依存している関係が含まれていると、依存アプリケーションのコンテンツも配布ポイントに送信されます。
 
     >[!IMPORTANT]
-    > Se l'applicazione dipendente viene aggiornata dopo la distribuzione dell'applicazione primaria, il nuovo contenuto per la dipendenza non verrà distribuito automaticamente.
+    > プライマリ アプリケーションの展開後に依存アプリケーションを更新しても、依存している項目に新しいコンテンツは自動的に配布されません。
 
-- **Commenti (facoltativo)**  
-Facoltativamente, immettere una descrizione per la distribuzione.
+- **コメント (オプション)**  
+任意でこの展開の種類の名前と説明を入力します。
 
-### <a name="specify-content-options-for-the-deployment"></a>Specificare le opzioni di contenuto per la distribuzione
+### <a name="specify-content-options-for-the-deployment"></a>展開のコンテンツ オプションを指定する
 
-Nella pagina **Contenuto** fare clic su **Aggiungi** per aggiungere il contenuto associato a questa distribuzione ai punti di distribuzione o ai gruppi di punti di distribuzione. Se è stata selezionata l'opzione **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta** nella pagina **Generale**, l'opzione viene popolata automaticamente e può essere modificata solo da un membro del ruolo di sicurezza Amministratore applicazione.
+**[コンテンツ]** ページで **[追加]** をクリックして、この展開に関連付けられたコンテンツを、配布ポイントまたは配布ポイント グループに追加します。 **[全般]** ページにある **[このコレクションに関連付けられている既定の配布ポイントを使用する]** を選択していると、このオプションが自動的に入力されます。このオプションを変更できるのは、アプリケーション管理者のセキュリティ ロールのメンバーのみです。
 
-### <a name="specify-deployment-settings"></a>Specificare le impostazioni di distribuzione
+### <a name="specify-deployment-settings"></a>展開の設定を指定する
 
-Nella pagina **Impostazioni di distribuzione** della Distribuzione guidata del software specificare le informazioni seguenti:
+ソフトウェアの展開ウィザードの **[展開設定]** ページで、次の情報を指定します。
 
-- **Azione**  
-Dall'elenco a discesa scegliere se la distribuzione ha l'obiettivo di **installare** o **disinstallare** l'applicazione.
+- **操作**  
+ドロップダウン リストから、展開の目的がアプリケーションの **[インストール]** であるのか **[アンインストール]** であるのかを選択します。
 
     > [!NOTE]
-    >  Se un'applicazione viene distribuita due volte in un dispositivo, una volta con l'azione **Installa** e una volta con l'azione **Disinstalla**, ha priorità la distribuzione dell'applicazione con l'azione **Installa**.
+    >  アプリケーションがデバイスに 2 回展開され、**[インストール]** の操作が 1 回、**[アンインストール]** の操作が 1 回の場合、**[インストール]** 操作を伴うアプリケーションの展開が優先されます。
 
-È impossibile modificare l'azione di una distribuzione dopo la relativa creazione.
+展開の操作は、作成後には変更できません。
 
-- **Scopo**  
-dall'elenco a discesa scegliere una delle seguenti opzioni:
-    - **Disponibile**  
-    Se l'applicazione viene distribuita a un utente, l'utente visualizza l'applicazione pubblicata in Software Center e può installarla su richiesta.
-    - **Richiesto**  
-    L'applicazione viene distribuita automaticamente in base alla pianificazione. Se lo stato della distribuzione dell'applicazione non è nascosto, chiunque usi l'applicazione può tenere traccia dello stato della distribuzione e installare l'applicazione da Software Center prima della scadenza.
+- **目的**  
+ドロップダウン リストから、次のいずれかのオプションを選択します。
+    - **利用可能**  
+    アプリケーションがユーザーに展開される場合、そのユーザーは、公開されているアプリケーションをソフトウェア センターで確認し、必要に応じてインストールできます。
+    - **必須**  
+    アプリケーションは、スケジュールに従って自動的に展開されます。 アプリケーション展開ステータスが非表示ではない場合、期限前であれば、アプリケーションを使用している誰でも展開ステータスを追跡し、ソフトウェア センターからアプリケーションをインストールすることができます。
 
     > [!NOTE]   
-    >  Quando l'azione di distribuzione è impostata su **Disinstalla**, lo scopo della distribuzione viene impostato automaticamente su **Richiesto** e non può essere modificato.  
+    >  展開操作が [ **アンインストール**] に設定されていると、展開目的に [ **必須** ] が自動的に設定され、変更できません。  
 
-- **Distribuisci automaticamente con o senza accesso utente**  
-Se la distribuzione è destinata a un utente, selezionare questa opzione per distribuire l'applicazione nei dispositivi primari dell'utente. Questa impostazione non richiede all'utente di accedere prima che venga eseguita la distribuzione. Non selezionare questa opzione se l'utente deve fornire input per completare l'installazione. Questa opzione è disponibile solo quando la distribuzione ha lo scopo **Richiesto**.
+- **ユーザーのログインに関係なくスケジュールに従って自動的に展開する**  
+ユーザーに展開する場合は、このオプションを選択して、アプリケーションをユーザーのプライマリ デバイスに展開します。 この設定では、展開が実行される前にユーザーがログオンする必要はありません。 インストールを完了するためにユーザーの入力が必要な場合は、このオプションを選択しないでください。 このオプションは、展開目的が [ **必須**] の場合のみ使用できます。
 
-- **Invia pacchetti di riattivazione**  
-Se lo scopo della distribuzione è impostato su **Richiesto** e l'opzione è selezionata, ai computer viene inviato un pacchetto di riattivazione prima dell'installazione della distribuzione. Il pacchetto attiva i computer nel momento in cui scade l'installazione. Prima di usare questa opzione, i computer e le reti devono essere configurati per riattivazione LAN.
-- **Consente a tutti i client che usano una connessione di rete a consumo di scaricare il contenuto una volta raggiunta la scadenza dell'installazione. Se si abilita questa opzione, potrebbe essere addebitato un costo aggiuntivo**  
-Questa opzione è disponibile solo per distribuzioni con scopo **Richiesto**.
-- **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione**  
-Per altre informazioni su come configurare un elenco di file eseguibili che impediscano l'installazione di un'applicazione, vedere **Come controllare l'esecuzione di file eseguibili prima di installare un'applicazione** più avanti in questo argomento.
-- **Richiedi l'approvazione dell'amministratore se gli utenti richiedono questa applicazione**  
-Se l'opzione è selezionata, prima dell'installazione dell'applicazione l'amministratore deve approvare tutte le relative richieste degli utenti. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando l'applicazione viene distribuita in una raccolta dispositivi.
+- **ウェイクアップ パケットを送信する**  
+展開目的に **[必須]** が設定されていて、このオプションが選択されていると、展開のインストール前にコンピューターにウェイクアップ パケットが送信されます。 このパケットで、インストールの期限時間にコンピューターのスリープ状態が解除されます。 このオプションを使用する前に、コンピューターおよびネットワークを Wake On Lan 用に構成する必要があります。
+- **インストールの期限後、クライアントが従量制のインターネット接続を使用してコンテンツをダウンロードできるようにする (追加料金が生じる可能性があります)**  
+このオプションは、展開目的が **[必須]** の場合のみ使用できます。
+- **[展開の種類プロパティ] ダイアログ ボックスの [インストールの処理] タブで指定した実行中の実行可能ファイルをすべて自動的に閉じる**  
+アプリケーションのインストールを禁止できる実行可能ファイルのリストを構成する方法について詳しくは、後の「**アプリケーションをインストールする前に実行中の実行可能ファイルを確認する方法**」をご覧ください。
+- **ユーザーがこのアプリケーションを要求した場合に管理者の承認を必要とする**  
+このオプションが選択されていると、アプリケーションがインストールされる前に、管理者がユーザーの要求を承認する必要があります。 展開目的が **[必須]** である場合、またはアプリケーションがデバイス コレクションに展開される場合は、このオプションは淡色表示されます。
 
     > [!NOTE]
-    >  Le richieste di approvazione dell'applicazione vengono visualizzate nel nodo **Richieste di approvazione** , in **Gestione applicazioni** , nell'area di lavoro **Raccolta software** . Se una richiesta non viene approvata entro 45 giorni, viene rimossa. La reinstallazione del client di Configuration Manager potrebbe anche annullare eventuali richieste di approvazione in sospeso.
-    >  Dopo avere approvato un'applicazione per l'installazione, è possibile scegliere di negare la richiesta facendo clic su **Nega** nella console di Configuration Manager (in precedenza questo pulsante era disabilitato dopo l'approvazione).
-    >  Questa azione non comporta la disinstallazione dell'applicazione dai dispositivi, ma impedisce agli utenti di installare nuove copie dell'applicazione da Software Center.
+    >  アプリケーション承認要求は、[ **ソフトウェア ライブラリ** ] ワークスペースの [ **アプリケーション管理** ] の下にある [ **承認要求** ] ノードに表示されます。 要求は、45 日以内に承認されなければ削除されます。 また、構成マネージャー クライアントを再インストールすると、保留承認要求が取り消される可能性があります。
+    >  アプリケーションのインストールを承認した後は、要求を拒否するには、Configuration Manager コンソールで **[拒否]** をクリックします (以前は、承認後にこのボタンは淡色表示されていました)。
+    >  この操作では、デバイスからアプリケーションはアンインストールされませんが、ユーザーはソフト センターからアプリケーションの新しいコピーをインストールできなくなります。
 
-- **Aggiorna automaticamente tutte le versioni sostituite di questa applicazione**  
-Se questa opzione è selezionata, tutte le versioni sostituite dell'applicazione vengono aggiornate con l'applicazione sostitutiva.
+- **このアプリケーションの置き換えられるバージョンを自動的にアップグレードする**  
+このオプションが選択されている場合、置き換えられたアプリケーションのバージョンは、既存のものを置き換えるアプリケーションで更新されます。
 
-### <a name="specify-scheduling-settings-for-the-deployment"></a>Specificare le impostazioni di pianificazione per la distribuzione
+### <a name="specify-scheduling-settings-for-the-deployment"></a>展開のスケジュール設定を指定する
 
-Nella pagina **Pianificazione** della Distribuzione guidata del software configurare il momento in cui l'applicazione deve essere distribuita o resa disponibile per i dispositivi client.
-Le opzioni presenti in questa pagina variano in base all'impostazione dell'azione di distribuzione, che può essere **Disponibile** o **Richiesta**.
+ソフトウェアの展開ウィザードの **[スケジュール]** ページで、アプリケーションが展開され、クライアント デバイスで使用できるようになる時間を設定します。
+このページのオプションは、展開操作が **[利用可能]** または **[必須]** のどちらに設定されているかによって変わります。
 
-In alcuni casi, è possibile concedere agli utenti più tempo per l'installazione di distribuzioni di applicazioni o aggiornamenti del software obbligatori, anche oltre eventuali scadenze impostate. In genere questo è necessario quando un computer è rimasto spento per un lungo periodo di tempo ed è necessario installare un numero elevato di aggiornamenti o distribuzioni di applicazioni. Ad esempio, quando un utente torna da una vacanza, potrebbe dover attendere parecchio tempo mentre vengono installate le distribuzioni delle applicazioni scadute. Per risolvere il problema ora è possibile definire un periodo di tolleranza di imposizione distribuendo le impostazioni del client di Configuration Manager a una raccolta.
+場合によっては、必要なアプリケーション展開またはソフトウェア更新プログラムをインストールできるように、設定期限よりも長い時間をユーザーに与える必要があります。 これは通常、コンピューターが長期間オフになっていて、多数のアプリケーションや更新プログラムの展開をインストールする必要がある場合に必要になります。 たとえば、ユーザーが休暇から戻って来た場合、期限切れのアプリケーションの展開がインストールされるまで、長時間待たなければならない場合があります。 この問題を解決するため、Configuration Manager クライアント設定をコレクションに展開することで、適用猶予期間を定義できるようになりました。
 
-Per configurare il periodo di tolleranza eseguire le operazioni seguenti:
+猶予期間を設定するには、次の操作を実行します。
 
-- Nella pagina **Agente computer** delle impostazioni del client configurare la nuova proprietà **Periodo di tolleranza per l'imposizione dopo la scadenza della distribuzione (ore)** con un valore compreso tra **1** e **120** ore.
-- Nella pagina **Pianificazione** di una nuova distribuzione richiesta dell'applicazione o nelle proprietà di una distribuzione esistente selezionare l'opzione che consente di **ritardare l'imposizione della distribuzione in base alle preferenze dell'utente fino al periodo di tolleranza definito nelle impostazioni client**. Tale periodo di tolleranza viene usato per tutte le distribuzioni con questa opzione selezionata e destinate a dispositivi in cui è stata distribuita anche l'impostazione del client.
+- クライアント設定の [**コンピューター エージェント**] ページで、新しいプロパティ [**展開期限後の実施の猶予期間 (時間)**] の値を **1** ～ **120** 時間で設定します。
+- 新しい必須アプリケーションの展開、または既存の展開のプロパティで、**[スケジュール]** ページで **[ユーザー設定に従い、クライアント設定で定義された猶予期間が終了するまでこの展開の実施を延期する]** チェック ボックスをオンにします。 このチェック ボックスがオンになっていて、クライアント設定も展開するデバイスを対象としているすべての展開が、適用猶予期間を使用します。
 
-Alla scadenza dell'installazione, l'applicazione verrà installata nella prima finestra non aziendale che l'utente ha configurato fino alla scadenza del periodo di tolleranza specificato. Tuttavia l'utente può comunque aprire Software Center e installare l'applicazione in qualsiasi momento. Una volta scaduto il periodo di tolleranza, le distribuzioni scadute torneranno al normale comportamento.
+アプリケーションのインストール期限に達した場合、その猶予期間までに、ユーザーが構成した最初の非ビジネス ウィンドウで、アプリケーションがインストールされます。 ただし、ユーザーはソフトウェア センターを開いて、いつでもアプリケーションをインストールすることもできます。 猶予期間が切れると、適用は期限切れの展開に対する通常の動作に戻ります。
 
-Se l'applicazione distribuita sostituisce un'altra applicazione, è possibile impostare la scadenza dell'installazione in corrispondenza del momento in cui gli utenti ricevono la nuova applicazione. A tale scopo usare l'impostazione **Scadenza installazione** per aggiornare gli utenti con l'applicazione sostituita.
+展開するアプリケーションが他のアプリケーションを置き換える場合は、ユーザーが新しいアプリケーションを受信するタイミングに、インストールの期限を設定できます。 これを行うには、**[インストールの期限]** 設定を使用して、置換対象のアプリケーションでユーザーをアップグレードします。
 
-### <a name="specify-user-experience-settings-for-the-deployment"></a>Specificare le impostazioni dell'esperienza utente per la distribuzione
+### <a name="specify-user-experience-settings-for-the-deployment"></a>展開のユーザー エクスペリエンスを指定する
 
 
-Nella pagina **Esperienza utente** della Distribuzione guidata del software specificare le informazioni sulle modalità di interazione degli utenti con l'installazione dell'applicazione.
+ソフトウェアの展開ウィザードの **[ユーザー エクスペリエンス]** ページで、アプリケーションのインストールにおけるユーザーの対話方法に関する情報を指定します。
 
-Quando si distribuiscono applicazioni in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare l'applicazione nella sovrapposizione temporanea e confermare le modifiche in seguito oppure confermarle alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario riavviare il dispositivo. Le modifiche vengono mantenute nel dispositivo.
+書き込みフィルターを有効にした Windows Embedded デバイスにアプリケーションを展開する場合、一時的なオーバーレイにアプリケーションをインストールし、後で変更をコミットすること、またはインストールの期限またはメンテナンス期間中に変更をコミットすることに指定できます。 インストールの期限またはメンテナンス期間中に変更をコミットする場合は、デバイスを再起動する必要があります。 変更はデバイスに保存されます。
 
 >[!NOTE]
-    >  Quando si distribuisce un'applicazione in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta con una finestra di manutenzione configurata. Per altre informazioni sull'uso delle finestre di manutenzione quando si distribuiscono applicazioni in dispositivi con Windows Embedded, vedere [Create Windows Embedded applications](../../apps/get-started/creating-windows-embedded-applications.md) (Creare applicazioni Windows Embedded).
-    > Le opzioni **Installazione software** e **Riavvio del sistema (se richiesto per completare l'installazione)** non vengono usate se lo scopo della distribuzione è impostato su **Disponibile**. È inoltre possibile configurare il livello di notifica visualizzato dall'utente durante l'installazione dell'applicazione.
+    >  アプリケーションを Windows Embedded デバイスに展開する場合、デバイスが、メンテナンス期間が構成されたコレクションのメンバーであることを確認します。 Windows Embedded デバイスにアプリケーションを展開するときの、メンテナンス期間の使用方法に関する詳細については、「[Windows Embedded アプリケーションの作成](../../apps/get-started/creating-windows-embedded-applications.md)」をご覧ください。
+    > 展開目的に [ **利用可能** ] が設定されていると、[ **ソフトウェアのインストール** ] オプションと [ **システムの再起動 (インストールの完了に必要な場合)**] オプションは使用されません。 アプリケーションがインストールされるときにユーザーに表示される通知のレベルを構成することもできます。
 
-### <a name="specify-alert-options-for-the-deployment"></a>Specificare le opzioni di avviso per la distribuzione
+### <a name="specify-alert-options-for-the-deployment"></a>展開のアラート オプションを指定する
 
-Nella pagina **Avvisi** della Distribuzione guidata del software impostare la modalità in cui Configuration Manager e System Center Operations Manager devono generare gli avvisi relativi alla distribuzione. È possibile configurare le soglie di reporting degli avvisi e disattivare il reporting per tutta la durata della distribuzione.
+ソフトウェアの展開ウィザードの **[アラート]** ページで、Configuration Manager および System Center Operations Manager によるこの展開のアラートの生成方法を設定します。 アラートをレポートするしきい値を構成したり、展開中のレポートをオフにすることができます。
 
-### <a name="associate-the-deployment-with-an-ios-app-configuration-policy"></a>Associare la distribuzione a un criterio di configurazione dell'app iOS
+### <a name="associate-the-deployment-with-an-ios-app-configuration-policy"></a>展開を iOS アプリ構成ポリシーと関連付ける
 
-Nella pagina **Criteri di configurazione dell'app** fare clic su **Nuovo** per associare questa distribuzione a un criterio di configurazione dell'app iOS, se ne è stato creato uno. Per altre informazioni su questo tipo di criteri, vedere [Configure iOS apps with app configuration policies](../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md) (Configurare le app iOS con i criteri di configurazione delle app).
+**[アプリ構成ポリシー]** ページで **[新規]** をクリックして、この展開を iOS アプリ構成ポリシーに関連付けます (iOS アプリ構成ポリシーを作成してある場合)。 このタイプのポリシーについて詳しくは、「[Configure iOS apps with app configuration policies](../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md)」 (アプリ構成ポリシーを使用した iOS アプリの構成) をご覧ください。
 
-### <a name="finish-up"></a>Terminare
+### <a name="finish-up"></a>完了
 
-Nella pagina **Riepilogo** della Distribuzione guidata del software esaminare le azioni eseguite dalla distribuzione e quindi fare clic su **Avanti** per terminare la procedura guidata.
+ソフトウェアの展開ウィザードの **[概要]** ページで、この展開で実行される操作を確認し、**[次へ]** をクリックして、ウィザードを完了します。
 
-La nuova distribuzione viene visualizzata nell'elenco **Distribuzioni** del nodo **Distribuzioni** dell'area di lavoro **Monitoraggio**. È possibile modificare le proprietà di questa distribuzione o eliminare la distribuzione dalla scheda **Distribuzioni** del riquadro dettagli dell'applicazione.
+新しい展開は、**[監視]** ワークスペースの **[展開]** ノードにある **[展開]** 一覧に表示されます。 アプリケーションの詳細ペインの [ **展開** ] タブから、展開のプロパティを編集したり、展開を削除したりすることができます。
 
-## <a name="delete-an-application-deployment"></a>Eliminare la distribuzione di un'applicazione
+## <a name="delete-an-application-deployment"></a>アプリケーション展開の削除
 
-1.  Nella console di Configuration Manager accedere a **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.
-3.  Nell'elenco **Applicazioni** selezionare l'applicazione che include la distribuzione da eliminare.
-4.  Nella scheda **Distribuzioni** dell'elenco *<nome applicazione\>* selezionare la distribuzione dell'applicazione da eliminare. Quindi, fare clic su **Elimina** nel gruppo **Distribuzione** della scheda **Distribuzione**.
+1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[アプリケーション]** に移動します。
+3.  **[アプリケーション]** 一覧で、削除する展開を含むアプリケーションを選択します。
+4.  *[<アプリケーション名\>]* 一覧の **[展開]** タブで、削除するアプリケーションの展開を選びます。 **[展開]** タブの **[展開]** グループで、**[削除]** をクリックします。
 
-Quando si elimina la distribuzione di un'applicazione, tutte le istanze dell'applicazione già installate non vengono rimosse. Per rimuovere queste applicazioni, è necessario distribuire l'applicazione nei computer con **Disinstalla**. Se si elimina la distribuzione di un'applicazione o si rimuove una risorsa dalla raccolta in cui si vuole eseguire la distribuzione, l'applicazione non sarà più visibile in Software Center.
+アプリケーションの展開を削除しても、既にインストールされているアプリケーションのインスタンスは削除されません。 アプリケーションを削除するには、コンピューターに対して **[アンインストール]** をともなうアプリケーションを展開する必要があります。 アプリケーションの展開を削除したり、展開先コレクションからリソースを削除したりすると、そのアプリケーションはソフトウェア センターに表示されなくなります。
 
-## <a name="user-notifications-for-required-deployments"></a>Notifiche utente per le distribuzioni richieste
-Quando si riceve il software necessario, dall'impostazione **Posponi e ricorda tra:** è possibile selezionare un'opzione dall'elenco di valori a discesa seguente:
-- **In seguito**  
-Specifica che le notifiche vengono pianificate in base alle impostazioni di notifica configurate nell'agente client.
-- **Orario fisso**  
-Specifica che una nuova visualizzazione della notifica è pianificata dopo il tempo selezionato. Ad esempio, se si seleziona un periodo di 30 minuti, la notifica viene visualizzata di nuovo dopo 30 minuti.
+## <a name="user-notifications-for-required-deployments"></a>必要な展開のユーザー通知
+必要なソフトウェアを受け取ったときに、**[次の時間が経過したら再通知する]** 設定で、次のドロップダウン リストから値を選択できます。
+- **後で**  
+クライアント エージェント設定で構成されている通知の設定に基づいて通知をスケジュールすることを指定します。
+- **定時**  
+選択した時間後にもう一度通知を表示するように指定します。 たとえば、30 分を選択した場合、その通知が 30 分後にもう一度表示されます。
 
-![Pagina dell'agente computer nelle impostazioni dell'agente client](media/ComputerAgentSettings.png)
+![クライアント エージェント設定の [コンピューター エージェント] ページ](media/ComputerAgentSettings.png)
 
-Il tempo di posticipo massimo è sempre basato sui valori di notifica configurati nelle impostazioni dell'agente client su ogni orario presente lungo la cronologia di distribuzione. Ad esempio, se l'impostazione **Più di 24 ore alla scadenza di distribuzione. Avvisare l'utente ogni (ore)** della pagina **Agente computer** è configurata per 10 ore e alla scadenza mancano più di 24 ore, all'avvio della finestra di dialogo viene visualizzato un gruppo di opzioni di posticipo mai superiori a 10 ore. Man mano che si avvicina la scadenza, la finestra di dialogo visualizza un numero minore di opzioni, coerentemente con le impostazioni dell'agente client pertinente per ogni componente della sequenza temporale della distribuzione.
+最大の再通知時間は、展開のタイムラインに沿って、クライアント エージェント設定で毎回構成された値に常に基づきます。 たとえば、**[コンピューター エージェント]** ページで **[展開期限まで 24 時間以上の場合に、ユーザーに通知する間隔 (時間)]** 設定が 10 時間に設定されていて、ダイアログが起動する期限まで 24 時間以上ある場合は、最大で 10 時間以内の再通知を設定するオプションが表示されます。 期限が近づくと、展開タイムラインの各コンポーネントに関連するクライアント エージェント設定に合わせて、ダイアログに表示されるオプションが減ります。
 
-Per una distribuzione ad alto rischio, ad esempio una sequenza di attività che distribuisce un sistema operativo, l'esperienza di notifica dell'utente è ora più invasiva. Ogni volta che si riceve una notifica in relazione alla necessità di manutenzione critica del software, anziché una notifica temporanea sulla barra delle applicazioni viene visualizzata nel computer una finestra di dialogo simile alla seguente:
+さらに、オペレーティング システムを展開するタスク シーケンスなど、危険度の高い展開に対しては、ユーザー通知のエクスペリエンスがより煩わしいものになりました。 一時的なタスク バー通知ではなく、重要なソフトウェア メンテナンスが必要なことがユーザーに通知されるたび、次のようなダイアログ ボックスがユーザーのコンピューターに表示されます。
 
-![Finestra di dialogo del software richiesto](media/client-toast-notification.png)
+![必要なソフトウェアのダイアログ](media/client-toast-notification.png)
 
-## <a name="how-to-check-for-running-executable-files-before-installing-an-application"></a>Come controllare l'esecuzione di file eseguibili prima di installare un'applicazione
+## <a name="how-to-check-for-running-executable-files-before-installing-an-application"></a>アプリケーションをインストールする前に実行中の実行可能ファイルを確認する方法
 
 >[!Tip]
->Introdotta con la versione 1702, è una funzionalità di versione non definitiva. Per abilitarla, vedere [Funzionalità di versioni non definitive in System Center Configuration Manager](https://docs.microsoft.com/sccm/core/servers/manage/pre-release-features).
+>これは、バージョン 1702 で導入されたプレリリース機能です。 有効にする方法については、「[System Center Configuration Manager のプレリリース機能](https://docs.microsoft.com/sccm/core/servers/manage/pre-release-features)」をご覧ください。
 
-Nella finestra di dialogo **Proprietà** di un tipo di distribuzione, nella scheda **Comportamento installazione**, è possibile specificare uno o più file eseguibili che, se in esecuzione, bloccano l'installazione del tipo di distribuzione. L'utente deve chiudere il file eseguibile in esecuzione, che in alternativa può essere chiuso automaticamente per le distribuzioni con scopo richiesto, prima dell'installazione del tipo di distribuzione. Per configurare questa impostazione:
+展開の種類の **[プロパティ]** ダイアログ ボックスの **[インストールの処理]** タブで、実行可能ファイルが実行中の場合、その展開の種類のインストールをブロックする実行可能ファイルの 1 つを指定できます。 ユーザーは、その展開の種類をインストールするには、実行中の実行可能ファイルを終了する必要があります (または、展開の目的が必須の場合は自動的に終了することができます)。 これを構成するには次のようにします。
 
-1. Aprire la finestra di dialogo **Proprietà** per qualsiasi tipo di distribuzione.
-2. Nella scheda **Comportamento di installazione** della finestra di dialogo *<deployment type name>* **Proprietà** fare clic su **Aggiungi**.
-3. Nella finestra di dialogo **Aggiungi un file eseguibile/Modifica il file eseguibile** immettere il nome del file eseguibile che, se in esecuzione, blocca l'installazione dell'applicazione. Facoltativamente, è anche possibile immettere un nome descrittivo per l'applicazione in modo da identificarla più facilmente nell'elenco.
-4. Fare clic su **OK** e chiudere la finestra di dialogo *<deployment type name>* **Proprietà**.
-5. Se si distribuisce un'applicazione, nella pagina **Impostazioni di distribuzione** della Distribuzione guidata del software selezionare **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione** e continuare la procedura di distribuzione dell'applicazione.
+1. いずれかの展開の種類の **[プロパティ]** ダイアログ ボックスを開きます。
+2. **[*<deployment type name>* のプロパティ]** ダイアログ ボックスの **[インストールの処理]** タブで、**[追加]** をクリックします。
+3. **[実行可能ファイルの追加]/[実行可能ファイルの編集]** ダイアログ ボックスで、実行している場合はアプリケーションのインストールをブロックする実行可能ファイルの名前を入力します。 必要に応じて、一覧で識別しやすいようにアプリケーションのフレンドリ名を入力することもできます。
+4. **[OK]** をクリックして、**[*<deployment type name>* のプロパティ]** ダイアログ ボックスを閉じます。
+5. 次に、アプリケーションを展開するときに、ソフトウェアの展開ウィザードの **[展開設定]** ページで、**[[展開の種類プロパティ] ダイアログ ボックスの [インストールの処理] タブで指定した実行中の実行可能ファイルをすべて自動的に閉じる]** をオンにした後、アプリケーションの展開を続けます。
 
-Quando l'applicazione raggiunge i PC client, si verifica il comportamento seguente:
+アプリケーションがクライアント PC に届いた後、次の処理が行われます。
 
-- Se l'applicazione è stata distribuita come **Disponibile** e un utente finale prova a installarla, viene chiesto di chiudere tutti i file eseguibili in esecuzione specificati prima di procedere con l'installazione.
+- アプリケーションの展開が **[使用可能]** で、エンド ユーザーがアプリケーションをインストールしようとすると、インストールを続行する前に、指定した実行中の実行可能ファイルを終了するようにユーザーに求めます。
 
-- Se l'applicazione è stata distribuita come **Richiesta** e l'opzione **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione** è selezionata, viene visualizzata una finestra di dialogo che informa che i file eseguibili specificati verranno chiusi automaticamente quando verrà raggiunta la scadenza dell'installazione dell'applicazione. È possibile pianificare queste finestre di dialogo in **Impostazioni client** > **Agente computer**. Se non si vuole che l'utente finale visualizzi questi messaggi, selezionare **Nascondi in Software Center e nascondi tutte le notifiche** nella scheda **Esperienza utente** delle proprietà di distribuzione.
+- アプリケーションの展開が **[必須]** で、オプション **[[展開の種類プロパティ] ダイアログ ボックスの [インストールの処理] タブで指定した実行中の実行可能ファイルをすべて自動的に閉じる]** がオンの場合、アプリケーションのインストール期限に達したときに、指定した実行可能ファイルが自動的に閉じられることを通知するダイアログ ボックスが表示されます。 これらのダイアログは **[クライアント設定]** > **[コンピューター エージェント]** でスケジュールできます。 これらのメッセージをエンド ユーザーに表示しない場合は、展開のプロパティの **[ユーザー エクスペリエンス]** タブで **[すべての通知をソフトウェア センターで非表示にし、ユーザーにも通知しない]** をオンにします。
 
-- Se l'applicazione è stata distribuita come **Richiesta** e l'opzione **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione** non è selezionata, l'installazione dell'applicazione avrà esito negativo se sono in esecuzione una o più applicazioni tra quelle specificate.
+- アプリケーションの展開が **[必須]** で、オプション **[[展開の種類プロパティ] ダイアログ ボックスの [インストールの処理] タブで指定した実行中の実行可能ファイルをすべて自動的に閉じる]** がオフの場合、指定したアプリケーションの 1 つまたは複数が実行中の場合、アプリのインストールは失敗します。
 
-## <a name="for-more-information"></a>Per altre informazioni
+## <a name="for-more-information"></a>詳細情報
 
-   -  [Impostazioni per gestire le distribuzioni ad alto rischio](../../protect/understand/settings-to-manage-high-risk-deployments.md)  
-   -  [Come configurare le impostazioni client](../../core/clients/deploy/configure-client-settings.md)
-
+   -  [危険度の高い展開を管理するための設定](../../protect/understand/settings-to-manage-high-risk-deployments.md)  
+   -  [クライアント設定を構成する方法](../../core/clients/deploy/configure-client-settings.md)

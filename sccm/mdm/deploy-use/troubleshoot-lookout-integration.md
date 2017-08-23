@@ -1,13 +1,12 @@
 ---
-title: Risolvere i problemi di integrazione di Lookout | System Center Configuration Manager
-description: Questo argomento descrive la risoluzione di problemi che possono verificarsi con l&quot;integrazione di Lookout.
+title: "Lookout 統合のトラブルシューティング | System Center Configuration Manager"
+description: "このトピックでは、Lookout 統合でよく発生する問題のトラブルシューティングについて説明します。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e36b98c7-d0f4-4dd6-bac3-6a6c4b4bf841
@@ -15,76 +14,73 @@ caps.latest.revision:
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 399e8b9e2e2dd4621abb6ffca765ce2a69d86b9e
-ms.contentlocale: it-it
-ms.lasthandoff: 03/06/2017
-
-
+ms.openlocfilehash: 4fd2d3b8aae6a2f42e7c6a87723d16368be30984
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="troubleshoot-lookout-integration-with-intune"></a>Risolvere i problemi di integrazione di Lookout con Intune
+# <a name="troubleshoot-lookout-integration-with-intune"></a>Intune による Lookout 統合のトラブルシューティング
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-## <a name="troubleshoot-login-errors"></a>Risolvere i problemi di accesso
-### <a name="403-errors"></a>Errori 403
-Quando si accede alla [console di Lookout MTP](https://aad.lookout.com) può essere visualizzato un errore 403: **You are not authorized to access the service** (Non si dispone dell'autorizzazione per accedere al servizio). Questa situazione può verificarsi quando il nome utente specificato non è membro del gruppo Azure Active Directory (Azure AD) configurato per l'accesso a Lookout MTP.
+## <a name="troubleshoot-login-errors"></a>ログイン エラーのトラブルシューティング
+### <a name="403-errors"></a>403 エラー
+[Lookout MTP コンソール](https://aad.lookout.com)へのログイン時に**サービスにアクセスする権限がありません**という 403 エラーが発生する場合があります。このエラーは、Lookout MTP にアクセスするように構成されている Azure Active Directory (Azure AD) グループのメンバーではないユーザー名を指定した場合に発生することがあります。
 
-Lookout MTP consente l'accesso solo agli utenti di un gruppo di Azure AD configurato. Se non si sa quale gruppo è configurato per l'accesso a Lookout MTP, contattare il supporto tecnico di Lookout.
+Lookout MTP は、構成済みの Azure AD グループのユーザーのみがアクセスできるように構成されています。 Lookout MTP へのアクセス権が構成されているグループがわからない場合は、Lookout サポートに連絡してください。
 
-È possibile contattare il supporto tecnico di Lookout con uno dei metodi seguenti:
+Lookout サポートには次の方法で連絡することができます。
 
-* Posta elettronica: enterprisesupport@lookout.com
-* Accedere alla [console di MTP](http://aad.lookout.com) e passare al modulo **Support** (Supporto).
-* Accedere a: https://enterprise.support.lookout.com/hc/en-us/requests e creare una richiesta di supporto.
+* 電子メール: enterprisesupport@lookout.com
+* [MTP コンソール](http://aad.lookout.com)にログインし、**[サポート]** モジュールに移動します。
+* https://enterprise.support.lookout.com/hc/en-us/requests に移動して、サポートを要求します。
 
-### <a name="unable-to-sign-in"></a>L'accesso non è riuscito
-Il seguente errore può apparire quando l'utente amministratore globale di Azure AD non ha accettato la configurazione iniziale di Lookup.
+### <a name="unable-to-sign-in"></a>サインインできない
+Azure AD グローバル管理者ユーザーが初期の Lookout セットアップを受け入れていない場合、次のエラーが表示される可能性があります。
 
-![Schermata della pagina di accesso a Lookout con l'errore di accesso](media/lookout-consent-not-accepted-error.png)
+![サインイン エラーを示す Lookout ログイン画面のスクリーン ショット](media/lookout-consent-not-accepted-error.png)
 
-Per risolvere questo problema, l'utente amministratore globale deve accedere a https://aad.lookout.com/les?action=consent e accettare la richiesta di avviare il programma di installazione. Per altre informazioni, vedere [Set up your subscription with Lookout MTP](set-up-your-subscription-with-lookout.md) (Configurare l'abbonamento a Lookout MTP)
+この問題を解決するには、グローバル管理者ユーザーが https://aad.lookout.com/les?action=consent にログインし、セットアップを開始するためのプロンプトを受け入れる必要があります。 詳細については、[Lookout MTP でのサブスクリプションのセットアップ](set-up-your-subscription-with-lookout.md)に関するトピックを参照してください。
 
-## <a name="troubleshoot-device-status-issues"></a>Risolvere i problemi di stato del dispositivo
+## <a name="troubleshoot-device-status-issues"></a>デバイスの状態に関する問題のトラブルシューティング
 
-### <a name="device-not-showing-up-in-the-lookout-mtp-console-device-list"></a>Il dispositivo non appare nell'elenco dei dispositivi della console di Lookout MTP
+### <a name="device-not-showing-up-in-the-lookout-mtp-console-device-list"></a>Lookout MTP コンソールのデバイス リストにデバイスが表示されない
 
-Questo problema può verificarsi in uno dei seguenti scenari:
-* Se l'utente che possiede il dispositivo non appartiene al gruppo **Enrollment Group** (Gruppo di registrazione) specificato nella **console di Lookout MTP**.  Nel modulo **System** (Sistema), andare alla scheda **Intune Connector** ed esaminare le impostazioni **Enrollment Management** (Gestisci registrazione).  Saranno presenti uno o più gruppi di Azure AD configurati per la registrazione.  Verificare che l'utente proprietario del dispositivo mancante appartenga a uno dei gruppi Azure AD specificati.  Dopo che un nuovo utente viene aggiunto al gruppo di registrazione sarà necessario un tempo massimo pari all'intervallo di polling (5 minuti è il valore predefinito) perché il dispositivo appaia nel modulo **Devices** (Dispositivi) della console di Lookout MTP.
+これは、次のシナリオのいずれかで発生する可能性があります。
+* このデバイスを所有するユーザーが、**Lookout MTP コンソール**で指定されている**登録グループ**に属していない場合。  **[システム]** モジュールから、**[Intune コネクタ]** タブに移動し、**[登録管理]** 設定を確認します。  1 つ以上の Azure AD グループが登録用に構成されている必要があります。  表示されないデバイスを所有するユーザーが、指定されている Azure AD グループのいずれかのメンバーであることを確認します。  新しいユーザーが登録グループに追加されてから、Lookout MTP コンソールの **[デバイス]** モジュールにデバイスが表示されるようになるまで、最大で構成されているポーリング間隔 (既定値は 5 分) かかります。
 
-* Se il dispositivo non è supportato da Lookout MTP.  I dispositivi che sono non supportati appaiono nella sezione **Managed Devices** (Dispositivi gestiti) delle impostazioni connettore nella console di Lookout MTP.
+* Lookout MTP でデバイスがサポートされていない場合。  サポートされていないデバイスは、Lookout MTP コンソールのコネクタ設定の **[管理対象デバイス]** セクションに表示されます。
 
-### <a name="device-continues-to-be-reported-as-pending"></a>Il dispositivo continua a essere segnalato come **Pending** (In sospeso)
+### <a name="device-continues-to-be-reported-as-pending"></a>デバイスは**保留中**と表示され続ける
 
-Se un dispositivo risulta **Pending**  (In sospeso), l'utente finale non ha aperto l'app Lookout for Work e non ha toccato il pulsante **Activate** (Attiva). Per informazioni dettagliate sull'attivazione di dispositivi con l'app Lookout for Work, leggere l'argomento seguente:
+デバイスが**保留中**と表示される場合、エンド ユーザーが Lookout for Work アプリを開いて、**[アクティブ化]** ボタンをタップしていないことを意味します。 Lookout for Work アプリでのデバイスのアクティブ化の詳細については、以下のトピックを参照してください。
 
-[Viene richiesto di installare Lookout for Work nel dispositivo Android](http://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
+[Android デバイスで Lookout for Work のインストールを求められる](http://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
 
-### <a name="in-the-lookout-mtp-console-a-device-is-showing-as-active-but-does-not-have-a-device-id"></a>Nella console di Lookout MTP un dispositivo appare come attivo, ma non ha un ID dispositivo.
-Ciò significa che l'utente che possiede il dispositivo non appartiene al gruppo di registrazione specificato nella console di Lookout MTP.   Un dispositivo può assumere questo stato se l'utente che lo possiede è stato rimosso dal gruppo di registrazione o se il gruppo di registrazione a cui appartiene l'utente è stato rimosso.
+### <a name="in-the-lookout-mtp-console-a-device-is-showing-as-active-but-does-not-have-a-device-id"></a>Lookout MTP コンソールで、デバイスはアクティブと表示されるが、デバイス ID がない
+これは、このデバイスを所有するユーザーが、Lookout MTP コンソールで指定されている登録グループに含まれていないことを意味します。   デバイスを所有するユーザーが登録グループから削除されているか、ユーザーが属している登録グループが削除されている場合、デバイスがこのような状態になることがあります。
 
-Nel modulo **System** (Sistema) della console di Lookout MTP, andare alla scheda **Intune Connector** ed esaminare le impostazioni **Enrollment** (Registrazione).  Saranno presenti uno o più gruppi di Azure AD configurati per la registrazione.  Verificare che l'utente proprietario del dispositivo appartenga a uno dei gruppi Azure AD specificati.
+Lookout MTP コンソールの **[システム]** モジュールから **[Intune コネクタ]** タブに移動し、**[登録]** 設定を確認します。  1 つ以上の Azure AD グループが登録用に構成されている必要があります。  デバイスを所有するユーザーが指定された Azure AD グループのいずれかに属していることを確認します。
 
-Quando un dispositivo è in questo stato, Lookout continua a notificare all'utente le eventuali minacce rilevate, ma non invia informazioni relative alle minacce a Intune.
+デバイスがこの状態である間は、Lookout は検出された脅威をユーザーに通知し続けますが、Intune には脅威情報は送信されません。
 
-### <a name="device-shows-disconnected-state"></a>Lo stato del dispositivo è disconnesso
+### <a name="device-shows-disconnected-state"></a>デバイスが切断状態を示す
 
-Se lo stato il dispositivo è disconnesso, Lookout MTP non ha ricevuto comunicazioni dal dispositivo per un periodo superiore all'intervallo preconfigurato (il valore predefinito è 30 giorni, con un minimo di 7 giorni). Ciò significa che l'app Portale aziendale o l'app Lookout for Work non è installata nel dispositivo o è stata disinstallata. La reinstallazione dell'app dovrebbe risolvere il problema. Quando l'utente apre Lookout for Work e attiva l'app, il dispositivo ripete la sincronizzazione con Lookout MTP e Intune.
+切断とは、Lookout MTP が構成されている期間 (既定値は 30 日、最小は 7 日) 中にデバイスから応答を受信していないことを意味します。 これは、ポータル サイト アプリまたは Lookout for Work アプリがデバイスにインストールされていないか、アンインストールされていることを意味します。 アプリを再インストールすることでこの問題が解決されます。 ユーザーが Lookout for Work を開き、アプリをアクティブ化すると、デバイスは Lookout MTP および Intune と再同期します。
 
-### <a name="forcing-a-resync-on-the-device"></a>Forzare la risincronizzazione del dispositivo
-Dal modulo **Devices** (Dispositivi) della console di Lookout MTP, l'amministratore può selezionare il dispositivo e scegliere di eliminarlo.   Quando il proprietario del dispositivo torna ad aprire l'app Lookout for Work e tocca **Activate** (Attiva), il dispositivo esegue una risincronizzazione completa.
+### <a name="forcing-a-resync-on-the-device"></a>デバイスの強制的な再同期
+Lookout MTP コンソールの **[デバイス]** モジュールから、管理者はデバイスを選択して削除することができます。   次回、デバイスの所有者が Lookout for Work アプリを開き、**[アクティブ化]** をタップしたときに、デバイスは完全な再同期状態となります。
 
-### <a name="the-owner-of-the-device-is-no-longer-using-this-device"></a>Il proprietario del dispositivo non usa più il dispositivo
-È necessario cancellare i dati del dispositivo e richiedere al nuovo utente di eseguire la registrazione come descritto in [questo argomento](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/wipe-lock-reset-devices#full-wipe).
+### <a name="the-owner-of-the-device-is-no-longer-using-this-device"></a>デバイスの所有者がこのデバイスを使用しなくなった
+デバイスをワイプし、[このトピック](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/wipe-lock-reset-devices#full-wipe)の説明に従って新しいユーザーに登録を要求する必要があります。
 
 
-È anche possibile scegliere il modulo **Devices** (Dispositivi) della console di Lookout MTP e scegliere **Delete** (Elimina).
+Lookout MTP コンソールの **[デバイス]** モジュールに移動して、**[削除]** を選択することもできます。
 
-Se il nuovo utente è incluso in uno dei gruppi di registrazione specificati nella console di Lookout MTP, il dispositivo viene visualizzato una volta che Azure AD lo associa al nuovo utente.
+新しいユーザーが Lookout MTP コンソールで指定されている登録グループのいずれかに属している限り、Azure AD がデバイスを新しいユーザーに関連付けるとデバイスは表示されます。
 
-## <a name="compliance-remediation-workflows"></a>Flussi di lavoro di correzione basata sulla conformità
-[Viene richiesto di installare Lookout for Work nel dispositivo Android]( http://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
+## <a name="compliance-remediation-workflows"></a>コンプライアンス修復のワークフロー
+[Android デバイスで Lookout for Work のインストールを求められる]( http://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
 
-[È necessario risolvere una minaccia rilevata da Lookout for Work nel dispositivo Android](http://docs.microsoft.com/intune/enduser/you-need-to-resolve-a-threat-found-by-lookout-for-work-android)
-
+[Lookout for Work が Android デバイスで検出した脅威を解決する必要がある](http://docs.microsoft.com/intune/enduser/you-need-to-resolve-a-threat-found-by-lookout-for-work-android)

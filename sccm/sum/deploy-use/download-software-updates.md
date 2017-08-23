@@ -1,6 +1,6 @@
 ---
-title: Scaricare gli aggiornamenti software - Configuration Manager | Microsoft Docs
-description: Usare il download guidato degli aggiornamenti software per scaricare gli aggiornamenti software e distribuirli a punti di distribuzione per essere pronti per la distribuzione ai client.
+title: "ソフトウェア更新プログラムのダウンロード - Configuration Manager | Microsoft Docs"
+description: "ソフトウェア更新プログラムのダウンロード ウィザードを使用して、ソフトウェア更新プログラムをダウンロードし、クライアントに展開できるように配布ポイントに配布します。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -9,33 +9,26 @@ ms.date: 01/23/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: de78e8d3-043f-4cd3-97e0-4dfb824fd3fb
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4e44e2b8f6baf020c3b7742bafd607082ffacaa4
 ms.openlocfilehash: f38f72f9f547b82c92789f02975cbd0193b79b2d
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="download-software-updates"></a>ソフトウェア更新プログラムのダウンロード  
 
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-
-# <a name="download-software-updates"></a>Scaricare gli aggiornamenti software  
-
-*Si applica a: System Center Configuration Manager (Current Branch)*
-
-Sono disponibili diversi metodi per scaricare gli aggiornamenti software in Configuration Manager. Quando si crea una regola di distribuzione automatica (ADR) o si distribuiscono manualmente gli aggiornamenti software, gli aggiornamenti software vengono scaricati nella raccolta contenuto nel server del sito. Gli aggiornamenti software vengono quindi copiati nella raccolta contenuto nei punti di distribuzione che sono associati al pacchetto di distribuzione configurato. Se si desidera scaricare gli aggiornamenti software prima di distribuirli, è possibile usare il Download guidato degli aggiornamenti. Eseguendo questa operazione è possibile verificare che gli aggiornamenti software siano disponibili nei punti di distribuzione prima di distribuirli ai computer client.  
+Configuration Manager でソフトウェア更新プログラムをダウンロードする方法はいくつかあります。 自動展開ルール (ADR) を作成するか、またはソフトウェア更新プログラムを手動で展開すると、ソフトウェア更新プログラムがサイト サーバーのコンテンツ ライブラリにダウンロードされます。 次に、ソフトウェア更新プログラムは、構成済みの展開パッケージに関連付けられている配布ポイントのコンテンツ ライブラリにコピーされます。 ソフトウェア更新プログラムをダウンロードしてから展開する場合は、更新のダウンロード ウィザードを使用できます。 こうすると、ソフトウェア更新プログラムをクライアント コンピューターに展開する前に、そのソフトウェア更新プログラムが配布ポイントで使用可能になっていることを確認できます。  
 
 > [!NOTE]  
->  Per informazioni sul monitoraggio dello stato del contenuto, vedere [Content status monitoring](../deploy-use/monitor-software-updates.md#BKMK_ContentStatus).  
+>  コンテンツのステータス監視の詳細については、「 [Content status monitoring](../deploy-use/monitor-software-updates.md#BKMK_ContentStatus)」を参照してください。  
 
-Usare la seguente procedura per scaricare gli aggiornamenti software usando il Download guidato degli aggiornamenti software.  
+ソフトウェア更新プログラムのダウンロード ウィザードを使用してソフトウェア更新プログラムをダウンロードするには、次の手順に従います。  
 
-#### <a name="to-download-software-updates"></a>Per scaricare gli aggiornamenti software  
+#### <a name="to-download-software-updates"></a>ソフトウェア更新プログラムをダウンロードするには  
 [!INCLUDE[downloadupdates](..\includes\downloadupdates.md)]
 <!---
 1.  In the Configuration Manager console, navigate to **Software Library** > **Software Updates**.  
@@ -119,4 +112,3 @@ Usare la seguente procedura per scaricare gli aggiornamenti software usando il D
 9. On the **Summary** page, verify the settings that you selected in the wizard, and then click **Next** to download the software updates.  
 
 10. On the **Completion** page, verify that the software updates were successfully downloaded, and then click **Close**.  --->
-

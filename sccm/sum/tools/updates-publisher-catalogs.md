@@ -1,108 +1,105 @@
 ---
-title: Gestire cataloghi di aggiornamenti | Microsoft Docs
-description: Gestire cataloghi di aggiornamenti software per System Center Updates Publisher
+title: "更新プログラム カタログの管理 | Microsoft Docs"
+description: "System Center Updates Publisher のソフトウェア更新プログラム カタログの管理"
 ms.custom: na
 ms.date: 4/29/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 887f8029-1a3a-423c-a9c1-31dc0d693386
-caps.latest.revision: 1
+caps.latest.revision: "1"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: NOINDEX, NOFOLLOW
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31819a1df4e63e1114682490a9b3c3b4e5c99cfa
 ms.openlocfilehash: 7451d699e0e5e146b0538a57deca595188d113bf
-ms.contentlocale: it-it
-ms.lasthandoff: 05/20/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-software-update-catalogs-in-updates-publisher"></a>Gestire cataloghi di aggiornamenti software in Updates Publisher
+# <a name="manage-software-update-catalogs-in-updates-publisher"></a>Updates Publisher のソフトウェア更新プログラム カタログの管理
 
-*Si applica a: System Center Updates Publisher*
+*適用対象: System Center Updates Publisher*
 
-Usare l'**area di lavoro** **Cataloghi** per gestire i cataloghi di aggiornamenti software. Questo include l'aggiunta di nuovi cataloghi, la gestione di sottoscrizioni di cataloghi esistenti e l'importazione di informazioni sugli aggiornamenti da un catalogo al repository di Updates Publisher repository.
+ソフトウェア更新プログラム カタログを管理するには、**[カタログ]** **ワークスペース**を使用します。 このワークスペースでは、新しいカタログの追加、既存のカタログ サブスクリプションの管理、カタログから Updates Publisher リポジトリへの更新プログラム情報のインポートができます。
 
-I cataloghi di aggiornamenti software contengono informazioni sugli aggiornamenti correlati creati da organizzazioni diverse da Microsoft. Tali organizzazioni includono l'organizzazione dell'utente e i fornitori di software di terze parti che hanno registrato i propri cataloghi con Microsoft. I cataloghi registrati da fornitori di software sono denominati *cataloghi partner*. I cataloghi creati dall'utente e non registrati con Microsoft sono denominati cataloghi *utente*.
+ソフトウェア更新プログラム カタログには、Microsoft 以外の組織が作成した関連する更新プログラムについての情報が含まれています。 Microsoft 以外の組織には、ご自身の所属する組織や サードパーティ ソフトウェア ベンダーとして Microsoft にカタログを登録した組織も含まれます。 ソフトウェア ベンダーが登録したカタログは、*パートナー カタログ*といいます。 作成したが Microsoft に登録していないカタログを*ユーザー* カタログといいます。
 
-## <a name="add-software-update-catalogs"></a>Aggiungere cataloghi di aggiornamenti software
-Per poter gestire gli aggiornamenti contenuti in un catalogo di aggiornamenti, è prima necessario aggiungere quest'ultimo a Updates Publisher. Quando si aggiunge un catalogo, Updates Publisher:
--   Crea una sottoscrizione al catalogo in questione, così da consentire la verifica della disponibilità di aggiornamenti.
--   Aggiunge il catalogo a un elenco nella finestra **My Software Update Catalogs** (Cataloghi di aggiornamenti software personali) dell'area di lavoro **Cataloghi**.  
+## <a name="add-software-update-catalogs"></a>ソフトウェア更新プログラム カタログの追加
+カタログ内の更新プログラムを管理するためには、更新プログラム カタログを Updates Publisher に追加する必要があります。 Updates Publisher にカタログを追加する場合:
+-   カタログの更新プログラムをチェックできるように、そのカタログに対するサブスクリプションを作成します。
+-   **[カタログ] ワークスペース**の **[My Software Update Catalogs]\(自分のソフトウェア更新プログラム カタログ)** ウィンドウ内の一覧にカタログを追加します。  
 
-Nella console sono disponibili informazioni su ciascun catalogo sottoscritto. Le informazioni includono l'URL o il percorso di download, il nome della società o dell'organizzazione che ha creato il catalogo e la data dell'ultima importazione o modifica.
+サブスクライブされた各カタログの情報はコンソールで確認できます。 この情報には、ダウンロード URL またはダウンロード場所、カタログを作成した会社または組織の名前、インポートまたは変更の最終更新日時などの情報が含まれています。
 
-Ad ogni avvio, Updates Publisher può controllare automaticamente le sottoscrizioni per verificare la presenza di eventuali modifiche. Questa possibilità viene configurata come una delle opzioni [Avanzate](/sccm/sum/tools/updates-publisher-options#advanced). Quando questa opzione è configurata, Updates Publisher fa riferimento alle informazioni sull'URL o sul percorso di download e invia un avviso se rileva modifiche al catalogo eseguite dopo l'ultima importazione di quest'ultimo nel repository.
+Updates Publisher は起動するたびに、自動でサブスクリプションにおける変更をチェックします。 この機能は [[詳細オプション]](/sccm/sum/tools/updates-publisher-options#advanced) として構成されます。 構成すると、Updates Publisher はそのサブスクリプションのダウンロード URL またはダウンロード場所の情報を参照し、カタログがリポジトリにインポートされた最後の日時以降にカタログに変更が加えられていた場合は警告します。
 
-Per verificare manualmente la presenza di un catalogo di aggiornamenti, selezionare il catalogo dall'elenco **My Software Update Catalogs** (Cataloghi di aggiornamenti software personali) e quindi selezionare **Aggiorna** dalla barra multifunzione.
+カタログの更新を手動でチェックするには、**[My Software Update Catalogs]\(自分のソフトウェア更新プログラム カタログ)** 一覧からカタログを選択し、リボンの **[最新の情報に更新]** を選択します。
 
-Oltre all'aggiunta di cataloghi e alla visualizzazione di informazioni sui cataloghi sottoscritti, è possibile effettuare le operazioni seguenti:
--  **Modificare** informazioni per i cataloghi *utente*.
--  **Eliminare** (rimuovere) un catalogo da Updates Publisher.
--  **Importare** aggiornamenti da un catalogo nel repository di Updates Publisher. Quando si importano aggiornamenti, si importano tutti gli aggiornamenti presenti in tale catalogo. È quindi possibile visualizzare gli aggiornamenti nell'area di lavoro Aggiornamenti, dove è possibile selezionare e pubblicare aggiornamenti nel server di aggiornamento.
+カタログを追加するだけでなく、サブスクライブされたカタログに関する情報を表示したり、次のことができます。
+-  *ユーザー* カタログ情報の**編集**。
+-  Updates Publisher からのカタログの**削除**。
+-  カタログから Updates Publisher リポジトリへの更新プログラムの**インポート**。 更新プログラムをインポートする場合は、そのカタログに含まれるすべての更新プログラムをインポートします。 [更新プログラム] ワークスペースで更新プログラムが表示されるようになり、更新プログラムを選択して更新サーバーに発行できるようになりました。
 
 > [!NOTE]   
-> L'eliminazione di un catalogo da Updates Publisher determina la rimozione dal repository degli aggiornamenti presenti in tale catalogo. Questo non influisce sugli aggiornamenti pubblicati nel server di aggiornamento. Per rimuovere dal server di aggiornamento gli aggiornamenti che non sono più presenti nel repository, vedere [Impostare come scaduti gli aggiornamenti senza riferimenti](/sccm/sum/tools/updates-publisher-options#expire-unreferenced-software-updates).
+> Updates Publisher からカタログを削除すると、そのカタログの更新プログラムがリポジトリから削除されます。 削除しても、更新サーバーに発行した更新プログラムには影響しません。 リポジトリから削除した更新プログラムを更新サーバーからも削除する方法については、[参照されていないソフトウェア更新プログラムを期限切れにする](/sccm/sum/tools/updates-publisher-options#expire-unreferenced-software-updates)方法に関する記事をご覧ください。
 
-## <a name="manage-update-catalogs"></a>Gestire cataloghi di aggiornamenti
-È possibile visualizzare i cataloghi dell'elenco importati nella finestra **My Software Update Catalogs** (Cataloghi di aggiornamenti software personali) dell'**area di lavoro Cataloghi**. In quest'area di lavoro è possibile:
+## <a name="manage-update-catalogs"></a>更新プログラム カタログの管理
+**[カタログ] ワークスペース** の **[My Software Update Catalogs]\(自分のソフトウェア更新プログラム カタログ)** ウィンドウに、インポートしたカタログの一覧が表示されます。 このワークスペースでは、次のことができます。
 
--   **Aggiungere un catalogo partner:** usare uno dei metodi seguenti per trovare nuovi cataloghi partner:
+-   **パートナー カタログの追加:** 次のいずれかの操作を行って、新しいパートナー カタログを検索します。
 
-    -   Nelle console passare all'**area di lavoro Aggiornamenti** > **Panoramica**. Nella finestra **Operazioni preliminari** scegliere **Add Partner Software Updates Catalogs** (Aggiungi cataloghi di aggiornamento software partner).
+    -   コンソールで、**[更新プログラム] ワークスペース** > **[概要]** に移動します。 **[Getting Started] \(はじめに)** ウィンドウで、**[Add Partner Software Updates Catalogs] \(パートナー ソフトウェア更新カタログの追加)** を選択します。
 
-    -   Nella console passare all'**area di lavoro Cataloghi** > **My Catalogs** (Cataloghi personali). Scegliere quindi **Add Catalogs** (Aggiungi cataloghi) dalla barra multifunzione.
+    -   コンソールで、**[カタログ] ワークスペース** > **[My Catalogs]\(自分のカタログ)** に移動します。 次に、リボンの **[Add Catalogs]\(カタログの追加)** を選択します。
 
--   **Aggiungere un catalogo utente:** nella console passare all'**area di lavoro Cataloghi** > **My Catalogs** (Cataloghi personali). Scegliere quindi **Add Catalogs** (Aggiungi cataloghi) dalla barra multifunzione. Oltre al percorso del file con estensione cab, è necessario specificare un fornitore, un nome e una descrizione per identificare il catalogo.
+-   **ユーザー カタログの追加**: コンソールで、**[カタログ] ワークスペース** > **[My Catalogs]\(自分のカタログ)** に移動します。 次に、リボンの **[Add Catalogs] (カタログの追加)** を選択します。 .cab ファイルの場所の他に [発行元]、[名前]、[説明] を指定して、カタログを識別する必要があります。
 
 
--   **Verificare la presenza di aggiornamenti dei cataloghi:** selezionare uno o più cataloghi, quindi scegliere **Aggiorna** dalla barra multifunzione.
+-   **カタログの更新プログラムのチェック:** 1 つまたは複数のカタログを選択し、リボンの **[最新の情報に更新]** を選択します。
 
--   **Modificare un catalogo utente:** selezionare un catalogo *utente* e quindi scegliere **Modifica** dalla barra multifunzione. È quindi possibile modificare le proprietà definite dall'utente.
+-   **ユーザー カタログの編集**: *ユーザー* カタログを選択し、リボンの **[編集]** を選択します。 ユーザー定義プロパティを変更できます。
 
--   **Eliminare cataloghi:** selezionare uno o più cataloghi e quindi scegliere **Rimuovi** dalla barra multifunzione. Questa azione rimuove il catalogo, la sottoscrizione e gli aggiornamenti di questi cataloghi dal repository di Updates Publisher.
+-   **カタログの削除**: 1 つまたは複数のカタログを選択し、リボンの **[削除]** を選択します。 これにより、Updates Publisher リポジトリにあるこれらのカタログから、カタログ、サブスクリプション、更新プログラムが削除されます。
 
--   **Aggiungere aggiornamenti da un catalogo al repository**: scegliere **Importa** dalla barra multifunzione per avviare l'**Importazione guidata catalogo**. Per altre informazioni, vedere [Importare aggiornamenti](#import-updates)
+-   **カタログからリポジトリへの更新プログラムの追加**: リボンの **[インポート]** を選択し、**[カタログのインポート]** ウィザードを開始します。 詳細については、下記の「[更新プログラムのインポート](#import-updates)」をご覧ください。
 
-## <a name="import-updates"></a>Importare aggiornamenti
-Quando si importa un catalogo, Updates Manager aggiunge gli aggiornamenti da tale catalogo nel repository di Updates Publisher. Dopo l'importazione degli aggiornamenti, è possibile pubblicarli nel server di aggiornamento per renderli disponibili ai dispositivi gestiti.
+## <a name="import-updates"></a>更新プログラムのインポート
+カタログをインポートするとき、Updates Manager は、そのカタログの更新プログラムを Updates Publisher リポジトリに追加します。 更新プログラムのインポートが完了すると、更新サーバーに更新プログラムを発行して、管理対象のデバイスで更新プログラムを使用できるようになります。
 
-### <a name="to-import-updates"></a>Per importare aggiornamenti
-1.  Per avviare l'**Importazione guidata catalogo**, scegliere **Importa** dalla barra multifunzione in una delle aree di lavoro seguenti:
+### <a name="to-import-updates"></a>更新プログラムをインポートするには
+1.  **[カタログのインポート]** ウィザードを開始するには、次のワークスペースのリボンのいずれかから **[インポート]** を選択します。
 
-    -   Area di lavoro Cataloghi
+    -   [カタログ] ワークスペース
 
-    -   Area di lavoro Aggiornamenti
+    -   [更新プログラム] ワークスペース
 
-2.  Nella pagina **Tipo di importazione** selezionare uno o più cataloghi aggiunti ad Updates Publisher. In alternativa, specificare un percorso a un catalogo non ancora aggiunto come sottoscrizione. Scegliere **Avanti** per visualizzare la schermata di riepilogo, quindi, dopo aver verificato le informazioni immesse, scegliere **Avanti** per avviare l'importazione.
+2.  **[インポートの種類]** ページで、Updates Publisher に追加したカタログを 1 つまたは複数選択するか、サブスクリプションとしてまだ追加していないカタログへのパスを指定します。 **[次へ]** を選択して概要の画面を表示し、準備ができたら **[次へ]** を選択してインポートを開始します。
 
-3.  Scegliere **Avanti** per visualizzare la schermata di riepilogo, quindi, dopo aver verificato le informazioni immesse, scegliere **Avanti** per avviare l'importazione.
+3.  **[Security Warning – Catalog Validation]\(セキュリティの警告 - カタログ検証)** ウィンドウでカタログ証明書を確認し、準備ができたら **[Accept]\(承諾)** を選択します。
 
     > [!CAUTION]    
-    > Accettare aggiornamenti solo da autori attendibili. Gli aggiornamenti software offerti da autori non attendibili possono potenzialmente danneggiare i computer client durante la ricerca di aggiornamenti.
+    > 信頼できる発行元からのみ更新プログラムを受け付けます。 信頼できない発行元からのソフトウェア更新プログラムは、更新プログラムのスキャンの際に、クライアント コンピューターで問題を起こす可能性があります。
 
-    >  Se si ritiene che un autore non sia più attendibile, rimuoverlo dall'elenco degli autori attendibili. Per trovare altre informazioni sull'accettazione dei cataloghi, fare clic su **Tell Me More** (Ulteriori informazioni) nella finestra di dialogo **Security Warning – Catalog Validation** (Avviso di protezione – Convalida catalogo).
+    >  発行元を信頼できない場合は、信頼できる発行元の一覧からその発行元を削除します。 カタログの受け付けの詳細については、**[Security Warning – Catalog Validation]\(セキュリティの警告 - カタログ検証)** ダイアログ ボックス内の **[Tell Me More]\(詳細)** をクリックしてください。
 
-    Se si sceglie di accettare i cataloghi di un particolare autore, tale autore viene aggiunto all'[elenco degli autori attendibili](/sccm/sum/tools/updates-publisher-options#trusted-publishers). È possibile esaminare e modificare questo elenco come opzione di Updates Publisher.
+    発行元からのカタログを常に受け入れる場合は、その発行元を[信頼できる発行元の一覧](/sccm/sum/tools/updates-publisher-options#trusted-publishers)に追加します。 この一覧は、Updates Publisher オプションとして確認および編集できます。
 
-4.  L'importazione di un aggiornamento non viene eseguita quando quest'ultimo si trova già nel repository e si verifica una delle condizioni seguenti:
+4.  更新プログラムがリポジトリに既に存在しており、次のいずれかに当てはまる場合は、更新プログラムのインポートがスキップされます。
 
-    -   L'aggiornamento non è stato modificato dall'ultima importazione.
+    -   更新プログラムが最後にインポートされた日時から変更がない。
 
-    -   L'aggiornamento è stato modificato e dispone di un nuovo hash digitale. La modifica di un aggiornamento impedisce che un nuovo aggiornamento sovrascriva quello originale. La sovrascrittura dell'originale determinerebbe infatti la sovrascrittura delle modifiche eventualmente distribuite.
+    -   更新プログラムが編集され、新しいデジタル ハッシュになっている。 すでに展開した可能性がある変更を上書きしてしまわないよう、更新プログラムの編集では新しい更新プログラムで元の更新プログラムを上書きしません。
 
-5.  Nella pagina **Conferma** esaminare i risultati dell'importazione.
+5.  **[確認]** ページでインポート結果を確認できます。
 
-6.  Fare clic su **Chiudi** per completare la procedura guidata. È ora possibile visualizzare gli aggiornamenti per il catalogo in Updates Workspace.
+6.  **[閉じる]** をクリックしてウィザードを終了します。 [更新プログラム] ワークスペースで、このカタログの更新プログラムを表示できるようになりました。
 
-## <a name="next-steps"></a>Passaggi successivi
-Dopo l'importazione degli aggiornamenti, le azioni comuni includono le seguenti:
--   [Gestire gli aggiornamenti](/sccm/sum/tools/manage-updates-with-updates-publisher) per aggregarli, assegnarli e distribuirli al server di aggiornamento.
--   [Creare regole di applicabilità](/sccm/sum/tools/updates-publisher-applicability-rules) che consentono di determinare quando è opportuno distribuire gli aggiornamenti al server di aggiornamento.
-
+## <a name="next-steps"></a>次のステップ
+更新プログラムをインポートした後、次の一般的な操作も行います。
+-   [更新プログラムの管理](/sccm/sum/tools/manage-updates-with-updates-publisher)で、更新サーバーへの更新プログラムのバンドル、割り当て、展開を行います。
+-   [適用性ルールの作成](/sccm/sum/tools/updates-publisher-applicability-rules)は、更新サーバーへの更新プログラムの展開を行う日時を決定するのに役立ちます。

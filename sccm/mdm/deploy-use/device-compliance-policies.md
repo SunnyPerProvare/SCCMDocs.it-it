@@ -1,76 +1,73 @@
 ---
-title: "Criteri di conformità dei dispositivi | Microsoft Docs"
-description: "Informazioni su come gestire i criteri di conformità in System Center Configuration Manager per rendere i dispositivi conformi ai criteri di accesso condizionale."
+title: "デバイス コンプライアンス ポリシー | Microsoft Docs"
+description: "デバイスが条件付きアクセス ポリシーに準拠するように System Center Configuration Manager でコンプライアンス ポリシーを管理する方法について説明します。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ad8fa94d-45bb-4c94-8d86-31234c5cf21c
-caps.latest.revision: 18
-caps.handback.revision: 0
+caps.latest.revision: "18"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: bcaa2a9b5474e06bf344dc4fd47dbb160ea36297
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="device-compliance-policies-in-system-center-configuration-manager"></a>Criteri di conformità del dispositivo in System Center Configuration Manager
+# <a name="device-compliance-policies-in-system-center-configuration-manager"></a>System Center Configuration Manager でのデバイス コンプライアンス ポリシー
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-I **criteri di conformità** in System Center Configuration Manager definiscono le regole e le impostazioni che un dispositivo deve soddisfare per essere considerato conforme ai criteri di accesso condizionale. È anche possibile usare tali criteri per monitorare e correggere i problemi di conformità con i dispositivi, indipendentemente dall'accesso condizionale.  
+System Center Configuration Manager の**コンプライアンス ポリシー**では、デバイスが条件付きアクセス ポリシーに準拠していると見なされるために遵守する必要があるルールと設定を定義します。 コンプライアンス ポリシーを使用して、条件付きアクセスとは別に、デバイスのコンプライアンスに関する問題を監視および修復することもできます。  
 
 
 > [!IMPORTANT]  
->  Questo articolo descrive i criteri di conformità per i dispositivi gestiti da Microsoft Intune.    I criteri di conformità per i PC gestiti da System Center Configuration Manager sono descritti in [Gestire l'accesso ai servizi di O365 per i PC gestiti da System Center Configuration Manager](../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
+>  この記事では、Microsoft Intune によって管理されるデバイスのコンプライアンス ポリシーについて説明します。    System Center Configuration Manager の管理対象 PC のコンプライアンス ポリシーについては、「[Manage access to O365 services for PCs managed by System Center Configuration Manager (System Center Configuration Manager の管理対象 PC の O365 サービスへのアクセス管理)](../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)」に説明されています。  
 
- Queste regole includono requisiti come:  
+ これらのルールには、次のような要件が含まれます。  
 
--   PIN e password per accedere a un dispositivo
+-   デバイスにアクセスするための PIN とパスワード
 
--   Crittografia dei dati memorizzati sul dispositivo
+-   デバイスに格納されたデータの暗号化
 
--   Se il dispositivo è jailbroken o rooted  
+-   デバイスが脱獄またはルート化されているかどうか  
 
--   Se la posta elettronica nel dispositivo viene gestita da un criterio Intune o se il dispositivo è segnalato come non integro dal servizio di attestazione dell'integrità del dispositivo Windows.
--   App che non possono essere installate nel dispositivo.
+-   デバイス上の電子メールが Intune のポリシーで管理されるかどうか、または Windows デバイスの正常性構成証明サービスでデバイスが異常であると報告されたかどうか
+-   デバイスにインストールできないアプリ。
 
 
- I criteri di conformità vengono distribuiti alle raccolte dell'utente. Quando un criterio di conformità viene distribuito a un utente, la conformità viene controllata su tutti i dispositivi dell’utente.  
+ コンプライアンス ポリシーをユーザー コレクションに展開します。 コンプライアンス ポリシーがユーザーに展開されると、すべてのユーザー デバイスがコンプライアンスをチェックされます。  
 
- Nella tabella seguente sono elencati i tipi di dispositivi supportati dai criteri di conformità e il modo in cui le impostazioni di non conformità vengono gestite quando i criteri vengono usati con i criteri di accesso condizionale.  
+ 次の表は、コンプライアンス ポリシーによってサポートされているデバイスの種類と、ポリシーが条件付きアクセス ポリシーと共に使用される場合に非準拠設定がどのように管理されるかを示した一覧です。  
 
-|Regola|Windows 8.1 e versioni successive|Windows Phone 8.1 e versioni successive|iOS 6.0 e versioni successive|Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive, Android for Work|  
+|規則|Windows 8.1 以降|Windows Phone 8.1 以降|iOS 6.0 以降|Android 4.0 以降、Samsung KNOX Standard 4.0 以降、Android for Work|  
 |----------|---------------------------|---------------------------------|-----------------------|---------------------------|-----------------------------------------|  
-|**Configurazione di PIN o password**|Corretto|Corretto|Corretto|In quarantena|  
-|**Crittografia dispositivo**|N/D|Corretto|Corretto (impostando il PIN)|In quarantena<br>(Android for Work sempre crittografato)|  
-|**Dispositivo jailbroken o rooted**|N/D|N/D|In quarantena (non è un'impostazione)|In quarantena (non è un'impostazione)|  
-|**Profilo di posta elettronica**|N/D|N/D|In quarantena|N/D|  
-|**Versione minima del sistema operativo**|In quarantena|In quarantena|In quarantena|In quarantena|  
-|**Versione massima del sistema operativo**|In quarantena|In quarantena|In quarantena|In quarantena|  
-|**Attestazione dell'integrità dei dispositivi (aggiornamento 1602)**|Impostazione non applicabile a Windows 8.1<br /><br /> Windows 10 e Windows 10 Mobile vengono messi in quarantena.|N/D|N/D|N/D|  
-|**App che non possono essere installate**|N/D|N/D|In quarantena|In quarantena|
+|**PIN またはパスワードの構成**|修復|修復|修復|検疫済み|  
+|**デバイスの暗号化**|該当なし|修復|修復 (PIN の設定による)|検疫済み<br>(Android for Work は常に暗号化)|  
+|**脱獄またはルート化されたデバイス**|該当なし|該当なし|検疫済み (設定ではありません)|検疫済み (設定ではありません)|  
+|**電子メールのプロファイル**|該当なし|該当なし|検疫済み|該当なし|  
+|**最小 OS バージョン**|検疫済み|検疫済み|検疫済み|検疫済み|  
+|**最大 OS バージョン**|検疫済み|検疫済み|検疫済み|検疫済み|  
+|**デバイス正常性構成証明 (1602 更新プログラム)**|設定を Windows 8.1 に適用できません<br /><br /> Windows 10 および Windows 10 Mobile は検疫されます。|該当なし|該当なし|該当なし|  
+|**アプリをインストールすることはできません。**|該当なし|該当なし|検疫済み|検疫済み|
 
- **Corretto** = la conformità viene forzata dal sistema operativo del dispositivo (ad esempio, l'utente è obbligato a impostare un PIN).  Non riguarda casi in cui l'impostazione non è conforme.  
+ **修復** = デバイスのオペレーティング システムによってコンプライアンスが適用されます (たとえば、PIN の設定を求められます)。  設定が非準拠となる場合はありません。  
 
- **In quarantena** = il sistema operativo del dispositivo non forza la conformità (ad esempio, i dispositivi Android non impongono la crittografia del dispositivo all'utente).  In questo caso:  
+ **検疫済み** = デバイスのオペレーティング システムはコンプライアンスを適用しません (たとえば、Android デバイスはユーザーにデバイスの暗号化を求めません)。  この場合、次のようになります。  
 
--   Il dispositivo viene bloccato se l'utente è la destinazione di un criterio di accesso condizionale.  
+-   ユーザーが条件付きアクセス ポリシーの対象となる場合は、デバイスがブロックされます。  
 
--   Il portale aziendale o il portale web informano l'utente di eventuali problemi di conformità.  
+-   ポータル サイトまたは Web ポータルは、コンプライアンスの問題をユーザーに通知します。  
 
 
-### <a name="next-steps"></a>Passaggi successivi  
-[Create and deploy a device compliance policy](create-compliance-policy.md) (Creare e distribuire criteri di conformità del dispositivo)
-### <a name="see-also"></a>Vedere anche  
- [Gestire l'accesso ai servizi in System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md)
-
+### <a name="next-steps"></a>次のステップ  
+[デバイス コンプライアンス ポリシーを作成して展開する](create-compliance-policy.md)
+### <a name="see-also"></a>関連項目  
+ [System Center Configuration Manager でサービスへのアクセスを管理する](../../protect/deploy-use/manage-access-to-services.md)

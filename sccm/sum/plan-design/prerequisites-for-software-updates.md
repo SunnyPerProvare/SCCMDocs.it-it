@@ -1,6 +1,6 @@
 ---
-title: Prerequisiti per gli aggiornamenti software | Microsoft Docs
-description: Informazioni sui prerequisiti per gli aggiornamenti software in System Center Configuration Manager.
+title: "ソフトウェア更新プログラムの前提条件 | Microsoft Docs"
+description: "System Center Configuration Manager でのソフトウェア更新プログラムの前提条件について説明します。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -9,88 +9,84 @@ ms.date: 10/06/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 238ef5814c0c1b832c28d63c9f3879e21a6c439b
 ms.openlocfilehash: 179f076f228daa5adf612275a822cd379b0ce1e3
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="prerequisites-for-software-updates-in-system-center-configuration-manager"></a>System Center Configuration Manager でのソフトウェア更新プログラムの前提条件
 
-# <a name="prerequisites-for-software-updates-in-system-center-configuration-manager"></a>Prerequisiti per gli aggiornamenti software in System Center Configuration Manager
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+このトピックでは、System Center Configuration Manager でのソフトウェア更新プログラムの前提条件の一覧を示します。 前提条件ごとに、外部の依存関係と内部の依存関係を別の表にまとめています。  
 
-Questo argomento elenca i prerequisiti per gli aggiornamenti software in System Center Configuration Manager. Per ognuno di essi, le dipendenze esterne e interne sono elencate in tabelle separate.  
+## <a name="software-update-dependencies-external-to-configuration-manager"></a>Configuration Manager 外部のソフトウェア更新プログラムの依存関係  
+ 次のセクションに、ソフトウェア更新の外部の依存関係の一覧を示します。  
 
-## <a name="software-update-dependencies-external-to-configuration-manager"></a>Dipendenze aggiornamenti software esterne a Configuration Manager  
- Le sezioni seguenti elencano le dipendenze esterne per gli aggiornamenti software.  
-
-### <a name="internet-information-services-iis"></a>Internet Information Services (IIS)  
- Internet Information Services (IIS) deve trovarsi nei server di sistema del sito per eseguire il punto di aggiornamento software, il punto di gestione e il punto di distribuzione. Per altre informazioni, vedere [Prerequisiti per i ruoli di sistema del sito](../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
+### <a name="internet-information-services-iis"></a>インターネット インフォメーション サービス (IIS)  
+ ソフトウェアの更新ポイント、管理ポイント、および配布ポイントを実行するすには、サイト システム サーバーにインターネット インフォメーション サービス (IIS) が置かれている必要があります。 詳細については、「[サイト システムの役割の前提条件](../../core/plan-design/configs/site-and-site-system-prerequisites.md)」を参照してください。  
 
 ### <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)  
- Windows Server Update Services è necessario per la sincronizzazione degli aggiornamenti software e per l'analisi di valutazione di conformità degli aggiornamenti software nei client. È necessario installare il server WSUS prima di creare il ruolo del sistema del sito del punto di aggiornamento software. Per un punto di aggiornamento software sono supportate le versioni di WSUS seguenti:  
+ ソフトウェア更新プログラムの同期と、クライアントでのソフトウェア更新プログラムのコンプライアンス評価スキャンを行うには、WSUS が必要です。 WSUS サーバーは、ソフトウェア更新ポイント サイト システムの役割を作成する前にインストールする必要があります。 ソフトウェアの更新ポイントでは、次のバージョンの WSUS がサポートされています。  
 
--   4 WSUS (ruolo in Windows Server 2012 e Windows Server 2012 R2)  
+-   WSUS 4 (Windows Server 2012 および Windows Server 2012 R2 における役割)  
 
--   WSUS 3.2 (ruolo in Windows Server 2008 R2)  
+-   WSUS 3.2 (Windows Server 2008 R2 における役割)  
 
- Quando esistono più punti di aggiornamento software in un sito, verificare che tutti eseguano la stessa versione di WSUS.  
+ 1 つのサイトにソフトウェアの更新ポイントが複数ある場合、すべてのポイントが同じバージョンの WSUS を実行するようにします。  
 
 > [!WARNING]  
->  La classificazione degli aggiornamenti software **Aggiornamenti** è supportata solo a partire da WSUS 4.0. Prima di sincronizzare questa nuova classificazione e avere la possibilità di valutare i computer Windows 10 in un piano di manutenzione di Windows 10, è di importanza fondamentale installare l' [hotfix 3095113](https://support.microsoft.com/kb/3095113) per WSUS nei punti di aggiornamento software e nei server del sito. Questo hotfix consente a WSUS in un server basato su Windows Server 2012 o su Windows Server 2012 R2 di sincronizzare e distribuire gli aggiornamenti di funzionalità per Windows 10. Per altre informazioni, vedere [Gestire Windows come servizio](../../osd/deploy-use/manage-windows-as-a-service.md).  
+>  **アップグレード**のソフトウェア更新プログラムの分類は、WSUS 4.0 以降のみでサポートされています。 この新しい分類を同期し、Windows 10 サービス プランで Windows 10 コンピューターを評価できるようにする前に、ソフトウェアの更新ポイントとサイト サーバーに WSUS の [修正プログラム 3095113](https://support.microsoft.com/kb/3095113) をインストールする必要があります。 この修正プログラムは、Windows 10 の機能アップグレードを同期および配布するために、Windows Server 2012 ベースまたは Windows Server 2012 R2 ベースのサーバーで WSUS を有効にします。 詳細については、「[サービスとしての Windows の管理](../../osd/deploy-use/manage-windows-as-a-service.md)」を参照してください。  
 >   
->  Se si sincronizzano gli aggiornamenti software con la classificazione di **Aggiornamenti** prima di installare l' [hotfix 3095113](https://support.microsoft.com/kb/3095113), vedere [Recover from synchronizing the Aggiornamenti category before you install KB 3095113](#BKMK_RecoverUpgrades).  
+>  [修正プログラム 3095113](https://support.microsoft.com/kb/3095113) をインストールする前に**アップグレード**分類のソフトウェア更新プログラムを同期する場合は、「[KB 3095113 をインストールする前のアップグレード カテゴリの同期からの回復](#BKMK_RecoverUpgrades)」をご覧ください。  
 
-### <a name="wsus-administration-console"></a>Console di amministrazione di WSUS  
- È necessaria la console di amministrazione di WSUS nel server del sito di Configuration Manager se il punto di aggiornamento software si trova su un server di sistema del sito remoto e WSUS non è ancora stato installato nel server del sito.  
-
-> [!IMPORTANT]  
->  La versione di WSUS nel server del sito deve corrispondere alla versione di WSUS in esecuzione nei punti di aggiornamento software.  
+### <a name="wsus-administration-console"></a>WSUS 管理コンソール  
+ ソフトウェアの更新ポイントがリモート サイトのシステム サーバー上にあり、WSUS がそのサイト サーバーにインストールされていない場合、Configuration Manager サイト サーバーには WSUS 管理コンソールが必要です。  
 
 > [!IMPORTANT]  
->  Non usare la console di amministrazione di WSUS per configurare le impostazioni WSUS. Configuration Manager si connette a WSUS eseguito nel punto di aggiornamento software e configura le impostazioni appropriate.  
+>  サイト サーバーの WSUS バージョンは、ソフトウェアの更新ポイントで実行されている WSUS バージョンと同じにする必要があります。  
 
-### <a name="windows-update-agent-wua"></a>Agente di Windows Update (WUA)  
- Nei client è necessario il client WUA per consentire la connessione al server WSUS e il recupero dell'elenco degli aggiornamenti software che devono essere esaminati per verificare la conformità.  
+> [!IMPORTANT]  
+>  WSUS 管理コンソールを使ってWSUS の設定を構成しないでください。 Configuration Manager はソフトウェアの更新ポイントで実行されている WSUS に接続し、適切な設定を構成します。  
 
- Quando si installa Configuration Manager, viene scaricata la versione più recente di WUA. Quando viene installato il client di Configuration Manager, WUA viene aggiornato se necessario. Tuttavia, se l'installazione non riesce, è necessario utilizzare un metodo diverso per l'aggiornamento dell'agente di Windows Update.  
+### <a name="windows-update-agent-wua"></a>Windows Update エージェント (WUA)  
+ クライアントが WSUS サーバーに接続し、コンプライアンス対応スキャンに必要なソフトウェア更新プログラムの一覧を取得するには、WUA クライアントが必要です。  
 
-## <a name="software-update-dependencies-internal-to-configuration-manager"></a>Dipendenze aggiornamenti software interne a Configuration Manager  
- Le sezioni seguenti elencano le dipendenze interne per gli aggiornamenti software in Configuration Manager.  
+ Configuration Manager をインストールすると、最新バージョンの WUA がダウンロードされます。 次に、Configuration Manager クライアントをインストールすると、必要に応じて WUA がアップグレードされます。 インストールに失敗した場合は、別の方法で WUA をアップグレードする必要があります。  
 
-### <a name="management-points"></a>Punti di gestione  
- I punti di gestione trasferiscono le informazioni tra i computer client e il sito di Configuration Manager. Sono necessari per gli aggiornamenti software.  
+## <a name="software-update-dependencies-internal-to-configuration-manager"></a>Configuration Manager 内部のソフトウェア更新プログラムの依存関係  
+ 次のセクションに、Configuration Manager のソフトウェア更新の内部の依存関係の一覧を示します。  
 
-### <a name="software-update-point"></a>Punto di aggiornamento software  
- È necessario installare un punto di aggiornamento software nel server WSUS per poter distribuire gli aggiornamenti software in Configuration Manager. Per altre informazioni, vedere [Installare e configurare un punto di aggiornamento software](../get-started/install-a-software-update-point.md).
+### <a name="management-points"></a>管理ポイント  
+ 管理ポイントは、クライアント コンピューターと Configuration Manager サイト間で情報を転送します。 これらはソフトウェア更新プログラムのために必要です。  
 
-### <a name="distribution-points"></a>Punti di distribuzione  
- I punti di distribuzione sono necessari per archiviare il contenuto per gli aggiornamenti software. Per altre informazioni su come installare i punti di distribuzione e gestire il contenuto, vedere [Gestire il contenuto e l'infrastruttura del contenuto](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+### <a name="software-update-point"></a>ソフトウェアの更新ポイント  
+ Configuration Manager でソフトウェア更新プログラムを展開できるようにするには、ソフトウェアの更新ポイントを WSUS サーバーにインストールする必要があります。 詳細については、「[ソフトウェアの更新ポイントのインストールと構成](../get-started/install-a-software-update-point.md)」を参照してください。
 
-### <a name="client-settings-for-software-updates"></a>Impostazioni client per gli aggiornamenti software  
- Per impostazione predefinita, gli aggiornamenti software sono abilitati per i client. Tuttavia, sono presenti altre impostazioni disponibili che controllano come e quando i client valutano la conformità per gli aggiornamenti software e la relativa modalità di installazione.  
+### <a name="distribution-points"></a>配布ポイント  
+ ソフトウェア更新プログラムのコンテンツを保存できる配布ポイントが必要です。 配布ポイントをインストールして、コンテンツを管理する方法の詳細については、「[コンテンツとコンテンツ インフラストラクチャの管理](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」を参照してください。  
 
- Per altre informazioni, vedere  
+### <a name="client-settings-for-software-updates"></a>ソフトウェア更新プログラムのクライアントの設定  
+ 既定で、クライアントのソフトウェア更新プログラムは有効です。 ただし、クライアントがソフトウェア更新プログラムのコンプライアンスを評価する方法とタイミングを制御し、ソフトウェア更新プログラムのインストール方法を制御するために使用できるその他の設定があります。  
 
--   [Impostazioni client per gli aggiornamenti software](../get-started/manage-settings-for-software-updates.md#a-namebkmkclientsettingsa-client-settings-for-software-updates).  
+ 詳細については、次をご覧ください。  
 
--   Argomento [Impostazioni client per gli aggiornamenti software](../../core/clients/deploy/about-client-settings.md#software-updates).  
+-   [ソフトウェア更新プログラムのクライアントの設定](../get-started/manage-settings-for-software-updates.md#a-namebkmkclientsettingsa-client-settings-for-software-updates)  
 
-### <a name="reporting-services-point"></a>Punto di Reporting Services  
- Il ruolo del sistema del sito del punto di Reporting Services può visualizzare i report per gli aggiornamenti software. Questo ruolo è facoltativo ma consigliato. Per altre informazioni su come creare un punto di Reporting Services, vedere [Configurazione della creazione di report](../../core/servers/manage/configuring-reporting.md).  
+-   [ソフトウェア更新プログラムのクライアントの設定](../../core/clients/deploy/about-client-settings.md#software-updates)トピック  
 
-##  <a name="BKMK_RecoverUpgrades"></a> Ripristinare la sincronizzazione della categoria Aggiornamenti prima di installare KB 3095113  
- È necessario l' [hotfix 3095113](https://support.microsoft.com/kb/3095113) per WSUS nei punti di aggiornamento software e sui server del sito prima della sincronizzazione della classificazione **Aggiornamenti** . Se l'hotfix non viene installato quando si abilita la classificazione **Aggiornamenti** , WSUS rileverà l'aggiornamento delle funzionalità della build 1511 di Windows 10 anche se non riesce a scaricare e distribuire correttamente i pacchetti associati. Se si sincronizzano gli eventuali aggiornamenti senza avere prima installato l' [hotfix 3095113](https://support.microsoft.com/kb/3095113), nel database WSUS (SUSDB) verranno inseriti dati inutilizzabili che devono essere cancellati prima di poter distribuire correttamente gli aggiornamenti.  Per risolvere questo problema, seguire la procedura riportata di seguito.  
+### <a name="reporting-services-point"></a>レポート サービス ポイント  
+ レポート サービス ポイントのサイト システムの役割は、ソフトウェア更新プログラムのレポートを表示できます。 この役割は任意ですが、使用することをお勧めします。 レポート サービス ポイント作成の詳細については、「[レポートの構成](../../core/servers/manage/configuring-reporting.md)」を参照してください。  
 
-#### <a name="to-recover-from-synchronizing-the-upgrades-classification-before-you-install-kb-3095113"></a>Per ripristinare la sincronizzazione della classificazione Aggiornamenti prima di installare KB 3095113  
+##  <a name="BKMK_RecoverUpgrades"></a> KB 3095113 をインストールする前のアップグレード カテゴリの同期からの回復  
+ **アップグレード**分類を同期する前に、ソフトウェアの更新ポイントとサイト サーバーに WSUS の[修正プログラム 3095113](https://support.microsoft.com/kb/3095113) をインストールする必要があります。 **アップグレード** 分類が有効になっているときに修正プログラムがインストールされていない場合、WSUS は関連付けられているパッケージを適切にダウンロードおよび展開できない場合でも、Windows 10 ビルド 1511 の機能アップグレードを表示します。 [修正プログラム 3095113](https://support.microsoft.com/kb/3095113)を最初にインストールせずにアップグレードを同期する場合、アップグレードを適切に展開するには、WSUS データベース (SUSDB) に、クリアする必要がある使用不可のデータを読み込みます。  この問題から回復するには、次の手順を実行します。  
 
-1.  Eliminare gli aggiornamenti software con la classificazione Aggiornamenti. È possibile usare uno script di PowerShell simile al seguente script di esempio:  
+#### <a name="to-recover-from-synchronizing-the-upgrades-classification-before-you-install-kb-3095113"></a>KB 3095113 をインストールする前に、アップグレード分類の同期から回復するには  
+
+1.  アップグレード分類のソフトウェア更新プログラムを削除します。 次のサンプル スクリプトのような PowerShell スクリプトを使用することができます。  
 
     ```  
     $Server = Get-WSUSServer  
@@ -101,16 +97,15 @@ Questo argomento elenca i prerequisiti per gli aggiornamenti software in System 
     ```  
 
     > [!IMPORTANT]  
-    >  Prima di procedere con il passaggio successivo, è necessario eseguire lo script in tutti i punti di aggiornamento software nella gerarchia di Configuration Manager.  
+    >  次の手順に進む前に、Configuration Manager 階層内のすべてのソフトウェアの更新ポイントでスクリプトを実行する必要があります。  
 
-     Per eliminare in blocco gli aggiornamenti software con la classificazione Aggiornamenti, è possibile modificare lo script di PowerShell in modo da leggere più GUID da un file TXT.  
+     アップグレード分類のソフトウェア更新プログラムを一括で削除するために、txt ファイルから複数の GUID を読み取るように PowerShell スクリプトを変更できます。  
 
-2.  Deselezionare la classificazione **Aggiornamenti** nelle proprietà del componente del punto di aggiornamento software (per informazioni dettagliate, vedere [Configurare classificazioni e prodotti](../get-started/configure-classifications-and-products.md)) e avviare la sincronizzazione degli aggiornamenti software (per informazioni dettagliate, vedere [Sincronizzare gli aggiornamenti software](../get-started/synchronize-software-updates.md).  
+2.  ソフトウェア更新プログラムの [**アップグレード**] 分類チェック ボックスをオフにし (詳細については、「[分類と製品の構成](../get-started/configure-classifications-and-products.md)」を参照してください)、ソフトウェア更新プログラムの同期を開始します (詳細については、「[ソフトウェア更新プログラムの同期](../get-started/synchronize-software-updates.md)」を参照してください)。  
 
-3.  Installare l'are l' [hotfix 3095113](https://support.microsoft.com/kb/3095113) per WSUS nei punti di aggiornamento software e nei server del sito.  
+3.  ソフトウェアの更新ポイントとサイト サーバーに、WSUS の [修正プログラム 3095113](https://support.microsoft.com/kb/3095113) をインストールする必要があります。  
 
-4.  Selezionare la classificazione **Aggiornamenti** nelle proprietà del componente del punto di aggiornamento software (per informazioni dettagliate, vedere [Configurare classificazioni e prodotti](../get-started/configure-classifications-and-products.md)) e avviare la sincronizzazione degli aggiornamenti software (per informazioni dettagliate, vedere [Sincronizzare gli aggiornamenti software](../get-started/synchronize-software-updates.md).  
+4.  ソフトウェア更新プログラムの [**アップグレード**] 分類チェック ボックスをオンにし (詳細については、「[分類と製品の構成](../get-started/configure-classifications-and-products.md)」を参照してください)、ソフトウェア更新プログラムの同期を開始します (詳細については、「[ソフトウェア更新プログラムの同期](../get-started/synchronize-software-updates.md)」を参照してください)。  
 
-## <a name="next-steps"></a>Passaggi successivi
-[Preparare la gestione degli aggiornamenti software](../get-started/prepare-for-software-updates-management.md)
-
+## <a name="next-steps"></a>次のステップ
+[ソフトウェア更新管理の準備](../get-started/prepare-for-software-updates-management.md)

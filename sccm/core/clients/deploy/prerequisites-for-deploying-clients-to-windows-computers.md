@@ -1,241 +1,237 @@
 ---
-title: Prerequisiti per la distribuzione di client Windows | Microsoft Docs
-description: Informazioni sui prerequisiti per la distribuzione di client a computer Windows in System Center Configuration Manager.
+title: "Windows クライアント展開の前提条件 | Microsoft Docs"
+description: "System Center Configuration Manager で Windows コンピューターにクライアントを展開するための前提条件について説明します。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 1a2a9b48-a95b-4643-b00c-b3079584ae2e
-caps.latest.revision: 16
-caps.handback.revision: 0
+caps.latest.revision: "16"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 7ed1b9e6802cc20defcb92a8e536983fd757bd29
-ms.contentlocale: it-it
-ms.lasthandoff: 03/27/2017
-
-
+ms.openlocfilehash: 6636ce4d929326fad0210407d7634ea585eb0a2d
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="prerequisites-for-deploying-clients-to-windows-computers-in-system-center-configuration-manager"></a>Prerequisiti per la distribuzione dei client nei computer Windows in System Center Configuration Manager
+# <a name="prerequisites-for-deploying-clients-to-windows-computers-in-system-center-configuration-manager"></a>System Center Configuration Manager で Windows コンピューターにクライアントを展開するための前提条件
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-La distribuzione di client di Configuration Manager nell'ambiente ha le dipendenze esterne e le dipendenze nel prodotto seguenti. Ogni metodo di distribuzione client presenta inoltre proprie dipendenze che devono essere soddisfatte per garantire la correttezza delle installazioni client.  
+Configuration Manager クライアントを環境で展開するには、次の外部の依存関係、および製品内の依存関係が必要となります。 それぞれのクライアント展開方法に固有の依存関係もあり、それを満たさないとクライアント インストールを正常に実行できません。  
 
-  Assicurarsi di leggere anche [Configurazioni supportate per System Center Configuration Manager](../../../core/plan-design/configs/supported-configurations.md) per verificare che i dispositivi soddisfino i requisiti minimi di hardware e sistema operativo per il client di Configuration Manager.  
+  また、「[System Center Configuration Manager のサポートされている構成](../../../core/plan-design/configs/supported-configurations.md)」を参照し、Configuration Manager クライアントのハードウェアおよびオペレーティング システムの最小要件を満たすかを確認してください。  
 
- Per informazioni sui prerequisiti per il client di Configuration Manager per Linux e UNIX, vedere [Pianificazione della distribuzione client a computer Linux e UNIX in System Center Configuration Manager](../../../core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers.md).  
-
-> [!NOTE]  
->  I numeri delle versioni software elencati in questo articolo si riferiscono solo ai numeri delle versioni minime richieste.  
-
-##  <a name="BKMK_prereqs_computers"></a> Prerequisiti per computer client  
- Usare le informazioni seguenti per determinare i prerequisiti quando si installa il client di Configuration Manager in computer.  
-
-### <a name="dependencies-external-to-configuration-manager"></a>Dipendenze esterne a Configuration Manager  
-
-|||  
-|-|-|  
-|Windows Installer versione 3.1.4000.2435|Necessario per supportare l'utilizzo di file di aggiornamento di Windows Installer (MSP) per pacchetti e aggiornamenti software.|  
-|[KB2552033](http://go.microsoft.com/fwlink/p/?LinkId=240048)|Installare questo hotfix nei server del sito che eseguono Windows Server 2008 R2 quando l'installazione push client è abilitata.|  
-|Microsoft Background Intelligent Transfer Service (BITS) versione 2.5|Necessario per consentire i trasferimenti di dati limitati tra il computer client e i sistemi del sito di Configuration Manager. BITS non viene scaricato automaticamente durante l'installazione del client. Quando BITS viene installato nei computer, in genere è necessario un riavvio per completare l'installazione.<br /><br /> La maggior parte dei sistemi operativi include BITS, ma, in caso contrario (ad esempio, in Windows Server 2003 R2 SP2), è necessario installare BITS prima di installare il client di Configuration Manager.|  
-|Utilità di pianificazione di Microsoft|Per completare l'installazione del client, abilitare questo servizio sul client stesso.|  
-
-### <a name="dependencies-external-to-configuration-manager-and-automatically-downloaded-during-installation"></a>Dipendenze esterne a Configuration Manager e scaricate automaticamente durante l'installazione  
- Il client di Configuration Manager ha alcune potenziali relazioni esterne. Queste dipendenze variano a seconda del sistema operativo e del software installato nel computer client.  
-
- Se queste dipendenze sono necessarie per completare l'installazione del client, vengono installate automaticamente con il software client.  
-
-|||  
-|-|-|  
-|Agente di Windows Update versione 7.0.6000.363|Richiesto da Windows per supportare il rilevamento e la distribuzione degli aggiornamenti.|  
-|Microsoft Core XML Services (MSXML) versione 6.20.5002 o successiva|Necessario per supportare l'elaborazione di documenti XML in Windows.|  
-|Compressione differenziale remota Microsoft (RDC)|Necessaria per ottimizzare la trasmissione dei dati attraverso la rete.|  
-|Microsoft Visual C++ 2013 Redistributable versione 12.0.21005.1|Necessario per supportare le operazioni client. Quando questo aggiornamento viene installato nei computer client, potrebbe essere necessario un riavvio per completare l'installazione.|  
-|Microsoft Visual C++ 2005 Redistributable versione 8.0.50727.42|Per la versione 1606 e precedenti, necessario per supportare le operazioni di Microsoft SQL Server Compact.|  
-|API per Windows Imaging 6.0.6001.18000|Necessario per consentire a Configuration Manager di gestire i file di immagine Windows (wim).|  
-|Microsoft Policy Platform 1.2.3514.0|Necessario per consentire ai client di valutare le impostazioni di conformità.|  
-|Microsoft Silverlight 5.1.41212.0 (a partire da Configuration Manager versione 1602)|Necessario per supportare l'esperienza utente del sito Web Catalogo applicazioni.|  
-|Microsoft .NET Framework version 4.5.2|Necessario per supportare le operazioni client. Viene installato automaticamente nel computer client se Microsoft .NET Framework 4.5 o versione successiva non è installato in tale computer. Per altre informazioni, vedere [Informazioni aggiuntive su Microsoft .NET Framework versione 4.5.2](#dotNet).|  
-|Componenti di Microsoft SQL Server Compact 3.5 SP2|Necessari per archiviare le informazioni relative alle operazioni client.|  
-|Componenti di Microsoft Windows Imaging|Richiesti da Microsoft .NET Framework 4.0 per Windows Server 2003 o Windows XP SP2 per computer a 64 bit.|
-|Client software PC di Microsoft Intune|Non è possibile eseguire il client software PC di Intune e il client di Configuration Manager sullo stesso PC. Prima di installare il client di Configuration Manager, verificare che il client di Intune sia stato rimosso.|
-
-####  <a name="dotNet"></a> Informazioni dettagliate aggiuntive su Microsoft .NET Framework versione 4.5.2  
+ Linux および UNIX 用の Configuration Manager クライアントの前提条件については、「[System Center Configuration Manager での Linux コンピューターおよび UNIX コンピューターへのクライアント展開の計画](../../../core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers.md)」を参照してください。  
 
 > [!NOTE]  
->  Il 12 gennaio 2016 il supporto per .NET 4.0, 4.5 e 4.5.1 è scaduto. Per altre informazioni, vedere le [domande frequenti sul ciclo di vita del supporto per Microsoft .NET Framework](https://support.microsoft.com/gp/framework_faq?WT.mc_id=azurebg_email_Trans_943_NET452_Update) nel sito support.microsoft.com.  
+>  この記事に示されているソフトウェア バージョンの番号は、必要な最小のバージョン番号のみを示します。  
 
- Per completare l'installazione potrebbe essere necessario un riavvio di Microsoft .NET Framework versione 4.5.2. L'utente visualizzerà la notifica **Riavvio richiesto** nell'area di notifica.  Scenari comuni che richiedono il riavvio dei computer client:  
+##  <a name="BKMK_prereqs_computers"></a> コンピューター クライアントの前提条件  
+ コンピューターに Configuration Manager クライアントをいつインストールするかの前提条件を判断するには次の情報に従います。  
 
--   Applicazioni o servizi .NET sono in esecuzione NEL computer.  
-
--   Mancano uno o più aggiornamenti software necessari per l'installazione di .NET.  
-
--   Il computer è in attesa di un riavvio dalla precedente installazione di aggiornamenti software di .NET Framework.  
-
- Dopo l'installazione di .NET Framework 4.5.2, i relativi aggiornamenti aggiuntivi potrebbero essere installati successivamente, operazione che potrebbe richiedere ulteriori riavvii del computer.  
-
-### <a name="configuration-manager-dependencies"></a>Dipendenze di Configuration Manager  
- Per altre informazioni sui seguenti ruoli del sistema del sito, vedere [Determinare i ruoli del sistema del sito per System Center Configuration Manager](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md)  
+### <a name="dependencies-external-to-configuration-manager"></a>Configuration Manager 外部の依存関係  
 
 |||  
 |-|-|  
-|Punto di gestione|Anche se non è necessario un punto di gestione per distribuire un client di Configuration Manager, è invece necessario un punto di gestione per trasferire informazioni tra i computer client e i server di Configuration Manager. Senza un punto di gestione, non è possibile gestire i computer client.|  
-|Punto di distribuzione|Il punto di distribuzione è un ruolo del sistema del sito facoltativo, ma consigliato per la distribuzione client. Tutti i punti di distribuzione ospitano i file di origine client, che consentono ai computer di trovare il punto di distribuzione più vicino da cui scaricare i file di origine client durante la distribuzione client. Se il sito non dispone di un punto di distribuzione, i computer scaricano i file di origine client dal punto di gestione.|  
-|Punto di stato di fallback|Il punto di stato di fallback è un ruolo del sistema del sito facoltativo, ma consigliato per la distribuzione client. Il punto di stato di fallback tiene traccia della distribuzione client e consente ai computer nel sito di Configuration Manager di inviare messaggi di stato quando non possono comunicare con un punto di gestione.|  
-|Punto di Reporting Services|Il punto di Reporting Services è un ruolo del sistema del sito facoltativo, ma consigliato, in grado di visualizzare report correlati alla distribuzione e alla gestione di client. Per altre informazioni, vedere [Creazione di report in System Center Configuration Manager](../../../core/servers/manage/reporting.md).|  
+|Windows インストーラー バージョン 3.1.4000.2435|Windows インストーラーの更新 (.msp) ファイルを、パッケージおよびソフトウェアの更新に使用できるようにするために必要となります。|  
+|[KB2552033](http://go.microsoft.com/fwlink/p/?LinkId=240048)|クライアント プッシュ インストールが有効な場合は、Windows Server 2008 R2 を実行するサイト サーバーに修正プログラムをインストールします。|  
+|Microsoft バックグラウンド インテリジェント転送サービス (BITS) バージョン 2.5|クライアント コンピューターと Configuration Manager サイト システムの間でデータが転送されるときのネットワーク負荷を軽減するために必要となります。 BITS は、クライアント インストールで自動的にダウンロードされません。 BITS がコンピューターにインストールされると通常、インストールを完了するために再起動が必要となります。<br /><br /> ほとんどのオペレーティング システムには BITS が含まれいますが、含まれていない場合は (たとえば、Windows Server 2003 R2 SP2)、Configuration Manager クライアントをインストールする前に BITS をインストールする必要があります。|  
+|Microsoft タスク スケジューラ|クライアントのインストールを完了するために、クライアントでこのサービスを有効にします。|  
 
-### <a name="installation-method-dependencies"></a>Dipendenze del metodo di installazione  
- I prerequisiti seguenti sono specifici dei diversi metodi di installazione client.  
+### <a name="dependencies-external-to-configuration-manager-and-automatically-downloaded-during-installation"></a>Configuration Manager の外部の依存関係、およびインストール中の自動ダウンロードされる外部の依存関係  
+ Configuration Manager クライアントには潜在的な外部の依存関係があります。 これらの依存関係は、クライアント コンピューターのオペレーティング システムやインストールされたソフトウェアによります。  
 
--   Installazione push client  
+ クライアントのインストールの完了にこの依存関係が必要である場合は、クライアント ソフトウェアと共に自動的にインストールされます。  
 
-    -   Gli account di installazione push client vengono usati per connettersi ai computer per installare il client e vengono specificati nella scheda **Account** della finestra di dialogo **Proprietà installazione push client** . L'account deve essere membro del gruppo Administrators locale nel computer di destinazione.  
+|||  
+|-|-|  
+|Windows Update エージェント バージョン 7.0.6000.363|更新プログラムの検出および展開のサポートに Windows で必要となります。|  
+|Microsoft Core XML Services (MSXML) バージョン 6.20.5002 以降|Windows で XML ドキュメントを処理できるようにするために必要となります。|  
+|Microsoft Remote Differential Compression (RDC)|ネットワークのデータ転送を最適化するために必要となります。|  
+|Microsoft Visual C++ 2013 再頒布可能パッケージ バージョン 12.0.21005.1|クライアントのオペレーションをサポートするために必要となります。 クライアント コンピューターにこの更新プログラムがインストールされていると、インストールを完了するために再起動が必要になる可能性があります。|  
+|Microsoft Visual C++ 2005 再頒布可能バージョン 8.0.50727.42|1606 以前のバージョンの場合、Microsoft SQL Server Compact オペレーションをサポートするために必要です。|  
+|Windows Imaging APIs 6.0.6001.18000|Configuration Manager が Windows イメージ (.wim) ファイルを管理するのを許可するために必要となります。|  
+|Microsoft Policy Platform 1.2.3514.0|クライアントがコンプライアンス設定を評価するのを許可するために必要となります。|  
+|Microsoft Silverlight 5.1.41212.0 (Configuration Manager バージョン 1602 以降)|アプリケーション カタログ ウェブサイトのユーザー エクスペリエンスをサポートするために必要となります。|  
+|Microsoft .NET Framework バージョン 4.5.2|クライアントのオペレーションをサポートするために必要となります。 Microsoft .NET Framework バージョン 4.5 以降がインストールされていない場合は、クライアント コンピューターに自動的にインストールされます。 詳細については、「[Microsoft .NET Framework バージョン 4.5.2 に関する追加情報](#dotNet)」を参照してください。|  
+|Microsoft SQL Server Compact 3.5 SP2 コンポーネント|クライアント オペレーションに関連した情報を保存するために必要となります。|  
+|Microsoft Windows Imaging Component|Microsoft .NET Framework 4.0 で、64 ビット コンピューター向け Windows Server 2003 または Windows XP SP2 に必要となります。|
+|Microsoft Intune PC ソフトウェア クライアント|Intune PC ソフトウェア クライアントと Configuration Manager クライアントを同じ PC で実行することはできません。 Configuration Manager クライアントをインストールする前に、必ず、Intune クライアントを削除してください。|
 
-         Se non si specifica un account di installazione push client, verrà usato l'account del computer server del sito.  
+####  <a name="dotNet"></a> Microsoft .NET Framework バージョン 4.5.2 に関する追加情報  
 
-    -   È necessario che il computer in cui si sta installando il client sia stato individuato da almeno un metodo di individuazione di Configuration Manager.  
+> [!NOTE]  
+>  2016 年 1 月 12 日に、.NET 4.0、4.5、および 4.5.1 のサポートが期限切れになりました。 詳細については、support.microsoft.com の [Microsoft .NET Framework のサポート ライフサイクル ポリシーに関する FAQ](https://support.microsoft.com/gp/framework_faq?WT.mc_id=azurebg_email_Trans_943_NET452_Update) を参照してください。  
 
-    -   Il computer dispone di una condivisione ADMIN$.  
+ Microsoft .NET Framework バージョン 4.5.2 のインストールの完了に再起動が必要な場合があります。 システム トレイに **[再起動が必要]** 通知が表示されます。  クライアント コンピューターの再起動が必要な一般的なシナリオは、次のとおりです。  
 
-    -   L'opzione **Abilita installazione push client per le risorse assegnate** deve essere selezionata nella finestra di dialogo **Proprietà installazione push client** se si vuole eseguire il push automatico del client di Configuration Manager per le risorse individuate.  
+-   .NET アプリケーションまたはサービスがコンピューター上で実行されている。  
 
-    -   Il computer client deve essere in grado di contattare un punto di distribuzione o un punto di gestione per scaricare i file di supporto.  
+-   .NET インストールに必要な 1 つ以上 のソフトウェア更新プログラムが不足している。  
 
-     È necessario avere le autorizzazioni di sicurezza seguenti per installare il client di Configuration Manager usando il push client:  
+-   コンピューターで、.NET Framework のソフトウェア更新プログラムの以前のインストールからの再起動が保留されている。  
 
-    -   Per configurare l'account di installazione push client: autorizzazione di **Modifica** e Lettura per l'oggetto **Site** .  
+ .NET Framework 4.5.2 をインストールした後に、追加の更新プログラムをインストールすると、追加のコンピューターの再起動が必要になる場合がある。  
 
-    -   Per usare il push client per installare il client in raccolte, dispositivi e query: autorizzazione di **Modifica risorsa** e **Lettura** per l'oggetto Collection.  
+### <a name="configuration-manager-dependencies"></a>Configuration Manager の依存関係  
+ 次のサイト システムの役割の詳細については、「[System Center Configuration Manager クライアントのサイト システムの役割の決定](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md)」を参照してください。  
 
-     Il ruolo di sicurezza **Amministratore infrastruttura** include le autorizzazioni necessarie per gestire l'installazione push client.  
+|||  
+|-|-|  
+|管理ポイント|Configuration Manager クライアントの展開に管理ポイントは必要ありませんが、クライアント コンピューターと Configuration Manager サーバーの間で情報を転送するには管理ポイントが必要です。 管理ポイントがないと、クライアント コンピューターを管理できません。|  
+|配布ポイント|配布ポイントはオプションですが、クライアント展開において推奨されるサイト システムの役割です。 すべての配布ポイントはクライアント ソース ファイルをホストします。それによりコンピューターは、最も近い配布ポイントからクライアント展開中にクライアント ソース ファイルをダウンロードできます。 サイトに配布ポイントがない場合は、クライアントは管理ポイントからクライアント ソース ファイルをダウンロードします。|  
+|フォールバック ステータス ポイント|フォールバック ステータス ポイントはオプションですが、クライアント展開において推奨されるサイト システムの役割です。 フォールバック ステータス ポイントにより、Configuration Manager サイトのコンピューターは、管理ポイントとやり取りできないときに状態メッセージを送信できます。|  
+|レポート サービス ポイント|レポート サービス ポイントはオプションですが、クライアントの展開や管理に関するレポートを表示できる、推奨されるサイト システムの役割です。 詳細については、「[System Center Configuration Manager のレポート](../../../core/servers/manage/reporting.md)」を参照してください。|  
 
--   Installazione basata sul punto di aggiornamento software  
+### <a name="installation-method-dependencies"></a>インストール方法の依存関係  
+ 次の前提条件は、クライアント インストールのさまざまな方法に固有です。  
 
-    -   Se lo schema di Active Directory non è stato esteso o si stanno installando client da un'altra foresta, è necessario effettuare il provisioning delle proprietà di installazione per CCMSetup.exe nel Registro di sistema del computer usando Criteri di gruppo. Per altre informazioni, vedere  [How to Provision Client Installation Properties (Group Policy and Software Update-Based Client Installation)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Provision).  
+-   クライアント プッシュ インストール  
 
-    -   Il client di Configuration Manager deve essere pubblicato al punto di aggiornamento software.  
+    -   クライアント プッシュ インストールのアカウントは、コンピューターを接続してクライアントをインストールするのに使用され、 **[クライアント プッシュ インストールのプロパティ]** ダイアログ ボックスの **[アカウント]** タブで指定されます。 アカウントは、展開先のコンピューターでローカルの管理者グループのメンバーである必要があります。  
 
-    -   Il computer client deve essere in grado di contattare un punto di distribuzione o un punto di gestione per scaricare i file di supporto.  
+         クライアント プッシュ インストール アカウントを指定しない場合は、サイト サーバー コンピューター アカウントが使用されます。  
 
-     Per le autorizzazioni di sicurezza necessarie per gestire gli aggiornamenti software di Configuration Manager, vedere [Prerequisiti per gli aggiornamenti software in System Center Configuration Manager](../../../sum/plan-design/prerequisites-for-software-updates.md).  
+    -   クライアントをインストールしているコンピューターは、少なくとも 1 つの Configuration Manager 探索方法で見つかっている必要があります。  
 
--   Installazione basata su Criteri di gruppo  
+    -   コンピューターに ADMIN$ 共有が必要です。  
 
-    -   Se lo schema di Active Directory non è stato esteso o si stanno installando client da un'altra foresta, è necessario effettuare il provisioning delle proprietà di installazione per CCMSetup.exe nel Registro di sistema del computer usando Criteri di gruppo. Per altre informazioni, vedere  [How to Provision Client Installation Properties (Group Policy and Software Update-Based Client Installation)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Provision).  
+    -   検出されたリソースに Configuration Manager クライアントを自動的にプッシュする場合は、[**クライアント プッシュ インストールのプロパティ**] ダイアログ ボックスで [**割り当てられたリソースへのクライアント プッシュ インストールを有効にする**] を選択する必要があります。  
 
-    -   Il computer client deve essere in grado di contattare un punto di gestione per scaricare i file di supporto.  
+    -   クライアント コンピューターは、配布ポイントまたは管理ポイントにアクセスし、サポート ファイルをダウンロードできる必要があります。  
 
--   Installazione basata su script di accesso  
+     クライアント プッシュを使用して、Configuration Manager クライアントをインストールするには次のセキュリティのアクセス許可が必要です。  
 
-     Il computer client deve essere in grado di contattare un punto di distribuzione o un punto di gestione per scaricare i file di supporto, a meno che al prompt dei comandi non si sia specificato CCMSetup.exe con la proprietà della riga di comando **ccmsetup /source**.  
+    -   クライアント プッシュ インストール アカウントを構成する: **サイト** オブジェクトの **変更** と読み取りアクセス許可。  
 
--   Installazione manuale  
+    -   コレクション、デバイス、クエリにクライアントをインストールするためのクライアント プッシュの使用: コレクション オブジェクトの **リソースの変更** と **読み取り** アクセス許可。  
 
-     Il computer client deve essere in grado di contattare un punto di distribuzione o un punto di gestione per scaricare i file di supporto, a meno che al prompt dei comandi non si sia specificato CCMSetup.exe con la proprietà della riga di comando **ccmsetup /source**.  
+     **[インフラストラクチャの管理者]** のセキュリティの役割には、クライアント プッシュ インストールを管理するのに必要な許可が含まれています。  
 
--   Installazione di computer del gruppo di lavoro  
+-   ソフトウェアの更新ポイント経由のインストール  
 
-     Per accedere alle risorse nel dominio del server del sito di Configuration Manager, è necessario configurare l'account di accesso di rete per il sito.  
+    -   Active Directory スキーマを拡張していない場合、または別のフォレストからのクライアントをインストールする場合は、グループ ポリシーを使用して、CCMSetup.exe のインストール プロパティをコンピューターのレジストリで準備する必要があります。 詳細については、「  [How to Provision Client Installation Properties (Group Policy and Software Update-Based Client Installation)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Provision)」を参照してください。  
 
-     Per altre informazioni su come configurare l'account di accesso alla rete, vedere Account di accesso alla rete in [Concetti di base per la gestione dei contenuti in System Center Configuration Manager](../../plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
+    -   Configuration Manager クライアントをソフトウェアの更新ポイントに発行する必要があります。  
 
--   Installazione basata sulla distribuzione software (solo per aggiornamenti)  
+    -   クライアント コンピューターは、サポート ファイルをダウンロードするために配布ポイントまたは管理ポイントにアクセスできる必要があります。  
 
-    -   Se lo schema di Active Directory non è stato esteso o si stanno installando client da un'altra foresta, è necessario effettuare il provisioning delle proprietà di installazione per CCMSetup.exe nel Registro di sistema del computer usando Criteri di gruppo. Per altre informazioni, vedere [How to Provision Client Installation Properties (Group Policy and Software Update-Based Client Installation)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Provision).  
+     Configuration Manager ソフトウェア更新プログラムの管理に必要なセキュリティのアクセス許可については、「[System Center Configuration Manager でのソフトウェア更新プログラムの前提条件](../../../sum/plan-design/prerequisites-for-software-updates.md)」を参照してください。  
 
-    -   Il computer client deve essere in grado di contattare un punto di distribuzione o un punto di gestione per scaricare i file di supporto.  
+-   グループ ポリシーを使用したインストール  
 
-     Per le autorizzazioni di sicurezza necessarie per eseguire l'aggiornamento client di Configuration Manager usando la gestione delle applicazioni, vedere [Sicurezza e privacy per la gestione delle applicazioni ](../../../apps/plan-design/security-and-privacy-for-application-management.md).  
+    -   Active Directory スキーマを拡張していない場合、または別のフォレストからのクライアントをインストールする場合は、グループ ポリシーを使用して、CCMSetup.exe のインストール プロパティをコンピューターのレジストリで準備する必要があります。 詳細については、「  [How to Provision Client Installation Properties (Group Policy and Software Update-Based Client Installation)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Provision)」を参照してください。  
 
--   Aggiornamenti automatici del client  
+    -   クライアント コンピューターは、サポート ファイルをダウンロードするために管理ポイントへアクセスできる必要があります。  
 
-     È necessario essere membro del ruolo di sicurezza **Amministratore completo** per configurare gli aggiornamenti client automatici.  
+-   ログオン スクリプトを使用したインストール  
 
-### <a name="firewall-requirements"></a>Requisiti firewall  
- Se esiste un firewall tra i server di sistema del sito e i computer in cui si desidera installare il client di Configuration Manager, vedere [Impostazioni di Windows Firewall e delle porte per i client in System Center Configuration Manager](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md).  
+     コマンド プロンプトで、コマンドライン プロパティの **ccmsetup /source**にて CCMSetup.exe を指定しない限りは、クライアント コンピューターは、サポート ファイルをダウンロードするために配布ポイントまたは管理ポイントにアクセスできる必要があります。  
 
-##  <a name="BKMK_prereqs_mobiledevices"></a> Prerequisiti per i client di dispositivi mobili  
- Usare le informazioni seguenti per determinare i prerequisiti quando si installa il client di Configuration Manager in dispositivi mobili e si usa Configuration Manager per registrarli.  
+-   手動インストール  
 
-### <a name="dependencies-external-to-configuration-manager"></a>Dipendenze esterne a Configuration Manager  
+     コマンド プロンプトで、コマンドライン プロパティの **ccmsetup /source**にて CCMSetup.exe を指定しない限りは、クライアント コンピューターは、サポート ファイルをダウンロードするために配布ポイントまたは管理ポイントにアクセスできる必要があります。  
 
--   Un'autorità di certificazione (CA) globale (enterprise) Microsoft con modelli di certificato per distribuire e gestire i certificati necessari per i dispositivi mobili.  
+-   ワークグループ コンピューターのインストール  
 
-     La CA emittente deve approvare automaticamente le richieste di certificati degli utenti dei dispositivi mobili durante il processo di registrazione.  
+     Configuration Manager サイト サーバー ドメイン内のリソースにアクセスするには、このサイト用にネットワーク アクセス アカウントを構成する必要があります。  
 
-     Per altre informazioni sui requisiti dei certificati, vedere [Sicurezza e privacy per i profili certificato in System Center Configuration Manager](../../../protect/plan-design/security-and-privacy-for-certificate-profiles.md).  
+     ネットワーク アクセス アカウントの構成方法の詳細については、「[Fundamental concepts for content management in System Center Configuration Manager](../../plan-design/hierarchy/fundamental-concepts-for-content-management.md)」(System Center Configuration Manager でのコンテンツ管理の基礎概念) を参照してください。  
 
--   Un gruppo di sicurezza contenente gli utenti che possono registrare i propri dispositivi mobili.  
+-   ソフトウェアの配布を使用したインストール (アップグレードのみ)  
 
-     Questo gruppo di sicurezza viene usato per configurare il modello di certificato usato durante la registrazione del dispositivo mobile.  
+    -   Active Directory スキーマを拡張していない場合、または別のフォレストからのクライアントをインストールする場合は、グループ ポリシーを使用して、CCMSetup.exe のインストール プロパティをコンピューターのレジストリで準備する必要があります。 詳細については、「 [How to Provision Client Installation Properties (Group Policy and Software Update-Based Client Installation)](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Provision)」を参照してください。  
 
--   Facoltativo ma consigliato: un alias DNS (record CNAME) denominato **ConfigMgrEnroll** configurato per il nome server del sistema del sito in cui si installerà il punto proxy di registrazione.  
+    -   クライアント コンピューターは、配布ポイントまたは管理ポイントにアクセスし、サポート ファイルをダウンロードできる必要があります。  
 
-     Questo alias DNS è necessario per supportare il rilevamento automatico per il servizio di registrazione: se non si configura il record DNS, gli utenti devono specificare manualmente il nome server del sistema del sito del punto proxy di registrazione durante il processo di registrazione.  
+     アプリケーション管理を使用して Configuration Manager クライアントをアップグレードするのに必要なセキュリティのアクセス許可については、「[アプリケーション管理に関するセキュリティとプライバシー](../../../apps/plan-design/security-and-privacy-for-application-management.md)」を参照してください。  
 
--   Dipendenze di ruoli del sistema del sito per i computer che eseguiranno i ruoli del sistema del sito del punto di registrazione e del punto proxy di registrazione.  
+-   自動のクライアント アップグレード  
 
-     Vedere [Sistemi operativi supportati per i server del sistema del sito](../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md).  
+     自動のクライアント アップグレードを構成するには、セキュリティの役割である **[完全な権限を持つ管理者]** のメンバーである必要があります。  
 
-### <a name="configuration-manager-dependencies"></a>Dipendenze di Configuration Manager  
- Per altre informazioni sui seguenti ruoli del sistema del sito, vedere [Determinare i ruoli del sistema del sito per System Center Configuration Manager](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md).  
+### <a name="firewall-requirements"></a>ファイアウォールの要件  
+ サイト システム サーバーと Configuration Manager クライアントをインストールするコンピューターとの間にファイアウォールがある場合、「[System Center Configuration Manager におけるクライアントの Windows ファイアウォールとポートの設定](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md)」を参照してください。  
 
--   Punto di gestione configurato per le connessioni client HTTPS e abilitato per i dispositivi mobili  
+##  <a name="BKMK_prereqs_mobiledevices"></a> モバイル デバイス クライアントの前提条件  
+ Configuration Manager クライアントをいつモバイル デバイスにインストールし、それらの登録に Configuration Manager を使用するかの前提条件を判断する際には次の情報を参考にします。  
 
-     Per installare il client di Configuration Manager in dispositivi mobili è sempre necessario un punto di gestione. Oltre ai requisiti di configurazione di HTTPS e all'abilitazione per dispositivi mobili, il punto di gestione deve essere configurato con FQDN Internet e deve accettare connessioni client da Internet.  
+### <a name="dependencies-external-to-configuration-manager"></a>Configuration Manager 外部の依存関係  
 
--   Punto di registrazione e punto proxy di registrazione  
+-   モバイル デバイスに必要な証明書の展開と管理を行う Microsoft 企業証明機関 (CA) と証明書テンプレート。  
 
-     Un punto proxy di registrazione gestisce le richieste di registrazione da parte di dispositivi mobili e il punto di registrazione completa il processo di registrazione. È necessario che il punto di registrazione si trovi nella stessa foresta Active Directory del server del sito, ma il punto proxy di registrazione può trovarsi in una foresta diversa.  
+     発行する証明機関は、登録プロセス中モバイル デバイスのユーザーからの証明書要求を自動的に承認する必要があります。  
 
--   Impostazioni del client per la registrazione dei dispositivi portatili  
+     証明書の要件の詳細については、「[System Center Configuration Manager の証明書プロファイルのセキュリティとプライバシー](../../../protect/plan-design/security-and-privacy-for-certificate-profiles.md)」を参照してください。  
 
-     Configurare le impostazioni del client per consentire agli utenti di registrare i dispositivi mobili e configurare almeno un profilo di registrazione.  
+-   モバイル デバイスを登録できるユーザーを含んだセキュリティ グループ。  
 
--   Punto di Reporting Services  
+     このセキュリティ グループは、モバイル デバイスの登録中に使用される証明書テンプレートを構成するのに使用されます。  
 
-     Il punto di Reporting Services è un ruolo di sistema sito facoltativo ma consigliato, in grado di visualizzare report correlati alla registrazione di dispositivi mobili e alla gestione di client.  
+-   省略可能ですがお勧めします: 登録プロキシ ポイントをインストールするサイト システム サーバー名用に構成された **ConfigMgrEnroll** という名前の DNS エイリアス (CNAME レコード)。  
 
-     Per altre informazioni, vedere [Creazione di report in System Center Configuration Manager](../../../core/servers/manage/reporting.md).  
+     この DNS エイリアスは、登録サービスの自動検出をサポートするのに必要です: この DNS レコードを構成しない場合は、登録プロセスの一環としてユーザーが登録プロキシ ポイントのサイト システム サーバーの名前を手動で指定する必要があります。  
 
--   Per configurare la registrazione per dispositivi mobili, è necessario disporre delle autorizzazioni di sicurezza seguenti:  
+-   登録ポイントと登録プロキシ ポイント サイト システムの役割を実行するコンピューター用サイト システムの役割の依存関係。  
 
-    -   Per aggiungere, modificare ed eliminare i ruoli di sistema sito di registrazione: autorizzazione di **Modifica** per l'oggetto **Site** .  
+     「[サイト システム サーバーでサポートされるオペレーティング システム](../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)」を参照してください。  
 
-    -   Per configurare le impostazioni del client per la registrazione: le impostazioni client predefinite necessitano dell'autorizzazione di **Modifica** per l'oggetto **Site** e le impostazioni client personalizzate necessitano di autorizzazioni di tipo **Agente client**  .  
+### <a name="configuration-manager-dependencies"></a>Configuration Manager の依存関係  
+ 次のサイト システムの役割の詳細については、「[System Center Configuration Manager クライアントのサイト システムの役割の決定](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md)」を参照してください。  
 
-     Il ruolo di sicurezza **Amministratore completo** include le autorizzazioni necessarie per configurare i ruoli di sistema sito di registrazione.  
+-   HTTPS クライアント接続用に構成され、モバイル デバイスが有効な管理ポイント  
 
-     Per gestire i dispositivi mobili registrati, è necessario disporre delle autorizzazioni di sicurezza seguenti:  
+     管理ポイントは、Configuration Manager クライアントをモバイル デバイスをインストールするのに常に必要となります。 HTTPS の構成要求とモバイル デバイス用の有効化に加えて、管理ポイントはインターネット FQDN で構成され、インターネットからのクライアント接続を許可する必要があります。  
 
-    -   Per cancellare o ritirare un dispositivo mobile: **Elimina risorsa** per l'oggetto **Collection** .  
+-   登録ポイントおよび登録プロキシ ポイント  
 
-    -   Per annullare un comando di cancellazione o ritiro: **Elimina risorsa** per l'oggetto **Collection** .  
+     登録プロキシ ポイントはモバイル デバイスからの登録要求を管理し、登録ポイントは登録プロセスを完了します。 登録ポイントはサイト サーバーと同じ Active Directory フォレストにある必要がありますが、登録プロキシ ポイントは別のフォレストに設けることができます。  
 
-    -   Per consentire e bloccare i dispositivi mobili: **Modifica risorsa** per l'oggetto **Collection** .  
+-   モバイル デバイス登録用のクライアント設定  
 
-    -   Per il blocco remoto o la reimpostazione del passcode in un dispositivo mobile: **Modifica risorsa** per l'oggetto **Collection** .  
+     ユーザーがモバイル デバイスを登録し、少なくとも 1 つの登録プロファイルを構成できるようにクライアント設定を構成します。  
 
-     Il ruolo di sicurezza **Amministratore operazioni** include le autorizzazioni necessarie per gestire i dispositivi portatili.  
+-   レポート サービス ポイント  
 
-     Per altre informazioni su come configurare le autorizzazioni di sicurezza, vedere [Fundamentals of role-based administration for System Center Configuration Manager](../../../core/understand/fundamentals-of-role-based-administration.md) e  [Configure role-based administration for System Center Configuration Manager](../../../core/servers/deploy/configure/configure-role-based-administration.md).  
+     レポート サービス ポイントはオプションですが、モバイル デバイスの登録やクライアント管理に関するレポートを表示できる、推奨されるサイト システムの役割です。  
 
-### <a name="firewall-requirements"></a>Requisiti firewall  
- I dispositivi di rete interessati, ad esempio router e firewall e, se applicabile Windows Firewall, devono consentire il traffico associato alla registrazione dei dispositivi mobili:  
+     詳細については、「[System Center Configuration Manager のレポート](../../../core/servers/manage/reporting.md)」を参照してください。  
 
--   Tra i dispositivi mobili e il punto proxy di registrazione: HTTPS (per impostazione predefinita, TCP 443)  
+-   モバイル デバイス用に登録を構成するには、次のセキュリティのアクセス許可が必要です。  
 
--   Tra il punto proxy di registrazione e il punto di registrazione: HTTPS (per impostazione predefinita, TCP 443)  
+    -   登録サイト システムの役割を追加、変更、削除する: **サイト** オブジェクトの **変更** のアクセス許可。  
 
- Se si usa un server Web proxy, sarà necessario configurarlo per il tunneling SSL. Il bridging SSL non è supportato per i dispositivi mobili.  
+    -   登録用にクライアント設定を構成する: 既定のクライアント設定には **サイト** オブジェクトの **変更** のアクセス許可、カスタムのクライアント設定には **クライアント エージェント**  のアクセス許可が必要です。  
 
+     **[完全な権限を持つ管理者]** のセキュリティの役割には、登録サイト システムの役割を構成するのに必要な許可が含まれています。  
+
+     登録されたモバイル デバイスを管理するには、次のセキュリティのアクセス許可が必要です。  
+
+    -   モバイル デバイスをワイプまたはインベントリから削除する: **コレクション** オブジェクトの **リソースの削除**  
+
+    -   [ワイプ] または [インベントリから削除] コマンドを取り消す: **コレクション** オブジェクトの **リソースの削除**  
+
+    -   モバイル デバイスを許可またはブロックする: **コレクション** オブジェクトの **リソースの変更**  
+
+    -   モバイル デバイスでリモート ロック、またはパスコードのリセットを実行する: **コレクション** オブジェクトのリソースの **変更** 。  
+
+     **[オペレーションの管理者]** のセキュリティの役割には、モバイル デバイスを管理するのに必要な許可が含まれています。  
+
+     セキュリティのアクセス許可を構成する方法の詳細については、「 [Fundamentals of role-based administration for System Center Configuration Manager](../../../core/understand/fundamentals-of-role-based-administration.md) 」および「  [Configure role-based administration for System Center Configuration Manager](../../../core/servers/deploy/configure/configure-role-based-administration.md)」を参照してください。  
+
+### <a name="firewall-requirements"></a>ファイアウォールの要件  
+ ルーターやファイアウォール、および該当する場合は Windows ファイアウォールなど、介在するネットワーク デバイスは、モバイル デバイスの登録に関連付けられたトラフィックを許可する必要があります。  
+
+-   モバイル デバイスと登録プロキシ ポイント間では: HTTPS (既定では、TCP 443)  
+
+-   登録プロキシ ポイントと登録ポイント間では: HTTPS (既定では、TCP 443)  
+
+ プロキシの Web サーバーを使用している場合は、SSL トンネリング用に構成されている必要があります。モバイル デバイスは SSL ブリッジに対応しません。  

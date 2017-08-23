@@ -1,211 +1,207 @@
 ---
-title: Introduzione ad Asset Intelligence | Microsoft Docs
-description: Introduzione ad Asset Intelligence in System Center Configuration Manager.
+title: "資産インテリジェンスの概要 | Microsoft Docs"
+description: "System Center Configuration Manager の資産インテリジェンスの概要について説明します。"
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 0bdfdef5-390f-4099-8bde-de51d9a89175
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
-ms.openlocfilehash: 6a851ddfeee78574fbb0b1eff0c7cc518a7bb598
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 879dc3f04f361af955afbc4db180d097073e8d41
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-asset-intelligence-in-system-center-configuration-manager"></a>Introduzione ad Asset Intelligence in System Center Configuration Manager
+# <a name="introduction-to-asset-intelligence-in-system-center-configuration-manager"></a>System Center Configuration Manager の資産インテリジェンスの概要
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Asset Intelligence in System Center Configuration Manager consente di eseguire l'inventario e gestire l'utilizzo delle licenze software in tutta l'organizzazione mediante il catalogo di Asset Intelligence. Molte classi di Strumentazione gestione Windows (WMI) di inventario hardware estendono la gamma di informazioni raccolte sui componenti hardware e i titoli software in uso. Sono disponibili più di 60 report per la presentazione di queste informazioni in un formato di facile utilizzo. Molti di questi report sono collegati a report più specifici in cui è possibile eseguire una query per informazioni generali e il drill-down per informazioni più dettagliate. È possibile aggiungere informazioni personalizzate al catalogo di Asset Intelligence, ad esempio categorie software, famiglie software, etichette software e requisiti hardware. È anche possibile connettersi a System Center Online per aggiornare dinamicamente il catalogo di Asset Intelligence con le informazioni più aggiornate disponibili. I clienti Microsoft possono eseguire la riconciliazione dell'utilizzo delle licenze software aziendali in base alle licenze software acquistate tramite l'importazione di informazioni sulle licenze software nel database del sito di Configuration Manager.  
+System Center Configuration Manager の資産インテリジェンスでは、アセット資産カタログを使用して、ソフトウェア ライセンスの使用状況をインベントリに記録して、企業全体にわたって管理することができます。 多数のハードウェア インベントリ Windows Management Instrumentation (WMI) クラスが用意されているので、使用されているハードウェアおよびソフトウェア タイトルについて収集される情報の幅が広がります。 この情報を使いやすい形式で表示するレポートが 60 以上あります。 これらのレポートの多くはさらに具体的なレポートにリンクしており、それらのレポートで、全般情報を検索したり、詳細情報にドリルダウンしたりすることができます。 資産インテリジェンス カタログにはカスタム情報 (カスタム ソフトウェア カテゴリ、ソフトウェア ファミリ、ソフトウェア ラベル、ハードウェア要件など) を追加することができます。 また、System Center Online に接続し、最新情報を使用して資産インテリジェンス カタログを動的に更新することができます。 ソフトウェア ライセンス情報を Configuration Manager サイト データベースにインポートすることにより、使用されている購入ソフトウェア ライセンスで企業ソフトウェア ライセンスの使用状況を調整することもできます。  
 
-##  <a name="BKMK_AssetIntelligenceCatalog"></a> Catalogo di Asset Intelligence  
+##  <a name="BKMK_AssetIntelligenceCatalog"></a> 資産インテリジェンス カタログ  
 
- Il catalogo di Asset Intelligence di Configuration Manager è un set di tabelle di database archiviate nel database del sito che contengono informazioni di categorizzazione e identificazione per oltre 300.000 titoli e versioni software. Queste tabelle di database vengono usate anche per gestire i requisiti hardware per specifici titoli software.  
+ Configuration Manager の資産インテリジェンス カタログは、サイト データベースに格納されている一連のデータベース テーブルであり、300,000 を超えるソフトウェア タイトルとバージョンの分類情報および識別情報を提供します。 これらのテーブルは、特定のソフトウェア タイトルのハードウェア要件を管理するために使用することもできます。  
 
- Il catalogo di Asset Intelligence offre informazioni sulle licenze software per i titoli software in uso, sia per software Microsoft che non Microsoft. Nel catalogo di Asset Intelligence è disponibile un set predefinito di requisiti hardware per i titoli software ed è possibile creare nuove informazioni per requisiti hardware definiti dall'utente per soddisfare requisiti personalizzati. È anche possibile personalizzare le informazioni nel catalogo di Asset Intelligence e caricare le informazioni sui titoli software personalizzati in System Center Online per la categorizzazione.  
+ 資産インテリジェンス カタログは、Microsoft ソフトウェアと他社製のソフトウェアの両方について、使用されているソフトウェア タイトルのソフトウェア ライセンス情報を提供します。 資産インテリジェンス カタログには、ソフトウェア タイトルの事前定義のハードウェア要件セットが用意されていますが、カスタム要件に対応するユーザー定義のハードウェア要件情報をを新たに作成することもできます。 また、資産インテリジェンス カタログの情報はカスタマイズすることができ、カテゴリ取得のため、ソフトウェア タイトル情報を System Center Online にアップロードすることができます。  
 
- Sono disponibili aggiornamenti del catalogo di Asset Intelligence che contengono informazioni sui nuovi titoli software rilasciati e possono essere scaricati periodicamente per eseguire aggiornamenti in blocco del catalogo. In alternativa, è possibile aggiornare dinamicamente il catalogo tramite il ruolo del sistema del sito del punto di sincronizzazione di Asset Intelligence.  
+ 新しくリリースされたソフトウェアを含む資産インテリジェンス カタログ更新を定期的にダウンロードし、一括カタログ更新を実行できます。 また、資産インテリジェンス同期ポイントのサイト システムの役割を使用すると、このカタログを動的に更新できます。  
 
-###  <a name="BKMK_SoftwareCategories"></a> Categorie software  
- Le categorie software di Asset Intelligence vengono usate per categorizzare in modo generale i titoli software di inventario e anche come raggruppamenti generali di famiglie software più specifiche. Un esempio di categoria software potrebbe essere "aziende del settore energetico" e una famiglia software all'interno di tale categoria software potrebbe essere "petrolio e gas" o "energia idroelettrica". Molte categorie software sono predefinite nel catalogo di Asset Intelligence ed è possibile creare categorie definite dall'utente per definire ulteriormente il software di inventario. Lo stato di convalida di tutte le categorie software predefinite è sempre **Convalidato**, mentre per le informazioni sulle categorie software personalizzate aggiunte al catalogo di Asset Intelligence lo stato è **Definito da utente**. Per altre informazioni su come gestire le categorie software, vedere [Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md) (Configurazione di Asset Intelligence in System Center Configuration Manager).  
-
-> [!NOTE]  
->  Le informazioni sulle categorie software predefinite archiviate nel catalogo di Asset Intelligence sono di sola lettura e non possono essere modificate o eliminate. Gli utenti amministratori possono aggiungere, modificare o eliminare categorie software definite dall'utente.  
-
-###  <a name="BKMK_SoftwareFamilies"></a> Famiglie software  
- Le famiglie software di Asset Intelligence vengono usate per definire i titoli software di inventario all'interno delle categorie software. Molte famiglie software sono predefinite nel catalogo di Asset Intelligence ed è possibile creare famiglie definite dall'utente per definire ulteriormente il software di inventario. Lo stato di convalida di tutte le famiglie software predefinite è sempre **Convalidato**, mentre per le informazioni sulle famiglie software personalizzate aggiunte al catalogo di Asset Intelligence lo stato è **Definito da utente**. Per altre informazioni su come gestire le famiglie software, vedere [Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md) (Configurazione di Asset Intelligence in System Center Configuration Manager).  
+###  <a name="BKMK_SoftwareCategories"></a> ［ソフトウェア カテゴリ］  
+ 資産インテリジェンス ソフトウェア カテゴリを使用して、インベントリされたソフトウェア タイトルをおおまかに分類することができ、比較的細かく分類されているソフトウェア ファミリをグループ化することもできます。 たとえば、ソフトウェア カテゴリがエネルギー関連企業である場合、このソフトウェア カテゴリ内のソフトウェア ファミリとして石油ガスまたは水力発電などを設定できます。 資産インテリジェンス カタログには多数のソフトウェア カテゴリが事前に定義されていますが、インベントリされたソフトウェアをさらに細かく定義するためにユーザー定義のカテゴリを作成することもできます。 すべての事前定義のソフトウェア カテゴリの検証の状態は常に [検証済み ****] になります。一方、資産インテリジェンス カタログに追加されるカスタムのソフトウェア カテゴリ情報の検証の状態は [ユーザー定義 ****] になります。 ソフトウェア カテゴリを管理する方法の詳細については、「[Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md)」(System Center Configuration Manager の資産インテリジェンスの構成) を参照してください。  
 
 > [!NOTE]  
->  Le informazioni sulle famiglie software predefinite sono di sola lettura e non possono essere modificate. Gli utenti amministratori possono aggiungere, modificare o eliminare famiglie software definite dall'utente.  
+>  資産インテリジェンス カタログに保存されている事前定義のソフトウェア カテゴリ情報は、読み取り専用であり、変更または削除することはできません。 管理ユーザーは、ユーザー定義のソフトウェア カテゴリを追加、変更、または削除することができます。  
 
-###  <a name="BKMK_CustomLabels"></a> Etichette software  
- Le etichette software di Asset Intelligence personalizzate consentono di creare filtri che è possibile usare per raggruppare i titoli software e visualizzarli nei report di Asset Intelligence. È possibile usare le etichette software per creare gruppi definiti dall'utente di titoli software con un attributo comune. Ad esempio, è possibile creare un'etichetta software Shareware, associare tale etichetta ai titoli shareware di inventario ed eseguire un report per visualizzare tutti i titoli di software a cui è associata l'etichetta Shareware. Le etichette software non sono predefinite. Lo stato di convalida per le etichette software è sempre **Definito da utente**. Per altre informazioni su come gestire le etichette software, vedere [Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md) (Configurazione di Asset Intelligence in System Center Configuration Manager).  
-
-###  <a name="BKMK_HardwareRequirements"></a> Requisiti hardware  
- È possibile usare le informazioni sui requisiti hardware per verificare che i computer soddisfino i requisiti hardware per i titoli software prima di sceglierli come destinazione per le distribuzioni di software. È possibile gestire i requisiti hardware per i titoli software nell'area **Asset e conformità** nel nodo **Requisiti hardware** all'interno del nodo **Asset Intelligence** . Molti requisiti hardware sono predefiniti nel catalogo di Asset Intelligence ed è possibile creare nuove informazioni per requisiti hardware definiti dall'utente per soddisfare requisiti personalizzati. Lo stato di convalida di tutti i requisiti hardware predefiniti è sempre **Convalidato**, mentre per le informazioni sui requisiti hardware definiti dall'utente aggiunti al catalogo di Asset Intelligence lo stato è **Definito da utente**. Per altre informazioni su come gestire i requisiti hardware, vedere [Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md) (Configurazione di Asset Intelligence in System Center Configuration Manager).  
+###  <a name="BKMK_SoftwareFamilies"></a> ［ソフトウェア ファミリ］  
+ 資産インテリジェンス ソフトウェア ファミリは、ソフトウェア カテゴリ内でインベントリされたソフトウェア タイトルを定義するために使用します。 資産インテリジェンス カタログには多数のソフトウェア ファミリが事前に定義されていますが、インベントリされたソフトウェアをさらに細かく定義するためにユーザー定義のカテゴリを作成することもできます。 すべての事前定義のソフトウェア ファミリの検証の状態は常に [検証済み ****] になります。一方、資産インテリジェンス カタログに追加されるカスタムのソフトウェア ファミリ情報の検証の状態は [ユーザー定義 ****] になります。 ソフトウェア ファミリを管理する方法の詳細については、「[Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md)」(System Center Configuration Manager の資産インテリジェンスの構成) を参照してください。  
 
 > [!NOTE]  
->  I requisiti hardware visualizzati nella console di Configuration Manager vengono recuperati dal catalogo di Asset Intelligence e non sono basati sulle informazioni dei titoli software di inventario dei client di System Center 2012 Configuration Manager. Le informazioni sui requisiti hardware non vengono aggiornate nell'ambito del processo di sincronizzazione con System Center Online. È possibile creare requisiti hardware definiti dall'utente per software di inventario senza requisiti hardware associati.  
+>  定義済みのソフトウェア ファミリ情報は読み取り専用であり、変更できません。 管理ユーザーは、ユーザー定義のソフトウェア ファミリを追加、変更、または削除することができます。  
 
- Per impostazione predefinita, per ogni requisito hardware elencato vengono visualizzate le informazioni seguenti:  
+###  <a name="BKMK_CustomLabels"></a> ソフトウェア ラベル  
+ 資産インテリジェンスのカスタム ソフトウェア ラベルを使用すると、ソフトウェア タイトルをグループ化したり、資産インテリジェンス レポートでソフトウェア タイトルを確認したりするためのフィルターを作成することができます。 ソフトウェア ラベルを使用して、共通の属性をもつソフトウェア タイトルから構成されるユーザー定義のグループを作成することができます。 たとえば、「シェアウェア」という名前のソフトウェア ラベルを作成し、そのソフトウェア ラベルをインベントリされているソフトウェア タイトルに関連付けてレポートを実行し、関連付けられている「シェアウェア」というソフトウェア ラベルが付いているすべてのソフトウェアを確認することができます。 ソフトウェア ラベルは事前定義されていません。 ソフトウェア ラベルの検証の状態は常に [ユーザー定義 ****] です。 ソフトウェア ラベルを管理する方法の詳細については、「[Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md)」(System Center Configuration Manager の資産インテリジェンスの構成) を参照してください。  
 
--   **Titolo software**: specifica il titolo software associato al requisito hardware.  
+###  <a name="BKMK_HardwareRequirements"></a> ハードウェア要件  
+ ハードウェア要件情報は、コンピューターをソフトウェアの展開の対象として指定する前に、それらがソフトウェア タイトルのハードウェア要件を満たしていることを検証するために使用することができます。 ソフトウェア タイトルのハードウェア要件は、[資産インテリジェンス **** ] ノードの下にある [ハードウェアの要件 **** ] ノードの [資産とコンプライアンス **** ] ワークスペースで管理することができます。 資産インテリジェンス カタログでは、多くのハードウェア要求が事前定義されていますが、カスタムの要求を満たす新しいユーザー定義のハードウェア要求情報を作成することもできます。 すべての事前定義のハードウェア要件の検証の状態は常に [検証済み ****] になります。一方、資産インテリジェンス カタログに追加されるカスタムのハードウェア要件情報の検証の状態は [ユーザー定義 ****] になります。 ハードウェア要件を管理する方法の詳細については、「[Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md)」(System Center Configuration Manager の資産インテリジェンスの構成) を参照してください。  
 
--   **CPU minima (MHz)**: specifica la velocità minima del processore, in megahertz (MHz), richiesta dal titolo software.  
+> [!NOTE]  
+>  Configuration Manager コンソールで表示されるハードウェア要件は、資産インテリジェンス カタログから取得されます。System Center 2012 Configuration Manager クライアントのインベントリされたソフトウェア タイトル情報には基づいていません。 ハードウェア要件情報は、System Center Online との同期プロセスの一環としては更新されません。 関連付けられたハードウェア要件のないインベントリされたソフトウェア用にユーザー定義のハードウェア要件を作成することができます。  
 
--   **RAM minima (KB)**: specifica la RAM minima, in kilobyte (KB), richiesta dal titolo software.  
+ 既定では、ハードウェア要件ごとに次の情報が表示されます。  
 
--   **Dimensioni minime spazio su disco (KB)**: specifica le dimensioni minime dello spazio disponibile nel disco rigido, in KB, richieste dal titolo software.  
+-   **ソフトウェア タイトル**: ハードウェア要件に関連付けられているソフトウェア タイトルを指定します。  
 
--   **Dimensioni disco minime (KB)**: specifica le dimensioni minime del disco rigido, in KB, richieste dal titolo software.  
+-   **最低 CPU 速度 (MHz)**: ソフトウェア タイトルに必要な最低プロセッサ速度をメガヘルツ (MHz) 単位で指定します。  
 
--   **Stato convalida**: specifica lo stato di convalida per il requisito hardware.  
+-   **最小 RAM 容量 (KB)**: ソフトウェア タイトルに必要な最小 RAM をキロバイト (KB) 単位で指定します。  
 
- I requisiti hardware predefiniti archiviati nel catalogo di Asset Intelligence sono di sola lettura e non possono essere eliminati.  Gli utenti amministratori possono aggiungere, modificare o eliminare i requisiti hardware definiti dall'utente per i titoli software non archiviati nel catalogo di Asset Intelligence.  
+-   **最小空きディスク領域 (KB)**: ソフトウエア タイトルに必要なハード ディスクの最小空き領域をキロバイト KB 単位で指定します。  
 
-##  <a name="BKMK_InventoriedSoftwareTitles"></a> Titoli software di inventario  
- È possibile visualizzare informazioni sui titoli software di inventario nell'area di lavoro **Asset e conformità** nel nodo **Software di inventario** all'interno del nodo **Asset Intelligence** . Hardware Inventory Client Agent raccoglie le informazioni sul software di inventario dai client di Configuration Manager in base ai titoli software archiviati nel catalogo di Asset Intelligence.  
+-   **最小ディスク サイズ (KB)**: ソフトウエア タイトルに必要な最小ハード ディスク サイズを KB 単位で指定します。  
+
+-   **検証の状態**: ハードウェア要件の検証の状態を指定します。  
+
+ 資産インテリジェンス カテゴリに保存されている事前定義のハードウェア要件は、読み取り専用であり、削除することはできません。  管理ユーザーは、資産インテリジェンス カタログに保存されていないユーザー定義のハードウェア要件を追加、変更、または削除することができます。  
+
+##  <a name="BKMK_InventoriedSoftwareTitles"></a> ［インベントリされたソフトウェア タイトル］  
+ インベントリされたソフトウェア タイトル情報は、[資産インテリジェンス **** ] ノードの下にある [インベントリされたソフトウェア **** ] ノードの [資産とコンプライアンス **** ] ワークスペースで管理することができます。 ハードウェア インベントリのクライアント エージェントは、インベントリされたソフトウェア情報を、資産インテリジェンス カタログに保存されているソフトウェア タイトルに基づいて Configuration Manager クライアントから収集します。  
 
 > [!WARNING]  
->  Hardware Inventory Client Agent raccoglie l'inventario in base alle classi di report di inventario hardware di Asset Intelligence. Per altre informazioni su come gestire le classi di report, vedere [Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md) (Configurazione di Asset Intelligence in System Center Configuration Manager).  
+>  ハードウェア インベントリのクライアント エージェントは、有効になっている資産インテリジェンス ハードウェア インベントリ レポート クラスに基づいて、インベントリを収集します。 レポート クラスを有効にする方法の詳細については、「[Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md)」(System Center Configuration Manager の資産インテリジェンスの構成) を参照してください。  
 
- Per impostazione predefinita, per ogni titolo software di inventario vengono visualizzate le informazioni seguenti:  
+ 既定では、インベントリされたソフトウェア タイトルごとに次の情報が表示されます。  
 
--   **Nome**: specifica il nome del titolo software di inventario.  
+-   **名前**: インベントリされたソフトウェア タイトルの名前を指定します。  
 
--   **Fornitore**: specifica il nome del fornitore che ha sviluppato il titolo software di inventario.  
+-   **ベンダー**: インベントリされたソフトウェア タイトルを開発したベンダーの名前を指定します。  
 
--   **Versione**: specifica la versione del prodotto del titolo software di inventario.  
+-   **バージョン**: インベントリされたソフトウェア タイトルの製品バージョンを指定します。  
 
--   **Categoria**: specifica la categoria software attualmente assegnata al titolo software di inventario.  
+-   **カテゴリ**: インベントリされたソフトウェア タイトルに現在割り当てられているソフトウェア カテゴリを指定します。  
 
--   **Famiglia**: specifica la famiglia software attualmente assegnata al titolo software di inventario.  
+-   **ファミリ**: インベントリされたソフトウェア タイトルに現在割り当てられているソフトウェア ファミリを指定します。  
 
--   **Etichetta** [**1**, **2**e **3**]: specifica le etichette personalizzate associate al titolo software. Ai titoli software di inventario possono essere associate fino a tre etichette personalizzate.  
+-   **ラベル** [**1**、 **2**、 **3**]: ソフトウェア タイトルに関連付けられているカスタム ラベルを指定します。 インベントリされたソフトウェア タイトルには、関連付けられているカスタム ラベルが最大 3 つあります。  
 
--   **Conteggio**: specifica il numero di client di Configuration Manager che hanno il titolo software in inventario.  
+-   **カウント**: インベントリされたソフトウェア タイトルを持つ Configuration Manager クライアントの数を指定します。  
 
--   **Stato**: specifica lo stato di convalida per il titolo software di inventario.  
-
-> [!NOTE]  
->  È possibile modificare le informazioni di categorizzazione (nome prodotto, fornitore, categoria software e famiglia software) per il software di inventario solo nel sito principale nella gerarchia. Dopo aver modificato le informazioni di categorizzazione per software predefiniti, lo stato di convalida per le modifiche software cambia da **Convalidato** a **Definito da utente**.  
-
-##  <a name="AssetIntelligenceSycnronizationPoint"></a> Punto di sincronizzazione di Asset Intelligence  
- Il punto di sincronizzazione di Asset Intelligence è un ruolo del sistema del sito di Configuration Manager usato per connettersi a System Center Online (tramite la porta TCP 443) per gestire gli aggiornamenti dinamici alle informazioni del catalogo di Asset Intelligence. Questo ruolo del sito può essere installato solo nel sito principale della gerarchia. È necessario configurare tutte le personalizzazioni del catalogo di Asset Intelligence tramite una console di Configuration Manager connessa al sito principale. Anche se tutti gli aggiornamenti devono essere configurati nel sito principale, le informazioni del catalogo di Asset Intelligence vengono replicate negli altri siti nella gerarchia. Il ruolo del sito del punto di sincronizzazione di Asset Intelligence consente di richiedere la sincronizzazione del catalogo su richiesta con System Center Online o di pianificare la sincronizzazione automatica del catalogo. Oltre al download di nuove informazioni per il catalogo di Asset Intelligence, il punto di sincronizzazione di Asset Intelligence consente di caricare le informazioni sui titoli software personalizzati in System Center Online per la categorizzazione. Microsoft considera informazioni pubbliche tutti i titoli software caricati in System Center Online per la categorizzazione. È quindi necessario accertarsi che i titoli software personalizzati non contengano informazioni riservate o proprietarie.  
+-   **状態**: インベントリされたソフトウェア タイトルの検証の状態を指定します。  
 
 > [!NOTE]  
->  Dopo l'invio di un titolo software senza categoria, quando ci sono almeno 4 richieste di categorizzazione dei clienti per lo stesso titolo software, i ricercatori di System Center Online identificano, categorizzano e quindi rendono disponibili le informazioni di categorizzazione del titolo software per tutti i clienti che usano il servizio online. Viene assegnata la massima priorità ai titoli software con il maggior numero di richieste di categorizzazione. È improbabile che al software personalizzato e alle applicazioni line-of-business venga assegnata una categoria e la procedura consigliata prevede di non inviare questi titoli software a Microsoft per la categorizzazione.  
+>  インベントリされたソフトウェアの分類情報 (製品名、ベンダー、ソフトウェア カテゴリ、およびソフトウェア ファミリ) は、階層の最上位サイトでのみ、変更することができます。 事前定義のソフトウェアの分類情報を変更すると、ソフトウェアの検証の状態が [検証済み **** ] から [ユーザー定義 ****] に変わります。  
+
+##  <a name="AssetIntelligenceSycnronizationPoint"></a> 資産インテリジェンス同期ポイント  
+ 資産インテリジェンス同期ポイントは、System Center Online に接続して (TCP ポート 443 を使用) 資産インテリジェンス カタログ情報の動的な更新を管理するために使用される、Configuration Manager サイト システムの役割です。 このサイトの役割は、階層の最上位サイトにのみ、インストールすることができます。 資産インテリジェンス カタログのすべてのカスタマイズ設定は、すべて、最上位サイトに接続する Configuration Manager コンソールを使用して構成する必要があります。 更新情報はすべて最上位サイトで構成する必要がありますが、資産インテリジェンス カテゴリ情報は階層内の他のサイトにレプリケートされます。 資産インテリジェンス同期ポイント サイトの役割を使用すると、System Center Online とのオンデマンドのカタログ同期を要求したり、自動カタログ同期をスケジュールしたりすることができます。 資産インテリジェンス同期ポイントは、新しい資産インテリジェンス カタログ情報をダウンロードするだけでなく、カスタム ソフトウェア タイトル情報をカテゴリ分類用に System Center Online にアップロードできます。 Microsoft は、カテゴリ化のために System Center Online にアップロードされたすべてのソフトウェア タイトルを公共の情報として扱います。 そのため、カスタム ソフトウェア タイトルに機密情報や企業情報が含まれていないことを確認してください。  
 
 > [!NOTE]  
->  Per connettersi a System Center Online, è necessario un ruolo del sistema del sito del punto di sincronizzazione. Per informazioni sull'installazione di un punto di sincronizzazione di Asset Intelligence, vedere [Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md) (Configurazione di Asset Intelligence in System Center Configuration Manager).  
-
-##  <a name="BKMK_AssetIntelligenceHomePage"></a> Home page di Asset Intelligence  
- Il nodo **Asset Intelligence** nell'area di lavoro **Asset e conformità** è la home page di Asset Intelligence in Configuration Manager. La home page di **Asset Intelligence** visualizza un dashboard di riepilogo delle informazioni del catalogo di Asset Intelligence.  
+>  未分類のソフトウェア タイトルが送信され、同じソフトウェア タイトルについて 4 件以上のカテゴリ取得要求がお客様から寄せられると、System Center Online の担当員が、そのソフトウェア タイトルを確認してカテゴリを作成してから、ソフトウェア タイトルのカテゴリ情報をすべての System Center Online 利用者が使用できるようにします。 カテゴリ取得要求が最も多いソフトウェア タイトルが最優先で処理されます。 カスタムのソフトウェアや基幹業務アプリケーションにカテゴリを与えることはほとんどありません。ベスト プラクティスとして、これらのソフトウェア タイトルをカテゴリ化のために Microsoft に送信しないでください。  
 
 > [!NOTE]  
->  La home page di **Asset Intelligence** non viene in genere aggiornata automaticamente mentre è visualizzata.  
+>  System Center Online に接続するには、資産インテリジェンス同期ポイント サイト システムの役割が必要です。 資産インテリジェンス同期ポイントをインストールする方法の詳細については、「[System Center Configuration Manager での資産インテリジェンスの構成](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md)」を参照してください。  
 
- La home page di **Asset Intelligence** è divisa nelle sezioni seguenti:  
+##  <a name="BKMK_AssetIntelligenceHomePage"></a> 資産インテリジェンス ホーム ページ  
+ **[資産とコンプライアンス]** ワークスペースの **[資産インテリジェンス]** ノードは、Configuration Manager の資産インテリジェンスのホーム ページです。 [資産インテリジェンス **** ] ホーム ページには、資産インテリジェンス カタログ情報の概要ダッシュボード ビューが表示されます。  
 
--   **Sincronizzazione catalogo**: fornisce informazioni sullo stato di abilitazione di Asset Intelligence e sullo stato corrente del punto di sincronizzazione di Asset Intelligence. In questa sezione sono anche disponibili informazioni sulla pianificazione della sincronizzazione, sul fatto che il resoconto delle licenze cliente sia stato o meno importato, sulla data dell'ultimo aggiornamento dello stato e sull'ora per il successivo aggiornamento pianificato, nonché sul numero di modifiche apportate dopo l'installazione del sistema del sito del punto di sincronizzazione di Asset Intelligence.  
+> [!NOTE]  
+>  [資産インテリジェンス **** ] ホーム ページは、表示中に自動的には更新されません。  
+
+ [資産インテリジェンス **** ] ホーム ページには、次のセクションが表示されます。  
+
+-   **カタログ同期**: 資産インテリジェンスが有効になっているかどうかと、資産インテリジェンス同期ポイントの現在の状態に関する情報を提供します。 また、同期スケジュール、カスタマー ライセンス ステートメントがインポートされているかどうか、前回状態が更新された日時と次回の更新予定の日時、および資産インテリジェンス同期ポイント サイト システムがインストールされてから加えられた変更の数も提供します。  
 
     > [!NOTE]  
-    >  La sezione relativa alla sincronizzazione del catalogo di Asset Intelligence nella home page di **Asset Intelligence** viene visualizzata solo se è stato installato un ruolo del sistema del sito del punto di sincronizzazione di Asset Intelligence.  
+    >  **資産インテリジェンス** ホーム ページの [資産インテリジェンス カタログ同期] セクションが表示されるのは、資産インテリジェンス同期ポイントのサイト システムの役割をインストールした場合のみです。  
 
--   **Stato software di inventario**: fornisce il conteggio e la percentuale per software, categorie software e famiglie software di inventario identificati da Microsoft, identificati da un amministratore, con identificazione online in sospeso o non identificati e non in sospeso. Le informazioni visualizzate in formato di tabella mostrano i conteggi, mentre le informazioni visualizzate nel grafico mostrano le percentuali.  
+-   **インベントリされたソフトウェアのステータス**: インベントリされたソフトウェアの数と割合、ソフトウェア カテゴリ、ソフトウェア ファミリが、確認状態と共に表示されます。確認状態には、[Microsoft により確認済み]、[管理者により確認済み]、[オンライン確認保留中]、[未確認で確認待ちになっていない] があります。 表形式で表示される情報はそれぞれの数値を示し、グラフ形式で表示される情報はそれぞれの割合を示します。  
 
-##  <a name="BKMK_AssetIntelligenceReports"></a> Report di Asset Intelligence  
- I report di Asset Intelligence si trovano nella console di Configuration Manager, nell'area di lavoro **Monitoraggio** nella cartella Asset Intelligence nel nodo **Creazione report**. I report forniscono informazioni su hardware, gestione delle licenze e software. Per altre informazioni sui report in Configuration Manager, vedere [Creazione di report in Configuration Manager](../../../../core/servers/manage/reporting.md).  
-
-> [!NOTE]  
->  La precisione delle informazioni su licenze e quantità dei titoli software installati visualizzate nei report di Asset Intelligence può variare rispetto al numero effettivo di titoli software installati o licenze in uso nell'ambiente, a causa delle complesse dipendenze e limitazioni associate all'esecuzione dell'inventario delle informazioni sulle licenze per i titoli software installati in ambienti aziendali. Non usare i report di Asset Intelligence come unica fonte per determinare la conformità delle licenze software acquistate.  
-
-###  <a name="BKMK_HardwareReports"></a> Report di Asset Intelligence sull'hardware  
- I report di Asset Intelligence sull'hardware forniscono informazioni sulle risorse hardware nell'organizzazione. Sulla base delle informazioni di inventario hardware, come velocità, memoria, dispositivi e altre, i report di Asset Intelligence sull'hardware possono presentare informazioni sui dispositivi USB, sull'hardware che deve essere aggiornato e anche sui computer che non sono pronti per un aggiornamento software specifico.  
+##  <a name="BKMK_AssetIntelligenceReports"></a> 資産インテリジェンス レポート  
+ 資産インテリジェンス レポートは、Configuration Manager コンソールの **[監視]** ワークスペースにある **[レポート]** ノードの下の [資産インテリジェンス] フォルダーにあります。 レポートはハードウェア、ライセンス管理、ソフトウェアに関する情報を示します。 Configuration Manager でのレポートに関して詳しくは、「[System Center Configuration Manager のレポート](../../../../core/servers/manage/reporting.md)」を参照してください。  
 
 > [!NOTE]  
->  Alcuni dati utente nei report di Asset Intelligence sull'hardware vengono raccolti dal registro eventi di sicurezza del sistema. Per una maggiore accuratezza dei report, si consiglia di cancellare questo registro quando si riassegna un computer a un nuovo utente.  
+>  資産インテリジェンス レポートに表示されるインストール済みのソフトウェア タイトルおよびライセンス情報は、環境でインストールされているソフトウェア タイトルまたは使用されているライセンスの実際の数と異なる場合があります。 これは、エンタープライズ環境にインストールされるソフトウェア タイトルのソフトウェア ライセンス情報のインベントリには複雑な依存関係と制限事項が伴うためです。 資産インテリジェンス レポートのみに基づいて購入済みソフトウェア ライセンスのコンプライアンスを判断しないでください。  
 
-###  <a name="BKMK_LicenseManagementReports"></a> Report di Asset Intelligence sulla gestione delle licenze  
- I report di Asset Intelligence sulla gestione delle licenze forniscono dati relativi alle licenze in uso. Il report sul Ledger License elenca le applicazioni Microsoft installate in un formato congruente con un resoconto delle licenze Microsoft. Si tratta di un metodo pratico per abbinare le licenze acquistate a quelle usate. Altri report sulla gestione delle licenze forniscono informazioni sui computer che fungono da server per l'esecuzione del Servizio di gestione delle chiavi (KMS) per dati statistici sull'attivazione del sistema operativo.  
+###  <a name="BKMK_HardwareReports"></a> 資産インテリジェンス ハードウェア レポート  
+ 資産インテリジェンス ハードウェア レポートは、組織内のハードウェア資産に関する情報を提供します。 処理速度、メモリ、周辺機器などのハードウェア インベントリ情報を使用することにより、ハードウェア資産インテリジェンス レポートで、USB デバイス、アップグレードが必要なハードウェア、および特定のソフトウェア アップグレードの準備ができていないコンピューターに関する情報を提供することができます。  
+
+> [!NOTE]  
+>  資産インテリジェンス ハードウェア レポートの一部のユーザー データは、システム セキュリティ イベント ログから収集されます。 レポートの精度向上のため、新規ユーザーにコンピューターを再度割り当てる際には、このログをクリアすることをお勧めします。  
+
+###  <a name="BKMK_LicenseManagementReports"></a> 資産インテリジェンス ライセンス管理レポート  
+ 資産インテリジェンス ライセンス管理レポートには、使用中のライセンスに関するデータが表示されます。 ライセンス台帳レポートには、インストールされた Microsoft アプリケーションが Microsoft ライセンス ステートメント (MLS) と対応する形で一覧表示されます。 これにより、購入したライセンスと使用したライセンスを簡単に一致させることができます。 他のライセンス管理レポートは、オペレーティング システムのアクティベーション統計のため、キー管理サービス (KMS) を実行するサーバーとして機能するコンピューターに関する情報を提供します。  
 
 > [!IMPORTANT]  
->  Vari report di Asset Intelligence sulla gestione delle licenze presentano informazioni sulla funzione del Server di gestione delle chiavi, un metodo per l'amministrazione di contratti multilicenza. Se non è stato implementato un Server di gestione delle chiavi, alcuni report potrebbe non restituire dati. Per altre informazioni sul Server di gestione delle chiavi, cercare KMS in [Microsoft TechNet](http://go.microsoft.com/fwlink/?linkid=3225).  
+>  一部の資産インテリジェンス ライセンス管理レポートは、ボリューム ライセンスの管理手法であるキー管理サービス (KMS) の機能に関する情報を提供します。 KMS サーバーが実装されていない場合、レポートによってはデータが取得されないこともあります。 KMS の詳細については、 [Microsoft TechNet](http://go.microsoft.com/fwlink/?linkid=3225)で KMS に関する情報を検索してください。  
 
-###  <a name="BKMK_SoftwareReports"></a> Report di Asset Intelligence sul software  
- I report di Asset Intelligence sul software forniscono informazioni su famiglie software, categorie software e titoli software specifici installati nei computer dell'organizzazione. I report sul software presentano informazioni sugli oggetti browser helper, il software avviato automaticamente e altro ancora. Questi report possono essere usati per identificare adware, spyware e altro malware, nonché per individuare software ridondante e quindi ottimizzare l'acquisto e il supporto tecnico del software.  
+###  <a name="BKMK_SoftwareReports"></a> 資産インテリジェンス ソフトウェア レポート  
+ 資産インテリジェンス ソフトウェア レポートは、組織内のコンピューターにインストールされているソフトウェア ファミリ、カテゴリ、および特定のソフトウェア タイトルに関する情報を提供します。 ソフトウェア レポートには、ブラウザー ヘルパー オブジェクトや自動的に始動するソフトウェアなどの情報が表示されます。 このレポートは、アドウェアやスパイウェアなどのマルウェアを識別するのに使用することができます。また、余剰ソフトウェアを特定して、ソフトウェアの購入とサポートを合理化するのに役立ちます。  
 
-###  <a name="BKMK_SoftwareIdTagReports"></a> Report di Asset Intelligence sui tag di identificazione software  
- I report di Asset Intelligence sui tag di identificazione software forniscono informazioni sul software che contiene un tag di identificazione conforme allo standard ISO/IEC 19770-2. I tag di identificazione software forniscono informazioni autorevoli usate per identificare il software installato. Quando si abilita la classe di report di inventario hardware SMS_SoftwareTag, Configuration Manager raccoglie informazioni sul software con tag di identificazione software. I report seguenti forniscono informazioni sul software:  
+###  <a name="BKMK_SoftwareIdTagReports"></a> 資産インテリジェンス ソフトウェア識別タグ レポート  
+ 資産インテリジェンス ソフトウェア識別タグ レポートには、ISO/IEC 19770-2 に準拠したソフトウェア識別タグが含まれるソフトウェアに関する情報が示されます。 ソフトウェア識別タグは、インストールされたソフトウェアの識別に使用される信頼できる情報を提供します。 SMS_SoftwareTag ハードウェア インベントリ レポート クラスを有効にすると、Configuration Manager によって、ソフトウェア識別タグを含むソフトウェアに関する情報が収集されます。 ソフトウェアに関する情報を提供するレポートは次のとおりです。  
 
--   **Software 14A - Ricerca di software con tag di identificazione software abilitato**: questo report fornisce il conteggio del software installato con un tag di identificazione software abilitato.  
+-   **ソフトウェア 14A - ソフトウェア識別タグが有効になっているソフトウェアの検索**: ソフトウェア識別タグが有効になっている、インストール済みソフトウェアの数が示されます。  
 
--   **Software 14B - Computer con software specifico installato con tag di identificazione software abilitato**: questo report elenca tutti i computer con software installato con un tag di identificazione software specifico abilitato.  
+-   **ソフトウェア 14B - 特定のソフトウェア識別タグが有効になっているソフトウェアがインストールされているコンピューター**: 特定のソフトウェア識別タグが有効になっているソフトウェアがインストールされているコンピューターが一覧表示されます。  
 
--   **Software 14C - Software istallato con tag di identificazione software abilitato in un computer specifico**: questo report elenca tutto il software installato con un tag di identificazione software specifico abilitato in un computer specifico.  
+-   **ソフトウェア 14C - 特定のコンピューターでインストール済み識別タグが有効になっているソフトウェア**: 特定のコンピューターで特定のソフトウェア識別タグが有効になっているインストール済みソフトウェアが一覧表示されます。  
 
-###  <a name="BKMK_ReportingLImitations"></a> Limitazioni dei report di Asset Intelligence  
- I report di Asset Intelligence possono fornire grandi quantità di informazioni sui titoli software installati e sulle licenze software acquistate in uso. Queste informazioni non dovrebbero essere tuttavia usate come unica fonte per determinare la conformità delle licenze software acquistate.  
+###  <a name="BKMK_ReportingLImitations"></a> 資産インテリジェンス レポートの制限事項  
+ 資産インテリジェンス レポートは、使用されているインストール済みソフトウェア タイトルおよび購入済みソフトウェア ライセンスに関する大量の情報を提供することができます。 ただし、それらの情報のみに基づいて購入済みソフトウェア ライセンスのコンプライアンスを判断しないでください。  
 
-####  <a name="BKMK_ExampleDependencies"></a> Esempi di dipendenze  
- La precisione delle quantità visualizzate nei report di Asset Intelligence per i titoli software installati e le licenze possono variare rispetto alle quantità effettive in uso, a causa delle complesse dipendenze associate all'esecuzione dell'inventario delle informazioni sulle licenze per i titoli software in uso in ambienti aziendali. Gli esempi seguenti mostrano le dipendenze correlate all'esecuzione dell'inventario del software installato nell'organizzazione tramite Asset Intelligence, che potrebbero influire sulla precisione dei report di Asset Intelligence:  
+####  <a name="BKMK_ExampleDependencies"></a> 依存関係の例  
+ 資産インテリジェンス レポートに表示されるインストール済みのソフトウェア タイトルおよびライセンス情報は、使用されているライセンスの実際の数と異なる場合があります。 これは、エンタープライズ環境で使用されているソフトウェア タイトルのソフトウェア ライセンス情報のインベントリには複雑な依存関係が伴うためです。 次の例は、資産インテリジェンスを使用した企業における、インストール済みソフトウェアのインベントリに関連する依存関係を示しています。これらの依存関係は、資産インテリジェンス レポートの精度に影響を与える可能性があります。  
 
- **Dipendenze dell'inventario hardware dei client**  
- I report di Asset Intelligence sul software installato si basano sui dati raccolti dai client di Configuration Manager mediante l'estensione dell'inventario hardware per abilitare i report di Asset Intelligence. A causa di questa dipendenza dai report di inventario hardware, i report di Asset Intelligence includono solo i dati dai client di Configuration Manager che completano correttamente i processi di inventario hardware con le classi di report WMI di Asset Intelligence richieste abilitate. Poiché poi i client di Configuration Manager eseguono i processi di inventario hardware in base a una pianificazione definita dall'utente amministratore, potrebbe verificarsi un ritardo nella generazione dei report dei dati, con effetti sulla precisione dei report di Asset Intelligence. Ad esempio, un titolo software in licenza di inventario potrebbe essere disinstallato dopo il completamento di un ciclo di inventario hardware corretto del client. Tuttavia, il titolo software viene indicato come installato nei report di Asset Intelligence fino al successivo ciclo di report di inventario hardware pianificato del client.  
+ **クライアント ハードウェア インベントリの依存関係**  
+ 資産インテリジェンスのインストール済みソフトウェアのレポートは、ハードウェア インベントリを拡張して資産インテリジェンス レポートを有効にした Configuration Manager クライアントから収集されたデータに基づいています。 このハードウェア インベントリ レポートにおけるこの依存関係のため、資産インテリジェンス レポートは、必要な資産インテリジェンス WMI レポート クラスが有効になっているハードウェア インベントリ処理が正常に完了した Configuration Manager クライアントからのデータのみを反映します。 また、Configuration Manager クライアントは管理ユーザーが定義したスケジュールに従ってハードウェア インベントリ プロセスを実行するため、資産インテリジェンス レポートの精度に影響する遅延がデータ レポート作成時に発生する可能性があります。 たとえば、クライアントが正常にハードウェア インベントリ サイクルを完了した後に、インベントリ対象のライセンスされたソフトウェア タイトルがアンインストールされる場合があります。 しかし、そのソフトウェア タイトルは、クライアントに対してスケジュールされている次回のハードウェア インベントリ レポート サイクルまでは、インストール済みとして資産インテリジェンス レポートに表示されます。  
 
- **Dipendenze di pacchetti software**  
- Dato che i report di Asset Intelligence sono basati sui dati relativi ai titoli software installati tramite i processi di inventario hardware standard dei client di Configuration Manager, la raccolta di alcuni dati sui titoli software potrebbe non essere corretta. Ad esempio, si potrebbero ottenere report di Asset Intelligence non accurati a causa di installazioni software non conformi ai processi di installazione standard o modificate prima dell'installazione.  
+ **ソフトウェア パッケージの依存関係**  
+ 資産インテリジェンス レポートは、標準の Configuration Manager クライアントのハードウェア インベントリ プロセスを使用して収集されるインストール済みソフトウェア タイトルのデータに基づいて作成されるため、一部のソフトウェア タイトルのデータが正しく収集されないことがあります。 たとえば、標準のインストール プロセスに従っていないソフトウェア インストールや、インストール前に変更されたソフトウェア インストールの影響により、資産インテリジェンス レポートの精度が損なわれることがあります。  
 
-####  <a name="BKMK_LegalLimitations"></a> Limitazioni legali  
- Le informazioni visualizzate nei report di Asset Intelligence sono soggette a molte limitazioni e non rappresentano suggerimenti di tipo legale, finanziario o professionale. Le informazioni fornite dai report di Asset Intelligence sono solo a scopo informativo e non dovrebbero essere usate come unica fonte di informazioni per determinare la conformità di utilizzo delle licenze software.  
+####  <a name="BKMK_LegalLimitations"></a> 法律上の制限事項  
+ 資産インテリジェンス レポートに表示される情報には多くの制限事項があります。また、表示される情報は法律、会計、またはその他の専門的アドバイスを示すものではありません。 資産インテリジェンス レポートが提供する情報は情報提供のみを目的としています。この情報のみを使用してソフトウェア ライセンス使用の対応状況を判断しないでください。  
 
- Gli esempi seguenti illustrano le limitazioni correlate all'esecuzione dell'inventario del software installato e dell'utilizzo delle licenze nell'organizzazione tramite Asset Intelligence, che potrebbero influire sulla precisione dei report di Asset Intelligence:  
+ 資産インテリジェンスを使用している企業における、インストール済みソフトウェアとライセンスの使用状況のインベントリに関連した制限の例を次に示します。これらの制限は、資産インテリジェンス レポートの精度に影響を与える可能性があります。  
 
- **Limitazioni relative alle quantità di utilizzo delle licenze Microsoft**  
- -   La quantità di licenze software Microsoft acquistate si basa sulle informazioni fornite dagli amministratori e dovrebbe essere verificata attentamente per assicurarsi che venga fornito il numero corretto di licenze software.  
+ **Microsoft ライセンス使用数の制限**  
+ -   購入済みの Microsoft ソフトウェア ライセンスの数は管理者が指定した情報に基づいており、正確なソフトウェア ライセンスの数が指定されていることを厳密に確認する必要があります。  
 
--   La quantità di licenze software Microsoft indicata nei report contiene informazioni solo sulle licenze software Microsoft acquistate tramite contratti multilicenza e non include informazioni per le licenze software acquistate al dettaglio, tramite OEM o altri canali di vendita.  
+-   報告される Microsoft ソフトウェア ライセンス数には、ボリューム ライセンス プログラムを通じて取得した Microsoft ソフトウェア ライセンスの情報のみが含まれます。小売、OEM、またはその他のソフトウェア ライセンス販売チャネルを通じて取得したソフトウェア ライセンスの情報は反映されません。  
 
--   Le licenze software acquistate negli ultimi 45 giorni potrebbero non essere incluse nella quantità di licenze software Microsoft indicata nei report a causa dei requisiti e delle pianificazioni per i report del rivenditore del software.  
+-   過去 45 日以内に取得されたソフトウェア ライセンスは、ソフトウェア販売店のレポートの要件およびスケジュールが原因で、Microsoft ソフトウェア ライセンス数の報告に含まれない場合があります。  
 
--   Le quantità di licenze software Microsoft potrebbero non rispecchiare le modifiche dovute a trasferimenti delle licenze software in seguito a fusioni o acquisizioni.  
+-   企業の吸収合併によるソフトウェア ライセンスの譲渡は、Microsoft ソフトウェア ライセンス数に反映されない場合があります。  
 
--   I termini e le condizioni in un contratto multilicenza Microsoft potrebbero influire sul numero di licenze software indicato nei report e potrebbero quindi essere necessarie ulteriori verifiche da parte di un rappresentante Microsoft.  
+-   Microsoft ボリューム ライセンス (MVLS) 使用許諾契約書内の非標準の条項および条件は、報告されるソフトウェア ライセンス数に影響する場合があります。その結果、Microsoft の担当者による追加の確認が必要になることがあります。  
 
- **Limitazioni relative alle quantità di titoli software installati**  
- I client di Configuration Manager devono completare correttamente i cicli di report di inventario hardware per far sì che i report di Asset Intelligence contengano informazioni accurate sulle quantità di titoli software installati. Potrebbe anche verificarsi un ritardo tra l'installazione o la disinstallazione di un titolo software concesso in licenza dopo un ciclo di report di inventario hardware corretto e le informazioni aggiornate potrebbero non comparire nei report di Asset Intelligence prima dell'inventario hardware pianificato successivo del client.  
+ **インストール済みソフトウェア タイトル数の制限**  
+ 資産インテリジェンス レポートでインストール済みソフトウェア タイトル数を正確にレポートするには、Configuration Manager クライアントが、ハードウェア インベントリ レポート サイクルを適切に完了する必要があります。 また、ライセンスされたソフトウェア タイトルのインストールまたはアンインストールが、ハードウェア インベントリ レポート サイクルの成功後に実行された場合、次にスケジュールされたハードウェア インベントリでクライアントがそれを報告するまでの間、資産インテリジェンス レポートが実行されても、そのインストールまたはアンインストールが反映されないという遅延が生じる場合があります。  
 
- **Limiti relativi alla riconciliazione delle licenze**  
- La riconciliazione della quantità di titoli software installati e della quantità di licenze software acquistate viene eseguita confrontando la quantità di licenze specificata dall'amministratore e la quantità di titoli software installati raccolta dagli inventari hardware dei client di Configuration Manager in base alla pianificazione impostata dall'amministratore. Questo confronto non offre dati conclusivi per Microsoft in merito alla situazione delle licenze. La situazione effettiva delle licenze dipende dalle licenze e dai diritti di utilizzo effettivi concessi per uno specifico titolo software in base alle condizioni di licenza.  
+ **ライセンス調整の制限**  
+ インストール済みソフトウェア タイトルと購入済みソフトウェア ライセンス数の調整は、管理者が指定したライセンス数と、管理者が設定したスケジュールに基づく Configuration Manager クライアントのハードウェア インベントリから収集されたインストール済みソフトウェア タイトル数を比較して計算されます。 この比較は、Microsoft による最終的なライセンス場所の結論を示すものではありません。 実際のライセンス場所は、特定のソフトウェア タイトルのライセンスおよびライセンス条項で許可された使用権によって異なります。  
 
-##  <a name="BKMK_ValidationStates"></a> Stati di convalida di Asset Intelligence  
- Gli stati di convalida di Asset Intelligence rappresentano lo stato di convalida di origine e corrente delle informazioni nel catalogo di Asset Intelligence. La tabella seguente illustra i possibili stati di convalida di Asset Intelligence e le azioni dell'amministratore che possono causarli.  
+##  <a name="BKMK_ValidationStates"></a> 資産インテリジェンスの検証の状態  
+ 資産インテリジェンスの検証の状態は、資産インテリジェンス カタログ情報のソースと現在の検証の状態を表します。 資産インテリジェンスの検証の状態と、それぞれの状態を生み出す可能性がある管理者の操作を、次の表に示します。  
 
-|**Stato**|**Definizione**|**Azione dell'amministratore**|**Commentoo**|  
+|**状態**|**定義**|**管理者の操作**|**コメント**|  
 |---------------|--------------------|------------------------------|-----------------|  
-|**Convalidato**|L'elemento del catalogo è stato definito dai ricercatori di System Center Online.|Nessuna.|Stato ottimale.|  
-|**Definito da utente**|L'elemento del catalogo non è stato definito dai ricercatori di System Center Online.|Personalizzazione delle informazioni del catalogo locale.|Questo stato viene visualizzato nei report di Asset Intelligence.|  
-|**In sospeso**|L'elemento del catalogo non è stato definito dai ricercatori di System Center Online, ma l'elemento è stato inviato a System Center Online per la categorizzazione.|Richiesta di categorizzazione da System Center Online.|L'elemento del catalogo rimane in questo stato fino a quando i ricercatori di System Center Online non categorizzano l'elemento e il catalogo di Asset Intelligence non viene sincronizzato.|  
-|**Aggiornabile**|Un elemento di catalogo definito dall'utente è stato categorizzato in modo diverso da System Center Online durante una categorizzazione del catalogo successiva.|Personalizzazione del catalogo di Asset Intelligence locale per classificare un elemento come definito dall'utente.|È possibile usare l'azione Risolvi conflitto per decidere se usare le nuove informazioni di categorizzazione o il valore definito dall'utente precedente. Per altre informazioni su come risolvere i conflitti, vedere [Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md) (Configurazione di Asset Intelligence in System Center Configuration Manager).|  
-|**Senza categoria**|L'elemento del catalogo non è stato definito dai ricercatori di System Center Online, l'elemento non è stato inviato a System Center Online per la categorizzazione e l'amministratore non ha assegnato un valore di categorizzazione definito dall'utente.|Nessuna.|Richiesta di categorizzazione o personalizzazione delle informazioni del catalogo locale.<br /><br /> Per altre informazioni su come richiedere la categorizzazione, vedere [Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md) (Configurazione di Asset Intelligence in System Center Configuration Manager).<br /><br /> Per altre informazioni su come modificare la categoria per il titolo software, vedere [Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md) (Configurazione di Asset Intelligence in System Center Configuration Manager).|  
+|****|カタログ項目が System Center Online の調査担当者によって定義済みです。|ありません。|最善の状態です。|  
+|****|カタログ項目が System Center Online の調査担当者によって定義されていません。|ローカルのカタログ情報をカスタマイズした。|この状態は、資産インテリジェンス レポートに表示されます。|  
+|**保留**|カタログ項目が System Center Online の調査担当者によって定義されていませんが、カテゴリ化のために System Center Online に送信済みです。|System Center Online によるカテゴリ化を要求した。|カタログ項目は、System Center Online の調査担当者によってカテゴリ化され、資産インテリジェンス カタログが同期化されるまで、この状態に留まります。|  
+|**[更新可能]**|ユーザー定義のカタログ項目が、その後のカタログ同期時に System Center Online により、異なるようにカテゴリ化されました。|項目をユーザー定義としてカテゴリ化するよう、ローカルの資産インテリジェンス カタログをカスタマイズした。|[競合の解決] の操作を使用し、新しいカテゴリ化情報または以前のユーザー定義値を使用するかどうかを決定できます。 ソフトウェア ラベルを管理する方法の詳細については、「[Operations for Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md)」(System Center Configuration Manager の資産インテリジェンスの操作) を参照してください。|  
+|**カテゴリ化されていない**|カタログ項目が System Center Online の調査担当者によって定義されていないか、カテゴリ化のために System Center Online に送信されていないか、または管理者がユーザー定義のカテゴリ化の値を割り当てていません。|ありません。|カテゴリ化を要求するか、ローカルのカタログ情報をカスタマイズします。<br /><br /> カテゴリ化を要求する方法の詳細については、「[Operations for Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md)」(System Center Configuration Manager の資産インテリジェンスの操作) を参照してください。<br /><br /> ソフトウェア タイトルのカテゴリを変更する方法の詳細については、「[Operations for Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md)」(System Center Configuration Manager の資産インテリジェンスの操作) を参照してください。|  
 
 > [!NOTE]  
->  Gli elementi del catalogo inviati a System Center Online per la categorizzazione hanno lo stato di convalida **In attesa** in un sito di amministrazione centrale, ma vengono ancora visualizzati con lo stato di convalida **Senza categoria** nei siti primari figlio.  
+>  カテゴリ化のために System Center Online に送信されたカタログ項目の検証状態は、中央管理サイトでは [保留中 **** ] と表示されますが、子プライマリ サイトでは継続して [カテゴリ化されていない **** ] と表示されます。  
 
 > [!NOTE]  
->  Dopo aver risolto un conflitto di categorizzazione, l'elemento non viene convalidato di nuovo come in conflitto, a meno che gli aggiornamenti della categorizzazione successivi non introducano nuove informazioni sull'elemento.  
+>  カテゴリ化の競合が解決されると、その後のカテゴリ化の更新で、項目に関する新しい情報が導入されない限り、項目は、競合として再び検証されることはありません。  
 
- Per esempi di quando uno stato di convalida può eseguire la transizione da uno stato a un altro, vedere [Example validation state transitions for Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/example-validation-state-transitions-for-asset-intelligence.md) (Transizioni dello stato di convalida di esempio per Asset Intelligence in System Center Configuration Manager).  
-
+ 検証の状態がある状態から別の状態に移行するタイミングの例については、「[Example validation state transitions for Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/example-validation-state-transitions-for-asset-intelligence.md)」(System Center Configuration Manager の資産インテリジェンスで検証の状態が移行する例) を参照してください。  

@@ -1,221 +1,214 @@
 ---
-title: Creare condizioni globali | Microsoft Docs
-description: "È possibile creare condizioni globali per specificare la modalità in cui un&quot;applicazione viene resa disponibile e distribuita nei dispositivi client."
+title: "グローバル条件の作成 | Microsoft Docs"
+description: "アプリケーションの提供方法とクライアント デバイスへの展開方法を指定するグローバル条件を作成します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2d5f871a-19dc-4bd3-a3ad-4230c7a69f1b
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 85e254f1074e02a52fea6a3cda21a37c332f249e
 ms.openlocfilehash: 8a59a1769eec4cd6d78d7686a1d8008e832dd924
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-global-conditions-in-system-center-configuration-manager"></a>Come creare condizioni globali in System Center Configuration Manager
+# <a name="how-to-create-global-conditions-in-system-center-configuration-manager"></a>System Center Configuration Manager でグローバル条件を作成する方法
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-In System Center Configuration Manager le condizioni globali sono regole che rappresentano le condizioni tecniche o aziendali che l'utente può usare per specificare il modo in cui un'applicazione viene distribuita e resa disponibile per i dispositivi client. Le condizioni globali sono accessibili dalla pagina **Requisiti** della Creazione guidata tipo di distribuzione.  
+System Center Configuration Manager のグローバル条件は、クライアント デバイスへのアプリケーションの提供方法と展開方法を決めるために使用できるビジネス条件または技術条件の規則です。 グローバル条件は、展開の種類の作成ウィザードの **[要件]** ページからアクセスします。  
 
 > [!NOTE]  
->  È possibile modificare le condizioni globali solo dal sito in cui sono state create.  
+>  グローバル条件は、それを作成したサイトからのみ編集することができます。  
 
- Usare le procedure seguenti per creare le condizioni globali di Configuration Manager.  
+ Configuration Manager のグローバル条件を作成するには、次の手順に従います。  
 
-## <a name="provide-basic-information-about-the-global-condition"></a>Fornire informazioni di base sulla condizione globale  
- Sono disponibili diversi tipi di condizioni globali. Opzioni diverse sono associate a diversi tipi di condizione globale. Quando si seleziona un tipo specifico di condizione globale, Configuration Manager visualizza le opzioni che si applicano a quella selezione.  
+## <a name="provide-basic-information-about-the-global-condition"></a>グローバル条件についての基本的な情報の提供  
+ さまざまな種類のグローバル条件を使用できます。 グローバル条件の種類によって、関連付けられるオプションは異なります。 特定のグローバル条件の種類を選択すると、Configuration Manager には、その選択内容に適用されるオプションが表示されます。  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Condizioni globali**.  
+1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[グローバル条件]** の順に選択します。  
 
-3.  Nel gruppo **Crea** della scheda **Home** scegliere **Crea condizione globale**.  
+3.  **[ホーム]** タブの **[作成]** グループで、**[グローバル条件の作成]** を選択します。  
 
-4.  Nella finestra di dialogo **Crea condizione globale** , fornire un nome e una descrizione opzionale per la condizione globale.  
+4.  [グローバル条件の作成] **** ダイアログ ボックスで、グローバル条件の名前とオプションとして説明を入力します。  
 
-5.  Nell'elenco a discesa **Tipo di dispositivo** scegliere se la condizione globale è per un computer **Windows** o un dispositivo **Windows Mobile**.  
+5.  [**デバイスの種類**] ドロップダウン リストで、グローバル条件が [**Windows**] コンピューター用か [**Windows Mobile**] デバイス用かを選択します。  
 
-6.  Nell'elenco a discesa **Tipo di condizione** , scegliere una delle seguenti opzioni:  
+6.  [条件の種類] **** ドロップダウン リストで次のオプションのいずれかを選択します。  
 
-    -   **Impostazione** : questa opzione consente di controllare l'esistenza di uno o più elementi su dispositivi client. È ad esempio possibile controllare la presenza di un file, di una cartella o di un valore della chiave del Registro di sistema in un dispositivo client.  
+    -   **設定** – このオプションはクライアントのデバイスに 1 つ以上の項目が存在するかどうかを確認します。 たとえば、ファイル、フォルダー、またはレジストリ キー値がクライアント デバイスに存在するかどうかを確認できます。  
 
-    -   **Espressione**: questa opzione consente di configurare regole più complesse per controllare se la condizione viene soddisfatta su dispositivi client. È ad esempio possibile controllare se la memoria fisica di un computer è tra 2 GB e 4 GB oppure se un dispositivo mobile usa un touch-screen per l'input.  
+    -   **式** – このオプションでは、条件がクライアント デバイスで満たされているかどうかを確認するより複雑な規則をセットアップすることができます。 たとえば、コンピューターの物理メモリが 2 GB から 4 GB の範囲内であるかどうかや、モバイル デバイスがタッチ スクリーン入力を使用しているかどうかを確認できます。  
 
-## <a name="set-up-rules-for-the-global-condition"></a>Configurare le regole per la condizione globale  
- La procedura per la definizione delle regole per le condizioni globali è diversa a seconda che si tratti della configurazione di un'impostazione o di un'espressione. Usare la procedura applicabile presentata di seguito per configurare un'impostazione o un'espressione per la condizione globale.  
+## <a name="set-up-rules-for-the-global-condition"></a>グローバル条件向け規則のセットアップ  
+ グローバル条件の規則を定義するための手順は、設定を構成するのか、式を構成するのかによって異なります。 ここで適用可能な手順を使用して、グローバル条件の設定または式をセットアップします。  
 
-### <a name="to-set-up-a-setting-for-the-global-condition"></a>Per configurare un'impostazione per la condizione globale  
+### <a name="to-set-up-a-setting-for-the-global-condition"></a>グローバル条件の設定をセットアップするには  
 
-1.  Nell'elenco a discesa **Tipo di condizione** , scegliere **Impostazione**.  
+1.  [条件の種類] **** ドロップダウン リストで、[設定] ****を選択します。  
 
-2.  Nell'elenco a discesa **Tipo di impostazione** , scegliere l'elemento da utilizzare come condizione per cui verranno controllati i requisiti. Sono disponibili i seguenti tipi di impostazione e configurazione.  
+2.  [設定の種類 **** ] ドロップダウン リストで、確認する要件が含まれている条件を選択します。 次の設定の種類と条件を利用できます。  
 
-    -   **Query Active Directory**  
+    -   **Active Directory クエリ**  
 
-        -   **Prefisso LDAP** : specificare un prefisso LDAP valido per la query Servizi di dominio Active Directory per valutare la conformità nei computer client. È possibile usare **LDAP://** o **GC://**.  
+        -   **** [LDAP プレフィックス] - クライアント コンピューターでコンプライアンス対応を評価するための Active Directory ドメイン サービス クエリの有効な LDAP プレフィックスを指定します。 **LDAP://** または **GC://**を使用できます。  
 
-        -   **Nome distinto (DN)**: specificare il nome distinto dell'oggetto Active Directory Domain Services di cui verrà valutata la conformità nei computer client.  
+        -   **識別名 (DN)** - クライアント コンピューターのコンプライアンスを評価する Active Directory Domain Services オブジェクトの識別名を指定します。  
 
-        -   **Filtro di ricerca** : specificare un filtro LDAP opzionale per rifinire i risultati derivanti dalla query Servizi di dominio Active Directory per valutare la conformità nei computer client.  
+        -   [検索フィルター**** ] - クライアント コンピューターでコンプライアンス対応を評価するための Active Directory ドメイン サービス クエリの結果を絞り込む、オプションの LDAP フィルターを指定します。  
 
-        -   **Ambito di ricerca** : specificare l'ambito di ricerca in Servizi di dominio Active Directory:  
+        -   [検索範囲**** ] - Active Directory ドメイン サービスにおける検索範囲を指定します。  
 
-            -   **Base**: esegue una query solo dell'oggetto specificato.  
+            -   **ベース** - 指定したオブジェクトのみを対象としてクエリを実行します。  
 
-            -   **Un livello**: questa opzione non è usata in questa versione di Configuration Manager.  
+            -   **1 つのレベル** - このバージョンの Configuration Managerでは使用されていないオプションです。  
 
-            -   **Sottoalbero**: esegue una query dell'oggetto specificato e il relativo sottoalbero completo nella directory.  
+            -   **サブツリー** - 指定したオブジェクトおよびディレクトリの完全なサブツリーに対してクエリを実行します。  
 
-        -   **Proprietà** : specificare la proprietà dell'oggetto Servizi di dominio Active Directory che sarà utilizzato per valutare la conformità nei computer client.  
+        -   **プロパティ** - クライアント コンピューターでコンプライアンスを評価するために使用する Active Directory ドメイン サービス オブジェクトのプロパティを指定します。  
 
-        -   **Query** : visualizza la query LDAP creata dalle voci in **Prefisso LDAP**, **Nome distinto (DN)**, **Filtro di ricerca** se specificati e **Proprietà**. Questa query verrà utilizzata per valutare la conformità nei computer client.  
+        -   **クエリ** - **[LDAP プレフィックス]**、**[識別名 (DN)]**、**[検索フィルター]** (指定されている場合)、**[プロパティ]** のエントリから構成された LDAP クエリが表示されます。 このクエリは、クライアント コンピューターのコンプライアンス評価に使用されます。  
 
-    -   **Assembly**  
+    -   **アセンブリ**  
 
-        -   **Nome assembly** : specifica il nome dell'oggetto assembly da cercare. Il nome non può essere lo stesso di un altro oggetto assembly dello stesso tipo e deve essere registrato nella Global Assembly Cache. Il nome dell'assembly può contenere un massimo di 256 caratteri.  
+        -   **アセンブリ名** - 検索対象のアセンブリ オブジェクトの名前を指定します。 名前は、同じ種類の他のアセンブリ オブジェクトと同じにすることはできません。また、名前をグローバル アセンブリ キャッシュに登録する必要があります。 アセンブリ名は 256 文字以内で指定できます。  
 
         > [!NOTE]  
-        >  Un assembly è una porzione di codice che può essere condivisa tra applicazioni. I nomi file degli assembly possono avere estensione dll o exe. La cache di assembly globale è una cartella denominata *%systemroot%\assembly* nei computer client in cui sono memorizzati tutti gli assembly condivisi.  
+        >  アセンブリは、アプリケーション間で共有可能なコードの断片です。 アセンブリのファイル名拡張子として、.dll または .exe を使用できます。 グローバル アセンブリ キャッシュは、クライアント コンピューター上の *%systemroot%\assembly* という名前のフォルダーであり、すべての共有アセンブリが保存されます。  
 
-    -   **File system**  
+    -   **ファイル システム**  
 
-        -   **Tipo**: dall'elenco a discesa selezionare se si vuole effettuare la ricerca di un **File** o di una **Cartella**.  
+        -   **種類** – ドロップダウン リストから、**[ファイル]** または **[フォルダー]** のどちらを検索するかを選択します。  
 
-        -   **Percorso** : specificare il percorso al file o alla cartella specificati nei computer client. È possibile specificare le variabili di ambiente relative al sistema e la variabile di ambiente *%USERPROFILE%* nel percorso.  
-
-            > [!NOTE]  
-            >  Se si utilizza la variabile di ambiente *%USERPROFILE%* nei campi **Percorso** o **Nome file o cartella** , verrà effettuata la ricerca di tutti i profili utente sui computer client. Ciò potrebbe causare l'individuazione di più istanze del file o della cartella.  
-
-        -   **Nome file o cartella** : specificare il nome dell'oggetto file o cartella di cui verrà effettuata la ricerca. È possibile specificare le variabili di ambiente relative al sistema e la variabile di ambiente *%USERPROFILE%* nel nome file o cartella. Nel nome del file è anche possibile usare i caratteri jolly * e ?.  
+        -   **パス** - クライアント コンピューターの指定したファイルまたはフォルダーへのパスを指定します。 パスには、システム環境変数と *%USERPROFILE%* 環境変数を指定できます。  
 
             > [!NOTE]  
-            >  Se si specifica un nome file o cartella e si utilizzano dei caratteri jolly, ciò potrebbe produrre un numero elevato di risultati. Questo potrebbe portare a un uso elevato delle risorse nei computer client e a un intenso traffico di rete quando si segnalano i risultati a Configuration Manager.  
+            >  *パス* あるいは **ファイルまたはフォルダー名** フィールドで **%userprofile%** 環境変数を使用する場合、クライアント コンピューター上のすべてのユーザー プロファイルが検索されます。 その結果、複数インスタンスのファイルまたはフォルダーが検出される可能性があります。  
 
-        -   **Includi sottocartelle** : abilitare questa opzione se si desidera effettuare la ricerca anche nelle sottocartelle nel percorso specificato.  
-
-        -   **Il file o la cartella sono associati a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%*\system32), oltre al percorso dei file del sistema a 32 bit (*%windir%*\syswow64) nei client di Configuration Manager con una versione a 64 bit di Windows.  
+        -   **ファイル名またはフォルダー名** - 検索するファイルまたはフォルダー オブジェクトの名前を指定します。 ファイル名またはフォルダー名には、システム環境変数と *%USERPROFILE%* 環境変数を指定できます。 ファイル名にワイルドカードとして * と ? を 使用することもできます。  
 
             > [!NOTE]  
-            >  Se nel percorso dei file del sistema a 64 e 32 bit sullo stesso computer a 64 bit esiste lo stesso file o cartella, la condizione globale individuerà più file.  
+            >  ファイル名またはフォルダー名を指定しワイルドカードを使用すると、多数の結果が返されることがあります。 これにより、クライアント コンピューターのリソース使用率が高くなり、Configuration Manager に結果をレポートするときにネットワーク トラフィックが増える場合があります。  
 
-         Il tipo di impostazione **File system** non supporta la specificazione di un percorso UNC in una condivisione di rete nel campo **Percorso** .  
+        -   [サブフォルダーを含める**** ] - このオプションは、指定したパス内のサブフォルダーも検索する場合に有効にします。  
 
-    -   **Metabase IIS**  
-
-        -   **Percorso metabase** : specificare un percorso valido per la metabase IIS.  
-
-        -   **ID proprietà** : specificare la proprietà numerica dell'impostazione della metabase IIS.  
-
-    -   **Chiave del Registro di sistema**  
-
-        -   **Hive**: dall'elenco a discesa scegliere l'hive del Registro di sistema in cui si vuole effettuare la ricerca.  
-
-        -   **Chiave** : specificare il nome della chiave del Registro di sistema in cui si desidera effettuare la ricerca. Il formato utilizzato deve essere *key\subkey*.  
-
-        -   **Questa chiave del Registro di sistema è associata a un'applicazione a 64 bit** : consente di specificare se effettuare la ricerca anche tra le chiavi del Registro di sistema a 64 bit, oltre alle chiavi del Registro di sistema a 32 bit su client con una versione a 64 bit di Windows.  
+        -   **このファイルまたはフォルダーは 64 ビット アプリケーションに関連付けられている** - 64 ビット バージョンの Windows を実行する Configuration Manager クライアントで、32 ビット システム ファイルの場所 (*%windir%*\system32) に加えて 64 ビット システム ファイルの場所 (*%windir%*\syswow64) も検索する必要があるかどうかを選択します。  
 
             > [!NOTE]  
-            >  Se la stessa chiave del Registro di sistema esiste nei percorsi dei Registri di sistema a 64 e 32 bit sullo stesso computer a 64 bit, la condizione globale individuerà più chiavi del Registro di sistema.  
+            >  64 ビットコンピューターの 64 ビット および 32 ビット システム ファイルの場所に同じファイルまたはフォルダーが存在する場合は、グローバル条件によって複数のファイルが検知されます。  
 
-    -   **Valore del Registro di sistema**  
+         [ **ファイル システム** ] 設定の種類では、[ **パス** ] フィールドで UNC パスのネットワーク共有への指定はサポートされていません。  
 
-        -   **Hive** : dall'elenco a discesa, selezionare l'hive del Registro di sistema in cui si desidera effettuare la ricerca.  
+    -   **IIS メタベース**  
 
-        -   **Chiave** : specificare il nome della chiave del Registro di sistema in cui si desidera effettuare la ricerca. Il formato utilizzato deve essere *key\subkey*.  
+        -   **メタベース パス** - IIS メタベースへの有効なパスを指定します。  
 
-        -   **Valore** : specificare il valore che deve essere contenuto all'interno della chiave del Registro di sistema specificato.  
+        -   [プロパティ ID**** ] - IIS メタベース設定の数値プロパティを指定します。  
 
-        -   **Questa chiave del Registro di sistema è associata a un'applicazione a 64 bit** : consente di specificare se effettuare la ricerca anche tra le chiavi del Registro di sistema a 64 bit, oltre alle chiavi del Registro di sistema a 32 bit su client con una versione a 64 bit di Windows.  
+    -   **レジストリ キー**  
 
-            > [!NOTE]  
-            >  Se la stessa chiave del Registro di sistema esiste nei percorsi dei Registri di sistema a 64 e 32 bit sullo stesso computer a 64 bit, la condizione globale individuerà più chiavi del Registro di sistema.  
+        -   **ハイブ** – ドロップダウン リストから、検索するレジストリ ハイブを選択します。  
 
-    -   **Script**  
+        -   [キー**** ] - 検索対象のレジストリ キーの名前を指定します。 *キー\サブキー*という形式を使用する必要があります。  
 
-        -   **Script di individuazione**: scegliere **Aggiungi** per immetterne uno oppure selezionare lo script da usare. È possibile usare script di Windows PowerShell, VBScript o JScript.  
-
-        -   **Esegui script utilizzando le credenziali dell'utente connesso**: se si abilita questa opzione, lo script verrà eseguito nei computer client usando le credenziali dell'utente connesso.  
+        -   **このレジストリ キーを 64 ビット アプリケーションに関連付ける** - 64 ビット版の Windows を実行するクライアントで 32 ビット レジストリ キーだけでなく 64 ビット レジストリ キーも検索するかどうかを指定します。  
 
             > [!NOTE]  
-            >  Il valore restituito dallo script verrà utilizzato per valutare la conformità della condizione globale. Ad esempio, quando si usa VBScript, si può usare il comando **WScript.Echo Risultato** per restituire il valore della variabile Risultato alla condizione globale.  
+            >  64 ビットコンピューターの 64 ビット および 32 ビット システム ファイルの場所に同じレジストリ キーが存在する場合は、グローバル条件によって両方のレジストリ キーが検知されます。  
+
+    -   **レジストリ値**  
+
+        -   **ハイブ** – ドロップダウン リストから、検索するレジストリ ハイブを選択します。  
+
+        -   [キー**** ] - 検索対象のレジストリ キーの名前を指定します。 *キー\サブキー*という形式を使用する必要があります。  
+
+        -   **値** – 指定されたレジストリ キーに含まれている必要がある値を指定します。  
+
+        -   **このレジストリ キーを 64 ビット アプリケーションに関連付ける** - 64 ビット版の Windows を実行するクライアントで 32 ビット レジストリ キーだけでなく 64 ビット レジストリ キーも検索するかどうかを指定します。  
+
+            > [!NOTE]  
+            >  64 ビットコンピューターの 64 ビット および 32 ビット システム ファイルの場所に同じレジストリ キーが存在する場合は、グローバル条件によって両方のレジストリ キーが検知されます。  
+
+    -   **スクリプト**  
+
+        -   **検出スクリプト** – **[追加]** を選択して入力するか、使用するスクリプトを参照します。 Windows PowerShell、VBScript、または JScript のスクリプトが使用できます。  
+
+        -   **ログオンしたユーザーの資格情報を使用してスクリプトを実行する** – このオプションを有効にすると、サインインしているユーザーの資格情報を使用してクライアント コンピューターでスクリプトが実行されます。  
+
+            > [!NOTE]  
+            >  スクリプトによって返された値は、グローバル条件のコンプライアンスを評価するのに使用されます。 たとえば、VBScript を使用する場合、**WScript.Echo Result** コマンドを使用して、結果の変数値をグローバル条件に返すことができます。  
             >   
-            >  Se lo script restituisce più valori, questi valori devono trovarsi su una singola riga, separati dal punto e virgola. Se ogni valore si trova su una riga distinta, la valutazione avrà esito negativo.  
+            >  スクリプトによって複数の値が返される場合は、それらの値をセミコロンで区切り、1 つの行にまとめる必要があります。 各値が個別の行に分かれている場合は、評価に失敗します。  
 
-    -   **Query SQL**  
+    -   **SQL クエリ**  
 
-        -   **Istanza SQL Server** : scegliere se si desidera che la query SQL venga eseguita sul nome dell'istanza predefinita, di tutte le istanze o dell'istanza di un database specifico.  
+        -   **SQL Serverインスタンス** – 既定のインスタンス、すべてのインスタンス、または特定のデータベースのインスタンス名のどれで SQL クエリを実行するかを選択します。  
 
             > [!NOTE]  
-            >  Il nome dell'istanza deve fare riferimento a un'istanza locale di SQL Server. Per fare riferimento a un'istanza di SQL server del cluster, è necessario utilizzare un'impostazione script.  
+            >  インスタンス名は、SQL Server のローカル インスタンスを参照する必要があります。 クラスター化された SQL Server インスタンスを参照するには、スクリプト設定を使用する必要があります。  
 
-        -   **Database** : specificare il nome del database di Microsoft SQL Server per cui verrà eseguita la query SQL.  
+        -   **データベース** - SQL クエリを実行する対象となる Microsoft SQL Server データベースの名前を指定します。  
 
-        -   **Colonna** : specificare il nome della colonna restituito dall'istruzione Transact-SQL da utilizzare per valutare la conformità della condizione globale.  
+        -   **列** - Transact-SQL ステートメントから返され、グローバル条件のコンプライアンス評価に使用する列の名前を指定します。  
 
-        -   **Istruzione Transact-SQL** : specificare la query SQL completa da utilizzare per la condizione globale. È anche possibile scegliere **Apri** per aprire una query SQL esistente.  
+        -   **Transact-SQL ステートメント** – グローバル条件に使用する完全な SQL クエリを指定します。 また、**[開く]** を選択して、既存の SQL クエリを開くこともできます。  
 
-    -   **Query WQL**  
+    -   **WQL クエリ**  
 
-        -   **Spazio dei nomi** : specificare lo spazio dei nomi WMI che sarà utilizzato per costruire una query WQL che verrà valutata per la conformità nei computer client. Il valore predefinito è Root\cimv2.  
+        -   **名前空間** - クライアント コンピューターのコンプライアンスを評価する WQL クエリに使用する WMI 名前空間を指定します。 既定値は、Root\cimv2 です。  
 
-        -   **Classe** : specificare la classe WMI che sarà utilizzata per costruire una query WQL che verrà valutata per la conformità nei computer client.  
+        -   **クラス** - クライアント コンピューターのコンプライアンスを評価する WQL クエリに使用する WMI クラスを指定します。  
 
-        -   **Proprietà** : specificare la proprietà WMI che sarà utilizzata per costruire una query WQL che verrà valutata per la conformità nei computer client.  
+        -   **プロパティ** - クライアント コンピューターのコンプライアンスを評価する WQL クエリに使用する WMI プロパティを指定します。  
 
-        -   **Clausola WHERE della query WQL** : è possibile utilizzare l'elemento **Clausola WHERE della query WQL** per specificare una clausola WHERE da applicare allo spazio dei nomi, alla classe e alla proprietà specifici nei computer client.  
+        -   **WQL クエリの WHERE 句** - **WQL クエリの WHERE 句** 項目を使用して、クライアント コンピューター上の指定された名前空間、クラス、およびプロパティに適用される WHERE 句を指定できます。  
 
-    -   **Query XPath**  
+    -   **XPath クエリ**  
 
-        -   **Percorso** : specificare il percorso del file XML nei computer client che verrà usato per valutare la conformità. Configuration Manager supporta l'uso di tutte le variabili di ambiente di sistema Windows e la variabile utente *%USERPROFILE%* nel nome del percorso.  
+        -   **パス** - コンプライアンスの評価で使用されるクライアント コンピューターの XML ファイルへのパスを指定します。 Configuration Manager では、パス名にすべての Windows システム環境変数と *%USERPROFILE%* ユーザー変数の使用がサポートされています。  
 
-        -   **Nome file XML**: specificare il nome file che contiene la query XML da usare per valutare la conformità nei computer client.  
+        -   **XML ファイル名** - クライアント コンピューターのコンプライアンス評価に使用する XML クエリを含むファイルの名前を指定します。  
 
-        -   **Includi sottocartelle** : abilitare questa opzione se si desidera effettuare la ricerca anche nelle sottocartelle nel percorso specificato.  
+        -   **サブフォルダーも含める** – 指定したパスの下にあるサブフォルダーも検索する場合は、このオプションをオンにします。  
 
-        -   **Il file è associato a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%*\system32), oltre al percorso dei file del sistema a 32 bit (*%windir%*\syswow64) nei client di Configuration Manager con una versione a 64 bit di Windows.  
+        -   **このファイルは 64 ビット アプリケーションに関連付けられている** - 64 ビット バージョンの Windows を実行する Configuration Manager クライアントで、32 ビット システム ファイルの場所 (*%windir%*\system32) に加えて 64 ビット システム ファイルの場所 (*%windir%*\syswow64) も検索する必要があるかどうかを選択します。  
 
-        -   **Query XPath** : specificare una query XPath valida e completa da utilizzare per valutare la conformità nei computer client.  
+        -   **XPath クエリ** - クライアント コンピューターのコンプライアンス評価に使用する有効な XML Path Language (XPath) クエリを完全な形式で指定します。  
 
-        -   **Spazi dei nomi** : aprire la finestra di dialogo **Spazi dei nomi XML** per individuare gli spazi dei nomi e i prefissi da utilizzare durante la query XPath.  
+        -   **名前空間** - [ **XML 名前空間** ] ダイアログ ボックスを開き、XPath クエリの中で使用する名前空間およびプレフィックスを識別します。  
 
-3.  Nell'elenco a discesa **Tipo di dati** , scegliere il formato in cui i dati verranno restituiti dalla condizione prima di essere utilizzato per controllare i requisiti.  
+3.  [データの種類] **** ドロップダウン リストで、要件を確認するために使用される前に、条件によって返されるデータの形式を選択します。  
 
     > [!NOTE]  
-    >  L'elenco a discesa **Tipo di dati** non viene visualizzato per tutti i tipi di impostazioni.  
+    >  **[データの種類]** ドロップダウン リストは、設定の種類によっては表示されません。  
 
-4.  Configurare altri dettagli relativi a questa impostazione nell'elenco a discesa **Tipo di impostazione**. Gli elementi che è possibile configurare variano a seconda del tipo di impostazione selezionato.  
+4.  **[設定の種類]** ドロップダウン リストで、この設定の詳細をセットアップします。 セットアップできる項目は、選択した設定の種類によって異なります。  
 
-5.  Scegliere **OK** per salvare la regola e chiudere la finestra di dialogo **Crea condizione globale**.  
+5.  **[OK]** を選択して規則を保存し、**[グローバル条件の作成]** ダイアログ ボックスを閉じます。  
 
-### <a name="set-up-an-expression-for-the-global-condition"></a>Configurare un'espressione per la condizione globale  
+### <a name="set-up-an-expression-for-the-global-condition"></a>グローバル条件の式をセットアップする  
 
-1.  Nell'elenco a discesa **Tipo di condizione** , scegliere **Espressione**.  
+1.  [条件の種類] **** ドロップダウン リストで、[式] ****を選択します。  
 
-2.  Scegliere **Aggiungi clausola** per aprire la finestra di dialogo **Aggiungi clausola**.  
+2.  **[句の追加]** を選択して **[句の追加]** ダイアログ ボックスを開きます。  
 
-3.  Dall'elenco a discesa **Seleziona categoria** , selezionare se l'espressione è per un utente o un dispositivo. In alternativa, selezionare **Personalizzata** per utilizzare una condizione globale configurata in precedenza.  
+3.  [カテゴリの選択 **** ] ドロップダウン リストから、デバイス用の式かユーザー用の式かを選択します。 または、[カスタム **** ] を選択して構成済みのグローバル条件を使用します。  
 
-4.  Dall'elenco a discesa **Seleziona una condizione** , selezionare la condizione da utilizzare per valutare se l'utente o il dispositivo soddisfano i requisiti della regola. Il contenuto di questo elenco varia a seconda della categoria selezionata.  
+4.  [条件の選択 **** ] ドロップダウン リストから、ユーザーまたはデバイスが規則の要件を満たしているかどうかの評価に使用する条件を選択します。 この一覧の内容は、選択したカテゴリによって異なります。  
 
-5.  Dall'elenco a discesa **Scegli operatore** , scegliere l'operatore da utilizzare per confrontare la condizione selezionata con il valore specificato per valutare se l'utente o il dispositivo soddisfano i requisiti della regola. Gli operatori disponibili variano a seconda della condizione selezionata.  
+5.  [演算子の選択] **** ドロップダウン リストから、ユーザーまたはデバイスが要件となる規則を満たしているかを評価するために、選択された条件を指定された値と比較するのに使用される演算子を選択します。 利用可能な演算子は選択された条件によって異なります。  
 
-6.  Nel campo **Valore** , specificare i valori da utilizzare con la condizione e l'operatore selezionati per valutare se l'utente o il dispositivo soddisfano i requisiti della regola. I valori disponibili variano a seconda della condizione e dell'operatore selezionati.  
+6.  [値 **** ] フィールドには、ユーザーまたはデバイスが規則の要件を満たしているかどうかを評価する際に、選択した条件や演算子と共に使用する値を指定します。 利用可能な値は選択された条件および選択された演算子によって異なります。  
 
-7.  Scegliere **OK** per salvare l'espressione e per chiudere la finestra di dialogo **Aggiungi clausola**.  
+7.  **[OK]** を選択して式を保存し、**[句の追加]** ダイアログ ボックスを閉じます。  
 
-8.  Quando si è terminato di aggiungere clausole alla condizione globale, scegliere **OK** per chiudere la finestra di dialogo **Crea condizione globale** e per salvare la condizione globale.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+8.  グローバル条件に句を追加し終わったら、**[OK]** を選択して **[グローバル条件の作成]** ダイアログ ボックスを閉じ、グローバル条件を保存します。  

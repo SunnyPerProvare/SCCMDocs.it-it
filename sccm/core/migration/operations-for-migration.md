@@ -1,246 +1,239 @@
 ---
-title: Operazioni di migrazione | Microsoft Docs
-description: Creare ed eseguire processi per la migrazione di dati e client a System Center Configuration Manager.
+title: "移行操作 | Microsoft Docs"
+description: "データとクライアントを System Center Configuration Manager に移行するジョブを作成して実行します。"
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c28e3492-851a-40fc-ba13-67ebc2d8b41a
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 5df6478362499d87038fa4ed2cb444aa8d5b4b7c
 ms.openlocfilehash: fb8a292c4fecbe5744e2cd09bc1442fab11046bc
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="operations-for-migrating-to-system-center-configuration-manager"></a>Operazioni per la migrazione a System Center Configuration Manager
+# <a name="operations-for-migrating-to-system-center-configuration-manager"></a>System Center Configuration Manager に移行するための操作
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Per la migrazione in System Center Configuration Manager, è possibile eseguire la migrazione di dati e client dopo aver raccolto correttamente i dati da un sito di origine in una gerarchia di origine supportata. Usare le informazioni nelle sezioni seguenti per creare ed eseguire i processi di migrazione per la migrazione di dati, client e quindi completare il processo di migrazione.  
+System Center Configuration Manager での移行の場合、サポートされるソース階層のソース サイトからデータを適切に収集した後で、データとクライアントを移行できます。 次のセクションの情報を使用して、データとクライアントを移行する移行ジョブを作成して実行した後、移行プロセスを終了します。  
 
--   [Creare e modificare i processi di migrazione](#Create_Edit_migration_Jobs)  
+-   [移行ジョブの作成および編集](#Create_Edit_migration_Jobs)  
 
--   [Eseguire i processi di migrazione](#Run_Migration_Jobs)  
+-   [移行ジョブの実行](#Run_Migration_Jobs)  
 
--   [Aggiornare o riassegnare un punto di distribuzione condiviso](#BKMK_ProcUpgrdSS)  
+-   [共有配布ポイントのアップグレードまたは再割り当て](#BKMK_ProcUpgrdSS)  
 
--   [Monitorare l'attività di migrazione nell'area di lavoro Migrazione](#Monitor_MIgration)  
+-   [[移行] ワークスペースでの移行アクティビティを監視する](#Monitor_MIgration)  
 
--   [Eseguire la migrazione dei client](#BKMK_MigrateClients)  
+-   [クライアントの移行](#BKMK_MigrateClients)  
 
--   [Completare la migrazione](#Complete_Migration)  
+-   [移行の完了](#Complete_Migration)  
 
-##  <a name="a-namecreateeditmigrationjobsa-create-and-edit-migration-jobs"></a><a name="Create_Edit_migration_Jobs"></a> Creare e modificare i processi di migrazione  
- Usare le procedure seguenti per creare processi di migrazione dei dati, modificare l'elenco di esclusione per i processi di migrazione basati su raccolte, configurare i punti di distribuzione condivisi e modificare le pianificazioni dei processi di migrazione.  
+##  <a name="Create_Edit_migration_Jobs"></a> 移行ジョブの作成および編集  
+ データの移行ジョブの作成、コレクションに基づく移行ジョブの除外リストの編集、共有配布ポイントの設定、および移行ジョブのスケジュールの編集を行うには、次の手順に従います。  
 
 > [!NOTE]  
->  La procedura seguente per la creazione di un processo di migrazione, che esegue la migrazione per raccolte, è applicabile solo alle gerarchie di origine che eseguono una versione supportata di Configuration Manager 2007. Il tipo di processo di migrazione basato su raccolte non è disponibile quando si esegue la migrazione da una gerarchia di origine di System Center 2012 Configuration Manager o System Center Configuration Manager.  
+>  コレクションごとに移行する移行ジョブを作成するための次の手順は、Configuration Manager 2007 のサポートされるバージョンを実行するソース階層にのみ適用されます。 コレクション ベースの移行ジョブの種類は、System Center 2012 Configuration Manager または System Center Configuration Manager のソース階層から移行するときは使用できません。  
 
-#### <a name="create-a-migration-job-to-migrate-by-collections"></a>Creare un processo di migrazione per eseguire la migrazione per raccolte  
+#### <a name="create-a-migration-job-to-migrate-by-collections"></a>コレクション別に移行するための移行ジョブを作成する  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Migrazione**e quindi scegliere **Processi di migrazione**.  
+2.  **[管理]** ワークスペースで、**[移行]** を展開し、**[移行ジョブ]** を選びます。  
 
-3.  Nella scheda **Home**, nel gruppo **Crea**, scegliere **Crea processo di migrazione**.  
+3.  **[ホーム]** タブの **[作成]** グループで、**[移行ジョブの作成]** を選びます。  
 
-4.  Nella pagina **Generale** della Creazione guidata del processo di migrazione configurare gli elementi seguenti e quindi scegliere **OK**:  
+4.  移行ジョブの作成ウィザードの **[全般]** ページで、次のように設定してから、**[OK]** を選びます。  
 
-    -   Specificare un nome per il processo di migrazione.  
+    -   移行ジョブの名前を指定します。  
 
-    -   Nell'elenco a discesa **Tipo di processo** selezionare **Migrazione raccolta**.  
+    -   **[ジョブの種類]** ドロップダウン リストで、 **[コレクションの移行]**をクリックします。  
 
-5.  Nella pagina **Seleziona raccolte** configurare gli elementi seguenti e quindi fare clic su **Avanti**:  
+5.  **[コレクションの選択]** ページで、次のように設定してから、**[次へ]** を選びます。  
 
-    -   Selezionare le raccolte da migrare.  
+    -   移行するコレクションを選択します。  
 
-    -   Per migrare solo le raccolte e non gli oggetti associati a tali raccolte, deselezionare **Esegui la migrazione degli oggetti associati alle raccolte specificate** . Se si deseleziona questa opzione, in questo processo non verrà eseguita la migrazione di alcun oggetto associato ed è possibile ignorare i passaggi 6 e 7.  
+    -   コレクションのみを移行し、それらに関連付けられたオブジェクトは移行しない場合は、**[指定したコレクションに関連付けられているオブジェクトを移行する]** をオフにします。 このオプションをオフにした場合は、関連付けられたオブジェクトはこのジョブでは移行されないため、手順 6 および 7 に進みます。  
 
-6.  Nella pagina **Seleziona oggetti** deselezionare tutti i tipi di oggetto oppure specifici oggetti disponibili di cui non si vuole eseguire la migrazione. Per impostazione predefinita, vengono selezionati tutti gli oggetti disponibili e tutti i tipi di oggetto associati. Scegliere **Avanti**.  
+6.  **[オブジェクトの選択]** ページで、オブジェクトの種類または利用可能な個別のオブジェクトのうち、移行しないものをすべてオフにします。 既定では、関連付けられたオブジェクトの種類と利用可能なオブジェクトがすべて選択されます。 **[次へ]** を選択します。  
 
-7.  Nella pagina **Proprietà contenuto** assegnare la proprietà del contenuto da ciascun sito di origine elencato a un sito nella gerarchia di destinazione e quindi scegliere **Avanti**.  
+7.  **[コンテンツの所有権]** ページで、一覧表示された各ソース サイトのコンテンツの所有権を移行先階層のサイトに割り当てて、**[次へ]** を選びます。  
 
-8.  Nella pagina **Ambito di protezione** selezionare uno o più ambiti di protezione dell'amministrazione basata su ruoli da assegnare agli oggetti di cui eseguire la migrazione in questo processo e quindi scegliere **Avanti**.  
+8.  **[セキュリティ スコープ]** ページで、この移行ジョブで移行するためにオブジェクトに割り当てる、役割に基づいた管理のセキュリティ スコープを 1 つ以上選択してから、**[次へ]** を選びます。  
 
-9. Nella pagina **Limitazione della raccolta** configurare una raccolta dalla gerarchia di destinazione per limitare l'ambito di ogni raccolta elencata e quindi scegliere **Avanti**. In assenza di raccolte elencate scegliere **Avanti**.  
+9. **[コレクションの限定]** ページで、一覧表示される各コレクションの範囲を限定するように移行先階層のコレクションを設定して、**[次へ]** を選びます。 コレクションが 1 つも表示されていない場合は、**[次へ]** を選びます。  
 
-10. Nella pagina **Sostituzione dei codici del sito** assegnare un codice del sito dalla gerarchia di destinazione per sostituire il codice del sito di Configuration Manager 2007 per ogni raccolta elencata e quindi scegliere **Avanti**. In assenza di raccolte elencate scegliere **Avanti**.  
+10. **[サイト コードの置き換え]** ページで、一覧表示される各コレクションの Configuration Manager 2007 サイト コードを移行先階層のサイト コードに置き換えて、**[次へ]** を選びます。 コレクションが 1 つも表示されていない場合は、**[次へ]** を選びます。  
 
-11. Nella pagina **Riesamina informazioni** scegliere **Salva nel file** per salvare le informazioni per poterle visualizzare in seguito. Quando si è pronti per continuare scegliere **Avanti**.  
+11. **[情報の確認]** ページで、**[ファイルに保存する]** を選び、後で閲覧するために表示された情報を保存します。 操作を続行する準備ができたら **[次へ]** を選びます。  
 
-12. Nella pagina **Impostazioni** configurare il momento in cui eseguire il processo di migrazione ed eventuali impostazioni aggiuntive necessarie per questo processo di migrazione, quindi scegliere **Avanti**.  
+12. **[設定]** ページで、移行ジョブの実行時間を設定し、この移行ジョブに必要な追加設定を選んでから、**[次へ]** を選びます。  
 
-13. Confermare le impostazioni e completare la procedura guidata.  
+13. 設定を確認しウィザードを終了します。  
 
-#### <a name="create-a-migration-job-to-migrate-by-objects"></a>Creare un processo di migrazione per eseguire la migrazione per oggetti  
+#### <a name="create-a-migration-job-to-migrate-by-objects"></a>オブジェクト別に移行するための移行ジョブを作成する  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Migrazione**e quindi scegliere **Processi di migrazione**.  
+2.  **[管理]** ワークスペースで、**[移行]** を展開し、**[移行ジョブ]** を選びます。  
 
-3.  Nella scheda **Home**, nel gruppo **Crea**, scegliere **Crea processo di migrazione**.  
+3.  **[ホーム]** タブの **[作成]** グループで、**[移行ジョブの作成]** を選びます。  
 
-4.  Nella pagina **Generale** della Creazione guidata del processo di migrazione configurare gli elementi seguenti e quindi scegliere **Avanti**:  
+4.  移行ジョブの作成ウィザードの **[全般]** ページで、次のように設定してから、**[次へ]** を選びます。  
 
-    -   Specificare un nome per il processo di migrazione.  
+    -   移行ジョブの名前を指定します。  
 
-    -   Nell'elenco a discesa **Tipo di processo** selezionare **Migrazione oggetti**.  
+    -   **[ジョブの種類]** ドロップダウン リストで、 **[オブジェクトの移行]**をクリックします。  
 
-5.  Nella pagina **Seleziona oggetti** selezionare i tipi di oggetto da migrare. Per impostazione predefinita, vengono selezionati tutti gli oggetti disponibili per ogni tipo di oggetto selezionato.  
+5.  [オブジェクトの選択] ページで、移行するオブジェクトの種類を選択します。 **** 既定では、選択したオブジェクトの各種類を対象に、利用可能なすべてのオブジェクトが選択されます。  
 
-6.  Nella pagina **Proprietà contenuto** assegnare la proprietà del contenuto da ciascun sito di origine elencato a un sito nella gerarchia di destinazione e quindi scegliere **Avanti**. Se non è elencato alcuna sito di origine scegliere **Avanti**.  
+6.  **[コンテンツの所有権]** ページで、一覧表示された各ソース サイトのコンテンツの所有権を移行先階層のサイトに割り当てて、**[次へ]** を選びます。 ソース サイトが 1 つも表示されていない場合は、**[次へ]** を選びます。  
 
-7.  Nella pagina **Ambito di protezione** selezionare uno o più ambiti di protezione dell'amministrazione basata su ruoli da assegnare agli oggetti in questo processo di migrazione e quindi scegliere **Avanti**.  
+7.  **[セキュリティ スコープ]** ページで、この移行ジョブ内のオブジェクトに割り当てる、役割に基づいた管理のセキュリティ スコープを 1 つ以上選んでから、**[次へ]** を選びます。  
 
-8.  Nella pagina **Riesamina informazioni** scegliere **Salva nel file** per salvare le informazioni per poterle visualizzare in seguito. Quando si è pronti per continuare scegliere **Avanti**.  
+8.  **[情報の確認]** ページで、**[ファイルに保存する]** を選び、後で閲覧するために表示された情報を保存します。 操作を続行する準備ができたら **[次へ]** を選びます。  
 
-9. Nella pagina **Impostazioni** configurare il momento in cui eseguire la migrazione ed eventuali impostazioni aggiuntive necessarie per questo processo di migrazione. Scegliere quindi **Avanti**.  
+9. **[設定]** ページで、移行ジョブの実行時間を設定し、この移行ジョブに必要な追加設定を選びます。 **[次へ]** を選びます。  
 
-10. Confermare le impostazioni e completare la procedura guidata.  
+10. 設定を確認しウィザードを終了します。  
 
-#### <a name="create-a-migration-job-to-migrate-changed-objects"></a>Creare un processo di migrazione per eseguire la migrazione di oggetti modificati  
+#### <a name="create-a-migration-job-to-migrate-changed-objects"></a>変更されたオブジェクトを移行するための移行ジョブを作成する  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Migrazione**e quindi scegliere **Processi di migrazione**.  
+2.  **[管理]** ワークスペースで、**[移行]** を展開し、**[移行ジョブ]** を選びます。  
 
-3.  Nella scheda **Home**, nel gruppo **Crea**, scegliere **Crea processo di migrazione**.  
+3.  **[ホーム]** タブの **[作成]** グループで、**[移行ジョブの作成]** を選びます。  
 
-4.  Nella pagina **Generale** della Creazione guidata del processo di migrazione configurare gli elementi seguenti e quindi scegliere **Avanti**:  
+4.  移行ジョブの作成ウィザードの **[全般]** ページで、次のように設定してから、**[次へ]** を選びます。  
 
-    -   Specificare un nome per il processo di migrazione.  
+    -   移行ジョブの名前を指定します。  
 
-    -   Nell'elenco a discesa **Tipo di processo** selezionare **Oggetti modificati dopo la migrazione**.  
+    -   **[ジョブの種類]** ドロップダウン リストで、**[移行後に変更されたオブジェクト]** を選びます。  
 
-5.  Nella pagina **Seleziona oggetti** selezionare i tipi di oggetto da migrare. Per impostazione predefinita, vengono selezionati tutti gli oggetti disponibili per ogni tipo di oggetto selezionato.  
+5.  [オブジェクトの選択] ページで、移行するオブジェクトの種類を選択します。 **** 既定では、選択したオブジェクトの各種類を対象に、利用可能なすべてのオブジェクトが選択されます。  
 
-6.  Nella pagina **Proprietà contenuto** assegnare la proprietà del contenuto da ciascun sito di origine elencato a un sito nella gerarchia di destinazione e quindi scegliere **Avanti**. Se non è elencato alcuna sito di origine scegliere **Avanti**.  
+6.  **[コンテンツの所有権]** ページで、一覧表示された各ソース サイトのコンテンツの所有権を移行先階層のサイトに割り当てて、**[次へ]** を選びます。 ソース サイトが 1 つも表示されていない場合は、**[次へ]** を選びます。  
 
-7.  Nella pagina **Ambito di protezione** selezionare uno o più ambiti di protezione dell'amministrazione basata su ruoli da assegnare agli oggetti in questo processo di migrazione e quindi scegliere **Avanti**.  
+7.  **[セキュリティ スコープ]** ページで、この移行ジョブ内のオブジェクトに割り当てる、役割に基づいた管理のセキュリティ スコープを 1 つ以上選んでから、**[次へ]** を選びます。  
 
-8.  Nella pagina **Riesamina informazioni** scegliere **Salva nel file** per salvare le informazioni per poterle visualizzare in seguito. Quando si è pronti per continuare scegliere **Avanti**.  
+8.  **[情報の確認]** ページで、**[ファイルに保存する]** を選び、後で閲覧するために表示された情報を保存します。 操作を続行する準備ができたら **[次へ]** を選びます。  
 
-9. Nella pagina **Impostazioni** configurare il momento in cui eseguire il processo di migrazione ed eventuali impostazioni aggiuntive necessarie per questo processo di migrazione. Diversamente dagli altri tipi di processi di migrazione, questo processo deve sovrascrivere gli oggetti migrati in precedenza nel database di System Center Configuration Manager. Scegliere **Avanti**.  
+9. **[設定]** ページで、移行ジョブの実行時間を設定し、この移行ジョブに必要な追加設定を選びます。 その他の移行ジョブの種類と異なり、この移行ジョブでは、System Center Configuration Manager データベースに以前に移行済みのオブジェクトを上書きする必要があります。 **[次へ]** を選択します。  
 
-10. Confermare le impostazioni e quindi completare la procedura guidata.  
+10. 設定を確認して、ウィザードを終了します。  
 
-###  <a name="a-namebkmkmodifyexclusionlista-modify-the-exclusion-list-for-migration"></a><a name="BKMK_Modify_Exclusion_List"></a> Modificare l'elenco di esclusione per la migrazione  
+###  <a name="BKMK_Modify_Exclusion_List"></a> 移行の除外リストを変更する  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** scegliere **Migrazione** per ottenere l'accesso all'elenco di esclusione. È possibile accedere all'elenco di esclusione anche dal nodo **Gerarchia di origine** o **Processi di migrazione** .  
+2.  **[管理]** ワークスペースで、**[移行]** を選んで除外リストにアクセスできるようにします。 除外リストには、[ソース階層 **** ] ノード、または、[移行ジョブ **** ] ノードからアクセスすることもできます。  
 
-3.  Nella scheda **Home**, nel gruppo **Migrazione**, scegliere **Modifica elenco di esclusione**.  
+3.  **[ホーム]** タブの **[移行]** グループで、**[除外リストの編集]** を選びます。  
 
-4.  Nella finestra di dialogo **Modifica elenco di esclusione** selezionare l'oggetto escluso che si vuole rimuovere dall'elenco di esclusione e quindi scegliere **Rimuovi**.  
+4.  **[除外リストの編集]** ダイアログ ボックスで、除外リストから削除する除外オブジェクトを選択してから、**[削除]** を選びます。  
 
-5.  Scegliere **OK** per salvare le modifiche e completare la modifica. Per annullare le modifiche correnti e ripristinare tutti gli oggetti rimossi, scegliere **Annulla** e quindi **No**. In questo modo verrà annullata la rimozione degli oggetti e la finestra di dialogo **Modifica elenco di esclusione** verrà chiusa.  
+5.  **[OK]** を選んで変更を保存し、編集を終了します。 現在の変更をキャンセルし、削除したすべてのオブジェクトを復元するには、**[キャンセル]**、**[いいえ]** の順に選びます。 これでオブジェクトの削除が取り消され、[除外リストの編集]  ダイアログ ボックスが閉じます。 ****  
 
-#### <a name="share-distribution-points-from-the-source-hierarchy"></a>Condividere i punti di distribuzione dalla gerarchia di origine  
+#### <a name="share-distribution-points-from-the-source-hierarchy"></a>ソース階層の配布ポイントを共有する  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Migrazione**, scegliere **Gerarchia di origine** e quindi selezionare il sito di origine da configurare.  
+2.  **[管理]** ワークスペースの **[移行]** を展開し、**[ソース階層]** を選んで、設定するソース サイトを選びます。  
 
-3.  Nella scheda **Home**, nel gruppo **Sito di origine**, scegliere **Configura**.  
+3.  **[ホーム]** タブの **[ソース サイト]** グループで、**[構成]** を選びます。  
 
-4.  Nella finestra di dialogo **Credenziali del sito di origine** selezionare **Abilita la condivisione dei punti di distribuzione per il server del sito di origine** e quindi scegliere **OK**.  
+4.  **[ソース サイトの資格情報]** ダイアログ ボックスで、**[ソース サイト サーバーの配布ポイント共有を有効にする]** をオンにして **[OK]** を選びます。  
 
-5.  Al termine della raccolta dati, scegliere **Chiudi**.  
+5.  データ収集が終了したら **[閉じる]** を選びます。  
 
-#### <a name="change-the-schedule-of-a-migration-job"></a>Modificare la pianificazione di un processo di migrazione  
+#### <a name="change-the-schedule-of-a-migration-job"></a>移行ジョブのスケジュールを変更する  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Migrazione**e quindi scegliere **Processi di migrazione**.  
+2.  **[管理]** ワークスペースで、**[移行]** を展開し、**[移行ジョブ]** を選びます。  
 
-3.  Scegliere il processo di migrazione da modificare. Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.  
+3.  変更する移行ジョブを選びます。 **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-4.  Nelle proprietà del processo di migrazione selezionare la scheda **Impostazioni**, modificare il tempo di esecuzione per il processo di migrazione e quindi scegliere **OK**.  
+4.  移行ジョブのプロパティで、**[設定]** タブを選び、移行ジョブの実行時間を変更してから、**[OK]** を選びます。  
 
-##  <a name="a-namerunmigrationjobsa-run-migration-jobs"></a><a name="Run_Migration_Jobs"></a> Eseguire i processi di migrazione  
- Utilizzare la seguente procedura per eseguire un processo di migrazione non ancora avviato.  
+##  <a name="Run_Migration_Jobs"></a> 移行ジョブの実行  
+ 次の手順は、まだ開始されていない移行ジョブの実行に使用します。  
 
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Migrazione**e quindi scegliere **Processi di migrazione**.  
+2.  **[管理]** ワークスペースで、**[移行]** を展開し、**[移行ジョブ]** を選びます。  
 
-3.  Scegliere il processo di migrazione da eseguire. Nella scheda **Home**, nel gruppo **Processo di migrazione**, scegliere **Avvia**.  
+3.  実行する移行ジョブを選びます。 **[ホーム]** タブの **[移行ジョブ]** グループで、**[開始]** を選びます。  
 
-4.  Scegliere **Sì** per avviare il processo di migrazione.  
+4.  **[はい]** を選び、移行ジョブを開始します。  
 
-##  <a name="a-namebkmkprocupgrdssa-upgrade-or-reassign-a-shared-distribution-point"></a><a name="BKMK_ProcUpgrdSS"></a> Aggiornare o riassegnare un punto di distribuzione condiviso  
- È possibile aggiornare un punto di distribuzione supportato condiviso da un sito di origine di Configuration Manager 2007 oppure riassegnare un punto di distribuzione supportato condiviso da un sito di origine di System Center Configuration Manager in modo che diventi un punto di distribuzione nella gerarchia di destinazione.  
+##  <a name="BKMK_ProcUpgrdSS"></a> 共有配布ポイントのアップグレードまたは再割り当て  
+ Configuration Manager 2007 ソース サイトから共有されているサポート対象の配布ポイントをアップグレードするか、System Center Configuration Manager ソース サイトから共有されているサポート対象の配布ポイントを再割り当てすることで、移行先階層内の配布ポイントにすることができます。  
 
 > [!IMPORTANT]  
->  Prima di aggiornare un punto di distribuzione secondario di Configuration Manager 2007, è necessario disinstallare il software client di Configuration Manager 2007 dal computer del punto di distribuzione secondario. Se il software client di Configuration Manager 2007 viene installato durante il tentativo di aggiornamento del punto di distribuzione, l'aggiornamento ha esito negativo e il contenuto precedentemente distribuito a un punto di distribuzione secondario viene rimosso dal computer.  
+>  Configuration Manager 2007 ブランチ配布ポイントをアップグレードする前に、ブランチ配布ポイント コンピューターから Configuration Manager 2007 クライアント ソフトウェアをアンインストールする必要があります。 配布ポイントをアップグレードするときに Configuration Manager 2007 クライアント ソフトウェアをインストールすると、アップグレードは失敗し、以前にブランチ配布ポイントに展開されたコンテンツは、コンピューターから削除されます。  
 
 > [!CAUTION]  
->  Quando si aggiorna o si riassegna un punto di distribuzione condiviso, il computer di sistema del sito e il ruolo di sistema del sito del punto di distribuzione vengono rimossi dal sito di origine e aggiunti come punto di distribuzione al sito nella gerarchia di destinazione selezionata.  
+>  共有配布ポイントをアップグレードまたは再割り当てすると、配布ポイント サイト システムの役割とサイト システム コンピューターはソース サイトから削除され、選択した移行先階層内のサイトに配布ポイントとして追加されます。  
 
-#### <a name="upgrade-or-reassign-a-shared-distribution-point"></a>Aggiornare o riassegnare un punto di distribuzione condiviso  
+#### <a name="upgrade-or-reassign-a-shared-distribution-point"></a>共有配布ポイントのアップグレードまたは再割り当て  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Migrazione** e quindi scegliere **Gerarchia di origine**.  
+2.  **[管理]** ワークスペースで、**[移行]** を展開して、**[ソース階層]** を選びます。  
 
-3.  Selezionare il sito proprietario del punto di distribuzione da aggiornare, scegliere la scheda **Punti di distribuzione condivisi** e selezionare il punto di distribuzione appropriato da aggiornare o riassegnare.  
+3.  アップグレードする配布ポイントを所有しているサイトを選び、**[共有配布ポイント]** タブを選んで、アップグレードまたは再割り当て対象の配布ポイントを選びます。  
 
-4.  Nella scheda **Punto di distribuzione**, nel gruppo **Punto di distribuzione**, scegliere **Riassegna**.  
+4.  **[配布ポイント]** タブの **[配布ポイント]** グループで、**[再割り当て]** を選びます。  
 
-5.  Specificare le impostazioni in Riassegnazione guidata punti di distribuzione condivisi come per l'installazione di un nuovo punto di distribuzione per la gerarchia di destinazione, con le seguenti aggiunte:  
+5.  共有配布ポイントの再割り当てウィザードで、移行先階層の新しい配布ポイントをインストールする場合と同様の設定を指定し、次の項目を追加指定します。  
 
-    -   Nella pagina **Conversione del contenuto** controllare le indicazioni relative allo spazio richiesto per convertire il contenuto esistente. Nella pagina **Impostazioni unità** della procedura guidata verificare quindi che nell'unità del computer del punto di distribuzione selezionata sia disponibile la quantità di spazio libero su disco necessaria.  
+    -   **[コンテンツの変換]** ページで、既存のコンテンツの変換に必要な容量に関するガイドを確認します。 次に、ウィザードの **[ドライブ設定]** ページで、選択した配布ポイント コンピューターのドライブに、必要ディスク空き容量があることを確認します。  
 
-6.  Confermare le impostazioni e quindi completare la procedura guidata.  
+6.  設定を確認して、ウィザードを終了します。  
 
-##  <a name="a-namemonitormigrationa-monitor-migration-activity-in-the-migration-workspace"></a><a name="Monitor_MIgration"></a> Monitorare l'attività di migrazione nell'area di lavoro Migrazione  
- Usare la console di Configuration Manager per monitorare la migrazione.  
+##  <a name="Monitor_MIgration"></a> [移行] ワークスペースでの移行アクティビティを監視する  
+ Configuration Manager コンソールを使って移行を監視します。  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Migrazione**e quindi scegliere **Processi di migrazione**.  
+2.  **[管理]** ワークスペースで、**[移行]** を展開し、**[移行ジョブ]** を選びます。  
 
-3.  Scegliere il processo di migrazione da monitorare.  
+3.  監視する移行ジョブを選びます。  
 
-4.  Visualizzare i dettagli e lo stato relativi al processo di migrazione selezionato nelle schede **Riepilogo** e **Oggetti nel processo**.  
+4.  **[概要]** と **[ジョブ内のオブジェクト]**の各タブに、選択された移行ジョブに関する内容と状態を表示します。  
 
-##  <a name="a-namebkmkmigrateclientsa-migrate-clients"></a><a name="BKMK_MigrateClients"></a> Eseguire la migrazione dei client  
- Dopo aver eseguito la migrazione dei dati per i client da una gerarchia all'altra, ma prima di completare tale operazione, pianificare la migrazione dei client nella gerarchia di destinazione. La migrazione di client da una gerarchia all'altra comporta la disinstallazione del software client di Configuration Manager dai computer assegnati alla gerarchia di origine e l'installazione del software client di Configuration Manager dalla gerarchia di destinazione. Quando si installa il client dalla gerarchia di destinazione si assegna anche il client a un sito primario in tale gerarchia. Per altre informazioni sulla migrazione dei client, vedere [Pianificazione di una strategia di migrazione client in System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md).  
+##  <a name="BKMK_MigrateClients"></a> クライアントの移行  
+ 階層間でクライアントのデータを移行した後、移行を終了する前に、クライアントを移行先階層に移行する計画を立てます。 階層間のクライアントの移行には、ソース階層に割り当てられているコンピューターから Configuration Manager クライアント ソフトウェアを削除し、その後で、移行先階層から Configuration Manager クライアント ソフトウェアをインストールする手順が含まれます。 移行先階層からクライアントをインストールするときに、その階層のプライマリ サイトへのクライアントの割り当ても行います。 クライアントの移行の詳細については、「[System Center Configuration Manager でのクライアント移行戦略の計画](../../core/migration/planning-a-client-migration-strategy.md)」をご覧ください。  
 
-##  <a name="a-namecompletemigrationa-finish-migration"></a><a name="Complete_Migration"></a> Completare la migrazione  
- Usare questa procedura per completare la migrazione dalla gerarchia di origine.  
+##  <a name="Complete_Migration"></a>移行の完了  
+ ソース階層からの移行を終了するには、次の手順に従います。  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Migrazione** e quindi scegliere **Gerarchia di origine**.  
+2.  **[管理]** ワークスペースで、**[移行]** を展開して、**[ソース階層]** を選びます。  
 
-3.  Per una gerarchia di origine di Configuration Manager 2007, selezionare un sito di origine nel livello inferiore della gerarchia di origine. Per una gerarchia di origine di System Center 2012 Configuration Manager o System Center Configuration Manager, selezionare il sito di origine disponibile.  
+3.  Configuration Manager 2007 ソース階層の場合、ソース階層の最下位レベルにあるソース サイトを選択します。 System Center 2012 Configuration Manager または System Center Configuration Manager のソース階層の場合は、使用可能なソース サイトを選択します。  
 
-4.  Nella scheda **Home**, nel gruppo **Pulisci**, scegliere **Interrompi raccolta dati**.  
+4.  **[ホーム]** タブの **[クリーンアップ]** グループで、**[データ収集の停止]** を選びます。  
 
-5.  Scegliere **Sì** per confermare l'azione.  
+5.  **[はい]** を選んで操作を確定します。  
 
-6.  Per una gerarchia di origine di Configuration Manager 2007, ripetere i passaggi 3, 4 e 5 prima di passare al passaggio successivo. Eseguire questi passaggi in ogni sito della gerarchia, dal livello inferiore a quello superiore. Per una gerarchia di origine di System Center 2012 Configuration Manager o System Center Configuration Manager, continuare con il passaggio successivo.  
+6.  Configuration Manager 2007 ソース階層の場合、次の手順に進む前に、手順 3、4、5 を繰り返します。 最下位の階層から最上位の階層まで、階層内の各サイトでこれらの手順を実行します。 System Center 2012 Configuration Manager または System Center Configuration Manager のソース階層の場合は、次の手順に進みます。  
 
-7.  Nella scheda **Home**, nel gruppo **Pulisci**, scegliere **Pulisci dati migrazione**.  
+7.  **[ホーム]** タブの **[クリーンアップ]** グループで、**[移行データのクリーンアップ]** を選びます。  
 
-8.  Nella finestra di dialogo **Pulisci dati migrazione** selezionare il codice e il server del sito del sito principale della gerarchia di origine nell'elenco a discesa **Gerarchia di origine** e quindi scegliere **OK**.  
+8.  **[移行データのクリーンアップ]** ダイアログ ボックスの **[ソース階層]** ドロップダウン リストで、ソース階層の最上位レベルのサイト コードとサイト サーバーを選んでから、**[OK]** を選びます。  
 
-9. Scegliere **Sì** per completare il processo di migrazione per la gerarchia di origine.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
-
+9. **[はい]** を選んで、ソース階層の移行処理を終了します。  

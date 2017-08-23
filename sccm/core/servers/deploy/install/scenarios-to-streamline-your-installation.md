@@ -1,134 +1,130 @@
 ---
-title: Scenari di installazione | Microsoft Docs
-description: Informazioni sulle tecniche di installazione di una nuova gerarchia di Configuration Manager durante l&quot;aggiornamento di un sito.
+title: "インストール シナリオ | Microsoft Docs"
+description: "サイトを更新またはアップグレードするときに新しい Configuration Manager 階層をインストールする手法について説明します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35586a85-4af9-4c8b-925a-0e32dc8b7346
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9dac6b3fa92c193e3c1a75dd804e0b72fb5394b9
-ms.openlocfilehash: dbc303ea9df5a429cb2ef8bd89f372639a4ae2b2
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.openlocfilehash: 938b2970e4d8534fdd5f3daf0c9a5ddb1f576e60
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="scenarios-to-streamline-your-installation-of-system-center-configuration-manager"></a>Scenari per semplificare l'installazione di System Center Configuration Manager
+# <a name="scenarios-to-streamline-your-installation-of-system-center-configuration-manager"></a>System Center Configuration Manager のインストールを合理化するシナリオ
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Il rilascio di versioni di aggiornamento per System Center Configuration Manager (Current Branch) offre nuovi scenari per semplificare l'installazione di una nuova gerarchia in una versione di aggiornamento, ad esempio l'aggiornamento 1610, e per l'aggiornamento da Microsoft System Center 2012 Configuration Manager.
+System Center Configuration Manager の Current Branch の更新プログラムのバージョンのリリースには、更新プログラムのバージョン (更新プログラム 1610 など) への新しい階層のインストールを効率化したり、Microsoft System Center 2012 Configuration Manager からアップグレードしたりするための新しいシナリオがあります。
 
-Gli scenari supportati includono:  
+次のシナリオがサポートされます。  
 
-**Installare una nuova gerarchia di System Center Configuration Manager (Current Branch)** che esegua una versione di aggiornamento.  
+**更新プログラムのバージョンを実行する新しい System Center Configuration Manager の Current Branch の階層** をインストールする:  
 
--   Installare solo il sito di livello superiore e quindi installare immediatamente un aggiornamento per aggiornare il sito alla versione di aggiornamento che verrà usata. Sarà possibile in seguito installare altri siti direttamente con la versione di aggiornamento.  
--   In questo scenario viene evitato il processo di installazione di siti aggiuntivi a un livello di base e il loro aggiornamento alla versione di aggiornamento che si vuole usare.  
--   In questo scenario viene evitato il processo di installazione di client in una versione di base e la loro reinstallazione al momento dell'aggiornamento a una versione più recente.  
+-   最上階層のサイトのみをインストールした直後に、使用する更新プログラムのバージョンでサイトを更新する更新プログラムをインストールします。 次に、追加サイトをその更新プログラムのバージョンに直接インストールできます。  
+-   このシナリオでは、基本レベルへの追加サイトのインストールのプロセスをスキップし、使用する更新プログラムのバージョンへそれらを更新します。  
+-   このシナリオでは、構成基準バージョンへのクライアントのインストールのプロセスをスキップし、新しいバージョンに更新するときにそれらを再インストールします。  
 
-**Aggiornare l'infrastruttura di Microsoft System Center 2012 Configuration Manager** a una versione di aggiornamento di System Center Configuration Manager.  
+ **Microsoft System Center 2012 Configuration Manager** インフラストラクチャを System Center Configuration Manager の更新プログラムのバージョンにアップグレードします。  
 
--   Prima di installare una versione di aggiornamento, ad esempio la versione 1610, aggiornare manualmente il sito di amministrazione centrale e ogni sito primario a una versione di base, ad esempio alla versione 1606.  
--   Non aggiornare i siti secondari da Microsoft System Center 2012 Configuration Manager finché i siti primari non eseguono la versione di aggiornamento da usare.  
--   Non aggiornare i client da Microsoft System Center 2012 Configuration Manager finché i siti primari non eseguono la versione di aggiornamento da usare.  
+-   中央管理サイトと各プライマリ サイトを構成基準のバージョン (バージョン 1606 など) に手動でアップグレードしてから、更新プログラムのバージョン (バージョン 1610 など) をインストールします。  
+-   使用する更新プログラムのバージョンがプライマリ サイトで実行されるようになるまで、セカンダリ サイトを System Center 2012 Configuration Manager からアップグレードしないでください。  
+-   使用する更新プログラムのバージョンがプライマリ サイトで実行されるようになるまで、クライアントを System Center 2012 Configuration Manager からアップグレードしないでください。  
 
-## <a name="scenario-install-a-new-hierarchy-to-an-update-version"></a>Scenario: installare una nuova gerarchia in una versione di aggiornamento  
-In questo scenario di esempio si installa il primo sito di una gerarchia usando una versione di base di System Center Configuration Manager, ad esempio la versione 1610. Quindi si installa l'aggiornamento 1610 prima di distribuire altri siti o client.  
+## <a name="scenario-install-a-new-hierarchy-to-an-update-version"></a>シナリオ - 更新プログラムのバージョンへの新しい階層のインストール  
+このシナリオ例では、System Center Configuration Manager の構成基準のバージョン (バージョン 1610 など) を使用して、階層の最初のサイトをインストールします。 次に、1610 更新プログラムをインストールしてから、追加サイトまたはクライアントを展開します。  
 
--   Poiché si prevede di usare una versione di aggiornamento, ad esempio la versione 1610, anziché una versione di base, ad esempio la versione 1606, non è necessario installare altri siti e quindi aggiornarli. Ciò si applica anche ai client.  
--   Non installare siti secondari con la versione 1606 per poi aggiornarli alla versione 1610. Installare invece i siti secondari dopo che i siti primari eseguono la versione 1610.  
+-   更新プログラムのバージョン (バージョン 1610 など) を使用して、構成基準のバージョン (バージョン 1606 など) に留まらないことを計画しているので、追加サイトをインストールしてからアップグレードする必要はありません。 これはクライアントにも当てはまります。  
+-   バージョン 1606 のセカンダリ サイトをインストールしてからバージョン 1610 にアップグレードしないでください。 代わりに、プライマリ サイトで 1610 のバージョンを実行した後に、セカンダリ サイトをインストールします。  
 
-Seguire questa sequenza:  
+この順序に従います。  
 
-1.  **Installare un sito principale per la nuova gerarchia** usando il supporto di base.  
+1.  構成基準メディアを使用して、**新しい階層の最上階層サイトをインストールします**。  
 
-    -   È possibile usare il supporto di base solo per installare il primo sito di una nuova gerarchia.  
-    -   Ad esempio, installare un sito principale usando la versione di base 1606. Per altre informazioni, vedere [Usare l'installazione guidata per installare i siti](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites).  
+    -   構成基準メディアは、新しい階層の最初のサイトのインストールにのみ使用できます。  
+    -   たとえば、構成基準のバージョン 1606 を使用して、最上階層サイトをインストールします。 詳細については、「[セットアップ ウィザードを使用してサイトをインストールする](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites)」を参照してください。  
 
-    Dopo questo passaggio, il sito principale eseguirà la versione 1606.  
+    この手順の後には、最上階層サイトはバージョン 1606 を実行します。  
 
-2.  **Usare gli aggiornamenti nella console per aggiornare il sito principale a una versione più recente.**  
+2.  **コンソール内の更新プログラムを使用して、最上階層サイトを新しいバージョンに更新します。**  
 
-    -   Prima di installare eventuali client o siti figlio, aggiornare il sito principale alla versione di aggiornamento che si intende usare.  
-    -   Ad esempio, un sito principale che esegue la versione 1606 può essere aggiornato alla versione 1610. Per altre informazioni, vedere [Aggiornamenti per System Center Configuration Manager](../../../../core/servers/manage/updates.md).  
+    -   使用を計画している更新プログラムのバージョンに最上階層サイトを更新してから、すべての子サイトまたはクライアントをインストールします。  
+    -   たとえば、バージョン 1606 を実行している最上階層サイトをバージョン 1610 に更新できます。 詳細については、「[System Center Configuration Manager の更新プログラム](../../../../core/servers/manage/updates.md)」を参照してください。  
 
-    Dopo questo passaggio, il sito principale eseguirà la versione 1610.  
+    この手順の後には、最上階層サイトはバージョン 1610 を実行します。  
 
-3.  **Installare nuovi siti primari figlio in un sito di amministrazione centrale.**  
+3.  **中央管理サイトの下に、新しい子プライマリ サイトをインストールします。**  
 
-    -   Usare il supporto di installazione disponibile nella cartella CD.Latest sul server del sito di amministrazione centrale per installare i siti primari figlio. Per altre informazioni, vedere [Cartella CD.Latest per System Center Configuration Manager](../../../../core/servers/manage/the-cd.latest-folder.md).  
+    -   中央管理サイト サーバーで CD.Latest フォルダーからのインストール メディアを使用して、子プライマリ サイトをインストールします 詳細については、[「System Center Configuration Manager の CD.Latest フォルダー」](../../../../core/servers/manage/the-cd.latest-folder.md)」をご覧ください。  
 
-      Questo supporto di origine è necessario per assicurare che i nuovi siti primari figlio corrispondano alla versione del sito di amministrazione centrale.  
+      このソース メディアは、新しい子プライマリ サイトと中央管理サイトのバージョンを一致させるために必要です。  
 
-    Dopo questo passaggio, i nuovi siti primari figlio eseguiranno la versione 1610.  
+    この手順の後に、新しい子プライマリ サイトは、バージョン 1610 を実行します。  
 
-4.  **In ogni sito primario usare l'opzione nella console per installare nuovi siti secondari.**  
+4.  **各プライマリ サイトには、コンソール内のオプションを使用して、新しいセカンダリ サイトをインストールします。**  
 
-    -   Poiché i siti secondari non sono stati installati quando i siti primari eseguivano la versione 1606, non è necessario aggiornarli.  
-    -   Installare invece nuovi siti secondari che eseguono la versione 1610. Per altre informazioni, vedere la sezione relativa all'installazione di un [sito secondario](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites#bkmk_secondary) nell'argomento sull'[installazione dei siti con System Center Configuration Manager](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites).  
+    -   プライマリ サイトがバージョン 1606 であった期間はセカンダリ サイトをインストールしなかったので、セカンダリ サイトをアップグレードする必要はありません。  
+    -   代わりに、バージョン 1610 を実行する新しいセカンダリ サイトをインストールします。 詳細については、「[セットアップ ウィザードを使用してサイトをインストールする](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites)」トピックの「[セカンダリ サイトのインストール](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites#bkmk_secondary)」をご覧ください。  
 
-    Dopo questo passaggio, verranno installati i nuovi siti secondari che eseguiranno la versione 1610.  
+    この手順の後には、新しいセカンダリ サイトがインストールされて、バージョン 1610 が実行されます。  
 
-5.  **Installare nuovi client nel sito primario.**  
+5.  **プライマリ サイトに新しいクライアントをインストールします。**  
 
-    -   Poiché i client non sono stati installati quando i siti primari eseguivano la versione 1606, non è necessario aggiornarli dalla versione 1606 alla versione 1610.  
-    -   Installare invece i nuovi client che eseguono la versione 1610. Per altre informazioni, vedere [Distribuire i client in System Center Configuration Manager](../../../clients/deploy/deploy-clients-to-windows-computers.md).  
+    -   プライマリ サイトがバージョン 1606 であった期間はクライアントをインストールしなかったので、クライアントをバージョン 1606 からバージョン 1610 にアップグレードする必要はありません。  
+    -   代わりに、バージョン 1610 を実行する新しいクライアントをインストールします。 詳細については、「[Deploy clients in System Center Configuration Manager](../../../clients/deploy/deploy-clients-to-windows-computers.md)」 (System Center Configuration Manager でクライアントを展開する) を参照してください。  
 
-    Dopo questo passaggio, verranno installati i nuovi client che eseguono la versione 1610.  
+    この手順の後には、バージョン 1610 を実行する新しいクライアントがインストールされます。  
 
-## <a name="scenario-upgrade-system-center-2012-configuration-manager-to-an-update-version-of-system-center-configuration-manager-current-branch"></a>Scenario: aggiornare System Center 2012 Configuration Manager a una versione di aggiornamento di System Center Configuration Manager (Current Branch)  
-In questo scenario di esempio l'infrastruttura di Microsoft System Center 2012 Configuration Manager viene aggiornata a una versione di aggiornamento di System Center Configuration Manager, ad esempio alla versione 1610.  
+## <a name="scenario-upgrade-system-center-2012-configuration-manager-to-an-update-version-of-system-center-configuration-manager-current-branch"></a>シナリオ: System Center 2012 Configuration Manager を System Center Configuration Manager の Current Branch の更新プログラムのバージョンにアップグレードする  
+このシナリオの例では、Microsoft System Center 2012 Configuration Manager インフラストラクチャを System Center Configuration Manager の更新プログラムのバージョン (バージョン 1610 など) にアップグレードします。  
 
--   Il sito di amministrazione centrale e ogni sito primario devono eseguire l'aggiornamento alla versione di base 1606 prima di installare l'aggiornamento per la versione 1610.  
--   I siti secondari e i client non vengono aggiornati o installati con la versione 1606. Passano invece direttamente da Microsoft System Center 2012 Configuration Manager a System Center Configuration Manager versione 1610.  
+-   中央管理サイトおよび各プライマリ サイトを構成基準のバージョン 1606 にアップグレードしてから、バージョン 1610 の更新プログラムをインストールする必要があります。  
+-   セカンダリ サイトとクライアントをアップグレードしたり、バージョン 1606 をインストールしたりすることはありません。 代わりに、Microsoft System Center 2012 Configuration Manager から System Center Configuration Manager バージョンに 1610 に直接移行します。  
 
-Seguire questa sequenza:  
+この順序に従います。  
 
-1.  **Aggiornare il sito principale di Microsoft System Center 2012 Configuration Manager** a una versione di base Current Branch, ad esempio alla versione 1606, usando i supporti di origine per System Center Configuration Manager. Per altre informazioni, vedere l'articolo relativo agli [aggiornamenti a System Center Configuration Manager](../../../../core/servers/deploy/install/upgrade-to-configuration-manager.md).  
+1.  System Center Configuration Manager (バージョン 1606 など) のソース メディアを使用して、**最上階層 Microsoft System Center 2012 Configuration Manager サイトを** Current Branch の構成基準バージョンにアップグレードします。 詳細については、「[System Center Configuration Manager へのアップグレード](../../../../core/servers/deploy/install/upgrade-to-configuration-manager.md)」を参照してください。  
 
-    -   Come per gli scenari di aggiornamento tradizionali, si aggiorna sempre prima il sito principale della gerarchia e quindi i siti figlio.  
+    -   従来のアップグレード シナリオのように、階層の最上階層サイトを最初にアップグレードしてから、子サイトをアップグレードします。  
 
-    Dopo questo passaggio, il sito principale eseguirà la versione 1606.  
+    この手順の後には、最上階層サイトはバージョン 1606 を実行します。  
 
-2.  **Aggiornare ogni sito primario figlio nella gerarchia** alla stessa versione di base.  
+2.  同じ構成基準のバージョンに**階層内の各子プライマリ サイトをアップグレード** します。  
 
-    -   Quando si esegue l'aggiornamento da Microsoft System Center 2012 Configuration Manager, è necessario aggiornare manualmente ogni sito primario a una versione di base Current Branch.  
-    -   In questa fase non vengono aggiornati i siti secondari.  
+    -   Microsoft System Center 2012 Configuration Manager からアップグレードするときには、各プライマリ サイトを Current Branch の構成基準のバージョンに手動でアップグレードする必要があります。  
+    -   この時点でセカンダリ サイトをアップグレードすることはありません。  
 
-    Dopo questo passaggio, ogni sito primario eseguirà la versione 1606.  
+    この手順の後には、各プライマリ サイトはバージョン 1606 を実行します。  
 
-3.  **Impostare le finestre di manutenzione nei siti primari figlio.** Dopo aver aggiornato tutti i siti primari alla versione di base, pianificare la configurazione di finestre di manutenzione per controllare quando quei siti installano aggiornamenti dell'infrastruttura. Per altre informazioni, vedere [How to use maintenance windows in System Center Configuration Manager](../../../../core/clients/manage/collections/use-maintenance-windows.md) (Come usare le finestre di manutenzione in Configuration Manager).  Le finestre di manutenzione sono chiamate *intervalli di servizio* nella versione 1606.  
+3.  **子プライマリ サイトのメンテナンス期間を設定します。** すべてのプライマリ サイトを構成基準のバージョンにアップグレードしたら、それらのサイトがインフラストラクチャの更新プログラムをインストール時期を制御するメンテナンス期間の構成を計画します。 詳細については、「[System Center Configuration Manager でメンテナンス期間を使用する方法](../../../../core/clients/manage/collections/use-maintenance-windows.md)」をご覧ください。  (バージョン 1606 では、メンテナンス期間は*サービス時間帯*と呼ばれます。)  
 
-    -   Un sito primario figlio installa gli stessi aggiornamenti installati in un sito di amministrazione centrale.  
-    -   I siti secondari non installano le nuove versioni automaticamente. È necessario aggiornarli manualmente dall'interno della console.  
+    -   子プライマリ サイトは、中央管理サイトにインストールされる同じ更新プログラムを自動的にインストールします。  
+    -   セカンダリ サイトは新しいバージョンを自動的にインストールしません。 コンソール内から手動でそれらをアップグレードする必要があります。  
 
-  Dopo questo passaggio, quando si installano aggiornamenti nel sito di amministrazione centrale, verranno installati solo siti primari figlio che vengono aggiornati quando consentito dalla rispettiva finestra di manutenzione.  
+  この手順の後に、更新プログラムが中央管理サイトにインストールされると、子プライマリ サイトはその更新プログラムだけをメンテナンス期間中にインストールします。  
 
-4.  **Installare la versione di aggiornamento nel sito principale.** Il sito principale viene aggiornato. Dopo che un sito di amministrazione centrale installa la versione di aggiornamento, ogni sito primario figlio installa automaticamente l'aggiornamento a meno che l'installazione non sia bloccata da una finestra di manutenzione.  
+4.  **最上階層サイトに更新プログラムのバージョンをインストールします。** これにより、最上階層サイトが更新されます。 中央管理サイトが更新プログラムのバージョンをインストールしたら、メンテナンス期間によってインストールがブロックされていない限り、各子プライマリ サイトは更新プログラムを自動的にインストールします。  
 
-    -   Ad esempio, è possibile aggiornare il sito principale dalla versione 1606 alla versione 1610. Per altre informazioni, vedere [Aggiornamenti per System Center Configuration Manager](../../../../core/servers/manage/updates.md).  
+    -   たとえば、最上階層サイトをバージョン 1606 からバージョン 1610 に更新できます。 詳細については、「[System Center Configuration Manager の更新プログラム](../../../../core/servers/manage/updates.md)」を参照してください。  
 
-    Dopo questo passaggio, il sito di amministrazione centrale e ogni sito primario eseguirà la versione 1610.  
+    この手順の後に、中央管理サイトと各プライマリ サイトはバージョン 1610 を実行します。  
 
-5.  **Aggiornare i siti secondari.** Dopo che un sito primario installa l'aggiornamento ed esegue la versione 1610, usare l'opzione nella console per aggiornare i siti secondari.  
+5.  **セカンダリ サイトをアップグレードします。** プライマリ サイトが更新プログラムをインストールしてバージョン 1610 を実行するようになったら、コンソール内のオプションを使用して、セカンダリ サイトをアップグレードします。  
 
-    -   In questo modo i siti secondari vengono aggiornati da Microsoft System Center 2012 Configuration Manager alla versione di aggiornamento installata nel sito primario.  
-    -   Per informazioni sull'aggiornamento di un sito secondario, vedere [Aggiornare i siti](../../../../core/servers/deploy/install/upgrade-to-configuration-manager.md#bkmk_upgrade) nell'argomento [Eseguire l'aggiornamento a System Center Configuration Manager](../../../../core/servers/deploy/install/upgrade-to-configuration-manager.md).  
+    -   これにより、セカンダリ サイトは Microsoft System Center 2012 Configuration Manager から、プライマリ サイトにインストールした更新プログラムのバージョンに直接アップグレードされます。  
+    -   セカンダリ サイトのアップグレードの詳細については、「[System Center Configuration Manager へのアップグレード](../../../../core/servers/deploy/install/upgrade-to-configuration-manager.md)」の「[サイトをアップグレードする](../../../../core/servers/deploy/install/upgrade-to-configuration-manager.md#bkmk_upgrade)」を参照してください。  
 
-6.  **Aggiornare i client.** Per aggiornare i client, usare le informazioni in [Come aggiornare i client per i computer Windows in System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
+6.  **クライアントをアップグレードする** クライアントをアップグレードするには、「[System Center Configuration Manager で Windows コンピューター用クライアントをアップグレードする方法](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md)」を参照してください。  
 
-    -   In questo modo i client vengono aggiornati direttamente da Microsoft System Center 2012 Configuration Manager alla versione di aggiornamento installata nel sito primario.  
+    -   これにより、クライアントは Microsoft System Center 2012 Configuration Manager から、プライマリ サイトにインストールした更新プログラムのバージョンに直接アップグレードされます。  
 
-    Dopo questo passaggio, i client vengono aggiornati alla versione 1610 senza eseguire prima l'aggiornamento alla versione 1606.
-
+    この手順の後に、クライアントは最初にバージョン 1606 にアップグレードすることなく、バージョン 1610 にアップグレードされます。

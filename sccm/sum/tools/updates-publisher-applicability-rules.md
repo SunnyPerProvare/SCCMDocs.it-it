@@ -1,41 +1,38 @@
 ---
-title: "Regole di applicabilità | Microsoft Docs"
-description: "Gestire le regole di applicabilità per System Center Updates Publisher"
+title: "適用性ルール | Microsoft Docs"
+description: "System Center Updates Publisher の適用性ルールを管理する"
 ms.custom: na
 ms.date: 4/29/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3cf0c2cd-397a-4622-b11c-961f334fb7d7
-caps.latest.revision: 1
+caps.latest.revision: "1"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: NOINDEX, NOFOLLOW
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 31819a1df4e63e1114682490a9b3c3b4e5c99cfa
 ms.openlocfilehash: 2925abda07abaa46ad56b9b433ce003c22aede5e
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="manage-applicability-rules-in-updates-publisher"></a>Updates Publisher 内で適用性ルールを管理する
 
-# <a name="manage-applicability-rules-in-updates-publisher"></a>Gestire le regole di applicabilità in Updates Publisher
+*適用対象: System Center Updates Publisher*
 
-*Si applica a: System Center Updates Publisher*
+Updates Publisher では、適用性ルールは、デバイスが更新プログラムをインストールする前に満たす必要がある要件を定義します。 ルールは、コンピューターに更新プログラムがインストールされているかどうかを判別するためにも使用されます。 複数の部分で構成されている複雑な適用性ルールは、ルール セットと呼ばれます。
 
-Con Updates Publisher le regole di applicabilità definiscono i requisiti che è necessario soddisfare per consentire a un dispositivo di installare un aggiornamento. Le regole vengono usate anche per determinare se nel computer è installato un aggiornamento. Una regola di applicabilità complessa e composta da più parti viene denominata set di regole.
+更新プログラム バンドルでは、適用性ルールを使用しません。
 
-Le aggregazioni di aggiornamenti non usano regole di applicabilità.
+## <a name="overview-of-applicability-rules"></a>適用性ルールの概要
+適用性ルールは、**[Rules Workspace]\(ルール ワークスペース)** から管理します。 ルールを作成するときに、1 つまたは複数の条件を指定します。 複数の条件を指定するときは、順番に評価されるか、論理 **[And]\ (積)** または **[Or]\ (和)** ステートメントで結合されように、条件間のリレーションシップを構成できます。
 
-## <a name="overview-of-applicability-rules"></a>Panoramica delle regole di applicabilità
-Le regole di applicabilità vengono gestite nell'**area di lavoro Regole**. Quando si crea una regola, si specificano una o più condizioni. Quando si specificano più condizioni, è possibile configurare relazioni tra di esse. In questo modo, le relazioni vengono valutate in modo sequenziale oppure combinate in istruzioni logiche di tipo **And** o **Or**.
-
-Nell'esempio seguente viene illustrato un set di regole contenente tre regole. La prima regola verifica che il file *MyFile* esista, mentre la seconda e terza regola verificano che la lingua del sistema operativo Windows sia l'inglese o il giapponese.
+たとえば、次に示すのは 3 つのルールが含まれているルール セットです。 最初のルールで *MyFile* ファイルが存在していることを確認し、2 番目と 3 番目のルールで、Windows オペレーティング システムの言語が英語または日本語であることを確認します。
 
     And  
       File ‘\[PROGRAM\_FILES\] \\Microsoft\\MyFile’ exists  
@@ -43,55 +40,54 @@ Nell'esempio seguente viene illustrato un set di regole contenente tre regole. L
         Windows Language is English   
         Windows Language is Japanese
 
-Tutti gli aggiornamenti richiedono almeno una regola di applicabilità. Per gli aggiornamenti in fase di importazione sono già attive regole di applicabilità. Quando si creano aggiornamenti personalizzati, è necessario aggiungere ad essi una o più regole. È possibile modificare ed espandere le regole per qualsiasi aggiornamento in Updates Publisher.
+すべての更新プログラムに、少なくとも 1 つの適用性ルールが必要です。 インポートする更新プログラムには既に適用性ルールが適用され、独自の更新プログラムを作成するときは、1 つまたは複数のルールを追加する必要があります。 Updates Publisher で任意の更新プログラムのルールを変更および拡張できます。
 
-Per visualizzare le regole create, nell'**area di lavoro Regole** selezionare una regola dall'elenco **My saved rules** (Regole personali salvate). Le singole condizioni e operazioni logiche per una regola vengono visualizzate nel riquadro **Applicability Rules** (Regole di applicabilità) della console. Le regole per un aggiornamento in fase di importazione possono essere visualizzate e modificate solo quando si modifica tale aggiornamento.
+作成したルールを表示するには、**[Rules Workspace]\(ルール ワークスペース)** で、**[My saved rules]\(マイ保存済みルール)** ボックスの一覧からルールを選択します。 このルールの個別の条件と論理演算子がコンソールの **[適用性ルール]** ウィンドウに表示されます。 インポートする更新プログラムのルールは、この更新プログラムを編集するときにのみ表示および変更できます。
 
-È possibile creare regole in due posizioni in Updates Publisher:
+ルールは、Updates Publisher の 2 つの場所で作成できます。
 
--   Nell'**area di lavoro Regole** vengono creati e **salvati** set di regole che è possibile usare in un secondo momento. Quando si modifica o si crea un aggiornamento, è possibile selezionare **Saved rule** (Regola salvata) come **Tipo di regola** e quindi eseguire una selezione da un elenco di set di regole creati in precedenza.
+-   **[Rules Workspace]\(ルール ワークスペース)**  では、ルール セットを作成および**保存**して後で使用できます。 更新プログラムを編集または作成するときに、**[ルールの種類]** として **[Saved rule]\(保存済みルール)** を選択してから、事前に作成したルール セットの一覧から選択できます。
 
--   È anche possibile creare nuove regole al momento della creazione o della modifica di un aggiornamento. Le regole create in questo modo non vengono salvate per uso futuro.
+-   更新プログラムを作成または編集するときに新しいルールを作成することもできます。 この方法で作成したルールは、将来の使用のために保存されません。
 
-## <a name="create-applicability-rule"></a>Creare una regola di applicabilità
-Le informazioni seguenti sono simili a quelle per la creazione di regole nella [Creazione guidata aggiornamento](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard). A differenza di quanto si verifica nella procedura guidata, però, è possibile salvare i set di regole per un uso futuro.
+## <a name="create-applicability-rule"></a>適用性ルールを作成する
+次の情報は、[Create Update (更新プログラムの作成) ウィザード](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard)内からルールを作成する方法と似ています。 ただし、ウィザードとは異なり、将来使用するためにルール セットを保存するオプションがあります。
 
-1.  Nell'**area di lavoro Regole** scegliere **Crea** per aprire la **Creazione guidata regola**.
+1.  **[Rules Workspace]\(ルール ワークスペース)** で、**[作成]** を選択して、**ルールの作成**ウィザードを開きます。
 
-2.  Specificare un nome per la regola, quindi fare clic su ![Nuova regola](media/newrule.png). Verrà visualizzata la pagina **Applicability Rule** (Regola di applicabilità) in cui è possibile configurare le regole.
+2.  ルールの名前を指定し、![[新しいルール]](media/newrule.png) をクリックします。 **[適用性ルール]** ページが開いてルールを構成できます。
 
-3.  Per **Tipo di regole** selezionare una delle opzioni seguenti. Le opzioni che è necessario configurare variano per ogni tipo:
+3.  **[ルールの種類]**で、次のいずれかを選択します。 構成する必要のあるオプションは、種類ごとに異なります。
 
-    -   **File**: usare questa regola per indicare che, per poter eseguire l'aggiornamento, nel dispositivo deve essere presente un file con proprietà che soddisfano uno o più dei criteri specificati.
+    -   **[ファイル]**: この更新プログラムを適用する前に、指定した 1 つまたは複数の条件を満たすプロパティを格納したファイルをデバイスが持つことを要求するには、このルールを使用します。
 
-    -   **Registro di sistema**: usare questo tipo per specificare i dettagli del Registro di sistema che devono essere presenti per consentire l'installazione dell'aggiornamento nel dispositivo.
+    -   **[レジストリ]**: この種類は、この更新プログラムをデバイスにインストールするには、レジストリに存在している必要がある詳細を指定するために使用します。
 
-    -   **Sistema**: questa regola usa i dettagli relativi al sistema per determinare l'applicabilità. È possibile scegliere tra la definizione di una versione di Windows, un linguaggio di Windows o l'architettura del processore. In alternativa, è possibile specificare una query WMI per identificare il sistema operativo dei dispositivi.
+    -   **[システム]**: このルールでは、システムの詳細を使用して適用性を判別します。 Windows のバージョン、Windows の言語、プロセッサ アーキテクチャを定義するか、デバイスのオペレーティング システムを識別するために WMI クエリを指定するかを選択できます。
 
-    -   **Windows Installer**: usare questa regola per determinare l'applicabilità in base a una patch .MSI o Windows Installer installata (.MSP). È anche possibile determinare se funzionalità o componenti specifici vengono installati come parte del requisito.
+    -   **[Windows インストーラー]**: インストール済みの .MSI または Windows インストーラー修正プログラム (.MSP) に基づいて適用性を判別するには、このルールの種類を使用します。 要件の一部として特定のコンポーネントまたは機能がインストールされているかどうかも判別できます。
 
        > [!IMPORTANT]   
-       > Nel dispositivi gestiti, l'agente di Windows Update non è in grado di rilevare i pacchetti del programma di installazione di Windows installati per utente. Quando si usa questo tipo di regola, configurare regole di applicabilità aggiuntive, come le versioni del file o i valori della chiave del Registro di sistema, in modo che il pacchetto Windows Installer possa essere rilevato correttamente sia in base a un criterio "per utente" che in base a un criterio "per sistema".
+       > 管理デバイスでは、ユーザーごとにインストールされている Windows インストール パッケージを Windows 更新エージェントによって検出できません。 このルールの種類を使用する場合は、ユーザーごとなのかシステムごとなのかに関係なく Windows インストーラー パッケージを正しく検出できるように、ファイル バージョンやレジストリ キー値など、追加の適用性ルールを構成してください。
 
-    -   **Saved rule** (Regola salvata): questa regola consente di trovare e usare regole precedentemente configurate e salvate.
+    -   **[Saved rule]\(保存済みルール)**: このオプションでは、以前に構成して保存したルールを検索して使用できます。
 
-4.  Continuare ad aggiungere e configurare regole aggiuntive in base alle esigenze.
+4.  必要に応じて他のルールの追加と構成を続行します。
 
-5.  Usare i pulsanti corrispondenti alle operazioni logiche per ordinare e raggruppare regole differenti in modo da creare controlli dei requisiti più complessi.
+5.  さまざまなルールの順序を指定し、グループ化してさらに複雑な前提条件チェックを作成するには、論理演算子ボタンを使用します。
 
-6.  Quando il set di regole è completo, fare clic su **OK** per salvarlo. Il set di regole viene ora visualizzato nell'elenco **My saved rules** (Regole personali salvate).
+6.  ルール セットが完了したら、**[OK]** をクリックして保存します。 これで、**[My saved rules]\(マイ保存済みルール)** ボックスの一覧にこのルール セットが表示されるようになりました。
 
-## <a name="edit-applicability-rule-sets"></a>Modificare set di regole di applicabilità
-Per modificare una regola di applicabilità, nell'**area di lavoro Regole** selezionare una regola presente nell'elenco **My saved rules** (Regole personali salvate), quindi scegliere il pulsante **Modifica** dalla barra multifunzione. Viene avviata la **Modifica guidata regola**.
+## <a name="edit-applicability-rule-sets"></a>適用性ルール セットを編集する
+適用性ルールを編集するには、**[Rules Workspace]\(ルール ワークスペース)** で **[My saved rules]\(マイ保存済みルール)** ボックスの一覧に保存されている任意のルールを選択し、リボンの **[編集]** を選択します。 **ルールの編集**ウィザードが開きます。
 
-La **Modifica guidata regola** visualizza le regole correnti per il set di regole. La procedura per la modifica delle regole è analoga a quella per la creazione di nuove regole con la **Creazione guidata regola**. È possibile usare questa procedura guidata per rinominare il set di regole, eliminare regole, riordinare regole e relazioni o aggiungere nuove regole.
+**ルールの編集**ウィザードには、ルール セットの現在のルールが表示されます。 **ルールの作成**ウィザードで新しいルールを作成するときと同じ方法でルールを編集します。 このウィザードを使用して、ルール セットの名前の変更、ルールの削除、ルールおよびリレーションシップの順序変更、または新しいルールの追加を行うことができます。
 
-Dopo aver apportato le modifiche, scegliere **OK** per salvarle e chiudere la procedura guidata.
+変更を行った後は、**[OK]** を選択して変更を保存し、ウィザードを閉じます。
 
-Per altri dettagli sull'uso della Creazione guidata regola, vedere il **Passaggio 7**, relativo alla pagina Applicabilità, della [Creazione guidata aggiornamento](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard).
+ルール ウィザードの使用に関する詳細については、**手順 7**、[Create Update (更新プログラムの作成) ウィザードド](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard)の [適用性] ページを参照してください。
 
-## <a name="delete-applicability-rules"></a>Eliminare regole di applicabilità
-Per eliminare una regola di applicabilità salvata, nell'**area di lavoro Regole** selezionare la regola o il set di regole dall'elenco **My saved rules** (Regole personali salvate), quindi scegliere **Elimina** dalla barra multifunzione. Questa operazione rimuove da Updates Publisher la regola o il set di regole salvato.
+## <a name="delete-applicability-rules"></a>適用性ルールの削除
+保存済みの適用性ルールを削除するには、**[Rules Workspace]\(ルール ワークスペース)** で **[My saved rules]\(マイ保存済みルール)** ボックスの一覧からルールまたはルール セットを選択し、リボンの **[削除]** を選択します。 保存済みルールまたはルール セットが Updates Publisher から削除されます。
 
-Per eliminare una regola da un aggiornamento specifico, è necessario [modificare tale aggiornamento](/sccm/sum/tools/manage-updates-with-updates-publisher#edit-updates-and-bundles).
-
+特定の更新プログラムからルールを削除するには、[更新プログラムを編集](/sccm/sum/tools/manage-updates-with-updates-publisher#edit-updates-and-bundles)する必要があります。

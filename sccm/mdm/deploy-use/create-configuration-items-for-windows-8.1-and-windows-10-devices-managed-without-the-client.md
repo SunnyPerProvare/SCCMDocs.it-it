@@ -1,417 +1,415 @@
 ---
-title: Creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti con Intune | Microsoft Docs
-description: Usare l'elemento di configurazione Windows 10 in System Center Configuration Manager per gestire le impostazioni dei computer Windows 10.
+title: "Intune を使用して管理されている Windows 8.1 および Windows 10 デバイスの構成項目を作成する | Microsoft Docs"
+description: "System Center Configuration Manager の Windows 10 構成項目使用して、Windows 10 コンピューターの設定を管理します。"
 ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 23e1e4dc-623a-4521-ad04-ae9482927097
-caps.latest.revision: 20
-caps.handback.revision: 0
+caps.latest.revision: "20"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: cbfc5f178e72b40526a4cb540f962a3b82203699
-ms.contentlocale: it-it
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-configuration-items-for-windows-81-and-windows-10-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client System Center Configuration Manager
+# <a name="how-to-create-configuration-items-for-windows-81-and-windows-10-devices-managed-without-the-system-center-configuration-manager-client"></a>System Center Configuration Manager クライアントを使用せずに管理されている Windows 8.1 デバイスと Windows 10 デバイスの構成項目を作成する方法
 
   
- Usare l'elemento di configurazione **Windows 8.1 e Windows 10** di System Center Configuration Manager per gestire le impostazioni per i dispositivi Windows 8.1 e Windows 10 registrati in Microsoft Intune o gestiti localmente da Configuration Manager.  
+ System Center Configuration Manager の **Windows 8.1 および Windows 10** 構成項目を使って、Microsoft Intune に登録されているか、Configuration Manager によってオンプレミスで管理されている Windows 8.1 デバイスと Windows 10 デバイスの設定を管理します。  
   
-### <a name="to-create-a-windows-81-and-windows-10-configuration-item"></a>Per creare un elemento di configurazione per Windows 8.1 e Windows 10  
+### <a name="to-create-a-windows-81-and-windows-10-configuration-item"></a>Windows 8.1 および Windows 10 の構成項目を作成するには  
   
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** をクリックします。  
   
-2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
+2.  [ **資産とコンプライアンス** ] ワークスペースで [ **コンプライアンス設定** ] を展開して、[ **構成項目** ] をクリックします。  
   
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
+3.  [ **ホーム** ] タブの [ **作成** ] グループで、[ **構成項目の作成** ] をクリックします。  
   
-4.  Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
+4.  **構成項目の作成ウィザード** の **[全般]**ページで、構成項目の名前と、必要に応じて説明を入力します。  
   
-5.  In **Specificare il tipo di elemento di configurazione da creare**selezionare **Windows 8.1 e Windows 10**.  
+5.  **[作成する構成項目の種類の指定]**で、 **[Windows 8.1 および Windows 10]**を選択します。  
   
-6.  Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
+6.  Configuration Manager コンソールで構成項目を検索およびフィルター処理するのに役立つカテゴリを作成して割り当てる場合は、[**カテゴリ**] をクリックします。  
   
-7.  Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme Windows specifiche per la valutazione dell'elemento di configurazione.  
+7.  ウィザードの **[サポートされているプラットフォーム]** ページで、構成項目を評価する特定の Windows プラットフォームを選択します。  
   
-8.  Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione per Windows 8.1 e Windows 10](#BKMK_Setref) in questo argomento e quindi fare clic su **Avanti**.  
-  
-    > [!TIP]  
-    >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
-  
-9. In ogni pagina di impostazioni configurare le impostazioni necessarie e specificare se si vuole monitorarle e aggiornarle nel caso non siano conformi nei dispositivi (se questa funzionalità è supportata).  
-  
-10. Per ogni gruppo di impostazioni, è anche possibile configurare il livello di gravità da segnalare quando viene trovato un elemento di configurazione non conforme, selezionando uno dei livelli seguenti:  
-  
-    -   **Nessuno**: i dispositivi che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
-  
-    -   **Informazioni**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Informazioni** per i report di Configuration Manager.  
-  
-    -   **Avviso**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Avviso** per i report di Configuration Manager.  
-  
-    -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
-  
-    -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel log eventi dell'applicazione.  
-  
-11. Nella pagina **Applicabilità piattaforma** della creazione guidata, verificare le eventuali impostazioni non compatibili con le piattaforme supportate selezionate in precedenza. È possibile tornare indietro e rimuovere queste impostazioni oppure continuare.  
+8.  ウィザードの **[デバイスの設定]** ページで、構成する設定グループを選択します。 このトピックの「 [Windows 8.1 と Windows 10 の構成項目設定のリファレンス](#BKMK_Setref) 」で詳細情報を確認し、 **[次へ]**をクリックします。  
   
     > [!TIP]  
-    >  Non viene valutata la conformità delle impostazioni non supportate.  
+    >  必要な設定が一覧にない場合は、 **[既定の設定グループに含まれない追加の設定を構成する]**チェック ボックスをオンにします。  
   
-12. Completare la procedura guidata.  
+9. 各設定ページで、必要な設定と、その設定がデバイスに対応していないときにその設定を修正するかどうかを構成します (これがサポートされている場合)。  
   
- È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
+10. 設定グループごとに、構成項目が非対応であることが検出されたときに報告される重要度を構成することもできます。  
   
-##  <a name="windows-81-and-windows-10-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione per Windows 8.1 e Windows 10  
+    -   **なし** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に非対応重要度を何も報告しません。  
   
-### <a name="password"></a>Password  
- Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 10 e versioni successive.  
+    -   **情報** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**情報**というレベルで非対応重要度を報告します。  
   
-|Impostazioni|Dettagli|  
+    -   **警告** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**警告**というレベルで非対応重要度を報告します。  
+  
+    -   **重大** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**重大**というレベルで非対応重要度を報告します。  
+  
+    -   **重大 (イベント)** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**重大**というレベルで非対応重要度を報告します。 重要度のレベルは、アプリケーションのイベント ログでも Windows のイベントとしてログが登録されます。  
+  
+11. ウィザードの **[プラットフォームの適用性]** ページで、前に選択したサポート対象プラットフォームと互換性がないすべての設定を確認します。 前に戻ってこれらの設定を削除するか、操作を続行できます。  
+  
+    > [!TIP]  
+    >  サポートされていない設定のコンプライアンスは評価されません。  
+  
+12. ウィザードを完了します。  
+  
+ 新しい構成項目は、 **[資産とコンプライアンス]** ワークスペースの **[構成項目]** ノードに表示されます。  
+  
+##  <a name="windows-81-and-windows-10-configuration-item-settings-reference"></a>Windows 8.1 と Windows 10 の構成項目設定のリファレンス  
+  
+### <a name="password"></a>パスワード  
+ これらの設定は、Windows 10 以降を実行するデバイス専用です。  
+  
+|設定|説明|  
 |-------------|-------------|  
-|**Richiedi impostazioni password nei dispositivi mobili**|Richiede una password nei dispositivi supportati.|  
-|**Lunghezza minima password (caratteri)**|La lunghezza minima della password.|  
-|**Scadenza password in giorni**|Il numero di giorni prima che sia necessario modificare una password.|  
-|**Numero di password memorizzate**|Impedisce il riutilizzo delle password usate in precedenza.|  
-|**Numero di tentativi di accesso non riusciti prima della cancellazione dei dati dal dispositivo**|Cancella il dispositivo se questo numero di tentativi di accesso ha esito negativo.|  
-|**Tempo di inattività prima del blocco del dispositivo**|Specificare la quantità di tempo per cui un dispositivo può rimanere inattivo (senza input dell'utente) prima che venga bloccato.|  
-|**Complessità password**|Scegliere se è possibile specificare un PIN, ad esempio "1234", o se è necessario fornire una password complessa.|  
-|**Qualità password**|Selezionare il livello di complessità delle password necessario e indicare se possono essere usati anche dispositivi biometrici.|  
-|**Invia PIN di ripristino password a Exchange Server**|-|
-|**Crittografia dispositivo**|Abilitare la crittografia nei dispositivi di destinazione.|  
+|**デバイスのパスワードの設定が必要**|サポート対象デバイスのパスワードが必要です。|  
+|**パスワードの最小文字数**|パスワードの最小の長さ。|  
+|**パスワードの有効期限 (日数)**|パスワードの変更が必要になるまでの日数。|  
+|**記憶するパスワードの数**|以前に使用したパスワードを再利用できないようにします。|  
+|**デバイスをワイプするまでのログオン失敗回数**|ログインの試みがこの回数だけ失敗した場合は、デバイスがワイプされます。|  
+|**デバイスをロックするまでのアイドル時間**|デバイスがロックされるまでアイドル (ユーザー入力がない) 状態である時間を指定します。|  
+|**パスワードの複雑さ**|「1234」などの PIN を指定できるのか、または強力なパスワードを指定する必要があるのかを選択します。|  
+|**パスワードの品質**|必要なレベルのパスワードの複雑さと、生体認証デバイスを使用できるかどうかを選択します。|  
+|**パスワードの回復用 PIN を Exchange Server に送信する**|-|
+|**デバイスの暗号化**|対象デバイスで暗号化を有効にします。|  
   
-###  <a name="device"></a>Dispositivo  
+###  <a name="device"></a>デバイス  
   
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**Acquisizione schermo**|Consente di acquisire uno screenshot del display del dispositivo.<br /><br /> (solo Windows 10)|  
-|**Invio dati diagnostici**|Consente l’invio dei file di log dell'app.<br /><br /> (solo Windows 8.1)|  
-|**Invio dati diagnostici (Windows 10)**|Consente l’invio dei file di log dell'app.<br /><br /> (solo Windows 10)|  
-|**Georilevazione**|Consente al dispositivo di usare le informazioni dei servizi di posizione.<br /><br /> (solo Windows 10)|  
-|**Copia e Incolla**|Usare Copia e Incolla per trasferire dati tra app.<br /><br /> (solo Windows 10)|
-|**Ripristino impostazioni predefinite**|Consente all'utente finale di ripristinare le impostazioni iniziali del dispositivo.<br /><br /> (solo Windows 10)|  
-|**Bluetooth**|Consente di utilizzare la funzionalità Bluetooth dei dispositivi.|  
-|**Modalità individuabile Bluetooth**|Consente l'individuazione del dispositivo da altri dispositivi Bluetooth.<br /><br /> (solo Windows 10)|  
-|**Annunci con Bluetooth**|Consentire l'uso di annunci con Bluetooth.<br /><br /> (solo Windows 10)|  
-|**Registrazione vocale**|Consente l'uso delle funzionalità di registrazione vocale del dispositivo.<br /><br /> (solo Windows 10)|
-|**Cortana**|Consente l'uso dell'Assistente vocale Cortana.<br /><br /> (solo Windows 10)|
-|**Notifiche del centro notifiche**|Consente di attivare o disattivare il riquadro delle notifiche in Windows 10. <br /><br /> (solo Windows 10)|
-|**Modifica delle impostazioni dell'area (solo desktop)**|Impedisce all'utente finale di modificare le impostazioni dell'area del dispositivo.|
-|**Modifica delle impostazioni di risparmio energia e sospensione (solo desktop)**|Impedisce all'utente finale di modificare le impostazioni di risparmio energia e sospensione del dispositivo.|
-|**Modifiche alle impostazioni della lingua (solo desktop)**|Impedisce all'utente finale di modificare le impostazioni della lingua del dispositivo.|
-|**Modifica dell'ora di sistema**|Impedisce all'utente finale di modificare la data e l'ora del dispositivo.|
-|**Modifica del nome dispositivo**|Impedisce all'utente finale di modificare il nome del dispositivo.|
+|**画面の取り込み**|デバイスのディスプレイのスクリーン ショットを取得できるようにします。<br /><br /> (Windows 10 のみ)|  
+|**診断データの送信**|アプリのログ ファイルを送信できるようにします。<br /><br /> (Windows 8.1 のみ)|  
+|**診断データの送信 (Windows 10)**|アプリのログ ファイルを送信できるようにします。<br /><br /> (Windows 10 のみ)|  
+|**位置情報**|デバイスで位置情報サービスの情報を使用できるようにします。<br /><br /> (Windows 10 のみ)|  
+|**コピーと貼り付け**|コピーと貼り付けを使用してアプリ間でデータを転送します。<br /><br /> (Windows 10 のみ)|
+|**出荷時の設定に戻す**|デバイスを初期設定にリセットすることをエンド ユーザーに許可します。<br /><br /> (Windows 10 のみ)|  
+|**Bluetooth**|デバイスの Bluetooth 機能を使用できるようにします。|  
+|**Bluetooth 検出可能モード**|デバイスを他の Bluetooth デバイスで検出できるようにします。<br /><br /> (Windows 10 のみ)|  
+|**Bluetooth 広告**|Bluetooth の広告を使用できるようにします。<br /><br /> (Windows 10 のみ)|  
+|**音声録音**|デバイスの音声録音機能を使用できるようにします。<br /><br /> (Windows 10 のみ)|
+|**Cortana**|Cortana 音声アシスタントの使用を許可します。<br /><br /> (Windows 10 のみ)|
+|**アクション センターの通知**|Windows 10 の通知ウィンドウを有効または無効にします。 <br /><br /> (Windows 10 のみ)|
+|**地域の設定の変更 (デスクトップのみ)**|エンド ユーザーがデバイスで地域の設定を変更できないようにします。|
+|**電源とスリープの設定の変更 (デスクトップのみ)**|エンド ユーザーがデバイスで電源とスリープの設定を変更できないようにします。|
+|**言語の設定の変更 (デスクトップのみ)**|エンド ユーザーがデバイスで言語の設定を変更できないようにします。|
+|**システム時刻の変更**|エンド ユーザーがシステム時刻を変更できないようにします。|
+|**デバイス名の変更**|エンド ユーザーがデバイス名を変更できないようにします。|
   
-### <a name="email-management"></a>Gestione della posta elettronica  
- Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.  
+### <a name="email-management"></a>電子メール管理  
+ これらの設定は、Windows 8.1 および Windows 10 を実行するデバイス専用です。  
   
-|Impostazioni|Dettagli|  
+|設定|説明|  
 |-------------|-------------|  
-|**Posta elettronica IMAP e POP**|Consente la connessione agli account di posta elettronica che usano gli standard POP e IMAP.|  
-|**Tempo massimo di conservazione della posta elettronica**|Il tempo di conservazione della posta elettronica prima che venga eliminata dal server.|  
-|**Formati messaggi consentiti**|Specificare se i messaggi di posta elettronica dell’utente possono essere in formato HTML o solo in testo normale.|  
-|**Dimensione massima per la posta elettronica con testo normale (scaricata automaticamente)**|Controlla la dimensione massima dei messaggi di posta elettronica con testo normale quando vengono scaricati automaticamente.|  
-|**Dimensione massima per la posta elettronica HTML (scaricata automaticamente)**|Controlla la dimensione massima dei messaggi di posta elettronica HTML quando vengono scaricati automaticamente.|  
-|**Dimensione massima di un allegato (scaricato automaticamente)**|Configura la dimensione massima dei messaggi di posta elettronica che vengono scaricati automaticamente.|  
-|**Sincronizzazione calendario**|Consentire la sincronizzazione dei calendari con il dispositivo.|  
-|**Account di posta elettronica personalizzato**|Consente di usare un account non Microsoft sul dispositivo.|  
-|**Rendi l'account Microsoft facoltativo nell'applicazione Windows Mail**|Configurare questa opzione per rimuovere il requisito per un account Microsoft in Windows Mail.|  
+|**POP と IMAP の電子メール**|POP および IMAP 標準を使用する電子メール アカウントに接続できるようにします。|  
+|**電子メールの最長保管期間**|電子メールをサーバーから削除する前に保持する期間。|  
+|**許可するメッセージの形式**|ユーザーの電子メールを HTML 形式とテキスト形式のどちらにするかを指定します。|  
+|**テキスト形式の電子メールのサイズの制限 (自動的にダウンロードされる場合)**|テキスト形式の電子メールの最大サイズを制御します (自動的にダウンロードされる場合)。|  
+|**HTML 形式の電子メールの最大サイズ (自動的にダウンロードされる場合)**|HTML 形式の電子メールの最大サイズを制御します (自動的にダウンロードされる場合)。|  
+|**添付ファイルの最大サイズ (自動的にダウンロードされる場合)**|自動的にダウンロードされる電子メールの最大サイズを構成します。|  
+|**予定表の同期**|予定表をデバイスに同期できるようにします。|  
+|**カスタム電子メール アカウント**|デバイスで Microsoft 以外のアカウントを使用できるようにします。|  
+|**Windows メール アプリで Microsoft アカウントをオプションにする**|Windows メールで Microsoft アカウントの要件を削除するには、これを構成します。|  
   
-### <a name="store"></a>Archivio  
- Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 10 e versioni successive.  
+### <a name="store"></a>ストア  
+ これらの設定は、Windows 10 以降を実行するデバイス専用です。  
   
-|Impostazioni|Dettagli|  
+|設定|説明|  
 |-------------|-------------|  
-|**Archivio applicazioni**|Consente l'accesso all'archivio applicazioni sul dispositivo.|  
-|**Immettere una password per accedere all'archivio applicazioni**|Gli utenti devono immettere una password per accedere all'archivio applicazioni.|  
-|**Acquisti in-app**|Consente agli utenti di effettuare acquisti in-app.|
-|**Aggiorna automaticamente le app dallo Store**|Consente l'aggiornamento automatico delle app installate da Windows Store.|
-|**Usa solo lo Store privato**|Abilitare questa opzione per consentire solo agli utenti finali di scaricare app dallo Store privato.|
-|**Avvio di app originate dallo Store**|Consente di disabilitare tutte le app preinstallate nel dispositivo o scaricate da Windows Store.|
+|**アプリケーション ストア**|デバイスからアプリ ストアにアクセスできるようにします。|  
+|**アプリケーション ストアにアクセスするパスワードを入力する**|ユーザーは、アプリ ストアにアクセスするためにパスワードを入力する必要があります。|  
+|**アプリ内購入**|ユーザーがアプリ内で購入できるようにします。|
+|**ストア アプリの自動更新**|Windows ストアからインストールしたアプリが自動的に更新されるようにします。|
+|**プライベート ストアのみを使用する**|プライベート ストアからアプリをダウンロードすることのみをエンド ユーザーに許可する場合は、このオプションをオンにします。|
+|**ストアから配信されたアプリの起動**|デバイスに以前にインストールされた、または Windows ストアからダウンロードされたすべてのアプリを無効にする場合に選択します。|
   
-### <a name="browser"></a>Browser  
- Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.  
+### <a name="browser"></a>ブラウザー  
+ これらの設定は、Windows 8.1 および Windows 10 を実行するデバイス専用です。  
   
-|Impostazioni|Dettagli|  
+|設定|説明|  
 |-------------|-------------|  
-|**Consenti browser Web**|Consentire l'uso del Web browser nel dispositivo.|  
-|**Riempimento automatico**|L’utente può modificare le impostazioni di completamento automatico nel browser.|  
-|**Esecuzione script attivo**|Il browser può eseguire script, ad esempio gli script ActiveX.|  
-|**Plug-in**|L’utente può aggiungere plug-in a Internet Explorer.|  
-|**Blocco popup**|Attiva o disattiva il blocco popup del browser.|  
-|**Cookie**|Consente il salvataggio dei cookie nel dispositivo.|  
-|**Avviso frodi**|Attiva o disattiva gli avvisi di potenziali siti Web fraudolenti.|  
+|**Web ブラウザーを許可する**|デバイスで Web ブラウザーを使用できるようにします。|  
+|**オートフィル**|ユーザーは、ブラウザーのオートコンプリートの設定を変更できます。|  
+|**アクティブ スクリプト**|ブラウザーで Active X のスクリプトなどのスクリプトを実行できます。|  
+|**プラグイン**|ユーザーは、Internet Explorer にプラグインを追加できます。|  
+|**ポップアップ ブロック**|ブラウザーのポップアップ ブロックを有効または無効にします。|  
+|**Cookie**|デバイスに Cookie を保存できるようにします。|  
+|**不正の警告**|詐欺目的の疑いがある Web サイトの警告を有効または無効にします。|  
   
 ###  <a name="internet-explorer"></a>Internet Explorer  
- Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.  
+ これらの設定は、Windows 8.1 および Windows 10 を実行するデバイス専用です。  
   
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**Invia sempre l'intestazione DNT (Do Not Track)**|Impedisce che le informazioni cercate vengano inviate a siti di terze parti.|  
-|**Area di protezione Intranet**|Assegnare un livello di sicurezza all'area di protezione Intranet.|  
-|**Livello di protezione per l'area Internet**|Configurare il livello di protezione per l'area Internet.|  
-|**Livello di protezione per l'area Intranet**|Configurare il livello di protezione per l'area intranet.|  
-|**Livello di protezione per l'area siti attendibili**|Configurare il livello di protezione per l'area siti attendibili.|  
-|**Livello di protezione per l'area siti con restrizioni**|Configurare il livello di protezione per l'area siti con restrizioni.|  
-|**Spazi dei nomi per l'area intranet**|Configurare siti Web che vengono aggiunti o rimossi dall'area Intranet.|  
-|**Accedi a un sito Intranet nel caso di immissione di una singola parola**|Abilita o disabilita l'impostazione che consente a Internet Explorer di passare automaticamente a un sito Intranet se viene immesso un nome di sito valido senza HTTP precedente:|  
-|**Opzione di menu modalità Enterprise**|Consente agli utenti di attivare e disattivare la modalità Enterprise dal menu **Strumenti** di Internet Explorer.|  
-|**Posizione report di registrazione (URL)**|Specificare un URL in cui registrare i siti Web visitati quando è attiva la modalità Enterprise.|  
-|**Posizione elenco siti modalità Enterprise (URL)**|Specificare il percorso dell'elenco di siti Web che usano la modalità Enterprise quando è attiva.|  
+|**常に Do Not Track ヘッダーを送信する**|参照情報がサード パーティのサイトに送信されないようにします。|  
+|**イントラネット セキュリティ ゾーン**|イントラネット セキュリティ ゾーンにセキュリティ レベルを割り当てます。|  
+|**インターネット ゾーンのセキュリティ レベル**|インターネット ゾーンのセキュリティ レベルを構成します。|  
+|**イントラネット ゾーンのセキュリティ レベル**|イントラネット ゾーンのセキュリティ レベルを構成します。|  
+|**信頼済みサイト ゾーンのセキュリティ レベル**|信頼済みサイト ゾーンのセキュリティ レベルを構成します。|  
+|**制限付きサイト ゾーンのセキュリティ レベル**|制限付きサイト ゾーンのセキュリティ レベルを構成します。|  
+|**イントラネット ゾーンの名前空間**|イントラネット ゾーンに追加する Web サイト、またはイントラネット ゾーンから削除する Web サイトを構成します。|  
+|**1 単語の入力でイントラネット サイトに移動する**|先頭に HTTP を付けずに有効なサイト名が入力された場合に Internet Explorer がイントラネット サイトに自動的にアクセスすることを許可する設定を有効または無効にします。|  
+|**[エンタープライズ モード] メニュー オプション**|ユーザーが Internet Explorer の **[ツール]** メニューでエンタープライズ モードをアクティブ化および非アクティブ化できるようにします。|  
+|**ログ レポートの場所 (URL)**|エンタープライズ モードがアクティブな場合に、アクセスされた Web サイトがログに記録される URL を指定します。|  
+|**エンタープライズ モード サイト リストの場所 (URL)**|エンタープライズ モードがアクティブな場合に、エンタープライズ モードを使用する Web サイトの一覧の場所を指定します。|  
   
-###  <a name="cloud"></a>Cloud  
- Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.  
+###  <a name="cloud"></a>クラウド  
+ これらの設定は、Windows 8.1 および Windows 10 を実行するデバイス専用です。  
   
-|Nome impostazione|Dettagli|Windows 8.1|Windows 10|  
+|設定の名前|説明|Windows 8.1|Windows 10|  
 |------------------|-------------|-----------------|----------------|  
-|**Sincronizzazione impostazioni**|Consente la sincronizzazione delle impostazioni tra i dispositivi.|Sì|Sì|  
-|**Sincronizzazione credenziali**|Consente la sincronizzazione delle credenziali tra i dispositivi.|Sì|Sì|  
-|**Account Microsoft**|Consente di usare un account Microsoft sul dispositivo.|Sì|Sì|  
-|**Sincronizzazione delle impostazioni con connessione a consumo**|Consente la sincronizzazione delle impostazioni quando la connessione a Internet è a consumo.|Sì|Sì|  
+|**設定の同期**|デバイス間で設定を同期できるようにします。|○|○|  
+|**資格情報の同期**|デバイス間で資格情報を同期できるようにします。|○|○|  
+|**Microsoft アカウント**|デバイスで Microsoft アカウントを使用できるようにします。|○|○|  
+|**従量制課金接続での設定の同期**|インターネット接続が従量制課金の場合に、設定を同期できるようにします。|○|○|  
   
-###  <a name="security"></a>Sicurezza  
+###  <a name="security"></a>セキュリティ  
   
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**Installazione file non firmati**|Consente il caricamento di file non firmati.<br /><br /> (solo Windows 10)|  
-|**Applicazioni non firmate**|Consente il caricamento di file non firmati.<br /><br /> (solo Windows 10)|  
-|**Messaggistica SMS e MMS**|Consente la messaggistica SMS e MMS dal dispositivo.<br /><br /> (solo Windows 10)|  
-|**Archivi rimovibili**|Consente di utilizzare archivi rimovibili, ad esempio una scheda SD sul dispositivo.<br /><br /> (solo Windows 10)|  
-|**Fotocamera**|Consente di utilizzare la fotocamera del dispositivo.<br /><br /> (solo Windows 10)|  
-|**NFC (Near Field Communication)**|Consente la comunicazione usando NFD nel dispositivo.<br /><br /> (solo Windows 10)|  
-|**Modalità AntiTheft**|Controlla se è abilitata la modalità AntiTheft di Windows 10.<br /><br /> (solo Windows 10)|  
-|**Consenti connessione USB**|Consente ai dispositivi di connettersi a un dispositivo specifico tramite una connessione USB.<br /><br /> (solo Windows 10)|
-|**Tipo profilo**|Fornice un profilo VPN per i dispositivi Windows RT.<br /><br /> (solo Windows 8.1)|  
-|**Nome profilo**|Fornice un profilo VPN per i dispositivi Windows RT.<br /><br /> (solo Windows 8.1)|  
-|**Profilo per tutti gli utenti**|Fornice un profilo VPN per i dispositivi Windows RT.<br /><br /> (solo Windows 8.1)|  
+|**署名されていないファイルのインストール**|署名されていないファイルの読み込みを許可します。<br /><br /> (Windows 10 のみ)|  
+|**署名されていないアプリケーション**|署名されていないアプリの読み込みを許可します。<br /><br /> (Windows 10 のみ)|  
+|**SMS と MMS メッセージング**|デバイスからの SMS および MMS メッセージングを許可します。<br /><br /> (Windows 10 のみ)|  
+|**リムーバブル記憶域**|デバイスで SD カードなどのリムーバブル記憶域を使用できるようにします。<br /><br /> (Windows 10 のみ)|  
+|**カメラ**|デバイスのカメラを使用できるようにします。<br /><br /> (Windows 10 のみ)|  
+|**近距離無線通信 (NFC)**|デバイスの NFC を使用した通信を許可します。<br /><br /> (Windows 10 のみ)|  
+|**盗難防止モード**|Windows 10 の盗難防止モードを有効にするかどうかを制御します。<br /><br /> (Windows 10 のみ)|  
+|**USB 接続を許可する**|デバイスが USB 接続を使ってこのデバイスに接続できるようにします。<br /><br /> (Windows 10 のみ)|
+|**プロファイル ファイル**|Windows RT デバイスの VPN プロファイルをプロビジョニングします。<br /><br /> Windows 8.1 のみ)|  
+|**プロファイル名**|Windows RT デバイスの VPN プロファイルをプロビジョニングします。<br /><br /> Windows 8.1 のみ)|  
+|**すべてのユーザーのプロファイル**|Windows RT デバイスの VPN プロファイルをプロビジョニングします。<br /><br /> Windows 8.1 のみ)|  
   
-###  <a name="peak-synchronization"></a>Sincronizzazione nelle ore di punta  
- Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 10 e versioni successive.  
+###  <a name="peak-synchronization"></a>ピーク時の同期  
+ これらの設定は、Windows 10 以降を実行するデバイス専用です。  
   
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**Specificare l'ora di punta**|Configurare le ore di punta per la sincronizzazione del dispositivo mobile.|  
-|**Frequenza di sincronizzazione nelle ore di punta**|Configurare la frequenza con cui viene eseguita la sincronizzazione durante le ore di picco configurate.|  
-|**Frequenza di sincronizzazione nelle ore non di punta**|Configurare la frequenza con cui viene eseguita la sincronizzazione fuori dalle ore di picco configurate.|  
+|**ピーク時間を指定します。**|モバイル デバイス同期のピーク時間を構成します。|  
+|**ピーク時の同期頻度**|構成したピーク時間に同期が発生する頻度を構成します。|  
+|**ピーク時以外の同期頻度**|構成したピーク時間以外の時間に同期が発生する頻度を構成します。|  
   
-###  <a name="roaming"></a>Roaming  
+###  <a name="roaming"></a>ローミング  
   
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**Gestione dispositivi mobili durante il roaming**|Consente la gestione del dispositivo con Configuration Manager in caso di roaming.<br /><br /> (solo Windows 10)|  
-|**Download del software durante il roaming**|Consente il download di applicazioni e software durante il roaming.<br /><br /> (solo Windows 10)|  
-|**Download della posta elettronica durante il roaming**|Consente il download di posta elettronica durante il roaming.<br /><br /> (solo Windows 10)|  
-|**Roaming dati**|Consente il roaming tra reti quando si accede a dati.| 
-|**VPN su rete cellulare**|Consente al dispositivo di accedere a connessioni VPN durante la connessione a una rete cellulare.<br /><br /> (solo Windows 10)|
-|**Roaming VPN su rete cellulare**|Consente al dispositivo di accedere a connessioni VPN durante il roaming su una rete cellulare.<br /><br /> (solo Windows 10)| 
+|**ローミング中のデバイス管理**|デバイスがローミングされているときに、Configuration Manager でデバイスを管理できるようにします。<br /><br /> (Windows 10 のみ)|  
+|**ローミング中のソフトウェアのダウンロード**|ローミング中にアプリケーションやソフトウェアをダウンロードできるようにします。<br /><br /> (Windows 10 のみ)|  
+|**ローミング中の電子メールのダウンロード**|ローミング中に電子メールをダウンロードできるようにします。<br /><br /> (Windows 10 のみ)|  
+|**データ ローミング**|データへのアクセス中にネットワーク間のローミングを許可します。| 
+|**移動体通信での VPN**|移動体通信ネットワークに接続されているデバイスが VPN 接続にアクセスできるようにします。<br /><br /> (Windows 10 のみ)|
+|**移動体通信での VPN ローミング**|移動体通信ネットワークでローミングしているデバイスが VPN 接続にアクセスできるようにします。<br /><br /> (Windows 10 のみ)| 
   
-###  <a name="encryption"></a>Crittografia  
+###  <a name="encryption"></a>暗号化  
   
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**Crittografia scheda di memoria**|Richiede la crittografia delle schede di memoria usate con il dispositivo.<br /><br /> (solo Windows 10)|  
-|**Crittografia file nel dispositivo mobile**|Richiede la crittografia dei file nel dispositivo.|  
-|**Richiedi firma posta elettronica**|Richiede che i messaggi di posta elettronica vengano firmati prima dell'invio.|  
-|**Algoritmo di firma**|Selezionare l'algoritmo di firma per i messaggi di posta elettronica firmati.|  
-|**Richiedi crittografia posta elettronica**|Richiede che i messaggi di posta elettronica vengano crittografati prima dell'invio.|  
-|**Algoritmo di crittografia**|Selezionare l'algoritmo per la crittografia dei messaggi di posta elettronica.|  
+|**メモリ カードの暗号化**|デバイスと共に使用するストレージ カードを必ず暗号化するようにします。<br /><br /> (Windows 10 のみ)|  
+|**デバイスのファイルの暗号化**|デバイス上のファイルを必ず暗号化するようにします。|  
+|**電子メールの署名が必要**|電子メールを送信する前に、そのメールに署名する必要があります。|  
+|**署名アルゴリズム**|署名された電子メールの署名アルゴリズムを選択します。|  
+|**電子メールの暗号化が必要**|電子メールを送信する前に、そのメールを暗号化する必要があります。|  
+|**暗号化アルゴリズム**|電子メールを暗号化するためのアルゴリズムを選択します。|  
   
-###  <a name="wireless-communications"></a>Comunicazioni wireless  
- Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 10 e versioni successive.  
+###  <a name="wireless-communications"></a>ワイヤレス通信  
+ これらの設定は、Windows 10 以降を実行するデバイス専用です。  
   
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**Connessione rete wireless**|Abilita o disabilita la funzionalità Wi-Fi dei dispositivi.|  
-|**Tethering Wi-Fi**|Consente agli utente di usare il proprio dispositivo come hotspot mobile.|  
-|**Offload dei dati con Wi-Fi quando possibile**|Configurare questa opzione in modo da usare la connessione Wi-Fi nel dispositivo quando possibile.|  
-|**Reporting hotspot Wi-Fi**|-|  
-|**Configurazione Wi-Fi manuale**|-|  
+|**ワイヤレス ネットワーク接続**|デバイスの Wi-Fi 機能を有効または無効にします。|  
+|**Wi-Fi テザリング**|ユーザーが自分のデバイスをモバイル ホットスポットとして使用できるようにします。|  
+|**可能な場合は Wi-Fi にデータをオフロードする**|可能な場合にデバイスで Wi-Fi 接続を使用するようにこれを構成します。|  
+|**Wi-Fi ホットスポットの報告**|-|  
+|**Wi-Fi の手動構成**|-|  
   
-#### <a name="to-configure-a-wireless-network-connection"></a>Per configurare una connessione di rete wireless  
+#### <a name="to-configure-a-wireless-network-connection"></a>ワイヤレス ネットワーク接続を構成するには  
   
-1.  Nella pagina **Configurare le impostazioni di comunicazione wireless per dispositivi mobili** fare clic su **Aggiungi**.  
+1.  **[モバイル デバイスのワイヤレス通信設定の構成]** ページで、 **[追加]**をクリックします。  
   
-2.  Nella finestra di dialogo **Connessione rete wireless** specificare le informazioni sulla connessione wireless seguenti, di cui viene eseguito il provisioning nei dispositivi mobili:  
+2.  **[ワイヤレス ネットワーク接続]** ダイアログ ボックスで、モバイル デバイスに対してプロビジョニングするワイヤレス接続に関する次の情報を指定します。  
   
-|Impostazioni|Altre informazioni|  
+|設定|説明|  
 |-------------|----------------------|  
-|**Nome rete (SSID)**|Immettere il nome della rete Wi-Fi.|  
-|**Connessione di rete**|Scegliere **Internet** o **Lavoro**.|  
-|**Autenticazione**|Selezionare il metodo di autenticazione per la connessione:<br /><br /> - **Aperta**<br /><br /> - **Condivisa**<br /><br /> - **WPA**<br /><br /> - **WPA-PSK**<br /><br /> - **WPA2**<br /><br /> - **WPA2-PSK**|  
-|**Crittografia dei dati**|Scegliere il metodo di crittografia usato dalla connessione. I valori che è possibile selezionare variano a seconda del metodo di **Autenticazione** scelto:<br /><br /> - **Disabilitato**<br /><br /> - **WEP**<br /><br /> - **TKIP**<br /><br /> - **AES**|  
-|**Indice chiavi**|Selezionare un indice chiavi da **1** a **4** da usare con l'impostazione di **Crittografia dei dati** corrispondente a **WEP**.|  
-|**Questa rete è connessa a Internet**|Selezionare questa opzione se si desidera specificare le impostazioni proxy che consentono la connessione a Internet dei dispositivi mobili su una connessione wireless.|  
-|**Impostazioni del server proxy**|Specificare le impostazioni **Server** e **Porta** necessarie per **HTTP**, **WAP** e **Socket**.|  
-|**Abilita accesso alla rete 802.1X**|Selezionare questa opzione per proteggere la connessione specificando un tipo di EAP.|  
-|**Tipo EAP**|Scegliere il tipo EAP da usare:<br /><br /> - **PEAP**<br> - **Smart card o certificato**|  
+|**ネットワーク名 (SSID)**|Wi-Fi ネットワーク名を入力します。|  
+|**ネットワーク接続**|**[インターネット]** または **[社内ネットワーク]**を選択します。|  
+|**認証**|ワイヤレス接続の認証方法を次の中から選択します。<br /><br /> - **Open**<br /><br /> - **Shared**<br /><br /> - **WPA**<br /><br /> - **WPA-PSK**<br /><br /> - **WPA2**<br /><br /> - **WPA2-PSK**|  
+|**データの暗号化**|この接続で使用する暗号化方法を選択します。 選択できる値は、選択した **認証** 方法によって異なります。<br /><br /> - **Disabled**<br /><br /> - **WEP**<br /><br /> - **TKIP**<br /><br /> - **AES**|  
+|**キーのインデックス**|**[データの暗号化]** を **[WEP]** に設定した場合に使用するキーのインデックスを **1** から **4**から選択します。|  
+|**このネットワークはインターネットに接続する**|ワイヤレス接続上のモバイル デバイスをインターネットに接続するためのプロキシ設定を指定する場合は、このオプションを選択します。|  
+|**プロキシ サーバーの設定**|必要に応じて、 **[HTTP]** 、 **[WAP]** 、および **[Sockets]**の **[サーバー]** と **[ポート]**の設定値を指定します。|  
+|**802.1 X ネットワーク アクセスを有効にする**|EAP の種類を指定して接続をセキュリティで保護する場合は、このオプションを選択します。|  
+|**EAP の種類**|使用する EAP の種類を次の中から選択します。<br /><br /> - **PEAP**<br> - **スマート カードまたは証明書**|  
   
   
   
-### <a name="certificates"></a>Certificati  
- È opportuno importare certificati da installare nei dispositivi mobili.  
+### <a name="certificates"></a>証明書  
+ モバイル デバイスに証明書をインポートしてインストールできるようにします。  
   
- Fare clic su **Importa**, quindi specificare i valori seguenti:  
+ **[インポート]**をクリックして、次の値を指定します。  
   
--   **File di certificato** - Fare clic su Sfoglia e quindi selezionare il file di certificato con estensione **cer** che si vuole importare.  
+-   **証明書ファイル** - [参照] をクリックし、インポートする証明書ファイル (拡張子 **.cer** ) を選択します。  
   
--   **Archivio di destinazione**: scegliere uno o più archivi di destinazione da cui aggiungere il certificato importato nel dispositivo mobile:  
+-   **保存先ストア** - インポートした証明書が追加されるモバイル デバイス上の保存先ストアを 1 つまたは複数選択します。  
   
-    -   **Radice**  
+    -   **ルート**  
   
     -   **CA**  
   
-    -   **Normale**  
+    -   **標準**  
   
-    -   **Con privilegi**  
+    -   **特権付き**  
   
     -   **SPC**  
   
-    -   **Peer**  
+    -   **ピア**  
   
--   **Ruolo**: se **SPC** (Software Publisher Certificate, certificato autori software) viene selezionato come archivio di destinazione, scegliere il ruolo da associare al certificato tra:  
+-   **役割** - 保存先ストアとして **SPC** (ソフトウェア発行者の証明書) を選択した場合は、証明書に関連付けられる役割を次の中から選択します。  
   
-    -   **Operatore di telefonia mobile**  
+    -   **携帯電話会社**  
   
-    -   **Gestore**  
+    -   **マネージャー**  
   
-    -   **Autenticazione utente**  
+    -   **認証済みユーザー**  
   
-    -   **Amministratore IT**  
+    -   **IT 管理者**  
   
-    -   **Utente non autenticato**  
+    -   **非認証ユーザー**  
   
-    -   **Server di provisioning attendibile**  
+    -   **信頼できるプロビジョニング サーバー**  
   
-### <a name="system-security"></a>Protezione del sistema  
+### <a name="system-security"></a>システム セキュリティ  
   
-|Impostazioni|Dettagli|  
+|設定|説明|  
 |-------------|-------------|  
-|**Controllo dell'account utente**|Abilita o disabilita il controllo account utente di Windows sul dispositivo.|  
-|**Firewall di rete**|Attiva o disattiva Windows Firewall.<br /><br /> (solo Windows 8.1)|  
-|**Aggiornamenti (Windows 8.1 e versioni precedenti)**|Scegliere la modalità di download degli aggiornamenti software di Windows nei computer. Ad esempio, è possibile scaricare automaticamente gli aggiornamenti, ma consentire all'utente di scegliere quando installarli.|  
-|**Classificazione minima degli aggiornamenti**|Scegliere la classificazione minima degli aggiornamenti scaricati nei computer Windows: **Nessuno**, **Importante**o **Consigliato**.|  
-|**Aggiornamenti (Windows 10)**|Scegliere la modalità di download degli aggiornamenti software di Windows nei computer. Ad esempio, è possibile scaricare automaticamente gli aggiornamenti, ma consentire all'utente di scegliere quando installarli.<br /><br /> (solo Windows 10)|  
-|**Giorno di installazione**|Scegliere il giorno in cui installare gli aggiornamenti.<br /><br /> (solo Windows 10)|  
-|**Ora di installazione**|Scegliere l'ora in cui installare gli aggiornamenti.<br /><br /> (solo Windows 10)|  
-|**SmartScreen**|Abilita o disabilita SmartScreen.|  
-|**Protezione da virus**|Selezionare questa opzione per fare in modo che nel dispositivo sia installato un software antivirus.|  
-|**Le firme per la protezione da virus sono aggiornate**|Selezionare questa opzione per fare in modo che i file delle firme antivirus siano aggiornati.|  
-|**Funzionalità di versioni non definitive**|Consente a Microsoft di distribuire le impostazioni e le funzionalità della versione non definitiva nel dispositivo.<br /><br /> (solo Windows 10)|  
-|**Installazione manuale del certificato radice**|(solo Windows 10)| 
-|**Consenti l'annullamento della registrazione manuale**|Consente all'utente di annullare la registrazione dalla gestione mediante una soluzione MDM.| 
+|**ユーザー アカウント コントロール**|デバイスの Windows ユーザー アカウント制御を有効または無効にします。|  
+|**ネットワーク ファイアウォール**|Windows ファイアウォールを有効または無効にします。<br /><br /> (Windows 8.1 のみ)|  
+|**更新プログラム (Windows 8.1 以前)**|Windows ソフトウェア更新プログラムをコンピューターにダウンロードする方法を選択します。 たとえば、更新プログラムを自動的にダウンロードし、インストールするタイミングをユーザーに選択させることができます。|  
+|**更新プログラムの最小の分類**|Windows コンピューターにダウンロードされる更新プログラムの最小の分類 (**[なし]**、**[重要]**、または **[推奨]**) を選択します。|  
+|**更新プログラム (Windows 10)**|Windows ソフトウェア更新プログラムをコンピューターにダウンロードする方法を選択します。 たとえば、更新プログラムを自動的にダウンロードし、インストールするタイミングをユーザーに選択させることができます。<br /><br /> (Windows 10 のみ)|  
+|**インストール日**|更新プログラムをインストールする日付を選択します。<br /><br /> (Windows 10 のみ)|  
+|**インストール時刻**|更新プログラムをインストールする時刻を選択します。<br /><br /> (Windows 10 のみ)|  
+|**スマート スクリーン**|Windows SmartScreen を有効または無効にします。|  
+|**ウイルス対策**|選択すると、ウイルス対策ソフトウェアがデバイスにインストールされます。|  
+|**ウイルス対策署名は最新です**|選択すると、ウイルス対策署名ファイルが確実に最新の状態になります。|  
+|**プレリリース機能**|Microsoft がデバイスにプレリリース版の設定と機能を展開できるようにします。<br /><br /> (Windows 10 のみ)|  
+|**ルート証明書の手動インストール**|(Windows 10 のみ)| 
+|**手動での登録解除を許可する**|ユーザーが MDM ソリューションによる管理から自分を登録解除できるようにします。| 
   
-###  <a name="windows-server-work-folders"></a>Cartelle di lavoro di Windows Server  
- Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.  
+###  <a name="windows-server-work-folders"></a>Windows Server の作業フォルダー  
+ これらの設定は、Windows 8.1 および Windows 10 を実行するデバイス専用です。  
   
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**URL cartelle di lavoro**|Configura il percorso di una cartella di lavoro di Windows Server a cui gli utenti possono connettersi dal dispositivo.|  
+|**作業フォルダーの URL**|ユーザーが自分のデバイスから接続できる Windows Server の作業フォルダーの場所を構成します。|  
   
-### <a name="allowed-and-blocked-apps-windows-phone-only"></a>App consentite e bloccate (solo Windows Phone)  
- Consente di specificare un elenco di app gestite da Intune conformi oppure non conformi nella società. Windows Phone può consentire o bloccare l'installazione di queste applicazioni.  
+### <a name="allowed-and-blocked-apps-windows-phone-only"></a>許可されたアプリと禁止されたアプリの一覧 (Windows Phone のみ)  
+ 社内の準拠している Intune 管理対象アプリの一覧、または準拠していない Intune 管理対象アプリの一覧を指定します。 これにより、Windows Phone でこれらのアプリのインストールを許可または禁止することができます。  
   
- Non è possibile specificare sia le app conformi che quelle non conformi nello stesso elemento di configurazione.  
+ 同一の構成アイテム内で準拠アプリと非準拠アプリの両方を指定することはできません。  
   
-#### <a name="to-specify-apps-that-are-allowed-or-blocked"></a>Per specificare le app consentite o bloccate  
+#### <a name="to-specify-apps-that-are-allowed-or-blocked"></a>許可または禁止するアプリを指定するには  
   
-Nella pagina **Elenco app consentite e bloccate** indicare le informazioni seguenti:  
+**[許可されたアプリと禁止されたアプリの一覧]** ページで、次の情報を指定します。  
   
-|Impostazioni|Altre informazioni|  
+|設定|説明|  
     |-------------|----------------------|  
-    |**Elenco delle app bloccate**|Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti non sono autorizzati a installare.|  
-    |**Elenco delle app consentite**|Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti sono autorizzati a installare. L'installazione di qualsiasi altra app viene bloccata.|  
-    |**Aggiungi**|Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare nel Windows Store.<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app consentite o bloccate.<br /><br /> **Esempio:** cercare l'app **Skype** nello store. L'URL usato è **http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51**.|  
-    |**Modifica**|Consente di modificare il nome, l'autore e l'URL dell'app selezionata.|  
-    |**Rimuovi**|Elimina l'app selezionata dall'elenco.|  
-    |**Importa**|Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.|  
+    |**ブロックされているアプリの一覧**|ユーザーによるインストールが許可されないアプリの一覧を指定するには、このオプションを選択します。|  
+    |**許可されているアプリの一覧**|ユーザーがインストールできるアプリの一覧を指定するには、このオプションを選択します。 その他のアプリのインストールは禁止されます。|  
+    |**[追加]**|選択した一覧にアプリを追加します。 選択した名前と、必要に応じて、アプリの発行者、App Store のアプリへの URL を指定します。<br /><br /> URL を指定するには、Windows ストアから、使用するアプリを検索します。<br /><br /> アプリのページを開き、URL をクリップボードにコピーします。 許可されているアプリまたはブロックされているアプリの一覧で、これを URL として使用できます。<br /><br /> **例:** ストアで **Skype** アプリを検索します。 **http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51** という URL を使用します。|  
+    |**編集**|選択したアプリの名前、発行者、および URL を編集します。|  
+    |**削除**|選択したアプリを一覧から削除します。|  
+    |**[インポート]**|コンマ区切り値ファイルで指定したアプリの一覧をインポートします。 ファイルの形式、アプリケーション名、発行者、アプリの URL を使用します。|  
   
 ### <a name="windows-10-team"></a>Windows 10 Team  
- Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 10 Team.  
+ これらの設定は、Windows 10 Team を実行するデバイス専用です。  
   
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**Consenti la riattivazione automatica dello schermo quando i sensori rilevano la presenza di qualcuno nella stanza**|Consente di riattivare automaticamente il dispositivo quando il sensore rileva la presenza di qualcuno nella stanza.|  
-|**PIN obbligatorio per proiezione wireless**|Specifica se immettere un PIN prima di usare le funzionalità di proiezione wireless del dispositivo.|  
-|**Finestra di manutenzione**|Configura la finestra durante la quale cui è possibile eseguire gli aggiornamenti del dispositivo. È possibile configurare l'ora di inizio della finestra e la durata (tra 1 e 5 ore).|
-|**Azure Operational Insights**|Azure Operational Insights, parte della suite Microsoft Operations Manager, raccoglie, archivia e analizza i dati dei file di log provenienti da dispositivi Windows 10 Team.<br>Per connettersi ad Azure Operational Insights, è necessario specificare un ID e una chiave dell'area di lavoro.| 
-|**Proiezione wireless Miracast**|Abilitare questa opzione per consentire al dispositivo Windows 10 Team di usare dispositivi abilitati per Miracast per attività di progetto.<br>Se questa opzione è abilitata, selezionare da **Scegli un canale Miracast** il canale Miracast usato per il contenuto del progetto.|
-|**Informazioni sulla riunione visualizzate nella schermata iniziale**|Se si abilita questa opzione, è possibile scegliere le informazioni da visualizzare nel riquadro **Riunioni** della **schermata iniziale**. È possibile:<br><br>- **Mostra solo organizzatore e ora**<br>- **Mostra organizzatore, ora e oggetto (l'oggetto è nascosto per le riunioni private)**|
-|**URL dell'immagine di sfondo per la schermata di blocco**|Usare questa impostazione per visualizzare uno sfondo personalizzato nella **schermata iniziale** dei dispositivi Windows 10 Team dall'URL specificato.<br>L'immagine deve essere in formato PNG e l'URL deve iniziare con **https://**.| 
+|**部屋にだれかがいることをセンサーが検知したときに画面のスリープ状態を自動的に解除する**|部屋にだれかがいるとセンサーで検出したときに、デバイスのスリープ状態を自動的に解除します。|  
+|**ワイヤレス投影には PIN を必要とする**|デバイスのワイヤレス投影機能を使用する前に暗証番号 (PIN) を入力しなければならないかどうかを指定します。|  
+|**メンテナンス期間**|デバイスで更新を実行する期間を設定します。 期間の開始時刻と長さ (1 ~ 5 時間) を設定できます。|
+|**Azure Operational Insights**|Microsoft Operations Manager Suite に含まれる Azure Operational Insights では、Windows 10 Team デバイスからログ ファイルのデータを収集、格納、および分析します。<br>Azure Operational Insights に接続するには、ワークスペース ID とワークスペース キーを指定する必要があります。| 
+|**Miracast ワイヤレス投影**|Windows 10 Team デバイスで Miracast 対応デバイスを使用して投影できるようにする場合は、このオプションを有効にします。<br>このオプションを有効にする場合は、**[Miracast チャネルの選択]** で投影に使用する Miracast チャネルを選択します。|
+|**ようこそ画面に表示されるミーティング情報**|このオプションを有効にすると、**[ようこそ]** 画面の **[ミーティング]** タイルに表示される情報を選択できます。 次の操作を行います。<br><br>- **開催者と時刻のみを表示する**<br>- **開催者、時刻、議題を表示する (非公開なミーティングの場合は議題を非表示)**|
+|**ロック画面の背景画像 URL**|Windows 10 Team デバイスの **[ようこそ]** 画面に指定した URL のカスタム背景を表示する場合は、この設定を使います。<br>画像は PNG 形式であり、URL は **https://** で始まる必要があります。| 
   
-### <a name="windows-information-protection"></a>Windows Information Protection  
+### <a name="windows-information-protection"></a>Windows 情報保護  
 
-Con l'aumento dei dispositivi personali nell'organizzazione, aumenta anche il rischio di perdita accidentale dei dati tramite app e servizi, ad esempio posta elettronica, social media e cloud pubblico, non controllati dall'organizzazione. È il caso, ad esempio, di un dipendente che invia le immagini di progettazione più recenti dall'account di posta elettronica personale, copia e incolla le informazioni su un prodotto in un tweet o salva il report di una vendita in corso nell'area di archiviazione nel cloud pubblico.
+企業内の従業員が所有するデバイスが増加していることに伴い、企業が制御できない電子メール、ソーシャル メディア、パブリック クラウドなどのアプリやサービスを介して発生する偶発的なデータ漏えいのリスクが増大しています。 たとえば、従業員が個人用の電子メール アカウントから最新のエンジニアリング画像を送信すると、製品情報がツイートにコピーして貼り付けられたり、作成中の営業レポートがパブリック クラウドの記憶域に保存されたりします。
 
-Windows Information Protection (WIP) offre protezione da questa potenziale perdita di dati senza interferire con l'esperienza del dipendente. Consente anche di proteggere le app e i dati aziendali da perdite di dati accidentali su dispositivi di proprietà dell'azienda e dispositivi personali che i dipendenti portano al lavoro senza richiedere modifiche all'ambiente o ad altre app.
+Windows 情報保護 (WIP) を使用すると、従業員のエクスペリエンスを妨げることなく、この潜在的なデータ漏えいを防ぐことができます。 また WIP は、企業所有のデバイスと従業員が職場に持ち込む個人のデバイス上での意図しないデータ漏えいから、エンタープライズ アプリとデータを保護するのにも役立ちます。これには環境の変更や他のアプリは必要ありません。
 
- Le impostazioni degli elementi di configurazione WIP gestiscono l'elenco di app protette da EDP, i percorsi di rete aziendali, il livello di protezione e le impostazioni di crittografia.
+ Configuration Manager WIP 構成項目の設定は、EDP で保護されているアプリ、エンタープライズ ネットワークの場所、保護レベル、および暗号化設定の一覧を管理するものです。
 
-Per informazioni su come configurare la protezione dati con Configuration Manager, vedere [Proteggere i dati aziendali con Windows Information Protection (WIP)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip).
+Configuration Manage で企業のデータ保護を構成する方法については、「[Windows 情報保護 (WIP) を使用した企業データの保護](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip)」をご覧ください。
 
 
 ### <a name="microsoft-edge"></a>Microsoft Edge  
-Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e versioni successive.  
+これらの設定は、Windows 10 以降を実行するデバイス専用です。  
   
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------| 
-|Microsoft Edge|Consentire l'uso del Web browser Edge nel dispositivo.| 
-|**Consenti suggerimenti di ricerca nella barra degli indirizzi**|Consente al motore di ricerca di suggerire siti durante la digitazione delle frasi di ricerca.|  
-|**Consenti l'invio di traffico Intranet a Internet Explorer**||  
-|**Consenti Do Not Track**|Do Not Track informa i siti Web che non si vuole tenere traccia della visita a un sito.|  
-|**Abilita SmartScreen**|Usare SmartScreen per controllare che i file scaricati dagli utenti non contengano codice dannoso.|  
-|**Consenti popup**|Consentire o disabilitare i popup del browser.|  
-|**Consenti cookie**|Consentire o disabilitare i cookie.|  
-|**Consenti riempimento automatico**|Consente l'uso della funzionalità di riempimento automatico del browser Edge.|  
-|**Consenti strumento per la gestione delle password**|Consentire l'uso della funzionalità dello strumento per la gestione delle password del browser Edge.|  
-|**Posizione elenco siti modalità Enterprise**|Specifica dove trovare l'elenco di siti Web che si aprono in modalità Enterprise. L'elenco non è modificabile dagli utenti.|
-|**Blocca l'accesso ai flag Informazioni su**|Impedire l'accesso dell'utente finale alla pagina about:flags in Edge contenente impostazioni sperimentali e per sviluppatori.|
-|**Override del prompt SmartScreen**|Consentire all'utente finale di ignorare gli avvisi del filtro SmartScreen relativi a siti Web potenzialmente dannosi.|
-|**Override del prompt SmartScreen per i file**|Consentire all'utente finale di ignorare gli avvisi del filtro SmartScreen relativi al download di file potenzialmente dannosi.|
-|**Indirizzo IP localhost WebRtc**|Bloccare la visualizzazione dell'indirizzo IP localhost dell'utente quando si effettuano chiamate telefoniche tramite il protocollo Web RTC.|
-|**Motore di ricerca predefinito**|Specificare il motore di ricerca predefinito da usare. Gli utenti finali possono modificare questo valore in qualsiasi momento.|
-|**URL XML OpenSearch**|È possibile usare un file XML OpenSearch per creare un servizio di ricerca per Microsoft Edge.<br>Per altre informazioni, vedere [OpenSearch](https://msdn.microsoft.com/library/windows/desktop/dd940337).|
-|**Homepages (desktop only)** (Home page (solo desktop))|Aggiungere un elenco di siti da usare come home page nel browser Edge (solo desktop).|  
+|Microsoft Edge|デバイスで Edge Web ブラウザーを使用できるようにします。| 
+|**アドレス バーで検索候補を許可する**|検索語句を入力すると、検索エンジンがサイトを提案できるようにします。|  
+|**Internet Explorer へのイントラネット トラフィックの送信を許可する**||  
+|**追跡禁止を許可する**|[Do Not Track] は、サイトへのアクセスの追跡を許可しないことを Web サイトに知らせます。|  
+|**SmartScreen を有効にする**|ユーザーがダウンロードしたファイルに悪意のあるコードが含まれていないことを SmartScreen で確認します。|  
+|**ポップアップを許可する**|ブラウザーのポップアップを許可するか、または無効にします。|  
+|**Cookie を使用する**|Cookie を許可するか、または無効にします。|  
+|**オートコンプリートを使用する**|Edge ブラウザーの Autofill 機能を使用できるようにします。|  
+|**Password Manager を許可する**|Edge ブラウザーの Password Manager 機能を使用できるようにします。|  
+|**エンタープライズ モード サイト リストの場所**|エンタープライズ モードで開く Web サイトの一覧を検索できる場所を指定します。 ユーザーは、この一覧を編集できません。|
+|**About Flags へのアクセスをブロック**|Edge で、開発者向け設定と実験的設定が含まれる about:flags ページにエンド ユーザーがアクセスできないようにします。|
+|**SmartScreen のプロンプトの上書き**|悪意のある可能性がある Web サイトに関する SmartScreen フィルターの警告を無視してアクセスすることをエンド ユーザーに許可します。|
+|**ファイルに対する SmartScreen プロンプトの上書き**|悪意のある可能性があるファイルのダウンロードに関する SmartScreen フィルターの警告を無視してダウンロードすることをエンド ユーザーに許可します。|
+|**WebRtc localhost IP アドレス**|Web RTC プロトコルを使用して電話を発信するときに、ユーザーの localhost IP アドレスが表示されないようにします。|
+|**既定の検索エンジン**|使用する既定の検索エンジンを指定します。 エンド ユーザーはこの値をいつでも変更できます。|
+|**OpenSearch XML URL**|OpenSearch XML ファイルを使用して、Microsoft Edge の検索サービスを作成できます。<br>詳細については、「[OpenSearch](https://msdn.microsoft.com/library/windows/desktop/dd940337)」を参照してください。|
+|**ホームページ (デスクトップのみ)**|Edge ブラウザーでホーム ページとして使用するサイト一覧を追加します (デスクトップのみ)。|  
 
 
 ### <a name="windows-defender"></a>Windows Defender
-Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e versioni successive.
+これらの設定は、Windows 10 以降を実行するデバイス専用です。
  
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**Consenti il monitoraggio in tempo reale**|Abilita l'analisi in tempo reale per cercare malware, spyware e altro software indesiderato.|
-|**Consenti il monitoraggio del comportamento**|Consente a Defender di controllare particolari modelli noti di attività sospette sui dispositivi.|
-|**Abilita Network Inspection System**|NIS (Network Inspection System) consente di proteggere i dispositivi dagli exploit basati sulla rete mediante firme di vulnerabilità note ottenute da Microsoft Endpoint Protection Center per rilevare e bloccare il traffico dannoso.|
-|**Analizza tutti i download**|Controlla se Defender analizza tutti i file scaricati da Internet.|
-|**Consenti l'analisi di script**|Consente a Defender di analizzare gli script usati in Internet Explorer.|
-|**Monitora l'attività di file e programmi**|Consente a Defender di monitorare l'attività di file e programmi sui dispositivi.
-|**Giorni di rilevamento del malware risolto**|Consente a Defender di continuare a rilevare il malware risolto per il numero di giorni specificato, in modo da poter controllare manualmente i dispositivi precedentemente infetti. Se il numero di giorni viene impostato su 0, il malware rimane nella cartella della quarantena e non viene rimosso automaticamente.|
-|**Consenti l'accesso all'interfaccia utente client**|Controlla se l'interfaccia utente di Windows Defender non è visibile agli utenti.<br>Quando questa impostazione viene modificata, le modifiche diventano effettive a partire dal successivo riavvio del PC da parte dell'utente.|
-|**Pianifica un'analisi del sistema**|Consente di pianificare un'analisi del sistema veloce o completa. Tale analisi viene eseguita regolarmente nel giorno e all'ora specificati.|
-|**Pianifica analisi veloce giornaliera**|Consente di pianificare un'analisi veloce che viene eseguita giornalmente all'ora selezionata.
-|**Limita utilizzo CPU durante un'analisi**|Consente di limitare la quantità di CPU che le analisi possono usare (da 1 a 100).|
-|**Analizza file di archivio**|Consente a Defender di analizzare i file archiviati con estensione zip o cab.|
-|**Analizza i messaggi di posta elettronica**|Consente a Defender di analizzare i messaggi di posta elettronica nel momento in cui arrivano al dispositivo.|
-|**Analizza unità rimovibili**|Consente a Defender di analizzare le unità rimovibili, ad esempio le chiavi USB.|
-|**Analizza le unità mappate**|Consente a Defender di analizzare i file nelle unità di rete mappate.<br>Se i file presenti nell'unità sono di sola lettura, Defender non è in grado di rimuovere eventuale malware da questi.|
-|**Analizza file aperti da cartelle di rete condivise**|Consente a Defender di analizzare i file nelle unità di rete condivise, ad esempio quelli a cui è possibile accedere da un percorso UNC.<br>Se i file presenti nell'unità sono di sola lettura, Defender non è in grado di rimuovere eventuale malware da questi.|
-|**Intervallo di aggiornamento della firma**|Specifica l'intervallo con cui Defender controlla i nuovi file delle firme.
-|**Consenti protezione cloud**|Consente o impedisce a Microsoft Active Protection Service di ricevere informazioni sull'attività del malware dai dispositivi gestiti. Queste informazioni vengono usate per un futuro miglioramento del servizio.|
-|**Richiedi agli utenti l'invio dei campioni**|Controlla se i file che potrebbero richiedere un'ulteriore analisi devono essere inviati automaticamente a Microsoft per determinarne l'eventuale dannosità.|
-|**Rilevamento di applicazioni potenzialmente indesiderate**|Protegge i dispositivi con Windows desktop registrati dall'esecuzione di software classificato da Windows Defender come potenzialmente indesiderato. È possibile proteggere queste applicazioni dall'esecuzione o usare la modalità di controllo per segnalare l'installazione di un'applicazione potenzialmente indesiderata.|
-|**Esclusioni di file e cartelle**|Aggiunge uno o più file e cartelle come C:\Path o %ProgramFiles%\Path\filename.exe all'elenco delle esclusioni. Questi file e cartelle non sono inclusi in alcuna scansione in tempo reale o pianificata.|
-|**Esclusioni di estensioni di file**|Aggiunge una o più estensioni di file, ad esempio jpg o txt, all'elenco delle esclusioni. I file con queste estensioni non vengono inclusi in un'analisi in tempo reale o pianificata.|
-|**Esclusioni di processi**|Aggiunge uno o più processi con estensione exe, com o scr all'elenco delle esclusioni. Questi processi non sono inclusi in alcuna scansione in tempo reale o pianificata.|
+|**リアルタイム監視を許可する**|マルウェア、スパイウェア、およびその他の望ましくないソフトウェアのリアルタイム スキャンを有効にします。|
+|**動作監視を許可する**|Defender により、デバイス上で既知の特定パターンの疑わしい動作をチェックできるようにします。|
+|**ネットワーク検査システムの有効化**|ネットワーク検査システム (NIS) を使用すると、Microsoft Endpoint Protection Center から提供された、不審なトラフィックの検出とブロックに役立つ既知の脆弱性の特徴を利用してネットワークの悪用からデバイスを保護できます。|
+|**すべてのダウンロードをスキャンする**|インターネットからダウンロードされたすべてのファイルを Defender でスキャンするかどうかを制御します。|
+|**スクリプトのスキャンを許可する**|Internet Explorer で使用されるスクリプトを Defender がスキャンできるようにします。|
+|**ファイルとプログラムのアクティビティを監視する**|Defender がデバイスのファイルとプログラムのアクティビティを監視できるようにします。
+|**解決済みマルウェアを追跡する日数**|過去に影響を受けたデバイスを手動で確認できるように、Defender で解決済みマルウェアを指定期間追跡し続けるようにします。 日数を 0 に設定した場合、マルウェアは "検疫" フォルダーに保存され、自動的に削除されなくなります。|
+|**クライアント UI アクセスを許可する**|Windows Defender のユーザー インターフェイスをユーザーに非表示にするかどうかを制御します。<br>この設定を変更した場合、ユーザーの PC が次回再起動されたときに変更が有効になります。|
+|**システム スキャンを予定に入れる**|選択した日時に定期的に行われるフル システム スキャンまたはクイック システム スキャンのスケジュールを設定できます。|
+|**毎日のクイック スキャンのスケジュール**|選択した時刻に毎日実行されるクイック スキャンのスケジュールを設定できます。
+|**スキャン中の CPU 使用率を制限する**|スキャンで使用される CPU の使用率を制限できます (1 から 100)。|
+|**アーカイブ ファイルをスキャンする**|Defender にアーカイブ ファイル (.zip ファイルや .cab ファイルなど) のスキャンを許可します。|
+|**電子メール メッセージをスキャンする**|デバイスが電子メール メッセージを受信した際に Defender が電子メール メッセージをスキャンできるようにします。|
+|**リムーバブル ドライブをスキャンする**|Defender が USB メモリなどのリムーバブル ドライブをスキャンできるようにします。|
+|**マップされたドライブをスキャンする**|マップされたネットワーク ドライブ上のファイルを Defender がスキャンできるようにします。<br>ドライブ上のファイルが読み取り専用の場合は、ファイル内で検出されたマルウェアを Defender が削除することはできません。|
+|**ネットワークの共有フォルダーから開いたファイルをスキャンする**|Defender が共有ネットワーク ドライブ上のファイルをスキャンできるようにします (UNC パスからアクセスするファイルなど)。<br>ドライブ上のファイルが読み取り専用の場合は、ファイル内で検出されたマルウェアを Defender が削除することはできません。|
+|**署名更新間隔**|Defender が新しい署名ファイルを確認する間隔を指定します。
+|**クラウド保護を許可する**|管理対象のデバイスからマルウェアのアクティビティに関する情報が Microsoft Active Protection Service に送信されるのを許可またはブロックします。 この情報は今後のサービス改善に使われます。|
+|**ユーザーにサンプルの提出を指示する**|悪意のあるファイルかどうかを判別するため Microsoft による詳しい分析が必要なファイルを、自動的に Microsoft に送信するかどうかを制御します。|
+|**望ましくない可能性のあるアプリケーションの検出**|登録済みの Windows デスクトップ デバイスで、Windows Defender により望ましくない可能性があると分類されたソフトウェアが実行されることを防ぎます。 このようなアプリケーションが実行されることを防いだり、監査モードを使用して望ましくない可能性のあるアプリケーションがインストールされた場合に報告することができます。|
+|**ファイルとフォルダーの除外**|C:\Path や %ProgramFiles%\Path\filename.exe などのファイルやフォルダーを除外リストに追加します。 これらのファイルとフォルダーは、リアルタイムまたはスケジュールされたスキャンの対象外となります。|
+|**ファイル拡張子の除外**|jpg や txt などのファイル拡張子を除外リストに追加します。 これらの拡張子が付いたファイルは、リアルタイムまたはスケジュールされたスキャンの対象外となります。|
+|**プロセスの除外**|.exe、.com、.scr の型のプロセスを除外リストに追加します。 これらのプロセスは、リアルタイム スキャンまたはスケジュール設定されたスキャンの対象外になります。|
 
   
-## <a name="see-also"></a>Vedere anche  
- [Elementi di configurazione per dispositivi gestiti senza il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)
+## <a name="see-also"></a>関連項目  
+ [System Center Configuration Manager クライアントを使用せずに管理されているデバイスの構成項目](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

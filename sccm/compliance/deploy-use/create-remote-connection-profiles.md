@@ -1,191 +1,183 @@
 ---
-title: Creare profili di connessione remota | Microsoft Docs
-description: "Usare i profili di connessione remota di System Center Configuration Manager per consentire agli utenti di connettersi in modalità remota ai computer aziendali."
+title: "リモート接続プロファイルの作成 | Microsoft Docs"
+description: "System Center Configuration Manager のリモート接続プロファイルを使用して、ユーザーが会社のコンピューターにリモート接続できるようにします。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8c6eabc4-5dda-4682-b03e-3a450e6ef65a
-caps.latest.revision: 8
-caps.handback.revision: 0
+caps.latest.revision: "8"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
 ms.openlocfilehash: 72fc94c6449649656a7e8b81659c2b5cc2551107
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="remote-connection-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager のリモート接続プロファイル
 
-# <a name="remote-connection-profiles-in-system-center-configuration-manager"></a>Profili di connessione remota in System Center Configuration Manager
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+System Center Configuration Manager リモート接続プロファイルを使用すると、ユーザーがドメインに接続されていない場合やユーザーのパーソナル コンピューターがインターネット経由で接続されている場合に、会社のコンピューターにリモート接続できるようになります。  
 
-Usare i profili di connessione remota in System Center Configuration Manager per consentire agli utenti di connettersi in modalità remota ai computer aziendali quando non sono connessi al dominio o se i loro PC sono connessi tramite Internet.  
+ ユーザーは、次の種類のデバイスから作業用 PC に接続できます。  
 
- Gli utenti possono connettersi al PC di lavoro dai seguenti tipi di dispositivo:  
+-   Microsoft Windows を実行しているコンピューター  
 
--   Computer che eseguono Microsoft Windows  
+-   iOS を実行しているデバイス  
 
--   Dispositivi che eseguono iOS  
+-   Android を実行しているデバイス  
 
--   Dispositivi che eseguono Android  
+リモート接続プロファイルを使って、Configuration Manager 階層内のユーザーにリモート デスクトップ接続設定を展開できます。 これにより、ユーザーは、会社のポータルで提供されているリモート デスクトップ接続設定を使用し、会社ポータルを使ってリモート デスクトップ経由で、プライマリで使用している会社のコンピューターにアクセスできます。  
 
-I profili di connessione remota consentono di distribuire le impostazioni di connessione Desktop remoto agli utenti nella gerarchia di Configuration Manager. In questo modo gli utenti possono usare il portale aziendale per accedere ai computer aziendali primari tramite Desktop remoto usando le impostazioni di connessione Desktop remoto fornite dal portale aziendale.  
-
-Windows Intune è necessario se si vuole che gli utenti si connettano ai propri PC aziendali con il portale aziendale. Se non si usa Intune, gli utenti possono comunque usare le informazioni del profilo di connessione remota per connettersi ai propri PC aziendali usando Desktop remoto su una connessione VPN.  
-
-> [!IMPORTANT]  
->  Quando vengono specificate le impostazioni del profilo di connessione remota usando la console di Configuration Manager, le impostazioni vengono archiviate nei criteri locali del computer client. Queste impostazioni potrebbero sostituire le impostazioni di Desktop remoto configurate da un'altra applicazione. Inoltre, se si usano i Criteri di gruppo di Windows per configurare le impostazioni di Desktop remoto, le impostazioni specificate nei Criteri di gruppo sostituiranno quelle configurate usando Configuration Manager.  
-
- Quando si installa Configuration Manager, viene creato un nuovo gruppo di protezione denominato **Connessione desktop remoto**. Questo gruppo viene popolato quando si distribuisce un profilo di connessione remota che include gli utenti primari del computer a cui si distribuisce il profilo. Benché un amministratore locale possa aggiungere i nomi utente al gruppo, gli utenti verranno rimossi dal gruppo alla successiva valutazione della conformità dei profili di connessione remota distribuiti.  
-
- Se si aggiunge manualmente un utente al gruppo, l'utente può avviare le connessioni remote, ma le informazioni di connessione non verranno pubblicate nel portale aziendale.  
-
- Se si rimuove manualmente dal gruppo un utente che è stato aggiunto da Configuration Manager, questa modifica verrà automaticamente corretta in Configuration Manager aggiungendo di nuovo l'utente alla successiva valutazione della conformità del profilo di connessione remota.  
+ユーザーが会社ポータルから会社の PC に接続できるようにするには、Microsoft Intune が必要です。 Intune を使用していない場合でも、リモート接続プロファイルにある情報を使って、VPN 経由のリモート デスクトップで会社の PC に接続できます。  
 
 > [!IMPORTANT]  
->  Se la relazione di affinità utente dispositivo tra un utente e un dispositivo viene modificata (ad esempio, il computer a cui si connette un utente non è più il dispositivo primario dell'utente), Configuration Manager disabilita il profilo di connessione remota e le impostazioni di Windows Firewall per impedire le connessioni al computer.  
+>  Configuration Manager コンソールでリモート接続プロファイルを設定すると、その設定がクライアント コンピューターのローカル ポリシーに保存されます。 これらの設定は、別のアプリケーションで構成されたリモート デスクトップ設定よりも優先される可能性があります。 また、Windows グループ ポリシーを使用してリモート デスクトップ設定を構成すると、グループ ポリシーで指定した設定は、Configuration Manager によって構成された設定よりも優先されます。  
 
-## <a name="prerequisites"></a>Prerequisiti  
+ Configuration Manager をインストールすると、**Remote PC Connect** という新しいセキュリティ グループが作成されます。 このグループには、リモート接続プロファイルの展開先のコンピューターのプライマリ ユーザーを含むプロファイルを展開したときにメンバーが追加されます。 ローカルの管理者はこのグループにユーザー名を追加できますが、展開したリモート接続プロファイルのコンプライアンスが次回評価されたときに、これらのユーザーはグループから削除されます。  
 
-### <a name="external-dependencies"></a>Dipendenze esterne  
+ このグループにユーザーを手動で追加すると、ユーザーはリモート接続を開始できますが、接続情報は会社ポータルに公開されません。  
 
-|Dipendenza|Altre informazioni|  
+ Configuration Manager によって追加されたユーザーをグループから手動で削除した場合は、次回リモート接続プロファイルのコンプライアンスが評価されたときに、Configuration Manager によって、そのユーザーが元通り追加されます。  
+
+> [!IMPORTANT]  
+>  ユーザーとデバイス間のユーザーとデバイスのアフィニティの関係が変更されると (ユーザーが接続しているコンピューターがユーザーのプライマリ デバイスでなくなった場合など)、コンピューターへの接続を防ぐため、Configuration Manager によってリモート接続プロファイルと Windows ファイアウォールの設定が無効になります。  
+
+## <a name="prerequisites"></a>必要条件  
+
+### <a name="external-dependencies"></a>外部依存関係  
+
+|依存関係|説明|  
 |----------------|----------------------|  
-|Server Gateway Desktop remoto.|Se si desidera consentire agli utenti di connettersi a Internet al di fuori del dominio aziendale, è necessario installare e configurare un server Gateway Desktop remoto.<br /><br /> I profili di connessione remota potrebbero non funzionare correttamente se le impostazioni Desktop remoto o le impostazioni Servizi terminal sono gestite da un'altra applicazione o dalle impostazioni dei Criteri di gruppo. Quando vengono distribuiti i profili di connessione remota dalla console di Configuration Manager, le impostazioni vengono archiviate nei criteri locali del computer client. Tali impostazioni potrebbero sostituire le impostazioni Desktop remoto configurate da un'altra applicazione. Se inoltre si usano le impostazioni Criteri di gruppo per configurare le impostazioni Desktop remoto, le impostazioni specificate nelle impostazioni Criteri di gruppo sostituiranno quelle configurate da Configuration Manager.<br /><br /> Per altre informazioni su come installare e configurare un server gateway desktop remoto, vedere la documentazione di Windows Server.|  
-|Se i computer client eseguono un firewall basato su host, è necessario attivare il programma Mstsc.exe.|Quando si configura un profilo di connessione remota, è necessario abilitare l'impostazione **Consenti eccezione Windows Firewall per connessioni in domini Windows e in reti private** . Una volta abilitata tale impostazione, Configuration Manager configura automaticamente Windows Firewall per attivare il programma Mstsc.exe. Tuttavia, se i computer client eseguono un firewall basato su host diverso, è necessario configurare manualmente questa dipendenza del firewall.<br /><br /> Le impostazioni di Criteri di gruppo per configurare Windows Firewall possono sostituire la configurazione impostata in Configuration Manager. Se si usano i Criteri di gruppo per configurare Windows Firewall, assicurarsi che le impostazioni dei Criteri di gruppo non blocchino il programma Mstsc.exe.|  
+|リモート デスクトップ ゲートウェイ サーバー。|会社のドメインの外側のインターネットからユーザーが接続できるようにするには、リモート デスクトップ ゲートウェイ サーバーをインストールして構成する必要があります。<br /><br /> リモート デスクトップ (旧称ターミナル サービス) の設定を別のアプリケーションまたはグループ ポリシーで管理している場合は、リモート接続プロファイルが正しく機能しない可能性があります。 Configuration Manager コンソールを使用してリモート接続プロファイルを展開すると、その設定は、クライアント コンピューターのローカル ポリシーに保存されます。 これらの設定によって、別のアプリケーションで構成したリモート デスクトップ設定が上書きされることがあります。 また、グループ ポリシーを使用してリモート デスクトップ設定を構成すると、グループ ポリシーで指定した設定によって、Configuration Manager で構成した設定が上書きされます。<br /><br /> リモート デスクトップ ゲートウェイ サーバーをインストールして構成する方法の詳細については、Windows Server のドキュメントを参照してください。|  
+|クライアント コンピューターで、ホストベースのファイアウォールを実行している場合は、Mstsc.exe プログラムを有効にする必要があります。|リモート接続プロファイルを構成する場合、[ **Windows ドメインとプライベート ネットワークの接続で Windows ファイアウォールの例外を許可する** ] 設定を有効にする必要があります。 この設定を有効にすると、Configuration Manager によって、Windows ファイアウォールが mstsc.exe プログラムを許可するように自動的に構成されます。 ただし、クライアント コンピューターで別のホストベースのファイアウォールを実行している場合、このファイアウォールの依存関係を手動で構成する必要があります。<br /><br /> グループ ポリシーを使った Windows ファイアウォールの構成によって、Configuration Manager で行った構成が上書きされます。 そのため、グループ ポリシーを使って Windows ファイアウォールを構成する場合は、必ず、Mstsc.exe プログラムをブロックしないように設定してください。|  
 
-### <a name="configuration-manager-dependencies"></a>Dipendenze di Configuration Manager  
+### <a name="configuration-manager-dependencies"></a>Configuration Manager の依存関係  
 
-|Dipendenza|Altre informazioni|  
+|依存関係|説明|  
 |----------------|----------------------|  
-|Configuration Manager deve essere connesso a Microsoft Intune (situazione nota come configurazione ibrida).|Per altre informazioni sulla connessione di Configuration Manager a Microsoft Intune, vedere Gestire i dispositivi mobili con Configuration Manager e Microsoft Intune.|  
-|Per far sì che l'utente possa connettersi a un computer della rete aziendale, tale computer deve essere un dispositivo principale dell'utente.|Per altre informazioni sull'affinità utente dispositivo, vedere l'argomento sul [collegamento di utenti e dispositivi con l'affinità utente dispositivo](/sccm/apps/deploy-use/link-users-and-devices-with-user-device-affinity).|  
-|È necessario aver ottenuto specifiche autorizzazioni di sicurezza per gestire i profili di connessione remota.|Il ruolo di sicurezza **Gestione impostazioni di conformità** include le autorizzazioni necessarie per gestire i profili di connessione remota. Per ulteriori informazioni, vedere <br />[Configurare l'amministrazione basata su ruoli](/sccm/core/servers/deploy/configure/configure-role-based-administration).|  
+|Configuration Manager は、Microsoft Intune (ハイブリッド構成と呼ばれる) に接続する必要があります。|Configuration Manager を Microsoft Intune へ接続する方法の詳細については、「Configuration Manager と Microsoft Intune を使用してモバイル デバイスを管理する」を参照してください。|  
+|ユーザーが会社のネットワークにあるコンピューターに接続するには、そのコンピューターがユーザーのプライマリ デバイスでなければなりません。|ユーザーとデバイスのアフィニティの詳細については、「[ユーザーとデバイスのアフィニティへのユーザーとデバイスの関連付け](/sccm/apps/deploy-use/link-users-and-devices-with-user-device-affinity)」をご覧ください。|  
+|リモート接続プロファイルの管理には、特定のセキュリティ権限が付与されている必要があります。|**[コンプライアンス設定マネージャー]** セキュリティ ロールには、リモート接続プロファイルの管理に必要なアクセス許可が含まれます。 詳細については、次を参照してください: <br />[ロール ベース管理の構成](/sccm/core/servers/deploy/configure/configure-role-based-administration)|  
 
-## <a name="security-and-privacy-considerations-for-remote-connection-profiles"></a>Considerazione su sicurezza e privacy per i profili di connessione remota  
+## <a name="security-and-privacy-considerations-for-remote-connection-profiles"></a>リモート接続プロファイルのセキュリティとプライバシーに関する考慮事項  
 
-### <a name="security-considerations"></a>Considerazioni sulla sicurezza  
+### <a name="security-considerations"></a>セキュリティに関する考慮事項  
 
-|Procedura di sicurezza consigliata|Altre informazioni|  
+|セキュリティのベスト プラクティス|説明|  
 |----------------------------|----------------------|  
-|Specificare manualmente l'affinità utente dispositivo invece di consentire agli utenti di identificare il dispositivo principale. Inoltre, non abilitare la configurazione basata sulle statistiche di utilizzo.|Dal momento che è necessario abilitare **Consenti a tutti gli utenti primari del computer aziendale di connettersi in remoto** prima di poter distribuire un profilo di connessione remota, occorre sempre specificare manualmente l'affinità utente dispositivo. Non considerare autorevoli le informazioni raccolte dagli utenti o dal dispositivo. Se si distribuiscono profili di connessione remota e l'affinità utente dispositivo non è specificata da un utente amministratore attendibile, utenti non autorizzati potrebbero ricevere privilegi elevati ed essere in grado di connettersi in remoto ai computer.<br /><br /> Se si abilita la configurazione basata sulle statistiche di utilizzo, queste informazioni vengono raccolte usando messaggi di stato per cui Configuration Manager non fornisce protezione. Per attenuare questa minaccia, usare la firma Server Message Block (SMB) o Internet Protocol security (IPsec) tra computer client e punto di gestione.|  
-|Limitare i diritti amministrativi locali sul computer del server del sito.|Un utente con diritti amministrativi locali sul server del sito può aggiungere manualmente membri al gruppo di protezione relativo alla connessione del PC remoto che Configuration Manager crea e mantiene automaticamente. Ciò potrebbe causare un'elevazione di privilegi perché i membri che vengono aggiunti a questo gruppo ricevono le autorizzazioni di Desktop remoto.|  
+|プライマリ デバイスの指定をユーザーに許可せずに、手動でユーザーとデバイスのアフィニティを指定します。 また、使用状況に基づいた構成を有効にしないでください。|リモート接続プロファイルを展開する前に、[ **会社用のコンピューターのすべてのプライマリ ユーザーにリモート接続を許可する** ] を有効にする必要があるため、常に手動でユーザーとデバイスのアフィニティを指定します。 ユーザーまたはデバイスから収集された情報を信頼できるとは見なさないでください。 リモート接続プロファイルを展開しており、信頼されている管理ユーザーがデバイスのアフィニティを指定していない場合は、権限のなかったユーザーに特権が付与され、コンピューターにリモート接続できるようになる可能性があります。<br /><br /> 使用状況に基づいた構成を有効にすると、使用状況に関する情報が、Configuration Manager のセキュリティの管轄外の状態メッセージから収集されます。 このセキュリティの侵害を防ぐには、クライアント コンピューターと管理ポイント間の通信で、サーバー メッセージ ブロック (SMB) 署名、またはインターネット プロトコル セキュリティ (IPsec) を使用します。|  
+|サイト サーバー コンピューターのローカル管理者の権限を制限します。|サイト サーバーのローカル管理者権限を持っているユーザーは、Configuration Manager で自動的に作成されて管理されるリモート PC 接続セキュリティ グループに、メンバーを手動で追加することができます。 このグループに追加されたメンバーには、リモート デスクトップのアクセス許可が付与されるので、ユーザーの特権が昇格する可能性があります。|  
 
-### <a name="privacy-considerations"></a>Considerazioni sulla privacy  
+### <a name="privacy-considerations"></a>プライバシーに関する考慮事項  
 
--   Se un utente avvia una connessione a un computer aziendale dal portale dell'azienda, viene scaricato un file con estensione .rdp o .wsrdp contenente il nome del dispositivo e il nome del server Gateway Desktop remoto richiesto per avviare la sessione Desktop remoto. L'estensione del file dipende dal sistema operativo del dispositivo. Ad esempio, i sistemi operativi Windows 7 e Windows 8 usano un file RDP, mentre Windows 8.1 usa un file WSRDP.  
+-   ユーザーが、会社ポータルから会社用のコンピューターへの接続を開始すると、.rdp または .wsrdp 拡張子のファイルがダウンロードされます。このファイルには、リモート デスクトップ セッションの開始に必要な、デバイス名とリモート デスクトップ ゲートウェイ サーバー名が含まれています。 ファイル拡張子は、デバイスのオペレーティング システムによって異なります。 たとえば、Windows 7 と Windows 8 オペレーティング システムは .rdp ファイルを、Windows 8.1 は .wsrdp ファイルを使用します。  
 
--   L'utente può scegliere di aprire o salvare il file .rdp. Se l'utente sceglie di aprire il file .rdp, tale file potrebbe essere archiviato nella cache del browser Web in base alle impostazioni di conservazione configurate per il browser. Se l'utente sceglie di salvare il file, il file non viene archiviato nella cache del browser. Il file viene salvato fino a quando l'utente non lo elimina manualmente.  
+-   ユーザーは、.rdp ファイルを開くか保存するかを選択できます。 ユーザーがファイルを開くことを選択した場合は、ブラウザーのキャッシュへの保管設定よって異なりますが、ファイルがブラウザーのキャッシュに格納される可能性があります。 ユーザーがファイルを保存することを選択した場合は、ファイルはブラウザーのキャッシュに格納されません。 ユーザーが手動で削除するまで、保存した場所に残ります。  
 
--   Il file .wsrdp viene scaricato e salvato automaticamente in locale. Tale file viene sovrascritto alla successiva esecuzione di una sessione di Desktop remoto.  
+-   .wsrdp ファイルは、ダウンロード後に、自動でローカルに保存されます。 このファイルは、ユーザーが次回リモート デスクトップ セッションを実行するときに上書きされます。  
 
--   Prima di configurare i profili di connessione remota, considerare i requisiti sulla privacy.  
+-   リモート接続プロファイルを構成する前に、プライバシー要件について検討してください。  
 
 
-## <a name="create-a-remote-connection-profile"></a>Creare un profilo di connessione remota
+## <a name="create-a-remote-connection-profile"></a>リモート接続プロファイルを作成する
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Profili connessione remota**.  
+1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[リモート接続プロファイル]** の順にクリックします。  
 
-3.  Nella scheda **Home** del gruppo **Crea** fare clic su **Crea profilo di connessione remota**.  
+3.  [ホーム **** ] タブの [作成 **** ] グループで、[リモート接続プロファイルの作成 ****] をクリックします。  
 
-4.  Nella pagina **Generale** della **Creazione guidata profilo connessione remota**specificare un massimo di 256 caratteri per il nome e la descrizione facoltativa del profilo.  
+4.  **リモート接続プロファイルの作成ウィザード** の **[全般]**ページで、プロファイルの名前と説明 (オプション) を最大 256 文字で指定します。  
 
-5.  Nella pagina delle impostazioni **Profilo** specificare le impostazioni seguenti per il profilo di connessione remota:  
+5.  [**プロファイルの設定**] ページで、リモート接続プロファイルに対して次の設定を指定します。  
 
-    -   **Nome completo e porta del server Gateway Desktop remoto (facoltativo)** : specificare il nome del server Gateway Desktop remoto da usare per le connessioni.  
+    -   **リモート デスクトップ ゲートウェイ サーバーのフル ネームとポート (オプション)** - 接続に使用するリモート デスクトップ ゲートウェイ サーバーの名前を指定します。  
 
         > [!NOTE]  
-        >  Configuration Manager non supporta l'uso di un nome IDN (Internationalized Domain Name) per specificare un server in questa casella.  
+        >  Configuration Manager では、このボックスでサーバーを指定する際に国際化ドメイン名を使用することはサポートされていません。  
         >   
-        >  Il nome del server non deve essere superiore a 256 caratteri e può contenere caratteri maiuscoli, minuscoli, numerici e i caratteri **–** e **_** separati da punti.  
+        >  使用できるのは、英字の大文字と小文字、数字、 **–** 、および **_** です。必ず、256 文字以内にし、ピリオドで区切ってください。  
 
-    -   **Consenti connessioni solo da computer che eseguono Desktop remoto con Autenticazione a livello di rete**  
+    -   **ネットワーク レベル認証によるリモート デスクトップを実行するコンピューターからの接続のみを許可する**  
 
-6.  Selezionare **Abilitato** o **Non abilitato** per ciascuna delle seguenti impostazioni di connessione:  
+6.  次の各接続設定で [有効 **** ] または [無効 **** ] を選択します。  
 
-    -   **Consenti connessioni remote a computer aziendali**  
+    -   **会社のコンピューターへのリモート接続を許可する**  
 
-    -   **Consenti a tutti gli utenti primari del computer aziendale di connettersi in remoto**  
+    -   **会社のコンピューターのすべてのプライマリ ユーザーにリモート接続を許可する**  
 
-    -   **Consenti eccezione di Windows Firewall per le connessioni nei domini Windows e nelle reti private**  
+    -   **Windows ドメインでの接続とプライベート ネットワークでの接続で Windows ファイアウォールの例外を許可する**  
 
     > [!IMPORTANT]  
-    >  Tutte e tre le impostazioni devono essere identiche prima di procedere al passaggio successivo della procedura guidata.  
+    >  ウィザードの次のページに進む前に、3 つのすべての設定が同じになっている必要があります。  
 
-7.  Nella pagina **Riepilogo** esaminare le azioni da eseguire e completare la procedura guidata.  
+7.  [**概要**] ページで、実行される操作を確認し、ウィザードを完了します。  
 
- Il nuovo profilo di connessione remota viene visualizzato nel nodo **Profili connessione remota** dell'area di lavoro **Asset e conformità** .  
+ 新しいリモート接続プロファイルが [資産とコンプライアンス **** ] ワークスペースの [リモート接続プロファイル **** ] ノードに表示されます。  
 
-Distribuire un profilo di connessione remota  
+リモート接続プロファイルを展開する  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Profili connessione remota**.  
+1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[リモート接続プロファイル]** の順にクリックします。  
 
-3.  Nell'elenco **Profili connessione remota** selezionare il profilo di connessione remota che si desidera distribuire e quindi nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci**.  
+3.  [リモート接続プロファイル **** ] 一覧で、展開するリモート接続プロファイルを選択してから、[ホーム **** ] タブの [展開 **** ] グループで [展開 ****] をクリックします。  
 
-4.  Nella finestra di dialogo **Distribuisci profilo connessione remota** specificare le seguenti informazioni:  
+4.  [リモート接続プロファイルの展開 **** ] ダイアログ ボックスで、次の情報を指定します。  
 
-    -   **Raccolta** : fare clic su **Sfoglia** per selezionare la raccolta di dispositivi in cui si desidera distribuire il profilo di connessione remota.  
+    -   [**コレクション** ]: [ **参照** ] をクリックして、リモート接続プロファイルを展開するデバイス コレクションを選択します。  
 
-    -   **Monitora e aggiorna le regole non conformi, se supportato**: abilitare questa opzione per monitorare e aggiornare automaticamente il profilo di connessione remota quando risulta non conforme su un dispositivo, ad esempio, se non è presente.  
+    -   **サポートされている場合は対応していない規則を修復する**: デバイスのリモート接続プロファイルがコンプライアンス非対応の場合 (存在しないなど)、そのプロファイルが自動的に修復されるようにするときに、これを有効にします。  
 
-    -   **Consenti monitoraggio e aggiornamento fuori dalla finestra di manutenzione**: se è stata configurata una finestra di manutenzione per la raccolta in cui si distribuisce il profilo di connessione remota, abilitare questa opzione per consentire a Configuration Manager di monitorare e aggiornare il profilo di connessione remota fuori dalla finestra di manutenzione. Per altre informazioni sulle finestre di manutenzione, vedere l'argomento relativo all'[uso delle finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).  
+    -   **メンテナンス期間以外の修復を許可する**: このオプションを有効にすると、リモート接続プロファイルの展開先のコレクションにメンテナンス期間が設定されていても、Configuration Manager がメンテナンス期間外にリモート接続プロファイルを修復します。 メンテナンス期間について詳しくは、「[メンテナンス期間を使用する方法](/sccm/core/clients/manage/collections/use-maintenance-windows)」をご覧ください。  
 
-    -   **Genera un avviso** : abilitare questa opzione per configurare un avviso che viene generato se la conformità del profilo di connessione remota è inferiore a una percentuale specificata in base a una data e un orario specifici. È inoltre possibile specificare se si desidera che un avviso venga inviato a System Center Operations Manager.  
+    -   **アラートを生成する** : このオプションを有効にすると、リモート接続プロファイルのコンプライアンスが、指定した日付と時刻までに指定した割合に達しなかった場合に生成されるアラートを構成できます。 アラートを System Center Operations Manager に送信するかどうかも指定できます。  
 
-    -   **Specifica la pianificazione per la valutazione della conformità per questa linea di base di configurazione** : specificare la pianificazione in base alla quale il profilo di connessione remota distribuito viene valutato nei dispositivi. È possibile specificare una pianificazione semplice o personalizzata.  
+    -   **この構成基準のコンプライアンス評価スケジュールを指定してください** : 展開されたリモート接続プロファイルをデバイスで評価するスケジュールを指定します。 単純なスケジュールとカスタム スケジュールの 2種類あります。  
 
     > [!TIP]  
-    >  Se un dispositivo lascia la raccolta a cui è stato distribuito un profilo di connessione remota, le impostazioni di tale profilo vengono disattivate sul dispositivo. Tuttavia, affinché questo processo venga eseguito correttamente, è necessario aver già distribuito almeno un elemento di configurazione o una linea di base della configurazione contenente un elemento di configurazione dal sito.  
+    >  リモート接続プロファイルが展開されたコレクションからデバイスが離れた場合、そのリモート接続プロファイル設定は、デバイスで無効になります。 ただし、この処理動作が正常に行われるには、少なくとも 1 つの構成項目、またはサイトの構成項目を含む構成基準が既に展開されている必要があります。  
     >   
-    >  Il profilo viene valutato dai dispositivi quando l'utente esegue l'accesso.  
+    >  プロファイルは、ユーザーがログオンしたときにデバイスによって評価されます。  
     >   
-    >  Se due profili di connessione remota vengono distribuiti nella stessa raccolta di dispositivi, dove in un profilo è selezionato **Monitora e aggiorna le regole non conformi, se supportato** e nell'altro profilo la stessa opzione non è selezionata e i due profili di connessione remota hanno diverse impostazioni di connessione, il profilo in cui l'opzione non è selezionata potrebbe quindi sostituire le impostazioni nell'altro profilo. Questo tipo di distribuzione del profilo di connessione remota non è supportato da Configuration Manager.  
+    >  2 つのリモート接続プロファイルを同じデバイス コレクションに展開し、片方で **[サポートされている場合は対応していない規則を修復する]** オプションを有効に、もう片方で無効にしている場合、この 2 つのリモート接続プロファイルの接続設定が異なっていると、オプションが無効になっているプロファイルの設定の方が優先されます。 この種類のリモート接続プロファイルの展開は、Configuration Manager ではサポートされていません。  
 
-5.  Fare clic su **OK** per chiudere la finestra di dialogo **Distribuisci profilo connessione remota** e creare la distribuzione.  
+5.  [OK **** ] をクリックして、[リモート接続プロファイルの展開 **** ] ダイアログ ボックスを閉じると、展開が作成されます。  
 
-## <a name="monitor-a-remote-connection-profile"></a>Monitorare un profilo di connessione remota  
+## <a name="monitor-a-remote-connection-profile"></a>リモート接続プロファイルの監視  
 
-### <a name="view-compliance-results-in-the-configuration-manager-console"></a>Visualizzare i risultati di conformità nella console di Configuration Manager  
+### <a name="view-compliance-results-in-the-configuration-manager-console"></a>Configuration Manager コンソールでのコンプライアンス結果の表示  
 
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio** > **Distribuzioni**.  
+1.  Configuration Manager コンソールで、**[監視]** > **[展開]** の順にクリックします。  
 
-3.  Nell'elenco **Distribuzioni** selezionare la distribuzione del profilo di connessione remota per cui si desidera esaminare le informazioni sulla conformità.  
+3.  [展開 **** ] 一覧で、コンプライアンス情報を確認するリモート接続プロファイルの展開を選択します。  
 
-4.  È possibile esaminare le informazioni di riepilogo sulla conformità della distribuzione del profilo di connessione remota nella pagina principale. Per visualizzare informazioni più dettagliate, selezionare la distribuzione del profilo di connessione remota, quindi nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Visualizza stato** per aprire il riquadro **Stato distribuzione** .  
+4.  メイン ページで、リモート接続プロファイルの展開のコンプライアンスに関する概要情報を確認できます。 詳細情報を表示するには、リモート接続プロファイルの展開を選択してから、[ホーム **** ] タブの [展開 **** ] グループで [ステータスの表示 **** ] をクリックして、[展開ステータス **** ] ページを開きます。  
 
-     La pagina **Stato distribuzione** contiene le seguenti schede:  
+     [展開のステータス] **** ページには次のタブがあります。  
 
-    -   **Conforme** : visualizza la conformità del profilo di connessione remota in base al numero degli asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che sono conformi al profilo di connessione remota. Il riquadro **Dettagli asset** visualizza anche i dispositivi che sono conformi a questo profilo. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive.  
+    -   **対応** : リモート接続プロファイルに対応している資産とその数を示します。 規則をダブルクリックすると、 **[資産とコンプライアンス]** ワークスペースの **[ユーザー]** ノードに一時ノードを作成できます。 このノードには、リモート接続プロファイルに対応しているすべてのデバイスが含まれます。 このプロファイルに対応しているデバイスは、[資産の詳細 **** ] ウィンドウにも表示されます。 詳細情報を表示するには、一覧内のデバイスをダブルクリックします。  
 
         > [!IMPORTANT]  
-        >  Un profilo di connessione remota non viene valutato se non è applicabile a un dispositivo client. Tuttavia, viene restituito come conforme.  
+        >  リモート接続プロファイルをクライアント デバイスに適用できない場合は評価されませんが、 対応しているという結果が返されます。  
 
-    -   **Errore** : visualizza un elenco di tutti gli errori per la distribuzione del profilo di connessione remota selezionata in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che hanno generato errori con questo profilo. Quando si seleziona un dispositivo, il riquadro **Dettagli asset** visualizza i dispositivi interessati dal problema selezionato. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive sul problema.  
+    -   **エラー** : 選択したリモート接続プロファイルの展開で発生したエラーとその影響を受けた資産の数の一覧を示します。 規則をダブルクリックすると、 **[資産とコンプライアンス]** ワークスペースの **[ユーザー]** ノードに一時ノードを作成できます。 このノードには、このプロファイルでエラーが発生したすべてのデバイスが含まれます。 デバイスを選択すると、[資産の詳細 **** ] ウィンドウに、選択した問題の影響を受けているデバイスが表示されます。 問題の詳細情報を表示するには、一覧内のデバイスをダブルクリックします。  
 
-    -   **Non conforme** : visualizza un elenco di tutte le regole non conformi nel profilo di connessione remota in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che non sono conformi a questo profilo. Quando si seleziona un dispositivo, il riquadro **Dettagli asset** visualizza i dispositivi interessati dal problema selezionato. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive sul problema.  
+    -   **非対応** : リモート接続プロファイルにある非対応の規則とその影響を受けた資産の数の一覧を示します。 規則をダブルクリックすると、 **[資産とコンプライアンス]** ワークスペースの **[ユーザー]** ノードに一時ノードを作成できます。 このノードには、このプロファイルに対応していないすべてのデバイスが含まれます。 デバイスを選択すると、[資産の詳細 **** ] ウィンドウに、選択した問題の影響を受けているデバイスが表示されます。 問題の詳細情報を表示するには、一覧内のデバイスをダブルクリックします。  
 
-    -   **Sconosciuto** : visualizza un elenco di tutti i dispositivi che non sono conformi alla distribuzione del profilo di connessione remota selezionata insieme allo stato client corrente dei dispositivi.  
+    -   **不明** : 選択したリモート接続プロファイルの展開に対応しているかどうかを報告しなかった全デバイスと、デバイスにあるクライアントの現在の状態を一覧表示します。  
 
-5.  Nella pagina **Stato distribuzione** è possibile esaminare le informazioni dettagliate sulla conformità del profilo di connessione remota distribuito. Viene creato un nodo temporaneo nel nodo **Distribuzioni** che consente di ritrovare rapidamente queste informazioni.  
+5.  [展開ステータス **** ] ページで、展開したリモート接続プロファイルのコンプライアンスの詳細情報を確認できます。 [展開] **** ノードの下に一時ノードが作成されるため、後から再度この情報をすばやく確認できます。  
 
-### <a name="view-compliance-results-with-reports"></a>Visualizzare i risultati di conformità con i report  
- Configuration Manager include report predefiniti che è possibile usare per monitorare le informazioni sui profili di connessione remota. Tali report dispongono della categoria report di **Gestione conformità e impostazioni**.  
+### <a name="view-compliance-results-with-reports"></a>レポートでの対応結果の確認  
+ Configuration Manager には、リモート接続プロファイルの対応状態を監視するための組み込みレポートが含まれています。 これらのレポートには、[コンプライアンスおよび設定管理] ****のカテゴリがあります。  
 
 > [!IMPORTANT]  
->  È necessario utilizzare un carattere jolly (%) quando si utilizzano i parametri **Filtro dispositivo** e **Filtro utente** nei report per le impostazioni di conformità.  
+>  コンプライアンス設定でレポートの [デバイス フィルター **** ] と [ユーザー フィルター **** ] パラメーターを指定するときは、必ず、ワイルドカード (%) 文字を使ってください。  
 
- Per altre informazioni sulle modalità di configurazione dei report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](/sccm/core/servers/manage/reporting).  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+ Configuration Manager でのレポートの構成方法に関して詳しくは、「[System Center Configuration Manager のレポート](/sccm/core/servers/manage/reporting)」をご覧ください。  

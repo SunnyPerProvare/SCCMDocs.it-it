@@ -1,50 +1,47 @@
 ---
-title: Domini di Active Directory supportati | Microsoft Docs
-description: Requisiti per l&quot;appartenenza di un sistema del sito di System Center Configuration Manager a un dominio di Active Directory.
+title: "サポートされる Active Directory ドメイン |Microsoft ドキュメント"
+description: "Active Directory ドメインで System Center Configuration Manager サイト システムのメンバーシップの要件を取得します。"
 ms.custom: na
 ms.date: 3/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8c5a13f8-42d5-4898-b7b6-e594dae8b335
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3f397efe458fd85124d2a83d4a869642015fd4a5
 ms.openlocfilehash: 2654ab4eaaaf6a4bf3bd7dca9908e7033647dc2c
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="supported-active-directory-domains-for-system-center-configuration-manager"></a>Domini di Active Directory supportati per System Center Configuration Manager
+# <a name="supported-active-directory-domains-for-system-center-configuration-manager"></a>System Center Configuration Manager のサポートされる Active Directory ドメイン
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Tutti i sistemi del sito di System Center Configuration Manager devono essere membri di un dominio di Windows Server Active Directory supportato. I computer client Configuration Manager possono essere membri del dominio o membri del gruppo di lavoro.  
+すべての System Center Configuration Manager サイト システムは、サポートされている Windows Server Active Directory ドメインのメンバーであることが必要です。 Configuration Manager クライアント コンピューターは、ドメインのメンバー、またはワークグループのメンバーになれます。  
 
- **Requisiti e limitazioni:**  
+ **要件と制限事項**  
 
--   L'appartenenza al dominio si applica ai sistemi del sito che supportano la gestione client basata su Internet in una rete perimetrale (detta anche subnet schermata).  
+-   ドメイン メンバーシップは、境界ネットワーク (DMZ、非武装地帯、スクリーン サブネットとも呼ばれます) でインターネット ベースのクライアント管理をサポートするサイト システムに適用されます。  
 
--   Non è supportata per modificare gli elementi seguenti per un computer che ospita un ruolo del sistema del sito:  
+-   サイト システムの役割をホストするコンピューターでは、次の変更はサポートされていません。  
 
-    -   Appartenenza al dominio  
+    -   ドメインのメンバーシップ  
 
-    -   Nome di dominio  
+    -   ドメイン名  
 
-    -   Nome computer  
+    -   コンピューター名  
 
-Prima di apportare queste modifiche, è necessario disinstallare il ruolo del sistema del sito (incluso il sito se si tratta di un server del sito).  
+これらの変更を加える前に、サイト システムの役割 (サイト サーバーの場合はサイトを含む) をアンインストールする必要があります。  
 
-**Sono supportati i domini con i livelli funzionali del dominio seguenti:**  
+**次に示すドメインの機能レベルを持つドメインがサポートされています。**  
 - Windows Server 2016
 
 - Windows Server 2012 R2  
@@ -61,31 +58,30 @@ Prima di apportare queste modifiche, è necessario disinstallare il ruolo del si
 
 
 
-##  <a name="bkmk_Disjoint"></a> Spazio dei nomi non contiguo  
-Configuration Manager supporta l'installazione di client e sistemi del sito in un dominio che contiene uno spazio dei nomi non contiguo.  
+##  <a name="bkmk_Disjoint"></a> 不整合のある名前空間  
+Configuration Manager は、名前空間に不整合があるドメイン内でのサイト システムおよびクライアントのインストールをサポートしています。  
 
-In uno scenario di spazio dei nomi non contiguo il suffisso Domain Name System (DNS) primario di un computer non corrisponde al nome di dominio DNS di Active Directory in cui risiede il computer. Il computer che usa il suffisso DNS primario non corrispondente è detto non contiguo. Un altro scenario di spazio dei nomi non contiguo si ottiene quando il nome di dominio NetBIOS di un controller di dominio non corrisponde al nome di dominio DNS di Active Directory.  
+不整合のある名前空間のシナリオとは、あるコンピューターのプライマリ ドメイン ネーム システム (DNS) のサフィックスが、そのコンピューターの属する Active Directory DNS ドメイン名と一致しないという状況のことです。 矛盾するプライマリ DNS のサフィックスを使用するコンピューターは、不整合であると考えられます。 それとは別の不正後のある名前空間のシナリオは、ドメイン コントローラーの NetBIOS ドメイン名が Active Directory DNS ドメイン名と一致しない場合に発生します。  
 
-La tabella seguente identifica gli scenari supportati per uno spazio dei nomi non contiguo.  
+次の表に、不整合のある名前空間についてサポートされるシナリオを記載します。  
 
-|Scenario|Altre informazioni|  
+|通信の種類|説明|  
 |--------------|----------------------|  
-|**Scenario 1:**<br /><br /> Il suffisso DNS primario del controller di dominio è diverso dal nome di dominio DNS di Active Directory. I computer membri del dominio possono essere contigui o non contigui.|In questo scenario, il suffisso DNS primario del controller di dominio è diverso dal nome di dominio DNS di Active Directory. Il controller di dominio è non contiguo in questo scenario. I computer membri del dominio, ad esempio computer e server del sito, possono avere un suffisso DNS primario che corrisponde al suffisso DNS primario del controller di dominio o al nome di dominio DNS di Active Directory.|  
-|**Scenario 2:**<br /><br /> Un computer membro in un dominio Active Directory è non contiguo, anche se il controller di dominio è contiguo.|In questo scenario, il suffisso DNS primario di un computer membro in cui è installato un sistema del sito è diverso dal nome di dominio DNS di Active Directory, anche se il suffisso DNS primario del controller di dominio corrisponde la nome di dominio DNS di Active Directory. In questo scenario sono presenti un controller di dominio contiguo e un computer membro non contiguo. I computer membri che eseguono il client di Configuration Manager possono avere un suffisso DNS primario che corrisponde al suffisso DNS primario del server di sistema del sito non contiguo o al nome di dominio DNS di Active Directory.|  
+|**シナリオ 1 :**<br /><br /> ドメイン コントローラーのプライマリ DNS サフィックスが、Active Directory DNS ドメイン名と異なっています。 ドメインのメンバーであるコンピューターは、不整合になることも、不整合にならないこともあります。|このシナリオでは、ドメイン コントローラーのプライマリ DNS サフィックスが、Active Directory DNS ドメイン名と異なっています。 このシナリオのドメイン コントローラーは不整合になります。 ドメインのメンバーであるコンピューター (サイト サーバーやコンピューターなど) のプライマリ DNS サフィックスは、ドメイン コントローラーのプライマリ DNS サフィックスと一致するか、Active Directory DNS ドメイン名に一致するかのどちらかになります。|  
+|**シナリオ 2 :**<br /><br /> Active Directory ドメイン内のメンバー コンピューターには不整合があるにもかかわらず、ドメイン コントローラーには不整合がありません。|このシナリオでは、サイト システムがインストールされたメンバー コンピューターのプライマリ DNS サフィックスが Active Directory DNS ドメイン名と異なっているにもかかわらず、ドメイン コントローラーのプライマリ DNS サフィックスは Active Directory DNS ドメイン名と同じになっています。 このシナリオでは、不整合のないドメイン コントローラーと、不整合のあるメンバー コンピューターが存在します。 Configuration Manager クライアントを実行しているメンバー コンピューターは、不整合のあるサイト システム サーバーのプライマリ DNS サフィックス、または Active Directory DNS ドメイン名のどちらかに一致するプライマリ DNS サフィックスを持ちます。|  
 
- Per consentire a un computer di accedere ai controller di dominio non contigui, è necessario modificare l’attributo **msDS-AllowedDNSSuffixes** di Active Directory nel contenitore dell'oggetto dominio. È necessario aggiungere all'attributo entrambi i suffissi DNS.  
+ 不整合のあるドメイン コントローラーにコンピューターがアクセスできるようにするには、ドメイン オブジェクト コンテナーの **msDS-AllowedDNSSuffixes** Active Directory 属性を変更する必要があります。 この属性に両方の DNS サフィックスを追加する必要があります。  
 
- Per assicurarsi che l'elenco di ricerca suffissi DNS contenga tutti gli spazi dei nomi DNS distribuiti all'interno dell'organizzazione, è necessario anche configurare l'elenco di ricerca per ogni computer nel dominio non contiguo. Accertarsi di includere nell'elenco degli spazi dei nomi seguente il suffisso DNS primario del controller di dominio, il nome di dominio DNS ed eventuali spazi dei nomi aggiuntivi per altri server con cui Configuration Manager può interagire. È possibile usare la console Gestione criteri di gruppo per configurare l'elenco di **ricerca suffisso Domain Name System (DNS)** .  
+ さらに、組織内に展開されたすべての DNS 名前空間が DNS サフィックス検索一覧に含まれていることを確認して、不整合があるドメイン内のコンピューターごとに検索一覧を構成する必要があります。 名前空間の一覧に、ドメイン コントローラーのプライマリ DNS サフィックス、DNS ドメイン名、および Configuration Manager と相互運用する可能性のあるその他のサーバーに対応する追加の名前空間を含まれていることを確認します。 グループ ポリシー管理コンソールを使用すると、 **ドメイン ネーム システム (DNS) サフィックス検索** 一覧を構成できます。  
 
 > [!IMPORTANT]  
->  Quando si fa riferimento a un computer in Configuration Manager, immettere il computer usando il suffisso DNS primario. Questo suffisso deve corrispondere al nome di dominio completo registrato come attributo **dnsHostName** nel dominio di Active Directory e al nome dell'entità servizio associata al sistema.  
+>  Configuration Manager でコンピューターを参照する場合は、プライマリ DNS サフィックスを使用してコンピューターを入力します。 このサフィックスは、 **dnsHostName** 属性として Active Directory ドメインに登録した完全修飾ドメイン名と一致し、およびシステムに関連付けられたサービス プリンシパル名と一致する必要があります。  
 
-##  <a name="bkmk_SLD"></a> Domini con etichetta singola  
- Configuration Manager supporta client e sistemi del sito in un nome di dominio con etichetta singola quando vengono soddisfatti i criteri seguenti:  
+##  <a name="bkmk_SLD"></a> 単一ラベルのドメイン  
+ Configuration Manager は、次に示す条件が満たされたときには、単一ラベルのドメイン内のサイト システムとクライアントをサポートします。  
 
--   Il dominio con etichetta singola in Servizi di dominio Active Directory deve essere configurato con uno spazio dei nomi DNS non contiguo che dispone di un dominio di livello superiore valido.  
+-   Active Directory Domain Services の単一ラベルのドメインは、有効な最上位ドメインを持つ不整合がある DNS 名前空間で構成する必要があります。  
 
-     **Ad esempio:** il dominio con etichetta singola di Contoso è configurato per contenere uno spazio dei nomi non contiguo contoso.com in DNS. Pertanto, quando si specifica il suffisso DNS in Configuration Manager per un computer nel dominio Contoso, specificare Contoso.com e non Contoso.  
+     **例:** 単一ラベルのドメインである Contoso は、DNS の不整合のある名前空間 contoso.com を持つように構成されています。 そのため、Configuration Manager で Contoso ドメイン内のコンピューターに DNS サフィックスを指定するときには、"Contoso" ではなく "Contoso.com" を指定します。  
 
--   Le connessioni DCOM (Distributed Component Object Model) tra i server del sito nel contesto del sistema devono essere stabilite usando l'autenticazione Kerberos.  
-
+-   システム コンテキストでのサイト サーバー間の分散コンポーネント オブジェクト モデル (DCOM) 接続は、Kerberos 認証を使用して正常に実行できる必要があります。  

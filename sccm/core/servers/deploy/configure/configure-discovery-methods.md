@@ -1,469 +1,466 @@
 ---
-title: Configurare l'individuazione | Microsoft Docs
-description: "Configurare i metodi di individuazione da eseguire in un sito di Configuration Manager per trovare le risorse che è possibile gestire dall'infrastruttura di rete e da Active Directory."
+title: "探索の構成 | Microsoft Docs"
+description: "ネットワーク インフラストラクチャや Active Directory から管理できるリソースを見つけるように Configuration Manager サイトで実行する探索方法を構成します。"
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 49505eb1-d44d-4121-8712-e0f3d8b15bf5
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 0663ba84762c44a5c303562548499f195bae9e1c
 ms.openlocfilehash: 34a539ceaea6b070f81a28d2c0a9ce388e26cfeb
-ms.contentlocale: it-it
-ms.lasthandoff: 08/01/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Configurare i metodi di individuazione per System Center Configuration Manager
+# <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>System Center Configuration Manager の探索方法を構成する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
 
-Configurare i metodi di individuazione da eseguire in un sito di System Center Configuration Manager per trovare le risorse che è possibile gestire dall'infrastruttura di rete e da Active Directory. È necessario abilitare e configurare ogni metodo che si vuole usare per eseguire ricerche nel proprio ambiente. È anche possibile disabilitare un metodo seguendo la stessa procedura usata per abilitarlo.  Le uniche eccezioni sono il metodo di individuazione heartbeat e di individuazione server:  
+ネットワーク インフラストラクチャや Active Directory から管理できるリソースを見つけるように System Center Configuration Manager サイトで実行する探索方法を構成します。 これを行うには、環境の検索に使用する各方法を有効にして構成する必要があります  (探索方法は、有効にするのと同じ手順で無効にすることもできます)。唯一の例外は、定期探索とサーバー検出です。  
 
--   Per impostazione predefinita, il metodo di individuazione heartbeat è già abilitato quando si installa un sito primario di Configuration Manager e configurato per eseguire una pianificazione di base. È buona norma mantenere abilitata l'individuazione heartbeat perché assicura che i record dei dati di individuazione per i dispositivi siano aggiornati. Per altre informazioni sull'individuazione heartbeat, vedere [Informazioni sull'individuazione heartbeat](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutHeartbeat).  
+-   既定では、Configuration Manager プライマリ サイトをインストールすると、定期探索が有効になり、基本スケジュールで実行するように構成されています。 定期探索によってデバイスの探索データ レコード (DDR) が最新の状態になるため、定期探索は有効のままにすることをお勧めします。 定期探索の詳細については、「[定期探索について](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutHeartbeat)」を参照してください。  
 
--   L'individuazione server è un metodo di individuazione automatica che consente di individuare i computer usati come sistemi del sito. Non è possibile configurare o disabilitare questo metodo.  
+-   サーバー検出はサイト システムとして使用するコンピューターを見つける自動探索方法です。 構成も無効化も実行できません。  
 
-**Per abilitare un metodo di individuazione configurabile:**  
+**構成可能な探索方法を有効にするには:**  
  > [!NOTE]  
- > Le informazioni seguenti non si applicano a Individuazione di utenti di Azure Active Directory. Vedere invece [Configurare l'individuazione utenti di Azure AD](#azureaadisc) più avanti in questo argomento.
+ > 次の情報は、Azure Active Directory ユーザー探索には適用されません。 Azure Active Directory の場合は、このトピックで後述する「[Azure AD ユーザー探索を構成する](#azureaadisc)」を参照してください。
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
+1.  Configuration Manager コンソールで **[管理]** > **[階層の構成]** を選択し、**[探索方法]** をクリックします。  
 
-2.  Selezionare il metodo di individuazione per il sito in cui si desidera attivare l'individuazione.  
+2.  探索を有効にするサイトの探索方法を選択します。  
 
-3.  Nella scheda **Home** del gruppo **Proprietà** scegliere **Proprietà** e quindi nella scheda **Generale** selezionare la casella **Abilita &lt;metodo di individuazione\>**.  
+3.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択してから、**[全般]** タブで **[&lt;探索方法\>を有効にする]** チェック ボックスをオンにします。  
 
-     Se questa casella è già selezionata, è possibile disabilitare il metodo di individuazione deselezionandola.  
+     このチェック ボックスが既にオンになっている場合、このチェック ボックスをオフにすると探索方法が無効になります。  
 
-4.  Scegliere **OK** per salvare la configurazione.  
+4.  **[OK]** をクリックして構成を保存します。  
 
 
-##  <a name="BKMK_ConfigADForestDisc"></a> Configurare l'individuazione foresta Active Directory  
-Per completare la configurazione dell'individuazione foresta Active Directory, è necessario configurare le impostazioni in due posizioni:  
+##  <a name="BKMK_ConfigADForestDisc"></a> Active Directory フォレストの探索の構成  
+Active Directory フォレストの探索の構成を完了するには、次の 2 つの場所で設定を構成する必要があります。  
 
--   Nel nodo **Metodi di individuazione** è possibile:
+-   **[探索方法]** ノードで、次の操作を行います。
 
-    - Abilitare il metodo di individuazione.
-    - Impostare una pianificazione del polling.
-    - Determinare se l'individuazione crea automaticamente limiti per le subnet e i siti di Active Directory individuati.  
+    - 探索方法を有効にします。
+    - ポーリングのスケジュールを設定します。
+    - 探索対象の Active Directory サイトとサブネットの境界を自動的に作成するかどうかを選択します。  
 
--   Nel nodo **Foreste Active Directory** è possibile:
+-   **[Active Directory フォレスト]** ノードで、次の操作を行います。
 
-    - Aggiungere foreste da individuare.
-    - Abilitare l'individuazione di siti e subnet di Active Directory in quella foresta.
-    - Configurare impostazioni che consentono ai siti di Configuration Manager di pubblicare le informazioni sul sito nella foresta.
-    - Assegnare un account da usare come Account foresta Active Directory per ogni foresta.  
+    - 探索するフォレストを追加します。
+    - そのフォレストでの Active Directory サイトとサブネットの探索を有効にします。
+    - Configuration Manager サイトがサイト情報をフォレストに発行できるようにする設定を構成します。
+    - 各フォレストで Active Directory フォレスト アカウントとして使用するアカウントを割り当てます。  
 
-Usare le procedure seguenti per attivare l'individuazione foresta Active Directory e per configurare singole foreste per l'uso con l'individuazione foresta Active Directory.  
+Active Directory フォレストの探索を有効にし、Active Directory フォレストの探索で使用する個々のフォレストを構成するには、次の手順に従います。  
 
-#### <a name="to-enable-active-directory-forest-discovery"></a>Per attivare l'individuazione foresta Active Directory  
+#### <a name="to-enable-active-directory-forest-discovery"></a>Active Directory フォレストの検索を有効にするには  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
+1.  Configuration Manager コンソールで **[管理]** > **[階層の構成]** を選択し、**[探索方法]** をクリックします。  
 
-2.  Selezionare il metodo Individuazione foresta Active Directory per il sito in cui si desidera configurare l'individuazione.  
+2.  探索を構成するサイトの Active Directory フォレストの探索方法を選択します。  
 
-3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
+3.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-4.  Nella scheda **Generale** selezionare la casella per abilitare l'individuazione. In alternativa è possibile configurare subito l'individuazione e abilitarla in un secondo momento.  
+4.  **[全般]** タブで、探索を有効にするチェック ボックスをオンにします。 先に探索を構成し、後で探索を有効にすることもできます。  
 
-5.  Specificare le opzioni per creare i limiti del sito per i percorsi individuati.  
+5.  探索する場所に対してサイト境界を作成するオプションを指定します。  
 
-6.  Specificare una pianificazione per l'esecuzione dell'individuazione.  
+6.  探索を実行するスケジュールを指定します。  
 
-7.  Al termine della configurazione dell'individuazione foresta Active Directory per il sito, scegliere **OK** per salvare la configurazione.  
+7.  このサイトの Active Directory フォレストの探索の構成が完了したら、**[OK]** をクリックして構成を保存します。  
 
-#### <a name="to-configure-a-forest-for-active-directory-forest-discovery"></a>Per configurare una foresta per l'individuazione foresta Active Directory  
+#### <a name="to-configure-a-forest-for-active-directory-forest-discovery"></a>Active Directory フォレストの探索のフォレストを構成するには  
 
-1.  Nell'area di lavoro **Amministrazione** scegliere **Foreste Active Directory**. Se in precedenza è stato eseguito il metodo di individuazione foresta Active Directory, è possibile visualizzare ogni foresta rilevata nel riquadro dei risultati. La foresta locale e qualsiasi foresta trusted vengono individuate durante l'esecuzione del metodo di individuazione foresta Active Directory. È necessario aggiungere manualmente solo le foreste non trusted.  
+1.  **[管理]** ワークスペースで **[Active Directory フォレスト]** を選択します。 Active Directory フォレストの検索を前に実行している場合は、検出されたフォレストが結果ウィンドウに表示されます。 Active Directory フォレストの探索を実行すると、ローカル フォレストと信頼済みフォレストがすべて探索されます。 信頼されていないフォレストだけを手動で追加します。  
 
-    -   Per configurare una foresta individuata in precedenza, selezionarla nel riquadro dei risultati. Nel gruppo **Proprietà** della scheda **Home** scegliere **Proprietà** per aprire le proprietà della foresta. Procedere al passaggio 3.  
+    -   既に検出済みのフォレストを構成するには、結果ウィンドウでそのフォレストを選択します。 次に、**[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択してフォレストのプロパティを開きます。 手順 3 に進みます。  
 
-    -   Per configurare una nuova foresta non presente nell'elenco, nel gruppo **Crea** della scheda **Home** scegliere **Aggiungi foresta** per aprire la finestra di dialogo **Aggiungi foreste**. Procedere al passaggio 3.  
+    -   一覧表示されていない新しいフォレストを構成するには、**[ホーム]** タブの **[作成]** グループで、**[フォレストの追加]** を選択して **[フォレストの追加]** ダイアログ ボックスを開きます。 手順 3 に進みます。  
 
-2.  Nella scheda **Generale** completare le configurazioni per la foresta che si vuole individuare e specificare un valore per **Account foresta Active Directory**.  
-
-    > [!NOTE]  
-    >  Il metodo di individuazione della foresta Active Directory richiede un account globale per l'individuazione e la pubblicazione in foreste non trusted. Se non si usa l'account computer del server del sito, è possibile selezionare solo un account globale.  
-
-3.  Se si prevede di consentire ai siti di pubblicare i relativi dati in questa foresta, completare le configurazioni per la pubblicazione in questa foresta nella scheda **Pubblicazione**.  
+2.  **[全般]** タブで、探索するフォレストの構成を完了し、**[Active Directory フォレスト アカウント]** を指定します。  
 
     > [!NOTE]  
-    >  Se si consente ai siti di pubblicare in una foresta, è necessario estendere lo schema di Active Directory di tale foresta per Configuration Manager. L'account foresta Active Directory deve disporre delle autorizzazioni di tipo Controllo completo sul contenitore di sistema di tale foresta.  
+    >  Active Directory フォレストの探索で、信頼されていないフォレストを検出して、そのフォレストに発行するにはグローバル アカウントが必要です。 サイト サーバーのコンピューター アカウントを使用しない場合は、グローバル アカウントのみ選択できます。  
 
-4.  Al termine della configurazione della foresta per l'uso con l'individuazione della foresta Active Directory, scegliere **OK** per salvare la configurazione.  
+3.  サイト データをこのフォレストに発行できるようにする場合は、**[発行]** タブで、必要な構成を行います。  
 
-##  <a name="BKMK_ConfigADDiscGeneral"></a> Configurare l'individuazione Active Directory per computer, utenti o gruppi  
- Usare le informazioni nelle sezioni seguenti per configurare l'individuazione di computer, utenti o gruppi. Si useranno questi metodi di individuazione:  
+    > [!NOTE]  
+    >  サイトをフォレストに発行できるようにする場合は、Configuration Manager 用にそのフォレストの Active Directory スキーマを拡張する必要があります。 Active Directory フォレスト アカウントには、そのフォレストの System コンテナーに対するフル コントロールのアクセス許可が必要です。  
 
--   Individuazione gruppo Active Directory  
+4.  このフォレストを Active Directory フォレストの探索で使用するための構成が完了したら、**[OK]** をクリックして構成を保存します。  
 
--   Individuazione sistema Active Directory  
+##  <a name="BKMK_ConfigADDiscGeneral"></a> Active Directory のコンピューター、ユーザー、またはグループの探索の構成  
+ 次のセクションの情報を参照して、コンピューター、ユーザー、またはグループの探索を構成します。 次の探索方法を使用します。  
 
--   individuazione utenti di Active Directory  
+-   Active Directory グループの探索  
+
+-   Active Directory システムの探索  
+
+-   Active Directory ユーザー検出  
 
 > [!NOTE]  
->  Le informazioni contenute in questa sezione non si applicano all'individuazione foresta Active Directory.  
+>  このセクションの情報は、Active Directory フォレストの探索には当てはまりません。  
 
- Anche se ogni metodo di individuazione è indipendente dagli altri, tutti condividono opzioni simili. Per altre informazioni su queste opzioni di configurazione, vedere l'argomento [Opzioni condivise per l'individuazione di gruppi, sistemi e utenti](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_shared).  
+ これらの各探索方法は相互に独立していますが、同様のオプションを使用します。 これらの構成オプションに関する詳細については、「[Shared options for Group, System, and User discovery](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_shared)」 (グループ、システム、ユーザー探索の共有オプション) を参照してください。  
 
 > [!WARNING]  
->  Il polling di Active Directory da ciascuno di questi metodi di individuazione può generare notevole traffico di rete. È consigliabile pianificare ogni metodo di individuazione in modo che venga eseguito in un momento in cui tale traffico di rete non influisca negativamente sugli usi aziendali della rete.  
+>  これらの各探索方法での Active Directory ポーリングで、大量のネットワーク トラフィックが発生する可能性があります。 このネットワーク トラフィックが業務上のネットワークの使用に悪影響を及ぼさない時間帯に各探索が実行されるように、探索のスケジュールを設定する必要があります。  
 
-#### <a name="to-configure-active-directory-group-discovery"></a>Per configurare l'individuazione gruppo Active Directory  
+#### <a name="to-configure-active-directory-group-discovery"></a>Active Directory グループの探索を構成するには  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
+1.  Configuration Manager コンソールで **[管理]** > **[階層の構成]** を選択し、**[探索方法]** をクリックします。  
 
-2.  Scegliere il metodo **Individuazione gruppo Active Directory** per il sito in cui si vuole configurare l'individuazione.  
+2.  探索を構成するサイトに対して **[Active Directory グループの探索]** 方法を選択します。  
 
-3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
+3.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-4.  Nella scheda **Generale** selezionare la casella per abilitare l'individuazione. In alternativa è possibile configurare subito l'individuazione e abilitarla in un secondo momento.  
+4.  **[全般]** タブで、探索を有効にするチェック ボックスをオンにします。 先に探索を構成し、後で探索を有効にすることもできます。  
 
-5.  Scegliere **Aggiungi** per configurare un ambito di individuazione, scegliere **Gruppi** o **Percorso** e quindi completare le configurazioni seguenti nella finestra di dialogo **Aggiungi gruppi**o **Aggiungi percorso di Active Directory**:  
+5.  **[追加]** を選択して検出スコープを構成し、**[グループ]** または **[場所]** のどちらかを選択し、**[グループの追加]** または **[Active Directory の場所を追加]** ダイアログ ボックスで次の構成を完了します。  
 
-    1.  Specificare un **Nome** per questo ambito di individuazione.  
+    1.  この探索スコープの [名前] を指定します。 ****  
 
-    2.  Specificare un **Dominio Active Directory** o **Percorso** per la ricerca:  
+    2.  [ **Active Directory ドメイン** ] または [ **場所** ] を指定して検索します。  
 
-        -   Se si sceglie **Gruppi**, specificare uno o più gruppi di Active Directory da individuare.  
+        -   **[グループ]** を選択した場合、探索する 1 つまたは複数の Active Directory グループを指定します。  
 
-        -   Se si sceglie **Percorso**, specificare un contenitore Active Directory come percorso da individuare. È anche possibile attivare una ricerca ricorsiva dei contenitori figlio di Active Directory per questo percorso.  
+        -   **[場所]** を選択した場合、探索する場所として Active Directory コンテナーを指定します。 この場所に対して Active Directory の子コンテナーの再帰検索を有効にすることもできます。  
 
-    3.  Specificare l' **Account di individuazione gruppo Active Directory** utilizzato per la ricerca di questo ambito di individuazione.  
+    3.  この探索スコープを検索するために使用する [Active Directory グループ探索アカウント] を指定します。 ****  
 
-    4.  Scegliere **OK** per salvare la configurazione dell'ambito di individuazione.  
+    4.  **[OK]** をクリックして探索スコープの構成を保存します。  
 
-6.  Ripetere il passaggio 6 per ogni ambito di individuazione aggiuntivo che si desidera definire.  
+6.  定義する追加の探索スコープごとに、手順 6 を繰り返します。  
 
-7.  Nella scheda **Pianificazione del polling** configurare la pianificazione del polling per l'individuazione completa e l'individuazione differenziale.  
+7.  [ポーリングのスケジュール] タブで、完全な探索ポーリングのスケジュールと差分探索の両方を構成します。 ****  
 
-8.  Facoltativamente, nella scheda **Opzioni** è possibile configurare le opzioni per escludere, tramite un filtro, dall'individuazione i record del computer non aggiornati e per individuare l'appartenenza dei gruppi di distribuzione.  
+8.  必要に応じて、**[オプション]** タブで、古いコンピューターのレコードをフィルター処理して探索から除外するためのオプションや、配布グループのメンバーシップを探索するためのオプションを構成できます。  
 
     > [!NOTE]  
-    >  Per impostazione predefinita, l'individuazione gruppo Active Directory rileva solo l'appartenenza dei gruppi di sicurezza.  
+    >  既定では、Active Directory グループの探索では、セキュリティ グループのメンバーシップのみ探索されます。  
 
-9. Al termine della configurazione dell'individuazione gruppo Active Directory per questo sito, scegliere **OK** per salvare la configurazione.  
+9. このサイトの Active Directory グループの探索の構成が完了したら、**[OK]** をクリックして構成を保存します。  
 
-#### <a name="to-configure-active-directory-system-discovery"></a>Per configurare l'individuazione sistema Active Directory  
+#### <a name="to-configure-active-directory-system-discovery"></a>Active Directory システムの探索を構成するには  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
+1.  Configuration Manager コンソールで **[管理]** > **[階層の構成]** を選択し、**[探索方法]** をクリックします。  
 
-2.  Selezionare il metodo per il sito in cui si desidera configurare l'individuazione.  
+2.  探索を構成するサイトの探索方法を選択します。  
 
-3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
+3.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-4.  Nella scheda **Generale** selezionare la casella per abilitare l'individuazione. In alternativa è possibile configurare subito l'individuazione e abilitarla in un secondo momento.  
+4.  **[全般]** タブで、探索を有効にするチェック ボックスをオンにします。 先に探索を構成し、後で探索を有効にすることもできます。  
 
-5.  Scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per specificare un nuovo contenitore di Active Directory. Nella finestra di dialogo **Contenitore Active Directory** completare le configurazioni seguenti:  
+5.  **[新規]** アイコン ![[新規] アイコン](media/Disc_new_Icon.gif) をクリックし、新しい Active Directory コンテナーを指定します。 **[Active Directory コンテナー]** ダイアログ ボックスで、次の構成を完了します。  
 
-    1.  Specificare uno o più percorsi in cui eseguire la ricerca.  
+    1.  検索する 1 つまたは複数の場所を指定します。  
 
-    2.  Per ogni percorso, specificare le opzioni che modificano il comportamento di ricerca.  
+    2.  場所ごとに、検索動作を変更するオプションを指定します。  
 
-    3.  Specificare per ogni percorso l'account da utilizzare come **Account di individuazione Active Directory**.  
+    3.  場所ごとに、[Active Directory 探索アカウント] として使用するアカウントを指定します。 ****  
 
         > [!TIP]  
-        >  Per ogni percorso specificato, è possibile configurare una serie di opzioni di individuazione e un account di individuazione Active Directory univoco.  
+        >  指定する場所ごとに、探索オプションのセットおよび一意の Active Directory 探索アカウントを構成できます。  
 
-    4.  Scegliere **OK** per salvare la configurazione del contenitore Active Directory.  
+    4.  **[OK]** をクリックして Active Directory コンテナーの構成を保存します。  
 
-6.  Nella scheda **Pianificazione del polling** configurare la pianificazione del polling per l'individuazione completa e l'individuazione differenziale.  
+6.  [ポーリングのスケジュール] タブで、完全な探索ポーリングのスケジュールと差分探索の両方を構成します。 ****  
 
-7.  Facoltativamente, nella scheda **Attributi di Active Directory** è possibile configurare attributi aggiuntivi di Active Directory per i computer che si desidera individuare. Sono inoltre elencati gli attributi oggetto predefiniti.  
+7.  必要に応じて、[Active Directory の属性] タブで、探索するコンピューターの追加の Active Directory 属性を構成できます。 **** 既定のオブジェクト属性も表示されます。  
 
-8.  Facoltativamente, nella scheda **Opzioni** è possibile configurare le opzioni per escludere, tramite un filtro, dall'individuazione i record del computer non aggiornati.  
+8.  必要に応じて、**[オプション]** タブで、探索による古いコンピューターのレコードをフィルタリングして取り除く、つまり除外するように、オプションを構成できます。  
 
-9. Al termine della configurazione dell'individuazione sistema Active Directory per questo sito, scegliere **OK** per salvare la configurazione.  
+9. このサイトの Active Directory システム探索の構成が終了したら、**[OK]** をクリックして構成を保存します。  
 
-#### <a name="to-configure-active-directory-user-discovery"></a>Per configurare l'individuazione utente Active Directory  
+#### <a name="to-configure-active-directory-user-discovery"></a>Active Directory ユーザーの探索を構成するには  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
+1.  Configuration Manager コンソールで **[管理]** > **[階層の構成]** を選択し、**[探索方法]** をクリックします。  
 
-2.  Scegliere il metodo **Individuazione utente Active Directory** per il sito in cui si vuole configurare l'individuazione.  
+2.  探索を構成するサイトの **[Active Directory ユーザーの探索]** 方法を選択します。  
 
-3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
+3.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-4.  Nella scheda **Generale** selezionare la casella per abilitare l'individuazione. In alternativa è possibile configurare subito l'individuazione e abilitarla in un secondo momento.  
+4.  **[全般]** タブで、探索を有効にするチェック ボックスをオンにします。 先に探索を構成し、後で探索を有効にすることもできます。  
 
-5.  Scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per specificare un nuovo contenitore di Active Directory. Nella finestra di dialogo **Contenitore Active Directory** completare le configurazioni seguenti:  
+5.  **[新規]** アイコン ![[新規] アイコン](media/Disc_new_Icon.gif) をクリックし、新しい Active Directory コンテナーを指定します。 **[Active Directory コンテナー]** ダイアログ ボックスで、次の構成を完了します。  
 
-    1.  Specificare uno o più percorsi in cui eseguire la ricerca.  
+    1.  検索する 1 つまたは複数の場所を指定します。  
 
-    2.  Per ogni percorso, specificare le opzioni che modificano il comportamento di ricerca.  
+    2.  場所ごとに、検索動作を変更するオプションを指定します。  
 
-    3.  Specificare per ogni percorso l'account da utilizzare come **Account di individuazione Active Directory**.  
+    3.  場所ごとに、[Active Directory 探索アカウント] として使用するアカウントを指定します。 ****  
 
         > [!NOTE]  
-        >  Per ogni percorso specificato, è possibile configurare una serie univoca di opzioni di individuazione e un account di individuazione Active Directory univoco.  
+        >  指定する場所ごとに、探索オプションの一意のセットおよび一意の Active Directory 探索アカウントを構成できます。  
 
-    4.  Scegliere **OK** per salvare la configurazione del contenitore Active Directory.  
+    4.  **[OK]** をクリックして Active Directory コンテナーの構成を保存します。  
 
-6.  Nella scheda **Pianificazione del polling** configurare la pianificazione del polling per l'individuazione completa e l'individuazione differenziale.  
+6.  [ポーリングのスケジュール] タブで、完全な探索ポーリングのスケジュールと差分探索の両方を構成します。 ****  
 
-7.  Facoltativamente, nella scheda **Attributi di Active Directory** è possibile configurare attributi aggiuntivi di Active Directory per i computer che si desidera individuare. Sono inoltre elencati gli attributi oggetto predefiniti.  
+7.  必要に応じて、[Active Directory の属性] タブで、探索するコンピューターの追加の Active Directory 属性を構成できます。 **** 既定のオブジェクト属性も表示されます。  
 
-8.  Al termine della configurazione dell'individuazione utente Active Directory per questo sito, scegliere **OK** per salvare la configurazione.  
+8.  このサイトの Active Directory ユーザー探索の構成が完了したら、**[OK]** をクリックして構成を保存します。  
 
-## <a name="azureaadisc"></a>Configurare l'individuazione utenti di Azure AD
-A partire dalla versione 1706, è possibile configurare Individuazione di utenti di Azure Active Directory quando si connette Configuration Manager alla [sottoscrizione di Azure a ad Azure Active Directory](/sccm/core/servers/deploy/configure/azure-services-wizard).
+## <a name="azureaadisc"></a> Azure AD ユーザー探索を構成する
+バージョン 1706 以降、Configuration Manager を [Azure サブスクリプションと Azure Active Directory](/sccm/core/servers/deploy/configure/azure-services-wizard) に接続するときに、Azure Active Directory ユーザー探索を構成できるようになりました。
 
-L'individuazione di utenti di Azure AD viene configurata come parte di *Gestione cloud*. La procedura è illustrata in dettaglio in [Creare l'app Web di Azure da usare con Configuration Manager](/sccm/core/servers/deploy/configure/Azure-services-wizard#webapp) nell'argomento *Configurare i servizi di Azure da usare con Configuration Manager*.
-
-
+Azure AD ユーザーの探索は、*クラウド管理*の一部として構成されています。 詳細な手順については、トピック「*Configure Azure services for use with Configuration Manager*」(Configuration Manager と共に使用するように Azure サービスを構成する) の「[Create the Azure web app for use with Configuration Manager](/sccm/core/servers/deploy/configure/Azure-services-wizard#webapp)」(Configuration Manager と共に使用するように Azure Web アプリを作成する) を参照してください。
 
 
-##  <a name="BKMK_ConfigHBDisc"></a> Configurare l'individuazione heartbeat  
- Per impostazione predefinita, l'individuazione heartbeat è abilitata quando si installa un sito primario di Configuration Manager. È quindi necessario configurare solo la pianificazione della frequenza di invio dei record dei dati di individuazione heartbeat a un punto di gestione da parte dei client quando non si vuole usare la frequenza predefinita di sette giorni.  
 
-> [!NOTE]  
->  Se l'installazione push del client e l'attività di gestione del sito per **Cancella flag di installazione** sono attivati nello stesso sito, impostare la pianificazione dell'individuazione heartbeat in modo che sia inferiore al valore **Periodo nuova individuazione client** dell'attività di gestione del sito **Cancella flag di installazione** . Per altre informazioni sulle attività di manutenzione del sito, vedere [Attività di manutenzione per System Center Configuration Manager](../../../../core/servers/manage/maintenance-tasks.md).  
 
-#### <a name="to-configure-the-heartbeat-discovery-schedule"></a>Per configurare la pianificazione dell'individuazione heartbeat  
-
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
-
-2.  Scegliere **Individuazione heartbeat** per il sito in cui si vuole eseguire l'individuazione heartbeat.  
-
-3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
-
-4.  Configurare la frequenza con cui i client inviano i record dei dati di individuazione heartbeat, quindi scegliere **OK** per salvare la configurazione.  
-
-##  <a name="BKMK_ConfigNetworkDisc"></a> Configurare l'individuazione di rete  
- Utilizzare le informazioni nelle sezioni riportate di seguito per configurare l'individuazione della rete.  
-
-###  <a name="BKMK_AboutConfigNetworkDisc"></a> Informazioni sulla configurazione dell'individuazione di rete  
- Prima di configurare l'individuazione della rete, è necessaria una comprensione dei concetti seguenti:  
-
--   Livelli disponibili per l'individuazione della rete  
-
--   Opzioni disponibili per l'individuazione della rete  
-
--   Applicazione di limiti all'individuazione della rete in rete  
-
-Per altre informazioni, vedere [Informazioni sull'individuazione di rete](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutNetwork).  
-
- Nelle sezioni seguenti vengono fornite informazioni sulle configurazioni comuni per l'individuazione della rete. È possibile definire una o più di queste configurazioni per l'utilizzo durante la stessa esecuzione dell'individuazione. Se si utilizzano più configurazioni, sarà necessario considerare le interazioni che possono influenzare i risultati dell'individuazione.  
-
- Ad esempio, è possibile individuare tutti i dispositivi SNMP (Simple Network Management Protocol) che usano uno specifico nome di comunità SNMP. Per la stessa esecuzione dell'individuazione, è inoltre possibile disattivare l'individuazione in una subnet specifica. Durante l'esecuzione dell'individuazione, l'individuazione della rete non rileverà i dispositivi SNMP con il nome di comunità specificato nella subnet disattivata.  
-
-####  <a name="BKMK_DetermineNetTopology"></a> Determinare la topologia di rete  
- Per eseguire il mapping della rete, è possibile utilizzare un'individuazione solo per topologia. Questo tipo di individuazione non rileva i potenziali client. L'individuazione di rete solo per topologia si basa su SNMP.  
-
- Quando si esegue il mapping della topologia di rete, è necessario configurare gli **Hop massimi** nella scheda **SNMP** nella finestra di dialogo **Proprietà dell'individuazione della rete**. Con solo pochi hop è possibile controllare la larghezza di banda di rete che viene utilizzata quando viene eseguita l'individuazione. Man mano che l'individuazione di rete avanza, è possibile aumentare il numero di hop per ottenere una migliore comprensione della topologia di rete.  
-
- Dopo aver compreso la topologia di rete, è possibile configurare proprietà aggiuntive per l'individuazione di rete per individuare potenziali client e i relativi sistemi operativi, mentre si utilizzano le configurazioni disponibili per limitare i segmenti di rete in cui l'individuazione di rete è in grado di effettuare la ricerca.  
-
-####  <a name="BKMK_LimitBySubnet"></a> Limitare le ricerche mediante subnet  
- È possibile configurare l'individuazione di rete per effettuare la ricerca in subnet specifiche durante un ciclo di individuazione. Per impostazione predefinita, l'individuazione di rete effettua la ricerca nella subnet del server che esegue l'individuazione. Eventuali altre subnet configurate e abilitate si applicano esclusivamente alle opzioni di ricerca SNMP e DHCP (Dynamic Host Configuration Protocol). Per la ricerca nei domini, l'individuazione di rete non è limitata dalle configurazioni per subnet.  
-
- Se si specificano una o più subnet nella scheda **Subnet** della finestra di dialogo **Proprietà dell'individuazione della rete** , la ricerca viene effettuata solo nelle subnet che sono contrassegnate con **Attivato** .  
-
- Quando si disabilita una subnet, essa viene esclusa dall'individuazione e vengono applicate le seguenti condizioni:  
-
--   Le query basate su SNMP non vengono eseguite sulla subnet.  
-
--   I server DHCP non rispondono con un elenco di risorse che si trovano nella subnet.  
-
--   Le query basate su dominio possono individuare risorse che si trovano nella subnet.  
-
-####  <a name="BKMK_SearchByDomain"></a> Eseguire ricerche in un dominio specifico  
- È possibile configurare l'individuazione di rete per effettuare la ricerca in un dominio specifico o in un insieme di domini durante l'esecuzione dell'individuazione. Per impostazione predefinita, l'individuazione di rete effettua la ricerca nel dominio locale del server che esegue l'individuazione.  
-
- Se si specificano uno o più domini nella scheda **Domini** della finestra di dialogo **Proprietà dell'individuazione della rete** , viene effettuata la ricerca solo nei domini che sono contrassegnati con **Attivato** .  
-
- Quando si disabilita un dominio, esso viene escluso dall'individuazione e vengono applicate le seguenti condizioni:  
-
--   L'individuazione di rete non esegue una query sui controller di dominio nel dominio.  
-
--   Le query basate su SNMP possono comunque essere eseguite sulle subnet in quel dominio.  
-
--   I server DHCP possono comunque rispondere con un elenco di risorse presenti nel dominio.  
-
-####  <a name="BKMK_LimitBySNMPname"></a> Limitare le ricerche usando i nomi comunità SNMP  
- L'individuazione di rete viene configurata per effettuare la ricerca in una comunità SNMP specifica o in un insieme di comunità durante l'esecuzione dell'individuazione. Per impostazione predefinita, è configurato per l'utilizzo il nome comunità di **Pubblico** .  
-
- L'individuazione di rete utilizza i nomi comunità per accedere ai router che sono dispositivi SNMP. Un router può fornire l'individuazione di rete con informazioni su altri router e subnet che sono collegati al primo router.  
+##  <a name="BKMK_ConfigHBDisc"></a> 定期探索の構成  
+ 既定では、定期探索は、Configuration Manager プライマリ サイトをインストールすると有効になります。 そのため、初期設定の 7 日おきを利用しない場合のみ、管理ポイントにクライアントが定期探索データ レコードを送信する頻度を指定するスケジュールを構成する必要があります。  
 
 > [!NOTE]  
->  I nomi comunità SNMP sono simili alle password. L'individuazione di rete può ottenere informazioni solo da un dispositivo SNMP per il quale è stato specificato un nome comunità. Ciascun dispositivo SNMP può avere il proprio nome comunità, ma spesso lo stesso nome comunità viene condiviso tra diversi dispositivi. Inoltre, la maggior parte dei dispositivi SNMP hanno un nome comunità predefinito, cioè **Pubblico**. Alcune organizzazioni, però, eliminano il nome comunità **pubblico** dai propri dispositivi come misura di sicurezza.  
+>  同じサイトで、クライアント プッシュ インストールおよび [ **インストール フラグのクリア** ] のサイト メンテナンス タスクの両方が有効な場合、定期探索のスケジュールを、[ **インストール フラグのクリア** ] サイト メンテナンス タスクの [ **クライアント再探索期間** ] より小さく設定します。 サイトのメンテナンス タスクの詳細については、「[System Center Configuration Manager のメンテナンス タスク](../../../../core/servers/manage/maintenance-tasks.md)」を参照してください。  
 
- Se nella scheda **SNMP** della finestra di dialogo **Proprietà dell'individuazione della rete** vengono visualizzate più comunità SNMP, l'individuazione di rete effettua la ricerca in esse nell'ordine in cui compaiono. Per ridurre al minimo il traffico di rete generato dai tentativi di contattare un dispositivo utilizzando nomi diversi, assicurarsi che i nomi utilizzati più di frequente appaiano nella parte superiore dell'elenco.  
+#### <a name="to-configure-the-heartbeat-discovery-schedule"></a>定期探索スケジュールを構成するには  
+
+1.  Configuration Manager コンソールで **[管理]** > **[階層の構成]** を選択し、**[探索方法]** をクリックします。  
+
+2.  定期探索を構成するサイトの **[定期探索]** を選択します。  
+
+3.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
+
+4.  クライアントが定期探索データ レコードを送信する頻度を構成し、**[OK]** をクリックして構成を保存します。  
+
+##  <a name="BKMK_ConfigNetworkDisc"></a> ネットワーク探索の構成  
+ ネットワーク探索を構成するときに、次のセクションの情報を参照してください。  
+
+###  <a name="BKMK_AboutConfigNetworkDisc"></a> ネットワーク探索の構成について  
+ ネットワーク探索を構成する前に、次のことを把握しておく必要があります。  
+
+-   利用可能なレベルのネットワーク探索  
+
+-   利用できるネットワーク探索オプション  
+
+-   ネットワークにおけるネットワーク探索の制限  
+
+詳細については、「[ネットワーク探索について](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutNetwork)」を参照してください。  
+
+ 以下のセクションでは、ネットワーク探索の一般的な構成について説明します。 同じ探索を実行するときに使用するように、これらの構成の 1 つまたは複数を構成できます。 複数の構成を使用する場合、探索結果に影響する可能性がある処理を計画する必要があります。  
+
+ たとえば、特定の SNMP コミュニティ名を使用するすべての簡易ネットワーク管理プロトコル (SNMP) デバイスを探索することが必要な場合があります。 また、同じ探索を実行する際に、特定のサブネットで探索を無効にする場合があります。 探索の実行時に、ネットワーク探索では、無効になっているサブネットで指定のコミュニティ名を持つ SNMP デバイスは探索されません。  
+
+####  <a name="BKMK_DetermineNetTopology"></a> ネットワーク トポロジの確認  
+ トポロジのみの探索を使用してネットワークをマップできます。 この種の探索では、存在する可能性があるクライアントは探索されません。 トポロジのみのネットワーク探索では、SNMP が使用されます。  
+
+ ネットワーク トポロジをマップする場合、**[ネットワーク探索のプロパティ]** ダイアログ ボックスの **[SNMP]** タブで、**[最大ホップ数]** を構成する必要があります。 わずか数ホップで、探索の実行時に使用されるネットワーク帯域幅を制御できます。 探索するネットワークが増えるにつれて、ホップ数を増やすと、ネットワーク トポロジをさらに把握できるようになります。  
+
+ ネットワーク トポロジを把握したら、利用可能な構成を使用してネットワーク探索で検索するネットワーク セグメントを制限しながら、存在する可能性があるクライアントおよびそれらのクライアントのオペレーティング システムを検出するように、ネットワーク探索の追加のプロパティを構成できます。  
+
+####  <a name="BKMK_LimitBySubnet"></a> サブネットを使用した検索の制限  
+ 探索の実行中に特定のサブネットを検索するように、ネットワーク探索を構成できます。 既定では、ネットワーク探索では、探索を実行しているサーバーのサブネットが検索されます。 構成して有効にした追加のサブネットは、SNMP 検索オプションおよび動的ホスト構成プロトコル (DHCP) 検索オプションにのみ適用されます。 ネットワーク探索でドメインを検索する場合、サブネットの構成によって検索が制限されることはありません。  
+
+ [ **ネットワーク探索のプロパティ** ]  ダイアログ ボックスの [ **サブネット** ] タブで、1 つまたは複数のサブネットを指定する場合、[ **有効** ] とマークされているサブネットのみが検索されます。  
+
+ サブネットを無効にすると、そのサブネットは探索から除外されて、次の条件が適用されます。  
+
+-   SNMP ベースのクエリは、そのサブネットで実行されません。  
+
+-   DHCP サーバーは、そのサブネットに配置されたリソースの一覧では応答しません。  
+
+-   ドメイン ベースのクエリで、そのサブネットに配置されたリソースを探索できます。  
+
+####  <a name="BKMK_SearchByDomain"></a> 特定のドメインの検索  
+ 探索の実行中に特定ドメインまたはドメインのセットを検索するように、ネットワーク探索を構成できます。 既定では、ネットワーク探索では、探索を実行しているサーバーのローカル ドメインが検索されます。  
+
+ [ **ネットワーク探索のプロパティ** ]  ダイアログ ボックスの [ **ドメイン** ] タブで、1 つまたは複数のドメインを指定する場合、[ **有効** ] とマークされているドメインのみが検索されます。  
+
+ ドメインを無効にすると、そのドメインは探索から除外されて、次の条件が適用されます。  
+
+-   ネットワーク探索で、そのドメイン内のドメイン コントローラーは照会されません。  
+
+-   SNMP ベースのクエリは、そのドメイン内のサブネットで引き続き実行できます。  
+
+-   DHCP サーバーは、そのドメイン内に配置されたリソースの一覧で引き続き応答できます。  
+
+####  <a name="BKMK_LimitBySNMPname"></a> SNMP コミュニティ名を使用した検索の制限  
+ 探索の実行中に特定の SNMP コミュニティまたはコミュニティのセットを検索するように、ネットワーク探索を構成できます。 既定では、コミュニティ名 [public] を使用するように構成されています。 ****  
+
+ ネットワーク探索は、コミュニティ名を使用して、SNMP デバイスになっているルーターへのアクセスを取得します。 ルーターは、最初のルーターにリンクされている他のルーターやサブネットに関する情報をネットワーク探索に提供できます。  
 
 > [!NOTE]  
->  Oltre a usare il nome comunità SNMP, è possibile specificare l'indirizzo IP o il nome risolvibile di un dispositivo SNMP specifico. Questa operazione può essere eseguita nella scheda **Dispositivi SNMP** della finestra di dialogo **Proprietà dell'individuazione della rete**.  
+>  SNMP コミュニティ名は、パスワードのようなものです。 ネットワーク探索では、コミュニティ名を指定された SNMP デバイスからのみ情報を取得できます。 各 SNMP デバイスは独自のコミュニティ名を持つことができますが、多くの場合は複数のデバイスで同じコミュニティ名が共有されます。 また、ほとんどの SNMP デバイスは、既定の **public** というコミュニティ名を使用します。  ただし、セキュリティ上の理由から、デバイスから **public** というコミュニティ名を削除している組織もあります。  
 
-####  <a name="BKMK_SearchByDHCP"></a> Eseguire ricerche in un server DHCP specifico  
- È possibile configurare l'individuazione di rete per l'utilizzo di un server DHCP specifico o di più server per individuare i client DHCP durante l'esecuzione dell'individuazione.  
-
- L'individuazione di rete effettua la ricerca in ogni server DHCP specificato nella scheda **DHCP** della finestra di dialogo **Proprietà dell'individuazione della rete** . Se il server che sta eseguendo l'individuazione esegue il lease dell'indirizzo IP da un server DHCP, è possibile configurare l'individuazione per effettuare la ricerca in quel server DHCP selezionando la casella **Includi il server DHCP per il cui utilizzo è configurato il server di sito**.  
+ **[ネットワーク探索のプロパティ]** ダイアログ ボックスの **[SNMP]** タブに複数の SNMP コミュニティが表示される場合、ネットワーク探索は表示されている順序で検索を行います。 さまざまな名前を使ってデバイスへの接続が試みられると、ネットワーク トラフィックが発生します。このようなネットワーク トラフィックを最小限に抑えるため、最も頻繁に使用される名前を一覧の一番上に配置するようにします。  
 
 > [!NOTE]  
->  Per configurare correttamente un server DHCP nell'individuazione di rete, l'ambiente deve supportare IPv4. Non è possibile configurare l'individuazione di rete per utilizzare un server DHCP in un ambiente IPv6 nativo.  
+>  SNMP コミュニティ名を使用できるだけでなく、特定の SNMP デバイスの IP アドレスまたは解決可能な名前も指定できます。 これは、**［ネットワーク探索のプロパティ］**ダイアログ ボックスの **［SNMP デバイス］**タブで行います。  
 
-###  <a name="BKMK_HowToConfigNetDisc"></a> Come configurare l'individuazione di rete  
- Utilizzare le seguenti procedure per individuare in primo luogo la topologia di rete, quindi per configurare l'individuazione di rete e individuare potenziali client utilizzando una o più delle opzioni di individuazione di rete disponibili.  
+####  <a name="BKMK_SearchByDHCP"></a> 特定の DHCP サーバーの検索  
+ 特定の DHCP サーバーまたは複数のサーバーを使用して探索の実行中に DHCP クライアントを探索するように、ネットワーク探索を構成できます。  
 
-##### <a name="to-determine-your-network-topology"></a>Per determinare la topologia di rete  
+ ネットワーク探索は、[ **ネットワーク探索のプロパティ** ] ダイアログ ボックスの [ **DHCP** ] タブで指定する各 DHCP サーバーを検索します。 探索を実行しているサーバーが DHCP サーバーから IP アドレスをリースしている場合、**[サイト サーバーで使用するように構成されている DHCP サーバーを含める]** チェック ボックスをオンにして、その DHCP サーバーを検索するように探索を構成できます。  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
+> [!NOTE]  
+>  ネットワーク探索時に使用する DHCP サーバーを構成するには、環境で IPv4 をサポートしている必要があります。 ネイティブの IPv6 環境で、ネットワーク探索時に使用する DHCP サーバーを構成することはできません。  
 
-2.  Selezionare **Individuazione di rete** per il sito in cui si vuole eseguire l'individuazione di rete.  
+###  <a name="BKMK_HowToConfigNetDisc"></a> ネットワーク探索の構成方法  
+ 次の手順に従って、まずネットワーク トポロジのみ探索します。次に、1 つまたは複数の使用可能なネットワーク探索オプションを使用して、存在する可能性があるクライアントを探索するようにネットワーク探索を構成します。  
 
-3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
+##### <a name="to-determine-your-network-topology"></a>ネットワークのトポロジを決定するには  
 
-    -   Nella scheda **Generale** selezionare la casella **Abilita individuazione della rete** e quindi scegliere **Topologia** nelle opzioni **Tipo di individuazione**.  
+1.  Configuration Manager コンソールで **[管理]** > **[階層の構成]** を選択し、**[探索方法]** をクリックします。  
 
-    -   Nella scheda **Subnet** selezionare la casella **Cerca subnet locali**.  
+2.  ネットワーク探索を実行するサイトに対して **[ネットワーク探索]** を選択します。  
+
+3.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
+
+    -   **[全般]** タブで、**[ネットワーク探索を有効にする]** チェック ボックスをオンにし、**[探索の種類]** オプションから **[トポロジ]** を選択します。  
+
+    -   **[サブネット]** タブで、**[ローカル サブネットを探索]** チェック ボックスをオンにします。  
 
         > [!TIP]  
-        >  Se si conoscono le subnet specifiche che costituiscono la rete, è possibile deselezionare la casella **Cerca subnet locali** e usare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per aggiungere le subnet specifiche in cui si vuole eseguire la ricerca. Per reti di grandi dimensioni, spesso è meglio effettuare la ricerca solo in una o due subnet alla volta per ridurre al minimo l'uso della larghezza di banda di rete.  
+        >  ネットワークを構成する特定のサブネットがわかっている場合、**[ローカル サブネットを検索]** チェック ボックスをオフにし、**[新規]** アイコン ![[新規] アイコン](media/Disc_new_Icon.gif) を使用して、検索する特定のサブネットを追加できます。 大規模なネットワークの場合、サブネットを一度に 1 つまたは 2 つだけ検索することで、ネットワーク帯域幅の使用を最小限に抑えることができる場合があります。  
 
-    -   Nella scheda **Domini** selezionare la casella **Cerca dominio locale**.  
+    -   **[ドメイン]** タブで、**[ローカル ドメインを検索]** チェック ボックスをオンにします。  
 
-    -   Nella scheda **SNMP** , utilizzare l'elenco a discesa **Hop massimi** per specificare quanti hop router può prendere l'individuazione di rete nel mapping della topologia.  
+    -   [ **SNMP** ] タブで、[ **最大ホップ数** ] ドロップダウン リストを使用して、ネットワーク探索がトポロジをマップする際に取得可能なルーター ホップ数を指定できます。  
 
         > [!TIP]  
-        >  Quando si esegue per la prima volta la topologia di rete, configurare un numero limitato di hop router per ridurre al minimo l'utilizzo della larghezza di banda di rete.  
+        >  ネットワーク トポロジの初回マップ時には、ネットワーク帯域幅の使用を最小限に抑えるため、ごくわずかな数のルーター ホップを構成します。  
 
-4.  Nella scheda **Pianifica** scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per impostare una pianificazione per l'esecuzione dell'individuazione di rete.  
-
-    > [!NOTE]  
-    >  Non è possibile assegnare una configurazione di individuazione diversa per separare le varie pianificazioni dell'individuazione di rete. Ogni volta che viene eseguita l'individuazione di rete, essa utilizza la configurazione di individuazione corrente.  
-
-5.  Scegliere **OK** per accettare le configurazioni. L'individuazione di rete viene eseguita all'orario specificato.  
-
-##### <a name="to-configure-network-discovery"></a>Per configurare l'individuazione di rete  
-
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
-
-2.  Selezionare **Individuazione di rete** per il sito in cui si vuole eseguire l'individuazione di rete.  
-
-3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
-
-4.  Nella scheda **Generale** selezionare la casella di controllo **Abilita individuazione della rete** e quindi selezionare il tipo di individuazione che si vuole eseguire nelle opzioni **Tipo di individuazione**.  
-
-5.  Per configurazione l'individuazione in modo da effettuare la ricerca nelle subnet, scegliere la scheda **Subnet** e quindi configurare una o più delle opzioni seguenti:  
-
-    -   Per eseguire l'individuazione sulle subnet locali per il computer che esegue l'individuazione, selezionare la casella **Cerca subnet locali**.  
-
-    -   Per effettuare la ricerca in una subnet specifica, verificare che la subnet sia inclusa nell'elenco in **Subnet da cercare** e che il valore **Cerca** sia impostato su **Attivato**:  
-
-        1.  Se la subnet non compare in elenco, scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuova assegnazione subnet** immettere le informazioni **Subnet** e **Mask**, quindi scegliere **OK**. Per impostazione predefinita, una nuova subnet è abilitata per la ricerca.  
-
-        2.  Per modificare il valore **Cerca** per una subnet presente in elenco, selezionare la subnet, quindi scegliere l'icona **Mostra/Nascondi** per impostare il valore su **Disattivato** o **Attivato**.  
-
-6.  Per configurazione l'individuazione in modo da effettuare la ricerca nei domini, scegliere la scheda **Domini** e quindi configurare una o più delle opzioni seguenti:  
-
-    -   Per eseguire l'individuazione sul dominio del computer che esegue l'individuazione, selezionare la casella **Cerca dominio locale**.  
-
-    -   Per effettuare la ricerca in un dominio specifico, verificare che il dominio sia incluso nell'elenco in **Domini** e che il valore **Cerca** sia impostato su **Attivato**:  
-
-        1.  Se il dominio non compare in elenco, scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Proprietà dominio** immettere le informazioni sul **Dominio** e quindi scegliere **OK**. Per impostazione predefinita, un nuovo dominio è abilitato per la ricerca.  
-
-        2.  Per modificare il valore **Cerca** per un dominio presente in elenco, selezionare il dominio e quindi fare clic sull'icona **Mostra/Nascondi** per impostare il valore su **Disattivato** o **Attivato**.  
-
-7.  Per configurare l'individuazione in modo da cercare dispositivi SNMP in specifici nomi comunità SNMP, scegliere la scheda **SNMP** e quindi configurare una o più delle opzioni seguenti:  
-
-    -   Per aggiungere un nome comunità SNMP all'elenco **Nomi comunità SNMP**, scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuovo nome comunità SNMP** specificare il **Nome** della comunità SNMP e quindi scegliere **OK**.  
-
-    -   Per rimuovere un nome comunità SNMP, selezionarlo e quindi scegliere l'icona **Elimina** ![Icona Elimina](media/Disc_delete_Icon.gif).  
-
-    -   Per modificare l'ordine di ricerca dei nomi comunità SNMP, selezionare un nome comunità e quindi scegliere l'icona **Sposta elemento in alto**![Icona Sposta su](media/Disc_moveUp_Icon.gif) oppure l'icona **Sposta elemento in basso** ![Icona Sposta giù](media/Disc_moveDown_Icon.gif). Quando viene eseguita l'individuazione, viene effettuata la ricerca nei nomi comunità seguendo un ordine dall'alto in basso. Tenere presente quanto segue.
-
-        > [!NOTE]  
-        >  L'individuazione di rete utilizza i nomi comunità SNMP per accedere ai router che sono dispositivi SNMP. Un router può informare l'individuazione di rete su altri router e subnet collegati al primo router.  
-
-        -   I nomi comunità SNMP sono simili alle password.  
-
-        -   L'individuazione di rete può ottenere informazioni solo da un dispositivo SNMP per il quale è stato specificato un nome comunità.  
-
-        -   Ciascun dispositivo SNMP può avere il proprio nome comunità, ma spesso lo stesso nome comunità viene condiviso tra diversi dispositivi.  
-
-        -   La maggior parte dei dispositivi SNMP ha un nome comunità predefinito, ovvero **Pubblico**. È possibile usarlo se non si conoscono altri nomi comunità. Tuttavia, alcune organizzazioni eliminano il nome comunità **Pubblico** dai propri dispositivi come misura di sicurezza.  
-
-8.  Per configurare il numero massimo di hop router utilizzabili dalle ricerche SNMP, scegliere la scheda **SNMP** e quindi selezionare il numero di hop nell'elenco a discesa **Hop massimi**.  
-
-9. Per configurare un dispositivo SNMP, scegliere la scheda **Dispositivi SNMP**. Se il dispositivo non compare in elenco, scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuovo dispositivo SNMP** specificare l'indirizzo IP o il nome dispositivo del dispositivo SNMP e quindi scegliere **OK**.  
+4.  **[スケジュール]** タブで、**[新規]** アイコン ![[新規] アイコン](media/Disc_new_Icon.gif) をクリックして、ネットワーク探索の実行スケジュールを設定します。  
 
     > [!NOTE]  
-    >  Se si specifica un nome dispositivo, Configuration Manager deve essere in grado di risolvere il nome NetBIOS in un indirizzo IP.  
+    >  複数の探索構成を、ネットワーク探索のスケジュールを分けるように割り当てることはできません。 ネットワーク探索の実行時は毎回、現在の探索構成が使用されます。  
 
-10. Per configurare l'individuazione in modo da eseguire una query su specifici server DHCP per i client DHCP, scegliere la scheda **DHCP** e quindi configurare una o più delle opzioni seguenti:  
+5.  **[OK]** をクリックして構成を受け入れます。 ネットワーク探索が、スケジュールされた時刻に実行されます。  
 
-    -   Per eseguire la query sul server DHCP nel computer che esegue l'individuazione, selezionare la casella **Utilizza sempre il server DHCP del server del sito**.  
+##### <a name="to-configure-network-discovery"></a>ネットワーク探索を構成するには  
+
+1.  Configuration Manager コンソールで **[管理]** > **[階層の構成]** を選択し、**[探索方法]** をクリックします。  
+
+2.  ネットワーク探索を実行するサイトに対して **[ネットワーク探索]** を選択します。  
+
+3.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
+
+4.  **[全般]** タブで、**[ネットワーク探索を有効にする]** チェック ボックスをオンにし、**[探索の種類]** オプションから、実行する探索の種類を選択します。  
+
+5.  サブネットを検索するための探索を構成するには、**[サブネット]** タブをクリックし、次のオプションを 1 つ以上構成します。  
+
+    -   探索を実行するコンピューターのローカルのサブネットで探索を実行するには、**[ローカル サブネットを検索する]** チェック ボックスをオンにします。  
+
+    -   特定のサブネットを検索するには、サブネットが **[検索するサブネット]** に表示され、**[検索]** の値が **[有効]** になっていることを確認します。  
+
+        1.  サブネットが表示されていない場合、**[新規]** アイコン![[新規] アイコン](media/Disc_new_Icon.gif)をクリックします。 **[新しいサブネットの割り当て]** ダイアログ ボックスに、**[サブネット]** と **[マスク]** の情報を入力して、**[OK]** をクリックします。 既定では、新しいサブネットの検索が有効になります。  
+
+        2.  表示されたサブネットの **[検索]** 値を変更するには、サブネットを選択して、**[切り替え]** アイコンをクリックし、**[無効]** と **[有効]** の値を切り替えます。  
+
+6.  ドメインを検索するための探索を構成するには、**[ドメイン]** タブをクリックし、次のオプションを 1 つ以上構成します。  
+
+    -   探索を実行するコンピューターのドメインで探索を実行するには、**[ローカル サブネットを検索する]** チェック ボックスをオンにします。  
+
+    -   特定のドメインを検索するには、ドメインが **[ドメイン]** に表示され、**[検索]** の値が **[有効]** になっていることを確認します。  
+
+        1.  ドメインが表示されていない場合、**[新規]** アイコン ![[新規] アイコン](media/Disc_new_Icon.gif) をクリックします。 **[ドメインのプロパティ]** ダイアログ ボックスで、**ドメイン**の情報を入力し、**[OK]** をクリックします。 既定では、新しいドメインの検索が有効になります。  
+
+        2.  表示されたドメインの **[検索]** 値を変更するには、ドメインを選択して、**[切り替え]** アイコンをクリックし、**[無効]** と **[有効]** の値を切り替えます。  
+
+7.  SNMP デバイスの特定の SNMP コミュニティ名を検索する探索を構成するには、**[SNMP]** タブをクリックし、次のオプションの 1 つ以上を構成します。  
+
+    -   **[SNMP コミュニティ名]** の一覧に SNMP コミュニティ名を追加するには、**[新規]** アイコン ![[新規] アイコン](media/Disc_new_Icon.gif) をクリックします。 検索するコミュニティの名前を **［新しい SNMP コミュニティ名］** ダイアログ ボックスで、SNMP コミュニティの**名前**を指定し、**［OK］** をクリックします。  
+
+    -   SNMP コミュニティ名を削除するには、コミュニティ名を選択して、**[削除]** アイコン ![[削除] アイコン](media/Disc_delete_Icon.gif) をクリックします。  
+
+    -   SNMP コミュニティ名の検索順序を調整するには、コミュニティ名を選択して、**[項目を上に移動]** アイコン ![[項目を上に移動] アイコン](media/Disc_moveUp_Icon.gif) または **[項目を下に移動]** アイコン ![[項目を下に移動] アイコン](media/Disc_moveDown_Icon.gif) をクリックします。 探索の実行時に、上から下の順番でコミュニティ名が検索されます。 次の点に配慮してください。
 
         > [!NOTE]  
-        >  Per utilizzare questa opzione, il server deve eseguire il lease dell'indirizzo IP da un server DHCP e non utilizzare un indirizzo IP statico.  
+        >  ネットワーク探索は、SNMP コミュニティ名を使用して、SNMP デバイスになっているルーターへのアクセスを取得します。 ルーターは、最初のルーターにリンクされている他のルーターやサブネットに関するネットワーク探索を通知できます。  
 
-    -   Per eseguire la query su un server DHCP specifico, scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuovo server DHCP** specificare l'indirizzo IP o il nome server del server DHCP e quindi scegliere **OK**.  
+        -   SNMP コミュニティ名は、パスワードのようなものです。  
 
-        > [!NOTE]  
-        >  Se si specifica un nome server, Configuration Manager deve essere in grado di risolvere il nome NetBIOS in un indirizzo IP.  
+        -   ネットワーク探索では、コミュニティ名を指定された SNMP デバイスからのみ情報を取得できます。  
 
-11. Per configurare l'orario di esecuzione dell'individuazione, scegliere la scheda **Pianificazione** e quindi scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per impostare una pianificazione per l'esecuzione dell'individuazione di rete.  
+        -   各 SNMP デバイスは独自のコミュニティ名を持つことができますが、多くの場合は複数のデバイスで同じコミュニティ名が共有されます。  
 
-     È possibile configurare più pianificazioni ricorrenti e più pianificazioni che non hanno ricorrenza.  
+        -   ほとんどの SNMP デバイスは、既定の **Public** というコミュニティ名を使用します。 コミュニティ名がわからない場合は、この名前を使用できます。 ただし、セキュリティ上の理由から、デバイスから "public" というコミュニティ名を削除している組織もあります。 ****  
+
+8.  SNMP 検索で使用するルーター ホップの最大数を構成するには、**[SNMP]** タブを選択し、**[最大ホップ数]** ドロップダウン リストからホップの数を選択します。  
+
+9. SNMP デバイスを構成するのには **[SNMP デバイス]** タブを選択します。 デバイスが表示されていない場合、**[新規]** アイコン ![[新規] アイコン](media/Disc_new_Icon.gif) をクリックします。 **[新しい SNMP デバイス]** ダイアログ ボックスで、SNMP デバイスの IP アドレスまたはデバイス名を指定し、**[OK]** をクリックします。  
 
     > [!NOTE]  
-    >  Se vengono visualizzate più pianificazioni contemporaneamente nella scheda **Pianificazione**, tutte le pianificazioni porteranno a un'esecuzione dell'individuazione di rete come configurata nell'orario indicato nella pianificazione. Questo vale anche per le pianificazioni ricorrenti.  
+    >  デバイス名を指定する場合、Configuration Manager が NetBIOS 名を IP アドレスに解決できる必要があります。  
 
-12. Scegliere **OK** per salvare le configurazioni.  
+10. DHCP クライアント用に特定の DHCP サーバーを照会するための探索を構成するには、**[DHCP]** タブを選択し、次のオプションを 1 つ以上構成します。  
 
-###  <a name="BKMK_HowToVerifyNetDisc"></a> Come verificare il completamento dell'individuazione di rete  
- Il tempo necessario per il completamento dell'individuazione di rete può variare in base a diversi fattori. Questi fattori possono includere uno o più dei seguenti elementi:  
+    -   探索を実行しているコンピューターで DHCP サーバーを照会するには、**[サイト サーバーの DHCP サーバーを常に使用する]** チェック ボックスをオンにします。  
 
--   La dimensione della rete  
+        > [!NOTE]  
+        >  このオプションを使用するには、サーバーが DHCP サーバーから IP アドレスをリースしている必要があります。また、静的 IP アドレスは使用できません。  
 
--   La topologia della rete  
+    -   特定の DHCP サーバーを照会するには、**[新規]** アイコン ![[新規] アイコン](media/Disc_new_Icon.gif) をクリックします。 **[新しい DHCP サーバー]** ダイアログ ボックスで DHCP サーバーの IP アドレスまたはサーバー名を指定し、**[OK]** をクリックします。  
 
--   Il numero massimo di hop configurati per trovare router nella rete  
+        > [!NOTE]  
+        >  サーバー名を指定する場合、Configuration Manager が NetBIOS 名を IP アドレスに解決できる必要があります。  
 
--   Il tipo di individuazione che viene eseguita  
+11. 探索の実行スケジュールを構成するには、**[スケジュール]** タブを選択し、**[新規]** アイコン ![[新規] アイコン](media/Disc_new_Icon.gif) をクリックして、ネットワーク探索の実行スケジュールを設定します。  
 
-Poiché l'individuazione di rete non crea messaggi per avvisare l'utente quando termina l'individuazione stessa, è possibile utilizzare la seguente procedura per verificarne il completamento.  
+     複数の定期スケジュールや、繰り返しパターンのない複数のスケジュールなど、複数のスケジュールを構成できます。  
 
-##### <a name="to-verify-that-network-discovery-has-finished"></a>Per verificare che l'individuazione di rete è terminata  
+    > [!NOTE]  
+    >  複数のスケジュールが **[スケジュール]** タブで同じ時刻に表示される場合、すべてのスケジュールで、スケジュールに示されている時刻で構成されているとおりにネットワーク探索が実行されます。 これは定期スケジュールにも当てはまります。  
 
-1.  Nella console di Configuration Manager scegliere **Monitoraggio**.  
+12. **[OK]** をクリックして構成を保存します。  
 
-2.  Nell'area di lavoro **Monitoraggio** espandere **Stato del sistema** e quindi scegliere **Query messaggi di stato**.  
+###  <a name="BKMK_HowToVerifyNetDisc"></a> ネットワーク探索の終了を確認する方法  
+ ネットワーク検索が完了するのに必要な時間は、さまざまな要因によって異なります。 この要因としては、次のうちのいずれかまたは複数が該当する可能性があります。  
 
-3.  Scegliere **Tutti i messaggi di stato**.  
+-   ネットワークの規模  
 
-4.  Nel gruppo **Query messaggi di stato** della scheda **Home** scegliere **Mostra messaggi**.  
+-   ネットワークのトポロジー  
 
-5.  Nell'elenco a discesa **Seleziona data e ora** selezionare un valore che includa il tempo trascorso dall'inizio dell'individuazione e infine scegliere **OK** per aprire il **Visualizzatore messaggi di stato di Configuration Manager**.  
+-   ネットワーク上のルーターを検出するように構成されているホップの最大数  
+
+-   実行される探索の種類  
+
+ネットワーク探索では、探索が終了したことを通知するメッセージが作成されません。探索が終了したことを確認するには、次の手順に従います。  
+
+##### <a name="to-verify-that-network-discovery-has-finished"></a>ネットワーク探索の終了を確認するには  
+
+1.  Configuration Manager コンソールで、**[監視]** をクリックします。  
+
+2.  **[監視]** ワークスペースで、**[システムのステータス]** を展開してから、**[ステータス メッセージ クエリ]** を選択します。  
+
+3.  **[すべてのステータス メッセージ]** を選択します。  
+
+4.  **[ホーム]** タブの **[ステータス メッセージ クエリ]** グループで、**[メッセージを表示する]** を選択します。  
+
+5.  **[日時の選択]** ドロップダウン リストを選択し、探索が開始した日時を含む値を選択してから **[OK]** をクリックして、**[Configuration Manager ステータス メッセージ ビューアー]** を開きます。  
 
     > [!TIP]  
-    >  È possibile utilizzare anche l'opzione **Specifica data e ora** per selezionare una data e un'ora specifici per l'esecuzione dell'individuazione. Questa opzione è utile quando si esegue l'individuazione della rete in una determinata data e si desidera recuperare i messaggi solo da tale data.  
+    >  [日時の選択] オプションを使用して、探索を実行した日時を指定することもできます。 **** このオプションは、指定した日にネットワーク探索を実行し、その日のメッセージのみを取得したい場合に便利です。  
 
-6.  Per convalidare il termine dell'individuazione della rete, cercare un messaggio di stato con i seguenti dettagli:  
+6.  ネットワーク探索が終了したことを確認するには、次の情報が含まれたステータス メッセージを検索します。  
 
-    -   ID messaggio: **502**  
+    -   メッセージ ID : **502**  
 
-    -   Componente: **SMS_NETWORK_DISCOVERY**  
+    -   コンポーネント : **SMS_NETWORK_DISCOVERY**  
 
-    -   Descrizione: **Il componente è stato interrotto**  
+    -   説明: **このコンポーネントは停止しました。**  
 
-    Se questo messaggio di stato non è presente, l'individuazione della rete non è stata completata.  
+    このステータス メッセージが表示されない場合は、ネットワーク探索は終了していません。  
 
-7.  Per convalidare l'avvio dell'individuazione della rete, cercare un messaggio di stato con i seguenti dettagli:  
+7.  ネットワーク探索が開始したことを確認するには、次の情報が含まれたステータス メッセージを検索します。  
 
-    -   ID messaggio: **500**  
+    -   メッセージ ID : **500**  
 
-    -   Componente: **SMS_NETWORK_DISCOVERY**  
+    -   コンポーネント : **SMS_NETWORK_DISCOVERY**  
 
-    -   Descrizione: **Il componente è stato avviato**  
+    -   説明: **このコンポーネントが開始しました。**  
 
-    Queste informazioni verificano l'avvio dell'individuazione della rete. Se queste informazioni non sono presenti, ripianificare l'individuazione della rete.  
-
+    この情報は、ネットワーク探索が開始したことを確認するものです。 この情報が表示されない場合は、ネットワーク探索のスケジュールを変更します。  

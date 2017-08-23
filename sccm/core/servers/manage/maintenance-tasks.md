@@ -1,144 +1,141 @@
 ---
-title: "Attività di manutenzione | Microsoft Docs"
-description: "Individuare le attività di manutenzione da eseguire per i siti e le gerarchie di Configuration Manager e il momento adatto in cui eseguirle."
+title: "メンテナンス タスク | Microsoft Docs"
+description: "Configuration Manager のサイトおよび階層に対して実行するメンテナンス タスクと実行のタイミングについて説明します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 625bb787-6d16-47a0-8b0f-b129cd909ca3
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3b56e84cbe9785e280fb02ede6644a8ed2769586
 ms.openlocfilehash: 90b6e4434abc5573a364c769bd835e08e5dff16d
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="maintenance-tasks-for-system-center-configuration-manager"></a>Attività di manutenzione per System Center Configuration Manager
+# <a name="maintenance-tasks-for-system-center-configuration-manager"></a>System Center Configuration Manager のメンテナンス タスク
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-I siti e le gerarchie di System Center Configuration Manager richiedono manutenzione e monitoraggio regolari per offrire servizi in modo efficace e continuativo. Una regolare manutenzione garantisce che l'hardware, il software e il database di Configuration Manager continuino a funzionare in modo corretto ed efficace. Delle prestazioni ottimali riducono notevolmente il rischio di errore.  
+System Center Configuration Manager のサイトと階層で、サービスを効率よく継続して利用できるようにするには、定期的なメンテナンスと監視が必要です。 定期的なメンテナンスにより、ハードウェア、ソフトウェア、および Configuration Manager データベースを継続して正しく効率的に機能させることができます。 パフォーマンスを最適にすると、エラーのリスクが大きく減少します。  
 
- Per impostare gli avvisi e usare il sistema di stato per monitorare l'integrità di Configuration Manager, vedere [Usare gli avvisi e il sistema di stato per System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+ アラートを設定し、さらにステータス システムを使用して Configuration Manager のステータス システムの正常性を監視するには、「[System Center Configuration Manager のアラートとステータス システムの使用](../../../core/servers/manage/use-alerts-and-the-status-system.md)」を参照してください。  
 
--   [Attività di manutenzione](#bkmk_MTs)  
+-   [メンテナンス タスク](#bkmk_MTs)  
 
-##  <a name="bkmk_MTs"></a> Attività di manutenzione  
- Una regolare manutenzione è importante per garantire il corretto funzionamento del sito. Conservare un registro di manutenzione per documentare le date della manutenzione, le persone che l'hanno effettuata ed eventuali commenti relativi alle attività svolte.  
+##  <a name="bkmk_MTs"></a> メンテナンス タスク  
+ サイトが適切に動作するには、定期的なメンテナンスが重要です。 メンテナンス ログとして、メンテナンスの日付、実行者、およびタスクのメンテナンスに関連するコメントを記録するようにしてください。  
 
-### <a name="when-to-do-common-maintenance-tasks"></a>Quando svolgere attività comuni di manutenzione  
- È consigliabile effettuare la manutenzione del sito ogni giorno o una volta alla settimana. Alcune attività possono richiedere una pianificazione diversa. La manutenzione normale può includere sia attività di manutenzione incorporate che altre attività, ad esempio la manutenzione dell'account per mantenere la conformità con i criteri aziendali.  
+### <a name="when-to-do-common-maintenance-tasks"></a>一般的なメンテナンス タスクを実行するタイミング  
+ サイトのメンテナンスを行うには、毎日または毎週のメンテナンスを検討します。 一部のタスクでは、別のスケジュールを必要とする場合があります。 一般的なメンテナンスには、組み込みのメンテナンス タスク、およびその他のタスク (会社のポリシーへのコンプライアンス対応を維持するためのアカウント メンテナンスなど) が含まれます。  
 
- Usare le seguenti informazioni come guida per pianificare l'esecuzione di diverse attività di manutenzione. Usare questi elenchi come punto di partenza e aggiungere eventuali attività necessarie.  
+ 次の情報をガイドとして使用し、各種のメンテナンス タスクを実行するタイミングを計画します。 これらの一覧を出発点として使用し、必要なタスクを追加します。  
 
-**Attività quotidiane**   
-Di seguito sono riportate le attività di manutenzione che si consiglia di svolgere ogni giorno:  
+**毎日行うタスク**   
+毎日のスケジュールで実行することを検討できるメンテナンス タスクを次に示します。  
 
--   Verificare se le attività di manutenzione predefinite pianificate per l'esecuzione giornaliera vengono eseguite correttamente.  
+-   毎日実行するようにスケジュールされた事前定義のメンテナンス タスクが、正常に実行されていることを確認します。  
 
--   Controllare lo stato del database di Configuration Manager.  
+-   Configuration Manager データベースのステータスを確認します。  
 
--   Controllare lo stato del server del sito.  
+-   サイト サーバーのステータスを確認します。  
 
--   Verificare la presenza di backlog di file nelle cartelle della posta in arrivo del sistema del sito di Configuration Manager.  
+-   Configuration Manager サイト システムの受信トレイにファイル バックログがないか確認します。  
 
--   Controllare lo stato del sistema del sito.  
+-   サイト システムのステータスを確認します。  
 
--   Controllare i registri eventi del sistema operativo nei sistemi del sito.  
+-   サイト システムに記録されたオペレーティング システムのイベント ログを確認します。  
 
--   Controllare il registro degli errori di SQL Server sul computer del database del sito.  
+-   サイト データベース コンピューターの SQL Server のエラー ログを確認します。  
 
--   Controllare le prestazioni del sistema.  
+-   システムのパフォーマンスを確認します。  
 
--   Controllare gli avvisi di Configuration Manager.  
+-   Configuration Manager のアラートを確認します。  
 
-**Attività settimanali**   
-Di seguito sono riportate le attività di manutenzione che si consiglia di svolgere ogni settimana:  
+**毎週行うタスク**   
+毎週のスケジュールで実行することを検討できるメンテナンス タスクを次に示します。  
 
--   Verificare se le attività di manutenzione predefinite pianificate per l'esecuzione settimanale vengono eseguite correttamente.  
+-   毎週実行するようにスケジュールされた事前定義のメンテナンス タスクが、正常に実行されていることを確認します。  
 
--   Eliminare i file non necessari dai sistemi del sito.  
+-   サイト システムから不要なファイルを削除する。  
 
--   Produrre e distribuire i report per l'utente finale se necessario.  
+-   必要に応じてエンドユーザー レポートを作成および配布する。  
 
--   Eseguire il backup dei registri eventi di sistema, sicurezza e applicazione e cancellarli.  
+-   アプリケーション、セキュリティおよびシステム イベント ログのバックアップを取って消去する。  
 
--   Controllare le dimensioni del database del sito e verificare che sul server di database del sito sia disponibile spazio su disco sufficiente, in modo che il database del sito possa aumentare.  
+-   サイト データベースのサイズを確認し、サイト データベースの拡張に十分なディスク空き容量がサイト データベース サーバーにあることを確認する。  
 
--   Eseguire la manutenzione del database di SQL Server nel database del sito in base al piano di manutenzione di SQL Server.  
+-   SQL Server のメンテナンス プランに従い、サイト データベースで SQL Server データベースのメンテナンスを実行する。  
 
--   Controllare lo spazio disponibile su disco in tutti i sistemi del sito.  
+-   すべてのサイト システムの空きディスク容量を確認する。  
 
--   Eseguire l'utilità di deframmentazione disco in tutti i sistemi del sito.  
+-   すべてのサイト システムでディスク最適化ツールを実行する。  
 
-**Attività periodiche**   
-Alcune attività che non richiedono la manutenzione giornaliera o settimanale sono importanti per garantire l'integrità del sito. Queste attività verificano inoltre che i piani di ripristino di emergenza e sicurezza siano aggiornati. Di seguito sono riportate le attività di manutenzione per cui si consiglia una pianificazione più periodica rispetto alle attività giornaliere o settimanali:  
+**定期的なタスク**   
+毎日または毎週のメンテナンスを必要としない一部のタスクは、サイト全体の正常性を確認するために重要です。 これらのタスクは、セキュリティおよびディザスター リカバリー計画が最新であることも確認します。 毎日または毎週行うタスクより長い定期的なスケジュールを検討できるメンテナンス タスクを次に示します。  
 
--   cambiare gli account e le password, se necessario, secondo il piano di sicurezza.  
+-   セキュリティ計画に従い、アカウントおよびパスワードを必要に応じて変更します。  
 
--   Rivedere il piano di manutenzione per verificare che le attività di manutenzione pianificate siano programmate in modo corretto ed efficiente in base alle impostazioni del sito configurate.  
+-   メンテナンス計画を見直し、構成したサイト設定に従って、スケジュールしたメンテナンス タスクが適切かつ効果的にスケジュールされていることを確認します。  
 
--   Esaminare la struttura della gerarchia di Configuration Manager per verificare se sono necessarie modifiche.  
+-   Configuration Manager 階層設計の変更の必要性を検討します。  
 
--   Controllare le prestazioni della rete per verificare che non siano state apportate modifiche che influiscono sulle operazioni del sito.  
+-   ネットワーク パフォーマンスを確認し、サイトの動作に影響する変更が行われていないことを確認します。  
 
--   Verificare che le impostazioni di Active Directory che interessano le operazioni del sito non siano state modificate. Verificare ad esempio che le subnet assegnate ai siti di Active Directory e usate come limiti per il sito di Configuration Manager non siano state modificate.  
+-   サイトの動作に影響する Active Directory 設定が変更されていないことを確認します。 たとえば、Configuration Manager サイトの境界として使用する Active Directory サイトに割り当てられているサブネットが変更されていないことを確認します。  
 
--   Rivedere il piano di ripristino di emergenza per eventuali modifiche necessarie.  
+-   ディザスター リカバリー計画を変更する必要性を検討します。  
 
--   Eseguire un ripristino del sito in base al piano di ripristino di emergenza in un lab di test usando una copia di backup del backup più recente creato dall'attività di manutenzione Backup server sito.
+-   サイト サーバーのバックアップ メンテナンス タスクによって作成された最新のバックアップのバックアップ コピーを使用し、ディザスター リカバリー計画に従ってテスト ラボでサイト回復を実行します。
 
--   Controllare l'hardware per eventuali errori o per aggiornamenti hardware disponibili.  
+-   ハードウェアのエラー、または使用可能なハードウェア更新を確認します。  
 
--   Controllare l'integrità generale del sito.  
+-   サイトの全体的な正常性を確認します。  
 
-###  <a name="BKMK_UseMTs"></a> Mantenere l'integrità operativa del database del sito  
- Mentre il sito e la gerarchia di Configuration Manager eseguono le attività pianificate e configurate, i componenti del sito aggiungono continuamente dati al database di Configuration Manager. Man mano che la quantità di dati aumenta, le prestazioni del database e lo spazio libero di archiviazione nel database diminuiscono. È possibile impostare le attività di manutenzione del sito in modo da rimuovere dati obsoleti che non sono più necessari.  
+###  <a name="BKMK_UseMTs"></a> サイト データベースの動作の正常性を維持する  
+ スケジュールして設定したタスクが Configuration Manager サイトおよび階層で実行されるたびに、サイト コンポーネントによって Configuration Manager データベースにデータが絶えず追加されます。 データ量が増加するに従って、データベースのパフォーマンスが低下し、データベース内の空き領域が減少します。 必要なくなった古いデータを削除するようにサイト メンテナンス タスクを設定できます。  
 
- Configuration Manager include attività di manutenzione predefinite che è possibile usare per mantenere l'integrità del database di Configuration Manager. Per impostazione predefinita, non tutte le attività di manutenzione sono disponibili in ogni sito. Diverse attività sono abilitate e altre non lo sono e tutte supportano una pianificazione che può essere impostata dall'utente.  
+ Configuration Manager では、Configuration Manager データベースの正常性を維持するために使用できる定義済みのメンテナンス タスクが用意されています。 既定で、各サイトですべてのメンテナンス タスクを使用できるとは限りません。 有効にされているタスクとされていないタスクがあり、タスクは設定可能なスケジュールをすべてサポートします。  
 
- La maggior parte delle attività di manutenzione rimuovono i dati non aggiornati dal database di Configuration Manager. La riduzione delle dimensioni del database attraverso la rimozione di dati non necessari migliora le prestazioni e l'integrità del database stesso, aumentando al contempo l'efficienza del sito e della gerarchia. Altre attività, ad esempio **Ricompila indici**, consentono di mantenere l'efficienza del database. Altre attività, ad esempio **Backup server sito**, consentono di preparare il ripristino di emergenza.  
+ ほとんどのメンテナンス タスクは、古くなったデータを Configuration Manager データベースから定期的に削除します。 不要なデータを削除してデータベースのサイズを小さくすると、データベースのパフォーマンスと整合性が向上し、サイトおよび階層の効率も向上します。 **インデックスの再構築**などのその他のタスクは、データベースの効率性を維持するために役立ちます。 
+            **サイト サーバーのバックアップ** タスクなどのその他のタスクは、ディザスター リカバリーの準備に役立ちます。  
 
 > [!IMPORTANT]  
->  Quando si pianifica la pianificazione di qualsiasi attività che elimina dati, tenere in considerazione l'utilizzo di quei dati nella gerarchia. Quando un'attività che elimina dati viene eseguita su un sito, le informazioni vengono rimosse dal database di Configuration Manager e questa modifica viene replicata su tutti i siti nella gerarchia. Questo ritardo può influire sulle altre attività che si basano su quei dati. Ad esempio, nel sito di amministrazione centrale è possibile impostare l'attività di individuazione in modo che venga eseguita una volta al mese per identificare i computer non client. Si prevede di installare il client di Configuration Manager in questi computer entro due settimane dall'individuazione degli stessi. Tuttavia, in un sito della gerarchia un amministratore imposta l'attività Elimina dati di individuazione obsoleti in modo che sia eseguita ogni sette giorni. Il risultato è che sette giorni dopo l'individuazione dei computer non client, questi vengono eliminati dal database di Configuration Manager. Tornare al sito di amministrazione centrale, preparare l'installazione push del client di Configuration Manager in questi nuovi computer il giorno 10. Tuttavia, poiché l'attività Elimina dati di individuazione obsoleti è stata eseguita di recente e ha eliminato i dati vecchi di sette giorni o più, i computer individuati di recente non sono più disponibili nel database.  
+>  データを削除するタスクのスケジュールを計画する場合は、階層全体でのそのデータの使用方法を考慮してください。 データを削除するタスクがサイトで実行されると、その情報は Configuration Manager データベースから削除され、この変更が階層内のすべてのサイトにレプリケートされます。 この削除は、そのデータに依存するその他のタスクに影響する場合があります。 たとえば、中央管理サイトで、探索を 1 か月あたり 1 回実行するように設定して、クライアント以外のコンピューターを特定できます。 探索の 2 週間以内に、これらのコンピューターに Configuration Manager クライアントをインストールするように計画します。 ただし、階層の 1 つのサイトで、管理者は、期限切れの探索データの削除タスクを 7 日ごとに実行するように設定します。 その結果として、クライアント以外のコンピューターの検出の 7 日後に、それらが Configuration Manager データベースから削除されます。 中央管理サイトでは、これらの新しいコンピューターに対して Configuration Manager クライアントを 10 日後にプッシュ インストールするように準備しています。 ただし、期限切れの探索データの削除タスクが最近実行され、7 日以上経過しているデータが削除されたため、最近発見されたコンピューターはデータベース内に存在しなくなっています。  
 
-Dopo l'installazione di un sito di Configuration Manager, rivedere le attività di manutenzione disponibili e abilitare quelle richieste dalle operazioni. Rivedere la pianificazione predefinita di ogni attività e, quando necessario, impostare la pianificazione per definire l'attività di manutenzione in base alla gerarchia e all'ambiente. Anche se la pianificazione predefinita di ogni attività deve adattarsi alla maggior parte degli ambienti, monitorare le prestazioni dei siti e del database e prevedere l'ottimizzazione delle attività per aumentare l'efficienza della distribuzione. Pianificare la revisione periodica delle prestazioni del sito e del database e riconfigurare le attività di manutenzione e le relative pianificazioni per mantenere tale efficienza.  
+Configuration Manager サイトをインストールしたら、利用可能なメンテナンス タスクを確認し、操作に必要なタスクを有効にします。 各タスクの既定のスケジュールを確認し、必要な場合は、メンテナンス タスクを微調整し、階層および環境に適合するようにスケジュールを設定します。 各タスクの既定のスケジュールはほとんどの環境に適合しますが、サイトおよびデータベースのパフォーマンスを監視して、展開の効率性が向上するようにタスクを微調整することを考慮してください。 サイトおよびデータベースのパフォーマンスを定期的に確認して、メンテナンス タスクおよびそのスケジュールの効率性が維持されるように再構成することを計画します。  
 
-#### <a name="set-up-maintenance-tasks"></a>Impostare le attività di manutenzione  
- Ogni sito di Configuration Manager supporta attività di manutenzione che consentono di gestire l'efficienza operativa del database del sito. Per impostazione predefinita, alcune attività di manutenzione sono abilitate in ogni sito e tutte le attività supportano pianificazioni indipendenti. Le attività di manutenzione vengono impostate singolarmente per ogni sito e sono valide per il database in tale sito. Tuttavia, alcune attività, ad esempio **Elimina dati di individuazione obsoleti**, influiscono sulle informazioni disponibili in tutti i siti di una gerarchia.  
+#### <a name="set-up-maintenance-tasks"></a>メンテナンス タスクの設定  
+ 各 Configuration Manager サイトは、サイト データベースの運用効率を維持するためのメンテナンス タスクをサポートします。 既定では、各サイトでいくつかのメンテナンス タスクが有効に設定され、タスクはすべて個別のスケジュールをサポートします。 メンテナンス タスクは、サイトごとに個別に設定し、そのサイトのデータベースに適用されます。 ただし、**期限切れの探索データの削除**などの一部のタスクは、ある階層のすべてのサイトで使用できる情報に影響します。  
 
- Solo le attività di manutenzione che è possibile impostare in un sito vengono visualizzate nella console di Configuration Manager. Per un elenco completo delle attività di manutenzione di ogni tipo di sito, vedere [Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md).  
+ サイトで設定可能なメンテナンス タスクのみが Configuration Manager コンソールに表示されます。 サイトの種類別のメンテナンス タスクの完全な一覧については、「[System Center Configuration Manager のメンテナンス タスクのリファレンス](../../../core/servers/manage/reference-for-maintenance-tasks.md)」を参照してください。  
 
- Usare la procedura seguente per specificare le impostazioni comuni delle attività di manutenzione.  
+ メンテナンス タスクの一般的な設定を行う際に、次のトピックを参考にしてください。  
 
-###### <a name="to-set-up-maintenance-tasks-for-configuration-manager"></a>Per impostare le attività di manutenzione per Configuration Manager  
+###### <a name="to-set-up-maintenance-tasks-for-configuration-manager"></a>Configuration Manager のメンテナンス タスクを設定するには  
 
-1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Configurazione del sito** >**Siti**.  
+1.  Configuration Manager コンソールで、**[管理]** > **[サイトの構成]** >**[サイト]** の順に移動します。  
 
-2.  Scegliere il sito che contiene l'attività di manutenzione da impostare.  
+2.  設定するメンテナンス タスクがあるサイトを選択します。  
 
-3.  Nel gruppo **Impostazioni** della scheda **Home** scegliere **Manutenzione del sito** e quindi selezionare l'attività di manutenzione da impostare.  
+3.  [**ホーム**] タブの [**設定**] グループで、[**サイトのメンテナンス**] をクリックして設定するメンテナンス タスクを選択します。  
 
     > [!TIP]  
-    >  Vengono visualizzate solo le attività disponibili nel sito selezionato.  
+    >  選択したサイトで利用可能なタスクのみが表示されます。  
 
-4.  Per impostare l'attività, scegliere **Modifica**, verificare che la casella di controllo **Abilita questa attività** sia selezionata e impostare una pianificazione per l'esecuzione dell'attività. Se l'attività elimina anche i dati obsoleti, impostare il periodo di validità dei dati che verranno eliminati dal database quando viene eseguita l'attività. Scegliere **OK** per chiudere le **Proprietà** dell'attività.  
+4.  タスクを設定するには、[**編集**] をクリックして[**このタスクを有効にする**] チェック ボックスがオンになっていることを確認し、タスク実行時のスケジュールを設定します。 このタスクで期限切れのデータも削除する場合は、タスク実行時にデータベースから削除するデータの期限も設定します。 [**OK**] をクリックしてタスクの [**プロパティ**] を閉じます。  
 
     > [!NOTE]  
-    >  Per **Elimina messaggi di stato obsoleti**, impostare il periodo di validità dei dati da eliminare quando si configurano le regole di filtro dello stato.  
+    >  [**期限切れのステータス メッセージの削除**] では、ステータス フィルター規則の設定時に削除するデータの期限を設定します。  
 
-5.  Per abilitare o disabilitare l'attività senza modificarne le proprietà, scegliere il pulsante **Abilita** o **Disabilita**. Il pulsante etichetta cambia a seconda della configurazione corrente dell'attività.  
+5.  タスクのプロパティを編集せずにタスクを有効または無効にする場合は、[**有効にする**] または [**無効にする**] ボタンをクリックします。 現在のタスクの構成に応じてボタンのラベルが変更されます。  
 
-6.  Dopo aver configurato le attività di manutenzione, scegliere **OK** per terminare la procedura.
-
+6.  メンテナンス タスクの構成が完了したら、[**OK**] をクリックして手順を完了します。

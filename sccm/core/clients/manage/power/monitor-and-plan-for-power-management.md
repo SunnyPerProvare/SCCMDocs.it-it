@@ -1,632 +1,625 @@
 ---
-title: Monitorare e pianificare il risparmio energia | Microsoft Docs
-description: Informazioni su come monitorare e pianificare il risparmio energia in System Center Configuration Manager.
+title: "電源管理の監視と計画 | Microsoft Docs"
+description: "System Center Configuration Manager で電源管理を監視して計画する方法を説明します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 507bf676-2679-4e4d-8831-3ffc9cf8557e
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
 ms.openlocfilehash: b308329635400438cebc4935efe79b46e607fd58
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-monitor-and-plan-for-power-management-in-system-center-configuration-manager"></a>Come monitorare e pianificare il risparmio energia in System Center Configuration Manager
+# <a name="how-to-monitor-and-plan-for-power-management-in-system-center-configuration-manager"></a>System Center Configuration Manager で電源管理を監視して計画する方法
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Informazioni su come monitorare e pianificare il risparmio energia in System Center Configuration Manager.  
+System Center Configuration Manager での電源管理の監視および計画に関して説明します。  
 
-##  <a name="a-namebkmkhowtousereportsa-how-to-use-reports-for-power-management"></a><a name="BKMK_How_to_use_reports"></a> Come usare i report per il risparmio energia  
- La funzionalità di risparmio energia in Configuration Manager include diversi report per agevolare l'analisi dei consumi e delle impostazioni di risparmio energia per i computer nell'organizzazione. I report possono anche essere usati per facilitare la risoluzione dei problemi.  
+##  <a name="BKMK_How_to_use_reports"></a> 電源管理のレポートを使用する方法  
+ Configuration Manager の電源管理には、組織における電力消費量やコンピューターの電源設定を分析するのに役立つ複数のレポート機能が含まれています。 これらのレポートは、問題をトラブルシューティングするのにも利用できます。  
 
- Prima di poter usare i report di risparmio energia, è necessario configurare i report per la gerarchia. Per altre informazioni sulla creazione dei report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
+ 電源管理レポートを使用する前に、使用する階層用にレポートを構成する必要があります。 Configuration Manager でのレポートに関して詳しくは、「[System Center Configuration Manager のレポート](../../../../core/servers/manage/reporting.md)」を参照してください。  
 
 > [!NOTE]  
->  Le informazioni relative al risparmio energia usate per i report giornalieri vengono conservate nel database del sito di Configuration Manager per 31 giorni.  
->           Le informazioni relative al risparmio energia usate per i report mensili vengono conservate nel database del sito di Configuration Manager per 13 mesi.  
+>  日次レポートで使用される電源管理情報は、Configuration Manager サイト データベースに 31 日間保持されます。  
+>           月次レポートで使用される電源管理情報は、Configuration Manager サイト データベースに 13 か月間保持されます。  
 >   
->  Quando si creano report durante le fasi di monitoraggio e pianificazione e di verifica della conformità per il risparmio energia, è necessario salvare o esportare i risultati dei report di cui si vuole conservare i dati per confronti successivi, nel caso vengano in seguito rimossi da Configuration Manager.  
+>  電源管理の監視、計画、コンプライアンス対応評価の段階でレポートを実行する場合、後日 Configuration Manager によってこれらのレポートが削除された場合にもデータを比較できるよう、すべてのレポートの結果を保存またはエクスポートしておくことをお勧めします。  
 
-## <a name="list-of-power-management-reports"></a>Elenco dei report di risparmio energia  
- L'elenco seguente include informazioni dettagliate sui report di risparmio energia disponibili in Configuration Manager.  
-
-> [!NOTE]  
->  I report di risparmio energia visualizzano il numero di computer fisici e il numero di computer virtuali in una raccolta selezionata. Tuttavia, nei report di risparmio energia vengono visualizzate informazioni sul risparmio energia solo dai computer fisici.  
-
-###  <a name="a-namebkmkactivitya-computer-activity-report"></a><a name="BKMK_Activity"></a> Report Attività computer  
- Il report **Attività computer** visualizza un grafico che mostra l'attività seguente per una raccolta specificata in un periodo di tempo specificato:  
-
--   **Computer acceso** - Il computer è stato acceso.  
-
--   **Monitor acceso** - Il monitor è stato acceso.  
-
--   **Utente attivo** - È stata rilevata attività dal mouse del computer, dalla tastiera del computer o da una connessione Desktop remoto al computer  
-
- Questo report viene usato durante le fasi di monitoraggio, pianificazione e applicazione per analizzare l'andamento delle attività dei computer, dei monitor e degli utenti in un periodo di 24 ore. Se si esegue il report per alcuni giorni, i dati vengono aggregati per il periodo. Questo report può essere utile per determinare gli orari lavorativi (di punta) e non lavorativi (non di punta) tipici per una raccolta selezionata, in modo da poter decidere più facilmente quando applicare i piani di risparmio energia configurati.  
-
- Il grafico mostra i periodi di tempo durante i quali un computer potrebbe essere acceso, ma non è presente attività utente. Prendere in considerazione la possibilità di applicare impostazioni di risparmio energia più restrittive durante tali periodi per ridurre i costi energetici per i computer accesi, ma non usati. Un computer viene conteggiato come attivo in presenza di attività del computer, dell'utente o del monitor per più di un minuto per un'ora visualizzata nel grafico. Se un computer non restituisce dati relativi al risparmio energia, non verrà incluso nel report **Attività computer** .  
-
- Usare i parametri seguenti per configurare questo report.  
-
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
-
-|Nome parametro|Descrizione|  
-|--------------------|-----------------|  
-|**Data inizio**|Nell'elenco a discesa selezionare la data di inizio per il report.|  
-|**Data di fine (facoltativo)**|Nell'elenco a discesa selezionare una data di fine facoltativa per il report.|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta da usare per il report.|  
-|**Tipo di dispositivo**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili).|  
-
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- Per questo report non sono disponibili parametri nascosti che è possibile impostare.  
-
-#### <a name="report-links"></a>Collegamenti per il report  
- Se non si specifica un valore per **Data di fine (facoltativo)** , questo report contiene un collegamento al report seguente che offre ulteriori informazioni.  
-
-|Nome report|Dettagli|  
-|-----------------|-------------|  
-|**Dettagli attività computer**|Fare clic sul collegamento **Fare clic per ulteriori informazioni** per visualizzare un elenco di computer attivi, inattivi e che non inviano informazioni per il report per la data specificata.<br /><br /> Per altre informazioni, vedere la sezione [Computer Activity Details Report](#BKMK_Activity_Details) in questo argomento.|  
-
-###  <a name="a-namebkmkcompactivitybycomputera-computer-activity-by-computer-report"></a><a name="BKMK_Comp_Activity_by_computer"></a> Report Attività computer per computer  
- Il report **Attività computer per computer** visualizza un grafico che mostra l'attività seguente per un computer specificato in una data specificata:  
-
--   **Computer acceso** - Il computer è stato acceso.  
-
--   **Monitor acceso** - Il monitor è stato acceso.  
-
--   **Utente attivo** - È stata rilevata attività dal mouse del computer, dalla tastiera del computer o da una connessione Desktop remoto al computer.  
-
- Questo report può essere eseguito in modo indipendente o chiamato dal report **Dettagli attività computer** .  
+## <a name="list-of-power-management-reports"></a>電源管理レポートの一覧  
+ 次の一覧に、Configuration Manager で使用できる電源管理のレポートの詳細を表示します。  
 
 > [!NOTE]  
->  Le informazioni sull'attività del computer vengono raccolte dai computer client durante l'inventario hardware. A seconda dell'ora in cui viene eseguito l'inventario hardware, potrebbe essere raccolta l'attività mentre è applicata una combinazione per il risparmio di energia in ore di punta o fuori ore di punta.  
+>  電源管理レポートは、選択したコレクションにある物理コンピューター－と仮想コンピューターの数を表示します。 しかし、電源管理レポートには、物理コンピューターの電源管理情報のみが表示されます。  
 
- Usare i parametri seguenti per configurare questo report.  
+###  <a name="BKMK_Activity"></a> コンピューター動作状況レポート  
+ [コンピューター動作状況] レポートには、指定されたコレクションで指定された期間に発生した、次の動作状況を示すグラフが表示されます。 ****  
 
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
+-   [コンピューター オン] – コンピューターの電源がオンにされました。****   
 
-|Nome parametro|Descrizione|  
+-   [モニター オン] – モニターの電源がオンにされました。****   
+
+-   [ユーザー アクティブ] - コンピューターのマウス、キーボード、またはリモート デスクトップ接続を使用した操作が検出されました。****   
+
+ このレポートは、監視、計画、および実施の段階で使用し、24 時間にわたるコンピューターの動作、モニターの動作、およびユーザー操作の相互関係を理解するのに役立ちます。 このレポートを数日間にわたる期間を対象にして実行すると、データはその期間全体に対して集計されます。 このレポートは、選択されたコレクションの典型的な業務時間 (ピーク時) および業務時間外 (ピーク外) がいつであるか判断し、構成した電源管理プランを適用する時間を決定するために役立ちます。  
+
+ このグラフから、コンピューターの電源がオンになっていてもユーザー操作が行われなかった期間がわかります。 電源がオンになっていても使われていないコンピューターの電源コストを削減するために、このような期間に対しては、より制限された電源設定を適用することを検討します。 グラフ上に表示される 1 時間のうち、コンピューター、モニター、またはユーザー操作による電源動作が 1 分以上発生した場合、そのコンピューターはその時間にアクティブであったとみなされます。 電源管理データを報告しないコンピューターは、[コンピューター動作状況] レポートには含まれません。 ****  
+
+ このレポートを構成するには、次のパラメーターを使用します。  
+
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
+
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Data report**|Nell'elenco a discesa selezionare una data per il report.|  
-|**Nome computer**|Immettere il nome di un computer per cui si vuole ottenere un report.|  
+|**開始日**|ドロップダウン リストからこのレポートの開始日を選択します。|  
+|**終了日 (任意指定)**|ドロップダウン リストからこのレポートの終了日を選択します。|  
+|**コレクション名**|ドロップダウン リストからこのレポートに使用するコレクションを選択します。|  
+|**デバイスの種類**|ドロップダウン リストから、このレポートを作成するコンピューターの種類を選択します。 有効な値は、**[すべて]** (デスクトップとポータブル コンピューターの両方)、**[デスクトップ]** (デスクトップ コンピューターのみ)、および **[ラップトップ]** (ポータブル コンピューターのみ) です。|  
 
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- Per questo report non sono disponibili parametri nascosti che è possibile impostare.  
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ このレポートには設定可能な非表示パラメーターはありません。  
 
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report contiene collegamenti al report seguente che offre ulteriori informazioni sull'elemento selezionato.  
+#### <a name="report-links"></a>レポート リンク  
+ [終了日 (任意指定)] の値が指定されていない場合、このレポートには、さらに詳しい情報を提供する次のレポートへのリンクが表示されます。 ****  
 
-|Nome report|Dettagli|  
+|レポート名|説明|  
 |-----------------|-------------|  
-|**Dettagli computer**|Fare clic sul collegamento **Fare clic per ulteriori informazioni** per visualizzare informazioni su capacità di risparmio energia, impostazioni di risparmio energia e combinazioni per il risparmio di energia applicate per il computer selezionato.|  
+|**コンピューター動作状況の詳細**|[詳細情報を表示するにはここをクリック] というリンクをクリックすると、指定した日にアクティブだったコンピューター、非アクティブだったコンピューター、およびデータを報告しなかったコンピューターの一覧が表示されます。 ****<br /><br /> 詳細については、このトピックの「 [Computer Activity Details Report](#BKMK_Activity_Details) 」をご覧ください。|  
 
-###  <a name="a-namebkmkactivitydetailsa-computer-activity-details-report"></a><a name="BKMK_Activity_Details"></a> Computer Activity Details report  
- Il report **Dettagli attività computer** visualizza un elenco dei computer attivi o inattivi con le relative funzionalità di sospensione e riattivazione. Questo report viene chiamato dal [Computer Activity Report](#BKMK_Activity) e non è progettato per essere eseguito direttamente dall'amministratore del sito.  
+###  <a name="BKMK_Comp_Activity_by_computer"></a> コンピューター別電源動作状況レポート  
+ [コンピューター別電源動作状況] レポートには、指定した日に指定のコンピューターで発生した、次の動作状況を示すグラフが表示されます。 ****  
 
- Usare i parametri seguenti per configurare questo report.  
+-   [コンピューター オン] – コンピューターの電源がオンにされました。****   
 
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
+-   [モニター オン] – モニターの電源がオンにされました。****   
 
-|Nome parametro|Descrizione|  
-|--------------------|-----------------|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta da usare per il report.|  
-|**Data report**|Nell'elenco a discesa selezionare una data da usare per il report.|  
-|**Ora report**|Nell'elenco a discesa selezionare un'ora nella data specificata per l'esecuzione del report. I valori validi sono compresi tra **00** e **23**.|  
-|**Stato computer**|Nell'elenco a discesa selezionare lo stato del computer per cui eseguire il report. I valori validi sono **Tutti** (computer accesi o spenti), **Attivato** (computer accesi) e **Disattivato** (computer spenti, in sospensione o in ibernazione). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
-|**Tipo di dispositivo**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
-|**Idoneo per essere sospeso**|Nell'elenco a discesa selezionare se si vogliono visualizzare i computer idonei per essere sospesi nel report. I valori validi sono **Tutti** (computer idonei e non idonei alla sospensione), **No** (computer non idonei alla sospensione) e **Sì** (computer idonei alla sospensione).|  
-|**Idoneo per la riattivazione da sospensione**|Nell'elenco a discesa selezionare se si vogliono visualizzare i computer idonei per la riattivazione da sospensione nel report. I valori validi sono **Tutti** (computer idonei e non idonei alla riattivazione da sospensione), **No** (computer non idonei alla riattivazione da sospensione) e **Sì** (computer idonei alla riattivazione da sospensione).|  
-|**Combinazione per il risparmio di energia**|Nell'elenco a discesa selezionare i tipi di combinazioni per il risparmio di energia da visualizzare nel report. I valori validi sono **Tutti** (computer senza alcuna combinazione di risparmio energia applicata; computer con una combinazione di risparmio energia applicata; computer esclusi dal risparmio energia), **Non specificato** (computer senza alcuna combinazione di risparmio energia applicata), **Definito** (computer con una combinazione di risparmio energia applicata) ed **Escluso** (computer esclusi dal risparmio energia).|  
-|**Sistema operativo**|Nell'elenco a discesa selezionare i sistemi operativi dei computer da visualizzare nel report oppure selezionare **Tutto** per visualizzare tutti i sistemi operativi.|  
+-   [ユーザー アクティブ] - コンピューターのマウス、キーボード、またはリモート デスクトップ接続を使用した操作が検出されました。****   
 
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- Per questo report non sono disponibili parametri nascosti che è possibile impostare.  
-
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report contiene collegamenti al report seguente che offre ulteriori informazioni sull'elemento selezionato.  
-
-|Nome report|Dettagli|  
-|-----------------|-------------|  
-|**Attività computer per computer**|Fare clic su un nome di computer per visualizzare un'attività specifica del computer in un periodo di reporting selezionato. Le attività includono **Computer acceso** (il computer è stato acceso?), **Monitor acceso** (il monitor è stato acceso?) e **Attività utente** (è stata rilevata un'attività del mouse o della tastiera del computer o una connessione desktop remoto).<br /><br /> Per altre informazioni, vedere la sezione [Computer Activity by Computer Report](#BKMK_Comp_Activity_by_computer) in questo argomento.|  
-
-###  <a name="a-namebkmkcomputerdetailsa-computer-details-report"></a><a name="BKMK_Computer_Details"></a> Report Dettagli computer  
- Il report **Dettagli computer** visualizza informazioni dettagliate su capacità di risparmio energia, impostazioni del risparmio energia e combinazioni per il risparmio di energia applicate a un computer specificato. Questo report viene chiamato dai report **Attività computer per computer** , **Computer con più combinazioni per il risparmio di energia** , **Funzionalità alimentazione** e **Dettagli impostazioni risparmio energia** . Non è progettato per essere eseguito direttamente dall'amministratore del sito.  
-
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
-
-|Nome parametro|Descrizione|  
-|--------------------|-----------------|  
-|**Nome computer**|Immettere il nome di un computer per cui si vuole ottenere un report.|  
-|**Modalità risparmio di energia**|Nell'elenco a discesa selezionare il tipo di impostazioni di risparmio energia da visualizzare nei risultati del report. Selezionare **Alimentazione da rete elettrica** per visualizzare le impostazioni di risparmio energia configurate per quando il computer è collegato alla rete elettrica e **A batteria** per visualizzare le impostazioni di risparmio energia configurate per quando il computer è alimentato a batteria.|  
-
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- Per questo report non sono disponibili parametri nascosti che è possibile impostare.  
-
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report non è collegato ad altri report relativi al risparmio energia.  
-
-###  <a name="a-namebkmknotreportinga-computer-not-reporting-details-report"></a><a name="BKMK_Not_Reporting"></a> Report Computer che non segnalano dettagli  
- Il report **Computer che non segnalano dettagli** visualizza un elenco di computer in una raccolta specificata che non hanno segnalato attività per il risparmio energia per una data e un'ora specificate. Questo report viene chiamato dal **Computer Activity Report** e non è progettato per essere eseguito direttamente dall'amministratore del sito.  
+ このレポートは個別に実行することも、[コンピューター動作状況の詳細] レポートから呼び出すこともできます。 ****  
 
 > [!NOTE]  
->  I computer restituiscono informazioni sul risparmio energia nell'ambito della pianificazione per l'inventario hardware. Prima di stabilire che un computer non sta inviando informazioni, assicurarsi che abbia segnalato l'inventario hardware.  
+>  コンピューターの動作状況に関する情報は、ハードウェア インベントリ時にクライアント コンピューターから収集されます。 ハードウェア インベントリの実行時間によっては、適用されているピーク時または非ピーク時の電源プランの動作状況が収集されます。  
 
- Usare i parametri seguenti per configurare questo report.  
+ このレポートを構成するには、次のパラメーターを使用します。  
 
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta da usare per il report.|  
-|**Data report**|Nell'elenco a discesa selezionare una data per il report.|  
-|**Ora report**|Nell'elenco a discesa selezionare un'ora nella data specificata per l'esecuzione del report. I valori validi sono compresi tra **00** e **23**.|  
-|**Tipo di dispositivo**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
+|**レポートの日付**|ドロップダウン リストから、このレポートを作成する日付を選択します。|  
+|**コンピューター名**|レポートを作成するコンピューターの名前を入力します。|  
 
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- Per questo report non sono disponibili parametri nascosti che è possibile impostare.  
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ このレポートには設定可能な非表示パラメーターはありません。  
 
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report non è collegato ad altri report relativi al risparmio energia.  
+#### <a name="report-links"></a>レポート リンク  
+ このレポートには、選択された項目について追加の情報を提供する次のレポートへのリンクが含まれています。  
 
-###  <a name="a-namebkmkexcludeda-computers-excluded"></a><a name="BKMK_Excluded"></a> Computer esclusi  
- Il report **Computer esclusi** visualizza un elenco di computer in una raccolta specificata che sono stati esclusi dal risparmio energia di Configuration Manager.  
-
- Usare i parametri seguenti per configurare questo report.  
-
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
-
-|Nome parametro|Descrizione|  
-|--------------------|-----------------|  
-|**Raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
-|**Motivo**|Nell'elenco a discesa selezionare il motivo per cui i computer sono stati esclusi dal risparmio energia. È possibile visualizzare tutti i computer esclusi (**Tutti**), i computer esclusi da un utente amministratore (**Escluso dall'amministratore**) e i computer esclusi da un utente di Software Center (**Escluso dall'utente**).|  
-
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- Per questo report non sono disponibili parametri nascosti che è possibile impostare.  
-
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report contiene collegamenti al report seguente che offre ulteriori informazioni sull'elemento selezionato.  
-
-|Nome report|Dettagli|  
+|レポート名|説明|  
 |-----------------|-------------|  
-|**Dettagli computer**|Fare clic sul nome di un computer per visualizzare informazioni su capacità di risparmio energia, impostazioni di risparmio energia e combinazioni per il risparmio di energia applicate per il computer selezionato.<br /><br /> Per altre informazioni, vedere la sezione [Computer Details Report](#BKMK_Computer_Details) in questo argomento.|  
+|**コンピューターの詳細**|[詳細情報を表示するにはここをクリック] というリンクをクリックすると、選択したコンピューターの電源機能、電源設定、および適用されている電源プランが表示されます。 ****|  
 
-###  <a name="a-namebkmkmultiplea-computers-with-multiple-power-plans"></a><a name="BKMK_Multiple"></a> Computer con più combinazioni per il risparmio di energia  
- Il report **Computer con più combinazioni per il risparmio di energia** visualizza un elenco di computer membri di più raccolte, ognuna delle quali applica combinazioni per il risparmio di energia diverse. Per ogni computer con impostazioni di risparmio energia potenzialmente in conflitto, il report visualizza il nome del computer e le combinazioni per il risparmio di energia applicate per ogni raccolta di cui è membro il computer.  
+###  <a name="BKMK_Activity_Details"></a> Computer Activity Details report  
+ [コンピューター動作状況の詳細] レポートは、アクティブなコンピューターまたは非アクティブなコンピューターの一覧、およびそのスリープ機能とウェイクアップ機能を表示します。 **** このレポートは「 [Computer Activity Report](#BKMK_Activity) 」によって呼び出されるもので、サイト管理者が直接実行するものではありません。  
+
+ このレポートを構成するには、次のパラメーターを使用します。  
+
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
+
+|パラメーター名|説明|  
+|--------------------|-----------------|  
+|**コレクション名**|ドロップダウン リストからこのレポートに使用するコレクションを選択します。|  
+|**レポートの日付**|ドロップダウン リストからこのレポートに使用する日付を選択します。|  
+|**報告時刻**|ドロップダウン リストから、このレポートを実行する、指定した日の該当する時刻を選択します。 有効値は **12 am** と **午後 11 時**です。|  
+|**コンピューターの状態**|ドロップダウン リストから、このレポートを作成するコンピューターの状態を選択します。 有効な値は、**[すべて]** (オンまたはオフになっていたコンピューター)、**[オン]** (オンになっていたコンピューター)、および **[オフ]** (オフ、スリープ、または休止状態になっていたコンピューター) です。 これらの値は、選択したレポート期間に対してのみ返されます。|  
+|**デバイスの種類**|ドロップダウン リストから、このレポートを作成するコンピューターの種類を選択します。 有効な値は、**[すべて]** (デスクトップとポータブル コンピューターの両方)、**[デスクトップ]** (デスクトップ コンピューターのみ)、および **[ラップトップ]** (ポータブル コンピューターのみ) です。 これらの値は、選択したレポート期間に対してのみ返されます。|  
+|**スリープ対応**|ドロップダウン リストから、スリープ状態にすることができるコンピューターをレポートに表示するかどうかを選択します。 有効な値は、**[すべて]** (スリープ可能/不可能両方のコンピューター)、**[いいえ]** (スリープ不可能なコンピューター)、および **[はい]** (スリープ可能なコンピューター) です。|  
+|**スリープ状態からの復帰に対応**|ドロップダウン リストから、スリープ状態からの復帰に対応するコンピューターをレポートに表示するかどうかを選択します。 有効な値は、**[すべて]** (スリープから復帰可能/不可能両方のコンピューター)、**[いいえ]** (スリープから復帰不可能なコンピューター)、および **[はい]** (スリープから復帰可能なコンピューター) です。|  
+|**電源プラン**|ドロップダウン リストから、このレポートに表示する電源プランの種類を選択します。 有効な値は、**[すべて]** (電源管理プランが適用されていないコンピューター、電源管理プランが適用されているコンピューター、電源管理から除外されているコンピューター)、**[指定なし]** (電源管理プランが適用されていないコンピューター)、**[定義済み]** (電源管理プランが適用されているコンピューター)、および **[除外]** (電源管理から除外されているコンピューター) です。|  
+|**オペレーティング システム**|ドロップダウン リストから、レポートに表示するコンピューター オペレーティング システムを選択するか、すべてのオペレーティング システムを表示するには [すべて] を選択します。 ****|  
+
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ このレポートには設定可能な非表示パラメーターはありません。  
+
+#### <a name="report-links"></a>レポート リンク  
+ このレポートには、選択された項目について追加の情報を提供する次のレポートへのリンクが含まれています。  
+
+|レポート名|説明|  
+|-----------------|-------------|  
+|****|コンピューター名をクリックすると、選択したレポート期間におけるそのコンピューターの具体的な動作状況が表示されます。 動作状況は、**[コンピューター オン]** (コンピューターの電源が入れられたかどうか)、**[モニター オン]** (モニターの電源が入れられたかどうか)、および **[User Active]** (ユーザー アクティブ) (コンピューターのマウス、キーボード、またはリモート デスクトップ接続からの操作が検出された) です。<br /><br /> 詳細については、このトピックの「 [Computer Activity by Computer Report](#BKMK_Comp_Activity_by_computer) 」をご覧ください。|  
+
+###  <a name="BKMK_Computer_Details"></a> コンピューターの詳細レポート  
+ [コンピューターの詳細] レポートには、指定されたコンピューターの電源機能、電源設定、および適用されている電源プランに関する詳細情報が表示されます。 **** このレポートは、によって呼び出されます。、 **コンピューター アクティビティは、コンピューターを** レポート、、 **電源プランが複数のコンピューター** レポート、、 **電源機能** レポートおよび **電源設定の詳細** レポートします。 サイト管理者が直接実行するものではありません。  
+
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
+
+|パラメーター名|説明|  
+|--------------------|-----------------|  
+|**コンピューター名**|レポートを作成するコンピューターの名前を入力します。|  
+|**電源モード**|ドロップダウン リストから、このレポートに含める電源設定の種類を選択します。 選択 **で接続されている** 用、コンピューターが接続されているときに構成された電源設定を表示して **バッテリ使用時** 、コンピューターがバッテリ電源で実行されている場合に用に構成された電源設定を表示します。|  
+
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ このレポートには設定可能な非表示パラメーターはありません。  
+
+#### <a name="report-links"></a>レポート リンク  
+ このレポートは、他の電源管理レポートにはリンクされていません。  
+
+###  <a name="BKMK_Not_Reporting"></a> 詳細の報告がないコンピューター レポート  
+ [詳細の報告がないコンピューター] レポートには、指定したコレクションに含まれる、指定の日時に電源動作を一切報告しなかったコンピューターの一覧が表示されます。 **** このレポートは「 **Computer Activity Report** 」によって呼び出されるもので、サイト管理者が直接実行するものではありません。  
+
+> [!NOTE]  
+>  コンピューターはハードウェア インベントリ スケジュールの一部として電源管理情報を報告します。 コンピューターからの報告がないとみなす前に、そのコンピューターからハードウェア インベントリが報告されていることを確認してください。  
+
+ このレポートを構成するには、次のパラメーターを使用します。  
+
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
+
+|パラメーター名|説明|  
+|--------------------|-----------------|  
+|**コレクション名**|ドロップダウン リストからこのレポートに使用するコレクションを選択します。|  
+|**レポートの日付**|ドロップダウン リストから、このレポートを作成する日付を選択します。|  
+|**報告時刻**|ドロップダウン リストから、このレポートを実行する、指定した日の該当する時刻を選択します。 有効値は **12 am** と **午後 11 時**です。|  
+|**デバイスの種類**|ドロップダウン リストから、このレポートを作成するコンピューターの種類を選択します。 有効な値は、**[すべて]** (デスクトップとポータブル コンピューターの両方)、**[デスクトップ]** (デスクトップ コンピューターのみ)、および **[ラップトップ]** (ポータブル コンピューターのみ) です。 これらの値は、選択したレポート期間に対してのみ返されます。|  
+
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ このレポートには設定可能な非表示パラメーターはありません。  
+
+#### <a name="report-links"></a>レポート リンク  
+ このレポートは、他の電源管理レポートにはリンクされていません。  
+
+###  <a name="BKMK_Excluded"></a> 除外されているコンピューター  
+ **[除外されているコンピューター]** には、Configuration Manager の電源管理で除外されている指定コレクションに含まれるコンピューターの一覧が表示されます。  
+
+ このレポートを構成するには、次のパラメーターを使用します。  
+
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
+
+|パラメーター名|説明|  
+|--------------------|-----------------|  
+|**コレクション**|ドロップダウン リストからこのレポートの対象にするコレクションを選択します。|  
+|**理由**|ドロップダウン リストから、コンピューターが電源管理から除外された理由を選択します。 **[すべて]** (すべての除外されたコンピューター)、**[管理者によって除外されました]** (管理ユーザーによって除外されたコンピューターのみ)、および **[ユーザーによって除外されました]** (ソフトウェア センターのユーザーによって除外されたコンピューターのみ) を表示できます。|  
+
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ このレポートには設定可能な非表示パラメーターはありません。  
+
+#### <a name="report-links"></a>レポート リンク  
+ このレポートには、選択された項目について追加の情報を提供する次のレポートへのリンクが含まれています。  
+
+|レポート名|説明|  
+|-----------------|-------------|  
+|**コンピューター電源の詳細**|コンピューター名をクリックすると、そのコンピューターの電源機能、電源設定、および適用されている電源プランが表示されます。<br /><br /> 詳細については、このトピックの「 [Computer Details Report](#BKMK_Computer_Details) 」をご覧ください。|  
+
+###  <a name="BKMK_Multiple"></a> 電源プランが複数あるコンピューター  
+ [電源プランが複数あるコンピューター] レポートには、それぞれ異なる電源プランが適用されている複数のコレクションのメンバーであるコンピューターが一覧表示されます。 **** 電源設定が競合する可能性のあるコンピューターごとに、コンピューター名、およびそのコンピューターを含む各コレクションに適用されている電源プランが表示されます。  
 
 > [!IMPORTANT]  
->  Se un computer è membro di più raccolte e ogni raccolta include diverse combinazioni per il risparmio energia, verrà applicata la combinazione meno restrittiva.  
+>  コンピューターが複数のコレクションのメンバーであり、各コレクションの電源プランが異なる場合は、最も制限の緩い電源プランが適用されます。  
 >   
->  Se un computer è membro di più raccolte e ogni raccolta include diverse ore di riattivazione, verrà applicata l'ora più prossima alla mezzanotte.  
+>  コンピューターが複数のコレクションのメンバーであり、各コレクションの復帰時刻が異なる場合は、深夜 0 時に最も近い時刻が使われます。  
 
- Usare i parametri seguenti per configurare questo report.  
+ このレポートを構成するには、次のパラメーターを使用します。  
 
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
+|**コレクション名**|ドロップダウン リストからこのレポートの対象にするコレクションを選択します。|  
 
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- Per questo report non sono disponibili parametri nascosti che è possibile impostare.  
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ このレポートには設定可能な非表示パラメーターはありません。  
 
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report contiene collegamenti al report seguente che offre ulteriori informazioni sull'elemento selezionato.  
+#### <a name="report-links"></a>レポート リンク  
+ このレポートには、選択された項目について追加の情報を提供する次のレポートへのリンクが含まれています。  
 
-|Nome report|Dettagli|  
+|レポート名|説明|  
 |-----------------|-------------|  
-|**Dettagli computer**|Fare clic sul nome di un computer per visualizzare informazioni su capacità di risparmio energia, impostazioni di risparmio energia e combinazioni per il risparmio di energia applicate per il computer selezionato.<br /><br /> Per altre informazioni, vedere la sezione [Computer Details Report](#BKMK_Computer_Details) in questo argomento.|  
+|**コンピューター電源の詳細**|コンピューター名をクリックすると、そのコンピューターの電源機能、電源設定、および適用されている電源プランが表示されます。<br /><br /> 詳細については、このトピックの「 [Computer Details Report](#BKMK_Computer_Details) 」をご覧ください。|  
 
-###  <a name="a-namebkmkconsumptiona-energy-consumption-report"></a><a name="BKMK_Consumption"></a> Report Consumo energia  
- Il report **Consumo energia** visualizza le informazioni seguenti:  
+###  <a name="BKMK_Consumption"></a> エネルギー消費量レポート  
+ [エネルギー消費量] レポートには、次の情報が表示されます。 ****  
 
--   Un grafico che mostra il consumo di energia mensile totale dei computer in kiloWatt per ora (kWh) nella raccolta specificata per il periodo di tempo specificato.  
+-   指定したコレクション内のコンピューターの合計月間電力消費量を指定した期間にわたって 1 時間あたりのキロワット (kWh) で示すグラフ  
 
--   Un grafico che mostra il consumo di energia medio in kiloWatt per ora (kWh) di ogni computer nella raccolta specificata per il periodo di tempo specificato.  
+-   指定したコレクション内の各コンピューターの平均月間電力消費量を指定した期間にわたって 1 時間あたりキロワット (kWh) で示すグラフ  
 
--   Una tabella che mostra il consumo di energia mensile totale in kiloWatt per ora (kWh) e il consumo di energia medio dei computer nella raccolta specificata per il periodo di tempo specificato.  
+-   指定したコレクション内のコンピューターの、合計月間電力消費量および平均電力消費量を指定した期間にわたって 1 時間あたりのキロワット (kWh) で示す表  
 
- Queste informazioni possono essere utili per individuare le tendenze di consumo di energia nell'ambiente in oggetto. Dopo aver applicato una combinazione per il risparmio di energia ai computer nella raccolta selezionata, il consumo di energia dei computer dovrebbe ridursi.  
+ この情報は、ご使用の環境における電力消費の傾向を理解するのに役立ちます。 選択したコレクション内のコンピューターに電源プランを適用すると、コンピューターの電力消費量が削減されるはずです。  
 
 > [!NOTE]  
->  L'aggiunta o la rimozione di membri nella raccolta dopo aver applicato una combinazione per il risparmio di energia influirà sui risultati visualizzati dal report **Consumo di energia** e potrebbe risultare più difficile confrontare i risultati della fase di monitoraggio e pianificazione con quelli della fase di imposizione.  
+>  電源プランの適用後にコレクションのメンバーを追加または削除すると、[エネルギー消費量] レポートに表示される結果に影響するため、監視および計画段階の結果をプランの実施段階と比較するのが難しくなることがあります。 ****  
 
- Usare i parametri seguenti per configurare questo report.  
+ このレポートを構成するには、次のパラメーターを使用します。  
 
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Data inizio**|Nell'elenco a discesa selezionare una data di inizio per il report.|  
-|**Data fine**|Nell'elenco a discesa selezionare una data di fine per il report.|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
-|**Tipo di dispositivo**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
+|**開始日**|ドロップダウン リストからこのレポートの開始日を選択します。|  
+|**終了日**|ドロップダウン リストからこのレポートの終了日を選択します。|  
+|**コレクション名**|ドロップダウン リストからこのレポートの対象にするコレクションを選択します。|  
+|**デバイスの種類**|ドロップダウン リストから、このレポートを作成するコンピューターの種類を選択します。 有効な値は、**[すべて]** (デスクトップとポータブル コンピューターの両方)、**[デスクトップ]** (デスクトップ コンピューターのみ)、および **[ラップトップ]** (ポータブル コンピューターのみ) です。 これらの値は、選択したレポート期間に対してのみ返されます。|  
 
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- I parametri nascosti seguenti possono essere specificati facoltativamente per modificare il comportamento di questo report.  
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ 必要に応じて次の非表示パラメーターを指定して、このレポートの動作を変更することができます。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Computer desktop acceso**|Specificare il consumo di energia di un computer desktop quando è acceso. Il valore predefinito è **0,07** kW all'ora.|  
-|**Computer portatile acceso**|Specificare il consumo di energia di un computer portatile quando è acceso. Il valore predefinito è **0,02** kW all'ora.|  
-|**Computer desktop sospeso**|Specificare il consumo di energia di un computer desktop entrato in sospensione. Il valore predefinito è **0,003** kW all'ora.|  
-|**Computer portatile sospeso**|Specificare il consumo di energia di un computer portatile entrato in sospensione. Il valore predefinito è **0,001** kW all'ora.|  
-|**Computer desktop spento**|Specificare il consumo di energia di un computer desktop quando è spento. Il valore predefinito è **0** kW all'ora.|  
-|**Computer portatile spento**|Specificare il consumo di energia di un computer portatile quando è spento. Il valore predefinito è **0** kW all'ora.|  
-|**Monitor desktop acceso**|Specificare il consumo di energia di un monitor di computer desktop quando è acceso. Il valore predefinito è **0,028** kW all'ora.|  
-|**Monitor portatile acceso**|Specificare il consumo di energia di un monitor di computer portatile quando è acceso. Il valore predefinito è **0** kW all'ora.|  
+|**デスクトップ コンピューター オン**|デスクトップ コンピューターの電源がオンになっているときの電力消費量を指定します。 既定値は [0.07] kWh です。 ****|  
+|**ラップトップ コンピューター オン**|ポータブル コンピューターの電源がオンになっているときの電力消費量を指定します。 既定値は **0.02** kWh です。|  
+|**デスクトップ コンピューター スリープ**|スリープ状態にあるデスクトップ コンピューターの電力消費量を指定します。 既定値は **0.003** kWh です。|  
+|**ラップトップ コンピューター スリープ**|スリープ状態にあるポータブル コンピューターの電力消費量を指定します。 既定値は **0.001** kWh です。|  
+|**デスクトップ コンピューター オフ**|デスクトップ コンピューターの電源がオフになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**ラップトップ コンピューター オフ**|ポータブル コンピューターの電源がオフになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**デスクトップ モニター オン**|デスクトップ コンピューターのモニターがオンになっているときの電力消費量を指定します。 既定値は **0.028** kWh です。|  
+|**ラップトップ モニター オン**|ポータブル コンピューターのモニターがオンになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
 
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report non è collegato ad altri report relativi al risparmio energia.  
+#### <a name="report-links"></a>レポート リンク  
+ このレポートは、他の電源管理レポートにはリンクされていません。  
 
-###  <a name="a-namebkmkconsumptionbydaya-energy-consumption-by-day-report"></a><a name="BKMK_Consumption_by_Day"></a> Report Consumo energia per giorno  
- Il report **Consumo energia per giorno** visualizza le informazioni seguenti:  
+###  <a name="BKMK_Consumption_by_Day"></a> 日別エネルギー消費量レポート  
+ [日別エネルギー消費量] レポートには、次の情報が表示されます。 ****  
 
--   Un grafico che mostra il consumo di energia giornaliero totale dei computer in kiloWatt per ora (kWh) nella raccolta specificata per gli ultimi 31 giorni.  
+-   指定したコレクション内のすべてのコンピューターの合計日次電力消費量を、過去 31 日間にわたって 1 時間あたりのキロワット (kWh) で示すグラフ  
 
--   Un grafico che mostra il consumo di energia medio giornaliero in kiloWatt per ora (kWh) di ogni computer nella raccolta specificata negli ultimi 31 giorni.  
+-   指定したコレクション内の各コンピューターあたりの平均日次電力消費量を、過去 31 日間にわたって 1 時間あたりのキロワット (kWh) で示すグラフ  
 
--   Una tabella che mostra il consumo di energia totale giornaliero in kiloWatt per ora (kWh) e il consumo di energia medio giornaliero dei computer nella raccolta specificata negli ultimi 31 giorni.  
+-   指定したコレクション内の合計日次電力消費量と平均日次電力消費量を、過去 31 日間にわたって 1 時間あたりのキロワット (kWh) で示す表  
 
- Queste informazioni possono essere utili per individuare le tendenze di consumo di energia nell'ambiente in oggetto. Dopo aver applicato una combinazione per il risparmio di energia ai computer nella raccolta selezionata, il consumo di energia dei computer dovrebbe ridursi.  
+ この情報は、ご使用の環境における電力消費の傾向を理解するのに役立ちます。 選択したコレクション内のコンピューターに電源プランを適用すると、コンピューターの電力消費量が削減されるはずです。  
 
 > [!NOTE]  
->  L'aggiunta o la rimozione di membri nella raccolta dopo aver applicato una combinazione per il risparmio di energia influirà sui risultati visualizzati dal report **Consumo di energia** e potrebbe risultare più difficile confrontare i risultati della fase di monitoraggio e pianificazione con quelli della fase di imposizione.  
+>  電源プランの適用後にコレクションのメンバーを追加または削除すると、[エネルギー消費量] レポートに表示される結果に影響するため、監視および計画段階の結果をプランの実施段階と比較するのが難しくなることがあります。 ****  
 
- Usare i parametri seguenti per configurare questo report.  
+ このレポートを構成するには、次のパラメーターを使用します。  
 
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
-|**Device Type**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
+|**コレクション**|ドロップダウン リストからこのレポートの対象にするコレクションを選択します。|  
+|**Device Type**|ドロップダウン リストから、このレポートを作成するコンピューターの種類を選択します。 有効な値は、**[すべて]** (デスクトップとポータブル コンピューターの両方)、**[デスクトップ]** (デスクトップ コンピューターのみ)、および **[ラップトップ]** (ポータブル コンピューターのみ) です。 これらの値は、選択したレポート期間に対してのみ返されます。|  
 
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- I parametri nascosti seguenti possono essere specificati facoltativamente per modificare il comportamento di questo report.  
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ 必要に応じて次の非表示パラメーターを指定して、このレポートの動作を変更することができます。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Computer desktop acceso**|Specificare il consumo di energia di un computer desktop quando è acceso. Il valore predefinito è **0,07** kW all'ora.|  
-|**Computer portatile acceso**|Specificare il consumo di energia di un computer portatile quando è acceso. Il valore predefinito è **0,02** kW all'ora.|  
-|**Computer desktop sospeso**|Specificare il consumo di energia di un computer desktop entrato in sospensione. Il valore predefinito è **0,003** kW all'ora.|  
-|**Computer portatile sospeso**|Specificare il consumo di energia di un computer portatile entrato in sospensione. Il valore predefinito è **0,001** kW all'ora.|  
-|**Computer desktop spento**|Specificare il consumo di energia di un computer desktop quando è spento. Il valore predefinito è **0** kW all'ora.|  
-|**Computer portatile spento**|Specificare il consumo di energia di un computer portatile quando è spento. Il valore predefinito è **0** kW all'ora.|  
-|**Monitor desktop acceso**|Specificare il consumo di energia di un monitor di computer desktop quando è acceso. Il valore predefinito è **0,028** kW all'ora.|  
-|**Monitor portatile acceso**|Specificare il consumo di energia di un monitor di computer portatile quando è acceso. Il valore predefinito è **0** kW all'ora.|  
+|**デスクトップ コンピューター オン**|デスクトップ コンピューターの電源がオンになっているときの電力消費量を指定します。 既定値は [0.07] kWh です。 ****|  
+|**ラップトップ コンピューター オン**|ポータブル コンピューターの電源がオンになっているときの電力消費量を指定します。 既定値は **0.02** kWh です。|  
+|**デスクトップ コンピューター スリープ**|スリープ状態にあるデスクトップ コンピューターの電力消費量を指定します。 既定値は **0.003** kWh です。|  
+|**ラップトップ コンピューター スリープ**|スリープ状態にあるポータブル コンピューターの電力消費量を指定します。 既定値は **0.001** kWh です。|  
+|**デスクトップ コンピューター オフ**|デスクトップ コンピューターの電源がオフになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**ラップトップ コンピューター オフ**|ポータブル コンピューターの電源がオフになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**デスクトップ モニター オン**|デスクトップ コンピューターのモニターがオンになっているときの電力消費量を指定します。 既定値は **0.028** kWh です。|  
+|**ラップトップ モニター オン**|ポータブル コンピューターのモニターがオンになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
 
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report non è collegato ad altri report relativi al risparmio energia.  
+#### <a name="report-links"></a>レポート リンク  
+ このレポートは、他の電源管理レポートにはリンクされていません。  
 
-###  <a name="a-namebkmkcosta-energy-cost-report"></a><a name="BKMK_Cost"></a> Report Costo energia  
- Il report **Costo energia** visualizza le informazioni seguenti:  
+###  <a name="BKMK_Cost"></a> エネルギー コスト レポート  
+ [エネルギー コスト] レポートには、次の情報が表示されます。 ****  
 
--   Un grafico che mostra il costo dell'energia totale mensile per i computer nella raccolta specificata per il periodo di tempo specificato.  
+-   指定したコレクション内のコンピューターの合計月間電力コストを指定した期間にわたって示すグラフ  
 
--   Un grafico che mostra il costo dell'energia medio mensile per ogni computer nella raccolta specificata per il periodo di tempo specificato.  
+-   指定したコレクション内の各コンピューターの平均月間電力コストを指定した期間にわたって示すグラフ  
 
--   Una tabella che mostra il costo dell'energia totale mensile e il costo medio mensile per i computer nella raccolta specificata negli ultimi 31 giorni.  
+-   指定したコレクション内のコンピューターの、合計月間電力コストと平均月間電力コストを過去 31 日間にわたって示す表  
 
- Queste informazioni possono essere utili per individuare le tendenze per i costi energetici nell'ambiente in oggetto. Dopo aver applicato una combinazione per il risparmio di energia ai computer nella raccolta selezionata, il costo energetico per i computer dovrebbe ridursi.  
+ この情報は、ご使用の環境における電力コストの傾向を理解するのに役立ちます。 選択したコレクション内のコンピューターに電源プランを適用すると、コンピューターの電力コストが削減されるはずです。  
 
- Usare i parametri seguenti per configurare questo report.  
+ このレポートを構成するには、次のパラメーターを使用します。  
 
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Data inizio**|Nell'elenco a discesa selezionare una data di inizio per il report.|  
-|**Data fine**|Nell'elenco a discesa selezionare una data di fine per il report.|  
-|**Costo di KwH**|Specificare il costo dell'elettricità per kWh. Il valore predefinito è **0,09**.<br /><br /> È possibile modificare la valuta usata per il report nella sezione dei parametri nascosti.|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta da usare per il report.|  
-|**Tipo di dispositivo**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
+|**開始日**|ドロップダウン リストからこのレポートの開始日を選択します。|  
+|**終了日**|ドロップダウン リストからこのレポートの終了日を選択します。|  
+|**kWh あたりのコスト**|電力量 1 kWh あたりのコストを指定します。 既定値は **0.09**です。<br /><br /> このレポートで使われる通貨単位は、非表示パラメーターのセクションで変更できます。|  
+|**コレクション名**|ドロップダウン リストからこのレポートに使用するコレクションを選択します。|  
+|**デバイスの種類**|ドロップダウン リストから、このレポートを作成するコンピューターの種類を選択します。 有効な値は、**[すべて]** (デスクトップとポータブル コンピューターの両方)、**[デスクトップ]** (デスクトップ コンピューターのみ)、および **[ラップトップ]** (ポータブル コンピューターのみ) です。 これらの値は、選択したレポート期間に対してのみ返されます。|  
 
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- I parametri nascosti seguenti possono essere specificati facoltativamente per modificare il comportamento di questo report.  
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ 必要に応じて次の非表示パラメーターを指定して、このレポートの動作を変更することができます。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Computer desktop acceso**|Specificare il consumo di energia di un computer desktop quando è acceso. Il valore predefinito è **0,07** kW all'ora.|  
-|**Computer portatile acceso**|Specificare il consumo di energia di un computer portatile quando è acceso. Il valore predefinito è **0,02** kW all'ora.|  
-|**Computer desktop sospeso**|Specificare il consumo di energia di un computer desktop entrato in sospensione. Il valore predefinito è **0,003** kW all'ora.|  
-|**Computer portatile sospeso**|Specificare il consumo di energia di un computer portatile entrato in sospensione. Il valore predefinito è **0,001** kW all'ora.|  
-|**Computer desktop spento**|Specificare il consumo di energia di un computer desktop quando è spento. Il valore predefinito è **0** kW all'ora.|  
-|**Computer portatile spento**|Specificare il consumo di energia di un computer portatile quando è spento. Il valore predefinito è **0** kW all'ora.|  
-|**Monitor desktop acceso**|Specificare il consumo di energia di un monitor di computer desktop quando è acceso. Il valore predefinito è **0,028** kW all'ora.|  
-|**Monitor portatile acceso**|Specificare il consumo di energia di un monitor di computer portatile quando è acceso. Il valore predefinito è **0** kW all'ora.|  
-|**Valuta**|Specificare l'etichetta di valuta da usare per il report. Il valore predefinito è **USD ($)**.|  
+|**デスクトップ コンピューター オン**|デスクトップ コンピューターの電源がオンになっているときの電力消費量を指定します。 既定値は [0.07] kWh です。 ****|  
+|**ラップトップ コンピューター オン**|ポータブル コンピューターの電源がオンになっているときの電力消費量を指定します。 既定値は **0.02** kWh です。|  
+|**デスクトップ コンピューター スリープ**|スリープ状態にあるデスクトップ コンピューターの電力消費量を指定します。 既定値は **0.003** kWh です。|  
+|**ラップトップ コンピューター スリープ**|スリープ状態にあるポータブル コンピューターの電力消費量を指定します。 既定値は **0.001** kWh です。|  
+|**デスクトップ コンピューター オフ**|デスクトップ コンピューターの電源がオフになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**ラップトップ コンピューター オフ**|ポータブル コンピューターの電源がオフになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**デスクトップ モニター オン**|デスクトップ コンピューターのモニターがオンになっているときの電力消費量を指定します。 既定値は **0.028** kWh です。|  
+|**ラップトップ モニター オン**|ポータブル コンピューターのモニターがオンになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**通貨**|このレポートに使用する通貨ラベルを指定します。 既定値は [米ドル ($)] です。 ****|  
 
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report non è collegato ad altri report relativi al risparmio energia.  
+#### <a name="report-links"></a>レポート リンク  
+ このレポートは、他の電源管理レポートにはリンクされていません。  
 
-###  <a name="a-namebkmkcostbydaya-energy-cost-by-day-report"></a><a name="BKMK_Cost_by_Day"></a> Report Costo energia per giorno  
- Il report **Costo energia per giorno** visualizza le informazioni seguenti:  
+###  <a name="BKMK_Cost_by_Day"></a> 日別エネルギー コスト レポート  
+ [日別エネルギー コスト] レポートには、次の情報が表示されます。 ****  
 
--   Un grafico che mostra il costo dell'energia totale giornaliero per i computer nella raccolta specificata negli ultimi 31 giorni.  
+-   過去 31 日間にわたる、指定のコレクション内の全コンピューターの合計日次電力コストを示すグラフ  
 
--   Un grafico che mostra il costo dell'energia medio giornaliero per ogni computer nella raccolta specificata negli ultimi 31 giorni.  
+-   過去 31 日間にわたる、指定のコレクション内の各コンピューターあたりの平均日次電力コストを示すグラフ  
 
--   Una tabella che mostra il costo dell'energia totale giornaliero e il costo medio giornaliero per i computer nella raccolta specificata negli ultimi 31 giorni.  
+-   過去 31 日間にわたる、指定コレクション内の合計日次電力コスト、および平均日次電力コストを示す表  
 
- Queste informazioni possono essere utili per individuare le tendenze per i costi energetici nell'ambiente in oggetto. Dopo aver applicato una combinazione per il risparmio di energia ai computer nella raccolta selezionata, il costo energetico per i computer dovrebbe ridursi.  
+ この情報は、ご使用の環境における電力コストの傾向を理解するのに役立ちます。 選択したコレクション内のコンピューターに電源プランを適用すると、コンピューターの電力コストが削減されるはずです。  
 
- Usare i parametri seguenti per configurare questo report.  
+ このレポートを構成するには、次のパラメーターを使用します。  
 
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta da usare per il report.|  
-|**Tipo di dispositivo**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
-|**Costo di KwH**|Specificare il costo dell'elettricità per kWh. Il valore predefinito è **0,09**.<br /><br /> È possibile modificare la valuta usata per il report nella sezione dei parametri nascosti.|  
+|**コレクション名**|ドロップダウン リストからこのレポートに使用するコレクションを選択します。|  
+|**デバイスの種類**|ドロップダウン リストから、このレポートを作成するコンピューターの種類を選択します。 有効な値は、**[すべて]** (デスクトップとポータブル コンピューターの両方)、**[デスクトップ]** (デスクトップ コンピューターのみ)、および **[ラップトップ]** (ポータブル コンピューターのみ) です。 これらの値は、選択したレポート期間に対してのみ返されます。|  
+|**kWh あたりのコスト**|電力量 1 kWh あたりのコストを指定します。 既定値は **0.09**です。<br /><br /> このレポートで使われる通貨単位は、非表示パラメーターのセクションで変更できます。|  
 
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- I parametri nascosti seguenti possono essere specificati facoltativamente per modificare il comportamento di questo report.  
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ 必要に応じて次の非表示パラメーターを指定して、このレポートの動作を変更することができます。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Computer desktop acceso**|Specificare il consumo di energia di un computer desktop quando è acceso. Il valore predefinito è **0,07** kW all'ora.|  
-|**Computer portatile acceso**|Specificare il consumo di energia di un computer portatile quando è acceso. Il valore predefinito è **0,02** kW all'ora.|  
-|**Computer desktop sospeso**|Specificare il consumo di energia di un computer desktop entrato in sospensione. Il valore predefinito è **0,003** kW all'ora.|  
-|**Computer portatile sospeso**|Specificare il consumo di energia di un computer portatile entrato in sospensione. Il valore predefinito è **0,001** kW all'ora.|  
-|**Computer desktop spento**|Specificare il consumo di energia di un computer desktop quando è spento. Il valore predefinito è **0** kW all'ora.|  
-|**Computer portatile spento**|Specificare il consumo di energia di un computer portatile quando è spento. Il valore predefinito è **0** kW all'ora.|  
-|**Monitor desktop acceso**|Specificare il consumo di energia di un monitor di computer desktop quando è acceso. Il valore predefinito è **0,028** kW all'ora.|  
-|**Monitor portatile acceso**|Specificare il consumo di energia di un monitor di computer portatile quando è acceso. Il valore predefinito è **0** kW all'ora.|  
-|**Valuta**|Specificare l'etichetta di valuta da usare per il report. Il valore predefinito è **USD ($)**.|  
+|**デスクトップ コンピューター オン**|デスクトップ コンピューターの電源がオンになっているときの電力消費量を指定します。 既定値は [0.07] kWh です。 ****|  
+|**ラップトップ コンピューター オン**|ポータブル コンピューターの電源がオンになっているときの電力消費量を指定します。 既定値は **0.02** kWh です。|  
+|**デスクトップ コンピューター スリープ**|スリープ状態にあるデスクトップ コンピューターの電力消費量を指定します。 既定値は **0.003** kWh です。|  
+|**ラップトップ コンピューター スリープ**|スリープ状態にあるポータブル コンピューターの電力消費量を指定します。 既定値は **0.001** kWh です。|  
+|**デスクトップ コンピューター オフ**|デスクトップ コンピューターの電源がオフになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**ラップトップ コンピューター オフ**|ポータブル コンピューターの電源がオフになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**デスクトップ モニター オン**|デスクトップ コンピューターのモニターがオンになっているときの電力消費量を指定します。 既定値は **0.028** kWh です。|  
+|**ラップトップ モニター オン**|ポータブル コンピューターのモニターがオンになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**通貨**|このレポートに使用する通貨ラベルを指定します。 既定値は [米ドル ($)] です。 ****|  
 
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report non è collegato ad altri report relativi al risparmio energia.  
+#### <a name="report-links"></a>レポート リンク  
+ このレポートは、他の電源管理レポートにはリンクされていません。  
 
-###  <a name="a-namebkmkenvironmentalimpacta-environmental-impact-report"></a><a name="BKMK_Environmental_Impact"></a> Report Impatto ambientale  
- Il report **Impatto ambientale** visualizza le informazioni seguenti:  
+###  <a name="BKMK_Environmental_Impact"></a> 環境影響量レポート  
+ [環境影響量] レポートには、次の情報が表示されます。 ****  
 
--   Un grafico che mostra le emissioni di CO2 totali mensili (in tonnellate) per i computer nella raccolta specificata per il periodo di tempo specificato.  
+-   指定した期間にわたる、指定のコレクション内のすべてのコンピューターの合計月間 CO2 排出量をトン単位で示すグラフ。  
 
--   Un grafico che mostra le emissioni di CO2 medie mensili (in tonnellate) per ogni computer nella raccolta specificata per il periodo di tempo specificato.  
+-   指定した期間にわたる、指定のコレクション内の各コンピューターあたりの平均月間 CO2 排出量をトン単位で示すグラフ。  
 
--   Una tabella che mostra le emissioni di CO2 totali mensili e le emissioni di CO2 medie mensili generate per i computer nella raccolta specificata per il periodo di tempo specificato.  
+-   指定した期間にわたる、指定のコレクション内のコンピューターの合計月間 CO2 排出量、および平均月間 CO2 排出量をトン単位で示す表。  
 
- Il report **Impatto ambientale** calcola la quantità di CO2 generata (in tonnellate) in base al tempo di accensione di un computer o un monitor in un periodo di 24 ore.  
+ **[環境影響量]** レポートは、24 時間中にコンピューターまたはモニターの電源がオンになっていた時間を使用して、排出された CO2 の量をトン単位で計算します。  
 
- Usare i parametri seguenti per configurare questo report.  
+ このレポートを構成するには、次のパラメーターを使用します。  
 
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Data di inizio report**|Nell'elenco a discesa selezionare una data di inizio per il report.|  
-|**Data di fine report**|Nell'elenco a discesa selezionare una data di fine per il report.|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
-|**Tipo di dispositivo**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
+|**レポート開始日**|ドロップダウン リストからこのレポートの開始日を選択します。|  
+|**レポート終了日**|ドロップダウン リストからこのレポートの終了日を選択します。|  
+|**コレクション名**|ドロップダウン リストからこのレポートの対象にするコレクションを選択します。|  
+|**デバイスの種類**|ドロップダウン リストから、このレポートを作成するコンピューターの種類を選択します。 有効な値は、**[すべて]** (デスクトップとポータブル コンピューターの両方)、**[デスクトップ]** (デスクトップ コンピューターのみ)、および **[ラップトップ]** (ポータブル コンピューターのみ) です。 これらの値は、選択したレポート期間に対してのみ返されます。|  
 
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- I parametri nascosti seguenti possono essere specificati facoltativamente per modificare il comportamento di questo report.  
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ 必要に応じて次の非表示パラメーターを指定して、このレポートの動作を変更することができます。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Computer desktop acceso**|Specificare il consumo di energia di un computer desktop quando è acceso. Il valore predefinito è **0,07** kW all'ora.|  
-|**Computer portatile acceso**|Specificare il consumo di energia di un computer portatile quando è acceso. Il valore predefinito è **0,02** kW all'ora.|  
-|**Computer desktop sospeso**|Specificare il consumo di energia di un computer desktop entrato in sospensione. Il valore predefinito è **0,003** kW all'ora.|  
-|**Computer portatile sospeso**|Specificare il consumo di energia di un computer portatile entrato in sospensione. Il valore predefinito è **0,001** kW all'ora.|  
-|**Computer desktop spento**|Specificare il consumo di energia di un computer desktop quando è spento. Il valore predefinito è **0** kW all'ora.|  
-|**Computer portatile spento**|Specificare il consumo di energia di un computer portatile quando è spento. Il valore predefinito è **0** kW all'ora.|  
-|**Monitor desktop acceso**|Specificare il consumo di energia di un monitor di computer desktop quando è acceso. Il valore predefinito è **0,028** kW all'ora.|  
-|**Monitor portatile acceso**|Specificare il consumo di energia di un monitor di computer portatile quando è acceso. Il valore predefinito è **0** kW all'ora.|  
-|**Fattore carbonio (tonnellate/kWh)** (CO2Mix)|Specificare il valore per il fattore di carbonio (in tonnellate/kWh) che è in genere possibile ottenere dalla società fornitrice dell'energia elettrica. Il valore predefinito è **0,0015** tonnellate per kWh.|  
+|**デスクトップ コンピューター オン**|デスクトップ コンピューターの電源がオンになっているときの電力消費量を指定します。 既定値は [0.07] kWh です。 ****|  
+|**ラップトップ コンピューター オン**|ポータブル コンピューターの電源がオンになっているときの電力消費量を指定します。 既定値は **0.02** kWh です。|  
+|**デスクトップ コンピューター スリープ**|スリープ状態にあるデスクトップ コンピューターの電力消費量を指定します。 既定値は **0.003** kWh です。|  
+|**ラップトップ コンピューター スリープ**|スリープ状態にあるポータブル コンピューターの電力消費量を指定します。 既定値は **0.001** kWh です。|  
+|**デスクトップ コンピューター オフ**|デスクトップ コンピューターの電源がオフになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**ラップトップ コンピューター オフ**|ポータブル コンピューターの電源がオフになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**デスクトップ モニター オン**|デスクトップ コンピューターのモニターがオンになっているときの電力消費量を指定します。 既定値は **0.028** kWh です。|  
+|**ラップトップ モニター オン**|ポータブル コンピューターのモニターがオンになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**CO2 排出係数 (トン/kWh)** (CO2Mix)|排出係数の値を 1 kWh あたりのトン単位で指定します。この値は通常電力会社から入手できます。 既定値は [0.0015] トン/kWh です。 ****|  
 
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report non è collegato ad altri report relativi al risparmio energia.  
+#### <a name="report-links"></a>レポート リンク  
+ このレポートは、他の電源管理レポートにはリンクされていません。  
 
-###  <a name="a-namebkmkenvironmentalimpactbydaya-environmental-impact-by-day-report"></a><a name="BKMK_Environmental_Impact_by_Day"></a> Report Impatto ambientale per giorno  
- Il report **Impatto ambientale per giorno** report visualizza le informazioni seguenti:  
+###  <a name="BKMK_Environmental_Impact_by_Day"></a> 日別環境影響量レポート  
+ [日別環境影響量] レポートには、次の情報が表示されます。 ****  
 
--   Un grafico che mostra le emissioni di CO2 totali giornaliere (in tonnellate) per i computer nella raccolta specificata negli ultimi 31 giorni.  
+-   過去 31 日間にわたる、指定のコレクション内のすべてのコンピューターの合計日次 CO2 排出量をトン単位で示すグラフ。  
 
--   Un grafico che mostra le emissioni di CO2 medie giornaliere (in tonnellate) per ogni computer nella raccolta specificata negli ultimi 31 giorni.  
+-   過去 31 日間にわたる、指定のコレクション内の各コンピューターあたりの平均日次 CO2 排出量をトン単位で示すグラフ。  
 
--   Una tabella che mostra le emissioni di CO2 totali giornaliere e le emissioni di CO2 medie giornaliere generate per i computer nella raccolta specificata negli ultimi 31 giorni.  
+-   過去 31 日間にわたる、指定のコレクション内の全コンピューターの合計日次 CO2 排出量、および各コンピューターあたりの平均日次 CO2 排出量をトン単位で示す表。  
 
- Il report **Impatto ambientale per giorno** calcola la quantità di CO2 generata (in tonnellate) in base al tempo di accensione di un computer o un monitor in un periodo di 24 ore.  
+ **[日別環境影響量]** レポートは、24 時間中にコンピューターまたはモニターの電源がオンになっていた時間を使用して、排出された CO2 の量をトン単位で計算します。  
 
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
-|**Tipo di dispositivo**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
+|**コレクション名**|ドロップダウン リストからこのレポートの対象にするコレクションを選択します。|  
+|**デバイスの種類**|ドロップダウン リストから、このレポートを作成するコンピューターの種類を選択します。 有効な値は、**[すべて]** (デスクトップとポータブル コンピューターの両方)、**[デスクトップ]** (デスクトップ コンピューターのみ)、および **[ラップトップ]** (ポータブル コンピューターのみ) です。 これらの値は、選択したレポート期間に対してのみ返されます。|  
 
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- I parametri nascosti seguenti possono essere specificati facoltativamente per modificare il comportamento di questo report.  
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ 必要に応じて次の非表示パラメーターを指定して、このレポートの動作を変更することができます。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Computer desktop acceso**|Specificare il consumo di energia di un computer desktop quando è acceso. Il valore predefinito è **0,07** kWh.|  
-|**Computer portatile acceso**|Specificare il consumo di energia di un computer portatile quando è acceso. Il valore predefinito è **0,02** kWh.|  
-|**Computer desktop spento**|Specificare il consumo di energia di un computer desktop quando è spento. Il valore predefinito è **0** kWh.|  
-|**Computer portatile spento**|Specificare il consumo di energia di un computer portatile quando è spento. Il valore predefinito è **0** kWh.|  
-|**Computer desktop sospeso**|Specificare il consumo di energia di un computer desktop entrato in sospensione. Il valore predefinito è **0,003** kWh.|  
-|**Computer portatile sospeso**|Specificare il consumo di energia di un computer portatile entrato in sospensione. Il valore predefinito è **0,001** kWh.|  
-|**Monitor desktop acceso**|Specificare il consumo di energia di un monitor di computer desktop quando è acceso. Il valore predefinito è **0,028** kWh.|  
-|**Monitor portatile acceso**|Specificare il consumo di energia di un monitor di computer portatile quando è acceso. Il valore predefinito è **0** kWh.|  
-|**Fattore carbonio (tonnellate/kWh)** (CO2Mix)|Specificare un valore per il fattore di carbonio (in tonnellate/kWh) che è in genere possibile ottenere dalla società fornitrice dell'energia elettrica. Il valore predefinito è **0,0015** tonnellate per kWh.|  
+|**デスクトップ コンピューター オン**|デスクトップ コンピューターの電源がオンになっているときの電力消費量を指定します。 既定値は [0.07] kWh です。 ****|  
+|**ラップトップ コンピューター オン**|ポータブル コンピューターの電源がオンになっているときの電力消費量を指定します。 既定値は **0.02** kWh です。|  
+|**デスクトップ コンピューター オフ**|デスクトップ コンピューターの電源がオフになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**ラップトップ コンピューター オフ**|ポータブル コンピューターの電源がオフになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**デスクトップ コンピューター スリープ**|スリープ状態にあるデスクトップ コンピューターの電力消費量を指定します。 既定値は **0.003** kWh です。|  
+|**ラップトップ コンピューター スリープ**|スリープ状態にあるポータブル コンピューターの電力消費量を指定します。 既定値は **0.001** kWh です。|  
+|**デスクトップ モニター オン**|デスクトップ コンピューターのモニターがオンになっているときの電力消費量を指定します。 既定値は **0.028** kWh です。|  
+|**ラップトップ モニター オン**|ポータブル コンピューターのモニターがオンになっているときの電力消費量を指定します。 既定値は **0** kWh です。|  
+|**CO2 排出係数 (トン/kWh)** (CO2Mix)|排出係数の値を 1 kWh あたりのトン単位で指定します。この値は通常電力会社から入手できます。 既定値は [0.0015] トン/kWh です。 ****|  
 
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report non è collegato ad altri report relativi al risparmio energia.  
+#### <a name="report-links"></a>レポート リンク  
+ このレポートは、他の電源管理レポートにはリンクされていません。  
 
-###  <a name="a-namebkmkinsomniacomputerdetailsa-insomnia-computer-details-report"></a><a name="BKMK_Insomnia_Computer_Details"></a> Report Dettagli errore sospensione del computer  
- Il report **Dettagli errore sospensione del computer** visualizza un elenco di computer che non è stato possibile mettere in stato di sospensione o ibernazione per un motivo specifico in un periodo di tempo specificato. Questo report viene chiamato dal **Report errore sospensione** e non è progettato per essere eseguito direttamente dall'amministratore del sito.  
+###  <a name="BKMK_Insomnia_Computer_Details"></a> 電源管理不可のコンピューターの詳細レポート  
+ [電源管理不可のコンピューターの詳細] レポートには、指定した期間中に特定の理由によりスリープ状態や休止状態にならなかったコンピューターの一覧が表示されます。 **** このレポートは [電源管理不可] レポートによって呼び出されるもので、サイト管理者が直接実行するものではありません。 ****  
 
- Il **Report errore sospensione** indica i computer come **Non idoneo per essere sospeso** quando non sono in grado di passare allo stato di sospensione e rimangono accesi per l'intero intervallo specificato per il report. Il report indica i computer come **Non idoneo per essere messo in stato di ibernazione** quando non sono in grado di passare allo stato di ibernazione e rimangono accesi per l'intero intervallo specificato per il report.  
+ **電源管理不可レポート** としてコンピュータを表示 **スリープ機能なし** ときに、スリープの対応していないがオンであった指定のレポート期間中にします。 また、休止することができないため、指定のレポート期間中ずっと電源がオンであったコンピューターは [休止非対応] として表示されます。 ****  
 
 > [!NOTE]  
->  Il report Risparmio energia può solo raccogliere le cause che hanno impedito di entrare in stato di sospensione o ibernazione ai computer che eseguono Windows 7 o Windows Server 2008 R2.  
+>  電源管理によってコンピューターがスリープ状態や休止状態に切り替わらなかった原因を収集できるのは、Windows 7 または Windows Server 2008 R2 を実行しているコンピューターからのみです。  
 
- Usare i parametri seguenti per configurare questo report.  
+ このレポートを構成するには、次のパラメーターを使用します。  
 
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta da usare per il report.|  
-|**Intervallo report (giorni)**|Specificare il numero di giorni per il report. Il valore predefinito è **7** giorni.|  
-|**Causa di insonnia**|Nell'elenco a discesa selezionare una delle cause che possono impedire ai computer di passare allo stato di sospensione o ibernazione.|  
+|**コレクション名**|ドロップダウン リストからこのレポートに使用するコレクションを選択します。|  
+|**報告間隔 (日数)**|レポートを作成する日数を指定します。 既定値は 7 日です。 ****|  
+|**電源管理不可の原因**|ドロップダウン リストから、コンピューターがスリープ状態や休止状態になるのを妨げる可能性のある原因を 1 つ選択します。|  
 
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- Per questo report non sono disponibili parametri nascosti che è possibile impostare.  
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ このレポートには設定可能な非表示パラメーターはありません。  
 
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report contiene collegamenti al report seguente che offre ulteriori informazioni sull'elemento selezionato.  
+#### <a name="report-links"></a>レポート リンク  
+ このレポートには、選択された項目について追加の情報を提供する次のレポートへのリンクが含まれています。  
 
-|Nome report|Dettagli|  
+|レポート名|説明|  
 |-----------------|-------------|  
-|**Dettagli computer**|Fare clic sul collegamento **Fare clic per ulteriori informazioni** per visualizzare informazioni su capacità di risparmio energia, impostazioni di risparmio energia e combinazioni per il risparmio di energia applicate per il computer selezionato.<br /><br /> Per altre informazioni, vedere la sezione [Computer Details Report](#BKMK_Computer_Details) in questo argomento.|  
+|**コンピューターの詳細**|[詳細情報を表示するにはここをクリック] というリンクをクリックすると、選択したコンピューターの電源機能、電源設定、および適用されている電源プランが表示されます。 ****<br /><br /> 詳細については、このトピックの「 [Computer Details Report](#BKMK_Computer_Details) 」をご覧ください。|  
 
-###  <a name="a-namebkmkinsomniaa-insomnia-report"></a><a name="BKMK_Insomnia"></a> Insomnia report  
- Il **Report errore sospensione** visualizza un elenco di cause comuni che hanno impedito ai computer di entrare in stato di sospensione o di ibernazione e il numero di computer interessati da ogni causa per un periodo di tempo specificato. Esistono una serie di cause che possono impedire a un computer di entrare in stato di sospensione o ibernazione, ad esempio un processo in esecuzione nel computer, una sessione di Desktop remoto aperta o il fatto che il computer non supporti la sospensione o l'ibernazione. Da questo report è possibile aprire il report **Dettagli errore sospensione del computer** che visualizza un elenco dei computer interessati da ogni causa.  
+###  <a name="BKMK_Insomnia"></a> Insomnia report  
+ [電源管理不可] レポートには、コンピューターがスリープ状態や休止状態にならない結果をもたらす一般的な原因のリストと、指定期間中にこれら各原因の影響を受けたコンピューターの数が表示されます。 **** コンピューターがスリープ状態または休止状態に切り替わらない場合、コンピューターでプロセスが実行されている、リモート デスクトップのセッションが開いている、またはコンピューターがスリープや休止に対応していない、などいくつもの原因が考えられます。 このレポートから、[電源管理不可のコンピューターの詳細] レポートを開き、コンピューターをスリープ状態や休止状態にしないそれぞれの原因の影響を受けたコンピューターの一覧を表示することができます。 ****  
 
- Il report Report errore sospensione indica i computer come **Non idoneo per essere sospeso** quando non sono in grado di passare allo stato di sospensione e rimangono accesi per l'intero intervallo specificato per il report. Il report indica i computer come **Non idoneo per essere messo in stato di ibernazione** quando non sono in grado di passare allo stato di ibernazione e rimangono accesi per l'intero intervallo specificato per il report.  
+ [電源無休レポート] には、スリープ状態にすることができないため、指定のレポート期間中ずっと電源がオンであったコンピューターが [スリープ非対応] として表示されます。 **** また、休止することができないため、指定のレポート期間中ずっと電源がオンであったコンピューターは [休止非対応] として表示されます。 ****  
 
 > [!NOTE]  
->  Il report Risparmio energia può solo raccogliere le cause che hanno impedito di entrare in stato di sospensione o ibernazione ai computer che eseguono Windows 7 o Windows Server 2008 R2.  
+>  電源管理によってコンピューターがスリープ状態や休止状態に切り替わらなかった原因を収集できるのは、Windows 7 または Windows Server 2008 R2 を実行しているコンピューターからのみです。  
 
- Usare i parametri seguenti per configurare questo report.  
+ このレポートを構成するには、次のパラメーターを使用します。  
 
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta da usare per il report.|  
-|**Intervallo report (giorni)**|Specificare il numero di giorni per il report. Il valore predefinito è **7** giorni. Il valore massimo è **365** giorni. Specificare **0** per eseguire il report per la data odierna.|  
+|**コレクション名**|ドロップダウン リストからこのレポートに使用するコレクションを選択します。|  
+|**報告間隔 (日数)**|レポートを作成する日数を指定します。 既定値は 7 日です。 **** 最大値は [365] 日間です。 **** 当日分のレポートを実行するには [0] を指定します。 ****|  
 
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- Per questo report non sono disponibili parametri nascosti che è possibile impostare.  
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ このレポートには設定可能な非表示パラメーターはありません。  
 
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report contiene collegamenti al report seguente che offre ulteriori informazioni sull'elemento selezionato.  
+#### <a name="report-links"></a>レポート リンク  
+ このレポートには、選択された項目について追加の情報を提供する次のレポートへのリンクが含まれています。  
 
-|Nome report|Dettagli|  
+|レポート名|説明|  
 |-----------------|-------------|  
-|**Dettagli errore sospensione del computer**|Fare clic su un numero nella colonna **Computer interessati** per visualizzare un elenco di computer che non è stato possibile mettere in stato di sospensione o ibernazione a causa della causa selezionata.<br /><br /> Per altre informazioni, vedere la sezione [Insomnia Computer Details Report](#BKMK_Insomnia_Computer_Details) in questo argomento.|  
+|****|[影響を受けたコンピューター] 列の数値をクリックすると、選択した原因のためにスリープ状態または休止状態にならなかったコンピューターのリストが表示されます。 ****<br /><br /> 詳細については、このトピックの「 [Insomnia Computer Details Report](#BKMK_Insomnia_Computer_Details) 」をご覧ください。|  
 
-###  <a name="a-namebkmkcapabilitesa-power-capabilities-report"></a><a name="BKMK_Capabilites"></a> Report Funzionalità alimentazione  
- Il report **Funzionalità alimentazione** visualizza le capacità hardware di risparmio energia dei computer nella raccolta specificata. Questo report viene in genere usato nella fase di monitoraggio del risparmio energia per determinare le funzionalità di risparmio energia dei computer nell'organizzazione. Le informazioni visualizzate nel report possono quindi essere usate per creare raccolte di computer a cui applicare combinazioni per il risparmio di energia oppure da escludere dal risparmio energia. Le funzionalità di risparmio energia visualizzate in questo report sono:  
+###  <a name="BKMK_Capabilites"></a> 電源機能レポート  
+ [電源機能] レポートには、指定のコレクションに含まれるコンピューターのハードウェアの電源管理機能が表示されます。 **** 通常このレポートは、組織内のコンピューターが持つ電源管理機能を確認するために、電源管理の監視段階で使用されます。 また、このレポートに表示される情報を使用して、電源プランを適用するコンピューターのコレクションや、電源管理から除外するコンピューターのコレクションを作成できます。 このレポートに表示される電源管理機能は次のとおりです。  
 
--   **Idoneo per essere sospeso** - Indica se il computer ha la possibilità di passare allo stato di sospensione se è stato configurato per farlo.  
+-   [スリープ対応] - スリープ状態に入るように構成されているコンピューターが、その機能に対応しているかどうかを示します。****   
 
--   **Idoneo per essere messo in stato di ibernazione** - Indica se il computer può passare allo stato di ibernazione se è stato configurato per farlo.  
+-   [休止対応] - 休止状態に入るように構成されているコンピューターが、その機能に対応しているかどうかを示します。****   
 
--   **Riattivazione da sospensione** - Indica se il computer può essere riattivato dalla sospensione se è stato configurato per farlo.  
+-   [スリープ状態からの復帰に対応] - スリープ状態から復帰するように構成されているコンピューターが、その機能に対応しているかどうかを示します。****   
 
--   **Riattivazione dallo stato di ibernazione** - Indica se il computer può essere riattivato dallo stato di ibernazione se è stato configurato per farlo.  
+-   [休止状態からの復帰に対応] - 休止状態から復帰するように構成されているコンピューターが、その機能に対応しているかどうかを示します。****   
 
- I valori restituiti dal report **Funzionalità di alimentazione** indicano le capacità correlate alla sospensione e all'ibernazione dei computer segnalate da Windows. Tuttavia, i valori restituiti non riflettono i casi in cui le impostazioni di Windows o del BIOS impediscono il funzionamento di queste funzionalità.  
+ [電源機能] レポートに表示される値は、Windows によって報告された、コンピューターのスリープ機能および休止機能です。 **** ただし、この報告値には、Windows または BIOS 設定によりこれらの機能が妨げられるケースは反映されていません。  
 
- Usare i parametri seguenti per configurare questo report.  
+ このレポートを構成するには、次のパラメーターを使用します。  
 
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
-|**Filtro visualizzazione**|Dall'elenco a discesa selezionare **Non supportato** per visualizzare solo i computer nella raccolta specificata che non sono idonei alla sospensione, ibernazione, riattivazione dalla modalità di sospensione o riattivazione dalla modalità di sospensione. Selezionare **Mostra tutto** per visualizzare tutti i computer nella raccolta specificata.|  
+|**コレクション**|ドロップダウン リストからこのレポートの対象にするコレクションを選択します。|  
+|**表示フィルター**|ドロップダウン リストから **[サポートなし]** を選択すると、指定したコレクション内にある、スリープ、休止、スリープ状態からの復帰、または休止状態からの復帰に対応していないコンピューターのみが表示されます。 **[すべて表示]** を選択すると、指定したコレクション内のすべてのコンピューターが表示されます。|  
 
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- Per questo report non sono disponibili parametri nascosti che è possibile impostare.  
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ このレポートには設定可能な非表示パラメーターはありません。  
 
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report contiene collegamenti al report seguente che offre ulteriori informazioni sull'elemento selezionato.  
+#### <a name="report-links"></a>レポート リンク  
+ このレポートには、選択された項目について追加の情報を提供する次のレポートへのリンクが含まれています。  
 
-|Nome report|Dettagli|  
+|レポート名|説明|  
 |-----------------|-------------|  
-|**Dettagli computer**|Fare clic sul nome di un computer per visualizzare informazioni su capacità di risparmio energia, impostazioni di risparmio energia e combinazioni per il risparmio di energia applicate per il computer selezionato.<br /><br /> Per altre informazioni, vedere la sezione [Computer Details Report](#BKMK_Computer_Details) in questo argomento.|  
+|**コンピューターの詳細**|コンピューター名をクリックすると、そのコンピューターの電源機能、電源設定、および適用されている電源プランが表示されます。<br /><br /> 詳細については、このトピックの「 [Computer Details Report](#BKMK_Computer_Details) 」をご覧ください。|  
 
-###  <a name="a-namebkmksettingsa-power-settings-report"></a><a name="BKMK_Settings"></a> Report Impostazioni risparmio energia  
- Il report **Impostazioni risparmio energia** visualizza un elenco aggregato delle impostazioni di risparmio energia usate dai computer nella raccolta specificata. Per ogni impostazione di risparmio energia, vengono visualizzati le modalità, i valori e le unità possibili, insieme al conteggio del numero di computer che usano tali valori. Questo report può essere usato durante la fase di monitoraggio del risparmio energia per consentire all'amministratore di conoscere le impostazioni di risparmio energia esistenti usate dai computer del sito e per facilitare la pianificazione delle impostazioni di risparmio energia ottimali da applicare tramite una combinazione per il risparmio di energia. Il report è utile anche durante la risoluzione dei problemi, per verificare la corretta applicazione delle impostazioni di risparmio energia.  
+###  <a name="BKMK_Settings"></a> 電源設定レポート  
+ [電源設定] レポートには、指定のコレクションに含まれるコンピューターによって使用される電源設定の総合リストが表示されます。 **** 各電源設定につき可能な電源モード、値、および単位に加えて、これらの値を使用しているコンピューターの台数が表示されます。 このレポートを電源管理の監視段階で使用すると、管理者がサイトのコンピューターで使用されている既存の電源設定について理解し、電源管理プランによって適用すべき最適な電源設定を計画するのに効果的です。 また、電源設定が正しく適用されたことを確認するためのトラブルシューティングにも役立ちます。  
 
 > [!NOTE]  
->  Le impostazioni visualizzate vengono raccolte dai computer client durante l'inventario hardware. A seconda dell'ora in cui viene eseguito l'inventario hardware, potrebbero essere raccolte le impostazioni dalle combinazioni per il risparmio di energia in ore di punta o fuori ore di punta.  
+>  表示される設定は、ハードウェア インベントリ時にクライアント コンピューターから収集されます。 ハードウェア インベントリの実行時間によっては、適用されているピーク時または非ピーク時の電源プランの設定が収集されます。  
 
- Usare i parametri seguenti per configurare questo report.  
+ このレポートを構成するには、次のパラメーターを使用します。  
 
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
+|**コレクション名**|ドロップダウン リストからこのレポートの対象にするコレクションを選択します。|  
 
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- I parametri nascosti seguenti possono essere specificati facoltativamente per modificare il comportamento di questo report.  
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ 必要に応じて次の非表示パラメーターを指定して、このレポートの動作を変更することができます。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**numberOfLocalizations**|Specificare il numero di lingue in cui si vogliono visualizzare i nomi delle impostazioni di risparmio energia segnalati dai computer client. Se si vuole visualizzare solo la lingua più usata, lasciare il valore predefinito **1**per questa impostazione. Per visualizzare tutte le lingue, impostare questo valore su **0**.|  
+|**numberOfLocalizations**|クライアント コンピューターにより報告された電源設定名の表示に使用する言語の数を指定します。 最もよく使われる言語のみを表示するには、この設定を規定値の [1] のままにします。 **** すべての言語を表示するには、この値を [0] に設定します。 ****|  
 
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report contiene collegamenti al report seguente che offre ulteriori informazioni sull'elemento selezionato.  
+#### <a name="report-links"></a>レポート リンク  
+ このレポートには、選択された項目について追加の情報を提供する次のレポートへのリンクが含まれています。  
 
-|Nome report|Dettagli|  
+|レポート名|説明|  
 |-----------------|-------------|  
-|**Dettagli impostazioni risparmio energia**|Fare clic sul numero di computer nella colonna **Computer** per visualizzare un elenco di tutti i computer che usano le impostazioni di risparmio energia in tale riga.<br /><br /> Per altre informazioni, vedere la sezione [Power Settings Details Report](#BKMK_Settings_Details) in questo argomento.|  
+|**電源設定の詳細**|[コンピューター] 列でコンピューターの数をクリックすると、その行にある電源設定を使用しているすべてのコンピューターのリストが表示されます。 ****<br /><br /> 詳細については、このトピックの「 [Power Settings Details Report](#BKMK_Settings_Details) 」をご覧ください。|  
 
-###  <a name="a-namebkmksettingsdetailsa-power-settings-details-report"></a><a name="BKMK_Settings_Details"></a> Power Settings Details report  
- Il report **Dettagli impostazioni risparmio energia** visualizza ulteriori informazioni sui computer selezionati nel report **Impostazioni risparmio energia** . Questo report viene chiamato dal report **Impostazioni risparmio energia** e non è progettato per essere eseguito direttamente dall'amministratore del sito.  
+###  <a name="BKMK_Settings_Details"></a> Power Settings Details report  
+ **電源設定の詳細** レポートで選択されているコンピューターに関するさらに情報を表示、 **電源設定** レポートします。 このレポートは [電源設定] レポートから呼び出されるもので、サイト管理者が直接実行するものではありません。 ****  
 
-#### <a name="required-report-parameters"></a>Parametri obbligatori del report  
- I parametri seguenti devono essere specificati per eseguire il report.  
+#### <a name="required-report-parameters"></a>必須レポート パラメーター  
+ このレポートを実行するには、次のパラメーターの指定は必須です。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**Raccolta**|Nell'elenco a discesa selezionare una raccolta da usare per il report.|  
-|**GUID impostazione per il risparmio di energia**|Nell'elenco a discesa selezionare il GUID dell'impostazione di risparmio energia per cui creare il report. Per un elenco di tutte le impostazioni di risparmio energia e il relativo utilizzo, vedere [Impostazioni disponibili per le combinazioni per il risparmio di energia](../../../../core/clients/manage/power/create-and-apply-power-plans.md#BKMK_Plans) nell'argomento [Come creare e applicare combinazioni per il risparmio di energia in System Center Configuration Manager](../../../../core/clients/manage/power/create-and-apply-power-plans.md).|  
-|**Power Mode**|Nell'elenco a discesa selezionare il tipo di impostazioni di risparmio energia da visualizzare nei risultati del report. Selezionare **Alimentazione da rete elettrica** per visualizzare le impostazioni di risparmio energia configurate per quando il computer è collegato alla rete elettrica e **A batteria** per visualizzare le impostazioni di risparmio energia configurate per quando il computer è alimentato a batteria.|  
-|**Indice impostazione**|Nell'elenco a discesa selezionare il valore per il nome dell'impostazione di risparmio energia selezionata per cui creare il report. Ad esempio, per visualizzare tutti i computer con l'opzione **Disattiva disco rigido dopo** impostata su **10** minuti, selezionare **Disattiva disco rigido dopo** in **Nome impostazione per il risparmio di energia** e **10** in **Indice impostazione**.|  
+|**コレクション**|ドロップダウン リストからこのレポートに使用するコレクションを選択します。|  
+|**電源設定 GUID**|ドロップダウン リストから、このレポートを作成する電源設定 GUID を選択します。 すべての電源設定とその用途の一覧は、「[System Center Configuration Manager で電源プランを作成して適用する方法](../../../../core/clients/manage/power/create-and-apply-power-plans.md)」トピックの「[使用できる電源管理プランの設定](../../../../core/clients/manage/power/create-and-apply-power-plans.md#BKMK_Plans)」を参照してください。|  
+|**Power Mode**|ドロップダウン リストから、このレポートに含める電源設定の種類を選択します。 選択 **で接続されている** 用、コンピューターが接続されているときに構成された電源設定を表示して **バッテリ使用時** 、コンピューターがバッテリ電源で実行されている場合に用に構成された電源設定を表示します。|  
+|**インデックス設定**|ドロップダウン リストから、このレポートを作成する、選択された電源設定名の値を選択します。 たとえば、すべてのコンピュータを表示する場合、 **後にハード_ディスクをオフにする** 設定に設定 **10** 分で、 **後にハード_ディスクをオフにする** の **電源設定名** と **10** の **インデックス設定**です。|  
 
-#### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
- I parametri nascosti seguenti possono essere specificati facoltativamente per modificare il comportamento di questo report.  
+#### <a name="hidden-report-parameters"></a>非表示レポート パラメーター  
+ 必要に応じて次の非表示パラメーターを指定して、このレポートの動作を変更することができます。  
 
-|Nome parametro|Descrizione|  
+|パラメーター名|説明|  
 |--------------------|-----------------|  
-|**numberOfLocalizations**|Specificare il numero di lingue in cui si vogliono visualizzare i nomi delle impostazioni di risparmio energia segnalati dai computer client. Se si vuole visualizzare solo la lingua più usata, lasciare il valore predefinito **1**per questa impostazione. Per visualizzare tutte le lingue, impostare questo valore su **0**.|  
+|**numberOfLocalizations**|クライアント コンピューターにより報告された電源設定名の表示に使用する言語の数を指定します。 最もよく使われる言語のみを表示するには、この設定を規定値の [1] のままにします。 **** すべての言語を表示するには、この値を [0] に設定します。 ****|  
 
-#### <a name="report-links"></a>Collegamenti per il report  
- Questo report contiene collegamenti al report seguente che offre ulteriori informazioni sull'elemento selezionato.  
+#### <a name="report-links"></a>レポート リンク  
+ このレポートには、選択された項目について追加の情報を提供する次のレポートへのリンクが含まれています。  
 
-|Nome report|Dettagli|  
+|レポート名|説明|  
 |-----------------|-------------|  
-|**Dettagli computer**|Fare clic sul nome di un computer per visualizzare informazioni su capacità di risparmio energia, impostazioni di risparmio energia e combinazioni per il risparmio di energia applicate per il computer selezionato.<br /><br /> Per altre informazioni, vedere la sezione [Computer Details Report](#BKMK_Computer_Details) in questo argomento.|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+|**コンピューターの詳細**|コンピューター名をクリックすると、そのコンピューターの電源機能、電源設定、および適用されている電源プランが表示されます。<br /><br /> 詳細については、このトピックの「 [Computer Details Report](#BKMK_Computer_Details) 」をご覧ください。|  

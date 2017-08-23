@@ -1,99 +1,96 @@
 ---
-title: Procedura guidata per i servizi di Azure | Microsoft Docs
-description: Informazioni sulla Procedura guidata per i servizi di Azure per System Center Configuration Manager.
+title: "Azure サービス ウィザード | Microsoft Docs"
+description: "System Center Configuration Manager の Azure サービス ウィザードについて"
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: a26a653e-17aa-43eb-ab36-0e36c7d29f49
-caps.latest.revision: 0
+caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 0663ba84762c44a5c303562548499f195bae9e1c
 ms.openlocfilehash: 22203b358830903cf2e531c0532ae3111b8265fc
-ms.contentlocale: it-it
-ms.lasthandoff: 08/01/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurare i servizi di Azure da usare con Configuration Manager
+# <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configuration Manager と共に使用するように Azure サービスを構成する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-A partire da Current Branch versione 1706, la **Procedura guidata per i servizi di Azure** viene usata per semplificare il processo di configurazione dei servizi di Azure usati con Configuration Manager.
+Current Branch バージョン 1706 以降、**Azure サービス ウィザード**を使用して、Configuration Manager で使用する Azure サービスの構成のプロセスを簡単にできます。
 
-Questa procedura guidata offre un'esperienza di configurazione comune perché usa un'**app Web di Azure** per fornire i dettagli della sottoscrizione e della configurazione. L'app Web evita di dover immettere le stesse informazioni ogni volta che si configura un nuovo componente o servizio di Configuration Manager con Azure.
+このウィザードの構成操作は一般的なものです。**Azure Web アプリ**を利用し、サブスクリプションと構成の詳細を提供します。 Web アプリを利用することで、Azure で新しい Configuration Manager コンポーネントやサービスをセットアップするたびに同じ情報を入力する必要がなくなります。
 
-Usando la procedura guidata Configura i servizi di Azure, vengono configurati i servizi di Azure seguenti:
--   **Gestione cloud**   
-    [Consente ai client di eseguire l'autenticazione usando Azure Active Directory]() (Azure AD). È anche possibile [configurare l'individuazione utenti di Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc).
--   **OMS Connector**
-    [Connette a Operations Manager Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) (OMS) e sincronizza i dati, ad esempio le raccolte, con Log Analytics di OMS.
--   **Preparazione aggiornamenti**
-    [Connette a Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics) e visualizza i dati relativi alla compatibilità con l'aggiornamento per il client.
--   **Windows Store per le aziende** Connette allo store online di [Windows Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business) e ottiene le app per l'organizzazione che è possibile distribuire con Configuration Manager.
+次の Azure サービスは Azure サービスの構成ウィザードで構成されます。
+-   **クラウド管理**   
+    [Azure Active Directory (Azure AD) を利用し、クライアントの認証を有効にする]() [Azure AD ユーザー探索を構成](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc)することもできます。
+-   **OMS コネクタ**
+    [Operations Manager Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) (OMS) に接続し、OMS Log Analytics にコレクションなどのデータを同期します。
+-   **Upgrade Readiness**
+    [Upgrade Readiness に接続](/sccm/core/clients/manage/upgrade/upgrade-analytics)し、クライアント アップグレード互換性データを表示します。
+-   **Windows Store for Business** [Windows Store for Business](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business) のオンライン ストアに接続し、Configuration Manager でデプロイできるアプリを組織のために入手します。
 
-Quando si usa la procedura guidata per configurare un servizio, sono disponibili diverse azioni comuni.
-Sono inclusi:
--   Configurare l'ambiente di Azure: nella pagina **App** della procedura guidata si seleziona l'**ambiente di Azure** usato. Verificare il contenuto di ogni servizio per sapere se supporta solo il cloud di Azure pubblico o può supportare un cloud privato.
--   Creare o importare un'app server: nella pagina **App** della procedura guidata è possibile **creare** e **importare** app Web di Azure. Le opzioni disponibili dipendono dal servizio che si sta configurando.  Alcuni servizi potrebbero anche richiedere un'app aggiuntiva. Un servizio, ad esempio, potrebbe richiedere anche un'**app client nativa**.
-
-
-Per informazioni sulle app Web di Azure, vedere [Autenticazione e autorizzazione nel servizio app di Azure](/azure/app-service/app-service-authentication-overview) e [Panoramica di App Web](/azure/app-service-web/app-service-web-overview)
+ウィザードでサービスを構成するとき、いくつかの共通アクションがあります。
+次の設定があります。
+-   Azure 環境を構成する: ウィザードの **[アプリ]** ページで、使用する **Azure 環境**を選択します。 サービスごとのコンテンツを参照し、公共の Azure クラウドのみに対応しているか、プライベート クラウドにも対応しているか確認してください。
+-   サーバー アプリを作成またはインポートする: ウィザードの **[アプリ]** ページで、Azure Web アプリを**作成**し、**インポート**できます。 利用できるオプションは、構成しているサービスによって異なります。  さらに、他のアプリが必要になるサービスもあります。 たとえば、**ネイティブ クライアント アプリ**も必要とするサービスがあります。
 
 
-## <a name="webapp"></a> Creare l'app Web di Azure da usare con Configuration Manager
+Azure Web アプリの詳細については、「[Azure App Service での認証および承認](/azure/app-service/app-service-authentication-overview)」と「[Web Apps の概要](/azure/app-service-web/app-service-web-overview)」を参照してください。
 
-L'app Web per i servizi di Azure connette il sito di Configuration Manager ad Azure AD ed è un prerequisito per l'uso dei servizi di Azure con l'infrastruttura. Per eseguire questa operazione:
 
-1.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e quindi fare clic su **Servizi di Azure**.
-2.  Nella scheda **Home**, nel gruppo **Servizi di Azure**, fare clic su **Configura i servizi di Azure**.
-3.  Nella pagina **Servizi di Azure** della procedura guidata per i servizi di Azure, selezionare **Gestione cloud** per consentire ai client di autenticarsi nella gerarchia usando Azure AD.
-4.  Nella pagina **Generale** della procedura guidata specificare un nome e una descrizione per il servizio di Azure.
-5.  Nella pagina **App** della procedura guidata selezionare l'ambiente di Azure dall'elenco, quindi fare clic su **Sfoglia** per selezionare l'*app Web* e l'*app client nativa* che verranno usate per configurare il servizio di Azure.     
-    **App Web:** l'opzione Sfoglia apre la finestra App server.    
-      Nella finestra **Server App** (App server) selezionare l'app server che si vuole usare e quindi fare clic su **OK**. Le app server sono app Web di Azure che contengono le configurazioni per l'account Azure, inclusi ID del tenant, ID client e una chiave privata per i client.
-    Se non è disponibile un'app, usare una delle opzioni seguenti:
-        - **Crea**: per creare una nuova app server, fare clic su **Crea**. Immettere quindi un nome descrittivo per l'app, l'URL della home page, l'URI dell'ID app e il periodo di validità della chiave privata. Per impostazione predefinita, il periodo di validità della chiave privata è di un anno.
+## <a name="webapp"></a> Configuration Manager と共に使用するように Azure Web アプリを作成する
 
-         Per continuare, un utente deve ora accedere ad Azure per completare la creazione dell'app Web in Azure. Non è necessario che l'account usato per accedere ad Azure sia lo stesso account che esegue la Procedura guidata per i servizi di Azure. Dopo l'accesso ad Azure, Configuration Manager crea l'app Web in Azure, inclusi l'ID client e la chiave privata da usare con l'app Web. In un secondo momento, è possibile visualizzare queste informazioni dal portale di Azure.
+Azure サービス Web アプリは Configuration Manager サイトを Azure AD に接続します。このアプリは、ご利用のインフラストラクチャで Azure サービスを使用するための前提条件です。 手順は次のとおりです。
 
-         Quando si usa Crea per configurare un'app Web, Configuration Manager può creare automaticamente l'app Web in Azure AD.
-        - **Importa**: per usare un'app Web già esistente nella sottoscrizione di Azure, fare clic su **Importa**. Specificare un nome descrittivo per l'app e il tenant, quindi specificare ID tenant, ID client e chiave privata per l'app Web di Azure che si vuole rendere disponibile per l'uso con Configuration Manager. Dopo aver verificato le informazioni, fare clic su **OK** per continuare.
+1.  Configuration Manager コンソールの **[管理]** ワークスペースで、**[クラウド サービス]** を展開して、**[Azure サービス]** をクリックします。
+2.  **[ホーム]** タブの **[Azure サービス]** グループで、**[Azure サービスの構成]** をクリックします。
+3.  Azure サービス ウィザードの **[Azure サービス]** ページで、**[クラウド管理]** を選択して、クライアントが Azure AD を使用して、階層で認証できるようにします。
+4.  ウィザードの **[全般]** ページで、Azure サービスの名前と説明を指定します。
+5.  ウィザードの **[アプリ]** ページで、一覧から Azure 環境を選択し、**[参照]** をクリックして Azure サービスの構成に利用する *Web アプリ*と*ネイティブ クライアント アプリ*を選択します。     
+    **Web アプリ:** [参照] をクリックすると、[サーバー アプリ] ウィンドウが開きます。    
+      **[サーバー アプリ]** ウィンドウで、使用するサーバー アプリを選択し、**[OK]** をクリックします。 サーバー アプリとは、Azure アカウントの構成 (クライアントのテナント ID、クライアント ID、シークレット キーなど) を格納する Azure Web アプリです。
+    利用可能なアプリがない場合は、次のいずれかを使用します。
+        - **作成**: 新しいセッションを作成するには、**[作成]** をクリックします。 次に、アプリのフレンドリ名、ホームページ URL、アプリ ID URI、シークレット キーの有効期間を指定します。 既定では、シークレット キーの有効期間は 1 年間です。
 
-          Questa opzione non è disponibile per tutti i servizi, che è possibile configurare.
+         続行するには、誰かが Azure にサインインし、Azure で Web アプリ作成を完了する必要があります。 Azure のサインインに使用するアカウントは、Azure サービス ウィザードを実行するアカウントと同じである必要はありません。 Azure にサインインすると、Configuration Manager によって、Azure で Web アプリと、Web アプリで使用するクライアント ID やシークレット キーが作成されます。 その後、Azure Portal からこれらを表示できます。
 
-   **App client nativa:** l'opzione Sfoglia apre la finestra App client.  
-     Nella finestra **App client** selezionare l'app client che si vuole usare e quindi fare clic su **OK**.
+         [作成] を利用して Web アプリを構成するとき、Configuration Manager は Azure AD で Web アプリを自動的に作成できます。
+        - **インポート**: Azure サブスクリプションに既に存在する Web アプリを使用するには、**[インポート]** をクリックします。 アプリとテナントのフレンドリ名を指定し、Configuration Manager で使用する Azure Web アプリのテナント ID、クライアント ID、シークレット キーを指定します。 情報を確認した後、**[OK]** をクリックして続行します。
 
-     Se non è disponibile un'app client, usare una delle opzioni seguenti:
-     - **Crea**: per creare una nuova app client, fare clic su **Crea**. Specificare quindi un nome descrittivo per l'app e l'URL di risposta.
+          このオプションは一部のサービスでは利用できないことがあります。
 
-          Per continuare, un utente deve ora accedere ad Azure per completare la creazione dell'app client in Azure. Non è necessario che l'account usato per accedere ad Azure sia lo stesso account che esegue la Procedura guidata per i servizi di Azure. Dopo l'accesso ad Azure, Configuration Manager crea l'app client nativa in Azure, incluso l'ID client da usare con l'app Web. In un secondo momento, è possibile visualizzare queste informazioni dal portale di Azure.
-          Quando si usa Crea per configurare l'app, Configuration Manager può creare automaticamente l'app client nativa in Azure AD.
-     - **Importa**: per usare un'app client già esistente nella sottoscrizione di Azure, fare clic su **Importa**. Specificare un nome descrittivo per l'app e l'ID client. Fare quindi clic su **OK** per continuare.
-           Questa opzione non è disponibile per tutti i servizi, che è possibile configurare.
+   **ネイティブ クライアント アプリ:** [参照] をクリックすると、[クライアント アプリ] ウィンドウが開きます。  
+     **[クライアント アプリ]** ウィンドウで、使用するクライアント アプリを選択し、**[OK]** をクリックします。
+
+     利用可能なクライアント アプリがない場合は、次のいずれかを使用します。
+     - **作成**: 新しいクライアント アプリを作成するには、**[作成]** をクリックします。 次に、アプリのフレンドリ名と応答 URL を指定します。
+
+          続行するには、誰かが Azure にサインインし、Azure でクライアント アプリ作成を完了する必要があります。 Azure のサインインに使用するアカウントは、Azure サービス ウィザードを実行するアカウントと同じである必要はありません。 Azure にサインインすると、Configuration Manager によって、Azure でネイティブ クライアント アプリが自動的に作成されます。これには、Web アプリで使用するためのクライアント ID が含まれます。 その後、Azure Portal からこれらを表示できます。
+          [作成] を利用してアプリを構成するとき、Configuration Manager は Azure AD でネイティブ クライアント アプリを自動的に作成できます。
+     - **インポート**: Azure サブスクリプションに既に存在するクライアント アプリを使用するには、**[インポート]** をクリックします。 アプリのフレンドリ名とクライアント ID を指定します。 **[OK]** をクリックして続行します。
+           このオプションは一部のサービスでは利用できないことがあります。
 
   <!--  MOVE THIS AND STEP 6 TO configure Azure AD User Discover  content
        [!TIP]  
      When you use Import, the account you use to run the wizard must have the *Read directory data* application permission in the Azure portal. This is required to set the correct permissions for the App. When you use Create, Configuration Manager creates the app with the correct permissions. However, you still must give consent to the application in the Azure portal.   -->
 
 
-6.  Nella pagina **Individuazione** della procedura guidata fare clic su **Abilita l'individuazione utente di Azure Active Directory** e quindi fare clic su **Impostazioni**.
-Nella finestra di dialogo **Impostazioni di individuazione utenti di Azure AD** configurare una pianificazione per quando si verifica l'individuazione. È anche possibile abilitare l'individuazione differenziale che verifica solo gli account nuovi o modificati in Azure AD. Altre informazioni sull'[individuazione utenti di Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).
+6.  ウィザードの **[検出]** ページで、**[Azure Active Directory ユーザーの探索を有効にする]** をクリックし、**[設定]** をクリックします。
+**[Azure AD ユーザー探索設定]** ダイアログ ボックスで、検出を実行するスケジュールを設定します。 Azure AD の新規または変更されたアカウントのみをチェックする差分探索を有効にすることもできます。 Azure AD ユーザー探索の詳細については[こちら](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc)をご覧ください。
  
- 7. Completare la procedura guidata.
+ 7. ウィザードを完了します。
 
-A questo punto il sito di Configuration Manager è connesso ad Azure AD.
+この時点で、Configuration Manager サイトが Azure AD に接続されています。
 
-## <a name="view-the-configuration-of-an-azure-service"></a>Visualizzare la configurazione di un servizio di Azure
-È possibile visualizzare le proprietà di un servizio di Azure configurato per l'uso.
+## <a name="view-the-configuration-of-an-azure-service"></a>Azure サービスの構成を表示する
+構成した Azure サービスのプロパティを表示できます。
 
-Nella console andare ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Servizi di Azure**. Scegliere quindi il servizio che si vuole visualizzare o modificare e quindi fare clic su **Proprietà**.
-
+コンソールで、**[管理]** > **[概要]** > **[Cloud Services]** > **[Azure サービス]** の順に進みます。 次に、表示または編集するサービスを選択し、**[プロパティ]** をクリックします。

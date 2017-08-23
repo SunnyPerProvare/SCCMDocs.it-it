@@ -1,159 +1,156 @@
 ---
-title: Estendere l'inventario hardware | Microsoft Docs
-description: Informazioni su come estendere l'inventario hardware in System Center Configuration Manager.
+title: "ハードウェア インベントリの拡張 | Microsoft Docs"
+description: "System Center Configuration Manager でハードウェア インベントリを拡張する方法について説明します。"
 ms.custom: na
 ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d5bfab4f-c55e-4545-877c-5c8db8bc1891
-caps.latest.revision: 10
-caps.handback.revision: 0
+caps.latest.revision: "10"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 5f1412fb132e3a074742e11f1142b2594146cbe1
 ms.openlocfilehash: 3e5517e1710d0d12e51fba58efda5dc5edd08544
-ms.contentlocale: it-it
-ms.lasthandoff: 07/28/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-extend-hardware-inventory-in-system-center-configuration-manager"></a>Come estendere l'inventario hardware in System Center Configuration Manager
+# <a name="how-to-extend-hardware-inventory-in-system-center-configuration-manager"></a>System Center Configuration Manager でのハードウェア インベントリの拡張方法
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-L'inventario hardware legge le informazioni dai PC Windows usando Strumentazione gestione Windows (WMI). WMI è l'implementazione Microsoft di Web-Based Enterprise Management (WBEM), uno standard del settore per l'accesso alle informazioni di gestione in ambiente aziendale. Nelle versioni precedenti di Configuration Manager era possibile estendere l'inventario hardware modificando il file sms_def.mof nel server del sito. Questo file contiene un elenco di classi WMI che può essere letto dall'inventario hardware. Se si modifica questo file, è possibile abilitare e disabilitare classi esistenti e creare anche nuove classi nell'inventario.  
+ハードウェア インベントリは、Windows Management Instrumentation (WMI) を使用して、Windows PC から情報を読み取ります。 WMI は、企業の管理情報にアクセスするための業界標準である Web-Based Enterprise Management (WBEM) を Microsoft が実装したものです。 以前のバージョンの Configuration Manager では、サイト サーバー上のファイル sms_def.mof を変更してハードウェア インベントリを拡張することができました。 このファイルには、ハードウェア インベントリで読み取ることができる WMI クラスのリストが含まれていました。 このファイルを編集すると、既存のクラスを有効および無効にでき、インベントリする新しいクラスを作成することもできました。  
 
-Il file Configuration.mof, usato per definire le classi di dati da inserire nell'inventario hardware nel client, è rimasto lo stesso da Configuration Manager 2012. È possibile creare classi di dati per effettuare un inventario di classi di dati di repository WMI esistenti o personalizzate o chiavi del Registro di sistema presenti nei sistemi client.  
+Configuration.mof ファイルは、クライアント上でハードウェア インベントリによってインベントリするデータ クラスを定義するために使用し、Configuration Manager 2012 から変更されていません。 クライアント システムに存在する既存またはカスタムの WMI リポジトリ データ クラスまたはレジストリ キーをインベントリする、データ クラスを作成できます。  
 
- Il file Configuration.mof definisce e registra anche i provider WMI che accedono alle informazioni durante l'inventario hardware. Registrazione dei provider definisce il tipo di provider da utilizzare e le classi supportate dal provider.  
+ また、Configuration.mof ファイルでは、ハードウェア インベントリ時にデバイス情報にアクセスする WMI プロバイダーを定義および登録します。 プロバイダーを登録することによって、使用するプロバイダーの種類とプロバイダーがサポートするクラスが定義されます。  
 
- Quando sono necessari criteri per i client di Configuration Manager, ad esempio durante l'intervallo di polling dei criteri client standard, il file Configuration.mof viene collegato al corpo dei criteri. Questo file viene quindi scaricato e compilato dai client. Quando si aggiungere, modificare o eliminano classi di dati dal file MOF, i client compilare automaticamente le modifiche apportate alle classi di dati correlati al magazzino. Non sono necessarie altre azioni per eseguire l'inventario di classi di dati nuove o modificate nei client di Configuration Manager. Questo file si trova in **<PercorsoInstallazioneCM\>\Inboxes\clifiles.src\hinv\\** sui server del sito primario.  
+ たとえば、標準のクライアント ポリシー ポーリング間隔で構成マネージャー クライアントがポリシーを要求すると、ポリシー本文に Configuration.mof が添付されます。 このファイルをクライアントがダウンロードしてコンパイルします。 Configuration.mof ファイルでデータ クラスの追加、変更、または削除が行われると、クライアントは、インベントリ関連のデータ クラスに対して行われたこれらの変更内容を自動的にコンパイルします。 構成マネージャー クライアントで新規または変更されたデータ クラスをインベントリするための追加の操作は必要ありません。 このファイルはプライマリ サイト サーバーの **<CMInstallLocation\>\Inboxes\clifiles.src\hinv\\** にあります。  
 
- In Configuration Manager non è più possibile modificare il file sms_def.mof come in Configuration Manager 2007. È invece possibile abilitare e disabilitare le classi WMI e aggiungere nuove classi che dovranno essere raccolte dall'inventario hardware usando le impostazioni client. Configuration Manager mette a disposizione i metodi seguenti per estendere l'inventario hardware.  
+ Configuration Manager では、Configuration Manager 2007 で行ったように sms_def.mof ファイルを編集する必要がなくなりました。 代わりに、WMI クラスを有効または無効にし、クライアント設定を使用して、ハードウェア インベントリで収集する新しいクラスを追加できます。 Configuration Manager では、以下の方法を使用してハードウェア インベントリを拡張できます。  
 
 > [!NOTE]  
->  Se è stato modificato manualmente il file Configuration.mof per aggiungere le classi di inventario personalizzate, queste modifiche verranno sovrascritte quando si aggiorna alla versione 1602. Per continuare a usare le classi personalizzate dopo l'aggiornamento, è necessario aggiungerle alla sezione relativa alle estensioni aggiunte del file Configuration.mof dopo l'aggiornamento alla versione 1602.  
-> Tuttavia è necessario evitare di modificare le sezioni che precedono questa, perché sono riservate alle modifiche da parte di Configuration Manager. Un backup del file Configuration.mof personalizzato è disponibile in:  
-> **<Directory installazione CM\>\data\hinvarchive\\**.  
+>  カスタム インベントリ クラスを追加するために Configuration.mof ファイルを手動で変更した場合は、バージョン 1602 への更新時に、これらの変更が上書きされます。 更新後にカスタム クラスを引き続き使用するには、1602 への更新後に、Configuration.mof ファイルの "Added extensions" セクションにカスタム クラスを追加する必要があります。  
+> ただし、このセクションの上にある記述は変更しないでください。これらのセクションは Configuration Manager による変更のために予約されています。 カスタム Configuration.mof のバックアップは、  
+> **<CM のインストール ディレクトリ\>\data\hinvarchive\\** にあります。  
 
-|Metodo|Altre informazioni|  
+|メソッド|説明|  
 |------------|----------------------|  
-|Abilitare o disabilitare le classi di inventario|Abilitare o disabilitare le classi di inventario predefinite o creare impostazioni che consentono di raccogliere classi di inventario hardware diverse dalle raccolte di client specificate. Vedere la procedura [Per abilitare o disabilitare classi di inventario esistenti](#BKMK_Enable) in questo argomento.|  
-|Aggiungere una nuova classe di inventario|Aggiungere una nuova classe di inventario dello spazio dei nomi WMI di un altro dispositivo. Vedere la procedura [Per aggiungere una nuova classe di inventario](#BKMK_Add) in questo argomento.|  
-|Importazione ed esportazione di classi di inventario hardware|Importare ed esportare file Managed Object Format (MOF) che contengono classi di inventario dalla console di Configuration Manager. Vedere le procedure [Per importare classi di inventario hardware](#BKMK_Import) e [Per esportare classi di inventario hardware](#BKMK_Export) in questo argomento.|  
-|Creare file NOIDMIF|Usare file NOIDMIF per raccogliere informazioni sui dispositivi client che non possono essere inclusi nell'inventario da Configuration Manager. È ad esempio raccogliere informazioni sul numeri dispositivo asset che esiste solo come un'etichetta sul dispositivo. Inventario NOIDMIF viene associato automaticamente al dispositivo raccolti dai client. Vedere la sezione [Per creare file NOIDMIF](#BKMK_NOIDMIF) in questo argomento.|  
-|Creare i file IDMIF|Usare i file IDMIF per raccogliere informazioni sulle risorse dell'organizzazione non associate a un client di Configuration Manager, ad esempio proiettori, fotocopiatrici e stampanti di rete. Vedere [Per creare file IDMIF](#BKMK_IDMIF) in questo argomento.|  
+|既存のインベントリ クラスを有効または無効にする|既定のインベントリ クラスを有効または無効にしたり、指定のクライアントのコレクションからさまざまなハードウェア インベントリ クラスを収集したりできるようにする、カスタム クライアント設定を作成します。 このトピックの手順「[既存のインベントリ クラスを有効または無効にするには](#BKMK_Enable)」を参照してください。|  
+|新しいインベントリ クラスを追加する|別のデバイスの WMI 名前空間から新しいインベントリ クラスを追加します。 このトピックの手順「[新しいインベントリ クラスを追加するには](#BKMK_Add)」を参照してください。|  
+|ハードウェア インベントリ クラスをインポートおよびエクスポートする|Configuration Manager コンソールから、インベントリ クラスが含まれている管理オブジェクト フォーマット (MOF) ファイルをインポートおよびエクスポートします。 このトピックの「[ハードウェア インベントリ クラスをインポートするには](#BKMK_Import)」および「[ハードウェア インベントリ クラスをエクスポートするには](#BKMK_Export)」の手順を参照してください。|  
+|NOIDMIF ファイルを作成する|NOIDMIF ファイルは、Configuration Manager ではインベントリできないクライアント デバイスに関する情報を収集するために使用します。 たとえば、デバイス上にラベルとしてのみ存在するデバイス資産番号情報を収集できます。 NOIDMIF のインベントリは、収集元のクライアント デバイスに自動的に関連付けられます。 このトピックの「[NOIDMIF ファイルを作成するには](#BKMK_NOIDMIF)」を参照してください。|  
+|IDMIF ファイルを作成する|IDMIF ファイルは、プロジェクター、複写機、ネットワーク プリンターなどの、構成マネージャー クライアントに関連付けられていない組織内の資産に関する情報を収集するために使用します。 このトピックの「[IDMIF ファイルを作成するには](#BKMK_IDMIF)」を参照してください。|  
 
-## <a name="procedures-to-extend-hardware-inventory"></a>Procedure per estendere l'inventario hardware  
-Queste procedure consentono di configurare le impostazioni client predefinite per l'inventario hardware e si applicano a tutti i client nella gerarchia. Per applicare queste impostazioni solo ad alcuni client, creare un'impostazione di dispositivo client personalizzata e assegnarla a una raccolta di client specifici. Vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
+## <a name="procedures-to-extend-hardware-inventory"></a>ハードウェア インベントリを拡張する手順  
+この手順に従うと、ハードウェア インベントリに既定のクライアント設定を構成して、これらの設定を階層内のすべてのクライアントに適用できます。 これらの設定を一部のクライアントにのみ適用するには、カスタム クライアント デバイス設定を作成して、特定のクライアントのコレクションに割り当てます。 「[System Center Configuration Manager でクライアント設定を構成する方法](../../../../core/clients/deploy/configure-client-settings.md)」を参照してください。  
 
-###  <a name="BKMK_Enable"></a> Per abilitare o disabilitare classi di inventario esistenti  
+###  <a name="BKMK_Enable"></a> 既存のインベントリ クラスを有効または無効にするには  
 
-1.  Nella console di Configuration Manager selezionare **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.  
+1.  Configuration Manager コンソールで、**[管理]** > **[クライアント設定]** > **[既定のクライアント設定]** の順に選択します。  
 
-4.  Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.  
+4.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-5.  Nella finestra di dialogo **Impostazioni client predefinite** scegliere **Inventario hardware**.  
+5.  **[既定のクライアント設定]** ダイアログ ボックスで、**[ハードウェア インベントリ]** を選択します。  
 
-6.  Nel **le impostazioni del dispositivo** elenco, fare clic su **Imposta classi**.  
+6.  [デバイス設定 **** ] の一覧で、[クラスの設定 ****] をクリックします。  
 
-7.  Nel **classi di inventario Hardware** finestra di dialogo selezionare o deselezionare le classi e proprietà della classe deve essere raccolto dall'inventario hardware. È possibile espandere le classi per selezionare o deselezionare le singole proprietà di tale classe. Utilizzare il **ricerca di classi di inventario** campo per la ricerca di singole classi.  
+7.  [ハードウェア インベントリ クラス **** ] ダイアログ ボックスで、ハードウェア インベントリで収集するクラスおよびクラス プロパティをオンまたはオフにします。 クラスを展開して、そのクラス内の個々のプロパティをオンまたはオフにできます。 個々のクラスを検索するには、[インベントリ クラスの検索 **** ] フィールドを使用します。  
 
     > [!IMPORTANT]  
-    >  Quando si aggiungono nuove classi all'inventario hardware di Configuration Manager, le dimensioni del file di inventario raccolto e inviato al server del sito aumentano. Ciò potrebbe influire negativamente sulle prestazioni della rete e del sito di Configuration Manager. Abilitare solo le classi di inventario che si desidera raccogliere.  
+    >  構成マネージャー ハードウェア インベントリに新しいクラスを追加すると、収集されてサイト サーバーに送信されるインベントリ ファイルのサイズが大きくなります。 そのため、ネットワークと Configuration Manager サイトのパフォーマンスが低下する可能性があります。 収集するインベントリ クラスのみ有効にしてください。  
 
 
-###  <a name="BKMK_Add"></a> Per aggiungere una nuova classe di inventario  
+###  <a name="BKMK_Add"></a> 新しいインベントリ クラスを追加するには  
 
-È possibile aggiungere classi di inventario solo dal server di livello superiore nella gerarchia e modificando le impostazioni client predefinite. Questa opzione non è disponibile quando si creano impostazioni dispositivo personalizzati.
+インベントリ クラスは、既定のクライアント設定を変更して、階層内の最上位のサーバーからのみ追加できます。 このオプションは、カスタム デバイス設定を作成する場合は使用できません。
 
-1.  Nella console di Configuration Manager selezionare **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.  
+1.  Configuration Manager コンソールで、**[管理]** > **[クライアント設定]** > **[既定のクライアント設定]** の順に選択します。  
 
-4.  Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.  
+4.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-5.  Nella finestra di dialogo **Impostazioni client predefinite** scegliere **Inventario hardware**.  
+5.  **[既定のクライアント設定]** ダイアログ ボックスで、**[ハードウェア インベントリ]** を選択します。  
 
-6.  Nell'elenco **Impostazioni del dispositivo** scegliere **Imposta classi**.  
+6.  **[デバイス設定]** リストで、**[クラスの設定]** を選択します。  
 
-7.  Nella finestra di dialogo **Classi di inventario hardware** scegliere **Aggiungi**.  
+7.  **[ハードウェア インベントリ クラス]** ダイアログ ボックスで、**[追加]** を選択します。  
 
-8.  Nel **aggiungere classe di inventario Hardware** nella finestra di dialogo fare clic su **Connect**.  
+8.  [ハードウェア インベントリ クラスの追加 **** ] ダイアログ ボックスで、[接続 ****] をクリックします。  
 
-9. Nel **connessione a Strumentazione gestione Windows (WMI)** finestra di dialogo, specificare il nome del computer da cui si recupererà le classi WMI e lo spazio dei nomi WMI da utilizzare per recuperare le classi. Se si desidera recuperare tutte le classi sotto lo spazio dei nomi WMI specificato, fare clic su **ricorsiva**. Se il computer che si è connessi non è il computer locale, fornire le credenziali di accesso per un account che dispone dell'autorizzazione per accedere a WMI sul computer remoto.  
+9. [Windows Management Instrumentation (WMI) に接続 **** ] ダイアログ ボックスで、WMI クラスを取得するコンピューターの名前、およびクラスの取得に使用する WMI 名前空間を指定します。 指定した WMI 名前空間のすべてのクラスを取得する場合は、[繰り返し ****] をクリックします。 接続しているコンピューターがローカル コンピューターでない場合は、リモート コンピューターの WMI へのアクセス許可があるログイン資格情報を指定します。  
 
-10. Scegliere **Connetti**.  
+10. **[接続]** を選択します。  
 
-11. Nell'elenco **Classi di inventario hardware** nella finestra di dialogo **Aggiungi classe di inventario hardware** selezionare le classi WMI da aggiungere all'inventario hardware di Configuration Manager.  
+11. **[ハードウェア インベントリ クラスの追加]** ダイアログ ボックスの **[インベントリ クラス]** の一覧で、構成マネージャー ハードウェア インベントリに追加する WMI クラスを選択します。  
 
-12. Se si vogliono modificare le informazioni sulla classe WMI selezionata, scegliere **Modifica** e immettere le informazioni seguenti nella finestra di dialogo **Qualificatori di classe**:  
+12. 選択した WMI クラスに関する情報を編集するには、**[編集]** を選択して、**[クラスの修飾子]** ダイアログ ボックスに以下の情報を指定します。  
 
-    -   **Nome visualizzato**: questo nome verrà visualizzato in Esplora risorse.  
+    -   **表示名** - これはリソース エクスプローラーに表示されます。  
 
-    -   **Proprietà**: specificare le unità in cui verrà visualizzata ogni proprietà della classe WMI.  
+    -   **[プロパティ]** - WMI クラスの各プロパティを表示する単位を指定します。  
 
-     È inoltre possibile specificare proprietà come proprietà chiave per identificare in modo univoco ogni istanza della classe. Se è stata definita alcuna chiave per la classe e più istanze della classe vengono segnalate dal client, viene archiviata solo l'istanza più recente viene trovata nel database.  
+     クラスの各インスタンスを一意に識別できるように、プロパティをキー プロパティとして指定することもできます。 クラスにキーが定義されておらず、クラスの複数のインスタンスがクライアントからレポートされる場合は、見つかった最新のインスタンスのみデータベースに格納されます。  
 
-     Dopo aver configurato le proprietà, fare clic su **OK** per chiudere la finestra di dialogo **Qualificatori di classe** e le altre finestre di dialogo aperte. 
+     プロパティの構成が終了したら、**[OK]** をクリックして **[クラスの修飾子]** ダイアログ ボックスとその他の開いているダイアログを閉じます。 
 
 
-###  <a name="BKMK_Import"></a> Per importare classi di inventario hardware  
+###  <a name="BKMK_Import"></a> ハードウェア インベントリ クラスをインポートするには  
 
-Quando si modificano le impostazioni client predefinite, è possibile importare solo le classi di inventario. Tuttavia, è possibile utilizzare le impostazioni client personalizzate per importare le informazioni che non contengono una modifica dello schema, ad esempio la modifica della proprietà di una classe esistente da **True** a **False**.  
+既定のクライアント設定を変更している場合は、インベントリ クラスのみインポートできます。 ただし、カスタム クライアント設定を使用して、[True **** ] から [False ****] への既存のクラスのプロパティの変更などの、スキーマ変更が含まれていない情報をインポートできます。  
 
-1.  Nella console di Configuration Manager selezionare **Amministrazione** >  **Impostazioni client** > **Impostazioni client predefinite**.  
+1.  Configuration Manager コンソールで、**[管理]** >  **[クライアント設定]** > **[既定のクライアント設定]** の順に選択します。  
 
-4.  Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.  
+4.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-5.  Nella finestra di dialogo **Impostazioni client predefinite** scegliere **Inventario hardware**.  
+5.  **[既定のクライアント設定]** ダイアログ ボックスで、**[ハードウェア インベントリ]** を選択します。  
 
-6.  Nell'elenco **Impostazioni del dispositivo** scegliere **Imposta classi**.  
+6.  **[デバイス設定]** リストで、**[クラスの設定]** を選択します。  
 
-7.  Nella finestra di dialogo **Classi di inventario hardware** scegliere **Importa**.  
+7.  **[ハードウェア インベントリ クラス]** ダイアログ ボックスで、**[インポート]** を選択します。  
 
-8.  Nella finestra di dialogo **Importa** selezionare il file Managed Object Format (MOF) che si vuole importare e quindi scegliere **OK**. Controllare gli elementi che verranno importati e quindi fare clic su **Importa**.  
+8.  **[インポート]** ダイアログ ボックスで、インポートする管理オブジェクト フォーマット (MOF) ファイルを選択し、**[OK]** を選択します。 インポートされる項目を確認したら、**[インポート]** をクリックします。  
 
-###  <a name="BKMK_Export"></a> Per esportare classi di inventario hardware  
+###  <a name="BKMK_Export"></a> ハードウェア インベントリ クラスをエクスポートするには  
 
-1.  Nella console di Configuration Manager selezionare **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.  
+1.  Configuration Manager コンソールで、**[管理]** > **[クライアント設定]** > **[既定のクライアント設定]** の順に選択します。  
 
-4.  Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.  
+4.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-5.  Nella finestra di dialogo **Impostazioni client predefinite** scegliere **Inventario hardware**.  
+5.  **[既定のクライアント設定]** ダイアログ ボックスで、**[ハードウェア インベントリ]** を選択します。  
 
-6.  Nell'elenco **Impostazioni del dispositivo** scegliere **Imposta classi**.  
+6.  **[デバイス設定]** リストで、**[クラスの設定]** を選択します。  
 
-7.  Nella finestra di dialogo **Classi di inventario hardware** scegliere **Esporta**.  
+7.  **[ハードウェア インベントリ クラス]** ダイアログ ボックスで、**[エクスポート]** を選択します。  
 
     > [!NOTE]  
-    >  Quando si esportano le classi, verranno esportate tutte le classi attualmente selezionate.  
+    >  クラスをエクスポートする際、現在選択されているすべてのクラスがエクスポートされます。  
 
-8.  Nella finestra di dialogo **Esporta** selezionare il file Managed Object Format (MOF) in cui esportare le classi e quindi scegliere **Salva**.  
+8.  **[エクスポート]** ダイアログ ボックスで、クラスをエクスポートする管理オブジェクト フォーマット (MOF) ファイルを指定し、**[保存]** を選択します。  
 
-## <a name="how-to-use-management-information-files-mif-files-to-extend-hardware-inventory"></a>Come usare file MIF per estendere l'inventario hardware  
- Usare file MIF per estendere le informazioni dell'inventario hardware che Configuration Manager ha raccolto dai client. Durante l'inventario hardware, le informazioni archiviate nel file MIF viene aggiunto al report di inventario client e archiviate nel database del sito, dove è possibile utilizzare i dati nello stesso modo di utilizzare dati di inventario client predefinito. Esistono due tipi di file MIF, NOIDMIF e IDMIF.
-
-> [!IMPORTANT]  
->  Prima di aggiungere al database di Configuration Manager informazioni dei file MIF, è necessario creare o importare informazioni relative alla classe per tali informazioni. Per altre informazioni, vedere le sezioni [Per aggiungere una nuova classe di inventario](#BKMK_Add) e [Per importare classi di inventario hardware](#BKMK_Import) in questo argomento.  
-
-###  <a name="BKMK_NOIDMIF"></a> Per creare file NOIDMIF  
- I file NOIDMIF possono essere usati per aggiungere a un inventario hardware client informazioni che normalmente Configuration Manager non riesce a raccogliere. Questi file sono associati a dispositivi client specifici. Ad esempio, molte società etichettano ogni computer dell'organizzazione con un numero di asset e quindi li catalogano manualmente. Quando si crea un file NOIDMIF, è possibile aggiungere queste informazioni al database di Configuration Manager e usarle per le query e la creazione di report. Per informazioni sulla creazione di file NOIDMIF, vedere la documentazione di Configuration Manager SDK.  
+## <a name="how-to-use-management-information-files-mif-files-to-extend-hardware-inventory"></a>管理情報フォーマット ファイル (MIF ファイル) を使用してハードウェア インベントリを拡張する方法  
+ 管理情報フォーマット (MIF) ファイルを使用して、Configuration Manager によってクライアントから収集されるハードウェア インベントリ情報を拡張します。 ハードウェアのインベントリ時に、MIF ファイルに保存された情報はクライアント インベントリ レポートに追加され、サイト データベースに保存されます。サイト データベースでは、既定のクライアント インベントリ データを使用するのと同じようにデータを使用できます。 NOIDMIF および IDMIF の 2 種類の MIF ファイルを使用できます。
 
 > [!IMPORTANT]  
->  Quando si crea un file NOIDMIF, il file deve essere salvato in un formato con codifica ANSI. I file NOIDMIF salvati in formato con codifica UTF-8 non sono leggibili per Configuration Manager.  
+>  MIF ファイルの情報を Configuration Manager データベースに追加する前に、そのクラス情報を作成またはインポートする必要があります。 詳細については、このトピックの「 [新しいインベントリ クラスを追加するには](#BKMK_Add) 」セクションと「 [ハードウェア インベントリ クラスをインポートするには](#BKMK_Import) 」セクションを参照してください。  
 
- Dopo aver creato un file NOIDMIF, archiviarlo nella cartella *%Windir%***\CCM\Inventory\Noidmifs** di ogni client. Configuration Manager raccoglierà informazioni dai file NODMIF in questa cartella durante il successivo ciclo di inventario hardware pianificato.  
+###  <a name="BKMK_NOIDMIF"></a> NOIDMIF ファイルを作成するには  
+ NOIDMIF ファイルを使用すると、Configuration Manager では通常収集できない、特定のクライアント デバイスに関連付けられている情報をクライアント ハードウェア インベントリに追加できます。 たとえば、多くの企業では、組織内の各コンピューターに資産番号を示すラベルを付けてから、これらを手動でカタログ化しています。 NOIDMIF ファイルを作成すると、この情報を Configuration Manager データベースに追加してクエリやレポートに使用できます。 NOIDMIF ファイルの作成の詳細については、Configuration Manager の SDK ドキュメントをご覧ください。  
 
-###  <a name="BKMK_IDMIF"></a> Per creare file IDMIF  
- I file IDMIF possono essere usati per aggiungere al database di Configuration Manager informazioni sugli asset di cui Configuration Manager non può normalmente eseguire l'inventario e che non sono associati a un dispositivo client specifico. È possibile, ad esempio, usare file IDMIF per raccogliere informazioni su proiettori, lettori DVD, fotocopiatrici o altri dispositivi che non contengono un client Configuration Manager. Per informazioni sulla creazione di file IDMIF, vedere la documentazione di Configuration Manager SDK.  
+> [!IMPORTANT]  
+>  NOIDMIF ファイルを作成するときに、ANSI でエンコードされた形式で保存する必要があります。 NOIDMIF ファイルを UTF-8 でエンコードされた形式で保存すると、Configuration Manager で読み取ることができません。  
 
- Dopo aver creato un file IDMIF, archiviarlo nella cartella *%Windir%***\CCM\Inventory\Idmifs** dei computer client. Configuration Manager raccoglierà informazioni da questo file durante il successivo ciclo di inventario hardware pianificato. È necessario dichiarare nuove classi per le informazioni contenute nel file aggiungendo o importarli.  
+ NOIDMIF ファイルを作成したら、各クライアントの *%Windir%***\CCM\Inventory\Noidmifs** フォルダーに保存します。 Configuration Manager は、次回のスケジュールされたハードウェア インベントリ サイクル中に、このフォルダーの NODMIF ファイルから情報を収集します。  
+
+###  <a name="BKMK_IDMIF"></a> IDMIF ファイルを作成するには  
+ IDMIF ファイルを使用すると、Configuration Manager では通常インベントリできない、特定のクライアント デバイスに関連付けられていない資産に関する情報を Configuration Manager データベースに追加できます。 たとえば、IDMIFS を使用して、プロジェクター、DVD プレーヤー、複写機、または構成マネージャー クライアントが含まれていないその他の機器に関する情報を収集できます。 IDMIF ファイルの作成の詳細については、Configuration Manager の SDK ドキュメントをご覧ください。  
+
+ IDMIF ファイルを作成したら、クライアント コンピューターの *%Windir%***\CCM\Inventory\Idmifs** フォルダーに保存します。 Configuration Manager は、次回のスケジュールされたハードウェア インベントリ サイクル中に、このファイルから情報を収集します。 クラスを追加またはインポートして、ファイルに含まれる情報の新しいクラスを宣言する必要があります。  
 
 > [!NOTE]
-> I file MIF potrebbero contenere grandi quantità di dati e la raccolta di tali dati potrebbe influire negativamente sulle prestazioni del sito. Abilitare la raccolta di file MIF solo quando necessario e configurare l'opzione **Dimensioni massime file MIF personalizzate (KB)** nelle impostazioni relative all'inventario hardware. Per altre informazioni, vedere [Introduzione all'inventario hardware in System Center Configuration Manager](introduction-to-hardware-inventory.md).
-
+> MIF ファイルは大量のデータを格納することができ、このデータを収集するのはサイトのパフォーマンスに悪影響を与える場合があります。 MIF コレクションは必要なときだけ有効化し、ハードウェア インベントリ設定の **[カスタム MIF ファイルの最大サイズ (KB)]** オプションを構成します。 詳細については、「[System Center Configuration Manager のハードウェア インベントリの概要](introduction-to-hardware-inventory.md)」をご覧ください。

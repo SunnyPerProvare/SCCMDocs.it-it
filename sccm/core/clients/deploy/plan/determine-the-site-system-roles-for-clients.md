@@ -1,92 +1,89 @@
 ---
-title: Ruoli del sistema del sito per i client | Documentazione Microsoft
-description: Determinare i ruoli del sistema del sito per i client in System Center Configuration Manager.
+title: "クライアントのサイト システムの役割 | Microsoft Docs"
+description: "System Center Configuration Manager でクライアントのサイト システムの役割を決定します。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 984e8d92-7327-4b08-9228-0c955e6ac778
-caps.latest.revision: 9
-caps.handback.revision: 0
+caps.latest.revision: "9"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: db0642e95bbd7e704d2052aa1e0f5c27cd7bf568
-ms.openlocfilehash: d918008bed43fa95413a067e08bd6694e1ab5472
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 9f2dda834f23b2ee85c4c301c7e1b6a3a54ebc97
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="determine-the-site-system-roles-for-system-center-configuration-manager-clients"></a>Determinare i ruoli del sistema del sito per System Center Configuration Manager
+# <a name="determine-the-site-system-roles-for-system-center-configuration-manager-clients"></a>System Center Configuration Manager クライアントのサイト システムの役割の決定
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Questo argomento può essere utile per determinare i ruoli del sistema del sito necessari per la distribuzione dei client di Configuration Manager:  
+このトピックは、Configuration Manager クライアントを展開するうえで必要なサイト システムの役割を特定するのに役立ちます。  
 
- Per altre informazioni sul percorso di installazione dei ruoli di sistema del sito necessari nella gerarchia, vedere [Design a hierarchy of sites for System Center Configuration Manager](../../../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md) (Progettare una gerarchia di siti per System Center Configuration Manager).  
+ 階層内で必要なサイト システムの役割をインストールする場所の詳細については、「[System Center Configuration Manager のサイト階層の設計](../../../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md)」をご覧ください。  
 
- Per altre informazioni sulla modalità di installazione e configurazione dei ruoli del sistema del sito necessari, vedere [Install site system roles](../../../../core/servers/deploy/configure/install-site-system-roles.md) (Installare i ruoli del sistema del sito).  
+ 必要なサイト システムの役割をインストールして構成する方法の詳細については、「[サイト システムの役割のインストール](../../../../core/servers/deploy/configure/install-site-system-roles.md)」をご覧ください。  
 
-##  <a name="determine-if-you-need-a-management-point"></a>Stabilire se è necessario un punto di gestione  
- Per impostazione predefinita, tutti i computer client Windows usano un punto di distribuzione per installare il client di Configuration Manager e possono eseguire il fallback su un punto di gestione quando non è disponibile un punto di distribuzione. È tuttavia possibile installare i client Windows su computer da un'origine alternativa quando si usa la proprietà della riga di comando CCMSetup **/source:<Percorso\>**. Ad esempio, questa opzione potrebbe essere appropriata se si installano i client su Internet. Un altro possibile scenario è quando si vuole evitare l'invio di pacchetti di rete tra il computer e il punto di gestione durante l'installazione dei client, ad esempio a causa della presenza di un firewall che blocca le porte richieste o di una connessione con larghezza di banda ridotta. Tutti i client devono tuttavia comunicare con un punto di gestione per essere assegnati a un sito e gestiti da Configuration Manager.  
+##  <a name="determine-if-you-need-a-management-point"></a>管理ポイントが必要かどうかを判断する  
+ 既定では、すべての Windows クライアント コンピューターは配布ポイントを使用して Configuration Manager クライアントをインストールし、配布ポイントが使用できない場合は、その代替として管理ポイントを使用できます。 ただし、CCMSetup コマンド ライン プロパティ **/source:<パス\>** を使用して、代替ソースからコンピューターに Windows クライアントをインストールできます。 たとえば、インターネット上にクライアントをインストールする場合に有効です。 また、必要なポートをファイアウォールがブロックしているため、あるいは低帯域幅接続をしているために、クライアントのインストール時にコンピューターと管理ポイントの間でのネットワーク パケットの送信を避けたい場合が考えられます。 しかし、すべてのクライアントは、サイトに割り当てて Configuration Manager で管理するために管理ポイントと通信する必要があります。  
 
- Per altre informazioni sulla proprietà della riga di comando CCMSetup **/source:<Percorso\>**, vedere [About client installation properties in System Center Configuration Manager](../../../../core/clients/deploy/about-client-installation-properties.md) (Informazioni sulle proprietà di installazione del client in System Center Configuration Manager).  
+ CCMSetup のコマンドライン プロパティ **/source:<パス\>** の詳細については、「[System Center Configuration Manager のクライアント インストール プロパティについて](../../../../core/clients/deploy/about-client-installation-properties.md)」をご覧ください。  
 
- Quando si installa più di un punto di gestione nella gerarchia, i client si connettono automaticamente a un punto sulla base della loro appartenenza alla foresta e del percorso di rete. Non è possibile installare più di un punto di gestione in un sito secondario.  
+ 階層内に複数の管理ポイントをインストールすると、クライアントは、フォレストのメンバーシップとネットワーク上の位置に基づいて、1 つの管理ポイントに自動的に接続します。 セカンダリ サイトには複数の管理ポイントをインストールすることはできません。  
 
- I client di computer Mac e i client di dispositivi mobili registrati con Configuration Manager richiedono sempre un punto di gestione per l'installazione client. Questo punto di gestione deve trovarsi in un sito primario, essere configurato per il supporto di dispositivi mobili e accettare le connessioni client da Internet. Questi client non possono utilizzare i punti di gestione in siti secondari o connettersi a punti di gestione in altri siti primari.  
+ Mac コンピューター クライアント、および Configuration Manager に登録するモバイル デバイス クライアントには、クライアント インストールのために常に管理ポイントが必要です。 この管理ポイントは、プライマリ サイトにあり、モバイル デバイスをサポートするよう構成され、インターネットからのクライアント接続を受け入れることが必要です。 モバイル デバイス クライアントはセカンダリ サイトの管理ポイントを使用できず、ほかのプライマリ サイトの管理ポイントに接続することもできません。  
 
-##  <a name="determine-if-you-need-a-fallback-status-point"></a>Stabilire se è necessario un punto di stato di fallback  
- È possibile usare un punto di stato di fallback per monitorare la distribuzione del client per i computer Windows. È anche possibile identificare i client Windows non gestiti perché non possono comunicare con un punto di gestione. I computer Mac, i dispositivi mobili registrati da Configuration Manager e i dispositivi mobili gestiti con il connettore Exchange Server non usano un punto di stato di fallback.  
+##  <a name="determine-if-you-need-a-fallback-status-point"></a>フォールバック ステータス ポイントをインストールするかどうかを判断する  
+ フォールバック ステータス ポイントを使用すると、Windows コンピューターのクライアントの展開を監視できます。 管理ポイントとの通信ができないために管理されていない Windows コンピューターのクライアントを識別することもできます。 Mac コンピューター、Configuration Manager によって登録されるモバイル デバイス、Exchange Server コネクタを使用して管理されるモバイル デバイスは、フォールバック ステータス ポイントを使用しません。  
 
- Non è richiesto un punto di stato di fallback per monitorare l'attività e lo stato dei client.  
+ フォールバック ステータス ポイントは、クライアントのアクティビティやクライアントのヘルスを監視するのに必要ではありません。  
 
- Il punto di stato di fallback comunica sempre con i client tramite HTTP, che usa connessioni non autenticate e invia i dati come testo non crittografato. In questo modo il punto di stato di fallback diventa vulnerabile ad attacchi, in particolare quando viene utilizzato con la gestione client basata su Internet. Per ridurre la superficie d'attacco, destinare sempre un server all'esecuzione del punto di stato di fallback e non installare altri ruoli del sistema del sito sullo stesso server in un ambiente di produzione.  
+ フォールバック ステータス ポイントは常に HTTP を介してクライアントと通信しますが、HTTP は接続時の認証がなく、データをクリア テキストで送信します。 したがって、特にインターネット ベースでクライアントを管理している場合には、フォールバック ステータス ポイントが攻撃対象になる可能性があります。 このような危険を避けるには、実稼働環境にフォールバック ステータス ポイントだけを実行する専用サーバーを設置し、このサーバーには別のサイト システムの役割をインストールしないようにします。  
 
- Installare un punto di stato di fallback in presenza di tutte le condizioni seguenti:  
+ 次の条件すべてに該当する場合は、フォールバック ステータス ポイントをインストールしてください。  
 
--   Si desidera che gli errori di comunicazione client dai computer Windows siano inviati al sito, anche se questi computer client non possono comunicare con un punto di gestione.  
+-   クライアント コンピューターが管理ポイントと通信できなくても、Windows コンピューターからのクライアント通信エラーをサイトに送る。  
 
--   Si vogliono usare i report di distribuzione client di Configuration Manager che visualizzano i dati inviati dal punto di stato di fallback.  
+-   フォールバック ステータス ポイントから送信されるデータを表示する、構成マネージャー クライアントの展開レポートを使用する。  
 
--   Si dispone di un server dedicato per questo ruolo del sistema del sito e di ulteriori misure di sicurezza per proteggere il server da attacchi esterni.  
+-   このサイト システムの役割専用のサーバーがあり、サーバーを攻撃から保護することができるセキュリティ手段が他にもある。  
 
--   I vantaggi dell'utilizzo di un punto di stato di fallback superano i rischi di protezione associati a connessioni non autenticate e trasferimenti di testo non crittografato nel traffico su HTTP.  
+-   接続時の認証がなく HTTP トラフィックでは平文のままデータが転送されるためセキュリティ上のリスクはありますが、それよりもフォールバック ステータス ポイントを使用する利点の方が高くなります。  
 
- Non installare un punto di stato di fallback se i rischi a livello di sicurezza dell'esecuzione di un sito Web con connessioni non autenticate e trasferimenti di testo non crittografato superano i vantaggi dell'identificazione dei problemi di comunicazione client.  
+ 接続時の認証がなく、データをクリア テキストで送信するために発生する、Web サイト実行上のセキュリティ リスクが、クライアントで発生する通信上の問題を特定することによる利点よりも高い場合は、フォールバック ステータス ポイントをインストールしないでください。  
 
-##  <a name="determine-whether-you-need-a-reporting-services-point"></a>Stabilire se è necessario un punto di Reporting Services  
- Configuration Manager offre molti report che consentono di monitorare l'installazione, l'assegnazione e la gestione dei client nella console di Configuration Manager. Alcuni dei report di distribuzione richiedono che i client siano assegnati a un punto di stato di fallback.  
+##  <a name="determine-whether-you-need-a-reporting-services-point"></a>レポート サービス ポイントが必要かどうかを判断する  
+ Configuration Manager には、Configuration Manager コンソールでのクライアントのインストール、割り当て、および管理を監視するのに役立つ多数のレポートがあります。 一部のクライアント展開レポートは、クライアントがフォールバック ステータス ポイントに割り当てられていることが必要です。  
 
- Sebbene i report non siano necessari per la distribuzione dei client e sia possibile visualizzare alcune informazioni sulla distribuzione nella console di Configuration Manager o vedere informazioni dettagliate tramite i file di log dei client, i report dei client offrono dettagli preziosi per il monitoraggio e la risoluzione dei problemi di distribuzione dei client.  
+ クライアントの展開にレポートは必要ではなく、一部の展開情報は Configuration Manager コンソールで確認でき、クライアント ログ ファイルを利用して詳細情報を確認することもできますが、クライアント レポートは、クライアントの展開の監視やトラブルシューティングに役立つ貴重な情報を提供します。  
 
-##  <a name="determine-if-you-need-an-enrollment-point-and-an-enrollment-proxy-point"></a>Stabilire se è necessario un punto di registrazione e un punto proxy di registrazione  
- Configuration Manager richiede un punto di registrazione e un punto proxy di registrazione per registrare i dispositivi mobili e i certificati per computer Mac. Questi ruoli del sistema del sito non sono necessari se i dispositivi mobili saranno gestiti tramite il connettore Exchange Server, se si installa il client legacy del dispositivo mobile (ad esempio per Windows CE) oppure se si richiede e installa il certificato client in computer Mac indipendentemente da Configuration Manager.  
+##  <a name="determine-if-you-need-an-enrollment-point-and-an-enrollment-proxy-point"></a>登録ポイントと登録プロキシ ポイントが必要かどうかを判断する  
+ モバイル デバイスを登録し、Mac コンピューター用の証明書を登録するために、Configuration Manager には登録ポイントと登録プロキシ ポイントが必要です。 Exchange Server コネクタを使用してモバイル デバイスを管理する場合や、モバイル デバイスのレガシ クライアント (たとえば Windows CE) をインストールする場合、または Configuration Manager を使用せずにクライアント証明書を要求して Mac コンピューターにインストールする場合、これらのサイト システムの役割は必要ありません。  
 
-##  <a name="determine-if-you-need-a-distribution-point"></a>Stabilire se è necessario un punto di distribuzione  
- Non è necessario un punto di distribuzione per installare i client di Configuration Manager in computer Windows. Per impostazione predefinita, tuttavia, Configuration Manager usa un punto di distribuzione per installare i file di origine client nei computer Windows, ma potrebbe ricorrere al download di questi file da un punto di gestione come soluzione di fallback. I punti di distribuzione non vengono usati per installare i client di dispositivi mobili registrati da Configuration Manager ma sono usati in caso di installazione del client legacy del dispositivo mobile. Se si installa il client di Configuration Manager nell'ambito della distribuzione di un sistema operativo, l'immagine del sistema operativo viene archiviata e recuperata da un punto di distribuzione.  
+##  <a name="determine-if-you-need-a-distribution-point"></a>配布ポイントが必要かどかを判断する  
+ Windows コンピューターに Configuration Manager クライアントをインストールする場合、配布ポイントは必要ありません。 ただし、既定では、Configuration Manager はクライアントのソース ファイルを Windows コンピューターにインストールするときに配布ポイントを使用します。配布ポイントを使用できない場合は、代替として管理ポイントからこれらのファイルをダウンロードできます。 配布ポイントは、Configuration Manager に登録していないモバイル デバイス クライアントをインストールする場合には使用されませんが、モバイル デバイスのレガシ クライアントをインストールする場合には使用されます。 構成マネージャー クライアントをオペレーティング システムの展開の一部としてインストールする場合は、オペレーティング システムのイメージは配布ポイントに格納され、そこから取得されます。  
 
- Sebbene per l'installazione della maggior parte dei client di Configuration Manager non siano necessari punti di distribuzione, questi sono richiesti per l'installazione di software nei client, ad esempio applicazioni e aggiornamenti software.  
+ ほとんどの Configuration Manager クライアントをインストールするのに配布ポイントは必要ありませんが、アプリケーションやソフトウェア更新プログラムなどのソフトウェアをクライアントにインストールする場合には、配布ポイントが必要です。  
 
-##  <a name="determine-if-you-need-an-application-catalog-website-point-and-an-application-catalog-web-services-point"></a>Stabilire se è necessario un punto per siti Web del Catalogo applicazioni e un punto per servizi Web del Catalogo applicazioni  
- Il punto per siti Web del Catalogo applicazioni e il punto per servizi Web del Catalogo applicazioni non sono necessari per la distribuzione di client. Si potrebbe tuttavia volerli installare nell'ambito del processo di distribuzione client in modo da consentire agli utenti di eseguire le azioni seguenti al momento dell'installazione del client di Configuration Manager sui computer Windows:  
+##  <a name="determine-if-you-need-an-application-catalog-website-point-and-an-application-catalog-web-services-point"></a>アプリケーション カタログ Web サイト ポイントとアプリケーション カタログ Web サービス ポイントが必要かどうかを判断する  
+ アプリケーション カタログ Web サイト ポイントとアプリケーション カタログ Web サービス ポイントは、クライアントの展開に必要ではありません。 ただし、これらをクライアント展開プロセスの一部としてインストールしておくと、構成マネージャー クライアントを Windows コンピューターにインストールしてすぐに、ユーザーが次の操作を実行できるようになります。  
 
--   Cancellare i dati sui dispositivi mobili.  
+-   モバイル デバイスをワイプする。  
 
--   Cercare e installare le applicazioni dal Catalogo applicazioni.  
+-   アプリケーション カタログでアプリケーションを見つけてインストールする。  
 
--   Distribuire le applicazioni a utenti e dispositivi con scopo della distribuzione **Disponibile**.  
+-   展開の目的が [ **利用可能** ] のアプリケーションをユーザーまたはデバイスに展開します。  
 
-##  <a name="determine-whether-you-require-a-cloud-management-gateway-connector-point"></a>Stabilire se è necessario un punto di connessione del gateway di gestione cloud 
+##  <a name="determine-whether-you-require-a-cloud-management-gateway-connector-point"></a>クラウド管理ゲートウェイ コネクタ ポイントが必要かどうかを判断する 
 
-È necessario un punto di connessione del gateway di gestione cloud se si configura un [gateway di gestione cloud](/sccm/core/clients/manage/setup-cloud-management-gateway) per [gestire i client su Internet](/sccm/core/clients/manage/manage-clients-internet).
+[クラウド管理ゲートウェイ](/sccm/core/clients/manage/setup-cloud-management-gateway) を設定して[クライアントをインターネット上でする](/sccm/core/clients/manage/manage-clients-internet)場合は、クラウド管理ゲートウェイ コネクタ ポイントが必要です。
 
 
  

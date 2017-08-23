@@ -1,60 +1,57 @@
 ---
-title: Classificare automaticamente i dispositivi in raccolte | Microsoft Docs
-description: Classificare automaticamente i dispositivi in raccolte con System Center Configuration Manager.
+title: "デバイスを自動的にコレクションごとに分類する | Microsoft Docs"
+description: "System Center Configuration Manager でデバイスをコレクションに自動的に分類します。"
 ms.custom: na
 ms.date: 04/23/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 98b038b4-1a13-4228-bdb8-a12194e32b0e
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
-ms.openlocfilehash: b1bac05e9335dd757b8f499f97daea24e0f4acbd
-ms.contentlocale: it-it
-ms.lasthandoff: 01/03/2017
-
+ms.openlocfilehash: d1b79fb091a6ae4b967d63843ae7b45a0cbeb555
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="automatically-categorize-devices-into-collections-with-system-center-configuration-manager"></a>Classificare automaticamente i dispositivi in raccolte con System Center Configuration Manager
+# <a name="automatically-categorize-devices-into-collections-with-system-center-configuration-manager"></a>System Center Configuration Manager でデバイスをコレクションに自動的に分類する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-È possibile creare categorie di dispositivi da usare per inserire automaticamente i dispositivi nelle raccolte di dispositivi quando si usa Configuration Manager con Microsoft Intune. Gli utenti dovranno quindi scegliere una categoria di dispositivi quando eseguono la registrazione di un dispositivo in Intune. È possibile modificare la categoria di un dispositivo dalla console di Configuration Manager.
+Microsoft Intune と Configuration Manager を使用している場合に、デバイス コレクションにデバイスを自動的に配置するために使用できるデバイス カテゴリを作成することができます。 ユーザーは Intune にデバイスを登録するときに、デバイス カテゴリを選択する必要があります。 デバイス カテゴリは、Configuration Manager コンソールから変更できます。
 
 > [!IMPORTANT]  
-    >  Questa funzionalità può essere usata con la versione di Microsoft Intune di **giugno 2016** e versioni successive. Verificare che l'installazione sia aggiornata a questa versione prima di tentare queste procedure.
+    >  この機能は、Microsoft Intune の **2016 年 6 月**以降のリリースで動作します。 これらの手順を実行する前に、今回のリリースに更新していることを確認してください。
 
-## <a name="create-device-categories"></a>Creare categorie di dispositivi
+## <a name="create-device-categories"></a>デバイス カテゴリを作成する
 
-1.  Passare a **Asset e conformità** > **Panoramica** > **Raccolte dispositivi**.
-2.  Nella scheda **Home**, nel gruppo **Raccolte di dispositivi**, scegliere **Gestire le categorie di dispositivi**.
-3.  Creare, modificare o rimuovere le categorie.
+1.  [**資産とコンプライアンス**] > [**概要**] > [**デバイス コレクション**] の順に移動します。
+2.  [**ホーム**] タブの [**デバイス コレクション**] グループで、[**デバイス カテゴリの管理**] を選択します。
+3.  カテゴリを作成、編集、または削除します。
 
-## <a name="associate-a-collection-with-a-device-category"></a>Associare una raccolta a una categoria di dispositivo
+## <a name="associate-a-collection-with-a-device-category"></a>コレクションをデバイス カテゴリに関連付ける
 
-Quando si associa una raccolta a una categoria di dispositivi, tutti i dispositivi in tale categoria verranno aggiunti alla raccolta. Non è possibile aggiungere una regola categoria di dispositivi a una raccolta predefinita come **Tutti i sistemi**.
+コレクションをデバイス カテゴリと関連付けると、そのカテゴリのすべてのデバイスがそのコレクションに追加されます。 [**すべてのシステム**] などの組み込みコレクションにデバイス カテゴリの規則を追加することはできません。
 
-1.  Nella scheda **Regole di appartenenza** della finestra di dialogo **Proprietà** per una raccolta di dispositivi scegliere **Aggiungi regola** > **Regola categoria di dispositivi**.
-2.  Nella finestra di dialogo **Seleziona le categorie di dispositivi** selezionare una o più categorie di dispositivi che saranno applicate a tutti i dispositivi della raccolta.
+1.  デバイス コレクションの [**プロパティ**] ダイアログの [**メンバーシップの規則**] で、[**規則の追加**] > [**デバイス カテゴリの規則**] の順に選びます。
+2.  [**デバイス カテゴリの選択**] ダイアログ ボックスで、コレクション内のすべてのデバイスに適用される 1 つ以上のカテゴリを選択します。
 
-## <a name="change-the-category-of-a-device"></a>Cambiare la categoria di un dispositivo
+## <a name="change-the-category-of-a-device"></a>デバイスのカテゴリを変更する
 
-1.  In **Asset e conformità** > **Panoramica** > **Dispositivi** selezionare un dispositivo nell'elenco **Dispositivi**.
-2.  Nella scheda **Home** nel gruppo **Dispositivo** scegliere **Modifica categoria**.
-3.  Scegliere una categoria e quindi scegliere **OK**.
+1.  [**資産とコンプライアンス**] > [**概要**] > [**デバイス**] で、[**デバイス**] 一覧からデバイスを選びます。
+2.  [**ホーム**] タブの [**デバイス**] グループで、[**カテゴリの変更**] を選びます。
+3.  カテゴリを選択し、[**OK**] を選びます。
 
-## <a name="view-which-category-a-device-belongs-to"></a>Visualizzare la categoria a cui un dispositivo appartiene
+## <a name="view-which-category-a-device-belongs-to"></a>デバイスが属するカテゴリを表示する
 
-In **Asset e conformità** > **Panoramica** > **Dispositivi**, nell'elenco **Dispositivi** la categoria è visualizzata nella colonna **Categoria del dispositivo**.
+[**資産とコンプライアンス**] > [**概要**] > [**デバイス**] で、[**デバイス**] 一覧の [**デバイス カテゴリ**] 列にカテゴリが表示されます。
 
-Se la colonna **Categoria di dispositivi** non è visualizzata, fare clic con il pulsante destro del mouse sull'intestazione di una delle colonne nell'elenco **Dispositivi** (ad esempio **Nome**), quindi selezionare **Categoria di dispositivi**.
+[**デバイス カテゴリ**] 列が表示されない場合、[**デバイス**] 一覧のいずれかの列の見出し ([**名前**] など) を右クリックし、[**デバイス カテゴリ**] を選択します。
 
-Se si assegna un dispositivo a una categoria e successivamente si elimina la categoria, il report **Elenco dei dispositivi registrati per utente in Microsoft Intune** mostrerà un GUID nella colonna **Categoria di dispositivi** anziché un nome di categoria.
-
+デバイスをカテゴリに割り当て、その後、カテゴリを削除した場合、[**Microsoft Intune に各ユーザーが登録したデバイス一覧**] レポートには、[**デバイス カテゴリ**] 列にカテゴリ名ではなく GUID が表示されます。

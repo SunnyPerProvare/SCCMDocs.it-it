@@ -1,252 +1,251 @@
 ---
-title: Repliche di database dei punti di gestione | Microsoft Docs
-description: Usare una replica di database per ridurre il carico della CPU dovuto ai punti di gestione nel server di database del sito.
+title: "管理ポイントのデータベース レプリカ | Microsoft Docs"
+description: "管理ポイントがサイト データベース サーバーに加えられた CPU 負荷を軽減するように、データベース レプリカを使用します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: b06f781b-ab25-4d9a-b128-02cbd7cbcffe
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
 ms.openlocfilehash: 130c053c9f2a1817dd85b1f3c01285aab19d59cb
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>Repliche di database per i punti di gestione per System Center Configuration Manager
+# <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>System Center Configuration Manager の管理ポイントのデータベース レプリカ
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-I siti primari di System Center Configuration Manager possono usare una replica di database per ridurre sul server di database del sito il carico della CPU dovuto ai punti di gestione che gestiscono le richieste provenienti dai client.  
+System Center Configuration Manager プライマリ サイトでは、データベース レプリカを使用して、管理ポイントがクライアントからの要求を処理することでサイト データベース サーバーに加えられた CPU 負荷を軽減することができます。  
 
--   Quando un punto di gestione usa una replica di database, tale punto di gestione richiede dati dal computer di SQL Server che ospita la replica di database anziché dal server di database del sito.  
+-   管理ポイントでデータベース レプリカを使用すると、その管理ポイントはサイト データベース サーバーではなく、データベース レプリカをホストする SQL Server コンピューターにデータを要求します。  
 
--   Questo può ridurre i requisiti di elaborazione della CPU nel server di database del sito grazie all'offload delle attività di elaborazione frequenti correlate ai client.  Un esempio di attività di elaborazione frequenti per i client include i siti in cui sono presenti moltissimi client che richiedono spesso criteri client  
+-   これにより、クライアントに関連して頻繁に発生する処理タスクの負荷を軽減し、サイト データベース サーバーの CPU 処理要件を減らすことができます。  クライアントの頻繁な処理タスクの例として、クライアント ポリシーのために頻繁に要求を行うクライアントがサイトに多数存在する場合が挙げられます。  
 
 
-##  <a name="a-namebkmkpreparea-prepare-to-use-database-replicas"></a><a name="bkmk_Prepare"></a> Predisporre l'uso delle repliche di database  
-**Informazioni sulle repliche di database per i punti di gestione:**  
+##  <a name="bkmk_Prepare"></a> データベース レプリカを使用するための準備  
+**管理ポイントのデータベース レプリカについて**  
 
--   Le repliche sono una copia parziale del database del sito che viene replicato in un'istanza separata di SQL Server:  
+-   レプリカは、SQL Server の別のインスタンスにレプリケートされるサイト データベースの部分的なコピーです。  
 
-    -   I siti primari supportano una replica di database dedicata per ogni punto di gestione nel sito (i siti secondari non supportano le repliche di database)  
+    -   プライマリ サイトは、サイトの各管理ポイントの専用のデータベース レプリカをサポートします (セカンダリ サイトではデータベース レプリカはサポートされません)。  
 
-    -   Una replica di database può essere usata da più punti di gestione dello stesso sito  
+    -   同一サイトの複数の管理ポイントで 1 つのデータベース レプリカを使用できます。  
 
-    -   SQL Server può ospitare più repliche di database che possono essere usate da più punti di gestione, purché ognuna venga eseguita in un'istanza separata di SQL Server  
+    -   SQL Server は、各データベース レプリカが SQL Server の別のインスタンスで実行されている限り、異なる管理ポイントでの複数データベース レプリカの使用をホストできます。  
 
--   Le repliche sincronizzano una copia del database del sito in base a una pianificazione fissa dai dati pubblicati appositamente dal server di database del sito.  
+-   レプリカは、サイト データベース サーバーが同期用に発行したデータとサイト データベースのコピーを、決められたスケジュールに従って同期します。  
 
--   I punti di gestione possono essere configurati per usare una replica quando si installa il punto di gestione oppure in un secondo momento riconfigurando il punto di gestione installato in precedenza in modo da usare la replica di database  
+-   管理ポイントをインストールするとき、またはインストール済みの管理ポイントを後で再構成するときに、データベース レプリカを使用するように構成できます。  
 
--   È necessario monitorare regolarmente il server di database del sito e tutti i server di replica di database per garantire la corretta esecuzione della replica, le prestazioni ottimali del server di replica di database per il sito e le prestazioni client necessarie  
+-   サイト データベース サーバーおよび各データベース レプリカ サーバーを定期的に監視し、それらの間でレプリケーションが実行されていること、データベース レプリカ サーバーのパフォーマンスがサイトとクライアントで必要とされるパフォーマンスに対して十分であることを確認します。  
 
-**Prerequisiti per le repliche di database:**  
+**データベース レプリカの前提条件:**  
 
--   **Requisiti di SQL Server:**  
+-   **SQL Server の要件:**  
 
-    -   L'istanza di SQL Server che ospita la replica di database deve soddisfare gli stessi requisiti del server di database del sito. Non è invece necessario che la versione o edizione di SQL Server eseguita dal server di replica sia la stessa eseguita del server di database del sito, ma è sufficiente che si tratti di una versione o edizione di SQL Server supportata. Per informazioni, vedere [Support for SQL Server versions for System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md) (Supporto per le versioni di SQL Server per System Center Configuration Manager)  
+    -   データベース レプリカをホストする SQL Server は、サイト データベース サーバーと同じ要件を満たしている必要があります。 ただし、レプリカ サーバーで実行する SQL Server のバージョンとエディションは、サポートされている SQL Server のバージョンとエディションであれば、サイト データベース サーバーと同じでなくてもかまいません。 詳細については、「[System Center Configuration Manager の SQL Server バージョンのサポート](../../../../core/plan-design/configs/support-for-sql-server-versions.md)」をご覧ください。  
 
-    -   Il servizio SQL Server nel computer che ospita il database di replica deve essere eseguito come account di **sistema** .  
+    -   レプリカ データベースをホストするコンピューターの SQL Server サービスを、 **System** アカウントとして実行する必要があります。  
 
-    -   Nell'istanza di SQL Server che ospita il database del sito e in quella che ospita la replica di database deve essere installata la **replica di SQL Server** .  
+    -   サイト データベースをホストする SQL Server とデータベース レプリカをホストする SQL Server の両方に、 **SQL Server レプリケーション** がインストールされている必要があります。  
 
-    -   Il database del sito deve **pubblicare** la replica di database e ogni server di replica del database remoto deve **sottoscrivere** i dati pubblicati.  
+    -   サイト データベースはデータベース レプリカを **発行** する必要があります。また、リモートの各データベース レプリカ サーバーは、発行されたデータを **サブスクライブ** する必要があります。  
 
-    -   L'istanza di SQL Server che ospita il database del sito e quella che ospita la replica di database devono essere entrambe configurate per supportare un valore **Max Text Repl Size** di 2 GB. Per un esempio di configurazione di SQL Server 2012, vedere [Configurare l'opzione di configurazione del server max text repl size](http://go.microsoft.com/fwlink/p/?LinkId=273960).  
+    -   サイト データベースをホストする SQL Server とデータベース レプリカをホストする SQL Server の両方を、2 GB の **テキスト レプリケーションの最大サイズ** をサポートするように構成する必要があります。 SQL Server 2012 でこれを構成する方法の例については、「 [max text repl size サーバー構成オプションの構成](http://go.microsoft.com/fwlink/p/?LinkId=273960)」をご覧ください。  
 
--   **Certificato autofirmato:** per configurare una replica di database, è necessario creare un certificato autofirmato nel server di replica di database e renderlo disponibile per ogni punto di gestione che userà il server di replica di database.  
+-   **自己署名証明書:** データベース レプリカを構成するには、データベース レプリカ サーバーで自己署名証明書を作成して、そのデータベース レプリカ サーバーを使う各管理ポイントがこの証明書を利用できるようにする必要があります。  
 
-    -   Il certificato è automaticamente disponibile per un punto di gestione installato nel server di replica di database.  
+    -   データベース レプリカ サーバーにインストールされている管理ポイントでは、この証明書が自動的に利用できるようになります。  
 
-    -   Per fare in modo che il certificato sia disponibile ai punti di gestione remoti, è necessario esportare il certificato e quindi aggiungerlo all'archivio certificati **Persone attendibili** del punto di gestione remoto.  
+    -   この証明書をリモート管理ポイントが利用できるようにするには、証明書をエクスポートして、リモート管理ポイントの **信頼されたユーザー** 証明書ストアに追加する必要があります。  
 
--   **Notifica client:** per supportare la notifica client con una replica di database per un punto di gestione, è necessario configurare la comunicazione tra il server di database del sito e il server di replica di database per **SQL Server Service Broker**. A questo scopo è necessario:  
+-   **クライアント通知:** 管理ポイントのデータベース レプリカを使用したクライアント通知をサポートするためには、 **SQL Server Service Broker**用にサイト データベース サーバーとデータベース レプリカ サーバー間の通信を構成する必要があります。 そのためには、次の操作が必要です。  
 
-    -   Configurare ogni database con informazioni sull'altro database  
+    -   他方のデータベースに関する情報を使用して各データベースを構成します。  
 
-    -   Scambiare certificati tra due database per proteggere le comunicazioni  
+    -   セキュリティ保護された通信を行うため、2 つのデータベース間で証明書を交換します。  
 
-**Limitazioni quando si usano le repliche di database:**  
+**データベース レプリカを使用する場合の制限事項:**  
 
--   Quando il sito è configurato per pubblicare repliche di database, al posto delle normali indicazioni trovano applicazione le procedure seguenti:  
+-   データベース レプリカを発行するようにサイトが構成されている場合は、通常のガイダンスの代わりに次の手順を使用する必要があります。  
 
-    -   [Disinstallare un server del sito che pubblica una replica di database](#BKMK_DBReplicaOps_Uninstall)  
+    -   [データベースのレプリカを発行するサイト サーバーのアンインストール](#BKMK_DBReplicaOps_Uninstall)  
 
-    -   [Spostare un database del server del sito che pubblica una replica di database](#BKMK_DBReplicaOps_Move)  
+    -   [データベースのレプリカを発行するサイト サーバー データベースの移動](#BKMK_DBReplicaOps_Move)  
 
--   **Aggiornamenti a System Center Configuration Manager**: prima di aggiornare un sito da System Center 2012 Configuration Manager a System Center Configuration Manager, è necessario disabilitare le repliche di database per i punti di gestione.  Dopo l'aggiornamento del sito, è possibile riconfigurare le repliche di database per i punti di gestione.  
+-   **System Center Configuration Manager へのアップグレード**: サイトを System Center 2012 Configuration Manager から System Center Configuration Manager にアップグレードする前に、管理ポイントのデータベース レプリカを無効にする必要があります。  サイトをアップグレードしたら、管理ポイントのデータベース レプリカを再構成できます。  
 
--   **Più repliche in un'unica istanza di SQL Server:** se si configura un server di replica di database per ospitare più repliche di database per i punti di gestione (ogni replica deve trovarsi in un'istanza separata), è necessario usare uno script di configurazione modificato (dal passaggio 4 della sezione successiva) per evitare di sovrascrivere il certificato autofirmato usato dalle repliche di database configurate in precedenza in tale server.  
+-   **単一 SQL Server 上の複数レプリカ:** 管理ポイントの複数のデータベース レプリカをホストするようにデータベース レプリカ サーバーを構成する場合 (各レプリカは別々のインスタンス上にある必要があります)、変更した構成スクリプト (次のセクションの手順 4 から) を使用して、そのサーバー上の以前に構成されたデータベース レプリカで使用されている自己署名入り証明書が上書きされないようにする必要があります。  
 
-##  <a name="a-namebkmkdbreplicaconfiga-configure-database-replicas"></a><a name="BKMK_DBReplica_Config"></a> Configurare le repliche di database  
-La configurazione di una replica di database prevede i passaggi seguenti:  
+##  <a name="BKMK_DBReplica_Config"></a> データベース レプリカの構成  
+データベース レプリカを構成して使用するには、次の手順を実行する必要があります。  
 
--   [Passaggio 1: Configurare il server di database del sito per la pubblicazione della replica di database](#BKMK_DBReplica_ConfigSiteDB)  
+-   [手順 1 - データベース レプリカを発行するようにサイト データベース サーバーを構成する](#BKMK_DBReplica_ConfigSiteDB)  
 
--   [Passaggio 2: Configurare il server di replica di database](#BKMK_DBReplica_ConfigSrv)  
+-   [手順 2 - データベース レプリカ サーバーの構成](#BKMK_DBReplica_ConfigSrv)  
 
--   [Passaggio 3: Configurare i punti di gestione per l'uso della replica di database](#BKMK_DBReplica_ConfigMP)  
+-   [手順 3 - データベース レプリカを使用するための管理ポイントの構成](#BKMK_DBReplica_ConfigMP)  
 
--   [Passaggio 4: Configurare un certificato autofirmato per il server di replica di database](#BKMK_DBReplica_Cert)  
+-   [手順 4 - データベース レプリカ サーバーの自己署名入り証明書の構成](#BKMK_DBReplica_Cert)  
 
--   [Passaggio 5: Configurare SQL Server Service Broker per il server di replica di database](#BKMK_DBreplica_SSB)  
+-   [手順 5 - データベース レプリカ サーバーでの SQL Server Service Broker の構成](#BKMK_DBreplica_SSB)  
 
-###  <a name="a-namebkmkdbreplicaconfigsitedba-step-1---configure-the-site-database-server-to-publish-the-database-replica"></a><a name="BKMK_DBReplica_ConfigSiteDB"></a> Passaggio 1: Configurare il server di database del sito per la pubblicazione della replica di database  
- Usare la seguente procedura come esempio di configurazione del server di database del sito in un computer Windows Server 2008 R2 per la pubblicazione della replica di database. Se si dispone di una versione diversa del sistema operativo, fare riferimento alla documentazione del sistema operativo e modificare di conseguenza i passaggi di questa procedura.  
+###  <a name="BKMK_DBReplica_ConfigSiteDB"></a> 手順 1 - データベース レプリカを発行するようにサイト データベース サーバーを構成する  
+ データベースのレプリカを発行するように Windows Server 2008 R2 上のサイト データベース サーバーを構成するには、次の手順に従います。 別のオペレーティング システムのバージョンを使用している場合は、使用しているオペレーティング システムのドキュメントを参照し、必要に応じてこの手順のステップを調整してください。  
 
-##### <a name="to-configure-the-site-database-server"></a>Per configurare il server di database del sito  
+##### <a name="to-configure-the-site-database-server"></a>サイト データベース サーバーを構成するには  
 
-1.  Nel server di database del sito impostare SQL Server Agent per l'avvio automatico.  
+1.  サイト データベース サーバーで、SQL Server エージェントが自動的に開始されるように設定します。  
 
-2.  Nel server di database del sito, creare un gruppo di utenti locale con il nome **ConfigMgr_MPReplicaAccess**. È necessario aggiungere l'account computer per ogni server di replica di database usato nel sito a tale gruppo per consentire ai server di replica di database di eseguire la sincronizzazione con la replica di database pubblicata.  
+2.  サイト データベース サーバーで、 **ConfigMgr_MPReplicaAccess**という名前のローカルのユーザー グループを作成します。 このサイトで使用する各データベース レプリカ サーバーのコンピューター アカウントをこのグループに追加して、それらのデータベース レプリカ サーバーが発行されたデータベース レプリカと同期できるようにする必要があります。  
 
-3.  Nel server di database del sito, configurare una condivisione file con il nome **ConfigMgr_MPReplica**.  
+3.  サイト データベース サーバーで、 **ConfigMgr_MPReplica**という名前のファイル共有を構成します。  
 
-4.  Aggiungere le seguenti autorizzazioni per la condivisione **ConfigMgr_MPReplica** :  
+4.  次のアクセス許可を [ConfigMgr_MPReplica] 共有に追加します。 ****  
 
     > [!NOTE]  
-    >  Se SQL Server Agent usa un account diverso dall'account di sistema locale, sostituire SYSTEM con il nome account presente nel seguente elenco.  
+    >  SQL Server エージェントがローカルのシステム アカウント以外のアカウントを使用する場合は、次のリストの SYSTEM をそのアカウント名に置き換えます。  
 
-    -   **Autorizzazioni condivisione**:  
+    -   **共有のアクセス許可**:  
 
-        -   SYSTEM: **Scrittura**  
+        -   SYSTEM: **書き込み**  
 
-        -   ConfigMgr_MPReplicaAccess: **Lettura**  
+        -   ConfigMgr_MPReplicaAccess: **読み取り**  
 
-    -   **Autorizzazioni NTFS**:  
+    -   **NTFS アクセス許可**:  
 
-        -   SYSTEM: **Controllo completo**  
+        -   SYSTEM: **フル コントロール**  
 
-        -   ConfigMgr_MPReplicaAccess: **Lettura**, **Lettura ed esecuzione**, **Visualizzazione contenuto cartella**  
+        -   ConfigMgr_MPReplicaAccess: **読み取り**、**読み取りと実行**、**フォルダーの内容の一覧表示**  
 
-5.  Usare **SQL Server Management Studio** per connettersi al database del sito ed eseguire la seguente stored procedure come una query: **spCreateMPReplicaPublication**  
+5.  **SQL Server Management Studio** を使用して、サイト データベースに接続し、ストアド プロシージャ **spCreateMPReplicaPublication**をクエリとして実行します。  
 
-Al termine della stored procedure, il server di database del sito è configurato per la pubblicazione della replica di database.  
+ストアド プロシージャが完了すると、サイト データベース サーバーはデータベースのレプリカを発行するように構成されています。  
 
-###  <a name="a-namebkmkdbreplicaconfigsrva-step-2---configuring-the-database-replica-server"></a><a name="BKMK_DBReplica_ConfigSrv"></a> Passaggio 2: Configurare il server di replica di database  
-Il server di replica di database è un computer che esegue SQL Server e ospita una replica del database del sito che verrà usata dai punti gestione. In base a una pianificazione fissa, il server di replica di database sincronizza la propria copia del database con la replica di database pubblicata dal server di database del sito.  
+###  <a name="BKMK_DBReplica_ConfigSrv"></a> 手順 2 - データベース レプリカ サーバーの構成  
+データベース レプリカ サーバーは、SQL Server を実行するコンピューターであり、管理ポイントが使用するサイト データベースのレプリカをホストします。 データベース レプリカ サーバーは、サイト データベース サーバーによって発行されたデータベースのレプリカとそれ自体のデータベースのコピーを固定されたスケジュールで同期します。  
 
-Il server di replica di database deve soddisfare gli stessi requisiti del server di database del sito. Tuttavia, il server di replica di database può eseguire una versione o un'edizione diversa di SQL Server rispetto a quella usata dal server di database del sito. Per informazioni sulle versioni di SQL Server supportate, vedere l'argomento [Support for SQL Server versions for System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md) (Supporto per le versioni di SQL Server per System Center Configuration Manager).  
+データベース レプリカ サーバーは、サイト データベース サーバーと同じ要件を満たしている必要があります。 ただし、データベース レプリカ サーバーは、サイト データベース サーバーが使用している SQL Server と別のエディションまたはバージョンの SQL Server を実行できます。 サポートされている SQL Server のバージョンの詳細については、「[System Center Configuration Manager の SQL Server バージョンのサポート](../../../../core/plan-design/configs/support-for-sql-server-versions.md)」トピックをご覧ください。  
 
 > [!IMPORTANT]  
->  Il servizio SQL Server nel computer che ospita il database di replica deve essere eseguito come account di sistema.  
+>  レプリカ データベースをホストするコンピューターの SQL Server Service を、System アカウントとして実行する必要があります。  
 
-Usare la seguente procedura come esempio di configurazione di un server di replica di database in un computer Windows Server 2008 R2. Se si dispone di una versione diversa del sistema operativo, fare riferimento alla documentazione del sistema operativo e modificare di conseguenza i passaggi di questa procedura.  
+Windows Server 2008 R2 コンピューターにデータベース レプリカ サーバーを構成するには、次の手順に従います。 別のオペレーティング システムのバージョンを使用している場合は、使用しているオペレーティング システムのドキュメントを参照し、必要に応じてこの手順のステップを調整してください。  
 
-##### <a name="to-configure-the-database-replica-server"></a>Per configurare il server di replica di database  
+##### <a name="to-configure-the-database-replica-server"></a>データベース レプリカ サーバーを構成するには  
 
-1.  Nel server di replica di database impostare SQL Server Agent per l'avvio automatico.  
+1.  データベース レプリカ サーバーで、SQL Server エージェントが自動的に開始されるように設定します。  
 
-2.  Nel server di replica di database usare **SQL Server Management Studio** per la connessione al server locale, quindi selezionare la cartella **Replica** , fare clic su Sottoscrizioni locali e selezionare **Nuove sottoscrizioni** per avviare **Creazione guidata nuova sottoscrizione**:  
+2.  データベース レプリカ サーバーで、 **SQL Server Management Studio** を使用してローカル サーバーに接続し、 **レプリケーション** フォルダーを参照して、[ローカル サブスクリプション] をクリックし、[ **新規サブスクリプション** ] を選択します。これで、 **サブスクリプションの新規作成ウィザード**が開始されます。  
 
-    1.  Nella pagina **Pubblicazione** della casella di riepilogo **Autore** selezionare **Trova server di pubblicazione SQL Server**, immettere il nome del server di database del sito e fare clic su **Connetti**.  
+    1.  [ **パブリケーション** ] ページの [ **発行元** ] リスト ボックスで、[ **SQL Server 発行元の検索**] を選択し、サイトのデータベース サーバーの名前を入力してから、[ **接続**] をクリックします。  
 
-    2.  Selezionare **ConfigMgr_MPReplica**, quindi fare clic su **Avanti**.  
+    2.  **ConfigMgr_MPReplica**を選択し、[ **次へ**] をクリックします。  
 
-    3.  Nella pagina **Posizione in cui eseguire l'agente di distribuzione** selezionare **Esegui ogni agente nel relativo Sottoscrittore (sottoscrizioni pull)**, quindi fare clic su **Avanti**.  
+    3.  [ **配布エージェントの場所** ] ページで、[ **サブスクライバーで各エージェントを実行する (プル サブスクリプション)**] を選択し、[ **次へ**] をクリックします。  
 
-    4.  Nella pagina **Sottoscrittori** eseguire una delle seguenti operazioni:  
+    4.  [サブスクライバー] ページで、次のいずれかの操作を行います。 ****  
 
-        -   Selezionare un database esistente dal server di replica di database da usare per la replica di database, quindi fare clic su **OK**.  
+        -   データベースのレプリカに使用するデータベース レプリカ サーバーから既存のデータベースを選択して、[OK] をクリックします。 ****  
 
-        -   Selezionare **Nuovo database** per creare un nuovo database per la replica di database. Nella pagina **Nuovo database** specificare un nome di database, quindi fare clic su **OK**.  
+        -   [新しいデータベース] を選択して、データベースのレプリカの新しいデータベースを作成します。 **** [ **新しいデータベース** ] ページで、データベースの名前を指定し、[ **OK**] をクリックします。  
 
-    5.  Fare clic su **Avanti** per continuare.  
+    5.  **[次へ]** をクリックして、続行します。  
 
-    6.  Nella pagina **Protezione agente di distribuzione** fare clic sul pulsante delle proprietà **(.…)** nella riga Connessione al Sottoscrittore della finestra di dialogo, quindi configurare le impostazioni di protezione per la connessione.  
+    6.  「**ディストリビューション エージェント セキュリティ**」ページで、ダイアログ ボックスの "サブスクライバー接続" 行のプロパティ ボタン **(....)** をクリックしてから、接続のセキュリティ設定を構成します。  
 
         > [!TIP]  
-        >  Il pulsante delle proprietà **(….)** si trova nella quarta colonna della finestra di visualizzazione.  
+        >  プロパティ ボタン **(....)** は、表示ボックスの 4 列目にあります。  
 
-        **Impostazioni di protezione:**  
+        **セキュリティ設定:**  
 
-        -   Configurare l'account che esegue il processo dell'agente di distribuzione (l'account del processo):  
+        -   配布エージェント処理を実行するアカウント (プロセスのアカウント) を構成します。  
 
-            -   Se SQL Server Agent viene eseguito come sistema locale, selezionare **Esegui con l'account del servizio SQL Server Agent (procedura non consigliata per la protezione)**  
+            -   SQL Server エージェントをローカル システムとして実行する場合は、[SQL Server エージェント サービスのアカウントで実行する (これは推奨されるセキュリティのベスト プラクティスではありません)] を選択します。 ****  
 
-            -   Se SQL Server Agent viene eseguito usando un account diverso, selezionare **Esegui con l'account di Windows seguente**, quindi configurare l'account. È possibile specificare un account Windows o un account SQL Server.  
+            -   SQL Server エージェントを別のアカウントを使用して実行する場合は、[次の Windows アカウントで実行する] を選択して、そのアカウントを構成します。 **** Windows アカウントまたは SQL Server アカウントを指定できます。  
 
             > [!IMPORTANT]  
-            >  È necessario concedere all'account che esegue l'agente di distribuzione le autorizzazioni per l'autore come una sottoscrizione pull. Per informazioni sulla configurazione delle autorizzazioni, vedere [Protezione agente di distribuzione](http://go.microsoft.com/fwlink/p/?LinkId=238463) nella Libreria TechNet SQL Server.  
+            >  配布エージェントを実行するアカウントに、発行元へのアクセス許可をプル サブスクリプションとして付与する必要があります。 これらのアクセス許可の構成について詳しくは、SQL Server TechNet ライブラリの「 [ディストリビューション エージェント セキュリティ](http://go.microsoft.com/fwlink/p/?LinkId=238463) 」をご覧ください。  
 
-        -   Per **Connetti al server di distribuzione**, selezionare **Tramite rappresentazione dell'account del processo**.  
+        -   [ **ディストリビューターに接続**] で、[ **プロセスのアカウントを借用する**] を選択します。  
 
-        -   Per **Connetti al Sottoscrittore**, selezionare **Tramite rappresentazione dell'account del processo**.  
+        -   [ **サブスクライバーに接続**] で、[ **プロセスのアカウントを借用する**] を選択します。  
 
-         Al termine della configurazione delle impostazioni di protezione per la connessione, fare clic su **OK** per salvarle, quindi fare clic su **Avanti**.  
+         接続のセキュリティ設定を構成したら、[ **OK** ] をクリックして設定を保存してから、[ **次へ**] をクリックします。  
 
-    7.  Nella casella di riepilogo **Pianificazione agente** della pagina **Pianificazione della sincronizzazione** selezionare **Definizione pianificazione**, quindi configurare **Nuova pianificazione processo**. Selezionare la frequenza **Quotidiana**, fare in modo che ricorra ogni **5 minuti**e impostare la durata **Nessuna data di fine**. Fare clic su **Avanti** per salvare la pianificazione, quindi fare clic nuovamente su **Avanti** .  
+    7.  [ **同期スケジュール** ] ページの [ **エージェント スケジュール** ] リスト ボックスで、[ **スケジュールの定義**] を選択し、[ **新しいジョブ スケジュール**] を構成します。 ジョブを行う頻度を [ **毎日**] に、繰り返す間隔を [ **5 分**] に設定し、期間に **終了日がない**ように設定します。 [ **次へ** ] をクリックしてスケジュールを保存してから、もう一度 [ **次へ** ] をクリックします。  
 
-    8.  Nella pagina **Azioni procedura guidata** selezionare la casella di controllo **Crea le sottoscrizioni**, quindi fare clic su **Avanti**.  
+    8.  [ **ウィザードのアクション** ] ページで、[ **サブスクリプションの作成**] チェック ボックスを選択してから、[ **次へ**] をクリックします。  
 
-    9. Nella pagina **Completamento procedura guidata** fare clic su **Fine**, quindi su **Chiudi** per completare la procedura guidata.  
+    9. [ **ウィザードの完了** ] ページで、[ **完了**]、[ **閉じる** ] の順にクリックしてウィザードを完了します。  
 
-3.  Subito dopo aver completato la Creazione guidata nuova sottoscrizione, usare **SQL Server Management Studio** per connettersi al database del server di replica di database e quindi eseguire la query seguente per attivare la proprietà del database TRUSTWORTHY:  `ALTER DATABASE <MP Replica Database Name> SET TRUSTWORTHY ON;`  
+3.  サブスクリプションの新規作成ウィザードの完了の直後に、 **SQL Server Management Studio** を使用してデータベース レプリカ サーバーのデータベースに接続し、次のクエリを実行して TRUSTWORTHY データベース プロパティを有効にします。  `ALTER DATABASE <MP Replica Database Name> SET TRUSTWORTHY ON;`  
 
-4.  Controllare lo stato di sincronizzazione per verificare che la sottoscrizione sia stata eseguita correttamente:  
+4.  同期ステータスを確認して、サブスクリプションが成功したことを検証します。  
 
-    -   Nel computer del sottoscrittore:  
+    -   サブスクライバーのコンピューターで:  
 
-        -   In **SQL Server Management Studio**eseguire la connessione al server di replica di database, quindi espandere **Replica**.  
+        -   **SQL Server Management Studio**で、データベース レプリカ サーバーに接続し、[ **レプリケーション**] を展開します。  
 
-        -   Espandere **Sottoscrizioni locali**, fare clic con il pulsante destro del mouse sulla sottoscrizione alla pubblicazione del database del sito e quindi selezionare **Visualizza stato sincronizzazione**.  
+        -   [ **ローカル サブスクリプション**] を展開してサイト データベース パブリケーションに対するサブスクリプションを右クリックし、[ **同期の状態の表示**] を選択します。  
 
-    -   Nel computer dell'autore:  
+    -   発行元のコンピューターで:  
 
-        -   In **SQL Server Management Studio**eseguire la connessione al computer del database del sito, fare clic con il pulsante destro del mouse sulla cartella **Replica** , quindi selezionare **Avvia Monitoraggio replica**.  
+        -   **SQL Server Management Studio**で、サイト データベース コンピューターに接続し、[ **レプリケーション** ] フォルダーを右クリックして [ **レプリケーション モニターの起動**] を選択します。  
 
-5.  Per abilitare l'integrazione Common Language Runtime (CLR) per la replica di database, usare **SQL Server Management Studio** per connettersi alla replica di database nel server di replica di database ed eseguire la seguente stored procedure come una query: **exec sp_configure 'clr enabled', 1; RICONFIGURARE CON SOSTITUZIONE**  
+5.  データベースのレプリカで共通言語ランタイム (CLR) 統合を有効にするには、 **SQL Server Management Studio** を使用して、データベース レプリカ サーバーのデータベースのレプリカに接続し、ストアド プロシージャ **exec sp_configure 'clr enabled', 1; RECONFIGURE WITH OVERRIDE**をクエリとして実行します。  
 
-6.  Per ciascun punto di gestione che usa un server di replica di database, aggiungere l'account computer relativo al punto di gestione al gruppo **Administrators** locale nel server di replica di database.  
+6.  データベース レプリカ サーバーを使用する各管理ポイントで、管理ポイントのコンピューター アカウントをそのデータベース レプリカ サーバーのローカルの [Administrators] グループに追加します。 ****  
 
     > [!TIP]  
-    >  Questo passaggio non è necessario per i punti di gestione eseguiti nel server di replica di database.  
+    >  この手順は、データベース レプリカ サーバーで実行する管理ポイントでは必要ありません。  
 
- La replica di database ora può essere usata da un punto di gestione.  
+ 管理ポイントでデータベースのレプリカを使用できるようになりました。  
 
-###  <a name="a-namebkmkdbreplicaconfigmpa-step-3---configure-management-points-to-use-the-database-replica"></a><a name="BKMK_DBReplica_ConfigMP"></a> Passaggio 3: Configurare i punti di gestione per l'uso della replica di database  
- È possibile configurare un punto di gestione in un sito primario per l'utilizzo di una replica di database durante l'installazione del ruolo del punto di gestione, oppure è possibile riconfigurare un punto di gestione esistente per l'utilizzo di una replica di database.  
+###  <a name="BKMK_DBReplica_ConfigMP"></a> 手順 3 - データベース レプリカを使用するための管理ポイントの構成  
+ 管理ポイントの役割をインストールするときに、データベースのレプリカを使用するようにプライマリ サイトの管理ポイントを構成できます。または、既存の管理ポイントがデータベースのレプリカを使用するように再構成できます。  
 
- Per configurare un punto di gestione per l'utilizzo di una replica di database, usare le seguenti informazioni:  
+ 次の情報を使用して、管理ポイントがデータベースのレプリカを使用するように構成します。  
 
--   **Per configurare un nuovo punto di gestione:** Nella pagina **Database del punto di gestione** della procedura guidata usata per l'installazione del punto di gestione selezionare **Usa replica di database**e specificare l'FQDN del computer che ospita la replica di database. Successivamente, per **Nome database del sito di Configuration Manager**, specificare il nome del database della replica di database nel computer.  
+-   **新しい管理ポイントを構成するには:** 管理ポイントをインストールするためのウィザードの [ **管理ポイントのデータベース** ] ページで、[ **データベースのレプリカを使用する**] を選択してから、データベースのレプリカをホストするコンピューターの FQDN を指定します。 次に、[ConfigMgr サイト データベース名] で、そのコンピューターのデータベースのレプリカのデータベース名を指定します。 ****  
 
--   **Per configurare un punto di gestione installato in precedenza**: Aprire la pagina delle proprietà del punto di gestione, selezionare la scheda **Database del punto di gestione** , selezionare **Usa replica di database**, quindi specificare l'FQDN del computer che ospita la replica di database. Successivamente, per **Nome database del sito di Configuration Manager**, specificare il nome del database della replica di database nel computer.  
+-   **以前にインストールした管理ポイントを構成するには**:管理ポイントのプロパティ ページを開き、[ **管理ポイントのデータベース** ] タブで、[ **データベースのレプリカを使用する**] を選択してから、データベースのレプリカをホストするコンピューターの FQDN を指定します。 次に、[ConfigMgr サイト データベース名] で、そのコンピューターのデータベースのレプリカのデータベース名を指定します。 ****  
 
--   **Per ogni punto di gestione che usa una replica di database**è necessario aggiungere manualmente l'account computer del server del punto di gestione al ruolo **db_datareader** per la replica di database.  
+-   **データベースのレプリカを使用する各管理ポイント**では、管理ポイント サーバーのコンピューター アカウントをデータベース レプリカの **db_datareader** ロールに手動で追加する必要があります。  
 
-Oltre a configurare il punto di gestione per l'utilizzo del server di replica di database, è necessario abilitare **Autenticazione Windows** in **IIS** nel punto di gestione:  
+データベース レプリカ サーバーを使用する管理ポイントを構成するだけでなく、管理ポイントの **IIS** で **Windows 認証** を有効にする必要もあります。  
 
-1.  Aprire **Gestione Internet Information Services (IIS)**.  
+1.  [インターネット インフォメーション サービス (IIS) マネージャー] を開きます。 ****  
 
-2.  Selezionare il sito Web usato dal punto di gestione e aprire **Autenticazione**.  
+2.  管理ポイントが使用する Web サイトを選択して、[認証] を開きます。 ****  
 
-3.  Impostare **Autenticazione Windows** su **Attivato**, quindi chiudere **Gestione Internet Information Services (IIS)**.  
+3.  [ **Windows 認証** ] を [ **有効**] に設定してから、[ **インターネット インフォメーション サービス (IIS) マネージャー**] を閉じます。  
 
-###  <a name="a-namebkmkdbreplicacerta-step-4--configure-a-self-signed-certificate-for-the-database-replica-server"></a><a name="BKMK_DBReplica_Cert"></a> Passaggio 4: Configurare un certificato autofirmato per il server di replica di database  
- È necessario creare un certificato autofirmato nel server di replica di database e renderlo disponibile per ogni punto di gestione che utilizzerà il server di replica di database.  
+###  <a name="BKMK_DBReplica_Cert"></a> 手順 4 - データベース レプリカ サーバーの自己署名入り証明書の構成  
+ データベース レプリカ サーバーで自己署名入り証明書を作成して、そのデータベース レプリカ サーバーを使用する各管理ポイントがこの証明書を利用できるようにする必要があります。  
 
- Il certificato è automaticamente disponibile per un punto di gestione installato nel server di replica di database. Tuttavia, per rendere il certificato disponibile ai punti di gestione remoti, è necessario esportare il certificato e quindi aggiungerlo all'archivio certificati Persone attendibili del punto di gestione remoto.  
+ データベース レプリカ サーバーにインストールされている管理ポイントでは、この証明書が自動的に利用できるようになります。 ただし、この証明書をリモート管理ポイントが利用できるようにするには、証明書をエクスポートして、リモート管理ポイントの信頼されたユーザー証明書ストアに追加する必要があります。  
 
- Usare le seguenti procedure come esempio di configurazione di un certificato autofirmato nel server di replica di database per un computer Windows Server 2008 R2. Se si dispone di una versione diversa del sistema operativo, fare riferimento alla documentazione del sistema operativo e modificare di conseguenza i passaggi di queste procedure.  
+ Windows Server 2008 R2 コンピューター上のデータベース レプリカ サーバーに自己署名入り証明書を構成するには、次の手順に従います。 別のオペレーティング システムのバージョンを使用している場合は、使用しているオペレーティング システムのドキュメントを参照し、必要に応じてこれらの手順のステップを調整してください。  
 
-##### <a name="to-configure-a-self-signed-certificate-for-the-database-replica-server"></a>Per configurare un certificato autofirmato per il server di replica di database  
+##### <a name="to-configure-a-self-signed-certificate-for-the-database-replica-server"></a>データベース レプリカ サーバーに自己署名入り証明書を構成するには  
 
-1.  Nel server di replica di database aprire un prompt dei comandi di PowerShell con privilegi amministrativi e quindi eseguire il seguente comando: **set-executionpolicy UnRestricted**  
+1.  データベース レプリカ サーバーで、管理者特権で PowerShell コマンド プロンプトを開いて、コマンド **set-executionpolicy UnRestricted**を実行します:  
 
-2.  Copiare il seguente script PowerShell e salvarlo come file con il nome **CreateMPReplicaCert.ps1**. Inserire una copia di questo file nella cartella radice della partizione di sistema del server di replica di database.  
+2.  次の PowerShell スクリプトをコピーし、 **CreateMPReplicaCert.ps1**という名前のファイルとして保存します。 このファイルのコピーを、データベース レプリカ サーバーのシステム パーティションのルート フォルダーに配置します。  
 
     > [!IMPORTANT]  
-    >  Se si configurano più repliche di database in un'unica istanza di SQL Server, per ogni replica successiva configurata è necessario usare una versione modificata dello script per questa procedura. Vedere  [Script supplementari per ulteriori repliche di database in un'unica istanza di SQL Server](#bkmk_supscript)  
+    >  1 つの SQL Server に複数のデータベース レプリカを構成する場合は、後で構成する各レプリカについて、この手順で変更済みのこのスクリプトを使用する必要があります。 「  [単一の SQL Server 上の追加データベース レプリカ用の補足スクリプト](#bkmk_supscript)」をご覧ください。  
 
     ```  
     # Script for creating a self-signed certificate for the local machine and configuring SQL Server to use it.  
@@ -373,146 +372,140 @@ Oltre a configurare il punto di gestione per l'utilizzo del server di replica di
     Restart-Service $SQLServiceName -Force  
     ```  
 
-3.  Nel server di replica di database eseguire il seguente comando applicabile alla configurazione di SQL Server:  
+3.  データベース レプリカ サーバーで、SQL Server の構成を適用する次のコマンドを実行します。  
 
-    -   Per un'istanza predefinita di SQL Server: Fare clic con il pulsante destro del mouse sul file **CreateMPReplicaCert.ps1** e selezionare **Esegui con PowerShell**. Durante l'esecuzione dello script viene creato il certificato autofirmato e SQL Server viene configurato per l'utilizzo del certificato.  
+    -   SQL Server の既定のインスタンスの場合: **CreateMPReplicaCert.ps1** ファイルを右クリックして [ **PowerShell で実行**] を選択します。 スクリプトを実行すると、自己署名入り証明書が作成され、SQL Server がその証明書を使用するように構成されます。  
 
-    -   Per un'istanza denominata di SQL Server: Usare PowerShell per eseguire il comando **%path%\CreateMPReplicaCert.ps1 xxxxxx** dove **xxxxxx** è il nome dell'istanza di SQL Server.  
+    -   SQL Server の名前付きインスタンスの場合:PowerShell を使用して、コマンド **%path%\CreateMPReplicaCert.ps1 xxxxxx** を実行します。ここで、 **xxxxxx** は SQL Server インスタンスの名前です。  
 
-    -   Dopo aver completato lo script, verificare che SQL Server Agent sia in esecuzione. In caso contrario, riavviare SQL Server Agent.  
+    -   スクリプトが完了したら、SQL Server エージェントが実行されていることを確認します。 実行されていない場合は、SQL Server エージェントを再起動します。  
 
-##### <a name="to-configure-remote-management-points-to-use-the-self-signed-certificate-of-the-database-replica-server"></a>Per configurare i punti di gestione remoti per usare il certificato autofirmato del server di replica di database  
+##### <a name="to-configure-remote-management-points-to-use-the-self-signed-certificate-of-the-database-replica-server"></a>リモート管理ポイントがデータベース レプリカ サーバーの自己署名入り証明書を使用するように構成するには  
 
-1.  Eseguire i passaggi seguenti nel server di replica di database per esportare il certificato autofirmato del server:  
+1.  データベース レプリカ サーバーで次の手順を実行して、サーバーの自己署名入り証明書をエクスポートします。  
 
-    1.  Fare clic su **Start**, quindi su **Esegui**e digitare **mmc.exe**. Nella console vuota fare clic su **File**, quindi fare clic su **Aggiungi/Rimuovi snap-in**.  
+    1.  [ **スタート**]、[ **実行**] の順にクリックし、「 **mmc.exe**」と入力します。 空のコンソールで、[ **ファイル**] をクリックし、次に [ **スナップインの追加と削除**] をクリックします。  
 
-    2.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** , selezionare **Certificati** dall'elenco di **Snap-in disponibili**, quindi fare clic su **Aggiungi**.  
+    2.  [ **スナップインの追加と削除** ] ダイアログ ボックスで、[ **利用できるスナップイン** ] リストから [ **証明書**] を選択し、[ **追加**] をクリックします。  
 
-    3.  Nella finestra di dialogo **Snap-in certificati** , selezionare **Account computer**, quindi fare clic su **Avanti**.  
+    3.  [ **証明書スナップイン** ] ダイアログボックスで [ **コンピューター アカウント**] を選択し、[ **次へ**] をクリックします。  
 
-    4.  Nella finestra di dialogo **Seleziona computer** verificare che l'opzione **Computer locale: (computer in cui è in esecuzione la console)** sia selezionata, quindi fare clic su **Fine**.  
+    4.  [ **コンピューターの選択** ] ダイアログ ボックスで、[ **ローカル コンピューター: (このコンソールを実行しているコンピューター)** ] が選択されていることを確認して、[ **完了**] をクリックします。  
 
-    5.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** , fare clic su **OK**.  
+    5.  [ **スナップインの追加と削除** ] ダイアログ ボックスで、[ **OK**] をクリックします。  
 
-    6.  Nella console espandere **Certificati (computer locale)**, espandere **Personale**e selezionare **Certificati**.  
+    6.  [コンソール] ウィンドウで [ **証明書 (ローカル コンピューター)**]、[ **個人**] の順に展開して、[ **証明書**] を選択します。  
 
-    7.  Fare clic con il pulsante destro del mouse sul certificato con il nome descrittivo **Certificato di identificazione di SQL Server di Configuration Manager**, fare clic su **Tutte le attività**e quindi selezionare **Esporta**.  
+    7.  **ConfigMgr SQL Server 識別証明書**のフレンドリ名の付いた証明書を右クリックして [ **すべてのタスク**] をクリックし、[ **エクスポート**] を選択します。  
 
-    8.  Completare l' **Esportazione guidata certificati** usando le opzioni predefinite e salvare il certificato con l'estensione del nome file **.cer** .  
+    8.  既定のオプションを使用して、 **証明書のエクスポート ウィザード** を完了し、 **.cer** ファイル名拡張子を使用して証明書を保存します。  
 
-2.  Eseguire i seguenti passaggi nel computer del punto di gestione per aggiungere il certificato autofirmato per il server di replica di database all'archivio certificati Persone attendibili nel punto di gestione:  
+2.  管理ポイントのコンピューターで次の手順を実行し、データベース レプリカ サーバーの自己署名入り証明書を管理ポイントの信頼されたユーザー証明書ストアに追加します。  
 
-    1.  Ripetere i passaggi precedenti da 1.a a 1.e per configurare la console MMC dello snap-in dei **certificati** nel computer del punto di gestione.  
+    1.  上記の手順 1.a から 1.e を繰り返し、管理ポイントのコンピューターに [証明書] スナップイン MMC を構成します。 管理ポイントのコンピューターに [**証明書**] スナップイン MMC を構成します。  
 
-    2.  Nella console espandere **Certificati (computer locale)**, quindi **Persone attendibili**, fare clic con il pulsante destro del mouse su **Certificati**, selezionare **Tutte le attività**e infine **Importa** per avviare l' **Importazione guidata certificati**.  
+    2.  コンソールで、[ **証明書 (ローカル コンピューター)**]、[ **信頼されたユーザー**] の順に展開し、[ **証明書**] を右クリックして、[ **すべてのタスク**]、[ **インポート** ] の順に選択して、 **証明書のインポート ウィザード**を開始します。  
 
-    3.  Nella pagina **File da importare** selezionare il certificato salvato nel passaggio 1.h, quindi fare clic su **Avanti**.  
+    3.  [ **インポートするファイル** ] ページで、手順 1.h で保存した証明書を選択し、[ **次へ**] をクリックします。  
 
-    4.  Nella pagina **Archivio certificati** selezionare **Mettere tutti i certificati nel seguente archivio**con l'opzione **Archivio certificati** impostata su **Persone attendibili**, quindi fare clic su **Avanti**.  
+    4.  [ **証明書ストア** ] ページで [ **証明書をすべて次のストアに配置する**] を選択し、[ **証明書ストア** ] を [ **信頼されたユーザー**] に設定して、[ **次へ**] をクリックします。  
 
-    5.  Fare clic su **Fine** per chiudere la procedura guidata e completare la configurazione dei certificati nel punto di gestione.  
+    5.  [完了] をクリックし、ウィザードを閉じて、管理ポイントへの証明書の構成を完了します。 ****  
 
-###  <a name="a-namebkmkdbreplicassba-step-5---configure-the-sql-server-service-broker-for-the-database-replica-server"></a><a name="BKMK_DBreplica_SSB"></a> Passaggio 5: Configurare SQL Server Service Broker per il server di replica di database  
-Per supportare la notifica client con una replica di database per un punto di gestione, è necessario configurare la comunicazione tra il server di database del sito e il server di replica di database per SQL Server Service Broker. A tale scopo, è necessario configurare ogni database con le informazioni sull'altro database e scambiare i certificati tra i due database per una comunicazione protetta.  
-
-> [!NOTE]  
->  Prima di usare la seguente procedura, è necessario che il server di replica di database completi la sincronizzazione iniziale con il server di database del sito.  
-
- La seguente procedura non modifica la porta Service Broker configurata in SQL Server per il server di database del sito o il server di replica di database. Al contrario, consente di configurare ogni database in modo che comunichi con l'altro database usando la porta Service Broker corretta.  
-
- Usare la seguente procedura per configurare Service Broker per il server di database del sito e il server di replica di database.  
-
-##### <a name="to-configure-the-service-broker-for-a-database-replica"></a>Per configurare Service Broker per una replica di database  
-
-1.  Usare **SQL Server Management Studio** per connettersi al database del server di replica di database, quindi eseguire la query seguente per abilitare Service Broker nel server di replica di database: **ALTER DATABASE &lt;Replica Database Name\> SET ENABLE_BROKER, HONOR_BROKER_PRIORITY ON WITH ROLLBACK IMMEDIATE**  
-
-2.  Successivamente, nel server di replica di database, configurare Service Broker per la notifica client ed esportare il certificato di Service Broker. A tale scopo, eseguire una stored procedure di SQL Server che consente di configurare Service Broker ed esportare il certificato come una singola azione. Quando si esegue la stored procedure, è necessario specificare l'FQDN del server di replica di database, il nome del database delle repliche di database e specificare un percorso per l'esportazione del file di certificato.  
-
-     Eseguire la query seguente per configurare i dettagli richiesti nel server di replica di database e per esportare il certificato per il server di replica di database: **EXEC sp_BgbConfigSSBForReplicaDB '&lt;Replica SQL Server FQDN\>', '&lt;Replica Database Name\>', '&lt;Certificate Backup File Path\>'**  
-
-    > [!NOTE]  
-    >  Quando il server di replica di database non si trova nell'istanza predefinita di SQL Server, per questo passaggio è necessario specificare il nome dell'istanza oltre al nome del database di replica. A tale scopo, sostituire **&lt;Replica Database Name\>** con **&lt;Instance name\\Replica Database Name\>**.  
-
-     Dopo aver esportato il certificato dal server di replica di database, inserire una copia del certificato nel server di database dei siti primari.  
-
-3.  Usare **SQL Server Management Studio** per connettersi al database del sito primario. Dopo aver eseguito la connessione al database dei siti primari, eseguire una query per importare il certificato e specificare la porta Service Broker in uso nel server di replica di database, l'FQDN del server di replica di database e il nome del database delle repliche di database. In questo modo, il database dei siti primari viene configurato per usare Service Broker per comunicare con il database del server di replica di database.  
-
-     Eseguire la query seguente per importare il certificato dal server di replica di database e specificare i dettagli richiesti: **EXEC sp_BgbConfigSSBForRemoteService 'REPLICA', '&lt;SQL Service Broker Port\>', '&lt;Certificate File Path\>', '&lt;Replica SQL Server FQDN\>', '&lt;Replica Database Name\>'**  
-
-    > [!NOTE]  
-    >  Quando il server di replica di database non si trova nell'istanza predefinita di SQL Server, per questo passaggio è necessario specificare il nome dell'istanza oltre al nome del database di replica. A tale scopo, sostituire **&lt;Replica Database Name\>** con **\Instance name\\Replica Database Name\>**.  
-
-4.  Successivamente, nel server di database del sito eseguire il comando seguente per esportare il certificato per il server di database del sito: **EXEC sp_BgbCreateAndBackupSQLCert '&lt;Certificate Backup File Path\>'**  
-
-     Dopo aver esportato il certificato dal server di database del sito, inserire una copia del certificato nel server di replica di database.  
-
-5.  Usare **SQL Server Management Studio** per connettersi al database del server di replica di database. Dopo aver eseguito la connessione al database del server di replica di database, eseguire una query per importare il certificato e specificare il codice del sito del sito primario e la porta Service Broker in uso nel server di database del sito. In questo modo, il server di replica di database viene configurato per usare Service Broker per comunicare con il database del sito primario.  
-
-     Eseguire la query seguente per importare il certificato dal server di database del sito: **EXEC sp_BgbConfigSSBForRemoteService '&lt;Site Code\>', '&lt;SQL Service Broker Port\>', '&lt;Certificate File Path\>'**  
-
- Alcuni minuti dopo aver completato la configurazione del database del sito e del database della replica di database, Notification Manager imposta la conversazione di Service Broker nel sito primario per la notifica client dal database del sito primario alla replica di database.  
-
-###  <a name="a-namebkmksupscripta-supplemental-script-for-additional-database-replicas-on-a-single-sql-server"></a><a name="bkmk_supscript"></a> Script supplementari per ulteriori repliche di database in un'unica istanza di SQL Server  
- Quando si usa lo script del passaggio 4 per configurare un certificato autofirmato per il server di replica di database in un'istanza di Server SQL in cui è già presente una replica di database che si intende continuare a usare, è necessario usare una versione modificata dello script originale. Le modifiche seguenti impediscono allo script di eliminare un certificato esistente nel server e creano i certificati successivi con nomi descrittivi univoci.  Modificare lo script originale nel modo seguente:  
-
--   Impostare come commento (impedire l'esecuzione) ogni riga tra le voci di script **# Delete existing cert if one exists** e **# Create the new cert**. A questo scopo, aggiungere il carattere  **#**  all'inizio di tutte le righe interessate.  
-
--   Per ogni replica di database successiva in cui si usa questo script di configurazione, aggiornare il nome descrittivo per il certificato.  A questo scopo, modificare la riga **$enrollment.CertificateFriendlyName = "ConfigMgr SQL Server Identification Certificate"** e sostituire **ConfigMgr SQL Server Identification Certificate** con un nuovo nome, ad esempio  **ConfigMgr SQL Server Identification Certificate1**.  
-
-##  <a name="a-namebkmkdbreplicaopsa-manage-database-replica-configurations"></a><a name="BKMK_DBReplicaOps"></a> Gestire le configurazioni di replica di database  
- Quando si usa una replica di database in un sito, usare le informazioni nelle seguenti sezioni per integrare i processi di disinstallazione di un replica di database, disinstallazione di un sito che usa una replica di database oppure spostamento del database del sito in una nuova installazione di SQL Server. Quando si usano le informazioni delle seguenti sezioni per eliminare delle pubblicazioni, usare le informazioni disponibili per l'eliminazione di repliche transazionali per la versione di SQL Server usata per la replica di database. Se ad esempio si usa SQL Server 2008 R2, vedere [Procedura: Eliminazione di una pubblicazione (programmazione Transact-SQL della replica)](http://go.microsoft.com/fwlink/p/?LinkId=273934).  
+###  <a name="BKMK_DBreplica_SSB"></a> 手順 5 - データベース レプリカ サーバーでの SQL Server Service Broker の構成  
+管理ポイントのデータベース レプリカを使用したクライアント通知をサポートするためには、SQL Server Service Broker にサイト データベース サーバーとデータベース レプリカ サーバー間の通信を構成する必要があります。 そのためには、他のデータベースの情報を使って各データベースを構成し、通信をセキュリティで保護するために 2 つのデータベース間で証明書を交換する必要があります。  
 
 > [!NOTE]  
->  Dopo aver ripristinato il database di un sito che era stato configurato per le repliche di database, prima di poter usare le repliche è necessario riconfigurare ciascuna replica del database, ricreando sia le pubblicazioni sia le sottoscrizioni.  
+>  以下の手順を実行する前に、データベース レプリカ サーバーでサイト データベース サーバーとの最初の同期が正常に完了する必要があります。  
 
-###  <a name="a-namebkmkuninstalldbreplicaa-uninstall-a-database-replica"></a><a name="BKMK_UninstallDbReplica"></a> Disinstallare una replica di database  
- Quando si usa una replica di database per un punto di gestione, potrebbe essere necessario disinstallare la replica di database per un periodo di tempo e quindi riconfigurarla per l'utilizzo. Ad esempio, è necessario rimuovere le repliche di database prima di aggiornare un sito di Configuration Manager a un nuovo Service Pack. Dopo aver completato l'aggiornamento del sito, è possibile ripristinare la replica di database per l'utilizzo.  
+ 以下の手順を実行しても、サイト データベース サーバーまたはデータベース レプリカ サーバーの SQL Server に構成されているサービス ブローカー ポートは変更されません。 代わりに、この手順で、正しいサービス ブローカー ポートを使って他のデータベースと通信するように、各データベースが構成されます。  
 
- Usare i seguenti passaggi per disinstallare una replica di database.  
+ サイト データベース サーバーとデータベース レプリカ サーバーにサービス ブローカーを構成するには、次の手順を実行します。  
 
-1.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Configurazione del sito**, selezionare **Server e ruoli del sistema del sito** e quindi nel riquadro dei dettagli selezionare il server del sistema del sito in cui è situato il punto di gestione che usa la replica di database da disinstallare.  
+##### <a name="to-configure-the-service-broker-for-a-database-replica"></a>データベースのレプリカにサービス ブローカーを構成するには  
 
-2.  Nel riquadro **Ruoli sistema del sito** fare clic con il pulsante destro del mouse su **Punto di gestione** e selezionare **Proprietà**.  
+1.  **SQL Server Management Studio** を使用して、データベース レプリカ サーバーのデータベースに接続してから、次のクエリを実行してデータベース レプリカ サーバーでサービス ブローカーを有効にします。**ALTER DATABASE &lt;レプリカ データベース名\> SET ENABLE_BROKER, HONOR_BROKER_PRIORITY ON WITH ROLLBACK IMMEDIATE**  
 
-3.  Nella scheda **Database del punto di gestione** selezionare **Usa database del sito** per configurare il punto di gestione per l'utilizzo del database del sito invece della replica di database. Quindi fare clic su **OK** per salvare la configurazione.  
+2.  次に、データベース レプリカ サーバーで、クライアント通知を行うようにサービス ブローカーを構成し、サービス ブローカーの証明書をエクスポートします。 これを行うには、サービス ブローカーを構成する SQL Server ストアド プロシージャを実行して、証明書を 1 回の操作でエクスポートします。 ストアド プロシージャを実行するときに、データベース レプリカ サーバーの FQDN、データベースのレプリカのデータベース名、および証明書ファイルをエクスポートする場所を指定する必要があります。  
 
-4.  Successivamente, usare **SQL Server Management Studio** per eseguire le seguenti attività:  
+     次のクエリを実行して、必要な情報をデータベース レプリカ サーバーに構成し、データベース レプリカ サーバーの証明書をエクスポートします: **EXEC sp_BgbConfigSSBForReplicaDB '&lt;レプリカ SQL Server FQDN\>', '&lt;レプリカ データベース名\>', '&lt;証明書のバックアップ ファイルのパス\>'**  
 
-    -   Eliminare la pubblicazione per la replica di database dal database del server del sito.  
+    > [!NOTE]  
+    >  データベース レプリカ サーバーが SQL Server の既定のインスタンスに配置されていない場合は、この手順で、レプリカ データベース名に加えてインスタンス名も指定する必要があります。 それには、**&lt;レプリカ データベース名\>** を **&lt;インスタンス名\\レプリカ データベース名\>** に置き換えます。  
 
-    -   Eliminare la sottoscrizione per la replica di database dal server di replica di database.  
+     データベース レプリカ サーバーから証明書をエクスポートしたら、証明書のコピーをプライマリ サイトのデータベース サーバーに配置します。  
 
-    -   Eliminare il database di replica dal server di replica di database.  
+3.  **SQL Server Management Studio** を使用して、プライマリ サイトのデータベースに接続します。 プライマリ サイトのデータベースに接続したら、クエリを実行して証明書をインポートし、データベース レプリカ サーバーで使用するサービス ブローカー ポート、データベース レプリカ サーバーの FQDN、およびデータベースのレプリカのデータベース名を指定します。 これにより、サービス ブローカーを使用してデータベース レプリカ サーバーのデータベースと通信するように、プライマリ サイトのデータベースが構成されます。  
 
-    -   Disattivare la pubblicazione e la distribuzione nel server di database del sito. Per disattivare la pubblicazione e la distribuzione, fare clic con il pulsante destro del mouse sulla cartella Replica e quindi su **Disattiva pubblicazione e distribuzione**.  
+     次のクエリを実行してデータベース レプリカ サーバーから証明書をインポートし、必要な情報を指定します: **EXEC sp_BgbConfigSSBForRemoteService 'REPLICA', '&lt;SQL Service Broker ポート\>', '&lt;証明書ファイルのパス\>', '&lt;レプリカ SQL Server FQDN\>', '&lt;レプリカ データベース名\>'**  
 
-5.  Dopo aver eliminato la pubblicazione, la sottoscrizione e la replica di database e aver disattivato la pubblicazione nel server di database del sito, la replica di database verrà disinstallata.  
+    > [!NOTE]  
+    >  データベース レプリカ サーバーが SQL Server の既定のインスタンスに配置されていない場合は、この手順で、レプリカ データベース名に加えてインスタンス名も指定する必要があります。 それには、**&lt;レプリカ データベース名\>**を **\インスタンス名\\レプリカ データベース名\>** に置き換えます。  
 
-###  <a name="a-namebkmkdbreplicaopsuninstalla-uninstall-a-site-server-that-publishes-a-database-replica"></a><a name="BKMK_DBReplicaOps_Uninstall"></a> Disinstallare un server del sito che pubblica una replica di database  
- Prima di disinstallare un sito che pubblica una replica di database, usare i seguenti passaggi per eseguire la pulizia della pubblicazione e delle sottoscrizioni.  
+4.  次に、サイト データベース サーバーで、次のコマンドを実行してサイト データベース サーバーの証明書をエクスポートします: **EXEC sp_BgbCreateAndBackupSQLCert '&lt;証明書バックアップ ファイルのパス\>'**  
 
-1.  Usare **SQL Server Management Studio** per eliminare la pubblicazione della replica di database dal database del server del sito.  
+     サイト データベース サーバーから証明書をエクスポートしたら、証明書のコピーをデータベース レプリカ サーバーに配置します。  
 
-2.  Usare **SQL Server Management Studio** per eliminare la sottoscrizione della replica di database da ogni SQL Server remoto che ospita una replica di database per questo sito.  
+5.  **SQL Server Management Studio** を使用して、データベース レプリカ サーバーのデータベースに接続します。 データベース レプリカ サーバーのデータベースに接続したら、クエリを実行して証明書をインポートし、プライマリ サイトのサイト コードと、サイト データベース サーバーで使用するサービス ブローカー ポートを指定します。 これにより、サービス ブローカーを使用してプライマリ サイトのデータベースと通信するように、データベース レプリカ サーバーが構成されます。  
 
-3.  Disinstallare il sito.  
+     次のクエリを実行して、サイト データベース サーバーから証明書をインポートします: **EXEC sp_BgbConfigSSBForRemoteService '&lt;サイト コード\>', '&lt;SQL Service Broker ポート\>', '&lt;証明書ファイルのパス\>'**  
 
-###  <a name="a-namebkmkdbreplicaopsmovea-move-a-site-server-database-that-publishes-a-database-replica"></a><a name="BKMK_DBReplicaOps_Move"></a> Spostare un database del server del sito che pubblica una replica di database  
- Quando si sposta il database del sito in un nuovo computer, usare i seguenti passaggi:  
+ サイト データベースとデータベースのレプリカ データベースの構成を完了して数分すると、プライマリ サイトの通知マネージャーによって、プライマリ サイト データベースからデータベースのレプリカへのクライアント通知を行うための Service Broker メッセージ交換が設定されます。  
 
-1.  Usare **SQL Server Management Studio** per eliminare la pubblicazione della replica di database dal database del server del sito.  
+###  <a name="bkmk_supscript"></a> 単一の SQL Server 上の追加データベース レプリカ用の補足スクリプト  
+ 手順 4 のスクリプトを使用して、引き続き使用するデータベース レプリカが既に存在する SQL Server 上のデータベース レプリカ サーバーの自己署名入り証明書を構成する場合、元のスクリプトの変更済みバージョンを使用する必要があります。 次の変更を行うと、スクリプトはサーバー上の既存の証明書を削除することなく、一意のフレンドリ名を持つ後続の証明書を作成します。  次のように、元のスクリプトを編集します。  
 
-2.  Usare **SQL Server Management Studio** per eliminare la sottoscrizione della replica di database da ogni server di replica di database per questo sito.  
+-   スクリプト エントリ **# Delete existing cert if one exists** と **# Create the new cert**の間の各行をコメントに (実行されないように) します。 コメントにするには、該当する各行の先頭に文字  **#**  を追加します。  
 
-3.  Spostare il database nel nuovo computer SQL Server. Per ulteriori informazioni, vedere la sezione [Modify the site database configuration](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_dbconfig) nell'argomento [Modify your System Center Configuration Manager infrastructure](../../../../core/servers/manage/modify-your-infrastructure.md) .  
+-   この証明書を使用して構成する後続のデータベース レプリカごとに、証明書のフレンドリ名を更新します。  これを行うには、 **$enrollment.CertificateFriendlyName = "ConfigMgr SQL Server Identification Certificate"** の行を編集し、 **ConfigMgr SQL Server Identification Certificate** を新しい名前 (  **ConfigMgr SQL Server Identification Certificate1**など) に置き換えます。  
 
-4.  Ricreare la pubblicazione per la replica di database nel server di database del sito. Per altre informazioni, vedere la sezione [Passaggio 1: Configurare il server di database del sito per la pubblicazione della replica di database](#BKMK_DBReplica_ConfigSiteDB) in questo argomento.  
+##  <a name="BKMK_DBReplicaOps"></a> データベースのレプリカの構成の管理  
+ サイトでデータベースのレプリカを使用する場合は、データベースのレプリカのアンインストール、データベースのレプリカを使用するサイトのアンインストール、または SQL Server の新しいインストールへのサイト データベースの移動を行うための補足する手順として、以下のセクションの情報を参照してください。 以下のセクションの情報を参照してパブリケーションを削除する場合は、データベースのレプリカに使用しているバージョンの SQL Server のトランザクション レプリケーションを削除する手順に従ってください。 たとえば、SQL Server 2008 R2 を使用する場合、「 [パブリケーションを削除する方法 (レプリケーション Transact-SQL プログラミング)](http://go.microsoft.com/fwlink/p/?LinkId=273934)」をご覧ください。  
 
-5.  Ricreare le sottoscrizioni per la replica di database in ogni server di replica di database. Per altre informazioni, vedere la sezione [Passaggio 2: Configurare il server di replica di database](#BKMK_DBReplica_ConfigSrv) in questo argomento.  
+> [!NOTE]  
+>  データベースのレプリカ用に構成されたサイト データベースを復元した後で、データベースのレプリカを使用するためには、データベースの各レプリカを再構成して、パブリケーションとサブスクリプションの両方を再作成する必要があります。  
 
+###  <a name="BKMK_UninstallDbReplica"></a> データベースのレプリカのアンインストール  
+ 管理ポイントにデータベースのレプリカを使用する場合、データベースのレプリカをしばらくの間アンインストールしてから、使用するには再構成することが必要になる可能性があります。 たとえば、Configuration Manager サイトを新しいサービス パックにアップグレードする前に、データベースのレプリカを削除する必要があります。 サイトのアップグレードが完了した後で、データベースのレプリカを復元して使用することができます。  
 
+ データベースのレプリカをアンインストールするには、次の手順を実行します。  
 
-<!--HONumber=Dec16_HO3-->
+1.  Configuration Manager コンソールの [**管理**] ワークスペースで、[**サイトの構成**] を展開して [**サーバーとサイト システムの役割**] を選択します。それから、詳細ウィンドウで、アンインストール対象のデータベース レプリカを使用している管理ポイントをホストしているサイト システム サーバーを選択します。  
 
+2.  [ **サイト システムの役割** ] ウィンドウで、[ **管理ポイント** ] を右クリックして [ **プロパティ**] を選択します。  
 
+3.  [ **管理ポイントのデータベース** ] タブで [ **サイト データベースを使用する** ] を選択し、データベースのレプリカではなくサイト データベースを使用する管理ポイントを構成します。 次に、[OK] をクリックして構成を保存します。 ****  
+
+4.  **SQL Server Management Studio** を使用して、次のタスクを実行します。  
+
+    -   サイト サーバー データベースからデータベースのレプリカのパブリケーションを削除する。  
+
+    -   データベース レプリカ サーバーからデータベースのレプリカのサブスクリプションを削除する。  
+
+    -   データベース レプリカ サーバーからレプリカ データベースを削除する。  
+
+    -   サイト データベース サーバーでパブリッシングとディストリビューションを無効にする。 パブリッシングとディストリビューションを無効にするには、Replication フォルダーを右クリックしてから、[パブリッシングおよびディストリビューションを無効にする] をクリックします。 ****  
+
+5.  サイト データベース サーバーでパブリケーション、サブスクリプション、レプリカ データベースを削除し、パブリッシングを無効にすると、データベースのレプリカがアンインストールされます。  
+
+###  <a name="BKMK_DBReplicaOps_Uninstall"></a> データベースのレプリカを発行するサイト サーバーのアンインストール  
+ データベースのレプリカを発行するサイトをアンインストールする前に、次の手順に従って、パブリケーションおよびサブスクリプションをクリーンアップします。  
+
+1.  **SQL Server Management Studio** を使用して、サイト サーバー データベースからデータベースのレプリカのパブリケーションを削除します。  
+
+2.  **SQL Server Management Studio** を使用して、このサイトのデータベースのレプリカをホストする各リモート SQL Server から、データベースのレプリカのサブスクリプションを削除します。  
+
+3.  サイトをアンインストールします。  
+
+###  <a name="BKMK_DBReplicaOps_Move"></a> データベースのレプリカを発行するサイト サーバー データベースの移動  
+ サイト データベースを新しいコンピューターに移動する場合は、次の手順に従います。  
+
+1.  **SQL Server Management Studio** を使用して、サイト サーバー データベースからデータベースのレプリカのパブリケーションを削除します。  
+
+2.  **SQL Server Management Studio** を使用して、このサイトの各データベース レプリカ サーバーから、データベースのレプリカのサブスクリプションを削除します。  
+
+3.  データベースを新しい SQL Server コンピューターに移動します。 詳細については、「 [Modify the site database configuration](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_dbconfig) 」トピックの「 [Modify your System Center Configuration Manager infrastructure](../../../../core/servers/manage/modify-your-infrastructure.md) 」セクションをご覧ください。  
+
+4.  サイト データベース サーバーにデータベースのレプリカのパブリケーションを再作成します。 詳細については、このトピックの「 [手順 1 - データベース レプリカを発行するようにサイト データベース サーバーを構成する](#BKMK_DBReplica_ConfigSiteDB) 」をご覧ください。  
+
+5.  各データベース レプリカ サーバーにデータベースのレプリカのサブスクリプションを再作成します。 詳細については、このトピックの「 [手順 2 - データベース レプリカ サーバーの構成](#BKMK_DBReplica_ConfigSrv) 」をご覧ください。  

@@ -1,71 +1,68 @@
 ---
-title: Supporto per la virtualizzazione | Microsoft Docs
-description: Requisiti per l&quot;installazione di ruoli del sistema del sito e dei client di System Center Configuration Manager in un ambiente di virtualizzazione.
+title: "仮想化のサポート | Microsoft Docs"
+description: "仮想化環境で System Center Configuration Manager クライアントとサイト システムの役割をインストールするための要件を取得します。"
 ms.custom: na
 ms.date: 1/12/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1098e8c5-9676-4c2b-841b-ec88bd04e495
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10192da2633555ab3bae60dbb1156d1926f9a4a0
 ms.openlocfilehash: b49bd179da850cee35b2487a353bb1788df03d58
-ms.lasthandoff: 01/12/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="support-for-virtualization-environments-for-system-center-configuration-manager"></a>Supporto per gli ambienti di virtualizzazione per System Center Configuration Manager
+# <a name="support-for-virtualization-environments-for-system-center-configuration-manager"></a>System Center Configuration Manager の仮想環境のサポート
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Configuration Manager supporta l'installazione di ruoli del sistema del sito e client in sistemi operativi supportati eseguiti come macchina virtuale negli ambienti di virtualizzazione elencati in questo articolo. Questo supporto è presente anche quando l'host macchina virtuale (ambiente di virtualizzazione) non è supportato come server del sito o del client.  
+Configuration Manager は、この記事で説明する仮想環境内でバーチャル マシンとして実行するサポート対象オペレーティング システムに、クライアントの役割およびサイト システムの役割をインストールすることをサポートしています。 このサポートは、バーチャル マシンのホスト (仮想環境) が、クライアントまたはサイト サーバーとしてサポートされていない場合でも存続します。  
 
- Ad esempio, se si usa Microsoft Hyper-V Server 2012 per ospitare una macchina virtuale che esegue Windows Server 2012, è possibile installare i ruoli del sistema del sito o client nella macchina virtuale (Windows Server 2012), ma non nell'host (Microsoft Hyper-V Server 2012).  
+ たとえば、Microsoft Hyper-V Server 2012 を使用して、Windows Server 2012 を実行するバーチャル マシンをホストする場合は、そのバーチャル マシン (Windows Server 2012) にクライアントの役割またはサイト システムの役割をインストールできますが、それらをホスト (Microsoft Hyper-V Server 2012) にインストールすることはできません。  
 
-|Ambiente di virtualizzazione|  
+|仮想化環境|  
 |--------------------------------|  
 |Windows Server 2008 R2|  
 |Microsoft Hyper-V Server 2008 R2|  
 |Windows Server 2012|  
 |Microsoft Hyper-V Server 2012|  
 |Windows Server 2012 R2|
-|Windows Server 2016 <sup>(vedere *nota 1*)</sup>|
-|Microsoft Hyper-V Server 2016 <sup>(vedere *nota 1*)|
--  *Nota 1*: Configuration Manager non supporta la [virtualizzazione nidificata ](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/what-s-new-in-hyper-v-on-windows#a-namebkmknestedanested-virtualization-new), introdotta con Windows Server 2016.
+|Windows Server 2016 <sup>(「*注 1*」を参照してください)</sup>|
+|Microsoft Hyper-V Server 2016 <sup>(「*注 1*」を参照してください)|
+-  *注 1*: Configuration Manager は、Windows Server 2016 の新機能である[入れ子の仮想化](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/what-s-new-in-hyper-v-on-windows#a-namebkmknestedanested-virtualization-new)をサポートしていません。
 
 
- Ogni computer virtuale in uso deve soddisfare gli stessi requisiti hardware e software che sarebbero previsti per un computer Configuration Manager fisico.  
+ 使用する各バーチャル コンピューターのハードウェアおよびソフトウェアの要件は、物理的な Configuration Manager のコンピューターに使用する構成と同じか、それ以上にする必要があります。  
 
- È possibile confermare che l'ambiente di virtualizzazione è supportato per Configuration Manager usando il programma SVVP (Server Virtualization Validation Program) e la relativa procedura guidata online per criteri di supporto del programma di virtualizzazione. Per altre informazioni sul programma SVVP (Server Virtualization Validation Program), vedere [Windows Server Virtualization Validation Program](https://www.windowsservercatalog.com/svvp.aspx).  
+ サーバー仮想化検証プログラムと、そのオンライン版の Virtualization Program Support Policy ウィザードを使用すると、Configuration Manager が仮想化環境をサポートしているかどうか検証できます。 サーバー仮想化検証プログラムの詳細については、「[Windows Server Virtualization Validation Program](https://www.windowsservercatalog.com/svvp.aspx)」(Windows サーバーの仮想化検証プログラム) を参照してください。  
 
 > [!NOTE]  
->  Configuration Manager non supporta i sistemi operativi guest Virtual PC o Virtual Server eseguiti su computer Mac.  
+>  Configuration Manager では、Mac コンピューター上で実行されるバーチャル PC またはバーチャル サーバー ゲスト オペレーティング システムはサポートしていません。  
 
-Configuration Manager non può gestire macchine virtuali, a meno che non siano online. Non è possibile aggiornare un'immagine di macchina virtuale offline né raccogliere un inventario tramite il client di Configuration Manager nel computer host.  
+Configuration Manager では、バーチャル マシンがオンラインでない限り、そのマシンを管理できません。 ホスト コンピューター上の Configuration Manager クライアントを使用して、オフラインのバーチャル マシン イメージを更新したり、インベントリを収集したりすることはできません。  
 
-Nessuna considerazione speciale è attribuita alle macchine virtuali. Ad esempio, Configuration Manager potrebbe non riuscire a determinare se un aggiornamento deve essere nuovamente applicato a un'immagine di macchina virtuale se la macchina virtuale è stata arrestata e riavviata senza salvare lo stato della macchina virtuale a cui è stato applicato l'aggiornamento.  
+バーチャル マシンについて特別に考慮する事項はありません。 たとえば、更新が適用されたバーチャル マシンの状態を保存せずにバーチャル マシンを停止して再起動した場合、Configuration Manager はバーチャル マシン イメージに更新を再適用する必要があるかどうかを判断できない可能性があります。  
 
-##  <a name="bkmk_Azure"></a> Macchine virtuali di Microsoft Azure  
- Configuration Manager può essere eseguito in macchine virtuali di Azure così come viene eseguito in locale all'interno della rete fisica aziendale. È possibile usare Configuration Manager con macchine virtuali di Azure negli scenari seguenti:  
+##  <a name="bkmk_Azure"></a> Microsoft Azure 仮想マシン  
+ Configuration Manager は、物理的な企業ネットワーク内のオンプレミスで実行されるコンピューターと同じように、Azure の仮想マシンで実行できます。 Azure Virtual Machines では、次のシナリオで Configuration Manager を使用できます。  
 
--   **Scenario 1:** è possibile eseguire Configuration Manager in una macchina virtuale di Azure e usarlo per gestire client installati in altre macchine virtuali di Azure.  
+-   **シナリオ 1:** Azure Virtual Machines で Configuration Manager を実行し、それを使用して他の Azure Virtual Machines にインストールされたクライアントを管理することができます。  
 
--   **Scenario 2:** è possibile eseguire Configuration Manager in una macchina virtuale di Azure e usarlo per gestire i client che non vengono eseguiti in Azure.  
+-   **シナリオ 2:** Azure Virtual Machines で Configuration Manager を実行し、それを使用して Azure で実行されていないクライアントを管理することができます。  
 
--   **Scenario 3:** è possibile eseguire diversi ruoli del sistema del sito di Configuration Manager in macchine virtuali di Azure e al tempo stesso eseguire altri ruoli nella rete aziendale fisica (con connettività di rete appropriata per le comunicazioni).  
+-   **シナリオ 3:** Azure Virtual Machines で複数の Configuration Manager サイト システムの役割を実行しながら、(通信のための適切なネットワーク接続がある) 物理的な企業ネットワークで他の役割を実行することができます。  
 
-Gli stessi requisiti di System Center Configuration Manager per reti, configurazioni supportate e requisiti hardware che si applicano all'installazione locale di Configuration Manager nella rete aziendale fisica si applicano anche all'installazione in macchine virtuali di Azure.  
+ネットワーク、サポート構成、ハードウェアには、物理的な企業ネットワークにオンプレミスで Configuration Manager をインストールするときと同じ System Center Configuration Manager の要件が、Azure Virtual Machines へのインストールにも適用されます。  
 
-Per altre informazioni, vedere [Configuration Manager in Azure: domande frequenti](/sccm/core/understand/configuration-manager-on-azure).
+詳細については、「[Azure の Configuration Manager - よく寄せられる質問](/sccm/core/understand/configuration-manager-on-azure)」を参照してください。
 
 > [!IMPORTANT]  
->  I siti e i client di Configuration Manager in esecuzione in macchine virtuali di Azure sono soggetti anche agli stessi requisiti di licenza delle installazioni locali.  
-
+>  Azure Virtual Machines で実行している Configuration Manager サイトおよびクライアントには、オンプレミス インストールと同じライセンス要件が課されます。  

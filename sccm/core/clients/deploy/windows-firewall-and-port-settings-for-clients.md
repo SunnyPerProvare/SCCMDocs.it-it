@@ -1,178 +1,174 @@
 ---
-title: Impostazioni di Windows Firewall e delle porte per i client | Microsoft Docs
-description: Selezionare le impostazioni della porta e di Windows Firewall per i client in System Center Configuration Manager.
+title: "Windows クライアントのファイアウォールとポートの設定 | Microsoft Docs"
+description: "System Center Configuration Manager におけるクライアントの Windows ファイアウォールとポートの設定を選択します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dce4b640-c92f-401a-9873-ce9aa9262014
-caps.latest.revision: 8
-caps.handback.revision: 0
+caps.latest.revision: "8"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 140bbc676fe0e3df1037c6bead2211b84486494b
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 79686514efcba344c4babc3d3be03b48adca7132
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="windows-firewall-and-port-settings-for-clients-in-system-center-configuration-manager"></a>Impostazioni di Windows Firewall e delle porte per i client in System Center Configuration Manager
+# <a name="windows-firewall-and-port-settings-for-clients-in-system-center-configuration-manager"></a>System Center Configuration Manager におけるクライアントの Windows ファイアウォールとポートの設定
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-I computer client in System Center Configuration Manager che eseguono Windows Firewall richiedono spesso la configurazione delle eccezioni per consentire la comunicazione con il sito. Le eccezioni da configurare dipendono dalle funzionalità di gestione usate con il client di Configuration Manager.  
+Windows ファイアウォールを実行する System Center Configuration Manager のクライアント コンピューターは、サイトとの通信のためにしばしば例外の構成を必要とします。 構成が必要な例外は、構成マネージャー クライアントで使用する管理機能によって異なります。  
 
- Utilizzare le seguenti sezioni per identificare queste funzionalità di gestione e per ulteriori informazioni su come configurare Windows Firewall per le eccezioni.  
+ こうした管理機能を特定し、Windows ファイアウォールで例外を構成する方法の詳細については、次のセクションを参照してください。  
 
-##  <a name="BKMK_ModifyingWindowsFirewall"></a> Modifica delle porte e dei programmi consentiti da Windows Firewall  
- Usare la seguente procedura per modificare le porte e i programmi in Windows Firewall per il client di Configuration Manager.  
+##  <a name="BKMK_ModifyingWindowsFirewall"></a> Windows ファイアウォールが許可するポートおよびプログラムの変更  
+ 構成マネージャー クライアント用に Windows ファイアウォール上のポートやプログラムを変更するには、次の手順に従います。  
 
-#### <a name="to-modify-the-ports-and-programs-permitted-by-windows-firewall"></a>Per modificare le porte e i programmi consentiti da Windows Firewall  
+#### <a name="to-modify-the-ports-and-programs-permitted-by-windows-firewall"></a>Windows ファイアウォールが許可するポートおよびプログラムを変更するには  
 
-1.  Nel computer che esegue Windows Firewall, aprire il Pannello di controllo.  
+1.  Windows ファイアウォールを実行しているコンピューターで、コントロール パネルを開きます。  
 
-2.  Fare clic con il pulsante destro del mouse su **Windows Firewall**, quindi scegliere **Apri**.  
+2.  [ **Windows ファイアウォール**] を右クリックし、[ **開く**] をクリックします。  
 
-3.  Configurare le eccezioni necessarie, nonché le porte e i programmi personalizzati richiesti.  
+3.  必要な例外と、必要なカスタム プログラムやポートを構成します。  
 
-## <a name="programs-and-ports-that-configuration-manager-requires"></a>Porte e programmi richiesti da Configuration Manager  
- Le seguenti funzionalità di Configuration Manager richiedono eccezioni in Windows Firewall:  
+## <a name="programs-and-ports-that-configuration-manager-requires"></a>Configuration Manager で必要なプログラムとポート  
+ 次の Configuration Manager 機能では、Windows ファイアウォールで例外を設定する必要があります。  
 
-### <a name="queries"></a>Query  
- Se la console di Configuration Manager viene eseguita in un computer che esegue Windows Firewall, durante la prima esecuzione delle query si verifica un errore e il sistema operativo visualizza una finestra di dialogo in cui all'utente viene richiesto se desidera sbloccare statview.exe. Se si sblocca statview.exe, le query successive verranno eseguite senza errori. Prima di eseguire una query è inoltre possibile aggiungere manualmente Statview.exe all'elenco di programmi e servizi nella scheda **Eccezioni** di Windows Firewall.  
+### <a name="queries"></a>クエリ  
+ Windows ファイアウォールを実行するコンピューターで Configuration Manager コンソールを実行する場合、初回実行時のクエリは失敗し、statview.exe のブロックを解除するかどうかを尋ねるダイアログ ボックスが表示されます。 statview.exe のブロックを解除すると、その後のクエリはエラーなしで実行されます。 また、クエリを実行する前に、Windows ファイアウォールの [ **例外** ] タブで、プログラムおよびサービスの一覧に statview.exe を手動で追加することもできます。  
 
-### <a name="client-push-installation"></a>Installazione push client  
- Per installare il client di Configuration Manager mediante push client, aggiungere le seguenti eccezioni a Windows Firewall:  
+### <a name="client-push-installation"></a>クライアント プッシュ インストール  
+ クライアント プッシュを使用して構成マネージャー クライアントをインストールするには、Windows ファイアウォールに次の例外を追加する必要があります。  
 
--   In uscita e in ingresso: **Condivisione file e stampanti**  
+-   送信および受信: **ファイルとプリンターの共有**  
 
--   In ingresso: **Strumentazione gestione Windows (WMI)**  
+-   受信: **Windows Management Instrumentation (WMI)**  
 
-### <a name="client-installation-by-using-group-policy"></a>Installazione client mediante i criteri di gruppo  
- Per installare il client di Configuration Manager mediante i criteri di gruppo, aggiungere **Condivisione file e stampanti** come eccezione in Windows Firewall.  
+### <a name="client-installation-by-using-group-policy"></a>グループ ポリシーを使用したクライアント インストール  
+ グループ ポリシーを使用して構成マネージャー クライアントをインストールするには、Windows ファイアウォールに例外として **[ファイルとプリンターの共有]** を追加します。  
 
-### <a name="client-requests"></a>Richieste client  
- Per stabilire la comunicazione tra i computer client e i sistemi del sito di Configuration Manager, aggiungere le seguenti eccezioni a Windows Firewall:  
+### <a name="client-requests"></a>クライアントの要求  
+ クライアント コンピューターが Configuration Manager サイト システムと通信するには、Windows ファイアウォールに次の例外を追加する必要があります。  
 
- In uscita: porta TCP **80** (per la comunicazione HTTP)  
+ 送信: TCP ポート **80** (HTTP 通信用)  
 
- In uscita: porta TCP **443** (per la comunicazione HTTPS)  
-
-> [!IMPORTANT]  
->  Questi numeri di porta predefiniti possono essere modificati in Configuration Manager. Per altre informazioni, vedere [How to configure client communication ports in System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md) (Come configurare i numeri di porta di comunicazione client in System Center Configuration Manager). Se queste porte sono state modificate rispetto ai valori predefiniti, è necessario configurare anche le eccezioni corrispondenti in Windows Firewall.  
-
-### <a name="client-notification"></a>Notifica client  
- Per fare in modo che il punto di gestione invii una notifica ai computer client sull'azione da eseguire quando un utente amministratore seleziona un'azione client nella console di Configuration Manager, ad esempio scaricare criteri computer o avviare una scansione malware, aggiungere la seguente eccezione a Windows Firewall:  
-
- In uscita: porta TCP **10123**  
-
- Se la comunicazione non riesce, Configuration Manager esegue automaticamente il fallback alla porta HTTP o HTTPS esistente per la comunicazione tra client e punto di gestione:  
-
- In uscita: porta TCP **80** (per la comunicazione HTTP)  
-
- In uscita: porta TCP **443** (per la comunicazione HTTPS)  
+ 送信: TCP ポート **443** (HTTPS 通信用)  
 
 > [!IMPORTANT]  
->  Questi numeri di porta predefiniti possono essere modificati in Configuration Manager. Per altre informazioni, vedere [How to configure client communication ports in System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md) (Come configurare i numeri di porta di comunicazione client in System Center Configuration Manager). Se queste porte sono state modificate rispetto ai valori predefiniti, è necessario configurare anche le eccezioni corrispondenti in Windows Firewall.  
+>  これらは既定のポート番号で、Configuration Manager で変更できます。 詳細については、「[System Center Configuration Manager でのクライアント通信ポートの構成方法](../../../core/clients/deploy/configure-client-communication-ports.md)」をご覧ください。 ポートを既定値から変更した場合は、対応する例外を Windows ファイアウォールに構成する必要があります。  
 
-### <a name="remote-control"></a>Controllo remoto  
- Per usare il controllo remoto di Configuration Manager, consentire la seguente porta:  
+### <a name="client-notification"></a>クライアント通知  
+ 管理ユーザーが Configuration Manager コンソールでクライアント操作を選択したときに、管理ポイントからクライアント コンピューターに対して、実行する必要がある操作 (コンピューター ポリシーのダウンロード、マルウェア スキャンの開始など) を通知する場合、Windows ファイアウォールの例外として次を追加します。  
 
--   In ingresso: porta TCP**2701**  
+ 送信: TCP ポート **10123**  
 
-### <a name="remote-assistance-and-remote-desktop"></a>Assistenza remota e Desktop remoto  
- Per avviare Assistenza remota dalla console di Configuration Manager, aggiungere il programma personalizzato **Helpsvc.exe** e la porta in entrata TCP personalizzata **135** all'elenco di programmi e servizi consentiti in Windows Firewall nel computer client. È inoltre necessario consentire **Assistenza remota** e **Desktop remoto**. Se Assistenza remota viene avviata dal computer client, Windows Firewall consente e configura automaticamente **Assistenza remota** e **Desktop remoto**.  
+ この通信が成功しない場合、Configuration Manager は、代わりに既存のクライアントから管理ポイントへの HTTP または HTTPS 通信ポートを自動的に使用します。  
 
-### <a name="wake-up-proxy"></a>Proxy di riattivazione  
- Se si attiva l'impostazione client Proxy di riattivazione, il nuovo servizio Proxy di riattivazione di Configuration Manager utilizza un protocollo peer-to-peer per verificare che gli altri computer della subnet siano attivi e riattivarli se necessario. Questa comunicazione utilizza le seguenti porte:  
+ 送信: TCP ポート **80** (HTTP 通信用)  
 
- In uscita: porta UDP **25536**  
-
- In uscita: porta UDP **9**  
-
- Questi numeri di porta predefiniti possono essere modificati in Configuration Manager usando le impostazioni client **Risparmio energia**: **Numero di porta del proxy di riattivazione (UDP)** e **Numero di porta di riattivazione LAN (UDP)**. Se si specifica l'impostazione client **Risparmio energia**: **Eccezione di Windows Firewall per il proxy di riattivazione** , queste porte vengono configurate automaticamente in Windows Firewall per i client. Tuttavia, se i client eseguono un firewall diverso, è necessario configurare manualmente le eccezioni per i numeri di porta.  
-
- Oltre a queste porte, il proxy di riattivazione utilizza i messaggi di richiesta echo di Internet Control Message Protocol (ICMP) da un computer client all'altro. Questo tipo di comunicazione viene usata per verificare se l'altro computer è attivo nella rete. ICMP viene talvolta indicato come comandi ping TCP/IP.  
-
- Per altre informazioni sul proxy di riattivazione, vedere [Plan how to wake up clients in System Center Configuration Manager](../../../core/clients/deploy/plan/plan-wake-up-clients.md) (Pianificare la riattivazione dei client in System Center Configuration Manager).  
-
-### <a name="windows-event-viewer-windows-performance-monitor-and-windows-diagnostics"></a>Visualizzatore eventi di Windows, Monitoraggio prestazioni di Windows e Diagnostica Windows  
- Per accedere a Visualizzatore eventi di Windows, Monitoraggio prestazioni di Windows e Diagnostica Windows dalla console di Configuration Manager, attivare **Condivisione file e stampanti** come eccezione in Windows Firewall.  
-
-## <a name="ports-used-during-configuration-manager-client-deployment"></a>Porte utilizzate durante la distribuzione client di Configuration Manager  
- Nelle seguenti tabelle sono elencate le porte utilizzate durante il processo di installazione client.  
+ 送信: TCP ポート **443** (HTTPS 通信用)  
 
 > [!IMPORTANT]  
->  Se tra i server di sistema del sito e il computer client è presente un firewall, verificare che il firewall consenta il traffico per le porte richieste per il metodo di installazione client selezionato. I firewall, ad esempio, spesso impediscono l'installazione push client poiché bloccano SMB (Server Message Block) e RPC (Remote Procedure Call). In questo scenario, utilizzare un metodo di installazione client diverso, come l'installazione manuale (eseguendo CCMSetup.exe) o l'installazione client basata sui criteri di gruppo. Questi metodi di installazione client alternativi non richiedono SMB o RPC.  
+>  これらは既定のポート番号で、Configuration Manager で変更できます。 詳細については、「[System Center Configuration Manager でのクライアント通信ポートの構成方法](../../../core/clients/deploy/configure-client-communication-ports.md)」をご覧ください。 ポートを既定値から変更した場合は、対応する例外を Windows ファイアウォールに構成する必要があります。  
 
- Per informazioni sulla configurazione di Windows Firewall nel computer client, vedere [Modifica delle porte e dei programmi consentiti da Windows Firewall](#BKMK_ModifyingWindowsFirewall).  
+### <a name="remote-control"></a>リモート コントロール  
+ Configuration Manager リモート コントロールを使用するには、以下のポートを許可する必要があります。  
 
-### <a name="ports-that-are-used-for-all-installation-methods"></a>Porte utilizzate per tutti i metodi di installazione  
+-   受信: TCP ポート**2701**  
 
-|Descrizione|UDP|TCP|  
+### <a name="remote-assistance-and-remote-desktop"></a>リモート アシスタンスおよびリモート デスクトップ  
+ Configuration Manager コンソールからリモート アシスタンスを開始するには、クライアント コンピューターの Windows ファイアウォールで許可するプログラムおよびサービスの一覧に、カスタム プログラム **Helpsvc.exe** と受信カスタム ポート TCP **135** を追加します。 **リモート アシスタンス** および **リモート デスクトップ**も許可する必要があります。 クライアント コンピューターからリモート アシスタンスを開始する場合、Windows ファイアウォールは **リモート アシスタンス** と **リモート デスクトップ**を自動的に構成して許可します。  
+
+### <a name="wake-up-proxy"></a>ウェイクアップ プロキシ  
+ ウェイクアップ プロキシ クライアント設定を有効にすると、ConfigMgr ウェイクアップ プロキシという新しいサービスは、ピア間のプロトコルを使用して、サブネット上の他のコンピューターが起動しているかどうかを確認し、必要に応じて起動することができます。 この通信には次のポートを使用します。  
+
+ 送信: UDP ポート **25536**  
+
+ 送信: UDP ポート **9**  
+
+ これらは既定のポート番号で、Configuration Manager では、**[電源管理]** クライアント設定の **[ウェイクアップ プロキシのポート番号 (UDP)]** と **[Wake On LAN ポート番号 (UDP)]** を使用して変更できます。 [ **電源管理**: **ウェイクアップ プロキシ用の Windows ファイアウォールの例外です** ] クライアント設定を指定すると、これらのポートは Windows ファイアウォールでクライアント用に自動的に構成されます。 ただし、クライアントが別のファイアウォールを実行する場合、これらのポート番号の例外を手動で構成する必要があります。  
+
+ ウェイクアップ プロキシは、これらのポートに加え、クライアント コンピューター間の Internet Control Message Protocol (ICMP) のエコー要求メッセージも使用します。 この通信は、他のクライアント コンピューターがネットワークで起動しているかどうかを確認するために使用します。 ICMP は TCP/IP Ping コマンドとも呼ばれます。  
+
+ ウェイクアップ プロキシの詳細については、「[Plan how to wake up clients in System Center Configuration Manager](../../../core/clients/deploy/plan/plan-wake-up-clients.md)」 (System Center Configuration Manager でのクライアントのウェイクアップ方法の計画) を参照してください。  
+
+### <a name="windows-event-viewer-windows-performance-monitor-and-windows-diagnostics"></a>Windows イベント ビューアー、Windows パフォーマンス モニター、および Windows 診断  
+ Configuration Manager コンソールから Windows イベント ビューアー、Windows パフォーマンス モニター、および Windows 診断にアクセスするには、Windows ファイアウォールの例外として、**[ファイルとプリンターの共有]** を有効にします。  
+
+## <a name="ports-used-during-configuration-manager-client-deployment"></a>Configuration Manager クライアントの展開で使用されるポート  
+ 次の表に、クライアント インストールの処理中に使用されるポートを一覧表示します。  
+
+> [!IMPORTANT]  
+>  サイト システム サーバーとクライアント コンピューターとの間にファイアウォールがある場合、選択したクライアント インストール方法に必要な通信がそのファイアウォールによって許可されていることを確認します。 たとえば、ファイアウォールがサーバー メッセージ ブロック (SMB) とリモート プロシージャ コール (RPC) をブロックするため、クライアント プッシュ インストールが失敗することがあります。 その場合、CCMSetup.exe を使用した手動インストールやグループ ポリシーに基づくクライアント インストールなどの、別のクライアント インストール方法を使用します。 これらの代替のクライアント インストール方法では SMB や RPC は必要ありません。  
+
+ クライアント コンピューターで Windows ファイアウォールを構成する方法については、「 [Windows ファイアウォールが許可するポートおよびプログラムの変更](#BKMK_ModifyingWindowsFirewall)」を参照してください。  
+
+### <a name="ports-that-are-used-for-all-installation-methods"></a>すべてのインストール方法で使用されるポート  
+
+|説明|UDP|TCP|  
 |-----------------|---------|---------|  
-|Protocollo HTTP (Hypertext Transfer Protocol) dal computer client a un punto di stato di fallback, in caso di assegnazione di un punto di stato di fallback al client.|--|80 (vedere la nota 1, **Porta alternativa disponibile**)|  
+|クライアントにフォールバック ステータス ポイントが割り当てられている場合、クライアント コンピューターからフォールバック ステータス ポイントへのハイパーテキスト転送プロトコル (HTTP)。|--|80 (注1「 **代替ポートを利用可能**」を参照)|  
 
-### <a name="ports-that-are-used-with-client-push-installation"></a>Porte utilizzate con l'installazione push client  
- Oltre alle porte elencate nella tabella seguente, l'installazione push client utilizza i messaggi di richiesta echo di Internet Control Message Protocol (ICMP) dal server del sito al computer client per verificare che il computer client sia disponibile nella rete. ICMP viene talvolta indicato come comandi ping TCP/IP. ICMP non dispone di un numero di protocollo UDP o TCP e pertanto non è elencato nella seguente tabella. Eventuali altri dispositivi di rete, ad esempio i firewall, devono tuttavia consentire il traffico ICMP per una corretta installazione push client.  
+### <a name="ports-that-are-used-with-client-push-installation"></a>クライアント プッシュ インストールで使用されるポート  
+ 次の表に一覧表示されているポートに加えて、クライアント プッシュ インストールでは、クライアント コンピューターがネットワークで利用可能であるかを確認するためにサイト サーバーからクライアント コンピューターへの ICMP (Internet Control Message Protocol) のエコー要求メッセージも使用します。 ICMP は TCP/IP Ping コマンドとも呼ばれます。 ICMP には UDP または TCP プロトコル番号がないため、次の表には記載されていません。 クライアント プッシュ インストールを成功させるには、ファイアウォールなどのすべての介在するネットワーク デバイスで ICMP トラフィックが許可されている必要があります。  
 
-|Descrizione|UDP|TCP|  
+|説明|UDP|TCP|  
 |-----------------|---------|---------|  
-|SMB (Server Message Block) tra il server del sito e il computer client.|--|445|  
-|Agente mapping endpoint RPC tra il server del sito e il computer client.|135|135|  
-|Porte dinamiche RPC tra il server del sito e il computer client.|--|DINAMICHE|  
-|Protocollo HTTP (Hypertext Transfer Protocol) dal computer client a un punto di gestione in caso di connessione tramite HTTP.|--|80 (vedere la nota 1, **Porta alternativa disponibile**)|  
-|Protocollo HTTPS (Secure Hypertext Transfer Protocol) dal computer client a un punto di gestione in caso di connessione tramite HTTPS.|--|443 (vedere la nota 1, **Porta alternativa disponibile**)|  
+|サイト サーバーとクライアント コンピューター間のサーバー メッセージ ブロック (SMB)。|--|445|  
+|サイト サーバーとクライアント コンピューター間の RPC エンドポイント マッパー。|135|135|  
+|サイト サーバーとクライアント コンピューター間の RPC 動的ポート。|--|DYNAMIC|  
+|ハイパーテキスト転送プロトコル (HTTP) を介して接続される場合、クライアント コンピューターから管理ポイントへの HTTP。|--|80 (注1「 **代替ポートを利用可能**」を参照)|  
+|セキュア ハイパーテキスト転送プロトコル (HTTPS) を介して接続される場合、クライアント コンピューターから管理ポイントへの HTTPS。|--|443 (注 1「 **代替ポートを利用可能**」を参照)|  
 
-### <a name="ports-that-are-used-with-software-update-point-based-installation"></a>Porte utilizzate con l'installazione basata sul punto di aggiornamento software  
+### <a name="ports-that-are-used-with-software-update-point-based-installation"></a>ソフトウェアの更新ポイントを使用したインストールで使われるポート  
 
-|Descrizione|UDP|TCP|  
+|説明|UDP|TCP|  
 |-----------------|---------|---------|  
-|Protocollo HTTP (Hypertext Transfer Protocol) dal computer client al punto di aggiornamento software.|--|80 o 8530 (vedere la nota 2, **Windows Server Update Services**)|  
-|Protocollo HTTPS (Secure Hypertext Transfer Protocol) dal computer client al punto di aggiornamento software.|--|443 o 8531 (vedere la nota 2, **Windows Server Update Services**)|  
-|Server Message Block (SMB) tra il server di origine e il computer client quando si specifica la proprietà della riga di comando CCMSetup **/source:&lt;percorso\>**.|--|445|  
+|クライアント コンピューターからソフトウェアの更新ポイントへのハイパーテキスト転送プロトコル (HTTP)。|--|80 または 8530 (注 2「 **Windows Server Update Services**」を参照)|  
+|クライアント コンピューターからソフトウェアの更新ポイントへのセキュア ハイパーテキスト転送プロトコル (HTTPS)。|--|443 または 8531 (注 2「 **Windows Server Update Services**」を参照)|  
+|CCMSetup のコマンドライン プロパティ **/source:&lt;Path\>** を指定するときの、ソース サーバーとクライアント コンピューター間のサーバー メッセージ ブロック (SMB)。|--|445|  
 
-### <a name="ports-that-are-used-with-group-policy-based-installation"></a>Porte utilizzate con l'installazione basata sui criteri di gruppo  
+### <a name="ports-that-are-used-with-group-policy-based-installation"></a>グループ ポリシーを使用したインストールで使われるポート  
 
-|Descrizione|UDP|TCP|  
+|説明|UDP|TCP|  
 |-----------------|---------|---------|  
-|Protocollo HTTP (Hypertext Transfer Protocol) dal computer client a un punto di gestione in caso di connessione tramite HTTP.|--|80 (vedere la nota 1, **Porta alternativa disponibile**)|  
-|Protocollo HTTPS (Secure Hypertext Transfer Protocol) dal computer client a un punto di gestione in caso di connessione tramite HTTPS.|--|443 (vedere la nota 1, **Porta alternativa disponibile**)|  
-|Server Message Block (SMB) tra il server di origine e il computer client quando si specifica la proprietà della riga di comando CCMSetup **/source:&lt;percorso\>**.|--|445|  
+|ハイパーテキスト転送プロトコル (HTTP) を介して接続される場合、クライアント コンピューターから管理ポイントへの HTTP。|--|80 (注1「 **代替ポートを利用可能**」を参照)|  
+|セキュア ハイパーテキスト転送プロトコル (HTTPS) を介して接続される場合、クライアント コンピューターから管理ポイントへの HTTPS。|--|443 (注 1「 **代替ポートを利用可能**」を参照)|  
+|CCMSetup のコマンドライン プロパティ **/source:&lt;Path\>** を指定するときの、ソース サーバーとクライアント コンピューター間のサーバー メッセージ ブロック (SMB)。|--|445|  
 
-### <a name="ports-that-are-used-with-manual-installation-and-logon-script-based-installation"></a>Porte utilizzate con l'installazione manuale e l'installazione basata sugli script di accesso  
+### <a name="ports-that-are-used-with-manual-installation-and-logon-script-based-installation"></a>手動インストールおよびログオン スクリプトを使用したインストールで使われるポート  
 
-|Descrizione|UDP|TCP|  
+|説明|UDP|TCP|  
 |-----------------|---------|---------|  
-|SMB (Server Message Block) tra il computer client e una condivisione di rete da cui si esegue CCMSetup.exe.<br /><br /> Quando si installa Configuration Manager, i file di origine dell'installazione client vengono copiati e automaticamente condivisi dalla cartella *&lt;PercorsoInstallazione\>*\Client nei punti di gestione. È tuttavia possibile copiare i file e creare una nuova condivisione in qualsiasi computer della rete. In alternativa, è possibile eliminare il traffico di rete eseguendo CCMSetup.exe in locale, utilizzando ad esempio supporti rimovibili.|--|445|  
-|Protocollo HTTP (Hypertext Transfer Protocol) dal computer client a un punto di gestione in caso di connessione tramite HTTP e quando non viene specificata la proprietà della riga di comando CCMSetup **/source:&lt;percorso\>**.|--|80 (vedere la nota 1, **Porta alternativa disponibile**)|  
-|Protocollo HTTPS (Secure Hypertext Transfer Protocol) dal computer client a un punto di gestione in caso di connessione tramite HTTPS e quando non viene specificata la proprietà della riga di comando CCMSetup **/source:&lt;percorso\>**.|--|443 (vedere la nota 1, **Porta alternativa disponibile**)|  
-|Server Message Block (SMB) tra il server di origine e il computer client quando si specifica la proprietà della riga di comando CCMSetup **/source:&lt;percorso\>**.|--|445|  
+|クライアント コンピューターと、CCMSetup.exe の実行元のネットワーク共有との間のサーバー メッセージ ブロック (SMB)。<br /><br /> Configuration Manager のインストール時、クライアント インストールのソース ファイルが、管理ポイントの *&lt;インストール パス\>*\Client フォルダーからコピーされて自動的に共有されます。 ただし、これらのファイルをコピーして、ネットワーク上の任意のコンピューターに新しい共有を作成することもできます。 または、リムーバブル メディアを使用するなどして CCMSetup.exe をローカルで実行し、このネットワーク トラフィックを回避することも可能です。|--|445|  
+|ハイパーテキスト転送プロトコル (HTTP) を介して接続され、CCMSetup のコマンドライン プロパティ **/source:&lt;Path\>** を指定しない場合の、クライアント コンピューターから管理ポイントへの HTTP。|--|80 (注1「 **代替ポートを利用可能**」を参照)|  
+|セキュア ハイパーテキスト転送プロトコル (HTTPS) を介して接続され、CCMSetup のコマンドライン プロパティ **/source:&lt;Path\>** を指定しない場合の、クライアント コンピューターから管理ポイントへの HTTPS。|--|443 (注 1「 **代替ポートを利用可能**」を参照)|  
+|CCMSetup のコマンドライン プロパティ **/source:&lt;Path\>** を指定するときの、ソース サーバーとクライアント コンピューター間のサーバー メッセージ ブロック (SMB)。|--|445|  
 
-### <a name="ports-that-are-used-with-software-distribution-based-installation"></a>Porte utilizzate con l'installazione basata sul punto di distribuzione software  
+### <a name="ports-that-are-used-with-software-distribution-based-installation"></a>ソフトウェアの配布によるインストールで使われるポート  
 
-|Descrizione|UDP|TCP|  
+|説明|UDP|TCP|  
 |-----------------|---------|---------|  
-|SMB (Server Message Block) tra il punto di distribuzione e il computer client.|--|445|  
-|Protocollo HTTP (Hypertext Transfer Protocol) dal client a un punto di distribuzione in caso di connessione tramite HTTP.|--|80 (vedere la nota 1, **Porta alternativa disponibile**)|  
-|Protocollo HTTPS (Secure Hypertext Transfer Protocol) dal client a un punto di distribuzione in caso di connessione tramite HTTPS.|--|443 (vedere la nota 1, **Porta alternativa disponibile**)|  
+|配布ポイントとクライアント コンピューター間のサーバー メッセージ ブロック (SMB)。|--|445|  
+|ハイパーテキスト転送プロトコル (HTTP) を介して接続される場合、クライアントから配布ポイントへの HTTP。|--|80 (注1「 **代替ポートを利用可能**」を参照)|  
+|セキュア ハイパーテキスト転送プロトコル (HTTPS) を介して接続される場合、クライアントから配布ポイントへの HTTPS。|--|443 (注 1「 **代替ポートを利用可能**」を参照)|  
 
-## <a name="notes"></a>Note  
- **1 Porta alternativa disponibile** In Configuration Manager è possibile definire una porta alternativa per questo valore. Se è stata definita una porta personalizzata, sostituirla durante la definizione delle informazioni sul filtro IP per i criteri IPsec o per la configurazione dei firewall.  
+## <a name="notes"></a>注  
+ **1 代替ポートを利用可能** Configuration Manager で、この値に対して代替ポートを定義できます。 カスタム ポートを定義済みの場合、IPsec ポリシー用またはファイアウォール構成用の IP フィルター情報を定義するときは、そのカスタム ポートを代わりに使用してください。  
 
- **2 Windows Server Update Services** È possibile installare Windows Server Update Services (WSUS) sia nel sito Web predefinito (porta 80) che in un sito Web personalizzato (porta 8530).  
+ **2 Windows Server Update Services** Windows Server Update Services (WSUS) は、既定の Web サイト (ポート 80) 上にインストールすることも、カスタム Web サイト (ポート 8530) 上にインストールすることもできます。  
 
- Al termine dell'installazione, è possibile modificare la porta. Non è necessario usare lo stesso numero di porta per tutta la gerarchia del sito.  
+ ポートはインストールした後に変更できます。 サイト階層全体で同じポート番号を使用する必要はありません。  
 
- Se la porta HTTP è la porta 80, la porta HTTPS deve essere la porta 443.  
+ HTTP ポートが 80 の場合、HTTPS ポートは 443 の必要があります。  
 
- Se la porta HTTP è diversa, la porta HTTPS deve essere maggiore di 1. Ad esempio, 8530 e 8531.
-
+ HTTP ポートがその他の場合、HTTPS ポートは 1 大きくする必要があります。 たとえば、8530 と 8531 などです。

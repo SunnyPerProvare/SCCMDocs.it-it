@@ -1,1280 +1,1277 @@
 ---
-title: Opzioni della riga di comando per la configurazione | Microsoft Docs
-description: Usare le informazioni in questo articolo per configurare gli script o per installare System Center Configuration Manager dalla riga di comando.
+title: "セットアップ コマンドライン オプション | Microsoft Docs"
+description: "この記事の情報を使用して、スクリプトの構成やコマンド ラインからの System Center Configuration Manager のインストールを行います。"
 ms.custom: na
 ms.date: 03/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0da167f1-52cf-4dfd-8f73-833ca3eb8478
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: 04fe7b3e674287c4255563ab4a308e54d0b6c3aa
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opzioni della riga di comando per il programma di installazione in System Center Configuration Manager
+# <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>System Center Configuration Manager でのセットアップに使用されるコマンドライン オプション
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
 
- Usare le informazioni seguenti per configurare gli script o installare System Center Configuration Manager dalla riga di comando.  
+ 次の情報を使用して、スクリプトの構成やコマンド ラインからの System Center Configuration Manager のインストールを行います。  
 
-##  <a name="bkmk_setup"></a> Opzioni della riga di comando per il programma di installazione  
+##  <a name="bkmk_setup"></a> セットアップに使用されるコマンドライン オプション  
  **/DEINSTALL**  
- Consente di disinstallare il sito. È necessario eseguire il programma di installazione dal computer del server del sito.  
+ サイトをアンインストールします。 サイト サーバーのコンピューターからセットアップを実行する必要があります。  
 
  **/DONTSTARTSITECOMP**  
- Consente di installare un sito, ma impedisce l'avvio del servizio Gestione componenti del sito. Fino all'avvio del servizio Gestione componenti del sito, il sito non è attivo. Gestione componenti del sito si occupa dell'installazione e dell'avvio del servizio SMS_Executive, nonché di processi aggiuntivi nel sito. Al termine dell'installazione del sito, in seguito all'avvio del servizio Gestione componenti del sito verranno installati il servizio SMS_Executive e i processi aggiuntivi necessari per il funzionamento del sito.  
+ サイトをインストールします。ただし、サイト コンポーネント マネージャー サービスを開始しません。 サイト コンポーネント マネージャー サービスを開始するまで、サイトはアクティブになりません。 サイト コンポーネント マネージャーは、SMS_Executive サービスと、サイトのその他のプロセスをインストールして開始する役割を持ちます。 サイトのインストールが完了した後で、サイト コンポーネント マネージャー サービスを開始すると、SMS_Executive サービスと、サイトの運用に必要なその他のプロセスがインストールされます。  
 
  **/HIDDEN**  
- Consente di nascondere l'interfaccia utente durante l'installazione. Usare questa opzione solo in combinazione con l'opzione **/SCRIPT**. Il file script di installazione automatica deve fornire tutte le opzioni necessarie. In caso contrario, l'installazione avrà esito negativo.  
+ セットアップ中にユーザー インターフェイスを非表示にします。 このオプションは、**/SCRIPT** オプションとの組み合わせでのみ使用します。 無人スクリプト ファイルではすべての必要なオプションを提供する必要があります。そうしないと、セットアップが失敗します。  
 
  **/NOUSERINPUT**  
- Consente di disattivare l'input utente durante l'installazione, ma viene visualizzata l'Installazione guidata. Usare questa opzione solo in combinazione con l'opzione **/SCRIPT**. Il file script di installazione automatica deve fornire tutte le opzioni necessarie. In caso contrario, l'installazione avrà esito negativo.  
+ セットアップ中のユーザーによる入力を無効にしますが、セットアップ ウィザードは表示します。 このオプションは、**/SCRIPT** オプションとの組み合わせでのみ使用します。 無人スクリプト ファイルではすべての必要なオプションを提供する必要があります。そうしないと、セットアップが失敗します。  
 
  **/RESETSITE**  
- Consente di eseguire una reimpostazione del sito per reimpostare gli account di servizio e di database per il sito. È necessario eseguire il programma di installazione da **<*Percorso di installazione di Configuration Manager*>\BIN\X64** nel server del sito. Per altre informazioni sulla reimpostazione del sito, vedere la sezione [Eseguire una reimpostazione del sito](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_reset) in [Modificare l'infrastruttura di System Center Configuration Manager](../../../../core/servers/manage/modify-your-infrastructure.md).  
+ サイトをリセットします。この操作で、サイトのデータベース アカウントとサービス アカウントがリセットされます。 サイト サーバーの **<*Configuration Manager のインストール パス*>\BIN\X64** からセットアップを実行する必要があります。 サイトのリセットの詳細については、「[System Center Configuration Manager インフラストラクチャの変更](../../../../core/servers/manage/modify-your-infrastructure.md)」の「[サイト リセットの実行](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_reset)」セクションを参照してください。  
 
- **/TESTDBUPGRADE <*Nome istanza*>\\<*Nome database*>**  
- Consente di eseguire un test in un backup del database del sito per verificare che il database supporti l'aggiornamento. È necessario fornire il nome dell'istanza e il nome del database per il database del sito. Se viene specificato solo il nome del database, il programma di installazione usa il nome dell'istanza predefinita.  
+ **/TESTDBUPGRADE <*インスタンス名*>\\<*データベース名*>**  
+ サイト データベースのバックアップをテストし、デートベースがアップグレード可能かどうかを確認します。 サイト データベースのインスタンス名とデータベース名を指定する必要があります。 データベース名だけを指定すると、既定のインスタンス名が使用されます。  
 
 > [!IMPORTANT]  
->  Non eseguire questa opzione della riga di comando nel database del sito di produzione. L'esecuzione di questa opzione della riga di comando nel database del sito di produzione comporta l'aggiornamento del database del sito e potrebbe rendere inutilizzabile il sito.  
+>  運用サイト データベースでこのコマンド ライン オプションを実行しないでください。 運用サイト データベースでこのコマンド ライン オプションを実行すると、サイト データベースがアップグレードされ、サイトが動作しなくなる可能性があります。  
 
  **/UPGRADE**  
- Consente di eseguire l'aggiornamento automatico di un sito. Quando si usa **/UPGRADE**, è necessario specificare il codice Product Key, compresi i trattini (-). È anche necessario specificare il percorso dei file dei prerequisiti di installazione scaricati in precedenza.  
+ サイトの無人アップグレードを実行します。 **/UPGRADE** を使用する場合、ハイフン (-) を含めてプロダクト キーを指定する必要があります。 また、事前にダウンロードしたセットアップの前提条件ファイルへのパスも指定する必要があります。  
 
- Esempio: `setupwpf.exe /UPGRADE xxxxx-xxxxx-xxxxx-xxxxx-xxxxx <path to external component files>`  
+ 例: `setupwpf.exe /UPGRADE xxxxx-xxxxx-xxxxx-xxxxx-xxxxx <path to external component files>`  
 
- Per altre informazioni sui file dei prerequisiti di installazione, vedere la sezione [Downloader di installazione](setup-downloader.md).  
+ セットアップの前提条件ファイルの詳細については、[セットアップ ダウンローダー](setup-downloader.md)に関するページを参照してください。  
 
- **/SCRIPT <*Percorso script installazione*>**  
- Consente di eseguire installazioni automatiche. Quando si usa l'opzione **/SCRIPT** è richiesto un file di inizializzazione dell'installazione. Per altre informazioni su come eseguire l'installazione automatica, vedere [Usare una riga di comando per installare i siti di System Center Configuration Manager](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).  
+ **/SCRIPT <*セットアップ スクリプトのパス*>**  
+ 無人インストールを実行します。 **/SCRIPT** オプションを使用する場合、セットアップ初期化ファイルが必要です。 セットアップを無人で実行する方法の詳細については、[コマンド ラインを使用するサイトのインストール](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md)に関するページを参照してください。  
 
- **/SDKINST <*FQDN provider SMS*>**  
- Consente di installare il provider SMS nel computer specificato. È necessario specificare il nome di dominio completo (FQDN) per il computer del provider SMS. Per altre informazioni sul provider SMS, vedere [Plan for the SMS Provider for System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md) (Pianificare il provider SMS per System Center Configuration Manager).  
+ **/SDKINST <*SMS プロバイダーの FQDN*>**  
+ 指定したコンピューターに SMS プロバイダーをインストールします。 SMS プロバイダー コンピューターの完全修飾ドメイン名 (FQDN) を指定する必要があります。 SMS プロバイダーの詳細については、「[System Center Configuration Manager の SMS プロバイダーの計画](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md)」を参照してください。  
 
- **/SDKDEINST <*FQDN provider SMS*>**  
- Consente di disinstallare il provider SMS nel computer specificato. È necessario specificare l'FQDN per il computer del provider SMS.  
+ **/SDKDEINST <*SMS プロバイダーの FQDN*>**  
+ 指定したコンピューターの SMS プロバイダーをアンインストールします。 SMS プロバイダー コンピューターの FQDN を指定する必要があります。  
 
- **/MANAGELANGS <*Percorso script lingue*>**  
- Consente di gestire le lingue installate in un sito installato precedentemente. Per usare questa opzione, è necessario eseguire il programma di installazione da **<*Percorso di installazione di Configuration Manager*>\BIN\X64** nel server del sito e specificare il percorso del file script delle lingue che contiene le impostazioni relative alle lingue. Per altre informazioni sulle opzioni della lingua disponibili nel file script di configurazione della lingua, vedere la sezione [Opzioni della riga di comando per la gestione delle lingue](#bkmk_Lang) in questo argomento.  
+ **/MANAGELANGS <*言語スクリプトのパス*>**  
+ 事前にインストールしたサイトにインストールされている言語を管理します。 このオプションを使用するには、サイト サーバーの **<*Configuration Manager のインストール パス*>\BIN\X64** からセットアップを実行し、言語設定が含まれている言語スクリプト ファイルの場所を指定する必要があります。 言語セットアップ スクリプト ファイルで設定できる言語オプションの詳細については、このトピックの「[言語を管理するためのコマンド ライン オプション](#bkmk_Lang)」を参照してください。  
 
-##  <a name="bkmk_Lang"></a> Opzioni della riga di comando per la gestione delle lingue  
+##  <a name="bkmk_Lang"></a> 言語を管理するためのコマンド ライン オプション  
  **Identification**  
 
--   **Nome chiave:** Action  
+-   **キー名:** Action  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** ManageLanguages  
+    -   **値:** ManageLanguages  
 
-    -   **Dettagli:** gestisce il supporto lingua di client per dispositivi mobili, client e server in un sito.  
+    -   **詳細:** サイトの、サーバー、クライアント、モバイル クライアントの言語サポートを管理します。  
 
-**Opzioni**  
+**Options**  
 
--   **Nome chiave:** AddServerLanguages  
+-   **キー名:** AddServerLanguages  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    -   **値:** DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK、または ZHH  
 
-    -   **Dettagli:** specifica le lingue del server che saranno disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. L'inglese è disponibile per impostazione predefinita.  
+    -   **詳細:** Configuration Manager コンソール、レポート、および Configuration Manager オブジェクトで使用できるサーバー言語を指定します。 英語は、既定で常に使用できるようになっています。  
 
--   **Nome chiave:** AddClientLanguages  
+-   **キー名:** AddClientLanguages  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    -   **値:** DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK、または ZHH  
 
-    -   **Dettagli:** specifica le lingue che saranno disponibili per i computer client. L'inglese è disponibile per impostazione predefinita.  
+    -   **詳細:** クライアント コンピューターで使用できる言語を指定します。 英語は、既定で常に使用できるようになっています。  
 
--   **Nome chiave:** DeleteServerLanguages  
+-   **キー名:** DeleteServerLanguages  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    -   **値:** DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK、または ZHH  
 
-    -   **Dettagli:** specifica le lingue da rimuovere e che non saranno più disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    -   **詳細:** 削除する言語を指定します。指定された言語は、Configuration Manager コンソール、レポートおよび Configuration Manager オブジェクトで使用できなくなります。 英語は、既定で常に使用できるようになっています。削除することはできません。  
 
--   **Nome chiave:** DeleteClientLanguages  
+-   **キー名:** DeleteClientLanguages  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    -   **値:** DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK、または ZHH  
 
-    -   **Dettagli:** specifica le lingue da rimuovere e che non saranno più disponibili per i computer client. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    -   **詳細:** 削除する言語を指定します。指定された言語は、クライアント コンピューターで使用できなくなります。 英語は、既定で常に使用できるようになっています。削除することはできません。  
 
--   **Nome chiave:** MobileDeviceLanguage  
+-   **キー名:** MobileDeviceLanguage  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non installare  
+         0 = インストールしません。  
 
-         1 = Installare  
+         1 = インストールします。  
 
-    -   **Dettagli:** specifica se sono installate le lingue del client del dispositivo mobile.  
+    -   **詳細:** モバイル デバイス クライアントの言語をインストールするかどうかを指定します。  
 
--   **Nome chiave:** PrerequisiteComp  
+-   **キー名:** PrerequisiteComp  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Scaricare  
+         0 = ダウンロードします。  
 
-         1 = Già scaricato  
+         1 = 既にダウンロードされています。  
 
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione eseguirà il download dei file.  
+    -   **詳細:** セットアップの前提条件ファイルが既にダウンロード済みかどうかを指定します。 たとえば、この値を **0**に設定すると、セットアップ時にファイルがダウンロードされます。  
 
--   **Nome chiave:** PrerequisitePath  
+-   **キー名:** PrerequisitePath  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
+    -   **値:** <*セットアップの前提条件ファイルへのパス*>  
 
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp** , il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare i file scaricati in precedenza.  
+    -   **詳細:** セットアップの前提条件ファイルのパスを指定します。 このパスは、 **PrerequisiteComp** キーに設定した値に応じて、ダウンロードしたファイルを保存するか、ダウンロード済みのファイルを見つけるために使われます。  
 
-##  <a name="bkmk_Unattended"></a> Chiavi di file script di installazione automatica  
- Usare le sezioni seguenti per creare lo script per l'installazione automatica. Gli elenchi mostrano le chiavi dello script di installazione disponibili, i relativi valori, se sono richieste, il tipo di installazione per cui vengono usate e una breve descrizione relativa alla chiave.  
+##  <a name="bkmk_Unattended"></a> 無人セットアップ スクリプト ファイルのキー  
+ 次に、無人セットアップ スクリプトを記述するときに役立つ情報を示します。 一覧には、セットアップ スクリプトで指定できるキーとその値、必須かどうかの別、該当するインストールの方法、およびキーの説明が示されています。  
 
-### <a name="unattended-install-for-a-central-administration-site"></a>Installare automaticamente un sito di amministrazione centrale  
- Usare i dettagli seguenti per installare un sito di amministrazione centrale usando un file script di installazione automatica.  
+### <a name="unattended-install-for-a-central-administration-site"></a>中央管理サイトの無人インストール  
+ ここでは、中央管理サイトを無人インストールするスクリプト ファイルについて説明します。  
 
 **Identification**  
 
--   **Nome chiave:** Action  
+-   **キー名:** Action  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** InstallCAS  
+    -   **値:** InstallCAS  
 
-    -   **Dettagli:** consente di installare un sito di amministrazione centrale.  
+    -   **詳細:** 中央管理サイトをインストールします。  
 
--   **Nome chiave:** CDLatest  
+-   **キー名:** CDLatest  
 
-    -   **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.    
+    -   **必須:** はい – CD.Latest フォルダーのメディアを使う場合のみ。    
 
-    -   **Valori:** 1. Qualsiasi valore diverso da 1 presuppone che non venga usata la cartella CD.Latest.
+    -   **値:** 1。1 以外の値は CD.Latest を使わないものと見なされます。
 
-    -   **Dettagli:** lo script deve includere la chiave e il valore quando si esegue il programma di installazione dal supporto di una cartella CD.Latest allo scopo di installare o ripristinare un sito di amministrazione centrale o primario. Questo valore indica al programma di installazione che viene usato il formato di supporto CD.Latest.
+    -   **詳細:** プライマリ サイトまたは中央管理サイトのインストールまたは回復を目的として、CD.Latest フォルダーのメディアからセットアップを実行するときは、スクリプトにこのキーと値が含まれる必要があります。 この値は、CD.Latest のメディアが使われていることを、セットアップに通知します。
 
-**Opzioni**  
+**Options**  
 
--   **Nome chiave:** ProductID  
+-   **キー名:** ProductID  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*>  *o*  Eval  
+    -   **値:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*>  *または* Eval  
 
-    -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
+    -   **詳細:** ダッシュを含め、インストールする Configuration Manager のプロダクト キーを指定します。 Configuration Manager の評価版をインストールするには、「**Eval**」と入力します。  
 
--   **Nome chiave:** SiteCode  
+-   **キー名:** SiteCode  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Codice del sito*>  
+    -   **値:** <*サイト コード*>  
 
-    -   **Dettagli:** specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia.  
+    -   **詳細:** 階層内のサイトを一意に識別する英数字 3 文字を指定します。  
 
--   **Nome chiave:** Site name  
+-   **キー名:** サイト名  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Nome del sito*>  
+    -   **値:** <*サイト名*>  
 
-    -   **Dettagli:** specifica il nome del sito.  
+    -   **詳細:** このサイトの名前を指定します。  
 
--   **Nome chiave:** SMSInstallDir  
+-   **キー名:** SMSInstallDir  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Percorso di installazione di Configuration Manager*>  
+    -   **値:** <*Configuration Manager のインストール パス*>  
 
-    -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
+    -   **詳細:** Configuration Manager のプログラム ファイルのインストール フォルダーを指定します。  
 
--   **Nome chiave:** SDKServer  
+-   **キー名:** SDKServer  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*FQDN del provider SMS*>  
+    -   **値:** <*SMS プロバイダーの FQDN*>  
 
-    -   **Dettagli:** specifica l'FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
+    -   **詳細:** SMS プロバイダーをホストするサーバーの FQDN を指定します。 初期インストールが終わった後で、他の SMS プロバイダーを追加して構成することができます。  
 
--   **Nome chiave:** PrerequisiteComp  
+-   **キー名:** PrerequisiteComp  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Scaricare  
+         0 = ダウンロードします。  
 
-         1 = Già scaricato  
+         1 = 既にダウンロードされています。  
 
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa il valore **0**, il programma di installazione eseguirà il download dei file.  
+    -   **詳細:** セットアップの前提条件ファイルが既にダウンロード済みかどうかを指定します。 この値を **0** に設定すると、セットアップ時にファイルがダウンロードされます。  
 
--   **Nome chiave:** PrerequisitePath  
+-   **キー名:** PrerequisitePath  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
+    -   **値:** <*セットアップの前提条件ファイルへのパス*>  
 
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp** , il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare i file scaricati in precedenza.  
+    -   **詳細:** セットアップの前提条件ファイルのパスを指定します。 このパスは、 **PrerequisiteComp** キーに設定した値に応じて、ダウンロードしたファイルを保存するか、ダウンロード済みのファイルを見つけるために使われます。  
 
--   **Nome chiave:** AdminConsole  
+-   **キー名:** AdminConsole  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non installare  
+         0 = インストールしません。  
 
-         1 = Installare  
+         1 = インストールします。  
 
-    -   **Dettagli:** specifica se installare la console di Configuration Manager.  
+    -   **詳細:** Configuration Manager コンソールをインストールするかどうかを指定します。  
 
--   **Nome chiave:** JoinCEIP  
+-   **キー名:** JoinCEIP  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non partecipare  
+         0 = 参加しません。  
 
-         1 = Partecipare  
+         1 = 参加します。  
 
-    -   **Dettagli:** specifica se partecipare al programma Analisi utilizzo software (CEIP).  
+    -   **詳細:** カスタマー エクスペリエンス向上プログラム (CEIP) に参加するかどうかを指定します。  
 
--   **Nome chiave:** AddServerLanguages  
+-   **キー名:** AddServerLanguages  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    -   **値:** DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK、または ZHH  
 
-    -   **Dettagli:** specifica le lingue del server che saranno disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. L'inglese è disponibile per impostazione predefinita.  
+    -   **詳細:** Configuration Manager コンソール、レポート、および Configuration Manager オブジェクトで使用できるサーバー言語を指定します。 英語は、既定で常に使用できるようになっています。  
 
--   **Nome chiave:** AddClientLanguages  
+-   **キー名:** AddClientLanguages  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    -   **値:** DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK、または ZHH  
 
-    -   **Dettagli:** specifica le lingue che saranno disponibili per i computer client. L'inglese è disponibile per impostazione predefinita.  
+    -   **詳細:** クライアント コンピューターで使用できる言語を指定します。 英語は、既定で常に使用できるようになっています。  
 
--   **Nome chiave:** DeleteServerLanguages  
+-   **キー名:** DeleteServerLanguages  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    -   **値:** DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK、または ZHH  
 
-    -   **Dettagli:** modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    -   **詳細:** インストールした後でサイトを変更します。 削除する言語を指定します。指定された言語は、Configuration Manager コンソール、レポートおよび Configuration Manager オブジェクトで使用できなくなります。 英語は、既定で常に使用できるようになっています。削除することはできません。  
 
--   **Nome chiave:** DeleteClientLanguages  
+-   **キー名:** DeleteClientLanguages  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    -   **値:** DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK、または ZHH  
 
-    -   **Dettagli:** modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per i computer client. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    -   **詳細:** インストールした後でサイトを変更します。 削除する言語を指定します。指定された言語は、クライアント コンピューターで使用できなくなります。 英語は、既定で常に使用できるようになっています。削除することはできません。  
 
--   **Nome chiave:** MobileDeviceLanguage  
+-   **キー名:** MobileDeviceLanguage  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non installare  
+         0 = インストールしません。  
 
-         1 = Installare  
+         1 = インストールします。  
 
-    -   **Dettagli:** specifica se sono installate le lingue del client del dispositivo mobile.  
+    -   **詳細:** モバイル デバイス クライアントの言語をインストールするかどうかを指定します。  
 
 **SQLConfigOptions**  
 
--   **Nome chiave:** SQLServerName  
+-   **キー名:** SQLServerName  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Nome dell'istanza di SQL Server*>  
+    -   **値:** <*SQL Server 名*>  
 
-    -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospiterà il database del sito.  
+    -   **詳細:** サイト データベースをホストする SQL Server を実行しているサーバーの名前、またはクラスター化されたインスタンスの名前を指定します。  
 
--   **Nome chiave:** DatabaseName  
+-   **キー名:** DatabaseName  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
+    -   **値:** <*サイト データベース名*> または <*インスタンス名*>\\<*サイト データベース名*>  
 
-    -   **Dettagli:** specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito di amministrazione centrale.  
+    -   **詳細:** 中央管理サイト データベースをインストールする際に作成または使用する SQL Server データベースの名前を指定します。  
 
         > [!IMPORTANT]  
-        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome database del sito.  
+        >  既定のインスタンスを使用しない場合は、必ず、インスタンス名とサイト データベース名を指定してください。  
 
--   **Nome chiave:** SQLSSBPort  
+-   **キー名:** SQLSSBPort  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Numero della porta SSB*>  
+    -   **値:** <*SSB ポート番号*>  
 
-    -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. SQL Server Service Broker è in genere configurato per l'uso della porta TCP 4022, ma è possibile configurare un'altra porta.  
+    -   **詳細:** SQL Server で使用する SQL Server Service Broker (SSB) ポートを指定します。 SSB は通常、TCP ポート 4022 に設定しますが、別のポートにすることもできます。  
 
--   **Nome chiave:** SQLDataFilePath  
+-   **キー名:** SQLDataFilePath  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Percorso del file mdb del database*>  
+    -   **値:** <*データベース .mdb ファイルへのパス*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
+    -   **詳細:** データベース .mdb ファイルを作成する別の場所を指定します。  
 
--   **Nome chiave:** SQLLogFilePath  
+-   **キー名:** SQLLogFilePath  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Percorso del file ldf del database*>  
+    -   **値:** <*データベース .ldf ファイルへのパス*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
+    -   **詳細:** データベース .ldf ファイルを作成する別の場所を指定します。  
 
 **CloudConnectorOptions**  
 
--   **Nome chiave:** CloudConnector  
+-   **キー名:** CloudConnector  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non installare  
+         0 = インストールしません。  
 
-         1 = Installare  
+         1 = インストールします。  
 
-    -   **Dettagli:** specifica se installare un punto di connessione del servizio in questo sito. Dato che il punto di connessione può essere installato solo nel sito di livello superiore di una gerarchia, questo valore deve essere **0** per un sito primario figlio.  
+    -   **詳細:** このサイトでサービス接続ポイントをインストールするかどうかを指定します。 サービス接続ポイントは階層の最上位層サイトでのみインストールできるため、子プライマリ サイトの場合はこの値を **0** にする必要があります。  
 
--   **Nome chiave:** CloudConnectorServer  
+-   **キー名:** CloudConnectorServer  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **必須:** **CloudConnector** が 1 の場合に必須  
 
-    -   **Valori:** <*FQDN del server del punto di connessione del servizio*>  
+    -   **値:** <*サービス接続ポイント サーバーの FQDN*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
+    -   **詳細:** サービス接続ポイントのサイト システムの役割をホストするサーバーの FQDN を指定します。  
 
--   **Nome chiave:** UseProxy  
+-   **キー名:** UseProxy  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **必須:** **CloudConnector** が 1 の場合に必須  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non installare  
+         0 = インストールしません。  
 
-         1 = Installare  
+         1 = インストールします。  
 
-    -   **Dettagli:** specifica se il punto di connessione del servizio userà un server proxy.  
+    -   **詳細:** サービス接続ポイントがプロキシ サーバーを使用するかどうかを指定します。  
 
--   **Nome chiave:** Nomeproxy  
+-   **キー名:** ProxyName  
 
-    -   **Richiesta:** obbligatoria quando **UseProxy** è uguale a 1  
+    -   **必須:** **UseProxy** が 1 の場合に必須  
 
-    -   **Valori:** <*FQDN del server proxy*>  
+    -   **値:** <*プロキシ サーバーの FQDN*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server proxy che verrà usato dal ruolo del sistema del sito del punto di connessione del servizio.  
+    -   **詳細:** サービス接続ポイントのサイト システムの役割で使用されるプロキシ サーバーの FQDN を指定します。  
 
--   **Nome chiave:** ProxyPort  
+-   **キー名:** ProxyPort  
 
-    -   **Richiesta:** obbligatoria quando **UseProxy** è uguale a 1  
+    -   **必須:** **UseProxy** が 1 の場合に必須  
 
-    -   **Valori:** <*Numero della porta*>  
+    -   **値:** <*ポート番号*>  
 
-    -   **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
+    -   **詳細:** プロキシ ポートに使用するポート番号を指定します。  
 
-### <a name="unattended-install-for-a-primary-site"></a>Installare automaticamente un sito primario  
-Usare i dettagli seguenti per installare un sito primario usando un file script di installazione automatica.  
+### <a name="unattended-install-for-a-primary-site"></a>プライマリ サイトの無人インストール  
+ここでは、プライマリ サイトを無人インストールするスクリプト ファイルについて説明します。  
 
 **Identification**  
 
--   **Nome chiave:** Action  
+-   **キー名:** Action  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** SitoPrimarioInstallazione  
+    -   **値:** InstallPrimarySite  
 
-    -   **Dettagli:** installa un sito primario.  
+    -   **詳細:** プライマリ サイトをインストールします。  
 
--   **Nome chiave:** CDLatest  
+-   **キー名:** CDLatest  
 
-    -   **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.    
+    -   **必須:** はい – CD.Latest フォルダーのメディアを使う場合のみ。    
 
-    -   **Valori:** 1. Qualsiasi valore diverso da 1 presuppone che non venga usata la cartella CD.Latest.
+    -   **値:** 1。1 以外の値は CD.Latest を使わないものと見なされます。
 
-    -   **Dettagli:** lo script deve includere la chiave e il valore quando si esegue il programma di installazione dal supporto di una cartella CD.Latest allo scopo di installare o ripristinare un sito di amministrazione centrale o primario. Questo valore indica al programma di installazione che viene usato il formato di supporto CD.Latest.
+    -   **詳細:** プライマリ サイトまたは中央管理サイトのインストールまたは回復を目的として、CD.Latest フォルダーのメディアからセットアップを実行するときは、スクリプトにこのキーと値が含まれる必要があります。 この値は、CD.Latest のメディアが使われていることを、セットアップに通知します。
 
-**Opzioni**  
+**Options**  
 
--   **Nome chiave:** ProductID  
+-   **キー名:** ProductID  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*>  *o*  Eval  
+    -   **値:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*>  *または* Eval  
 
-    -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
+    -   **詳細:** ダッシュを含め、インストールする Configuration Manager のプロダクト キーを指定します。 Configuration Manager の評価版をインストールするには、「**Eval**」と入力します。  
 
--   **Nome chiave:** SiteCode  
+-   **キー名:** SiteCode  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Codice del sito*>  
+    -   **値:** <*サイト コード*>  
 
-    -   **Dettagli:** specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia.  
+    -   **詳細:** 階層内のサイトを一意に識別する英数字 3 文字を指定します。  
 
--   **Nome chiave:** SiteName  
+-   **キー名:** SiteName  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Nome del sito*>  
+    -   **値:** <*サイト名*>  
 
-    -   **Dettagli:** specifica il nome del sito.  
+    -   **詳細:** このサイトの名前を指定します。  
 
--   **Nome chiave:** SMSInstallDir  
+-   **キー名:** SMSInstallDir  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Percorso di installazione di Configuration Manager*>
+    -   **値:** <*Configuration Manager のインストール パス*>
 
-    -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
+    -   **詳細:** Configuration Manager のプログラム ファイルのインストール フォルダーを指定します。  
 
--   **Nome chiave:** SDKServer  
+-   **キー名:** SDKServer  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*FQDN del provider SMS*>  
+    -   **値:** <*SMS プロバイダーの FQDN*>  
 
-    -   **Dettagli:** specifica l'FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
+    -   **詳細:** SMS プロバイダーをホストするサーバーの FQDN を指定します。 初期インストールが終わった後で、他の SMS プロバイダーを追加して構成することができます。  
 
--   **Nome chiave:** PrerequisiteComp  
+-   **キー名:** PrerequisiteComp  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Scaricare  
+         0 = ダウンロードします。  
 
-         1 = Già scaricato  
+         1 = 既にダウンロードされています。  
 
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa il valore **0**, il programma di installazione eseguirà il download dei file.  
+    -   **詳細:** セットアップの前提条件ファイルが既にダウンロード済みかどうかを指定します。 この値を **0** に設定すると、セットアップ時にファイルがダウンロードされます。  
 
--   **Nome chiave:** PrerequisitePath  
+-   **キー名:** PrerequisitePath  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
+    -   **値:** <*セットアップの前提条件ファイルへのパス*>  
 
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp** , il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare i file scaricati in precedenza.  
+    -   **詳細:** セットアップの前提条件ファイルのパスを指定します。 このパスは、 **PrerequisiteComp** キーに設定した値に応じて、ダウンロードしたファイルを保存するか、ダウンロード済みのファイルを見つけるために使われます。  
 
--   **Nome chiave:** AdminConsole  
+-   **キー名:** AdminConsole  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non installare  
+         0 = インストールしません。  
 
-         1 = Installare  
+         1 = インストールします。  
 
-    -   **Dettagli:** specifica se installare la console di Configuration Manager.  
+    -   **詳細:** Configuration Manager コンソールをインストールするかどうかを指定します。  
 
--   **Nome chiave:** JoinCEIP  
+-   **キー名:** JoinCEIP  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non partecipare  
+         0 = 参加しません。  
 
-         1 = Partecipare  
+         1 = 参加します。  
 
-    -   **Dettagli**: specifica se partecipare al programma Analisi utilizzo software.  
+    -   **詳細:** CEIP に参加するかどうかを指定します。  
 
--   **Nome chiave:** ManagementPoint  
+-   **キー名:** ManagementPoint  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** < *FQDN del server del sito del punto di gestione*>  
+    -   **値:** <*管理ポイントのサイト サーバーの FQDN*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di gestione.  
+    -   **詳細:** 管理ポイントのサイト システムの役割をホストするサーバーの FQDN を指定します。  
 
--   **Nome chiave:** ManagementPointProtocol  
+-   **キー名:** ManagementPointProtocol  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** HTTPS *o* HTTP  
+    -   **値:** HTTPS *または* HTTP  
 
-    -   **Dettagli:** specifica il protocollo da usare per il punto di gestione.  
+    -   **詳細:** 管理ポイントに使用するプロトコルを指定します。  
 
--   **Nome chiave:** DistributionPoint  
+-   **キー名:** DistributionPoint  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*FQDN del server del sito del punto di distribuzione*>  
+    -   **値:** <*配布ポイントのサイト サーバーの FQDN*>  
 
-    -   **Dettagli:** specifica il protocollo da usare per il punto di distribuzione.  
+    -   **詳細:** 配布ポイントに使用するプロトコルを指定します。  
 
--   **Nome chiave:** DistributionPointProtocol  
+-   **キー名:** DistributionPointProtocol  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** HTTPS *o* HTTP  
+    -   **値:** HTTPS *または* HTTP  
 
-    -   **Dettagli:** specifica il protocollo da usare per il punto di distribuzione.  
+    -   **詳細:** 配布ポイントに使用するプロトコルを指定します。  
 
--   **Nome chiave:** RoleCommunicationProtocol  
+-   **キー名:** RoleCommunicationProtocol  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** EnforceHTTPS *o* HTTPorHTTPS  
+    -   **値:** EnforceHTTPS *または* HTTPorHTTPS  
 
-    -   **Dettagli:** specifica se configurare tutti i sistemi del sito per l'accettazione delle sole comunicazioni HTTPS dai client oppure se configurare un metodo di comunicazione per ogni ruolo del sistema del sito. Se si seleziona **EnforceHTTPS**, il computer client deve disporre di un certificato di infrastruttura a chiave pubblica (PKI) valido per l'autenticazione client.  
+    -   **詳細:** すべてのサイト システムがクライアントからの HTTPS 通信だけを受け入れるようにするか、サイト システムの役割ごとに通信方法を構成するかを指定します。 [**EnforceHTTPS**] を選択すると、クライアント コンピューターで、クライアント認証用の有効な公開キー基盤 (PKI) 証明書が必要になります。  
 
--   **Nome chiave:** ClientsUsePKICertificate  
+-   **キー名:** ClientsUsePKICertificate  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non usare  
+         0 = 使用しません。  
 
-         1 = Usare  
+         1 = 使用します。  
 
-    -   **Dettagli:** specifica se i client useranno un certificato PKI client per la comunicazione con i ruoli del sistema del sito.  
+    -   **詳細:** クライアントがサイト システムの役割と通信するために、クライアント PKI 証明書を使用するかどうかを指定します。  
 
--   **Nome chiave:** AddServerLanguages  
+-   **キー名:** AddServerLanguages  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    -   **値:** DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK、または ZHH  
 
-    -   **Dettagli:** specifica le lingue del server che saranno disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. L'inglese è disponibile per impostazione predefinita.  
+    -   **詳細:** Configuration Manager コンソール、レポート、および Configuration Manager オブジェクトで使用できるサーバー言語を指定します。 英語は、既定で常に使用できるようになっています。  
 
--   **Nome chiave:** AddClientLanguages  
+-   **キー名:** AddClientLanguages  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    -   **値:** DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK、または ZHH  
 
-    -   **Dettagli:** specifica le lingue che saranno disponibili per i computer client. L'inglese è disponibile per impostazione predefinita.  
+    -   **詳細:** クライアント コンピューターで使用できる言語を指定します。 英語は、既定で常に使用できるようになっています。  
 
--   **Nome chiave:** DeleteServerLanguages  
+-   **キー名:** DeleteServerLanguages  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    -   **値:** DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK、または ZHH  
 
-    -   **Dettagli:** modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    -   **詳細:** インストールした後でサイトを変更します。 削除する言語を指定します。指定された言語は、Configuration Manager コンソール、レポートおよび Configuration Manager オブジェクトで使用できなくなります。 英語は、既定で常に使用できるようになっています。削除することはできません。  
 
--   **Nome chiave:** DeleteClientLanguages  
+-   **キー名:** DeleteClientLanguages  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    -   **値:** DEU、FRA、RUS、CHS、JPN、CHT、CSY、ESN、HUN、ITA、KOR、NLD、PLK、PTB、PTG、SVE、TRK、または ZHH  
 
-    -   **Dettagli:** modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per i computer client. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    -   **詳細:** インストールした後でサイトを変更します。 削除する言語を指定します。指定された言語は、クライアント コンピューターで使用できなくなります。 英語は、既定で常に使用できるようになっています。削除することはできません。  
 
--   **Nome chiave:** MobileDeviceLanguage  
+-   **キー名:** MobileDeviceLanguage  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non installare  
+         0 = インストールしません。  
 
-         1 = Installare  
+         1 = インストールします。  
 
-    -   **Dettagli:** specifica se sono installate le lingue del client del dispositivo mobile.  
+    -   **詳細:** モバイル デバイス クライアントの言語をインストールするかどうかを指定します。  
 
 **SQLConfigOptions**  
 
--   **Nome chiave:** SQLServerName  
+-   **キー名:** SQLServerName  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Nome dell'istanza di SQL Server*>  
+    -   **値:** <*SQL Server 名*>  
 
-    -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospiterà il database del sito.  
+    -   **詳細:** サイト データベースをホストする SQL Server を実行しているサーバーの名前、またはクラスター化されたインスタンスの名前を指定します。  
 
--   **Nome chiave:** DatabaseName  
+-   **キー名:** DatabaseName  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
+    -   **値:** <*サイト データベース名*> または <*インスタンス名*>\\<*サイト データベース名*>  
 
-    -   **Dettagli:** specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito primario.  
+    -   **詳細:** プライマリ サイト データベースをインストールする際に作成または使用する SQL Server データベースの名前を指定します。  
 
         > [!IMPORTANT]  
-        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome database del sito.  
+        >  既定のインスタンスを使用しない場合は、必ず、インスタンス名とサイト データベース名を指定してください。  
 
--   **Nome chiave:** SQLSSBPort  
+-   **キー名:** SQLSSBPort  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Numero della porta SSB*>  
+    -   **値:** <*SSB ポート番号*>  
 
-    -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. SQL Server Service Broker è in genere configurato per l'uso della porta TCP 4022, ma è possibile configurare un'altra porta.  
+    -   **詳細:** SQL Server で使用する SSB ポートを指定します。 SSB は通常、TCP ポート 4022 に設定しますが、別のポートにすることもできます。  
 
--   **Nome chiave:** SQLDataFilePath  
+-   **キー名:** SQLDataFilePath  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Percorso del file mdb del database*>  
+    -   **値:** <*データベース .mdb ファイルへのパス*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
+    -   **詳細:** データベース .mdb ファイルを作成する別の場所を指定します。  
 
--   **Nome chiave:** SQLLogFilePath  
+-   **キー名:** SQLLogFilePath  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Percorso del file ldf del database*>  
+    -   **値:** <*データベース .ldf ファイルへのパス*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
+    -   **詳細:** データベース .ldf ファイルを作成する別の場所を指定します。  
 
 **HierarchyExpansionOption**  
 
--   **Nome chiave:** CCARSiteServer  
+-   **キー名:** CCARSiteServer  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*FQDN del sito di amministrazione centrale*>  
+    -   **値:** <*中央管理サイトの FQDN*>  
 
-    -   **Dettagli:** specifica il sito di amministrazione centrale a cui si collegherà il sito primario quando verrà aggiunto alla gerarchia di Configuration Manager. Durante l'installazione, è necessario specificare il sito di amministrazione centrale.  
+    -   **詳細:** プライマリ サイトを Configuration Manager 階層に含めるときに、アタッチする中央管理サイトを指定します。 セットアップ中に、中央管理サイトを指定する必要があります。  
 
--   **Nome chiave:** CASRetryInterval  
+-   **キー名:** CASRetryInterval  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Intervallo*>  
+    -   **値:** <*Interval*>  
 
-    -   **Dettagli:** specifica l'intervallo (in minuti) tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato per il valore **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
+    -   **詳細:** 中央管理サイトとの接続が切断されたときに、接続を再試行する間隔 (分) を指定します。 たとえば、プライマリ サイトと中央管理サイトの接続が切断されると、プライマリ サイトは、**CASRetryInterval** の値に指定された分数だけ待ってから、もう一度接続しようとします。  
 
--   **Nome chiave:** WaitForCASTimeout  
+-   **キー名:** WaitForCASTimeout  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Timeout*>  
+    -   **値:** <*Timeout*>  
 
-         Un valore tra **0** e **100**  
+         **0** ～ **100** の値  
 
-    -   **Dettagli:** specifica il valore di timeout massimo (in minuti) per la connessione di un sito primario al sito di amministrazione centrale. Se ad esempio un sito primario non riesce a connettersi al sito di amministrazione centrale, tale sito primario proverà nuovamente a connettersi al sito di amministrazione centrale in base al valore **CASRetryInterval** finché non viene raggiunto il periodo di **WaitForCASTimeout**. È possibile specificare un valore compreso tra **0** e **100**.  
+    -   **詳細:** プライマリ サイトから中央管理サイトに接続するときのタイムアウトの最大値 (分) を指定します。 たとえば、プライマリ サイトから中央管理サイトに接続できなかった場合は、プライマリ サイトは、**WaitForCASTimeout** で指定された時間が経過するまで、**CASRetryInterval** の値に従って、中央管理サイトとの接続を再試行します。 **0** ～ **100** に指定できます。  
 
 **CloudConnectorOptions**  
 
--   **Nome chiave:** CloudConnector  
+-   **キー名:** CloudConnector  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non installare  
+         0 = インストールしません。  
 
-         1 = Installare  
+         1 = インストールします。  
 
-    -   **Dettagli:** specifica se installare un punto di connessione del servizio in questo sito. Dato che il punto di connessione può essere installato solo nel sito di livello superiore di una gerarchia, questo valore deve essere **0** per un sito primario figlio.  
+    -   **詳細:** このサイトでサービス接続ポイントをインストールするかどうかを指定します。 サービス接続ポイントは階層の最上位層サイトでのみインストールできるため、子プライマリ サイトの場合はこの値を **0** にする必要があります。  
 
--   **Nome chiave:** CloudConnectorServer  
+-   **キー名:** CloudConnectorServer  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **必須:** **CloudConnector** が 1 の場合に必須  
 
-    -   **Valori:** <*FQDN del server del punto di connessione del servizio*\>  
+    -   **値:** <*サービス接続ポイント サーバーの FQDN*\>  
 
-    -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
+    -   **詳細:** サービス接続ポイントのサイト システムの役割をホストするサーバーの FQDN を指定します。  
 
--   **Nome chiave:** UseProxy  
+-   **キー名:** UseProxy  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **必須:** **CloudConnector** が 1 の場合に必須  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non installare  
+         0 = インストールしません。  
 
-         1 = Installare  
+         1 = インストールします。  
 
-    -   **Dettagli:** specifica se il punto di connessione del servizio userà un server proxy.  
+    -   **詳細:** サービス接続ポイントがプロキシ サーバーを使用するかどうかを指定します。  
 
--   **Nome chiave:** Nomeproxy  
+-   **キー名:** ProxyName  
 
-    -   **Richiesta:** obbligatoria quando **UseProxy** è uguale a 1  
+    -   **必須:** **UseProxy** が 1 の場合に必須  
 
-    -   **Valori:** <*FQDN del server proxy*>  
+    -   **値:** <*プロキシ サーバーの FQDN*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server proxy che verrà usato dal ruolo del sistema del sito del punto di connessione del servizio.  
+    -   **詳細:** サービス接続ポイントのサイト システムの役割で使用されるプロキシ サーバーの FQDN を指定します。  
 
--   **Nome chiave:** ProxyPort  
+-   **キー名:** ProxyPort  
 
-    -   **Richiesta:** obbligatoria quando **UseProxy** è uguale a 1  
+    -   **必須:** **UseProxy** が 1 の場合に必須  
 
-    -   **Valori:** <*Numero della porta*>  
+    -   **値:** <*ポート番号*>  
 
-    -   **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
+    -   **詳細:** プロキシ ポートに使用するポート番号を指定します。  
 
-### <a name="unattended-recovery-for-a-central-administration-site"></a>Ripristinare automaticamente un sito di amministrazione centrale  
- Usare i dettagli seguenti per ripristinare un sito di amministrazione centrale usando un file script di installazione automatica.  
+### <a name="unattended-recovery-for-a-central-administration-site"></a>中央管理サイトの無人回復  
+ 次の情報を、無人セットアップ用スクリプト ファイルを使用して中央管理サイトを回復するときの参考にしてください。  
 
 **Identification**  
 
--   **Nome chiave:** Action  
+-   **キー名:** Action  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** RecoverCCAR  
+    -   **値:** RecoverCCAR  
 
-    -   **Dettagli:** ripristina un sito di amministrazione centrale.  
+    -   **詳細:** 中央管理サイトを回復します。  
 
--   **Nome chiave:** CDLatest  
+-   **キー名:** CDLatest  
 
-    -   **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.    
+    -   **必須:** はい – CD.Latest フォルダーのメディアを使う場合のみ。    
 
-    -   **Valori:** 1. Qualsiasi valore diverso da 1 presuppone che non venga usata la cartella CD.Latest.
+    -   **値:** 1。1 以外の値は CD.Latest を使わないものと見なされます。
 
-    -   **Dettagli:** lo script deve includere la chiave e il valore quando si esegue il programma di installazione dal supporto di una cartella CD.Latest allo scopo di installare o ripristinare un sito di amministrazione centrale o primario. Questo valore indica al programma di installazione che viene usato il formato di supporto CD.Latest.
+    -   **詳細:** プライマリ サイトまたは中央管理サイトのインストールまたは回復を目的として、CD.Latest フォルダーのメディアからセットアップを実行するときは、スクリプトにこのキーと値が含まれる必要があります。 この値は、CD.Latest のメディアが使われていることを、セットアップに通知します。
 
 **RecoveryOptions**  
 
--   **Nome chiave:** ServerRecoveryOptions  
+-   **キー名:** ServerRecoveryOptions  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 1, 2 o 4  
+    -   **値** : 1、2、または 4  
 
-         1 = Ripristina il server del sito e SQL Server.  
+         1 = サイト サーバーと SQL Server を回復します。  
 
-         2 = Ripristina solo il server del sito.  
+         2 = サイト サーバーだけを回復します。  
 
-         4 = Ripristina solo SQL Server.  
+         4 = SQL Server だけを回復します。  
 
-    -   **Dettagli:** specifica se il programma di installazione ripristinerà il server del sito, SQL Server o entrambi. Le chiavi associate sono necessarie quando si imposta il valore seguente per l'impostazione **ServerRecoveryOptions**:  
+    -   **詳細:** セットアップでサイト サーバーと SQL Server のどちらか、または両方を回復することを指定します。 **ServerRecoveryOptions** の設定値によって、関連するキーの設定が異なります。  
 
-        -   Valore = 1: è possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+        -   値 = 1: **SiteServerBackupLocation** キーに値を指定して、サイトのバックアップを使ってサイトを回復することができます。 値を指定しなかった場合は、バックアップを使わずにサイトが再インストールされます。  
 
-        -   Valore = 2: è possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+        -   値 = 2: **SiteServerBackupLocation** キーに値を指定して、サイトのバックアップを使ってサイトを回復することができます。 値を指定しなかった場合は、バックアップを使わずにサイトが再インストールされます。  
 
-        -   Valore = 4: la chiave **BackupLocation** è richiesta in caso di configurazione del valore **10** per la chiave **DatabaseRecoveryOptions** necessaria per il ripristino del database del sito dal backup.  
+        -   値 = 4: **DatabaseRecoveryOptions** キーに値 **10** を設定して、バックアップからサイト データベースが復元されるようにした場合は、 **BackupLocation** キーは必須です。  
 
--   **Nome chiave:** DatabaseRecoveryOptions  
+-   **キー名:** DatabaseRecoveryOptions  
 
-    -   **Richiesta:** questa chiave è richiesta quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **4**.  
+    -   **必須:** このキーは、**ServerRecoveryOptions** の値を **1** または **4** に設定したときに必要です。  
 
-    -   **Valori:** 10, 20, 40 o 80  
+    -   **値:** 10、20、40、80 のいずれか  
 
-         10 = Ripristina il database del sito dal backup.  
+         10 = バックアップからサイト データベースを復元します。  
 
-         20 = Usa un database del sito che è stato ripristinato manualmente usando un altro metodo.  
+         20 = 別の方法を使って手動で回復されたサイト データベースを使用します。  
 
-         40 = Crea un nuovo database per il sito. Usare questa opzione quando non è disponibile alcun backup di database del sito. I dati globali e i dati del sito vengono ripristinati tramite la replica da altri siti.  
+         40 = サイトの新しいデータベースを作成します。 サイト データベースのバックアップがない場合に、このオプションを使用してください。 グローバル データとサイト データは、別のサイトをレプリケートすることによって回復します。  
 
-         80 = Ignora il ripristino del database.  
+         80 = データベースの回復をスキップします。  
 
-    -   **Dettagli:** specifica il modo in cui il programma di installazione ripristina il database del sito in SQL Server.  
+    -   **詳細:** SQL Server のサイト データベースをセットアップでどのように回復するかを指定します。  
 
--   **Nome chiave:** ReferenceSite  
+-   **キー名:** ReferenceSite  
 
-    -   **Richiesto:** questa chiave è richiesta quando l'impostazione **DatabaseRecoveryOptions** ha il valore **40**.  
+    -   **必須:** このキーは、**DatabaseRecoveryOptions** の値を **40** に設定したときに必須です。  
 
-    -   **Valori:** <*FQDN del sito di riferimento*>  
+    -   **値:** <*参照サイトの FQDN*>  
 
-    -   **Dettagli:** specifica il sito primario di riferimento usato dal sito di amministrazione centrale per il ripristino dei dati globali se il backup del database è antecedente al periodo di conservazione del rilevamento delle modifiche o se il sito viene ripristinato senza backup.  
+    -   **詳細:** データベースのバックアップが変更の追跡の保有期間より前に作成されているか、バックアップなしでサイトを回復する場合に、中央管理サイトでグローバル データを回復するために使用する基準プライマリ サイトを指定します。  
 
-         Se non viene specificato un sito di riferimento e il backup è antecedente al periodo di memorizzazione del rilevamento delle modifiche, tutti i siti primari vengono reinizializzati con i dati ripristinati dal sito di amministrazione centrale.  
+         バックアップが変更の追跡の保有期間より前に作成されており、基準サイトを指定しなかった場合は、すべてのプライマリ サイトが、中央管理サイトから復元されたデータで再初期化されます。  
 
-         Se non viene specificato un sito di riferimento e il backup rientra nel periodo di memorizzazione del rilevamento delle modifiche, solo le modifiche apportate dal momento del backup verranno replicate dai siti primari. In caso di modifiche in conflitto provenienti da diversi siti primari, il sito di amministrazione centrale usa la prima modifica ricevuta.  
+         バックアップが変更の追跡の保有期間内に作成されており、基準サイトを指定しなかった場合は、バックアップ作成以後に加えられた変更だけが、プライマリ サイトからレプリケートされます。 プライマリ サイト同士の変更内容が競合している場合は、中央管理サイトで、最初に受け取った変更内容が採用されます。  
 
--   **Nome chiave:** SiteServerBackupLocation  
+-   **キー名:** SiteServerBackupLocation  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Percorso del set di backup del server del sito*>  
+    -   **値:** <*サイト サーバーのバックアップ セットへのパス*>  
 
-    -   **Dettagli:** specifica il percorso del set di backup del server del sito. Questa chiave è facoltativa quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **2**. Specificare un valore affinché la chiave **SiteServerBackupLocation** ripristini il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+    -   **詳細:** サイト サーバーのバックアップ セットへのパスを指定します。 このキーは、 **ServerRecoveryOptions** キーを **1** か **2**に設定したときにオプションで指定するキーです。 サイトのバックアップを使ってサイトを回復したい場合に、 **SiteServerBackupLocation** キーでバックアップの場所を指定します。 値を指定しなかった場合は、バックアップを使わずにサイトが再インストールされます。  
 
--   **Nome chiave:** BackupLocation  
+-   **キー名:** BackupLocation  
 
-    -   **Richiesta:** questa chiave è richiesta quando si configura il valore **1** o **4** per la chiave **ServerRecoveryOptions** e si configura il valore **10** per la chiave **DatabaseRecoveryOptions**.  
+    -   **必須:** このキーは、**ServerRecoveryOptions** キーの値を **1** か **4** に設定し、**DatabaseRecoveryOptions** キーの値を **10** に設定したときに必須です。  
 
-    -   **Valori:** <*Percorso del set di backup del database del sito*>  
+    -   **値:** <*サイト データベースのバックアップ セットへのパス*>  
 
-    -   **Dettagli:** specifica il percorso del set di backup del database del sito.  
+    -   **詳細:** サイト データベースのバックアップ セットへのパスを指定します。  
 
-**Opzioni**  
+**Options**  
 
--   **Nome chiave:** ProductID  
+-   **キー名:** ProductID  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*>  *o*  Eval  
+    -   **値:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*>  *または* Eval  
 
-    -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
+    -   **詳細:** ダッシュを含め、インストールする Configuration Manager のプロダクト キーを指定します。 Configuration Manager の評価版をインストールするには、「**Eval**」と入力します。  
 
--   **Nome chiave:** SiteCode  
+-   **キー名:** SiteCode  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Codice del sito*>  
+    -   **値:** <*サイト コード*>  
 
-    -   **Dettagli:** specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. È necessario specificare il codice del sito usato dal sito prima dell'errore.
+    -   **詳細:** 階層内のサイトを一意に識別する英数字 3 文字を指定します。 障害が発生する前にサイトで使用していたサイト コードを指定する必要があります。
 
--   **Nome chiave:** SiteName  
+-   **キー名:** SiteName  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Nome del sito*>  
+    -   **値:** <*サイト名*>  
 
-    -   **Dettagli:** specifica il nome del sito.  
+    -   **詳細:** このサイトの名前を指定します。  
 
--   **Nome chiave:** SMSInstallDir  
+-   **キー名:** SMSInstallDir  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Percorso di installazione di Configuration Manager*>  
+    -   **値:** <*Configuration Manager のインストール パス*>  
 
-    -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
+    -   **詳細:** Configuration Manager のプログラム ファイルのインストール フォルダーを指定します。  
 
--   **Nome chiave:** SDKServer  
+-   **キー名:** SDKServer  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*FQDN del provider SMS*>  
+    -   **値:** <*SMS プロバイダーの FQDN*>  
 
-    -   **Dettagli:** specifica l'FQDN del server che ospiterà il provider SMS. È necessario specificare il server che ospitava il provider SMS prima dell'errore.  
+    -   **詳細:** SMS プロバイダーをホストするサーバーの FQDN を指定します。 障害が発生する前に SMS プロバイダーをホストしていたサーバーを指定する必要があります。  
 
-         Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito. Per altre informazioni sul provider SMS, vedere [Plan for the SMS Provider for System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md) (Pianificare il provider SMS per System Center Configuration Manager).  
+         初期インストールが終わった後で、他の SMS プロバイダーを追加して構成することができます。 SMS プロバイダーの詳細については、「[System Center Configuration Manager の SMS プロバイダーの計画](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md)」を参照してください。  
 
--   **Nome chiave:** PrerequisiteComp  
+-   **キー名:** PrerequisiteComp  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Scaricare  
+         0 = ダウンロードします。  
 
-         1 = Già scaricato  
+         1 = 既にダウンロードされています。  
 
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione eseguirà il download dei file.  
+    -   **詳細:** セットアップの前提条件ファイルが既にダウンロード済みかどうかを指定します。 たとえば、この値を **0**に設定すると、セットアップ時にファイルがダウンロードされます。  
 
--   **Nome chiave:** PrerequisitePath  
+-   **キー名:** PrerequisitePath  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
+    -   **値:** <*セットアップの前提条件ファイルへのパス*>  
 
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp** , il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare i file scaricati in precedenza.  
+    -   **詳細:** セットアップの前提条件ファイルのパスを指定します。 このパスは、 **PrerequisiteComp** キーに設定した値に応じて、ダウンロードしたファイルを保存するか、ダウンロード済みのファイルを見つけるために使われます。  
 
--   **Nome chiave:** AdminConsole  
+-   **キー名:** AdminConsole  
 
-    -   **Richiesto:** questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha il valore **4**.  
+    -   **必須:** このキーは、**ServerRecoveryOptions** の値を **4** 以外に設定した場合に必須です。  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non installare  
+         0 = インストールしません。  
 
-         1 = Installare  
+         1 = インストールします。  
 
-    -   **Dettagli:** specifica se installare la console di Configuration Manager.  
+    -   **詳細:** Configuration Manager コンソールをインストールするかどうかを指定します。  
 
--   **Nome chiave:** JoinCEIP  
+-   **キー名:** JoinCEIP  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non partecipare  
+         0 = 参加しません。  
 
-         1 = Partecipare  
+         1 = 参加します。  
 
-    -   **Dettagli**: specifica se partecipare al programma Analisi utilizzo software.  
+    -   **詳細:** CEIP に参加するかどうかを指定します。  
 
 **SQLConfigOptions**  
 
--   **Nome chiave:** SQLServerName  
+-   **キー名:** SQLServerName  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Nome dell'istanza di SQL Server*>  
+    -   **値:** <*SQL Server 名*>  
 
-    -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospiterà il database del sito. È necessario specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.  
+    -   **詳細:** サイト データベースをホストする SQL Server を実行しているサーバーの名前、またはクラスター化されたインスタンスの名前を指定します。 障害が発生する前にサイト データベースをホストしていたサーバーを指定する必要があります。  
 
--   **Nome chiave:** DatabaseName  
+-   **キー名:** DatabaseName  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
+    -   **値:** <*サイト データベース名*> または <*インスタンス名*>\\<*サイト データベース名*>  
 
-    -   **Dettagli:** specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito di amministrazione centrale. È necessario specificare lo stesso nome database usato prima dell'errore.  
+    -   **詳細:** 中央管理サイト データベースをインストールする際に作成または使用する SQL Server データベースの名前を指定します。 障害が発生する前に使用していたデータベース名と同じ名前を指定する必要があります。  
 
         > [!IMPORTANT]  
-        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome database del sito.  
+        >  既定のインスタンスを使用しない場合は、必ず、インスタンス名とサイト データベース名を指定してください。  
 
--   **Nome chiave:** SQLSSBPort  
+-   **キー名:** SQLSSBPort  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Numero della porta SSB*>  
+    -   **値:** <*SSB ポート番号*>  
 
-    -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. SSB è in genere configurato per usare la porta TCP 4022. È necessario specificare la stessa porta SSB usata prima dell'errore.  
+    -   **詳細:** SQL Server で使用する SSB ポートを指定します。 通常、TCP ポート 4022 を使用するように SSB を構成します。 障害が発生する前に使用していた SSB ポート番号と同じ番号を指定する必要があります。  
 
--   **Nome chiave:** SQLDataFilePath  
+-   **キー名:** SQLDataFilePath  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Percorso del file mdb del database*>  
+    -   **値:** <*データベース .mdb ファイルへのパス*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
+    -   **詳細:** データベース .mdb ファイルを作成する別の場所を指定します。  
 
--   **Nome chiave:** SQLLogFilePath  
+-   **キー名:** SQLLogFilePath  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Percorso del file ldf del database*>  
+    -   **値:** <*データベース .ldf ファイルへのパス*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
+    -   **詳細:** データベース .ldf ファイルを作成する別の場所を指定します。  
 
 **CloudConnectorOptions**  
 
--   **Nome chiave:** CloudConnector  
+-   **キー名:** CloudConnector  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non installare  
+         0 = インストールしません。  
 
-         1 = Installare  
+         1 = インストールします。  
 
-    -   **Dettagli:** specifica se installare un punto di connessione del servizio in questo sito. Dato che il punto di connessione può essere installato solo nel sito di livello superiore di una gerarchia, questo valore deve essere **0** per un sito primario figlio.  
+    -   **詳細:** このサイトでサービス接続ポイントをインストールするかどうかを指定します。 サービス接続ポイントは階層の最上位層サイトでのみインストールできるため、子プライマリ サイトの場合はこの値を **0** にする必要があります。  
 
--   **Nome chiave:** CloudConnectorServer  
+-   **キー名:** CloudConnectorServer  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **必須:** **CloudConnector** が 1 の場合に必須  
 
-    -   **Valori:** <*FQDN del server del punto di connessione del servizio*>  
+    -   **値:** <*サービス接続ポイント サーバーの FQDN*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
+    -   **詳細:** サービス接続ポイントのサイト システムの役割をホストするサーバーの FQDN を指定します。  
 
--   **Nome chiave:** UseProxy  
+-   **キー名:** UseProxy  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **必須:** **CloudConnector** が 1 の場合に必須  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non installare  
+         0 = インストールしません。  
 
-         1 = Installare  
+         1 = インストールします。  
 
-    -   **Dettagli:** specifica se il punto di connessione del servizio userà un server proxy.  
+    -   **詳細:** サービス接続ポイントがプロキシ サーバーを使用するかどうかを指定します。  
 
--   **Nome chiave:** Nomeproxy  
+-   **キー名:** ProxyName  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **必須:** **CloudConnector** が 1 の場合に必須  
 
-    -   **Valori:** <*FQDN del server proxy*>  
+    -   **値:** <*プロキシ サーバーの FQDN*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server proxy che verrà usato dal ruolo del sistema del sito del punto di connessione del servizio.  
+    -   **詳細:** サービス接続ポイントのサイト システムの役割で使用されるプロキシ サーバーの FQDN を指定します。  
 
--   **Nome chiave:** ProxyPort  
+-   **キー名:** ProxyPort  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **必須:** **CloudConnector** が 1 の場合に必須  
 
-    -   **Valori:** <*Numero della porta*>  
+    -   **値:** <*ポート番号*>  
 
-    -   **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
+    -   **詳細:** プロキシ ポートに使用するポート番号を指定します。  
 
-### <a name="unattended-recovery-for-a-primary-site"></a>Ripristinare automaticamente un sito primario  
- Usare i dettagli seguenti per ripristinare un sito primario usando un file script di installazione automatica.  
+### <a name="unattended-recovery-for-a-primary-site"></a>プライマリ サイトの無人回復  
+ 次の情報を、無人セットアップ用スクリプト ファイルを使ってプライマリ サイトを回復するときの参考にしてください。  
 
 **Identification**  
 
--   **Nome chiave:** Action  
+-   **キー名:** Action  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*RecoverPrimarySite*>  
+    -   **値:** <*RecoverPrimarySite*>  
 
-    -   **Dettagli:** ripristina un sito primario.  
+    -   **詳細:** プライマリ サイトを回復します。  
 
--   **Nome chiave:** CDLatest  
+-   **キー名:** CDLatest  
 
-    -   **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.    
+    -   **必須:** はい – CD.Latest フォルダーのメディアを使う場合のみ。    
 
-    -   **Valori:** 1. Qualsiasi valore diverso da 1 presuppone che non venga usata la cartella CD.Latest.
+    -   **値:** 1。1 以外の値は CD.Latest を使わないものと見なされます。
 
-    -   **Dettagli:** lo script deve includere la chiave e il valore quando si esegue il programma di installazione dal supporto di una cartella CD.Latest allo scopo di installare o ripristinare un sito di amministrazione centrale o primario. Questo valore indica al programma di installazione che viene usato il formato di supporto CD.Latest.    
+    -   **詳細:** プライマリ サイトまたは中央管理サイトのインストールまたは回復を目的として、CD.Latest フォルダーのメディアからセットアップを実行するときは、スクリプトにこのキーと値が含まれる必要があります。 この値は、CD.Latest のメディアが使われていることを、セットアップに通知します。    
 
 **RecoveryOptions**  
 
--   **Nome chiave:** ServerRecoveryOptions  
+-   **キー名:** ServerRecoveryOptions  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 1, 2 o 4  
+    -   **値** : 1、2、または 4  
 
-         1 = Ripristina il server del sito e SQL Server.  
+         1 = サイト サーバーと SQL Server を回復します。  
 
-         2 = Ripristina solo il server del sito.  
+         2 = サイト サーバーだけを回復します。  
 
-         4 = Ripristina solo SQL Server.  
+         4 = SQL Server だけを回復します。  
 
-    -   **Dettagli:** specifica se il programma di installazione ripristinerà il server del sito, SQL Server o entrambi. Le chiavi associate sono necessarie quando si imposta il valore seguente per l'impostazione **ServerRecoveryOptions**:  
+    -   **詳細:** セットアップでサイト サーバーと SQL Server のどちらか、または両方を回復することを指定します。 **ServerRecoveryOptions** の設定値によって、関連するキーの設定が異なります。  
 
-        -   Valore = 1: è possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+        -   値 = 1: **SiteServerBackupLocation** キーに値を指定して、サイトのバックアップを使ってサイトを回復することができます。 値を指定しなかった場合は、バックアップを使わずにサイトが再インストールされます。  
 
-        -   Valore = 2: è possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+        -   値 = 2: **SiteServerBackupLocation** キーに値を指定して、サイトのバックアップを使ってサイトを回復することができます。 値を指定しなかった場合は、バックアップを使わずにサイトが再インストールされます。  
 
-        -   Valore = 4: la chiave **BackupLocation** è richiesta in caso di configurazione del valore **10** per la chiave **DatabaseRecoveryOptions** necessaria per il ripristino del database del sito dal backup.  
+        -   値 = 4: **DatabaseRecoveryOptions** キーに値 **10** を設定して、バックアップからサイト データベースが復元されるようにした場合は、 **BackupLocation** キーは必須です。  
 
--   **Nome chiave:** DatabaseRecoveryOptions  
+-   **キー名:** DatabaseRecoveryOptions  
 
-    -   **Richiesta:** questa chiave è richiesta quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **4**.  
+    -   **必須:** このキーは、**ServerRecoveryOptions** の値を **1** または **4** に設定したときに必要です。  
 
-    -   **Valori:** 10, 20, 40 o 80  
+    -   **値:** 10、20、40、80 のいずれか  
 
-         10 = Ripristina il database del sito dal backup.  
+         10 = バックアップからサイト データベースを復元します。  
 
-         20 = Usa un database del sito che è stato ripristinato manualmente usando un altro metodo.  
+         20 = 別の方法を使って手動で回復されたサイト データベースを使用します。  
 
-         40 = Crea un nuovo database per il sito. Usare questa opzione quando non è disponibile alcun backup di database del sito. I dati globali e i dati del sito vengono ripristinati tramite la replica da altri siti.  
+         40 = サイトの新しいデータベースを作成します。 サイト データベースのバックアップがない場合に、このオプションを使用してください。 グローバル データとサイト データは、別のサイトをレプリケートすることによって回復します。  
 
-         80 = Ignora il ripristino del database.  
+         80 = データベースの回復をスキップします。  
 
-    -   **Dettagli:** specifica il modo in cui il programma di installazione ripristina il database del sito in SQL Server.  
+    -   **詳細:** SQL Server のサイト データベースをセットアップでどのように回復するかを指定します。  
 
--   **Nome chiave:** SiteServerBackupLocation  
+-   **キー名:** SiteServerBackupLocation  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Percorso del set di backup del server del sito*>  
+    -   **値:** <*サイト サーバーのバックアップ セットへのパス*>  
 
-    -   **Dettagli:**  
+    -   **詳細:**  
 
-         Specifica il percorso per il set di backup del server del sito. Questa chiave è facoltativa quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **2**. Specificare un valore affinché la chiave **SiteServerBackupLocation** ripristini il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+         サイト サーバーのバックアップ セットがある場所を指定します。 このキーは、 **ServerRecoveryOptions** 設定の値が **1** か **2**である場合にオプションです。 サイトのバックアップを使ってサイトを回復したい場合に、 **SiteServerBackupLocation** キーでバックアップの場所を指定します。 値を指定しなかった場合は、バックアップを使わずにサイトが再インストールされます。  
 
--   **Nome chiave:** BackupLocation  
+-   **キー名:** BackupLocation  
 
-    -   **Richiesto:** la chiave è richiesta quando si configura il valore **1** o **4** per la chiave **ServerRecoveryOptions** e il valore **10** per la chiave **DatabaseRecoveryOptions**.  
+    -   **必須:** このキーは、**ServerRecoveryOptions** キーの値を **1** か **4** に設定し、**DatabaseRecoveryOptions** キーの値を **10** に設定したときに必須です。  
 
-    -   **Valori:** <*Percorso del set di backup del database del sito*>  
+    -   **値:** <*サイト データベースのバックアップ セットへのパス*>  
 
-    -   **Dettagli:** specifica il percorso del set di backup del database del sito.  
+    -   **詳細:** サイト データベースのバックアップ セットへのパスを指定します。  
 
-**Opzioni**  
+**Options**  
 
--   **Nome chiave:** ProductID  
+-   **キー名:** ProductID  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** *xxxxx-xxxxx-xxxxx-xxxxx-xxxxx* o *Eval*  
+    -   **値:** *xxxxx-xxxxx-xxxxx-xxxxx-xxxxx* または *Eval*  
 
-    -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
+    -   **詳細:** ダッシュを含め、インストールする Configuration Manager のプロダクト キーを指定します。 Configuration Manager の評価版をインストールするには、「**Eval**」と入力します。  
 
--   **Nome chiave:** SiteCode  
+-   **キー名:** SiteCode  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Codice del sito*>  
+    -   **値:** <*サイト コード*>  
 
-    -   **Dettagli:** specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. È necessario specificare il codice del sito usato dal sito prima dell'errore.
+    -   **詳細:** 階層内のサイトを一意に識別する英数字 3 文字を指定します。 障害が発生する前にサイトで使用していたサイト コードを指定する必要があります。
 
--   **Nome chiave:** SiteName  
+-   **キー名:** SiteName  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Nome del sito*>  
+    -   **値:** <*サイト名*>  
 
-    -   **Dettagli:** specifica il nome del sito.  
+    -   **詳細:** このサイトの名前を指定します。  
 
--   **Nome chiave:** SMSInstallDir  
+-   **キー名:** SMSInstallDir  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Percorso di installazione di Configuration Manager*>  
+    -   **値:** <*Configuration Manager のインストール パス*>  
 
-    -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
+    -   **詳細:** Configuration Manager のプログラム ファイルのインストール フォルダーを指定します。  
 
--   **Nome chiave:** SDKServer  
+-   **キー名:** SDKServer  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*FQDN del provider SMS*>  
+    -   **値:** <*SMS プロバイダーの FQDN*>  
 
-    -   **Dettagli:** specifica l'FQDN del server che ospiterà il provider SMS. È necessario specificare il server che ospitava il provider SMS prima dell'errore. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito. Per altre informazioni sul provider SMS, vedere [Plan for the SMS Provider for System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md) (Pianificare il provider SMS per System Center Configuration Manager).  
+    -   **詳細:** SMS プロバイダーをホストするサーバーの FQDN を指定します。 障害が発生する前に SMS プロバイダーをホストしていたサーバーを指定する必要があります。 初期インストールが終わった後で、他の SMS プロバイダーを追加して構成することができます。 SMS プロバイダーの詳細については、「[System Center Configuration Manager の SMS プロバイダーの計画](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md)」を参照してください。  
 
--   **Nome chiave:** PrerequisiteComp  
+-   **キー名:** PrerequisiteComp  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Scaricare  
+         0 = ダウンロードします。  
 
-         1 = Già scaricato  
+         1 = 既にダウンロードされています。  
 
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione eseguirà il download dei file.  
+    -   **詳細:** セットアップの前提条件ファイルが既にダウンロード済みかどうかを指定します。 たとえば、この値を **0**に設定すると、セットアップ時にファイルがダウンロードされます。  
 
--   **Nome chiave:** PrerequisitePath  
+-   **キー名:** PrerequisitePath  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
+    -   **値:** <*セットアップの前提条件ファイルへのパス*>  
 
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp** , il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare i file scaricati in precedenza.  
+    -   **詳細:** セットアップの前提条件ファイルのパスを指定します。 このパスは、 **PrerequisiteComp** キーに設定した値に応じて、ダウンロードしたファイルを保存するか、ダウンロード済みのファイルを見つけるために使われます。  
 
--   **Nome chiave:** AdminConsole  
+-   **キー名:** AdminConsole  
 
-    -   **Richiesto:** questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha il valore **4**.  
+    -   **必須:** このキーは、**ServerRecoveryOptions** の値を **4** 以外に設定した場合に必須です。  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non installare  
+         0 = インストールしません。  
 
-         1 = Installare  
+         1 = インストールします。  
 
-    -   **Dettagli:** specifica se installare la console di Configuration Manager.  
+    -   **詳細:** Configuration Manager コンソールをインストールするかどうかを指定します。  
 
--   **Nome chiave:** JoinCEIP  
+-   **キー名:** JoinCEIP  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non partecipare  
+         0 = 参加しません。  
 
-         1 = Partecipare  
+         1 = 参加します。  
 
-    -   **Dettagli**: specifica se partecipare al programma Analisi utilizzo software.  
+    -   **詳細:** CEIP に参加するかどうかを指定します。  
 
 **SQLConfigOptions**  
 
--   **Nome chiave:** SQLServerName  
+-   **キー名:** SQLServerName  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Nome dell'istanza di SQL Server*>  
+    -   **値:** <*SQL Server 名*>  
 
-    -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospiterà il database del sito. È necessario specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.  
+    -   **詳細:** サイト データベースをホストする SQL Server を実行しているサーバーの名前、またはクラスター化されたインスタンスの名前を指定します。 障害が発生する前にサイト データベースをホストしていたサーバーを指定する必要があります。  
 
--   **Nome chiave:** DatabaseName  
+-   **キー名:** DatabaseName  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:**  <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>
+    -   **値:**  <*サイト データベース名*> または <*インスタンス名*>\\<*サイト データベース名*>
 
-    -   **Dettagli:**  
+    -   **詳細:**  
 
-         Specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito di amministrazione centrale. È necessario specificare lo stesso nome database usato prima dell'errore.  
+         中央管理サイト データベースをインストールする際に作成または使用する SQL Server データベースの名前を指定します。 障害が発生する前に使用していたデータベース名と同じ名前を指定する必要があります。  
 
         > [!IMPORTANT]  
-        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome database del sito.  
+        >  既定のインスタンスを使用しない場合は、必ず、インスタンス名とサイト データベース名を指定してください。  
 
--   **Nome chiave:** SQLSSBPort  
+-   **キー名:** SQLSSBPort  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** <*Numero della porta SSB*>  
+    -   **値:** <*SSB ポート番号*>  
 
-    -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. In genere, SSB è configurato per usare la porta TCP 4022. È necessario specificare la stessa porta SSB usata prima dell'errore.  
+    -   **詳細:** SQL Server で使用する SSB ポートを指定します。 通常は、TCP ポート 4022 を使用するように SSB を構成します。 障害が発生する前に使用していた SSB ポート番号と同じ番号を指定する必要があります。  
 
--   **Nome chiave:** SQLDataFilePath  
+-   **キー名:** SQLDataFilePath  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Percorso del file mdb del database*>  
+    -   **値:** <*データベース .mdb ファイルへのパス*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
+    -   **詳細:** データベース .mdb ファイルを作成する別の場所を指定します。  
 
--   **Nome chiave:** SQLLogFilePath  
+-   **キー名:** SQLLogFilePath  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Percorso del file ldf del database*>  
+    -   **値:** <*データベース .ldf ファイルへのパス*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
+    -   **詳細:** データベース .ldf ファイルを作成する別の場所を指定します。  
 
 **HierarchyExpansionOptions**  
 
--   **Nome chiave:** CCARSiteServer  
+-   **キー名:** CCARSiteServer  
 
-    -   **Richiesto:** vedere i dettagli.  
+    -   **必須:** 詳細を参照してください。  
 
-    -   **Valori:** <*Codice del sito per il sito di amministrazione centrale*>  
+    -   **値:** <*中央管理サイトのサイト コード*>  
 
-    -   **Dettagli:** specifica il sito di amministrazione centrale a cui si collega il sito primario quando viene aggiunto alla gerarchia di Configuration Manager. Questa impostazione è necessaria se il sito primario era collegato a un sito di amministrazione centrale prima dell'errore. È necessario specificare il codice del sito usato dal sito di amministrazione centrale prima dell'errore.  
+    -   **詳細:** プライマリ サイトを Configuration Manager 階層に含めるときに、アタッチする中央管理サイトを指定します。 障害が発生する前にプライマリ サイトが中央管理サイトにアタッチされていた場合は、この設定が必要です。 障害が発生する前に中央管理サイトに付いていたサイト コードを指定する必要があります。  
 
--   **Nome chiave:** CASRetryInterval  
+-   **キー名:** CASRetryInterval  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Intervallo*>  
+    -   **値:** <*Interval*>  
 
-    -   **Dettagli:** specifica l'intervallo (in minuti) tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato per **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
+    -   **詳細:** 中央管理サイトとの接続が切断されたときに、接続を再試行する間隔 (分) を指定します。 たとえば、プライマリ サイトと中央管理サイトの接続が切断されると、プライマリ サイトは、**CASRetryInterval** の値に指定された分数だけ待ってから、もう一度接続しようとします。  
 
--   **Nome chiave:** WaitForCASTimeout  
+-   **キー名:** WaitForCASTimeout  
 
-    -   **Richiesto:** no  
+    -   **必須:** いいえ  
 
-    -   **Valori:** <*Timeout*>  
+    -   **値:** <*Timeout*>  
 
-    -   **Dettagli:** specifica il valore di timeout massimo (in minuti) per la connessione di un sito primario al sito di amministrazione centrale. Se ad esempio un sito primario non riesce a connettersi al sito di amministrazione centrale, tale sito primario proverà nuovamente a connettersi al sito di amministrazione centrale in base al valore **CASRetryInterval** finché non viene raggiunto il periodo di **WaitForCASTimeout**. È possibile specificare un valore compreso tra **0** e **100**.  
+    -   **詳細:** プライマリ サイトから中央管理サイトに接続するときのタイムアウトの最大値 (分) を指定します。 たとえば、プライマリ サイトから中央管理サイトに接続できなかった場合は、プライマリ サイトは、**WaitForCASTimeout** で指定された時間が経過するまで、**CASRetryInterval** の値に従って、中央管理サイトとの接続を再試行します。 **0** ～ **100** に指定できます。  
 
 **CloudConnectorOptions**  
 
--   **Nome chiave:** CloudConnector  
+-   **キー名:** CloudConnector  
 
-    -   **Richiesto:** sì  
+    -   **必須:** はい  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non installare  
+         0 = インストールしません。  
 
-         1 = Installare  
+         1 = インストールします。  
 
-    -   **Dettagli:** specifica se installare un punto di connessione del servizio in questo sito. Dato che il punto di connessione può essere installato solo nel sito di livello superiore di una gerarchia, questo valore deve essere **0** per un sito primario figlio.  
+    -   **詳細:** このサイトでサービス接続ポイントをインストールするかどうかを指定します。 サービス接続ポイントは階層の最上位層サイトでのみインストールできるため、子プライマリ サイトの場合はこの値を **0** にする必要があります。  
 
--   **Nome chiave:** CloudConnectorServer  
+-   **キー名:** CloudConnectorServer  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **必須:** **CloudConnector** が 1 の場合に必須  
 
-    -   **Valori:** <*FQDN del server del punto di connessione del servizio*>  
+    -   **値:** <*サービス接続ポイント サーバーの FQDN*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
+    -   **詳細:** サービス接続ポイントのサイト システムの役割をホストするサーバーの FQDN を指定します。  
 
--   **Nome chiave:** UseProxy  
+-   **キー名:** UseProxy  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **必須:** **CloudConnector** が 1 の場合に必須  
 
-    -   **Valori:** 0 o 1  
+    -   **値:** 0 または 1  
 
-         0 = Non installare  
+         0 = インストールしません。  
 
-         1 = Installare  
+         1 = インストールします。  
 
-    -   **Dettagli:** specifica se il punto di connessione del servizio userà un server proxy.  
+    -   **詳細:** サービス接続ポイントがプロキシ サーバーを使用するかどうかを指定します。  
 
--   **Nome chiave:** Nomeproxy  
+-   **キー名:** ProxyName  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **必須:** **CloudConnector** が 1 の場合に必須  
 
-    -   **Valori:** <*FQDN del server proxy*>  
+    -   **値:** <*プロキシ サーバーの FQDN*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server proxy che verrà usato dal ruolo del sistema del sito del punto di connessione del servizio.  
+    -   **詳細:** サービス接続ポイントのサイト システムの役割で使用されるプロキシ サーバーの FQDN を指定します。  
 
--   **Nome chiave:** ProxyPort  
+-   **キー名:** ProxyPort  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **必須:** **CloudConnector** が 1 の場合に必須  
 
-    -   **Valori:** <*Numero della porta*>  
+    -   **値:** <*ポート番号*>  
 
-    -   **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
-
+    -   **詳細:** プロキシ ポートに使用するポート番号を指定します。  

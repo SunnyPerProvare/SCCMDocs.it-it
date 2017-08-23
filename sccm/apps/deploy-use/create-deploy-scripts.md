@@ -1,123 +1,118 @@
 ---
-title: Creare ed eseguire script con Configuration Manager | Microsoft Docs
-description: Creare ed eseguire script in dispositivi client con Configuration Manager.
+title: "Configuration Manager でのスクリプトの作成と実行 | Microsoft Docs"
+description: "Configuration Manager を使用して、クライアント デバイスでスクリプトを作成し、実行します。"
 ms.custom: na
-ms.date: 08/01/2017
+ms.date: 08/09/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
-caps.latest.revision: 14
-caps.handback.revision: 0
+caps.latest.revision: "14"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
+ms.openlocfilehash: ed84f7900eee5c04728d0e4d1b46027c36327bec
+ms.sourcegitcommit: b41d3e5c7f0c87f9af29e02de3e6cc9301eeafc4
 ms.translationtype: HT
-ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
-ms.openlocfilehash: 4dcda88d4e91347f6da97e8da04c38f9e65e07bc
-ms.contentlocale: it-it
-ms.lasthandoff: 08/02/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/11/2017
 ---
+# <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Configuration Manager コンソールから PowerShell スクリプトを作成して実行する
 
-# <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire script di PowerShell dalla console di Configuration Manager
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+Configuration Manager では、パッケージとプログラムを使用してスクリプトを展開できるだけでなく、次のようなアクションを実行できる機能があります。
 
-In Configuration Manager, oltre a usare pacchetti e programmi per la distribuzione di script, è possibile usare le funzionalità che seguono per eseguire le azioni seguenti:
-
-- Importare gli script di PowerShell in Configuration Manager
-- Modificare gli script dalla console di Configuration Manager (solo per script non firmati)
-- Contrassegnare gli script come Approvato o Rifiutato per migliorare la sicurezza
-- Eseguire gli script nelle raccolte di PC client Windows e nei PC Windows gestiti in locale. Gli script non vengono distribuiti ma eseguiti quasi immediatamente nei dispositivi client.
-- Esaminare i risultati restituiti dallo script nella console di Configuration Manager.
+- PowerShell スクリプトを Configuration Manager にインポートする
+- Configuration Manager コンソールからスクリプトを編集する (署名されていないスクリプトのみ)
+- セキュリティを強化するため、スクリプトを承認または拒否としてマークする
+- Windows クライアント コンピューターのコレクションおよびオンプレミスの管理対象 Windows PC でスクリプトを実行する。 スクリプトは展開されず、クライアント デバイスでほぼ即時に実行されます。
+- Configuration Manager コンソールで、スクリプトによって返される結果を確認する
 
 >[!TIP]
->In questa versione di Configuration Manager, gli script sono in una versione non definitiva. Per abilitare gli script, vedere [Funzionalità di versioni non definitive in System Center Configuration Manager](/sccm/core/servers/manage/pre-release-features).
+>このバージョンの Configuration Manager では、スクリプトはプレリリース機能です。 スクリプトを有効にする方法については、「[System Center Configuration Manager のプレリリース機能](/sccm/core/servers/manage/pre-release-features)」を参照してください。
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>必要条件
 
-Per eseguire script PowerShell, nel client deve essere in esecuzione PowerShell versione 3.0 o successiva. Se tuttavia lo script eseguito contiene funzionalità di una versione successiva di PowerShell, il client in cui viene eseguito lo script deve avere in esecuzione tale versione.
+PowerShell スクリプトを実行するには、クライアントで PowerShell バージョン 3.0 以降を実行している必要があります。 ただし、実行するスクリプトに、より新しいバージョンの PowerShell の機能が含まれている場合、スクリプトを実行するクライアントがそのバージョンを実行している必要があります。
 
-Per eseguire gli script, i client Configuration Manager devono avere in esecuzione il client della versione 1706 o successiva.
+Configuration Manager クライアントがスクリプトを実行するには、1706 リリース以降のクライアントを実行している必要があります。
 
-Per usare gli script, l'utente deve essere membro del ruolo di sicurezza appropriato di Configuration Manager.
+スクリプトを使用するには、適切な Configuration Manager のセキュリティ ロールのメンバーである必要があります。
 
-- Per importare e creare script: l'account deve avere autorizzazioni di **creazione** per **script SMS** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
-- Per approvare o rifiutare script: l'account deve avere autorizzazioni di **approvazione** per **script SMS** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
-- Per eseguire script: l'account deve avere autorizzazioni di **esecuzione script** per **Raccolte** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
+- スクリプトをインポートおよび作成するには: **コンプライアンス設定マネージャー**のセキュリティ ロールで、**SMS スクリプト**への**作成**アクセス許可がアカウントに付与されている必要があります。
+- スクリプトを承認または拒否するには: **コンプライアンス設定マネージャー**のセキュリティ ロールで、**SMS スクリプト**への**承認**アクセス許可がアカウントに付与されている必要があります。
+- スクリプトを実行するには: **コンプライアンス設定マネージャー**のセキュリティ ロールで、**コレクション**への**スクリプトの実行**アクセス許可がアカウントに付与されている必要があります。
 
-Per altre informazioni sui ruoli di sicurezza di Configuration Manager, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](/sccm/core/understand/fundamentals-of-role-based-administration).
+Configuration Manager のセキュリティ ロールの詳細については、「[ロール ベース管理の基礎](/sccm/core/understand/fundamentals-of-role-based-administration)」を参照してください。
 
-Per impostazione predefinita, gli utenti non possono approvare uno script da loro stessi creato. Poiché gli script sono potenti e versatili e possono essere distribuiti in più dispositivi, è possibile separare i ruoli tra la persona che crea lo script e la persona che lo approva. Questi ruoli garantiscono un livello aggiuntivo di sicurezza, impedendo l'esecuzione di uno script senza supervisione. Per semplificare le attività di test, è possibile disattivare questa approvazione secondaria.
+既定では、ユーザーは自分が作成したスクリプトを承認できません。 スクリプトは強力で用途が広く、多くのデバイスに展開できるため、スクリプトを作成する人と、そのスクリプトを承認する人とでロールを分けることができます。 ロールを分けることで、監視なしのスクリプト実行に対してセキュリティ レベルがさらに高くなります。 テストの場合は、便宜的にこの 2 つ目の承認を無効にすることもできます。
 
-## <a name="allow-users-to-approve-their-own-scripts"></a>Consentire agli utenti di approvare i propri script
+## <a name="allow-users-to-approve-their-own-scripts"></a>ユーザーが自身のスクリプトを承認できるようにする
 
-1. Nella console di Configuration Manager fare clic su **Amministrazione**.
-2. Nell'area di lavoro **Amministrazione** , espandere **Configurazione sito**, quindi fare clic su **Siti**.
-3. Nell'elenco dei siti selezionare il sito e quindi scegliere la scheda **Home** nel gruppo **Siti** e fare clic su **Impostazioni gerarchia**.
-4. Nella scheda **Generale** della finestra di dialogo **Proprietà delle impostazioni di gerarchia** deselezionare la casella di controllo **Do not allow script authors to approve their own scripts** (Non consentire agli autori di script di approvare i propri script).
-Siti
+1. Configuration Manager コンソールで、[ **管理**] をクリックします。
+2. [ **管理** ] ワークスペースで [ **サイトの構成**] を展開して、[ **サイト**] をクリックします。
+3. サイトの一覧で、自分のサイトを選択し、**[ホーム]** タブの **[サイト]** グループで **[階層設定]** をクリックします。
+4. **[階層設定のプロパティ]** ダイアログ ボックスの **[全般]** タブで、**[Do not allow script authors to approve their own scripts]\(スクリプト作成者に自身のスクリプトの承認を許可しない\)** チェック ボックスをオフにします。
 
-## <a name="import-and-edit-a-script"></a>Importare e modificare uno script
+## <a name="import-and-edit-a-script"></a>スクリプトをインポートして編集する
 
-1. Nella console di Configuration Manager fare clic su **Raccolta software**.
-2. Nell'area di lavoro **Raccolta software** fare clic su **Script**.
-3. Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea gruppo**.
-4. Nella pagina **Script** della procedura guidata **Crea script** configurare le impostazioni seguenti:
-    - In **Nome script** inserire il nome dello script. Anche se è possibile creare più script con lo stesso nome, l'uso di nomi duplicati rende più difficile individuare lo script necessario nella console di Configuration Manager.
-    - **Lingua script**: attualmente sono supportati solo script di PowerShell.
-    - **Importa**: importare uno script di PowerShell nella console. Lo script viene visualizzato nel campo **Script**.
-    - **Cancella**: rimuove lo script corrente dal campo Script.
-    - **Script**: visualizza lo script attualmente importato. È possibile modificare lo script in questo campo in base alle esigenze.
-5. Completare la procedura guidata. Il nuovo script viene visualizzato nell'elenco **Script** con stato **In attesa di approvazione** . Prima di poter eseguire questo script nei dispositivi client, è necessario approvarlo.
+1. Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** をクリックします。
+2. **[ソフトウェア ライブラリ]** ワークスペースで **[スクリプト]** をクリックします。
+3. **[ホーム]** タブの **[作成]** グループで、**[スクリプトの作成]** をクリックします。
+4. **スクリプトの作成**ウィザードの **[スクリプト]** ページで、次の設定を構成します。
+    - **[スクリプト名]**: スクリプトの名前を入力します。 同じ名前の複数のスクリプトを作成できますが、重複する名前を使用すると、Configuration Manager コンソールで必要なスクリプトを見つけるのがより困難になります。
+    - **[スクリプト言語]**: 現時点では、PowerShell スクリプトのみがサポートされています。
+    - **[インポート]**: PowerShell スクリプトをコンソールにインポートします。 スクリプトは **[スクリプト]** フィールドに表示されます。
+    - **[クリア]**: [スクリプト] フィールドから現在のスクリプトを削除します。
+    - **[スクリプト]**: 現在インポートされたスクリプトが表示されます。 必要に応じて、このフィールドでスクリプトを編集できます。
+5. ウィザードを完了します。 新しいスクリプトが**[承認を待っています]**の状態で **[スクリプト]** リストに表示されます。 このスクリプトをクライアント デバイスで実行するには、先にそのスクリプトを承認する必要があります。
 
-### <a name="script-examples"></a>Esempi di script
+### <a name="script-examples"></a>スクリプトの例
 
-Di seguito sono riportati alcuni esempi che illustrano gli script che è possibile usare con questa funzionalità.
+この機能で利用する可能性があるスクリプトの例をいくつか紹介します。
 
-#### <a name="create-a-folder"></a>Crea una cartella
+#### <a name="create-a-folder"></a>フォルダーを作成します
 
 *New-Item "c:\scripts" -type folder name* 
  
  
-#### <a name="create-a-file"></a>Creare un file
+#### <a name="create-a-file"></a>ファイルを作成する
 
 *New-Item c:\scripts\new_file.txt -type file name*
 
 
-## <a name="approve-or-deny-a-script"></a>Approvare o rifiutare uno script
+## <a name="approve-or-deny-a-script"></a>スクリプトの承認または拒否
 
-Prima di eseguire uno script, deve essere approvato. Per approvare uno script:
+スクリプトを実行する前に、そのスクリプトが承認されている必要があります。 スクリプトを承認するには、次の手順を実行します。
 
-1. Nella console di Configuration Manager fare clic su **Raccolta software**.
-2. Nell'area di lavoro **Raccolta software** fare clic su **Script**.
-3. Nell'elenco **Script** scegliere lo script che si desidera approvare o rifiutare e quindi scegliere la scheda **Home** nel gruppo **Script**, quindi fare clic su **Approve/Deny** (Approva/Rifiuta).
-4. Nella finestra di dialogo **Approva o rifiuta script** scegliere **Approva** o **Rifiuta** e, facoltativamente, immettere un commento sulla decisione. Se si rifiuta uno script, questo non può essere eseguito sui dispositivi client.
-5. Completare la procedura guidata. Nell'elenco **Script** la colonna **Stato dell'approvazione** cambia a seconda dell'azione eseguita.
+1. Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。
+2. **[ソフトウェア ライブラリ]** ワークスペースで **[スクリプト]** をクリックします。
+3. **[スクリプト]** リストで、承認または拒否するスクリプトを選択し、**[ホーム]** タブの **[スクリプト]** グループで、**[承認]/[拒否]** をクリックします。
+4. **[スクリプトの承認/拒否]** ダイアログ ボックスで、スクリプトの **[承認]** または **[拒否]** を選択し、必要に応じて決定に関するコメントを入力します。 スクリプトを拒否すると、クライアント デバイスでそのスクリプトを実行できません。
+5. ウィザードを完了します。 **[スクリプト]** リストの **[承認状態]** 列は、行った操作に応じて変わります。
 
-## <a name="run-a-script"></a>Esegui uno script
-Dopo che uno script è stato approvato, può essere eseguito su una raccolta a scelta dell'utente.
+## <a name="run-a-script"></a>[スクリプトの実行]
+スクリプトが承認されたら、選択したコレクションに対してそのスクリプトを実行できます。
 
-1. Nella console di Configuration Manager fare clic su **Asset e conformità**.
-2. Nell'area di lavoro Asset e conformità fare clic su **Raccolte dispositivi**.
-3. Nell'elenco **Raccolte dispositivi** fare clic sulla raccolta di dispositivi in cui si desidera eseguire lo script.
-4. Nella scheda **Home** nel gruppo **Tutti i sistemi** fare clic su **Esegui script**.
-5. Nella pagina **Script** della procedura guidata **Esegui Script** scegliere uno script dall'elenco. Vengono visualizzati solo gli script approvati.
-6. Fare clic su **Avanti** e completare la procedura guidata.
+1. Configuration Manager コンソールで、 **[資産とコンプライアンス]**をクリックします。
+2. [資産とコンプライアンス] ワークスペースで **[デバイス コレクション]** をクリックします。
+3. **[デバイス コレクション]** リストで、スクリプトを実行するデバイスのコレクションをクリックします。
+4. **[ホーム]** タブの **[すべてのシステム]** グループで、**[スクリプトの実行]**をクリックします。
+5. **スクリプトの実行**ウィザードの **[スクリプト]** ページで、リストからスクリプトを選択します。 承認済みスクリプトのみが表示されます。
+6. **[次へ]** をクリックして、ウィザードを完了します。
 
 >[!IMPORTANT]
->All'esecuzione dello script viene assegnato un periodo di un'ora. Se lo script non viene eseguito in questo periodo di tempo, ad esempio se il PC è spento, è necessario eseguirlo nuovamente.
+>スクリプトには、1 時間の実行期間が与えられます。 この期間内にスクリプトが実行されない場合 (PC の電源が切れている場合など)、この手順をもう一度実行する必要があります。
 
-## <a name="next-steps"></a>Passaggi successivi
+## <a name="next-steps"></a>次のステップ
 
-Dopo aver eseguito uno script sui dispositivi client, è possibile usare questa procedura per monitorare la riuscita dell'operazione.
+クライアント デバイスにスクリプトを実行したら、次の手順を使用して操作の成功を監視します。
 
-1. Nella console di Configuration Manager fare clic su **Monitoraggio**.
-2. Nell'area di lavoro **Monitoraggio** fare clic su **Stato script**.
-3. Nell'elenco **Stato script** sono visualizzati i risultati per ogni script eseguito nei dispositivi client. Un codice di uscita dello script uguale a **0** indica in genere che lo script è stato eseguito correttamente.
-
+1. Configuration Manager コンソールで、[ **監視**] をクリックします。
+2. **[監視]** ワークスペースで、**[スクリプトのステータス]** をクリックします。
+3. **[スクリプトのステータス]** リストには、クライアント デバイスで実行した各スクリプトの結果が表示されます。 スクリプトの終了コード **0** は、通常、スクリプトが正常に実行されたことを示します。

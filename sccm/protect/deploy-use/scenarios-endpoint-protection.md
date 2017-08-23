@@ -1,6 +1,6 @@
 ---
-title: Scenario Endpoint Protection protegge i computer da malware | Documentazione Microsoft
-description: Informazioni su come implementare Endpoint Protection in Configuration Manager per proteggere i computer da attacchi malware.
+title: "Endpoint Protection でマルウェアからコンピューターを保護するシナリオ | Microsoft Docs"
+description: "Configuration Manager で Endpoint Protection を実装してマルウェアからコンピューターを保護する方法について説明します。"
 ms.custom: na
 ms.date: 03/13/2017
 ms.prod: configuration-manager
@@ -10,71 +10,67 @@ ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 539c7a89-3c03-4571-9cb4-02d455064eeb
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: af0aafb4b7209d840676d16723509f399c662aad
 ms.openlocfilehash: b98684d44874ff246e4d675039c6e443aee82a62
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="example-scenario-using-system-center-endpoint-protection-to-protect-computers-from-malware-in-system-center-configuration-manager"></a>シナリオ例: System Center Configuration Manager でSystem Center Endpoint Protection を使用してマルウェアからコンピューターを保護する
 
-# <a name="example-scenario-using-system-center-endpoint-protection-to-protect-computers-from-malware-in-system-center-configuration-manager"></a>Scenario di esempio: uso di System Center Endpoint Protection per proteggere i computer dal malware in System Center Configuration Manager
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+このトピックには、Configuration Manager で Endpoint Protection を実装して、組織のコンピューターをマルウェアによる攻撃から保護する方法に関するサンプル シナリオを示します。  
 
-Questo argomento illustra uno scenario d'esempio di implementazione di Endpoint Protection in Configuration Manager per proteggere i computer di un'organizzazione da attacchi malware.  
+ John は、Woodgrove Bank の Configuration Manager 管理者です。 現在この銀行は System Center Endpoint Protection を使用して、マルウェアによる攻撃からコンピューターを保護しています。 また、Windows グループ ポリシーによって、社内のすべてのコンピューターで Windows ファイアウォールが有効になっていること、Windows ファイアウォールが新しいプログラムをブロックする場合にはユーザーに通知することが確認されています。  
 
- In questo scenario Giorgio è l'amministratore di Configuration Manager presso Woodgrove Bank. La banca attualmente usa System Center Endpoint Protection per proteggere i computer dagli attacchi malware. Inoltre, la banca usa Criteri di gruppo di Windows per garantire che Windows Firewall sia abilitato in tutti i computer dell'azienda e che venga visualizzata una notifica agli utenti quando Windows Firewall blocca un nuovo programma.  
+ John は、ウッドグローブ銀行のマルウェア対策ソフトウェアを System Center Endpoint Protection にアップグレードするよう依頼されています。アップグレードによって、最新のマルウェア対策機能を利用し、Configuration Manager コンソールからマルウェア対策ソリューションを一元管理できるようになります。 この実装を行うには、以下の要件があります。  
 
- A Giorgio è stato chiesto di aggiornare il software antimalware di Woodgrove Bank con System Center Endpoint Protection, in modo che la banca possa trarre vantaggio dalle funzionalità antimalware più recenti e sia in grado di gestire in modo centralizzato la soluzione antimalware dalla console di Configuration Manager. Questa implementazione presenta i requisiti seguenti:  
+-   Configuration Manager を使用して、現在グループ ポリシーによって管理されている Windows ファイアウォール設定を管理します。  
 
--   Usare Configuration Manager per gestire le impostazioni di Windows Firewall che sono attualmente gestite tramite i criteri di gruppo.  
+-   Configuration Manager ソフトウェア更新プログラムを使用して、マルウェア定義をコンピューターにダウンロードします。 ソフトウェア更新プログラムが利用できない場合 (たとえば、コンピューターが企業ネットワークに接続されていない場合など)、コンピューターは、Microsoft Update から定義ファイルの更新プログラムをダウンロードする必要があります。  
 
--   Usare gli aggiornamenti software di Configuration Manager per scaricare le definizioni malware nei computer. Se gli aggiornamenti software non sono disponibili, ad esempio se il computer non è connesso alla rete aziendale, i computer devono scaricare gli aggiornamenti delle definizioni da Microsoft Update.  
+-   ユーザーのコンピューターでは、毎日マルウェアのクイック スキャンを実行する必要があります。 ただしサーバーは、業務時間外の毎週土曜日午前 1 時に、フル スキャンを実行する必要があります。  
 
--   I computer degli utenti devono eseguire un'analisi rapida del malware ogni giorno. I server devono invece eseguire un'analisi completa ogni sabato, fuori dall'orario lavorativo, alle ore 1:00.  
+-   次のいずれかのイベントが発生するたびに電子メール アラートを送信します。  
 
--   Inviare un messaggio di avviso ogni volta che si verifica uno dei seguenti eventi:  
+    -   いずれかのコンピューターでマルウェアが検出される。  
 
-    -   Viene rilevato malware su qualsiasi computer  
+    -   5% を超えるコンピューターで同じマルウェアの脅威が検出される  
 
-    -   Viene rilevata la stessa minaccia di tipo malware in più del 5% dei computer  
+    -   任意の 24 時間以内に同じマルウェアの脅威が 6 回以上検出される  
 
-    -   Viene rilevata la stessa minaccia di tipo malware più di 5 volte nell'arco di 24 ore  
+    -   任意の 24 時間以内に 4 つ以上の異なる種類のマルウェアが検出される  
 
-    -   Vengono rilevati più di 3 tipi diversi di malware nell'arco di 24 ore  
+-   既存のマルウェア対策ソリューションをアンインストールします。  
 
--   Disinstallare la soluzione antimalware esistente.  
+ John は、Endpoint Protection を実装するために次の手順を実行します。  
 
- Giorgio esegue quindi la procedura seguente per implementare Endpoint Protection:  
+##  <a name="steps-to-implement-endpoint-protection"></a>Endpoint Protection を実装する手順を実行します。  
 
-##  <a name="steps-to-implement-endpoint-protection"></a>Passaggi per l'implementazione di Endpoint Protection  
-
-|Processo|Riferimento|  
+|プロセス|参照先|  
 |-------------|---------------|  
-|Giorgio rivede le informazioni disponibili sui concetti di base per Endpoint Protection in Configuration Manager.|Per informazioni generali su Endpoint Protection, vedere [Endpoint Protection in System Center Configuration Manager](endpoint-protection.md).|  
-|Giorgio esamina e implementa i prerequisiti necessari per l'uso di Endpoint Protection.|Per informazioni sui prerequisiti per Endpoint Protection, vedere [Pianificazione di Endpoint Protection](../plan-design/planning-for-endpoint-protection.md).|  
-|Giorgio installa il ruolo di sistema del sito di Endpoint Protection in un solo server di sistema del sito, nella parte superiore della gerarchia di Woodgrove Bank.|Per altre informazioni su come installare il ruolo di sistema del sito di Endpoint Protection, vedere "Prerequisiti" in [Configurare Endpoint Protection](configure-endpoint-protection.md).|  
-|Giorgio configura Configuration Manager per l'uso di un server SMTP per l'invio degli avvisi di posta elettronica.<br /><br /> **Nota:** è necessario configurare un server SMTP solo se si vuole ricevere una notifica tramite posta elettronica quando viene generato un avviso di Endpoint Protection.|Per altre informazioni, vedere [Configurare gli avvisi in Endpoint Protection](endpoint-configure-alerts.md).|  
-|Giorgio crea una raccolta di dispositivi che contiene tutti i computer e i server in cui installare il client di Endpoint Protection. Assegna a questa raccolta il nome **Tutti i computer protetti da Endpoint Protection**.<br /><br /> **Suggerimento:** non è possibile configurare avvisi per raccolte di utenti.|Per informazioni su come creare raccolte, vedere [Come creare raccolte in System Center Configuration Manager](../../core/clients/manage/collections/create-collections.md)|  
-|Configura gli avvisi seguenti per la raccolta: <br /><br />1) **Rilevato Malware**: Giorgio configura una gravità di avviso **critico**. <br /><br />2) **Lo stesso tipo di malware viene rilevato in un numero di computer**: Giorgio configura una gravità di avviso **critico** e specifica che l'avviso viene generato quando più del 5% dei computer esegue software dannoso rilevato. <br /><br />3) **Lo stesso tipo di software dannoso è stato rilevato più volte entro l'intervallo specificato in un computer**: Giorgio configura una gravità di avviso **critico** e specifica che l'avviso viene generato quando viene rilevato malware più di 5 volte in un periodo di 24 ore. <br /><br />4) **Più tipi di malware vengono rilevati nello stesso computer nell'intervallo specificato**: Giorgio configura una gravità di avviso **critico** e specifica che l'avviso viene generato quando vengono riscontrati più di 3 tipi di malware in un periodo di 24 ore.<br /><br /> Il valore di **gravità di avviso** indica il livello di avviso che verrà visualizzato nella console di Configuration Manager e negli avvisi ricevuti in un messaggio di posta elettronica.<br /><br /> Giorgio seleziona anche l'opzione **Visualizza questa raccolta nel dashboard di Endpoint Protection** in modo da poter monitorare gli avvisi nella console di Configuration Manager.|Vedere "Configurare gli avvisi per Endpoint Protection" in [Configurazione di Endpoint Protection in Configuration Manager](endpoint-configure-alerts.md).|  
-|Giorgio configura gli aggiornamenti software di Configuration Manager per scaricare e distribuire gli aggiornamenti delle definizioni tre volte al giorno tramite una regola di distribuzione automatica.|Per altre informazioni, vedere la sezione "Uso degli aggiornamenti software di Configuration Manager per recapitare gli aggiornamenti delle definizioni" in [Usare gli aggiornamenti software di Configuration Manager per recapitare gli aggiornamenti delle definizioni](endpoint-definitions-configmgr.md).|  
-|Giorgio verifica le impostazioni nel criterio antimalware predefinito, che contiene le impostazioni di sicurezza consigliate da Microsoft. Per consentire ai computer di eseguire un'analisi rapida ogni giorno, modifica le impostazioni seguenti:<br /><br /> 1) **Eseguire un'analisi veloce giornaliera nei computer client**: **Sì**.<br /><br /> 2) **Ora pianificazione analisi rapida giornaliera**:  **9.00**.<br /><br /> Giorgio nota che **Aggiornamenti distribuiti da Microsoft Update** è selezionata per impostazione predefinita come origine di aggiornamento delle definizioni. Ciò soddisfa il requisito aziendale per cui i computer devono scaricare le definizioni da Microsoft Update quando non possono ricevere gli aggiornamenti software di Configuration Manager.|Vedere [Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager](endpoint-antimalware-policies.md).|  
-|Giorgio crea una raccolta che contiene solo i server di Woodgrove Bank, denominata **Server di Woodgrove Bank**.|Vedere [Come creare le raccolte in System Center Configuration Manager](../../core/clients/manage/collections/create-collections.md)|  
-|Giorgio crea un criterio antimalware personalizzato, denominato **Criterio server di Woodgrove Bank**. Aggiunge solo le impostazioni per **Analisi pianificate** e apporta le modifiche seguenti:<br /><br /> **Tipo di analisi**:  **Completa**<br /><br /> **Giorno analisi**:  **Sabato**<br /><br /> **Ora analisi**: **1:00**<br /><br /> **Eseguire un'analisi rapida giornaliera dei computer client**:  **No**.|Vedere [Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager](endpoint-antimalware-policies.md).|  
-|Giorgio distribuisce il criterio antimalware personalizzato **Criterio server di Woodgrove Bank** nella raccolta **Server di Woodgrove Bank** .|Vedere "Per distribuire criteri antimalware nei computer client" nell'argomento [Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager](endpoint-antimalware-policies.md).|  
-|Giorgio crea un nuovo set di impostazioni dei dispositivi client personalizzate per Endpoint Protection e assegna loro il nome **Impostazioni di Endpoint Protection per Woodgrove Bank**.<br /><br /> **Nota:** se non si vuole installare e abilitare Endpoint Protection in tutti i client nella gerarchia, assicurarsi che le opzioni **Gestire il client Endpoint Protection nei computer client** e **Installare il client Endpoint Protection nei computer client** siano entrambe impostate a **No** nelle impostazioni client predefinite.|Per altre informazioni, vedere [Configurare le impostazioni client personalizzate per Endpoint Protection](endpoint-protection-configure-client.md).|  
-|Configura le impostazioni seguenti per Endpoint Protection:<br /><br /> **Gestire il client Endpoint Protection nei computer client**:  **Sì**<br /><br /> Questa impostazione e il relativo valore assicurano che tutti i client di Endpoint Protection esistenti installati vengano gestiti da Configuration Manager.<br /><br /> **Installare il client Endpoint Protection nei computer client**:  **Sì**.<br /><br /> **Rimuovere automaticamente il software antimalware installato in precedenza prima di installare Endpoint Protection**:  **Sì**.<br /><br /> Questa impostazione e il relativo valore soddisfano il requisito aziendale per cui il software antimalware esistente deve essere rimosso prima che Endpoint Protection venga installato e abilitato.|Per altre informazioni, vedere [Configurare le impostazioni client personalizzate per Endpoint Protection](endpoint-protection-configure-client.md).|  
-|Giorgio distribuisce le impostazioni client **Impostazioni di Endpoint Protection di Woodgrove Bank** alla raccolta **Tutti i computer protetti da Endpoint Protection**.|Vedere "Configurare le impostazioni client personalizzate per Endpoint Protection" in [Configurazione di Endpoint Protection in Configuration Manager](endpoint-antimalware-policies.md).|  
-|Giorgio usa la Creazione guidata criteri di Windows Firewall per creare un criterio configurando le impostazioni seguenti per il profilo di dominio:<br /><br /> 1) **Abilitare Windows Firewall**: **Sì**<br /><br /> 2)<br />                    **Notifica all'utente quando Windows Firewall blocca un nuovo programma**: **Sì**|Vedere [Come creare e distribuire criteri di Windows Firewall per Endpoint Protection in System Center Configuration Manager](../../protect/deploy-use/create-windows-firewall-policies.md)|  
-|Giorgio distribuisce i nuovi criteri firewall alla raccolta **Tutti i computer protetti da Endpoint Protection** che ha creato in precedenza.|Vedere "Per distribuire criteri di Windows Firewall" in [Come creare e distribuire criteri di Windows Firewall per Endpoint Protection in System Center Configuration Manager](create-windows-firewall-policies.md)|  
-|Giorgio usa le attività di gestione disponibili per Endpoint Protection per gestire i criteri antimalware e di Windows Firewall, per eseguire analisi su richiesta dei computer quando necessario, per imporre ai computer di scaricare le definizioni più recenti e per specificare altre azioni da eseguire quando viene rilevato malware.|Vedere [Come gestire i criteri antimalware e le impostazioni del firewall per Endpoint Protection in System Center Configuration Manager](endpoint-antimalware-firewall.md)|  
-|Giorgio usa i metodi seguenti per monitorare lo stato di Endpoint Protection e le azioni eseguite da Endpoint Protection:<br /><br /> 1) Tramite il nodo **Stato Endpoint Protection** di **Sicurezza** nell'area di lavoro **Monitoraggio**.<br /><br /> 2) Tramite il nodo **Endpoint Protection** nell'area di lavoro **Asset e conformità**.<br /><br /> 3) Tramite i report predefiniti di Configuration Manager.|Vedere [Come monitorare Endpoint Protection in System Center Configuration Manager](monitor-endpoint-protection.md)|  
+|John は、Configuration Manager での Endpoint Protection の基本概念に関して、提供されている情報を確認します。|Endpoint Protection の詳細については、「[System Center Configuration Manager での Endpoint Protection](endpoint-protection.md)」を参照してください。|  
+|Endpoint Protection を使用するために必要な前提条件を確認して実装します。|Endpoint Protection の前提条件の詳細については、「[Endpoint Protection の導入計画](../plan-design/planning-for-endpoint-protection.md)」を参照してください。|  
+|ウッドグローブ銀行の最上位階層にある 1 つのサイト システム サーバーにのみ Endpoint Protection サイト システムの役割をインストールします。|Endpoint Protection サイト システムの役割をインストールする方法について詳しくは、「[Configure Endpoint Protection](configure-endpoint-protection.md)」(Endpoint Protection の構成) の「前提条件」を参照してください。|  
+|SMTP サーバーを使用して電子メール アラートを送信するように Configuration Manager を構成します。<br /><br /> **注:** SMTP サーバーを構成する必要があるのは、Endpoint Protection アラートが生成されるときに電子メールで通知する場合のみです。|詳細については、「[Endpoint Protection のアラートを構成する](endpoint-configure-alerts.md)」を参照してください。|  
+|Endpoint Protection クライアントをインストールするすべてのコンピューターとサーバーが含まれるデバイス コレクションを作成します。 このコレクションに**「Endpoint Protection によって保護されるすべてのコンピューター」**という名前を付けます。<br /><br /> **ヒント:** ユーザーのコレクションに対してアラートを構成することはできません。|コレクションを作成する方法については、「[System Center Configuration Manager でコレクションを作成する方法](../../core/clients/manage/collections/create-collections.md)」を参照してください。|  
+|彼には、コレクションの次のアラートを構成します。 <br /><br />1) **マルウェアが検出された場合**: アラートの重要度 **[重大]** を構成します。 <br /><br />2) **多数のコンピューターで同じ種類のマルウェアが検出された場合**: アラートの重要度 **[重大]** を構成し、5% を超えるコンピューターでマルウェアが検出された場合にこのアラートが生成されることを指定します。 <br /><br />3) **同種類のマルウェアが指定時間内に特定のコンピューター上で繰り返し検出される場合**: アラートの重要度 **[重大]** を構成し、マルウェアが 24 時間以内に 6 回以上検出された場合にこのアラートが生成されることを指定します。 <br /><br />4) **複数の種類のマルウェアが指定時間内に特定のコンピューター上で検出される場合**: アラートの重要度 **[重大]** を構成し、4 種類以上のマルウェアが 24 時間以内に検出された場合にこのアラートが生成されることを指定します。<br /><br /> **[アラートの重要度]** の値は、Configuration Manager コンソールに、および電子メール メッセージで受信するアラートに表示されるアラート レベルを示します。<br /><br /> さらに、Configuration Manager コンソールでアラートを監視できるように、オプション **[このコレクションを Endpoint Protection ダッシュボードに表示する]** を選択します。|「[System Center Configuration Manager での Endpoint Protection の構成](endpoint-configure-alerts.md)」の「Endpoint Protection のアラートを構成する」を参照してください。|  
+|Configuration Manager ソフトウェア更新プログラムを、自動展開ルールを使用して 1 日に 3 回、定義の更新プログラムをダウンロードして展開するように構成します。|詳細については、「[Use Configuration Manager software updates to deliver definition updates](endpoint-definitions-configmgr.md)」(Configuration Manager ソフトウェア更新プログラムを使用して定義の更新プログラムを配信する) の「Configuration Manager ソフトウェア更新プログラムにより定義の更新プログラムを配信する」を参照してください。|  
+|既定のマルウェア対策ポリシーの設定を調べます。この設定には、Microsoft によって推奨されているセキュリティ ポリシーが含まれています。 毎日のクイック スキャンを実行するコンピューターに関しては、次の設定を変更します。<br /><br /> 1) **クライアント コンピューターでクイック スキャンを毎日実行する**: **はい**<br /><br /> 2) **日次クイック スキャンの実行予定時刻**: **午前 9:00**<br /><br /> 定義の更新プログラムのソースとして **[Microsoft Update から配信される更新プログラム]** が既定で選択されています。 この選択項目は、Configuration Manager ソフトウェアの更新プログラムを受信できない場合には、コンピューターは Microsoft Update から定義をダウンロードするというビジネス要件と合致します。|「[System Center Configuration Manager で Endpoint Protection 用にマルウェア対策ポリシーを作成し展開する方法](endpoint-antimalware-policies.md)」を参照してください。|  
+|**「ウッドグローブ銀行のサーバー」**という名前のウッドグローブ銀行のサーバーのみが含まれるコレクションを作成します。|[「System Center Configuration Manager でコレクションを作成する方法](../../core/clients/manage/collections/create-collections.md)」を参照してください|  
+|**「ウッドグローブ銀行のサーバー ポリシー」**という名前のカスタム マルウェア対策ポリシーを作成します。 **[スケジュールされたスキャン]** の設定にのみ、次の変更を加えます。<br /><br /> **スキャンの種類**:  **完全**<br /><br /> **スキャンの実行**:  **土曜日**<br /><br /> **スキャン時刻**: **午前 1:00**<br /><br /> **クライアント コンピューターでクイック スキャンを毎日実行する**:  **いいえ**|「[System Center Configuration Manager で Endpoint Protection 用にマルウェア対策ポリシーを作成し展開する方法](endpoint-antimalware-policies.md)」を参照してください。|  
+|**「ウッドグローブ銀行のサーバー ポリシー」** カスタム マルウェア対策ポリシーを **「ウッドグローブ銀行のサーバー」** コレクションに展開します。|「[Endpoint Protection 用にマルウェア対策ポリシーを作成し展開する方法](endpoint-antimalware-policies.md)」の「マルウェア対策ポリシーをクライアント コンピューターに展開するには」を参照してください。|  
+|Endpoint Protection の新しいカスタム クライアント デバイス設定セットを作成し、「**ウッドグローブ銀行の Endpoint Protection 設定**」という名前を付けます。<br /><br /> **注:** 階層内のすべてのクライアントにおいて Endpoint Protection をインストールして使用可能にする必要がない場合には、**[クライアント コンピューターの Endpoint Protection クライアントを管理する]** と **[Endpoint Protection クライアントをクライアント コンピューターにインストールする]** のどちらも既定のクライアント設定として **[いいえ]** に構成されていることを確認してください。|詳しくは、の「[Endpoint Protection のカスタム クライアント設定を構成する](endpoint-protection-configure-client.md)」を参照してください。|  
+|Endpoint Protection に関して以下の設定を構成します。<br /><br /> **[クライアント コンピューターの Endpoint Protection クライアントを管理する]**を実装するために次の手順を実行します。  **はい**<br /><br /> この設定と値を使用すると、インストールされている既存のすべての Endpoint Protection クライアントが Configuration Manager によって管理されます。<br /><br /> **Endpoint Protection クライアントをクライアント コンピューターにインストールする**:  **はい**<br /><br /> **Endpoint Protection をインストールする前に、インストールされているマルウェア対策ソフトウェアを自動的に削除する**:  **はい**<br /><br /> この設定と値を使用すると、Endpoint Protection がインストールされて利用可能になる前に、既存のマルウェア対策ソフトウェアが削除されるというビジネス要件が満たされます。|詳しくは、の「[Endpoint Protection のカスタム クライアント設定を構成する](endpoint-protection-configure-client.md)」を参照してください。|  
+|「**ウッドグローブ銀行の Endpoint Protection 設定**」クライアント設定を**「Endpoint Protection によって保護されたすべてのコンピューター」**コレクションに展開します。|「[Configuration Manager の Endpoint Protection の構成](endpoint-antimalware-policies.md)」の「Endpoint Protection のカスタム クライアント設定を構成する」を参照してください。|  
+|Windows ファイアウォール ポリシーの作成ウィザードを使用して、ドメイン プロファイル用の次の設定を構成してポリシーを作成します。<br /><br /> 1) **Windows ファイアウォールを有効にする**: **はい**<br /><br /> 2)<br />                    **Windows ファイアウォールが新しいプログラムをブロックしたときにユーザーに通知する**: **はい**|「[System Center Configuration Manager の Endpoint Protection 用 Windows ファイアウォール ポリシーを作成および展開する方法](../../protect/deploy-use/create-windows-firewall-policies.md)」を参照してください。|  
+|新しいファイアウォール ポリシーを、先に作成した**「Endpoint Protection によって保護されたすべてのコンピューター」**コレクションに展開します。|「[System Center Configuration Manager の Endpoint Protection 用 Windows ファイアウォール ポリシーを作成および展開する方法](create-windows-firewall-policies.md)」を参照してください。|  
+|Endpoint Protection に関して利用可能な管理タスクを使用して、マルウェア対策および Windows ファイアウォールのポリシーの管理、必要に応じたオンデマンドのコンピューター スキャンの実行、コンピューターにおける最新の定義の自動ダウンロード、マルウェアが検出されるときに追加実行する操作の指定を行います。|「[System Center Configuration Manager での Endpoint Protection のためのマルウェア対策ポリシーとファイアウォール設定の管理方法](endpoint-antimalware-firewall.md)」を参照してください。|  
+|次の方法によって、Endpoint Protection の状態、および Endpoint Protection が実行する処置を監視します。<br /><br /> 1) **[監視]** ワークスペースの **[セキュリティ]** で **[Endpoint Protection のステータス]** ノードを使用する。<br /><br /> 2) **[資産とコンプライアンス]** ワークスペースの **[Endpoint Protection]** ノードを使用する。<br /><br /> 3) Configuration Manager の組み込みレポートを使用する。|「[System Center Configuration Manager で Endpoint Protection を監視する方法](monitor-endpoint-protection.md)」を参照してください。|  
 
- Giorgio comunica la corretta implementazione di Endpoint Protection al suo manager e conferma che i computer di Woodgrove Bank sono ora protetti dalla funzionalità antimalware, in base ai requisiti aziendali che gli sono stati specificati.
-
+ John は、Endpoint Protection が正常に実装されたことを上司に報告し、ウッドグローブ銀行のコンピューターが、上司によって指示されたビジネス要件に従ってマルウェアから保護されていることを伝えます。

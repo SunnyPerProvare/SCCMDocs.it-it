@@ -1,75 +1,71 @@
 ---
-title: Gestire i client su Internet - Configuration Manager | Microsoft Docs
-description: Informazioni sulla gestione dei client con gateway di gestione cloud e sulla gestione basata su Internet in Configuration Manager.
+title: "インターネット上のクライアントの管理 - Configuration Manager | Microsoft Docs"
+description: "Configuration Manager でクラウド管理ゲートウェイとインターネット ベースのクライアント管理を使用するクライアント管理について説明します。"
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.assetid: c667d6af-80c4-485f-910c-896c0171fd00
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
-ms.openlocfilehash: 6104107429184f31df12db84089f41df1ef81539
-ms.contentlocale: it-it
-ms.lasthandoff: 01/24/2017
-
+ms.openlocfilehash: 1b6752be448e1062c97a3225db4fa8af9f4832a6
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="manage-clients-on-the-internet-with-configuration-manager"></a>インターネット上のクライアントを Configuration Manager で管理する
 
-# <a name="manage-clients-on-the-internet-with-configuration-manager"></a>Gestire i client in Internet con Configuration Manager
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+一般的に、Configuration Manager では、コンピューターやサーバーのほとんどは、管理機能を実行するサイト システム サーバーと同じ内部のプライベートまたはコーポレート ネットワークで物理的に管理されます。 ただし、インターネットに接続されている場合、サイト システム サーバーに到達するために仮想プライベート ネットワークを経由して接続することをクライアント コンピューターに要求せずに、コーポレート ネットワークの外部にあるクライアント コンピューターを管理できます。
 
-In Configuration Manager, la maggior parte dei computer e dei server gestiti si trovano in genere fisicamente nella stessa rete interna privata o aziendale dei server del sistema del sito che eseguono le funzioni di gestione. È tuttavia possibile gestire i computer client all'esterno della rete aziendale se sono connessi a Internet senza che sia necessaria la connessione tramite reti private virtuali per raggiungere i server del sistema del sito.
+Configuration Manager では、インターネットに接続されているクライアントを 2 つの方法で管理できます。
 
-Configuration Manager offre due modi per gestire i client connessi a Internet:
+-   クラウド管理ゲートウェイ
 
--   Gateway di gestione cloud
+-   インターネット ベースのクライアント管理
 
--   Gestione client basata su Internet
+## <a name="cloud-management-gateway"></a>クラウド管理ゲートウェイ
 
-## <a name="cloud-management-gateway"></a>Gateway di gestione cloud
+バージョン 1610 以降、Configuration Manager にはクラウド管理ゲートウェイが導入されています。 この新しい方法では、Microsoft Azure にデプロイされているクラウド サービスとそのサービスと通信する新しいサイト システム ロールの組み合わせでインターネット ベースのクライアントを管理できます。 クライアントはこのサービスを利用し、Configuration Manager と通信します。
 
-A partire dalla versione 1610, Configuration Manager introduce il gateway di gestione cloud. Questo nuovo metodo offre un modo per gestire i client basati su Internet usando una combinazione di un servizio cloud distribuito a Microsoft Azure e un nuovo ruolo del sistema del sito che comunica con il servizio. I client usano quindi il servizio per comunicare con Configuration Manager.
+利点: 
 
-Vantaggi:
+-   インフラストラクチャの追加投資は必要ありません。
 
--   Nessun investimento aggiuntivo in infrastrutture.
+-   オンプレミス インフラストラクチャをインターネットに公開しません。
 
--   Infrastruttura locale non esposta a Internet.
+-   このサービスを実行するクラウド仮想マシンは Azure により完全管理され、保守管理を必要としません。
 
--   Macchine virtuali cloud che eseguono il servizio completamente gestite da Azure e senza necessità di manutenzione.
+-   Configuration Manager コンソールで簡単にセットアップし、構成できます。
 
--   Facilità di impostazione e configurazione nella console di Configuration Manager.
+欠点: 
 
-Svantaggi:
+-   クラウド サブスクリプションにコストがかかります。
 
--   Costo di sottoscrizione al servizio cloud.
+-   管理データがクラウド サービス経由で送信されます。
 
--   Invio dei dati di gestione tramite il servizio cloud.
+詳細については、「[クラウド管理ゲートウェイの計画](plan-cloud-management-gateway.md)」を参照してください。
 
-Per altre informazioni, vedere [Plan for cloud management gateway](plan-cloud-management-gateway.md) (Pianificare il gateway di gestione cloud).
+## <a name="internet-based-client-management"></a>インターネット ベースのクライアント管理
 
-## <a name="internet-based-client-management"></a>Gestione client basata su Internet
+この方法は、管理目的でクライアントが通信する、インターネットに接続されたサイト システム サーバーに依存します。 この方法では、クライアントとサイト システム サーバーにインターネット ベースの管理を構成する必要があります。
 
-Questo metodo si basa sui server del sistema del sito con connessione a Internet con cui i client comunicano ai fini della gestione. Questo metodo richiede che client e server del sistema del sito siano configurati per la gestione basata su Internet.
+利点: 
 
-Vantaggi:
+-   クラウド サービスの依存関係はありません。
 
--   Nessuna dipendenza del servizio cloud.
+-   クラウド サブスクリプションに関連する追加コストはありません。
 
--   Nessun costo aggiuntivo associato alla sottoscrizione a un servizio cloud.
+-   サービスを提供するサーバーとロールを完全制御できます。
 
--   Controllo completo di server e ruoli che offrono il servizio.
+欠点: 
 
-Svantaggi:
+-   インフラストラクチャの追加投資が必要です。
 
--   Necessità di un investimento aggiuntivo in infrastrutture.
+-   追加のインフラストラクチャに運用費と間接費がかかります。
 
--   Carico e costo operativo di un'infrastruttura aggiuntiva.
+-   インフラストラクチャをインターネットに公開する必要があります。
 
--   Necessità di esporre l'infrastruttura a Internet.
-
-Per altre informazioni, vedere [Plan for Internet-based client management](plan-internet-based-client-management.md) (Pianificare la gestione client basata su Internet).
-
+詳細は、「[インターネット ベースのクライアント管理の計画](plan-internet-based-client-management.md)」を参照してください。

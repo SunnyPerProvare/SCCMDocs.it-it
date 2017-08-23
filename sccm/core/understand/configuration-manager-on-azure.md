@@ -1,184 +1,181 @@
 ---
-title: Configuration Manager in Azure | Microsoft Docs
-description: Informazioni sull&quot;uso di Configuration Manager in un ambiente Azure.
+title: "Azure の Configuration Manager | Microsoft Docs"
+description: "Azure 環境での Configuration Manager の使用に関する情報。"
 ms.custom: na
 ms.date: 03/27/2017
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.topic: article
 ms.assetid: d24257d8-8136-47f4-8e0d-34021356dc37
-caps.latest.revision: 2
+caps.latest.revision: "2"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: 5276ad999fc871496d79e6efff34d5edc6335380
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager in Azure: domande frequenti
-*Si applica a: System Center Configuration Manager (Current Branch)*
+# <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Azure の Configuration Manager - よく寄せられる質問
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Le domande e le risposte seguenti possono aiutare a capire quando usare e come configurare Configuration Manager in Microsoft Azure.
+次の質問と回答が、Microsoft Azure での Configuration Manager の使用のタイミングと構成方法を理解するのに役立つ場合があります。
 
-## <a name="general-questions"></a>Domande generali
-### <a name="my-company-is-trying-to-move-as-many-physical-servers-as-possible-to-microsoft-azure-can-i-move-configuration-manager-servers-to-azure"></a>L'azienda sta cercando di trasferire il maggior numero possibile di server fisici in Microsoft Azure; è possibile trasferire i server di Configuration Manager in Azure?
-Questo scenario è ovviamente supportato.  Vedere [Supporto per gli ambienti di virtualizzazione per System Center Configuration Manager](/sccm/core/plan-design/configs/support-for-virtualization-environments).
+## <a name="general-questions"></a>一般的な質問
+### <a name="my-company-is-trying-to-move-as-many-physical-servers-as-possible-to-microsoft-azure-can-i-move-configuration-manager-servers-to-azure"></a>会社で Microsoft Azure にできるだけ多くの物理サーバーを移動しようとしているのですが、Azure に Configuration Manager サーバーを移動することはできますか?
+もちろんできます。  「[System Center Configuration Manager の仮想環境のサポート](/sccm/core/plan-design/configs/support-for-virtualization-environments)」を参照してください。
 
-### <a name="great-my-environment-requires-multiple-sites-should-all-child-primary-sites-be-in-azure-with-the-central-administration-site-or-on-premises-what-about-secondary-sites"></a>Ottimo. L'ambiente richiede più siti. Tutti i siti primari figlio devono essere presenti in Azure con il sito di amministrazione centrale o locale? Qual è l'approccio da seguire per i siti secondari?
-Le comunicazioni da sito a sito (replica di database e basata su file) traggono vantaggio dalla prossimità dei siti ospitati in Azure. Tuttavia, tutto il traffico correlato ai client sarebbe remoto dai server del sito e dai sistemi del sito. Se si usa una connessione di rete veloce e affidabile tra Azure e la rete Intranet con un piano dati illimitato, un'opzione possibile è l'hosting dell'intera infrastruttura in Azure.
+### <a name="great-my-environment-requires-multiple-sites-should-all-child-primary-sites-be-in-azure-with-the-central-administration-site-or-on-premises-what-about-secondary-sites"></a>すばらしい。 現在の環境では複数のサイトが必要なのですが、 子プライマリ サイトをすべて、中央管理サイトと共に Azure に配置すべきですか? それともオンプレミスに配置すべきでしょうか?  また、セカンダリ サイトはどうすればよいですか?
+Azure でホストする場合、サイト間の近接通信 (ファイルベースおよびデータベース レプリケーション) が可能になります。 ただし、すべてのクライアントに関連するトラフィックはサイト サーバーとサイト システムから離れた場所で発生します。 無制限データ プランで Azure とイントラネット間の高速で信頼性の高い接続を使用する場合は、Azure ですべてのインフラストラクチャをホストすることを選択できます。
 
-Se invece si usa un piano dati a consumo e i costi e la larghezza di banda disponibile sono fattori da valutare con attenzione oppure se la connessione di rete tra Azure e la rete Intranet non è veloce o potrebbe non essere affidabile, è consigliabile inserire siti specifici (e i sistemi del sito) in locale e usare i controlli relativi alla larghezza di banda integrati in Configuration Manager.
+ただし、従量制課金接続プランを使用し、利用可能な帯域幅またはコストが気になる場合や、Azure とイントラネット間のネットワーク接続が高速でないか信頼できない可能性がある場合には、オンプレミスでの特定のサイト (およびサイト システム) の配置を検討し、Configuration Manager に組み込まれている帯域幅制御を使用するようにしてください。
 
-### <a name="is-having-configuration-manager-in-azure-a-saas-scenario-software-as-a-service"></a>Configuration Manager in Azure implementa uno scenario SaaS (Software come servizio)?
-No, si tratta di un servizio IaaS (Infrastruttura come servizio) perché i server di infrastruttura di Configuration Manager vengono ospitati nelle macchine virtuali di Azure.
+### <a name="is-having-configuration-manager-in-azure-a-saas-scenario-software-as-a-service"></a>Azure の Configuration Manager では SaaS (サービスとしてのソフトウェア) シナリオが適用されるのですか?
+いいえ。Azure Virtual Machines では Configuration Manager インフラストラクチャをホストするため、IaaS (サービスとしてのインフラストラクチャ) になります。
 
-### <a name="what-areas-should-i-pay-attention-to-when-considering-a-move-of-my-configuration-manager-infrastructure-to-azure"></a>A quali aree è necessario prestare attenzione quando si valuta la scelta di trasferire l'infrastruttura di Configuration Manager in Azure?
-Ottima domanda. Di seguito sono indicate le aree più importanti nell'ottica di questa decisione; ogni area viene esaminata in una sezione separata di questo argomento:
-1.    Rete
-2.    Disponibilità
-3.    Prestazioni
-4.    Costi
-5.    Esperienza utente
+### <a name="what-areas-should-i-pay-attention-to-when-considering-a-move-of-my-configuration-manager-infrastructure-to-azure"></a>Azure への Configuration Manager インフラストラクチャの移行を検討する場合、どのような点に注意すべきですか?
+いい質問です。この決定を行う際に最も重要な点はいくつかあるため、このトピックでは次のようにそれぞれ別々に説明します。
+1.  ネットワーク
+2.  可用性
+3.  パフォーマンス
+4.  コスト
+5.  ユーザー エクスペリエンス
 
-## <a name="networking"></a>Rete
-### <a name="what-about-networking-requirements-should-i-use-expressroute-or-an-azure-vpn-gateway"></a>Per quanto riguarda i requisiti di rete, è opportuno usare un Gateway VPN di Azure o ExpressRoute?
-Questa decisione molto importante. Le velocità e la latenza di rete possono influire sulle funzionalità tra il server del sito e i sistemi del sito remoti e sulle comunicazione client ai sistemi del sito. È consigliabile usare ExpressRoute. Configuration Manager non prevede tuttavia limitazioni all'uso del Gateway VPN di Azure. È opportuno esaminare attentamente i requisiti specifici, come prestazioni, applicazione di patch, distribuzione del software e distribuzione di sistemi operativi, di questa infrastruttura e adottare la scelta più appropriata di conseguenza. Ecco alcuni aspetti da valutare per ogni soluzione:
+## <a name="networking"></a>ネットワーク
+### <a name="what-about-networking-requirements-should-i-use-expressroute-or-an-azure-vpn-gateway"></a>ネットワーク要件はどうなっていますか? ExpressRoute または Azure VPN Gateway を使用する必要がありますか?
+ネットワークは非常に重要な決定事項です。 ネットワークの速度と待機時間が、サイト サーバーとリモート サイト システムおよびサイト システムへのクライアント通信機能に影響する可能性があります。 したがって、ExpressRoute を使用することをお勧めします。 ただし、Configuration Manager で Azure VPN Gateway を使用できないわけではありません。 このインフラストラクチャの要件 (パフォーマンス、修正プログラムの適用、ソフトウェアの配布、オペレーティング システムの展開) をよく確認したうえで、決定する必要があります。 各ソリューションの考慮事項は次のとおりです。
 
- - **ExpressRoute** (scelta consigliata)
-  - Estensione naturale per il data center, ovvero la possibilità di unire più data center
-  - Connessioni private tra i data center di Azure e l'infrastruttura
-  - Mancato uso della rete Internet pubblica
-  - Garanzia di affidabilità, velocità elevate, latenza inferiore ed elevata sicurezza
-  - Velocità fino a 10 Gb/s e opzioni del piano dati illimitato
- - **Gateway VPN**
-  - VPN da sito a sito/da punto a sito
-  - Traffico gestito tramite la rete Internet pubblica
-  - Uso di Internet Protocol Security (IPsec) e Internet Key Exchange (IKE)
+ - **ExpressRoute** (推奨)
+  - データセンターへの自然な拡張 (複数のデータセンターをつなげることができる)
+  - Azure データセンターとインフラストラクチャ間のプライベート接続
+  - パブリック インターネットを経由しない
+  - 信頼性、高速、低待機時間、高セキュリティを提供
+  - 最大で 10 gbps の速度と無制限データ通信プラン オプションを提供
+ - **VPN Gateway**
+  - サイト間/ポイント対サイト VPN
+  - パブリック インターネット経由のトラフィック
+  - インターネット プロトコル セキュリティ (IPsec) とインターネット キー交換 (IKE) を使用
 
-### <a name="expressroute-has-many-different-options-like-unlimited-vs-metered-different-speed-options-and-premium-add-on-which-should-i-choose"></a>ExpressRoute offre molte opzioni, come il piano dati a consumo e quello illimitato, diverse velocità e un componente aggiuntivo Premium. Qual è l'opzione migliore?
-La scelta delle opzioni dipende dallo scenario da implementare e dalla quantità di dati da distribuire. È possibile controllare il trasferimento di dati di Configuration Manager tra i server del sito e i punti di distribuzione, ma non è possibile controllare la comunicazione tra server del sito.   Quando si usa un piano dati a consumo, l'inserimento di siti specifici (e sistemi del sito) in locale e l'uso di [controlli relativi alla larghezza di banda predefiniti di Configuration Manager](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management) consentono di mantenere sotto controllo i costi associati all'uso di Azure.
+### <a name="expressroute-has-many-different-options-like-unlimited-vs-metered-different-speed-options-and-premium-add-on-which-should-i-choose"></a>ExpressRoute には、無制限と従量制課金、異なる速度オプション、Premium Add-on など、さまざまなオプションがありますが、 どれを選べばよいですか?
+選択するオプションは、実装シナリオや計画しているデータの配布量によって異なります。 サイト サーバーと配布ポイント間の Configuration Manager データ転送は制御できますが、サイト サーバー間の通信を制御することはできません。   従量制課金接続プランを使用する場合、オンプレミスで特定のサイト (およびサイト システム) を配置し、[Configuration Manager の組み込み帯域幅制御](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management)を使用すれば、Azure の使用コストの制御に役立ちます。
 
-### <a name="what-about-installation-requirements-like-active-directory-domains-do-i-still-need-to-join-my-site-servers-to-an-active-directory-domain"></a>Quali sono i requisiti di installazione, ad esempio per i domini di Active Directory? È necessario aggiungere i server del sito in un dominio di Active Directory?
-Sì. Quando si esegue il trasferimento in Azure, le [configurazioni supportate](/sccm/core/plan-design/configs/supported-configurations) rimangono invariate, inclusi i requisiti di Active Directory per l'installazione di Configuration Manager.
+### <a name="what-about-installation-requirements-like-active-directory-domains-do-i-still-need-to-join-my-site-servers-to-an-active-directory-domain"></a>Active Directory ドメインなどのインストール要件はどうなっていますか?  サイト サーバーを Active Directory ドメインに引き続き参加させる必要はありますか?
+○ Azure に移行しても、Configuration Manager のインストールに関する Active Directory 要件を含め、[サポートされる構成](/sccm/core/plan-design/configs/supported-configurations)は同じです。
 
-### <a name="i-understand-the-need-to-join-my-site-servers-to-an-active-directory-domain-but-can-i-use-azure-active-directory"></a>Sono consapevole del fatto che sia necessario aggiungere i server del sito in un dominio di Active Directory. È possibile usare Azure Active Directory?
-No, Azure Active Directory non è supportato attualmente. Tutti i server del sito devono essere membri di un [dominio di Active Directory di Windows](/sccm/core/plan-design/configs/support-for-active-directory-domains).
-
-
-
-## <a name="availability"></a>Disponibilità
-### <a name="one-of-the-reasons-i-am-moving-infrastructure-to-azure-is-the-promise-of-high-availability-can-i-take-advantage-of-high-availability-options-like-azure-vm-availability-sets-for-vms-that-i-will-use-for-configuration-manager"></a>Uno dei motivi del trasferimento dell'infrastruttura in Azure è la disponibilità elevata assicurata. È possibile sfruttare i vantaggi associati alle opzioni di disponibilità elevata, come i set di disponibilità di VM di Azure per le VM che verranno usate per Configuration Manager?
-Sì. I set di disponibilità di VM di Azure possono essere usati per i ruoli ridondanti del sistema del sito, come i punti di distribuzione o i punti di gestione.
-
-È possibile anche usarli per i server del sito di Configuration Manager. Ad esempio, i siti di amministrazione centrale e i siti primari possono tutti essere inclusi nello stesso set di disponibilità, in modo da garantire che non vengano riavviati nello stesso momento.
-
-### <a name="how-can-i-make-my-database-highly-available-can-i-use-azure-sql-database-or-do-i-have-to-use-microsoft-sql-server-in-a-vm"></a>Come è possibile rendere il database a disponibilità elevata? È possibile usare il database SQL di Azure? In alternativa è necessario usare Microsoft SQL Server in una VM?
-È necessario usare Microsoft SQL Server in una VM. Configuration Manager non supporta attualmente il server di Azure SQL. È tuttavia possibile usare funzionalità come i gruppi di disponibilità AlwaysOn per il server SQL. I [gruppi di disponibilità AlwaysOn](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database) sono consigliati e supportati ufficialmente a partire dalla versione 1602 di Configuration Manager.
-
-### <a name="can-i-use-azure-load-balancers-with-site-system-roles-like-management-points--or-software-update-points"></a>È possibile usare i servizi di bilanciamento del carico di Azure con i ruoli del sistema del sito come punti di gestione o punti di aggiornamento software?
-Anche se Configuration Manager non è stato testato con i servizi di bilanciamento del carico di Azure, non dovrebbero esistere effetti negativi sulle normali operazioni, se la funzionalità è trasparente per l'applicazione.
-
-
-## <a name="performance"></a>Prestazioni
-### <a name="what-factors-affect-performance-in-this-scenario"></a>Quali fattori influiscono sulle prestazioni in questo scenario?
-[Tipo e dimensioni della VM di Azure](https://azure.microsoft.com/documentation/articles/virtual-machines-size-specs), i dischi della VM di Azure (è consigliabile l'archiviazione Premium, in particolare per SQL Server), la latenza e le velocità di rete sono le aree più importanti.
-
-### <a name="so-tell-me-more-about-azure-virtual-machines-what-size-vms-should-i-use"></a>Sono disponibili altre informazioni sulle macchine virtuali di Azure, in particolare quali dimensioni di VM è consigliabile usare?
-In generale, la potenza di calcolo (CPU e memoria) deve soddisfare l'[hardware consigliato per System Center Configuration Manager](/sccm/core/plan-design/configs/recommended-hardware). Esistono tuttavia alcune differenze tra l'hardware del computer standard e le VM di Azure, soprattutto in relazione ai dischi usati da queste VM.  Le dimensioni di VM usate dipendono dalle dimensioni dell'ambiente. Ecco alcuni consigli:
-- Per le distribuzioni di produzione di dimensioni significative è consigliabile usare VM di Azure di classe "**S**" perché possono sfruttare i dischi di archiviazione Premium.  Le VM di classe "S" usano l'archiviazione BLOB e in generale non soddisfano i requisiti di prestazioni necessari per un'esperienza di produzione accettabile.
-- È opportuno usare più dischi di archiviazione Premium per assicurare maggiore scalabilità, con striping nella console di Gestione disco di Windows per ottimizzare il numero di IOPS (operazioni di input/output al secondo).  
-- È consigliabile usare più dischi Premium o di qualità migliore durante la distribuzione iniziale del sito (P30 anziché P20) e 2 x P30 anziché 1 x P30 in un volume con striping. Se in seguito è necessario ampliare le dimensioni della VM del sito per soddisfare carichi aggiuntivi, è possibile sfruttare la capacità aggiuntiva di CPU e memoria fornita da una VM di dimensioni maggiori. I dischi che possono sfruttare la velocità effettiva di IOPS (operazioni di input/output al secondo) aggiuntiva consentita da queste dimensioni della VM sono quindi già installati.
+### <a name="i-understand-the-need-to-join-my-site-servers-to-an-active-directory-domain-but-can-i-use-azure-active-directory"></a>Active Directory ドメインにサイト サーバーを参加させる必要があることはわかりましたが、Azure Active Directory は使用できますか?
+いいえ。現時点では Azure Active Directory はサポートされていません。 サイト サーバーは引き続き [Windows Active Directory ドメイン](/sccm/core/plan-design/configs/support-for-active-directory-domains)のメンバーである必要があります。
 
 
 
-Le tabelle seguenti elencano i conteggi di dischi consigliati nella fase iniziale da usare nei siti di amministrazione centrali e primari per installazioni di dimensioni diverse:
+## <a name="availability"></a>可用性
+### <a name="one-of-the-reasons-i-am-moving-infrastructure-to-azure-is-the-promise-of-high-availability-can-i-take-advantage-of-high-availability-options-like-azure-vm-availability-sets-for-vms-that-i-will-use-for-configuration-manager"></a>Azure にインフラストラクチャを移行する理由の 1 つは高可用性の保証です。 Configuration Manager で使用する VM の Azure VM 可用性セットのような高可用性オプションを利用できますか?
+はい。 Azure VM 可用性セットは、配布ポイントや管理ポイントのような冗長的なサイト システムの役割で使用できます。
 
-**Database del sito con percorso condiviso**: il sito di amministrazione centrale o primario con il database del sito sul server del sito:
+また、Configuration Manager サイト サーバーでも使用できます。 たとえば、中央管理サイトとプライマリ サイトをすべて同じ可用性セットに含めることができます。これは、同時に再起動されないようにするのに役立ちます。
 
-| Client desktop    |Dimensione VM consigliata|Dischi consigliati|
+### <a name="how-can-i-make-my-database-highly-available-can-i-use-azure-sql-database-or-do-i-have-to-use-microsoft-sql-server-in-a-vm"></a>データベースに高可用性を持たせるにはどうすればよいですか?  Azure SQL Database を使用できますか?  それとも VM では Microsoft SQL Server を使用する必要がありますか?
+VM では Microsoft SQL Server を使用する必要があります。 現時点では、Configuration Manager では Azure SQL Server はサポートされていません。 ただし、SQL Server の AlwaysOn 可用性グループのような機能を使用することができます。 [AlwaysOn 可用性グループ](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database)の使用をお勧めします。これは、Configuration Manager のバージョン 1602以降、公式にサポートされています。
+
+### <a name="can-i-use-azure-load-balancers-with-site-system-roles-like-management-points--or-software-update-points"></a>管理ポイントやソフトウェアの更新ポイントのようなサイト システムの役割で Azure Load Balancer を使用することはできますか?
+Configuration Manager は Azure Load Balancer でテストされていませんが、機能がアプリケーションに対して透過的である場合、通常の操作には悪影響はありません。
+
+
+## <a name="performance"></a>パフォーマンス
+### <a name="what-factors-affect-performance-in-this-scenario"></a>このシナリオではどのような要素がパフォーマンスに影響しますか?
+[Azure VM のサイズと種類](https://azure.microsoft.com/documentation/articles/virtual-machines-size-specs)、Azure VM ディスク (特に SQL Server では Premium Storage が推奨されます)、ネットワーク待機時間、および速度が最も重要です。
+
+### <a name="so-tell-me-more-about-azure-virtual-machines-what-size-vms-should-i-use"></a>Azure Virtual Machines について詳しく知りたいのですが、どのようなサイズの VM を使用すべきですか?
+一般に、コンピューティング (CPU およびメモリ) は [System Center Configuration Manager の推奨ハードウェア](/sccm/core/plan-design/configs/recommended-hardware)に対応する必要があります。 ただし、通常のコンピューター ハードウェアと Azure VM には、特にこれらの VM で使用されるディスクについて、いくつか異なる点があります。  使用する VM のサイズは使用環境の規模によって異なりますが、次のようないくつかの推奨事項があります。
+- 非常に大規模な運用環境の展開では、"**S**" クラスの Azure VM をお勧めします。 Premium Storage ディスクを活用できるためです。  "S" 以外のクラスの VM では BLOB ストレージが使用され、一般的に許容される運用エクスペリエンスで必要なパフォーマンス要件が満たされません。
+- 規模が大きい場合は複数の Premium Storage ディスクを使用する必要があり、最大 IOPS の Windows ディスク管理コンソールでストライピングする必要があります。  
+- 初期サイトの展開時にはより高性能な、または複数の Premium ディスクを使用することをお勧めします (P20 ではなく P30、あるいは 1xP30 ではなくストライプ ボリュームの 2xP30 など)。 その後、サイトで負荷の増加に伴い VM サイズを大きくする必要がある場合は、より大きなサイズの VM で提供される追加の CPU とメモリを利用できます。 より大きいサイズの VM で許可される追加の IOPS スループットを、既存のディスクで利用することもできます。
+
+
+
+次の表に、さまざまなサイズのインストールのプライマリおよび中央管理サイトで利用できる初期の推奨ディスク数をリストします。
+
+**併置されたサイト データベース** - サイト サーバー上のサイト データベースを持つプライマリまたは中央管理サイト:
+
+| デスクトップ クライアント    |推奨 VM サイズ|推奨ディスク|
 |--------------------|-------------------|-----------------|
-|**Fino a 25.000**       |   DS4_V2          |2 x P30 (con striping)  |
-|**Da 25.000 a 50.000**      |   DS13_V2         |2 x P30 (con striping)  |
-|**50.000 a 100.000**     |   DS14_V2         |3 x P30 (con striping)  |
+|**最大 25 K**       |   DS4_V2          |2xP30 (ストライプ)  |
+|**25 K から 50 K**      |   DS13_V2         |2xP30 (ストライプ)  |
+|**50 K から 100 K**     |   DS14_V2         |3xP30 (ストライプ)  |
 
 
-**Database del sito remoto**: il sito di amministrazione centrale o primario con il database del sito sul server remoto:
+**リモート サイト データベース** - リモート サーバー上のサイト データベースを持つプライマリまたは中央管理サイト:
 
-| Client desktop    |Dimensione VM consigliata|Dischi consigliati |
+| デスクトップ クライアント    |推奨 VM サイズ|推奨ディスク |
 |--------------------|-------------------|------------------|
-|**Fino a 25.000**       | Server del sito: F4S </br>Server di database: DS12_V2 | Server del sito: 1 x P30 </br>Server di database: 2 x P30 (con striping)  |
-|**Da 25.000 a 50.000**      | Server del sito: F4S </br>Server di database: DS13_V2 | Server del sito: 1 x P30 </br>Server di database: 2 x P30 (con striping)   |
-|**50.000 a 100.000**     | Server del sito: F8S </br>Server di database: DS14_V2 | Server del sito: 2 x P30 (con striping)   </br>Server di database: 3 x P30 (con striping)   |
+|**最大 25 K**       | サイト サーバー: F4S </br>データベース サーバー: DS12_V2 | サイト サーバー: 1xP30 </br>データベース サーバー: 2xP30 (ストライプ)  |
+|**25 K から 50 K**      | サイト サーバー: F4S </br>データベース サーバー: DS13_V2 | サイト サーバー: 1xP30 </br>データベース サーバー: 2xP30 (ストライプ)   |
+|**50 K から 100 K**     | サイト サーバー: F8S </br>データベース サーバー: DS14_V2 | サイト サーバー: 2xP30 (ストライプ)   </br>データベース サーバー: 3xP30 (ストライプ)   |
 
-Di seguito è riportato un esempio di configurazione per un numero di client compreso tra 50 e 100.000 su DS14_V2 con 3 dischi P30 in un volume con striping, con volumi logici separati per i file di installazione e di database di Configuration Manager:  ![VM)disks](media/vm_disks.png)  
+以下は、DS14_V2 で 50k ～ 100k クライアントを構成した例です。3xP30 のディスクがストライプ ボリュームで構成されており、別の論理ボリュームが Configuration Manager インストールとデータベース ファイルのために割り当てられています。 ![VM)disks](media/vm_disks.png)  
 
 
 
-## <a name="user-experience"></a>Esperienza utente
-### <a name="you-mention-that-user-experience-is-one-of-the-main-areas-of-importance-why-is-that"></a>L'esperienza utente è stata citata come una delle aree di maggiore importanza. Perché?
-Le decisioni adottate relative a rete, disponibilità, prestazioni e punto in cui inserire i server del sito di Configuration Manager possono avere effetti direttamente sugli utenti. È opportuno che il trasferimento in Azure sia trasparente agli utenti in modo che non riscontrino modifiche alle proprie interazioni quotidiane con Configuration Manager.
+## <a name="user-experience"></a>ユーザー エクスペリエンス
+### <a name="you-mention-that-user-experience-is-one-of-the-main-areas-of-importance-why-is-that"></a>ユーザー エクスペリエンスが主に重要な点の 1 つということですが、それはなぜですか?
+ネットワーク、可用性、パフォーマンス、および Configuration Manager サイト サーバーの配置場所に関する決定事項が、ユーザーに直接影響する場合があります。 Azure への移行はユーザーに対して透過的であるため、Configuration Manager との日常的な対話は変わらないと考えています。
 
-### <a name="ok-i-get-it-i-plan-to-install-a-single-stand-alone-primary-site-on-an-azure-virtual-machine-and-i-want-to-make-sure-my-costs-are-low-should-i-place-remote-site-systems-like-management-points-distribution-points-and-software-update-points-on-azure-virtual-machines-as-well-or-on-premises"></a>Ora questo aspetto è chiaro. È prevista l'installazione di un singolo sito primario autonomo in una macchina virtuale di Azure con l'obiettivo di mantenere bassi i costi. È consigliabile inserire i sistemi del sito (remoti), come i punti di gestione, i punti di distribuzione e i punti di aggiornamento del software, su macchine virtuali di Azure oppure in locale?
-Ad eccezione della comunicazione dal server del sito a un punto di distribuzione, queste comunicazioni tra server in un sito possono verificarsi in qualsiasi momento e non prevedono meccanismi per controllare l'uso della larghezza di banda di rete. Poiché non è possibile controllare la comunicazione tra sistemi del sito, è necessario considerare gli eventuali costi associati a queste comunicazioni.
+### <a name="ok-i-get-it-i-plan-to-install-a-single-stand-alone-primary-site-on-an-azure-virtual-machine-and-i-want-to-make-sure-my-costs-are-low-should-i-place-remote-site-systems-like-management-points-distribution-points-and-software-update-points-on-azure-virtual-machines-as-well-or-on-premises"></a>わかりました。 Azure Virtual Machine への単一のスタンドアロン プライマリ サイトのインストールを予定しており、コストを抑えられるかどうかを知りたいのですが、 Azure Virtual Machines にも (リモート) サイト システム (管理ポイント、配布ポイント、ソフトウェアの更新ポイントなど) を配置すべきですか? それともオンプレミスに配置すべきでしょうか?
+サイト サーバーから配布ポイントへの通信を除き、サイト内のサーバー同士がいつ通信するかは決まっておらず、ネットワーク帯域幅の使用も制御できません。 サイト システム間の通信は制御できないため、これらの通信に関するコストを考慮する必要があります。
 
-Altri fattori da considerare sono la velocità e la latenza di rete. Reti lente o inaffidabili potrebbero influire sulla funzionalità tra il server del sito e i sistemi del sito remoti e sulle comunicazione client ai sistemi del sito. Altri fattori importanti sono il numero di client gestiti che usano uno specifico sistema del sito e le funzionalità più usate.
-In generale, è possibile sfruttare le indicazioni standard in relazione ai collegamenti WAN e ai sistemi del sito come punto di partenza. Idealmente, la velocità effettiva di rete selezionata e ottenuta tra Azure e la rete Intranet sarà coerente con una rete WAN connessa in modo appropriato con una rete veloce.
+ネットワークの速度や待機時間も考慮する必要があります。 低速ネットワークや信頼できないネットワークは、サイト サーバーとリモート サイト システム間およびサイト システムへのクライアント通信機能に影響する可能性があります。 よく使用する機能だけでなく、特定のサイト システムを使用する管理対象クライアントの数も考慮する必要があります。
+一般に、開始点として WAN リンクとサイト システムに関する通常のガイダンスを利用できます。 選択する Azure とイントラネット間の受信ネットワーク スループットが、高速ネットワークに適切に接続されている WAN と一致するのが理想的です。
 
-### <a name="what-about-content-distribution-and-content-management-should-standard-distribution-points-be-in-azure-or-on-premises-and-should-i-use-branchcache-or-pull-distribution-points-on-premises-or-should-i-make-exclusive-use-of-cloud-distribution-points"></a>Qual è l'approccio alla distribuzione e alla gestione dei contenuti? I punti di distribuzione standard devono essere inseriti in Azure o in locale? È consigliabile usare BranchCache o i punti di distribuzione pull locali? In alternativa, è opportuno usare esclusivamente i punti di distribuzione del cloud?
-L'approccio alla gestione dei contenuti è molto simile per i server del sito e i sistemi del sito.
-- Se si usa una connessione di rete veloce e affidabile tra Azure e la rete Intranet con un piano dati illimitato, un'opzione possibile è l'hosting dei punti di distribuzione standard in Azure.
--  Se si usa un piano dati a consumo e la larghezza di banda è un fattore da valutare con attenzione o la connessione di rete tra Azure e la rete Intranet non è veloce o potrebbe non essere affidabile, è consigliabile valutare altri approcci. Alcune alternative sono l'inserimento di punti di distribuzione pull o standard in locale e l'uso di BranchCache. Un'opzione possibile è l'uso di punti di distribuzione basati su cloud, ma vi sono alcuni limiti ai tipi di contenuto supportati, ad esempio non vengono supportati i pacchetti di aggiornamenti software.
+### <a name="what-about-content-distribution-and-content-management-should-standard-distribution-points-be-in-azure-or-on-premises-and-should-i-use-branchcache-or-pull-distribution-points-on-premises-or-should-i-make-exclusive-use-of-cloud-distribution-points"></a>コンテンツ配信とコンテンツ管理はどうなっていますか?  標準配布ポイントは Azure またはオンプレミスになければならないのでしょうか? また、BranchCache やプル配布ポイントはオンプレミスで使用すべきですか?  それとも、クラウド配布ポイントのみを使用すべきでしょうか? 
+コンテンツ管理の方法は、サイト サーバーやサイト システムの場合とほとんど同じです。
+- 無制限データ プランで Azure とイントラネット間の高速で信頼性の高いネットワーク接続を使用する場合は、Azure で標準配布ポイントをホストすることを選択できます。
+-  従量制課金接続プランと帯域幅コストが気になる場合や、Azure とイントラネット間のネットワーク接続が高速でないか信頼できない可能性がある場合には、他の方法を検討してください。 これには、オンプレミスでの標準またはプル配布ポイントの配置と BranchCache の使用が含まれます。 クラウドベースの配布ポイントを使用することもできますが、サポートされるコンテンツの種類にはいくつか制限があります (ソフトウェア更新プログラム パッケージがサポートされないなど)。
 
 > [!NOTE]
->  Se è necessario il supporto PXE, usare i punti di distribuzione (standard o pull) locali per soddisfare le richieste di avvio. [WDS non è attualmente supportato per l'esecuzione su VM di Azure](https://technet.microsoft.com/library/hh831764(v=ws.11).aspx).
+>  PXE サポートが必要な場合は、オンプレミスの配布ポイント (標準またはプル) を使用してブート要求に応じる必要があります。 [WDS は現在、Azure VM で実行できません](https://technet.microsoft.com/library/hh831764(v=ws.11).aspx)。
 
 
-### <a name="while-i-am-ok-with-the-limitations-of-cloud-based-distribution-points-i-dont-want-to-put-my-management-point-into-a-dmz-even-though-that-is-needed-to-support-my-internet-based-clients-do-i-have-any-other-options"></a>Sebbene le limitazioni relative ai punti di distribuzione basati su cloud non rappresentino un problema, non intendo inserire il punto di gestione in una rete perimetrale, anche se ciò è necessario per supportare i client basati su Internet. Sono disponibili altre opzioni?
-Sì. Con Configuration Manager versione 1610, è stato introdotto il [gateway di gestione cloud](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) come funzionalità di versione non definitiva (introdotta inizialmente nella Technical Preview versione 1606 con il nome di [servizio proxy cloud](/sccm/core/get-started/capabilities-in-technical-preview-1606#a-namecloudproxyacloud-proxy-service-for-managing-clients-on-the-internet)).
+### <a name="while-i-am-ok-with-the-limitations-of-cloud-based-distribution-points-i-dont-want-to-put-my-management-point-into-a-dmz-even-though-that-is-needed-to-support-my-internet-based-clients-do-i-have-any-other-options"></a>クラウドベース配布ポイントの制限についてはわかりましたが、インターネット ベースのクライアントをサポートするために必要でも、DMZ に管理ポイントを配置したくありません。 他の選択肢はありますか?
+はい。 Configuration Manager のバージョン 1610 では、プレリリース機能として[クラウド管理ゲートウェイ](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway)をご紹介しました  (この機能は、[クラウド プロキシ サービス](/sccm/core/get-started/capabilities-in-technical-preview-1606#a-namecloudproxyacloud-proxy-service-for-managing-clients-on-the-internet)として、Technical Preview バージョン 1606 で初めて登場しました)。
 
-Il **gateway di gestione cloud** consente di gestire i client di Configuration Manager su Internet in modo semplice. Il servizio, che viene distribuito in Microsoft Azure e richiede una sottoscrizione di Azure, si connette all'infrastruttura di Configuration Manager locale usando un nuovo ruolo, denominato punto del connettore gateway di gestione cloud. Dopo aver completato la distribuzione e la configurazione, i client sono in grado di accedere ai ruoli del sistema del sito Configuration Manager locale, indipendentemente dal fatto che siano connessi alla rete privata interna o su Internet.
+**クラウド管理ゲートウェイ**は、インターネット上で Configuration Manager クライアントを管理する簡単な方法を提供します。 Microsoft Azure にデプロイされ、Azure サブスクリプションを必要とするサービスは、クラウド管理ゲートウェイ コネクタ ポイントと呼ばれる新しい役割を使用して、オンプレミスの Configuration Manager インフラストラクチャに接続します。 デプロイされ、構成されると、クライアントは内部のプライベート ネットワークに接続しているかどうか、またはインターネット上にあるかどうかに関係なく、オンプレミスの Configuration Manager サイト システムの役割にアクセスできます。
 
-È possibile iniziare a usare il gateway di gestione cloud nel proprio ambiente e inviare commenti e suggerimenti per migliorare il servizio. Per informazioni sulle funzionalità di versioni non definitive, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkprereleasea-use-pre-release-features-from-updates).
+実際の環境でクラウド管理ゲートウェイの使用を開始できます。フィードバックをお送りいただくことで、改善することができます。 プレリリース機能の詳細については、「[更新プログラムからプレリリース機能を使用する](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkprereleasea-use-pre-release-features-from-updates)」を参照してください。
 
-### <a name="i-also-heard-that-you-have-another-new-feature-called-peer-cache-introduced-as-a-pre-release-feature-in-version-1610-is-that-different-than-branchcache-which-one-should-i-choose"></a>Inoltre, nella versione 1610 è prevista una nuova funzionalità denominata peer cache, introdotta come funzionalità di versione non definitiva. È diversa da BranchCache? Qual è l'opzione migliore?
-Sì, è completamente diversa. [Peer cache](/sccm/core/plan-design/hierarchy/client-peer-cache) è una tecnologia nativa al 100% di Configuration Manager, mentre BranchCache è una funzionalità di Windows. Entrambe possono essere utili. BranchCache usa un broadcast per trovare il contenuto richiesto mentre peer cache usa le impostazioni relative al gruppo di limiti e al flusso di lavoro di distribuzione standard di Configuration Manager.
+### <a name="i-also-heard-that-you-have-another-new-feature-called-peer-cache-introduced-as-a-pre-release-feature-in-version-1610-is-that-different-than-branchcache-which-one-should-i-choose"></a>バージョン 1610 のプレリリース機能として導入されたピア キャッシュという新機能もあると聞きましたが、 BranchCache とは異なるものですか?  どちらを選べばよいですか?
+はい、まったく異なるものです。 [ピア キャッシュ](/sccm/core/plan-design/hierarchy/client-peer-cache)は Configuration Manager の 100% ネイティブのテクノロジですが、BranchCache は Windows の機能の 1 つです。 どちらも便利ですが、BranchCache ではブロードキャストを使用して必要なコンテンツを検索するのに対して、ピア キャッシュでは Configuration Managers の通常の配布ワークフローと境界グループの設定を使用します。
 
-È possibile configurare qualsiasi client come origine della peer cache. Quando i punti di gestione forniscono ai client informazioni sui percorsi di origine del contenuto, forniscono informazioni dettagliate su tutte le origini di peer cache che contengono il contenuto e i punti di distribuzione richiesti dal client.
+任意のクライアントをピア キャッシュのソースとして構成することができます。 そうすれば、管理ポイントがコンテンツ ソースの場所に関する情報を提供する際に、クライアントで必要なコンテンツがあるピア キャッシュ ソースと配布ポイントの両方の詳細が提供されます。
 
 
-## <a name="cost"></a>Costi
-### <a name="ok-tell-me-a-bit-about-the-cost-will-this-be-a-cost-effective-solution-for-me"></a>Quali sono i dettagli relativi ai costi? Questa soluzione sarà vantaggiosa?
-È difficile da stabilire poiché ogni ambiente è diverso. L'approccio migliore è quello di calcolare il prezzo per il proprio ambiente mediante il calcolatore prezzi di Microsoft Azure: https://azure.microsoft.com/pricing/calculator/
+## <a name="cost"></a>コスト
+### <a name="ok-tell-me-a-bit-about-the-cost-will-this-be-a-cost-effective-solution-for-me"></a>わかりました。では、コストについて簡単に説明してください。 これは費用対効果の高い方法ですか?
+使用環境はそれぞれ異なるため、何とも言えません。 Microsoft Azure の料金計算ツール (https://azure.microsoft.com/pricing/calculator/) を使用して、ご使用の環境でかかる費用を見積もることをお勧めします。
 
-## <a name="additional-resources"></a>Risorse aggiuntive
-**Nozioni fondamentali:** http://azure.microsoft.com/documentation/articles/fundamentals-introduction-to-azure/
+## <a name="additional-resources"></a>その他の資料
+**基本:** http://azure.microsoft.com/documentation/articles/fundamentals-introduction-to-azure/
 
-**Tipi di VM di Azure:**
- - Dimensioni delle macchine virtuali in Azure: https://azure.microsoft.com/documentation/articles/virtual-machines-size-specs/  
- - Prezzi delle VM: http://azure.microsoft.com/pricing/details/virtual-machines/  
- - Prezzi di Archiviazione di Azure: http://azure.microsoft.com/pricing/details/storage/
+**Azure Virtual Machine の種類:**
+ - Azure Machine のサイズ: https://azure.microsoft.com/documentation/articles/virtual-machines-size-specs/  
+ - VM の料金: http://azure.microsoft.com/pricing/details/virtual-machines/  
+ - Storage の料金: http://azure.microsoft.com/pricing/details/storage/
 
-**Considerazioni sulle prestazioni dei dischi:**    
- - Introduzione ai dischi Premium: http://azure.microsoft.com/blog/2014/12/11/introducing-premium-storage-high-performance-storage-for-azure-virtual-machine-workloads/  
- - Informazioni più dettagliate sui dischi Premium: http://azure.microsoft.com/documentation/articles/storage-premium-storage-preview-portal/   
- - Raccolta di grafici per gli obiettivi di prestazioni e scalabilità per Archiviazione di Azure: https://azure.microsoft.com/documentation/articles/storage-scalability-targets/  
- - Introduzione e dati tecnici sul funzionamento dettagliato di Archiviazione Premium: http://azure.microsoft.com/blog/2015/04/16/azure-premium-storage-now-generally-available-2/
+**ディスク パフォーマンスに関する考慮事項:**    
+ - Premium ディスクの概要: http://azure.microsoft.com/blog/2014/12/11/introducing-premium-storage-high-performance-storage-for-azure-virtual-machine-workloads/  
+ - Premium ディスクの詳細情報: http://azure.microsoft.com/documentation/articles/storage-premium-storage-preview-portal/   
+ - Storage の最大サイズとパフォーマンス ターゲットに関する便利なグラフ コレクション: https://azure.microsoft.com/documentation/articles/storage-scalability-targets/  
+ - Premium Storage のしくみに関するその他の概要とかなり専門的ないくつかの役立つデータ: http://azure.microsoft.com/blog/2015/04/16/azure-premium-storage-now-generally-available-2/
 
-**Disponibilità:**
- - Contratti di servizio (SLA) sui tempi di attività Azure IaaS: https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_0/  
- - Descrizione dei set di disponibilità: https://azure.microsoft.com/documentation/articles/virtual-machines-manage-availability/
+**可用性:**
+ - Azure IaaS の稼働時間 SLA: https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_0/  
+ - 可用性セットの説明: https://azure.microsoft.com/documentation/articles/virtual-machines-manage-availability/
 
-**Connettività:**
- - ExpressRoute e VPN di Azure: http://azure.microsoft.com/blog/2014/06/10/expressroute-or-virtual-network-vpn-whats-right-for-me/
- - Prezzi di ExpressRoute: http://azure.microsoft.com/pricing/details/expressroute/
- - Altre informazioni su ExpressRoute: http://azure.microsoft.com/documentation/articles/expressroute-introduction/
+**接続:**
+ - ExpressRoute と Azure VPN: http://azure.microsoft.com/blog/2014/06/10/expressroute-or-virtual-network-vpn-whats-right-for-me/
+ - ExpressRoute の料金: http://azure.microsoft.com/pricing/details/expressroute/
+ - ExpressRoute の詳細: http://azure.microsoft.com/documentation/articles/expressroute-introduction/
 
  
-

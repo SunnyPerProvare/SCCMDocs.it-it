@@ -1,53 +1,49 @@
 ---
-title: 'Gestione dei client di un&quot;infrastruttura VDI | Microsoft Docs '
-description: Gestire i client di System Center Configuration Manager in un&quot;infrastruttura VDI (Virtual Desktop Infrastructure).
+title: "仮想デスクトップ インフラストラクチャ (VDI) クライアント管理 | Microsoft Docs "
+description: "仮想デスクトップ インフラストラクチャ (VDI) で System Center Configuration Manager クライアントを管理します。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: abd45393-d84e-4583-bc80-74bbb3709577
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 58251f6a4eebac4cba9f3d51f8d0aaad068c3ab8
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: d73daf6427b8c58d21d579f3b41df513cc3e3b0b
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="considerations-for-managing-system-center-configuration-manager-clients--in-a-virtual-desktop-infrastructure-vdi"></a>Considerazioni per la gestione dei client di System Center Configuration Manager in un'infrastruttura VDI (Virtual Desktop Infrastructure)
+# <a name="considerations-for-managing-system-center-configuration-manager-clients--in-a-virtual-desktop-infrastructure-vdi"></a>仮想デスクトップ インフラストラクチャ (VDI) で System Center Configuration Manager クライアントを管理するための考慮事項
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager supporta l'installazione del client di Configuration Manager nei seguenti scenari di infrastruttura VDI:  
+System Center Configuration Manager では、次の仮想デスクトップ インフラストラクチャ (VDI) シナリオでの Configuration Manager クライアントのインストールがサポートされています。  
 
--   **Macchine virtuali personali**: le macchine virtuali personali vengono in genere usate quando ci si desidera assicurare che i dati e le impostazioni utente vengano mantenute sulla macchina virtuale tra le sessioni.  
+-   **パーソナル バーチャル マシン** - パーソナル バーチャル マシンは、一般的に、セッション間でユーザーのデータと設定をバーチャル マシンに保持する場合に使用します。  
 
--   **Sessioni di Servizi Desktop remoto**: i Servizi Desktop remoto consentono a un server di ospitare più sessioni client simultanee. Gli utenti possono connettersi a una sessione e quindi eseguire le applicazioni su tale server.  
+-   **リモート デスクトップ サービス セッション** - リモート デスクトップ サービスを使用して、1 つのサーバーで複数の同時クライアント セッションをホストできます。 ユーザーはセッションに接続し、そのサーバーでアプリケーションを実行できます。  
 
--   **Macchine virtuali in pool**: le macchine virtuali in pool non sono persistenti tra le sessioni. Alla chiusura di una sessione tutti i dati e le impostazioni vengono rimossi. Le macchine virtuali in pool sono utili quando i Servizi Desktop remoto non possono essere usati perché un'applicazione aziendale richiesta non può essere eseguita sul Windows Server che ospita le sessioni client.  
+-   **プール バーチャル マシン** - プール バーチャル マシンはセッション間で保持されません。 セッションを閉じると、すべてのデータと設定が破棄されます。 プール バーチャル マシンは、クライアント セッションをホストする Windows Server で必要なビジネス アプリケーションを実行できないことが原因で、リモート デスクトップ サービスを使用できない場合に有用です。  
 
- Nella tabella seguente è riportato l'elenco di considerazioni per la gestione del client di Configuration Manager in un'infrastruttura VDI.  
+ 仮想デスクトップ インフラストラクチャで Configuration Manager クライアントを管理する場合の考慮事項の一覧を次の表に示します。  
 
-|Tipo di macchina virtuale|Considerazioni|  
+|バーチャル マシンの種類|注意事項|  
 |--------------------------|--------------------|  
-|Macchine virtuali personali|Configuration Manager considera le macchine virtuali personali in modo identico a un computer fisico. Il client di Configuration Manager può essere preinstallato sull'immagine della macchina virtuale o distribuito dopo il provisioning della macchina virtuale.|  
-|Servizi Desktop remoto|Il client di Configuration Manager non viene installato per singole sessioni di Desktop remoto. Al contrario, il client viene installato solo una volta sul server dei Servizi Desktop remoto. Tutti le funzionalità di Configuration Manager possono essere usate nel server dei Servizi Desktop remoto.|  
-|Macchine virtuali in pool|Quando viene effettuata la rimozione di una macchina virtuale in pool, vengono perse tutte le modifiche effettuate usando Configuration Manager .<br /><br /> I dati restituiti dalle funzionalità di Configuration Manager , come l'inventario hardware, l'inventario software e il controllo software potrebbero non essere rilevanti per le esigenze dell'utente, mentre la macchina virtuale potrebbe essere operativa solo per un breve periodo di tempo. Prendere in considerazione l'esclusione delle macchine virtuali in pool dalle attività di inventario.|  
+|パーソナル バーチャル マシン|Configuration Manager ではパーソナル バーチャル マシンを物理コンピューターと同じものとして扱います。 Configuration Manager クライアントは、バーチャル マシン イメージに事前インストールするか、バーチャル マシンの事前準備の後に展開できます。|  
+|リモート デスクトップ サービス|Configuration Manager クライアントは、個別のリモート デスクトップ セッション用にインストールされません。 クライアントは、リモート デスクトップ サービス サーバーに一度だけインストールされます。 リモート デスクトップ サービス サーバーではすべての Configuration Manager 機能を使用できます。|  
+|プール バーチャル マシン|プール バーチャル マシンを使用停止すると、Configuration Manager を使用して行った変更はすべて失われます。<br /><br /> バーチャル マシンは短時間のみ運用されることがあるため、ハードウェア インベントリ、ソフトウェア インベントリ、ソフトウェア メータリングなどの Configuration Manager 機能から返されるデータはニーズと関係がない可能性があります。 インベントリ タスクからプール バーチャル マシンを除外することを考慮してください。|  
 
- Poiché la virtualizzazione supporta l'esecuzione di più client di Configuration Manager sullo stesso computer fisico, molte operazioni client hanno un ritardo casuale incorporato per azioni pianificate come l'inventario hardware e l'inventario software, le scansioni antimalware, le installazioni software e le scansioni di aggiornamento software. Questo ritardo consente di distribuire l'elaborazione della CPU e il trasferimento dei dati per un computer che ha più macchine virtuali con il client di Configuration Manager in esecuzione.  
+ 仮想化では、同一の物理コンピューターでの複数の Configuration Manager クライアントの実行がサポートされるため、多くのクライアント操作には、ハードウェアおよびソフトウェア インベントリ、マルウェア対策スキャン、ソフトウェアのインストール、ソフトウェア更新プログラムのスキャンなどのスケジュールされた操作で、組み込みのランダム待機時間があります。 この待機時間に、Configuration Manager クライアントを実行する複数のバーチャル マシンを持つコンピューターの CPU 処理とデータ転送を分散することができます。  
 
 > [!NOTE]  
->  Con l'eccezione dei client di Windows Embedded che sono in modalità di manutenzione, anche i client di Configuration Manager che non sono in esecuzione in ambienti virtualizzati usano il ritardo casuale. Quando si è eseguita la distribuzione di molti client, questo comportamento consente di evitare dei picchi nella larghezza di banda di rete e riduce il requisito di elaborazione CPU nei sistemi del sito di Configuration Manager, come il punto di gestione e il server del sito. L'intervallo di ritardo varia in base alle funzionalità di Configuration Manager.  
+>  保守モードの Windows Embedded クライアントを除き、仮想化環境で実行されていない Configuration Manager クライアントも、このランダム待機時間を使用します。 多くのクライアントが展開されている場合、この動作によって、ネットワーク帯域幅のピークを回避し、管理ポイントやサイト サーバーなどの Configuration Manager サイト システムの CPU 処理要件を減らすことができます。 待機時間の間隔は、Configuration Manager の機能によって変わります。  
 >   
->  Il ritardo casuale è disabilitato per impostazione predefinita per le distribuzioni di applicazioni e gli aggiornamenti software richiesti usando le impostazioni client seguenti: **Agente computer**: **Disabilitare sequenza casuale scadenza**.
-
+>  次のクライアント設定を使用して、必要なソフトウェア更新プログラムと必要なアプリケーション展開のランダム待機時間を既定で無効にできます。 **コンピューター エージェント**: **期限のランダム化を無効にする**。

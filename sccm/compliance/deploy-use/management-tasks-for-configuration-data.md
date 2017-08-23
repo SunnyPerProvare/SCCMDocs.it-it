@@ -1,66 +1,59 @@
 ---
-title: Gestire i dati di configurazione | Microsoft Docs
-description: "Dopo aver creato gli elementi e le linee di base di configurazione in System Center Configuration Manager è possibile usare altri comandi per eseguire diverse azioni."
+title: "構成データの管理 | Microsoft Docs"
+description: "System Center Configuration Manager で構成項目と基準を作成した後は、他のコマンドを使ってさまざまなアクションを実行できます。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b48c693c-d2b0-4707-a5dd-fe92172c49fe
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
 ms.openlocfilehash: 1a6084834384e695b49a71fe23833049c86f8dbc
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-configuration-data-in-system-center-configuration-manager"></a>Gestire i dati di configurazione in System Center Configuration Manager
+# <a name="manage-configuration-data-in-system-center-configuration-manager"></a>System Center Configuration Manager で構成データを管理する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Dopo aver creato gli elementi e le linee di base di configurazione in System Center Configuration Manager è possibile usare altri comandi per eseguire diverse azioni.  
+System Center Configuration Managerで構成項目と構成基準を作成した後は、他のコマンドを使ってさまざまなアクションを実行できます。  
 
-## <a name="manage-configuration-items"></a>Gestire gli elementi di configurazione  
+## <a name="manage-configuration-items"></a>構成項目を管理する  
 
--   Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità** > **Elementi di configurazione**, selezionare l'elemento di configurazione da gestire e quindi selezionare un'attività di gestione.  
+-   **[資産とコンプライアンス]** ワークスペースで、**[コンプライアンス設定]** > **[構成項目]** の順に展開し、管理対象の構成項目を選んでから、管理タスクを選びます。  
 
-|Attività di gestione|Dettagli|  
+|管理タスク|説明|  
 |---------------------|-------------|  
-|**Crea elemento di configurazione figlio**|Apre la **Creazione guidata dell'elemento di configurazione figlio** in cui è possibile creare un elemento di configurazione figlio dall'elemento di configurazione selezionato.<br /><br /> Non è possibile creare un elemento di configurazione figlio da un elemento di configurazione del dispositivo mobile.<br /><br /> Per informazioni dettagliate, vedere [Come creare elementi di configurazione figlio](../../compliance/deploy-use/create-child-configuration-items.md).|  
-|**Cronologia revisioni**|Apre la finestra di dialogo **Cronologia revisioni dell'elemento di configurazione** in cui è possibile visualizzare e gestire le revisioni precedenti dell'elemento di configurazione selezionato.|  
-|**Visualizza definizione XML**|Visualizza il file di definizione XML per l'elemento di configurazione selezionato in una nuova finestra. Queste informazioni possono essere utili quando si vogliono modificare manualmente i dati di configurazione.|  
-|**Export**|Esporta un elemento di configurazione in un file in formato cabinet (CAB) e specifica che il file è stato creato in quel sito. È quindi possibile importarlo nello stesso sito o in un sito diverso di Configuration Manager. I dati di configurazione vengono convertiti in DCM Digest.|  
-|**Copia**|Crea una copia dell'elemento di configurazione selezionato con un nome specificato. Il nuovo elemento di configurazione non conserva alcuna relazione con l'elemento di configurazione originale. Ciò significa che l'elemento di configurazione duplicato non eredita le informazioni di configurazione dell'elemento di configurazione originale.|  
-|**Eliminazione**|Apre la finestra di dialogo **Elimina elemento di configurazione** in cui è possibile esaminare i riferimenti a un elemento di configurazione specifico.<br /><br /> È necessario rimuovere tutti i riferimenti a un elemento di configurazione prima di poter eliminare l'elemento di configurazione.|  
+|**子構成項目の作成**|子構成項目の作成ウィザードが開き、選択した構成項目から、子構成項目を作成できます。 ****<br /><br /> モバイル デバイスの構成項目から子構成項目を作成することはできません。<br /><br /> 詳しくは、「[Create child configuration items](../../compliance/deploy-use/create-child-configuration-items.md)」 (子構成項目を作成する) を参照してください。|  
+|**リビジョン履歴**|[構成項目のリビジョン履歴] ダイアログ ボックスが開き、選択した構成項目の以前のリビジョンを表示し管理できます。 ****|  
+|**XML 定義の表示**|新しいウィンドウに選択した構成項目の XML 定義ファイルが表示されます。 この情報は、構成データを手動で作成するときに役立ちます。|  
+|**エクスポート**|構成項目がサイト内で作成された場合は、その構成項目をキャビネット (.cab) ファイル形式でエクスポートします。 その後、Configuration Manager の同じサイトや別のサイトにインポートできます。 構成データは DCM ダイジェストに変換されます。|  
+|**コピー**|選択した構成項目のコピーを指定した名前で作成します。 新しい構成項目は、コピー元の構成項目とは一切関係を保持しません。 つまり、コピーされた構成項目は、元の構成項目の構成情報を継続的に継承しません。|  
+|**削除**|[構成項目の削除] ダイアログ ボックスが開き、この構成項目への参照を確認できます。 ****<br /><br /> 構成項目を削除する前に、その構成項目へのすべての参照を削除する必要があります。|  
 
-## <a name="manage-configuration-baselines"></a>Gestire le linee di base di configurazione  
+## <a name="manage-configuration-baselines"></a>構成基準を管理する  
 
--   Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità** > **Linee di base di configurazione**, selezionare la linea di base di configurazione da gestire e quindi selezionare un'attività di gestione.  
+-   **[資産とコンプライアンス]** ワークスペースで、**[コンプライアンス設定]** > **[構成基準]** の順に展開し、管理対象の構成基準を選んでから、管理タスクを選びます。  
 
 
-|Attività di gestione|Dettagli|  
+|管理タスク|説明|  
 |---------------------|-------------|  
-|**Mostra i membri**|Visualizza tutti gli elementi di configurazione a cui fa riferimento la linea di base di configurazione.|  
-|**Pianifica riepilogo**|Configura la pianificazione in base alla quale i dati visualizzati nel nodo **Linee di base di configurazione** nella console di Configuration Manager vengono aggiornati con le informazioni più recenti del database del sito.|  
-|**Esegui riepilogo**|Il riepilogo fa sì che i dati nel nodo **Linee di base di configurazione** vengano aggiornati in base ai dati più recenti del database del sito. L'esecuzione di questa operazione può richiedere alcuni minuti. Potrebbe essere necessario fare clic su **Aggiorna** prima di poter visualizzare i dati più recenti nella console.|  
-|**Visualizza definizione XML**|Visualizza il file di definizione XML per la linea di base di configurazione selezionata in una nuova finestra. Queste informazioni possono essere utili quando si vogliono modificare manualmente i dati di configurazione.|  
-|**Attiva**|Abilita una linea di base di configurazione per il monitoraggio della conformità.|  
-|**Disabilitato**|Disabilita una linea di base di configurazione in modo che non ne venga valutata la conformità nei computer client. Verranno disabilitate anche le linee di base di configurazione che fanno riferimento a questa linea di base di configurazione.|  
-|**Export**|Esporta una linea di base di configurazione in un file in formato cabinet (CAB) e specifica che il file è stato creato in quel sito. È quindi possibile importarlo nello stesso sito o in un sito diverso di Configuration Manager. I dati di configurazione vengono convertiti in DCM Digest.<br /><br /> Per informazioni sull'importazione dei dati di configurazione, vedere [Come importare dati di configurazione](../../compliance/deploy-use/import-configuration-data.md).|  
-|**Copia**|Crea una copia della linea di base di configurazione selezionata con un nome specificato. La nuova linea di base di configurazione non conserva alcuna relazione con la linea di base di configurazione originale.|  
-|**Eliminazione**|Apre la finestra di dialogo **Elimina linea di base di configurazione** in cui è possibile esaminare i riferimenti a una linea di base di configurazione specifica.<br /><br /> È necessario rimuovere tutti i riferimenti a una linea di base di configurazione prima di poter eliminare la linea di base di configurazione.|  
-|**Distribuisci**|Apre la finestra di dialogo **Distribuisci linee di base di configurazione** in cui è possibile distribuire una o più linee di base di distribuzione nei dispositivi inclusi nella gerarchia.<br /><br /> Per informazioni dettagliate, vedere [Come distribuire linee di base di configurazione](../../compliance/deploy-use/deploy-configuration-baselines.md).|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+|**メンバーの表示**|構成基準が参照するすべての構成項目を表示します。|  
+|**スケジュールの概要作成**|Configuration Manager コンソールの **[構成基準]** ノードに表示されるデータが、サイト データベースからの最新情報で更新されるスケジュールを構成します。|  
+|**概要作成を実行します。**|概要作成を行うと、[構成基準] ノードにあるデータがサイト データベースからの最新データで更新されます。 **** この操作が完了するまでに数分かかることがあります。 コンソールで最新データを表示するには、[最新の情報に更新] をクリックする必要がある場合があります。 ****|  
+|**XML 定義の表示**|新しいウィンドウに選択した構成基準の XML 定義ファイルが表示されます。 この情報は、構成データを手動で作成するときに役立ちます。|  
+|**有効化**|コンプライアンス対応の監視用に構成基準を有効にします。|  
+|**無効化**|クライアント コンピューターのコンプライアンス対応の評価をやめるように構成基準を無効化します。 この構成基準を参照する構成基準も無効になります。|  
+|**エクスポート**|構成項目がサイト内で作成された場合は、その構成基準をキャビネット (.cab) ファイル形式でエクスポートします。 その後、Configuration Manager の同じサイトや別のサイトにインポートできます。 構成データは DCM ダイジェストに変換されます。<br /><br /> 構成データのインポート方法について詳しくは、「[Import configuration data](../../compliance/deploy-use/import-configuration-data.md)」 (構成データのインポート) を参照してください。|  
+|**コピー**|選択した構成基準のコピーを指定した名前で作成します。 新しい構成基準は、コピー元の構成基準とは一切関係を保持しません。|  
+|**削除**|[構成基準の削除] ダイアログ ボックスが開き、この構成基準への参照を確認できます。 ****<br /><br /> 構成基準を削除する前に、その構成基準へのすべての参照を削除する必要があります。|  
+|**デプロイ**|[構成基準の展開] ダイアログ ボックスが開き、階層内のデバイスに 1 つまたは複数の構成基準を展開できます。 ****<br /><br /> 詳しくは、「[構成基準を展開する](../../compliance/deploy-use/deploy-configuration-baselines.md)」を参照してください。|  

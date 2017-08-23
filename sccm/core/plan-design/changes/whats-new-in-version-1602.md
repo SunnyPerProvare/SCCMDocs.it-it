@@ -1,90 +1,88 @@
 ---
-title: "Novità in System Center Configuration Manager versione 1602 | Microsoft Docs"
-description: "Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1602 di System Center Configuration Manager."
+title: "System Center Configuration Manager バージョン 1602 の新機能 | Microsoft Docs"
+description: "System Center Configuration Manager のバージョン 1602 の変更点および導入された新機能について詳しく説明します。"
 ms.custom: na
 ms.date: 12/30/2016
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4021eca1-adfb-4e5a-adee-159263c29637
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: noindex,nofollow
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: 9a548f43625a907173e7b967d26356bd80f1c5d9
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Novità della versione 1602 di System Center Configuration Manager
+# <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>System Center Configuration Manager のバージョン 1602 の新機能
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
 
-L'aggiornamento 1602 per System Center Configuration Manager è disponibile solo come aggiornamento nella console per i siti installati in precedenza che eseguono la versione 1511. La versione 1511 è la versione di base iniziale usata per installare nuovi siti di Configuration Manager.  
+System Center Configuration Manager の更新プログラム 1602 は、以前にインストール済みで、バージョン 1511 を実行するサイトを対象とする、コンソール内の更新プログラムとしてのみ使用可能な更新プログラムです。 バージョン 1511 は、新しい Configuration Manager サイトのインストールに使用する初期の基準バージョンです。  
 
 
 > [!TIP]  
->  Sono disponibili altre informazioni su:  
+>  詳細については、下記のリンクをクリックしてください。  
 >   
->   -   [Installing new sites](/sccm/core/servers/deploy/install) (Installazione di nuovi siti) (con una versione di base, ad esempio 1511)  
->   -   [Installing updates at sites](/sccm/core/servers/manage/updates) (Installazione di aggiornamenti nei siti) (ad esempio versione 1602)  
+>   -   [新しいサイトをインストールする](/sccm/core/servers/deploy/install) (1511 などの基準バージョンを使用)  
+>   -   [サイトで更新プログラムをインストールする](/sccm/core/servers/manage/updates) (更新プログラム 1602 など)  
 
- Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1602 di Configuration Manager.  
+ 以降のセクションでは、Configuration Manager のバージョン 1602 の変更点および導入された新機能について詳しく説明します。  
 
-## <a name="site-infrastructure"></a>Infrastruttura del sito  
+## <a name="site-infrastructure"></a>サイトのインフラストラクチャ  
 
-###  <a name="bkmk_UpgradeOS"></a>Aggiornamento sul posto del sistema operativo dei server del sito che eseguono Windows Server 2008 R2  
- I siti di Configuration Manager che eseguono la versione 1602 o versioni successive supportano l'aggiornamento sul posto del sistema operativo dei server del sito da Windows Server 2008 R2 a Windows Server 2012 R2.  
+###  <a name="bkmk_UpgradeOS"></a> Windows Server 2008 R2 を実行するサイト サーバーのオペレーティング システムのインプレース アップグレード  
+ 1602 またはそれ以降のバージョンを実行する Configuration Manager サイトでは、Windows Server 2008 R2 から Windows Server 2012 R2 へのサイト サーバーのオペレーティング システムのインプレース アップグレードをサポートします。  
 
 > [!WARNING]  
->  Prima di eseguire l'aggiornamento a Windows Server 2012 R2, è necessario disinstallare WSUS 3.2 dal server.  
+>  Windows Server 2012 R2 にアップグレードする前に、サーバーから WSUS 3.2 をアンインストールする必要があります。  
 >   
->  Per informazioni su questo passaggio critico, vedere la sezione "Funzionalità nuove e modificate" in [Panoramica di Windows Server Update Services](https://technet.microsoft.com/library/hh852345.aspx) nella documentazione di Windows Server.  
+>  この重要な手順の詳細については、Windows Server ドキュメントの「[Windows Server Update Services の概要](https://technet.microsoft.com/library/hh852345.aspx)」の「新機能と変更された機能」セクションを参照してください。  
 
- Per aggiornare un server, usare le procedure di aggiornamento di Windows Server 2012 R2. Non è necessario eseguire un ripristino del server del sito di Configuration Manager dopo l'aggiornamento. Per le procedure di aggiornamento, vedere [Opzioni di aggiornamento per Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) nella documentazione di Windows Server.  
+ サーバーをアップグレードするには、Windows Server 2012 R2 のアップグレード手順を使用します。 アップグレード後に Configuration Manager サイト サーバーの復元を実行する必要はありません。 アップグレード手順については、Windows Server のドキュメントの「[Windows Server 2012 R2 のアップグレード オプション](https://technet.microsoft.com/library/dn303416.aspx)」をご覧ください。  
 
-###  <a name="bkmk_AOAG"></a> Gruppi di disponibilità SQL Server AlwaysOn  
- È possibile usare i gruppi di disponibilità SQL Server AlwaysOn per ospitare il database del sito nei siti primari e nel sito di amministrazione centrale come soluzione a disponibilità elevata e di ripristino di emergenza.  
+###  <a name="bkmk_AOAG"></a> SQL Server AlwaysOn 可用性グループ  
+ 高可用性と障害復旧ソリューションとして、SQL Server AlwaysOn 可用性グループを使用して、プライマリ サイトと中央管理サイトでサイト データベースをホストします。  
 
- Per informazioni dettagliate, vedere [SQL Server AlwaysOn per database del sito a disponibilità elevata per System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).  
+ 詳細については、「[System Center Configuration Manager 用の高可用性サイト データベースの SQL Server AlwaysOn](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md)」を参照してください。  
 
-## <a name="operating-system-deployment"></a>Distribuzione del sistema operativo  
+## <a name="operating-system-deployment"></a>オペレーティング システムの展開  
 
-### <a name="windows-10-servicing"></a>Manutenzione di Windows 10  
- In Configuration Manager versione 1602 sono stati aggiunti i miglioramenti seguenti per la manutenzione di Windows 10:  
+### <a name="windows-10-servicing"></a>Windows 10 サービス  
+ Configuration Manager バージョン 1602 には、Windows 10 のサービスに対する次の機能強化が追加されました。  
 
--   Sono disponibili nuove opzioni di filtro per i piani di manutenzione che consentono di filtrare per **Lingua**, **Richiesto** e **Titolo**. Verranno aggiunti alla distribuzione associata solo gli aggiornamenti che soddisfano i criteri specificati.  
+-   サービス プランに新しいフィルター オプションを使用して、**[言語]**、**[必須]**、および **[タイトル]** でフィルターできます。 指定された条件を満たすアップグレードだけが、関連付けられている展開に追加されます。  
 
--   Quando si seleziona la classificazione **Aggiornamenti** per la sincronizzazione degli aggiornamenti software, viene visualizzato un avviso. Questo avviso segnala che è necessario l'[hotfix 3095113](https://support.microsoft.com/kb/3095113) per Windows Server Update Services (WSUS) 4.0 prima di poter sincronizzare correttamente gli aggiornamenti software e per il corretto funzionamento della manutenzione di Windows 10. Dal messaggio di avviso è possibile passare all'articolo della Knowledge Base associato.  
+-   ソフトウェア更新プログラムの同期で、**アップグレード**分類を選択した場合は、警告が表示されます。 この警告は、ソフトウェアの更新を正常に同期させ、さらに Windows 10 サービスを適切に機能させるには、その前に Windows Server Update Services (WSUS) 4.0 の[修正プログラム 3095113](https://support.microsoft.com/kb/3095113) が必要であることを知らせます。 警告メッセージから、関連するサポート技術情報の記事に移動できます。  
 
--   Gli aggiornamenti disponibili di Windows 10 vengono visualizzati ora solo nel nodo **Manutenzione di Windows 10** \ **Tutti gli aggiornamenti di Windows 10** della console di Configuration Manager. Questi aggiornamenti non vengono più visualizzati nel nodo **Aggiornamenti software** \ **Tutti gli aggiornamenti software** della console.  
+-   利用可能な Windows 10 アップグレードは、Configuration Manager コンソールの **[Windows 10 のサービス]** \ **[すべての Windows 10 更新プログラム]** ノードにのみ表示されるようになりました。 これらの更新プログラムは、コンソールの **[ソフトウェア更新プログラム]** \ **[すべてのソフトウェア更新プログラム]** ノードには表示されなくなりました。  
 
--   Un piano di manutenzione è considerato una distribuzione ad alto rischio e nella finestra **Seleziona raccolta** vengono visualizzate soltanto le raccolte personalizzate che soddisfano le impostazioni di verifica della distribuzione configurate nelle proprietà del sito. Per altre informazioni, vedere [Settings to manage high-risk deployments for System Center Configuration Manager](../../../protect/understand/settings-to-manage-high-risk-deployments.md).  
+-   サービス プランは危険度の高い展開であると見なされるようになりました。**[コレクションの選択]** ウィンドウには、サイトのプロパティで構成されている展開の検証の設定に適合するカスタム コレクションのみが表示されます。 詳細については、「 [Settings to manage high-risk deployments for System Center Configuration Manager](../../../protect/understand/settings-to-manage-high-risk-deployments.md)」をご覧ください。  
 
--   Gli utenti che avviano un pacchetto di aggiornamento di Windows 10 ricevono ora un messaggio che li informa che stanno per aggiornare il proprio sistema operativo.  
+-   Windows 10 へのアップグレード パッケージを今すぐ開始するユーザーには、オペレーティング システムをアップグレードすることを知らせるメッセージが表示されます。  
 
-## <a name="application-management"></a>Gestione delle applicazioni  
+## <a name="application-management"></a>アプリケーション管理  
 
-### <a name="ios-app-configuration-policies"></a>Criteri di configurazione delle app iOS  
- Usare i criteri di configurazione delle app di Configuration Manager per specificare le impostazioni che potrebbero essere necessarie quando l'utente esegue un'app iOS. Un'applicazione potrebbe richiedere all'utente di specificare valori personalizzati per un numero di porta, una lingua, impostazioni di sicurezza o impostazioni personalizzazione, ad esempio un logo aziendale. Se queste impostazioni vengono immesse in modo non corretto, si può avere un aumento del carico dell'help desk rallentando inoltre l'adozione di nuove app.  
+### <a name="ios-app-configuration-policies"></a>iOS アプリ構成ポリシー  
+ ユーザーが iOS アプリを実行するときに必要となる可能性がある設定を Configuration Manager アプリ構成ポリシーで指定できます。 たとえば、アプリでは、カスタム ポート番号、言語、セキュリティの設定、または会社のロゴなどのブランド設定をユーザーが指定することが必要になる場合があります。 これらの設定を誤って入力すると、ヘルプ デスクの負荷が増加し、新しいアプリの採用も遅くなる可能性があります。  
 
- I criteri di configurazione delle app permettono di evitare questi problemi consentendo di distribuire tali impostazioni agli utenti in un criterio prima dell'esecuzione dell'app. Le impostazioni vengono quindi specificate automaticamente e l'utente non deve intraprendere alcuna azione. Per i dettagli, vedere [Configurare le app iOS con i criteri di configurazione in System Center Configuration Manager](../../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md).  
+ アプリ構成ポリシーを使用すると、ユーザーがアプリを実行する前にこれらの設定をポリシー内のユーザーに展開できるため、上記の問題を排除するのに役立ちます。 設定が自動的に指定されるため、ユーザーの操作は不要です。 詳細については、「[Configure iOS apps with app configuration policies in System Center Configuration Manager](../../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md)」 (System Center Configuration Manager でのアプリ構成ポリシーを使用した iOS アプリの構成) を参照してください。  
 
 ### <a name="manage-volume-purchased-ios-apps"></a>Manage volume-purchased iOS apps  
- Configuration Manager semplifica la distribuzione e la gestione delle app acquistate con Volume Purchase Program (VPP) di Apple. Configuration Manager importa le informazioni di licenza dall'App Store e tiene traccia del numero di licenze usate.  
+ Configuration Manager は、Apple Volume-Purchase Program (VPP) から一括で購入したアプリの展開と管理に役立ちます。 Configuration Manager では、App Store からライセンス情報をインポートし、使用したライセンスの数を追跡します。  
 
- Per informazioni dettagliate, vedere [Gestire le app iOS acquistate tramite Volume Purchase Program con System Center Configuration Manager](../../../apps/deploy-use/manage-volume-purchased-ios-apps.md).  
+ 詳細については、「[Manage volume-purchased iOS apps with System Center Configuration Manager](../../../apps/deploy-use/manage-volume-purchased-ios-apps.md)」 (System Center Configuration Manager でのボリューム購入 iOS アプリの管理) を参照してください。  
 
-### <a name="automatic-creation-of-office-mobile-apps"></a>Creazione automatica di app di Office per dispositivi mobili  
- Quando si esegue l'aggiornamento alla versione 1602 dalla versione 1511, Configuration Manager crea automaticamente le seguenti app di Microsoft Office per dispositivi mobili Android e iOS:  
+### <a name="automatic-creation-of-office-mobile-apps"></a>Office モバイル アプリの自動作成  
+ 1511 からバージョン 1602 に更新すると、Configuration Manager は Android および iOS 用の次の Microsoft Office モバイル アプリを自動的に作成します。  
 
 -   Microsoft Word  
 
@@ -94,131 +92,130 @@ L'aggiornamento 1602 per System Center Configuration Manager è disponibile solo
 
 -   Microsoft OneDrive  
 
--   Microsoft OneNote (solo iOS)  
+-   Microsoft OneNote (iOS のみ)  
 
 -   Microsoft Outlook  
 
-Queste app si trovano nel nodo **Applicazioni** della console di Configuration Manager.  
+これらのアプリは、Configuration Manager コンソールの **[アプリケーション]** ノードに表示されます。  
 
- Per altre informazioni sulla distribuzione di applicazioni, vedere [Come distribuire le applicazioni con System Center Configuration Manager](../../../apps/deploy-use/deploy-applications.md).  
+ アプリケーションの展開の詳細については、「[System Center Configuration Manager でアプリケーションを展開する方法](../../../apps/deploy-use/deploy-applications.md)」をご覧ください。  
 
-## <a name="software-updates"></a>Aggiornamenti software  
+## <a name="software-updates"></a>ソフトウェア更新プログラム  
 
-### <a name="manage-office-365-client-updates"></a>Gestire gli aggiornamenti del client di Office 365  
- System Center Configuration Manager consente di gestire gli aggiornamenti del client di Office 365 usando il flusso di lavoro Gestione aggiornamenti software. Per altre informazioni, vedere [Gestire gli aggiornamenti di Office 365 ProPlus con System Center Configuration Manager](/sccm/sum/deploy-use/manage-office-365-proplus-updates).  
+### <a name="manage-office-365-client-updates"></a>Office 365 のクライアント更新プログラムの管理  
+ System Center Configuration Manager では、ソフトウェア更新プログラムの管理ワークフローを使用して、Office 365 のクライアント更新プログラムを管理できます。 詳細については、「[System Center Configuration Manager での Office 365 ProPlus の更新プログラムの管理](/sccm/sum/deploy-use/manage-office-365-proplus-updates)」をご覧ください。  
 
-## <a name="compliance-settings"></a>Impostazioni di conformità  
+## <a name="compliance-settings"></a>コンプライアンス設定  
 
-### <a name="compliance-settings-for-devices-running-windows-10-team"></a>Impostazioni di conformità per i dispositivi che eseguono Windows 10 Team  
- Sono state aggiunte nuove impostazioni all'elemento di configurazione **Windows 8.1 e Windows 10**. Queste impostazioni consentono di controllare i dispositivi che eseguono Windows 10 Team, ad esempio un dispositivo Surface Hub.  
+### <a name="compliance-settings-for-devices-running-windows-10-team"></a>Windows 10 Team を実行するデバイスのコンプライアンス設定  
+ **Windows 8.1 および Windows 10** の構成項目に新しい設定が追加されました。 これらの設定は、Surface Hub デバイスなどの Windows 10 Team を実行するデバイスの制御に役立ちます。  
 
- Per informazioni dettagliate, vedere [Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client di System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
+ 詳細については、「[System Center Configuration Manager クライアントを使用せずに管理されている Windows 8.1 デバイスと Windows 10 デバイスの構成項目を作成する方法](../../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)」をご覧ください。  
 
-### <a name="kiosk-mode-settings-for-android-samsung-knox-standard-devices"></a>Impostazioni della modalità tutto schermo per i dispositivi Android Samsung KNOX Standard  
- La modalità tutto schermo consente di bloccare un dispositivo per consentire solo alcune funzionalità. Ad esempio, è possibile consentire a un dispositivo di eseguire solo un'app gestita specificata o disabilitare i pulsanti del volume in un dispositivo. Queste impostazioni potrebbero essere usate per un modello dimostrativo di un dispositivo o per un dispositivo dedicato all'esecuzione di una sola funzione, ad esempio un dispositivo POS. In Configuration Manager è ora possibile specificare le impostazioni della modalità tutto schermo per i dispositivi Samsung KNOX Standard.  
+### <a name="kiosk-mode-settings-for-android-samsung-knox-standard-devices"></a>Android Samsung KNOX Standard デバイスのキオスク モードの設定  
+ キオスク モードでは、特定の機能のみ実行できるようにデバイスをロックできます。 たとえば、指定した 1 つの管理対象アプリの実行のみをデバイスに許可することや、デバイスのボリューム ボタンを無効にすることができます。 これらの設定は、デバイスのデモ モデルや、POS デバイスなどの 1 つの機能の実行専用のデバイス向けに使用できます。 Configuration Manager では、Samsung KNOX Standard デバイスのキオスク モードの設定を指定できるようになりました。  
 
- Per informazioni dettagliate, vedere [Creare elementi di configurazione per dispositivi Android e Samsung KNOX Standard gestiti senza il client System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).  
+ 詳細については、「[System Center Configuration Manager クライアントを使用せずに管理されている Android デバイスと Samsung KNOX Standard デバイスの構成項目を作成する](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md)」を参照してください。  
 
-## <a name="conditional-access"></a>Accesso condizionale  
+## <a name="conditional-access"></a>条件付きアクセス  
 
-### <a name="conditional-access-for-pcs-managed-by-system-center-configuration-manager"></a>Accesso condizionale per i PC gestiti da System Center Configuration Manager  
- Prima di questa versione, per configurare l'accesso condizionale per un PC era necessario che il PC fosse registrato in Intune o aggiunto a un dominio. A partire dall'aggiornamento 1602 è supportato l'accesso condizionale per i PC gestiti da System Center Configuration Manager. Per i PC gestiti da System Center Configuration Manager, è possibile limitare l'accesso a Exchange Online e SharePoint Online solo ai dispositivi che soddisfano i criteri di conformità impostati.  
+### <a name="conditional-access-for-pcs-managed-by-system-center-configuration-manager"></a>System Center Configuration Manager が管理する PC の条件付きアクセス  
+ このリリースより前に PC の条件付きアクセスを設定するには、PC が Intune に登録されているか、またはドメインに参加している PC である必要がありました。 1602 更新プログラムより、System Center Configuration Manager が管理する PC の条件付きアクセスがサポートされます。 System Center Configuration Manager によって管理される PC では、設定したコンプライアンス ポリシーに準拠しているデバイスのみが Exchange Online と SharePoint Online にアクセスできるように制限できます。  
 
- Per informazioni dettagliate, vedere [Gestire l'accesso ai servizi di O365 per i PC gestiti da System Center Configuration Manager](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
+ 詳細については、「[Manage access to O365 services for PCs managed by System Center Configuration Manager](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)」 (System Center Configuration Manager で管理されている PC の O365 サービスへのアクセスを管理する) をご覧ください。  
 
-### <a name="restricting-access-based-on-the-health-of-devices"></a>Limitazione dell'accesso in base allo stato di integrità dei dispositivi  
- È ora possibile limitare l'accesso alla posta elettronica e ai servizi di Office 365 in base all'integrità dei dispositivi, come segnalato dal servizio di attestazione dell'integrità. Inoltre, i dispositivi gestiti da Intune sono inclusi nei report sull'integrità del dispositivo.  
+### <a name="restricting-access-based-on-the-health-of-devices"></a>デバイスの正常性に基づいてアクセスを制限する  
+ 正常性構成証明サービスで報告されるデバイスの正常性に基づいて、電子メールおよび 0ffice 365 サービスへのアクセスを制限できるようになりました。 さらに、Intune で管理されているデバイスが、デバイスの正常性レポートに含まれます。  
 
- La console di Configuration Manager offre una nuova regola di conformità che consente di specificare se l'accesso deve essere consentito o negato ai dispositivi in base al loro stato di integrità. Per informazioni dettagliate sul servizio di attestazione dell'integrità e su come viene segnalata l'integrità dei dispositivi in Intune, vedere [Attestazione dell'integrità per System Center Configuration Manager](../../../core/servers/manage/health-attestation.md).  
+ 新しいコンプライアンス ルールが Configuration Manager コンソールに追加されました。このルールを使用すると、デバイスの正常性の状態に基づいてアクセスを許可するかブロックするかを指定できます。 正常性構成証明サービスの詳細、およびデバイスの正常性が Intune でどのように報告されるのかについての詳細は、「[System Center Configuration Manager の正常性構成証明書](../../../core/servers/manage/health-attestation.md)」をご覧ください。  
 
-### <a name="new-compliance-policy-rules"></a>Nuove regole dei criteri di conformità  
- Sono state aggiunte nuove regole dei criteri di conformità, come gli aggiornamenti automatici e la richiesta di una password per sbloccare i dispositivi, per supportare requisiti di sicurezza migliori.
+### <a name="new-compliance-policy-rules"></a>新しいコンプライアンス ポリシーの規則  
+ より適切なセキュリティ要件をサポートするために、自動更新、デバイスのロックを解除するために必要なパスワードなど、新しいコンプライアンス ポリシー規則が追加されました。
 
- Per maggiori dettagli, vedere [Criteri di conformità del dispositivo in System Center Configuration Manager](../../../protect/deploy-use/device-compliance-policies.md).  
+ 詳細については、「[System Center Configuration Manager でのデバイス コンプライアンス ポリシー](../../../protect/deploy-use/device-compliance-policies.md)」をご覧ください。  
 
-### <a name="make-sure-enrolled-and-compliant-devices-always-have-access-to-exchange-on-premises"></a>Assicurarsi che i dispositivi registrati e conformi abbiano sempre accesso a Exchange locale  
- Quando si seleziona questa opzione, i dispositivi registrati in Intune e conformi ai criteri di conformità possono accedere a Exchange locale: **Sostituzione della regola predefinita: consenti sempre l'accesso a Exchange ai dispositivi conformi e registrati in Intune**. Questa regola è disponibile nella pagina **Generale** della **Configurazione guidata dei criteri di accesso condizionale** per Exchange locale.
+### <a name="make-sure-enrolled-and-compliant-devices-always-have-access-to-exchange-on-premises"></a>登録された準拠デバイスがいつも Exchange On-Premises ポリシーにアクセスできるかどうかを確認します。  
+ **[既定の規則より優先 - Intune に登録された準拠デバイスに Exchange On-Premises へのアクセスを常に許可する]** オプションをオンにすると、Intune に登録されていてコンプライアンス ポリシーに準拠しているデバイスが Exchange On-Premises にアクセスすることを許可されます。 この規則は、Exchange On-Premises の**条件付きアクセス ポリシーの構成ウィザード**の **[全般]** ページにあります。
 
- Questa regola sostituisce la regola predefinita, ossia anche se si definisce per la regola predefinita l'impostazione per la quarantena o il blocco dell'accesso, i dispositivi registrati e conformi potranno comunque accedere a Exchange locale. Usare questa impostazione quando si vuole che i dispositivi registrati e conformi abbiano sempre accesso alla posta elettronica tramite Exchange locale.   
+ このルールは既定のルールに優先します。つまり、アクセスを検疫またはブロックする既定のルールを設定した場合でも、登録された準拠デバイスは引き続きオンプレミスの Exchange にアクセスできます。 登録された準拠デバイスが Exchange On-Premises 経由で電子メールにいつでもアクセスできるようにするには、この設定を使用します。   
 
- Per la procedura dettagliata, vedere [Gestire l'accesso alla posta elettronica in System Center Configuration Manager](../../../protect/deploy-use/manage-email-access.md).  
+ 詳細のウォークスルーについては、「[System Center Configuration Manager でのメール アクセスの管理](../../../protect/deploy-use/manage-email-access.md)」をご覧ください。  
 
-## <a name="client-management"></a>Gestione dei client  
+## <a name="client-management"></a>クライアント管理  
 
-### <a name="client-online-status"></a>Stato online del client  
- È disponibile un nuovo stato per i client per monitorare se un computer è online o meno. Un computer viene considerato online se è connesso al relativo punto di gestione assegnato. Per indicare che il computer è online, il client invia messaggi di tipo ping al punto di gestione. Se il punto di gestione non riceve alcun messaggio per 5 minuti, lo stato del client viene considerato offline.  
+### <a name="client-online-status"></a>クライアントのオンライン状態  
+ コンピューターがオンラインかどうかを監視するために、クライアントに関する新しい状態を利用できます。 割り当てられている管理ポイントに接続されているコンピューターは、オンラインであると見なされます。 コンピューターがオンラインであることを示すには、クライアントが ping のようなメッセージを管理ポイントに送信します。 5 分経過しても管理ポイントがメッセージを受信しないと、クライアントはオフラインであると見なされます。  
 
- Per informazioni dettagliate, vedere [Come monitorare i client in System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md).  
+ 詳細については、「[System Center Configuration Manager でクライアントを監視する方法](../../../core/clients/manage/monitor-clients.md)」をご覧ください。  
 
-### <a name="refresh-pc-machine-and-user-policy-from-software-center"></a>Aggiornare i criteri di computer e utenti da Software Center  
- È stata aggiunta una nuova opzione, **Criteri sincronizzazione**, alla pagina **Opzioni** > **Manutenzione computer** di Software Center che consente al PC di aggiornare i criteri di computer e utenti di Configuration Manager.  
+### <a name="refresh-pc-machine-and-user-policy-from-software-center"></a>ソフトウェア センターから PC コンピューターとユーザーのポリシーを更新する  
+ 新しいオプションである **同期ポリシー** が、ソフトウェア センターの **[オプション]** > **[コンピューターのメンテナンス]** ページに追加されました。これにより、PC では Configuration Manager コンピューターとユーザーのポリシーが更新されます。  
 
-### <a name="software-center-branding-changes"></a>Modifiche di personalizzazione di Software Center  
- È possibile modificare il colore, il nome dell'organizzazione e l'icona visualizzati in Software Center. Queste impostazioni vengono applicate in base alle regole seguenti:  
+### <a name="software-center-branding-changes"></a>ソフトウェア センターのブランド変更  
+ ソフトウェア センターに表示される色、組織名、およびアイコンを変更できます。 これらの設定は、次の規則に従って適用されます。  
 
-- Se il ruolo del server del sito punto per siti Web del Catalogo applicazioni non è installato, Software Center visualizza il nome dell'organizzazione specificato nell'impostazione **Nome organizzazione visualizzato in Software Center** del client **Agente computer**.  
+- アプリケーション カタログ Web サイトのポイント サイト サーバーの役割がインストールされていない場合は、[**ソフトウェア センターに表示される組織名**] という [**コンピューター エージェント**] クライアント設定で指定された組織名がソフトウェア センターに表示されます。  
 
-- Se il ruolo del server del sito punto per siti Web del Catalogo applicazioni è installato, Software Center visualizza il nome dell'organizzazione e il colore specificati nelle proprietà del ruolo del server del sito punto per siti Web del Catalogo applicazioni.  
+- アプリケーション カタログ Web サイトのポイント サイト サーバーの役割がインストールされている場合は、アプリケーション カタログ Web サイトのポイント サイト サーバーの役割プロパティに指定されている組織名と色がソフトウェア センターに表示されます。  
 
-- Se una sottoscrizione di Microsoft Intune è configurata e connessa all'ambiente Configuration Manager, Software Center visualizza il nome dell'organizzazione, il colore e il logo aziendale specificati nelle proprietà della sottoscrizione di Intune.  
+- Microsoft Intune サブスクリプションが構成されていて Configuration Manager 環境に接続されている場合は、Intune サブスクリプションのプロパティに指定されている組織名、色、および会社のロゴがソフトウェア センターに表示されます。  
 
-### <a name="health-attestation"></a>Attestazione dell'integrità  
- Gli amministratori possono visualizzare l'attestazione dell'integrità del dispositivo di Windows 10 nella console di Configuration Manager. Questa funzionalità è disponibile per Configuration Manager e Configuration Manager con Microsoft Intune. L'attestazione dell'integrità dei dispositivi consente all'amministratore di assicurare che nei computer client siano abilitate le seguenti configurazioni attendibili di BIOS, TPM e software di avvio:  
+### <a name="health-attestation"></a>正常性構成証明  
+ 管理者は、Configuration Manager コンソールで Windows 10 デバイス正常性構成証明の状態を確認できます。 この機能は、Configuration Manager および Configuration Manager と Microsoft Intune の併用で利用できます。 デバイスの正常性構成証明で、管理者はクライアント コンピューターで次の信頼できる BIOS、TPM、およびブート ソフトウェアの構成が有効になっていることを確認できます。  
 
--   Antimalware ad esecuzione anticipata  
+-   起動時マルウェア対策  
 
 -   BitLocker  
 
--   Avvio protetto  
+-   セキュア ブート  
 
--   Integrità del codice  
+-   コードの整合性  
 
-Per informazioni dettagliate, vedere [Attestazione dell'integrità per System Center Configuration Manager](../../../core/servers/manage/health-attestation.md).  
+詳細については、「[System Center Configuration Manager の正常性構成証明書](../../../core/servers/manage/health-attestation.md)」をご覧ください。  
 
-### <a name="improvements-to-endpoint-protection-antimalware-settings"></a>Miglioramenti delle impostazioni antimalware di Endpoint Protection  
- Nella versione 1602 sono state aggiunte le nuove impostazioni seguenti nei criteri antimalware di Endpoint Protection per Windows Defender:  
+### <a name="improvements-to-endpoint-protection-antimalware-settings"></a>Endpoint Protection マルウェア対策の設定の機能強化  
+ 1602 では、Windows Defender の Endpoint Protection マルウェア対策ポリシーに次の新しい設定が追加されました。  
 
--   Protezione in tempo reale: Block potentially unwanted applications at download, prior to installation (Blocca le applicazioni potenzialmente indesiderate al download o prima dell'installazione).  
+-   リアルタイム保護: 望ましくない可能性のあるアプリケーションのダウンロード時およびインストール前にブロックします。  
 
--   Impostazioni di analisi: Analizza le unità di rete mappate quando si esegue un'analisi completa.  
+-   スキャンの設定: フル スキャンの実行時にマップされたネットワーク ドライブをスキャンします。  
 
--   Impostazioni per l'invio automatico dei file di esempio:  
+-   自動サンプル ファイルの送信の設定:  
 
-     Il motore antimalware può richiedere l'invio a Microsoft di file di esempio per un'ulteriore analisi. Per impostazione predefinita, viene sempre visualizzata una richiesta prima dell'invio di tali campioni. Gli amministratori ora possono gestire le impostazioni seguenti per configurare questo comportamento:  
+     マルウェア対策エンジンは、さらに詳しい分析のために Microsoft へのファイルのサンプルの送信を要求することがあります。 既定では、このようなサンプルを送信する前に必ず確認が求められます。 管理者は、この動作を構成する次の設定を管理できるようになりました。  
 
-    -   Avanzate: Enable automatic sample file submission to help Microsoft determine whether certain detected items are malicious (Abilita l'invio automatico di file di esempio per consentire a Microsoft di determinare se alcuni elementi rilevati siano dannosi).  
+    -   詳細設定: サンプル ファイルの自動送信を有効にすると、マイクロソフトは検出された特定の項目が危険であるかどうかを判断できます。  
 
-    -   Avanzate: Allow users to modify automatic sample file submission settings (Consenti agli utenti di modificare le impostazioni di invio automatico di file di esempio).  
+    -   詳細設定: サンプル ファイルの自動送信の設定を変更することをユーザーに許可します。  
 
-    Inoltre, nella sezione "Impostazioni di esclusione" del criterio antimalware di Endpoint Protection, l'impostazione esistente **Exclude files and folders** (Escludi file e cartelle) ora consente l'esclusione di dispositivi.  
+    さらに、Endpoint Protection マルウェア対策ポリシーの [除外の設定] セクションの既存の **[ファイルとフォルダーを除外する]** 設定でデバイスを除外できるようになりました。  
 
-Per informazioni dettagliate, vedere [Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/endpoint-antimalware-policies.md).  
+詳細については、「[System Center Configuration Manager で Endpoint Protection 用にマルウェア対策ポリシーを作成し展開する方法](../../../protect/deploy-use/endpoint-antimalware-policies.md)」をご覧ください。  
 
-## <a name="mobile-device-management"></a>Gestione dispositivi mobili  
+## <a name="mobile-device-management"></a>モバイル デバイス管理  
 
-### <a name="ios-activation-lock"></a>Blocco attivazione di iOS  
- Configuration Manager consente di gestire il blocco attivazione iOS, una funzionalità dell'app Trova il mio iPhone per dispositivi iOS 7.1 e versioni successive. Blocco attivazione viene abilitato automaticamente quando si usa l'app Trova il mio iPhone in un dispositivo. Una volta abilitato, richiede l'immissione di un ID Apple e una password dell'utente prima di poter:  
+### <a name="ios-activation-lock"></a>iOS のアクティベーション ロック  
+ Configuration Manager は、iOS 7.1 以降のデバイス向けの iPhone を探すアプリの機能である iOS のアクティベーション ロックを管理するために役立ちます。 iPhone を探すアプリをデバイスで使用すると、アクティブ化ロックが自動的に有効になります。 有効になると、ユーザーの Apple ID とパスワードを入力しない限り、以下の操作を実行できなくなります。  
 
--   Disattivare Trova il mio iPhone.  
+-   iPhone を探すアプリをオフにする。  
 
--   Cancellare il dispositivo.  
+-   デバイスを消去する。  
 
--   Riattivare il dispositivo.  
+-   ディスクを再アクティブ化する。  
 
-Configuration Manager può richiedere lo stato del blocco attivazione per i dispositivi con e senza supervisione che eseguono iOS 7.1 e versioni successive. Per i dispositivi con supervisione, Configuration Manager può recuperare il codice del bypass di Blocco attivazione e inviarlo direttamente al dispositivo.  
+Configuration Manager では、iOS 7.1 以降を実行している監視対象と監視対象外の両方のデバイスのアクティベーション ロックの状態を要求できます。 監視対象デバイスの場合には、Configuration Manager はアクティベーション ロックのバイパス コードを取得して、直接デバイスに発行できます。  
 
- Per informazioni dettagliate, vedere [Proteggere i dispositivi iOS con il bypass del blocco attivazione in System Center Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock).  
+ 詳細については、「[System Center Configuration Manager でアクティベーション ロックのバイパスを使用して iOS デバイスを保護する](/sccm/mdm/deploy-use/manage-ios-activation-lock)」をご覧ください。  
 
-### <a name="monitor-terms-and-conditions-deployments"></a>Monitorare le distribuzioni di termini e condizioni  
- È possibile monitorare le distribuzioni di termini e condizioni nella console di Configuration Manager.  
+### <a name="monitor-terms-and-conditions-deployments"></a>使用条件の展開の監視  
+ Configuration Manager コンソールで使用条件の展開を監視できます。  
 
- Selezionare la distribuzione di termini e condizioni nell'elenco delle distribuzioni. L'area di riepilogo mostra le statistiche seguenti:  
+ 使用条件の展開を展開の一覧から選択します。 概要領域には、以下の統計情報が表示されます。  
 
--   **Conforme**: gli utenti hanno accettato la versione più recente di termini e condizioni.  
+-   **[対応]**: ユーザーが最新バージョンの使用条件に同意しました  
 
--   **Errore**  
+-   **エラー**  
 
--   **Non conforme**: gli utenti hanno accettato una versione di termini e condizioni, ma non la versione più recente.  
+-   **[非対応]**: ユーザーが最新のバージョンではない使用条件に同意しました  
 
--   **Sconosciuto**: gli utenti non hanno mai accettato termini e condizioni, inclusi quelli senza un dispositivo registrato.  
-
+-   **[不明]**: 登録済みデバイスのない使用条件を含めて、ユーザーが使用条件に同意したことはありません  

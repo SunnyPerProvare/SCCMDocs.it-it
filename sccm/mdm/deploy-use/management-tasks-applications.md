@@ -1,59 +1,56 @@
 ---
-title: Gestire applicazioni in System Center Configuration Manager | Microsoft Docs
-description: Gestire applicazioni in System Center Configuration Manager.
+title: "System Center Configuration Manager でのアプリケーションの管理 | Microsoft Docs"
+description: "System Center Configuration Manager でアプリケーションを管理します。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8adbe2e2-de26-4a80-8bbd-a5f34b8bac79
-caps.latest.revision: 18
-caps.handback.revision: 0
+caps.latest.revision: "18"
+caps.handback.revision: "0"
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
 ms.openlocfilehash: bc7bb99bc526ed0bbaaad15fc9af39fa8b7c3893
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-applications-in-system-center-configuration-manager"></a>Gestire applicazioni in System Center Configuration Manager
+# <a name="manage-applications-in-system-center-configuration-manager"></a>System Center Configuration Manager でのアプリケーションの管理
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Quando si gestiscono dispositivi tramite la gestione dei dispositivi locale di Microsoft Intune o Configuration Manager, è possibile gestire questi tipi di applicazione aggiuntivi:
-- Pacchetto app Windows Phone (file *.xap)
-- Pacchetto app per iOS (file *.ipa)
-- Pacchetto app per Android (file *.apk)
-- Pacchetto app Android in Google Play
-- Pacchetto app Windows Phone (in Windows Phone Store)
-- Windows Installer tramite MDM
-- Applicazione Web
+Microsoft Intune または Configuration Manager のオンプレミス デバイス管理でデバイスを管理すると、さらに次のアプリケーションの種類も管理できます。
+- Windows Phone アプリケーション パッケージ (*.xap ファイル)
+- iOS アプリ パッケージ (*.ipa ファイル)
+- Android アプリ パッケージ (*.apk ファイル)
+- Android 用アプリ パッケージ (Google Play 内)
+- Windows Phone アプリケーション パッケージ (Windows Phone ストア内)
+- MDM を介した Windows インストーラー
+- Web アプリケーション
 
-Questa sezione contiene informazioni dettagliate sulla creazione e la gestione di applicazioni tramite una MDM ibrida o una MDM locale.
+このセクションでは、ハイブリッド MDM またはオンプレミス MDM を使用したアプリケーションの作成と管理について詳しく説明します。
 
-L'articolo [Attività di gestione per applicazioni di System Center Configuration Manager](../../apps/deploy-use/management-tasks-applications.md) contiene informazioni generali sulla gestione delle applicazioni e dei tipi di distribuzione di System Center Configuration Manager.
+「[System Center Configuration Manager アプリケーションの管理タスク](../../apps/deploy-use/management-tasks-applications.md)」では、System Center Configuration Manager のアプリケーションと展開の種類の管理に関するより一般情報を提供しています。
 
-## <a name="deploying-and-monitoring-apps"></a>Distribuzione e monitoraggio di app
+## <a name="deploying-and-monitoring-apps"></a>アプリの展開と監視
 
-I processi di distribuzione e monitoraggio delle applicazioni in System Center Configuration Manager sono identici per i dispositivi mobili e per quelli locali, come computer portatili e desktop. Per informazioni generali sulla distribuzione e il monitoraggio delle applicazioni, vedere gli argomenti seguenti:
+System Center Configuration Manager でアプリケーションを展開し監視するモバイル デバイスのプロセスは、ラップトップやデスクトップ コンピューターなどのオンサイト デバイスのプロセスと同じです。 アプリケーションの展開と監視に関する一般情報は、次のトピックを参照してください。
 
-- [Distribuire applicazioni in System Center Configuration Manager](../../apps/deploy-use/deploy-applications.md)
-- [Monitorare applicazioni in System Center Configuration Manager](../../apps/deploy-use/monitor-applications-from-the-console.md)
+- [System Center Configuration Manager でアプリケーションを展開する](../../apps/deploy-use/deploy-applications.md)
+- [System Center Configuration Manager でアプリケーションを監視する](../../apps/deploy-use/monitor-applications-from-the-console.md)
 
-Di seguito sono riportate alcune considerazioni specifiche per la gestione dei dispositivi mobili da tenere presenti durante la distribuzione e il monitoraggio delle applicazioni.
+アプリケーションの展開と監視において留意すべき、モバイル デバイスの管理に固有の考慮事項は次のとおりです。
 
-- I dispositivi registrati con MDM non supportano le distribuzioni simulate, l'esperienza utente o le impostazioni di pianificazione.
+- MDM 登録デバイスは、シミュレートされた展開、ユーザー エクスペリエンス、またはスケジュール設定をサポートしていません。
 
-- È possibile associare la distribuzione a criteri di configurazione dell'app iOS, se già configurati. Vedere [Configurare le app iOS con i criteri di configurazione delle app](configure-ios-apps-with-app-configuration-policies.md).
+- 既に構成している場合は、iOS アプリの構成ポリシーを使用して展開を関連付けることができます。 [アプリ構成ポリシーを使用した iOS アプリの構成](configure-ios-apps-with-app-configuration-policies.md)に関する記事を参照してください。
 
-### <a name="next-steps"></a>Passaggi successivi
+### <a name="next-steps"></a>次のステップ
 
-Dopo un certo periodo di tempo, può essere opportuno apportare modifiche a un'applicazione, disinstallarla o sostituire un'applicazione già distribuita con una nuova. Per comprendere queste funzionalità, vedere [Aggiornare e ritirare le applicazioni con System Center Configuration Manager](../../apps/deploy-use/update-and-retire-applications.md).
-
+いずれはアプリケーションに変更を加えたり、アンインストールしたり、既に展開されているアプリケーションを新しいアプリケーションに置き換えたりすることが必要になる可能性があります。 「[System Center Configuration Manager でのアプリケーションの更新とインベントリからの削除](../../apps/deploy-use/update-and-retire-applications.md)」を参照して、これらの機能を理解してください。

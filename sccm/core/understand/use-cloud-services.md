@@ -1,108 +1,104 @@
 ---
-title: Usare i servizi cloud con Configuration Manager | Microsoft Docs
-description: Il provisioning delle risorse cloud per System Center Configuration Manager consente di integrare l&quot;infrastruttura locale.
+title: "Configuration Manager でのクラウド サービスの使用 | Microsoft Docs"
+description: "オンプレミスのインフラストラクチャを補足するための System Center Configuration Manager 用クラウド リソースをプロビジョニングします。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 24fca61e-9cdb-447a-ad7a-f4d2e4fd6704
-caps.latest.revision: 10
-caps.handback.revision: 0
+caps.latest.revision: "10"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0d7ddd48cc4e75b12f893e686b847d66058441e1
 ms.openlocfilehash: 52f7c63d155d5c34f0f12e13020767dec1867dab
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-cloud-services-with-system-center-configuration-manager"></a>Usare i servizi cloud con System Center Configuration Manager
+# <a name="use-cloud-services-with-system-center-configuration-manager"></a>クラウド サービスを System Center Configuration Manager と一緒に使う
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager supporta varie opzioni basate su cloud. Queste opzioni possono integrare l'infrastruttura locale e consentono di risolvere problemi aziendali quali:  
+System Center Configuration Manager は、いくつかのクラウド ベースのオプションをサポートしています。 これらは、オンプレミス インフラストラクチャを補完し、次のようなビジネス上の問題を解決することができます。  
 
--   Come gestire la strategia BYOD usando Intune per la gestione dei dispositivi mobili.  
+-   BYOD を管理する方法 (Intune をモバイル デバイス管理に使用する)  
 
--   Come specificare risorse di contenuto per client isolati o risorse nella Intranet, all'esterno del firewall aziendale, usando i punti di distribuzione basati su cloud.  
+-   企業ファイアウォール外部のイントラネット上の隔離されたクライアントやリソースに対し、コンテンツ リソースを提供する方法 (クラウドベースの配布ポイントを使用する)  
 
--   Come ridimensionare l'infrastruttura quando l'hardware fisico non è disponibile o non è logicamente incluso per supportare le esigenze, usando macchine virtuali di Microsoft Azure.  
+-   物理ハードウェアを利用できない事情があるときや、個別のニーズに対応するために論理的にハードウェアを導入できないとき、インフラストラクチャをスケールアウトする方法 (Microsoft Azure Virtual Machines を使用する)  
 
-Anche se non è necessario eseguire il provisioning delle risorse cloud prima di distribuire Configuration Manager, può essere utile comprendere queste opzioni prima di addentrarsi troppo nella pianificazione della struttura della gerarchia. L'uso delle risorse cloud potrebbe ridurre costi e tempi risolvendo al contempo problemi aziendali non risolvibili con l'infrastruttura locale.  
+クラウド リソースのプロビジョニングは、Configuration Manager を展開する前に必ず実行しなければならないものではありませんが、階層の設計プランの基礎段階でこれらのオプションを理解しておくと役に立つ場合があります。 クラウド リソースを使用することによって、オンプレミスのインフラストラクチャでは解決できないビジネスの課題に対応すると共に、コストを削減し、時間を短縮することができます。  
 
-## <a name="cloud-based-resources-you-can-use-with-configuration-manager"></a>Risorse basate su cloud che è possibile usare con Configuration Manager  
- Dal momento che ogni opzione ha requisiti diversi, analizzare ciascuna in modo più approfondito per comprendere i prerequisiti univoci, le limitazioni e la possibilità di costi aggiuntivi in base all'uso.  
+## <a name="cloud-based-resources-you-can-use-with-configuration-manager"></a>Configuration Manager で使用できるクラウド ベースのリソース  
+ 選択肢によって要件は異なりますが、それぞれの要件を詳しく調査し、前提条件や制限、使用に応じて発生する追加コストなどを把握してください。  
 
--   Per informazioni sui punti di distribuzione basati su cloud, vedere [Installare punti di distribuzione basati su cloud](/sccm/core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure).
+-   クラウドベースの配布ポイントの詳細については、「[クラウドベースの配布ポイントのインストール](/sccm/core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure)」を参照してください。
 
--   Per altre informazioni su Azure, vedere [Azure](http://go.microsoft.com/fwlink/p/?LinkId=262965) in MSDN Library.  
+-   Azure の詳細については、MSDN ライブラリの [Azure](http://go.microsoft.com/fwlink/p/?LinkId=262965) を参照してください。  
 
-### <a name="azure-virtual-machines-for-cloud-based-infrastructure"></a>Macchine virtuali di Azure (per l'infrastruttura basata su cloud)  
- Configuration Manager supporta l'uso di computer eseguiti in macchine virtuali di Azure analogamente a quando vengono eseguiti in locale all'interno della rete fisica aziendale. È possibile usare le macchine virtuali di Azure negli scenari seguenti:  
+### <a name="azure-virtual-machines-for-cloud-based-infrastructure"></a>Azure 仮想マシン (クラウドベースのインフラストラクチャ用)  
+ Configuration Manager は、物理的な企業ネットワーク内でオンプレミスで実行されるコンピューターと同じように、Azure の仮想マシン内で動作するコンピューターの使用をサポートします。 次のシナリオで Azure Virtual Machines を使うことができます。  
 
--   **Scenario 1:** è possibile eseguire Configuration Manager in una macchina virtuale e usarlo per gestire i client installati in altre macchine virtuali.  
+-   **シナリオ 1:** ある仮想マシンで Configuration Manager を実行し、それを使用して、別の仮想マシンにインストールされたクライアントを管理することができます。  
 
--   **Scenario 2:** è possibile eseguire Configuration Manager in una macchina virtuale e usarlo per gestire i client che non vengono eseguiti in Azure.  
+-   **シナリオ 2:** 仮想マシンで Configuration Manager を実行し、それを使用して Azure で実行されていないクライアントを管理することができます。  
 
--   **Scenario 3:** è possibile eseguire diversi ruoli del sistema del sito di Configuration Manager nelle macchine virtuali e allo stesso tempo eseguire altri ruoli nella rete aziendale fisica con connettività di rete appropriata per le comunicazioni.  
+-   **シナリオ 3:** 仮想マシンで複数の Configuration Manager サイト システムの役割を実行しながら、(通信のための適切なネットワーク接続がある) 物理的な企業ネットワークで他の役割を実行することができます。  
 
-Gli stessi requisiti per reti, sistemi operativi e requisiti hardware che si applicano all'installazione di Configuration Manager nella rete aziendale fisica si applicano anche all'installazione di Configuration Manager in Azure.  
+物理的な企業ネットワークに Configuration Manager をインストールするときと同じネットワーク、オペレーティング システム、ハードウェアの要件が、Azure での Configuration Manager のインストールにも適用されます。  
 
-È necessaria una sottoscrizione di Azure per usare macchine virtuali di Azure. I costi variano in base al numero di macchine virtuali usate, alla relativa configurazione e all'uso di risorse basate su cloud.  
+Azure の仮想マシンを使用するには、Azure サブスクリプションが必要です。 仮想マシンの使用台数や構成、クラウドベースのリソースの使用に応じた料金が発生します。  
 
-I siti e i client di Configuration Manager eseguiti in macchine virtuali di Azure sono soggetti agli stessi requisiti di licenza delle installazioni locali.  
+加えて、Azure Virtual Machines で実行している Configuration Manager サイトおよびクライアントには、オンプレミス インストールと同じライセンス要件が課されます。  
 
-### <a name="azure-services-for-cloud-based-distribution-points"></a>Servizi di Azure per i punti di distribuzione basati su cloud  
- È possibile usare un servizio di Azure per ospitare un punto di distribuzione di Configuration Manager, definito punto di distribuzione basato su cloud. È possibile [usare i punti di distribuzione basati su cloud con System Center Configuration Manager](../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md) insieme ai punti di distribuzione locali e ai punti di distribuzione distribuiti nelle macchine virtuali di Azure.  
+### <a name="azure-services-for-cloud-based-distribution-points"></a>Azure サービス (クラウドベースの配布ポイント用)  
+ Azure サービスを Configuration Manager 配布ポイントのホストとして使用することができます。これをクラウドベースの配布ポイントと呼びます。 オンプレミスの配布ポイントや、Azure Virtual Machines に展開されている配布ポイントと一緒に、[System Center Configuration Manager でクラウド ベースの配布ポイントを使用](../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md)できます。  
 
- Questa situazione è diversa rispetto all'uso di una macchina virtuale di Azure, in cui si distribuisce un ruolo del sistema del sito. Punti di distribuzione basati su cloud:  
+ これは、サイト システムの役割の展開先の Azure の仮想マシンを使うこととは異なります。 クラウドベースの配布ポイント:  
 
--   Vengono eseguiti come servizio in Azure, non in una macchina virtuale.  
+-   仮想マシン上ではなく Azure でサービスとして実行される。  
 
--   Vengono ridimensionati automaticamente per soddisfare l'aumento delle richieste di contenuto dai client.  
+-   クライアントからのコンテンツ要求の増加に対応するように自動的に拡張する。  
 
--   Supportano client su Internet e intranet.  
+-   インターネットとイントラネット上のクライアントをサポートする。  
 
-È necessaria una sottoscrizione di Azure per usare Azure per ospitare punti di distribuzione. I costi variano in base alla quantità di dati trasferiti da e verso il servizio.  
+Azure で配布ポイントをホストするには、Azure サブスクリプションが必要です。 サービス間で転送されたデータ量に基づいて料金が発生します。  
 
-### <a name="microsoft-intune-for-mobile-device-management"></a>Microsoft Intune (per la gestione dei dispositivi mobili)  
- È possibile integrare la sottoscrizione a Microsoft Intune con Configuration Manager per consentire la gestione dei dispositivi con il servizio Intune. Questa integrazione:  
+### <a name="microsoft-intune-for-mobile-device-management"></a>Microsoft Intune (モバイル デバイス管理用)  
+ Microsoft Intune サブスクリプションを Configuration Manager に統合することによって、Intune サービスを使用したデバイスの管理が可能になります。 この統合は:  
 
--   Viene definita configurazione ibrida ed estende Configuration Manager (o Intune a seconda della prospettiva) per supportare un'ampia varietà di dispositivi.  
+-   ハイブリッド構成と呼ばれます。また、Configuration Manager (または、見方によっては Intune) を拡張してさまざまなデバイスに対応することができます。  
 
--   Richiede il ruolo del sistema del sito del connettore Microsoft Intune.  
+-   Microsoft Intune コネクタ サイト システムの役割が必要です。  
 
--   Richiede una sottoscrizione separata a Intune con numero di licenze sufficiente per i dispositivi che verranno gestiti con Intune.  
+-   別途 Intune サブスクリプションと、Intune を使って管理するデバイス分のライセンスが必要です。  
 
-Anche se Intune usa Azure, non richiede una configurazione indipendente di Azure né di sostenere altri costi oltre a quelli relativi alla sottoscrizione a Intune.  
+Intune は Azure を使用しますが、個別に Azure を構成する必要はなく、また Intune サブスクリプションの料金以外で別途コストが発生することもありません。  
 
-### <a name="additional-configuration-manager-capabilities"></a>Funzionalità aggiuntive di Configuration Manager  
- Alcune funzionalità di Configuration Manager possono connettersi ai servizi basati su cloud, ad esempio:  
+### <a name="additional-configuration-manager-capabilities"></a>その他の Configuration Manager の機能  
+ Configuration Manager の一部の機能は、次のようなクラウドベースのサービスに接続することができます。  
 
--   Windows Server Update Services (WSUS).  
+-   Windows Server Update Services (WSUS)  
 
--   Servizio cloud di Configuration Manager per scaricare gli aggiornamenti per Configuration Manager.  
+-   Configuration Manager の更新プログラムをダウンロードする Configuration Manager サービスのクラウド  
 
-Queste funzionalità aggiuntive non richiedono una sottoscrizione di Azure. Non è necessario configurare connessioni specifiche, certificati o servizi nel cloud. ma vengono gestite automaticamente da Configuration Manager. È sufficiente verificare che i dispositivi e i sistemi del sito applicabili possano accedere agli URL basati su Internet.  
+これらの追加機能では、Azure サブスクリプションを所有する必要がありません。 クラウド内の特定の接続、証明書、またはサービスを設定する必要はありません。 これらは Configuration Manager によって自動的に管理されます。 必要なのは、対象となるサイト システムとデバイスからインターネット ベースの URL にアクセスできることを確認するだけです。  
 
-##  <a name="BKMK_CloudSec"></a> Sicurezza dei servizi basati su cloud  
- Configuration Manager usa i certificati per il provisioning e l'accesso al contenuto di Azure e per la gestione dei servizi usati. Configuration Manager crittografa i dati archiviati in Azure, ma non introduce ulteriori controlli su dati o sicurezza oltre a quelli forniti da Azure.  
+##  <a name="BKMK_CloudSec"></a> クラウドベースのサービスのセキュリティ  
+ Configuration Manager は証明書を使用して、Azure 内のコンテンツのプロビジョニングとアクセスを行い、使用するサービスを管理します。 Configuration Manager は Azure に保存されるデータを暗号化しますが、Azure が提供する機能以外のセキュリティ機能やデータ制御機能を提供しません。  
 
- Per altre informazioni, vedere i dettagli relativi ai diversi scenari di risorse basate su cloud. È anche possibile visualizzare gli argomenti seguenti per la sicurezza di Azure:  
+ 詳細については、クラウドベースのリソースの各種シナリオを参照してください。 Azure のセキュリティについては、次のトピックも参考になります。  
 
--   [Azure: gestione degli account di protezione in Azure](http://go.microsoft.com/fwlink/p/?LinkId=262968)  
+-   [Azure: Azure におけるセキュリティ アカウントの管理を理解する](http://go.microsoft.com/fwlink/p/?LinkId=262968)  
 
--   [Panoramica sulla protezione di Azure](http://go.microsoft.com/fwlink/p/?LinkId=262970)  
+-   [Azure のセキュリティの概要](http://go.microsoft.com/fwlink/p/?LinkId=262970)  
 
--   [Superare gli incroci di protezione nella migrazione cloud](http://go.microsoft.com/fwlink/p/?LinkId=262971)  
+-   [クラウド移行をセキュリティの問題で中断しない](http://go.microsoft.com/fwlink/p/?LinkId=262971)  
 
--   [Protezione dei dati in Azure (parte 1 di 2)](http://go.microsoft.com/fwlink/p/?LinkId=262974)  
-
+-   [Azure におけるデータのセキュリティ、パート 1/2](http://go.microsoft.com/fwlink/p/?LinkId=262974)  

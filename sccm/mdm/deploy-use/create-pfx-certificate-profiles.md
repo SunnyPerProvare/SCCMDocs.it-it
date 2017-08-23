@@ -1,186 +1,184 @@
 ---
-title: "Creare profili certificato PFX usando un'autorità di certificazione | Microsoft Docs"
-description: Informazioni su come usare i file PFX in System Center Configuration Manager per generare i certificati specifici dell'utente che supportano lo scambio di dati crittografati.
+title: "証明機関を使用して PFX 証明書プロファイルを作成する | Microsoft Docs"
+description: "System Center Configuration Manager で PFX ファイルを使用して暗号化されたデータ交換をサポートするユーザーに固有の証明書を生成する方法について説明します。"
 ms.custom: na
 ms.date: 04/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d240a836-c49b-49ab-a920-784c062d6748
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
 ms.openlocfilehash: 43d8b2217763681be69711fce93c020a65da1cd8
-ms.contentlocale: it-it
-ms.lasthandoff: 08/02/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-pfx-certificate-profiles-using-a-certificate-authority"></a>Come creare profili certificato PFX usando un'autorità di certificazione
+# <a name="how-to-create-pfx-certificate-profiles-using-a-certificate-authority"></a>証明機関を使用して PFX 証明書プロファイルを作成する方法
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Viene illustrato come creare un profilo certificato che usa un'autorità di certificazione per le credenziali.
+ここでは、資格情報として証明機関を使用する証明書プロファイルを作成する方法について説明します。
 
-L'argomento [Introduzione ai profili certificato](../../protect/deploy-use/introduction-to-certificate-profiles.md) contiene informazioni generali sulla creazione e la configurazione dei profili certificato ed evidenzia alcune informazioni specifiche sui profili certificato relative ai certificati PFX.
+[証明書プロファイル](../../protect/deploy-use/introduction-to-certificate-profiles.md)に関する記事には、証明書プロファイルの作成と構成に関する一般的な情報が記載されています。 このトピックでは、PFX 証明書に関連した証明書プロファイルの具体的な情報をいくつか取り上げます。
 
-## <a name="pfx-certificate-profiles"></a>Profili certificato PFX
-System Center Configuration Manager consente di creare un profilo certificato PFX usando le credenziali rilasciate da un'autorità di certificazione.  A partire dalla versione 1706, è possibile scegliere Microsoft o Entrust come autorità di certificazione.  I file PFX (Personal Information Exchange), quando vengono distribuiti nei dispositivi utente, generano certificati specifici dell'utente per supportare lo scambio di dati crittografato.
+## <a name="pfx-certificate-profiles"></a>PFX 証明書プロファイル
+System Center Configuration Manager では、証明機関から発行された資格情報を使用して PFX 証明書プロファイルを作成できます。  バージョン 1706 の時点で、証明機関として Microsoft または Entrust を選択できます。  個人情報交換 (.pfx) ファイルをユーザー デバイスに展開すると、暗号化されたデータの交換をサポートするユーザー固有の証明書が生成されます。
 
-Per importare le credenziali dai file dei certificati esistenti, vedere [How to create PFX certificate profiles by importing certificate details](../../mdm/deploy-use/import-pfx-certificate-profiles.md) (Come creare profili certificato PFX importando i dettagli dei certificati).
+既存の証明書ファイルから証明書の資格情報をインポートする方法については、「[How to create PFX certificate profiles by importing certificate details](../../mdm/deploy-use/import-pfx-certificate-profiles.md)」(証明書の詳細をインポートして PFX 証明書プロファイルを作成する方法) を参照してください。
 
-## <a name="create-and-deploy-a-personal-information-exchange-pfx-certificate-profile"></a>Creare e distribuire un profilo certificato PFX (Personal Information Exchange)  
+## <a name="create-and-deploy-a-personal-information-exchange-pfx-certificate-profile"></a>Personal Information Exchange (PFX) 証明書プロファイルの作成と配置  
 
-### <a name="get-started"></a>Introduzione
+### <a name="get-started"></a>作業開始
 
-1.  Nella console di System Center Configuration Manager fare clic su **Asset e conformità**.  
-2.  Nell'area di lavoro **Asset e conformità** scegliere **Impostazioni di conformità** &gt; **Accesso risorse aziendali** &gt; **Profili certificati**.  
+1.  System Center Configuration Manager コンソールで、**[資産とコンプライアンス]** を選択します。  
+2.  **[資産とコンプライアンス]** ワークスペースで、**[コンプライアンス設定]** &gt; **[会社のリソースへのアクセス]** &gt; **[証明書プロファイル]** をクリックします。  
 
-3.  Nella scheda **Home** del gruppo **Crea** scegliere **Crea profilo certificato**.
+3.  **[ホーム]** タブの **[作成]** グループで、**[証明書プロファイルの作成]** を選択します。
 
-4.  Nella pagina **Generale** della **Creazione guidata profilo certificato** specificare le informazioni seguenti:  
+4.  **[証明書プロファイルの作成]** ウィザードの **[全般]** ページで、次の情報を指定します。  
 
-    -   **Nome**: immettere un nome univoco per il profilo certificato. È possibile usare un massimo di 256 caratteri.  
+    -   **名前**: 証明書プロファイルの固有な名前を入力します。 最大 256 文字を使用できます。  
 
-    -   **Descrizione**: digitare una descrizione che offra una panoramica del profilo certificato e altre informazioni rilevanti per facilitarne l'identificazione nella console di System Center Configuration Manager. È possibile usare un massimo di 256 caratteri.  
+    -   **説明**: System Center Configuration Manager コンソールで証明書プロファイルを区別しやすくなるように、簡単な説明と他の関連情報を入力します。 最大 256 文字を使用できます。  
 
-    -   In **Specificare il tipo di profilo certificato che si desidera creare** scegliere **Personal Information Exchange -- Impostazioni di PKCS #12 (PFX) -- Crea** e quindi scegliere l'autorità di certificazione dall'elenco a discesa.  A partire dalla versione 1706, è possibile scegliere **Microsoft** o **Entrust**.
+    -   **[作成する証明書プロファイルの種類を指定します]** で **[Personal Information Exchange -- PKCS #12 (PFX) 設定 -- 作成]** を選択し、ドロップダウン リストから証明機関を選択します。  バージョン 1706 以降は、**[Microsoft]** または **[Entrust]** を選択できるようになりました。
 
-### <a name="select-supported-platforms"></a>Selezionare le piattaforme supportate
+### <a name="select-supported-platforms"></a>サポートされているプラットフォームを選択する
 
-La pagina Piattaforme supportate identifica i sistemi operativi e i dispositivi supportati dal profilo certificato.  
+[サポートされているプラットフォーム] ページでは、証明書プロファイルがサポートするオペレーティング システムとデバイスが表示されます。  
 
-I profili certificato possono supportare più sistemi operativi e dispositivi, ma determinate combinazioni di sistema operativo o dispositivo possono richiedere impostazioni diverse.  In questi casi, è meglio creare profili separati per ogni set univoco di impostazioni.  
+証明書プロファイルは複数のオペレーティング システムとデバイスをサポートできますが、一部のオペレーティング システムまたはデバイスの組み合わせでは、異なる設定が必要な場合があります。  このような場合は、異なる設定ごとに別のプロファイルを作成することをお勧めします。  
 
-A partire dalla versione 1706, sono disponibili le opzioni seguenti:
+バージョン 1706 の時点で、次のオプションを使用できます。
 
 - Windows 10
-    - Tutti i dispositivi Windows 10 (64 bit)
-    - Tutti i dispositivi Windows 10 (32 bit)
-    - Tutti i dispositivi Windows 10 Holographic Enterprise e versioni successive
-    - Tutti i dispositivi Windows 10 Holographic e versioni successive
-    - Tutti i dispositivi Windows 10 Team e versioni successive
-    - Tutti i dispositivi Windows 10 Mobile e versioni successive
+    - すべての Windows 10 (64 ビット)
+    - すべての Windows 10 (32 ビット)
+    - すべての Windows 10 Holographic Enterprise 以降
+    - すべての Windows 10 Holographic 以降
+    - すべての Windows 10 Team 以降
+    - すべての Windows 10 Mobile 以降
 - iPhone
 - iPad
 - Android
 - Android for Work
 
 > [!Note]  
-> I dispositivi MacOS/OSX non sono attualmente supportati.  
+> MacOS/OSX デバイスは現在サポートされていません。  
 
-Quando non vengono selezionate altre opzioni, la casella di controllo **Seleziona tutto** seleziona tutte le opzioni disponibili.  Quando viene selezionata una o più opzioni, **Seleziona tutto** cancella le selezioni esistenti. 
+他のオプションが選択されていない場合、**[すべて選択]** チェックボックスをクリックすると、使用できるすべてのオプションが選択されます。  1 つまたは複数のオプションが選択されている場合、**[すべて選択]** チェックボックスをクリックすると、既存の選択はクリアされます。 
 
-1.  Selezionare uno o più piattaforme supportate dal profilo certificato.
+1.  証明書プロファイルでサポートされるプラットフォームを 1 つまたは複数選択します。
 
-1.  Scegliere **Avanti** per continuare.  
-
-
-### <a name="configure-certification-authorities"></a>Configurare le autorità di certificazione
-
-È possibile scegliere il punto di registrazione certificati per elaborare i certificati PFX.  
-
-1.  Nell'elenco **Sito primario** scegliere il server contenente il ruolo Punto di registrazione certificati per l'autorità di certificazione.
-1.  Nell'elenco **Autorità di certificazione** scegliere l'autorità di certificazione pertinente inserendo un segno di spunta nella colonna sinistra.
-1.  Quando si è pronti per continuare, scegliere **Avanti**.
-
-Per altre informazioni, vedere [Infrastruttura di certificazione](../../protect/deploy-use/certificate-infrastructure.md).
+1.  **[次へ]** を選択して、続行します。  
 
 
-### <a name="configure-certificate-settings-for-microsoft-ca"></a>Configurare le impostazioni del certificato per l'autorità di certificazione Microsoft
+### <a name="configure-certification-authorities"></a>証明機関を構成する
 
-Per configurare le impostazioni del certificato quando si usa Microsoft come autorità di certificazione:
+ここでは、PFX 証明書を処理する証明書登録ポイント (CRP) を選択します。  
 
-1.  Nell'elenco a discesa **Nome del modello di certificato** scegliere il modello di certificato.
+1.  **[プライマリ サイト]** リストから、CA の CRP ロールを含むサーバーを選択します。
+1.  **[証明機関]** リストから、左側の列のチェックマークをオンにして、関連する CA を選択します。
+1.  続行する準備ができたら **[次へ]** を選択します。
 
-1.  Abilitare la casella di controllo **Utilizzo del certificato** per usare il profilo certificato per la firma o la crittografia S/MIME.
-
-    Quando si seleziona questa opzione mentre si usa Microsoft come autorità di certificazione, tutti i certificati PFX associati all'utente di destinazione vengono distribuiti in tutti i dispositivi registrati dall'utente.  Quando questa casella di controllo viene deselezionata, ogni dispositivo riceve un certificato univoco.  
-
-1.  Impostare **Formato nome soggetto** su **Nome comune** o su **Nome distinto completo**.  In caso di dubbi su quale usare, contattare l'amministratore dell'autorità di certificazione.
-
-1.  Per **Nome alternativo del soggetto**, abilitare **Indirizzo di posta elettronica** e **Nome dell'entità utente (UPN)** in modo appropriato per l'autorità di certificazione.
-
-1.  **Soglia di rinnovo** determina quando i certificati vengono automaticamente rinnovati, in base alla percentuale di tempo rimanente prima della scadenza.
-
-1.  Impostare **Periodo di validità del certificato** sulla durata del certificato.  Per specificare il periodo, impostare un numero (1-100) e un periodo (anni, mesi o giorni).
-
-1.  **Pubblicazione di Active Directory** viene abilitata quando il punto di registrazione certificati specifica le credenziali di Active Directory.  Abilitare l'opzione per pubblicare il profilo certificato in Active Directory.
-
-1.  Se è stata selezionata una o più piattaforme Windows 10 quando si sono specificate le piattaforme supportate:
-
-    1.  Impostare **Archivio certificati Windows** su **Utente**.  L'opzione **Computer locale** non distribuisce i certificati e non è consigliabile.
-    1.  Selezionare **Provider di archiviazione chiavi** da una delle opzioni seguenti:
-
-        - **Installa in TPM (Trusted Platform Module) se presente**  
-        - **Installa in TPM (Trusted Platform Module) in caso di errore** 
-        - **Installa in Windows Hello for Business oppure genera errore** 
-        - **Installa nel provider di archiviazione chiavi software** 
-
-1.  Al termine, scegliere **Avanti** o **Riepilogo**.
-
-### <a name="configure-certificate-settings-for-entrust-ca"></a>Configurare le impostazioni del certificato per l'autorità di certificazione Entrust
-
-Per configurare le impostazioni del certificato quando si usa Entrust come autorità di certificazione:
-
-1.  Nell'elenco a discesa **Configurazione dell'ID digitale** scegliere il profilo di configurazione.  Le opzioni di configurazione dell'ID digitale vengono create dall'amministratore di Entrust.
-
-1.  Se selezionato, **Utilizzo del certificato** usa il profilo certificato per la firma o la crittografia S/MIME.
-
-    Quando si usa Entrust come autorità di certificazione, tutti i certificati PFX associati all'utente di destinazione vengono distribuiti in tutti i dispositivi registrati dall'utente.    Quando questa opzione *non* viene selezionata, ogni dispositivo riceve un certificato univoco.  Il comportamento è diverso a seconda dell'autorità di certificazione. Per altre informazioni, vedere la sezione corrispondente.
-
-1.  Usare il pulsante **Formatta** per eseguire il mapping dei token **Formato nome soggetto** di Entrust ai campi ConfigMgr.  
-
-    La finestra di dialogo **Certificate Name Formatting** (Formattazione del nome del certificato) elenca le variabili di configurazione dell'ID digitale di Entrust.  Per ogni variabile di Entrust, scegliere la variabile LDAP appropriata nell'elenco a discesa associato.
-
-1.  Usare il pulsante **Formatta** per eseguire il mapping dei token **Nome alternativo del soggetto** di Entrust alle variabili LDAP supportate.  
-
-    La finestra di dialogo **Certificate Name Formatting** (Formattazione del nome del certificato) elenca le variabili di configurazione dell'ID digitale di Entrust.  Per ogni variabile di Entrust, scegliere la variabile LDAP appropriata nell'elenco a discesa associato.
-
-1.  **Soglia di rinnovo** determina quando i certificati vengono automaticamente rinnovati, in base alla percentuale di tempo rimanente prima della scadenza.
-
-1.  Impostare **Periodo di validità del certificato** sulla durata del certificato.  Per specificare il periodo, impostare un numero (1-100) e un periodo (anni, mesi o giorni).
-
-1.  **Pubblicazione di Active Directory** viene abilitata quando il punto di registrazione certificati specifica le credenziali di Active Directory.  Abilitare l'opzione per pubblicare il profilo certificato in Active Directory.
-
-1.  Se è stata selezionata una o più piattaforme Windows 10 quando si sono specificate le piattaforme supportate:
-
-    1.  Impostare **Archivio certificati Windows** su **Utente**.  L'opzione **Computer locale** non distribuisce i certificati e non è consigliabile.
-    1.  Selezionare **Provider di archiviazione chiavi** da una delle opzioni seguenti:
-
-        - **Installa in TPM (Trusted Platform Module) se presente**  
-        - **Installa in TPM (Trusted Platform Module) in caso di errore** 
-        - **Installa in Windows Hello for Business oppure genera errore** 
-        - **Installa nel provider di archiviazione chiavi software** 
-
-1.  Al termine, scegliere **Avanti** o **Riepilogo**.
+詳細については、「[証明書インフラストラクチャ](../../protect/deploy-use/certificate-infrastructure.md)」を参照してください。
 
 
-### <a name="finish-up"></a>Terminare
+### <a name="configure-certificate-settings-for-microsoft-ca"></a>Microsoft CA の証明書設定を構成する
 
-1.  Nella pagina Riepilogo esaminare gli elementi selezionati e verificare le scelte.
+CA として Microsoft を使用する場合、証明書設定を構成するには、次の手順を実行します。
 
-1.  Quando si è pronti, scegliere **Avanti** per creare il profilo.  
+1.  **[証明書テンプレート名]** ドロップダウンから証明書テンプレートを選択します。
 
-1.  Il profilo certificato contenente il file PFX è ora disponibile nell'area di lavoro **Profili certificato** . 
+1.  S/MIME 署名または暗号化に証明書プロファイルを使用するには、**[証明書の使用法]** チェックボックスをオンにします。
 
-1.  Per distribuire il profilo:
+    CA として Microsoft を使用するときにこのチェックボックスをオンにすると、対象ユーザーに関連付けられているすべての PFX 証明書は、ユーザーが登録しているすべてのデバイスに配布されます。  このチェックボックスをオフにすると、各デバイスに一意の証明書が送信されます。  
 
-    1. Aprire l'area di lavoro **Asset e conformità**.
-    1. Scegliere **Impostazioni di conformità** > **Accesso risorse aziendali** > **Profili certificato**
-    1. Fare clic con il pulsante destro del mouse sul profilo certificato desiderato e quindi scegliere **Distribuisci**. 
+1.  **[サブジェクト名の形式]** を **[共通名]** または **[完全な識別名]** に設定します。  どちらを使用するかわからない場合は、組織内の証明機関管理者に問い合わせてください。
+
+1.  **[サブジェクトの別名]** で、必要に応じて CA の **[電子メール アドレス]** と **[ユーザー プリンシパル名 (UPN)]** を有効にします。
+
+1.  **[更新しきい値]** で、有効期間までの残り時間の割合に応じて証明書が自動的に更新されるタイミングが決まります。
+
+1.  **[証明書の有効期間]** に証明書の有効期間を設定します。  期間を示す数値 (1 から 100) と期間 (年、月、または日) を指定します。
+
+1.  **[Active Directory 公開]** は、証明書登録ポイントで Active Directory 資格情報を指定する場合に有効にします。  証明書プロファイルを Active Directory に公開するには、このオプションを有効にします。
+
+1.  サポートされるプラットフォームを指定するときに 1 つまたは複数の Windows 10 プラットフォームを選択した場合:
+
+    1.  **[Windows 証明書ストア]** を **[ユーザー]** に設定します  (**[ローカル コンピューター]** を選択しても証明書は展開されないので、選択しないことをお勧めします)。
+    1.  次のオプションのいずれかから **[キー格納プロバイダー (KSP)]** を選択します。
+
+        - **トラステッド プラットフォーム モジュール (TPM) にインストールする (存在する場合)**  
+        - **トラステッド プラットフォーム モジュール (TPM) にインストールする (それ以外は失敗)** 
+        - **Windows Hello for Business にインストールする (それ以外は失敗)** 
+        - **ソフトウェア キー記憶域プロバイダーにインストールする** 
+
+1.  完了したら、**[次へ]** または **[概要]** を選択します。
+
+### <a name="configure-certificate-settings-for-entrust-ca"></a>Entrust CA の証明書設定を構成する
+
+CA として Entrust を使用する場合、証明書設定を構成するには、次の手順を実行します。
+
+1.  **[デジタル ID 構成]** ドロップダウンから、構成プロファイルを選択します。  デジタル ID 構成オプションは、Entrust 管理者によって作成されます。
+
+1.  **[証明書の使用法]** をオンにすると、S/MIME 署名または暗号化に証明書プロファイルが使用されます。
+
+    CA として Entrust を使用する場合、対象ユーザーに関連付けられているすべての PFX 証明書は、ユーザーが登録しているすべてのデバイスに配布されます。    このオプションを*オフ*にすると、各デバイスに一意の証明書が送信されます  (動作は CA によって異なります。詳細については、対応するセクションを参照してください)。
+
+1.  **[形式]** ボタンをクリックして Entrust の **[サブジェクト名の形式]** トークンを ConfigMgr フィールドにマップします。  
+
+    **[Certificate Name Formatting]\(証明書名の形式\)** に、Entrust デジタル ID 構成変数の一覧が表示されます。  各 Entrust 変数について、関連するドロップダウン リストから適切な LDAP 変数を選択します。
+
+1.  **[形式]** ボタンをクリックして Entrust の **[サブジェクトの別名]** トークンをサポートされる LDAP 変数にマップします。  
+
+    **[Certificate Name Formatting]\(証明書名の形式\)** に、Entrust デジタル ID 構成変数の一覧が表示されます。  各 Entrust 変数について、関連するドロップダウン リストから適切な LDAP 変数を選択します。
+
+1.  **[更新しきい値]** で、有効期間までの残り時間の割合に応じて証明書が自動的に更新されるタイミングが決まります。
+
+1.  **[証明書の有効期間]** に証明書の有効期間を設定します。  期間を示す数値 (1 から 100) と期間 (年、月、または日) を指定します。
+
+1.  **[Active Directory 公開]** は、証明書登録ポイントで Active Directory 資格情報を指定する場合に有効にします。  証明書プロファイルを Active Directory に公開するには、このオプションを有効にします。
+
+1.  サポートされるプラットフォームを指定するときに 1 つまたは複数の Windows 10 プラットフォームを選択した場合:
+
+    1.  **[Windows 証明書ストア]** を **[ユーザー]** に設定します  (**[ローカル コンピューター]** を選択しても証明書は展開されないので、選択しないことをお勧めします)。
+    1.  次のオプションのいずれかから **[キー格納プロバイダー (KSP)]** を選択します。
+
+        - **トラステッド プラットフォーム モジュール (TPM) にインストールする (存在する場合)**  
+        - **トラステッド プラットフォーム モジュール (TPM) にインストールする (それ以外は失敗)** 
+        - **Windows Hello for Business にインストールする (それ以外は失敗)** 
+        - **ソフトウェア キー記憶域プロバイダーにインストールする** 
+
+1.  完了したら、**[次へ]** または **[概要]** を選択します。
 
 
-## <a name="see-also"></a>Vedere anche
-La sezione [Creare un nuovo profilo di certificato](../../protect/deploy-use/create-certificate-profiles.md) illustra la Creazione guidata profilo certificato.
+### <a name="finish-up"></a>完了
 
-[How to create PFX certificate profiles by importing certificate details](../../mdm/deploy-use/import-pfx-certificate-profiles.md) (Come creare i profili certificato PFX importando i dettagli dei certificati)
+1.  [概要] ページで選択内容が正しいことを確認します。
 
-[Distribuire profili certificato Wi-Fi, VPN e posta elettronica](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md) illustra come distribuire i profili dei certificati.
+1.  準備ができたら、**[次へ]** を選択してプロファイルを作成します。  
+
+1.  現在、PFX ファイルを含む証明書プロファイルは **[証明書プロファイル]** ワークスペースから取得できます。 
+
+1.  プロファイルを展開するには:
+
+    1. **[資産と準拠]** ワークスペースを開きます。
+    1. **[コンプライアンス設定]** > **[会社のリソースへのアクセス]** > **[証明書プロファイル]** を選択します。
+    1. 対象の証明書プロファイルを右クリックし、**[展開]** を選択します。 
+
+
+## <a name="see-also"></a>関連項目
+「[新しい証明書プロファイルを作成する](../../protect/deploy-use/create-certificate-profiles.md)」では、証明書プロファイルの作成ウィザードについて説明します。
+
+[証明書の詳細をインポートして PFX 証明書プロファイルを作成する方法](../../mdm/deploy-use/import-pfx-certificate-profiles.md)
+
+「[Deploy Wi-Fi, VPN, email, and certificate profiles](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md)」(Wi-Fi、VPN、電子メール、および証明書プロファイルの展開) では、証明書プロファイルの展開について説明しています。

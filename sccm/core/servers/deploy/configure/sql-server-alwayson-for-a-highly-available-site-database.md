@@ -1,155 +1,153 @@
 ---
-title: Always On di SQL Server | Microsoft Docs
-description: "Pianificare l'uso di un gruppo di disponibilità Always On di SQL Server con SCCM."
+title: SQL Server Always On | Microsoft Docs
+description: "SCCM での SQL Server Always On 可用性グループの使用を計画します。"
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 58d52fdc-bd18-494d-9f3b-ccfc13ea3d35
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: c746365238e1255d73387a9496521bb03a56b21b
-ms.contentlocale: it-it
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparare l'uso di gruppi di disponibilità Always On di SQL Server con Configuration Manager
+# <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Configuration Manager で SQL Server Always On 可用性グループを使用するための準備
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Preparare System Center Configuration Manager all'uso di gruppi di disponibilità Always On di SQL Server come soluzione di disponibilità elevata e ripristino di emergenza per il database del sito.  
-Configuration Manager supporta l'uso di gruppi di disponibilità:
--     nei siti primari e nel sito di amministrazione centrale;
--     in locale o in Microsoft Azure.
+System Center Configuration Manager で、サイト データベース用の高可用性と障害復旧ソリューションとして SQL Server Always On 可用性グループを使用するための準備を行います。  
+Configuration Manager では、次の場所での可用性グループの使用がサポートされます。
+-     プライマリ サイトと中央管理サイト。
+-     オンプレミス、または Microsoft Azure。
 
-Quando si usano i gruppi di disponibilità in Microsoft Azure, è possibile aumentare ulteriormente la disponibilità del database del sito con i *set di disponibilità di Azure*. Per altre informazioni sui set di disponibilità di Azure, vedere [Gestione della disponibilità delle macchine virtuali](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-manage-availability/).
+Microsoft Azure で可用性グループを使用する場合は、*Azure 可用性セット*を使用することで、サイト データベースの可用性をさらに向上できます。 Azure 可用性セットの詳細については、「 [仮想マシンの可用性管理](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-manage-availability/)」を参照してください。
 
 >  [!Important]   
->  Prima di continuare, acquisire familiarità con la configurazione di SQL Server e dei gruppi di disponibilità di SQL Server. Le informazioni seguenti fanno riferimento alla libreria della documentazione e alle procedure relative a SQL Server.
+>  作業を続行する前に、SQL Server と SQL Server 可用性グループの構成に慣れておいてください。 以下の情報では、SQL Server ドキュメント ライブラリと手順を示します。
 
-## <a name="supported-scenarios"></a>Scenari supportati
-Di seguito sono riportati gli scenari supportati per l'uso di gruppi di disponibilità con Configuration Manager. Informazioni dettagliate e procedure per ogni scenario sono reperibili in [Configurare i gruppi di disponibilità per Configuration Manager](/sccm/core/servers/deploy/configure/configure-aoag).
-
-
--      [Creare un gruppo di disponibilità per l'uso con Configuration Manager](/sccm/core/servers/deploy/configure/configure-aoag#create-and-configure-an-availability-group).
--     [Configurare un sito per l'uso di un gruppo di disponibilità](/sccm/core/servers/deploy/configure/configure-aoag#configure-a-site-to-use-the-database-in-the-availability-group).
--     [Aggiungere e rimuovere i membri di una replica sincrona da un gruppo di disponibilità che ospita un database del sito](/sccm/core/servers/deploy/configure/configure-aoag#add-and-remove-synchronous-replica-members).
--     [Configurare le repliche con commit asincrono](/sccm/core/servers/deploy/configure/configure-aoag#configure-an-asynchronous-commit-repilca) (richiede Configuration Manager 1706 o versione successiva)
--     [Recuperare un sito da una replica con commit asincrono](/sccm/core/servers/deploy/configure/configure-aoag#use-the-asynchronous-replica-to-recover-your-site) (richiede Configuration Manager 1706 o versione successiva)
--     [Spostare un database del sito da un gruppo di disponibilità a un'istanza predefinita o denominata di SQL Server autonomo](/sccm/core/servers/deploy/configure/configure-aoag#stop-using-an-availability-group).
+## <a name="supported-scenarios"></a>サポートされるシナリオ
+Configuration Manager で可用性グループを使用する場合にサポートされるシナリオを以下に示します。 それぞれの詳細と手順については、[Configuration Manager の可用性グループの構成](/sccm/core/servers/deploy/configure/configure-aoag)に関するページを参照してください。
 
 
-## <a name="prerequisites"></a>Prerequisiti
-I prerequisiti seguenti si applicano a tutti gli scenari. Se a uno scenario si applicano prerequisiti aggiuntivi, i dettagli verranno forniti con lo scenario specifico.   
+-      [Configuration Manager で使用する可用性グループを作成します](/sccm/core/servers/deploy/configure/configure-aoag#create-and-configure-an-availability-group)。
+-     [可用性グループを使用するようにサイトを構成します](/sccm/core/servers/deploy/configure/configure-aoag#configure-a-site-to-use-the-database-in-the-availability-group)。
+-     [サイト データベースをホストする可用性グループで同期レプリカ メンバーを追加または削除します](/sccm/core/servers/deploy/configure/configure-aoag#add-and-remove-synchronous-replica-members)。
+-     [非同期コミット レプリカを構成](/sccm/core/servers/deploy/configure/configure-aoag#configure-an-asynchronous-commit-repilca) します (Configuration Manager 1706 以降のバージョンが必要です)。
+-     [非同期コミット レプリカからサイトを回復](/sccm/core/servers/deploy/configure/configure-aoag#use-the-asynchronous-replica-to-recover-your-site) します (Configuration Manager 1706 以降のバージョンが必要です)。
+-     [サイト データベースを、可用性グループから、スタンドアロン SQL Server の指定したインスタンスまたは既定のインスタンスに移動します](/sccm/core/servers/deploy/configure/configure-aoag#stop-using-an-availability-group)。
 
-### <a name="configuration-manager-accounts-and-permissions"></a>Account e autorizzazioni di Configuration Manager
-**Server del sito per l'accesso ai membri di replica:**   
-L'account computer del server del sito deve essere un membro del gruppo **Administrators locale** in tutti i computer membri del gruppo di disponibilità.
+
+## <a name="prerequisites"></a>必要条件
+すべてのシナリオに以下の必要条件が適用されます。 追加の必要条件が特定のシナリオに適用される場合は、そのシナリオで詳しく説明します。   
+
+### <a name="configuration-manager-accounts-and-permissions"></a>Configuration Manager のアカウントとアクセス許可
+**サイト サーバーからレプリカ メンバーへのアクセス:**   
+サイト サーバーのコンピューター アカウントは、可用性グループのメンバーである各コンピューターの **ローカル管理者** グループのメンバーである必要があります。
 
 ### <a name="sql-server"></a>SQL Server
-**Versione:**  
-Ogni replica nel gruppo di disponibilità deve eseguire una versione di SQL Server supportata dalla versione in uso di Configuration Manager. Se supportati da SQL Server, nodi diversi di un gruppo di disponibilità possono eseguire versioni diverse di SQL Server.
+**バージョン:**  
+可用性グループの各レプリカは、使用しているバージョンの Configuration Manager でサポートされるバージョンの SQL Server を実行する必要があります。 SQL Server でサポートされる場合、可用性グループの別々のノードで、異なるバージョンの SQL Server を実行できます。
 
-**Edizione:**  
-È necessario usare un'edizione *Enterprise* di SQL Server.
+**エディション:**  
+SQL Server の *Enterprise* エディションを使用する必要があります。
 
-**Account:**  
-Ogni istanza di SQL Server può essere eseguita con un account utente di dominio (**account del servizio**) o con un account non di dominio. Ogni replica in un gruppo può avere una configurazione diversa. Per le [procedure consigliate di SQL Server](/sql/sql-server/install/security-considerations-for-a-sql-server-installation#before-installing-includessnoversionincludesssnoversion-mdmd), usare un account con le autorizzazioni più restrittive possibili.
+**アカウント:**  
+SQL Server の各インスタンスは、ドメイン ユーザー アカウント (**サービス アカウント**) またはドメイン以外のアカウントで実行できます。 グループ内の各レプリカは別の構成を持つことができます。 [SQL Server のベスト プラクティス](/sql/sql-server/install/security-considerations-for-a-sql-server-installation#before-installing-includessnoversionincludesssnoversion-mdmd)に従って、使用可能な最小アクセス許可を持つアカウントを使用します。
 
--   Per configurare gli account del servizio e le autorizzazioni per SQL Server 2016, vedere [Configurare account di servizio e autorizzazioni di Windows](/sql/database-engine/configure-windows/configure-windows-service-accounts-and-permissions) in MSDN.
--   Per usare un account non di dominio, sono necessari certificati. Per altre informazioni, vedere [Utilizzare certificati per un endpoint del mirroring del database (Transact-SQL)](https://docs.microsoft.com/sql/database-engine/database-mirroring/use-certificates-for-a-database-mirroring-endpoint-transact-sql).
+-   SQL Server 2016 用にサービス アカウントとアクセス許可を構成する場合は、MSDN の「[Windows サービス アカウントと権限の構成](/sql/database-engine/configure-windows/configure-windows-service-accounts-and-permissions)」を参照してください。
+-   ドメイン以外のアカウントを使用するには、証明書を使用する必要があります。 詳細については、「[データベース ミラーリング エンドポイントでの証明書の使用 (Transact-SQL)](https://docs.microsoft.com/sql/database-engine/database-mirroring/use-certificates-for-a-database-mirroring-endpoint-transact-sql)」を参照してください。
 
 
-Per altre informazioni vedere [Creare un endpoint del mirroring del database per i gruppi di disponibilità Always On](/sql/database-engine/availability-groups/windows/database-mirroring-always-on-availability-groups-powershell).
+詳細については、[Always On 可用性グループのデータベース ミラーリング エンドポイントの作成](/sql/database-engine/availability-groups/windows/database-mirroring-always-on-availability-groups-powershell)に関するページを参照してください。
 
-### <a name="availability-group-configurations"></a>Configurazioni dei gruppi di disponibilità
-**Membri di replica:**  
--   Il gruppo di disponibilità deve avere una sola replica primaria.
--   Prima della versione 1706 erano consentite fino a due repliche secondarie sincrone.
--   A partire dalla versione 1706, in un gruppo di disponibilità è possibile usare lo stesso numero e tipo di repliche supportate dalla versione di SQL Server in uso.
+### <a name="availability-group-configurations"></a>可用性グループの構成
+**レプリカ メンバー:**  
+-   可用性グループには、1 つのプライマリ レプリカを含める必要があります。
+-   1706 より前のバージョンでは、最大 2 つの同期セカンダリ レプリカを作成できます。
+-   バージョン 1706 以降、可用性グループでは、使用する SQL Server のバージョンでサポートされている同じ数と種類のレプリカを使用できます。
 
-    Per ripristinare la replica sincrona, è possibile usare la replica con commit asincrono. Vedere le [opzioni di ripristino del database del sito]( /sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) nell'argomento Backup e ripristino per informazioni su come eseguire questa operazione.
+    同期レプリカを復旧するために非同期コミット レプリカを使用できます。 これを実行する方法については、バックアップと回復に関するトピックで[サイト データベースの回復オプション]( /sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption)を参照してください。
     > [!CAUTION]  
-    > Configuration Manager non supporta il failover per l'uso della replica con commit asincrono come database del sito.
-Poiché Configuration Manager non convalida lo stato della replica con commit asincrono per verificare che sia corrente, e [per comportamento normale del prodotto, una replica di questo tipo può non essere sincronizzata]( https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes), l'uso di una replica con commit asincrono come database del sito può mettere a rischio l'integrità dei dati del sito.
+    > Configuration Manager では、非同期コミット レプリカをサイト データベースとして使用するためのフェールオーバーはサポートされていません。
+Configuration Manager では、非同期コミット レプリカが最新のものかどうかを確認するために状態を検証せず、また、[このようなレプリカは意図的に非同期にできる]( https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes)ため、非同期コミット レプリカをサイト データベースとして使用すると、サイトとデータの整合性が危険にさらされる場合があります。
 
-Ogni membro di replica deve:
--   Usare l' **istanza predefinita**  
-    *A partire dalla versione 1702 è possibile usare un'* ***istanza denominata***.
+各レプリカ メンバーには以下が必要です。
+-   **既定のインスタンス**を使用する  
+    *バージョン 1702 以降では、****名前付きインスタンス***を使用できます。
 
--     Avere il valore di **Connessioni nel ruolo primario** impostato su **Sì**
--     Avere il valore di **Secondario leggibile** impostato su **Sì**  
--     Essere impostate per il **failover manuale**      
+-     **[プライマリ ロールでの接続]** が **[はい]** に設定されている
+-     **[読み取り可能なセカンダリ]** が **[はい]** に設定されている  
+-     **手動フェールオーバー**に設定されている      
 
     >  [!TIP]
-    >  Configuration Manager supporta l'uso di repliche sincrone del gruppo di disponibilità se è stata scelta l'impostazione **Failover automatico**. Tuttavia **Failover manuale** deve essere impostato quando:
-    >  -  Si esegue il programma di installazione per specificare l'uso del database del sito nel gruppo di disponibilità.
-    >  -  Quando si installa un aggiornamento a Configuration Manager, non solo gli aggiornamenti applicabili al database del sito.  
+    >  Configuration Manager では、**[自動フェールオーバー]** に設定されている場合、可用性グループ同期レプリカの使用がサポートされます。 ただし、次のような場合は **[手動フェールオーバー]** を設定する必要があります。
+    >  -  セットアップを実行して、可用性グループでのサイト データベースの使用を指定する。
+    >  -  Configuration Manager に (サイト データベースに適用される更新プログラムだけでなく) すべての更新プログラムをインストールする場合。  
 
-**Percorso dei membri della replica:**  
-Tutte le repliche in un gruppo di disponibilità devono essere ospitate in locale o in Microsoft Azure. Non sono supportati gruppi che includono un membro locale e un membro in Azure.     
+**レプリカ メンバーの場所:**  
+可用性グループ内のすべてのレプリカはオンプレミスまたは Microsoft Azure でホストする必要があります。 オンプレミス メンバーと Azure のメンバーを含むグループはサポートされていません。     
 
-Quando si imposta un gruppo di disponibilità in Azure e il gruppo si trova dietro un bilanciamento del carico interno o esterno, è necessario che le seguenti porte predefinite siano aperte per abilitare l'accesso del programma di installazione a ogni replica:   
+Azure で可用性グループをセットアップし、グループが内部または外部ロード バランサーの背後にある場合に、セットアップで各レプリカにアクセスできるようにするために開く必要がある既定ポートは以下のとおりです。   
 
--     Agente mapping endpoint RCP: **TCP 135**   
--     Server Message Block (SMB): **TCP 445**  
-    *Dopo il trasferimento del database è possibile rimuovere questa porta. A partire dalla versione 1702, questa porta non è più necessaria.*
--     SQL Server Service Broker: **TCP 4022**
--     SQL su TCP: **TCP 1433**   
+-     RCP エンドポイント マッパー - **TCP 135**   
+-     サーバー メッセージ ブロック – **TCP 445**  
+    *データベースの移動が完了した後で、このポートを削除することができます。バージョン 1702 以降では、このポートは必要なくなりました。*
+-     SQL Server Service Broker - **TCP 4022**
+-     SQL over TCP – **TCP 1433**   
 
-Al termine dell'installazione le porte seguenti devono restare accessibili:
--     SQL Server Service Broker: **TCP 4022**
--     SQL su TCP: **TCP 1433**
+セットアップの完了後に、次のポートが引き続きアクセス可能である必要があります。
+-     SQL Server Service Broker - **TCP 4022**
+-     SQL over TCP – **TCP 1433**
 
-A partire dalla versione 1702 è possibile usare porte personalizzate per queste configurazioni. Le stesse porte devono essere usate dall'endpoint e in tutte le repliche nel gruppo di disponibilità.
+バージョン 1702 以降では、これらの構成でカスタム ポートを使用することができます。 エンドポイントと、可用性グループ内のすべてのレプリカで、同じポートを使用する必要があります。
 
 
-**Listener:**   
-Il gruppo di disponibilità deve avere almeno un **listener del gruppo di disponibilità**. Il nome virtuale di questo listener viene usato quando si configura Configuration Manager per usare il database del sito nel gruppo di disponibilità. Anche se un gruppo di disponibilità può contenere più listener, Configuration Manager può usarne solo uno. Per altre informazioni vedere [Creare o configurare un listener del gruppo di disponibilità (SQL Server)](/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server).
+**リスナー:**   
+可用性グループには、少なくとも 1 つの **可用性グループ リスナー**が必要です。 可用性グループのサイト データベースを使用するよう Configuration Manager を構成するときには、このリスナーの仮想名が使用されます。 可用性グループに複数のリスナーを含めることはできますが、Configuration Manager で使用できるのは 1 つだけです。 詳細については、「[Create or Configure an Availability Group Listener (SQL Server)](/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server)」 (可用性グループ リスナーの作成または構成 (SQL Server)) を参照してください。
 
-**Percorsi di file:**   
-Quando si esegue installazione di Configuration Manager per configurare un sito per l'uso del database in un gruppo di disponibilità, ogni server di replica secondaria deve avere un percorso di file di SQL Server identico a quello dei file di database del sito nella replica primaria corrente.
--   Se non esiste un percorso identico, non sarà possibile aggiungere l'istanza per il gruppo di disponibilità come nuovo percorso del database del sito.
--   Inoltre l'account del servizio di SQL Server locale deve avere l'autorizzazione **Controllo completo** per questa cartella.
+**ファイル パス:**   
+可用性グループ内のデータベースを使用するようにサイトを構成するために Configuration Manager のセットアップを実行するときには、各セカンダリ レプリカ サーバーに、現在のプライマリ レプリカで検出されたサイト データベース ファイルのファイル パスと同じ SQL Server ファイル パスが存在する必要があります。
+-   同じパスが存在しない場合、セットアップでは、サイト データベースの新しい場所として可用性グループのインスタンスを追加できません。
+-   さらに、ローカル SQL Server サービス アカウントは、このフォルダーに対する**フル コントロール** アクセス許可を持っている必要があります。
 
-I server di replica secondaria richiedono questo percorso file solo durante l'installazione per specificare l'istanza di database nel gruppo di disponibilità. Dopo che l'installazione ha completato la configurazione del database del sito nel gruppo di disponibilità, è possibile eliminare il percorso non usato dai server di replica secondari.
+セットアップで可用性グループのデータベース インスタンスを指定するときに、セカンダリ レプリカ サーバーにはこのファイルのパスのみが必要です。 セットアップで可用性グループのサイト データベースの構成が完了したら、セカンダリ レプリカ サーバーから未使用のパスを削除できます。
 
-Prendere ad esempio in considerazione i seguenti scenari:
--   Si crea un gruppo di disponibilità che usa tre server SQL.
+たとえば、次の場合を考えてください。
+-   3 つの SQL Server を使用する可用性グループを作成するとします。
 
--   Il server di replica primaria è una nuova installazione di SQL Server 2014. Per impostazione predefinita, i file MDF e LDF del database vengono archiviati in C:\Programmi\Microsoft SQL Server\MSSQL12. MSSQLSERVER\MSSQL\DATA.
+-   プライマリ レプリカ サーバーは、SQL Server 2014 の新規インストールです。 既定では、データベースの .MDF および .LDF ファイルが C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA に格納されます。
 
--   Entrambi i server di replica secondaria sono stati aggiornati a SQL Server 2014 da versioni precedenti e continuano a usare il percorso di file originale per archiviare i file di database: C:\Programmi\Microsoft SQL Server\MSSQL10. MSSQLSERVER\MSSQL\DATA.
+-   両方のセカンダリ レプリカ サーバーが前のバージョンから SQL Server 2014 にアップグレードされており、データベース ファイルを格納する元のファイル パス (つまり、C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA) を保持します。
 
--   Prima di tentare di spostare il database del sito in questo gruppo di disponibilità, in ogni server di replica secondaria è necessario creare il seguente percorso di file, anche se le repliche secondarie non useranno questo percorso: C:\Programmi\Microsoft SQL Server\MSSQL12. MSSQLSERVER\MSSQL\DATA. Questo percorso è un duplicato del percorso usato nella replica primaria.
+-   この可用性グループへのサイト データベースの移動を試行する前に、各セカンダリ レプリカ サーバー上で C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA というファイル パス (プライマリ レプリカで使用されるのと同じパス) を作成する必要があります。セカンダリ レプリカでこのファイルの場所を使用しない場合でも必要です。
 
--   È quindi possibile concedere all'account del servizio SQL Server in ogni replica secondaria l'accesso con controllo completo al percorso di file appena creato nel server.
+-   次に、各セカンダリ レプリカ上の SQL Server サービス アカウントに、そのサーバーの新規作成されたファイルの場所に対するフル コントロール アクセス許可を付与します。
 
--   È ora possibile eseguire correttamente l'installazione di Configuration Manager per configurare il sito in modo che usi il database del sito nel gruppo di disponibilità.
+-   この時点で Configuration Manager のセットアップを正常に実行して、可用性グループ内のサイト データベースを使用するようにサイトを構成できます。
 
-**Configurare il database su una nuova replica:**   
- Il database di ogni replica deve essere impostato con i valori seguenti:
--   L'**integrazione con CLR** deve essere *abilitata*
--     **Max text repl size** deve essere *2147483647*
--     Il proprietario del database deve essere l'*account di amministratore di sistema*
--     **TRUSTWORTY** deve essere **ON**
--     **Service Broker** deve essere *abilitato*
+**新しいレプリカでデータベースを構成する:**   
+ 各レプリカのデータベースは、次のように設定する必要があります。
+-   **CLR 統合**を*有効*にする必要があります。
+-     **max text repl size** を *2147483647* にする必要があります。
+-     データベース所有者を *SA アカウント*にする必要があります。
+-     **TRUSTWORTY** を **ON** にする必要があります。
+-     **Service Broker** を*有効*にする必要があります。
 
-È possibile creare queste configurazioni solo su una replica primaria. Per configurare una replica secondaria, è necessario prima eseguire il failover della replica primaria nella replica secondaria per far sì che la replica secondaria diventi la nuova replica primaria.   
+ライマリ レプリカでのみ、これらの構成を行うことができます。 セカンダリ レプリカを構成するには、まず、プライマリをセカンダリにフェールオーバーし、セカンダリを新しいプライマリ レプリカにする必要があります。   
 
-Se necessario, consultare la documentazione di SQL Server per configurare le impostazioni. Ad esempio, vedere [TRUSTWORTHY](/sql/relational-databases/security/trustworthy-database-property) o [Integrazione con CLR](/sql/relational-databases/clr-integration/clr-integration-enabling) nella documentazione di SQL Server.
+必要に応じて SQL Server ドキュメントを使用すれば、設定の構成に役立ちます。 SQL Server ドキュメントの [TRUSTWORTHY](/sql/relational-databases/security/trustworthy-database-property) や [CLR 統合](/sql/relational-databases/clr-integration/clr-integration-enabling)に関するページなどを参照してください。
 
-### <a name="verification-script"></a>Script di verifica
-È possibile eseguire lo script seguente per verificare le configurazioni di database per le repliche primarie e secondarie. Prima di risolvere un problema su una replica secondaria, è necessario modificare tale replica secondaria in modo che diventi la replica primaria.
+### <a name="verification-script"></a>検証スクリプト
+プライマリとセカンダリの両方のレプリカのデータベース構成を検証するために次のスクリプトを実行することができます。 セカンダリ レプリカに関する問題を修正するには、そのセカンダリ レプリカをプライマリ レプリカに変える必要があります。
 
     SET NOCOUNT ON
 
@@ -209,54 +207,53 @@ Se necessario, consultare la documentazione di SQL Server per configurare le imp
 
     Branch_Exit:
 
-## <a name="limitations-and-known-issues"></a>Limitazioni e problemi noti
-Le limitazioni seguenti si applicano a tutti gli scenari.   
+## <a name="limitations-and-known-issues"></a>制限事項と既知の問題
+すべてのシナリオに以下の制限事項が適用されます。   
 
-**I gruppi di disponibilità di base non sono supportati:**  
-Introdotti con SQL Server 2016 Standard Edition, [i gruppi di disponibilità di base](https://msdn.microsoft.com/library/mt614935.aspx) non supportano l'accesso in lettura alle repliche secondarie, requisito essenziale per l'uso con Configuration Manager.
+**基本的な可用性グループはサポートされない:**  
+SQL Server 2016 Standard エディションで導入された[基本的な可用性グループ](https://msdn.microsoft.com/library/mt614935.aspx)では、Configuration Manager で使用するための要件であるセカンダリ レプリカに対する読み取りアクセスはサポートされていません。
 
-**SQL Server che ospitano gruppi di disponibilità aggiuntivi:**   
-Prima della versione 1610 di Configuration Manager, quando un gruppo di disponibilità su un'istanza di SQL Server ospita una o più gruppi di disponibilità in aggiunta al gruppo usato per Configuration Manager, ogni replica in ogni gruppo di disponibilità aggiuntivo deve avere le configurazioni seguenti impostate al momento dell'installazione di Configuration Manager o di un suo aggiornamento:
--   **failover manuale**
--   **consentire le connessioni di sola lettura**
+**追加の可用性グループをホストする SQL Server:**   
+SQL Server の可用性グループで 1 つ以上の可用性グループと、Configuration Manager で使用するグループをホストしている場合、Configuration Manager バージョン 1610 の前に、Configuration Manager セットアップの実行または Configuration Manager 用の更新プログラムをインストールするときに、これらの追加の各可用性グループの各レプリカに次の構成を設定する必要があります。
+-   **手動フェールオーバー**
+-   **読み取り専用接続を許可**
 
-**Uso di database non supportati:**
--   **Configuration Manager supporta solo il database del sito in un gruppo di disponibilità:** non sono supportati i database seguenti:
-    -   Database di report
-    -   Database WSUS
--   **Database preesistente:** non è possibile usare il nuovo database creato nella replica. In alternativa, è necessario ripristinare una copia di un database di Configuration Manager esistente nella replica primaria quando si configura un gruppo di disponibilità.
+**サポートされていないデータベースの使用:**
+-   **Configuration Manager は可用性グループ内のサイト データベースのみをサポートする:** 以下はサポートされていません。
+    -   レポート データベース
+    -   WSUS データベース
+-   **既存のデータベース:** レプリカで作成された新しいデータベースを使用することはできません。 代わりに、可用性グループの構成時に、既存の Configuration Manager データベースのコピーをプライマリ レプリカに復元する必要があります。
 
-**Errori di installazione in ConfigMgrSetup.log:**  
-Quando si esegue l'installazione per spostare un database del sito in un gruppo di disponibilità, l'installazione tenta di elaborare i ruoli del database nelle repliche secondarie del gruppo di disponibilità e registra errori simili al seguente:
--   ERRORE: Errore SQL Server: [25000][3906][Microsoft][SQL Server Native Client 11.0][SQL Server]Impossibile aggiornare il database "CM_AAA" perché è di sola lettura. Installazione di Configuration Manager 1/21/2016 4:54:59 PM 7344 (0x1CB0)  
+**ConfigMgrSetup.log のセットアップ エラー:**  
+セットアップを実行してサイト データベースを可用性グループに移動する場合、可用性グループのセカンダリ レプリカでデータベースの役割の処理が試行され、以下のようなエラーがログに記録されます。
+-   エラー: SQL Server エラー: [25000][3906][Microsoft][SQL Server Native Client 11.0][SQL Server]データベースが読み取り専用であるため、データベース "CM_AAA" をアップデートできませんでした。 Configuration Manager Setup 1/21/2016 4:54:59 PM 7344 (0x1CB0)  
 
-Ignorare questi errori.
+このようなエラーは無視してもかまいません。
 
-## <a name="changes-for-site-backup"></a>Modifiche per il backup del sito
-**Eseguire il backup dei file di database:**  
-Quando un database del sito viene eseguito in un gruppo di disponibilità, è necessario eseguire l'attività di manutenzione predefinita **Backup server sito** per eseguire il backup di impostazioni e file comuni di Configuration Manager. Non usare tuttavia i file MDF o LDF creati dal backup. Eseguire invece backup diretti di questi file del sito usando SQL Server.
+## <a name="changes-for-site-backup"></a>サイト バックアップの変更
+**データベース ファイルのバックアップ:**  
+可用性グループでサイト データベースを実行する場合は、一般的な Configuration Manager 設定とファイルをバックアップするために組み込み**バックアップ サイト サーバー** メンテナンス タスクを実行する必要があります。 ただし、そのバックアップで作成された .MDF ファイルや .LDF ファイルは使用しないでください。 代わりに、SQL Server を使用して、これらのデータベース ファイルの直接バックアップを作成します。
 
-**Log delle transazioni:**  
-Il modello di recupero del database del sito deve essere impostato su **Completo** per l'uso in un gruppo di disponibilità. Con questa configurazione pianificare il monitoraggio e la gestione delle dimensioni del log delle transazioni del database del sito. Nel modello di recupero Completo le transazioni non vengono finalizzate fino a quando non viene eseguito un backup completo del database o del log delle transazioni. Per altre informazioni vedere [Backup e ripristino di database SQL Server](/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases) nella documentazione di SQL Server.
+**トランザクション ログ:**  
+サイト データベースの復旧モデルは、**[完全]** に設定する必要があります (可用性グループで使用する場合の要件)。 この構成で、サイト データベース トランザクション ログのサイズを監視および維持するための計画を立てます。 完全復旧モデルでは、データベースまたはトランザクション ログの完全バックアップが作成されるまで、トランザクションは書き込まれません。 詳細については、SQL Server のドキュメントの「[SQL Server データベースのバックアップと復元](/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases)」を参照してください。
 
-## <a name="changes-for-site-recovery"></a>Modifiche per il ripristino del sito
-È possibile usare l'opzione di ripristino del sito **Ignora ripristino database (usare questa opzione se non si sono verificati errori nel database del sito)** a condizione che almeno uno dei nodi del gruppo di disponibilità continui a funzionare.
+## <a name="changes-for-site-recovery"></a>サイトの回復の変更
+可用性グループの 1 つ以上のノードがまだ機能している場合は、サイトの回復オプション **[データベースの回復をスキップする (このオプションは、サイト データベースが障害の影響を受けていない場合に選択してください)]** を使用できます。
 
- Se invece tutti i nodi di un gruppo di disponibilità sono andati perduti, prima di poter ripristinare il sito è necessario ricreare il gruppo di disponibilità. Configuration Manager non è in grado di ricompilare o ripristinare il nodo di disponibilità. Dopo aver ricreato il gruppo e ripristinato e riconfigurato un backup, è possibile usare l'opzione di ripristino del sito **Ignora ripristino database (usare questa opzione se non si sono verificati errori nel database del sito)**.
+ サイトを回復する前に、可用性グループのすべてのノードが失われた場合は、可用性グループを再作成する必要があります。 Configuration Manager では可用性ノードの再構築や復元はできません。 グループが再作成されて、バックアップが復元および再構成されたら、サイトの回復オプション **[データベースの回復をスキップする (このオプションは、サイト データベースが障害の影響を受けていない場合に選択してください)]** を使用できます。
 
-Per altre informazioni, vedere [Backup e ripristino per System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery).
+詳細については、「[Backup and recovery for System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery)」 (System Center Configuration Manager のバックアップと回復) をご覧ください。
 
-## <a name="changes-for-reporting"></a>Modifiche per la creazione di report
-**Installare il punto di Reporting Services:**  
-Il punto di Reporting Services non supporta l'uso del nome virtuale del listener del gruppo di disponibilità o l'hosting del database di Reporting Services in un gruppo di disponibilità Always On di SQL Server:
--   Per impostazione predefinita, il punto di Reporting Services imposta il **nome del server del database del sito** sul nome virtuale specificato come listener. Modificare questa opzione per specificare un nome di computer e l'istanza di una replica nel gruppo di disponibilità.
--   Per eseguire l'offload del carico di creazione di report e aumentare la disponibilità quando un nodo di replica è offline, prendere in considerazione l'installazione di altri punti di Reporting Services in ogni nodo di replica e la configurazione di ogni punto di Reporting Services in modo che punti al proprio nome di computer.
+## <a name="changes-for-reporting"></a>レポートの変更
+**レポート サービス ポイントをインストールする:**  
+レポート サービス ポイントでは、可用性グループのリスナーの仮想名の使用や SQL Server Always On 可用性グループ内のレポート サービス データベースのホスティングはサポートされていません。
+-   既定では、レポート サービス ポイントのインストールで **[サイト データベース サーバー名]** がリスナーとして指定されている仮想名に設定されます。 これを変更し、可用性グループ内のレプリカのコンピューター名とインスタンスを指定します。
+-   レポート作成の負荷を軽減する場合や、レプリカ ノードがオフラインのときに可用性を向上させる場合は、各レプリカ ノードで追加のレポート サービス ポイントをインストールすることと、独自のコンピューター名を指すように各レポート サービス ポイントを構成することを検討してください。
 
-Quando si installa un punto di Reporting Services in ogni replica del gruppo di disponibilità, il reporting può sempre connettersi a un server del punto di reporting attivo.
+可用性グループの各レプリカでレポート サービス ポイントをインストールする場合、レポート作成時にアクティブなレポート ポイント サーバーにいつでも接続できます。
 
-**Cambiare il punto di Reporting Services usato dalla console:**  
-Per eseguire i report, nella console passare a **Monitoraggio** > **Panoramica** > **Reporting** > **Report**, quindi scegliere **Opzioni report**. Nella finestra di dialogo Opzioni report selezionare il punto di Reporting Services desiderato.
+**コンソールで使用されるレポート サービス ポイントを切り替える:**  
+レポートを実行するには、コンソールで **[監視]** > **[概要]** > **[レポートの作成]** > **[レポート]** の順に移動してから、**[レポート オプション]** を選択します。 [レポート オプション] ダイアログ ボックスで、目的のレポート サービス ポイントを選択します。
 
-## <a name="next-steps"></a>Passaggi successivi
-Dopo avere compreso i prerequisiti, le limitazioni e le modifiche alle attività comuni necessarie quando si usano i gruppi di disponibilità, vedere [Configurare i gruppi di disponibilità per Configuration Manager](/sccm/core/servers/deploy/configure/configure-aoag), per le procedure che consentono di installare e configurare il sito per l'uso di gruppi di disponibilità.
-
+## <a name="next-steps"></a>次のステップ
+必要条件、制限事項、および可用性グループを使用する場合に必要な一般的なタスクに関する変更を理解したら、「[Configure availability groups for Configuration Manager](/sccm/core/servers/deploy/configure/configure-aoag)」 (Configuration Manager の可用性グループの構成) を参照して、可用性グループを使用するためのサイトのセットアップおよび構成手順を確認してください。

@@ -1,125 +1,121 @@
 ---
-title: Pianificare la gestione dei dispositivi mobili locale | Microsoft Docs
-description: Pianificare la gestione dei dispositivi mobili locale per gestire dispositivi mobili in System Center Configuration Manager.
+title: "オンプレミス MDM の計画 | Microsoft Docs"
+description: "System Center Configuration Manager でモバイル デバイスを管理するために、オンプレミス モバイル デバイス管理を計画します。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 02979fb8-ea7e-4ec6-b7e0-ecbfda73e52d
-caps.latest.revision: 9
-caps.handback.revision: 0
+caps.latest.revision: "9"
+caps.handback.revision: "0"
 author: Mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 507bad02c6e028f09a8b0c8a566ac55f7c3942a5
 ms.openlocfilehash: 544c3bea0c7df96887ee1717f061c39c64b82d01
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Pianificare la gestione di dispositivi mobili locale in System Center Configuration Manager
+# <a name="plan-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>System Center Configuration Manager でのオンプレミス モバイル デバイス管理の計画
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Prendere in considerazione i requisiti seguenti prima di preparare l'infrastruttura di Configuration Manager per eseguire la gestione dei dispositivi mobili locale.
+Configuration Manager のインフラストラクチャでオンプレミス モバイル デバイス管理を処理する場合、次の要件を考慮します。
 
-##  <a name="bkmk_devices"></a> Dispositivi supportati  
- La gestione di dispositivi mobili locale consente di gestire i dispositivi mobili usando le funzionalità di gestione predefinite nei sistemi operativi dei dispositivi.  La funzionalità di gestione si basa sullo standard Open Mobile Alliance (OMA) Device Management (DM), usato da molte piattaforme per dispositivi per consentire la gestione dei dispositivi.  Nella documentazione e nell'interfaccia utente della console di Configuration Manager questi dispositivi vengono indicati con il termine **dispositivi moderni** per distinguerli da altri dispositivi la cui gestione richiede il client di Configuration Manager.  
+##  <a name="bkmk_devices"></a> サポートされるデバイス  
+ オンプレミス モバイル デバイス管理を使用すると、デバイスのオペレーティング システムに組み込まれている管理機能を使用してモバイル デバイスを管理できます。  管理機能は、Open Mobile Alliance (OMA) Device Management (DM) 標準に基づいており、多くのデバイス プラットフォームでは、この標準を使用して、デバイスを管理できます。  これらを (ドキュメントおよび Configuration Manager コンソールのユーザー インターフェイスの) **最新のデバイス**と呼び、管理するために Configuration Manager クライアントを必要とするその他のデバイスと区別します。  
 
  > [!NOTE]  
->  Configuration Manager (Current Branch) supporta la registrazione nella gestione dei dispositivi mobili locale per i dispositivi che eseguono i sistemi operativi seguenti:  
+>  Configuration Manager の現在のブランチでは、次のオペレーティング システムを実行しているデバイスをオンプレミス モバイル デバイス管理で登録することができます。  
 >   
 > -  Windows 10 Enterprise  
 > -   Windows 10 Pro  
-> -   Windows 10 Team \(a partire da Configuration Manager versione 1602\)  
+> -   Windows 10 Team\( Configuration Manager バージョン 1602 以降\)  
 > -   Windows 10 Mobile  
 > -   Windows 10 Mobile Enterprise
 > -   Windows 10 IoT Enterprise   
 
-##  <a name="bkmk_intune"></a> Usare la sottoscrizione a Microsoft Intune  
- Per iniziare a usare la gestione dei dispositivi mobili, è necessaria una sottoscrizione a Microsoft Intune. La sottoscrizione è richiesta solo per tenere traccia delle licenze dei dispositivi e non viene usata per gestire o archiviare le informazioni di gestione per i dispositivi. Tutte le attività di gestione vengono eseguite all'interno dell'azienda usando l'infrastruttura di Configuration Manager locale.  
+##  <a name="bkmk_intune"></a> Microsoft Intune サブスクリプションの使用  
+ オンプレミス モバイル デバイス管理の使用を開始するには、Microsoft Intune のサブスクリプションが必要です。 このサブスクリプションは、デバイスのライセンスの追跡にのみ必要のみがあり、デバイスの管理情報の管理や格納には使用されません。 すべての管理は、オンプレミスの Configuration Manager インフラストラクチャを使用して組織のエンタープライズで処理されます。  
 
  > [!NOTE]  
- > A partire dalla versione 1610, Configuration Manager supporta l'uso di Microsoft Intune e dell'infrastruttura di Configuration Manager locale per gestire simultaneamente i dispositivi mobili.   
+ > バージョン 1610 以降の Configuration Manager では、Microsoft Intune とオンプレミスの Configuration Manager インフラストラクチャの両方を同時に使用してモバイル デバイスを管理できます。   
 
- Se nel sito sono presenti dispositivi con connessione Internet, è possibile usare il servizio di Intune per notificare ai dispositivi di controllare il punto gestione dei dispositivi per gli aggiornamenti dei criteri. Questo uso di  Intune è rigorosamente riservato alle notifiche per i dispositivi con connessione Internet. I dispositivi senza connessioni Internet (e che non possono essere contattati da Intune) si basano sull'intervallo di polling configurato per controllare le funzioni di gestione con i ruoli di sistema del sito.  
+ サイトにインターネット接続があるデバイスがある場合、Intune サービスを使用して、ポリシーの更新のデバイス管理ポイントを確認するようデバイスに通知することができます。 Intune のこの使用は、インターネットに接続されたデバイスの通知のみに限定されます。 インターネット接続のないデバイス (Intune が接続できない) は、管理機能のサイト システムの役割を使用してチェックインする場合に、構成されたポーリング間隔に依存します。  
 
 > [!TIP]  
->  È consigliabile configurare Intune prima di configurare i ruoli di sistema del sito obbligatori per ridurre al minimo il tempo necessario per l'attivazione dei ruoli di sistema del sito.  
+>  サイト システムの役割をセットアップする前に、Intune をセットアップすることをお勧めします。これにより、サイト システムの役割が機能するまでにかかる時間を最小化できます。  
 
- Per informazioni su come configurare la sottoscrizione di Intune, vedere [Impostare una sottoscrizione di Microsoft Intune per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/set-up-intune-subscription-on-premises-mdm.md).  
+ Intune サブスクリプションのセットアップ方法については、「[System Center Configuration Manager でのオンプレミスのモバイル デバイス管理のために Microsoft Intune サブスクリプションをセットアップする](../../mdm/get-started/set-up-intune-subscription-on-premises-mdm.md)」を参照してください。  
 
-##  <a name="bkmk_roles"></a> Ruoli di sistema del sito necessari  
- La gestione dei dispositivi mobili locale richiede minimo uno dei ruoli di sistema del sito seguenti:  
+##  <a name="bkmk_roles"></a> 必要なサイト システムの役割  
+ オンプレミス モバイル デバイス管理には、次のサイト システムの役割がそれぞれ 1 つ以上必要です。  
 
--   **Punto proxy di registrazione** per supportare le richieste di registrazione.  
+-   **登録プロキシ ポイント** 。登録要求をサポートします。  
 
--   **Punto di registrazione** per supportare la registrazione dei dispositivi.  
+-   **登録ポイント** 。デバイスの登録をサポートします。  
 
--   **Punto gestione periferiche** per la distribuzione dei criteri. Questo ruolo del sistema del sito è una variante del ruolo del punto di gestione che è stato configurato per consentire la gestione dei dispositivi mobili.  
+-   **デバイス管理ポイント** 。ポリシー配信用です。 このサイト システムの役割は、モバイル デバイス管理を許可するように構成されている管理ポイントの役割のバリエーションの 1 つです。  
 
--   **Punto di distribuzione** per la distribuzione di contenuti.  
+-   **配布ポイント** 。コンテンツ配信用です。  
 
--   **Punto di connessione del servizio** per la connessione a Intune per le notifiche a dispositivi esterni al firewall.  
+-   **サービス接続ポイント**。Intune に接続して、ファイアウォールの外側のデバイスに通知します。  
 
- Questi ruoli del sistema del sito possono essere installati in un unico server del sistema del sito oppure possono essere eseguiti separatamente in server diversi a seconda delle esigenze dell'organizzazione. Ogni server di sistema del sito usato per la gestione dei dispositivi mobili locale deve essere configurato come endpoint HTTPS per comunicare con dispositivi attendibili. Per altre informazioni, vedere [Comunicazioni attendibili richieste](#bkmk_trustedComs).  
+ これらのサイト システムの役割は、1 つのサイト システム サーバーにインストールできます。または、組織のニーズに応じて、異なるサーバー上で別々に実行することができます。 オンプレミス モバイル デバイス管理で使用される各サイト システム サーバーは信頼されているデバイスと通信するための HTTPS エンドポイントとして構成する必要があります。 詳細については、「 [必要な信頼された通信](#bkmk_trustedComs)」をご覧ください。  
 
- Per altre informazioni sulla pianificazione dei ruoli del sistema del sito, vedere [Pianificare i server e i ruoli del sistema del sito per System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).  
+ サイト システムの役割の計画の詳細については、「[System Center Configuration Manager のサイト システム サーバーとサイト システムの役割の計画](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md)」を参照してください。  
 
- Per altre informazioni su come aggiungere i ruoli del sistema del sito, vedere [Installare i ruoli di sistema del sito per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md).  
+ 必要なサイト システムの役割の追加方法の詳細については、「[System Center Configuration Manager でのオンプレミス モバイル デバイス管理のサイト システムの役割のインストール](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md)」を参照してください。  
 
-##  <a name="bkmk_trustedComs"></a> Comunicazioni attendibili necessarie  
- La gestione dei dispositivi mobili richiede che i ruoli di sistema del sito siano abilitati per le comunicazioni HTTPS. A seconda delle esigenze, è possibile usare l'autorità di certificazione (CA) dell'azienda per stabilire connessioni attendibili tra server e dispositivi oppure è possibile usare un'autorità di certificazione disponibile pubblicamente come CA attendibile.  In entrambi i casi, è necessario che un certificato server Web sia configurato con IIS nei server del sistema del sito che ospitano i ruoli del sistema del sito richiesti e sarà necessario il certificato radice della CA installato nei dispositivi che devono connettersi a tali server.  
+##  <a name="bkmk_trustedComs"></a> 必要な信頼された通信  
+ オンプレミス モバイル デバイス管理では、HTTPS 接続用にサイト システムの役割を有効にする必要があります。 必要に応じて、エンタープライズ証明機関 (CA) を使用して、サーバーとデバイスの間で信頼された接続を確立するか、または信頼された機関として一般的に利用できる CA を使用することができます。  いずれの場合も、必要なサイト システムの役割をホストしているサイト システム サーバー上で、IIS を使用して Web サーバー証明書を構成する必要があります。また、それらのサーバーに接続する必要があるデバイスにインストールされる、その CA のルート証明書が必要です。  
 
- Se si usa la CA dell'azienda per stabilire una comunicazione attendibile, è necessario eseguire le attività seguenti:  
+ 信頼された通信を確立するためにエンタープライズ CA を使用する場合は、次のタスクを実行する必要があります。  
 
--   Creare ed emettere il modello di certificato del server Web nella CA.  
+-   CA で Web サーバー証明書テンプレートを作成および発行します。  
 
--   Richiedere un certificato del server web per ogni server del sistema del sito che ospita un ruolo del sistema del sito richiesto.  
+-   必要なサイト システムの役割をホストする各サイト システム サーバー用の Web サーバー証明書を要求します。  
 
--   Configurare IIS nel server del sistema del sito per usare il certificato del server Web richiesto.  
+-   要求された Web サーバー証明書を使用するサイト システム サーバーで IIS を構成します。  
 
- Per i dispositivi aggiunti al dominio Active Directory aziendale, il certificato radice della CA aziendale è già disponibile nel dispositivo per le connessioni attendibili. Ciò significa che i dispositivi appartenenti a un dominio (come i computer desktop) saranno automaticamente attendibili per le connessioni HTTPS con i server del sistema del sito. Nei dispositivi (in genere mobili) non appartenenti a un dominio, invece, il certificato radice obbligatorio non sarà installato. Tali dispositivi richiederanno l'installazione manuale del certificato radice per comunicare correttamente con i server di sistema del sito che supportano la gestione dei dispositivi mobili locale.  
+ 企業の Active Directory ドメインに参加しているデバイスの場合、信頼された接続用のデバイスでは、エンタープライズ CA のルート証明書が既に使用可能です。 これは、ドメインに参加しているデバイス (デスクトップ コンピューターなど) がサイト システム サーバーとの HTTPS 接続で自動的に信頼されることを示します。 ただし、ドメインに参加していないデバイス (通常、モバイル) には、必要なルート証明書がインストールされていません。 これらのデバイスには、オンプレミス モバイル デバイス管理をサポートするサイト システム サーバーと正常に通信するためにルート証明書を手動でインストールする必要があります。  
 
- È necessario esportare il certificato radice della CA emittente per l'uso da parte di singoli dispositivi. Per ottenere il file del certificato radice, è possibile esportarlo usando la CA oppure, per un metodo più semplice, usando il certificato del server Web rilasciato dalla CA per estrarre la radice e creare un file del certificato radice.   Il certificato radice deve essere quindi recapitato al dispositivo.  Alcuni metodi di recapito semplici includono  
+ 個々 のデバイスで使用する発行元 CA のルート証明書をエクスポートする必要があります。 ルート証明書ファイルを取得するには、CA を使用してエクスポートするか、または簡単な方法として、CA によって発行された Web サーバー証明書を使用して、ルートを抽出し、ルート証明書ファイルを作成します。   その後、ルート証明書をデバイスに配信する必要があります。  次に配信方法の例をいくつか示します。  
 
--   File system  
+-   ファイル システム  
 
--   Allegato e-mail  
+-   電子メールの添付ファイル  
 
--   Scheda di memoria  
+-   メモリ カード  
 
--   Dispositivo con tethering  
+-   テザリングされたデバイス  
 
--   Archiviazione cloud (ad esempio OneDrive)  
+-   クラウドの記憶域 (OneDrive など)  
 
--   Connessione NFC (Near Field Communication)  
+-   近距離無線通信 (NFC) 接続  
 
--   Lettore di codice a barre  
+-   バーコード スキャナ  
 
--   Pacchetto di provisioning della Configurazione guidata  
+-   Out of Box Experience (OOBE) プロビジョニング パッケージ  
 
- Per altre informazioni, vedere [Set up certificates for trusted communications for On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
+ 詳細については、「 [Set up certificates for trusted communications for On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)」をご覧ください。  
 
-##  <a name="bkmk_enrollment"></a> Considerazioni sulla registrazione  
- Per abilitare la registrazione di dispositivi per la gestione dei dispositivi mobili locale, gli utenti devono avere l'autorizzazione alla registrazione e i dispositivi devono poter stabilire comunicazioni attendibili con i server di sistema del sito che ospitano i ruoli di sistema del sito necessari.  
+##  <a name="bkmk_enrollment"></a> 登録の注意事項  
+ オンプレミス モバイル デバイス管理のデバイスの登録を有効にするには、登録する権限がユーザーに付与され、かつ、ユーザーのデバイスが、必要なサイト システムの役割をホストするサイト システム サーバーとの信頼された通信を行うことができる必要があります。  
 
- La concessione dell'autorizzazione di registrazione degli utenti può essere eseguita con la configurazione di un profilo di registrazione nelle impostazioni client di Configuration Manager. È possibile usare le impostazioni client predefinite per inviare il profilo di registrazione a tutti gli utenti individuati o è possibile impostare il profilo di registrazione nelle impostazioni client personalizzate e inviare le impostazioni a una o più raccolte di utenti.  
+ ユーザーへの登録権限の付与は、Configuration Manager クライアントの設定で登録プロファイルを設定することによって行います。 既定のクライアント設定を使用して、検出されたすべてのユーザーに、登録プロファイルをプッシュするか、またはカスタム クライアント設定で、登録プロファイルを設定して、設定を 1 つまたは複数のユーザー コレクションにプッシュできます。  
 
- Con l'autorizzazione di registrazione, gli utenti possono registrare i propri dispositivi. Per essere registrato, il dispositivo dell'utente deve avere il certificato radice dell'autorità di certificazione (CA) che ha emesso il certificato del server Web usato nei server di sistema del sito che ospitano i ruoli del sistema del sito richiesto.  
+ ユーザー登録権限が付与されたユーザーは、自分のデバイスを登録できます。 登録するには、ユーザーのデバイスに、Web サーバー証明書 (必要なサイト システムの役割をホストするサイト システム サーバーで使用されるもの) を発行した証明機関 (CA) のルート証明書がある必要があります。  
 
- Come alternativa alla registrazione avviata dall'utente, è possibile configurare un pacchetto di registrazione in blocco che consente la registrazione del dispositivo senza intervento dell'utente. Questo pacchetto può essere recapitato al dispositivo prima che venga inizialmente sottoposto a provisioning per l'uso o dopo che il dispositivo viene sottoposto al processo di Configurazione guidata.  
+ ユーザーによる登録の代わりに、ユーザーの介入なしにデバイスを登録できる一括登録パッケージを設定することができます。 このパッケージは、デバイスが使用するために最初にプロビジョニングされる前、またはデバイスで OOBE プロセスを実行した後に、デバイスに配布することができます。  
 
- Per altre informazioni su come configurare e registrare i dispositivi, vedere  
+ デバイスを設定および登録する方法の詳細については、次を参照してください。  
 
--   [Impostare la registrazione dei dispositivi per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md)  
+-   [System Center Configuration Manager でのオンプレミスのモバイル デバイス管理のデバイス登録の設定](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md)  
 
--   [Registrare i dispositivi per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/deploy-use/enroll-devices-on-premises-mdm.md)  
-
+-   [System Center Configuration Manager でのオンプレミス モバイル デバイス管理の対象となるデバイスの登録](../../mdm/deploy-use/enroll-devices-on-premises-mdm.md)  

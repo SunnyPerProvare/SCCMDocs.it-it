@@ -1,366 +1,365 @@
 ---
-title: Pacchetti e programmi | Microsoft Docs
-description: Supportare le distribuzioni che usano pacchetti e programmi o applicazioni con System Center Configuration Manager.
+title: "パッケージとプログラム | Microsoft Docs"
+description: "System Center Configuration Manager でパッケージとプログラムまたはアプリケーションを使用する展開をサポートします。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: caad0507-9913-415a-b13d-d36f8f0a1b80
-caps.latest.revision: 8
-caps.handback.revision: 0
+caps.latest.revision: "8"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 6c5b23270501c11ed5aba9a6045734c73095d1bf
 ms.openlocfilehash: 6146bcf4e5aa9df6fe0b8cf71898e488ecf217cc
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="packages-and-programs-in-system-center-configuration-manager"></a>Pacchetti e programmi in System Center Configuration Manager
+# <a name="packages-and-programs-in-system-center-configuration-manager"></a>System Center Configuration Manager のパッケージとプログラム
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager continua a supportare pacchetti e programmi usati in Configuration Manager 2007. Una distribuzione che usa pacchetti e programmi può essere più adatta rispetto a una che usa un'applicazione quando si distribuisce uno degli elementi seguenti:  
+System Center Configuration Manager は、Configuration Manager 2007 で使用されていたパッケージとプログラムを引き続きサポートします。 次のいずれかを展開する場合、パッケージおよびプログラムを使用する展開は、アプリケーションを使用する展開よりも適切な場合があります。  
 
-- Applicazioni per server Linux e UNIX
-- Script che non installano un'applicazione in un computer, ad esempio uno script per deframmentare l'unità disco del computer
-- Script occasionali che non devono essere monitorati continuamente  
-- Script eseguiti in base a una pianificazione ricorrente e che non possono usare la valutazione globale
+- Linux サーバーと UNIX サーバーにアプリケーションを展開する
+- コンピューターにアプリケーションをインストールしないスクリプト (コンピューターのディスク ドライブを最適化するスクリプトなど)
+- 継続的に監視する必要がない "1 回限り" のスクリプト  
+- 定期的なスケジュールに従って実行され、グローバルの評価版を使用できないスクリプト
 
-Quando si esegue la migrazione di pacchetti da una versione precedente di Configuration Manager, è possibile distribuirli nella gerarchia di Configuration Manager. Al termine della migrazione, i pacchetti vengono visualizzati nel nodo **Pacchetti** dell'area di lavoro **Raccolta software** .
+以前のバージョンの Configuration Manager からパッケージを移行する場合、Configuration Manager 階層に展開できます。 移行が完了したら、パッケージは、 **[ソフトウェア ライブラリ]** ワークスペースの **[パッケージ]** ノードに表示されます。
 
-È possibile modificare e distribuire questi pacchetti nello stesso modo dei casi in cui è stata usata la distribuzione del software. L'**Importazione guidata da definizione** rimane in Configuration Manager per importare pacchetti legacy. Gli annunci vengono convertiti in distribuzioni quando vengono migrati da Configuration Manager 2007 a una gerarchia di Configuration Manager.  
+これらのパッケージは、ソフトウェア配布を使用する場合と同じように変更および展開できます。 **定義に基づくパッケージの作成ウィザード**は、レガシ パッケージをインポートするために Configuration Manager に残っています。 公開通知は、Configuration Manager 2007 から Configuration Manager 階層に移行されるとき、展開のために変換されます。  
 
 > [!NOTE]  
->  È possibile usare Microsoft System Center Configuration Manager Package Conversion Manager per convertire i pacchetti e i programmi in applicazioni di Configuration Manager.  
+>  Microsoft System Center Configuration Manager Package Conversion Manager を使用して、パッケージとプログラムを Configuration Manager アプリケーションに変換できます。  
 >   
->  Per altre informazioni, vedere [Configuration Manager Package Conversion Manager](https://technet.microsoft.com/library/hh531519.aspx).  
+>  詳細については、「 [Configuration Manager のパッケージ変換マネージャー](https://technet.microsoft.com/library/hh531519.aspx)」を参照してください。  
 
-I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, inclusi i gruppi di punti di distribuzione e il monitoraggio. Le applicazioni Microsoft Application Virtualization (App-V) non possono essere distribuite usando pacchetti e programmi in Configuration Manager. Per distribuire applicazioni virtuali, è necessario crearle come applicazioni di Configuration Manager.  
+パッケージでは、配布ポイント グループや監視など、Configuration Manager の新機能をいくつか使用できます。 Configuration Manager でパッケージとプログラムを使用して、Microsoft Application Virtualization (App-V) アプリケーションを配布することはできません。 仮想アプリケーションを配布するには、これを Configuration Manager アプリケーションとして作成する必要があります。  
 
-##  <a name="create-a-package-and-program"></a>Creare un pacchetto e un programma  
- Usare una di queste procedure per creare o importare pacchetti e programmi.  
+##  <a name="create-a-package-and-program"></a>パッケージとプログラムを作成する  
+ 次のいずれかの手順を使用して、パッケージとプログラムを作成またはインポートします。  
 
-### <a name="create-a-package-and-program-using-the-create-package-and-program-wizard"></a>Creare un pacchetto e un programma tramite la Creazione guidata pacchetto e programma  
+### <a name="create-a-package-and-program-using-the-create-package-and-program-wizard"></a>パッケージとプログラムの作成ウィザードを使用してパッケージとプログラムを作成する  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software ** > **Gestione applicazioni** > **Pacchetti**.  
+1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[パッケージ]** の順に選択します。  
 
-3.  Nel gruppo **Crea** della scheda **Home** scegliere **Crea pacchetto**.  
+3.  **[ホーム]** タブの **[作成]** グループで **[パッケージの作成]**を選択します。  
 
-4.  Nel **pacchetto** di pagina il **Creazione guidata pacchetto e programma**, specificare le seguenti informazioni:  
+4.  パッケージとプログラムの作成ウィザード **** の [パッケージ] ****ページで、次の情報を指定します。  
 
-    -   **Nome**: specificare un nome per il pacchetto con un massimo di 50 caratteri.  
+    -   **名前**: 最大 50 文字でパッケージの名前を指定します。  
 
-    -   **Descrizione**: specificare una descrizione per il pacchetto con un massimo di 128 caratteri.  
+    -   **説明**: 最大 128 文字でパッケージの説明を指定します。  
 
-    -   **Produttore** (facoltativo): specificare un nome produttore per identificare il pacchetto nella console di Configuration Manager. Il nome non può contenere più di 32 caratteri.
+    -   **製造元**: Configuration Manager コンソールでパッケージを識別しやすいように、製造元の名前を指定します。 この名前は 32 文字以下にします。
 
-    -   **Lingua** (facoltativo): specificare la lingua del pacchetto con un massimo di 32 caratteri.  
+    -   **言語**: 最大 32 文字でパッケージの言語バージョンを指定します。  
 
-    -   **Versione** (facoltativo): specificare un numero di versione per il pacchetto con un massimo di 32 caratteri.
+    -   **バージョン** (オプション): 最大 32 文字でパッケージのバージョン番号を指定します。
 
-    -   **Questo pacchetto contiene file di origine**: questa impostazione indica se il pacchetto richiede che nei dispositivi client siano presenti file di origine. Per impostazione predefinita, questa casella di controllo non è selezionata e Configuration Manager non usa i punti di distribuzione per il pacchetto. Se questa casella di controllo è selezionata, vengono usati punti di distribuzione.  
+    -   **このパッケージにソース ファイルを含める**: クライアント デバイスにソース ファイルが必要かどうかを示します。 既定では、このチェック ボックスはオフで、Configuration Manager はパッケージの配布ポイントを使用しません。 このチェック ボックスがオンの場合、配布ポイントが使用されます。  
 
-    -   **Cartella di origine**: se il pacchetto contiene file di origine, scegliere **Sfoglia** per aprire la finestra di dialogo **Imposta cartella di origine** e specificare il percorso dei file di origine per il pacchetto.  
+    -   **ソース フォルダー**: パッケージにソース ファイルが含まれる場合は、 **[参照]** を選択して **[ソース フォルダーの設定]** ダイアログ ボックスを開き、パッケージのソース ファイルの場所を指定します。  
 
         > [!NOTE]  
-        >  L'account computer del server del sito deve avere autorizzazioni di accesso in lettura alla cartella specificata.  
+        >  サイト サーバーのコンピューター アカウントには、指定するソース フォルダーへの読み取りアクセス許可が必要です。  
 
-5.  Nella pagina **Tipo di programma** della **Creazione guidata pacchetto e programma** selezionare il tipo di programma da creare e fare clic su **Avanti**. È possibile creare un programma per un computer o un dispositivo oppure ignorare questo passaggio e creare un programma in un secondo momento.  
+5.  **パッケージとプログラムの作成ウィザード**の **[プログラムの種類]** ページで、作成するプログラムの種類を選択し、**[次へ]** を選択します。 コンピューターやデバイス用にプログラムを作成することも、この手順をスキップして後からプログラムを作成することもできます。  
 
     > [!TIP]  
-    >  Per creare un nuovo programma per un pacchetto esistente, selezionare prima il pacchetto. Nel gruppo **Pacchetto** della scheda **Home** scegliere **Crea programma** per aprire la **Creazione guidata programma**.  
+    >  既存のパッケージに新しいプログラムを作成するには、最初にパッケージを選択します。 **[ホーム]** タブの **[パッケージ]** グループで、**[プログラムの作成]** を選択し、**プログラムの作成ウィザード**を開きます。  
 
-6.  Per creare un programma standard o un programma di dispositivo, usare una delle procedure seguenti.  
+6.  次のいずれかの手順に従って、標準のプログラムまたはデバイスのプログラムを作成します。  
 
-    #### <a name="create-a-standard-program"></a>Creare un programma standard  
+    #### <a name="create-a-standard-program"></a>標準プログラムを作成する  
 
-  1.  Nella pagina **Tipo di programma** della **Creazione guidata pacchetto e programma** selezionare **Programma standard** e fare clic su **Avanti**.     
+  1.  **パッケージとプログラムの作成ウィザード**の **[プログラムの種類]** ページで、**[標準プログラム]** を選択してから、**[次へ]** を選択します。     
 
-    2.  Nella pagina **Programma standard**, specificare quanto segue:  
+    2.  **[標準プログラム]** ページで、次の情報を指定します。  
 
-        -   **Nome:** Specificare un nome per il programma con un massimo di 50 caratteri.  
+        -   **名前:** 最大 50 文字でプログラムの名前を指定します。  
 
             > [!NOTE]  
-            >  Il nome del programma deve essere univoco all'interno di un pacchetto. Dopo aver creato un programma, non è possibile modificarne il nome.  
+            >  プログラム名はパッケージ内で一意である必要があります。 プログラムを作成した後でその名前を変更することはできません。  
 
-        -   **Riga di comando**: immettere la riga di comando da usare per avviare il programma oppure scegliere **Sfoglia** per selezionare il percorso del file.  
+        -   **コマンド ライン**: このプログラムの起動に使用するコマンド ラインを入力するか、**[参照]** を選択してファイルの場所を参照します。  
 
-            Se per un nome di file non è specificata l'estensione, Configuration Manager prova a usare com, exe e bat come possibili estensioni.  
+            ファイル名に拡張子が指定されていない場合、Configuration Manager は .com、.exe、.bat 拡張子の使用を試みます。  
 
-             Se il programma viene eseguito in un client, Configuration Manager cerca prima il nome del file della riga di comando all'interno del pacchetto, successivamente cerca nella cartella Windows locale e infine nel *%percorso%* locale. Se il file non può essere trovato, l'esecuzione del programma non riesce.  
+             プログラムがクライアントで実行されると、Configuration Manager はパッケージ内でコマンド ラインのファイル名を検索した後、ローカルの Windows フォルダー、ローカルの *%path%* の順に検索します。 ファイルが見つからない場合は、プログラムが失敗します。  
 
-        -   **Cartella Esecuzione automatica** (facoltativo): specificare la cartella da cui viene eseguito il programma, con un massimo di 127 caratteri. Questa cartella può essere un percorso assoluto nel client o un percorso relativo alla cartella del punto di distribuzione contenente il pacchetto.
+        -   **スタートアップ フォルダー** (オプション): 最大 127 文字でプログラムの実行元フォルダーを指定します。 このフォルダーには、クライアントの絶対パスを指定することも、パッケージを含む配布ポイント フォルダーの相対パスを指定することもできます。
 
-        -   **Esegui**: specificare la modalità di esecuzione del programma nei computer client. Selezionare una delle opzioni seguenti:  
+        -   **実行**: クライアント コンピューターでプログラムを実行する際のモードを指定します。 次のいずれかを選択します。  
 
-            -   **Normale**: il programma viene eseguito in modalità normale in base alle impostazioni predefinite del sistema e del programma. Questa è la modalità predefinita.  
+            -   **標準**: システムとプログラムの既定に応じた通常モードで動作します。 これが既定の設定です。  
 
-            -   **Ridotta a icona**: il programma viene eseguito in modalità ridotta a icona nei dispositivi client. Gli utenti potranno seguire l'attività di installazione nell'area di notifica o sulla barra delle applicazioni.  
+            -   **最小化**: クライアント デバイスで最小化した、プログラムを実行します。 インストール状況は、通知エリアやタスク バーに表示される場合があります。  
 
-            -   **Ingrandita**: il programma viene eseguito in modalità ingrandita nei dispositivi client. Gli utenti potranno seguire l'intera l'attività di installazione.  
+            -   **最大化**: クライアント デバイスで最大化、プログラムを実行します。 ユーザーにはすべてのインストール動作が表示されます。  
 
-            -   **Nascosta**: il programma viene eseguito in modalità nascosta nei dispositivi client. Gli utenti non potranno seguire l'attività di installazione.  
+            -   **非表示**: プログラムの実行がクライアント デバイスで非表示にします。 ユーザーにはインストール動作が一切表示されません。  
 
-        -   **Requisiti per esecuzione programma**: specificare se il programma viene eseguito solo quando un utente ha eseguito l'accesso, quando nessun utente ha eseguito l'accesso o indipendentemente dal fatto che un utente abbia o meno eseguito l'accesso al computer client.  
+        -   **プログラムの実行条件**: プログラムを、ユーザーがサインインしているときのみ実行するか、サインインしているユーザーがいないときのみ実行するか、またはユーザーがクライアント コンピューターにサインインしているかどうかに関係なく実行するかを指定します。  
 
-        -   **Modalità esecuzione**: specificare se il programma viene eseguito con autorizzazioni amministrative o con le autorizzazioni dell'utente che ha eseguito l'accesso.  
+        -   **実行モード**: プログラムを管理者のアクセス許可で実行するか、現在サインインしているユーザーのアクセス許可で実行するかを指定します。  
 
-        -   **Consenti agli utenti di visualizzare e interagire con l'installazione del programma**: usare questa impostazione, se disponibile, per specificare se consentire agli utenti di interagire con l'installazione del programma. Questa casella di controllo è disponibile solo se sono selezionate le opzioni **Solo se nessun utente è connesso** o **Indipendentemente dalla connessione degli utenti** per **Requisiti per esecuzione programma** e **Esegui con diritti amministrativi** per **Modalità esecuzione**.  
+        -   **プログラムのインストールの表示および対話をユーザーに許可する**: この設定を使用して (使用可能な場合)、ユーザーがプログラムのインストールと対話できるかどうかを指定します。 このチェックボックスは、**[プログラムの実行条件]** で **[ユーザーがログオンしているときのみ]** または **[ユーザーのログオン状態に関係なし]** が、**[実行モード]** で **[管理者権限で実行する]** が選択されているときのみ利用可能です。  
 
-        -   **Modalità unità**: specificare le informazioni sull'esecuzione del programma in rete. Scegliere uno dei valori seguenti:  
+        -   **ドライブ モード**: ネットワーク上でこのプログラムを実行する方法に関する情報を指定します。 次のいずれかを選択します。  
 
-            -   **Viene eseguito con nome UNC**: il programma viene eseguito con un nome UNC (Universal Naming Convention). Questa è l'impostazione predefinita.  
+            -   **UNC 名で実行する**: プログラムを UNC (汎用名前付け規則) の名前で実行するように指定します。 これは、既定の設定です。  
 
-            -   **Richiede lettera di unità**: il programma richiede una lettera di unità per specificare un percorso completo. Per questa impostazione, Configuration Manager può usare qualsiasi lettera di unità disponibile nel client.  
+            -   **ドライブ文字が必要**: プログラムの場所を完全に修飾するためにドライブ文字が必要であることを指定します。 この設定で Configuration Manager クライアントで利用可能なドライブ文字を使用できます。  
 
-            -   **Richiede lettera specifica di unità**: il programma richiede una lettera specifica di unità, specificata per indicarne il percorso completo, ad esempio **Z:**. Se la lettera di unità specificata è già usata in un client, il programma non viene eseguito.  
+            -   **特定のドライブ文字が必要**: プログラムの場所を完全に修飾するために指定した特定のドライブ文字が必要であることを指定します (例: **Z:**)。 指定したドライブ文字が既にクライアントで使用すると、プログラムは実行されません。  
 
-        -   **Riconnettiti al punto di distribuzione all'accesso**: selezionare questa casella di controllo per indicare se il computer client si riconnette al punto di distribuzione quando l'utente esegue l'accesso. Per impostazione predefinita, questa casella di controllo è deselezionata.  
+        -   **上のログの配布ポイントに再接続**: ユーザーがサインインしたときに、クライアント コンピューターが配布ポイントに再接続かどうかを示すために、このチェック ボックスを使用します。 既定では、このチェック ボックスはオフです。  
 
-  3.  Nella pagina **Requisiti** della **Creazione guidata pacchetto e programma** specificare le informazioni seguenti:  
+  3.  **パッケージとプログラムの作成ウィザード**の **[要件]** ページで、次の情報を指定します。  
 
-        -   **Esegui prima un altro programma**: usare questa impostazione per identificare un pacchetto e un programma che devono essere eseguiti prima dell'esecuzione del pacchetto e del programma.  
+        -   **別のプログラムを最初に実行**: パッケージとは、このパッケージの前に実行するプログラムを識別するために、この設定を使用することができ、プログラムを実行します。  
 
-        -   **Requisiti di piattaforma**: selezionare **Questo programma può essere eseguito in qualsiasi piattaforma** o **Questo programma può essere eseguito solo in piattaforme specifiche** e scegliere i sistemi operativi che i client devono eseguire per poter installare il pacchetto e il programma.  
+        -   **プラットフォームの要件**: **[任意のプラットフォームで実行可能]** または **[指定したプラットフォームだけで実行可能]** を選択し、パッケージとプログラムをインストールできるように、クライアントで実行しておく必要があるオペレーティング システムを選択します。  
 
-        -   **Spazio su disco stimato**: specificare la quantità di spazio su disco necessaria per l'esecuzione del programma software nel computer. Questo valore può essere specificato come **sconosciuto** (impostazione predefinita) o come un numero intero maggiore o uguale a zero. Se si specifica un valore, è necessario specificare anche l'unità di misura per il valore.  
+        -   **推定ディスク空き領域**: ソフトウェア プログラムをコンピューターで実行するために必要なディスク領域を指定します。 として指定できます **不明な** (既定の設定) または 0 以上の整数。 値を指定する場合は、値の単位も指定する必要があります。  
 
-        -   **Tempo di esecuzione massimo consentito (minuti)**: specifica il tempo massimo previsto dal programma per l'esecuzione nel computer client. Questo valore può essere specificato come **sconosciuto** (impostazione predefinita) o come numero intero maggiore di zero.  
+        -   [**許容最長実行時間 (分)**]:プログラムがクライアント コンピューターで実行される最長時間を指定します。 この値には [不明] **** (既定の設定)、または 0 より大きい整数を指定できます。  
 
-             Per impostazione predefinita, il valore è impostato su 120 minuti.  
+             既定では、120 分に設定されます。  
 
             > [!IMPORTANT]  
-            >  Se si usano finestre di manutenzione per la raccolta in cui viene eseguito il programma, può verificarsi un conflitto se il valore di **Tempo di esecuzione massimo consentito ** è maggiore della finestra di manutenzione pianificata. Se il tempo di esecuzione massimo è invece impostato su **Sconosciuto**, il programma viene avviato durante la finestra di manutenzione e l'esecuzione prosegue nel modo necessario dopo il termine della finestra di manutenzione. Se l'utente imposta il tempo di esecuzione massimo su una durata specifica maggiore della durata di qualsiasi finestra di manutenzione disponibile, il programma non viene eseguito.  
+            >  このプログラムを実行しているコレクションにメンテナンス期間を使用している場合は、**[許容最長実行時間]** がスケジュールされたメンテナンス期間より長いと、競合が発生する可能性があります。 ただし、最長実行時間が **[不明]** に設定されている場合、プログラムはメンテナンス期間中に起動し、実行されます。また、メンテナンス期間が終了した後も、必要に応じて継続して実行されます。 最長実行時間をすべてのメンテナンス ウィンドウの長さを超える期間を設定すると、プログラムは実行されません。  
 
-             Se il valore impostato è **Sconosciuto**, Configuration Manager imposta un limite massimo di esecuzione di 12 ore (720 minuti).  
-
-            > [!NOTE]  
-            >  Se il tempo di esecuzione massimo, indipendentemente dal fatto che sia stato impostato dall'utente o che si tratti del valore predefinito, viene superato, Configuration Manager arresta il programma se l'opzione **Esegui con diritti amministrativi** è selezionata e l'opzione **Consenti agli utenti di visualizzare e interagire con l'installazione del programma** non è selezionata.  
-
-  4.  Scegliere **Avanti**.  
-
-    #### <a name="create-a-device-program"></a>Creare un programma di dispositivo  
-
-  1.  Nella pagina **Tipo di programma** della **Creazione guidata pacchetto e programma** selezionare **Programma per dispositivo** e scegliere **Avanti**.  
-
-  2.  Nella pagina **Programma standard** specificare quanto segue:  
-
-        -   **Nome**: specificare un nome per il programma con un massimo di 50 caratteri.  
+             この値が **[不明]** に設定されている場合、Configuration Manager は許容最長実行時間を 12 時間 (720 分) に設定します。  
 
             > [!NOTE]  
-            >  Il nome del programma deve essere univoco all'interno di un pacchetto. Dopo aver creato un programma, non è possibile modificarne il nome.  
+            >  最長実行時間 (ユーザーが設定したか既定値であるかにかかわらず) を超えた場合、**[管理者権限で実行する]** が選択され、**[プログラムのインストールの表示および対話をユーザーに許可する]** が選択されていないと、Configuration Manager はプログラムを停止します。  
 
-        -   **Commento** (facoltativo): specificare un commento per il programma del dispositivo con un massimo di 127 caratteri.  
+  4.  **[次へ]** を選択します。  
 
-        -   **Cartella download**: specificare il nome della cartella nel dispositivo Windows CE in cui verranno archiviati i file di origine del pacchetto. Il valore predefinito è **\Temp\\**.  
+    #### <a name="create-a-device-program"></a>デバイス プログラムを作成する  
 
-        -   **Riga di comando**: immettere la riga di comando da usare per avviare il programma oppure scegliere **Sfoglia** per selezionare il percorso del file.  
+  1.  **パッケージとプログラムの作成ウィザード**の **[プログラムの種類]** ページで、**[デバイスのプログラム]** を選択してから、**[次へ]** を選択します。  
 
-        -   **Esegui la riga di comando nella cartella download**: selezionare questa opzione per eseguire il programma dalla cartella di download specificata in precedenza.  
+  2.  **[デバイスのプログラム]** ページで、次の項目を指定します。  
 
-        -   **Esegui la riga di comando da questa cartella**: selezionare questa opzione per specificare una cartella diversa da cui eseguire il programma.  
+        -   **名前**: 最大 50 文字でプログラムの名前を指定します。  
 
-    3.  Nella pagina **Requisiti**, specificare quanto segue:  
+            > [!NOTE]  
+            >  プログラム名はパッケージ内で一意である必要があります。 プログラムを作成した後でその名前を変更することはできません。  
 
-        -   **Spazio su disco stimato**: specificare la quantità di spazio su disco necessaria per il software. Questo valore viene visualizzato agli utenti dei dispositivi mobili prima di installare il programma.  
+        -   **コメント** (省略可能): 最大 127 文字でデバイス プログラムのコメントを指定します。  
 
-        -   **Programma download**: specificare le informazioni relative al momento in cui il programma può essere scaricato nei dispositivi mobili. È possibile specificare **Appena possibile**, **Solo su una rete veloce**o **Solo quando un dispositivo è bloccato**.  
+        -   **ダウンロード フォルダー**: パッケージ ソース ファイルが保存される、Windows CE デバイス上のフォルダーの名前を指定します。 既定値は、**\Temp\\** です。  
 
-        -   **Altri requisiti**: specificare eventuali requisiti aggiuntivi per il programma. I requisiti vengono visualizzati agli utenti prima di installare il software. Ad esempio, è possibile informare gli utenti che è necessario chiudere tutte le altre applicazioni prima di eseguire il programma.  
+        -   **コマンド ライン**: このプログラムの起動に使用するコマンド ラインを入力するか、**[参照]** を選択してファイルの場所を参照します。  
 
-  4.  Scegliere **Avanti**.  
+        -   **コマンド ラインをダウンロード フォルダーで実行する**: 以前指定したダウンロード フォルダーからプログラムを実行するには、このオプションをオンにします。  
 
-  7.  Nella pagina **Riepilogo** esaminare le azioni da eseguire e quindi completare la procedura guidata.  
+        -   **コマンド ラインを次のフォルダーで実行する**: プログラムの実行に別のフォルダーを指定するには、このオプションをオンにします。  
 
- Verificare che i nuovi pacchetto e programma vengano visualizzati nel nodo **Pacchetti** dell'area di lavoro **Raccolta software**.  
+    3.  **[要件]** ページで、次の項目を指定します。  
 
-## <a name="create-a-package-and-program-from-a-package-definition-file"></a>Per creare un pacchetto e un programma da un file di definizione del pacchetto  
+        -   **推定ディスク空き領域**: ソフトウェアに必要なディスク空き領域を指定します。 これはプログラムをインストールする前に、モバイル デバイスのユーザーに表示されます。  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software ** > **Gestione applicazioni** > **Pacchetti**.  
+        -   **ダウンロード プログラム**: このプログラムをモバイル デバイスにいつダウンロードできるようにするかに関する情報を指定します。 **[直ちに]**、 **[高速ネットワーク経由のみ]**、または **[デバイスがドッキングされているときのみ]**を指定できます。  
 
-3.  Nel gruppo **Crea** della scheda **Home** scegliere **Crea pacchetto da definizione**.  
+        -   **追加要件**: このプログラムの追加の要件を指定します。 ソフトウェアをインストールする前にユーザーに表示されます。 たとえば、ユーザーをプログラムを実行する前に、その他のすべてのアプリケーションを閉じる必要があることを通知できます。  
 
-4.  Nella pagina **Definizione pacchetto** della **Creazione guidata pacchetto da definizione** scegliere un file di definizione del pacchetto esistente oppure selezionare**Sfoglia** per aprirne uno nuovo. Dopo aver specificato un nuovo file di definizione del pacchetto, selezionarlo nell'elenco **Definizione pacchetto** e scegliere **Avanti**.  
+  4.  **[次へ]** を選択します。  
 
-5.  Nella pagina **File di origine** specificare le informazioni su tutti i file di origine necessari per il pacchetto e per il programma e scegliere **Avanti**.  
+  7.  **[概要]** ページで、実行される操作を確認し、ウィザードを完了します。  
 
-6.  Se per il pacchetto sono necessari file di origine, nella pagina **Cartella di origine** specificare il percorso da cui devono essere ottenuti i file di origine e scegliere **Avanti**.  
+ 新しいパッケージとプログラムが **[ソフトウェア ライブラリ]** ワークスペースの **[パッケージ]** ノードに表示されていることを確認します。  
 
-7.  Nella pagina **Riepilogo** esaminare le azioni da eseguire e quindi completare la procedura guidata. Il nuovo pacchetto e il nuovo programma vengono visualizzati nel nodo **Pacchetti** dell'area di lavoro **Raccolta software**.  
+## <a name="create-a-package-and-program-from-a-package-definition-file"></a>パッケージ定義ファイルからパッケージとプログラムを作成する  
 
- Per altre informazioni sui file definizioni del pacchetto, vedere [Informazioni sul formato di file definizioni del pacchetto](/sccm/apps/deploy-use/packages-and-programs#about-the-package-definition-file-format) in questo argomento.  
+1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[パッケージ]** の順に選択します。  
 
-##  <a name="deploy-packages-and-programs"></a>Distribuire pacchetti e programmi  
+3.  **[ホーム]** タブの **[作成]** グループで、**[定義に基づいたパッケージの作成]** を選択します。  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software ** > **Gestione applicazioni** > **Pacchetti**.  
+4.  **定義に基づいたパッケージの作成ウィザード**の **[パッケージ定義]** ページで、既存のパッケージ定義ファイルを選択し、**[参照]** を選択して新しいパッケージ定義ファイルを開きます。 新しいパッケージ定義ファイルを指定したら、**[パッケージ定義]** 一覧からそのファイルを選択し、**[次へ]** を選択します。  
 
-2.  Selezionare il pacchetto che si vuole distribuire. Nel gruppo **Distribuzione** della scheda **Home** scegliere **Distribuisci**.  
+5.  **[ソース ファイル]** ページで、パッケージとプログラムに必要なソース ファイルに関する情報を指定し、**[次へ]** を選択します。  
 
-3.  Nella pagina **Generale** della **Distribuzione guidata del software** specificare il nome del pacchetto e del programma che si vuole distribuire, la raccolta in cui si vuole distribuire il pacchetto e il programma ed eventuali commenti per la distribuzione.  
+6.  パッケージでソース ファイルが必要な場合は、**[ソース フォルダー]** ページで、ソース ファイルの取得元となる場所を指定し、**[次へ]** を選択します。  
 
-     Selezionare **utilizzare gruppi di punti di distribuzione predefiniti associati a questa raccolta** se si desidera archiviare il contenuto del pacchetto nel gruppo di punto di distribuzione predefinito di raccolte. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, questa opzione non è disponibile.  
+7.  **[概要]** ページで、実行される操作を確認し、ウィザードを完了します。 新しいパッケージとプログラムが **[ソフトウェア ライブラリ]** の **[パッケージ]** ノードに表示されます。  
 
-4.  Nella pagina **Contenuto** scegliere **Aggiungi** e selezionare i punti di distribuzione o i gruppi di punti di distribuzione in cui si vuole distribuire il contenuto associato a questo programma e pacchetto.  
+ パッケージ定義ファイルの詳細については、このトピックの「[パッケージ定義ファイル形式について](/sccm/apps/deploy-use/packages-and-programs#about-the-package-definition-file-format)」を参照してください。  
 
-5.  Nella pagina **Impostazioni distribuzione** scegliere uno scopo per la distribuzione e specificare le opzioni per i pacchetti di riattivazione e le connessioni a consumo:  
+##  <a name="deploy-packages-and-programs"></a>パッケージとプログラムを展開する  
 
-    -   **Scopo**: è possibile scegliere tra:  
+1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[パッケージ]** の順に選択します。  
 
-        -   **Disponibile**: se l'applicazione viene distribuita a un utente, l'utente visualizza il pacchetto e il programma pubblicati nel Catalogo applicazioni e può richiederli appositamente. Se il pacchetto e il programma vengono distribuiti in un dispositivo, vengono visualizzati in Software Center e l'utente può installarli su richiesta.  
+2.  展開するパッケージを選択し、**[ホーム]** タブの **[展開]** グループで、**[展開]** を選択します。  
 
-        -   **Richiesto**: il pacchetto e il programma vengono distribuiti automaticamente in base alla pianificazione configurata. Tuttavia, un utente può tenere traccia dello stato di distribuzione del pacchetto e del programma e installarli prima della scadenza usando Software Center.  
+3.  **ソフトウェアの展開ウィザード**の **[全般]** ページには、パッケージとプログラムを展開する、パッケージとプログラム、および展開するためのオプションのコメントを展開するコレクションの名前を指定します。  
 
-    -   **Invia pacchetti di riattivazione**: se lo scopo della distribuzione è impostato su **Richiesto** e l'opzione è selezionata, ai computer viene inviato un pacchetto di riattivazione prima dell'installazione della distribuzione al fine di riattivare i computer da sospensione alla scadenza dell'installazione. Prima di usare questa opzione, i computer devono essere configurati per la riattivazione LAN.  
+     パッケージ コンテンツをコレクションの既定の配布ポイント グループに格納する場合は、[このコレクションに関連付けられている既定の配布ポイント グループを使用する **** ] を選択します。 選択したコレクションを配布ポイント グループに関連付けなかった場合、このオプションは使用できません。  
 
-    -  **Consente a tutti i client che utilizzano una connessione di rete a consumo di scaricare il contenuto una volta raggiunta la scadenza dell'installazione. Se si abilita questa opzione, potrebbe essere addebitato un costo aggiuntivo**: selezionare se necessario.  
+4.  **[コンテンツ]** ページで **[追加]** を選択し、このパッケージとプログラムに関連付けられているコンテンツを展開する配布ポイントまたは配布ポイント グループを選択します。  
+
+5.  **[展開設定]** ページで、この展開の目的を選択して、ウェイクアップ パケットのオプションおよび従量制課金接続を指定します。  
+
+    -   **[目的]**: 次の項目から選択できます。  
+
+        -   **[利用可能]**: アプリケーションがユーザーに展開されると、ユーザーは、公開されているパッケージとプログラムをアプリケーション カタログで表示して、必要に応じてパッケージとプログラムを要求できます。 パッケージとプログラムがデバイスに展開されると、ユーザーは、パッケージとプログラムをソフトウェア センターで表示して、必要に応じてパッケージとプログラムをインストールできます。  
+
+        -   **[必須]**: パッケージとプログラムは、構成されたスケジュールに従って自動的に展開されます。 ただし、ユーザーは、パッケージとプログラムの展開ステータスを追跡し、ソフトウェア センターを使用して期限前にパッケージとプログラムをインストールできます。  
+
+    -   **[ウェイクアップ パケットを送信する]**: 展開目的に **[必須]** が設定されていて、このオプションが選択されていると、インストールの期限時間にスリープ状態のコンピューターをウェイクするために、展開のインストール前にコンピューターにウェイクアップ パケットが送信されます。 このオプションを使用する前に、コンピューターを Wake On LAN 用に構成する必要があります。  
+
+    -  **[インストールの期限後、クライアントが従量制のインターネット接続を使用してコンテンツをダウンロードできるようにする (追加料金が生じる可能性があります)]**: 必要に応じて、これを選択します。  
 
     > [!NOTE]  
-    >  L'opzione **Pre-distribuisci il software nel dispositivo primario dell'utente** non è disponibile durante la distribuzione di un pacchetto e di un programma.  
+    >  **[ユーザーのプライマリ デバイスにソフトウェアを事前に展開する]** オプションは、パッケージとプログラムを展開するときには使用できません。  
 
-6.  Nella pagina **Pianificazione** configurare la data e l'ora in cui pacchetto e programma verranno distribuiti o resi disponibili per i dispositivi client.  
+6.  **[スケジュール]** ページで、このパッケージとプログラムを展開するタイミングまたはクライアント デバイスで利用できるようにするタイミングを構成します。  
 
-     Le opzioni presenti in questa pagina varieranno a seconda che l'azione di distribuzione sia impostata su **Disponibile** o **Richiesto**.  
+     このページのオプションは、展開操作が **[利用可能]** または **[必須]**のどちらに設定されているかによって変わります。  
 
-7.  Se lo scopo della distribuzione è impostato su **Richiesto**, configurare il comportamento di riesecuzione per il programma nell'elenco a discesa **Riesegui comportamento**. È possibile scegliere una delle opzioni seguenti:  
+7.  展開の目的を **[必須]** に設定している場合は、**[再実行の動作]** ドロップダウン メニューで、プログラムの再実行の動作を構成します。 次のオプションを選択します。  
 
-    |Riesegui comportamento|Altre informazioni|  
+    |再実行の動作|説明|  
     |--------------------|----------------------|  
-    |Non rieseguire mai un programma distribuito|Il programma non verrà rieseguito nel client, anche se l'esecuzione originale non è riuscita o i file di programma sono stati modificati.|  
-    |Riesegui sempre un programma|Il programma viene sempre rieseguito nel client quando è pianificata la distribuzione, anche se è già stato eseguito correttamente. Questa impostazione può essere utile quando si usano distribuzioni ricorrenti in cui il programma viene aggiornato, ad esempio con un software antivirus.|  
-    |Riesegui se il tentativo precedente non è riuscito|Il programma viene rieseguito quando è pianificata la distribuzione ,solo se l'esecuzione non è riuscita durante il tentativo precedente.|  
-    |Riesegui se il tentativo precedente è riuscito|Il programma viene rieseguito solo se è già stato eseguito correttamente nel client. Questa impostazione è utile quando si usano avvisi ricorrenti in cui il programma viene aggiornato regolarmente e ogni aggiornamento richiede l'installazione corretta dell'aggiornamento precedente.|  
+    |展開されたプログラムを再実行しない|プログラムが最初に失敗または、プログラム ファイルが変更された場合でも、クライアントでは、プログラムは再実行されません。|  
+    |プログラムを常に再実行する|展開がスケジュールされているときは、プログラムが既に正常に実行していても、プログラムは常にクライアントで再実行されます。 これは、反復的な展開が、プログラムが更新、たとえば、ウイルス対策ソフトウェアを使用する場合に役立ちます。|  
+    |前回の試行に失敗した場合は再実行する|展開がスケジュールされているときは、前回の試行に失敗した場合のみ、プログラムが再実行されます。|  
+    |前回の試行に成功した場合は再実行する|プログラムは、以前にクライアントで正常に実行された場合にのみ再実行されます。 このオプションは、プログラムが定期的に更新され、更新のたびに前回の更新が正常にインストールされている必要がある、反復的な公開通知を使用する場合に便利です。|  
 
-8. Nella pagina **Esperienza utente** specificare le informazioni seguenti:  
+8. [ユーザー側の表示と操作] ページで、次の情報を指定します。 ****  
 
-    -   **Consenti agli utenti di eseguire il programma indipendentemente dalle assegnazioni**: se questa opzione è abilitata, gli utenti possono installare il software da Software Center indipendentemente da qualsiasi intervallo di installazione pianificato.  
+    -   **[割り当てられたプログラムの個別の実行をユーザーに許可する]**: 有効になっている場合、ユーザーは、スケジュールされているインストール時刻に関係なく、このソフトウェアをソフトウェア センターからインストールできます。  
 
-    -   **Installazione software**: permette l'installazione del software al di fuori di qualsiasi finestra di manutenzione configurata.  
+    -   **[ソフトウェアのインストール]**: 構成されたメンテナンス期間外でソフトウェアをインストールできます。  
 
-    -   **Riavvio del sistema (se richiesto per completare l'installazione)**: se l'installazione del software richiede un riavvio del dispositivo per il completamento, questa opzione consente di eseguire il riavvio al di fuori di qualsiasi finestra di manutenzione configurata.  
+    -   **[システムの再起動 (インストールの完了に必要な場合)]**: ソフトウェアのインストールを完了するためにはデバイスの再起動が必要な場合、構成されたメンテナンス期間外で再起動できます。  
 
-    -   **Embedded devices** (Dispositivi con Embedded): quando si distribuiscono pacchetti e programmi in dispositivi con Windows Embedded con filtro di scrittura abilitato, è possibile specificare di installare i pacchetti e i programmi nella sovrapposizione temporanea ed eseguire il commit delle modifiche successivamente. In alternativa, il commit delle modifiche viene eseguito alla scadenza dell'installazione o all'interno una finestra di manutenzione. Quando si esegue il commit delle modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per salvare le modifiche nel dispositivo in modo permanente.  
+    -   **[埋め込みデバイス]**: 書き込みフィルターが有効になっている Windows Embedded デバイスにパッケージとプログラムを展開する場合、一時的なオーバーレイにパッケージとプログラムをインストールするように指定し、後で変更をコミットできます。 あるいは、インストールの期限またはメンテナンス期間中に変更をコミットできます。 インストールの期限またはメンテナンス期間中に変更をコミットする場合は、再起動が必要になります。再起動すると、デバイスに変更が保持されます。  
 
         > [!NOTE]  
-        >  Quando si distribuisce un pacchetto o un programma in un dispositivo con Windows Embedded, assicurarsi che il dispositivo sia membro di una raccolta a cui è associata una finestra di manutenzione configurata. Per altre informazioni sull'uso delle finestre di manutenzione quando si distribuiscono pacchetti e programmi a dispositivi con Windows Embedded, vedere [Creazione di applicazioni Windows Embedded](../../apps/get-started/creating-windows-embedded-applications.md).  
+        >  パッケージまたはプログラムを Windows Embedded デバイスに展開するときに、デバイスを構成されたメンテナンス ウィンドウを持つコレクションのメンバーであることを確認します。 Windows Embedded デバイスにパッケージとプログラムを展開する場合にメンテナンス期間を使用する方法の詳細については、「[Windows Embedded アプリケーションの作成](../../apps/get-started/creating-windows-embedded-applications.md)」を参照してください。  
 
-9. Nella pagina **Punti di distribuzione** specificare le informazioni seguenti:  
+9. [配布ポイント] ページで、次の情報を指定します。 ****  
 
-    -   **Opzioni di distribuzione**: specificare le azioni che un client deve intraprendere per eseguire il contenuto del programma. È possibile specificare il comportamento da adottare quando il client si trova in un limite di rete veloce, lento o non affidabile.  
+    -   **[展開オプション]**: クライアントがプログラムのコンテンツを実行するために実行する必要がありますアクションを指定します。 クライアントが高速ネットワーク境界の場合、または低速または信頼性の低いネットワーク境界内にある場合は、動作を指定できます。  
 
-    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: selezionare questa opzione per ridurre il carico in rete, consentendo ai client di scaricare il contenuto da altri client in rete che hanno già scaricato e memorizzato nella cache il contenuto. Questa opzione si avvale di Windows BranchCache e può essere usata in computer che eseguono Windows Vista SP2 e versioni successive.  
+    -   **[同じサブネットにある他のクライアントとのコンテンツの共有を許可する]**: 既にコンテンツをダウンロードしてキャッシュしているネットワーク上の他のクライアントからコンテンツをダウンロードすることをクライアントに許可することでネットワークの負荷を軽減するには、このオプションを選択します。 このオプションは、Windows BranchCache を利用し、以降 Windows Vista SP2 を実行しているコンピューターで使用することができます。  
 
-    -   **Consenti ai client di utilizzare un percorso origine di fallback per il contenuto**:  
+    -   **代替のコンテンツ ソースの場所の使用をクライアントに許可する**:  
 
-        -  **Prima della versione 1610**: è possibile selezionare la casella di controllo **Consenti percorso origine di fallback per il contenuto** per consentire ai client esterni a questi gruppi di limiti di eseguire il fallback e usare il punto di distribuzione come percorso di origine per il contenuto in assenza di altri punti di distribuzione disponibili.
+        -  **1610 より以前のバージョン**: **[代替のコンテンツ ソースの場所の使用を許可する]** チェック ボックスをオンにすると、他に利用できる代替ポイントがない場合に、この境界グループ外のクライアントのフォールバックが許可され、配布ポイントをコンテンツ ソースの場所として使用できるようになります。
 
-        - **Versione 1610 e successive**: non è più possibile configurare l'opzione **Consenti percorso origine di fallback per il contenuto**.  È invece possibile configurare relazioni tra gruppi di limiti per determinare quando un client può iniziare la ricerca di gruppi di limiti aggiuntivi per un percorso di origine del contenuto valido.
+        - **バージョン 1610 以降**: **[代替のコンテンツ ソースの場所の使用を許可する]** は構成できません。  代わりに、境界グループ間の関係を構成し、有効なコンテンツ ソースの場所を追加の境界グループからクライアントが検索するタイミングを決定するようにします。
 
-10. Nella pagina **Riepilogo** esaminare le azioni da eseguire e quindi completare la procedura guidata.  
+10. **[概要]** ページで、実行される操作を確認し、ウィザードを完了します。  
 
-     È possibile visualizzare la distribuzione nel nodo **Distribuzioni** dell'area di lavoro **Monitoraggio** e nel riquadro dei dettagli della scheda di distribuzione del pacchetto quando si seleziona la distribuzione. Per altre informazioni, vedere [Monitorare pacchetti e programmi](/sccm/apps/deploy-use/packages-and-programs#monitor-packages-and-programs) in questo argomento.  
+     [監視 **** ] ワークスペースの [展開 **** ] ノードおよび [パッケージ展開] タブの詳細ウィンドウで展開を表示できます。 詳しくは、このトピックの「[パッケージとプログラムを監視する](/sccm/apps/deploy-use/packages-and-programs#monitor-packages-and-programs)」を参照してください。  
 
 > [!IMPORTANT]  
->  Se è stata configurata l'opzione **Esegui programma dal punto di distribuzione** nella pagina **Punti di distribuzione** della **Distribuzione guidata del software**, non deselezionare l'opzione **Copia il contenuto del pacchetto in una condivisione pacchetto nei punti di distribuzione** perché così facendo il pacchetto non sarà più disponibile per l'esecuzione dai punti di distribuzione.  
+>  **ソフトウェアの展開ウィザード**の **[配布ポイント]** ページで **[配布ポイントからプログラムを実行する]** オプションを構成した場合は、**[このパッケージのコンテンツを配布ポイントのパッケージ共有にコピーする]** チェック ボックスをオフにしないでください。オフにすると、このパッケージは、配布ポイントから実行できなくなります。  
 
-##  <a name="monitor-packages-and-programs"></a>Monitorare pacchetti e programmi  
- Per monitorare le distribuzioni di pacchetti e programmi, seguire le stesse procedure usate per monitorare le applicazioni, come descritto in [Monitorare le applicazioni](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
+##  <a name="monitor-packages-and-programs"></a>パッケージとプログラムを監視する  
+ パッケージおよびプログラムの展開を監視するには、「[アプリケーションの監視](/sccm/apps/deploy-use/monitor-applications-from-the-console)」で詳しく説明されている、アプリケーションを監視する場合と同じ方法を使用できます。  
 
- I pacchetti e i programmi includono anche alcuni report predefiniti, che consentono di monitorare le informazioni sullo stato di distribuzione di pacchetti e programmi. Tali report dispongono della categoria report di **distribuzione Software-pacchetti e programmi** e **distribuzione Software-pacchetto e programma lo stato di distribuzione**.  
+ また、パッケージとプログラムには、パッケージとプログラムの展開状況の情報を監視できる、複数の組み込みレポートも含まれています。 これらのレポートのレポート カテゴリをある **ソフトウェアの配布-パッケージとプログラム** と **ソフトウェアの配布-パッケージとプログラムの展開ステータス**です。  
 
- Per altre informazioni sulle modalità di configurazione della creazione di report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+ Configuration Manager でのレポートの構成方法に関して詳しくは、「[System Center Configuration Manager のレポート](../../core/servers/manage/reporting.md)」を参照してください。  
 
-##  <a name="manage-packages-and-programs"></a>Gestire pacchetti e programmi  
- Nell'area di lavoro **Raccolta software** espandere **Gestione applicazioni**, scegliere **Pacchetti**, selezionare il pacchetto che si vuole gestire e scegliere un'attività di gestione tra quelle contenute nella tabella seguente:  
+##  <a name="manage-packages-and-programs"></a>パッケージとプログラムを管理する  
+ **[ソフトウェア ライブラリ]** ワークスペースで、**[アプリケーション管理]** を展開し、**[パッケージ]** を選択します。次に、管理するパッケージを選択し、次の表にある管理タスクを選択します。  
 
-|Attività|Altre informazioni|  
+|タスク|説明|  
 |----------|----------------------|  
-|**Crea file di contenuto di pre-installazione**|Apre la **Creazione guidata file di contenuto pre-installazione**, che consente di creare un file che include il contenuto del pacchetto che può essere importato manualmente in un altro sito. Questa impostazione è utile nei casi in cui è disponibile larghezza di banda ridotta tra il server del sito e il punto di distribuzione.|  
-|**Crea programma**|Apre la **Creazione guidata programma**, che consente di creare un nuovo programma per il pacchetto.|  
-|**Export**|Apre l'**Esportazione guidata del pacchetto**, che consente di esportare il pacchetto selezionato e il suo contenuto in un file.<br /><br /> Per informazioni su come importare pacchetti e programmi, vedere [Creare pacchetti e programmi ](/sccm/apps/deploy-use/packages-and-programs#create-packages-and-programs) in questo argomento.|  
-|**Distribuisci**|Apre la **Distribuzione guidata del software**, che consente di distribuire il pacchetto e il programma selezionati in una raccolta. Per altre informazioni, vedere [Distribuire pacchetti e programmi](/sccm/apps/deploy-use/packages-and-programs#deploy-packages-and-programs) in questo argomento.|  
-|**Distribuisci contenuto**|Apre la **Distribuzione guidata contenuto**, che consente di inviare il contenuto associato al pacchetto e al programma a punti di distribuzione o gruppi di punti di distribuzione selezionati.|  
-|**Aggiorna punti di distribuzione**|Aggiorna i punti di distribuzione con il contenuto più recente per il pacchetto e il programma selezionati.|  
+|**事前設定コンテンツ ファイルの作成**|**事前設定コンテンツ ファイルの作成ウィザード**を開きます。このウィザードでは、パッケージ コンテンツ含むファイルを作成できます。作成したファイルは、手動で他のサイトにインポートできます。 これは、サイト サーバーと配布ポイントの間のネットワーク帯域幅が低い状況で便利です。|  
+|**プログラムの作成**|**プログラムの作成ウィザード**を開きます。このウィザードでは、パッケージに新しいプログラムを作成できます。|  
+|**エクスポート**|**パッケージのエクスポート ウィザード**を開きます。このウィザードでは、選択されたパッケージとそのコンテンツをファイルにエクスポートできます。<br /><br /> パッケージとプログラムをインポートする方法については、このトピックの「[パッケージとプログラムを作成する](/sccm/apps/deploy-use/packages-and-programs#create-packages-and-programs)」を参照してください。|  
+|**展開**|**ソフトウェアの展開ウィザード**を開きます。選択されたパッケージとそのコンテンツをコレクションに展開できます。 詳しくは、このトピックの「[パッケージとプログラムを展開する](/sccm/apps/deploy-use/packages-and-programs#deploy-packages-and-programs)」を参照してください。|  
+|**コンテンツの配布**|**コンテンツの配布ウィザード**を開きます。このウィザードでは、パッケージとプログラムに関連付けられたコンテンツを、選択された配布ポイントまたは配布ポイント グループに送信できます。|  
+|**配布ポイントの更新**|配布ポイントを選択されたパッケージやプログラムの最新のコンテンツで更新します。|  
 
-##  <a name="about-the-package-definition-file-format"></a>Informazioni sul formato di file definizioni del pacchetto  
- I file definizioni del pacchetto sono script che è possibile usare per automatizzare la creazione di pacchetti e programmi con Configuration Manager. Specificano tutte le informazioni necessarie a Configuration Manager per creare un pacchetto e un programma, ad eccezione del percorso dei file origine del pacchetto. Ogni file di definizione del pacchetto è un file di testo ASCII o UTF-8 con estensione ini, che contiene le sezioni descritte di seguito:  
+##  <a name="about-the-package-definition-file-format"></a>パッケージ定義ファイルの形式について  
+ パッケージ定義ファイルは、Configuration Manager でパッケージとプログラム作成を自動化するために使用できるスクリプトです。 このファイルでは、パッケージ ソース ファイルの場所を除き、Configuration Manager がパッケージとプログラムを作成するために必要なすべての情報を提供します。 各パッケージ定義ファイルは、ASCII または UTF-8 テキスト ファイルとなります。.ini ファイル形式を利用し、次のセクションが含まれます。  
 
 ###  <a name="pdf"></a>[PDF]  
- Questa sezione identifica il file come file di definizione del pacchetto. Contiene le informazioni seguenti:  
+ このセクションでは、パッケージ定義ファイルとしてファイルを指定します。 これには、次の情報が含まれています。  
 
--   **Versione**: specificare la versione del formato del file di definizione del pacchetto usato dal file. Corrisponde alla versione di System Management Server (SMS) o Configuration Manager per cui è stato scritto. Questa voce è necessaria.  
+-   **バージョン**: ファイルで使用されるパッケージ定義ファイル形式のバージョンを指定します。 これには、System Management Server (SMS) のバージョンに対応してまたは Configuration Manager が書き込まれたのです。 このエントリは必須です。  
 
 ###  <a name="package-definition"></a>[Package Definition]  
- Specificare le proprietà del pacchetto e del programma. Contiene le informazioni seguenti:  
+ パッケージとプログラムのプロパティを指定します。 次の情報を提供します。  
 
--   **Nome**: Il nome del pacchetto, fino a 50 caratteri.  
+-   [名前]:****パッケージ名。50 文字以内で指定します。  
 
--   **Versione** (facoltativo): la versione del pacchetto, con un massimo di 32 caratteri.  
+-   **バージョン** (オプション): パッケージのバージョン。32 文字以内で指定します。  
 
--   **Icona** (facoltativo): il file contenente l'icona da usare per il pacchetto. Se specificata, questa icona sostituisce quella del pacchetto predefinita nella console di Configuration Manager.
+-   **アイコン** (オプション): このパッケージに使用するアイコンを含むファイル。 指定すると、Configuration Manager コンソールの既定のパッケージ アイコンがこのアイコンに置き換わります。
 
--   **Publisher**: Il server di pubblicazione del pacchetto, un massimo di 32 caratteri.
+-   **パブリッシャー**:パッケージの発行元。32 文字以内で指定します。
 
--   **Lingua**: La versione della lingua del pacchetto, un massimo di 32 caratteri.
+-   **言語**:パッケージの言語バージョン。32 文字以内で指定します。
 
--   **Commento** (facoltativo): commento sul pacchetto, con un massimo di 127 caratteri.
+-   **コメント** (オプション): パッケージに関するコメント。127 文字以内で指定します。
 
--   **ContainsNoFiles**: Questa voce indica se un'origine è associata al pacchetto.  
+-   **ContainsNoFiles**:このエントリは、ソースがパッケージに関連付けられているかどうかを示します。  
 
--   **Programmi**: i programmi definiti per il pacchetto. Ogni nome del programma corrisponde a un **[programma]** sezione in questo file di definizione del pacchetto.  
+-   **プログラム**: このパッケージに定義されているプログラム。 各プログラム名は、パッケージ定義ファイルの **[Program]** セクションに対応しています。  
 
-     Esempio:  
+     例:  
 
      `Programs=Typical, Custom, Uninstall`  
 
--   **MIFFileName**: Il nome del file di formato MIF (Management Information) che contiene lo stato del pacchetto, fino a 50 caratteri.  
+-   **MIFFileName**:パッケージ ステータスを含む管理情報フォーマット (MIF) ファイルの名前。50 文字以内で指定します。  
 
--   **MIFName**: Il nome del pacchetto (per la corrispondenza MIF), fino a 50 caratteri.  
+-   **MIFName**:パッケージ (MIF 照合用) の名前。50 文字以内で指定します。  
 
--   **MIFVersion**: Il numero di versione del pacchetto (per la corrispondenza MIF), un massimo di 32 caratteri.  
+-   **MIFVersion**:パッケージ (MIF 照合用) のバージョン番号。32 文字以内で指定します。  
 
--   **MIFPublisher**: Autore del software del pacchetto (per la corrispondenza MIF), un massimo di 32 caratteri.  
+-   **MIFPublisher**:パッケージ (MIF 照合用) のソフトウェア発行元。32 文字以内で指定します。  
 
 ###  <a name="program"></a>[Program]  
- Per ogni programma specificato alla voce **Programmi** nella sezione **[Package Definition]**, il file di definizione del pacchetto deve includere una sezione [Program] che definisce tale programma. Ogni sezione Program fornisce le informazioni seguenti:  
+ **[Package Definition]** セクションの **Programs** エントリで指定されたプログラムごとに、そのプログラムを定義する [Program] セクションをパッケージ定義ファイルに含める必要があります。 各プログラムのセクションでは、次の情報を示します。  
 
--   **Nome**: Il nome del programma, fino a 50 caratteri. Questa voce deve essere univoca all'interno di un pacchetto. Questo nome viene utilizzato quando si definiscono gli annunci. Nei computer client, viene visualizzato il nome del programma **Esegui programmi annunciati** nel Pannello di controllo.  
+-   [名前]:****プログラム名。50 文字以内で指定します。 このエントリは、パッケージ内で一意である必要があります。 この名前は、提供情報を定義するときに使用されます。 クライアント コンピューターで、プログラムの名前が示すように **Run Advertised Programs** コントロール パネルの します。  
 
--   **Icona** (facoltativo): specificare il file contenente l'icona da usare per il programma. Se specificata, questa icona sostituisce l'icona di programma predefinita nella console di Configuration Manager e viene visualizzata nei computer client quando il programma è annunciato.
+-   **アイコン** (オプション): このプログラムに使用するアイコンを含むファイルを指定します。 指定すると、Configuration Manager コンソールの既定のプログラム アイコンがこのアイコンに置き換えられ、プログラムが提供されるときにクライアント コンピューターに表示されます。
 
--   **Commento** (facoltativo): commento sul programma, con un massimo di 127 caratteri.
+-   **コメント** (オプション): プログラムに関するコメント (127 文字以内)。
 
--   **CommandLine**: specificare la riga di comando per il programma, con un massimo di 127 caratteri. Il comando è relativo alla cartella di origine del pacchetto.
+-   **CommandLine**: プログラムのコマンド ラインを指定します (127 文字以内)。 コマンドは、パッケージ ソース フォルダーを基準にしています。
 
--   **StartIn**: specificare la cartella di lavoro per il programma, con un massimo di 127 caratteri. Questa voce può essere un percorso assoluto nel computer client o un percorso relativo della cartella di origine del pacchetto.
+-   **StartIn**: プログラムの作業フォルダーを指定します (127 文字以内)。 このエントリには、クライアント コンピューターの絶対パスを指定することも、パッケージ ソース フォルダーを基準としたパスを指定することもできます。
 
--   **Esegui**: specificare la modalità in cui viene eseguito il programma. È possibile specificare **ridotta a icona**, **ingrandita**, o **Hidden**. Se questa voce non è inclusa, il programma viene eseguito in modalità normale.  
+-   **実行**: プログラムを実行するプログラム モードを指定します。 **Minimized**、 **Maximized**、または **Hidden**を指定できます。 このエントリが含まれていない場合、プログラムは通常モードで実行されます。  
 
--   **AfterRunning**: specificare qualsiasi azione speciale che si verifica dopo che il programma è stato completato correttamente. Le opzioni disponibili sono **SMSRestart**, **ProgramRestart**, o **SMSLogoff**. Se questa voce non è inclusa, il programma non esegue azioni speciali.  
+-   **AfterRunning**: プログラムが正常に完了した後で行われる特別な操作を指定します。 利用可能なオプションは、 **SMSRestart**、 **ProgramRestart**、または **SMSLogoff**です。 このエントリが含まれていない場合、プログラムは特別な操作を実行しません。  
 
--   **EstimatedDiskSpace**: specificare la quantità di spazio su disco necessaria per l'esecuzione del programma software nel computer. Questo valore può essere specificato come **sconosciuto** (impostazione predefinita) o come un numero intero maggiore o uguale a zero. Se viene specificato un valore, anche le unità per il valore devono essere specificate.  
+-   **推定ディスク空き領域**: コンピューター上で実行できるソフトウェア プログラムを必要とするディスク領域の量を指定します。 として指定できます **不明な** (既定の設定) または 0 以上の整数。 値を指定すると場合、値の単位も指定する必要があります。  
 
-     Esempio:  
+     例:  
 
      `EstimatedDiskSpace=38MB`  
 
--   **EstimatedRunTime**: specificare la durata stimata (in minuti) dell'esecuzione del programma nel computer client. Questo valore può essere specificato come **sconosciuto** (impostazione predefinita) o come numero intero maggiore di zero.  
+-   **EstimatedRunTime**: プログラムがクライアント コンピューターで実行されることが予想される推定時間 (分単位) を指定します。 この値には [不明] **** (既定の設定)、または 0 より大きい整数を指定できます。  
 
-     Esempio:  
+     例:  
 
      `EstimatedRunTime=25`  
 
--   **SupportedClients**: specificare i processori e i sistemi operativi in cui viene eseguito il programma. Le piattaforme specificate devono essere separate da virgole. Se questa voce non è inclusa, il controllo piattaforma supportata viene disabilitato per questo programma.  
+-   **SupportedClients**: プログラムが動作するプロセッサとオペレーティング システムを指定します。 指定したプラットフォームは、コンマで区切る必要があります。 このエントリが含まれていない場合は、サポートされているプラットフォームの確認が無効になりますこのプログラムです。  
 
--   **SupportedClientMinVersionX**, **SupportedClientMaxVersionX**: specificare l'intervallo tra i numeri di versione iniziali e quelli finali per i sistemi operativi specificati alla voce **SupportedClients**.  
+-   **SupportedClientMinVersionX**、**SupportedClientMaxVersionX**: **SupportedClients** エントリで指定されたオペレーティング システムのバージョン番号の範囲の始まりと終わりを指定します。  
 
-     Esempio:  
+     例:  
 
     ```  
     SupportedClients=Win NT (I386),Win NT (IA64),Win NT (x64)  
@@ -386,35 +385,29 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
     Win NT (x64) MaxVersion4=6.00.9999.9999   
     ```  
 
--   **AdditionalProgramRequirements** (facoltativo): specificare qualsiasi altro requisito o informazione per i computer client, con un massimo di 127 caratteri.
+-   **AdditionalProgramRequirements** (オプション): クライアント コンピューターに関するその他の情報または要件を指定します (127 文字以内)。
 
--   **CanRunWhen**: specificare lo stato dell'utente necessario per l'esecuzione del programma nel computer client. I valori disponibili sono **UserLoggedOn**, **NoUserLoggedOn**, o **AnyUserStatus**. Il valore predefinito è **UserLoggedOn**.  
+-   **CanRunWhen**: プログラムをクライアント コンピューターで実行するために必要なユーザー ステータスを指定します。 使用できる値は、 **UserLoggedOn**、 **NoUserLoggedOn**、または **AnyUserStatus**です。 既定値は **UserLoggedOn**です。  
 
--   **UserInputRequired**: specificare se il programma richiede interazione con l'utente. I valori disponibili sono **True** o **False**. Il valore predefinito è **True**. Questa voce è impostata su **False** se **CanRunWhen** non è impostata su **UserLoggedOn**.  
+-   **UserInputRequired**: プログラムにユーザーとの対話が必要かどうかを指定します。 使用できる値は **True** または **False**です。 既定値は **True**です。 **CanRunWhen** が **UserLoggedOn** に設定されていない場合、このエントリは **False**に設定されます。  
 
--   **AdminRightsRequired**: specificare se per l'esecuzione del programma è necessario immettere credenziali amministrative nel computer. I valori disponibili sono **True** o **False**. Il valore predefinito è **False**. Questa voce è impostata su **True** se **CanRunWhen** non è impostata su **UserLoggedOn**.  
+-   **AdminRightsRequired**: プログラムを実行するためにコンピューターで管理者資格情報が必要であるかどうかを指定します。 使用できる値は **True** または **False**です。 既定値は **False**です。 **CanRunWhen** が **UserLoggedOn** に設定されていない場合、このエントリは **True**に設定されます。  
 
--   **UseInstallAccount**: specificare se il programma usa l'account di installazione software client durante l'esecuzione nei computer client. Per impostazione predefinita, questo valore è **False**. Questo valore corrisponde anche **False** se **CanRunWhen** è impostato su **UserLoggedOn**.  
+-   **UseInstallAccount**: クライアント コンピューターでのプログラムの実行時にプログラムからクライアント ソフトウェアのインストール アカウントを使用するかどうかを指定します。 既定では、この値は **False**です。 **CanRunWhen** が **UserLoggedOn** に設定されている場合も、このエントリは **False**に設定されます。  
 
--   **DriveLetterConnection**: specificare se per il programma è necessaria la connessione di una lettera unità al punto di distribuzione. È possibile specificare **True** o **False**. Il valore predefinito è **False**, che consente al programma di usare una connessione UNC (Universal Naming Convention). Quando questo valore è impostato su **True**, viene usata la lettera di unità successiva disponibile, a partire da Z e andando a ritroso.  
+-   **DriveLetterConnection**: プログラムが、配布ポイントに配置されているパッケージ ファイルにドライブ文字を接続する必要があるかどうかを指定します。 **True** または **False**を指定できます。 既定値は **False** です。この場合、プログラムは UNC (汎用名前付け規則) 接続を使用できます。 この値が **True** に設定されている場合、次に利用可能なドライブ文字が使用されます (Z: から始まり、逆方向に進みます)。  
 
--   **DriveLetterConnection**: specificare una lettera di unità necessaria al programma per connettersi ai file del pacchetto nel punto di distribuzione. Questa impostazione forza l'uso della lettera di unità specificata per le connessioni client ai punti di distribuzione.
+-   **SpecifyDrive** (オプション): プログラムが配布ポイントのパッケージ ファイルに接続するのに必要とするドライブ文字を指定します。 この仕様では、配布ポイントへのクライアント接続の指定したドライブ文字の使用を強制します。
 
--   **ReconnectDriveAtLogon**: specificare se il computer si riconnette al punto di distribuzione quando l'utente esegue l'accesso. I valori disponibili sono **True** o **False**. Il valore predefinito è **False**.  
+-   **ReconnectDriveAtLogon**: ユーザーがサインインしたときにコンピューターが配布ポイントに再接続するかどうかを指定します。 使用できる値は **True** または **False**です。 既定値は **False**です。  
 
--   **DependentProgram**: specificare un programma nel pacchetto che deve essere eseguito prima del programma corrente. Questa voce usa il formato **DependentProgram**=<**NomeProgramma>**, dove **<NomeProgramma\>** corrisponde alla voce **Name** per il programma nel file di definizione del pacchetto. Se non sono presenti programmi dipendenti, lasciare vuota questa voce.  
+-   **DependentProgram**: 現在のプログラムの前に実行する必要がある、このパッケージ内のプログラムを指定します。 このエントリでは **DependentProgram**=<**ProgramName>** の形式が使用されます。ここでは、**<ProgramName>\>** は、パッケージ定義ファイル内でそのプログラムを表す **Name** エントリです。 依存プログラムがない場合は、このエントリを空にしておきます。  
 
-     Esempio:  
+     例:  
 
      DependentProgram = Admin  
     DependentProgram =  
 
--   **Assignment**: specificare il modo in cui il programma viene assegnato agli utenti. Questo valore può essere: **FirstUser**, quindi solo il primo utente che accede al client esegue il programma, o **EveryUser**, vale a dire che chiunque acceda al client può eseguire il programma. Quando **CanRunWhen** non è impostata su **UserLoggedOn**, questa voce è impostata su **FirstUser**.  
+-   **Assignment**: プログラムがどのようにユーザーに割り当てられるかを指定します。 この値には、**FirstUser** (最初にサインインしたユーザーだけがプログラムを実行する) または **EveryUser** (サインインしたすべてのユーザーがプログラムを実行する) を指定できます。 **CanRunWhen** が **UserLoggedOn**に設定されていない場合、このエントリは **FirstUser**に設定されます。  
 
--   **Disattivata**: specificare se il programma può essere annunciato ai client. I valori disponibili sono **True** o **False**. Il valore predefinito è **False**.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+-   **Disabled**: プログラムをクライアントに公開できるかどうかを指定します。 使用できる値は **True** または **False**です。 既定値は **False**です。  

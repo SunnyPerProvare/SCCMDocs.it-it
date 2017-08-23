@@ -1,83 +1,79 @@
 ---
-title: Windows Firewall per Endpoint Protection | Microsoft Docs
-description: Questo argomento spiega come creare e distribuire criteri di Windows Firewall per Endpoint Protection in System Center 2012 Configuration Manager.
+title: "Endpoint Protection 用 Windows ファイアウォール ポリシー | Microsoft Docs"
+description: "System Center 2012 Configuration Manager で Endpoint Protection のファイアウォール ポリシーを作成および展開する方法を説明します。"
 ms.custom: na
 ms.date: 03/07/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6ecdfad1-6305-45a8-ae75-3f33b967cb8f
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
-ms.openlocfilehash: 7a02ae3fb102ab85f98d3b7453fc0736e5a11200
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: acd75a8b22d050970b8c1176f725ddb4445633aa
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-and-deploy-windows-firewall-policies-for-endpoint-protection-in-system-center-configuration-manager"></a>Creare e distribuire criteri di Windows Firewall per Endpoint Protection in System Center Configuration Manager
+# <a name="create-and-deploy-windows-firewall-policies-for-endpoint-protection-in-system-center-configuration-manager"></a>System Center Configuration Manager の Endpoint Protection 用 Windows ファイアウォール ポリシーを作成および展開する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-I criteri di Windows Firewall per Endpoint Protection in System Center 2012 Configuration Manager consentono di eseguire le attività di configurazione e manutenzione di base di Windows Firewall nei computer client della gerarchia. È possibile usare i criteri di Windows Firewall per le attività seguenti:  
+System Center 2012 Configuration Manager の Endpoint Protection のファイアウォール ポリシーを使用すると、階層内のクライアント コンピューターで基本的な Windows ファイアウォール構成タスクと保守タスクを実行できます。 Windows ファイアウォール ポリシーを使用して以下のタスクを実行できます。  
 
--   Controllare se Windows Firewall è attivato o disattivato.  
+-   Windows ファイアウォールの有効化と無効化を制御する。  
 
--   Controllare se sono consentite le connessioni in ingresso ai computer client.  
+-   着信接続をクライアント コンピューターに許可するかどうかを制御する。  
 
--   Controllare se gli utenti vengono informati quando Windows Firewall blocca un nuovo programma.  
+-   Windows ファイアウォールが新しいプログラムをブロックしたときにユーザーに通知するかどうかを制御する。  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス** ] をクリックします。  
 
-2.  Nell'area di lavoro **Asset e conformità** espandere **Endpoint Protection** e quindi fare clic su **Criteri di Windows Firewall**.  
+2.  [ **資産とコンプライアンス** ] ワークスペースで [ **Endpoint Protection** ] を展開してから、[ **Windows ファイアウォール ポリシー** ]をクリックします。  
 
-3.  Nel gruppo **Crea** della scheda **Home** fare clic su **Crea criteri di Windows Firewall**.  
+3.  [ **ホーム** ] タブの [ **作成** ] グループで、[ **Windows ファイアウォール ポリシーの作成** ] をクリックします。  
 
-4.  Nella pagina **Generale** di **Creazione guidata criteri di Windows Firewall**specificare un nome e una descrizione facoltativa per il criterio firewall e quindi fare clic su **Avanti**.  
+4.  **Windows ファイアウォール ポリシーの作成ウィザード** の [ **全般** ] ページで、このファイアウォール ポリシーの名前とオプションの説明を指定し、[ **次へ** ] をクリックします。  
 
-5.  Nella pagina **Impostazioni profilo** della procedura guidata configurare le impostazioni seguenti per ogni profilo di connessione remota:  
+5.  ウィザードの [プロファイルの設定 **** ] ページで、ネットワーク プロファイルごとに以下の設定を構成します。  
 
     > [!IMPORTANT]  
-    >  Se si vogliono distribuire i criteri di Windows Firewall in computer che eseguono Windows Server 2008 e Windows Vista Service Pack 1, è necessario prima di tutto installare l' [hotfix KB971800](http://go.microsoft.com/fwlink/p/?LinkId=231239) in tali computer.  
+    >  Windows Server 2008 と Windows Vista Service Pack 1 を実行しているコンピューターに Windows ファイアウォール ポリシーを展開する場合は、最初に [修正プログラム KB971800](http://go.microsoft.com/fwlink/p/?LinkId=231239) をコンピューターにインストールする必要があります。  
 
     > [!NOTE]  
-    >  Per altre informazioni sui profili di rete, vedere la documentazione di Windows.  
+    >  ネットワーク プロファイルの詳細については、Windows のドキュメントを参照してください。  
 
-    -   **Attiva Windows Firewall**  
+    -   **[Windows ファイアウォールを有効にする]**  
 
         > [!NOTE]  
-        >  Se **Attiva Windows Firewall** non è attivato, le altre impostazioni in questa pagina della procedura guidata non sono disponibili.  
+        >  [ **Windows ファイアウォールを有効にする** ] が有効になっていない場合は、ウィザードのこのページの他の設定を利用できません。  
 
-    -   **Blocca tutte le connessioni in ingresso, comprese quelle nell'elenco dei programmi consentiti**  
+    -   **許可されたプログラムの一覧にあるプログラムからの接続も含み、すべての着信をブロックする**  
 
-    -   **Notifica all'utente quando Windows Firewall blocca un nuovo programma**  
+    -   **Windows ファイアウォールが新しいプログラムをブロックしたときにユーザーに通知する**  
 
-6.  Nella pagina **Riepilogo** della procedura guidata, rivedere le azioni da eseguire, quindi completare la procedura.  
+6.  ウィザードの [ **概要** ] ページで、実行される操作を確認してから、ウィザードを完了します。  
 
-7.  Verificare che venga visualizzato il nuovo criterio di Windows Firewall nell'elenco **Criteri di Windows Firewall** .  
+7.  [ **Windows ファイアウォール ポリシー** ] の一覧に表示される新しい Windows ファイアウォール ポリシーを確認します。  
 
-##  <a name="BKMK_Assign"></a> Per distribuire un criterio di Windows Firewall  
+##  <a name="BKMK_Assign"></a> Windows ファイアウォール ポリシーを展開するには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス** ] をクリックします。  
 
-2.  Nell'area di lavoro **Asset e conformità** espandere **Endpoint Protection** e quindi fare clic su **Criteri di Windows Firewall**.  
+2.  [ **資産とコンプライアンス** ] ワークスペースで [ **Endpoint Protection** ] を展開してから、[ **Windows ファイアウォール ポリシー** ]をクリックします。  
 
-3.  Nell'elenco **Criteri di Windows Firewall** selezionare il criterio di Windows Firewall che si vuole distribuire.  
+3.  [ **Windows ファイアウォール ポリシー** ] の一覧で、展開する Windows ファイアウォール ポリシーを選択します。  
 
-4.  Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci**.  
+4.  [ **ホーム** ] タブの [ **展開** ] グループで、[ **展開** ] をクリックします。  
 
-5.  Nella finestra di dialogo **Distribuisci criteri di Windows Firewall** specificare la raccolta a cui si vuole assegnare il criterio di Windows Firewall e specificare una pianificazione assegnazione. Il criterio di Windows Firewall valuta la conformità usando questa pianificazione e le impostazioni di Windows Firewall sui client da riconfigurare per soddisfare il criterio di Windows Firewall.  
+5.  [ **Windows ファイアウォール ポリシーの展開** ] ダイアログ ボックスで、このWindows ファイアウォール ポリシーを割り当てるコレクションを指定して、割り当てスケジュールを指定します。 Windows ファイアウォール ポリシーは、このスケジュールとクライアントの Windows ファイアウォール設定を使用して対応を評価し、Windows ファイアウォール ポリシーと一致するように再構成します。  
 
-6.  Fare clic su **OK** per chiudere la finestra di dialogo **Distribuisci criteri di Windows Firewall** e per distribuire il criterio di Windows Firewall.  
+6.  **[OK]** をクリックし、 **[Windows ファイアウォール ポリシーの展開]** ダイアログ ボックスを閉じて Windows ファイアウォール ポリシーを展開します。  
 
     > [!IMPORTANT]  
-    >  Quando si distribuisce un criterio di Windows Firewall in una raccolta, il criterio viene applicato ai computer in un ordine casuale per un periodo di 2 ore per evitare di sovraccaricare la rete.
-
+    >  Windows ファイアウォール ポリシーをコレクションに展開すると、ネットワークに大きな負荷がかかるのを避けるため、このポリシーは 2 時間かけてランダムな順序でコンピューターに適用されます。

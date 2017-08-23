@@ -1,113 +1,109 @@
 ---
-title: Peer cache del client | System Center Configuration Manager
-description: Usare la peer cache per i percorsi di origine del contenuto del client quando si distribuiscono contenuti con System Center Configuration Manager.
+title: "クライアント ピア キャッシュ | System Center Configuration Manager"
+description: "System Center Configuration Manager でコンテンツを展開する場合は、クライアントのコンテンツ ソースの場所のピア キャッシュを使用します。"
 ms.custom: na
 ms.date: 7/31/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: 89fcd16887ae77299f9d18472ee6a1ba56794eca
-ms.contentlocale: it-it
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="peer-cache-for-configuration-manager-clients"></a>Configuration Manager クライアントのピア キャッシュ
 
-# <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
-
-A partire da System Center Configuration Manager versione 1610, è possibile usare la **peer cache** per gestire la distribuzione del contenuto ai client in posizioni remote. La peer cache è una soluzione integrata di Configuration Manager che consente ai client di condividere i contenuti con altri client direttamente dalla cache locale.   
+System Center Configuration Manager バージョン 1610 以降、**ピア キャッシュ**を使用して、コンテンツをリモートの場所にあるクライアントに展開できます。 ピア キャッシュとは、クライアントがローカル キャッシュで他のクライアントとコンテンツを直接共有できるようにするための組み込みの Configuration Manager ソリューションです。   
 
 > [!TIP]  
-> Introdotti con la versione 1610, la peer cache e il dashboard Origini dati del client sono funzionalità di versioni non definitive. Per abilitarle, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/pre-release-features).
+> バージョン 1610 で導入されたピア キャッシュとクライアント データ ソースのダッシュボードは、プレリリース機能です。 有効にするには、「[更新プログラムからのプレリリース機能の使用](/sccm/core/servers/manage/pre-release-features)」をご覧ください。
 
-## <a name="overview"></a>Panoramica
-Un client Peer Cache è un client Gestione configurazione che è in grado di usare Peer Cache. Un client Peer Cache che ha del contenuto che può condividere con altri client è un'origine di Peer Cache.
- -  Le impostazioni client possono essere usate per abilitare i client per l'uso della peer cache.
- -  Per condividere il contenuto come origine di Peer Cache, un client Peer Cache:
-    -  Deve essere aggiunto a un dominio. Tuttavia, un client che non è aggiunto a un dominio può ottenere contenuto da un'origine di Peer Cache non aggiunta al dominio.
-    -  Deve essere un membro del gruppo di limiti attuali del client che cerca il contenuto. Un client Peer Cache in un gruppo di limiti adiacenti non è incluso nel pool dei percorsi di origine del contenuto disponibili quando un client usa il fallback per cercare contenuti da un gruppo di limiti adiacente. Per altre informazioni sui gruppi di limiti correnti e adiacenti, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups).
- - Qualsiasi tipo di contenuto conservato nella cache di un client di Configuration Manager può essere reso disponibile ad altri client tramite la peer cache.
- -  La peer cache non sostituisce l'uso di altre soluzioni come BranchCache, ma si affianca a esse per offrire più opzioni ed estendere le tradizionali soluzioni di distribuzione di contenuti, come i punti di distribuzione. Questa soluzione personalizzata è indipendente da BranchCache e quindi funziona anche se non si abilita o si usa Windows BranchCache.
+## <a name="overview"></a>概要
+ピア キャッシュ クライアントは、ピア キャッシュの使用が有効にされた構成マネージャー クライアントです。 追加のクライアントと共有できるコンテンツを含むピア キャッシュ クライアントは、ピア キャッシュ ソースです。
+ -  クライアント設定を使用してピア キャッシュを使用するクライアントを有効にできます。
+ -  ピア キャッシュ ソースとしてコンテンツを共有するには、ピア キャッシュ クライアントは以下である必要があります。
+    -  ドメインに参加している必要があります。 ただし、ドメインに参加していないコンテンツは、ドメインに参加しているピア キャッシュ ソースからコンテンツを取得できます。
+    -  コンテンツをシークしている、クライアントの現在の境界グループのメンバーである必要があります。 クライアントがフォールバックを使用して近隣の境界グループからコンテンツをシークする場合は、近隣の境界グループのピア クライアントは使用可能なコンテンツ ソースの場所のプールに含まれません。 現在および近隣の境界グループの詳細については、「[境界グループ](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups)」を参照してください。
+ - Configuration Manager クライアントのキャッシュに保持されているコンテンツのすべての種類は、ピア キャッシュを使用して他のクライアントに提供できます。
+ -  ピア キャッシュは、BranchCache などのその他のソリューションの使用に取って代わるものではなく、それらのソリューションと並列動作し、配布ポイントなどの従来のコンテンツ展開ソリューションを拡張する追加のオプションを提供します。 これは、BranchCache に依存しないカスタム ソリューションであるため、Windows BranchCache を有効にしない、または使用しない場合でも機能します。
 
-### <a name="operations"></a>Operazioni
+### <a name="operations"></a>オペレーション
 
-Dopo aver distribuito le impostazioni client che abilitano la peer cache a una raccolta, i membri di tale raccolta possono fungere da origine di contenuto peer per altri client nello stesso gruppo di limiti:
- -  Un client che agisce come origine contenuto peer invia un elenco di contenuti disponibili che ha memorizzato nella cache al suo punto di gestione.
- -  Quindi, quando il client successivo in tale gruppo di limiti richiede quel contenuto, ogni origine peer cache con quel contenuto viene restituita come una potenziale origine del contenuto con i punti di distribuzione e altri percorsi di origine del contenuto in tale gruppo di limiti.
- -  In base al normale processo operativo, il client in cerca del contenuto seleziona un'origine del contenuto dal pool di origini specificato e continua nel tentativo di ottenere il contenuto.
+ピア キャッシュを有効にするクライアント設定をコレクションに展開すると、そのコレクションのメンバーは同じ境界グループ内の他のクライアントのピア コンテンツ ソースとして動作できます。
+ -  ピア コンテンツ ソースとして動作するクライアントは、キャッシュされている利用可能なコンテンツの一覧を管理ポイントに送信します。
+ -  次に、その境界グループ内の次のクライアントがそのコンテンツを要求すると、コンテンツのある各ピア キャッシュ ソースが、その境界グループ内の配布ポイントとその他のコンテンツ ソースの場所とともに潜在的なコンテンツ ソースとして返されます。
+ -  通常の運用プロセスごとにコンテンツをシークするクライアントは、提供されたソースのプールからコンテンツ ソースを選択し、そのコンテンツの取得の試みを続行します。
 
 > [!NOTE]
-> Se si verifica il fallback a un gruppo di limiti adiacente per il contenuto, i percorsi di origine del contenuto della peer cache del gruppo di limiti adiacente non vengono aggiunti al pool di potenziali percorsi di origine del contenuto del client.  
+> コンテンツの近隣の境界グループへのフォールバックが発生した場合、近隣の境界グループからのピア キャッシュ コンテンツ ソースの場所は、クライアントの潜在的なコンテンツ ソースの場所のプールに追加されません。  
 
 
-Anche se è possibile fare in modo che tutti i client partecipino come origine di peer cache, è consigliabile scegliere solo i client più adatti a essere origini di peer cache.  L'idoneità di un client può essere valutata in base a tipo di chassis, spazio su disco, connettività di rete e altri requisiti del client. Per altre informazioni utili per scegliere i client più adatti da usare per la peer cache, vedere [questo blog scritto da un consulente Microsoft](https://blogs.technet.microsoft.com/setprice/2016/06/29/pe-peer-cache-custom-reporting-examples/).
+すべてのクライアントをピア キャッシュ ソースとして参加させることができる場合であっても、ピア キャッシュ ソースに最も適しているクライアントのみを選ぶことをお勧めします。  クライアントのシャーシの種類、ディスク容量、ネットワーク接続などに基づくクライアントの適合性を評価できます。 ピア キャッシュで使用する最適なクライアントを選択するのに役立つ詳細については、[Microsoft のコンサルタントによる、このブログ](https://blogs.technet.microsoft.com/setprice/2016/06/29/pe-peer-cache-custom-reporting-examples/)を参照してください。
 
-**Accesso limitato a un'origine di peer cache**  
-A partire dalla versione 1702, il computer di origine della peer cache rifiuta le richieste di contenuti quando soddisfa una delle condizioni seguenti:  
-  -  È in modalità di batteria in esaurimento.
-  -  Il carico della CPU supera l'80% nel momento in cui il contenuto viene richiesto.
-  -  L'I/O disco ha un valore di *AvgDiskQueueLength* superiore a 10.
-  -  Non vi sono più connessioni disponibili al computer.   
+**ピア キャッシュ ソースへのアクセス制限**  
+バージョン 1702 以降、ピア キャッシュ ソース コンピューターが次のいずれかの条件を満たす場合、ピア キャッシュ ソース コンピューターはコンテンツの要求を拒否するようになります。  
+  -  バッテリ低下モードの場合。
+  -  コンテンツの要求時に CPU 負荷が 80% を超えている場合。
+  -  ディスク I/O の *AvgDiskQueueLength* が 10 を超えている場合。
+  -  新たにコンピューターに接続できない場合。   
 
-È possibile configurare queste impostazioni tramite la classe WMI del server di configurazione client per la funzionalità dell'origine peer (*SMS_WinPEPeerCacheConfig*) quando si usa System Center Configuration Manager SDK.
+これらの設定は、System Center Configuration Manager SDK を使うときに、ピア ソース機能 (*SMS_WinPEPeerCacheConfig*) のクライアント構成サーバー WMI クラスを使って構成できます。
 
-Quando il computer rifiuta una richiesta di contenuto, il computer richiedente continuerà a cercare il contenuto da origini alternative nel pool dei percorsi di origine del contenuto disponibili.   
-
-
-
-### <a name="monitoring"></a>monitoring   
-Per capire come viene usata la peer cache, è possibile visualizzare il dashboard Origini dati del client. Vedere [Dashboard Origini dati del client](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard).
-
-A partire dalla versione 1702, è possibile usare tre report per visualizzare l'uso della peer cache. Nella console passare a **Monitoraggio** > **Creazione di report** > **Report**. Tutti i report hanno un tipo di **contenuto di distribuzione software**:
-1.  **Rifiuto di contenuto di origine di peer cache**:  
-Usare questo report per visualizzare informazioni sulla frequenza con cui le origini di peer cache in un gruppo di limiti hanno rifiutato una richiesta di contenuto.
- - **Problema noto**: quando si esegue il drill-down in risultati come *MaxCPULoad* o *MaxDiskIO*, è possibile che venga visualizzato un errore per segnalare che il report o i dettagli non possono essere trovati. Per risolvere questo problema, usare i due report seguenti che mostrano direttamente i risultati.
-
-2. **Peer cache source content rejection by condition** (Rifiuto di contenuto di origine di peer cache - per condizione):  
-Usare questo report per visualizzare i dettagli relativi al rifiuto per un tipo di rifiuto o un gruppo di limiti specificato. È possibile specificare quanto segue:
-
-  - **Problema noto**: non è possibile selezionare i parametri disponibili, ma è necessario immetterli manualmente. Immettere i valori per *Nome del gruppo di limiti* e *Rejection Type* (Tipo di rifiuto) come mostrato nel primo report. Ad esempio, per *Rejection Type* (Tipo di rifiuto) è possibile immettere *MaxCPULoad* o *MaxDiskIO*.
-
-3. **Peer cache source content rejection details** (Rifiuto di contenuto di origine di peer cache - dettagli):   
-  Usare questo report per visualizzare informazioni sul contenuto richiesto al momento del rifiuto.
-
- - **Problema noto**: non è possibile selezionare i parametri disponibili, ma è necessario immetterli manualmente. Immettere il valore per *Rejection Type* (Tipo di rifiuto) come visualizzato nel primo report (Rifiuto di contenuto di origine di peer cache) e quindi immettere il valore di *ID risorsa* per l'origine di contenuto di cui visualizzare altre informazioni.  Per trovare l'ID risorsa dell'origine di contenuto:  
-
-    1. Trovare il nome del computer visualizzato come *Origine di peer cache* nei risultati del secondo report, ossia Peer cache source content rejection by condition (Rifiuto di contenuto di origine di peer cache - per condizione).  
-    2. Passare quindi ad **Asset e conformità** > **Dispositivi** e cercare il nome del computer. Usare il valore della colonna ID risorsa.  
+コンピューターがコンテンツの要求を拒否すると、要求元のコンピューターは、使うことができるコンテンツ ソース場所のプール内にある代替ソースのコンテンツを引き続きシークします。   
 
 
-## <a name="requirements-and-considerations-for-peer-cache"></a>Requisiti e considerazioni per la peer cache
--   È possibile usare la peer cache su qualsiasi sistema operativo Windows supportato come client di Configuration Manager. I sistemi operativi non Windows non sono supportati per la peer cache.
 
--   I client possono trasferire contenuti solo dai client della peer cache che si trovano nel relativo gruppo di limiti corrente.
+### <a name="monitoring"></a>監視   
+クライアントが正常にピア キャッシュの使用を把握しやすいように、クライアント データ ソース ダッシュボードを表示できます。 「[Client Data Sources dashboard](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard)」 (クライアント データ ソースのダッシュボード) を参照してください。
 
--   Prima della versione 1706, ogni sito in cui i client usano la peer cache doveva essere configurato con un [account di accesso alla rete](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). A partire dalla versione 1706 tale account non è più necessario, con un'eccezione:  se un client usa la peer cache per ottenere ed eseguire una sequenza di attività da Software Center e la sequenza di attività riavvia il client in WinPE.  In questo scenario, quando si trova in WinPE, il client richiede ancora l'account di accesso alla rete, per poter ottenere contenuto accedendo alla peer cache di origine.
+バージョン 1702 以降では、3 つのレポートを使ってピア キャッシュの使用状況を表示できます。 コンソールで、**[監視]** > **[レポート]** > **[レポート]** に移動します。 すべてのレポートの種類は**ソフトウェア配布コンテンツ**です。
+1.  **ピア キャッシュ ソース コンテンツの拒否**:  
+境界グループ内のピア キャッシュ ソースがコンテンツ要求を拒否した頻度を把握するには、このレポートを使います。
+ - **既知の問題:** *MaxCPULoad* や *MaxDiskIO* などの結果にドリルダウンすると、レポートまたは詳細情報が見つからないことを示すエラーが発生する場合があります。 この問題を回避するには、結果を直接表示する次の 2 つのレポートを使ってください。
 
-    Quando è obbligatorio, l'account di accesso alla rete viene usato dal computer di origine della peer cache per autenticare le richieste di download dai peer. A questo scopo richiede solo le autorizzazioni utente di dominio.
+2. **条件別のピア キャッシュ ソース コンテンツの拒否**:  
+指定した境界グループまたは拒否の種類についての拒否の詳細を把握するには、このレポートを使います。 以下を指定できます
 
--   Poiché il limite corrente di un'origine del contenuto della peer cache è determinato dall'ultimo invio dell'inventario hardware di tale client, un client che si sposti in un percorso di rete in un gruppo di limiti diverso potrebbe comunque essere considerato un membro del suo gruppo di limiti precedente ai fini della peer cache. Di conseguenza, a un client potrebbe essere offerta un'origine del contenuto della peer cache che non si trova nel suo immediato percorso di rete. È consigliabile escludere dalla partecipazione all'origine della peer cache i client soggetti a questa configurazione.
+  - **既知の問題:** 使用可能なパラメーターから選ぶことができず、代わりに手入力する必要があります。 最初のレポートに表示される*境界グループ名*と*拒否の種類*の値を入力します。 たとえば、*拒否の種類*には、*MaxCPULoad* や *MaxDiskIO* などと入力します。
 
-## <a name="to-configure-client-peer-cache-client-settings"></a>Per configurare le impostazioni del client relative alla peer cache del client
-1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Impostazioni client** e aprire l'oggetto impostazioni client del dispositivo che si vuole usare. È possibile anche modificare l'oggetto Impostazioni client predefinite.
-2.  Nell'elenco delle impostazioni disponibili selezionare **Client Cache Settings** (Impostazioni cache client).
-3.  Impostare **Abilita il client di Configuration Manager nell'intero sistema operativo per condividere i contenuti** su **Sì**.
-4.  Configurare le impostazioni seguenti per definire le porte da usare per la peer cache:  
-  -  **Porta per la trasmissione di rete iniziale**
-  -  **Abilita HTTPS per la comunicazione peer del client**
-  -  **Porta per il download di contenuto da peer (HTTP/HTTPS)**
+3. **ピア キャッシュ ソース コンテンツの拒否の詳細**:   
+  拒否されたときに要求されていた内容を把握するには、このレポートを使います。
 
-In ogni computer abilitato per la peer cache, se Windows Firewall è in uso verrà configurato da Configuration Manager per consentire l'uso delle porte configurate.
+ - **既知の問題:** 使用可能なパラメーターから選ぶことができず、代わりに手入力する必要があります。 最初のレポート (ピア キャッシュ ソース コンテンツの拒否) に表示される*拒否の種類*を入力し、詳細を表示する*リソース ID*を入力します。  コンテンツ ソースのリソース ID を調べるには:  
 
+    1. 2 番目のレポート (条件別のピア キャッシュ ソース コンテンツの拒否) の結果に*ピア キャッシュ ソース*として表示されるコンピューター名を確認します。  
+    2. 次に、**[資産とコンプライアンス]** > **[デバイス]** に移動し、そのコンピューター名を検索します。 [リソース ID] 列の値を使います。  
+
+
+## <a name="requirements-and-considerations-for-peer-cache"></a>ピア キャッシュの要件と考慮事項
+-   ピア キャッシュは、Configuration Manager クライアントとしてサポートされているすべての Windows OS でサポートされています。 Windows 以外のオペレーティング システムは、ピア キャッシュではサポートされていません。
+
+-   クライアントは、現在の境界グループ内にあるピア キャッシュ クライアントのコンテンツのみを転送できます。
+
+-   バージョン 1706 以前の場合、クライアントがピア キャッシュを使用する各サイトは、[ネットワーク アクセス アカウント](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account)を使用して構成する必要があります。 バージョン 1706 以降、1 つの例外を除き、そのアカウントは不要になりました。  その例外とは、クライアントがピア キャッシュを利用し、ソフトウェア センターからタスク シーケンスを取得して実行し、そのタスク シーケンスがクライアントを再起動し、WinPE を起動する場合です。  このシナリオでは、ピア キャッシュ ソースにアクセスし、コンテンツを取得するために、WinPE で起動したとき、クライアントはネットワーク アクセス アカウントを必要とします。
+
+    ピアからのダウンロード要求を認証するためにネットワーク アクセス アカウントが必要になると、ピア キャッシュ ソース コンピューターによりこのアカウントが使用されます。このアカウントは、この目的のためにドメイン ユーザーのアクセス許可のみを必要とします。
+
+-   ピア キャッシュ コンテンツ ソースの現在の境界は、そのクライアントの最後のハードウェア インベントリ送信によって決定されるため、ネットワークの場所に移動し別の境界グループ内にあるクライアントは、ピア キャッシュを目的として、その以前の境界グループのメンバーであると見なされる場合があります。 これにより、クライアントが、直接のネットワークの場所にない、ピア キャッシュ コンテンツ ソースが提供されます。 この構成の傾向のあるクライアントをピア キャッシュ ソースとして参加させないようにすることをお勧めします。
+
+## <a name="to-configure-client-peer-cache-client-settings"></a>クライアント ピア キャッシュのクライアント設定を構成するには
+1.  Configuration Manager コンソールで **[管理]** > **[クライアント設定]** に移動し、使用するデバイス クライアント設定オブジェクトを開きます。 既定のクライアント設定オブジェクトを変更することもできます。
+2.  使用可能な設定のリストから [**クライアント キャッシュ設定**] を選びます。
+3.  **[完全な OS 上の Configuration Manager クライアントでコンテンツを共有できるようにする]** を **[はい]** に設定します。
+4.  ピア キャッシュに使用するポートを定義するには、次の設定を構成します。  
+  -  **初期ネットワーク ブロードキャスト用ポート**
+  -  **クライアント ピア通信用に HTTPS を有効にする**
+  -  **ピアからのコンテンツのダウンロード用ポート (HTTP/HTTPS)**
+
+ピア キャッシュが有効になっている各コンピューターで Windows ファイアウォールを使用している場合、Configuration Manager はユーザーが構成したポートの使用を許可するようにします。

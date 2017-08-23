@@ -1,160 +1,156 @@
 ---
-title: "Funzionalità della versione Technical Preview 1701 per Configuration Manager"
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1701 per System Center Configuration Manager."
+title: "Configuration Manager の Technical Preview 1701 の機能"
+description: "System Center Configuration Manager の Technical Preview バージョン 1701 で使用できる機能について説明します。"
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 18598eaa-1131-44ff-8f8b-6093e87ac7a1
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: b330c97a0853d1673f1cf7e0691891b72407fa51
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1701-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1701 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1701-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1701 の機能
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
-
-
-
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1701 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
+*適用対象: System Center Configuration Manager (Technical Preview)*
 
 
-**Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
-## <a name="boundary-groups-improvements-for-software-update-points"></a>Miglioramenti dei gruppi di limiti per i punti di aggiornamento software
-A partire da questa versione di anteprima, vengono usati gruppi di limiti per associare i client ai punti di aggiornamento software. Questo fa parte di un'attività continua finalizzata a espandere le modifiche per i gruppi di limiti per gestire altri ruoli del sistema del sito.  Le modifiche per i gruppi di limiti sono state introdotte per la prima volta nella versione Technical Preview 1609 e in Current Branch nella versione 1610.  
-
-In questa anteprima viene usato il nuovo comportamento dei gruppi di limiti per gestire i punti di aggiornamento software che possono essere usati da un client in modo simile a come viene gestito il punto di distribuzione che può essere usato da un client:  
-
-- Vengono configurati i gruppi di limiti per associare uno o più server che ospitano un punto di aggiornamento software.
-- I client che cercano un nuovo punto di aggiornamento software tenteranno di usare un punto associato al gruppo di limiti corrente.
-- Quando un client non raggiunge il punto di aggiornamento software corrente e non ne individua uno del gruppo di limiti corrente, il client usa il comportamento di fallback per espandere il pool di punti di aggiornamento software disponibili utilizzabili.    
-
-Per altre informazioni sui gruppi di limiti, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups) nei contenuti relativi a Current Branch.
-
-In questa anteprima, tuttavia, i gruppi di limiti per i punti di aggiornamento software sono implementati solo parzialmente. Sebbene sia possibile aggiungere punti di aggiornamento software e configurare gruppi di limiti adiacenti contenenti punti di aggiornamento software, il tempo di fallback per i punti di aggiornamento software non è ancora supportato e i client avranno un'attesa di due ore prima di iniziare il fallback.
-
-Di seguito è descritto il funzionamento per i punti di aggiornamento software con la presente versione Technical Preview:  
-
--    **I nuovi client usano i gruppi di limiti per selezionare i punti di aggiornamento software.** Un client installato dopo aver installato la versione 1701 seleziona un punto di aggiornamento software da quelli associati al gruppo di limiti del client.
-
-  Viene sostituito il comportamento precedente in cui i client selezionano un punto di aggiornamento software casuale da un elenco di punti che condividono la foresta dei client.   
-
--    **I client installati in precedenza continuano a usare il punto di aggiornamento software corrente fino a quando non eseguono il fallback per trovare un nuovo punto.**
-I client installati in precedenza e che hanno già un punto di aggiornamento software continueranno a usare il punto di aggiornamento software fino a quando non eseguono il fallback. Sono inclusi i punti di aggiornamento software non associati al gruppo di limiti corrente del client. Non tentano immediatamente di trovare e usare un punto di aggiornamento software del gruppo di limiti corrente.
-
-  Un client che ha già un punto di aggiornamento software inizia a usare questo nuovo comportamento dei gruppi di limiti solo dopo non aver raggiunto il punto di aggiornamento software corrente e aver iniziato il fallback.
-Questo ritardo nel passaggio al nuovo comportamento è intenzionale. Questo avviene perché una modifica del punto di aggiornamento software può comportare un utilizzo elevato della larghezza di banda di rete poiché il client sincronizza i dati con il nuovo punto di aggiornamento software. Il ritardo nella transizione può evitare la saturazione della rete nel caso in cui tutti i client passino a nuovi punti di aggiornamento software contemporaneamente.
-
--    **Configurazioni del tempo di fallback:** le configurazioni relative al momento in cui i client iniziano il fallback per la ricerca di un nuovo punto di aggiornamento software non sono supportate in questa versione Technical Preview. Sono incluse le configurazioni per **Fallback times (in minutes)** (Tempi di fallback in minuti) e **Never fallback** (Nessun fallback) che è possibile configurare per relazioni di gruppi di limiti diverse.
-
-  I client mantengono invece il comportamento corrente in cui il client tenta di connettersi al relativo punto di aggiornamento software corrente per due ore prima di iniziare il fallback per trovare un nuovo punto di aggiornamento software utilizzabile.
-
-  Quando un client usa il fallback, userà le configurazioni dei gruppi di limiti per il fallback per creare un pool di punti di aggiornamento software disponibili. Il pool include tutti i punti di aggiornamento software del *gruppo di limiti corrente* dei client, dei *gruppi di limiti adiacenti* e del *gruppo di limiti predefinito del sito* dei client.
-
-- **Configurare il gruppo di limiti del sito predefinito:**  
- Considerare l'aggiunta di un punto di aggiornamento software a *Default-Site-Boundary-Group&lt;codicesito>*. Ciò garantisce che i client che non sono membri di un altro gruppo di limiti possano eseguire il fallback per trovare un punto di aggiornamento software.
+この記事では、System Center Configuration Manager の Technical Preview バージョン 1701 で使用できる機能について説明します。 このバージョンをインストールして更新し、新機能を Configuration Manager の Technical Preview サイトに追加できます。 このバージョンの Technical Preview をインストールする前に、説明のトピック「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。    
 
 
-Per gestire i punti di aggiornamento software per i gruppi di limiti, usare le [procedure della documentazione di Current Branch](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#procedures-for-boundary-groups) ricordando che i tempi di fallback che potrebbero essere configurati non vengono ancora usati per i punti di aggiornamento software.
+**このバージョンでお試しいただける新機能を次に示します。**  
+
+## <a name="boundary-groups-improvements-for-software-update-points"></a>ソフトウェア更新ポイントの境界グループの改善
+このプレビュー以降、境界グループを使用して、クライアントをソフトウェアの更新ポイントに関連付けられるようになりました。 これは、追加のサイト システムの役割を管理するために境界グループの変更を展開する継続的な作業の一部です。  境界グループの変更は、Technical Preview 1609 および Current Branch (バージョン 1610) で初めて導入されました。  
+
+このプレビューでは、新しい境界グループの動作を使用して、クライアントが使用できるソフトウェアの更新ポイントを管理することができます。これは、クライアントが使用できる配布ポイントの管理方法と似ています。  
+
+- ソフトウェアの更新ポイントをホストする 1 つ以上のサーバーを関連付けるように境界グループを構成します。
+- 新しいソフトウェアの更新ポイントをシークしているクライアントは、現在の境界グループに関連付けられているものの使用を試みます。
+- クライアントが、現在のソフトウェアの更新ポイントに到達できず、現在の境界グループからの更新ポイントも見つけられない場合、フォールバック動作を使用して、使用可能なソフトウェアの更新ポイントのプールを拡張します。    
+
+境界グループの詳細については、Current Branch のコンテンツの[境界グループ](/sccm/core/servers/deploy/configure/boundary-groups)に関する記述を参照してください。
+
+ただし、このプレビューでは、ソフトウェアの更新ポイントの境界グループの一部のみが実装されています。 ソフトウェアの更新ポイントを追加して、ソフトウェアの更新ポイントを含む近隣の境界グループを構成することはできますが、ソフトウェアの更新ポイントのフォールバック時間がまだサポートされていないため、クライアントはフォールバックが開始されるまで 2 時間待機することになります。
+
+以下に、このテクニカル プレビューでのソフトウェアの更新ポイントの動作について説明します。  
+
+-   **新しいクライアントでは境界グループを使用して、ソフトウェアの更新ポイントを選択します。**バージョン 1701 をインストールした後にインストールしたクライアントは、ソフトウェアの更新ポイントを、クライアントの境界グループに関連付けられているものの中から選択します。
+
+  これは、クライアントが、クライアント フォレストを共有するソフトウェアの更新ポイントのリストからランダムに選択する以前の動作に置き換わるものです。   
+
+-   **以前にインストールされたクライアントは、フォールバックして新しいソフトウェアの更新ポイントを見つけるまで、引き続き、現在のものを使用します。**
+以前にインストールされ、既にソフトウェアの更新ポイントがあるクライアントは、フォールバックするまで引き続き、そのソフトウェアの更新ポイントを使用します。 これには、クライアントの現在の境界グループに関連付けられていないソフトウェアの更新ポイントが含まれます。 その場合、現在の境界グループからソフトウェアの更新ポイントをすぐに見つけて使用を試みることはありません。
+
+  ソフトウェアの更新ポイントが既にあるクライアントがこの新しい境界グループの動作の使用を開始するのは、現在のソフトウェアの更新ポイントに到達できず、フォールバックを開始した場合のみです。
+この遅延は、新しい動作への切り替えの際に生じるもので意図的なものです。 これは、ソフトウェアの更新ポイントが変更されると、クライアントがデータと新しいソフトウェアの更新ポイントを同期する場合に、ネットワーク帯域幅が多く使用される可能性があるためです。 遷移の遅延は、すべてのクライアントが新しいソフトウェアの更新ポイントに同時に切り替える場合に、ネットワークの飽和を回避するのに役立ちます。
+
+-   **フォールバック時間の構成:** このテクニカル プレビューでは、新しいソフトウェアの更新ポイントを検索するためにクライアントがフォールバックを開始する時間の構成はサポートされていません。 これには、さまざまな境界グループの関係に対して構成する場合がある、**[フォールバック時間 (分)]** と **[フォールバックしない]** の構成が含まれます。
+
+  したがって、クライアントは、使用可能な新しいソフトウェアの更新ポイントを検索するために、フォールバックを開始するまで 2 時間、現在のソフトウェアの更新ポイントへの接続を試みる現在の動作を保持します。
+
+  クライアントは、フォールバックを使用する場合、使用可能なソフトウェアの更新ポイントのプールを作成するためにフォールバックの境界グループ構成を使用します。 このプールには、クライアントの*現在の境界グループ*、*近隣の境界グループ*、およびクライアント *サイトの既定の境界グループ*からのソフトウェアの更新ポイントがすべて含まれます。
+
+- **既定のサイトの境界グループを構成する:**  
+ ソフトウェアの更新ポイントを *Default-Site-Boundary-Group&lt;sitecode>* に追加することを検討します。 これにより、別の境界グループのメンバーではないクライアントは確実に、フォールバックしてソフトウェアの更新ポイントを見つけられるようになります。
 
 
-## <a name="hardware-inventory-collects-uefi-information"></a>L'inventario hardware raccoglie le informazioni UEFI
-Una nuova classe di inventario hardware (**SMS_Firmware**) e una nuova proprietà (**UEFI**) sono disponibili per determinare se un computer viene avviato in modalità UEFI. Quando un computer viene avviato in modalità UEFI, la proprietà **UEFI** è impostata su **TRUE**. L'impostazione è abilitata nell'inventario hardware per impostazione predefinita. Per altre informazioni sull'inventario hardware, vedere [How to configure hardware inventory](/sccm/core/clients/manage/inventory/configure-hardware-inventory) (Come configurare l'inventario hardware).
+境界グループのソフトウェアの更新ポイントを管理する場合、[Current Branch ドキュメントの手順](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#procedures-for-boundary-groups)を使用できますが、構成する可能性のあるフォールバック時間はソフトウェアの更新ポイントではまだ使用されていないことを忘れないでください。
 
-## <a name="improvements-to-operating-system-deployment"></a>Miglioramenti alla distribuzione del sistema operativo
-Sono stati apportati i miglioramenti seguenti alla distribuzione del sistema operativo, molti dei quali sono il risultato del feedback degli utenti.
-- [**Supporto di più applicazioni per il passaggio della sequenza di attività Installa applicazioni**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17062207-task-sequence-allow-more-than-9-applications-in-t): il numero massimo di applicazioni che è possibile installare è stato aumentato a 99 nel passaggio della sequenza di attività **Installa applicazioni**. Il numero massimo precedente era di 9 applicazioni.
-- [**Selezione di più app nella sequenza di attività Installa applicazioni**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15459978-when-adding-items-to-an-install-application-step): quando si aggiungono le applicazioni al passaggio della sequenza di attività Installa applicazioni nell'editor delle sequenze di attività, è ora possibile selezionare più applicazioni dal riquadro **Seleziona l'applicazione da installare**.
-- [**Scadenza dei supporti autonomi**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/14448564-provide-a-method-for-expiring-standalone-media): durante la creazione di supporti autonomi, sono disponibili nuove opzioni per l'impostazione di date di inizio e scadenza facoltative nei supporti. Queste impostazioni sono disabilitate per impostazione predefinita. Le date vengono confrontate con l'ora di sistema nel computer prima che il supporto autonomo venga eseguito. Quando l'ora di sistema è precedente all'ora di inizio o successiva all'ora di scadenza, il supporto autonomo non viene avviato. Queste opzioni sono disponibili anche tramite il cmdlet PowerShell New-CMStandaloneMedia.
-- [**Supporto per contenuto aggiuntivo nei supporti autonomi**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8341257-support-installation-of-packages-apps-via-dynamic): è ora supportato contenuto aggiuntivo nei supporti autonomi. È possibile selezionare altri pacchetti, pacchetti driver e applicazioni da gestire nei supporti insieme ad altro contenuto cui viene fatto riferimento nella sequenza di attività. In precedenza, soltanto il contenuto cui veniva fatto riferimento nella sequenza di attività veniva gestito nei supporti autonomi.
-- [**Timeout configurabile per il passaggio della sequenza di attività Applica automaticamente i driver**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17153660-auto-apply-driver-timeout): sono ora disponibili nuove variabili della sequenza di attività per la configurazione del valore di timeout nel passaggio della sequenza di attività Applica automaticamente i driver durante la creazione di richieste di catalogo HTTP. Sono disponibili le seguenti variabili e valori predefiniti (in secondi):
-   - SMSTSDriverRequestResolveTimeOut Default: 60
-   - SMSTSDriverRequestConnectTimeOut Default: 60
-   - SMSTSDriverRequestSendTimeOut Default: 60
-   - SMSTSDriverRequestReceiveTimeOut Default: 480
-- [**ID pacchetto visualizzato nei passaggi della sequenza di attività**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/16167430-display-packageid-when-viewing-a-task-sequence-ste): tutti i passaggi della sequenza di attività che fanno riferimento a un pacchetto, un pacchetto driver, un'immagine del sistema operativo, un'immagine d'avvio o un pacchetto di aggiornamento del sistema operativo visualizzano ora l'ID pacchetto dell'oggetto cui viene fatto riferimento. Quando un passaggio della sequenza di attività fa riferimento a un'applicazione viene visualizzato l'ID oggetto.
-- **Windows 10 ADK rilevato per versione build**: Windows 10 ADK viene ora rilevato in base alla versione build per garantire maggior supporto durante la personalizzazione delle immagini d'avvio di Windows 10. Ad esempio, se il sito usa Windows ADK per Windows 10, versione 1607, possono essere personalizzate nella console soltanto le immagini d'avvio con versione 10.0.14393. Per informazioni dettagliate sulla personalizzazione delle versioni WinPE, vedere [Personalizzare le immagini d'avvio](/sccm/osd/get-started/customize-boot-images).
-- **Percorso di origine dell'immagine d'avvio predefinita non più modificabile**: le immagini d'avvio predefinite sono gestite da Configuration Manager e il percorso di origine dell'immagine d'avvio predefinita non può più essere modificato nella console di Configuration Manager o usando Configuration Manager SDK. È possibile continuare a configurare un percorso di origine personalizzato per le immagini d'avvio personalizzate.
 
-## <a name="host-software-updates-on-cloud-based-distribution-points"></a>Ospitare gli aggiornamenti software in punti di distribuzione basati sul cloud
-A partire da questa versione di anteprima, è possibile usare un punto di distribuzione basato sul cloud per ospitare un pacchetto di aggiornamento software. Tuttavia, poiché è possibile configurare i client per scaricare gli aggiornamenti software direttamente da Microsoft Update, considerare i possibili costi aggiuntivi per la distribuzione di un pacchetto di aggiornamento software a un punto di distribuzione basato sul cloud.
+## <a name="hardware-inventory-collects-uefi-information"></a>ハードウェア インベントリでの UEFI 情報の収集
+新しいハードウェア インベントリ クラス (**SMS_Firmware**) とプロパティ (**UEFI**) は、コンピューターが UEFI モードで起動しているかどうかを判別するのに役立ちます。 コンピューターが UEFI モードで起動している場合、**UEFI** プロパティは **TRUE** に設定されています。 これはハードウェア インベントリでは既定で有効になっています。 ハードウェア インベントリの詳細については、「[ハードウェア インベントリを構成する方法](/sccm/core/clients/manage/inventory/configure-hardware-inventory)」を参照してください。
 
-Per informazioni sull'uso di punti di distribuzione basati sul cloud, vedere [Usare un punto di distribuzione basato sul cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) nel contenuto relativo a Current Branch di Configuration Manager.
+## <a name="improvements-to-operating-system-deployment"></a>オペレーティング システムの展開に関する機能拡張
+オペレーティング システムの展開について、次のように機能が拡張されました。その多くは、皆さまからのフィードバックに基づくものです。
+- [**アプリケーションのインストール タスク シーケンス ステップでより多くのアプリケーションをサポート**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17062207-task-sequence-allow-more-than-9-applications-in-t): **アプリケーションのインストール** タスク シーケンス ステップでインストールできるアプリケーションの最大数が 99 に増えました。 以前のアプリケーションの最大数は 9 でした。
+- [**アプリケーションのインストール タスク シーケンス ステップで複数のアプリを選択**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15459978-when-adding-items-to-an-install-application-step): タスク シーケンス エディターでアプリケーションのインストール タスク シーケンス ステップにアプリケーションを追加する際に、**[インストールするアプリケーションの選択]** ウィンドウから複数のアプリケーションを選択できるようになりました。
+- [**スタンドアロン メディアの有効期限の設定**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/14448564-provide-a-method-for-expiring-standalone-media): スタンドアロン メディアを作成する際に、メディアに対して、必要に応じて開始日と有効期限を設定するための新しいオプションが追加されました。 これらの設定は既定では無効になっています。 スタンドアロン メディアが実行される前に、この日付はコンピューター上のシステム時刻と比較されます。 システム時刻が開始時刻より前か、有効期限より後の場合、スタンドアロン メディアは開始されません。 これらのオプションは、New-CMStandaloneMedia PowerShell コマンドレットを使用して利用することもできます。
+- [**スタンドアロン メディアでの追加コンテンツのサポート**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8341257-support-installation-of-packages-apps-via-dynamic): スタンドアロン メディアで追加のコンテンツがサポートされるようになりました。 追加のパッケージ、ドライバー パッケージ、およびアプリケーションを選択し、タスク シーケンスで参照される他のコンテンツと共にメディアにステージングすることができます。 以前は、タスク シーケンスで参照されるコンテンツのみがスタンドアロン メディアにステージングされていました。
+- [**[ドライバーの自動適用] タスク シーケンス ステップの構成可能なタイムアウト**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17153660-auto-apply-driver-timeout): HTTP カタログの要求時に [ドライバーの自動適用] タスク シーケンス ステップでタイムアウト値を構成する際に、新しいタスク シーケンス変数を使用できるようになりました。 次の変数と既定値 (秒) を使用できます。
+   - SMSTSDriverRequestResolveTimeOut - 既定値: 60
+   - SMSTSDriverRequestConnectTimeOut - 既定値: 60
+   - SMSTSDriverRequestSendTimeOut - 既定値: 60
+   - SMSTSDriverRequestReceiveTimeOut - 既定値: 480
+- [**タスク シーケンス ステップでパッケージ ID が表示されるようになりました**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/16167430-display-packageid-when-viewing-a-task-sequence-ste): パッケージ、ドライバー パッケージ、オペレーティング システム イメージ、ブート イメージ、またはオペレーティング システム アップグレード パッケージを参照するすべてのタスク シーケンス ステップで、参照されるオブジェクトのパッケージ ID が表示されるようになりました。 タスク シーケンス ステップでは、アプリケーションの参照時にオブジェクト ID が表示されます。
+- **ビルド バージョンによる Windows 10 ADK の追跡**: ビルド バージョンで Windows 10 ADK を追跡できるようになりました。これで、Windows 10 ブート イメージのカスタマイズ時により多くの操作がサポートされるようになります。 たとえば、サイトで Windows ADK for Windows 10 バージョン 1607 を使用する場合、コンソールでカスタマイズできるのはバージョン 10.0.14393 のブート イメージのみになります。 WinPE バージョンのカスタマイズの詳細については、「[ブート イメージのカスタマイズ](/sccm/osd/get-started/customize-boot-images)」を参照してください。
+- **既定のブート イメージのソース パスを変更できなくなりました**: 既定のブート イメージは Configuration Manager で管理され、既定のブート イメージのソース パスは Configuration Manager コンソールや Configuration Manager SDK を使用して変更できなくなりました。 カスタム ブート イメージのカスタム ソース パスは引き続き構成可能です。
 
-## <a name="validate-device-health-attestation-data-via-management-points"></a>Convalidare i dati di attestazione dell'integrità del dispositivo tramite punti di gestione
+## <a name="host-software-updates-on-cloud-based-distribution-points"></a>クラウドベースの配布ポイントでソフトウェアの更新をホストする
+このプレビュー バージョン以降、クラウドベースの配布ポイントを使用して、ソフトウェアの更新パッケージをホストできるようになります。 ただし、Microsoft Update から直接ソフトウェアの更新をダウンロードするようにクライアントを構成できるため、ソフトウェアの更新パッケージをクラウドベースの配布ポイントに展開する際に発生する可能性のある追加コストを考慮してください。
 
-A partire da questa versione di anteprima, è possibile configurare punti di gestione per convalidare i dati di reporting di attestazione dell'integrità per il servizio di attestazione dell'integrità cloud o locale. Una nuova scheda **Opzioni avanzate** della finestra di dialogo **Proprietà del componente del punto di gestione** consente di **aggiungere**, **modificare** o **rimuovere** l'**URL del servizio di attestazione dell'integrità del dispositivo locale**. È anche possibile specificare le **Impostazioni dispositivo personalizzate** per l'agente client per **usare il servizio di attestazione dell'integrità locale**.  Se l'opzione viene impostata su **Sì**, verrà abilitato il reporting nel punto di gestione locale anziché il servizio basato sul cloud.
+クラウドベースの配布ポイントの使用については、Configuration Manager の Current Branch のコンテンツにある[クラウドベースの配布ポイントの使用](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point)に関する記述を参照してください。
 
-### <a name="try-it-out"></a>Procedura
+## <a name="validate-device-health-attestation-data-via-management-points"></a>管理ポイント経由でデバイス正常性構成証明データを検証する
 
-- **Abilitare l'attestazione dell'integrità del dispositivo locale in un punto di gestione**<br>  Nella console di Configuration Manager passare al punto di gestione e aprire **Proprietà del componente del punto di gestione** e quindi fare clic sulla scheda **Opzioni avanzate**. Fare clic su **Aggiungi** e specificare l'URL locale, ad esempio https://10.10.10.10, per **URL del servizio di attestazione dell'integrità locale**.
-- **Abilitare il reporting di attestazione dell'integrità del punto di gestione locale per l'agente client**<br>Nella console di Configuration Manager scegliere **Amministrazione** > **Impostazioni client** e fare doppio clic o creare nuove **Impostazioni dispositivo personalizzate**. Selezionare **Agente computer** e impostare **Usare il servizio di attestazione dell'integrità locale** su **Sì**. Se **Abilita le comunicazioni con il servizio di attestazione dell'integrità** è impostata su **Sì** e **Usare il servizio di attestazione dell'integrità locale** è impostata su **No**, il punto di gestione userà il servizio di attestazione dell'integrità del dispositivo basato sul cloud.
+このプレビュー バージョン以降、クラウドまたはオンプレミスの正常性構成証明サービスの正常性構成証明レポート データを検証するように管理ポイントを構成できるようになります。 **[管理ポイント コンポーネントのプロパティ]** ダイアログ ボックスの **[詳細オプション]** タブで、**オンプレミスのデバイス正常性構成証明サービスの URL** を**追加**、**編集**、または**削除**することができます。 クライアント エージェントの **[カスタム デバイス設定]** を **[オンプレミスの正常性構成証明サービスを使用]** に指定することもできます。  この設定値を **[はい]** にすると、クラウドベース サービスではなく、オンプレミス管理ポイントへのレポートが有効になります。
 
-## <a name="use-the-oms-connector-for-microsoft-azure-government-cloud"></a>Usare il connettore OMS per il cloud di Microsoft Azure per enti pubblici
-Con questa versione Technical Preview è possibile usare il connettore Microsoft Operations Management Suite (OMS) per la connessione a un'area di lavoro OMS che si trova sul cloud di Microsoft Azure per enti pubblici.  
+### <a name="try-it-out"></a>試してみましょう
 
-A tale scopo, modificare un file di configurazione in modo che punti al cloud per enti pubblici e quindi installare il connettore OMS.
+- **管理ポイントでオンプレミスデバイス正常性構成証明を有効にする**<br>  Configuration Manager コンソールで、管理ポイントに移動し、**[管理ポイント コンポーネントのプロパティ]** を開き、**[詳細オプション]** タブをクリックします。 **[追加]** をクリックし、**オンプレミス デバイス正常性構成証明サービスの URL** として、オンプレミス URL (https://10.10.10.10 など) を指定します。
+- **クライアント エージェントのオンプレミス管理ポイント正常性構成証明レポートを有効にする**<br>Configuration Manager コンソールで、**[管理]** > **[クライアント設定]** の順に選択してダブルクリックするか、新しい**カスタム デバイス設定**を作成します。 **[コンピューター エージェント]** を選択し、**[オンプレミスの正常性構成証明サービスを使用する]** を **[はい]** に設定します。 **[Enable communication with Device Health Attestation Service]** (デバイス正常性構成証明サービスとの通信を有効にする) が **[はい]** に設定されており、**[Use on-premises Health Attestation]** (オンプレミスの正常性構成証明を使用する) が **[いいえ]** に設定されている場合、管理ポイントではクラウドベースのデバイス正常性構成証明サービスが使用されます。
 
-### <a name="set-up-an-oms-connector-to-microsoft-azure-government-cloud"></a>Impostare un connettore OMS per il cloud di Microsoft Azure per enti pubblici
-1.  In un computer in cui è installata la console di Configuration Manager modificare il file di configurazione seguente in modo che punti al cloud per enti pubblici:  ***&lt;percorso installazione CM>\AdminConsole\bin\Microsoft.configurationManagmenet.exe.config***
+## <a name="use-the-oms-connector-for-microsoft-azure-government-cloud"></a>Microsoft Azure Government クラウドで OMS コネクタを使用する
+このテクニカル プレビューでは、Microsoft Operations Management Suite (OMS) コネクタを使用して、Microsoft Azure Government クラウド上にある OMS ワークスペースに接続できるようになりました。  
 
-  **Modifiche:**
+これを行うには、Government クラウドをポイントするように構成ファイルを変更し、OMS コネクタをインストールします。
 
-    Modificare il valore del nome dell'impostazione *FairFaxArmResourceID* in modo che sia uguale a "https://management.usgovcloudapi.net/"
+### <a name="set-up-an-oms-connector-to-microsoft-azure-government-cloud"></a>Microsoft Azure Government クラウドに OMS コネクタをセットアップする
+1.  Configuration Manager コンソールがインストールされている任意のコンピューターで、Government クラウドをポイントするように、***&lt;CM install path>\AdminConsole\bin\Microsoft.configurationManagmenet.exe.config*** 構成ファイルを編集します。
 
-   - **Originale:**
-      &lt;setting name="FairFaxArmResourceId" serializeAs="String">   
+  **編集内容:**
+
+    設定名 *FairFaxArmResourceID* の値が、"https://management.usgovcloudapi.net/" と同一になるように変更します。
+
+   - **元の値:** &lt;setting name="FairFaxArmResourceId" serializeAs="String">   
       &lt;value>&lt;/value>   
       &lt;/setting>
 
-   - **Modificato:**     
+   - **編集後の値:**     
       &lt;setting name="FairFaxArmResourceId" serializeAs="String"> &lt;value>https://management.usgovcloudapi.net/&lt;/value>  
       &lt;/setting>
 
-  Modificare il valore del nome dell'impostazione *FairFaxAuthorityResource* in modo che sia uguale a "https://login.microsoftonline.com/"
+  設定名 *FairFaxAuthorityResource* の値が、"https://login.microsoftonline.com/" と同一になるように変更します。
 
-  - **Originale:** &lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
+  - **元の値:** &lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
     &lt;value>&lt;/value>
 
-    - **Modificato:** &lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
+    - **編集後の値:** &lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
     &lt;value>https://login.microsoftonline.com/&lt;/value>
 
-2.    Dopo aver salvato il file con le due modifiche, riavviare la console di Configuration Manager nello stesso computer e quindi usare la console per installare il connettore OMS. Per installare il connettore, usare le informazioni in [Sincronizzazione dei dati da Configuration Manager a Microsoft Operations Management Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) e selezionare l'**Area di lavoro di Operations Management Suite** che si trova nel cloud di Microsoft Azure per enti pubblici.
+2.  2 つの変更を含むファイルを保存したら、同じコンピューター上で Configuration Manager コンソールを再起動し、そのコンソールを使用して OMS コネクタをインストールします。 コネクタをインストールするには、「[Microsoft Operations Management Suite に Configuration Manager からのデータを同期](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite)」の情報を使用し、Microsoft Azure Government クラウド上にある **Operations Management Suite のワークスペース**を選択します。
 
-3.    Dopo aver installato il connettore OMS, la connessione al cloud per enti pubblici sarà disponibile quando si usa qualsiasi console che si connette al sito.
+3.  OMS コネクタをインストールしたら、サイトに接続されているコンソールを使用する際に Government クラウドへの接続を使用できます。
 
-## <a name="android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm"></a>Non è più necessario specificare le versioni di Android e iOS nella creazione guidata della gestione ibrida dei dispositivi mobili
+## <a name="android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm"></a>ハイブリッド MDM の作成ウィザードで Android と iOS のバージョン指定が不要に
 
-A partire dalla presente Technical Preview, per la gestione ibrida dei dispositivi mobili non è più necessario indicare versioni specifiche di Android e iOS quando si creano nuovi criteri e profili per i dispositivi gestiti in Intune. È necessario però scegliere uno dei tipi di dispositivo seguenti:
+ハイブリッド モバイル デバイス管理 (MDM) のこのテクニカル プレビューから、Intune で管理されるデバイスの新しいポリシーとプロファイルを作成する場合に Android および iOS の特定のバージョンを指定する必要がなくなりました。 代わりに、次のデバイス タイプのいずれかを選択します。
 
 - Android
-- Samsung KNOX Standard 4.0 e versioni successive
+- Samsung KNOX Standard 4.0 以降
 - iPhone
 - iPad
 
-Questa modifica interessa la creazione guidata degli elementi seguenti:
+この変更は、次の項目を作成するウィザードに影響します。
 
-- Elementi di configurazione
-- Criteri di conformità
-- Profili certificato
-- Profili di posta elettronica
-- Profili VPN
-- Profili Wi-Fi
+- 構成項目
+- コンプライアンス ポリシー
+- 証明書プロファイル
+- 電子メール プロファイル
+- VPN プロファイル
+- Wi-Fi プロファイル
 
-Con questa modifica, le distribuzioni ibride possono offrire il supporto più rapidamente per le nuove versioni di Android e iOS, senza attendere una nuova versione o un'estensione di Configuration Manager. Quando una nuova versione è supportata nella versione autonoma di Intune, gli utenti possono aggiornare i propri dispositivi mobili a tale versione.
+この変更により、新しい Configuration Manager のリリースまたは拡張機能を必要とせずに、ハイブリッド展開で新しい Android および iOS のバージョンによりすばやくサポートを提供できます。 Intune スタンドアロンで新しいバージョンがサポートされると、ユーザーはモバイル デバイスをそのバージョンにアップグレードできるようになります。
 
-Per evitare problemi durante l'aggiornamento da versioni precedenti di Configuration Manager, le versioni dei sistemi operativi dei dispositivi mobili sono ancora disponibili nelle pagine delle proprietà di tali elementi. Se è ancora necessario usare una versione specifica, è possibile creare il nuovo elemento e quindi specificare la versione nella pagina delle proprietà dell'elemento appena creato.
-
+以前のバージョンの Configuration Manager からアップグレードする場合の問題を防ぐため、モバイルのオペレーティング システムのバージョンが各項目の [プロパティ] ページに表示されています。 特定のバージョンを対象にする必要がある場合は、新しい項目を作成し、新しく作成された項目の [プロパティ] ページで、対象のバージョンを指定します。

@@ -1,75 +1,71 @@
 ---
-title: Usare le finestre di manutenzione | Microsoft Docs
-description: Usare le raccolte e le finestre di manutenzione per gestire in modo efficace i client in System Center Configuration Manager.
+title: "メンテナンス期間の使用 | Microsoft Docs"
+description: "コレクションおよびメンテナンス ウィンドウを使用して、System Center Configuration Manager でクライアントを効果的に管理します。"
 ms.custom: na
 ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4564ebcb-41a8-4eb0-afdb-2e1f0795cfa2
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 05c27c7aa36e0b4236867766dab36125c31467b3
-ms.openlocfilehash: c0b4fcda6599ed91fe2393b97bdcec6cdfba9b7c
-ms.contentlocale: it-it
-ms.lasthandoff: 01/03/2017
-
-
+ms.openlocfilehash: fa67cf597c73bab47209c9b98539f97e174ae70b
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-use-maintenance-windows-in-system-center-configuration-manager"></a>Come usare le finestre di manutenzione in System Center Configuration Manager
+# <a name="how-to-use-maintenance-windows-in-system-center-configuration-manager"></a>System Center Configuration Manager でメンテナンス期間を使用する方法
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Le finestre di manutenzione consentono di definire un periodo di tempo in cui è possibile eseguire le operazioni di Configuration Manager in una raccolta di dispositivi. È possibile usare le finestre di manutenzione per garantire che le modifiche alla configurazione client vengano eseguite quando non influiscono sulla produttività.  
+メンテナンス期間を使用すると、デバイス コレクションに対して Configuration Manager の各種の操作を実行できる期間を定義できます。 メンテナンス期間を使用して、クライアントの構成に対する変更が、生産性に影響しない時間帯に行われるようにできます。  
 
- Le finestre di manutenzione sono supportate dalle operazioni seguenti:  
+ 次の操作では、メンテナンス期間がサポートされています。  
 
--   Distribuzioni software  
+-   ソフトウェアの展開  
 
--   Distribuzioni di aggiornamenti software  
+-   ソフトウェア更新プログラムの展開  
 
--   Distribuzione e valutazione delle impostazioni di conformità  
+-   コンプライアンス設定の展開と評価  
 
--   Distribuzioni del sistema operativo  
+-   オペレーティング システムの展開  
 
--   Distribuzioni di sequenze attività  
+-   タスク シーケンスの展開  
 
- Configurare le finestre di manutenzione con una data di inizio, un'ora di inizio e di fine e un criterio di ricorrenza. La durata massima di una finestra deve essere inferiore a 24 ore. Per impostazione predefinita, i riavvii del computer causati da una distribuzione non sono consentiti al di fuori di una finestra di manutenzione, ma è possibile sostituire questa impostazione. Le finestre di manutenzione interessano solo il periodo in cui il programma di distribuzione è in esecuzione. Le applicazioni configurate per il download e l'esecuzione in locale possono scaricare contenuto al di fuori della finestra.  
+ メンテナンス期間の開始日、開始時刻、終了時刻、および繰り返しパターンを構成します。 期間の最長時間は、24 時間未満にする必要があります。 既定では、展開によって実行されるコンピューターの再起動はメンテナンス期間以外では許可されませんが、既定の設定を上書きできます。 メンテナンス期間は展開プログラムの実行時間のみに影響を与えます。ダウンロードしてローカルで実行するように構成されたアプリケーションは、メンテナンス期間以外でもコンテンツをダウンロードできます。  
 
- Se un computer client è membro di una raccolta di dispositivi per la quale è configurata una finestra di manutenzione, il programma di distribuzione viene eseguito solo se il tempo di esecuzione massimo consentito non supera la durata configurata per la finestra. Se non è possibile eseguire il programma, viene generato un avviso e la distribuzione viene eseguita nuovamente durante la finestra di manutenzione pianificata successiva con tempo disponibile.  
+ クライアント コンピューターが、メンテナンス期間が構成されているデバイス コレクションのメンバーである場合は、許容最長実行時間がそのメンテナンス期間に構成されている期間を超えない場合にのみ、展開プログラムが実行されます。 プログラムの実行が失敗すると、アラートが生成され、次のスケジュールされたメンテナンス期間に利用可能な時間があれば、その展開が再実行されます。  
 
-## <a name="using-multiple-maintenance-windows"></a>Uso di più finestre di manutenzione  
- Quando un computer client appartiene a più raccolte dispositivi con finestre di manutenzione, vengono applicate queste regole:  
+## <a name="using-multiple-maintenance-windows"></a>複数のメンテナンス期間の使用  
+ クライアント コンピューターが、メンテナンス期間が構成されている複数のデバイス コレクションのメンバーである場合は、次の規則が適用されます。  
 
--   Se le finestre di manutenzione non si sovrappongono, vengono considerate come due finestre di manutenzione indipendenti.  
+-   メンテナンス期間が重なっていない場合は、2 つの独立したメンテナンス期間として扱われます。  
 
--   Se le finestre di manutenzione si sovrappongono, vengono considerate come una singola finestra di manutenzione che comprende il periodo di tempo coperto da entrambe le finestre di manutenzione. Se ad esempio due finestre, ognuna della durata di un'ora, si sovrappongono di 30 minuti, la durata effettiva della finestra di manutenzione sarà di 90 minuti.  
+-   メンテナンス期間が重なっている場合は、両方のメンテナンス期間が対象とする期間をすべて含む単一のメンテナンス期間として扱われます。 たとえば、2 つのメンテナンス期間があり、それぞれ期間が 1 時間でそのうち 30 分が重なっている場合、メンテナンス期間の実際の期間は 90 分になります。  
 
- Se un utente avvia l'installazione di un'applicazione da Software Center, l'applicazione viene installata immediatamente, indipendentemente dalle finestre di manutenzione.  
+ アプリケーションのインストールをソフトウェア センターから開始すると、メンテナンス期間に関係なく、アプリケーションは直ちにインストールされます。  
 
- Se la distribuzione di un'applicazione con scopo **Richiesto** raggiunge la scadenza dell'installazione durante l'orario non lavorativo configurato da un utente in Software Center, l'applicazione verrà installata.  
+ 目的が **[必須]** であるアプリケーション展開が、ソフトウェア センターのユーザーによって構成された勤務時間外にインストールの期限に達した場合、アプリケーションはインストールされます。  
 
-### <a name="how-to-configure-maintenance-windows"></a>Come configurare le finestre di manutenzione  
+### <a name="how-to-configure-maintenance-windows"></a>メンテナンス期間を構成する方法  
 
-1.  Nella console di Configuration Manager scegliere **Asset e conformità**>  **Raccolte dispositivi**.  
+1.  Configuration Manager コンソールで、**[資産とコンプライアンス]**>  **[デバイス コレクション]** の順に選択します。  
 
-3.  Nell'elenco **Raccolte dispositivi** selezionare una raccolta. È impossibile creare finestre di manutenzione per la raccolta **Tutti i sistemi** .  
+3.  **[デバイス コレクション]** の一覧で、コレクションを選択します。 [すべてのシステム] コレクションにメンテナンス期間を作成することはできません。 ****  
 
-4.  Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.  
+4.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-5.  Nella scheda **Finestre di manutenzione** della finestra di dialogo **Proprietà &lt;nome raccolta\>** scegliere l'icona **Nuovo**.  
+5.  **[&lt;コレクション名\> のプロパティ]** ダイアログ ボックスの **[メンテナンス期間]** タブで、**[新規]** アイコンをクリックします。  
 
-6.  Completare la finestra di dialogo **&lt;nuova\> pianificazione**.  
+6.  **[&lt;新しい\>スケジュール]** ダイアログ ボックスに入力します。  
 
-7.  Effettuare una selezione nell'elenco a discesa **Applica pianificazione a**.  
+7.  **[このスケジュールの適用対象]** ドロップダウン リストから選択します。  
 
-8.  Scegliere **OK** e quindi chiudere la finestra di dialogo **Proprietà &lt;nome raccolta\>**.  
-
+8.  **[OK]** を選択し、**[&lt;コレクション名\>のプロパティ]** ダイアログ ボックスを閉じます。  

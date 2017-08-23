@@ -1,36 +1,33 @@
 ---
-title: Condividere applicazioni da System Center Configuration Manager | Microsoft Docs
-description: Condividere un collegamento a un'applicazione in Software Center in System Center Configuration Manager.
+title: "System Center Configuration Manager からのアプリケーションの共有 | Microsoft Docs"
+description: "System Center Configuration Manager でソフトウェア センターのアプリケーションのリンクを共有します。"
 ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2629c376-ec43-4f0e-a78b-4223cc9302bf
-caps.latest.revision: 0
-caps.handback.revision: 0
+caps.latest.revision: "0"
+caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: 9e6b32caa6c5f27f3b535b224c2a9fe31905547f
-ms.contentlocale: it-it
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="share-an-application-from-software-center"></a>ソフトウェア センターからのアプリケーションの共有
 
-# <a name="share-an-application-from-software-center"></a>Condividere un'applicazione da Software Center
+*適用対象: System Center Configuration Manager (Current Branch)* <!-- 1706 -->
 
-*Si applica a: System Center Configuration Manager (Current Branch)*<!-- 1706 -->
+アプリケーションの詳細ビューで、![[共有]](media/share15.png) **[共有]**ボタンを使用して、ソフトウェア センターのアプリケーションのハイパーリンクをコピーすることができます。 共有できるのはアプリケーションのハイパーリンクのみです。 アプリケーションが使用できなくなった場合は、ハイパーリンクによって、アプリケーションの利用不可メッセージを含むウィンドウが開きます。
 
-È possibile copiare un collegamento ipertestuale in un'applicazione in Software Center tramite il pulsante ![Condividi](media/share15.png) **Condividi** nella vista Dettagli applicazione. È possibile condividere collegamenti ipertestuali solo per le applicazioni. Se un'applicazione non è più disponibile, il collegamento ipertestuale apre una finestra con un messaggio che informa dell'indisponibilità dell'applicazione.
-
-1. Scegliere **Applicazioni** e quindi scegliere l'applicazione.
-2. Fare clic sul pulsante ![Condividi](media/share15.png) **Condividi**.
-3. Fare clic su **Copia** nella finestra.
-4. Incollare l'URL in un messaggio di posta elettronica per condividere l'applicazione.
+1. **[アプリケーション]** を選択し、アプリケーションを選択します。
+2. ![[共有]](media/share15.png) **[共有]** ボタンをクリックします。
+3. ウィンドウ内の **[コピー]** をクリックします。
+4. メールに URL を貼り付けて、アプリケーションを共有します。

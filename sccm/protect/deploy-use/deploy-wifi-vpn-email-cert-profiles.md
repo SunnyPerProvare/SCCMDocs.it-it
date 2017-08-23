@@ -1,80 +1,74 @@
 ---
-title: Distribuire profili Wi-Fi, VPN, certificato e di posta elettronica | Microsoft Docs
-description: Informazioni su come distribuire profili Wi-Fi, VPN, di posta elettronica e certificato in System Center Configuration Manager.
+title: "Wi-Fi、VPN、電子メール、および証明書プロファイルの展開 | Microsoft Docs"
+description: "System Center Configuration Manager で Wi-Fi、VPN、電子メール、および証明書のプロファイルを展開する方法について説明します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3753608d-b539-44dc-8e3f-b631319e7687
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Nbigman
 ms.author: nbigman
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: c2e3aef41e9a890d136039f85777ab07284e5c27
 ms.openlocfilehash: 70372d5df13034b48f3e43b766776442f1be5823
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="deploy-profiles-in-system-center-configuration-manager"></a>Distribuire profili in System Center Configuration Manager
+# <a name="deploy-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager でのプロファイルの展開
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-I profili devono essere distribuiti a una o più raccolte prima di poter essere usati.  
+プロファイルを使用するには、1 つまたは複数のコレクションに展開する必要があります。  
 
- Usare la finestra di dialogo **Distribuisci profilo Wi-Fi**, **Distribuisci profilo VPN**, **Distribuisci profilo Exchange ActiveSync**, o **Distribuisci profilo certificato** per configurare la distribuzione di questi profili. Durante la configurazione si definisce la raccolta a cui deve essere distribuito il profilo e si specifica la frequenza della valutazione della conformità del profilo.  
+ **[Wi-Fi プロファイルの展開]**、**[VPN プロファイルの展開]**、**[Exchange ActiveSync プロファイルの展開]**、または **[Deploy Certificate Profile]** (証明書プロファイルの展開) ダイアログ ボックスを使用して、これらのプロファイルの展開を構成します。 この構成には、プロファイルの展開先のコレクションの定義と、プロファイルのコンプライアンスを評価する頻度の指定が含まれます。  
 
 > [!NOTE]  
->  Se si distribuiscono allo stesso utente più profili di accesso alle risorse aziendali, si verifica il seguente comportamento:  
+>  同じユーザーに複数の会社リソース アクセス プロファイルを展開する場合は、次の動作が発生します。  
 >   
->  -   Se un'impostazione in conflitto contiene un valore facoltativo, il valore non verrà inviato al dispositivo.  
-> -   Se un'impostazione in conflitto contiene un valore obbligatorio, al dispositivo verrà inviato il valore predefinito. Se non esiste alcun valore predefinito, l'intero profilo di accesso alle risorse aziendali genererà errori. Se, ad esempio, si distribuiscono due profili di posta elettronica allo stesso utente e i valori specificati per **Nome host di Exchange ActiveSync** o **Indirizzo di posta elettronica** sono diversi, entrambi i profili di posta elettronica genereranno errori perché sono impostazioni obbligatorie.  
+>  -   競合している設定にオプションの値が含まれている場合、その値はデバイスに送信されません。  
+> -   競合する設定に必須の値が含まれている場合、既定値がデバイスに送信されます。 既定値がない場合は、全体の会社リソース アクセス プロファイルは失敗します。 たとえば、同じユーザーに 2 つの電子メール プロファイルを展開し、[ **Exchange ActiveSync ホスト** ] または [ **電子メール アドレス** ] に指定した値が異なる場合、その両方の設定は必須のため、電子メール プロファイルは失敗します。  
 
-> -   Prima di distribuire i profili certificato, configurare l'infrastruttura e creare i profili certificato. Per altre informazioni, vedere i seguenti argomenti:  
+> -   証明書プロファイルを展開する前に、まず、インフラストラクチャを構成して証明書プロファイルを作成する必要があります。 詳細については、以下のトピックを参照してください。  
 >   
->  -   [Configurazione dei profili certificato in System Center Configuration Manager](certificate-infrastructure.md)  
-> -   [Come creare profili certificato in System Center Configuration Manager](create-certificate-profiles.md)    
+>  -   [System Center Configuration Manager での証明書インフラストラクチャの構成](certificate-infrastructure.md)  
+> -   [System Center Configuration Manager で証明書プロファイルを作成する方法](create-certificate-profiles.md)    
 
 > [!IMPORTANT]  
->  Quando si rimuove una distribuzione del profilo VPN, il profilo non viene rimosso dai dispositivi client. Se si desidera rimuovere il profilo dai dispositivi, è necessario procedere manualmente.
+>  VPN プロファイルの展開を削除するときに、VPN プロファイルはクライアント デバイスから削除されません。 デバイスからプロファイルを削除する場合、手動で削除する必要があります。
 >   
 
-## <a name="deploying--profiles"></a>Distribuzione di profili  
+## <a name="deploying--profiles"></a>プロファイルの展開  
 
 
-1.  Nella console di System Center Configuration Manager fare clic su **Asset e conformità**.  
+1.  System Center Configuration Manager コンソールで、**[資産とコンプライアンス]** を選択します。  
 
-2.  Nell'area di lavoro **Asset e conformità** , espandere **Impostazioni di conformità**, **Accesso risorse aziendali** e scegliere il tipo di profilo appropriato, ad esempio **Profili Wi-Fi**.  
+2.  **[資産とコンプライアンス]** ワークスペースで、**[コンプライアンス設定]**、**[会社リソースのアクセス]** の順に展開してから、**[Wi-Fi プロファイル]** などの適切なプロファイル タイプを選択します。  
 
-3.  Nell'elenco dei profili selezionare il profilo da distribuire e fare clic su **Distribuisci** nel gruppo **Distribuzione** della scheda **Home**.  
+3.  プロファイルの一覧で、展開するプロファイルを選択してから、**[ホーム]** タブの **[展開]** グループで、**[展開]** をクリックします。  
 
-4.  Nella finestra di dialogo di distribuzione del profilo specificare le informazioni seguenti:  
+4.  プロファイルの展開ダイアログ ボックスで、次の情報を指定します。  
 
-    -   **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta in cui si vuole distribuire il profilo.  
+    -   **コレクション**: **[参照]** をクリックして、プロファイルを展開するコレクションを選択します。  
 
-    -   **Genera un avviso**: abilitare questa opzione per configurare un avviso che viene generato se la conformità del profilo è inferiore a una percentuale specificata in base a una data e un orario specifici. È inoltre possibile specificare se si desidera che un avviso venga inviato a System Center Operations Manager.  
+    -   **アラートを生成する**: このオプションを有効にすると、プロファイルのコンプライアンスが、指定した日付と時刻までに指定した割合に達しなかった場合に生成されるアラートを構成できます。 アラートを System Center Operations Manager に送信するかどうかも指定できます。  
 
-    -   -   **Ritardo casuale (ore)**: (solo per i profili certificato che contengono le impostazioni Simple Certificate Enrollment Protocol) specifica una finestra di ritardo in modo da evitare un'elaborazione eccessiva nel servizio Registrazione dispositivi di rete. Il valore predefinito è **64** ore.  
+    -   -   **ランダム遅延 (時間)**: (Simple Certificate Enrollment Protocol 設定を含む証明書プロファイルのみ) ネットワーク デバイス登録サービスの処理量が多くなりすぎないように、処理を延期できる期間を指定します。 既定値は **64** 時間です。  
 
-    -   **Specificare la pianificazione per la valutazione della conformità per questo <type>profilo**: specificare la pianificazione in base alla quale il profilo distribuito viene valutato nei computer client. Può trattarsi di una pianificazione semplice o personalizzata.  
+    -   **この <type> プロファイルのコンプライアンス評価スケジュールを指定してください**: 展開されたプロファイルをクライアント コンピューターで評価するスケジュールを指定します。 単純なスケジュールとカスタム スケジュールの 2種類あります。  
 
         > [!NOTE]  
-        >  Il profilo viene valutato dai computer client quando l'utente effettua l'accesso.  
+        >  プロファイルは、ユーザーがログオンしたときにクライアント コンピューターによって評価されます。  
 
-5.  Fare clic su **OK** per chiudere la finestra di dialogo e creare la distribuzione.
+5.  **[OK]** をクリックしてダイアログ ボックスを閉じると、展開が作成されます。
 
-### <a name="see-also"></a>Vedere anche  
+### <a name="see-also"></a>関連項目  
 
-[How to monitor Wi-Fi, VPN, and email profiles in System Center Configuration Manager](monitor-wifi-email-vpn-profiles.md) (Come monitorare i profili Wi-Fi, VPN e di posta elettronica in System Center Configuration Manager)
+[System Center Configuration Manager で Wi-Fi、VPN、および電子メールのプロファイルを監視する方法](monitor-wifi-email-vpn-profiles.md)
 
-[How to monitor certificate profiles in System Center Configuration Manager](monitor-certificate-profiles.md) (Come monitorare i profili certificato in System Center Configuration Manager)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+[System Center Configuration Manager で証明書プロファイルを監視する方法](monitor-certificate-profiles.md)

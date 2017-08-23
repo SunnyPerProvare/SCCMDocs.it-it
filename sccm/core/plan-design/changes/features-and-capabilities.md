@@ -1,109 +1,102 @@
 ---
-title: "Caratteristiche e funzionalità | Microsoft Docs"
-description: "Informazioni sulle funzionalità di gestione principali di System Center Configuration Manager."
+title: "特徴と機能 | Microsoft Docs"
+description: "System Center Configuration Manager の主な管理機能について説明します。"
 ms.custom: na
 ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5d388399-07ca-431c-a9b2-56c69771aa87
-caps.latest.revision: 18
-caps.handback.revision: 0
+caps.latest.revision: "18"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 53b27dcb5c8bb670556fe4cee9e990619a9a63e9
 ms.openlocfilehash: 4691f43dccdf73936107f4635321897b9779bead
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="features-and-capabilities-of-system-center-configuration-manager"></a>Caratteristiche e funzionalità di System Center Configuration Manager
+# <a name="features-and-capabilities-of-system-center-configuration-manager"></a>System Center Configuration Manager の特徴と機能
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Di seguito sono descritte le funzionalità di gestione principali di System Center Configuration Manager. Poiché ogni funzionalità ha requisiti diversi, le funzionalità che si intende usare potrebbero influire sulla struttura e l'implementazione della gerarchia di Configuration Manager. Se, ad esempio, si desidera distribuire il software nei dispositivi della gerarchia, è necessario installare il ruolo del sistema del sito del punto di distribuzione.  
+System Center Configuration Manager の主な管理機能について次に説明します。 機能ごとに個別の前提条件があり、使用する機能が Configuration Manager 階層の設計と実装に影響する可能性があります。 たとえば、階層内のデバイスにソフトウェアを展開する場合、配布ポイント サイト システムの役割をインストールする必要があります。  
 
- Per altre informazioni sulla pianificazione e l'installazione di Configuration Manager per supportare queste funzionalità di gestione nell'ambiente, vedere [Get ready for System Center Configuration Manager](../../../core/plan-design/get-ready.md) (Preparativi per System Center Configuration Manager).  
+ ご使用の環境でこれらの管理機能がサポートされるように Configuration Manager の計画とインストールを行う方法の詳細については、「[System Center Configuration Manager の準備](../../../core/plan-design/get-ready.md)」をご覧ください。  
 
- **Gestione delle applicazioni**  
+ **アプリケーション管理**  
 
- Fornisce un set di strumenti e risorse che consentono di creare, gestire, distribuire e monitorare le applicazioni in una gamma di diversi dispositivi gestiti. Configuration Manager offre anche strumenti che consentono di proteggere i dati aziendali contenuti nelle app dell'utente. Vedere [Introduction to application management](/sccm/apps/understand/introduction-to-application-management) (Introduzione alla gestione delle applicazioni).
+ アプリケーションの作成、管理、展開、および監視に役立つ一連のツールとリソースを管理対象のさまざまなデバイスに提供します。 さらに、Configuration Manager にはユーザーのアプリ内で会社のデータを保護するのに役立つツールも用意されています。 「[アプリケーション管理の概要](/sccm/apps/understand/introduction-to-application-management)」をご覧ください。
 
- **Accesso alle risorse aziendali**  
+ **会社のリソースへのアクセス**  
 
- Offre un insieme di strumenti e risorse che consentono di dare agli utenti dell'organizzazione accesso in remoto ai dati e alle applicazioni. Questi strumenti includono profili Wi-Fi, profili VPN, profili del certificato e l'accesso condizionale a Exchange e SharePoint Online. Vedere [Protect data and site infrastructure with System Center Configuration Manager](../../../protect/understand/protect-data-and-site-infrastructure.md) (Proteggere i dati e l'infrastruttura del sito con System Center Configuration Manager) e [Manage access to services in System Center Configuration Manager](../../../protect/deploy-use/manage-access-to-services.md) (Gestire l'accesso ai servizi in System Center Configuration Manager).  
+ 組織内のユーザーがリモートの場所からデータとアプリケーションにアクセスできるようにするための、ツールのセットとリソースを提供します。 これらのツールには、Wi-Fi プロファイル、VPN プロファイル、証明書プロファイル、Exchange および SharePoint へのオンラインでの条件付きアクセスが含まれます。 「[System Center Configuration Manager でのデータとサイト インフラストラクチャの保護](../../../protect/understand/protect-data-and-site-infrastructure.md)」と「[System Center Configuration Manager でサービスへのアクセスを管理する](../../../protect/deploy-use/manage-access-to-services.md)」をご覧ください。  
 
- **Impostazioni di conformità**  
+ **コンプライアンス設定**  
 
- Offre un set di strumenti e risorse che consentono di valutare, tenere traccia e correggere la conformità della configurazione dei dispositivi client nell'azienda. Inoltre, è possibile usare le impostazioni di conformità per configurare una gamma di funzionalità e impostazioni di sicurezza nei dispositivi gestiti. Vedere [Ensure device compliance with System Center Configuration Manager](../../../compliance/understand/ensure-device-compliance.md) (Garantire la conformità dei dispositivi con System Center Configuration Manager).  
+ 企業内のクライアント デバイスの構成対応状態を評価、追跡、および修復するのに役立つ一連のツールとリソースを提供します。 さらに、コンプライアンス設定を使用すると、管理対象デバイスでさまざまな機能とセキュリティ設定を構成できます。 「[System Center Configuration Manager でのデバイス コンプライアンスの確認](../../../compliance/understand/ensure-device-compliance.md)」をご覧ください。  
 
  **Endpoint Protection**  
 
- Offre sicurezza, antimalware e gestione di Windows Firewall per i computer dell'azienda. Vedere [Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  
+ 企業内のコンピューターにセキュリティ、マルウェア対策、および Windows ファイアウォール管理を提供します。 「[System Center Configuration Manager での Endpoint Protection](../../../protect/deploy-use/endpoint-protection.md)」をご覧ください。  
 
- **Inventario**  
+ **インベントリ**  
 
- Offre un set di strumenti per identificare e monitorare gli asset:  
+ 資産の特定と監視に役立つ一連のツールを提供します。  
 
--   **Inventario hardware**: raccoglie informazioni dettagliate sull'hardware dei dispositivi nell'azienda. Vedere [Introduction to hardware inventory in System Center Configuration Manager](../../../core/clients/manage/inventory/introduction-to-hardware-inventory.md) (Introduzione all'inventario hardware in System Center Configuration Manager).  
+-   **ハードウェア インベントリ**: 社内のデバイスのハードウェアに関する詳細情報を収集します。 「[System Center Configuration Manager のハードウェア インベントリの概要](../../../core/clients/manage/inventory/introduction-to-hardware-inventory.md)」をご覧ください。  
 
--   **Inventario software**: raccoglie e segnala le informazioni sui file archiviati sui computer client dell'organizzazione. Vedere [Introduction to software inventory in System Center Configuration Manager](../../../core/clients/manage/inventory/introduction-to-software-inventory.md) (Introduzione all'inventario software in System Center Configuration Manager).  
+-   **ソフトウェア インベントリ**: 組織内のクライアント コンピューターに保存されているファイルに関する情報を収集して報告します。 「[System Center Configuration Manager のソフトウェア インベントリの概要](../../../core/clients/manage/inventory/introduction-to-software-inventory.md)」をご覧ください。  
 
--   **Asset Intelligence**: offre strumenti per raccogliere i dati di inventario e per monitorare l'utilizzo delle licenze software nell'azienda. Vedere [Introduction to Asset Intelligence in System Center Configuration Manager](../../../core/clients/manage/asset-intelligence/introduction-to-asset-intelligence.md) (Introduzione ad Asset Intelligence in System Center Configuration Manager).  
+-   **資産インテリジェンス**: インベントリ データを収集し、社内のソフトウェア ライセンスの使用状況を監視するためのツールを提供します。 「[System Center Configuration Manager の資産インテリジェンスの概要](../../../core/clients/manage/asset-intelligence/introduction-to-asset-intelligence.md)」をご覧ください。  
 
-**Gestione dei dispositivi mobili con Microsoft Intune**  
+**Microsoft Intune を使用したモバイル デバイスの管理**  
 
- È possibile usare Configuration Manager per gestire dispositivi iOS, Android (incluso Samsung KNOX Standard), Windows Phone e Windows con il servizio Microsoft Intune in Internet.
+ Configuration Manager を使用すると、インターネット経由で Microsoft Intune サービスを利用して、iOS、Android (Samsung KNOX Standard など)、Windows Phone、および Windows デバイスを管理することができます。
 
- Anche se si usa il servizio Intune, le attività di gestione vengono completate usando il ruolo del sistema del sito del punto di connessione del servizio disponibile tramite la console Configuration Manager. Vedere [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md) (Gestione dei dispositivi mobili (MDM) ibrida con System Center Configuration Manager e Microsoft Intune).  
+ Intune サービスを使用しますが、管理作業は Configuration Manager コンソール経由で使用可能なサービス接続ポイントのサイト システムの役割を使って実施します。 「[System Center Configuration Manager と Microsoft Intune を使用するハイブリッド モバイル デバイス管理 (MDM)](../../../mdm/understand/hybrid-mobile-device-management.md)」をご覧ください。  
 
- **Gestione dei dispositivi mobili locale**  
+ **オンプレミス モバイル デバイス管理**  
 
- Registra e gestisce i PC e i dispositivi mobili usando l'infrastruttura di Configuration Manager locale e la funzionalità di gestione integrata nelle piattaforme per dispositivi (anziché fare affidamento su un client di Configuration Manager installato separatamente). Attualmente supporta la gestione dei dispositivi Windows 10 Enterprise e Windows 10 Mobile. Vedere [Manage mobile devices with on-premises infrastructure in System Center Configuration Manager](../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md) (Gestire i dispositivi mobili con l'infrastruttura locale in System Center Configuration Manager).  
+ (個別にインストールされている Configuration Manager クライアントではなく) デバイス プラットフォームに組み込まれたオンプレミスの Configuration Manager インフラストラクチャと管理機能を使用して、PC とモバイル デバイスを登録および管理します。 現時点で、Windows 10 Enterprise および Windows 10 Mobile デバイスの管理をサポートしています。 「[System Center Configuration Manager でオンプレミス インフラストラクチャを使用したモバイル デバイスの管理](../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md)」をご覧ください。  
 
- **Distribuzione del sistema operativo:**  
+ **オペレーティング システムの展開**  
 
- Offre uno strumento per creare immagini del sistema operativo. È quindi possibile usare queste immagini per distribuire i sistemi operativi nei computer, usando l'avvio PXE o supporti di avvio, ad esempio un set di CD, DVD o unità flash USB. Si noti che questo vale per i computer gestiti da Configuration Manager, nonché per i computer non gestiti. Vedere [Introduction to operating system deployment in System Center Configuration Manager](../../../osd/understand/introduction-to-operating-system-deployment.md) (Introduzione alla distribuzione del sistema operativo in System Center Configuration Manager).  
+ オペレーティング システム イメージを作成するためのツールを提供します。 これらのイメージを使用し、PXE ブートまたは CD セット、DVD、USB フラッシュ デバイスなどの起動可能メディアを用いて、コンピューターにオペレーティング システムを展開できます。 これは、Configuration Manager で管理されているコンピューターと、管理されていないコンピューターに適用されることに注意してください。 「[System Center Configuration Manager のオペレーティング システムの展開の概要](../../../osd/understand/introduction-to-operating-system-deployment.md)」をご覧ください。  
 
- **Risparmio energia**  
+ **電源管理**  
 
- Offre un set di strumenti e risorse utilizzabili per gestire e monitorare il consumo di energia dei computer client nell'azienda. Vedere [Introduction to power management in System Center Configuration Manager](../../../core/clients/manage/power/introduction-to-power-management.md) (Introduzione al risparmio energia in System Center Configuration Manager).  
+ 企業内のクライアント コンピューターの電力消費を管理および監視するために使用する一連のツールとリソースを提供します。 「[System Center Configuration Manager の電源管理の概要](../../../core/clients/manage/power/introduction-to-power-management.md)」をご覧ください。  
 
- **Query**  
+ **クエリ**  
 
- Offre uno strumento per recuperare informazioni sulle risorse nella gerarchia e informazioni sui dati di inventario e sui messaggi di stato. È quindi possibile usare queste informazioni per creare report o definire le raccolte di dispositivi o utenti per le impostazioni di distribuzione e configurazione del software. Vedere [Introduction to queries in System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md) (Introduzione alle query in System Center Configuration Manager).  
+ 階層内のリソースに関する情報、およびインベントリ データとステータス メッセージに関する情報を取得するためのツールを提供します。 この情報は、レポートに使用したり、ソフトウェア展開や構成設定でデバイスやユーザーのコレクションを定義したりするために使用できます。 「[System Center Configuration Manager のクエリの概要](../../../core/servers/manage/introduction-to-queries.md)」をご覧ください。  
 
- **Profili di connessione remota**  
+ **リモート接続プロファイル**  
 
- Offre un set di strumenti e risorse che consentono di creare, distribuire e monitorare le impostazioni di connessione remota nei dispositivi dell'organizzazione. Distribuendo queste impostazioni, viene ridotto al minimo l'impegno richiesto agli utenti per connettersi ai computer nella rete aziendale. Vedere [Working with remote connection profiles in System Center Configuration Manager](/sccm/compliance/deploy-use/create-remote-connection-profiles) (Uso di profili di connessione remota in System Center Configuration Manager).  
+ 組織のデバイスのリモート接続設定を作成、展開、監視する際に役立つ、一連のツールとリソースを提供します。 これらの設定を展開することにより、ユーザーが会社のネットワークにある自分のコンピューターに接続するときの手間をできるだけ省きます。 「[System Center Configuration Manager でのリモート接続プロファイルの操作](/sccm/compliance/deploy-use/create-remote-connection-profiles)」をご覧ください。  
 
- **Elementi di configurazione di profili e dati utente**  
+ **ユーザー データとプロファイル構成項目**  
 
- Gli elementi di configurazione di profili e dati utente in Configuration Manager contengono le impostazioni che consentono di gestire il reindirizzamento delle cartelle, i file offline e i profili mobili nei computer che eseguono Windows 8 e versioni successive per gli utenti della gerarchia. Vedere [Working with user data and profiles configuration items in System Center Configuration Manager](/sccm/compliance/deploy-use/create-user-data-and-profiles-configuration-items) (Uso degli elementi di configurazione di profili e dati utente in System Center Configuration Manager).  
+ Configuration Manager のユーザー データとプロファイル構成項目には、階層内のユーザーの Windows 8 以降を実行するコンピューターのフォルダー リダイレクト、オフライン ファイル、およびローミング プロファイルを管理できる設定が含まれています。 「[System Center Configuration Manager でのユーザー データとプロファイル構成アイテムの操作](/sccm/compliance/deploy-use/create-user-data-and-profiles-configuration-items)」をご覧ください。  
 
- **Controllo remoto**  
+ **リモート コントロール**  
 
- Offre strumenti per amministrare in remoto i computer client dalla console di Configuration Manager. Vedere [Introduction to remote control in System Center Configuration Manager](../../../core/clients/manage/remote-control/introduction-to-remote-control.md) (Introduzione al controllo remoto in System Center Configuration Manager).  
+ Configuration Manager コンソールからクライアント コンピューターをリモート管理するためのツールを提供します。 「[System Center Configuration Manager のリモート コントロールの概要](../../../core/clients/manage/remote-control/introduction-to-remote-control.md)」をご覧ください。  
 
- **Creazione di report**  
+ **レポート**  
 
- Offre un set di strumenti e risorse che consentono di usare le funzionalità di creazione di report avanzate di SQL Server Reporting Services dalla console di Configuration Manager. Vedere [Introduction to reporting in System Center Configuration Manager](../../../core/servers/manage/introduction-to-reporting.md) (Introduzione alla creazione di report in System Center Configuration Manager).  
+ Configuration Manager コンソールから SQL Server Reporting Services の高度なレポート機能を使用するための一連のツールとリソースを提供します。 「[System Center Configuration Manager のレポートの概要](../../../core/servers/manage/introduction-to-reporting.md)」をご覧ください。  
 
- **Controllo del software**  
+ **ソフトウェア使用状況測定**  
 
- Offre strumenti per monitorare e raccogliere i dati di utilizzo del software dai client di Configuration Manager. Vedere [Monitorare l'utilizzo delle app con la misurazione del software in System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
+ 構成マネージャー クライアントからソフトウェア使用状況データを監視および収集するためのツールを提供します。 「[System Center Configuration Manager のソフトウェア使用状況測定でアプリの使用状況を監視する](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md)」を参照してください。  
 
- **Aggiornamenti software**  
+ **ソフトウェア更新プログラム**  
 
- Offre un set di strumenti e risorse che consentono di gestire, distribuire e monitorare gli aggiornamenti software nell'azienda. Vedere [Introduction to software updates in System Center Configuration Manager](/sccm/sum/understand/software-updates-introduction) (Introduzione agli aggiornamenti software in System Center Configuration Manager).  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
-
+ 企業内のソフトウェアの更新を管理、展開、および監視するための一連のツールとリソースを提供します。 「[System Center Configuration Manager のソフトウェア更新プログラムの概要](/sccm/sum/understand/software-updates-introduction)」をご覧ください。  

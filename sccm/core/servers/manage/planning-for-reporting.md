@@ -1,75 +1,68 @@
 ---
-title: Pianificazione della creazione di report | Microsoft Docs
-description: "È importante pianificare la creazione di report in Configuration Manager a partire dalla installazione fino alla sicurezza e alla larghezza di banda di rete."
+title: "レポートの計画 | Microsoft Docs"
+description: "インストールの詳細からセキュリティとネットワーク帯域幅まで、Configuration Manager でレポートを計画することが重要です。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: ff920c84-d5c8-458c-b67f-bc7219b05690
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
 ms.openlocfilehash: 119f501057bf44e483be31db20b88326b3d05ebb
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="planning-for-reporting-in-system-center-configuration-manager"></a>Pianificazione per la creazione di report in System Center Configuration Manager
+# <a name="planning-for-reporting-in-system-center-configuration-manager"></a>System Center Configuration Manager のレポートの計画
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-La creazione di report in System Center Configuration Manager offre un set di strumenti e risorse che consentono di usare le stesse funzionalità avanzate di SQL Server Reporting Services. Usare le sezioni seguenti per la pianificazione della creazione di report in Configuration Manager.  
+System Center Configuration Manager のレポート機能には、SQL Reporting Services のレポート機能を使用するための一連のツールとリソースが搭載されています。 Configuration Manager のレポートを計画するときは、次のセクションを参考にしてください。  
 
-##  <a name="a-namebkmkinstallreportingservicespointa-determine-where-to-install-the-reporting-services-point"></a><a name="BKMK_InstallReportingServicesPoint"></a> Determinare il percorso di installazione del punto di Reporting Services  
- Quando si eseguono i report di Configuration Manager in un sito, questi hanno accesso alle informazioni incluse nel database del sito a cui si connettono. Utilizzare le seguenti sezioni per determinare il percorso di installazione del punto di Reporting Services e l'origine dati da utilizzare.  
-
-> [!NOTE]  
->  Per altre informazioni sulla pianificazione dei sistemi del sito in Configuration Manager, vedere [Aggiungere ruoli di sistema del sito](../deploy/configure/add-site-system-roles.md).  
-
-###  <a name="a-namebkmksupportedsiteserversa-supported-site-system-servers"></a><a name="BKMK_SupportedSiteServers"></a> Server di sistema del sito supportati  
- È possibile installare il punto di Reporting Services in un sito di amministrazione centrale e in siti primari, oltre che in più sistemi di sito in un sito e in altri siti presenti nella gerarchia. Il punto di Reporting Services non è supportato nei siti secondari. Il primo punto di Reporting Services in un sito viene configurato come server di report predefinito. Anche se è possibile aggiungere più punti di Reporting Services in un sito, viene usato attivamente il server di report predefinito in ogni sito per i report di Configuration Manager. È possibile installare il punto di Reporting Services nel server del sito o in un sistema del sito remoto. Tuttavia, per motivi di prestazioni è consigliabile utilizzare Reporting Services in un server di sistema del sito remoto.  
-
-###  <a name="a-namebkmkdatareplicationa-data-replication-considerations"></a><a name="BKMK_DataReplication"></a> Considerazioni sulla replica dei dati  
- Configuration Manager classifica i dati che replica come dati globali o come dati del sito. I dati globali si riferiscono a oggetti creati dagli utenti amministratori e che vengono replicati in tutti i siti della gerarchia, mentre i siti secondari ricevono solo un sottoinsieme di dati globali. Esempi di dati globali includono distribuzioni e aggiornamenti software, raccolte e ambiti di protezione amministrazione basata sui ruoli. I dati del sito fanno riferimento a informazioni operative create dai siti primari di Configuration Manager e dai client connessi ai siti primari. I dati del sito vengono replicati nel sito di amministrazione centrale, ma non in altri siti primari. Esempi di dati del sito includono dati dell'inventario hardware, messaggi di stato, avvisi e i risultati delle raccolte basate su query. I dati del sito possono essere visualizzati solo nel sito di amministrazione centrale e nel sito primario da cui provengono i dati.  
-
- Tenere presenti i seguenti fattori per determinare dove installare i punti di Reporting Services:  
-
--   Un punto di Reporting Services con il database del sito di amministrazione centrale come origine dati per i report ha accesso a tutti i dati globali e del sito presenti nella gerarchia di Configuration Manager. Se sono necessari report che contengano dati del sito per più siti in una gerarchia, prendere in considerazione l'installazione del punto di Reporting Services in un sistema del sito nel sito di amministrazione centrale e usare il database del sito di amministrazione centrale come origine dati per i report.  
-
--   Un punto di Reporting Services con il database del sito primario figlio come origine dei dati per i report ha accesso ai dati globali e ai dati del sito solo per il sito primario locale e per qualsiasi sito secondario figlio. I dati di sito per altri siti primari nella gerarchia di Configuration Manager non vengono replicati nel sito primario. Reporting Services non può pertanto accedere a tali dati. Se sono necessari report che contengano dati del sito per un sito primario specifico o per dati globali ma non si vuole che l'utente del report abbia accesso ai dati del sito da altri siti primari, installare un punto di Reporting Services in un sistema del sito nel sito primario e usare il database del sito primario come origine dati per i report.  
-
-###  <a name="a-namebkmknetworkbandwidtha-network-bandwidth-considerations"></a><a name="BKMK_NetworkBandwidth"></a> Considerazioni sulla larghezza di banda di rete  
- I server del sistema del sito all'interno dello stesso sito comunicano con tutti gli altri utilizzando SMB (Server Message Block), HTTP o HTTPS a seconda della configurazione del sito. Poiché queste comunicazioni non vengono gestite e si possono verificare in qualsiasi momento senza il controllo della larghezza di banda di rete, esaminare la larghezza di banda di rete disponibile prima di installare il ruolo del punto di Reporting Services in un sistema del sito.  
+##  <a name="BKMK_InstallReportingServicesPoint"></a> レポート サービス ポイントのインストール場所を決定する  
+ サイトで Configuration Manager レポートを実行するとき、レポートは接続先のサイト データベース内の情報にアクセスできます。 次のセクションを参考に、レポート サービス ポイントのインストール場所と使用するデータ ソースを決定してください。  
 
 > [!NOTE]  
->  Per altre informazioni sulla pianificazione dei sistemi del sito, vedere [Aggiungere ruoli di sistema del sito](../deploy/configure/add-site-system-roles.md).  
+>  サイト システムの計画の詳細については、「[サイト システムの役割を追加する](../deploy/configure/add-site-system-roles.md)」を参照してください。  
 
-##  <a name="a-namebkmkrolebaseadministrationa-planning-for-role-based-administration-for-reports"></a><a name="BKMK_RoleBaseAdministration"></a> Pianificazione dell'amministrazione basata su ruoli per i report  
- La sicurezza dei report è simile alla sicurezza di altri oggetti in Configuration Manager, in cui è possibile assegnare autorizzazioni e ruoli di sicurezza agli utenti amministratori. Gli utenti amministratori possono solo eseguire e modificare i report per cui dispongono dei privilegi di protezione appropriati. Per eseguire report nella console di Configuration Manager, è necessario avere il diritto di **Lettura** per l'autorizzazione **Sito** e le autorizzazioni configurate per oggetti specifici.  
+###  <a name="BKMK_SupportedSiteServers"></a> サポートされるサイト システム サーバー  
+ レポート サービス ポイントは、中央管理サイトとプライマリ サイト、および、階層内の単一サイトとその他のサイトの複数のサイト システムにインストールできます。 レポート サービス ポイントはセカンダリ サイトではサポートされません。 サイトの最初のレポート サービス ポイントが既定のレポート サーバーとして構成されます。 1 つのサイトに複数のレポート サービス ポイントをインストールすることは可能ですが、各サイトの既定のレポート サーバーが、Configuration Manager レポート用に優先して使用されます。 レポート サービス ポイントは、サイト サーバーまたはリモート サイト システムにインストールすることができます。 ただし、パフォーマンス上の最善の方法として、リモート サイト システム サーバーでは Reporting Services を使用してください。  
 
- A differenza di altri oggetti in Configuration Manager, i privilegi di sicurezza impostati per gli utenti amministratori nella console di Configuration Manager devono essere tuttavia configurati in Reporting Services. Quando si configurano i privilegi di sicurezza nella console di Configuration Manager, il punto di Reporting Services si connette a Reporting Services e imposta le autorizzazioni appropriate per i report. Ad esempio, il ruolo di sicurezza **Amministratore aggiornamento software** dispone delle autorizzazioni **Esegui report** e **Modifica report** ad esso associati. Gli utenti amministratori a cui viene assegnato solo il ruolo **Amministratore aggiornamento software** possono solo eseguire e modificare i report per gli aggiornamenti software. I report per gli altri oggetti non vengono visualizzati nella console di Configuration Manager. L'eccezione a questo regola è che alcuni report non sono associati a oggetti specifici a protezione diretta di Configuration Manager. Per tali report, l'utente amministratore deve disporre del diritto di **Lettura** per l'autorizzazione **Sito** per eseguire i report e del diritto **Modifica** per l'autorizzazione **Sito** per modificare i report.  
+###  <a name="BKMK_DataReplication"></a> データ レプリケーションに関する注意事項  
+ Configuration Manager は、レプリケートするデータをグローバル データまたはサイト データとして分類します。 グローバル データは、管理ユーザーにより作成され、階層内のすべてのサイトに対してレプリケートされるオブジェクトを対象としますが、セカンダリ サイトはグローバル データのサブセットのみを受信します。 グローバル データの例としては、ソフトウェアの展開、ソフトウェア更新プログラム、コレクション、役割に基づいた管理のセキュリティ スコープがあります。 サイト データとは、Configuration Manager のプライマリ サイトと、プライマリ サイトに報告するクライアントが作成する処理情報を指します。 サイト データは、中央管理サイトにレプリケートされますが、他のプライマリ サイトにはレプリケートされません。 サイト データの例としては、ハードウェア インベントリ データ、ステータス メッセージ、アラート、クエリによって生成されるコレクションがあります。 サイト データは、中央管理サイトと、データの作成元のプライマリ サイトだけで見ることができます。  
 
- I report sono completamente abilitati per l'amministrazione basata su ruoli. I dati per tutti i report inclusi in Configuration Manager vengono filtrati in base alle autorizzazioni dell'utente amministratore che esegue il report. Gli utenti amministratori con ruoli specifici possono solo visualizzare le informazioni definite per i loro ruoli.  
+ レポート サービス ポイントのインストール場所を決定するにあたり、以下の要素を考慮してください。  
 
- Per altre informazioni sui diritti di sicurezza per la creazione di report, vedere [Configurare la creazione di report](configuring-reporting.md).  
+-   中央管理サイトのデータベースをレポート データ ソースとするレポート サービス ポイントは、グローバル データと Configuration Manager 階層内のすべてのサイト データにアクセスできます。 階層内の複数サイトのサイト データを含むレポートが必要な場合は、レポート サービス ポイントを中央管理サイトのサイト システムにインストールし、中央管理サイトのデータベースをレポート データ ソースとして使用することを検討してください。  
 
- Per altre informazioni sull'amministrazione basata su ruoli in Configuration Manager, vedere [Configurare l'amministrazione basata su ruoli](../deploy/configure/configure-role-based-administration.md).  
+-   子プライマリ サイトのデータベースをレポート データ ソースとするレポート サービス ポイントは、グローバル データと、ローカルのプライマリ サイトと子セカンダリ サイトのみのサイト データにアクセスできます。 Configuration Manager 階層内のその他のプライマリ サイトのサイト データはこのプライマリ サイトに対してレプリケートされないため、Reporting Services がアクセスすることはできません。 特定のプライマリ サイトのサイト データまたはグローバル データを含むレポートが必要であり、レポート ユーザーにその他のプライマリ サイトのサイト データへのアクセスを許可したくない場合は、特定のプライマリ サイトのサイト システムにレポート サービス ポイントをインストールし、そのプライマリ サイトのデータベースをレポート データ ソースとして使用してください。  
 
-## <a name="next-steps"></a>Passaggi successivi  
- Usare gli argomenti aggiuntivi seguenti per la pianificazione della creazione di report in Configuration Manager:  
+###  <a name="BKMK_NetworkBandwidth"></a> ネットワークの帯域幅に関する考慮事項  
+ 同じサイト内のサイト システム サーバーは、サイトの構成方法に応じて、サーバー メッセージ ブロック (SMB)、HTTP、HTTPS のいずれかを使用して相互に通信します。 この通信は管理対象外であり、ネットワークの帯域幅の制御なしに随時生じ得るため、レポート サービス ポイントの役割をサイト システムにインストールする前に使用可能なネットワーク帯域幅を確認しておいてください。  
 
--   [Prerequisiti per la creazione di report in System Center Configuration Manager](../../../core/servers/manage/prerequisites-for-reporting.md)  
--   [Procedure consigliate per la creazione di report in System Center Configuration Manager](../../../core/servers/manage/best-practices-for-reporting.md)  
+> [!NOTE]  
+>  サイト システムの計画の詳細については、「[サイト システムの役割を追加する](../deploy/configure/add-site-system-roles.md)」を参照してください。  
 
+##  <a name="BKMK_RoleBaseAdministration"></a> レポートのロール ベース管理の計画  
+ レポートのセキュリティは、セキュリティ ロールとアクセス許可を管理ユーザーに割り当てることができる Configuration Manager のその他のオブジェクトと同様に機能します。 管理ユーザーは、適切なセキュリティ権限が付与されたレポートのみの実行と変更が可能です。 Configuration Manager コンソールでレポートを実行するには、**サイト** の **読み取り** 権限アクセス許可と特定のオブジェクト用に構成されたアクセス許可が必要です。  
 
+ ただし、Configuration Manager のその他のオブジェクトとは異なり、Configuration Manager コンソールで管理ユーザー向けに設定するセキュリティ権限は、Reporting Services でも構成する必要があります。 Configuration Manager コンソールでセキュリティ権限を構成すると、レポート サービス ポイントは Reporting Services に接続して、レポート用に適切なアクセス許可を設定します。 たとえば、 **ソフトウェア更新マネージャー** セキュリティ ロールには、 **レポートの実行** と **レポートの変更** アクセス許可が関連付けられます。 "ソフトウェア更新マネージャー" の役割のみが割り当てられた管理ユーザーは、ソフトウェア更新プログラムのレポートの実行と変更のみを行うことができます。 **** その他のオブジェクトのレポートは Configuration Manager コンソールに表示されません。 例外として、特定の Configuration Manager の保護可能なオブジェクトが関連付けられていないレポートがあります。 これらのレポートについて、管理ユーザーには、レポートを実行する場合は **サイト** の **読み取り** 権限アクセス許可が、レポートを変更する場合は **サイト** の **変更** 権限アクセス許可が必要です。  
 
-<!--HONumber=Dec16_HO3-->
+ レポートはロール ベース管理に対応しています。 Configuration Manager に含まれているすべてのレポートのデータが、レポートを実行する管理ユーザーのアクセス許可に基づいてフィルター処理されます。 特定の役割を持つ管理ユーザーに対して、個々の役割に定義されている情報のみ表示できます。  
 
+ レポートのセキュリティ権限について詳しくは、「[Configure reporting](configuring-reporting.md)」(レポートを構成する) を参照してください。  
 
+ Configuration Manager の役割に基づいた管理の詳細については、「[Configure role-based administration](../deploy/configure/configure-role-based-administration.md)」(役割に基づいた管理の構成) を参考にしてください。  
+
+## <a name="next-steps"></a>次のステップ  
+ Configuration Manager のレポートを計画する際には、次の補足トピックを参考にしてください。  
+
+-   [System Center Configuration Manager のレポートの前提条件](../../../core/servers/manage/prerequisites-for-reporting.md)  
+-   [System Center Configuration Manager のレポートのベスト プラクティス](../../../core/servers/manage/best-practices-for-reporting.md)  

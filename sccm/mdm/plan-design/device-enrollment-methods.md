@@ -1,88 +1,84 @@
 ---
-title: Metodi di registrazione dei dispositivi per MDM ibrida | Microsoft Docs
-description: Metodi di registrazione dei dispositivi per una MDM ibrida.
+title: "ハイブリッド MDM のデバイス登録方法 | Microsoft Docs"
+description: "ハイブリッド MDM のデバイス登録方法です。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: b81d06dc-3844-4117-9937-16732a227994
-caps.latest.revision: 9
-caps.handback.revision: 0
+caps.latest.revision: "9"
+caps.handback.revision: "0"
 author: Mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: c38b3bae681821a886bfdab66d71cd6067adc425
-ms.contentlocale: it-it
-ms.lasthandoff: 03/06/2017
-
-
+ms.openlocfilehash: e09e639e939b846cdc162681f9d7bd4c39cd6fbf
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="overview-of-device-enrollment-methods"></a>Panoramica dei metodi di registrazione dei dispositivi
+# <a name="overview-of-device-enrollment-methods"></a>デバイス登録方法の概要
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Dopo aver esteso Configuration Manager con Intune, è possibile registrare e gestire i dispositivi aziendali o concedere agli utenti l'autorizzazione di registrare i dispositivi personali. È anche possibile gestire i dispositivi aziendali con Intune usando Configuration Manager.
+Configuration Manager を Intune を利用して拡張すると、会社所有のデバイスを登録して管理したり、ユーザーに個人デバイスの登録許可を与えたりできます。 Intune を使用する会社所有のデバイスを、Configuration Manager を使用して管理することもできます。
 
-La tabella seguente illustra i metodi di registrazione con le relative funzionalità supportate. Queste funzionalità includono:
-- **Cancellazione**: ripristino delle impostazioni predefinite del dispositivo, con rimozione di tutti i dati. [Ritiro di dispositivi](../deploy-use/wipe-lock-reset-devices.md)
-- **Affinità**: associazione dei dispositivi agli utenti. Obbligatoria per la gestione di applicazioni per dispositivi mobili (MAM) e l'accesso condizionale ai dati aziendali. [Affinità utente](../deploy-use/user-affinity-for-hybrid-managed-devices.md)
-- **Blocco**: impedisce agli utenti di rimuovere il dispositivo dal sistema di gestione. Per il blocco dei dispositivi iOS è richiesta la modalità con supervisione. [Blocco remoto](../deploy-use/wipe-lock-reset-devices.md#remote-lock)
+次の表は、登録方法とサポートされている機能をまとめたものです。 含まれる機能:
+- **ワイプ** - デバイスを出荷時の設定に戻します。すべてのデータが削除されます。 [デバイスをインベントリから削除する](../deploy-use/wipe-lock-reset-devices.md)
+- **アフィニティ** - ユーザーとデバイスを関連付けます。 モバイル アプリケーション管理 (MAM) と会社データへの制限付きアクセスのために必要です。 [ユーザー アフィニティ](../deploy-use/user-affinity-for-hybrid-managed-devices.md)
+- **ロック** ユーザーが管理からデバイスを削除できないようにします。 iOS デバイスの場合、ロックには監視モードが必要になります。 [リモート ロック](../deploy-use/wipe-lock-reset-devices.md#remote-lock)
 
-**Metodi di registrazione iOS**
+**iOS 登録方法**
 
-| **Metodo** |    **Cancellazione** |    **Affinità**    |    **Blocco** | **Informazioni dettagliate** |
+| **方法** |  **ワイプ** |  **アフィニティ**    |   **ロック** | **詳細** |
 |:---:|:---:|:---:|:---:|:---:|
-|**[BYOD](#byod)** | No|    Yes |    No | [altro](../deploy-use/enable-platform-enrollment.md)|
-|**[DEM](#dem)**|    No |No |No    | [altro](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
-|**[DEP](#dep)**|    Sì |    Facoltativo |    Facoltativo|[altro](../deploy-use/ios-device-enrollment-program-for-hybrid.md)|
-|**[USB-SA](#usb-sa)**|    Sì |    Facoltativo |    No| [altro](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md)|
+|**[BYOD](#byod)** | いいえ|    [はい] |   × | [詳細](../deploy-use/enable-platform-enrollment.md)|
+|**[DEM](#dem)**|   いいえ |いいえ |×  | [詳細](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
+|**[DEP](#dep)**|   ○ |   オプション |  オプション|[詳細](../deploy-use/ios-device-enrollment-program-for-hybrid.md)|
+|**[USB-SA](#usb-sa)**| ○ |   オプション |  いいえ| [詳細](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md)|
 
-**Metodi di registrazione per Android e Windows**
+**Windows と Android の登録方法**
 
-| **Metodo** |    **Cancellazione** |    **Affinità**    |    **Blocco** | **Informazioni dettagliate**|
+| **方法** |  **ワイプ** |  **アフィニティ**    |   **ロック** | **詳細**|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|**[BYOD](#byod)** | No|    Yes |    No | [altro](../deploy-use/enroll-hybrid-windows.md)|
-|**[DEM](#dem)**|    No |No |No    |[altro](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
+|**[BYOD](#byod)** | いいえ|    [はい] |   × | [詳細](../deploy-use/enroll-hybrid-windows.md)|
+|**[DEM](#dem)**|   いいえ |いいえ |×  |[詳細](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
 
-Per una serie di domande e risposte utili per individuare il metodo corretto, vedere [Scegliere come registrare i dispositivi mobili](/intune/get-started/choose-how-to-enroll-devices1).
+適切な方法を見つけるのに役立つ質問集が「[Choose how to enroll devices](/intune/get-started/choose-how-to-enroll-devices1)」 (デバイスの登録方法を選択する) にあります。
 
 ## <a name="byod"></a>BYOD
-Gli utenti BYOD (Bring Your Own Device) installano l'app del portale aziendale e registrano il dispositivo di loro proprietà. Ciò consente agli utenti di connettersi alla rete aziendale, entrando a far parte del dominio o di Azure Active Directory. L'attivazione della registrazione BYOD costituisce un prerequisito per molti scenari di dispositivi di proprietà dell'azienda per la maggior parte delle piattaforme. Vedere [Setup hybrid MDM](../deploy-use/setup-hybrid-mdm.md) (Configurare la gestione di dispositivi mobili ibrida). ([Torna alla tabella](#overview-of-device-enrollment-methods))
+"Bring your own device" (BYOD) ユーザーは会社のポータル アプリをインストールし、自分のデバイスを登録します。 ドメインまたは Azure Active Directory に参加し、会社のネットワークに接続できます。 BYOD 登録を有効にすることは、ほとんどのプラットフォームで、さまざまな COD シナリオの前提条件になります。 「[Setup hybrid MDM](../deploy-use/setup-hybrid-mdm.md)」 (ハイブリッド MDM のセットアップ) を参照してください。 ([テーブルに戻る](#overview-of-device-enrollment-methods))
 
-## <a name="corporate-owned-devices"></a>Dispositivi di proprietà dell'azienda
-I dispositivi di proprietà dell'azienda possono essere gestiti con la console di Configuration Manager. I dispositivi iOS possono essere registrati direttamente tramite strumenti forniti da Apple. Tutti i tipi di dispositivo possono essere registrati da un amministratore o da un responsabile usando il manager di registrazione dispositivi. È anche possibile identificare e contrassegnare come dispositivi di proprietà dell'azienda i dispositivi con numero IMEI e abilitare questo tipo di registrazione.
+## <a name="corporate-owned-devices"></a>企業所有のデバイス
+企業所有のデバイス (COD) は、Configuration Manager コンソールで管理できます。 iOS デバイスは、Apple から提供されるツールを使用して直接登録できます。 デバイス登録マネージャーを利用することで、監理者とマネージャーはあらゆる種類のデバイスを登録できます。 IMEI 番号の付いたデバイスも識別し、会社所有のタグを付け、COD シナリオを実行できます。
 
-[Enroll corporate-owned devices](../deploy-use/enroll-company-owned-devices.md) (Registrare dispositivi di proprietà dell'azienda)
+[企業所有のデバイスの登録](../deploy-use/enroll-company-owned-devices.md)
 
 ### <a name="dem"></a>DEM
-Il manager di registrazione dispositivi è un account utente speciale usato per registrare e gestire più dispositivi di proprietà dell'azienda. I responsabili possono installare il portale aziendale e registrare molti dispositivi senza utente associato. Altre informazioni su [DEM](../deploy-use/enroll-devices-with-device-enrollment-manager.md). ([Torna alla tabella](#overview-of-device-enrollment-methods))
+デバイス登録マネージャーは、複数の会社所有デバイスの登録と管理に使用される特別なユーザー アカウントです。 マネージャーは会社ポータルをインストールし、さまざまユーザーなしデバイスを登録できます。 [DEM の詳細はこちらをご覧ください](../deploy-use/enroll-devices-with-device-enrollment-manager.md)。 ([テーブルに戻る](#overview-of-device-enrollment-methods))
 
 ### <a name="dep"></a>DEP
-La gestione tramite il programma DEP (Device Enrollment Program) di Apple consente di creare e distribuire criteri in modalità wireless ai dispositivi iOS acquistati e gestiti tramite questo programma. Un dispositivo viene registrato quando l'utente lo accende per la prima volta ed esegue Assistente configurazione di iOS. Questo metodo supporta la modalità **iOS Supervised** (Con supervisione iOS), che a sua volta abilita:
-  -    Registrazione bloccata
-  -    Accesso condizionale
-  -    Rilevamento jailbreak
-  -    Gestione per applicazioni mobili
+Apple デバイス登録プログラム (DEP) 管理では、ポリシーを作成したら、DEP で購入し、管理する iOS デバイスに “無線で” 展開できます。 ユーザーがデバイスを初めてオンにし、iOS セットアップ アシスタントを実行すると、デバイスが登録されます。 この方法では **iOS 監視**モードがサポートされていますが、このモードでは次の操作が可能です。
+  - ロック登録
+  - 条件付きアクセス
+  - 脱獄検出
+  - モバイル アプリケーション管理
 
-Altre informazioni su [DEP](../deploy-use/ios-device-enrollment-program-for-hybrid.md). ([Torna alla tabella](#overview-of-device-enrollment-methods))
+[DEP の詳細はこちらをご覧ください](../deploy-use/ios-device-enrollment-program-for-hybrid.md)。 ([テーブルに戻る](#overview-of-device-enrollment-methods))
 
 ### <a name="usb-sa"></a>USB-SA
-Registrazione con Assistente configurazione con connessione USB. L'amministratore crea i criteri e li esporta in Apple Configurator. I dispositivi di proprietà dell'azienda connessi tramite USB vengono preparati con i criteri. L'amministratore deve registrare ogni dispositivo manualmente. Gli utenti ricevono i propri dispositivi ed eseguono Assistente configurazione per registrarli. Questo metodo supporta la modalità **iOS Supervised** (Con supervisione iOS), che a sua volta abilita:
-  -    Accesso condizionale
-  -    Rilevamento jailbreak
-  -    Gestione per applicazioni mobili
+USB 接続、セットアップ アシスタント登録。 管理者はポリシーを作成し、それを Apple Configurator にエクスポートします。 ポリシーにより USB 接続の会社所有デバイスが準備されます。 管理者は、手動で各デバイスを登録する必要があります。 ユーザーはデバイスを受け取り、セットアップ アシスタントを実行し、デバイスを登録します。 この方法では **iOS 監視**モードがサポートされていますが、このモードでは次の操作が可能です。
+  - 条件付きアクセス
+  - 脱獄検出
+  - モバイル アプリケーション管理
 
-Altre informazioni sulla [registrazione tramite Assistente configurazione con Apple Configurator](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md). ([Torna alla tabella](#overview-of-device-enrollment-methods))
+詳細は、「[Setup Assistant enrollment with Apple Configurator](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md)」 (Apple Configurator によるセットアップ アシスタント登録) にあります。 ([テーブルに戻る](#overview-of-device-enrollment-methods))
 
-## <a name="mobile-device-management-with-exchange-activesync-and-configuration-manager"></a>Gestione dei dispositivi mobili con Exchange ActiveSync e Configuration Manager
-I dispositivi mobili non registrati ma connessi a Exchange ActiveSync possono essere gestiti da Intune mediante i criteri di gestione di dispositivi mobili di EAS. Intune usa Exchange Connector per comunicare con EAS, in locale e ospitato nel cloud.
+## <a name="mobile-device-management-with-exchange-activesync-and-configuration-manager"></a>Exchange ActiveSync と Configuration Manager を使用したモバイル デバイス管理
+登録されていないが、Exchange ActiveSync (EAS) に接続するモバイル デバイスは EAS MDM ポリシーを利用することで Intune で管理できます。 Intune は Exchange Connector を利用し、オンプレミスまたはクラウド ホストの EAS と通信します。
 
-[Manage mobile devices with System Center Configuration Manager and Exchange](../deploy-use/manage-mobile-devices-with-exchange-activesync.md) (Gestione di dispositivi mobili con System Center Configuration Manager ed Exchange)
-
+[Exchange ActiveSync および Intune を使用したモバイル デバイス管理](../deploy-use/manage-mobile-devices-with-exchange-activesync.md)

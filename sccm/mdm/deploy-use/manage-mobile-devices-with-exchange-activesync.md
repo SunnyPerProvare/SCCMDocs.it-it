@@ -1,82 +1,79 @@
 ---
-title: Gestire i dispositivi mobili | Microsoft Docs
-description: Gestire i dispositivi mobili usando il connettore Exchange Server in System Center Configuration Manager.
+title: "モバイル デバイスの管理 | Microsoft Docs"
+description: "System Center Configuration Manager で Exchange Server コネクタを使用してモバイル デバイスを管理します。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: aba688d9-fd5b-4c42-8cb4-f7e1b161ef50
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0d6479bcc134103e6005159a8ea295a5f359a436
-ms.openlocfilehash: 4a2b60d893e8d430b107a5bc43ec0748177c27c3
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 44958bc35586f5e57ab3fb59681bfb018d2bd5da
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-mobile-devices-with-system-center-configuration-manager-and-exchange"></a>Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange
+# <a name="manage-mobile-devices-with-system-center-configuration-manager-and-exchange"></a>System Center Configuration Manager と Exchange によるモバイル デバイスの管理
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Usare il connettore Exchange Server in System Center Configuration Manager quando si vuole gestire i dispositivi mobili che si connettono a Exchange Server, in locale oppure online, usando il protocollo Exchange ActiveSync e non è possibile registrarli usando Configuration Manager. È possibile configurare le funzionalità di gestione dei dispositivi mobili di Exchange, come la cancellazione remota dati nel dispositivo e il controllo delle impostazioni per più server Exchange, dalla console di Configuration Manager.  
+Microsoft Exchange ActiveSync プロトコルを使って Exchange Server (社内またはオンライン) に接続するモバイル デバイスを管理したいけれども、Configuration Manager でそのデバイスを登録できない場合は、System Center Configuration Manager の Exchange Server コネクタを使います。 Configuration Manager コンソールから、複数の Exchange サーバー向けにリモート デバイス ワイプおよび設定コントロールといった、Exchange モバイル デバイス管理機能を構成できます。  
 
- ![configmgr&#45;con&#45;exchange](../../mdm/deploy-use/media/configmgr-with-exchange.png "configmgr-con-exchange")  
+ ![configmgr&#45;with&#45;exchange](../../mdm/deploy-use/media/configmgr-with-exchange.png "configmgr-with-exchange")  
 
- Quando si gestiscono i dispositivi mobili usando il connettore Exchange Server, il connettore non installa il client di Configuration Manager nei dispositivi mobili. Pertanto, alcune funzioni di gestione sono limitate. È ad esempio impossibile installare il software in questi dispositivi o utilizzare gli elementi di configurazione per configurarli. Per altre informazioni sulle diverse funzioni di gestione che è possibile usare con Configuration Manager per i dispositivi mobili, vedere [Scegliere una soluzione di gestione dei dispositivi per System Center Configuration Manager](../../core/plan-design/choose-a-device-management-solution.md).  
+ Exchange Server コネクタを使ってモバイル デバイスを管理するときは、モバイル デバイスに Configuration Manager クライアントをインストールしません。 そのため、使用できる管理機能が限られています。 たとえば、管理対象のモバイル デバイスにソフトウェアをインストールしたり、構成項目を使用したりすることはできません。 Configuration Manager でモバイル デバイス用に使用できるさまざまな管理機能の詳細については、「[Choose a device management solution for System Center Configuration Manager](../../core/plan-design/choose-a-device-management-solution.md)」 (System Center Configuration Manager のデバイス管理ソリューションの選択) を参照してください。  
 
 > [!IMPORTANT]  
->  Prima di installare il connettore Exchange Server, confermare il supporto della versione di Microsoft Exchange usata da parte di Configuration Manager. Per altre informazioni, vedere "Exchange Server connector" (Connettore Exchange Server) in [Supported operating systems for sites and clients for System Center Configuration Manager](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers) (Sistemi operativi supportati per siti e client per System Center Configuration Manager).  
+>  Exchange Server コネクタをインストールする前に、使用する Microsoft Exchange のバージョンが Configuration Manager でサポートされているかどうかを確認してください。 詳細については、「[System Center Configuration Manager のサイトおよびクライアントのサポートされるオペレーティング システム](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers)」の「Exchange Server コネクタ」を参照してください。  
 
- Quando si usa il connettore Exchange Server, i dispositivi mobili possono essere gestiti dalle impostazioni configurate in Configuration Manager invece di essere gestiti dai criteri cassetta postale predefiniti di Exchange ActiveSync. Definire le impostazioni da usare nelle impostazioni del gruppo seguenti: **Generale**, **Password**, **Gestione della posta elettronica**, **Sicurezza**e **Applicazione**. Ad esempio, nell'impostazione del gruppo **Password** , è possibile configurare se i dispositivi mobili richiedono una password, la lunghezza minima della password, la sua complessità e se ne è consentito il ripristino.  
+ Exchange Server コネクタを使用すると、既定の Exchange ActiveSync メール ボックス ポリシーでの代わりに、Configuration Manager で構成した設定でモバイル デバイスを管理することができます。 使用する設定は、 **[全般]**、 **[パスワード]**、 **[電子メール管理]**、 **[セキュリティ]**、 **[アプリケーション]**のグループに分けて定義します。 たとえば、[ **パスワード** ] グループでは、モバイル デバイスでパスワードを必要とするかどうか、パスワードに最低限必要な文字数と複雑さ、パスワードを回復可能にするかどうかを設定します。  
 
- Quando si configura almeno un'impostazione nel gruppo, Configuration Manager gestisce tutte le impostazioni nel gruppo per i dispositivi mobili. Se non si configura alcuna impostazione in un gruppo, Exchange continua a gestire i dispositivi mobili per tali impostazioni. I criteri cassetta postale di Exchange ActiveSync configurati in Exchange Server e assegnati agli utenti verranno comunque applicati.  
+ グループで 1 つでも設定を行うと、Configuration Manager がグループのすべてのモバイル デバイス用設定を管理します。 グループにあるどの設定も構成しないと、モバイル デバイスの該当する設定が Exchange Server によって管理されます。 その場合でも、Exchange Server で設定され、ユーザーに割り当てられた Exchange ActiveSync メールボックス ポリシーは適用されます。  
 
- È inoltre possibile configurare il connettore Exchange Server per gestire le regole di accesso di Exchange e consentire, bloccare o mettere in quarantena i dispositivi mobili. È possibile cancellare i dati dei dispositivi mobili da remoto usando la console di Configuration Manager e gli utenti possono cancellare i dati dai loro dispositivi mobili usando il Catalogo applicazioni.  
+ また、Exchange Server コネクタで、モバイル デバイスから Exchange へのアクセスを許可、ブロック、検疫するための規則を設定することもできます。 モバイル デバイスをリモートでワイプするには Configuration Manager コンソールを使います。一方、ユーザーが自分のモバイル デバイスをリモートでワイプするには、アプリケーション カタログを使います。  
 
- Un dispositivo mobile dell'utente viene visualizzato automaticamente nel Catalogo applicazioni quando viene gestito dal connettore Exchange Server ed Exchange Server si trova in locale. Quando si configura il connettore Exchange Server per Microsoft Exchange Online, è necessario configurare manualmente l'affinità utente-dispositivo in modo che il dispositivo mobile dell'utente venga visualizzato nel Catalogo applicazioni. Per altre informazioni sull'affinità utente-dispositivo, vedere [Collegare utenti e dispositivi mediante l'affinità utente-dispositivo in System Center Configuration Manager](../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md).  
+ Exchange Server が社内にある場合は、ユーザーのモバイル デバイスが Exchange Server コネクタによって管理されているときに、アプリケーション カタログに自動的に表示されます。 一方、Microsoft Exchange Online 用の Exchange Server コネクタでは、ユーザーのモバイル デバイスがアプリケーション カタログに表示されるようにするには、ユーザーとデバイスのアフィニティを手動で構成する必要があります。 ユーザーとデバイスのアフィニティを手動で構成する方法については、「[System Center Configuration Manager でのユーザーとデバイスのアフィニティへのユーザーとデバイスの関連付け](../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md)」を参照してください。  
 
 > [!TIP]  
->  Se si gestisce un dispositivo mobile usando il connettore Exchange Server e il dispositivo mobile viene trasferito a un altro utente, eliminare il dispositivo mobile dalla console di Configuration Manager prima che il nuovo proprietario del dispositivo configuri l'account di Exchange nel dispositivo mobile trasferito.  
+>  モバイル デバイスを Exchange Server コネクタで管理しているときに、そのモバイル デバイスの所有者が変わった場合は、新しい所有者がモバイル デバイスで自分の Exchange アカウントを構成する前に、Configuration Manager コンソールからモバイル デバイスを削除してください。  
 
-## <a name="required-security-permissions"></a>Autorizzazioni di sicurezza richieste  
- È necessario disporre delle seguenti autorizzazioni di sicurezza per configurare il connettore Exchange Server:  
+## <a name="required-security-permissions"></a>必要なセキュリティのアクセス許可  
+ Exchange Server コネクタを構成するには、次のセキュリティのアクセス許可を持っている必要があります。  
 
--   Per aggiungere, modificare ed eliminare il connettore Exchange Server: autorizzazione di **Modifica** per l'oggetto **Sito** .  
+-   Exchange Server コネクタを追加、変更、削除する: **サイト** オブジェクトの **変更** のアクセス許可。  
 
--   Per configurare le impostazioni del dispositivo mobile: autorizzazione **ModifyConnectorPolicy** per l'oggetto **Sito** .  
+-   モバイル デバイス設定を構成する: **サイト** オブジェクトの **ModifyConnectorPolicy** のアクセス許可。  
 
- Il ruolo di sicurezza **Amministratore completo** include le autorizzazioni necessarie per configurare il connettore Exchange Server.  
+ **[完全な権限を持つ管理者]** のセキュリティの役割には、Exchange Server コネクタを構成するために必要な許可が含まれています。  
 
- È necessario disporre delle seguenti autorizzazioni di sicurezza per gestire i dispositivi mobili:  
+ モバイル デバイスを管理するには、次のセキュリティのアクセス許可が必要です。  
 
--   Per cancellare un dispositivo mobile: **Elimina risorsa** per l'oggetto **Raccolta** .  
+-   モバイル デバイスをワイプする: **コレクション** オブジェクトの **リソースの削除** 。  
 
--   Per annullare un comando di cancellazione: **Modifica risorsa** per l'oggetto **Raccolta** .  
+-   ワイプ コマンドを取り消す: **コレクション** オブジェクトの **リソースの変更** 。  
 
--   Per consentire e bloccare i dispositivi mobili: **Modifica risorsa** per l'oggetto **Collection** .  
+-   モバイル デバイスを許可またはブロックする: **コレクション** オブジェクトの **リソースの変更**  
 
- Il ruolo di sicurezza **Amministratore operazioni** include le autorizzazioni necessarie per gestire i dispositivi mobili utilizzando il connettore Exchange Server.  
+ **[オペレーション管理者]** のセキュリティの役割には、Exchange Server コネクタを使用してモバイル デバイスを管理するために必要な許可が含まれています。  
 
- Per altre informazioni su come configurare le autorizzazioni di sicurezza, vedere [Configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
+ セキュリティのアクセス許可を構成する方法の詳細については、「[System Center Configuration Manager のロール ベース管理の構成](../../core/servers/deploy/configure/configure-role-based-administration.md)」を参照してください。  
 
-## <a name="installing-and-configuring-an-exchange-server-connector"></a>Installare e configurare un connettore Exchange Server  
- Usare la seguente procedura per installare e configurare un connettore Exchange Server per gestire i dispositivi mobili. Configuration Manager supporta un solo connettore in un'organizzazione Exchange. Dopo aver completato questi passaggi, è possibile monitorare i dispositivi mobili rilevati e gestiti dal connettore quando si visualizzano le raccolte che mostrano i dispositivi mobili e utilizzando i report per dispositivi mobili.  
+## <a name="installing-and-configuring-an-exchange-server-connector"></a>Exchange Server コネクタのインストールと構成  
+ モバイル デバイスを管理するように Exchange Server コネクタをインストールし構成するには次の手順に従います。 Configuration Manager では、1 つの Exchange 組織に設定できるコネクタは 1 つのみです。 これらの手順を完了すると、モバイル デバイスを表示するコレクションを表示するとき、およびモバイル デバイスのレポートを使用するとき、コネクタによって検索され管理されるモバイル デバイスを監視できます。  
 
 > [!NOTE]  
->  Configuration Manager generata i nomi per i dispositivi mobili rilevati usando il formato *NomeUtente*_*TipoDispositivo*. Se un utente ha più di un dispositivo mobile dello stesso tipo, Configuration Manager visualizzerà lo stesso nome per i dispositivi mobili nella console e nei report.  
+>  Configuration Manager は、*ユーザー名*_*デバイスの種類*という形式を使用して見つかったモバイル デバイスに名前を付けます。 あるユーザーが同じ種類のモバイル デバイスを複数持っているときは、それらのモバイル デバイスについて、Configuration Manager はコンソールおよびレポートに同じ名前を表示します。  
 
-#### <a name="to-install-and-configure-an-exchange-server-connector"></a>Per installare e configurare un connettore Exchange Server  
+#### <a name="to-install-and-configure-an-exchange-server-connector"></a>Exchange Server コネクタをインストールし構成するには  
 
-1.  Stabilire quale account verrà connesso al server Accesso client di Exchange per gestire i dispositivi mobili. L'account può essere l'account computer del server del sito o un account utente di Windows. Configurare quindi l'account per eseguire i seguenti cmdlet di Exchange Server:  
+1.  どのアカウントを Exchange クライアント アクセス サーバーに接続しモバイル デバイスを管理するかを判断します。 アカウントは、サイト サーバーのコンピューター アカウントでも、Windows ユーザー アカウントでも構いません。 そのアカウントで、次の Exchange Server コマンドレットを実行するように構成します。  
 
     -   **Clear-ActiveSyncDevice**  
 
@@ -109,32 +106,31 @@ Usare il connettore Exchange Server in System Center Configuration Manager quand
     -   **Remove-ActiveSyncDevice**  
 
     > [!NOTE]  
-    >  I ruoli di gestione di Exchange Server seguenti includono questi cmdlet: Gestione destinatari, Gestione organizzazione sola visualizzazione e Gestione server. Per ulteriori informazioni sui gruppi del ruolo di gestione in Microsoft Exchange Server 2010, vedere [Informazioni sui gruppi del ruolo di gestione](http://go.microsoft.com/fwlink/p/?LinkId=212914).  
+    >  次の Exchange Server の管理の役割には、受信者管理、表示限定の組織管理、サーバー管理のコマンドレットが含まれます。 Microsoft Exchange Server 2010 の管理役割グループの詳細については、「 [管理役割グループについて](http://go.microsoft.com/fwlink/p/?LinkId=212914)」を参照してください。  
 
     > [!TIP]  
-    >  Se si cerca di installare o utilizzare il connettore Exchange Server senza i cmdlet richiesti, verrà visualizzato un errore registrato con un messaggio del tipo `Invoking cmdlet <cmdlet> failed` nel file EasDisc.log sul computer del server del sito.  
+    >  必要なコマンドレットなしで Exchange Server コネクタをインストールしたり、使おうとしたりすると、サイト サーバー コンピューターの EasDisc.log ログ ファイルに、「 `Invoking cmdlet <cmdlet> failed` 」というメッセージが記録されます。  
 
-2.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
+2.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
 
-3.  Nell'area di lavoro **Amministrazione** espandere **Configurazione della gerarchia**e quindi fare clic su **Connettori Exchange Server**.  
+3.  **[管理]** ワークスペースで、**[階層の構成]** を展開し、**[探索方法]** をクリックします。  
 
-4.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Aggiungi Exchange Server**.  
+4.  **[ホーム]** タブの **[作成]** グループで **[Exchange Server の追加]** をクリックします。  
 
-5.  Completare l'Aggiunta guidata Exchange Server:  
+5.  以下の手順で、Exchange Server の追加ウィザードを完了します。  
 
-    -   Se si utilizza un'istanza locale di Exchange Server e si specifica un server Accesso client, è possibile specificare un singolo server o un array del server Accesso client per ciascun sito Active Directory. Se il server o l'array è offline, Configuration Manager cerca di trovare un server Accesso client da usare. Se questa operazione ha esito negativo, Client Access Server tenta di usare un server delle cassette postali per effettuare una connessione a un server Accesso client. I tentativi vengono registrati come avvisi nel file EasDisc.log nel computer del server del sito. Ad esempio, cercare `Failed to open runspace for site <site_name>`.  
+    -   社内にある Exchange Server インスタンスを使用する場合は、クライアント アクセス サーバーを指定するときに、各 Active Directory サイト用に 1 台のサーバーまたはクライアント アクセス サーバー アレイを指定することができます。 サーバーまたはアレイがオフラインの場合は、Configuration Manager が使用するクライアント アクセス サーバーを検出しようとします。 失敗した場合、Configuration Manager はメール ボックス サーバーの使用にフォールバックして、クライアント アクセス サーバーに接続します。 この動作は、サイト サーバー コンピューターの EasDisc.log ファイルに警告として記録されます。 たとえば、「 `Failed to open runspace for site <site_name>`」というメッセージを探してみてください。  
 
-    -   Come account connettore Exchange Server, specificare l'account configurato nel passaggio 1.  
+    -   Exchange Server のコネクタ アカウントでは、手順 1 で構成したアカウントを指定します。  
 
-    -   Se si registrano anche dispositivi mobili usando Configuration Manager, attivare l'opzione **Gestione dispositivi mobili esterni** per assicurarsi che i dispositivi continuino a ricevere messaggi di posta elettronica da Exchange dopo essere stati registrati da Configuration Manager.  
+    -   Configuration Manager を使用してモバイル デバイスを登録している場合、**[外部のモバイル デバイス管理]** オプションを有効にして、これらのモバイル デバイスが、Configuration Manager がデバイスを登録した後も引き続き Exchange から電子メールを受信し続けるようにします。  
 
-    -   Nella pagina **Account** della procedura guidata è possibile configurare l'account usato per inviare notifiche tramite posta elettronica ai client che vengono bloccati dall'accesso condizionale di Configuration Manager. L'account specificato deve disporre di una cassetta postale valida nel server Exchange.  
+    -   ウィザードの **[アカウント]** ページで、Configuration Manager 条件付きアクセスによってブロックされているクライアントにメール通知を送信するために使用するアカウントを構成できます。 指定するアカウントには、Exchange サーバー上の有効なメールボックスが必要です。  
 
-         Per altre informazioni, vedere [Gestire l'accesso ai servizi in System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md).  
+         詳細については、「[System Center Configuration Manager でサービスへのアクセスを管理する](../../protect/deploy-use/manage-access-to-services.md)」を参照してください。  
 
-6.  È possibile verificare l'installazione del connettore Exchange Server utilizzando i messaggi di stato e riesaminando i file di registro:  
+6.  ステータス メッセージとログ ファイルで、Exchange Server コネクタがインストールされていることを確認できます。  
 
-    -   Per confermare che l'installazione del connettore Exchange Server da parte del servizio di gestione dei componenti del sito è avvenuta correttamente, cercare l'ID stato **1015** per il componente **SMS_EXCHANGE_CONNECTOR** . Se non è possibile installare correttamente il connettore, ad esempio perché il computer del server Accesso client specificato non è in linea), Configuration Manager tenterà di installarlo ogni 60 minuti fino alla riuscita dell'installazione o alla rimozione del connettore Exchange Server.  
+    -   サイト コンポーネント マネージャーが Exchange Server コネクタに正常にインストールされたことを確認するには、 **SMS_EXCHANGE_CONNECTOR** コンポーネントのステータス ID **1015** を探します。 Configuration Manager がコネクタを正常にインストールできない場合 (たとえば、指定したクライアント アクセス サーバーのコンピューターがオフラインであるため)、インストールが成功するか Exchange Server コネクタを削除するまで、Configuration Manager は 60 分ごとにインストールを再試行します。  
 
-    -   Sul computer del server del sito, cercare il file Sitecomp.log, e quindi cercare `Component SMS_EXCHANGE_CONNECTOR flagged for installation`all'interno del file di registro. Un'installazione eseguita correttamente viene quindi registrata con il seguente testo: `STATMSG: ID=1015`.  
-
+    -   サイト サーバー コンピューターにある SiteComp.log ファイルを見つけ、そのファイル内で「 `Component SMS_EXCHANGE_CONNECTOR flagged for installation`」というメッセージを探します。 インストールが正常に完了していると、「 `STATMSG: ID=1015`」という値が付いているはずです。  

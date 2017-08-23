@@ -1,247 +1,243 @@
 ---
-title: Monitorare la replica | Microsoft Docs
-description: Informazioni su come monitorare l&quot;infrastruttura e le operazioni in Configuration Manager usando l&quot;area di lavoro Monitoraggio della console.
+title: "レプリケーションを監視する | Microsoft Docs"
+description: "Configuration Manager コンソールの [監視] ワークスペースを使用して、Configuration Manager のインフラストラクチャと操作を監視します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3fab4d67-8d2a-45ce-8b06-471280102cf6
-caps.latest.revision: 11
-caps.handback.revision: 0
+caps.latest.revision: "11"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
 ms.openlocfilehash: 132803a1aa9aad5c5462686bd656688418e47d07
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-hierarchy-and-replication-infrastructure-in-system-center-configuration-manager"></a>Monitorare l'infrastruttura della gerarchia e di replica in System Center Configuration Manager
+# <a name="monitor-hierarchy-and-replication-infrastructure-in-system-center-configuration-manager"></a>System Center Configuration Manager での階層とレプリケーション インフラストラクチャの監視
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Per monitorare l'infrastruttura e le operazioni in System Center Configuration Manager, usare l'area di lavoro **Monitoraggio** della console di Configuration Manager.  
+System Center Configuration Manager のインフラストラクチャと操作を監視するには、Configuration Manager コンソールの **[監視]** ワークスペースを使用します。  
 
 > [!NOTE]  
->  L'eccezione in questo percorso è la Migrazione, che viene monitorata direttamente nel nodo **Migrazione** nell'area di lavoro **Amministrazione** . Per altre informazioni, vedere [Operazioni per la migrazione a System Center Configuration Manager](../../../core/migration/operations-for-migration.md).  
+>  その場所に対する例外は移行です。それは、 **[管理]** ワークスペースの **[移行]** ノードで直接監視します。 詳細については、[System Center Configuration Manager に移行するための操作](../../../core/migration/operations-for-migration.md)を参照してください。  
 
- Oltre a usare la console di Configuration Manager per il monitoraggio, è possibile usare i report di Configuration Manager o visualizzare i file di log di Configuration Manager per i componenti di Configuration Manager. Per informazioni sui report, vedere [Creazione di report in System Center Configuration Manager](../../../core/servers/manage/reporting.md). Per informazioni sui file di log, vedere [File di log in System Center Configuration Manager](../../../core/plan-design/hierarchy/log-files.md).  
+ 監視には、Configuration Manager コンソールだけでなく、Configuration Manager レポートや、Configuration Manager コンポーネントの Configuration Manager ログ ファイルも使用できます。 レポートの詳細については、「[System Center Configuration Manager のレポート](../../../core/servers/manage/reporting.md)」を参照してください。 ログ ファイルの詳細については、「[System Center Configuration Manager のログ ファイル](../../../core/plan-design/hierarchy/log-files.md)」を参照してください。  
 
- Quando si effettua il monitoraggio di siti, cercare dei segnali che indichino problemi che richiedono un intervento. Ad esempio:  
+ サイトを監視するときは、問題発生の兆候があるかどうかに注意します。 たとえば、  
 
--   Un backlog di file sui server del sito e sui sistemi del sito.  
+-   サイト サーバーとサイト システムにあるファイルのバックログ  
 
--   Messaggi di stato che indicano un errore o un problema.  
+-   エラーまたは問題を示すステータス メッセージ  
 
--   Errori di comunicazione all'interno del sito.  
+-   サイト間の通信障害  
 
--   Messaggi di errore e di avviso nel registro eventi di sistema sui server.  
+-   サーバーのシステム イベント ログのエラー メッセージと警告メッセージ  
 
--   Messaggi di errore e di avviso nel registro degli errori di Microsoft SQL Server.  
+-   Microsoft SQL Server エラー ログのエラー メッセージと警告メッセージ  
 
--   Siti o client che non inviano report da molto tempo.  
+-   長期間レポートを送信していないサイトまたはクライアント  
 
--   Risposta lenta da parte del database di SQL Server.  
+-   SQL Server データベースの応答の遅延  
 
--   Segnali di errore hardware.  
+-   ハードウェア障害の兆候  
 
-Per ridurre al minimo il rischio di errore del sito, se le attività di monitoraggio manifestano qualsiasi tipo di problema, analizzare l'origine del problema e risolverlo appena possibile.  
+サイト障害のリスクを最小限に抑えるため、監視タスクによって問題の兆候が見つかった場合は、できるだけ速やかに問題の原因を調査して修復してください。  
 
 
 
-##  <a name="BKMK_MonintorMgmtTasks"></a> Monitorare le attività di gestione comuni per Configuration Manager  
- Configuration Manager include una funzionalità di monitoraggio predefinita all'interno della console. È possibile monitorare numerose attività, tra cui quelle relative a: aggiornamenti software, risparmio energia e distribuzione del contenuto all'interno della gerarchia.  
+##  <a name="BKMK_MonintorMgmtTasks"></a> Configuration Manager の一般的な管理タスクの監視  
+ Configuration Manager コンソールには監視機能が組み込まれています。 ソフトウェア更新プログラム、電源管理、およびコンテンツの展開に関連するものを含む多くのタスクを階層全体で監視できます。  
 
- Usare le informazioni seguenti per monitorare le attività di Configuration Manager comuni:  
+ Configuration Manager の一般的なタスクを監視するには、次の情報を使用します。  
 
- **Avvisi**  
-   Vedere [Avvisi di monitoraggio](../../../core/servers/manage/use-alerts-and-the-status-system.md#BKMK_MonitorAlerts) in [Usare gli avvisi e il sistema di stato per System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+ **アラート**  
+   「[System Center Configuration Manager のアラートとステータス システムの使用](../../../core/servers/manage/use-alerts-and-the-status-system.md#BKMK_MonitorAlerts) 」の「 [アラートの監視](../../../core/servers/manage/use-alerts-and-the-status-system.md)」を参照してください。  
 
- **Impostazioni di conformità**  
-   Vedere [Come monitorare le impostazioni di conformità in System Center Configuration Manager](../../../compliance/deploy-use/monitor-compliance-settings.md).  
+ **コンプライアンス設定**  
+   「[System Center Configuration Manager でコンプライアンス設定を監視する方法](../../../compliance/deploy-use/monitor-compliance-settings.md)」を参照してください。  
 
- **Distribuzione del contenuto**  
-   Per informazioni generali sul monitoraggio del contenuto, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+ **コンテンツ展開**  
+   コンテンツ監視に関する一般的な情報については、「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」を参照してください。  
 
-Per informazioni sul monitoraggio di tipi specifici di distribuzione del contenuto:
--   Per monitorare le applicazioni, vedere [Monitorare le applicazioni con System Center Configuration Manager](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
+特定の種類のコンテンツの展開を監視するには:
+-   アプリケーションを監視するには、「[System Center Configuration Manager でアプリケーションを監視する](/sccm/apps/deploy-use/monitor-applications-from-the-console)」を参照してください。  
 
--   Per monitorare pacchetti e programmi, vedere Come gestire pacchetti e programmi in [Pacchetti e programmi in System Center Configuration Manager](../../../apps/deploy-use/packages-and-programs.md).  
+-   パッケージとプログラムを監視するには、「[System Center Configuration Manager のパッケージとプログラム](../../../apps/deploy-use/packages-and-programs.md)」の「パッケージとプログラムを管理する方法」を参照してください。  
 
 **Endpoint Protection**  
-   Vedere [Come monitorare Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/monitor-endpoint-protection.md).  
+   「[System Center Configuration Manager で Endpoint Protection を監視する方法](../../../protect/deploy-use/monitor-endpoint-protection.md)」を参照してください。  
 
-**Monitorare il risparmio energia**  
- Vedere [Come monitorare e pianificare il risparmio energia in System Center Configuration Manager](../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
+**電源管理の監視**  
+ 「[System Center Configuration Manager で電源管理を監視して計画する方法](../../../core/clients/manage/power/monitor-and-plan-for-power-management.md)」を参照してください。  
 
-**Monitorare il controllo del software**  
-Vedere [Monitorare l'utilizzo delle app con la misurazione del software in System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
+**ソフトウェア使用状況測定の監視**  
+「[System Center Configuration Manager のソフトウェア使用状況測定でアプリの使用状況を監視する](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md)」を参照してください。  
 
-**Monitorare gli aggiornamenti software**  
- Vedere [Monitorare gli aggiornamenti software in System Center Configuration Manager](../../../sum/deploy-use/monitor-software-updates.md).  
+**ソフトウェア更新プログラムの監視**  
+ 「[System Center Configuration Manager でのソフトウェア更新プログラムの監視](../../../sum/deploy-use/monitor-software-updates.md)」を参照してください。  
 
 
-##  <a name="BKMK_MonitorInfrastructure"></a> Monitorare l'infrastruttura della gerarchia per Configuration Manager  
-Configuration Manager offre diversi metodi per monitorare lo stato e le operazioni della gerarchia. È possibile controllare lo stato del sistema di siti attraverso la gerarchia, monitorare la replica tra siti dalla gerarchia e dalla vista geografica del sito, monitorare i collegamenti di replica tra siti per la replica di database e utilizzare lo strumento Replication Link Analyzer per correggere problemi di replica.  
+##  <a name="BKMK_MonitorInfrastructure"></a> Configuration Manager の階層インフラストラクチャの監視  
+Configuration Manager の階層のステータスや操作を監視するには、いくつか方法があります。 階層内のサイトのシステム ステータスの確認、サイトの階層図または地図からのサイト間レプリケーションの監視、データベース レプリケーションを行うサイト間のレプリケーション リンクの監視、レプリケーション リンク アナライザー ツールを使用したレプリケーションの問題の修復を行えます。  
 
-###  <a name="BKMK_SH_Node"></a> Informazioni sul nodo Gerarchia siti  
-Il nodo **Gerarchia siti** dell'area di lavoro **Monitoraggio** offre una panoramica della gerarchia e dei collegamenti tra siti di Configuration Manager. È possibile utilizzare due viste:  
+###  <a name="BKMK_SH_Node"></a> サイト階層ノードについて  
+**[監視]** ワークスペースの **[サイト階層]** ノードには、Configuration Manager の階層とサイト間のリンクの概要が表示されます。 次の 2 つのビューがあります。  
 
--   **Diagramma gerarchia**: consente di visualizzare la gerarchia come mappa topologica semplificata per mostrare solo le informazioni più importanti.  
+-   **階層図**:重要な情報のみを表示するように簡略化されたトポロジ マップとして階層が表示されます。  
 
--   **Vista geografica**: consente di visualizzare i siti in una mappa geografica con i percorsi del sito configurati.  
+-   **地図**:このビューでは、構成するサイトの場所を示す地図にサイトが表示されます。  
 
-Utilizzare il nodo **Gerarchia siti** per monitorare l'integrità di ciascun sito, i collegamenti di replica tra siti e la loro relazione con fattori esterni, come la posizione geografica.  
+各サイト、サイト間レプリケーション リンク、および外的な要因との関係 (地理的な場所など) の正常性を監視するには、[ **サイト階層** ]ノードを使用します。  
 
-Poiché lo stato del sito e lo stato dei collegamenti tra siti vengono replicati come dati del sito e non come dati globali, quando si collega la console di Configuration Manager a un sito primario figlio, non è possibile visualizzare lo stato del sito o del collegamento per gli altri siti primari o i relativi siti secondari figlio. Ad esempio, in una gerarchia a più siti primari, quando la console di Configuration Manager si collega a un sito primario, è possibile visualizzare lo stato dei siti secondari figlio, del sito primario e del sito di amministrazione centrale, ma non quello di altri nodi della gerarchia al di sotto del sito di amministrazione centrale.  
+サイトの状態およびサイト間リンクの状態は、グローバル データではなくサイト データとしてレプリケートされるため、Configuration Manager コンソールを子プライマリ サイトに接続すると、他のプライマリ サイトやその子セカンダリ サイトのサイトの状態またはリンクの状態は表示されません。 たとえば、複数のプライマリ サイトがある階層で、Configuration Manager コンソールをあるプライマリ サイトに接続すると、子セカンダリ サイト、そのプライマリ サイト、および中央管理サイトのステータスは表示できますが、階層内の中央管理サイトの下にある他のノードのステータスは表示できません。  
 
- Utilizzare il comando **Configura impostazioni** per controllare la modalità di visualizzazione dei rendering da parte della gerarchia del sito. Le configurazioni del nodo **Gerarchia siti** effettuate quando la console di Configuration Manager è collegata a un altro sito vengono replicate su tutti gli altri siti.  
+ サイト階層を表示する方法を制御するには、[ **設定の構成** ] コマンドを使用します。 あるサイトに Configuration Manager コンソールを接続したときに設定した **[サイト階層]** ノードの構成は、他のすべてのサイトにレプリケートされます。  
 
-#### <a name="hierarchy-diagram"></a>Diagramma gerarchia  
- Il diagramma gerarchia visualizza i siti in una mappa topologica. In questa vista, è possibile selezionare un sito e visualizzare un riepilogo dei messaggi di stato di tale sito, analizzare i messaggi di stato e accedere alla finestra di dialogo **Proprietà** dei siti.  
+#### <a name="hierarchy-diagram"></a>階層図  
+ 階層図は、サイトをトポロジ マップで表示します。 このビューでは、サイトを選択して、そのサイトのステータス メッセージの概要の表示、ドリルダウンによるステータス メッセージの表示、サイトの [ **プロパティ** ] ダイアログ ボックスへのアクセスを行うことができます。  
 
- Inoltre, è possibile lasciare il puntatore del mouse su un sito o un collegamento di replica tra siti per visualizzare lo stato di alto livello per l'oggetto. Poiché lo stato del collegamento di replica non viene replicato a livello globale, in una gerarchia con più siti primati, è necessario collegare la console di Configuration Manager al sito di amministrazione centrale per visualizzare i dettagli del collegamento di replica tra tutti i siti.  
+ また、サイト間のレプリケーション リンクまたはサイトの上にマウス ポインターを置くと、そのオブジェクトのステータスの概要が表示されます。 レプリケーション リンクはグローバルにレプリケートされないため、複数のプライマリ サイトがある階層で、すべてのサイトの間のレプリケーション リンクの詳細を表示するには、Configuration Manager コンソールを中央管理サイトに接続する必要があります。  
 
- Le seguenti opzioni di modificano il diagramma gerarchia:  
+ 次のオプションを使用すると、階層図が変更されます。  
 
--   **Gruppi**: è possibile configurare il numero di siti primari e secondari che attivano una modifica nella vista diagramma gerarchia che combini in siti in un singolo oggetto. Quando i siti vengono combinati in un singolo oggetto, si visualizza il numero totale di siti e un rollup di alto livello si messaggi di stato e stato dei siti. Le configurazioni dei gruppi non influenzano la vista geografica.  
+-   [ **グループ** ]:プライマリ サイトおよびセカンダリ サイトの数を構成できます。これにより、複数のサイトが単一のオブジェクトに結合されている階層図の表示が変更されます。 複数のサイトを単一のオブジェクトに結合すると、サイトの合計数、ステータス メッセージのロールアップの概要、およびサイトのステータスを表示できます。 グループの構成は地図には影響しません。  
 
--   **Siti preferiti**: è possibile specificare i singoli siti come sito preferito. Un'icona a stella identifica un sito preferito nel diagramma gerarchia. I siti preferiti non si combinano con altri siti quando sono stati utilizzati i gruppi e vengono sempre visualizzati singolarmente.  
+-   [ **お気に入りサイト** ]:個々のサイトをお気に入りサイトとして指定できます。 階層図内の星形のアイコンはお気に入りサイトを示します。 お気に入りサイトは、グループを使用する場合に他のサイトと結合されず、常に個別に表示されます。  
 
-#### <a name="geographical-view"></a>Vista geografica  
- la vista geografica visualizza la posizione di ogni sito su una mappa geografica. Vengono visualizzati solo i siti che è possibile configurare con una posizione. Quando si seleziona un sito in questa vista, vengono visualizzati i collegamenti di replica a siti padre o figlio. A differenza della vista Diagramma gerarchia, in questa vista non è possibile visualizzare i dettagli del messaggio di stato del sito o del collegamento di replica.  
+#### <a name="geographical-view"></a>地図  
+ 地図は、各サイトの場所を地図上に表示します。 場所を指定して構成したサイトのみが表示されます。 このビューでサイトを選択すると、親サイトまたは子サイトへのレプリケーション リンクが表示されます。 階層図ビューとは異なり、このビューにサイトのステータス メッセージまたはレプリケーション リンクの詳細を表示することはできません。  
 
 > [!NOTE]  
->  Per utilizzare la vista geografica, sul computer a cui si collega la console di Configuration Manager deve essere installato Internet Explorer e deve essere possibile l'accesso a Bing Maps tramite il protocollo HTTP.  
+>  地図を使用するには、Configuration Manager コンソールを接続するコンピューターに Internet Explorer がインストールされていて、HTTP プロトコルを使用して Bing Maps にアクセスできる必要があります。  
 
-L'opzione seguente modifica la vista geografica.  
+次のオプションを使用すると、地図が変更されます。  
 
--   **Percorso sito**: è possibile specificare una posizione geografica per ogni sito. È possibile specificare la posizione sotto forma di indirizzo, nome di località come un città oppure di coordinate latitudinali e longitudinali. Ad esempio, per utilizzare la latitudine e la longitudine di Redmond Washington, si dovrebbe specificare **N 47 40 26.3572 W 122 7 17.4432** come posizione del sito. Non è necessario specificare i simboli per i gradi, minuti o secondi della longitudine o latitudine. Configuration Manager usa Bing Maps per visualizzare la posizione nella vista geografica. Ciò fornisce l'opzione di visualizzare la gerarchia in relazione a una posizione geografica, che può fornire informazioni su questioni locali che possono influenzare la replica specifica di siti o tra siti.  
+-   [ **サイトの場所** ]:サイトごとに地理的な場所を指定できます。 この場所に、住所を指定したり、都市名などの地名を指定したり、緯度や経度を使って指定することもできます。 たとえば、ワシントン州レドモンドの緯度と経度を使用する場合、 **N 47 40 26.3572 W 122 7 17.4432** をサイトの場所として指定します。 緯度や経度の度、分、または秒を示す記号を指定する必要はありません。 Configuration Manager では、Bing Maps を使って地図上に場所が表示されます。 これにより、地理的な場所の関係に従って階層を表示するオプションが提供され、特定のサイトまたはサイト間レプリケーションに影響する可能性がある地理的な問題を把握できます。  
 
-     Quando si specifica una posizione, è possibile utilizzare la casella **Percorso** per effettuare la ricerca di un sito specifico nella gerarchia. Una volta selezionato il sito, immettere la posizione come il nome di una città o un indirizzo nella colonna **Percorso** . Configuration Manager usa Bing Maps per risolvere il percorso.  
+     場所を指定する場合、[ **場所** ] ボックスを使用して、階層内の特定のサイトを検索できます。 サイトを選択した状態で、 **[場所]** 列に都市名または住所で場所を入力します。 Configuration Manager は Bing Maps を使用して場所を見つけます。  
 
-###  <a name="BKMK_MonitorRepLinksAndStatuss"></a> Come monitorare lo stato e i collegamenti di replica del database  
- Oltre ai dettagli di alto livello accessibili dal nodo **Gerarchia siti** nell'area di lavoro **Monitoraggio** , è possibile monitorare i dettagli della replica dei database anche usando il nodo **Replica di database** nell'area di lavoro **Monitoraggio** . Da **Replica di database** è possibile monitorare lo stato dei collegamenti di replica tra siti e i dettagli dell'inizializzazione e della replica per i gruppi di replica nel sito a cui è collegato Configuration Manager.  
+###  <a name="BKMK_MonitorRepLinksAndStatuss"></a> データベース レプリケーション リンクとレプリケーション ステータスを監視する方法  
+ **[監視]** ワークスペースの **[サイト階層]** ノードで概要にアクセスできるほか、 **[監視]** ワークスペースの **[データベースのレプリケーション]** ノードを使用して、データベース レプリケーションの詳細を監視することもできます。 **[データベースのレプリケーション]** で、サイト間のレプリケーション リンクのステータス、および Configuration Manager コンソールが接続されているサイトのレプリケーション グループの初期化の詳細とレプリケーションの詳細を監視できます。  
 
 > [!TIP]  
->  Nonostante un nodo **Replica di database** venga visualizzato anche sotto il nodo **Configurazione della gerarchia** nell'area di lavoro **Amministrazione** , da quella posizione non è possibile visualizzare lo stato di replica per i collegamenti di replica del database.  
+>  **[データベースのレプリケーション]** ノードは **[管理]** ワークスペースの **[階層の構成]** ノードにも表示されますが、この場所からデータベース レプリケーション リンクのレプリケーション ステータスを表示することはできません。  
 
-####  <a name="BKMK_MonitorReplicationLinks"></a> Stato del collegamento di replica  
-La replica di database tra siti implica la replica di diversi insiemi di informazioni, denominati gruppi di replica. Ogni gruppo di replica viene replicato con priorità di replica diverse. Per impostazione predefinita, i dati contenuti in un gruppo di replica e la frequenza di replica non possono essere modificati.  
+####  <a name="BKMK_MonitorReplicationLinks"></a> レプリケーション リンク ステータス  
+サイト間のデータベース レプリケーションでは、レプリケーション グループと呼ばれる、複数の情報セットがレプリケートされます。 レプリケーション グループごとに、異なる優先順位でレプリケートされます。 既定では、レプリケーション グループに含めるデータとレプリケーションの頻度は変更できません。  
 
- Quando un collegamento di replica è attivo e non presenta lo stato di non riuscito o ridotto, tutti i gruppi di replica vengono replicati nel tempo previsto. Quando uno o più gruppi di replica non riescono a completare la replica nel periodo di tempo previsto, il collegamento viene visualizzato come ridotto. I collegamenti ridotti possono comunque funzionare, ma occorre monitorarli per assicurarsi che ritornino allo stato attivo o esaminarli per assicurarsi che non si verifichino ulteriori errori di riduzione o replica.  
+ レプリケーション リンクがアクティブで、ステータスが "失敗" や "低速化" になっていない場合、すべてのレプリケーション グループが遅れることなくレプリケートされます。 所定の時間内にレプリケートできなかったレプリケーション グループがある場合は、リンクが低速化していると表示されます。 低速化したリンクは引き続き機能しますが、リンクを監視してアクティブな状態に戻ったのを確認するか、リンクを調査してさらに低速になったりレプリケーションが失敗したりすることがないようにする必要があります。  
 
- Per ciascun collegamento di replica è possibile specificare il numero di volte che un gruppo di replica replicato con esito negativo può ritentare la replica prima che lo stato del collegamento venga impostato su ridotto o non riuscito. Anche se tutti i gruppi di replica tranne uno vengono replicati correttamente, lo stato del collegamento viene impostato su ridotto o non riuscito, perché un gruppo di replica non riesce a completare la replica nel numero specificato di tentativi. Per informazioni sulle soglie di replica, vedere la sezione [Soglie di replica del database](../../../core/servers/manage/data-transfers-between-sites.md#BKMK_DBRepThresholds) nell'argomento [Trasferimenti di dati tra siti in System Center Configuration Manager](../../../core/servers/manage/data-transfers-between-sites.md).  
+ レプリケーション リンクごとに、レプリケーション グループのレプリケートが失敗したときに、リンクのステータスが "低速化" または "失敗" に設定される前にレプリケートを再試行する回数を指定できます。 1 つのレプリケーション グループを残して、他のすべてのレプリケーション グループでレプリケートが成功した場合でも、この 1 つのレプリケーション グループが指定の試行回数でレプリケーションを完了できなかったため、リンクのステータスは "低速化" または "失敗" に設定されます。 レプリケーションのしきい値については、「[System Center Configuration Manager におけるサイト間のデータ転送](../../../core/servers/manage/data-transfers-between-sites.md)」の「[データベース レプリケーションのしきい値](../../../core/servers/manage/data-transfers-between-sites.md#BKMK_DBRepThresholds)」セクションを参照してください。  
 
- Utilizzare le informazioni nella tabella riportata di seguito per conoscere lo stato dei collegamenti di replica che potrebbero richiedere ulteriori indagini.  
+ レプリケーション リンクでさらに調査が必要となる可能性がある場合は、そのステータスを把握するときに、次の表の情報を参考にしてください。  
 
-|Descrizione del collegamento|Altre informazioni|  
+|リンクの説明|説明|  
 |----------------------|----------------------|  
-|**Il collegamento è attivo**|Non è stato rilevato alcun problema e la comunicazione nel collegamento è corrente.|  
-|**Il collegamento è ridotto**|La replica ha funzionato, ma almeno una oggetto o gruppo di replica è in ritardo. Monitorare i collegamenti in questo stato e rivedere le informazioni da entrambi i siti sul collegamento per indicazioni sul possibile non funzionamento del collegamento.<br /><br /> Un collegamento può anche visualizzare lo stato di ridotto quando il sito che riceve i dati replicati non è in grado di confermare rapidamente i dati al database. Questa situazione può verificarsi quando si replicano grandi volumi di dati. Ad esempio, se si distribuisce un aggiornamento software in un numero elevato di computer, il sito padre sul collegamento potrebbe impiegare un po' di tempo per elaborare il volume di dati che vengono replicati. Un ritardo di elaborazione nel sito padre può portare all'impostazione dello stato del collegamento su ridotto fino a quando il sito padre non può elaborare correttamente il backlog di dati.|  
-|**Il collegamento non è riuscito**|La replica non funziona. È possibile che un collegamento di replica possa essere ripristinato senza ulteriori azioni. È possibile utilizzare Replication Link Analyzer per analizzare e correggere la replica su questo collegamento.<br /><br /> Questo stato può anche indicare un problema con la rete fisica tra il sito padre e il sito figlio sul collegamento di replica.|  
+|**リンクはアクティブです**|問題は検出されていません。リンク間の通信は最新の状態です。|  
+|**リンクが低速化しています**|レプリケーションは機能していますが、少なくとも 1 つのレプリケーション オブジェクトまたはレプリケーション グループに遅延が生じています。 この状態にあるリンクを監視して、リンクが失敗する兆候がないかどうか、リンクの両方のサイトの情報を確認します。<br /><br /> レプリケートされたデータを受信するサイトがデータベースにデータを迅速にコミットできない場合にも、リンクにステータス "低速化" が表示されることがあります。 これは、大容量のデータをレプリケートすると発生する可能性があります。 たとえば、多数のコンピューターにソフトウェア更新プログラムを展開する場合、レプリケートするデータの量のために、リンク上で親サイトでの処理に時間がかかることがあります。 親サイトでの処理の遅延のために、親サイトでデータのバックログを正常に処理できるようになるまで、リンクのステータスが "低速化" に設定されることがあります。|  
+|**リンクは正しく機能しませんでした**|レプリケーションが機能していません。 何も措置を講じなくても、レプリケーション リンクが回復する可能性があります。 レプリケーション リンク アナライザーを使用して、このリンクのレプリケーションを調査して修復できます。<br /><br /> また、このステータスが、レプリケーション リンクで親サイトと子サイト間の物理ネットワークに問題があることを示している可能性もあります。|  
 
- Mentre un sito padre sta per effettuare l'aggiornamento a un nuovo Service Pack e si visualizza lo stato del collegamento dal sito figlio, lo stato del collegamento viene visualizzato come attivo. Dopo l'aggiornamento, finché anche il sito figlio è nello stesso Service Pack del sito padre, lo stato del collegamento viene visualizzato come attivo se visualizzato dal sito padre e come in corso di configurazione se visualizzato dal sito figlio.  
+ 親サイトで新しいサービス パックへのアップグレードが進行中である場合、子サイトからリンク ステータスを表示すると、リンク ステータスは "アクティブ" と表示されます。 アップグレード後に、子サイトを親サイトと同じサービス パックにするまで、親サイトからリンク ステータスを表示すると "アクティブ" と表示され、子サイトからリンク ステータスを表示すると "構成中" と表示されます。  
 
-####  <a name="BKMK_MonitorReplicationStatus"></a> Stato della replica  
- È possibile utilizzare il nodo **Replica di database** nell'area di lavoro **Monitoraggio** per visualizzare lo stato della replica per un collegamento di replica e i dettagli relativi al database del sito su ciascun sito nel collegamento di replica. È anche possibile visualizzare i dettagli relativi ai gruppi di replica. Per visualizzare i dettagli, selezionare un collegamento di replica e selezionare la scheda appropriata per lo stato di replica che si desidera visualizzare. Di seguito vengono fornite informazioni dettagliate sulle diverse schede per lo stato della replica.  
+####  <a name="BKMK_MonitorReplicationStatus"></a> レプリケーション ステータス  
+ **[監視]** ワークスペースの **[データベースのレプリケーション]** ノードを使用して、レプリケーション リンクのレプリケーションのステータスを表示したり、レプリケーション リンク上の各サイトのサイト データベースについての詳細を表示したりできます。 レプリケーション グループの詳細を表示することもできます。 詳細を表示するには、レプリケーション リンクを選択してから、表示するレプリケーション ステータスの適切なタブを選択します。 レプリケーション ステータスの各種タブの詳細は次のとおりです。  
 
- **Riepilogo**  
- Visualizza informazioni di alto livello sulla replica dei dati del sito e i dati globali tra i due siti su un collegamento.  
+ **概要**  
+ リンク上の 2 つのサイト間のサイト データとグローバル データのレプリケーションの概要を表示します。  
 
- È inoltre possibile fare clic su **Visualizza report per la cronologia dei dati di traffico** per visualizzare un report con i dettagli relativi alla larghezza di banda di rete utilizzata dalla replica nel collegamento di replica.  
+ [ **関連トラフィック データの履歴情報の表示** ] をクリックすると、レプリケーション リンクでレプリケーションに使用されたネットワーク帯域幅の詳細も表示できます。  
 
- **Sito padre**  
- Per il sito padre su un collegamento di replica, visualizzare i dettagli sul database, che includono:  
+ **親サイト**  
+ レプリケーション リンク上の親サイトのデータベースの詳細を表示します。次のものが含まれます。  
 
--   Porte del firewall per SQL Server  
+-   SQL Server のファイアウォール ポート  
 
--   Spazio libero su disco  
+-   ディスクの空き領域  
 
--   Percorsi dei file del database  
+-   データベース ファイルの場所  
 
--   Certificati  
+-   証明書  
 
-**Sito figlio**  
- Per il sito figlio su un collegamento di replica, visualizzare i dettagli sul database, che includono:  
+**子サイト**  
+ レプリケーション リンク上の子サイトのデータベースの詳細を表示します。次のものが含まれます。  
 
--   Porte del firewall per SQL Server  
+-   SQL Server のファイアウォール ポート  
 
--   Spazio libero su disco  
+-   ディスクの空き領域  
 
--   Percorsi dei file del database  
+-   データベース ファイルの場所  
 
--   Certificati  
+-   証明書  
 
-**Dettaglio di inizializzazione**    
- Visualizzare lo stato di inizializzazione per i gruppi di replica che vengono replicati nel collegamento di replica. Queste informazioni consentono di identificare quando l'inizializzazione dei dati di replica è in corso o ha avuto esito negativo.  
+**初期化の詳細**    
+ レプリケーション リンクでレプリケートされる、レプリケーション グループの初期化ステータスを表示します。 この情報を使用すると、レプリケーション データの初期化が進行中のときや失敗したときに、それを特定できます。  
 
- Inoltre, è possibile utilizzare queste informazioni per identificare quando un sito potrebbe essere in modalità di interoperabilità. La modalità di interoperabilità si verifica quando il sito figlio non esegue la stessa versione di Configuration Manager del sito padre.  
+ また、この情報を使用すると、サイトが相互運用性モードになっているときにも、それを特定できます。 相互運用性モードは、子サイトで親サイトと同じバージョンの Configuration Manager を実行していない場合に発生します。  
 
-**Dettaglio di replica**    
- Visualizzare lo stato della replica per ciascun gruppo di replica che replica tramite il collegamento. Utilizzare queste informazioni per individuare i problemi o i ritardi nella replica di dati specifici, nonché per determinare le soglie di replica di database appropriate per il collegamento. Per informazioni sulle soglie di replica del database, vedere la sezione [Soglie di replica del database](../../../core/servers/manage/data-transfers-between-sites.md#BKMK_DBRepThresholds) nell'argomento [Trasferimenti di dati tra siti in System Center Configuration Manager](../../../core/servers/manage/data-transfers-between-sites.md).  
+**レプリケーションの詳細**    
+ リンクでレプリケートされる、各レプリケーション グループのレプリケーション ステータスを表示します。 この情報を使用すると、特定のデータのレプリケーションに問題や遅延がないかどうかを特定したり、このリンクのデータベース レプリケーションの適切なしきい値を判断したりできます。 データベース レプリケーションのしきい値については、「[System Center Configuration Manager におけるサイト間のデータ転送](../../../core/servers/manage/data-transfers-between-sites.md)」の「[データベース レプリケーションのしきい値](../../../core/servers/manage/data-transfers-between-sites.md#BKMK_DBRepThresholds)」セクションを参照してください。  
 
 > [!TIP]  
->  I gruppi di replica per i dati del sito vengono inviati solo dal sito figlio al sito padre. I gruppi di replica per i dati globali vengono replicati in entrambe le direzioni.  
+>  サイト データのレプリケーション グループは、子サイトからのみ親サイトに送信されます。 グローバル データのレプリケーション グループは、双方向でレプリケートされます。  
 
-###  <a name="BKMK_RLA"></a> Informazioni su Replication Link Analyzer  
- Configuration Manager include **Replication Link Analyzer** che consente di analizzare e risolvere i problemi di replica. Se la replica non riesce oppure si interrompe ma non viene segnalato l'errore è possibile utilizzare Replication Link Analyzer per monitorare e aggiornare errori nei collegamenti di replica. Replication Link Analyzer può essere usato per risolvere i problemi di replica tra i seguenti computer nella gerarchia di Configuration Manager (la direzione dell'errore di replica non è rilevante):  
+###  <a name="BKMK_RLA"></a> レプリケーション リンク アナライザーについて  
+ Configuration Manager には、レプリケーションの問題の分析と修復に使用する**レプリケーション リンク アナライザー**が含まれています。 レプリケーション リンク アナライザーを使用すると、レプリケーションが失敗した場合や、レプリケーションが停止したがまだ "失敗" と報告されていない場合に、レプリケーション リンクの不具合を分析して修復できます。 レプリケーション リンク アナライザーを使用すると、Configuration Manager 階層内の次のコンピューター間のレプリケーションの問題を修復できます (レプリケーション エラーが発生した方向は関係ありません)。  
 
--   Tra un server del sito e il server di database del sito.  
+-   サイト サーバーとサイト データベース サーバー  
 
--   Tra un server di database del sito per i siti e un altro computer del database del sito per i siti (replica tra siti).  
+-   あるサイトのサイト データベース サーバーと別のサイトのサイト データベース コンピューター (サイト間レプリケーション)  
 
-È possibile eseguire Replication Link Analyzer sia nella console di Configuration Manager che al prompt dei comandi:  
+レプリケーション リンク アナライザーは、Configuration Manager コンソールまたはコマンド プロンプトで実行することができます。  
 
--   Per l'esecuzione nella console di Configuration Manager: nell'area di lavoro **Monitoraggio** fare clic sul nodo **Replica di database**, selezionare il collegamento di replica da analizzare e nel gruppo **Replica di database** della scheda **Home** selezionare **Replication Link Analyzer**.  
+-   Configuration Manager コンソールで実行するには、**[監視]** ワークスペースで **[データベースのレプリケーション]** ノードをクリックし、分析するレプリケーション リンクを選択します。次に、**[ホーム]** タブの **[データベースのレプリケーション]** グループで **[レプリケーション リンク アナライザー]**を選択します。  
 
--   Per l'esecuzione al prompt dei comandi, digitare il seguente comando: **%path%\Microsoft Configuration Manager\AdminConsole\bin\Microsoft.ConfigurationManager.ReplicationLinkAnalyzer.Wizard.exe &lt;FQDN server sito di origine\> &lt;FQDN server sito di destinazione\>**  
+-   コマンド プロンプトで実行する場合は、次のコマンドを入力します。**%path%\Microsoft Configuration Manager\AdminConsole\bin\Microsoft.ConfigurationManager.ReplicationLinkAnalyzer.Wizard.exe &lt;ソース サイト サーバーの FQDN\> &lt;リンク先のサイト サーバーの FQDN\>**  
 
-Quando si esegue Replication Link Analyzer, vengono rilevati eventuali problemi mediante una serie di controlli e regole diagnostiche. Quando questo strumento viene eseguito, è possibile visualizzare i problemi identificati. Se le istruzioni per risolvere il problema sono disponibili, vengono visualizzate. Se Replication Link Analyzer è in grado di monitorare e aggiornare automaticamente un problema, l'utente visualizza tale opzione. Al completamento dell'esecuzione di Replication Link Analyzer, i risultati vengono salvati nel seguente report basato su XML e in un file di log sul desktop dell'utente che esegue lo strumento:  
+レプリケーション リンク アナライザーを実行すると、一連の診断規則とチェックに従って問題が検出されます。 このツールを実行すると、見つかった問題を表示できます。 問題の解決方法がわかっている場合は、その方法も表示されます。 レプリケーション リンク アナライザーによって自動的に問題を修復可能な場合は、そのオプションが示されます。 レプリケーション リンク アナライザーの実行が終了すると、このツールを実行したユーザーのデスクトップに、次の XML ベースのレポートとログ ファイルが保存されます。  
 
 -   ReplicationAnalysis.xml  
 
 -   ReplicationLinkAnalysis.log  
 
-Durante il monitoraggio e l'aggiornamento dei problemi, Replication Link Analyzer interrompe i seguenti servizi e, al termine del monitoraggio e dell'aggiornamento, li riavvia:  
+レプリケーション リンク アナライザーを実行すると、一部の問題の修復中は次のサービスが停止され、修復が完了すると、これらのサービスが再開されます。  
 
 -   SMS_SITE_COMPONENT_MANAGER  
 
 -   SMS_EXECUTIVE  
 
-In caso di errori nel monitoraggio e nell'aggiornamento dei problemi, esaminare il server del sito e riavviare i servizi eventualmente interrotti.  
+レプリケーション リンク アナライザーによって修復を完了できない場合は、サイト サーバーが確認されて、これらのサービスが停止されているときには、これらのサービスが再開されます。  
 
-Le azioni di monitoraggio, aggiornamento e rilevamento con e senza errori vengono registrate per fornire dettagli aggiuntivi non presenti nell'interfaccia dello strumento.  
+このログ ファイルには、ツールのインターフェイスには表示されない、詳しい問題の調査や修復処理に関する情報が記録されています。  
 
-**Prerequisiti per l'uso di Replication Link Analyzer**  
+**レプリケーション リンク アナライザーを使用するための前提条件**  
 
--   L'account utilizzato per eseguire Replication Link Analyzer deve disporre dei diritti di amministratore locale in ciascun computer interessato dal collegamento di replica. L'account non richiede un ruolo di sicurezza di amministrazione basato su ruoli specifico. Un utente amministratore che dispone delle autorizzazioni di accesso al nodo **Replica di database** è pertanto in grado di eseguire lo strumento nella console di Configuration Manager. In alternativa, un amministratore di sistema che dispone di diritti sufficienti per ciascun computer è in grado di eseguire lo strumento al prompt dei comandi.  
+-   レプリケーション リンク アナライザーを実行するアカウントには、レプリケーション リンクに関係する各コンピューターのローカル管理者権限が必要です。 このアカウントには、役割に基づいた管理の特定のセキュリティ ロールは必要ありません。 したがって、**[データベースのレプリケーション]** ノードにアクセスできる管理ユーザーは、Configuration Manager コンソールでこのツールを実行できます。また、各コンピューターの十分な権限を持っているシステム管理者は、コマンド プロンプトでこのツールを実行できます。  
 
--   L'account utilizzato per eseguire Replication Link Analyzer deve disporre dei diritti di amministratore di sistema in ciascun database SQL Server interessato dal collegamento di replica.  
+-   レプリケーション リンク アナライザーを実行するアカウントには、レプリケーション リンクに関係する各 SQL Server データベースの sysadmin 権限が必要です。  
 
-**Problemi noti di Replication Link Analyzer**  
+**レプリケーション リンク アナライザーの既知の問題**  
 
--   Con la versione 1511 di System Center Configuration Manager, Replication Link Analyzer genera errori relativi al certificato SQL Server Service Broker per i siti primari aggiornati da System Center 2012 Configuration Manager. Ciò è dovuto a modifiche apportate ai nomi dei certificati introdotte con la versione 1511 per i quali Replication Link Analyzer non è ancora stato aggiornato. È possibile ignorare questi errori.  
+-   System Center Configuration Manager バージョン 1511 では、レプリケーション リンク アナライザーで、System Center 2012 Configuration Manager からアップグレードされたプライマリ サイトに関する SQL Server Service Broker 証明書エラーが発生します。 その原因は、レプリケーション リンク アナライザーがまだ更新されていないバージョン 1511 で導入された証明書の名前が変更されたことです。 これらのエラーは無視してもかまいません。  
 
-###  <a name="BKMK_ProcsforMonitoringReplication"></a> Procedure per il monitoraggio della replica dei database  
+###  <a name="BKMK_ProcsforMonitoringReplication"></a> データベース レプリケーションの監視手順  
 
-##### <a name="to-monitor-high-level-site-to-site-database-replication-status"></a>Per monitorare a livello generale lo stato della replica del database da sito a sito    
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
+##### <a name="to-monitor-high-level-site-to-site-database-replication-status"></a>サイト間のデータベース レプリケーションのステータスの概要を表示するには    
+1.  Configuration Manager コンソールで、[ **監視** ] をクリックします。  
 
-2.  Nell'area di lavoro **Monitoraggio** fare clic su **Gerarchia siti** per aprire la visualizzazione **Diagramma gerarchia** .  
+2.  **[監視]** ワークスペースで **[サイト階層]** をクリックし、 **[階層図]** ビューを開きます。  
 
-3.  Lasciare brevemente il puntatore del mouse sulla riga tra i due siti al fine di visualizzare lo stato della replica dei dati del sito e globali per i siti.  
+3.  マウス ポインターを 2 つのサイトを結んでいる線の上に置くと、これらのサイトのグローバルなステータスおよびサイト データ レプリケーションのステータスが表示されます。  
 
-##### <a name="to-monitor-the-replication-status-for-a-replication-link"></a>Per monitorare lo stato della replica per un collegamento di replica    
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
+##### <a name="to-monitor-the-replication-status-for-a-replication-link"></a>レプリケーション リンクのレプリケーション ステータスを監視するには    
+1.  Configuration Manager コンソールで、[ **監視** ] をクリックします。  
 
-2.  Nell'area di lavoro **Monitoraggio** fare clic su **Replica di database**, quindi selezionare il collegamento di replica per il collegamento da monitorare. Quindi, nell'area di lavoro, selezionare la scheda appropriata per visualizzare diversi dettagli relativi allo stato della replica per il collegamento.  
-
+2.  **[監視]** ワークスペースで、 **[データベースのレプリケーション]**をクリックしてから、監視するリンクのレプリケーション リンクを選択します。 次に、ワークスペースで、適切なタブを選択し、そのリンクのレプリケーション ステータスの各種詳細を表示します。  

@@ -1,93 +1,86 @@
 ---
-title: Configurare il risparmio energia | Microsoft Docs
-description: Configurare il risparmio energia in System Center Configuration Manager.
+title: "電源管理の構成 | Microsoft Docs"
+description: "System Center Configuration Manager で電源管理をセットアップします。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 435c923c-ea30-4dce-8afd-48962ed85502
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
 ms.openlocfilehash: e111ac2545dd9e0b96a50c10246bb75d286a737a
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="configuring-power-management-in-system-center-configuration-manager"></a>Configurazione del risparmio energia in System Center Configuration Manager
+# <a name="configuring-power-management-in-system-center-configuration-manager"></a>System Center Configuration Manager での電源管理の構成
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Prima di poter usare il risparmio energia in System Center Configuration Manager, è necessario eseguire i passaggi di configurazione seguenti.  
+System Center Configuration Manager で電源管理を使用するには、次の構成手順を実行する必要があります。  
 
-## <a name="enable-and-configure-power-management-client-settings"></a>Abilitare e configurare le impostazioni client di risparmio energia.  
- Questa procedura consente di configurare le impostazioni client predefinite per il risparmio energia e di applicarle a tutti i computer nella gerarchia. Per applicare queste impostazioni solo ad alcuni computer, creare un'impostazione client di dispositivo personalizzata e assegnarla a una raccolta contenente i computer in cui si vuole usare la funzionalità di risparmio energia. Per altre informazioni su come creare impostazioni di dispositivo personalizzate, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
+## <a name="enable-and-configure-power-management-client-settings"></a>電源管理のクライアント設定の有効化と構成  
+ この手順に従って、電源管理に既定のクライアント設定を構成し、階層内のすべてのコンピューターに適用します。 これらの設定を一部のコンピューターのみに適用する場合は、カスタム クライアント デバイス設定を作成して、電源管理を使用するコンピューターを含むコレクションに割り当てます。 カスタムのデバイス設定の作成方法の詳細については、「[System Center Configuration Manager でクライアント設定を構成する方法](../../../../core/clients/deploy/configure-client-settings.md)」を参照してください。  
 
-#### <a name="to-enable-power-management-and-configure-client-settings"></a>Per abilitare le impostazioni client di risparmio energia  
+#### <a name="to-enable-power-management-and-configure-client-settings"></a>電源管理を有効にしてクライアント設定を構成するには  
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
+1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
 
-2.  Nell'area di lavoro **Amministrazione** fare clic su **Impostazioni client**.  
+2.  [ **管理** ] ワークスペースで [ **クライアント設定**] をクリックします。  
 
-3.  Fare clic su **Impostazioni client predefinite**.  
+3.  [既定のクライアント設定 ****] をクリックします。  
 
-4.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
+4.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
 
-5.  Nella finestra di dialogo **Impostazioni client predefinite** fare clic su **Risparmio energia**.  
+5.  **既定のクライアント設定** ダイアログ ボックスで、クリックして **電源管理**です。  
 
-6.  Configurare il valore seguente per le impostazioni client di risparmio energia:  
+6.  次のような電源管理のクライアント設定の値を構成します。  
 
-    -   **Consentire il risparmio energia dei dispositivi** : dall'elenco a discesa selezionare **Vero** per abilitare la funzionalità di risparmio energia.  
+    -   **[デバイスの電源管理を許可する]** – ドロップダウン リストから [TRUE] を選択して、電源管理を有効にします。 ****  
 
-7.  Configurare le impostazioni client necessarie. Per un elenco di impostazioni client di risparmio energia che è possibile configurare, vedere la sezione [Risparmio energia](../../../../core/clients/deploy/about-client-settings.md#power-management) nell'argomento [Informazioni sulle impostazioni client in Configuration Manager](../../../../core/clients/deploy/about-client-settings.md).  
+7.  必要なクライアント設定を構成します。 構成できる電源管理のクライアント設定の一覧については、「[About client settings in System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md)」 (System Center Configuration Manager のクライアント設定について) トピックの「[Power Management](../../../../core/clients/deploy/about-client-settings.md#power-management)」 (電源管理) セクションを参照してください。  
 
-8.  Fare clic su **OK** per chiudere la finestra di dialogo **Impostazioni client predefinite** .  
+8.  [ **OK** ] をクリックして [ **既定のクライアント設定** ] ダイアログ ボックスを閉じます。  
 
- I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+ クライアント コンピューターは、次にクライアント ポリシーをダウンロードするときに、これらの設定で構成されます。 1 つのクライアントのポリシーの取得を開始する場合は、「 [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md)」を参照してください。  
 
-## <a name="exclude-computers-from-power-management"></a>Escludere computer dal risparmio energia  
- È possibile evitare che raccolte di computer specifiche ricevano impostazioni di risparmio energia. Se un computer è membro di una raccolta esclusa dalle impostazioni di risparmio energia, a questo computer le impostazioni di risparmio energia non vengono applicate, neanche se il computer è membro di un'altra raccolta che applica impostazioni di risparmio energia.  
+## <a name="exclude-computers-from-power-management"></a>電源管理からのコンピューターの除外  
+ コンピューターに電源管理設定が適用されるのを防ぐことができます。 コンピューターが電源管理設定から除外されるコレクションのメンバーである場合、そのコンピューターが電源管理設定を適用する別のコレクションに属していても、電源管理設定は適用されません。  
 
- È necessario escludere i computer dall'attivazione della funzione di risparmio energia nei casi seguenti:  
+ 次のいずれかの場合は、コンピューターを電源管理から除外できます。  
 
--   Un requisito aziendale impone che i computer siano sempre attivi.  
+-   事業の必要性からコンピューターを常時オンにしておく必要がある場合  
 
--   È stata creata una raccolta di controllo di computer alla quale non si vogliono applicare impostazioni di risparmio energia.  
+-   電源管理設定を適用しないコンピューターで構成される、制御コレクションを作成した場合  
 
--   Alcuni computer non sono in grado di applicare impostazioni di risparmio energia.  
+-   一部のコンピューターに、電源管理設定を適用する機能が備わっていない場合  
 
--   Si vogliono escludere dalla funzionalità di risparmio energia i computer che eseguono Windows Server.  
+-   Windows Server を実行しているコンピューターを電源管理から除外する場合  
 
 > [!NOTE]  
->  Se l'opzione **Consentire agli utenti di escludere il dispositivo utilizzato dal risparmio energia** è configurata nelle impostazioni client, gli utenti possono escludere i propri computer dall'applicazione del risparmio energia tramite Software Center.  
+>  クライアント設定で [ユーザーがデバイスを電源管理対象から外せるようにする] オプションが構成されていると、ユーザーはソフトウェア センターを使用して、自分のコンピューターを電源管理から除外することができます。 ****  
 
- Per individuare i computer esclusi dal risparmio energia, eseguire il report **Computer esclusi**. Per altre informazioni su questo report vedere [Computer esclusi](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md#BKMK_Excluded) nell'argomento [Come monitorare e pianificare il risparmio energia in Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
+ 電源管理から除外されたコンピューターを見つけるには、[除外されているコンピューター] レポートを実行してください。 **** このレポートの詳細については、「[How to monitor and plan for power management in System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md)」 (System Center Configuration Manager で電源管理を監視して計画する方法) の「[Computers Excluded](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md#BKMK_Excluded)」 (除外されたコンピューター) を参照してください。  
 
 > [!IMPORTANT]  
->  Le impostazioni di risparmio energia applicate a computer che eseguono Windows XP o Windows Server 2003 non vengono ripristinate sui valori originali, neanche se si escludono i computer dalla funzionalità di risparmio energia. Nelle versioni successive di Windows, l'esclusione di un computer dal risparmio energia causa il ripristino sui valori originali di tutte le impostazioni di risparmio energia. Non è possibile ripristinare i valori originali per singole impostazioni di risparmio energia.  
+>  Windows XP または Windows Server 2003 を実行するコンピューターに適用された電源設定は、そのコンピューターを電源管理から除外した場合でも、元の値に戻りません。 Windows のこれより新しいバージョンでは、電源管理からコンピューターを除外すると、すべての電源設定が元の値に戻ります。 個々の電源設定をその元の値に戻すことはできません。  
 
-#### <a name="to-exclude-a-collection-of-computers-from-power-management"></a>Per escludere una raccolta di computer dal risparmio energia  
+#### <a name="to-exclude-a-collection-of-computers-from-power-management"></a>コンピューターのコレクションを電源管理から除外するには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Raccolte dispositivi**.  
+2.  [ **資産とコンプライアンス** ] ワークスペースで [ **デバイス コレクション**] をクリックします。  
 
-3.  Nell'elenco **Raccolte dispositivi** selezionare la raccolta che si vuole escludere dal risparmio energia e quindi nel gruppo **Proprietà** della scheda **Home** fare clic su **Proprietà**.  
+3.  **デバイス コレクション** ボックスの一覧で、電源管理から除外するコレクションを選択し、、 **ホーム**  タブで、 **プロパティ** グループで、 **プロパティ**です。  
 
-4.  Nella scheda **Risparmio energia** della finestra di dialogo *Proprietà <nome raccolta\>*** **selezionare **Non applicare mai le impostazioni di risparmio energia ai computer di questa raccolta**.  
+4.  *[<コレクション名\>* **のプロパティ]** ダイアログ ボックスの **[電源管理]** タブで、**[このコレクションのコンピューターに電源管理設定を適用しない]** を選択します。  
 
-5.  Fare clic su **OK** per chiudere la finestra di dialogo *Proprietà\>***<nome raccolta** e salvare le impostazioni.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+5.  **[OK]** をクリックし、*[<コレクション名\>* **のプロパティ]** ダイアログ ボックスを閉じて設定を保存します。  

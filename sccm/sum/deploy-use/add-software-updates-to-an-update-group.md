@@ -1,6 +1,6 @@
 ---
-title: Aggiungere aggiornamenti a un gruppo di aggiornamento - Configuration Manager | Microsoft Docs
-description: Aggiungere gli aggiornamenti software a un gruppo di aggiornamento software dell&quot;ambiente, manualmente o automaticamente.
+title: "更新グループへのソフトウェア更新プログラムの追加 - Configuration Manager | Microsoft Docs"
+description: "ご利用の環境でソフトウェア更新グループにソフトウェア更新プログラムに手動または自動で追加します。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -9,55 +9,51 @@ ms.date: 01/23/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: a0767664-fd60-46a8-9da5-86cc431ce53c
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 4e44e2b8f6baf020c3b7742bafd607082ffacaa4
 ms.openlocfilehash: 02e30ba48f3564fa8a31f21793c145054e02e002
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="add-software-updates-to-an-update-group"></a>更新グループへのソフトウェア更新プログラムの追加  
 
-# <a name="add-software-updates-to-an-update-group"></a>Aggiungere gli aggiornamenti software a un gruppo di aggiornamento  
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+ ソフトウェア更新プログラム グループは、ソフトウェア更新プログラムを整理するための有効な手段です。 ソフトウェア更新プログラムをソフトウェア更新プログラム グループに手動で追加したり、ADR を使用して、ソフトウェア更新プログラム グループに自動的に追加したりできます。 また、ソフトウェア更新プログラム グループを手動で展開することも、ADR を使用して自動的に展開することもできます。 ソフトウェア更新プログラム グループを展開したら、そのグループに新しいソフトウェア更新プログラムを追加することができます。追加したソフトウェア更新プログラムは、Configuration Manager で自動的に展開されます。 ソフトウェア更新プログラムを新しいソフトウェア更新プログラム グループまたは既存のソフトウェア更新プログラム グループに追加するには、次の手順に従います。  
 
- I gruppi di aggiornamento software forniscono un metodo efficace per organizzare gli aggiornamenti software nel relativo ambiente. È possibile aggiungere manualmente aggiornamenti software a un gruppo di aggiornamenti software oppure farlo automaticamente usando un'ADR. È anche possibile distribuire manualmente un gruppo di aggiornamenti software oppure farlo automaticamente usando un'ADR. Dopo aver distribuito un gruppo di aggiornamento software, è possibile aggiungere nuovi aggiornamenti software al gruppo e Configuration Manager li distribuirà automaticamente. Usare le procedure seguenti per aggiungere gli aggiornamenti software a un gruppo di aggiornamento software nuovo o esistente.  
+#### <a name="to-add-software-updates-to-a-new-software-update-group"></a>ソフトウェア更新プログラムを新しいソフトウェア更新プログラム グループに追加するには  
 
-#### <a name="to-add-software-updates-to-a-new-software-update-group"></a>Per aggiungere gli aggiornamenti software a un nuovo gruppo di aggiornamento software  
+1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+2.  [ソフトウェア ライブラリ] ワークスペースで [ソフトウェア更新プログラム ****] を展開して、[すべてのソフトウェア更新プログラム ****] をクリックします。  
 
-2.  Nell'area di lavoro Raccolta software, espandere **Aggiornamenti software**, quindi fare clic su **Tutti gli aggiornamenti software**.  
+3.  新しいソフトウェア更新プログラム グループに追加するソフトウェア更新プログラムを選択します。  
 
-3.  Selezionare gli aggiornamenti software che devono essere aggiunti al nuovo gruppo di aggiornamento software.  
+4.  [ホーム **** ] タブの [更新 **** ] グループで、[ソフトウェア更新プログラム グループの作成 ****] をクリックします。  
 
-4.  Nella scheda **Home** , nel gruppo **Aggiorna** , fare clic su **Crea gruppo di aggiornamento software**.  
+5.  ソフトウェア更新プログラム グループの名前を指定し、必要に応じて説明を入力します。 名前と説明によって、ソフトウェア更新プログラム グループに含まれているソフトウェア更新プログラムの種類を判別できる情報を指定します。 [作成 ****] をクリックします。  
 
-5.  Specificare il nome per il gruppo di aggiornamento software e fornire una descrizione facoltativa. Usare un nome e una descrizione che forniscano informazioni sufficienti per determinare il tipo di aggiornamenti software che si trovano nel gruppo di aggiornamento software. Per continuare, fare clic su **Crea**.  
+6.  [ソフトウェア更新プログラム グループ **** ] をクリックして、新しいソフトウェア更新プログラム グループを表示します。  
 
-6.  Fare clic su **Gruppi di aggiornamenti software** per visualizzare il nuovo gruppo di aggiornamento software.  
+7.  ソフトウェア更新プログラム グループを選択し、[ホーム **** ] タブの [更新 **** ] グループで [メンバーの表示 **** ] をクリックして、グループに含まれているソフトウェア更新プログラムの一覧を表示します。  
 
-7.  Selezionare il gruppo di aggiornamento software, quindi nella scheda **Home** , nel gruppo **Aggiorna** , fare clic su **Mostra membri** per visualizzare un elenco degli aggiornamenti software inclusi nel gruppo.  
+#### <a name="to-add-software-updates-to-an-existing-software-update-group"></a>ソフトウェア更新プログラムを既存のソフトウェア更新プログラム グループに追加するには  
 
-#### <a name="to-add-software-updates-to-an-existing-software-update-group"></a>Per aggiungere gli aggiornamenti software a un gruppo di aggiornamento software esistente  
+1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+2.  [ソフトウェア ライブラリ] ワークスペースで [ソフトウェア更新プログラム ****] を展開して、[すべてのソフトウェア更新プログラム ****] をクリックします。  
 
-2.  Nell'area di lavoro Raccolta software, espandere **Aggiornamenti software**, quindi fare clic su **Tutti gli aggiornamenti software**.  
-
-3.  Selezionare gli aggiornamenti software che si desidera aggiungere al nuovo gruppo di aggiornamento software.  
+3.  新しいソフトウェア更新プログラム グループに追加するソフトウェア更新プログラムを選択します。  
 
     > [!NOTE]  
-    >  Nel nodo **Tutti gli aggiornamenti software**, per impostazione predefinita Configuration Manager visualizza solo gli aggiornamenti software con classificazione **Errore critico** e **Sicurezza** e che sono stati rilasciati negli ultimi 30 giorni.  
+    >  **すべてのソフトウェア更新プログラム** ノードで Configuration Manager が表示するソフトウェア更新プログラムは、既定では、過去 30 日以内にリリースされた、**[重大]** と **[セキュリティ]** に分類されたソフトウェア更新プログラムのみです。  
 
-4.  Nella scheda **Home** del gruppo **Aggiorna** , fare clic su **Modifica appartenenza**.  
+4.  [ホーム **** ] タブの [更新 **** ] グループで、[メンバーシップの編集 ****] をクリックします。  
 
-5.  Selezionare il gruppo di aggiornamento software in cui si desidera aggiungere gli aggiornamenti software.  
+5.  ソフトウェア更新プログラムを追加するソフトウェア更新プログラム グループを選択します。  
 
-6.  Fare clic sul nodo **Gruppi di aggiornamenti software** per visualizzare il gruppo di aggiornamento software.  
+6.  [ソフトウェア更新プログラム グループ **** ] ノードをクリックして、ソフトウェア更新プログラム グループを表示します。  
 
-7.  Selezionare il gruppo di aggiornamento software, quindi nella scheda **Home** del gruppo **Aggiorna** , fare clic su **Mostra membri** per visualizzare un elenco degli aggiornamenti software inclusi nel gruppo.  
-
+7.  ソフトウェア更新プログラム グループを選択し、[ホーム **** ] タブの [更新 **** ] グループで [メンバーの表示 **** ] をクリックして、ソフトウェア更新プログラム グループに含まれているソフトウェア更新プログラムの一覧を表示します。  

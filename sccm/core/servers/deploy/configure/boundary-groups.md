@@ -1,363 +1,360 @@
 ---
-title: Definire gruppi di limiti | Microsoft Docs
-description: Informazioni sui gruppi di limiti che collegano i client ai sistemi del sito in System Center Configuration Manager.
+title: "境界グループの定義 | Microsoft Docs"
+description: "System Center Configuration Manager でクライアントとサイト システムをつなげる境界グループを理解します。"
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 5db2926f-f03e-49c7-b44b-e89b1a5a6779
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: 5debc6559f4b1c213e8ca513d685941c9e669063
-ms.contentlocale: it-it
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-boundary-groups-for-system-center-configuration-manager"></a>Configurare gruppi di limiti per System Center Configuration Manager
+# <a name="configure-boundary-groups-for-system-center-configuration-manager"></a>System Center Configuration Manager の境界グループを構成する
 
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-I gruppi di limiti in System Center Configuration Manager vengono usati per raggruppare logicamente i percorsi di rete correlati ([limiti](/sccm/core/servers/deploy/configure/boundaries)) e semplificare la gestione dell'infrastruttura. Devono essere assegnati limiti ai gruppi di limiti prima di poter usare il gruppo di limiti.
+System Center Configuration Manager の境界グループを利用し、関連するネットワークの場所 ([境界](/sccm/core/servers/deploy/configure/boundaries)) を論理的にグループ化し、インフラストラクチャの管理を簡単にします。 境界グループを使用するには、先に境界を境界グループに割り当てておく必要があります。
 
-Per impostazione predefinita, Configuration Manager crea un gruppo di limiti predefinito in ogni sito.
+既定では、Configuration Manager は各サイトで既定のサイト境界グループを作成します。
 
 > [!IMPORTANT]  
->  **Le informazioni contenute in questa sezione Gruppi di limiti e nelle sezioni figlio sono valide per la versione 1610 o versioni successive.** Questo contenuto è stato rivisto per descrivere in modo specifico le modifiche di progettazione relative ai gruppi di limiti introdotte con questa versione di aggiornamento.
+>  **この「境界グループ」セクションと子セクションの情報は、バージョン 1610 以降に適用されます。** このドキュメントの内容は、この更新プログラム バージョンで境界グループに導入された設計の変更に従って改訂されました。
 >
-> **Se si usano versioni precedenti la 1610**, vedere [Gruppi di limiti per System Center Configuration Manager versioni 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606) per informazioni su come usare e configurare i gruppi di limiti con tali versioni del prodotto.
+> **使用しているバージョンが 1610 より前の場合**に境界グループを使用および構成する方法については、「[Boundary groups for System Center Configuration Manager versions 1511, 1602, and 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606)」(System Center Configuration Manager バージョン 1511、1602、1606 の境界グループ) を参照してください。
 
-Per configurare i gruppi di limiti, associare i limiti (percorsi di rete) e i ruoli del sistema del sito, come i punti di distribuzione, al gruppo di limiti. Ciò consente di associare i client ai server del sistema del sito, come i punti di distribuzione, che si trovano vicino ai client nella rete.
+境界グループを構成するには、境界 (ネットワークの場所) とサイト システムの役割を、配布ポイントのように、境界グループに関連付けます。 これは、ネットワーク上のクライアントの近くにある配布ポイントのようにサイト システム サーバーにクライアントを関連付けることに役立ちます。
 
-Quando si assegna lo stesso limite a più gruppi di limiti e si assegnano gli stessi server del sistema del sito, come i punti di distribuzione, a più gruppi di limiti, si aumenta la disponibilità dei sistemi del sito a una gamma più ampia di percorsi di rete.
+同じ境界を複数の境界グループに割り当て、同じサイト システム サーバーを配布ポイントのように複数の境界グループに割り当てるには、サイト システムの可用性を広範囲のネットワークの場所まで増やします。
 
-I client usano un gruppo di limiti per gli scopi seguenti:  
+クライアントは、次の目的で境界グループを使用します。  
 
--   Assegnazione automatica al sito  
--   Ricerca di un server del sistema del sito che può fornire un servizio, tra cui:
-    - Punti di distribuzione per il percorso del contenuto
-    -   Punti di aggiornamento software (a partire dalla versione 1702)
-    - Punti di migrazione dello stato
-    - Punti di gestione preferiti. Se si usano i punti di gestione preferiti, è necessario abilitare questa opzione per la gerarchia e non dalla configurazione del gruppo di limiti. Vedere [Per abilitare l'uso dei punti di gestione preferiti](#to-enable-use-of-preferred-management-points) in questo argomento.
+-   サイトの自動割り当て  
+-   サービスを提供できるサイト システム サーバーを見つけるため (次を含む):
+    - コンテンツの場所の配布ポイント
+    -   ソフトウェア更新ポイント (バージョン 1702 より)
+    - 状態移行ポイント
+    - 優先管理ポイント (優先管理ポイントを使用する場合は、境界グループの構成内からではなく、階層に対してこのオプションを有効にする必要があります。 このトピックの「[優先管理ポイントの使用を有効にする](#to-enable-use-of-preferred-management-points)」を参照してください。)
 
-##  <a name="boundary-groups-and-relationships"></a>Gruppi di limiti e relazioni
-Per ogni gruppo di limiti nella gerarchia, è possibile assegnare:
+##  <a name="boundary-groups-and-relationships"></a>境界グループとリレーションシップ
+階層の境界グループごとに、次を割り当てることができます。
 
--  Uno o più limiti. Quando un client si trova in un percorso di rete definito come limite assegnato a un gruppo di limiti specifico, questo viene chiamato gruppo di limiti **corrente**. Un client può avere più di un gruppo di limiti corrente.
-- Uno o più ruoli del sistema del sito.  I client possono usare sempre i ruoli del sistema del sito associati al gruppo di limiti corrente. A seconda delle configurazioni aggiuntive, possono essere in grado di usare i ruoli del sistema del sito in gruppi di limiti aggiuntivi.  
+-  1 つまたは複数の境界。 特定の境界グループに割り当てられている境界として定義されているネットワークの場所にクライアントが置かれているとき、それは**現在**の境界グループと呼ばれます。 クライアントには複数の現在の境界グループを設定できます。
+- 1 つまたは複数のサイト システムの役割。  クライアントは常に、現在の境界グループに関連付けられているサイト システムの役割を使用できます。 追加の構成によっては、追加の境界グループのサイト システムの役割を使用できることがあります。  
 
-Per ogni gruppo di limiti creato, è possibile configurare un collegamento unidirezionale a un altro gruppo di limiti. Il collegamento è definito **relazione**. I gruppi di limiti con cui si stabilisce il collegamento sono chiamati gruppi di limiti **adiacenti**. Un gruppo di limiti può avere più relazioni, ciascuna con uno specifico gruppo di limiti adiacente.
+作成する境界グループごとに、別の境界グループへの一方向リンクを構成できます。 そのリンクは**リレーションシップ**と呼ばれます。 リンク先の境界グループは**近隣**境界グループと呼ばれます。 境界グループには複数のリレーションシップを設定できます。各リレーションシップに特定の近隣境界グループが与えられます。
 
-La configurazione di ogni relazione determina il momento in cui un client che non riesce a trovare un server del sistema del sito disponibile nel gruppo di limiti corrente può iniziare a cercare un sistema del sito disponibile in un gruppo di limiti adiacente. Questa ricerca in altri gruppi è definita **fallback**.
+クライアントはその現在の境界グループで利用できるサイト システム サーバーが見つからないと、近隣境界グループを探して利用できるサイト システムを見つけますが、その検索開始のタイミングは各リレーションシップの構成により決定します。 この追加グループ検索は**フォールバック**と呼ばれます。
 
-## <a name="fallback"></a>Fallback
-Per evitare problemi per i client quando non riescono a trovare un sistema del sito disponibile nel gruppo di limiti corrente, si definisce la relazione tra i gruppi di limiti che specifica il comportamento di fallback. Il fallback consente a un client di espandere la ricerca di un sistema del sito disponibile a gruppi di limiti aggiuntivi.
+## <a name="fallback"></a>フォールバック
+クライアントが現在の境界グループで利用できるサイト システムを見つけられない問題を回避するために、フォールバック動作を決定する境界グループ間のリレーションシップを定義します。 フォールバックを利用することで、クライアントはその検索範囲を追加の境界グループまで拡大し、利用できるサイト システムを見つけることができます。
 
-Le relazioni vengono configurate in una scheda **Relazioni** delle proprietà del gruppo di limiti. Quando si configura una relazione, si definisce un collegamento a un gruppo di limiti adiacente. Per ogni tipo di ruolo del sistema del sito supportato, è possibile configurare impostazioni indipendenti per il fallback a tale gruppo di limiti adiacente. Ad esempio, quando si configura una relazione con un gruppo di limiti specifico, è possibile impostare il fallback per i punti di distribuzione dopo 20 minuti anziché dopo l'intervallo predefinito di 120 minuti. Per un esempio più esteso, vedere [Esempio d'uso dei gruppi di limiti](#example-of-using-boundary-groups).
+リレーションシップは **[リレーションシップ]** タブの境界グループ プロパティで構成されます。 リレーションシップを構成するとき、近隣境界グループへのリンクを定義します。 サポートされるサイト システムの役割の種類ごとに、その近隣境界グループへのフォールバックの独立した設定を構成できます。 たとえば、ある境界グループに対するリレーションシップを構成するとき、既定の 120 分ではなく、20 分後に配布ポイントのフォールバックが発生するように設定できます。 他のさまざまな例については、「[境界グループの使用例](#example-of-using-boundary-groups)」を参照してください。
 
-Se un client non riesce a trovare un ruolo del sistema del sito disponibile nel gruppo di limiti corrente, usa l'intervallo di fallback in minuti per determinare dopo quanto tempo può iniziare a eseguire la ricerca di un sistema del sito disponibile associato al gruppo di limiti adiacente.  
+クライアントがその現在の境界グループで利用できるサイト システムの役割を見つけられない場合、そのクライアントは、フォールバック時間 (分) を利用し、その近隣境界グループに関連付けられている利用できるサイト システムの検索開始までの時間を決定します。  
 
-Quando un client non riesce a trovare un sistema del sito disponibile e inizia a cercare in percorsi di gruppi di limiti adiacenti, aumenta il pool di sistemi del sito disponibili che può usare in base alla configurazione dei gruppi di limiti e delle relative relazioni.
+クライアントが利用できるサイト システムを見つけられず、近隣境界グループから場所の検索を開始するとき、クライアントは利用できるサイト システムのプールを増やします。そのプールは、境界グループとそのリレーションシップの構成により定義される方法で利用できます。
 
-- Un gruppo di limiti può avere più di una relazione. Con più relazioni è possibile configurare il fallback per ogni tipo del sistema del sito a diversi gruppi adiacenti dopo diversi intervalli di tempo.    
-- I client eseguono il fallback a un gruppo di limiti solo se è direttamente adiacente al gruppo di limiti corrente.
-- Se un client fa parte di più gruppi limite, il gruppo limite corrente è definito come un'unione di tutti i gruppi limite del client. Il client può quindi eseguire il fallback ai gruppi adiacenti di uno dei gruppi di limiti originali.
+- 境界グループには複数のリレーションシップを設定できます。 複数のリレーションシップを利用することで、サイト システムの種類ごとにフォールバックを構成し、フォールバック開始までの時間に近隣ごとに別の値を設定できます。    
+- クライアントは、現在の境界グループに直接隣接している境界グループにのみフォールバックします。
+- クライアントが複数の境界グループのメンバーである場合は、現在の境界グループが、そのクライアントのすべての境界グループの結合として定義されます。 そのクライアントは元のいずれかの境界グループの近隣にフォールバックできます。
 
-### <a name="the-default-site-boundary-group"></a>Gruppo di limiti predefinito del sito
-Oltre ai gruppi di limiti che è possibile creare, ogni sito dispone di un gruppo di limiti predefinito creato da Configuration Manager. Questo gruppo è denominato ***Default-Site-Boundary-Group&lt;codicesito>***. Ad esempio, il gruppo per il sito ABC è denominato *Default-Site-Boundary-Group&lt;ABC>*.
+### <a name="the-default-site-boundary-group"></a>既定のサイト境界グループ
+作成する境界グループ以外に、Configuration Manager により作成された既定のサイト境界グループが各サイトに与えられます。 このグループには ***Default-Site-Boundary-Group&lt;sitecode>*** という名前が付きます。 たとえば、サイト ABC のグループの名前は *Default-Site-Boundary-Group&lt;ABC>* になります。
 
-Per ogni gruppo di limiti creato, Configuration Manager crea automaticamente un collegamento implicito a ogni gruppo di limiti predefinito del sito nella gerarchia.
--   Il collegamento implicito è un'opzione di fallback predefinita da un gruppo di limiti corrente al gruppo di limiti predefinito del sito che ha un intervallo di fallback predefinito di 120 minuti.
--   I client che non si trovano in un limite associato a un gruppo di limiti nella gerarchia usano automaticamente il gruppo di limiti predefinito dal sito assegnato per identificare i ruoli del sistema del sito validi che possono usare.
+作成する境界グループごとに、Configuration Manager は自動的に、階層の既定の各サイト境界グループに暗黙的リンクを作成します。
+-   この暗黙的リンクは、現在の境界グループからサイトの既定の境界グループへの既定のフォールバック オプションです。既定の境界グループには、120 分という既定のフォールバック時間が設定されています。
+-   階層内の境界グループに関連付けられている境界にないクライアントは、それに割り当てられているサイトの既定のサイト境界グループを利用し、それが利用できるサイト システムの役割を特定します。
 
-Per gestire il fallback al gruppo di limiti predefinito del sito:
-- È possibile accedere alle proprietà del gruppo di limiti predefinito del sito e modificare i valori nella scheda **Comportamento predefinito**. Le modifiche apportate in questa scheda si applicano a *tutti* i collegamenti impliciti a questo gruppo di limiti. Queste impostazioni possono essere sostituite quando si configura il collegamento esplicito a questo gruppo di limiti predefinito del sito da un altro gruppo di limiti.
-- È possibile accedere alle proprietà di un gruppo di limiti creato e modificare i valori per il collegamento esplicito a un gruppo di limiti predefinito del sito. Quando si imposta un nuovo intervallo in minuti per il fallback o il blocco del fallback, questa modifica influisce solo sul collegamento che si sta configurando. Le configurazioni del collegamento esplicito sostituiscono quelle della scheda **Comportamento predefinito** di un gruppo di limiti predefinito del sito.
-
-
-## <a name="site-assignment"></a>Assegnazione sito  
- È possibile configurare ciascun gruppo di limiti con un sito assegnato per i client.  
-
--   Un client appena installato che usa l'assegnazione automatica sito viene aggiunto al sito assegnato di un gruppo di limiti che contiene il percorso di rete corrente del client.  
--   Dopo l'assegnazione a un sito, il client non modificherà la propria assegnazione del sito quando cambia il percorso di rete. Se il client ad esempio effettua il roaming a un nuovo percorso di rete rappresentato da un limite in un gruppo di limiti con un'assegnazione sito diversa, il sito assegnato a tale client non viene modificato.  
--   Quando l'individuazione sistema Active Directory rileva una nuova risorsa, le informazioni sulla rete per la risorsa individuata vengono valutate in rapporto ai limiti nei gruppi di limiti. Tramite questo processo la nuova risorsa viene associata a un sito assegnato per poter essere utilizzata dal metodo di installazione push client.  
--   Quando un limite è membro di più gruppi con diversi siti assegnati, i client selezionano uno dei siti in modo casuale.  
--   Le modifiche a un sito assegnato dei gruppi di limiti si applicano solo alle nuove azioni di assegnazione del sito. I client assegnati precedentemente a un sito non valutano di nuovo l'assegnazione del sito in base alle modifiche alla configurazione di un gruppo di limiti (o al proprio percorso di rete).  
-
-Per altre informazioni sull'assegnazione dei siti per i client, vedere [Utilizzo dell'assegnazione automatica del sito per i computer](../../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_AutomaticAssignment) in [Come assegnare i client a un sito in System Center Configuration Manager](../../../../core/clients/deploy/assign-clients-to-a-site.md).  
-
-## <a name="distribution-points"></a>Punti di distribuzione
-
-Quando un client richiede il percorso di un punto di distribuzione, Configuration Manager invia al client un elenco dei sistemi del sito del tipo appropriato che sono associati a ogni gruppo di limiti in cui è incluso il percorso di rete corrente del client:
-
--   **Durante la distribuzione del software**, i client richiedono un percorso per il contenuto di distribuzione disponibile a un punto di distribuzione o a un'altra origine di contenuto valida, ad esempio un client configurato per Peer cache.
-
--   **Durante la distribuzione del sistema operativo** i client richiedono un percorso per l'invio o la ricezione delle informazioni di migrazione dello stato.  
-
-Durante la distribuzione del contenuto, se un client richiede contenuto non disponibile a un'origine nel gruppo di limiti corrente, continua a richiedere tale contenuto provando diverse origini di contenuto nel gruppo di limiti corrente finché non viene raggiunto il periodo di fallback per un gruppo di limiti adiacente o per il gruppo di limiti predefinito del sito. Se il client non ha ancora trovato il contenuto, estende la ricerca alle origini di contenuto in modo da includere i gruppi di limiti adiacenti.
-
-Se tuttavia il contenuto viene distribuito su richiesta e non è disponibile in un punto di distribuzione quando richiesto da un client, viene avviato il processo di trasferimento del contenuto a tale punto di distribuzione ed è possibile che il client trovi tale server come origine di contenuto prima di eseguire il fallback per usare un gruppo di limiti adiacente.
-
-## <a name="software-update-points"></a>Punti di aggiornamento software
-A partire dalla versione 1702, i client usano gruppi di limiti per trovare un nuovo punto di aggiornamento software. È possibile aggiungere singoli punti di aggiornamento software a diversi gruppi di limiti per controllare quali server possono essere trovati da un client.
-
-Se si esegue l'aggiornamento da una versione precedente alla 1702, tutti i punti di aggiornamento software esistenti vengono aggiunti al gruppo di limiti predefinito in ogni sito. Ciò consente di mantenere il comportamento di pre-aggiornamento in cui i client selezionano un punto di aggiornamento software dal pool di punti di aggiornamento software disponibili che è stato configurato per la gerarchia.  Questo comportamento viene mantenuto finché non si sceglie di aggiungere singoli punti di aggiornamento software a gruppi di limiti diversi per un comportamento di selezione e fallback controllato.
-
-Se si installa un nuovo sito che esegue la versione 1702 o successiva, i punti di aggiornamento software non vengono aggiunti al gruppo di limiti del sito predefinito. Assegnare i punti di aggiornamento software a un gruppo di limiti in modo che i client possano trovarli e usarli.
-
-### <a name="fallback-for-software-update-points"></a>Fallback per i punti di aggiornamento software
-Il fallback per i punti di aggiornamento software è configurato come altri ruoli del sistema del sito, ma con le avvertenze seguenti:
-- **I nuovi client usano i gruppi di limiti per selezionare i punti di aggiornamento software.** Dopo l'installazione della versione 1702, i nuovi client installati selezionano un punto di aggiornamento software tra quelli associati ai gruppi di limiti configurati. Ciò sostituisce il comportamento precedente in cui i client selezionano un punto di aggiornamento software in maniera casuale da un elenco di punti che condividono la foresta dei client.
-
-- **I client continuano a usare l'ultimo punto di aggiornamento software valido fino a quando non eseguono il fallback per trovare un nuovo punto.** I client che hanno già un punto di aggiornamento software continuano a usare tale punto finché il server non sarà irraggiungibile.  Ciò include l'uso continuativo di un punto di aggiornamento software non associato al gruppo di limiti corrente del client.
-
-  L'uso continuativo di un punto di aggiornamento software esistente, anche quando il server non è incluso nel gruppo di limiti corrente del client, è intenzionale. Questo avviene perché una modifica del punto di aggiornamento software può comportare un utilizzo elevato della larghezza di banda di rete poiché il client sincronizza i dati con il nuovo punto di aggiornamento software. Il ritardo nella transizione può evitare la saturazione della rete se tutti i client passano contemporaneamente a un nuovo punto di aggiornamento software.
-
-- **Un client prova sempre a raggiungere l'ultimo punto di aggiornamento software valido per 120 minuti prima di avviare il fallback.** Dopo 120 minuti, se il client non ha stabilito il contatto, inizia il fallback. Quando il fallback viene avviato, il client riceve un elenco di tutti i punti di aggiornamento software dal gruppo di limiti corrente. I punti di aggiornamento software aggiuntivi dai gruppi di limiti adiacenti e il gruppo di limiti predefinito sono disponibili in base alle configurazioni di fallback.
-
-### <a name="fallback-configurations-for-software-update-points"></a>Configurazioni di fallback per i punti di aggiornamento software
-#### <a name="beginning-with-version-1706"></a>A partire dalla versione 1706   
-È possibile impostare **Orari di fallback (in minuti)** per i punti di aggiornamento software su meno di 120 minuti. Il client deve tuttavia provare ancora a raggiungere il punto di aggiornamento software originale per 120 minuti prima di espandere la ricerca ad altri server. Poiché il calcolo degli orari di fallback del gruppo di limiti inizia quando il client non riesce a raggiungere per la prima volta il server originale, i gruppi di limiti impostati su meno di 120 minuti vengono forniti al client quando espande la ricerca dopo che la ricerca del server originale ha avuto esito negativo per 120 minuti.
-
-È possibile configurare **Non eseguire mai il fallback** per bloccare il fallback per un punto di aggiornamento software a un gruppo di limiti adiacente.
-
-Dopo l'esito negativo nel raggiungere il server originale per due ore, il client usa quindi un ciclo più breve per stabilire una connessione a un nuovo punto di aggiornamento software. In questo modo il client può eseguire rapidamente una ricerca nell'elenco in espansione di potenziali punti di aggiornamento software.
-
- -  **Esempio di fallback:**  
-    Il fallback per i punti di aggiornamento software di un gruppo di limiti corrente di un client è impostato su *10* minuti per il gruppo di limiti *A* e *130* minuti per il gruppo di limiti *B*. Quando il client non riesce a raggiungere l'ultimo punto di aggiornamento software valido:
-    -   Il client prova a raggiungere solo il server originale nei successivi 120 minuti.  Dopo 10 minuti, i punti di aggiornamento software dal gruppo di limiti A vengono aggiunti al pool di server disponibili. Il client può tuttavia provare a contattare questi o altri server solo dopo che è trascorso il periodo iniziale di 120 minuti per riconnettersi al server originale.
-    -   Dopo avere provato a individuare tale punto di aggiornamento software per 120 minuti, il client può espandere la ricerca. A quel punto, i server nel gruppo di limiti corrente del client e in eventuali gruppi di limiti adiacenti impostati su 120 minuti o meno vengono aggiunti al pool disponibile di punti di aggiornamento software. Sono inclusi i server nel gruppo di limiti A aggiunti prima al pool di server disponibili.
-    -       Dopo altri 10 minuti (130 minuti in totale dopo il primo tentativo non riuscito del client di raggiungere l'ultimo punto di aggiornamento software noto), il client espande la ricerca per includere i punti di aggiornamento software dal gruppo di limiti B.  
-
-#### <a name="prior-to-version-1706"></a>Prima della versione 1706
-Prima della versione 1706, le configurazioni di fallback per i punti di aggiornamento software non supportano un orario configurabile in minuti. Il comportamento di fallback è limitato a:
-
-  - **Orari di fallback (in minuti)**: questa opzione è disabilitata per i punti di aggiornamento software e non può essere configurata. È impostata su 120 minuti.
-  -     **Non eseguire mai il fallback**: quando si usa questa configurazione, è possibile bloccare il fallback per un punto di aggiornamento software a un gruppo di limiti adiacente.
-
-Quando un client che ha già un punto di aggiornamento software non riesce a raggiungerlo, può eseguire il fallback per trovarne un altro. Quando usa il fallback, il client riceve un elenco di tutti i punti di aggiornamento software dal gruppo di limiti corrente. Se non riesce a trovare un server disponibile per 120 minuti, eseguirà il fallback ai gruppi di limiti adiacenti e al gruppo di limiti predefinito del sito. Il fallback a entrambi i gruppi di limiti viene eseguito contemporaneamente perché l'intervallo di fallback dei punti di aggiornamento software ai gruppi adiacenti è impostato su 120 minuti e non è modificabile. L'intervallo di 120 minuti è anche il periodo predefinito usato per il fallback al gruppo di limiti predefinito del sito. Quando un client esegue il fallback a un gruppo di limiti adiacente e al gruppo di limiti predefinito del sito, prova a contattare i punti di aggiornamento software del gruppo di limiti adiacente prima di provare a usare uno di quelli del gruppo di limiti predefinito del sito.
-
-### <a name="manually-switch-to-a-new-software-update-point"></a>Passare manualmente a un nuovo punto di aggiornamento software
-Oltre a usare il fallback, è possibile usare *Notifica client* per forzare manualmente il passaggio di un dispositivo a un nuovo punto di aggiornamento software.
-
-Quando si passa a un nuovo server, i dispositivi usano il fallback per trovare il nuovo server. Esaminare quindi le configurazioni dei gruppi di limiti e assicurarsi che i punti di aggiornamento software siano nei gruppi di limite corretti prima di avviare questa modifica.
-
-Per altre informazioni, vedere [Passaggio manuale dei client a un nuovo punto di aggiornamento software](/sccm/sum/plan-design/plan-for-software-updates#manually-switch-clients-to-a-new-software-update-point).
+既定のサイト境界グループへのフォールバックを管理するには:
+- サイトの既定の境界グループのプロパティに進み、**[既定の動作]** タブの値を変更できます。 ここで行う変更は、この境界グループの*すべて*の暗黙的リンクに適用されます。 以上の設定は、別の境界グループからこの既定のサイト境界グループの明示的リンクを構成すると無視されます。
+- 作成した境界グループのプロパティに移動し、既定のサイト境界グループに進む明示的リンクの値を変更できます。 フォールバックに新しい時間 (分) を設定したり、フォールバックをブロックしたりした場合、その変更はあなたが構成しているリンクにのみ影響を与えます。 明示的リンクの構成は、既定のサイト境界グループの **[既定の動作]** タブの構成より優先されます。
 
 
-## <a name="preferred-management-points"></a>Punti di gestione preferiti
+## <a name="site-assignment"></a>サイトの割り当て  
+ 各境界グループごとに、クライアント用の割り当てられたサイトを構成できます。  
 
- I punti di gestione preferiti consentono a un client di identificare un punto di gestione associato al percorso di rete corrente (limite).  
+-   サイトの自動割り当てを使用する新しくインストールされたクライアントは、クライアントの現在のネットワークの場所を含む境界グループの割り当て済みサイトに参加します。  
+-   サイトに割り当てられると、クライアントがネットワークの場所を変更するときに、クライアントのサイトの割り当てが変更されることはありません。 たとえば、別のサイトが割り当てられた境界グループ内の境界が示されている新しいネットワークの場所にクライアントがローミングしたとしても、クライアントに対して割り当てられたサイトが変更されることはありません。  
+-   Active Directory システムの探索で新しいリソースが検出されると、検出されたリソースのネットワーク情報が境界グループ内の境界に対して評価されます。 このプロセスにより、割り当てられたサイトに新しいリソースが関連付けられ、クライアント プッシュ インストール方法で使用できるようになります。  
+-   境界が、異なる割り当て済みサイトを持つ複数の境界グループのメンバーである場合は、クライアントによってランダムにいずれかのサイトが選択されます。  
+-   境界グループの割り当て済みサイトへの変更は、新しいサイトの割り当て操作にのみ適用されます。 以前にサイトに割り当て済みのクライアントは、境界グループの構成の変更 (またはクライアントのネットワークの場所の変更) に基づくサイトの割り当てを再評価しません。  
 
--   Il client prova a usare un punto di gestione preferito dal sito assegnato prima di usare un punto di gestione da questo sito non configurato come preferito.  
--   Per usare questa opzione è necessario abilitarla per la gerarchia e configurare i gruppi di limiti nei singoli siti primari per includere i punti di gestione che devono essere associati ai limiti del gruppo.  
--   Quando sono configurati punti di gestione preferiti e un client organizza l'elenco dei punti di gestione, il client inserisce i punti di gestione preferiti all'inizio dell'elenco di quelli assegnati, in cui sono inclusi tutti i punti di gestione del sito assegnato del client.  
+クライアントのサイトの割り当ての詳細については、「[System Center Configuration Manager でクライアントをサイトに割り当てる方法](../../../../core/clients/deploy/assign-clients-to-a-site.md)」の「[コンピューターにサイトの自動割り当てを使用する](../../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_AutomaticAssignment)」をご覧ください。  
+
+## <a name="distribution-points"></a>配布ポイント
+
+クライアントが配布ポイントの場所を要求すると、Configuration Manager はそのクライアントに、クライアントの現在のネットワークの場所を含む各境界グループに関連付けられている (適切な種類の) サイト システムの一覧を送信します。
+
+-   **ソフトウェアの配布時**、クライアントは、配布ポイントまたはその他の有効なコンテンツ ソース (ピア キャッシュに構成されているクライアントなど) から利用できる展開コンテンツの場所を要求します。
+
+-   **オペレーティング システムの展開時**に、クライアントは状態移行情報の送受信用の場所を要求します。  
+
+コンテンツの展開中、現在の境界グループのソースから利用できないコンテンツをクライアントが要求した場合、そのクライアントは、近隣境界グループまたは既定のサイト境界グループのフォールバック時間に到達するまで、そのコンテンツの要求を続け、その現在の境界グループでさまざまなコンテンツ ソースを試します。 クライアントがコンテンツを見つけていない場合、コンテンツ ソースの検索範囲を拡大し、近隣境界グループを含めます。
+
+ただし、コンテンツがオンデマンドで配布され、配布ポイントでは利用できない場合、クライアントが要求すると、その配布ポイントにコンテンツを転送するプロセスが開始します。フォールバックして近隣境界グループを使用する前にコンテンツ ソースとしてそのサーバーをクライアントが見つけることがありえます。
+
+## <a name="software-update-points"></a>ソフトウェアの更新ポイント
+バージョン 1702 以降では、クライアントは境界グループを利用し、新しいソフトウェア更新ポイントを検出します。 ソフトウェアの更新ポイントをそれぞれ異なる境界グループに追加して、クライアントで検索できるサーバーを制御できます。
+
+1702 より前のバージョンから更新すると、すべての既存ソフトウェア更新ポイントが各サイトで既定のサイト境界グループに追加されます。 それにより、自分の階層に対して自分で構成した利用できるソフトウェア更新ポイント プールからクライアントがソフトウェア更新ポイントを選択するという更新以前の動作が維持されます。  この動作は、選択とフォールバックの動作が制御されている異なる境界グループに個々のソフトウェア更新ポイントを追加するまで維持されます。
+
+1702 以降のバージョンを実行する新しいサイトを設置する場合、既定のサイト境界グループにソフトウェア更新ポイントは追加されません。 クライアントが見つけて利用できるように、ソフトウェア更新ポイントを境界グループに割り当てます。
+
+### <a name="fallback-for-software-update-points"></a>ソフトウェア更新ポイントのフォールバック
+ソフトウェア更新ポイントのフォールバックは他のサイト システムの役割と同様に構成されますが、次のような注意点があります。
+- **新しいクライアントは境界グループを使用してソフトウェア更新ポイントを選択します。** バージョン 1702 をインストールすると、インストールした新しいクライアントは、構成した境界グループに関連付けられているものからソフトウェア更新ポイントを選択します。 これは、クライアントがクライアント フォレストを共有するソフトウェア更新ポイントのリストからランダムに選択する以前の動作に取って代わるものです。
+
+- **クライアントは、フォールバックして新しいソフトウェア更新ポイントを見つけるまで、最後に確認された有効なソフトウェア更新ポイントを引き続き使用します。** 既にソフトウェア更新ポイントがあるクライアントは、そのサーバーに到達できなくなるまで、そのソフトウェア更新ポイントを引き続き使用します。  クライアントの現在の境界グループに関連付けられていないソフトウェア更新ポイントも引き続き使用されます。
+
+  そのサーバーがクライアントの現在の境界グループにないときでも、既存のソフトウェア更新ポイントが意図的に引き続き使用されます。 これは、ソフトウェアの更新ポイントが変更されると、クライアントがデータと新しいソフトウェアの更新ポイントを同期する場合に、ネットワーク帯域幅が多く使用される可能性があるためです。 遷移の遅延は、すべてのクライアントが新しいソフトウェアの更新ポイントに同時に切り替える場合に、ネットワークの飽和を回避するのに役立ちます。
+
+- **クライアントはフォールバックを開始する前に、120 分間、最後に確認された有効なソフトウェア更新ポイントへの接続を常に試行します。** 120 分経過し、クライアントが接続を確立していない場合、フォールバックを開始します。 フォールバックを開始すると、クライアントはその現在の境界グループからの全ソフトウェア更新ポイントの一覧を受け取ります。 フォールバック構成に基づき、近隣の境界グループとサイト既定の境界グループの付加的ソフトウェア更新ポイントが利用できます。
+
+### <a name="fallback-configurations-for-software-update-points"></a>ソフトウェア更新ポイントのフォールバック構成
+#### <a name="beginning-with-version-1706"></a>バージョン 1706 以降   
+ソフトウェア更新ポイントの**フォールバック時間 (分単位)** を 120 分未満に構成できます。 ただし、検索を付加的サーバーに拡大する前に、120 分間、クライアントは元のソフトウェア更新ポイントへの接続を試行する必要があります。 境界グループのフォールバック時間はクライアントが元のサーバーへの接続に最初に失敗したときに始まるため、120 分間、クライアントが元のサーバーに接続できず、検索を拡大したとき、120 分未満に構成されている境界グループがクライアントに与えられます。
+
+**[フォールバックしない]** 構成を使用すると、ソフトウェア更新ポイントのために近隣境界グループにフォールバックする動作をブロックできます。
+
+2 時間で元のサーバーに到達できないと、クライアントはより短いサイクルを利用し、新しいソフトウェア更新ポイントへの接続を確立します。 これにより、潜在的なソフトウェア更新ポイントが増えてもクライアントは迅速に検索できます。
+
+ -  **フォールバックの例:**  
+    クライアントの現在の境界グループにソフトウェア更新ポイントのフォールバックが設定されています。それは境界グループ *A* に対して *10* 分間、境界グループ *B* に対して *130* 分間に構成されています。クライアントが最後に確認された有効なソフトウェア更新ポイントに接続できないとき:
+    -   その後 120 分間、元のサーバーのみに接続を試行します。  10 分後、境界グループ A のソフトウェア更新ポイントが利用可能サーバーのプールに追加されます。 ただし、元のサーバーに再接続するための最初の 120 分が経過するまで、クライアントはこの追加サーバーやその他のサーバーへの接続を試行できません。
+    -   120 分間、元のソフトウェア更新ポイントの検出を試行した後、クライアントは検索を拡大します。 その時点で、クライアントの現在の境界グループと 120 分未満に構成されている近隣の境界グループがソフトウェア更新ポイントの利用可能プールに追加されています。 これには、利用可能サーバーのプールに以前に追加された、境界グループ A のサーバーが含まれます。
+    -       さらに 10 分経過すると (クライアントが最後に確認された有効なソフトウェア更新ポイントへの接続を最初に失敗してから合計 130 分後)、クライアントは検索を拡大し、境界グループ B のソフトウェア更新ポイントを追加します。  
+
+#### <a name="prior-to-version-1706"></a>バージョン 1706 以前
+バージョン 1706 以前については、ソフトウェア更新ポイントのフォールバック構成では時間 (分単位) を構成できません。 代わりに、フォールバック動作は次のように制限されています。
+
+  - **フォールバック時間 (分単位):** ソフトウェア更新ポイントに対してこのオプションは灰色表示になり、構成できません。 120 分に設定されています。
+  -     **フォールバックしない:** この構成を使用すると、ソフトウェア更新ポイントのために近隣境界グループにフォールバックする動作をブロックできます。
+
+ソフトウェア更新ポイントが既に与えられているクライアントがそれに到達できないとき、フォールバックして別のものを見つけることができます。 フォールバックを利用するとき、クライアントはその現在の境界グループからのソフトウェア更新ポイントの全一覧を受け取ります。 利用できるサーバーが 120 分で見つからなかった場合、近隣境界グループや既定のサイト境界グループにフォールバックします。 この 2 つの境界グループへのフォールバックは同時に行われます。ソフトウェア更新ポイントの近隣境界グループへのフォールバック時間が 120 分に設定されており、変更できないからです。 120 分は、既定のサイト境界グループへのフォールバックの規定時間でもあります。 クライアントが近隣境界グループと既定のサイト境界グループの両方にフォールバックするとき、クライアントは近隣境界グループからソフトウェア更新ポイントへの接触を試み、それから既定のサイト境界グループのソフトウェア更新ポイントの使用を試みます。
+
+### <a name="manually-switch-to-a-new-software-update-point"></a>新しいソフトウェア更新ポイントに手動で切り替える
+フォールバックの利用に加え、*クライアント通知*を利用し、新しいソフトウェア更新ポイントへの切り替えをデバイスに手動で強制できます。
+
+新しいサーバーに切り替えるとき、デバイスはフォールバックを使用してその新しいサーバーを検索します。 そのため、この変更に取り掛かる前に、境界グループ構成を確認し、ソフトウェアの更新ポイントが正しい境界グループにあることを確認してください。
+
+詳細については、「[手動でのクライアントの新しいソフトウェアの更新ポイントへの切り替え](/sccm/sum/plan-design/plan-for-software-updates#manually-switch-clients-to-a-new-software-update-point)」を参照してください。
+
+
+## <a name="preferred-management-points"></a>優先管理ポイント
+
+ 優先管理ポイントを使用すると、クライアントは、その現在のネットワークの場所 (境界) に関連付けられた管理ポイントを特定できます。  
+
+-   クライアントは、優先として構成されていない割り当て済みサイトからの管理ポイントを使用する前に、割り当て済みサイトからの優先管理ポイントを使用しようとします。  
+-   このオプションを使用するには、それを階層に対して有効にして、境界グループの関連境界に関連付ける必要がある管理ポイントを含めるように個々のプライマリ サイトの境界グループを構成する必要があります。  
+-   優先管理ポイントが構成され、クライアントが管理ポイントの一覧を整理するときに、割り当て済み管理ポイントの一覧 (クライアントの割り当て済みサイトからのすべての管理ポイントを含む) の一番上に優先管理ポイントがクライアントにより配置されます。  
 
 > [!NOTE]  
->  Quando un client esegue il roaming (ossia, modifica i percorsi di rete, ad esempio quando un computer portatile viene spostato in un percorso di ufficio remoto), può usare un punto di gestione (o un punto di gestione proxy) dal sito locale nella nuova posizione prima di provare a usare un punto di gestione del sito assegnato (che include i punti di gestione preferiti).  Per altre informazioni, vedere [Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
+>  クライアントのローミング時 (ラップトップ コンピューターをリモート オフィスに持って行くときなど、クライアントのネットワークの場所を変更するとき) に、クライアントは新しい場所でローカル サイトからの管理ポイント (またはプロキシ管理ポイント) を使用してから、割り当て済みサイト (優先管理ポイントがあるサイト) からの管理ポイントを使用する場合があります。  詳細については、「[クライアントが System Center Configuration Manager のサイト リソースやサービスを検索する方法を理解する](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)」をご覧ください。  
 
-### <a name="overlapping-boundaries"></a>Limiti sovrapposti  
- Configuration Manager supporta le configurazioni con sovrapposizione dei limiti per il percorso del contenuto:  
+### <a name="overlapping-boundaries"></a>重複する境界  
+ Configuration Manager は、コンテンツの場所について、重複する境界を持つ構成をサポートします。  
 
--   **Quando un client richiede un contenuto** e il percorso di rete del client appartiene a più gruppi di limiti, Configuration Manager invia al client un elenco di tutti i punti di distribuzione che hanno il contenuto.  
--   **Quando un client richiede a un server di inviare o ricevere le informazioni di migrazione dello stato** e il percorso di rete del client appartiene a più gruppi di limiti, Configuration Manager invia al client un elenco di tutti i punti di migrazione dello stato associati a un gruppo di limiti che include il percorso di rete corrente del client.  
+-   **クライアントがコンテンツを要求し**、クライアントのネットワークの場所が複数の境界グループに属している場合、Configuration Manager はコンテンツが格納されているすべての配布ポイントのリストをクライアントに送信します。  
+-   **クライアントが状態移行情報の送受信をサーバーに要求し**、クライアントのネットワークの場所が複数の境界グループに属している場合は、Configuration Manager は、クライアントの現在のネットワークの場所を含む境界グループに関連付けられた状態移行ポイントのリストをクライアントに送信します。  
 
-Questo comportamento consente al client di selezionare il server più vicino da cui trasferire le informazioni di migrazione dello stato o sul contenuto.  
+この動作により、コンテンツまたは状態移行情報の転送元となる最も近いサーバーをクライアントが選択できるようになります。  
 
 
 
-## <a name="example-of-using-boundary-groups"></a>Esempio d'uso dei gruppi di limiti
-L'esempio seguente usa un client che esegue la ricerca di contenuto da un punto di distribuzione. Questo esempio può essere applicato ad altri ruoli del sistema del sito che usano i gruppi di limiti. Tenere tuttavia presente che i punti di aggiornamento software non supportano la configurazione di un intervallo in minuti per il fallback a un gruppo adiacente e usano sempre un periodo di 120 minuti.
+## <a name="example-of-using-boundary-groups"></a>境界グループの使用例
+次の例では、クライアントは配布ポイントからコンテンツを探します。 この例は、境界グループを利用する他のサイト システムの役割にも適用できます。 ただし、ソフトウェア更新ポイントへの適用に関しては、ソフトウェア更新ポイントは近隣グループにフォールバックする時間 (分単位) を構成できず、常に 120 分という時間を使用することに留意してください。
 
-Creare tre gruppi limite che non condividono limiti o server del sistema del sito:
--   Gruppo BG_A con punti di distribuzione DP_A1 e DP_A2 associati al gruppo
--   Gruppo BG_B con punti di distribuzione DP_B1 e DP_B2 associati al gruppo
--   Gruppo BG_C con punti di distribuzione DP_C1 e DP_C2 associati al gruppo
+境界またはサイト システム サーバーを共有しない次の 3 つの境界グループを作成します。
+-   配布ポイント DP_A1 と DP_A2 が関連付けられたグループ BG_A
+-   配布ポイント DP_B1 と DP_B2 が関連付けられたグループ BG_B
+-   配布ポイント DP_C1 と DP_C2 が関連付けられたグループ BG_C
 
-Aggiungere i percorsi di rete dei client come limiti solo al gruppo limite BG_A e configurare le relazioni tra tale gruppo limite e gli altri due gruppi limite:
--   Configurare i punti di distribuzione per il primo gruppo *adiacente* (BG_B) da usare dopo 10 minuti. Questo gruppo contiene i punti di distribuzione DP_B1 e DP_B2. Entrambi sono ben connessi ai percorsi limite dei primi gruppi.
--   Configurare il secondo gruppo *adiacente* (BG_C) da usare dopo 20 minuti. Questo gruppo contiene i punti di distribuzione DP_C1 e DP_C2. Entrambi si trovano a un WAN rispetto agli altri due gruppi limite.
--   Aggiungere anche un punto di distribuzione aggiuntivo che si trova nel server del sito al gruppo limite del sito predefinito di siti. Si tratta della posizione di origine di contenuto meno preferita, ma si trova a livello centrale per tutti i gruppi limite.
+クライアントのネットワークの場所を境界として BG_A 境界グループにのみ追加し、その境界グループから他の 2 つの境界グループへのリレーションシップを構成します。
+-   10 分後に使用する 1 つ目の*近隣*グループ (BG_B) に配布ポイントを構成します。 このグループには、配布ポイント DP_B1 と DP_B2 が含まれています。 どちらも、最初のグループの境界の場所に適切に接続されています。
+-   20 分後に使用するように 2 つ目の*近隣*グループ (BG_C) を構成します。 このグループには、配布ポイント DP_C1 と DP_C2 が含まれています。 どちらも、他の 2 つの境界グループから WAN を経由します。
+-   また、サイト サーバーに配置される追加の配布ポイントをサイトの既定のサイト境界グループに追加します。 これは、最小限の推奨されるコンテンツ ソースの場所ですが、すべての境界グループの中心的な場所に配置されます。
 
-    Esempio di gruppi limite e tempi di fallback:
+    境界グループとフォールバック時間の例:
 
      ![BG_Fallack](media/BG_Fallback.png)
 
 
-Con questa configurazione:
--   Il client inizia la ricerca del contenuto dai punti di distribuzione nel relativo gruppo limite *corrente* (BG_A), cercando in ogni punto di distribuzione per due minuti prima di passare al successivo punto di distribuzione del gruppo limite. Il pool di client dei percorsi di origine del contenuto validi include DP_A1 e DP_A2.
--   Se il client non riesce a trovare il contenuto nel proprio gruppo limite *corrente* dopo 10 minuti di ricerca, aggiunge i punti di distribuzione dal gruppo limite BG_B alla ricerca. Continua quindi a eseguire la ricerca del contenuto da un punto di distribuzione nel proprio pool combinato di punti di distribuzione che include ora i gruppi limite BG_A sia BG_B. Il client continuerà a contattare ogni punto di distribuzione per due minuti prima di passare al successivo punto di distribuzione del pool. Il pool di client dei percorsi di origine del contenuto validi include DP_A1, DP_A2, DP_B1 e DP_B2.
--   Dopo altri 10 minuti (totale di 20 minuti), se il client non ha ancora rilevato un punto di distribuzione con contenuto, espande il proprio pool di punti di distribuzione disponibili per includere i punti del secondo gruppo *adiacente*, il gruppo limite BG_C. Il client ora dispone di 6 punti di distribuzione per la ricerca (DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2) e continua la modifica a un nuovo punto di distribuzione ogni due minuti fino a quando il contenuto non viene trovato.
--   Se il client non ha rilevato il contenuto dopo un totale di 120 minuti, esegue il fallback per includere il *gruppo limite del sito predefinito* nella ricerca. Il pool di punti di distribuzione include ora tutti i punti di distribuzione dei tre gruppi di limiti configurati e il punto di distribuzione finale presente nel computer server del sito.  Il client continua quindi la ricerca del contenuto, modificando i punti di distribuzione ogni due minuti fino a quando il contenuto non viene trovato.
+この構成では:
+-   クライアントは*現在の*境界グループ (BG_A) 内の配布ポイントからコンテンツの検索を開始し、各配布ポイントを 2 分間検索してから、境界グループ内の次の配布ポイントに切り替えます。 有効なコンテンツ ソースの場所のクライアントのプールには、DP_A1 と DP_A2 が含まれています。
+-   クライアントは*現在の* 境界グループを 10 分間検索してコンテンツが見つからなかった場合、BG_B 境界グループから配布ポイントを検索に追加します。 BG_A と BG_B の両方の境界グループからの配布ポイントを含む結合された配布ポイントのプール内の配布ポイントからコンテンツの検索を続行します。 クライアントは引き続き各配布ポイントを 2 分間検索してから、そのプール内の次の配布ポイントに切り替えます。 有効なコンテンツ ソースの場所のクライアントのプールには、DP_A1、DP_A2、DP_B1、DP_B2 が含まれています。
+-   さらに 10 分 (合計 20 分) 経っても、クライアントがコンテンツがある配付ポイントをまだ見つけられない場合は、利用可能な配布ポイントのプールを拡大して、2 番目の*近隣*グループ (境界グループ BG_C) からの配付ポイントを含めます。 これで、クライアントが検索する配布ポイントが 6 個 (DP_A1、DP_A2、DP_B2、DP_B2、DP_C1、DP_C2) になり、コンテンツが見つかるまで 2 分ごとに新しい配布ポイントへの切り替えを続行します。
+-   合計で 120 分経ってもクライアントがコンテンツを見つけられない場合は、フォールバックして*既定サイトの境界グループ*を継続的な検索の一部として含めます。 これで配布ポイントのプールに構成した 3 つの境界グループからすべての配布ポイントが含まれ、最後の配布ポイントがサイト サーバー コンピューター上に配置されました。  クライアントはコンテンツが見つかるまで 2 分ごとに配布ポイントを切り替えてコンテンツの検索を続けます。
 
-Configurando i vari gruppi adiacenti perché siano disponibili in momenti diversi, è possibile controllare quando i punti di distribuzione specifici vengono aggiunti come percorso di origine del contenuto e quando o se il client esegue il fallback al gruppo limite del sito predefinito come rete di protezione per il contenuto non disponibile in altre posizioni.
-
-
+異なる時間に異なる近隣グループが利用可能になるように構成することで、特定の配布ポイントがコンテンツ ソースの場所として追加されるタイミング、およびクライアントが既定サイトの境界グループへのフォールバックを他の場所から使用できないコンテンツのセーフティ ネットとして使用するタイミングまたは状況を制御します。
 
 
 
 
-### <a name="update-existing-boundary-groups-to-the-new-model"></a>Aggiornare i gruppi di limiti esistenti al muovo modello
-Quando si esegue l'aggiornamento a una versione precedente la 1610, vengono eseguite automaticamente le configurazioni seguenti. Queste configurazioni sono utili per verificare che il comportamento di fallback corrente rimanga disponibile finché non si configurano nuovi gruppi di limiti e relazioni.
-
--   Per ogni sito primario viene creato un gruppo di limiti del sito predefinito, denominato ***Default-Site-Boundary-Group&lt;codicesito>.***
-  - Punti di distribuzione con l'opzione *Consenti percorso origine di fallback per il contenuto* selezionata e punti di migrazione stato presso siti primari vengono aggiunti al gruppo di limiti *Default-Site-Boundary-Group&lt;codicesito>* di tale sito.
-  - A partire dalla versione 1702, i punti di aggiornamento software vengono aggiunti al gruppo *Default-Site-Boundary-Group&lt;codicesito>* di ogni sito.
--   Viene creata una copia di ogni gruppo limite esistente che include un server del sito configurato con una connessione lenta. Il nome del nuovo gruppo è ***&lt;nome gruppo limiti originale>-&lt;ID gruppo limiti originale>***:  
-    -   I sistemi del sito che dispongono di una connessione veloce rimangono nel gruppo limite originale.
-    -   Una copia dei sistemi del sito (punti di distribuzione e punti di gestione) che hanno una connessione lenta viene aggiunta alla copia del gruppo di limiti. I sistemi del sito originale configurati con una connessione lenta rimangono nel gruppo di limiti originale per garantire la compatibilità con le versioni precedenti, ma non vengono usati partendo da questo gruppo di limiti.
-    - Questa copia del gruppo limite non dispone di limiti associati. Tuttavia, viene creato un collegamento fallback tra il gruppo originale e la nuova copia del gruppo limite che presenta l'ora di fallback impostata su zero.  
 
 
-- **Valido solo per i siti secondari:**
-  - Viene creato un gruppo di limiti se un sito secondario ha almeno un punto di distribuzione con l'opzione *Consenti percorso origine di fallback per il contenuto* selezionata o un punto di migrazione stato. Il nome del gruppo di limiti è ***Secondary-Site-Neighbor--Tmp&lt;codicesito>.***
-  - Tutti i punti di distribuzione con l'opzione *Consenti percorso origine di fallback per il contenuto* selezionata e punti di migrazione stato vengono aggiunti al gruppo di limiti del sito secondario.
-  - Viene creato un collegamento fallback tra il gruppo di limiti originale e il gruppo di limiti adiacente appena creato e il tempo di fallback viene impostato su zero.
+### <a name="update-existing-boundary-groups-to-the-new-model"></a>既存の境界グループを新しいモデルに更新する
+1610 より前のバージョンに更新すると、次の構成が自動的に設定されます。 これらは、新しい境界グループおよびリレーションシップを構成するまで、現在のフォールバック動作をそのまま利用できるようにすることを目的としています。
+
+-   各プライマリ サイトに既定のサイト境界グループが作成されます。名前は ***Default-Site-Boundary-Group&lt;サイトコード>*** です。
+  - *[代替のコンテンツ ソースの場所の使用を許可する]* がオンの配布ポイントと、プライマリ サイトの状態移行ポイントは、そのサイトの *Default-Site-Boundary-Group&lt;サイトコード>* 境界グループに追加されます。
+  - バージョン 1702 以降、ソフトウェア更新ポイントは各サイト *Default-Site-Boundary-Group&lt;sitecode>* に追加されます。
+-   低速接続が設定されているサイト サーバーを含む既存の各境界グループのコピーが作成されます。 新しいグループの名前は、***&lt;元の境界グループ名>-&lt;元の境界グループ ID>*** です。  
+    -   高速接続が設定されているサイト システムは、元の境界グループに残されます。
+    -   低速接続が設定されているサイト システム (配布ポイント、管理ポイント) のコピーは、境界グループのコピーに追加されます。 低速接続で設定されている元のサイト システムは、後方互換性のために元の境界グループに残っていますが、その境界グループからは使用されません。
+    - この境界グループのコピーには、それに関連付けられている境界はありません。 ただし、元のグループとフォールバックの時間が 0 に設定された新しい境界グループのコピー間にフォールバック リンクが作成されます。  
 
 
- La tabella seguente identifica il nuovo comportamento di fallback previsto dalla combinazione di impostazioni di distribuzione originali e di configurazioni di punti di distribuzione:
+- **セカンダリ サイトに固有:**
+  - セカンダリ サイトに *[代替のコンテンツ ソースの場所の使用を許可する]* がオンの配布ポイント、または状態移行ポイントが少なくとも 1 つある場合、境界グループが作成されます。 境界グループの名前は、***Secondary-Site-Neighbor--Tmp&lt;サイトコード>*** です。
+  - *[代替のコンテンツ ソースの場所の使用を許可する]* がオンのすべての配布ポイントと、状態移行ポイントは、この新しく作成されたセカンダリ サイト境界グループに追加されます。
+  - 元の境界グループと新しく作成された近隣境界グループ間にフォールバック リンクが作成され、フォールバック時間が 0 に設定されます。
 
-Configurazione della distribuzione originale per "Non eseguire il programma" in una rete lenta  |Configurazione del punto di distribuzione originale per "Allow client to use a fallback source location for content" (Consenti al client di usare un percorso di origine di fallback per il contenuto)  |Nuovo comportamento di fallback  
+
+ 次の表に、元の展開設定と配付ポイントの設定の組み合わせから期待できる新しいフォールバック動作を示します。
+
+低速ネットワークでの [プログラムを実行しない] の元の展開構成  |[代替のコンテンツ ソースの場所の使用をクライアントに許可する] の元の配布ポイントの構成  |新しいフォールバック動作  
 ---------|---------|---------
-Selezionato     |  Selezionato    |  **Nessun fallback**: usare solo i punti di distribuzione nel gruppo limite corrente       
-Selezionato     |  Non selezionato|  **Nessun fallback**: usare solo i punti di distribuzione nel gruppo limite corrente       
-Non selezionato |  Non selezionato|  **Fallback verso adiacente**: usare i punti di distribuzione nel gruppo limite corrente e quindi aggiungere i punti di distribuzione del gruppo limite adiacente. A meno che non sia configurato un collegamento esplicito al gruppo limite del sito predefinito, i client non eseguono il fallback su questo gruppo.    
-Non selezionato | Selezionato     |   **Fallback normale**: usare i punti di distribuzione nel gruppo limite corrente, quindi quelli del gruppo adiacente e dal gruppo limite del sito predefinito
+オン     |  オン    |  **フォールバックなし**: 現在の境界グループ内の配布ポイントのみを使用します。       
+オン     |  オフ|  **フォールバックなし**: 現在の境界グループ内の配布ポイントのみを使用します。       
+オフ |  オフ|  **近隣ノードへのフォールバック**: 現在の境界グループ内の配布ポイントを使用し、近隣境界グループから配布ポイントを追加します。 既定のサイトの境界グループに明示的なリンクを構成しない限り、クライアントはそのグループにフォールバックしません。    
+オフ | オン     |   **通常のフォールバック**: 現在の境界グループ内の配布ポイントを使用してから、近隣ノードとサイトの既定の境界グループから配布ポイントを使用します。
 
- Tutte le altre configurazioni di distribuzione seguiranno il **Fallback normale**.  
-
-
+ その他のすべての展開の構成は**通常のフォールバック**になります。  
 
 
-## <a name="changes-from-prior-versions-for-ui-and-behavior-for-content-locations"></a>Modifiche all'interfaccia utente e al comportamento dei percorsi del contenuto rispetto alle versioni precedenti
-Di seguito sono riportate le modifiche principali ai gruppi di limiti e alle modalità di ricerca del contenuto da parte dei client. Queste modifiche vengono introdotte con la versione 1610. Molti di queste modifiche e concetti funzionano in combinazione.
 
 
--   **Le configurazioni Veloce o Lento vengono rimosse:** non è più possibile configurare la velocità o la lentezza dei singoli punti di distribuzione.  Al contrario, ogni sistema del sito associato a un gruppo limite viene trattato ugualmente. Grazie a questa modifica, la scheda **Riferimenti** delle proprietà del gruppo limite non supporta la configurazione Veloce o Lento.
--   **Nuovo gruppo limite predefinito in ogni sito:** ciascun sito primario dispone di un nuovo gruppo limite predefinito denominato ***Default-Site-Boundary-Group&lt;CodiceSito>***.  Quando un client non è presente in un percorso di rete che viene assegnato a un gruppo limite, il client usa i sistemi del sito associati al gruppo predefinito del sito assegnato. Considerare l'uso di questo gruppo limite come sostituzione del concetto di percorso del contenuto di fallback.      
- -  L'opzione **"Allow fallback source locations for content"** (Consenti percorsi di origine di fallback per il contenuto) viene rimossa: la configurazione di un punto di distribuzione da usare per il fallback non avviene più in modo esplicito e le opzioni per impostare questa proprietà vengono rimosse dall'interfaccia utente.
-
-    Il risultato dell'impostazione **Allow fallback source locations for content** (Consenti percorsi di origine di fallback per il contenuto) in un tipo di distribuzione per le applicazioni cambia. Questa impostazione su un tipo di distribuzione consente ora al client di usare il gruppo limite del sito predefinito come percorso di origine del contenuto.
-
- -  **Relazioni tra gruppi limite:** ciascun gruppo limite può essere collegato a uno o più gruppi limite aggiuntivi. Questi collegamenti costituiscono le relazioni configurate sulla nuova scheda delle proprietà del gruppo limite, denominata **Relationships** (Relazioni):
-    -   Ogni gruppo limite associato direttamente a un client viene chiamato gruppo limite **corrente**.  
-    -   Qualsiasi gruppo limite che un client può usare grazie all'associazione tra il gruppo limite *corrente* e un altro gruppo viene chiamato gruppo limite **adiacente**.
-    -  Nella scheda **Relationships** (Relazioni) è possibile aggiungere gruppi limite da usare come gruppo limite *adiacente*. È anche possibile configurare una quantità di minuti che stabiliste il momento in cui il client che non riesce a trovare il contenuto da un punto di distribuzione nel gruppo *corrente* avvierà la ricerca dei percorsi del contenuto nei gruppi limite *adiacenti*.
-
-        Quando si aggiunge o si modifica una configurazione del gruppo limite, è possibile bloccare il fallback su tale gruppo limite dal gruppo corrente che si sta configurando.
-
-    Per usare la nuova configurazione, definire le associazioni esplicite (collegamenti) da un gruppo limite a un altro e configurare tutti i punti di distribuzione nel gruppo associato con la stessa durata in minuti. Il tempo configurato determina quando il momento in cui un client che non riesce a trovare l'origine di un contenuto del relativo gruppo limite *corrente* può iniziare a cercare le origini del contenuto nel gruppo limite adiacente.
-
-    Oltre ai gruppi limite configurati in modo esplicito, ogni gruppo limite dispone di un collegamento implicito al gruppo limite del sito predefinito. Questo collegamento si attiva dopo 120 minuti, momento in cui il gruppo limite del sito predefinito diventa un gruppo limite adiacente che consente ai client di usare i punti di distribuzione associati a tale gruppo limite come percorsi di origine del contenuto.
-
-    Questo comportamento sostituisce ciò che in precedenza veniva definito "fallback per il contenuto".  È possibile eseguire l'override di questo comportamento predefinito di 120 minuti, associando in modo esplicito il gruppo limite del sito predefinito a un gruppo *corrente* e impostando un momento specifico, indicato in minuti, o il blocco completo del fallback per impedirne l'uso.
+## <a name="changes-from-prior-versions-for-ui-and-behavior-for-content-locations"></a>コンテンツの場所の UI と動作に関する旧バージョンからの変更点
+境界グループとクライアントのコンテンツ検索方法への主な変更を次に示します。 これらの変更はバージョン 1610 で導入されました。 これらの変更と概念の多くが連動しています。
 
 
--   **I client tentano di ottenere i contenuti da ogni punto di distribuzione per un massimo di 2 minuti:** quando un client cerca un percorso di origine del contenuto, tenta di accedere a ogni punto di distribuzione per 2 minuti prima di passare a un altro punto di distribuzione. Si tratta di una modifica rispetto alle versioni precedenti in cui i client tentavano di connettersi a un punto di distribuzione per un massimo di 2 ore.
+-   **高速または低速の構成の削除:** 個々の配布ポイントに高速または低速を設定する必要がなくなりました。  代わりに、境界グループに関連付けられている各サイト システムが同じように処理されます。 この変更により、境界グループ プロパティの [**参照**] タブで高速または低速の構成がサポートされなくなりました。
+-   **各サイトに新しい既定の境界グループ:** 各プライマリ サイトに ***Default-Site-Boundary-Group&lt;sitecode>*** という名前の新しい既定の境界グループが追加されました。  クライアントが境界グループに割り当てられているネットワークの場所にいない場合、そのクライアントは、割り当てられたサイトの既定のグループに関連付けられているサイト システムを使用します。 フォールバックするコンテンツの場所の概念に代わるものとして、この境界グループを使用することを計画してください。      
+ -  [**代替のコンテンツ ソースの場所の使用を許可する**] の削除: フォールバックに使用する配布ポイントを明示的に構成する必要がなくなったため、これを設定するオプションが UI から削除されました。
 
-    - Il primo punto di distribuzione che un client tenta di usare viene selezionato casualmente dal pool di punti di distribuzione disponibili nel gruppo, o gruppi, limite *corrente* del client.
+    さらに、アプリケーションの展開の種類で [**代替のコンテンツ ソースの場所の使用をクライアントに許可する**] の設定をオンにした場合の結果が変更されています。 展開の種類でこの設定をオンにすると、クライアントがコンテンツ ソースの場所として既定のサイトの境界グループを使用できるようになりました。
 
-    - Dopo due minuti, se il client non ha trovato il contenuto, passa a un nuovo punto di distribuzione e tenta di ottenere il contenuto da questo server. Questo processo viene ripetuto ogni due minuti fino a quando il client trova il contenuto o raggiunge l'ultimo server del pool.
+ -  **境界グループのリレーションシップ:** 各境界グループを 1 つ以上の別の境界グループにリンクできます。 これらのリンクは、**[リレーションシップ]** という名前の新しい境界グループ プロパティ タブに構成されるリレーションシップを形成します。
+    -   クライアントに直接関連付けられている各境界グループは、**現在の**境界グループと呼ばれます。  
+    -   クライアントの*現在の*境界グループと別のグループとの関連付けによりクライアントが使用できる境界グループはすべて、**近隣**境界グループと呼ばれます。
+    -  これは [**リレーションシップ**] タブにあり、ここで*近隣*境界グループとして使用できる境界グループを追加します。 また、クライアントが*現在の*グループで配布ポイントからコンテンツを検索するのに失敗したと判断して、これらの*近隣*境界グループからコンテンツの場所の検索を開始する時間を分単位で設定することもできます。
 
-    - Se un client non trova un percorso di origine del contenuto valido nel proprio pool *corrente* prima dell'intervallo di fallback verso un gruppo di limiti *adiacente*, il client aggiunge i punti di distribuzione dal gruppo *adiacente* alla fine dell'elenco corrente e quindi cerca nel gruppo espanso di percorsi di origine che include i punti di distribuzione di entrambi i gruppi di limiti.
+        境界グループの構成を追加または変更する場合に、構成している現在のグループから特定の境界グループへのフォールバックをブロックするオプションがあります。
+
+    新しい構成を使用するには、ある境界グループから別の境界グループに明示的な関連付け (リンク) を定義し、関連付けられているグループ内のすべての配布ポイントを同じ時間 (分単位) で設定します。 設定する時間によって、クライアントが*現在の*境界グループからのコンテンツ ソースの検索に失敗した場合に、近隣境界グループからコンテンツ ソースの検索を開始できる時間が決まります。
+
+    明示的に設定した境界グループに加え、各境界グループには既定のサイト境界グループへの暗黙的なリンクもあります。 このリンクは、既定のサイトの境界グループが近隣境界グループになり、クライアントにコンテンツ ソースの場所としてその境界グループと関連付けられた配布ポイントを使用できるようになってから 120 分後にアクティブになります。
+
+    これは、以前はコンテンツのフォールバックと呼ばれていた動作に取って代わるものです。  この 120 分の既定の動作は、既定のサイトの境界グループを*現在の*グループに明示的に関連付け、特定の時間を分単位で設定するか、フォールバックを完全にブロックして使用できないようにすることで無効にすることができます。
+
+
+-   **クライアントは各配布ポイントからのコンテンツ取得を最大 2 分間試みる:** クライアントは、コンテンツ ソースの場所を検索する際に、各配布ポイントへのアクセスを 2 分間試行してから別の配布ポイントを試します。 これは、クライアントが配布ポイントへの接続を最大 2 時間試行していた以前のバージョンからの変更点です。
+
+    - クライアントが使用を試みる最初の配布ポイントは、クライアントの*現在の*境界グループ (複数可) 内の利用可能な配布ポイントのプールからランダムに選択されます。
+
+    - 2 分後に、クライアントがコンテンツを見つけられない場合は、新しい配布ポイントに切り替えて、そのサーバーからコンテンツを取得しようとします。 このプロセスは、クライアントがコンテンツを見つけるか、そのプール内の最後のサーバーに到達するまで 2 分ごとに繰り返されます。
+
+    - クライアントが*近隣*境界グループへのフォールバック期間に達するまでに、*現在の*プールから有効なコンテンツ ソースの場所を見つけられない場合、クライアントはその*近隣*グループからの配布ポイントを現在のリストの末尾に追加して、両方の境界グループからの配布ポイントを含む拡張されたソースの場所のグループを検索します。
 
         > [!TIP]  
-        > Quando si crea un collegamento esplicito tra il gruppo limite corrente e il gruppo limite del sito predefinito e si definisce un intervallo di fallback inferiore al tempo di fallback per il collegamento a un gruppo limite adiacente, i client iniziano la ricerca dei percorsi di origine dal gruppo limite del sito predefinito prima di includere il gruppo adiacente.
+        > 現在の境界グループから既定のサイトの境界グループに明示的なリンクを作成し、近隣境界グループへのリンクのフォールバック時間よりも短いフォールバック時間を定義すると、クライアントは、近隣グループを含める前の既定のサイトの境界グループからのソースの場所の検索を開始します。
 
-    - Quando il client non riesce a ottenere il contenuto dall'ultimo server nel pool, avvia nuovamente il processo.
-
-
-## <a name="procedures-for-boundary-groups"></a>Procedure per i gruppi di limiti
-Le procedure seguenti si applicano alla versione 1610 e alle versioni successive. Se si usa una versione precedente la 1610, vedere le procedure in [Gruppi di limiti per System Center Configuration Manager versioni 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606).
+    - クライアントがプール内の最後のサーバーからのコンテンツの取得に失敗した場合、もう一度プロセスを開始します。
 
 
-### <a name="to-create-a-boundary-group"></a>Per creare un gruppo di limiti  
-1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Configurazione della gerarchia** >  **Gruppi di limiti**.  
-
-2.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea gruppo di limiti**.  
-
-3.  Nella finestra di dialogo **Crea gruppo di limiti** selezionare la scheda **Generale** e specificare un **Nome** per questo gruppo di limiti.  
-
-4.  Fare clic su **OK** per salvare il nuovo gruppo di limiti.  
+## <a name="procedures-for-boundary-groups"></a>境界グループの手順
+次の手順はバージョン 1610 以降に適用されます。 使用しているバージョンが 1610 より前の場合、「[Boundary groups for System Center Configuration Manager versions 1511, 1602, and 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606)」(System Center Configuration Manager バージョン 1511、1602、1606 の境界グループ) の手順を参照してください。
 
 
-### <a name="to-configure-a-boundary-group"></a>Per configurare un gruppo di limiti  
- 1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Configurazione della gerarchia** >  **Gruppi di limiti**.  
+### <a name="to-create-a-boundary-group"></a>境界グループを作成するには  
+1.  Configuration Manager コンソールで、[**管理**] > [**階層の構成**] >  [**境界グループ**] をクリックします。  
 
- 2.  Selezionare il gruppo di limiti da modificare.  
+2.  **[ホーム]** タブの **[作成]** グループで、 **[境界グループの作成]**をクリックします。  
 
- 3.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
+3.  **[境界グループの作成]** ダイアログ ボックスで、 **[全般]** タブを選択し、この境界グループの **[名前]** を指定します。  
 
- 4.  Nella finestra di dialogo **Proprietà** per il gruppo di limiti selezionare la scheda **Generale** per modificare i limiti appartenenti a questo gruppo di limiti:  
+4.  [OK] をクリックして新しい境界グループを保存します。 ****  
 
-     -   Per aggiungere i limiti, fare clic su **Aggiungi**, selezionare la casella di controllo per uno o più limiti e quindi fare clic su **OK**.  
 
-     -   Per rimuovere i limiti, selezionare il limite e fare clic su **Rimuovi**.  
+### <a name="to-configure-a-boundary-group"></a>境界グループを構成するには  
+ 1.  Configuration Manager コンソールで、[**管理**] > [**階層の構成**] >  [**境界グループ**] をクリックします。  
 
- 5.  Selezionare la scheda **Riferimenti** per modificare l'assegnazione sito e la configurazione del server del sistema del sito associata:  
+ 2.  変更する境界グループを選択します。  
 
-     -   Per consentire ai client di utilizzare questo gruppo di limiti per l'assegnazione sito, selezionare la casella di controllo **Utilizza questo gruppo limite per l'assegnazione sito**e quindi selezionare un sito dalla casella a discesa **Sito assegnato** .  
+ 3.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
 
-     -   Per configurare quali server del sistema del sito disponibili sono associati a questo gruppo di limiti:  
+ 4.  境界グループの **[プロパティ]** ダイアログ ボックスで、 **[全般]** タブを選択してこの境界グループのメンバーである境界を変更します。  
 
-     1.  Fare clic su **Aggiungi**e quindi selezionare la casella di controllo per uno o più server. I server vengono aggiunti come server del sistema del sito associati per questo gruppo di limiti. Sono disponibili solo i server su cui è installato il ruolo del sistema del sito supportato.  
+     -   境界を追加するには、 **[追加]**をクリックし、1 つまたは複数の境界のチェック ボックスを選択して、 **[OK]**をクリックします。  
 
-         > [!NOTE]  
-         >  È possibile selezionare qualsiasi combinazione dei sistemi del sito disponibili da qualsiasi sito della gerarchia. I sistemi del sito selezionati vengono elencati nella scheda **Sistemi del sito** nelle proprietà di ogni limite appartenente a questo gruppo di limiti.  
+     -   境界を削除するには、境界を選択して [削除] をクリックします。 ****  
 
-     2.  Per rimuovere un server da questo gruppo di limiti, selezionare il server e quindi fare clic su **Rimuovi**.  
+ 5.  **[参照]** タブを選択し、サイトの割り当てと、関連付けられたサイト システム サーバーの構成を変更します。  
+
+     -   この境界グループをサイト割り当て用にクライアントが使用できるようにするには、 **[サイト割り当てにこの境界を使用する]**のチェック ボックスをオンにして、 **[割り当てられたサイト]** のドロップダウン ボックスからサイトを選択します。  
+
+     -   この境界グループに関連付けられている使用可能なサイト システム サーバーを構成するには:  
+
+     1.  [追加] をクリックし、1 つまたは複数のサーバーのチェック ボックスをオンにします。 **** サーバーは、この境界グループの関連付けられたサイト システム サーバーとして追加されます。 サーバーにインストールされたサイト システムの役割をサポートしているサーバーのみを利用できます。  
 
          > [!NOTE]  
-         >  Per interrompere l'utilizzo di questo gruppo di limiti per i sistemi del sito in fase di associazione, è necessario rimuovere tutti i server elencati come server del sistema del sito associati.  
+         >  階層内のすべてのサイトから、利用可能なサイト システムの任意の組み合わせを選択できます。 選択したサイト システムは [サイト システム **** ] タブで、この境界グループのメンバーの各境界のプロパティに一覧表示されます。  
 
- 6.  Selezionare la scheda **Relazioni** per configurare il comportamento di fallback:  
+     2.  サーバーを境界グループから削除するには、サーバーを選択して **[削除]**をクリックします。  
 
-     - Fare clic su **Aggiungi** e quindi selezionare il gruppo di limiti da configurare.
+         > [!NOTE]  
+         >  この境界グループが関連するサイト システムに使用されないようにするには、関連付けられたサイト システム サーバーとして表示されているすべてのサーバーを削除する必要があります。  
 
-     - Impostare un tempo di fallback per i punti di distribuzione. Dopo questo periodo i client del gruppo di limiti per il quale si stanno configurando relazioni saranno in grado di iniziare la ricerca di contenuto dai punti di distribuzione del gruppo di limiti che si sta aggiungendo.
+ 6.  **[関係]** タブを選択して、フォールバック動作を構成します。  
 
-     - Per evitare il fallback a un gruppo di limiti specifico, incluso il *gruppo di limiti predefinito del sito*, configurato per impostazione predefinita, selezionare il gruppo di limiti e quindi selezionare la casella **Non eseguire mai il fallback**.   
+     - **[追加]** をクリックし、構成する境界グループを選択します。
 
- 7.  Fare clic su **OK** per chiudere le proprietà del gruppo di limiti e salvare la configurazione.  
+     - 配布ポイントのフォールバック時間を設定します。 この時間が経過すると、関係を構成する境界グループのクライアントは、追加する境界グループの配布ポイントからコンテンツを検索できるようになります。
 
-#### <a name="to-associate-a-site-systme-server-with-a-boundary-group"></a>Per associare un server del sistema del sito a un gruppo di limiti  
- 1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Configurazione della gerarchia** >  **Gruppi di limiti**.  
+     - 既定で構成されている*既定のサイト境界グループ*を含め、特定の境界グループへのフォールバックを回避するには、境界グループを選択し、**[Never fallback]** (フォールバックしない) をオンにします。   
 
- 2.  Selezionare il gruppo di limiti da modificare.  
+ 7.  [OK] をクリックして境界グループのプロパティを閉じ、構成を保存します。 ****  
 
- 3.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
+#### <a name="to-associate-a-site-systme-server-with-a-boundary-group"></a>サイト システム サーバーを境界グループに関連付けるには  
+ 1.  Configuration Manager コンソールで、[**管理**] > [**階層の構成**] >  [**境界グループ**] をクリックします。  
 
- 4.  Nella finestra di dialogo **Proprietà** per il gruppo di limiti selezionare la scheda **Riferimenti** .  
+ 2.  変更する境界グループを選択します。  
 
- 5.  In **Seleziona server del sistema del sito**fare clic su **Aggiungi**, selezionare la casella di controllo per i server del sistema del sito da associare a questo gruppo di limiti, quindi fare clic su **OK**.  
+ 3.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
 
- 6.  Fare clic su **OK** per chiudere le finestra di dialogo e salvare la configurazione del gruppo di limiti.  
+ 4.  境界グループの **[プロパティ]** ダイアログ ボックスで、 **[参照]** タブを選択します。  
+
+ 5.  **[サイト システム サーバーの選択]**にある **[追加]**をクリックし、この境界グループに関連付けるサイト システム サーバーのチェック ボックスをオンにして **[OK]**をクリックします。  
+
+ 6.  [OK] をクリックしてダイアログ ボックスを閉じ、境界グループの構成を保存します。 ****  
 
 
-#### <a name="to-configure-a-fallback-site-for-automatic-site-assignment"></a>Per configurare un sito di fallback per l'assegnazione sito automatica  
+#### <a name="to-configure-a-fallback-site-for-automatic-site-assignment"></a>サイトの自動割り当てのフォールバック サイトを構成するには  
 
-  1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Configurazione del sito** >  **Siti**.  
+  1.  Configuration Manager コンソールで、[**管理**] > [**サイトの構成**] >  [**サイト**] の順にクリックします。  
 
-  2.  Nella scheda **Home** , del gruppo **Siti** , fare clic su **Impostazioni gerarchia**.  
+  2.  **[ホーム]** タブの **[サイト]** グループで、 **[階層設定]**をクリックします。  
 
-  3.  Nella scheda **Generale** selezionare la casella di controllo **Utilizza sito di fallback**e quindi selezionare un sito dall'elenco a discesa **Sito di fallback** .  
+  3.  **[全般]** タブで、 **[フォールバック サイトを使用する]**のチェック ボックスをオンにして、 **[フォールバック サイト]** のドロップダウン リストからサイトを選択します。  
 
-  4.  Fare clic su **OK** per salvare la configurazione.  
+  4.  [ **OK** ] をクリックして構成を保存します。  
 
-#### <a name="to-enable-use-of-preferred-management-points"></a>Per abilitare l'uso dei punti di gestione preferiti  
+#### <a name="to-enable-use-of-preferred-management-points"></a>優先管理ポイントの使用を有効にする  
 
- 1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Configurazione del sito** > **Siti**, quindi nella scheda **Home** selezionare **Impostazioni gerarchia**.  
+ 1.  Configuration Manager コンソールで、[**管理**] > [**サイトの構成**] > [**サイト**] の順にクリックし、[**ホーム**] タブの [**階層設定**] をクリックします。  
 
- 2.  Nella scheda **Generale** di Impostazioni gerarchia selezionare **I client preferiscono usare i punti di gestione specificati nei gruppi di limiti**.  
+ 2.  [階層設定] の **[全般]** タブで、 **[クライアントは境界グループで指定された管理ポイントの使用を優先]**を選択します。  
 
- 3.  Fare clic su **OK** per chiudere le finestra di dialogo e salvare la configurazione.  
-
+ 3.  **[OK]** をクリックしてダイアログ ボックスを閉じ、構成を保存します。  

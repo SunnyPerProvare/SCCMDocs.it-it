@@ -1,217 +1,210 @@
 ---
-title: Eseguire la migrazione del contenuto | Microsoft Docs
-description: Usare i punti di distribuzione per gestire il contenuto durante la migrazione dei dati a una gerarchia di destinazione di System Center Configuration Manager.
+title: "コンテンツの移行 | Microsoft Docs"
+description: "配布ポイントを使用すると、System Center Configuration Manager の移行先階層にデータを移行している間にコンテンツを管理できます。"
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 66f7759c-6272-4116-aad7-0d05db1d46cd
-caps.latest.revision: 8
-caps.handback.revision: 0
+caps.latest.revision: "8"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 468673581e0464fab21397c472b76708b8a5438b
 ms.openlocfilehash: 25619d91522193178e0415f649ca4b34c94ecc89
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-a-content-deployment-migration-strategy-in-system-center-configuration-manager"></a>Pianificare una strategia di migrazione per la distribuzione del contenuto in System Center Configuration Manager
+# <a name="plan-a-content-deployment-migration-strategy-in-system-center-configuration-manager"></a>System Center Configuration Manager のコンテンツ展開移行戦略の計画
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Mentre si esegue la migrazione attiva dei dati in una gerarchia di destinazione di System Center Configuration Manager, i client Configuration Manager in entrambe le gerarchie di origine e destinazione possono mantenere l'accesso al contenuto distribuito nella gerarchia di origine. È anche possibile usare la migrazione per aggiornare o riassegnare i punti di distribuzione dalla gerarchia di origine come punti di distribuzione nella gerarchia di destinazione. Quando si condividono e aggiornano o riassegnano i punti di distribuzione, questa strategia consente di evitare la redistribuzione del contenuto nella gerarchia di destinazione per i client di cui si effettua la migrazione.  
+System Center Configuration Manager の移行先階層にデータを移行している間、ソースと移行先の両方の階層の Configuration Manager クライアントは、ソース階層に展開されたコンテンツに引き続きアクセスすることができます。 また、移行を使用すると、ソース階層の配布ポイントをアップグレードまたは再割り当てして移行先階層の配布ポイントにすることができます。 配布ポイントの共有およびアップグレードまたは再割り当てを行うときに、この戦略を使用すると、移行するクライアント用に、移行先階層の新しいサーバーにコンテンツを再展開する必要がなくなります。  
 
-Sebbene sia possibile ricreare e distribuire il contenuto nella gerarchia di destinazione, è possibile utilizzare anche le seguenti opzioni per la gestione del contenuto:  
+コンテンツを再作成して移行先階層に配布することはできますが、次のオプションを使用してこのコンテンツを管理することもできます。  
 
--   Condividere i punti di distribuzione nella gerarchia di origine con i client nella gerarchia di destinazione.  
+-   ソース階層の配布ポイントを移行先階層のクライアントと共有する  
 
--   Aggiornare i punti di distribuzione autonomi di Configuration Manager 2007 oppure i siti secondari di Configuration Manager 2007 nella gerarchia di origine in modo che diventino punti di distribuzione nella gerarchia di destinazione.  
+-   スタンドアロンの Configuration Manager 2007 配布ポイントまたはソース階層の Configuration Manager 2007 セカンダリ サイトをアップグレードして移行先階層の配布ポイントにする  
 
--   Riassegnare i punti di distribuzione da una gerarchia di origine di System Center Configuration Manager a un sito nella gerarchia di destinazione.  
+-   System Center Configuration Manager のソース階層の配布ポイントを移行先階層のサイトに再割り当てします。  
 
-Utilizzare le sezioni seguenti per pianificare la distribuzione del contenuto durante la migrazione:  
+次のセクションを使用して、移行時のコンテンツの展開を計画します。  
 
--   [Condividere punti di distribuzione tra gerarchie di origine e destinazione](#About_Shared_DPs_in_Migration)  
+-   [ソース階層と移行先階層で配布ポイントを共有します。](#About_Shared_DPs_in_Migration)  
 
--   [Pianificare l'aggiornamento dei punti di distribuzione condivisi di Configuration Manager 2007](#Planning_to_Upgrade_DPs)  
+-   [Configuration Manager 2007 共有配布ポイントのアップグレードの計画](#Planning_to_Upgrade_DPs)  
 
-    -   [Processo di aggiornamento del punto di distribuzione](#BKIMK_UpgradeProcess)  
+    -   [配布ポイントのアップグレード プロセス](#BKIMK_UpgradeProcess)  
 
-    -   [Pianificare l'aggiornamento dei siti secondari di Configuration Manager 2007](#BKMK_UpgradeSS)  
+    -   [Configuration Manager 2007 セカンダリ サイトへのアップグレードの計画](#BKMK_UpgradeSS)  
 
--   [Pianificare la riassegnazione dei punti di distribuzione di System Center Configuration Manager](#BKMK_ReassignDistPoint)  
+-   [System Center Configuration Manager 配布ポイントの再割り当ての計画](#BKMK_ReassignDistPoint)  
 
-    -   [Processo di riassegnazione dei punti di distribuzione](#BKMK_ReassignProcess)  
+    -   [配布ポイントの再割り当てプロセス](#BKMK_ReassignProcess)  
 
--   [Proprietà del contenuto durante la migrazione del contenuto](#About_Migrating_Content)  
+-   [コンテンツを移行するときのコンテンツの所有権](#About_Migrating_Content)  
 
-##  <a name="a-nameaboutshareddpsinmigrationa-share-distribution-points-between-source-and-destination-hierarchies"></a><a name="About_Shared_DPs_in_Migration"></a> Condividere punti di distribuzione tra gerarchie di origine e destinazione  
-Durante la migrazione, è possibile condividere i punti di distribuzione di una gerarchia di origine con la gerarchia di destinazione. È possibile utilizzare punti di distribuzione condivisi per rendere il contenuto di cui si è effettuata la migrazione da una gerarchia di origine immediatamente disponibile ai client della gerarchia di destinazione senza dover ricreare quel contenuto, quindi distribuirlo nei nuovi punti di distribuzione nella gerarchia di destinazione. Quando i client della gerarchia di destinazione richiedono il contenuto che viene distribuito nei punti di distribuzione condivisi, i punti di distribuzione condivisi possono essere forniti ai client come percorsi di contenuto validi.  
+##  <a name="About_Shared_DPs_in_Migration"></a> ソース階層と移行先階層で配布ポイントを共有します。  
+移行時に、ソース階層の配布ポイントを移行先階層と共有することができます。 共有の配布ポイントを使用すると、ソース階層から移行したコンテンツを移行先階層のクライアントですぐに利用可能にすることができます。コンテンツを再作成し、移行先階層の新しい配布ポイントに配布する必要はありません。 移行先階層のクライアントから、共有の配布ポイントに展開されたコンテンツが要求された場合は、この共有の配布ポイントを有効なコンテンツの場所としてクライアントに提供することができます。  
 
- Oltre a essere un percorso di contenuto valido per i client nella gerarchia di destinazione mentre la migrazione dalla gerarchia di origine è attiva, è possibile aggiornare o riassegnare un punto di distribuzione alla gerarchia di destinazione. È possibile aggiornare i punti di distribuzione condivisi di Configuration Manager 2007 e riassegnare i punti di distribuzione condivisi di System Center 2012 Configuration Manager. Quando si aggiorna o si riassegna un punto di distribuzione condiviso, il punto di distribuzione viene rimosso dalla gerarchia di origine e diventa un punto di distribuzione nella gerarchia di destinazione. Dopo aver aggiornato o riassegnato un punto di distribuzione condiviso, è possibile continuare a utilizzare il punto di distribuzione nella gerarchia di destinazione dopo che la migrazione dalla gerarchia di origine sia terminata. Per altre informazioni su come aggiornare un punto di distribuzione condiviso, vedere [Pianificare l'aggiornamento dei punti di distribuzione condivisi di Configuration Manager 2007](#Planning_to_Upgrade_DPs). Per altre informazioni su come riassegnare un punto di distribuzione condiviso, vedere [Pianificare la riassegnazione dei punti di distribuzione di System Center Configuration Manager](#BKMK_ReassignDistPoint).  
+ ソース階層からの移行が引き続きアクティブになっている間は、移行先階層のクライアントの有効なコンテンツの場所にできるだけでなく、配布ポイントをアップグレードしたり移行先階層に再割り当てしたりすることもできます。 Configuration Manager 2007 共有配布ポイントをアップグレードし、System Center 2012 Configuration Manager の共有配布ポイントを再割り当てできます。 共有配布ポイントをアップグレードまたは再割り当てすると、その配布ポイントがソース階層から削除されて、移行先階層の配布ポイントになります。 共有配布ポイントをアップグレードまたは再割り当てし、ソース階層からの移行が終了したら、移行先階層の配布ポイントを引き続き使用することができます。 共有配布ポイントのアップグレード方法の詳細については、「[Configuration Manager 2007 共有配布ポイントのアップグレードの計画](#Planning_to_Upgrade_DPs)」をご覧ください。 共有配布ポイントを再割り当てする方法については、「[System Center Configuration Manager 配布ポイントの再割り当ての計画](#BKMK_ReassignDistPoint)」をご覧ください。  
 
- È possibile scegliere punti di distribuzione da qualsiasi sito di origine nella gerarchia di origine. Quando si condividono punti di distribuzione per un sito di origine, i siti secondari figlio vengono condivisi in ogni punto di distribuzione valido in tale sito primario e in ogni sito primario. Per poter diventare un punto di distribuzione condiviso, il server del sistema del sito che ospita il punto di distribuzione deve essere configurato con un nome di dominio completo (FQDN). Tutti i punti di distribuzione configurati con un nome NetBIOS vengono ignorati.  
+ 階層内の任意のソース サイトの配布ポイントを共有できます。 ソース サイトの配布ポイントを共有すると、子セカンダリ サイトは、そのプライマリ サイトの適合する各配布ポイントおよび各プライマリ サイトで共有されます。 共有配布ポイントとして適合するためには、配布ポイントをホストするサイト システム サーバーを完全修飾ドメイン名 (FQDN) を使って設定する必要があります。 NetBIOS 名を使って設定した配布ポイントは無視されます。  
 
 > [!TIP]  
->  Configuration Manager 2007 non richiede la configurazione di un nome FQDN per i server di sistema del sito.  
+>  Configuration Manager 2007 ではサイト システム サーバーに FQDN を設定する必要はありません。  
 
-Per la pianificazione dei punti di distribuzione condivisi, utilizzare le seguenti informazioni:  
+次の情報を使用して、共有配布ポイントを計画します。  
 
--   I punti di distribuzione condivisi devono soddisfare i prerequisiti per i punti di distribuzione condivisi. Per altre informazioni su questi prerequisiti, vedere [Configurazioni necessarie per la migrazione](../../core/migration/prerequisites-for-migration.md#BKMK_Required_Configurations) in [Prerequisiti per la migrazione in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
+-   共有する配布ポイントが、共有配布ポイントの前提条件を満たしている必要があります。 これらの前提条件の詳細については、「[System Center Configuration Manager での移行の前提条件](../../core/migration/prerequisites-for-migration.md)」の「[移行に必要な構成](../../core/migration/prerequisites-for-migration.md#BKMK_Required_Configurations)」をご覧ください。  
 
--   L'azione di condivisione del punto di distribuzione è un'impostazione a livello di sito che condivide tutti i punti di distribuzione validi in un sito di origine e in tutti i siti secondari figlio diretti. Non è possibile selezionare singoli punti di distribuzione da condividere quando si abilita la condivisione dei punti di distribuzione.  
+-   共有配布ポイントの設定はサイト全体の設定で、ソース サイトおよび直接の子セカンダリ サイトの適合するすべての配布ポイントが共有されます。 配布ポイントの共有を有効にする場合、個々の配布ポイントを選択して共有することはできません。  
 
--   I client nella gerarchia di destinazione possono ricevere informazioni sul percorso dei contenuti per i pacchetti distribuiti nei punti di distribuzione che vengono condivisi nella gerarchia di origine. Per i punti di distribuzione di una gerarchia di origine di Configuration Manager 2007, sono inclusi i punti di distribuzione secondari, i punti di distribuzione nelle condivisioni server e i punti di distribuzione standard.  
+-   移行先階層のクライアントは、ソース階層の共有配布ポイントに配布されているパッケージのコンテンツの場所の情報を取得できます。 Configuration Manager 2007 ソース階層の配布ポイントでは、これにはブランチ配布ポイント、サーバー共有上の配布ポイント、および標準配布ポイントが含まれます。  
 
     > [!WARNING]  
-    >  Se si modifica la gerarchia di origine, i punti di distribuzione condivisi dalla gerarchia di origine originale non sono più disponibili e non possono essere forniti come percorsi di contenuti ai client nella gerarchia di destinazione. Se si riconfigura la migrazione per utilizzare la gerarchia di origine originale, vengono ripristinati i punti di distribuzione condivisi in precedenza come server con percorso dei contenuti validi.  
+    >  ソース階層を変更すると、元のソース階層の共有配布ポイントは利用できなくなり、移行先階層のクライアントにコンテンツの場所として提供できなくなります。 元のソース階層を使用するように移行を再構成すると、以前に共有されていた配布ポイントが有効なコンテンツの場所のサーバーとして復元されます。  
 
--   Quando si effettua la migrazione di un pacchetto ospitato su un punto di distribuzione condiviso, la versione del pacchetto deve rimanere la stessa nelle gerarchie di origine e di destinazione. Quando la versione del pacchetto non è la stessa nella gerarchia di origine e di destinazione, i client nella gerarchia di destinazione non possono recuperare il contenuto dal punto di distribuzione condiviso. Pertanto, se si aggiorna il pacchetto nella gerarchia di origine, è necessario rieseguire la migrazione dei dati del pacchetto prima che i client nella gerarchia di destinazione possano recuperare tale contenuto da un punto di distribuzione condiviso.  
-
-    > [!NOTE]  
-    >  Quando si visualizzano i dettagli per un pacchetto ospitato in un punto di distribuzione condiviso, il numero di pacchetti visualizzati come **Pacchetti migrati ospitati** nella scheda **Punti di distribuzione condivisi** del sito di origine non viene aggiornato finché non termina il ciclo di raccolta dati successivo.  
-
--   È possibile visualizzare i punti di distribuzione condivisi e le loro proprietà nel nodo **Gerarchia di origine** dell'area di lavoro **Amministrazione** nella console di Configuration Manager che si connette alla gerarchia di destinazione.  
-
--   Non è possibile usare un punto di distribuzione condiviso da una gerarchia di origine di Configuration Manager 2007 per ospitare pacchetti per Microsoft Application Virtualization (App-V). È necessario migrare i pacchetti App-V e convertirli per essere utilizzati dai client nella gerarchia di destinazione. È possibile tuttavia usare un punto di distribuzione condiviso da una gerarchia di System Center 2012 Configuration Manager o System Center Configuration Manager per ospitare i pacchetti App-V per client in una gerarchia di destinazione.  
-
--   Quando si condivide un punto di distribuzione protetto da una gerarchia di origine di Configuration Manager 2007, la gerarchia di destinazione crea un gruppo di limiti che include i percorsi di rete protetti di tale punto di distribuzione. Non è possibile modificare questo gruppo di limiti nella gerarchia di destinazione. Se si modificano tuttavia le informazioni sui limiti protetti per il punto di distribuzione nella gerarchia di origine di Configuration Manager 2007, tale modifica si riflette nella gerarchia di destinazione dopo il termine del ciclo di raccolta dati successivo.  
+-   共有配布ポイントにホストされているパッケージを移行する場合、ソース階層と移行先階層でパッケージのバージョンが同じである必要があります。 ソース階層と移行先階層でパッケージのバージョンが同じでないと、移行先階層のクライアントは共有配布ポイントからコンテンツを取得できません。 そのため、ソース階層のパッケージを更新する場合、移行先階層のクライアントが共有配布ポイントからコンテンツを取得できるようにするには、パッケージ データを再度移行する必要があります。  
 
     > [!NOTE]  
-    >  I siti di System Center 2012 Configuration Manager e System Center Configuration Manager seguono il concetto dei punti di distribuzione preferiti invece che quello dei punti di distribuzione protetti. Tale condizione si applica solo ai punti di distribuzione che vengono condivisi dai siti di origine di Configuration Manager 2007.  
+    >  共有配布ポイントでホストされているパッケージの詳細を表示する際に、ソース サイトの **[共有配布ポイント]** タブに **[ホストされた移行済みパッケージ]** として表示されるパッケージの数は、次のデータ収集サイクルが完了するまで更新されません。  
 
-I punti di distribuzione idonei non sono visibili nella console di Configuration Manager prima di condividere punti di distribuzione da un sito di origine. Dopo aver condiviso i punti di distribuzione, vengono elencati solo i punti di distribuzione condivisi correttamente.  
+-   共有配布ポイントとそのプロパティは、Configuration Manager コンソールの [**管理**] ワークスペースで、移行先階層に接続する [**ソース階層**] ノードに表示できます。  
 
-Dopo aver condiviso i punti di distribuzione, è possibile modificare la configurazione di tutti i punti di distribuzione condivisi nella gerarchia di origine. Le modifiche apportate alla configurazione di un punto di distribuzione vengono riflesse nella gerarchia di destinazione dopo il ciclo di raccolta dati successivo. I punti di distribuzione aggiornati per la condivisione vengono condivisi automaticamente, mentre quelli che non soddisfano più le condizioni interrompono la condivisione dei punti di distribuzione. Ad esempio, si potrebbe avere un punto di distribuzione che non è configurato con un nome FQDN Intranet e che non veniva inizialmente condiviso con la gerarchia di destinazione. Dopo avere configurato il nome FQDN per tale punto di distribuzione, il ciclo di raccolta dati successivo identifica questa configurazione e il punto di distribuzione viene quindi condiviso con la gerarchia di destinazione.  
+-   Configuration Manager 2007 ソース階層の共有配布ポイントを使用して、Microsoft Application Virtualization (App-V) のパッケージをホストすることはできません。 App-V パッケージは、移行先階層のクライアントで使用できるように移行および変換する必要があります。 ただし、System Center 2012 Configuration Manager または System Center Configuration Manager ソース階層の共有配布ポイントを使用して、移行先階層のクライアント用に App-V パッケージをホストすることができます。  
 
-##  <a name="a-nameplanningtoupgradedpsa-plan-to-upgrade-configuration-manager-2007-shared-distribution-points"></a><a name="Planning_to_Upgrade_DPs"></a> Pianificare l'aggiornamento dei punti di distribuzione condivisi di Configuration Manager 2007  
-Quando si esegue la migrazione da una gerarchia di origine di Configuration Manager 2007, è possibile aggiornare un punto di distribuzione condiviso per renderlo un punto di distribuzione di System Center Configuration Manager. È possibile aggiornare i punti di distribuzione nei siti primari e nei siti secondari. Il processo di aggiornamento rimuove il punto di distribuzione dalla gerarchia di Configuration Manager 2007 e lo rende come server di sistema del sito nella gerarchia di destinazione. Questo processo copia anche il contenuto esistente che si trova nel punto di distribuzione in un nuovo percorso nel computer del punto di distribuzione. Il processo di aggiornamento quindi modifica la copia del contenuto per creare l'archivio a istanza singola di  da utilizzare con la distribuzione contenuti di nella gerarchia di destinazione. Quando si aggiorna un punto di distribuzione, non è necessario ridistribuire il contenuto di cui è stata eseguita la migrazione ospitato nel punto di distribuzione di Configuration Manager 2007.  
+-   Configuration Manager 2007 ソース階層の保護された配布ポイントを共有すると、移行先階層では、その配布ポイントの保護されたネットワークの場所が含まれた境界グループが作成されます。 移行先階層のこの境界グループを変更することはできません。 ただし、Configuration Manager 2007 ソース階層の配布ポイントの保護された境界情報を変更すると、この変更は、次回のデータ収集サイクルが終了した後で移行先階層に反映されます。  
 
-Dopo che Configuration Manager converte il contenuto nel formato Single Instance Store, elimina il contenuto di origine nel computer del punto di distribuzione per liberare spazio su disco. Configuration Manager non usa il percorso del contenuto di origine iniziale.  
+    > [!NOTE]  
+    >  System Center 2012 Configuration Manager サイトおよび System Center Configuration Manager サイトでは、保護された配布ポイントではなく優先配布ポイントの概念が使われます。 この条件は、Configuration Manager 2007 ソース サイトと共有されている配布ポイントにのみ適用されます。  
 
-Non tutti i punti di distribuzione di Configuration Manager 2007, che è possibile condividere, sono idonei all'aggiornamento a System Center Configuration Manager. Per essere idoneo per l'aggiornamento, un punto di distribuzione di Configuration Manager 2007 deve soddisfare determinate condizioni, che includono il server di sistema del sito in cui è installato il punto di distribuzione e il tipo di punto di distribuzione di Configuration Manager 2007 installato. Ad esempio, non è possibile aggiornare nessun tipo di punto di distribuzione installato sul computer del server del sito su un sito primario, ma è possibile aggiornare un punto di distribuzione standard installato sul computer del server del sito su un sito secondario.  
+ソース サイトの配布ポイントを共有する前は、適合する配布ポイントは Configuration Manager コンソールに表示されません。 配布ポイントを共有した後で、正常に共有された配布ポイントのみ表示されます。  
+
+配布ポイントを共有した後で、ソース階層の共有配布ポイントの構成を変更できます。 配布ポイントの構成に加えた変更は、次回のデータ収集サイクルの後で移行先階層に反映されます。 共有に適合するように更新した配布ポイントは自動的に共有され、適合しなくなった配布ポイントは共有が停止されます。 たとえば、イントラネットの FQDN を使って設定しておらず、最初に移行先階層と共有しなかった配布ポイントがあるとします。 その配布ポイントに FQDN を設定すると、次回のデータ収集サイクルでこの構成が識別され、その配布ポイントが移行先階層と共有されます。  
+
+##  <a name="Planning_to_Upgrade_DPs"></a>Configuration Manager 2007 共有配布ポイントのアップグレードの計画  
+Configuration Manager 2007 ソース階層から移行するときに、共有配布ポイントをアップグレードして System Center Configuration Manager 配布ポイントにすることができます。 プライマリ サイトとセカンダリ サイトで、配布ポイントをアップグレードできます。 アップグレード プロセスでは、Configuration Manager 2007 階層から配布ポイントが削除されて、移行先階層のサイト システム サーバーになります。 また、このプロセスで、配布ポイントの既存のコンテンツが配布ポイントのコンピューターの新しい場所にコピーされます。 次に、コンテンツのコピーが変更され、移行先階層のコンテンツ展開に使用するの単一インスタンス ストアが作成されます。 このため、配布ポイントをアップグレードする場合、Configuration Manager 2007 配布ポイントでホストされていた移行されたコンテンツを再配布する必要はありません。  
+
+Configuration Manager によってコンテンツが単一インスタンス ストアに変換された後、Configuration Manager によって配布ポイントのコンピューターの元のソース コンテンツは削除されて、ディスク領域が解放されます。 元のソース コンテンツの場所は使われません。  
+
+共有できるすべての Configuration Manager 2007 の配布ポイントが、System Center Configuration Manager のアップグレードに適合するわけではありません。 アップグレードに適合するためには、Configuration Manager 2007 配布ポイントがアップグレードの条件を満たしている必要があります。 そのような条件としては、配布ポイントがインストールされているサイト システム サーバーや、インストールされている Configuration Manager 2007 配布ポイントの種類などがあります。 たとえば、プライマリ サイトのサイト サーバー コンピューターにインストールされている配布ポイントはどの種類もアップグレードできませんが、セカンダリ サイトのサイト サーバー コンピューターにインストールされている標準配布ポイントはアップグレードすることができます。  
 
 > [!NOTE]  
->  È possibile aggiornare solo quei punti di distribuzione condivisi di Configuration Manager 2007 che sono in un computer con una versione di sistema operativo supportata per i punti di distribuzione nella gerarchia di destinazione. Ad esempio, anche se è possibile condividere un punto di distribuzione di Configuration Manager 2007 che si trova in un computer con Windows Vista, non è possibile aggiornare tale punto di distribuzione condiviso perché il sistema operativo non è supportato da System Center Configuration Manager per l'uso come punto di distribuzione.  
+>  移行先階層の配布ポイントでサポートされているオペレーティング システム バージョンを実行するコンピューターの Configuration Manager 2007 共有配布ポイントのみ、アップグレードできます。 たとえば、Windows Vista を実行するコンピューターの Configuration Manager 2007 配布ポイントは共有できますが、System Center Configuration Manager では、配布ポイントとしての使用にはこのオペレーティング システムはサポートされていないため、この共有配布ポイントをアップグレードすることはできません。  
 
-La tabella seguente elenca i percorsi supportati per ogni tipo di punto di distribuzione di Configuration Manager 2007 per i quali è possibile eseguire l'aggiornamento.  
+次の表に、アップグレードできる Configuration Manager 2007 配布ポイントの種類ごとに、サポートされる場所を示します。  
 
-|Tipo di punto di distribuzione|Punto di distribuzione in un computer del sistema del sito diverso dal server del sito|Punto di distribuzione in un computer del sistema del sito diverso dal server del sito e che ospita altri ruoli del sistema del sito|Punto di distribuzione in un server del sito secondario|  
+|配布ポイントの種類|サイト サーバー以外のサイト システム コンピューターの配布ポイント|他のサイト システムの役割をホストする、サイト サーバー以外のサイト システム コンピューターの配布ポイント|セカンダリ サイト サーバーの配布ポイント|  
 |--------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------|  
-|Punto di distribuzione standard|Sì|No|Sì|  
-|Punto di distribuzione in condivisioni server<sup>1</sup>|Sì|No|No|  
-|Punto di distribuzione secondario|Sì|No|No|  
+|標準配布ポイント|○|×|○|  
+|サーバー共有上の配布ポイント<sup>1</sup>|○|いいえ|×|  
+|ブランチ配布ポイント|○|いいえ|×|  
 
- <sup>1</sup> System Center Configuration Manager non supporta le condivisioni server per i sistemi del sito, ma supporta l'aggiornamento di un punto di distribuzione di Configuration Manager 2007 che si trova in una condivisione server. Quando si esegue l'aggiornamento di un punto di distribuzione di Configuration Manager 2007 che si trova in una condivisione server, il tipo di punto di distribuzione viene automaticamente convertito in un server ed è necessario selezionare l'unità nel computer del punto di distribuzione che memorizzerà l'archivio del contenuto a istanza singola.  
+ <sup>1</sup> System Center Configuration Manager では、サイト システムでのサーバー共有をサポートしていませんが、サーバー共有上の Configuration Manager 2007 配布ポイントのアップグレードをサポートしています。 サーバー共有上の Configuration Manager 2007 配布ポイントをアップグレードするときに、配布ポイントの種類が自動的にサーバーに変換されるため、単一インスタンスのコンテンツ ストアを格納する配布ポイント コンピューターのドライブを選択する必要があります。  
 
 > [!WARNING]  
->  Prima di aggiornare un punto di distribuzione secondario, disinstallare il software client di Configuration Manager 2007. Quando si esegue l'aggiornamento di un punto di distribuzione secondario che ha il software client di Configuration Manager 2007 installato, il contenuto precedentemente distribuito nel computer viene rimosso dal computer e l'aggiornamento del punto di distribuzione ha esito negativo.  
+>  ブランチ配布ポイントをアップグレードする前に、Configuration Manager 2007 クライアント ソフトウェアをアンインストールしてください。 Configuration Manager 2007 クライアント ソフトウェアがインストールされているブランチ配布ポイントをアップグレードすると、コンピューターに以前に展開されたコンテンツがそのコンピューターから削除されて、配布ポイントのアップグレードは失敗します。  
 
-Per identificare i punti di distribuzione idonei all'aggiornamento nella console di Configuration Manager, nel nodo **Gerarchia di origine** selezionare un sito di origine e la scheda **Punti di distribuzione condivisi**. I punti di distribuzione idonei visualizzano **Sì** nella colonna **Idoneo per l'aggiornamento** .  
+Configuration Manager コンソールの [**ソース階層**] ノードでアップグレード対象の配布ポイントを識別するには、ソース サイトを選択してから、[**共有配布ポイント**] タブを選択します。 適合する配布ポイントは、[アップグレードの条件に適合 **** ] 列に [はい **** ] が表示されます。  
 
-Quando si aggiorna un punto di distribuzione installato in un server del sito secondario di Configuration Manager 2007, il sito secondario viene disinstallato dalla gerarchia di origine. Benché questo scenario venga chiamato aggiornamento del sito secondario, si applica solo al ruolo del sistema del sito del punto di distribuzione. Il risultato è che il sito secondario non è aggiornato e verrà disinstallato. In questo modo, nel computer che era il server del sito secondario rimane un punto di distribuzione della gerarchia di destinazione. Se si prevede di aggiornare il punto di distribuzione in un sito secondario, vedere [Pianificare l'aggiornamento dei siti secondari di Configuration Manager 2007](#BKMK_UpgradeSS) in questo argomento.  
+Configuration Manager 2007 のセカンダリ サイト サーバーにインストールされている配布ポイントをアップグレードすると、そのセカンダリ サイトはソース階層からアンインストールされます。 このシナリオはセカンダリ サイトのアップグレードと呼ばれますが、これは配布ポイントのサイト システムの役割にのみ適用されます。 結果として、セカンダリ サイトはアップグレードされず、代わりにアンインストールされます。 アンインストール後は、セカンダリ サイト サーバーだったコンピューターに移行先階層の配布ポイントが残ります。 セカンダリ サイトの配布ポイントをアップグレードする場合は、「[Configuration Manager 2007 セカンダリ サイトへのアップグレードの計画](#BKMK_UpgradeSS)」をご覧ください。  
 
-###  <a name="a-namebkimkupgradeprocessa-distribution-point-upgrade-process"></a><a name="BKIMK_UpgradeProcess"></a> Processo di aggiornamento del punto di distribuzione  
-È possibile usare la console di Configuration Manager per aggiornare i punti di distribuzione di Configuration Manager 2007 condivisi con la gerarchia di destinazione. Quando si aggiorna un punto di distribuzione condiviso, il punto di distribuzione viene disinstallato dal sito di Configuration Manager 2007 e quindi viene installato come punto di distribuzione collegato a un sito primario o secondario specificato nella gerarchia di destinazione. Il processo di aggiornamento crea una copia del contenuto migrato che viene archiviato nel punto di distribuzione, quindi converte tale copia in un archivio contenuti a istanza singola. Quando Configuration Manager converte un pacchetto in un archivio del contenuto a istanza singola, elimina tale pacchetto dalla condivisione SMSPKG nel computer del punto di distribuzione a meno che il pacchetto non abbia uno o più annunci impostati su **Esegui programma dal punto di distribuzione**.  
+###  <a name="BKIMK_UpgradeProcess"></a> 配布ポイントのアップグレード プロセス  
+Configuration Manager コンソールを使用して、移行先階層と共有している Configuration Manager 2007 配布ポイントをアップグレードできます。 共有配布ポイントをアップグレードすると、その配布ポイントが Configuration Manager 2007 サイトからアンインストールされます。 その後、移行先階層で指定したプライマリ サイトまたはセカンダリ サイトにアタッチされた配布ポイントとしてインストールされます。 アップグレード プロセスでは、配布ポイントに格納されている移行されたコンテンツをコピーしてから、このコピーを単一インスタンスのコンテンツ ストアに変換します。 Configuration Manager は、パッケージを単一インスタンスのコンテンツ ストアに変換すると、そのパッケージに **[配布ポイントからプログラムを実行する]** として設定されている提供情報が 1 つ以上含まれていない限り、そのパッケージを配布ポイント コンピューター上の SMSPKG 共有から削除します。  
 
-Per aggiornare il punto di distribuzione, Configuration Manager usa l'**account di accesso al sito di origine** configurato per raccogliere dati dal provider SMS del sito di origine. Nonostante questo account richieda solo l'autorizzazione **Lettura** affinché gli oggetti del sito possano raccogliere dati dal sito di origine, deve anche avere l'autorizzazione **Eliminazione** e **Modifica** per la classe **Sito** per poter rimuovere correttamente il punto di distribuzione dal sito di Configuration Manager 2007 durante l'aggiornamento.  
+配布ポイントをアップグレードするため、Configuration Manage は、ソース サイトの SMS プロバイダーからデータを収集するように設定された**ソース サイトのアクセス アカウント**を使用します。 ソース サイトからデータを収集するには、このアカウントにサイト オブジェクトの [**読み取り**] アクセス許可があれば十分ですが、アップグレード中に配布ポイントを Configuration Manager 2007 サイトから正常に削除するためには、[**サイト**] クラスに対する [**削除**] および [**変更**] アクセス許可も必要です。  
 
 > [!NOTE]  
->  Configuration Manager può convertire il contenuto nell'archivio a istanza singola solo in un punto di distribuzione alla volta. Quando si configurano gli aggiornamenti di più punti di distribuzione, questi ultimi vengono accodati per l'aggiornamento ed elaborati uno alla volta.  
+>  Configuration Manager は、一度に 1 つの配布ポイントの単一インスタンス ストアにのみコンテンツを変換できます。 複数の配布ポイントのアップグレードを設定すると、一度に 1 つの配布ポイントがアップグレードのためにキューに入れられて処理されます。  
 
-Prima di aggiornare un punto di distribuzione condiviso, assicurarsi che sia eseguita la migrazione di tutto il contenuto distribuito nel punto di distribuzione. Il contenuto che non viene migrato prima dell'aggiornamento del punto di distribuzione non sarà disponibile dopo l'aggiornamento nella gerarchia di destinazione. Quando si aggiorna un punto di distribuzione, il contenuto nei pacchetti migrati viene convertito in un formato compatibile con l'archivio a istanza singola della gerarchia di destinazione.  
+共有配布ポイントをアップグレードする前に、配布ポイントに展開したすべてのコンテンツが移行されていることを確認します。 配布ポイントをアップグレードする前に移行していないコンテンツは、アップグレード後に移行先階層で利用できません。 配布ポイントをアップグレードすると、移行されたパッケージ内のコンテンツは移行先階層の単一インスタンス ストアと互換性がある形式に変換されます。  
 
-Per aggiornare un punto di distribuzione dall'interno della console di Configuration Manager, il server di sistema del sito di Configuration Manager 2007 deve soddisfare le condizioni seguenti:  
+Configuration Manager コンソール内から配布ポイントをアップグレードするには、Configuration Manager 2007 サイト システム サーバーが次の条件を満たしている必要があります。  
 
--   La configurazione e il percorso dei punti di distribuzione devono essere idonei per l'aggiornamento.  
+-   配布ポイントの構成と場所がアップグレードに適合している必要があります。  
 
--   Il computer del punto di distribuzione deve avere uno spazio su disco sufficiente a garantire la conversione del contenuto dal formato di archiviazione contenuto di Configuration Manager 2007 nel formato di archiviazione a istanza singola. Questa conversione richiede uno spazio su disco disponibile pari alla dimensione del pacchetto più grande archiviato nel punto di distribuzione.  
+-   配布ポイントのコンピューターに、コンテンツを Configuration Manager 2007 コンテンツの格納形式から単一インスタンス ストア形式に変換するための十分なディスク領域がある必要があります。 この変換には、配布ポイントに格納されている最も大きいサイズのパッケージと同じサイズの空きディスク領域が必要です。  
 
--   Il computer del punto di distribuzione deve eseguire una versione del sistema operativo supportata come un punto di distribuzione nella gerarchia di destinazione.  
+-   配布ポイント コンピューターは、対象階層の配布ポイントとしてサポートされているオペレーティング システム バージョンを実行する必要があります。  
 
     > [!NOTE]  
-    >  Quando Configuration Manager verifica l'idoneità di un punto di distribuzione per l'aggiornamento, non convalida la versione del sistema operativo del computer del punto di distribuzione.  
+    >  Configuration Manager は、配布ポイントをアップグレードできるかどうかを確認するときに、配布ポイント コンピューターのオペレーティング システム バージョンを検証しません。  
 
-Per aggiornare un punto di distribuzione, nell'area di lavoro **Amministrazione** espandere **Migrazione**, quindi espandere il nodo **Gerarchia di origine** e infine selezionare il sito contenente il punto di distribuzione che si vuole aggiornare. Successivamente, nel riquadro dei dettagli, nella scheda **Punti di distribuzione condivisi** , selezionare il punto di distribuzione che si desidera aggiornare.  
+配布ポイントをアップグレードするには、**[管理]** ワークスペースで **[移行]** を展開して、**[ソース階層]** ノードを展開し、アップグレードする配布ポイントが含まれているサイトを選択します。 次に、詳細ウィンドウの [共有配布ポイント **** ] タブで、アップグレードする配布ポイントを選択します。  
 
-È possibile verificare che il punto di distribuzione sia pronto per l'aggiornamento visualizzando lo stato nella colonna **Idoneo per la riassegnazione** .  Successivamente, nella barra multifunzione della console di Configuration Manager nel gruppo **Punto di distribuzione** della scheda **Punti di distribuzione** selezionare **Riassegna**. Verrà visualizzata una procedura guidata che consente di completare l'aggiornamento del punto di distribuzione.  
+配布ポイントのアップグレードの準備ができていることを確認するには、 **[再割り当ての条件に適合]** 列のステータスを確認します。  次に、Configuration Manager コンソールのリボンの **[配布ポイント]** タブの **[配布ポイント]** グループで、**[再割り当て]** を選びます。 配布ポイントのアップグレードを完了するために使用するウィザードが開きます。  
 
-Quando si aggiorna un punto di distribuzione condiviso, questo viene assegnato a un sito primario o secondario di scelta nella gerarchia di destinazione. Al termine dell'aggiornamento, gestire il punto di distribuzione come qualsiasi altro punto di distribuzione nella gerarchia di destinazione.  
+共有配布ポイントをアップグレードする場合は、移行先階層で選択したプライマリ サイトまたはセカンダリ サイトに配布ポイントを割り当てる必要があります。 配布ポイントをアップグレードした後は、他の配布ポイントと同様に、配布ポイントを対象階層の配布ポイントとして管理します。  
 
-È possibile monitorare l'avanzamento dell'aggiornamento del punto di distribuzione nella console di Configuration Manager selezionando il nodo **Migrazione dei punti di distribuzione** nel nodo **Migrazione** dell'area di lavoro **Amministrazione**. È inoltre possibile visualizzare le informazioni nel file **Migmctrl.log** nel server del sito di amministrazione centrale della gerarchia di destinazione oppure nel file **distmgr.log** nel server del sito nella gerarchia di destinazione che gestisce il punto di distribuzione aggiornato.  
+Configuration Manager コンソールで配布ポイントのアップグレードの進行状況を監視するには、[**管理**] ワークスペースの [**移行**] ノードの下で、[**配布ポイントの移行**] ノードを選びます。 対象階層の中央管理サイト サーバー、またはアップグレードされた配布ポイントを管理する対象階層のサイト サーバーの **Migmctrl.log** で、 **distmgr.log** の情報を確認することもできます。  
 
 > [!NOTE]  
->  Quando si aggiorna un punto di distribuzione alla gerarchia di destinazione, il ruolo del sistema del sito del punto di distribuzione viene rimosso dal sito di origine di Configuration Manager 2007. I pacchetti inviati al punto di distribuzione non vengono tuttavia aggiornati nella gerarchia di Configuration Manager 2007. Nella console di Configuration Manager 2007, i pacchetti inviati al punto di distribuzione continuano a elencare il computer del sistema del sito come punto di distribuzione con **Tipo** **Sconosciuto**. I successivi aggiornamenti del pacchetto in Configuration Manager 2007 danno come risultato la segnalazione di errori da parte di Distribution Manager nel file distmgr.log per tale sito quando prova ad aggiornare il pacchetto nel sistema del sito sconosciuto.  
+>  配布ポイントを移行先階層にアップグレードすると、配布ポイントのサイト システムの役割が Configuration Manager 2007 ソース サイトから削除されます。 ただし、その配布ポイントに送信されていたパッケージは Configuration Manager 2007 階層で更新されません。 Configuration Manager 2007 コンソールでは、配布ポイントに送信されたパッケージがサイト システム コンピューターを [**種類**] が [**不明**] として引き続き一覧表示します。 Configuration Manager 2007 のパッケージへの後続の更新では、その不明なサイト システムのパッケージを更新しようとしたときに、配布マネージャーがそのサイトの distmgr.log にエラーを報告します。  
 
-Se si decide di non aggiornare un punto di distribuzione condiviso, è ancora possibile installare un punto di distribuzione da una gerarchia di destinazione in un punto di distribuzione di Configuration Manager 2007 precedente. Prima di installare il nuovo punto di distribuzione, è necessario disinstallare tutti i ruoli di sistema del sito di Configuration Manager 2007 dal computer del punto di distribuzione. Tale operazione include il sito di Configuration Manager 2007 qualora fosse il computer del server del sito. Se si disinstalla un punto di distribuzione di Configuration Manager 2007, il contenuto che era stato distribuito al punto di distribuzione non viene eliminato dal computer.  
+共有配布ポイントをアップグレードしないことにした場合でも、以前の Configuration Manager 2007 配布ポイントに移行先階層の配布ポイントをインストールできます。 新しい配布ポイントをインストールする前に、まず、配布ポイントのコンピューターからすべての Configuration Manager 2007 サイト システムの役割をアンインストールする必要があります。 その際、Configuration Manager 2007 サイトがサイト サーバー コンピューターである場合は、これも含まれます。 Configuration Manager 2007 配布ポイントをアンインストールしても、配布ポイントに展開したコンテンツはコンピューターから削除されません。  
 
-###  <a name="a-namebkmkupgradessa-plan-to-upgrade-configuration-manager-2007-secondary-sites"></a><a name="BKMK_UpgradeSS"></a> Pianificare l'aggiornamento dei siti secondari di Configuration Manager 2007  
- Quando si usa la migrazione per aggiornare un punto di distribuzione condiviso ospitato in un server del sito secondario di Configuration Manager 2007, Configuration Manager aggiorna il ruolo del sistema del sito del punto di distribuzione facendone un punto di distribuzione nella gerarchia di destinazione. Disinstalla anche il sito secondario dalla gerarchia di origine. Il risultato è un punto di distribuzione di System Center Configuration Manager, ma non un sito secondario.  
+###  <a name="BKMK_UpgradeSS"></a>Configuration Manager 2007 セカンダリ サイトへのアップグレードの計画  
+ 移行を使用して、Configuration Manager 2007 セカンダリ サイト サーバーでホストされている共有配布ポイントをアップグレードすると、Configuration Manager は配布ポイント サイト システムの役割を移行先階層の配布ポイントにアップグレードします。 また、ソース階層からセカンダリ サイトをアンインストールします。 結果は、セカンダリ サイトではなく、System Center Configuration Manager 配布ポイントになります。  
 
- Perché un punto di distribuzione nel computer del server del sito sia idoneo all'aggiornamento, Configuration Manager deve poter disinstallare il sito secondario e tutti i ruoli di sistema del sito in tale computer. In genere, un punto di distribuzione condiviso in una condivisione server di Configuration Manager 2007 è idoneo all'aggiornamento. Tuttavia, in presenza di una condivisione server sul server del sito secondario, il sito secondario e qualsiasi punto di distribuzione condiviso su tale computer non sono idonei per l'aggiornamento. Ciò dipende dal fatto che la condivisione del server viene considerata come un oggetto del sistema del sito aggiuntivo quando il processo prova a disinstallare il sito secondario e il processo non riesce a disinstallare l'oggetto. In questo scenario, è possibile abilitare un punto di distribuzione standard sul server del sito secondario e quindi ridistribuire il contenuto in tal punto. Questo processo non usa la larghezza di banda della rete e, al termine di tale operazione, è possibile disinstallare il punto di distribuzione nella condivisione del server, rimuovere quest'ultima e quindi aggiornare il punto di distribuzione e il sito secondario.  
+ サイト サーバーのコンピューター上の配布ポイントがアップグレードに適合するためには、Configuration Manager が、セカンダリ サイトおよびそのコンピューター上の各サイト システムの役割をアンインストールできる必要があります。 通常、Configuration Manager 2007 サーバー共有の共有配布ポイントはアップグレードすることができます。 ただし、セカンダリ サイト サーバー上にサーバー共有が存在する場合、そのコンピューター上のセカンダリ サイトおよび共有配布ポイントはアップグレードに適合していません。 これは、プロセスがセカンダリ サイトをアンインストールしようとすると、サーバー共有が追加のサイト システム オブジェクトとして扱われ、このオブジェクトをアンインストールできなくなるためです。 このシナリオでは、セカンダリ サイト サーバーで標準の配布ポイントを有効にしてから、その標準の配布ポイントにコンテンツを再配布する方法があります。 このプロセスではネットワーク帯域幅を使用しません。また、完了したら、サーバー共有の配布ポイントをアンインストールし、サーバー共有を削除してから、配布ポイントとセカンダリ サイトをアップグレードすることができます。  
 
- Prima di aggiornare un punto di distribuzione condiviso, verificare la configurazione di tale punto in Configuration Manager 2007 per evitare di aggiornare un punto di distribuzione in un sito secondario che si vuole ancora usare con Configuration Manager 2007. Questa è una procedura consigliata perché, dopo aver aggiornato un punto di distribuzione condiviso in un server del sito secondario, il server di sistema del sito viene rimosso dalla gerarchia di Configuration Manager 2007 e non è più disponibile in tale gerarchia. Quando viene rimosso il sito secondario, i punti di distribuzione che rimangono nel sito secondario diventano orfani. Ciò significa che non vengono gestiti da Configuration Manager 2007 e non sono più condivisi o idonei all'aggiornamento.  
+ 共有配布ポイントをアップグレードする前に、Configuration Manager 2007 の配布ポイントの構成を確認し、Configuration Manager 2007 で引き続き使用するセカンダリ サイトの配布ポイントをアップグレードしないようにします。 これは、セカンダリ サイト サーバーの共有配布ポイントをアップグレードすると、サイト システム サーバーが Configuration Manager 2007 階層から削除され、その階層で使用できなくなるため、よい方法です。 セカンダリ サイトが削除されると、そのセカンダリ サイトの残りの配布ポイントは孤立します。 つまり、Configuration Manager 2007 によって管理されなくなり、共有されなくなったり、アップグレードに適合しなくなります。  
 
 > [!WARNING]  
->  Quando si visualizza un punto di distribuzione condiviso nella console di Configuration Manager, non è presente alcuna indicazione visibile che specifichi se un punto di distribuzione condiviso si trova in un server di sistema del sito remoto o nel server del sito secondario.  
+>  Configuration Manager コンソールで共有配布ポイントを表示しても、共有配布ポイントがリモート サイト システム サーバーまたはセカンダリ サイト サーバーに配置されていることは表示されません。  
 
- In presenza di un sito secondario in un percorso di rete remoto usato principalmente per controllare la distribuzione del contenuto in tale percorso, è consigliabile aggiornare i siti secondari che hanno un punto di distribuzione condiviso. Dal momento che è possibile configurare il controllo della larghezza di banda per lo scenario in cui si distribuisce il contenuto in un punto di distribuzione di System Center Configuration Manager, è spesso possibile aggiornare un sito secondario a un punto di distribuzione, configurare il punto di distribuzione per i controlli della larghezza di banda ed evitare l'installazione di un sito secondario in tale percorso di rete nella gerarchia di destinazione.  
+ リモート ネットワークの場所へのコンテンツの展開を制御するために主に使用されるセカンダリ サイトがリモート ネットワークの場所にある場合は、共有配布ポイントがあるセカンダリ サイトをアップグレードすることを検討してください。 System Center Configuration Manager 配布ポイントにコンテンツを配布するときは帯域幅の制御を設定できるため、多くの場合、セカンダリ サイトを配布ポイントにアップグレードして、その配布ポイントの帯域幅の制御を設定することにより、移行先階層のそのネットワークの場所にセカンダリ サイトをインストールすることを回避できます。  
 
- Il processo di aggiornamento di un punto di distribuzione condiviso in un server del sito secondario è lo stesso di qualsiasi altro aggiornamento di punto di distribuzione condiviso. Il contenuto viene copiato e convertito nel formato Single Instance Store usato dalla gerarchia di destinazione. Tuttavia, quando si esegue l'aggiornamento di un punto di distribuzione condiviso che si trova in un server del sito secondario, il processo di aggiornamento disinstalla anche il punto di gestione, se presente, e quindi disinstalla il sito secondario dal server. Il risultato è che il sito secondario viene rimosso dalla gerarchia di Configuration Manager 2007. Per disinstallare il sito secondario, Configuration Manager usa l'account configurato per raccogliere i dati dal sito di origine.  
+ セカンダリ サイト サーバー上の共有配布ポイントをアップグレードする処理は、その他の共有配布ポイントのアップグレードと同様です。 コンテンツは、移行先階層で使用される単一インスタンス ストアにコピーおよび変換されます。 ただし、セカンダリ サイト サーバーの共有配布ポイントをアップグレードする場合、アップグレード プロセスでは、管理ポイントがアンインストールされ (存在する場合)、そのサーバーからセカンダリ サイトもアンインストールされます。 その結果、セカンダリ サイトが Configuration Manager 2007 階層から削除されます。 セカンダリ サイトをアンインストールするために、Configuration Manager はソース サイトからデータを収集するために設定されているアカウントを使用します。  
 
- Durante l'aggiornamento, si verifica un ritardo tra il momento in cui il sito secondario di Configuration Manager 2007 viene disinstallato e il momento in cui l'installazione del punto di distribuzione nella gerarchia di destinazione inizia. Il ciclo di raccolta dei dati determina questo ritardo di un massimo di quattro ore. Il ritardo è volto a garantire il tempo necessario per la disinstallazione del sito secondario prima che l'installazione del nuovo punto di distribuzione abbia inizio.  
+ アップグレード時に、Configuration Manager 2007 セカンダリ サイトがアンインストールされてから、移行先階層の配布ポイントのインストールが開始されるまでには遅延があります。 データ収集サイクルに応じて、最大 4 時間の遅延が発生します。 この遅延は、新しい配布ポイントのインストールが開始される前に、セカンダリ サイトでアンインストールを行う時間を用意するために発生します。  
 
- Per altre informazioni su come aggiornare un punto di distribuzione condiviso, vedere [Pianificare l'aggiornamento dei punti di distribuzione condivisi di Configuration Manager 2007](#Planning_to_Upgrade_DPs).  
+ 共有配布ポイントのアップグレード方法の詳細については、「[Configuration Manager 2007 共有配布ポイントのアップグレードの計画](#Planning_to_Upgrade_DPs)」をご覧ください。  
 
-##  <a name="a-namebkmkreassigndistpointa-plan-to-reassign-system-center-configuration-manager-distribution-points"></a><a name="BKMK_ReassignDistPoint"></a>Pianificare la riassegnazione dei punti di distribuzione di System Center Configuration Manager  
- Quando si esegue la migrazione da una versione supportata di System Center 2012 Configuration Manager a una gerarchia della stessa versione, è possibile riassegnare un punto di distribuzione condiviso dalla gerarchia di origine a un sito nella gerarchia di destinazione. Questa attività segue lo stesso concetto di aggiornamento di un punto di distribuzione di Configuration Manager 2007 per diventare un punto di distribuzione nella gerarchia di destinazione. È possibile riassegnare i punti di distribuzione dai siti primari e dai siti secondari. Tale azione determina la rimozione del punto di distribuzione dalla gerarchia di origine e rende il computer, con il relativo punto di distribuzione, un server del sistema del sito per un sito selezionato nella gerarchia di destinazione.  
+##  <a name="BKMK_ReassignDistPoint"></a>System Center Configuration Manager 配布ポイントの再割り当ての計画  
+ サポートされるバージョンの System Center 2012 Configuration Manager から同じバージョンの階層に移行する場合、ソース階層の共有配布ポイントを移行先階層のサイトに再割り当てすることができます。 これは、Configuration Manager 2007 配布ポイントを移行先階層の配布ポイントにアップグレードする場合の概念と似ています。 プライマリ サイトとセカンダリ サイトの配布ポイントを再割り当てできます。 この配布ポイントを再割り当てする処理によって、配布ポイントはソース階層から削除され、コンピューターとその配布ポイントが、移行先階層で選択したサイトのサイト システム サーバーに作成されます。  
 
- Quando si riassegna un punto di distribuzione, non è necessario ridistribuire il contenuto migrato che era stato ospitato sul punto di distribuzione del sito di origine. A differenza dell'aggiornamento di un punto di distribuzione di Configuration Manager 2007, la riassegnazione di un punto di distribuzione non richiede spazio su disco aggiuntivo nel computer del punto di distribuzione. Infatti, a partire da System Center 2012 Configuration Manager, i punti di distribuzione usano il formato Single Instance Store per il contenuto. Non è necessario convertire il contenuto nel computer del punto di distribuzione quando il punto di distribuzione viene riassegnato tra le gerarchie.  
+ 配布ポイントを再割り当てする場合、ソース サイトの配布ポイントでホストされていた移行済みコンテンツを再配布する必要はありません。 また、Configuration Manager 2007 配布ポイントのアップグレードとは異なり、配布ポイントの再割り当てのために、配布ポイントのコンピューターに追加のディスク領域は必要ありません。 これは、System Center 2012 Configuration Manager 以降では、配布ポイントはコンテンツに単一インスタンス ストア形式を使用しているためです。 階層間で配布ポイントを再割り当てするとき、配布ポイントのコンピューターのコンテンツを変換する必要はありません。  
 
- Per essere idoneo alla riassegnazione, un punto di distribuzione di System Center 2012 Configuration Manager deve soddisfare i criteri seguenti:  
+ System Center 2012 Configuration Manager 配布ポイントが再割り当てに適合するためには、次の条件を満たしている必要があります。  
 
--   Un punto di distribuzione condiviso deve essere installato in un computer diverso dal server del sito.  
+-   共有配布ポイントがサイト サーバーとは異なるコンピューターにインストールされている。  
 
--   Un punto di distribuzione condiviso non può essere condiviso con eventuali ruoli del sistema del sito aggiuntivi.  
+-   共有配布ポイントが追加のサイト システムの役割と併置されていない。  
 
-Per identificare i punti di distribuzione idonei alla riassegnazione nella console di Configuration Manager, nel nodo **Gerarchia di origine** selezionare un sito di origine e la scheda **Punti di distribuzione condivisi**. I punti di distribuzione idonei visualizzano l'opzione **Sì** nella colonna **Idoneo alla riassegnazione**. La colonna è denominata **Idoneo per l'aggiornamento** nelle versioni precedenti a System Center 2012 R2 Configuration Manager.  
+Configuration Manager コンソールの [**ソース階層**] ノードで再割り当て対象の配布ポイントを識別するには、ソース サイトを選択してから、[**共有配布ポイント**] タブを選択します。 適合する配布ポイントの **[再割り当ての条件に適合]** 列には、**[はい]** が表示されます (System Center 2012 R2 Configuration Manager より前のバージョンでは、この列の名前は **[アップグレードの条件に適合]** となっています)。  
 
-###  <a name="a-namebkmkreassignprocessa-distribution-point-reassignment-process"></a><a name="BKMK_ReassignProcess"></a> Processo di riassegnazione dei punti di distribuzione  
- È possibile usare la console di Configuration Manager per riassegnare i punti di distribuzione condivisi da una gerarchia di origine attiva. Quando si riassegna un punto di distribuzione condiviso, questo viene disinstallato dal sito di origine, quindi installato come punto di distribuzione collegato a un sito primario o secondario specificato nella gerarchia di destinazione.  
+###  <a name="BKMK_ReassignProcess"></a> 配布ポイントの再割り当てプロセス  
+ Configuration Manager コンソールを使用して、アクティブなソース階層から共有した配布ポイントを再割り当てすることができます。 共有配布ポイントを再割り当てすると、その配布ポイントがソース サイトからアンインストールされ、移行先階層で指定したプライマリ サイトまたはセカンダリ サイトにアタッチされた配布ポイントとしてインストールされます。  
 
- Per riassegnare il punto di distribuzione, la gerarchia di destinazione usa l'account di accesso al sito di origine configurato per raccogliere dati dal provider SMS del sito di origine. Per altre informazioni sulle autorizzazioni e sui prerequisiti aggiuntivi necessari, vedere [Prerequisiti per la migrazione in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
+ 配布ポイントを再割り当てするために、移行先階層は設定されている [ソース サイトのアクセス アカウント] を使用して、ソース サイトの SMS プロバイダーからデータを収集します。 必要なアクセス許可と追加の前提条件については、「[Prerequisites for migration in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md)」(System Center Configuration Manager の移行の前提条件) を参照してください。  
 
-## <a name="migrate-multiple-shared-distribution-points-at-the-same-time"></a>Eseguire la migrazione simultanea di più punti di distribuzione condivisi
-A partire dalla versione 1610, è possibile usare **Riassegna punto di distribuzione** in modo che Configuration Manager elabori in parallelo la riassegnazione simultanea di un massimo di 50 punti di distribuzione condivisi. Sono inclusi i punti di distribuzione condivisi dei siti di origine supportati che eseguono:  
+## <a name="migrate-multiple-shared-distribution-points-at-the-same-time"></a>複数の共有配布ポイントを同時に移行する
+バージョン 1610 より、**[配布ポイントの再割り当て]** を利用し、Configuration Manager に、最大 50 の共有配布ポイントの同時再割り当てを並列処理させることができます。 これには、次を実行するソース サイトの共有配布ポイントが含まれます。  
 - Configuration Manager 2007
 - System Center 2012 Configuration Manager
 - System Center 2012 R2 Configuration Manager
-- System Center Configuration Manager (Current Branch)
+- System Center Configuration Manager (現在のブランチ)
 
-Quando i punti di distribuzione vengono riassegnati, per ogni punto di distribuzione è necessario indicare se deve essere aggiornato o riassegnato. Il nome dell'azione e del processo interessato (aggiornamento o riassegnazione) dipende dalla versione di Configuration Manager che il sito di origine esegue. Il risultato finale è lo stesso per entrambe le azioni: il punto di distribuzione viene assegnato a uno dei siti Current Branch con il contenuto disponibile.
+配布ポイントを再割り当てするとき、各配布ポイントにアップグレードまたは再割り当ての資格を与える必要があります。 関係するアクションとプロセスの名称 (アップグレードまたは再割り当て) は、ソース サイトで実行される Configuration Manager のバージョンに依存します。 どちらのアクションも最終結果は同じです。配布ポイントが Current Branch サイトの 1 つに割り当てられ、コンテンツが配置されます。
 
-Prima della versione 1610, Configuration Manager elaborava solo un punto di distribuzione per volta. Ora è possibile riassegnare tutti i punti di distribuzione necessari, considerando però le avvertenze seguenti:  
-- Non è possibile selezionare più punti di distribuzione da riassegnare. Se in coda si trovano tuttavia più punti di distribuzione, Configuration Manager li elabora in parallelo e non attende di aver completato la riassegnazione di uno prima di avviare la riassegnazione del punto successivo.  
-- Per impostazione predefinita vengono elaborati in parallelo e simultaneamente fino a 50 punti di distribuzione. Dopo aver completato la riassegnazione del primo punto di distribuzione, Configuration Manager inizierà a elaborare il 51° punto e così via.  
-- Quando si usa Configuration Manager SDK, è possibile modificare **SharedDPImportThreadLimit** per regolare il numero dei punti di distribuzione riassegnati che Configuration Manager può elaborare in parallelo.
-
-
-##  <a name="a-nameaboutmigratingcontenta-assign-content-ownership-when-migrating-content"></a><a name="About_Migrating_Content"></a> Assegnare la proprietà del contenuto durante la migrazione del contenuto  
- Quando si esegue la migrazione dei contenuti per le distribuzioni, è necessario assegnare l'oggetto contenuto a un sito nella gerarchia di destinazione. Il sito diventa quindi il proprietario di tale contenuto nella gerarchia di destinazione. Anche se il sito principale della gerarchia di destinazione è il sito che esegue la migrazione dei metadati per il contenuto, è il sito assegnato che usa i file di origine per il contenuto nella rete.  
-
- Per ridurre al minimo la larghezza di banda di rete utilizzata durante la migrazione del contenuto, si consiglia di trasferire la proprietà del contenuto a un sito nella gerarchia di destinazione vicina nella rete del percorso del contenuto nella gerarchia di origine. Poiché le informazioni sul contenuto vengono condivise globalmente nella gerarchia di destinazione, saranno disponibili in tutti i siti.  
-
- Anche se le informazioni sul contenuto vengono condivise in tutti i siti usando la replica di database, i contenuti assegnati a un sito primario e quindi distribuiti nei punti di distribuzione in altri siti primari, vengono trasferiti tramite la replica basata su file. Il trasferimento viene instradato attraverso il sito di amministrazione centrale e quindi al sito primario aggiuntivo. È possibile ridurre i trasferimenti di dati in reti a larghezza di banda ridotta, centralizzando i pacchetti che si prevede di distribuire in più siti primari prima o durante la migrazione quando si assegna un sito come proprietario del contenuto.
+バージョン 1610 より前の場合、Configuration Manager で処理できる配布ポイントは一度に 1 つでした。 今では任意の数の配布ポイントを再割り当てできるようになりました (次の注意があります)。  
+- 再割り当てする配布ポイントを複数選択することはできませんが、複数の配布ポイントを待ち行列に入れると、Configuration Manager では、1 つの完了を待ってから次を始めるのではなく、複数の配布ポイントを並列処理します。  
+- 既定では、最大 50 の配布ポイントが一度に並列処理されます。 最初の配布ポイントの再割り当てが完了すると、Configuration Manager は 51 番目の処理を開始し、以降、同様に続けます。  
+- Configuration Manager SDK を使用するとき、**SharedDPImportThreadLimit** を変更し、Configuration Manager で並列処理できる、再割り当て配布ポイントの数を調整できます。
 
 
+##  <a name="About_Migrating_Content"></a>コンテンツを移行するときのコンテンツ所有権の割り当て  
+ 展開のためにコンテンツを移行する場合は、コンテンツ オブジェクトを移行先階層内のサイトに割り当てる必要があります。 このサイトが移行先階層内のコンテンツの所有者になります。 移行先階層の最上位サイトは、コンテンツのメタデータを移行するサイトですが、ネットワーク経由でコンテンツの元のソース ファイルを使うのは、割り当てられているサイトです。  
 
-<!--HONumber=Dec16_HO5-->
+ コンテンツを移行するときに使用されるネットワーク帯域幅を最小限に抑えるために、コンテンツの所有権をソース階層のコンテンツの場所にネットワーク上で近い移行先階層のサイトに移動することを検討します。 移行先階層のコンテンツに関する情報はグローバルに共有されるため、すべてのサイトで利用できます。  
 
-
+ コンテンツに関する情報はデータベース レプリケーションを使用してすべてのサイトで共有されますが、プラマリ サイトに割り当てられてから、他のプライマリ サイトの配布ポイントに展開されたコンテンツは、ファイル ベースのレプリケーションを使用して転送されます。 これは、中央管理サイトを経由して、その他のプライマリ サイトに転送されます。 コンテンツの所有者としてサイトを割り当てる場合、移行の前または移行中に複数のプライマリ サイトへの配布を計画しているパッケージを中央に集めると、帯域幅の狭いネットワークを使用したデータの転送を減らすことができます。

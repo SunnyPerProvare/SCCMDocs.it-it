@@ -1,798 +1,791 @@
 ---
-title: Elenco dei report | Microsoft Docs
-description: Esaminare l&quot;elenco dei report inclusi in Configuration Manager. I report vengono visualizzati in diverse categorie.
+title: "レポートの一覧 | Microsoft Docs"
+description: "Configuration Manager に用意されているレポートの一覧を確認します。 これらのレポートは、さまざまなカテゴリに分類されて表示されます。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b7332ed3-8003-454b-bb12-1fdf8721425c
-caps.latest.revision: 10
-caps.handback.revision: 0
+caps.latest.revision: "10"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
 ms.openlocfilehash: 1480c38a6a3afef76b2e8759eaafd47d28f978f4
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="list-of-reports-in-system-center-configuration-manager"></a>Elenco dei report in System Center Configuration Manager
+# <a name="list-of-reports-in-system-center-configuration-manager"></a>System Center Configuration Manager のレポートの一覧
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager include numerosi report predefiniti, relativi a molte delle attività di report che si possono eseguire. È anche possibile usare le istruzioni SQL in questi report che consentono di scrivere propri report. Questo argomento offre informazioni sui report inclusi in Configuration Manager.  
+System Center Configuration Manager には、実行できるレポート タスクの多くに対応する多数の組み込みレポートが付属しています。 これらのレポートで SQL ステートメントを使用して、独自のレポートを作成することもできます。 このトピックでは、Configuration Manager に用意されているレポートについて説明します。  
 
-## <a name="list-of-built-in-configuration-manager-reports"></a>Elenco dei report predefiniti di Configuration Manager  
- I report seguenti sono disponibili in Configuration Manager. I report vengono visualizzati in diverse categorie.  
+## <a name="list-of-built-in-configuration-manager-reports"></a>Configuration Manager の組み込みレポートの一覧  
+ Configuration Manager には、次のレポートが付属しています。 これらのレポートは、さまざまなカテゴリに分類されて表示されます。  
 
-### <a name="administrative-security"></a>Protezione amministrativa  
- I report seguenti sono elencati sotto la categoria **Protezione amministrativa** .  
+### <a name="administrative-security"></a>管理セキュリティ  
+ 管理セキュリティ カテゴリに表示されるレポートを次に示します。 ****  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Registro attività di amministrazione**|Visualizza un record delle modifiche amministrative apportate per gli utenti amministratori, i ruoli di sicurezza, gli ambiti di protezione e le raccolte.|  
-|**Assegnazioni di protezione utenti amministratori**|Visualizza gli utenti amministratori, i ruoli di sicurezza associati e gli ambiti di protezione associati a ogni ruolo di sicurezza per ogni utente.|  
-|**Oggetti protetti da un unico ambito di protezione**|Visualizza gli oggetti che sono protetti da un ambito di protezione specificato e che sono assegnati a tale ambito di protezione. Questo report non visualizza gli oggetti associati a più ambiti di protezione.|  
-|**Protezione per oggetti specifici o multipli di Configuration Manager**|Visualizza gli oggetti a protezione diretta, gli ambiti di protezione associati agli oggetti e quali utenti amministratori dispongono dei diritti per gli oggetti.|  
-|**Riepilogo ruoli di sicurezza**|Visualizza i ruoli di sicurezza e gli amministratori di Configuration Manager associati a ogni ruolo.|  
-|**Riepilogo ambiti di protezione**|Visualizza gli ambiti di protezione e gli utenti amministratori e i gruppi di sicurezza di Configuration Manager associati a ogni ambito.|  
+|**管理アクティビティ ログ**|管理ユーザー、セキュリティ ロール、セキュリティ スコープ、およびコレクションに対して加えられた管理上の変更の記録を表示します。|  
+|**管理ユーザーのセキュリティの割り当て**|管理ユーザー、管理ユーザーに関連付けられているセキュリティ ロール、および各ユーザーの各セキュリティ ロールに関連付けられているセキュリティ スコープを表示します。|  
+|**単一のセキュリティ スコープで保護されているオブジェクト**|指定したセキュリティ スコープによって保護され、そのセキュリティ スコープのみに割り当てられているオブジェクトを表示します。 このレポートには、複数のセキュリティ スコープに関連付けられているオブジェクトは表示されません。|  
+|**特定または複数の Configuration Manager オブジェクトのセキュリティ**|保護可能なオブジェクト、オブジェクトに関連付けられているセキュリティ スコープ、およびオブジェクトに対する権限を持っている管理ユーザーを表示します。|  
+|**セキュリティ ロールの概要**|セキュリティ ロールと、各ロールに関連付けられている Configuration Manager 管理者を表示します。|  
+|**セキュリティ スコープの概要**|セキュリティ スコープと、各スコープに関連付けられている Configuration Manager 管理ユーザーおよびセキュリティ グループを表示します。|  
 
-### <a name="alerts"></a>Avvisi  
+### <a name="alerts"></a>アラート  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Scorecard avvisi**|Visualizza un riepilogo di tutti gli avvisi posticipati generati tra la data di inizio e la data di fine specificate.|  
-|**Avvisi generati più frequentemente**|Visualizza un riepilogo degli avvisi generati più frequentemente dalla data corrente alla data passata specificata per l'area funzionale fornita.|  
+|**アラート スコアカード**|指定した開始日と終了日の間に生成されたすべての延期されたアラートの概要を表示します。|  
+|**発生頻度の高いアラート**|指定した機能領域について今日から指定した日付の間に最も高い頻度で生成されたアラートの概要を表示します。|  
 
-### <a name="asset-intelligence"></a>Asset Intelligence  
+### <a name="asset-intelligence"></a>資産インテリジェンス  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Hardware 01A - Riepilogo dei computer in una raccolta specifica**|Visualizza un riepilogo di Asset Intelligence dei computer in una raccolta specificata.|  
-|**Hardware 03A - Utenti computer primario**|Visualizza gli utenti e il numero di computer in cui sono utenti primari.|  
-|**Hardware 03B - Computer per un utente console primario specifico**|Visualizza tutti i computer per cui l'utente specificato è l'utente console primario.|  
-|**Hardware 04A - Computer con più utenti (condivisi)**|Visualizza i computer che non hanno un utente primario in quanto nessun utente dispone di una percentuale di tempo di accesso alla console superiore a 66%.|  
-|**Hardware 05A - Utenti console in un computer specifico**|Visualizza tutti gli utenti console in un computer specifico.|  
-|**Hardware 06A - Computer per cui non è possibile determinare gli utenti console**|Consente agli utenti amministratori di identificare i computer in cui è necessario attivare la registrazione di protezione.|  
-|**Hardware 07A - Dispositivi USB per produttore**|Visualizza i dispositivi USB raggruppati in base al produttore.|  
-|**Hardware 07B - Dispositivi USB per produttore e descrizione**|Visualizza i dispositivi USB raggruppati in base al produttore e alla descrizione.|  
-|**Hardware 07C - Computer con un dispositivo USB specifico**|Visualizza tutti i computer con un dispositivo USB specifico.|  
-|**Hardware 07D - Dispositivi USB in un computer specifico**|Visualizza tutti i dispositivi USB in un computer specifico.|  
-|**Hardware 08A - Hardware che non è pronto per un aggiornamento software**|Visualizza l'hardware che non soddisfa i requisiti hardware minimi.|  
-|**Hardware 09A - Ricerca di computer**|Visualizza un riepilogo di gestione asset dei computer corrispondenti ai filtri delle parole chiave in nome del computer, sito di Configuration Manager, dominio, utente console principale, sistema operativo, produttore o modello.|  
-|**Hardware 10A - Computer in una raccolta specifica che sono stati modificati durante un intervallo di tempo specifico**|Visualizza un elenco di computer in una raccolta specifica in cui una classe hardware è stata modificata durante un intervallo di tempo specifico.|  
-|**Hardware 10B - Modifiche in un computer specifico in un intervallo di tempo specifico**|Visualizza le classi che sono state modificate in un computer specifico in un intervallo di tempo specifico.|  
-|**Licenza 01A - Ledger Microsoft Volume License per resoconti delle licenze Microsoft**|Visualizza un inventario dei nomi di tutti i software Microsoft disponibili nel programma Microsoft Volume Licensing.|  
-|**Licenza 01B - Elemento ledger Microsoft Volume License per canale di vendita**|Identifica i canali di vendita per il software Microsoft Volume License in inventario.|  
-|**Licenza 01C - Computer con specifici oggetti e canali di vendita del Ledger Microsoft Volume License**|Identifica e visualizza i computer che dispongono di un elemento specifico dal Ledger Microsoft Volume License.|  
-|**Licenza 01D - Prodotti Ledger Microsoft Volume License in un computer specifico**|Identifica e visualizza tutti gli elementi Ledger Microsoft Volume License in un computer specifico.|  
-|**Licenza 02A - Conteggio delle licenze prossime alla scadenza per intervalli di tempo**|Visualizza il numero di licenze prossime alla scadenza per un intervallo di tempo specificato. I prodotti visualizzati sono quelli che hanno le licenze gestite dal Servizio gestione licenze software.|  
-|**Licenza 02B - Computer con licenze prossime alla scadenza**|Visualizza i computer specificati con le licenze prossime alla scadenza.|  
-|**Licenza 02C - Informazioni sulla licenza in un computer specifico**|Visualizza i prodotti in un computer specifico che hanno le licenze gestite dal Servizio gestione licenze software.|  
-|**Licenza 03A - Conteggio delle licenze per stato della licenza**|Visualizza i prodotti, per stato della licenza, che hanno le licenze gestite dal Servizio gestione licenze software.|  
-|**Licenza 03B - Computer con uno stato licenza specifico**|Visualizza i prodotti, con uno stato della licenza specifico, che hanno le licenze gestite dal Servizio gestione licenze software.|  
-|**Licenza 04A - Conteggio dei prodotti gestiti dalla gestione licenze software**|Visualizza il conteggio dei prodotti che hanno le licenze gestite dal Servizio gestione licenze software.|  
-|**Licenza 04B - Computer con un prodotto specifico gestito dal Servizio gestione licenze software**|Visualizza i computer gestiti dal Servizio gestione licenze software che contengono un prodotto specifico.|  
-|**Licenza 05A - Computer che forniscono il Servizio di gestione delle chiavi**|Visualizza i computer che agiscono come Server di gestione delle chiavi.|  
-|**Licenza 06A - Numero di processori per prodotti con licenza per processore**|Visualizza il numero di processori nei computer che usano i prodotti Microsoft che supportano la gestione licenze per processore.|  
-|**Licenza 06B - Computer con un prodotto specifico che supporta le licenze per processore**|Visualizza un elenco di computer in cui è installato un prodotto Microsoft specifico che supporta la gestione licenze per processore.|  
-|**Licenza 14A - Report di riconciliazione di Microsoft Volume Licensing**|Visualizza la riconciliazione sulle licenze software acquistate tramite il contratto Microsoft Volume License e il numero corrente in inventario.|  
-|**Licenza 14B - Elenco dell'inventario software Microsoft non trovato in MVLS**|Questo report visualizza i titoli del software Microsoft in uso che non sono stati trovati nel contratto Microsoft Volume License.|  
-|**Licenza 15A - Report di riconciliazione licenza generale**|Visualizza la riconciliazione sulle licenze software generali acquistate e il numero corrente in inventario.|  
-|**Licenza 15B - Report di riconciliazione licenza generale per computer**|Visualizza i computer in cui è installato il prodotto concesso in licenza con una versione specifica.|  
-|**Software 01A - Riepilogo del software installato in una raccolta specifica**|Visualizza un riepilogo del software installato ordinato per numero di istanze trovate nell'inventario.|  
-|**Software 02A - Famiglie di prodotti per una raccolta specifica**|Visualizza le famiglie di prodotti e il conteggio del software nella famiglia per una raccolta specifica.|  
-|**Software 02B - Categorie di prodotti per una famiglia di prodotti specifica**|Visualizza le categorie di prodotti di una famiglia di prodotti specifica e il conteggio del software della categoria.|  
-|**Software 02C - Software in una famiglia e categoria di prodotti specifica**|Visualizza tutto il software presente nella categoria e nella famiglia di prodotti specificate.|  
-|**Software 02D - Computer con software specifico installato**|Visualizza tutti i computer con un software specifico installato.|  
-|**Software 02E - Software installati in un computer specifico**|Visualizza tutto il software installato in un computer specifico.|  
-|**Software 03A - Software senza categoria**|Visualizzare il software categorizzato come sconosciuto o senza categoria.|  
-|**Software 04A - Software configurato per l'esecuzione automatica nei computer**|Visualizza un elenco di software configurati per l'esecuzione automatica nei computer.|  
-|**Software 04B - Computer con software specifico configurato per l'esecuzione automatica**|Visualizza tutti i computer con software specifico configurato per l'esecuzione automatica.|  
-|**Software 04C - Software configurato per l'esecuzione automatica in un computer specifico**|Visualizza il software installato e configurato per l'esecuzione automatica in un computer specifico.|  
-|**Software 05A - Oggetti browser helper**|Visualizza gli oggetti browser helper installati nei computer in una raccolta specifica.|  
-|**Software 05B - Computer con un oggetto browser helper specifico**|Visualizza tutti i computer con un oggetto browser helper specifico.|  
-|**Software 05C - Oggetti browser helper installati in un computer specifico**|Visualizza tutti gli oggetti browser helper installati in un computer specifico.|  
-|**Software 06A - Ricerca di software installato**|Questo report fornisce un riepilogo del software installato ordinato per numero di istanze in base ai criteri di ricerca per nome del prodotto, autore o versione.|  
-|**Software 06B - Software per nome prodotto**|Visualizza un riepilogo del software installato ordinato per numero di istanze in base a un nome di prodotto specifico.|  
-|**Software 07A - Programmi eseguibili usati di recente per numero di computer**|Visualizza i programmi eseguibili che sono stati usati di recente con un conteggio dei computer in cui sono stati usati. Il controllo software deve essere abilitato per questo sito per poter visualizzare il report.|  
-|**Software 07B - Computer che hanno usato di recente un programma eseguibile specifico**|Visualizza i computer in cui è stato usato di recente un programma eseguibile specifico quando si abilita l'impostazione client Controllo software.|  
-|**Software 07C - Programmi eseguibili usati di recente in un computer specifico**|Visualizza i file eseguibili che sono stati usati di recente in un computer specifico quando si abilita l'impostazione client Controllo software.|  
-|**Software 08A - Programmi eseguibili usati di recente per numero di utenti**|Visualizza i programmi eseguibili che sono stati usati di recente con un conteggio degli utenti che li hanno usati più di recente quando si abilita l'impostazione client Controllo software.|  
-|**Software 08B - Utenti che hanno usato di recente un programma eseguibile specifico**|Visualizza gli utenti che hanno usato più di recente un programma eseguibile specifico quando si abilita l'impostazione client Controllo software.|  
-|**Software 08C - Programmi eseguibili usati di recente da un utente specifico**|Visualizza i programmi eseguibili che sono stati usati di recente da un utente specifico quando si abilita l'impostazione client Controllo software.|  
-|**Software 09A - Software usato raramente**|Visualizza i titoli software che non sono stati usati durante un periodo di tempo specifico.|  
-|**Software 09B - Computer con software installato usato raramente**|Visualizza i computer in cui è installato un software che non è stato usato per un periodo di tempo specifico. Il periodo di tempo specifico è basato sul valore specificato nel report "Software 09A - Software usato raramente".|  
-|**Software 10A - Titoli software con più etichette personalizzate specifiche definite**|Visualizza i titoli software in base alla corrispondenza di tutti i criteri etichetta personalizzata specificati. È possibile selezionare fino a tre etichette personalizzate per perfezionare la ricerca di titoli software.|  
-|**Software 10B - Computer in cui è installato il titolo software con l'etichetta personalizzata specificata**|Visualizza tutti i computer nella raccolta in cui è installato il titolo software con l'etichetta personalizzata specificata.|  
-|**Software 11A - Titoli software con un'etichetta personalizzata specifica definita**|Visualizza i titoli software in base alla corrispondenza di almeno uno dei criteri etichetta personalizzata specificati.|  
-|**Software 12A - Titoli software senza un'etichetta personalizzata**|Visualizza tutti i titoli software che non hanno un'etichetta personalizzata definita.|  
-|**Software 14A - Ricerca di software con tag di identificazione software abilitato**|Visualizza un conteggio dei software installati con un tag di identificazione software abilitato.|  
-|**Software 14B - Computer con software specifico installato con tag di identificazione software abilitato**|Visualizza tutti i computer con software installato con un tag di identificazione software abilitato specifico.|  
-|**Software 14C - Software istallato con tag di identificazione software abilitato in un computer specifico**|Visualizza tutti i software installati con un tag di identificazione software specifico abilitato in un computer specifico.|  
+|**ハードウェア 01A - 特定のコレクション内のコンピューターの概要**|指定したコレクション内のコンピューターに関する資産インテリジェンス概要ビューを表示します。|  
+|**ハードウェア 03A - プライマリ コンピューター ユーザー**|コンピューターのプライマリ ユーザーであるユーザーと、そのコンピューターの数を表示します。|  
+|**ハードウェア 03B - 特定のプライマリ コンソール ユーザーのコンピューター**|指定したユーザーがプライマリ コンソール ユーザーであるすべてのコンピューターを表示します。|  
+|**ハードウェア 04A - 複数ユーザー向けコンピューター (共有)**|コンソール ログイン時間の割合が 66% を超えるユーザーがいないためにプライマリ コンソール ユーザーがいないと見なされるコンピューターを表示します。|  
+|**ハードウェア 05A - 特定のコンピューターのコンソール ユーザー**|指定したコンピューター上のすべてのコンソール ユーザーを表示します。|  
+|**ハードウェア 06A - コンソール ユーザーを特定できなかったコンピューター**|セキュリティ ログを有効にする必要があるコンピューターを管理ユーザーが識別するのに役立ちます。|  
+|**ハードウェア 07A - 製造元別の USB デバイス**|USB デバイスを製造元別にグループ化して表示します。|  
+|**ハードウェア 07B - 製造元および説明別の USB デバイス**|USB デバイスを製造元および説明別にグループ化して表示します。|  
+|**ハードウェア 07C - 特定の USB デバイスが存在するコンピューター**|指定した USB デバイスが存在するすべてのコンピューターを表示します。|  
+|**ハードウェア 07D - 特定のコンピューターの USB デバイス**|指定したコンピューター上のすべての USB デバイスを表示します。|  
+|**ハードウェア 08A - ソフトウェアのアップグレードの準備ができていないハードウェア**|最小ハードウェア要件を満たしていないハードウェアを表示します。|  
+|**ハードウェア 09A - コンピューターの検索**|コンピューター名、Configuration Manager サイト、ドメイン、上位のコンソール ユーザー、オペレーティング システム、製造元、またはモデルのキーワード フィルターに一致するコンピューターの資産マネージャーの概要を表示します。|  
+|**ハードウェア 10A - 指定したコレクション内で指定した時間帯に変更されたコンピューター**|指定したコレクション内で指定した時間帯にハードウェア クラスが変更されたコンピューターの一覧を表示します。|  
+|**ハードウェア 10B - 指定したコンピューターで指定した時間帯に行われた変更**|指定したコンピューターで指定した時間帯に変更されたクラスを表示します。|  
+|**ライセンス 01A - Microsoft ライセンス ステートメントの Microsoft ボリューム ライセンス台帳**|Microsoft ボリューム ライセンス プログラムから入手できる、すべての Microsoft ソフトウェア タイトルのインベントリを表示します。|  
+|**ライセンス 01B - 販売チャネル別 Microsoft ボリューム ライセンス台帳項目**|インベントリされた Microsoft ボリューム ライセンス ソフトウェアの販売チャネルを識別および表示します。|  
+|**ライセンス 01C - 特定の Microsoft ボリューム ライセンス台帳項目と販売チャネルを持つコンピューター**|Microsoft ボリューム ライセンス台帳の指定した項目を持つコンピューターを識別および表示します。|  
+|**ライセンス 01D - 特定のコンピューターの Microsoft ボリューム ライセンス台帳製品**|指定したコンピューターのすべての Microsoft Volume ライセンス台帳項目を識別および表示します。|  
+|**ライセンス 02A - 有効期限が近づいている時間範囲別のライセンス数**|有効期限が近づいているライセンスの数を指定した時間範囲別に表示します。 表示されるのは、ソフトウェア ライセンス サービスによってライセンスが管理される製品です。|  
+|**ライセンス 02B - 有効期限が近づいているライセンスを持つコンピューター**|ライセンスの有効期限が近づいている、指定したコンピューターを表示します。|  
+|**ライセンス 02C - 特定のコンピューターのライセンス情報**|ソフトウェア ライセンス サービスによってライセンスが管理される、指定したコンピューター上の製品を表示します。|  
+|**ライセンス 03A - ライセンス ステータス別のライセンス数**|ソフトウェア ライセンス サービスによってライセンスが管理される製品がライセンス ステータス別に表示されます。|  
+|**ライセンス 03B - 特定のライセンス ステータスのコンピューター**|ソフトウェア ライセンス サービスによってライセンスが管理される、指定したライセンス ステータスを持つ製品を表示します。|  
+|**ライセンス 04A - ソフトウェア ライセンスによって管理される製品の数**|ソフトウェア ライセンス サービスによってライセンスが管理される製品の数を表示します。|  
+|**ライセンス 04B - ソフトウェア ライセンス サービスによって管理される特定の製品が存在するコンピューター**|ソフトウェア ライセンス サービスによって管理される、指定した製品が存在するコンピューターを表示します。|  
+|**ライセンス 05A - キー管理サービスを提供するコンピューター**|キー管理サーバーとして機能するコンピューターを表示します。|  
+|**ライセンス 06A - プロセッサごとにライセンスされている製品のプロセッサ数**|プロセッサごとのライセンスをサポートする Microsoft 製品を使用しているコンピューターのプロセッサの数を表示します。|  
+|**ライセンス 06B - プロセッサ単位のライセンスをサポートする特定の製品がインストールされているコンピューター**|プロセッサごとのライセンスをサポートする指定した Microsoft 製品がインストールされているコンピューターの一覧を表示します。|  
+|**ライセンス 14A - Microsoft ボリューム ライセンス調整レポート**|Microsoft ボリューム ライセンス契約を通じて購入されたソフトウェア ライセンスの調整に関する情報と実際のインベントリ数を表示します。|  
+|**ライセンス 14B - MVLS に含まれない Microsoft ソフトウェア インベントリの一覧**|このレポートには、使用されている Microsoft ソフトウェア タイトルのうち、Microsoft ボリューム ライセンス契約に含まれないソフトウェア タイトルが表示されます。|  
+|**ライセンス 15A - 標準ライセンス調整レポート**|購入された一般的なソフトウェア ライセンスの調整に関する情報と実際のインベントリ数を表示します。|  
+|**ライセンス 15B - コンピューター別標準ライセンス調整レポート**|指定したバージョンのライセンスされた製品がインストールされているコンピューターを表示します。|  
+|**ソフトウェア 01A - 特定のコレクション内のインストールされているソフトウェアの概要**|インストールされているソフトウェアの概要を、インベントリに見つかったインスタンス数の順に表示します。|  
+|**ソフトウェア 02A - 特定のコレクションの製品ファミリ**|指定したコレクションの製品ファミリとファミリにあるソフトウェアの数を表示します。|  
+|**ソフトウェア 02B - 特定の製品ファミリの製品カテゴリ**|指定した製品ファミリの製品カテゴリとカテゴリに含まれるソフトウェアの数を表示します。|  
+|**ソフトウェア 02C - 特定の製品ファミリとカテゴリのソフトウェア**|指定した製品ファミリとカテゴリに含まれるソフトウェアをすべて表示します。|  
+|**ソフトウェア 02D - 特定のソフトウェアがインストールされているコンピューター**|指定したソフトウェアがインストールされているすべてのコンピューターを表示します。|  
+|**ソフトウェア 02E - 特定のコンピューターにインストールされているソフトウェア**|指定したコンピューターにインストールされているすべてのソフトウェアを表示します。|  
+|**ソフトウェア 03A - カテゴリ化されていないソフトウェア**|不明としてカテゴリ化されたか、カテゴリが存在しないソフトウェアを表示します。|  
+|**ソフトウェア 04A - コンピューターで自動実行されるように構成されているソフトウェア**|コンピューターで自動実行されるように構成されているソフトウェアの一覧を表示します。|  
+|**ソフトウェア 04B - 自動実行するように構成された特定のソフトウェアが存在しているコンピューター**|自動実行するように構成された、指定したソフトウェアが存在しているすべてのコンピューターを表示します。|  
+|**ソフトウェア 04C - 特定のコンピューターで自動実行するように構成されたソフトウェア**|特定のコンピューターで自動実行するように構成されているインストール済みのソフトウェアを表示します。|  
+|**ソフトウェア 05A - ブラウザー ヘルパー オブジェクト**|指定したコレクション内のコンピューターにインストールされているブラウザー ヘルパー オブジェクトを表示します。|  
+|**ソフトウェア 05B - ブラウザー ヘルパー オブジェクトが存在するコンピューター**|指定したブラウザー ヘルパー オブジェクトが存在するコンピューターを表示します。|  
+|**ソフトウェア 05C - 特定のコンピューターのブラウザー ヘルパー オブジェクト**|指定したコンピューターのすべてのブラウザー ヘルパー オブジェクトを表示します。|  
+|**ソフトウェア 06A - インストールされているソフトウェアの検索**|このレポートには、製品名、発行元、またはバージョンでの検索条件に基づいて、インストールされているソフトウェアの概要がインスタンス数の順で表示されます。|  
+|**ソフトウェア 06B - 製品別ソフトウェア**|指定した製品名に基づいてインストールされているソフトウェアの概要をインスタンス数の順に表示します。|  
+|**ソフトウェア 07A - 複数のコンピューターによって最近使用された実行可能プログラム**|複数のコンピューターによって最近使用された実行可能プログラムをコンピューターのカウントと共に表示します。 このレポートを表示するには、ソフトウェア メータリングをこのサイトで有効にする必要があります。|  
+|**ソフトウェア 07B - 指定した実行可能プログラムを最近使用したコンピューター**|指定した実行可能プログラムが最近使用されたコンピューターを表示します (ソフトウェア メータリング クライアント設定が有効になっている場合)。|  
+|**ソフトウェア 07C - 指定したコンピューターで最近使用した実行可能プログラム**|指定したコンピューターで最近使用された実行可能プログラムを表示します (ソフトウェア メータリング クライアント設定が有効になっている場合)。|  
+|**ソフトウェア 08A - 複数のユーザーによって最近使用された実行可能プログラム**|複数のユーザーによって最近使用された実行可能プログラムをユーザーのカウントと共に表示します (ソフトウェア メータリング クライアント設定が有効になっている場合)。|  
+|**ソフトウェア 08B - 指定した実行可能プログラムを最近使用したユーザー**|指定した実行可能プログラムを最も最近使用したユーザーを表示します (ソフトウェア メータリング クライアント設定が有効になっている場合)。|  
+|**ソフトウェア 08C - 指定したユーザーが最近使用した実行可能プログラム**|指定したユーザーによって最近使用された実行可能プログラムを表示します (ソフトウェア メータリング クライアント設定が有効になっている場合)。|  
+|**ソフトウェア 09A - 使用頻度の低いソフトウェア**|指定した期間に使用されていないソフトウェア タイトルを表示します。|  
+|**ソフトウェア 09B - 使用頻度の低いソフトウェアがインストールされているコンピューター**|指定した期間に使用されていないソフトウェアがインストールされているコンピューターを表示します。 期間は、"ソフトウェア 09A - 使用頻度の低いソフトウェア" レポートで指定されている値に基づいています。|  
+|**ソフトウェア 10A - 複数の特定のカスタム ラベルが定義されているソフトウェア タイトル**|指定したすべてのカスタム ラベル基準に一致するソフトウェア タイトルを表示します。 カスタム ラベルを 3 つまで選択して、ソフトウェア タイトルの検索を絞り込むことができます。|  
+|**ソフトウェア 10B - 特定のカスタム ラベルのソフトウェア タイトルがインストールされているコンピューター**|指定したカスタム ラベルが付いたソフトウェア タイトルがインストールされている、このコレクション内のすべてのコンピューターを表示します。|  
+|**ソフトウェア 11A - 特定のカスタム ラベルが定義されているソフトウェア タイトル**|指定した 1 つ以上のカスタム ラベル基準に一致するソフトウェア タイトルを表示します。|  
+|**ソフトウェア 12A - カスタム ラベルなしのソフトウェア タイトル**|カスタム ラベルが定義されていないすべてのソフトウェア タイトルを表示します。|  
+|**ソフトウェア 14A - ソフトウェア識別タグが有効になっているソフトウェアの検索**|ソフトウェア識別タグが有効になっている、インストール済みソフトウェアの数を表示します。|  
+|**ソフトウェア 14B - 特定のソフトウェア識別タグが有効になっているソフトウェアがインストールされているコンピューター**|指定したソフトウェア識別タグが有効になっているソフトウェアがインストールされているすべてのコンピューターを表示します。|  
+|**ソフトウェア 14C - 特定のコンピューターでインストール済み識別タグが有効になっているソフトウェア**|指定したコンピューターで指定したソフトウェア識別タグが有効になっているすべてのインストール済みソフトウェアを表示します。|  
 
-### <a name="client-push"></a>Push client  
+### <a name="client-push"></a>クライアント プッシュ  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Dettagli stato dell'installazione push client**|Visualizza informazioni sul processo di installazione push client per tutti i siti.|  
-|**Dettagli stato dell'installazione push client per un sito specifico**|Visualizza informazioni sul processo di installazione push client per un sito specifico.|  
-|**Riepilogo stato dell'installazione push client**|Visualizza un riepilogo dello stato di installazione push client per tutti i siti.|  
-|**Riepilogo stato dell'installazione push client per un sito specifico**|Visualizza un riepilogo dello stato di installazione push client per un sito specifico.|  
+|**クライアント プッシュ インストールのステータスの詳細**|すべてのサイトのクライアント プッシュ インストール処理に関する情報を表示します。|  
+|**指定したサイトのクライアント プッシュ インストールのステータスの詳細**|指定したサイトのクライアント プッシュ インストール処理に関する情報を表示します。|  
+|**クライアント プッシュ インストールのステータスの概要**|すべてのサイトのクライアント プッシュ インストールのステータスの概要を表示します。|  
+|**指定したサイトのクライアント プッシュ インストールのステータスの概要**|指定したサイトのクライアント プッシュ インストールのステータスの概要を表示します。|  
 
-### <a name="client-status"></a>Stato del client  
+### <a name="client-status"></a>クライアント ステータス  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Dettagli correzione client**|Visualizza i dettagli delle azioni di correzione dei client per una raccolta specifica.|  
-|**Riepilogo correzione client**|Visualizza un riepilogo delle azioni di correzione dei client per una raccolta specifica.|  
-|**Cronologia stato client**|Visualizza una cronologia dello stato client generale nel sito.|  
-|**Riepilogo stato client**|Visualizza i risultati del controllo client dei client attivi per una raccolta specificata.|  
-|**Tempo di richiesta criterio del client**|Visualizza la percentuale di client che hanno richiesto il criterio almeno una volta negli ultimi 30 giorni. Ogni giorno rappresenta una percentuale dei client totali che hanno richiesto il criterio dal primo giorno in cui erano all'interno del ciclo.|  
-|**Client con dettagli controllo client non riuscito**|Visualizza i dettagli sui client che non hanno passato il controllo client per una raccolta specifica.|  
-|**Dettagli client inattivi**|Visualizza un elenco dettagliato dei client inattivi per una raccolta specifica.|  
+|**クライアントの修復の詳細**|指定したコレクションのクライアントの修復アクションの詳細を表示します。|  
+|**クライアント修復の概要**|指定したコレクションのクライアントの修復アクションの概要を表示します。|  
+|**クライアント ステータスの履歴**|サイトの全体的なクライアント ステータスの履歴を表示します。|  
+|**クライアント ステータスの概要**|特定のコレクションについて、アクティブなクライアントのクライアント チェックの結果を表示します。|  
+|**クライアントのポリシー要求時間**|過去 30 日間に少なくとも 1 度ポリシーを要求したクライアントの割合を表示します。 サイクルの 1 日目から、ポリシーを要求したクライアントの対全体比率が毎日示されます。|  
+|**クライアント チェックが不合格のクライアントの詳細**|指定したコレクションでのクライアント チェックに失敗したクライアントの詳細を表示します。|  
+|**非アクティブなクライアントの詳細**|指定したコレクションの非アクティブなクライアントの詳細リストを表示します。|  
 
-### <a name="company-resource-access"></a>Accesso alle risorse aziendali  
+### <a name="company-resource-access"></a>会社のリソースへのアクセス  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Cronologia di rilascio dei certificati**|Visualizza la cronologia dei certificati rilasciati da punto di registrazione certificati a utenti e dispositivi per l'intervallo di date specificato.|  
-|**Elenco degli asset per stato di rilascio del certificato**|Visualizza i dispositivi o gli utenti in uno specifico stato di rilascio di certificati a seguito della valutazione di un profilo di certificato specifico.|  
-|**Elenco degli asset con certificati prossimi alla scadenza**|Visualizza i dispositivi o gli utenti con certificati che scadono in corrispondenza della data specificata o prima.|  
+|**証明書の発行履歴**|指定した日付範囲内でユーザーとデバイスに対して証明書登録ポイントによって発行された証明書の履歴を表示します。|  
+|**証明書の発行ステータス別資産の一覧**|指定した証明書プロファイルの評価に従って、指定した証明書発行ステータスのデバイスまたはユーザーを表示します。|  
+|**証明書の有効期限が近づいている資産の一覧**|指定した日付またはそれ以前に証明書の有効期限が切れるデバイスまたはユーザーを表示します。|  
 
-### <a name="compliance-and-settings-management"></a>Gestione conformità e impostazioni  
+### <a name="compliance-and-settings-management"></a>コンプライアンスと設定の管理  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Cronologia di conformità di una linea di base configurazione**|Visualizza la cronologia delle modifiche in conformità di una linea di base configurazione per l'intervallo di date specificato.|  
-|**Cronologia di conformità di un elemento di configurazione**|Visualizza la cronologia delle modifiche in conformità di un elemento di configurazione per l'intervallo di date specificato.|  
-|**Dettagli delle regole conformi degli elementi di configurazione in una linea di base configurazione per un asset**|Visualizza le informazioni sulle regole valutate come conformi per un elemento di configurazione specifico per un dispositivo o utente specifico.|  
-|**Dettagli delle regole in conflitto degli elementi di configurazione in una linea di base configurazione per un asset**|Visualizza le informazioni sulle regole di un elemento di configurazione distribuito a un dispositivo o un utente specifico che sono in conflitto con altre regole contenute nello stesso elemento di configurazione distribuito o in un elemento diverso.|  
-|**Dettagli degli errori degli elementi di configurazione in una linea di base configurazione per un asset**|Visualizza le informazioni sugli errori generati da un elemento di configurazione specifico per un dispositivo o un utente specifico.|  
-|**Dettagli delle regole non conformi degli elementi di configurazione in una linea di base configurazione per un asset**|Visualizza le informazioni sulle regole valutate come non conformi per un elemento di configurazione specifico, per un dispositivo o un utente specifico.|  
-|**Dettagli delle regole risolte degli elementi di configurazione in una linea di base configurazione per un asset**|Visualizza le informazioni sulle regole risolte da un elemento di configurazione specifico per un dispositivo o un utente specifico.|  
-|**Elenco degli asset per stato di conformità per un elemento di configurazione in una linea di base configurazione**|Visualizza i dispositivi o gli utenti in uno specifico stato di conformità a seguito della valutazione di un elemento di configurazione specifico.|  
-|**Elenco degli asset per stato di conformità per una linea di base configurazione**|Visualizza i dispositivi o gli utenti in uno specifico stato di conformità a seguito della valutazione di una linea di base configurazione specifica.|  
-|**Elenco delle regole in conflitto con una regola specifica per un asset**|Visualizza un elenco di regole in conflitto con una regola specifica per un elemento di configurazione distribuito in un dispositivo specifico.|  
-|**Elenco degli asset sconosciuti per una linea di base configurazione**|Visualizza un elenco di dispositivi o utenti che non hanno ancora segnalato eventuali dati di conformità per una linea di base di configurazione specifica.|  
-|**Elenco degli asset sconosciuti per un elemento di configurazione**|Visualizza un elenco di dispositivi o utenti che non hanno ancora segnalato eventuali dati di conformità per un elemento di configurazione specifico.|  
-|**Riepilogo delle regole e degli errori degli elementi di configurazione in una linea di base configurazione per un asset**|Visualizza un riepilogo dello stato di conformità di regole ed eventuali errori di impostazione per un elemento di configurazione specifico distribuito in un dispositivo o utente specifico.|  
-|**Riepilogo di conformità per linea di base configurazione**|Visualizza un riepilogo della conformità generale delle linee di base di configurazione distribuite nella gerarchia.|  
-|**Riepilogo di conformità per elementi di configurazione per una linea di base configurazione**|Visualizza un riepilogo della conformità degli elementi di configurazione in una linea di base di configurazione.|  
-|**Riepilogo di conformità per criteri di configurazione**|Visualizza un riepilogo della conformità dei criteri di configurazione.|  
-|**Riepilogo di conformità di una linea di base di configurazione per una raccolta**|Visualizza un riepilogo della conformità generale di una linea di base configurazione specifica distribuita a una raccolta specifica.|  
-|**Elenco di app e dispositivi non conformi per un utente specificato**|Visualizza informazioni sugli utenti e sui dispositivi che dispongono di app installate che non sono conformi ai criteri specificati.|  
-|**Riepilogo degli utenti con app non conformi**|Visualizza informazioni sugli utenti che dispongono di app installate che non sono conformi ai criteri specificati.|  
-|**Accettazione di termini e condizioni**|Visualizza i termini e le condizioni e indica la versione accettata da ogni utente.|  
+|**構成基準のコンプライアンス対応履歴**|指定した範囲の日付の構成基準のコンプライアンス変更履歴を表示します。|  
+|**構成項目のコンプライアンス対応履歴**|指定した範囲の日付の構成項目のコンプライアンス変更履歴を表示します。|  
+|**資産の構成基準に含まれる構成項目の対応規則の詳細**|指定したデバイスまたはユーザーについて、指定した構成項目に対応するとして評価された規則の情報を表示します。|  
+|**資産の構成基準に含まれる構成項目の競合する規則の詳細**|指定したユーザーまたはデバイスに展開された構成項目の規則のうち、展開された同じまたは別の構成項目に含まれる他の規則と競合する規則の情報を表示します。|  
+|**資産の構成基準に含まれる構成項目のエラーの詳細**|指定したデバイスまたはユーザーについて、指定した構成項目で生成されたエラーの情報を表示します。|  
+|**資産の構成基準に含まれる構成項目の非対応規則の詳細**|指定したデバイスまたはユーザーについて、指定した構成項目に非対応であると評価された規則の情報を表示します。|  
+|**資産の構成基準に含まれる構成項目の修復済み規則の詳細**|指定したデバイスまたはユーザーについて、指定した構成項目で修復された規則の情報を表示します。|  
+|**構成基準に含まれる構成項目のコンプライアンス対応状態別資産の一覧**|指定した構成項目の評価に従って、指定したコンプライアンス対応状態にあるデバイスまたはユーザーを表示します。|  
+|**構成基準のコンプライアンス対応状態ごとの資産の一覧**|指定した構成基準の評価後に指定したコンプライアンス対応状態にあるデバイスまたはユーザーを表示します。|  
+|**資産の指定した規則と競合する規則の一覧**|指定したデバイスに展開された構成項目について、指定した規則と競合する規則の一覧を表示します。|  
+|**構成基準の不明な資産の一覧**|指定した構成基準のコンプライアンス対応データがまだ報告されていないデバイスまたはユーザーの一覧を表示します。|  
+|**構成項目の不明資産一覧**|指定した構成項目について、まだコンプライアンス データを報告していないデバイスまたはユーザーの一覧を表示します。|  
+|**資産の構成基準に含まれる構成項目の規則およびエラーの概要**|指定したデバイスまたはユーザーに展開された指定した構成項目について、規則のコンプライアンス対応状態および設定エラーの概要を表示します。|  
+|**構成基準ごとの対応の概要**|階層内に展開された構成基準の全体的なコンプライアンスの概要を表示します。|  
+|**構成基準の構成項目ごとのコンプライアンスの概要**|指定した構成基準の構成項目のコンプライアンスの概要を表示します。|  
+|**構成ポリシー別コンプライアンス対応の概要**|構成ポリシーのコンプライアンス対応の概要を表示します。|  
+|**コレクションの構成基準のコンプライアンス対応の概要**|指定したコレクションに展開される指定した構成基準の全体的なコンプライアンスの概要を表示します。|  
+|**指定されたユーザーの非対応アプリとデバイスの一覧**|アプリがインストールされ、指定されたポリシーに準拠していないユーザーとデバイスに関する情報を表示します。|  
+|**非対応のアプリを持つユーザーの概要**|アプリがインストールされ、指定されたポリシーに準拠していないユーザーに関する情報を表示します。|  
+|**使用条件への同意**|使用条件の項目と各ユーザーが同意したバージョンが表示されます。|  
 
-### <a name="device-management"></a>Gestione dispositivi  
+### <a name="device-management"></a>デバイス管理  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Tutti i client dispositivo mobile**|Visualizza le informazioni su tutti i client del dispositivo mobile. I dispositivi gestiti dal connettore Exchange Server non sono inclusi.|  
-|**Problemi di certificato nei dispositivi mobili gestiti dal client di Configuration Manager per Windows CE e che non sono integri**|Visualizza informazioni dettagliate sui problemi di certificato nei dispositivi mobili gestiti dal client di Configuration Manager per Windows CE.|  
-|**Errori di distribuzione client per i dispositivi mobili gestiti dal client di Configuration Manager per Windows CE**|Visualizza informazioni dettagliate sugli errori di distribuzione per i dispositivi mobili gestiti dal client di Configuration Manager per Windows CE.|  
-|**Dettagli di stato della distribuzione client per i dispositivi mobili gestiti dal client di Configuration Manager per Windows CE**|Visualizza informazioni sullo stato dei dispositivi mobili gestiti dal client di Configuration Manager per Windows CE.|  
-|**Distribuzione client per i dispositivi mobili gestiti dal client di Configuration Manager per Windows CE**|Visualizza informazioni dettagliate sulla distribuzione per i dispositivi mobili gestiti dal client di Configuration Manager per Windows CE.|  
-|**Problemi di comunicazione nei dispositivi mobili gestiti dal client di Configuration Manager per Windows CE e che non sono integri**|Il report contiene informazioni dettagliate sui problemi di comunicazione nei dispositivi mobili gestiti dal client di Configuration Manager per Windows CE.|  
-|**Stato di conformità per i dispositivi mobili gestiti dal connettore Exchange Server**|Visualizza un riepilogo dello stato di conformità con il criterio cassetta postale predefinito di Exchange ActiveSync per i dispositivi mobili gestiti dal connettore Exchange Server.|  
-|**Numero di dispositivi mobili per configurazioni di visualizzazione**|Questo report visualizza il numero di dispositivi mobili per impostazioni di visualizzazione.|  
-|**Numero di dispositivi mobili per sistema operativo**|Visualizza il numero di dispositivi mobili per sistema operativo.|  
-|**Numero di dispositivi mobili per memoria programma**|Visualizza il numero di dispositivi mobili per memoria programma.|  
-|**Numero di dispositivi mobili per configurazioni memoria di archiviazione**|Numero di dispositivi mobili per configurazioni memoria di archiviazione|  
-|**Informazioni di stato dettagliate per i dispositivi mobili gestiti dal client di Configuration Manager per Windows CE**|Visualizza informazioni di stato dettagliate per i dispositivi mobili gestiti dal client di Configuration Manager per Windows CE.|  
-|**Informazioni di riepilogo dello stato per i dispositivi mobili gestiti dal client di Configuration Manager per Windows CE**|Visualizza informazioni di riepilogo dello stato per i dispositivi mobili gestiti dal client di Configuration Manager per Windows CE.|  
-|**Dispositivi mobili inattivi che sono gestiti dal connettore Exchange Server**|Visualizza i dispositivi mobili gestiti dal connettore Exchange Server e che non sono stati connessi a Exchange Server in un numero di giorni specifico.|  
-|**Elenco dei dispositivi registrati a Microsoft Intune per utente**|Visualizza tutti i dispositivi iscritti da un utente con Microsoft Intune.|  
-|**Elenco dei dispositivi per stato di accesso condizionale**|Visualizza informazioni sulla conformità corrente e sullo stato di accesso condizionale dei dispositivi. È possibile usare questo report con i criteri di accesso condizionale. Questo report è disponibile a partire dalla versione 1602 di Configuration Manager.|  
-|**Conformità dell'accesso condizionale per un utente**|Fornisce informazioni dettagliate sulla conformità dell'accesso condizionale per un utente specifico, tra cui nome del dispositivo e piattaforma, se il dispositivo è conforme e data dell'ultima valutazione del dispositivo. Questo report è disponibile a partire dalla versione 1602 di Configuration Manager.|  
-|**Problemi del client locale nei dispositivi mobili gestiti dal client di Configuration Manager per Windows CE e che non sono integri**|Il report contiene informazioni dettagliate sui problemi del client locale nei dispositivi mobili gestiti dal client di Configuration Manager per Windows CE.|  
-|**Informazioni client dispositivo mobile**|Visualizza informazioni sui dispositivi mobili in cui è installato il client di Configuration Manager. È possibile usare il report per verificare quali dispositivi mobili sono in grado di comunicare con un punto di gestione.|  
-|**Dettagli di conformità dei dispositivi mobili per il connettore Exchange Server**|Visualizza i dettagli di conformità dei dispositivi mobili per un criterio cassetta postale predefinito di Exchange ActiveSync configurato usando il connettore Exchange Server.|  
-|**Dispositivi mobili per sistema operativo**|Visualizza i dispositivi mobili per sistema operativo.|  
-|**Dispositivi mobili jailbroken o dispositivo rooted**|Visualizza i dispositivi mobili jailbroken o un dispositivo rooted.|  
-|**Dispositivi mobili non gestiti perché si sono registrati ma non sono riusciti ad assegnare a un sito**|Visualizza i dispositivi mobili che hanno completato la registrazione in Configuration Manager e dispongono di un certificato, ma non sono riusciti a completare l'assegnazione sito.|  
-|**Dispositivi mobili con una quantità specifica di memoria programma libera**|Visualizza tutti i dispositivi mobili con la quantità specificata di memoria programma libera.|  
-|**Dispositivi mobili con una quantità specifica di memoria di archiviazione disponibile libera**|Visualizza tutti i dispositivi mobili con la quantità specificata di memoria rimovibile libera.|  
-|**Dispositivi mobili con problemi di rinnovo certificato**|Visualizza i dispositivi mobili registrati che non sono riusciti a rinnovare il certificato. Se il certificato non viene rinnovato prima del periodo di scadenza, i dispositivi mobili non saranno gestiti.|  
-|**Dispositivi mobili con memoria programma insufficiente (inferiore ai KB disponibili specificati)**|Visualizza i dispositivi mobili per cui la memoria programma è inferiore alla dimensione specificata in KB.|  
-|**Dispositivi mobili con memoria di archiviazione rimovibile insufficiente (inferiore ai KB disponibili specificati)**|Visualizza i dispositivi mobili per cui la memoria di archiviazione rimovibile è inferiore alla dimensione specificata in KB.|  
-|**Numero di dispositivi iscritti a Windows Intune per utente**|Il report visualizza gli utenti abilitati alla sottoscrizione a Microsoft Intune e il numero totale di dispositivi registrati per ogni utente.|  
-|**Richiesta di cancellazione in sospeso per i dispositivi mobili**|Visualizza le richieste di cancellazione in sospeso per i dispositivi mobili.|  
-|**Dispositivi mobili registrati e assegnati di recente**|Visualizza i dispositivi mobili che si sono registrati di recente a Configuration Manager e hanno assegnato a un sito.|  
-|**Dispositivi mobili cancellati di recente**|Visualizza l'elenco dei dispositivi mobili che sono stati cancellati di recente.|  
-|**Riepilogo impostazioni per i dispositivi mobili che sono gestiti dal connettore Exchange Server**|Visualizza il numero dei dispositivi mobili che applicano le impostazioni per ciascun criterio cassetta postale predefinito di Exchange ActiveSync gestito dal connettore Exchange Server.|  
-|**Stato dettagliato delle chiavi di sideload di Windows RT**|Visualizza informazioni dettagliate sullo stato per una chiave di sideload di Windows RT specifica.|  
-|**Riepilogo delle chiavi di sideload di Windows RT**|Visualizza lo stato delle chiavi di sideload di Windows RT.|  
+|**すべてのモバイル デバイス クライアント**|すべてのモバイル デバイス クライアントに関する情報が表示されます。 Exchange Server コネクタで管理されているデバイスは含まれません。|  
+|**Windows CE 用 Configuration Manager クライアントで管理される異常な状態のモバイル デバイスの証明書の問題**|Windows CE 用 Configuration Manager クライアントで管理されるモバイル デバイスの証明書の問題の詳細情報が表示されます。|  
+|**Windows CE 用 Configuration Manager クライアントで管理されるモバイル デバイスへのクライアント展開エラー**|Windows CE 用 Configuration Manager クライアントで管理されるモバイル デバイスへのクライアント展開エラーに関する詳細情報が表示されます。|  
+|**Windows CE 用 Configuration Manager クライアントで管理されるモバイル デバイスへのクライアント展開ステータスの詳細**|Windows CE 用の Configuration Manager クライアントで管理されているモバイル デバイスのステータスに関する詳細情報が表示されます。|  
+|**Windows CE 用 Configuration Manager クライアントで管理されるモバイル デバイスへのクライアントの正常な展開**|Windows CE 用 Configuration Manager クライアントで管理されるモバイル デバイスへのクライアントの正常な展開に関する詳細情報が表示されます。|  
+|**Windows CE 用 Configuration Manager クライアントで管理される異常な状態のモバイル デバイスの通信の問題**|このレポートには、Windows CE 用 Configuration Manager クライアントで管理されるモバイル デバイスの通信の問題の詳細情報が表示されます。|  
+|**Exchange Server コネクタで管理されるモバイル デバイスのコンプライアンス ステータス**|Exchange Server コネクタで管理されるモバイル デバイスの既定の Exchange ActiveSync メールボックス ポリシーのコンプライアンス ステータスの概要が表示されます。|  
+|**表示構成別モバイル デバイス数**|表示設定別に、モバイル デバイスの数が表示されます。|  
+|**オペレーティング システム別モバイル デバイス数**|オペレーティング システム別に、モバイル デバイスの数が表示されます。|  
+|**プログラム実行用メモリ別モバイル デバイス数**|プログラム実行用メモリ別に、モバイル デバイスの数が表示されます。|  
+|**データ記憶用メモリ構成別のモバイル デバイス数**|データ記憶用メモリ構成別のモバイル デバイス数です。|  
+|**Windows CE 用 Configuration Manager クライアントで管理されるモバイル デバイスの正常な状態の情報**|Windows CE 用 Configuration Manager クライアントで管理されるモバイル デバイスの正常な状態の情報が表示されます。|  
+|**Windows CE 用 Configuration Manager クライアントで管理されるモバイル デバイスのヘルス概要**|Windows CE 用 Configuration Manager クライアントで管理されるモバイル デバイスの正常性の概要が表示されます。|  
+|**Exchange Server コネクタで管理されている非アクティブなモバイル デバイス**|Exchange Server コネクタによって管理されているが、指定した日数の間 Exchange サーバーに接続されていないモバイル デバイスが表示されます。|  
+|**Microsoft Intune に各ユーザーが登録したデバイス一覧**|ユーザーが Microsoft Intune に登録したデバイスがすべて表示されます。|  
+|**条件付きアクセスの状態ごとのデバイスの一覧**|現在のコンプライアンスとデバイスの条件付きアクセスの状態に関する情報を表示します。 条件付きアクセス ポリシーと共に、このレポートを使用することができます。 Configuration Manager のバージョン 1602 以降でこのレポートを使用できます。|  
+|**ユーザーの条件付きアクセス コンプライアンス**|デバイス名とプラットフォーム、デバイスが準拠しているかどうか、デバイスの最終評価日時など、特定のユーザーに関する詳細な条件付きアクセス コンプライアンス情報を提供します。 Configuration Manager のバージョン 1602 以降でこのレポートを使用できます。|  
+|**Windows CE 用 Configuration Manager クライアントで管理される異常な状態のモバイル デバイスのローカル クライアントの問題**|このレポートには、Windows CE 用 Configuration Manager クライアントで管理されるモバイル デバイスのローカル クライアントの問題の詳細情報が表示されます。|  
+|**モバイル デバイスのクライアント情報**|Configuration Manager クライアントがインストールされたモバイル デバイスに関する情報が表示されます。 このレポートを使用すると、モバイル デバイスが管理ポイントと正常に通信できることを確認できます。|  
+|**Exchange Server コネクタに対するモバイル デバイスのコンプライアンス対応の詳細**|Exchange Server コネクタを使用して構成されている既定の Exchange ActiveSync メールボックス ポリシーに関する、モバイル デバイスのコンプライアンス対応の詳細が表示されます。|  
+|**オペレーティング システム別モバイル デバイス**|オペレーティング システム別に、モバイル デバイスが表示されます。|  
+|**脱獄またはルート化されたモバイル デバイス**|脱獄またはルート化されたモバイル デバイスが表示されます。|  
+|**登録後サイトの割り当てに失敗したため管理されていないモバイル デバイス**|Configuration Manager への登録が完了し、証明書も設定されているが、サイトの割り当てに失敗したモバイル デバイスが表示されます。|  
+|**特定の空き容量のプログラム実行用メモリを持つモバイル デバイス**|プログラム実行用メモリに指定された量の空き容量があるモバイル デバイスがすべて表示されます。|  
+|**特定の空き容量のリムーバブル データ記憶用メモリを持つモバイル デバイス**|リムーバブル データ記憶用メモリに指定された量の空き容量があるモバイル デバイスがすべて表示されます。|  
+|**証明書の更新に問題があるモバイル デバイス**|証明書の更新に失敗した登録済みモバイル デバイスが表示されます。 証明書が有効期限よりも前に更新されていない場合、モバイル デバイスが管理できなくなります。|  
+|**プログラム実行用メモリの空き容量が不足しているモバイル デバイス (指定された空き容量 (KB) 未満)**|プログラム実行用メモリが指定したサイズ (KB 単位) よりも少ないモバイル デバイスが表示されます。|  
+|**リムーバブル データ記憶用メモリの空き容量が不足しているモバイル デバイス (指定された空き容量 (KB) 未満)**|リムーバブル データ記憶用メモリが指定したサイズ (KB 単位) よりも少ないモバイル デバイスが表示されます。|  
+|**Windows Intune に各ユーザーが登録したデバイスの数**|このレポートには、Microsoft Intune サブスクリプションが有効なユーザーと、各ユーザーが登録したデバイスの合計数が表示されます。|  
+|**モバイル デバイスの保留中のワイプ要求**|モバイル デバイスで保留になっているワイプ要求が表示されます。|  
+|**登録および割り当てが完了したモバイル デバイス**|Configuration Manager の登録およびサイトの割り当てプロセスが正常に行われたモバイル デバイスが表示されます。|  
+|**最近ワイプされたモバイル デバイス**|最近正常にワイプされたモバイル デバイスの一覧が表示されます。|  
+|**Exchange Server コネクタで管理されるモバイル デバイスの設定の概要**|Exchange Server コネクタによって管理される既定の Exchange ActiveSync メールボックス ポリシーのそれぞれに対応する設定を適用するモバイル デバイスの数が表示されます。|  
+|**Windows RT サイドローディング キーの詳細ステータス**|指定した Windows RT サイドローディング キーの詳細なステータス情報が表示されます。|  
+|**Windows RT サイドローディング キーの概要**|Windows RT サイドローディング キーのステータスが表示されます。|  
 
-### <a name="driver-management"></a>Gestione driver  
+### <a name="driver-management"></a>ドライバ管理  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Tutti i driver**|Visualizza un elenco di tutti i driver.|  
-|**Tutti i driver per una piattaforma specifica**|Visualizza tutti i driver per una piattaforma specifica.|  
-|**Tutti i driver in un'immagine di avvio specifica**|Visualizza tutti i driver in un'immagine di avvio specifica.|  
-|**Tutti i driver in una categoria specifica**|Visualizza tutti i driver in una categoria specifica.|  
-|**Tutti i driver in un pacchetto specifico**|Visualizza tutti i driver in un pacchetto specifico.|  
-|**Categorie per un driver specifico**|Visualizza le categorie per un driver specifico.|  
-|**Computer in cui non è stato possibile installare i driver per una raccolta specifica**|Visualizza i computer in cui non è stato possibile installare i driver per una raccolta specifica.|  
-|**Report che corrisponde al catalogo driver per una raccolta specifica**|Visualizza il report che corrisponde al catalogo driver per una raccolta specifica.|  
-|**Report che corrisponde al catalogo driver per un computer specifico**|Visualizza il report che corrisponde al catalogo driver per un computer specifico.|  
-|**Report che corrisponde al catalogo driver per un dispositivo specifico in un computer specifico**|Visualizza il report che corrisponde al catalogo driver per un dispositivo specifico in un computer specifico.|  
-|**Report che corrisponde al catalogo driver per i computer in una raccolta specifica con un dispositivo specifico**|Visualizza il report che corrisponde al catalogo driver per i computer in una raccolta specifica con un dispositivo specifico.|  
-|**Driver che non è stato possibile installare in un computer specifico**|Visualizza i driver che non è stato possibile installare in un computer specifico.|  
-|**Piattaforme supportate per un driver specifico**|Visualizza le piattaforme supportate per un driver specifico.|  
+|**すべてのドライバー**|すべてのドライバーの一覧が表示されます。|  
+|**特定プラットフォームのすべてのドライバー**|指定したプラットフォームのすべてのドライバーが表示されます。|  
+|**特定のブート イメージ内のすべてのドライバー**|指定したブート イメージ内のすべてのドライバーが表示されます。|  
+|**特定カテゴリのすべてのドライバー**|指定されたカテゴリのすべてのドライバーが表示されます。|  
+|**特定パッケージ内のすべてのドライバー**|指定されたパッケージ内のすべてのドライバーが表示されます。|  
+|**特定ドライバーのカテゴリ**|指定したドライバーのカテゴリが表示されます。|  
+|**特定のコレクションのドライバーをインストールできなかったコンピューター**|指定されたコレクションのドライバーをインストールできなかったコンピューターが表示されます。|  
+|**特定のコレクションのレポートに一致するドライバー カタログ**|指定されたコレクションのレポートに一致するドライバー カタログが表示されます。|  
+|**特定のコンピューターのレポートに一致するドライバー カタログ**|指定されたコンピューターのレポートに一致するドライバー カタログが表示されます。|  
+|**特定のコンピューター上の特定のデバイスのレポートに一致するドライバー カタログ**|指定されたコンピューター上の特定のデバイスのレポートに一致するドライバー カタログが表示されます。|  
+|**特定のコレクション内の特定のデバイスを持つコンピューターのレポートに一致するドライバー カタログ**|指定されたコレクション内の指定されたデバイスを持つコンピューターのレポートに一致するドライバー カタログが表示されます。|  
+|**特定のコンピューターにインストールできなかったドライバー**|指定されたコンピューターにインストールできなかったドライバーが表示されます。|  
+|**特定のドライバーに対してサポートされているプラットフォーム**|特定のドライバーでサポートされるプラットフォームが表示されます。|  
 
 ### <a name="endpoint-protection"></a>Endpoint Protection  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Report attività antimalware**|Visualizza una panoramica dell'attività antimalware.|  
-|**Cronologia e stato generale antimalware**|Visualizza la cronologia e lo stato generale antimalware.|  
-|**Dettagli malware computer**|Visualizza i dettagli di un computer specifico e l'elenco di malware rilevati.|  
-|**Computer infetti**|Visualizza un elenco di computer in cui è stata rilevata una minaccia specifica.|  
-|**Principali utenti da minacce**|Visualizza l'elenco degli utenti con il numero maggiore di minacce rilevate.|  
-|**Elenco di minacce utente**|Visualizza l'elenco delle minacce rilevate per un account utente specifico.|  
+|**マルウェア対策アクティビティ レポート**|マルウェア対策アクティビティの概要が表示されます。|  
+|**マルウェア対策の全体のステータスと履歴**|マルウェア対策の全体的なステータスと履歴が表示されます。|  
+|**コンピューターのマルウェアの詳細**|指定されたコンピューターの詳細と、そのコンピューターで見つかったマルウェアの一覧が表示されます。|  
+|**感染したコンピューター**|指定された脅威が検出されたコンピューターの一覧が表示されます。|  
+|**上位ユーザー (脅威別)**|検出された脅威数が最も多いユーザーの一覧が表示されます。|  
+|**ユーザーの脅威リスト**|指定されたユーザー アカウントで見つかった脅威の一覧が表示されます。|  
 
-### <a name="hardware---cd-rom"></a>Hardware - CD-ROM  
+### <a name="hardware---cd-rom"></a>ハードウェア - CD-ROM  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Informazioni CD-ROM per un computer specifico**|Visualizza le informazioni sulle unità CD-ROM in un computer specifico.|  
-|**Computer per un produttore CD-ROM specifico**|Visualizza un elenco di computer che contengono un'unità CD-ROM fatta da un produttore specifico.|  
-|**Numero di unità CD-ROM per produttore**|Visualizza il numero di unità CD-ROM in inventario per produttore.|  
-|**Cronologia - Cronologia CD-ROM per un computer specifico**|Visualizza le informazioni di inventario per le unità CD-ROM in un computer specifico.|  
+|**特定のコンピューターの CD-ROM 情報**|指定されたコンピューターの CD-ROM ドライブについての情報が表示されます。|  
+|**特定の製造元の CD-ROM を搭載しているコンピューター**|指定された製造元が製造した CD-ROM ドライブを搭載しているコンピューターの一覧が表示されます。|  
+|**製造元別の CD-ROM ドライブのカウント**|製造元別にインベントリされた CD-ROM ドライブの数が表示されます。|  
+|**履歴 - 特定のコンピューターの CD-ROM の履歴**|指定されたコンピューターの CD-ROM ドライブのインベントリ履歴が表示されます。|  
 
-### <a name="hardware---disk"></a>Hardware - Disco  
+### <a name="hardware---disk"></a>ハードウェア - ディスク  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Computer con una dimensione specifica di disco rigido**|Visualizza un elenco di computer che dispongono di dischi rigidi di una capacità specifica.|  
-|**Computer con spazio su disco insufficiente (inferiore alla percentuale disponibile specificata)**|Visualizza un elenco di computer in una raccolta specifica con una quantità di spazio su disco libero inferiore alla percentuale specificata.|  
-|**Computer con spazio su disco insufficiente (inferiore ai MB disponibili specificati)**|Visualizza un elenco di computer e dischi in cui lo spazio del disco è insufficiente. La quantità di spazio disponibile da controllare è specificata in MB.|  
-|**Conteggio configurazioni disco fisso**|Visualizza il numero di dischi fissi in inventario per capacità disco.|  
-|**Informazioni disco per un computer specifico - Dischi logici**|Visualizza le informazioni di riepilogo sui dischi logici in un computer specifico.|  
-|**Informazioni disco per un computer specifico - Partizioni**|Visualizza le informazioni di riepilogo sulle partizioni del disco in un computer specifico.|  
-|**Informazioni disco per un computer specifico - Dischi fisici**|Visualizza le informazioni di riepilogo sui dischi fisici in un computer specifico.|  
-|**Cronologia - Cronologia spazio disco logico per un computer specifico**|Visualizza le informazioni di inventario per le unità disco logico in un computer specifico.|  
+|**特定のサイズのハード ディスクを搭載しているコンピューター**|指定されたサイズのハード ディスクを搭載しているコンピューターの一覧が表示されます。|  
+|**空きディスク領域が不足しているコンピューター (指定 % 未満の空き領域)**|空きディスク領域が指定された量よりも少ない、指定されたコレクション内のコンピューターの一覧が表示されます。|  
+|**空きディスク領域が不足しているコンピューター (指定 MB 未満の空き領域)**|ディスクの空き領域が少ないコンピューターとディスクの一覧が表示されます。 チェックする空き領域の大きさは MB 単位で指定します。|  
+|**物理ディスク構成のカウント**|ディスク容量ごとにインベントリされたハード ディスク数が表示されます。|  
+|**特定のコンピューターのディスク情報 - 論理ディスク**|指定されたコンピューター上の論理ディスクに関する概要情報が表示されます。|  
+|**特定のコンピューターのディスク情報 - パーティション**|指定されたコンピューター上のディスク パーティションに関する概要情報が表示されます。|  
+|**特定のコンピューターのディスク情報 - 物理ディスク**|指定されたコンピューター上の物理ディスクに関する概要情報が表示されます。|  
+|**履歴 - 特定のコンピューターの論理ディスクの空き領域履歴**|指定されたコンピューター上の論理ディスク ドライブのインベントリ履歴が表示されます。|  
 
-### <a name="hardware---general"></a>Hardware - Generale  
+### <a name="hardware---general"></a>ハードウェア - 全般  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Informazioni computer per un computer specifico**|Visualizza le informazioni di riepilogo per un computer specifico.|  
-|**Computer in un gruppo di lavoro o dominio specifico**|Visualizza un elenco di computer in un gruppo di lavoro o dominio specifico.|  
-|**Classi inventario assegnate a una raccolta specifica**|Visualizza le classi inventario assegnate a una raccolta specifica.|  
-|**Classi inventario abilitate in un computer specifico**|Visualizza le classi inventario abilitate in un computer specifico.|  
+|**特定のコンピューターのコンピューター情報**|指定されたコンピューターの概要情報が表示されます。|  
+|**特定のワークグループまたはドメインにあるコンピューター**|指定されたワークグループまたはドメインにあるコンピューターの一覧が表示されます。|  
+|**特定のコレクションに割り当てられているインベントリ クラス**|指定されたコレクションに割り当てられているインベントリ クラスが表示されます。|  
+|**特定のコンピューターで有効になっているインベントリ クラス**|指定されたコンピューター上で有効になっているインベントリ クラスが表示されます。|  
 
-### <a name="hardware---memory"></a>Hardware - Memoria  
+### <a name="hardware---memory"></a>ハードウェア – メモリ  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Computer in cui la memoria fisica è cambiata**|Visualizza un elenco di computer in cui la quantità di RAM è cambiata dall'ultimo ciclo di inventario.|  
-|**Computer con una quantità specifica di memoria**|Visualizza un elenco di computer che dispongono di una quantità specifica di RAM (memoria fisica totale arrotondata in MB).|  
-|**Computer con memoria insufficiente (inferiore o uguale ai MB specificati)**|Visualizza un elenco di computer con memoria insufficiente. La quantità di memoria da controllare è specificata in MB.|  
-|**Conteggio configurazioni memoria**|Visualizza il numero di computer in inventario per quantità di RAM.|  
-|**Informazioni memoria per un computer specifico**|Visualizza le informazioni di riepilogo sulla memoria in un computer specifico.|  
+|**物理メモリが変更されたコンピューター**|RAM の容量が前回のインベントリ サイクルから変更されているコンピューターの一覧が表示されます。|  
+|**特定のメモリ容量があるコンピューター**|指定された容量の RAM (合計物理メモリ量を MB 単位に丸めた値) を持つコンピューターの一覧が表示されます。|  
+|**メモリが不足しているコンピューター (指定 MB 以下)**|メモリが不足しているコンピューターの一覧が表示されます。 チェックするメモリ量は MB 単位で指定します。|  
+|**メモリ構成のカウント**|RAM 容量ごとにインベントリされたコンピューターの数が表示されます。|  
+|**特定のコンピューターのメモリ情報**|指定されたコンピューターのメモリに関する概要情報が表示されます。|  
 
-### <a name="hardware---modem"></a>Hardware - Modem  
+### <a name="hardware---modem"></a>ハードウェア - モデム  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Computer per un produttore modem specifico**|Visualizza un elenco di computer che dispongono di un modem fatto da un produttore specifico.|  
-|**Conteggio di modem per produttore**|Visualizza il numero di modem in inventario per ogni produttore.|  
-|**Informazioni modem per un computer specifico**|Visualizza le informazioni di riepilogo sul modem in un computer specifico.|  
+|**特定の製造元のモデムがあるコンピューター**|指定された製造元によって製造されたモデムが搭載されたコンピューターの一覧が表示されます。|  
+|**製造元別のモデムのカウント**|モデム製造元別にインベントリされたモデムの数が表示されます。|  
+|**特定のコンピューターのモデム情報**|指定されたコンピューターのモデムに関する概要情報が表示されます。|  
 
-### <a name="hardware---network-adapter"></a>Hardware - Scheda di rete  
+### <a name="hardware---network-adapter"></a>ハードウェア - ネットワーク アダプター  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Computer con una scheda di rete specifica**|Visualizza un elenco di computer che dispongono di una scheda di rete specifica.|  
-|**Conteggio schede di rete per tipo**|Visualizza il numero di schede di rete di ogni tipo in inventario.|  
-|**Informazioni scheda di rete per un computer specifico**|Visualizza informazioni sulle schede di rete installate in un computer specifico.|  
+|**特定のネットワーク アダプターを装着しているコンピューター**|指定されたネットワーク アダプターが装着されたコンピューターの一覧が表示されます。|  
+|**種類別のネットワーク アダプターのカウント**|インベントリされている各種のネットワーク アダプター カードの数が表示されます。|  
+|**特定のコンピューターのネットワーク アダプター情報**|指定されたコンピューターに取り付けられているネットワーク アダプターに関する情報が表示されます。|  
 
-### <a name="hardware---processor"></a>Hardware - Processore  
+### <a name="hardware---processor"></a>ハードウェア - プロセッサ  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Computer per una velocità di processore specifica**|Visualizza un elenco di computer che dispongono di un processore di una velocità specifica.|  
-|**Computer con processori veloci (velocità superiore o uguale alla velocità di clock specificata)**|Visualizza un elenco di computer che dispongono di processori con una velocità più veloce rispetto a quella specificata.|  
-|**Computer con processori lenti (velocità inferiore o uguale alla velocità di clock specificata)**|Visualizza un elenco di computer che dispongono di un processore che esegue a una velocità uguale o superiore alla velocità di clock specificata.|  
-|**Conteggio velocità processore**|Visualizza il numero di computer in inventario per velocità del processore.|  
-|**Informazioni processore per un computer specifico**|Visualizza informazioni sui processori installati in un computer specifico.|  
+|**特定のプロセッサ速度のコンピューター**|指定された速度のプロセッサを搭載したコンピューターの一覧が表示されます。|  
+|**速いプロセッサを搭載しているコンピューター (指定クロック速度以上)**|指定されたクロック速度よりも高速なプロセッサが搭載されたコンピューターの一覧が表示されます。|  
+|**遅いプロセッサを搭載しているコンピューター (指定クロック速度以下)**|指定されたクロック速度以下で動作するプロセッサが搭載されたコンピューターの一覧が表示されます。|  
+|**プロセッサ速度のカウント**|プロセッサ速度別にインベントリされたコンピューターの数が表示されます。|  
+|**特定のコンピューターのプロセッサ情報**|指定されたコンピューターに搭載されているプロセッサについての情報が表示されます。|  
 
-### <a name="hardware---scsi"></a>Hardware - SCSI  
+### <a name="hardware---scsi"></a>ハードウェア - SCSI  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Computer con un tipo di scheda SCSI specifica**|Visualizza un elenco di computer che dispongono di una scheda SCSI specifica.|  
-|**Conteggio tipi di scheda SCSI**|Visualizza il numero di schede SCSI in inventario per tipo di scheda.|  
-|**Informazioni scheda SCSI per un computer specifico**|Visualizza informazioni sulle schede SCSI installate in un computer specifico.|  
+|**特定の SCSI カードの種類を装着しているコンピューター**|指定された SCSI カードが取り付けられているコンピューターの一覧が表示されます。|  
+|**SCSI カードの種類のカウント**|カードの種類別にインベントリされた SCSI カードの数が表示されます。|  
+|**特定のコンピューターの SCSI カード情報**|指定されたコンピューターに取り付けられている SCSI カードの情報が表示されます。|  
 
-### <a name="hardware---sound-card"></a>Hardware - Scheda audio  
+### <a name="hardware---sound-card"></a>ハードウェア - サウンド カード  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Computer con una scheda audio specifica**|Visualizza un elenco di computer che dispongono di una scheda audio specifica.|  
-|**Conteggio schede audio**|Visualizza il numero di computer in inventario per ogni tipo di scheda audio.|  
-|**Informazioni scheda audio per un computer specifico**|Visualizza le informazioni di riepilogo sulla scheda audio in un computer specifico.|  
+|**特定のサウンド カードを装着しているコンピューター**|指定されたサウンド カードが取り付けられているコンピューターの一覧が表示されます。|  
+|**サウンド カードのカウント**|サウンド カードの種類別にインベントリされたコンピューターの台数が表示されます。|  
+|**特定のコンピューターのサウンド カード情報**|指定されたコンピューターのサウンド カードに関する概要情報が表示されます。|  
 
-### <a name="hardware---video-card"></a>Hardware - Scheda video  
+### <a name="hardware---video-card"></a>ハードウェア - ビデオ カード  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Computer con una scheda video specifica**|Visualizza un elenco di computer che dispongono di una scheda video specifica.|  
-|**Conteggio schede video per tipo**|Visualizza un elenco di tutte le schede video installate nei computer e il numero di ogni tipo di scheda video.|  
-|**Informazioni scheda video per un computer specifico**|Visualizza informazioni di riepilogo sulle schede video installate in un computer specifico.|  
+|**特定のビデオ カードを装着しているコンピューター**|指定されたビデオ カードが取り付けられているコンピューターの一覧が表示されます。|  
+|**種類別のビデオ カードのカウント**|コンピューターに取り付けられているすべてのビデオ カードの一覧と、各種類のビデオ カードの数が表示されます。|  
+|**特定のコンピューターのビデオ カード情報**|指定されたコンピューターに取り付けられているビデオ カードに関する概要情報が表示されます。|  
 
-### <a name="migration"></a>Migrazione  
+### <a name="migration"></a>移行  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Client nell'elenco di esclusione**|Visualizza i client che sono esclusi dalla migrazione.|  
-|**Dipendenza da una raccolta di Configuration Manager**|Visualizza gli oggetti che dipendono da una raccolta della gerarchia di origine.|  
-|**Proprietà processo migrazione**|Questo report mostra i contenuti del processo di migrazione specifico.|  
-|**Processi di migrazione**|Questo report mostra l'elenco dei processi di migrazione.|  
-|**Oggetti non migrati**|Visualizza un elenco degli oggetti che non sono stati migrati durante l'ultimo tentativo.|  
+|**除外リスト内のクライアント**|移行から除外されているクライアントが表示されます。|  
+|**Configuration Manager コレクションの依存関係**|ソース階層のコレクションに依存するオブジェクトが表示されます。|  
+|**移行ジョブのプロパティ**|このレポートには、指定された移行ジョブの内容が表示されます。|  
+|**移行ジョブ**|このレポートには、移行ジョブの一覧が表示されます。|  
+|**移行に失敗したオブジェクト**|前回の試行中に移行に失敗したオブジェクトの一覧が表示されます。|  
 
-### <a name="network"></a>Rete  
+### <a name="network"></a>ネットワーク  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Conteggio indirizzi IP per subnet**|Visualizza il numero di indirizzi IP in inventario per ogni subnet IP.|  
-|**IP - Tutte le subnet per subnet mask**|Visualizza un elenco di subnet IP e subnet mask.|  
-|**IP - Computer in una subnet specifica**|Visualizza un elenco di computer e informazioni IP per una subnet IP specifica.|  
-|**IP - Informazioni per un computer specifico**|Visualizza le informazioni di riepilogo sull'IP in un computer specifico.|  
-|**IP - Informazioni per un indirizzo IP specifico**|Visualizza le informazioni di riepilogo su un indirizzo IP specifico.|  
-|**MAC - Computer per un indirizzo MAC specifico**|Visualizza il nome del computer e l'indirizzo IP dei computer con l'indirizzo MAC specificato.|  
+|**サブネット別の IP アドレスのカウント**|IP サブネット別にインベントリされた IP アドレスの数が表示されます。|  
+|**IP - サブネット マスク別のサブネットすべて**|IP サブネットとサブネット マスクの一覧が表示されます。|  
+|**IP - 特定のサブネット内のコンピューター**|指定された IP サブネットにおけるコンピューターと IP 情報の一覧が表示されます。|  
+|**IP - 特定のコンピューターの情報**|指定されたコンピューターの IP に関する概要情報が表示されます。|  
+|**IP - 特定の IP アドレスの情報**|指定された IP アドレスに関する概要情報が表示されます。|  
+|**MAC - 特定の MAC アドレスに対するコンピューター**|指定された MAC アドレスを持つコンピューターのコンピューター名と IP アドレスが表示されます。|  
 
-### <a name="network-access-protection"></a>Protezione accesso alla rete  
+### <a name="network-access-protection"></a>ネットワーク アクセス保護  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Confronto di aggiornamenti software installati per distribuzioni di aggiornamenti software e monitoraggio e aggiornamento Protezione accesso alla rete.**|Visualizza un confronto riepilogativo di aggiornamenti software installati per distribuzioni di aggiornamenti software e monitoraggio e aggiornamento Protezione accesso alla rete.|  
-|**Frequenza con cui è stato eseguito monitoraggio e aggiornamento in un computer in un periodo specifico**|Questo report visualizza la frequenza con cui è stato eseguito monitoraggio e aggiornamento in un computer in un periodo specifico.|  
-|**Elenco di computer in cui monitoraggio e aggiornamento ha installato uno specifico aggiornamento software in un periodo di tempo specifico**|Visualizza un elenco di computer in cui monitoraggio e aggiornamento ha installato uno specifico aggiornamento software in un periodo di tempo specifico (giorni).|  
-|**Elenco di computer che non sarebbero conformi in base agli aggiornamenti software selezionati**|Visualizza i computer che non sarebbero conformi in base agli aggiornamenti software selezionati.|  
-|**Elenco di computer in cui non è stato possibile rilevare il servizio Protezione accesso alla rete**|Visualizza un elenco di computer in cui non è stato possibile rilevare il servizio Protezione accesso alla rete.|  
-|**Elenco di computer idonei per Protezione accesso alla rete**|Visualizza un elenco di computer in cui il servizio Protezione accesso alla rete non è in esecuzione oppure il suo stato è sconosciuto.|  
-|**Elenco di criteri di Protezione accesso alla rete**|Visualizza i criteri di Protezione accesso alla rete con la relativa data.|  
-|**Elenco di computer non conformi in monitoraggio e aggiornamento dall'ultimo intervallo di polling**|Visualizza un elenco di computer non conformi in monitoraggio e aggiornamento con l'ora dell'ultima imposizione conosciuta.|  
-|**Elenco di computer non conformi in monitoraggio e aggiornamento in un periodo di tempo specifico**|Visualizza un elenco di computer non conformi in monitoraggio e aggiornamento in un periodo di tempo specifico.|  
-|**Elenco degli errori di monitoraggio e aggiornamento per un periodo di tempo specifico**|Visualizza un elenco degli errori di monitoraggio e aggiornamento per un numero di giorni specifico.|  
-|**Elenco di aggiornamenti software installati tramite monitoraggio e aggiornamento**|Visualizza un elenco di aggiornamenti software installati tramite monitoraggio e aggiornamento per un periodo di tempo specifico.|  
-|**Riepilogo di computer non conformi in monitoraggio e aggiornamento dall'ultimo intervallo di polling**|Visualizza un riepilogo di computer non conformi in monitoraggio e aggiornamento dall'ultimo intervallo di polling.|  
-|**Riepilogo di computer non conformi in monitoraggio e aggiornamento in un periodo di tempo specifico**|Visualizza un riepilogo di computer non conformi in monitoraggio e aggiornamento in un periodo di tempo specifico.|  
+|**ソフトウェア更新プログラムの展開および NAP 修復によってインストールされたソフトウェア更新プログラムの比較**|ソフトウェア更新プログラムの展開および NAP 修復によってインストールされたソフトウェア更新プログラムの比較の概要が表示されます。|  
+|**指定した期間内にコンピューターが修復状態にあった頻度**|このレポートには、指定した期間内にコンピューターが修復された頻度が表示されます。|  
+|**指定した期間内に修復によって特定のソフトウェアの更新がインストールされたコンピューターの一覧**|指定された期間 (日数) に修復によって特定のソフトウェアの更新がインストールされたコンピューターが表示されます。|  
+|**選択したソフトウェアの更新に基づいて非対応になるコンピューターの一覧**|選択したソフトウェアの更新に基づいて非対応になるコンピューターが表示されます。|  
+|**NAP サービスを検出できなかったコンピューターの一覧**|NAP サービスを検出できなかったコンピューターの一覧が表示されます。|  
+|**NAP 対応コンピューターの一覧**|NAP サービスが実行されていないか、NAP サービスの状態が不明であるコンピューターの一覧が表示されます。|  
+|**ネットワーク アクセス保護ポリシーの一覧**|ネットワーク アクセス保護ポリシーと、その有効日が表示されます。|  
+|**前回のポーリング間隔後に修復状態にあった非対応のコンピューターの一覧**|前回記録されている評価の際に修復状態にあった非対応コンピューターの一覧が表示されます。|  
+|**指定した期間内に修復状態にある非対応のコンピューターの一覧**|指定された期間内に修復状態にあった非対応コンピューターの一覧が表示されます。|  
+|**指定した期間内に発生した修復エラーの一覧**|指定された期間に発生した修復エラーの一覧が表示されます。|  
+|**修復によってインストールされたソフトウェアの更新の一覧**|指定された期間の修復によってインストールされたソフトウェア更新プログラムが表示されます。|  
+|**前回のポーリング間隔後に修復状態にあった非対応のコンピューターの概要**|前回のポーリング間隔後に修復状態にあった非対応のコンピューターの概要が表示されます。|  
+|**指定した期間内に修復状態にあった非対応コンピューターの概要**|指定された期間内に修復状態にあった非対応コンピューターの概要が表示されます。|  
 
-### <a name="operating-system"></a>Sistema operativo  
+### <a name="operating-system"></a>オペレーティング システム  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Cronologia versione del sistema operativo del computer**|Visualizza la cronologia di inventario per sistema operativo in un computer specifico.|  
-|**Computer con un sistema operativo specifico**|Visualizza i computer con un sistema operativo specifico.|  
-|**Computer con un sistema operativo e un Service Pack specifici**|Visualizza i computer con un sistema operativo e un Service Pack specifici.|  
-|**Conteggio versioni sistema operativo**|Visualizza il numero di computer in inventario per sistema operativo.|  
-|**Conteggio di sistemi operativi e Service Pack**|Visualizza il numero di computer in inventario per sistema operativo e combinazioni di Service Pack.|  
-|**Servizi - Computer che eseguono un servizio specifico**|Visualizza un elenco di computer che eseguono un servizio specifico.|  
-|**Servizi - Computer che eseguono Server di Accesso remoto**|Visualizza un elenco di computer che eseguono Server di Accesso remoto.|  
-|**Servizi - Informazioni sui servizi per un computer specifico**|Visualizza le informazioni di riepilogo sui servizi in un computer specifico.|  
-|**Computer Windows Server**|Visualizza un elenco di computer che eseguono sistemi operativi Windows Server.|  
+|**コンピューターのオペレーティング システムのバージョン履歴**|指定されたコンピューターのオペレーティング システムのインベントリ履歴が表示されます。|  
+|**特定のオペレーティング システムがインストールされたコンピューター**|指定されたオペレーティング システムがインストールされたコンピューターが表示されます。|  
+|**特定のオペレーティング システムと Service Pack がインストールされたコンピューター**|特定のオペレーティング システムと Service Pack がインストールされたコンピューターが表示されます。|  
+|**オペレーティング システムのバージョンのカウント**|オペレーティング システム別にインベントリされたコンピューターの数が表示されます。|  
+|**オペレーティング システムと Service Pack のカウント**|オペレーティング システムとサービス パックの組み合わせ別にインベントリされたコンピューターの数が表示されます。|  
+|**サービス - 特定のサービスを実行しているコンピューター**|指定されたサービスを実行しているコンピューターの一覧が表示されます。|  
+|**サービス - リモート アクセス サーバーを実行しているコンピューター**|リモート アクセス サーバーを実行しているコンピューターの一覧が表示されます。|  
+|**サービス - 特定のコンピューターのサービス情報**|指定されたコンピューターのサービスに関する概要情報が表示されます。|  
+|**Windows サーバー コンピューター**|Windows Server オペレーティング システムを実行しているコンピューターの一覧が表示されます。|  
 
-### <a name="out-of-band-management"></a>Gestione fuori banda  
+### <a name="out-of-band-management"></a>帯域外管理  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Computer con controller di gestione fuori banda**|Visualizza un elenco di computer che dispongono di controller di gestione fuori banda.|  
-|**Attività della console di gestione fuori banda**|Visualizza un elenco di messaggi di stato che identificano l'attività della console di gestione fuori banda.|  
-|**Stato di provisioning per la gestione fuori banda del client**|Visualizza un elenco di computer predisposti per la gestione fuori banda.|  
+|**帯域外管理コントローラーのあるコンピューター**|帯域外管理コントローラーがあるコンピューターの一覧が表示されます。|  
+|**帯域外管理コンソールのアクティビティ**|帯域外管理コンソールのアクティビティを識別するステータス メッセージの一覧が表示されます。|  
+|**クライアント帯域外管理プロビジョニングのステータス**|帯域外管理用にプロビジョニングされたコンピューターの一覧が表示されます。|  
 
-### <a name="power-management"></a>Risparmio energia  
+### <a name="power-management"></a>電源管理  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Risparmio energia - Attività computer**|Visualizza un grafico che mostra l'attività di monitor, computer e utente per una raccolta specificata in un periodo di tempo specificato.|  
-|**Risparmio energia - attività computer per computer**|Visualizza un grafico che mostra l'attività di monitor, computer e utente per un computer specificato in una data specificata.|  
-|**Risparmio energia - Dettagli attività computer**|Visualizza un elenco di capacità sospese e attive di computer in una raccolta specificata per una data e ora specificate.|  
-|**Risparmio energia - Dettagli computer**|Visualizza informazioni dettagliate su capacità di risparmio di energia, impostazioni del risparmio di energia e combinazioni per il risparmio di energia applicate a un computer specificato.|  
-|**Risparmio energia - Computer che non segnalano dettagli**|Visualizza un elenco di computer che non riportano attività per il risparmio di energia per una data e ora specificate.|  
-|**Risparmio energia - Computer esclusi**|Visualizza un elenco di computer esclusi dalla combinazione per il risparmio di energia.|  
-|**Risparmio energia - Computer con più combinazioni per il risparmio di energia**|Visualizza un elenco di computer con più impostazioni per il risparmio di energia in conflitto.|  
-|**Risparmio energia - Consumo energia**|Visualizza il consumo totale di energia mensile (in kWh) per una raccolta specificata in un periodo di tempo specificato.|  
-|**Risparmio energia - Consumo energia per giorno**|Visualizza il consumo totale di energia (in kWh) per una raccolta specificata negli ultimi 31 giorni.|  
-|**Risparmio energia - Costo energia**|Visualizza il costo totale del consumo di energia mensile per una raccolta specificata in un periodo di tempo specificato.|  
-|**Risparmio energia - Costo energia per giorno**|Visualizza il costo totale del consumo di energia per una raccolta specificata nei precedenti 31 giorni.|  
-|**Risparmio energia - Impatto ambientale**|Visualizza un grafico con le emissioni di anidride carbonica (CO2) generate da una raccolta specificata nel corso di un periodo di tempo specificato.|  
-|**Risparmio energia - Impatto ambientale per giorno**|Visualizza un grafico con le emissioni di CO2 generate da una raccolta specificata nel corso dei precedenti 31 giorni.|  
-|**Risparmio energia - Dettagli errore sospensione del computer**|Visualizza informazioni dettagliate sui computer che non sono stati sospesi o messi in stato di ibernazione nel periodo di tempo specificato.|  
-|**Risparmio energia - Report errore sospensione**|Visualizza un elenco di cause comuni che hanno impedito ai computer di essere sospesi o messi in stato di ibernazione e il numero di computer interessati da ogni causa per un periodo di tempo specificato.|  
-|**Risparmio energia - Funzionalità alimentazione**|Visualizza le capacità di gestione energia dei computer nella raccolta specificata.|  
-|**Risparmio energia - Impostazioni risparmio energia**|Visualizza un elenco aggregato di impostazioni per il risparmio di energia usate dai computer in una raccolta specificata.|  
-|**Risparmio energia - Dettagli impostazioni risparmio energia**|Usato per visualizzare altre informazioni sui computer che sono stati specificati nel report **Risparmio energia - Impostazioni risparmio energia**.|  
+|**電源管理 - コンピューター動作状況**|指定したコレクションのモニター、コンピューター、およびユーザー動作を指定期間にわたって示すグラフを表示します。|  
+|**電源管理 - コンピューター別動作状況**|指定したコンピューターの指定日のモニター、コンピューター、およびユーザー動作を示すグラフを表示します。|  
+|**電源管理 - コンピューター動作状況の詳細**|指定したコレクションの指定日時のコンピューターのスリープおよびウェイク機能を一覧表示します。|  
+|**電源管理 - コンピューターの詳細**|指定したコンピューターの電源機能、電源設定、および適用された電源プランの詳細情報を表示します。|  
+|**電源管理 - 詳細の報告がないコンピューター**|指定した日時に電源動作状況の報告がないコンピューターの一覧を表示します。|  
+|**電源管理 - 除外されているコンピューター**|電源プランから除外されているコンピューターを一覧表示します。|  
+|**電源管理 - 電源プランが複数あるコンピューター**|競合する電源設定が複数あるコンピューターの一覧が表示されます。|  
+|**電源管理 - エネルギー消費量**|指定したコレクションの月間エネルギー総消費量 (kWh) を、指定した期間にわたって表示します。|  
+|**電源管理 - 日別エネルギー消費量**|指定したコレクションの過去 31 日間のエネルギー総消費量 (kWh) を表示します。|  
+|**電源管理 - エネルギー コスト**|指定したコレクションの月間エネルギー総消費コストを、指定した期間にわたって表示します。|  
+|**電源管理 - 日別エネルギー コスト**|指定したコレクションの過去 31 日間のエネルギー総消費コストを表示します。|  
+|**電源管理 - 環境影響量**|指定した期間中に指定したコレクションから排出された二酸化炭素 (CO2) の量を示すグラフを表示します。|  
+|**電源管理 - 日別環境影響量**|指定したコレクションから過去 31 日間にわたって排出された二酸化炭素 (CO2) の量を示すグラフを表示します。|  
+|**電源管理 - 電源管理不可のコンピューターの詳細**|指定した期間にスリープ状態または休止状態にならなかったコンピューターの詳細情報を表示します。|  
+|**電源管理 - 電源管理不可レポート**|指定した期間にコンピューターのスリープまたは休止を妨げた共通の原因の一覧と、その影響を受けたコンピューターの数を原因別に表示します。|  
+|**電源管理 - 電源機能**|指定したコレクションのコンピューターの電源管理機能を表示します。|  
+|**電源管理 - 電源設定**|指定したコレクション内のコンピューターで使用された電源設定の集計リストを表示します。|  
+|**電源管理 - 電源設定の詳細**|**[電源管理 - 電源設定]** レポートで指定されたコンピューターに関して、さらに詳しい情報を表示するために使用されます。|  
 
-### <a name="replication-traffic"></a>Traffico di replica  
+### <a name="replication-traffic"></a>レプリケーション トラフィック  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Traffico di replica dati globali per collegamento (grafico a linee)**|Visualizza il traffico di replica dei dati globali totale in un collegamento specificato per un numero di giorni specificato.|  
-|**Traffico di replica dati globali per collegamento (grafico a torta)**|Visualizza il traffico di replica dei dati globali totale in un collegamento specificato per un numero di giorni specificato.|  
-|**Traffico di replica della gerarchia per collegamento**|Visualizza il traffico di replica totale per ciascun collegamento della gerarchia per il numero di giorni specificato.|  
-|**Traffico dei primi dieci gruppi di replica della gerarchia (grafico a torta)**|Visualizza il traffico di replica per i primi dieci gruppi di replica di tutta la gerarchia identificata per collegamento.|  
-|**Traffico di replica del collegamento**|Visualizza il traffico di replica totale per tutti i dati per il numero di giorni specificato.|  
-|**Traffico del gruppo di replica per collegamento**|Visualizza il traffico di rete del gruppo di replica su un collegamento di replica di database specifico per il numero di giorni specificato.|  
-|**Traffico di replica dati del sito per collegamento (grafico a linee)**|Visualizza il traffico di replica dei dati del sito totale in un collegamento specificato per un numero di giorni specificato.|  
-|**Traffico di replica dati del sito per collegamento (grafico a torta)**|Visualizza il traffico di replica dei dati del sito totale in un collegamento specificato per un numero di giorni specificato.|  
-|**Traffico di replica totale della gerarchia (grafico a linee)**|Visualizza la replica dati del sito e dei dati globali aggregati della gerarchia per ciascuna direzione di ogni collegamento per il numero di giorni specificato.|  
-|**Traffico di replica totale della gerarchia (grafico a torta)**|Visualizza la replica dati del sito e dei dati globali aggregati della gerarchia per ciascuna direzione di ogni collegamento per il numero di giorni specificato.|  
+|**リンクあたりのグローバル データ レプリケーションのトラフィック (折れ線グラフ)**|特定のリンクにおける指定日数間のグローバル データ レプリケーションのトラフィック合計が表示されます。|  
+|**リンクあたりのグローバル データ レプリケーションのトラフィック (円グラフ)**|特定のリンクにおける指定日数間のグローバル データ レプリケーションのトラフィック合計が表示されます。|  
+|**階層のリンク別レプリケーション トラフィック**|指定日数間のレプリケーション トラフィックの合計が、階層内の各リンクについて表示されます。|  
+|**階層の上位 10 レプリケーション グループのリンクあたりのトラフィック (円グラフ)**|リンクで識別される階層全体で上位 10 のレプリケーション グループについて、レプリケーション トラフィックが表示されます。|  
+|**リンクのレプリケーション トラフィック**|指定日数間のすべてのデータについて、レプリケーション トラフィックの合計が表示されます。|  
+|**リンクあたりのレプリケーション グループのトラフィック**|指定日数間に、指定のデータベース レプリケーション リンクで行われた、レプリケーション グループのネットワーク トラフィックが表示されます。|  
+|**リンクあたりのサイト データ レプリケーションのトラフィック (折れ線グラフ)**|特定のリンクにおける指定日数間のサイト データ レプリケーションのトラフィック合計が表示されます。|  
+|**リンクあたりのサイト データ レプリケーションのトラフィック (円グラフ)**|特定のリンクにおける指定日数間のサイト データ レプリケーションのトラフィック合計が表示されます。|  
+|**階層の合計レプリケーション トラフィック (折れ線グラフ)**|指定日数間の、各リンクの双方向のグローバル データとサイト データのレプリケーションの階層の総計が表示されます。|  
+|**階層の合計レプリケーション トラフィック (円グラフ)**|指定日数間の、各リンクの双方向のグローバル データとサイト データのレプリケーションの階層の総計が表示されます。|  
 
-### <a name="site---client-information"></a>Sito - Informazioni client  
+### <a name="site---client-information"></a>サイト - クライアント情報  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Report dettagliato sullo stato di assegnazione client**|Visualizza informazioni dettagliate sullo stato di assegnazione client.|  
-|**Dettagli errore di assegnazione client**|Visualizza informazioni dettagliate sugli errori di assegnazione client.|  
-|**Dettagli stato di assegnazione client**|Visualizza informazioni generali sullo stato di assegnazione client.|  
-|**Dettagli assegnazione client completata**|Visualizza informazioni dettagliate sui client assegnati.|  
-|**Report errore di distribuzione client**|Visualizza informazioni dettagliate per i client in cui non è stato possibile eseguire la distribuzione.|  
-|**Dettagli stato di distribuzione client**|Visualizza informazioni di riepilogo per lo stato delle installazioni client.|  
-|**Report distribuzione client completata**|Visualizza informazioni dettagliate per i client distribuiti.|  
-|**Client non idonei per la comunicazione HTTPS**|Visualizza informazioni dettagliate su ogni client nel sito che ha eseguito lo strumento per la preparazione della comunicazione HTTPS e riportato di non essere in grado di comunicare tramite HTTPS.|  
-|**Computer assegnati ma non installati per un sito particolare**|Visualizza un elenco di computer assegnati a un sito specifico ma che non riportano al sito.|  
-|**Computer con una specifica versione del client di Configuration Manager**|Visualizza un elenco di computer che eseguono una versione specifica del software client di Configuration Manager.|  
-|**Conteggio di client e protocolli usati per la comunicazione**|Visualizza un riepilogo dei metodi di comunicazione usati dai client (HTTP o HTTPS).|  
-|**Conteggio di client assegnati e installati per ogni sito**|Visualizza il numero di computer assegnati e installati per ogni sito. I client con un percorso di rete associato a più siti sono contati solo come installati se riportano a un sito.|  
-|**Conteggio dei client idonei per la comunicazione HTTPS**|Visualizza informazioni dettagliate su ogni client nel sito che ha eseguito lo strumento per la preparazione della comunicazione HTTPS e riportato di essere in grado o meno di comunicare tramite HTTPS.|  
-|**Conteggio di client per ogni sito**|Visualizza il numero di client di Configuration Manager installati per codice sito.|  
-|**Conteggio dei client di Configuration Manager per versioni client**|Visualizza il numero di computer individuati dalla versione client di Configuration Manager.|  
-|**Dettagli problema riportati al punto di stato di fallback per una raccolta specifica**|Visualizza informazioni dettagliate per i problemi riportati dai client in una raccolta specifica se sono stati assegnati a un punto di stato di fallback.|  
-|**Dettagli problema riportati al punto di stato di fallback per un sito specifico**|Visualizza informazioni dettagliate sui problemi riportati dai client in un sito specifico se sono stati assegnati a un punto di stato di fallback.|  
-|**Riepilogo dei problemi riportati al punto di stato di fallback**|Visualizza informazioni su tutti i problemi riportati dai client se sono stati assegnati a un punto di stato di fallback.|  
-|**Riepilogo dei problemi riportati al punto di stato di fallback per una raccolta specifica**|Visualizza informazioni di riepilogo per i problemi riportati dai client in una raccolta specifica se sono stati assegnati a un punto di stato di fallback.|  
+|**クライアントの割り当ての詳細ステータス レポート**|クライアントの割り当てステータスに関する詳細情報を表示します。|  
+|**失敗したクライアント割り当ての詳細**|失敗したクライアント割り当てに関する詳細情報を表示します。|  
+|**クライアントの割り当てステータスの詳細**|クライアントの割り当てステータスに関する概要情報を表示します。|  
+|**成功したクライアント割り当ての詳細**|正常に割り当てられたクライアントに関する詳細情報を表示します。|  
+|**クライアント展開のエラー レポート**|展開に失敗したクライアントに関する詳細情報を表示します。|  
+|**クライアントの展開ステータスの詳細**|クライアント インストールのステータスに関する概要情報を表示します。|  
+|**クライアント展開の成功レポート**|正常に展開されたクライアントに関する詳細情報を表示します。|  
+|**HTTPS 通信非対応のクライアント**|HTTPS Communication Readiness ツールを実行して HTTPS での通信ができないと報告された、サイト内の各クライアントの詳細情報を表示します。|  
+|**特定のサイトに割り当て済みで、インストールされていないコンピューター**|指定したサイトに割り当てられていても、そのサイトに報告していないコンピューターの一覧を表示します。|  
+|**特定の Configuration Manager クライアント バージョンを実行するコンピューター**|指定したバージョンの Configuration Manager クライアント ソフトウェアを実行しているコンピューターの一覧を表示します。|  
+|**通信に使用されるクライアントおよびプロトコルの数**|クライアントで使用されている通信方法 (HTTP または HTTPS) の概要を表示します。|  
+|**各サイトに割り当てられ、インストールされたクライアントの数**|各サイトに割り当てられ、インストールされたコンピューターの数を表示します。 ネットワークの場所が複数のサイトに割り当てられたクライアントは、サイトに報告している場合に限りインストールされたと見なされ、カウントされます。|  
+|**HTTPS 通信が可能なクライアントの数**|HTTPS Communication Readiness ツールを実行して HTTPS での通信が可能かどうかが報告された、サイト内の各クライアントの詳細情報を表示します。|  
+|**各サイトのクライアントの数**|インストールされた Configuration Manager クライアントの数がサイト コード別に表示されます。|  
+|**Configuration Manager クライアント バージョン別の数**|探索されたコンピューターの数を Configuration Manager クライアント バージョン別に表示します。|  
+|**指定したコレクションのフォールバック ステータス ポイントに報告された問題の詳細**|フォールバック ステータス ポイントが割り当てられている場合、指定したコレクション内のクライアントによって報告された問題の詳細情報を表示します。|  
+|**指定したサイトのフォールバック ステータス ポイントに報告された問題の詳細**|フォールバック ステータス ポイントが割り当てられている場合、指定したサイト内のクライアントによって報告された問題の詳細情報を表示します。|  
+|**フォールバック ステータス ポイントに報告された問題の概要**|フォールバック ステータス ポイントが割り当てられている場合、クライアントによって報告されたすべての問題に関する情報を表示します。|  
+|**指定したコレクションのフォールバック ステータス ポイントに報告された問題の概要**|フォールバック ステータス ポイントが割り当てられている場合、指定したコレクション内のクライアントによって報告された問題の概要情報を表示します。|  
 
-### <a name="site---discovery-and-inventory-information"></a>Sito - Informazioni individuazione e inventario  
+### <a name="site---discovery-and-inventory-information"></a>サイト - 探索とインベントリ情報  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Client che non hanno riportato di recente (in un numero specifico di giorni)**|Visualizza un elenco dei client che non hanno riportato dati di individuazione, inventario hardware o inventario software in un numero specifico di giorni.|  
-|**Computer individuati per un sito specifico**|Visualizza un elenco di tutti i computer individuati per un sito specifico e la data dell'individuazione più recente.|  
-|**Computer individuati recentemente per metodo di individuazione**|Visualizza un elenco di computer che sono stati individuati all'interno di un numero specifico di giorni ed elenca gli agenti che li hanno individuati. È possibile che un computer venga visualizzato più di una volta nell'elenco se è stato individuato da più agenti.|  
-|**Client non individuati di recente (in un numero specifico di giorni)**|Visualizza un elenco di computer che non sono stati individuati di recente e visualizza il numero di giorni dall'individuazione.|  
-|**Computer non entrati in inventario di recente (in un numero specifico di giorni)**|Visualizza un elenco di computer che non sono stati inventariati di recente e visualizza le ultime volte in cui sono entrati in inventario.|  
-|**Computer che potrebbero condividere lo stesso identificatore univoco di Configuration Manager**|Visualizza un elenco di computer che hanno modificato il nome. Una modifica nel nome può significare che un computer condivide un identificatore univoco di Configuration Manager con un altro computer.|  
-|**Computer con indirizzi MAC duplicati**|Visualizza computer che condividono l'indirizzo MAC.|  
-|**Conteggio dei computer nei domini o gruppi di lavoro della risorsa**|Visualizza il numero di computer in ogni dominio o gruppo di lavoro della risorsa.|  
-|**Informazioni individuazione per un computer specifico**|Visualizza un elenco di agenti e siti che hanno individuato un computer specifico.|  
-|**Date inventario per un computer specifico**|Visualizza la data e l'ora in cui è stato eseguito per l'ultima volta l'inventario in un computer specifico.|  
+|**指定された日数内で最近報告していないクライアント**|指定された日数内で探索データ、ハードウェア インベントリ、またはソフトウェア インベントリを報告していないクライアントの一覧を表示します。|  
+|**特定のサイトで探索されたコンピューター**|指定したサイトで探索されたコンピューターすべてと、探索された最新の日付の一覧を表示します。|  
+|**探索方法によって最近探索されたコンピューター**|指定した日数以内に探索されたコンピューターの一覧と、コンピューターを探索したエージェントの一覧を表示します。 コンピューターが複数のエージェントにより探索された場合、そのコンピューターは一覧中に 2 回以上表示される可能性があります。|  
+|**最近探索されていないコンピューター (日数で指定)**|最近探索されていないコンピューターの一覧を表示し、そのコンピューターが最後に探索されてからの経過日数を表示します。|  
+|**最近インベントリされていないコンピューター (日数で指定)**|最近インベントリされていないコンピューターの一覧を表示し、そのコンピューターがインベントリされた最終日時を表示します。|  
+|**同じ Configuration Manager の一意の ID を共有する可能性があるコンピューター**|名前が変更されたコンピューターの一覧を表示します。 名前の変更は、Configuration Manager の一意識別子を別のコンピューターと共有するコンピューターで発生する可能性があります。|  
+|**重複した MAC アドレスが割り当てられているコンピューター**|MAC アドレスを共有するコンピューターを表示します。|  
+|**リソース ドメインまたはワークグループ内のコンピューターのカウント**|各リソース ドメインまたはワークグループ内のコンピューターの数を表示します。|  
+|**特定のコンピューターの探索情報**|指定したコンピューターを探索したエージェントとサイトの一覧を表示します。|  
+|**特定のコンピューターのインベントリ日時**|指定したコンピューター上で前回実行されたインベントリの日時を表示します。|  
 
-### <a name="site---general"></a>Sito - Generale  
+### <a name="site---general"></a>サイト - 全般  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Computer in un sito specifico**|Visualizza un elenco di computer client in un sito specifico.|  
-|**Stato sito per la gerarchia**|Visualizza un elenco dei siti nella gerarchia con informazioni versione sito e stato sito.|  
-|**Stato dell'aggiornamento di Configuration Manager all'interno della gerarchia**|Visualizza informazioni sugli aggiornamenti del sito di Configuration Manager per la gerarchia.|  
+|**特定のサイトにあるコンピューター**|指定したサイト内のクライアント コンピューターの一覧を表示します。|  
+|**階層のサイト ステータス**|階層内のサイトと、そのサイト バージョンおよびサイトのステータス情報の一覧を表示します。|  
+|**階層内の Configuration Manager の更新プログラムのステータス**|階層の Configuration Manager サイトの更新プログラムに関する情報を表示します。|  
 
-### <a name="site---server-information"></a>Sito - Informazioni server  
+### <a name="site---server-information"></a>サイト - サーバー情報  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Ruoli sistema sito e server sistema sito per un sito specifico**|Visualizza un elenco di server di sistema del sito e i relativi ruoli del sistema del sito per un sito specifico.|  
+|**特定のサイトのサイト システムの役割とサイト システム サーバー**|指定したサイトのサイト システム サーバーとそのサイト システムの役割の一覧を表示します。|  
 
-### <a name="software---companies-and-products"></a>Software - Società e prodotti  
+### <a name="software---companies-and-products"></a>ソフトウェア - 会社と製品  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Tutti i prodotti in inventario per una società software specifica**|Visualizza un elenco di prodotti software in inventario e versioni prodotte da una società software specifica.|  
-|**Tutte le società software**|Visualizza un elenco di tutte le società in inventario che producono software.|  
-|**Tutte le app di Windows**|Visualizza un riepilogo delle app di Windows installate, ordinate per numero di istanza in base a criteri di ricerca per nome dell'applicazione, architettura o autore.|  
-|**Computer con un prodotto specifico**|Visualizza un elenco dei computer in cui è in inventario un prodotto specifico e le versioni del prodotto.|  
-|**Computer con nome e versione prodotto specifici**|Visualizza un elenco dei computer in cui è in inventario una versione specifica di un prodotto.|  
-|**Computer con software specifico registrato in Installazione applicazioni**|Visualizza un riepilogo di tutti i computer con software specifico registrato in Installazione applicazioni oppure in Programmi e funzionalità.|  
-|**Conteggio dei prodotti e delle versioni in inventario**|Visualizza un elenco di prodotti e versioni software in inventario e il numero di computer su cui sono installati.|  
-|**Conteggio dei prodotti e delle versioni in inventario per un prodotto specifico**|Visualizza un elenco delle versioni in inventario di un prodotto specifico e il numero di computer su cui sono installate.|  
-|**Conteggio di tutte le istanze software registrate con Installazione applicazioni**|Visualizza un riepilogo di tutte le istanze software installate e registrate in Installazione applicazioni oppure in Programmi e funzionalità nei computer all'interno di una raccolta specifica.|  
-|**Conteggio delle istanze software registrate in Installazione applicazioni**|Visualizza un conteggio delle istanze per pacchetti software specifici installati e registrati in Installazione applicazioni oppure in Programmi e funzionalità.|  
-|**Installazioni delle app di Windows specificate**|Questo report elenca tutti i computer con un'app di Windows specificata.|  
-|**Prodotto in un computer specifico**|Visualizza un elenco di prodotti software in inventario e dei relativi produttori in un computer specifico.|  
-|**Software registrato in Installazione applicazioni in un computer specifico**|Visualizza un riepilogo del software installato in un computer specifico registrato in Installazione applicazioni oppure in Programmi e funzionalità.|  
-|**App di Windows installate per l'utente specificato**|Visualizza tutte le app di Windows installate per l'utente specificato|  
+|**特定のソフトウェア会社のインベントリされた製品すべて**|指定したソフトウェア会社のインベントリされたソフトウェア製品とバージョンの一覧を表示します。|  
+|**ソフトウェア会社すべて**|インベントリされたソフトウェアを製造した会社すべての一覧を表示します。|  
+|**すべての Windows アプリ**|アプリケーション名、アーキテクチャ、または発行元での検索条件に基づいて、インストールされている Windows アプリの概要をインスタンス数の順に表示します。|  
+|**特定の製品が存在するコンピューター**|指定した製品がインベントリされているコンピューターの一覧を、その製品のバージョンと併せて表示します。|  
+|**特定の製品名とバージョンを含むコンピューター**|製品の指定したバージョンがインベントリされているコンピューターの一覧を表示します。|  
+|**[プログラムの追加と削除] に登録されている特定のソフトウェアがインストールされたコンピューター**|[プログラムの追加と削除] または [プログラムと機能] に登録されている指定したソフトウェアがインストールされたすべてのコンピューターの概要を表示します。|  
+|**インベントリされたすべての製品とバージョンのカウント**|インベントリされたソフトウェア製品とバージョンの一覧、およびそれぞれがインストールされているコンピューターの数を表示します。|  
+|**特定の製品のインベントリされた製品とバージョンすべてのカウント**|指定した製品のインベントリされたバージョンの一覧、およびそれがインストールされているコンピューターの数を表示します。|  
+|**[プログラムの追加と削除] に登録されているソフトウェアのインスタンスすべてのカウント**|指定したコレクション内のコンピューターにインストールされ、[プログラムの追加と削除] または [プログラムと機能] に登録されているソフトウェアのすべてのインスタンスの概要を表示します。|  
+|**[プログラムの追加と削除] に登録されている特定のソフトウェアのインスタンスのカウント**|インストールされ、[プログラムの追加と削除] または [プログラムと機能] に登録されている指定したソフトウェア パッケージのインスタンスのカウントを表示します。|  
+|**指定した Windows アプリのインストール**|このレポートには、指定した Windows アプリがインストールされているすべてのコンピューターが一覧表示されます。|  
+|**特定のコンピューター上の製品**|指定したコンピューターにインベントリされたソフトウェア製品とその製造元の概要を表示します。|  
+|**特定のコンピューター上の [プログラムの追加と削除] に登録されたソフトウェア**|指定したコンピューターにインストールされ、[プログラムの追加と削除] または [プログラムと機能] に登録されているソフトウェアの概要を表示します。|  
+|**指定のユーザーにインストールされた Windows アプリ**|指定のユーザーにインストールされたすべての Windows アプリを表示します。|  
 
-### <a name="software---files"></a>Software - File  
+### <a name="software---files"></a>ソフトウェア - ファイル  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Tutti i file in inventario per un prodotto specifico**|Visualizza un riepilogo dei file in inventario che sono associati a un prodotto software specifico.|  
-|**Tutti i file in inventario in un computer specifico**|Visualizza un riepilogo di tutti i file in inventario in un computer specifico.|  
-|**Confrontare l'inventario software in due computer**|Visualizza le differenze tra gli inventari software segnalati per due computer specifici.|  
-|**Computer con un file specifico**|Visualizza un elenco di computer che hanno raccolto l'inventario software per un nome file specifico. È possibile che un computer venga visualizzato più di una volta nell'elenco se contiene più copie del file.|  
-|**Conteggio dei computer con un nome file specifico**|Visualizza il numero dei computer che hanno raccolto l'inventario software per un file specifico.|  
+|**特定の製品のインベントリされたファイルすべて**|指定したソフトウェア製品に関連するインベントリされたファイルの概要を表示します。|  
+|**特定のコンピューター上のインベントリされたファイルすべて**|指定したコンピューターにインベントリされているすべてのファイルの概要を表示します。|  
+|**2 台のコンピューター上のソフトウェア インベントリの比較**|指定した 2 台のコンピューターについて報告されたソフトウェア インベントリの相違点を表示します。|  
+|**特定のファイルが存在するコンピューター**|指定したファイル名のソフトウェア インベントリを収集したコンピューターの一覧を表示します。 ファイルのコピーが複数存在する場合、そのコンピューターは一覧中に 2 回以上表示される可能性があります。|  
+|**特定のファイル名を持つコンピューターの数**|指定したファイルのソフトウェア インベントリを収集したコンピューターの台数を表示します。|  
 
-### <a name="software-distribution---application-monitoring"></a>Distribuzione software - Monitoraggio applicazione  
+### <a name="software-distribution---application-monitoring"></a>ソフトウェアの配布 - アプリケーションの監視  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Tutte le distribuzioni applicazione (avanzate)**|Visualizza informazioni di riepilogo dettagliate per tutte le distribuzioni dell'applicazione.|  
-|**Tutte le distribuzioni applicazione (base)**|Visualizza informazioni di riepilogo per tutte le distribuzioni dell'applicazione.|  
-|**Conformità applicazione**|Visualizza le informazioni di conformità per l'applicazione specificata all'interno della raccolta specificata.|  
-|**Distribuzioni applicazione per asset**|Visualizza le applicazioni distribuite in un dispositivo o utente specificato.|  
-|**Errori infrastruttura applicazione**|Visualizza gli errori di infrastruttura dell'applicazione.  Questi possono includere errori di infrastruttura interni ed errori che risultano da regole requisiti non valide.|  
-|**Stato dettagliato uso applicazione**|Visualizza i dettagli di uso per le applicazioni installate.|  
-|**Stato riepilogo uso applicazione**|Visualizza un riepilogo sull'uso per le applicazioni installate.|  
-|**Distribuzioni sequenza attività contenenti l'applicazione**|Visualizza le distribuzioni della sequenza di attività che installano un'applicazione specifica.|  
-|**Richieste utente per applicazione Android**|Visualizza gli utenti che hanno richiesto di installare un'applicazione Android.|  
-|**App per iOS con distribuzioni non riuscite (app già installata)**|Visualizza le informazioni sulla conformità per l'app iOS selezionata come "Pacchetto app per iOS nell'App Store" che è stata associata a criteri di gestione per applicazioni mobili. Questo report viene usato per visualizzare gli utenti e i dispositivi per cui l'installazione dell'app non è riuscita, in quanto l'app era già stata installata manualmente dall'utente.|  
+|**すべてのアプリケーションの展開 (詳細)**|すべてのアプリケーションの展開の詳細な概要を表示します。|  
+|**すべてのアプリケーションの展開 (基本)**|すべてのアプリケーションの展開の概要情報を表示します。|  
+|**アプリケーションのコンプライアンス**|指定したコレクション内の指定したアプリケーションについてのコンプライアンス情報を表示します。|  
+|**アプリケーションの展開 (資産別)**|指定したデバイスまたはユーザーに展開されたアプリケーションを表示します。|  
+|**アプリケーションのインフラストラクチャ エラー**|アプリケーションのインフラストラクチャ エラーを表示します。  内部インフラストラクチャ エラーだけでなく、無効な要件規則の結果発生したエラーも表示します。|  
+|**アプリケーションの使用率の詳細ステータス**|インストールされているアプリケーションの使用率の詳細を表示します。|  
+|**アプリケーションの使用率の概要ステータス**|インストールされているアプリケーションの使用率の概要を表示します。|  
+|**アプリケーションを含むタスク シーケンス展開**|指定したアプリケーションをインストールするタスク シーケンス展開を表示します。|  
+|**ユーザーからの Android アプリケーションの要求**|Android アプリケーションのインストールを要求したユーザーを表示します。|  
+|**展開に失敗した iOS アプリ (インストール済みのアプリ)**|選択されている iOS アプリ (モバイル アプリケーション管理ポリシーに関連付けられており、"iOS アプリケーション パッケージ (App ストア内)" として展開したもの) についてのコンプライアンス情報を表示します。 このレポートは、ユーザーが既に手動でインストールしていたためにインストールに失敗したアプリに対応するユーザーとデバイスを表示するときに使用されます。|  
 
-### <a name="software-distribution---collections"></a>Distribuzione software - Raccolte  
+### <a name="software-distribution---collections"></a>ソフトウェアの配布 - コレクション  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Tutte le raccolte**|Visualizza tutte le raccolte nella gerarchia.|  
-|**Tutte le risorse in una raccolta specifica**|Visualizza tutte le risorse in una raccolta specifica.|  
-|**Finestre di manutenzione disponibili a un client specificato**|Visualizza tutte le finestre di manutenzione applicabili al client specificato.|  
+|**すべてのコレクション**|階層内のすべてのコレクションを表示します。|  
+|**特定のコレクションのすべてのリソース**|指定したコレクションのすべてのリソースを表示します。|  
+|**特定のクライアントで利用可能なメンテナンス期間**|指定したクライアントで利用できるすべてのメンテナンス ウィンドウを表示します。|  
 
-### <a name="software-distribution---content"></a>Distribuzione software - Contenuto  
+### <a name="software-distribution---content"></a>ソフトウェアの配布 - コンテンツ  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Tutte le distribuzioni contenuto attive**|Visualizza tutti i punti di distribuzione in cui si sta installando o rimuovendo contenuto.|  
-|**Tutto il contenuto**|Visualizza tutte le applicazioni e i pacchetti in un sito.|  
-|**Tutto il contenuto in un punto di distribuzione specifico**|Visualizza tutto il contenuto attualmente installato in un punto di distribuzione specifico.|  
-|**Tutti i punti di distribuzione**|Visualizza le informazioni sui punti di distribuzione per ogni sito.|  
-|**Tutti i messaggi di stato per un pacchetto specifico in un punto di distribuzione specifico**|Visualizza tutti i messaggi di stato per un pacchetto specifico in un punto di distribuzione specifico.|  
-|**Stato di distribuzione del contenuto applicazione**|Visualizza le informazioni sullo stato di distribuzione per il contenuto applicazione.|  
-|**Applicazioni destinate a un gruppo di punti di distribuzione**|Visualizza le informazioni sul contenuto applicazione che è stato distribuito un gruppo di punti di distribuzione specifico.|  
-|**Applicazioni non sincronizzate in un gruppo di punti di distribuzione specifico**|Visualizza le applicazioni per cui i file di contenuto associati non sono stati aggiornati con la versione più recente in un gruppo di punti di distribuzione specifico.|  
-|**Gruppo di punti di distribuzione**|Visualizza le informazioni su un gruppo di punti di distribuzione specifico.|  
-|**Riepilogo di uso dei punti di distribuzione**|Visualizza il riepilogo di uso dei punti di distribuzione per ogni punto di distribuzione.|  
-|**Stato di distribuzione del pacchetto specificato**|Visualizza lo stato di distribuzione per il contenuto di un pacchetto specifico in ogni punto di distribuzione.|  
-|**Pacchetti destinati a un gruppo di punti di distribuzione**|Visualizza le informazioni sui pacchetti destinati a un gruppo di punti di distribuzione specifico.|  
-|**Pacchetti non sincronizzati in un gruppo di punti di distribuzione specifico**|Visualizza i pacchetti per cui i file di contenuto associati non sono stati aggiornati con la versione più recente in un gruppo di punti di distribuzione specifico.|  
+|**すべてのアクティブなコンテンツ配布**|現在コンテンツのインストールまたは削除で使用されているすべての配布ポイントを表示します。|  
+|**すべてのコンテンツ**|サイトのすべてのアプリケーションとパッケージを表示します。|  
+|**特定の配布ポイントのすべてのコンテンツ**|指定した配布ポイントに現在インストールされているすべてのコンテンツを表示します。|  
+|**すべての配布ポイント**|各サイトの配布ポイントの情報を表示します。|  
+|**特定の配布ポイント上の特定のパッケージのすべてのステータス メッセージ**|指定した配布ポイント上の指定したパッケージのすべてのステータス メッセージを表示します。|  
+|**アプリケーションのコンテンツ配布ステータス**|アプリケーションのコンテンツの配布ステータス情報を表示します。|  
+|**配布ポイント グループの対象となるアプリケーション**|指定した配布ポイント グループに展開されたアプリケーションのコンテンツの情報を表示します。|  
+|**指定した配布ポイント グループで同期されていないアプリケーション**|関連付けられているコンテンツ ファイルが指定した配布ポイント グループで最新バージョンに更新されていないアプリケーションを表示します。|  
+|**配布ポイント グループ**|指定した配布ポイント グループの情報を表示します。|  
+|**配布ポイントの使用状況の概要**|各配布ポイントの使用状況の概要を表示します。|  
+|**指定したパッケージの配布ステータス**|指定したパッケージ コンテンツの各配布ポイントの配布ステータスを表示します。|  
+|**配布ポイント グループの対象となるパッケージ**|指定した配布ポイント グループの対象となるパッケージの情報を表示します。|  
+|**指定した配布ポイント グループで同期されていないパッケージ**|関連付けられているコンテンツ ファイルが指定した配布ポイント グループで最新バージョンに更新されていないパッケージを表示します。|  
 
-### <a name="software-distribution---package-and-program-deployment"></a>Distribuzione software - Distribuzione programma e pacchetto  
+### <a name="software-distribution---package-and-program-deployment"></a>ソフトウェアの配布 - パッケージおよびプログラムの展開  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Tutte le distribuzioni per un pacchetto e programma specifico**|Visualizza le informazioni su tutte le distribuzioni di un pacchetto e programma specifico.|  
-|**Distribuzioni di pacchetto e programma**|Visualizza tutte le distribuzioni di pacchetto e programma nel sito.|  
-|**Tutte le distribuzioni di pacchetti e programmi in una collezione specifica**|Visualizza tutte le distribuzioni di pacchetti e programmi in una collezione specifica.|  
-|**Tutte le distribuzioni di pacchetti e programmi in un computer specifico**|Visualizza tutte le distribuzioni di pacchetti e programmi applicabili a un computer specifico.|  
-|**Tutte le distribuzioni di pacchetti e programmi a un utente specifico**|Visualizza tutte le distribuzioni di pacchetti e programmi a un utente specifico.|  
+|**指定したパッケージおよびプログラムのすべての展開**|指定したパッケージおよびプログラムのすべての展開の情報を表示します。|  
+|**すべてのパッケージおよびプログラムの展開**|このサイトのすべてのパッケージおよびプログラムの展開を表示します。|  
+|**指定したコレクションのすべてのパッケージおよびプログラムの展開**|指定したコレクションのすべてのパッケージおよびプログラムの展開を表示します。|  
+|**特定のコンピューターのすべてのパッケージおよびプログラムの展開**|指定したコンピューターに適用されたすべてのパッケージおよびプログラムの展開を表示します。|  
+|**指定したユーザー向けのすべてのパッケージ展開とプログラム展開**|指定したユーザー向けのすべてのパッケージ展開とプログラム展開を表示します。|  
 
-### <a name="software-distribution---package-and-program-deployment-status"></a>Distribuzione software - Stato distribuzione programma e pacchetto  
+### <a name="software-distribution---package-and-program-deployment-status"></a>ソフトウェアの配布 - パッケージおよびプログラムの展開ステータス  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Tutte le distribuzioni di pacchetti e programmi della risorsa di sistema con stato**|Visualizza tutte le distribuzioni di pacchetti e programmi per il sito con uno stato del riepilogo di ogni distribuzione.|  
-|**Tutte le risorse di sistema per una distribuzione pacchetto e programma specifica in uno stato specifico**|Visualizza un elenco di risorse in uno stato specifico per una distribuzione del pacchetto e programma specifica.|  
-|**Grafico - Stato di completamento distribuzione programma e pacchetto oraria**|Visualizza la percentuale di computer in cui è stato installato il pacchetto per ogni ora dalla creazione della distribuzione del pacchetto e programma. Si può usare per tenere traccia del tempo medio per una distribuzione pacchetto e programma.|  
-|**Stato della distribuzione di pacchetto e programma per un client e una distribuzione specifici**|Visualizza i messaggi di stato segnalati per un computer e una distribuzione di pacchetto e programma specifici.|  
-|**Stato di una distribuzione pacchetto e programma specifica**|Visualizza il riepilogo dello stato della distribuzione di un pacchetto e programma specifica.|  
+|**システム リソースのすべてのパッケージおよびプログラムの展開とそのステータス**|サイトのすべてのパッケージおよびプログラムの展開を各展開の概要ステータスと共に表示します。|  
+|**特定の状態にある特定のパッケージおよびプログラムの展開のすべてのシステム リソース**|指定した状態にある指定したパッケージおよびプログラムの展開のリソースの一覧を表示します。|  
+|**グラフ - 毎時間のパッケージおよびプログラムの展開の完了ステータス**|パッケージおよびプログラムの展開の作成以降、パッケージが正常にインストールされたコンピューターの割合を 1 時間ごとに表示します。 これは、パッケージおよびプログラムの展開にかかった平均時間を追跡するのに使用できます。|  
+|**指定したクライアントと展開のパッケージとプログラムの展開ステータス**|指定したコンピューターおよびパッケージとプログラムの展開について報告されたステータス メッセージを表示します。|  
+|**指定したパッケージおよびプログラムの展開のステータス**|指定したパッケージとプログラムの展開のステータスの概要を表示します。|  
 
-### <a name="software-metering"></a>Controllo software  
+### <a name="software-metering"></a>ソフトウェア使用状況測定  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Tutte le regole di controllo software applicate al sito**|Visualizza un elenco di tutte le regole di controllo software applicate al sito.|  
-|**Computer che hanno installato un programma di controllo ma non hanno eseguito il programma da una data specificata**|Visualizza tutti i computer che dispongono di una specifica applicazione a consumo installata come indicato dall'inventario software, ma che non hanno eseguito il programma dopo una data specificata.|  
-|**Computer che hanno eseguito un programma di controllo software specifico**|Visualizza un elenco di computer che hanno eseguito programmi corrispondenti alla regola di controllo software specificata entro il mese e l'anno specificati.|  
-|**Uso simultaneo per tutti i programmi di controllo software**|Visualizza il numero massimo di utenti che hanno eseguito simultaneamente ogni programma software a consumo durante il mese e l'anno specificati.|  
-|**Analisi della tendenza di uso simultaneo di un programma di controllo software specifico**|Visualizza il numero massimo di utenti che hanno eseguito simultaneamente il programma software a consumo durante ciascun mese dell'anno passato.|  
-|**Installare la base per tutti i programmi di controllo software**|Visualizza il numero di computer che hanno programmi software a consumo installati come indicato dall'inventario software. Questo report richiede che l'inventario software sia raccolto nei computer a consumo.|  
-|**Stato di riepilogo del controllo software**|Visualizza l'ora in cui sono stati elaborati i dati di controllo riepilogati più di recente nel server del sito.  Solo i dati di controllo elaborati prima di queste date sono presenti nel report di controllo software.|  
-|**Riepilogo di uso dell'ora del giorno per un programma di controllo software specifico**|Visualizza il numero medio di usi di un particolare programma negli ultimi 90 giorni, suddivisi per ora e giorno.|  
-|**Uso totale per tutti i programmi di controllo software**|Visualizza il numero di utenti che hanno eseguito programmi corrispondenti a ogni regola di controllo software localmente o tramite Servizi terminal entro il mese e l'anno specificati.|  
-|**Uso totale per tutti i programmi di controllo software in Windows Terminal Server**|Visualizza il numero di utenti che hanno eseguito programmi corrispondenti a ogni regola di controllo software tramite Servizi terminal entro il mese e l'anno specificati.|  
-|**Analisi della tendenza di uso totale per un programma di controllo software specifico**|Visualizza il numero di utenti che hanno eseguito programmi corrispondenti alla regola di controllo software specificata localmente o tramite Servizi terminal durante ogni mese dell'anno passato.|  
-|**Analisi della tendenza di uso totale per un programma di controllo software specifico in Windows Terminal Server**|Visualizza il numero di utenti che hanno eseguito programmi corrispondenti alla regola di controllo software specificata tramite Servizi terminal durante ogni mese dell'anno passato.|  
-|**Utenti che hanno eseguito un programma di controllo software specifico**|Visualizza un elenco di utenti che hanno eseguito programmi corrispondenti alla regola di controllo software specificata entro il mese e l'anno specificati.|  
+|**このサイトに適用されている、すべてのソフトウェア メータリング規則**|このサイトのすべてのソフトウェア使用状況測定規則の一覧を表示します。|  
+|**使用状況を測定するプログラムをインストール済みのコンピューターのうち、指定した日以降そのプログラムが実行されていないコンピューター**|ソフトウェア インベントリの報告のとおり、指定した使用状況を測定するアプリケーションをインストール済みのコンピューターのうち、指定した日以降そのプログラムが実行されていないコンピューターをすべて表示します。|  
+|**特定のメータリングされたソフトウェア プログラムを実行したコンピューター**|指定したソフトウェア使用状況測定規則に一致するプログラムを、指定した年月内に実行したコンピューターの一覧を表示します。|  
+|**メータリングされたすべてのソフトウェア プログラムの同時使用数**|使用状況を測定する各ソフトウェア プログラムを、指定した年月内に同時実行したユーザーの最大数を表示します。|  
+|**特定のメータリングされたソフトウェア プログラムの同時使用状況の分析**|指定した使用状況を測定するプログラムを、過去 1 年の各月に同時実行したユーザーの最大数を表示します。|  
+|**メータリングされたすべてのソフトウェア プログラムのインストール ベース**|ソフトウェア インベントリの報告のとおり、インストール済みの使用状況を測定するソフトウェア プログラムの数を表示します。 このレポートには、使用状況が測定されたコンピューター上で収集されたソフトウェア インベントリが必要です。|  
+|**ソフトウェア メータリング概要作成の進行状況**|使用状況測定データの最新概要がサイト サーバーで処理された時刻を表示します。  この日時より前に処理された使用状況測定データのみが、ソフトウェア使用状況測定レポートに反映されます。|  
+|**特定のメータリングされたソフトウェア プログラムの使用日時の概要**|特定のプログラムの過去 90 日の平均使用数を日時で分類して表示します。|  
+|**メータリングされたすべてのソフトウェア プログラムの総使用数**|各ソフトウェア使用状況測定規則に一致するプログラムを、指定した年月内にローカルで、またはターミナル サービスを使用して実行したユーザーの数を表示します。|  
+|**Windows ターミナル サーバー上のメータリングされたすべてのソフトウェア プログラムの総使用数**|各ソフトウェア使用状況測定規則に一致するプログラムを、指定した年月内にターミナル サービスを使用して実行したユーザーの数を表示します。|  
+|**特定のメータリングされたソフトウェア プログラムの総使用数の状況分析**|指定したソフトウェア使用状況測定規則に一致するプログラムを、過去 1 年間の各月にローカルで、またはターミナル サービスを使用して実行したユーザーの数を表示します。|  
+|**特定のメータリングされたソフトウェア プログラムの、Windows ターミナル サービスでの総使用数の状況分析**|指定したソフトウェア使用状況測定規則に一致するプログラムを、過去 1 年間の各月にターミナル サービスを使用して実行したユーザーの数を表示します。|  
+|**特定のメータリングされたソフトウェア プログラムを実行したユーザー**|指定したソフトウェア使用状況測定規則に一致するプログラムを、指定した年月内に実行したユーザーの一覧を表示します。|  
 
-### <a name="software-updates---a-compliance"></a>Aggiornamenti software - Conformità A  
+### <a name="software-updates---a-compliance"></a>ソフトウェア更新プログラム - A コンプライアンス  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Conformità 1 - Conformità generale**|Visualizza i dati di conformità generale di un gruppo di aggiornamento software.|  
-|**Conformità 2 - Aggiornamento software specifico**|Visualizza i dati di conformità per un aggiornamento software specifico.|  
-|**Conformità 3 - Gruppo di aggiornamenti (per aggiornamento)**|Visualizza i dati di conformità degli aggiornamenti software definiti in un gruppo di aggiornamento software.|  
-|**Conformità 4 - Anno e mese degli aggiornamenti per fornitore**|Visualizza i dati di conformità per gli aggiornamenti software rilasciati da un fornitore durante un mese e un anno specificati.|  
-|**Conformità 5 - Computer specifico**|Questo report restituisce i dati di conformità dell'aggiornamento software per un computer specifico.  Per limitare la quantità di informazioni restituite, è possibile specificare la classificazione dell'aggiornamento software e del fornitore.|  
-|**Conformità 6 - Stati specifici di aggiornamento software (secondario)**|Visualizza il numero e la percentuale di computer in ogni stato di conformità per l'aggiornamento software specificato.|  
-|**Conformità 7 - Computer in uno stato di conformità specifico per un gruppo di aggiornamenti (secondario)**|Visualizza tutti i computer in una raccolta che hanno uno stato di conformità generale specificato rispetto a un gruppo di aggiornamento software.|  
-|**Conformità 8 - Computer in uno stato di conformità specifico per un aggiornamento (secondario)**|Visualizza tutti i computer in una raccolta che hanno uno stato di conformità specificato per un aggiornamento software.|  
+|**コンプライアンス 1 - 全体的なコンプライアンス**|ソフトウェア更新プログラム グループの全体的なコンプライアンス対応データを表示します。|  
+|**コンプライアンス 2 - 特定のソフトウェアの更新**|指定したソフトウェア更新プログラムのコンプライアンス対応データを表示します。|  
+|**コンプライアンス 3 - 更新プログラム グループ (更新プログラムごと)**|ソフトウェア更新プログラム グループで定義されているソフトウェア更新プログラムのコンプライアンス対応データを表示します。|  
+|**コンプライアンス 4 - ベンダー、月、年ごとの更新プログラム**|指定した年月にベンダーによってリリースされたソフトウェア更新プログラムのコンプライアンス対応データを表示します。|  
+|**コンプライアンス 5 - 特定のコンピューター**|このレポートは、指定したコンピューターを対象とするソフトウェア更新プログラムのコンプライアンス対応データを返します。  返される情報量を制限するために、ベンダーおよびソフトウェア更新プログラムの分類を指定することができます。|  
+|**コンプライアンス 6 - 特定のソフトウェア更新プログラムの状態 (セカンダリ)**|指定したソフトウェア更新プログラムに対して各コンプライアンス対応状態にあるコンピューターのカウントと割合を表示します。|  
+|**コンプライアンス 7 - 更新プログラム グループに対して特定のコンプライアンス対応状態にあるコンピューター (セカンダリ)**|コレクション内のコンピューターのうち、ソフトウェア更新プログラム グループに対して指定したコンプライアンス対応状態にあるすべてのコンピューターを表示します。|  
+|**コンプライアンス 8 - 更新プログラムに対して特定のコンプライアンス対応状態にあるコンピューター (セカンダリ)**|コレクション内のコンピューターのうち、ソフトウェア更新プログラムに対して指定したコンプライアンス対応状態にあるすべてのコンピューターを表示します。|  
 
-### <a name="software-updates---b-deployment-management"></a>Aggiornamenti software - Gestione distribuzione B  
+### <a name="software-updates---b-deployment-management"></a>ソフトウェア更新プログラム - B 展開管理  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Gestione 1 - Distribuzioni di un gruppo di aggiornamenti**|Visualizza tutte le distribuzioni che contengono tutti gli aggiornamenti software definiti in un gruppo di aggiornamento software specifico.|  
-|**Gestione 2 - Aggiornamenti richiesti ma non distribuiti**|Visualizza tutti gli aggiornamenti software specifici del fornitore che sono stati rilevati come richiesti sui client ma che non sono stati distribuiti in una raccolta specifica.|  
-|**Gestione 3 - Aggiornamenti in una distribuzione**|Visualizza gli aggiornamenti software che sono contenuti in una distribuzione specifica.|  
-|**Gestione 4 - Distribuzioni associate a una raccolta**|Visualizza tutte le distribuzioni di aggiornamenti software destinate a una raccolta specifica.|  
-|**Gestione 5 - Distribuzioni associate a un computer**|Visualizza tutte le distribuzioni di aggiornamenti software distribuite in un computer specifico.|  
-|**Gestione 6 - Distribuzioni che contengono un aggiornamento specifico**|Visualizza tutte le distribuzioni che contengono un aggiornamento software specifico e la raccolta di destinazione associata per la distribuzione.|  
-|**Gestione 7 - Aggiornamenti in una distribuzione senza contenuto**|Visualizza gli aggiornamenti software in una distribuzione specifica che non hanno recuperato tutto il contenuto associato, impedendo ai client di installare l'aggiornamento e ottenere la conformità al 100% per la distribuzione.|  
-|**Gestione 8 - Computer senza contenuto (secondario)**|Visualizza tutti i computer che richiedono un aggiornamento software specifico contenuto in una distribuzione specifica che non è disponibile in un punto di distribuzione.|  
+|**管理 1 - 更新プログラム グループの展開**|指定したソフトウェア更新プログラム グループで定義されているすべてのソフトウェア更新プログラムを含む展開をすべて表示します。|  
+|**管理 2 - 更新が必要であるが展開されていない**|クライアントに必須として検出されているがまだ指定したコレクションに展開されていない、ベンダー固有のソフトウェア更新プログラムをすべて表示します。|  
+|**管理 3 - 展開内の更新**|指定した展開に含まれるソフトウェア更新プログラムを表示します。|  
+|**管理 4 - コレクションを対象とする展開**|指定したコレクションを対象とするすべてのソフトウェア更新プログラムの展開を表示します。|  
+|**管理 5 - コンピューターを対象とする展開**|指定したコンピューターに展開されているすべてのソフトウェア更新プログラムの展開を表示します。|  
+|**管理 6 - 特定の更新を含む展開**|指定したソフトウェア更新プログラムを含むすべての展開と、展開を対象とする関連コレクションを表示します。|  
+|**管理 7 - コンテンツのない展開内の更新**|指定した展開内の、すべての関連コンテンツが取得されていないソフトウェア更新プログラムを表示し、クライアントが更新をインストールするのを停止させて、展開に対する 100% のコンプライアンス対応を達成します。|  
+|**管理 8 - コンテンツのないコンピューター (セカンダリ)**|配布ポイント上でプロビジョニングされていない指定した展開に含まれている指定したソフトウェア更新プログラムが必要なすべてのコンピューターを表示します。|  
 
-### <a name="software-updates---c-deployment-states"></a>Aggiornamenti software - Stati distribuzione C  
+### <a name="software-updates---c-deployment-states"></a>ソフトウェア更新プログラム - C 展開の状態  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Stati 1 - Stati di imposizione per una distribuzione**|Visualizza gli stati di imposizione di una distribuzione di aggiornamento software specificata che in genere è la seconda fase della valutazione di una distribuzione.|  
-|**Stati 2 - Stati di valutazione per una distribuzione**|Visualizza lo stato di valutazione di una distribuzione di aggiornamento software specificata che in genere è la prima fase della valutazione di una distribuzione.|  
-|**Stati 3 - Stati per una distribuzione e un computer**|Visualizza gli stati per tutti gli aggiornamenti software nella distribuzione specificata per un computer specifico.|  
-|**Stati 4 - Computer in uno stato specifico per una distribuzione (secondario)**|Visualizza tutti i computer in uno stato specifico per una distribuzione di aggiornamento software.|  
-|**Stati 5 - Stati per un aggiornamento in una distribuzione (secondario)**|Visualizza un riepilogo degli stati per un aggiornamento software specifico indicato da una distribuzione specifica.|  
-|**Stati 6 - Computer in uno stato di imposizione specifico per un aggiornamento (secondario)**|Visualizza tutti i computer in uno stato di applicazione specifico per un aggiornamento software specifico.|  
+|**状態 1 - 展開の強制状態**|指定したソフトウェア更新プログラムの展開に関する強制実行状態を表示します。一般的にこれは展開評価の第 2 段階です。|  
+|**状態 2 - 展開の評価状態**|指定したソフトウェア更新プログラムの展開に関する評価状態を表示します。一般的にこれは展開評価の最初の段階です。|  
+|**状態 3 - 展開とコンピューターの状態**|指定したコンピューターの指定した展開におけるすべてのソフトウェア更新プログラムの状態を表示します。|  
+|**状態 4 - 展開の特定の状態にあるコンピューター (セカンダリ)**|ソフトウェア更新プログラムの展開に対して指定した状態にあるすべてのコンピューターを表示します。|  
+|**状態 5 - 展開内の更新プログラムの状態 (セカンダリ)**|指定した展開の対象となる指定したソフトウェア更新プログラムに対する状態の概要を表示します。|  
+|**状態 6 - 更新プログラムに対して特定の強制状態にあるコンピューター (セカンダリ)**|指定したソフトウェア更新プログラムに対して指定した強制実行状態にあるすべてのコンピューターを表示します。|  
 
-### <a name="software-updates---d-scan"></a>Aggiornamenti software - Analisi D  
+### <a name="software-updates---d-scan"></a>ソフトウェア更新プログラム - D スキャン  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Analisi 1 - Ultimi stati di analisi per raccolta**|Visualizza il numero di computer per una raccolta specifica in ogni stato di analisi conformità restituito dal client nel corso dell'ultima analisi di conformità.|  
-|**Analisi 2 - Ultimi stati di analisi per sito**|Visualizza il numero di computer assegnati a un sito specifico in ogni stato di analisi conformità restituito dai client nel corso dell'ultima analisi di conformità.|  
-|**Analisi 3 - Client di una raccolta che inviano uno stato specifico (secondario)**|Visualizza tutti i computer per una raccolta specifica e uno stato di analisi di conformità specifico nel corso dell'ultima analisi di conformità.|  
-|**Analisi 4 - Client di un sito che inviano uno stato specifico (secondario)**|Visualizza tutti i computer assegnati a un sito specifico con uno stato di analisi di conformità specifico nel corso dell'ultima analisi di conformità.|  
+|**スキャン 1 - コレクションごとの最後のスキャン状態**|指定したコレクションのコンピューターのうち、最後のコンプライアンス スキャン時にクライアントによって返された各コンプライアンス対応状態にあるコンピューターの数を表示します。|  
+|**スキャン 2 - サイトごとの最後のスキャン状態**|指定したサイトに割り当てられたコンピューターのうち、最後のコンプライアンス スキャン時にクライアントによって返された各コンプライアンス対応状態にあるコンピューターの数を表示します。|  
+|**スキャン 3 - 特定の状態を報告するコレクションのクライアント (セカンダリ)**|指定したコレクションのコンピューターのうち、最後のコンプライアンス スキャン時に指定したコンプライアンス対応状態を返したコンピューターをすべて表示します。|  
+|**スキャン 4 - 特定の状態を報告するサイトのクライアント (セカンダリ)**|指定したサイトに割り当てられたコンピューターのうち、最後のコンプライアンス スキャン時に指定したコンプライアンス対応状態を返したコンピューターをすべて表示します。|  
 
-### <a name="software-updates---e-troubleshooting"></a>Aggiornamenti software - Risoluzione dei problemi E  
+### <a name="software-updates---e-troubleshooting"></a>ソフトウェア更新プログラム - E トラブルシューティング  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Risoluzione dei problemi 1 - Errori di analisi**|Visualizza gli errori di analisi nel sito e il numero di computer in cui si verifica ogni errore.|  
-|**Risoluzione dei problemi 2 - Errori di distribuzione**|Visualizza gli errori di distribuzione nel sito e un conteggio dei computer in cui si stanno verificando gli errori.|  
-|**Risoluzione dei problemi 3 - Computer in cui si verificano errori di scansione specifici (secondario)**|Visualizza l'elenco dei computer in cui non è possibile eseguire l'analisi a causa di un errore specifico.|  
-|**Risoluzione dei problemi 4 - Computer in cui si verificano errori di distribuzione specifici (secondario)**|Visualizzare l'elenco dei computer in cui non è possibile eseguire la distribuzione dell'aggiornamento a causa di un errore specifico.|  
+|**トラブルシューティング 1 - スキャン エラー**|サイトで発生したスキャン エラーと、各エラーが発生したコンピューターの数を表示します。|  
+|**トラブルシューティング 2 - 展開エラー**|サイトで発生した展開エラーと、各エラーが発生したコンピューターの数を表示します。|  
+|**トラブルシューティング 3 - 特定のスキャン エラーが発生したコンピューター (セカンダリ)**|指定したエラーによってスキャンに失敗したコンピューターの一覧を表示します。|  
+|**トラブルシューティング 4 - 特定の展開エラーが発生したコンピューター (セカンダリ)**|指定したエラーによって更新プログラムの展開に失敗したコンピューターの一覧を表示します。|  
 
-### <a name="state-migration"></a>Migrazione stato  
+### <a name="state-migration"></a>状態移行  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Informazioni di migrazione dello stato per un computer di origine specifico**|Visualizza le informazioni di migrazione dello stato per un computer specifico.|  
-|**Informazioni di migrazione stato per un punto di migrazione dello stato specifico**|Visualizza le informazioni di migrazione stato per un punto di migrazione dello stato specifico.|  
-|**Punti di migrazione stato per un sito specifico**|Visualizza i punti di migrazione stato per un sito specifico.|  
+|**特定のソース コンピューターの状態移行情報**|指定したソース コンピューターの状態移行情報を表示します。|  
+|**特定の状態移行ポイントの状態移行情報**|指定した状態移行ポイントの状態移行情報を表示します。|  
+|**特定サイトの状態移行ポイント**|指定したサイトの状態移行ポイントを表示します。|  
 
-### <a name="status-messages"></a>Messaggi di stato  
+### <a name="status-messages"></a>ステータス メッセージ  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Tutti i messaggi per un ID messaggio specifico**|Visualizza un elenco di messaggi di stato con un ID messaggio specifico.|  
-|**Client che hanno inviato errori nelle ultime 12 ore per un sito specifico**|Visualizza un elenco di computer e componenti che hanno inviato errori nelle ultime 12 ore e il numero di errori restituiti.|  
-|**Messaggi componente per le ultime 12 ore**|Visualizza un elenco di messaggi componente per le ultime 12 ore per un codice sito, computer e componente specifico.|  
-|**Messaggi componente per l'ultima ora**|Visualizza un elenco di messaggi di stato creati nell'ultima ora da un componente specifico in un computer specifico in un sito specifico di Configuration Manager.|  
-|**Conteggio messaggi componente nell'ultima ora per un computer specifico**|Visualizza il numero di messaggi di stato per componente e gravità riportata nell'ultima ora in un singolo sito specificato.|  
-|**Conteggio errori nelle ultime 12 ore**|Visualizza il numero di messaggi di stato di errore componente server nelle ultime 12 ore.|  
-|**Errori irreversibili (per componente)**|Visualizza un elenco di computer che hanno riportato errori irreversibili per componente.|  
-|**Errori irreversibili (per nome computer)**|Visualizza un elenco di computer che hanno riportato errori irreversibili per nome computer.|  
-|**Ultimi 1.000 messaggi per un computer specifico (errori e avvisi)**|Visualizza un riepilogo degli ultimi 1.000 messaggi di stato errore e avviso componente per un computer specifico.|  
-|**Ultimi 1.000 messaggi per un computer specifico (errori avvisi e informazioni)**|Visualizza un riepilogo degli ultimi 1.000 messaggi di stato errore, avviso e informativi sul componente per un computer specifico.|  
-|**Ultimi 1.000 messaggi per un computer specifico (errori)**|Visualizza un riepilogo degli ultimi 1.000 messaggi di stato errore componente server per un computer specifico.|  
-|**Ultimi 1.000 messaggi per un componente server specifico**|Visualizza un riepilogo dei 1.000 messaggi di stato più recenti per un componente server specifico.|  
+|**特定のメッセージ ID のメッセージすべて**|指定したメッセージ ID を持つステータス メッセージの一覧を表示します。|  
+|**特定のサイトで過去 12 時間以内に発生したエラーを報告したクライアント**|過去 12 時間以内に発生したエラーを報告したコンピューターとコンポーネントの一覧と、報告されたエラーの数を表示します。|  
+|**過去 12 時間以内のコンポーネント メッセージ**|指定したサイト コード、コンピューター、およびコンポーネントの過去 12 時間以内のコンポーネント メッセージの一覧を表示します。|  
+|**過去 1 時間以内のコンポーネント メッセージ**|過去 1 時間以内に作成されたステータス メッセージの一覧を、指定した Configuration Manager サイト内の、指定したコンピューター上の、指定したコンポーネントごとに表示します。|  
+|**特定のサイトでの過去 1 時間以内のコンポーネント メッセージのカウント**|指定したサイトで過去 1 時間以内に報告された、コンポーネントごとのステータス メッセージの数と重要度を表示します。|  
+|**過去 12 時間以内に発生したエラーのカウント**|過去 12 時間以内に発生した、サーバー コンポーネントのエラー ステータス メッセージの数を表示します。|  
+|**致命的エラー (コンポーネントごと)**|致命的エラーを報告したコンピューターの一覧をコンポーネントごとに表示します。|  
+|**致命的エラー (コンピューター名ごと)**|致命的エラーを報告したコンピューターの一覧をコンピューター名ごとに表示します。|  
+|**特定のコンピューターの過去 1000 件のメッセージ (エラーと警告)**|指定したコンピューターの過去 1000 件のエラーと警告についてコンポーネントのステータス メッセージの概要を表示します。|  
+|**特定のコンピューターの過去 1000 件のメッセージ (エラー、警告、情報)**|指定したコンピューターの過去 1000 件のエラー、警告、および情報についてコンポーネントのステータス メッセージの概要を表示します。|  
+|**特定のコンピューターの過去 1000 件のメッセージ (エラー)**|指定したコンピューターの過去 1000 件のエラーについてサーバー コンポーネントのステータス メッセージの概要を表示します。|  
+|**特定のサーバー コンポーネントの過去 1000 件のメッセージ**|指定したサーバー コンポーネントのステータス メッセージのうち、過去 1000 件の概要を表示します。|  
 
-### <a name="status-messages---audit"></a>Messaggi di stato - Controllo  
+### <a name="status-messages---audit"></a>ステータス メッセージ - 監査  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Tutti i messaggi di controllo per un utente specifico**|Visualizza un riepilogo di tutti i messaggi di stato di controllo per un utente specifico. I messaggi di controllo descrivono le azioni eseguite nella console di Configuration Manager che aggiungono, modificano o eliminano oggetti in Configuration Manager.|  
-|**Controllo remoto - Tutti i computer sotto controllo remoto da un utente specifico**|Visualizza un riepilogo dei messaggi di stato che indicano il controllo remoto dei computer client per utente specificato.|  
-|**Controllo remoto - Tutte le informazioni sul controllo remoto**|Visualizza un riepilogo dei messaggi di stato correlati al controllo remoto dei computer client.|  
+|**特定のユーザーの監査メッセージすべて**|指定したユーザーのすべての監査ステータス メッセージの概要を表示します。 監査メッセージには、Configuration Manager コンソールで実行された Configuration Manager でのオブジェクトの追加、変更、および削除の処理が記述されます。|  
+|**リモート コントロール - 特定のユーザーによりリモートで制御されるコンピューターすべて**|クライアント コンピューターのリモート コントロールを示すステータス メッセージの概要を指定したユーザーごとに表示します。|  
+|**リモート コントロール - リモート コントロール情報すべて**|クライアント コンピューターのリモート コントロールに関連するステータス メッセージの概要を表示します。|  
 
-### <a name="task-sequence---deployment-status"></a>Sequenza di attività - Stato distribuzione  
+### <a name="task-sequence---deployment-status"></a>タスク シーケンス - 展開ステータス  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Tutte le risorse di sistema per una distribuzione sequenza attività in uno stato specifico**|Visualizza un elenco dei computer di destinazione per la distribuzione sequenza attività specificata in uno stato di distribuzione specificato.|  
-|**Tutte le risorse di sistema per una distribuzione sequenza attività che si trova in uno stato specifico ed è disponibile ai computer sconosciuti**|Visualizza un elenco dei computer di destinazione per la distribuzione sequenza attività specificata che si trova nello stato di distribuzione specificato.|  
-|**Conteggio delle risorse di sistema che hanno delle distribuzioni sequenza attività assegnate ma non ancora eseguite**|Visualizza il numero di computer che hanno accettato le sequenze attività, ma la sequenza di attività non è stata eseguita.|  
-|**Cronologia di una distribuzione sequenza attività in un computer**|Visualizza lo stato di ogni passaggio della distribuzione sequenza attività specificata nel computer di destinazione specificato. Se non viene restituito alcun record, la sequenza attività non è stata avviata nel computer.|  
-|**Elenco di computer che hanno superato una durata specifica per eseguire una distribuzione sequenza attività**|Visualizza l'elenco dei computer di destinazione che hanno superato la durata specificata per eseguire una sequenza attività.|  
-|**Tempo di esecuzione per una distribuzione sequenza attività specifica in un computer di destinazione specifico**|Visualizza il tempo totale necessario per completare una sequenza attività specificata in un computer di destinazione specificato.|  
-|**Tempo di esecuzione per ogni passaggio della distribuzione sequenza attività in un computer di destinazione specifico**|Visualizza il tempo necessario per completare ogni passaggio della distribuzione sequenza attività specificata nel computer di destinazione specificato.|  
-|**Stato di una distribuzione sequenza attività specifica per un computer specifico**|Visualizza il riepilogo dello stato di una distribuzione sequenza attività specificata in un computer specificato.|  
-|**Stato di una distribuzione della sequenza attività in un computer di destinazione sconosciuto**|Visualizza lo stato della distribuzione sequenza attività specificata nel computer di destinazione sconosciuto specificato.|  
-|**Riepilogo di stato di una distribuzione sequenza attività specifica**|Visualizza un riepilogo dello stato di tutte le risorse che sono state usate come destinazione da una distribuzione.|  
-|**Riepilogo di stato di una distribuzione sequenza attività specifica disponibile ai computer sconosciuti**|Visualizza un riepilogo dello stato di tutte le risorse che sono state usate come destinazione da una distribuzione disponibile a una raccolta che contiene computer sconosciuti.|  
+|**特定の状態にあるタスク シーケンス展開のすべてのシステム リソース**|指定した展開状態にある、指定したタスク シーケンス展開の対象コンピューターが一覧で表示されます。|  
+|**特定の状態にあるタスク シーケンス展開のシステム リソースのうち、不明なコンピューターで利用可能なすべてのシステム リソース**|指定した展開状態にある、指定したタスク シーケンス展開の対象コンピューターが一覧で表示されます。|  
+|**タスク シーケンス展開が割り当てられているが、まだ実行されていないシステム リソースの数**|タスク シーケンスを受け入れたものの、まだ実行していないコンピューターの数が表示されます。|  
+|**コンピューターのタスク シーケンス展開の履歴**|指定した対象コンピューターにある指定したタスク シーケンス展開の各ステップのステータスが表示されます。 レコードがない場合、そのコンピューターでタスク シーケンスは開始していません。|  
+|**タスク シーケンスの展開の実行時間が一定時間を超えたコンピューターの一覧**|タスク シーケンスの展開の実行時間が一定時間を超えた対象コンピューターの一覧が表示されます。|  
+|**特定の対象コンピューターでの特定のタスク シーケンス展開の実行時間**|指定したコンピューターで、指定したタスク シーケンスが正常に完了するまでにかかった合計時間が表示されます。|  
+|**特定の対象コンピューターでのタスク シーケンス展開の各ステップの実行時間**|指定した対象コンピューターで、指定したタスク シーケンス展開の各ステップが完了するまでにかかった時間が表示されます。|  
+|**特定のコンピューターの特定のタスク シーケンス展開のステータス**|指定したコンピューターにおける指定したタスク シーケンス展開のステータスの概要が表示されます。|  
+|**不明な対象コンピューターでのタスク シーケンス展開のステータス**|指定した不明な対象コンピューターにおける指定したタスク シーケンス展開のステータスが表示されます。|  
+|**特定のタスク シーケンス展開のステータスの概要**|展開の対象となっているすべてのリソースのステータス概要が表示されます。|  
+|**不明なコンピューターで利用可能な、特定のタスク シーケンス展開のステータスの概要**|不明なコンピューターが含まれるコレクションから利用可能な、指定した展開の対象となっているすべてのリソースのステータス概要が表示されます。|  
 
-### <a name="task-sequence---deployments"></a>Sequenza attività - Distribuzioni  
+### <a name="task-sequence---deployments"></a>タスク シーケンス - 展開  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Tutte le risorse di sistema attualmente in un gruppo o fase specifici di una distribuzione sequenza attività specificata**|Visualizza un elenco di computer che sono attualmente in esecuzione in una fase o in un gruppo specifici di una distribuzione sequenza attività specificata.|  
-|**Tutte le risorse di sistema in cui una distribuzione di sequenza attività ha riportato errori in un gruppo o in una fase specifici**|Visualizza un elenco di computer che hanno riportato errori in una fase o in un gruppo specifici della distribuzione sequenza attività specificata.|  
-|**Tutte le distribuzioni di sequenza attività**|Visualizza i dettagli di tutte le distribuzioni sequenza attività inizializzate dal sito corrente.|  
-|**Tutte le distribuzioni di sequenza attività disponibili nei computer sconosciuti**|Visualizza i dettagli di tutte le distribuzioni sequenza attività che sono inizializzate dal sito e distribuite alle raccolte che contengono computer sconosciuti.|  
-|**Numero di errori in ogni fase o gruppo di una sequenza attività specifica**|Visualizza il numero di errori in ogni fase o gruppo della sequenza attività specifica.|  
-|**Numero di errori in ogni fase o gruppo di una distribuzione sequenza attività specifica**|Visualizza il numero di errori in ogni fase o gruppo della distribuzione sequenza attività specifica.|  
-|**Stato di distribuzione di tutte le distribuzioni sequenza attività**|Visualizza lo stato generale di tutte le distribuzioni sequenza attività.|  
-|**Stato di una sequenza attività in esecuzione**|Visualizza lo stato della sequenza attività specificata.|  
-|**Stato di una distribuzione della sequenza attività in esecuzione**|Visualizza le informazioni di riepilogo per la distribuzione della sequenza attività specificata.|  
-|**Stato di tutte le distribuzioni per una sequenza attività specifica**|Visualizza lo stato di tutte le distribuzioni per la sequenza attività specificata.|  
-|**Report di riepilogo per una distribuzione sequenza attività**|Visualizza le informazioni di riepilogo per la distribuzione della sequenza attività specificata.|  
+|**特定のタスク シーケンス展開の特定グループまたは段階で現在実行中のすべてのシステム リソース**|指定したタスク シーケンス展開の指定したグループまたは段階で現在実行されているコンピューターの一覧が表示されます。|  
+|**特定のグループまたはフェーズでタスク シーケンスの展開が失敗したすべてのシステム リソース**|指定したタスク シーケンス展開の指定したグループ/フェーズで失敗したコンピューターのリストが表示されます。|  
+|**すべてのタスク シーケンス展開**|現在のサイトから開始されたすべてのタスク シーケンス展開の詳細が表示されます。|  
+|**不明なコンピューターで利用可能なすべてのタスク シーケンス展開**|不明なコンピューターを含むコレクションに展開されているサイトから開始されたすべてのタスク シーケンス展開の詳細が表示されます。|  
+|**特定のタスク シーケンスの各段階または各グループでのエラー数**|指定したタスク シーケンスの各段階または各グループでのエラー数が表示されます。|  
+|**特定のタスク シーケンス展開の各段階または各グループでのエラー数**|指定したタスク シーケンス展開の各段階または各グループでのエラー数が表示されます。|  
+|**すべてのタスク シーケンス展開の展開ステータス**|すべてのタスク シーケンス展開の全体的な進行状況が表示されます。|  
+|**実行中のタスク シーケンスの進行状況**|指定したタスク シーケンスの進行状況が表示されます。|  
+|**実行中のタスク シーケンス展開の進行状況**|指定したタスク シーケンス展開の概要情報が表示されます。|  
+|**特定のタスク シーケンスのすべての展開の進行状況**|指定したタスク シーケンスのすべての展開の進行状況が表示されます。|  
+|**タスク シーケンス展開の概要レポート**|指定したタスク シーケンス展開の概要情報が表示されます。|  
 
-### <a name="task-sequence---progress"></a>Sequenza attività - Progresso  
+### <a name="task-sequence---progress"></a>タスク シーケンス - 進行状況  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Grafico - Avanzamento settimanale di una sequenza attività**|Visualizza l'avanzamento settimanale di una sequenza attività iniziando dal giorno della prima distribuzione.|  
-|**Stato di una sequenza attività**|Visualizza lo stato della sequenza attività specificata.|  
-|**Avanzamento di tutte le sequenze attività**|Visualizza un riepilogo dello stato di tutte le sequenze attività.|  
-|**Avanzamento delle sequenze attività per le distribuzioni del sistema operativo**|Visualizza l'avanzamento di tutte le sequenze attività che distribuiscono sistemi operativi.|  
-|**Stato di tutti i computer sconosciuti**|Visualizza un elenco di computer che erano sconosciuti nel momento in cui hanno eseguito una distribuzione sequenza attività e ora sono computer noti.|  
+|**グラフ - タスク シーケンスの週あたりの経過**|展開日を開始日として、タスク シーケンスの週あたりの進行状況が表示されます。|  
+|**タスク シーケンスの進行状況**|指定したタスク シーケンスの進行状況が表示されます。|  
+|**すべてのタスク シーケンスの進行状況**|すべてのタスク シーケンスの進行状況の概要が表示されます。|  
+|**オペレーティング システム展開のタスク シーケンスの進行状況**|オペレーティング システムを展開するすべてのタスク シーケンスの進行状況が表示されます。|  
+|**すべての不明なコンピューターのステータス**|現在既知であるかどうかを問わず、タスク シーケンス展開の実行時に不明であったコンピューターの一覧が表示されます。|  
 
-### <a name="task-sequences---references"></a>Sequenze attività - Riferimenti  
+### <a name="task-sequences---references"></a>タスク シーケンス - 参照  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Contenuto a cui fa riferimento una sequenza attività specifica**|Visualizza il contenuto a cui fa riferimento una sequenza attività specifica.|  
+|**特定のタスク シーケンスで参照されるコンテンツ**|指定したタスク シーケンスで参照されるコンテンツが表示されます。|  
 
-### <a name="upgrade-assessment"></a>Valutazione aggiornamento  
+### <a name="upgrade-assessment"></a>アップグレード評価  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Stato applicazioni per un computer specifico**|Visualizza la compatibilità delle applicazioni installate in un computer per un sistema operativo specifico.|  
-|**Stato applicazioni per computer di una raccolta specifica**|Visualizza lo stato generale dei computer di una raccolta per consentirne la valutazione per l'aggiornamento a un sistema operativo specifico in base alle applicazioni in ogni computer. Usare questo report per determinare quali computer dispongono di applicazioni compatibili prima di distribuire un sistema operativo.|  
-|**Riepilogo stato applicazioni**|Visualizza un riepilogo dello stato delle applicazioni per un sistema operativo specifico. Usare questo report per determinare la compatibilità delle applicazioni prima di distribuire un sistema operativo.|  
-|**Computer con un'applicazione specifica installata**|Visualizza i computer con un'applicazione specifica installata.|  
-|**Computer con un dispositivo hardware specifico**|Visualizza i computer che dispongono di un dispositivo hardware specifico.|  
-|**Stato dispositivi hardware per un computer specifico**|Visualizza lo stato di compatibilità dei dispositivi hardware di un sistema operativo specifico presenti in un computer specifico.|  
-|**Stato dispositivi hardware per computer di una raccolta specifica**|Visualizza lo stato generale per i dispositivi hardware di un sistema operativo specifico per i computer in una raccolta specifica. Usare questo report per determinare la compatibilità dei dispositivi hardware prima di distribuire un sistema operativo.|  
-|**Riepilogo stato dispositivi hardware**|Visualizza un riepilogo dello stato dei dispositivi hardware per un sistema operativo specifico. Usare questo report per determinare la compatibilità dei dispositivi hardware prima di distribuire un sistema operativo.|  
-|**Requisiti hardware del sistema operativo**|Visualizza i criteri minimi e consigliati dell'hardware per i sistemi operativi.|  
-|**Stato requisiti del sistema operativo per computer di una raccolta specifica**|Visualizza lo stato dei requisiti del sistema operativo del sistema operativo specifico per i computer in una raccolta specifica. Usare questo report per determinare se un computer soddisfa i requisiti specifici di un sistema operativo per velocità del processore CPU, dimensioni della memoria e spazio sul disco rigido.|  
-|**Riepilogo valutazione aggiornamento**|Visualizza il riepilogo di valutazione dell'aggiornamento. Usare questo report per valutare lo stato generale per la compatibilità degli aggiornamenti.|  
+|**特定コンピューターのアプリケーション ステータス**|コンピューターにインストールされているアプリケーションの、指定したオペレーティング システムとの互換性が表示されます。|  
+|**特定コレクション内のコンピューターのアプリケーション ステータス**|コレクション内のコンピューターの全体的なステータスが表示されます。各コンピューターのアプリケーションに基づいて、指定したオペレーティング システムにアップグレードするコンピューターを評価するのに使用されます。 このレポートを使用すると、オペレーティング システムを展開する前に、互換性のあるアプリケーションがインストールされているコンピューターを特定できます。|  
+|**アプリケーション ステータスの概要**|指定したオペレーティング システムのアプリケーション ステータスの概要が表示されます。 このレポートを使用すると、オペレーティング システムを展開する前にアプリケーションの互換性を確認できます。|  
+|**特定のアプリケーションがインストールされているコンピューター**|指定したアプリケーションがインストールされているコンピューターが表示されます。|  
+|**特定のハードウェア デバイスを搭載するコンピューター**|特定のハードウェア デバイスを搭載するコンピューターが表示されます。|  
+|**特定コンピューターのハードウェア デバイスのステータス**|指定したコンピューターで検出された、指定したオペレーティング システムに対するハードウェア デバイスの互換性ステータスが表示されます。|  
+|**特定コレクション内コンピューターのハードウェア デバイスのステータス**|指定したコレクション内のコンピューターで、指定したオペレーティング システムについて、ハードウェア デバイスの全体的なステータスが表示されます。 このレポートを使用すると、オペレーティング システムを展開する前にハードウェアの互換性を確認できます。|  
+|**ハードウェア デバイスのステータスの概要**|指定したオペレーティング システムに対応したハードウェア デバイスのステータスの概要が表示されます。 このレポートを使用すると、オペレーティング システムを展開する前にハードウェア デバイスの互換性を確認できます。|  
+|**オペレーティング システムのハードウェア要件**|オペレーティング システムの最小および推奨ハードウェア条件が表示されます。|  
+|**特定コレクション内コンピューターのオペレーティング システム要件のステータス**|指定したコレクション内のコンピューターについて、指定したオペレーティング システムの要件のステータスが表示されます。 このレポートを使用すると、コンピューターが、指定したオペレーティング システムの要件 (CPU プロセッサ速度、メモリ サイズ、ハード ディスク領域) を満たしているかどうかを判断できます。|  
+|**アップグレード評価の概要**|アップグレード評価の概要が表示されます。 このレポートを使用すると、アップグレードの互換性の全体的なステータスを評価できます。|  
 
-### <a name="user---device-affinity"></a>Utente - Affinità dispositivo  
+### <a name="user---device-affinity"></a>ユーザー - デバイスのアフィニティ  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Associazioni affinità-utente dispositivo in sospeso per raccolta**|Questo report mostra tutte le assegnazioni affinità utente dispositivo basate sui dati di uso per i membri di una raccolta.|  
-|**Associazioni affinità-utente dispositivo per raccolta**|Visualizza tutte le associazioni dispositivo utente per la raccolta selezionata e raggruppa i risultati per tipo di raccolta (ad esempio, utente o dispositivo).|  
+|**保留中のコレクション別ユーザーとデバイスのアフィニティの関連付け**|このレポートには、コレクションのメンバーについて、保留中のすべてのユーザーとデバイスのアフィニティの割り当てが使用状況データに基づいて表示されます。|  
+|**コレクション別ユーザーとデバイスのアフィニティ関連付け**|指定したコレクションのすべてのユーザー デバイスの関連付けを表示し、コレクションの種類 (ユーザーやデバイスなど) で結果をグループ化します。|  
 
-### <a name="user-data-and-profiles-health"></a>Integrità profili e dati utente  
+### <a name="user-data-and-profiles-health"></a>ユーザー データとプロファイルのヘルス  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Rapporto di stato di indirizzamento cartelle - Dettagli**|Visualizza i dettagli dello stato di integrità del reindirizzamento cartelle per ciascuna delle cartelle reindirizzate per un utente specifico.|  
-|**Rapporto di stato di profili utente mobili - Dettagli**|Visualizza i dettagli dello stato di integrità del profilo utente mobile per un utente specifico.|  
-|**Rapporto di stato di profili e dati utente - Dettagli**|Visualizza i dettagli dell'errore o dell'avviso per il reindirizzamento cartelle o il profilo utente mobile quando viene eseguito il drill-down nel conteggio del report di riepilogo.|  
-|**Rapporto di stato di profili e dati utente - Riepilogo**|Visualizza il riepilogo degli stati di integrità per il reindirizzamento cartelle e i profili utente mobili.|  
+|**フォルダー リダイレクトのヘルス レポート - 詳細**|特定のユーザーの各リダイレクト フォルダーごとに、フォルダー リダイレクトのヘルス状態の詳細が表示されます。|  
+|**ローミング ユーザー プロファイルのヘルス レポート - 詳細**|指定したユーザーのローミング ユーザー プロファイルのヘルス状態の詳細が表示されます。|  
+|**ユーザー データとプロファイルのヘルス レポート - 詳細**|概要レポートからカウントへのドリルダウン時の、フォルダー リダイレクトまたはローミング ユーザー プロファイルのエラーまたは警告の詳細が表示されます。|  
+|**ユーザー データとプロファイルのヘルス レポート - 概要**|フォルダー リダイレクトとローミング ユーザー プロファイルのヘルス状態の概要が表示されます。|  
 
-### <a name="users"></a>Utenti  
+### <a name="users"></a>Users  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Computer per un nome utente specifico**|Visualizza l'elenco dei computer usati da un utente specifico.|  
-|**Conteggio utenti per dominio**|Visualizza il numero di utenti in ciascun dominio.|  
-|**Utenti in un dominio specifico**|Visualizza un elenco di utenti e relativi computer in un dominio specifico.|  
+|**特定のユーザー名に対するコンピューター**|指定したユーザーによって使用されたコンピューターの一覧が表示されます。|  
+|**ドメインごとのユーザーのカウント**|各ドメイン内のユーザー数を表示します。|  
+|**特定のドメイン内のユーザー**|指定したドメイン内のユーザーとそのコンピューターの一覧が表示されます。|  
 
-### <a name="virtual-applications"></a>Applicazioni virtuali  
+### <a name="virtual-applications"></a>仮想アプリケーション  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Risultati ambiente virtuale App-V**|Visualizza le informazioni su un ambiente virtuale specifico che si trova in uno stato specifico per una raccolta specifica.|  
-|**Risultati ambiente virtuale App-V per asset**|Visualizza informazioni su un ambiente virtuale specifico per un asset specifico e qualsiasi tipo di distribuzione per l'ambiente virtuale specifico.|  
-|**Stato ambiente virtuale App-V**|Visualizza informazioni di conformità per un ambiente virtuale specifico per una raccolta specifica.|  
-|**Computer con un'applicazione virtuale specifica**|Visualizza il riepilogo dei computer che dispongono del collegamento applicazione App-V creato usando Application Virtualization Management Sequencer.|  
-|**Computer con un pacchetto applicazione virtuale specifico**|Visualizza il riepilogo dei computer che dispongono del pacchetto applicazione App-V specificato.|  
-|**Conteggio di tutte le istanze delle applicazioni virtuali**|Visualizza il conteggio dei pacchetti applicazione App-V rilevati.|  
-|**Conteggio di tutte le istanze delle applicazioni virtuali**|Visualizza il conteggio delle applicazioni App-V rilevate.|  
+|**App-V 仮想環境の結果**|指定したコレクションの、指定した状態になっている指定の仮想環境に関する情報が表示されます。|  
+|**資産に関する App-V 仮想環境の結果**|指定した資産の仮想環境と、指定した仮想環境の任意の展開の種類に関する情報が表示されます。|  
+|**App-V 仮想環境のステータス**|指定したコレクションの指定した仮想環境のコンプライアンス情報が表示されます。|  
+|**特定の仮想アプリケーションが存在するコンピューター**|Application Virtualization 管理シーケンサーで作成された、指定した App-V アプリケーションのショートカットがあるコンピューターの概要が表示されます。|  
+|**特定の仮想アプリケーション パッケージが存在するコンピューター**|指定した App-V アプリケーション パッケージがあるコンピューターの概要が表示されます。|  
+|**仮想アプリケーション パッケージのすべてのインスタンスのカウント**|検出された App-V アプリケーション パッケージの数を表示します。|  
+|**仮想アプリケーションのすべてのインスタンスのカウント**|検出された App-V アプリケーションの数を表示します。|  
 
-### <a name="wake-on-lan"></a>Riattivazione LAN  
+### <a name="wake-on-lan"></a>Wake On LAN  
 
-|Nome report|Descrizione|  
+|レポート名|説明|  
 |-----------------|-----------------|  
-|**Tutti i computer usati come destinazione per l'attività riattivazione LAN**|Visualizza un elenco di computer che sono stati usati come destinazione per l'attività riattivazione LAN durante una distribuzione del tipo specificato.|  
-|**Tutti gli oggetti che hanno delle attività di riattivazione in sospeso**|Visualizza gli oggetti che sono pianificati per la riattivazione.|  
-|**Tutti i siti che sono abilitati per la riattivazione LAN**|Visualizza un elenco di tutti i siti nella gerarchia che sono abilitati per la riattivazione LAN.|  
-|**Errori ricevuti durante l'invio dei pacchetti di riattivazione per un periodo definito**|Visualizza gli errori ricevuti durante l'invio dei pacchetti di riattivazione ai computer per un periodo definito.|  
-|**Cronologia dell'attività di riattivazione LAN**|Visualizza una cronologia delle attività di riattivazione eseguite dopo un determinato periodo.|  
-|**Dettagli dello stato della distribuzione del proxy di riattivazione**|Visualizza informazioni sullo stato della distribuzione del proxy di riattivazione per ciascun dispositivo di una raccolta specifica.|  
-|**Riepilogo dello stato della distribuzione del proxy di riattivazione**|Visualizza un riepilogo dello stato della distribuzione del proxy di riattivazione di una raccolta specificata.|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+|**Wake On LAN アクティビティの対象となるすべてのコンピューター**|指定した種類の展開中に Wake On LAN アクティビティの対象となっているすべてのコンピューターの一覧が表示されます。|  
+|**ウェイクアップ アクティビティを保留しているすべてのオブジェクト**|ウェイクアップをスケジュール設定したオブジェクトが表示されます。|  
+|**Wake On LAN に対応可能なすべてのサイト**|階層内で Wake On LAN に対応可能なすべてのサイトの一覧が表示されます。|  
+|**定義した期間だけウェイクアップ パケットを送信しているときに受信したエラー**|定義した期間にウェイクアップ パケットをコンピューターに送信しているときに受信したエラーが表示されます。|  
+|**Wake On LAN アクティビティの履歴**|一定期間の後に発生したウェイクアップ アクティビティの履歴が表示されます。|  
+|**ウェイクアップ プロキシの展開状態の詳細**|指定したコレクション内にあるデバイスごとにウェイクアップ プロキシの展開ステータスに関する情報が表示されます。|  
+|**ウェイクアップ プロキシの展開状態の概要**|指定したコレクションのウェイクアップ プロキシの展開ステータスの概要が表示されます。|  

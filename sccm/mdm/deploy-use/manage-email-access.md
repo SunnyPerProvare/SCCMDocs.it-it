@@ -1,365 +1,361 @@
 ---
-title: Gestire l&quot;accesso alla posta elettronica | Microsoft Docs
-description: Informazioni su come usare l&quot;accesso condizionale di System Center Configuration Manager per gestire l&quot;accesso alla posta elettronica di Exchange.
+title: "電子メール アクセスの管理 | Microsoft Docs"
+description: "System Center Configuration Manager の条件付きアクセスを使用して Exchange メールへのアクセスを管理する方法について説明します。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fa648e73-5fb8-4818-ab57-7466ffaf888e
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: a7b74ba1d16216983251d19adfa4b78a7e0b66e4
-ms.contentlocale: it-it
-ms.lasthandoff: 03/06/2017
-
-
+ms.openlocfilehash: a5c2a8912cd2ef95a778b81d0b7f1f98315b8413
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-email-access-in-system-center-configuration-manager"></a>Gestire l'accesso alla posta elettronica in System Center Configuration Manager
+# <a name="manage-email-access-in-system-center-configuration-manager"></a>System Center Configuration Manager でのメール アクセスの管理
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Usare l'accesso condizionale di System Center Configuration Manager per gestire l'accesso alla posta elettronica di Exchange in base alle condizioni specificate.  
+System Center Configuration Manager の条件付きアクセスを使用して、指定した条件に基づいて Exchange メールへのアクセスを管理します。  
 
-È possibile gestire l'accesso a:  
+以下のものへのアクセスを管理できます。  
 
--   Microsoft Exchange locale  
+-   Microsoft Exchange On-premises  
 
 -   Microsoft Exchange Online  
 
--   Exchange Online dedicato
+-   Exchange Online Dedicated
 
-È possibile controllare l'accesso a Exchange Online ed Exchange locale dal client di posta elettronica predefinito nelle seguenti piattaforme:  
+次のプラットフォームでは、組み込みの電子メール クライアントから Exchange Online と Exchange On-premises へのアクセスを制御できます。  
 
--   Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive  
+-   Android 4.0 以降、Samsung KNOX Standard 4.0 以降  
 
--   iOS 7.1 e versioni successive  
+-   iOS 7.1 以降  
 
--   Windows Phone 8.1 e versioni successive  
+-   Windows Phone 8.1 以降  
 
--   Applicazione di posta elettronica in Windows 8.1 e versioni successive
+-   Windows 8.1 以降でのメール アプリケーション
 
-Le applicazione desktop di Office possono accedere a Exchange Online nei PC che eseguono:  
+以下を実行している PC で、Office デスクトップ アプリケーションから Exchange Online にアクセスできます。  
 
--   Office Desktop 2013 e versioni successive con l' [autenticazione moderna](https://support.office.com/en-US/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a) abilitata.  
+-   [最新の認証](https://support.office.com/en-US/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a) が有効にされた Office デスクトップ 2013 以降。  
 
--   Windows 7.0 o Windows 8.1  
+-   Windows 7.0 または Windows 8.1  
 
 > [!NOTE]  
->  I PC devono essere aggiunti a un dominio oppure essere conformi ai criteri impostati in Intune.  
+>  PC はドメインに参加しているか、Intune で設定されたポリシーに準拠している必要があります。  
 
 
-## <a name="device-requirements"></a>Requisiti dei dispositivi
- Se si configura l'accesso condizionale, prima che un utente possa connettersi alla posta elettronica, il dispositivo in uso:  
+## <a name="device-requirements"></a>デバイスの要件
+ 条件付きアクセスを構成すると、ユーザーが電子メールに接続するには、使用するデバイスが以下の条件を満たさなくてはならなくなります。  
 
--   Deve essere registrato in Intune o essere un PC aggiunto a un dominio.  
+-   Intune に登録されているか、ドメインに参加する PC である。  
 
--   Deve essere registrato in Azure Active Directory. La registrazione viene eseguita automaticamente quando il dispositivo è registrato in Intune (solo per Exchange Online). Inoltre, l'ID di Exchange ActiveSync del client deve essere registrato con Azure Active Directory (non applicabile a dispositivi Windows e Windows Phone collegati a Exchange in locale).  
+-   デバイスが Azure Active Directory に登録されている (デバイスが Intune に登録されている場合は、自動的に登録されます) (Exchange Online のみ)。 また、クライアントの Exchange ActiveSync ID が Azure Active Directory に登録されている必要があります (Exchange On-premises に接続している Windows および Windows Phone デバイスには該当しません)。  
 
-     Per un PC aggiunto a un dominio, è necessario impostarlo in modo che venga registrato automaticamente con Azure Active Directory.  La sezione**Accesso condizionale per i PC** dell'argomento [Gestire l'accesso ai servizi in System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md) illustra il set completo di requisiti per abilitare l'accesso condizionale per i PC.  
+     ドメインに参加している PC の場合、Azure Active Directory に自動的に登録するように設定する必要があります。  「[System Center Configuration Manager でサービスへのアクセスを管理する](../../protect/deploy-use/manage-access-to-services.md)」トピックの「**PC の条件付きアクセス**」セクションでは、PC の条件付きアクセスを有効にするためのすべての要件を示します。  
 
--   Deve essere compatibile con i criteri di compatibilità di Configuration Manager distribuiti nel dispositivo  
+-   そのデバイスに展開されているすべての Configuration Manager コンプライアンス ポリシーを遵守している。  
 
- Se non viene soddisfatta una condizione di accesso condizionale, viene visualizzato uno dei due messaggi seguenti quando l'utente esegue l'accesso:  
+ 条件付きアクセス条件が満たされない場合、ユーザーにはログイン時に以下のうちのいずれかのメッセージが表示されます。  
 
--   Se il dispositivo non è registrato in Intune o in Azure Active Directory, viene visualizzato un messaggio con istruzioni su come installare l'app Portale aziendale, registrare il dispositivo e, per dispositivi Android e iOS, attivare la posta elettronica che associa l'ID di Exchange ActiveSync del dispositivo al record del dispositivo in Azure Active Directory.  
+-   デバイスが Intune に登録されていないか、Azure Active Directory に登録されていない場合は、ポータル サイト アプリのインストールとデバイスの登録の手順が示されているメッセージが表示されます。Android および iOS デバイスの場合は、メールをアクティブ化する手順も示されます。アクティブ化によって、デバイスの Exchange ActiveSync ID と Azure Active Directory 内のデバイス レコードが関連付けられます。  
 
--   Se il dispositivo non è conforme, viene visualizzato un messaggio che indirizza l'utente al portale Web di Intune dove sono disponibili informazioni sul problema e su come risolverlo.  
+-   デバイスがポリシーに準拠していない場合は、ユーザーを Intune Web ポータルに導くメッセージが表示されます。このポータルで、問題とその修復方法に関する情報を確認することができます。  
 
-**Per i dispositivi mobili:**
+**モバイル デバイスの場合:**
 
-È possibile limitare l'accesso a **Outlook Web Access (OWA)** in Exchange Online quando si accede da un browser di dispositivi **iOS** e **Android** .  L'accesso verrà consentito solo da browser supportati di dispositivi compatibili:
+**iOS** および **Android** デバイスのブラウザーからアクセスされるときの Exchange Online 上の **Outlook Web Access (OWA)** へのアクセスを制限することができます。  準拠デバイスでの、サポートされる以下のブラウザーからのアクセスのみ許可されます。
 
 * Safari (iOS)
 * Chrome (Android)
-* Managed Browser (iOS e Android)
+* 管理対象ブラウザー (iOS と Android)
 
-I browser non supportati verranno bloccati. Non sono supportate le app OWA per iOS e Android.  Devono essere bloccate usando le regole delle attestazioni ADFS:
-* Configurare le regole delle attestazioni ADFS per bloccare i protocolli di autenticazione non moderni. Le istruzioni dettagliate sono riportate nello scenario 3: [Bloccare completamente l'accesso esterno a Office 365, ad eccezione delle applicazioni basate su browser](https://technet.microsoft.com/library/dn592182.aspx).
+サポートされていないブラウザーはブロックされます。IOS および Android 用の OWA アプリはサポートされていません。  ADFS 要求規則を介してこれらをブロックする必要があります。
+* 最新ではない認証プロトコルをブロックするように ADFS 要求規則を設定します。 詳しい手順は、シナリオ 3 - [ブラウザー ベースのアプリケーション以外の O365 への外部アクセスをすべてブロックする](https://technet.microsoft.com/library/dn592182.aspx)に関するページを参照してください。
 
- **Per i PC:**  
+ **PC の場合:**  
 
--   Se il requisito dei criteri di accesso condizionale prevede che siano consentiti dispositivi **aggiunti a un dominio** o **conformi**, viene visualizzato un messaggio con istruzioni su come registrare il dispositivo. Se il PC non soddisfa alcun requisito, all'utente verrà richiesto di registrare il dispositivo in Intune.  
+-   条件付きアクセス ポリシーの要件が **[ドメインに参加する]** または **[準拠]**を許可することである場合、デバイスを登録する方法についての手順が示されているメッセージが表示されます。 PC がどちらの要件も満たさない場合、ユーザーはデバイスを Intune に登録するように求められます。  
 
--   Se i requisiti del criterio di accesso condizionale è impostato in modo da consentire solo dispositivi Windows aggiunti a un dominio, il dispositivo viene bloccato e viene visualizzato un messaggio che indica all'utente di contattare l'amministratore IT.  
+-   条件付きアクセス ポリシーの要件がドメインに参加している Windows デバイスのみを許可するように設定されている場合は、デバイスはブロックされ、IT 管理者に問い合わせるようにメッセージが表示されます。  
 
- È possibile bloccare l'accesso alla posta elettronica di Exchange dal client di posta elettronica Exchange ActiveSync integrato dei dispositivi sulle piattaforme seguenti:  
+ Exchange ActiveSync 電子メール クライアントを組み込まれた、以下のプラットフォームのデバイスから Exchange 電子メールへのアクセスをブロックできます。  
 
--   Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive  
+-   Android 4.0 以降、Samsung KNOX Standard 4.0 以降  
 
--   iOS 7.1 e versioni successive  
+-   iOS 7.1 以降  
 
--   Windows Phone 8.1 e versioni successive  
+-   Windows Phone 8.1 以降  
 
--   L'applicazione **Posta elettronica** su Windows 8.1 e versioni successive  
+-   Windows 8.1 以降での **メール** アプリケーション  
 
- L'app Outlook per iOS e Android e la versione desktop di Outlook 2013 e versioni precedenti sono supportate solo per Exchange Online.  
+ iOS と Android 用の Outlook アプリ、および Outlook デスクトップ 2013 以上がサポートされるのは、Exchange Online に限られます。  
 
- **Exchange Connector locale** tra Configuration Manager ed Exchange è necessario per il funzionamento dell'accesso condizionale.  
+ 条件付きアクセスが機能するには、Configuration Manager と Exchange 間に **On-Premises Exchange Connector** が必要です。  
 
- È possibile configurare un criterio di accesso condizionale per Exchange locale dalla console di Configuration Manager. Quando si configura un criterio di accesso condizionale per Exchange Online, è possibile iniziare il processo nella console di Configuration Manager che avvia la console di Intune dove è possibile completare il processo.  
+ Configuration Manager コンソールから、Exchange On-premises の条件付きアクセス ポリシーを構成できます。 Exchange Online 用の条件付きアクセス ポリシーを構成する場合、Configuration Manager コンソールでプロセスを開始できます。これにより、Intune コンソールが起動し、そこでプロセスを完了することができます。  
 
-## <a name="configure-conditional-access"></a>Configurare l'accesso condizionale
-### <a name="step-1-evaluate-the-effect-of-the-conditional-access-policy"></a>Passaggio 1: Valutare l'effetto dei criteri di accesso condizionale  
- Dopo aver configurato **Exchange Connector locale**, è possibile usare il report **Elenco di dispositivi per stato di accesso condizionale** di Configuration Manager per identificare i dispositivi che non potranno accedere a Exchange dopo aver configurato i criteri di accesso condizionale. Questo report richiede inoltre:  
+## <a name="configure-conditional-access"></a>条件付きアクセスの構成
+### <a name="step-1-evaluate-the-effect-of-the-conditional-access-policy"></a>手順 1. 条件付きアクセス ポリシーの効果を評価する  
+ **オンプレミスの Exchange Connector** を構成した後、Configuration Manager の**条件付きアクセスの状態ごとのデバイスの一覧**レポートを使用して、条件付きアクセス ポリシーを構成した後に Exchange へのアクセスがブロックされるデバイスを識別できます。 このレポートには以下も必要です。  
 
--   Una sottoscrizione a Intune  
+-   Intune のサブスクリプション  
 
--   Il punto di connessione del servizio deve essere configurato e distribuito  
+-   サービス接続ポイントを構成して配置する必要があります。  
 
- Nei parametri del report selezionare il gruppo Intune da valutare e, se necessario, le piattaforme del dispositivo a cui si vuole applicare i criteri.  
+ レポート パラメーターで、評価する Intune グループを選び、必要に応じて、ポリシーを適用するデバイス プラットフォームを選びます。  
 
- Per altre informazioni sull'esecuzione dei report, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+ レポートの実行方法の詳細については、「[System Center Configuration Manager のレポート](../../core/servers/manage/reporting.md)」を参照してください。  
 
- Dopo aver eseguito il report, esaminare le quattro colonne seguenti per determinare se un utente verrà bloccato:  
+ レポートを実行した後、ユーザーをブロックするかどうかを判断するために、次の 4 つの列を調べます。  
 
--   **Canale di gestione**: indica se il dispositivo è gestito da Intune, Exchange ActiveSync o entrambi.  
+-   **[管理チャネル]** - デバイスが Intune、Exchange ActiveSync、またはその両方によって管理されているかどうかを示します。  
 
--   **Registrato con AAD**: indica se il dispositivo è registrato con Azure Active Directory (Aggiunta all'area di lavoro).  
+-   **[AAD に登録済み]** - デバイスが Azure Active Directory に登録されている (社内参加と呼ばれます) かどうかを示します。  
 
--   **Conforme**: indica se il dispositivo è conforme ai criteri di conformità distribuiti.  
+-   **[準拠]** - デバイスが、展開したすべてのコンプライアンス ポリシーに準拠しているかどうかを示します。  
 
--   **Attivato da EAS**: i dispositivi iOS e Android devono avere un ID Exchange ActiveSync associato al record di registrazione del dispositivo in Azure Active Directory. Ciò si verifica quando l'utente fa clic sul link **Attiva posta elettronica** nell'e-mail in quarantena.  
+-   **[EAS アクティブ化]** - iOS および Android デバイスで、Exchange ActiveSync ID が Azure Active Directory のデバイス登録レコードに関連付けられている必要があります。 これは、ユーザーが検疫電子メールで [ **電子メールのアクティブ化** ] のリンクをクリックしたときに発生します。  
 
     > [!NOTE]  
-    >  Per i dispositivi Windows Phone un valore viene sempre visualizzato in questa colonna.  
+    >  Windows Phone デバイスは、常にこの列の値を表示します。  
 
- L'accesso ad Exchange da parte dei dispositivi che appartengono a un gruppo di destinazione o a una raccolta verrà bloccato a meno che i valori delle colonne non corrispondano a quelli elencati nella tabella seguente:  
+ 対象グループまたはコレクションの一部であるデバイスは、列の値が以下の表に示されている値と一致しない限り、Exchange にアクセスできないようにブロックされます。  
 
-|Canale di gestione|AAD registrato|conformi|Attivato da EAS|Azione risultante|  
+|[管理チャネル]|AAD に登録済み|[準拠]|[EAS アクティブ化]|結果の動作|  
 |------------------------|--------------------|---------------|-------------------|----------------------|  
-|**Gestito da Microsoft Intune ed Exchange ActiveSync**|Sì|Sì|Viene visualizzato**Sì** o **No** |Accesso alla posta elettronica consentito|  
-|Qualsiasi altro valore|No|No|Non viene visualizzato alcun valore|Accesso alla posta elettronica bloccato|  
+|**Microsoft Intune および Exchange ActiveSync による管理の対象**|○|○|[**はい** ] または [ **いいえ** ] が表示されます|電子メール アクセスが許可される|  
+|その他の値|いいえ|いいえ|値が表示されない|電子メール アクセスがブロックされる|  
 
- È possibile esportare il contenuto del report e usare la colonna **Indirizzo di posta elettronica** per informare gli utenti che verranno bloccati.  
+ レポートの内容をエクスポートし、 **[電子メール アドレス]** 列を使って、ブロックされることをユーザーに通知できます。  
 
-### <a name="step-2-configure-user-groups-or-collections-for-the-conditional-access-policy"></a>Passaggio 2: Configurare gruppi di utenti o raccolte per i criteri di accesso condizionale  
- I criteri di accesso condizionale sono destinati a diversi gruppi o raccolte di utenti in base ai tipi di criteri. Questi gruppi contengono gli utenti a cui saranno destinati i criteri o che ne saranno esenti. Quando a un utente viene destinato un criterio, ogni dispositivo in uso deve essere conforme per accedere alla posta elettronica.  
+### <a name="step-2-configure-user-groups-or-collections-for-the-conditional-access-policy"></a>手順 2. 条件付きアクセス ポリシーの対象としてユーザー グループまたはコレクションを構成する  
+ 条件付きアクセス ポリシーは、ポリシーの種類に応じて、さまざまなユーザーのグループまたはコレクションを対象とします。 これらのグループには、ポリシーの対象となるユーザーや、ポリシーから除外されるユーザーが含まれます。 ユーザーがポリシーの対象となる場合、ユーザーに使用される各デバイスが電子メールにアクセスするには、ポリシーを遵守している必要があります。  
 
--   **Per i criteri di Exchange Online**: per gruppi di utenti di sicurezza di Azure Active Directory. È possibile configurare questi gruppi nel **centro di amministrazione di Office 365**o nel **portale per gli account di Intune**.  
+-   **Exchange Online ポリシーの場合** - Azure Active Directory セキュリティ ユーザー グループを対象。 これらのグループは、 **Office 365 管理センター**または **Intune アカウント ポータル**で構成できます。  
 
--   **Per i criteri di Exchange locale**: per i gruppi di utenti di Configuration Manager. È possibile configurarli nell'area di lavoro **Asset e conformità** .  
+-   **Exchange On-premises ポリシーの場合** - Configuration Manager ユーザー コレクションを対象。 [ **資産とコンプライアンス** ] ワークスペースでこれらを構成できます。  
 
- È possibile specificare due tipi di gruppi in ogni criterio:  
+ 各ポリシーには、次の 2 つのグループの種類を指定できます。  
 
--   **Gruppi di destinazione**: gruppi o raccolte di utenti a cui sono applicati i criteri  
+-   **対象グループ** - ポリシーが適用されるユーザー グループまたはコレクション  
 
--   **Gruppi esentati**: gruppi o raccolte di utenti che sono esentati dai criteri (facoltativo)  
+-   **例外グループ** - ポリシーから除外されるユーザー グループまたはコレクション (省略可能)  
 
- Se un utente si trova in entrambi i gruppi, sarà esentato dai criteri.  
+ ユーザーが両方に含まれている場合は、ポリシーから除外されます。  
 
- Solo i gruppi o le raccolte che sono considerati come destinazione dei criteri di accesso condizionale vengono valutati per l'accesso di Exchange.  
+ 条件付きアクセス ポリシーの対象となるグループまたはコレクションだけが、Exchange アクセスのために評価されます。  
 
-### <a name="step-3-configure-and-deploy-a-compliance-policy"></a>Passaggio 3: Configurare e distribuire i criteri di conformità  
- Assicurarsi di aver creato e distribuito i criteri di conformità per tutti i dispositivi a cui saranno destinati i criteri di accesso condizionale di Exchange.  
+### <a name="step-3-configure-and-deploy-a-compliance-policy"></a>手順 3. コンプライアンス ポリシーを構成し、展開する  
+ コンプライアンス ポリシーを作成し、Exchange 条件付きアクセス ポリシーの対象となるすべてのデバイスに展開したことを確認します。  
 
- Per informazioni dettagliate su come configurare i criteri di conformità, vedere [Gestire i criteri di conformità del dispositivo in System Center Configuration Manager](device-compliance-policies.md).  
+ コンプライアンス ポリシーを構成する方法の詳細については、「[System Center Configuration Manager でのデバイス コンプライアンス ポリシーの管理](device-compliance-policies.md)」を参照してください。  
 
 > [!IMPORTANT]  
->  Se non sono stati distribuiti i criteri di conformità e abilitati i criteri di accesso condizionale di Exchange, a tutti i dispositivi di destinazione verrà consentito l’accesso.  
+>  コンプライアンス ポリシーを展開していない状態で、Exchange 条件付きアクセス ポリシーを有効にすると、すべての対象デバイスによるアクセスが許可されます。  
 
- Quando si è pronti, continuare con il **Passaggio 4**.  
+ 準備ができたら、 **手順 4.**に進みます。  
 
-### <a name="step-4-configure-the-conditional-access-policy"></a>Passaggio 4: Configurare i criteri di accesso condizionale  
+### <a name="step-4-configure-the-conditional-access-policy"></a>手順 4. 条件付きアクセス ポリシーを構成する  
 
-#### <a name="for-exchange-online-and-tenants-in-the-new-exchange-online-dedicated-environment"></a>Per Exchange Online (e i tenant nel nuovo ambiente Exchange Online dedicato)
+#### <a name="for-exchange-online-and-tenants-in-the-new-exchange-online-dedicated-environment"></a>Exchange Online (および新しい Exchange Online Dedicated 環境のテナント) の場合
 
 >[!NOTE]
->È possibile creare i criteri di accesso condizionale anche nella console di gestione di Azure AD. La console di gestione di Azure AD consente di creare i criteri di accesso condizionale dei dispositivi Intune (chiamati criteri di accesso condizionale basati su dispositivo in Azure AD) oltre ad altri criteri di accesso condizionale come Multi-Factor Authentication. È anche possibile impostare criteri di accesso condizionale per app aziendali di terze parti supportate da Azure AD, ad esempio Salesforce e Box. Per altre informazioni, vedere [Come impostare criteri di accesso condizionale basato su dispositivo di Azure Active Directory per controllare gli accessi delle applicazioni connesse ad Azure Active Directory](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-policy-connected-applications/).
+>Azure AD 管理コンソールで条件付きアクセス ポリシーを作成することもできます。 Azure AD の管理コンソールでは、Intune デバイス条件付きアクセス ポリシー (Azure AD のデバイスベースの条件付きアクセス ポリシーと呼ぶ) に加えて、多要素認証のような他の条件付きアクセス ポリシーを作成することができます。 また、Salesforce や Box など、Azure AD がサポートするサード パーティ製エンタープライズ アプリ用の条件付きアクセス ポリシーを設定することもできます。 詳細については、「[Azure Active Directory に接続されたアプリケーションのアクセスを制御する Azure Active Directory デバイス ベースの条件付きアクセス ポリシーを設定する方法](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-policy-connected-applications/)」を参照してください。
 
- Il flusso seguente viene usato dai criteri di accesso condizionale per fare in modo che Exchange Online valuti se consentire o bloccare i dispositivi.  
+ Exchange Online の条件付きアクセス ポリシーは、次のフローを使用して、デバイスを許可するかブロックするかを評価します。  
 
  ![ConditionalAccess8&#45;1](media/ConditionalAccess8-1.png)  
 
- Per accedere alla posta elettronica, il dispositivo:  
+ 電子メールにアクセスするには、デバイスは以下の条件を満たす必要があります。  
 
--   Essere registrato con Intune  
+-   Intune に登録する。  
 
--   I PC devono essere aggiunti a un dominio o registrati e conformi ai criteri impostati in Intune.  
+-   PC はドメインに参加しているか、登録されており、Intune で設定されたポリシーに準拠している必要があります。  
 
--   Registrare il dispositivo in Azure Active Directory. L'operazione viene eseguita automaticamente quando il dispositivo è registrato in Intune.  
+-   デバイスが Azure Active Directory に登録されている (デバイスが Intune に登録されている場合は、自動的に登録されます)。  
 
-     Per i PC aggiunti a un dominio, è necessario impostare il dispositivo in modo che [venga registrato automaticamente](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/) con Azure Active Directory.  
+     ドメインに参加する PC の場合、Azure Active Directory に [デバイスを自動的に登録](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/) するように設定する必要があります。  
 
--   Deve avere la posta elettronica attivata che associa l'ID Exchange ActiveSync del dispositivo al record del dispositivo in Azure Active Directory (si applica solo a dispositivi iOS e Android).  
+-   アクティブ化された電子メールがある。これによって、デバイスの Exchange ActiveSync ID が Azure Active Directory のデバイス レコードに関連付けられます (iOS および Android デバイスのみに適用)。  
 
--   Deve essere compatibile con i criteri di compatibilità distribuiti  
+-   展開されているすべてのコンプライアンス ポリシーを遵守している。  
 
- Lo stato del dispositivo viene archiviato in Azure Active Directory che consente o blocca l'accesso alla posta elettronica, in base a condizioni valutate.  
+ デバイスの状態は Azure Active Directory に格納され、条件の評価に基づいて、電子メールへのアクセスが許可されたりブロックされたりします。  
 
- Se non viene soddisfatta una condizione, viene visualizzato uno dei due messaggi seguenti quando l'utente esegue l'accesso:  
+ 条件が満たされない場合、ユーザーにはログイン時に以下のうちのいずれかのメッセージが表示されます。  
 
--   Se il dispositivo non è registrato o è registrato in Azure Active Directory, viene visualizzato un messaggio con istruzioni su come installare l'app del portale aziendale ed eseguire la registrazione  
+-   デバイスが登録されていないか、Azure Active Directory に登録されている場合は、メッセージが表示され、ポータル サイト アプリのインストールと登録の手順が示されます。  
 
--   Se il dispositivo non è conforme, viene visualizzato un messaggio che indirizza l'utente al sito Web del portale aziendale di Intune o all'app Portale aziendale dove sono disponibili informazioni sul problema e su come risolverlo.  
+-   デバイスが準拠していない場合は、Intune の会社ポータル Web サイトまたは会社ポータルのアプリにユーザーを誘導するメッセージが表示されます。このポータルで、ユーザーは問題とその解決方法に関する情報を確認できます。  
 
--   Per un PC:  
+-   PC の場合:  
 
-    -   Se i criteri sono impostati in modo da richiedere l'aggiunta a un dominio e il PC non è aggiunto a un dominio, viene visualizzato un messaggio che indica di contattare l'amministratore IT.  
+    -   ドメインへの参加を要求するようにポリシーを設定して、PC がドメインに参加していない場合、IT 管理者に連絡するようにメッセージが表示されます。  
 
-    -   Se i criteri sono impostati in modo da richiedere l'aggiunta a un dominio o la conformità e il PC non soddisfa questi criteri, viene visualizzato un messaggio con le istruzioni su come installare l'app Portale aziendale ed eseguire la registrazione.  
+    -   ドメインへの参加または遵守を要求するようにポリシーを設定して、PC がいずれかの要件を満たしていない場合、ポータル サイト アプリをインストールして登録する方法についての手順が示されたメッセージが表示されます。  
 
- Il messaggio viene visualizzato sul dispositivo per gli utenti di Exchange Online e i tenant nel nuovo ambiente di Exchange Online dedicato e viene recapitato nella posta in arrivo degli utenti per dispositivi Exchange locale e Exchange Online legacy dedicato.  
-
-> [!NOTE]  
->  Le regole di accesso condizionale di Configuration Manager sovrascrivono, consentono, bloccano e mettono in quarantena le regole definite nella console di amministrazione di Exchange Online.  
+ メッセージは、新しい Exchange Online Dedicated 環境の Exchange Online ユーザーおよびテナントのデバイスに表示され、Exchange On-premises および従来の Exchange Online Dedicated デバイスのユーザー受信トレイに配信されます。  
 
 > [!NOTE]  
->  I criteri di accesso condizionale devono essere configurati nella console di Intune. All'inizio della procedura seguente è necessario accedere alla console di Intune tramite Configuration Manager. Se richiesto, accedere con le stesse credenziali usate per configurare il punto di connessione del servizio tra Configuration Manager e Intune.  
+>  Configuration Manager 条件付きアクセス規則は、Exchange Online 管理コンソールで定義された規則を上書き、許可、ブロック、および検疫します。  
 
-##### <a name="to-enable-the-exchange-online-policy"></a>Per abilitare i criteri di Exchange Online  
+> [!NOTE]  
+>  条件付きアクセス ポリシーは、Intune コンソールで構成する必要があります。 Intune コンソールに Configuration Manager を介してアクセスし、次の手順を開始します。 要求された場合は、Configuration Manager と Intune 間のサービス接続ポイントを設定するために使用した資格情報を使用してログインします。  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+##### <a name="to-enable-the-exchange-online-policy"></a>Exchange Online ポリシーを有効にするには  
 
-2.  Espandere **Impostazioni di conformità**, espandere **Accesso condizionale**e quindi fare clic su **Exchange Online**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
 
-3.  Nella scheda **Home** del gruppo **Collegamenti** fare clic su **Configura i criteri di accesso condizionale nella console di Intune**. Potrebbe essere necessario specificare il nome utente e la password dell'account usato per connettere Configuration Manager a qualsiasi amministratore globale del servizio Intune.  
+2.  [ **コンプライアンス設定**]、[ **条件付きアクセス**] の順に展開し、[ **Exchange Online**] をクリックします。  
 
-     Viene visualizzata la console di amministrazione di Intune.  
+3.  [ **ホーム** ] タブの [ **リンク** ] グループで、[ **Intune コンソールでの条件付きアクセス ポリシーの構成**] をクリックします。 Configuration Manager を Intune サービスの全体管理者と結び付けるために使用したアカウントのユーザー名とパスワードの入力が必要になる場合があります。  
 
-4.  Nella console di [console di amministrazione di Microsoft Intune](https://manage.microsoft.com)fare clic su **Criteri** > **Accesso condizionale** > **Exchange Online Criteri**.  
+     Intune 管理コンソールが開きます。  
+
+4.  [Microsoft Intune 管理コンソール](https://manage.microsoft.com)で、**[ポリシー]**  >  **[条件付きアクセス]**  >  **[Exchange Online ポリシー]** をクリックします。  
 
      ![HybridOnlineSetupIntune](media/HybridOnlineSetupIntune.png)  
 
-5.  Nella pagina **Criteri di Exchange Online** selezionare **Abilita criteri di accesso condizionale per Exchange Online**. Se si seleziona questa opzione, il dispositivo deve essere conforme. Se è deselezionata, l'accesso condizionale non viene applicato.  
+5.  **[Exchange Online ポリシー]** ページで、 **[Exchange Online の条件付きアクセス ポリシーを有効にする]**を選択します。 これをチェックする場合、デバイスは準拠している必要があります。 これをチェックしないと、条件付きアクセスは適用されません。  
 
     > [!NOTE]  
-    >  Se non sono stati distribuiti criteri di conformità e abilitati i criteri di Exchange Online, tutti i dispositivi di destinazione verranno segnalati come conformi.  
+    >  コンプライアンス ポリシーを展開していない状態で、Exchange Online ポリシーを有効にすると、すべての対象となるデバイスが準拠デバイスとして報告されます。  
     >   
-    >  Indipendentemente dallo stato di conformità, tutti gli utenti interessati dai criteri dovranno registrare i propri dispositivi in Intune.  
+    >  コンプライアンスの状態に関係なく、ポリシーの対象となっているすべてのユーザーがデバイスを Intune に登録する必要があります。  
 
-6.  In **Accesso all'applicazione**per Outlook e altre app che usano l'autenticazione moderna è possibile scegliere di limitare l'accesso solo ai dispositivi conformi per le singole piattaforme.  I dispositivi Windows devono essere aggiunti a un dominio oppure devono essere registrati in Intune e conformi.  
+6.  Outlook、および先進認証を使用するその他のアプリの **[アプリケーション アクセス]**で、各プラットフォームの準拠デバイスのみにアクセスを制限することを選択できます。  Windows デバイスはドメインに参加しているか、Intune に登録または準拠している必要があります。  
 
     > [!TIP]  
-    >  Con**Autenticazione moderna** i client Office possono usare l'accesso basato su Active Directory Authentication Library (ADAL).  
+    >  **先進認証** では、Active Directory Authentication Library (ADAL) ベースのサインインが Office クライアントに提供されます。  
     >   
-    >  -   Questo tipo di autenticazione consente ai client Office di usare l'autenticazione basata su browser, nota anche come autenticazione passiva.  Per eseguire l'autenticazione, l'utente viene indirizzato a una pagina Web di accesso.  
-    > -   Questo nuovo metodo di accesso offre nuovi scenari, tra cui l'accesso condizionale, basato sulla **conformità del dispositivo** e sull'uso dell' **autenticazione a più fattori** .  
+    >  -   ADAL ベースの認証を使用すると、Office クライアントでブラウザー ベースの認証 (パッシブ認証とも呼ばれます) を利用できます。  認証する際に、ユーザーはサインイン Web ページに転送されます。  
+    > -   この新しいサインイン方法では、 **デバイスのコンプライアンス** と、 **多要素認証** が実行されたかどうかに基づいて、条件付きのアクセスなどの新しいシナリオを実現できます。  
     >   
-    >  Questo [articolo](https://support.office.com/en-US/article/How-modern-authentication-works-for-Office-2013-and-Office-2016-client-apps-e4c45989-4b1a-462e-a81b-2a13191cf517) contiene informazioni più dettagliate sul funzionamento dell'autenticazione moderna.  
+    >  先進認証の動作の詳細については、この [記事](https://support.office.com/en-US/article/How-modern-authentication-works-for-Office-2013-and-Office-2016-client-apps-e4c45989-4b1a-462e-a81b-2a13191cf517) を参照してください。  
 
-     Se si usa Exchange Online con Configuration Manager e Intune, è possibile gestire non solo i dispositivi mobili con accesso condizionale, ma anche i computer desktop. I PC devono essere aggiunti a un dominio o registrati in Intune e conformi. È possibile impostare i requisiti seguenti:  
+     Configuration Manager と Intune と共に Exchange Online を使用すると、条件付きアクセスでモバイル デバイスだけではなく、デスクトップ コンピューターも管理できます。 PC はドメインに参加しているか、または Intune に登録または準拠している必要があります。 以下の要件を設定できます。  
 
-    -   **I dispositivi devono essere aggiunti a un dominio o conformi.** I PC devono essere aggiunti a un dominio o conformi ai criteri. Se un PC non soddisfa uno di questi requisiti, all'utente verrà richiesto di registrare il dispositivo in Intune.  
+    -   **デバイスはドメインに参加しているか準拠デバイスである必要があります。** PC はドメインに参加しているか、ポリシーに準拠している必要があります。 PC がどちらの要件も満たさない場合、ユーザーはデバイスを Intune に登録するように求められます。  
 
-    -   **I dispositivi devono essere aggiunti a un dominio.** Per accedere a Exchange Online, i PC devono essere aggiunti a un dominio. Se un PC non è aggiunto a un dominio, l'accesso alla posta elettronica viene bloccato e all'utente viene richiesto di contattare l'amministratore IT.  
+    -   **デバイスはドメインに参加している必要があります** 。PC は Exchange Online にアクセスするために、ドメインに参加する必要があります。 PC がドメインに参加していない場合、メールへのアクセスはブロックされ、ユーザーは IT 管理者に連絡するように求められます。  
 
-    -   **I dispositivi devono essere conformi.** I PC devono essere registrati in Intune e conformi. Se un PC non è registrato, viene visualizzato un messaggio contenente le istruzioni su come eseguire la registrazione.  
+    -   **デバイスは準拠デバイスである必要があります** PC は Intune に登録および準拠している必要があります。 PC を登録していない場合は、登録する方法についての手順を示したメッセージが表示されます。  
 
-7.  In **Outlook Web Access (OWA)**è possibile scegliere di consentire l'accesso a Exchange Online esclusivamente attraverso i browser supportati: Safari (iOS) e Chrome (Android). Non sarà possibile accedere da altri browser. Vengono applicate anche le restrizioni di piattaforma selezionate per l'accesso all'applicazione per Outlook.
+7.  **Outlook web access (OWA)**で、サポートされるブラウザーである Safari (iOS) および Chrome (Android) による Exchange Online へのアクセスのみ許可することができます。 その他のブラウザーからのアクセスはブロックされます。 Outlook のアプリケーション アクセス用に選択した、同じプラットフォーム制限もここで適用されます。
 
-    Nei dispositivi **Android** è necessario che gli utenti abilitino l'accesso al browser.  A tale scopo, l'utente finale deve abilitare l'opzione "Abilita l'accesso al browser" nel dispositivo registrato come segue:
-     1. Avviare l' **app Portale aziendale**.
-     2. Passare alla pagina **Impostazioni** facendo clic sui punti di sospensione (...) o sul tasto di menu.
-      3.    Scegliere il pulsante **Abilita l'accesso al browser** .
-      4.    Nel browser Chrome disconnettersi da Office 365 e riavviare Chrome.
+    **Android** デバイスで、ユーザーはブラウザー アクセスを有効にする必要があります。  これを行うには、エンドユーザーは以下のように、登録されたデバイス上で [ブラウザー アクセスを有効にする] オプションを有効にする必要があります。
+     1. **ポータル サイト アプリ**を起動します。
+     2. トリプル ドット (...) またはハードウェアのメニュー ボタンから、 **[設定]** ページに移動します。
+      3.    **[ブラウザー アクセスを有効にする]** ボタンを押します。
+      4.    Chrome ブラウザーでは、Office 365 からサインアウトし、Chrome を再起動します。
 
-     Nelle piattaforme **iOS e Android** , per identificare il dispositivo usato per accedere al servizio, Azure Active Directory rilascia al dispositivo un certificato Transport Layer Security (TLS).  Il dispositivo visualizza il certificato richiedendo all'utente finale di selezionare il certificato come illustrato nelle schermate seguenti. Per continuare a usare il browser è necessario che l'utente finale selezioni il certificato.
+     **IOS および Android** プラットフォームでは、サービスへのアクセスに使用するデバイスを特定するために、Azure Active Directory によってトランスポート層セキュリティ (TLS) 証明書がデバイスに対して発行されます。  デバイスは、次のスクリーンショットに示すように、証明書を選択するようエンドユーザーに促すプロンプトとともに証明書を表示します。 エンドユーザーは、ブラウザーを使用し続けるには、まずこの証明書を選択する必要があります。
 
-     **iOS**
+     **Android**
 
-     ![schermata del messaggio di richiesta del certificato in un iPad](media/mdm-browser-ca-ios-cert-prompt_v2.png)
+     ![iPad での証明書プロンプトのスクリーンショット](media/mdm-browser-ca-ios-cert-prompt_v2.png)
 
-    **Android**
+    **Outlook Web Access (OWA)**
 
-    ![schermata del messaggio di richiesta del certificato in un dispositivo Android](media/mdm-browser-ca-android-cert-prompt.png)
+    ![Android デバイスでの証明書プロンプトのスクリーンショット](media/mdm-browser-ca-android-cert-prompt.png)
 
-7.  Per le**App di posta elettronica di Exchange ActiveSync**è possibile impedire alla posta elettronica di accedere a Exchange Online se il dispositivo non è conforme e selezionare se consentire o bloccare l'accesso alla posta elettronica quando Intune non riesce a gestire il dispositivo.  
+7.  **[Exchange ActiveSync メール アプリ]**では、デバイスがポリシーに準拠していない場合にメールによる Exchange Online へのアクセスをブロックすることを選択できます。Intune がデバイスを管理できない場合にメールへのアクセスを許可またはブロックすることも選択できます。  
 
-8.  In **Gruppi di destinazione**selezionare i gruppi di sicurezza di Active Directory degli utenti ai quali applicare i criteri.  
+8.  **[対象グループ]**で、ポリシーを適用するユーザーの Active Directory セキュリティ グループを選択します。  
 
     > [!NOTE]  
-    >  Per gli utenti inclusi nei gruppi di destinazione i criteri di Intune sostituiranno le regole e i criteri di Exchange.  
+    >  対象グループに含まれているユーザーについては、Exchange のルールとポリシーが Intune のポリシーに置き換えられます。  
     >   
-    >  Exchange applicherà le regole di autorizzazione, blocco e quarantena e i criteri di Exchange solo nei casi seguenti:  
+    >  次の場合にのみ、Exchange の許可、ブロック、検疫のルールと、Exchange のポリシーが適用されます。  
     >   
-    >  -   L'utente non dispone di una licenza per Intune.  
-    > -   L'utente dispone di una licenza per Intune, ma non appartiene a nessuno dei gruppi di sicurezza di destinazione nei criteri di accesso condizionale.  
+    >  -   ユーザーが Intune のライセンスを取得していない。  
+    > -   ユーザーが Intune のライセンスを取得しているが、条件付きアクセス ポリシーの対象となるどのセキュリティ グループにも属していない。  
 
-9. In **Gruppi esentati**selezionare i gruppi di sicurezza di Active Directory degli utenti che verranno esentati da questi criteri. Se un utente è incluso sia nel gruppo di destinazione che in quello esentato, i criteri non verranno applicati e sarà possibile accedere alla posta elettronica.  
+9. **[例外グループ]**で、このポリシーから除外するユーザーの Active Directory セキュリティ グループを選択します。 ユーザーが対象グループと例外グループの両方に属している場合、ユーザーはポリシーから除外され、自分のメールにアクセスできます。  
 
-10. Al termine, fare clic su **Salva**.  
+10. 操作が完了したら、 **[保存]**をクリックします。  
 
--   Non è necessario distribuire i criteri di accesso condizionale perché diventano immediatamente effettivi.  
+-   条件付きアクセス ポリシーを展開する必要はありません。直ちに有効になります。  
 
--   Dopo la creazione di un account di posta elettronica da parte di un utente, il dispositivo viene bloccato immediatamente.  
+-   ユーザーが電子メール アカウントを作成すると、デバイスはすぐにブロックされます。  
 
--   Se un utente bloccato registra il dispositivo in Intune o risolve il problema di conformità, l'accesso alla posta elettronica viene sbloccato entro 2 minuti.  
+-   ブロックされたユーザーがデバイスを Intune に登録すると (または非準拠を修復すると)、メールのアクセスは 2 分以内にブロック解除されます。  
 
--   Se l'utente annulla la registrazione del dispositivo, la posta elettronica viene bloccata dopo circa sei ore.  
+-   ユーザーがデバイスの登録を解除した場合、メールは約 6 時間後にブロックされます。  
 
-### <a name="for-exchange-on-premises-and-tenants-in-the-legacy-exchange-online-dedicated-environment"></a>Per Exchange locale (e i tenant nell’ambiente Exchange Online legacy dedicato)  
- Il flusso seguente viene usato dai criteri di accesso condizionale per fare in modo che Exchange locale e i tenant nell’ambiente Exchange Online legacy dedicato valutino se consentire o bloccare i dispositivi.  
+### <a name="for-exchange-on-premises-and-tenants-in-the-legacy-exchange-online-dedicated-environment"></a>Exchange On-premises (および従来の Exchange Online Dedicated 環境のテナント) の場合  
+ 従来の Exchange Online Dedicated 環境の Exchange On-premises およびテナントの条件付きアクセス ポリシーは、次のフローを使用して、デバイスを許可するかブロックするかを評価します。  
 
  ![ConditionalAccess8&#45;2](media/ConditionalAccess8-2.png)  
 
-##### <a name="to-enable-the-exchange-on-premises-policy"></a>Per abilitare i criteri di Exchange locale  
+##### <a name="to-enable-the-exchange-on-premises-policy"></a>Exchange On-premises ポリシーを有効にするには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
 
-2.  Espandere **Impostazioni di conformità**, espandere **Accesso condizionale**e quindi fare clic su **Exchange locale**.  
+2.  [ **コンプライアンス設定**]、[ **条件付きアクセス**] の順に展開し、[ **On-Premises Exchange**] をクリックします。  
 
-3.  Nella scheda **Home** del gruppo **Exchange locale** fare clic su **Configura criteri di accesso condizionale**.  
+3.  [ **ホーム** ] タブの [ **On-Premises Exchange** ] グループで、[ **条件付きアクセス ポリシーの構成**] をクリックします。  
 
-4.  **A partire dalla versione 1602 di Configuration Manager**, nella pagina **Generale** della **Configurazione guidata dei criteri di accesso condizionale**, specificare se si vuole sostituire la regola predefinita di Exchange Active Sync. Fare clic su questa opzione se si vuole che i dispositivi registrati compatibili abbiano sempre accesso alla posta elettronica, anche quando la regola predefinita è impostata su Quarantena o Blocca accesso.  
+4.  **Configuration Manager のバージョン 1602 以降**では、 **条件付きアクセス ポリシーの構成ウィザード** の **[全般]**ページで、Exchange Active Sync の既定ルールを上書きするかどうかを指定します。 既定のルールが検疫またはアクセス禁止に設定されていたとしても、登録された準拠デバイスが電子メールにいつでもアクセスできるようにするには、このオプションの登録をクリックします。  
 
     > [!NOTE]  
-    >  Si verifica un problema con la sostituzione predefinita per i dispositivi Android. Se la regola di accesso predefinita del server Exchange viene impostata su **Blocca** e il criterio di accesso condizionale di Exchange è attivato con l'opzione di sostituzione regola predefinita, i dispositivi Android degli utenti di destinazione potrebbero non essere sbloccati anche dopo che i dispositivi sono registrati e conformi con Intune.  Per risolvere questo problema, impostare la regola di accesso predefinita di Exchange su **Quarantena**. Il dispositivo non ottiene l'accesso a Exchange per impostazione predefinita e l'amministratore può ottenere un report dal server Exchange nell'elenco dei dispositivi che vengono messi in quarantena.  
+    >  Android デバイスの既定の上書きに関する問題があります。 Exchange サーバーの既定のアクセス ルールが **[ブロック]** に設定されていて、既定のルールの上書きオプションと Exchange 条件付きアクセス ポリシーが有効である場合は、対象ユーザーの Android デバイスが Intune に登録されて準拠したとしても、デバイスのブロックが解除されない可能性があります。  この問題を回避するには、既定の Exchange アクセス ルールを **[検疫]**に設定します。 このデバイスから Exchange へのアクセスは既定で許可されることはありません。管理者は Exchange サーバーから検疫対象デバイスの一覧にレポートを取得できます。  
 
-     Se non è stato impostato un account di posta elettronica di notifica quando si configura Exchange Connector, verrà visualizzato un avviso in questa pagina e il pulsante **Avanti** viene disabilitato.  Prima di continuare, è necessario prima configurare le impostazioni di notifica di posta elettronica in Exchange Connector e quindi tornare alla **Configurazione guidata dei criteri di accesso condizionale** per completare il processo.  
+     Exchange Connector をセットアップするときに、通知の電子メール アカウントをセットアップしなかった場合は、このページに警告が表示されて、 **[次へ]** ボタンが無効になります。  続行するには、最初に Exchange Connector で通知の電子メール設定を構成してから、 **条件付きアクセス ポリシーの構成ウィザード** に戻って、プロセスを完了する必要があります。  
 
      ![HybridCondAccessWiz1](media/HybridCondAccessWiz1.PNG)  
 
-     Fare clic su **Avanti**.  
+     [次へ] をクリックします。 ****  
 
-5.  Nella pagina **Raccolte di destinazione** aggiungere una o più raccolte utenti. Per accedere a Exchange, gli utenti nelle raccolte devono registrare i propri dispositivi in Intune e rispettare anche i criteri di conformità distribuiti.  
+5.  [ **対象コレクション** ] ページで、1 つまたは複数のユーザー コレクションを追加します。 Exchange にアクセスするには、これらのコレクション内のユーザーは、Intune にデバイスを登録し、展開されたすべてのコンプライアンス ポリシーに準拠する必要があります。  
 
      ![HybridCondAccessWiz2](media/HybridCondAccessWiz2.PNG)  
 
-     Fare clic su **Avanti**.  
+     [次へ] をクリックします。 ****  
 
-6.  Nella pagina **Raccolte esentate** aggiungere tutte le raccolte di utenti che si desidera esentare dal criterio di accesso condizionale. Gli utenti di questi gruppi non devono registrare i propri dispositivi in Intune e non devono rispettare i criteri di conformità distribuiti per accedere a Exchange.  
+6.  [ **除外コレクション** ] ページで、条件付きアクセス ポリシーから除外するすべてのユーザー コレクションを追加します。 これらのグループ内のユーザーは、Intune にデバイスを登録する必要はなく、Exchange にアクセスするために、展開されたコンプライアンス ポリシーに準拠する必要もありません。  
 
      ![HybridCondAccessWiz3](media/HybridCondAccessWiz3.png)  
 
-     Se un utente viene visualizzato in un elenco di destinazione ed esentato, sarà esentato dal criterio di accesso condizionale.  
+     ユーザーが対象リストと例外リストの両方に属している場合、ユーザーは条件付きアクセス ポリシーから除外されます。  
 
-     Fare clic su **Avanti**.  
+     [次へ] をクリックします。 ****  
 
-7.  Nella pagina **Modifica notifica utente** configurare il messaggio di posta elettronica inviato da Intune agli utenti e che contiene le istruzioni per sbloccare il dispositivo (in aggiunta al messaggio inviato da Exchange).  
+7.  **[ユーザー通知の編集]** ページで、Intune がデバイスのブロックを解除する方法についての指示と共にユーザーに送信するメールを構成します (Exchange が送信するメールに加えて)。  
 
-     È possibile modificare il messaggio predefinito e usare i tag HTML per formattare l'aspetto del testo. È anche possibile inviare preventivamente un messaggio di posta elettronica ai dipendenti per informarli delle modifiche imminenti e fornire istruzioni sulla registrazione dei dispositivi.  
+     既定のメッセージを編集したり、テキストの表示方法を HTML タグで書式設定したりすることができます。 変更の予定を通知し、デバイスを登録する手順を説明するメールを事前に従業員に送信することもできます。  
 
      ![HybridCondAccessWiz4](media/HybridCondAccessWiz4.PNG)  
 
     > [!NOTE]  
-    >  Perché il messaggio di posta elettronica di notifica di Intune contenente le istruzioni per la correzione viene recapitato alla cassetta postale di Exchange dell'utente, nel caso in cui il dispositivo dell'utente venga bloccato prima della ricezione del messaggio di posta elettronica, è possibile usare un dispositivo sbloccato o un altro metodo per accedere a Exchange e visualizzare il messaggio.  
+    >  修復手順が記載されている Intune 通知電子メールはユーザーの Exchange 受信トレイに送信されるため、電子メール メッセージを受信する前にユーザーのデバイスがブロックされた場合は、ブロックされていないデバイスや、Exchange にアクセスするその他の方法を使用して、メッセージを表示できます。  
 
     > [!NOTE]  
-    >  Affinché Exchange sia in grado di inviare il messaggio di posta elettronica di notifica, è necessario configurare l'account che verrà usato per inviare il messaggio di posta elettronica di notifica. Si esegue questa operazione quando si configurano le proprietà del connettore Exchange Server.  
+    >  Exchange が通知電子メールを送信できるようにするには、通知電子メールの送信に使用されるアカウントを構成する必要があります。 Exchange Server コネクタのプロパティを構成する場合に、これを実行します。  
     >   
-    >  Per informazioni dettagliate, vedere [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
+    >  詳細については、「[System Center Configuration Manager と Exchange によるモバイル デバイスの管理](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)」を参照してください。  
 
-     Fare clic su **Avanti**.  
+     [次へ] をクリックします。 ****  
 
-8.  Nella pagina  **Riepilogo** verificare le impostazioni e quindi completare la procedura guidata.  
+8.  [  **概要** ] ページで設定を確認し、ウィザードを完了します。  
 
--   Non è necessario distribuire i criteri di accesso condizionale perché diventano immediatamente effettivi.  
+-   条件付きアクセス ポリシーを展開する必要はありません。直ちに有効になります。  
 
--   Dopo la configurazione di un profilo di Exchange ActiveSync, il blocco del dispositivo potrebbe richiedere da 1 a 3 ore, a meno che non sia gestito da Intune.  
+-   ユーザーが Exchange ActiveSync のプロファイルを設定してからデバイスがブロックされるまでに、1 ～ 3 時間かかる場合があります (Intune で管理されていない場合)。  
 
--   Se un utente bloccato registra il dispositivo con Intune o risolve il problema di conformità, l'accesso alla posta elettronica verrà sbloccato entro 2 minuti.  
+-   ブロックされたユーザーがデバイスを Intune に登録すると (または非準拠を修復すると)、メールのアクセスは 2 分以内でブロック解除されます。  
 
--   Se l'utente annulla la registrazione in Intune, il blocco del dispositivo potrebbe richiedere da 1 a 3 ore.  
+-   ユーザーが Intune から登録解除した場合、デバイスがブロックされるまでに 1 ～ 3 時間かかる場合があります。  
 
-### <a name="see-also"></a>Vedere anche  
- [Gestire l'accesso ai servizi in System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md)
-
+### <a name="see-also"></a>関連項目  
+ [System Center Configuration Manager でサービスへのアクセスを管理する](../../protect/deploy-use/manage-access-to-services.md)

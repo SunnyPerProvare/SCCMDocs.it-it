@@ -1,17 +1,16 @@
 ---
-title: 'Come creare elementi di configurazione per dispositivi Android for Work gestiti con Intune '
+title: "Intune で管理されている Android for Work デバイスの構成項目を作成する方法"
 ms.custom: na
 ms.date: 2017-07-31
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ab6784fd-8c57-4be9-858f-50fe39f2ff5f
-caps.latest.revision: 17
-caps.handback.revision: 0
+caps.latest.revision: "17"
+caps.handback.revision: "0"
 author: robstackmsft
 translation.priority.ht:
 - cs-cz
@@ -32,94 +31,92 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: 87b34f0a3cce87f6e2ba813957a69b743648c1ca
-ms.contentlocale: it-it
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-configuration-items-for-android-for-work-devices-managed-with-intune"></a>Come creare elementi di configurazione per dispositivi Android for Work gestiti con Intune 
+# <a name="how-to-create-configuration-items-for-android-for-work-devices-managed-with-intune"></a>Intune で管理されている Android for Work デバイスの構成項目を作成する方法
 
- Usare l'elemento di configurazione **Android for Work** di System Center Configuration Manager per gestire le impostazioni dei dispositivi Android for Work registrati in Microsoft Intune o gestiti in locale da Configuration Manager.  
+ System Center Configuration Manager の **Android for Work** 構成項目を使って、Microsoft Intune に登録されているか、Configuration Manager によってオンプレミスで管理されている Android デバイスおよび Android for Work デバイスの設定を管理します。  
 
-### <a name="to-create-an-android-for-work-configuration-item"></a>Per creare un elemento di configurazione di Android for Work  
+### <a name="to-create-an-android-for-work-configuration-item"></a>Android for Work の構成項目を作成するには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** をクリックします。  
 
-2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
+2.  [ **資産とコンプライアンス** ] ワークスペースで [ **コンプライアンス設定** ] を展開して、[ **構成項目** ] をクリックします。  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
+3.  [ **ホーム** ] タブの [ **作成** ] グループで、[ **構成項目の作成** ] をクリックします。  
 
-4.  Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
+4.  **構成項目の作成ウィザード** の **[全般]**ページで、構成項目の名前と、必要に応じて説明を入力します。  
 
-5.  In **Specificare il tipo di elemento di configurazione da creare** selezionare **Android for Work**.  
+5.  **[作成する構成項目の種類の指定]** で、**[Android for Work]** を選びます。  
 
-6.  Scegliere **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
+6.  Configuration Manager コンソールで構成項目を検索およびフィルター処理するのに役立つカテゴリを作成して割り当てる場合は、**[カテゴリ]** を選択します。  
 
-  Fare clic su **Avanti**.
+  **[次へ]**をクリックします。
 
-7.  Nella pagina **Impostazioni dispositivo** della procedura guidata selezionare i gruppi di impostazioni da configurare. Per informazioni dettagliate, vedere [Impostazioni degli elementi di configurazione di Android for Work](#android-for-work-configuration-item-settings-reference) e quindi fare clic su **Avanti**.  
+7.  ウィザードの **[デバイスの設定]** ページで、構成する設定グループを選択します。 詳細については、「[Android for Work の構成項目設定のリファレンス](#android-for-work-configuration-item-settings-reference)」を参照してください。選択したら、**[次へ]** をクリックします。  
 
   > [!TIP]  
-  >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
+  >  必要な設定が一覧にない場合は、 **[既定の設定グループに含まれない追加の設定を構成する]**チェック ボックスをオンにします。  
 
-9. In ogni pagina di impostazioni configurare le impostazioni necessarie e specificare se si vuole monitorarle e aggiornarle nel caso non siano conformi nei dispositivi (se questa funzionalità è supportata).  
+9. 各設定ページで、必要な設定と、その設定がデバイスに対応していないときにその設定を修正するかどうかを構成します (これがサポートされている場合)。  
 
-10. Per ogni gruppo di impostazioni, è anche possibile configurare il livello di gravità che verrà segnalato quando viene trovato un elemento di configurazione non conforme, selezionando uno dei livelli seguenti:  
+10. 設定グループごとに、構成項目が非対応であることが検出されたときに報告される重要度を構成することもできます。  
 
-    -   **Nessuno**: i dispositivi che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
+    -   **なし** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に非対応重要度を何も報告しません。  
 
-    -   **Informazioni**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Informazioni** per i report di Configuration Manager.  
+    -   **情報** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**情報**というレベルで非対応重要度を報告します。  
 
-    -   **Avviso**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Avviso** per i report di Configuration Manager.  
+    -   **警告** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**警告**というレベルで非対応重要度を報告します。  
 
-    -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
+    -   **重大** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**重大**というレベルで非対応重要度を報告します。  
 
-    -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel log eventi dell'applicazione.  
+    -   **重大 (イベント)** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**重大**というレベルで非対応重要度を報告します。 重要度のレベルは、アプリケーションのイベント ログでも Windows のイベントとしてログが登録されます。  
 
-11. Nella pagina **Applicabilità piattaforma** della creazione guidata, verificare le eventuali impostazioni non compatibili con le piattaforme supportate selezionate in precedenza. È possibile tornare indietro e rimuovere queste impostazioni oppure continuare.  
+11. ウィザードの **[プラットフォームの適用性]** ページで、前に選択したサポート対象プラットフォームと互換性がないすべての設定を確認します。 前に戻ってこれらの設定を削除するか、操作を続行できます。  
 
     > [!TIP]  
-    >  Non viene valutata la conformità delle impostazioni non supportate.  
+    >  サポートされていない設定のコンプライアンスは評価されません。  
 
-12. Completare la procedura guidata.  
+12. ウィザードを完了します。  
 
- È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
+ 新しい構成項目は、 **[資産とコンプライアンス]** ワークスペースの **[構成項目]** ノードに表示されます。  
 
-##  <a name="android-for-work-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione di Android for Work  
+##  <a name="android-for-work-configuration-item-settings-reference"></a>Android for Work の構成項目設定のリファレンス  
 
-### <a name="password"></a>Password  
+### <a name="password"></a>パスワード  
 
-|Impostazioni|Dettagli|  
+|設定|説明|  
 |-------------|-------------|  
-|**Richiedi impostazioni password nei dispositivi mobili**|Richiede una password nei dispositivi supportati.|  
-|**Lunghezza minima password (caratteri)**|La lunghezza minima della password.|  
-|**Scadenza password in giorni**|Il numero di giorni prima che sia necessario modificare una password.|  
-|**Numero di password memorizzate**|Impedisce di usare di nuovo le password usate di recente.|  
-|**Numero di tentativi di accesso non riusciti prima della cancellazione dei dati dal dispositivo**|Cancella il dispositivo se questo numero di tentativi di accesso ha esito negativo.|  
-|**Tempo di inattività prima del blocco del dispositivo**|Selezionare il periodo di tempo in cui il dispositivo rimane inutilizzato prima che venga bloccato.|
-|**Qualità password**|Selezionare il livello di complessità delle password necessario e indicare se possono essere usati anche dispositivi biometrici.|  
-|**Consenti Smart Lock e altri agenti di attendibilità**|Consente di controllare la funzionalità Smart Lock su dispositivi compatibili con Android. Questa funzionalità del telefono, talvolta nota anche come agenti di attendibilità, consente di disabilitare o ignorare la password della schermata di blocco del dispositivo se il dispositivo si trova in una posizione attendibile, ad esempio quando è connesso a un dispositivo Bluetooth specifico oppure quando è nelle vicinanze di un tag NFC. È possibile usare questa impostazione per impedire agli utenti finali di configurare Smart Lock.|
-|**Sblocco mediante impronta digitale**|&nbsp;|
+|**デバイスのパスワードの設定が必要**|サポート対象デバイスのパスワードが必要です。|  
+|**パスワードの最小文字数**|パスワードの最小の長さ。|  
+|**パスワードの有効期限 (日数)**|パスワードの変更が必要になるまでの日数。|  
+|**記憶するパスワードの数**|最近使用したパスワードを再利用できないようにします。|  
+|**デバイスをワイプするまでのログオン失敗回数**|ログインの試みがこの回数だけ失敗した場合は、デバイスがワイプされます。|  
+|**デバイスをロックするまでのアイドル時間**|デバイスが使用されていない場合に、ロックされるまでの時間を選択します。|
+|**パスワードの品質**|必要なレベルのパスワードの複雑さと、生体認証デバイスを使用できるかどうかを選択します。|  
+|**Smart Lock と他の信頼のエージェントを許可する**|互換性のある Android デバイスで Smart Lock 機能が制御できるようになります。 信頼エージェントとも呼ばれるこの電話機能では、デバイスが特定の Bluetooth デバイスに接続したときや、NFC タグの近くにある場合など、信頼できる場所にある場合、デバイスのロック画面のパスワードを無効化またはバイパスすることができます。 この設定を使用して、エンド ユーザーが Smart Lock を構成することを禁止できます。|
+|**ロック解除用の指紋**|&nbsp;|
 
-###  <a name="work-profile"></a>Profilo di lavoro  
- Queste impostazioni si applicano solo ai dispositivi Samsung KNOX.  
+###  <a name="work-profile"></a>仕事用プロファイル  
+ これらの設定は、Samsung KNOX デバイスのみに適用されます。  
 
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**Consenti la condivisione dei dati tra i profili di lavoro e personali**|È possibile scegliere tra:<br>- **Non configurato**<br>- **Restrizioni di condivisione predefinite**<br>- **Le app nel profilo di lavoro possono gestire una richiesta di condivisione dal profilo personale**<br>- **Le app nel profilo personale possono gestire una richiesta di condivisione dal profilo di lavoro**<br><br>Vedere anche l'uso di URI personalizzati per le [impostazioni di copia e incolla](#copy-paste-configuration-item-settings)|  
-|**Nascondi le notifiche del profilo di lavoro quando il dispositivo è bloccato (Android 6.0+)**||
-|**Imposta i criteri di autorizzazione predefiniti delle app (Android 6.0+)**|È possibile scegliere tra:<br>- **Non configurato**<br>- **Chiedi sempre conferma**<br>- **Concedi automaticamente**<br>- **Nega automaticamente**|
+|**仕事用プロファイルと個人プロファイル間でのデータ共有を許可する**|次の中から選択します。<br>- **未構成**<br>- **既定の共有制限**<br>- **仕事用プロファイル内のアプリで、個人プロファイルからの共有要求の処理を許可する**<br>- **個人プロファイル内のアプリで、仕事用プロファイルからの共有要求の処理を許可する**<br><br>(カスタム URI を使用する「[コピーと貼り付け構成項目設定](#copy-paste-configuration-item-settings)」も参照してください)|  
+|**デバイスがロックされているときに仕事用プロファイルの通知を表示しない (Android 6.0 以上)**||
+|**アプリの既定のアクセス許可ポリシーを設定する (Android 6.0 以上)**|次の中から選択します。<br>- **未構成**<br>- **常に確認する**<br>- **自動許可**<br>- **自動拒否**|
 
-### <a name="copy-paste-configuration-item-settings"></a>Impostazioni degli elementi di configurazione di copia e incolla
-Nessuna delle opzioni di **Consenti la condivisione dei dati tra i profili di lavoro e personali** impedisce il comportamento di copia e incolla. Usare un'impostazione personalizzata che può essere configurata per impedire le operazioni di copia e incolla. L'impostazione è configurabile tramite un URI personalizzato.
+### <a name="copy-paste-configuration-item-settings"></a>コピーと貼り付け構成項目設定
+**[仕事用プロファイルと個人プロファイル間でのデータ共有を許可する]** オプションのいずれも、コピーと貼り付けの動作を禁止していません。 コピーと貼り付けを禁止するには、カスタム設定を使用して構成してください。 これはカスタム URI から設定できます。
 
-- URI OMA: ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste
-- Tipo valore: booleano
+- OMA-URI: ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste
+- 値の型: ブール値
 
-Impostando DisallowCrossProfileCopyPaste su true si impedisce il comportamento di copia e incolla tra Android for Work personale e i profili di lavoro.
+DisallowCrossProfileCopyPaste を true に設定すると、Android for Work の個人プロファイルと仕事用プロファイル間でのコピー/貼り付け動作を防止します。
 
-## <a name="see-also"></a>Vedere anche  
- [Elementi di configurazione per dispositivi gestiti senza il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)
-
+## <a name="see-also"></a>関連項目  
+ [System Center Configuration Manager クライアントを使用せずに管理されているデバイスの構成項目](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

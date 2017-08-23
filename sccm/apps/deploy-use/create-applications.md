@@ -1,480 +1,477 @@
 ---
-title: Creare applicazioni | Microsoft Docs
-description: Creare e distribuire applicazioni e tipi di distribuzione con System Center Configuration Manager.
+title: "アプリケーションの作成 | Microsoft Docs"
+description: "System Center Configuration Manager を使用してアプリケーションと展開の種類を作成して展開します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
-caps.latest.revision: 14
-caps.handback.revision: 0
+caps.latest.revision: "14"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: b7461f89f483314bd07248bbc9d5dde85ca6b6c2
 ms.openlocfilehash: 4d048d4f9ab01b28e6c21a38cca4d82c85030618
-ms.contentlocale: it-it
-ms.lasthandoff: 08/03/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-applications-with-system-center-configuration-manager"></a>Creare applicazioni con System Center Configuration Manager
+# <a name="create-applications-with-system-center-configuration-manager"></a>System Center Configuration Manager でアプリケーションを作成する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Un'applicazione di System Center Configuration Manager contiene i file e le informazioni necessarie per distribuire software in un dispositivo. Un'applicazione contiene uno o più tipi di distribuzione che comprendono i file di installazione e le informazioni necessarie per installare il software. Un tipo di distribuzione contiene anche le regole che specificano quando e come deve essere distribuito il software.  
+System Center Configuration Manager アプリケーションには、デバイスにソフトウェアを展開するのに必要なファイルと情報があります。 1 つのアプリケーションには、ソフトウェアをインストールするために必要なインストール ファイルと情報からなる、1 つ以上の展開の種類があります。 また、展開の種類には、ソフトウェアを展開するタイミングと方法を指定する規則があります。  
 
- È possibile creare applicazioni usando due metodi:  
+ アプリケーションを作成するには、次の 2 通りの方法があります。  
 
--   Creare automaticamente i tipi di applicazione e di distribuzione leggendo i file di installazione dell'applicazione.  
+-   アプリケーション インストール ファイルを読み取って、アプリケーションおよび展開の種類を自動的に作成する。  
 
--   Creare manualmente l'applicazione e quindi aggiungere tipi di distribuzione in un secondo momento.  
+-   アプリケーションを手動で作成してから、後で展開の種類を追加する。  
 
--   Importare un'applicazione da un file.  
+-   アプリケーションをファイルからインポートする。  
 
 > [!NOTE]  
->  L'articolo [Creare applicazioni per dispositivi mobili](../../mdm/deploy-use/create-applications.md) contiene informazioni dettagliate sulla creazione di applicazioni iOS, Windows Phone e Android.  
+>  [モバイル デバイス用アプリケーションの作成](../../mdm/deploy-use/create-applications.md)に関するページでは、iOS、Windows Phone、および Android アプリケーションの作成について詳細に説明しています。  
 
-Usare la procedura seguente per creare le applicazioni e i tipi di distribuzione usando Configuration Manager.  
+Configuration Manager アプリケーションおよび展開の種類を作成するには、次の手順に従います。  
 
-## <a name="start-the-create-application-wizard"></a>Avviare la Creazione guidata applicazione  
+## <a name="start-the-create-application-wizard"></a>アプリケーションの作成ウィザードを開始する  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
+1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[アプリケーション]** の順に選択します。  
 
-3.  Nella scheda **Home**, nel gruppo **Crea**, scegliere **Crea applicazione**.  
+3.  **[ホーム]** タブの **[作成]** グループで、**[アプリケーションの作成]** を選択します。  
 
-## <a name="specify-whether-you-want-to-automatically-detect-application-information-or-manually-define-the-information"></a>specificare se si desidera rilevare automaticamente le informazioni sull'applicazione o definirle manualmente.  
+## <a name="specify-whether-you-want-to-automatically-detect-application-information-or-manually-define-the-information"></a>アプリケーション情報を自動的に検出するか、手動で情報を定義するかを指定する  
 
--   Rilevare automaticamente le informazioni sull'applicazione quando si vuole creare un'applicazione semplice con un solo tipo di distribuzione, ad esempio un file Windows Installer senza dipendenze o requisiti. Dopo aver creato un'applicazione usando questa procedura, è possibile apportare le modifiche necessarie per aggiungere o modificare i tipi di distribuzione e aggiungere metodi di rilevamento, dipendenze o requisiti.  
+-   依存関係や要件のない Windows インストーラー ファイルなど、展開の種類が 1 つだけのシンプルなアプリケーションを作成する場合、アプリケーションの情報を自動的に検出します。 この手順に従ってアプリケーションを作成した後で、必要に応じて、展開の種類の追加や変更、検出方法、依存関係、要件の追加を行うことができます。  
 
--   Specificare manualmente le informazioni dell'applicazione per creare applicazioni più complesse con più tipi di distribuzione, dipendenze, metodi di rilevamento o requisiti.  
+-   複数の展開の種類、依存関係、検出方法、要件のある複雑なアプリケーションを作成する場合、アプリケーションの情報を手動で指定します。  
 
-### <a name="automatically-detect-application-information"></a>Rilevare automaticamente le informazioni sull'applicazione  
+### <a name="automatically-detect-application-information"></a>アプリケーションの情報を自動的に検出する  
 
-1.  Nella pagina **Generale** della Creazione guidata applicazione selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**.  
+1.  アプリケーションの作成ウィザードの **[全般]** ページで、 **[このアプリケーションの情報をインストール ファイルから自動的に検出する]**を選択します。  
 
-2.  Dall'elenco a discesa **Tipo** , scegliere il tipo di file di installazione dell'applicazione che si desidera usare per rilevare le informazioni sull'applicazione. Per informazioni sui tipi di installazione disponibili, vedere [Tipi di distribuzione supportati da Configuration Manager](/sccm/apps/deploy-use/create-applications#deployment-types-supported-by-configuration-manager) in questo argomento.  
+2.  [ **種類** ] ドロップダウン リストから、アプリケーション情報の検出に使用するアプリケーション インストール ファイルの種類を選択します。 使用可能なインストールの種類については、このトピックの「[Configuration Manager でサポートされる展開の種類](/sccm/apps/deploy-use/create-applications#deployment-types-supported-by-configuration-manager)」を参照してください。  
 
-3.  Nella casella **Percorso** specificare il percorso UNC nel formato *\\\\server\\condivisione\\\nomefile* oppure il collegamento allo Store per il file di installazione dell'applicazione da usare per rilevare le informazioni sull'applicazione. In alternativa, fare clic su **Sfoglia** per selezionare il file di installazione.  
+3.  **[場所]** ボックスに、アプリケーション情報の検出に使用するアプリケーション インストール ファイルの UNC パス (*\\\\server\\share\\\filename* の形式) を指定するか、ストアのリンクを指定します。 または、**[参照]** をクリックして、インストール ファイルを見つけます。  
 
     > [!IMPORTANT]  
-    >  Quando si seleziona **Windows Installer (\*file .msi)** come tipo di applicazione, tutti i file nella cartella specificata vengono importati con l'applicazione e inviati ai punti di distribuzione. Verificare che la cartella specificata contenga solo i file necessari per installare l'applicazione. Configuration Manager è testato per supportare fino a 20.000 file applicazione nel pacchetto dell'applicazione. Se l'applicazione contiene più file, è consigliabile creare più applicazioni con un numero inferiore di file.  
+    >  [**Windows インストーラー (\*.msi ファイル)**] をアプリケーションの種類として選択すると、指定したフォルダーにあるすべてのファイルがアプリケーションと共にインポートされ、配布ポイントに送信されます。 指定するフォルダーに、アプリケーションのインストールに必要なファイルのみが含まれていることを確認してください。 Configuration Manager はアプリケーション パッケージで最大 20,000 のアプリケーション ファイルをサポートするようにテストされています。 アプリケーションにそれ以上のファイルがある場合は、複数のアプリケーションを作成してファイルを分けることを検討してください。  
 
-    >  È necessario avere accesso al percorso UNC che contiene l'applicazione e alle eventuali sottocartelle del contenuto dell'applicazione.  
+    >  アプリケーションがある UNC パス、およびアプリケーションのコンテンツが含まれているサブフォルダーのアクセス権を持っている必要があります。  
 
-4.  Nella pagina **Importazione informazioni** della Creazione guidata applicazione, rivedere le informazioni importate e quindi fare clic su **Avanti**. Se necessario, è possibile scegliere **Indietro** per tornare indietro e correggere eventuali errori.  
+4.  アプリケーションの作成ウィザードの **[情報のインポート]** ページで、インポートされた情報を確認し、**[次へ]** を選択します。 必要に応じて、**[前へ]** を選択して戻り、エラーを修正できます。  
 
-5.  Nella pagina **Informazioni generali** della Creazione guidata applicazione specificare le informazioni seguenti:  
+5.  アプリケーションの作成ウィザードの **[一般情報]** ページで、次の情報を指定します。  
 
     > [!NOTE]  
-    >  Alcune di queste informazioni potrebbero essere già state popolate qui se sono state ottenute automaticamente dai file di installazione dell'applicazione. Inoltre, le opzioni visualizzate potrebbero essere diverse a seconda del tipo di applicazione creata.  
+    >  下の手順で指定する情報がアプリケーションのインストール ファイルから自動的に取得されている場合は、ウィザードのページに既に表示されています。 また、作成するアプリケーションの種類によって、表示されるオプションが異なります。  
 
-    -   Informazioni generali sull'applicazione, ad esempio nome dell'applicazione, commenti, versione e riferimenti facoltativi che consentano di individuare l'applicazione nella console di Configuration Manager.  
+    -   アプリケーション名、コメント、バージョン、オプションの参照などのアプリケーションの一般情報。これは、Configuration Manager コンソールでアプリケーションを見つけるのに役立ちます。  
 
-    -   **Programma di installazione**: specificare il programma di installazione e le eventuali proprietà necessarie per installare il tipo di distribuzione dell'applicazione.  
+    -   **インストール プログラム** -- アプリケーションの展開の種類をインストールするのに必要なインストール プログラムおよびプロパティを指定します。  
 
         > [!TIP]  
-        >  Se il programma di installazione non viene visualizzato, scegliere **Sfoglia** e selezionare il percorso del programma di installazione.  
+        >  インストール プログラムが表示されない場合は、**[参照]** を選択してインストール プログラムの場所を参照してください。  
 
-    -   **Comportamento installazione**: specificare se il tipo di distribuzione dell'applicazione verrà installato per l'utente attualmente connesso oppure per tutti gli utenti. È anche possibile specificare che il tipo di distribuzione venga installato per tutti gli utenti se viene distribuito in un dispositivo o solo per un utente specifico se viene distribuito a un utente.  
+    -   **インストールの権限** -- アプリケーションの展開の種類が、ログオン中のユーザーのみにインストールされるのか、すべてのユーザーにインストールされるのかを指定します。 また、デバイスに展開する場合はすべてのユーザーを対象とし、ユーザーに展開する場合はそのユーザーのみを対象として展開の種類がインストールされるように指定することもできます。  
 
-    -   **Usa una connessione VPN automatica (se configurata)**: se nel dispositivo in cui viene avviata l'app è stato distribuito un profilo VPN, avviare la connessione VPN all'avvio dell'app (solo Windows 8.1 e Windows Phone 8.1).  
+    -   **自動 VPN 接続を使用する (構成されている場合)** -- アプリを起動するデバイスに VPN プロファイルが展開されている場合は、アプリの開始時に VPN 接続を起動します (Windows 8.1 と Windows Phone 8.1 のみ)。  
 
-         Nei dispositivi Windows Phone 8.1 le connessioni VPN automatiche non sono supportate se sono stati distribuiti più profili VPN nel dispositivo.  
+         Windows Phone 8.1 デバイスでは、複数の VPN プロファイルがデバイスに配置されている場合、自動 VPN 接続はサポートされません。  
 
-         Per altre informazioni sui profili VPN, vedere [Profili VPN](../../protect/deploy-use/vpn-profiles.md).  
+         VPN プロファイルの詳細については、「[VPN プロファイル](../../protect/deploy-use/vpn-profiles.md)」を参照してください。  
 
-6.  Scegliere **Avanti**, riesaminare le informazioni sull'applicazione nella pagina **Riepilogo** e quindi terminare la Creazione guidata applicazione.  
+6.  **[次へ]** を選択し、**[概要]** ページでアプリケーションの情報を確認してから、アプリケーションの作成ウィザードを終了します。  
 
-La nuova applicazione viene visualizzata nel nodo **Applicazioni** della console di Configuration Manager. Il processo di creazione dell'applicazione è terminato. Se si vogliono aggiungere altri tipi di distribuzione all'applicazione, vedere [Creare tipi di distribuzione per l'applicazione](/sccm/apps/deploy-use/create-applications#create-deployment-types-for-the-application) in questo argomento.  
+新しいアプリケーションが Configuration Manager コンソールの **[アプリケーション]** ノードに表示されたら、アプリケーションの作成プロセスは完了です。 展開の種類をアプリケーションに追加する場合、このトピックの「[アプリケーションの展開の種類を作成する](/sccm/apps/deploy-use/create-applications#create-deployment-types-for-the-application)」を参照してください。  
 
-### <a name="manually-specify-application-information"></a>Specificare manualmente le informazioni sull'applicazione  
+### <a name="manually-specify-application-information"></a>アプリケーションの情報を手動で指定する  
 
-1.  Nella pagina **Generale** della Creazione guidata applicazione, selezionare **Specifica manualmente le informazioni dell'applicazione** e quindi scegliere **Avanti**.  
+1.  アプリケーションの作成ウィザードの **[全般]** ページで、**[アプリケーションの情報を手動で指定する]** を選択し、**[次へ]** を選択します。  
 
-2.  Specificare informazioni generali sull'applicazione, ad esempio nome dell'applicazione, commenti, versione e riferimenti facoltativi che consentano di individuare l'applicazione nella console di Configuration Manager.  
+2.  アプリケーション名、コメント、バージョン、オプションの参照などのアプリケーションの一般情報を指定します。これは、Configuration Manager コンソールでアプリケーションを見つけるのに役立ちます。  
 
-3.  Nella pagina **Catalogo applicazioni** della Creazione guidata applicazione specificare le informazioni seguenti:  
+3.  アプリケーションの作成ウィザードの **[アプリケーション カタログ]** ページで、次の情報を指定します。  
 
-    -   **Lingua selezionata**: dall'elenco a discesa selezionare la lingua dell'applicazione che si vuole configurare. Scegliere **Aggiungi/Rimuovi** per configurare più lingue per l'applicazione.  
+    -   **選択した言語** -- ドロップダウン リストから、セットアップするアプリケーションの言語バージョンを選択します。 **[追加/削除]** を選択し、このアプリケーションにその他の言語をセットアップします。  
 
-    -   **Nome dell'applicazione localizzata**: specificare il nome dell'applicazione nella lingua selezionata nell'elenco a discesa **Lingua selezionata**.  
+    -   **ローカライズされたアプリケーション名** -- **[選択した言語]** ドロップダウン リストで選択した言語で、アプリケーション名を指定します。  
 
         > [!IMPORTANT]  
-        >  È necessario specificare il nome dell'applicazione localizzata per ogni lingua che si vuole configurare.  
+        >  セットアップする言語バージョンごとにローカライズされたアプリケーション名を指定する必要があります。  
 
-    -   **Categorie utente**: scegliere **Modifica** per specificare le categorie dell'applicazione nella lingua selezionata nell'elenco a discesa **Lingua selezionata**. Gli utenti di Software Center possono usare queste categorie selezionate per filtrare e ordinare le applicazioni disponibili.  
+    -   **ユーザー カテゴリ** -- **[編集]** を選択し、**[選択した言語]** ドロップダウン リストで選択した言語でアプリケーションのカテゴリを指定します。 ソフトウェア センターのユーザーは、選択したこれらのカテゴリを使用して、利用可能なアプリケーションのフィルター処理と並べ替えを行うことができます。  
 
-    -   **Documentazione utente**: scegliere **Sfoglia** per specificare l'URL o il percorso UNC e il nome del file che gli utenti di Software Center possono leggere per ottenere altre informazioni su questa applicazione.  
+    -   **ユーザー ドキュメント** -- **[参照]** を選択して、ソフトウェア センターのユーザーがこのアプリケーションに関する詳細情報を取得するために読み取ることができるファイルの URL、または UNC パスとファイル名を指定します。  
 
-    -   **Testo collegamento**: specificare il testo che verrà visualizzato al posto dell'URL dell'applicazione.  
+    -   **リンク テキスト** -- アプリケーションの URL の代わりに表示されるテキストを指定します。  
 
-    -   **Application Privacy URL** (URL privacy applicazione): specificare l'URL di collegamento all'informativa sulla privacy dell'applicazione.  
+    -   **アプリケーションのプライバシー URL** -- アプリケーションのプライバシーに関する声明にリンクする URL を指定します。  
 
-    -   **Descrizione localizzata**: immettere una descrizione per questa applicazione nella lingua selezionata nell'elenco a discesa **Lingua selezionata**.  
+    -   **ローカライズされた説明** -- **[選択した言語]** ドロップダウン リストで選択した言語で、このアプリケーションの説明を入力します。  
 
-    -   **Parole chiave**: immettere un elenco di parole chiave nella lingua selezionata nell'elenco a discesa **Lingua selezionata** . Queste parole chiave permetteranno agli utenti di Software Center di cercare l'applicazione.  
+    -   **キーワード** -- **[選択した言語]** ドロップダウン リストで選択した言語でキーワードのリストを入力します。 これらのキーワードは、ソフトウェア センターのユーザーがアプリケーションを検索するときに役立ちます。  
 
-    -   **Icona**: scegliere **Sfoglia** per selezionare un'icona per l'applicazione tra le icone disponibili. Se non si specifica un'icona, verrà usata un'icona predefinita per questa applicazione.  
+    -   **アイコン** -- **[参照]** を選択し、選択可能なアイコンからこのアプリケーション用のアイコンを選択します。 アイコンを指定しない場合、このアプリケーションには既定のアイコンが使用されます。  
 
-    -   **Visualizza come app in primo piano ed evidenziala nel portale aziendale**: selezionare questa opzione per visualizzare l'app in primo piano nel portale aziendale.  
+    -   **このアプリケーションを会社のポータルでおすすめアプリケーションとして強調表示する** -- ポータル サイトでアプリを目立つように表示するには、このオプションを選択します。  
 
-4.  Nella pagina **Tipi di distribuzione** della Creazione guidata applicazione scegliere **Aggiungi** per creare un nuovo tipo di distribuzione.  
+4.  アプリケーションの作成ウィザードの **[展開の種類]** ページで **[追加]** を選択し、新しい展開の種類を作成します。  
 
- Per altre informazioni, vedere [Creare tipi di distribuzione per l'applicazione](/sccm/apps/deploy-use/create-applications#create-deployment-types-for-the-application).  
+ 詳細については、「[アプリケーションの展開の種類を作成する](/sccm/apps/deploy-use/create-applications#create-deployment-types-for-the-application)」を参照してください。  
 
-5.  Scegliere **Avanti**, riesaminare le informazioni sull'applicazione nella pagina **Riepilogo** e quindi terminare la Creazione guidata applicazione.  
+5.  **[次へ]** を選択し、**[概要]** ページでアプリケーションの情報を確認してから、アプリケーションの作成ウィザードを終了します。  
 
-La nuova applicazione viene visualizzata nel nodo **Applicazioni** della console di Configuration Manager.  
+Configuration Manager コンソールの [**アプリケーション**] ノードに、新しいアプリケーションが表示されます。  
 
-##  <a name="create-deployment-types-for-the-application"></a>Creare tipi di distribuzione per l'applicazione  
- Se si seleziona **Rileva automaticamente le informazioni sul tipo di distribuzione dai file di installazione** nella pagina **Generale** della Creazione guidata tipo di distribuzione, potrebbe non essere necessario completare alcuni passaggi delle procedure seguenti.  
+##  <a name="create-deployment-types-for-the-application"></a>アプリケーションの展開の種類を作成する  
+ 展開の種類の作成ウィザードの **[全般]** ページで **[この展開の種類の情報をインストール ファイルから自動的に識別する]** を選択した場合、以下の手順の一部を実行する必要がないことがあります。  
 
-## <a name="start-the-create-deployment-type-wizard"></a>Avviare la Creazione guidata tipo di distribuzione  
+## <a name="start-the-create-deployment-type-wizard"></a>展開の種類の作成ウィザードを開始する  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
+1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[アプリケーション]** の順に選択します。  
 
-3.  Selezionare un'applicazione e quindi nel gruppo **Applicazione** della scheda **Home** fare clic su **Crea tipo di distribuzione**.  
+3.  アプリケーションを選択し、**[ホーム]** タブの **[アプリケーション]** グループで、**[展開の種類の作成]** を選択します。  
 
 > [!TIP]  
->  È anche possibile avviare la Creazione guidata tipo di distribuzione dalla Creazione guidata applicazione e dalla scheda **Tipi di distribuzione** della finestra di dialogo *Proprietà\>* **nome applicazione**.  
+>  展開の種類の作成ウィザードは、アプリケーションの作成ウィザードと、*[<アプリケーション名\>* **プロパティ]** ダイアログ ボックスの **[展開の種類]** タブから開始することもできます。  
 
-## <a name="specify-whether-you-want-to-automatically-detect-deployment-type-information-or-manually-set-up-the-information"></a>Specificare se si desidera rilevare automaticamente le informazioni sul tipo di distribuzione o impostare manualmente le informazioni  
- Usare una delle seguenti procedure per rilevare automaticamente o per impostare manualmente le informazioni sul tipo di distribuzione.  
+## <a name="specify-whether-you-want-to-automatically-detect-deployment-type-information-or-manually-set-up-the-information"></a>展開の種類の情報を自動検出するか、手動でセットアップするかを指定する  
+ 次のいずれかの手順を使用して、展開の種類の情報を自動検出するか、手動でセットアップします。  
 
-### <a name="automatically-detect-deployment-type-information"></a>Rilevare automaticamente le informazioni sul tipo di distribuzione  
+### <a name="automatically-detect-deployment-type-information"></a>展開の種類の情報を自動検出する  
 
-1.  Nella pagina **Generale** della Creazione guidata tipo di distribuzione selezionare **Rileva automaticamente le informazioni sul tipo di distribuzione dai file di installazione**.  
+1.  展開の種類の作成ウィザードの **[全般]** ページで、**[この展開の種類の情報をインストール ファイルから自動的に特定する]** を選択します。  
 
-2.  Nella casella **Tipo** selezionare il tipo di file di installazione dell'applicazione che si vuole usare per rilevare le informazioni sul tipo di distribuzione.  
+2.  **[種類]** ボックスで、展開の種類の情報を検出するために使用するアプリケーション インストール ファイルの種類を選択します。  
 
-3.  Nella casella **Percorso** specificare il percorso UNC nel formato *\\\\server\\condivisione\\nomefile* oppure il collegamento allo Store per i file di installazione dell'applicazione e il contenuto che si vuole usare per rilevare le informazioni sul tipo di distribuzione. È anche possibile scegliere **Sfoglia** per individuare il file di installazione.  
-
-    > [!NOTE]  
-    >  È necessario avere accesso al percorso UNC che contiene l'applicazione e alle eventuali sottocartelle del contenuto dell'applicazione.  
-
-4.  Nella pagina **Importazione informazioni** della Creazione guidata tipo di distribuzione riesaminare le informazioni importate e quindi fare clic su **Avanti**. È anche possibile scegliere **Indietro** per tornare indietro e correggere eventuali errori.  
-
-5.  Nella pagina **Informazioni generali** della Creazione guidata tipo di distribuzione, specificare le informazioni seguenti:  
+3.  **[場所]** ボックスに、展開の種類の情報を検出するために使用するアプリケーション インストール ファイルとコンテンツの UNC パス (*\\\\server\\share\\filename* の形式) を指定するか、そのファイルやコンテンツへのストア リンクを指定します。 **[参照]** を選択して、インストール ファイルを検索することもできます。  
 
     > [!NOTE]  
-    >  Alcune delle informazioni sul tipo di distribuzione potrebbero già essere presenti se sono state lette dai file di installazione dell'applicazione. Le opzioni visualizzate, poi, potrebbero variare a seconda del tipo di distribuzione che si sta creando.  
+    >  アプリケーションがある UNC パス、およびアプリケーションのコンテンツが含まれているサブフォルダーのアクセス権を持っている必要があります。  
 
-    -   Informazioni generali sul tipo di distribuzione, ad esempio il nome, i commenti dell'amministratore e le lingue disponibili.  
+4.  展開の種類の作成ウィザードの **[情報のインポート]** ページで、インポートされた情報を確認し、**[次へ]** を選択します。 **[前へ]** を選択して戻り、エラーを修正することもできます。  
 
-    -   **Programma di installazione**: specificare il programma di installazione e le eventuali proprietà necessarie per installare il tipo di distribuzione.  
+5.  展開の種類の作成ウィザードの **[一般情報]** ページで、次の情報を指定します。  
 
-    -   **Comportamento installazione**: specificare se installare il tipo di distribuzione per l'utente corrente oppure per tutti gli utenti. È inoltre possibile specificare se installare il tipo di distribuzione per tutti gli utenti se viene distribuito a un dispositivo oppure se installare il tipo di distribuzione per un utente solo se viene distribuito a un utente.  
+    > [!NOTE]  
+    >  展開の種類の情報によっては、既にアプリケーション インストール ファイルから読み込まれて入力されている場合があります。 また、作成する展開の種類よって、表示されるオプションが異なる場合があります。  
 
-    -   **Usa una connessione VPN automatica (se configurata)**: se nel dispositivo in cui viene avviata l'app è stato distribuito un profilo VPN, avviare la connessione VPN all'avvio dell'app (solo Windows 8.1 e Windows Phone 8.1). Se sono stati distribuiti più profili VPN a un dispositivo Windows 8.1, per impostazione predefinita viene usato il primo profilo VPN distribuito.  
+    -   名前、管理者コメント、使用可能な言語など、展開の種類に関する一般情報。  
 
-         Nei dispositivi Windows Phone 8.1 le connessioni VPN automatiche non sono supportate se sono stati distribuiti più profili VPN nel dispositivo.  
+    -   **インストール プログラム** -- 展開の種類のインストールに必要なインストール プログラムとプロパティを指定します。  
 
-         Per altre informazioni sui profili VPN, vedere [Profili VPN in System Center Configuration Manager](../../protect/deploy-use/vpn-profiles.md).  
+    -   **インストールの権限** -- 展開の種類が、現在のユーザーにインストールされるのか、すべてのユーザーにインストールされるのかを指定します。 また、デバイスに展開する場合はすべてのユーザー用にインストールされ、ユーザーに展開する場合はそのユーザー用にインストールされるように指定することもできます。  
 
-6.  Scegliere **Avanti** e quindi continuare con la procedura [Specificare le opzioni di contenuto per il tipo di distribuzione](/sccm/apps/deploy-use/create-applications#specify-content-options-for-the-deployment-type).  
+    -   **自動 VPN 接続を使用する (構成されている場合)** -- アプリを起動するデバイスに VPN プロファイルが展開されている場合は、アプリの開始時に VPN 接続を起動します (Windows 8.1 と Windows Phone 8.1 のみ)。 複数の VPN プロファイルが Windows 8.1 デバイスに展開されている場合、既定では、最初に展開された VPN プロファイルが使用されます。  
 
-### <a name="manually-set-up-the-deployment-type-information"></a>Specificare manualmente le informazioni sul tipo di distribuzione  
+         Windows Phone 8.1 デバイスでは、複数の VPN プロファイルがデバイスに配置されている場合、自動 VPN 接続はサポートされません。  
 
-1.  Nella pagina **Generale** della Creazione guidata tipo di distribuzione selezionare **Specifica manualmente le informazioni sul tipo di distribuzione**.  
+         VPN プロファイルの詳細については、「[System Center Configuration Manager の VPN プロファイル](../../protect/deploy-use/vpn-profiles.md)」を参照してください。  
 
-2.  Nella casella **Tipo** scegliere il tipo di file di installazione dell'applicazione che si vuole usare per rilevare le informazioni sul tipo di distribuzione. È possibile scegliere gli stessi tipi di installazione usati quando si rilevano automaticamente le informazioni sul tipo di distribuzione e anche specificare uno script per installare il tipo di distribuzione.  
+6.  **[次へ]** を選択して、「[展開の種類のコンテンツ オプションを指定する](/sccm/apps/deploy-use/create-applications#specify-content-options-for-the-deployment-type)」に進みます。  
 
-3.  Nella pagina **Informazioni generali** della Creazione guidata tipo di distribuzione specificare un nome per il tipo di distribuzione, una descrizione facoltativa e le lingue in cui si vuole rendere disponibile questo tipo di distribuzione e quindi fare clic su **Avanti**.  
+### <a name="manually-set-up-the-deployment-type-information"></a>展開の種類の情報を手動でセットアップする  
 
-4.  Continuare con [Specificare le opzioni di contenuto per il tipo di distribuzione](/sccm/apps/deploy-use/create-applications#specify-content-options-for-the-deployment-type).  
+1.  展開の種類の作成ウィザードの **[全般]** ページで、**[展開の種類の情報を手動で指定する]** を選択します。  
 
-##  <a name="specify-content-options-for-the-deployment-type"></a>Specificare le opzioni di contenuto per il tipo di distribuzione  
+2.  **[種類]** ボックスで、展開の種類の情報を検出するために使用するアプリケーション インストール ファイルの種類を選択します。 展開の種類の情報を自動検出するときに使用するのと同じインストールの種類を選択できます。また、展開の種類をインストールするためのスクリプトを指定することもできます。  
 
-1.  Nella pagina **Contenuto** della Creazione guidata tipo di distribuzione specificare le informazioni seguenti:  
+3.  展開の種類の作成ウィザードの **[一般情報]** ページで、展開の種類の名前、説明 (オプション)、およびこの展開の種類用の言語を指定してから、**[次へ]** を選択します。  
 
-    -   **Percorso dei contenuti**: specificare il percorso del contenuto per questo tipo di distribuzione o selezionare **Sfoglia** per scegliere la cartella del contenuto del tipo di distribuzione.  
+4.  次に、「[展開の種類のコンテンツ オプションを指定する](/sccm/apps/deploy-use/create-applications#specify-content-options-for-the-deployment-type)」に進みます。  
+
+##  <a name="specify-content-options-for-the-deployment-type"></a>展開の種類のコンテンツ オプションを指定する  
+
+1.  展開の種類の作成ウィザードの **[コンテンツ]** ページで、次の情報を指定します。  
+
+    -   **コンテンツの場所** -- この展開の種類のコンテンツの場所を指定するか、**[参照]** を選択して展開の種類のコンテンツのフォルダーを選択します。  
 
         > [!IMPORTANT]  
-        >  L'account di sistema del computer server del sito deve disporre delle autorizzazioni per il percorso del contenuto specificato.  
+        >  サイト サーバー コンピューターのシステム アカウントには、指定するコンテンツの場所のアクセス許可が必要です。  
 
-    -   **Impostazioni del contenuto di disinstallazione**: specificare una delle opzioni seguenti:
-        - **Uguale al contenuto di installazione**: selezionare questa opzione se il contenuto di installazione e di disinstallazione è lo stesso. Questo è il comportamento predefinito.
-        - **Nessun contenuto di disinstallazione**: selezionare questa opzione se l'applicazione non richiede contenuti per la disinstallazione.
-        - **Diversa dal contenuto di installazione**: selezionare questa opzione se il contenuto di disinstallazione è diverso dal contenuto di installazione.
+    -   **[アンインストール コンテンツ設定]** -- 次のいずれかを指定します。
+        - **[インストール コンテンツと同じ]** -- インストールおよびアンインストール コンテンツが同じ場合は、このオプションを選択します。 これは既定の動作です。
+        - **[アンインストール コンテンツなし]** -- アプリケーションにアンインストール対象のコンテンツがない場合は、このオプションを選択します。
+        - **[インストール コンテンツと異なる]** -- アンインストール コンテンツがインストール コンテンツと異なる場合は、このオプションを選択します。
 
-4. Se si seleziona **Diversa dal contenuto di installazione**, selezionare o immettere il percorso del contenuto dell'applicazione che viene usato per disinstallare l'applicazione.
-5. Fare clic su **OK** per chiudere la finestra di dialogo delle proprietà del tipo di distribuzione.
+4. **[インストール コンテンツと異なる]** を選択した場合、アプリケーションのインストールに使用するアプリケーション コンテンツの場所を参照するか、入力します。
+5. [**OK**] をクリックして、[展開の種類プロパティ] ダイアログ ボックスを閉じます。
 
-    -   **Rendi permanente il contenuto nella cache client**: selezionare questa opzione per specificare se il contenuto deve essere conservato nella cache del computer client a tempo indeterminato, anche se è già stato eseguito. Anche se questa opzione può risultare utile con alcune distribuzioni, ad esempio con il software basato su Windows Installer per cui deve essere disponibile una copia di origine locale per l'applicazione degli aggiornamenti, ridurrà tuttavia lo spazio disponibile della cache. Se si seleziona questa opzione, una distribuzione di grandi dimensioni potrebbe non riuscire in un momento successivo se lo spazio disponibile della cache non è sufficiente.  
+    -   **クライアント キャッシュの内容を保持する** -- 展開の実行後もコンテンツをクライアント コンピューターのキャッシュに無期限に保持するかどうかを指定する場合に、このオプションを選択します。 このオプションは、展開によっては便利な場合があります (更新プログラムを適用するときにローカルにソースのコピーを必要とする Windows インストーラー ベースのソフトウェアを展開するときなど) が、使用可能なキャッシュ領域が少なくなります。 このオプション選択した場合は、キャッシュに十分な空き領域がないと、後で大規模な展開に失敗する可能性があります。  
 
-    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: selezionare questa opzione per ridurre il carico sulla rete consentendo ai client di scaricare il contenuto da altri client locali nella rete che hanno già scaricato e memorizzato nella cache il contenuto. Questa opzione usa la tecnologia Windows BranchCache.  
+    -   **同じサブネットにある他のクライアントとのコンテンツの共有を許可する** -- コンテンツを既にダウンロードしてキャッシュしているネットワーク上の他のローカル クライアントから、クライアントがコンテンツをダウンロードできるようにして、ネットワークの負荷を軽減する場合に、このオプションを選択します。 このオプションは、Windows BranchCache テクノロジを利用します。  
 
-    -   **Programma di installazione**: specificare il nome del programma di installazione ed eventuali parametri di installazione necessari oppure scegliere **Sfoglia** per individuare il file di installazione.  
+    -   **インストール プログラム** -- インストール プログラムの名前と必要なインストール パラメーターを指定するか、**[参照]** を選択してインストール ファイルを見つけます。  
 
-    -   **Avvio installazione da**: specificare la cartella che contiene il programma di installazione per il tipo di distribuzione (facoltativo). Questa cartella può corrispondere a un percorso assoluto nel client o al percorso della cartella del punto di distribuzione contenente i file di installazione.  
+    -   **インストール開始までの時間** -- 必要に応じて、展開の種類のインストール プログラムがあるフォルダーを指定します。 このフォルダーには、クライアントの絶対パスを指定することも、インストール ファイルがある配布ポイント フォルダーのパスを指定することもできます。  
 
-    -   **Programma di disinstallazione**: specificare il nome del programma di disinstallazione ed eventuali parametri obbligatori oppure scegliere **Sfoglia** per individuare il programma (facoltativo).  
+    -   **プログラムのアンインストール** -- 必要に応じて、アンインストール プログラムの名前と必要なパラメーターを指定するか、**[参照]** を選択して見つけます。  
 
-    -   **Avvio disinstallazione da**: specificare la cartella che contiene il programma di disinstallazione per il tipo di distribuzione (facoltativo). Questa cartella può essere un percorso assoluto sul client o un percorso relativo alla cartella del punto di distribuzione contenente il pacchetto.  
+    -   **開始までの時間** -- 必要に応じて、展開の種類のアンインストール プログラムがあるフォルダーを指定します。 このフォルダーには、クライアントの絶対パスを指定することも、パッケージがある配布ポイント フォルダーの相対パスを指定することもできます。  
 
-    -   **Esegui l'installazione e disinstalla il programma come processo a 32 bit su client a 64 bit**: usare il file a 32 bit e i percorsi del Registro di sistema nei computer Windows per eseguire il programma di installazione per il tipo di distribuzione.  
+    -   **64 ビット クライアント上で 32 ビット プロセスとしてインストールおよびアンインストール プログラムを実行する** -- Windows ベースのコンピューターで 32 ビットのファイルとレジストリの場所を使用し、展開の種類のインストール プログラムを実行します。  
 
-2.  Scegliere **Avanti**.  
+2.  **[次へ]** を選択します。  
 
-## <a name="set-up-detection-methods-to-indicate-the-presence-of-the-deployment-type-windows-pcs-only"></a>Impostare i metodi di rilevamento per indicare la presenza del tipo di distribuzione (solo PC Windows)  
- Questa procedura consente di impostare un metodo di rilevamento che indica se il tipo di distribuzione è già installato.  
+## <a name="set-up-detection-methods-to-indicate-the-presence-of-the-deployment-type-windows-pcs-only"></a>展開の種類の存在を確認するための検出方法をセットアップする (Windows PC のみ)  
+ この手順では、展開の種類が既にインストールされているかどうかを確認する検出方法をセットアップします。  
 
-1.  Nella pagina **Metodo di rilevamento** della Creazione guidata tipo di distribuzione selezionare **Configura regole per rilevare la presenza del tipo di distribuzione** e quindi scegliere **Aggiungi clausola**.  
+1.  展開の種類の作成ウィザードの **[検出方法]** ページで、**[この展開の種類の存在を検出する規則を構成する]** を選択して、**[句の追加]** を選択します。  
 
     > [!NOTE]  
-    >  È anche possibile selezionare **Utilizza uno script personalizzato per rilevare la presenza del tipo di distribuzione**. Per altre informazioni, vedere [Usare uno script personalizzato per determinare la presenza di un tipo di distribuzione](/sccm/apps/deploy-use/create-applications#Use-a-custom-script-to-check-for-the-presence-of-a-deployment-type) in questo argomento.  
+    >  **[カスタム スクリプトを使用してこの展開の種類の存在を検出する]** を選択することもできます。 詳細については、「[カスタム スクリプトを使用して展開の種類の存在を確認する](/sccm/apps/deploy-use/create-applications#Use-a-custom-script-to-check-for-the-presence-of-a-deployment-type)」を参照してください。  
 
-2.  Nell'elenco a discesa **Tipo di impostazione** della finestra di dialogo **Regola di rilevamento**, selezionare il metodo che si vuole usare per rilevare la presenza del tipo di distribuzione. È possibile scegliere tra i seguenti metodi disponibili:  
+2.  **[検出規則]** ダイアログ ボックスの **[設定の種類]** ドロップダウン リストで、展開の種類の存在を検出するために使用する方法を選択します。 次の方法から選択できます。  
 
-    -   **File System**: usare questo metodo per rilevare se è presente un file o una cartella in un dispositivo client, a indicare che l'applicazione è installata.  
+    -   **ファイル システム** -- アプリケーションがインストールされていることを示す、指定したファイルまたはフォルダーがクライアント デバイスに存在するかどうかを検出する場合に、この方法を使用します。  
 
         > [!NOTE]  
-        >  Il tipo di impostazione **File system** non supporta l'indicazione di un percorso UNC di una condivisione di rete nel campo Percorso. È possibile specificare solo un percorso locale sul dispositivo client.  
+        >  設定の種類の **[ファイル システム]** の場合、[パス] フィールドでネットワーク共有への UNC パスを指定することはできません。 指定できるのはクライアント デバイスのローカル パスのみです。  
         >   
-        >  Per controllare i percorsi dei file a 32 bit per il file o la cartella specificata, selezionare prima di tutto l'opzione **Il file o la cartella sono associati a un'applicazione a 32 bit su sistemi a 64 bit**. Se il file o la cartella non vengono trovati, verrà eseguita una ricerca nei percorsi a 64 bit.  
+        >  指定されたファイルまたはフォルダーについて 32 ビット ファイルの場所を確認するには、まず、**[64 ビット システムでこのファイルまたはフォルダーを 32 ビット アプリケーションに関連付ける]** オプションを選択します。 ファイルやフォルダーが見つからなかった場合は、64 ビットの場所が検索されます。  
 
-    -   **Registro di sistema**: usare questo metodo per rilevare la presenza di una chiave o di un valore del Registro di sistema in un dispositivo client, confermando in tal modo l'installazione dell'applicazione.  
+    -   **レジストリ** -- アプリケーションがインストールされていることを示す、指定したレジストリ キーまたはレジストリ値がクライアント デバイスに存在するかどうかを検出する場合に、この方法を使用します。  
 
         > [!NOTE]  
-        >  Per controllare i percorsi del Registro di sistema a 32 bit per la chiave del Registro di sistema specificata, selezionare prima di tutto l'opzione **La chiave del Registro di sistema è associata a un'applicazione a 32 bit su sistemi a 64 bit**. Se la chiave del Registro di sistema non viene trovata, verrà eseguita una ricerca nei percorsi a 64 bit.  
+        >  指定されたレジストリ キーについて 32 ビット レジストリの場所を確認するには、まず、**[64 ビット システムでこのレジストリ キーを 32 ビット アプリケーションに関連付ける]** オプションを選択します。 レジストリ キーが見つからなかった場合は、64 ビットの場所が検索されます。  
 
-    -   **Windows Installer**: usare questo metodo per rilevare la presenza di un file Windows Installer specificato in un dispositivo client, a indicare che l'applicazione è installata.  
+    -   **Windows インストーラー** -- アプリケーションがインストールされていることを示す、指定した Windows インストーラー ファイルがクライアント デバイスに存在するかどうかを検出する場合に、この方法を使用します。  
 
-3.  Specificare i dettagli sull'elemento che si desidera usare per verificare se questo tipo di distribuzione è installato. Ad esempio, è possibile usare un file, una cartella, una chiave o un valore del Registro di sistema o un codice prodotto di Windows Installer.  
+3.  この展開の種類がインストールされているかどうかを検出するために使用する、項目の詳細を指定します。 たとえば、ファイル、フォルダー、レジストリのキーと値、Windows インストーラー製品コードを使用できます。  
 
-4.  Specificare i dettagli sul valore che si desidera valutare rispetto all'elemento usato per verificare se è installato questo tipo di distribuzione. Ad esempio, se si usa un file per controllare se il tipo di distribuzione è installato, è possibile selezionare **L'impostazione del file system deve essere presente nel sistema di destinazione per indicare la presenza dell'applicazione**.  
+4.  展開の種類がインストールされているかどうかを検出するために使用する項目で評価する、値の詳細を指定します。 たとえば、展開の種類がインストールされているかどうかを確認するためにファイルを使用する場合は、**[このアプリケーションのプレゼンスを示すには、ターゲット システムにファイル システム設定が存在する必要がある]** を選択することができます。  
 
-5.  Scegliere **Avanti** per chiudere la finestra di dialogo **Regola di rilevamento**.  
+5.  **[次へ]** を選択して、**[検索規則]** ダイアログ ボックスを閉じます。  
 
-###  <a name="use-a-custom-script-to-check-for-the-presence-of-a-deployment-type"></a>Usare uno script personalizzato per determinare la presenza di un tipo di distribuzione  
+###  <a name="use-a-custom-script-to-check-for-the-presence-of-a-deployment-type"></a>カスタム スクリプトを使用して展開の種類の存在を確認する  
 
-1.  Nella pagina **Metodo di rilevamento** della Creazione guidata tipo di distribuzione selezionare la casella **Utilizza uno script personalizzato per rilevare la presenza del tipo di distribuzione** e quindi scegliere **Modifica**.  
+1.  展開の種類の作成ウィザードの **[検出方法]** ページで、**[カスタム スクリプトを使用してこの展開の種類のプレゼンスを検出する]** ボックスをオンにして **[編集]** を選択します。  
 
-2.  Nell'elenco a discesa **Tipo di script** della finestra di dialogo **Editor dello script**selezionare la lingua dello script che si vuole usare per rilevare il tipo di distribuzione dall'elenco a discesa.  
+2.  **[スクリプト エディター]** ダイアログ ボックスの **[スクリプトの種類]** ドロップダウン リストで、展開の種類を検出するスクリプトの言語を選択します。  
 
-3.  Nel campo **Contenuti script** immettere lo script che si vuole usare. In questo campo è anche possibile incollare i contenuti di uno script esistente oppure è possibile scegliere **Apri** per passare a uno script salvato esistente. Configuration Manager controlla i risultati dello script leggendo i valori scritti nei flusso di output Standard Out (STDOUT) e Standard Error (STDERR) e nel codice di uscita dello script. Se il codice di uscita è un valore diverso da zero, si è verificato un errore nello script e lo stato di rilevamento dell'applicazione è sconosciuto. Se il codice di uscita è pari a zero e STDOUT contiene dati, lo stato di rilevamento dell'applicazione è installato.  
+3.  **[スクリプトの内容]** ボックスに、使用するスクリプトを入力します。 既存のスクリプトの内容をこのフィールドに貼り付けるか、**[開く]** を選択して、既存の保存済みスクリプトを参照することもできます。 Configuration Manager は、スクリプトの標準出力 (STDOUT) ストリームと標準エラー出力 (STDERR) ストリームに書き込まれた値、およびスクリプトの終了コードを読み取ることにより、スクリプトの結果を確認します。 終了コードがゼロでない場合は、スクリプトの実行に失敗しており、アプリケーションがインストール済みかどうかがわかりません。 終了コードがゼロで、STDOUT にデータがある場合、アプリケーション検出状態は "インストール済み" になります。  
 
- Usare la tabella seguente per comprendere come usare l'output di uno script per determinare se un'applicazione è installata.  
+ 次の表に、スクリプトの出力を使用してアプリケーションがインストール済みかどうかを確認する方法を示します。  
 
-|Codice di uscita dello script|Dettagli|
+|スクリプトの終了コード|説明|
 |--------------------------------|-----------------|
-|0|**Dati letti da STDOUT**: vuoto<br /><br /> **Dati letti da STDERR**: vuoto<br /><br /> **Risultato dello script**: operazione riuscita<br /><br /> **Stato di rilevamento dell'applicazione**: non installato|  
-|0|**Dati letti da STDOUT**: vuoto<br /><br /> **Dati letti da STDERR** non vuoto<br /><br /> **Risultato dello script**: operazione non riuscita<br /><br /> **Stato di rilevamento dell'applicazione**: sconosciuto|  
-|0|**Dati letti da STDOUT**: non vuoto<br /><br /> **Dati letti da STDERR**: vuoto<br /><br /> **Risultato dello script**: operazione riuscita<br /><br /> **Stato di rilevamento dell'applicazione**: installato|  
-|0|**Dati letti da STDOUT**: non vuoto<br /><br /> **Dati letti da STDERR** non vuoto<br /><br /> **Risultato dello script**: operazione riuscita<br /><br /> **Stato di rilevamento dell'applicazione**: installato|  
-|Valore diverso da zero|**Dati letti da STDOUT**: vuoto<br /><br /> **Dati letti da STDERR**: vuoto<br /><br /> **Risultato dello script**: operazione non riuscita<br /><br /> **Stato di rilevamento dell'applicazione**: sconosciuto|  
-|Valore diverso da zero|**Dati letti da STDOUT**: vuoto<br /><br /> **Dati letti da STDERR** non vuoto<br /><br /> **Risultato dello script**: operazione non riuscita<br /><br /> **Stato di rilevamento dell'applicazione**: sconosciuto|  
-|Valore diverso da zero|**Dati letti da STDOUT**: non vuoto<br /><br /> **Dati letti da STDERR**: vuoto<br /><br /> **Risultato dello script**: operazione non riuscita<br /><br /> **Stato di rilevamento dell'applicazione**: sconosciuto|  
-|Valore diverso da zero|**Dati letti da STDOUT**: non vuoto<br /><br /> **Dati letti da STDERR** non vuoto<br /><br /> **Risultato dello script**: operazione non riuscita<br /><br /> **Stato di rilevamento dell'applicazione**: sconosciuto|  
+|0|**STDOUT から読み取られるデータ** -- 空<br /><br /> **STDERR から読み取られるデータ** -- 空<br /><br /> **スクリプトの結果** -- 成功<br /><br /> **アプリケーション検出状態** -- 未インストール|  
+|0|**STDOUT から読み取られるデータ** -- 空<br /><br /> **STDERR から読み取られるデータ** -- 空ではない<br /><br /> **スクリプトの結果** -- 失敗<br /><br /> **アプリケーション検出状態** -- 不明|  
+|0|**STDOUT から読み取られるデータ** -- 空ではない<br /><br /> **STDERR から読み取られるデータ** -- 空<br /><br /> **スクリプトの結果** -- 成功<br /><br /> **アプリケーション検出状態** -- インストール済み|  
+|0|**STDOUT から読み取られるデータ** -- 空ではない<br /><br /> **STDERR から読み取られるデータ** -- 空ではない<br /><br /> **スクリプトの結果** -- 成功<br /><br /> **アプリケーション検出状態** -- インストール済み|  
+|ゼロ以外の値|**STDOUT から読み取られるデータ** -- 空<br /><br /> **STDERR から読み取られるデータ** -- 空<br /><br /> **スクリプトの結果** -- 失敗<br /><br /> **アプリケーション検出状態** -- 不明|  
+|ゼロ以外の値|**STDOUT から読み取られるデータ** -- 空<br /><br /> **STDERR から読み取られるデータ** -- 空ではない<br /><br /> **スクリプトの結果** -- 失敗<br /><br /> **アプリケーション検出状態** -- 不明|  
+|ゼロ以外の値|**STDOUT から読み取られるデータ** -- 空ではない<br /><br /> **STDERR から読み取られるデータ** -- 空<br /><br /> **スクリプトの結果** -- 失敗<br /><br /> **アプリケーション検出状態** -- 不明|  
+|ゼロ以外の値|**STDOUT から読み取られるデータ** -- 空ではない<br /><br /> **STDERR から読み取られるデータ** -- 空ではない<br /><br /> **スクリプトの結果** -- 失敗<br /><br /> **アプリケーション検出状態** -- 不明|  
 
-La tabella seguente contiene script di esempio di Visual Basic (VB) che è possibile usare per scrivere script di rilevamento personalizzati per l'applicazione.  
+次の表に、Microsoft Visual Basic (VB) のサンプル スクリプトを示します。これらは独自のアプリケーション検出スクリプトを記述する場合に使用できます。  
 
-|Script di esempio di Visual Basic|Descrizione|  
+|Visual Basic のサンプル スクリプト|説明|  
 |--------------------------------|-----------------|  
-|**WScript.Quit(1)**|Lo script restituisce un valore del codice di uscita diverso da zero, che indica l'esito negativo dell'esecuzione dello script. In questo caso, lo stato di rilevamento dell'applicazione è sconosciuto.|  
-|**WScript.StdErr.Write "Script non riuscito"**<br /><br /> **WScript.Quit(0)**|Lo script restituisce un valore del codice di uscita pari a zero, ma il valore di STDERR non è vuoto, che indica l'esito negativo dell'esecuzione dello script. In questo caso, lo stato di rilevamento dell'applicazione è sconosciuto.|  
-|**WScript.Quit(0)**|Lo script restituisce un valore del codice di uscita pari a zero, che indica un'esecuzione corretta dello script. Tuttavia, il valore di STDOUT è vuoto, che indica che l'applicazione non è installata.|  
-|**WScript.StdOut.Write "L'applicazione è installata"**<br /><br /> **WScript.Quit(0)**|Lo script restituisce un valore del codice di uscita pari a zero, che indica un'esecuzione corretta dello script. Il valore per STDOUT non è vuoto; ciò indica che l'applicazione è installata.|  
-|**WScript.StdOut.Write "L'applicazione è installata"**<br /><br /> **WScript.StdErr.Write "Completato"**<br /><br /> **WScript.Quit(0)**|Lo script restituisce un valore del codice di uscita pari a zero, che indica un'esecuzione corretta dello script. I valori per STDOUT e STDERR non sono vuoti; ciò indica che l'applicazione è installata.|  
+|**WScript.Quit(1)**|ゼロ以外の終了コードを返し、スクリプトが正常に実行されなかったことを示します。 この場合、アプリケーション検出状態は不明です。|  
+|**WScript.StdErr.Write "スクリプトは失敗"**<br /><br /> **WScript.Quit(0)**|ゼロの終了コードを返します。ただし、STDERR の値は空ではなく、スクリプトが正常に実行されなかったことを示します。 この場合、アプリケーション検出状態は不明です。|  
+|**WScript.Quit(0)**|ゼロの終了コードを返し、スクリプトが正常に実行されたことを示します。 ただし、STDOUT の値は空で、アプリケーションがインストールされていないことを示します。|  
+|**WScript.StdOut.Write "アプリケーションはインストール済み"**<br /><br /> **WScript.Quit(0)**|ゼロの終了コードを返し、スクリプトが正常に実行されたことを示します。 STDOUT の値は空ではなく、アプリケーションがインストールされていることを示します。|  
+|**WScript.StdOut.Write "アプリケーションはインストール済み"**<br /><br /> **WScript.StdErr.Write "完了"**<br /><br /> **WScript.Quit(0)**|ゼロの終了コードを返し、スクリプトが正常に実行されたことを示します。 STDOUT と STDERR の値は空ではなく、アプリケーションがインストールされていることを示します。|  
 
  > [!NOTE]  
- >  La dimensione massima che è possibile usare per uno script è 32 KB.  
+ >  使用できるスクリプトの最大サイズは 32 キロバイト (KB) です。  
 
-4.  Scegliere **OK** per chiudere la finestra di dialogo **Editor dello script**.  
+4.  **[OK]** を選択して、**[スクリプト エディター]** ダイアログ ボックスを閉じます。  
 
-## <a name="specify-user-experience-options-for-the-deployment-type"></a>Specificare le opzioni dell'esperienza utente per il tipo di distribuzione  
- Queste impostazioni specificano il modo in cui l'applicazione verrà installata nei dispositivi e che cosa visualizzerà l'utente.  
+## <a name="specify-user-experience-options-for-the-deployment-type"></a>展開の種類のユーザー エクスペリエンス オプションを指定する  
+ これらの設定では、デバイスへのアプリケーションのインストール方法と、ユーザーに表示される内容を指定します。  
 
-1.  Nella pagina **Esperienza utente** della Creazione guidata tipo di distribuzione specificare le informazioni seguenti:  
+1.  展開の種類の作成ウィザードの **[ユーザー側の表示と操作]** ページで、次の情報を指定します。  
 
-    -   **Comportamento installazione**: nell'elenco a discesa selezionare una delle opzioni seguenti:  
+    -   **インストールの動作** -- ドロップダウン リストで、次のいずれかのオプションを選択します。  
 
-        -   **Installa per utente**: l'applicazione viene installata solo per l'utente a cui viene distribuita.  
+        -   **ユーザー用にインストール** -- アプリケーションの展開先のユーザー専用にアプリケーションをインストールします。  
 
-        -   **Installa per sistema**: l'applicazione viene installata una sola volta ed è disponibile per tutti gli utenti.  
+        -   **システム用にインストールする** -- アプリケーションを 1 回だけインストールし、すべてのユーザーが利用できるようにします。  
 
-        -   **Installa per sistema se la risorsa è un dispositivo, altrimenti installa per utente**: se l'applicazione viene distribuita in un dispositivo, sarà installata per tutti gli utenti. Se l'applicazione viene distribuita a un utente, verrà installata solo per tale utente.  
+        -   **リソースがデバイスの場合はシステム用に、それ以外の場合はユーザー用にインストールする** -- アプリケーションがデバイスに展開される場合は、すべてのユーザー用にインストールします。 アプリケーションがユーザーに展開される場合は、そのユーザー専用にインストールします。  
 
-    -   **Requisiti di accesso**: specificare i requisiti di accesso per questo tipo di distribuzione con le opzioni seguenti:  
+    -   **ログオン要件** -- 展開の種類のログオン要件を次のオプションから指定します。  
 
-        -   **Solo se un utente è connesso**  
+        -   **ユーザーがログオンしているときのみ**  
 
-        -   **Indipendentemente dalla connessione degli utenti**  
+        -   **ユーザーのログオン状態にかかわらず**  
 
-        -   **Solo se nessun utente è connesso**  
-
-        > [!NOTE]  
-        >  Per impostazione predefinita, questa opzione è configurata su **Solo se un utente è connesso**e non può essere modificata se si è selezionato **Installa per utente** nell'elenco a discesa **Comportamento installazione** .  
-
-    -   **Visibilità del programma di installazione**: specificare la modalità in cui verrà eseguito il tipo di distribuzione sui dispositivi client. Sono disponibili le seguenti opzioni:  
-
-        -   **Ingrandita**: il tipo di distribuzione viene eseguito in modalità ingrandita sui dispositivi client. Gli utenti vedranno tutta l'attività di installazione.  
-
-        -   **Normale** : il tipo di distribuzione viene eseguito in modalità normale in base alle impostazioni predefinite del sistema e del programma. Questa è la modalità predefinita.  
-
-        -   **Ridotta a icona**: il tipo di distribuzione viene eseguito in modalità ridotta sui dispositivi client. Gli utenti possono visualizzare l'attività di installazione nell'area di notifica o sulla barra delle applicazioni.  
-
-        -   **Nascosta**: il tipo di distribuzione viene eseguito in modalità nascosta sui dispositivi client e gli utenti non visualizzeranno alcuna attività di installazione.  
-
-    -   **Consenti agli utenti di visualizzare e interagire con l'installazione del programma**: Specificare se un utente può interagire con l'installazione del tipo di distribuzione per configurarne le opzioni.  
+        -   **ユーザーがログオンしていないときのみ**  
 
         > [!NOTE]  
-        >  Questa opzione viene abilitata per impostazione predefinita se è stata selezionata l'opzione **Installa per utente** nell'elenco a discesa **Comportamento installazione** .  
+        >  このオプションの既定は [ **ユーザーがログオンしているときのみ**] です。[ **インストールの動作** ] ドロップダウン リストで [ **ユーザー用にインストール** ] を選択した場合は、既定値を変更することはできません。  
 
-    -   **Tempo di esecuzione massimo consentito (minuti)**: specificare la durata massima di esecuzione prevista per il programma sul computer client. Questa impostazione può essere specificata come un numero intero maggiore di zero. L'impostazione predefinita è 120 minuti.  
+    -   **インストール プログラムの表示** -- 展開の種類をクライアント デバイスで実行するモードを指定します。 次のオプションを使用できます。  
 
-         Questo valore viene usato per:  
+        -   **最大化** -- 展開の種類をクライアント デバイスで最大化して実行します。 ユーザーにはすべてのインストール動作が表示されます。  
 
-        -   Monitorare i risultati dal tipo di distribuzione.  
+        -   **通常** -- システムとプログラムの既定に応じた通常モードで展開の種類を実行します。 これが既定の設定です。  
 
-        -   Controllare se un tipo di distribuzione verrà installato quando sono definite finestre di manutenzione nei dispositivi client. Quando è attiva una finestra di manutenzione, un programma sarà avviato solo se il tempo disponibile nella finestra di manutenzione è sufficiente per configurare l'impostazione **Tempo di esecuzione massimo consentito** .  
+        -   **最小化** -- 展開の種類をクライアント デバイスで最小化して実行します。 ユーザーは通知エリアまたはタスクバーでインストール動作を確認できます。  
+
+        -   **非表示** -- クライアント デバイスで展開の種類を表示せずに実行します。ユーザーは、インストール動作を何も見ることができません。  
+
+    -   **プログラムのインストールの表示および対話をユーザーに許可する** -- 展開の種類のインストールで、ユーザーがインストール オプションをセットアップできるようにするかどうかを指定します。  
+
+        > [!NOTE]  
+        >  このオプションは、[ **インストールの動作** ] ドロップダウン リストの [ **ユーザー用にインストール** ] オプションを選択すると、既定で有効になります。  
+
+    -   **許容最長実行時間 (分)** -- クライアント コンピューターでプログラムを実行できる最長時間を指定します。 ゼロより大きい整数を指定できます。 既定の設定は、120 分です。  
+
+         この値は、次を行うときに使用されます。  
+
+        -   展開の種類の結果を監視する。  
+
+        -   クライアント デバイスでメンテナンス期間が定義されている場合に、展開の種類をインストールするかどうかを確認する。 メンテナンス期間が設定されている場合は、[ **許可最長実行時間** ] で指定した時間が、メンテナンス期間の残りに収まる場合だけプログラムが起動します。  
 
         > [!IMPORTANT]  
-        >  Potrebbe verificarsi un conflitto se il **Tempo di esecuzione massimo consentito** è maggiore della finestra di manutenzione pianificata. Se l'utente imposta il tempo di esecuzione massimo consentito su una durata superiore a quella di qualsiasi finestra di manutenzione disponibile, quel tipo di distribuzione non sarà eseguito.  
+        >  スケジュールされているメンテナンス期間より [ **許可最長実行時間** ] が長い場合は、競合が発生することがあります。 ユーザーが [最長実行時間] をメンテナンス期間より長く設定した場合は、その展開の種類は実行されません。  
 
-2.  **Tempo previsto di installazione (minuti)**: specificare il tempo previsto necessario per l'installazione del tipo di distribuzione. Viene visualizzato agli utenti di Software Center.  
+2.  **インストールの推定時間 (分)** -- 展開の種類のインストールにかかる推定時間を指定します。 これは、ソフトウェア センターのユーザーに表示されます。  
 
-## <a name="specify-requirements-for-the-deployment-type"></a>Specificare i requisiti per il tipo di distribuzione  
+## <a name="specify-requirements-for-the-deployment-type"></a>展開の種類の要件を指定する  
 
-1.  Nella pagina **Requisiti** della Creazione guidata tipo di distribuzione fare clic su **Aggiungi** per aprire la finestra di dialogo **Creazione requisito** e aggiungere un nuovo requisito.  
+1.  展開の種類の作成ウィザードの **[要件]** ページで **[追加]** を選択して **[要件の作成]** ダイアログ ボックスを開き、新しい要件を追加します。  
 
     > [!NOTE]  
-    >  È anche possibile aggiungere nuovi requisiti nella scheda **Requisiti** della finestra di dialogo *Proprietà di\>* **<nome del tipo di distribuzione**.  
+    >  *[<展開の種類名\>* **プロパティ]** ダイアログ ボックスの **[要件]** タブで、新しい要件を追加することもできます。  
 
-2.  Dall'elenco a discesa **Categoria** selezionare se questo requisito è per un dispositivo o un utente oppure selezionare **Personalizzata** per usare una condizione globale creata in precedenza. Quando si seleziona **Personalizzata**, è inoltre possibile fare clic su **Crea** per creare una nuova condizione globale. Per altre informazioni sulle condizioni globali, vedere [Come creare condizioni globali](../../apps/deploy-use/create-global-conditions.md).  
+2.  **[カテゴリ]** ドロップダウン リストで、デバイスとユーザーのどちらの要件かを選択します。または、作成済みグローバル条件を使用する場合は **[カスタム]** を選択します。 **[カスタム]** を選択した場合は、**[作成]** を選択して新しいグローバル条件を作成することもできます。 グローバル条件の詳細については、「[グローバル条件を作成する方法](../../apps/deploy-use/create-global-conditions.md)」を参照してください。  
 
     > [!IMPORTANT]  
-    >  Qualsiasi requisito della categoria **Utente** e la condizione **Dispositivo primario** verranno ignorati se si distribuisce l'applicazione a una raccolta dispositivi.  
+    >  アプリケーションをデバイス コレクションに展開する場合、カテゴリ **[ユーザー]** と条件 **[プライマリ デバイス]** の要件は無視されます。  
     >   
-    >  Se si è creato un pacchetto di Windows e una sequenza di programmi o di attività per la quale Windows 10 è un requisito e che usa System Center 2012 R2 Configuration Manager SP1 e quindi si effettua l'aggiornamento a System Center Configuration Manager, il requisito relativo a Windows 10 potrebbe essere rimosso. Per risolvere questo problema, specificare di nuovo i requisiti. Si noti che anche se il requisito è stato rimosso dalla visualizzazione requisiti, viene comunque elaborato correttamente sui dispositivi.  
+    >  System Center 2012 R2 Configuration Manager SP1 を使用して、Windows 10 を含む Windows のパッケージやプログラムまたはタスク シーケンスを要件として作成してから、System Center Configuration Manager にアップグレードすると、Windows 10 の要件が削除される場合があります。 この問題を解決するには、要件をもう一度指定します。 要件の表示から要件は削除されていますが、デバイスではまだ正しく処理されることに注意してください。  
 
-3.  Nell'elenco a discesa **Condizione** selezionare la condizione da usare per valutare se l'utente o il dispositivo soddisfano i requisiti di installazione. Il contenuto di questo elenco varia a seconda della categoria selezionata.  
+3.  [ **条件** ] ドロップダウン リストで、ユーザーまたはデバイスがインストール要件を満たしているかどうかを評価するための条件を選択します。 この一覧の内容は、選択したカテゴリによって異なります。  
 
-4.  Nell'elenco a discesa **Operatore** selezionare l'operatore da usare per confrontare la condizione selezionata con il valore specificato per valutare se l'utente o il dispositivo soddisfano i requisiti d'installazione. Gli operatori disponibili variano a seconda della condizione selezionata.  
+4.  [ **演算子** ] ドロップダウン リストで、ユーザーまたはデバイスがインストール要件を満たしているかどうかを評価するときに、指定した条件と特定の値を比較する演算子を選択します。 利用可能な演算子は選択された条件によって異なります。  
 
     > [!IMPORTANT]  
-    >  I requisiti disponibili variano a seconda del tipo di dispositivo usato dal tipo di distribuzione.  
+    >  使用できる要件は、展開の種類で使用するデバイスの種類によって異なります。  
 
-5.  Nella casella **Valore** specificare i valori da usare con la condizione e l'operatore selezionati per valutare se l'utente o il dispositivo soddisfano i requisiti di installazione. I valori disponibili variano a seconda della condizione e dell'operatore selezionati.  
+5.  **[値]** ボックスに、ユーザーまたはデバイスがインストール要件を満たしているかどうかを評価するときに、選択した条件および演算子と一緒に使用する値を指定します。 利用可能な値は選択された条件および選択された演算子によって異なります。  
 
-6.  Scegliere **OK** per salvare il requisito e chiudere la finestra di dialogo **Creazione requisito**.  
+6.  **[OK]** を選択して要件を保存し、**[要件の作成]** ダイアログ ボックスを閉じます。  
 
-## <a name="specify-dependencies-for-the-deployment-type"></a>Specificare le dipendenze per il tipo di distribuzione  
- Le dipendenze definiscono uno o più tipi di distribuzione da un'altra applicazione che deve essere installata prima dell'installazione di un tipo di distribuzione. È possibile configurare i tipi di distribuzione dipendenti per l'installazione automatica prima dell'installazione di un tipo di distribuzione.  
+## <a name="specify-dependencies-for-the-deployment-type"></a>展開の種類の依存関係を指定する  
+ 依存関係は、展開の種類をインストールする前にインストールする必要がある、別のアプリケーションからの 1 つまたは複数の展開の種類を定義します。 展開の種類がインストールされる前に、依存する展開の種類が自動的にインストールされるようにセットアップすることができます。  
 
 > [!IMPORTANT]  
->  In alcuni casi, un tipo di distribuzione dipende dal tipo di distribuzione che contiene anche le dipendenze. Il numero massimo di dipendenze supportate nella catena è cinque.  
+>  展開の種類が別の展開の種類と依存関係にあり、この別の展開の種類にも依存関係がある場合があります。 チェーンでサポートされる依存関係の最大数は 5 つです。  
 
-1.  Nella pagina **Dipendenze** della Creazione guidata tipo di distribuzione scegliere **Aggiungi** se si desidera specificare i tipi di distribuzione da installare prima di poter installare questo tipo di distribuzione.  
+1.  展開の種類をインストールする前にインストールする必要がある展開の種類を指定する場合は、展開の種類の作成ウィザードの **[依存関係]** ページで **[追加]** を選択します。  
 
     > [!IMPORTANT]  
-    >  È anche possibile aggiungere nuove dipendenze nella scheda **Dipendenze** della finestra di dialogo *Proprietà di\>* **<nome tipo di distribuzione**.  
+    >  *[<展開の種類名\>* **プロパティ]** ダイアログ ボックスの **[依存関係]** タブで、新しい依存関係を追加することもできます。  
 
-2.  Nella finestra di dialogo **Aggiungi dipendenza** scegliere **Aggiungi**.  
+2.  **[依存関係の追加]** ダイアログ ボックスで、**[追加]** を選択します。  
 
-3.  Nella finestra di dialogo **Specifica applicazione richiesta** selezionare un'applicazione esistente e uno dei tipi di distribuzione applicazione da usare come una dipendenza.  
+3.  [ **必須アプリケーションの指定** ] ダイアログ ボックスで、依存関係として使用する既存のアプリケーションと、アプリケーションの展開の種類の 1 つを選択します。  
 
     > [!TIP]  
-    >  È possibile scegliere **Visualizza** per visualizzare le proprietà del tipo di distribuzione o dell'applicazione selezionati.  
+    >  **[表示]** を選択して、選択したアプリケーションまたは展開の種類のプロパティを表示できます。  
 
-4.  Scegliere **OK** per chiudere la finestra di dialogo **Specifica applicazione richiesta**.  
+4.  **[OK]** を選択して **[必須アプリケーションの指定]** ダイアログ ボックスを閉じます。  
 
-5.  Se si desidera che un'applicazione dipendente venga installata automaticamente, selezionare **Installazione automatica** accanto all'applicazione dipendente.  
+5.  依存アプリケーションが自動的にインストールされるようにするには、そのアプリケーションの横にある [ **自動インストール** ] を選択します。  
 
     > [!NOTE]  
-    >  Non è necessario distribuire un'applicazione dipendente per l'installazione automatica.  
+    >  依存アプリケーションは自動インストールとして展開する必要はありません。  
 
-6.  Nella finestra di dialogo **Aggiungi dipendenza**, in **Nome gruppo di dipendenze**, immettere un nome di riferimento per questo gruppo di dipendenze dell'applicazione.  
+6.  **[依存関係の追加]** ダイアログ ボックスの **[依存関係グループ名]** に、このアプリケーションの依存関係グループを表す名前を入力します。  
 
-7.  Facoltativamente, è possibile usare i pulsanti **Aumenta priorità** e **Diminuisci priorità** per modificare l'ordine di valutazione delle dipendenze.  
+7.  オプションで、[ **優先順位を上げる** ] と [ **優先順位を下げる** ] を使用して、各依存関係を評価する順序を変更します。  
 
-8.  Scegliere **OK** per chiudere la finestra di dialogo **Aggiungi dipendenza**.  
+8.  **[OK]** を選択して **[依存関係の追加]** ダイアログ ボックスを閉じます。  
 
-## <a name="confirm-the-deployment-type-settings-and-finish-the-wizard"></a>Confermare le impostazioni del tipo di distribuzione e terminare la procedura guidata  
+## <a name="confirm-the-deployment-type-settings-and-finish-the-wizard"></a>展開の種類の設定を確認してウィザードを終了する  
 
-1.  Nella pagina **Riepilogo** della Creazione guidata tipo di distribuzione rivedere le azioni che saranno eseguite nella procedura guidata. Scegliere **Avanti** per creare il tipo di distribuzione oppure su **Precedente** per tornare indietro e modificare le impostazioni del tipo di distribuzione.  
+1.  展開の種類の作成ウィザードの **[概要]** ページで、ウィザードで実行される処理を確認します。 展開の種類を作成するには **[次へ]** を選択し、前のページに戻って展開の種類の設定を変更するには **[前へ]** を選択します。  
 
-2.  Al termine della pagina **Avanzamento** rivedere le azioni eseguite nella procedura guidata e scegliere **Chiudi** per terminare la procedura guidata.  
+2.  **[進行状況]** ページが完了したら、ウィザードで実行された操作を確認し、**[閉じる]** を選択してウィザードを終了します。  
 
-3.  Se la Creazione guidata tipo di distribuzione è stata avviata dalla Creazione guidata applicazione, verrà visualizzata di nuovo la pagina **Tipi di distribuzione** della Creazione guidata applicazione.  
+3.  アプリケーションの作成ウィザードから展開の種類の作成ウィザードを起動した場合は、アプリケーションの作成ウィザードの **[展開の種類]** ページに戻ります。  
 
-## <a name="set-up-additional-options-for-deployment-types-that-contain-virtual-applications"></a>Impostare le opzioni aggiuntive per i tipi di distribuzione che contengono applicazioni virtuali  
- Usare le procedure seguenti per impostare le opzioni aggiuntive per i tipi di distribuzione che contengono applicazioni virtuali.  
+## <a name="set-up-additional-options-for-deployment-types-that-contain-virtual-applications"></a>仮想アプリケーションが含まれる展開の種類のその他のオプションをセットアップする  
+ 仮想アプリケーションが含まれる展開の種類のその他のオプションをセットアップするには、以下の手順を使用します。  
 
-### <a name="set-up-content-options-for-application-virtualization-app-v-deployment-types"></a>Impostare le opzioni di contenuto per tipi di distribuzione di Application Virtualization (App-V)  
+### <a name="set-up-content-options-for-application-virtualization-app-v-deployment-types"></a>Application Virtualization (App-V) の展開の種類のコンテンツ オプションをセットアップする  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Applicazioni**.  
+1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション]** の順に選択します。  
 
-2.  Nell'elenco **Applicazioni** selezionare un'applicazione che contiene un tipo di distribuzione App-V. Quindi nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
+2.  **[アプリケーション]** 一覧で、App-V の展開の種類を含むアプリケーションを選択します。 次に、**[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-3.  Nella finestra di dialogo *Proprietà\>* **<nome applicazione** nella scheda **Tipi di distribuzione** selezionare un tipo di distribuzione App-V e quindi scegliere **Modifica**.  
+3.  *[<アプリケーション名\>* **プロパティ]** ダイアログ ボックスの **[展開の種類]** タブで、App-V の展開の種類を選択して **[編集]** を選択します。  
 
-4.  Se necessario, impostare le opzioni seguenti nella scheda **Contenuto** della finestra di dialogo *<Nome tipo distribuzione\>* **Proprietà**:  
+4.  *[<展開の種類名\>* **プロパティ]** ダイアログ ボックスの **[コンテンツ]** タブで、必要に応じて次のオプションをセットアップします。  
 
-    -   **Rendi permanente il contenuto nella cache client**: selezionare questa opzione per assicurarsi che il contenuto per questo tipo di distribuzione non venga eliminato dalla cache del client di Configuration Manager.  
+    -   **クライアント キャッシュの内容を保持する** -- この展開の種類のコンテンツを Configuration Manager クライアント キャッシュから削除しないようにするには、このオプションを選択します。  
 
-    -   **Carica contenuto nella cache App-V prima dell'avvio**: selezionare questa opzione per fare in modo che tutto il contenuto per l'applicazione virtuale venga caricato nella cache App-V prima dell'avvio dell'applicazione. La selezione di questa opzione garantisce inoltre che il contenuto dell'applicazione non venga bloccato nella cache e possa essere eliminato in base alle necessità.  
+    -   **起動前にコンテンツを App-V キャッシュに読み込む** -- アプリケーションを開始する前に、仮想アプリケーションのすべてのコンテンツを App-V キャッシュに読み込むには、このオプションを選択します。 また、このオプションを選択すると、アプリケーションのコンテンツはキャッシュに固定されず、必要に応じて削除できます。  
 
-5.  Scegliere **OK** per chiudere la finestra di dialogo *Proprietà\>* **<nome tipo distribuzione**.  
+5.  **[OK]** を選択して、*[<展開の種類名\>* **プロパティ]** ダイアログ ボックスを閉じます。  
 
-6.  Scegliere **OK** per chiudere la finestra di dialogo **Proprietà** *<nome applicazione\>*.  
+6.  **[OK]** を選択して、*[<アプリケーション名\>* **プロパティ]** ダイアログ ボックスを閉じます。  
 
-### <a name="set-up-publishing-options-for-app-v-deployment-types"></a>Impostare le opzioni di pubblicazione per i tipi di distribuzione App-V  
+### <a name="set-up-publishing-options-for-app-v-deployment-types"></a>App-V の展開の種類の発行オプションをセットアップする  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Applicazioni**.  
+1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション]** の順に選択します。  
 
-3.  Nell'elenco **Applicazioni** selezionare un'applicazione che contiene un tipo di distribuzione App-V. Quindi nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
+3.  **[アプリケーション]** 一覧で、App-V の展開の種類を含むアプリケーションを選択します。 次に、**[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-4.  Nella finestra di dialogo *Proprietà\>* **<nome applicazione** nella scheda **Tipi di distribuzione** selezionare un tipo di distribuzione App-V e quindi scegliere **Modifica**.  
+4.  *[<アプリケーション名\>* **プロパティ]** ダイアログ ボックスの **[展開の種類]** タブで、App-V の展開の種類を選択して **[編集]** を選択します。  
 
-5.  Nella finestra di dialogo *Proprietà\>***<Nome tipo di distribuzione**, nella scheda **Pubblicazione**, selezionare gli elementi nell'applicazione virtuale da pubblicare.  
+5.  *[<展開の種類名\>* **プロパティ]** ダイアログ ボックスの **[発行]** タブで、発行する仮想アプリケーション内の項目を選択します。  
 
-6.  Scegliere **OK** per chiudere la finestra di dialogo *Proprietà\>*  **<nome tipo distribuzione**.  
+6.  **[OK]** を選択して、*[<展開の種類名\>* **プロパティ]** ダイアログ ボックスを閉じます。  
 
-7.  Scegliere **OK** per chiudere la finestra di dialogo **Proprietà** *<nome applicazione\>*.  
+7.  **[OK]** を選択して、*[<アプリケーション名\>* **プロパティ]** ダイアログ ボックスを閉じます。  
 
-## <a name="import-an-application"></a>Importare un'applicazione  
- Usare la procedura seguente per importare un'applicazione in Configuration Manager. Per informazioni su come esportare un'applicazione, vedere [Attività di gestione per applicazioni di System Center Configuration Manager](../../apps/deploy-use/management-tasks-applications.md).  
+## <a name="import-an-application"></a>アプリケーションをインポートする  
+ アプリケーションを Configuration Manager にインポートするには、次の手順に従います。 アプリケーションのエクスポート方法については、「[System Center Configuration Manager アプリケーションの管理タスク](../../apps/deploy-use/management-tasks-applications.md)」を参照してください。  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.   
+1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[アプリケーション]** の順に選択します。   
 
-3.  Nella scheda **Home**, nel gruppo **Crea**, scegliere **Importa applicazione**.  
+3.  **[ホーム]** タブの **[作成]** グループで、**[アプリケーションのインポート]** を選択します。  
 
-4.  Nella pagina **Generale** dell'**Importazione guidata applicazione** scegliere **Sfoglia** e quindi specificare il percorso UNC del file con estensione zip che contiene l'applicazione da importare.  
+4.  **アプリケーションのインポート ウィザード**の **[全般]** ページで、**[参照]** を選択し、インポートするアプリケーションを含む .zip ファイルへの UNC パスを指定します。  
 
-5.  Nella pagina **Contenuto file** selezionare l'azione da eseguire se l'applicazione che si sta cercando di importare è il duplicato di un'applicazione esistente. È possibile creare una nuova applicazione oppure ignorare il duplicato e aggiungere una nuova revisione per l'applicazione esistente.  
+5.  [**ファイルのコンテンツ**] ページで、インポートするアプリケーションが既存のアプリケーションと重複している場合に行う処理を選択します。 新しいアプリケーションを作成するか重複を無視して、既存のアプリケーションに新しいバージョンを追加することができます。  
 
-6.  Nella pagina **Riepilogo** esaminare le azioni da eseguire e quindi terminare la procedura guidata.  
+6.  **[概要]** ページで、実行される操作を確認し、ウィザードを終了します。  
 
- La nuova applicazione viene visualizzata nel nodo **Applicazioni**.  
+ 新しいアプリケーションは **[アプリケーション]** ノードに表示されます。  
 
 > [!TIP]  
->  Il cmdlet di Windows PowerShell **Import-CMApplication** ha la stessa funzione di questa procedura. Per altre informazioni, vedere [Import-CMApplication](https://technet.microsoft.com/library/jj821738.aspx) nella documentazione di riferimento dei cmdlet di System Center 2012 Configuration Manager SP1.  
+>  Windows PowerShell コマンドレットの **Import-CMApplication** は、上の手順と同じ機能があります。 詳細については、Microsoft System Center 2012 Configuration Manager SP1 コマンドレット リファレンスの「[Import-CMApplication](https://technet.microsoft.com/library/jj821738.aspx)」を参照してください。  
 
-##  <a name="deployment-types-supported-by-configuration-manager"></a>Tipi di distribuzione supportati da Configuration Manager  
+##  <a name="deployment-types-supported-by-configuration-manager"></a>Configuration Manager でサポートされる展開の種類  
 
-|Nome del tipo di distribuzione|Altre informazioni|  
+|展開の種類名|説明|  
 |--------------------------|----------------------|  
-|**Windows Installer (file \*.msi)**|Crea un tipo di distribuzione da un file di Windows Installer.|  
-|**Pacchetto app Windows (\*.appx, \*.appxbundle)**|Crea un tipo di distribuzione per il sistema operativo Windows 8, Windows RT o versioni successive da un file del pacchetto dell'app di Windows o da un pacchetto bundle dell'app di Windows.|  
-|**Pacchetto app Windows (in Windows Store)**|Crea un tipo di distribuzione per Windows 8, Windows RT o versioni successive specificando un collegamento all'app in Windows Store o tramite l'esplorazione dello Store per selezionare l'app necessaria.<br /><br /> Se si desidera distribuire l'app come un collegamento a Windows Store, assicurarsi che l'impostazione Criteri di gruppo **Disattiva applicazione di archiviazione** sia impostata su **Disattivato** o **Non configurato**. Se questa impostazione è abilitata, i client non saranno in grado di connettersi a Windows Store per scaricare e installare applicazioni.<br /><br /> I tipi di distribuzione di Windows 8 che usano un collegamento a un archivio vengono sempre valutati prima di altri tipi di distribuzione, indipendentemente dalla relativa priorità.|  
-|**Programma di installazione dello script**|Crea un tipo di distribuzione che specifica uno script in esecuzione su dispositivi client per installare contenuto o per eseguire un'azione.|  
-|**Microsoft Application Virtualization 4**|Crea un tipo di distribuzione da un manifesto Microsoft Application Virtualization 4|  
-|**Microsoft Application Virtualization 5**|Consente di creare un tipo di distribuzione da un file di pacchetto di Microsoft Application Virtualization 5.|  
-|**Pacchetto app Windows Phone (file \*.xap)**|Consente di creare un tipo di distribuzione da un file di pacchetto dell'app di Windows Phone.|  
-|**Pacchetto app Windows Phone (in Windows Phone Store)**|Crea un tipo di distribuzione specificando un collegamento all'app in Windows Phone Store.|  
-|**Windows Mobile Cabinet**|Crea un tipo di distribuzione per dispositivi Windows Mobile da un file Windows Mobile Cabinet (CAB).|  
-|**Pacchetto app per iOS (file \*.ipa)**|Consente di creare un tipo di distribuzione da un file di pacchetto dell'app di iOS.|  
-|**Pacchetto app per iOS nell'App Store**|Consente di creare un tipo di distribuzione specificando un collegamento all'app di iOS nell'App Store.|  
-|**Pacchetto app per Android (file \*.apk)**|Consente di creare un tipo di distribuzione da un file di pacchetto dell'app di Android.|  
-|**Pacchetto app Android in Google Play**|Consente di creare un tipo di distribuzione specificando un collegamento all'app in Google Play.|  
-|**Mac OS X**|Crea un tipo di distribuzione per computer Mac da un file .cmmac che è stato creato con l'utilità CMAppUtil.<br /><br /> Si applica solo ai computer Mac che eseguono il client di Configuration Manager.|  
-|**Applicazione Web**|Consente di creare un tipo di distribuzione che specifica un collegamento a un'applicazione Web. Il tipo di distribuzione installa un collegamento all'applicazione Web sul dispositivo dell'utente.<br /><br /> Se è stato installato Intune Managed Browser in dispositivi iOS o Android gestiti, è possibile assicurarsi che l'app venga aperta solo con Managed Browser. A tale scopo, usare uno dei formati seguenti quando si specifica un collegamento all'app sostituendo **http:** con **http-intunemam:** o **https:** con **https-intunemam:**<br /><br /> - **http-intunemam://<percorso App Web\>**<br /><br /> - **https-intunemam://<percorso App Web\>**<br /><br /> È possibile usare i requisiti dell'applicazione Configuration Manager per assicurarsi che le app da associare a Managed Browser vengano installate solo in dispositivi iOS e Android.<br /><br /> Per altre informazioni su Intune Managed Browser, vedere [Gestire l'accesso a Internet mediante criteri di Managed Browser](../../apps/deploy-use/manage-internet-access-using-managed-browser-policies.md).|  
-|**Windows Installer tramite MDM (\*.msi)**|Questo tipo di programma di installazione permette di creare e distribuire app basate su Windows Installer in PC che eseguono Windows 10.<br /><br /> Quando si usa questo tipo di programma di installazione, considerare gli aspetti seguenti:<br><br>- È possibile caricare un solo file con estensione MSI.<br /><br /> - Per il rilevamento delle app vengono usati il codice e la versione prodotto del file.<br /><br /> - Viene usato il comportamento di riavvio predefinito dell'app. Configuration Manager non controlla questo comportamento.<br /><br /> - I pacchetti MSI per utente vengono installati per un singolo utente.<br /><br /> - I pacchetti MSI per computer vengono installati per tutti gli utenti del dispositivo.<br /><br /> - I pacchetti MSI dual mode vengono installati attualmente solo per tutti gli utenti del dispositivo.<br /><br /> - Gli aggiornamenti delle app sono supportati quando il codice prodotto MSI di ogni versione è lo stesso.|  
-
+|**Windows インストーラー (\*.msi ファイル)**|Windows インストーラー ファイルの展開の種類を作成します。|  
+|**Windows アプリ パッケージ (\*.appx、\*.appxbundle)**|Windows アプリケーション パッケージ ファイルまたは Windows アプリケーション バンドル パッケージから、Windows 8 または Windows RT 以降の展開の種類を作成します。|  
+|**Windows アプリケーション パッケージ (Windows ストア内)**|Windows ストア内のアプリケーションへのリンクを指定するか、ストアを参照して必要なアプリケーションを選択することで、Windows 8 または Windows RT 以降の展開の種類を作成します。<br /><br /> アプリケーションを Windows ストアへのリンクとして展開する場合は、必ず、グループ ポリシーの [ **ストア アプリケーションをオフにする** ] を [ **無効** ] または [ **未構成**] に設定してください。 この設定が有効になっていると、アプリケーションのダウンロードとインストールを行うためにクライアントが Windows ストアに接続することができません。<br /><br /> ストアへのリンクを使用する Windows 8 の展開の種類は、優先順位に関係なく、いつもその他の展開の種類より前に評価されます。|  
+|**スクリプト インストーラー**|コンテンツをインストールしたり、何らかの操作を実行したりするためにクライアント デバイスで実行されるスクリプトを指定する展開の種類を作成します。|  
+|**Microsoft Application Virtualization 4**|Microsoft Application Virtualization 4 マニフェストの展開の種類を作成します。|  
+|**Microsoft Application Virtualization 5**|Microsoft Application Virtualization 5 パッケージ ファイルの展開の種類を作成します。|  
+|**Windows Phone アプリケーション パッケージ (\*.xap ファイル)**|Windows Phone アプリケーション パッケージ ファイルの展開の種類を作成します。|  
+|**Windows Phone アプリケーション パッケージ (Windows Phone ストア内)**|Windows Phone ストアのアプリケーションへのリンクを指定して、展開の種類を作成します。|  
+|**Windows Mobile キャビネット**|Windows Mobile キャビネット (CAB) ファイルから Windows Mobile デバイスの展開の種類を作成します。|  
+|**iOS アプリ パッケージ (\*.ipa ファイル)**|iOS アプリケーション パッケージ ファイルの展開の種類を作成します。|  
+|**iOS 用アプリ パッケージ (App ストア内)**|App ストアの iOS アプリケーションへのリンクを指定して、展開の種類を作成します。|  
+|**Android アプリ パッケージ (\*.apk ファイル)**|Android アプリケーション パッケージ ファイルの展開の種類を作成します。|  
+|**Android 用アプリ パッケージ (Google Play 内)**|Google Play のアプリケーションへのリンクを指定して、展開の種類を作成します。|  
+|**Mac OS X**|CMAppUtil ツールを使って作成した .cmmac ファイルを含む、Mac コンピューター用の展開の種類を作成します。<br /><br /> Configuration Manager クライアントを実行している Mac コンピューターのみに適用されます。|  
+|**Web アプリケーション**|Web アプリケーションへのリンクを指定して、展開の種類を作成します。 この展開の種類では、ユーザーのデバイスに Web アプリケーションへのショートカットをインストールします。<br /><br /> 管理対象の iOS または Android デバイスに Intune Managed Browser をインストールしておくと、ユーザーがアプリを開くのに使用できるのは Managed Browser のみになります。 これを行うには、アプリへのリンクを指定するときに、**http:** を **http intunemam:** に置換するか、または **https:** を **https intunemam:** に置換して、次のどちらかの形式を使用します。<br /><br /> - **http-intunemam://<Web アプリへのパス\>**<br /><br /> - **https-intunemam://<Web アプリへのパス\>**<br /><br /> Configuration Manager アプリケーションの要件を使用することにより、Managed Browser に関連付けるアプリは iOS および Android デバイスの<br /><br /> Intune Managed Browser の詳細については、「[Managed Browser ポリシーを使用したインターネット アクセスの管理](../../apps/deploy-use/manage-internet-access-using-managed-browser-policies.md)」を参照してください。|  
+|**MDM を介した Windows インストーラー (\*.msi)**|このインストーラーの種類では、Windows インストーラーベースのアプリを作成して、Windows 10 を実行する PC に展開できます。<br /><br /> このインストーラーの種類を使用する場合は、次の点を考慮してください。<br><br>- 拡張子が .msi であるファイルを 1 つのみアップロードできます。<br /><br /> - アプリの検出では、ファイルの製品コードと製品バージョンが使用されます。<br /><br /> - アプリの既定の再起動動作が使用されます。 Configuration Manager はこれを制御しません。<br /><br /> - ユーザー単位の MSI パッケージは単一のユーザーにインストールされます。<br /><br /> - コンピューター単位の MSI パッケージはデバイス上のすべてのユーザーにインストールされます。<br /><br /> - デュアル モードの MSI パッケージは現在、デバイス上のすべてのユーザーに対するインストールのみが実行されます。<br /><br /> - アプリの更新プログラムは、各バージョンの MSI 製品コードが同じである場合にサポートされます。|  

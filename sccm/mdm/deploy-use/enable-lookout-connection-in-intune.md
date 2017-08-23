@@ -1,13 +1,12 @@
 ---
-title: Abilitare Lookout MTP in Intune | Microsoft Docs
-description: Abilitare Lookout Mobile Threat Protection nella console di amministrazione di Intune.
+title: "Intune で Lookout MTP を有効にする | Microsoft Docs"
+description: "Intune 管理コンソールで、Lookout Mobile Threat Protection を有効にします。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7e4ada34-63bf-4b9f-8246-31816aa44196
@@ -15,29 +14,26 @@ caps.latest.revision:
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 65d3dff359987e1d3175b06aa7a03827d48bc97d
-ms.contentlocale: it-it
-ms.lasthandoff: 03/06/2017
-
-
+ms.openlocfilehash: f9ddbcc981fa1274a41ae16a6a939c0cdf739c3e
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="enable-lookout-mtp-connection-in-the-intune-admin-console"></a>Abilitare Lookout MTP nella console di amministrazione di Intune
+# <a name="enable-lookout-mtp-connection-in-the-intune-admin-console"></a>Intune 管理コンソールで、Lookout MTP 接続を有効にする
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-In questo argomento viene illustrato come abilitare la connessione Lookout MTP in Intune. Prima di procedere con questo passaggio è necessario aver configurato Intune Connector nella console di Lookout.  Se ciò non è ancora stato fatto, eseguire i passaggi descritti in [Set up your subscription with Lookout mobile threat protection](set-up-your-subscription-with-lookout.md) (Configurare la sottoscrizione con Lookout Mobile Threat Protection).
+このトピックでは、Intune で Lookout MTP 接続を有効にする方法を説明します。 この手順を実行する前に、Lookout コンソールで Intune コネクタを構成しておきます。  まだ構成していない場合は、「[Set up your subscription with Lookout mobile threat protection](set-up-your-subscription-with-lookout.md)」(Lookout Mobile Threat Protection 用にサブスクリプションを設定する) で説明されている手順を実行します。
 
-Per abilitare la connessione Lookout MTP in Intune, nella pagina **Amministrazione** della [console di amministrazione di Microsoft Intune](https://manage.microsoft.com) scegliere **Third Party Service Integration** (Integrazione servizi di terze parti). Scegliere **Stato di Lookout** e abilitare **Sincronizzazione con MTP** usando l'interruttore.
+Intune で Lookout MTP 接続を有効にするには、[Microsoft Intune 管理者コンソール](https://manage.microsoft.com)の「**管理**」ページで、**[Third Party Service Integration]** (サード パーティ サービスの統合) を選択します。 **[Lookout の状態]** を選択し、**[MTP との同期]** をトグル ボタンを使用して有効にします。
 
-![schermata della pagina di sincronizzazione di Lookout con l'interruttore evidenziato](media/lookout-intune-synchronization.png)
+![有効になったトグル ボタンが強調表示された、Lookout の同期ページのスクリーン ショット](media/lookout-intune-synchronization.png)
 
-In questo modo viene completata l'integrazione di Lookout e Intune nella console di amministrazione di Intune.  I passaggi successivi dell'implementazione della soluzione includono la distribuzione delle [app Lookout for Work](configure-and-deploy-lookout-for-work-apps.md) e la configurazione dei criteri di [conformità](enable-device-threat-protection-rule-compliance-policy.md).
+これで、Intune 管理者コンソールでの Lookout と Intune の統合の設定は完了です。  このソリューションを実装するための次の手順には、[Lookout for Work アプリ](configure-and-deploy-lookout-for-work-apps.md)の展開や、[コンプライアンス](enable-device-threat-protection-rule-compliance-policy.md) ポリシーの設定などが含まれます。
 
 >[!IMPORTANT]
-> È **necessario** configurare l'app Lookout for Work prima di creare le regole dei criteri di conformità e di configurare l'accesso condizionale. Ciò garantisce che l'applicazione sia pronta e disponibile per l'installazione da parte degli utenti finali prima che questi ultimi possano accedere alla posta elettronica o ad altre risorse aziendali.
+> コンプライアンス ポリシー ルールを作成し、条件付きアクセスを構成するには、事前に Lookout for Work アプリを構成する**必要があります**。 これにより、エンド ユーザーがアプリをインストールして、電子メールやその他の会社のリソースにアクセスする場合に使用できるようになります。
 
-## <a name="next-steps"></a>Passaggi successivi
-[Configurare l'app Lookout for Work](configure-and-deploy-lookout-for-work-apps.md)
-
+## <a name="next-steps"></a>次のステップ
+[Lookout for Work アプリを構成する](configure-and-deploy-lookout-for-work-apps.md)

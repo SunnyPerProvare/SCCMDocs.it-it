@@ -1,67 +1,63 @@
 ---
-title: Cartella CD.Latest | Microsoft Docs
-description: Informazioni sul nuovo processo di aggiornamento che offre aggiornamenti per il prodotto all&quot;interno della console di Configuration Manager.
+title: "CD.Latest フォルダー | Microsoft Docs"
+description: "Configuration Manager コンソール内から製品の更新を提供する新しい更新プロセスについて説明します。"
 ms.custom: na
 ms.date: 05/02/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8db92d67-5d9c-4e9c-80d0-ae6fa0dd4817
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
 ms.openlocfilehash: 5c39e09b44500fa2f356f83579bb2fb2c1d0e937
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="the-cdlatest-folder-for-system-center-configuration-manager"></a>Cartella CD.Latest per System Center Configuration Manager
+# <a name="the-cdlatest-folder-for-system-center-configuration-manager"></a>System Center Configuration Manager の CD.Latest フォルダー
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-In System Center Configuration Manager è disponibile un nuovo processo di aggiornamento che offre aggiornamenti per il prodotto all'interno della console di Configuration Manager. Per supportare questo nuovo metodo di aggiornamento di Configuration Manager viene creata una nuova cartella denominata **CD.Latest** che contiene una copia dei file di installazione di Configuration Manager per la versione aggiornata del sito.  
+System Center Configuration Manager は、Configuration Manager コンソール内から製品の更新を提供する新しい更新プロセスを導入します。 Configuration Manager を更新するこの新しいメソッドをサポートするために、サイトの更新されたバージョン用の Configuration Manager インストール ファイルのコピーを含む、**CD.Latest** という名前の新しいフォルダーが作成されます。  
 
-A partire dall'aggiornamento 1606, la cartella CD.Latest contiene una cartella denominata **Redist** che contiene i file ridistribuibili usati e scaricati dal programma di installazione. Questi file corrispondono alla versione dei file di Configuration Manager della cartella CD.Latest. Quando si esegue l'installazione da una cartella CD.Latest, è necessario usare i file che corrispondono alla versione del programma di installazione. A tale scopo è possibile impostare il programma di installazione in modo che scarichi i file nuovi e aggiornati da Microsoft o usi i file della cartella Redist inclusa nella cartella CD.Latest.
+1606 以降の更新プログラムでは、CD.Latest フォルダーに **Redist** というフォルダーが含まれます。セットアップ時にダウンロードして使用される再頒布可能ファイルがここに入ります。 これらのファイルは、その CD.Latest フォルダーにある Configuration Manager ファイルのバージョンに一致します。 CD.Latest フォルダーからセットアップを実行する場合、そのセットアップのバージョンに一致するファイルを使用する必要があります。 そのためには、新しい現行のファイルを Microsoft からダウンロードするようにセットアップに指示するか、CD.Latest フォルダーに含まれている Redist フォルダーのファイルを使用するようにセットアップに指示できます。
 
-Tuttavia il supporto di base, ad esempio la versione di base 1606 rilasciata a ottobre 2016, non include la cartella Redist. La cartella Redist viene creata solo dopo l'installazione di un aggiornamento nella console. Nel frattempo, usare la cartella Redist usata durante l'installazione di siti dal supporto di base.  
+ただし、2016 年 10 月にリリースされた構成基準バージョン 1606 のような構成基準メディアには、Redist フォルダーは含まれません。 コンソール内の更新プログラムをインストールするまで、Redist フォルダーは作成されません。 それまでは、構成基準メディアからサイトをインストールするときに使った Redist フォルダーを使ってください。  
 
 > [!TIP]
-> Se non è ancora stata installata la versione 1606, è necessario assicurarsi che i file redist usati siano aggiornati. Se i file redist non sono stati scaricati di recente, consentire al programma di installazione di scaricarli da Microsoft.   
+> バージョン 1606 をまだインストールしていない場合、使用する再頒布可能ファイルが現行のものであることを確認する必要があります。 再頒布可能ファイルを最近ダウンロードしていない場合は、Microsoft からダウンロードするようセットアップを計画します。   
 
- Di seguito sono riportati alcuni scenari di creazione o aggiornamento della cartella CD.Latest in un sito di amministrazione centrale o in un server del sito primario:  
+ 次は、中央管理サイトまたはプライマリ サイト サーバー上の CD.Latest フォルダーを作成または更新するシナリオです。  
 
--   Installare un aggiornamento o un hotfix dalla console di Configuration Manager. La cartella viene creata o aggiornata nella cartella di installazione di Configuration Manager.  
+-   Configuration Manager コンソール内から、更新プログラムまたは修正プログラムをインストールします。Configuration Manager インストール フォルダーでフォルダーが作成または更新されます。  
 
--   Eseguire l'attività di backup predefinita di Configuration Manager. La cartella viene creata o aggiornata nel percorso della cartella di backup specificata.  
+-   組み込み Configuration Manager バックアップ タスクを実行します。指定されたバックアップ フォルダーの場所でフォルダーが作成または更新されます。  
 
--  A partire dalla versione 1606, la cartella CD.Latest viene creata quando si installa un nuovo sito usando il supporto di base (come nella versione 1606 o 1702).
+-  バージョン 1606 以降、CD.Latest フォルダーは構成基準メディア (バージョン 1606 または 1702 など) を使用して新しいサイトをインストールする際に作成されます。
 
-I file di origine della cartella CD.Latest sono supportati per le operazioni seguenti:  
+CD.Latest フォルダーからのソース ファイルは、次に対してサポートされています。  
 
-1.  **Backup e ripristino:** per ripristinare un sito, è necessario usare i file di origine da una cartella CD.Latest corrispondente al sito in questione. Quando si esegue un backup del sito usando l'attività di backup del sito predefinita, la cartella CD.Latest viene inclusa come parte del backup.
+1.  **バックアップと回復:** サイトを回復するには、サイトと一致する CD.Latest フォルダーのソース ファイルを使用する必要があります。 組み込みのサイト バックアップ タスクを使用してサイトのバックアップを実行すると、CD.Latest フォルダーがバックアップの一部として含まれます。
 
-    -   **Quando si reinstalla un sito come parte di un ripristino del sito** , è necessario installarlo dalla cartella CD.Latest inclusa nel backup. In questo modo, il sito viene installato usando le versioni dei file che corrispondono al backup del sito e al database del sito.  Se non si ha accesso alla versione corretta della cartella CD.Latest, è possibile ottenere una cartella CD.Latest con le versioni dei file corrette installando un sito in un ambiente lab e quindi aggiornando tale sito in modo che corrisponda alla versione che si vuole ripristinare.
+    -   **サイト回復の一部としてサイトを再インストールする場合は** 、バックアップに含まれている CD.Latest フォルダーからサイトをインストールします。 これにより、サイトのバックアップおよびサイト データベースに一致するファイルのバージョンを使用してサイトがインストールされます。  適切な CD.Latest フォルダーのバージョンにアクセスできない場合は、ラボ環境でサイトをインストールしてから、そのサイトを更新して回復するバージョンと一致させることで、適切なファイル バージョンの CD.Latest フォルダーを取得できます。
 
         > [!IMPORTANT]  
-        >  Se la cartella CD.Latest corretta e il relativo contenuto non sono disponibili, non è possibile ripristinare un sito che deve essere reinstallato.  
+        >  適切な CD.Latest フォルダーとそこから取得できる内容がない場合は、サイトを回復できず、再インストールが必要になります。  
 
-    -   Quando una cartella CD.Latest non è disponibile, ma si ha un sito primario figlio o un sito di amministrazione centrale funzionante è possibile usarlo come sito di riferimento per il ripristino.  
+    -   CD.Latest フォルダーがないが、稼働中の子プライマリ サイトまたは中央管理サイトがある場合は、そのサイトを参照サイトとして使用してサイトを回復できます。  
 
-2.  **Per installare un sito primario figlio:** quando si vuole installare un nuovo sito primario figlio all'interno di un sito di amministrazione centrale in cui sono stati installati uno o più aggiornamenti nella console, è necessario usare il programma di installazione e i file di origine dalla cartella CD.Latest dal sito di amministrazione centrale. Quando il programma di installazione viene eseguito da una copia della cartella CD.Latest dal sito di amministrazione centrale, usa i file di origine di installazione che corrispondono alla versione del sito di amministrazione centrale. Per altre informazioni, vedere [Use the Setup Wizard to install sites](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md) (Usare l'installazione guidata per installare i siti).  
+2.  **子プライマリ サイトをインストールするには:** 1 つまたは複数のコンソール内の更新プログラムがインストールされている中央管理サイトの下に新しい子プライマリ サイトをインストールするときに、中央管理サイトの CD.Latest フォルダーからセットアップとソース ファイルを使用する必要があります。 セットアップが中央管理サイトの CD.Latest フォルダーのコピーから実行される場合、中央管理サイトのバージョンに対応するインストール ソース ファイルが使用されます。 詳細については、「[セットアップ ウィザードを使用してサイトをインストールする](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md)」を参照してください。  
 
-3.  **Per espandere un sito primario autonomo:** quando si espande un sito primario autonomo installando un nuovo sito di amministrazione centrale, è necessario usare il programma di installazione e i file di origine della cartella CD.Latest dal sito primario per installare il nuovo sito di amministrazione centrale. Quando il programma di installazione viene eseguito da una copia della cartella CD.Latest dal sito primario, usa i file di origine di installazione che corrispondono alla versione del sito primario. Per altre informazioni, vedere [Expand a stand-alone primary site](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_expand) (Espandere un sito primario autonomo) in [Use the Setup Wizard to install sites](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md) (Usare l'installazione guidata per installare i siti)
+3.  **スタンドアロン プライマリ サイトを展開するには:** 新しい中央管理サイトをインストールしてスタンドアロン プライマリ サイトを拡張するときには、プライマリ サイトの CD.Latest フォルダーからセットアップとソース ファイルを使用して、新しい中央管理サイトをインストールする必要があります。 CD.Latest フォルダーのコピーから実行される場合、プライマリ サイトのバージョンに対応するインストール ソース ファイルが使用されます。 詳細については、「[セットアップ ウィザードを使用してサイトをインストールする](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md)」の「[スタンドアロン プライマリ サイトを拡張する](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_expand)」を参照してください
 
 > [!IMPORTANT]  
->  I file di origine della cartella CD.Latest aggiornati non sono supportati per le operazioni seguenti:  
+>  更新された CD.Latest のソース ファイルは、次に対してサポートされていません。  
 >   
->  -   Installazione di un nuovo sito per una nuova gerarchia  
->  -   Aggiornamento dal sito di Microsoft System Center 2012 Configuration Manager a System Center Configuration Manager
-
+>  -   新しい階層の新しいサイトのインストール  
+>  -   Upgrading a Microsoft System Center 2012 Configuration Manager サイトから System Center Configuration Manager へのアップグレード

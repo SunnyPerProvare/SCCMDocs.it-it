@@ -1,361 +1,358 @@
 ---
-title: "Funzionalità della versione Technical Preview 1702 per Configuration Manager"
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1702 per System Center Configuration Manager."
+title: "Configuration Manager の Technical Preview 1702 の機能"
+description: "System Center Configuration Manager の Technical Preview バージョン 1702 で使用できる機能について説明します。"
 ms.custom: na
 ms.date: 02/24/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aedd608d-6db3-4ea5-851d-70f2dcda6bb5
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 8f4ec982a54cf3cefef310268a54850e70e2e63a
 ms.openlocfilehash: 3bdbcd1a3c64a1d50f2f6219b2a5e17d60979864
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1702 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1702 の機能
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*適用対象: System Center Configuration Manager (Technical Preview)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1702 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
-
-
-**Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
-
-##  <a name="send-feedback-from-the-configuration-manager-console"></a>Inviare commenti e suggerimenti dalla console di Configuration Manager
-
-Questa anteprima introduce nuove opzioni per l'invio di commenti e suggerimenti nella console di Configuration Manager. Le opzioni di Commenti e suggerimenti consentono di inviare commenti e suggerimenti direttamente al team di sviluppo, tramite il sito Web UserVoice di Configuration Manager.  
-
->È possibile trovare l'opzione **Commenti e suggerimenti**:
--  Nella barra multifunzione, all'estrema sinistra della scheda Home di ogni nodo.  
-   ![Barra multifunzione](./media/feedback-home.png)
-
--  Facendo clic con il pulsante destro del mouse su qualsiasi oggetto nella console.   
-    ![Opzione con clic con il pulsante destro del mouse](./media/feedback-option.png)   
-
-Quando si seleziona **Commenti e suggerimenti** viene aperto il browser sul sito Web UserVoice di Configuration Manager, all'indirizzo https://configurationmanager.uservoice.com/forums/300492-ideas.
-##  <a name="changes-for-updates-and-servicing"></a>Modifiche per Aggiornamenti e manutenzione
-Le modifiche seguenti sono state introdotte con questa versione di anteprima.
-
-**Opzioni di aggiornamento più semplici**  
-Quando l'infrastruttura necessita di due o più aggiornamenti, viene scaricato solo l'aggiornamento più recente. Ad esempio, se la versione corrente del sito è più vecchia di due o più versioni rispetto alla versione più recente disponibile, viene scaricata automaticamente solo la versione più recente dell'aggiornamento.  
-
-È possibile scaricare e installare gli altri aggiornamenti disponibili, anche quando non sono la versione più recente. Tuttavia, si riceverà un avviso che notificherà che l'aggiornamento è stato sostituito da una versione più recente. Per scaricare un aggiornamento *Disponibile per il download*, selezionare l'aggiornamento nella console e quindi fare clic su **Scarica**.
-
-**Miglioramento della pulizia degli aggiornamenti precedenti**   
-È stata aggiunta una funzione di pulizia automatica che elimina i download non necessari dalla cartella EasySetupPayload nel server del sito.  
+この記事では、System Center Configuration Manager の Technical Preview バージョン 1702 で使用できる機能について説明します。 このバージョンをインストールして更新し、新機能を Configuration Manager の Technical Preview サイトに追加できます。 このバージョンの Technical Preview をインストールする前に、説明のトピック「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。    
 
 
-## <a name="peer-cache-improvements"></a>Miglioramenti della peer cache
-A partire da questa versione, il computer di origine della peer cache rifiuta le richieste di contenuti quando soddisfa una delle condizioni seguenti:  
- -     È in modalità di batteria in esaurimento.
- -  Il carico della CPU supera l'80% nel momento in cui il contenuto viene richiesto.
- -  L'I/O disco ha un valore di *AvgDiskQueueLength* superiore a 10.
- -  Non vi sono più connessioni disponibili al computer.   
+**このバージョンでお試しいただける新機能を次に示します。**  
 
-È possibile configurare queste impostazioni tramite la classe di configurazione dell'agente client per la funzionalità di origine peer (*SMS_WinPEPeerCacheConfig*) quando si usa l'SDK di System Center Configuration Manager.
+##  <a name="send-feedback-from-the-configuration-manager-console"></a>Configuration Manager コンソールからフィードバックを送信する
 
-Quando il computer rifiuta una richiesta di contenuto, il computer richiedente continuerà a cercare il contenuto da origini alternative nel pool dei percorsi di origine del contenuto disponibili.   
+このプレビューでは、Configuration Manager コンソールの新しいフィードバック オプションを紹介します。 このフィードバック オプションを使用すると、Configuration Manager UserVoice フィードバック Web サイトから開発チームにフィードバックを直接送信できます。  
 
-## <a name="azurediscovery"></a>Usare Azure Active Directory Domain Services per gestire dispositivi, utenti e gruppi
+>**[フィードバック]** オプションは、次の場所に表示されます。
+-  各ノードのリボンの [ホーム] タブの左端。  
+   ![リボン](./media/feedback-home.png)
 
-Con questa versione di Technical Preview è possibile gestire i dispositivi aggiunti a un dominio gestito di servizi di Azure Active Directory (AD) Domain Services. È anche possibile individuare dispositivi, utenti e gruppi nel dominio con vari metodi di individuazione di Configuration Manager.
+-  コンソールのオブジェクトを右クリックしたとき。   
+    ![右クリック オプション](./media/feedback-option.png)   
 
-L'infrastruttura del sito e i client di Technical Preview e il dominio di Azure AD Domain Services devono essere eseguiti in Azure.
+**[フィードバック]** を選択すると、ブラウザーが開いて Configuration Manager UserVoice フィードバック Web サイト (https://configurationmanager.uservoice.com/forums/300492-ideas) が表示されます。
+##  <a name="changes-for-updates-and-servicing"></a>更新プログラムとサービスの変更
+このプレビューで導入された更新内容は次のとおりです。
 
+**簡単になった更新プログラムの選択**  
+次の更新時に、お使いのインフラストラクチャで複数の更新プログラムが適用対象になった場合、最新の更新プログラムのみがダウンロードされます。 たとえば、現在のサイト バージョンが、リリースされている最新バージョンよりも 2 つ以上古い場合、その最新の更新プログラム バージョンのみが自動的にダウンロードされます。  
 
-### <a name="set-up-configuration-manager-to-use-azure-ad"></a>Configurare Configuration Manager per l'uso di Azure AD
-Per usare Azure AD con Configuration Manager, è necessario quanto segue:
--    Sottoscrizione di Azure.
--    Azure AD con Domain Services (DS).
--    Sito di Configuration Manager eseguito in una macchina virtuale di Azure aggiunta ad Azure AD.
--    Client di Configuration Manager in esecuzione nello stesso ambiente di Azure AD.
+リリース済みのその他の更新プログラムが最新バージョンではない場合でも、ダウンロードしてインストールすることができます。 ただし、その更新プログラムは新しい更新プログラムで置き換えられたという警告が表示されます。 *[ダウンロード可能]* と表示される更新プログラムをダウンロードするには、コンソールで更新プログラムを選択し、**[ダウンロード]** をクリックします。
 
-Per configurare Azure AD Domain Services, vedere [Introduzione a Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started).
-
-### <a name="discover-resources"></a>Individuare risorse
-Dopo avere configurato Configuration Manager per l'esecuzione in Azure AD, è possibile usare i metodi di individuazione di Active Directory seguenti per la ricerca di risorse in Azure AD:  
-- Individuazione sistema Active Directory
-- individuazione utenti di Active Directory
-- Individuazione gruppo Active Directory  
-
-Per ogni metodo da usare, modificare la query LDAP per cercare le strutture di unità organizzativa di Azure Active Directory anziché i contenitori tipici di Active Directory locale. Questo richiede che la query venga indirizzata per la ricerca in Active Directory nella sottoscrizione di Azure.  
-
-Negli esempi seguenti viene usata una Azure AD di *contoso.onmicrosoft.com*:
- - **Individuazione del sistema**   
-Azure AD archivia i dispositivi nell'unità organizzativa **AADDC Computers**.  Configurare quanto segue:  
-  -    *LDAP://OU=AADDC Computers,DC=contoso,DC=onmicrosoft,DC=com*  
+**古い更新プログラムのクリーンアップの改善**   
+サイト サーバー上の ‘EasySetupPayload’ フォルダーから不要なダウンロードを削除する自動クリーンアップ機能を追加しました。  
 
 
-- **Individuazione degli utenti** AAD archivia gli utenti nell'unità organizzativa **AADDC Users**.  Configurare quanto segue:
+## <a name="peer-cache-improvements"></a>ピア キャッシュの改善
+今回のリリース以降、ピア キャッシュ ソース コンピューターが次のいずれかの条件を満たす場合、ピア キャッシュ ソース コンピューターはコンテンツの要求を拒否するようになります。  
+ -  バッテリ低下モードの場合。
+ -  コンテンツの要求時に CPU 負荷が 80% を超えている場合。
+ -  ディスク I/O の *AvgDiskQueueLength* が 10 を超えている場合。
+ -  新たにコンピューターに接続できない場合。   
+
+これらの設定を構成するには、System Center Configuration Manager SDK を使用するときに、ピア ソース機能 (*SMS_WinPEPeerCacheConfig*) に対してクライアント エージェントの構成クラスを使用します。
+
+コンピューターがコンテンツの要求を拒否すると、要求元のコンピューターは、使用できるコンテンツ ソース場所のプール内にある代替ソースのコンテンツを引き続きシークします。   
+
+## <a name="azurediscovery"></a> Azure Active Directory Domain Services を使用してデバイス、ユーザー、グループを管理する
+
+この Technical Preview バージョンでは、Azure Active Directory (AD) Domain Services 管理ドメインに参加しているデバイスを管理できます。 また、Configuration Manager のさまざまな探索方法を使用して、そのドメイン内のデバイス、ユーザー、およびグループを探索することもできます。
+
+Technical Preview サイトのインフラストラクチャ、クライアント、および Azure AD Domain Services ドメインは、すべて Azure で実行される必要があります。
+
+
+### <a name="set-up-configuration-manager-to-use-azure-ad"></a>Azure AD を使用するように Configuration Manager を設定する
+Configuration Manager で Azure AD を使用するには、以下が必要です。
+-   Azure のサブスクリプション。
+-   Azure AD と Domain Services (DS)。
+-   Azure AD に参加している Azure VM 上で実行されている Configuration Manager サイト。
+-   同じ Azure AD 環境で実行されている Configuration Manager クライアント。
+
+Azure AD Domain Services を構成する方法については、「[Azure AD ドメイン サービスの使用開始](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started)」を参照してください。
+
+### <a name="discover-resources"></a>リソースの探索
+Azure AD 内で実行するように Configuration Manager を設定したら、次の Active Directory 探索方法を使用して Azure AD のリソースを検索できます。  
+- Active Directory システムの探索
+- Active Directory ユーザー検出
+- Active Directory グループの探索  
+
+使用する方法ごとに、オンプレミス Active Directory の場合に一般的なコンテナーではなく、Azure AD OU 構造を検索するように LDAP クエリを編集します。 そのためには、Azure サブスクリプションの Active Directory を検索するようにクエリを指定する必要があります。  
+
+次の例では、*contoso.onmicrosoft.com* の Azure AD を使用しています。
+ - **システムの探索**   
+Azure AD は、**AADDC Computers** OU 以下にデバイスを格納します。  次を構成します。  
+  - *LDAP://OU=AADDC Computers,DC=contoso,DC=onmicrosoft,DC=com*  
+
+
+- **ユーザーの探索** AAD は **AADDC Users** OU 以下にユーザーを格納します。  次を構成します。
   - *LDAP://OU=AADDC Users,DC= contoso,DC=onmicrosoft,DC=com*
 
 
-- **Individuazione dei gruppi**  
-Azure AD non ha un'unità organizzativa dove archiviare i gruppi. Al contrario, usare la stessa struttura generale delle query relative al sistema o agli utenti e configurare la query LDAP in modo che punti all'unità organizzativa contenente i gruppi da individuare.
+- **グループの探索**  
+Azure AD にはグループを格納する OU がありません。 その代わり、システム クエリまたはユーザー クエリと同じ一般的な構造を使用し、探索するグループを含む OU を示すように LDAP クエリを構成します。
 
-Per altre informazioni su Azure AD, vedere gli argomenti seguenti:  
- - [Azure Active Directory Domain Services](https://azure.microsoft.com/en-us/services/active-directory-ds) su azure.microsoft.com.
- - [Documentazione di Active Directory Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services) su docs.microsoft.com.
+Azure AD の詳細については、以下を参照してください。  
+ - 「[Azure Active Directory Domain Services](https://azure.microsoft.com/en-us/services/active-directory-ds)」(azure.microsoft.com)。
+ - 「[Active Directory Domain Services のドキュメント](https://docs.microsoft.com/azure/active-directory-domain-services)」(docs.microsoft.com)。
 
-## <a name="conditional-access-device-compliance-policy-improvements"></a>Miglioramento dei criteri di conformità dei dispositivi per l'accesso condizionale
+## <a name="conditional-access-device-compliance-policy-improvements"></a>条件付きアクセス デバイス コンプライアンス ポリシーの改善
 
-È ora disponibile una nuova regola di criteri di conformità dei dispositivi per impedire l'accesso alle risorse aziendali che supportano l'accesso condizionale, quando gli utenti usano applicazioni incluse in un elenco di app non conformi. L'elenco di app non conformi può essere definito dall'amministratore quando si aggiunge la nuova regola conforme **App che non possono essere installate**. Questa regola richiede che l'amministratore immetta **Nome app**, **ID app** e **Autore app** (facoltativo) quando si aggiunge un'app all'elenco di app non conformi. Questa impostazione si applica solo a dispositivi iOS e Android.
+ユーザーがアプリのコンプライアンス非対応リストに含まれているアプリを使用している場合、新しいデバイスのコンプライアンス ポリシー ルールを使用して、条件付きアクセスをサポートする会社のリソースへのアクセスをブロックできます。 アプリのコンプライアンス非対応リストは、管理者が新しい準拠ルール [**インストールできないアプリ**] の追加時に定義できます。 このルールを使用するには、管理者がコンプライアンス非対応リストにアプリを追加するときに、**アプリ名**、**アプリ ID**、**アプリの発行元** (省略可能) を入力する必要があります。 この設定は、iOS および Android デバイスにのみ適用されます。
 
-Ciò consente alle organizzazioni di ridurre la perdita di dati da app non protette e di impedire l'uso eccessivo di dati in alcune applicazioni.
+また、組織はこの設定を使用して、セキュリティで保護されていないアプリを介したデータ漏えいを軽減し、特定のアプリ経由の過度なデータ使用を防ぐことができます。
 
-- Altre informazioni [sul funzionamento dei criteri di conformità dei dispositivi](https://docs.microsoft.com/sccm/protect/deploy-use/device-compliance-policies).
-- Altre informazioni [sulla creazione di criteri di conformità dei dispositivi](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy).
+- 詳細: 「[System Center Configuration Manager でのデバイス コンプライアンス ポリシー](https://docs.microsoft.com/sccm/protect/deploy-use/device-compliance-policies)」
+- 詳細: 「[デバイス コンプライアンス ポリシーを作成して展開する](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy)」
 
-### <a name="try-it-out"></a>Procedura
+### <a name="try-it-out"></a>試してみましょう
 
-**Scenario:** identificare le applicazioni che potrebbero causare perdita di dati inviando dati aziendali all'esterno dell'azienda o che causano un uso eccessivo dei dati e quindi [creare un criterio di conformità dei dispositivi per l'accesso condizionale](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy) che aggiunge queste applicazioni all'elenco di applicazioni non conformi. In questo modo verrà bloccato l'accesso alle risorse aziendali che supportano l'accesso condizionale fino a quando l'utente non potrà rimuovere l'app bloccata.
+**シナリオ:** 社外に会社データを送信してデータ漏えいを引き起こしている可能性があるアプリ、または過度なデータ使用を引き起こしているアプリを特定します。次に、このようなアプリをアプリのコンプライアンス非対応リストに追加する[条件付きアクセス デバイス コンプライアンス ポリシーを作成します](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy)。 これによって、ユーザーがブロックされたアプリを削除するまで、条件付きアクセスをサポートする会社のリソースに対するアクセスはブロックされます。
 
-## <a name="antimalware-client-version-alert"></a>Avviso della versione del client antimalware
-A partire da questa versione della Technical Preview, Configuration Manager Endpoint Protection genera un avviso se oltre il 20% (valore predefinito) dei client gestiti usa una versione obsoleta del client antimalware, ad esempio il client di Windows Defender o Endpoint Protection.
+## <a name="antimalware-client-version-alert"></a>マルウェア対策クライアントのバージョンのアラート
+このプレビュー バージョン以降、管理対象のクライアントの 20% 超 (既定) が期限切れバージョンのマルウェア対策クライアント (つまり Windows Defender または Endpoint Protection クライアント) を使用している場合、Configuration Manager Endpoint Protection でアラートが発生します。
 
-### <a name="try-it-out"></a>Procedura
-Assicurarsi che Endpoint Protection sia abilitato su tutti i client desktop e server mediante i criteri delle impostazioni client. È ora possibile visualizzare **Versione client antimalware** e **Endpoint Protection Deployment Status** (Stato distribuzione Endpoint Protection) passando ad **Asset e conformità** > **Panoramica** > **Dispositivi** > **Tutti i client desktop e di server**. Per controllare un avviso, visualizzare **Avvisi** nell'area di lavoro **Monitoraggio**. Se più del 20% dei client gestiti esegue una versione scaduta del software antimalware, viene visualizzato l'avviso La versione del client antimalware è obsoleta. Questo avviso non viene visualizzato nella scheda **Monitoraggio** > **Panoramica**. Per aggiornare i client antimalware scaduti, abilitare gli aggiornamenti software per i client antimalware.
+### <a name="try-it-out"></a>試してみましょう
+クライアント設定ポリシーを使用して、すべてのデスクトップとサーバー クライアントで Endpoint Protection を有効にします。 **[資産とコンプライアンス]** > **[概要]** > **[デバイス]** > **[All Desktops and Serve Clients (すべてのデスクトップとサービス クライアント)]** の順に選択して、**[マルウェア対策クライアント バージョン]** と **[Endpoint Protection Deployment Status (Endpoint Protection の展開ステータス)]** を確認できます。 アラートを確認するには、**[監視]** ワークスペースの **[アラート]** を表示します。 20% を超える管理対象クライアントが期限切れバージョンのマルウェア対策ソフトウェアを実行している場合、"マルウェア対策クライアント バージョンが期限切れです" のアラートが表示されます。 このアラートは、**[監視]** > **[概要]** タブには表示されません。 期限切れのマルウェア対策クライアントを更新するには、マルウェア対策クライアントのソフトウェア更新プログラムを有効にします。
 
-Per configurare la percentuale oltre la quale viene generato l'avviso, espandere **Monitoraggio** > **Avvisi** > **Tutti gli avvisi**, fare doppio clic su **I client antimalware sono obsoleti** e modificare l'opzione **Genera un avviso se la percentuale di client gestiti con una versione obsoleta del client antimalware è superiore a**.
+アラートを生成するパーセント値を構成するには、**[監視]** > **[アラート]** > **[すべてのアラート]** を展開し、**[期限切れのマルウェア対策クライアント]** をダブルクリックし、**[管理されたクライアントのうち、期限切れのバージョンのマルウェア対策クライアントを使用しているものが次の割合を超えたら、アラートを生成する]** オプションを変更します。
 
-## <a name="compliance-assessment-for-windows-update-for-business-updates"></a>Valutazione della conformità degli aggiornamenti di Windows Update for Business
-È ora possibile configurare una regola di aggiornamento dei criteri di conformità per includere i risultati della valutazione di Windows Update for Business nella valutazione dell'accesso condizionale.
+## <a name="compliance-assessment-for-windows-update-for-business-updates"></a>Windows Update for Business 更新プログラムのコンプライアンス評価
+コンプライアンス ポリシーの更新ルールを構成して、条件付きアクセス評価の一部として Windows Update for Business の評価結果を含めることができるようになりました。
 > [!IMPORTANT]
-> È necessario Windows 10 Insider Preview Build 15019 o versione successiva per usare la valutazione della conformità per gli aggiornamenti di Windows Update for Business.
+> Windows Update for Business 更新プログラムのコンプライアンス評価を使用するには、Windows 10 Insider Preview Build 15019 以降を使用している必要があります。
 
-### <a name="allow-windows-update-for-business-to-manage-windows-10-updates"></a>Consentire a Windows Update for Business di gestire gli aggiornamenti di Windows 10
-Per raccogliere informazioni di valutazione della conformità per Windows Update for Business, usare la procedura seguente per configurare le impostazioni dell'agente client perché consenta esplicitamente a Windows Update for Business di gestire gli aggiornamenti di Windows 10.
-1. Nella console di Configuration Manager scegliere **Amministrazione** > **Impostazioni client**.
-2. Nelle proprietà per le impostazioni client passare a **Aggiornamenti software** e selezionare **Sì** per l'impostazione **Gestione degli aggiornamenti di Windows 10 con Windows Update for Business**.
+### <a name="allow-windows-update-for-business-to-manage-windows-10-updates"></a>Windows 10 の更新プログラム管理を Windows Update for Business に許可する
+Windows Update for Business 更新プログラムのコンプライアンス評価情報を収集するには、次の手順で、Windows 10 の更新プログラム管理を Windows Update for Business に明示的に許可するクライアント エージェント設定を構成します。
+1. Configuration Manager コンソールで、 **[管理]** > **[クライアント設定]**に移動します。
+2. クライアント設定のプロパティで、**[ソフトウェア更新プログラム]** を開き、**[Windows Update for Business で Windows 10 の更新プログラムを管理する]** 設定で **[はい]** を選択します。
 
-### <a name="create-a-compliance-policy-for-windows-update-for-business-assessment"></a>Creare criteri di conformità per la valutazione di Windows Update for Business
-1. Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Criteri di conformità**.
-2. Fare clic su **Crea criteri di conformità** o selezionare un criterio di conformità esistente da modificare.
-3. Nella pagina Generale specificare un nome e una descrizione, selezionare **Regole di conformità per i dispositivi gestiti con il client di Configuration Manager**, impostare la gravità di non conformità per la creazione di report e fare clic su **Avanti**.
-4. Nella pagina Piattaforme supportate selezionare **Windows 10** e fare clic su **Avanti**.
-5. Nella pagina Regole fare clic su **Nuovo**, quindi per **Condizione** scegliere **Require Windows Update for Business compliance** (Richiedi conformità Windows Update for Business). L'impostazione **Valore** viene impostata automaticamente su **True**.
+### <a name="create-a-compliance-policy-for-windows-update-for-business-assessment"></a>Windows Update for Business 評価のコンプライアンス ポリシーを作成する
+1. Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[コンプライアンス ポリシー]** の順にクリックします。
+2. **[コンプライアンス ポリシーの作成]** をクリックするか、既存のコンプライアンス ポリシーを選択して変更します。
+3. [全般] ページで、名前と説明を入力し、**[Configuration Manager クライアントで管理されるデバイスのコンプライアンス規則]** を選択し、レポートのコンプライアンスコンプライアンス非対応の重要度を設定し、**[次へ]** をクリックします。
+4. [サポートされているプラットフォーム] ページの **[Windows 10]** を選択し、**[次へ]** をクリックします。
+5. [ルール] ページの **[新規]** をクリックし、**[条件]** の **[Require Windows Update for Business compliance (Windows Update for Business コンプライアンスが必要)]** をオンにします。 **[値]** 設定は **[真]** に自動的に設定されます。
 
-Il nuovo criterio viene visualizzato nel nodo **Criteri di conformità** dell'area di lavoro **Asset e conformità** .
+**[資産とコンプライアンス]** ワークスペースの **[コンプライアンス ポリシー]** ノードに新しいポリシーが表示されます。
 
-### <a name="deploy-a-compliance-policy"></a>Distribuire i criteri di conformità
-1. Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** e quindi su **Criteri di conformità**.
-2. Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci**.
-3. Nella finestra di dialogo **Distribuisci criteri di conformità** , fare clic su **Sfoglia** per selezionare la raccolta utente a cui distribuire il criterio.
-   È anche possibile selezionare le opzioni per creare avvisi da inviare quando il criterio non è conforme. È anche possibile configurare la pianificazione in base alla quale verrà valutata la conformità del criterio.
-4. Al termine, fare clic su **OK**.
+### <a name="deploy-a-compliance-policy"></a>コンプライアンス ポリシーの展開
+1. Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** の順にクリックし、**[コンプライアンス ポリシー]** をクリックします。
+2. [ **ホーム** ] タブの [ **展開** ] グループで、[ **展開**] をクリックします。
+3. **[コンプライアンス ポリシーの展開]** ダイアログ ボックスで、 **[参照]** をクリックして、ポリシーを展開するユーザー コレクションを選択します。
+   さらに、ポリシーが準拠していない場合にアラートを生成するオプションや、ポリシーのコンプライアンスを評価するスケジュールを構成するオプションを選択できます。
+4. 終了したら、 **[OK]**をクリックします。
 
-### <a name="monitor-the-compliance-policy"></a>Monitorare i criteri di conformità
-Dopo aver creato i criteri di conformità, è possibile monitorare i risultati di conformità nella console di Configuration Manager. Per informazioni dettagliate, vedere [Monitorare i criteri di conformità](https://docs.microsoft.com/en-us/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy).
+### <a name="monitor-the-compliance-policy"></a>コンプライアンス ポリシーの監視
+コンプライアンス ポリシーを作成すると、Configuration Manager コンソールでコンプライアンス結果を監視できます。 詳細については、「[Monitor the compliance policy](https://docs.microsoft.com/en-us/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy)」(コンプライアンス ポリシーの監視) を参照してください。
 
 
-## <a name="improvements-to-software-center-settings-and-notification-messages-for-high-impact-task-sequences"></a>Miglioramenti alle impostazioni e ai messaggi di notifica di Software Center per le sequenze di attività a impatto elevato
-Questa versione include i miglioramenti seguenti alle impostazioni di Software Center e ai messaggi di notifica per le sequenze di attività di distribuzione a impatto elevato:
+## <a name="improvements-to-software-center-settings-and-notification-messages-for-high-impact-task-sequences"></a>ソフトウェア センターの設定と影響の大きいタスク シーケンスの通知メッセージの改善
+このリリースでは、影響の大きい展開タスク シーケンスのソフトウェア センター設定と通知メッセージについて、次の点などが改善されています。
 
-- Nelle proprietà per la sequenza di attività è ora possibile configurare qualsiasi sequenza di attività, comprese le sequenze di attività non del sistema operativo, come distribuzioni ad alto rischio. Qualsiasi sequenza di attività che soddisfi determinate condizioni viene definita automaticamente come a impatto elevato. Per altri dettagli, vedere [Gestire le distribuzioni ad alto rischio](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
-- Nelle proprietà per la sequenza di attività è possibile scegliere di usare il messaggio di notifica predefinito o crearne uno personalizzato per le distribuzioni a impatto elevato.
-- Nelle proprietà per la sequenza di attività è possibile configurare le proprietà di Software Center, tra cui l'obbligatorietà del riavvio, le dimensioni del download della sequenza di attività e il tempo di esecuzione stimato.
-- Il messaggio predefinito di distribuzione a impatto elevato per gli aggiornamenti sul posto indica ora che la migrazione di applicazioni, dati e impostazioni è stata eseguita automaticamente. In precedenza il messaggio predefinito per qualsiasi installazione del sistema operativo indicava che tutte le applicazioni, i dati e le impostazioni sarebbero andati persi, il che non era vero per gli aggiornamenti sul posto.
+- タスク シーケンスのプロパティで、危険性が高い展開として、オペレーティング システム以外のタスク シーケンスを含め、任意のタスク シーケンスを構成できます。 特定の条件を満たす任意のタスク シーケンスは、影響度大として自動的に定義されます。 詳細については、「[System Center Configuration Manager の危険度の高い展開を管理するための設定](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments)」を参照してください。
+- タスク シーケンスのプロパティでは、影響の大きい展開について既定の通知メッセージを使用するか、独自のカスタム通知メッセージを作成することができます。
+- タスク シーケンスのプロパティでは、ソフトウェア センターのプロパティ (再起動を必須にする、タスク シーケンスのダウンロード サイズ、推定実行時間など) を構成できます。
+- インプレース アップグレードの既定の影響の大きい展開のメッセージには、アプリ、データ、および設定が自動的に移行されると表示されるようになりました。 以前のバージョンでは、オペレーティング システムのインストールに関する既定のメッセージには、すべてのアプリ、データ、および設定が失われると表示されていましたが、これはインプレース アップグレードの場合は該当しない内容でした。
 
-### <a name="set-a-task-sequence-as-a-high-impact-task-sequence"></a>Impostare una sequenza di attività come una sequenza di attività a impatto elevato
-Attenersi alla procedura seguente per impostare una sequenza di attività a impatto elevato.
+### <a name="set-a-task-sequence-as-a-high-impact-task-sequence"></a>タスク シーケンスを影響の大きいタスク シーケンスとして設定する
+次の手順を使用して、影響の大きいタスク シーケンスとして設定します。
 > [!NOTE]
-> Qualsiasi sequenza di attività che soddisfi determinate condizioni viene definita automaticamente come a impatto elevato. Per altri dettagli, vedere [Gestire le distribuzioni ad alto rischio](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
+> 特定の条件を満たす任意のタスク シーケンスは、影響度大として自動的に定義されます。 詳細については、「[System Center Configuration Manager の危険度の高い展開を管理するための設定](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments)」を参照してください。
 
-1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
-2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
-3. Nella scheda **Notifica utente** selezionare **Questa è una sequenza di attività a impatto elevato**.
+1. Configuration Manager コンソールの **[ソフトウェア ライブラリ]** > **[オペレーティング システム]** > **[タスク シーケンス]** の順に選択します。
+2. 編集するタスク シーケンスを選択し、**[プロパティ]** をクリックします。
+3. **[ユーザー通知]** タブの **[これは、インパクトのあるタスク シーケンスです]** をオンにします。
 
-### <a name="create-a-custom-notification-for-high-risk-deployments"></a>Creare una notifica personalizzata per le distribuzioni ad alto rischio
-1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
-2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
-3. Nella scheda **Notifica utente** selezionare **Usa il testo personalizzato**.
+### <a name="create-a-custom-notification-for-high-risk-deployments"></a>危険度の高い展開のカスタム通知を作成する
+1. Configuration Manager コンソールの **[ソフトウェア ライブラリ]** > **[オペレーティング システム]** > **[タスク シーケンス]** の順に選択します。
+2. 編集するタスク シーケンスを選択し、**[プロパティ]** をクリックします。
+3. **[ユーザー通知]** タブの **[カスタム テキストを使用する]** をオンにします。
 >  [!NOTE]
->  È possibile impostare il testo della notifica utente solo quando l'opzione **Questa è una sequenza di attività a impatto elevato** è selezionata.
+>  **[これは、インパクトのあるタスク シーケンスです]** がオンの場合にのみ、ユーザー通知テキストを設定できます。
 
-4. Configurare le impostazioni seguenti (massimo 255 caratteri per casella di testo):
+4. 次の設定を構成します (各テキスト ボックスは最大 255 文字です)。
 
-   **Testo dell'intestazione della notifica all'utente**: specifica il testo blu che viene visualizzato nella notifica utente di Software Center. Ad esempio, nella notifica utente predefinita questa sezione contiene un testo simile a "Confermare l'aggiornamento del sistema operativo in questo computer".
+   **ユーザー通知の見出しテキスト**: ソフトウェア センターのユーザー通知に表示する青色のテキストを指定します。 たとえば、既定のユーザー通知では、このセクションに "このコンピューターのオペレーティング システムをアップグレードすることを確認します" のようなテキストが表示されます。
 
-   **Testo del messaggio di notifica all'utente**: sono presenti tre caselle di testo che specificano il corpo della notifica personalizzata.
-   - Prima casella di testo: specifica il corpo principale del testo, in genere contenente le istruzioni per l'utente. Ad esempio, nella notifica utente predefinita questa sezione contiene un testo simile a "L'aggiornamento del sistema operativo potrebbe durare a lungo e richiedere più riavvii del computer".
-   - Seconda casella di testo: specifica il testo in grassetto nel corpo principale del testo. Ad esempio, nella notifica utente predefinita questa sezione contiene un testo simile a "Questo aggiornamento sul posto installa il nuovo sistema operativo ed esegue automaticamente la migrazione di app, dati e impostazioni".
-   - Terza casella di testo: specifica l'ultima riga di testo in grassetto. Ad esempio, nella notifica all'utente predefinita questa sezione contiene un testo simile a "Fare clic su Installa per iniziare, altrimenti fare clic su Annulla".   
+   **ユーザー通知のメッセージ テキスト**: カスタム通知の本文を入力する 3 つのテキスト ボックスがあります。
+   - 1 つ目のテキスト ボックス: ユーザーの手順など、テキストのメインの本文を指定します。 たとえば、既定のユーザー通知では、このセクションには "オペレーティング システムのアップグレードには時間がかかります。また、コンピューターが数回再起動される場合があります" のようなテキストが表示されます。
+   - 2 つ目のテキスト ボックス: メインの本文の下に表示される太字のテキストを指定します。 たとえば、既定のユーザー通知では、このセクションに "このインプレース アップグレードでは、新しいオペレーティング システムがインストールされ、アプリ、データ、設定が自動的に移行されます" のようなテキストが表示されます。
+   - 3 つ目のテキスト ボックス: 太字のテキストの下の最終行を指定します。 たとえば、既定のユーザー通知では、このセクションに "インストールを開始するには、開始するには [インストール]、 それ以外の場合は [キャンセル] をクリックしてください" のようなテキストが表示されます。   
 
-   Si supponga di configurare la notifica personalizzata seguente nelle proprietà.
+   たとえば、プロパティでは次のようなカスタム通知を構成できます。
 
-   ![Notifica personalizzata per una sequenza di attività](.\media\user-notification.png)
+   ![タスク シーケンスのカスタム通知](.\media\user-notification.png)
 
-   Verrà visualizzato il messaggio di notifica seguente quando l'utente finale apre il programma di installazione da Software Center.
+   エンドユーザーがソフトウェア センターからインストールを開くときに、次の通知メッセージが表示されます。
 
-   ![Notifica personalizzata per una sequenza di attività](.\media\user-notification-enduser.png)
+   ![タスク シーケンスのカスタム通知](.\media\user-notification-enduser.png)
 
-### <a name="configure-software-center-properties"></a>Configurare le proprietà di Software Center
-Attenersi alla procedura seguente per configurare i dettagli per la sequenza di attività visualizzata in Software Center. Tali dettagli sono solo a scopo informativo.  
-1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
-2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
-3. Nella scheda **Generale** sono disponibili le impostazioni seguenti per Software Center:
-  - **Riavvio necessario**: consente all'utente di sapere se è necessario un riavvio durante l'installazione.
-  - **Dimensioni del download (MB)**: specifica quanti megabyte vengono visualizzati in Software Center per la sequenza di attività.  
-  - **Tempo di esecuzione stimato (minuti)**: specifica il tempo di esecuzione stimato in minuti che viene visualizzato in Software Center per la sequenza di attività.
-
-
-## <a name="check-for-running-executable-files-before-installing-an-application"></a>Controllare l'esecuzione di file eseguibili prima di installare un'applicazione
-
-Nella finestra di dialogo *<deployment type name>* **Proprietà** di un tipo di distribuzione, nella scheda Comportamento di installazione è ora possibile specificare uno o più file eseguibili che, se in esecuzione, bloccano l'installazione del tipo di distribuzione. L'utente deve chiudere il file eseguibile in esecuzione, che in alternativa può essere chiuso automaticamente per le distribuzioni con scopo richiesto, prima dell'installazione del tipo di distribuzione.
-
-### <a name="try-it-out"></a>Procedura.
-
-1.    Nelle proprietà di un tipo di distribuzione di Configuration Manager scegliere la scheda **Comportamento di installazione**.
-2.    Scegliere **Aggiungi** per aggiungere uno o più nomi di file eseguibile che si vuole cercare. È anche possibile aggiungere un nome visualizzato per facilitare agli utenti l'identificazione delle applicazioni nell'elenco.
-3.    Se la distribuzione avrà scopo richiesto, nella distribuzione guidata del software è possibile scegliere **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione**.
-
-Se l'applicazione è stata distribuita come **Disponibile** e un utente finale tenta di installare un'applicazione, verrà richiesto di chiudere tutti i file eseguibili in esecuzione specificati, prima di poter procedere con l'installazione.
-
-Se l'applicazione è stata distribuita come **Richiesta** e l'opzione **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione** è selezionata, verrà visualizzata una finestra di dialogo che informa che i file eseguibili specificati verranno chiusi automaticamente quando viene raggiunta la scadenza dell'installazione dell'applicazione. È possibile pianificare queste finestre di dialogo in **Impostazioni client** > **Agente computer**. Se non si vuole che l'utente finale visualizzi questi messaggi, selezionare **Nascondi in Software Center e nascondi tutte le notifiche** nella scheda **Esperienza utente** delle proprietà di distribuzione.
-
-Se l'applicazione è stata distribuita come **Richiesta** e l'opzione **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione** non è selezionata, l'installazione dell'applicazione avrà esito negativo se sono in esecuzione una o più applicazioni tra quelle specificate.
-
-## <a name="create-pfx-certificates-with-s-mime-support"></a>Creare certificati PFX con il supporto di S/MIME
-
-È ora possibile creare un profilo di certificato PFX che supporta S/MIME e distribuirlo agli utenti.  Questo certificato può essere quindi usato per la crittografia S/MIME e la decrittografia nei dispositivi che l'utente ha registrato.
-
-È ora possibile anche specificare più autorità di certificazione (CA) in più ruoli del sistema del sito del punto di registrazione certificati e quindi assegnare le richieste di processo dell'autorità di certificazione come parte del profilo di certificato.
-
-Per i dispositivi iOS, è possibile associare un profilo di certificato PFX a un profilo di posta elettronica e abilitare la crittografia S/MIME.  Questo abilita S/MIME nel client di posta elettronica nativo in iOS e vi associa il certificato di crittografia S/MIME corretto.
-
-Per altre informazioni sui certificati in Configuration Manager, vedere [Introduzione ai profili certificato in System Center Configuration Manager]( https://docs.microsoft.com/sccm/protect/deploy-use/introduction-to-certificate-profiles).
+### <a name="configure-software-center-properties"></a>ソフトウェア センターのプロパティを構成する
+ソフトウェア センターに表示されるタスク シーケンスの詳細を構成するには、次の手順を実行します。 これは参考目的のみの情報です。  
+1. Configuration Manager コンソールの **[ソフトウェア ライブラリ]** > **[オペレーティング システム]** > **[タスク シーケンス]** の順に選択します。
+2. 編集するタスク シーケンスを選択し、**[プロパティ]** をクリックします。
+3. **[全般]** タブでは、ソフトウェア センターの次の設定を使用できます。
+  - **再起動が必要**: インストール時に再起動が必要かどうかをユーザーに通知します。
+  - **ダウンロード サイズ (MB)**: タスク シーケンスについてソフトウェア センターに表示するサイズ (MB) を指定します。  
+  - **推定実行時間 (分)**: タスク シーケンスについてソフトウェア センターに表示する推定実行時間を分単位で指定します。
 
 
-## <a name="new-compliance-settings-for-ios-devices"></a>Nuove impostazioni di conformità per i dispositivi iOS
+## <a name="check-for-running-executable-files-before-installing-an-application"></a>アプリケーションをインストールする前に実行中の実行可能ファイルを確認する
 
-Sono state aggiunte nuove impostazioni che è possibile usare negli elementi di configurazione per i dispositivi iOS. Si tratta di impostazioni che in precedenza esistevano nella configurazione autonoma di Microsoft Intune, rese ora disponibili per Intune con Configuration Manager. Per assistenza su queste impostazioni, vedere [Impostazioni dei criteri di iOS in Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/ios-policy-settings-in-microsoft-intune).
+展開の種類の *<deployment type name>***[プロパティ]** ダイアログ ボックスの [インストールの処理] タブで、実行可能ファイルが実行中の場合、その展開の種類のインストールをブロックする実行可能ファイルの 1 つを指定できるようになりました。 ユーザーは、その展開の種類をインストールするには、実行中の実行可能ファイルを終了する必要があります (または、展開の目的が必須の場合は自動的に終了することができます)。
 
-- **Sincronizza i dati dalle app gestite a iCloud**
-- **Esegui handoff per continuare le attività nell'altro dispositivo**
-- **Condivisione foto iCloud**
-- **Libreria foto di iCloud**
-- **Ritieni attendibili gli autori di una nuova app aziendale**
-- **Consenti all'utente di scaricare contenuti da iBook Store contrassegnati come "Erotici"** (solo modalità di supervisione)
-- **Forza gli Apple Watch associati a usare il rilevamento del polso**
-- **Password per le richieste in uscita di AirPlay**
-- **Modifica le impostazioni dell'account** (solo modalità di supervisione)
-- **Modifiche alle impostazioni dell'utilizzo della rete dati dell'app** (solo modalità di supervisione)
-- **Elimina tutti i contenuti e tutte le impostazioni** (solo modalità di supervisione)
-- **Configura le restrizioni nel dispositivo** (solo modalità di supervisione)
-- **Usa l'associazione di host per controllare i dispositivi a cui può essere associato un dispositivo iOS** (solo modalità di supervisione)
-- **Installa i profili di configurazione e i certificati** (solo modalità di supervisione)
-- **Modifica del nome dispositivo** (solo modalità di supervisione)
-- **Modifica del passcode** (solo modalità di supervisione)
-- **Associazione di Apple Watch** (solo modalità di supervisione)
-- **Modifica delle impostazioni di notifica** (solo modalità di supervisione)
-- **Modifica dello sfondo** (solo modalità di supervisione)
-- **Modifica delle impostazioni di invio dei dati di diagnostica** (solo modalità di supervisione)
-- **Modifica Bluetooth** (solo modalità di supervisione)
-- **AirDrop** (solo modalità di supervisione)
-- **Usa Siri per eseguire query nel contenuto generato dall'utente da Internet** (solo modalità di supervisione)
-- **Filtro di Siri per le espressioni volgari** (solo modalità di supervisione)
-- **Restituisci risultati da Internet nella ricerca Spotlight** (solo modalità di supervisione)
-- **Ricerca della definizione della parola** (solo modalità di supervisione)
-- **Tastiere predittive** (solo modalità di supervisione)
-- **Correzione automatica** (solo modalità di supervisione)
-- **Controllo ortografico tastiera** (solo modalità di supervisione)
-- **Scelte rapide da tastiera** (solo modalità di supervisione)
+### <a name="try-it-out"></a>試してみましょう
+
+1.  Configuration Manager の展開の種類のプロパティで、**[インストールの処理]** タブを選択します。
+2.  **[追加]** を選択して、確認する 1 つまたは複数の実行可能ファイル名を追加します。 ユーザーがリストのアプリケーションを特定しやすくなるように、表示名を追加することもできます。
+3.  展開の目的を必須にする場合、必要に応じて、ソフトウェアの展開ウィザードで **[[展開の種類プロパティ] ダイアログ ボックスの [インストールの処理] タブで指定した実行中の実行可能ファイルをすべて自動的に閉じる]** をオンにすることもできます。
+
+アプリケーションの展開が **[使用可能]** で、エンド ユーザーがアプリケーションをインストールしようとすると、インストールを続行する前に、指定した実行中の実行可能ファイルを終了するようにユーザーに求めます。
+
+アプリケーションの展開が **[必須]** で、オプション **[[展開の種類プロパティ] ダイアログ ボックスの [インストールの処理] タブで指定した実行中の実行可能ファイルをすべて自動的に閉じる]** がオンの場合、アプリケーションのインストール期限に達したときに、指定した実行可能ファイルが自動的に閉じられることを通知するダイアログ ボックスが表示されます。 これらのダイアログは **[クライアント設定]** > **[コンピューター エージェント]** でスケジュールできます。 これらのメッセージをエンド ユーザーに表示しない場合は、展開のプロパティの **[ユーザー エクスペリエンス]** タブで **[すべての通知をソフトウェア センターで非表示にし、ユーザーにも通知しない]** をオンにします。
+
+アプリケーションの展開が **[必須]** で、オプション **[[展開の種類プロパティ] ダイアログ ボックスの [インストールの処理] タブで指定した実行中の実行可能ファイルをすべて自動的に閉じる]** がオフの場合、指定したアプリケーションの 1 つまたは複数が実行中の場合、アプリのインストールは失敗します。
+
+## <a name="create-pfx-certificates-with-s-mime-support"></a>S/MIME サポートを含む PFX 証明書を作成する
+
+S/MIME をサポートする PFX 証明書プロファイルを作成できるようになりました。  この証明書は、ユーザーが登録したデバイス全体で S/MIME の暗号化と復号化に使用できます。
+
+また、複数の証明書登録ポイントのサイト システムの役割に対して複数の証明機関 (CA) を指定し、証明書プロファイルの一部として要求を処理する CA を割り当てることできるようになりました。
+
+iOS デバイスでは、PFX 証明書プロファイルを電子メール プロファイルに割り当てて、S/MIME 暗号化を有効にすることができます。  これで、iOS のネイティブ電子メール クライアントで S/MIME を有効にして、正しい S/MIME 暗号化証明書を関連付けることができます。
+
+Configuration Manager の証明書の詳細については、「[System Center Configuration Manager における証明書プロファイルの概要]( https://docs.microsoft.com/sccm/protect/deploy-use/introduction-to-certificate-profiles)」を参照してください。
+
+
+## <a name="new-compliance-settings-for-ios-devices"></a>iOS デバイスの新しいコンプライアンス設定
+
+iOS デバイスの構成アイテムで使用できる新しい設定が追加されました。 これらの設定は、以前はスタンドアロン構成での Microsoft Intune にありましたが、Intune を Configuration Manager で使用する際にも使用できるようになりました。 これらの設定の詳細については、「[Microsoft Intune の iOS ポリシー設定](https://docs.microsoft.com/intune/deploy-use/ios-policy-settings-in-microsoft-intune)」を参照してください。
+
+- **管理対象アプリから iCloud にデータを同期**
+- **ハンドオフして別のデバイスで作業を継続**
+- **iCloud の写真共有**
+- **iCloud フォトライブラリ**
+- **新しいエンタープライズ アプリ作成者を信頼**
+- **'アダルト' のフラグが付いているコンテンツをユーザーが iBook ストアからダウンロードすることを許可する** (監視モードのみ)
+- **ペアリングされている Apple Watch で手首検出の使用を強制する**
+- **AirPlay 送信要求のパスワード**
+- **アカウント設定の変更** (監視モードのみ)
+- **アプリの携帯データ ネットワークの使用設定に対する変更** (監視モードのみ)
+- **すべてのコンテンツと設定を消去** (監視モードのみ)
+- **デバイスに対する制限の構成** (監視モードのみ)
+- **iOS デバイスとペアリングできるデバイスをホスト ペアリングで制御** (監視モードのみ)
+- **構成プロファイルと証明書のインストール** (監視モードのみ)
+- **デバイス名の変更** (監視モードのみ)
+- **パスコードの変更** (監視モードのみ)
+- **Apple Watch のペアリング** (監視モードのみ)
+- **通知設定の変更** (監視モードのみ)
+- **壁紙の変更** (監視モードのみ)
+- **診断の送信の設定変更** (監視モードのみ)
+- **Bluetooth の変更** (監視モードのみ)
+- **AirDrop** (監視モードのみ)
+- **Siri を使用して、ユーザーが生成したインターネットのコンテンツに対してクエリを実行** (監視モードのみ)
+- **Siri の不適切な単語フィルター** (監視モードのみ)
+- **Spotlight 検索でインターネットから結果を返す** (監視モードのみ)
+- **単語の定義の検索** (監視モードのみ)
+- **予測表示キーボード** (監視モードのみ)
+- **自動修正** (監視モードのみ)
+- **キーボード スペル チェック** (監視モードのみ)
+- **キーボード ショートカット** (監視モードのみ)
 <!--- - **Enterprise app trust settings modification** --->
-- **Installazione di app solo con Apple Configurator e iTunes** (solo modalità di supervisione)
-- **Download automatici delle app** (solo modalità di supervisione)
-- **Modifica le impostazioni dell'app Find My Friends** (solo modalità di supervisione)
-- **Accesso a iBooks Store** (solo modalità di supervisione)
-- **App Messages** (solo modalità di supervisione)
-- **Podcast** (solo modalità di supervisione)
-- **Apple Music** (solo modalità di supervisione)
-- **iTunes Radio** (solo modalità di supervisione)
-- **Apple News** (solo modalità di supervisione)
-- **Game Center** (solo modalità di supervisione)
-- **Considera AirDrop come destinazione non gestita**
+- **Apple Configurator と iTunes を使ったアプリのインストールのみ** (監視モードのみ)
+- **アプリの自動ダウンロード** (監視モードのみ)
+- **"友達を探す" アプリの設定の変更** (監視モードのみ)
+- **iBooks ストアへのアクセス** (監視モードのみ)
+- **メッセージ アプリ** (監視モードのみ)
+- **ポッドキャスト** (監視モードのみ)
+- **Apple Music** (監視モードのみ)
+- **iTunes Radio** (監視モードのみ)
+- **Apple News** (監視モードのみ)
+- **Game Center** (監視モードのみ)
+- **Airdrop を管理対象外として扱う**
 
-## <a name="android-for-work-support"></a>Supporto per Android for Work
+## <a name="android-for-work-support"></a>Android for Work のサポート
 
-A partire dalla versione 1702 di Technical Preview, è possibile associare un account Google al tenant di MDM ibrida. Ciò consente di eseguire le operazioni seguenti:
+Technical Preview バージョン 1702 以降、Google アカウントをハイブリッド MDM テナントにバインドできます。 バインドすると、以下を実行できるようになります。
 
-- Registrare i [dispositivi Android supportati](https://support.google.com/work/android/answer/6174145?hl=en&ref_topic=6151012) come Android for Work, creando profili di lavoro in tali dispositivi registrati
-- Approvare le applicazioni nello store di Play for Work, sincronizzarle con la console di Configuration Manager e quindi distribuirle ai profili di lavoro dei dispositivi
-- Creare e distribuire gli elementi di configurazione per configurare le impostazioni del profilo di lavoro e della password per i dispositivi
-- Creare e distribuire elementi dei criteri di conformità e profili di accesso alle risorse per i dispositivi Android for Work come già accade per i dispositivi Android
-- Eseguire la cancellazione selettiva nei dispositivi Android for Work
+- [サポートされる Android デバイス](https://support.google.com/work/android/answer/6174145?hl=en&ref_topic=6151012)を Android for Work として登録し、その登録したデバイスに仕事用プロファイルを作成する
+- Play for Work ストアでアプリを承認し、Configuration Manager コンソールと同期して、デバイスの仕事用プロファイルに展開する
+- 構成アイテムを作成して展開し、そのデバイスの仕事用プロファイルとパスワード設定を構成する
+- Android デバイスと同様の手順で Android for Work デバイスのコンプライアンス ポリシー アイテムとリソース アクセス プロファイルを作成して展開する
+- Android for Work デバイスの選択的ワイプを実行する
 
-Quando si registra un dispositivo come Android for work, viene creato un profilo di lavoro nel dispositivo gestibile da Intune. Questo profilo di lavoro coesiste con il profilo personale nel dispositivo Android. Gli utenti possono passare facilmente dalle app profilo di lavoro alle app profilo personale. Non è possibile gestire gli elementi nel profilo personale. Le app e i dati personali rimangono non gestiti. Configuration Manager ha il controllo completo sul profilo di lavoro e i relativi contenuti e può rimuoverlo dal dispositivo.
+デバイスを登録すると、Android for Work は Intune が管理できるデバイスに仕事用プロファイルを作成します。 この仕事用プロファイルは、Android デバイス上の個人用プロファイルと同時に存在します。 ユーザーは仕事用プロファイル アプリと個人用プロファイル アプリを簡単に切り替えることができます。 管理者は、個人用プロファイルのアイテムを管理できません。 個人のアプリとデータは管理対象外のままです。 Configuration Manager では仕事用プロファイルとそのコンテンツを完全に制御し、デバイスから削除することができます。
 
-Android for Work è una piattaforma separata da Android, e sarà necessario decidere quale tipo di gestione usare per i dispositivi Android che supportano i profili di lavoro.
+Android for Work は Android とは別のプラットフォームです。仕事用プロファイルをサポートする Android デバイスに使用する管理の形式を決定する必要があります。
 
-### <a name="try-it-out"></a>Prova subito!
-Le sezioni seguenti descrivono la gestione di Android for Work.
+### <a name="try-it-out"></a>試してみましょう。
+以下のセクションでは、Android for Work の管理について説明します。
 
-#### <a name="enable-android-for-work-management"></a>Abilitare la gestione di Android for Work
-1. Creare un account di Google https://accounts.google.com/SignUp da usare come account amministratore di Android for Work che verrà associato a tutte le attività di gestione di Android for Work per il tenant di Intune. Potrebbe trattarsi di un account di Google condiviso tra gli amministratori che gestiscono i dispositivi Android. Si tratta dell'account Google usato dall'organizzazione per gestire e pubblicare applicazioni nella console di Play for Work. Questo account verrà usato per approvare le applicazioni nello store di Play for Work, quindi è consigliabile appuntarsi nome dell'account e password.
-2. Abilitare la registrazione di Android associando l'account Google al tenant di Intune gestito in Configuration Manager:
-  1. Accedere ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Sottoscrizioni a Microsoft Intune** e selezionare la propria sottoscrizione Intune.
-  2. Nella barra multifunzione fare clic su **Configura piattaforme** > **Android** e assicurarsi che l'opzione **Abilita registrazione Android** sia selezionata.
-  3. Nella barra multifunzione fare clic su **Configura piattaforme** > **Android for Work**.
-  4. Nella finestra di dialogo fare clic su **Configura Android for Work nella console di Intune**. La console di Intune viene aperta nel Web browser.
-  5. Usare le credenziali di amministratore di Intune per accedere al portale di Intune.
-  6. Fare clic su **Configura** per aprire il sito Web Android for Work di Google Play.
-  7. Nella pagina di accesso di Google immettere le credenziali Google dal passaggio 1 e quindi specificare le informazioni aziendali.
-3. Quando si torna al portale di Intune, Android for Work è attivato e sono disponibili tre opzioni di registrazione per i dispositivi Android for Work:
-  - **Gestisci tutti i dispositivi come Android**: (disabilitata) tutti i dispositivi Android, inclusi i dispositivi Android for Work, verranno registrati come dispositivi Android convenzionali
-  - **Gestisci i dispositivi supportati come Android for Work**: (abilitata) tutti i dispositivi che supportano Android for Work vengano registrati come dispositivi Android for Work. I dispositivi Android che non supportano Android for Work vengono registrati come dispositivi Android convenzionali.
-  - **Gestisci i dispositivi supportati per gli utenti solo in questi gruppi come Android for Work**: (test) consente di usare la gestione Android for Work per un insieme di utenti limitato. Solo i membri dei gruppi selezionati che registrano un dispositivo che supporta Android for Work vengono registrati come dispositivi Android for Work. Tutti gli altri vengono registrati come dispositivi Android.
+#### <a name="enable-android-for-work-management"></a>Android for Work の管理を有効にする
+1. https://accounts.google.com/SignUp で、Android for Work 管理者アカウントとして使用する Google アカウントを作成します。このアカウントは、この Intune テナントのすべての Android for Work 管理タスクに関連付けられます。 これは、Android デバイスを管理する管理者間で共有する Google アカウントにすることができます。 これは、組織が Play for Work コンソールでアプリを管理および発行するときに使用する Google アカウントです。 このアカウントを使用して、Play for Work ストアのアプリを承認し、アカウント名とパスワードを追跡します。
+2. Android の登録を有効にするには、Google アカウントを Configuration Manager で管理される Intune テナントにバインドします。
+  1. **[管理]** > **[概要]** > **[Cloud Services]** > **[Microsoft Intune サブスクリプション]** の順に選択し、Intune サブスクリプションを選択します。
+  2. リボンの **[プラットフォームの構成]** > **[Android]** をクリックし、**[Android の登録を有効にする]** をオンにします。
+  3. リボンの **[プラットフォームの構成]** > **[Android for Work]** をクリックします。
+  4. ダイアログ ボックスの **[Intune コンソールで Android for Work を構成する]** をクリックします。 Web ブラウザーで Intune コンソールが開きます。
+  5. Intune 管理者の資格情報を使用して Intune ポータルにログインします。
+  6. **[構成]** をクリックして Google Play の Android for Work Web サイトを開きます。
+  7. Google のサインイン コンポーネントで、手順 1 の Google アカウントの資格情報を入力し、会社情報を入力します。
+3. Intune ポータルに戻ると、Android for Work が有効になり、Android for Work デバイスの 3 つの登録オプションが表示されます。
+  - **すべてのデバイスを Android として管理する** - (無効) Android for Work をサポートするデバイスを含め、すべての Android デバイスが従来の Android デバイスとして登録されます。
+  - **サポートされているデバイスを Android for Work として管理する** - (有効) Android for Work をサポートするすべてのデバイスが Android for Work デバイスとして登録されます。 Android for Work をサポートしない Android デバイスは、従来の Android デバイスとして登録されます。
+  - **これらのグループに所属するユーザーのサポートされているデバイスのみを Android for Work として管理する** - (テスト) Android for Work の管理を特定のユーザー グループを対象にしてみましょう。 選択したグループのメンバーのうち、Android for Work をサポートするデバイスを登録しているメンバーのみが、Android for Work デバイスとして登録されます。 それ以外は Android デバイスとして登録されます。
   
 > [!NOTE]
-> Un problema noto impedisce all'opzione **Gestisci i dispositivi supportati per gli utenti solo in questi gruppi come Android for Work** di funzionare come previsto. I dispositivi degli utenti nei gruppi Azure AD specificati saranno registrati come Android anziché Android for Work. Per testare Android for Work, è necessario usare **Gestisci i dispositivi supportati come Android for Work**.
+> ある既知の問題では、**[これらのグループに所属するユーザーのサポートされているデバイスのみを Android for Work として管理する]** オプションが期待どおり動作しません。 指定の Azure AD グループにあるユーザーのデバイスが Android for Work ではなく Android として登録されます。 Android for Work をテストするには、**[Manage all supported devices as Android for Work (サポートされているすべてのデバイスを Android for Work として管理する)]** を利用する必要があります。
 
 
-  Per consentire la registrazione Android for Work è necessario selezionare una delle ultime due opzioni. L'opzione **Gestisci i dispositivi supportati per gli utenti solo in questi gruppi come Android for Work** richiede che siano prima impostati i gruppi di sicurezza di Azure Active Directory.
+  Android for Work の登録を有効にするには、下の 2 つのオプションのいずれかを選択する必要があります。 **[これらのグループに所属するユーザーのサポートされているデバイスのみを Android for Work として管理する]** オプションの場合、まず Azure Active Directory セキュリティ グループを設定する必要があります。
 
-Quando l'associazione sarà stata completata, il nome dell'account e il nome dell'organizzazione saranno visualizzati nel portale di Intune. A quel punto sarà possibile chiudere entrambi i browser.
+バインドが完了すると、アカウント名と組織名が Intune ポータルに表示されます。完了すると、両方のブラウザーを閉じることができます。
 
-#### <a name="approve-and-deploy-android-for-work-apps"></a>Approvare e distribuire le applicazioni Android for Work
-Attenersi alla procedura seguente per approvare le applicazioni nello store di Play for Work, sincronizzarle con la console di Configuration Manager e quindi distribuirle ai dispositivi Android for Work gestiti. Per distribuire applicazioni a profili di lavoro degli utenti, è necessario approvarle in Play for Work e quindi sincronizzarle con la console di Configuration Manager.
+#### <a name="approve-and-deploy-android-for-work-apps"></a>Android for Work アプリの承認と展開
+Play for Work ストアのアプリを承認し、Configuration Manager コンソールと同期し、管理対象の Android for Work デバイスに展開するには、次の手順を実行します。 アプリをユーザーの仕事用プロファイルに展開するには、Play for Work でアプリを承認し、アプリを Configuration Manager コンソールと同期する必要があります。
 
-1. Aprire un browser e passare a: https://play.google.com/work.
-2. Accedere usando l'account di amministratore di Google associato al tenant di Intune.
-3. Cercare le applicazioni che si vuole distribuire nell'ambiente e fare clic su **Approva** per ognuna di esse.
-4. Nella console di Configuration Manager passare a **Amministratore** > **Panoramica** > **Servizi cloud** > **Android for Work** e fare clic su **Sincronizza**.
-5. Attendere fino a 10 minuti che le applicazioni si sincronizzino e passare a **Raccolta software** > **Panoramica** > **Gestione applicazioni** > **Informazioni di licenza per le app dello Store**.
-6. Fare clic su un'app sincronizzata da Play for Work e quindi su **Crea applicazione**.
-7. Completare la procedura guidata e fare clic su **Chiudi**.
-8. Passare a **Raccolta software** > **Panoramica** > **Gestione applicazioni** > **Applicazioni**, selezionare un'applicazione Android for Work e distribuire come di consueto.
+1. ブラウザーを開き、https://play.google.com/work にアクセスします。
+2. Intune テナントにバインドした Google 管理者アカウントを使用してサインインします。
+3. 環境に展開するアプリを参照し、各アプリについて **[承認]** をクリックします。
+4. Configuration Manager コンソールで **[管理者]** > **[概要]** > **[クラウド サービス]** > **[Android for Work]** の順にクリックし、**[同期]** をクリックします。
+5. アプリが同期されるまで 10 分間待ってから **[ソフトウェア ライブラリ]** > **[概要]** > **[アプリケーション管理]** > **[ストア アプリのライセンス情報]** の順に選択します。
+6. Play for Work から同期したアプリをクリックしてから **[アプリケーションの作成]** をクリックします。
+7. ウィザードを完了し、**[閉じる]** をクリックします。
+8. **[ソフトウェア ライブラリ]** > **[概要]** > **[アプリケーション管理]** > **[アプリケーション]** の順に選択し、Android for Work アプリを選択して、通常どおりに展開します。
 
-Per eseguire la sincronizzazione delle applicazioni Play for Work con Configuration Manager, è necessario approvare almeno un'applicazione sul sito Web Play for Work.
+Play for Work アプリを Configuration Manager と同期するには、少なくとも 1 つのアプリを Play for Work Web サイトで承認する必要があります。
 
-#### <a name="enroll-an-android-for-work-device"></a>Registrare un dispositivo Android for Work
-La procedura di registrazione dei dispositivi Android for Work è simile alla registrazione per Android. Scaricare ed eseguire l'app portale aziendale per Android nel dispositivo mobile. Verrà richiesto di creare un profilo di lavoro come parte del processo di registrazione.  Dopo aver creato il profilo di lavoro, è necessario passare alla versione gestita del portale aziendale. Il portale aziendale gestito viene contrassegnato con una valigetta arancione nell'angolo in basso a destra.
+#### <a name="enroll-an-android-for-work-device"></a>Android for Work デバイスを登録する
+Android for Work デバイスの登録方法は、Android の登録方法と似ています。 モバイル デバイスで Android 用のポータル サイト アプリをダウンロードして実行します。 登録プロセスの一環で仕事用プロファイルを作成するように求められます。  仕事用プロファイルを完了したら、管理対象バージョンのポータル サイトに切り替える必要があります。 管理対象のポータル サイトには、右下に小さなオレンジ色のブリーフケースのタグが付いています。
 
-#### <a name="create-and-deploy-a-configuration-item"></a>Creare e distribuire un elemento di configurazione
-Android for Work ha due gruppi di impostazioni per gli elementi di configurazione:
-- Password
-- Profilo di lavoro
+#### <a name="create-and-deploy-a-configuration-item"></a>構成アイテムの作成と展開
+Android for Work には、構成アイテムに 2 つの設定グループがあります。
+- パスワード
+- 仕事用プロファイル
 
-È possibile configurare la condivisione dei contenuti tra i profili di lavoro, nonché gli elementi di configurazione seguenti nei dispositivi che eseguono Android 6 o versione successiva:
-- Il comportamento delle applicazioni che richiedono autorizzazioni specifiche
-- La possibilità di visualizzare le notifiche delle applicazioni all'interno del profilo di lavoro nella schermata di blocco
+Android 6 以降を実行するデバイスでは、仕事用プロファイル間で共有するコンテンツだけでなく、次の構成アイテムも構成できます。
+- 特定のアクセス許可を求めるアプリの動作
+- 仕事用プロファイル内のアプリの通知をロック画面に表示するかどうか
 
-Per eseguire una prova, creare un elemento di configurazione mediante il flusso di lavoro standard, scegliere **Android for Work** nella pagina **Generale** e configurare le impostazioni per ognuno dei gruppi di impostazioni, aggiungendo l'elemento di configurazione a una linea di base ed eseguendo la distribuzione come di consueto. Queste impostazioni verranno applicate solo ai dispositivi registrati come Android for Work e non a quelli registrati come Android.
+この機能を試すには、標準のワークフローで構成アイテムを作成し、**[全般]** ページで **[Android for Work]** を選択し、各設定グループの設定を構成し、構成アイテムを基準に追加して、通常どおりに展開します。 これらの設定は、Android for Work として登録されたデバイスにのみ適用され、Android として登録されたデバイスには適用されません。
 
-#### <a name="perform-selective-wipe"></a>Eseguire la cancellazione selettiva
-I dispositivi registrati come Android for Work possono essere cancellati solo in modo selettivo in quanto l'utente gestisce solo il profilo di lavoro. Ciò impedisce che venga cancellato il profilo personale. Quando si eseguire la cancellazione selettiva in un dispositivo Android for Work, viene rimosso il profilo di lavoro, compresi tutte le app e i dati, e la registrazione del dispositivo viene annullata.
+#### <a name="perform-selective-wipe"></a>選択的なワイプを実行する
+管理者は仕事用プロファイルのみを管理するので、Android for Work として登録されたデバイスに対してのみ、選択的なワイプを実行できます。 そのため、個人用プロファイルはワイプから保護されます。 Android for Work デバイスで選択的なワイプを実行すると、すべてのアプリとデータを含む仕事用プロファイルが削除され、デバイスの登録が削除されます。
 
-Per eseguire la cancellazione selettiva in un dispositivo Android for Work, usare il [processo di cancellazione selettiva](https://docs.microsoft.com/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe) consueto nella console di Configuration Manager.
+Android for Work デバイスで選択的なワイプを実行するには、Configuration Manager コンソールで通常の[選択的なワイプ プロセス](https://docs.microsoft.com/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe)を使用します。
 
-#### <a name="known-issues-for-android-for-work"></a>Problemi noti di Android for Work
-**Se si configura la sincronizzazione pianificata nei profili di posta elettronica di Android for Work, la distribuzione non riesce** Una delle opzioni dell'interfaccia utente di ConfigMgr per i profili di posta elettronica di Android for Work è quella relativa alla pianificazione. In altre piattaforme questa consente all'amministratore di configurare una pianificazione per la sincronizzazione della posta elettronica e degli altri dati dell'account di posta elettronica fino ai dispositivi mobili in cui viene distribuito. Per i profili di posta elettronica di Android for Work non funziona, e se si sceglie un'opzione diversa da "Non configurato" il profilo non verrà distribuito in nessun dispositivo.
-
+#### <a name="known-issues-for-android-for-work"></a>Android for Work の既知の問題
+**Android for Work 電子メール プロファイルで同期スケジュールを設定すると、展開に失敗する** Android for Work 電子メール プロファイルの ConfigMgr UI のオプションの 1 つが "スケジュール" です。 他のプラットフォームでは、管理者はスケジュールを設定し、展開先のモバイル デバイスに電子メールやその他の電子メール アカウント データを同期できます。 ただし、Android for Work 電子メール プロファイルの場合は動作しません。"未構成" 以外のオプションを選択すると、プロファイルはいかなるデバイスにも展開されません。

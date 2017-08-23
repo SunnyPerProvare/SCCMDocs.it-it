@@ -1,13 +1,12 @@
 ---
-title: Ripristino del sito | Microsoft Docs
-description: Informazioni su come ripristinare i siti in System Center Configuration Manager.
+title: "サイトの回復 | Microsoft Docs"
+description: "System Center Configuration Manager でのサイトの回復について説明します。"
 ms.custom: na
 ms.date: 6/5/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 19539f4d-1667-4b4c-99a1-9995f12cf5f7
@@ -15,233 +14,230 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f7cd9c71287d62c9f5d36e2f032bc2a6065572ae
 ms.openlocfilehash: 49eea15ea2888f8f93c33eb771c09147ba21529e
-ms.contentlocale: it-it
-ms.lasthandoff: 06/06/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+#  <a name="recover-a-configuration-manager-site"></a>Configuration Manager サイトの回復
 
-#  <a name="recover-a-configuration-manager-site"></a>Ripristinare un sito di Configuration Manager
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+Configuration Manager サイトで障害が発生した場合や、サイト データベースのデータが損失した場合は、Configuration Manager サイトの回復を実行します。 サイトの回復の中心となる作業は、データの修復と同期です。これは、業務の中断を防ぐためにも必要な作業です。
 
-Eseguire un ripristino del sito di Configuration Manager dopo che si verifica un errore nel sito di Configuration Manager o una perdita di dati nel database del sito. La riparazione e la risincronizzazione dei dati sono le attività principali del ripristino di un sito e sono necessarie per evitare l'interruzione delle operazioni.
+このトピックのセクションは、Configuration Manager サイトを回復する場合に役立ちます。 バックアップを作成する場合は、[Configuration Manager のバックアップ](/sccm/protect/understand/backup-and-recovery)に関するページを参照してください。
 
-Le sezioni in questo argomento sono utili per il ripristino di un sito di Configuration Manager. Per creare un backup, vedere [Backup di Configuration Manager](/sccm/protect/understand/backup-and-recovery).
+## <a name="considerations-before-recovering-a-site"></a>サイトを回復する前の注意事項
+**同じバージョンおよびエディションの SQL Server を使用する必要があります:** たとえば、SQL Server 2014 で実行していたデータベースを SQL Server 2016 に復元することはできません。 同様に、SQL Server 2016 の Standard エディションで実行していたサイト データベースを SQL Server 2016 の Enterprise エディションに復元することはできません。
+-   SQL Server を **シングル ユーザー モード**に設定しないでください。
+-   MDF ファイルと LDF ファイルが有効であることを確認します。 サイトを回復するときに、復元するファイルの状態は確認されません。
 
-## <a name="considerations-before-recovering-a-site"></a>Considerazioni prima del recupero di un sito
-**È necessario usare la stessa versione ed edizione di SQL Server,** ad esempio non è supportato il ripristino di un database eseguito in SQL Server 2014 in SQL Server 2016. Analogamente non è supportato il ripristino di un database del sito eseguito nella Standard Edition di SQL Server 2016 alla Enterprise Edition di SQL Server 2016.
--   SQL Server non deve essere impostato sulla **modalità utente singolo**.
--   Assicurarsi che i file MDF e LDF siano validi. Quando si ripristina un sito, non viene eseguita alcuna verifica dello stato dei file da ripristinare.
+**SQL Server Always On 可用性グループを使用して、サイト データベースをホストする場合:** [SQL Server Always On の使用準備](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#changes-for-site-recovery)に関するページの説明に従って、回復計画を変更します。
 
-**Se si usa un gruppo di disponibilità Always On di SQL Server per ospitare il database del sito:** Modificare i piani di ripristino come descritto in [Preparare l'uso di gruppi di disponibilità Always On di SQL Server](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#changes-for-site-recovery).
+**データベースのレプリカを使用する場合:** データベースのレプリカ用に構成されたサイト データベースを復元した後で、データベースのレプリカを使用するためには、データベースの各レプリカを再構成して、パブリケーションとサブスクリプションの両方を再作成する必要があります。
 
-**Quando si usano le repliche di database:** dopo avere ripristinato il database di un sito che era stato configurato per le repliche di database, prima di poter usare le repliche è necessario riconfigurare ciascuna replica del database, ricreando sia le pubblicazioni sia le sottoscrizioni.
-
-## <a name="determine-your-recovery-options"></a>Determinare le opzioni di ripristino
-Ci sono due aree principali da tenere in considerazione per il ripristino del sito di amministrazione centrale e del server del sito primario di Configuration Manager: il **server del sito** e il **database del sito**.
-Le sezioni seguenti consentono di selezionare le opzioni migliori per lo scenario di ripristino.
+## <a name="determine-your-recovery-options"></a>回復オプションの検討
+Configuration Manager のプライマリ サイト サーバーと中央管理サイトの回復について検討すべき点が 2 つ (**サイト サーバー**と**サイト データベース**) あります。
+次のセクションは、回復シナリオに最適なオプションを選択するのに役立ちます。
 
 > [!NOTE]   
-> Quando il programma di installazione rileva la presenza di un sito di Configuration Manager sul server, è possibile avviare un ripristino del sito, sebbene le opzioni di ripristino per il server del sito siano limitate. Ad esempio, se si esegue il programma di installazione su un server del sito esistente, scegliendo l'operazione di ripristino è possibile recuperare il server di database del sito, ma l'opzione di ripristino del server del sito è disabilitata.
+> セットアップにより、サーバーで既存の Configuration Manager サイトが検出された場合、サイトの回復を開始できますが、サイト サーバーの回復オプションが限られます。 たとえば、既存のサイト サーバーでセットアップを実行した場合は、サイト データベース サーバーは回復できますが、サイト サーバーの回復オプションは無効になっています。
 
-### <a name="site-server-recovery-options"></a>Opzioni di ripristino del server del sito
-Avviare l'installazione da una copia della cartella **CD.Latest** creata esternamente alla cartella di installazione di Configuration Manager.
--   Se si esegue il programma di installazione di Configuration Manager dal menu **Start** sul server del sito, l'opzione **Ripristina un sito** non sarà disponibile.
--   Se sono stati installati aggiornamenti dalla console di Configuration Manager prima di eseguire il backup, non è possibile reinstallare il sito usando l'installazione dai supporti di installazione o dal percorso di installazione di Configuration Manager.
+### <a name="site-server-recovery-options"></a>サイト サーバーの回復オプション
+Configuration Manager インストール フォルダーの外に作成した **CD.Latest** フォルダーのコピーから、セットアップを開始します。
+-   サイト サーバーの **[スタート]** メニューから Configuration Manager セットアップを実行する場合は、**[サイトを回復する]** オプションは使用できません。
+-   Configuration Manager コンソール内から更新プログラムをインストールした後でバックアップを作成した場合は、インストール メディアのセットアップまたは Configuration Manager のインストール パスを使用してサイトを正常に再インストールすることはできません。
 
-Selezionare quindi l'opzione **Ripristina un sito**. Sono disponibili le seguenti opzioni di ripristino per il server del sito in cui si è verificato un errore:
+その後、**[サイトを回復する]** オプションを選択します。 障害が発生したサイト サーバーに対して選択できる回復オプションは次のとおりです。
 
--   **Ripristina il server di sito utilizzando un backup esistente**: usare questa opzione quando è disponibile un backup del server del sito di Configuration Manager creato nel server del sito come parte dell'attività di manutenzione **Backup server sito** prima dell'errore nel sito. Il sito viene reinstallato e vengono configurate le relative impostazioni in base al sito di cui era stato eseguito il backup.
--   **Reinstalla il server del sito**: usare questa opzione quando non è disponibile un backup del server del sito. Il server del sito viene reinstallato ed è necessario specificare le impostazioni del sito come nella procedura di installazione iniziale.
-  -   È necessario usare lo stesso codice sito e nome del database del sito usati durante l'installazione iniziale del sito su cui si è verificato l'errore.
-  -   È possibile reinstallare il sito in un nuovo computer che esegue un nuovo sistema operativo.
-  -   Il computer deve usare lo stesso nome, nome di dominio completo, del server del sito originale.   
+-   **既存のバックアップを使用してこのサイト サーバーを回復する**: サイトで障害が発生する前に、**サイト サーバーのバックアップ** メンテナンス タスクの一部としてサイト サーバーに作成された Configuration Manager サイト サーバーをバックアップしている場合に、このオプションを使用します。 サイトが再インストールされ、バックアップされているサイトに基づいて、サイト設定が構成されます。
+-   **このサイト サーバーを再インストールする**: サイト サーバーのバックアップがない場合に、このオプションを使用します。 サイト サーバーが再インストールされますが、初めてインストールしたときと同じようにして、サイト設定を指定する必要があります。
+  -   障害が発生したサイトを初めてインストールしたときに使用したものと同じサイト コードとサイト データベース名を使用する必要があります。
+  -   新しいオペレーティング システムを実行する新しいコンピューターにサイトを再インストールすることができます。
+  -   コンピューターでは、元のサイト サーバーと同じ名前 (FQDN) を使用する必要があります。   
 
-### <a name="site-database-recovery-options"></a>Opzioni di ripristino del database del sito
-Quando si esegue il programma di installazione, sono disponibili le seguenti opzioni di ripristino per il database del sito:
--   **Ripristina il database del sito usando il set di backup**: usare questa opzione quando è disponibile un backup del database del sito di Configuration Manager creato come parte dell'attività di manutenzione **Backup server sito** in esecuzione nel sito prima dell'errore nel database del sito. Quando si dispone di una gerarchia, le modifiche apportate al database del sito dopo l'ultimo backup del database del sito vengono recuperate dal sito di amministrazione centrale per un sito primario o da un sito primario di riferimento per un sito di amministrazione centrale. Quando si ripristina il database del sito per un sito primario autonomo, si perdono le modifiche apportate al sito dopo l'ultimo backup.
+### <a name="site-database-recovery-options"></a>サイト データベースの回復オプション
+セットアップを実行するときに、次のサイト データベースの回復オプションを選択できます。
+-   **バックアップ セットを使用してサイト データベースを復元する**: サイト データベースで障害が発生する前に、サイトで実行された**サイト サーバーのバックアップ** メンテナンス タスクの一部として作成された Configuration Manager サイト データベースのバックアップが存在する場合に、このオプションを使用します。 階層構造がある場合は、サイト データベースの最後のバックアップ以後に加えられた変更が、中央管理サイト (プライマリ サイトを回復するとき)、または基準プライマリ サイト (中央管理サイトを回復するとき) から取得されます。 スタンドアロンのプライマリ サイトのサイト データベースを回復する場合は、最後のバックアップ以後にサイトに加えられた変更を回復することはできません。
 
-   Quando si ripristina il database del sito per un sito in una gerarchia, il comportamento di ripristino è differente per un sito di amministrazione centrale o un sito primario e a seconda del fatto che l'ultimo backup rientri o meno nel periodo di memorizzazione del rilevamento delle modifiche SQL Server. Per altre informazioni, vedere la sezione [Scenari di ripristino del database del sito](##site-database-recovery-scenarios) in questo argomento.
+   階層内のサイトのサイト データベースを回復するときは、そのサイトが中央管理サイトとプライマリ サイトのどちらであるかと、最後のバックアップが SQL Server の変更の追跡の保有期間内に作成されたかどうかによって、回復方法が異なります。 詳細については、このトピックの [「サイト データベースの回復方法」](##site-database-recovery-scenarios) セクションを参照してください。
   > [!NOTE]   
-  > Il ripristino non riesce se si sceglie di ripristinare il database del sito usando un set di backup ma il database del sito è già esistente.  
+  > サイト データベースが存在するのに、バックアップ セットを使用してサイト データベースを回復するオプションを選択した場合は、正常に回復できません。  
 
--   **Crea un nuovo database per il sito**: usare questa opzione quando non è disponibile un backup del database del sito di Configuration Manager. Quando si dispone di una gerarchia, viene creato un nuovo database del sito e i dati vengono ripristinati usando i dati replicati del sito di amministrazione centrale per un sito primario, oppure di un sito primario di riferimento per un sito di amministrazione centrale. Questa opzione non è disponibile quando si ripristina un sito primario autonomo o un sito di amministrazione centrale che non dispone di siti primari.
+-   **このサイトの新しいデータベースを作成する**: Configuration Manager サイト データベースのバックアップがない場合に、このオプションを使用します。 階層構造がある場合は、新しいデータベースが作成され、プライマリ サイトの回復用には、中央管理サイトからレプリケートされたデータが使われ、中央管理サイトの回復用には、基準プライマリ サイトからレプリケートされたデータが使われます。 スタンドアロンのプライマリ サイトを回復する場合や、プライマリ サイトのない中央管理サイトを回復する場合は、このオプションを選択することはできません。
 
--   **Utilizza un database del sito ripristinato manualmente**: usare questa opzione quando è già stato eseguito il ripristino del database del sito di Configuration Manager, ma è necessario completare il processo di ripristino.
-    -   Configuration Manager è in grado di ripristinare il database del sito dall'attività di manutenzione di backup di Configuration Manager oppure da un backup del database del sito eseguito mediante DPM o un altro processo. Dopo il ripristino del database del sito mediante un metodo esterno a Configuration Manager, è necessario eseguire il programma di installazione e selezionare questa opzione per completare il ripristino del database del sito.
+-   **手動で回復したサイト データベースを使用する**: Configuration Manager サイト データベースを既に回復しているが、回復プロセスを完了する必要がある場合に、このオプションを使用します。
+    -   Configuration Manager では、Configuration Manager のバックアップ メンテナンス タスク、または DPM や別のプロセスを使用して実行したサイト データベース バックアップからサイト データベースを回復できます。 Configuration Manager 以外の方法を使用してサイト データベースを復元した場合は、サイト データベースの回復を完了するために、セットアップを実行して、このオプションを選択する必要があります。
 
     > [!NOTE]   
-    > Quando si usa DPM per il backup del database del sito, usare le procedure DPM per ripristinare il database del sito in una posizione specifica prima di continuare il processo di ripristino in Configuration Manager. Per altre informazioni su DPM, vedere [Data Protection Manager Documentation Library (Libreria di documentazione di Data Protection Manager)]() in TechNet.    
+    > DPM を使用してサイト データベースをバックアップするときに、Configuration Manager で復元プロセスを続行する前に、DPM の手順を使用して指定の場所にサイト データベースを復元します。 DPM の詳細については、TechNet の「 [Data Protection Manager]() 」ドキュメント ライブラリを参照してください。    
 
-    -   Quando si dispone di una gerarchia, le modifiche apportate al database del sito dopo l'ultimo backup del database del sito vengono recuperate dal sito di amministrazione centrale per un sito primario o da un sito primario di riferimento per un sito di amministrazione centrale. Quando si ripristina il database del sito per un sito primario autonomo, si perdono le modifiche apportate al sito dopo l'ultimo backup.     
-
-
--   **Ignora ripristino database**: usare questa opzione quando non si è verificata alcuna perdita di dati nel server di database del sito di Configuration Manager. Questa opzione è valida solo quando il database del sito si trova in un computer diverso rispetto al server del sito che si desidera ripristinare.
-
-### <a name="sql-server-change-tracking-retention-period"></a>Periodo di memorizzazione del rilevamento modifiche di SQL Server
-Il rilevamento delle modifiche è abilitato per il database del sito in SQL Server. Il rilevamento delle modifiche consente a Configuration Manager di eseguire query per informazioni sulle modifiche apportate alle tabelle di database in seguito a un momento precedente. Il periodo di memorizzazione specifica per quanto tempo verranno conservate le informazioni di rilevamento delle modifiche. Per impostazione predefinita, il database del sito è configurato per un periodo di memorizzazione di 5 giorni. Quando si ripristina un database del sito, il processo di ripristino viene eseguito in modo diverso a seconda che il backup rientri o meno nel periodo di memorizzazione. Se, ad esempio, nel server di database del sito si verifica un errore e l'ultimo backup risale a 7 giorni fa, il backup è esterno al periodo di memorizzazione.
-
-Per altre informazioni sui meccanismi interni di rilevamento delle modifiche di SQL Server, vedere i post di blog seguenti del team di SQL Server: [Change Tracking Cleanup - part 1](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-1/) (Pulizia del rilevamento modifiche - parte 1) e [Change Tracking Cleanup - part 2](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-2) (Pulizia del rilevamento modifiche - parte 2).
-
-### <a name="reinitialization-of-site-or-global-data"></a>Reinizializzazione dei dati globali o del sito
-Il processo per reinizializzare i dati globali o i dati del sito sostituisce i dati esistenti nel database del sito con i dati di un altro database del sito. Quando ad esempio il sito ABC reinizializza i dati dal sito XYZ, vengono eseguiti i seguenti passaggi:
--   I dati vengono copiati dal sito XYZ al sito ABC.
--   I dati esistenti per il sito XYZ vengono rimossi dal database del sito nel sito ABC.
--   I dati copiati dal sito XYZ vengono inseriti nel database del sito per il sito ABC.
-
-#### <a name="example-scenario-1"></a>Scenario di esempio 1
-**Il sito primario reinizializza i dati globali dal sito di amministrazione centrale**: il processo di ripristino rimuove i dati globali esistenti per il sito primario nel database del sito primario e li sostituisce con i dati globali copiati dal sito di amministrazione centrale.
-
-#### <a name="example-scenario-2"></a>Scenario di esempio 2
-**Il sito di amministrazione centrale reinizializza i dati del sito da un sito primario**: il processo di ripristino rimuove i dati del sito esistenti per il sito primario nel database del sito di amministrazione centrale e li sostituisce con i dati del sito copiati dal sito primario. I dati del sito per altri siti primari non sono interessati.
-
-### <a name="site-database-recovery-scenarios"></a>Scenari di ripristino del database del sito
-Dopo il ripristino di un database del sito da un backup, Configuration Manager tenta di ripristinare le modifiche apportate nei dati globali e nei dati del sito dopo l'ultimo backup del database. Di seguito vengono descritte le azioni avviate da Configuration Manager in seguito al ripristino del database del sito dal backup.
-
-**Il sito ripristinato è un sito di amministrazione centrale:**
--   **Backup del database all'interno del periodo di memorizzazione del rilevamento delle modifiche**
-    -   **Dati globali:** le modifiche presenti nei dati globali dopo il backup vengono replicate da tutti i siti primari.
-    -   **Dati del sito:** le modifiche presenti nei dati del sito dopo il backup vengono replicate da tutti i siti primari.
+    -   階層構造がある場合は、サイト データベースの最後のバックアップ以後に加えられた変更が、中央管理サイト (プライマリ サイトを回復するとき)、または基準プライマリ サイト (中央管理サイトを回復するとき) から取得されます。 スタンドアロンのプライマリ サイトのサイト データベースを回復する場合は、最後のバックアップ以後にサイトに加えられた変更を回復することはできません。     
 
 
--   **Backup del database antecedente al periodo di memorizzazione del rilevamento delle modifiche**
-    -   **Dati globali:** il sito di amministrazione centrale reinizializza i dati globali dal sito primario di riferimento, se specificato. Tutti gli altri siti primari reinizializzano quindi i dati globali dal sito di amministrazione centrale. Se non viene specificato alcun sito di riferimento, tutti i siti primari reinizializzano i dati globali dal sito di amministrazione centrale (i dati ripristinati dal backup).
-    -   **Dati del sito:** il sito di amministrazione centrale reinizializza i dati del sito da ogni sito primario.
+-   **データベースの回復をスキップする**: Configuration Manager サイト データベース サーバーのデータが失われていない場合に、このオプションを使用します。 このオプションは、回復しようとしているサイト サーバーとは別のコンピューターにサイト データベースがある場合だけ選択できます。
+
+### <a name="sql-server-change-tracking-retention-period"></a>SQL Server の変更の追跡の保有期間
+SQL Server のサイト データベースでは、変更の追跡機能が有効になっています。 そのため、過去のある時点以後にデータベース テーブルに加えられた変更に関する情報を、Configuration Manager が照会することができます。 保有期間とは、この変更の追跡データを残しておく期間のことです。 既定では、サイト データベースの追跡データの保有期間は 5 日に構成されています。 サイト データベースを回復するときは、バックアップがこの保有期間内に作成されたかどうかによって、回復プロセスが異なります。 たとえば、サイト データベースで障害が発生した時点で、最も新しいバックアップが作成後 7 日経過している場合は、保有期間外に作成されていることになります。
+
+SQL Server の変更追跡の内部構造については、SQL Server チームのブログ「[Change Tracking Cleanup - part 1](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-1/)」(変更追跡のクリーンアップ - パート 1) と「[Change Tracking Cleanup - part 2](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-2)」(変更追跡のクリーンアップ - パート 2) を参照してください。
+
+### <a name="reinitialization-of-site-or-global-data"></a>サイト データまたはグローバル データの再初期化
+サイトのデータまたはグローバル データの再初期化とは、サイト データベースにある既存のデータを別のサイト データベースに置き換えるプロセスのことです。 たとえば、"ABC" というサイトのデータを "XYZ" というサイトのデータで再初期化するときは、次の処理が行われます。
+-   サイト "XYZ" からサイト "ABC" にデータがコピーされます。
+-   サイト "ABC" のサイト データベースから、サイト "XYZ" の既存のデータが削除されます。
+-   サイト "XYZ" からコピーされたデータが、サイト "ABC" のサイト データベースに挿入されます。
+
+#### <a name="example-scenario-1"></a>例 1
+**プライマリ サイトで、中央管理サイトからグローバル データを再初期化する**: 回復プロセスで、プライマリ サイト データベースにあるプライマリ サイト用の既存のグローバル データが削除され、中央管理サイトからコピーされたグローバル データに置き換えられます。
+
+#### <a name="example-scenario-2"></a>例 2
+**中央管理サイトで、プライマリ サイトからサイト データを再初期化する**: 回復プロセスで、中央管理サイト データベースにある、該当するプライマリ サイト用の既存のサイト データが削除され、そのプライマリ サイトからコピーされたサイト データに置き換えられます。 他のサイト用のサイト データは影響を受けません。
+
+### <a name="site-database-recovery-scenarios"></a>サイト データベースの回復方法
+サイト データベースがバックアップから復元されると、Configuration Manager は前回のデータベースのバックアップ以後にサイト データとグローバル データに加えられた変更の回復を試みます。 以下に、サイト データベースがバックアップから復元された後に Configuration Manager で開始される処理について説明します。
+
+**回復したサイトが中央管理サイトの場合:**
+-   **データベースが、変更の追跡の保有期間以内にバックアップされている場合**
+    -   **グローバル データ:** バックアップ後のグローバル データの変更は、すべてのプライマリ サイトからレプリケートされます。
+    -   **サイト データ:** バックアップ後のサイト データの変更は、すべてのプライマリ サイトからレプリケートされます。
 
 
-**Il sito ripristinato è un sito primario:**
--   **Backup del database all'interno del periodo di memorizzazione del rilevamento delle modifiche**
-    -   **Dati globali:** le modifiche presenti nei dati globali dopo il backup vengono replicate dal sito di amministrazione centrale.
-    -   **Dati del sito:** il sito di amministrazione centrale reinizializza i dati del sito dal sito primario. Le modifiche apportate dopo il backup vanno perse, ma la maggior parte dei dati viene rigenerata dai client che inviano le informazioni al sito primario.
+-   **データベースが、変更の追跡の保有期間より前にバックアップされている場合**
+    -   **グローバル データ:** 基準プライマリ サイトを指定すると、中央管理サイトは基準プライマリ サイトからのグローバル データを再初期化します。 他のすべてのプライマリ サイトを、中央管理サイトのグローバル データで再初期化します。 基準サイトを指定していない場合は、すべてのプライマリ サイトを、中央管理サイトのグローバル データ (バックアップから復元されたデータ) で再初期化します。
+    -   **サイト データ:** 中央管理サイトは各プライマリ サイトからのサイト データを再初期化します。
 
 
--   **Backup del database antecedente al periodo di memorizzazione del rilevamento delle modifiche**
-    -   **Dati globali:** il sito primario reinizializza i dati globali dal sito di amministrazione centrale.
-    -   **Dati del sito:** il sito di amministrazione centrale reinizializza i dati del sito dal sito primario. Le modifiche apportate dopo il backup vanno perse, ma la maggior parte dei dati viene rigenerata dai client che inviano le informazioni al sito primario.
+**回復したサイトがプライマリ サイトの場合:**
+-   **データベースが、変更の追跡の保有期間以内にバックアップされている場合**
+    -   **グローバル データ:** バックアップ後のグローバル データの変更は、中央管理サイトからレプリケートされます。
+    -   **サイト データ:** 中央管理サイトはプライマリ サイトからのサイト データを再初期化します。 バックアップ以降に加えられた変更は失われますが、データの大部分は、プライマリ サイトに情報を送信するクライアントによって、再び生成されます。
 
-## <a name="site-recovery-procedures"></a>Procedure di ripristino del sito
-Usare una delle seguenti procedure per ripristinare il server del sito e il database del sito.
 
-### <a name="to-start-a-site-recovery-in-the-setup-wizard"></a>Per avviare un ripristino del sito nell'Installazione guidata
-1.  Copiare la cartella [CD.Latest](/sccm/core/servers/manage/the-cd.latest-folde) in un percorso esterno alla cartella di installazione di Configuration Manager.
-Dalla copia della cartella CD.Latest eseguire l'Installazione guidata di Configuration Manager.
+-   **データベースが、変更の追跡の保有期間より前にバックアップされている場合**
+    -   **グローバル データ:** プライマリ サイトは中央管理サイトからのグローバル データを再初期化します。
+    -   **サイト データ:** 中央管理サイトはプライマリ サイトからのサイト データを再初期化します。 バックアップ以降に加えられた変更は失われますが、データの大部分は、プライマリ サイトに情報を送信するクライアントによって、再び生成されます。
 
-2.  Nella pagina **Riquadro attività iniziale** selezionare **Ripristina un sito**, quindi fare clic su **Avanti**.
+## <a name="site-recovery-procedures"></a>サイトの回復手順
+次のいずれかの手順に従って、サイト サーバーとサイト データベースを回復します。
 
-3.  Completare la procedura guidata usando le opzioni appropriate per il ripristino del sito.
+### <a name="to-start-a-site-recovery-in-the-setup-wizard"></a>セットアップ ウィザードを使ってサイトの回復を開始するには
+1.  Configuration Manager インストール フォルダー外の場所に [CD.Latest フォルダー](/sccm/core/servers/manage/the-cd.latest-folde)をコピーします。
+CD.Latest フォルダーのコピーから、Configuration Manager セットアップ ウィザードを実行します。
 
-  -   Durante il ripristino, il programma di installazione identifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. Se questa impostazione porta viene modificata durante il ripristino, la replica dei dati non verrà eseguita correttamente al termine del ripristino.
+2.  [ **はじめに** ] ページで、[ **サイトを回復する**] を選択してから、[ **次へ**] をクリックします。
 
-  -   È possibile specificare il percorso originale o uno nuovo da usare per l'installazione di Configuration Manager nell'Installazione guidata.
+3.  表示される指示に従って、順次適切なオプションを選択し、ウィザードを完了します。
 
-### <a name="to-start-an-unattended-site-recovery"></a>Per avviare un ripristino del sito automatico
-  1.    Preparare lo script di installazione automatica per le opzioni richieste per il ripristino del sito.  Vedere [Chiavi del file di script di ripristino del sito automatico](/sccm/protect/understand/unattended-site-recovery-script-file-keys).
+  -   サイトの回復中に、セットアップ プログラムによって、SQL Server で使用している SQL Server Service Broker (SSB) のポートが検出されます。 サイトの回復中に、このポートの設定を変更しないでください。変更すると、回復が完了した後で、データが正しくレプリケートされません。
 
-  2.    Eseguire il programma di installazione di Configuration Manager con l'opzione di comando **/script**. Se, ad esempio, il file di inizializzazione dell'installazione è stato denominato ConfigMgrUnattend.ini e salvato nella directory C:\Temp del computer in cui viene eseguito il programma di installazione, il comando sarà: **Setup /script C:\temp\ConfigMgrUnattend.ini**.
+  -   セットアップ ウィザードで Configuration Manager のインストールに使用する元のパスまたは新しいパスを指定できます。
+
+### <a name="to-start-an-unattended-site-recovery"></a>サイトの無人回復を開始するには
+  1.    サイトを回復するのに必要な無人インストール スクリプトを準備します。  「[サイトの無人回復スクリプト ファイルのキー](/sccm/protect/understand/unattended-site-recovery-script-file-keys)」を参照してください。
+
+  2.    コマンド **/script** オプションを使用して、Configuration Manager セットアップを実行します。 たとえば、セットアップの初期化ファイルに ConfigMgrUnattend.ini という名前を付けて、Setup コマンドを実行するコンピューターの C:\Temp ディレクトリに保存した場合、コマンドは次のようになります: **Setup /script C:\temp\ConfigMgrUnattend.ini**
 
   > [!NOTE]   
-  >  Dopo aver ripristinato un sito di amministrazione centrale, potrebbe non essere possibile stabilire la replica di alcuni dati del sito da siti figlio. Sono inclusi, tra gli altri, l'inventario hardware, l'inventario software e i messaggi di stato.
+  >  中央管理サイトを回復した後、子サイトからの一部のサイト データのレプリケーションの確立が失敗する場合があります。 これには、ハードウェア インベントリ、ソフトウェア インベントリおよびステータス メッセージが含まれることがあります。
   >
-  >  In tal caso è necessario reinizializzare **ConfigMgrDRSSiteQueue** per la replica di database.  A tale scopo, usare **SQL Server Manager** per eseguire la query riportata di seguito nel database del sito di Configuration Manager nel sito di amministrazione centrale:
+  >  このことが発生した場合は、データベース レプリケーションの **ConfigMgrDRSSiteQueue** を再初期化する必要があります。  このためには、**SQL Server Manager** を使用して、中央管理サイトの Configuration Manager サイト データベースで次のクエリを実行します。
   >
   >  **IF EXISTS (SELECT \* FROM sys.service_queues WHERE name = 'ConfigMgrDRSSiteQueue' AND is_receive_enabled = 0)**
   >
   >  **ALTER QUEUE [dbo].[ConfigMgrDRSSiteQueue] WITH STATUS = ON**
 
 
-## <a name="post-recovery-tasks"></a>Attività post-ripristino
-Dopo aver eseguito il ripristino del sito, è necessario considerare diverse attività post-ripristino prima di completare il ripristino del sito. Usare le seguenti sezioni per completare il processo di ripristino del sito.
+## <a name="post-recovery-tasks"></a>回復後の作業
+サイトを回復した後で行わなければならない作業がいくつかあります。 次のセクションの情報を、サイトの回復プロセスを完了させるときの参考にしてください。
 
-### <a name="re-enter-user-account-passwords"></a>Immettere di nuovo le password account utente
-Dopo il ripristino di un server del sito, è necessario immettere nuovamente le password per gli account utente specificati per il sito perché vengono reimpostate durante il ripristino. Gli account vengono elencati nella pagina **Operazione completata** dell'Installazione guidata dopo aver completato il ripristino del sito e vengono salvati in C:\ConfigMgrPostRecoveryActions.html nel server del sito ripristinato.
+### <a name="re-enter-user-account-passwords"></a>ユーザー アカウントのパスワードを再入力する
+サイト サーバーの回復が終わったら、そのサイトに指定していたユーザー アカウントのパスワードを再入力する必要があります。これは、サイトの回復中にパスワードがリセットされるためです。 これらのアカウントは、サイトの回復が終わったときに、セットアップ ウィザードの **[完了]** ページに一覧され、回復したサイト サーバーの C:\ConfigMgrPostRecoveryActions.html に保存されます。
 
-#### <a name="to-re-enter-user-account-passwords-after-site-recovery"></a>Per immettere nuovamente le password account utente dopo il ripristino del sito
+#### <a name="to-re-enter-user-account-passwords-after-site-recovery"></a>サイトの回復後にユーザー アカウントのパスワードを再入力するには
 
-1.  Aprire la console di Configuration Manager e connettersi al sito ripristinato.
+1.  Configuration Manager コンソールを開き、回復したサイトに接続します。
 
-2.  Nella console di Configuration Manager fare clic su **Amministrazione**.
+2.  Configuration Manager コンソールで、[ **管理**] をクリックします。
 
-3.  Nell'area di lavoro **Amministrazione** espandere **Sicurezza**e quindi fare clic su **Account**.
+3.  [ **管理** ] ワークスペースで、[ **セキュリティ**] を展開してから、[ **アカウント**] をクリックします。
 
-4.  Per ogni account in cui si immette nuovamente la password, eseguire le seguenti operazioni:
+4.  パスワードを再入力するアカウントごとに、次の操作を行います。
 
-    1.  Selezionare l'account dall'elenco degli account individuati dopo il ripristino del sito. È possibile trovare questo elenco di C:\ConfigMgrPostRecoveryActions.html nel server del sito ripristinato.
+    1.  サイトの回復が終わったときに保存されたアカウントの一覧で、アカウントを選択します。 この一覧は、回復したサイト サーバーの C:\ConfigMgrPostRecoveryActions.html にあります。
 
-    2.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà** per aprire le proprietà dell'account.
+    2.  [ **ホーム** ] タブの [ **プロパティ** ] グループで、[ **プロパティ** ] をクリックしてアカウントのプロパティを開きます。
 
-    3.  Nella scheda **Generale** fare clic su **Imposta**e quindi immettere nuovamente le password per l'account.
+    3.  [ **全般** ] タブで、[ **設定**] をクリックしてから、アカウントのパスワードを再入力します。
 
-    4.  Fare clic su **Verifica**, selezionare l'origine dati appropriata per l'account utente selezionato e quindi fare clic su **Verifica connessione** per verificare che l'account utente possa connettersi all'origine dati.
+    4.  [ **確認**] をクリックし、選択したユーザー アカウントの適切なデータ ソースを選択します。[ **接続のテスト** ] をクリックして、そのユーザー アカウントでデータ ソースに接続できるかどうかを確認します。
 
-    5.  Fare clic su **OK** per salvare le modifiche alle password e quindi fare clic su **OK**.
+    5.  [ **OK** ] をクリックしてパスワードの変更を保存してから、[ **OK**] をクリックします。
 
-### <a name="re-enter-sideloading-keys"></a>Immettere nuovamente le chiavi di trasferimento locale
-Dopo un ripristino del server di sito, è necessario immettere nuovamente le chiavi di trasferimento locale di Windows specificate per il sito perché queste vengono reimpostate durante il ripristino del sito. Dopo aver immesso nuovamente le chiavi di trasferimento locale, il conteggio nella colonna **Attivazioni usate** per le chiavi di trasferimento locale è reimpostato nella console di Configuration Manager. Supponiamo ad esempio che prima dell'errore del sito il conteggio **Attivazioni totali** sia impostato su **100** e **Attivazioni usate** su **90** per il numero di chiavi usate dai dispositivi. Dopo il ripristino del sito, la colonna **Attivazioni totali** visualizza ancora **100**, ma la colonna **Attivazioni usate** visualizza erroneamente **0**. Tuttavia successivamente all'uso da parte di 10 nuovi dispositivi di una chiave di trasferimento locale, non esisteranno chiavi di trasferimento locale residue e per il dispositivo successivo sarà impossibile applicare una chiave di trasferimento locale.
+### <a name="re-enter-sideloading-keys"></a>サイドローディング キーの再入力
+サイト サーバーの回復が終わったら、そのサイトに指定していた Windows サイドローディング キーを再入力する必要があります。これは、サイトの回復中にサイドローディング キーがリセットされるためです。 サイドローディング キーを再入力すると、Configuration Manager コンソールで Windows サイドローディング キーの **[使用済みライセンス認証数]** 列内のカウントがリセットされます。 たとえば、サイト エラーが発生する前に、**[合計ライセンス認証数]** カウントが **100** に設定され、**[使用済みライセンス認証数]** がデバイスで使用されていたキーの数に相当する **90** になっていたとします。 サイトの回復後、[ **合計ライセンス認証数** ] 列には **100**と表示されますが、[ **使用済みライセンス認証数** ] 列には誤って **0**と表示されます。 しかし、新しく 10 台のデバイスがサイドローディング キーを使用すると、ライセンスの残りがなくなってしまうので、11 台目以降、キーを取得できなくなります。
 
-### <a name="recreate-the-microsoft-intune-subscription"></a>Ricreare la sottoscrizione di Microsoft Intune
- Se si ripristina un server del sito di Configuration Manager dopo aver ricreato l'immagine del computer server del sito, la sottoscrizione di Microsoft Intune non viene ripristinata. Dopo aver ripristinato il sito, è necessario riconnettersi alla sottoscrizione.  Non creare una nuova richiesta di APN, ma caricare invece il file PEM valido corrente caricato in occasione dell'ultima configurazione o dell'ultimo rinnovo della gestione iOS. Per ulteriori informazioni, vedere [Configuring the Microsoft Intune subscription](/sccm/mdm/deploy-use/configure-intune-subscription).
+### <a name="recreate-the-microsoft-intune-subscription"></a>Microsoft Intune サブスクリプションの再作成
+ サイト サーバー コンピューターが再イメージ化された後に Configuration Manager サイト サーバーを回復する場合、Microsoft Intune のサブスクリプションは復元されません。 サイトを回復した後、サブスクリプションを再接続する必要があります。  新しい APN 要求は作成しないでください。代わりに、最後に iOS 管理を構成または更新した現在の有効な .pem-file をアップロードしてください。 詳細については、「 [Configuring the Microsoft Intune subscription](/sccm/mdm/deploy-use/configure-intune-subscription)」をご覧ください。
 
-### <a name="configure-ssl-for-site-system-roles-that-use-iis"></a>Configurare SSL per i ruoli del sistema del sito che usano IIS
-Quando si ripristinano sistemi del sito che eseguono IIS e che erano configurati per HTTPS prima dell'errore, è necessario riconfigurare IIS per usare il certificato server Web.
+### <a name="configure-ssl-for-site-system-roles-that-use-iis"></a>IIS を使用するサイト システムの役割の SSL を構成する
+IIS を実行するサイト システムを回復し、障害が発生する前に、そのシステムが HTTPS 接続用に構成されていた場合は、IIS で Web サーバー証明書を使用するように再構成する必要があります。
 
-### <a name="reinstall-hotfixes-in-the-recovered-site-server"></a>Reinstallare gli aggiornamenti rapidi nel server del sito ripristinato
-Dopo il ripristino di un sito, è necessario reinstallare gli aggiornamenti rapidi applicati al server del sito. Visualizzare l'elenco degli aggiornamenti rapidi installati in precedenza nella pagina **Completato** dell'installazione guidata dopo il ripristino del sito. Questo elenco viene salvato anche in **C:\ConfigMgrPostRecoveryActions.html** nel server del sito ripristinato.
+### <a name="reinstall-hotfixes-in-the-recovered-site-server"></a>回復したサイト サーバーに修正プログラムを再インストールする
+サイトの回復が終わったら、障害が発生する前にサイト サーバーに適用されていた修正プログラムを再インストールする必要があります。 サイトの回復後にセットアップ ウィザードの **[完了]** ページで、以前にインストールした修正プログラムのリストを表示します。 このリストは、回復したサイト サーバーの **C:\ConfigMgrPostRecoveryActions.html** にも保存されます。
 
-### <a name="recover-custom-reports-on-the-computer-running-reporting-services"></a>Ripristinare i report personalizzati nel computer che esegue Reporting Services
-Quando si creano dei report personalizzati di Reporting Services e si verifica un errore di Reporting Services, è possibile ripristinare i report quando si esegue il backup del server di report. Per altre informazioni sul ripristino dei report personalizzati in Reporting Services, vedere [Operazioni di backup e ripristino per un'installazione di Reporting Services](http://go.microsoft.com/fwlink/p/?LinkId=228724) nella documentazione online di SQL Server 2008.
+### <a name="recover-custom-reports-on-the-computer-running-reporting-services"></a>Reporting Services を実行しているコンピューターで使用していたカスタム レポートを復元する
+Reporting Services で障害が発生する前に、Reporting Services のカスタム レポートを作成していた場合は、レポート サーバーのバックアップ (存在する場合) から、カスタム レポートを復元することができます。 Reporting Services のカスタム レポートの復元の詳細については、SQL Server 2008 Books Online の「 [Reporting Services インストールのバックアップおよび復元操作](http://go.microsoft.com/fwlink/p/?LinkId=228724) 」を参照してください。
 
-### <a name="recover-content-files"></a>Ripristinare i file di contenuto
- Il database del sito contiene informazioni sul percorso di archiviazione dei file di contenuto nel server del sito, ma non viene eseguito il backup né il ripristino di tali file di contenuto come parte del processo di backup e ripristino. Per eseguire il ripristino completo dei file di contenuto, è necessario ripristinare i file di origine del pacchetto e la raccolta contenuto nel percorso originale. Sono disponibili diversi metodi per il ripristino dei file di contenuto, ma il metodo più semplice è ripristinare i file da un backup del file system del server del sito.
+### <a name="recover-content-files"></a>コンテンツ ファイルを回復する
+ サイト データベースには、サイト サーバーでのコンテンツ ファイルの保存場所に関する情報が含まれていますが、コンテンツ ファイル自体は、バックアップと復元プロセスで、バックアップも復元もされません。 コンテンツ ファイルを完全に回復するには、コンテンツ ライブラリのファイルとパッケージ ソース ファイルを元の場所に復元する必要があります。 コンテンツ ファイルを回復する方法はいくつかありますが、一番簡単なのは、サイト サーバーのファイル システムのバックアップからファイルを復元する方法です。
 
- Se non si dispone di un backup del file system per i file di origine del pacchetto, è necessario copiare o scaricare manualmente tali file come per il primo pacchetto creato in origine. È possibile eseguire la seguente query in SQL Server per trovare il percorso di origine del pacchetto per tutti i pacchetti e le applicazioni: `SELECT * FROM v_Package`. È possibile identificare il sito di origine del pacchetto esaminando i primi tre caratteri dell'ID di pacchetto. Ad esempio, se l'ID del pacchetto è CEN00001, il codice del sito per il sito di origine è CEN. I file di origine del pacchetto devono essere ripristinati nella stessa posizione in cui si trovavano prima dell'errore.
+ パッケージ ソース ファイル用のファイル システムのバックアップがない場合は、最初にパッケージを作成したときと同じようにして、ファイルを手動でコピーまたはダウンロードする必要があります。 すべてのパッケージとアプリケーションのパッケージ ソースの場所を見つけるには、SQL Server で `SELECT * FROM v_Package`というクエリを実行します。 パッケージ ID の先頭の 3 文字を見ると、パッケージ ソースのサイトがわかります。 たとえば、CEN00001 というパッケージ ID では、CEN がソース サイトのサイト コードです。 パッケージのソース ファイルを復元するときは、障害発生前と同じ場所に復元する必要があります。
 
- Se non si dispone di un backup del file system che contenga la raccolta contenuto, eseguire una delle seguenti opzioni di ripristino:
+ コンテンツ ライブラリが含まれているファイル システムのバックアップがない場合は、次の方法でコンテンツ ファイルを復元できます。
 
--   **Importare un file di contenuti in versione di preproduzione**: quando è disponibile una gerarchia di Configuration Manager, è possibile creare un file di contenuti in versione di preproduzione con tutti i pacchetti e le applicazioni da un altro percorso e quindi importare questo file per ripristinare la raccolta contenuto nel server del sito.
+-   **事前設定済みのコンテンツ ファイルをインポートする**: Configuration Manager 階層がある場合は、別の場所にあるすべてのパッケージとアプリケーションの事前設定済みコンテンツ ファイルを作成し、そのファイルをインポートして、サイト サーバーのコンテンツ ライブラリを回復できます。
 
--   **Aggiornare il contenuto**: quando si avvia l'azione di aggiornamento del contenuto per un tipo di distribuzione dell'applicazione o del pacchetto, il contenuto viene copiato dall'origine del pacchetto alla raccolta contenuto. Per completare correttamente questa azione, è necessario che i file di origine del pacchetto siano disponibili nel percorso originale. È necessario eseguire questa azione in ogni pacchetto e applicazione.
+-   **コンテンツを更新する**: パッケージまたはアプリケーションの展開の種類のコンテンツの更新操作を開始すると、コンテンツがパッケージ ソースからコンテンツ ライブラリにコピーされます。 この処理が正常に完了するには、パッケージ ソース ファイルが元の場所になければなりません。 回復したいパッケージとアプリケーションごとに、コンテンツの更新操作を行う必要があります。
 
-### <a name="recover-custom-software-updates-on-the-computer-running-updates-publisher"></a>Recuperare gli aggiornamenti software personalizzati nel computer che esegue Updates Publisher
-Quando sono stati inclusi i file di database di Updates Publisher nel piano di backup, è possibile ripristinare i database in caso di errore nel computer in cui viene eseguito Updates Publisher. Per altre informazioni su Updates Publisher, vedere [System Center Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=228726) nella Libreria TechCenter di System Center.
+### <a name="recover-custom-software-updates-on-the-computer-running-updates-publisher"></a>Updates Publisher を実行していたコンピューターのカスタム ソフトウェア更新プログラムを回復する
+Updates Publisher データベース ファイルをバックアップ計画に含めていた場合は、Updates Publisher を実行していたコンピューターで障害が発生したときに、そのデータベースを回復できます。 Updates Publisher の詳細については、System Center TechCenter ライブラリの「 [System Center Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=228726) 」を参照してください。
 
-Usare la procedura seguente per ripristinare il backup del database Updates Publisher.
+次の手順に従って、Updates Publisher データベースを復元します。
 
-#### <a name="to-restore-the-updates-publisher-2011-database"></a>Per ripristinare il database Updates Publisher 2011
-1.  Reinstallare Updates Publisher nel computer ripristinato.
+#### <a name="to-restore-the-updates-publisher-2011-database"></a>Updates Publisher 2011 データベースを復元するには
+1.  回復したコンピューターに Updates Publisher を再インストールします。
 
-2.  Copiare il file di database (Scupdb.sdf) dalla destinazione di backup in %*PROFILOUTENTE*%\AppData\Local\Microsoft\System Center Updates Publisher 2011\5.00.1727.0000\ nel computer che esegue Updates Publisher.
+2.  バックアップしていたデータベース ファイル (Scupdb.sdf) を、Updates Publisher を実行するコンピューターの %*USERPROFILE*%\AppData\Local\Microsoft\System Center Updates Publisher 2011\5.00.1727.0000\ にコピーします。
 
-3.  Quando più utenti eseguono Updates Publisher nel computer, è necessario copiare ogni file di database nel percorso del profilo utente appropriato.
+3.  コンピューターで複数のユーザーが Updates Publisher を実行する場合は、それぞれのユーザー プロファイルの適切な場所に、データベース ファイルをコピーする必要があります。
 
-### <a name="user-state-migration-data"></a>Dati di migrazione sullo stato utente
-Come parte delle proprietà del sistema del sito del punto di migrazione, è possibile specificare le cartelle in cui vengono archiviati i dati di migrazione stato utente. Dopo aver ripristinato un server con una cartella che archivia dati di migrazione stato utente, è necessario ripristinare manualmente i dati di migrazione stato utente nel server nelle stesse cartelle in cui sono stati archiviati i dati prima dell'errore.
+### <a name="user-state-migration-data"></a>ユーザー状態の移行データ
+状態移行ポイントのサイト システムのプロパティを設定するときに、ユーザー状態の移行データを保存するフォルダーを指定しています。 ユーザー状態の移行データを保存するフォルダーのあるサーバーを回復したら、障害発生前にデータを保存していたフォルダーと同じフォルダーに、ユーザー状態の移行データを手動で復元する必要があります。
 
-### <a name="regenerate-the-certificates-for-distribution-points"></a>Rigenerare i certificati per i punti di distribuzione
-Dopo aver ripristinato un sito, il file distmgr.log potrebbe contenere una voce per uno o più punti di distribuzione, che indica che non è stato possibile decrittografare i dati PFX ****del certificato. Questa voce indica che i dati del certificato del punto di distribuzione non possono essere decrittografati dal sito. Per risolvere questo problema, è necessario rigenerare o reimportare il certificato per i punti di distribuzione interessati. A questo scopo, è possibile usare il cmdlet[Set-CMDistributionPoint](https://technet.microsoft.com/library/jj821872\(v=sc.20\).aspx) di PowerShell.
+### <a name="regenerate-the-certificates-for-distribution-points"></a>配布ポイント用の証明書の再生成
+サイトの復元後には、1 つまたは複数の配布ポイントに対する **cert PFX データを解読できませんでした**というエントリが distmgr.log に含まれていることがあります。 このエントリは、配布ポイントの証明書データをサイトで解読できないことを示します。 この問題を解決するには、影響を受ける配布ポイントの証明書を再生成または再インポートする必要があります。 それには [Set-CMDistributionPoint](https://technet.microsoft.com/library/jj821872\(v=sc.20\).aspx) PowerShell コマンドレットを使用します。
 
-### <a name="update-certificates-used-for-cloud-based-distribution-points"></a>Aggiornare i certificati usati per i punti di distribuzione basati su cloud
- Configuration Manager richiede un certificato di gestione che utilizza per la comunicazione dal server del sito al punto di distribuzione basato su cloud. Dopo un ripristino del sito è necessario aggiornare i certificati per i punti di distribuzione basati su cloud.
+### <a name="update-certificates-used-for-cloud-based-distribution-points"></a>クラウドベースの配布ポイントに使用する証明書の更新
+ Configuration Manager では、サイト サーバーからクラウドベースの配布ポイントへの通信に使用する管理証明書が必要です。 サイトの回復後に、クラウドベースの配布ポイントの証明書を更新する必要があります。
 
-## <a name="recover-a-secondary-site"></a>Ripristinare un sito secondario
- Configuration Manager non supporta il backup del database in un sito secondario, ma supporta il ripristino mediante reinstallazione del sito secondario. Il ripristino del sito secondario è necessario quando si verifica un errore del sito secondario di Configuration Manager.
+## <a name="recover-a-secondary-site"></a>セカンダリ サイトの回復
+ Configuration Manager はセカンダリ サイトのデータベースのバックアップをサポートしていませんが、セカンダリ サイトの再インストールによる回復はサポートしています。 セカンダリ サイトの回復は、Configuration Manager セカンダリ サイトで障害が発生した場合に必要になります。
 
-### <a name="requirements-for-reinstalling-a-secondary-site"></a>Requisiti per la reinstallazione di un sito secondario
--   Il computer deve soddisfare tutti i prerequisiti del sito secondario e deve disporre dei privilegi di protezione appropriati configurati.
--   Usare lo stesso percorso di installazione usato per il sito per cui si è verificato un errore.
--   È necessario usare un computer con la stessa configurazione del computer in cui si è verificato l'errore, ad esempio con il FQDN, per ripristinare correttamente il sito secondario.
--   Il computer deve avere la stessa configurazione di SQL Server del sito in cui si è verificato l'errore.
-  -   Durante il ripristino di un sito secondario Configuration Manager non installa SQL Server Express, se questo non è già installato nel computer.
-  -   È necessario usare la stessa versione di SQL Server e la stessa istanza di SQL Server usate per il database del sito secondario prima dell'errore.
+### <a name="requirements-for-reinstalling-a-secondary-site"></a>セカンダリ サイトを再インストールする場合の要件
+-   コンピューターがセカンダリ サイトのすべての前提条件を満たしており、適切なセキュリティ権限が構成されている必要があります。
+-   障害が発生したサイトに使用したのと同じインストール パスを使用する必要があります。
+-   セカンダリ サイトを適切に回復するには、障害が発生したコンピューターと同じ構成 (FQDN など) のコンピューターを使用する必要があります。
+-   コンピューターには、障害が発生したサイトと同じ SQL Server の構成が必要です。
+  -   コンピューターに SQL Server Express がまだインストールされていない場合、セカンダリ サイトの回復中に Configuration Manager によってインストールされません。
+  -   障害が発生する前にセカンダリ サイト データベースで使用していたのと同じバージョンの SQL Server および同じ SQL Server インスタンスを使用する必要があります。
 
-### <a name="to-recover-a-secondary-site"></a>Per ripristinare un sito secondario:
-Per ripristinare un sito secondario, usare l'azione **Ripristina sito secondario** dal nodo **Siti** nella console di Configuration Manager. Diversamente dal ripristino di un sito di amministrazione centrale o un sito primario, il ripristino di un sito secondario non usa un file di backup, ma reinstalla i file del sito secondario in cui si è verificato l'errore. Dopo la reinstallazione del sito, i dati del sito secondario vengono quindi reinizializzati con i dati del sito primario padre.
+### <a name="to-recover-a-secondary-site"></a>セカンダリ サイトを回復するには、次のようにします。
+セカンダリ サイトを回復するには、Configuration Manager コンソールの **[サイト]** ノードから、**[セカンダリ サイトの回復]** アクションを使用します。 中央管理サイトまたはプライマリ サイトの回復とは異なり、セカンダリ サイトの回復ではバックアップ ファイルを使用せず、代わりに障害が発生したセカンダリ サイトのコンピューターにセカンダリ サイトのファイルを再インストールします。 サイトの再インストール後に、セカンダリ サイトのデータが親プライマリ サイトからのデータで再初期化されます。
 
-Durante il processo di ripristino Configuration Manager verifica se la raccolta contenuto esiste nel computer del sito secondario e che il contenuto appropriato sia disponibile. Il sito secondario userà la raccolta contenuto esistente, se questa include il contenuto appropriato. In caso contrario, per ripristinare la raccolta contenuto di un sito secondario ripristinato, è necessario ridistribuire o pre-installare il contenuto in tale sito ripristinato.
+回復プロセスで、Configuration Manager は、セカンダリ サイトのコンピューターにコンテンツ ライブラリが存在することと、適切なコンテンツが使用できることを確認します。 適切なコンテンツが含まれている場合、セカンダリ サイトでは、既存のコンテンツ ライブラリが使用されます。 それ以外の場合、回復したセカンダリ サイトのコンテンツ ライブラリを回復するには、回復したサイトにコンテンツを再配布するかまたは事前設定する必要があります。
 
-Quando si dispone di un punto di distribuzione che non si trova nel sito secondario, non è necessario reinstallare il punto di distribuzione durante un ripristino del sito secondario. Dopo il ripristino del sito secondario il sito si sincronizza automaticamente con il punto di distribuzione.
+使用する配布ポイントがセカンダリ サイトに存在するのではない場合は、セカンダリ サイトの回復中に配布ポイントを再インストールする必要はありません。 セカンダリ サイトの回復後に、サイトが配布ポイントと自動的に同期されます。
 
-È possibile verificare lo stato del sito secondario mediante l'azione **Mostra stato installazione** dal nodo **Siti** nella console di Configuration Manager.
-
+Configuration Manager コンソールの **[サイト]** ノードから **[インストール ステータスの表示]** アクションを使用して、セカンダリ サイトの回復のステータスを確認することができます。

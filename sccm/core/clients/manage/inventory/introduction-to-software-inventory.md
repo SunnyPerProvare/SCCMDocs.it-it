@@ -1,50 +1,46 @@
 ---
-title: Inventario software | Microsoft Docs
-description: Introduzione all&quot;inventario software in System Center Configuration Manager.
+title: "ソフトウェア インベントリ | Microsoft Docs"
+description: "System Center Configuration Manager のソフトウェア インベントリの概要について説明します。"
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 79eb49da-cd2b-4ffc-b355-b595aeba3aea
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f9097014c7e988ec8e139e518355c4efb19172b3
 ms.openlocfilehash: 969f2d28649853ddc95860fe72597d6d2c9a94e9
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-software-inventory-in-system-center-configuration-manager"></a>Introduzione all'inventario software in System Center Configuration Manager
+# <a name="introduction-to-software-inventory-in-system-center-configuration-manager"></a>System Center Configuration Manager のソフトウェア インベントリの概要
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Usare l'inventario software per raccogliere informazioni sui file nei dispositivi client. L'inventario software consente anche di raccogliere i file dai dispositivi client e archiviarli nel server del sito. La raccolta dell'inventario software viene eseguita quando si sceglie l'impostazione **Abilitare inventario software nei client** nelle impostazioni client, dove è anche possibile pianificare l'operazione.  
+ソフトウェア インベントリを利用し、クライアント デバイスでファイルに関する情報を収集します。 また、ソフトウェア インベントリはクライアント デバイスからファイルを収集し、サイト サーバーに格納することができます。 ソフトウェア インベントリは、クライアント設定で **[クライアントのソフトウェア インベントリを有効にする]** 設定を選択すると収集されます。この設定では、操作をスケジュールすることもできます。  
 
-Dopo aver abilitato l'inventario software e completato l'esecuzione di un ciclo di inventario software, il client invia le informazioni a un punto di gestione nel sito del client. Il punto di gestione inoltra quindi le informazioni di inventario al server del sito di Configuration Manager, che archivia tali informazioni nel database del sito.   
+ソフトウェア インベントリが有効化され、クライアントがソフトウェア インベントリを実行した後で、クライアントは情報をクライアント サイトの管理ポイントに送信します。 インベントリ情報は、さらに管理ポイントによって Configuration Manager サイト サーバーに転送され、そこでサイト データベースに保存されます。   
 
- Questi sono i modi disponibili per visualizzare i dati dell'inventario software:  
+ ソフトウェア インベントリ データの表示方法:  
 
--   [Creare query](../../../../core/servers/manage/queries-technical-reference.md) che restituiscono i dispositivi con i file specificati.   
+-   指定のファイルとデバイスを返す[クエリを作成](../../../../core/servers/manage/queries-technical-reference.md)する。   
 
--   Creare [raccolte basate su query](../../../../core/clients/manage/collections/introduction-to-collections.md) che includono dispositivi con i file specificati.   
+-   指定のファイルとデバイスを含む[クエリベース コレクション](../../../../core/clients/manage/collections/introduction-to-collections.md)を作成する。   
 
--   [Eseguire report](../../../../core/servers/manage/reporting.md) che forniscono dettagli sui file nei dispositivi.
+-   デバイスでファイルに関する詳細を提供する[レポートを実行](../../../../core/servers/manage/reporting.md)する。
 
--   Usare [Esplora inventario risorse](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md) per visualizzare informazioni dettagliate relative ai file di inventario raccolti dai dispositivi client.   
+-   [リソース エクスプローラー](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md)を使用して、クライアント デバイスから収集され、インベントリされたファイルに関する詳細情報を表示する。   
 
- Quando si esegue l'inventario software in un dispositivo client, il primo report è un inventario completo. I report successivi contengono solo informazioni di inventario differenziale. Il server del sito elabora le informazioni differenziali in ordine di ricezione. Se mancano le informazioni differenziali per un client, il server del sito rifiuta informazioni differenziali aggiuntive e indica al client di eseguire un ciclo di inventario completo.  
+ ソフトウェア インベントリをクライアント デバイス上で実行するとき、最初のレポートは完全なインベントリとなります。 その後のレポートは差分のデルタ インベントリ情報のみを含みます。 サイト サーバーは受け取った順番にデルタ情報を処理します。 クライアントに関するデルタ情報がない場合は、サイト サーバーはその後のデルタ情報を拒否し、クライアントに完全インベントリを実行するように指示します。  
 
- Configuration Manager può individuare i computer ad avvio doppio ma restituisce solo le informazioni di inventario relative al sistema operativo attivo nel momento in cui è stato eseguito l'inventario.  
+ Configuration Manager でデュアル ブート コンピューターを検出することはできますが、返す情報はインベントリ実行時にアクティブだったオペレーティング システムのインベントリ情報のみです。  
 
-**Dispositivi mobili:** per informazioni sulla raccolta delle informazioni di inventario per le app installate nei dispositivi mobili, vedere [Inventario software per dispositivi mobili registrati con Microsoft Intune](../../../../mdm/deploy-use/software-inventory-mobile-devices.md).
-
+**モバイル デバイス:** モバイル デバイスにインストールされているアプリのインベントリの収集に関しては、「[Software inventory for mobile devices enrolled with Microsoft Intune (Microsoft Intune に登録されているモバイル デバイスのソフトウェア インベントリ)](../../../../mdm/deploy-use/software-inventory-mobile-devices.md)」を参照してください。

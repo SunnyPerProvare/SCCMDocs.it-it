@@ -1,240 +1,233 @@
 ---
-title: "Creare una sequenza di attività per acquisire un sistema operativo | Microsoft Docs"
-description: "Una sequenza di attività di creazione e acquisizione crea un computer di riferimento che, insieme al sistema operativo, può includere driver specifici e aggiornamenti software."
+title: "オペレーティング システムをキャプチャするタスク シーケンスの作成 | Microsoft Docs"
+description: "構築およびキャプチャするタスク シーケンスは、オペレーティング システムとともに特定のドライバーとソフトウェアの更新プログラムを含めることができる参照コンピューターを構築します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 25e4ac68-0e78-4bbe-b8fc-3898b372c4e8
-caps.latest.revision: 19
-caps.handback.revision: 0
+caps.latest.revision: "19"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: e9320e40b8e5031ffa3da5e5149c7da718cc87d5
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-a-task-sequence-to-capture-an-operating-system-in-system-center-configuration-manager"></a>Creare una sequenza di attività per acquisire un sistema operativo in System Center Configuration Manager
+# <a name="create-a-task-sequence-to-capture-an-operating-system-in-system-center-configuration-manager"></a>System Center Configuration Manager でオペレーティング システムをキャプチャするタスク シーケンスを作成する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Quando si usa una sequenza di attività per distribuire un sistema operativo in un computer in System Center Configuration Manager, il computer installa l'immagine del sistema operativo specificata nella sequenza di attività. Per personalizzare l'immagine del sistema operativo in modo da includere driver, applicazioni, aggiornamenti software e altri elementi specifici, è possibile usare una sequenza di attività di creazione e acquisizione per creare un computer di riferimento e quindi acquisire l'immagine del sistema operativo dal computer di riferimento. Se un computer di riferimento è già disponibile per l'acquisizione, è possibile creare una sequenza di attività personalizzata per acquisire il sistema operativo. Usare le sezioni seguenti per acquisire un sistema operativo personalizzato.  
+System Center Configuration Manager でタスク シーケンスを使用してコンピューターにオペレーティング システムを展開する場合、コンピューターはタスク シーケンスで指定されたオペレーティング システム イメージをインストールします。 オペレーティング システム イメージをカスタマイズして、特定のドライバー、アプリケーション、ソフトウェア更新プログラムなどを含めるには、構築とキャプチャを実行するタスク シーケンスを使用して参照コンピューターを構築し、その参照コンピューターからオペレーティング システム イメージをキャプチャします。 既にキャプチャに使用可能な参照コンピューターがある場合は、カスタム タスク シーケンスを作成してオペレーティング システムをキャプチャできます。 次のセクションを使用して、カスタム オペレーティング システムをキャプチャします。  
 
-##  <a name="a-namebkmkbuildcapturetsa-use-a-task-sequence-to-build-and-capture-a-reference-computer"></a><a name="BKMK_BuildCaptureTS"></a> Usare una sequenza di attività per creare e acquisire un computer di riferimento  
- La sequenza di attività di creazione e acquisizione partiziona e formatta il computer di riferimento, installa il sistema operativo, oltre al client di Configuration Manager , le applicazioni e gli aggiornamenti software, quindi acquisisce il sistema operativo dal computer di riferimento. I pacchetti associati alla sequenza di attività, ad esempio le applicazioni, devono essere disponibili nei punti di distribuzione prima di creare la sequenza di attività di creazione e acquisizione.  
+##  <a name="BKMK_BuildCaptureTS"></a> タスク シーケンスを使用して、参照コンピューターを構築およびキャプチャする  
+ 構築およびキャプチャを実行するタスク シーケンスは、参照コンピューターのパーティション分割と書式設定を行い、オペレーティング システムと Configuration Manager クライアント、アプリケーション、ソフトウェア更新プログラムをインストールし、参照コンピューターからオペレーティング システムをキャプチャします。 アプリケーションなどのタスク シーケンスに関連付けられているパッケージは、構築およびキャプチャを実行するタスク シーケンスを作成する前に配布ポイントに用意しておく必要があります。  
 
-###  <a name="a-namebkmkcreatepackagesa-prepare-for-operating-system-deployments"></a><a name="BKMK_CreatePackages"></a> Preparativi per le distribuzioni del sistema operativo  
- Esistono molti scenari per la distribuzione di un sistema operativo nei computer dell'ambiente. Nella maggior parte dei casi, è necessario creare una sequenza di attività e selezionare **Installa un pacchetto immagine esistente** nella Creazione guidata della sequenza di attività per installare il sistema operativo, eseguire la migrazione delle impostazioni utente, applicare gli aggiornamenti software e installare le applicazioni. Prima di creare una sequenza di attività per installare un sistema operativo, devono essere disponibili gli elementi seguenti:  
+###  <a name="BKMK_CreatePackages"></a> オペレーティング システムの展開の準備  
+ 環境内のコンピューターにオペレーティング システムを展開するシナリオは多様です。 ほとんどの場合、タスク シーケンスを作成し、タスク シーケンスの作成ウィザードで **[既存のイメージ パッケージをインストールする]** を選択して、オペレーティング システムのインストール、ユーザー設定の移行、ソフトウェア更新プログラムの適用、およびアプリケーションのインストールを行います。 タスク シーケンスを作成してオペレーティング システムをインストールする前に、次を準備する必要があります。  
 
--   **Richiesto**  
+-   **必須**  
 
-    -   Nella console di Configuration Manager deve essere disponibile un'[immagine di avvio](../get-started/manage-boot-images.md).  
+    -   [ブート イメージ](../get-started/manage-boot-images.md)が Configuration Manager コンソールで使用可能である必要があります。  
 
-    -   Nella console di Configuration Manager deve essere disponibile un'[immagine del sistema operativo](../get-started/manage-operating-system-images.md).  
+    -   [オペレーティング システム イメージ](../get-started/manage-operating-system-images.md)が Configuration Manager コンソールで使用可能である必要があります。  
 
--   **Obbligatorio (se usato)**  
+-   **必須 (使用する場合)**  
 
-    -   Nella console di Configuration Manager devono essere disponibili i [pacchetti driver](../get-started/manage-drivers.md) che contengono i driver di Windows necessari per il supporto dell'hardware nel computer di riferimento. Per altre informazioni sui passaggi della sequenza di attività per gestire i driver, vedere [Usare le sequenze di attività per installare i driver di dispositivo](../get-started/manage-drivers.md#BKMK_TSDrivers).  
+    -   参照コンピューターのハードウェアをサポートするために必要な Windows ドライバーを含む[ドライバー パッケージ](../get-started/manage-drivers.md) が、Configuration Manager コンソールで使用可能である必要があります。 ドライバーを管理するためのタスク シーケンス ステップの詳細については、「[タスク シーケンスを使用したデバイス ドライバーのインストール](../get-started/manage-drivers.md#BKMK_TSDrivers)」をご覧ください。  
 
-    -   Gli [aggiornamenti software](../../sum/get-started/synchronize-software-updates.md) devono essere sincronizzati nella console di Configuration Manager.  
+    -   [ソフトウェア更新プログラム](../../sum/get-started/synchronize-software-updates.md)が Configuration Manager コンソールで同期されている必要があります。  
 
-    -   Le [applicazioni](../../apps/deploy-use/create-applications.md) devono essere aggiunte alla console di Configuration Manager.  
+    -   [アプリケーション](../../apps/deploy-use/create-applications.md)が Configuration Manager コンソールに追加されている必要があります。  
 
-###  <a name="a-namebkmkcreatebuildcapturetsa-create-a-build-and-capture-task-sequence"></a><a name="BKMK_CreateBuildCaptureTS"></a> Creare una sequenza di attività di creazione e acquisizione  
- Usare la procedura seguente per usare una sequenza di attività per creare un computer di riferimento e acquisire il sistema operativo.  
+###  <a name="BKMK_CreateBuildCaptureTS"></a> 構築とキャプチャを実行するタスク シーケンスの作成  
+ 次の手順に従って、タスク シーケンスを使用して、参照コンピューターを構築し、オペレーティング システムをキャプチャします。  
 
-#### <a name="to-create-a-task-sequence-that-builds-and-captures-an-operating-system-image"></a>Per creare una sequenza di attività che crea e acquisisce un'immagine del sistema operativo  
+#### <a name="to-create-a-task-sequence-that-builds-and-captures-an-operating-system-image"></a>オペレーティング システム イメージを構築およびキャプチャするタスク シーケンスを作成するには  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス** ] をクリックします。  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea sequenza di attività** per avviare la Creazione guidata della sequenza di attività.  
+3.  [ホーム **** ] タブの [作成 **** ] グループで [タスク シーケンスの作成 **** ] をクリックして、タスク シーケンスの作成ウィザードを起動します。  
 
-4.  Nella pagina **Crea una nuova sequenza di attività** selezionare **Crea e acquisisci un'immagine del sistema operativo di riferimento**.  
+4.  新しいタスク シーケンスの作成 **** ページで、[参照オペレーティング システム イメージを構築およびキャプチャする] ****を選択します。  
 
-5.  Nella pagina **Informazioni sequenza di attività** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
+5.  [タスク シーケンス情報 **** ] ページで次の設定を指定し、[次へ ****] をクリックします。  
 
-    -   **Nome sequenza di attività**: specificare un nome che identifichi la sequenza di attività.  
+    -   **タスク シーケンス名**:タスク シーケンスを識別する名前を指定します。  
 
-    -   **Descrizione**: specificare una descrizione dell'attività eseguita dalla sequenza di attività, ad esempio una descrizione del sistema operativo creato dalla sequenza di attività.  
+    -   **説明**: タスク シーケンスによって作成されるオペレーティング システムの説明などの、タスク シーケンスによって実行されるタスクの説明を指定します。  
 
-    -   **Immagine di avvio**: specificare l'immagine di avvio che installa l'immagine del sistema operativo.  
-
-        > [!IMPORTANT]  
-        >  L'architettura dell'immagine di avvio deve essere compatibile con l'architettura hardware del computer di destinazione.  
-
-6.  Nella pagina **Installa Windows** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
-
-    -   **Pacchetto immagine**: specificare il pacchetto immagine del sistema operativo, che contiene i file necessari per installare il sistema operativo.  
-
-    -   **Indice immagine**: specificare il sistema operativo da installare. Se l'immagine del sistema operativo contiene più versioni, selezionare la versione da installare.  
-
-    -   **Codice Product Key**: specificare il codice Product Key per il sistema operativo Windows da installare. È possibile specificare i codici Product Key per contratti multilicenza codificati e i codici Product Key standard. Se si usa un codice Product Key non codificato, ogni gruppo di 5 caratteri deve essere separato da un trattino (-). Ad esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
-
-    -   **Modalità di gestione licenze del server**: specificare che la licenza del server è **Per postazione**, **Per server**o che non è specificata alcuna licenza. Se la licenza del server è **Per server**, specificare anche il numero massimo di connessioni al server.  
-
-    -   Specificare come gestire l'account amministratore usato quando viene distribuito il sistema operativo.  
-
-        -   **Genera in modo casuale la password dell'amministratore locale e disattiva l'account su tutte le piattaforme supportate**: specificare se Configuration Manager deve creare una password casuale per l'account amministratore locale e disabilitare l'account quando viene distribuito il sistema operativo.  
-
-        -   **Attiva l'account e specifica la password dell'amministratore locale**: specificare se la stessa password viene usata per l'account di amministratore locale su tutti i computer in cui viene distribuito il sistema operativo.  
-
-7.  Nella pagina **Configura rete** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
-
-    -   **Aggiunta a un gruppo di lavoro**: specificare se aggiungere il computer di destinazione a un gruppo di lavoro quando viene distribuito il sistema operativo.  
-
-    -   **Aggiunta a un dominio**: specificare se aggiungere il computer di destinazione a un dominio quando viene distribuito il sistema operativo. In **Dominio**specificare il nome del dominio.  
+    -   **ブート イメージ**: オペレーティング システム イメージをインストールするブート イメージを指定します。  
 
         > [!IMPORTANT]  
-        >  È possibile cercare i domini nella foresta locale, ma è necessario specificare il nome di dominio per una foresta remota.  
+        >  ブート イメージのアーキテクチャは、対象となるコンピューターのハードウェア アーキテクチャと互換性がある必要があります。  
 
-         È inoltre possibile specificare un'unità organizzativa. Si tratta di un'impostazione facoltativa che specifica il nome distinto LDAP X.500 dell'unità organizzativa in cui creare l'account computer se non esiste già.  
+6.  [Windows のインストール] **** ページで次の設定を指定し、[次へ] ****をクリックします。  
 
-    -   **Account**: specificare il nome utente e la password per l'account con le autorizzazioni per l'aggiunta al dominio specificato. Ad esempio: *dominio\utente* o *%variabile%*.  
+    -   **イメージ パッケージ**: オペレーティング システムをインストールするのに必要なファイルを含むオペレーティング システム イメージ パッケージを指定します。  
+
+    -   **イメージ インデックス**: インストールするオペレーティング システムを指定します。 オペレーティング システム イメージに複数のバージョンが含まれている場合は、インストールするバージョンを選択します。  
+
+    -   **プロダクト キー**: インストールする Windows オペレーティング システムのプロダクト キーを指定します。 エンコードされたボリューム ライセンス キーと標準のプロダクト キーを指定できます。 エンコードされていないプロダクト キーを使用する場合は、5 桁ごとにハイフン (-) で区切る必要があります。 例: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
+
+    -   **サーバー ライセンス モード**: サーバー ライセンスが **[接続クライアント数]**と **[同時使用ユーザー数]**のいずれか、または決められていないかを指定します。 サーバー ライセンスが [同時使用ユーザー数] ****の場合は、サーバー接続の最大数も指定します。  
+
+    -   オペレーティング システムが展開されたときに使用する管理者アカウントの処理方法を指定します。  
+
+        -   **ローカルの管理者パスワードをランダムに生成し、サポートされているすべてのプラットフォームのアカウントを無効にする**: Configuration Manager によってローカル管理者アカウントのパスワードがランダムに生成され、オペレーティング システムを展開するときにアカウントを無効にするかどうかを指定します。  
+
+        -   **アカウントを有効にし、ローカル管理者パスワードを指定する**: オペレーティング システムが展開されたすべてのコンピューターでローカルの管理者アカウントに同じパスワードを使用するかどうかを指定します。  
+
+7.  [ネットワーク の構成] **** ページで次の設定を指定してから、[次へ] ****をクリックします。  
+
+    -   **ワークグループに参加**: オペレーティング システムが展開された際に、セットアップ先のコンピューターをワークグループに追加するかどうかを指定します。  
+
+    -   **ドメインに参加**: オペレーティング システムが展開された際に、セットアップ先のコンピューターをドメインに追加するかどうかを指定します。 [ドメイン] ****にドメインの名前を指定します。  
 
         > [!IMPORTANT]  
-        >  Se si prevede di migrare le impostazioni del dominio o le impostazioni del gruppo di lavoro, è necessario immettere le credenziali di dominio appropriate.  
+        >  ローカル フォレストではドメインを参照できますが、リモート フォレストではドメイン名を指定する必要があります。  
 
-8.  Nella pagina **Installa Configuration Manager** specificare il pacchetto client di Configuration Manager contenente i file di origine per installare il client di Configuration Manager, aggiungere eventuali altre proprietà necessarie per installare il client e quindi fare clic su **Avanti**.  
+         組織単位 (OU) も指定することができます。 OU の LDAP X.500 識別名を指定するオプションの設定です。コンピューター アカウントがまだ存在しない場合に作成するのに使用されます。  
 
-     Per altre informazioni sulle proprietà utilizzabili per installare un client, vedere [Informazioni sulle proprietà di installazione del client ](../../core/clients/deploy/about-client-installation-properties.md).  
+    -   **アカウント**: 指定したドメインに参加するアクセス許可を持つアカウントの、ユーザー名とパスワードを指定します。 例: *domain\user* または *%variable%*。  
 
-9. Nella pagina **Includi aggiornamenti** specificare se installare gli aggiornamenti software necessari, tutti gli aggiornamenti software o nessun aggiornamento software e quindi fare clic su **Avanti**. Se si sceglie di installare gli aggiornamenti software, Configuration Manager installa solo quelli assegnati alle raccolte di cui il computer di destinazione è membro.  
+        > [!IMPORTANT]  
+        >  ドメイン設定またはワークグループ設定を移行する場合は、適切なドメイン資格情報を入力する必要があります。  
 
-10. Nella pagina **Installa applicazioni** specificare le applicazioni da installare nel computer di destinazione e quindi fare clic su **Avanti**. Se si specificano più applicazioni, è possibile specificare che la sequenza di attività continui anche se l'installazione di un'applicazione specifica non riesce.  
+8.  [**Configuration Manager のインストール**] ページで、Configuration Manager クライアントをインストールするソース ファイルが含まれている Configuration Manager クライアント パッケージを指定し、クライアントをインストールするために必要なその他のプロパティを追加してから、[**次へ**] をクリックします。  
 
-11. Nella pagina **Preparazione sistema** specificare le seguenti impostazioni e quindi fare clic su **Avanti**.  
+     クライアントのインストールで使用できるプロパティの詳細については、「[クライアント インストールのプロパティについて](../../core/clients/deploy/about-client-installation-properties.md)」を参照してください。  
 
-    -   **Pacchetto**: specificare il pacchetto di Configuration Manager contenente la versione appropriata di Sysprep da usare per acquisire le impostazioni del computer di riferimento.  
+9. [更新プログラムを含める] **** ページで、必要なソフトウェア更新プログラム、すべてのソフトウェア更新プログラム、またはソフトウェア更新プログラムなしを指定してから、[次へ] ****をクリックします。 ソフトウェア更新プログラムをインストールするように指定する場合、Configuration Manager は、セットアップ先のコンピューターがメンバーとなっているコレクション向けのソフトウェア更新プログラムのみをインストールします。  
 
-         Se la versione del sistema operativo in esecuzione è Windows Vista o versione successiva, Sysprep viene installato automaticamente nel computer e non è necessario specificare un pacchetto.  
+10. **[アプリケーションのインストール]** ページで、展開先コンピューターにインストールするアプリケーションを指定してから、**[次へ]** をクリックします。 複数のアプリケーションを指定する場合は、特定のアプリケーションのインストールに失敗したときにタスク シーケンスを続行するかどうかも指定することができます。  
 
-12. Nella pagina **Proprietà immagini** specificare le seguenti impostazioni per l'immagine del sistema operativo e quindi fare clic su **Avanti**.  
+11. [システムの準備] **** ページで次の設定を指定してから、[次へ] ****をクリックします。  
 
-    -   **Creato da**: specificare il nome dell'utente che ha creato l'immagine del sistema operativo.  
+    -   **パッケージ**: 参照コンピューターの設定のキャプチャに使用する適切なバージョンの Sysprep を含む Configuration Manager パッケージを指定します。  
 
-    -   **Versione**: specificare un numero di versione definito dall'utente da associare all'immagine del sistema operativo.  
+         実行しているオペレーティング システムのバージョンが Windows Vista 以降であれば、Sysprep は既にコンピューターにインストールされているため、パッケージを指定する必要はありません。  
 
-    -   **Descrizione**: specificare una descrizione definita dall'utente dell'immagine del computer del sistema operativo.  
+12. [イメージのプロパティ **** ] ページで、オペレーティング システム イメージについて次の設定を指定して、[次へ ****] をクリックします。  
 
-13. Nella pagina **Acquisisci immagine** specificare le seguenti impostazioni, quindi fare clic su **Avanti**.  
+    -   **作成者**: オペレーティング システム イメージを作成したユーザーの名前を指定します。  
 
-    -   **Percorso**: specificare una cartella di rete condivisa in cui è archiviato il file di output con estensione WIM. Questo file contiene l'immagine del sistema operativo basata sulle impostazioni specificate usando questa procedura guidata. Se si specifica una cartella che contiene un file con estensione wim esistente, il file esistente viene sovrascritto.  
+    -   **バージョン**: オペレーティング システム イメージに関連付けるユーザ定義のバージョン番号を指定します。  
 
-    -   **Account**: specificare l'account di Windows con le autorizzazioni per la condivisione di rete in cui viene archiviata l'immagine.  
+    -   **説明**: オペレーティング システム コンピューター イメージのユーザー定義の説明を指定します。  
 
-14. Completare la procedura guidata.  
+13. [イメージのキャプチャ **** ] ページで、次の設定を指定して、[次へ ****] をクリックします。  
 
-15. Per aggiungere ulteriori passaggi alla sequenza attività, selezionare la sequenza attività creata e fare clic su **Modifica**. Per informazioni su come modificare una sequenza di attività, vedere [Modificare una sequenza di attività](manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence).  
+    -   **パス**: 出力 .WIM ファイルを保存する共有ネットワーク フォルダーを指定します。 このファイルには、このウィザードを使用して指定される設定に基づくオペレーティング システム イメージが含まれます。 既存の .WIM ファイルを含むフォルダーを指定すると、既存のファイルが上書きされます。  
 
- Distribuire la sequenza di attività in un computer di riferimento in uno dei modi seguenti:  
+    -   **アカウント**: イメージが保存されているネットワーク共有フォルダーに対するアクセス許可を持つ Windows アカウントを指定します。  
 
--   Se il computer di riferimento è un client di Configuration Manager, è possibile distribuire la sequenza di attività di creazione e acquisizione nella raccolta che contiene il computer di riferimento. Per informazioni su come distribuire l'immagine del sistema operativo, vedere [Creare una sequenza di attività per installare un sistema operativo](create-a-task-sequence-to-install-an-operating-system.md).  
+14. ウィザードを完了します。  
+
+15. タスク シーケンスにステップを追加するには、該当の作成したタスク シーケンスを選択し、[編集] ****をクリックします。 タスク シーケンスの編集方法については、「[タスク シーケンスの編集](manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence)」をご覧ください。  
+
+ 次の方法のいずれかで、タスク シーケンスを参照コンピューターに展開します。  
+
+-   参照コンピューターが Configuration Manager クライアントである場合は、参照コンピューターを含むコレクションに構築とキャプチャを実行するタスク シーケンスを展開できます。 オペレーティング システム イメージを展開する方法については、「[オペレーティング システムをインストールするタスク シーケンスの作成](create-a-task-sequence-to-install-an-operating-system.md)」を参照してください。  
 
     > [!NOTE]  
-    >  Se la sequenza attività prevede un passaggio relativo al partizionamento del disco, non selezionare l'opzione **Programma download** durante la distribuzione della sequenza attività.  
+    >  ディスクのパーティション分割のタスク シーケンス ステップがタスク シーケンスに存在する場合、タスク シーケンスを展開する際に、[プログラムのダウンロード] **** オプションを選択してはいけません。  
 
--   Se il computer di riferimento non è un client di Configuration Manager o si vuole eseguire manualmente la sequenza di attività nel computer di riferimento, eseguire la **Creazione guidata del supporto per la sequenza di attività per creare il supporto di avvio**. Per informazioni su come creare il supporto di avvio, vedere [Creare supporti di avvio](create-bootable-media.md).  
+-   参照コンピューターが Configuration Manager クライアントではない場合、または参照コンピューターでタスク シーケンスを手動で実行する場合は、[**タスク シーケンス メディアの作成ウィザード**] を実行して、起動可能なメディアを作成します。 起動可能なメディアを作成する方法の詳細については、「[起動可能なメディアの作成](create-bootable-media.md)」を参照してください。  
 
-##  <a name="a-namebkmkcaptureexistingrefcomputera-capture-an-operating-system-image-from-an-existing-reference-computer"></a><a name="BKMK_CaptureExistingRefComputer"></a> Acquisire un'immagine del sistema operativo da un computer di riferimento esistente  
- Se si dispone già di un computer di riferimento pronto per l'acquisizione, è possibile creare una sequenza di attività che acquisisce il sistema operativo dal computer di riferimento. A questo scopo, verrà usato il passaggio **Acquisisci immagine del sistema operativo** della sequenza di attività per acquisire una o più immagini da un computer di riferimento e archiviarle in un file di immagine (con estensione wim) nella condivisione di rete specificata. Il computer di riferimento viene avviato in Windows PE tramite un'immagine di avvio e ogni unità disco rigido nel computer di riferimento viene acquisita come immagine separata all'interno del file WIM. Se il computer usato come riferimento include più unità, il file WIM risultante conterrà un'immagine distinta per ogni volume. Vengono acquisiti solo i volumi con formattazione NTFS o FAT32. I volumi con formati diversi e i volumi USB verranno ignorati.  
+##  <a name="BKMK_CaptureExistingRefComputer"></a> オペレーティング システム イメージを既存の参照コンピューターからキャプチャする  
+ キャプチャの準備ができている参照コンピューターが既にある場合は、参照コンピューターからオペレーティング システムをキャプチャするタスク シーケンスを作成できます。 参照コンピューターから 1 つ以上のイメージをキャプチャし、指定したネットワーク共有上にあるイメージ ファイル (.wim) に保存するには、 **[オペレーティング システム イメージのキャプチャ]** のタスク シーケンス ステップを使用します。 参照コンピューターはブート イメージを使用して Windows PE で起動され、参照コンピューターの各ハード ドライブが .wim ファイル内に別イメージとしてキャプチャされます。 参照コンピューターに複数のドライブがある場合、作成される .wim ファイルには、ボリュームごとに異なるイメージが含まれます。 NTFS または FAT32 としてフォーマットされているボリュームのみがキャプチャされます。 その他のフォーマットのボリュームおよび USB のボリュームはスキップされます。  
 
- Usare la procedura seguente per acquisire un'immagine del sistema operativo da un computer di riferimento esistente.  
+ 次の手順を使用して、オペレーティング システム イメージを既存の参照コンピューターからキャプチャします。  
 
-#### <a name="to-capture-an-operating-system-from-an-existing-reference-computer"></a>Per acquisire un sistema operativo da un computer di riferimento esistente  
+#### <a name="to-capture-an-operating-system-from-an-existing-reference-computer"></a>オペレーティング システムを既存の参照コンピューターからキャプチャするには  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス** ] をクリックします。  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea sequenza di attività** per avviare la Creazione guidata della sequenza di attività.  
+3.  [ホーム **** ] タブの [作成 **** ] グループで [タスク シーケンスの作成 **** ] をクリックして、タスク シーケンスの作成ウィザードを起動します。  
 
-4.  Nella pagina **Crea una nuova sequenza di attività** selezionare **Crea una nuova sequenza di attività personalizzata**.  
+4.  [新しいタスク シーケンスの作成 **** ] ページで [新しいカスタム タスク シーケンスを作成する ****] を選択します。  
 
-5.  Nella pagina **Informazioni sequenza di attività** specificare un nome e una descrizione per la sequenza di attività.  
+5.  **[タスク シーケンス情報]** ページで、タスク シーケンスの名前と説明を指定します。  
 
-6.  Specificare un'immagine di avvio per la sequenza di attività. Questa immagine di avvio viene usata per avviare il computer di riferimento con Windows PE.  Per altre informazioni, vedere [Gestire le immagini di avvio](../get-started/manage-boot-images.md).  
+6.  タスク シーケンスのブート イメージを指定します。 このブート イメージは参照コンピューターを Windows PE で起動するために使用されます。  詳細については、「[ブート イメージの管理](../get-started/manage-boot-images.md)」を参照してください。  
 
-7.  Completare la procedura guidata.  
+7.  ウィザードを完了します。  
 
-8.  In **Sequenze di attività**selezionare la sequenza di attività personalizzata e quindi nella scheda **Home** , nel gruppo **Sequenza di attività** , fare clic su **Modifica** per aprire l'editor della sequenza di attività.  
+8.  **[タスク シーケンス]**で、カスタム タスク シーケンスを選択し、 **[ホーム]** タブの **[タスク シーケンス]** グループで **[編集]** をクリックして、タスク シーケンス エディターを開きます。  
 
-9. Usare questo passaggio solo se il client di Configuration Manager è installato nel computer di riferimento.  
+9. このステップは、Configuration Manager クライアントが参照コンピューターにインストールされている場合にのみ使用します。  
 
-     Fare clic su **Aggiungi**, fare clic su **Immagini**e quindi su [Prepara client ConfigMgr per l'acquisizione](../understand/task-sequence-steps.md#BKMK_PrepareConfigMgrClientforCapture). Questo passaggio della sequenza di attività prepara il client di Configuration Manager nel computer di riferimento per l'acquisizione come parte del processo di creazione dell'immagine.  
+     [**追加**]、[**イメージ**] の順にクリックしてから、[[ConfigMgr クライアントのキャプチャの準備](../understand/task-sequence-steps.md#BKMK_PrepareConfigMgrClientforCapture)] をクリックします。 このタスク シーケンス ステップは、参照コンピューター上の Configuration Manager クライアントを選択し、イメージ作成プロセスの一部としてキャプチャするためにクライアントを準備します。  
 
-10. Fare clic su **Aggiungi**, fare clic su **Immagini**e quindi su [Prepara Windows per l'acquisizione](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture). Questa azione della sequenza di attività esegue Sysprep e quindi riavvia il computer nell'immagine di avvio di Windows PE specificata per la sequenza di attività. Per il corretto completamento di questa azione non è necessario che il computer di riferimento sia aggiunto a un dominio.  
+10. [**追加**]、[**イメージ**] の順にクリックしてから、[[Windows のキャプチャの準備](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture)] をクリックします。 このタスク シーケンスのアクションは Sysprep を実行してから、タスク シーケンスで指定した Windows PE ブート イメージにコンピューターを再起動します。 このアクションを正常に完了するには、参照コンピューターをドメインに参加させないでください。  
 
-11. Fare clic su **Aggiungi**, fare clic su **Immagini**e quindi su [Acquisisci immagine del sistema operativo](../understand/task-sequence-steps.md#BKMK_CaptureOperatingSystemImage).  Questo passaggio della sequenza di attività viene eseguito solo da Windows PE per acquisire le unità disco rigido nel computer di riferimento. Configurare le impostazioni seguenti per il passaggio della sequenza di attività.  
+11. [**追加**]、[**イメージ**] の順にクリックしてから、[[オペレーティング システム イメージのキャプチャ](../understand/task-sequence-steps.md#BKMK_CaptureOperatingSystemImage)] をクリックします。  このタスク シーケンス ステップは、参照コンピューターのハード ドライブをキャプチャするためにのみ Windows PE から実行されます。 タスク シーケンス ステップの次の設定を構成する  
 
-    -   **Nome** e **Descrizione**: facoltativamente, è possibile modificare il nome del passaggio della sequenza di attività e fornire una descrizione.  
+    -   **[名前]** と **[説明]**: 必要に応じて、タスク シーケンス ステップの名前を変更し、説明を入力できます。  
 
-    -   **Destinazione**: specificare una cartella di rete condivisa in cui è archiviato il file WIM di output. Questo file contiene l'immagine del sistema operativo basata sulle impostazioni specificate usando questa procedura guidata. Se si specifica una cartella che contiene un file con estensione wim esistente, il file esistente viene sovrascritto.  
+    -   **保存先**: 出力 .WIM ファイルを保存する共有ネットワーク フォルダーを指定します。 このファイルには、このウィザードを使用して指定される設定に基づくオペレーティング システム イメージが含まれます。 既存の .WIM ファイルを含むフォルダーを指定すると、既存のファイルが上書きされます。  
 
-    -   **Descrizione**, **Versione**e **Creato da**: facoltativamente, fornire i dettagli relativi all'immagine che verrà acquisita.  
+    -   **[説明]**、 **[バージョン]**、 **[作成者]**: 必要に応じて、キャプチャするイメージの詳細を入力します。  
 
-    -   **Account**: specificare l'account di Windows con le autorizzazioni per la condivisione di rete specificata. Fare clic su **Imposta** per specificare il nome dell'account di Windows.  
+    -   **オペレーティング システム イメージのキャプチャ アカウント**: 指定したネットワーク共有へのアクセス許可を持つ Windows アカウントを指定します。 その Windows アカウントの名前を指定するには、[ **設定** ] をクリックします。  
 
-     Fare clic su **OK** per chiudere l'editor della sequenza di attività.  
+     **[OK]** をクリックして、タスク シーケンス エディターを閉じます。  
 
- Distribuire la sequenza di attività in un computer di riferimento in uno dei modi seguenti:  
+ 次の方法のいずれかで、タスク シーケンスを参照コンピューターに展開します。  
 
--   Se il computer di riferimento è un client di Configuration Manager, è possibile distribuire la sequenza di attività nella raccolta che contiene il computer di riferimento. Per informazioni su come distribuire l'immagine del sistema operativo, vedere [Creare una sequenza di attività per installare un sistema operativo](create-a-task-sequence-to-install-an-operating-system.md).  
+-   参照コンピューターが Configuration Manager クライアントである場合は、参照コンピューターを含むコレクションにタスク シーケンスを展開できます。 オペレーティング システム イメージを展開する方法については、「[オペレーティング システムをインストールするタスク シーケンスの作成](create-a-task-sequence-to-install-an-operating-system.md)」を参照してください。  
 
--   Se il computer di riferimento non è un client di Configuration Manager o si vuole eseguire manualmente la sequenza di attività nel computer di riferimento, eseguire la **Creazione guidata del supporto per la sequenza di attività per creare il supporto di avvio**. Per informazioni su come creare il supporto di avvio, vedere [Creare supporti di avvio](create-bootable-media.md).  
+-   参照コンピューターが Configuration Manager クライアントではない場合、または参照コンピューターでタスク シーケンスを手動で実行する場合は、[**タスク シーケンス メディアの作成ウィザード**] を実行して、起動可能なメディアを作成します。 起動可能なメディアを作成する方法の詳細については、「[起動可能なメディアの作成](create-bootable-media.md)」を参照してください。  
 
-##  <a name="a-namebkmkbuildandcapturetsexamplea-task-sequence-example-to-build-and-capture-an-operating-system-image"></a><a name="BKMK_BuildandCaptureTSExample"></a> Esempio di sequenza di attività per creare e acquisire un'immagine del sistema operativo  
- Usare la tabella seguente come guida durante la creazione di una sequenza di attività che crea e acquisisce un'immagine del sistema operativo. La tabella sarà utile per decidere la sequenza generale per i passaggi della sequenza di attività e come organizzare e strutturare tali passaggi della sequenza di attività in gruppi logici. La sequenza di attività creata può variare rispetto a questo esempio e contenere più o meno passaggi e gruppi.  
+##  <a name="BKMK_BuildandCaptureTSExample"></a> オペレーティング システム イメージを構築およびキャプチャするタスク シーケンスの例  
+ オペレーティング システム イメージを構築およびキャプチャするタスク シーケンスを作成する場合は、次の表をガイドとして使用してください。 この表を利用して、タスク シーケンス ステップの全般的な順序と、これらのタスク シーケンス ステップを論理的なグループに整理および構造化する方法を決定できます。 実際に作成するタスク シーケンスは、この例とは異なり、タスク シーケンス ステップやグループの数が違う場合があります。  
 
 > [!IMPORTANT]  
->  Usare sempre la Creazione guidata della sequenza attività per creare questo tipo di sequenza di attività.  
+>  この種類のタスク シーケンスを作成するには、タスク シーケンスの新規作成ウィザードを常に使用します。  
 
- Quando si usa **Crea nuova sequenza di attività** per creare questa nuova sequenza di attività, alcuni dei nomi dei passaggi sono diversi rispetto ai nomi che verrebbero usati aggiungendo manualmente questi passaggi a una sequenza di attività esistente. La tabella seguente mostra le differenze di denominazione:  
+ **タスク シーケンスの新規作成** を使用してこの新しいタスク シーケンスを作成する場合、一部のタスク シーケンス ステップ名は、これらのタスク シーケンス ステップを既存のタスク シーケンスに手動で追加した場合の名前とは異なります。 名前の違いについて、次の表で説明します。  
 
-|Nome del passaggio della sequenza di attività di Creazione guidata della sequenza di attività|Nome del passaggio equivalente dell'editor delle sequenze di attività|  
+|タスク シーケンスの新規作成ウィザードのタスク シーケンス ステップ名|タスク シーケンス エディターの同等のステップ名|  
 |------------------------------------------------------|-----------------------------------------------|  
-|Riavvia in Windows PE|Riavvia in Windows PE o usando il disco rigido|  
-|Disco di partizione 0|Formato e disco partizione|  
-|Applica driver dispositivo|Applica automaticamente i driver|  
-|Installa aggiornamenti|Installa aggiornamenti software|  
-|Aggiunta a gruppo di lavoro|Aggiunta a dominio o gruppo di lavoro|  
-|Prepara Client ConfigMgr|Prepare ConfigMgr Client for Capture|  
-|Prepara sistema operativo|Prepare Windows for Capture|  
-|Acquisisci computer di riferimento|Acquisisci immagine del sistema operativo|  
+|Windows PE での再起動|Windows PE またはハード ディスクでの再起動|  
+|ディスク 0 のパーティション作成|ディスクのフォーマットとパーティション作成|  
+|デバイス ドライバーの適用|ドライバーの自動適用|  
+|更新のインストール|ソフトウェア更新プログラムのインストール|  
+|ワークグループへの参加|ドメインまたはワークグループへの参加|  
+|ConfigMgr クライアントの準備|Prepare ConfigMgr Client for Capture|  
+|オペレーティング システムの準備|Prepare Windows for Capture|  
+|参照コンピューターのキャプチャ|[オペレーティング システム イメージのキャプチャ]|  
 
-|Gruppo di sequenze di attività/Passaggio|Riferimento|  
+|タスク シーケンス グループ/ステップ|参照先|  
 |-------------------------------|---------------|  
-|Crea computer di riferimento - **(nuovo gruppo di sequenze di attività)**|Creare un gruppo di sequenze di attività. Un gruppo di sequenze di attività consente di mantenere assieme i passaggi delle sequenze di attività per una migliore organizzazione e un maggiore controllo degli errori.<br /><br /> Questo gruppo contiene le azioni necessarie per creare un computer di riferimento.|  
-|Riavvia in Windows PE|Usare questo passaggio della sequenza di attività per specificare le opzioni di riavvio per il computer di destinazione. Questo passaggio visualizzerà un messaggio all'utente per informarlo che il computer verrà riavviato in modo da poter continuare l'installazione.<br /><br /> Questo passaggio usa la variabile della sequenza di attività **_SMSTSInWinPE** di sola lettura. Se il valore associato è uguale a **false** , il passaggio della sequenza di attività continuerà.|  
-|Disco di partizione 0|Usare questo passaggio della sequenza di attività per specificare le azioni necessarie per formattare l'unità disco rigido nel computer di destinazione. Il numero di disco predefinito è **0**.<br /><br /> Questo passaggio usa la variabile della sequenza di attività **_SMSTSClientCache** di sola lettura. Questo passaggio verrà eseguito se la cache del client di Configuration Manager non esiste.|  
-|Applica sistema operativo|Usare questo passaggio della sequenza di attività per installare un'immagine del sistema operativo specificata nel computer di destinazione. Questo passaggio applica tutte le immagini di volume contenute nel file WIM al volume del disco sequenziale corrispondente nel computer di destinazione, dopo aver prima eliminato tutti i file in tale volume (ad eccezione dei file di controllo specifici di Configuration Manager).|  
-|Applica impostazioni Windows|Usare questo passaggio della sequenza di attività per configurare le informazioni di configurazione delle impostazioni di Windows per il computer di destinazione.|  
-|Applica impostazioni di rete|Usare questo passaggio della sequenza di attività per specificare le informazioni di configurazione per la rete o il gruppo di lavoro per il computer di destinazione.|  
-|Applica driver dispositivo|Usare questo passaggio della sequenza di attività per associare e installare i driver come parte della distribuzione di un sistema operativo. È possibile consentire a Installazione di Windows di cercare tutte le categorie di driver esistenti selezionando **Considera i driver di tutte le categorie** oppure limitare le categorie in cui Installazione di Windows esegue la ricerca selezionando **Limita la corrispondenza dei driver in modo da considerare solo i driver delle categorie selezionate**.<br /><br /> Questo passaggio usa la variabile della sequenza di attività **_SMSTSMediaType** di sola lettura. Se il valore associato non è uguale a **FullMedia** verrà eseguito questo passaggio della sequenza di attività.|  
-|Imposta Windows e ConfigMgr|Usare questo passaggio della sequenza di attività per installare il software client di Configuration Manager. Configuration Manager installa e registra il GUID del client di Configuration Manager. È possibile assegnare i parametri di installazione necessari nella finestra **Proprietà di installazione** .|  
-|Installa aggiornamenti|Usare questo passaggio della sequenza di attività per specificare in che modo gli aggiornamenti software vengono installati nel computer di destinazione. Il computer di destinazione viene valutato alla ricerca di aggiornamenti software applicabili solo in corrispondenza con l'esecuzione di questo passaggio della sequenza di attività, quando il computer di destinazione viene valutato alla ricerca di aggiornamenti software applicabili in modo simile agli altri client gestiti da Configuration Manager.<br /><br /> Questo passaggio usa la variabile della sequenza di attività **_SMSTSMediaType** di sola lettura. Se il valore associato non è uguale a **FullMedia** verrà eseguito questo passaggio della sequenza di attività.|  
-|Acquisisci computer di riferimento - **(nuovo gruppo di sequenze di attività)**|Creare un altro gruppo di sequenze di attività. Questo gruppo contiene i passaggi necessari per preparare e acquisire un computer di riferimento.|  
-|Aggiunta a gruppo di lavoro|Usare questo passaggio della sequenza di attività per specificare le informazioni necessarie per aggiungere il computer di destinazione a un gruppo di lavoro.|  
-|Prepare ConfigMgr Client for Capture|Usare questo passaggio per preparare il client di Configuration Manager nel computer di riferimento per l'acquisizione come parte del processo di creazione dell'immagine.|  
-|Prepara sistema operativo|Usare questo passaggio della sequenza di attività per specificare le opzioni di Sysprep da usare durante l'acquisizione delle impostazioni di Windows dal computer di riferimento. Questo passaggio della sequenza di attività esegue Sysprep e quindi riavvia il computer nell'immagine di avvio di Windows PE specificata per la sequenza di attività.|  
-|Acquisisci immagine del sistema operativo|Usare questo passaggio della sequenza di attività per immettere una condivisione di rete esistente specifica e un file WIM da usare per il salvataggio dell'immagine. Questo percorso viene usato come percorso di origine del pacchetto durante l'aggiunta di un pacchetto di immagine del sistema operativo tramite l' **Aggiunta guidata immagine del sistema operativo**.|  
+|参照コンピューターの構築- **(新しいタスク シーケンス グループ)**|タスク シーケンス グループを作成します。 タスク シーケンス グループを使用すると、類似のタスク シーケンス ステップをまとめて、整理とエラー制御を向上させることができます。<br /><br /> このグループには、参照コンピューターを構築するのに必要なアクションが含まれます。|  
+|Windows PE での再起動|このタスク シーケンス ステップを使用して、対象のコンピューターの再起動オプションを指定できます。 このステップでは、インストールを続行するためにコンピューターを再起動することをユーザーに示すメッセージが表示されます。<br /><br /> このステップでは、読み取り専用の **_SMSTSInWinPE** タスク シーケンス変数が使用されます。 関連する値が **false** の場合に、タスク シーケンス ステップが続行されます。|  
+|ディスク 0 のパーティション作成|このタスク シーケンス ステップを使用して、対象のコンピューターのハード ドライブのフォーマットに必要な処理を指定できます。 既定のディスク番号は **0**です。<br /><br /> このステップでは、読み取り専用の **_SMSTSClientCache** タスク シーケンス変数が使用されます。 このステップは、Configuration Manager クライアント キャッシュが存在しない場合に実行されます。|  
+|オペレーティング システムの適用|このタスク シーケンス ステップを使用して、対象のコンピューターに特定のオペレーティング システム イメージをインストールできます。 このステップでは、WIM ファイルに含まれているすべてのボリューム イメージを、対象のコンピューター上の対応する順次ディスク ボリュームに適用します。この処理は、最初にこのボリューム上のすべてのファイルを削除した後で実行されます (Configuration Manager 固有のコントロール ファイルを除く)。|  
+|Windows 設定の適用|このタスク シーケンス ステップを使用して、対象コンピューターの Windows 設定の構成情報を構成できます。|  
+|ネットワーク設定の適用|このタスク シーケンス ステップを使用して、対象コンピューターのネットワークまたはワークグループの構成情報を指定できます。|  
+|デバイス ドライバーの適用|このタスク シーケンス ステップを使用して、オペレーティング システムの展開の一部としてドライバーを適合およびインストールできます。 [すべてのカテゴリのドライバーを検討する **** ] を選択して、Windows セットアップですべての既存ドライバー カテゴリを検索するか、[ドライバーの一致条件を制限して、選択したカテゴリに属するドライバーだけを検討する ****] を選択して、Windows セットアップが検索するドライバー カテゴリを制限できます。<br /><br /> このステップでは、読み取り専用の **_SMSTSMediaType** タスク シーケンス変数が使用されます。 関連する値が **FullMedia** 以外の場合に、このタスク シーケンス ステップが実行されます。|  
+|Windows と ConfigMgr のセットアップ|このタスク シーケンス ステップを使用して Configuration Manager クライアント ソフトウェアをインストールします。 Configuration Manager は、Configuration Manager クライアントの GUID をインストールして登録します。 必要なインストール パラメーターは、 **[インストールのプロパティ]** ウィンドウで割り当てることができます。|  
+|更新のインストール|このタスク シーケンス ステップを使用して、ソフトウェア更新を対象のコンピューターにインストールする方法を指定できます。 このタスク シーケンス ステップが実行されるまで、対象のコンピューターは適用可能なソフトウェア更新プログラムが評価されません。 このとき、セットアップ先のコンピューターは、Configuration Manager が管理している他のクライアントと同様にソフトウェア更新プログラムが評価されます。<br /><br /> このステップでは、読み取り専用の **_SMSTSMediaType** タスク シーケンス変数が使用されます。 関連する値が **FullMedia** 以外の場合に、このタスク シーケンス ステップが実行されます。|  
+|参照コンピューターのキャプチャ - **(新しいタスク シーケンス グループ)**|別のタスク シーケンス グループを作成します。 このグループには、参照コンピューターを準備してキャプチャするのに必要なステップが含まれます。|  
+|ワークグループへの参加|このタスク シーケンス ステップを使用して、対象のコンピューターをワークグループに参加させるために必要な情報を指定できます。|  
+|Prepare ConfigMgr Client for Capture|このタスク シーケンス ステップを使用して、参照コンピューター上の Configuration Manager クライアントを選択し、イメージ作成プロセスの一部としてキャプチャするためにクライアントを準備できます。|  
+|オペレーティング システムの準備|参照コンピューターから Windows の設定をキャプチャするときに使用する Sysprep のオプションを指定するには、このタスク シーケンスのステップを使用します。 このタスク シーケンス ステップは、Sysprep を実行し、タスク シーケンスに指定した Windows PE ブート イメージにコンピューターを再起動します。|  
+|[オペレーティング システム イメージのキャプチャ]|イメージの保存時に使用する特定の既存ネットワーク共有および .WIM ファイルを入力するには、このタスク シーケンス ステップを使用します。 この場所は、 **オペレーティング システム イメージの追加ウィザード**を使用してオペレーティング システム イメージ パッケージを追加するときのパッケージ ソースの場所として使用されます。|  
 
- Dopo l'acquisizione di un'immagine da un computer di riferimento, non acquisire un'altra immagine del sistema operativo dal computer di riferimento, perché le voci del Registro di sistema vengono create durante la configurazione iniziale. Creare un nuovo computer di riferimento ogni volta che si acquisisce l'immagine del sistema operativo. Se si intende utilizzare lo stesso computer di riferimento per creare immagini del sistema operativo in futuro, disinstallare innanzitutto il client di Configuration Manager, quindi reinstallare il client di Configuration Manager.  
+ 初期構成中にレジストリ エントリが作成されるため、参照コンピューターからイメージを一旦キャプチャしたら、その参照コンピューターから別のオペレーティング システムをキャプチャしてはいけません。 オペレーティング システム イメージをキャプチャするたびに、新しい参照コンピューターを作成します。 同じ参照コンピューターを使用して後からオペレーティング システム イメージを作成する場合、まず Configuration Manager クライアントをアンインストールしてから、Configuration Manager クライアントを再インストールします。  
 
-## <a name="next-steps"></a>Passaggi successivi  
-[Metodi per distribuire i sistemi operativi aziendali](methods-to-deploy-enterprise-operating-systems.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+## <a name="next-steps"></a>次のステップ  
+[エンタープライズ オペレーティング システムを展開する方法](methods-to-deploy-enterprise-operating-systems.md)

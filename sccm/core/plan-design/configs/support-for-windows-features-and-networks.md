@@ -1,142 +1,138 @@
 ---
-title: "Supporto per le funzionalità di Windows | Microsoft Docs"
-description: "Informazioni su quali funzionalità di Windows e di rete sono supportate in System Center Configuration Manager."
+title: "Windows の機能のサポート | Microsoft Docs"
+description: "System Center Configuration Manager でサポートされる Windows とネットワークの機能について説明します。"
 ms.custom: na
 ms.date: 3/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0cf4bacb-6b6d-4d4f-8640-b13fe15873de
-caps.latest.revision: 8
-caps.handback.revision: 0
+caps.latest.revision: "8"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d5166b16ffbe46af561b1ce98c0494cc4aaa72a8
 ms.openlocfilehash: e040552dab21ba9a71e06a78f6acc2ffe1b0eb61
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="support-for-windows-features-and-networks-in-system-center-configuration-manager"></a>Supporto per le funzionalità e le reti Windows in System Center Configuration Manager
+# <a name="support-for-windows-features-and-networks-in-system-center-configuration-manager"></a>System Center Configuration Manager での Windows 機能とネットワークのサポート
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-In questo argomento viene illustrato il supporto di System Center Configuration Manager per le funzionalità comuni di Windows e di rete.  
+このトピックでは、System Center Configuration Manager による一般的な Windows とネットワークの機能のサポートを示します。  
 
 
 ##  <a name="bkmk_branchcache"></a> BranchCache  
-È possibile usare Windows BranchCache con Configuration Manager quando si abilita BranchCache nei punti di distribuzione e configurare i client per l'uso di BranchCache in modalità cache distribuita.
+配布ポイントで BranchCache を有効にして、分散キャッシュ モードで BranchCache を使用するようにクライアントを構成している場合、Windows BranchCache を Configuration Manager と共に使用することができます。
 
-È possibile configurare le impostazioni di BranchCache su un tipo di distribuzione per le applicazioni, sulla distribuzione per un pacchetto e per le sequenze attività.  
+アプリケーションの展開の種類、パッケージの展開、およびタスク シーケンスに関する BranchCache の設定を構成できます。  
 
-Quando vengono soddisfatti i requisiti per BranchCache, questa funzionalità abilita i client in remoto per ottenere contenuti dai client locali che hanno una cache corrente del contenuto.  
+BranchCache の要件を満たしている場合、リモートの場所にあるクライアントは、この機能を使用して、コンテンツの最新のキャッシュを持っているローカルのクライアントからコンテンツを取得できます。  
 
-Ad esempio, quando il primo computer client abilitato per BranchCache richiede contenuto da un punto di distribuzione configurato come server BranchCache, il computer client scarica il contenuto e lo memorizza nella cache. Il contenuto viene quindi reso disponibile ai client presenti nella stessa subnet da cui è stato richiesto il contenuto
+たとえば、BranchCache が有効な最初のクライアント コンピューターが、BranchCache サーバーとして構成されている配布ポイントからコンテンツを要求するとき、クライアント コンピューターは、コンテンツをダウンロードしてキャッシュします。 これと同じコンテンツを要求する同じサブネット上のクライアントは、このコンテンツを利用できるようになります。
 
-e viene memorizzato nella cache dei client. In tal modo, client successivi sulla stessa subnet non devono scaricare contenuto dal punto di distribuzione e il contenuto viene distribuito tra più client per trasferimenti futuri.  
+これらのクライアントもそのコンテンツをキャッシュします。 このように、同じサブネット上の後続のクライアントは配布ポイントからコンテンツをダウンロードする必要がありません。コンテンツは、以後の転送で複数のクライアントから配布されます。  
 
-**Requisiti per supportare BranchCache con Configuration Manager:**  
--   **Configurare i punti di distribuzione:**  
-    Aggiungere la funzionalità **Windows BranchCache** al server di sistema del sito configurato come un punto di distribuzione.    
+**Configuration Manager で BranchCache をサポートするための要件:**  
+-   **配布ポイントの構成:**  
+    配布ポイントとして構成されたサイト システム サーバーに **Windows BranchCache** 機能を追加します。    
 
-    -   I punti di distribuzione nei server configurati per supportare BranchCache non richiedono alcuna configurazione aggiuntiva.   
-    -   Non è possibile aggiungere Windows BranchCache a un punto di distribuzione basato su cloud, ma i punti di distribuzione basati su cloud supportano il download del contenuto da parte dei client configurati per Windows BranchCache.  
+    -   BranchCache をサポートするように構成されたサーバー上の配布ポイントには、追加の構成は必要ありません。   
+    -   Windows BranchCache をクラウド ベースの配布ポイントに追加することはできませんが、クラウド ベースの配布ポイントは、Windows BranchCache が構成されているクライアントによるコンテンツのダウンロードをサポートしています。  
 
--   **Configurare i client:**    
-    -   I client che possono supportare BranchCache devono essere configurati per la modalità cache distribuita di BranchCache.  
-    -   L'impostazione del sistema operativo per le impostazioni client BITS deve essere abilitata per supportare BranchCache.   <br /> <br />
+-   **クライアントの構成:**    
+    -   BranchCache に対応したクライアントが、BranchCache 分散キャッシュ モード用に構成されている必要があります。  
+    -   BITS クライアントの設定に関するオペレーティング システムの設定で、BranchCache のサポートを有効にする必要があります。   <br /> <br />
         
-    Per informazioni su come configurare i client per il supporto di BranchCache, vedere la sezione [Configure clients](https://technet.microsoft.com/itpro/windows/manage/waas-branchcache#configure-clients-for-branchcache) (Configurare i client) in [Configure BranchCache for Windows 10 updates](https://technet.microsoft.com/itpro/windows/manage/waas-branchcache) (Configurare BranchCache per gli aggiornamenti di Windows 10).
+    BranchCache をサポートするようにクライアントを構成する方法については、「[Windows 10 更新プログラム向けの BranchCache の構成](https://technet.microsoft.com/itpro/windows/manage/waas-branchcache)」の「[BranchCache クライアントの構成](https://technet.microsoft.com/itpro/windows/manage/waas-branchcache#configure-clients-for-branchcache)」セクションを参照してください。
 
 
-**Configuration Manager supporta i seguenti sistemi operativi client con Windows BranchCache:**  
+**Configuration Manager は、Windows BranchCache に対応している以下のクライアント オペレーティング システムをサポートします。**  
 
-|Sistema operativo|Dettagli sul supporto|  
+|オペレーティング システム|サポートの詳細|  
 |----------------------|---------------------|  
-|Windows 7 con SP1|Supportato per impostazione predefinita|  
-|Windows 8|Supportato per impostazione predefinita|  
-|Windows 8.1|Supportato per impostazione predefinita|  
-|Windows 10|Supportato per impostazione predefinita|  
-|Windows Server 2008 con SP2|**Richiede BITS 4.0**: è possibile installare BITS 4.0 nei client di Configuration Manager usando gli aggiornamenti software o la distribuzione del software. Per altre informazioni su BITS 4.0, vedere [Windows Management Framework](http://go.microsoft.com/fwlink/p/?LinkId=181979).<br /><br /> Su questo sistema operativo, la funzionalità client BranchCache non è supportata per la distribuzione di software eseguita dalla rete o per i trasferimenti di file SMB. Inoltre, questo sistema operativo non può usare la funzionalità BranchCache con punti di distribuzione basati su cloud.|  
-|Windows Server 2008 R2|Supportato per impostazione predefinita|  
-|Windows Server 2012|Supportato per impostazione predefinita|  
-|Windows Server 2012 R2|Supportato per impostazione predefinita|  
+|Windows 7 SP1|既定でサポート|  
+|Windows 8|既定でサポート|  
+|Windows 8.1|既定でサポート|  
+|Windows 10|既定でサポート|  
+|Windows Server 2008 SP2|**BITS 4.0 が必要**: BITS 4.0 リリースを Configuration Manager クライアントにインストールするには、ソフトウェアの更新プログラムまたはソフトウェアの配布を使用します。 BITS 4.0 リリースの詳細については、「 [Windows Management Framework](http://go.microsoft.com/fwlink/p/?LinkId=181979)」を参照してください。<br /><br /> このオペレーティング システムでは、BranchCache クライアント機能はネットワークから実行されるソフトウェアの配布または SMB ファイル転送ではサポートされません。 加えてこのオペレーティング システムでは、BranchCache の機能をクラウド ベースの配布ポイントで使用することができません。|  
+|Windows Server 2008 R2|既定でサポート|  
+|Windows Server 2012|既定でサポート|  
+|Windows Server 2012 R2|既定でサポート|  
 
- Per altre informazioni su BranchCache, vedere [BranchCache per Windows](http://go.microsoft.com/fwlink/p/?LinkId=177945) nella documentazione di Windows Server.  
+ BranchCache の詳細については、Windows Server のドキュメントの「 [BranchCache for Windows (Windows の BranchCache)](http://go.microsoft.com/fwlink/p/?LinkId=177945) 」を参照してください。  
 
-##  <a name="bkmk_Workgroups"></a> Computer in gruppi di lavoro  
-Configuration Manager offre il supporto per i client in gruppi di lavoro.  
+##  <a name="bkmk_Workgroups"></a> ワークグループ内のコンピューター  
+Configuration Manager では、ワークグループ内のクライアントがサポートされます。  
 
--   Configuration Manager supporta lo spostamento di un client da un gruppo di lavoro a un dominio o da un dominio a un gruppo di lavoro. Per altre informazioni, vedere la sezione [How to Install Configuration Manager Clients on Workgroup Computers](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientWorkgroup) (Come installare i client di Configuration Manager in computer di gruppi di lavoro) nell'argomento [How to deploy clients to Windows computers in System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-windows-computers.md) (Come distribuire client a computer Windows in System Center Configuration Manager).  
+-   Configuration Manager では、ワークグループとドメインとの間でのクライアントの移動がサポートされます。 詳細については、「[System Center Configuration Manager でクライアントを Windows コンピューターに展開する方法](../../../core/clients/deploy/deploy-clients-to-windows-computers.md)」のトピックの「[ワークグループ コンピューターへの Configuration Manager クライアントのインストール方法](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientWorkgroup)」のセクションを参照してください。  
 
 > [!NOTE]  
->  Nonostante siano supportati i client nei gruppi di lavoro, tutti i sistemi del sito devono essere membri di un dominio Active Directory supportato.  
+>  ワークグループのクライアントはサポートされますが、すべてのサイト システムは、サポートされた Active Directory ドメインのメンバーである必要があります。  
 
 
-##  <a name="bkmmk_datadedup"></a> Deduplicazione dati  
-Configuration Manager supporta l'uso della deduplicazione dati con punti di distribuzione nei sistemi operativi seguenti:  
+##  <a name="bkmmk_datadedup"></a> データ重複除去  
+Configuration Manager は、次に示すオペレーティング システム上の配布ポイントで、データ重複除去の使用をサポートしています。  
 
 -   Windows Server 2012  
 
 -   Windows Server 2012 R2  
 
 > [!IMPORTANT]  
->  Non è possibile contrassegnare i file di origine del pacchetto host per la deduplicazione dei dati perché la deduplicazione dati usa reparse point e Configuration Manager non supporta l'uso di un percorso di origine del contenuto con file archiviati nei reparse point.  
+>  パッケージ ソース ファイルをホストするボリュームは、データ重複除去の対象としてマークできません。 これは、データ重複除去には再解析ポイントを使いますが、Configuration Manager では、再解析ポイントで保存したファイルが含まれるコンテンツ ソースの場所の使用はサポートされないためです。  
 
-Per altre informazioni, vedere [Configuration Manager Distribution Points and Windows Server 2012 Data Deduplication](http://blogs.technet.com/b/configmgrteam/archive/2014/02/18/configuration-manager-distribution-points-and-windows-server-2012-data-deduplication.aspx) (Deduplicazione dati dei punti di distribuzione di Configuration Manager e di Windows Server 2012) nel blog del team di Configuration Manager e [Panoramica di Deduplicazione dati](http://technet.microsoft.com/library/hh831602.aspx) nella libreria TechNet di Windows Server.  
+詳細については、Configuration Manager チームのブログ「[ Configuration Manager Distribution Points and Windows Server 2012 Data Deduplication](http://blogs.technet.com/b/configmgrteam/archive/2014/02/18/configuration-manager-distribution-points-and-windows-server-2012-data-deduplication.aspx)」(Configuration Manager の配布ポイントと Windows Server 2012 のデータ重複除去) および Windows Server TechNet ライブラリの「[データ重複除去の概要](http://technet.microsoft.com/library/hh831602.aspx)」を参照してください。  
 
 ##  <a name="bkmk_DA"></a> DirectAccess  
-Configuration Manager supporta la funzionalità DirectAccess in Windows Server 2008 R2 e versioni successive per la comunicazione tra client e sistemi server del sito.  
+Configuration Manager では、クライアントとサイト サーバー システム間の通信用に、Windows Server 2008 R2 以降の DirectAccess 機能をサポートしています。  
 
--   Quando vengono soddisfatti tutti i requisiti per DirectAccess, i client di Configuration Manager su Internet possono comunicare con il relativo sito assegnato come se fossero nella intranet.  
+-   DirectAccess の要件がすべて満たされているときに、DirectAccess を使用することで、インターネット上の Configuration Manager クライアントは、イントラネット上にいるかのように割り当て先のサイトと通信できます。  
 
--   Per le azioni avviate dal server, ad esempio il controllo remoto e l’installazione push client, il computer di origine (ad esempio il server del sito) deve eseguire IPv6 e questo protocollo deve essere supportato in tutti i dispositivi di rete.  
+-   サーバーにより開始される操作 (リモート コントロールやクライアント プッシュ インストールなど) の場合、操作を開始するコンピューター (サイト サーバーなど) は、IPv6 を実行している必要があります。また、このプロトコルは、介在するすべてのネットワーク デバイスでサポートされている必要もあります。  
 
-Configuration Manager non supporta le operazioni seguenti su DirectAccess:  
+Configuration Manager では、次に示す DirectAccess を利用した操作はサポートされていません。  
 
--   Distribuzione dei sistemi operativi  
+-   オペレーティング システムの展開  
 
--   Comunicazione tra siti di Configuration Manager  
+-   Configuration Manager サイト間の通信  
 
--   Comunicazione tra server del sistema del sito di Configuration Manager all'interno di un sito  
+-   サイト内の Configuration Manager サイト システム サーバー間の通信  
 
-##  <a name="bkmk_dualboot"></a> Computer ad avvio doppio  
- Configuration Manager non può gestire più di un sistema operativo in un singolo computer. Se in un computer è presente più di un sistema operativo da gestire, regolare i metodi di individuazione e installazione usati per accertarsi che il client di Configuration Manager sia installato solo sul sistema operativo che deve essere gestito.  
+##  <a name="bkmk_dualboot"></a> デュアル ブート コンピューター  
+ Configuration Manager では、1 台のコンピューター上の複数のオペレーティング システムを管理できません。 1 台の管理対象コンピューターに複数のオペレーティング システムがある場合は、管理対象のオペレーティング システムのみに Configuration Manager クライアントがインストールされるようにするために使用される探索およびインストール方法を調整します。  
 
-##  <a name="bkmk_IPv6"></a> Internet Protocol versione 6  
- Oltre a al protocollo IP versione 4 (IPv4), Configuration Manager supporta il protocollo IPv6 con le eccezioni seguenti:  
+##  <a name="bkmk_IPv6"></a> インターネット プロトコル バージョン 6  
+ Configuration Manager では、インターネット プロトコル バージョン 4 (IPv4) に加えて、インターネット プロトコル バージョン 6 (IPv6) をサポートしています。ただし次の例外があります。  
 
-|Funzione| Eccezione per il supporto di IPv6|  
+|機能| IPv6 のサポートの例外|  
 |--------------|-------------------------------|  
-|Punti di distribuzione basati su cloud|IPv4 è necessario per supportare Microsoft Azure e i punti di distribuzione basati su cloud.|  
-|Dispositivi mobili registrati da Microsoft Intune e Microsoft Service Connector|IPv4 è necessario per supportare i dispositivi mobili registrati da Microsoft Intune e da Microsoft Service Connector.|  
-|Individuazione rete|IPv4 è obbligatorio quando si configura un server DHCP per la ricerca nell'individuazione di rete.|  
-|Distribuzione del sistema operativo|IPv4 è necessario per supportare la distribuzione del sistema operativo.|  
-|Comunicazione del proxy di riattivazione|IPv4 è necessario per supportare i pacchetti proxy di riattivazione del client.|  
-|Windows CE|IPv4 è necessario per supportare il client di Configuration Manager nei dispositivi Windows CE.|  
+|クラウドベースの配布ポイント|Microsoft Azure とクラウド ベースの配布ポイントをサポートするには、IPv4 が必要です。|  
+|Microsoft Intune および Microsoft サービス コネクタで登録されるモバイル デバイス|Microsoft Intune および Microsoft サービス コネクタで登録されるモバイル デバイスをサポートするには、IPv4 が必要です。|  
+|ネットワーク探索|ネットワーク探索で検索するように DHCP サーバーを構成した場合は、IPv4 が必要です。|  
+|オペレーティング システムの展開|オペレーティング システムの展開をサポートするには、IPv4 が必要です。|  
+|ウェイクアップ プロキシ通信|クライアントのウェイクアップ プロキシ パケットをサポートするには、IPv4 が必要です。|  
+|Windows CE|Windows CE デバイスで Configuration Manager クライアントをサポートするには、IPv4 が必要です。|  
 
-##  <a name="bkmk_NAT"></a> Network Address Translation  
- Network Address Translation (NAT) non è supportato in Configuration Manager, a meno che il sito supporti i client presenti in Internet e il client rilevi che è connesso a Internet. Per altre informazioni sulla gestione client basata su Internet, vedere [Plan for managing Internet-based clients in System Center Configuration Manager](../../../core/clients/deploy/plan/plan-for-managing-internet-based-clients.md) (Pianificare la gestione di client basata su Internet in System Center Configuration Manager).  
+##  <a name="bkmk_NAT"></a> ネットワーク アドレス変換  
+ Configuration Manager では、ネットワーク アドレス変換 (NAT) はサポートされていません。ただし、サイトがインターネット上のクライアントをサポートしていて、クライアントがインターネットに接続されていることを検出する場合を除きます。 インターネット ベースのクライアント管理の詳細については、「[Plan for managing Internet-based clients in System Center Configuration Manager](../../../core/clients/deploy/plan/plan-for-managing-internet-based-clients.md)」(System Center Configuration Manager でインターネット ベースのクライアントを管理する計画) を参照してください。  
 
-##  <a name="bkmk_storage"></a> Tecnologia di archiviazione specializzata  
- Configuration Manager funziona con qualsiasi hardware certificato nell'Hardware Compatibility List di Windows per la versione del sistema operativo su cui è installato il componente di Configuration Manager.
+##  <a name="bkmk_storage"></a> 特殊なストレージ技術  
+ Configuration Manager は、Configuration Manager コンポーネントがインストールされているオペレーティング システムのバージョン用の Windows ハードウェア互換性リストで認定されているハードウェアで動作するように設計されています。
 
-I ruoli server del sito richiedono file system NTFS in modo che sia possibile impostare le autorizzazioni directory e file. Poiché Configuration Manager presuppone di avere la proprietà completa di un'unità logica, i sistemi del sito eseguiti in computer separati non possono condividere una partizione logica in una tecnologia di archiviazione. Tuttavia, ogni computer può usare una partizione logica separata nella stessa partizione fisica di un dispositivo di archiviazione condivisa.  
+サイト サーバーの役割では、ディレクトリとファイルのアクセス許可を設定できるようにするために、NTFS ファイル システムが必要です。 Configuration Manager は論理ドライブの完全な所有権を保持していることを前提としていて、個別のコンピューターで実行するサイト システムはストレージ技術を問わず論理パーティションを共有できないためです。 ただし、各コンピューターは、共有ストレージ デバイスの同じ物理パーティションにある個別の論理パーティションを使用できます。  
 
- **Considerazioni sul supporto:**  
+ **サポートに関する考慮事項:**  
 
--   **Storage Area Network**: una rete SAN (Storage Area Network) è supportata quando un server basato su Windows supportato è collegato direttamente al volume ospitato dalla SAN.  
+-   **記憶域ネットワーク**: 記憶域ネットワーク (SAN) は、サポート対象の Windows ベースのサーバーが、SAN でホストされているボリュームに直接接続されている場合にサポートされます。  
 
--   **Single Instance Storage**: Configuration Manager non supporta la configurazione di cartelle di pacchetto punto di distribuzione e firma in un volume compatibile con Single Instance Storage (SIS).  
+-   **単一インスタンス記憶域**: Configuration Manager では、単一インスタンス記憶域 (SIS) が有効なボリューム上の配布ポイント パッケージと署名フォルダーの構成はサポートされていません。  
 
-     La cache di un client di Configuration Manager non è supportata in un volume compatibile con SIS.  
+     さらに、Configuration Manager のクライアントのキャッシュは、SIS が有効なボリュームではサポートされていません。  
 
--   **Unità disco rimovibile**: Configuration Manager non supporta l'installazione del sistema del sito o dei client di Configuration Manager in un'unità disco rimovibile.  
-
+-   **リムーバブル ディスク ドライブ**: Configuration Manager では、リムーバブル ディスク ドライブへの Configuration Manager サイト システムまたはクライアントのインストールはサポートされていません。  

@@ -1,160 +1,156 @@
 ---
-title: Creare supporti di avvio - Configuration Manager | Microsoft Docs
-description: In Configuration Manager i supporti di avvio semplificano l&quot;installazione di una nuova versione di Windows o la sostituzione di un computer e il trasferimento delle impostazioni.
+title: "起動可能なメディアを作成する - Configuration Manager | Microsoft Docs"
+description: "Configuration Manager の起動可能なメディアは、新しいバージョンの Windows のインストールや、コンピューターの置き換えおよび設定の転送を容易にします。"
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ead79e64-1b63-4d0d-8bd5-addff8919820
-caps.latest.revision: 11
-caps.handback.revision: 0
+caps.latest.revision: "11"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: 9032698fa12bf453041ea06bf330d3b4687c2a97
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-bootable-media-with-system-center-configuration-manager"></a>Creare supporti di avvio con System Center Configuration Manager
+# <a name="create-bootable-media-with-system-center-configuration-manager"></a>System Center Configuration Manager を使用した起動可能なメディアの作成
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-I supporti di avvio in Configuration Manager contengono l'immagine d'avvio, i comandi di preavvio opzionali e i rispettivi file associati e i file di Configuration Manager. Usare i supporti preinstallati per gli scenari di distribuzione del sistema operativo seguenti:  
+Configuration Manager の起動可能なメディアには、ブート イメージ、オプションとして起動前コマンドとそれに関連付けられているファイル、および Configuration Manager ファイルが含まれています。 事前設定されたメディアは、次のオペレーティング システムの展開シナリオに使用します。  
 
--   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
+-   [新しいコンピューター (ベア メタル) に新しいバージョンの Windows をインストールする](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Sostituire un computer esistente e trasferire le impostazioni](replace-an-existing-computer-and-transfer-settings.md)  
+-   [既存のコンピューターの置き換えと設定の転送](replace-an-existing-computer-and-transfer-settings.md)  
 
-##  <a name="BKMK_CreateBootableMedia"></a> Creare supporti di avvio  
- All'avvio dei supporti di avvio, il computer di destinazione viene avviato, si connette alla rete e recupera la sequenza di attività specificata, l'immagine del sistema operativo e qualsiasi altro contenuto necessario dalla rete. Poiché la sequenza di attività non è presente sul supporto, è possibile modificare la sequenza di attività o il contenuto senza dover ricreare il supporto. I pacchetti nei supporti di avvio non sono crittografati. È necessario adottare le misure di sicurezza appropriate, ad esempio l'aggiunta di una password al supporto, per garantire che il contenuto del pacchetto sia protetto da utenti non autorizzati.  
+##  <a name="BKMK_CreateBootableMedia"></a> 起動可能なメディアの作成  
+ 起動可能なメディアを使用して起動すると、展開先のコンピューターが起動し、ネットワークに接続され、指定されたタスク シーケンス、オペレーティング システム イメージ、その他の必要なコンテンツをネットワークから取得します。 タスク シーケンスはメディアにはないため、タスク シーケンスやコンテンツを更新しても、メディアを再作成する必要はありません。 起動可能なメディアのパッケージは暗号化されていません。 メディアにパスワードを設定するなど、適切なセキュリティ手段を講じて、承認されていないユーザーからパッケージのコンテンツを守る必要があります。  
 
- Prima di creare supporti di avvio usando la Creazione guidata del supporto per la sequenza attività, assicurarsi che siano soddisfatte tutte le condizioni seguenti:  
+ タスク シーケンス メディアの作成ウィザードを使用して起動可能なメディアを作成する前に、次の条件がすべて満たされていることを確認してください。  
 
-|Attività|Descrizione|  
+|タスク|説明|  
 |----------|-----------------|  
-|Immagine d'avvio|Tenere presente quanto segue per l'immagine d'avvio da usare nella sequenza di attività per distribuire il sistema operativo:<br /><br /> - L'architettura dell'immagine di avvio deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.<br />- Verificare che l'immagine di avvio contenga i driver di archiviazione di rete e di massa necessari per eseguire il provisioning del computer di destinazione.|  
-|Creare una sequenza di attività per distribuire un sistema operativo|Come parte del supporto di avvio, è necessario specificare la sequenza di attività per distribuire il sistema operativo. - Per i passaggi necessari per creare una nuova sequenza di attività, vedere [Creare una sequenza di attività per installare un sistema operativo](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md).|  
-|Distribuire tutto il contenuto associato alla sequenza di attività|È necessario distribuire in almeno un punto di distribuzione tutto il contenuto richiesto dalla sequenza di attività. Ciò include l'immagine d'avvio e altri file di preavvio associati. La procedura guidata raccoglie le informazioni dal punto di distribuzione quando crea il supporto di avvio. È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto nel punto di distribuzione.  Per informazioni dettagliate, vedere [Informazioni sulla raccolta contenuto](../../core/plan-design/hierarchy/the-content-library.md).|  
-|Preparare l'unità USB rimovibile|Per un'unità USB rimovibile:<br /><br /> Se si usa un'unità USB rimovibile, l'unità deve essere collegata al computer in cui viene eseguita la procedura guidata e rilevabile da Windows come dispositivo rimovibile. La procedura guidata scrive direttamente nell'unità USB durante la creazione del supporto. Supporto autonomo usa un file system FAT32. Non è possibile creare supporti autonomi in un'unità flash USB il cui contenuto include un file di oltre 4 GB.|  
-|Creare una cartella di output|Per un set di CD/DVD:<br /><br /> Prima di eseguire la Creazione guidata del supporto per la sequenza di attività per creare il supporto per un set di CD o DVD, è necessario creare una cartella per i file di output creati dalla procedura guidata. Il supporto creato per un set di CD o DVD viene scritto come file con estensione iso direttamente nella cartella.|  
+|ブート イメージ|オペレーティング システムを展開するためにタスク シーケンスで使用するブート イメージについて、次の事項を考慮してください。<br /><br /> -   ブート イメージのアーキテクチャが、展開先のコンピューターのアーキテクチャに対して適切である必要があります。 たとえば、x64 のコンピューターでは、x86 または x64 のブート イメージを起動して実行できます。 ただし、x86 のコンピューターで起動して実行できるのは、x86 ブート イメージのみです。<br />-  ブート イメージに、対象コンピューターのプロビジョニングに必要なネットワーク ドライバーと大容量記憶装置ドライバーが含まれている必要があります。|  
+|オペレーティング システムを展開するタスク シーケンスを作成する|起動可能なメディアの一部として、オペレーティング システムを展開するタスク シーケンスを指定する必要があります。 新しいタスク シーケンスを作成する手順については、「[オペレーティング システムをインストールするタスク シーケンスの作成](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md)」を参照してください。|  
+|タスク シーケンスに関連付けられているすべてのコンテンツを配布する|1 つ以上の配布ポイントに対し、タスク シーケンスに必要なすべてのコンテンツを配布する必要があります。 これには、ブート イメージと、その他の関連する起動前ファイルが含まれます。 起動可能なメディアの作成時に、ウィザードによって配布ポイントから情報が収集されます。 その配布ポイントのコンテンツ ライブラリへの **読み取り** アクセス権を持っている必要があります。  詳細については、「[コンテンツ ライブラリについて](../../core/plan-design/hierarchy/the-content-library.md)」を参照してください。|  
+|リムーバブル USB ドライブを準備する|リムーバブル USB ドライブの場合:<br /><br /> リムーバブル USB ドライブを使用する場合は、ウィザードが実行されるコンピューターに USB ドライブが接続され、USB ドライブが Windows に取り外し可能なメディアとして検知されている必要があります。 メディアの作成時に、ウィザードによって USB ドライブに直接書き込まれます。 スタンドアロン メディアでは FAT32 ファイル システムが使用されています。 スタンドアロン メディアは、サイズが 4 GB を超えるコンテンツが入っている USB フラッシュ ドライブには作成できません。|  
+|出力フォルダーを作成する|CD/DVD セットの場合:<br /><br /> タスク シーケンス メディアの作成ウィザードを実行して CD または DVD セット用のメディアを作成する前に、ウィザードで作成される出力ファイル用のフォルダーを作成する必要があります。 CD または DVD セット用に作成されるメディアは、そのフォルダーに .iso ファイルとして直接書き込まれます。|  
 
- Usare la procedura seguente per creare supporti di avvio.  
+ 起動可能なメディアを作成するには、次の手順に従います。  
 
-### <a name="to-create-bootable-media"></a>Per creare il supporto di avvio  
+### <a name="to-create-bootable-media"></a>起動可能なメディアを作成するには  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス**] をクリックします。  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea supporto per sequenza di attività** per avviare la Creazione guidata del supporto per la sequenza di attività.  
+3.  [ **ホーム** ] タブの [ **作成** ] グループで [ **タスク シーケンス メディアの作成** ] をクリックして、タスク シーケンス メディアの作成ウィザードを起動します。  
 
-4.  Nella pagina **Seleziona tipo di supporto** specificare le opzioni seguenti e quindi fare clic su **Avanti**.  
+4.  [ **メディアの種類の選択** ] ページで次のオプションを指定し、[ **次へ**] をクリックします。  
 
-    -   Selezionare **Supporto di avvio**.  
+    -   [ **起動可能なメディア**] を選択します。  
 
-    -   Se si desidera solo consentire la distribuzione del sistema operativo senza richiedere l'input utente, è possibile selezionare **Consenti distribuzione automatica del sistema operativo**.  
+    -   必要に応じて、ユーザーの入力なしにオペレーティング システムを展開できるようにするには、[ **オペレーティング システムの無人展開を許可する**] を選択します。  
 
         > [!IMPORTANT]  
-        >  Quando si seleziona questa opzione, all'utente non vengono richieste informazioni sulla configurazione di rete o le sequenze attività facoltative. Tuttavia, all'utente viene richiesta una password se il supporto è configurato per la protezione con password.  
+        >  このオプションを選択すると、ユーザーはネットワーク構成情報やオプションのタスク シーケンスについてプロンプトされません。 ただし、メディアにパスワード保護が構成されている場合は、パスワードの入力を求めるメッセージがユーザーに表示されます。  
 
-5.  Nella pagina **Gestione del supporto** specificare una delle opzioni seguenti e quindi fare clic su **Avanti**.  
+5.  [ **メディア管理** ] ページで次のオプションのいずれかを指定し、[ **次へ**] をクリックします。  
 
-    -   Selezionare **Supporto dinamico** se si desidera consentire a un punto di gestione di reindirizzare il supporto a un altro punto di gestione, in base al percorso del client nei limiti del sito.  
+    -   サイト境界内のクライアントの場所に基づいて、ある管理ポイントから別の管理ポイントにメディアをリダイレクトできるようにする場合は、[ **動的メディア** ] を選択します。  
 
-    -   Selezionare **Supporto basato su sito** se si desidera che il supporto contatti solo il punto di gestione specificato.  
+    -   指定の管理ポイントにのみメディアを接続する必要がある場合は、[ **サイトベースのメディア** ] を選択します。  
 
-6.  Nella pagina **Tipo di supporto** specificare se il supporto è un'unità flash o un set di CD/DVD, quindi configurare quanto segue:  
+6.  **[メディアの種類]** ページで、メディアがフラッシュ ドライブか、または CD/DVD セットであるかを指定してから、次の構成をクリックします。  
 
     > [!IMPORTANT]  
-    >  Supporto autonomo usa un file system FAT32. Non è possibile creare supporti autonomi in un'unità flash USB il cui contenuto include un file di oltre 4 GB.  
+    >  スタンドアロン メディアでは FAT32 ファイル システムが使用されています。 スタンドアロン メディアは、サイズが 4 GB を超えるコンテンツが入っている USB フラッシュ ドライブには作成できません。  
 
-    -   Se si seleziona **Unità memoria flash USB**, è necessario specificare l'unità in cui archiviare il contenuto.  
+    -   **[USB フラッシュ ドライブ]**を選択した場合は、コンテンツを保存するドライブを指定します。  
 
-    -   Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto e il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\filedioutput.iso**  
+    -   **CD/DVD セット**を選択した場合は、メディアの容量および出力ファイルの名前とパスを指定します。 この場所に出力ファイルが書き込まれます。 例: **\\\servername\folder\outputfile.iso**  
 
-         Se la capacità del supporto non è sufficiente per archiviare l'intero contenuto, vengono creati più file ed è necessario archiviare il contenuto in più CD o DVD. Quando sono necessari più supporti, Configuration Manager aggiunge un numero di sequenza al nome di ogni file di output creato. Se insieme al sistema operativo si distribuisce un'applicazione e questa non può essere contenuta in un unico supporto, Configuration Manager archivia l'applicazione in più supporti. Quando il supporto autonomo viene eseguito Configuration Manager chiede all'utente il supporto successivo contenente l'applicazione.  
-
-        > [!IMPORTANT]  
-        >  Se si seleziona un'immagine iso esistente, la Creazione guidata del supporto per la sequenza di attività elimina l'immagine dall'unità o dalla condivisione non appena si passa alla pagina successiva della procedura guidata. L'immagine esistente viene eliminata, anche se si annulla la procedura guidata.  
-
-     Fare clic su **Avanti**.  
-
-7.  Nella pagina **Sicurezza** specificare le opzioni seguenti e quindi fare clic su **Avanti**.  
-
-    -   Selezionare la casella di controllo **Abilita supporto per computer sconosciuti** per consentire al supporto di distribuire un sistema operativo a un computer non gestito da Configuration Manager. Non sono presenti record di questi computer nel database di Configuration Manager.  
-
-         I computer sconosciuti includono i seguenti:  
-
-        -   Computer in cui non è installato il client di Configuration Manager  
-
-        -   Computer che non sono stati importati in Configuration Manager  
-
-        -   Computer che non sono stati rilevati da Configuration Manager  
-
-    -   Selezionare la casella di controllo **Proteggi supporto con password** e immettere una password complessa per proteggere il supporto da accesso non autorizzato. Quando si specifica una password, l'utente deve immettere la password per usare il supporto di avvio.  
+         メディアにコンテンツ全体を保存しきれない場合は、複数のファイルが作成されます。この場合、複数の CD または DVD を使用してコンテンツを保存する必要があります。 複数のメディアが必要な場合は、Configuration Manager が作成する各出力ファイルの名前に連番が付けられます。 さらに、オペレーティング システムと共にアプリケーションを展開し、アプリケーションが 1 つのメディアに収まらない場合、Configuration Manager は複数のメディアでアプリケーションを保存します。 スタンドアロン メディアを実行している場合、Configuration Manager は、アプリケーションを保存する次のメディアの指定をユーザーに求めます。  
 
         > [!IMPORTANT]  
-        >  Come procedura consigliata di sicurezza, assegnare sempre una password per proteggere il supporto di avvio.  
+        >  既存の .iso イメージを選択した場合は、タスク シーケンス メディア ウィザードの次のページに進むと、ドライブまたは共有フォルダーからイメージが削除されます。 既存のイメージは、ウィザードをキャンセルしても削除されます。  
 
-    -   Per le comunicazioni HTTP, selezionare **Crea certificato del supporto autofirmato**e quindi specificare la data di inizio e di scadenza del certificato.  
+     **[次へ]**をクリックします。  
 
-    -   Per le comunicazioni HTTPS, selezionare **Importa certificato PKI**e quindi specificare il certificato da importare e la relativa password.  
+7.  [ **セキュリティ** ] ページで次のオプションを指定し、[ **次へ**] をクリックします。  
 
-         Per altre informazioni su questo certificato client usato per le immagini di avvio, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
+    -   メディアが Configuration Managerで管理されていないコンピューターにオペレーティング システムを展開できるようにするには、[**不明なコンピューターのサポートを有効にする**] チェックボックスをオンにします。 これらのコンピューターのレコードは Configuration Manager データベースには存在しません。  
 
-    -   **Affinità utente dispositivo**: per supportare la gestione basata sugli utenti in Configuration Manager, specificare come si vuole che il supporto associ gli utenti al computer di destinazione. Per altre informazioni su come la distribuzione del sistema operativo supporti l'affinità utente dispositivo, vedere [Associare gli utenti a un computer di destinazione](../get-started/associate-users-with-a-destination-computer.md).  
+         不明なコンピューターには次のようなものがあります。  
 
-        -   Specificare **Consenti affinità utente dispositivo con approvazione automatica** se si desidera che il supporto associ automaticamente gli utenti al computer di destinazione. Questa funzionalità si basa sulle azioni della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
+        -   Configuration Manager クライアントがインストールされていないコンピューター  
 
-        -   Specificare **Consenti approvazione amministratore in sospeso per affinità utente dispositivo** se si desidera che il supporto associ gli utenti al computer di destinazione dopo la concessione dell'approvazione. Questa funzionalità si basa sull'ambito della sequenza di attività che distribuisce il sistema operativo.  In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione, ma attende l'approvazione di un utente amministratore prima di distribuire il sistema operativo.  
+        -   Configuration Manager にインポートされていないコンピューター  
 
-        -   Specificare **Non consentire affinità utente dispositivo** se non si desidera che il supporto associ gli utenti al computer di destinazione. In questo scenario, la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.  
+        -   Configuration Manager で検出されていないコンピューター  
 
-8.  Nella pagina **Immagine di avvio** specificare le opzioni seguenti e quindi fare clic su **Avanti**.  
+    -   メディアを不正アクセスから保護するため、[ **メディアをパスワードで保護する** ] チェック ボックスをオンにし、強力なパスワードを入力します。 パスワードを指定すると、ユーザーは起動可能なメディアを使用するためにパスワードを入力する必要があります。  
+
+        > [!IMPORTANT]  
+        >  セキュリティのベスト プラクティスとして、起動可能なメディアの保護に役立つパスワードを常に割り当てることをお勧めします。  
+
+    -   HTTP 接続用には、[ **自己署名入りメディア証明書を作成する**] を選択し、証明書の開始日と有効期限を指定します。  
+
+    -   HTTPS 接続用には、[ **PKI 証明書のインポート**] を選択し、インポートする証明書とそのパスワードを指定します。  
+
+         ブート イメージで使用される、このクライアント証明書の詳細については、[PKI 証明書の要件](../../core/plan-design/network/pki-certificate-requirements.md)を参照してください。  
+
+    -   **ユーザーとデバイスのアフィニティ**: Configuration Manager でユーザー中心の管理をサポートするため、ユーザーと対象コンピューターをメディアによって関連付ける方法を指定します。 オペレーティング システムの展開でユーザーとデバイスのアフィニティをサポートする方法については、「[展開先のコンピューターにユーザーを関連付ける](../get-started/associate-users-with-a-destination-computer.md)」をご覧ください。  
+
+        -   メディアがユーザーと対象コンピューターを自動的に関連付けるようにするには、[ **ユーザーとデバイスのアフィニティを自動的に承認する** ] を選択します。 この機能は、オペレーティング システムを展開するタスク シーケンスのアクションに基づきます。 このシナリオでは、タスク シーケンスが、対象コンピューターにオペレーティング システムを展開するときに、指定のユーザーと対象コンピューターの関係を作成します。  
+
+        -   メディアが承認を待ってユーザーと対象コンピューターを関連付けるようにするには、[ **ユーザーとデバイスのアフィニティを管理者の承認待ちにする** ] を選択します。 この機能は、オペレーティング システムを展開するタスク シーケンスのスコープに基づきます。  このシナリオでは、タスク シーケンスは、指定のユーザーと対象コンピューターの関係を作成しますが、オペレーティング システムを展開する前に管理ユーザーからの承認を待機します。  
+
+        -   メディアがユーザーと対象コンピューターを関連付けないようにするには、[ **ユーザーとデバイスのアフィニティを許可しない** ] を選択します。 このシナリオでは、タスク シーケンスは、オペレーティング システムを展開するときにユーザーと対象コンピューターを関連付けません。  
+
+8.  [ **ブート イメージ** ] ページで、次のオプションを指定してから、[ **次へ**] をクリックします。  
 
     > [!IMPORTANT]  
-    >  L'architettura dell'immagine di avvio distribuita deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.  
+    >  配布されているブート イメージのアーキテクチャが、対象コンピューターのアーキテクチャに適切である必要があります。 たとえば、x64 のコンピューターでは、x86 または x64 のブート イメージを起動して実行できます。 ただし、x86 のコンピューターで起動して実行できるのは、x86 ブート イメージのみです。  
 
-    -   Nella casella **Immagine di avvio** specificare l'immagine di avvio per avviare il computer di destinazione.  
+    -   [ **ブート イメージ** ] ボックスで、対象コンピューターを起動するブート イメージを指定します。  
 
-    -   Nella casella **Punto di distribuzione** specificare il punto di distribuzione in cui si trova l'immagine di avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
+    -   [ **配布ポイント** ] ボックスで、ブート イメージが配置されている配布ポイントを指定します。 配布ポイントからブート イメージが取得されてメディアに書き込まれます。  
 
         > [!NOTE]  
-        >  È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto nel punto di distribuzione.  
+        >  配布ポイントのコンテンツ ライブラリに対し、 **読み取り** アクセス権を持っている必要があります。  
 
-    -   Se si crea un supporto di avvio basato su sito nella pagina **Gestione del supporto** della procedura guidata, specificare un punto di gestione da un sito primario nella casella **Punto di gestione** .  
+    -   ウィザードの **[メディア管理]** ページでサイトベースの起動可能なメディアを作成する場合は、 **[管理ポイント]** ボックスでプライマリ サイトの管理ポイントを指定します。  
 
-    -   Se si crea un supporto di avvio dinamico nella pagina **Gestione del supporto** della procedura guidata, specificare i punti di gestione del sito primario da usare e un ordine di priorità per le comunicazioni iniziali in **Punti di gestione associati**.  
+    -   ウィザードの **[メディア管理]** ページで動的起動可能メディアを作成する場合は、 **[関連付けられている管理ポイント]**ボックスで、使用するプライマリ サイトの管理ポイントと、初期通信での優先順位を指定します。  
 
-9. Nella pagina **Personalizzazione** specificare le seguenti opzioni e quindi fare clic su **Avanti**.  
+9. [ **カスタマイズ** ] ページで、次のオプションを指定してから、[ **次へ**] をクリックします。  
 
-    -   Specificare le variabili usate dalla sequenza di attività per distribuire il sistema operativo.  
+    -   オペレーティング システムを展開するためにタスク シーケンスで使用する変数を指定します。  
 
-    -   Specificare i comandi preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio sono costituiti da uno script o da un eseguibile in grado di interagire con l'utente in Windows PE prima che venga eseguita la sequenza di attività per l'installazione del sistema operativo. Per altre informazioni vedere [Comandi di preavvio del supporto per sequenza attività](../understand/prestart-commands-for-task-sequence-media.md).  
+    -   タスク シーケンスを実行する前に実行する起動前コマンドを指定します。 起動前コマンドは、タスク シーケンスを実行してオペレーティング システムをインストールする前に、Windows PE でユーザーと対話できるスクリプトまたは実行可能ファイルです。 詳細については、「[タスク シーケンス メディアの起動前コマンド](../understand/prestart-commands-for-task-sequence-media.md)」を参照してください。  
 
         > [!TIP]  
-        >  Durante la creazione del supporto delle sequenza di attività, tale sequenza scrive l'ID del pacchetto e la riga di comando di preavvio, incluso il valore per eventuali variabili della sequenza di attività, nel file di registro CreateTSMedia.log nel computer che esegue la console di Configuration Manager. È possibile rivedere questo file di registro per verificare il valore per le variabili della sequenza di attività.  
+        >  タスク シーケンス メディアの作成中に、パッケージ ID と起動前コマンドライン (タスク シーケンスの変数の値を含む) が、Configuration Manager コンソールを実行しているコンピューターの CreateTSMedia.log というログファイルに書き込まれます。 このログ ファイルで、タスク シーケンスの変数の値を確認できます。  
 
-         Se necessario, selezionare la casella di controllo **Includi file per il comando di preavvio** per includere eventuali file richiesti dal comando di preavvio.  
+         必要に応じて、[ **起動前コマンドにファイルを含める** ] チェック ボックスをオンにして、起動前コマンドに必要なファイルを含めます。  
 
-10. Completare la procedura guidata.  
+10. ウィザードを完了します。  
 
-## <a name="create-bootable-media-on-a-usb-drive-from-a-network-share"></a>Creare supporti di avvio in un'unità USB da una condivisione di rete
-Le informazioni contenute in questa sezione consentono di creare supporti di avvio in un'unità memoria flash USB quando l'unità non è connessa al computer che esegue la console di Configuration Manager. Per creare il supporto di avvio nell'unità USB, è possibile creare il supporto di avvio della sequenza di attività, montare l'immagine ISO e trasferire i file dall'immagine ISO all'unità USB.
+## <a name="create-bootable-media-on-a-usb-drive-from-a-network-share"></a>ネットワーク共有から USB ドライブで起動可能なメディアを作成する
+このセクションの情報は、Configuration Manager コンソールを実行しているコンピューターに USB フラッシュ ドライブが接続されているときに、そのフラッシュ ドライブで起動可能なメディアを作成する場合に役立ちます。 USB ドライブに起動可能なメディアを作成する場合、タスク シーケンス起動メディアを作成して、ISO をマウントし、ISO から USB ドライブにファイルを転送することができます。
 
-1. [Creare il supporto di avvio della sequenza di attività](#to-create-task-boobable-media). Nella pagina **Tipo di supporto** selezionare **CD/DVD impostato**. La procedura guidata scrive i file di output nella posizione specificata. Ad esempio: **\\\nomeserver\cartella\filedioutput.iso**.  
-2. Preparare l'unità USB rimovibile. L'unità deve essere formattata, vuota e di avvio.
-3. Montare l'immagine ISO dal percorso di condivisione e trasferire i file dall'immagine ISO all'unità USB.
+1. [タスク シーケンス起動メディアを作成します](#to-create-task-boobable-media)。 **[メディアの種類]** ページで、**[CD/DVD セット]** を選択します。 ウィザードで指定した場所に出力ファイルが書き込まれます。 たとえば、**\\\servername\folder\outputfile.iso** のようになります。  
+2. リムーバブル USB ドライブを準備します。 ドライブは書式設定され、空であり、かつ、起動可能である必要があります。
+3. 共有の場所から ISO をマウントし、ISO イメージから USB ドライブにファイルを転送します。
 
-## <a name="next-steps"></a>Passaggi successivi  
-[Usare i supporti di avvio per distribuire Windows in rete](use-bootable-media-to-deploy-windows-over-the-network.md)  
-
+## <a name="next-steps"></a>次のステップ  
+[起動可能なメディアを使用したネットワーク経由での Windows の展開](use-bootable-media-to-deploy-windows-over-the-network.md)  

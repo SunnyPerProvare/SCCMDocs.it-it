@@ -1,341 +1,337 @@
 ---
-title: Usare Asset Intelligence | Microsoft Docs
-description: "Eseguire attività con Asset Intelligence in System Center Configuration Manager."
+title: "資産インテリジェンスの使用 | Microsoft Docs"
+description: "System Center Configuration Manager で資産インテリジェンスの一般的なタスクを実行します。"
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e8159bd9-5c2b-4d25-82f9-78fcfd732ba9
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
-ms.openlocfilehash: 6bfbfbcce6ef5c38164e161d197f5a3fb4b4e353
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 17168e26f13340847928f6e3623115cd4b55997b
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-use-asset-intelligence-in-system-center-configuration-manager"></a>Come usare Asset Intelligence in System Center Configuration Manager
+# <a name="how-to-use-asset-intelligence-in-system-center-configuration-manager"></a>System Center Configuration Manager で資産インテリジェンスを使用する方法
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Questo argomento contiene informazioni che consentono di gestire le attività tipiche di Asset Intelligence nella gerarchia di System Center Configuration Manager:  
+このトピックでは、System Center Configuration Manager 階層で資産インテリジェンスの一般的なタスクを管理する方法について説明します。  
 
-##  <a name="BKMK_ViewInformation"></a> Visualizzare le informazioni di Asset Intelligence  
- È possibile visualizzare le informazioni di Asset Intelligence nella home page e nei report di **Asset Intelligence** .  
+##  <a name="BKMK_ViewInformation"></a> 資産インテリジェンス情報の閲覧  
+ 資産インテリジェンスの情報は [資産インテリジェンス] **** ホームページと資産インテリジェンスレポートで閲覧することができます。  
 
-###  <a name="BKMK_AssetIntelligenceHomePage"></a> Home page di Asset Intelligence  
- La home page di **Asset Intelligence** visualizza un dashboard di riepilogo delle informazioni del catalogo di Asset Intelligence. Nella home page è possibile visualizzare informazioni sulla sincronizzazione del catalogo e sullo stato del software di inventario. La home page di **Asset Intelligence** è divisa nelle sezioni seguenti:  
+###  <a name="BKMK_AssetIntelligenceHomePage"></a> 資産インテリジェンス ホーム ページ  
+ 資産インテリジェンス **** ホーム ページには、資産インテリジェンス カタログ情報の概要ダッシュボードが表示されます。 ホーム ページでは、カタログの同期やインベントリされたソフトウェア ステータスなどの情報を閲覧できます。 資産インテリジェンス **** ホーム ページは、次のセクションに分かれています。  
 
--   **Sincronizzazione catalogo**: fornisce informazioni sullo stato di abilitazione di Asset Intelligence, sullo stato corrente del punto di sincronizzazione di Asset Intelligence, sulla pianificazione della sincronizzazione, sul fatto che il resoconto delle licenze cliente sia stato o meno importato, sulla data dell'ultimo aggiornamento dello stato e sull'ora per il successivo aggiornamento pianificato, nonché sul numero di modifiche apportate dopo l'installazione del sistema del sito del punto di sincronizzazione di Asset Intelligence.  
+-   **カタログ同期**: 資産インテリジェンスが有効になっているかどうか、資産インテリジェンス同期ポイントの現在の状態、同期スケジュール、カスタマー ライセンス ステートメントがインポートされているかどうか、前回状態が更新された日時と次回の更新予定の日時、資産インテリジェンス同期ポイント サイト システムがインストールされてから加えられた変更の数が情報として提供されます。  
 
     > [!NOTE]  
-    >  La sezione relativa alla sincronizzazione del catalogo di Asset Intelligence nella home page di **Asset Intelligence** viene visualizzata solo se è stato installato un ruolo del sistema del sito del punto di sincronizzazione di Asset Intelligence.  
+    >  資産インテリジェンス **** ホーム ページの [資産インテリジェンス カタログ同期] セクションが表示されるのは、資産インテリジェンス同期ポイント サイト システムの役割をインストールした場合のみです。  
 
--   **Stato software di inventario**: fornisce il numero e la percentuale dei software di inventario, le categorie software e le famiglie software identificate da Microsoft, identificate da un utente amministratore, con identificazione online in sospeso o non identificate e non in sospeso. Le informazioni visualizzate in formato di tabella mostrano i conteggi, mentre le informazioni visualizzate nel grafico mostrano le percentuali.  
+-   **インベントリされたソフトウェアのステータス**: インベントリされたソフトウェアの数と割合、ソフトウェア カテゴリ、ソフトウェア ファミリが、確認状態と共に表示されます。確認状態には、[Microsoft により確認済み]、[管理者により確認済み]、[オンライン確認保留中]、[未確認で確認待ちになっていない] があります。 各々の数は表形式で、各々の割合は図形式で示されます。  
 
- Attenersi alla procedura seguente per visualizzare le informazioni di Asset Intelligence nella home page di **Asset Intelligence** .  
+ 資産インテリジェンス **** ホームページで、資産インテリジェンの情報を表示するには、次の手順に従います。  
 
-##### <a name="to-view-asset-intelligence-information-on-the-asset-intelligence-home-page"></a>Per visualizzare le informazioni di Asset Intelligence nella home page di Asset Intelligence  
+##### <a name="to-view-asset-intelligence-information-on-the-asset-intelligence-home-page"></a>資産インテリジェンス ホームページで、資産インテリジェンの情報を表示するには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**. Verranno visualizzati i report di Asset Intelligence.  
+2.  [資産とコンプライアンス] **** ワークスペースで [資産インテリジェンス] ****をクリックします。 資産インテリジェンス レポートが表示されます。  
 
-###  <a name="BKMK_AssetIntelligenceReports"></a> Report di Asset Intelligence  
- Sono disponibili oltre 60 report di Asset Intelligence che mostrano le informazioni raccolte da Asset Intelligence. Molti di questi report sono collegati a report più specifici in cui è possibile eseguire una query per informazioni generali e il drill-down per informazioni più dettagliate. I report di Asset Intelligence si trovano nella console di Configuration Manager, nell'area di lavoro **Monitoraggio** del nodo **Report**. I report forniscono informazioni su hardware, gestione delle licenze e software. Per altre informazioni sui report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
+###  <a name="BKMK_AssetIntelligenceReports"></a> 資産インテリジェンス レポート  
+ 資産インテリジェンスによって収集された情報を表示する資産インテリジェンス レポートには 60 種類以上があります。 これらのレポートの多くは、さらに詳細なレポートにリンクしており、全般的な情報を検索したり、詳細情報にドリルダウンしたりできます。 資産インテリジェンス レポートは、Configuration Manager コンソールの **[監視]** ワークスペースの **[レポート]** ノードの下に位置します。 レポートはハードウェア、ライセンス管理、ソフトウェアに関する情報を示します。 Configuration Manager でのレポートに関して詳しくは、「[System Center Configuration Manager のレポート](../../../../core/servers/manage/reporting.md)」を参照してください。  
 
 > [!NOTE]  
->  La precisione delle informazioni su licenze e quantità dei titoli software installati visualizzate nei report di Asset Intelligence può variare rispetto al numero effettivo di titoli software installati o licenze in uso nell'ambiente a causa delle complesse dipendenze e limitazioni associate all'esecuzione dell'inventario delle informazioni sulle licenze per i titoli software installati in ambienti aziendali. I report di Asset Intelligence non devono essere usati come unica fonte per determinare la conformità delle licenze software acquistate.  
+>  エンタープライズ環境でインストールされたソフトウェア タイトルのソフトウェア ライセンス情報のインベントリには複雑な依存関係や限界があるため、資産インテリジェンス レポートに表示されているインストールされたソフトウェア タイトルの数量およびライセンス情報は、その環境で使用される実際のソフトウェア タイトルやライセンスの数量と異なる場合があります。 情報インテリジェンス レポートのみに基づいて、購入したソフトウェア ライセンスのコンプライアンスを判断することは避けます。  
 
- Attenersi alla procedura seguente per visualizzare le informazioni di Asset Intelligence usando i report di Asset Intelligence.  
+ 資産インテリジェンスレポートを使用して資産インテリジェンス情報を表示するには、次の手順に従います。  
 
-##### <a name="to-view-collected-asset-intelligence-information-by-using-asset-intelligence-reports"></a>Per visualizzare le informazioni di Asset Intelligence raccolte usando i report di Asset Intelligence  
+##### <a name="to-view-collected-asset-intelligence-information-by-using-asset-intelligence-reports"></a>資産インテリジェンスレポートを使用して収集された資産インテリジェンス情報を表示するには  
 
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
+1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
 
-2.  Nell'area di lavoro **Monitoraggio** espandere **Report**, espandere **Report**e fare clic su **Asset Intelligence**. Verranno visualizzati i report di Asset Intelligence.  
+2.  [監視] **** ワークスペースで [レポート] ****、そして [レポート] ****を展開し、[資産インテリジェンス] ****をクリックします。 資産インテリジェンス レポートが表示されます。  
 
     > [!WARNING]  
-    >  Se nel nodo **Report** non c'è alcuna cartella di report, verificare di aver configurato la creazione di report. Per altre informazioni, vedere [Configurazione della creazione di report in System Center Configuration Manager](../../../../core/servers/manage/configuring-reporting.md).  
+    >  [レポート] **** ノードの下にレポート フォルダーが存在しない場合は、レポートを構成したか確認します。 詳しくは、「[System Center Configuration Manager におけるレポートの構成](../../../../core/servers/manage/configuring-reporting.md)」を参照してください。  
 
-3.  Selezionare il report di Asset Intelligence che si vuole eseguire e quindi nel gruppo **Gruppo Report** della scheda **Home** fare clic su **Esegui**.  
+3.  実行する試算インテリジェンス レポートを選択し、[ホーム] **** タブの [レポート グループ] **** セクションで、[実行] ****をクリックします。  
 
-##  <a name="BKMK_SynchronizeTheCatalog"></a> Sincronizzare il catalogo di Asset Intelligence  
- È possibile sincronizzare il catalogo di Asset Intelligence locale con System Center Online per recuperare la categorizzazione più recente dei titoli software. Quando si richiede manualmente la sincronizzazione del catalogo con System Center Online, potrebbero essere necessari 15 minuti o più per completare il processo di sincronizzazione con System Center Online. Configuration Manager aggiorna l'impostazione **Ultimo aggiornamento** nella home page di **Asset Intelligence** con l'ora attuale in cui la sincronizzazione è stata completata correttamente.  
+##  <a name="BKMK_SynchronizeTheCatalog"></a> 資産インテリジェンス カタログの同期  
+ ローカルの資産インテリジェンス カタログを System Center Online と同期して、最新のソフトウェア タイトルのカテゴリを取得することができます。 System Center Online とのカタログ同期を手動で要求すると、System Center Online との同期プロセスが完了するのに 15 分以上かかる場合があります。 Configuration Manager は、同期が問題なく完了した時刻で、**資産インテリジェンス** ホーム ページの **[最後の更新完了日]** の設定を更新します。  
 
 > [!NOTE]  
->  È prima necessario installare un ruolo del sistema del sito del punto di sincronizzazione di Asset Intelligence usando le procedure. Per informazioni sull'installazione di un punto di sincronizzazione di Asset Intelligence, vedere[Configurazione di Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md).  
+>  この手順を使用する前に、まず資産インテリジェンス同期ポイント サイト システムの役割をインストールする必要があります。 資産インテリジェンス同期ポイントのインストールの詳細については、「[System Center Configuration Manager での資産インテリジェンスの構成](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md)」を参照してください。  
 
- Attenersi alla procedura seguente per creare una pianificazione della sincronizzazione per il catalogo di Asset Intelligence.  
+ 資産インテリジェンス カタログの同期スケジュールを作成するには、次の手順に従います。  
 
-#### <a name="to-create-a-synchronization-schedule-for-the-asset-intelligence-catalog"></a>Per creare una pianificazione della sincronizzazione per il catalogo di Asset Intelligence  
+#### <a name="to-create-a-synchronization-schedule-for-the-asset-intelligence-catalog"></a>資産インテリジェンス カタログの同期スケジュールを作成するには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**.  
+2.  [資産とコンプライアンス] **** ワークスペースで [資産インテリジェンス] ****をクリックします。  
 
-3.  Nel gruppo **Crea** della scheda **Home** fare clic su **Sincronizza**e quindi su **Pianifica sincronizzazione**.  
+3.  [ホーム] **** タブの [作成] **** グループで[同期] ****、そして [同期のスケジュール] ****をクリックします。  
 
-4.  Nella finestra di dialogo **Pianificazione punto di sincronizzazione di Asset Intelligence** selezionare **Abilita sincronizzazione su una pianificazione**e quindi configurare una pianificazione semplice o personalizzata.  
+4.  [資産インテリジェンス同期ポイントのスケジュール] **** ダイアログ ボックスで [スケジュールに従った同期を有効にする] ****を選択し、シンプルまたはカスタムのスケジュールを構成します。  
 
-5.  Fare clic su **OK** per salvare le modifiche.  
+5.  [OK] をクリックして変更を保存します。 ****  
 
     > [!NOTE]  
-    >  Per informazioni sulla pianificazione della sincronizzazione, inclusa la sincronizzazione pianificata successiva, vedere il nodo **Asset Intelligence** nell'area di lavoro **Asset e conformità** nel sito principale della gerarchia.  
+    >  スケジュールされた次の同期を含め、同期スケジュールについては、階層のトップレベル サイトで [資産とコンプライアンス] **** ワークスペースの [資産インテリジェンス] **** ノードを閲覧します。  
 
- Attenersi alla procedura seguente per sincronizzare manualmente il catalogo di Asset Intelligence.  
+ 資産インテリジェンス カタログを手動で同期するには、次の手順に従います。  
 
 > [!WARNING]  
->  System Center Online accetta solo una richiesta di sincronizzazione manuale in un periodo di 12 ore.  
+>  System Center Online は12時間に手動による同期要求を 1 つだけ受け付けます。  
 
-###  <a name="BKMK_ManuallySynchronizeCatalog"></a> Per sincronizzare manualmente il catalogo di Asset Intelligence  
+###  <a name="BKMK_ManuallySynchronizeCatalog"></a> 資産インテリジェンス カタログを手動で同期するには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**.  
+2.  [資産とコンプライアンス] **** ワークスペースで [資産インテリジェンス] ****をクリックします。  
 
-3.  Nel gruppo **Crea** della scheda **Home** fare clic su **Sincronizza**, quindi su **Sincronizza catalogo di Asset Intelligence**e infine su **OK**.  
+3.  [ホーム] **** タブの [作成] **** グループで、[同期] ****、[資産インテリジェンス カタログの同期] ****を順にクリックして [OK] ****をクリックします。  
 
-##  <a name="BKMK_CustomizeCatalog"></a> Personalizzare il catalogo di Asset Intelligence  
- Le informazioni di categorizzazione del catalogo di Asset Intelligence ricevute da System Center Online vengono archiviate nel database del sito con autorizzazioni di sola lettura e non possono essere modificate o eliminate. Tuttavia, è possibile creare, modificare ed eliminare categorie software, famiglie software, etichette software e informazioni del catalogo sui requisiti hardware personalizzate. È quindi possibile usare dati di categorizzazione personalizzati invece delle informazioni fornite da System Center Online per le informazioni sui titoli software esistenti o definite dall'utente. Quando si modificano o si aggiungono informazioni di categorizzazione, le informazioni del catalogo vengono considerate definite dall'utente. Le informazioni di categorizzazione definite dall'utente vengono archiviate in tabelle di database diverse rispetto alle informazioni del catalogo convalidate.  
+##  <a name="BKMK_CustomizeCatalog"></a> 資産インテリジェンス カタログのカスタマイズ  
+ System Center Online から受信した資産インテリジェンス カタログのカテゴリ分類の情報は、読み取りのアクセス許可でサイト データベースに保存され、変更および削除することはできません。 しかし、カスタムのソフトウェア カテゴリ、ソフトウェア ファミリー、ソフトウェア ラベル、およびハードウェア要求カタログ情報については、作成、更新、削除ができます。 そして、既存またはカスタムのソフトウェア タイトル情報に対して、System Center Online が提供する情報ではなくユーザー定義のカテゴリ分類データを使用できます。 カテゴリ分類の情報を変更したり、追加したりすると、ユーザー定義のカタログ情報とみなされます。 ユーザー定義のカテゴリ分類の情報は、検証されたカタログ情報とは異なるデータベース テーブルに格納されます。  
 
-###  <a name="BKMK_SoftwareCategories"></a> Categorie software  
- Le categorie software di Asset Intelligence vengono usate per categorizzare in modo generale i titoli software di inventario e anche come raggruppamenti generali di famiglie software più specifiche. Un esempio di categoria software potrebbe essere "aziende del settore energetico" e una famiglia software all'interno di tale categoria software potrebbe essere "petrolio e gas" o "energia idroelettrica". Molte categorie software sono predefinite nel catalogo di Asset Intelligence ed è possibile creare altre categorie definite dall'utente per definire ulteriormente il software di inventario. Lo stato di convalida di tutte le categorie software predefinite è sempre **Convalidato**, mentre per le informazioni sulle categorie software personalizzate aggiunte al catalogo di Asset Intelligence lo stato è **Definito da utente**.  
+###  <a name="BKMK_SoftwareCategories"></a> ［ソフトウェア カテゴリ］  
+ 資産インテリジェンス ソフトウェア カテゴリは、インベントリされたソフトウェア タイトルを広範にカテゴリ化するために使用しますが、詳細なソフトウェア ファミリに分類する高レベルのグループ化機能としても使用できます。 たとえば、ソフトウェア カテゴリがエネルギー関連企業である場合、このソフトウェア カテゴリ内のソフトウェア ファミリとして石油ガスまたは水力発電などを設定できます。 多くのソフトウェア カテゴリは、資産インテリジェンス カタログ内で定義されていますが、インベントリされたソフトウェアを詳細に定義するために、ユーザー定義済みの追加的なカテゴリを作成することもできます。 事前定義されたソフトウェア カテゴリが [検証済み] ****となる一方で、資産インテリジェンス カタログに追加したカスタムのソフトウェア カテゴリ情報は [ユーザー定義] ****となります。  
 
- Attenersi alla procedura seguente per creare una categoria software definita dall'utente.  
+ ユーザー定義のソフトウェア カテゴリを作成するには、次の手順に従います。  
 
-##### <a name="to-create-a-user-defined-software-category"></a>Per creare una categoria software definita dall'utente  
+##### <a name="to-create-a-user-defined-software-category"></a>ユーザー定義のソフトウェア カテゴリを作成するには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**e quindi su **Catalogo**.  
+2.  [資産とコンプラインス] **** ワークスペースで、[資産インテリジェンス] ****をクリックし、[カタログ] ****をクリックします。  
 
-3.  Nel gruppo **Crea** della scheda **Home** fare clic su **Crea categoria software**.  
+3.  [ホーム] **** タブの [作成] **** グループで [ソフトウェア カテゴリの作成] ****をクリックします。  
 
-4.  Nella pagina **Generale** immettere un nome e una descrizione facoltativa per la nuova categoria software.  
-
-    > [!NOTE]  
-    >  Lo stato di convalida di tutte le nuove categorie software personalizzate è sempre impostato su **Definito da utente**.  
-
-     Fare clic su **Avanti**.  
-
-5.  Nella pagina **Riepilogo** verificare le impostazioni e quindi fare clic su **Avanti**.  
-
-6.  Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata.  
-
-###  <a name="BKMK_SoftwareFamilies"></a> Famiglie software  
- Le famiglie software di Asset Intelligence vengono usate per definire ulteriormente i titoli software di inventario all'interno delle categorie software. Un esempio di categoria software potrebbe essere "aziende del settore energetico" e una famiglia software all'interno di tale categoria software potrebbe essere "petrolio e gas" o "energia idroelettrica". Molte famiglie software sono predefinite nel catalogo di Asset Intelligence ed è possibile creare altre famiglie definite dall'utente per definire il software di inventario. Lo stato di convalida di tutte le famiglie software predefinite è sempre **Convalidato**, mentre per le informazioni sulle famiglie software personalizzate aggiunte al catalogo di Asset Intelligence lo stato è **Definito da utente**.  
-
- Attenersi alla procedura seguente per creare una famiglia software definita dall'utente.  
-
-##### <a name="to-create-a-user-defined-software-family"></a>Per creare una famiglia software definita dall'utente  
-
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
-
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**e quindi su **Catalogo**.  
-
-3.  Nel gruppo **Crea** della scheda **Home** fare clic su **Crea famiglia software**.  
-
-4.  Nella pagina **Generale** immettere un nome e una descrizione facoltativa per la nuova famiglia software.  
+4.  [全般] **** ページで、新しいソフトウェア カテゴリの名前と、オプションで説明を入力します。  
 
     > [!NOTE]  
-    >  Lo stato di convalida di tutte le nuove famiglie software personalizzate è sempre impostato su **Definito da utente**.  
+    >  新しいカスタムのソフトウェア カテゴリの検証状態は常に、[ユーザー定義] ****になります。  
 
-5.  Nella pagina **Riepilogo** verificare le impostazioni e quindi fare clic su **Avanti**.  
+     **[次へ]**をクリックします。  
 
-6.  Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata.  
+5.  [概要] **** ページで設定を確認し、[次へ] ****をクリックします。  
 
-###  <a name="BKMK_SoftwareLabels"></a> Etichette software  
- Le etichette software di Asset Intelligence personalizzate consentono di creare filtri che è possibile usare per raggruppare i titoli software e visualizzarli nei report di Asset Intelligence. Ad esempio, è possibile creare un'etichetta software denominata shareware, associarla a diverse applicazioni e quindi eseguire un report che mostra tutti i titoli con l'etichetta software shareware. Lo stato di convalida è **Definito da utente** per tutte le etichette software personalizzate aggiunte al catalogo di Asset Intelligence.  
+6.  [ **完了** ] ページで [ **閉じる** ] をクリックして、ウィザードを閉じます。  
 
- Attenersi alla procedura seguente per creare un'etichetta personalizzata definita dall'utente.  
+###  <a name="BKMK_SoftwareFamilies"></a> ［ソフトウェア ファミリ］  
+ 資産インテリジェンス ソフトウェア ファミリは、ソフトウェア カテゴリ内でインベントリされたソフトウェア タイトルを詳細に定義するために使用します。 たとえば、ソフトウェア カテゴリがエネルギー関連企業である場合、このソフトウェア カテゴリ内のソフトウェア ファミリとして石油ガスまたは水力発電などを設定できます。 多くのソフトウェア ファミリーは、資産インテリジェンス カタログ内で定義されていますが、インベントリされたソフトウェアを定義するために、ユーザー定義のファミリーを追加で作成することもできます。 事前定義されたソフトウェア ファミリーが [検証済み] ****になる一方で、資産インテリジェンス カタログに追加したカスタムのソフトウェア ファミリー情報は [ユーザー定義] ****になります。  
 
-##### <a name="to-create-a-user-defined-software-label"></a>Per creare un'etichetta software definita dall'utente  
+ ユーザー定義のソフトウェア ファミリーを作成するには、次の手順に従います。  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+##### <a name="to-create-a-user-defined-software-family"></a>ユーザー定義のソフトウェア ファミリーを作成するには  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**e quindi su **Catalogo**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
 
-3.  Nel gruppo **Crea** della scheda **Home** fare clic su **Crea etichetta software**.  
+2.  [資産とコンプラインス] **** ワークスペースで、[資産インテリジェンス] ****をクリックし、[カタログ] ****をクリックします。  
 
-4.  Nella pagina **Generale** immettere un nome e una descrizione facoltativa per la nuova famiglia software.  
+3.  [ホーム] **** タブの [作成] **** グループで [ソフトウェア ファミリーの作成] ****をクリックします。  
+
+4.  [全般] **** ページで、新しいソフトウェア ファミリーの名前と、オプションで説明を入力します。  
 
     > [!NOTE]  
-    >  Lo stato di convalida di tutte le nuove etichette software personalizzate è sempre impostato su **Definito da utente**.  
+    >  新しいカスタムのソフトウェア ファミリーの検証状態は常に、[ユーザー定義] ****になります。  
 
-5.  Nella pagina **Riepilogo** verificare le impostazioni e quindi fare clic su **Avanti**.  
+5.  [概要] **** ページで設定を確認し、[次へ] ****をクリックします。  
 
-6.  Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata.  
+6.  [ **完了** ] ページで [ **閉じる** ] をクリックして、ウィザードを閉じます。  
 
-###  <a name="BKMK_HardwareRequirements"></a> Requisiti hardware  
- Le informazioni sui requisiti hardware consentono di verificare che i computer soddisfino i requisiti hardware per i titoli software prima di sceglierli come destinazione per le distribuzioni di software. Molti requisiti hardware sono predefiniti nel catalogo di Asset Intelligence ed è possibile creare nuove informazioni per requisiti hardware definiti dall'utente per soddisfare requisiti personalizzati. Lo stato di convalida di tutti i requisiti hardware predefiniti è sempre **Convalidato**, mentre per le informazioni sui requisiti hardware definiti dall'utente aggiunti al catalogo di Asset Intelligence lo stato è **Definito da utente**.  
+###  <a name="BKMK_SoftwareLabels"></a> ソフトウェア ラベル  
+ 資産インテリジェンスのカスタムのソフトウェア ラベルを使用すると、ソフトウェア タイトルをグループ化できるフィルターを作成し、資産インテリジェンスレポートを使用してそれを閲覧することができます。 たとえば、"シェアウェア" という名前のソフトウェア ラベルを作成し、任意のアプリケーションに関連付けてレポートを実行すると、"シェアウェア" のソフトウェア ラベルを持つすべてのタイトルを表示できます。 資産インテリジェンスカタログに追加するカスタムのソフトウェア ラベルの検証状態はすべて、[ユーザー定義] **** になります。  
+
+ ユーザー定義のソフトウェア ラベルを作成するには、次の手順に従います。  
+
+##### <a name="to-create-a-user-defined-software-label"></a>ユーザー定義のソフトウェア ラベルを作成するには  
+
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
+
+2.  [資産とコンプラインス] **** ワークスペースで、[資産インテリジェンス] ****をクリックし、[カタログ] ****をクリックします。  
+
+3.  [ホーム] **** タブの [作成] **** グループで [ソフトウェア ラベルの作成] ****をクリックします。  
+
+4.  [全般] **** ページで、新しいソフトウェア ファミリーの名前と、オプションで説明を入力します。  
+
+    > [!NOTE]  
+    >  新しいカスタムのソフトウェア ラベルの検証状態は常に、[ユーザー定義] ****になります。  
+
+5.  [概要] **** ページで設定を確認し、[次へ] ****をクリックします。  
+
+6.  [ **完了** ] ページで [ **閉じる** ] をクリックして、ウィザードを閉じます。  
+
+###  <a name="BKMK_HardwareRequirements"></a> ハードウェア要件  
+ ハードウェアの要件情報は、ソフトウェアの展開前に、コンピューターがソフトウェア タイトルのハードウェア要件を満たしていることを検証するのに役立ちます。 資産インテリジェンス カタログでは、多くのハードウェア要求が事前定義されていますが、カスタムの要求を満たす新しいユーザー定義のハードウェア要求情報を作成することもできます。 事前定義されたハードウェア要求が [検証済み] ****になる一方で、資産インテリジェンス カタログに追加したユーザー定義のハードウェア要求情報は [ユーザー定義] ****になります。  
 
 > [!IMPORTANT]  
->  I requisiti hardware visualizzati nella console di Configuration Manager vengono recuperati dal catalogo di Asset Intelligence nel computer locale e non sono basati sulle informazioni dei titoli software di inventario dei client di System Center 2012 Configuration Manager. Le informazioni sui requisiti hardware non vengono aggiornate nell'ambito del processo di sincronizzazione con System Center Online. È possibile creare requisiti hardware definiti dall'utente per software di inventario senza requisiti hardware associati.  
+>  Configuration Manager コンソールで表示されるハードウェア要件は、ローカル コンピューターの資産インテリジェンス カタログから取得されます。System Center 2012 Configuration Manager クライアントのインベントリされたソフトウェア タイトル情報には基づいていません。 ハードウェア要件情報は、System Center Online との同期プロセスの一環としては更新されません。 関連付けられたハードウェア要件のないインベントリされたソフトウェア用にユーザー定義のハードウェア要件を作成することができます。  
 
- Attenersi alla procedura seguente per creare un requisito hardware definito dall'utente.  
+ ユーザー定義のハードウェア要件を作成するには、次の手順に従います。  
 
-##### <a name="to-create-a-user-defined-hardware-requirements"></a>Per creare un requisito hardware definito dall'utente  
+##### <a name="to-create-a-user-defined-hardware-requirements"></a>ユーザー定義のハードウェア要件を作成するには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**e quindi su **Requisiti hardware**.  
+2.  [資産とコンプラインス] **** ワークスペースで、[資産インテリジェンス] ****をクリックし、[ハードウェア要件] ****をクリックします。  
 
-3.  Nel gruppo **Crea** della scheda **Home** fare clic su **Crea requisiti hardware**.  
+3.  [ホーム] **** タブの [作成] **** グループで [ハードウェア要件の作成] ****をクリックします。  
 
-4.  Nella pagina **Generale** immettere le informazioni seguenti:  
+4.  [全般] **** ページで、次の情報を入力します。  
 
-    1.  **Titolo software**: specifica il titolo software a cui sono associati requisiti hardware. Il titolo software non può essere già presente nel catalogo di Asset Intelligence.  
+    1.  **ソフトウェア タイトル**: ハードウェア要件が関連付けられているソフトウェア タイトルを指定します。 資産インテリジェンスカタログに存在しないソフトウェア タイトルを選択します。  
 
-    2.  **Stato convalida**: elenca lo stato di convalida come **Definito da utente** per i requisiti hardware. È impossibile modificare questa impostazione.  
+    2.  **検証の状態**: ハードウェア要件については、 **[ユーザー定義]** として検証状態が表示されます。 この設定は変更できません。  
 
-    3.  **CPU minima (MHz)**: specifica la velocità minima del processore, in megahertz (MHz), richiesta dal titolo software.  
+    3.  **最低 CPU 速度 (MHz)**: ソフトウェア タイトルに必要な最低プロセッサ速度をメガヘルツ (MHz) 単位で指定します。  
 
-    4.  **RAM minima (KB)**: specifica la RAM minima, in kilobyte (KB), richiesta dal titolo software.  
+    4.  **最小 RAM 容量 (KB)**: ソフトウェア タイトルに必要な最小 RAM をキロバイト (KB) 単位で指定します。  
 
-    5.  **Dimensioni minime spazio su disco (KB)**: specifica le dimensioni minime dello spazio disponibile su disco, in KB, richieste dal titolo software.  
+    5.  **最小空きディスク領域 (KB)**: ソフトウエア タイトルに必要な最小空きディスク領域をキロバイト KB 単位で指定します。  
 
-    6.  **Dimensioni disco minime (KB)**: specifica le dimensioni minime del disco rigido, in KB, richieste dal titolo software.  
+    6.  **最小ディスク サイズ (KB)**: ソフトウエア タイトルに必要な最小ハード ディスク サイズを KB 単位で指定します。  
 
-     Fare clic su **Avanti**.  
+     **[次へ]**をクリックします。  
 
-5.  Nella pagina **Riepilogo** verificare le impostazioni e quindi fare clic su **Avanti**.  
+5.  [概要] **** ページで設定を確認し、[次へ] ****をクリックします。  
 
-6.  Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata.  
+6.  [ **完了** ] ページで [ **閉じる** ] をクリックして、ウィザードを閉じます。  
 
-###  <a name="BKMK_ModifyCategorization"></a> Modificare le informazioni di categorizzazione per il software di inventario  
- Il software predefinito nel catalogo di Asset Intelligence è configurato con informazioni di categorizzazione specifiche, ad esempio nome del prodotto, fornitore, categoria software e famiglia software. Quando le informazioni di categorizzazione predefinite non soddisfano i requisiti, è possibile modificarle nelle proprietà del titolo software. Quando si modificano le informazioni di categorizzazione per software predefiniti, lo stato di convalida per le modifiche software cambia da **Convalidato** a **Definito da utente**.  
+###  <a name="BKMK_ModifyCategorization"></a> インベントリされたソフトウェアのカテゴリ分類の情報の変更  
+ 資産インテリジェンス カタログの事前定義されたソフトウェアは、製品名や、ベンダー、ソフトウェア カテゴリ、ソフトウェア ファミリーといった特定のカテゴリ分類の情報で構成されています。 事前定義されたカテゴリ分類の情報が要件を満たさない場合は、ソフトウェア タイトルのプロパティで情報を変更することができます。 事前設定されたソフトウェアのカテゴリ分類の情報を変更すると、そのソフトウェアの検証の状態は [検証済み] **** から [ユーザー定義] ****に変わります。  
 
 > [!IMPORTANT]  
->  Le informazioni di categorizzazione possono essere modificate solo nel sito principale.  
+>  カテゴリ分類の情報はトップレベルのサイトでのみ変更することができます。  
 
- Attenersi alla procedura seguente per modificare le informazioni di categorizzazione per il software di inventario.  
+ インベントリされたソフトウェアのカテゴリ分類の情報を変更するには、次の手順に従います。  
 
-##### <a name="to-modify-the-categorizations-for-software-titles"></a>Per modificare le categorizzazioni per i titoli software  
+##### <a name="to-modify-the-categorizations-for-software-titles"></a>ソフトウェア タイトルのカテゴリ分類を変更するには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**e quindi su **Software di inventario**.  
+2.  **資産とコンプライアンス**  ワークスペースで、をクリックして **資産インテリジェンス**, 、順にクリック **インベントリされたソフトウェア**です。  
 
-3.  Selezionare uno o più titoli software di cui si vogliono modificare le categorizzazioni.  
+3.  カテゴリ分類を変更するソフトウェア タイトルを選択します。複数選択もできます。  
 
-4.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
+4.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
 
-5.  Nella scheda **Generale** è possibile modificare le informazioni di categorizzazione seguenti:  
+5.  [全般] **** タブでは、次のカテゴリ分類の情報を変更することができます。  
 
-    -   **Nome prodotto**: specifica il nome del titolo software di inventario.  
+    -   **製品名**: インベントリされたソフトウェア タイトルの名前を指定します。  
 
-    -   **Fornitore**: specifica il nome del fornitore che ha sviluppato il titolo software di inventario.  
+    -   **ベンダー**: インベントリされたソフトウェア タイトルを開発したベンダーの名前を指定します。  
 
-    -   **Categoria**: specifica la categoria software attualmente assegnata al titolo software di inventario.  
+    -   **カテゴリ**: インベントリされたソフトウェア タイトルに現在割り当てられているソフトウェア カテゴリを指定します。  
 
-    -   **Famiglia**: specifica la famiglia software attualmente assegnata al titolo software di inventario.  
+    -   **ファミリ**: インベントリされたソフトウェア タイトルに現在割り当てられているソフトウェア ファミリを指定します。  
 
-6.  Fare clic su **OK** per salvare le modifiche.  
+6.  [OK] をクリックして変更を保存します。 ****  
 
- Attenersi alla procedura seguente per ripristinare le informazioni di categorizzazione originali del software.  
+ ソフトウェアを元のカテゴリ分類情報へと戻すには、次の手順に従います。  
 
-### <a name="revert-categorization-information-to-original-settings-for-software"></a>Ripristinare le impostazioni originali delle informazioni di categorizzazione per il software  
- Configuration Manager archivia le informazioni di categorizzazione ottenute da System Center Online nel database. Le informazioni non possono essere eliminate. Dopo che le informazioni sono state modificate, è possibile ripristinare le informazioni di categorizzazione di System Center Online. È anche possibile ripristinare le impostazioni originali del software di inventario non incluso nel catalogo di Asset Intelligence.  
+### <a name="revert-categorization-information-to-original-settings-for-software"></a>カテゴリ分類の情報をソフトウェアの元の設定に戻す  
+ Configuration Manager は、System Center Online から取得されたカテゴリ分類の情報をデータベースに格納します。 この情報を削除することはできません。 情報が変更された後に、System Center Online のカテゴリにカテゴリ分類の情報を戻すことができます。 資産インテリジェンス カタログにないインベントリされたソフトウェアも元の設定に戻すことができます。  
 
- Attenersi alla procedura seguente per ripristinare le impostazioni originali delle informazioni di categorizzazione.  
+ インベントリされたソフトウェアのカテゴリ分類の情報を元の設定に戻すには、次の手順に従います。  
 
-##### <a name="to-revert-categorization-information-to-original-settings"></a>Per ripristinare le impostazioni originali delle informazioni di categorizzazione  
+##### <a name="to-revert-categorization-information-to-original-settings"></a>カテゴリ分類の情報を元の設定に戻すには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**e quindi su **Software di inventario**.  
+2.  **資産とコンプライアンス**  ワークスペースで、をクリックして **資産インテリジェンス**, 、順にクリック **インベントリされたソフトウェア**です。  
 
-3.  Selezionare uno o più titoli software di cui si vogliono ripristinare le impostazioni originali. È possibile ripristinare solo il software con stato **Definito da utente** .  
+3.  元の設定に戻すソフトウェア タイトルを選択します。複数選択もできます。 元に戻せるのは、[ユーザー定義] **** のソフトウェアのみです。  
 
     > [!TIP]  
-    >  Fare clic sulla colonna **Stato** per ordinare le informazioni in base allo stato di convalida. L'ordinamento consente di visualizzare tutto il software in base allo stato di convalida e selezionare rapidamente più elementi per ripristinare le impostazioni originali.  
+    >  [ **状態** ] 列をクリックして検証の状態によって並べ替えます。 並べ替えによってソフトウェアをすべて検証の状態ごとに表示し、複数の項目をすばやく選択して元の設定に戻すことができます。  
 
-4.  Nel gruppo **Prodotto** della scheda **Home** fare clic su **Ripristina**.  
+4.  **ホーム** ] タブで、 **製品** グループで、[ **元に戻す**です。  
 
-5.  Fare clic su **Sì** per ripristinare le informazioni di categorizzazione originali del software.  
+5.  [はい **** ] をクリックし、ソフトウェアを元のカテゴリ化情報に戻します。  
 
-6.  Quando si ripristinano le informazioni di categorizzazione per software incluso nel catalogo di Asset Intelligence, lo stato di convalida cambia da **Definito da utente** a **Convalidato**. Quando si ripristina software non incluso nel catalogo, lo stato di convalida cambia da **Definito da utente** a **Senza categoria**.  
+6.  資産インテリジェンス カタログにあるソフトウェアのカテゴリ化情報を元に戻すと、検証の状態が [ユーザー定義済み **** ] から [検証済み ****] に変わります。 カタログにないソフトウェアのカテゴリ化情報を元に戻すと、検証の状態が [ユーザー定義済み **** ] から [カテゴリ化されていない ****] に変わります。  
 
-##  <a name="BKMK_RequestCatalogUpdate"></a> Richiedere un aggiornamento del catalogo per i titoli software senza categoria  
- Le informazioni sui titoli software senza categoria possono essere inviate a System Center Online per la ricerca e la categorizzazione. Dopo l'invio di un titolo software senza categoria, quando ci sono almeno 4 richieste di categorizzazione dei clienti per lo stesso titolo software, i ricercatori identificano, categorizzano e quindi rendono disponibili le informazioni di categorizzazione del titolo software per tutti i clienti che usano il servizio System Center Online. Microsoft assegna la massima priorità ai titoli di software con il maggior numero di richieste di categorizzazione. È improbabile che al software personalizzato e alle applicazioni line-of-business venga assegnata una categoria e la procedura consigliata prevede di non inviare questi titoli software a Microsoft per la categorizzazione.  
+##  <a name="BKMK_RequestCatalogUpdate"></a> カテゴリ化されていないソフトウェア タイトルのカタログ更新の要求  
+ カテゴリ化されていないソフトウェア タイトル情報は、調査およびカテゴリ化のために System Center Online に送信できます。 カテゴリ化されていないソフトウェア タイトルが送信されたあとで、お客様から同じソフトウェア タイトルで少なくとも 4 つのカテゴリ化要求があった場合、調査担当者はソフトウェア タイトルのカテゴリ化情報を特定、カテゴリ化して、System Center Online サービスを使用しているすべてのお客様が使用できるようにします。 Microsoft では、カテゴリ化要求の最も多いソフトウェア タイトルに最も高い優先順位を与えています。 カスタムのソフトウェアや基幹業務アプリケーションにカテゴリを与えることはほとんどありません。ベスト プラクティスとして、これらのソフトウェア タイトルをカテゴリ化のために Microsoft に送信しないでください。  
 
- Quando le informazioni sui titoli software vengono inviate a System Center Online per la categorizzazione, si applicano le condizioni seguenti:  
+ ソフトウェア タイトル情報がカテゴリ化のために System Center Online に送信されるときは、次の条件が適用されます。  
 
--   Solo le informazioni sui titoli software di base vengono trasmesse a System Center Online e le informazioni sui titoli software da categorizzare possono essere esaminate prima dell'invio.  
+-   基本的なソフトウェア タイトル情報のみが System Center Online に転送され、カテゴリ化の対象となるソフトウェア タイトル情報は送信前に確認できます。  
 
--   Le informazioni sulle licenze software non vengono mai trasmesse.  
+-   ソフトウェア ライセンス情報は転送されません。  
 
--   Tutti i titoli software caricati diventano disponibili pubblicamente come parte del catalogo di System Center Online e possono essere scaricati da altri clienti.  
+-   アップロードされるソフトウェア タイトルはすべて、System Center Online カタログの一部として公開され、他のお客様によるダウンロードが可能です。  
 
--   L'origine del titolo software non viene archiviata nel catalogo di System Center Online. Tuttavia, i titoli di applicazioni che contengono informazioni riservate o proprietarie non devono essere inviati per la categorizzazione in System Center Online.  
+-   ソフトウェア タイトルのソースは System Center Online カタログに保存されません。 ただし、機密情報や企業情報が含まれているアプリケーション タイトルは、System Center Online によるカテゴリ化のために送信することはできません。  
 
 > [!NOTE]  
->  Per altre informazioni sulla privacy di Asset Intelligence, vedere [Sicurezza e privacy per Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/security-and-privacy-for-asset-intelligence.md).  
+>  資産インテリジェンスのプライバシー情報の詳細については、「[System Center Configuration Manager の資産インテリジェンスのセキュリティとプライバシー](../../../../core/clients/manage/asset-intelligence/security-and-privacy-for-asset-intelligence.md)」を参照してください。  
 
- Attenersi alla procedura seguente per richiedere la categorizzazione di titoli software del catalogo di Asset Intelligence in System Center Online.  
+ System Center Online からの資産インテリジェンス カタログ ソフトウェア タイトルのカテゴリ化を要求するには、次の手順に従います。  
 
-#### <a name="to-request-a-catalog-update-for-uncategorized-software-titles"></a>Per richiedere un aggiornamento del catalogo per i titoli software senza categoria  
+#### <a name="to-request-a-catalog-update-for-uncategorized-software-titles"></a>カテゴリ化されていないソフトウェア タイトルのカタログ更新を要求するには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**e quindi su **Software di inventario**.  
+2.  **資産とコンプライアンス**  ワークスペースで、をクリックして **資産インテリジェンス**, 、順にクリック **インベントリされたソフトウェア**です。  
 
-3.  Selezionare uno o più nomi di prodotto da inviare a System Center Online per la categorizzazione. Solo i titoli software di inventario senza categoria possono essere inviati a System Center Online per la categorizzazione. Se il titolo software di inventario è stato categorizzato da un amministratore con la conseguente impostazione di uno stato definito dall'utente, è necessario fare clic con il pulsante destro del mouse sul titolo software di inventario e quindi scegliere **Ripristina** per ripristinare lo stato **Senza categoria** del titolo software e poterlo quindi inviare a System Center Online per la categorizzazione.  
+3.  カテゴリ化のために System Center Online に送信する 1 つ以上の製品名を選択します。 カテゴリ化のために System Center Online に送信できるのは、カテゴリ化されていない、インベントリされたソフトウェア タイトルのみです。 管理者がインベントリされたソフトウェア タイトルをカテゴリ化しており、結果としてユーザー定義状態になっている場合は、インベントリされたソフトウェア タイトルを右クリックし、[復元 **** ] をクリックして、[カテゴリ化されていない **** ] 状態に戻すと、カテゴリ化のために System Center Online に送信できるようになります。  
 
     > [!NOTE]  
-    >  Configuration Manager può elaborare allo stesso tempo fino a 100 titoli software per categorizzazione. Se si selezionano più di 100 titoli software, verranno elaborati solo i primi 100 titoli. È necessario selezionare i rimanenti titoli software per la categorizzazione in batch minori di 100.  
+    >  Configuration Manager では、一度に 100 個のソフトウェア タイトルのカテゴリ化を処理できます。 100 個を超えるソフトウェア タイトルを選択した場合は、最初の 100 個のソフトウェア タイトルのみが処理されます。 残りのソフトウェア タイトルは、カテゴリ化のために 100 個より少ないバッチになるように選択する必要があります。  
 
     > [!TIP]  
-    >  Fare clic sulla colonna **Stato** per ordinare le informazioni in base allo stato di convalida. In questo modo, è possibile visualizzare tutti i nomi di prodotto senza categoria e selezionare rapidamente più elementi da inviare per la categorizzazione.  
+    >  [ **状態** ] 列をクリックして検証の状態によって並べ替えます。 これにより、カテゴリ化されていない製品名をすべて確認し、複数の項目をすばやく選択してカテゴリ化のために送信することができます。  
 
-4.  Nel gruppo **Prodotto** della scheda **Home** fare clic su **Aggiornamento catalogo richieste**.  
+4.   **ホーム**  タブで、 **製品** グループで、 **カタログ更新の要求**です。  
 
-5.  Esaminare il messaggio sulla privacy per l'invio per la categorizzazione a System Center Online. Fare clic su **Dettagli** per visualizzare le informazioni che verranno inviate a System Center Online.  
+5.  System Center Online のカテゴリ化送信のプライバシー メッセージを確認します。 [詳細 **** ] をクリックし、System Center Online に送信される情報を表示します。  
 
-6.  Selezionare **Dichiaro di avere letto e compreso questo messaggio**, quindi fare clic su **OK** per consentire l'invio dei titoli software selezionati per la categorizzazione.  
+6.  [メッセージを読んで理解しました ****] を選択して [OK **** ] をクリックし、選択したソフトウェア タイトルをカテゴリ化のために送信することを許可します。  
 
-7.  Verificare che lo stato dei nomi dei prodotti software di inventario inviati a System Center Online per la categorizzazione venga modificato da **Senza categoria** a **In attesa**.  
+7.  カテゴリ化のために System Center Online に送信された、インベントリ済みのソフトウェア製品名の状態が、[カテゴリ化されていない **** ] から [保留中 ****] に変わっていることを確認します。  
 
     > [!NOTE]  
-    >  Il software che viene inviato a System Center Online per la categorizzazione ha uno stato di convalida **In attesa** in un sito di amministrazione centrale, ma viene ancora visualizzato con uno stato di convalida **Senza categoria** nei siti primari figlio.  
+    >  カテゴリ化のために System Center Online に送信されたソフトウェアの検証の状態は、中央管理サイトでは [保留中 **** ] と表示されますが、子プライマリ サイトではまだ [カテゴリ化されていない **** ] と表示されます。  
 
-##  <a name="BKMK_ResolveSoftwareDetails"></a> Risolvere i conflitti dei dettagli software  
- Dopo aver ricevuto da System Center Online nuovi dettagli di categorizzazione software aggiornati in conflitto con informazioni sui dettagli software esistenti, è possibile scegliere come risolvere il conflitto. Il software che presenta un conflitto corrente ha uno stato di convalida **Aggiornabile**. Dopo la risoluzione dei conflitti dei dettagli software, le informazioni di categorizzazione software vengono conservate nel catalogo di Asset Intelligence in base all'impostazione specificata. Un conflitto dei dettagli software non si verifica di nuovo per lo stesso valore di categorizzazione software a meno che il valore di System Center Online non cambi dopo la risoluzione del conflitto.  
+##  <a name="BKMK_ResolveSoftwareDetails"></a> ソフトウェア詳細の競合の解決  
+ 既存のソフトウェアの詳細情報と競合している、新しく更新されたソフトウェアのカテゴリ化詳細を System Center Online から受け取ったあとに、競合を解決する方法を選択できます。 現在競合があるソフトウェアの検証の状態は [更新可能 ****] になります。 ソフトウェア詳細の競合が解決すると、指定した設定に従って、資産インテリジェンス カタログにソフトウェアのカテゴリ化情報が保持されます。 ソフトウェア詳細の競合を解決してから System Center Online の値が変更された場合を除き、同じソフトウェアのカテゴリ化の値に対してソフトウェア詳細の競合は発生しません。  
 
- Attenersi alla procedura seguente per risolvere un conflitto dei dettagli software.  
+ ソフトウェア詳細の競合を解決するには、次の手順に従います。  
 
-#### <a name="to-resolve-a-software-details-conflict"></a>Per risolvere un conflitto dei dettagli software  
+#### <a name="to-resolve-a-software-details-conflict"></a>ソフトウェアの詳細の競合を解決するには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**e quindi su **Software di inventario**.  
+2.  **資産とコンプライアンス**  ワークスペースで、をクリックして **資産インテリジェンス**, 、順にクリック **インベントリされたソフトウェア**です。  
 
-3.  Esaminare la colonna **Stato** per individuare i titoli software con stato **Aggiornabile** .  
+3.  [状態 **** ] 列で、[更新可能 **** ] 状態のソフトウェア タイトルを確認します。  
 
-4.  Selezionare il titolo software per cui è necessario risolvere un conflitto e quindi nel gruppo **Prodotto** della scheda **Home** fare clic su **Risolvi conflitto**.  
+4.  持っている場合、競合を解決し、[ソフトウェアのタイトルを選択、 **ホーム** ] タブで、 **製品** グループ化、およびクリックして **競合の解決**です。  
 
-5.  Esaminare le informazioni seguenti:  
+5.  次の情報を確認します。  
 
-    -   **Valore locale**: specifica le informazioni di categorizzazione software esistenti nel catalogo di Asset Intelligence che sono in conflitto con i dettagli di categorizzazione software più recenti di System Center Online.  
+    -   **ローカルの値**: 新しい System Center Online のソフトウェアのカテゴリ分類の詳細と競合する、資産インテリジェンス カタログ内の既存のソフトウェアのカテゴリ分類の情報を示します。  
 
-    -   **Valore scaricato**: specifica le nuove informazioni di categorizzazione software di System Center Online per le informazioni di categorizzazione software del catalogo di Asset Intelligence in conflitto.  
+    -   **ダウンロードした値**: 資産インテリジェンス カタログ内の既存のソフトウェアのカテゴリ分類の情報と競合する、新しい System Center Online のソフトウェアのカテゴリ分類の情報を示します。  
 
-6.  Selezionare una delle impostazioni seguenti per risolvere un conflitto dei dettagli software:  
+6.  ソフトウェア詳細の競合を解決するには、次の設定のいずれかを選択します。  
 
-    -   **Mantieni le informazioni nel catalogo modificato localmente**: risolve il conflitto dei dettagli software mantenendo le informazioni di categorizzazione software del catalogo di Asset Intelligence esistenti. Quando si seleziona questa impostazione, lo stato del titolo software cambia da **Aggiornabile** a **Definito da utente**.  
+    -   **ローカルで編集されたカタログ情報値を変更しない**: 資産インテリジェンス カタログ内の既存のソフトウェアのカテゴリ分類の情報を保持し、ソフトウェア詳細の競合を解決します。 この設定を選択すると、ソフトウェア タイトルの状態が [更新可能 **** ] から [ユーザー定義済み ****] に変わります。  
 
-    -   **Sovrascrivi le informazioni nel catalogo modificato localmente con le informazioni del catalogo di System Center Online**: risolve il conflitto dei dettagli software sovrascrivendo le informazioni di categorizzazione software del catalogo di Asset Intelligence esistenti con le nuove informazioni ottenute da System Center Online. Quando si seleziona questa impostazione, lo stato del titolo software cambia da **Aggiornabile** a **Convalidato**.  
+    -   **ローカルで編集されたカタログ情報値をダウンロードした System Center Online の値で上書きする**: 資産インテリジェンス カタログ内の既存のソフトウェアのカテゴリ分類の情報を新しい System Center Online から取得した新しい情報で上書きし、ソフトウェア詳細の競合を解決します。 この設定を選択すると、ソフトウェア タイトルの状態が [更新可能 **** ] から [検証済み ****] に変わります。  
 
-     Fare clic su **OK** per salvare la risoluzione del conflitto.  
-
+     [OK] をクリックして競合の解決を保存します。 ****  

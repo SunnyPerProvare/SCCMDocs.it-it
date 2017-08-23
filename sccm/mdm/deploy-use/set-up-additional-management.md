@@ -1,56 +1,53 @@
 ---
-title: Impostare soluzioni di gestione aggiuntive tramite System Center Configuration Manager | Microsoft Docs
-description: Impostare soluzioni di gestione aggiuntive tramite System Center Configuration Manager.
+title: "System Center Configuration Manager を使用して追加の管理をセットアップする | Microsoft Docs"
+description: "System Center Configuration Manager を使用して追加の管理をセットアップします。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4877d674-6bbc-4e16-810c-daad70c74daa
-caps.latest.revision: 18
-caps.handback.revision: 0
+caps.latest.revision: "18"
+caps.handback.revision: "0"
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
 ms.openlocfilehash: 947d2a85f2ac68c7ccaf9a1237fd60e89e7d1d10
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="set-up-additional-management-with-system-center-configuration-manager"></a>Impostare soluzioni di gestione aggiuntive con System Center Configuration Manager
+# <a name="set-up-additional-management-with-system-center-configuration-manager"></a>System Center Configuration Manager を使用して追加の管理をセットアップする
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-(Facoltativo) È possibile impostare la gestione aggiuntive prima che i dispositivi vengano registrati. Queste soluzioni di gestione possono essere create e distribuite una volta registrati i dispositivi, anche se molte organizzazioni preferiscono distribuirle nel momento in cui i dispositivi iniziano a essere gestiti.
+(省略可能) デバイスを登録する前に、追加の管理をセットアップすることができます。 このような管理ソリューションは、デバイスの登録後に作成し、展開することができますが、多くの組織は、デバイスを管理対象にするときに展開することを好みます。
 
-**Gli elementi di configurazione** consentono di gestire le impostazioni, ad esempio richiedere un PIN o la crittografia nei dispositivi registrati in base alla piattaforma dei dispositivi:
-- [Dispositivi Windows 10 e Windows 8.1](create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)
-- [Dispositivi Windows Phone](create-configuration-items-for-windows-phone-devices-managed-without-the-client.md)
-- [Dispositivi iOS e Mac](create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client.md)
-- [Dispositivi Android e Samsung KNOX Standard](create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md)
+**構成アイテム**を使用すると、デバイスのプラットフォームに基づいて、登録されるデバイスで PIN を必須にする、暗号化を必須にするなどの設定を管理できます。
+- [Windows 10 デバイスと Windows 8.1 デバイス](create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)
+- [Windows Phone デバイス](create-configuration-items-for-windows-phone-devices-managed-without-the-client.md)
+- [iOS デバイスと Mac デバイス](create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client.md)
+- [Android デバイスと Samsung KNOX Standard デバイス](create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md)
 
-**Le applicazioni** possono essere distribuite ai dispositivi gestiti:
-- [Applicazioni iOS](creating-ios-applications.md)
-- [Applicazioni Mac](../../apps/get-started/creating-mac-computer-applications.md)
-- [Applicazioni PC Windows](../../apps/get-started/creating-windows-applications.md)
-- [Applicazioni Windows Phone](creating-windows-phone-applications.md)
-- [Applicazioni Android](creating-android-applications.md)
+管理対象デバイスには次の**アプリケーション**を展開できます。
+- [iOS アプリケーション](creating-ios-applications.md)
+- [Mac アプリケーション](../../apps/get-started/creating-mac-computer-applications.md)
+- [Windows PC アプリケーション](../../apps/get-started/creating-windows-applications.md)
+- [Windows Phone アプリケーション](creating-windows-phone-applications.md)
+- [Android アプリケーション](creating-android-applications.md)
 
-**L'accesso condizionale** consente di gestire l'accesso alle risorse aziendali tra cui:  
-- [Accesso alla posta elettronica](manage-email-access.md)
-- [Accesso a SharePoint](manage-sharepoint-online-access.md)
-- [Accesso a Skype for Business](manage-skype-for-business-online-access.md)
-- [Dynamics CRM Online](manage-dynamics-crm-online-access.md)
+**条件付きアクセス**を使用すると、次のような会社のリソースへのアクセスを管理できます。  
+- [電子メールへのアクセス](manage-email-access.md)
+- [SharePoint へのアクセス](manage-sharepoint-online-access.md)
+- [Skype for Business へのアクセス](manage-skype-for-business-online-access.md)
+- [Dynamic CRM Online](manage-dynamics-crm-online-access.md)
 
-**Multi-Factor Authentication (MFA)** consente di richiedere più metodi di verifica, aggiungendo così un secondo livello di sicurezza di importanza critica agli accessi e alle transazioni degli utenti.
-In precedenza, per impostare Multi-Factor Authentication per le registrazioni di Intune si accedeva alla console di Intune o alla console di Configuration Manager. Ora si accede al [portale di Microsoft Azure](https://manage.windowsazure.com) usando le credenziali di Intune e configurando le impostazioni di Multi-Factor Authentication tramite Azure AD. Per altre informazioni, vedere [Multi-Factor Authentication per Microsoft Intune](https://aka.ms/mfa_ad).
+**多要素認証 (MFA)** を使用すると複数の検証方法が必要になり、ユーザーのサインインとトランザクションに対して重要な第 2 のセキュリティ層が追加されます。
+これまで、Intune の登録に MFA を設定するには、Intune コンソールまたは構成マネージャー コンソールを使用していました。 今後は Intune の資格情報で [Microsoft Azure Portal](https://manage.windowsazure.com) にログインし、Azure AD を使用して MFA の設定を構成するようになります。 詳細については、[Microsoft Intune への多要素認証](https://aka.ms/mfa_ad)に関する記事を参照してください。
 
 > [!div class="button"]
-[< Passaggio precedente](enable-platform-enrollment.md)  [Passaggio successivo >](verify-mdm-configuration.md)
-
+[< 前のステップ](enable-platform-enrollment.md)  [次のステップ >](verify-mdm-configuration.md)

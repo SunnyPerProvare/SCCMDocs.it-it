@@ -1,318 +1,311 @@
 ---
-title: Avvisi e sistema di stato | Microsoft Docs
-description: Configurare gli avvisi e usare il sistema di stato per rimanere aggiornati sullo stato della distribuzione di Configuration Manager.
+title: "アラートとステータス システム | Microsoft Docs"
+description: "アラートを構成し、組み込みステータス システムを使用して、Configuration Manager 展開の状態について常に通知される状態にします。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7341cc6e-9e08-41e4-bcc6-6c1ff12e85ca
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
 ms.openlocfilehash: ed692bdea055775890535d2666f09ba5f5c7c4e1
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-alerts-and-the-status-system-for-system-center-configuration-manager"></a>Usare gli avvisi e il sistema di stato per System Center Configuration Manager
+# <a name="use-alerts-and-the-status-system-for-system-center-configuration-manager"></a>System Center Configuration Manager のアラートとステータス システムの使用
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Configurare gli avvisi e usare il sistema di stato predefinito per rimanere aggiornati sullo stato della distribuzione di System Center Configuration Manager.  
+アラートを構成し、組み込みステータス システムを使用して、System Center Configuration Manager 展開の状態について常に通知される状態にします。  
 
 
-##  <a name="a-namebkmkstatusa-status-system"></a><a name="bkmk_Status"></a> Sistema di stato  
- Tutti i componenti principali del sito generano messaggi di stato che forniscono feedback e suggerimenti sulle operazioni del sito e della gerarchia.    Queste informazioni consentono di restare informati sull'integrità dei vari processi del sito. È possibile ottimizzare il sistema di avvisi per ignorare il disturbo prodotto da problemi noti, aumentando allo stesso tempo la visibilità tempestiva per altri problemi che potrebbero richiedere attenzione.  
+##  <a name="bkmk_Status"></a> ステータス システム  
+ サイトの主要コンポーネントはいずれも、サイトと階層の操作に関するフィードバックを提供するステータス メッセージを生成します。    この情報により、さまざまなサイト プロセスの正常性を常に把握することができます。 既知の問題に関するノイズを無視し、注意しなければならない可能性がある他の問題を早期に発見しやすくなるよう、アラート システムを調整することができます。  
 
- Per impostazione predefinita, il sistema di stato di Configuration Manager funziona senza configurazione usando impostazioni adatte alla maggior parte degli ambienti. Tuttavia, è possibile configurare quanto segue:  
+ 既定では、Configuration Manager ステータス システムはほとんどの環境に適した設定を使用して動作するため、構成を必要としません。 ただし、次のような構成が可能です。  
 
--   **Generatori riepilogo dello stato:** è possibile modificare il riepilogo dello stato in ogni sito per controllare la frequenza dei messaggi di stato che generano una modifica dell'indicatore di stato per i quattro generatori di riepilogo seguenti:  
+-   **ステータス サマライザー:** サイトごとのステータス サマライザーを編集し、次の 4 つのサマライザーのステータス インジケーターを変更させるステータス メッセージの頻度を制御できます。  
 
-    -   Generatore riepilogo distribuzione applicazione  
+    -   アプリケーションの展開の要約  
 
-    -   Generatore riepilogo statistiche applicazione  
+    -   アプリケーションの統計情報の要約  
 
-    -   Generatore riepilogo dello stato dei componenti  
+    -   コンポーネント ステータス サマライザー  
 
-    -   Generatore riepilogo dello stato del sistema sito  
+    -   サイト システム ステータス サマライザー  
 
--   **Regole di filtro dello stato:** è possibile creare nuove regole di filtro dello stato, modificare la priorità delle regole, abilitare o disabilitare regole ed eliminare le regole inutilizzate presenti in ogni sito.  
+-   **ステータス フィルター規則:** 新しいステータス フィルター規則の作成、規則の優先順位の変更、規則の無効化と有効化、および使用されていない規則の削除といった操作を、サイトごとに行うことができます。  
 
     > [!NOTE]  
-    >  Le regole di filtro dello stato non supportano l'utilizzo di variabili di ambiente per l'esecuzione di comandi esterni.  
+    >  ステータス フィルター規則は、環境変数を使用して外部コマンドを実行することをサポートしません。  
 
--   **Creazione rapporti di stato:** è possibile configurare la creazione di rapporti di stato per componenti server e client per modificare il modo in cui i messaggi di stato vengono segnalati al sistema di stato di Configuration Manager e specificare dove inviare i messaggi di stato.  
+-   **ステータス レポート:** ステータス メッセージを Configuration Manager ステータス システムに送信する方法を変更したり、スタータス メッセージの送信先を指定したりするために、サーバーとクライアント両方のコンポーネント レポートを構成できます。  
 
     > [!WARNING]  
-    >  Poiché le impostazioni di creazione rapporti predefinite sono adatte alla maggior parte degli ambienti, modificarle con cautela. Quando si aumenta il livello di creazione rapporti di stato scegliendo di includere nel rapporto tutti i dettagli dello stato, è possibile aumentare la quantità dei messaggi di stato da elaborare, che a sua volta aumenta il carico di elaborazione nel sito di Configuration Manager. Se si diminuisce il livello di creazione di rapporti di stato è possibile che venga limitata l'utilità dei generatori di riepilogo dello stato.  
+    >  既定のレポートの設定はほとんどの環境に適しているので、変更は慎重に行う必要があります。 すべてのステータスの詳細を報告するように選択して、ステータス レポートのレベルを上げると、処理されるステータス メッセージの量が増加し、Configuration Manager サイトにかかる処理負荷が大きくなる可能性があります。 ステータス レポートのレベルを下げると、ステータスの要約機能の有用性が制限される可能性があります。  
 
-Poiché il sistema di stato mantiene configurazioni separate per ogni sito è necessario modificare ogni singolo sito.  
+ステータス システムはサイトごとに異なる構成を保持するため、各サイトを個別に編集する必要があります。  
 
-###  <a name="a-namebkmkconfigstatusa-procedures-for-configuring-the-status-system"></a><a name="bkmk_configstatus"></a> Procedure per la configurazione del sistema di stato  
+###  <a name="bkmk_configstatus"></a> ステータス システムの構成手順  
 
-##### <a name="to-configure-status-summarizers"></a>Per configurare i generatori di riepilogo dello stato  
+##### <a name="to-configure-status-summarizers"></a>ステータスの要約機能を構成するには  
 
-1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Configurazione del sito** >**Siti**, quindi selezionare il sito per cui configurare il sistema di stato.  
+1.  Configuration Manager コンソールで、[**管理**] > [**サイトの構成**] >[**サイト**] に移動し、スタータス システムを構成するサイトを選択します。  
 
-2.  Nella scheda **Home** , nel gruppo **Impostazioni** , fare clic su **Generatori di riepilogo dello stato**.  
+2.  [ **ホーム** ] タブの [ **設定** ] グループで、[ **ステータス サマライザー**] をクリックします。  
 
-3.  Nella finestra di dialogo **Generatori di riepilogo dello stato** selezionare il generatore che si desidera configurare e quindi fare clic su **Modifica** per aprire le proprietà di tale generatore. Se si sta modificando Distribuzione applicazioni o Generatore riepilogo statistiche applicazione, procedere con il passaggio 5. Se si sta modificando il direttamente lo stato del componente, andare al passaggio 6. Se si sta modificando il Generatore riepilogo dello stato del sistema del sito, andare al passaggio 7.  
+3.  [ **ステータス サマライザー** ] ダイアログ ボックスで、構成するステータス サマライザーを選択してから、[ **編集** ] をクリックしてそのサマライザーのプロパティを開きます。 アプリケーション展開サマライザーまたはアプリケーション統計情報サマライザーを編集する場合は、手順 5 に進みます。 コンポーネント ステータスを編集する場合は、手順 6 に進みます。 サイト システムのステータスの要約を編集する場合は、手順 7 に進みます。  
 
-4.  Dopo aver aperto la pagina delle proprietà per il generatore riepilogo distribuzione applicazione o statistiche applicazione, utilizzare la seguente procedura:  
+4.  アプリケーションの展開の要約またはアプリケーションの統計情報の要約のいずれかのプロパティ ページを開いた後で、次の手順を実行します。  
 
-    1.  Nella scheda **Generale** della pagina delle proprietà del generatore di riepilogo configurare gli intervallo di riepilogo, quindi fare clic su **OK** per chiudere la pagina delle proprietà.  
+    1.  サマライザー プロパティ ページの [ **全般** ] タブで、概要作成間隔を構成してから、[ **OK** ] クリックして プロパティ ページを閉じます。  
 
-    2.  Fare clic su **OK** per chiudere la finestra di dialogo **Generatori riepilogo dello stato** e completare la procedura.  
+    2.  [ **OK** ] をクリックして [ **ステータス サマライザー** ] ダイアログ ボックスを閉じ、この手順を完了します。  
 
-5.  Dopo l'apertura delle pagine delle proprietà per il generatore di riepilogo dello stato del componente utilizzare la seguente procedura:  
+5.  コンポーネントのステータスの要約のプロパティ ページを開いた後で、次の手順を実行します。  
 
-    1.  Nella scheda **Generale** della pagina delle proprietà dei generatori di riepilogo configurare i valori del periodo di soglia e di replica.  
+    1.  要約機能のプロパティ ページの [**全般**] タブで、レプリケーションとしきい値の期間の値を構成します。  
 
-    2.  Nella scheda **Soglie** selezionare il **Tipo messaggio** che si desidera configurare, quindi fare clic sul nome di un componente nell'elenco **Soglie** .  
+    2.  [ **しきい値** ] タブで、構成する [ **メッセージの種類** ] を選択してから、[ **しきい値** ] ボックスでコンポーネントの名前をクリックします。  
 
-    3.  Nella finestra di dialogo **Proprietà soglia di stato** modificare i valori di soglia critico o avviso e quindi fare clic su **OK**.  
+    3.  [ **ステータスのしきい値のプロパティ** ] ダイアログ ボックスで、警告しきい値と重大しきい値を編集してから、[ **OK**] クリックします。  
 
-    4.  Ripetere i passaggi 6.b e 6.c in base alle necessità e dopo averli completati fare clic su **OK** per chiudere le proprietà del generatore di riepilogo.  
+    4.  必要に応じて手順 6.b と 6.c を繰り返し、作業が完了したら [OK] をクリックして要約機能のプロパティを閉じます。 ****  
 
-    5.  Fare clic su **OK** per chiudere la finestra di dialogo **Generatori riepilogo dello stato** e completare la procedura.  
+    5.  [ **OK** ] をクリックして [ **ステータス サマライザー** ] ダイアログ ボックスを閉じ、この手順を完了します。  
 
-6.  Dopo l'apertura delle pagine delle proprietà per il generatore di riepilogo dello stato del sistema sito utilizzare la seguente procedura:  
+6.  サイト システムのステータスの要約のプロパティ ページを開いた後で、次の手順を実行します。  
 
-    1.  Nella scheda **Generale** della pagina delle proprietà dei generatori di riepilogo configurare i valori di pianificazione e replica.  
+    1.  要約機能のプロパティ ページの [**全般**] タブで、レプリケーションとスケジュールの値を構成します。  
 
-    2.  Nella scheda **Soglie** specificare i valori per le **Soglie predefinite** per configurare le soglie predefinite per la visualizzazione dello stato critico e di avviso.  
+    2.  [ **しきい値** ] タブで、[ **既定のしきい値** ] の値を指定して重大ステータス表示と警告ステータス表示の既定のしきい値を構成します。  
 
-    3.  Per modificare i valori per **Oggetti archiviazione**specifici, specificare l'oggetto dall'elenco **Soglie specifiche** , quindi fare clic sul pulsante **Proprietà** per effettuare l'accesso e modificare la soglia critica e la soglia di avviso degli oggetti di archiviazione. Fare clic su **OK** per chiudere le proprietà degli oggetti di archiviazione.  
+    3.  特定の **ストレージ オブジェクト**の値を編集するには、[ **固有のしきい値** ] ボックスからオブジェクトを選択してから、[ **プロパティ** ] ボタンをクリックしてそのストレージ オブジェクトの警告しきい値と重大しきい値にアクセスして編集します。 [OK] をクリックして、ストレージ オブジェクトのプロパティを閉じます。 ****  
 
-    4.  Per creare un nuovo oggetto di archiviazione, fare clic sul pulsante **Crea oggetto** e specificare i valori degli oggetti di archiviazione. Fare clic su **OK** per chiudere le proprietà degli oggetti di archiviazione.  
+    4.  新しいストレージ オブジェクトを作成するには、[オブジェクトの作成] ボタンをクリックしてストレージ オブジェクトの値を指定します。 **** [OK] をクリックしてオブジェクトのプロパティを閉じます。 ****  
 
-    5.  Per eliminare un oggetto di archiviazione, selezionare l'oggetto e quindi fare clic sul pulsante **Elimina** .  
+    5.  ストレージ オブジェクトを削除するには、オブジェクトを選択して [削除] ボタンをクリックします。 ****  
 
-    6.  Ripetere i passaggi da 7.b a 7.e se necessario. Al termine fare clic su **OK** per chiudere le proprietà del generatore di riepilogo.  
+    6.  手順 7.b ～ 7.e を繰り返します 必要に応じて。 作業が完了したら [OK] をクリックして、要約機能のプロパティを閉じます。 ****  
 
-    7.  Fare clic su **OK** per chiudere la finestra di dialogo **Generatori riepilogo dello stato** e completare la procedura.  
+    7.  [ **OK** ] をクリックして [ **ステータス サマライザー** ] ダイアログ ボックスを閉じ、この手順を完了します。  
 
-##### <a name="to-create-a-status-filter-rule"></a>Per creare una regola di filtro dello stato  
+##### <a name="to-create-a-status-filter-rule"></a>ステータス フィルター規則を作成するには  
 
-1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Configurazione del sito** >**Siti**, quindi selezionare il sito dove verrà configurato il sistema di stato.  
+1.  Configuration Manager コンソールで、[**管理**] > [**サイトの構成**] >[**サイト**] に移動し、スタータス システムを構成するサイトを選択します。  
 
-2.  Nella scheda **Home** , nel gruppo **Impostazioni** , fare clic su **Regole di filtro dello stato**. Verrà visualizzata la finestra di dialogo **Regole di filtro dello stato** .  
+2.  [ **ホーム** ] タブの [ **設定** ] グループで、[ **ステータス フィルター規則**] をクリックします。 [ステータス フィルター規則] ダイアログ ボックスが開きます。 ****  
 
-3.  Scegliere **Crea**.  
+3.  **[作成]**をクリックします。  
 
-4.  Nella **Creazione guidata regola di filtro dello stato**nella pagina **Generale** specificare un nome per la nuova regola di filtro dello stato e per i criteri corrispondenti ai messaggi per la regola, quindi fare clic su **Avanti**.  
+4.  **ステータス フィルター規則の作成ウィザード**の [ **全般** ] ページで、新しいステータス フィルター規則の名前とその規則のメッセージ一致条件を指定してから、[ **次へ**] をクリックします。  
 
-5.  Nella pagina **Azioni** specificare le azioni da eseguire quando un messaggio di stato corrisponde alla regola di filtro e quindi fare clic su **Avanti**.  
+5.  [ **操作** ] ページで、ステータス メッセージがフィルターの規則と一致した場合に実行する操作を指定してから、[ **次へ**] をクリックします。  
 
-6.  Nella pagina **Riepilogo** esaminare i dettagli relativi alla nuova regola, quindi completare la procedura guidata.  
+6.  [要約] ページで新しい規則の詳細を確認し、ウィザードを完了します。 ****  
 
     > [!NOTE]  
-    >  Configuration Manager richiede solo che la nuova regola di filtro dello stato abbia un nome. Se viene creata la regola ma non vengono specificati i criteri per l'elaborazione dei messaggi di stato, la regola di filtro dello stato non avrà alcun effetto. Questo comportamento consente di creare e organizzare le regole prima di configurare i criteri di filtro dello stato per ogni regola.  
+    >  Configuration Manager では、新しいステータス フィルター規則の名前だけが必須です。 規則を作成しても、ステータス メッセージを処理するための条件を指定しなければ、ステータス フィルター規則は適用されません。 この状態で、各規則のステータス フィルターの条件を構成する前に、規則を作成して整理しておくことができます。  
 
-##### <a name="to-modify-or-delete-a-status-filter-rule"></a>Per modificare o eliminare una regola di filtro dello stato  
+##### <a name="to-modify-or-delete-a-status-filter-rule"></a>ステータス フィルター規則を変更または削除するには  
 
-1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Configurazione del sito** >**Siti**, quindi selezionare il sito dove verrà configurato il sistema di stato.  
+1.  Configuration Manager コンソールで、[**管理**] > [**サイトの構成**] >[**サイト**] に移動し、スタータス システムを構成するサイトを選択します。  
 
-2.  Nella scheda **Home** , nel gruppo **Impostazioni** , fare clic su **Regole di filtro dello stato**.  
+2.  [ **ホーム** ] タブの [ **設定** ] グループで、[ **ステータス フィルター規則**] をクリックします。  
 
-3.  nella finestra di dialogo **Regole di filtro dello stato** selezionare la regola che si desidera modificare, quindi eseguire una delle seguenti azioni:  
+3.  [ステータス フィルター規則]  ダイアログ ボックスで、変更する規則を選択して、次のいずれかの操作を実行します。 ****  
 
-    -   Fare clic su **Aumenta priorità** o **Diminuisci priorità** per modificare l'ordine di elaborazione della regola di filtro dello stato. Selezionare quindi un'altra azione o passare al punto 8 della procedura per completare l'attività.  
+    -   [ **優先順位を上げる** ] または [ **優先順位を下げる** ] をクリックしてステータス フィルター規則の処理順序を変更します。 次に別の操作を選択するか、手順 8 に進み、このタスクを完了します。  
 
-    -   Fare clic su **Disattiva** o **Attiva** per modificare lo stato della regola. Dopo aver modificato lo stato della regola selezionare un'altra azione o passare al punto 8 della procedura per completare l'attività.  
+    -   [ **無効にする** ] または [ **有効にする** ] をクリックしてルールのステータスを変更します。 規則のステータスの変更後に別の操作を選択するか、手順 8 に進み、このタスクを完了します。  
 
-    -   Fare clic su **Elimina** se si desidera eliminare la regola di filtro dello stato dal sito, quindi scegliere **Sì** per confermare l'azione. Dopo aver eliminato una regola selezionare un'altra azione o passare al punto 8 della procedura per completare l'attività.  
+    -   このサイトからステータス フィルター規則を削除する場合は [ **削除** ] をクリックしてから、[ **はい** ] をクリックして操作を確定します。 規則の削除後に別の操作を選択するか、手順 8 に進み、このタスクを完了します。  
 
-    -   Fare clic su **Modifica** se si desidera modificare i criteri per la regola del messaggio di stato, quindi passare al punto 5 di questa procedura.  
+    -   ステータス メッセージ規則の条件を変更する場合は、[編集] をクリックし、手順 5 に進みます。 ****  
 
-4.  Nella scheda **Generale** della finestra di dialogo delle proprietà della regola di filtro dello stato modificare la regola e i criteri corrispondenti ai messaggi.  
+4.  ステータス フィルター規則のプロパティ ダイアログ ボックスの [全般] タブで、規則とメッセージ一致条件を変更します。 ****  
 
-5.  Nella scheda **Azioni** modificare le azioni da eseguire quando un messaggio di stato corrisponde alla regola di filtro.  
+5.  [操作] タブで、ステータス メッセージがフィルターの規則と一致した場合に実行する操作を変更します。 ****  
 
-6.  Fare clic su **OK** per salvare le modifiche.  
+6.  [OK] をクリックして変更を保存します。 ****  
 
-7.  Fare clic su **OK** per chiudere la finestra di dialogo **Regole di filtro dello stato** .  
+7.  [ **OK** ] をクリックして [ **ステータス フィルター規則** ] ダイアログ ボックスを閉じます。  
 
-##### <a name="to-configure-status-reporting"></a>Per configurare la creazione di rapporti di stato  
+##### <a name="to-configure-status-reporting"></a>ステータス レポートを構成するには  
 
-1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Configurazione del sito** > **Siti**, quindi selezionare il sito dove si prevede di configurare il sistema di stato.  
+1.  Configuration Manager コンソールで、[**管理**] > [**サイトの構成**] > [**サイト**] に移動し、スタータス システムを構成するサイトを選択します。  
 
-2.  Nella scheda **Home** , nel gruppo **Impostazioni** , fare clic su **Configura componenti sito**, quindi selezionare **Creazione rapporti di stato**.  
+2.  [ **ホーム** ] タブの [ **設定** ] グループで、[ **サイト コンポーネントの構成**] をクリックして、[ **ステータス レポート**] を選択します。  
 
-3.  Nella finestra di dialogo **Proprietà componente per la creazione rapporti di stato** specificare i messaggi di stato dei componenti client e server che si desidera segnalare o registrare:  
+3.  [ステータス レポート コンポーネントのプロパティ] ダイアログ ボックスで、レポートを生成するかログに記録するレポートサーバーとクライアント コンポーネントのステータス メッセージを指定します。 ****  
 
-    1.  Configurare un **Rapporto** per inviare messaggi di stato al sistema dei messaggi di stato di Configuration Manager.  
+    1.  ステータス メッセージを Configuration Manager ステータス メッセージ システムに送信するように [**レポート**] を構成 します。  
 
-    2.  Configurare il **Registro** per scrivere il tipo e la gravità dei messaggi di stato nel registro eventi di Windows.  
+    2.  ステータス メッセージの種類と重要度を Windows のイベント ログに書き込むように [ログ] を構成します。 ****  
 
-4.  Fare clic su **OK**.  
+4.  **[OK]**をクリックします。  
 
-###  <a name="a-namebkmkmonitorsystemstatusa-monitor-the-status-system-of-configuration-manager"></a><a name="BKMK_MonitorSystemStatus"></a> Configurare il sistema di stato di Configuration Manager  
- Lo **stato del sistema** in Configuration Manager offre una panoramica delle operazioni generali dei siti e delle operazioni del server del sito della gerarchia. Consente di rilevare problemi operativi per i componenti o i server di sistema del sito, nonché di esaminare dettagli specifici per diverse operazioni di Configuration Manager. È possibile monitorare lo stato del sistema dal nodo **Stato del sistema** dell'area di lavoro **Monitoraggio** nella console di Configuration Manager.  
+###  <a name="BKMK_MonitorSystemStatus"></a> Configuration Manager のステータス システムの監視  
+ Configuration Manager の [**システムのステータス**] には、サイトの全般的な操作および階層内のサイト サーバーの操作の概要が示されます。 これにより、サイト システム サーバーまたはコンポーネントでの操作の問題が見つかる場合があります。システムのステータスを使用すると、各種の Configuration Manager 操作の特定の詳細を確認できます。 システムのステータスは、Configuration Manager コンソールの [**監視**] ワークスペースの [**システムのステータス**] ノードから監視できます。  
 
- La maggior parte dei componenti e dei ruoli del sistema del sito di Configuration Manager generano messaggi di stato. I dettagli relativi ai messaggi di stato vengono registrati nel log operativo di ciascun componente e vengono inviati al database del sito, in cui vengono riepilogati e presentati in un rollup generale sull'integrità di ciascun sistema del sito o componente. I rollup dei messaggi di stato forniscono informazioni dettagliate su avvisi e operazioni regolari, nonché dettagli sugli errori. È possibile configurare le soglie di avvio di avvisi o errori e mettere a punto il sistema affinché le informazioni di rollup ignorino i problemi noti non rilevanti per l'utente e segnalino i problemi effettivi nei server o le operazioni del componente che è consigliabile esaminare.  
+ ほとんどの Configuration Manager サイト システムの役割およびコンポーネントは、ステータス メッセージを生成します。 ステータス メッセージの詳細は各コンポーネントの操作ログに記録されますが、サイト データベースにも送信され、各コンポーネントまたはサイト システムの正常性の全般的なロールアップとして要約されて表示されます。 これらのステータス メッセージのロールアップには、通常の操作、警告、およびエラーの詳細情報が示されます。 警告またはエラーがトリガーされるしきい値を構成できます。サーバーで実際に発生している問題、または調査対象のコンポーネントの操作に注意を向けているときに、関係ない既知の問題がロールアップ情報で無視されるようにシステムを微調整できます。  
 
- Lo stato del sistema viene replicato in altri siti in una gerarchia come dati del sito e non come dati globali. Di conseguenza è possibile visualizzare esclusivamente lo stato del sito a cui si connette la console di Configuration Manager e di tutti i siti figlio del sito. È consigliabile quindi valutare di connettere la console di Configuration Manager al sito di livello superiore della gerarchia per visualizzare lo stato del sistema.  
+ システムのステータスは、グローバル データではなくサイト データとして、階層内の他のサイトにレプリケートされます。 これは、Configuration Manager コンソールを接続しているサイト、およびそのサイトの下の子サイトのステータスのみを表示できることを意味します。 このため、システムのステータスを表示する場合は、Configuration Manager コンソールを階層の最上位サイトに接続することを検討してください。  
 
- Utilizzare la seguente tabella per identificare le varie visualizzazioni dello stato del sistema e capire quando utilizzarle.  
+ 次の表を使用して、各種のシステムのステータスのビュー、およびそれぞれのビューを使用する場面を確認します。  
 
-|Nodo|Altre informazioni|  
+|ノード|説明|  
 |----------|----------------------|  
-|Stato del sito|Utilizzare questo nodo per visualizzare un rollup dello stato di ciascun sistema del sito e verificare l'integrità di ciascun server di sistema del sito. L'integrità del sistema del sito è determinata dalle soglie configurate per ciascun sito in **Generatore riepilogo dello stato del sistema sito**.<br /><br /> È possibile visualizzare messaggi di stato per ciascun sistema del sito, impostare le soglie per i messaggi di stato e gestire il funzionamento dei componenti nei sistemi del sito utilizzando **Configuration Manager Service Manager**.|  
-|Stato componente|Usare questo nodo per visualizzare un rollup dello stato di ciascun componente di Configuration Manager e verificare l'integrità operativa del componente. L'integrità del componente è determinata dalle soglie configurate per ciascun sito in **Generatore riepilogo dello stato del componente**.<br /><br /> È possibile visualizzare messaggi di stato per ciascun componente, impostare le soglie per i messaggi di stato e gestire il funzionamento dei componenti utilizzando **Configuration Manager Service Manager**.|  
-|Record in conflitto|Utilizzare questo nodo per visualizzare i messaggi di stato relativi ai client che potrebbero avere record in conflitto.<br /><br /> Configuration Manager usa l'ID hardware per tentare di identificare i client che potrebbero essere dei duplicati e avvertire l'utente dei record in conflitto. In caso di reinstallazione di un computer, ad esempio, l'ID hardware rimarrebbe lo stesso, mentre il GUID usato da Configuration Manager potrebbe cambiare.|  
-|Query messaggi di stato|Utilizzare questo nodo per eseguire query nei messaggi di stato per eventi specifici e relativi dettagli. È possibile utilizzare le query messaggi di stato per individuare i messaggi di stato relativi a eventi specifici.<br /><br /> Spesso è possibile usare le query messaggi di stato per individuare il momento in cui uno specifico componente, operazione o oggetto di Configuration Manager è stato modificato, nonché l'account utilizzato per eseguire la modifica. È ad esempio possibile eseguire la query incorporata per **Raccolte create, modificate o eliminate** al fine di individuare il momento in cui una specifica raccolta è stata creata, nonché l'account utente utilizzato per creare la raccolta.|  
+|サイト ステータス|このノードは、各サイト システムのステータスのロールアップを表示して、各サイト システム サーバーの正常性を確認するために使用します。 サイト システムの正常性は、[サイト システムのステータス サマライザー] で各サイトに構成したしきい値によって判断されます。 ****<br /><br /> [Configuration Manager サービス マネージャー] を使用すると、各サイト システムのステータス メッセージの表示、ステータス メッセージのしきい値の設定、およびサイト システム上のコンポーネントの操作の管理を行うことができます。 ****|  
+|コンポーネントのステータス|このノードは、各 Configuration Manager コンポーネントのステータスのロールアップを表示して、コンポーネントの操作の正常性を確認するために使用します。 コンポーネントの正常性は、[コンポーネントのステータス サマライザー] で各サイトに構成したしきい値によって判断されます。 ****<br /><br /> [Configuration Manager サービス マネージャー] を使用すると、各コンポーネントのステータス メッセージの表示、ステータス メッセージのしきい値の設定、およびコンポーネントの操作の管理を行うことができます。 ****|  
+|競合しているレコード|このノードは、競合するレコードがある可能性があるクライアントに関するステータス メッセージを表示するために使用します。<br /><br /> Configuration Manager は、ハードウェア ID を使用して重複している可能性のあるクライアントを特定し、競合するレコードについて警告を発します。 たとえば、コンピューターを再インストールする必要がある場合、ハードウェア ID が同じであっても Configuration Manager の使用する GUID が異なる可能性があります。|  
+|ステータス メッセージ クエリ|このノードは、特定のイベントのステータス メッセージおよび関連する詳細を照会するために使用します。 ステータス メッセージのクエリを使用すると、特定のイベントに関連するステータス メッセージを検索できます。<br /><br /> ステータス メッセージのクエリを使用すると、多くの場合、特定のコンポーネント、操作、または Configuration Manager オブジェクトが変更されたタイミング、および変更するために使用されたアカウントを識別できます。 たとえば、[作成、変更、または削除されたコレクション] のための組み込みクエリを実行すると、特定のコレクションが作成されたタイミング、およびコレクションを作成するために使用されたユーザー アカウントを識別できます。 ****|  
 
-####  <a name="a-namebkmkmanagestatusa-manage-site-status-and-component-status"></a><a name="bkmk_managestatus"></a> Gestire lo stato del sito e lo stato componente  
- Per gestire lo stato del sito e lo stato componente, utilizzare le seguenti informazioni:  
+####  <a name="bkmk_managestatus"></a> サイトのステータスとコンポーネントのステータスの管理  
+ 次の情報を使用して、サイトのステータスとコンポーネントのステータスを管理します。  
 
--   Per configurare le soglie per il sistema di stato, vedere [Procedure per la configurazione del sistema di stato](#bkmk_configstatus).  
+-   ステータス システムのしきい値を構成する場合は、「 [ステータス システムの構成手順](#bkmk_configstatus)」を参照してください。  
 
--   Per gestire singoli componenti in Configuration Manager, usare **Configuration Manager Service Manager**.  
+-   Configuration Manager で個々のコンポーネントを管理するには、**Configuration Manager サービス マネージャー**を使用します。  
 
-####  <a name="a-namebkmkviewa-view-status-messages"></a><a name="bkmk_view"></a> Visualizzare i messaggi di stato  
- È possibile visualizzare i messaggi di stato per i singoli componenti e server di sistema del sito.  
+####  <a name="bkmk_view"></a> ステータス メッセージの表示  
+ 個々のサイト システム サーバーおよびコンポーネントのステータス メッセージを表示できます。  
 
- Per visualizzare i messaggi di stato nella console di Configuration Manager, selezionare un componente o un server di sistema del sito specifico e fare clic su **Mostra messaggi**. Per la visualizzazione dei messaggi, è possibile scegliere di visualizzare tipi di messaggi specifici o messaggi relativi a un periodo di tempo specifico, nonché filtrare i risultati n base ai dettagli dei messaggi di stato.  
+ Configuration Manager コンソールにステータス メッセージを表示するには、特定のサイト システム サーバーまたはコンポーネントを選択して、[**メッセージを表示**] をクリックします。 メッセージを表示する場合、特定のメッセージの種類または指定した期間のメッセージを表示するように選択できます。また、ステータス メッセージの詳細に基づいて結果をフィルタリングできます。  
 
-##  <a name="a-namebkmkalertsa-alerts"></a><a name="bkmk_Alerts"></a> Avvisi  
- Gli avvisi di Configuration Manager vengono generati da alcune operazioni quando si verifica una condizione specifica.  
+##  <a name="bkmk_Alerts"></a> アラート  
+ Configuration Manager アラートは、一部の操作で特定の状況が発生した場合に生成されます。  
 
--   In genere, gli avvisi vengono generati quando si verifica un errore che è necessario risolvere  
+-   通常、アラートが生成されるのは、解決する必要があるエラーが発生した場合です。  
 
--   Gli avvisi potrebbero essere generati per informare l'utente dell'esistenza di una condizione, per poter continuare a monitorare la situazione  
+-   また、状況を引き続き監視するように警告するためにアラートが生成されることもあります。  
 
--   Alcuni avvisi vengono configurati, ad esempio gli avvisi per lo stato di Endpoint Protection e del client, mentre altri avvisi vengono configurati automaticamente  
+-   一部のアラート (Endpoint Protection やクライアントのステータスに関するアラートなど) は、ユーザーが構成しますが、その他のアラートは自動的に構成されます。  
 
--   È possibile configurare le sottoscrizioni agli avvisi che possono quindi inviare informazioni dettagliate via e-mail, aumentando la consapevolezza di problemi chiave  
+-   アラートのサブスクリプションを構成して、詳細が電子メールで送信されるようにすると、重要な問題を認識しやすくなります。  
 
- Usare la tabella seguente per trovare informazioni su come configurare gli avvisi e le sottoscrizioni di avvisi in Configuration Manager:  
+ Configuration Manager でアラートとアラートのサブスクリプションを構成する方法については、次の表を参照してください。  
 
 
-|Azione|Altre informazioni|  
+|操作|説明|  
 |------------|----------------------|  
-|Configurare gli avvisi di Endpoint Protection per una raccolta|Vedere **Come configurare gli avvisi per Endpoint Protection in Configuration Manager** in [Configurazione di Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/configure-endpoint-protection.md)|  
-|Configurare gli avvisi di stato del client per una raccolta|Vedere [Come configurare lo stato del client in System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).|  
-|Gestire gli avvisi di Configuration Manager|Vedere la sezione [Management tasks for alerts](#BKMK_Manage) in questo argomento.|  
-|Configurare le sottoscrizioni e-mail agli avvisi|Vedere la sezione [Management tasks for alerts](#BKMK_Manage) in questo argomento.|  
-|Avvisi di monitoraggio|Vedere la sezione [Avvisi di monitoraggio](#BKMK_MonitorAlerts)|  
+|コレクションに対して Endpoint Protection アラートを構成する|「[System Center Configuration Manager での Endpoint Protection の構成](../../../protect/deploy-use/configure-endpoint-protection.md)」の「**Configuration Manager での Endpoint Protection の定義ファイルの更新の構成方法**」を参照してください。|  
+|コレクションに対するクライアント ステータス アラートを構成する|「[System Center Configuration Manager でクライアント ステータスを構成する方法](../../../core/clients/deploy/configure-client-status.md)」を参照してください。|  
+|Configuration Manager アラートの管理|このトピックの「 [Management tasks for alerts](#BKMK_Manage) 」セクションを参照してください。|  
+|アラートに対する電子メール サブスクリプションを構成する|このトピックの「 [Management tasks for alerts](#BKMK_Manage) 」セクションを参照してください。|  
+|アラートを監視する|このトピックの「 [アラートを監視する](#BKMK_MonitorAlerts)|  
 
-###  <a name="a-namebkmkmanagea-management-tasks-for-alerts"></a><a name="BKMK_Manage"></a> Management tasks for alerts  
+###  <a name="BKMK_Manage"></a> Management tasks for alerts  
 
-##### <a name="to-manage-general-alerts"></a>Per gestire gli avvisi generali  
+##### <a name="to-manage-general-alerts"></a>一般的なアラートを管理するには  
 
-1.  Nella console di Configuration Manager passare a **Monitoraggio** > **Avvisi**, quindi selezionare un'attività di gestione.  
+1.  Configuration Manager コンソールで、[**監視**] > [**アラート**] に移動し、管理タスクを選択します。  
 
-  Per altre informazioni sulle attività di gestione che potrebbero richiedere alcune informazioni prima della relativa selezione, usare la seguente tabella.  
+  次の表で、管理タスクに関する詳細と、各タスクを選択する前に必要となる追加情報について説明します。  
 
-|Attività di gestione|Dettagli|  
+|管理タスク|説明|  
     |---------------------|-------------|  
-    |**Configurare un**|Apre la finestra di dialogo *&lt;nome avviso*\>**Proprietà**, dove è possibile modificare il nome, la gravità e le soglie per l'avviso selezionato. Se si modifica il livello di gravità dell'avviso, questa configurazione influisce sulla modalità di visualizzazione degli avvisi nella console di Configuration Manager.|  
-    |**Modifica commento**|Immettere un commento per gli avvisi selezionati. Questi commenti vengono visualizzati con l'avviso nella console di Configuration Manager.|  
-    |**Rimanda**|Sospende il monitoraggio dell'avviso fino al raggiungimento della data specificata. In tale data lo stato dell'avviso viene aggiornato.<br /><br /> È possibile rimandare un avviso solo quando è abilitato.|  
-    |**Crea sottoscrizione**|Apre la finestra di dialogo **Nuova sottoscrizione** dove è possibile creare una sottoscrizione e-mail all'avviso selezionato.|  
+    |**ステータス メッセージを**|[*&lt;アラート名*\> **のプロパティ**] ダイアログ ボックスを開きます。このダイアログ ボックスで、選択したアラートの名前、重要度、しきい値を変更できます。 アラートの重要度を変更すると、Configuration Manager コンソールにアラートが表示される方法に影響します。|  
+    |**コメントの編集**|選択したアラートに関するコメントを入力します。 このコメントが、Configuration Manager コンソールにアラートと共に表示されます。|  
+    |**延期**|アラートの監視を指定した日まで延期します。 指定日に、アラートの状態が更新されます。<br /><br /> 延期できるのは有効になっているアラートのみです。|  
+    |**サブスクリプションの作成**|**[新規サブスクリプション]** ダイアログ ボックスを開きます。このダイアログ ボックスで、選択したアラートに対する電子メールのサブスクリプションを作成できます。|  
 
-##### <a name="to-configure-endpoint-protection-alerts-for-a-collection"></a>Per configurare gli avvisi di Endpoint Protection per una raccolta  
+##### <a name="to-configure-endpoint-protection-alerts-for-a-collection"></a>コレクションに対して Endpoint Protection アラートを構成するには  
 
-1.  in sospeso  
+1.  保留中  
 
-##### <a name="to-configure-client-status-alerts-for-a-collection"></a>Per configurare gli avvisi di stato del client per una raccolta  
+##### <a name="to-configure-client-status-alerts-for-a-collection"></a>コレクションに対してクライアント ステータス アラートを構成するには  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità** >   **Raccolte dispositivi**.  
+1.  Configuration Manager コンソールで、[**資産とコンプライアンス**] >   [**デバイス コレクション**] をクリックします。  
 
-2.  Nell'elenco **Raccolte siti** selezionare la raccolta per cui si desiderano configurare gli avvisi e quindi nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
-
-    > [!NOTE]  
-    >  Non è possibile configurare avvisi per raccolte di utenti.  
-
-3.  Nella scheda **Avvisi** della finestra di dialogo *&lt;Nome raccolta*\>**Proprietà** fare clic su **Aggiungi**.  
+2.  [ **デバイス コレクション** ] の一覧で、アラートを構成するコレクションを選択して、次に、[ **ホーム** ] タブの [ **プロパティ** ] グループで、[ **プロパティ**] をクリックします。  
 
     > [!NOTE]  
-    >  La scheda **Avvisi** viene visualizzata solo se il ruolo di sicurezza a cui si è associati dispone delle autorizzazioni per gli avvisi.  
+    >  ユーザーのコレクションに対してアラートを構成することはできません。  
 
-4.  Nella finestra di dialogo **Aggiungi avvisi nuova raccolta** scegliere gli avvisi che si desidera generare quando le soglie di stato del client scendono sotto un valore specifico e quindi fare clic su **OK**.  
-
-5.  Nell'elenco **Condizioni** della scheda **Avvisi** selezionare ogni avviso dello stato del client, quindi specificare le seguenti informazioni.  
-
-    -   **Nome avviso**: accettare il nome predefinito o immettere un nuovo nome per l'avviso.  
-
-    -   **Gravità avviso**: nell'elenco a discesa scegliere il livello di gravità che verrà visualizzato nella console di Configuration Manager.  
-
-    -   **Genera avviso**: specificare la percentuale di soglia per l'avviso.  
-
-6.  Fare clic su **OK** per chiudere la finestra di dialogo *&lt;Nome raccolta*\>**Proprietà**.  
-
-##### <a name="to-configure-email-notification-for-alerts"></a>Per configurare la notifica degli avvisi e-mail  
-
-1.  Nella console di Configuration Manager passare a **Monitoraggio** > **Avvisi** > **Sottoscrizioni**.  
-
-2.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Configura notifica posta elettronica**.  
-
-3.  Nella finestra di dialogo **Proprietà del componente di notifica e-mail** specificare le informazioni seguenti:  
-
-    -   **Abilita notifiche email per avvisi**: selezionare questa casella di controllo per abilitare in Configuration Manager l'uso di un server SMTP per inviare avvisi di posta elettronica.  
-
-    -   **FQDN o indirizzo IP del server SMTP per inviare avvisi e-mail**: immettere il nome di dominio completo (FQDN) o l'indirizzo IP e la porta SMTP per il server e-mail che si vuole usare per questi avvisi.  
-
-    -   **Account di connessione al Server SMTP**: specificare il metodo di autenticazione per Configuration Manager da usare per connettere il server di posta elettronica.  
-
-    -   **Indirizzo mittente per avvisi e-mail**: specificare l'indirizzo e-mail da cui vengono inviati gli avvisi e-mail.  
-
-    -   **Verifica server SMTP**: invia un messaggio e-mail di verifica all'indirizzo e-mail specificato in **Indirizzo mittente per avvisi e-mail**.  
-
-4.  Fare clic su **OK** per salvare le impostazioni e chiudere la finestra di dialogo **Proprietà del componente di notifica e-mail** .  
-
-##### <a name="to-subscribe-to-email-alerts"></a>Per sottoscrivere gli avvisi e-mail  
-
-1.  Nella console di Configuration Manager passare a **Monitoraggio** > **Avvisi**.  
-
-2.  Selezionare un avviso e quindi fare clic su **Crea sottoscrizione** nel gruppo **Sottoscrizione** della scheda **Home**.  
-
-3.  Nella finestra di dialogo **Nuova sottoscrizione** specificare le informazioni seguenti:  
-
-    -   **Nome**: immettere un nome per identificare la sottoscrizione e-mail. È possibile usare fino a 255 caratteri.  
-
-    -   **Indirizzo di posta elettronica**: immettere gli indirizzi e-mail ai quali si vuole inviare l'avviso. È possibile separare più indirizzi e-mail con un punto e virgola.  
-
-    -   **Lingua e-mail**: nell'elenco, specificare la lingua per l'e-mail.  
-
-4.  Fare clic su **OK** per chiudere la finestra di dialogo **Nuova sottoscrizione** e creare la sottoscrizione e-mail.  
+3.  [*&lt;コレクション名*\> **のプロパティ**] ダイアログ ボックスの [**アラート**] タブで、[**追加**] をクリックします。  
 
     > [!NOTE]  
-    >  È possibile eliminare e modificare le sottoscrizioni nell'area di lavoro **Monitoraggio** quando si espande il nodo **Avvisi** e quindi fare clic sul nodo **Sottoscrizioni** .  
+    >  [アラート] タブは、ユーザーに割り当てられたセキュリティ ロールがアラートを許可している場合にだけ表示されます。 ****  
 
-###  <a name="a-namebkmkmonitoralertsa-monitor-alerts"></a><a name="BKMK_MonitorAlerts"></a> Avvisi di monitoraggio  
- È possibile visualizzare gli avvisi nel nodo **Avvisi** dell'area di lavoro **Monitoraggio** . Gli avvisi hanno uno degli stati di avviso seguenti:  
+4.  [ **新しいコレクション アラートの追加** ] ダイアログ ボックスで、クライアント ステータスのしきい値が特定の値未満になった場合に生成されるアラートを選択して、[ **OK** ] をクリックします。  
 
--   **Mail attivato**: la condizione dell'avviso non è stata soddisfatta.  
+5.  [ **アラート** ] タブの [ **条件** ] の一覧で、各クライアント ステータス アラートを選択し、次の情報を指定します。  
 
--   **Attivo**: la condizione dell'avviso è stata soddisfatta.  
+    -   **アラート名** – 既定の名前を受け入れるか、新しいアラート名を入力します。  
 
--   **Annullato**: la condizione di un avviso attivo non viene più soddisfatta. Questo stato indica che la condizione che ha generato l'avviso è stata risolta.  
+    -   **アラートの重要度** – ドロップダウン リストから、Configuration Manager コンソールに表示されるアラート レベルを選択します。  
 
--   **Rimandato**: un utente amministratore ha configurato Configuration Manager per valutare lo stato dell'avviso in un secondo momento.  
+    -   **アラートの生成** – アラートのしきい値をパーセント値で指定します。  
 
--   **Disabilitato**: l'avviso è stato disabilitato da un utente amministratore. Quando un avviso ha questo stato, Configuration Manager non aggiorna l'avviso nemmeno in caso di modifica dello stato.  
+6.  [**OK**] をクリックして [*&lt;コレクション名*\> **のプロパティ**] ダイアログ ボックスを閉じます。  
 
- Quando Configuration Manager genera un avviso è possibile eseguire una delle seguenti azioni:  
+##### <a name="to-configure-email-notification-for-alerts"></a>アラートの電子メール通知を構成するには  
 
--   Risolvere la condizione che ha generato l'avviso, ad esempio un problema di rete o un problema di configurazione. Quando Configuration Manager rileva che il problema non esiste più, lo stato dell'avviso viene modificato in **Annulla**.  
+1.  Configuration Manager コンソールで、[**監視**] > [**アラート**] > [**サブスクリプション**] に移動します。  
 
--   Se l'avviso è un problema noto, è possibile rimandare l'avviso per un determinato periodo di tempo. In quel momento Configuration Manager aggiorna l'avviso allo stato corrente.  
+2.  [ **ホーム** ] タブの [ **作成** ] グループで、[ **電子メール通知の構成**] をクリックします。  
 
-     È possibile rimandare un avviso solo quando è attivo.  
+3.  [電子メール通知コンポーネントのプロパティ] ダイアログ ボックスで、次の情報を指定します。 ****  
 
--   È possibile modificare il **Commento** di un avviso in modo che gli altri utenti amministratori vedano che l'utente è al corrente dell'avviso. Nel commento è ad esempio possibile individuare le modalità di risoluzione della condizione, fornire informazioni sullo stato corrente della condizione o spiegare perché l'avviso è stato rimandato.  
+    -   **[アラートの電子メール通知を有効にする]**: このチェック ボックスをオンにすると、Configuration Manager が電子メールでアラートを送信するために SMTP サーバーを使用できるようになります。  
 
+    -   **[電子メール アラートを送信する SMTP サーバーの FQDN または IP アドレス]**: アラートに使用する電子メール サーバーの完全修飾ドメイン名 (FQDN) または IP アドレスと、SMTP ポートを入力します。  
 
+    -   **[SMTP サーバー接続アカウント]**: 電子メール サーバーへの接続に使用する Configuration Manager の認証方法を指定します。  
 
-<!--HONumber=Dec16_HO3-->
+    -   **[電子メール アラートの送信者アドレス]**: アラートの送信元の電子メール アドレスを指定します。  
 
+    -   **SMTP サーバーのテスト**:指定された電子メール アドレスにテスト メールを送信 **電子メール アラートのセンダー アドレス**です。  
 
+4.  クリックして **ok** を閉じると、設定を保存、 **電子メール設定コンポーネントのプロパティ**  ダイアログ ボックス。  
+
+##### <a name="to-subscribe-to-email-alerts"></a>電子メール アラートにサブスクライブするには  
+
+1.  Configuration Manager コンソールで、**[監視]** > **[アラート]**に移動します。  
+
+2.  アラートを選択してから、 **[ホーム]** タブの **[サブスクリプション]** グループで、 **[サブスクリプションの作成]**をクリックします。  
+
+3.  [新規サブスクリプション] ダイアログ ボックスで、次の情報を指定します。 ****  
+
+    -   **[名前]**: 電子メールのサブスクリプションを識別するための名前を入力します。 255 文字まで使用できます。  
+
+    -   **[電子メール アドレス]**: アラートの送信先の電子メール アドレスを入力します。 セミコロンで複数の電子メール アドレスを区切ることができます。  
+
+    -   [電子メールの言語:]****この一覧で、電子メール用の言語を指定します。  
+
+4.  をクリックして **ok** を閉じる、 **新しいサブスクリプション**  ダイアログ ボックスを電子メールのサブスクリプションを作成するとします。  
+
+    > [!NOTE]  
+    >  削除および内のサブスクリプションを編集することができます、 **監視** ワークスペースを展開すると、 **アラート** ノード、およびをクリックし、 **サブスクリプション** ノードです。  
+
+###  <a name="BKMK_MonitorAlerts"></a> アラートを監視する  
+ アラートは、 **[監視]** ワークスペースの **[アラート]** ノードで表示できます。 アラートには、次のいずれかのアラートの状態があります。  
+
+-   **[トリガーされたことがない]**: アラートの状態になったことがない。  
+
+-   **[アクティブ]**: アラートの状態になっている。  
+
+-   **[取り消し済み]**: アクティブだったアラートの状態がなくなった。 この状態は、アラートの原因となった状態が解決されたことを示します。  
+
+-   **[延期]**: アラートの状態を後で評価するように、管理ユーザーが Configuration Manager を構成した。  
+
+-   **[無効]**: アラートが管理ユーザーによって無効にされた。 アラートをこの状態にすると、Configuration Manager は、アラートの状態が変わってもアラートを更新しません。  
+
+ Configuration Manager がアラートを生成したら、次のいずれかのアクションを行うことができます。  
+
+-   アラートの原因となった状態を解決します。たとえば、アラートが生成されたネットワークの問題または構成の問題を解決します。 Configuration Manager がこの問題が存在しなくなったことを検出すると、アラートの状態が **[取り消されました]** に変更されます。  
+
+-   アラートが既知の問題である場合は、アラートを特定の期間延期することができます。 その期間が過ぎた後に、Configuration Manager はアラートを最新の状態に更新します。  
+
+     アラートを延期できるのは、アラートがアクティブであるときのみです。  
+
+-   アラートの [コメント] を編集して、アラートが認識されていることを他の管理ユーザーが確認できるようにできます。 **** たとえば、コメント内に、その状態を解決する方法、その状態の現在のステータスに関する情報、またはそのアラートを延期した理由の説明を示すことができます。  

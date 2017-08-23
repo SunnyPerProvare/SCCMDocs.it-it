@@ -1,56 +1,52 @@
 ---
-title: Usare i supporti di avvio per distribuire Windows in rete | Microsoft Docs
-description: Le distribuzioni dei supporti di avvio in System Center Configuration Manager consentono di distribuire il sistema operativo all'avvio del computer di destinazione.
+title: "起動可能なメディアを使用したネットワーク経由での Windows の展開 | Microsoft Docs"
+description: "System Center Configuration Manager での起動可能なメディアによる展開を使用して、セットアップ先のコンピューターの起動と同時にオペレーティング システムを展開できます。"
 ms.custom: na
 ms.date: 6/16/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 999b5409-7e72-48d2-8554-4d44427ce383
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: mattbriggs
 ms.author: mattbriggs
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
 ms.openlocfilehash: 9b20e5e2a66d92038033e816e6fc701581c48a7f
-ms.contentlocale: it-it
-ms.lasthandoff: 06/28/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-bootable-media-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Usare i supporti di avvio per distribuire Windows in rete con System Center Configuration Manager
+# <a name="use-bootable-media-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>System Center Configuration Manager で起動可能なメディアを使用してネットワーク経由で Windows を展開する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-È possibile distribuire il sistema operativo all'avvio del computer di destinazione usando una distribuzione dei supporti di avvio. Il supporto contiene un puntatore alla sequenza di attività, all'immagine del sistema operativo e ad altri contenuti richiesti dalla rete. All'avvio del computer di destinazione, il computer recupera gli elementi a cui fa riferimento il puntatore del mouse. Con il supporto di avvio senza contenuto, è possibile aggiornare la destinazione senza sostituirlo nel supporto.
+起動可能なメディアによる展開を使用してセットアップ先のコンピューターを起動するときにオペレーティング システムを展開できます。 メディアには、タスク シーケンス、オペレーティング システム イメージ、およびその他のネットワーク上の必要なコンテンツへのポインターが含まれています。 セットアップ先コンピューターは、起動するときに、ポインターで参照されている項目を取得します。 コンテンツのない起動可能なメディアを使用すると、メディア上で交換しなくてもセットアップ先コンピューターを更新できます。
 
-È possibile distribuire i sistemi operativi in rete usando il multicast negli scenari di distribuzione del sistema operativo seguenti:
+次に挙げるオペレーティング システムの展開シナリオでは、マルチキャストを使用してネットワーク経由でオペレーティング システムを展開できます。
 
--   [Aggiornare un computer esistente con una nuova versione di Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)
+-   [新しいバージョンの Windows で既存のコンピューターを更新する](refresh-an-existing-computer-with-a-new-version-of-windows.md)
 
--   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
+-   [新しいコンピューター (ベア メタル) に新しいバージョンの Windows をインストールする](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Sostituire un computer esistente e trasferire le impostazioni](replace-an-existing-computer-and-transfer-settings.md)  
+-   [既存のコンピューターの置き換えと設定の転送](replace-an-existing-computer-and-transfer-settings.md)  
 
-Completare i passaggi in uno degli scenari di distribuzione del sistema operativo e quindi fare riferimento alle sezioni seguenti per usare i supporti di avvio per distribuire il sistema operativo.  
+いずれかのオペレーティング システムの展開シナリオの手順を完了してから、次のセクションを使用して、起動可能なメディアでオペレーティング システムを展開します。  
 
-## <a name="configure-deployment-settings"></a>Configurare le impostazioni di distribuzione  
-Quando si usa un supporto di avvio per avviare il processo di distribuzione del sistema operativo, configurare la distribuzione per rendere disponibile il sistema operativo per il supporto. È possibile impostare questa opzione nella pagina **Impostazioni di distribuzione** della Distribuzione guidata del software o nella scheda **Impostazioni di distribuzione** nelle proprietà della distribuzione. Per l'impostazione **Rendi disponibile per** , configurare uno degli elementi seguenti:
+## <a name="configure-deployment-settings"></a>展開の設定の構成  
+起動可能なメディアを使用してオペレーティング システムの展開プロセスを開始する場合、オペレーティング システムをメディアから使用できるように展開を構成します。 このオプションはソフトウェアの展開ウィザードの **[展開の設定]** ページか展開のプロパティの **[配置の設定]** タブで設定することができます。 **[利用できるようにする項目]** の設定では、次のいずれかを設定します。
 
--   Client di Configuration Manager, supporti e PXE
+-   Configuration Manager クライアント、メディア、PXE
 
--   Solo supporti e PXE
+-   メディアと PXE のみ
 
--   Solo supporti e PXE (nascosto)
+-   メディアと PXE のみ (非表示)
 
-## <a name="create-the-bootable-media"></a>Creare il supporto di avvio
-È possibile specificare se il supporto di avvio è un'unità flash USB o un set di CD/DVD. Il computer in cui vengono avviati i supporti deve consentire l'opzione scelta come unità di avvio. Per altre informazioni, vedere [Creare supporti di avvio](create-bootable-media.md).  
+## <a name="create-the-bootable-media"></a>起動可能なメディアを作成する
+起動可能なメディアとして USB フラッシュ ドライブと CD/DVD セットのどちらかを指定できます。 起動可能なドライブに選ぶオプションは、メディアを起動するコンピューターがサポートするものでなければなりません。 詳細については、「[起動可能なメディアの作成](create-bootable-media.md)」を参照してください。  
 
-##  <a name="BKMK_Deploy"></a> Installare il sistema operativo da supporti di avvio  
-Inserire il supporto di avvio in un'unità di avvio del computer e quindi accendere il sistema per installare il sistema operativo.
-
+##  <a name="BKMK_Deploy"></a> 起動可能なメディアからオペレーティング システムをインストールする  
+コンピューターの起動可能なドライブに起動可能なメディアを挿入し、電源を入れてオペレーティング システムをインストールします。

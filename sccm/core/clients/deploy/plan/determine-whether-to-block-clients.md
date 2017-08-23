@@ -1,76 +1,72 @@
 ---
-title: Bloccare i client | Microsoft Docs
-description: Bloccare l&quot;accesso client per la protezione del sistema tramite System Center Configuration Manager.
+title: "クライアントをブロックする | Microsoft Docs"
+description: "System Center Configuration Manager を使用してクライアントのアクセスをブロックし、システムのセキュリティを確保します。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 54ef5fbb-521d-4ca5-a1c5-61e6f538d71e
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: c1b3b3e7fe756ce3e0c82ffc15693999d8e817d2
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: 3e323ab90ec4cc274581e19065fd7d81c0c11c35
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="determine-whether-to-block-clients-in-system-center-configuration-manager"></a>Determinare se bloccare o meno i client in System Center Configuration Manager
+# <a name="determine-whether-to-block-clients-in-system-center-configuration-manager"></a>System Center Configuration Manager でクライアントをブロックするかどうかの判断
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Se un computer client o un dispositivo mobile client non è più considerato attendibile, è possibile bloccare il client nella console di System Center 2012 Configuration Manager. I client bloccati vengono rifiutati dall'infrastruttura di Configuration Manager e non potranno pertanto comunicare con i sistemi del sito per scaricare criteri, caricare dati di inventario o inviare messaggi di stato.  
+クライアント コンピューターまたはクライアント モバイル デバイスが信頼できなくなった場合は、System Center 2012 Configuration Manager コンソールでクライアントをブロックできます。 ブロックされたクライアントは、Configuration Manager インフラストラクチャによって拒否されるため、サイト システムと通信してポリシーをダウンロードしたり、インベントリ データをアップロードしたり、状態またはステータス メッセージを送信したりすることはできなくなります。  
 
- È necessario bloccare e sbloccare un client dal sito assegnato e non da un sito di amministrazione centrale o da un sito secondario.  
+ クライアントのブロックとブロック解除は、セカンダリ サイトや中央管理サイトではなく、そのクライアントが割り当てられているサイトから行う必要があります。  
 
 > [!IMPORTANT]  
->  Anche se il blocco in Configuration Manager consente di proteggere il sito di Configuration Manager, non fare affidamento su questa funzionalità per proteggere il sito da computer o dispositivi mobili non attendibili se si consente ai client di comunicare con sistemi del sito tramite HTTP, poiché un client bloccato potrebbe accedere nuovamente al sito con un ID hardware e un certificato autofirmato nuovi. In alternativa, utilizzare la funzionalità di blocco per bloccare i supporti di avvio persi o compromessi usati per distribuire i sistemi operativi e quando i sistemi del sito accettano connessioni client HTTPS.  
+>  Configuration Manager でブロックすることにより Configuration Manager サイトをセキュリティで保護することができますが、新しい自己署名入り証明書およびハードウェア ID を使用すると、ブロックされたクライアントがサイトに再参加できるため、HTTP を使ってクライアントがサイト システムと通信することを許可する場合は、信頼されていないコンピューターやモバイル デバイスからサイトを保護するのに、この機能に依存しないでください。 そうではなく、サイト システムが HTTPS クライアント接続を受け入れる場合は、オペレーティング システムの展開時に使用したあと紛失したブート メディア、または危険のあるブート メディアをブロックするのに、このブロック機能を使用します。  
 
- Non è possibile bloccare i client che accedono al sito usando il certificato proxy ISV. Per altre informazioni sul certificato proxy ISV, vedere il Software Development Kit (SDK) di System Center Configuration Manager.  
+ ISV プロキシ証明書を使用してサイトにアクセスするクライアントをブロックすることはできません。 ISV プロキシ証明書の詳細については、System Center Configuration Manager Software Development Kit (SDK) を参照してください。  
 
- Se i sistemi del sito accettano connessioni client HTTPS e l'infrastruttura a chiave pubblica (PKI) supporta un elenco di revoche di certificati (CRL), considerare sempre la revoca del certificato come prima linea di difesa contro certificati potenzialmente compromessi. Il blocco dei client in Configuration Manager offre una seconda linea di difesa per la protezione della gerarchia.  
+ サイト システムが HTTPS クライアント接続に対応しており、公開キー インフラストラクチャで証明書失効リスト (CRL) がサポートされている場合、危険の可能性のある証明書に対しては、証明書失効が第 1 の防御ラインとなることを常に考慮してください。 Configuration Manager でクライアントをブロックすることは、階層を保護するための第 2 の防御ラインとなります。  
 
-##  <a name="BKMK_Block_vs_CRL"></a> Considerazioni sul blocco dei client  
+##  <a name="BKMK_Block_vs_CRL"></a> クライアントのブロックに関する考慮事項  
 
--   Questa opzione è disponibile per le connessioni client HTTP e HTTPS, ma ha protezione limitata quando i client si connettono ai sistemi del sito usando il protocollo HTTP.  
+-   このオプションは、HTTP および HTTPS クライアント接続で使用できますが、クライアントが HTTP でサイトシステムに接続するときは、セキュリティが制限されます。  
 
--   Gli utenti amministratori di Configuration Manager hanno l'autorità per bloccare un client e la relativa azione viene eseguita nella console di Configuration Manager.  
+-   Configuration Manager の管理ユーザーにはクライアントをブロックする権限があります。この操作には Configuration Manager コンソールを使用します。  
 
--   La comunicazione client è stata rifiutata solo dalla gerarchia di Configuration Manager.  
-
-    > [!NOTE]  
-    >  Lo stesso client può registrarsi con una gerarchia di Configuration Manager diversa.  
-
--   Il client viene bloccato immediatamente dal sito di Configuration Manager.  
-
--   Consente di proteggere i sistemi del sito da computer e dispositivi mobili potenzialmente compromessi.  
-
-## <a name="considerations-for-using-certificate-revocation"></a>Considerazioni sull'uso della revoca dei certificati  
-
--   Questa opzione è disponibile per le connessioni client di Windows HTTPS se l'infrastruttura PKI supporta un elenco di revoche di certificati (CRL).  
-
-     I client Mac eseguono sempre il controllo CRL e non è possibile disabilitare questa funzionalità.  
-
-     Anche se i client di dispositivi mobili non usano elenchi di revoche di certificati per verificare i certificati per i sistemi del sito, i relativi certificati possono essere revocati e verificati da Configuration Manager.  
-
--   Gli amministratori dell'infrastruttura a chiave pubblica hanno l'autorità per bloccare un client e la relativa azione viene eseguita fuori dalla console di Configuration Manager.  
-
--   La comunicazione client può essere rifiutata da qualsiasi computer o dispositivo mobile che richiede il certificato client.  
-
--   È probabile che si verifichi un ritardo tra la revoca di certificato e il download da parte dei sistemi del sito dell'elenco di revoche di certificati (CRL) modificato.  
-
--   Per molte distribuzioni di PKI, questo ritardo può essere un giorno o più. Ad esempio, in Servizi certificati Active Directory la scadenza predefinita è di una settimana per un CRL completo e un giorno per delta CRL.  
-
--   Consente di proteggere client e sistemi del sito da computer e dispositivi mobili potenzialmente compromessi.  
+-   クライアントの通信は、Configuration Manager 階層でのみ拒否されます。  
 
     > [!NOTE]  
-    >  È possibile proteggere ulteriormente i sistemi che eseguono IIS da client sconosciuti tramite la configurazione di un elenco di certificati attendibili (CTL) in IIS.  
+    >  同じクライアントは、別の Configuration Manager 階層に登録できます。  
 
+-   クライアントはすぐに Configuration Manager サイトからブロックされます。  
+
+-   危険性のあるコンピューターおよびモバイル デバイスからサイト システムを保護できます。  
+
+## <a name="considerations-for-using-certificate-revocation"></a>証明書の失効を使用するときの考慮事項  
+
+-   公開キー インフラストラクチャが証明書失効リスト (CRL) をサポートする場合は、このオプションを HTTPS Windows クライアント接続に適用できます。  
+
+     Mac クライアントは CRL チェックを常に実行するため、この機能を無効にすることはできません。  
+
+     モバイル デバイス クライアントはサイト システムの証明書を確認するのに証明書失効リストを使用しませんが、証明書は、Configuration Manager によって失効させたり、確認したりすることができます。  
+
+-   公開キー インフラストラクチャ管理者には、証明書を失効させる権限があり、この操作は Configuration Manager コンソール以外で実行されます。  
+
+-   クライアントの通信は、このクライアント証明書が必要な任意のコンピューターまたはモバイル デバイスから拒否できます。  
+
+-   証明書が失効してから、サイト システムが更新後の証明書失効リスト (CRL) をダウンロードするまでの間に遅延が発生しやすくなります。  
+
+-   多くの PKI 展開を行う場合、この遅延は 1 日またはそれ以上になる可能性があります。 たとえば、Active Directory 証明書サービスでは、既定の有効期間は完全な CRL で 1 週間、差分の CRL で 1 日です。  
+
+-   危険性のあるコンピューターおよびモバイル デバイスからサイト システムとクライアントを保護できます。  
+
+    > [!NOTE]  
+    >  IIS の証明書信頼リスト (CTL) を構成すると、IIS を実行するサイト システムを、未知のクライアントから一層保護できます。  

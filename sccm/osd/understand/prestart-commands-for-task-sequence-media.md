@@ -1,35 +1,34 @@
 ---
-title: "Comandi di preavvio per supporti per sequenza di attività | Microsoft Docs"
-description: Creare un script da usare con il comando di preavvio, distribuire il contenuto associato al comando di preavvio e configurare il comando di preavvio nel supporto.
+title: "タスク シーケンス メディアの起動前コマンド | Microsoft Docs"
+description: "起動前コマンドに使用するスクリプトを作成し、起動前コマンドに関連付けられたコンテンツを配布し、メディアで起動前コマンドを構成します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ccc9f652-2953-4c38-8a90-c799484105ca
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: 1c396534425179c6828d48acc578295167c566be
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="prestart-commands-for-task-sequence-media-in-system-center-configuration-manager"></a>Comandi di preavvio per supporti per sequenza di attività in System Center Configuration Manager
+# <a name="prestart-commands-for-task-sequence-media-in-system-center-configuration-manager"></a>System Center Configuration Manager でのタスク シーケンス メディアの起動前コマンド
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-È possibile creare un comando di preavvio in System Center Configuration Manager da usare con i supporti di avvio, i supporti autonomi e i supporti preinstallati. Il comando di preavvio è uno script o un eseguibile che viene eseguito prima che la sequenza attività venga selezionata e possa interagire con l'utente in Windows PE. Il comando di preavvio può richiedere informazioni a un utente e salvarle nell'ambiente della sequenza attività oppure eseguire una query di una variabile della sequenza attività per le informazioni. All'avvio del computer di destinazione, la riga di comando viene eseguita prima che il criterio venga scaricato dal punto di gestione. Utilizzare le procedure seguenti per creare uno script da utilizzare per il comando di preavvio, distribuire il contenuto associato al comando di preavvio e configurare il comando di preavvio nei supporti.  
+ブート メディア、スタンドアロン メディア、および事前設定されたメディアと併用するように、System Center Configuration Manager の起動前コマンドを作成できます。 起動前コマンドとは、Windows PE でタスク シーケンスを選択する前に実行され、ユーザーとやり取りできるスクリプトまたは実行可能ファイルのことです。 起動前コマンドでは、ユーザーに情報入力を求めるプロンプトを表示して、その情報をタスク シーケンス環境に保存したり、タスク シーケンス変数の情報を照会したりすることができます。 移行先コンピューターが起動すると、ポリシーが管理ポイントからダウンロードされる前にコマンド ラインが実行されます。 起動前コマンドに使用するスクリプトを作成し、起動前コマンドに関連付けられたコンテンツを配布し、メディアで起動前コマンドを構成するには、次の手順を実行してください。  
 
-## <a name="create-a-script-file-to-use-for-the-prestart-command"></a>Creare un file di script da usare per il comando di preavvio  
- Le variabili della sequenza di attività possono essere lette e scritte usando l'oggetto COM Microsoft.SMS.TSEnvironment durante l'esecuzione della sequenza di attività. Nell'esempio che segue viene illustrato un file di script Visual Basic che esegue la query della variabile della sequenza attività _SMSTSLogPath per ottenere la posizione corrente del registro. Lo script imposta inoltre una variabile personalizzata.  
+## <a name="create-a-script-file-to-use-for-the-prestart-command"></a>起動前コマンドに使用するスクリプト ファイルを作成する  
+ タスク シーケンス変数は、タスク シーケンスの実行中に、Microsoft.SMS.TSEnvironment COM オブジェクトを使用して読み書きできます。 次の例は、_SMSTSLogPath タスク シーケンス変数を照会して現在のログの場所を取得する Visual Basic スクリプト ファイルを示しています。 このスクリプトではカスタム変数も設定されます。  
 
 ```  
 dim osd: set env = CreateObject("Microsoft.SMS.TSEnvironment")  
@@ -40,47 +39,41 @@ logPath = env("_SMSTSLogPath")
 env("MyCustomVariable") = "varname"  
 ```  
 
-## <a name="create-a-package-for-the-script-file-and-distribute-the-content"></a>Creare un pacchetto per il file di script e distribuire il contenuto  
- Dopo aver creato lo script o l'eseguibile per il comando di preavvio, occorre creare un'origine del pacchetto per ospitare i file per lo script o l'eseguibile, creare un pacchetto per i file (nessun programma richiesto), quindi distribuire il contenuto in un punto di distribuzione.  
+## <a name="create-a-package-for-the-script-file-and-distribute-the-content"></a>スクリプト ファイルのパッケージを作成してコンテンツを配布する  
+ 起動前コマンド用にスクリプトまたは実行可能ファイルを作成したら、スクリプトまたは実行可能ファイル用のファイルをホストするパッケージ ソースを作成し、ファイルのパッケージを作成し (プログラムは不要)、そのコンテンツを配布ポイントに配布する必要があります。  
 
- Per altre informazioni sulla creazione di un pacchetto, vedere [Pacchetti e programmi](../../apps/deploy-use/packages-and-programs.md).  
+ パッケージを作成する方法の詳細については、「[Packages and programs](../../apps/deploy-use/packages-and-programs.md)」(パッケージとプログラム) を参照してください。  
 
- Per altre informazioni sulla distribuzione di contenuto, vedere [Distribuire contenuto](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).  
+ コンテンツ配布の詳細については、「[コンテンツの配布](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute)」を参照してください。  
 
-## <a name="configure-the-prestart-command-in-media"></a>Configurare il comando di preavvio nei supporti  
- È possibile configurare il comando di preavvio nella Creazione guidata del supporto per la sequenza attività per supporti autonomi, supporti di avvio o supporti pre-installati. Per altre informazioni sui tipi di supporto, vedere [Creare supporti per le sequenza di attività](../deploy-use/create-task-sequence-media.md). Utilizzare la procedura seguente per creare un comando di preavvio nei supporti.  
+## <a name="configure-the-prestart-command-in-media"></a>メディアで起動コマンドを構成する  
+ タスク シーケンス メディアの作成ウィザードでは、スタンドアロン メディア、起動可能なメディア、または事前設定されたメディア用に起動前コマンドを構成できます。 メディアの種類の詳細については、「[タスク シーケンス メディアの作成](../deploy-use/create-task-sequence-media.md)」を参照してください。 メディアで起動前コマンド作成するには、次の手順を実行します。  
 
-#### <a name="to-create-a-prestart-command-in-media"></a>Per creare un comando di preavvio nei supporti  
+#### <a name="to-create-a-prestart-command-in-media"></a>メディアで起動前コマンドを作成するには  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス**] をクリックします。  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea supporto per sequenza di attività** per avviare la Creazione guidata del supporto per la sequenza di attività.  
+3.  [ **ホーム** ] タブの [ **作成** ] グループで [ **タスク シーケンス メディアの作成** ] をクリックして、タスク シーケンス メディアの作成ウィザードを起動します。  
 
-4.  Nella pagina **Seleziona tipo di supporto** , selezionare **Supporto autonomo**, **Supporto di avvio**o **Supporti preinstallati**, quindi fare clic su **Avanti**.  
+4.  [メディアの種類の選択 **** ] ページで、[スタンドアロン メディア ****]、[起動可能なメディア ****]、または [事前設定されたメディア ****] をクリックして、[次へ ****] をクリックします。  
 
-5.  Spostarsi nella pagina **Personalizzazione** della procedura guidata. Per altre informazioni sulla configurazione delle altre pagine della procedura guidata, vedere [Creare supporti per le sequenza di attività](../deploy-use/create-task-sequence-media.md).  
+5.  ウィザードの [カスタマイズ **** ] ページに進みます。 ウィザードの他のページを構成する方法の詳細については、「[タスク シーケンス メディアの作成](../deploy-use/create-task-sequence-media.md)」を参照してください。  
 
-6.  Nella pagina **Personalizzazione** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
+6.  [ **カスタマイズ** ] ページで、次の情報を指定して [ **次へ**] をクリックします。  
 
-    -   Selezionare **Attiva comando di preavvio**.  
+    -   [起動前コマンドを有効にする ****] を選択します。  
 
-    -   Nella casella di testo **Riga di comando** , inserire lo script o l'eseguibile creato per il comando di preavvio.  
+    -   [コマンド ライン **** ] テキスト ボックスに、起動前コマンド用に作成したスクリプトまたは実行可能ファイルを入力します。  
 
         > [!IMPORTANT]  
-        >  Usare **cmd /C <comando preavvio\>** per specificare il comando di preavvio. Ad esempio, se si è usato TSScript.vbs come nome dello script del comando di preavvio, è necessario immettere **cmd /C TSScript.vbs** per la riga di comando. Dove **cmd /C** apre una nuova finestra dell'interprete dei comandi di Windows e usa la variabile di ambiente Path per trovare lo script o l'eseguibile del comando di preavvio. È possibile inoltre specificare l'intero percorso al comando di preavvio, ma la lettera unità potrebbe essere diversa su computer con configurazioni unità diverse.  
+        >  **cmd /C <prestart command\>** を使用して、起動前コマンドを指定します。 たとえば、起動前コマンド スクリプトに TSScript.vbs と名前を付けた場合、コマンド ラインには「 **cmd /C TSScript.vbs** 」と入力します。 **cmd /C** は新しい Windows コマンド インタープリター ウィンドウを開き、Path 環境変数を使用して、起動前コマンドのスクリプトまたは実行可能ファイルを検索することを示します。 起動前コマンドのフル パスを指定することもできますが、ドライブ構成が異なるコンピューターでは、ドライブ文字が異なる可能性があります。  
 
-    -   Selezionare **Includi file per il comando di preavvio**.  
+    -   [起動前コマンドにファイルを含める ****] を選択します。  
 
-    -   Fare clic su **Imposta** per selezionare il pacchetto associato con i file del comando di preavvio.  
+    -   [設定 **** ] をクリックし、起動前コマンド ファイルと関連付けられているパッケージを選択します。  
 
-    -   Fare clic su **Sfoglia** per selezionare il punto di distribuzione che ospita il contenuto per il comando di preavvio.  
+    -   [参照 **** ] をクリックして、起動前コマンドのコンテンツをホストする配布ポイントを選択します。  
 
-7.  Completare la procedura guidata.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+7.  ウィザードを完了します。  

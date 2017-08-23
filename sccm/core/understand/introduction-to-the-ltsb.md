@@ -1,81 +1,77 @@
 ---
-title: Introduzione a Long-Term Servicing Branch | Microsoft Docs
-description: Informazioni su Long-Term Servicing Branch di System Center Configuration Manager.
+title: "Long-Term Servicing Branch の概要 | Microsoft Docs"
+description: "System Center Configuration Manager の Long-Term Servicing Branch について説明します。"
 ms.custom: na
 ms.date: 05/01/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 694bc29f-a7fd-4e06-815a-1a9c5e9ac563
-caps.latest.revision: 0
+caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d940fd1bbf96767d44f8c55315e814be55a83897
 ms.openlocfilehash: 91c1ca860069c6ebe0d20230c4620bf3f68735a2
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-the-long-term-servicing-branch-of-system-center-configuration-manager"></a>Introduzione a Long-Term Servicing Branch di System Center Configuration Manager
+# <a name="introduction-to-the-long-term-servicing-branch-of-system-center-configuration-manager"></a>System Center Configuration Manager の Long-Term Servicing Branch の概要
 
-*Si applica a: System Center Configuration Manager (Long-Term Servicing Branch)*
+*適用対象: System Center Configuration Manager (Long-Term Servicing Branch)*
 
-Long-Term Servicing Branch (LTSB) di System Center Configuration Manager è un ramo distinto di Configuration Manager progettato come opzione di installazione disponibile per tutti i clienti. È tuttavia l'unica opzione disponibile per i clienti che hanno lasciato scadere Software Assurance o i diritti di sottoscrizione equivalenti per Configuration Manager.
+System Center Configuration Manager の Long-Term Servicing Branch (LTSB) は、Configuration Manager のブランチの 1 つで、すべてのユーザーが使用できるインストール オプションとして設計されています。 ただし、Configuration Manager のソフトウェア アシュアランス (SA) または同等のサブスクリプションが期限切れになったユーザーにとっては、この LTSB が唯一の選択肢になります。
 
 
-In base a Configuration Manager versione 1606, LTSB offre funzionalità ridotte rispetto a Current Branch di Configuration Manager.
+Configuration Manager バージョン 1606 では、Configuration Manager の Current Branch と比較すると、LTSB の機能は制限されています。
 
  > [!TIP]   
- > Se si stanno cercando informazioni sulle opzioni di **Windows Server**, vedere [Windows Server 2016 new Current Branch for Business servicing option]( https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/) (Nuova opzione di manutenzione Current Branch for Business per Windows Server 2016).
+ > **Windows Server** のブランチの詳細については、ブログ記事 [Windows Server 2016 の新しい Current Branch for Business サービス オプション]( https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/) (Windows Server 2016 new Current Branch for Business servicing option) をご覧ください。
 
-## <a name="features-that-are-not-available-in-the-ltsb-of-configuration-manager"></a>Funzionalità non disponibili in LTSB di Configuration Manager
-Current Branch di Configuration Manager supporta le funzionalità seguenti, non disponibili quando si usa LTSB:
+## <a name="features-that-are-not-available-in-the-ltsb-of-configuration-manager"></a>Configuration Manager の LTSB で使用できない機能
+Configuration Manager の Current Branch では、LTSB の場合には使用できない次の機能がサポートされています。
 
--   Aggiornamenti nella console che aggiungono nuove funzionalità e miglioramenti.
--   Supporto per sistemi operativi rilasciati di recente da usare come client e server del sito.
--   Usare una sottoscrizione di Microsoft Intune per supportare quanto segue:
-    -   Intune in una configurazione ibrida di gestione dei dispositivi mobili (MDM)
-    -   Software MDM locale
--   Dashboard di manutenzione di Windows 10 e piani di manutenzione, incluso il supporto per versioni recenti di Windows 10 Current Branch e Current Branch for Business.  
--   Supporto per versioni future di Windows Server e Windows 10 LTSB
--   Asset Intelligence
--   Punti di distribuzione basati su cloud
--   Exchange Online come Exchange Connector    
+-   新しい機能を追加したり機能を改善したりする、コンソール内の更新プログラム。
+-   サイト サーバーとクライアントとして使用する新しくリリースされたオペレーティング システムのサポート。
+-   以下のことをサポートする Microsoft Intune サブスクリプションの使用:
+    -   ハイブリッド モバイル デバイス管理 (MDM) 構成の Intune
+    -   オンプレミス MDM
+-   Windows 10 サービス ダッシュボード、サービス プランのサポート (最近の Windows 10 の Current Branch (CB) と Current Branch for Business (CBB) バージョンのサポートも含む)  
+-   Windows Server と Windows 10 LTSB の今後のリリースのサポート
+-   資産インテリジェンス
+-   クラウドベースの配布ポイント
+-   Exchange Online と Exchange Connector    
 
-Il supporto per queste funzionalità non è disponibile con LTSB. Alcune funzionalità, tuttavia, restano visibili nella console di Configuration Manager ma non possono essere selezionate o usate.
-
-
-## <a name="find-documentation-for-the-ltsb"></a>Trovare la documentazione per LTSB
-L'opzione LTSB è basata su Current Branch versione 1606. Come documentazione del prodotto, usare la [documentazione di Current Branch](https://docs.microsoft.com/sccm/), con le avvertenze e le limitazioni specifiche di LTSB. Tali avvertenze e limitazioni sono descritte negli argomenti online seguenti:
-
--      [Introduzione a Long-Term Servicing Branch](introduction-to-the-ltsb.md): (questo argomento)
--      [Installare Long-Term Servicing Branch](install-the-ltsb.md)
--      [Aggiornare Long-Term Servicing Branch a Current Branch](convert-to-current-branch.md)
--      [Configurazioni supportate per Long-Term Servicing Branch](supported-configurations-for-ltsb.md)
--   [Manage the Long-Term Servicing Branch of Configuration Manager](manage-the-ltsb.md) (Gestire Long-Term Servicing Branch di Configuration Manager)
-
-Quando si fa riferimento alla documentazione di Current Branch per LTSB, i dettagli validi per la versione 1606 sono validi anche per LTSB. Le funzionalità o i dettagli introdotti con la versione 1610 o con versioni successive non sono supportate da LTSB.
+これらの機能やサポートは LTSB では使用できません。一部の機能は Configuration Manager コンソールに表示されますが、選択したり使用したりすることはできません。
 
 
-## <a name="licensing-overview-for-the-ltsb"></a>Panoramica della gestione delle licenze per LTSB   
-I clienti con contratti Software Assurance attivi per le licenze di System Center Configuration Manager, o con diritti di sottoscrizione equivalenti alla data 1 ottobre 2016, hanno diritto a usare la versione 1606 di ottobre 2016 di System Center Configuration Manager. I clienti con diritti per System Center Configuration Manager in data 1 ottobre 2016 o successiva, al momento dell'installazione avranno a disposizione due opzioni con licenza: Current Branch e Long-Term Servicing Branch (LTSB).
+## <a name="find-documentation-for-the-ltsb"></a>LTSB のドキュメントを検索する
+LTSB は、Current Branch バージョン 1606 に基づいています。 製品ドキュメントについては、[Current Branch の ドキュメント](https://docs.microsoft.com/sccm/)に関するページをご覧ください。LTSB 固有の注意事項と制限事項があります。 次のオンライン トピックで、注意事項と制限事項を確認できます。
 
-I clienti che dispongono di diritti perpetui su System Center Configuration Manager o che dopo il 1° ottobre lasciano scadere la sottoscrizione Software Assurance o equivalente possono installare la versione di System Center Configuration Manager LTSB corrente al momento della scadenza.
+-     [Long-Term Servicing Branch の概要](introduction-to-the-ltsb.md): (このトピック)
+-     [Long-Term Servicing Branch のインストール](install-the-ltsb.md)
+-     [Long-Term Servicing Branch の Current Branch へのアップグレード](convert-to-current-branch.md)
+-     [Long-Term Servicing Branch でサポートされている構成](supported-configurations-for-ltsb.md)
+-   [Configuration Manager の Long-Term Servicing Branch の管理](manage-the-ltsb.md)
 
-[I termini e le condizioni relativi ai prodotti acquistati tramite i programmi multilicenza Microsoft sono disponibili qui](http://go.microsoft.com/fwlink/?LinkId=800052).
+LTSB について Current Branch ドキュメントを参照する場合、バージョン 1606 についての説明は LTSB にも当てはまります。 バージョン 1610 以降で導入された機能や説明は LTSB ではサポートされません。
 
-Per altre informazioni sulla gestione delle licenze per i rami di Configuration Manager, vedere [Licenze e rami per System Center Configuration Manager](learn-more-editions.md).
 
-## <a name="next-steps"></a>Passaggi successivi
+## <a name="licensing-overview-for-the-ltsb"></a>LTSB のライセンスの概要   
+2016 年 10 月 1 日の時点で System Center Configuration Manager ライセンスに対してソフトウェア アシュアランス (SA) が有効になっているお客様または同等のサブスクリプション権限を持っているお客様には、2016 年 10 月リリースのバージョン 1606 の System Center Configuration Manager を使用する権限があります。 2016 年 10 月 1 日以降、System Center Configuration Manager に対する権限を持つお客様には、インストール時に Current Branch および Long-Term Servicing Branch (LTSB) の 2 つのライセンス オプションが表示されます。
 
-Se si decide che Configuration Manager LTSB è il ramo corretto per l'ambiente in uso, [installare un nuovo sito LTSB](/sccm/core/understand/install-the-ltsb#install-a-new-site) come parte di una nuova gerarchia o [aggiornare un sito e una gerarchia di System Center 2012 Configuration Manager](/sccm/core/understand/install-the-ltsb#upgrade-from-system-center-2012-configuration-manager).
+System Center Configuration Manager に対して永続的な権利を持つお客様または、10 月 1 日の後に SA またはサブスクリプションが期限切れになったお客様は、該当する時点で最新のバージョンである System Center Configuration Manager LTSB をインストールできます。
 
-Se non si dispone di un supporto di installazione, vedere la [documentazione di System Center 2016](https://technet.microsoft.com/system-center-docs/system-center) per informazioni su come ottenere System Center 2016, che include il supporto da usare per installare System Center Configuration Manager LTSB.  
+[Microsoft ボリューム ライセンス プログラムを通して購入する製品の使用条件についてはこちらを参照してください](http://go.microsoft.com/fwlink/?LinkId=800052)。
 
+Configuration Manager のブランチの詳細については、[System Center Configuration Manager のライセンスとブランチ](learn-more-editions.md)に関するページをご覧ください。
+
+## <a name="next-steps"></a>次のステップ
+
+お使いの環境に適したブランチは Configuration Manager LTSB だと思われた場合は、新しい階層の一部として[新しい LTSB サイトをインストールする](/sccm/core/understand/install-the-ltsb#install-a-new-site)か、[System Center 2012 Configuration Manager サイトと階層をアップグレード](/sccm/core/understand/install-the-ltsb#upgrade-from-system-center-2012-configuration-manager)してください。
+
+インストール メディアがない場合は、[System Center 2016 ドキュメント](https://technet.microsoft.com/system-center-docs/system-center)に関するページをご覧ください。System Center 2016 の取得方法と System Center Configuration Manager LTSB のインストールに使用できるメディアの情報が確認できます。  

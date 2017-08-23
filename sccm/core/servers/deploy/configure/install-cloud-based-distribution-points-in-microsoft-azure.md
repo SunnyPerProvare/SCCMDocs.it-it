@@ -1,135 +1,132 @@
 ---
-title: Installare punti di distribuzione basati su cloud | Microsoft Docs
-description: Informazioni su cosa occorre fare per iniziare a usare punti di distribuzione basati sul cloud in Microsoft Azure.
+title: "クラウドベースの配布ポイントのインストール | Microsoft Docs"
+description: "Microsoft Azure でクラウドベース配布ポイントの使用を開始するために必要なことについて説明します。"
 ms.custom: na
 ms.date: 2/8/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bb83ac87-9914-4a35-b633-ad070031aa6e
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f96905f50f879b843f98cb57c8a755aa856fb381
 ms.openlocfilehash: 39b35cccf78bba4e69a7de0ca3a5a8dc516201e3
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="install-cloud-based-distribution-points-in-microsoft-azure-for-system-center-configuration-manager"></a>Installare punti di distribuzione basati sul cloud in Microsoft Azure per System Center Configuration Manager
+# <a name="install-cloud-based-distribution-points-in-microsoft-azure-for-system-center-configuration-manager"></a>Microsoft Azure for System Center Configuration Manager のクラウド ベース配布ポイントのインストール
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-È possibile installare punti di distribuzione basati sul cloud in Microsoft Azure per System Center Configuration Manager. Se non si ha familiarità con i punti di distribuzione basati sul cloud, vedere [Usare un punto di distribuzione basato sul cloud](../../../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md) prima di continuare.
+Microsoft Azure では、System Center Configuration Manager のクラウドベース配布ポイントをインストールできます。 クラウドベースの配布ポイントに関する詳細については、「[クラウドベースの配布ポイントの使用](../../../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md)」を参照してください。
 
- Prima di iniziare l'installazione, verificare di avere i file di certificato richiesti:  
+ インストールを開始する前に、必要な証明書ファイルがあることを確認します。  
 
--   Un certificato di gestione Microsoft Azure esportato in un file CER e in un file PFX.  
+-   .cer ファイルと .pfx ファイルにエクスポートされた Microsoft Azure 管理証明書  
 
--   Un certificato di servizio del punto di distribuzione basato sul cloud di Configuration Manager esportato in un file con estensione pfx.  
+-   .pfx ファイルにエクスポートされた、Configuration Manager のクラウドベースの配布ポイントのサーバー証明書  
 
     > [!TIP]
-    >   Per altre informazioni su questi certificati, vedere la sezione relativa ai punti di distribuzione basati sul cloud nell'argomento [PKI certificate requirements for System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md) (Requisiti dei certificati PKI per System Center Configuration Manager). Per un esempio di distribuzione del certificato di servizio del punto di distribuzione basato sul cloud, vedere la sezione "Distribuzione del certificato di servizio per i punti di distribuzione basati su cloud" in [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
+    >   これらの証明書の詳細については、「[System Center Configuration Manager での PKI 証明書の要件](../../../../core/plan-design/network/pki-certificate-requirements.md)」トピックのクラウドベースの配布ポイントの部分を参照してください。 クラウドベースの配布ポイントのサービス証明書を展開する例については、「[System Center Configuration Manager PKI 証明書の展開手順の例: Windows Server 2008 証明機関](/sccm/core/plan-design/network/example-deployment-of-pki-certificates)」トピックの「クラウドベースの配布ポイント用のサービス証明書の展開」を参照してください。  
 
 
- Al termine dell'installazione del punto di distribuzione basato sul cloud, Azure genera automaticamente un GUID per il servizio e lo aggiunge al suffisso DNS di **cloudapp.net**. Se si usa questo GUID, è necessario configurare DNS con un alias DNS (record CNAME). Ciò consente di effettuare il mapping del nome servizio definito nel certificato di servizio del punto di distribuzione basato sul cloud di Configuration Manager al GUID generato automaticamente.  
+ クラウドベースの配布ポイントをインストールすると、Azure によって自動的にサービスの GUID が生成され、**cloudapp.net**の DNS サフィックスに追加されます。 この GUID を使用して、DNS エイリアス (CNAME レコード) で DNS を構成する必要があります。 これにより、Configuration Manager のクラウドベースの配布ポイントのサービス証明書に定義しているサービス名を自動的に生成された GUID にマップすることができます。  
 
- Se si utilizza un server Web proxy, potrebbe essere necessario configurare le impostazioni proxy per abilitare la comunicazione con il servizio cloud che ospita il punto di distribuzione.  
+ プロキシ Web サーバーを使用する場合は、配布ポイントをホストするクラウド サービスとの通信を有効にするように、プロキシ設定を構成することが必要になる可能性があります。  
 
-##  <a name="BKMK_ConfigWindowsAzureandInstallDP"></a> Configurare Azure e installare punti di distribuzione basati sul cloud  
- Usare le procedure seguenti per configurare Azure per il supporto dei punti di distribuzione, quindi installare il punto di distribuzione basato sul cloud in Configuration Manager.  
+##  <a name="BKMK_ConfigWindowsAzureandInstallDP"></a> Azure の設定とクラウドベースの配布ポイントのインストール  
+ 配布ポイントをサポートするように Azure を設定してから、Configuration Manager でクラウドベースの配布ポイントをインストールするには、次の手順に従います。  
 
-### <a name="to-set-up-a-cloud-service-in-azure-for-a-distribution-point"></a>Per configurare un servizio cloud in Azure per un punto di distribuzione  
+### <a name="to-set-up-a-cloud-service-in-azure-for-a-distribution-point"></a>配布ポイント用に Azure にクラウド サービスを設定するには  
 
-1.  Aprire un Web browser, passare al portale di Azure all'indirizzo https://manage.windowsazure.com e accedere al proprio account.  
+1.  Web ブラウザーを開いて Azure ポータル (https://manage.windowsazure.com) に移動し、自分のアカウントにアクセスします。  
 
-2.  Fare clic su **Servizi ospitati, account di archiviazione e CDN** e quindi selezionare **Certificati di gestione**.  
+2.  **[ホステッド サービス、ストレージ アカウント、CDN]** をクリックしてから、**[管理証明書]** を選択します。  
 
-3.  Fare clic con il pulsante destro del mouse sulla sottoscrizione, quindi selezionare **Aggiungi certificato**.  
+3.  サブスクリプションを右クリックしてから、[ **証明書の追加** ] を選択します。  
 
-4.  Per **File di certificato** specificare il file CER contenente il certificato di gestione di Azure esportato da usare per questo servizio cloud, quindi fare clic su **OK**.  
+4.  [**証明書ファイル**] で、このクラウド サービスに使用する、エクスポートした Azure 管理証明書が含まれている .cer ファイルを指定してから、[**OK**] をクリックします。  
 
-Quando il certificato di gestione viene caricato in Azure è possibile installare un punto di distribuzione basato sul cloud.  
+管理証明書が Azure に読み込まれて、クラウドベースの配布ポイントをインストールできるようになります。  
 
-### <a name="to-install-a-cloud-based-distribution-point-for-configuration-manager"></a>Per installare un punto di distribuzione basato sul cloud per Configuration Manager  
+### <a name="to-install-a-cloud-based-distribution-point-for-configuration-manager"></a>Configuration Manager 用にクラウドベースの配布ポイントをインストールするには  
 
-1.  Completare i passaggi della procedura precedente per configurare un servizio cloud in Azure con un certificato di gestione.  
+1.  管理証明書を使って Azure にクラウド サービスを設定する、前述の手順を完了します。  
 
-2.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e selezionare **Punti di distribuzione del cloud**. Nella scheda **Home** fare clic su **Crea punto di distribuzione cloud**.  
+2.  Configuration Manager コンソールの [**管理**] ワークスペースで、[**クラウド サービス**] を展開して、[**クラウド配布ポイント**] を選択します。 [**ホーム**] タブで、[**クラウド配布ポイントの作成**] をクリックします。  
 
-3.  Nella pagina **Generale** della creazione guidata del punto di distribuzione cloud, configurare quanto segue:  
+3.  クラウドの配布ポイントの作成ウィザードの [**全般**] タブで、次のように設定します。  
 
-    -   Specificare l'**ID sottoscrizione** per l'account di Azure.  
+    -   Azure アカウントの [**サブスクリプション ID**] を指定します。  
 
         > [!TIP]  
-        >  L'ID sottoscrizione di Azure è reperibile nel portale di Azure.  
+        >  自分の Azure サブスクリプション ID は、Azure ポータルで確認できます。  
 
-    -   Specificare il **Certificato di gestione**. Fare clic su **Sfoglia** per specificare il file PFX contenente il certificato di gestione di Azure esportato, quindi immettere la password per il certificato. Facoltativamente, è possibile specificare un file PUBLISHSETTINGS versione 1 di Azure SDK 1.7.  
+    -   [ **管理証明書** ] を指定します。 [**参照**] をクリックして、エクスポートされた Azure 管理証明書が含まれている .pfx ファイルを指定してから、証明書のパスワードを入力します。 必要に応じて、Azure SDK 1.7 のバージョン 1 の .publishsettings ファイルを指定できます。  
 
-4.  Fare clic su **Avanti**. Configuration Manager si connette ad Azure per la convalida del certificato di gestione.  
+4.  [ **次へ** ] をクリックします。 Configuration Manager が Azure に接続して管理証明書を検証します。  
 
-5.  Indicare quanto segue nella pagina **Impostazioni** e quindi fare clic su **Avanti**:  
+5.  [ **設定** ] ページで、以下を完了してから [ **次へ** ] をクリックします。  
 
-    -   Per **Area** selezionare l'area di Azure in cui si vuole creare il servizio cloud che ospita il punto di distribuzione.  
+    -   [**地域**] で、この配布ポイントをホストするクラウド サービスを作成する、Azure の地域を選択します。  
 
-    -   Per **File di certificato** specificare il file PFX contenente il certificato esportato per il servizio del punto di distribuzione basato sul cloud di Configuration Manager. Immettere la password.  
+    -   [**証明書ファイル**] に、Configuration Manager クラウドベースの配布ポイント サービスにエクスポートされた証明書を含む .pfx ファイルを指定します。 パスワードを入力します。  
 
         > [!NOTE]  
-        >  La casella **FQDN servizio** viene compilata automaticamente con il nome del soggetto certificato. Nella maggior parte dei casi non è necessario modificarla. L'eccezione è se si usa un certificato con caratteri jolly in un ambiente di testing. Ad esempio, in questo caso si può non specificare il nome host, in modo che più computer con lo stesso suffisso DNS possano usare il certificato. In questo scenario, il soggetto certificato contiene un valore simile a **CN=\*.contoso.com** e Configuration Manager visualizza un messaggio per indicare che è necessario specificare l'FQDN corretto. Fare clic su **OK** per chiudere il messaggio, quindi immettere un nome specifico prima del suffisso DNS per fornire un FQDN completo. È ad esempio possibile aggiungere **clouddp1** per specificare l'FQDN servizio completo di **clouddp1.contoso.com**. L'FQDN del servizio deve essere univoco nel dominio e non corrispondere a qualsiasi dispositivo aggiunto al dominio.  
+        >  [**サービスの FQDN**] ボックスには、証明書のサブジェクト名から自動的に入力されます。 ほとんどの場合、編集する必要はありません。 テスト環境でワイルドカード証明書を使用している場合は例外です。 たとえば、この場合、ホスト名を指定せずに、同じ DNS サフィックスを持つ複数のコンピューターが証明書を使用できるようすることができます。 このシナリオでは、証明書のサブジェクトには **CN=\*.contoso.com** のような値が含まれており、Configuration Manager によって、正しい FQDN を指定する必要があることを示すメッセージが表示されます。 [ **OK** ] をクリックしてメッセージを閉じてから、DNS サフィックスの前に特定の名前を入力して、完全な FQDN を指定します。 たとえば、 **clouddp1** を追加して、 **clouddp1.contoso.com**のサービスの完全な FQDN を指定します。 サービスの FQDN は、ドメインの中で固有である必要があり、ドメインに参加している他のデバイスと同じ FQDN は使用できません。  
         >   
-        >  I certificati con caratteri jolly sono supportati solo per ambienti di testing.  
+        >  ワイルドカード証明書は、テスト環境でのみサポートされています。  
 
-6.  Nella pagina **Avvisi** impostare le quote di archiviazione, le quote di trasferimento e la percentuale delle quote necessaria affinché Configuration Manager generi gli avvisi. Fare quindi clic su **Avanti**.  
+6.  [**アラート**] ページで、記憶域クォータ、転送クォータを設定し、Configuration Manage にアラートを生成させるそれぞれのクォータの使用率を指定します。 **[次へ]**をクリックします。  
 
-7.  Completare la procedura guidata.  
+7.  ウィザードを完了します。  
 
-Questa procedura guidata consente di creare un nuovo servizio ospitato per il punto di distribuzione basato sul cloud. Al termine della procedura guidata, è possibile monitorare l'avanzamento dell'installazione del punto di distribuzione basato sul cloud nella console di Configuration Manager. È anche possibile monitorare il file **CloudMgr.log** sul server del sito primario. È possibile monitorare il provisioning del servizio cloud nel portale di gestione di Azure.  
+クラウドベースの配布ポイントの新しいホステッド サービスが作成されます。 ウィザードを閉じたら、Configuration Manager コンソールでクラウドベースの配布ポイントのインストールの進行状況を監視できます。 プライマリ サイト サーバーで **CloudMgr.log** ファイルを監視することもできます。 Azure ポータルでクラウド サービスのプロビジョニングを監視することができます。  
 
 > [!NOTE]  
->  Il provisioning di un nuovo punto di distribuzione in Azure può richiedere fino a 30 minuti. Fino a quando non viene eseguito il provisioning dell'account di archiviazione, nel file **CloudMgr.log** viene ripetuto il messaggio seguente: **Waiting for check if container exists (In attesa della verifica dell'esistenza del contenitore). Nuova verifica tra 10 secondi**. Il servizio viene quindi creato e configurato.  
+>  Azure に新しい配布ポイントをプロビジョニングするのに最大 30 分かかる可能性があります。 ストレージ アカウントがプロビジョニングされるまで、**CloudMgr.log** ファイルに次のメッセージが繰り返し出力されます。**コンテナーが存在するかどうかのチェックを待機しています。10 秒後にもう一度確認します**。 その後、サービスが作成されて構成されます。  
 
- È possibile verificare il completamento dell'installazione del punto di distribuzione basato sul cloud utilizzando i seguenti metodi:  
+ 次の方法を使用すると、クラウドベースの配布ポイントのインストールが完了したことを確認できます。  
 
--   Nel portale di Azure la **Distribuzione** per il punto di distribuzione basato sul cloud visualizza lo stato **Pronto**.  
+-   Azure ポータルで、クラウドベースの配布ポイントの [**展開**] にステータス [**準備完了**] と表示されます。  
 
--   Nella console di Configuration Manager, area di lavoro **Amministrazione**, **Configurazione della gerarchia**, nodo **Cloud**, il punto di distribuzione basato sul cloud visualizza lo stato **Pronto**.  
+-   Configuration Manager コンソールの [**管理**] ワークスペースで、[**階層の構成**]、[**クラウド**] ノードに、クラウドベースの配布ポイントのステータスが [**準備完了**] として表示されます。  
 
--   Configuration Manager visualizza l'ID messaggio di stato **9409** per il componente SMS_CLOUD_SERVICES_MANAGER.  
+-   Configuration Manager に、SMS_CLOUD_SERVICES_MANAGER コンポーネントのステータス メッセージ ID **9409** が表示されます。  
 
-##  <a name="BKMK_ConfigDNSforCloudDPs"></a> Impostare la risoluzione dei nomi per i punti di distribuzione basati sul cloud  
- Per poter accedere al punto di distribuzione basato sul cloud, i client devono essere in grado di risolverne il nome in un indirizzo IP gestito da Azure. I client effettuano questa operazione in due fasi:  
+##  <a name="BKMK_ConfigDNSforCloudDPs"></a> クラウドベースの配布ポイントの名前解決の設定  
+ クライアントは、クラウドベースの配布ポイントにクライアントがアクセスするためには、クラウドベースの配布ポイントの名前を Azure で管理される IP アドレスに解決できる必要があります。 クライアントでは、これを 2 段階で行います。  
 
-1.  Eseguono il mapping del nome del servizio indicato con il certificato di servizio del punto di distribuzione basato sul cloud di Configuration Manager nell'FQDN del servizio Azure. Questo FQDN contiene un GUID e il suffisso DNS di **cloudapp.net**. Il GUID viene generato automaticamente dopo l'installazione del punto di distribuzione basato su cloud. È possibile visualizzare l'FQDN completo nel portale di Azure, facendo riferimento all'**URL SITO** nel dashboard del servizio cloud. Un esempio di URL del sito è **http://d1594d4527614a09b934d470.cloudapp.net**.  
+1.  クライアントは、Configuration Manager のクラウドベースの配布ポイントのサービスの証明書に指定されているサービス名を Azure サービスの FQDN にマップします。 この FQDN には、 **cloudapp.net**の GUID と DNS サフィックスが含まれています。 GUID は、クラウドベースの配布ポイントがインストールされると自動的に生成されます。 Azure ポータルで完全な FQDN を確認するには、クラウド サービスのダッシュボードにある [**サイトの URL**] を参照します。 サイトの URL の例として、 **http://d1594d4527614a09b934d470.cloudapp.net**があります。  
 
-2.  Risolvono l'FQDN del servizio Azure nell'indirizzo IP allocato da Azure. Tale indirizzo IP può essere inoltre individuato nel dashboard per il servizio cloud nel portale di Azure ed è denominato **INDIRIZZO IP VIRTUALE (VIP) PUBBLICO**.  
+2.  クライアントは、Azure サービスの FQDN を Azure によって割り当てられる IP アドレスに解決します。 この IP アドレスも、Azure ポータルのクラウド サービスのダッシュボードで確認できます。名前は、[**公開仮想 IP アドレス (VIP)**] です。  
 
-Per eseguire il mapping del nome del servizio specificato con il certificato di servizio del punto di distribuzione basato sul cloud di Configuration Manager (ad esempio **clouddp1.contoso.com**) nell'FQDN del servizio Azure (ad esempio **d1594d4527614a09b934d470.cloudapp.net**), i server DNS su Internet devono avere un alias DNS (record CNAME). I client possono quindi risolvere l'FQDN del servizio Azure nell'indirizzo IP usando i server DNS su Internet.  
+Configuration Manager のクラウドベースの配布ポイントのサービス証明書に指定されているサービス名 (たとえば **clouddp1.contoso.com**) を Azure サービスの FQDN (たとえば **d1594d4527614a09b934d470.cloudapp.net**) にマップするためには、インターネット上の DNS サーバーに DNS エイリアス (CNAME レコード) が構成されている必要があります。 これにより、クライアントでは、インターネット上の DNS サーバーを使用して、Azure サービスの FQDN を IP アドレスに解決できます。  
 
-##  <a name="BKMK_ConfigProxyforCloud"></a> Specificare le impostazioni proxy per i siti primari che gestiscono servizi cloud  
- Quando si usano servizi cloud con Configuration Manager, il sito primario che gestisce il punto di distribuzione basato sul cloud deve essere in grado di connettersi al portale di Azure. Il sito si connette usando l'account **di sistema** del computer del sito primario. Questa connessione viene effettuata utilizzando il browser Web predefinito sul computer del server del sito primario.  
+##  <a name="BKMK_ConfigProxyforCloud"></a> クラウド サービスを管理するプライマリ サイトのプロキシ設定の設定  
+ Configuration Manager でクラウド サービスを使用するときに、クラウドベースの配布ポイントを管理するプライマリ サイトが、Azure ポータルに接続できる必要があります。 サイトは、プライマリ サイト コンピューターの**システム**アカウントを使用して接続します。 この接続は、プライマリ サイト サーバー コンピューターの既定の Web ブラウザーを使用して行われます。  
 
- Può essere necessario specificare le impostazioni proxy sul server del sito primario che gestisce il punto di distribuzione basato sul cloud per consentire al sito primario di accedere a Internet e Azure.  
+ クラウドベースの配布ポイントを管理するプライマリ サイト サーバーで、プライマリ サイトがインターネットと Azure にアクセスできるように、プロキシ設定を設定することが必要になる場合があります。  
 
- Usare la procedura seguente per specificare le impostazioni proxy per il server del sito primario nella console di Configuration Manager.  
+ Configuration Manager コンソールでプライマリ サイト サーバーのプロキシ設定を設定するには、次の手順に従います。  
 
 > [!TIP]  
->  È anche possibile impostare il server proxy quando si installano nuovi ruoli del sistema del sito sul server del sito primario con l'**Aggiunta guidata ruoli del sistema del sito**.  
+>  プライマリ サイト サーバーに新しいサイト システムの役割をインストールするときに、**サイト システムの役割の追加ウィザード**を使用してプロキシ サーバーを設定することもできます。  
 
-#### <a name="to-set-up-proxy-settings-for-the-primary-site-server"></a>Per specificare le impostazioni proxy per il server del sito primario  
+#### <a name="to-set-up-proxy-settings-for-the-primary-site-server"></a>プライマリ サイト サーバーのプロキシ設定を設定するには  
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
+1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Configurazione del sito**e quindi fare clic su **Server e ruoli del sistema del sito**. Selezionare quindi il server del sito primario che gestisce il punto di distribuzione basato sul cloud.  
+2.  **[管理]** ワークスペースで、 **[サイトの構成]**を展開して **[サーバーとサイト システムの役割]**をクリックします。 次に、クラウドベースの配布ポイントを管理するプライマリ サイト サーバーを選択します。  
 
-3.  Nel riquadro dei dettagli fare clic con il pulsante destro del mouse su **Sistema del sito**, quindi fare clic su **Proprietà**.  
+3.  詳細ウィンドウで、[ **サイト システム**] を右クリックし、[ **プロパティ**] をクリックします。  
 
-4.  In **Proprietà sistema del sito** selezionare la scheda **Proxy** e quindi specificare le impostazioni proxy per il server del sito primario.  
+4.  [**サイト システムのプロパティ**] で [**プロキシ**] タブを選択し、そのプライマリ サイト サーバーのプロキシ設定を構成します。  
 
-5.  Fare clic su **OK** per salvare le impostazioni.  
-
+5.  [**OK**] をクリックして設定を保存します。  

@@ -1,149 +1,142 @@
 ---
-title: Preparare la peer cache di Windows PE per ridurre il traffico WAN | Microsoft Docs
-description: "La peer cache di Windows PE viene usata in Windows PE per ottenere il contenuto da un peer locale e ridurre al minimo il traffico della rete WAN se non c&quot;è nessun punto di distribuzione locale."
+title: "WAN トラフィックを削減するための Windows PE ピア キャッシュの準備 | Microsoft Docs"
+description: "Windows PE ピア キャッシュは、Windows PE で機能し、ローカルの配布ポイントがない場合にローカルのピアからコンテンツを取得して WAN のトラフィックを最小限に抑えます。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 6c64f276-b88c-4b1e-8073-331876a03038
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: 814c6133a30b1116d05aaeafddb0dfb7fe2a390e
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="prepare-windows-pe-peer-cache-to-reduce-wan-traffic-in-system-center-configuration-manager"></a>Preparare la peer cache di Windows PE per ridurre il traffico della rete WAN in System Center Configuration Manager
+# <a name="prepare-windows-pe-peer-cache-to-reduce-wan-traffic-in-system-center-configuration-manager"></a>System Center Configuration Manager における WAN トラフィックを減らすための Windows PE ピア キャッシュの準備
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Quando si distribuisce un nuovo sistema operativo in System Center Configuration Manager, i computer che eseguono la sequenza di attività possono usare la peer cache di Windows PE per ottenere contenuto da un peer locale (un'origine peer cache) anziché scaricarlo da un punto di distribuzione. In tal modo il traffico WAN viene ridotto al minimo negli scenari con le filiali, in cui non esiste un punto di distribuzione locale.  
+新しいオペレーティング システムを System Center Configuration Manager に展開すると、タスク シーケンスを実行しているコンピューターで、配布ポイントからコンテンツをダウンロードするのではなく、Windows PE ピア キャッシュを使用してローカル ピア (ピア キャッシュ ソース) からコンテンツを取得することができます。 これにより、ローカル配布ポイントが存在しないブランチ オフィス シナリオでワイド エリア ネットワーク (WAN) トラフィックが最小限に抑えられます。  
 
- La peer cache di Windows PE è simile a [Windows BranchCache](http://technet.microsoft.com/library/mt617255\(TechNet.10\).aspx#bkmk_branchcache), ma funziona in Ambiente preinstallazione di Windows (Windows PE). Se si avvia la sequenza di attività dal contesto del sistema operativo, ad esempio Software Center nel client, la peer cache di Windows PE non viene usata. Per descrivere i client che usano la peer cache di Windows PE vengono usati i termini seguenti:  
+ Windows PE ピア キャッシュは [Windows BranchCache](http://technet.microsoft.com/library/mt617255\(TechNet.10\).aspx#bkmk_branchcache)に似ていますが、Windows プレインストール環境 (Windows PE) で機能します。 クライアントのソフトウェア センターなどのオペレーティング システム コンテキストからタスク シーケンスを開始する場合は、Windows PE ピア キャッシュが使用されません。 Windows PE ピア キャッシュを使用するクライアントの記述に、以下の用語が使用されています。  
 
--   Un **client peer cache** è un computer configurato per utilizzare Peer cache di Windows PE.  
+-   **ピア キャッシュ クライアント** は、Windows PE ピア キャッシュを使用するように構成されたコンピューターです。  
 
--   Un’ **origine peer cache** è un client configurato per la peer cache e che rende il contenuto disponibile ad altri client peer cache che lo richiedono.  
+-   **ピア キャッシュ ソース** は、ピア キャッシュ用に構成され、コンテンツを要求元の他のピア キャッシュ クライアントが取得できるようにするクライアントです。  
 
-Usare le sezioni seguenti per gestire la peer cache.
+次の手順に従って、ピア キャッシュを管理します。
 
-##  <a name="a-namebkmkpeercacheobjectsa-objects-stored-on-a-peer-cache-source"></a><a name="BKMK_PeerCacheObjects"></a> Oggetti archiviati in un'origine peer cache  
- Una sequenza di attività configurata per l'uso della peer cache di Windows PE può ottenere gli oggetti contenuto seguenti durante l'esecuzione in Windows PE:  
+##  <a name="BKMK_PeerCacheObjects"></a> ピア キャッシュ ソースに格納されているオブジェクト  
+ Windows PE ピア キャッシュを使用するように構成するタスク シーケンスは、Windows PE で実行中に、次のコンテンツ オブジェクトを取得できます。  
 
--   Immagine del sistema operativo  
+-   オペレーティング システム イメージ  
 
--   Pacchetto driver  
+-   ドライバー パッケージ  
 
--   Pacchetti e programmi (quando il client continua a eseguire la sequenza di attività nel sistema operativo completo, ottiene questo contenuto da un’origine peer cache se la sequenza di attività è stata configurata in origine per la peer cache in esecuzione in Windows PE).  
+-   パッケージとプログラム (タスク シーケンスが Windows PE で実行中にピア キャッシュ用に構成されてから、クライアントが完全なオペレーティング システム上でそのタスク シーケンスの実行を継続する場合には、クライアントはこのコンテンツをピア キャッシュ ソースから取得します)。  
 
--   Immagini di avvio aggiuntive  
+-   その他のブート イメージ  
 
- Gli oggetti contenuto seguenti non vengono mai trasferiti tramite peer cache. Vengono invece trasferiti da un punto di distribuzione o mediante Windows BranchCache se è configurato nell'ambiente:  
+ 次のコンテンツ オブジェクトに関しては、ピア キャッシュを使用して転送することはありません。 代わりにこれらのオブジェクトは、配布ポイントから、または、Windows BranchCache によって (環境で Windows BranchCache が構成されている場合) 転送します。  
 
--   Applicazioni  
+-   アプリケーション  
 
--   Aggiornamenti software  
+-   ソフトウェア更新プログラム  
 
-##  <a name="a-namebkmkpeercacheworka-how-does--windows-pe-peer-cache-work"></a><a name="BKMK_PeerCacheWork"></a> Come funziona la peer cache di Windows PE?  
- Si consideri uno scenario con una filiale che non dispone di un punto di distribuzione ma che invece dispone di vari client abilitati all'uso della peer cache di Windows PE. Si distribuisce la sequenza di attività configurata per l'uso della peer cache in diversi client che sono configurati come parte dell'origine peer cache. Il primo client a eseguire la sequenza di attività trasmette una richiesta di un peer con il contenuto. Poiché non ne trova uno, ottiene il contenuto da un punto di distribuzione attraverso la rete WAN. Il client installa la nuova immagine e archivia il contenuto nella relativa cache del client di Configuration Manager in modo che funzioni come origine peer cache per altri client. Quando il client successivo esegue la sequenza di attività, trasmette una richiesta nella subnet per un’origine peer cache, e il primo client risponde rendendo disponibile il contenuto memorizzato nella cache.  
+##  <a name="BKMK_PeerCacheWork"></a> Windows PE ピア キャッシュのしくみ  
+ 配布ポイントは存在しないものの、複数のクライアントで Windows PE ピア キャッシュの使用が有効になっている支社オフィスを使用したシナリオを考えてみます。 ピア キャッシュ ソースの一部として構成されている複数のクライアントに、ピア キャッシュを使用するように構成されたタスク シーケンスを展開します。 このタスク シーケンスを実行する最初のクライアントは、対象コンテンツが含まれるピアの要求をブロードキャストします。 それは見つからないため、WAN 経由で配布ポイントからコンテンツを取得します。 このクライアントは、新しいイメージをインストールしてから、コンテンツをその Configuration Manager クライアント キャッシュに保存するため、他のクライアントに対するピア キャッシュ ソースとして機能できます。 次のクライアントがタスク シーケンスを実行するときに、ピア キャッシュ ソース用のサブネット上で要求をブロードキャストし、最初のクライアントが応答してそのキャッシュされたコンテンツを使用できるようにします。  
 
-##  <a name="a-namebkmkpeercachedeterminea-determine-what--clients-will-be-part-of-the-windows-pe-peer-cache-source"></a><a name="BKMK_PeerCacheDetermine"></a> Determinare quali client faranno parte dell'origine peer cache di Windows PE  
- Per determinare quali computer selezionare come origine peer cache di Windows PE, è necessario considerare diversi elementi:  
+##  <a name="BKMK_PeerCacheDetermine"></a> Windows PE ピア キャッシュ ソースの一部となるクライアントの判別  
+ Windows PE ピア キャッシュ ソースとして選択するコンピューターを決定するときに、いくつかの考慮事項があります。  
 
--   L'origine peer cache di Windows PE deve essere un computer desktop che è sempre acceso e disponibile per i client peer cache.  
+-   Windows PE ピア キャッシュ ソースは、常に電源が入り、ピア キャッシュ クライアントが使用できるデスクトップ コンピューターにする必要があります。  
 
--   La peer cache di Windows PE ha una dimensione della cache client sufficiente per archiviare le immagini.  
+-   Windows PE ピア キャッシュには、イメージを格納するための十分なクライアント キャッシュ サイズが必要です。  
 
-##  <a name="a-namebkmkpeercacherequirementsa-requirements-for-a-client-to-use-a--windows-pe-peer-cache-source"></a><a name="BKMK_PeerCacheRequirements"></a> Requisiti per l'uso di un'origine peer cache di Windows PE da parte di un client  
- Per poter usare un'origine peer cache di Windows PE, i client devono soddisfare i requisiti seguenti:  
+##  <a name="BKMK_PeerCacheRequirements"></a> Windows PE ピア キャッシュ ソースを使用するクライアントの要件  
+ Windows PE ピア キャッシュ ソースを使用するクライアントは、次の要件を満たしている必要があります。  
 
--   Il client di Configuration Manager deve essere in grado di comunicare attraverso le porte seguenti della rete:  
+-   Configuration Manager クライアントは、ネットワーク上の次のポートを経由して通信できる必要があります。  
 
-    -   Porta per la trasmissione di rete iniziale, per trovare un’origine peer cache. Per impostazione predefinita, è la porta 8004.  
+    -   初期ネットワーク ブロードキャストでピア キャッシュ ソースを検索するためのポート。 既定値はポート 8004 です。  
 
-    -   Porta per il download del contenuto da un'origine peer cache (HTTP e HTTPS). Per impostazione predefinita, è la porta 8003.  
+    -   ピア キャッシュ ソースからコンテンツをダウンロードするためのポート (HTTP と HTTPS)。 既定では、このポートは 8003 です。  
 
         > [!TIP]  
-        >  I client useranno HTTPS per scaricare il contenuto quando è disponibile. Tuttavia, lo stesso numero di porta viene usato per HTTP o HTTPS.  
+        >  クライアントは、HTTPS を使用して、コンテンツが使用可能になるとダウンロードします。 ただし、HTTP と HTTPS で同じポート番号が使用されます。  
 
--   [Configure the Client Cache for Configuration Manager Clients](../../core/clients/manage/manage-clients.md#BKMK_ClientCache) nei client per garantire che dispongano di spazio sufficiente a contenere e archiviare le immagini distribuite. La peer cache di Windows PE non influisce sulla configurazione o sul comportamento della cache client.  
+-   クライアント上で[Configure the Client Cache for Configuration Manager Clients](../../core/clients/manage/manage-clients.md#BKMK_ClientCache) することによって、展開されたイメージを保存するのに十分なスペースを確保する必要があります。 Windows PE ピア キャッシュは、クライアント キャッシュの構成にも動作にも影響を与えません。  
 
--   Le opzioni di distribuzione per la distribuzione della sequenza di attività devono essere configurate come Scarica contenuto localmente quando richiesto dalla sequenza di attività.  
+-   タスク シーケンス展開用の展開オプションは、タスク シーケンスで必要な場合のコンテンツのローカル ダウンロードとして構成する必要があります。  
 
-##  <a name="a-namebkmkpeercacheconfigurea-configure-windows-pe-peer-cache"></a><a name="BKMK_PeerCacheConfigure"></a> Configurare la peer cache di Windows PE  
- È possibile usare i metodi seguenti per eseguire il provisioning di contenuto peer cache per un client, in modo che possa servire come origine peer cache:  
+##  <a name="BKMK_PeerCacheConfigure"></a> Windows PE ピア キャッシュの構成  
+ 以下の方法を使用すると、ピア キャッシュ コンテンツを使ってクライアントをプロビジョニングしてピア キャッシュ ソースとして機能させることができます。  
 
--   Un client peer cache che non è in grado di trovare un'origine peer cache con il contenuto lo scaricherà da un punto di distribuzione.  Se il client riceve le impostazioni client che abilitano la peer cache e la sequenza di attività viene configurata in modo da preservare il contenuto memorizzato nella cache, il client diventa un'origine peer cache.  
+-   コンテンツが保存されたピア キャッシュ ソースを見つけられないピア キャッシュ クライアントは、配布ポイントからコンテンツをダウンロードすることになります。  クライアントが、ピア キャッシュを有効にするクライアント設定を受信し、タスク シーケンスが、キャッシュされたコンテンツを保持するように構成されている場合は、そのクライアントがピア キャッシュ ソースになります。  
 
--   Un client peer cache peer può ottenere contenuto da un altro client peer cache (un’origine peer cache).  Poiché il client è configurato per peer cache, quando esegue una sequenza di attività configurata in modo da preservare il contenuto memorizzato nella cache, il client diventa un'origine peer cache.  
+-   ピア キャッシュ クライアントは別のピア キャッシュ クライアント (ピア キャッシュ ソース) からコンテンツを取得することができます。  クライアントはピア キャッシュ用に構成されているため、キャッシュされたコンテンツを保持するように構成されたタスク シーケンスを実行すると、そのクライアントがピア キャッシュ ソースになります。  
 
--   Un client esegue una sequenza di attività che include il passaggio facoltativo, [Download Package Content](../understand/task-sequence-steps.md#BKMK_DownloadPackageContent), usato per pre-installare contenuto di rilievo incluso nella sequenza di attività della peer cache di Windows PE. Quando si utilizza questo metodo:  
+-   クライアントはオプション ステップの [Download Package Content](../understand/task-sequence-steps.md#BKMK_DownloadPackageContent)を含むタスク シーケンスを実行します。このオプション ステップは、Windows PE ピア キャッシュ タスク シーケンスに含まれる関連コンテンツの事前設定に使用されます。 この方法を使用する場合:  
 
-    -   Non è necessario che nel client venga installata l’immagine in corso di distribuzione.  
+    -   クライアントは展開されているイメージをインストールする必要がありません。  
 
-    -   Oltre all'opzione **Scarica il contenuto del pacchetto** , per la sequenza di attività è necessario usare anche l'opzione **Cache client Gestione configurazione** . Utilizzare questa opzione per archiviare il contenuto nella cache dei client in modo che il client possa funzionare da origine peer cache per altri client peer cache.  
+    -   **[パッケージ コンテンツのダウンロード]** オプションに加えて、タスク シーケンスで **[Configuration Manager クライアント キャッシュ]** オプションも使用する必要があります。 このオプションはクライアント キャッシュへのコンテンツの保存に使用されるため、クライアントは他のピア キャッシュ クライアントのピア キャッシュ ソースとして機能できます。  
 
- Nelle procedure riportate di seguito sarà possibile configurare Peer cache di Windows PE sui client e configurare le sequenze di attività che supportano la peer cache.  
+ 次の手順は、クライアント上で Windows PE ピア キャッシュを構成し、ピア キャッシュをサポートするタスク シーケンスを構成するのに役立ちます。  
 
-### <a name="to-configure-the-windows-pe-peer-cache-source-computers"></a>Per configurare i computer dell'origine peer cache di Windows PE  
+### <a name="to-configure-the-windows-pe-peer-cache-source-computers"></a>Windows PE ピア キャッシュ ソース コンピューターを構成するには  
 
-1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Impostazioni client**e creare un nuovo oggetto **Impostazioni dispositivo client personalizzate** o modificare un oggetto impostazioni esistente. È possibile anche eseguire questa configurazione per l’oggetto **Impostazioni client predefinite** .  
+1.  Configuration Manager コンソールで、**[管理]** > **[クライアント設定]**に移動してから、新しい **[カスタム クライアント デバイス設定]** を作成するか、既存の設定オブジェクトを編集します。 これを **[既定のクライアント設定]** オブジェクト用に構成することもできます。  
 
     > [!TIP]  
-    >  Utilizzare un oggetto impostazioni personalizzate per gestire i client che ricevono questa configurazione. È possibile, ad esempio, evitare questa configurazione sui portatili degli utenti che si trovano spesso in viaggio. Un sistema altamente mobile può essere un'origine insufficiente a fornire contenuto ad altri client peer cache.  
+    >  カスタム設定オブジェクトを使用して、どのクライアントがこの構成を受信するかを管理します。 たとえば、頻繁に移動するユーザーのラップトップではこの構成が行われないようにしたい場合があります。 モバイル度の高いシステムは、他のピア キャッシュ クライアントにコンテンツを提供するのに不適切なソースになりかねません。  
     >   
-    >  Ricordare anche che quando si configura questa impostazione come parte di **Impostazioni client predefinite**, la configurazione si applica a tutti i client dell'ambiente in uso.  
+    >  この設定を **[既定のクライアント設定]**の一部として構成した場合は、その構成が環境内のすべてのクライアントに適用されることも覚えておいてください。  
 
-2.  In **Peer cache di Windows PE**impostare **Abilita client di Configuration Manager nel sistema operativo completo a condividere contenuto** su **Sì**.  
+2.  [ **Windows PE ピア キャッシュ**] で、[ **完全な OS 上の Configuration Manager クライアントにコンテンツの共有を許可する** ] を [ **はい**] に設定します。  
 
-    -   Per impostazione predefinita, è abilitato solo HTTP. Se si desidera abilitare i client a scaricare il contenuto in HTTPS, impostare **Abilitare HTTPS per la comunicazione peer client** su **Sì**.  
+    -   既定では、HTTP のみが有効になります。 クライアントに HTTPS 経由のコンテンツのダウンロードを許可する場合は、 **[クライアント ピア通信に対して HTTPS を有効にする]** を **[はい]**に設定します。  
 
-    -   Per impostazione predefinita, la porta per le trasmissioni è impostata su 8004 e la porta per il download del contenuto è impostata su 8003. È possibile modificare entrambe.  
+    -   既定では、ブロードキャスト用のポートは 8004 に設定され、コンテンツ ダウンロード用のポートは 8003 に設定されます。 どちらも変更することができます。  
 
-3.  Salvare e distribuire le impostazioni client ai client selezionati come origine cache peer.  
+3.  クライアント設定を保存して、ピア キャッシュ ソースとして選択するクライアントに展開します。  
 
- Dopo aver configurato un dispositivo con questo oggetto impostazioni, il dispositivo viene configurato per funzionare da origine peer cache. Queste impostazioni devono essere distribuite ai potenziali client peer cache per configurare le porte e i protocolli richiesti.  
+ この設定オブジェクトを使って構成されたデバイスは、ピア キャッシュ ソースとして機能するように構成されます。 これらの設定を潜在的なピア キャッシュ クライアントに展開して、必要なポートとプロトコルを構成する必要があります。  
 
-###  <a name="a-namebkmkpeercacheconfiguretsa-configure-a-task-sequence-for-windows-pe-peer-cache"></a><a name="BKMK_PeerCacheConfigureTS"></a> Configurare una sequenza di attività per la peer cache di Windows PE  
- Quando si configura la sequenza di attività, usare le seguenti variabili della sequenza di attività come variabili di raccolta per la raccolta in cui viene distribuita la sequenza di attività:  
+###  <a name="BKMK_PeerCacheConfigureTS"></a> Windows PE ピア キャッシュのタスク シーケンスの構成  
+ タスク シーケンスを構成するときに、次のタスク シーケンス変数を、タスク シーケンスが展開されるコレクション上のコレクション変数として使用します。  
 
 -   **SMSTSPeerDownload**  
 
-     Valore: TRUE  
+     値: TRUE  
 
-     Consente al client di utilizzare Peer cache di Windows PE.  
+     クライアントに Windows PE ピア キャッシュの使用を許可します。  
 
 -   **SMSTSPeerRequestPort**  
 
-     Valore: <numero porta\>  
+     値: <ポート番号\>  
 
-     Quando non si usano le porte predefinite configurate in Impostazioni client (8004), è necessario configurare questa variabile con un valore personalizzato della porta di rete da usare per la trasmissione iniziale.  
+     クライアント設定で構成された既定のポート (8004) を使用しない場合は、初期ブロードキャストに使用するためのネットワーク ポートのカスタム値を使ってこの変数を構成する必要があります。  
 
 -   **SMSTSPreserveContent**  
 
-     Valore: TRUE  
+     値: TRUE  
 
-     Ciò contrassegna il contenuto nella sequenza di attività per essere mantenuto nella cache del client di Configuration Manager dopo la distribuzione. Questa operazione è diversa rispetto all'uso di SMSTSPersisContent che mantiene il contenuto solo per la durata della sequenza di attività e usa la cache della sequenza di attività, ma non la cache del client di Configuration Manager.  
+     展開後に Configuration Manager クライアント キャッシュに残すタスク シーケンス内のコンテンツにフラグを設定します。 これは、タスク シーケンスの持続期間だけコンテンツを保持して、Configuration Manager クライアント キャッシュではなくタスク シーケンス キャッシュを使用する SMSTSPersisContent の使用とは異なります。  
 
- Per altre informazioni, vedere [Variabili predefinite della sequenza di attività](../understand/task-sequence-built-in-variables.md).  
+ 組み込みのタスク シーケンス変数の詳細については、「[タスク シーケンス組み込み変数](../understand/task-sequence-built-in-variables.md)」を参照してください。  
 
-###  <a name="a-namebkmkpeercachevalidatea-validate-the-success-of-using-windows-pe-peer-cache"></a><a name="BKMK_PeerCacheValidate"></a> Convalidare l'esito positivo dell'uso della peer cache di Windows PE  
- Dopo aver usato la peer cache di Windows PE per distribuire e installare una sequenza di attività, è possibile verificare che la peer cache sia stata usata correttamente nel processo visualizzando **smsts.log** sul client che ha eseguito la sequenza di attività.  
+###  <a name="BKMK_PeerCacheValidate"></a> Windows PE ピア キャッシュの使用が成功したかどうかの検証  
+ Windows PE ピア キャッシュを使用してタスク シーケンスを展開してインストールしたら、タスク シーケンスを実行したクライアント上で **smsts.log** を表示することによって、プロセスでピア キャッシュが正常に使用されたことを確認できます。  
 
- Individuare nel log una voce simile alla seguente, dove <*NomeServerOrigine*> identifica il computer da cui il client ha ottenuto il contenuto. Tale computer deve essere un'origine peer cache e non un server punto di distribuzione. Altri dettagli variano in base all'ambiente locale e alle configurazioni.  
+ ログで、次のようなエントリを探します。ここで、<*SourceServerName>* はクライアントがコンテンツを取得したコンピューターを示します。 このコンピューターは、配布ポイント サーバーではなく、ピア キャッシュ ソースにする必要があります。 その他の詳細は、ローカル環境と構成によって異なります。  
 
 -   *<![LOG[Downloaded file from http:// <SourceServerName\>:8003/SCCM_BranchCache$/SS10000C/sccm?/install.wim to C:\\_SMSTaskSequence\Packages\SS10000C\install.wim ]LOG]!><time="14:24:33.329+420" date="06-26-2015" component="ApplyOperatingSystem" context="" type="1" thread="1256" file="downloadcontent.cpp:1626">*  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-

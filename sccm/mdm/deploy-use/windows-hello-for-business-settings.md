@@ -1,110 +1,106 @@
 ---
-title: Impostazioni di Windows Hello for Business | Microsoft Docs
-description: Informazioni su come integrare Windows Hello per le aziende con System Center Configuration Manager.
+title: "Windows Hello for Business の設定 | Microsoft Docs"
+description: "System Center Configuration Manager に Windows Hello for Business を統合する方法について説明します。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c0593c07-5dd7-4d23-a0d8-d30165f49ef7
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 8c7bf901caa49c8585a9ed3913d4a5a2aac57013
-ms.openlocfilehash: 7ac2baeb3c10ce90eb643fa28a953186b571d037
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.openlocfilehash: a97b3d97eb302e4133b0a79a8c7e27004872c8b1
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="windows-hello-for-business-settings-in-system-center-configuration-manager-hybrid"></a>Impostazioni di Windows Hello for Business in System Center Configuration Manager (ibrido)
+# <a name="windows-hello-for-business-settings-in-system-center-configuration-manager-hybrid"></a>System Center Configuration Manager における Windows Hello for Business の設定 (ハイブリッド)
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager consente l'integrazione con Windows Hello per le aziende (in precedenza Microsoft Passport per Windows), che rappresenta un metodo di accesso alternativo per i dispositivi Windows 10. Hello for Business usa Active Directory o un account di Azure Active Directory per sostituire una password, una smart card o una smart card virtuale.  
+System Center Configuration Manager を、Windows 10 デバイスの代替サインイン方法である Windows Hello for Business (旧称: Microsoft Passport for Windows) と統合することができます。 Hello for Business では、パスワード、スマート カード、または仮想スマート カードの代わりに Active Directory または Azure Active Directory アカウントを使用します。  
 
-Hello for Business consente di eseguire l'accesso usando un **movimento dell'utente** anziché una password. Il movimento dell'utente può essere un semplice PIN, un'autenticazione biometrica o un dispositivo esterno come un lettore di impronte digitali.  
+Hello for Business を使用すると、パスワードの代わりに **ユーザー ジェスチャ** を使用してログインできます。 ユーザー ジェスチャには、単純な暗証番号 (PIN)、生体認証、または指紋リーダーなどの外部のデバイスがあります。  
 
- Configuration Manager si integra con Windows Hello per le aziende in due modi:  
+ Configuration Manager と Windows Hello for Business を統合するには、次の 2 つの方法があります。  
 
--   È possibile usare Configuration Manager per controllare i movimenti che gli utenti possono utilizzare o meno per l'accesso.  
+-   Configuration Manager を使用して、ユーザーがサインインに使用できるジェスチャと使用できないジェスチャを制御できます。  
 
--   È possibile archiviare i certificati di autenticazione nel provider di archiviazione chiavi (KSP) di Windows Hello for Business. Per altre informazioni, vedere i [profili certificato](create-pfx-certificate-profiles.md).  
+-   Windows Hello for Business のキー格納プロバイダー (KSP) に認証証明書を格納できます。 詳細については、「[Certificate profiles](create-pfx-certificate-profiles.md)」 (証明書プロファイル) をご覧ください。  
 
-- È possibile distribuire i criteri di Windows Hello per le aziende su dispositivi appartenenti a un dominio Windows 10 che eseguono il client di Configuration Manager. Questa configurazione è descritta in [Configurare Windows Hello per le aziende su dispositivi appartenenti a un dominio Windows 10](../../protect/deploy-use/windows-hello-for-business-settings.md#configure-windows-hello-for-business-on-domain-joined-windows-10-devices). Quando si usa Configuration Manager con Intune (ibrido), è possibile configurare queste impostazioni nei dispositivi Windows 10 e Windows 10 Mobile, ma non su dispositivi appartenenti a un dominio che eseguono il client di Configuration Manager.   
+- ドメインに参加しており構成マネージャー クライアントを実行している Windows 10 デバイスに Windows Hello for Business ポリシーを展開できます。 この構成については、「[ドメインに参加している Windows 10 デバイスで Windows Hello for Business を構成する](../../protect/deploy-use/windows-hello-for-business-settings.md#configure-windows-hello-for-business-on-domain-joined-windows-10-devices)」で説明されています。 Configuration Manager と Intune (ハイブリッド) を使用している場合、これらの設定は、Windows 10 デバイスと Windows 10 Mobile デバイスで構成できますが、ドメインに参加しており構成マネージャー クライアントを実行しているデバイスでは構成できません。   
 
-Per informazioni generali sulla configurazione delle impostazioni di Windows Hello for Business, vedere [Impostazioni di Windows Hello for Business in System Center Configuration Manager](../../protect/deploy-use/windows-hello-for-business-settings.md).
+Windows Hello for Business 設定の構成に関する一般情報は、「[System Center Configuration Manager における Windows Hello for Business の設定](../../protect/deploy-use/windows-hello-for-business-settings.md)」をご覧ください。
 
-## <a name="configure-windows-hello-for-business-settings-hybrid"></a>Configurare le impostazioni di Windows Hello per le aziende (ibrido)  
+## <a name="configure-windows-hello-for-business-settings-hybrid"></a>Windows Hello for Business 設定を構成する (ハイブリッド)  
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Servizi cloud** > **Sottoscrizioni a Microsoft Intune**.  
+1.  Configuration Manager コンソールで、**[管理]** > **[Cloud Services]** > **[Microsoft Intune サブスクリプション]** の順にクリックします。  
 
-3.  Nell'elenco selezionare la sottoscrizione a Microsoft Intune e quindi nel gruppo **Sottoscrizione** della scheda **Home** fare clic su **Configura piattaforme** > **Windows (MDM)**.  
+3.  リストから、Microsoft Intune サブスクリプションを選び、 **[ホーム]** タブの **[サブスクリプション]** グループで、 **[プラットフォームの構成]** > **[Windows (MDM)]**をクリックします。  
 
-4.  Nella scheda **Windows Hello for Business** della finestra di dialogo **Sottoscrizione a Microsoft Intune - Proprietà** scegliere tra i valori seguenti, che avranno effetto sui tutti i dispositivi Windows 10 e Windows 10 Mobile registrati:  
+4.  **[Microsoft Intune サブスクリプションのプロパティ]** ダイアログ ボックスの **[Windows Hello for Business]** タブで、登録されているすべての Windows 10 および Windows 10 Mobile デバイスに影響する次の値から選びます。  
 
-    -   **Disabilita Windows Hello for Business per i dispositivi registrati** o **Abilita Windows Hello for Business per i dispositivi registrati** - Abilita o disabilita l'uso di Windows Hello for Business in tutti i dispositivi Windows 10 e Windows 10 Mobile registrati.  
+    -   **[登録デバイスで Windows Hello for Business を無効にする]** または **[登録デバイスで Windows Hello for Business を有効にする]** - 登録されているすべての Windows 10 および Windows 10 Mobile デバイスで Windows Hello for Business の使用を有効または無効にします。  
 
-    -   **Usa un modulo TPM (Trusted Platform Module)** - Un chip TPM (Trusted Platform Module) offre un livello aggiuntivo di sicurezza dei dati. Scegliere uno dei valori seguenti:  
+    -   **トラステッド プラットフォーム モジュール (TPM) の使用** - トラステッド プラットフォーム モジュール (TPM) チップでは、追加のデータのセキュリティ層を提供します。 次のいずれかの値を選択します。  
 
-        -   **Obbligatorio** (impostazione predefinita) - Solo i dispositivi con un modulo TPM accessibile possono eseguire il provisioning di Windows Hello for Business.  
+        -   **必須** (既定) - アクセス可能な TPM を装備したデバイスのみが Windows Hello for Business をプロビジョニングできます。  
 
-        -   **Preferito** - I dispositivi tentano innanzitutto di usare un modulo TPM. Se questo non è disponibile, possono usare la crittografia software.  
+        -   **優先** -デバイスは最初に TPM を使用しようとします。 これが使用できない場合、ソフトウェアの暗号化を使用できます。  
 
-    -   **Richiedi lunghezza minima del PIN** - Specificare il numero minimo di caratteri necessari per il PIN di Windows Hello for Business. È necessario usare almeno 4 caratteri (il valore predefinito è 6 caratteri).  
+    -   **PIN の最小長** - Windows Hello for Business の PIN に必要な文字の最小数を指定します。 少なくとも 4 文字を使用する必要があります (既定値は 6 文字)。  
 
-    -   **Richiedi lunghezza massima del PIN** - Specificare il numero massimo di caratteri consentiti per il PIN di Windows Hello for Business. È possibile usare fino a 127 caratteri.  
+    -   **PIN の最大長** - Windows Hello for Business の PIN に使用できる文字の最大数を指定します。 127 文字まで使用できます。  
 
-    -   **Richiedi lettere minuscole nel PIN** - Specifica se è necessario usare lettere minuscole nel PIN di Windows Hello for Business. È possibile scegliere tra:  
+    -   **PIN に小文字が必要** - Windows Hello for Business の PIN に小文字を使用する必要があるかどうかを指定します。 次の中から選択します。  
 
-        -   **Consentito** - Gli utenti possono usare caratteri minuscoli nel PIN.  
+        -   **許可** -ユーザーは PIN に小文字を使用することができます。  
 
-        -   **Obbligatorio** - Gli utenti devono includere almeno un carattere minuscolo nel PIN.  
+        -   **必須** -ユーザーは PIN に小文字を 1 文字以上含める必要があります。  
 
-        -   **Non consentito** (impostazione predefinita) - Gli utenti non possono usare caratteri minuscoli nel PIN.  
+        -   **使用不可** (既定) -ユーザーは PIN に小文字を使用することができません。  
 
-    -   **Richiedi lettere maiuscole nel PIN** - Specifica se è necessario usare lettere maiuscole nel PIN di Windows Hello for Business. È possibile scegliere tra:  
+    -   **PIN に大文字が必要** - Windows Hello for Business の PIN に大文字を使用する必要があるかどうかを指定します。 次の中から選択します。  
 
-        -   **Consentito** - Gli utenti possono usare caratteri maiuscoli nel PIN.  
+        -   **許可** -ユーザーは PIN に大文字を使用することができます。  
 
-        -   **Obbligatorio** - Gli utenti devono includere almeno un carattere maiuscolo nel PIN.  
+        -   **必須** -ユーザーは PIN に大文字を 1 文字以上含める必要があります。  
 
-        -   **Non consentito** (impostazione predefinita) - Gli utenti non possono usare caratteri maiuscoli nel PIN.  
+        -   **使用不可** (既定) -ユーザーは PIN に大文字を使用することができません。  
 
-    -   **Richiedi caratteri speciali** - Specifica l'uso di caratteri speciali nel PIN. È possibile scegliere tra:  
+    -   **特殊文字が必要** - PIN の特殊文字の使用を指定します。 次の中から選択します。  
 
-        -   **Consentito** - Gli utenti possono usare caratteri speciali nel PIN.  
+        -   **許可** -ユーザーは PIN に特殊文字を使用することができます。  
 
-        -   **Obbligatorio** - Gli utenti devono includere almeno un carattere speciale nel PIN.  
+        -   **必須** -ユーザーは PIN に特殊文字を 1 文字以上含める必要があります。  
 
-        -   **Non consentito** (impostazione predefinita) - Gli utenti non possono usare caratteri speciali nel PIN (questo è anche il comportamento se l'impostazione non è configurata).  
+        -   **使用不可** (既定) -ユーザーは PIN に特殊文字を使用することができません (これは、設定を構成していない場合の動作でもあります)。  
 
-         I caratteri speciali includono: **! " # $ % & ' ( ) \* + , - . / : ; < = > ? @ [ \ ] ^ _ ` { &#124; } ~**.  
+         特殊文字には次のものが含まれます。**! " # $ % & ' ( ) \* + , - . / : ; < = > ? @ [ \ ] ^ _ ` { &#124; } ~**  
 
-    -   **Richiedi scadenza PIN (giorni)** - Specifica il numero di giorni prima che sia necessario modificare il PIN del dispositivo. L'impostazione predefinita è 41 giorni.  
+    -   **PIN の有効期限が必要 (日)** - PIN の変更が必要になるまでの日数を指定します。 既定は 41 日です。  
 
-    -   **Impedisci riutilizzo dei PIN precedenti** - Usare questa impostazione per limitare il riutilizzo dei PIN usati in precedenza. L'impostazione predefinita impedisce il riutilizzo degli ultimi 5 PIN usati.  
+    -   **前の PIN の再利用を防止** - この設定を使用すると、以前に使用した PIN の再利用を制限できます。 既定では過去 5 回の PIN を再利用することはできません。  
 
-    -   **Abilita movimenti biometrici** - Abilita l'autenticazione biometrica, ad esempio il riconoscimento facciale o delle impronte digitali, come alternativa a un PIN di Windows Hello for Business.. Gli utenti devono comunque configurare un PIN aziendale in caso di errore dell'autenticazione biometrica.  
+    -   **生体認証のジェスチャを有効にする** - Windows Hello for Business の PIN の代わりとして、顔認識や指紋などの生体認証を有効にします。 ユーザーは、生体認証に失敗した場合のために、Work の PIN も設定する必要があります。  
 
-         Se impostato su **Abilitato**, Windows Hello for Business consente l'autenticazione biometrica.  Se impostato su **Disabilitato**, Windows Hello for Business impedisce l'autenticazione biometrica (per tutti i tipi di account).  
+         **[有効]**に設定されている場合は、Windows Hello for Business で生体認証が利用できます。  **[無効]**に設定されている場合は、Windows Hello for Business で生体認証が利用できません (すべてのアカウントの種類が対象)。  
 
-    -   **Usa anti-spoofing avanzato, se disponibile** - Configura l'uso della funzionalità avanzata di anti-spoofing nei dispositivi che la supportano.  
+    -   **拡張スプーフィング対策が使用可能な場合は使用する** - デバイスでサポートされている場合に拡張スプーフィング対策を使用するかどうかを構成します。  
 
-         Se impostato su **Abilitato**, Windows richiede a tutti gli utenti di usare la funzionalità di anti-spoofing per le caratteristiche del viso, se supportata.  
+         **[有効]**に設定されている場合、Windows のすべてのユーザーは、サポートされている場合に顔の特徴のスプーフィング対策を使用する必要があります。  
 
-    -   **Usare Passport remoto** - Se questa opzione è impostata su **Abilitato**, gli utenti possono usare Hello for Business come dispositivo portatile complementare per l'autenticazione del computer desktop. Il computer desktop deve essere aggiunto ad Azure Active Directory e il dispositivo complementare deve essere configurato con un PIN di Windows Hello for Business.  
+    -   **リモートの Passport を使用する** - このオプションが **[有効]**に設定されている場合、ユーザーはデスクトップ コンピューターの認証にポータブル コンパニオン デバイスとして機能するリモートの Hello for Business を使用することができます。 デスクトップ コンピューターは Azure Active Directory に参加している必要があり、コンパニオン デバイスは、Windows Hello for Business の PIN を使用して設定されている必要があります。  
 
-5.  Al termine, fare clic su **OK**.  
+5.  操作が完了したら、 **[OK]**をクリックします。  
 
-### <a name="see-also"></a>Vedere anche  
- [Protect data and site infrastructure with System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md) (Proteggere i dati e l'infrastruttura del sito con System Center Configuration Manager)
+### <a name="see-also"></a>関連項目  
+ [System Center Configuration Manager でのデータとサイト インフラストラクチャの保護](../../protect/understand/protect-data-and-site-infrastructure.md)
 
- [Manage identity verification using Windows Hello for Business](https://technet.microsoft.com/itpro/windows/keep-secure/manage-identity-verification-using-microsoft-passport) (Gestire la verifica dell'identità tramite Windows Hello per le aziende).  
-
+ [Windows Hello for Business を使用した本人確認の管理](https://technet.microsoft.com/itpro/windows/keep-secure/manage-identity-verification-using-microsoft-passport)  

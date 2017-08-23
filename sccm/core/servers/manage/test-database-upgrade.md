@@ -1,74 +1,70 @@
 ---
-title: Testare l&quot;aggiornamento del database | Microsoft Docs
-description: Testare l&quot;aggiornamento del database del sito durante l&quot;installazione di aggiornamenti per Configuration Manager.
+title: "データベース更新のテスト | Microsoft Docs"
+description: "Configuration Manager 用の更新プログラムをインストールする際に、サイト データベースのアップグレードをテストします。"
 ms.custom: na
 ms.date: 06/13/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: abb696f3-a816-4f12-a9f1-0503a81e1976
-caps.latest.revision: 0
+caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
 ms.openlocfilehash: 6b76c97cd205bb02683a7bfa1eb378471a75551d
-ms.contentlocale: it-it
-ms.lasthandoff: 06/13/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="test-the-database-upgrade-when-installing-an-update"></a>Testare l'aggiornamento del database quando si installa un aggiornamento
+# <a name="test-the-database-upgrade-when-installing-an-update"></a>更新プログラムをインストールする際にデータベース アップグレードをテストする
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Questo argomento descrive come eseguire il test dell'aggiornamento del database prima di installare un aggiornamento nella console per il Current Branch di Configuration Manager. Tuttavia, questo passaggio non è più necessario o consigliabile, a meno che la condizione del database sia sospetta o che il database sia stato modificato da personalizzazioni non supportate in modo esplicito da Configuration Manager.
+このトピックの情報は、現在のブランチの Configuration Manager 用のコンソール内の更新プログラムをインストールする前にデータベース アップグレードのテストを実行するのに役立ちます。 ただし、データベースが未確認である場合や、Configuration Manager で明示的にサポートされていないカスタマイズで変更されている場合を除き、アップグレードのテストは必須の手順あるいは推奨される手順ではなくなりました。
 
-## <a name="do-i-need-to-run-a-test-upgrade"></a>È necessario eseguire un test dell'aggiornamento?
-La deprecazione di questo test dell'aggiornamento è stata possibile grazie alle modifiche introdotte con System Center Configuration Manager. Queste modifiche semplificano il processo e la velocità con cui è possibile aggiornare un ambiente di produzione a versioni più recenti. Questa riprogettazione consente ora ai clienti di rimanere aggiornati con meno rischi e minori costi operativi durante l'installazione di ogni nuovo aggiornamento.
+## <a name="do-i-need-to-run-a-test-upgrade"></a>アップグレードのテストを実行する必要がありますか?
+このアップグレードのテストは、System Center Configuration Manager で導入される変更に伴い、非推奨となります。 これらの変更により、プロセスが簡略化され、実稼働環境を新しいバージョンに短時間で更新できるようになります。 この再設計の目的は、常にお客様のリスクを軽減し、新しい更新プログラムをそれぞれインストールする際の運用のオーバーヘッドを減らせるようにすることです。
 
-Le modifiche interessano la modalità di installazione degli aggiornamenti, inclusa la logica che esegue automaticamente il rollback di un aggiornamento non riuscito senza la necessità di eseguire un ripristino del sito. Queste modifiche consentono l'uso della console per gestire le installazioni degli aggiornamenti e includono un'opzione per [ripetere l'installazione di un aggiornamento non riuscito](/sccm/core/servers/manage/install-in-console-updates#bkmk_retry).
+サイトの回復を実行することなく、失敗した更新プログラムを自動的にロールバックするロジックを含む、更新プログラムのインストール方法が変更されています。 これらの変更により、コンソールを使用して、更新プログラムのインストールを管理できるようになります。また、これらの変更には、[失敗した更新プログラムのインストールを再試行する](/sccm/core/servers/manage/install-in-console-updates#bkmk_retry)オプションが含まれます。
 
 > [!TIP]
-> Quando si esegue l'aggiornamento a System Center Configuration Manager da una versione precedente, ad esempio System Center 2012 Configuration Manager, l'[esecuzione del test degli aggiornamenti del database è ancora un'operazione consigliata](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager#a-namebkmktesta-test-the-site-database-upgrade).
+> System Center 2012 Configuration Manager などの古い製品から System Center Configuration Manager にアップグレードする場合、[データベース アップグレードのテストは引き続き推奨される手順](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager#a-namebkmktesta-test-the-site-database-upgrade)です。
 
-Se si intende testare l'aggiornamento di un database del sito quando si installa un aggiornamento nella console, le informazioni seguenti integrano il [materiale sussidiario sull'installazione di un aggiornamento nella console](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates).
+コンソール内の更新プログラムをインストールするときでもサイト データベースのアップグレードをテストする予定の場合、以下の情報は[コンソール内更新プログラムのインストールに関するガイダンス](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates)を補足するものとなります。
 
-## <a name="prepare-to-run-a-test-database-upgrade"></a>Preparare l'esecuzione di un test dell'aggiornamento del database  
-Prima di installare un nuovo aggiornamento nella gerarchia, ad esempio l'aggiornamento 1702, è possibile testare l'aggiornamento del database del sito.
+## <a name="prepare-to-run-a-test-database-upgrade"></a>データベース アップグレードのテストを実行するための準備  
+1702 の更新など、階層内に新しい更新プログラムをインストールする前に、サイト データベースのアップグレードをテストできます。
 
-Per eseguire il test dell'aggiornamento, usare l'installazione di Configuration Manager dai file di origine dalla [cartella CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder) di un sito che esegue la versione di Configuration Manager a cui si sta eseguendo l'aggiornamento. Questo requisito implica che per testare l'aggiornamento del database per l'aggiornamento alla versione 1702:
--   È necessario disporre di almeno un sito che esegue la versione 1702 da cui è possibile ottenere questa cartella CD.Latest.
--   Se non si dispone di un sito che esegue la versione richiesta, è consigliabile installare un sito in un ambiente lab e quindi aggiornare il sito alla nuova versione. Verrà creata la cartella CD.Latest con la versione corretta dei file di origine.
+アップグレードのテストを実行するには、更新対象バージョンの Configuration Manager を実行しているサイトの [CD.Latest フォルダー](/sccm/core/servers/manage/the-cd.latest-folder)にあるソース ファイルの Configuration Manager セットアップを使用します。 この要件は、1702 に更新するためにデータベースの更新をテストすることを意味します。
+-   CD.Latest フォルダーを取得できる、バージョン 1702 を実行する 1 つ以上のサイトが必要です。
+-   必要なバージョンを実行するサイトがない場合は、ラボ環境でのサイトのインストールを検討し、そのサイトを新しいバージョンに更新します。 これにより、正しいバージョンのソース ファイルを含む CD.Latest フォルダーを作成することができます。
 
-Il test dell'aggiornamento viene eseguito su un backup del database del sito che è stato ripristinato in un'istanza separata di SQL Server.  Si esegue l'installazione dalla cartella **CD.Latest** con l'opzione da riga di comando **testdbupgrade** per testare l'aggiornamento che ha ripristinato la copia del database. Al completamento del test dell'aggiornamento, il database aggiornato viene eliminato. Non può essere usato da un sito di Configuration Manager.
+アップグレードのテストは、SQL Server の別のインスタンスに復元したサイト データベースのバックアップに対して実行されます。  データベースのコピーを復元したアップグレードをテストするには、**testdbupgrade** コマンド ライン スイッチを使用して **CD.Latest** フォルダーからセットアップを実行します。 アップグレード テストの完了後、アップグレードされたデータベースは破棄されます。 これを Configuration Manager サイトで使用することはできません。
 
-Se si verifica un errore in fase di aggiornamento, non è consigliabile ripristinare il sito. In alternativa, è possibile ritentare l'installazione dell'aggiornamento dall'interno della console.
+更新プログラムのインストールが失敗した場合に、サイトを回復する必要はありません。 代わりに、コンソール内から更新プログラムのインストールを再試行できます。
 
-##  <a name="run-the-test-upgrade"></a>Eseguire il test dell'aggiornamento    
-1.  Usare il programma di installazione di Configuration Manager e i file di origine dalla cartella **CD.Latest** di un sito che esegue la versione a cui si intende eseguire l'aggiornamento.  
+##  <a name="run-the-test-upgrade"></a>アップグレードのテストを実行する    
+1.  Configuration Manager セットアップと、更新する予定のバージョンを実行するサイトの **CD.Latest** フォルダーにあるソース ファイルを使用します。  
 
-2.  Copiare la cartella **CD.Latest** in un percorso dell'istanza di SQL Server che verrà usata per eseguire l'aggiornamento di test del database.
+2.  データベース アップグレードのテストを実行するために使用する SQL Server インスタンスの場所に **CD.Latest** フォルダーをコピーします。
 
-3.  Creare un backup del database del sito di cui di intende verificare l'aggiornamento. Ripristinare quindi una copia del database del sito in un'istanza di SQL Server che non ospita un sito di Configuration Manager. L'istanza di SQL Server deve usare la stessa edizione di SQL Server del database del sito.  
+3.  アップグレードをテストするサイト データベースのバックアップを作成します。 次に、Configuration Manager サイトをホストしていない SQL Server のインスタンスにそのデータベースのコピーを復元します。 SQL Server インスタンスは、サイト データベースと同じエディションの SQL Server を使用する必要があります。  
 
-4.  Dopo avere ripristinato la copia del database, eseguire **Installazione** dalla cartella CD.Latest che contiene i file di origine dalla versione a cui si sta eseguendo l'aggiornamento. Quando si esegue l'installazione, usare l'opzione della riga di comando **/TESTDBUPGRADE** . Se l'istanza di SQL Server che ospita la copia del database non è quella predefinita, fornire gli argomenti della riga di comando per identificare l'istanza che ospita la copia del database del sito.   
+4.  データベースのコピーを復元したら、更新するバージョンのソース ファイルを含む CD.Latest フォルダーから**セットアップ**を実行します。 セットアップを実行する際は、 **/TESTDBUPGRADE** コマンド ライン オプションを使います。 データベースのコピーをホストする SQL Server インスタンスが既定のインスタンスでない場合は、コマンドライン引数を指定して、サイト データベースのコピーをホストするインスタンスを識別します。   
 
-  Ad esempio, si dispone di un database del sito con il nome database *SMS_ABC*. Si ripristina una copia di questo database del sito in un'istanza supportata di SQL Server con il nome istanza *DBTest*. Per testare un aggiornamento di questa copia del database del sito, usare la seguente riga di comando: **Setup.exe /TESTDBUPGRADE DBtest\CM_ABC**.  
+  たとえば、データベース名が *SMS_ABC* のサイト データベースがあるとします。 このサイト データベースのコピーを、インスタンス名が *DBTest* の SQL Server のサポートされているインスタンスに復元します。 このサイト データベースのコピーのアップグレードをテストするには、**Setup.exe /TESTDBUPGRADE DBtest\CM_ABC** というコマンド ラインを使用します。  
 
-  È possibile trovare Setup.exe nel percorso seguente del supporto di origine per System Center Configuration Manager: **SMSSETUP\BIN\X64**.  
+  Setup.exe は、System Center Configuration Manager のソース メディアの **SMSSETUP\BIN\X64** にあります。  
 
-5.  Nell'istanza di SQL Server in cui si esegue il test di aggiornamento, monitorare *ConfigMgrSetup.log* nella radice dell'unità di sistema per l'avanzamento e il completamento.  
+5.  アップグレード テストを実行する SQL Server インスタンスで、システム ドライブのルート内の *ConfigMgrSetup.log* を確認し、進行状況と成功状態を監視します。  
 
-     Se il test dell'aggiornamento ha esito negativo, risolvere eventuali problemi associati all'errore di aggiornamento del database del sito. Creare quindi un nuovo backup del database del sito e testare l'aggiornamento della nuova copia del database.  
+     アップグレード テストに失敗した場合は、サイト データベースのアップグレード失敗に関する問題をすべて修正します。 次に、サイト データベースの新しいバックアップを作成し、データベースの新しいコピーのアップグレードをテストします。  
 
 
 
-## <a name="next-steps"></a>Passaggi successivi
-Dopo il corretto completamento del test dell'aggiornamento del database, eliminare il database aggiornato. Non può essere usato da un sito di Configuration Manager. È quindi possibile tornare al sito attivo e [iniziare l'installazione dell'aggiornamento](/sccm/core/servers/manage/install-in-console-updates).
-
+## <a name="next-steps"></a>次のステップ
+データベースの更新テストが正常に完了したら、更新されたデータベースを破棄します。 これを Configuration Manager サイトで使用することはできません。 その後、アクティブなサイトに戻り、[更新プログラムのインストール](/sccm/core/servers/manage/install-in-console-updates)を開始できます。

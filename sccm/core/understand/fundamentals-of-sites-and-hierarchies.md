@@ -1,80 +1,73 @@
 ---
-title: Nozioni fondamentali su siti e gerarchie | Microsoft Docs
-description: Informazioni di base su siti e gerarchie di System Center Configuration Manager.
+title: "サイトおよび階層の基礎 | Microsoft Docs"
+description: "System Center Configuration Manager サイトと階層の基本情報について説明します。"
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4db1e15f-e832-4cf9-be33-d3971e635a55
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 68527c0e82861106b7ec28b34bffa8fd74b2dd4a
 ms.openlocfilehash: f13f38be2a19ab8a1ead246e5272515dd0570984
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="fundamentals-of-sites-and-hierarchies-for-system-center-configuration-manager"></a>Nozioni fondamentali su siti e gerarchie per System Center Configuration Manager
+# <a name="fundamentals-of-sites-and-hierarchies-for-system-center-configuration-manager"></a>System Center Configuration Manager のサイトおよび階層の基礎
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Una distribuzione di System Center Configuration Manager deve essere installata in un dominio di Active Directory. La base della distribuzione include uno o più siti di Configuration Manager che formano una gerarchia di siti. Da un singolo sito a una gerarchia a più siti, il tipo e il percorso dei siti installati offrono la possibilità di espandere la distribuzione quando necessario per assicurare i servizi essenziali a utenti e dispositivi gestiti.
+System Center Configuration Manager 展開は Active Directory ドメインにインストールする必要があります。 この展開の基礎には、サイトの階層を形成する 1 つ以上の Configuration Manager サイトが含まれます。 1 つのサイトからマルチサイト階層まで、インストールするサイトの種類と場所では、必要に応じて展開をスケールアップ (拡張) して、キー サービスを管理されているユーザーとデバイスに配信できます。
 
-## <a name="hierarchies-of-sites"></a>Gerarchie di siti
-Quando si installa System Center Configuration Manager per la prima volta, il primo sito di Configuration Manager installato determina l'ambito della gerarchia. Il primo sito di Configuration Manager è la base da cui gestire i dispositivi e gli utenti nell'azienda. Questo primo sito deve essere un sito di amministrazione centrale o un sito primario autonomo.  
+## <a name="hierarchies-of-sites"></a>サイトの階層
+System Center Configuration Manager を初めてインストールするときに最初にインストールする Configuration Manager サイトによって、階層のスコープが決まります。 最初の Configuration Manager サイトは、社内のデバイスとユーザーを管理する基礎となります。 この最初のサイトは、中央管理サイトまたはスタンドアロンのプライマリ サイトである必要があります。  
 
- Un *sito di amministrazione centrale* è ideale per distribuzioni su larga scala e offre un punto centrale di amministrazione, nonché la flessibilità necessaria per supportare i dispositivi distribuiti in un'infrastruttura di rete globale. Dopo aver installato un sito di amministrazione centrale, è necessario installare uno o più siti primari come siti figlio. Questa configurazione è necessaria perché un sito di amministrazione centrale non supporta direttamente la gestione dei dispositivi, che è invece la funzione di un sito primario. Un sito di amministrazione centrale supporta più siti primari figlio. I siti primari figlio vengono usati per gestire direttamente i dispositivi e controllare la larghezza di banda di rete quando i dispositivi gestiti si trovano in località geografiche diverse.  
+ *中央管理サイト*は大規模な展開に適しており、管理の中心点となり、グローバルなネットワーク インフラストラクチャ全体に配布されるデバイスの柔軟なサポートを可能にします。 中央管理サイトのインストール後に、子サイトとして 1 つ以上のプライマリ サイトをインストールする必要があります。 プライマリ サイトの機能である、デバイスの管理は中央管理サイトでは直接サポートされないため、この構成が必要になります。 中央管理サイトでは、複数の子プライマリ サイトがサポートされます。 管理対象デバイスがさまざまな地理的な場所にある場合に、子プライマリ サイトを使用して、デバイスを直接管理したり、ネットワーク帯域幅を制御したりします。  
 
- Un *sito primario autonomo* è ideale per distribuzioni di dimensioni minori e può essere usato per gestire i dispositivi senza dover installare siti aggiuntivi. Anche se un sito primario autonomo può limitare le dimensioni della distribuzione, supporta uno scenario di espansione successiva della gerarchia tramite l'installazione di un nuovo sito di amministrazione centrale. In questo scenario di espansione il sito primario autonomo diventa un sito primario figlio ed è quindi possibile installare altri siti primari figlio al di sotto del sito di amministrazione centrale. È quindi possibile espandere la distribuzione iniziale in base alla crescita futura dell'azienda.  
+ *スタンドアロン プライマリ サイト*は小規模な展開に適しています。追加サイトをインストールせずにデバイスを管理するには、スタンドアロン プライマリ サイトを使用できます。 スタンドアロン プライマリ サイトは、展開のサイズを制限できますが、後で新しい中央管理サイトをインストールすることによって階層を拡張するシナリオもサポートします。 このサイト拡張シナリオで、スタンドアロン プライマリ サイトが子プライマリ サイトになったら、新しい中央管理サイトの下に追加の子プライマリ サイトをインストールできます。 その後、初期の展開を会社の将来の成長に合わせて拡張できます。  
 
 > [!TIP]  
->  Un sito primario autonomo e un sito primario figlio sono in realtà lo stesso tipo di sito, ovvero un sito primario. La differenza nel nome è basata sulla relazione gerarchica creata quando si usa anche un sito di amministrazione centrale. Questa relazione gerarchica può anche limitare l'installazione di certi ruoli del sistema del sito che estendono le funzionalità di Configuration Manager. Questa limitazione dei ruoli è dovuta al fatto che determinati ruoli del sistema del sito possono essere installati solo nel livello superiore della gerarchia, in un sito di amministrazione centrale o in un sito primario autonomo.  
+>  スタンドアロン プライマリ サイトと子プライマリ サイトは実際には同じ種類のサイト、つまりプライマリ サイトです。 名前の違いは、中央管理サイトも使用する場合に作成される階層関係に基づいています。 また、この階層関係では、Configuration Manager の機能を拡張する特定のサイト システムの役割のインストールを制限することもできます。 特定のサイト システムの役割をインストールできるのは、階層の最上位層サイト、中央管理サイト、またはスタンドアロン プライマリ サイトのみであるため、このように役割を制限します。  
 
- Dopo aver installato il primo sito, è possibile installarne altri. Se il primo sito è un sito di amministrazione centrale, è possibile installare uno o più siti primari figlio. Dopo aver installato un sito primario (autonomo o primario figlio), è possibile installare uno o più siti secondari.  
+ 最初のサイトをインストールした後に、追加サイトをインストールできます。 最初のサイトが中央管理サイトの場合は、1 つまたは複数の子プライマリ サイトをインストールできます。 プライマリ サイト (スタンドアロンまたは子プライマリ) をインストールした後に、1 つ以上のセカンダリ サイトをインストールできます。  
 
- Un *sito secondario* può essere installato solo come sito figlio al di sotto di un sito primario. Questo tipo di sito estende la copertura del sito primario per la gestione dei dispositivi in punti che hanno una connessione di rete lenta al sito primario. Anche se un sito secondario estende il sito primario, il sito primario gestisce tutti i client. Il sito secondario offre il supporto per i dispositivi nella posizione remota tramite la compressione e quindi la gestione del trasferimento in rete delle informazioni inviate (distribuite) ai client e restituite dai client al sito.  
+ *セカンダリ サイト* はプライマリ サイトの下に子サイトとしてのみインストールできます。 このサイトの種類は、プライマリ サイトへのネットワーク接続が低速な場所のデバイスを管理するために、プライマリ サイトの範囲を拡張します。 セカンダリ サイトによってプライマリ サイトが拡張されても、クライアントはすべてプライマリ サイトによって管理されます。 セカンダリ サイトは、離れた場所のデバイスをサポートします。 ネットワーク経由でクライアントに送信 (展開) される情報とクライアントからサイトに返信される情報を圧縮して、情報の転送を管理することによりサポートを行います。  
 
- I diagrammi seguenti mostrano alcuni esempi di strutture di sito.  
+ 次の図に、サイト設計のいくつかの例を示します。  
 
- ![Esempi di gerarchia](media/Hierarchy_examples.png)  
+ ![階層の例](media/Hierarchy_examples.png)  
 
- Per altre informazioni, vedere i seguenti argomenti:  
+ 詳細については、以下のトピックを参照してください。  
 
--   [Introduzione a System Center Configuration Manager](../../core/understand/introduction.md)  
+-   [System Center Configuration Manager の概要](../../core/understand/introduction.md)  
 
--   [Progettare una gerarchia di siti per System Center Configuration Manager](../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md)  
+-   [System Center Configuration Manager のサイト階層の設計](../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md)  
 
--   [Installare i siti di System Center Configuration Manager](/sccm/core/servers/deploy/install/installing-sites)  
+-   [System Center Configuration Manager サイトをインストールする](/sccm/core/servers/deploy/install/installing-sites)  
 
-## <a name="site-system-servers-and-site-system-roles"></a>Server di sistema del sito e ruoli del sistema del sito  
- Ogni sito di Configuration Manager installa *ruoli del sistema del sito* che supportano operazioni di gestione. Quando si installa un sito, per impostazione predefinita vengono installati i ruoli seguenti:
+## <a name="site-system-servers-and-site-system-roles"></a>サイト システム サーバーとサイト システムの役割  
+ 各 Configuration Manager サイトは、管理操作をサポートする*サイト システムの役割*をインストールします。 次の役割は、サイトをインストールすると、既定でインストールされます。
 
--   Il ruolo del server del sito viene assegnato al computer in cui si installa il sito.
+-   サイト サーバーの役割は、サイトをインストールするコンピューターに割り当てられます。
 
--   Il ruolo di server di database del sito viene assegnato all'istanza di SQL Server che ospita il database del sito.
+-   サイト データベース サーバーの役割は、サイト データベースをホストする SQL Server に割り当てられます。
 
-Altri ruoli del sistema del sito sono facoltativi e vengono usati solo quando si vuole usare la funzionalità attiva in un ruolo del sistema del sito. Qualsiasi computer che ospita un ruolo del sistema del sito viene chiamato server del sistema del sito.  
+その他のサイト システムの役割はオプションであり、サイト システムの役割でアクティブである機能の使用時にのみ使用されます。 サイト システムの役割をホストするコンピューターは、サイト システム サーバーと呼ばれます。  
 
- Per una distribuzione di dimensioni minori di Configuration Manager , è possibile eseguire inizialmente tutti i ruoli del sistema del sito nel computer server del sito. Con l'aumentare delle esigenze e delle dimensioni dell'ambiente gestito, è quindi possibile installare altri server del sistema del sito per ospitare ulteriori ruoli del sistema del sito e migliorare l'efficienza del sito nel fornire servizi a più dispositivi.  
+ Configuration Manager の小規模展開の場合、最初にすべてのサイト システムの役割をサイト サーバーのコンピューターで直接実行することがあります。 その後、管理対象環境とニーズの拡大に伴い、増加するデバイスにサービスを提供するサイトの効率を高めるために、追加のサイト システム サーバーをインストールして、追加のサイト システムの役割をホストできます。  
 
- Per informazioni sui diversi ruoli del sistema del sito, vedere [Ruoli del sistema del sito](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md#bkmk_planroles) in [Pianificare i server e i ruoli del sistema del sito per System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).
+ さまざまなサイト システムの役割については、「[System Center Configuration Manager のサイト システム サーバーとサイト システムの役割の計画](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md)」の「[サイト システムの役割](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md#bkmk_planroles)」を参照してください。
 
-## <a name="publishing-site-information-to-active-directory-domain-services"></a>Pubblicazione di informazioni sul sito in Servizi di dominio Active Directory  
- Per semplificare la gestione di Configuration Manager, è possibile estendere lo schema di Active Directory in modo da supportare i dettagli usati da Configuration Manager e quindi fare in modo che i siti pubblichino le proprie informazioni principali in Active Directory Domain Services. I computer da gestire possono quindi recuperare in modo sicuro le informazioni correlate al sito da un'origine attendibile di Active Directory Domain Services. Le informazioni che possono essere recuperate dai client identificano i siti disponibili, i server del sistema del sito e i servizi forniti dai server del sistema del sito.  
+## <a name="publishing-site-information-to-active-directory-domain-services"></a>Active Directory ドメイン サービスへのサイト情報の発行  
+ Configuration Manager の管理を簡素化するために、Configuration Manager で使用される詳細情報をサポートするように Active Directory スキーマを拡張してから、サイトのキー情報が Active Directory Domain Services (AD DS) に公開されるようにすることができます。 これにより、管理対象コンピューターが AD DS の信頼されたソースからサイト関連情報を安全に取得できるようになります。 クライアントが取得できる情報は、使用可能なサイト、サイト システム サーバー、およびそれらのサイト システム サーバーが提供するサービスを識別します。  
 
- L'*estensione dello schema di Active Directory* avviene una sola volta per ogni foresta e può essere eseguita prima o dopo l'installazione di Configuration Manager.   Quando si estende lo schema, è necessario creare un nuovo contenitore di Active Directory denominato System Management in ogni dominio. Il contenitore include un sito di Configuration Manager che pubblicherà i dati a disposizione dei client. Per altre informazioni, vedere [Preparare Active Directory per la pubblicazione di siti](../../core/plan-design/network/extend-the-active-directory-schema.md).  
+ *Active Directory スキーマの拡張*は、フォレストごとに 1 回だけ実行され、Configuration Manager のインストールの前または後に実行できます。   スキーマを拡張したら、各ドメインで System Management という名前の新しい Active Directory コンテナーを作成する必要があります。 このコンテナーには、クライアントで検索するためのデータを発行する Configuration Manager サイトが含まれます。 詳細については、「[サイト発行のために Active Directory を準備する](../../core/plan-design/network/extend-the-active-directory-schema.md)」を参照してください。  
 
- La*pubblicazione dei dati del sito* migliora la sicurezza della gerarchia di Configuration Manager e riduce il sovraccarico amministrativo, ma non è necessaria per le funzionalità di base di Configuration Manager.  
-
-
-
-<!--HONumber=Dec16_HO5-->
-
-
+ *サイト データの発行*は、Configuration Manager 階層のセキュリティを強化して、管理オーバーヘッドを削減しますが、基本的な Configuration Manager 機能には必要ありません。  

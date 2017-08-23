@@ -1,903 +1,901 @@
 ---
-title: "Passaggi della sequenza di attività - Configuration Manager | Microsoft Docs"
-description: "Informazioni sui passaggi della sequenza di attività che è possibile aggiungere a una sequenza di attività di Configuration Manager."
+title: "タスク シーケンス ステップ - Configuration Manager | Microsoft Docs"
+description: "Configuration Manager タスク シーケンスに追加できるタスク シーケンス ステップについて説明します。"
 ms.custom: na
 ms.date: 03/26/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
-caps.latest.revision: 26
-caps.handback.revision: 0
+caps.latest.revision: "26"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: b7461f89f483314bd07248bbc9d5dde85ca6b6c2
 ms.openlocfilehash: e0726febc4c36a26c5e067914734838bf2681e6c
-ms.contentlocale: it-it
-ms.lasthandoff: 08/03/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Passaggi della sequenza di attività in System Center Configuration Manager
+# <a name="task-sequence-steps-in-system-center-configuration-manager"></a>System Center Configuration Manager のタスク シーケンスのステップ
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-A una sequenza di attività di Configuration Manager è possibile aggiungere i passaggi seguenti. Per informazioni sulla modifica di una sequenza di attività, vedere [Edit a task sequence](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence).  
+次のタスク シーケンス ステップは、Configuration Manager のタスク シーケンスに追加できます。 タスク シーケンスの編集については、「 [Edit a task sequence](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence)」を参照してください。  
 
 
-##  <a name="BKMK_ApplyDataImage"></a> Passaggio Applica immagine dei dati della sequenza di attività  
- Usare il passaggio **Applica immagine dei dati** della sequenza di attività per copiare l'immagine dei dati nella partizione di destinazione specificata.  
+##  <a name="BKMK_ApplyDataImage"></a> [データ イメージの適用] タスク シーケンス ステップ  
+ [ **データ イメージの適用** ] タスク シーケンス ステップを使用して、データ イメージを指定された対象パーティションにコピーします。  
 
- Questo passaggio può essere eseguito solo in Windows PE. Non può essere eseguito in un sistema operativo standard. Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Variabili di azione della sequenza di attività](task-sequence-action-variables.md).  
+ このステップは Windows PE でのみ実行されます。 このステップは標準のオペレーティング システムでは実行できません。 このアクションのタスク シーケンス変数の詳細については、「[Task sequence action variables](task-sequence-action-variables.md)」 (タスク シーケンスのアクション変数) を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Pacchetto immagine**  
- Specificare il **Pacchetto immagine** che verrà usato da questo passaggio della sequenza di attività facendo clic su **Sfoglia**. Selezionare il pacchetto da installare nella finestra di dialogo **Seleziona un pacchetto** . Le informazioni sulle proprietà associate per ogni pacchetto immagine esistente sono visualizzate nella parte inferiore della finestra di dialogo **Seleziona un pacchetto** . Usare l'elenco a discesa per selezionare l' **Immagine** da installare dal pacchetto **Pacchetto immagine**selezionato.  
+ **イメージ パッケージ**  
+ [ **参照** ] をクリックして、このタスク シーケンス ステップで使用する **イメージ パッケージ**を指定します。 [ **パッケージの選択** ] ダイアログ ボックスでインストールするパッケージを選択します。 既存の各イメージ パッケージの関連プロパティ情報が [ **パッケージの選択** ] ダイアログ ボックスの下部に表示されます。 ドロップダウン リストを使用して、選択した **イメージ パッケージ** からインストールする **イメージ** を選択します。  
 
 > [!NOTE]  
->  Questa azione della sequenza di attività considera l'immagine come un file di dati e non esegue alcuna operazione di configurazione necessaria per l'avvio dell'immagine come sistema operativo.  
+>  このタスク シーケンス アクションではイメージをデータ ファイルと見なし、イメージをオペレーティング システムとしてブートするために必要なセットアップは行いません。  
 
- **Destinazione**  
- Specifica una partizione formattata e un disco rigido esistenti, una lettera di unità logica specifica o il nome di una variabile della sequenza di attività che include la lettera dell'unità logica.  
+ **保存先**  
+ 既存のフォーマット済みのパーティションおよびハード ディスク、特定の論理ドライブ文字、または論理ドライブ文字を格納するタスク シーケンス変数の名前を指定します。  
 
--   **Partizione disponibile successiva**: usare la partizione sequenziale successiva non sottoposta in precedenza a un'azione Applica sistema operativo o Applica immagine dei dati in questa sequenza di attività.  
+-   **次に利用可能なパーティション** – このタスク シーケンスで、これまでオペレーティング システムの適用またはデータ イメージの適用アクションの対象になったことがない、次のパーティションを使用します。  
 
--   **Disco e partizione specifici**: selezionare il numero del **Disco**, partendo da 0, e il numero della **Partizione**, partendo da 1.  
+-   **特定のディスクとパーティション** – **ディスク**番号 (0 から開始) および**パーティション**番号 (1 から開始) を選択します。  
 
--   **Lettera unità logica specifica**: specificare la **Lettera unità** assegnata alla partizione da Windows PE. Si noti che questa lettera di unità può risultare diversa dalla lettera di unità assegnata dal sistema operativo appena distribuito.  
+-   **特定の論理ドライブ文字** – Windows PE によりパーティションに割り当てられた**ドライブ文字**を指定します。 このドライブ文字は、新しく展開されたオペレーティング システムが割り当てるドライブ文字とは異なる場合があります。  
 
--   **Lettera unità logica archiviata in una variabile**: specificare la variabile della sequenza di attività contenente la lettera di unità assegnata alla partizione da Windows PE. Questa variabile viene in genere impostata nella sezione Avanzate della finestra di dialogo **Proprietà della partizione** per l'azione **Formato e disco partizione** della sequenza di attività.  
+-   **変数に格納されている論理ドライブ文字** – Windows PE によりパーティションに割り当てられたドライブ文字を含むタスク シーケンス変数を指定します。 この変数は通常、[ **ディスクのフォーマットとパーティション作成** ] タスク シーケンス アクションにある [ **パーティションのプロパティ** ] ダイアログ ボックスの [詳細設定] セクションで設定されます。  
 
- **Elimina tutti i contenuti nella partizione prima di applicare l'immagine**  
- Specifica che tutti i file nella partizione di destinazione verranno eliminati prima dell'installazione dell'immagine. Non eliminando il contenuto della partizione, questo passaggio può essere usato per applicare contenuti aggiuntivi a una partizione interessata in precedenza da questa attività.  
+ **イメージを適用する前にパーティションのすべてのコンテンツを削除する**  
+ このオプションを選択すると、イメージのインストール前に対象パーティションのすべてのファイルが削除されます。 パーティションのコンテンツを削除しないことにより、このステップを使用して、以前にターゲットにしたパーティションに追加コンテンツを適用できます。  
 
-##  <a name="BKMK_ApplyDriverPackage"></a> Applica pacchetto di driver  
- Usare il passaggio **Applica pacchetto di driver** della sequenza di attività per scaricare tutti i driver del pacchetto di driver e installarli nel sistema operativo Windows.
+##  <a name="BKMK_ApplyDriverPackage"></a> ドライバー パッケージの適用  
+ [ **ドライバー パッケージの適用** ] タスク シーケンス ステップを使用して、ドライバー パッケージ内のすべてのドライバーをダウンロードし、Windows オペレーティング システムにインストールします。
 
- Il passaggio **Applica pacchetto di driver** della sequenza di attività rende disponibili tutti i driver di dispositivo inclusi in un pacchetto di driver per l'uso da parte di Windows. Questo passaggio può essere aggiunto a una sequenza di attività tra i passaggi **Applica sistema operativo**  e **Imposta Windows e ConfigMgr** per rendere disponibili a Windows i driver di dispositivo inclusi nel pacchetto di driver. In genere, il passaggio **Applica pacchetto di driver** viene posizionato dopo il passaggio **Applica automaticamente i driver** della sequenza di attività. Il passaggio **Applica pacchetto di driver** della sequenza di attività è utile anche negli scenari di distribuzione di supporti autonomi.  
+ [ **ドライバー パッケージの適用** ] タスク シーケンス ステップでは、ドライバー パッケージ内のすべてのデバイス ドライバーを Windows セットアップで使用できるようにします。 **[オペレーティング システムの適用]** ステップと **[Windows と ConfigMgr のセットアップ]** ステップの間のタスク シーケンスにこのステップを追加して、ドライバー パッケージ内のデバイス ドライバーを Windows で使用可能にすることができます。 通常、[ **ドライバー パッケージの適用** ] タスク シーケンス ステップは、順番上、[ **ドライバーの自動適用** ] タスク シーケンス ステップの後に置かれます。 [ **ドライバー パッケージの適用** ] タスク シーケンス ステップは、スタンドアロンのメディア展開シナリオでも便利です。  
 
- Assicurarsi che i driver di dispositivi simili siano inseriti in un pacchetto di driver e quindi distribuirli nei punti di distribuzione appropriati. Dopo aver distribuito i driver, i computer client di Configuration Manager possono installarli. È ad esempio possibile inserire tutti i driver di dispositivo di un produttore specifico in un pacchetto di driver e quindi distribuire il pacchetto nei punti di distribuzione, in modo che i computer associati possano accedervi.
+ 同様のデバイス ドライバーは 1 つのドライバー パッケージに配置し、適切な配布ポイントに配布するようにします。 配布後に、Configuration Manager クライアント コンピューターでドライバーをインストールできるようになります。 たとえば、ある製造元のすべてのデバイス ドライバーを 1 つのドライバー パッケージに配置してから、関連するコンピューターがアクセスできる配布ポイントにパッケージを配布することができます。
 
- Questo passaggio è utile per i supporti autonomi e per gli amministratori che vogliono installare un set specifico di driver, inclusi i driver per dispositivi che non verrebbero rilevati in una scansione Plug-n-Play, ad esempio per le stampanti di rete.  
+ このステップは、スタンドアロン メディアだけでなく、プラグ アンド プレイ スキャンで検出されないデバイス (ネットワーク プリンターなど) 用ドライバーを含め、特定のドライバーをインストールする管理者にとっても役に立ちます。  
 
- Questo passaggio della sequenza di attività può essere eseguito solo in Windows PE. Non può essere eseguito in un sistema operativo standard. Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Apply Driver Package Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyDriverPackage).  
+ このタスク シーケンス ステップは Windows PE でのみ実行されます。 このステップは標準のオペレーティング システムでは実行できません。 このアクションのタスク シーケンス変数の詳細については、「 [Apply Driver Package Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyDriverPackage)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Pacchetto driver**  
- Specificare il pacchetto di driver contenente i driver di dispositivo necessari, facendo clic su **Sfoglia** e aprendo la finestra di dialogo **Seleziona un pacchetto** . Specificare un pacchetto esistente da rendere disponibile. Le proprietà associate del pacchetto vengono visualizzate nella parte inferiore della finestra di dialogo.  
+ **ドライバー パッケージ**  
+ [ **参照** ] をクリックし [ **パッケージの選択** ] ダイアログ ボックスを開いて、必要なデバイス ドライバーを含むドライバー パッケージを指定します。 使用可能にする既存パッケージを指定してください。 関連パッケージ プロパティは、ダイアログ ボックスの下部に表示されます。  
 
- **Selezionare il driver di archiviazione di massa nel pacchetto da installare prima che Configuration Manager installi i sistemi operativi Windows precedenti a Windows Vista**  
- Specificare eventuali driver di dispositivi di archiviazione di massa necessari per le installazioni di sistemi operativi precedenti a Windows Vista.  
+ **Vista 以前のオペレーティング システムをセットアップする前にインストールする必要がある大容量記憶装置ドライバーをパッケージから選択する**  
+ Windows Vista 以前のオペレーティング システムのインストールに必要となる大容量記憶装置デバイス ドライバーを指定します。  
 
- **Driver**  
- Selezionare il file del driver di dispositivi di archiviazione di massa da installare prima della configurazione in distribuzioni di sistemi operativi precedenti a Windows Vista. L'elenco a discesa viene popolato dal pacchetto specificato.  
+ **ドライバー**  
+ Windows Vista 以前のオペレーティング システムの展開でセットアップする前にインストールする大容量記憶装置デバイス ドライバー ファイルを選択します。 ドロップダウン リストの項目は指定パッケージから入力されます。  
 
- **Model**  
- Specificare il dispositivo critico per l'avvio necessario per le distribuzioni di sistemi operativi precedenti a Windows Vista.  
+ **モデル**  
+ Windows Vista 以前のオペレーティング システムの展開に必要となる、起動に不可欠なデバイスを指定します。  
 
- **Esegui l'installazione automatica dei driver senza firma sulle versioni di Windows in cui è consentito**  
- Selezionare questa opzione per permettere a Windows di installare driver senza firma nel computer di riferimento.  
+ **署名されていないドライバーの無人インストールが許可されているバージョンの Windows でドライバーの無人インストールを行う**  
+ 参照コンピューターで署名されていないドライバーを Windows がインストールすることを許可するには、このオプションを選択します。  
 
-##  <a name="BKMK_ApplyNetworkSettings"></a> Passaggio Applica impostazioni di rete  
- Usare il passaggio **Applica impostazioni di rete** della sequenza di attività per specificare le informazioni di configurazione per la rete o il gruppo di lavoro per il computer di destinazione. I valori specificati vengono archiviati nel formato di file di risposte appropriato per l'uso da parte del programma di installazione di Windows durante l'esecuzione del passaggio **Imposta Windows e ConfigMgr** della sequenza di attività.  
+##  <a name="BKMK_ApplyNetworkSettings"></a> ネットワーク設定の適用ステップ  
+ [ **ネットワーク設定の適用** ] タスク シーケンス ステップを使用すると、対象のコンピューターに対してネットワークまたはワークグループの構成情報を指定できます。 指定された値は適切な応答ファイル形式で保存され、[ **Windows と ConfigMgr のセットアップ** ] タスク シーケンス ステップの実行中に Windows セットアップによって使用されます。  
 
- Questo passaggio della sequenza di attività viene eseguito in un sistema operativo standard o in Windows PE. Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Apply Network Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyNetworkSettings).  
+ このタスク シーケンスのステップは標準のオペレーティング システムまたは Windows PE で実行されます。 このアクションのタスク シーケンス変数の詳細については、「 [Apply Network Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyNetworkSettings)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Aggiunta a un gruppo di lavoro**  
- Selezionare questa opzione per aggiungere il computer di destinazione al gruppo di lavoro specificato. Immettere il nome del gruppo di lavoro nella riga **Gruppo di lavoro** . Questo valore può essere sostituito dal valore acquisito dal passaggio **Acquisisci impostazioni di rete** della sequenza di attività.  
+ **ワークグループに参加**  
+ 対象コンピューターを指定したワークグループに参加させるには、このオプションを選択します。 [ **ワークグループ** ] 行にワークグループの名前を入力します。 この値は、[ **ネットワーク設定のキャプチャ** ] タスク シーケンス ステップでキャプチャされた値により上書きされます。  
 
- **Aggiunta a un dominio**  
- Selezionare questa opzione per aggiungere il computer di destinazione al dominio specificato. Specificare o selezionare il dominio, ad esempio *fabricam.com*. Specificare o selezionare un percorso LDAP (Lightweight Directory Access Protocol) per un'unità organizzativa, ad esempio LDAP//OU=computers, DC=Fabricam.com, C=com.  
+ **ドメインに参加**  
+ 対象コンピューターを指定したドメインに参加させるには、このオプションを選択します。 ドメイン (たとえば *fabricam.com* ) を直接指定するか参照します。 組織単位の LDAP (Lightweight Directory Access Protocol) パス (つまり  LDAP//OU=computers, DC=Fabricam.com, C=com) を指定するか参照します。  
 
- **Account**  
- Fare clic su **Imposta** per specificare un account con le autorizzazioni necessarie per l'aggiunta del computer al dominio. Nella finestra di dialogo **Account utente di Windows** è possibile immettere il nome utente usando il formato seguente: **Dominio\Utente** .  
+ **アカウント**  
+ コンピューターをドメインに参加させるには、[ **設定** ] をクリックして必要なアクセス許可を持つアカウントを指定します。 **[Windows ユーザー アカウント]** ダイアログ ボックスでは、 **ドメイン\ユーザー** の形式でユーザー名を入力できます。  
 
- **Impostazioni della scheda**  
- Specificare le configurazioni di rete per ogni scheda di rete nel computer. Fare clic su **Nuovo** per aprire la finestra di dialogo **Impostazioni di rete** , quindi specificare le impostazioni di rete. Se le impostazioni di rete sono state acquisite in un passaggio **Acquisisci impostazioni di rete** precedente della sequenza di attività, le impostazioni precedenti verranno applicate alla scheda di rete e le impostazioni specificate in questo passaggio non verranno applicate. Se le impostazioni di rete non sono state acquisite in precedenza, le impostazioni specificate nel passaggio **Applica impostazioni di rete** verranno applicate alle schede di rete in base all'ordine di enumerazione dei dispositivi Windows.  
+ **アダプター設定**  
+ コンピューターの各ネットワーク アダプターのネットワーク構成を指定します。 [ **新規** ] をクリックして [ **ネットワーク設定** ] ダイアログ ボックスを開き、ネットワーク設定を指定します。 以前の [ **ネットワーク設定のキャプチャ** ] タスク シーケンスのステップでネットワーク設定がキャプチャされた場合は、ネットワーク アダプターに対して以前の設定が適用され、このステップで指定された設定は適用されません。 ネットワーク設定が過去にキャプチャされていない場合は、[ **ネットワーク設定の適用** ] ステップで指定された設定が Windows のデバイス列挙の順番にネットワーク アダプターに適用されます。  
 
-##  <a name="BKMK_ApplyOperatingSystemImage"></a> Applica immagine del sistema operativo  
- Usare il passaggio **Applica immagine del sistema operativo** della sequenza di attività per installare un sistema operativo nel computer di destinazione. Questo passaggio della sequenza di attività esegue un insieme di azione, in base all'uso di un'immagine del sistema operativo o di un pacchetto di installazione del sistema operativo per installare il sistema operativo.  
+##  <a name="BKMK_ApplyOperatingSystemImage"></a> オペレーティング システム イメージの適用  
+ 対象コンピューターにオペレーティング システムをインストールするには、[ **オペレーティング システム イメージの適用** ] タスク シーケンス ステップを使用します。 このタスク シーケンス ステップは、オペレーティング システムのインストールにオペレーティング システムのイメージまたはインストール パッケージのどちらを使用しているかによって、一連のアクションを実行します。  
 
- Quando si usa un'immagine del sistema operativo, il passaggio **Applica immagine del sistema operativo** esegue le azioni seguenti.  
+ [ **オペレーティング システム イメージの適用** ] ステップは、オペレーティング システム イメージを使用する場合に次のアクションを実行します。  
 
-1.  Eliminazione di tutti i contenuti nel volume interessato, ad eccezione dei file presenti nella cartella specificata dalla variabile &#95;SMSTSUserStatePath della sequenza di attività.  
+1.  &#95;SMSTSUserStatePath タスク シーケンス変数で指定されるフォルダーのファイル以外、対象ボリューム上のすべてのコンテンツを削除します。  
 
-2.  Estrazione dei contenuti del file con estensione wim specificato nella partizione di destinazione specificata.  
+2.  指定された .wim ファイルのコンテンツを、指定された送信先パーティションに抽出します。  
 
-3.  Preparazione del file di risposte:  
+3.  応答ファイルを用意します:  
 
-    1.  Creazione di un nuovo file di risposte predefinito del programma di installazione di Windows (sysprep.inf o unattend.xml) per il sistema operativo da distribuire.  
+    1.  展開するオペレーティング システム用に既定の Windows セットアップ応答ファイル (sysprep.inf または unattend.xml) を新しく作成します。  
 
-    2.  Unione di eventuali valori disponibili nel file di risposte fornito dall'utente.  
+    2.  ユーザーが提供する応答ファイルから値を結合します。  
 
-4.  Copia dei caricatori di avvio di Windows nella partizione attiva.  
+4.  Windows ブート ローダーをアクティブなパーティションにコピーします。  
 
-5.  Configurazione del file boot.ini o dei dati di configurazione di avvio in modo che facciano riferimento al sistema operativo appena installato.  
+5.  新しくインストールしたオペレーティング システムを参照するよう boot.ini またはブート構成データベース (BCD) を設定します。  
 
- Quando si usa un pacchetto di installazione del sistema operativo, il passaggio **Applica immagine del sistema operativo** esegue le azioni seguenti.  
+ [ **オペレーティング システム イメージの適用** ] ステップは、オペレーティング システムのインストール パッケージを使用する場合に次のアクションを実行します。  
 
-1.  Eliminazione di tutti i contenuti nel volume interessato, ad eccezione dei file presenti nella cartella specificata dalla variabile &#95;SMSTSUserStatePath della sequenza di attività.  
+1.  &#95;SMSTSUserStatePath タスク シーケンス変数で指定されるフォルダーのファイル以外、対象ボリューム上のすべてのコンテンツを削除します。  
 
-2.  Preparazione del file di risposte:  
+2.  応答ファイルを用意します:  
 
-    1.  Creazione di un nuovo file di risposte con valori standard generati da Configuration Manager.  
+    1.  Configuration Manager によって作成された標準値を使用して、新しい応答ファイルを作成します。  
 
-    2.  Unione di eventuali valori disponibili nel file di risposte fornito dall'utente.  
+    2.  ユーザーが提供する応答ファイルから値を結合します。  
 
 > [!NOTE]  
->  L'installazione effettiva di Windows viene avviata dal passaggio **Imposta Windows e ConfigMgr** della sequenza di attività. Dopo l'esecuzione del passaggio **Applica sistema operativo** della sequenza di attività, la variabile OSDTargetSystemDrive della sequenza di attività verrà impostata sulla lettera di unità della partizione che include i file del sistema operativo.  
+>  Windows の実際のインストールは、[ **Windows と ConfigMgr のセットアップ** ] タスク シーケンス ステップにより開始されます。 [ **オペレーティング システムの適用** ] タスク シーケンス アクションを実行したあとには、OSDTargetSystemDrive タスク シーケンス変数が、オペレーティング システム ファイルが含まれるパーティションのドライブ文字に設定されます。  
 
- Questo passaggio della sequenza di attività può essere eseguito solo in Windows PE. Non può essere eseguito in un sistema operativo standard. Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Apply Operating System Image Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyOperatingSystem).  
+ このタスク シーケンス ステップは Windows PE でのみ実行されます。 このステップは標準のオペレーティング システムでは実行できません。 このアクションのタスク シーケンス変数の詳細については、「 [Apply Operating System Image Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyOperatingSystem)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   **Accedi al contenuto direttamente dal punto di distribuzione**:  
+-   **配布ポイントからコンテンツに直接アクセスする**:  
 
-     Usare questa opzione per specificare se si vuole che la sequenza di attività acceda all'immagine del sistema operativo direttamente dal punto di distribuzione. È ad esempio possibile usare questa opzione quando si distribuiscono sistemi operativi in dispositivi incorporati con capacità di archiviazione limitata. Quando questa opzione è selezionata, è necessario configurare anche le impostazioni di condivisione pacchetto nella scheda **Accesso dati** delle proprietà del pacchetto.  
+     タスク シーケンスでオペレーティング システム イメージに配布ポイントから直接アクセスするかどうかを指定するには、このオプションを使用します。 たとえば、記憶域の容量が限られている組み込みデバイスにオペレーティング システムを展開するときに、このオプションを使用することができます。 また、このオプションを選択する場合は、パッケージ プロパティの [ **データ アクセス** ] タブでパッケージ共有設定も構成する必要があります。  
 
     > [!NOTE]  
-    >  Questa impostazione sostituisce l'opzione di distribuzione configurata nella pagina **Punti di distribuzione** nella **Distribuzione guidata del software** solo per l'immagine del sistema operativo specificata in questo passaggio della sequenza di attività. Non sostituisce tutto il contenuto per l'intera sequenza di attività.  
+    >  この設定は、タスク シーケンス全体のすべてのコンテンツではなく、このタスク シーケンス ステップで指定したオペレーティング システムのイメージに対してのみ、 **ソフトウェアの展開ウィザード** の [ **配布ポイント** ] ページで構成される展開オプションよりも優先されます。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Applica sistema operativo da un'immagine acquisita**  
- Installa un'immagine del sistema operativo acquisita in precedenza. Fare clic su **Sfoglia** per aprire la finestra di dialogo **Seleziona un pacchetto** , quindi selezionare il pacchetto immagine esistente da installare. Se al **Pacchetto immagine**specificato sono associate più immagini, usare l'elenco a discesa per specificare l'immagine associata che verrà usata per questa distribuzione. Per visualizzare le informazioni di base su ogni immagine esistente, fare clic sull'immagine.  
+ **キャプチャしたイメージからオペレーティング システムを適用する**  
+ 以前にキャプチャされたオペレーティング システム イメージをインストールします。 [ **参照** ] をクリックして [ **パッケージの選択** ] ダイアログ ボックスを開き、インストールする既存のイメージ パッケージを選択します。 指定した **イメージ パッケージ** に複数のイメージが関連付けられている場合は、ドロップダウン リストを使用して、この展開に使用する、関連付けられているイメージを指定します。 イメージをクリックすることで、既存の各イメージの基本情報を表示できます。  
 
- **Applica sistema operativo da un'origine di installazione originale**  
- Installa un sistema operativo usando un'origine di installazione originale. Fare clic su **Sfoglia** per aprire la finestra di dialogo **Seleziona un pacchetto di installazione del sistema operativo** , quindi selezionare il pacchetto di installazione del sistema operativo esistente da usare. Per visualizzare le informazioni di base su ogni immagine esistente, fare clic sull'origine dell'immagine. Le proprietà associate dell'origine dell'immagine vengono visualizzate nel riquadro dei risultati nella parte inferiore della finestra di dialogo. Se al pacchetto specificato sono associate più edizioni, usare l'elenco a discesa per specificare l' **Edizione** associata usata.  
+ **元のインストール ソースからオペレーティング システムを適用する**  
+ 元のインストール ソースを使用してオペレーティング システムをインストールします。 [ **参照** ] をクリックして [ **オペレーティング システム インストール パッケージの選択** ] ダイアログ ボックスを開き、使用する既存のオペレーティング システム インストール パッケージを選択します。 イメージ ソースをクリックすることで、既存の各イメージ ソースの基本情報を表示できます。 ダイアログ ボックスの下部にある結果ウィンドウに、関連付けられているイメージのプロパティが表示されます。 指定したパッケージに複数のエディションが関連付けられている場合は、ドロップダウン リストを使用して、使用する、関連付けられている **エディション** を指定します。  
 
- **Utilizza un file di risposta automatica o Sysprep per un'installazione personalizzata**  
- Usare questa opzione per fornire un file di risposte del programma di installazione di Windows (**unattend.xml**, **unattend.txt**o **sysprep.inf**), in base alla versione e al metodo di installazione del sistema operativo. Il file specificato può includere qualsiasi opzione di configurazione standard supportata dai file di risposte di Windows. È ad esempio possibile usarla per specificare la home page predefinita di Internet Explorer. È necessario specificare il pacchetto che contiene il file di risposte e il percorso associato al file nel pacchetto.  
+ **カスタム インストールに無人ファイルまたは sysprep 応答ファイルを使用する**  
+ オペレーティング システムのバージョンおよびインストール方法によって異なる Windows セットアップ応答ファイル (**unattend.xml**、 **unattend.txt**、または **sysprep.inf**) を提供するには、このオプションを使用します。 指定するファイルには、Windows 応答ファイルがサポートする任意の標準の構成オプションを含めることができます。 たとえば、この構成オプションを使用して既定の Internet Explorer のホーム ページを指定できます。 応答ファイルを含むパッケージ、およびパッケージ内のファイルへの関連パスを指定する必要があります。  
 
 > [!NOTE]  
->  Il file di risposte del programma di installazione di Windows fornito può includere variabili incorporate della sequenza di attività con formato %*varname*%, dove varname indica il nome della variabile. La stringa %*varname*% verrà sostituita dai valori effettivi delle variabili nel passaggio **Imposta Windows e ConfigMgr** della sequenza di attività. Si noti tuttavia che queste variabili incorporate della sequenza di attività non possono essere usate in campi di tipo solo numerico in un file di risposte unattend.xml.  
+>  ユーザーが指定する Windows セットアップ応答ファイルには %*varname*% という形式の埋め込みタスク シーケンス変数を含めることができます。varname は変数の名前です。 %*varname*% 文字列は、[ **Windows と ConfigMgr のセットアップ** ] タスク シーケンス アクションで、実際の変数の値の代替となります。 ただし、このような埋め込みタスク シーケンス変数は、unattend.xml 応答ファイルの数値のみのフィールドでは使用できません。  
 
- Se non si fornisce alcun file di risposte del programma di installazione di Windows, questo passaggio della sequenza di attività genererà automaticamente un file di risposte.  
+ ユーザーが Windows セットアップ応答ファイルを指定しない場合、このタスク シーケンス アクションは自動的に応答ファイルを生成します。  
 
- **Destinazione**  
- Specifica una partizione formattata e un disco rigido esistenti, una lettera di unità logica specifica o il nome di una variabile della sequenza di attività che include la lettera dell'unità logica.  
+ **保存先**  
+ 既存のフォーマット済みのパーティションおよびハード ディスク、特定の論理ドライブ文字、または論理ドライブ文字を格納するタスク シーケンス変数の名前を指定します。  
 
--   **Partizione disponibile successiva**: usare la partizione sequenziale successiva non sottoposta in precedenza a un'azione Applica sistema operativo o Applica immagine dei dati in questa sequenza di attività.  
+-   **次に利用可能なパーティション** – このタスク シーケンスで、これまでオペレーティング システムの適用またはデータ イメージの適用アクションの対象になったことがない、次のパーティションを使用します。  
 
--   **Disco e partizione specifici**: selezionare il numero del **Disco**, partendo da 0, e il numero della **Partizione**, partendo da 1.  
+-   **特定のディスクとパーティション** – **ディスク**番号 (0 から開始) および**パーティション**番号 (1 から開始) を選択します。  
 
--   **Lettera unità logica specifica**: specificare la **Lettera unità** assegnata alla partizione da Windows PE. Si noti che questa lettera di unità può risultare diversa dalla lettera di unità assegnata dal sistema operativo appena distribuito.  
+-   **特定の論理ドライブ文字** – Windows PE によりパーティションに割り当てられた**ドライブ文字**を指定します。 このドライブ文字は、新しく展開されたオペレーティング システムが割り当てるドライブ文字とは異なる場合があります。  
 
--   **Lettera unità logica archiviata in una variabile**: specificare la variabile della sequenza di attività contenente la lettera di unità assegnata alla partizione da Windows PE. Questa variabile viene in genere impostata nella sezione Avanzate della finestra di dialogo **Proprietà della partizione** per l'azione **Formato e disco partizione** della sequenza di attività.  
+-   **変数に格納されている論理ドライブ文字** – Windows PE によりパーティションに割り当てられたドライブ文字を含むタスク シーケンス変数を指定します。 この変数は通常、[ **ディスクのフォーマットとパーティション作成** ] タスク シーケンス アクションにある [ **パーティションのプロパティ** ] ダイアログ ボックスの [詳細設定] セクションで設定されます。  
 
-##  <a name="BKMK_ApplyWindowsSettings"></a> Applica impostazioni Windows  
- Usare il passaggio **Applica impostazioni Windows** della sequenza di attività per configurare le impostazioni di Windows per il computer di destinazione. I valori specificati vengono archiviati nel formato di file di risposte appropriato per l'uso da parte del programma di installazione di Windows durante l'esecuzione del passaggio **Imposta Windows e ConfigMgr** della sequenza di attività.  
+##  <a name="BKMK_ApplyWindowsSettings"></a> Windows 設定の適用  
+ [ **Windows 設定の適用** ] タスク シーケンス ステップを使用すると、対象のコンピューターに対して Windows 設定を構成できます。 指定された値は適切な応答ファイル形式で保存され、[ **Windows と ConfigMgr のセットアップ** ] タスク シーケンス ステップの実行中に Windows セットアップによって使用されます。  
 
- Questo passaggio della sequenza di attività può essere eseguito solo in Windows PE. Non può essere eseguito in un sistema operativo standard. Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Apply Windows Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyWindowsSettings).  
+ このタスク シーケンス ステップは Windows PE でのみ実行されます。 このステップは標準のオペレーティング システムでは実行できません。 このアクションのタスク シーケンス変数の詳細については、「 [Apply Windows Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ApplyWindowsSettings)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されたアクションを説明する、ユーザー定義の短い名前  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Nome utente**  
- Specificare il nome dell'utente registrato associato al computer di destinazione. Questo valore può essere sostituito dal valore acquisito dal passaggio **Acquisisci impostazioni Windows** della sequenza di attività.  
+ **ユーザー名**  
+ 対象のコンピューターに関連付けられている登録済みのユーザー名を指定します。 この値は、[ **Windows 設定のキャプチャ** ] タスク シーケンス アクションでキャプチャされた値により上書きされます。  
 
- **Nome organizzazione**  
- Specificare il nome dell'organizzazione registrata associata al computer di destinazione. Questo valore può essere sostituito dal valore acquisito dal passaggio **Acquisisci impostazioni Windows** della sequenza di attività.  
+ **組織名**  
+ 対象のコンピューターに関連付けられている登録済みの組織名を指定します。 この値は、[ **Windows 設定のキャプチャ** ] タスク シーケンス アクションでキャプチャされた値により上書きされます。  
 
- **Codice Product Key**  
- Specificare il codice Product Key usato per l'installazione di Windows nel computer di destinazione.  
+ **プロダクト キー**  
+ 対象のコンピューターで Windows インストールに使用されるプロダクト キーを指定します。  
 
- **Licenze server**  
- Specificare la modalità di gestione delle licenza del server, ovvero **Per server** o **Per Utente** . Se si sceglie la modalità di gestione delle licenze Per server, sarà necessario specificare anche il numero massimo di connessioni consentite in base al contratto di licenza. Selezionare **Non specificare** se il computer di destinazione non è un server o se non si vuole specificare la modalità di gestione delle licenze.  
+ **サーバー ライセンス**  
+ サーバー ライセンス モードを指定します。 ライセンス モードとして [ **同時使用ユーザー数** ] か [ **接続ユーザー数** ] を選択します。 ライセンス モードとして [同時使用ユーザー数] を選択した場合、ライセンス契約ごとに許可される接続の最大数も指定する必要があります。 対象のコンピューターがサーバーではない場合や、ライセンス モードを指定しない場合は、[ **指定しない** ] を選択する必要があります。  
 
- **Numero massimo di connessioni**  
- Specificare il numero massimo di connessioni disponibili per questo computer, in base a quanto indicato nel contratto di licenza.  
+ **最大接続数**  
+ ライセンス契約に規定されているこのコンピューターで有効な接続の最大数を指定します。  
 
- **Genera in modo casuale la password dell'amministratore locale e disattiva l'account su tutte le piattaforme supportate (consigliato)**  
- Selezionare questa opzione per generare in modo casuale una password per l'amministratore locale. Verrà creata una password per l'amministratore locale e l'account verrà disabilitato nelle piattaforme supportate.  
+ **ローカルの管理者パスワードをランダムに生成し、サポートされているすべてのプラットフォームのアカウントを無効にする (推奨)**  
+ ローカルの管理者パスワードをランダムに生成するには、このオプションを選択します。 これは、ローカルの管理者パスワードを作成し、サポートされるプラットフォームでのアカウントを無効にします。  
 
- **Attiva l'account e specifica la password dell'amministratore locale**  
- Selezionare questa opzione per abilitare l'account dell'amministratore locale e creare la password dell'amministratore locale. Immettere la password nella riga **Password** e confermare la password nella riga **Conferma password** .  
+ **アカウントを有効にし、ローカル管理者パスワードを指定する**  
+ ローカル管理者のアカウントを有効にし、ローカル管理者のパスワードを作成するには、このオプションを選択します。 パスワードを [ **パスワード** ] 行に入力し、[ **パスワードの確認入力** ] 行にパスワードを確認入力します。  
 
- **Fuso orario**  
- Specificare il fuso orario da configurare nel computer di destinazione. Questo valore può essere sostituito dal valore acquisito dal passaggio **Acquisisci impostazioni Windows** della sequenza di attività.  
+ **タイム ゾーン**  
+ 対象のコンピューターに構成するタイム ゾーンを指定します。 この値は、[ **Windows 設定のキャプチャ** ] タスク シーケンス ステップでキャプチャされた値によって上書きされます。  
 
-##  <a name="BKMK_AutoApplyDrivers"></a> Applica automaticamente i driver  
- Usare il passaggio **Applica automaticamente i driver** della sequenza di attività per associare e installare i driver come parte della distribuzione del sistema operativo.  
+##  <a name="BKMK_AutoApplyDrivers"></a> ドライバーの自動適用  
+ オペレーティング システムの展開の一部としてドライバーを適合およびインストールするには、[ **ドライバーの自動適用** ] タスク シーケンス ステップを使用します。  
 
- Il passaggio **Applica automaticamente i driver** della sequenza di attività esegue le azioni seguenti:  
+ [ **ドライバーの自動適用** ] タスク シーケンス ステップでは次の手順を実行します。  
 
-1.  Analisi dell'hardware e individuazione degli ID Plug-n-Play per tutti i dispositivi presenti nel sistema.  
+1.  ハードウェアをスキャンし、システム上に存在するすべてのデバイスのプラグ アンド プレイ ID を検索します。  
 
-2.  Invio dell'elenco di dispositivi e dei rispettivi ID Plug-n-Play al punto di gestione. Il punto di gestione restituisce un elenco di driver compatibili dal catalogo di driver per ogni dispositivo. Il punto di gestione considera tutti i driver, a prescindere dal pacchetto di driver in cui sono presenti. Vengono considerati soltanto i driver contrassegnati da una determinata categoria e quelli che non sono contrassegnati come disattivati.  
+2.  デバイスとプラグ アンド プレイ ID の一覧を管理ポイントに送信します。 管理ポイントは、各デバイス用にドライバー カタログから互換ドライバーの一覧を返します。 管理ポイントはドライバーがどのドライバー パッケージに含まれるかにかかわらず、すべてのドライバーを検討します。 指定されたドライバー カテゴリのタグが付いたドライバーと、無効のマークが付いていないドライバーが検討されます。  
 
-3.  Per ogni dispositivo, il client sceglie il driver migliore idoneo al sistema operativo in cui viene distribuito e disponibile in un punto di distribuzione accessibile.  
+3.  クライアントは各デバイス用に、デバイスが展開されているオペレーティング システムに適していて、アクセス可能な配布ポイント上にある最適なドライバーを選びます。  
 
-4.  I driver selezionati vengono scaricati da un punto di distribuzione e gestiti in modo temporaneo nel sistema operativo di destinazione.  
+4.  選択されたドライバー (複数可) は配布ポイントからダウンロードされ、対象のオペレーティング システムに設定されます。  
 
-    1.  Per le installazioni basate su immagine, i driver vengono inseriti nell'archivio driver del sistema operativo.  
+    1.  イメージ ベースのインストールでは、ドライバーはオペレーティング システムのドライバー ストアに保存されます。  
 
-    2.  Per le installazioni basate sul programma di installazione, il Programma di installazione di Windows Setup viene configurato in modo da individuare i driver.  
+    2.  セットアップ ベースのインストールでは、ドライバーを検出する場所を使用して Windows セットアップが構成されます。  
 
-5.  Quando viene eseguito il passaggio **Imposta Windows e ConfigMgr** della sequenza di attività e nelle fasi iniziali dell'avvio di Windows verranno individuati i driver gestiti in modo temporanea da questa azione.  
+5.  [ **Windows と ConfigMgr のセットアップ** ] タスク シーケンス アクションを実行して、Windows を最初に起動したときに、このアクションで設定したドライバーが検出されます。  
 
 > [!IMPORTANT]
->  Il passaggio **Applica automaticamente i driver** della sequenza di attività non può essere usato con supporti autonomi, poiché il programma di installazione di Windows non sarà connesso al sito di Configuration Manager.
+>  スタンドアロン メディアでは、Windows セットアップが Configuration Manager サイトに接続していないため、[**ドライバーの自動適用**] タスク シーケンス ステップは使用できません。
 
-Questo passaggio della sequenza di attività può essere eseguito solo in Windows PE. Non può essere eseguito in un sistema operativo standard. Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Auto Apply Drivers Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_AutoApplyDrivers).  
+このタスク シーケンス ステップは Windows PE でのみ実行されます。 このステップは標準のオペレーティング システムでは実行できません。 このアクションのタスク シーケンス変数の詳細については、「 [Auto Apply Drivers Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_AutoApplyDrivers)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Installa solo i driver compatibili con la corrispondenza migliore**  
- Indica che il passaggio della sequenza di attività installa solo i driver con la corrispondenza migliore per ogni dispositivo hardware rilevato.  
+ **最適な互換ドライバーのみをインストールする**  
+ タスク シーケンス ステップで、検出された各ハードウェア デバイスに最適なドライバーのみをインストールするように指定します。  
 
- **Installa tutti i driver compatibili**  
- Indica che il passaggio della sequenza di attività installa tutti i driver compatibili per ogni dispositivo hardware e permette al programma di installazione di Windows di scegliere il driver migliore. Questa opzione richiede una maggiore larghezza di banda e più spazio su disco, poiché scarica più driver, ma può permettere la selezione di un driver migliore.  
+ **すべての互換ドライバーをインストールする**  
+ タスク シーケンス ステップで、検出された各ハードウェア デバイスの互換ドライバーをすべてインストールし、Windows セットアップで最適なドライバーを選択するように指定します。 このオプションはダウンロードするドライバーの数が多くなるため、ネットワーク帯域幅とディスクの空き領域がさらに必要になりますが、結果としてより適切なドライバーを選択できます。  
 
- **Considera i driver di tutte le categorie**  
- Indica che l'azione della sequenza di attività cerca i driver di dispositivo appropriati in tutte le categorie di driver disponibili.  
+ **すべてのカテゴリのドライバーを検討する**  
+ タスク シーケンスのアクションで、利用可能なドライバー カテゴリすべての中から適切なデバイス ドライバーを検索するように指定します。  
 
- **Limita la corrispondenza dei driver in modo da considerare solo i driver delle categorie selezionate**  
- Indica che l'azione della sequenza di attività cerca i driver di dispositivo in categorie di driver specificate per i driver di dispositivo appropriati.  
+ **ドライバーの一致条件を制限して、選択したカテゴリに属するドライバーだけを検討する**  
+ タスク シーケンスのアクションで、特定のドライバー カテゴリにあるデバイス ドライバーの中から適切なデバイス ドライバーを検索するように指定します。  
 
- **Esegui l'installazione automatica dei driver senza firma sulle versioni di Windows in cui è consentito**  
- Permette a questa azione della sequenza di attività di installare driver di dispositivo Windows senza firma.  
+ **署名されていないドライバーの無人インストールが許可されているバージョンの Windows でドライバーの無人インストールを行う**  
+ このタスク シーケンスのアクションが、署名されていないデバイス ドライバーをインストールすることを許可します。  
 
 > [!IMPORTANT]  
->  Questa opzione non è applicabile ai sistemi operativi in cui non è possibile configurare i criteri di firma dei driver.  
+>  このオプションは、ドライバーの署名ポリシーを構成できないオペレーティング システムには適用されません。  
 
-##  <a name="BKMK_CaptureNetworkSettings"></a> Acquisisci impostazioni di rete  
- Usare il passaggio **Acquisisci impostazioni di rete** della sequenza di attività per acquisire le impostazioni di rete Microsoft dal computer che esegue la sequenza di attività. Le impostazioni vengono salvate nelle variabili della sequenza di attività che sostituiranno le impostazioni predefinite configurate nel passaggio **Applica impostazioni di rete** della sequenza di attività.  
+##  <a name="BKMK_CaptureNetworkSettings"></a> ネットワーク設定のキャプチャ  
+ [ **ネットワーク設定のキャプチャ** ] タスク シーケンス ステップを使用して、タスク シーケンスを実行しているコンピューターから Microsoft ネットワーク設定をキャプチャします。 設定は、[ **ネットワーク設定の適用** ] タスク シーケンス ステップで構成する既定の設定を上書きする、タスク シーケンス変数に保存されます。  
 
- Questo passaggio della sequenza di attività può essere eseguito solo in un sistema operativo standard. Non può essere eseguito in Windows PE. Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Capture Network Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureNetworkSettings).  
+ このタスク シーケンス ステップは、標準のオペレーティング システムでのみ実行できます。 Windows PE では実行できません。 このアクションのタスク シーケンス変数の詳細については、「 [Capture Network Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureNetworkSettings)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Specifica un nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前を指定します。  
 
- **Descrizione**  
- Fornisce informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報が表示されます。  
 
- **Esegui la migrazione del dominio e dell'appartenenza a gruppi di lavoro**  
- Acquisisce le informazioni sull'appartenenza a domini e gruppi di lavoro del computer di destinazione.  
+ **ドメインとワークグループのメンバーシップを移行する**  
+ 対象のコンピューターのドメインおよびワークグループ メンバーシップ情報をキャプチャします。  
 
- **Esegui la migrazione della configurazione della scheda di rete**  
- Acquisisce la configurazione della scheda di rete del computer di destinazione. Le informazioni acquisite includono le impostazioni di rete globali, il numero di schede e le impostazioni di rete associate a ogni scheda. Queste impostazioni includono le impostazioni associate a DNS, WINS, IP e ai filtri delle porte.  
+ **ネットワーク アダプター構成を移行する**  
+ 対象のコンピューターのネットワーク アダプター構成をキャプチャします。 キャプチャされた情報には、グローバル ネットワーク設定、アダプター数、各アダプターに関連付けられているネットワーク設定が含まれます。 これらの設定には、DNS、WINS、IP、ポート フィルターに関連付けられている設定が含まれます。  
 
-##  <a name="BKMK_CaptureOperatingSystemImage"></a> Acquisisci immagine del sistema operativo  
- Usare il passaggio **Acquisisci immagine del sistema operativo** della sequenza di attività per acquisire una o più immagini da un computer di riferimento e archiviarle in un file con estensione wim nella condivisione di rete specificata. La procedura guidata del pacchetto potrà essere usata per aggiungere l'immagine del sistema operativo e importare il file con estensione wim in Configuration Manager. In questo modo sarà possibile usarlo per le distribuzioni del sistema operativo basate su immagine.  
+##  <a name="BKMK_CaptureOperatingSystemImage"></a> オペレーティング システム イメージのキャプチャ  
+ 参照コンピューターから 1 つ以上のイメージをキャプチャし、指定したネットワーク共有上にある WIM ファイルに保存するには、[ **オペレーティング システム イメージのキャプチャ** ] タスク シーケンス ステップを使用します。 次に、オペレーティング システム イメージの追加ウィザードを使用して、イメージベースのオペレーティング システムの展開に使用できるように、この .WIM ファイルを Configuration Manager にインポートします。  
 
- Ogni volume (unità) nel computer di riferimento viene acquisito come immagine distinta nel file con estensione wim. Se il computer a cui si fa riferimento include più volumi, il file con estensione WIM risultate conterrà un'immagine distinta per ogni volume. Vengono acquisiti solo i volumi con formattazione NTFS o FAT32. I volumi con formati diversi e i volumi USB verranno ignorati.  
+ 参照コンピューターの各ボリューム (ドライブ) は、.wim ファイル内に別イメージとしてキャプチャされます。 参照コンピューターに複数のボリュームがある場合、作成される WIM ファイルには、ボリュームごとに異なるイメージが含まれています。 NTFS または FAT32 としてフォーマットされているボリュームのみがキャプチャされます。 その他のフォーマットのボリュームおよび USB のボリュームはスキップされます。  
 
- Il sistema operativo installato nel computer di riferimento deve essere una versione di Windows supportata da Configuration Manager e deve essere stato preparato usando lo strumento SysPrep. Il volume del sistema operativo installato deve essere uguale al volume di avvio.  
+ 参照コンピューターにインストールされているオペレーティング システムは、Configuration Manager がサポートするバージョンの Windows である必要があり、SysPrep ツールを使用して準備する必要があります。 インストールされたオペレーティング システムのボリュームとブート ボリュームは同じである必要があります。  
 
- È anche necessario immettere un account di Windows con autorizzazioni di scrittura per la condivisione di rete selezionata.  
+ また、選択したネットワーク共有への書き込みアクセスが許可された Windows アカウントを入力する必要があります。  
 
- Questo passaggio della sequenza di attività può essere eseguito solo in Windows PE. Non può essere eseguito in un sistema operativo standard. Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Capture Operating System Image Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureOperatingSystemImage).  
+ このタスク シーケンス ステップは Windows PE でのみ実行されます。 このステップは標準のオペレーティング システムでは実行できません。 このアクションのタスク シーケンス変数の詳細については、「 [Capture Operating System Image Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureOperatingSystemImage)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Destinazione**  
- Percorso del file system usato da Configuration Manager per l'archiviazione dell'immagine acquisita del sistema operativo.  
+ **ターゲット**  
+ キャプチャしたオペレーティング システム イメージの保存時に Configuration Manager が使用する場所へのファイル システムのパス名。  
 
- **Descrizione**  
- Descrizione facoltativa definita dall'utente dell'immagine acquisita del sistema operativo archiviata nel file con estensione WIM.  
+ **説明**  
+ .WIM ファイルに保存されるキャプチャ済みオペレーティング システム イメージについて、ユーザーが任意に定義した説明。  
 
- **Versione**  
- Numero di versione facoltativo definito dall'utente da assegnare all'immagine acquisita del sistema operativo. Questo valore può essere costituito da qualsiasi combinazione di lettere e numeri e viene archiviato nel file con estensione WIM.  
+ **バージョン**  
+ キャプチャしたオペレーティング システム イメージに割り当てる、ユーザーが任意に定義したバージョン番号。 この値は、文字および数値の任意の組み合わせにすることができ、.WIM ファイルに保存されます。  
 
- **Creato da**  
- Nome facoltativo dell'utente che ha creato l'immagine del sistema operativo. Viene archiviato nel file con estensione WIM.  
+ **作成者**  
+ オペレーティング システム イメージを作成したユーザーのオプションの名前であり、WIM ファイルに保存されます。  
 
- **Account di acquisizione dell'immagine del sistema operativo**  
- È necessario immettere l'account di Windows con autorizzazioni per la condivisione di rete specificata. Fare clic su **Imposta** per specificare il nome dell'account di Windows.  
+ **オペレーティング システム イメージのキャプチャ アカウント**  
+ 指定したネットワーク共有へのアクセス許可がある Windows アカウントを入力する必要があります。 その Windows アカウントの名前を指定するには、[ **設定** ] をクリックします。  
 
-##  <a name="BKMK_CaptureUserState"></a> Acquisisci stato utente  
- Usare il passaggio **Acquisisci stato utente** della sequenza di attività per usare l'Utilità di migrazione stato utente (USMT, User State Migration Tool) per acquisire lo stato utente e le impostazioni dal computer che esegue la sequenza di attività. Questo passaggio della sequenza di attività viene usato insieme al passaggio **Ripristina stato utente** . In USMT 3.0.1 e versioni successive questa opzione crittografa sempre l'archiviazione stati USMT usando una chiave di crittografia generata e gestita da Configuration Manager.  
+##  <a name="BKMK_CaptureUserState"></a> ユーザー状態のキャプチャ  
+ ユーザー状態移行ツール (USMT) を使用して、タスク シーケンスを実行しているコンピューターからユーザーの状態と設定をキャプチャするには、[ **ユーザー状態のキャプチャ** ] タスク シーケンス ステップを使用します。 このタスク シーケンス ステップは、[ **ユーザー状態の復元** ] タスク シーケンス ステップと共に使用します。 USMT 3.0.1 以降では、このオプションにより Configuration Manager が生成および管理する暗号化キーを使った USMT 状態ストアの暗号化が必ず行われます。  
 
- Per altre informazioni sulla gestione dello stato utente durante la distribuzione di sistemi operativi, vedere [Manage user state](../get-started/manage-user-state.md) (Gestire lo stato utente).  
+ オペレーティング システムを展開するときに、ユーザー状態の移行を管理する方法の詳細については、「[Manage user state](../get-started/manage-user-state.md)」 (ユーザー状態の管理) を参照してください。  
 
- È anche possibile usare il passaggio **Acquisisci stato utente** della sequenza di attività insieme ai passaggi **Richiedi archiviazione stati **e** Rilascia archiviazione stati** se si vogliono salvare le impostazioni dello stato o ripristinare tali impostazioni da un punto di migrazione stato nel sito di Configuration Manager.  
+ Configuration Manager サイトの状態移行ポイントに状態設定を保存したり、状態移行ポイントから設定を復元したりする場合は、[**ユーザー状態のキャプチャ**] タスク シーケンス ステップを、[**状態ストアの要求**] タスク シーケンス ステップおよび [**状態ストアのリリース**] タスク シーケンス ステップと共に使用できます。  
 
- Il passaggio **Acquisisci stato utente** della sequenza di attività fornisce il controllo su un sottoinsieme limitato delle opzioni USMT più usate. È possibile specificare opzioni aggiuntive da riga di comando usando la variabile OSDMigrateAdditionalCaptureOptions della sequenza di attività.  
+ [ **ユーザー状態のキャプチャ** ] タスク シーケンス ステップにより、最も一般的に使用されているオプションの限定されたサブセットが制御できます。 その他のコマンド ライン オプションは、OSDMigrateAdditionalCaptureOptions タスク シーケンス 変数を使用して指定できます。  
 
- Questo passaggio della sequenza di attività può essere eseguito solo in Windows PE. Non può essere eseguito in un sistema operativo standard. Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Capture User State Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureUserState).  
+ このタスク シーケンス ステップは Windows PE でのみ実行されます。 このステップは標準のオペレーティング システムでは実行できません。 このアクションのタスク シーケンス変数の詳細については、「 [Capture User State Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureUserState)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Pacchetto degli strumenti di migrazione dello stato utente**  
- Immettere il pacchetto di Configuration Manager che contiene la versione di USMT che deve essere usata da questo passaggio della sequenza di attività durante l'acquisizione dello stato e delle impostazioni utente. Questo pacchetto non richiede alcun programma. Quando viene eseguito il passaggio della sequenza di attività, verrà usata la versione di USMT disponibile nel pacchetto specificato. Specificare un pacchetto contenente la versione a 32 bit o x64 di USMT, in base all'architettura del sistema operativo da cui si acquisisce lo stato.  
+ **ユーザー状態移行ツール パッケージ**  
+ このタスク シーケンス ステップでユーザー状態と設定をキャプチャするときに使用する USMT のバージョンを含む Configuration Manager パッケージを入力します。 このパッケージにはプログラムは必要ありません。 タスク シーケンス ステップが実行されると、タスク シーケンスは、指定したパッケージの中からそのバージョンの USMT を使用します。 状態をキャプチャするオペレーティング システムのアーキテクチャに応じて、32 ビット バージョンまたは 64 ビット バージョンの USMT を含むパッケージを指定します。  
 
- **Acquisisci tutti i profili utente utilizzando le opzioni standard**  
- Selezionare questa opzione per eseguire la migrazione di tutte le informazioni sul profilo utente. Questa opzione è selezionata per impostazione predefinita.  
+ **すべてのユーザー プロファイルを標準オプションでキャプチャする**  
+ すべてのユーザー プロファイル情報を移行するには、このオプションを選択します。 既定では、このオプションはオンです。  
 
- Se si seleziona questa opzione, ma non si seleziona l'opzione Ripristina profili utente del computer locale nel passaggio Ripristina stato utente, la sequenza di attività avrà esito negativo poiché Configuration Manager non può eseguire la migrazione dei nuovi account senza aver prima assegnato loro una password. Se inoltre si usa la procedura guidata **Crea nuova sequenza di attività** e si crea una sequenza di attività che **Installa un pacchetto immagine esistente**, per la sequenza di attività risultante verrà usato il valore predefinito Acquisisci tutti i profili utente usando le opzioni standard, ma non verrà selezionata l'opzione Ripristina profili utente del computer locale, ovvero gli account non di dominio.  
+ このオプションを選択して、[ユーザー状態の復元] タスク シーケンス ステップでローカル コンピューターのユーザー プロファイルを復元するオプションを選択しない場合、Configuration Manager では新しいアカウントにパスワードを割り当てないと移行できないため、タスク シーケンスは失敗します。 また、 **タスク シーケンスの新規作成** ウィザードを使用して、[ **既存のイメージ パッケージをインストールする**] タスク シーケンスを作成した場合、作成したタスク シーケンスは既定で [すべてのユーザー プロファイルを標準オプションでキャプチャする] になりますが、[ローカル コンピューターのユーザー プロファイルを復元する] オプションは選択されません。  
 
- Selezionare **Ripristina profili utente del computer locale** e fornire una password per l'account di cui deve essere eseguita la migrazione. In una sequenza di attività creata manualmente questa impostazione è disponibile nel passaggio Ripristina stato utente. In una sequenza di attività creata dalla procedura guidata **Crea nuova sequenza di attività** questa impostazione è disponibile nella pagina della procedura guidata **Ripristina file utente e impostazioni** .  
+ [ **ローカル コンピューターのユーザー プロファイルを復元する** ] を選択し、移行するアカウントのパスワードを指定します。 手動で作成したタスク シーケンスでは、この設定は [ユーザー状態の復元] タスク シーケンス ステップにあります。 **タスク シーケンスの新規作成** ウィザードで作成したタスク シーケンスでは、この設定は、[ **ユーザー ファイルと設定の復元** ] ステップのウィザードのページにあります。  
 
- Se non sono presenti account utente locali, questa opzione non è applicabile.  
+ ローカル ユーザー アカウントがない場合、この設定は適用されません。  
 
- **Personalizza modalità di acquisizione dei profili utente**  
- Selezionare questa opzione per specificare una migrazione del file di profilo personalizzato. Fare clic su **File** per selezionare i file di configurazione che USMT dovrà usare con questo passaggio. È necessario specificare un file con estensione xml personalizzato contenente le regole che definiscono i file di stato utente di cui eseguire la migrazione.  
+ **ユーザー プロファイルのキャプチャ方法をカスタマイズする**  
+ カスタム プロファイル ファイルの移行を指定するには、このオプションを選択します。 [ **ファイル** ] をクリックして、このステップで使用する USMT の構成ファイルを選択します。 移行するユーザー状態ファイルを定義する規則を含むカスタムの .xml ファイルを指定する必要があります。  
 
- **Fare clic qui per selezionare i file di configurazione:**  
- Selezionare questa opzione per selezionare i file di configurazione nel pacchetto USMT da usare per l'acquisizione dei profili utente. Fare clic su **File** per aprire la finestra di dialogo **File di configurazione** . Per specificare un file di configurazione, immettere il nome del file nella riga **Nome file** e quindi fare clic su **Aggiungi** .  
+ **構成ファイルを選択するには、ここをクリックします。**  
+ ユーザー プロファイルをキャプチャするために使用する、USMT パッケージ内の構成ファイルを選択するには、このオプションを選択します。 [ **ファイル** ] クリックして、[ **構成ファイル** ] ダイアログ ボックスを表示します。 構成ファイルを指定するには、[ **ファイル名** ] 行にファイルの名前を入力し、[ **追加** ] をクリックします。  
 
- **Abilita la registrazione dettagliata**  
- Abilitare questa opzione per generare informazioni di file di log più dettagliate. Durante l'acquisizione dello stato, il file Scanstate.log viene generato e archiviato per impostazione predefinita nella cartella Log della sequenza di attività nella cartella \windows\system32\ccm\logs.  
+ **詳細ログ記録を有効にする**  
+ 詳細なログ ファイル情報を生成するには、このオプションを有効にします。 状態をキャプチャすると、ログ Scanstate.log が生成され、既定では \windows\system32\ccm\logs フォルダー内にあるタスク シーケンス ログ フォルダーに保存されます。  
 
- **Ignora file che utilizzano Encrypting File System (EFS)**  
- Abilitare questa opzione per ignorare i file di acquisizione crittografati con Encrypted File System (EFS), inclusi i file di profilo. In base al sistema operativo e alla versione di USMT, è possibile che i file crittografati non siano leggibili dopo il ripristino. Per altre informazioni, vedere la documentazione relativa a USMT.  
+ **暗号化されたファイル システム (EFS) を使用するファイルをスキップする**  
+ プロファイル ファイルなど、暗号化されたファイル システム (EFS) を使用して暗号化されたファイルのキャプチャをスキップするには、このオプションを有効にします。 オペレーティング システムや USMT バージョンによっては、暗号化されたファイルを復元しても読み取れない場合があります。 詳細については、USMT のドキュメントを参照してください。  
 
- **Copia utilizzando l'accesso al file system**  
- Abilitare questa opzione per specificare una delle impostazioni seguenti:  
+ **ファイル システム アクセスを使用してコピーする**  
+ 次の設定のいずれかを指定する場合にこのオプションを有効にします。  
 
--   **Continua se non è possibile acquisire alcuni file**: questa impostazione consente al passaggio della sequenza di attività di continuare il processo di migrazione, anche se non è possibile acquisire alcuni file. Se si disabilita questa opzione, il passaggio della sequenza di attività avrà esito negativo nel caso in cui non sia possibile acquisire un file. Questa opzione è attivata per impostazione predefinita.  
+-   **キャプチャできないファイルがあっても続行する**: 一部のファイルをキャプチャできない場合でも移行処理を続行するには、この設定を有効にします。 このオプションを無効にした場合、ファイルをキャプチャできないと、タスク シーケンス ステップは失敗します。 既定では、このオプションは有効になっています。  
 
--   **Esegui acquisizione localmente utilizzando i collegamenti invece di copiare i file**: abilitare questa impostazione per usare i collegamenti reali NTFS per acquisire i file.  
+-   **ファイルをコピーする代わりに、リンクを使用してローカルでキャプチャする**: NTFS ハードリンクを使用してファイルをキャプチャするには、この設定を有効にします。  
 
-     Per altre informazioni sulla migrazione di dati tramite i collegamenti reali, vedere [Archivio delle migrazioni con collegamento reale](http://go.microsoft.com/fwlink/p/?LinkId=240222)  
+     ハードリンクを使用したデータ移行の詳細については、「 [ハードリンク移行ストア](http://go.microsoft.com/fwlink/p/?LinkId=240222)」を参照してください。  
 
--   **Acquisisci in modalità non in linea (solo Windows PE)**: abilitare questa impostazione per acquisire lo stato utente in Windows PE invece che nel sistema operativo completo.  
+-   **オフライン モードでキャプチャする (Windows PE のみ)**: 完全なオペレーティング システムではなく、Windows PE でユーザー状態をキャプチャするには、この設定を有効にします。  
 
- **Acquisisci utilizzando Servizio Copia Shadow del volume (VSS)**  
- Questa opzione consente di acquisire file anche se sono bloccati per la modifica da un'altra applicazione.  
+ **ボリューム シャドウ コピー サービス (VSS) を使用してキャプチャする**  
+ このオプションを指定すると、ファイルが他のアプリケーションによる編集のためにロックされている場合でもそのファイルをキャプチャできます。  
 
-##  <a name="BKMK_CaptureWindowsSettings"></a> Acquisisci impostazioni Windows  
- Usare il passaggio **Acquisisci impostazioni Windows** della sequenza di attività per acquisire le impostazioni di Windows dal computer che esegue la sequenza di attività. Le impostazioni vengono salvate nelle variabili della sequenza di attività che sostituiranno le impostazioni predefinite configurate nel passaggio **Applica impostazioni Windows** della sequenza di attività.  
+##  <a name="BKMK_CaptureWindowsSettings"></a> Windows 設定のキャプチャ  
+ [ **Windows 設定のキャプチャ** ] タスク シーケンス ステップを使用して、タスク シーケンスを実行しているコンピューターから Windows 設定をキャプチャします。 設定は、[ **Windows 設定の適用** ] タスク シーケンス ステップで構成する既定の設定を上書きする、タスク シーケンス変数に保存されます。  
 
- Questo passaggio della sequenza di attività può essere eseguito in Windows PE o in un sistema operativo standard. Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Capture Windows Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureWindowsSettings).  
+ このタスク シーケンスのステップは Windows PE または標準のオペレーティング システムで実行されます。 このアクションのタスク シーケンス変数の詳細については、「 [Capture Windows Settings Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_CaptureWindowsSettings)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Esegui la migrazione del nome computer**  
- Selezionare questa opzione per acquisire il nome NetBIOS del computer.  
+ **コンピューター名を移行する**  
+ コンピューターの NetBIOS コンピューター名をキャプチャするには、このオプションを選択します。  
 
- **Esegui la migrazione dell'utente registrato e dei nomi organizzazione**  
- Selezionare questa opzione per acquisire l'utente registrato e i nomi dell'organizzazione dal computer.  
+ **登録されているユーザーと組織名を移行する**  
+ コンピューターから登録されているユーザーおよび組織名をキャプチャするには、このオプションを選択します。  
 
- **Esegui la migrazione del fuso orario**  
- Selezionare questa opzione per acquisire l'impostazione relativa al fuso orario nel computer.  
+ **タイム ゾーンを移行する**  
+ コンピューターのタイム ゾーン設定をキャプチャするには、このオプションを選択します。  
 
-##  <a name="BKMK_CheckReadiness"></a> Verifica conformità  
- Usare il passaggio **Verifica conformità** della sequenza di attività per verificare che il computer di destinazione soddisfi le condizioni dei prerequisiti di distribuzione specificate.  
+##  <a name="BKMK_CheckReadiness"></a> 準備の確認  
+ [ **準備の確認** ] タスク シーケンス ステップを使用して、指定した展開の前提条件を対象のコンピューターが満たしていることを確認します。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio. Non selezionare questa impostazione per questo passaggio, altrimenti il passaggio registrerà solo le verifiche della conformità e non interromperà la sequenza di attività in caso di errore della verifica.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。 このステップでは、この設定を選択しないでください。選択した場合、準備の確認のみが記録され、確認が失敗してもタスク シーケンスは停止しません。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Verifica la quantità di memoria minima (MB)**  
- Selezionare questa impostazione per verificare se la quantità di memoria, in megabyte, installata nel computer di destinazione soddisfa o supera la quantità specificata. Questa opzione è selezionata per impostazione predefinita.  
+ **最小メモリ容量 (MB) を確認する**  
+ 対象のコンピューターに搭載されているメモリの量 (メガバイト単位) が、指定された量以上であることを確認するには、この設定を選択します。 既定では、この設定が選択されています。  
 
- **Verifica la velocità minima del processore (MHz)**  
- Selezionare questa opzione per verificare se la velocità del processore, in megahertz (MHz), installato nel computer di destinazione soddisfa o supera la quantità specificata. Questa opzione è selezionata per impostazione predefinita.  
+ **最低プロセッサ速度 (MHz) を確認する**  
+ 対象のコンピューターに搭載されたプロセッサの速度 (MHz) が、指定された速度以上であることを確認するには、この設定を選択します。 既定では、この設定が選択されています。  
 
- **Verifica lo spazio minimo disponibile su disco (MB)**  
- Selezionare questa impostazione per verificare se la quantità di spazio disponibile su disco, in megabyte, nel computer di destinazione soddisfa o supera la quantità specificata.  
+ **最小空きディスク容量 (MB) を確認する**  
+ 対象のコンピューター上の空きディスク容量 (メガバイト単位) が、指定された量以上であることを確認するには、この設定を選択します。  
 
- **Verifica che il sistema operativo corrente da aggiornare sia**  
- Selezionare questa impostazione per verificare se il sistema operativo installato nel computer client soddisfa i requisiti specificati. Per impostazione predefinita, questa impostazione è selezionata con un valore **CLIENT**.  
+ **現在の OS の更新を確認する**  
+ 対象のコンピューターにインストールされているオペレーティング システムが、指定された要件を満たしていることを確認するには、この設定を選択します。 既定では、この設定が選択され、 **CLIENT**という値が設定されています。  
 
-##  <a name="BKMK_ConnectToNetworkFolder"></a> Connetti alla cartella di rete  
- Usare l'azione **Connetti alla cartella di rete** della sequenza di attività per creare una connessione a una cartella di rete condivisa.  
+##  <a name="BKMK_ConnectToNetworkFolder"></a> ネットワーク フォルダーへの接続  
+ 共有ネットワーク フォルダーへの接続を作成するには、[ **ネットワーク フォルダーへの接続** ] タスク シーケンス ステップを使用します。  
 
- Questo passaggio della sequenza di attività viene eseguito in un sistema operativo standard o in Windows PE. Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Connect to Network Folder Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ConnecttoNetworkFolder).  
+ このタスク シーケンス ステップは標準のオペレーティング システムまたは Windows PE で実行できます。 このアクションのタスク シーケンス変数の詳細については、「 [Connect to Network Folder Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ConnecttoNetworkFolder)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
-##  <a name="BKMK_ConvertDisktoDynamic"></a> Converti il disco selezionato in disco dinamico  
- Usare il passaggio **Converti il disco selezionato in disco dinamico** della sequenza di attività per convertire un disco fisico da un tipo di disco di base a un tipo di disco dinamico.  
+##  <a name="BKMK_ConvertDisktoDynamic"></a> ディスクをダイナミックに変換  
+ [ **ダイナミック ディスクに変換** ] タスク シーケンス ステップを使用して、ベーシック ディスク タイプからダイナミック ディスク タイプに物理ディスクを変換します。  
 
- Questo passaggio viene eseguito in un sistema operativo standard o in Windows PE. Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Convert Disk to Dynamic Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ConvertDisk).  
+ このステップは標準のオペレーティング システムまたは Windows PE で実行できます。 このアクションのタスク シーケンス変数の詳細については、「 [Convert Disk to Dynamic Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ConvertDisk)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Numero disco**  
- Numero del disco fisico che verrà convertito.  
+ **ディスク番号**  
+ 変換するディスクの物理ディスク番号。  
 
-##  <a name="BKMK_DisableBitLocker"></a> Disattiva BitLocker  
- Usare il passaggio **Disattiva BitLocker** della sequenza di attività per disabilitare la crittografia BitLocker nell'unità attuale del sistema operativo o in un'unità specificata. Questa azione lascia che le protezioni con chiave siano visibili in testo non crittografato nel disco rigido, ma non decrittografa i contenuti dell'unità. Questa azione viene quindi completata quasi istantaneamente.  
+##  <a name="BKMK_DisableBitLocker"></a> BitLocker の無効化  
+ 現在のオペレーティング システム ドライブ、または特定のドライブの BitLocker 暗号化を無効にするには、[ **BitLocker の無効化** ] タスク シーケンス ステップを使用します。 この操作では、キー プロテクターがハード ドライブ上にクリア テキストで表示されますが、ドライブの内容は解読されません。 結果として、このアクションはほぼ瞬時に完了します。  
 
 > [!NOTE]  
->  La crittografia unità BitLocker offre una crittografia di basso livello dei contenuti di un volume del disco.  
+>  BitLocker ドライブ暗号化とは、ディスク ボリュームの内容を低レベルで暗号化する処理のことです。  
 
- Se sono disponibili più unità crittografate, sarà necessario disabilitare BitLocker in qualsiasi unità di dati prima di disabilitare BitLocker nell'unità del sistema operativo.  
+ 複数のドライブを暗号化している場合は、オペレーティング システム ドライブで BitLocker を無効にする前に、すべてのデータ ドライブで BitLocker を無効にする必要があります。  
 
- Questo passaggio può essere eseguito solo in un sistema operativo standard. Non può essere eseguito in Windows PE.  
+ このステップは標準のオペレーティング システムでのみ実行できます。 Windows PE では実行できません。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Specifica un nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前を指定します。  
 
- **Descrizione**  
- Fornisce informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報が表示されます。  
 
- **Unità del sistema operativo corrente**  
- Disabilita BitLocker nell'unità attuale del sistema operativo.  
+ **現在のオペレーティング システム ドライブ**  
+ 現在のオペレーティング システム ドライブで BitLocker を無効にします。  
 
- **Unità specifica**  
- Disabilita BitLocker in un'unità specifica. Usare l'elenco a discesa per specificare l'unità in cui BitLocker è disabilitato.  
+ **特定のドライブ**  
+ 特定のドライブで BitLocker を無効にします。 ドロップダウン リストを使用して、BitLocker を無効にするドライブを指定します。  
 
-##  <a name="BKMK_DownloadPackageContent"></a> Scarica contenuto pacchetto  
- Usare il passaggio della sequenza di attività **Scarica contenuto pacchetto** per scaricare uno dei tipi di pacchetto seguenti:  
+##  <a name="BKMK_DownloadPackageContent"></a> パッケージ コンテンツのダウンロード  
+ **[パッケージ コンテンツのダウンロード]** タスク シーケンスのステップを使用して、次のパッケージの種類のいずれかをダウンロードします。  
 
--   Immagini del sistema operativo  
+-   オペレーティング システム イメージ  
 
--   Pacchetti di aggiornamento del sistema operativo  
+-   オペレーティング システムのアップグレード パッケージ  
 
--   Pacchetti driver  
+-   ドライバー パッケージ  
 
--   Pacchetti  
+-   パッケージ  
 
- Questo passaggio funziona bene in una sequenza di attività per eseguire l'aggiornamento di un sistema operativo negli scenari seguenti:  
+ このステップは、次のシナリオでオペレーティング システムをアップグレードするためのタスク シーケンスに適しています。  
 
--   Usare una singola sequenza di attività di aggiornamento che può funzionare con piattaforme x86 e x64. Per portare a termine la procedura, è necessario includere due passaggi **Scarica contenuto pacchetto** nel gruppo **Preparazione dell'aggiornamento** con le condizioni per rilevare l'architettura client e scaricare solo il pacchetto di aggiornamento del sistema operativo appropriato. Configurare ogni passaggio **Scarica contenuto pacchetto** in modo da usare la stessa variabile e usare la variabile per il percorso del supporto durante il passaggio **Aggiorna sistema operativo** .  
+-   x86 と x64 の両方のプラットフォームで動作する 1 つのアップグレード タスク シーケンスを使用する。 これを行うには、クライアント アーキテクチャを検出して、該当するオペレーティング システム アップグレード パッケージのみをダウンロードする条件を含む **[アップグレードの準備]** グループに、2 つの **[パッケージ コンテンツのダウンロード]** ステップを追加します。 同じ変数を使用するようにそれぞれの **[パッケージ コンテンツのダウンロード]** ステップを構成して、 **[オペレーティング システムのアップグレード]** ステップ上のメディア パスにその変数を使用します。  
 
--   Per scaricare in modo dinamico un pacchetto di driver applicabile, usare due passaggi **Scarica contenuto pacchetto** con le condizioni per rilevare il tipo di hardware appropriato per ogni pacchetto driver. Configurare ogni passaggio **Scarica contenuto pacchetto** in modo da usare la stessa variabile e usare la variabile per il valore **Contenuto preconfigurato** durante il passaggio **Aggiorna sistema operativo** .  
+-   該当するドライバー パッケージを動的にダウンロードするには、ドライバー パッケージごとに適切なハードウェアの種類を検出する条件を含む 2 つの **[パッケージ コンテンツのダウンロード]** ステップを使用します。 同じ変数を使用するようにそれぞれの **[パッケージ コンテンツのダウンロード]** ステップを構成し、 **[オペレーティング システムのアップグレード]** ステップのドライバー セクションの **[ステージング済みコンテンツ]** 値に変数を使用します。  
 
 > [!NOTE]    
-> Quando si distribuisce una sequenza di attività che contiene il passaggio Scarica contenuto pacchetto, non selezionare **Scaricare tutto il contenuto localmente prima di avviare la sequenza attività** per **Opzioni di distribuzione** nella pagina **Punti di distribuzione** della Distribuzione guidata del software.  
+> パッケージ コンテンツのダウンロード ステップを含むタスク シーケンスを展開する場合、ソフトウェアの展開ウィザードの [**配布ポイント**] ページで、[**展開オプション**] に [**タスク シーケンスを開始する前にすべてのコンテンツをローカルにダウンロードする**] を選択しないでください。  
 
-Questo passaggio viene eseguito in un sistema operativo standard o in Windows PE. Tuttavia, l'opzione relativa al salvataggio del pacchetto nella cache del client di Configuration Manager non è supportata in WinPE.
+このステップは標準のオペレーティング システムまたは Windows PE で実行できます。 ただし、Configuration Manager クライアント キャッシュにパッケージを保存するオプションは、WinPE ではサポートされません。
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Specifica un nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前を指定します。  
 
- **Descrizione**  
- Fornisce informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報が表示されます。  
 
- Icona**Selezione pacchetto**  
- Fare clic sull'icona per selezionare il pacchetto da scaricare. Dopo aver selezionato un pacchetto, è possibile fare clic sull'icona di nuovo per scegliere un altro pacchetto.  
+ **[パッケージの選択]** アイコン  
+ アイコンをクリックして、ダウンロードするパッケージを選択します。 パッケージを選択した後、もう一度アイコンをクリックすると、別のパッケージを選択できます。  
 
- **Inserire nel seguente percorso**  
- Scegliere di salvare il pacchetto in uno dei seguenti percorsi:  
+ **次の場所に保存する**  
+ 次のいずれかの場所にパッケージを保存する場合に選択します。  
 
- -   **Directory di lavoro della sequenza di attività**  
+ -   **タスク シーケンス作業ディレクトリ**  
 
- -   **Cache del client di Configuration Manager**: usare questa opzione per archiviare il contenuto nella cache del client. Ciò consente al client di fungere da origine della cache peer per gli altri client della cache peer. Per altre informazioni, vedere [Prepare Windows PE peer cache to reduce WAN traffic](../get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md) (Preparare la peer cache di Windows PE per ridurre il traffico della rete WAN)  
+ -   **Configuration Manager クライアント キャッシュ**: このオプションを使用して、クライアント キャッシュにコンテンツを保存します。 これにより、クライアントは、他のピア キャッシュ クライアントのピア キャッシュ ソースとして機能できます。 詳細については、「[WAN トラフィックを削減するための Windows PE ピア キャッシュの準備](../get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md)」を参照してください。  
 
- -   **Percorso personalizzato**  
+ -   **カスタム パス**  
 
- **Salvare il percorso come variabile**  
- È possibile salvare il percorso come variabile utilizzabile in un altro passaggio della sequenza di attività. Configuration Manager aggiunge un suffisso numerico al nome della variabile. Se ad esempio si specifica una variabile %*mycontent*% come variabile personalizzata, questa è la radice in cui viene archiviato tutto il contenuto di riferimento, che può essere costituito da più pacchetti. Quando si fa riferimento alla variabile, a quest'ultima viene aggiunto un suffisso numerico. Per il primo pacchetto, ad esempio, verrà fatto riferimento alla variabile %*mycontent01*%. Quando si fa riferimento alla variabile in un passaggio successivo, ad esempio in Aggiorna sistema operativo, viene usato %*mycontent02*% o %*mycontent03*%, dove il numero corrisponde all'ordine in cui il pacchetto è elencato nel passaggio.  
+ **パスを変数として保存する**  
+ パスは、別のタスク シーケンスのステップで使用できる変数として保存できます。 Configuration Manager によって、数字のサフィックスが変数名に追加されます。 たとえば、%*mycontent*% という変数をカスタム変数として指定した場合に、この変数名は、参照コンテンツがすべて格納されているルートになります (複数のパッケージを指定できます)。 変数を参照する場合は、数字のサフィックスを変数に追加します。 たとえば、最初のパッケージの場合、%*mycontent01*% 変数を参照します。 オペレーティング システムのアップグレードなどの、サブシーケンス ステップの変数を参照する場合は、%*mycontent02*% または %*mycontent03*% を使用します。この数値は、ステップでのパッケージのリスト順に対応します。  
 
- **Se il download di un pacchetto non riesce, continuare a scaricare gli altri pacchetti nell'elenco**  
- Specifica che se il download del pacchetto ha esito negativo, verrà avviato il download del pacchetto successivo nell'elenco.  
+ **パッケージのダウンロードに失敗した場合に、リストにある他のパッケージのダウンロードを続行する**  
+ パッケージのダウンロードに失敗した場合に、リスト内の次のパッケージに進み、ダウンロードを開始するように指定します。  
 
-##  <a name="BKMK_EnableBitLocker"></a> Attiva BitLocker  
- Usare il passaggio **Attiva BitLocker** della sequenza di attività per abilitare la crittografia BitLocker in almeno due partizioni sul disco rigido. La prima partizione attiva include il codice bootstrap di Windows. Un'altra partizione contiene il sistema operativo. La partizione bootstrap deve rimanere non crittografata.  
+##  <a name="BKMK_EnableBitLocker"></a> BitLocker の有効化  
+ ハードドライブの少なくとも 2 つのパーティション上の BitLocker 暗号化を無効にするには、[ **BitLocker の有効化** ] を使用します。 片方のアクティブなパーティションには Windows のブートストラップ コードを格納します。 もう片方のパーティションにはオペレーティング システムを格納します。 ブートストラップのパーティションは暗号化されていない必要があります。  
 
- Usare il passaggio **BitLocker pre-provisioning** della sequenza di attività per abilitare BitLocker in un'unità in Windows PE. Per altre informazioni, vedere la sezione [BitLocker pre-provisioning](#BKMK_PreProvisionBitLocker) in questo argomento.  
+ Windows PE のドライブで BitLocker を有効にするには、[ **BitLocker の事前プロビジョニング** ] タスク シーケンス ステップを使用します。 詳細については、このトピックの「 [BitLocker の事前プロビジョニング](#BKMK_PreProvisionBitLocker) 」セクションを参照してください。  
 
 > [!NOTE]  
->  La crittografia unità BitLocker offre una crittografia di basso livello dei contenuti di un volume del disco.  
+>  BitLocker ドライブ暗号化とは、ディスク ボリュームの内容を低レベルで暗号化する処理のことです。  
 
- Il passaggio **Attiva BitLocker** può essere eseguito solo in un sistema operativo standard. Non può essere eseguito in Windows PE. Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Enable BitLocker Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_EnableBitLocker).  
+ [ **BitLocker の有効化** ] ステップは標準のオペレーティング システムでのみ実行できます。 Windows PE では実行できません。 このアクションのタスク シーケンス変数の詳細については、「 [Enable BitLocker Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_EnableBitLocker)」を参照してください。  
 
- Lo stato di TPM (Trusted Platform Module) deve essere il seguente quando si specifica **Solo TPM**, **TPM e chiave di avvio su USB** o **TPM e PIN**, prima di potere eseguire il passaggio **Attiva BitLocker** :  
+ [ **TPM のみ**]、[ **TPM と、USB 上のスタートアップ キー** ]、または [ **TPM および PIN**] を指定する場合、[ **BitLocker の有効化** ] ステップを実行するには、トラステッド プラットフォーム モジュール (TPM) は次の状態にする必要があります。  
 
--   Abilitato  
+-   Enabled  
 
--   Attivato  
+-   アクティブ  
 
--   Proprietà consentita  
+-   所有権を許可  
 
- Il passaggio della sequenza di attività può completare eventuali operazioni di inizializzazione TPM rimanente, poiché i passaggi rimanenti non necessitano della presenza fisica o di riavvii. I passaggi rimanenti dell'inizializzazione TPM che possono essere completati in modo trasparente da **Attiva BitLocker** (se necessario) includono i seguenti:  
+ 残りのステップでは物理的な操作や再起動が不要なため、タスク シーケンス ステップは、残りの TPM 初期化を完了できます。 (必要に応じて) [ **BitLocker の有効化** ] により透過的に完了できる残りの TPM 初期化ステップには次が含まれます。  
 
--   Creazione della coppia di chiavi di verifica autenticità.  
+-   承認キー ペアの作成  
 
--   Creazione di un valore di autorizzazione del proprietario e del deposito in Active Directory, che deve essere stato esteso per supportare questo valore.  
+-   所有権の承認値の作成、およびこの値をサポートするために拡張されている Active Directory への仲介  
 
--   Acquisizione della proprietà.  
+-   所有権の取得  
 
--   Creazione della chiave radice di archiviazione o reimpostazione nel caso in cui la chiave sia già presente ma non sia compatibile.  
+-   ストレージ ルート キーの作成、または既に存在しているが互換性がない場合は、リセット  
 
- Se si vuole che il passaggio **Attiva BitLocker** attenda il completamento del processo di crittografia dell'unità prima di procedere al passaggio successivo nella sequenza di attività, selezionare la casella di controllo **Attendere** . Se non si seleziona la casella di controllo **Attendere** , il processo di crittografia dell'unità verrà eseguito in background e la sequenza di attività procederà immediatamente al passaggio successivo.  
+ ドライブの暗号化処理が完了してからタスク シーケンスの次のステップを続行するように [ **BitLocker の有効化** ] ステップを設定するには、[ **待機時間** ] チェック ボックスをオンにします。 [ **待機時間** ] チェック ボックスをオンにしないと、バックグラウンドでドライブの暗号化処理が実行され、タスク シーケンスの実行ではすぐに次のステップに進みます。  
 
- È possibile usare BitLocker per crittografare più unità in un sistema di computer, sia nelle unità del sistema operativo che nelle unità dati. Per crittografare un'unità dati, il sistema operativo deve essere già crittografato e il processo di crittografia deve essere stato completato, poiché le protezioni con chiave per le unità dati vengono archiviate nell'unità del sistema operativo. Se quindi si crittografa l'unità del sistema operativo e l'unità dati nello stesso processo, sarà necessario selezionare l'opzione di attesa per il passaggio che abilita BitLocker per l'unità del sistema operativo.  
+ BitLocker を使用して、コンピューター システムの複数のドライブ (オペレーティング システムとデータ ドライブの両方) を暗号化することができます。 データ ドライブのキー プロテクターは、オペレーティング システム ドライブに格納されているため、データ ドライブを暗号化するには、オペレーティング システムが既に暗号化されており、暗号化処理が完了している必要があります。 このため、同じ処理でオペレーティング システム ドライブとデータ ドライブを暗号化すると、オペレーティング システム ドライブに対して BitLocker を有効化するステップで [待機] オプションを選択する必要があります。  
 
- Se il disco rigido è già crittografato ma BitLocker è disabilitato, il passaggio Attiva BitLocker abilita di nuovo le protezioni con chiavi e verrà completato quasi immediatamente. In questo caso non è necessario ripetere la crittografia del disco rigido.  
+ ハード ドライブが既に暗号化されており、BitLocker が無効にされている場合、BitLocker の有効化により 1 つ以上のキー プロテクターが再度有効にされ、ほぼ瞬時に完了されます。 この場合、ハード ドライブの再暗号化は不要です。  
 
- Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Enable BitLocker Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_EnableBitLocker).  
+ このアクションのタスク シーケンス変数の詳細については、「 [Enable BitLocker Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_EnableBitLocker)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Specifica un nome descrittivo per questo passaggio della sequenza di attività.  
+ **名前**  
+ タスク シーケンス ステップの内容を示す名前を指定します。  
 
- **Descrizione**  
- Permette di immettere facoltativamente una descrizione per questo passaggio della sequenza di attività.  
+ **説明**  
+ このタスク シーケンス ステップの説明を必要に応じて入力できます。  
 
- **Scegli l'unità da crittografare**  
- Specifica l'unità da crittografare Per crittografare l'unità attuale del sistema operativo, selezionare **Unità del sistema operativo corrente** , quindi configurare una delle opzioni seguenti per la gestione delle chiavi:  
+ **暗号化するドライブの指定**  
+ 暗号化するドライブを指定します。 現在のオペレーティング システム ドライブを暗号化するには、[ **現在のオペレーティング システム ドライブ** ] を選択し、次のキー管理オプションのいずれかを構成します。  
 
--   **Solo TPM**: selezionare questa opzione per usare solo TPM (Trusted Platform Module).  
+-   **TPM のみ**: トラステッド プラットフォーム モジュール (TPM) のみを使用する場合に選択します。  
 
--   **Chiave di avvio solo su USB**: selezionare questa opzione per usare una chiave di avvio archiviata in un'unità flash USB. Quando si seleziona questa opzione, BitLocker blocca il normale processo di avvio fino al collegamento di un dispositivo USB contenente una chiave di avvio BitLocker al computer.  
+-   **USB 上のスタートアップ キーのみ**: USB フラッシュ ドライブに格納されているスタートアップ キーを使用する場合に選択します。 このオプションを選択すると BitLocker は、BitLocker スタートアップ キーが含まれている USB デバイスがコンピューターに接続されるまで、通常のブート プロセスをロックします。  
 
--   **TPM e chiave di avvio su USB**: selezionare questa opzione per usare TPM e una chiave di avvio archiviata in un'unità flash USB. Quando si seleziona questa opzione, BitLocker blocca il normale processo di avvio fino al collegamento di un dispositivo USB contenente una chiave di avvio BitLocker al computer.  
+-   **TPM と、USB 上のスタートアップ キー**: TPM と、USB フラッシュ ドライブに格納されているスタートアップ キーを使用する場合に選択します。 このオプションを選択すると BitLocker は、BitLocker スタートアップ キーが含まれている USB デバイスがコンピューターに接続されるまで、通常のブート プロセスをロックします。  
 
--   **TPM e PIN**: selezionare questa opzione per usare TPM e un codice PIN. Quando si seleziona questa opzione, BitLocker blocca il normale processo di avvio fino a quando l'utente fornisce il codice PIN.  
+-   **TPM および PIN**: TPM と個人識別番号 (PIN) を使用する場合に選択します。 このオプションを選択すると BitLocker は、ユーザーが PIN を入力するまで、通常のブート プロセスをロックします。  
 
- Per crittografare un'unità dati specifica, non del sistema operativo, selezionare **Unità specifica**, quindi selezionare l'unità dall'elenco.  
+ オペレーティング システム以外の特定のデータ ドライブを暗号化するには、[ **特定のドライブ**] を選択し、一覧からドライブを選択します。  
 
- **Scegli dove creare la chiave di ripristino**  
- Per specificare dove viene creata la password di ripristino, selezionare **In Active Directory** per depositare la password in Active Directory. Se si seleziona questa opzione, sarà necessario estendere Active Directory per il sito, in modo che vengano salvate le informazioni di ripristino BitLocker associate. È possibile decidere di non creare la password selezionando **Non creare una chiave di ripristino**. È tuttavia consigliabile creare una password.  
+ **リカバリ キーの作成先の指定**  
+ リカバリ パスワードの作成先を指定するには、[ **Active Directory** ] を選択します。これにより、Active Directory にリカバリ パスワードが仲介されます。 このオプションを選択した場合は、関連する BitLocker の回復情報が保存されるように、サイトの Active Directory を拡張する必要があります。 [ **リカバリ キーを作成しない**] を選択して、パスワードを一切作成しないこともできます。 しかし、ベスト プラクティスとしてパスワードの作成をお勧めします。  
 
- **Attendi il completamento del processo di crittografia di tutte le unità di BitLocker prima di continuare l'esecuzione della sequenza di attività con Configuration Manager**  
- Selezionare questa opzione per permettere il completamento della crittografia unità BitLocker prima dell'esecuzione del passaggio successivo nella sequenza di attività. Se questa opzione è selezionata, l'intero volume del disco verrà crittografato prima che l'utente possa accedere al computer.  
+ **BitLocker がすべてのドライブの暗号化処理を完了してから、タスク シーケンスを実行する**  
+ このオプションを選択すると、BitLocker のドライブ暗号化が完了してから、タスク シーケンスの次のステップが実行されます。 このオプションを選択した場合は、まず全体のディスク ボリュームが暗号化されなければ、ユーザーがコンピューターにログインできません。  
 
- Il completamento del processo di crittografia può richiedere alcune ore se si deve crittografare un disco rigido di grandi dimensioni. Se non si seleziona questa opzione, la sequenza di attività potrà proseguire immediatamente.  
+ 大容量のハード ドライブを暗号化する場合、暗号化処理の完了には数時間かかる場合があります。 このオプションを選択しないと、タスク シーケンスは直ちに続行されます。  
 
-##  <a name="BKMK_FormatandPartitionDisk"></a> Formato e disco partizione  
- Usare il passaggio **Formato e disco partizione** della sequenza di attività per formattare e partizionare un dico specificato nel computer di destinazione.  
+##  <a name="BKMK_FormatandPartitionDisk"></a> ディスクのフォーマットとパーティション作成  
+ [ **ディスクのフォーマットとパーティション作成** ] タスク シーケンス ステップを使用して、対象となっているコンピューター上に指定したディスクのフォーマットとパーティション作成を行います。  
 
 > [!IMPORTANT]  
->  Ogni impostazione specificata per questo passaggio della sequenza di attività è applicabile a un singolo disco specificato. Se si vuole formattare e partizionare un altro disco nel computer di destinazione, sarà necessario aggiungere un altro passaggio **Formato e disco partizione** alla sequenza di attività.  
+>  このタスク シーケンスのステップで指定するすべての設定は、1 つの指定されたディスクにだけ適用されます。 同じコンピューターの別のディスクにもフォーマットとパーティション作成を行う場合には、[ **ディスクのフォーマットとパーティション作成** ] タスク シーケンス ステップをタスク シーケンスに追加する必要があります。  
 
- Questo passaggio della sequenza di attività può essere eseguito solo in Windows PE. Non può essere eseguito in un sistema operativo standard. Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Format and Partition Disk Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_FormatPartitionDisk).  
+ このタスク シーケンス ステップは Windows PE でのみ実行されます。 このステップは標準のオペレーティング システムでは実行できません。 このアクションのタスク シーケンス変数の詳細については、「 [Format and Partition Disk Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_FormatPartitionDisk)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Numero disco**  
- Numero del disco fisico che verrà formattato. Il numero è basato sull'ordinamento di enumerazione dei dischi Windows.  
+ **ディスク番号**  
+ フォーマットするディスクの物理ディスク番号。 この番号は、Windows のディスク列挙の順番に基づいています。  
 
- **Tipo di disco**  
- Tipo del disco formattato. Nell'elenco a discesa è possibile selezionare le due opzioni seguenti:  
+ **ディスクの種類**  
+ フォーマットされるディスクの種類。 ドロップダウン リストには次の 2 つのオプションがあります。  
 
--   Standard (MBR) - MBR (Record di avvio principale, Master Boot Record).  
+-   標準 (MBR) – マスター ブート レコード  
 
--   GPT - Tabella di partizione GUID  
-
-> [!NOTE]  
->  Se si cambia il tipo di disco da **Standard (MBR)** a **GPT**e il layout della partizione include una partizione estesa, tutte le partizioni estese e logiche verranno rimosse dal layout. Prima della modifica del tipo di disco, verrà richiesta la conferma dell'azione.  
-
- **Volume**  
- Informazioni specifiche sulla partizione o sul volume da creare, incluse le informazioni seguenti:  
-
--   Nome  
-
--   Spazio su disco rimanente  
-
- Per creare una nuova partizione, fare clic su **Nuovo** per aprire la finestra di dialogo **Proprietà della partizione** . È possibile specificare il tipo e le dimensioni della partizione e quindi specificare se sarà una partizione di avvio. Per modificare una partizione esistente, fare clic sulla partizione da modificare, quindi su Proprietà. Per altre informazioni su come configurare le partizioni del disco rigido, vedere uno degli argomenti seguenti:  
-
--   [Configurare partizioni in un disco rigido basato su UEFI/GPT](http://go.microsoft.com/fwlink/?LinkID=272104)  
-
--   [Configurare partizioni in un disco rigido basato su BIOS/MBR](http://go.microsoft.com/fwlink/?LinkId=272105)  
-
- Per eliminare una partizione, selezionare la partizione da eliminare, quindi fare clic su **Elimina**.  
-
-##  <a name="BKMK_InstallApplication"></a> Installa applicazione  
- Usare il passaggio **Installa applicazione** della sequenza di attività per installare le applicazioni come parte della sequenza di attività. Questo passaggio permette di installare un insieme di applicazioni specificate dal passaggio della sequenza di attività o un insieme di applicazioni specificate da un elenco dinamico di variabili della sequenza di attività. Quando si esegue questo passaggio, l'installazione dell'applicazione inizia immediatamente, senza attendere il termine dell'intervallo di polling dei criteri.  
-
- Le applicazioni installate devono soddisfare i criteri seguenti:  
-
--   L'applicazione deve essere un tipo di distribuzione Windows Installer o Programma di installazione dello script. Non sono supportati i tipi di distribuzione Pacchetto app Windows (file .appx).  
-
--   Deve essere in esecuzione con l'account di sistema locale e non con l'account utente.  
-
--   Non deve interagire con il desktop. Il programma deve essere eseguito automaticamente o in modalità automatica.  
-
--   Non deve dare inizio autonomamente a un riavvio. L'applicazione deve richiedere un riavvio usando il codice di riavvio standard, ovvero un codice di uscita 3010. Ciò garantisce che il passaggio della sequenza di attività gestirà correttamente il riavvio. Se l'applicazione restituisce un codice di uscita 3010, il motore della sequenza di attività sottostante eseguirà il riavvio. Dopo il riavvio, la sequenza di attività continua automaticamente.  
-
- Quando si esegue il passaggio **Installa applicazione** , l'applicazione verifica l'applicabilità delle regole dei requisiti e del metodo di rilevamento nei tipi di distribuzione dell'applicazione. In base ai risultati di questa verifica, l'applicazione installa il tipo di distribuzione applicabile. Se il tipo di distribuzione contiene dipendenze, il tipo di distribuzione dipendente verrà valutato e installato come parte del passaggio Installa applicazione. Le dipendenze delle applicazioni non vengono supportati per i supporti autonomi.  
+-   GPT – GUID パーティション テーブル  
 
 > [!NOTE]  
->  Per installare un'applicazione che sostituisce un'altra applicazione, è necessario che i file di contenuto per l'applicazione sostituita siano disponibili. In caso contrario, il passaggio della sequenza di attività avrà esito negativo. Ad esempio, Microsoft Visio 2010 viene installato in un client o in un'immagine acquisita. Quando si esegue il passaggio Installa applicazione della sequenza di attività per installare Microsoft Visio 2013, i file di contenuto per Microsoft Visio 2010 (l'applicazione sostituita) devono essere disponibili nel punto di distribuzione. In caso contrario, la sequenza di attività avrà esito negativo. Un client o un'immagine acquisita senza installazione di Microsoft Visio completerà l'installazione di Microsoft Visio 2013 senza verificare i file di contenuto di Microsoft Visio 2010.  
+>  ディスクの種類を [ **標準 (MBR)** ] から [ **GPT**] に変更し、パーティション レイアウトの中に拡張パーティションが存在している場合、すべての拡張パーティションと論理パーティションがレイアウトから削除されます。 ディスクの種類が変更される前に、この操作を実行するかどうかを確認するメッセージが表示されます。  
+
+ **ボリューム**  
+ 作成するパーティションまたはボリュームに関する詳細な情報。次の情報が含まれます。  
+
+-   名前  
+
+-   ディスクの空き容量  
+
+ 新しいパーティションを作成するには、[ **新規** ] ボタンをクリックして、[ **パーティションのプロパティ** ] ダイアログ ボックスを開きます。 パーティションの種類とサイズ、およびパーティションがブート パーティションかどうかを指定することができます。 既存のパーティションを変更するには、変更するパーティションをクリックしてから、プロパティ ボタンをクリックします。 ハード ドライブのパーティションを構成する方法の詳細については、次のいずれかを参照してください。  
+
+-   [UEFI GPT ベースのハード ドライブのパーティションを構成する方法](http://go.microsoft.com/fwlink/?LinkID=272104)  
+
+-   [BIOS MBR ベースのハード ドライブのパーティションを構成する方法](http://go.microsoft.com/fwlink/?LinkId=272105)  
+
+ パーティションを削除するには、削除するパーティションを選択してから、[ **削除**] をクリックします。  
+
+##  <a name="BKMK_InstallApplication"></a> アプリケーションのインストール  
+ タスク シーケンスの一環としてアプリケーションをインストールするには、[ **アプリケーションのインストール** ] タスク シーケンス ステップを使用します。 このステップでは、タスク シーケンス ステップで指定された一連のアプリケーション、またはタスク シーケンス変数のダイナミック リストにより指定された一連のアプリケーションをインストールできます。 このステップが実行されると、アプリケーションのインストールはポリシーのポーリング間隔を待たずにすぐ開始されます。  
+
+ インストールされるアプリケーションは、次の条件を満たしている必要があります。  
+
+-   アプリケーションの展開の種類は、Windows インストーラーかスクリプト インストーラーでなければなりません。 Windows アプリ パッケージ (.appx ファイル) の展開の種類はサポートされていません。  
+
+-   ユーザー アカウントではなく、ローカル システム アカウントで実行する必要があります。  
+
+-   デスクトップと通信してはいけません。 プログラムは、サイレントまたは無人モードで実行する必要があります。  
+
+-   自動的に再起動を開始させてはいけません。 アプリケーションは、標準再起動コードの 3010 終了コードを使用して再起動を要求する必要があります。 これにより、確実にタスク シーケンス ステップで再起動が正しく処理されるようになります。 アプリケーションが 3010 終了コードを返さない場合は、基本となるタスク シーケンス エンジンが再起動を実行します。 再起動後にタスク シーケンスは自動的に続行されます。  
+
+ [ **アプリケーションのインストール** ] ステップが実行されると、アプリケーションは、アプリケーションの展開の種類について、要件となる規則と探知方法が適用可能かを確認します。 この確認の結果によって、アプリケーションは適用される展開の種類をインストールします。 展開の種類が依存関係を含んでいる場合は、アプリケーションのインストール ステップの一環として依存する展開の種類が評価され、インストールされます。 スタンドアロン メディアでは、アプリケーションの依存関係はサポートされていません。  
+
+> [!NOTE]  
+>  別のアプリケーションを置き換えるアプリケーションをインストールするには、置換対象のアプリケーションのコンテンツ ファイルが使用可能である必要があります。使用できない場合、タスク シーケンス ステップは失敗します。 たとえば、Microsoft Visio 2010 は、クライアント、または、キャプチャされたイメージ内にインストールされます。 [アプリケーションのインストール] タスク シーケンス ステップを実行して Microsoft Visio 2013 をインストールする場合、Microsoft Visio 2010 (置換対象のアプリケーション) のコンテンツ ファイルを配布ポイントで利用可能にする必要があります。利用できない場合、タスク シーケンスは失敗します。 クライアント、またはキャプチャしたイメージに Microsoft Visio がインストールされていない場合、Microsoft Visio 2010 のコンテンツ ファイルはチェックされずに、Microsoft Visio 2013 のインストールを完了します。  
 
 > [!NOTE]
-> È possibile usare le variabili SMSTSMPListRequestTimeoutEnabled e SMSTSMPListRequestTimeout predefinite per abilitare e specificare quanti millisecondi una sequenza di attività deve attendere prima di riprovare a installare un'applicazione o un aggiornamento software se non è riuscita a recuperare l'elenco dei punti di gestione dai servizi di posizione. Per altre informazioni, vedere [Variabili predefinite della sequenza di attività](task-sequence-built-in-variables.md).
+> SMSTSMPListRequestTimeoutEnabled および SMSTSMPListRequestTimeout 組み込み変数を使用して、タスク シーケンスでロケーション サービスから管理ポイント一覧を取得できなかった場合に、アプリケーションまたはソフトウェア更新プログラムのインストールを再試行するまでの待ち時間をミリ秒単位で有効にするか、指定できます。 組み込みのタスク シーケンス変数の詳細については、「[タスク シーケンス組み込み変数](task-sequence-built-in-variables.md)」を参照してください。
 
- Questo passaggio della sequenza di attività può essere eseguito solo in un sistema operativo standard. Non può essere eseguito in Windows PE.  
+ このタスク シーケンス ステップは、標準のオペレーティング システムでのみ実行できます。 Windows PE では実行できません。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明されている設定を構成することができます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare di ripetere questo passaggio se il computer si riavvia in modo imprevisto. È anche possibile specificare la frequenza di tentativi da eseguire in seguito a un riavvio.  
+-   指定すると、コンピューターが予期せず再起動した場合、このステップを再試行します。 再起動後に再試行する回数を指定することもできます。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Installa le seguenti applicazioni**  
- Questa impostazione specifica le applicazioni che vengono installate nell'ordine in cui sono state specificate.  
+ **次のアプリケーションをインストールする**  
+ この設定は指定されている順序でインストールするアプリケーションを指定します。  
 
- Configuration Manager escluderà tramite filtro le applicazioni disabilitate o le applicazioni con le impostazioni seguenti. Queste applicazioni non saranno visualizzate nella finestra di dialogo **Seleziona l'applicazione da installare** .  
+ Configuration Manager では、無効なアプリケーションまたは次のように設定されたアプリケーションは除外されます。 これらのアプリケーションは、[ **インストールするアプリケーションの選択** ] ダイアログ ボックスには表示されません。  
 
--   Solo se un utente è connesso  
+-   ユーザーがログオンしているときのみ  
 
--   Esegui con diritti dell'utente  
+-   ユーザーの権限で実行する  
 
- **Installa le applicazioni in base all'elenco di variabili dinamiche**  
- Questa impostazione specifica il nome di base per un set di variabili della sequenza di attività definite per una raccolta o per un computer. Queste variabili specificano le applicazioni che verranno installate per tale raccolta o computer. Ogni nome di variabile comprende il nome base comune e un suffisso numerico che inizia con 01. Il valore di ogni variabili deve contenere soltanto il nome dell'applicazione.  
+ **動的な変数一覧に従ってアプリケーションをインストールする**  
+ この設定は、コレクションまたはコンピューター用に定義された一連のタスク シーケンス変数のベース名を指定します。 これらの変数はそのコレクションまたはコンピューター用にインストールされるアプリケーションを指定します。 各変数名は、共通のベース名と「01」で始まる数字のサフィックスで構成されます。 各変数の値にはアプリケーションの名前以外は何も含んではいけません。  
 
- Per le applicazioni da installare tramite un elenco di variabili dinamiche, è necessario abilitare l'impostazione seguente nella scheda **Generale** della finestra di dialogo **Proprietà** dell'applicazione: **Consenti l'installazione dell'applicazione dall'operazione sequenza di attività Installazione applicazione senza distribuzione**  
+ 動的な変数一覧を使用してインストールされるアプリケーションでは、アプリケーションの[**プロパティ**] ダイアログ ボックスの [**全般**] タブで [**このアプリケーションを展開せずに [アプリケーションのインストール] タスク シーケンスでインストールできるようにする**] を有効にする必要があります。  
 
 > [!NOTE]  
->  Non è possibile installare le applicazioni usando un elenco dinamico di variabili per distribuzioni con supporti autonomi.  
+>  スタンドアロン メディアによる展開では動的な変数一覧を使用してアプリケーションをインストールすることはできません。  
 
- Ad esempio, per installare una singola applicazione tramite una variabile della sequenza di attività denominata AA01, è necessario specificare la variabile seguente:  
+ たとえば、AA01 というタスク シーケンス変数を使用して 1 つのアプリケーションをインストールするには、次の変数を指定します。  
 
-|Nome variabile|Valore variabile|  
+|変数名|変数値|  
 |-------------------|--------------------|  
 |AA01|Microsoft Office|  
 
- Per installare due applicazioni, è necessario specificare le variabili seguenti:  
+ 2 つのアプリケーションをインストールするには、次の変数を指定します。  
 
-|Nome variabile|Valore variabile|  
+|変数名|変数値|  
 |-------------------|--------------------|  
 |AA01|Microsoft Lync|  
 |AA02|Microsoft Office|  
 
- Le condizioni seguenti determineranno le applicazioni installate:  
+ インストールには次の条件が影響します。  
 
--   Se il valore di una variabile include informazioni diverse dal nome dell'applicazione, l'applicazione non verrà installata e la sequenza di attività continuerà.  
+-   変数の値にアプリケーションの名前以外が含まれている場合。 そのアプリケーションはインストールされず、タスク シーケンスは続行されます。  
 
--   Se non viene individuata alcuna variabile con il nome di base specificato e il suffisso "01", non verrà installata alcuna applicazione. Quando si seleziona **Continua in caso di errore** nella scheda Opzioni del passaggio della sequenza di attività, la sequenza di attività continuerà in caso di errore di installazione di un'applicazione. Se l'impostazione non è selezionata, la sequenza di attività avrà esito negativo e non installerà le applicazioni rimanenti.  
+-   指定された基本名とサフィックス "01" を持つ変数がない場合、アプリケーションはインストールされません。 タスク シーケンス ステップの [オプション] タブで [**エラー時に続行する**] を選択すると、アプリケーションのインストールができなくても、タスク シーケンスが続行されます。 この設定が選択されていない場合、タスク シーケンスは失敗し、残りのアプリケーションはインストールされません。  
 
- **Se l'installazione di un'applicazione non riesce, continuare installando le altre applicazioni dell'elenco**  
- Questa impostazione specifica che il passaggio procederà in caso di errore di installazione di una singola applicazione. Se si specifica questa impostazione, la sequenza di attività continuerà indipendentemente da eventuali errori di installazione restituiti. Se non si specifica questa impostazione e si verifica un errore di installazione, il passaggio della sequenza di attività si interromperà immediatamente.  
+ **アプリケーションのインストールに失敗した場合は、一覧にあるその他のアプリケーションのインストールを続行します。**  
+ この設定は個々のアプリケーションのインストールが失敗してもステップを続行することを指定します。 この設定が指定されると、インストールのエラーが発生したとしても、タスク シーケンスは続行されます。 これが指定されておらず、インストールが失敗すると、タスク シーケンス ステップは即座に終了します。  
 
-##  <a name="BKMK_InstallDeploymentTools"></a> Installa strumenti di distribuzione  
- Usare il passaggio **Installa strumenti di distribuzione** della sequenza di attività per installare il pacchetto di Configuration Manager contenente gli strumenti di distribuzione Sysprep.  
+##  <a name="BKMK_InstallDeploymentTools"></a> 展開ツールのインストール  
+ Sysprep 展開ツールを含む Configuration Manager パッケージをインストールするには、[**展開ツールのインストール**] タスク シーケンス ステップを使用します。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Pacchetto Sysprep**  
- Questa impostazione specifica il pacchetto di Configuration Manager contenente gli strumenti di distribuzione Sysprep per i sistemi operativi seguenti:  
+ **Sysprep パッケージ**  
+ この設定は次のオペレーティング システム用の Sysprep 展開を含む Configuration Manager パッケージを指定します。  
 
 -   Windows XP SP3  
 
@@ -905,566 +903,566 @@ Questo passaggio viene eseguito in un sistema operativo standard o in Windows PE
 
 -   Windows Server 2003 SP2  
 
-##  <a name="BKMK_InstallPackage"></a> Installa pacchetto
+##  <a name="BKMK_InstallPackage"></a> パッケージのインストール
 
- Usare il passaggio **Installa pacchetto** della sequenza di attività per installare il software come parte della sequenza di attività. Quando si esegue questo passaggio, l'installazione inizia immediatamente, senza attendere il termine dell'intervallo di polling dei criteri.  
+ タスク シーケンスの一環としてソフトウェアをインストールするには、[ **パッケージアプリケーションのインストール** ] タスク シーケンス ステップを使用します。 このステップが実行されると、インストールはポリシーのポーリング間隔を待たずにすぐ開始されます。  
 
- Il software installato deve soddisfare i criteri seguenti:  
+ インストールされるソフトウェアは、次の条件を満たしている必要があります。  
 
--   Deve essere in esecuzione con l'account di sistema locale e non con l'account utente.  
+-   ユーザー アカウントではなく、ローカル システム アカウントで実行する必要があります。  
 
--   Non deve interagire con il desktop. Il programma deve essere eseguito automaticamente o in modalità automatica.  
+-   デスクトップと通信してはいけません。 プログラムは、サイレントまたは無人モードで実行する必要があります。  
 
--   Non deve dare inizio autonomamente a un riavvio. Il software deve richiedere un riavvio usando il codice di riavvio standard, ovvero un codice di uscita 3010. Ciò garantisce che il passaggio della sequenza di attività gestirà correttamente il riavvio. Se il software restituisce un codice di uscita 3010, il motore della sequenza di attività sottostante eseguirà il riavvio. Dopo il riavvio, la sequenza di attività continuerà automaticamente.  
+-   自動的に再起動を開始させてはいけません。 ソフトウェアは、標準再起動コードの 3010 終了コードを使用して再起動を要求する必要があります。 これにより、確実にタスク シーケンス ステップで再起動が正しく処理されるようになります。 ソフトウェアが 3010 終了コードを返さない場合は、基本となるタスク シーケンス エンジンが再起動を実行します。 再起動後にタスク シーケンスが自動的に続行されます。  
 
- I programmi che usano l'opzione **Esegui prima un altro programma** per installare un programma dipendente non sono supportati durante la distribuzione di un sistema operativo. Se l'opzione **Esegui prima un altro programma** è abilitata per il software e il programma dipendente è già stato eseguito nel computer di destinazione, il programma dipendente verrà eseguito e la sequenza di attività continuerà. Se tuttavia il programma dipendente non è già stato eseguito nel computer di destinazione, il passaggio della sequenza di attività avrà esito negativo.  
+ 依存プログラムのインストールに [ **別のプログラムを最初に実行する** ] オプションを使用するプログラムは、オペレーティング システムの展開ではサポートされていません。 ソフトウェアで [ **別のプログラムを最初に実行する** ] が有効で、依存プログラムが既に対象のコンピューターで実行されている場合は、依存するプログラムは実行され、タスク シーケンスは続行されます。 ただし、依存プログラムが対象のコンピューターでまだ実行されていないと、タスク シーケンスは失敗します。  
 
 > [!NOTE]  
->  Il sito di amministrazione centrale non dispone dei criteri di configurazione del client necessari per abilitare l'agente di distribuzione software durante l'esecuzione della sequenza di attività. Quando si creano supporti autonomi per una sequenza di attività in un sito di amministrazione centrale e la sequenza di attività include il passaggio **Installa pacchetto** , è possibile che nel file CreateTsMedia.log venga visualizzato il seguente errore:  
+>  中央管理サイトには、タスク シーケンスの実行中に、ソフトウェアの配布エージェントを有効にするために必要なクライアント構成ポリシーがありません。 中央管理サイトのタスク シーケンス用にスタンドアロン メディアを作成し、タスク シーケンスに [ **パッケージのインストール** ] ステップが含まれる場合、CreateTsMedia.log ファイルに次のエラーが表示される場合があります。  
 >   
 >  `"WMI method SMS_TaskSequencePackage.GetClientConfigPolicies failed (0x80041001)"`  
 >   
->  Per un supporto autonomo che include il passaggio Installa pacchetto, è necessario creare il supporto autonomo in un sito primario in cui l'agente di distribuzione software abilitato oppure aggiungere un passaggio **Esegui riga di comando** dopo **Imposta Windows e ConfigMgr** e prima del primo passaggio **Installa pacchetto** . Il passaggio **Esegui riga di comando** esegue un comando WMIC per abilitare l'agente di distribuzione software prima dell'esecuzione del primo passaggio Installa pacchetto. È possibile usare quanto segue nel passaggio della sequenza di attività **Esegui riga di comando** :  
+>  [パッケージのインストール] ステップを含むスタンドアロン メディアの場合、ソフトウェアの配布エージェントが有効なプライマリ サイトにスタンドアロン メディアを作成するか、[ **Windows と ConfigMgr のセットアップ** ] ステップの後、[ **パッケージのインストール** ] ステップの前に [ **コマンド ラインの実行** ] ステップを追加する必要があります。 [ **コマンド ラインの実行** ] ステップでは、最初の [パッケージのインストール] ステップを実行する前に、ソフトウェアの配布エージェントを有効にする WMIC コマンドを実行します。 [ **コマンド ラインの実行** ] タスク シーケンス ステップでは、次のコマンド ラインを使用できます。  
 >   
->  **Riga di comando**: **WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE**  
+>  **コマンド ライン**: **WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE**  
 >   
->  Per altre informazioni sulla creazione di supporti autonomi, vedere [Create stand-alone media](../deploy-use/create-stand-alone-media.md) (Creare supporti autonomi).  
+>  スタンドアロン メディアの作成の詳細については、「[スタンドアロン メディアの作成](../deploy-use/create-stand-alone-media.md)」を参照してください。  
 
- Questo passaggio della sequenza di attività può essere eseguito solo in un sistema operativo standard. Non può essere eseguito in Windows PE.  
+ このタスク シーケンス ステップは、標準のオペレーティング システムでのみ実行できます。 Windows PE では実行できません。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Installa un solo pacchetto software**  
- Questa impostazione specifica un pacchetto software di Configuration Manager. Il passaggio attenderà fino al completamento dell'installazione.  
+ **ソフトウェア パッケージを 1 つだけインストールする**  
+ この設定では、Configuration Manager ソフトウェア パッケージを指定します。 ステップはインストールが完了するまでは開始されません。  
 
- **Installa i pacchetti software in base all'elenco di variabili dinamiche**  
- Questa impostazione specifica il nome di base per un set di variabili della sequenza di attività definite per una raccolta o per un computer. Queste variabili specificano i pacchetti che verranno installati per tale raccolta o computer. Ogni nome di variabile comprende il nome base comune e un suffisso numerico che inizia con 001. Il valore di ogni variabile deve includere un ID pacchetto e il nome del software separati da due punti.  
+ **動的な変数一覧に従ってソフトウェア パッケージをインストールする**  
+ この設定は、コレクションまたはコンピューター用に定義された一連のタスク シーケンス変数のベース名を指定します。 これらの変数はそのコレクションまたはコンピューター用にインストールされるパッケージを指定します。 各変数名は、共通のベース名と「001」で始まる数字のサフィックスで構成されます。 各変数の値にはパッケージ ID およびソフトウェアの名前をコロンで区切って含んでいる必要があります。  
 
- Per installare un software tramite un elenco di variabili dinamiche, è necessario abilitare l'impostazione seguente nella scheda **Avanzate** della finestra di dialogo **Proprietà** del pacchetto: **Consenti l'installazione di questo programma dalla sequenza di attività Installa pacchetto senza che venga distribuito**  
+ 動的な変数一覧を使用してインストールされるソフトウェアでは、パッケージの [**プロパティ**] ダイアログ ボックスの [**詳細設定**] タブで [**このソフトウェアを展開しないで、ソフトウェアのインストール タスク シーケンスからこのプログラムをインストールする**] を有効にする必要があります。  
 
 > [!NOTE]  
->  Non è possibile installare pacchetti software usando un elenco dinamico di variabili per distribuzioni con supporti autonomi.  
+>  スタンドアロン メディアによる展開では動的な変数一覧を使用してソフトウェア パッケージをインストールすることはできません。  
 
- Ad esempio, per installare un singolo pacchetto software tramite una variabile della sequenza di attività denominata AA001, è necessario specificare la variabile seguente:  
+ たとえば、AA001 というタスク シーケンス変数を使用して 1 つのソフトウェア パッケージをインストールするには、次の変数を指定します。  
 
-|Nome variabile|Valore variabile|  
+|変数名|変数値|  
 |-------------------|--------------------|  
 |AA001|CEN00054:Install|  
 
- Per installare tre pacchetti software, è necessario specificare le variabili seguenti:  
+ 3 つのソフトウェア パッケージをインストールするには、次の変数を指定します。  
 
-|Nome variabile|Valore variabile|  
+|変数名|変数値|  
 |-------------------|--------------------|  
 |AA001|CEN00054:Install|  
-|AA002|CEN00107:Install Silent|  
+|AA002|Package CEN00107:Install Silent|  
 |AA003|CEN00031:Install|  
 
- Le condizioni seguenti determineranno le applicazioni installate:  
+ インストールには次の条件が影響します。  
 
--   Se il valore di una variabile non viene creato con il formato corretto o se non specifica un ID e un nome applicazione validi, l'installazione del software avrà esito negativo.  
+-   変数の値が正しい形式で作成されていない場合や、有効なアプリケーション ID と名前が指定されていない場合は、ソフトウェアのインストールは失敗します。  
 
--   Se l'ID del pacchetto include caratteri minuscoli, l'installazione del software avrà esito negativo.  
+-   パッケージ ID に小文字が含まれていると、そのソフトウェアのインストールは失敗します。  
 
--   Se non vengono individuate variabili con il nome di base specificato e con il suffisso "001", non verrà installato alcun pacchetto e la sequenza di attività continuerà.  
+-   指定された基本名とサフィックス "001" を持つ変数がない場合は、パッケージはインストールされず、タスク シーケンスは続行されます。  
 
- **Se l'installazione di un pacchetto software non riesce, continuare con l'installazione degli altri pacchetti dell'elenco**  
- Questa impostazione specifica che il passaggio procederà in caso di errore di installazione di un singolo pacchetto software. Se si specifica questa impostazione, la sequenza di attività continuerà indipendentemente da eventuali errori di installazione restituiti. Se non si specifica questa impostazione e si verifica un errore di installazione, il passaggio della sequenza di attività si interromperà immediatamente.  
+ **ソフトウェア パッケージのインストールに失敗した場合に、一覧にある他のパッケージのインストールを続行する**  
+ この設定は個々のソフトウェア パッケージのインストールが失敗してもステップを続行することを指定します。 この設定が指定されると、インストールのエラーが発生したとしても、タスク シーケンスは続行されます。 これが指定されておらず、インストールが失敗すると、タスク シーケンス ステップは即座に終了します。  
 
-##  <a name="BKMK_InstallSoftwareUpdates"></a> Installa aggiornamenti software  
- Usare il passaggio **Installa aggiornamenti software** della sequenza di attività per installare aggiornamenti software nel computer di destinazione. Il computer di destinazione viene valutato alla ricerca di aggiornamenti software applicabili solo in corrispondenza con l'esecuzione di questo passaggio della sequenza di attività, A questo punto il computer di destinazione viene valutato per aggiornamenti software come un qualsiasi altro client gestito da Configuration Manager. In particolare, questo passaggio installa solo gli aggiornamenti software destinati a raccolte di cui il computer è attualmente membro.  
+##  <a name="BKMK_InstallSoftwareUpdates"></a> ソフトウェア更新プログラムのインストール  
+ ソフトウェア更新プログラムを対象コンピューターにインストールするには、[ **ソフトウェア更新プログラムのインストール** ] タスク シーケンスのステップを使用します。 このタスク シーケンス ステップが実行されるまで、対象のコンピューターは適用可能なソフトウェア更新プログラムが評価されません。 実行されると、インストール先のコンピューターでは、Configuration Manager で管理されている他のクライアントと同様に、ソフトウェアの更新状態が評価されます。 特に、このステップは、コンピューターが現在メンバーであるコレクションを対象としたソフトウェア更新プログラムのみをインストールします。  
 >  [!IMPORTANT]
->Per migliori prestazioni con il passaggio della sequenza di attività Installa aggiornamenti software è consigliabile installare l'ultima versione dell'agente Windows Update.
->* Per Windows 7, vedere l'[articolo della Knowledge Base 3161647](https://support.microsoft.com/kb/3161647).
->* Per Windows 8, vedere l'[articolo della Knowledge Base 3163023](https://support.microsoft.com/kb/3163023).
+>ソフトウェア更新プログラムのインストール タスク シーケンス ステップを使用する場合は、パフォーマンスをより向上させるために、Windows Update エージェントの最新バージョンをインストールすることを強くお勧めします。
+>* Windows 7 の場合は、[サポート技術情報 3161647](https://support.microsoft.com/kb/3161647) をご覧ください。
+>* Windows 8 の場合は、[サポート技術情報 3163023](https://support.microsoft.com/kb/3163023) をご覧ください。
 
- Questo passaggio della sequenza di attività può essere eseguito solo in un sistema operativo standard. Non può essere eseguito in Windows PE. Per informazioni sulle variabili della sequenza di attività per questa azione della sequenza di attività, vedere [Install Software Updates Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_InstallSoftwareUpdates).
+ このタスク シーケンス ステップは、標準のオペレーティング システムでのみ実行できます。 Windows PE では実行できません。 このタスク シーケンス アクション用のタスク シーケンス変数の詳細については、「 [Install Software Updates Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_InstallSoftwareUpdates)」を参照してください。
 
  > [!NOTE]
- > È possibile usare le variabili SMSTSMPListRequestTimeoutEnabled e SMSTSMPListRequestTimeout predefinite per abilitare e specificare quanti millisecondi una sequenza di attività deve attendere prima di riprovare a installare un'applicazione o un aggiornamento software se non è riuscita a recuperare l'elenco dei punti di gestione dai servizi di posizione. Per altre informazioni, vedere [Variabili predefinite della sequenza di attività](task-sequence-built-in-variables.md).
+ > SMSTSMPListRequestTimeoutEnabled および SMSTSMPListRequestTimeout 組み込み変数を使用して、タスク シーケンスでロケーション サービスから管理ポイント一覧を取得できなかった場合に、アプリケーションまたはソフトウェア更新プログラムのインストールを再試行するまでの待ち時間をミリ秒単位で有効にするか、指定できます。 組み込みのタスク シーケンス変数の詳細については、「[タスク シーケンス組み込み変数](task-sequence-built-in-variables.md)」を参照してください。
 
 > [!NOTE]
->Nella scheda Opzioni è possibile configurare questa sequenza di attività per eseguire altri tentativi se il computer si riavvia in modo imprevisto. Ad esempio, l'installazione di un aggiornamento software che riavvia automaticamente il computer. A partire da Configuration Manager 1602, è possibile configurare la variabile SMSTSWaitForSecondReboot per specificare quanti secondi una sequenza di attività deve restare in pausa dopo il riavvio del computer durante l'installazione degli aggiornamenti software. Per altre informazioni, vedere [Variabili predefinite della sequenza di attività](task-sequence-built-in-variables.md).
+>[オプション] タブでは、コンピューターが予期せず再起動した場合に再試行するようこのタスク シーケンスを構成できます。 たとえば、コンピューターを自動的に再起動するソフトウェア更新プログラムのインストールなどです。 Configuration Manager の 1602 以降では、SMSTSWaitForSecondReboot 変数を構成して、ソフトウェア更新プログラムをインストールするときにコンピューターを再起動した後、タスク シーケンスを何秒間一時停止させるかを指定できます。 組み込みのタスク シーケンス変数の詳細については、「[タスク シーケンス組み込み変数](task-sequence-built-in-variables.md)」を参照してください。
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare di ripetere questo passaggio se il computer si riavvia in modo imprevisto. È anche possibile specificare la frequenza di tentativi da eseguire in seguito a un riavvio.  
+-   指定すると、コンピューターが予期せず再起動した場合、このステップを再試行します。 再起動後に再試行する回数を指定することもできます。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Necessario per l'installazione - Solo aggiornamenti software obbligatori**  
- Selezionare questa opzione per installare tutti gli aggiornamenti software contrassegnati in Configuration Manager come obbligatori per i computer di destinazione che ricevono la sequenza di attività. Per l'installazione degli aggiornamenti software obbligatori sono previste scadenze definite dagli amministratori.  
+ **インストールが必要 - 必須のソフトウェア更新プログラムのみ**  
+ Configuration Manager 内で必須フラグが付いているソフトウェア更新プログラムすべてを、タスク シーケンス実行先コンピューターにインストールするには、このオプションを選択します。 必須のソフトウェアの更新には管理者が定義したインストール期限があります。  
 
- **Disponibile per l'installazione - Tutti gli aggiornamenti software**  
- Selezionare questa opzione per installare tutti gli aggiornamenti software disponibili che fanno riferimento alla raccolta di Configuration Manager che riceverà la sequenza di attività. Tutti gli aggiornamenti software disponibili verranno installati nei computer di destinazione.  
+ **インストールが可能 - すべてのソフトウェア更新プログラム**  
+ このオプションを選択して、タスク シーケンスを受信する Configuration Manager のコレクションを対象にしている利用可能なソフトウェアのすべての更新をインストールします。 利用可能なすべてのソフトウェア更新プログラムが、対象コンピューターにインストールされます。  
 
- **Valuta gli aggiornamenti software dai risultati di analisi memorizzati nella cache**  
-A partire da Configuration Manager versione 1606, è possibile eseguire un'analisi completa degli aggiornamenti software anziché usare i risultati di analisi memorizzati nella cache. Per impostazione predefinita, la sequenza di attività usa i risultati memorizzati nella cache. È possibile deselezionare la casella di controllo per fare in modo che il client si connetta al punto di aggiornamento software per elaborare e scaricare il catalogo degli aggiornamenti software più recente. È possibile scegliere questa opzione quando si usa una sequenza di attività per [acquisire e creare l'immagine di un sistema operativo](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md) in cui si prevedono numerosi aggiornamenti software, in particolare aggiornamenti con dipendenze, ovvero che richiedono l'installazione di X per poter usare Y. Se si deseleziona questa impostazione e si distribuisce la sequenza di attività in un numero elevato di client, i client si connetteranno tutti contemporaneamente al punto di aggiornamento software. Ciò potrebbe comportare problemi di prestazioni durante il processo e il download del catalogo. Nella maggior parte dei casi, è consigliabile usare l'impostazione predefinita.
+ **キャッシュされたスキャン結果からのソフトウェア更新プログラムの評価**  
+Configuration Manager バージョン 1606 以降では、キャッシュされたスキャン結果を使う代わりに、ソフトウェアの更新プログラムのフル スキャンを実行するオプションがあります。 既定では、タスク シーケンスは、キャッシュされた結果を使用します。 チェック ボックスをオフにすれば、クライアントをソフトウェアの更新ポイントに接続し、最新のソフトウェア更新プログラム カタログを処理してダウンロードさせることができます。 このオプションは、タスク シーケンスを使って[オペレーティング システム イメージをキャプチャして構築する](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md)場合に選択できます。これは、多数のソフトウェア更新プログラムがあり、特に依存関係がある (X をインストールして初めて Y が該当すると判明する) ものが多いことがわかっている場合です。 この設定をオフにし、多数のクライアントにタスク シーケンスを展開すると、それらのすべてのクライアントが同時にソフトウェアの更新ポイントに接続することになります。 この場合、カタログの処理とダウンロードの間にパフォーマンスの問題が起きる可能性があります。 ほとんどの場合は、既定の設定を使うことをお勧めします。
 
-In Configuration Manager versione 1606 è stata inserita la nuova variabile di sequenza di attività SMSTSSoftwareUpdateScanTimeout che consente di controllare il timeout dell'analisi degli aggiornamenti software durante il passaggio della sequenza di attività Installa aggiornamenti software. Il valore predefinito è 30 minuti. Per altre informazioni, vedere [Variabili predefinite della sequenza di attività](task-sequence-built-in-variables.md).
+新しいタスク シーケンス変数 SMSTSSoftwareUpdateScanTimeout は、Configuration Manager バージョン 1606 で導入されたものです。この変数では、タスク シーケンスの「ソフトウェア更新プログラム インストール」ステップの間に、ソフトウェア更新プログラムのスキャンのタイムアウトを制御できます。 既定値は 30 分です。 組み込みのタスク シーケンス変数の詳細については、「[タスク シーケンス組み込み変数](task-sequence-built-in-variables.md)」を参照してください。
 
 
-##  <a name="BKMK_JoinDomainorWorkgroup"></a> Aggiunta a dominio o gruppo di lavoro  
- Usare il passaggio **Aggiunta a dominio o gruppo di lavoro** della sequenza di attività per aggiungere il computer di destinazione a un gruppo di lavoro o a un dominio.  
+##  <a name="BKMK_JoinDomainorWorkgroup"></a> ドメインまたはワークグループへの参加  
+ 対象コンピューターをワークグループまたはドメインに追加するには、[ **ドメインまたはワークグループへの参加** ] タスク シーケンス ステップを使用します。  
 
- Questo passaggio della sequenza di attività può essere eseguito solo in un sistema operativo standard. Non può essere eseguito in Windows PE. Per informazioni sulle variabili della sequenza di attività per questa azione della sequenza di attività, vedere [Join Domain or Workgroup Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_JoinDomainWorkgroup).  
+ このタスク シーケンス ステップは、標準のオペレーティング システムでのみ実行できます。 Windows PE では実行できません。 このタスク シーケンス アクション用のタスク シーケンス変数の詳細については、「 [Join Domain or Workgroup Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_JoinDomainWorkgroup)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Aggiunta a un gruppo di lavoro**  
- Selezionare questa opzione per aggiungere il computer di destinazione al gruppo di lavoro specificato. Se il computer è attualmente un membro di un dominio, la selezione di questa opzione provocherà il riavvio del computer.  
+ **ワークグループに参加**  
+ 対象コンピューターを指定したワークグループに参加させるには、このオプションを選択します。 コンピューターが現在ドメインのメンバーである場合は、このオプションを選択するとコンピューターが再起動します。  
 
- **Aggiunta a un dominio**  
- Selezionare questa opzione per aggiungere il computer di destinazione al dominio specificato.  
+ **ドメインに参加**  
+ 対象コンピューターを指定したドメインに参加させるには、このオプションを選択します。  
 
- Facoltativamente, immettere o selezionare un'unità organizzativa nel dominio specificato a cui aggiungere il computer. Se il computer è attualmente un membro di un altro dominio o un altro gruppo di lavoro, il computer verrà riavviato. Se il computer è già membro di un'altra unità organizzativa, Servizi di dominio Active Directory non permette di cambiare l'unità organizzativa e questa impostazione verrà ignorata.  
+ 必要に応じて、コンピューターが参加する、指定したドメインの組織単位 (OU) を入力または参照して指定します。 コンピューターが他のドメインまたはワークグループのメンバーである場合は、このオプションを選択するとコンピューターが再起動します。 コンピューターが既に他の OU のメンバーになっている場合、Active Directory Domain Services により OU の変更がブロックされ、この設定は無視されます。  
 
- **Immettere l'account con le autorizzazioni per l'aggiunta al dominio**  
- Fare clic su **Imposta** per immettere un account e una password con autorizzazioni per l'aggiunta al dominio. L'account deve essere immesso nel formato seguente:  
+ **ドメインに参加する権限のあるアカウントを入力してください**  
+ [ **設定** ] をクリックし、ドメインに参加するためのアクセス許可を持つアカウントとパスワードを入力します。 アカウントは次の形式で入力する必要があります。  
 
- *Dominio\account*  
+ *ドメイン\アカウント*  
 
-## <a name="BKMK_PrepareConfigMgrClientforCapture"></a> Prepara client ConfigMgr per l'acquisizione  
-Usare il passaggio **Prepara client ConfigMgr per l'acquisizione** per rimuovere il client di Configuration Manager o configurarlo nel computer di riferimento e prepararlo per l'acquisizione nell'ambito del processo di creazione dell'immagine.
+## <a name="BKMK_PrepareConfigMgrClientforCapture"></a> ConfigMgr クライアントのキャプチャの準備  
+イメージ作成プロセスでのキャプチャの準備として、参照コンピューター上の Configuration Manager クライアントを削除したり、クライアントを構成したりするには、**[ConfigMgr クライアントのキャプチャの準備]** ステップを使います。
 
-A partire da Configuration Manager versione 1610 questo passaggio rimuove completamente il client di Configuration Manager, invece di rimuovere solo le informazioni chiave. Quando la sequenza di attività distribuisce l'immagine del sistema operativo acquisita, verrà installato ogni volta un nuovo client di Configuration Manager.  
+Configuration Manager バージョン 1610 以降の ConfigMgr クライアントの準備手順では、キー情報だけではなく、Configuration Manager クライアントが完全に削除されます。 タスク シーケンスでキャプチャしたオペレーティング システム イメージを展開すると、毎回新しい Configuration Manager クライアントがインストールされます。  
 
-Prima di Configuration Manager versione 1610 questo passaggio eseguiva le attività seguenti:  
+Configuration Manager バージョン 1610 より前のこの手順では、次のタスクが実行されます。  
 
--   Rimozione della sezione relativa alle proprietà di configurazione del client dal file smscfg.ini nella directory Windows. Queste proprietà includono informazioni specifiche dei client, quali il GUID di Configuration Manager e altri identificatori del client.  
+-   クライアント構成プロパティのセクションを、Windows ディレクトリ内の smscfg.ini ファイルから削除します。 このプロパティには、Configuration Manager GUID や他のクライアント識別子など、クライアント固有の情報が含まれます。  
 
--   Eliminazione di tutti i certificati della macchina di SMS e di Configuration Manager.  
+-   すべての SMS または Configuration Manager マシンの証明書を削除します。  
 
--   Eliminazione della cache del client di Configuration Manager.  
+-   Configuration Manager クライアント キャッシュを削除します。  
 
--   Cancellazione della variabile di sito assegnato per il client di Configuration Manager.  
+-   Configuration Manager クライアント用に割り当てられたサイト変数をクリアします。  
 
--   Installazione di tutti i criteri di Configuration Manager locali.  
+-   すべてのローカルの Configuration Manager ポリシーを削除します。  
 
--   Rimozione della chiave radice attendibile per il client di Configuration Manager.  
+-   Configuration Manager クライアントの信頼されたルート キーを削除します。  
 
- Questo passaggio della sequenza di attività può essere eseguito solo in un sistema operativo standard. Non può essere eseguito in Windows PE.  
+ このタスク シーケンス ステップは、標準のオペレーティング システムでのみ実行できます。 Windows PE では実行できません。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
-##  <a name="BKMK_PrepareWindowsforCapture"></a> Prepara Windows per l'acquisizione  
- Usare il passaggio **Prepara Windows per l'acquisizione** della sequenza di attività per specificare le opzioni di Sysprep da usare durante l'acquisizione di un'immagine del sistema operativo nel computer di riferimento. Questa azione della sequenza di attività esegue Sysprep e quindi riavvia il computer nell'immagine di avvio di Windows PE specificata per la sequenza di attività. Per il corretto completamento di questa azione non è necessario che il computer di riferimento sia aggiunto a un dominio.  
+##  <a name="BKMK_PrepareWindowsforCapture"></a> Windows のキャプチャの準備  
+ 参照コンピューターでオペレーティング システム イメージをキャプチャするときに使用する Sysprep オプションを指定するには、[ **Windows のキャプチャの準備** ] タスク シーケンス ステップを使用します。 このタスク シーケンスのアクションは Sysprep を実行してから、タスク シーケンスで指定した Windows PE ブート イメージにコンピューターを再起動します。 このアクションを正常に完了するには、参照コンピューターをドメインに参加させないでください。  
 
- Questo passaggio della sequenza di attività può essere eseguito solo in un sistema operativo standard. Non può essere eseguito in Windows PE. Per informazioni sulle variabili della sequenza di attività per questa azione della sequenza di attività, vedere [Prepare Windows for Capture Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_PrepareWindowsCapture).  
+ このタスク シーケンス ステップは、標準のオペレーティング システムでのみ実行できます。 Windows PE では実行できません。 このタスク シーケンス アクション用のタスク シーケンス変数の詳細については、「 [Prepare Windows for Capture Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_PrepareWindowsCapture)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Crea automaticamente l'elenco di driver di archiviazione di massa**  
- Selezionare questa opzione per fare in modo che Sysprep crei automaticamente un elenco di driver di archiviazione di massa dal computer di riferimento. Questa opzione abilita l'opzione per la creazione di driver di archiviazione di massa del file sysprep.inf nel computer di riferimento. Per altre informazioni su questa impostazione, vedere la documentazione relativa a Sysprep.  
+ **大容量記憶装置ドライバーのリストを自動作成する**  
+ このオプションをオンにすると、Sysprep によって参照コンピューターから大容量記憶装置ドライバーのリストが自動的に作成されます。 このオプションでは、参照コンピューターの sysprep.inf ファイルにある [大容量記憶装置ドライバーの作成] オプションが有効になります。 この設定の詳細については、Sysprep のドキュメントを参照してください。  
 
- **Non reimpostare il flag di attivazione**  
- Selezionare questa opzione per impedire a Sysprep di reimpostare il flag di attivazione del prodotto.  
+ **アクティブ化フラグをリセットしない**  
+ このオプションをオンにすると、Sysprep によってプロダクト アクティベーション フラグがリセットされなくなります。  
 
-##  <a name="BKMK_PreProvisionBitLocker"></a> Eseguire il pre-provisioning di BitLocker  
- Usare il passaggio **BitLocker pre-provisioning** della sequenza di attività per abilitare BitLocker in un'unità in Windows PE. Solo lo spazio su disco usato viene crittografato e pertanto i tempi di crittografia sono molto più veloci. È possibile applicare le opzioni di gestione delle chiavi usando il passaggio [Attiva BitLocker](#BKMK_EnableBitLocker) della sequenza di attività dopo l'installazione del sistema operativo. Questo passaggio può essere eseguito solo in Windows PE. Non può essere eseguito in un sistema operativo standard.  
+##  <a name="BKMK_PreProvisionBitLocker"></a> BitLocker の事前プロビジョニング  
+ Windows PE のドライブで BitLocker を有効にするには、[ **BitLocker の事前プロビジョニング** ] タスク シーケンス ステップを使用します。 使用されているドライブ領域のみが暗号化されるため、暗号化にかかる時間が大幅に短くなります。 オペレーティング システムのインストール後に [BitLocker の有効化](#BKMK_EnableBitLocker) タスク シーケンス ステップを使用することで、キー管理オプションを適用します。 このステップは Windows PE でのみ実行されます。 このステップは標準のオペレーティング システムでは実行できません。  
 
 > [!IMPORTANT]  
->  Per eseguire il pre-provisioning di BitLocker, è necessario distribuire almeno il sistema operativo Windows 7 e TPM deve essere supportato e abilitato nel computer.  
+>  BitLocker を事前プロビジョニングするには、Windows 7 以降のオペレーティング システムを展開する必要があり、対象のコンピューターで TPM がサポートされ、有効になっている必要があります。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Specificare un nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前を指定します。  
 
- **Descrizione**  
- Specificare informazioni dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報を指定します。  
 
- **Applica BitLocker all'unità specificata**  
- Specificare l'unità per cui si vuole abilitare BitLocker. Viene crittografato solo lo spazio usato sull'unità.  
+ **BitLocker を指定のドライブに適用します**  
+ BitLocker を有効にするドライブを指定します。 ドライブ上の使用領域のみが暗号化されます。  
 
- **Ignora questo passaggio per computer senza TPM o con TPM non abilitato**  
- Selezionare questa opzione per ignorare la crittografia unità quando l'hardware del computer non supporta TPM o se TPM non è abilitato. È ad esempio possibile usare questa opzione quando si distribuisce un sistema operativo in una macchina virtuale.  
+ **TPM がないか、TPM が有効ではない場合は、コンピューターでこの手順はスキップされます。**  
+ コンピューターのハードウェアが TPM をサポートしていない場合や TPM が有効でない場合にドライブの暗号化をスキップするには、このオプションを選択します。 たとえば、仮想マシンにオペレーティング システムを展開するときに、このオプションを使用することができます。  
 
-##  <a name="BKMK_ReleaseStateStore"></a> Rilascia archiviazione stati  
- Usare il passaggio **Rilascia archiviazione stati** della sequenza di attività per segnalare al punto di migrazione stato il completamento dell'azione di acquisizione o ripristino. Questo passaggio viene usato insieme ai passaggi **Richiedi archiviazione stati**, **Acquisisci stato utente**e **Ripristina stato utente** della sequenza di attività per eseguire la migrazione dei dati relativi agli stati utente usando un punto di migrazione stato e l'Utilità di migrazione stato utente (USMT, User State Migration Tool).  
+##  <a name="BKMK_ReleaseStateStore"></a> 状態ストアのリリース  
+ キャプチャ処理または復元処理が完了したことを、状態移行ポイントに通知するには、[ **状態ストアのリリース** ] タスク シーケンス ステップを使用します。 [状態ストアのリリース] タスク シーケンス ステップは、状態移行ポイントおよびユーザー状態移行ツール (USMT) を使用してユーザー状態を移行するときに、[ **状態ストアの要求**]、[ **ユーザー状態のキャプチャ**]、および [ **ユーザー状態の復元** ] の各タスク シーケンス ステップと共に使用します。  
 
- Per altre informazioni sulla gestione dello stato utente durante la distribuzione di sistemi operativi, vedere [Manage user state](../get-started/manage-user-state.md) (Gestire lo stato utente).  
+ オペレーティング システムを展開するときに、ユーザー状態の移行を管理する方法の詳細については、「[Manage user state](../get-started/manage-user-state.md)」 (ユーザー状態の管理) を参照してください。  
 
- Se è stato richiesto l'accesso al punto di migrazione stato per acquisire lo stato utente nel passaggio **Richiedi archiviazione stati**  della sequenza di attività, questo passaggio segnala al punto di migrazione stato che il processo di acquisizione è stato completato che i dati relativi allo stato utente sono disponibili per il ripristino. Il punto di migrazione stato imposta le autorizzazioni di Controllo di accesso per lo stato acquisito, in modo che sia possibile accedervi (sola lettura) solo dal computer di ripristino.  
+ **[状態ストアの要求タスク]** シーケンス ステップでユーザー状態をキャプチャするために状態移行ポイントへのアクセスを要求した場合、このステップは、キャプチャ処理が完了したこと、およびユーザー状態データが復元可能になったことを状態移行ポイントに通知します。 状態移行ポイントは、キャプチャした状態のアクセス制御許可を設定し、復元中のコンピューターからのみアクセス (読み取り専用) できるようにします。  
 
- Se è stato richiesto l'accesso a un punto di migrazione stato per ripristinare lo stato utente nel passaggio **Richiedi archiviazione stati** della sequenza di attività, questo passaggio della sequenza di attività segnalerà al punto di migrazione stato che il processo di ripristino è stato completato. A questo punto vengono attivate eventuali impostazioni di memorizzazione configurate per il punto di migrazione stato.  
+ [ **状態ストアの要求** ] タスク シーケンス手順でユーザー状態を復元するために状態移行ポイントへのアクセスを要求した場合、このタスク シーケンス ステップは、状態移行ポイントに復元プロセスが完了したことを通知します。 この時点で、状態移行ポイントに構成した保存設定がアクティブ化されます。  
 
 > [!IMPORTANT]  
->  È consigliabile impostare **Continua in caso di errori** in ogni passaggio della sequenza di attività tra il passaggio **Richiedi archiviazione stati** e il passaggio **Rilascia archiviazione stati** , in modo che ogni azione **Richiedi archiviazione stati** della sequenza di attività abbia un'azione **Rilascia archiviazione stati** corrispondente.  
+>  どの [ **状態ストアの要求** ] タスク シーケンス アクションにも一致する [ **状態ストアのリリース** ] タスク シーケンス アクションがあるように、[ **状態ストアの要求** ] ステップと [ **状態ストアのリリース** ] ステップの間の、どのタスク シーケンス ステップでも、[ **エラー時に続行する** ] を設定することをお勧めします。  
 
- Questo passaggio della sequenza di attività può essere eseguito solo in un sistema operativo standard. Non può essere eseguito in Windows PE. Per informazioni sulle variabili della sequenza di attività per questa azione della sequenza di attività, vedere [Release State Store Sequence Action Variables](task-sequence-action-variables.md#BKMK_ReleaseStateStore).  
+ このタスク シーケンス ステップは、標準のオペレーティング システムでのみ実行できます。 Windows PE では実行できません。 このタスク シーケンス アクション用のタスク シーケンス変数の詳細については、「 [Release State Store Sequence Action Variables](task-sequence-action-variables.md#BKMK_ReleaseStateStore)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
-##  <a name="BKMK_RequestStateStore"></a> Richiedi archiviazione stati  
- Usare il passaggio **Richiedi archiviazione stati** della sequenza di attività per richiedere l'accesso a un punto di migrazione stato durante l'acquisizione dello stato da un computer o il ripristino dello stato in un computer.  
+##  <a name="BKMK_RequestStateStore"></a> 状態ストアの要求  
+ コンピューターから状態をキャプチャするとき、またはコンピューターに状態を保存するときに [ **状態ストアの要求** ] タスク シーケンス ステップを使用して、状態移行ポイントへのアクセスを要求します。  
 
- Per altre informazioni sulla gestione dello stato utente durante la distribuzione di sistemi operativi, vedere [Manage user state](../get-started/manage-user-state.md) (Gestire lo stato utente).  
+ オペレーティング システムを展開するときに、ユーザー状態の移行を管理する方法の詳細については、「[Manage user state](../get-started/manage-user-state.md)」 (ユーザー状態の管理) を参照してください。  
 
- È possibile usare il passaggio **Richiedi archiviazione stati** della sequenza di attività insieme ai passaggi **Rilascia archiviazione stati**, **Acquisisci stato utente**e **Ripristina stato utente** per eseguire la migrazione dello stato del computer usando un punto di migrazione stato e l'Utilità di migrazione stato utente.  
+ [ **状態ストアの要求** ] タスク シーケンス ステップは、状態移行ポイントおよびユーザー状態移行ツール (USMT) を使用してコンピューターの状態を移行するときに、[ **状態ストアのリリース**]、[ **ユーザー状態のキャプチャ**]、および [ **ユーザー状態の復元** ] の各タスク シーケンス ステップと共に使用できます。  
 
 > [!NOTE]  
->  Se è stato appena stabilito un nuovo ruolo del sito del punto di migrazione stato, potrebbe essere necessario attendere fino a un'ora perché sia reso disponibile per l'archiviazione dello stato utente. Per rendere disponibile più rapidamente il punto di migrazione stato, è possibile modificare le impostazioni delle proprietà del punto di migrazione stato, in modo da attivare un aggiornamento del file di controllo del sito.  
+>  新しい状態移行ポイント サイトの役割 (SMP) を確立した場合は、ユーザー状態ストアで利用できるようになるまで最大 1 時間かかることがあります。 SMP が利用できるまでの時間を短縮するために、任意の状態移行ポイントのプロパティ設定を調整してサイト コントロール ファイルの更新を開始することができます。  
 
- Questo passaggio della sequenza di attività può essere eseguito in un sistema operativo standard e in Windows PE per USMT offline. Per informazioni sulle variabili della sequenza di attività per questa azione della sequenza di attività, vedere [Request State Store Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_RequestState).  
+ このタスク シーケンス ステップは、標準のオペレーティング システムおよびオフライン USMT の Windows PE に対して実行できます。 このタスク シーケンス アクションのタスク シーケンス変数については、「 [Request State Store Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_RequestState)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Acquisisci stato dal computer**  
- Individua un punto di migrazione stato che soddisfa i requisiti minimi definiti nelle impostazioni corrispondenti, ovvero numero massimo di client e quantità minima di spazio disponibile su disco, ma non assicura che sia disponibile spazio sufficiente al momento della migrazione dello stato. Se si seleziona questa opzione, verrà richiesto l'accesso al punto di migrazione stato per permettere l'acquisizione dello stato utente e delle impostazioni da un computer.  
+ **状態をコンピューターからキャプチャする**  
+ 状態移行ポイントの設定 (最大クライアント数や最小空きディスク領域) で構成したとおりの最小要件を満たす状態移行ポイントを検索しますが、状態移行時に十分な領域が利用できることは保証されません。 ユーザー状態および設定をコンピューターからキャプチャするために、このオプションを選択して、状態移行ポイントへのアクセスを要求します。  
 
- Se nel sito di Configuration Manager sono abilitati più punti di migrazione stato, questo passaggio della sequenza di attività individua un punto di migrazione stato con spazio su disco disponibile eseguendo una query nel punto di gestione del sito per individuare un elenco di punti di migrazione stato, e valutando poi ogni punto fino a individuare quello che soddisfa i requisiti minimi.  
+ Configuration Manager サイトに有効な状態移行ポイントが複数存在する場合、このタスク シーケンス手順では、利用可能なディスク領域を持つ状態移行ポイントが検索されます。この検索は、サイトの管理ポイントに状態移行ポイントの一覧を要求するクエリを送信し、最小要件を満たす状態移行ポイントが検索されるまで状態移行ポイントを評価することにより行われます。  
 
- **Ripristina stato da un altro computer**  
- Selezionare questa opzione per richiedere l'accesso a un punto di migrazione stato per permettere il ripristino delle impostazioni e dello stato utente acquisiti in precedenza in un computer di destinazione.  
+ **状態を他のコンピューターから復元する**  
+ 以前にキャプチャされたユーザー状態および設定を対象のコンピューター上に復元するために、このオプションを選択して、状態移行ポイントへのアクセスを要求します。  
 
- Se nel sito di Configuration Manager sono presenti più punti di migrazione stato, questo passaggio della sequenza di attività individua il punto di migrazione stato con lo stato computer archiviato per il computer di destinazione.  
+ Configuration Manager サイトに複数の状態移行ポイントが存在する場合、このタスク シーケンス ステップは、対象のコンピューター用に保存されたコンピューターの状態を持つ状態移行ポイントを検索します。  
 
- **Numero di tentativi**  
- Numero di tentativi effettuati da questo passaggio della sequenza di attività per trovare un punto di migrazione stato appropriato prima di restituire un esito negativo.  
+ **再試行回数**  
+ このタスク シーケンス ステップ手順が適切な状態移行ポイントを検索する試行回数です。この回数を超えるとこのステップは失敗します。  
 
- **Intervallo tra tentativi (in secondi)**  
- Quantità di tempo, in secondi, di attesa da parte del passaggio della sequenza di attività prima di effettuare nuovi tentativi.  
+ **再試行の待ち時間 (秒)**  
+ タスク シーケンス ステップが再試行を行うまで待機する時間 (秒単位) です。  
 
- **Se l'account del computer non riesce a connettersi all'archiviazione stati, utilizzare l'account di accesso di rete**  
- Specifica che verranno usate le credenziali dell'account di accesso alla rete di Configuration Manager per la connessione al punto di migrazione stato se il client di Configuration Manager non accede all'archiviazione stati del punto di migrazione stato usando l'account del computer. Questa opzione è meno sicura, perché altri computer potrebbero usare l'account di accesso alla rete per accedere ai dati archiviati, ma potrebbe essere necessaria se il computer di destinazione non fa parte del dominio.  
+ **コンピューター アカウントで状態ストアに接続できない場合、ネットワーク アクセス アカウントを使用する**  
+ Configuration Manager クライアントがコンピューター アカウントを使用して SMP 状態ストアにアクセスできない場合、Configuration Manager ネットワーク アクセス アカウント資格情報を使用して状態移行ポイントに接続されるように指定します。 他のコンピューターがネットワーク アクセス アカウントを使用して保存された状態にアクセスできる可能性があるため、このオプションは安全性が低くなりますが、対象コンピューターがドメインに参加していない場合はこのオプションが必要になる場合があります。  
 
-##  <a name="BKMK_RestartComputer"></a> Riavvia computer  
- Usare il passaggio **Riavvia computer** della sequenza di attività per riavviare il computer che esegue la sequenza di attività. Dopo il riavvio, il computer passerà automaticamente al passaggio successivo della sequenza di attività.  
+##  <a name="BKMK_RestartComputer"></a> コンピューターの再起動  
+ [ **コンピューターの再起動** ] タスク シーケンス ステップを使用して、タスク シーケンスを実行しているコンピューターを再起動します。 コンピューターは再起動後、タスク シーケンスを次の手順から自動的に続行します。  
 
- Questo passaggio può essere eseguito in un sistema operativo standard o in Windows PE. Per altre informazioni sulle variabili della sequenza di attività per questa azione della sequenza di attività, vedere [Variabili di azione della sequenza di attività Riavvia computer](task-sequence-action-variables.md#BKMK_RestartComputer).  
+ このステップは、標準のオペレーティング システムでも、Windows PE でも実行できます。 このタスク シーケンス アクションのタスク シーケンス変数の詳細については、「[Restart Computer Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_RestartComputer)」 (コンピューターの再起動タスク シーケンス アクション変数) を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **L'immagine d'avvio assegnata a questa sequenza attività**  
- Selezionare questa opzione per il computer di destinazione in modo che usi l'immagine di avvio assegnata alla sequenza di attività. L'immagine di avvio verrà usata per eseguire i passaggi successivi della sequenza di attività in Windows PE.  
+ **このタスク シーケンスに割り当てられているブート イメージ**  
+ タスク シーケンスに割り当てられているブート イメージを対象コンピューターで使用するには、このオプションを選択します。 このブート イメージは、Windows PE で実行されるそれ以降のタスク シーケンス ステップを実行するのに使用されます。  
 
- **Il sistema operativo predefinito attualmente installato**  
- Selezionare questa opzione per il computer di destinazione per il riavvio nel sistema operativo installato.  
+ **現在インストールされている既定のオペレーティング システム**  
+ インストールされているオペレーティング システムで対象コンピューターを起動するには、このオプションを選択します。  
 
- **Invia notifica all'utente prima del riavvio**  
- Selezionare questa opzione per visualizzare una notifica all'utente in merito al riavvio del computer di destinazione. Questa opzione è selezionata per impostazione predefinita.  
+ **再起動する前にユーザーに通知する**  
+ 対象コンピューターが再起動されるという通知をユーザーに表示するには、このオプションを選択します。 既定では、このオプションはオンです。  
 
- **Messaggio di notifica**  
- Immettere un messaggio di notifica che viene visualizzato all'utente prima del riavvio del computer di destinazione.  
+ **通知メッセージ**  
+ 対象コンピューターの再起動前にユーザーに表示される通知メッセージを入力します。  
 
- **Timeout della visualizzazione messaggio**  
- Specificare la quantità di tempo, in secondi, che verrà concessa all'utente prima del riavvio del computer di destinazione. La quantità di tempo predefinita è sessanta (60) secondi.  
+ **メッセージ表示のタイムアウト**  
+ 対象コンピューターが再起動されるまでにユーザーに与えられる時間を秒単位で指定します。 既定の時間は 60 秒です。  
 
-##  <a name="BKMK_RestoreUserState"></a> Ripristina stato utente  
- Usare il passaggio **Ripristina stato utente** della sequenza di attività per inizializzare l'Utilità di migrazione stato utente e ripristinare lo stato utente e le impostazioni nel computer di destinazione. Questo passaggio della sequenza di attività viene usato insieme al passaggio **Acquisisci stato utente** .  
+##  <a name="BKMK_RestoreUserState"></a> ユーザー状態の復元  
+ [ **ユーザー状態の復元** ] タスク シーケンス ステップを使用すると、ユーザー状態移行ツール (USMT) を起動して、対象コンピューターにユーザー状態と設定を復元できます。 このタスク シーケンス ステップは、[ **ユーザー状態のキャプチャ** ] タスク シーケンス ステップと共に使用します。  
 
- Per altre informazioni sulla gestione dello stato utente durante la distribuzione di sistemi operativi, vedere [Manage user state](../get-started/manage-user-state.md) (Gestire lo stato utente).  
+ オペレーティング システムを展開するときに、ユーザー状態の移行を管理する方法の詳細については、「[Manage user state](../get-started/manage-user-state.md)」 (ユーザー状態の管理) を参照してください。  
 
- È anche possibile usare il passaggio **Ripristina stato utente** della sequenza di attività insieme ai passaggi **Richiedi archiviazione stati **e** Rilascia archiviazione stati** se si vogliono salvare le impostazioni dello stato o ripristinare tali impostazioni da un punto di migrazione stato nel sito di Configuration Manager. In USMT 3.0 e versioni successive questa opzione decrittografa sempre l'archiviazione stati USMT usando una chiave di crittografia generata e gestita da Configuration Manager.  
+ Configuration Manager サイトの状態移行ポイントに状態設定を保存したり、状態移行ポイントから設定を復元したりする場合は、[**ユーザー状態の復元**] タスク シーケンス ステップを、[**状態ストアの要求**] タスク シーケンス ステップおよび [**状態ストアのリリース**] タスク シーケンス ステップと共に使用できます。 USMT 3.0 以降では、このオプションにより Configuration Manager が生成および管理する暗号化キーを使った USMT 状態ストアの解読が必ず行われます。  
 
- Il passaggio **Ripristina stato utente** della sequenza di attività fornisce il controllo su un sottoinsieme limitato delle opzioni USMT più usate. È possibile specificare opzioni aggiuntive da riga di comando usando la variabile OSDMigrateAdditionalRestoreOptions della sequenza di attività.  
+ [ **ユーザー状態の復元** ] タスク シーケンス ステップにより、最も一般的に使用されているオプションの限定されたサブセットが制御できます。 その他のコマンド ライン オプションは、OSDMigrateAdditionalRestoreOptions タスク シーケンス 変数を使用して指定できます。  
 
 > [!IMPORTANT]  
->  Se si usa il passaggio **Ripristina stato utente** della sequenza di attività per una finalità non correlata a uno scenario di distribuzione del sistema operativo, aggiungere il passaggio [Riavvia computer](#BKMK_RestartComputer) della sequenza di attività immediatamente dopo il passaggio **Ripristina stato utente** .  
+>  オペレーティング システムの展開シナリオとは関係なく **[ユーザー状態の復元]** タスク シーケンス ステップを使用している場合は、 [[ユーザー状態の復元]](#BKMK_RestartComputer) タスク シーケンス ステップの直後に **Restart Computer** タスク シーケンス ステップを追加してください。  
 
- Questo passaggio della sequenza di attività può essere eseguito solo in un sistema operativo standard. Non può essere eseguito in Windows PE. Per informazioni sulle variabili della sequenza di attività per questa azione della sequenza di attività, vedere [Restore User State Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_RestoreUserState).  
+ このタスク シーケンス ステップは、標準のオペレーティング システムでのみ実行できます。 Windows PE では実行できません。 このタスク シーケンス アクションのタスク シーケンス変数については、「 [Restore User State Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_RestoreUserState)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Specifica un nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前を指定します。  
 
- **Descrizione**  
- Specifica informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ この手順で実行される操作の詳細情報を指定します。  
 
- **Pacchetto degli strumenti di migrazione dello stato utente**  
- Immettere il pacchetto Configuration Manager che contiene la versione di USMT che deve essere usata da questo passaggio durante il ripristino dello stato e delle impostazioni utente. Questo pacchetto non richiede alcun programma. Quando viene eseguito il passaggio della sequenza di attività, verrà usata la versione di USMT disponibile nel pacchetto specificato. Specificare un pacchetto contenente la versione a 32 bit o x64 di USMT, in base all'architettura del sistema operativo in cui si ripristina lo stato.  
+ **ユーザー状態移行ツール パッケージ**  
+ この手順でユーザー状態と設定を復元するときに使用する USMT のバージョンを含む Configuration Manager パッケージを入力します。 このパッケージにはプログラムは必要ありません。 タスク シーケンス ステップが実行されると、タスク シーケンスは、指定したパッケージの中からそのバージョンの USMT を使用します。 状態を復元するオペレーティング システムのアーキテクチャに応じて、32 ビット バージョンまたは 64 ビット バージョンの USMT を含むパッケージを指定します。  
 
- **Ripristina tutti i profili utente acquisiti con le opzioni standard**  
- Ripristina i profili utente acquisiti con le opzioni standard. Per personalizzare le opzioni da ripristinare, selezionare **Personalizza modalità di acquisizione dei profili utente**.  
+ **キャプチャしたすべてのユーザー プロファイルを標準オプションを使用して復元する**  
+ キャプチャしたユーザー プロファイルを標準オプションを使用して復元します。 復元するオプションをカスタマイズするには、[ **ユーザー プロファイルのキャプチャ方法をカスタマイズする**] を選択します。  
 
- **Personalizza le modalità di ripristino dei profili utente**  
- Permette di personalizzare i file da ripristinare nel computer di destinazione. Fare clic su **File** per specificare i file di configurazione nel pacchetto USMT da usare per il ripristino dei profili utente. Per aggiungere un file di configurazione, immettere il nome del file nella casella **Nome file** , quindi fare clic su **Aggiungi**. I file di configurazione che verranno usati per l'operazione sono elencati nel riquadro File. Il file con estensione xml specificato definisce il file utente che verrà ripristinato.  
+ **ユーザー プロファイルの復元方法をカスタマイズする**  
+ 対象のコンピューターに復元するファイルをカスタマイズできます。 [ **ファイル** ] をクリックして、ユーザー プロファイルの復元に使用する、USMT パッケージ内の構成ファイルを指定します。 構成ファイルを追加するには、[ **ファイル名** ] ボックスにファイル名を入力し、[ **追加**] をクリックします。 [ファイル] ペインに、操作に使用される構成ファイルが一覧表示されます。 .xml ファイルを指定することによって、どのユーザー ファイルを復元するかが定義されます。  
 
- **Ripristina profili utente del computer locale**  
- Ripristina i profili utente del computer locale, ovvero non gli utenti di dominio. Sarà necessario assegnare nuove password agli account utente locali ripristinati, poiché non è possibile eseguire la migrazione delle password originali degli account utente locali. Immettere la nuova password nella casella **Password** e confermare la password nella casella **Conferma password** .  
+ **ローカル コンピューターのユーザー プロファイルを復元する**  
+ ローカル コンピューターのユーザー (つまりドメイン ユーザー以外) プロファイルを復元します。 元のローカル ユーザー アカウントのパスワードは移行できないので、復元したローカル ユーザー アカウントに新しいパスワードを割り当てる必要があります。 [ **パスワード** ] ボックスに新しいパスワードを入力し、[ **パスワードの確認入力** ] ボックスに確認のために同じパスワードを入力します。  
 
- **Continua se non è possibile ripristinare dei file**  
- Continua a ripristinare lo stato utente e le impostazioni anche se non è possibile ripristinare alcuni file. Questa opzione è attivata per impostazione predefinita. Se si disabilita questa opzione e si rilevano errori durante il ripristino dei file, il passaggio della sequenza di attività verrà interrotto immediatamente con un errore e non tutti i file verranno ripristinati.  
+ **復元できないファイルがあっても続行する**  
+ 一部のファイルを復元できない場合でも、ユーザー状態と設定の復元を続行します。 既定では、このオプションは有効になっています。 このオプションを無効にし、ファイルの復元時にエラーが発生した場合は、エラー発生と同時にタスク シーケンス ステップが終了し、一部のファイルは復元されません。  
 
- **Abilita la registrazione dettagliata**  
- Abilitare questa opzione per generare informazioni di file di log più dettagliate. Durante il ripristino dello stato, il file Loadstate.log viene generato e archiviato per impostazione predefinita nella cartella log della sequenza di attività nella cartella \windows\system32\ccm\logs.  
+ **詳細ログ記録を有効にする**  
+ 詳細なログ ファイル情報を生成するには、このオプションを有効にします。 状態を復元すると、ログ Loadstate.log が生成され、既定では \windows\system32\ccm\logs フォルダー内にあるタスク シーケンス ログ フォルダーに保存されます。  
 
-##  <a name="BKMK_RunCommandLine"></a> Esegui riga di comando  
- Usare il passaggio **Esegui riga di comando** della sequenza di attività per eseguire una riga di comando specificata.  
+##  <a name="BKMK_RunCommandLine"></a> コマンド ラインの実行  
+ [ **コマンド ラインの実行** ] タスク シーケンス ステップを使用して、コマンドラインを実行します。  
 
- Questo passaggio può essere eseguito in un sistema operativo standard o in Windows PE. Per informazioni sulle variabili della sequenza di attività per questa azione della sequenza di attività, vedere [Run Command Line Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_RunCommand).  
+ このステップは、標準のオペレーティング システムでも、Windows PE でも実行できます。 このタスク シーケンス アクション用のタスク シーケンス変数の詳細については、「 [Run Command Line Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_RunCommand)」を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Specifica un nome breve definito dall'utente che descrive la riga di comando eseguita.  
+ **名前**  
+ 実行するコマンド ラインを説明する短いユーザー定義の名前を指定します。  
 
- **Descrizione**  
- Specifica informazioni più dettagliate sulla riga di comando eseguita.  
+ **説明**  
+ 実行するコマンド ラインに関するより詳細な情報を指定します。  
 
- **Riga di comando**  
- Specifica la riga di comando eseguita. Questo campo è obbligatorio. È consigliabile includere le estensioni del nome file, ad esempio vbs ed exe. Includere tutti i file di impostazione necessari, le opzioni della riga di comando e le altre opzioni.  
+ **コマンド ライン**  
+ 実行されたコマンド ラインを指定します。 このフィールドは必須です。 ベスト プラクティスとして、.vbs や .exe など、ファイル名拡張子を指定することをお勧めします。 必要な設定ファイル、コマンド ライン オプション、またはスイッチをすべて含めます。  
 
- Se non è stata specificata un'estensione per il nome file, Configuration Manager prova a usare le estensioni com, exe e bat. Se il nome file ha un'estensione non eseguibile, Configuration Manager prova ad applicare un'associazione locale. Ad esempio, se la riga di comando è readme.gif, Configuration Manager avvia l'applicazione specificata nel computer di destinazione per l'apertura dei file con estensione gif.  
+ ファイル名にファイル名拡張子が指定されていない場合は、Configuration Manager では .com、.exe、.bat が試されます。 ファイル名に拡張子が付いていても、それが実行可能ファイルでない場合は、Configuration Manager ではローカルの関連付けが適用されます。 たとえば、コマンド ラインが readme.gif の場合は、Configuration Manager では .gif ファイルを開くために対象のコンピューターで指定されたアプリケーションを起動します。  
 
- Esempi:  
+ 次に例を示します。  
 
  **setup.exe /a**  
 
  **cmd.exe /c copy Jan98.dat c:\sales\Jan98.dat**  
 
 > [!NOTE]  
->  Per una corretta esecuzione, le azioni della riga di comando, ad esempio il reindirizzamento dell'output, il piping o la copia, come nell'esempio precedente, devono essere precedute dal comando **cmd.exe /c**.  
+>  出力のリダイレクト、パイプ、コピーなどのコマンド ライン操作を正常に実行するには、上の例のように、先頭に **cmd.exe /c** コマンドを付ける必要があります。  
 
- **Disattiva il reindirizzamento del file system a 64 bit**  
- Per impostazione predefinita, quando si esegue un sistema operativo a 64 bit, il file eseguibile nella riga di comando viene individuato ed eseguito usando il redirector del file system WOW64. In questo modo, vengono individuati i file eseguibili del sistema operativo a 32 bit e i DLL.  Selezionando questa opzione viene disabilitato l'uso del ridector del file system WOW64. In questo modo, vengono individuati i file eseguibili del sistema operativo a 64 bit e i DLL.  La selezione di questa opzione non produce effetti quando si esegue un sistema operativo a 32 bit.  
+ **64 ビット ファイル システムのリダイレクトを無効にする**  
+ 既定では、64 ビット オペレーティング システム上で実行する場合、コマンド ラインの実行可能ファイルが検索され、WOW64 ファイル システム リダイレクターを使用して実行され、32 ビット バージョンのオペレーティング システムの実行可能ファイルや DLL が検出されます。  このオプションを選択すると、WOW64 ファイル システム リダイレクターの使用が無効になり、ネイティブ 64 ビット バージョンのオペレーティング システムの実行可能ファイルや DLL を検出できます。  32 ビット オペレーティング システム上で実行している場合、このオプションの選択による影響はありません。  
 
- **Da**  
- Specifica la cartella eseguibile per il programma. Sono consentiti al massimo 127 caratteri. Questa cartella può essere un percorso assoluto nel computer di destinazione o un percorso relativo alla cartella del punto di distribuzione contenente il pacchetto. Questo campo è facoltativo.  
+ **開始**  
+ プログラムの実行可能フォルダーを 127 文字以内で指定します。 このフォルダーには、対象のコンピューターの絶対パスを指定することも、パッケージを含む配布ポイント フォルダーを基準としたパスを指定することもできます。 このフィールドは省略可能です。  
 
- Esempi:  
+ 次に例を示します。  
 
  **c:\officexp**  
 
  **i386**  
 
 > [!NOTE]  
->  Il pulsante **Sfoglia** permette di cercare file e cartelle nel computer locale. Tutti gli elementi selezionati in questo modo devono quindi esistere anche nel computer di destinazione nello stesso percorso e con gli stessi nomi di file e cartelle.  
+>  [ **参照** ] ボタンをクリックすると、ローカル コンピューターのファイルとフォルダーが参照されるので、この方法で選択したものは常に対象のコンピューターでも同じ場所に同じファイル名およびフォルダー名で存在している必要があります。  
 
- **Pacchetto**  
- Quando nella riga di comando si specificano file o programmi che non sono già presenti nel computer di destinazione, selezionare questa opzione per specificare il pacchetto di Configuration Manager contenente i file appropriati. Questo pacchetto non richiede alcun programma. Questa opzione non è necessaria se i file specificati esistono nel computer di destinazione.  
+ **パッケージ**  
+ 対象のコンピューターにまだ存在しないファイルまたはプログラムをコマンド ラインで指定する場合、このオプションを選択して該当するファイルを含む Configuration Manager パッケージを指定します。 このパッケージにはプログラムは必要ありません。 このオプションは、指定するファイルが対象のコンピューターに存在する場合には必要ありません。  
 
- **Timeout**  
- Specifica un valore per il tempo concesso da Configuration Manager per l'esecuzione della riga di comando. Questo valore può essere compreso tra 1 e 999 minuti. Il valore predefinito è 15 minuti.  
+ **タイムアウト**  
+ Configuration Manager で、コマンド ラインに許容される実行時間を表す値を指定します。 可能な値は 1 ～ 999 分です。 既定値は 15 分です。  
 
- Questa opzione è disabilitata per impostazione predefinita.  
+ 既定では、このオプションは無効になっています。  
 
 > [!IMPORTANT]  
->  Se si immette un valore che non concede il tempo necessario per il completamento corretto del passaggio Esegui riga di comando della sequenza di attività, questo passaggio avrà esito negativo ed è possibile che l'intera sequenza di attività abbia esito negativo, in base ad altre impostazioni di controllo. In caso di scadenza del timeout, Configuration Manager interromperà il processo della riga di comando.  
+>  コマンド ラインの実行タスク シーケンス ステップが正常に完了するのに十分な値を入力しないと、タスク シーケンス ステップが失敗し、他のコントロールの設定によってはタスク シーケンス全体が失敗する場合もあります。 タイムアウトに達すると、Configuration Manager はコマンド ライン プロセスを終了します。  
 
- **Esegui questo passaggio come account specificato**  
- Specifica che la riga di comando viene eseguita come account utente Windows diverso dall'account di sistema locale.  
+ **このステップを次のアカウントで実行する**  
+ ローカル システム アカウント以外の Windows ユーザー アカウントとして実行されるコマンド ラインを指定します。  
 
 > [!NOTE]  
->  Quando si specifica un altro account per questo passaggio e ciò avviene dopo un passaggio di installazione del sistema operativo, l'account deve essere aggiunto al computer prima di poter eseguire script o comandi semplici e il profilo per l'account utente di Windows deve essere ripristinato per eseguire programmi più complessi, come un file MSI.  
+>  このステップに別のアカウントを指定し、かつそれがオペレーティング システムのインストール ステップより後に起こるステップなら、単純なスクリプトやコマンドを実行する場合は事前にアカウントをコンピューターに追加しておく必要があり、より複雑なプログラム (MSI など) を実行する場合は Windows ユーザー アカウントのプロファイルを復元する必要があります。  
 
- **Account**  
- Specifica l'account utente Windows RunAs per l'attività della riga di comando nella sequenza di attività che deve essere eseguita da questa azione. La riga di comando verrà eseguita con le autorizzazioni dell'account specificato. Fare clic su **Imposta** per specificare l'utente locale o l'account di dominio.  
+ **アカウント**  
+ この操作によって実行されるタスク シーケンスのコマンド ライン タスク用に、[別のユーザーとして実行] Windows ユーザー アカウントを指定します。 コマンド ラインは、指定したアカウントのアクセス許可を使用して実行されます。 **[設定]** をクリックして、ローカル ユーザーまたはドメイン アカウントを指定します。  
 
 > [!IMPORTANT]  
->  Se un'azione **Esegui riga di comando** della sequenza di attività che specifica un account utente viene eseguita in Windows PE, l'azione avrà esito negativo poiché Windows PE non può essere aggiunto a un dominio. L'errore verrà registrato nel file smsts.log.  
+>  ユーザー アカウントを指定する [ **コマンド ラインの実行** ] タスク シーケンス アクションが Windows PE で実行されると、Windows PE はドメインに参加できないため、このアクションは失敗します。 エラーは smsts.log ファイルに記録されます。  
 
-##  <a name="BKMK_RunPowerShellScript"></a> Esegui script PowerShell  
- Usare il passaggio **Esegui script PowerShell** della sequenza di attività per eseguire uno script PowerShell specificato.  
+##  <a name="BKMK_RunPowerShellScript"></a> PowerShell スクリプトの実行  
+ 指定した PowerShell スクリプトを実行するには、[ **PowerShell スクリプトの実行** ] タスク シーケンス ステップを使用します。  
 
- Questo passaggio può essere eseguito in un sistema operativo standard o in Windows PE. Per eseguire questo passaggio in Windows PE, è necessario abilitare PowerShell nell'immagine di avvio. È possibile abilitare Windows PowerShell (WinPE-PowerShell) dalla scheda **Componenti facoltativi** nelle proprietà per l'immagine di avvio. Per altre informazioni su come modificare un'immagine d'avvio, vedere [Manage boot images](../get-started/manage-boot-images.md) (Gestire le immagini d'avvio).  
+ このステップは、標準のオペレーティング システムでも、Windows PE でも実行できます。 Windows PE でのこのステップを実行するには、ブート イメージで PowerShell を有効にする必要があります。 ブート イメージのプロパティの [ **オプション コンポーネント** ] タブで、Windows PowerShell (WinPE PowerShell) を有効にすることができます。 ブート イメージを変更する方法について詳しくは、「[Manage boot images](../get-started/manage-boot-images.md)」 (ブート イメージの管理) を参照してください。  
 
 > [!NOTE]  
->  PowerShell non è abilitato per impostazione predefinita nei sistemi operativi Windows Embedded.  
+>  PowerShell は、Windows Embedded オペレーティング システムでは既定では無効です。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Specifica un nome breve definito dall'utente che descrive la riga di comando eseguita.  
+ **名前**  
+ 実行するコマンド ラインを説明する短いユーザー定義の名前を指定します。  
 
- **Descrizione**  
- Specifica informazioni più dettagliate sulla riga di comando eseguita.  
+ **説明**  
+ 実行するコマンド ラインに関するより詳細な情報を指定します。  
 
- **Pacchetto**  
- Specifica il pacchetto di Configuration Manager contenente lo script PowerShell. Un pacchetto può includere più script PowerShell.  
+ **パッケージ**  
+ PowerShell スクリプトを含む Configuration Manager パッケージを指定します。 1 つのパッケージに複数の PowerShell スクリプトを含めることができます。  
 
- **Nome script**  
- Specifica il nome dello script PowerShell da eseguire. Questo campo è obbligatorio.  
+ **スクリプト名**  
+ 実行する PowerShell スクリプトの名前を指定します。 このフィールドは必須です。  
 
- **Parametri**  
- Specifica i parametri da passare allo script Windows PowerShell. Configurare i parametri come se li si stesse aggiungendo allo script Windows PowerShell da una riga di comando.  
+ **パラメーター**  
+ Windows PowerShell スクリプトに渡されるパラメーターを指定します。 コマンドラインから Windows PowerShell スクリプトにパラメーターを追加する場合のパラメーターを構成します。  
 
 > [!IMPORTANT]  
->  Specificare i parametri usati dallo script, non per la riga di comando di Windows PowerShell.  
+>  Windows PowerShell のコマンド ラインで使用するパラメーターではなく、スクリプトで使用するパラメーターを指定します。  
 >   
->  L'esempio seguente include parametri validi:  
+>  次の例には、有効なパラメーターが含まれています。  
 >   
 >  **-MyParameter1 MyValue1 -MyParameter2 MyValue2**  
 >   
->  L'esempio seguente include parametri non validi: Gli elementi in grassetto sono parametri della riga di comando di Windows PowerShell (-nologo ed –executionpolicy unrestricted) e non vengono usati dallo script.  
+>  次の例には、無効なパラメーターが含まれています。 太字の項目は Windows PowerShell のコマンド ライン パラメーター (-nologo と –executionpolicy unrestricted) であり、スクリプトでは使用しません。  
 >   
 >  **-nologo-executionpolicy unrestricted-File MyScript.ps1 -MyParameter1 MyValue1 -MyParameter2 MyValue2**  
 
- **Criteri di esecuzione di PowerShell**  
- La selezione dei Criteri di esecuzione di PowerShell permette di specificare gli eventuali script di Windows PowerShell che saranno autorizzati all'esecuzione nel computer. Scegliere uno dei criteri di esecuzione seguenti:  
+ **PowerShell 実行ポリシー**  
+ どの Windows PowerShell スクリプトにコンピューター上での実行を許可するかを指定できる、PowerShell 実行ポリシーを選択します。 次のいずれかの実行ポリシーを選択します。  
 
--   **Tutti firmati**: è possibile eseguire solo gli script firmati da un editore attendibile.  
+-   **AllSigned**: 信頼された発行元によって署名されたスクリプトのみを実行できます。  
 
--   **Non definito**: non sono stati definiti criteri di esecuzione. .  
+-   **Undefined**: 実行ポリシーが定義されていません。 。  
 
--   **Ignora**: carica tutti i file di configurazione ed esegue tutti gli script. Se si esegue uno script non firmato scaricato da Internet, non verrà richiesta alcuna autorizzazione prima dell'esecuzione.  
+-   **Bypass**: すべての構成ファイルを読み込み、すべてのスクリプトを実行します。 インターネットからダウンロードされた、署名されていないスクリプトを実行する場合、実行前にアクセス許可を求めるメールは表示されます。  
 
 > [!IMPORTANT]  
->  PowerShell 1.0 non supporta i criteri di esecuzione Non definito e Ignora.  
+>  PowerShell 1.0 は [未定義] および [バイパス] の実行ポリシーをサポートしていません。  
 
-##  <a name="BKMK_SetDynamicVariables"></a> Imposta variabili dinamiche  
- Usare il passaggio **Imposta variabili dinamiche** della sequenza di attività per eseguire le operazioni seguenti:  
+##  <a name="BKMK_SetDynamicVariables"></a> 動的変数の設定  
+ [ **動的変数の設定** ] タスク シーケンス ステップを使用して次の手順を実行します。  
 
-1.  Recupero di informazioni dal computer e dall'ambiente in cui si trova, quindi impostazione delle variabili specificate della sequenza di attività con le informazioni ottenute.  
+1.  コンピューターとその環境から情報を収集し、指定したタスク シーケンス変数に情報を設定します。  
 
-2.  Valutazione delle regole definite e impostazione delle variabili della sequenza di attività in base ai valori configurati per le regole che restituiscono true.  
+2.  定義されている規則を評価し、true と評価される規則に構成されている変数と値に基づいてタスク シーケンス変数を設定します。  
 
- La sequenza di attività imposta automaticamente le variabili della sequenza di attività di sola lettura seguenti:  
+ タスク シーケンスによって、次の読み取り専用のタスク シーケンス変数が自動的に設定されます。  
 
  -   &#95;SMSTSMake  
 
@@ -1480,231 +1478,230 @@ Prima di Configuration Manager versione 1610 questo passaggio eseguiva le attivi
 
  -   &#95;SMSTSUUID  
 
- Questo passaggio può essere eseguito in un sistema operativo standard o in Windows PE. Per altre informazioni sulle variabili della sequenza di attività, vedere [Variabili di azione della sequenza di attività](task-sequence-action-variables.md).  
+ このステップは、標準のオペレーティング システムでも、Windows PE でも実行できます。 タスク シーケンス変数の詳細については、「[Task sequence action variables](task-sequence-action-variables.md)」 (タスク シーケンス アクション変数) を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
-**Nome**  
- Nome breve definito dall'utente per questo passaggio della sequenza di attività.  
+**名前**  
+ このタスク シーケンス ステップの短いユーザー定義名。  
 
-**Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+**説明**  
+ このステップで実行されるアクションの詳細情報。  
 
-**Variabili e regole dinamiche**  
- Per configurare una variabile dinamica da usare nella sequenza di attività, è possibile aggiungere una regola e quindi specificare un valore per ogni variabile specificata per la regola oppure aggiungere una o più variabili da impostare senza aggiungere una regola. Quando si aggiunge una regola, è possibile scegliere tra le categorie delle regole seguenti:  
+**動的規則と変数**  
+ タスク シーケンスで使用する動的変数を設定するには、規則を追加した後で規則を指定する各変数の値を指定するか、または規則を追加せずに 1 つ以上の変数を追加して設定します。 規則を追加する場合は、次の規則のカテゴリから選択できます。  
 
- -   **Computer**: usare questa categoria delle regole per valutare i valori per Tag asset, UUID, Numero di serie o Indirizzo MAC. È possibile configurare più valori e, se un valore restituisce true, la regola restituirà true. La regola seguente, ad esempio, restituisce true se Numero di serie è 5892087, indipendentemente dal fatto che Indirizzo MAC sia 26-78-13-5A-A4-22.  
+ -   **コンピューター**: 資産タグ、UUID、シリアル番号、または MAC アドレスの値を評価するには、この規則カテゴリを使用します。 複数の値を設定できます。その任意の値が true の場合、規則が true と評価されることになります。 たとえば、次の規則は、シリアル番号が 5892087 であれば、MAC アドレスが 26-78-13-5A-A4-22 に等しいかどうかに関係なく true と評価されます。  
 
      `IF Serial Number = 5892087 OR MAC address = 26-78-13-5A-A4-22 THEN`  
 
--   **Percorso**: usare questa categoria delle regole per valutare i valori per il gateway predefinito.  
+-   **場所**: 既定のゲートウェイの値を評価するには、この規則カテゴリを使用します。  
 
--   **Marca e modello**: usare questa categoria delle regole per valutare i valori relativi a marca e modello di un computer. La regola restituisce true solo se entrambi i valori restituiscono true.   
+-   **メーカーおよびモデル**: コンピューターのメーカーおよびモデルの値を評価するには、この規則カテゴリを使用します。 規則を true と評価するには、製造元とモデルの両方が true と評価される必要があります。   
 
-    A partire da Configuration Manager versione 1610 è possibile usare asterischi (*****) e un punto interrogativo (**?**) come caratteri jolly, dove ***** corrisponde a più caratteri e **?** corrisponde a un solo carattere. Ad esempio, la stringa "DELL*900?" corrisponde a DELL-ABC-9001 e a DELL9009.
+    Configuration Manager バージョン 1610 以降では、ワイルドカードとしてアスタリスク (*****) および疑問符 ( **?** ) を指定できます。***** は複数の文字と一致し、 **?** は  1 文字と一致します。 たとえば、"DELL*900?" という文字列は、 DELL-ABC-9001 や DELL9009 と一致します。
 
--   **Variabile della sequenza di attività**: usare questa categoria delle regole per aggiungere una variabile della sequenza di attività, una condizione e un valore da valutare. La regola restituisce true quando il valore impostato per la variabile soddisfa la condizione specificata.  
+-   **タスク シーケンス変数**: 評価するタスク シーケンス変数、条件、および値を追加するには、この規則カテゴリを使用します。 変数に設定された値が指定した条件を満たしている場合、規則は true と評価されます。  
 
-È possibile specificare una o più variabili che verranno impostate per una regola che restituisce true oppure impostare variabili senza usare una regola. È possibile selezionare una delle variabili esistenti o creare una variabile personalizzata.  
+true と評価される規則に 1 つ以上の変数を設定して指定することも、規則を使用せずに変数を設定することもできます。 既存の変数を選択することも、カスタム変数を作成することもできます。  
 
- -   **Variabili della sequenza di attività disponibili**: usare questa impostazione per selezionare una o più variabili da un elenco di variabili esistenti della sequenza di attività. Le variabili di matrice non sono disponibili per la selezione.  
+ -   **既存のタスク シーケンス変数**: 既存のタスク シーケンス変数の一覧から 1 つ以上の変数を選択するには、この設定を使用します。 配列変数は選択できません。  
 
- -   **Variabili personalizzate della sequenza di attività**: usare questa impostazione per definire una variabile personalizzata della sequenza di attività. È anche possibile specificare una variabile esistente della sequenza di attività. Ciò risulta utile per specificare una matrice di variabili esistente, ad esempio OSDAdapter, poiché le matrici di variabili non sono incluse nell'elenco di variabili esistenti della sequenza di attività.  
+ -   **カスタム タスク シーケンス変数**: カスタム タスク シーケンス変数を定義するには、この設定を使用します。 既存のタスク シーケンス変数を指定することもできます。 変数の配列は既存のタスク シーケンス変数の一覧に含まれないため、OSDAdapter などの既存の変数配列を指定する場合に便利です。  
 
-Dopo la selezione delle variabili per una regola, è necessario fornire un valore per ogni variabile. La variabile è impostata sul valore specificato quando la regola restituisce true. Per ogni variabile è possibile selezionare **Valore segreto** per nascondere il valore della variabile. Per impostazione predefinita, alcune variabili esistenti nascondono i valori, ad esempio la variabile OSDCaptureAccountPassword della sequenza di attività.  
+規則に変数を選択した後、各変数の値を指定する必要があります。 規則が true と評価されると、変数は指定された値に設定されます。 変数ごとに [ **秘密の値** ] を選択して変数の値を非表示にできます。 既定では、OSDCaptureAccountPassword タスク シーケンス変数など、いくつかの既存の変数の値を非表示にします。  
 
 > [!IMPORTANT]  
->  Quando si importa una sequenza di attività con il passaggio Imposta variabili dinamiche e **Valore segreto** è selezionato per il valore della variabile, il valore verrà rimosso quando si importa la sequenza di attività. Sarà quindi necessario immettere di nuovo il valore per la variabile dinamica dopo l'importazione della sequenza di attività.  
+>  [動的変数の設定] ステップでタスク シーケンスをインポートするときに、変数の値に対して [ **秘密の値** ] が選択されている場合、タスク シーケンスをインポートするときに値が削除されます。 その結果、タスク シーケンスをインポートした後、動的変数の値を再入力する必要があります。  
 
-##  <a name="BKMK_SetTaskSequenceVariable"></a> Imposta variabile della sequenza di attività  
-Usare il passaggio **Imposta variabile della sequenza di attività** della sequenza di attività per configurare il valore di una variabile usata con la sequenza di attività.  
+##  <a name="BKMK_SetTaskSequenceVariable"></a> タスク シーケンス変数の設定  
+[ **タスク シーケンス変数の設定** ] タスク シーケンス ステップを使用して、タスク シーケンスで使用する変数を設定します。  
 
-Questo passaggio può essere eseguito in un sistema operativo standard o in Windows PE. Le variabili della sequenza di attività vengono lette dalle azioni della sequenza di attività e specificano il comportamento di tali azioni. Per altre informazioni sulle variabili di una sequenza di attività specifica, vedere [Variabili di azione della sequenza di attività](task-sequence-action-variables.md).  
+このステップは、標準のオペレーティング システムでも、Windows PE でも実行できます。 タスク シーケンス変数はタスク シーケンス アクションによって読み取られます。また、これらのアクションの動作はタスク シーケンス変数によって指定されます。 特定のタスク シーケンス変数の詳細については、「[Task sequence action variables](task-sequence-action-variables.md)」 (タスク シーケンス アクション変数) を参照してください。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente per questo passaggio della sequenza di attività.  
+ **名前**  
+ このタスク シーケンス ステップの短いユーザー定義名。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Variabile della sequenza di attività**  
- Valore definito dall'utente per la variabile della sequenza di attività.  
+ **タスク シーケンス変数**  
+ タスク シーケンス変数のユーザー定義名。  
 
- **Valore**  
- Valore associato alla variabile della sequenza di attività. Il valore può essere un'altra variabile della sequenza di attività con la sintassi %<varname\>%.  
+ **値**  
+ タスク シーケンス変数に関連付けられた値。 この値は、%<varname\>% という構文で、別のタスク シーケンス変数にすることができます。  
 
-## <a name="hide-task-sequence-progress"></a>Nascondere l’avanzamento della sequenza di attività
+## <a name="hide-task-sequence-progress"></a>タスク シーケンスの進行状況の非表示
 <!-- 1354291 -->
-Con la versione 1706 è possibile controllare quando visualizzare lo stato della sequenza di attività per gli utenti finali tramite una nuova variabile. Nella sequenza di attività usare il passaggio **Imposta variabile della sequenza attività** per impostare il valore per la variabile **TSDisableProgressUI** per nascondere o visualizzare lo stato della sequenza di attività. È possibile usare più volte il passaggio Imposta variabile della sequenza di attività in una sequenza di attività per modificare il valore della variabile. Ciò consente di visualizzare o nascondere l'avanzamento dello stato della sequenza di attività in varie sezioni della sequenza di attività.
+1706 リリースでは、新しい変数を使用して、エンド ユーザーにタスク シーケンスの進行状況を表示するタイミングを制御できます。 タスク シーケンスで、**タスク シーケンス変数の設定**手順を使用して、変数 **TSDisableProgressUI** に値を設定して、タスク シーケンスの進行状況を表示または非表示にします。 タスク シーケンスでは、タスク シーケンス変数の設定手順を複数回使用して変数の値を変更できます。 これにより、タスク シーケンスの各セクションでタスク シーケンスの進行状況を表示または非表示できます。
 
- - **Per nascondere lo stato della sequenza di attività**  
-Nell'editor di sequenze di attività usare il passaggio [Imposta variabile della sequenza di attività](#BKMK_SetTaskSequenceVariable) per impostare il valore della variabile **TSDisableProgressUI** su **True** per nascondere lo stato della sequenza di attività.
+ - **タスク シーケンスの進行状況を非表示にするには**  
+タスク シーケンス エディタで、[タスク シーケンス変数の設定](#BKMK_SetTaskSequenceVariable)手順を使用して、変数 **TSDisableProgressUI** の値を **True** に設定して、タスク シーケンスの進行状況を非表示にします。
 
- - **Per visualizzare lo stato della sequenza di attività**  
-Nell'editor di sequenze di attività usare il passaggio [Imposta variabile della sequenza di attività](#BKMK_SetTaskSequenceVariable) per impostare il valore della variabile **TSDisableProgressUI** su **False** per visualizzare lo stato della sequenza di attività.
+ - **タスク シーケンスの進行状況を表示するには**  
+タスク シーケンス エディタで、[タスク シーケンス変数の設定](#BKMK_SetTaskSequenceVariable)手順を使用して、変数 **TSDisableProgressUI** の値を **False** に設定して、タスク シーケンスの進行状況を表示します。
 
-##  <a name="BKMK_SetupWindowsandConfigMgr"></a> Imposta Windows e ConfigMgr  
- Usare il passaggio **Imposta Windows e ConfigMgr** della sequenza di attività per eseguire la transizione da Windows PE al nuovo sistema operativo. Questo passaggio della sequenza di attività è una parte necessaria di qualsiasi distribuzione del sistema operativo. Installa il client di Configuration Manager nel nuovo sistema operativo e prepara la sequenza di attività per continuare l'esecuzione nel nuovo sistema operativo.  
+##  <a name="BKMK_SetupWindowsandConfigMgr"></a> Windows と ConfigMgr のセットアップ  
+ [ **Windows と ConfigMgr のセットアップ** ] タスク シーケンス ステップを使用すると、Windows PE から新しいオペレーティング システムへの移行を実施できます。 このタスク シーケンス ステップはあらゆるオペレーティング システム展開に必要です。 このステップでは、Configuration Manager クライアントを新しいオペレーティング システムにインストールして、新しいオペレーティング システムでタスク シーケンスの実行を継続できるようにします。  
 
- Questo passaggio può essere eseguito solo in Windows PE. Non può essere eseguito in un sistema operativo standard. Per altre informazioni sulle variabili della sequenza di attività per questa azione della sequenza di attività, vedere [Variabili di azione della sequenza di attività Imposta Windows e ConfigMgr](task-sequence-action-variables.md#BKMK_SetupWindows).  
+ このステップは Windows PE でのみ実行されます。 このステップは標準のオペレーティング システムでは実行できません。 このタスク シーケンス アクション用のタスク シーケンス変数の詳細については、「[Windows と ConfigMgr のセットアップ タスク シーケンス アクション変数](task-sequence-action-variables.md#BKMK_SetupWindows)」を参照してください。  
 
- L'azione **Imposta Windows e ConfigMgr** della sequenza di attività sostituisce le variabili della directory sysprep.inf o unattend.xml, ad esempio %WINDIR% e %ProgramFiles%, con la directory di installazione di Windows PE X:\Windows. Le variabili della sequenza di attività specificate usando queste variabili di ambiente verranno ignorate.  
+ **[Windows と ConfigMgr のセットアップ]** タスク シーケンス アクションでは、%WINDIR% や %ProgramFiles% などの、sysprep.inf または unattend.xml のディレクトリ変数が、Windows PE インストール ディレクトリ X:\Windows に置き換えられます。 これらの環境変数を使用して指定されたタスク シーケンス変数は無視されます。  
 
- Usare questo passaggio della sequenza di attività per eseguire le azioni seguenti:  
+ このタスク シーケンス ステップを使用して次のアクションを実行します。  
 
-1.  Operazioni preliminari: Windows PE  
+1.  準備: Windows PE  
 
-    1.  Esegue la sostituzione delle variabili della sequenza di attività nel file unattend.xml.  
+    1.  unattend.xml ファイルへのタスク シーケンス変数の代入を実行します。  
 
-    2.  Scarica il pacchetto che contiene il client di Configuration Manager e lo inserisce nell'immagine distribuita.  
+    2.  Configuration Manager クライアントを含むパッケージをダウンロードし、展開されたイメージ内に配置します。  
 
-2.  Configurazione di Windows  
+2.  Windows の設定  
 
-    1.  Installazione basata su immagine.  
+    1.  イメージ ベースのインストール。  
 
-        1.  Disabilita il client di Configuration Manager nell'immagine, vale a dire disabilita l'avvio automatico del servizio client di Configuration Manager.  
+        1.  イメージの Configuration Manager クライアントを無効にします (つまり、Configuration Manager クライアント サービスの自動起動を無効にする)。  
 
-        2.  Aggiornamento del Registro di sistema nell'immagine distribuita per assicurare che il sistema operativo distribuito venga avviato con la stessa lettera di unità usata nel computer di riferimento.  
+        2.  展開されたイメージ内のレジストリを更新して、展開されたオペレーティング システムが、必ず参照コンピューター上でのドライブ文字と同じものを使用して起動するようにします。  
 
-        3.  Riavvio nel sistema operativo distribuito.  
+        3.  展開されたオペレーティング システムを再起動します。  
 
-        4.  L'installazione minima di Windows viene eseguita usando un file sysprep.inf o unattend.xml specificato in precedenza e in cui sono state rimosse tutte le interazioni con gli utenti finali. Nota: se in **Applica impostazioni di rete** è stata specificata l'aggiunta a un dominio, le informazioni saranno disponibili nel file sysprep.inf o unattend.xml e l'installazione minima di Windows eseguirà l'aggiunta al dominio.  
+        4.  以前指定した sysprep.inf ファイルか unattend.xml ファイルを使用して Windows ミニセットアップが実行されます。このとき、ユーザーの操作はすべて抑制されます。 注: **[ネットワーク設定の適用]** でドメインへの参加を指定した場合、その情報は sysprep.inf ファイルまたは unattend.xml ファイルに収められ、Windows ミニセットアップがドメインへの参加を実行します。  
 
-    2.  Installazione basata su Setup.exe.  Esegue Setup.exe con il processo di installazione di Windows tipico:  
+    2.  Setup.exe ベースのインストール。  通常の Windows セットアップ プロセスに続く Setup.exe を実行します。  
 
-        1.  Copia del pacchetto di installazione del sistema operativo specificato in una sequenza di attività **Applica sistema operativo** precedente nell'unità disco rigido.  
+        1.  先ほど [ **オペレーティング システムの適用** ] タスク シーケンスで指定したオペレーティング システムのインストール パッケージをハード ドライブにコピーします。  
 
-        2.  Riavvio nel sistema operativo appena distribuito.  
+        2.  新たに展開されたオペレーティング システムを再起動します。  
 
-        3.  L'installazione minima di Windows viene eseguita usando il file sysprep.inf o unattend.xml specificato in precedenza e in cui sono state rimosse tutte le impostazioni dell'interfaccia utente. Nota: se in **Applica impostazioni di rete** è stata specificata l'aggiunta a un dominio, le informazioni saranno disponibili nel file sysprep.inf o unattend.xml e l'installazione minima di Windows eseguirà l'aggiunta al dominio.  
+        3.  以前指定した sysprep.inf ファイルか unattend.xml ファイルを使用して Windows ミニセットアップが実行されます。このとき、ユーザーのインターフェイス設定はすべて抑制されます。 注: **[ネットワーク設定の適用]** でドメインへの参加を指定した場合、その情報は sysprep.inf ファイルまたは unattend.xml ファイルに収められ、Windows ミニセットアップがドメインへの参加を実行します。  
 
-3.  Impostazione del client di Configuration Manager  
+3.  Configuration Manager クライアントの設定  
 
-    1.  Al termine dell'installazione minima di Windows, verrà ripresa la sequenza di attività usando setupcomplete.cmd.  
+    1.  Windows ミニセットアップが完了すると、setupcomplete.cmd を使用して、タスク シーケンスが再開されます。  
 
-    2.  Abilitazione o disabilitazione dell'account di amministratore locale, in base all'opzione selezionata nel passaggio **Applica impostazioni Windows** .  
+    2.  [ **Windows 設定の適用** ] ステップで選択したオプションに応じて、ローカルの管理者アカウントを有効または無効にします。  
 
-    3.  Installazione del client di Configuration Manager tramite il pacchetto scaricato in precedenza (1.b) e le proprietà di installazione specificate nell'editor delle sequenze di attività. Il client viene installato in "modalità di provisioning" per impedire l'elaborazione di nuove richieste di criteri fino al completamento della sequenza di attività.  
+    3.  以前ダウンロードしたパッケージ (1.b) とタスク シーケンス エディターで指定したインストール プロパティを使用して、Configuration Manager クライアントをインストールします。 タスク シーケンスが完了するまでクライアントが新しいポリシー要求を処理しないよう、クライアントは “プロビジョニング モード“ でインストールされます。  
 
-    4.  Attesa della completa operatività del client.  
+    4.  クライアントが完全に動作可能な状態になるまで待ちます。  
 
-    5.  Se il computer opera in un ambiente in cui è abilitata la Protezione accesso alla rete, il client cercherà e installerà eventuali aggiornamenti obbligatori, in modo che tutti gli aggiornamenti obbligatori siano presenti prima della continuazione dell'esecuzione della sequenza di attività.  
+    5.  ネットワーク アクセス保護が有効になっている環境で動作しているコンピューターの場合、クライアントが必要な更新が見つけた場合インストールし、タスク シーケンスが実行を続ける前に必要な更新がすべて揃っているようにします。  
 
-4.  L'esecuzione della sequenza di attività continuerà con il passaggio successivo.  
+4.  タスク シーケンスは実行の次の手順に進みます。  
 
 > [!NOTE]  
->  L'azione **Imposta Windows e ConfigMgr** della sequenza di attività è responsabile per l'esecuzione di Criteri di gruppo nel computer appena installato. I Criteri di gruppo vengono applicati al termine della sequenza di attività.  
+>  [ **Windows と ConfigMgr のセットアップ** ] タスク シーケンス アクションには、新しくインストールされたコンピューター上でグループ ポリシーを実行する役割があります。 グループ ポリシーは、タスク シーケンスの完了後に適用されます。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Non selezionare l'opzione che consente alla sequenza di attività di continuare in caso di errore durante l'esecuzione del passaggio. Se si verifica un errore, la sequenza di attività ha esito negativo, indipendentemente dalla selezione dell'impostazione.  
+-   このステップの実行中にエラーが発生する場合、選択せずにタスク シーケンスを続行する。 エラーが発生する場合、この設定を選択するかどうかに関係なく、タスク シーケンスは失敗します。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Specifica un nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前を指定します。  
 
- **Descrizione**  
- Specifica informazioni aggiuntive sull'azione effettuata in questo passaggio.  
+ **説明**  
+ この手順で実行される操作についての追加情報を指定します。  
 
- **Pacchetto client**  
- Specifica il pacchetto di installazione del client di Configuration Manager che verrà usato da questo passaggio della sequenza di attività. Fare clic su **Sfoglia** e selezionare il pacchetto di installazione del client da usare per installare il client di Configuration Manager.  
+ **クライアント パッケージ**  
+ このタスク シーケンス ステップで使用される Configuration Manager クライアント インストール パッケージを指定します。 [**参照**] をクリックし、Configuration Manager クライアントのインストールに使用するクライアント インストール パッケージを選択します。  
 
- **Usa il pacchetto client di pre-produzione se disponibile**  
- Specifica che se è disponibile un pacchetto client di pre-produzione, il passaggio della sequenza di attività userà tale pacchetto invece del pacchetto client di produzione. In genere, il client di pre-produzione è una versione più recente in corso di testing nell'ambiente di produzione. Fare clic su **Sfoglia** e selezionare il pacchetto di installazione del client di pre-produzione da usare per installare il client di Configuration Manager.  
+ **使用可能な場合に実稼働前クライアント パッケージを使用する**  
+ 使用可能な実稼働前クライアント パッケージがある場合に、タスク シーケンスのステップで実稼働クライアント パッケージではなく、このパッケージを使用するように指定します。 通常、実稼働前クライアントは、実稼働環境でテストされているものよりも新しいバージョンです。 [**参照**] をクリックし、Configuration Manager クライアントのインストールに使用する実稼働前クライアント インストール パッケージを選択します。  
 
- **Proprietà di installazione**  
- L'assegnazione sito e la configurazione predefinita vengono specificate automaticamente dall'azione della sequenza di attività. È possibile usare questo campo per specificare eventuali proprietà di installazione aggiuntive da usare quando si installa il client. Per immettere più proprietà di installazione, separarle con uno spazio.  
+ **インストールのプロパティ**  
+ サイトの割り当てと既定の構成は、タスク シーケンス アクションによって自動的に指定されます。 このフィールドは、クライアントのインストール時に使用する追加のインストールのプロパティを指定するために使用できます。 複数のインストールのプロパティを入力するには、各プロパティの間にスペースを入力します。  
 
- È possibile specificare opzioni della riga di comando da usare durante l'installazione del client. Ad esempio, è possibile immettere **/skipprereq: silverlight.exe** per segnalare a CCMSetup.exe di non installare i prerequisiti di Microsoft Silverlight. Per altre informazioni sulle opzioni della riga di comando disponibili per CCMSetup.exe, vedere [About client installation properties](../../core/clients/deploy/about-client-installation-properties.md) (Informazioni sulle proprietà di installazione del client).  
+ クライアントのインストール時に使用するコマンド ライン オプションを指定できます。 たとえば、「 **/skipprereq: silverlight.exe** 」と入力すると、CCMSetup.exe に Microsoft Silverlight 前提条件をインストールしないように通知できます。 CCMSetup.exe の使用可能なコマンド ライン オプションの詳細については、「[クライアント インストールのプロパティについて](../../core/clients/deploy/about-client-installation-properties.md)」を参照してください。  
 
-##  <a name="BKMK_UpgradeOS"></a> Aggiorna sistema operativo  
- Usare il passaggio della sequenza di attività **Aggiorna sistema operativo** per aggiornare un sistema operativo esistente Windows 7, Windows 8, Windows 8.1 o Windows 10 a Windows 10.  
+##  <a name="BKMK_UpgradeOS"></a> オペレーティング システムのアップグレード  
+ **[オペレーティング システムのアップグレード]** タスク シーケンス ステップを使用して、既存の Windows 7、Windows 8、Windows 8.1、または Windows 10 オペレーティング システムを Windows 10 にアップグレードします。  
 
- Questo passaggio della sequenza di attività può essere eseguito solo in un sistema operativo standard. Non può essere eseguito in Windows PE.  
+ このタスク シーケンス ステップは、標準のオペレーティング システムでのみ実行できます。 Windows PE では実行できません。  
 
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
+### <a name="details"></a>説明  
+ このステップの [ **プロパティ** ] タブで、このセクションで説明する設定を構成できます。  
 
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
+ さらに、[ **オプション** ] タブを使用して、次の操作を実行できます。  
 
--   Disabilitare il passaggio.  
+-   このステップを無効にする。  
 
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
+-   このステップの実行中にエラーが発生した場合、タスク シーケンスを続行するかどうかを指定する。  
 
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
+-   このステップの実行のために必要な条件を指定する。  
 
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
+ **名前**  
+ このステップで実行されるアクションを説明する、ユーザー定義の短い名前。  
 
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
+ **説明**  
+ このステップで実行されるアクションの詳細情報。  
 
- **Pacchetto di aggiornamento**  
- Selezionare questa opzione per specificare il pacchetto di aggiornamento del sistema operativo Windows 10 da usare per l'aggiornamento.  
+ **パッケージのアップグレード**  
+ アップグレードに使用する Windows 10 オペレーティング システム アップグレード パッケージを指定するには、このオプションを選択します。  
 
- **Percorso di origine**  
- Specifica il percorso locale o di rete per il supporto di Windows 10 da usare (corrisponde all'opzione della riga di comando /installFrom). È anche possibile specificare una variabile, ad esempio %mycontentpath% o %DPC01%. Quando si usa una variabile per il percorso di origine, deve essere specificata prima nella sequenza di attività. Ad esempio, se si usa il passaggio [Scaricare il contenuto del pacchetto](#BKMK_DownloadPackageContent) nella sequenza di attività, è possibile specificare una variabile per il percorso del pacchetto di aggiornamento del sistema operativo. È quindi possibile usare tale variabile per il percorso di origine per questo passaggio.  
+ **ソース パス**  
+ 使用する Windows 10 メディアへのローカル パスまたはネットワーク パスを指定します (/installFrom コマンド ライン オプションに対応)。 %mycontentpath%、%DPC01% などの変数を指定することもできます。 ソース パスに変数を使用する場合は、その変数をタスク シーケンスで先に指定しておく必要があります。 たとえば、タスク シーケンスで [パッケージ コンテンツのダウンロード](#BKMK_DownloadPackageContent) ステップを使用する場合は、オペレーティング システム アップグレード パッケージの場所に変数を指定できます。 その後、このステップのソース パスに変数を使用できます。  
 
- **Edizione**  
- Specificare l'edizione all'interno del supporto del sistema operativo da usare per l'aggiornamento.  
+ **エディション**  
+ アップグレードに使用するオペレーティング システム メディア内のエディションを指定します。  
 
- **Codice Product Key**  
- Specificare il codice Product Key da applicare al processo di aggiornamento  
+ **プロダクト キー**  
+ アップグレード プロセスに適用するプロダクト キーを指定します。  
 
- **Specifica il seguente contenuto del driver in Installazione di Windows durante l'aggiornamento**  
- Selezionare questa impostazione per aggiungere driver nel computer di destinazione durante il processo di aggiornamento (corrisponde all'opzione della riga di comando /InstallDriver). I driver devono essere compatibili con Windows 10. Specificare una delle opzioni seguenti:  
+ **アップグレードの際に、Windows セットアップに次のドライバー コンテンツを指定してください**  
+ アップグレード プロセス中にセットアップ先のコンピューターにドライバーを追加するには、この設定を選択します (/InstallDriver コマンド ライン オプションに対応)。 ドライバーは、Windows 10 と互換性がある必要があります。 次のいずれかを指定します。  
 
--   **Pacchetto driver**: fare clic su **Sfoglia** e selezionare un pacchetto di driver esistente nell'elenco.  
+-   **ドライバー パッケージ**: **[参照]** をクリックし、一覧から既存のドライバー パッケージを選択します。  
 
--   **Contenuto preconfigurato**: selezionare questa opzione per specificare il percorso per il pacchetto di driver. È possibile specificare una cartella locale, un percorso di rete o una variabile della sequenza di attività. Quando si usa una variabile per il percorso di origine, deve essere specificata prima nella sequenza di attività. Ad esempio, usando il passaggio [Download Package Content](task-sequence-steps.md#BKMK_DownloadPackageContent) .  
+-   **ステージング済みコンテンツ**: ドライバー パッケージの場所を指定するには、このオプションを選択します。 ローカル フォルダー、ネットワーク パス、またはタスク シーケンス変数を指定できます。 ソース パスに変数を使用する場合は、その変数をタスク シーケンスで先に指定しておく必要があります。 たとえば、 [Download Package Content](task-sequence-steps.md#BKMK_DownloadPackageContent) ステップを使用します。  
 
- **Timeout (minuti)**  
- Specifica il numero di minuti concesso all'installazione, prima che Configuration Manager consideri il passaggio della sequenza di attività come non riuscito.  
+ **タイムアウト (分)**  
+ セットアップを実行してから Configuration Manager がタスク シーケンスのステップに失敗するまでの時間を分単位で指定します。  
 
- **Esegui analisi di compatibilità di Installazione di Windows senza avviare l'aggiornamento**  
- Specifica di eseguire l'analisi di compatibilità di Installazione di Windows senza avviare il processo di aggiornamento (corrisponde all'opzione della riga di comando /Compat ScanOnly). Quando si usa questa opzione, è ancora necessario distribuire l'intera origine di installazione. Il programma di installazione restituisce un codice di uscita come risultato dell'analisi. Nella tabella seguente sono elencati alcuni dei più comuni codici di uscita.  
+ **アップグレードを開始しない Windows セットアップ互換性スキャンの実行**  
+ アップグレード プロセスを開始しないで Windows セットアップの互換性スキャンを実行するように指定します (/Compat ScanOnly コマンド ライン オプションに対応)。 このオプションを使用する場合は、引き続きインストール ソース全体を展開する必要があります。 セットアップでは、スキャンの結果として終了コードが返されます。 次の表に一般的な終了コードをいくつか示します。  
 
-|Codice di uscita|Dettagli|  
+|終了コード|説明|  
 |-|-|  
-|MOSETUP_E_COMPAT_SCANONLY (0xC1900210)|Nessun problema di compatibilità ("esito positivo").|  
-|MOSETUP_E_COMPAT_INSTALLREQ_BLOCK (0xC1900208)|Problemi di compatibilità su cui è possibile intervenire.|  
-|MOSETUP_E_COMPAT_MIGCHOICE_BLOCK (0xC1900204)|L'opzione di migrazione selezionata non è disponibile. Ad esempio, un aggiornamento da Enterprise a Professional.|  
-|MOSETUP_E_COMPAT_SYSREQ_BLOCK (0xC1900200)|Non idoneo per Windows 10.|  
-|MOSETUP_E_COMPAT_INSTALLDISKSPACE_BLOCK (0xC190020E)|Spazio libero su disco insufficiente.|  
+|MOSETUP_E_COMPAT_SCANONLY (0xC1900210)|互換性の問題なし ("成功")。|  
+|MOSETUP_E_COMPAT_INSTALLREQ_BLOCK (0xC1900208)|対応可能な互換性の問題。|  
+|MOSETUP_E_COMPAT_MIGCHOICE_BLOCK (0xC1900204)|選択された移行オプションが使用できない。 Enterprise から Professional へのアップグレードなど。|  
+|MOSETUP_E_COMPAT_SYSREQ_BLOCK (0xC1900200)|Windows 10 に適合しない。|  
+|MOSETUP_E_COMPAT_INSTALLDISKSPACE_BLOCK (0xC190020E)|ディスクの空き領域が不足している。|  
 
- Per altre informazioni su questo parametro, vedere [Opzioni della riga di comando di Installazione di Windows](https://msdn.microsoft.com/library/windows/hardware/dn938368\(v=vs.85\).aspx)  
+ このパラメーターの詳細については、「 [Windows セットアップ コマンド ライン オプション](https://msdn.microsoft.com/library/windows/hardware/dn938368\(v=vs.85\).aspx)」を参照してください。  
 
- **Ignora tutti i messaggi sulla compatibilità non rilevanti**  
- Specifica che il programma di installazione deve completare l'installazione, ignorando eventuali messaggi di compatibilità non rilevanti (corrisponde all'opzione della riga di comando /Compat IgnoreWarning).  
+ **互換性に関するメッセージが無視できる場合、すべて無視する**  
+ 無視できる互換性に関するメッセージをすべて無視して、セットアップがインストールを完了するように指定します (/Compat IgnoreWarning コマンド ライン オプションに対応)。  
 
- **Aggiorna dinamicamente Installazione di Windows con Windows Update**  
- Specifica se il programma di installazione eseguirà operazioni di aggiornamento dinamico, ad esempio ricerca, download e installazione di aggiornamenti (corrisponde all'opzione della riga di comando /DynamicUpdate). Questa impostazione non è compatibile con gli aggiornamenti software di Configuration Manager, ma può essere abilitata quando si gestiscono gli aggiornamenti tramite WSUS (autonomo) o Windows Update.  
+ **Windows Update で Windows セットアップを動的に更新する**  
+ 更新プログラムの検索、ダウンロード、インストールなどの動的な更新操作をセットアップで行うかどうかを指定します (/DynamicUpdate コマンド ライン オプションに対応)。 この設定は、Configuration Manager ソフトウェア更新プログラムと互換性がありませんが、WSUS (スタンドアロン) または Windows Update を使用して更新プログラムを処理するときに有効にすることができます。  
 
- **Sostituisci i criteri e usa Microsoft Update predefinito**: selezionare questa impostazione per ignorare temporaneamente i criteri locali in tempo reale per eseguire le operazioni di aggiornamento dinamico e impostare il computer per la ricezione degli aggiornamenti da Windows Update.  
-
+ **ポリシーを上書きして既定の Microsoft Update を使う**: リアルタイムでローカル ポリシーを一時的に無効にして動的な更新操作を実行し、コンピューターに Windows Update から更新プログラムを取得するには、この設定を選択します。  

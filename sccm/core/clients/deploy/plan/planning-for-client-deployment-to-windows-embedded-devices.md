@@ -1,78 +1,75 @@
 ---
-title: Pianificazione della distribuzione dei client in dispositivi con Windows Embedded | Microsoft Docs
-description: Pianificazione della distribuzione del client a dispositivi con Windows Embedded in System Center Configuration Manager.
+title: "Windows Embedded デバイスへのクライアント展開の計画 | Microsoft Docs"
+description: "System Center Configuration Manager での Windows Embedded デバイスへのクライアント展開の計画"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 038e61f9-f49d-41d1-9a9f-87bec9e00d5d
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 0f6a6719c4c9bc1e67be11adf5206a7672624fa0
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: f7ef476a2ebcf0161ebb70d8a3d95f77806aa05e
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="planning-for-client-deployment-to-windows-embedded-devices-in-system-center-configuration-manager"></a>Pianificazione della distribuzione del client in dispositivi con Windows Embedded in System Center Configuration Manager
+# <a name="planning-for-client-deployment-to-windows-embedded-devices-in-system-center-configuration-manager"></a>System Center Configuration Manager での Windows Embedded デバイスへのクライアント展開の計画
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-<a name="BKMK_DeployClientEmbedded"></a> Se il dispositivo con Windows Embedded non include il client di System Center Configuration Manager, è possibile usare qualsiasi metodo di installazione client se il dispositivo soddisfa le dipendenze obbligatorie. Se il dispositivo incorporato supporta filtri di scrittura, è necessario disabilitare tali filtri prima di installare il client, quindi riabilitarli al termine dell'installazione del client e dell'assegnazione a un sito.  
+<a name="BKMK_DeployClientEmbedded"></a> Windows Embedded デバイスに System Center Configuration Manager クライアントが含まれていない場合、デバイスが必要な依存関係を満たしていれば、任意のクライアント インストール方法を使用できます。 Embedded デバイスで書き込みフィルターがサポートされている場合、クライアントをインストールする前にこれらのフィルターを無効にし、クライアントがインストールされ、サイトに割り当てられた後で、フィルターを再度有効にする必要があります。  
 
- Se si disabilitano i filtri, prestare attenzione a non disabilitare i driver di filtro. In genere questi driver vengono eseguiti automaticamente all'avvio del computer. La disabilitazione dei driver impedisce l'installazione del client o interferisce con l'orchestrazione dei filtri di scrittura che provoca l'errore delle operazioni dei client. I servizi associati a ogni tipo di filtro di scrittura che deve rimanere in esecuzione sono:  
+ フィルターを無効にした場合は、フィルター ドライバーを無効にしないことに注意してください。 通常、これらのドライバーは、コンピューターが起動すると、自動的に開始されます。 ドライバーを無効にすると、クライアントのインストールができなくなるか、フィルターのオーケストレーションの書き込みが中断して、クライアント操作の失敗につながります。 実行し続ける必要がある各書き込みフィルターの種類に関連付けられたサービスを次に示します。  
 
-|Tipo di filtro di scrittura|Driver|Tipo|Descrizione|  
+|書き込みフィルターの種類|ドライバー|型|説明|  
 |-----------------------|------------|----------|-----------------|  
-|EWF|ewf|Kernel|Impementa il reindirizzamento I/O a livello di settore nei volumi protetti.|  
-|FBWF|fbwf|File system|Impementa il reindirizzamento I/O a livello di file nei volumi protetti.|  
-|UWF|uwfreg|Kernel|Redirector del Registro di sistema UWF|  
-|UWF|uwfs|File system|Redirector del file UWF|  
-|UWF|uwfvol|Kernel|Gestore dei volumi UWF|  
+|EWF|EWF|カーネル|保護されたボリュームに、セクターレベルの I/O リダイレクトを実装します。|  
+|FBWF|FBWF|ファイル システム|保護されたボリュームに、ファイルレベルの I/O リダイレクトを実装します。|  
+|UWF|uwfreg|カーネル|UWF レジストリ リダイレクター|  
+|UWF|uwfs|ファイル システム|UWF ファイル リダイレクター|  
+|UWF|uwfvol|カーネル|UWF ボリューム マネージャー|  
 
- I filtri di scrittura controllano la modalità di aggiornamento del sistema operativo del dispositivo incorporato quando si apportano modifiche, ad esempio quando si installa il software. Quando i filtri di scrittura sono abilitati, anziché apportare i cambiamenti direttamente sul sistema operativo, tali modifiche vengono reindirizzate a una sovrapposizione temporanea. Se le modifiche vengono scritte solo sulla sovrapposizione, vengono perse all'arresto del dispositivo incorporato. Tuttavia, se i filtri di scrittura sono temporaneamente disabilitati, è possibile rendere permanenti le modifiche per evitare di applicarle nuovamente (o reinstallare il software) ad ogni riavvio del dispositivo incorporato. Tuttavia, la disabilitazione temporanea e la successiva riabilitazione dei filtri di scrittura richiede uno o più riavvi. Pertanto, si vorrà probabilmente controllare tale scenario tramite la configurazione di finestre di manutenzione che consentano di eseguire i riavvii al di fuori dell'orario di lavoro.  
+ 書き込みフィルターは、ソフトウェアのインストールなど、変更を行う場合に、Embedded デバイスのオペレーティング システムを更新する方法を制御します。 書き込みフィルターが有効な場合、オペレーティング システムは直接変更されず、これらの変更は一時オーバーレイにリダイレクトされます。 変更がオーバーレイに書き込まれただけの場合、Embedded デバイスのシャットダウン時に変更は失われます。 ただし、書き込みフィルターを一時的に無効にすると、Embedded デバイスが再起動するたびに再度変更を行う (またはソフトウェアを再インストールする) 必要がないように、変更を恒久的にすることができます。 書き込みフィルターを一時的に無効にして、再度有効にするには、1 回または複数回の再起動が必要になります。そのため、通常は、再起動が業務時間外になるようにメンテナンス期間を構成して、この操作の実行のタイミングを制御する必要があります。  
 
- È possibile configurare opzioni per disabilitare e riabilitare automaticamente i filtri di scrittura quando si distribuisce software come applicazioni, sequenze di attività, aggiornamenti software e il client di Endpoint Protection. L'eccezione è per le linee di base della configurazione con elementi di configurazione che usano la correzione automatica. In questo scenario, la correzione si verifica sempre nella sovrapposizione, in modo che sia disponibile solo fino a quando il dispositivo viene riavviato. La correzione viene applicata di nuovo al successivo ciclo di valutazione, ma solo alla sovrapposizione, che viene cancellata al momento del riavvio. Per assicurarsi che Configuration Manager confermi le modifiche di correzione, è possibile distribuire la configurazione di base e quindi eseguire un'altra distribuzione software che supporti la conferma della modifica il prima possibile.  
+ アプリケーション、タスク シーケンス、ソフトウェア更新プログラム、Endpoint Protection クライアントなどのソフトウェアを展開するときに、書き込みフィルターを自動的に無効化して再度有効にするオプションを構成できます。 例外は、自動修復を使用する構成項目が含まれる構成基準です。 このシナリオでは、修復は常にオーバーレイで実行され、デバイスが再起動されるまでの間のみ使用できます。 修復は次回の評価サイクルで再度適用されますが、オーバーレイにのみ適用されるため、再起動時に消去されます。 Configuration Manager で修復の変更を強制的にコミットするには、構成基準を展開してから、変更の即時コミットをサポートする別のソフトウェア展開を展開します。  
 
- Se i filtri di scrittura sono disabilitati, è possibile installare il software sui dispositivi con Windows Embedded usando Software Center. Se sono tuttavia abilitati i filtri di scrittura, l'installazione non viene eseguita correttamente e Configuration Manager visualizza un messaggio di errore relativo ad autorizzazioni insufficienti per installare l'applicazione.  
+ 書き込みフィルターが無効な場合、ソフトウェア センターを使用して Windows Embedded デバイスにソフトウェアをインストールできます。 書き込みフィルターが有効な場合、インストールは失敗し、アプリケーションをインストールするための権限が不足していることを示すエラー メッセージが Configuration Manager に表示されます。  
 
 > [!WARNING]  
->  Anche se non si selezionano le opzioni di Configuration Manager per confermare le modifiche, queste potrebbero essere confermate se viene eseguita un'altra installazione o modifica del software che consente la conferma delle modifiche. In questo scenario, le modifiche originali verranno confermate in aggiunta alle nuove modifiche.  
+>  Configuration Manager で変更をコミットするオプションを選択していない場合でも、変更をコミットする別のソフトウェアのインストール、または、変更が行われた場合に、変更がコミットされることがあります。 このシナリオでは、新しい変更に加えて、元の変更がコミットされます。  
 
- Quando Configuration Manager disabilita i filtri di scrittura per eseguire le modifiche in modo permanente, solo gli utenti con diritti amministrativi locali possono accedere e usare il dispositivo integrato. Durante questo periodo, gli utenti con diritti limitati sono bloccati e visualizzano un messaggio che il computer non è disponibile perché è in fase di manutenzione. Ciò consente di proteggere il dispositivo mentre si trova in uno stato in cui le modifiche possono essere applicate in modo permanente e questo comportamento di blocco in modalità di manutenzione costituisce un altro motivo per configurare una finestra di manutenzione per il periodo in cui gli utenti non accederanno a questi dispositivi.  
+ Configuration Manager で、変更を恒久的にするために書き込みフィルターが無効にされた場合、Embedded デバイスにログオンして使用できるのは、ローカル管理権限を持つユーザーだけです。 この間、権限の低いユーザーはロックアウトされ、保守作業中のためコンピューターを使用できないことを示すメッセージが表示されます。 これにより、変更を恒久的に適用できる状態にある間、デバイスを保護します。この保守モードのロックアウト動作も、ユーザーがデバイスにログオンしない時間にメンテナンス期間を構成する理由の 1 つです。  
 
- Configuration Manager supporta la gestione dei tipi di filtri di scrittura seguenti:  
+ Configuration Manager では、次の種類の書き込みフィルターの管理がサポートされています。  
 
--   Filtro di scrittura basato su file (FBWF): per altre informazioni, vedere [Filtro di scrittura basato su file](http://go.microsoft.com/fwlink/?LinkID=204717).  
+-   ファイル ベースの書き込みフィルター (FBWF) - 詳細については、「[ファイル ベースの書き込みフィルター](http://go.microsoft.com/fwlink/?LinkID=204717)」を参照してください。  
 
--   RAM filtro di scrittura avanzato (EWF): per altre informazioni, vedere [Filtro di scrittura avanzato](http://go.microsoft.com/fwlink/?LinkId=204718).  
+-   拡張書き込みフィルター (EWF) - 詳細については、「[拡張書き込みフィルター](http://go.microsoft.com/fwlink/?LinkId=204718)」を参照してください。  
 
--   Filtro di scrittura unificato (UWF): per altre informazioni, vedere [Filtro di scrittura unificato](http://go.microsoft.com/fwlink/?LinkId=309236).  
+-   統合書き込みフィルター (UWF) - 詳細については、「[統合書き込みフィルター](http://go.microsoft.com/fwlink/?LinkId=309236)」を参照してください。  
 
- Configuration Manager non supporta operazioni filtro di scrittura quando il dispositivo con Windows Embedded è in modalità registro RAM EWF.  
+ Configuration Manager では、Windows Embedded デバイスが EWF RAM Reg モードの場合の書き込みフィルター操作をサポートしていません。  
 
 > [!IMPORTANT]  
->  Se possibile, usare i filtri di scrittura basati su file con Configuration Manager per migliorare l'efficienza e la scalabilità.
+>  使用できる場合は、効率を高め、スケーラビリティを向上させるため、Configuration Manager でファイル ベースの書き込みフィルター (FBWF) を使用してください。
 >
-> **Per i dispositivi che usano solo FBWF:** configurare le eccezioni seguenti per salvare lo stato del client e i dati dell'inventario tra i riavvii del dispositivo:  
+> **FBWF のみを使用するデバイスの場合:** デバイスを再起動した後でクライアントの状態とインベントリ データを保持するには、次の例外を構成します。  
 >   
 >  -   CCMINSTALLDIR\\*.sdf  
 > -   CCMINSTALLDIR\ServiceData  
 > -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCM\StateSystem  
 >   
->  I dispositivi che eseguono Windows Embedded 8.0 e versioni successive non supportano le esclusioni contenenti caratteri jolly. In questi dispositivi, è necessario configurare singolarmente le esclusioni seguenti:  
+>  Windows Embedded 8.0 以降を実行するデバイスでは、ワイルドカード文字を含む除外はサポートされていません。 これらのデバイスでは、次の除外を個別に構成する必要があります。  
 >   
->  -   Tutti i file in CCMINSTALLDIR con estensione sdf, in genere:  
+>  -   CCMINSTALLDIR 内のすべてのファイルには、拡張子 .sdf が付きます。通常は次のようになります。  
 >   
 >     -   UserAffinityStore.sdf  
 >     -   InventoryStore.sdf  
@@ -82,32 +79,31 @@ ms.lasthandoff: 12/16/2016
 > -   CCMINSTALLDIR\ServiceData  
 > -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCM\StateSystem  
 >   
-> **Per dispositivi che usano solo FBWF e UWF:** quando i client in un gruppo di lavoro usano i certificati per l'autenticazione ai punti di gestione, è necessario escludere anche la chiave privata per assicurarsi che il client continui a comunicare con il punto di gestione. Configurare le eccezioni seguenti in questi dispositivi:  
+> **FBWF と UWF のみを使用するデバイスの場合:** ワークグループ内のクライアントが管理ポイントへの認証に証明書を使用する場合は、クライアントが管理ポイントと引き続き通信できるように、秘密キーも除外する必要があります。 これらのデバイスでは、次の例外を構成します。  
 >   
 >  -   c:\Windows\System32\Microsoft\Protect  
 > -   c:\ProgramData\Microsoft\Crypto  
 > -   HKEY_LOCAL_MACHINE\Software\Microsoft\SystemCertificates\SMS\Certificates  
 
- Per uno scenario di esempio su come distribuire e gestire dispositivi con Windows Embedded abilitati per il filtro di scrittura in Configuration Manager, vedere [Scenario di esempio per la distribuzione e gestione dei client di System Center Configuration Manager nei dispositivi con Windows Embedded](../../../../core/clients/deploy/example-scenario-for-deploying-and-managing-clients-on-windows-embedded-devices.md).  
+ Configuration Manager で書き込みフィルターが有効になった Windows Embedded デバイスを展開および管理するシナリオの例については、「[Windows Embedded デバイスで System Center Configuration Manager クライアントを展開および管理するシナリオ例](../../../../core/clients/deploy/example-scenario-for-deploying-and-managing-clients-on-windows-embedded-devices.md)」を参照してください。  
 
- Per altre informazioni su come costruire immagini per i dispositivi con Windows Embedded e configurare i filtri di scrittura, vedere la documentazione su Windows Embedded oppure contattare il proprio OEM.  
+ Windows Embedded デバイスのイメージを作成し、書き込みフィルターを構成する方法の詳細については、Windows Embedded のドキュメントを参照するか、OEM にお問い合せください。  
 
 > [!NOTE]  
->  Quando si selezionano le piattaforme applicabili per le distribuzioni software e gli elementi di configurazione, questi visualizzano anziché le famiglie Windows Embedded piuttosto che specifiche versioni. Usare l'elenco riportato di seguito per eseguire il mapping della versione specifica di Windows Embedded per le opzioni nella casella di riepilogo:  
+>  ソフトウェア展開と構成項目の適用可能なプラットフォームを選択すると、特定のバージョンではなく、Windows Embedded ファミリーが表示されます。 特定バージョンの Windows Embedded と、リスト ボックスのオプションの対応については、次の一覧をご覧ください。  
 >   
->  -   **Sistemi operativi Embedded basati su Windows XP (32 bit)** include quanto segue:  
+>  -   **Windows XP (32-bit) ベースの Embedded オペレーティング システム** には、次のものがあります。  
 >   
 >      -   Windows XP Embedded  
->     -   Windows Embedded per punto di servizio  
+>     -   Windows Embedded for Point of Service  
 >     -   Windows Embedded Standard 2009  
 >     -   Windows Embedded POSReady 2009  
-> -   **Sistemi operativi Embedded basati su Windows 7 (32 bit)** include quanto segue:  
+> -   **Windows 7 (32-bit) ベースの Embedded オペレーティング システム** には、次のものがあります。  
 >   
 >      -   Windows Embedded Standard 7 (32-bit)  
->     -   Windows Embedded POSReady 7 (32 bit)  
->     -   Windows ThinPC  
-> -   **Sistemi operativi Embedded basati su Windows 7 (64 bit)** include quanto segue:  
+>     -   Windows Embedded POSReady 7 (32-bit)  
+>     -   Windows の ThinPC  
+> -   **Windows 7 (64 ビット) ベースの Embedded オペレーティング システム** には、次のものがあります。  
 >   
->      -   Windows Embedded Standard 7 (64-bit)  
->     -   Windows Embedded POSReady 7 (64 bit)
-
+>      -   Windows Embedded Standard 7 (64 ビット)  
+>     -   Windows Embedded POSReady 7 (64 ビット)

@@ -1,143 +1,139 @@
 ---
-title: Creare elementi di configurazione per Windows 10 gestito da client - Configuration Manager | Microsoft Docs
-description: Usare l&quot;elemento di configurazione Windows 10 in System Center Configuration Manager per gestire le impostazioni dei computer Windows 10 gestiti dal client di Configuration Manager.
+title: "クライアントで管理されている Windows 10 の構成項目を作成する - Configuration Manager | Microsoft Docs"
+description: "System Center Configuration Manager の Windows 10 構成項目を使用して、Configuration Manager クライアントで管理されている Windows 10 コンピューターの設定を管理します。"
 ms.custom: na
 ms.date: 03/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 14226fbe-dd07-4432-910b-130790624a4e
-caps.latest.revision: 17
-caps.handback.revision: 0
+caps.latest.revision: "17"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: e0a42a1d4706ab29617f3b6f8960ece27672908b
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-configuration-items-for-windows-10-devices-managed-with-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows 10 gestiti con il client di System Center Configuration Manager
-Usare l'elemento di configurazione **Windows 10** in System Center Configuration Manager per gestire le impostazioni dei computer che eseguono Windows 10 gestiti dal client di Configuration Manager.  
+# <a name="how-to-create-configuration-items-for-windows-10-devices-managed-with-the-system-center-configuration-manager-client"></a>System Center Configuration Manager クライアントを使用して管理されている Windows 10 デバイスの構成項目を作成する方法
+System Center Configuration Manager の **Windows 10** 構成項目を使用して、Configuration Manager クライアントで管理されている Windows 10 コンピューターの設定を管理します。  
   
 > [!IMPORTANT]  
->  In questa versione, se all'interno di un elemento di configurazione di tipo **Windows 10** (per un dispositivo gestito con il client di Configuration Manager) è stata creata un'impostazione **Password** che non esiste ancora o non è stata configurata nel dispositivo Windows 10, viene erroneamente valutata come conforme.  
+>  このリリースで、**パスワード**設定を、種類が **Windows 10** の構成項目の一部として (Configuration Manager クライアントで管理されているデバイスに対して) 作成した場合、その設定がまだ存在しないか、Windows 10 デバイスで構成されていなくても、"対応" として誤って評価されます。  
 >   
->  Come soluzione alternativa, quando si crea un'impostazione per questi dispositivi assicurarsi che sia selezionata l'opzione **Monitora e aggiorna impostazioni non conformi** nelle pagine delle impostazioni della Creazione guidata dell'elemento di configurazione. Inoltre, quando si distribuisce una linea di base di configurazione contenente un elemento di configurazione di Windows 10 con impostazioni di password al suo interno, selezionare **Monitora e aggiorna le regole non conformi, se supportato** nella finestra di dialogo Distribuisci linee di base di configurazione. L'uso di questa soluzione alternativa consente di monitorare l'impostazione e di correggerla se risulta non conforme. Dopo la correzione, l'impostazione verrà correttamente segnalata come **Conforme** , a meno che non venga rilevato un problema, nel qual caso verrà segnalata con **Errore**.  
+>  この問題を回避するには、これらのデバイスの設定を作成するときに、構成項目の作成ウィザードの設定ページで、必ず **[対応していない設定を修復する]** を選択します。 さらに、パスワードの設定を含む Windows 10 構成項目が含まれる構成基準を展開するときに、[構成基準の展開] ダイアログ ボックスの **[サポートされている場合は対応していない規則を修復する]** を選択します。 この回避策を使用すると、設定が監視され、非対応であることが検出された場合は修復されます。 修復後、設定は **[対応]** として適切にレポートされます (問題が発生していない場合。問題が発生した場合は、 **[エラー]**としてレポートされます)。  
   
-### <a name="to-create-a-windows-10-configuration-item"></a>Per creare un elemento di configurazione Windows 10  
+### <a name="to-create-a-windows-10-configuration-item"></a>Windows 10 構成項目を作成するには  
   
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1.  Configuration Manager コンソールで、[ **資産とコンプライアンス** ] をクリックします。  
   
-2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
+2.  [ **資産とコンプライアンス** ] ワークスペースで [ **コンプライアンス設定** ] を展開して、[ **構成項目** ] をクリックします。  
   
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
+3.  [ **ホーム** ] タブの [ **作成** ] グループで、[ **構成項目の作成** ] をクリックします。  
   
-4.  Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
+4.  **構成項目の作成ウィザード** の **[全般]**ページで、構成項目の名前と、必要に応じて説明を入力します。  
   
-5.  In **Specificare il tipo di elemento di configurazione da creare**selezionare **Windows 10**.  
+5.  **[作成する構成項目の種類の指定]**で、 **[Windows 10]**を選択します。  
   
-6.  Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
+6.  Configuration Manager コンソールで構成項目を検索およびフィルター処理するのに役立つカテゴリを作成して割り当てる場合は、[ **カテゴリ** ] をクリックします。  
   
-7.  Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme Windows 10 specifiche che valuteranno l'elemento di configurazione.  
+7.  ウィザードの **[サポートされているプラットフォーム]** ページで、構成項目を評価する特定の Windows 10 プラットフォームを選択します。  
   
-8.  Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Windows 10 configuration item settings reference](#BKMK_Ref) in questo argomento e quindi fare clic su **Avanti**.  
-  
-    > [!TIP]  
-    >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
-  
-9. In ogni pagina di impostazioni configurare le impostazioni necessarie e specificare se si vuole monitorarle e aggiornarle nel caso non siano conformi nei dispositivi (se questa funzionalità è supportata).  
-  
-10. Per ogni gruppo di impostazioni, è anche possibile configurare il livello di gravità che verrà segnalato quando viene trovato un elemento di configurazione non conforme, selezionando uno dei livelli seguenti:  
-  
-    -   **Nessuno**: i dispositivi che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
-  
-    -   **Informazioni**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Informazioni** per i report di Configuration Manager.  
-  
-    -   **Avviso**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Avviso** per i report di Configuration Manager.  
-  
-    -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
-  
-    -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel log eventi dell'applicazione.  
-  
-11. Nella pagina **Applicabilità piattaforma** della creazione guidata, verificare le eventuali impostazioni non compatibili con le piattaforme supportate selezionate in precedenza. È possibile tornare indietro e rimuovere queste impostazioni oppure continuare.  
+8.  ウィザードの **[デバイスの設定]** ページで、構成する設定グループを選択します。 このトピックの「 [Windows 10 configuration item settings reference](#BKMK_Ref) 」で詳細情報を確認し、 **[次へ]**をクリックします。  
   
     > [!TIP]  
-    >  Non viene valutata la conformità delle impostazioni non supportate.  
+    >  必要な設定が一覧にない場合は、 **[既定の設定グループに含まれない追加の設定を構成する]**チェック ボックスをオンにします。  
   
-12. Completare la procedura guidata.  
+9. 各設定ページで、必要な設定と、その設定がデバイスに対応していないときにその設定を修正するかどうかを構成します (これがサポートされている場合)。  
   
- È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
+10. 設定グループごとに、構成項目が非対応であることが検出されたときに報告される重要度を構成することもできます。  
   
-##  <a name="windows-10-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione di Windows 10  
+    -   **なし** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に非対応重要度を何も報告しません。  
   
-### <a name="password"></a>Windows 10  
+    -   **情報** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**情報**というレベルで非対応重要度を報告します。  
   
-|Impostazioni|Dettagli|  
+    -   **警告** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**警告**というレベルで非対応重要度を報告します。  
+  
+    -   **重大** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**重大**というレベルで非対応重要度を報告します。  
+  
+    -   **重大 (イベント)** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**重大**というレベルで非対応重要度を報告します。 重要度のレベルは、アプリケーションのイベント ログでも Windows のイベントとしてログが登録されます。  
+  
+11. ウィザードの **[プラットフォームの適用性]** ページで、前に選択したサポート対象プラットフォームと互換性がないすべての設定を確認します。 前に戻ってこれらの設定を削除するか、操作を続行できます。  
+  
+    > [!TIP]  
+    >  サポートされていない設定のコンプライアンスは評価されません。  
+  
+12. ウィザードを完了します。  
+  
+ 新しい構成項目は、 **[資産とコンプライアンス]** ワークスペースの **[構成項目]** ノードに表示されます。  
+  
+##  <a name="windows-10-configuration-item-settings-reference"></a>Windows 10 の構成項目設定のリファレンス  
+  
+### <a name="password"></a>パスワード  
+  
+|設定|説明|  
 |-------------|-------------|  
-|**Richiedi impostazioni password nei dispositivi mobili**|Richiede una password nei dispositivi supportati.|  
-|**Lunghezza minima password (caratteri)**|Lunghezza minima della password.|  
-|**Scadenza password in giorni**|Numero di giorni prima che sia necessario modificare la password.|  
-|**Numero di password memorizzate**|Impedisce il riutilizzo delle password precedenti.|  
-|**Numero di tentativi di accesso non riusciti prima della cancellazione dei dati da un dispositivo**|Cancella il dispositivo se l'accesso non riesce per il numero di volte indicato.|  
-|**Tempo di inattività prima del blocco del dispositivo**|Specifica quanti minuti il dispositivo deve restare inattivo prima che venga bloccato automaticamente.|  
-|**Complessità password**|Scegliere se è possibile specificare un PIN, ad esempio "1234", o se è necessario fornire una password complessa.|
-|**Numero di set di caratteri complessi richiesti nella password**|Se è stata scelta una password **complessa**, usare questa impostazione per configurare il numero di set di caratteri complessi necessari. Per ottenere una password complessa, il valore deve essere impostato almeno su **3**, ovvero sono necessari lettere e numeri. Selezionare **4** per imporre una password che richiede anche caratteri speciali, ad esempio **(% $**.<br>(solo Windows 10)  |
+|**デバイスのパスワードの設定が必要**|サポート対象デバイスのパスワードが必要です。|  
+|**パスワードの最小文字数**|パスワードの最小文字数。|  
+|**パスワードの有効期限 (日数)**|パスワードの変更が必要になるまでの日数。|  
+|**記憶するパスワードの数**|以前のパスワードを再利用できないようにします。|  
+|**デバイスをワイプするまでのログオン失敗回数**|ログインがこの回数だけ失敗した場合は、デバイスがワイプされます。|  
+|**デバイスをロックするまでのアイドル時間**|デバイスが自動的にロックされるまでに非アクティブにしておく必要がある時間 (分) を指定します。|  
+|**パスワードの複雑さ**|「1234」などの PIN を指定できるのか、または強力なパスワードを指定する必要があるのかを選択します。|
+|**パスワードに必要な複雑な文字セットの数**|**強力な**パスワードを選択した場合、この設定を使用して、複雑な文字セットの必要な数を構成します。 強力なパスワードの場合は、これを少なくとも **3** (文字と数字の両方が必要) に設定する必要があります。 さらに **(%$** などの特殊文字を必要とするパスワードを要求する場合は、**4** を選択します。<br>(Windows 10 のみ)  |
   
-###  <a name="device"></a>Dispositivo  
+###  <a name="device"></a>デバイス  
   
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**Bluetooth**|Consente l'uso della funzionalità Bluetooth nel dispositivo.|  
+|**Bluetooth**|デバイスの Bluetooth 機能を使用できるようにします。|  
   
-### <a name="cloud"></a>Cloud  
+### <a name="cloud"></a>クラウド  
   
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**Sincronizzazione impostazioni**|Consente la sincronizzazione delle impostazioni tra i dispositivi.|  
-|**Sincronizzazione credenziali**|Consente la sincronizzazione delle credenziali tra i dispositivi.|  
-|**Sincronizzazione delle impostazioni con connessione a consumo**|Consente la sincronizzazione delle impostazioni quando la connessione a Internet è a consumo.|  
+|**設定の同期**|デバイス間で設定を同期できるようにします。|  
+|**資格情報の同期**|デバイス間で資格情報を同期できるようにします。|  
+|**従量制課金接続での設定の同期**|インターネット接続が従量制課金の場合に、設定を同期できるようにします。|  
   
-### <a name="roaming"></a>Roaming  
+### <a name="roaming"></a>ローミング  
   
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**Roaming dati**|Consente il roaming tra reti quando si accede a dati.|  
+|**データ ローミング**|データへのアクセス中にネットワーク間のローミングを許可します。|  
   
-### <a name="encryption"></a>Crittografia  
+### <a name="encryption"></a>暗号化  
   
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**Crittografia file nel dispositivo mobile**|Richiede la crittografia dei file nel dispositivo.|  
+|**デバイスのファイルの暗号化**|デバイス上のファイルを必ず暗号化するようにします。|  
   
-### <a name="system-security"></a>Protezione del sistema  
+### <a name="system-security"></a>システム セキュリティ  
   
-|Nome impostazione|Dettagli|  
+|設定の名前|説明|  
 |------------------|-------------|  
-|**Controllo dell'account utente**|Configura la modalità di funzionamento del controllo account utente di Windows nel dispositivo.<br />Ad esempio, è possibile disabilitare questa funzione o impostare il livello in corrispondenza del quale l'utente riceve una notifica.|  
-|**Firewall di rete**|Attiva o disattiva Windows Firewall.|  
-|**SmartScreen**|Abilita o disabilita Windows SmartScreen.|  
-|**Protezione da virus**|Richiede che sia installato e configurato software antivirus.|  
-|**Le firme per la protezione da virus sono aggiornate**|Richiede che i file di firma per il software antivirus nel dispositivo siano aggiornati.|  
+|**ユーザー アカウント コントロール**|デバイスの Windows ユーザー アカウント制御を構成します。<br />たとえば、ユーザー アカウント制御を無効にしたり、その通知レベルを設定したりできます。|  
+|**ネットワーク ファイアウォール**|Windows ファイアウォールを有効または無効にします。|  
+|**スマート スクリーン**|Windows SmartScreen を有効または無効にします。|  
+|**ウイルス対策**|ウイルス対策ソフトウェアをインストールして、構成する必要があります。|  
+|**ウイルス対策署名は最新です**|デバイス上のウイルス対策ソフトウェアの署名ファイルは、最新の状態にしておく必要があります。|  
   
-### <a name="windows-information-protection-wip"></a>Windows Information Protection (WIP)
+### <a name="windows-information-protection-wip"></a>Windows 情報保護 (WIP)
 
-Con l'aumento dei dispositivi personali nell'organizzazione, aumenta anche il rischio di perdita accidentale dei dati tramite app e servizi, ad esempio posta elettronica, social media e cloud pubblico, non controllati dall'organizzazione. È il caso, ad esempio, di un dipendente che invia le immagini di progettazione più recenti dall'account di posta elettronica personale, copia e incolla le informazioni su un prodotto in un tweet o salva il report di una vendita in corso nell'area di archiviazione nel cloud pubblico.
+企業内の従業員が所有するデバイスが増加していることに伴い、企業が制御できない電子メール、ソーシャル メディア、パブリック クラウドなどのアプリやサービスを介して発生する偶発的なデータ漏えいのリスクが増大しています。 たとえば、従業員が個人用の電子メール アカウントから最新のエンジニアリング画像を送信すると、製品情報がツイートにコピーして貼り付けられたり、作成中の営業レポートがパブリック クラウドの記憶域に保存されたりします。
 
-Windows Information Protection, in precedenza denominato Protezione dei dati aziendali, offre protezione da questa potenziale perdita di dati senza interferire con l'esperienza del dipendente. Consente anche di proteggere le app e i dati aziendali da perdite di dati accidentali su dispositivi di proprietà dell'azienda e dispositivi personali che i dipendenti portano al lavoro senza richiedere modifiche all'ambiente o ad altre app.
+Windows 情報保護 (旧称エンタープライズ データ保護) は、この潜在的なデータ漏えいの防止に役立ちます。それ以外の場合は従業員のエクスペリエンスを妨げることはありません。 また WIP は、企業所有のデバイスと従業員が職場に持ち込む個人のデバイス上での意図しないデータ漏えいから、エンタープライズ アプリとデータを保護するのにも役立ちます。これには環境の変更や他のアプリは必要ありません。
 
- In Configuration Manager gli elementi di configurazione di Windows Information Protection gestiscono l'elenco di app protette da WIP, i percorsi di rete aziendali, il livello di protezione e le impostazioni di crittografia.
+ Configuration Manager の Windows 情報保護の構成項目は、WIP で保護されているアプリ、エンタープライズ ネットワークの場所、保護レベル、および暗号化設定の一覧を管理するものです。
   
 
-Per informazioni su come configurare Windows Information Protection con Configuration Manager, vedere [Proteggere i dati aziendali con Windows Information Protection (WIP)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip).
+Configuration Manage で Windows 情報保護を構成する方法については、「[Windows 情報保護 (WIP) を使用したエンタープライズ データの保護](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip)」をご覧ください。
   
-## <a name="see-also"></a>Vedere anche  
- [Elementi di configurazione per dispositivi gestiti con il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md)
-
+## <a name="see-also"></a>関連項目  
+ [System Center Configuration Manager クライアントを使用して管理されているデバイスの構成項目](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md)

@@ -1,81 +1,78 @@
 ---
-title: "Funzionalità della versione Technical Preview 1607 per Configuration Manager"
-description: "Informazioni sulle funzionalità disponibili in Technical Preview per System Center Configuration Manager, versione 1607."
+title: "Configuration Manager の Technical Preview 1607 の機能"
+description: "System Center Configuration Manager の Technical Preview バージョン 1607 で使用できる機能について説明します。"
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2bb69547-3370-4860-96b0-7fb600c56482
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
 ms.openlocfilehash: 4717e0f8eef01501fb5b5790e855c476c1ca4590
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1607-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1607 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1607-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1607 の機能
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*適用対象: System Center Configuration Manager (Technical Preview)*
 
-Questo articolo presenta le funzionalità disponibili in Technical Preview per System Center Configuration Manager, versione 1607. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
+この記事では、System Center Configuration Manager の Technical Preview バージョン 1607 で使用できる機能について説明します。 このバージョンをインストールして更新し、新機能を Configuration Manager の Technical Preview サイトに追加できます。      このバージョンの Technical Preview をインストールする前に、説明のトピック「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。    
 
 
-**Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
+**このバージョンでお試しいただける新機能を次に示します。**  
 
-## <a name="dmp_edition"></a>Miglioramenti ai criteri di aggiornamento edizione di Windows 10
+## <a name="dmp_edition"></a>Windows 10 のエディションのアップグレード ポリシーの改善
 
-In questa versione sono stati apportati ai criteri i miglioramenti seguenti:
+このリリースでは、次の機能強化がこのポリシーに加えられています。
 
-* È ora possibile usare i criteri di aggiornamento edizione con PC Windows 10 che eseguono il client di Configuration Manager, oltre che con PC Windows 10 registrati con Microsoft Intune.
-* È possibile eseguire l'aggiornamento da Windows 10 Professional a una qualsiasi delle piattaforme nella procedura guidata compatibili con l'hardware in uso.
+* Microsoft Intune に登録された Windows 10 PC に加え、Configuration Manager クライアントを実行している Windows 10 PC で、エディションのアップグレード ポリシーを使用できるようになりました。
+* Windows 10 Professional から、ハードウェアと互換性がある、ウィザードのプラットフォームのいずれかにアップグレードすることができます。
 
-[Altre informazioni sui criteri di aggiornamento edizione di Windows 10](/sccm/compliance/deploy-use/upgrade-windows-version)
+[Windows 10 のエディションのアップグレード ポリシーについての詳細](/sccm/compliance/deploy-use/upgrade-windows-version)
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>試してみましょう。
 
-1. Per creare i criteri di aggiornamento edizione, usare le informazioni contenute nell'[argomento sui criteri di aggiornamento edizione esistenti](/sccm/compliance/deploy-use/upgrade-windows-version).
-2. Distribuire i criteri a un PC Windows 10 che esegue il client di Configuration Manager.
-Quando i criteri raggiungono un PC Windows specificato, il PC verrà riavviato entro due ore per applicare l'aggiornamento. Non è attualmente possibile interrompere il riavvio. Informare tutti gli utenti interessati dalla distribuzione dei criteri o pianificare la distribuzione dei criteri in ore non lavorative.
+1. [既存エディションのアップグレード ポリシーのトピック](/sccm/compliance/deploy-use/upgrade-windows-version)にある情報を使用して、エディションのアップグレード ポリシーを作成します。
+2. このポリシーを Configuration Manager クライアントを実行している Windows 10 PC に展開します。
+対象の Windows PC にポリシーが到達すると、アップグレードを適用するために PC は 2 時間以内に再起動します。 現在、この再起動を抑制することはできません。 ポリシーを展開するすべてのユーザーに通知するか、ポリシーの実行をユーザーの業務時間外にスケジュール設定します。
 
-### <a name="known-issue-with-this-release"></a>Problemi noti per questa versione
-Nelle impostazioni del client di Configuration Manager è possibile visualizzare le impostazioni relative ad **Aggiornamento edizione**. In questa versione tali impostazioni non sono funzionali. Usare le istruzioni fornite in precedenza per aggiornare Windows 10 a una versione più recente.
+### <a name="known-issue-with-this-release"></a>このリリースでの既知の問題
+Configuration Manager クライアントの設定で、**エディションのアップグレード**の設定が表示される場合があります。 このリリースでは、これらの設定は機能しません。 上記の手順に従って、Windows 10 を新しいバージョンにアップグレードします。
 
-## <a name="customizable-branding-for-software-center-dialogs"></a>Personalizzazione delle finestre di dialogo di Software Center
+## <a name="customizable-branding-for-software-center-dialogs"></a>ソフトウェア センター ダイアログにおけるカスタマイズ可能なブランド
 
-In Configuration Manager versione 1602 è stata introdotta la personalizzazione per Software Center. In Technical Preview versione 1607 la personalizzazione viene ora estesa a tutte le finestre di dialogo associate e alle notifiche della barra delle applicazioni in modo da offrire agli utenti di Software Center un'esperienza più uniforme.
+ソフトウェア センターのカスタム ブランド設定は、Configuration Manager バージョン 1602 で導入されました。 Technical Preview version 1607 では、ソフトウェア センターのユーザーにより一貫性のあるエクスペリエンスを提供するため、このブランド設定が関連するすべてのダイアログ ボックスとタスク バーの通知に拡張されています。
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>試してみましょう。
 
-In Software Center la personalizzazione viene applicata secondo le regole seguenti:
+ソフトウェア センターのカスタム ブランド設定は、次の規則に従って適用されます。
 
-1. Se il ruolo del server del sito punto per siti Web del Catalogo applicazioni non è installato, Software Center visualizzerà il nome dell'organizzazione specificato nell'impostazione **Nome organizzazione visualizzato in Software Center** del client **Agente computer**. Per istruzioni, vedere [Come configurare le impostazioni client](../../core/clients/deploy/configure-client-settings.md).
+1. アプリケーション カタログ Web サイトのポイント サイト サーバーの役割がインストールされていない場合は、[**コンピューター エージェント**] クライアント設定 [**ソフトウェア センターに表示される組織名**] に指定された組織名がソフトウェア センターに表示されます。 手順については、「[クライアント設定を構成する方法](../../core/clients/deploy/configure-client-settings.md)」をご覧ください。
 
-2. Se il ruolo del server del sito punto per siti Web del Catalogo applicazioni è installato, Software Center visualizzerà il nome dell'organizzazione e il colore specificati nelle proprietà del ruolo del server del sito punto per siti Web del Catalogo applicazioni. Per altre informazioni, vedere [Configuration options for Application Catalog website point](../../core/servers/deploy/configure/configuration-options-for-site-system-roles.md#BKMK_ApplicationCatalog_Website) (Opzioni di configurazione per il punto per siti Web del Catalogo applicazioni).
+2. アプリケーション カタログ Web サイトのポイント サイト サーバーの役割がインストールされている場合は、アプリケーション カタログ Web サイトのポイント サイト サーバーの役割プロパティに指定されている組織名と色がソフトウェア センターに表示されます。 詳細については、「[Configuration options for Application Catalog website point](../../core/servers/deploy/configure/configuration-options-for-site-system-roles.md#BKMK_ApplicationCatalog_Website)」(アプリケーション カタログ Web サイト ポイントの構成オプション) をご覧ください。
 
-3. Se una sottoscrizione di Microsoft Intune è configurata e connessa all'ambiente Configuration Manager, Software Center visualizzerà il nome dell'organizzazione, il colore e il logo aziendale specificati nelle proprietà della sottoscrizione di Intune. Per altre informazioni, vedere [Configurare la sottoscrizione di Microsoft Intune](/mdm/deploy-use/configure-intune-subscription).
+3. Microsoft Intune サブスクリプションが構成されていて Configuration Manager 環境に接続されている場合は、Intune サブスクリプションのプロパティに指定されている組織名、色、および会社のロゴがソフトウェア センターに表示されます。 詳細については、「[Configure the Microsoft Intune subscription](/mdm/deploy-use/configure-intune-subscription)」 (Microsoft Intune サブスクリプションを構成する) をご覧ください。
 
-## <a name="use-the-same-network-adapter-for-multiple-pxe-initiated-deployments"></a>Usare la stessa scheda di rete per più distribuzioni avviate da PXE
-In Technical Preview versione 1607, se si usa una scheda ethernet per creare un'immagine di più dispositivi (ad esempio una scheda ethernet USB usata su più dispositivi), è possibile abilitare una nuova impostazione che consente di immettere gli identificatori hardware per le schede ethernet. Configuration Manager ignora gli identificatori hardware nell'elenco quando si esegue un'installazione di PXE e per la registrazione del client.
+## <a name="use-the-same-network-adapter-for-multiple-pxe-initiated-deployments"></a>複数の PXE による展開に同一のネットワーク アダプターを使用する
+Technical Preview バージョン 1607 では、(複数のデバイスで使用する、USB イーサネット アダプターなど) イーサネット アダプターを使用して複数のデバイスのイメージを作成する際に、イーサネット アダプターにハードウェア識別子を入力できるようにする新しい設定を有効にすることができます。 Configuration Manager は、PXE インストールを実行する際やクライアントの登録で一覧のハードウェア識別子を無視します。
 
-Per altre informazioni su questo problema, vedere il [blog del team di supporto di Configuration Manager OSD](https://blogs.technet.microsoft.com/system_center_configuration_manager_operating_system_deployment_support_blog/2015/08/27/reusing-the-same-nic-for-multiple-pxe-initiated-deployments-in-system-center-configuration-manger-osd/).  
+この問題の詳細については、[Configuration Manager OSD サポート チームのブログ](https://blogs.technet.microsoft.com/system_center_configuration_manager_operating_system_deployment_support_blog/2015/08/27/reusing-the-same-nic-for-multiple-pxe-initiated-deployments-in-system-center-configuration-manger-osd/)をご覧ください。  
 
-### <a name="enable-the-feature-to-manage-duplicate-hardware-identifiers"></a>Abilitare la funzionalità per gestire gli identificatori hardware duplicati  
-1. Nella console di Configuration Manager andare su **Amministrazione** > **Panoramica** > **Servizi cloud** > **Aggiornamenti e manutenzione** > **Funzionalità**.
-2. Nel riquadro informazioni selezionare **Gestione degli identificatori hardware duplicati**.
-3. Nel gruppo **Funzionalità** della scheda **Home** fare clic su **Attiva**.
+### <a name="enable-the-feature-to-manage-duplicate-hardware-identifiers"></a>重複するハードウェア識別子を管理する機能を有効にする  
+1. Configuration Manager コンソールで、[**管理**] > [**概要**] > [**Cloud Services**] > [**更新とサービス**] > [**機能**] の順に移動します。
+2. 表示ウィンドウで [**重複しているハードウェア識別子の管理**] を選択します。
+3. [**ホーム**] タブの [**機能**] グループで、[**有効にする**] をクリックします。
 
-### <a name="add-hardware-identifiers-for-configuration-manager-to-ignore"></a>Aggiungere identificatori hardware che Configuration Manager deve ignorare  
-1. Nella console di Configuration Manager andare su **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Siti**.
-2. Nella scheda **Home** , del gruppo **Siti** , fare clic su **Impostazioni gerarchia**.
-3. Andare alla scheda **Approvazione client e record in conflitto**.
-4. Per aggiungere nuovi identificatori hardware, fare clic su **Aggiungi** nella sezione **Identificatori hardware duplicati**.
-
+### <a name="add-hardware-identifiers-for-configuration-manager-to-ignore"></a>無視する Configuration Manager のハードウェア識別子を追加する  
+1. Configuration Manager コンソールで、[**管理**] > [**概要**] > [**サイトの構成**] > [**サイト**] の順に移動します。
+2. **[ホーム]** タブの **[サイト]** グループで、 **[階層設定]**をクリックします。
+3. [**クライアントの承認と競合レコードの処理**] タブに移動します。
+4. [**重複するハードウェア ID**] セクションで [**追加**] をクリックして 新しいハードウェア識別子を追加します。

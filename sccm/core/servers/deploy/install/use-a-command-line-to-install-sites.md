@@ -1,129 +1,126 @@
 ---
-title: Installazione dalla riga di comando | Microsoft Docs
-description: Informazioni su come eseguire il programma di installazione di System Center Configuration Manager da un prompt dei comandi per vari tipi di installazione del sito.
+title: "コマンド ライン インストール | Microsoft Docs"
+description: "さまざまなサイトのインストールで、コマンド プロンプトから System Center Configuration Manager セットアップを実行する方法について説明します。"
 ms.custom: na
 ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e7cdb1a9-140a-436e-ac71-72d083110223
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f7cd9c71287d62c9f5d36e2f032bc2a6065572ae
 ms.openlocfilehash: 8ff48b08d1abb7481592c0ea076d4efa15c3d8ee
-ms.contentlocale: it-it
-ms.lasthandoff: 06/06/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-a-command-line-to-install-system-center-configuration-manager-sites"></a>Usare una riga di comando per installare i siti di System Center Configuration Manager
+# <a name="use-a-command-line-to-install-system-center-configuration-manager-sites"></a>コマンド ラインを使用して System Center Configuration Manager サイトをインストールする
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
- È possibile eseguire il programma di installazione di System Center Configuration Manager da un prompt dei comandi per installare vari tipi di siti.
+ さまざまなサイトのインストールで、コマンド プロンプトから System Center Configuration Manager セットアップを実行できます。
 
-## <a name="supported-tasks-for-command-line-installations"></a>Attività supportate per le installazioni da riga di comando
- Questo metodo di installazione supporta le seguenti attività di installazione e manutenzione del sito:
+## <a name="supported-tasks-for-command-line-installations"></a>コマンド ラインでのインストールでサポートされているタスク
+ この方法でセットアップを実行する場合、次のサイト インストール タスクとサイト メンテナンス タスクがサポートされます。
 
--   **Installare un sito di amministrazione centrale o un sito primario da un prompt dei comandi**  
-  Visualizzare le [opzioni della riga di comando per il programma di installazione](../../../../core/servers/deploy/install/command-line-options-for-setup.md)
+-   **コマンド プロンプトから中央管理サイトまたはプライマリ サイトをインストールする**  
+  [セットアップのコマンド ライン オプション](../../../../core/servers/deploy/install/command-line-options-for-setup.md)を表示する
 
--  **Modificare le lingue in uso in un sito di amministrazione centrale o in un sito primario**  
-    Per modificare le lingue installate in un sito da un prompt dei comandi (comprese le lingue per i dispositivi mobili), è necessario:  
+-  **中央管理サイトまたはプライマリ サイトで使用する言語を変更する**  
+    サイトにインストールされている言語 (モバイル デバイスの言語を含む) をコマンド プロンプトから変更するには、次の操作を実行する必要があります。  
 
-     -   Eseguire il programma di installazione da **&lt;PercorsoInstallazioneConfigMgr\>\Bin\X64** nel server del sito,
-     -   usare l'opzione della riga di comando **/MANAGELANGS**,
-     -   specificare un file script che definisca le lingue che si vuole aggiungere o rimuovere.  
+     -   サイト サーバーの **&lt;ConfigMgrInstallationPath\>\Bin\X64** からセットアップを実行します
+     -   **/MANAGELANGS** コマンド ライン オプションを使用します
+     -   追加または削除する言語を指定した言語スクリプト ファイルを指定します  
 
-    Ad esempio, usare la sintassi del comando seguente: **setupwpf.exe /MANAGELANGS &lt;file script delle lingue\>**  
+    たとえば、次のコマンド構文を使用します: **setupwpf.exe/MANAGELANGS &lt;言語スクリプト ファイル\>**  
 
-    Per creare il file script delle lingue, usare le informazioni relative alle [opzioni della riga di comando per la gestione delle lingue](../../../../core/servers/deploy/install/command-line-options-for-setup.md#bkmk_Lang)  
+    言語スクリプト ファイルを作成するには、「[Command line options to manage languages](../../../../core/servers/deploy/install/command-line-options-for-setup.md#bkmk_Lang)」(言語を管理するためのコマンド ライン オプション) に記載されている情報を参考にしてください。  
 
--  **Usare un file script di installazione per le installazioni automatiche del sito o per il ripristino del sito**  
-    È possibile eseguire il programma di installazione da un prompt dei comandi usando uno script di installazione ed eseguire un'installazione automatica del sito. È anche possibile usare questa opzione per ripristinare un sito.    
+-  **サイトの無人インストールまたはサイトの回復にインストール スクリプト ファイルを使用する**  
+    インストール スクリプトを使用してコマンド プロンプトからセットアップを実行し、サイトの無人インストールを実行できます。 また、この方法で、サイトを回復することもできます。    
 
-    Per usare uno script con il programma di installazione:  
+    セットアップでスクリプトを使用するには:  
 
-    -   Eseguire il programma di installazione con l'opzione della riga di comando **/SCRIPT** e specificare un file script.  
+    -   コマンド ライン オプション **/SCRIPT** を使用してセットアップを実行し、スクリプト ファイルを指定します。  
 
-    -   Il file script deve essere configurato con le chiavi e i valori necessari.  
+    -   スクリプト ファイルは、必要なキーと値を使用して構成する必要があります。  
 
-    Per un'installazione automatica di un sito di amministrazione centrale o di un sito primario, il file script deve avere le sezioni seguenti:  
+    中央管理サイトまたはプライマリ サイトの無人インストールの場合は、次のセクションがスクリプト ファイルに含まれている必要があります。  
 
     -   Identification    
-    -   Opzioni    
+    -   Options    
     -   SQLConfigOptions    
       -   HierarchyOptions    
     -   CloudConnectorOptions   
 
-    Per ripristinare un sito, è necessario includere anche le sezioni seguenti del file script:  
+    サイトを回復するには、スクリプト ファイルの次のセクションも含める必要があります。  
 
     -   Identification  
-    -   Modello di
+    -   復元
 
-Per altre informazioni, vedere [Ripristino automatico del sito per Configuration Manager](/sccm/protect/understand/unattended-recovery).  
+詳細については、「[Configuration Manager のサイトの無人回復](/sccm/protect/understand/unattended-recovery)」を参照してください。  
 
-Per un elenco di chiavi e valori da usare in un file script di un'installazione automatica, vedere [Chiavi di file script di installazione automatica](../../../../core/servers/deploy/install/command-line-options-for-setup.md#bkmk_Unattended).  
+無新インストールのスクリプト ファイルで使用するキーと値の一覧を確認するには、「[Unattended Setup script file keys](../../../../core/servers/deploy/install/command-line-options-for-setup.md#bkmk_Unattended)」(無人セットアップ スクリプト ファイルのキー) を参照してください。  
 
-## <a name="about-the-command-line-script-file"></a>Informazioni sul file script della riga di comando  
- Per le installazioni automatiche di Configuration Manager è possibile eseguire il programma di installazione con l'opzione della riga di comando **/SCRIPT** e specificare un file script che contiene le opzioni di installazione. Le attività seguenti sono supportate da questo metodo:  
+## <a name="about-the-command-line-script-file"></a>コマンド ライン スクリプト ファイルについて  
+ Configuration Manager の無人インストールの場合は、コマンド ライン オプション **/SCRIPT** を使用してセットアップを実行し、インストール オプションを含むスクリプト ファイルを指定できます。 この方法では、次のタスクがサポートされています。  
 
--   Installare un sito di amministrazione centrale  
--   Installare un sito primario  
--   Installare una console di Configuration Manager  
--   Ripristinare un sito  
+-   中央管理サイトをインストールする  
+-   プライマリ サイトをインストールする  
+-   Configuration Manager コンソールをインストールする  
+-   サイトを回復する  
 
 > [!NOTE]  
->  Non è possibile usare il file script di installazione automatica per aggiornare un sito di valutazione a un'installazione con licenza di Configuration Manager.  
+>  評価サイトを製品版の Configuration Manager にアップグレードする場合、無人スクリプト ファイルを使用することはできません。  
 
-### <a name="the-cdlatest-key-name"></a>Nome chiave CDLatest
-Quando si usano supporti dalla cartella CD.Latest per eseguire un'installazione controllata da script delle quattro opzioni di installazione seguenti, è necessario che lo script includa la chiave **CDLatest** con valore **1**:
-- Install a new central administration site (Installa un nuovo sito di amministrazione centrale)
-- Install a new primary site (Installa un nuovo sito primario)
-- Recover a central administration site (Ripristina un sito di amministrazione centrale)
-- Recover a primary site (Ripristina un sito primario)
+### <a name="the-cdlatest-key-name"></a>CDLatest キー名
+CD.Latest フォルダーのメディアを使用して、次の 4 つのインストール オプションのスクリプト インストールを実行する場合は、値が **1** の **CDLatest** キーを含める必要があります。
+- 新しい中央管理サイトをインストールする
+- 新しいプライマリ サイトをインストールする
+- 中央管理サイトを回復する
+- プライマリ サイトを回復する
 
-Non è possibile usare questo valore con supporti di installazione ottenuti dal sito Microsoft Volume License.
-Vedere [Opzioni della riga di comando](/sccm/core/servers/deploy/install/command-line-options-for-setup) per informazioni su come usare questo nome chiave nel file di script.
+この値は、Microsoft ボリューム ライセンス サイトから取得したインストール メディアでは使用できません。
+スクリプト ファイルでこのキー名を使用する方法の詳細については、[コマンド ライン オプション](/sccm/core/servers/deploy/install/command-line-options-for-setup)を参照してください。
 
 
 
-### <a name="create-the-script"></a>Creare lo script
-Lo script di installazione viene creato automaticamente quando si [esegue il programma di installazione per installare un sito usando l'interfaccia utente](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md).  Quando si confermano le impostazioni nella pagina **Riepilogo** della procedura guidata, verranno eseguite le operazioni seguenti:  
+### <a name="create-the-script"></a>スクリプトを作成する
+[サイトをインストールするためにユーザー インターフェイスを使用してセットアップを実行する](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md)と、インストール スクリプトが自動的に作成されます。  ウィザードの **[概要]** ページで設定を確認するときに、次の処理が実行されます。  
 
--   Il programma di installazione crea lo script **%TEMP%\ConfigMgrAutoSave.ini**.  È possibile rinominare il file prima di usarlo, ma è necessario conservare l'estensione di file ini.  
--   Lo script di installazione automatica contiene le impostazioni selezionate nella procedura guidata.  
--   Al termine della creazione dello script, è possibile modificare lo script per installare altri siti nella gerarchia.  
--   È quindi possibile usare questo script per eseguire un'installazione automatica di Configuration Manager.  
+-   スクリプト **%TEMP%\ConfigMgrAutoSave.ini**が作成されます。  このファイルは使用する前に名前を変更できますが、.ini ファイル拡張子は保持する必要があります。  
+-   無人インストール スクリプトには、ウィザードで選択した設定が含まれています。  
+-   スクリプトが作成された後、そのスクリプトを変更して、階層に別のサイトをインストールできます。  
+-   このスクリプトを使用して、Configuration Manager の無人セットアップを実行できます。  
 
-Questo file script fornisce le stesse informazioni richieste dall'Installazione guidata, ma non prevede impostazioni predefinite.   
-È necessario specificare tutti i valori per le chiavi di installazione che si applicano al tipo di installazione in uso.   
+このスクリプト ファイルで、セットアップ ウィザードで入力するのと同じ情報を指定します。ただし、既定の設定はありません。   
+使用する種類のインストールに適用されるセットアップ キーのすべての値を指定する必要があります。   
 
-Quando il programma di installazione crea lo script di installazione automatica, viene inserito il valore del codice Product Key immesso durante l'installazione. Può trattarsi di un codice Product Key valido o **EVAL** se si installa una versione di valutazione di Configuration Manager. Il valore del codice Product Key viene inserito nello script per completare il controllo dei prerequisiti.   
+セットアップで作成される無人インストール用スクリプトには、セットアップ中に入力したプロダクト キーの値が指定されます。 この値は、有効なプロダクト キーか、評価版の Configuration Manager をインストールする場合は **EVAL** になります。 スクリプト内のプロダクト キーの値は、前提条件チェックを完了できるようにするために指定されます。   
 
-Quando il programma di installazione avvia l'installazione del sito effettiva, lo script creato automaticamente viene riscritto per cancellare il valore del codice Product Key nello script creato. Prima di usare lo script per l'installazione automatica di un nuovo sito, è possibile modificare lo script per specificare un codice Product Key valido o un'installazione della versione di valutazione di Configuration Manager.  
+セットアップで実際のサイトのインストールが開始されると、自動的に作成されたスクリプトに再度書き込みが行われ、スクリプトのプロダクト キーの値は消去されます。 新しいサイトの無人インストールでスクリプトを使用する前に、スクリプトを編集して、正しいプロダクト キーを指定するか、評価版の Configuration Manager のインストールを指定できます。  
 
-### <a name="section-names-key-names-and-values"></a>Nomi di sezione, nomi di chiavi e valori
-Lo script contiene nomi di sezione, nomi delle chiavi e valori. Tenere presente le informazioni seguenti:
--   I nomi delle chiavi di sezione richiesti variano a seconda del tipo di installazione per cui si crea lo script.
--   L'ordine delle chiavi all'interno delle sezioni e l'ordine delle sezioni all'interno del file non è rilevante.     
--   Alle chiavi non viene applicata la distinzione tra maiuscole e minuscole.  
--   Quando si specificano i valori per le chiavi, il nome della chiave deve essere seguito dal segno uguale (=) e dal valore della chiave.    
+### <a name="section-names-key-names-and-values"></a>セクション名、キー名、値
+スクリプトは、セクション名、キー名、値で構成します。 次の情報にご注意ください。
+-   セクションの必須キーは、スクリプトを記述しているインストールの種類によって異なります。
+-   セクション内でのキーの順序、およびファイル内でのセクションの順序は重要ではありません。     
+-   キー名の大文字と小文字は区別されません。  
+-   キーの値を指定するときは、キー名の後ろに等号 (=) を入力してから、キーの値を続けます。    
 
 > [!TIP]  
->  Per visualizzare il set completo di opzioni, vedere la sezione relativa alle [opzioni della riga di comando per il programma di installazione e gli script](../../../../core/servers/deploy/install/command-line-options-for-setup.md).  
+>  すべてのオプションについては、「[Command-line options for Setup and scripts](../../../../core/servers/deploy/install/command-line-options-for-setup.md)」(セットアップのコマンド ライン オプションとスクリプト) を参照してください。  
 
-## <a name="use-the-script-setup-command-line-option"></a>Usare l'opzione /SCRIPT della riga di comando del programma di installazione
+## <a name="use-the-script-setup-command-line-option"></a>/SCRIPT セットアップ コマンドライン オプションを使用する
 
--   È necessario usare un file script di installazione e specificare il nome del file dopo l'opzione **/SCRIPT** della riga di comando del programma di installazione. Tenere presente le informazioni seguenti:   
-    -   Il nome del file deve avere l'estensione **INI**.  
-    -   Quando si fa riferimento al file script di installazione al prompt dei comandi, è necessario specificare il percorso completo del file. Se, ad esempio, il file di inizializzazione dell'installazione è denominato Setup.ini e viene archiviato nella cartella C:\Setup, al prompt dei comandi digitare:  **setup /script c:\setup\setup.ini**.  
+-   セットアップ スクリプト ファイルを使用し、**/SCRIPT** セットアップ コマンド ライン オプションの後にファイル名を指定する必要があります。 次の情報にご注意ください。   
+    -   ファイルの名前には、ファイル名拡張子 **.ini** が含まれている必要があります。  
+    -   コマンド プロンプトでセットアップ スクリプト ファイルを指定するときは、ファイルの完全パスを入力する必要があります。 たとえば、C:\Setup フォルダーにある Setup.ini というセットアップ初期化ファイルの場合は、コマンド プロンプトに次のように入力します。 **setup /script c:\setup\setup.ini**  
 
--   L'account che esegue il programma di installazione deve avere diritti di **amministratore** nel computer. Quando si esegue il programma di installazione con lo script automatico, aprire la finestra del prompt dei comandi usando l'opzione **Esegui come amministratore**.   
-
+-   セットアップを実行するアカウントには、コンピューターの**管理者**の権限が必要です。 無人インストールを使用してセットアップを実行する場合は、[**管理者として実行**] を使用してコマンド プロンプト ウィンドウを開いてください。   

@@ -1,62 +1,58 @@
 ---
-title: Configurare i client per trovare i punti di gestione usando la pubblicazione DNS | Microsoft Docs
-description: Impostare i client per trovare i punti di gestione usando la pubblicazione DNS in System Center Configuration Manager.
+title: "DNS 発行を使用して管理ポイントを検出するようにクライアント コンピューターを構成する | Microsoft Docs"
+description: "System Center Configuration Manager で DNS 発行を使用して、管理ポイントを検出するようにクライアント コンピューターを設定します。"
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 03cec407-0f9f-454f-a360-b005af738d29
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 55c953f312a9fb31e7276dde2fdd59f8183b4e4d
-ms.openlocfilehash: 9eadb91a575323b4c36af14962f370046ea513ce
-ms.contentlocale: it-it
-ms.lasthandoff: 12/16/2016
-
-
+ms.openlocfilehash: d016ec3fe106b2d90b3c14b4f9296aed4d198644
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-configure-client-computers-to-find-management-points-by-using-dns-publishing-in-system-center-configuration-manager"></a>Come configurare i computer client per trovare i punti di gestione usando la pubblicazione DNS in System Center Configuration Manager
+# <a name="how-to-configure-client-computers-to-find-management-points-by-using-dns-publishing-in-system-center-configuration-manager"></a>System Center Configuration Manager で DNS 発行を使用して、管理ポイントを検出するようにクライアント コンピューターを構成する方法
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-I client in System Center Configuration Manager devono individuare un punto di gestione per completare l'assegnazione del sito e per rimanere gestiti come processo in corso. Servizi di dominio Active Directory fornisce ai client della rete Intranet il metodo più sicuro per individuare i punti di gestione. Tuttavia, se i client non possono utilizzare questo metodo di individuazione del servizio (ad esempio, non hanno esteso lo schema di Active Directory oppure i client provengono da un gruppo di lavoro), utilizzare la pubblicazione DNS come metodo alternativo di individuazione del servizio preferito.  
+System Center Configuration Manager のクライアントは、サイトの割り当てを完了しても、実行中のプロセスとして管理対象にとどまるために、管理ポイントを特定する必要があります。 Active Directory ドメイン サービスは、イントラネット上のクライアントが管理ポイントを見つけるのに最も安全な方法を提供します。 しかし、クライアントがこのサービスの場所検索方法を利用できない場合は (たとえば Active Directory スキーマを拡張していない、クライアントがワークグループに所属するなど)、DNS 発行を代替方法として使用します。  
 
 > [!NOTE]  
->  Quando si installa il client per Linux e UNIX, è necessario specificare un punto di gestione da utilizzare come punto di contatto iniziale. Per informazioni su come installare il client per Linux e UNIX, vedere [Come distribuire i client nei server UNIX e Linux in System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md).  
+>  Linux および UNIX 用のクライアントをインストールする場合、最初の接続ポイントとして使用する管理ポイントを使用する必要があります。 Linux と UNIX でクライアントをインストールする方法については、「[System Center Configuration Manager で UNIX および Linux サーバーにクライアントを展開する方法](../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md)」を参照してください。  
 
- Prima di utilizzare la pubblicazione DNS per i punti di gestione, assicurarsi che i server DNS nella Intranet dispongano dei record di risorse di individuazione del servizio (SRV RR) e dei relativi record di risorse dell'host (A o AAA) per i punti di gestione del sito. I record di risorse di posizione del servizio possono essere creati automaticamente da Configuration Manager o manualmente dall'amministratore DNS che crea i record in DNS.  
+ 管理ポイント用に DNS 発行を使用する前に、イントラネット上の DNS サーバーがそのサイトの管理ポイントについて、サービスの場所のリソース レコード (SRV RR) とそれに対応するホスト (A または AAA) のリソース レコードを持っていることを確認してください。 このサービスの場所リソース レコードは、Configuration Manager で自動的に作成することもできますが、DNS でレコードを作成する DNS 管理者によって手動で作成することもできます。  
 
- Per altre informazioni sulla pubblicazione DNS come metodo di posizione del servizio per i client di Configuration Manager, vedere [Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager](../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
+ Configuration Manager クライアントに対するサービスの場所の検索方法として DNS 発行を使用する方法については、「[クライアントが System Center Configuration Manager のサイト リソースやサービスを検索する方法を理解する](../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)」を参照してください。  
 
- Per impostazione predefinita, i client cercano il DNS per i punti di gestione all'interno del loro dominio DNS. Tuttavia, se non sono presenti punti di gestione pubblicati nel dominio dei client, è necessario configurare i client manualmente con un suffisso DNS del punto di gestione. È possibile configurare il suffisso DNS sui client durante o dopo la loro l'installazione:  
+ 既定では、クライアントは、クライアントの DNS ドメインで、管理ポイント用の DNS を検索します。 ただし、クライアントのドメインに発行されている管理ポイントが存在しない場合、手動でクライアントに管理ポイントの DNS サフィックスを構成する必要があります。 このクライアントの DNS サフィックスは、クライアントのインストール中、またはインストール後に構成できます。  
 
--   Per configurare i client per un suffisso del punto di gestione durante l'installazione del client, configurare le proprietà CCMSetup per Client.msi.  
+-   クライアントのインストール中に、クライアントに管理ポイントのサフィックスを構成するには、CCMSetup Client.msi プロパティを構成します。  
 
--   Per configurare i client per un suffisso del punto di gestione dopo aver installato il client, in Pannello di controllo configurare le **Proprietà di Configuration Manager**.  
+-   クライアントのインストール後に、クライアントに管理ポイントのサフィックスを構成するには、コントロールパネルで、[ **Configuration Manager のプロパティ** ] を構成します。  
 
-#### <a name="to-configure-clients-for-a-management-point-suffix-during-client-installation"></a>Per configurare i client per un suffisso del punto di gestione durante l'installazione del client  
+#### <a name="to-configure-clients-for-a-management-point-suffix-during-client-installation"></a>クライアントのインストール中に、クライアントに管理ポイントのサフィックスを構成するには  
 
--   Installare il client con la seguente proprietà Client.msi CCMSetup.:  
+-   次の CCMSetup client.msi プロパティを使用してクライアントをインストールします。  
 
-    -   **DNSSUFFIX=** *&lt;dominio del punto di gestione\>*  
+    -   **DNSSUFFIX=** *&lt;管理ポイント ドメイン\>*  
 
-         Se il sito dispone di più punti di gestione e questi si trovano in più di un dominio, specificare un solo dominio. Quando si connettono a un punto di gestione in questo dominio, i client scaricano un elenco di punti di gestione disponibili, tra cui i punti di gestione provenienti da altri domini.  
+         サイトに複数の管理ポイントがあり、その管理ポイントが複数のドメインに存在する場合は、一つのドメインだけを指定します。 このドメインの管理ポイントにクライアントが接続すると、クライアントは、使用可能な管理ポイントの一覧をダウンロードします。この一覧には、ほかのドメインにある管理ポイントも含まれます。  
 
-     Per altre informazioni sulla proprietà della riga di comando CCMSetup, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
+     CCMSetup のコマンドライン プロパティの詳細については、「[System Center Configuration Manager のクライアント インストール プロパティについて](../../../core/clients/deploy/about-client-installation-properties.md)」をご覧ください。  
 
-#### <a name="to-configure-clients-for-a-management-point-suffix-after-client-installation"></a>Per configurare i client per un suffisso del punto di gestione dopo l'installazione del client  
+#### <a name="to-configure-clients-for-a-management-point-suffix-after-client-installation"></a>クライアントのインストール後に、クライアントに管理ポイントのサフィックスを構成するには  
 
-1.  Nel Pannello di controllo del computer client passare a **Configuration Manager**, quindi fare doppio clic su **Proprietà**.  
+1.  クライアント コンピューターのコントロール パネルで、 **Configuration Manager**に移動し、[ **プロパティ**] をダブルクリックします。  
 
-2.  Nella scheda **Sito** specificare il suffisso DNS di un punto di gestione, quindi fare clic su **OK**.  
+2.  [ **サイト** ] タブで管理ポイントの DNS サフィックスを指定してから、[ **OK** ] をクリックします。  
 
-     Se il sito dispone di più punti di gestione e questi si trovano in più di un dominio, specificare un solo dominio. Quando si connettono a un punto di gestione in questo dominio, i client scaricano un elenco di punti di gestione disponibili, tra cui i punti di gestione provenienti da altri domini.
-
+     サイトに複数の管理ポイントがあり、その管理ポイントが複数のドメインに存在する場合は、一つのドメインだけを指定します。 このドメインの管理ポイントにクライアントが接続すると、クライアントは、使用可能な管理ポイントの一覧をダウンロードします。この一覧には、ほかのドメインにある管理ポイントも含まれます。

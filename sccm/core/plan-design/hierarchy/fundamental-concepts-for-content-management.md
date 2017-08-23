@@ -1,259 +1,255 @@
 ---
-title: Concetti di base della gestione dei contenuti | Microsoft Docs
-description: "È possibile usare gli strumenti e le opzioni di System Center Configuration Manager per gestire il contenuto da distribuire."
+title: "コンテンツ管理の基礎 | Microsoft Docs"
+description: "System Center Configuration Manager のツールとオプションを使用して、展開するコンテンツを管理します。"
 ms.custom: na
 ms.date: 05/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
-caps.latest.revision: 28
-caps.handback.revision: 0
+caps.latest.revision: "28"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 212628639300e9c361f7cee61b3df6b1cb6874ce
 ms.openlocfilehash: f73dde64e0e8a0fc49f45b3afb3b8f00c926a820
-ms.contentlocale: it-it
-ms.lasthandoff: 05/18/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="fundamental-concepts-for-content-management-in-system-center-configuration-manager"></a>Concetti di base per la gestione dei contenuti in System Center Configuration Manager
+# <a name="fundamental-concepts-for-content-management-in-system-center-configuration-manager"></a>System Center Configuration Manager でのコンテンツ管理の基本的な概念
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager supporta un solido sistema di strumenti e opzioni per gestire i contenuti distribuiti, ad esempio applicazioni, pacchetti, aggiornamenti software e sistemi operativi.  
+System Center Configuration Manager は、アプリケーション、パッケージ、ソフトウェア更新プログラム、およびオペレーティング システム展開として展開するコンテンツを管理するための、信頼性の高いツールとオプションのシステムをサポートしています。  
 
-Il contenuto distribuito viene archiviato in entrambi i server del sito e nei server del sistema del sito del punto di distribuzione. Questo contenuto può richiedere una grande quantità di larghezza di banda di rete durante il trasferimento tra i percorsi. Per pianificare e usare l'infrastruttura di gestione dei contenuti in modo efficace, si consiglia di acquisire dimestichezza con le configurazioni e le opzioni disponibili e di valutare come usarle affinché possano adattarsi in modo ottimale all'ambiente di rete e alle esigenze per la distribuzione dei contenuti.  
+展開するコンテンツは、サイト サーバーと配布ポイント サイト システム サーバーの両方に格納されます。 このコンテンツを地点間で転送するときに、大きなネットワーク帯域幅が必要になる場合があります。 コンテンツ管理インフラストラクチャを効果的に計画および使用するには、使用可能なオプションと構成を理解したうえで、ネットワーク環境とコンテンツ展開のニーズに合うように効果的に使用する方法を検討することをお勧めします。  
 
 > [!TIP]    
-> È possibile consultare ulteriori informazioni sul processo di distribuzione del contenuto e trovare supporto per la diagnosi e la risoluzione dei problemi generali di distribuzione del contenuto. Vedere [Understanding and Troubleshooting Content Distribution in Microsoft Configuration Manager](https://support.microsoft.com/help/4000401/content-distribution-in-mcm) (Informazioni sulla distribuzione del contenuto in Microsoft Configuration Manager e risoluzione dei problemi) all'indirizzo support.microsoft.com.
+> コンテンツ配布プロセスの詳細と、一般的なコンテンツ配布の問題の診断および解決方法のヘルプについては、 support.microsoft.com の「[Understanding and Troubleshooting Content Distribution in Microsoft Configuration Manager](https://support.microsoft.com/help/4000401/content-distribution-in-mcm)」(Microsoft Configuration Manager のコンテンツ配布の概要とトラブルシューティング) を参照してください。
 
-Di seguito sono riportati i concetti di base per la gestione dei contenuti. Se per un concetto sono necessarie informazioni aggiuntive o più complete, vengono forniti collegamenti a tali informazioni.
+コンテンツ管理の主要概念を以下に示します。 概念について追加情報または複雑な情報が必要な場合は、該当する詳細情報へのリンクが示されています。
 
-## <a name="accounts-used-for-content-management"></a>Account usati per la gestione dei contenuti  
- Con la gestione dei contenuti è possibile usare gli account seguenti:  
+## <a name="accounts-used-for-content-management"></a>コンテンツ管理に使用されるアカウント  
+ コンテンツ管理では、次のアカウントを使用できます。  
 
--   **Account di accesso alla rete**: usato dai client per connettersi a un punto di distribuzione e accedere al contenuto. Per impostazione predefinita, l'account computer viene usato per primo.  
+-   **ネットワーク アクセス アカウント**: クライアントが配布ポイントに接続してコンテンツにアクセスするために使用します。 既定では、コンピューター アカウントが最初に試行されます。  
 
-     Questo account viene usato anche dai punti di distribuzione pull per ottenere il contenuto da un punto di distribuzione di origine in una foresta remota.  
+     このアカウントは、リモート フォレスト内のソース配布ポイントからコンテンツを取得するためにプル配布ポイントによっても使用されます  
 
--   **Account di accesso ai pacchetti**: per impostazione predefinita, Configuration Manager concede l'accesso al contenuto in un punto di distribuzione agli account di accesso generici Utenti e Amministratori. È tuttavia possibile configurare autorizzazioni aggiuntive per limitare l'accesso.   
+-   **パッケージ アクセス アカウント**: 既定では、Configuration Manager は、汎用アクセス アカウントである Users および Administrators に対して配布ポイント上のコンテンツへのアクセスを許可します。 ただし、追加のアクセス許可を構成してアクセスを制限することができます。   
 
--   **Account di connessione multicast**: usato per le distribuzioni del sistema operativo.  
+-   **マルチキャスト接続アカウント**: オペレーティング システムの展開に使用します。  
 
-Per altre informazioni sugli account, vedere [Gestire gli account per l'accesso al contenuto](../../../core/plan-design/hierarchy/manage-accounts-to-access-content.md).
+これらのアカウントの詳細については、「[コンテンツにアクセスするためのアカウントの管理](../../../core/plan-design/hierarchy/manage-accounts-to-access-content.md)」を参照してください。
 
-## <a name="bandwidth-throttling-and-scheduling"></a>Limitazione e pianificazione della larghezza di banda della rete  
- Le opzioni di limitazione e pianificazione della larghezza di banda della rete consentono di controllare la distribuzione del contenuto da un server del sito ai punti di distribuzione. Queste opzioni sono simili, ma non direttamente correlate, ai controlli della larghezza di banda per la replica da sito a sito basata su file.  
+## <a name="bandwidth-throttling-and-scheduling"></a>帯域幅調整とスケジュール  
+ 調整とスケジュールのどちらも、コンテンツをサイト サーバーから配布ポイントに配布する処理を管理するためのオプションです。 これは、サイト間のファイルベースのレプリケーションに関する帯域幅の制御に似ていますが、直接の関係はありません。  
 
- Per altre informazioni, vedere [Gestire la larghezza di banda di rete](/sccm/core/plan-design/hierarchy/manage-network-bandwidth).
+ 詳細については、「[ネットワーク帯域幅の管理](/sccm/core/plan-design/hierarchy/manage-network-bandwidth)」を参照してください。
 
-## <a name="binary-differential-replication"></a>Replica differenziale binaria  
- La replica differenziale binaria, nota anche come replica differenziale, è un prerequisito dei punti di distribuzione che viene usato automaticamente per ridurre l'uso della larghezza di banda quando si distribuiscono gli aggiornamenti al contenuto distribuito in precedenza ad altri siti o punti di distribuzione remoti.  
+## <a name="binary-differential-replication"></a>バイナリ差分レプリケーション  
+ 他のサイトまたはリモート配布ポイントに以前に展開したコンテンツの更新を配布するときに使用される帯域幅を小さくするために、配布ポイントの前提条件であるバイナリ差分レプリケーション (BDR) (デルタ レプリケーションとも呼ばれます) が自動的に使用されます。  
 
- La replica differenziale binaria consente di ridurre al minimo la larghezza di banda di rete usata per inviare aggiornamenti per il contenuto distribuito inviando nuovamente solo il contenuto nuovo o modificato anziché l'intero set di file di origine del contenuto ogni volta che viene apportata una modifica ai file.  
+ BDR は、コンテンツ ソース ファイルが変更されるたびにすべてのファイルを送信するのではなく、新しいコンテンツまたは変更されたコンテンツのみを再送信することで、配布コンテンツの更新を送信するために使用されるネットワーク帯域幅を最小限に抑えます。  
 
- Quando si usa la replica differenziale binaria, Configuration Manager consente di identificare le modifiche apportate ai file di origine per ogni set di contenuti distribuiti in precedenza.  
+ バイナリ差分レプリケーションを使用する場合、Configuration Manager は、以前に配布された各コンテンツ セットについて、ソース ファイルに加えられた変更を特定します。  
 
--   Quando i file nel contenuto di origine cambiano, Configuration Manager crea una nuova versione incrementale del set di contenuti e replica solo i file modificati nei siti di destinazione e nei punti di distribuzione. Un file è considerato modificato se viene rinominato, spostato o se il contenuto del file cambia. Ad esempio, se si sostituisce un singolo file del driver per un pacchetto di distribuzione del sistema operativo che è stato in precedenza distribuito in diversi siti, solo i file del driver modificati vengono replicati in questi siti di destinazione.  
+-   ソース コンテンツのファイルに変更がある場合、Configuration Manager は新しい増分バージョンのコンテンツ セットを作成し、変更されたファイルのみを対象のサイトと配布ポイントにレプリケートします。 ファイルは、名前の変更、移動、内容の変更が行われた場合に、変更されたと見なされます。 たとえば、以前に複数のサイトに配布したオペレーティング システム展開パッケージの 1 つのドライバー ファイルを置き換える場合、変更されたドライバー ファイルのみが、その対象サイトにレプリケートされます。  
 
--   Configuration Manager supporta fino a cinque versioni incrementali del set di contenuti prima di inviare nuovamente l'intero set di contenuti. Dopo il quinto aggiornamento, la successiva modifica del contenuto impostata fa sì che Configuration Manager crei una nuova versione del set di contenuto. Configuration Manager distribuisce quindi la nuova versione del set di contenuti per sostituire il set precedente e qualsiasi sua versione incrementale. Dopo che il nuovo set di contenuti è stato distribuito, modifiche incrementali successive ai file di origine vengono nuovamente replicate dalla replica differenziale binaria.  
+-   Configuration Manager は、全体のコンテンツ セットを再送信するまでに、最大 5 つの増分バージョンのコンテンツ セットを保持できます。 5 番目の更新の後で、コンテンツ セットを次に変更すると、Configuration Manager はコンテンツ セットの新しいバージョンを作成します。 Configuration Manager はその後、コンテンツ セットの新しいバージョンを配布し、前のセットとその増分バージョンを置き換えます。 新しいコンテンツ セットが配布された後は、バイナリ差分レプリケーションによって、またソース ファイルの増分の変更がレプリケートされます。  
 
 
-La replica differenziale binaria è supportata tra ogni sito padre e figlio in una gerarchia. All'interno di un sito la replica differenziale binaria è supportata tra il server del sito e i suoi normali punti di distribuzione. Tuttavia, i punti di distribuzione pull e i punti di distribuzione basati sul cloud non supportano la replica differenziale binaria per trasferire il contenuto. I punti di distribuzione pull supportano i delta a livello di file e il trasferimento dei nuovi file, ma non i blocchi all'interno di un file.
+BDR は、同じ階層内の親サイトと子サイト間でサポートされます。 また、BDR は、同じサイト内のサイト サーバーとその定期的な配布ポイント間でサポートされます。 ただし、プル配布ポイントとクラウドベースの配布ポイントは、バイナリ差分レプリケーションによるコンテンツの転送をサポートしません。 プル配布ポイントは、ファイル レベルのデルタをサポートしており、新しいファイルは転送されますが、ファイル内のブロックは転送されません。
 
-Le applicazioni usano sempre la replica differenziale binaria. Per i pacchetti, la replica differenziale binaria è facoltativa e non è attivata per impostazione predefinita. Per usare la replica differenziale binaria per i pacchetti, è necessario attivare questa funzionalità per ogni pacchetto. A questo scopo, selezionare l'opzione **Abilita replica differenziale binaria** quando si crea un nuovo pacchetto o quando si modifica la scheda **Origine dati** delle proprietà pacchetto.  
+アプリケーションは、常にバイナリ差分レプリケーションを使用します。 パッケージの場合、バイナリ差分レプリケーションはオプションであり、既定では無効です。 パッケージにバイナリ差分レプリケーションを使用するには、各パッケージでこの機能を有効にする必要があります。 有効にするには、新しいパッケージを作成するとき、またはパッケージ プロパティの [ **データ ソース** ] タブを編集するときに、オプション [ **バイナリ差分レプリケーションを有効にする** ] をオンにします。  
 
 ## <a name="branchcache"></a>BranchCache  
- Tecnologia Windows che consente ai client che supportano BranchCache e hanno scaricato una distribuzione configurata per BranchCache di agire da origine di contenuto per altri client abilitati per BranchCache.  
+ BranchCache をサポートし、BranchCache 用に構成されている展開のダウンロードが済んでいるクライアントが、他の BranchCache が有効なクライアントに対するコンテンツ ソースとして機能することを可能にする Windows テクノロジ。  
 
- Ad esempio, quando il primo computer client abilitato per BranchCache richiede il contenuto da un punto di distribuzione con Windows Server 2012 e configurato come server BranchCache, il computer client scarica tale contenuto e lo memorizza nella cache.  
+ たとえば、BranchCache が有効な最初のクライアント コンピューターが、Windows Server 2012 が実行されていて BranchCache サーバーとして構成されている配布ポイントからコンテンツを要求するとき、クライアント コンピューターは、コンテンツをダウンロードしてキャッシュします。  
 
--   Il computer client può quindi rendere disponibile il contenuto per altri client abilitati per BranchCache nella stessa subnet, che a sua volta memorizza il contenuto nella cache.  
+-   次に、このクライアント コンピューターは、同じサブネット上で BranchCache が有効になっている他のクライアントがコンテンツを利用できるようにします。これらのクライアントも、コンテンツをキャッシュします。  
 
--   In tal modo, client successivi sulla stessa subnet non devono scaricare contenuto dal punto di distribuzione e il contenuto viene distribuito tra più client per trasferimenti futuri.  
+-   このため、同じサブネット上の後続のクライアントは配布ポイントからコンテンツをダウンロードする必要がなく、その後の転送ではコンテンツは複数のクライアントから配布されます。  
 
-## <a name="peer-cache"></a>Peer cache
-A partire dalla versione 1610, la peer cache del client consente di gestire la distribuzione di contenuti ai client in percorsi remoti. La peer cache è una soluzione integrata di Configuration Manager che consente ai client di condividere i contenuti con altri client direttamente dalla cache locale.
+## <a name="peer-cache"></a>ピア キャッシュ
+バージョン 1610 より、クライアントのピア キャッシュをリモート クライアントへのコンテンツ展開の管理に使用できるようになりました。 ピア キャッシュとは、クライアントがローカル キャッシュで他のクライアントとコンテンツを直接共有できるようにするための組み込みの Configuration Manager ソリューションです。
 
-Dopo aver distribuito le impostazioni client che abilitano la peer cache per una raccolta, i membri di tale raccolta possono fungere da origine di contenuto peer per altri client nello stesso gruppo di limiti.
+ピア キャッシュを有効にするクライアント設定をコレクションに展開すると、そのコレクションのメンバーは同じ境界グループ内の他のクライアントのピア コンテンツ ソースとして動作できます。
 
-Per altre informazioni, vedere [Peer cache per i client di Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache).
-
-
-## <a name="windows-pe-peer-cache"></a>Peer cache di Windows PE
-Quando si distribuisce un nuovo sistema operativo in System Center Configuration Manager, i computer che eseguono la sequenza di attività possono usare la peer cache di Windows PE per ottenere contenuto da un peer locale (un'origine peer cache) anziché scaricarlo da un punto di distribuzione. In tal modo il traffico WAN viene ridotto al minimo negli scenari con le filiali, in cui non esiste un punto di distribuzione locale.
-
-Per altre informazioni, vedere [Peer cache di Windows PE](../../../osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md).
+詳細については、「[Configuration Manager クライアントのピア キャッシュ](/sccm/core/plan-design/hierarchy/client-peer-cache)」を参照してください。
 
 
-## <a name="client-locations"></a>Posizioni dei client  
- Di seguito sono elencate le posizioni da cui i client accedono al contenuto:  
+## <a name="windows-pe-peer-cache"></a>Windows PE ピア キャッシュ
+新しいオペレーティング システムを System Center Configuration Manager に展開すると、タスク シーケンスを実行しているコンピューターで、配布ポイントからコンテンツをダウンロードするのではなく、Windows PE ピア キャッシュを使用してローカル ピア (ピア キャッシュ ソース) からコンテンツを取得することができます。 これにより、ローカル配布ポイントが存在しないブランチ オフィス シナリオでワイド エリア ネットワーク (WAN) トラフィックが最小限に抑えられます。
 
--   **Intranet** (locale):  
-
-    -   I punti di distribuzione possono usare HTTP o HTTPS.  
-
-    -   Usare i punti di distribuzione basati sul cloud solo come opzione di fallback, se non sono disponibili punti di distribuzione locali.  
-
--   **Internet**:  
-
-    -   I punti di distribuzione devono accettare HTTPS.  
-
-    -   È possibile usare un punto di distribuzione basato sul cloud per il fallback.  
-
--   **Gruppo di lavoro**:  
-
-    -   I punti di distribuzione devono accettare HTTPS.  
-
-    -   È possibile usare un punto di distribuzione basato sul cloud per il fallback.  
+詳細については、「[Windows PE ピア キャッシュ](../../../osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md)」を参照してください。
 
 
+## <a name="client-locations"></a>クライアントの場所  
+ クライアントは、次の場所にあるコンテンツにアクセスします。  
 
-## <a name="content-library"></a>Raccolta contenuto  
- La raccolta contenuto è un archivio a istanza singola del contenuto che Configuration Manager usa per ridurre la dimensione complessiva del corpo combinato del contenuto distribuito.  
+-   **イントラネット** (オンプレミス):  
 
-- Altre informazioni sulla [raccolta contenuto](../../../core/plan-design/hierarchy/the-content-library.md).
-- Usare lo [strumento per la pulizia della raccolta contenuto](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool) per rimuovere il contenuto non più associato a un'applicazione.  
+    -   配布ポイントでは、HTTP または HTTPS を使用できます。  
 
+    -   オンプレミスの配布ポイントを使用できない場合、フォールバックとしてクラウドベースの配布ポイントのみを使用します。  
 
-## <a name="distribution-points"></a>Punti di distribuzione  
- Configuration Manager usa i punti di distribuzione per memorizzare i file necessari per l'esecuzione del software nei computer client. I client devono avere accesso ad almeno un punto di distribuzione da cui scaricare i file relativi al contenuto da distribuire.  
+-   **インターネット**:  
 
- Il punto di distribuzione di base (non specializzato) è noto come punto di distribuzione standard. Esistono due principali varianti nel punto di distribuzione standard:  
+    -   HTTPS を受け入れるには配布ポイントが必要です。  
 
--   **Punto di distribuzione pull**: variante di un punto di distribuzione in cui il punto di distribuzione ottiene il contenuto da un altro punto di distribuzione (punto di distribuzione di origine). Questo processo è simile al modo in cui i client scaricano contenuto dai punti di distribuzione. I punti di distribuzione pull possono risultare utili per evitare i colli di bottiglia della larghezza di banda di rete che si verificano quando il server del sito deve distribuire direttamente il contenuto a ogni punto di distribuzione.  [Usare un punto di distribuzione pull con System Center Configuration Manager](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point).
+    -   フォールバックとしてクラウドベースの配布ポイントを使用できます。  
 
--   **Punto di distribuzione basato sul cloud**: variante di un punto di distribuzione installato in Microsoft Azure. [Informazioni sull'uso di un punto di distribuzione basato sul cloud con System Center Configuration Manager](../../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md).  
+-   **ワークグループ**:  
 
+    -   HTTPS を受け入れるには配布ポイントが必要です。  
 
-I punti di distribuzione standard supportano una gamma di configurazioni e funzionalità, ad esempio la pianificazione e la limitazione della larghezza di banda della rete, PXE e multicast o i contenuti in versione di preproduzione.  
-
--   Per controllare il trasferimento è possibile usare controlli come le **pianificazioni** o la **limitazione della larghezza di banda**.  
-
--   È anche possibile usare altre opzioni, tra cui il **contenuto pre-installazione** e i **punti di distribuzione pull**. Inoltre, è possibile usare **BranchCache** per ridurre la larghezza di banda della rete usata quando si distribuisce il contenuto.  
-
--   I punti di distribuzione supportano diverse configurazioni, ad esempio **[PXE](../../../osd/get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint)** e **[Multicast](../../../osd/get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_DPMulticast)** per le distribuzioni di sistemi operativi o configurazioni per il supporto dei **dispositivi mobili**.  
-
- I punti di distribuzione pull e basati sul cloud supportano molte di queste configurazioni, ma presentano limitazioni specifiche per ogni variante del punto di distribuzione.  
-
-## <a name="distribution-point-groups"></a>Gruppi di punti di distribuzione  
- I gruppi di punti di distribuzione sono raggruppamenti logici di punti di distribuzione che possono semplificare la distribuzione del contenuto.  
-
- Per altre informazioni, vedere [Gestire i gruppi di punti di distribuzione](../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage).
-
-## <a name="distribution-point-priority"></a>Priorità dei punti di distribuzione  
- Il valore di priorità del punto di distribuzione è basato sul tempo impiegato per trasferire le distribuzioni precedenti al punto di distribuzione.  
-
--   Si tratta di un valore con ottimizzazione automatica assegnato a un punto di distribuzione che consente a Configuration Manager di trasferire il contenuto a più punti di distribuzione in un periodo di tempo più breve.  
-
--   Quando si distribuisce contenuto a più punti di distribuzione contemporaneamente o a un gruppo di punti di distribuzione, il contenuto viene inviato da Configuration Manager al punto di distribuzione con la priorità più alta, prima che lo stesso contenuto venga inviato a un punto di distribuzione con una priorità più bassa.  
-
--   Questo valore non sostituisce la priorità di distribuzione dei pacchetti, che rimane il fattore decisivo nella sequenza di trasferimento delle diverse distribuzioni.  
+    -   フォールバックとしてクラウドベースの配布ポイントを使用できます。  
 
 
-Ad esempio, se si distribuisce contenuto caratterizzato da una priorità di distribuzione alta in un punto di distribuzione con una priorità bassa, il pacchetto di distribuzione con priorità alta viene sempre trasferito prima di un pacchetto con una priorità di distribuzione più bassa. La priorità di distribuzione è valida anche se i pacchetti che presentano una priorità di distribuzione inferiore vengono distribuiti a punti di distribuzione con priorità più alte.
 
-La priorità di distribuzione alta del pacchetto garantisce che il contenuto venga distribuito da Configuration Manager ai punti di distribuzione applicabili prima dell'invio di eventuali pacchetti con una priorità di distribuzione più bassa.  
+## <a name="content-library"></a>コンテンツ ライブラリ  
+ コンテンツ ライブラリは、配布するコンテンツの合計サイズを減らすために Configuration Manager が使用する、コンテンツの単一インスタンス ストアです。  
+
+- [コンテンツ ライブラリ](../../../core/plan-design/hierarchy/the-content-library.md)の詳細を確認してください。
+- コンテンツがもはやアプリケーションに関連していない場合は、[コンテンツ ライブラリのクリーンアップ ツール](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool) を使用して、コンテンツを削除します。  
+
+
+## <a name="distribution-points"></a>配布ポイント  
+ Configuration Manager は、配布ポイントを使用して、クライアント コンピューターで実行するソフトウェアに必要なファイルを格納します。 クライアントは、展開するコンテンツのファイルがダウンロード可能な 1 つ以上の配布ポイントにアクセスできる必要があります。  
+
+ 基本的な (特殊化されていない) 配布ポイントは、標準配布ポイントとも呼ばれます。 標準配布ポイントには次の 2 つのバリエーションがあることに注目してください。  
+
+-   **プル配布ポイント**: 配布ポイントが他の配布ポイント (ソース配布ポイント) からコンテンツを取得する、配布ポイントのバリエーションの 1 つ。 このプロセスは、クライアントが配布ポイントからコンテンツをダウンロードするのと同じです。 プル配布ポイントを使用すると、サイト サーバーが各配布ポイントにコンテンツを直接配布する必要があるときに発生するネットワーク帯域幅のボトルネックを解消することができます。  [System Center Configuration Manager でプル配布ポイントを使用します](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point)。
+
+-   **クラウドベースの配布ポイント**: Microsoft Azure にインストールされている配布ポイントのバリエーションの 1 つ。 [System Center Configuration Manager でのクラウド ベースの配布ポイントの使用方法](../../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md)を参照してください。  
+
+
+標準配布ポイントは、調整とスケジュール、PXE、マルチキャスト、事前設定されたコンテンツなどの一連の構成および機能をサポートします。  
+
+-   **スケジュール**や**帯域幅調整**などのコントロールを使用して、この転送を制御できます。  
+
+-   **事前設定されたコンテンツ**や**プル配布ポイント**など、他のオプションを使用することもできます。 さらに、**BranchCache** を利用して、コンテンツを展開するときに使用されるネットワーク帯域幅を削減できます。  
+
+-   配布ポイントは、オペレーティング システムの展開用の **[PXE](../../../osd/get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint)** や**[マルチキャスト](../../../osd/get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_DPMulticast)**などのさまざまな構成、または**モバイル デバイス**をサポートする構成をサポートしています。  
+
+ クラウドベースのプル配布ポイントは、これらの同じ構成の多くをサポートしますが、各配布ポイントのバリエーションに固有の制限事項があります。  
+
+## <a name="distribution-point-groups"></a>配布ポイント グループ  
+ 配布ポイント グループは、コンテンツ配布の簡素化に役立つ、配布ポイントの論理的グループです。  
+
+ 詳細については、「[配布ポイント グループの管理](../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage)」を参照してください。
+
+## <a name="distribution-point-priority"></a>配布ポイントの優先順位  
+ 配布ポイントの優先順位値は、以前の展開をその配布ポイントに転送するのに要した時間に基づきます。  
+
+-   これは配布ポイントに割り当てられている自己調整値で、これにより、Configuration Manager は、より短い時間でより多くの配布ポイントにコンテンツを転送できるようになります。  
+
+-   同時に複数の配布ポイントにコンテンツを配布するとき、または 1 つの配布ポイント グループに配布するとき、Configuration Manager は最も優先順位が高い配布ポイントにコンテンツを送信してから、優先順位が低い配布ポイントに同じコンテンツを送信します。  
+
+-   これは、異なるパッケージを転送するときにそのシーケンスを決定するパッケージの配布優先順位を置き換えるものではありません。  
+
+
+たとえば、配布の優先順位が高いコンテンツを、低い優先順位を持つ配布ポイントに配布する場合は、この配布の優先順位が高いパッケージが、常に、配布の優先順位が低いパッケージより前に転送されます。 配付の優先順位が低いパッケージを、高い優先順位を持つ配付ポイントに配布する場合でも、配付の優先順位が考慮されます。
+
+つまり、Configuration Manager では、配布の優先順位の高いパッケージが配布ポイントに転送されるより前に、それより配布の優先順位の低いパッケージが転送されることはありません。  
 
 > [!NOTE]  
->  I punti di distribuzione pull usano anche un concetto di priorità per ordinare la sequenza dei punti di distribuzione di origine.  
+>  また、プル配布ポイントは、優先順位の概念を使用して、ソース配布ポイントのシーケンスを決定しています。  
 >   
->  -   La priorità dei punti di distribuzione per trasferimenti contenuto al punto di distribuzione è diversa dalla priorità usata dai punti di distribuzione pull durante la ricerca di contenuto da un punto di distribuzione di origine.  
->  -   Per altre informazioni, vedere [Usare un punto di distribuzione pull con System Center Configuration Manager](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point).  
+>  -   配布ポイントにコンテンツを転送するための配布ポイントの優先順位は、プル配布ポイントがソース配布ポイントのコンテンツを検索するときに使用する優先順位とは異なります。  
+>  -   詳細については、「[System Center Configuration Manager でのプル配布ポイントの使用](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point)」を参照してください。  
 
 
-## <a name="fallback"></a>Fallback  
- A partire dalla versione 1610, sono stati modificati alcuni aspetti relativi al modo in cui i client individuano un punto di distribuzione con contenuto, fallback compreso. Usare le informazioni seguenti in base alla versione in uso:
+## <a name="fallback"></a>フォールバック  
+ バージョン 1610 より、クライアントによる (フォールバックを含めた) コンテンツを含む配布ポイントの検索方法について、いくつかのことが変更されています。 使用するバージョンに適用される、次の情報を使用してください。
 
-**Versione 1610 e successive**   
-I client che non riescono a individuare il contenuto da un punto di distribuzione associato al gruppo limite corrente possono eseguire il fallback per usare i percorsi di origine del contenuto associati a gruppi di limiti adiacenti. Per essere usato per il fallback, un gruppo di limiti adiacente deve avere una relazione definita con il gruppo di limiti corrente del client. Questa relazione include un tempo configurato oltre il quale un client che non riesce a individuare contenuto localmente può includere nella ricerca origini di contenuto dal gruppo di limiti adiacente.
+**バージョン 1610 以降:**   
+現在の境界グループに関連付けられた配布ポイントのコンテンツが見つからないクライアントは、フォールバックを使用して近隣の境界グループに関連付けられたコンテンツ ソースの場所を使用することができます。 フォールバックとして使用するには、近隣の境界グループにクライアントの現在の境界グループとの関係が定義されている必要があります。 このリレーションシップには、コンテンツがローカルで見つからないクライアントが検索により近隣の境界グループのコンテンツ ソースを含めることができるまでに経過しなければならない時間が構成されています。
 
-I concetti di punti di distribuzione preferiti non sono più usati e le impostazioni per **Consenti percorso origine di fallback per il contenuto** non sono più disponibili o applicate.
+優先配布ポイントの概念は使用されなくなりました。また、[**代替のコンテンツ ソースの場所の使用を許可する**] の設定も使用または適用されなくなりました。
 
-Per altre informazioni, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
-
-
-**Versione 1511, 1602 e 1606**   
-Le impostazioni di fallback sono correlate all'uso di **punti di distribuzione preferiti** e ai percorsi di origine del contenuto usati dai client.
-
--   Per impostazione predefinita, i client scaricano il contenuto solo da un punto di distribuzione preferito (associato ai gruppi di limiti del client).  
-
--   Tuttavia, quando un punto di distribuzione è configurato con l'opzione **Consenti ai client di utilizzare un percorso origine di fallback per il contenuto**, il punto di distribuzione è disponibile solo come origine di contenuto valida per qualsiasi client che non può ottenere una distribuzione da uno dei punti di distribuzione preferiti.  
+詳細については、「[境界グループ](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups)」を参照してください。
 
 
-Per informazioni sui vari percorsi del contenuto e sugli scenari di fallback, vedere [Scenari del percorso di origine del contenuto](../../../core/plan-design/hierarchy/content-source-location-scenarios.md). Per informazioni sui gruppi di limiti, vedere [Gruppi di limiti per System Center Configuration Manager versioni 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606).
+**バージョン 1511、1602、および 1606**   
+フォールバックの設定は、**優先配布ポイント**の使用と、クライアントによって使用されるコンテンツ ソースの場所に関連しています。
 
-## <a name="network-bandwidth"></a>Larghezza di banda di rete  
- Per gestire la quantità di larghezza di banda di rete usata per la distribuzione del contenuto, è possibile usare le opzioni seguenti:  
+-   既定では、クライアントは、優先配布ポイント (クライアントの境界グループに関連付けられている配布ポイント) からのみコンテンツをダウンロードします。  
 
--   **Contenuto di pre-installazione**: processo di trasferimento del contenuto in un punto di distribuzione che non si basa su Configuration Manager per distribuire il contenuto nella rete.  
-
--   **Pianificazione e limitazione della larghezza di banda della rete**: configurazioni che consentono di controllare la modalità e le tempistiche di distribuzione del contenuto ai punti di distribuzione.  
-
-Per altre informazioni, vedere [Gestire la larghezza di banda di rete](/sccm/core/plan-design/hierarchy/manage-network-bandwidth).
-
-## <a name="network-connection-speed-to-content-source"></a>Velocità di connessione di rete nell'origine del contenuto  
-A partire dalla versione 1610, sono stati modificati alcuni aspetti relativi al modo in cui i client individuano un punto di distribuzione con contenuto, compresa la velocità di connessione di rete a un'origine di contenuto. Usare le informazioni seguenti in base alla versione in uso:
-
-**Versione 1610 e successive**   
-Le velocità di connessione di rete che definiscono un punto di distribuzione come **Veloce** o **Lento** non vengono più usate. Al contrario, ogni sistema del sito associato a un gruppo di limiti viene trattato allo stesso modo.
-
-Per altre informazioni, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
+-   ただし、配布ポイントで **[クライアントがコンテンツの代替ソースの場所としてこのサイト システムを使用することを許可する]** が構成されている場合、優先配布ポイントのいずれかから展開を取得できないすべてのクライアントに対して、この配布ポイントを有効なコンテンツ ソースとしてのみ提供することができます。  
 
 
-**Versione 1511, 1602 e 1606**   
- In un gruppo di limiti è possibile configurare la velocità di connessione di rete di ciascun punto di distribuzione:  
+さまざまなコンテンツの場所とフォールバック シナリオの詳細については、「[コンテンツ ソースの場所の例](../../../core/plan-design/hierarchy/content-source-location-scenarios.md)」を参照してください。 境界グループの詳細については、「[Boundary groups for versions 1511,1602, and 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606)」(バージョン 1511、1602、1606 の境界グループ) を参照してください。
 
--   I client usano questo valore quando si connettono al punto di distribuzione.
+## <a name="network-bandwidth"></a>ネットワークの帯域幅  
+ コンテンツを配布するときに使用されるネットワーク帯域幅を管理するために、次のオプションを使用できます。  
 
--   Per impostazione predefinita, la velocità di connessione di rete è configurata come **Veloce**, ma è possibile impostarla anche come **Lenta**.  
+-   **事前設定されたコンテンツ**:  ネットワーク経由でコンテンツを配布する際に Configuration Manager に依存することなく配布ポイントにコンテンツを転送するプロセス。  
 
--   La **velocità di connessione di rete** e una configurazione della distribuzione determinano se un client incluso in un gruppo di limiti associato è in grado di scaricare il contenuto da un punto di distribuzione  
+-   **スケジュールと調整**: 配布ポイントにコンテンツを配布するタイミングと方法を制御するための構成。  
 
-Per informazioni sui vari percorsi del contenuto e sugli scenari di fallback, vedere [Scenari del percorso di origine del contenuto](../../../core/plan-design/hierarchy/content-source-location-scenarios.md). Per informazioni sui gruppi di limiti, vedere [Gruppi di limiti per System Center Configuration Manager versioni 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606).
+詳細については、「[ネットワーク帯域幅の管理](/sccm/core/plan-design/hierarchy/manage-network-bandwidth)」を参照してください。
 
-## <a name="on-demand-content-distribution"></a>Distribuzione di contenuto su richiesta  
- La distribuzione di contenuto su richiesta è un'opzione che è possibile impostare per singoli pacchetti e applicazioni (distribuzioni) per abilitare la distribuzione del contenuto su richiesta ai punti di distribuzione preferiti.  
+## <a name="network-connection-speed-to-content-source"></a>コンテンツ ソースへのネットワーク接続の速度  
+バージョン 1610 より、クライアントによる (コンテンツ ソースへのネットワーク接続速度を含めた) コンテンツを含む配布ポイントの検索方法について、いくつかのことが変更されています。 使用するバージョンに適用される、次の情報を使用してください。
 
--   Per abilitare questa opzione per una distribuzione, abilitare **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**.  
+**バージョン 1610 以降:**   
+配布ポイントを **[高速]** または **[低速]** として定義するネットワーク接続速度は使用されなくなりました。 代わりに、境界グループに関連付けられている各サイト システムが同じように処理されます。
 
--   Quando questa opzione è abilitata per una distribuzione e un client prova a richiedere un contenuto non disponibile in uno qualsiasi dei punti di distribuzione preferiti dei client, Configuration Manager automaticamente distribuisce tale contenuto ai punti di distribuzione preferiti dei client.  
+詳細については、「[境界グループ](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups)」を参照してください。
 
--   In questo modo viene attivata la distribuzione automatica del contenuto ai punti di distribuzione preferiti del client da parte di Configuration Manager e il client può ottenere tale contenuto da altri punti di distribuzione prima che i punti di distribuzione preferiti per il client ricevano la distribuzione. In questo caso, il contenuto sarà presente nel punto di distribuzione per l'uso da parte del client successivo che cerca quella specifica distribuzione.  
 
-Se si usa la versione 1610 o versioni successive, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
-Se si usano le versioni 1511, 1602 o 1606, vedere [Scenari del percorso di origine del contenuto](../../../core/plan-design/hierarchy/content-source-location-scenarios.md) per informazioni sui vari percorsi del contenuto e scenari di fallback.  
+**バージョン 1511、1602、および 1606**   
+ 境界グループ内の配布ポイントごとにネットワーク接続速度を構成できます。  
+
+-   クライアントは、配布ポイントに接続するときにこの値を使用します。
+
+-   ネットワーク接続速度は既定で [**高速**] に構成されていますが、[**低速**] に設定することもできます。  
+
+-   **ネットワーク接続速度**と展開の構成を基に、クライアントが関連付けられた境界グループ内にある場合に、コンテンツを配布ポイントからダウンロードできるかどうかが決定されます。  
+
+さまざまなコンテンツの場所とフォールバック シナリオの詳細については、「[コンテンツ ソースの場所の例](../../../core/plan-design/hierarchy/content-source-location-scenarios.md)」を参照してください。 境界グループの詳細については、「[Boundary groups for versions 1511,1602, and 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606)」(バージョン 1511、1602、1606 の境界グループ) を参照してください。
+
+## <a name="on-demand-content-distribution"></a>オンデマンドのコンテンツ配布  
+ オンデマンドのコンテンツ配布は、優先配布ポイントへのオンデマンドのコンテンツ配布を有効にするために個々のアプリケーションとパッケージ (展開) に対して設定できるオプションです。  
+
+-   展開に対してこのオプションを有効にするには、[**このパッケージのコンテンツを優先配布ポイントに配布する**] を有効にします。  
+
+-   このオプションが展開で有効になっていて、クライアントがこのコンテンツを要求したときにコンテンツがクライアントの優先配布ポイントのいずれかで利用できない場合、Configuration Manager は、このコンテンツを自動的にクライアントの優先配布ポイントに配布します。  
+
+-   このオプションが有効になっていると、Configuration Manager によってクライアントの優先配布ポイントにコンテンツが自動的に配布されますが、クライアントの優先配布ポイントが展開を受け取る前にクライアントが他の配布ポイントからコンテンツを取得する可能性があります。 その場合、コンテンツは、その展開を必要とする他のクライアントで利用できるように、その配布ポイント上に保持されます。  
+
+1610 またはそれ以降のバージョンを使用する場合は、「[境界グループ](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups)」を参照してください。
+バージョン 1511、1602、または 1606 を使用する場合は、「[コンテンツ ソースの場所の例](../../../core/plan-design/hierarchy/content-source-location-scenarios.md)」を参照し、異なるコンテンツの場所とフォールバック シナリオについて確認してください。  
 
 
 
 ## <a name="package-transfer-manager"></a>Package Transfer Manager  
- Componente del server del sito che trasferisce il contenuto ai punti di distribuzione in altri computer.  
+ Package Transfer Manager は、他のコンピューター上の配布ポイントにコンテンツを転送するサイト サーバー コンポーネントです。  
 
- Altre informazioni su [Package Transfer Manager](../../../core/plan-design/hierarchy/package-transfer-manager.md).  
+ [Package Transfer Manager](../../../core/plan-design/hierarchy/package-transfer-manager.md) の詳細を確認してください。  
 
-## <a name="preferred-distribution-point"></a>Punto di distribuzione preferito  
- Un punto di distribuzione preferito include punti di distribuzione associati a gruppi di limiti correnti del client.  
+## <a name="preferred-distribution-point"></a>優先配布ポイント  
+ 優先配布ポイントには、クライアントの現在の境界グループに関連付けられている配布ポイントがすべて含まれます。  
 
- È possibile associare uno o più gruppi di limiti a ogni punto di distribuzione:  
+ 各配布ポイントを 1 つまたは複数の境界グループに関連付けることができます。  
 
--   Questa associazione consente al client di identificare i punti di distribuzione da cui può scaricare il contenuto.  
--   Per impostazione predefinita, i client possono scaricare il contenuto solo da un punto di distribuzione preferito.  
+-   この関連付けにより、コンテンツをダウンロードできる配布ポイントをクライアントが識別できるようになります。  
+-   既定では、クライアントは、優先配布ポイントからのみコンテンツをダウンロードできます。  
 
 
-Per ulteriori informazioni:
- - Se si usa la versione 1610 o versioni successive, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
- - Se si usa la versione 1511, 1602 o 1606, vedere [Scenari del percorso di origine del contenuto](../../../core/plan-design/hierarchy/content-source-location-scenarios.md).
+詳細情報:
+ - 1610 またはそれ以降のバージョンを使用する場合は、「[境界グループ](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups)」を参照してください。
+ - バージョン 1511、1602、または 1606 を使用する場合は、「[コンテンツ ソースの場所の例](../../../core/plan-design/hierarchy/content-source-location-scenarios.md)」を参照してください。
 
-## <a name="prestage-content"></a>Pre-installare il contenuto  
- La pre-installazione è un processo di trasferimento del contenuto in un punto di distribuzione che non si basa su Configuration Manager per distribuire il contenuto nella rete.  
+## <a name="prestage-content"></a>コンテンツの事前設定  
+ 事前設定されたコンテンツは、ネットワーク経由でコンテンツを配布する際に Configuration Manager に依存することなく配布ポイントにコンテンツを転送するプロセスです。  
 
- Per altre informazioni, vedere [Gestire la larghezza di banda di rete](/sccm/core/plan-design/hierarchy/manage-network-bandwidth).
-
+ 詳細については、「[ネットワーク帯域幅の管理](/sccm/core/plan-design/hierarchy/manage-network-bandwidth)」を参照してください。

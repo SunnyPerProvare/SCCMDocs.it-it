@@ -1,63 +1,56 @@
 ---
-title: "Creare un&quot;immagine per un OEM in modalità produttore computer o per un rivenditore locale | Microsoft Docs"
-description: "Usare distribuzioni con supporti pre-installati per ridurre il traffico di rete durante la distribuzione di un sistema operativo in un computer di cui non è stato effettuato il provisioning completo."
+title: "工場出荷時の OEM 用、または現地保管場所用のイメージの作成 | Microsoft Docs"
+description: "事前設定されたメディアによる展開を使用して、完全にはプロビジョニングされていないコンピューターにオペレーティング システムを展開する際のネットワーク トラフィックを軽減します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a7d3df90-062d-4d57-9e9d-e137d3e7cd7f
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: 07aba04fb1b845e389a5f75b115d536136c1569c
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-an-image-for-an-oem-in-factory-or-a-local-depot-with-system-center-configuration-manager"></a>Creare un'immagine per un OEM in modalità produttore computer o per un rivenditore locale con System Center Configuration Manager
+# <a name="create-an-image-for-an-oem-in-factory-or-a-local-depot-with-system-center-configuration-manager"></a>System Center Configuration Manager による工場出荷時の OEM 用、または現地保管場所用のイメージの作成
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Le distribuzioni con supporti pre-installati in System Center Configuration Manager consentono di distribuire un sistema operativo in un computer di cui non è stato effettuato il provisioning completo. Il supporto preinstallato è un file WIM (Windows Imaging Format) che può essere installato in un computer bare metal dal produttore (OEM) o in un centro di gestione temporanea aziendale non connesso all'ambiente di Configuration Manager. Successivamente, nell'ambiente di Configuration Manager il computer viene avviato usando l'immagine d'avvio fornita dal supporto, viene eseguito un controllo hash nel supporto pre-installato per verificare che sia valido e quindi il computer si connette al punto di gestione del sito per le sequenze di attività disponibili che completano il processo di download.
-
-
-Questo metodo di distribuzione può ridurre il traffico di rete perché l'immagine di avvio e l'immagine del sistema operativo sono già nel computer di destinazione. È possibile specificare applicazioni, pacchetti e pacchetti driver da includere nel supporto pre-installato. Dopo l'installazione del sistema operativo nel computer, vengono innanzitutto ricercati nella cache della sequenza di attività applicazioni, pacchetti o pacchetti di driver. Se il contenuto non viene trovato o è stato modificato, viene scaricato da un punto di distribuzione configurato nei supporti preinstallati e quindi installato.  
-
- È possibile usare i supporti pre-installati negli scenari di distribuzione del sistema operativo seguenti:  
-
--   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
-
--   [Sostituire un computer esistente e trasferire le impostazioni](replace-an-existing-computer-and-transfer-settings.md)  
-
- Completare i passaggi in uno degli scenari di distribuzione del sistema operativo e quindi usare le sezioni seguenti per preparare e creare il supporto pre-installato.  
-
-## <a name="configure-deployment-settings"></a>Configurare le impostazioni di distribuzione  
- Quando si usa un supporto pre-installato per avviare il processo di distribuzione del sistema operativo, è necessario configurare la distribuzione per rendere disponibile il sistema operativo per il supporto. È possibile eseguire questa configurazione nella pagina **Impostazioni di distribuzione** della Distribuzione guidata del software o nella scheda **Impostazioni di distribuzione** nelle proprietà della distribuzione.  Per l'impostazione **Rendi disponibile per** , configurare uno degli elementi seguenti:  
-
--   **Client di Configuration Manager, supporti e PXE**  
-
--   **Solo supporti e PXE**  
-
--   **Solo supporti e PXE (nascosto)**  
-
-## <a name="create-the-prestaged-media"></a>Creare supporti pre-installati  
- Creare il file del supporto pre-installato da inviare all'OEM o al rivenditore locale. Per ulteriori informazioni, vedere [Create prestaged media with System Center Configuration Manager](create-prestaged-media.md).  
-
-## <a name="send-the-prestaged-media-file-to-the-oem-or-local-depot"></a>Inviare il file del supporto pre-installato all'OEM o al rivenditore locale  
- Inviare i supporti all'OEM o al rivenditore locale per pre-installare i computer. Il file del supporto pre-installato viene applicato a un disco rigido formattato nel computer.  
-
-## <a name="start-the-computer-to-install-the-operating-system"></a>Avviare il computer per installare il sistema operativo  
- Il file del supporto pre-installato viene applicato ai computer. Quando il computer viene avviato per la prima volta, viene avviato il processo di installazione del sistema operativo.  
+System Center Configuration Manager における事前設定されたメディアによる展開では、完全にはプロビジョニングされていないコンピューターにオペレーティング システムを展開できます。 事前設定されたファイルは、Windows Imaging Format (WIM) と呼ばれる形式のファイルであり、製造元によるベア メタル コンピューター (OEM)、または Configuration Manager 環境に接続していない企業の準備センターにインストールすることができます。 その後、Configuration Manager 環境でコンピューターはメディアが提供するブート イメージを使用して起動し、事前設定されたメディア上でハッシュ チェックを実行し、正しいかどうかを確認します。さらに、コンピューターはサイト管理ポイントに接続して利用可能なタスク シーケンスを取得し、ダウンロード プロセスを完了します。
 
 
+ブート イメージとオペレーティング システム イメージが展開先のコンピューターに存在するので、この展開の方法はネットワーク トラフィックを軽減します。 事前設定メディアに含めるアプリケーション、パッケージ、ドライバー パッケージを指定できます。 コンピューターにオペレーティング システムがインストールされた後、まずローカルのタスク シーケンス キャッシュにアプリケーション、パッケージ、またはドライバー パッケージがないか検査されます。コンテンツが見つからない場合、または変更されている場合は、事前設定メディアで構成されている配布ポイントからコンテンツがダウンロードされて、インストールされます。  
 
-<!--HONumber=Dec16_HO3-->
+ 事前設定されたメディアは、次のオペレーティング システムの展開シナリオに使用できます。  
 
+-   [新しいコンピューター (ベア メタル) に新しいバージョンの Windows をインストールする](install-new-windows-version-new-computer-bare-metal.md)  
 
+-   [既存のコンピューターの置き換えと設定の転送](replace-an-existing-computer-and-transfer-settings.md)  
+
+ オペレーティング システムのいずれかの展開シナリオの手順を実行してから、次のセクションに従って事前設定メディアを準備し、作成します。  
+
+## <a name="configure-deployment-settings"></a>展開の設定の構成  
+ 事前設定されたメディアを使用してオペレーティング システムの展開プロセスを開始する場合、オペレーティング システムをメディアから使用できるように展開を構成する必要があります。 これはソフトウェアの展開ウィザードの **[展開の設定]** ページか展開のプロパティの **[配置の設定]** タブで構成することができます。  **[利用できるようにする項目]** の設定では、次のいずれかを設定します。  
+
+-   **Configuration Manager クライアント、メディア、PXE**  
+
+-   **メディアと PXE のみ**  
+
+-   **メディアと PXE のみ (非表示)**  
+
+## <a name="create-the-prestaged-media"></a>事前設定メディアの作成  
+ OEM または現地保管場所に送信する事前設定メディア ファイルを作成します。 詳細については、「 [Create prestaged media with System Center Configuration Manager](create-prestaged-media.md)」をご覧ください。  
+
+## <a name="send-the-prestaged-media-file-to-the-oem-or-local-depot"></a>OEM または現地保管場所への事前設定されたメディア ファイルの送信  
+ OEM または現地保管場所へメディアを送信し、コンピューターを事前設定します。 事前設定されたメディア ファイルは、コンピューターのフォーマット済みのハード ディスクに適用されます。  
+
+## <a name="start-the-computer-to-install-the-operating-system"></a>オペレーティング システムをインストールするコンピューターの起動  
+ 事前設定されたメディア ファイルは、コンピューターに適用されます。 コンピューターを初めて起動すると、オペレーティング システムのインストール プロセスが開始します。  

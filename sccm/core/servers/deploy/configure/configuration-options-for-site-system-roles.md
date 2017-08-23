@@ -1,157 +1,154 @@
 ---
-title: Pianificare i server e i ruoli del sistema | Microsoft Docs
-description: Per informazioni dettagliate sui ruoli del sistema del sito di Configuration Manager non di chiara comprensione, vedere questo articolo.
+title: "サイト システムの役割オプション | Microsoft Docs"
+description: "この記事では、必ずしも説明の必要がないとは言えない、Configuration Manager サイト システム役割の詳細を示します。"
 ms.custom: na
 ms.date: 2/8/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0e9f0fbd-e442-4509-a021-bfdedf2d04dd
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: fff93794afdfa9f890b1f06d6c330d8cffc5796c
 ms.openlocfilehash: b4db5d86cc0ed020ed176feb2e8f1f9dc51a2280
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="configuration-options-for-site-system-roles-for-system-center-configuration-manager"></a>Opzioni di configurazione per i ruoli del sistema del sito per System Center Configuration Manager
+# <a name="configuration-options-for-site-system-roles-for-system-center-configuration-manager"></a>System Center Configuration Manager のサイト システム役割の構成オプション
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-La maggior parte delle opzioni di configurazione per i ruoli del sistema del sito di System Center Configuration Manager è di chiara comprensione o descritta nelle finestre di dialogo o nella procedura guidata durante la configurazione. Le sezioni seguenti illustrano i ruoli del sistema del sito le cui impostazioni possono richiedere informazioni aggiuntive.  
+System Center Configuration Manager のサイト システム役割のほとんどの構成オプションについては、説明の必要がないか、構成時にウィザードかダイアログ ボックスで説明されます。 以下のセクションでは、追加情報を必要とする設定があるサイト システムの役割について説明します。  
 
-##  <a name="BKMK_ApplicationCatalog_Website"></a> Punto per siti Web del Catalogo applicazioni  
- Per informazioni su come configurare il punto per siti Web del Catalogo applicazioni, vedere [Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager](../../../../apps/plan-design/plan-for-and-configure-application-management.md).  
+##  <a name="BKMK_ApplicationCatalog_Website"></a> アプリケーション カタログ Web サイト ポイント  
+ アプリケーション カタログのアプリケーション カタログ Web サイト ポイントの設定方法については、「[System Center Configuration Manager のアプリケーション管理の計画と構成](../../../../apps/plan-design/plan-for-and-configure-application-management.md)」を参照してください。  
 
- **Connessioni client**  
+ **クライアント接続**  
 
- Selezionare **HTTPS** per usare l'impostazione di connessione più sicura e verificare se i client si connettono da Internet. Questa opzione richiede un certificato PKI sul server per l'autenticazione tra client e server e per la crittografia dei dati tramite Secure Socket Layer (SSL). Per altre informazioni sui requisiti dei certificati, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
+ セキュリティを高めた接続設定を使用し、クライアントがインターネットから接続してきているかどうかをチェックするには、**[HTTPS]** を選択します。 このオプションでは、クライアントに対してサーバーを認証し、Secure Socket Layer (SSL) を介してデータを暗号化するために、PKI 証明書がサーバー上にあることが必要とされます。 証明書の要件の詳細については、「[System Center Configuration Manager での PKI 証明書の要件](../../../../core/plan-design/network/pki-certificate-requirements.md)」をご覧ください。  
 
- Per un esempio di distribuzione del certificato del server e per informazioni sulla relativa configurazione in Internet Information Services (IIS), vedere la sezione *Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS* nell'argomento [Esempio dettagliato di distribuzione dei certificati PKI per Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
+ サーバー証明書の展開例と、それをインターネット インフォメーション サービス (IIS) で構成する方法については、「[System Center Configuration Manager PKI 証明書の展開手順の例: Windows Server 2008 証明機関](/sccm/core/plan-design/network/example-deployment-of-pki-certificates)」の「*IIS を実行するサイト システム用の Web サーバー証明書の展開*」セクションを参照してください。  
 
- **Aggiunta del sito Web del Catalogo applicazioni all'area siti attendibili**  
+ **アプリケーション カタログ Web サイトを信頼済みサイト ゾーンに追加する**  
 
- Questo messaggio mostra il valore nelle impostazioni client predefinite a seconda che l'impostazione client **Aggiungere il sito Web del catalogo delle applicazioni all'area siti attendibili di Internet Explorer** sia impostata su **True** o **False**. Se per configurare questa impostazione si sono usate impostazioni client personalizzate, è necessario controllare personalmente questo valore.  
+ メッセージに既定のクライアント設定の値が表示され、**[Add Application Catalog website to Internet Explorer trusted sites zone (アプリケーション カタログ Web サイトを、Internet Explorer の信頼済みサイト ゾーンに追加する)]** クライアント設定が現在 **[True]** と **[False]** のどちらに設定されているかが示されます。 カスタム クライアント設定を使用してこの設定を構成した場合は、この値を自分で確認する必要があります。  
 
- Se questo sistema del sito è configurato per un nome di dominio completo (FQDN) e il sito Web non si trova nell'area siti attendibili in Internet Explorer, gli utenti che si connettono al Catalogo applicazioni devono immettere le credenziali.  
+ このサイト システムが完全修飾ドメイン名 (FQDN) 用に設定されていて、Web サイトが Internet Explorer の信頼済みサイト ゾーンに追加されていない場合は、ユーザーがアプリケーション カタログに接続する際に資格情報を入力するようにプロンプトが表示されます。  
 
- **Nome organizzazione**  
+ **組織名**  
 
- Immettere il nome visualizzato dagli utenti nel Catalogo applicazioni. Queste informazioni di personalizzazione consentono agli utenti di identificare il sito Web come fonte attendibile.  
+ アプリケーション カタログのユーザーに表示される名称を入力します。 ユーザーがこの Web サイトを信頼されるソースとして認識する際に、この組織情報が役立ちます。  
 
-##  <a name="BKMK_ApplicationCatalog_WebService"></a> Punto per servizi Web del Catalogo applicazioni  
- Per informazioni su come configurare il punto per servizi Web del Catalogo applicazioni, vedere [Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager](../../../../apps/plan-design/plan-for-and-configure-application-management.md).  
+##  <a name="BKMK_ApplicationCatalog_WebService"></a> アプリケーション カタログ Web サービス ポイント  
+ アプリケーション カタログのアプリケーション カタログ Web サービス ポイントの設定方法については、「[System Center Configuration Manager のアプリケーション管理の計画と構成](../../../../apps/plan-design/plan-for-and-configure-application-management.md)」を参照してください。  
 
  **HTTPS**  
 
- Selezionare **HTTPS** per l'autenticazione tra i punti per siti Web del Catalogo applicazioni e questo punto per servizi Web del Catalogo applicazioni.  Questa opzione richiede un certificato PKI sui server che eseguono il punto per siti Web del Catalogo applicazioni per l'autenticazione server e per la crittografia dei dati tramite SSL. Per altre informazioni sui requisiti dei certificati, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
+ アプリケーション カタログ Web サイト ポイントをこのアプリケーション カタログ Web サービス ポイントに対して認証するには、[HTTPS] を選択します。 ****  このオプションでは、サーバーを認証し、SSL を介してデータを暗号化するために、アプリケーション カタログ Web サイト ポイントを実行するサーバー上に PKI 証明書があることが必要とされます。 証明書の要件の詳細については、「[System Center Configuration Manager での PKI 証明書の要件](../../../../core/plan-design/network/pki-certificate-requirements.md)」をご覧ください。  
 
- Per un esempio di distribuzione del certificato del server e per informazioni sulla relativa configurazione in Internet Information Services (IIS), vedere la sezione *Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS* in [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
+ サーバー証明書の展開例と、それを IIS で構成する方法については、「[System Center Configuration Manager PKI 証明書の展開手順の例: Windows Server 2008 証明機関](/sccm/core/plan-design/network/example-deployment-of-pki-certificates)」の「*IIS を実行するサイト システム用の Web サーバー証明書の展開*」セクションを参照してください。  
 
-##  <a name="BKMK_CertificateRegistrationPoint"></a> Punto di registrazione certificati  
- Per altre informazioni su come configurare il punto di registrazione certificati, vedere [Introduzione ai profili certificato](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
+##  <a name="BKMK_CertificateRegistrationPoint"></a> 証明書登録ポイント  
+ 証明書登録ポイントの設定方法の詳細については、「[証明書プロファイルの概要](/sccm/protect/deploy-use/introduction-to-certificate-profiles)」を参照してください。  
 
-##  <a name="BKMK_Distribution_Point"></a> Punto di distribuzione  
- Per altre informazioni su come configurare il punto di distribuzione per la distribuzione del contenuto, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+##  <a name="BKMK_Distribution_Point"></a> 配布ポイント  
+ コンテンツ展開の配布ポイントの構成方法については、「[Manage content and content infrastructure for System Center Configuration Manager](../../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理)」を参照してください。  
 
- Per altre informazioni su come configurare il punto di distribuzione per le distribuzioni di PXE, vedere [Usare PXE per distribuire Windows in rete con System Center Configuration Manager](../../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+ PXE 展開の配布ポイントの設定方法については、「[System Center Configuration Manager で PXE を使用してネットワーク経由で Windows を展開する](../../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md)」を参照してください。  
 
- Per informazioni su come configurare il punto di distribuzione per le distribuzioni multicast, vedere [Usare il multicast per distribuire Windows in rete con System Center Configuration Manager](../../../../osd/deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
+ マルチキャスト展開の配布ポイントの設定方法については、「[System Center Configuration Manager でマルチキャストを使用してネットワーク経由で Windows を展開する](../../../../osd/deploy-use/use-multicast-to-deploy-windows-over-the-network.md)」を参照してください。  
 
- **Installa e configura IIS, se richiesto da Configuration Manager**  
- Selezionare questa opzione per consentire a Configuration Manager di installare e configurare IIS sul sistema del sito, se non è già installato. IIS deve essere installato su tutti i punti di distribuzione ed è necessario selezionare questa impostazione per proseguire la procedura guidata.  
+ **Configuration Manager で必要な場合は IIS をインストールして構成する**  
+ IIS がまだインストールされていない場合に、Configuration Manager で自動的に IIS をインストールして設定するには、このオプションを選択します。 IIS はすべての配布ポイントにインストールする必要があり、ウィザードを続行するにはこの設定を選択する必要があります。  
 
- **Account di installazione sistema del sito**  
- Per i punti di distribuzione installati su un server del sito, solo l'account del computer del server del sito viene supportato per l'uso come Account di installazione sistema del sito.  
+ **サイト システムのインストール アカウント**  
+ サイト サーバーにインストールされている配布ポイントでは、サイト システムのインストール アカウントとしての使用がサポートされているのは、サイト サーバーのコンピューター アカウントだけです。  
 
- **Creare un certificato autofirmato o importare un certificato client PKI**  
- Questo certificato ha due scopi:  
+ **自己署名入り証明書を作成するか、PKI クライアント証明書をインポートする**  
+ この証明書には、次の 2 つの目的があります。  
 
-1.  Consente l'autenticazione tra il punto di distribuzione e un punto di gestione prima che il punto di distribuzione invii messaggi di stato.  
+1.  配布ポイントがステータス メッセージを管理ポイントに送信する前に、管理ポイントから認証を受けるようにします。  
 
-2.  Quando l'opzione **Abilita supporto PXE per i client** è selezionata, il certificato viene inviato ai computer che eseguono un avvio PXE in modo che possano connettersi a un punto di gestione durante la distribuzione del sistema operativo.  
+2.  **[クライアントの PXE サポートを有効にする]** がオンになっていると、オペレーティング システムの展開中に管理ポイントに接続できるように、PXE ブートを実行するコンピューターに証明書が送信されます。  
 
-Quando tutti i punti di gestione nel sito sono configurati per il protocollo HTTP, è necessario creare un certificato autofirmato. Quando i punti di gestione sono configurati per HTTPS, importare un certificato client PKI.  
+サイトのすべての管理ポイントが HTTP 用に設定されている場合は、自己署名証明書を作成します。 管理ポイントが HTTPS 用に設定されている場合は、PKI クライアント証明書をインポートします。  
 
-Per importare il certificato, cercare un file Public-Key Cryptography Standards #12 (PKCS #12) che contenga un certificato PKI con i requisiti seguenti per Configuration Manager:  
+証明書をインポートするには、次の Configuration Manager の要件を満たす PKI 証明書を含む公開キー暗号化標準 #12 (PKCS #12) ファイルを見つけます。  
 
--   Lo scopo designato deve includere l'autenticazione client.  
+-   使用目的にクライアント認証が含まれている。  
 
--   La chiave privata deve essere configurata per l'esportazione.  
+-   秘密キーがエクスポートできるように設定されている。  
 
-Non sono previsti requisiti specifici per il certificato Nome oggetto o Nome alternativo oggetto (SAN) ed è possibile utilizzare lo stesso certificato per più punti di distribuzione.  
+証明書のサブジェクトやサブジェクトの別名 (SAN) には、特定の要件はありません。複数の配布ポイントで同じ証明書を使用することができます。  
 
-Per altre informazioni sui requisiti dei certificati, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md). Per un esempio di distribuzione di questo certificato, vedere la sezione *Distribuzione del certificato di servizio per i punti di distribuzione* nell'argomento [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
+証明書の要件の詳細については、「[System Center Configuration Manager での PKI 証明書の要件](../../../../core/plan-design/network/pki-certificate-requirements.md)」をご覧ください。 この証明書の展開の例については、「[System Center Configuration Manager PKI 証明書の展開手順の例: Windows Server 2008 証明機関](/sccm/core/plan-design/network/example-deployment-of-pki-certificates)」の「*配布ポイント用のクライアント証明書の展開*」セクションを参照してください。  
 
-**Abilita questo punto di distribuzione per il contenuto pre-installato**  
-Selezionare questa casella di controllo per abilitare il punto di distribuzione per il contenuto pre-installato. Quando questa casella di controllo è selezionata, è possibile configurare il comportamento della distribuzione del contenuto. È possibile scegliere se pre-installare sempre il contenuto sul punto di distribuzione, se pre-installare il contenuto iniziale per il pacchetto ma usare il normale processo di distribuzione del contenuto in presenza di aggiornamenti oppure se usare sempre il normale processo di distribuzione per il contenuto nel pacchetto.  
+**事前設定されたコンテンツ用にこの配布ポイントを有効にする**  
+事前設定されたコンテンツ用にこの配布ポイントを有効にするには、このチェック ボックスをオンにします。 このチェック ボックスがオンの場合、コンテンツの配布時の動作を設定できます。 配布ポイントで常にコンテンツを事前設定するか、パッケージの初期コンテンツを事前設定するかを選択できますが、コンテンツに更新がある場合には標準のコンテンツ配布プロセスを使用するか、パッケージ内のコンテンツに対して常に標準コンテンツ配布プロセスを使用するようにします。  
 
-**Gruppi di limiti**  
- È possibile associare i gruppi di limiti a un punto di distribuzione. Durante la distribuzione del contenuto, i client devono trovarsi in un gruppo di limiti associato al punto di distribuzione per usarlo come percorso di origine per il contenuto.
- - **Nelle versioni precedenti la 1610** è possibile selezionare la casella di controllo **Consenti percorso origine di fallback per il contenuto** per consentire ai client esterni a questi gruppi di limiti di eseguire il fallback e usare il punto di distribuzione come percorso di origine per il contenuto in assenza di altri punti di distribuzione disponibili.
- - **A partire dalla versione 1610** non è più possibile configurare **Consenti percorso origine di fallback per il contenuto**.  È invece possibile configurare relazioni tra gruppi di limiti che controllano quando un client può iniziare a cercare percorsi di origine del contenuto validi in gruppi di limiti aggiuntivi.
+**境界グループ**  
+ 境界グループを配布ポイントに関連付けることができます。 コンテンツを展開するときに、クライアントがコンテンツ ソースの場所として配布ポイントを使用するには、クライアントは、その配布ポイントに関連付けられた境界グループ内になければなりません。
+ - **バージョン 1610 より前では**、**[代替のコンテンツ ソースの場所の使用を許可する]** チェック ボックスをオンにすると、他に利用できる代替ポイントがない場合に、この境界グループ外のクライアントのフォールバックが許可され、配布ポイントをコンテンツ ソースの場所として使用できるようになります。
+ - **バージョン 1610 以降**、**[代替のコンテンツ ソースの場所の使用を許可する]** は構成できません。  代わりに、境界グループ間の関係を設定してください。有効なコンテンツ ソースの場所を追加の境界グループからクライアントが検索できるようになるタイミングが、その関係によってチェックされるようにします。
 
-##  <a name="BKMK_Enrollment_Point"></a> Punto di registrazione  
-I punti di registrazione vengono usati per installare i computer Mac e registrare i dispositivi gestiti con la funzionalità di gestione dei dispositivi mobili in locale. Per altre informazioni, vedere  
+##  <a name="BKMK_Enrollment_Point"></a> 登録ポイント  
+登録ポイントは、Mac コンピューターをインストールし、オンプレミスのモバイル デバイス管理で管理するデバイスを登録するために使用します。 詳細については、次をご覧ください。  
 
--   [How to deploy clients to Macs in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-macs.md) (Come distribuire i client nei computer Mac in System Center Configuration Manager)  
+-   [System Center Configuration Manager で Mac にクライアントを展開する方法](../../../../core/clients/deploy/deploy-clients-to-macs.md)  
 
--   [Come gli utenti registrano i dispositivi con la gestione di dispositivi mobili locale in System Center Configuration Manager](../../../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md)  
+-   [System Center Configuration Manager でのオンプレミス モバイル デバイス管理の対象となるデバイスをユーザーが登録する方法](../../../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md)  
 
-**Connessioni consentite**  
- L'impostazione HTTPS viene selezionata automaticamente e richiede un certificato PKI sul server per l'autenticazione tra server e punto proxy di registrazione o punto di servizio fuori banda e per la crittografia dei dati tramite SSL. Per altre informazioni sui requisiti dei certificati, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
+**許可される接続**  
+ HTTPS 設定が自動的に選択されます。HTTPS 設定では、登録プロキシ ポイントと帯域外サービス ポイントに対してサーバーを認証し、SSL を介してデータを暗号化するために、サーバー上に PKI 証明書があることが必要とされます。 証明書の要件の詳細については、「[System Center Configuration Manager での PKI 証明書の要件](../../../../core/plan-design/network/pki-certificate-requirements.md)」をご覧ください。  
 
- Per un esempio di distribuzione del certificato del server e per informazioni sulla relativa configurazione in Internet Information Services (IIS), vedere la sezione *Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS* in [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
+ サーバー証明書の展開例と、それを IIS で構成する方法については、「[System Center Configuration Manager PKI 証明書の展開手順の例: Windows Server 2008 証明機関](/sccm/core/plan-design/network/example-deployment-of-pki-certificates)」の「*IIS を実行するサイト システム用の Web サーバー証明書の展開*」セクションを参照してください。  
 
-##  <a name="BKMK_Enrollment_Proxy_Point"></a> Punto proxy di registrazione  
-Per altre informazioni su come configurare un punto proxy di registrazione per i dispositivi mobili, vedere [Come gli utenti registrano i dispositivi con la gestione di dispositivi mobili locale in System Center Configuration Manager](../../../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md).  
+##  <a name="BKMK_Enrollment_Proxy_Point"></a> 登録プロキシ ポイント  
+モバイル デバイスの登録プロキシ ポイントの構成方法について詳しくは、「[System Center Configuration Manager でのオンプレミス モバイル デバイス管理の対象となるデバイスをユーザーが登録する方法](../../../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md)」をご覧ください。  
 
-**Connessioni client**  
- L'impostazione HTTPS viene selezionata automaticamente e richiede un certificato PKI sul server per l'autenticazione tra server e dispositivi mobili o computer Mac registrati da Configuration Manager e per la crittografia dei dati con Secure Sockets Layer (SSL). Per altre informazioni sui requisiti dei certificati, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
+**クライアント接続**  
+ HTTPS 設定が自動的に選択されます。HTTPS 設定では、Configuration Manager で登録されているモバイル デバイスと Mac コンピューターに対してサーバーを認証し、SSL (Secure Sockets Layer) を介してデータを暗号化するために、サーバー上に PKI 証明書がある必要があります。 証明書の要件の詳細については、「[System Center Configuration Manager での PKI 証明書の要件](../../../../core/plan-design/network/pki-certificate-requirements.md)」をご覧ください。  
 
- Per un esempio di distribuzione del certificato del server e per informazioni sulla relativa configurazione in Internet Information Services (IIS), vedere la sezione *Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS* in [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
+ サーバー証明書の展開例と、それを IIS で構成する方法については、「[System Center Configuration Manager PKI 証明書の展開手順の例: Windows Server 2008 証明機関](/sccm/core/plan-design/network/example-deployment-of-pki-certificates)」の「*IIS を実行するサイト システム用の Web サーバー証明書の展開*」セクションを参照してください。  
 
-##  <a name="BKMK_Fallback_Status_Point"></a> Punto di stato di fallback  
-**Numero di messaggi di stato** e **Intervallo di limitazione (in secondi)**  
-Sebbene le impostazioni predefinite per queste opzioni (10.000 messaggi di stato e 3.600 secondi per l'intervallo di limitazione) siano sufficienti nella maggior parte dei casi, potrebbe essere necessario modificarli in presenza di entrambe le condizioni seguenti:  
+##  <a name="BKMK_Fallback_Status_Point"></a> フォールバック ステータス ポイント  
+**状態メッセージの数** と **調整間隔 (秒)**  
+これらのオプションの既定の設定 (状態メッセージの数 10,000、調整間隔 3,600 秒) は、ほとんどの状況に十分に対応できますが、次の両方の条件に一致する場合には、設定の変更が必要になることがあります。  
 
--   Il punto di stato di fallback accetta connessioni solo dalla rete intranet.  
+-   フォールバック ステータス ポイントがイントラネットからのみ接続を受け入れる。  
 
--   Il punto di stato di fallback viene utilizzato durante un'implementazione della distribuzione client per molti computer.  
+-   多数のコンピューターを対象としたクライアント展開のロールアウト中に、フォールバック ステータス ポイントを使用する。  
 
-In questo scenario, un flusso continuo di messaggi di stato può creare un backlog di messaggi di stato che determina un utilizzo elevato della CPU sul server del sito per un periodo di tempo prolungato. Inoltre, potrebbe non essere possibile visualizzare le informazioni aggiornate sulla distribuzione dei client nella console di Configuration Manager e nei report sulla distribuzione dei client.  
+この場合は、状態メッセージの連続したストリームのために状態メッセージのバックログが生成され、サイト サーバーの CPU (中央処理装置) 使用率が長時間高くなることがあります。 さらに、Configuration Manager コンソールとクライアント展開レポートに、クライアント展開の最新情報が表示されない場合もあります。  
 
-Queste impostazioni del punto di stato di fallback sono progettate per essere configurate per messaggi di stato generati durante la distribuzione dei client. Non sono pensate per problemi di comunicazione dei client, come nel caso in cui i client su Internet non riescono a connettersi al punto di gestione basato su Internet. Dal momento che il punto di stato di fallback non può applicare queste impostazioni solo ai messaggi di stato generati durante la distribuzione dei client, non configurarle quando il punto di stato di fallback accetta connessioni da Internet.  
+これらのフォールバック ステータス ポイント設定は、クライアント展開中に生成される状態メッセージ用に設定するように設計されています。 これらの設定は、インターネット上のクライアントがインターネットベースの管理ポイントに接続できないなどの、クライアントの通信問題用に設定するようには設計されていません。 フォールバック ステータス ポイントは、クライアント展開中に生成された状態メッセージだけに設定を適用することができないため、フォールバック ステータス ポイントがインターネットからの接続を受け入れる場合には、これらの設定は構成しないでください。  
 
-Ciascun computer su cui l'installazione del client di System Center 2012 Configuration Manager viene completata correttamente invia i seguenti quattro messaggi di stato al punto di stato di fallback:  
+System Center 2012 Configuration Manager クライアントを正常にインストールする各コンピューターは、次の 4 つの状態メッセージをフォールバック ステータス ポイントに送信します。  
 
--   Distribuzione di client avviata  
+-   クライアントの展開が開始されました  
 
--   Distribuzione client completata  
+-   クライアントの展開に成功しました  
 
--   Assegnazione client avviata  
+-   クライアントの割り当てが開始されました  
 
--   Assegnazione client completata  
+-   クライアントの割り当てに成功しました  
 
-I computer sui quali non è possibile eseguire l'installazione o che assegnano il client di Configuration Manager inviano messaggi di stato aggiuntivi.  
+インストールできないコンピューター、または Configuration Manager クライアントを割り当てることができないコンピューターは、追加の状態メッセージを送信します。  
 
-Se ad esempio si distribuisce il client di Configuration Manager a 20.000 computer, questa distribuzione può inviare 80.000 messaggi di stato al punto di stato di fallback. Dal momento che la configurazione predefinita della limitazione della larghezza di banda della rete consente l'invio di 10.000 messaggi di stato al punto di stato di fallback ogni 3600 secondi (1 ora), è possibile che i messaggi di stato vengano inclusi nel backlog sul punto di stato di fallback. È inoltre necessario considerare la larghezza di banda della rete disponibile tra il punto di stato di fallback e il server del sito e la potenza di quest'ultimo per l'elaborazione di un numero elevato di messaggi di stato.  
+たとえば、Configuration Manager クライアントを 20,000 台のコンピューターに展開する場合、フォールバック ステータス ポイントへの状態メッセージが 80,000 個送信されるとします。 既定のスロットル構成では、3,600 秒 (1 時間) ごとに 10,000 の状態メッセージをフォールバック ステータス ポイントに送信できるため、状態メッセージはフォールバック ステータス ポイント上でバックログされる可能性があります。 また、フォールバック ステータス ポイントとサイト サーバー間の利用可能なネットワーク帯域幅と、サイト サーバーが大量の状態メッセージを扱う処理能力も考慮する必要があります。  
 
-Per evitare questi problemi, prendere in considerazione l'opportunità di aumentare il numero di messaggi di stato e ridurre l'intervallo di limitazione.  
+このような問題を防止するため、状態メッセージの数を増やして、調整間隔を短くすることを検討してください。  
 
-Reimpostare i valori di limitazione per il punto di stato di fallback in presenza di una delle condizioni seguenti:  
+次の状態のいずれかが該当する場合は、フォールバック ステータス ポイントの調整値を再設定します。  
 
--   Si ritiene che i valori di limitazione correnti siano superiori a quelli richiesti per l'elaborazione dei messaggi di stato dal punto di stato di fallback.  
+-   現在のスロットル値が、フォールバック ステータス ポイントからの状態メッセージの処理に必要な値より大きいことが計算される場合。  
 
--   Si ritiene che le impostazioni di limitazione correnti determinino un utilizzo elevato della CPU sul server del sito.  
+-   現在の調整設定では、サイト サーバーの CPU 負荷が高くなる場合。  
 
-Non modificare le impostazioni di limitazione per il punto di stato di fallback senza aver compreso le conseguenze di tale azione. Ad esempio, se le impostazioni di limitazione vengono aumentate, l'utilizzo della CPU sul server del sito potrebbe crescere contestualmente, rallentando così tutte le operazioni del sito.  
-
+フォールバック ステータス ポイントの調整設定を変更する場合は、変更により生じる結果について理解していることが条件となります。 たとえば、調整設定を高くすると、サイト サーバーの CPU 負荷が高くなり、すべてのサイト操作の速度が遅くなります。  

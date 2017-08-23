@@ -1,7 +1,6 @@
 ---
-
-title: Preparare la gestione degli aggiornamenti software | Microsoft Docs
-description: "Per preparare la gestione degli aggiornamenti, completare queste attività per visualizzare i dati di valutazione di conformità nella console di System Center Configuration Manager."
+title: "ソフトウェア更新管理の準備 | Microsoft Docs"
+description: "更新管理を準備するには、次のタスクを実行して、System Center Configuration Manager コンソールでコンプライアンス対応評価データを表示します。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -10,36 +9,28 @@ ms.date: 10/06/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: 01907900-e28b-4cd7-9479-42906416707b
-translationtype: Human Translation
-ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
 ms.openlocfilehash: 5c34bd1ea108dffda10c30281fb9c97ba38ae1ae
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="prepare-for-software-updates-management"></a>ソフトウェア更新管理の準備
 
-# <a name="prepare-for-software-updates-management"></a>Preparare la gestione degli aggiornamenti software
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+ソフトウェア更新のコンプライアンス対応評価データを System Center Configuration Manager コンソールに表示し、ソフトウェア更新をクライアント コンピューターに展開する前に、次のセクションの手順を完了する必要があります。
 
-Prima che i dati di valutazione della conformità dell'aggiornamento software siano visualizzati nella console di System Center Configuration Manager e prima di poter distribuire gli aggiornamenti software nei computer client, è necessario completare i passaggi seguenti.
+## <a name="step-1-install-a-software-update-point"></a>手順 1: ソフトウェアの更新ポイントのインストール  
+ソフトウェア更新プログラムのコンプライアンス対応評価を有効にし、ソフトウェア更新プログラムをクライアントに展開するには、中央管理サイトとスタンドアロン プライマリ サイトにソフトウェアの更新ポイントが必要です。 セカンダリ サイトのソフトウェアの更新ポイントは、オプションです。 詳細については、「[ソフトウェアの更新ポイントのインストール](install-a-software-update-point.md)」を参照してください。  
 
-## <a name="step-1-install-a-software-update-point"></a>Passaggio 1: Installare un punto di aggiornamento software  
-Il punto di aggiornamento software è necessario nel sito di amministrazione centrale e nei siti primari autonomi per abilitare la valutazione della conformità degli aggiornamenti software e per distribuire gli aggiornamenti software ai client. Il punto di aggiornamento software è facoltativo nei siti secondari. Per informazioni dettagliate, vedere[Installare un punto di aggiornamento software](install-a-software-update-point.md)  
+## <a name="step-2-synchronize-software-updates"></a>手順 2: ソフトウェア更新プログラムの同期
+ソフトウェア更新プログラムの同期は、構成された基準を満たすソフトウェア更新プログラムのメタデータを取得するプロセスです。 ソフトウェア更新プログラムを同期するまで、ソフトウェア更新プログラムは Configuration Manager コンソールに表示されません。 詳細については、「[ソフトウェア更新プログラムの同期](synchronize-software-updates.md)」を参照してください。   
 
-## <a name="step-2-synchronize-software-updates"></a>Passaggio 2: Sincronizzare gli aggiornamenti software
-La sincronizzazione degli aggiornamenti software è il processo di recupero dei metadati degli aggiornamenti software che soddisfano i criteri configurati. Gli aggiornamenti software non vengono visualizzati nella console di Configuration Manager finché non verranno sincronizzati. Per informazioni dettagliate, vedere [Sincronizzare gli aggiornamenti software](synchronize-software-updates.md).   
+## <a name="step-3-configure-classifications-and-products-to-synchronize"></a>手順 3: 同期する分類と製品の構成
+この構成は、中央管理サイトまたはスタンドアロン プライマリ サイトで行います。 ソフトウェア更新プログラムを初めて同期した後で、Configuration Manager は、更新された分類および製品の一覧を取得します。 これで、ソフトウェアの更新ポイント コンポーネントのプロパティの新しいオプションから選択できます。 新しい分類と製品を構成した後は、手順 2 を繰り返して、ソフトウェア更新プログラムの同期を開始し、新しい条件のソフトウェア更新プログラムのメタデータを取得します。 詳細については、「[同期する分類と製品の構成](configure-classifications-and-products.md)」を参照してください。
 
-## <a name="step-3-configure-classifications-and-products-to-synchronize"></a>Passaggio 3: Configurare le classificazioni e i prodotti da sincronizzare
-Eseguire questa configurazione nel sito di amministrazione centrale o nel sito primario autonomo. Dopo aver sincronizzato gli aggiornamenti software per la prima volta, Configuration Manager recupera un elenco aggiornato di classificazioni e prodotti. A questo punto, è possibile eseguire selezioni dalle nuove opzioni delle proprietà del componente punto di aggiornamento software. Dopo aver configurato le nuove classificazioni e i prodotti, ripetere il passaggio 2 per avviare la sincronizzazione degli aggiornamenti software per recuperare i metadati degli aggiornamenti software per i nuovi criteri. Per informazioni dettagliate, vedere [Configurare le classificazioni e i prodotti per la sincronizzazione](configure-classifications-and-products.md).
-
-## <a name="step-4-manage-settings-for-software-updates"></a>Passaggio 4: Gestire le impostazioni per gli aggiornamenti software
-Dopo aver sincronizzato gli aggiornamenti software, verificare le impostazioni client di Configuration Manager, le configurazioni dei criteri di gruppo e le impostazioni degli aggiornamenti software prima di distribuirle. Per informazioni dettagliate, vedere [Gestire le impostazioni per gli aggiornamenti software](manage-settings-for-software-updates.md).
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+## <a name="step-4-manage-settings-for-software-updates"></a>手順 4: ソフトウェア更新プログラムの設定の管理
+ソフトウェア更新プログラムを同期した後は、ソフトウェア更新プログラムを展開する前に、Configuration Manager クライアントの設定、グループ ポリシーの構成、およびソフトウェア更新プログラムの設定を確認します。 詳細については、「[ソフトウェア更新プログラムの設定の管理](manage-settings-for-software-updates.md)」を参照してください。

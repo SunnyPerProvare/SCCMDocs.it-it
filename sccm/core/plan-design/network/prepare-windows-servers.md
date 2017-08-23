@@ -1,145 +1,141 @@
 ---
-title: Preparare i server di Windows | Microsoft Docs
-description: Assicurarsi che un computer soddisfi i prerequisiti per l&quot;uso come server del sito o server di sistema del sito per System Center Configuration Manager.
+title: "Windows Server の準備 | Microsoft Docs"
+description: "コンピューターが System Center Configuration Manager のサイト サーバーまたはサイト システム サーバーとして使用するための前提条件を満たしていることを確認します。"
 ms.custom: na
 ms.date: 2/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 2aca914f-641e-4bc8-98d4-bbf0a2a5276f
-caps.latest.revision: 10
-caps.handback.revision: 0
+caps.latest.revision: "10"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dd102603356864add4084c6881c39bebcbd635f2
 ms.openlocfilehash: 9b97dedb5d2be0bd2e47260033e6e4361467dc4e
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="prepare-windows-servers-to-support-system-center-configuration-manager"></a>Preparare i server di Windows per il supporto di System Center Configuration Manager
+# <a name="prepare-windows-servers-to-support-system-center-configuration-manager"></a>System Center Configuration Manager をサポートするための Windows Server の準備
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Prima di poter usare un computer Windows come server di sistema del sito per System Center Configuration Manager, è necessario che il computer soddisfi i prerequisiti per l'uso previsto come server del sito o server di sistema del sito.  
+System Center Configuration Manager のサイト システム サーバーとして Windows コンピューターを使用するためには、サイト サーバーまたはサイト システム サーバーとして意図された用途の前提条件を満たす必要があります。  
 
--   Questi prerequisiti includono spesso uno o più ruoli o funzionalità di Windows, che vengono abilitati usando Server Manager del computer.  
+-   一般に前提条件には Windows の機能や役割が該当し、コンピューターのサーバー マネージャーを使用してそれらを有効にすることができます。  
 
--   Dal momento che il metodo per abilitare i ruoli e le funzionalità di Windows cambia in base ai diversi sistemi operativi, vedere la documentazione del sistema operativo in uso per informazioni dettagliate sulla configurazione.  
+-   Windows の機能や役割を有効にする方法はオペレーティング システムによって異なります。それらを構成する方法については、実際に使用するオペレーティング システムのドキュメントを参照してください。  
 
-Le informazioni contenute in questo articolo offrono una panoramica dei tipi di configurazioni Windows necessari per il supporto dei sistemi del sito Configuration Manager. Per informazioni dettagliate sulla configurazione dei ruoli di sistema del sito specifico, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).
+この記事の情報では、Configuration Manager サイト システムのサポートに必要な Windows の構成の種類の概要を説明します。 特定のサイト システムの役割の構成の詳細については、「[サイトとサイト システムの前提条件](/sccm/core/plan-design/configs/site-and-site-system-prerequisites)」をご覧ください。
 
-##  <a name="BKMK_WinFeatures"></a> Ruoli e funzionalità di Windows  
- Quando si configurano i ruoli e le funzionalità di Windows in un computer, potrebbe essere necessario riavviare il computer per completare la configurazione. È quindi consigliabile identificare i computer che ospiteranno i ruoli del sistema del sito prima di installare un sito di Configuration Manager o un server del sistema del sito.
-### <a name="features"></a>Caratteristiche  
- le funzionalità di Windows seguenti sono richieste in alcuni server del sistema del sito e devono essere configurate prima di installare un ruolo del sistema del sito nel computer.  
+##  <a name="BKMK_WinFeatures"></a> Windows の機能と役割  
+ コンピューターに対して Windows の機能や役割を設定するときは、コンピューターを再起動してその構成を完了させることが必要な場合があります。 そのため、Configuration Manager のサイトまたはサイト システム サーバーをインストールする前に、どのコンピューターでどのサイト システムの役割をホストするかを決めておくことをお勧めします。
+### <a name="features"></a>機能  
+ 特定のサイト システム サーバーでは次の Windows 機能が必要となります。これらは、コンピューターにサイト システムの役割をインストールする前に設定しておく必要があります。  
 
--   **.NET Framework**: inclusi  
+-   **.NET Framework**: 次を含みます。  
 
     -   ASP.NET  
-    -   Attivazione HTTP  
-    -   Attivazione non HTTP  
-    -   Servizi Windows Communication Foundation (WCF)  
+    -   HTTP アクティブ化  
+    -   非 HTTP アクティブ化  
+    -   Windows Communication Foundation (WCF) サービス  
 
-    Per i diversi ruoli del sistema del sito sono necessarie versioni diverse di .NET Framework.  
+    サイト システムの役割によって異なるバージョンの .NET Framework が必要となります。  
 
-    Dal momento che .NET Framework 4.0 e versioni successive non è compatibile con le versioni precedenti e non può sostituire la versione 3.5 e precedenti, quando sono richieste versioni diverse pianificare l'abilitazione di ogni versione nello stesso computer.  
+    .NET Framework 4.0 以降には、3.5 以前のバージョンとの下位互換性がありません。複数のバージョンが必須としてリストされているときは、それぞれのバージョンを同じコンピューターで使用できるようにしてください。  
 
--   **Servizio trasferimento intelligente in background (BITS)**: i punti di gestione richiedono BITS e le opzioni selezionate automaticamente per supportare la comunicazione con i dispositivi gestiti.  
+-   **バックグラウンド インテリジェント転送サービス (BITS)**: 管理対象デバイスとの通信をサポートするため、管理ポイントには BITS (および自動選択されるオプション) が必要です。  
 
--   **BranchCache**: i punti di distribuzione possono essere configurati con BranchCache per supportare i client che usano BranchCache.  
+-   **BranchCache**: BranchCache を使用するクライアントに対応するため、配布ポイントに BranchCache を設定できます。  
 
--   **Deduplicazione dati**: i punti di distribuzione possono essere configurati con la deduplicazione dei dati, che offre diversi vantaggi.  
+-   **データ重複除去**: 配布ポイントにはデータ重複除去を設定し、その利点を活かすことができます。  
 
--   **Compressione differenziale remota (RDC)**: ogni computer che ospita un server del sito o un punto di distribuzione richiede una compressione differenziale remota.   
-    La compressione differenziale remota viene usata per generare le firme dei pacchetti ed eseguire confronti tra le firme.  
+-   **Remote Differential Compression (RDC)**: サイト サーバーまたは配布ポイントをホストするすべてのコンピューターには RDC が必要です。   
+    RDC は、パッケージの署名を生成したり、署名の比較を実行したりする際に使用されます。  
 
-### <a name="roles"></a>Ruoli  
- i ruoli di Windows seguenti sono necessari per supportare specifiche funzionalità, ad esempio gli aggiornamenti software e le distribuzioni del sistema operativo, mentre IIS è richiesto per la maggior parte dei ruoli del sistema del sito più comuni.  
+### <a name="roles"></a>役割  
+ ソフトウェアの更新やオペレーティング システムの展開など、特定の機能をサポートするために、以下に示した Windows の役割が必要となります。また、一般的なサイト システムの役割には、そのほとんどで IIS が必要となります。  
 
- -   **Servizio Registrazione dispositivi di rete** in Servizi certificati Active Directory: questo ruolo di Windows è un prerequisito per l'uso dei profili dei certificati in Configuration Manager.  
+ -   **ネットワーク デバイス登録サービス** (Active Directory 証明書サービスの下): この Windows の役割は Configuration Manager で証明書プロファイルを使用する前提条件です。  
 
- -   **Server Web (IIS)**: includono:  
-    -   Funzionalità HTTP comuni >  
-        -   Reindirizzamento HTTP  
-    -   Sviluppo di applicazioni >  
-        -   Estendibilità .NET  
+ -   **Web サーバー (IIS)**: 次を含みます。  
+    -   共通の HTTP 機能 >  
+        -   HTTP リダイレクト  
+    -   アプリケーションの開発 >  
+        -   .NET 拡張機能  
         -   ASP.NET  
-        -   Estensioni ISAPI  
-        -   Filtri ISAPI  
-    -   Strumenti di gestione >  
-        -   Compatibilità Gestione IIS 6  
-        -   Compatibilità Metabase IIS 6  
-        -   Compatibilità di Windows Management Instrumentation (WMI) con IIS 6  
-    -   Sicurezza >  
-        -   Filtro richieste  
-        -   Autenticazione di Windows  
+        -   ISAPI 拡張機能  
+        -   ISAPI フィルター  
+    -   管理ツール >  
+        -   IIS 6 管理互換性  
+        -   IIS 6 メタベース互換  
+        -   IIS 6 Windows Management Instrumentation (WMI) 互換性  
+    -   セキュリティ >  
+        -   要求のフィルタリング  
+        -   Windows 認証  
 
- I ruoli del sistema del sito seguenti usano una o più delle configurazioni IIS elencate:  
-    -   Punto per servizi Web del Catalogo applicazioni  
-    -   Punto per siti Web del Catalogo applicazioni  
-    -   Punto di distribuzione  
-    -   Punto di registrazione  
-    -   Punto proxy di registrazione  
-    -   Punto di stato di fallback  
-    -   Punto di gestione  
-    -   Punto di aggiornamento software  
-    -   Punto di migrazione stato     
+ 以下に示すサイト システムの役割では、ここに記載した IIS の構成が使用されます。  
+    -   アプリケーション カタログ Web サービス ポイント  
+    -   アプリケーション カタログ Web サイト ポイント  
+    -   配布ポイント  
+    -   登録ポイント  
+    -   登録プロキシ ポイント  
+    -   フォールバック ステータス ポイント  
+    -   管理ポイント  
+    -   ソフトウェアの更新ポイント  
+    -   状態移行ポイント     
 
-    La versione minima di IIS richiesta è la versione fornita dal sistema operativo del server del sito.  
+    サイト サーバーのオペレーティング システムに備わっている IIS のバージョンが、必要な IIS の最小バージョンとなります。  
 
-    Oltre a queste configurazioni IIS, potrebbe essere necessario configurare [Filtro richieste IIS per i punti di distribuzione](#BKMK_IISFiltering).  
+    これらの IIS 構成に加えて、[IIS の要求フィルター (配布ポイント用)](#BKMK_IISFiltering) の設定が必要になる場合があります。  
 
--   **Servizi di distribuzione Windows**: questo ruolo viene usato con la distribuzione del sistema operativo.  
--   **Windows Server Update Services**: questo ruolo è richiesto quando si distribuiscono gli aggiornamenti software.  
+-   **Windows 展開サービス**: この役割は、オペレーティング システムの展開で使用されます。  
+-   **Windows Server Update Services**: この役割は、ソフトウェア更新プログラムを展開するときに必要になります。  
 
-##  <a name="BKMK_IISFiltering"></a> Filtro richieste IIS per i punti di distribuzione  
- Per impostazione predefinita, IIS usa il filtro richieste per bloccare l'accesso di diverse estensioni di file e percorsi di cartelle con la comunicazione HTTP o HTTPS. In un punto di distribuzione questo impedisce ai client di scaricare i pacchetti con estensioni o percorsi di cartelle bloccati.  
+##  <a name="BKMK_IISFiltering"></a> IIS の要求フィルター (配布ポイント用)  
+ 特定のファイル名拡張子とフォルダーの場所は、IIS の要求フィルターによって、HTTP または HTTPS 通信によるアクセスがブロックされるように既定で設定されています。 そのままでは、ブロックされた拡張子やフォルダーの場所を含んだパッケージをクライアントが配布ポイントからダウンロードできません。  
 
- Quando i file di origine del pacchetto contengono estensioni bloccate in IIS dalla configurazione del filtro richieste, è necessario configurare il filtro richieste per abilitarle. Per farlo, [modificare la funzionalità del filtro richieste](https://technet.microsoft.com/library/hh831621.aspx) in Gestione IIS nei computer del punto di distribuzione.  
+ IIS の要求フィルター構成によってブロックされる拡張子がパッケージのソース ファイルに含まれている場合、それらを許可するように要求フィルターを設定する必要があります。 そのためには、配布ポイント コンピューターの IIS マネージャーで [要求フィルター機能を編集](https://technet.microsoft.com/library/hh831621.aspx) します。  
 
- Le estensioni di file seguenti vengono usate da Configuration Manager per applicazioni e pacchetti. Verificare che le configurazioni del filtro richieste non blocchino queste estensioni di file:  
+ また、Configuration Manager では、パッケージとアプリケーションに次のファイル名拡張子が使用されます。 これらのファイル拡張子が要求フィルターの構成でブロックされないよう注意してください。  
 
--   PCK  
--   PKG  
--   STA  
--   TAR  
+-   .PCK  
+-   .PKG  
+-   .STA  
+-   .TAR  
 
-Ad esempio, i file di origine per una distribuzione software potrebbero includere una cartella denominata **bin**o un file con estensione **mdb**.  
+たとえば、ソフトウェア展開のソース ファイルに **bin** という名前のフォルダーや **.mdb** というファイル名拡張子の付いたファイルが含まれている場合があります。  
 
--   Per impostazione predefinita, il filtro richieste IIS blocca l'accesso a questi elementi (**bin** è bloccato perché è un segmento nascosto e **mdb** è bloccato come estensione di file).  
+-   既定では、これらの要素へのアクセスは、IIS の要求フィルターによってブロックされます (**bin** は非表示セグメントとしてブロックされ、 **.mdb** はファイル名拡張子としてブロックされます)。  
 
--   Quando si usa la configurazione IIS predefinita in un punto di distribuzione, i client che usano BITS non riescono a scaricare questa distribuzione del software dal punto di distribuzione e indicano che sono in attesa del contenuto.  
+-   配布ポイントで IIS の既定の構成を使用する場合、BITS を使用するクライアントは配布ポイントからこのソフトウェア展開をダウンロードできず、コンテンツの待機状態となります。  
 
--   Per consentire ai client di scaricare il contenuto, modificare il **filtro richieste** in Gestione IIS per ogni punto di distribuzione applicabile per consentire l'accesso alle estensioni di file e alle cartelle presenti nei pacchetti e nelle applicazioni distribuiti.  
+-   このコンテンツをクライアントがダウンロードできるようにするためには、展開するパッケージとアプリケーションに含まれているファイル拡張子およびフォルダーへのアクセスを許可するように、該当するすべての配布ポイントで、IIS マネージャーの**要求フィルター**を編集する必要があります。  
 
 > [!IMPORTANT]  
->  Le modifiche al filtro richieste possono aumentare la superficie di attacco del computer.  
+>  要求フィルターを編集すると、コンピューターの攻撃対象領域が拡大する可能性があります。  
 >   
->  -   Le modifiche apportate a livello di server si applicano a tutti i siti Web nel server.  
-> -   Le modifiche ai singoli siti Web si applicano solo al sito Web specificato.  
+>  -   サーバー レベルで行った編集は、そのサーバー上のすべての Web サイトに適用されます。  
+> -   個々の Web サイトに対して行った編集は、その Web サイトにのみ適用されます。  
 >   
->  La procedura di sicurezza consigliata è l'esecuzione di Configuration Manager in un server Web dedicato. Se è necessario eseguire altre applicazioni nel server Web, usare un sito Web personalizzato per Configuration Manager. Per informazioni, vedere [Siti Web per i server del sistema del sito in System Center Configuration Manager](../../../core/plan-design/network/websites-for-site-system-servers.md).  
+>  専用の Web サーバーで Configuration Manager を実行するのが、セキュリティ上は最適な方法です。 Web サーバー上で他のアプリケーションを実行する必要がある場合は、Configuration Manager のカスタム Web サイトを使用します。 詳細については、「[System Center Configuration Manager のサイト システム サーバーの Web サイト](../../../core/plan-design/network/websites-for-site-system-servers.md)」を参照してください。  
 
-## <a name="http-verbs"></a>Verbi HTTP
-**Punti di gestione:** per assicurarsi che i client possano comunicare correttamente con un punto di gestione, verificare che i verbi HTTP seguenti siano consentiti nel server del punto di gestione:  
+## <a name="http-verbs"></a>HTTP 動詞
+**管理ポイント:** クライアントが管理ポイントと正常に通信できるように、管理ポイント サーバーで次の HTTP 動詞が許可されていることを確認します。  
  - GET
  - POST
  - CCM_POST
  - HEAD
  - PROPFIND
 
-**Punti di distribuzione:** i punti di distribuzione richiedono che i verbi HTTP seguenti siano consentiti:
+**配布ポイント:** 配布ポイントでは、次の HTTP 動詞が許可されている必要があります。
  - GET
  - HEAD
  - PROPFIND
 
-Per informazioni sulla configurazione del filtro richieste, vedere [Configurare il filtro richieste in IIS](https://technet.microsoft.com/library/hh831621.aspx#Verbs) su TechNet o una documentazione simile relativa alla versione di Windows Server che ospita il punto di gestione.
-
+要求のフィルタリングを構成する方法の詳細については、TechNet の「[Configure Request Filtering in IIS](https://technet.microsoft.com/library/hh831621.aspx#Verbs)」 (IIS で要求フィルターを構成する) または管理ポイントをホストする Windows Server のバージョンに適用される同様のドキュメントを参照してください。

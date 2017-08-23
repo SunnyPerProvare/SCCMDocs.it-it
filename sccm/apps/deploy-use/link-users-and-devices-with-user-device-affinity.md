@@ -1,146 +1,139 @@
 ---
-title: "Collegare utenti e dispositivi tramite l&quot;affinità utente-dispositivo | Microsoft Docs"
-description: "Collegare gli utenti e i dispositivi mediante l&quot;affinità utente-dispositivo e distribuire automaticamente le app a tutti i dispositivi associati a un utente."
+title: "ユーザーとデバイスのアフィニティへのユーザーとデバイスの関連付け | Microsoft Docs"
+description: "ユーザーとデバイスのアフィニティにユーザーとデバイスを関連付けて、ユーザーに関連付けられたすべてのデバイスにアプリを自動的に展開します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5b30b0d5-722d-4d4b-9ed7-5a43de315461
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 6b1393b2a329bcd017dc961366afb09fa7a77899
 ms.openlocfilehash: 4e8e677851ad9ae7d027ab685e842a8ff5e35573
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="link-users-and-devices-with-user-device-affinity-in-system-center-configuration-manager"></a>Collegare utenti e dispositivi mediante l'affinità utente dispositivo in System Center Configuration Manager
+# <a name="link-users-and-devices-with-user-device-affinity-in-system-center-configuration-manager"></a>System Center Configuration Manager でのユーザーとデバイスのアフィニティへのユーザーとデバイスの関連付け
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-L'affinità utente-dispositivo in System Center Configuration Manager (Configuration Manager) associa un utente a uno o più dispositivi. Ciò fa sì che non sia più necessario conoscere i nomi dei dispositivi di un utente per poter distribuire un'applicazione a tale utente. Anziché distribuire l'applicazione a tutti i dispositivi dell'utente, è possibile distribuire l'applicazione all'utente. L'affinità utente dispositivo garantisce quindi automaticamente l'installazione dell'applicazione in tutti i dispositivi associati a tale utente.  
+System Center Configuration Manager (Configuration Manager) のユーザーとデバイスのアフィニティにより、1 人のユーザーが 1 台以上のデバイスに関連付けられます。 これにより、ユーザーのデバイス名を把握しなくても、アプリケーションをユーザーに展開することができます。 この場合、アプリケーションを各ユーザーのデバイスに展開するのではなく、アプリケーションをユーザーに展開します。 ユーザーとデバイスのアフィニティによって、そのユーザーに関連付けられているすべてのデバイスにアプリケーションが自動的にインストールされます。  
 
- È possibile definire i dispositivi primari che gli utenti usano quotidianamente per eseguire le proprie attività. Quando si crea un'affinità tra un utente e un dispositivo, si ottengono più opzioni di distribuzione delle app. Se ad esempio un utente deve usare Microsoft Visio, è possibile installarlo nel dispositivo primario dell'utente usando una distribuzione di Windows Installer. Tuttavia, in un dispositivo non primario si potrebbe distribuire Visio come un'applicazione virtuale. È anche possibile usare l'affinità utente-dispositivo per pre-distribuire il software nel dispositivo di un utente quando l'utente non è connesso. In questo modo, quando l'utente esegue l'accesso, l'app è già installata e pronta per essere eseguita.  
+ ユーザーが毎日の仕事で使用するデバイスを、通常は、プライマリ デバイスとして定義できます。 ユーザーとデバイスの間にアフィニティを作成すると、アプリの展開の選択肢が増えます。 たとえば、ユーザーが Microsoft Visio を必要とする場合は、Windows インストーラーの展開を使用して、Microsoft Visio をユーザーのプライマリ デバイスにインストールすることができます。 ただし、プライマリ デバイスでないデバイスには、Visio を仮想アプリケーションとして展開してもかまいません。 また、ユーザーとデバイスのアフィニティを使用すれば、ユーザーがサインインしていないときにユーザーのデバイスにソフトウェアを事前に展開できます。このため、ユーザーがログオンしたときには、アプリは既にインストールされ、実行準備ができています。  
 
- È necessario gestire le informazioni sull'affinità utente dispositivo per i computer. Configuration Manager gestisce automaticamente le affinità utente-dispositivo per i dispositivi mobili che registra.  
+ コンピューターのユーザーとデバイスのアフィニティ情報を管理する必要があります。 Configuration Manager では、登録されているモバイル デバイスのユーザーとデバイスのアフィニティが自動的に管理されます。  
 
-## <a name="manually-set-up-user-device-affinity"></a>Configurare manualmente l'affinità utente-dispositivo  
+## <a name="manually-set-up-user-device-affinity"></a>ユーザーとデバイスのアフィニティの手動セットアップ  
 
-1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Dispositivi**.  
+1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[デバイス]** を選択します。  
 
-3.  Selezionare un dispositivo dall'elenco. Nella scheda **Home** nel gruppo **Dispositivo** selezionare **Modifica utenti primari**.  
+3.  リストからデバイスを選択します。 **[ホーム]** タブの **[デバイス]** グループで、**[プライマリ ユーザーの編集]** を選びます。  
 
-4.  Nella finestra di dialogo **Modifica utenti primari** individuare e selezionare gli utenti da aggiungere come utenti primari per il dispositivo selezionato. Scegliere **Aggiungi**.  
-
-    > [!NOTE]  
-    > Nell'elenco **Utenti primari** vengono visualizzati gli utenti già configurati come utenti primari del dispositivo e il metodo con cui è stata assegnata ogni relazione utente-dispositivo.  
-
-## <a name="set-up-primary-devices-for-a-user"></a>Configurare i dispositivi primari per un utente  
-
-1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Utenti**.  
-
-3.  Selezionare un utente dall'elenco. Nella scheda **Dispositivo** scegliere **Modifica dispositivi primari**.  
-
-4.  Nella finestra di dialogo **Modifica dispositivi primari** individuare e selezionare i dispositivi da aggiungere come dispositivi primari per l'utente selezionato. Scegliere **Aggiungi**.  
+4.  **[プライマリ ユーザーの編集]** ダイアログ ボックスで、選択したデバイスのプライマリ ユーザーとして追加するユーザーを検索して選びます。 **[追加]** を選びます。  
 
     > [!NOTE]  
-    > Nell'elenco **Dispositivi primari** vengono visualizzati i dispositivi già configurati come dispositivi primari per l'utente e il metodo con cui è stata assegnata ogni relazione utente-dispositivo.  
+    > **[プライマリ ユーザー]** リストに、このデバイスのプライマリ ユーザーであるユーザーと、ユーザー デバイス関係の割り当て方法が表示されます。  
 
-## <a name="automatically-create-user-device-affinities-windows-pcs-only"></a>Creare automaticamente le affinità utente dispositivo (solo PC Windows)  
- Configuration Manager legge i dati sugli accessi utente dal registro eventi di Windows. Per creare automaticamente le affinità utente-dispositivo, è necessario attivare le due opzioni seguenti dai criteri di sicurezza locali nei computer client per archiviare gli eventi di accesso nel registro eventi di Windows:  
+## <a name="set-up-primary-devices-for-a-user"></a>ユーザーのプライマリ デバイスをセットアップする  
 
--   **Controlla eventi di accesso account**  
--   **Controlla eventi di accesso**  
+1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[ユーザー]** を選びます。  
 
- Per configurare queste impostazioni, usare i criteri di gruppo di Windows.  
+3.  リストからユーザーを選択します。 次に、**[デバイス]** タブの **[プライマリ デバイスの編集]** を選びます。  
+
+4.  **[プライマリ デバイスの編集]** ダイアログ ボックスで、選択したユーザーにプライマリ デバイスとして追加するデバイスを検索して選びます。 **[追加]** を選びます。  
+
+    > [!NOTE]  
+    > **[プライマリ ユーザー]** リストに、このユーザーのプライマリ デバイスとしてセットアップされているデバイスと、各ユーザー デバイス関係の割り当て方法が表示されます。  
+
+## <a name="automatically-create-user-device-affinities-windows-pcs-only"></a>ユーザーとデバイスのアフィニティの自動作成 (Windows PC のみ)  
+ Configuration Manager によって、Windows イベント ログからユーザーのログオンに関するデータが読み取られます。 ユーザーとデバイスのアフィニティを自動的に作成するには、クライアント コンピューターのローカル セキュリティ ポリシーで次の 2 つのオプションを有効にして、ログオン イベントを Windows イベント ログに保存する必要があります。  
+
+-   **アカウント ログオン イベントの監査**  
+-   **ログオン イベントの監査**  
+
+ これらの設定を構成するには、Windows グループ ポリシーを使います。  
 
 > [!IMPORTANT]  
-> Se un errore causa la generazione di un numero elevato di voci da parte del registro eventi di Windows, è possibile che venga creato un nuovo registro eventi. In questo caso, gli eventi di accesso esistenti potrebbero non essere più disponibili per Configuration Manager.  
+> エラーによって Windows イベント ログのエントリ数が多数になると、新しいイベント ログが作成される可能性があります。 この場合、Configuration Manager から既存のログオン イベントを使用できなくなることがあります。  
 >   
-> Prestare attenzione quando si abilitano le impostazioni **Controlla eventi accesso account** e **Controlla eventi di accesso** in Windows XP. Per impostazione predefinita i criteri di conservazione sono di 7 giorni ed è molto probabile che questi eventi vadano a riempire il registro eventi di protezione. Gli utenti standard non saranno in grado di connettersi se il registro eventi è pieno. Per evitare il problema, impostare il valore dei criteri **Retention Method** (Metodo di conservazione) per il registro di protezione su **Sovrascrivi eventi se necessario**. Per consentire dati sufficienti per l'affinità utente-dispositivo, è anche possibile impostare la massima dimensione del registro di protezione su un valore ragionevole, ad esempio da 5 a 20 MB.  
+> Windows XP で **[アカウント ログオン イベントの監査]** と **[ログオン イベントの監査]** の設定を有効にするときは注意してください。 既定では、アイテム保持ポリシーは 7 日で、多くの場合、セキュリティ イベント ログは、これらのイベントでいっぱいになります。 標準ユーザーは、イベント ログがいっぱいになると、ログオンできなくなります。 この問題を回避するには、セキュリティ イベント ログの **[保存方法]** ポリシーの値を、**[必要に応じてイベントを上書きする]** に設定します。 ユーザーとデバイスのアフィニティ用のデータを十分にするには、さらに、セキュリティ イベント ログの最大サイズ ポリシーを 5 ～ 20 MB などの適切な値に設定します。  
 
-### <a name="set-up-the-site-to-automatically-create-user-device-affinities"></a>Configurare il sito per creare automaticamente le affinità utente-dispositivo  
+### <a name="set-up-the-site-to-automatically-create-user-device-affinities"></a>ユーザーとデバイスのアフィニティを自動作成するためにサイトをセットアップする  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Impostazioni client**.  
+1.  Configuration Manager コンソールで、**[管理]** > **[クライアント設定]** の順に選択します。  
 
-2.  Per modificare le impostazioni client predefinite, selezionare **Impostazioni client predefinite** e quindi nella scheda **Home** nel gruppo **Proprietà** fare clic su **Proprietà**. Per creare impostazioni agente client personalizzate, selezionare il nodo **Impostazioni client** e quindi nella scheda **Home** nel gruppo **Crea** fare clic su **Crea impostazioni dispositivo client personalizzate**.  
+2.  既定のクライアント設定を変更するには、**[既定のクライアント設定]** を選択してから、**[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選びします。 カスタムのクライアント エージェント設定を作成するには、**[クライアント設定]** ノードを選択してから、**[ホーム]** タブの **[作成]** グループで、**[カスタム クライアント デバイス設定の作成]** を選択します。  
 
     > [!NOTE]  
-    > Se si modificano le impostazioni client predefinite, verranno distribuite a tutti i computer nella gerarchia. Per altre informazioni sulla configurazione delle impostazioni client, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  
+    > 規定のクライアント設定を変更すると、階層内のすべてのコンピューターに展開されます。 クライアント設定の構成方法の詳細については、「[System Center Configuration Manager でクライアント設定を構成する方法](../../core/clients/deploy/configure-client-settings.md)」を参照してください。  
 
-3.  Per **Affinità dispositivi e utenti**, impostare quanto segue:  
+3.  **[ユーザーとデバイスのアフィニティ]** で次のように設定します。  
 
-    -   **Soglia di utilizzo di affinità utente dispositivo (minuti)**. Impostare il numero di minuti di utilizzo del dispositivo prima che venga creata un'affinità utente-dispositivo.  
+    -   **[ユーザーとデバイスのアフィニティ使用状況のしきい値 (分)]**:  ユーザーとデバイスのアフィニティが作成されるまでのデバイス使用分数を設定します。  
 
-    -   **Soglia di utilizzo di affinità utente dispositivo (giorni)**. Impostare il numero di giorni in cui viene misurata la soglia di affinità in base all'utilizzo.  
+    -   **[ユーザーとデバイスのアフィニティ使用状況のしきい値 (日)]**:  使用状況に基づいたアフィニティのしきい値を測定する期間 (日) を設定します。  
 
-    -   **Configurare automaticamente l'affinità utente dispositivo dai dati di utilizzo**. Per consentire al sito di creare automaticamente affinità utente-dispositivo, nell'elenco a discesa selezionare **True**. Se si seleziona **False**, sarà necessario approvare tutte le assegnazioni affinità utente-dispositivo.  
+    -   **[使用状況データに基づいてユーザーとデバイスのアフィニティを自動構成する]**:  サイトに自動的にユーザーとデバイスのアフィニティを作成させるには、ドロップダウン リストから **[True]** を選択します。 **[False]** を選択した場合は、すべてのユーザーとデバイスのアフィニティ割り当てを承認する必要があります。  
 
     > [!TIP]  
-    > **Esempio:** se l'opzione **Soglia di utilizzo di affinità utente dispositivo (minuti)** viene impostata su **60** minuti e **Soglia di utilizzo di affinità utente dispositivo (giorni)** viene impostata su **5** giorni, l'utente dovrà usare il dispositivo per almeno 60 minuti in un periodo di 5 giorni per creare automaticamente un'affinità utente-dispositivo.  
+    > **例:** **[ユーザーとデバイスのアフィニティ使用状況のしきい値 (分)]** を **60** 分に設定し、**[ユーザーとデバイスのアフィニティ使用状況のしきい値 (日)]** を **5** 日に設定している場合、ユーザーとデバイスのアフィニティを自動的に作成するには、ユーザーは 5 日間に 60 分以上デバイスを使用する必要があります。  
 
-Dopo aver creato automaticamente un'affinità utente-dispositivo, Configuration Manager continua a monitorare le soglie di affinità utente-dispositivo. Se l'attività dell'utente per il dispositivo è inferiore alle soglie configurate, l'affinità utente-dispositivo verrà rimossa. Impostare **Soglia di utilizzo di affinità utente dispositivo (giorni)** su un valore di almeno **7** giorni per evitare che un'affinità utente-dispositivo configurata automaticamente possa andare perduta mentre l'utente non è connesso, ad esempio durante il weekend.  
+ユーザーとデバイスのアフィニティが自動的に作成された後は、Configuration Manager がユーザーとデバイスのアフィニティ使用状況のしきい値の監視を続けます。 デバイスに対するユーザーのアクティビティが設定したしきい値を下回ると、ユーザーとデバイスのアフィニティは削除されます。 **[ユーザーとデバイスのアフィニティ使用状況のしきい値 (日)]** を少なくとも **7** 日に設定して、週末などユーザーがログインしていない間に自動的に構成されたユーザーとデバイスのアフィニティが失われないようにします。  
 
-## <a name="import-user-device-affinities-from-a-file"></a>Importare le affinità utente dispositivo da un file  
- Per creare più relazioni in una volta è possibile importare un file contenente dettagli per più affinità utente-dispositivo. Per questa procedura, i dispositivi devono essere stati individuati e devono esistere come risorse nel database di Configuration Manager, in caso contrario la procedura non verrà completata.  
+## <a name="import-user-device-affinities-from-a-file"></a>ファイルからのユーザーとデバイスのアフィニティのインポート  
+ 一度に多くの関係を作成するには、複数のユーザーとデバイスのアフィニティの詳細を含むファイルをインポートします。 この手順の場合、対象のデバイスが検出されていて、Configuration Manager データベースにリソースとして存在している必要があります。そうでない場合は、この手順は失敗します。  
 
-1.  Nella console di Configuration Manager selezionare **Asset e conformità** > **Utenti** o **Dispositivi**.  
+1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[ユーザー]** または **[デバイス]** の順に選びます。  
 
-2.  Nella scheda **Home** nel gruppo **Crea** fare clic su **Importa affinità utente dispositivo**.  
+2.  **[ホーム]** タブの **[作成]** グループで **[ユーザーとデバイスのアフィニティのインポート]** を選びます。  
 
-3.  Nell'Importazione guidata affinità utente dispositivo nella pagina **Scegliere il mapping** specificare le informazioni seguenti:  
+3.  ユーザーとデバイスのアフィニティのインポート ウィザードの **[マッピングの選択]** ページで、次の情報を設定します。  
 
-    -   **Nome file**. Specificare un file con valori delimitati da virgole, con estensione CSV, che contenga un elenco di utenti e dispositivi tra cui si vuole creare un'affinità. In questo file ogni coppia utente-dispositivo deve trovarsi su una riga separata, con valori delimitati da una virgola. Usare il formato <*Dominio*>&#92;<*nome utente*>,<*nome NetBIOS dispositivo*>.  
+    -   **[ファイル名]**:  間にアフィニティを作成するユーザーとデバイスの一覧を含むコンマ区切り (CSV) ファイルを指定します。 このファイルでは、ユーザーとデバイスの各ペアはコンマで区切られ、それぞれのペアが別々の行になければなりません。 <*ドメイン*>&#92;<*ユーザー名*>,<*デバイスの NetBIOS 名*> の形式を使います。  
 
-    -   **Questo file contiene intestazioni di colonna a scopo di riferimento**. Se il file CSV include un'intestazione di riga superiore, selezionare questa opzione per far sì che la riga di intestazione venga ignorata durante l'importazione.  
+    -   **[このファイルに参考用の列見出しを付ける]**:  .csv ファイルの先頭行にヘッダーがある場合は、このオプションを選ぶと、インポート時にヘッダー行が無視されます。  
 
-4.  Se il file che si sta importando contiene più di due elementi per riga, è possibile usare **Colonna** e **Assegna** per specificare quali colonne rappresentano gli utenti e i dispositivi e quali vanno ignorate durante l'importazione.  
+4.  1 行に 3 項目以上が含まれているファイルをインポートする場合は、**[列]** と **[割り当て]** を使用して、ユーザーとデバイスを表す列とインポート中に無視する列を指定することができます。  
 
-5.  Scegliere **Avanti** e completare l'Importazione guidata affinità utente dispositivo.  
+5.  **[次へ]** をクリックして、ユーザーとデバイスのアフィニティのインポート ウィザードを完了します。  
 
-## <a name="let-users-create-their-own-device-affinities"></a>Consentire agli utenti di creare le proprie affinità dispositivo  
- Con la procedura successiva, è possibile configurare un utente perché possa creare un'affinità dispositivo-utente nell'app Software Center.  
+## <a name="let-users-create-their-own-device-affinities"></a>ユーザーが自分とデバイスのアフィニティを作成できるようにする  
+ 次の手順では、ユーザーがソフトウェア センター アプリで自分のユーザーとデバイスのアフィニティを作成するように設定できます。  
 
-### <a name="set-up-the-site-to-allow-user-created-user-device-affinity-requests"></a>Configurare il sito per consentire le richieste di affinità utente-dispositivo create dagli utenti  
+### <a name="set-up-the-site-to-allow-user-created-user-device-affinity-requests"></a>ユーザーが作成したユーザーとデバイスのアフィニティ要求を許可するようにサイトをセットアップする  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Impostazioni client**.  
+1.  Configuration Manager コンソールで、**[管理]** > **[クライアント設定]** の順に選択します。  
 
-2.  Per modificare le impostazioni client predefinite, selezionare **Impostazioni client predefinite** e quindi nella scheda **Home** nel gruppo **Proprietà** fare clic su **Proprietà**. Per creare impostazioni agente client personalizzate, selezionare il nodo **Impostazioni client** e quindi nella scheda **Home** nel gruppo **Crea** fare clic su **Crea impostazioni utente client personalizzate**.  
+2.  既定のクライアント設定を変更するには、**[既定のクライアント設定]** を選択してから、**[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選びします。 カスタムのクライアント エージェント設定を作成するには、**[クライアント設定]** ノードを選択してから、**[ホーム]** タブの **[作成]** グループで、**[カスタム クライアント ユーザー設定の作成]** を選択します。  
 
     > [!NOTE]  
-    > Se si modificano le impostazioni client predefinite, verranno distribuite a tutti i computer nella gerarchia. Per altre informazioni sulla configurazione delle impostazioni client, vedere [Configurare le impostazioni client](../../core/clients/deploy/configure-client-settings.md).  
+    > 規定のクライアント設定を変更すると、階層内のすべてのコンピューターに展開されます。 クライアント設定の構成については、「[Configure client settings](../../core/clients/deploy/configure-client-settings.md)」 (クライアント設定の構成) を参照してください。  
 
-3.  Selezionare l'impostazione client **Affinità dispositivi e utenti** e quindi nell'elenco a discesa **Consentire all'utente di definire i dispositivi primari** selezionare **True**.  
+3.  クライアント設定 **[ユーザーとデバイスのアフィニティ]** を選択し、 **[ユーザーがプライマリ デバイスを定義できるようにする]** ボックスの一覧で **[True]**を選択します。  
 
-### <a name="set-up-a-user-device-affinity"></a>Configurare un'affinità utente-dispositivo  
+### <a name="set-up-a-user-device-affinity"></a>ユーザーとデバイスのアフィニティをセットアップする  
 
-1.  Nel Catalogo applicazioni fare clic su **My Systems** (Sistemi personali).  
+1.  [アプリケーション カタログ] で **[マイ システム]** を選ぶ。  
 
-2.  Attivare l'opzione **Uso regolarmente il computer per lavorare**.  
+2.  **[このコンピューターを日常の仕事で使用します]** オプションを選びます。  
 
-## <a name="manage-user-device-affinity-requests-from-users"></a>Gestire le richieste di affinità utente dispositivo dagli utenti  
- Quando l'impostazione client **Configurare automaticamente l'affinità utente dispositivo dai dati di utilizzo** è impostata su **False**, è necessario approvare tutte le assegnazioni affinità utente dispositivo.  
+## <a name="manage-user-device-affinity-requests-from-users"></a>ユーザーからのユーザーとデバイスのアフィニティ要求の管理  
+ クライアント設定の **[使用状況データに基づいてユーザーとデバイスのアフィニティを自動構成する]** が **[False]**に設定されている場合は、すべてのユーザーとデバイスのアフィニティ割り当てを承認する必要があります。  
 
-### <a name="approve-or-reject-a-user-device-affinity-request"></a>Approvare o rifiutare una richiesta di affinità utente-dispositivo  
+### <a name="approve-or-reject-a-user-device-affinity-request"></a>ユーザーとデバイスのアフィニティ要求を承認または拒否する  
 
-1.  Nella console di Configuration Manager scegliere **Asset e conformità**.  
+1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** を選択します。  
 
-2.  Nell'area di lavoro **Asset e conformità** selezionare la raccolta utenti o dispositivi per cui si desidera gestire le richieste di affinità.  
+2.  [資産とコンプライアンス] ワークスペースで、アフィニティ要求を管理するユーザーまたはデバイスを選択します。 ****  
 
-3.  Nella scheda **Home** nel gruppo **Raccolta** selezionare **Gestisci richieste affinità**.  
+3.  **[ホーム]** タブの **[コレクション]** グループで、**[アフィニティ要求の管理]** を選びます。  
 
-4.  Nella finestra di dialogo **Gestire le richieste di affinità utente dispositivo** selezionare una richiesta di affinità e quindi fare clic su **Approva** o **Rifiuta**.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+4.  **[ユーザーとデバイスのアフィニティ要求の管理]** ダイアログ ボックスで、アフィニティ要求を選択し、**[承認]** または **[拒否]** を選びます。  

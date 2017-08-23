@@ -1,13 +1,12 @@
 ---
-title: "Abilitare una regola di protezione per i dispositivi nei criteri di conformità | Microsoft Docs"
-description: "Abilitare una regola di protezione dalle minacce nei criteri di conformità del dispositivo."
+title: "コンプライアンス ポリシーのデバイス保護規則を有効にする | Microsoft Docs"
+description: "デバイス コンプライアンス ポリシーのモバイル脅威保護の規則を有効にします。"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 99a5b715-f172-46e1-ac27-ad55bde66d0d
@@ -15,44 +14,41 @@ caps.latest.revision:
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: b6e7fe0416870ebb6258f89808affe77997c879d
-ms.contentlocale: it-it
-ms.lasthandoff: 03/06/2017
-
-
+ms.openlocfilehash: faa92e150686e615164ce3f5435b77a65305aab3
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="enable-device-threat-protection-rule-in-the-compliance-policy"></a>Abilitare una regola di protezione dalle minacce per i dispositivi mobili nei criteri di conformità
+# <a name="enable-device-threat-protection-rule-in-the-compliance-policy"></a>コンプライアンス ポリシーのデバイス脅威保護の規則を有効にする
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Intune con Lookout Mobile Threat Protection offre la possibilità di rilevare le minacce per i dispositivi mobili ed eseguire una valutazione dei rischi sul dispositivo. In Configuration Manager è possibile creare una regola nei criteri di conformità che includa la valutazione dei rischi per determinare se il dispositivo è conforme. È quindi possibile usare i criteri di accesso condizionale per consentire o bloccare l'accesso a Exchange, SharePoint e ad altri servizi sulla base della conformità del dispositivo.
+Intune で Lookout モバイル脅威保護を利用すると、モバイルの脅威を検出し、デバイス上でリスク評価を行うことができます。 Configuration Manager でコンプライアンス ポリシー規則を作成して、デバイスがポリシーに準拠しているかどうかを判別するリスク評価を含めることができます。 次に条件付きアクセス ポリシーを使用して、デバイスのポリシー準拠に基づき、Exchange、SharePoint、およびその他のサービスへのアクセスを許可またはブロックすることができます。
 
-Per consentire a Lookout Mobile Threat Protection di influenzare i criteri di conformità del dispositivo, tenere presente quanto segue:
+Lookout のデバイス脅威検出がデバイスのコンプライアンス ポリシーに影響を与えるようにする方法は次のとおりです。
 
-* Nei criteri di conformità deve essere abilitata la regola **Protezione dalle minacce per il dispositivo**.
+* コンプライアンス ポリシーで、**デバイス脅威保護**規則を有効にする必要があります。
 
-* Lo stato della pagina **Stato di Lookout** della **console di amministrazione di Intune** deve essere **Attivo**. Per altri dettagli e istruzioni su come attivare l'integrazione di Lookout, vedere l'argomento [Enable Lookout MTP connection in Intune](enable-lookout-connection-in-intune.md) (Abilitare la connessione MTP Lookout in Intune).
+* **Intune 管理者コンソール**の **[Lookout の状態]** ページの表示を **[アクティブ]** にする必要があります。 Lookout の統合をアクティブ化する方法の詳細については、[Intune での Lookout MTP 接続の有効化](enable-lookout-connection-in-intune.md)に関するページを参照してください。
 
 
-Prima di creare la regola Protezione dalle minacce per il dispositivo nei criteri di conformità, è consigliabile [configurare la sottoscrizione a Lookout Mobile Threat Protection](set-up-your-subscription-with-lookout.md), [abilitare la connessione a Lookout in Intune](enable-lookout-connection-in-intune.md) e [configurare l'app Lookout for Work](configure-and-deploy-lookout-for-work-apps.md). La regola di conformità viene applicata solo dopo il completamento della configurazione.
+コンプライアンス ポリシーでデバイス脅威保護規則を作成する前に、[Lookout デバイス脅威保護を利用するようにサブスクリプションを設定](set-up-your-subscription-with-lookout.md)し、[Intune で Lookout 接続を有効](enable-lookout-connection-in-intune.md)にして、[Lookout for Work アプリを構成](configure-and-deploy-lookout-for-work-apps.md)することをお勧めします。 コンプライアンス規則は、セットアップ完了後にのみ適用されます。
 
-Per abilitare la regola Protezione dalle minacce per il dispositivo, è possibile usare un criterio di conformità esistente o crearne uno nuovo.
+デバイス脅威保護の規則を有効にするには、既存のコンプライアンス ポリシーを使用するか、または新しいコンプライアンス ポリシーを作成します。
 
-Come parte della configurazione di Lookout Mobile Threat Protection, nella [console di Lookout](https://aad.lookout.com) è necessario creare un criterio che classifichi le minacce secondo i livelli Alto, Medio e Basso. Nei criteri di conformità di Intune questi livelli verranno usati per impostare il livello di minaccia massimo consentito.
+Lookout デバイス脅威保護のセットアップの一環として、[Lookout コンソール](https://aad.lookout.com)で各種脅威を高、中、および低レベルに分類するポリシーを作成しています。 Intune のコンプライアンス ポリシーでこの脅威レベルを使用して、許容される最大脅威レベルを設定します。
 
-Nella pagina **Regole** della Creazione guidata criterio di conformità definire una nuova regola con le informazioni seguenti:
-  * Condizione: livello di rischio massimo per la protezione dalle minacce per il dispositivo.
-  * Valore: il valore può essere uno dei seguenti:
-    * **Nessuno (protetto)**: questa è l'impostazione più sicura e indica che il dispositivo non può avere alcuna minaccia. Se viene individuato un qualsiasi livello di minaccia, il dispositivo viene valutato come non conforme.
-    * **Basso**: il dispositivo viene valutato come conforme se sono presenti solo minacce di livello Basso. Se sono presenti minacce di livello più alto, lo stato del dispositivo passa a Non conforme.
-    * **Medio**: il dispositivo viene valutato come conforme se le minacce individuate sono di livello Basso o Medio. Se vengono rilevate minacce di livello più alto, il dispositivo viene considerato non conforme.
-    * **Alto**: questa opzione è la meno sicura. L'opzione consente praticamente tutti i livelli di minaccia e può essere utile se si usa la soluzione soltanto per la creazione di report.
+コンプライアンス ポリシー ウィザードの **[規則]** ページで、次の情報を参考にして新しい規則を定義します。
+  * 条件: デバイス脅威保護の最大リスク レベル。
+  * 値: 値には次のいずれかを指定できます。
+    * **なし (セキュリティ保護あり)**: これはセキュリティ上最も安全です。 デバイスに脅威があってはならないことを意味します。 いずれかのレベルの脅威が発見された場合、デバイスは非準拠として評価されます。
+    * **低**: 低レベルの脅威のみが存在する場合、デバイスはポリシーに準拠していると評価されます。 中レベル以上の脅威が存在する場合、デバイスは非準拠のステータスに分類されます。
+    * **中**: デバイスで発見された脅威が低または中レベルの場合、デバイスはポリシーに準拠していると評価されます。 高レベルの脅威が検出された場合、デバイスは非準拠と判定されます。
+    * **高**: 最も安全性が低くなります。 このレベルでは基本的にすべての脅威レベルが許容されるため、役に立つのはこのソリューションをレポート目的で使用する場合のみです。
 
-Se si creano criteri di accesso condizionale per Office 365 e altri servizi, viene presa in considerazione la valutazione di conformità sopra descritta e ai dispositivi non conformi viene bloccato l'accesso alle risorse dell'azienda fino a quando la minaccia non viene risolta.
+Office 365 やその他のサービス向けに条件付きのアクセス ポリシーを作成する場合は、上記のコンプライアンス評価を考慮して、脅威が解消されるまでは会社のリソースへの非準拠デバイスのアクセスをブロックする必要があります。
 
-Lo stato di Protezione dalle minacce per il dispositivo viene visualizzato nel nodo **Sicurezza** dell'area di lavoro **Monitoraggio**.
-Viene visualizzato un grafico con un riepilogo dello stato con i diversi livelli di minaccia. È possibile fare clic sulle diverse sezioni del grafico per visualizzare informazioni aggiuntive, ad esempio il numero di dispositivi indicati come non conformi dalla piattaforma e gli eventuali errori segnalati.
-È anche possibile visualizzare lo stato dei singoli dispositivi nell'area di lavoro **Asset e conformità**, in **Dispositivi**.  Per visualizzare lo stato, è possibile aggiungere le colonne **Protezione dalle minacce per il dispositivo** e **Livello di minaccia del dispositivo**.  Queste colonne non vengono visualizzate per impostazione predefinita.
-
+デバイス脅威保護の状態は、**[監視]** ワークスペースの **[セキュリティ]** ノードに表示されます。
+各脅威レベルの状態の概要が、視覚的なグラフで表示されます。 グラフの各セクションをクリックすると、プラットフォーム別に非準拠と報告されたデバイスの数や、報告されたエラーなどの詳細情報を確認することができます。
+**[資産とコンプライアンス]** ワークスペースの **[デバイス]** で、各デバイスの状態を確認することもできます。  **[Device threat compliance]** (デバイス脅威コンプライアンス) 列と **[デバイス脅威レベル]** 列を追加して、状態を確認できます。  既定では、これらの列は表示されません。

@@ -1,78 +1,71 @@
 ---
-title: Creare linee di base di configurazione | Microsoft Docs
-description: Creare linee di base di configurazione in System Center Configuration Manager da distribuire in una raccolta.
+title: "構成基準の作成 | Microsoft Docs"
+description: "System Center Configuration Manager でコレクションに展開できる構成基準を作成します。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 678c9622-c61b-47d1-ba25-690616e431c7
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
 ms.openlocfilehash: 649942d3d468ec35c7246e08f741cdebd22fb3ac
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-configuration-baselines-in-system-center-configuration-manager"></a>Creare linee di base di configurazione in System Center Configuration Manager
+# <a name="create-configuration-baselines-in-system-center-configuration-manager"></a>System Center Configuration Manager での構成基準の作成
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
 
-Le linee di base di configurazioni in System Center Configuration Manager contengono elementi di configurazione predefiniti e, facoltativamente, altre linee di base di configurazione. Dopo aver creato una linea di base di configurazione, è possibile distribuirla in una raccolta in modo che i dispositivi in tale raccolta la scarichino e valutino la propria conformità in base a essa.  
+System Center Configuration Manager の構成基準には、定義済みの構成項目と、場合によっては他の構成基準が含まれています。 構成基準を作成すると、構成基準をコレクションに展開できるようになります。それによって、そのコレクションに含まれるデバイスで構成基準をダウンロードしたり、そのデバイスが構成基準に対して対応しているかを評価できます。  
 
- Le linee di base di configurazione in Configuration Manager possono contenere revisioni specifiche degli elementi di configurazione o possono essere configurate in modo da usare sempre la versione più recente di un elemento di configurazione. Per altre informazioni sulle revisioni dell'elemento di configurazione, vedere [Attività di gestione per i dati di configurazione](../../compliance/deploy-use/management-tasks-for-configuration-data.md).  
+ Configuration Manager の構成基準には、構成項目の特定のリビジョンを含めたり、構成項目の最新バージョンを常に使用するように構成することができます。 構成項目のリビジョンの詳細については、「[構成データの管理タスク](../../compliance/deploy-use/management-tasks-for-configuration-data.md)」を参照してください。  
 
- Esistono due metodi che è possibile usare per creare le linee di base di configurazione:  
+ 構成基準の作成に使用できる方法は、2 つあります。  
 
--   Importare i dati di configurazione da un file. Per avviare l' **Importazione guidata dei dati di configurazione**, nel nodo **Elementi di configurazione** o **Linee di base di configurazione** nell'area di lavoro **Asset e conformità** fare clic su **Importa dati di configurazione**.  
+-   構成データをファイルからインポートします。 起動する、 **構成データのインポート ウィザード**, で、 **構成項目** または **構成基準** 内のノード、 **資産とコンプライアンス**  ワークスペースで、をクリックして **構成データのインポート**です。  
 
--   Usare la finestra di dialogo **Crea linea di base di configurazione** per creare una nuova linea di base di configurazione.  
+-   [ **構成基準の作成** ] ダイアログ ボックスを使用して、新しい構成基準を作成します。  
 
- Usare la procedura seguente per creare una linea di base di configurazione mediante la finestra di dialogo **Crea linea di base di configurazione** .  
+ [ **構成基準の作成** ] ダイアログ ボックスを使用して構成基準を作成するには、次の手順に従います。  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Linee di base di configurazione**.  
+1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[構成基準]** の順にクリックします。  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea linea di base di configurazione**.  
+3.  **ホーム** ] タブで、 **作成** グループで、[ **構成基準の作成**です。  
 
-4.  Nella finestra di dialogo **Crea linea di base di configurazione** immettere un nome univoco e una descrizione per la linea di base di configurazione. È possibile usare un massimo di 255 caratteri per il nome e 512 caratteri per la descrizione.  
+4.  [ **構成基準の作成** ] ダイアログ ボックスで、構成基準に、一意の名前と説明を入力します。 名前には最大 255 文字を、説明には最大 512 文字を使用できます。  
 
-5.  L'elenco **Dati configurazione** visualizza tutti gli elementi di configurazione o le linee di base di configurazione incluse in questa linea di base di configurazione. Fare clic su **Aggiungi** per aggiungere un nuovo elemento di configurazione o una nuova linea di base di configurazione all'elenco. È possibile scegliere uno degli elementi seguenti:  
+5.  [ **構成データ** ] 一覧に、この構成基準に含まれる、すべての構成項目または構成基準が表示されます。 新しい構成項目または構成基準を一覧に追加するには、[ **追加** ] をクリックします。 次のオプションから選択できます。  
 
-    -   **Elementi di configurazione**  
+    -   **構成項目**  
 
-    -   **Aggiornamenti software**  
+    -   **ソフトウェア更新プログラム**  
 
-    -   **Linee di base di configurazione**  
+    -   **構成基準**  
       > [!IMPORTANT]
-      > È necessario limitare ogni linea di base di configurazione a non più di 1000 aggiornamenti software.
-6.  Usare il **Modifica scopo** per specificare il comportamento di un elemento di configurazione selezionato nell'elenco **Dati configurazione** . Sono disponibili le opzioni seguenti:  
+      > ソフトウェア更新プログラムが 1000 を超えないように各構成基準を制限する必要があります。
+6.  使用して、 **目的の変更** 一覧で選択した構成項目の動作を指定する、 **構成データ**  ボックスの一覧です。 次のオプションから選択できます。  
 
-    -   **Richiesto** : la linea di base di configurazione viene valutata come non conforme se l'elemento di configurazione non viene rilevato in un dispositivo client. Se viene rilevato, viene valutata come conforme.  
+    -   **[必須]** クライアント デバイスで構成項目が検出されない場合、構成基準の評価は "非対応" になります。 検出された場合、評価は "対応" になります。  
 
-    -   **Facoltativo** : l'elemento di configurazione viene valutato solo a livello di conformità se l'applicazione a cui fa riferimento viene individuata nei computer client. Se l'applicazione non viene trovata, la linea di base di configurazione non viene contrassegnata come non conforme (applicabile solo agli elementi di configurazione dell'applicazione).  
+    -   **[オプション]** クライアント コンピューターで、構成項目が参照するアプリケーションが見つかる場合のみ、構成項目の評価が "対応" になります。 アプリケーションが見つからない場合、構成基準は "非対応" としてマークされません (アプリケーションの構成項目のみに適用されます)。  
 
-    -   **Non consentito** : la linea di base di configurazione viene valutata come non conforme se l'elemento di configurazione viene rilevato nei computer client (applicabile solo agli elementi di configurazione dell'applicazione).  
+    -   **[禁止]** クライアント コンピューターで構成項目が検出された場合、構成基準の評価は "非対応" になります (アプリケーションの構成項目のみに適用されます)。  
 
     > [!NOTE]
-    >  L'elenco **Modifica scopo** è disponibile solo se è stata selezionata l'opzione **Questo elemento di configurazione contiene le impostazioni dell'applicazione** nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**.  
+    >  **目的の変更** 一覧は、オプションをクリックした場合にのみ使用できます。 **この構成項目には、アプリケーションの設定が含まれています。** 上、 **全般的な** のページ、 **構成項目の作成ウィザード**です。  
 
-7.  Usare l'elenco **Modifica revisione** per selezionare un oggetto specifico o l'ultima revisione dell'elemento di configurazione per valutare la conformità nei dispositivi client o selezionare **Utilizza sempre più recente** per usare sempre l'ultima revisione. Per altre informazioni sulle revisioni dell'elemento di configurazione, vedere [Attività di gestione per i dati di configurazione](../../compliance/deploy-use/management-tasks-for-configuration-data.md).  
+7.  使用して、 **変更リビジョン** 特定またはクライアント デバイスでの対応評価のためかを選択する構成項目の最新の改訂版を選択する一覧 **常に最新** を常に最新の改訂版を使用します。 構成項目のリビジョンの詳細については、「[構成データの管理タスク](../../compliance/deploy-use/management-tasks-for-configuration-data.md)」を参照してください。  
 
-8.  Per rimuovere un elemento di configurazione dalla linea di base di configurazione, selezionare un elemento di configurazione e quindi fare clic su **Rimuovi**.  
+8.  構成基準から構成項目を削除するには、構成項目を選択して、[**削除**] をクリックします。  
 
-9. Fare clic su **OK** per chiudere la finestra di dialogo **Crea linea di base di configurazione** e creare una nuova linea di base di configurazione.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+9. クリックして **ok** を閉じる、 **構成基準の作成**  ダイアログ ボックスと、構成基準を作成します。  

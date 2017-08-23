@@ -1,6 +1,6 @@
 ---
 title: Upgrade Readiness | System Center Configuration Manager
-description: "Integrare Upgrade Readiness con Configuration Manager. Accedere ai dati di compatibilità dell'aggiornamento nella console di amministrazione. Definire i dispositivi di destinazione per l'aggiornamento o la correzione."
+description: "Upgrade Readiness と Configuration Manager を統合します。 管理コンソールでアップグレードの互換性データにアクセスします。 アップグレードまたは修復対象のデバイスを指定します。"
 keywords: 
 author: mattbriggs
 ms.author: mabrigg
@@ -9,138 +9,134 @@ ms.date: 7/31/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: b1f4cd4a6f19a02d2b2dc3f9a841aeeb2a1403dd
-ms.contentlocale: it-it
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="integrate-upgrade-readiness-with-system-center-configuration-manager"></a>Upgrade Readiness と System Center Configuration Manager との統合
 
-# <a name="integrate-upgrade-readiness-with-system-center-configuration-manager"></a>Integrare Upgrade Readiness con System Center Configuration Manager
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+Upgrade Readiness (旧称 Upgrade Analytics) を使用すると、Windows 10 でのデバイスの準備を評価して分析できます。 Upgrade Readiness と System Center Configuration Manager を統合することで、クライアントは Configuration Manager 管理コンソールでアップグレードの互換性データにアクセスできるようになります。 デバイス リストからアップグレードまたは修復対象のデバイスを指定できます。
 
-Preparazione aggiornamenti (precedentemente denominato Upgrade Analytics) consente di valutare e analizzare la conformità dei dispositivi con Windows 10. Integrare Upgrade Readiness con Configuration Manager per accedere ai dati di compatibilità dell'aggiornamento dei client nella console di amministrazione di Configuration Manager. È possibile specificare come destinazione i dispositivi per l'aggiornamento o la correzione dall'elenco dei dispositivi.
+Upgrade Readiness は、Microsoft Operations Management Suite (OMS) のソリューションの 1 つです。 Upgrade Readiness の詳細については、「[Get started with Upgrade Readiness](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness)」(Upgrade Readiness の概要) を参照してください。
 
-Upgrade Readiness è una soluzione di Microsoft Operations Management Suite (OMS). Per altre informazioni su Upgrade Readiness, vedere in [Get started with Upgrade Readiness](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness) (Introduzione a Upgrade Readiness).
+## <a name="configure-clients"></a>クライアントを構成する
 
-## <a name="configure-clients"></a>Configurare i client
+クライアントが Upgrade Readiness にデータを確実に提供できるようにするために実行する必要があるいくつかの構成手順を以下に示します。
 
-È necessario eseguire varie operazioni di configurazione per garantire che i client siano in grado di offrire dati a Upgrade Readiness:
-
--  Configurare le impostazioni di telemetria client, come descritto in [Configurare la telemetria di Windows nell'organizzazione](https://technet.microsoft.com/itpro/windows/manage/configure-windows-telemetry-in-your-organization).
--  Installare gli aggiornamenti descritti nella sezione *Deploy the compatibility update and related KBs* (Distribuire l'aggiornamento di compatibilità e i KB associati) di [Get started with Upgrade Readiness](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness) (Introduzione a Preparazione aggiornamenti).
+-  「[組織内の Windows 利用統計情報の構成](https://technet.microsoft.com/itpro/windows/manage/configure-windows-telemetry-in-your-organization)」の説明に従って、クライアントの製品利用統計情報設定を構成します。
+-  「[Get started with Upgrade Readiness](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness)」 (Upgrade Readiness の概要) の「Deploy the compatibility update and related KBs」 (互換性更新プログラムおよび関連 KB の展開) の説明に従って、KB をインストールします。
 
     > [!NOTE]
-    > È possibile scaricare uno script per automatizzare molte attività di installazione client. Per informazioni sullo script, vedere la sezione *Run the Upgrade Readiness deployment script* (Eseguire lo script di distribuzione di Upgrade Readiness) di [Get started with Upgrade Readiness](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness) (Introduzione a Upgrade Readiness).
+    > クライアントのセットアップ タスクの多くを自動化するスクリプトをダウンロードすることができます。 スクリプトについては、「[Get started with Upgrade Readiness](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness)」 (Upgrade Readiness の概要) の「*Run the Upgrade Readiness deployment script*」 (Upgrade Readiness 展開スクリプトの実行) を参照してください。
 
-## <a name="connect-to-upgrade-readiness"></a>Connettersi a Preparazione aggiornamenti
+## <a name="connect-to-upgrade-readiness"></a>Upgrade Readiness への接続
 
-### <a name="prerequisites"></a>Prerequisiti
+### <a name="prerequisites"></a>必要条件
 
-A partire da Current Branch versione 1706, la Procedura guidata per i servizi di Azure viene usata per semplificare il processo di configurazione dei servizi di Azure usati con Configuration Manager. Per usare la procedura guidata, è necessario configurare un'app web di Azure. Per altre informazioni, vedere [Procedura guidata per i servizi di Azure](/sccm/core/servers/deploy/configureazure-services-wizard).
+Current Branch バージョン 1706 以降、Azure サービス ウィザードを使用して、Configuration Manager で使用する Azure サービスの構成のプロセスを簡単にできます。 ウィザードを使用するためには、Azure Web アプリを構成する必要があります。 詳細については、「[Azure サービス ウィザード](/sccm/core/servers/deploy/configureazure-services-wizard)」を参照してください。
 
-### <a name="use-the-azure-wizard-to-create-the-connection"></a>Usare la procedura guidata per Azure per creare la connessione
+### <a name="use-the-azure-wizard-to-create-the-connection"></a>Azure ウィザードを使用して、接続を作成する
 
-1.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e quindi fare clic su **Servizi di Azure**.
-2.  Nella scheda **Home**, nel gruppo **Servizi di Azure**, fare clic su **Configura i servizi di Azure**.
-3.  Digitare un nome descrittivo nella pagina Servizi di Azure. È anche possibile digitare una descrizione. Selezionare quindi **Connettore Upgrade Readiness** e fare clic su **Avanti**.
-4.  Nella pagina App specificare l'ambiente di Azure. Fare clic su **Sfoglia** per configurare un'app server.
-5.  Fare clic su **Importa** per connettersi all'app Web in Azure.
-    -  Digitare il **nome del tenant di Azure AD**.
-    -  Digitare l'**ID del tenant di Azure AD**.
-    -  Digitare il **nome applicazione**.
-    -  Digitare l'**ID client**.
-    -  Digitare la **chiave privata**.
-    -  Selezionare la data per **Scadenza della chiave privata**.
-    -  Digitare un URL per **URI ID applicazione**.
-    -  Fare clic su **Verifica** e su **OK**.
+1.  Configuration Manager コンソールの **[管理]** ワークスペースで、**[クラウド サービス]** を展開して、**[Azure サービス]** をクリックします。
+2.  **[ホーム]** タブの **[Azure サービス]** グループで、**[Azure サービスの構成]** をクリックします。
+3.  [Azure サービス] ページに、わかりやすい名前を入力します。 説明を入力することもできます。 **[Upgrade Readiness コネクタ]** を選択し、**[次へ]** をクリックします。
+4.  アプリ ページで、Azure 環境を指定します。 **[参照]** をクリックして、サーバー アプリを設定します。
+5.  **[インポート]** をクリックして、Azure で Web アプリに接続します。
+    -  **Azure AD テナント名**を入力します。
+    -  **Azure AD テナント ID** を入力します。
+    -  **アプリケーション名**を入力します。
+    -  **クライアント ID** を入力します。
+    -  **秘密鍵**を入力します。
+    -  **秘密鍵の有効期限**日の日付を選択します。
+    -  **アプリケーション ID URI** の URI を入力します。
+    -  **[検証]** をクリックして、**[OK]** をクリックします。
 
-6.  Nella pagina Configurazione specificare la connessione a Preparazione aggiornamenti. Selezionare i seguenti valori:  
-    -  Sottoscrizioni Azure
-    -  Gruppo di risorse di Azure
-    -  Area di lavoro di Windows Analytics
-8.  Fare clic su **Avanti**. È possibile esaminare la connessione nella pagina Riepilogo. 
+6.  [構成] ページで、Upgrade Readiness への接続を指定します。 次の値を選択します。  
+    -  Azure サブスクリプション
+    -  Azure リソース グループ
+    -  Windows Analytics ワークスペース
+8.  **[次へ]**をクリックします。 [概要] ページで、接続を確認することができます。 
 
-## <a name="complete-upgrade-readiness-tasks"></a>Completare le attività di Upgrade Readiness  
+## <a name="complete-upgrade-readiness-tasks"></a>Upgrade Readiness のタスクの実行  
 
-Dopo aver creato la connessione, eseguire queste attività, come descritto in [Get started with Upgrade Readiness](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness) (Introduzione a Preparazione aggiornamenti).  
+接続を作成したら、「[Get started with Upgrade Readiness](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness)」 (Upgrade Readiness の概要) の説明に従って、以下のタスクを実行します。  
 
-1. Aggiungere il servizio UpgradeReadiness all'area di lavoro OMS.  
-2. Generare un ID commerciale.  
-3. Effettuare la sottoscrizione a Upgrade Readiness.   
+1. OMS ワークスペースに Upgrade Readiness サービスを追加します。  
+2. 商用 ID を生成します。  
+3. Upgrade Readiness をサブスクライブします。   
 
-## <a name="use-the-upgrade-readiness-deployment-script"></a>Usare lo script di distribuzione di Upgrade Readiness  
+## <a name="use-the-upgrade-readiness-deployment-script"></a>Upgrade Readiness 展開スクリプトを使用する  
 
-È possibile automatizzare molte attività di Upgrade Readiness e risolvere i problemi di condivisione con lo **script di distribuzione di Microsoft Upgrade Readiness**.  
-Lo script di distribuzione di Upgrade Readiness esegue le operazioni seguenti:  
+Upgrade Readiness タスクの多くを自動化し、Microsoft **Upgrade Readiness 展開スクリプト**を使用してデータ共有に関する問題のトラブルシューティングを行うことができます。  
+Upgrade Readiness 展開スクリプトは以下のことを行います。  
 
-- Imposta la chiave ID commerciale e le chiavi CommercialDataOptIn e RequestAllAppraiserVersions.  
-- Verifica che i computer degli utenti siano in grado di inviare dati a Microsoft.  
-- Controlla se il computer è in attesa di riavvio.   
-- Verifica che sia installata la versione più recente del pacchetto KB 10.0.x. È richiesta la versione 10.0.14913 o una versione successiva.  
-- Se abilitata, attiva la modalità dettagliata per la risoluzione dei problemi.  
-- Avvia la raccolta dei dati di telemetria necessari a Microsoft per valutare il grado di preparazione dell'organizzazione per l'aggiornamento.  
-- Se abilitato, visualizza lo stato dello script in una finestra di comando, che offre visibilità sui problemi (esito positivo o negativo per ogni passaggio) e/o sulle operazioni di scrittura nel file di log.  
+- 商用 ID キー、CommercialDataOptIn キー、RequestAllAppraiserVersions キーを設定します。  
+- ユーザーのコンピューターが Microsoft にデータを送信できることを確認します。  
+- コンピューターの再起動が保留されているかどうかを確認します。   
+- 最新バージョンの KB パッケージ 10.0.x (10.0.14913 以降のリリースが必要) がインストールされていることを検証します。  
+- 有効な場合は、トラブルシューティングの詳細モードをオンにします。  
+- Microsoft が組織でのアップグレードの準備を評価するのに必要な製品利用統計情報データの収集を開始します。  
+- 有効な場合、コマンド ウィンドウでスクリプトの進行状況を表示します。 これにより、問題を表示 (ステップごとの成功または失敗) したり、ログ ファイルに書き込んだりできます。  
 
-## <a name="to-run-the-upgrade-readiness-deployment-script"></a>Per eseguire lo script di distribuzione di Upgrade Readiness:  
+## <a name="to-run-the-upgrade-readiness-deployment-script"></a>Upgrade Readiness 展開スクリプトを実行するには、次のようにします。  
 
-1. Scaricare lo [script di distribuzione di Upgrade Readiness](https://go.microsoft.com/fwlink/?LinkID=822966&clcid=0x409) ed estrarre UpgradeReadiness.zip. I file nella cartella **Diagnostics** sono necessari solo se si prevede di eseguire lo script in modalità di risoluzione dei problemi.  
-2. Modificare i seguenti parametri in RunConfig.bat:  
-- Percorso di archiviazione per le informazioni del registro. Esempio: %SystemDrive%\URDiagnostics. È possibile archiviare le informazioni del registro in una condivisione file remota o in una directory locale. Se lo script non può creare il file di registro per il percorso specificato, lo crea nell'unità che include la directory di Windows.  
-- Chiave ID commerciale.  
-- Per impostazione predefinita, lo script invia informazioni di registro sia alla console sia al file di registro. Per modificare il comportamento predefinito, usare una delle opzioni seguenti:  
-    - logMode = 0 - Registrazione solo nella console  
-    - logMode = 1 - Registrazione nel file e nella console  
-    - logMode = 2 - Registrazione solo nel file  
-    - Per la risoluzione dei problemi, impostare **isVerboseLogging** su **$true** per generare informazioni di registro che possono facilitare la diagnosi dei problemi. Per impostazione predefinita, **isVerboseLogging** è impostata su **$false**. Per usare questa modalità, verificare che la cartella Diagnostics sia installata nella stessa directory dello script.  
-    - Notificare agli utenti se è necessario riavviare il computer. Per impostazione predefinita, questa opzione è disattivata.  
+1. [Upgrade Readiness 展開スクリプト](https://go.microsoft.com/fwlink/?LinkID=822966&clcid=0x409)をダウンロードし、Upgrade Readiness.zip を抽出します。 トラブルシューティング モードでスクリプトを実行する予定の場合にのみ、**診断**フォルダー内のファイルが必要になります。  
+2. RunConfig.bat で以下のパラメーターを編集します。  
+- ログ情報の格納場所 ( 例: %SystemDrive%\URDiagnostics ログ情報は、リモート ファイル共有またはローカル ディレクトリに格納できます。 スクリプトで指定されたパスのログ ファイルを作成できない場合は、Windows ディレクトリのドライブにログ ファイルが作成されます。  
+- 商用 ID キー。  
+- 既定では、スクリプトはコンソールとログ ファイルの両方にログ情報を送信します。 既定の動作を変更するには、次のオプションのいずれかを使用します。  
+    - logMode = 0: コンソールにのみログを記録  
+    - logMode = 1: ファイルとコンソールにログを記録  
+    - logMode = 2: ファイルにのみログを記録  
+    - トラブルシューティングを行う場合は、**isVerboseLogging** を **$true** に設定し、問題の診断に役立つログ情報を生成します。 既定では、**isVerboseLogging** は **$false** に設定されます。 診断フォルダーが、このモードを使用するためのスクリプトと同じディレクトリにインストールされていることを確認してください。  
+    - コンピューターを再起動する必要がある場合はユーザーに通知します。 既定では、オフに設定されます。  
 
-3. Dopo aver completato la modifica dei parametri in RunConfig.bat, eseguire lo script come amministratore.  
+3. RunConfig.bat でのパラメーターの編集が終了したら、管理者としてスクリプトを実行します。  
 
 
-## <a name="view-microsoft-upgrade-readiness-properties-in-configuration-manager"></a>Visualizzare le proprietà di Microsoft Upgrade Readiness in Configuration Manager  
+## <a name="view-microsoft-upgrade-readiness-properties-in-configuration-manager"></a>Configuration Manager で Microsoft Upgrade Readiness プロパティを表示する  
 
-1.  Nella console di Configuration manager, passare a **Servizi cloud** e selezionare **Connettore OMS** per aprire la pagina **OMS Connection Properties** (Proprietà connessione OMS).  
+1.  Configuration Manager コンソールで、**[クラウド サービス]** に移動し、**[OMS コネクタ]** を選択して **[OMS 接続のプロパティ]** ページを開きます。  
 
-2.  In questa pagina sono disponibili due schede:
-  * La scheda **Azure Active Directory** visualizza **Tenant**, **ID client** e **Client secret key expiration** (Scadenza chiave privata del client) e consente la **Verifica** della **Chiave privata del client** se è scaduta.
-  * La scheda **Upgrade Readiness** visualizza **Sottoscrizione Azure**, **Gruppo di risorse di Azure** e **Area di lavoro di Operations Management Suite**.
+2.  このページには、2 つのタブがあります。
+  * **[Azure Active Directory]** タブには **[テナント]**、**[クライアント ID]**、**[Client secret key expiration]** (クライアント秘密鍵の期限切れ) が表示され、期限切れになった場合に、**[クライアント秘密鍵]** を **[確認]** できます。
+  * **[Upgrade Readiness]** タブには、**[Azure サブスクリプション]**、**[Azure リソース グループ]**、および **[Operations Management Suite ワークスペース]** が表示されます。
 
-## <a name="view-and-use-the-upgrade-information"></a>Visualizzare e usare le informazioni sull'aggiornamento
+## <a name="view-and-use-the-upgrade-information"></a>アップグレード情報を表示して使用する
 
-Dopo il completamento dell'integrazione di Upgrade Readiness con Configuration Manager, è possibile visualizzare l'analisi di compatibilità dell'aggiornamento dei client ed eseguire le azioni necessarie.
+Upgrade Readiness と Configuration Manager を統合したら、クライアントでのアップグレード準備の分析を表示して操作を実行できます。
 
-1. Nella console di Configuration Manager, scegliere **Monitoraggio** > **Panoramica** > **Upgrade Readiness**.
-2. Esaminare i dati, che includono lo stato di preparazione per l'aggiornamento e la percentuale di dispositivi Windows che eseguono report di telemetria.
-3. È possibile filtrare il dashboard per visualizzare i dati di dispositivi appartenenti a raccolte specifiche.
-4. È anche possibile visualizzare i dispositivi in uno stato di conformità specifico e creare una raccolta dinamica per tali dispositivi, in modo da poterli aggiornare quando sono pronti o da portarli allo stato di conformità desiderato.
+1. Configuration Manager コンソールで、**[監視]** > **[概要]** > **[Upgrade Readiness]** の順に選択します。
+2. アップグレードの準備状態、製品利用統計情報をレポートしている Windows デバイスの割合を含むデータを確認します。
+3. 特定のコレクションでデバイス用のデータを表示するためにダッシュボードをフィルター処理することができます。
+4. 特定の準備状態にあるデバイスを表示し、そのデバイスの動的コレクションを作成して、準備ができている場合はデバイスをアップグレードできるようにします。また、準備状態になるように操作を実行することもできます。
 
-## <a name="create-a-connection-to-upgrade-readiness-1702-and-earlier"></a>Creare una connessione a Preparazione aggiornamenti (1702 e versioni successive)
+## <a name="create-a-connection-to-upgrade-readiness-1702-and-earlier"></a>Upgrade Readiness への接続を作成する (1702 以前)
 
-Prima del ramo 1706 di Configuration Manager, per creare una connessione a Preparazione aggiornamenti, erano necessari i passaggi seguenti.
+Configuration Manager の 1706 ブランチ以前では、Upgrade Readiness への接続の作成に、次のステップが必要でした。
 
-### <a name="prerequisites"></a>Prerequisiti
+### <a name="prerequisites"></a>必要条件
 
-- Per l'aggiunta della connessione, è necessario che nell'ambiente di Configuration Manager sia stato configurato un [punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point) in [modalità online](https://azure.microsoft.com/documentation/articles/resource-group-create-service-principal-portal/). Quando si aggiunge la connessione all'ambiente, viene installato anche Microsoft Monitoring Agent nel computer che esegue questo ruolo del sistema del sito.
-- Registrare Configuration Manager come strumento di gestione "Applicazione Web e/o API Web" e ottenere l'[ID client della registrazione](https://azure.microsoft.com/documentation/articles/active-directory-integrating-applications/).
-- Creare una chiave client per lo strumento di gestione registrato in Azure Active Directory.
-- Nel portale di Azure specificare l'autorizzazione per accedere a OMS per l'app Web registrata, come descritto in [Fornire a Configuration Manager le autorizzazioni per accedere a OMS](https://azure.microsoft.com/documentation/articles/log-analytics-sccm/#provide-configuration-manager-with-permissions-to-oms).
+- 接続を追加するために、Configuration Manager 環境で最初に[サービス接続ポイント](/sccm/core/servers/deploy/configure/about-the-service-connection-point)を[オンライン モード](https://azure.microsoft.com/documentation/articles/resource-group-create-service-principal-portal/)で構成する必要があります。 接続を環境に追加する場合、このサイト システムの役割を実行するマシンに Microsoft Monitoring Agent もインストールされます。
+- "Web アプリケーションや Web API" 管理ツールとして Configuration Manager を登録し、[この登録のクライアント ID](https://azure.microsoft.com/documentation/articles/active-directory-integrating-applications/) を取得します。
+- Azure Active Directory で、登録済み管理ツールのクライアント キーを作成します。
+- 「[Configuration Manager に OMS へのアクセス許可を付与する](https://azure.microsoft.com/documentation/articles/log-analytics-sccm/#provide-configuration-manager-with-permissions-to-oms)」の説明に従って、Azure Portal で、登録済みの Web アプリに OMS へのアクセス権を指定します。
 
     > [!IMPORTANT]
-    > Quando si configura l'autorizzazione per accedere a OMS, assicurarsi di scegliere il ruolo **Collaboratore** e di assegnare a tale ruolo le autorizzazioni per il gruppo di risorse dell'app registrata.
+    > OMS へのアクセス権を構成する場合は、必ず、**共同作成者**ロールを選択し、登録済みアプリのリソース グループへのアクセス権を割り当ててください。
 
-### <a name="create-the-connection"></a>Creare la connessione
+### <a name="create-the-connection"></a>接続を作成する
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Servizi cloud** > **Upgrade Analytics Connector (Connettore Upgrade Analytics)** > **Crea connessione ad Upgrade Analytics** per avviare **Aggiungi la connessione guidata a Upgrade Analytics**.
-3.  Nella schermata **Azure Active Directory** specificare valori per **Tenant**, **ID client**  e **Chiave privata del client** e selezionare **Avanti**.
-4.  Nella schermata **Upgrade Readiness** specificare le impostazioni di connessione in **Sottoscrizione Azure**, **Gruppo di risorse di Azure** e **Area di lavoro di Operations Management Suite**.
-5.  Verificare le impostazioni di connessione nella schermata **Riepilogo** e selezionare **Avanti**.
+1.  Configuration Manager コンソールで、**[管理]** > **[クラウド サービス]** > **[Upgrade Readiness コネクタ]** > **[Upgrade Analytics への接続を作成します]** の順に選択し、**[Upgrade Analytics の接続を追加ウィザード]** を起動します。
+3.  **[Azure Active Directory]** 画面で、**[テナント]**、**[クライアント ID]**、**[クライアントの秘密鍵]** を指定し、**[次へ]** を選択します。
+4.  **[Upgrade Readiness]** 画面で、**[Azure サブスクリプション]**、**[Azure リソース グループ]**、および **[Operations Management Suite ワークスペース]** に入力し、接続設定を指定します。
+5.  **[概要]** 画面で、**[次へ]** の接続設定を確認します。
 
     > [!NOTE]
-    > È necessario che Upgrade Readiness sia connesso al sito di livello più alto nella gerarchia. Se si connette Upgrade Readiness a un sito primario autonomo e poi si aggiunge un sito di amministrazione centrale all'ambiente, è necessario eliminare e ricreare la connessione di OMS nella nuova gerarchia.
-
+    > Upgrade Readiness を階層の最上位サイトに接続する必要があります。 Upgrade Readiness をスタンドアロン プライマリ サイトに接続し、環境に中央管理サイトを追加する場合は、OMS 接続を削除し、新しい階層内に OMS 接続を再作成する必要があります。

@@ -1,97 +1,94 @@
 ---
-title: "Funzionalità della versione Technical Preview 1603 per Configuration Manager"
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1603 per System Center Configuration Manager."
+title: "Configuration Manager の Technical Preview 1603 の機能"
+description: "System Center Configuration Manager の Technical Preview バージョン 1603 で使用できる機能について説明します。"
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5f861b72-9f14-4d17-a512-4a79b660abe6
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: noindex,nofollow
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
-ms.openlocfilehash: 1d3adcf3310d88b1266388aa03ae5ea03e23f2a5
-ms.contentlocale: it-it
-ms.lasthandoff: 01/24/2017
-
+ms.openlocfilehash: dee2b4ce042bb4a434bb019e17a6b16e2807945c
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1603-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1603 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1603-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1603 の機能
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*適用対象: System Center Configuration Manager (Technical Preview)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1603 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. In alternativa, quando si usa System Center Technical Preview 5, questa versione viene installata come una versione di base di System Center Configuration Manager Technical Preview. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.  
+この記事では、System Center Configuration Manager の Technical Preview バージョン 1603 で使用できる機能について説明します。 このバージョンをインストールして更新し、新機能を Configuration Manager の Technical Preview サイトに追加できます。 代わりに、System Center Technical Preview 5 を使用すると、このバージョンは System Center Configuration Manager Technical Preview の基準バージョンとしてインストールされます。 このバージョンの Technical Preview をインストールする前に、説明のトピック「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。  
 
- **Problemi noti di questa versione Technical Preview:**  
+ **この Technical Preview の既知の問題:**  
 
--   Questa versione include gli aggiornamenti per le funzionalità rilasciate in precedenza ma non vengono introdotte nuove funzionalità. La pagina delle funzionalità della procedura guidata di aggiornamento sarà quindi vuota se in precedenza è stato eseguito l'aggiornamento alla versione 1602 e sono state abilitate tutte le funzionalità incluse nella versione 1602.  
+-   このリリースには、以前にリリースされた機能の更新プログラムが含まれていますが、新機能は導入していません。 そのため、以前に 1602 にアップグレードし、1602 に含まれる機能をすべて有効にした場合、更新プログラム ウィザードの [機能] ページは空になります。  
 
--   Dopo gli aggiornamenti del server del sito alla Technical Preview 1603, i client non possono usare le funzionalità di controllo remoto fino a quando non vengono anch'essi aggiornati alla versione 1603.  
+-   サイト サーバーが Technical Preview 1603 に更新されたら、クライアントもバージョン 1603 に更新されるまで、リモート制御機能を使用できません。  
 
- **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
+ **このバージョンでお試しいただける新機能を次に示します。**  
 
-##  <a name="BKMK_SC1603"></a> Miglioramenti a Software Center  
+##  <a name="BKMK_SC1603"></a> ソフトウェア センターの機能強化  
 
-### <a name="new-tiled-view-for-apps"></a>Nuova visualizzazione affiancata per le app  
- Gli utenti finali possono ora scegliere tra un elenco di app o una visualizzazione affiancata delle app nella scheda **Applicazioni** di Software Center.  
+### <a name="new-tiled-view-for-apps"></a>アプリの新しいタイル化されたビュー  
+ エンドユーザーは、ソフトウェア センターの [**アプリケーション**] タブでアプリのリストまたはアプリのタイル化されたビューを選択できるようになりました。  
 
-### <a name="select-multiple-updates-in-software-center"></a>Selezionare più aggiornamenti in Software Center  
- Nella scheda **Aggiornamenti** di Software Center è ora possibile selezionare più aggiornamenti oppure selezionare **Aggiorna tutto** per iniziare a installare più aggiornamenti contemporaneamente.  
+### <a name="select-multiple-updates-in-software-center"></a>ソフトウェア センターでの複数の更新プログラムの選択  
+ ソフトウェア センターの [**更新**] タブで、複数の更新プログラムを選択したり、[**すべて更新**] を選択したりして、同時に複数の更新プログラムのインストールを開始できるようになりました。  
 
-##  <a name="BKMK_RC1603"></a> Miglioramenti del controllo remoto  
+##  <a name="BKMK_RC1603"></a> リモート制御の機能強化  
 
-### <a name="limit-shared-clipboard-access-in-a-remote-control-session"></a>Limitare l'accesso agli Appunti condivisi in una sessione di controllo remoto  
- È ora possibile abilitare la nuova impostazione client degli strumenti remoti, **Richiedere all'utente l'autorizzazione per il trasferimento di file negli Appunti condivisi**, per limitare l'accesso agli Appunti condivisi in una sessione di controllo remoto.  
+### <a name="limit-shared-clipboard-access-in-a-remote-control-session"></a>リモート制御セッションでの共有クリップボードへのアクセスの制限  
+ 新しいリモート ツール クライアントの設定 「**Prompt user for shared clipboard file transfer permission**」 (ユーザーに共有クリップボードのファイル転送のアクセス許可を要求する) を有効にして、リモート コントロール セッションで共有クリップボードへのアクセスを制限できます。  
 
- Quando questa impostazione è abilitata, l'utente finale che condivide una sessione remota deve concedere le autorizzazioni a chi visualizza tale sessione in modo che questi utenti possano trasferire file dalla sessione al proprio computer locale usando gli Appunti condivisi.  
+ 有効な場合、リモート セッションを共有しているエンドユーザーは、ビューア―が共有クリップボードを使用して、セッションからローカル コンピューターにファイルを転送できるように、そのセッションのビューア―にアクセス許可を与える必要があります。  
 
- Viene così aggiunto un livello di protezione per l'utente finale perché in precedenza, se all'utente che visualizzava veniva concesso il controllo completo sul computer dell'utente finale, questo poteva usare gli Appunti condivisi per trasferire i file dalla sessione al computer locale in modo completamente trasparente all'utente finale.  
+ 前述のように、これにより、ビューア―にエンドユーザーのコンピューターのフル コントロールが付与された場合、エンドユーザーに完全に透過的な方法で、共有クリップボードを使用してセッションからローカル コンピューターにファイルを転送できるように、エンドユーザーに保護レイヤーが追加されます。  
 
-##  <a name="BKMK_RamDiskTFTP"></a> Personalizzare le dimensioni della finestra e del blocco TFTP RamDisk nei punti di distribuzione abilitati per PXE  
- Nella Technical Preview 1603 è possibile personalizzare le dimensioni della finestra e del blocco TFTP RamDisk per i punti di distribuzione abilitati per PXE. Se la rete è stata personalizzata, il download dell'immagine di avvio potrebbe non riuscire a causa di un errore di timeout perché le dimensioni del blocco o della finestra sono troppo grandi. La personalizzazione delle dimensioni della finestra e del blocco TFTP RamDisk consentono di ottimizzare il traffico TFTP quando si usa PXE per soddisfare requisiti di rete specifici.   
-È necessario testare le impostazioni personalizzate nel proprio ambiente per stabilire quale sia la scelta più efficiente.  
+##  <a name="BKMK_RamDiskTFTP"></a> PXE 対応配布ポイント上の RamDisk TFTP ブロック サイズとウィンドウ サイズのカスタマイズ  
+ 1603 Technical Preview では、PXE 対応配布ポイントの RamDisk TFTP ブロック サイズとウィンドウ サイズをカスタマイズできます。 ネットワークをカスタマイズしている場合、ブロックまたはウィンドウのサイズが大きすぎるために、ブート イメージのダウンロードがタイムアウト エラーで失敗する可能性があります。 RamDisk TFTP ブロック サイズとウィンドウ サイズのカスタマイズにより、特定のネットワーク要件に対応する PXE を使用する場合に、TFTP トラフィックを最適化できます。   
+最も効率的な内容を確認するために、環境内でカスタマイズした設定をテストする必要があります。  
 
--   **Dimensioni blocco TFTP**: le dimensioni del blocco corrispondono alle dimensioni dei pacchetti di dati che vengono inviati dal server al client che sta scaricando il file (come descritto in RFC 2347). Dimensioni maggiori del blocco consentono al server di inviare meno pacchetti e di conseguenza si verificano meno ritardi per il round trip tra il server e client. Dimensioni del blocco grandi, tuttavia, comportano la creazione di pacchetti frammentati, che non sono supportati dalla maggior parte delle implementazioni di client PXE.  
+-   **TFTP ブロック サイズ**: ブロック サイズは、ファイルをダウンロードしているクライアントにサーバーによって送信されるデータ パケットのサイズです (RFC 2347 に記載)。 ブロック サイズを大きくすると、サーバーとクライアントの間のラウンド トリップ遅延が少なくなるように、サーバーが送信するパケットを少なくすることができます。 ただし、大きいサイズのブロックにより、ほとんどの PXE クライアントの実装がサポートしていない、断片化されたパケットが生成されます。  
 
--   **Dimensioni finestra TFTP**: TFTP richiede un pacchetto di acknowledgment (ACK) per ogni blocco di dati inviato. Il server non invia il blocco successivo nella sequenza finché non riceve il pacchetto ACK per il blocco precedente. L'uso di finestre TFTP è una funzionalità di Servizi di distribuzione Windows che consente di definire quanti blocchi di dati sono necessari per riempire una finestra. Il server invia i blocchi di dati back-to-back fino a riempire la finestra e quindi il client invia un pacchetto ACK. Aumentando le dimensioni di questa finestra si riduce il numero di ritardi di round trip tra il client e il server, nonché il tempo complessivo necessario per scaricare un'immagine di avvio.  
+-   **TFTP ウィンドウ サイズ**: TFTP では、送信されるデータの各ブロックの確認 (ACK) パケットが必要です。 前のブロックの ACK パケットを受信するまで、サーバーは、シーケンス内の次のブロックを送信しません。 TFTP ウィンドウは、ウィンドウがいっぱいになるまでのデータ ブロックの数を定義できる、Windows 展開サービスの機能です。 サーバーは、ウィンドウがいっぱいになるまでデータ ブロックを連続で送信し、その後クライアントが ACK パケットを送信します。 このウィンドウのサイズを増やすことで、クライアントとサーバーの間のラウンド トリップ遅延回数が減少し、ブート イメージをダウンロードするために必要な全体の時間が短縮します。  
 
-### <a name="try-it-out"></a>Prova subito!  
- Provare a completare le attività seguenti e quindi usare il collegamento per l'invio di commenti e suggerimenti nella parte superiore di questo argomento per comunicare i risultati:  
+### <a name="try-it-out"></a>試してみましょう。  
+ 次のタスクを実行してから、このトピックの先頭付近にあるフィードバック情報を使用してその動作を報告してください。  
 
--   È possibile personalizzare le dimensioni della finestra TFTP RamDisk nel punto di distribuzione abilitato per PXE.  
+-   PXE 対応配布ポイント上の RamDisk TFTP ウィンドウ サイズをカスタマイズできる。  
 
--   È possibile personalizzare le dimensioni del blocco TFTP RamDisk nel punto di distribuzione abilitato per PXE.  
+-   PXE 対応配布ポイント上の RamDisk TFTP ブロック サイズをカスタマイズできる。  
 
-### <a name="to-modify-the-ramdisk-tftp-window-size"></a>Per modificare le dimensioni della finestra TFTP RamDisk  
+### <a name="to-modify-the-ramdisk-tftp-window-size"></a>RamDisk TFTP ウィンドウ サイズを変更するには  
 
--   Aggiungere la chiave del Registro di sistema seguente nei punti di distribuzione abilitati per PXE per personalizzare le dimensioni della finestra TFTP RamDisk:  
+-   RamDisk TFTP ウィンドウ サイズをカスタマイズするには、PXE 対応配布ポイント上に次のレジストリ キーを追加します。  
 
-     **Percorso**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
-    Nome: RamDiskTFTPWindowSize  
+     **場所**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
+    名前: RamDiskTFTPWindowSize  
 
-     **Tipo**: REG_DWORD  
+     **型**: REG_DWORD  
 
-     **Valore**: &lt;dimensioni finestra personalizzate\>  
+     **値**: &lt;カスタマイズされたウィンドウのサイズ\>  
 
- Il valore predefinito è 1 (1 blocco di dati riempie la finestra)  
+ 既定値は 1 (1 つのデータ ブロックでウィンドウがいっぱいになります)  
 
-### <a name="to-modify-the-ramdisk-tftp-block-size"></a>Per modificare le dimensioni del blocco TFTP RamDisk  
+### <a name="to-modify-the-ramdisk-tftp-block-size"></a>RamDisk TFTP ブロック サイズを変更するには  
 
--   Aggiungere la chiave del Registro di sistema seguente nei punti di distribuzione abilitati per PXE per personalizzare le dimensioni della finestra TFTP RamDisk:  
+-   RamDisk TFTP ウィンドウ サイズをカスタマイズするには、PXE 対応配布ポイント上に次のレジストリ キーを追加します。  
 
-     **Percorso**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
-    Nome: RamDiskTFTPBlockSize  
+     **場所**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
+    名前: RamDiskTFTPBlockSize  
 
-     **Tipo**: REG_DWORD  
+     **型**: REG_DWORD  
 
-     **Valore**: &lt;dimensioni blocco personalizzate\>  
+     **値**: &lt;カスタマイズされたブロック サイズ\>  
 
- Il valore predefinito è 4096 (4k).  
-
+ 既定値は 4096 (4k) です。  

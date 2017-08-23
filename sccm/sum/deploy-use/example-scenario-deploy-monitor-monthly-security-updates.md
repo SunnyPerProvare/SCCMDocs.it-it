@@ -1,7 +1,6 @@
 ---
-
-title: Scenario di esempio per distribuire e monitorare gli aggiornamenti software di sicurezza | Microsoft Docs
-description: Questo scenario di esempio descrive come usare gli aggiornamenti software in Configuration Manager per distribuire e monitorare gli aggiornamenti software di sicurezza rilasciati ogni mese da Microsoft.
+title: "セキュリティ ソフトウェア更新プログラムを展開および監視するシナリオ例 | Microsoft Docs"
+description: "このシナリオ例では、Configuration Manager でソフトウェア更新プログラムを使用して、マイクロソフトから毎月リリースされるセキュリティ ソフトウェア更新プログラムを展開および監視する方法を説明します。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -9,93 +8,85 @@ manager: angrobe
 ms.date: 10/06/2016
 ms.topic: article
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.service: 
 ms.assetid: c32f757a-02da-43f2-b055-5cfd097d8c43
-translationtype: Human Translation
-ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
 ms.openlocfilehash: 0e6e2b3a9455bb6eda437eb1325aaaadb3d83420
-
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="example-scenario-for-using-system-center-configuration-manager-to-deploy-and-monitor-the-security-software-updates-released-monthly-by-microsoft"></a>Scenario di esempio per l'uso di System Center Configuration Manager per la distribuzione e il monitoraggio degli aggiornamenti software della sicurezza rilasciati ogni mese da Microsoft
+# <a name="example-scenario-for-using-system-center-configuration-manager-to-deploy-and-monitor-the-security-software-updates-released-monthly-by-microsoft"></a>System Center Configuration Manager を使用して Microsoft から毎月リリースされるセキュリティ ソフトウェア更新プログラムを展開および監視するシナリオ例
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Questo argomento illustra uno scenario di esempio sull'uso degli aggiornamenti software in System Center Configuration Manager per la distribuzione e il monitoraggio degli aggiornamenti software di sicurezza rilasciati ogni mese da Microsoft.  
+このトピックでは、System Center Configuration Manager でソフトウェア更新プログラムを使用して、マイクロソフトから毎月リリースされるセキュリティ ソフトウェア更新プログラムを展開および監視する方法のシナリオ例を示します。  
 
- In questo scenario Giorgio è l'amministratore di Configuration Manager presso Woodgrove Bank. Giorgio deve creare una strategia di distribuzione degli aggiornamenti del software con i requisiti e le condizioni seguenti:  
+ このシナリオでは、加藤さんはウッドグローブ銀行の Configuration Manager 管理者です。 加藤さんは、次の条件と要件に従って、ソフトウェア更新プログラムの展開戦略を策定する必要があります。  
 
--   La distribuzione degli aggiornamenti del software attivo avviene una settimana dopo il rilascio da parte di Microsoft degli aggiornamenti del software di protezione il secondo martedì di ogni mese. In genere, questo evento viene definito Patch martedì.  
+-   ソフトウェア更新プログラムのアクティブな展開を、マイクロソフトが毎月第 2 火曜日にセキュリティ関連のソフトウェア更新プログラムをリリースした翌週に実行します。 この展開は、一般的に月例パッチと呼ばれます。  
 
--   Gli aggiornamenti software vengono scaricati e pre-installati nei punti di distribuzione. Una distribuzione viene quindi testata in un sottoinsieme di client prima che Giorgio distribuisca gli aggiornamenti software in un ambiente di produzione.  
+-   ソフトウェア更新プログラムは、配布ポイントでダウンロードしてステージングします。 その後、加藤さんがソフトウェア更新プログラムを実稼働環境に完全に展開する前に、展開をクライアントのサブセットでテストします。  
 
--   Giorgio deve essere in grado di monitorare la conformità degli aggiornamenti del software in base al mese o all'anno.  
+-   加藤さんは、ソフトウェア更新プログラムのコンプライアンス対応を月次または年次で監視できる必要があります。  
 
- Questo scenario si presuppone che l'infrastruttura del punto di aggiornamento software sia già stata implementata. Usare le informazioni seguenti per pianificare e configurare gli aggiornamenti software in Configuration Manager.  
+ このシナリオでは、ソフトウェアの更新ポイントのインフラストラクチャが既に実装されていることを前提としています。 Configuration Manager でソフトウェア更新プログラムを計画および構成するときは、次の情報を参照してください。  
 
-|Processo|Riferimento|  
+|プロセス|参照先|  
 |-------------|---------------|  
-|Esaminare i concetti chiave per gli aggiornamenti software.|[Introduction to software updates](../understand/software-updates-introduction.md) (Introduzione agli aggiornamenti software)|  
-|Pianificare gli aggiornamenti del software. Queste informazioni consentono di pianificare considerazioni relative alla capacità e di determinare l'infrastruttura del punto di aggiornamento software e le impostazioni di sincronizzazione e del client per gli aggiornamenti software.|[Plan for software updates](../plan-design/plan-for-software-updates.md) (Pianificare gli aggiornamenti del software)|  
-|Configurare gli aggiornamenti software. Queste informazioni consentono di installare e configurare punti di aggiornamento software nella gerarchia e di configurare e sincronizzare gli aggiornamenti software.<br /><br /> In questo scenario Giorgio configura la pianificazione di sincronizzazione degli aggiornamenti software in modo che venga eseguita il secondo mercoledì di ogni mese, così da assicurarsi di recuperare gli aggiornamenti software di sicurezza più recenti rilasciati da Microsoft.|[Synchronize software updates](../get-started/synchronize-software-updates.md) (Sincronizzare gli aggiornamenti software)|  
+|ソフトウェアの更新の主要な概念を確認する。|[ソフトウェア更新プログラムの概要](../understand/software-updates-introduction.md)|  
+|ソフトウェアの更新を計画する。 容量に関する考慮事項を策定し、ソフトウェアの更新ポイントのインフラストラクチャ、ソフトウェアの更新ポイントのインストール、同期設定、およびソフトウェアの更新のクライアント設定を判断するときに、この情報を参照してください。|[ソフトウェア更新プログラムの計画](../plan-design/plan-for-software-updates.md)|  
+|ソフトウェアの更新を構成する。 階層内にソフトウェアの更新ポイントをインストールおよび構成したり、ソフトウェア更新プログラムを構成および同期するときに、この情報を参照してください。<br /><br /> このシナリオでは、マイクロソフトから最新のセキュリティ ソフトウェア更新プログラムを確実に取得するため、加藤さんは、ソフトウェア更新プログラムの同期スケジュールを毎月第 2 水曜日に実行するように構成します。|[ソフトウェア更新プログラムの同期](../get-started/synchronize-software-updates.md)|  
 
- Le sezioni seguenti di questo argomento includono procedure di esempio che consentono di distribuire e monitorare gli aggiornamenti software di sicurezza di Configuration Manager all'interno dell'organizzazione.
+ このトピックの以下のセクションでは、Configuration Manager のセキュリティ ソフトウェア更新プログラムを組織内で展開および監視する際に使用する手順例を示します。
 
-##  <a name="a-namebkmkstep1a-step-1-create-a-software-update-group-for-yearly-compliance"></a><a name="BKMK_Step1"></a> Passaggio 1: Creare un gruppo di aggiornamento software per la conformità annuale  
- Giorgio crea un gruppo di aggiornamento software che può usare per monitorare la conformità di tutti gli aggiornamenti software di sicurezza rilasciati nel 2016. Esegue quindi i passaggi indicati nella seguente tabella.  
+##  <a name="BKMK_Step1"></a> 手順 1: 年次のコンプライアンス対応を監視するための、ソフトウェア更新プログラム グループを作成する  
+ 加藤さんは、2016 年にリリースするすべてのセキュリティ ソフトウェア更新プログラムのコンプライアンス対応を監視するために使用する、ソフトウェア更新プログラム グループを作成します。 加藤さんは、次の表の手順を実行します。  
 
-|Processo|Riferimento|  
+|プロセス|参照先|  
 |-------------|---------------|  
-|Dal nodo **Tutti gli aggiornamenti software** nella console di Configuration Manager Giorgio aggiunge i criteri per visualizzare solo gli aggiornamenti software di sicurezza rilasciati o rivisiti nel corso del 2015 che soddisfano i requisiti seguenti:<br /><br /><ul><li>**Criteri**: Data rilascio o revisione</li><li>**Condizione**: è maggiore o uguale a una data specifica<br />**Valore**: 1/1/2015</li><li>**Criteri**: Classificazione aggiornamento<br />**Valore**: Aggiornamenti della sicurezza</li><li>**Criteri**: Scaduto <br />**Valore**: No</li></ul>|Nessuna informazione aggiuntiva|
-|Giorgio aggiunge tutti gli aggiornamenti software filtrati in un nuovo gruppo di aggiornamento software con i seguenti requisiti:<br /><br /><ul><li>**Nome**: Gruppo di conformità - Aggiornamenti della sicurezza Microsoft 2015</li><li>**Descrizione**: Aggiornamenti software|[Aggiungere aggiornamenti software a un gruppo di aggiornamento](add-software-updates-to-an-update-group.md)|  
+|Configuration Manager コンソールの **[すべてのソフトウェア更新]** ノードから、加藤さんは、2015 年にリリースまたは変更された、次の条件を満たすセキュリティ ソフトウェア更新プログラムのみを表示するように条件を追加します。<br /><br /><ul><li>**条件**:リリース日または変更日</li><li>**条件**: 特定の日付より後または特定の日付と等しい (以降)<br />**値**: 2015 年 1 月 1 日</li><li>**条件**: 更新プログラムの分類<br />**値**:セキュリティ更新プログラム</li><li>**条件**:有効期限切れ <br />**値**: なし</li></ul>|詳細情報なし|
+|加藤さんは、フィルター処理したすべてのソフトウェア更新プログラムを、以下の要件の新しいソフトウェア更新プログラム グループに追加します。<br /><br /><ul><li>**名前**: コンプライアンス グループ - Microsoft セキュリティ更新プログラム 2015</li><li>**説明**:ソフトウェア更新プログラム|[更新グループへのソフトウェア更新プログラムの追加](add-software-updates-to-an-update-group.md)|  
 
-##  <a name="a-namebkmkstep2a-step-2-create-an-automatic-deployment-rule-for-the-current-month"></a><a name="BKMK_Step2"></a> Passaggio 2: Creare una regola di distribuzione automatica per il mese corrente  
- Giorgio rea una regola di distribuzione automatica per gli aggiornamenti software di protezione rilasciati da Microsoft per il mese corrente. Esegue quindi i passaggi indicati nella seguente tabella.  
+##  <a name="BKMK_Step2"></a> 手順 2: 当月の自動展開規則を作成する  
+ 加藤さんは、マイクロソフトによって当月リリースされたセキュリティ関連のソフトウェア更新プログラムの自動展開規則を作成します。 加藤さんは、次の表の手順を実行します。  
 
-|Processo|Riferimento|  
+|プロセス|参照先|  
 |-------------|---------------|  
-|Giorgio crea una regola di distribuzione automatica con i seguenti requisiti:<br /><br /><ol><li>Nella scheda **Generale** Giorgio configura quanto segue:<br /> <ul><li>Specifica **Aggiornamenti mensili della sicurezza** come nome.</li><li>Seleziona una raccolta di test con client limitati.</li><li>Seleziona **Crea un nuovo gruppo di aggiornamento software**.</li><li>Verifica che l'opzione **Abilita la distribuzione dopo l'esecuzione della regola** non sia selezionata.</li></ul></li><li>Nella scheda **Impostazioni di distribuzione** Giorgio seleziona le impostazioni predefinite.</li><li>Nella pagina **Aggiornamenti software** Giorgio configura i filtri proprietà e i criteri di ricerca seguenti:<br /><ul><li>Data rilascio o revisione: **Ultimo mese**.</li><li>Classificazione aggiornamento: **Aggiornamenti della sicurezza**.</li></ul></li><li>Nella pagina **Valutazione** Giorgio abilita la regola in modo che venga eseguita secondo pianificazione il **secondo giovedì** di ogni **mese**. Giorgio verifica anche che la pianificazione della sincronizzazione sia impostata per essere eseguita il **secondo mercoledì** di ogni **mese**.</li><li>Giorgio utilizza le impostazioni predefinite nelle pagine Pianificazione della distribuzione, Esperienza utente, Avvisi e Impostazioni download.</li><li>Nella pagina **Pacchetto di distribuzione** Giorgio specifica un nuovo pacchetto di distribuzione.</li><li>Giorgio utilizza le impostazioni predefinite nelle pagine Percorso download e Selezione lingua.</li></ol>|[Distribuire automaticamente gli aggiornamenti software](automatically-deploy-software-updates.md)|  
+|加藤さんは、次の要件で自動展開規則を作成します。<br /><br /><ol><li>[全般] タブで、次のように構成します。 ****<br /> <ul><li>名前に**月次セキュリティ更新プログラム**を指定します。</li><li>少数のクライアントが含まれたテスト用のコレクションを選択します。</li><li>**[新しいソフトウェア更新プログラム グループを作成する]** を選択します。</li><li>**[この規則の実行後に展開を有効にする]** を選択していないことを確認します。</li></ul></li><li>[展開設定] タブで、既定の設定を選択します。 ****</li><li>**[ソフトウェア更新プログラム]** ページで、次のプロパティ フィルターと検索条件を構成します。<br /><ul><li>リリース日または変更日 [過去 1 か月間] ****</li><li>更新プログラムの分類 [セキュリティ更新プログラム] ****</li></ul></li><li>**[評価]** ページで、毎**月****第 2 木曜日**のスケジュールで実行するように規則を有効にします。 また、毎**月****第 2 水曜日**に同期が実行されるようにスケジュールが設定されていることを確認します。</li><li>[展開スケジュール] ページ、[ユーザー側の表示と操作] ページ、[アラート] ページ、および [ダウンロードの設定] ページで、既定の設定を使用します。</li><li>**[展開パッケージ]** ページで、新しい展開パッケージを指定します。</li><li>[ダウンロード場所] ページと [言語の選択] ページで、既定の設定を使用します。</li></ol>|[ソフトウェア更新プログラムの自動展開](automatically-deploy-software-updates.md)|  
 
-##  <a name="a-namebkmkstep3a-step-3-verify-that-software-updates-are-ready-to-deploy"></a><a name="BKMK_Step3"></a> Passaggio 3: Verificare che gli aggiornamenti software siano pronti per la distribuzione  
- Il secondo giovedì di ogni mese Giorgio verifica che gli aggiornamenti software siano pronti per la distribuzione. Esegue il passo seguente.  
+##  <a name="BKMK_Step3"></a> 手順 3: ソフトウェア更新プログラムを展開する準備ができていることを確認する  
+ 毎月第 2 木曜日に、加藤さんは、ソフトウェア更新プログラムを展開する準備ができていることを確認します。 彼は、次の手順を実行します。  
 
-|Processo|Riferimento|  
+|プロセス|参照先|  
 |-------------|---------------|  
-|Giorgio verifica che la sincronizzazione degli aggiornamenti del software sia stata completata correttamente.|[Software updates synchronization status](monitor-software-updates.md#BKMK_SUSyncStatus) (Stato di sincronizzazione degli aggiornamenti software)|  
+|ソフトウェア更新プログラムの同期が正常に完了したことを確認します。|[ソフトウェア更新プログラムの同期ステータス](monitor-software-updates.md#BKMK_SUSyncStatus)|  
 
-##  <a name="a-namebkmkstep4a-step-4-deploy-the-software-update-group"></a><a name="BKMK_Step4"></a> Passaggio 4: Distribuire il gruppo di aggiornamenti software  
- Dopo aver verificato che gli aggiornamenti software sono pronti per la distribuzione, Giorgio esegue la distribuzione. Esegue quindi i passaggi indicati nella seguente tabella.  
+##  <a name="BKMK_Step4"></a> 手順 4: ソフトウェア更新プログラム グループを展開する  
+ 加藤さんは、ソフトウェア更新プログラムを展開する準備ができていることを確認した後で、ソフトウェア更新プログラムを展開します。 加藤さんは、次の表の手順を実行します。  
 
-|Processo|Riferimento|  
+|プロセス|参照先|  
 |-------------|---------------|  
-|Giorgio crea due distribuzioni di prova per il nuovo gruppo di aggiornamento software. Per ogni distribuzione, considera i seguenti ambienti:<br /><br /> **Distribuzione di test delle workstation**: per la distribuzione di test delle workstation, Giorgio considera quanto segue:<br /><br /><ul><li>Specifica una raccolta di distribuzioni che contiene un subset di client per workstation per la verifica della distribuzione.</li><li>Configura le impostazioni di distribuzione appropriate per i client per workstation presenti nell'ambiente.</li></ul><br />**Distribuzione di test dei server**: per la distribuzione di test dei server, Giorgio considera quanto segue:<br /><br /><ul><li>Specifica una raccolta di distribuzioni che contiene un subset di client di server per la verifica della distribuzione.</li><li>Configura le impostazioni di distribuzione appropriate per i client di server presenti nell'ambiente.</li></ul>|[Deploy software updates](deploy-software-updates.md) (Distribuire gli aggiornamenti software)|  
-|Giorgio verifica che le distribuzioni di prova siano state distribuite correttamente.|[Software updates deployment status](monitor-software-updates.md#BKMK_SUDeployStatus) (Stato di distribuzione degli aggiornamenti software)|  
-|Giorgio aggiorna le due distribuzioni con nuove raccolte che includono i server e le workstation di produzione relativi.|Nessuna informazione aggiuntiva|  
+|新しいソフトウェア更新プログラム グループにテスト用の展開を 2 つ作成します。 各展開に次の環境を検討します。<br /><br /> **ワークステーション テスト展開**: 加藤さんは、ワークステーション テスト展開で次のことを検討します。<br /><br /><ul><li>展開を検証するワークステーション クライアントのサブセットが含まれている展開コレクションを指定します。</li><li>環境内のワークステーション クライアントに適切な展開設定を構成します。</li></ul><br />**サーバー テスト展開**: 加藤さんは、サーバー テスト展開で次のことを検討します。<br /><br /><ul><li>展開を検証するサーバー クライアントのサブセットが含まれている展開コレクションを指定します。</li><li>環境内のサーバー クライアントに適切な展開設定を構成します。</li></ul>|[ソフトウェア更新プログラムの展開](deploy-software-updates.md)|  
+|テスト展開が正常に完了したことを確認します。|[ソフトウェア更新プログラムの展開ステータス](monitor-software-updates.md#BKMK_SUDeployStatus)|  
+|加藤さんは、実稼働のワークステーションとサーバーが含まれた、新しいコレクションから成る 2 つの展開を更新します。|詳細情報なし|  
 
-##  <a name="a-namebkmkstep5a-step-5-monitor-compliance-for-deployed-software-updates"></a><a name="BKMK_Step5"></a> Passaggio 5: Monitorare la conformità per gli aggiornamenti software distribuiti  
- Giorgio monitora la conformità delle distribuzioni degli aggiornamenti software. Esegue quindi la procedura indicata nella seguente tabella.  
+##  <a name="BKMK_Step5"></a> 手順 5: 展開したソフトウェア更新プログラムのコンプライアンス対応を監視する  
+ 加藤さんは、ソフトウェア更新プログラムの展開のコンプライアンス対応を監視します。 加藤さんは、次の表の手順を実行します。  
 
-|Processo|Riferimento|  
+|プロセス|参照先|  
 |-------------|---------------|  
-|Giorgio monitora lo stato della distribuzione degli aggiornamenti software nella console di Configuration Manager e controlla i relativi report disponibili nella console.|[Monitor software updates in System Center Configuration Manager](../../sum/deploy-use/monitor-software-updates.md) (Monitorare gli aggiornamenti software in System Center Configuration Manager)|  
+|Configuration Manager コンソールでソフトウェア更新プログラムの展開ステータスを監視し、コンソールで使用できるソフトウェア更新プログラムの展開レポートを確認します。|[System Center Configuration Manager でのソフトウェア更新プログラムの監視](../../sum/deploy-use/monitor-software-updates.md)|  
 
-##  <a name="a-namebkmkstep6a-step-6-add-monthly-software-updates-to-the-yearly-update-group"></a><a name="BKMK_Step6"></a> Passaggio 6: Aggiungere aggiornamenti software mensili al gruppo di aggiornamento annuale  
- Giorgio aggiunge gli aggiornamenti software dal gruppo di aggiornamento software mensile al gruppo di aggiornamento software annuale. Esegue quindi la procedura indicata nella seguente tabella.  
+##  <a name="BKMK_Step6"></a> 手順 6: 年次の更新プログラム グループに月次のソフトウェア更新プログラムを追加する  
+ 加藤さんは、月次のソフトウェア更新プログラム グループに含まれているソフトウェア更新プログラムを、年次のソフトウェア更新プログラム グループに追加します。 加藤さんは、次の表の手順を実行します。  
 
-|Processo|Riferimento|  
+|プロセス|参照先|  
 |-------------|---------------|  
-|Giorgio seleziona gli aggiornamenti software dal gruppo di aggiornamento mensile e li aggiunge al gruppo di aggiornamento creato per la conformità annuale. Tiene traccia della conformità degli aggiornamenti software e crea diversi report per la gestione.|[Add software updates to a deployed update group](add-software-updates-to-an-update-group.md) (Aggiungere gli aggiornamenti software a un gruppo di aggiornamento distribuito)|  
+|月次のソフトウェア更新プログラム グループでソフトウェア更新プログラムを選択して、年次のコンプライアンス対応用に作成したソフトウェア更新プログラム グループに追加します。 ソフトウェア更新プログラムのコンプライアンス対応を追跡し、管理用にさまざまなレポートを作成します。|[展開された更新プログラム グループへのソフトウェア更新プログラムの追加](add-software-updates-to-an-update-group.md)|  
 
-Giorgio ha completato la distribuzione mensile per gli aggiornamenti del software di protezione. Continua a monitorare e creare report relativi alla compatibilità degli aggiornamenti software per assicurarsi che i client presenti nell'ambiente rientrino nei livelli di conformità accettabili.  
+加藤さんは、セキュリティ関連のソフトウェア更新プログラムの月次展開を正常に完了しました。 ソフトウェア更新プログラムのコンプライアンス対応の監視とレポートを継続して、環境内のクライアントが許容可能な対応レベルにあることを確認します。  
 
-##  <a name="a-namebkmkmonthlyprocessa-recurring-monthly-process-to-deploy-software-updates"></a><a name="BKMK_MonthlyProcess"></a> Processo mensile ricorrente per la distribuzione degli aggiornamenti software  
- Dopo il primo mese di distribuzione degli aggiornamenti software, Giorgio esegue la procedura (dal passaggio 3 al passaggio 6) per distribuire gli aggiornamenti mensili del software di protezione rilasciati da Microsoft.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+##  <a name="BKMK_MonthlyProcess"></a> 定期的な月次プロセスによるソフトウェア更新プログラムの展開  
+ 加藤さんは、ソフトウェア更新プログラムを展開した最初の 1 か月の後で、手順 3 ～ 6 を実行して、マイクロソフトによってリリースされたセキュリティ関連の月次のソフトウェア更新プログラムを展開します。  

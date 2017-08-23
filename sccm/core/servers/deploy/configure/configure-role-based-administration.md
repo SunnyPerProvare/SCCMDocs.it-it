@@ -1,305 +1,300 @@
 ---
-title: Configurare l&quot;amministrazione basata su ruoli | Microsoft Docs
+title: "ロール ベース管理の構成 | Microsoft Docs"
 ms.custom: na
 ms.date: 2/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 57413dd3-b2f8-4a5f-b27f-8464d357caff
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1defe96163f1bb70f586619ad89098c6f0e6c665
 ms.openlocfilehash: 3eea3a6e5f23808570ded4be3bd7412954518b96
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="configure-role-based-administration-for-system-center-configuration-manager"></a>System Center Configuration Manager のロール ベース管理の構成   
 
-# <a name="configure-role-based-administration-for-system-center-configuration-manager"></a>Configurare l'amministrazione basata su ruoli per System Center Configuration Manager   
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+System Center Configuration Manager のロール ベース管理では、セキュリティ ロール、セキュリティ スコープ、および割り当てられたコレクションを組み合わせて、各管理ユーザーの管理スコープを定義します。 管理スコープには、Configuration Manager コンソールで管理ユーザーが表示できるオブジェクト、および管理ユーザーが実行するアクセス許可を持っている、それらのオブジェクトに関連するタスクが含まれます。 役割に基づいた管理の構成は、階層内の各サイトに適用されます。  
 
-In System Center Configuration Manager l'amministrazione basata su ruoli combina ruoli di sicurezza, ambiti di protezione e raccolte assegnate per definire l'ambito amministrativo per ogni utente amministratore. L'ambito amministrativo comprende gli oggetti che possono essere visualizzati da un utente amministratore nella console di Configuration Manager, nonché le attività relative a tali oggetti eseguibili dall'utente amministratore. Le configurazioni dell'amministrazione basata su ruoli vengono applicate a tutti i siti della gerarchia.  
+ ロール ベース管理にまだ慣れていない場合は、「[System Center Configuration Manager のロール ベース管理の基礎](../../../../core/understand/fundamentals-of-role-based-administration.md)」を参照してください。  
 
- Se non si ha ancora familiarità con i concetti dell'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](../../../../core/understand/fundamentals-of-role-based-administration.md).  
+ ロール ベース管理および関連するセキュリティ設定を構成するときに、次の情報を参考にしてください。  
 
- Le informazioni contenute nelle seguenti procedure consentono di creare e configurare l'amministrazione basata su ruoli e le relative impostazioni di sicurezza:  
+-   [カスタム セキュリティ ロールの作成](#BKMK_CreateSecRole)  
 
--   [Creare ruoli di sicurezza personalizzati](#BKMK_CreateSecRole)  
+-   [セキュリティ ロールの構成](#BKMK_ConfigSecRole)  
 
--   [Configurare i ruoli di sicurezza](#BKMK_ConfigSecRole)  
+-   [オブジェクトのセキュリティ スコープの構成](#BKMK_ConfigSecScope)  
 
--   [Configurare gli ambiti di protezione per un oggetto](#BKMK_ConfigSecScope)  
+-   [セキュリティを管理するコレクションの構成](#BKMK_ConfigColl)  
 
--   [Configurare le raccolte per la gestione della sicurezza](#BKMK_ConfigColl)  
+-   [新しい管理ユーザーの作成](#BKMK_Create_AdminUser)  
 
--   [Creare un nuovo utente amministratore](#BKMK_Create_AdminUser)  
+-   [管理ユーザーの管理スコープの変更](#BKMK_ModAdminUser)  
 
--   [Modificare l'ambito amministrativo di un utente amministratore](#BKMK_ModAdminUser)  
+##  <a name="BKMK_CreateSecRole"></a> カスタム セキュリティ ロールの作成  
+ Configuration Manager は、さまざまな組み込みのセキュリティ ロールを提供します。 追加のセキュリティ ロールが必要な場合、既存のセキュリティ ロールのコピーを作成し、このコピーを変更して、カスタム セキュリティ ロールを作成できます。 カスタム セキュリティ ロールを作成して、現在割り当てられているセキュリティ ロールには含まれていない、必要な追加のセキュリティ アクセス許可を管理ユーザーに付与できます。 カスタム セキュリティ ロールを使用すると、必要なアクセス許可のみ管理者に付与できるため、必要以上のアクセス許可を付与するセキュリティ ロールが割り当てられることがありません。  
 
-##  <a name="BKMK_CreateSecRole"></a> Creare ruoli di sicurezza personalizzati  
- Configuration Manager fornisce diversi ruoli di sicurezza predefiniti. Se sono necessari ruoli di sicurezza aggiuntivi, è possibile creare un ruolo di sicurezza personalizzato creando una copia di un ruolo di sicurezza esistente e, in seguito, modificando tale copia. È possibile creare un ruolo di sicurezza personalizzato per concedere agli utenti amministratori le autorizzazioni di sicurezza necessarie non incluse in un ruolo di sicurezza attualmente assegnato. Utilizzando un ruolo di sicurezza personalizzato, è possibile concedere soltanto le autorizzazioni richieste, evitando di assegnare un ruolo di sicurezza che conceda più autorizzazioni del necessario.  
+ 既存のセキュリティ ロールをテンプレートとして使用して新しいセキュリティ ロールを作成するには、次の手順に従います。  
 
- Utilizzare la seguente procedura per creare un nuovo ruolo di sicurezza utilizzando un ruolo di sicurezza esistente come modello.  
+#### <a name="to-create-custom-security-roles"></a>カスタム セキュリティ ロールを作成するには  
 
-#### <a name="to-create-custom-security-roles"></a>Per creare ruoli di sicurezza personalizzati  
+1.  Configuration Manager コンソールで、**[管理]** に移動します。  
 
-1.  Nella console di Configuration Manager passare ad **Amministrazione**.  
+2.  **[管理]** ワークスペースで、**[セキュリティ]** を展開してから、**[セキュリティ ロール]** を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Sicurezza** e quindi scegliere **Ruoli di protezione**.  
+     次の手順のいずれかを使用して、新しいセキュリティ ロールを作成します。  
 
-     Per creare il nuovo ruolo di sicurezza, utilizzare uno dei seguenti processi:  
+    -   新しいカスタム セキュリティ ロールを作成するには、次の操作を実行します。  
 
-    -   Per creare un nuovo ruolo di sicurezza personalizzato, eseguire le seguenti azioni:  
+        1.  既存のセキュリティ ロールを選択し、新しいセキュリティ ロールのソースとして使用します。  
 
-        1.  Selezionare un ruolo di sicurezza esistente da utilizzare come origine per il nuovo ruolo di sicurezza.  
+        2.  **[ホーム]** タブの **[セキュリティ ロール]** グループで、**[コピー]** を選択します。 これにより、ソース セキュリティ ロールのコピーが作成されます。  
 
-        2.  Nel gruppo **Ruolo di protezione** della scheda **Home** scegliere **Copia**. Viene creata una copia del ruolo di sicurezza di origine.  
+        3.  セキュリティ ロールのコピー ウィザードで、新しいカスタム セキュリティ ロールの [名前] を指定します。 ****  
 
-        3.  Nella procedura guidata Copia ruolo di protezione, specificare un **Nome** per il nuovo ruolo di sicurezza personalizzato.  
+        4.  **[セキュリティ操作の割り当て]**で、各 **[セキュリティ操作]** ノードを展開して使用可能なアクションを表示します。  
 
-        4.  In **Assegnazioni operazioni di protezione**, espandere ciascun nodo **Operazioni di protezione** per visualizzare le azioni disponibili.  
-
-        5.  Per modificare l'impostazione per un'operazione di protezione, scegliere la freccia in giù nella colonna **Valore** e scegliere **Sì** o **No**.  
+        5.  セキュリティ操作の設定を変更するには、**[値]** 列で下向きの矢印を選択し、**[はい]** または **[いいえ]** を選択します。  
 
             > [!CAUTION]  
-            >  Quando viene configurato un ruolo di sicurezza personalizzato, assicurarsi di non concedere autorizzazioni non richieste dagli utenti amministratori associati al nuovo ruolo di sicurezza. Il valore **Modifica** per l'operazione di protezione **Ruoli di protezione**, ad esempio, concede agli utenti amministratori l'autorizzazione per la modifica di qualsiasi ruolo di sicurezza accessibile, anche se tali utenti non sono associati a quello specifico ruolo di sicurezza.  
+            >  カスタム セキュリティ ロールを構成する場合、新しいセキュリティ ロールに関連付けられる管理ユーザーが必要としないアクセス許可は付与しないようにしてください。 たとえば、**セキュリティ ロール** セキュリティ操作の値を **[変更]** にすると、そのセキュリティ ロールに関連付けられていなくても、すべてのアクセス可能なセキュリティ ロールを編集できるアクセス許可が管理ユーザーに付与されます。  
 
-        6.  Dopo la configurazione delle autorizzazioni, scegliere **OK** per salvare il nuovo ruolo di sicurezza.  
+        6.  アクセス許可を構成したら、**[OK]** を選択して新しいセキュリティ ロールを保存します。  
 
-    -   Per importare un ruolo di sicurezza esportato da un altra gerarchia di Configuration Manager, eseguire le azioni seguenti:  
+    -   別の Configuration Manager 階層からエクスポートされたセキュリティ ロールをインポートするには、次の操作を実行します。  
 
-        1.  Nel gruppo **Crea** della scheda **Home** scegliere **Importa ruolo di protezione**.  
+        1.  **[ホーム]** タブの **[作成]** グループで **[セキュリティ ロールのインポート]** を選択します。  
 
-        2.  Specificare il file XML contenente la configurazione del ruolo di sicurezza da importare. Scegliere **Apri** per completare la procedura e salvare il ruolo di sicurezza.  
+        2.  インポートするセキュリティ ロールの構成を含む .xml ファイルを指定します。 **[開く]** を選択して手順を完了し、セキュリティ ロールを保存します。  
 
             > [!NOTE]  
-            >  Dopo l'importazione di un ruolo di sicurezza, è possibile modificare le proprietà del ruolo di sicurezza per modificare le autorizzazioni oggetto associate al ruolo di sicurezza.  
+            >  セキュリティ ロールをインポートした後で、セキュリティ ロールのプロパティを編集して、そのセキュリティ ロールに関連付けられているオブジェクトのアクセス許可を変更できます。  
 
-##  <a name="BKMK_ConfigSecRole"></a> Configurare i ruoli di sicurezza  
- I gruppi di autorizzazioni di sicurezza definiti per un ruolo di sicurezza vengono chiamati assegnazioni delle operazioni di protezione. Le assegnazioni delle operazioni di protezione rappresentano una combinazione di tipi di oggetti e azioni disponibili per ciascun tipo di oggetto. È possibile modificare le operazioni di protezione disponibili per qualsiasi ruolo di sicurezza personalizzato, mentre non è possibile modificare i ruoli di sicurezza predefiniti forniti da Configuration Manager.  
+##  <a name="BKMK_ConfigSecRole"></a> セキュリティ ロールの構成  
+ セキュリティ ロールに定義されているセキュリティ アクセス許可のグループは、セキュリティ操作の割り当てと呼ばれます。 セキュリティ操作の割り当ては、オブジェクトの種類と、各オブジェクトの種類で実行できる操作の組み合わせを表します。 カスタム セキュリティ ロールで実行できるセキュリティ操作を変更することはできますが、Configuration Manager で提供される組み込みのセキュリティ ロールを変更することはできません。  
 
- Utilizzare la seguente procedura per modificare le operazioni di protezione per un ruolo di sicurezza.  
+ セキュリティ ロールのセキュリティ操作を変更するには、次の手順に従います。  
 
-#### <a name="to-modify-security-roles"></a>Per modificare i ruoli di sicurezza  
+#### <a name="to-modify-security-roles"></a>セキュリティ ロールを変更するには  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Sicurezza** e quindi scegliere **Ruoli di protezione**.  
+2.  **[管理]** ワークスペースで、**[セキュリティ]** を展開してから、**[セキュリティ ロール]** を選択します。  
 
-3.  Selezionare il ruolo di sicurezza personalizzato che si desidera modificare.  
+3.  変更するカスタム セキュリティ ロールを選択します。  
 
-4.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
+4.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-5.  Scegliere la scheda **Autorizzazioni**.  
+5.  **[アクセス許可]** タブを選択します。  
 
-6.  In **Assegnazioni operazioni di protezione**, espandere ciascun nodo **Operazioni di protezione** per visualizzare le azioni disponibili.  
+6.  **[セキュリティ操作の割り当て]**で、各 **[セキュリティ操作]** ノードを展開して使用可能なアクションを表示します。  
 
-7.  Per modificare l'impostazione per un'operazione di protezione, scegliere la freccia in giù nella colonna **Valore** e quindi scegliere **Sì** o **No**.  
+7.  セキュリティ操作の設定を変更するには、**[値]** 列で下向きの矢印を選択し、**[はい]** または **[いいえ]** を選択します。  
 
     > [!CAUTION]  
-    >  Quando viene configurato un ruolo di sicurezza personalizzato, assicurarsi di non concedere autorizzazioni non richieste dagli utenti amministratori associati al nuovo ruolo di sicurezza. Il valore **Modifica** per l'operazione di protezione **Ruoli di protezione**, ad esempio, concede agli utenti amministratori l'autorizzazione per la modifica di qualsiasi ruolo di sicurezza accessibile, anche se tali utenti non sono associati a quello specifico ruolo di sicurezza.  
+    >  カスタム セキュリティ ロールを構成する場合、新しいセキュリティ ロールに関連付けられる管理ユーザーが必要としないアクセス許可は付与しないようにしてください。 たとえば、**セキュリティ ロール** セキュリティ操作の値を **[変更]** にすると、そのセキュリティ ロールに関連付けられていなくても、すべてのアクセス可能なセキュリティ ロールを編集できるアクセス許可が管理ユーザーに付与されます。  
 
-8.  Al termine della configurazione delle assegnazioni delle operazioni di protezione, scegliere **OK** per salvare il nuovo ruolo di sicurezza.  
+8.  セキュリティ操作の割り当ての構成が終了したら、**[OK]** を選択して新しいセキュリティ ロールを保存します。  
 
-##  <a name="BKMK_ConfigSecScope"></a> Configurare gli ambiti di protezione per un oggetto  
- L'associazione di un ambito di protezione per un oggetto si gestisce dall'oggetto e non dall'ambito di protezione. Le uniche configurazioni dirette supportate dagli ambiti di protezione sono le modifiche apportate al nome e alla descrizione. Per modificare il nome e la descrizione di un ambito di protezione durante la visualizzazione delle proprietà dell'ambito di protezione, è necessario disporre dell'autorizzazione **Modifica** per l'oggetto a protezione diretta **Ambiti di protezione** .  
+##  <a name="BKMK_ConfigSecScope"></a> オブジェクトのセキュリティ スコープの構成  
+ オブジェクトのセキュリティ スコープの関連付けは、セキュリティ スコープからではなくオブジェクトから管理します。 セキュリティ スコープがサポートしている直接的な構成は、セキュリティ スコープの名前と説明の変更のみです。 セキュリティ スコープのプロパティを表示するときに、セキュリティ スコープの名前と説明を変更するには、ユーザーに **セキュリティ スコープ** という保護可能なオブジェクトに対する **変更** のアクセス許可が指定されている必要があります。  
 
- Quando si crea un nuovo oggetto in Configuration Manager, questo viene associato a ogni ambito di protezione associato ai ruoli di sicurezza dell'account usato per creare l'oggetto se quei ruoli di sicurezza forniscono l'autorizzazione **Crea** o **Imposta ambito di protezione**. Gli ambiti di protezione a cui è associato l'oggetto possono essere modificati solo dopo la creazione dell'oggetto.  
+ Configuration Manager にオブジェクトを新規作成するときは、セキュリティ ロールに**作成**のアクセス許可、または**セキュリティ スコープの設定**のアクセス許可が付与されている場合に、オブジェクトの作成に使用するアカウントのセキュリティ ロールと関連付けられている各セキュリティ スコープに新しいオブジェクトが関連付けられます。 オブジェクトに関連付けられているセキュリティ スコープは、オブジェクトの作成後にのみ変更できます。  
 
- Si supponga ad esempio che all'utente venga assegnato un ruolo di sicurezza che concede l'autorizzazione per creare un nuovo gruppo di limiti. Quando si crea un nuovo gruppo di limiti, non esiste nessuna opzione a cui è possibile assegnare ambiti di protezione specifici. Gli ambiti di protezione disponibili relativamente ai ruoli di sicurezza a cui è associato l'utente vengono invece assegnati automaticamente al nuovo gruppo di limiti. Dopo aver salvato il nuovo gruppo di limiti, è possibile modificare gli ambiti di protezione associati al nuovo gruppo di limiti.  
+ たとえば、新しい境界グループを作成するためのアクセス許可が付与されたセキュリティ ロールが割り当てられているとします。 新しい境界グループを作成するときに、特定のセキュリティ スコープを割り当てることはできません。 代わりに、割り当てられているセキュリティ ロールで使用できるセキュリティ スコープが、新しい境界グループに自動的に割り当てられます。 新しい境界グループを保存した後で、新しい境界グループに関連付けられているセキュリティ スコープを編集できます。  
 
- Usare la procedura seguente per configurare gli ambiti di protezione assegnati a un oggetto.  
+ オブジェクトに関連付けられているセキュリティ スコープを構成するには、次の手順に従います。  
 
-#### <a name="to-configure-security-scopes-for-an-object"></a>Per configurare gli ambiti di protezione per un oggetto  
+#### <a name="to-configure-security-scopes-for-an-object"></a>オブジェクトのセキュリティ スコープを構成するには  
 
-1.  Nella console di Configuration Manager selezionare un oggetto che supporta l'assegnazione a un ambito di protezione.  
+1.  Configuration Manager コンソールで、セキュリティ スコープへの割り当てをサポートするオブジェクトを選択します。  
 
-2.  Nel gruppo **Classificazione** della scheda **Home** scegliere **Imposta ambiti di protezione**.  
+2.  **[ホーム]** タブの **[分類]** グループで、**[セキュリティ スコープの設定]** を選択します。  
 
-3.  Nella finestra di dialogo **Imposta ambiti di protezione** selezionare o deselezionare gli ambiti di protezione a cui è associato l'oggetto. Ogni oggetto che supporta gli ambiti di protezione deve essere assegnato almeno a un ambito di protezione.  
+3.  [セキュリティ スコープの設定] ダイアログ ボックスで、このオブジェクトに関連付けられているセキュリティ スコープをオンまたはオフにします。 **** セキュリティ スコープをサポートする各オブジェクトが、少なくとも 1 つのセキュリティ スコープに割り当てられている必要があります。  
 
-4.  Scegliere **OK** per salvare gli ambiti di protezione assegnati.  
-
-    > [!NOTE]  
-    >  Quando viene creato un nuovo oggetto, è possibile assegnare l'oggetto a più ambiti di protezione. Per modificare il numero di ambiti di protezione associati all'oggetto, è necessario modificare l'assegnazione dopo la creazione dell'oggetto.  
-
-##  <a name="BKMK_ConfigColl"></a> Configurare le raccolte per la gestione della sicurezza  
- Non esistono procedure per la configurazione delle raccolte per l'amministrazione basata su ruoli. Le raccolte non hanno una configurazione dell'amministrazione basata su ruoli. Vengono invece assegnate a un utente amministratore durante la configurazione dell'utente amministratore. Le operazioni di protezione della raccolta abilitate nei ruoli di sicurezza assegnati degli utenti determinano le autorizzazioni di un utente amministratore per le raccolte e le risorse delle raccolte (membri delle raccolte).  
-
- Quando un utente amministratore dispone delle autorizzazioni per una raccolta, dispone anche delle autorizzazioni per le raccolte limitate alla raccolta specifica. Si supponga ad esempio che l'organizzazione usi una raccolta denominata All Desktops ed esista una raccolta denominata All North America Desktops limitata alla raccolta All Desktops. Se un utente amministratore dispone delle autorizzazioni per All Desktops, avrà le stesse autorizzazioni anche per la raccolta All North America Desktops.
-
- Inoltre, un utente amministratore non può usare l'autorizzazione **Elimina** o **Modifica** su una raccolta che gli è stata assegnata direttamente. Può invece usare queste autorizzazioni sulle raccolte limitate alla raccolta specifica. Nell'esempio precedente, l'utente amministratore può eliminare o modificare la raccolta All North America Desktops, ma non può eliminare o modificare la raccolta All Desktops.  
-
-##  <a name="BKMK_Create_AdminUser"></a> Creare un nuovo utente amministratore  
- Per consentire l'accesso a individui o membri di un gruppo di sicurezza per gestire Configuration Manager, creare un utente amministratore in Configuration Manager e specificare l'account Windows Utente o Gruppo utenti. È necessario assegnare a ogni utente amministratore in Configuration Manager almeno un ruolo di sicurezza e un ambito di protezione. È inoltre possibile assegnare delle raccolte per limitare l'ambito amministrativo dell'utente amministratore.  
-
- Utilizzare le seguenti procedure per creare nuovi utenti amministratori.  
-
-#### <a name="to-create-a-new-administrative-user"></a>Per creare un nuovo utente amministratore  
-
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
-
-2.  Nell'area di lavoro **Amministrazione** espandere **Sicurezza** e quindi scegliere **Utenti amministratori**.  
-
-3.  Nel gruppo **Crea** della scheda **Home** scegliere **Aggiungi utente o gruppo**.  
-
-4.  Scegliere **Sfoglia** e quindi selezionare l'account utente o il gruppo da usare per il nuovo utente amministratore.  
+4.  **[OK]** を選択して、割り当てられているキュリティ スコープを保存します。  
 
     > [!NOTE]  
-    >  Per l'amministrazione basata su console, è possibile specificare solo utenti di dominio o gruppi di sicurezza come utente amministratore.  
+    >  新しいオブジェクトを作成するときに、オブジェクトを複数のセキュリティ スコープに割り当てることができます。 オブジェクトに関連付けられているセキュリティ スコープの数を変更するには、オブジェクトの作成後に、この割り当てを変更する必要があります。  
 
-5.  In **Ruoli di protezione assegnati** scegliere **Aggiungi** per aprire un elenco dei ruoli di sicurezza disponibili, selezionare la casella relativa a uno o più ruoli e quindi scegliere **OK**.  
+##  <a name="BKMK_ConfigColl"></a> セキュリティを管理するコレクションの構成  
+ ロール ベース管理にコレクションを構成する手順はありません。 コレクションには、ロール ベース管理構成はありません。 その代わりに、管理ユーザーを構成するときに、管理ユーザーにコレクションを割り当てます。 セキュリティ ロールが割り当てられたユーザーで有効になっているコレクション セキュリティ操作によって、コレクションとコレクション リソース (コレクション メンバー) に対する管理ユーザーのアクセス許可が決まります。  
 
-6.  Scegliere una delle due opzioni seguenti per definire il comportamento degli oggetti a protezione diretta per il nuovo utente:  
+ 管理ユーザーがあるコレクションのアクセス許可を持っている場合、それらの管理ユーザーは、そのコレクションに限定されるコレクションのアクセス許可も持っています。 たとえば、組織で All Desktops というコレクションを使用しており、コレクション All Desktops に限定されている All North America Desktops というコレクションが存在するとします。 管理ユーザーが All Desktops のアクセス許可を持っている場合、その管理ユーザーはコレクション All North America Desktops に対しても同じアクセス許可を持っています。
 
-    -   **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**: questa opzione associa l'utente amministratore all'ambito di protezione **Tutto** e alle raccolte predefinite a livello radice per **Tutti i sistemi** e **Tutti gli utenti e i gruppi di utenti**. I ruoli di sicurezza assegnati all'utente definiscono l'accesso agli oggetti. I nuovi oggetti creati dall'utente amministratore vengono assegnati all'ambito di protezione **Predefinito** .  
+ さらに、管理ユーザーは、コレクションに直接割り当てられている**削除**または**変更**アクセス許可を使用することはできません。 ただし、コレクションに限定されているアクセス許可をコレクションで使用することができます。 前の例では、管理ユーザーはコレクション All North America Desktops を削除または変更できますが、コレクション All Desktops を削除または変更することはできません。  
 
-    -   **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**: per impostazione predefinita, questa opzione associa l'utente amministratore all'ambito di protezione **Predefinito** e alle raccolte **Tutti i sistemi** e **Tutti gli utenti e i gruppi di utenti**. Tuttavia, le raccolte e gli ambiti di protezione effettivi sono limitati a quelli associati all'account utilizzato per creare il nuovo utente amministratore. Questa opzione supporta l'aggiunta o la rimozione di raccolte e ambiti di protezione per personalizzare l'ambito amministrativo dell'utente amministratore.  
+##  <a name="BKMK_Create_AdminUser"></a> 新しい管理ユーザーの作成  
+ 個人またはセキュリティ グループのメンバーに Configuration Manager を管理するためのアクセス権を付与するには、Configuration Manager で管理ユーザーを作成し、ユーザーまたはユーザー グループの Windows アカウントを指定します。 Configuration Manager の各管理ユーザーに、少なくとも 1 つのセキュリティ ロールおよび少なくとも 1 つのセキュリティ スコープを割り当てる必要があります。 また、コレクションを割り当てて、管理ユーザーの管理スコープを制限することもできます。  
+
+ 新しい管理ユーザーを作成するには、次の手順に従います。  
+
+#### <a name="to-create-a-new-administrative-user"></a>新しい管理ユーザーを作成するには  
+
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
+
+2.  **[管理]** ワークスペースで、**[セキュリティ]**を展開してから、**[管理ユーザー]** を選択します。  
+
+3.  **[ホーム]** タブの **[作成]** グループで **[ユーザーまたはグループの追加]** を選択します。  
+
+4.  **[参照]** を選択し、この新しい管理ユーザーを使用するユーザー アカウントまたはグループを選択します。  
+
+    > [!NOTE]  
+    >  コンソールベースの管理では、ドメイン ユーザーまたはセキュリティ グループのみ管理ユーザーとして指定できます。  
+
+5.  **[関連付けられたセキュリティ ロール]**で、**[追加]** を選択して使用可能なセキュリティ ロールの一覧を開き、1 つ以上のセキュリティ ロールのチェック ボックスをオンにしてから **[OK]** を選択します。  
+
+6.  次の 2 つのオプションのいずれかを選択して、新しいユーザーに保護可能なオブジェクトの動作を定義します。  
+
+    -   **関連付けられているセキュリティ ロールに関連するすべての保護可能なオブジェクト**: このオプションは、セキュリティ スコープ **[すべて]**、およびルート レベルの組み込みの **[すべてのシステム]**コレクションと **[すべてのユーザーおよびユーザー グループ]** コレクションに管理ユーザーを関連付けます。 ユーザーに割り当てられているセキュリティ ロールによって、オブジェクトへのアクセスが定義されます。 この管理ユーザーが作成する新しいオブジェクトは、セキュリティ スコープ [既定] に割り当てられます。 ****  
+
+    -   **指定したセキュリティ スコープまたはコレクションに割り当てられるオブジェクトのインスタンスのみ**: 既定では、このオプションは、セキュリティ スコープ **[既定]**、および **[すべてのシステム]** コレクションと **[すべてのユーザーおよびユーザー グループ]** コレクションに管理ユーザーを関連付けます。 ただし、実際のセキュリティ スコープとコレクションは、新しい管理ユーザーを作成するために使用したアカウントに関連付けられているセキュリティ グループとコレクションに限定されます。 このオプションは、管理ユーザーの管理スコープをカスタマイズするための、セキュリティ スコープとコレクションの追加と削除をサポートしています。  
 
     > [!IMPORTANT]  
-    >  Le opzioni precedenti associano ogni raccolta e ambito di protezione assegnati a ogni ruolo di sicurezza assegnato all'utente amministratore. È possibile usare una terza opzione, **Associa ruoli di protezione assegnati a raccolte e ambiti di protezione specifici**, per associare singoli ruoli di sicurezza a raccolte e ambiti di protezione specifici. Questa terza opzione è disponibile dopo aver creato il nuovo utente amministratore, quando si modifica l'utente amministratore.  
+    >  前述のオプションは、割り当てられている各セキュリティ スコープとコレクションを、管理ユーザーに割り当てられている各セキュリティ ロールに関連付けます。 3 つ目のオプション **[管理ユーザーのセキュリティ ロールで判別された保護可能なオブジェクトのみ]** を使用して、個々のセキュリティ ロールを特定のセキュリティ スコープとコレクションに関連付けることができます。 この 3 つ目のオプションは、新しい管理ユーザーを作成した後で、その管理ユーザーを変更するときに使用できます。  
 
-7.  A seconda dell'opzione selezionata nel passaggio 6, eseguire le seguenti operazioni:  
+7.  手順 6 で選択したオプションに応じて、次の操作を実行します。  
 
-    -   Se si è selezionato **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**, scegliere **OK** per completare questa procedura.  
+    -   **[割り当てたセキュリティ ロールに関連付けられるオブジェクトのすべてのインスタンス]** を選択した場合は、**[OK]** を選択してこの手順を完了します。  
 
-    -   Se si è selezionato **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**, è possibile scegliere **Aggiungi** per selezionare raccolte e ambiti di protezione aggiuntivi. In alternativa, selezionare uno o più oggetti nell'elenco e quindi scegliere **Rimuovi** per rimuoverli. Scegliere **OK** per completare questa procedura.  
+    -   **[指定したセキュリティ スコープまたはコレクションに割り当てられるオブジェクトのインスタンスのみ]** を選択した場合は、**[追加]** を選択して追加のコレクションとセキュリティ スコープを選択したり、 一覧で 1 つ以上のオブジェクトを選択し、**[削除]** を選択して削除したりできます。 **[OK]** を選択してこの手順を完了します。  
 
-##  <a name="BKMK_ModAdminUser"></a> Modificare l'ambito amministrativo di un utente amministratore  
- È possibile modificare l'ambito amministrativo di un utente amministratore aggiungendo o rimuovendo raccolte, ruoli di sicurezza e ambiti di protezione associati all'utente. È necessario associare a ogni utente amministratore almeno un ruolo di sicurezza e un ambito di protezione. Potrebbe essere necessario assegnare una o più raccolte all'ambito amministrativo dell'utente. La maggior parte dei ruoli di sicurezza interagisce con le raccolte e non funziona correttamente senza una raccolta assegnata.  
+##  <a name="BKMK_ModAdminUser"></a> 管理ユーザーの管理スコープの変更  
+ 管理ユーザーの管理スコープを変更するには、ユーザーに関連付けられているセキュリティ ロール、セキュリティ スコープ、およびコレクションを追加または削除します。 各管理ユーザーに、少なくとも 1 つのセキュリティ ロールおよび少なくとも 1 つのセキュリティ スコープを関連付ける必要があります。 1 つまたは複数のコレクションを、ユーザーの管理スコープに割り当てることが必要になる場合があります。 大部分のセキュリティ ロールはコレクションと対話し、コレクションが割り当てられていない場合は正しく機能しません。  
 
- Quando si modifica un utente amministratore, è possibile modificare il comportamento di associazione degli oggetti a protezione diretta ai ruoli di sicurezza assegnati. Di seguito, i tre comportamenti che è possibile selezionare:  
+ 管理ユーザーを変更するときに、割り当てられているセキュリティ ロールに保護可能なオブジェクトを関連付ける動作を変更できます。 次の 3 つの動作を選択できます。  
 
--   **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**: questa opzione associa l'utente amministratore all'ambito **Tutto** e alle raccolte predefinite a livello radice per **Tutti i sistemi** e **Tutti gli utenti e i gruppi di utenti**. I ruoli di sicurezza assegnati all'utente definiscono l'accesso agli oggetti.  
+-   **関連付けられているセキュリティ ロールに関連するすべての保護可能なオブジェクト**: このオプションは、スコープ **[すべて]**、およびルート レベルの組み込みの **[すべてのシステム]** コレクションと **[すべてのユーザーおよびユーザー グループ]** コレクションに管理ユーザーを関連付けます。 ユーザーに割り当てられているセキュリティ ロールによって、オブジェクトへのアクセスが定義されます。  
 
--   **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**: questa opzione associa l'utente amministratore agli stessi ambiti di sicurezza e collezioni associate all'account usato per configurare l'utente amministratore. Questa opzione supporta l'aggiunta o la rimozione di raccolte e ruoli di sicurezza per personalizzare l'ambito amministrativo dell'utente amministratore.  
+-   **指定したセキュリティ スコープまたはコレクションに割り当てられるオブジェクトのインスタンスのみ**: このオプションは、管理ユーザーを構成するために使用したアカウントに関連付けられているのと同じセキュリティ スコープとコレクションに、管理ユーザーを関連付けます。 このオプションは、管理ユーザーの管理スコープをカスタマイズするための、セキュリティ ロールとコレクションの追加と削除をサポートしています。  
 
--   **Associa ruoli di sicurezza assegnati a raccolte e ambiti di protezione specifici**: questa opzione consente di creare associazioni specifiche tra i singoli ruoli di sicurezza e gli ambiti di protezione e le raccolte specifici per l'utente.  
-
-    > [!NOTE]  
-    >  Questa opzione è disponibile solo quando si modificano le proprietà di un utente amministratore.  
-
-La configurazione corrente per il comportamento degli oggetti a protezione diretta modifica il processo utilizzato per assegnare i ruoli di sicurezza aggiuntivi. Utilizzare le seguenti procedure basate sulle diverse opzioni per gli oggetti a protezione diretta per gestire un utente amministratore.  
-
-Usare la procedura seguente per visualizzare e gestire la configurazione per gli oggetti a protezione diretta per un utente amministratore.  
-
-#### <a name="to-view-and-manage-the-securable-object-behavior-for-an-administrative-user"></a>Per visualizzare e gestire il comportamento degli oggetti a protezione diretta per un utente amministratore  
-
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
-
-2.  Nell'area di lavoro **Amministrazione** espandere **Sicurezza** e quindi scegliere **Utenti amministratori**.  
-
-3.  Selezionare l'utente amministratore che si desidera modificare.  
-
-4.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
-
-5.  Scegliere la scheda **Ambiti di protezione** per visualizzare la configurazione corrente per gli oggetti a protezione diretta per questo utente amministratore.  
-
-6.  Per modificare il comportamento degli oggetti a protezione diretta, selezionare una nuova opzione per il comportamento di tali oggetti. Dopo aver modificato questa configurazione, vedere la procedura appropriata per altre informazioni sulla configurazione di raccolte, ambiti di protezione e ruoli di sicurezza per l'utente amministratore.  
-
-7.  Scegliere **OK** per completare la procedura.  
-
-Usare la procedura seguente per modificare un utente amministrativo con il comportamento degli oggetti a protezione diretta impostato su **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**.  
-
-#### <a name="for-option-all-securable-objects-that-are-relevant-to-their-associated-security-roles"></a>Per l'opzione: Tutte le istanze degli oggetti collegati ai ruoli di sicurezza assegnati  
-
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
-
-2.  Nell'area di lavoro **Amministrazione** espandere **Sicurezza** e quindi scegliere **Utenti amministratori**.  
-
-3.  Selezionare l'utente amministratore che si desidera modificare.  
-
-4.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
-
-5.  Scegliere la scheda **Ambiti di protezione** per assicurarsi che l'utente amministratore sia configurato per **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**.  
-
-6.  Per modificare i ruoli di sicurezza assegnati, scegliere la scheda **Ruoli di protezione**.  
-
-    -   Per assegnare ruoli di sicurezza aggiuntivi all'utente amministratore, scegliere **Aggiungi**, selezionare la casella relativa a ogni ruolo di sicurezza aggiuntivo da assegnare e quindi scegliere **OK**.  
-
-    -   Per rimuovere i ruoli di sicurezza, selezionare uno o più ruoli di sicurezza nell'elenco e quindi scegliere **Rimuovi**.  
-
-7.  Per modificare il comportamento degli oggetti a protezione diretta, scegliere la scheda **Ambiti di protezione** e scegliere una nuova opzione per il comportamento di tali oggetti. Dopo aver modificato questa configurazione, vedere la procedura appropriata per altre informazioni sulla configurazione di raccolte, ambiti di protezione e ruoli di sicurezza per l'utente amministratore.  
+-   **管理ユーザーのセキュリティ ロールで判別された保護可能なオブジェクトのみ**: このオプションでは、ユーザーに対して、個々のセキュリティ ロールと、特定のセキュリティ スコープおよびコレクション間の特定の関連付けを作成することができます。  
 
     > [!NOTE]  
-    >  Quando il comportamento degli oggetti a protezione diretta viene impostato su **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**, non è possibile aggiungere o rimuovere raccolte e ambiti di protezione specifici.  
+    >  このオプションは、管理ユーザーのプロパティを変更する場合のみ使用できます。  
 
-8.  Scegliere **OK** per completare questa procedura.  
+保護可能なオブジェクトの動作の現在の構成によって、追加のセキュリティ ロールを割り当てるために使用する手順が変わります。 管理ユーザーを管理するときには、保護可能なオブジェクト用のさまざまなオプションに基づいた、次の手順に従います。  
 
-Utilizzare la seguente procedura per modificare un utente amministratore con il comportamento degli oggetti a protezione diretta impostato su **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**.  
+管理ユーザーの保護可能なオブジェクトの構成を表示および管理するには、次の手順に従います。  
 
-#### <a name="for-option-only-securable-objects-in-specified-security-scopes-or-collections"></a>Per l'opzione: Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati  
+#### <a name="to-view-and-manage-the-securable-object-behavior-for-an-administrative-user"></a>管理ユーザーの保護可能なオブジェクトの動作を表示および管理するには  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Sicurezza** e quindi scegliere **Utenti amministratori**.  
+2.  **[管理]** ワークスペースで、**[セキュリティ]**を展開してから、**[管理ユーザー]** を選択します。  
 
-3.  Selezionare l'utente amministratore che si desidera modificare.  
+3.  変更する管理ユーザーを選択します。  
 
-4.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
+4.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-5.  Scegliere la scheda **Ambiti di protezione** per assicurarsi che l'utente sia configurato per **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**.  
+5.  **[セキュリティ スコープ]** タブを選択し、この管理ユーザーの保護可能なオブジェクトの現在の構成を表示します。  
 
-6.  Per modificare i ruoli di sicurezza assegnati, scegliere la scheda **Ruoli di protezione**.  
+6.  保護可能なオブジェクトの動作を変更するには、保護可能なオブジェクトの動作に新しいオプションを選択します。 この構成を変更したら、次に必要な操作 (セキュリティ スコープとコレクション、この管理ユーザーのセキュリティ ロールの構成) を参照してください。  
 
-    -   Per assegnare ruoli di sicurezza aggiuntivi all'utente, scegliere **Aggiungi**, selezionare la casella relativa a ogni ruolo di sicurezza aggiuntivo da assegnare e quindi scegliere **OK**.  
+7.  [**OK**] を選び、手順を完了します。  
 
-    -   Per rimuovere i ruoli di sicurezza, selezionare uno o più ruoli di sicurezza nell'elenco e quindi scegliere **Rimuovi**.  
+保護可能なオブジェクトの動作が **[関連付けられているセキュリティ ロールに関連するすべての保護可能なオブジェクト]** に設定されている管理ユーザーを変更するには、次の手順に従います。  
 
-7.  Per modificare le raccolte e gli ambiti di protezione associati ai ruoli di sicurezza, scegliere la scheda **Ambiti di protezione**.  
+#### <a name="for-option-all-securable-objects-that-are-relevant-to-their-associated-security-roles"></a>オプション: 関連付けられているセキュリティ ロールに関連するすべての保護可能なオブジェクト  
 
-    -   Per associare nuovi ambiti di protezione o raccolte ai ruoli di sicurezza assegnati all'utente amministratore, scegliere **Aggiungi** e selezionare una delle quattro opzioni. Se si seleziona **Ambito di protezione** o **Raccolta**, selezionare la casella relativa a uno o più oggetti per completare la selezione e quindi scegliere **OK**.  
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
 
-    -   Per rimuovere un ambito di protezione o una raccolta, selezionare l'oggetto e quindi scegliere **Rimuovi**.  
+2.  **[管理]** ワークスペースで、**[セキュリティ]**を展開してから、**[管理ユーザー]** を選択します。  
 
-8.  Scegliere **OK** per completare questa procedura.  
+3.  変更する管理ユーザーを選択します。  
 
-Utilizzare la seguente procedura per modificare un utente amministratore con il comportamento degli oggetti a protezione diretta impostato su **Associa ruoli di protezione assegnati a raccolte e ambiti di protezione specifici**.  
+4.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
 
-#### <a name="for-option-only-securable-objects-as-determined-by-the-security-roles-of-the-administrative-user"></a>Per l'opzione: Associa ruoli di sicurezza assegnati a raccolte e ambiti di protezione specifici  
+5.  **[セキュリティ スコープ]** タブを選択して、管理ユーザーが **[割り当てたセキュリティ ロールに関連付けられるオブジェクトのすべてのインスタンス]** に構成されていることを確認します。  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
+6.  割り当てられているセキュリティ ロールを変更するには、**[セキュリティ ロール]** タブを選択します。  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Sicurezza** e quindi scegliere **Utenti amministratori**.  
+    -   この管理ユーザーに追加のセキュリティ ロールを割り当てるには、**[追加]**を選択し、追加で割り当てる各セキュリティ ロールのチェック ボックスをオンにしてから、**[OK]** を選択します。  
 
-3.  Selezionare l'utente amministratore che si desidera modificare.  
+    -   セキュリティ ロールを削除するには、一覧から 1 つまたは複数のセキュリティ ロールを選択し、**[削除]** を選択します。  
 
-4.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
+7.  保護可能なオブジェクトの動作を変更するには、**[セキュリティ スコープ]** タブを選択し、保護可能なオブジェクトの動作に新しいオプションを選択します。 この構成を変更したら、次に必要な操作 (セキュリティ スコープとコレクション、この管理ユーザーのセキュリティ ロールの構成) を参照してください。  
 
-5.  Scegliere la scheda **Ambiti di protezione** per assicurarsi che l'utente amministratore sia configurato per **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**.  
+    > [!NOTE]  
+    >  保護可能なオブジェクトの動作が **[割り当てたセキュリティ ロールに関連付けられるオブジェクトのすべてのインスタンス]** に設定されている場合、特定のセキュリティ スコープおよびコレクションを追加または削除することはできません。  
 
-6.  Per modificare i ruoli di sicurezza assegnati, scegliere la scheda **Ruoli di protezione**.  
+8.  **[OK]** を選択してこの手順を完了します。  
 
-    -   Per assegnare ruoli di sicurezza aggiuntivi all'utente amministratore, scegliere **Aggiungi**. Nella finestra di dialogo **Aggiungi ruolo di protezione** selezionare uno o più ruoli di sicurezza disponibili, scegliere **Aggiungi** e selezionare un tipo di oggetto da associare ai ruoli di sicurezza selezionati. Se si seleziona **Ambito di protezione** o **Raccolta**, selezionare la casella relativa a uno o più oggetti per completare la selezione e quindi scegliere **OK**.  
+保護可能なオブジェクトの動作が [指定したセキュリティ スコープまたはコレクションに割り当てられるオブジェクトのインスタンスのみ] に設定されている管理ユーザーを変更するには、次の手順に従います。 ****  
+
+#### <a name="for-option-only-securable-objects-in-specified-security-scopes-or-collections"></a>オプション: 指定したセキュリティ スコープまたはコレクションに割り当てられるオブジェクトのインスタンスのみ  
+
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
+
+2.  **[管理]** ワークスペースで、**[セキュリティ]**を展開してから、**[管理ユーザー]** を選択します。  
+
+3.  変更する管理ユーザーを選択します。  
+
+4.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
+
+5.  **[セキュリティ スコープ]** タブを選択して、ユーザーが **[指定したセキュリティ スコープまたはコレクションに割り当てられるオブジェクトのインスタンスのみ]** に構成されていることを確認します。  
+
+6.  割り当てられているセキュリティ ロールを変更するには、**[セキュリティ ロール]** タブを選択します。  
+
+    -   このユーザーに追加のセキュリティ ロールを割り当てるには、**[追加]** を選択し、追加で割り当てる各セキュリティ ロールのチェック ボックスをオンにしてから、**[OK]** を選択します。  
+
+    -   セキュリティ ロールを削除するには、一覧から 1 つまたは複数のセキュリティ ロールを選択し、**[削除]** を選択します。  
+
+7.  セキュリティ ロールに関連付けられているセキュリティ スコープとコレクションを変更するには、**[セキュリティ スコープ]** タブを選択します。  
+
+    -   新しいセキュリティ スコープまたはコレクションを、この管理ユーザーに割り当てられているセキュリティ ロールに関連付けるには、**[追加]** を選択し、4 つのオプションのいずれかを選択します。 **[セキュリティ スコープ]** または **[コレクション]** を選択した場合、1 つ以上のオブジェクトのチェック ボックスをオンにしてから、**[OK]** を選択します。  
+
+    -   セキュリティ スコープまたはコレクションを削除するには、オブジェクトを選択し、**[削除]** を選択します。  
+
+8.  **[OK]** を選択してこの手順を完了します。  
+
+保護可能なオブジェクトの動作が [指定したセキュリティ スコープとコレクションに割り当てられるオブジェクトのインスタンスのみ] に設定されている管理ユーザーを変更するには、次の手順に従います。 ****  
+
+#### <a name="for-option-only-securable-objects-as-determined-by-the-security-roles-of-the-administrative-user"></a>オプション: 管理ユーザーのセキュリティ ロールで判別された保護可能なオブジェクトのみ  
+
+1.  Configuration Manager コンソールで、[**管理**] を選択します。  
+
+2.  **[管理]** ワークスペースで、**[セキュリティ]**を展開してから、**[管理ユーザー]** を選択します。  
+
+3.  変更する管理ユーザーを選択します。  
+
+4.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
+
+5.  **[セキュリティ スコープ]** タブを選択して、管理ユーザーが **[指定したセキュリティ スコープまたはコレクションに割り当てられるオブジェクトのインスタンスのみ]** に構成されていることを確認します。  
+
+6.  割り当てられているセキュリティ ロールを変更するには、**[セキュリティ ロール]** タブを選択します。  
+
+    -   この管理ユーザーに追加のセキュリティ ロールを割り当てるには、**[追加]** を選択します。 **[セキュリティ ロールの追加]** ダイアログ ボックスで、1 つ以上の使用可能なセキュリティ ロールを選択してから、**[追加]** を選択してから、選択したセキュリティ ロールに関連付けるオブジェクトの種類を選択します。 **[セキュリティ スコープ]** または **[コレクション]** を選択した場合、1 つ以上のオブジェクトのチェック ボックスをオンにしてから、**[OK]** を選択します。  
 
         > [!NOTE]  
-        >  È necessario configurare almeno un ambito di protezione prima di assegnare i ruoli di sicurezza selezionati all'utente amministratore. Quando si selezionano più ruoli di sicurezza, tutte le raccolte e gli ambiti di protezione configurati vengono associati a ogni ruolo di sicurezza selezionato.  
+        >  選択したセキュリティ ロールを管理ユーザーに割り当てる前に、少なくとも 1 つのセキュリティ スコープを構成する必要があります。 複数のセキュリティ ルールを選択した場合、構成する各セキュリティ スコープとコレクションが、選択した各セキュリティ ロールに関連付けられます。  
 
-    -   Per rimuovere i ruoli di sicurezza, selezionare uno o più ruoli di sicurezza nell'elenco e quindi scegliere **Rimuovi**.  
+    -   セキュリティ ロールを削除するには、一覧から 1 つまたは複数のセキュリティ ロールを選択し、**[削除]** を選択します。  
 
-7.  Per modificare le raccolte e gli ambiti di protezione associati a un ruolo di sicurezza specifico, scegliere la scheda **Ambiti di protezione**, selezionare il ruolo di sicurezza e quindi scegliere **Modifica**.  
+7.  特定のセキュリティ ロールに関連付けられたセキュリティ スコープとコレクションを変更するには、**[セキュリティ スコープ]** タブを選択し、セキュリティ ロールを選択してから、**[編集]** を選択します。  
 
-    -   Per associare nuovi oggetti a questo ruolo di sicurezza, scegliere **Aggiungi** e quindi selezionare il tipo di oggetto da associare ai ruoli selezionati. Se si seleziona **Ambito di protezione** o **Raccolta**, selezionare la casella relativa a uno o più oggetti per completare la selezione e quindi scegliere **OK**.  
+    -   新しいオブジェクトをこのセキュリティ ロールに関連付けるには、**[追加]** を選択し、選択したセキュリティ ロールに関連付けるオブジェクトの種類を選択します。 **[セキュリティ スコープ]** または **[コレクション]** を選択した場合、1 つ以上のオブジェクトのチェック ボックスをオンにしてから、**[OK]** を選択します。  
 
         > [!NOTE]  
-        >  È necessario configurare almeno un ambito di protezione.  
+        >  少なくとも 1 つのセキュリティ スコープを構成する必要があります。  
 
-    -   Per rimuovere una raccolta o un ambito di protezione associato al ruolo di sicurezza, selezionare l'oggetto e quindi scegliere **Rimuovi**.  
+    -   このセキュリティ ロールに関連付けられているセキュリティ スコープまたはコレクションを削除するには、オブジェクトを選択し、**[削除]** を選択します。  
 
-    -   Dopo aver completato la modifica degli oggetti associati, scegliere **OK**.  
+    -   関連付けられたオブジェクトの変更が終了したら、**[OK]** を選択します。  
 
-8.  Scegliere **OK** per completare questa procedura.  
+8.  **[OK]** を選択してこの手順を完了します。  
 
     > [!CAUTION]  
-    >  Quando un ruolo di sicurezza concede agli utenti amministratori l'autorizzazione per la distribuzione di raccolte, questi utenti possono distribuire oggetti da ogni ambito di protezione per cui dispongono dell'autorizzazione di **lettura** , anche se tale ambito è associato a un ruolo diverso.  
-
+    >  セキュリティ ロールによって管理ユーザーにコレクション展開のアクセス許可が付与されると、これらの管理ユーザーは、該当するセキュリティ スコープが異なるセキュリティ ロールに関連付けられている場合でも、オブジェクトの [読み取り] アクセス許可を持っている任意のセキュリティ スコープからオブジェクトを配布できるようになります。 ****  

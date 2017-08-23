@@ -1,230 +1,227 @@
 ---
-title: Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando System Center Configuration Manager | Microsoft Docs
-description: Proteggere i dati del dispositivo con cancellazione completa, cancellazione selettiva, blocco remoto o reimpostazione passcode usando System Center Configuration Manager.
+title: "System Center Configuration Manager によるリモート ワイプ、ロック、パスコードのリセットを使用したデータの保護 | Microsoft Docs"
+description: "System Center Configuration Manager によるフル ワイプ、選択的ワイプ、リモート ロック、パスコードのリセットを使用してデバイスのデータを保護します。"
 ms.custom: na
 ms.date: 03/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 770da7bd-02dd-474a-9604-93ff1ea0c1e4
-caps.latest.revision: 18
-caps.handback.revision: 0
+caps.latest.revision: "18"
+caps.handback.revision: "0"
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dda2f4c01078fbbd174cbcb30357554c24f6abeb
 ms.openlocfilehash: 351fdc6328dd0859d60e00b128963df738e69f81
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-system-center-configuration-manager"></a>Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando System Center Configuration Manager
+# <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-system-center-configuration-manager"></a>System Center Configuration Manager によるリモート ワイプ、ロック、パスコードのリセットを使用したデータの保護
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager include funzionalità per la cancellazione selettiva, la cancellazione completa, il blocco remoto e la reimpostazione del passcode. I dispositivi mobili possono memorizzare i dati aziendali riservati e consentire l'accesso a numerose risorse aziendali. Per aiutare a proteggere i dispositivi è possibile eseguire:  
+System Center Configuration Manager には、選択的ワイプ、フル ワイプ、リモート ロック、パスコードのリセットの機能があります。 モバイル デバイスに会社の機密情報を保存したり、モバイル デバイスから会社のリソースにアクセスしたりすることがあります。 デバイスを保護するために、次のコマンドを発行できます。  
 
-- Una cancellazione completa per ripristinare le impostazioni di fabbrica del dispositivo.  
+- デバイスを工場出荷時の状態に戻すフル ワイプ。  
 
-- Una cancellazione selettiva per rimuovere solo i dati aziendali.  
+- 会社のデータのみを削除する選択的ワイプ。  
 
-- Un blocco remoto per proteggere un dispositivo che potrebbe andare perso.  
+- 紛失した可能性があるデバイスをセキュリティで保護できるリモート ロック。  
 
-- Una reimpostazione del passcode del dispositivo.  
+- デバイスのパスコードのリセット。  
 
-## <a name="full-wipe"></a>Cancellazione completa  
-È possibile eseguire un comando di cancellazione del dispositivo se è necessario proteggere un dispositivo perso o se si ritira un dispositivo.  
+## <a name="full-wipe"></a>完全なワイプ  
+紛失したデバイスをセキュリティで保護する必要がある場合や、アクティブな使用状態のインベントリからデバイスを削除する場合、ワイプ コマンドをデバイスに発行することができます。  
 
-Impartire un comando di **cancellazione completa** di un dispositivo per ripristinarne le impostazioni di fabbrica. Questo comando rimuove i dati e le impostazioni aziendali e dell'utente. È possibile eseguire una cancellazione completa nei dispositivi Windows Phone, iOS, Android e Windows 10.  
+デバイスを工場出荷時の既定値に戻すには、 **フル ワイプ** をデバイスに発行します。 フル ワイプの場合、すべての会社とユーザーのデータと設定が削除されます。 Windows Phone、iOS、Android、Windows 10 の各デバイスでは、フル ワイプを実行できます。  
 
 > [!NOTE]
-> La cancellazione nei dispositivi Windows 10 con versioni precedenti alla versione 1511 di meno di 4 GB di RAM potrebbe determinare la mancata risposta del dispositivo. [Altre informazioni](https://technet.microsoft.com/library/mt592024.aspx#full-wipe-disables-windows-10-devices-with-less-than-4-gb-ram).
+> ワイプする Windows 10 デバイスが 1511 より前のバージョンで、RAM が 4 GB 未満の場合、ワイプを実行するとデバイスが応答しなくなることがあります。 [詳細については、こちらを参照してください](https://technet.microsoft.com/library/mt592024.aspx#full-wipe-disables-windows-10-devices-with-less-than-4-gb-ram)。
 
-#### <a name="to-initiate-a-remote-wipe-from-the-configuration-manager-console"></a>Per avviare una cancellazione remota dalla console di Configuration Manager  
+#### <a name="to-initiate-a-remote-wipe-from-the-configuration-manager-console"></a>Configuration Manager コンソールからリモート ワイプを開始するには  
 
-1. Nella console di Configuration Manager selezionare **Asset e conformità** e scegliere **Dispositivi**. In alternativa, è possibile scegliere **Raccolte dispositivi** e selezionare una raccolta.  
+1. Configuration Manager コンソールで、**[資産とコンプライアンス]** を選び、**[デバイス]** を選びます。 または、**[デバイス コレクション]** を選択してコレクションを選択できます。  
 
-2. Selezionare il dispositivo che si desidera ritirare/cancellare.  
+2. 削除またはワイプするデバイスを選択します。  
 
-3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Disattiva/Cancella**.  
+3. **[デバイス グループ]** の **[リモート デバイスの操作]** を選択し、**[削除/ワイプ]** を選択します。  
 
-## <a name="selective-wipe"></a>Cancellazione selettiva  
-Eseguire una **cancellazione selettiva** per rimuovere solo i dati aziendali presenti sul dispositivo. La tabella seguente descrive i dati che vengono rimossi in base al tipo di piattaforma e l'effetto sui dati che rimangono sul dispositivo dopo la cancellazione selettiva.  
+## <a name="selective-wipe"></a>選択的ワイプ  
+会社のデータのみを削除するには、 **選択的ワイプ** をデバイスに発行します。 次の表では、プラットフォームごとに、削除されるデータと、選択的ワイプの実行後にデバイスに残るデータへの影響について説明します。  
 
 **iOS**  
 
-|Contenuti rimossi quando si disattiva un dispositivo|iOS|  
+|デバイスをインベントリから削除するときに削除されるコンテンツ|iOS|  
 |--------------------------------------------|---------|  
-|App aziendali e dati associati installati usando Configuration Manager e Intune|Le app vengono disinstallate e vengono rimossi i dati dell'app aziendale.|  
-|Profili VPN e Wi-Fi|Rimosso.|  
-|Certificati|Rimossi e revocati.|  
-|Impostazioni|Rimosse, tranne per: **Consenti chiamate in roaming**, **Consenti roaming dei dati** e **Consenti la sincronizzazione automatica durante il roaming**.|  
-|Agente di gestione|Il profilo di gestione viene rimosso.|  
-|Profili di posta elettronica|Per i profili di posta elettronica configurati da Intune, vengono rimossi l'account e l'indirizzo di posta elettronica.|  
+|Configuration Manager と Intune を使用してインストールされた会社のアプリと関連データ|アプリはアンインストールされます。 会社のアプリ データは削除されます。|  
+|VPN と Wi-Fi プロファイル|削除されます。|  
+|証明書|削除されて失効します。|  
+|設定|削除されます。例外: **音声通話ローミングを許可する**、**データ ローミングを許可する**、**ローミング中に自動同期を使用する**。|  
+|管理エージェント|管理プロファイルは削除されます。|  
+|電子メール プロファイル|Intune によって設定された電子メール プロファイルの場合、電子メール アカウントと電子メールが削除されます。|  
 
-**Android e Android Samsung KNOX Standard**  
+**Android および Android Samsung Standard KNOX**  
 
-|Contenuti rimossi quando si disattiva un dispositivo|Android|Samsung KNOX Standard|  
+|デバイスをインベントリから削除するときに削除されるコンテンツ|Android|Samsung KNOX Standard|  
 |--------------------------------------------|-------------|------------------|  
-|App aziendali e dati associati installati usando Configuration Manager e Intune|Le app e i dati rimangono installati.|Le app vengono disinstallate|  
-|Profili VPN e Wi-Fi|Rimosso.|Rimosso.|  
-|Certificati|Revocati.|Revocati.|  
-|Impostazioni|I requisiti vengono rimossi.|I requisiti vengono rimossi.|  
-|Agente di gestione|Il privilegio di amministratore del dispositivo viene revocato.|Il privilegio di amministratore del dispositivo viene revocato.|  
-|Profili di posta elettronica|Non applicabile.|Per i profili di posta elettronica configurati da Intune, vengono rimossi l'account e l'indirizzo di posta elettronica.|  
+|Configuration Manager と Intune を使用してインストールされた会社のアプリと関連データ|アプリとデータはインストールされたままです。|アプリはアンインストールされます。|  
+|VPN と Wi-Fi プロファイル|削除されます。|削除されます。|  
+|証明書|失効します。|失効します。|  
+|設定|要件が削除されます。|要件が削除されます。|  
+|管理エージェント|デバイス管理者特権は無効になります。|デバイス管理者特権は無効になります。|  
+|電子メール プロファイル|該当なし。|Intune によって設定された電子メール プロファイルの場合、電子メール アカウントと電子メールが削除されます。|  
 
 **Android for Work**
 
-Quando si esegue la cancellazione selettiva in un dispositivo Android for Work, viene rimosso il profilo di lavoro insieme a tutti i dati, le app e le impostazioni presenti nel profilo di lavoro stesso sul dispositivo in questione. Questo impedisce la gestione del dispositivo con Configuration Manager e Intune. La cancellazione completa non è supportata per Android for Work.
+Android for Work デバイスで選択的ワイプを行うと、そのデバイスの仕事用プロファイルが削除され、プロファイルに含まれるすべてのデータ、アプリケーション、設定が削除されます。 Configuration Manager と Intune の管理対象からそのデバイスが外れます。 Android for Work の場合、完全なワイプには対応していません。
 
- **Windows 10, Windows 8.1, Windows RT 8.1 e Windows RT**  
+ **Windows 10、Windows 8.1、Windows RT 8.1、Windows RT**  
 
-|Contenuti rimossi quando si disattiva un dispositivo|Windows 10, Windows 8.1 e Windows RT 8.1|  
+|デバイスをインベントリから削除するときに削除されるコンテンツ|Windows 10、Windows 8.1、および Windows RT 8.1|  
 |---------------------------------|-------------|
-|App aziendali e dati associati installati usando Configuration Manager e Intune|Le app vengono disinstallate e le chiavi di trasferimento locale vengono rimosse. Alle app che usano la cancellazione selettiva di Windows verrà revocata la chiave di crittografia e i dati non saranno più accessibili.|  
-|Profili VPN e Wi-Fi|Rimosso.|  
-|Certificati|Rimossi e revocati.|  
-|Impostazioni|I requisiti vengono rimossi.|
-|Agente di gestione|Non applicabile. L'agente di gestione è incorporato.|  
-|Profili di posta elettronica|Vengono rimosse le applicazioni di posta elettronica abilitate per EFS, tra cui i messaggi e gli allegati dell'applicazione Windows Mail.|  
+|Configuration Manager と Intune を使用してインストールされた会社のアプリと関連データ|アプリケーションがアンインストールされて、サイドローディング キーが削除されます。 Windows 選択型ワイプを使用するアプリケーションでは、暗号化キーが失効になり、データにアクセスできなくなります。|  
+|VPN と Wi-Fi プロファイル|削除されます。|  
+|証明書|削除されて失効します。|  
+|設定|要件が削除されます。|
+|管理エージェント|該当なし。 管理エージェントは組み込まれています。|  
+|電子メール プロファイル|Windows の電子メールと添付ファイル用のメール アプリを含む EFS 対応の電子メールが削除されます。|  
 
- **Windows 10 Mobile, Windows Phone 8.0 e Windows Phone 8.1**
+ **Windows 10 Mobile、Windows Phone 8.0、Windows Phone 8.1**
 
-|Contenuti rimossi quando si disattiva un dispositivo|Windows 10 Mobile, Windows Phone 8 e Windows Phone 8.1|  
+|デバイスをインベントリから削除するときに削除されるコンテンツ|Windows 10 Mobile、Windows Phone 8、および Windows Phone 8.1|  
 |-|-|
-|App aziendali e dati associati installati usando Configuration Manager e Intune|Le app vengono disinstallate e vengono rimossi i dati dell'app aziendale.|  
-|Profili VPN e Wi-Fi|Rimossi per Windows 10 Mobile e Windows Phone 8.1.|  
-|Certificati|Rimosso per Windows Phone 8.1.|  
-|Agente di gestione|Non applicabile. L'agente di gestione è incorporato.|  
-|Profili di posta elettronica|Rimossi (ad eccezione di Windows Phone 8.0).|  
+|Configuration Manager と Intune を使用してインストールされた会社のアプリと関連データ|アプリはアンインストールされます。 会社のアプリ データは削除されます。|  
+|VPN と Wi-Fi プロファイル|Windows 10 Mobile と Windows Phone 8.1 の場合に削除されます。|  
+|証明書|Windows Phone 8.1 の場合に削除されます。|  
+|管理エージェント|該当なし。 管理エージェントは組み込まれています。|  
+|電子メール プロファイル|削除されます (Windows Phone 8.0 を除く)。|  
 
-Le seguenti impostazioni vengono inoltre rimosse dai dispositivi Windows 10 Mobile e Windows Phone 8.1:  
+Windows 10 Mobile および Windows Phone 8.1 のデバイスからは、次の設定も削除されます。  
 
-- **Richiedi una password per sbloccare i dispositivi mobili**  
-- **Consenti password semplici**  
-- **Lunghezza minima password**  
-- **Tipo di password richiesto**
-- **Scadenza password (giorni)**  
-- **Ricorda cronologia password**  
-- **Numero di errori di accesso ripetuti consentiti prima della cancellazione del dispositivo**  
-- **Minuti di inattività prima che venga richiesta la password**  
-- **Tipo di password richiesto - numero minimo di set di caratteri**  
-- **Consenti dispositivo foto/video**
-- **Richiedi crittografia sui dispositivi mobili**  
-- **Consenti archivi rimovibili**  
-- **Consenti browser Web**  
-- **Consenti archivio applicazioni**  
-- **Consenti acquisizione schermo**  
-- **Consenti georilevazione**  
-- **Consenti account Microsoft**  
-- **Consenti copia e incolla**  
-- **Consenti tethering Wi-Fi**  
-- **Consenti connessione automatica agli hotspot Wi-Fi gratuiti**  
-- **Consenti creazione report degli hotspot Wi-Fi**  
-- **Consenti ripristino impostazioni predefinite**
-- **Consenti Bluetooth**  
-- **Consenti NFC**
-- **Consenti Wi-Fi**
+- **モバイル デバイスのロックを解除するパスワードを要求する**  
+- **単純なパスワードを許可する**  
+- **最小のパスワードの長さ**  
+- **必要なパスワードの種類**
+- **パスワードの有効期限 (日)**  
+- **パスワードの履歴を記憶する**  
+- **デバイスをワイプするまでの連続サインイン エラーの数**  
+- **パスワードが必要になるまでの非アクティブ状態の時間 (分)**  
+- **必要なパスワードの種類 - 文字セットの最小数**  
+- **カメラを許可する**
+- **モバイル デバイスの暗号化を要求する**  
+- **リムーバブル記憶域を許可する**  
+- **Web ブラウザーを許可する**  
+- **アプリケーション ストアを許可する**  
+- **画面のキャプチャを許可する**  
+- **位置情報を許可する**  
+- **Microsoft アカウントを許可する**  
+- **コピーと貼り付けを許可する**  
+- **Wi-Fi テザリングを許可する**  
+- **無料 Wi-Fi スポットへの自動接続を許可する**  
+- **Wi-Fi スポットの報告を許可する**  
+- **工場出荷時のリセットを許可する**
+- **Bluetooth を許可する**  
+- **NFC を許可する**
+- **Wi-Fi を許可する**
 
-#### <a name="to-initiate-a-remote-wipe-from-the-configuration-manager-console"></a>Per avviare una cancellazione remota dalla console di Configuration Manager  
+#### <a name="to-initiate-a-remote-wipe-from-the-configuration-manager-console"></a>Configuration Manager コンソールからリモート ワイプを開始するには  
 
-1. Nella console di Configuration Manager selezionare **Asset e conformità** e scegliere **Dispositivi**. In alternativa, è possibile scegliere **Raccolte dispositivi** e selezionare una raccolta.  
+1. Configuration Manager コンソールで、**[資産とコンプライアンス]** を選び、**[デバイス]** を選びます。 または、**[デバイス コレクション]** を選択してコレクションを選択できます。  
 
-2. Selezionare il dispositivo che si desidera ritirare/cancellare.  
+2. 削除またはワイプするデバイスを選択します。  
 
-3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Disattiva/Cancella**.  
+3. **[デバイス グループ]** の **[リモート デバイスの操作]** を選択し、**[削除/ワイプ]** を選択します。  
 
-## <a name="wiping-efs-enabled-content"></a>Cancellazione dei contenuti abilitati EFS  
-Windows 8.1 e Windows RT 8.1 supportano la cancellazione selettiva dei contenuti crittografati con EFS. Quanto descritto di seguito si applica alla cancellazione selettiva di contenuti abilitati EFS:  
+## <a name="wiping-efs-enabled-content"></a>EFS 対応コンテンツのワイプ  
+Windows 8.1 と Windows RT 8.1 では、暗号化ファイル システム (EFS) 暗号化コンテンツの選択的ワイプをサポートしています。 EFS 対応コンテンツの選択的ワイプには次のものが適用されます。  
 
-- Solo le app e i dati protetti da EFS attraverso lo stesso dominio Internet come account Intune vengono cancellati in modo selettivo. Per altre informazioni, vedere [Cancellazione selettiva di Windows per la gestione di dati del dispositivo](http://technet.microsoft.com/library/dn486874.aspx).  
+- Intune アカウントと同じインターネット ドメインを使用して EFS で保護されているアプリとデータのみが、選択的にワイプされます。 詳細については、「 [Windows のデバイス データ管理の選択的ワイプ (英語)](http://technet.microsoft.com/library/dn486874.aspx)」を参照してください。  
 
-- In caso di modifiche al dominio associato con EFS, potranno essere necessarie fino a 48 ore prima che le app e i dati che usano il nuovo dominio siano cancellati in modo selettivo.  
+- EFS に関連付けられているドメインに何らかの変更が加えられた場合、新しいドメインを使用するアプリケーションとデータが選択的にワイプできるようになるまで最大 48 時間かかります。  
 
-- Ogni dominio registrato con Intune corrisponde al dominio che verrà cancellato.  
+- Intune に登録されている各ドメインは、ワイプされるドメインです。  
 
-I dati e le app attualmente supportati dalla cancellazione selettiva EFS sono:  
+EFS の選択的ワイプで現在サポートされているデータとアプリケーションは次のとおりです。  
 
-- App di posta elettronica per Windows.  
+- Windows 用メール アプリケーション  
 
-- Cartelle di lavoro.
+- 作業フォルダー
 
-- File e cartelle crittografate con EFS. Per altre informazioni, vedere [Procedure ottimali per la crittografia del file system](http://support.microsoft.com/kb/223316).  
+- EFS で暗号化されたファイルとフォルダー 詳細については、「 [ファイル システムを暗号化するためのベスト プラクティス](http://support.microsoft.com/kb/223316)」を参照してください。  
 
-### <a name="best-practices-for-selective-wipe"></a>Procedure consigliate per la cancellazione selettiva  
+### <a name="best-practices-for-selective-wipe"></a>選択的ワイプのベスト プラクティス  
 
-- Per cancellare correttamente i messaggi di posta elettronica, configurare profili di posta elettronica nei dispositivi iOS e Windows Phone 8.1.  
+- 電子メールのワイプを成功させるには、iOS と Windows Phone 8.1 デバイスに電子メール プロファイルを設定します。  
 
-- Per cancellare correttamente le app, assicurarsi che le app vengano distribuite con la gestione delle app per dispositivi mobili.  
+- アプリケーションのワイプを成功させるには、アプリケーションがモバイル デバイス アプリケーションの管理によって配布されていることを確認します。  
 
-- Per iOS, configurare l'impostazione **Consenti backup in iCloud** su **Non consentire** in modo che gli utenti non possano ripristinare il contenuto con iCloud.  
+- iOS の場合、ユーザーが iCloud を使用してコンテンツを復元できないように、**[iCloud へのバックアップを許可する]** の設定を **[許可しない]** に構成します。  
 
-- Se un account è stato disattivato, dopo un anno Intune ritirerà l'account e verrà eseguita una cancellazione selettiva.  
+- アカウントが非アクティブになっていると、1 年後にアカウントが Intune によって削除され、選択的ワイプが実行されます。  
 
-##  <a name="passcode-reset"></a>Reimpostazione del passcode  
-Se un utente dimentica il passcode, è possibile aiutarlo rimuovendo il passcode da un dispositivo oppure forzando l'uso di un nuovo passcode temporaneo su un dispositivo. La tabella seguente illustra il funzionamento della reimpostazione del passcode su diverse piattaforme per dispositivi mobili.  
+##  <a name="passcode-reset"></a>パスコードのリセット  
+ユーザーがパスコードを忘れた場合、デバイスからパスコードを削除したり、デバイスに新しい一時的なパスコードを強制したりすることができます。 以下の表は、各モバイル プラットフォームでパスコードをリセットしたときの動作です。  
 
-|Piattaforma|Reimpostazione del passcode|  
+|プラットフォーム|パスコードのリセット|  
 |--------------|--------------------|  
-|iOS|Funzionalità supportata per cancellare il passcode da un dispositivo. Non implica la creazione di un nuovo passcode temporaneo.|
-|macOS| Non supportata.|
-|Android|Funzionalità supportata; implica la creazione di un passcode temporaneo.|
-|Android for Work | Non supportata.|
-|PC con Windows 10|Non supportata.|  
-|Windows 10 Mobile|Funzionalità supportata; esclude i dispositivo aggiunti ad Azure AD.|
-|Windows Phone 8.1|Supportata.|  
-|Windows RT 8.1 |Non supportata.|  
-|PC con Windows 8.1 |Non supportata.|  
+|iOS|デバイスからパスコードをクリアする場合にサポートされます。 新しい一時的なパスコードは作成されません。|
+|macOS| サポートされていません。|
+|Android|サポートされます。一時的なパスコードが作成されます。|
+|Android for Work | サポートされていません。|
+|Windows 10 PC|サポートされていません。|  
+|Windows 10 Mobile|サポートされます。Azure AD に参加しているデバイスを除きます。|
+|Windows Phone 8.1|サポートしています。|  
+|Windows RT 8.1 |サポートされていません。|  
+|Windows 8.1 PC |サポートされていません。|  
 
-#### <a name="to-reset-the-passcode-on-a-mobile-device-remotely-in-configuration-manager"></a>Per reimpostare il passcode su un dispositivo mobile in modalità remota in Configuration Manager  
+#### <a name="to-reset-the-passcode-on-a-mobile-device-remotely-in-configuration-manager"></a>Configuration Manager を使用してリモートでモバイル デバイスのパスコードをリセットするには  
 
-1. Nella console di Configuration Manager selezionare **Asset e conformità** e scegliere **Dispositivi**. In alternativa, è possibile scegliere **Raccolte dispositivi** e selezionare una raccolta.  
+1. Configuration Manager コンソールで、**[資産とコンプライアンス]** を選び、**[デバイス]** を選びます。 または、**[デバイス コレクション]** を選択してコレクションを選択できます。  
 
-2. Selezionare il dispositivo o i dispositivi per cui si desidera reimpostare il passcode.  
+2. パスコードをリセットするデバイス (複数も可) を選択します。  
 
-3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Reimpostazione del passcode**.  
+3. **[デバイス グループ]** の **[リモート デバイスの操作]** を選択し、**[パスコードのリセット]** を選択します。  
 
-#### <a name="to-show-the-state-of-the-passcode-reset"></a>Per mostrare lo stato della reimpostazione del passcode  
+#### <a name="to-show-the-state-of-the-passcode-reset"></a>パスコードのリセットの状態を表示するには  
 
-1. Nella console di Configuration Manager selezionare **Asset e conformità** e scegliere **Dispositivi**. In alternativa, è possibile scegliere **Raccolte dispositivi** e selezionare una raccolta.  
+1. Configuration Manager コンソールで、**[資産とコンプライアンス]** を選び、**[デバイス]** を選びます。 または、**[デバイス コレクション]** を選択してコレクションを選択できます。  
 
-2. Selezionare il dispositivo o i dispositivi per cui si desidera mostrare lo stato della reimpostazione del passcode.  
+2. パスコードのリセットの状態を表示するデバイス (複数も可) を選択します。  
 
-3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Mostra stato passcode**.  
+3. **[デバイス グループ]** の **[リモート デバイスの操作]** を選択し、**[Show Passcode State (パスコードの状態の表示)]** を選択します。  
 
-## <a name="remote-lock"></a>Blocco remoto  
-Se un utente perde il dispositivo, è possibile bloccare il dispositivo in modalità remota. Nella tabella seguente è illustrato il funzionamento del blocco remoto su diverse piattaforme per dispositivi mobili.  
+## <a name="remote-lock"></a>リモート ロック  
+ユーザーがデバイスを紛失した場合は、リモートでデバイスをロックできます。 次の表に、各モバイル プラットフォームのリモート ロックの動作を示します。  
 
-|Piattaforma|Blocco remoto|  
+|プラットフォーム|リモート ロック|  
 |--------------|-----------------|  
-|iOS|Supportata.|  
-|Android|Supportata.|  
-|Windows 10|Non supportato al momento.|  
-|Windows Phone 8 e Windows Phone 8.1|Supportata.|  
-|Windows RT 8.1 |Funzionalità supportata se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|  
-|Windows 8.1|Funzionalità supportata se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|  
+|iOS|サポートしています。|  
+|Android|サポートしています。|  
+|Windows 10|現時点ではサポートされていません。|  
+|Windows Phone 8 および Windows Phone 8.1|サポートしています。|  
+|Windows RT 8.1 |デバイスの現在のユーザーが、デバイスを登録したユーザーと同じ場合にはサポートされます。|  
+|Windows 8.1|デバイスの現在のユーザーが、デバイスを登録したユーザーと同じ場合にはサポートされます。|  
 
-#### <a name="to-lock-a-mobile-device-remotely-through-the-configuration-manager-console"></a>Per bloccare un dispositivo mobile in modalità remota tramite la console di Configuration Manager  
+#### <a name="to-lock-a-mobile-device-remotely-through-the-configuration-manager-console"></a>Configuration Manager コンソールを使用してリモートでモバイル デバイスをロックするには  
 
-1. Nella console di Configuration Manager selezionare **Asset e conformità** e scegliere **Dispositivi**. In alternativa, è possibile scegliere **Raccolte dispositivi** e selezionare una raccolta.  
+1. Configuration Manager コンソールで、**[資産とコンプライアンス]** を選び、**[デバイス]** を選びます。 または、**[デバイス コレクション]** を選択してコレクションを選択できます。  
 
-2. Selezionare il dispositivo o i dispositivi da bloccare.  
+2. ロックするデバイス (複数も可) を選択します。  
 
-3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Blocco remoto**.  
+3. **[デバイス グループ]** の **[リモート デバイスの操作]** を選択し、**[リモート ロック]** を選択します。  
 
-#### <a name="to-show-the-state-of-the-remote-lock"></a>Per mostrare lo stato del blocco remoto  
+#### <a name="to-show-the-state-of-the-remote-lock"></a>リモート ロックの状態を表示するには  
 
-1. Nella console di Configuration Manager selezionare **Asset e conformità** e scegliere **Dispositivi**. In alternativa, è possibile scegliere **Raccolte dispositivi** e selezionare una raccolta.  
+1. Configuration Manager コンソールで、**[資産とコンプライアンス]** を選び、**[デバイス]** を選びます。 または、**[デバイス コレクション]** を選択してコレクションを選択できます。  
 
-2. Selezionare il dispositivo per cui si desidera mostrare lo stato del blocco remoto.  
+2. リモート ロックの状態を表示するデバイスを選択します。  
 
-3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Mostra stato blocco remoto**.  
+3. **[デバイス グループ]** の **[リモート デバイスの操作]** を選択し、**[リモート ロック状態の表示]** を選択します。  
 
-### <a name="see-also"></a>Vedere anche  
-[Cancellazione selettiva di Windows per la gestione di dati del dispositivo](http://technet.microsoft.com/library/dn486874.aspx)   
-
+### <a name="see-also"></a>関連項目  
+[Windows のデバイス データ管理の選択的ワイプ (英語)](http://technet.microsoft.com/library/dn486874.aspx)   

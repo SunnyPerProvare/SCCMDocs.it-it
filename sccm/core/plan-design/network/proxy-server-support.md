@@ -1,90 +1,86 @@
 ---
-title: Supporto dei server proxy | Microsoft Docs
-description: Informazioni sul supporto di System Center Configuration Manager per i server proxy usato dai server di sistema del sito e dai client.
+title: "プロキシ サーバーのサポート | Microsoft Docs"
+description: "サイトシステム サーバーやクライアントが使用するプロキシ サーバーを System Center Configuration Manager でサポートする方法について説明します。"
 ms.custom: na
 ms.date: 2/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9123a87a-0b6f-43c7-b5c2-fac5d09686b1
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c4f30e4839709722b216262b21d7b51c07d24d1e
 ms.openlocfilehash: dc36be47310d2c2178c974a2b503d0b5f9f6e2ec
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="proxy-server-support-in-system-center-configuration-manager"></a>Supporto dei server proxy in System Center Configuration Manager
+# <a name="proxy-server-support-in-system-center-configuration-manager"></a>System Center Configuration Manager でのプロキシ サーバーのサポート
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-I client e i server del sistema del sito di System Center Configuration Manager possono usare un server proxy.  
+System Center Configuration Manager のサイト システム サーバーとクライアントの両方でプロキシ サーバーを利用することができます。  
 
-## <a name="site-system-servers"></a>Server del sistema del sito  
-Quando i ruoli del sistema del sito devono connettersi a Internet, è possibile configurarli per l'uso di un server proxy.  
+## <a name="site-system-servers"></a>サイト システム サーバー  
+サイト システムの役割がインターネットに接続する必要がある場合は、プロキシ サーバーを使用するようにそれらを構成できます。  
 
--   Un computer che ospita un server del sistema del sito supporta una configurazione di server proxy singolo condivisa da tutti i ruoli del sistema del sito nello stesso computer. Se sono necessari server proxy separati per diversi ruoli o istanze di un ruolo, è necessario inserire i ruoli in server del sistema del sito separati.  
+-   サイト システム サーバーをホストするコンピューターでは、そのコンピューター上のすべてのサイト システムの役割が共有する、単一のプロキシ サーバー構成をサポートしています。 異なる役割または役割のインスタンスごとに別々のプロキシ サーバーが必要な場合は、別々のサイト システム サーバーにそれらの役割を配置する必要があります。  
 
--   Quando si configurano nuove impostazioni del server proxy per un server del sistema del sito che ha già una configurazione del server proxy, la configurazione originale viene sovrascritta.  
+-   既にプロキシ サーバー構成が存在するサイト システム サーバーで新しいプロキシ サーバーの設定を構成すると、元の構成が上書きされます。  
 
--   Le connessioni al proxy usano l'account di **sistema** del computer che ospita il ruolo del sistema del sito.  
+-   プロキシへの接続では、サイト システムの役割をホストするコンピューターの**システム** アカウントが使用されます。  
 
-I ruoli del sistema del sito seguenti si connettono a Internet e possono richiedere un server proxy.  Con un'unica eccezione, i ruoli del sistema del sito che possono usare un proxy lo fanno senza bisogno di alcuna configurazione aggiuntiva. L'eccezione è rappresentata dal punto di aggiornamento software. L'elenco seguente riporta informazioni sulle configurazioni aggiuntive necessarie per un punto di aggiornamento software:  
+次のサイト システムの役割はインターネットに接続し、プロキシ サーバーを必要とする場合があります。  1 つの例外を除いて、プロキシを使用可能なサイト システムの役割は追加の構成なしにプロキシを使用します。 例外は、ソフトウェアの更新ポイントです。 次に、ソフトウェアの更新ポイントに必要な追加の構成に関する情報を示します。  
 
-**Punto di sincronizzazione di Asset Intelligence**: questo ruolo del sistema del sito si connette a Microsoft e usa una configurazione del server proxy nel computer che ospita il punto di sincronizzazione di Asset Intelligence.  
+**資産インテリジェンス同期ポイント** - このサイト システムの役割では、Microsoft に接続して、資産インテリジェンス同期ポイントをホストするコンピューターのプロキシ サーバー構成を使用します。  
 
-**Punto di distribuzione basato su cloud**: per configurare un server proxy per un punto di distribuzione basato su cloud, configurare il proxy nel sito primario che gestisce tale punto di distribuzione.  
+**クラウド ベースの配布ポイント** - クラウド ベースの配布ポイント用にプロキシ サーバーを設定するには、クラウド ベースの配布ポイントを管理するプライマリ サイトでプロキシを設定します。  
 
-Per questa configurazione, il server del sito primario:  
+この構成では、プライマリ サイト サーバーは次のようになります。  
 
--   Deve riuscire a connettersi a Microsoft Azure per la configurazione, il monitoraggio e la distribuzione del contenuto al punto di distribuzione.  
+-   Microsoft Azure に接続してコンテンツのセットアップ、監視、および配布ポイントへの配布を実行できる必要があります。  
 
--   Usa l'account di sistema del computer per effettuare la connessione.  
+-   そのコンピューターのシステム アカウントを使用して接続を確立します。  
 
--   Usa il Web browser predefinito del computer.  
+-   そのコンピューターの既定の Web ブラウザーを使用します。  
 
-Non è possibile configurare un server proxy nel punto di distribuzione basato su cloud in Microsoft Azure.  
+Microsoft Azure のクラウドベースの配布ポイントでは、プロキシ サーバーをセットアップできません。  
 
-**Punto di connessione cloud**: questo ruolo del sistema del sito si connette al servizio cloud di Configuration Manager per scaricare gli aggiornamenti di versione per Configuration Manager e usa un server proxy configurato nel computer che ospita il punto di connessione del servizio.  
+**クラウド接続ポイント** - このサイト システムの役割は、Configuration Manager クラウド サービスに接続して Configuration Manager のバージョン更新をダウンロードし、サービス接続ポイントをホストするコンピューター上で構成されたプロキシ サーバーを使用します。  
 
-**Connettore Exchange Server**: questo ruolo del sistema del sito si connette a Exchange Server e usa una configurazione del server proxy nel computer che ospita il connettore Exchange Server.  
+**Exchange Server コネクタ** - このサイト システムの役割は、Exchange Server に接続して、Exchange Server コネクタをホストするコンピューターのプロキシ サーバー構成を使用します。  
 
-**Punto di connessione del servizio**: questo ruolo del sistema del sito si connette a Microsoft Intune e usa una configurazione del server proxy nel computer che ospita il punto di connessione del servizio.  
+**サービス接続ポイント** - このサイト システムの役割は Microsoft Intune に接続して、サービス接続ポイントをホストするコンピューターのプロキシ サーバー構成を使用します。  
 
-**Punto di aggiornamento software**: questo ruolo del sistema del sito può usare il proxy quando si connette a Microsoft Update per scaricare le patch e sincronizzare le informazioni sugli aggiornamenti. I punti di aggiornamento software usano un proxy solo per le opzioni seguenti, se abilitate durante la configurazione di tali punti:  
+**ソフトウェアの更新ポイント** - このサイト システムの役割は、Microsoft Update に接続するときにプロキシを使用して、修正プログラムをダウンロードし、更新プログラムに関する情報を同期することができます。 ソフトウェアの更新ポイントでは、そのセットアップ時に有効にした以下のオプションに関してのみプロキシが使用されます。  
 
--   **Usa un server proxy durante la sincronizzazione degli aggiornamenti software**  
+-   **[ソフトウェア更新プログラムを同期するときにプロキシ サーバーを使用する]**  
 
--   **Usare un server proxy quando si scaricano contenuti tramite le regole di distribuzione automatica**. Anche se disponibile, questa opzione non viene usata dai punti di aggiornamento software nei siti secondari.  
+-   **[自動展開規則を使用してコンテンツをダウンロードするときにプロキシ サーバーを使用する]** (使用可能な場合でも、セカンダリ サイトのソフトウェアの更新ポイントではこの設定が使用されません)  
 
-Configurare le impostazioni del server proxy nella pagina Punto di aggiornamento software attivo dell'Aggiunta guidata ruoli del sistema del sito oppure nella scheda **Generale** in **Proprietà del componente del punto di aggiornamento software**.  
+サイト システムの役割の追加ウィザードの [アクティブなソフトウェアの更新ポイント] ページまたは**ソフトウェアの更新ポイント コンポーネントのプロパティ**の **[全般]** タブでプロキシ サーバー設定を構成します。  
 
--   Le impostazioni del server proxy sono associate solo al punto di aggiornamento software nel sito.  
+-   プロキシ サーバー設定は、そのサイトのソフトウェアの更新ポイントにのみ関連付けられます。  
 
--   Le opzioni del server proxy sono disponibili solo quando è presente un server proxy già configurato per il server del sistema del sito che ospita il punto di aggiornamento software.  
+-   プロキシ サーバー オプションは、ソフトウェアの更新ポイントをホストするサイト システム サーバー用に設定されたプロキシ サーバーが既に存在する場合にのみ使用できます。  
 
 > [!NOTE]  
->  Per impostazione predefinita, l'account di **sistema** del server in cui è stata creata una regola di distribuzione automatica viene usato per connettersi a Internet e scaricare gli aggiornamenti software quando sono in esecuzione le regole di distribuzione automatica.  
+>  既定では、自動展開ルールを実行する際、インターネットへの接続およびソフトウェア更新プログラムのダウンロードに、自動展開ルールが作成されたサーバーの**システム** アカウントを使用します。  
 >   
->  Quando l'account non ha accesso a Internet, non è possibile scaricare gli aggiornamenti software e in ruleengine.log viene registrata la voce seguente: **Failed to download the update from internet. Error = 12007** (Impossibile scaricare l'aggiornamento da Internet. Errore = 12007).  
+>  このアカウントでインターネットにアクセスできない場合、ソフトウェア更新プログラムはダウンロードされず、ruleengine.log に次のエントリが書き込まれます。**Failed to download the update from internet.Error = 12007.**  
 
-#### <a name="to-set-up-the-proxy-server-for-a-site-system-server"></a>Per configurare il server proxy per un server del sistema del sito  
+#### <a name="to-set-up-the-proxy-server-for-a-site-system-server"></a>サイト システム サーバーのプロキシ サーバーをセットアップするには  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione**, espandere **Configurazione del sito** e quindi scegliere **Server e ruoli del sistema del sito**.  
+1.  Configuration Manager コンソールで、**[管理]** を選択して、**[サイトの構成]** を展開してから、**[サーバーとサイト システムの役割]** を選択します。  
 
-2.  Scegliere il server del sistema del sito che si vuole modificare, quindi nel riquadro dei dettagli fare clic con il pulsante destro del mouse su **Sistema del sito** e scegliere **Proprietà**.  
+2.  編集するサイト システム サーバーを選択し、詳細ウィンドウで **[サイト システム]** を右クリックし、**[プロパティ]** を選択します。  
 
-3.  In Proprietà sistema del sito selezionare la scheda **Proxy** e quindi configurare le impostazioni proxy per il server del sito primario.  
+3.  [サイト システムのプロパティ] で **[プロキシ]** タブを選択し、そのプライマリ サイト サーバーのプロキシ設定を構成します。  
 
-4.  Scegliere **OK** per salvare la nuova configurazione del server proxy.  
-
+4.  **[OK]** をクリックして新しいプロキシ サーバー構成を保存します。  

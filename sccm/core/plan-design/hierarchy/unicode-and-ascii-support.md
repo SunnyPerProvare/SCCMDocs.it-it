@@ -1,149 +1,145 @@
 ---
-title: Supporto Unicode e ASCII | Microsoft Docs
-description: Informazioni sul supporto di caratteri Unicode e ASCII in oggetti di System Center Configuration Manager.
+title: "Unicode および ASCII のサポート | Microsoft Docs"
+description: "System Center Configuration Manager オブジェクトでの Unicode および ASCII 文字のサポートについて説明します。"
 ms.custom: na
 ms.date: 3/1/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2bdec799-905f-48bc-aed5-2d92134739e8
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b35e747c8c297d61bb549b9767c4318f51e5fdb4
 ms.openlocfilehash: 18f1c64c1f27001a0fdfbab4236d09a5bc279272
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="unicode-and-ascii-support-in-system-center-configuration-manager"></a>Supporto per Unicode e ASCII in System Center Configuration Manager
+# <a name="unicode-and-ascii-support-in-system-center-configuration-manager"></a>System Center Configuration Manager での Unicode および ASCII のサポート
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager crea la maggior parte degli oggetti usando i caratteri Unicode. Tuttavia, numerosi oggetti supportano solo caratteri ASCII o hanno altre limitazioni.  
+System Center Configuration Manager では、Unicode 文字を使用して、ほとんどのオブジェクトを作成します。 ただし、オブジェクトによっては ASCII 文字のみをサポートするものや、その他の制限が適用されるものもあります。  
 
- Nelle seguenti sezioni vengono elencati gli oggetti che devono utilizzare solo i caratteri del set ASCII o che presentano limitazioni aggiuntive.  
+ 以下のセクションで、ASCII 文字セットを使用する必要のあるオブジェクトと、追加制限が適用されるオブジェクトについて説明します。  
 
--   [Oggetti che usano caratteri ASCII](#BKMK_ASCIIchar)  
+-   [ASCII 文字を使用するオブジェクト](#BKMK_ASCIIchar)  
 
--   [Limitazioni aggiuntive](#BKMK_OtherCharLimitations)  
+-   [その他の制限事項](#BKMK_OtherCharLimitations)  
 
--   [Oggetti di Configuration Manager non localizzati](#BKMK_LangNonLocalize)  
+-   [ローカライズされない Configuration Manager オブジェクト](#BKMK_LangNonLocalize)  
 
-##  <a name="BKMK_ASCIIchar"></a> Oggetti che usano i caratteri ASCII  
- Configuration Manager supporta il set di caratteri ASCII solo quando vengono creati gli oggetti seguenti:  
+##  <a name="BKMK_ASCIIchar"></a> ASCII 文字を使用するオブジェクト  
+ Configuration Manager では、次のオブジェクトを作成する場合にのみ ASCII 文字セットがサポートされます。  
 
--   Codice sito  
+-   サイト コード  
 
--   Tutti i nomi di computer del server di sistema del sito  
+-   すべてのサイト システム サーバーのコンピューター名  
 
--   I seguenti account di Configuration Manager:  
-
-    > [!NOTE]  
-    >  Questi account supportano caratteri ASCII e RUS in un sito eseguito in russo.  
-
-    -   Account di installazione push client  
-
-    -   Account di pubblicazione riferimenti sullo stato di integrità  
-
-    -   Account di query riferimenti sullo stato di integrità  
-
-    -   Account di connessione al database del punto di gestione  
-
-    -   Account di accesso alla rete  
-
-    -   Account di accesso al pacchetto  
-
-    -   Account mittente standard  
-
-    -   Account di installazione del sistema del sito  
-
-    -   Account di connessione al punto di aggiornamento software  
-
-    -   Account del server proxy del punto di aggiornamento software  
+-   次の Configuration Manager アカウント:  
 
     > [!NOTE]  
-    >  L'account specificato per l'amministrazione basata su ruoli supporta Unicode.  
+    >  ロシア語で実行されるサイトでは、次のアカウントは ASCII 文字と RUS 文字をサポートします。  
+
+    -   クライアント プッシュ インストール アカウント  
+
+    -   稼働状態の基準の公開アカウント  
+
+    -   稼働状態の基準のクエリ アカウント  
+
+    -   管理ポイント データベース接続アカウント  
+
+    -   ネットワーク アクセス アカウント  
+
+    -   ［パッケージ アクセス アカウント］  
+
+    -   標準センダー アカウント  
+
+    -   サイト システムのインストール アカウント  
+
+    -   ソフトウェアの更新ポイントの接続アカウント  
+
+    -   ソフトウェアの更新ポイントのプロキシ サーバー アカウント  
+
+    > [!NOTE]  
+    >  役割に基づいた管理権限を持つアカウントは Unicode をサポートします。  
     >   
-    >  L'account del punto di Reporting Services supporta Unicode, ad eccezione dei caratteri RUS.  
+    >  レポート サービス ポイント アカウントは、Unicode をサポートしますが、RUS 文字の例外が適用されます。  
 
--   Nome di dominio completo (FQDN) per i server del sito e per i sistemi del sito  
+-   サイト サーバーとサイト システムの完全修飾ドメイン名 (FQDN)  
 
--   Percorso di installazione per Configuration Manager  
+-   Configuration Manager のインストール パス  
 
--   Nomi di istanza di SQL Server  
+-   SQL Server インスタンス名  
 
--   Il percorso per i seguenti ruoli di sistema del sito:  
+-   次のサイト システムの役割のパス:  
 
-    -   Punto per servizi Web del Catalogo applicazioni  
+    -   アプリケーション カタログ Web サービス ポイント  
 
-    -   Punto per siti Web del Catalogo applicazioni  
+    -   アプリケーション カタログ Web サイト ポイント  
 
-    -   Punto di registrazione  
+    -   登録ポイント  
 
-    -   Punto proxy di registrazione  
+    -   登録プロキシ ポイント  
 
-    -   Punto di Reporting Services  
+    -   レポート サービス ポイント  
 
-    -   Punto di migrazione stato  
+    -   状態移行ポイント  
 
--   Il percorso delle seguenti cartelle:  
+-   次のフォルダーのパス:  
 
-    -   La cartella che archivia i dati di migrazione dello stato del client  
+    -   クライアントの状態移行データを保管するフォルダー  
 
-    -   La cartella che contiene i report di Configuration Manager  
+    -   Configuration Manager のレポートを格納するフォルダー  
 
-    -   La cartella che archivia il backup di Configuration Manager  
+    -   Configuration Manager のバックアップを保管するフォルダー  
 
-    -   La cartella che archivia i file di origine dell'installazione per l'impostazione del sito  
+    -   サイトのセットアップのインストール ソース ファイルを保管するフォルダー  
 
-    -   La cartella che archivia i download dei prerequisiti per l'uso da parte dell'impostazione  
+    -   セットアップが使用する前提条件のダウンロードを保管するフォルダー  
 
--   Il percorso dei seguenti oggetti:  
+-   次のオブジェクトのパス:  
 
-    -   Sito Web IIS  
+    -   IIS の Web サイト  
 
-    -   Percorso di installazione dell'applicazione virtuale  
+    -   仮想アプリケーションのインストール パス  
 
-    -   Nome dell'applicazione virtuale  
+    -   仮想アプリケーション名  
 
--   Gli oggetti seguenti per AMT e gestione fuori banda:  
+-   AMT と帯域外管理用の次のオブジェクト:  
 
-    -   FQDN del computer basato su AMT  
+    -   AMT 搭載コンピューターの FQDN  
 
-    -   Il nome del computer basato su AMT  
+    -   AMT 搭載コンピューターのコンピューター名  
 
-    -   Il nome NetBIOS del dominio  
+    -   ドメイン NetBIOS 名  
 
-    -   Nome del profilo wireless e SSID  
+    -   ワイヤレス プロファイル名と SSID  
 
-    -   Il nome dell'autorità di certificazione radice attendibile  
+    -   信頼されたルート証明機関名  
 
-    -   Il nome dell'autorità di certificazione (CA) e i nomi dei modelli  
+    -   証明機関 (CA) の名前とテンプレート名  
 
-    -   Il nome e il percorso del file di immagine di reindirizzamento IDE  
+    -   IDE リダイレクト イメージ ファイルのファイル名とパス  
 
-    -   Il contenuto dell'archivio dati AMT  
+    -   AMT データ記憶域のコンテンツ  
 
--   Nomi file ISO dei supporti di avvio  
+-   ブート メディアの .ISO ファイル名  
 
-##  <a name="BKMK_OtherCharLimitations"></a> Limitazioni aggiuntive  
- Di seguito vengono riportate ulteriori limitazioni per i set di caratteri e le versioni delle lingue supportati:  
+##  <a name="BKMK_OtherCharLimitations"></a> その他の制限事項  
+ サポートされる文字セットと言語バージョンに関するその他の制限事項は以下のとおりです。  
 
--   Configuration Manager non supporta la modifica delle impostazioni locali del computer del server del sito.  
+-   Configuration Manager は、サイト サーバー コンピューターのロケールの変更をサポートしません。  
 
--   Un'autorità di certificazione dell'organizzazione (enterprise) non supporta i nomi dei computer client che utilizzano set di caratteri DBCS. I nomi dei computer client che è possibile utilizzare sono limitati dalla limitazione PKI del set di caratteri IA5. Configuration Manager non supporta neppure i nomi di autorità di certificazione (CA) o i valori del nome oggetto che usano DBCS.  
+-   エンタープライズ証明機関 (CA) は、2 バイト文字セット (DBCS) を使用するクライアント コンピューター名をサポートしません。 使用可能なクライアント コンピューター名は、PKI の IA5 文字の制限を受けます。 さらに、Configuration Manager では、DBCS を使用する CA 名またはサブネット名値をサポートしていません。  
 
-##  <a name="BKMK_LangNonLocalize"></a> Oggetti di Configuration Manager non localizzati  
- Il database di Configuration Manager supporta Unicode per la maggior parte degli oggetti archiviati e, se possibile, visualizza tali informazioni nella lingua del sistema operativo corrispondente alle impostazioni locali di un computer. Affinché l'interfaccia client o la console di Configuration Manager visualizzi le informazioni nella lingua del sistema operativo del computer, le impostazioni locali del computer devono corrispondere alla lingua di un client o di un server installato in un sito.  
+##  <a name="BKMK_LangNonLocalize"></a> ローカライズされない Configuration Manager オブジェクト  
+ Configuration Manager データベースは、保存されるほとんどのオブジェクトに対して Unicode をサポートし、可能な場合、この情報をコンピューターのロケールと一致するオペレーティング システム言語で表示します。 クライアント インターフェイスまたは Configuration Manager コンソールで、情報をコンピューターのオペレーティング システム言語で表示するためには、コンピューターのロケールが、サイトにインストールしているクライアントの言語またはサーバーの言語と一致している必要があります。  
 
- Diversi oggetti di Configuration Manager non supportano i caratteri Unicode, vengono quindi archiviati nel database usando caratteri ASCII oppure presentano limitazioni aggiuntive relative alla lingua. Queste informazioni vengono sempre visualizzate utilizzando il seti di caratteri ASCII o nella lingua in uso al momento della creazione dell'oggetto.  
-
+ ただし、一部の Configuration Manager オブジェクトは Unicode をサポートしていないため、それらのオブジェクトは ASCII を使用してデータベースに保存されるか、言語に関する追加の制限事項が発生します。 この情報は常に、ASCII 文字セットを使用して表示されるか、オブジェクトの作成時に使用した言語で表示されます。  

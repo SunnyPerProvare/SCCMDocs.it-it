@@ -1,129 +1,126 @@
 ---
-title: Controlli dei prerequisiti | Microsoft Docs
-description: Esaminare i controlli dei prerequisiti disponibili per System Center Configuration Manager. Include i controlli per i privilegi di protezione.
+title: "前提条件の確認 | Microsoft Docs"
+description: "System Center Configuration Manager の利用可能な前提条件の確認について説明します。 セキュリティ権限の前提条件の確認も対象となります。"
 ms.custom: na
 ms.date: 4/17/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a279624-ffc9-41aa-8132-df1809708dd5
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: dda2f4c01078fbbd174cbcb30357554c24f6abeb
 ms.openlocfilehash: 14834f62ffaa8fcba5ddb7536a0b76e18b557e53
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="list-of-prerequisite-checks-for-system-center-configuration-manager"></a>Elenco dei controlli dei prerequisiti per System Center Configuration Manager
+# <a name="list-of-prerequisite-checks-for-system-center-configuration-manager"></a>System Center Configuration Manager の前提条件の確認の一覧
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Le sezioni seguenti illustrano in dettaglio i controlli dei prerequisiti disponibili.
+次のセクションでは、利用可能な前提条件の確認について詳しく説明しています。
 
-Per informazioni sull'uso del controllo dei prerequisiti, vedere l'argomento relativo al [controllo dei prerequisiti](prerequisite-checker.md).  
+前提条件チェッカーの使用の詳細については、[前提条件チェッカー](prerequisite-checker.md)に関するページを参照してください。  
 
-##  <a name="BKMK_Security"></a> Controlli dei prerequisiti per i privilegi di protezione  
-Nella tabella seguente sono indicati i controlli eseguiti dal controllo dei prerequisiti per i privilegi di protezione.
+##  <a name="BKMK_Security"></a> セキュリティ権限の前提条件の確認  
+次の表に、前提条件チェッカーが実行するセキュリティ権限の確認を示します。
 
-|Controllo eseguito|Spiegazione|Gravità|Applicabilità del sito|
+|実行される確認|説明|重大度|サイトの適用性|
 |---|---|---|---|
-|**Diritti di amministratore per il sito di amministrazione centrale**|Verifica che l'account utente che esegue l'installazione di Configuration Manager abbia diritti di **amministratore** per il computer del sito di amministrazione centrale. |Errore|Sito primario|
-|**Diritti amministrativi per il sito primario di espansione**|Verifica che l'account utente che esegue l'installazione abbia diritti di **amministratore** locale per il sito primario autonomo che verrà espanso.|Errore|Sito di amministrazione centrale|
-|**Diritti amministrativi per il sistema del sito**|Verifica che l'account utente che esegue l'installazione di Configuration Manager abbia diritti di **amministratore** per il computer del server del sito. |Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|
-|**Diritti amministrativi del computer CAS per il sito primario di espansione**|Verifica che l'account computer del sito di amministrazione centrale abbia diritti di **amministratore** locale per il sito primario autonomo che verrà espanso.|Errore|Sito di amministrazione centrale|
-|**Connessione a SQL Server nel sito di amministrazione centrale**|Verifica che l'account utente che esegue l'installazione di Configuration Manager nel sito primario per l'aggiunta a una gerarchia esistente abbia il ruolo **sysadmin** per l'istanza di SQL Server per il sito di amministrazione centrale.|Errore|Sito primario|
-|**Diritti amministrativi dell'account computer del server del sito**|Verifica che l'account computer del server del sito abbia diritti di **amministratore** per i computer di SQL Server e del punto di gestione.|Errore|Sito primario, <br>SQL Server|
-|**Comunicazione dal sistema del sito a SQL Server**| Verifica che un nome dell'entità servizio (SPN) valido venga registrato in Servizi di dominio Active Directory per l'account configurato per eseguire il servizio SQL Server per l'istanza di SQL Server che ospita il database del sito di Configuration Manager. È necessario registrare un SPN valido in Servizi di dominio Active Directory per supportare l'autenticazione Kerberos.|Avviso|Sito secondario, <br>Punto di gestione|
-|**Modalità di sicurezza di SQL Server**|Verifica che SQL Server sia configurato per la sicurezza di autenticazione di Windows.|Avviso|SQL Server|
-|**Diritti di amministratore di sistema di SQL Server**|Verifica che l'account utente che esegue l'installazione di Configuration Manager abbia il ruolo **sysadmin** per l'istanza di SQL Server selezionata per l'installazione del database del sito. Questo controllo ha esito negativo anche quando l'installazione non riesce ad accedere all'istanza di SQL Server per verificare le autorizzazioni.|Errore|SQL Server|
-|**Diritti di amministratore di sistema di SQL Server per sito di riferimento**|Verifica che l'account utente che esegue l'installazione di Configuration Manager abbia il ruolo **sysadmin** per l'istanza del ruolo di SQL Server selezionata come database del sito di riferimento. Le autorizzazioni del ruolo **sysadmin** di SQL Server sono necessarie per modificare il database del sito.|Errore|SQL Server|
+|**中央管理サイトの管理者権限**|Configuration Manager のセットアップを実行するユーザー アカウントに、中央管理サイト コンピューターに対する**管理者**権限があることを確認します。 |エラー|プライマリ サイト|
+|**展開プライマリ サイトの管理者権限**|セットアップを実行するユーザー アカウントに、展開するスタンドアロン プライマリ サイトに対する**管理者**権限があることを確認します。|エラー|中央管理サイト|
+|**サイト システムの管理者権限**|Configuration Manager のセットアップを実行するユーザー アカウントに、サイト サーバー コンピューターに対する**管理者**権限があることを確認します。 |エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト|
+|**展開プライマリ サイトに対する CAS マシンの管理者権限**|中央管理サイトのコンピューター アカウントに、展開するスタンドアロン プライマリ サイトに対する**管理者**権限があることを確認します。|エラー|中央管理サイト|
+|**中央管理サイトの SQL Server への接続**|既存の階層に含めるプライマリ サイトで Configuration Manager セットアップを実行するユーザー アカウントに、中央管理サイトの SQL Server のインスタンスに対する **sysadmin** の役割があることを確認します。|エラー|プライマリ サイト|
+|**サイト サーバー コンピューター アカウントの管理者権限**|サイト サーバー コンピューター アカウントに、SQL Server と管理ポイントのコンピューターに対する**管理者**権限があることを確認します。|エラー|プライマリ サイト、 <br>SQL Server|
+|**サイト システムから SQL Server への通信**| Configuration Manager サイト データベースをホストする SQL Server インスタンスに対し SQL Server サービスを実行するように構成されているアカウントの有効なサービス プリンシパル名 (SPN) が Active Directory Domain Services に登録されていることを確認します。 有効な SPN が Kerberos 認証をサポートするには、Active Directory ドメイン サービスで登録されている必要があります。|警告|セカンダリ サイト、 <br>管理ポイント|
+|**SQL Server のセキュリティ モード**|Windows 認証セキュリティ用に SQL Server が構成されていることを確認します。|警告|SQL Server|
+|**SQL Server の sysadmin 権限**|Configuration Manager セットアップを実行するユーザー アカウントに、サイト データベースのインストール用に選択された SQL Server インスタンスに対する **sysadmin** の役割があることを確認します。 この確認は、アクセス許可の確認のためにセットアップが SQL Server のインスタンスにアクセスできない場合も失敗します。|エラー|SQL Server|
+|**基準サイト用の SQL Server sysadmin 権限**|Configuration Manager セットアップを実行するユーザー アカウントに、基準サイトのデータベースとして選択した SQL Server の役割インスタンスに対する **sysadmin** の役割があることを確認します。 SQL Server の役割アクセス許可 **sysadmin** は、サイト データベースを変更するために必要です。|エラー|SQL Server|
 
-##  <a name="BKMK_Dependencies"></a> Controlli dei prerequisiti per le dipendenze di Configuration Manager
-Nella tabella che segue sono indicati i controlli eseguiti dal controllo dei prerequisiti per la dipendenze di Configuration Manager.
+##  <a name="BKMK_Dependencies"></a> Configuration Manager の依存関係の前提条件の確認
+次の表に、前提条件チェッカーが実行する Configuration Manager の依存関係の前提条件の確認を示します。
 
-|Controllo eseguito|Spiegazione|Gravità|Applicabilità del sito|
+|実行される確認|説明|重大度|サイトの適用性|
 |---|---|---|---|
-|**Mapping di migrazione attivi nel sito primario di destinazione**|Verifica che non siano presenti mapping di migrazione attivi nei siti primari.|Errore|Sito di amministrazione centrale|
-|**Replica di MP attiva**|Verifica una replica del punto di gestione attiva.|Errore|Sito primario|
-|**Diritti amministrativi per il punto di distribuzione**|Verifica che l'utente che esegue il programma di installazione abbia diritti di **amministratore** per il computer del punto di distribuzione.|Avviso|Punto di distribuzione|
-|**Diritti amministrativi per il punto di gestione**|Verifica che l'account computer del server del sito abbia diritti di **amministratore** per il computer del punto di gestione e del punto di distribuzione.|Avviso|Punto di gestione|
-|**Condivisione amministrativa (sistema del sito)**|Verifica che le condivisioni amministrative necessarie siano presenti nel computer del sistema del sito.|Avviso|Punto di gestione|
-|**Compatibilità applicazioni**|Verifica che le applicazioni correnti siano compatibili con lo schema dell'applicazione.|Avviso|Sito di amministrazione centrale, <br>Sito primario|
-|**BITS attivato**|Verifica che il Servizio trasferimento intelligente in background (BITS) sia installato nel computer del sistema del sito del punto di gestione. Se questo controllo ha esito negativo, BITS non è installato, il componente di compatibilità Strumentazione gestione Windows (WMI) IIS 6.0 per IIS 7.0 non è installato nel computer o nell'host IIS remoto oppure il programma di installazione non è stato in grado di verificare le impostazioni IIS remote poiché i componenti comuni IIS non sono stati installati nel computer del server del sito.|Errore|Punto di gestione|
-|**BITS installato**|Verifica che BITS sia installato in IIS.|Avviso|Punto di gestione|
-|**Regole di confronto senza distinzione tra maiuscole e minuscole in SQL Server**|Verifica che l'installazione di SQL Server usi regole di confronto senza distinzione tra maiuscole e minuscole, come ad esempio SQL_Latin1_General_CP1_CI_AS.|Errore|SQL Server|
-|**Verifica della versione e del codice sito di un sito primario autonomo esistente**|Verifica che il sito primario che si intende espandere sia un sito primario autonomo e abbia la stessa versione di Configuration Manager, ma con un codice sito diverso rispetto al sito di amministrazione centrale da installare.|Errore|Sito di amministrazione centrale, <br>Sito primario|
-|**Verifica la presenza di riferimenti a raccolte non compatibili**|Durante un aggiornamento questo controllo verifica che le raccolte facciano riferimento solo ad altre raccolte dello stesso tipo.|Errore|Sito di amministrazione centrale|  
-|**Versione client per il computer del punto di gestione**|Verifica che la versione del computer in cui si sta installando il punto di gestione non sia diversa da quella del client di Configuration Manager installato.|Errore|Punto di gestione|
-|**Configurazione per l'uso della memoria di SQL Server**|Verifica se SQL Server è configurato per un uso illimitato della memoria. È necessario configurare la memoria di SQL Server per un limite massimo.|Avviso|SQL Server|
-|**Istanza di SQL Server dedicata**|Verifica se un'istanza dedicata di SQL Server è configurata per ospitare il database del sito di Configuration Manager. Se un altro sito usa l'istanza, è necessario selezionare un'istanza diversa per il nuovo sito. In alternativa, è possibile disinstallare l'altro sito o spostare il relativo database in un'istanza diversa di SQL Server.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|
-|**Componenti del server di Configuration Manager esistenti nel server**|Verifica che un server del sito o un ruolo del sistema del sito non sia già installato nel computer selezionato per l'installazione del sito.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|
-|**Eccezione firewall per SQL Server**|Verifica se Windows Firewall è disattivato o se è presente un'eccezione relativa a Windows Firewall per SQL Server. È necessario consentire l'accesso remoto a Sqlservr.exe o alle porte TCP richieste. Per impostazione predefinita, SQL Server è in ascolto sulla porta TCP 1433 e SQL Server Service Broker (SSB) usa la porta TCP 4022.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario, <br>Punto di gestione|
-|**Eccezione firewall per SQL Server (sito primario autonomo)**|Verifica se Windows Firewall è disattivato o se è presente un'eccezione relativa a Windows Firewall per SQL Server. È necessario consentire l'accesso remoto a Sqlservr.exe o alle porte TCP richieste. Per impostazione predefinita, SQL Server è in ascolto sulla porta TCP 1433 e SSB usa la porta TCP 4022.|Avviso|Sito primario (solo autonomo)|
-|**Eccezione del firewall per SQL Server per il punto di gestione**|Verifica se Windows Firewall è disattivato o se è presente un'eccezione relativa a Windows Firewall per SQL Server.|Avviso|Punto di gestione|
-|**Configurazione HTTPS di IIS**|Verifica i binding del sito Web IIS per il protocollo di comunicazione HTTPS. Quando si installano ruoli del sito che richiedono HTTPS, è necessario configurare i binding del sito IIS nel server specificato con un certificato di infrastruttura a chiave pubblica (PKI) valido.|Avviso|Punto di gestione, <br>Punto di distribuzione|
-|**Servizio IIS in esecuzione**|Verifica che IIS sia installato e in esecuzione nel computer per installare il punto di gestione o il punto di distribuzione.|Errore|Punto di gestione, <br> Punto di distribuzione|
-|**Corrispondenza delle regole di confronto del sito primario di espansione**|Verifica che il database del sito per il sito primario autonomo da espandere usi le stesse regole di confronto del database del sito nel sito di amministrazione centrale.|Errore|Sito di amministrazione centrale|
-|**Libreria di Compressione differenziale remota Microsoft (RDC) registrata**|Verifica che la libreria di RDC sia registrata per il server del sito di Configuration Manager.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|
-|**Microsoft Windows Installer**|Verifica la versione di Windows Installer. Se questo controllo ha esito negativo, il programma di installazione non è stato in grado di verificare la versione oppure la versione installata non soddisfa i requisiti minimi di Windows Installer 4.5.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|
-|**Microsoft XML Core Services 6.0 (MSXML60)**|Verifica che MSXML 6.0 o versione successiva sia installato nel computer.|Avviso|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario, <br>Console di Configuration Manager, <br>Punto di gestione, <br>Punto di distribuzione|
-|**Versione minima di .NET Framework per la console di Configuration Manager**|Verifica se Microsoft .NET Framework 4.0 è installato nel computer della console di Configuration Manager. È possibile scaricare .NET Framework 4.0 dal sito [Area download Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=189149).|Errore|Console di Configuration Manager|
-|**Versione minima di .NET Framework per il server del sito di Configuration Manager**|Verifica se .NET Framework 3.5 è installato nel server del sito di Configuration Manager. Per Windows Server 2008, è possibile scaricare Microsoft .NET Framework 3.5 dal sito [Area download Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=185604). Per Windows Server 2008 R2, è possibile abilitare .NET Framework 3.5 come funzionalità di Server Manager.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|
-|**Versione minima di .NET Framework per l'installazione di SQL Server Express per il sito secondario di Configuration Manager**|Verifica che .NET Framework 4.0 sia installato nei computer del sito secondario di Configuration Manager per l'installazione di SQL Server Express.|Errore|Sito secondario|
-|**Regole di confronto del database padre/figlio**|Verifica che le regole di confronto del database del sito corrispondano a quelle del database del sito padre. Tutti i siti in una gerarchia devono usare le stesse regole di confronto del database.|Errore|Sito primario, <br>Sito secondario|
-|**PowerShell 2.0 nel server del sito**|Verifica che Windows PowerShell 2.0 o versione successiva sia installato nel server del sito per Configuration Manager Exchange Connector. Per altre informazioni su PowerShell 2.0, vedere l' [articolo 968930](http://go.microsoft.com/fwlink/p/?LinkId=226450) nella Microsoft Knowledge Base.|Avviso|Sito primario|
-|**FQDN primario**|Usando un nome di dominio completo (FQDN), verifica che il nome NetBIOS del computer corrisponda al nome host locale (prima etichetta dell'FQDN) del computer.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario, <br>SQL Server|
-|**Connessione remota a WMI nel sito secondario**|Controlla se il programma di installazione è in grado di stabilire una connessione remota a WMI nel server del sito secondario.|Avviso|Sito secondario|
-|**Regole di confronto di SQL Server richieste**|Verifica che l'istanza per SQL Server e il database del sito di Configuration Manager, se installato, siano configurati per l'uso della regola di confronto SQL_Latin1_General_CP1_CI_AS, a meno che non si usi un sistema operativo cinese che richiede un supporto GB18030.<br><br>Per informazioni su come modificare le regole di confronto del database e dell'istanza di SQL Server, vedere [Impostazione e modifica di regole di confronto](http://go.microsoft.com/fwlink/p/?LinkID=234541) nella documentazione online di SQL Server 2008 R2.  Per informazioni sull'attivazione del supporto GB18030, vedere [Supporto internazionale in System Center Configuration Manager](../../../../core/plan-design/hierarchy/international-support.md).|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|
-|**Cartella di origine di installazione**|Verifica che l'account computer per il sito secondario disponga delle autorizzazioni del file system NTFS di **lettura** e delle autorizzazioni di condivisione di **scrittura** per la cartella di origine di installazione e la condivisione.<br><br>**NOTA**: se si usano condivisioni amministrative, ad esempio C$ e D$, l'account computer del sito secondario deve essere un utente **amministratore** nel computer.|Errore|Sito secondario|
-|**Versione dell'origine installazione**|Verifica che la versione di Configuration Manager nella cartella di origine specificata per l'installazione del sito secondario corrisponda alla versione di Configuration Manager del sito primario.|Errore|Sito secondario|
-|**Codice sito in uso**|Verifica che il codice sito specificato non sia già in uso nella gerarchia di Configuration Manager. È necessario specificare un codice univoco per questo sito.|Errore|Sito primario|
-|**Il computer del provider SMS ha lo stesso dominio del server del sito**|Verifica se un computer che esegue un'istanza del Provider SMS ha lo stesso dominio del server del sito.|Errore|provider SMS|
-|**Edizione di SQL Server**|Verifica che l'edizione di SQL Server nel sito non sia SQL Server Express.|Errore|SQL Server|
-|**SQL Server Express nel sito secondario**|Verifica che SQL Server Express possa essere installato correttamente sul computer server del sito per un sito secondario.|Errore|Sito secondario|
-|**SQL Server nel computer del sito secondario**|Verifica che SQL Server sia installato nel computer del sito secondario. Non è possibile installare SQL Server in un sistema del sito remoto.<br><br>**AVVISO**: questa verifica viene eseguita solo quando si configura il programma di installazione in modo che usi un'istanza esistente di SQL Server.|Errore|Sito secondario|
-|**Allocazione di memoria per il processo di SQL Server**|Verifica che SQL Server riservi almeno 8 GB di memoria per il sito di amministrazione centrale e per il sito primario e almeno 4 GB di memoria per il sito secondario. Per altre informazioni su come impostare una quantità fissa di memoria con SQL Server Management Studio, vedere [Procedura: Impostazione di una quantità di memoria fissa (SQL Server Management Studio)](http://go.microsoft.com/fwlink/p/?LinkId=233759).<br><br>**NOTA**: questo controllo non è applicabile a SQL Server Express in un sito secondario, limitato a 1 GB di memoria riservata.|Avviso|SQL Server|
-|**Account di esecuzione del servizio SQL Server**|Verifica che l'account di accesso per il servizio SQL Server non sia un account utente locale o di tipo LOCAL SERVICE. È necessario configurare il servizio SQL Server per l'utilizzo di un account di dominio valido, di tipo NETWORK SERVICE o LOCAL SYSTEM.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|
-|**Porta TCP di SQL Server**|Verifica che TCP sia abilitato per l'istanza di SQL Server e che sia impostato per usare una porta statica.|Errore|SQL Server|
-|**Versione di SQL Server**|Verifica che una versione supportata di SQL Server sia installata nel server di database del sito specificato. Per altre informazioni, vedere [Versioni di SQL Server supportate per System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md).|Errore|SQL Server|
-|**Versione del sistema operativo del sistema del sito per l'aggiornamento non supportata**|Durante un aggiornamento questa regola verifica se i ruoli del sistema del sito, oltre ai punti di distribuzione, sono installati in computer che eseguono Windows Server 2008 o versioni precedenti.<br><br>**NOTA**: poiché questo controllo non può risolvere lo stato dei ruoli del sistema del sito installati in Azure o per l'archiviazione cloud usata da Microsoft Intune quando si integra Intune con Configuration Manager, gli avvisi relativi a tali ruoli possono essere considerati falsi positivi e ignorati.|Avviso|Sito primario, <br>Sito secondario|
-|**Ruolo del sistema del sito "Punto di sincronizzazione di Asset Intelligence" non supportato nel sito primario esteso**|Verifica che il ruolo del sistema del sito Punto di sincronizzazione di Asset Intelligence non sia installato nel sito primario autonomo da espandere.|Errore|Sito di amministrazione centrale|
-|**Ruolo del sistema del sito "Punto di Endpoint Protection" non supportato nel sito primario esteso**|Verifica che il ruolo del sistema del sito Punto di Endpoint Protection non sia installato nel sito primario autonomo da espandere.|Errore|Sito di amministrazione centrale|
-|**Ruolo del sistema del sito "Connettore Windows Intune" non supportato nel sito primario esteso**|Verifica che il ruolo del sistema del sito Connettore Windows Intune non sia installato nel sito primario autonomo da espandere.|Errore|Sito di amministrazione centrale|
-|**Utilità di migrazione stato utente (USMT) installata**|Verifica se è installato il componente Utilità di migrazione stato utente (USMT) di Windows Assessment and Deployment Kit (ADK) per Windows 8.1.|Errore|Sito di amministrazione centrale, <br>Sito primario (solo autonomo)|  
-|**Convalida del nome FQDN del computer SQL Server**|Verifica che il nome FQDN specificato per il computer SQL Server sia valido.|Errore|SQL Server|
-|**Verifica della versione del sito di amministrazione centrale**|Verifica che la versione del sito di amministrazione centrale sia la stessa di Configuration Manager.|Errore|Sito primario|
-|**Verifica delle autorizzazioni del server del sito da pubblicare in Active Directory**|Verifica che l'account computer per il server del sito disponga di autorizzazioni di tipo **Controllo completo** per il contenitore **System Management** nel dominio di Active Directory. Per altre informazioni sulle opzioni di configurazione delle autorizzazioni necessarie, vedere [Preparare Active Directory per la pubblicazione di siti](../../../../core/plan-design/network/extend-the-active-directory-schema.md).<br><br>**NOTA**: è possibile ignorare questo avviso se le autorizzazioni sono state verificate manualmente.|Avviso|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|
-|**Strumenti di distribuzione Windows installati**|Verifica se è installato il componente Strumenti di distribuzione Windows di Windows ADK per Windows 10.|Errore|provider SMS|
-|**Cluster di failover Windows**|Verifica che i computer che dispongono di un punto di gestione o un punto di distribuzione non facciano parte di un cluster di Windows.|Errore|Punto di gestione<br>Punto di distribuzione|
-|**Ambiente preinstallazione di Windows installato**|Verifica se è installato il componente Ambiente preinstallazione di Windows ADK per Windows 10.|Errore|provider SMS|
-|**Gestione remota Windows (WinRM) v1.1**|Verifica che WinRM v1.1.1 sia installato nel server del sito primario o nel computer della console di Configuration Manager per l'esecuzione della console di gestione fuori banda. Per altre informazioni su come scaricare WinRM 1.1, vedere l' [articolo 936059](https://support.microsoft.com/en-us/kb/936059) nella Microsoft Knowledge Base.|Avviso|Sito primario, <br>Console di Configuration Manager|
-|**WSUS nel server del sito**|Verifica che Windows Server Update Services (WSUS) 3.0 Service Pack 2 (SP2) sia installato nel server del sito. Quando si usa un punto di aggiornamento software in un computer che non è il server del sito, è necessario installare la console di amministrazione WSUS nel server del sito. Per altre informazioni su WSUS, vedere [Windows Server Update Services](http://go.microsoft.com/fwlink/p/?LinkID=79477).|Avviso|Sito di amministrazione centrale, <br>Sito primario|  
+|**ターゲット プライマリ サイトにアクティブな移行へのマッピング**|プライマリ サイトにアクティブな移行へのマッピングがないことを確認します。|エラー|中央管理サイト|
+|**アクティブなレプリカ MP**|アクティブな管理ポイントのレプリカがあるかどうかを確認します。|エラー|プライマリ サイト|
+|**配布ポイントの管理者権限**|セットアップを実行するユーザー アカウントに、配布ポイントのコンピューターに対する**管理者**権限があることを確認します。|警告|配布ポイント|
+|**管理ポイントの管理者権限**|サイト サーバーのコンピューター アカウントに、管理ポイントと配布ポイントのコンピューターの**管理者**権限があることを確認します。|警告|管理ポイント|
+|**管理用共有 (サイト システム)**|サイト システムコンピューターに必要な管理用共有があることを確認します。|警告|管理ポイント|
+|**アプリケーションの互換性**|現在のアプリケーションがアプリケーション スキーマに対応していることを確認します。|警告|中央管理サイト、 <br>プライマリ サイト|
+|**BITS 対応**|管理ポイント サイト システム コンピューターにバックグラウンド インテリジェント転送サービス (BITS) がインストールされていることを確認します。 BITS がインストールされていないか、インターネット インフォメーション サービス (IIS) 6.0 Windows Management Instrumentation (WMI) の IIS 7.0 互換性コンポーネントがコンピューターまたはリモート IIS ホストにインストールされていない場合、あるいは、IIS の共通コンポーネントがサイト サーバー コンピューターにインストールされていないため、セットアップがリモート IIS 設定を確認できなかった場合に、この確認に失敗します。|エラー|管理ポイント|
+|**BITS のインストール**|IIS に BITS がインストールされていることを確認します。|警告|管理ポイント|
+|**SQL Server の照合順序の大文字と小文字の区別**|SQL Server インストールが、SQL_Latin1_General_CP1_CI_AS などの大文字と小文字を区別しない照合順序を使用していることを確認します。|エラー|SQL Server|
+|**バージョンとサイトコードについて、既存のスタンドアロン プライマリ サイトを確認する**|展開を計画しているプライマリ サイトがスタンドアロン プライマリ サイトであり、インストールする中央管理サイトと Configuration Manager のバージョンが同じであるが、サイト コードが異なることを確認します。|エラー|中央管理サイト、 <br>プライマリ サイト|
+|**互換性のないコレクション参照の確認**|アップグレード時に、この確認によって、コレクションが同じ種類の他のコレクションのみを参照することを確認します。|エラー|中央管理サイト|  
+|**管理ポイント コンピューター上のクライアントのバージョン**|管理ポイントをインストールしているコンピューターに、別のバージョンの Configuration Manager クライアントがインストールされていないことを確認します。|エラー|管理ポイント|
+|**SQL Server のメモリ使用量の構成**|SQL Server がメモリ使用制限なしに構成されているか確認します。 SQL Server のメモリに上限を設定してください。|警告|SQL Server|
+|**専用の SQL Server インスタンス**|専用の SQL Server インスタンスが Configuration Manager サイト データベースをホストするように構成されているか確認します。 別のサイトがそのインスタンスを使用する場合は、別のサイト用に別のインスタンスを選択する必要があります。 代わりに、別のサイトをアンインストールするか、そのデータベースを別の SQL Server インスタンスに移動することもできます。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト|
+|**サーバー上の既存の Configuration Manager サーバー コンポーネント**|サイトのインストール用に選択されたコンピューターに、サイト サーバーまたはサイト システムの役割が既にインストールされていないことを確認します。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト|
+|**SQL Server のファイアウォールの例外**|Windows ファイアウォールが無効かどうか、または適切な Windows ファイアウォールの例外が SQL Server に対して設定されているかどうかを確認します。 Sqlservr.exe または必要な TCP ポートへのリモート アクセスを許可する必要があります。 既定では、SQL Server は TCP ポート 1433 でリッスンし、SQL Server Service Broker (SSB) は TCP ポート 4022 を使用します。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト、 <br>管理ポイント|
+|**SQL Server のファイアウォールの例外 (スタンドアロン プライマリ サイト)**|Windows ファイアウォールが無効かどうか、または適切な Windows ファイアウォールの例外が SQL Server に対して設定されているかどうかを確認します。 Sqlservr.exe または必要な TCP ポートへのリモート アクセスを許可する必要があります。 既定では、SQL Server は TCP ポート 1433 でリッスンし、SSB は TCP ポート 4022 を使用します。|警告|プライマリ サイト (スタンドアロンのみ)|
+|**管理ポイントに関する SQL Server のファイアウォールの例外**|Windows ファイアウォールが無効かどうか、または適切な Windows ファイアウォールの例外が SQL Server に対して設定されているかどうかを確認します。|警告|管理ポイント|
+|**IIS の HTTPS 構成**|HTTPS 通信プロトコル用の IIS Web サイト バインドを確認します。 HTTPS を必要とするサイトの役割をインストールする場合は、有効な公開キー基盤 (PKI) 証明書を使用して、指定されたサーバーで IIS サイト バインドを構成する必要があります。|警告|管理ポイント、 <br>配布ポイント|
+|**IIS サービス実行中**|管理ポイントまたは配布ポイントをインストールするコンピューターに、IIS がインストールされ、実行されていることを確認します。|エラー|管理ポイント、 <br> 配布ポイント|
+|**展開プライマリ サイトの照合順序の一致**|展開するスタンドアロン プライマリ サイトのサイト データベースの照合順序が、中央管理サイトのサイト データベースと同じであることを確認します。|エラー|中央管理サイト|
+|**登録されている Microsoft Remote Differential Compression (RDC) ライブラリ**|Configuration Manager サイト サーバーに RDC ライブラリが登録されていることを確認します。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト|
+|**Microsoft Windows インストーラー**|Windows インストーラーのバージョンを確認します。 セットアップがインストールされたバージョンを確認できなかったか、インストールされたバージョンが Windows インストーラーの最小要件である 4.5 に満たない場合、この確認が失敗します。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト|
+|**Microsoft XML Core Services 6.0 (MSXML60)**|MSXML 6.0 以降のバージョンがコンピューターにインストールされていることを確認します。|警告|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト、 <br>Configuration Manager コンソール、 <br>管理ポイント、 <br>配布ポイント|
+|**Configuration Manager コンソールに最低限必要な .NET Framework のバージョン**|Microsoft .NET Framework 4.0 が Configuration Manager コンソール コンピューターにインストールされているかどうかを確認します。 [ Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/p/?LinkId=189149)から .NET Framework 4.0 をダウンロードできます。|エラー|Configuration Manager コンソール|
+|**Configuration Manager サイト サーバーに最低限必要な .NET Framework のバージョン**|Configuration Manager サイト サーバーに .NET Framework 3.5 がインストールされているかどうかを確認します。 Windows Server 2008 の場合は、Microsoft .NET Framework 3.5 を [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/p/?LinkId=185604)からダウンロードできます。 Windows Server 2008 R2 の場合は、.NET Framework 3.5 をサーバー マネージャーで機能として有効にすることができます。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト|
+|**Configuration Manager のセカンダリ サイト用 SQL Server Express Edition のインストールに最低限必要な .NET Framework のバージョン**|Configuration Manager のセカンダリ サイト コンピューターに、SQL Server Express をインストールするために必要な .NET Framework 4.0 がインストールされていることを確認します。|エラー|セカンダリ サイト|
+|**親子関係のデータベース照合順序**|サイトのデータベース照合順序が親サイトのデータベース照合順序と一致していることを確認します。 階層内のすべてのサイトが同じデータベース照合順序を使用する必要があります。|エラー|プライマリ サイト、 <br>セカンダリ サイト|
+|**サイト サーバーの PowerShell 2.0**|Configuration Manager Exchange Connector 用のサイト サーバーに Windows PowerShell 2.0 以降がインストールされているかどうかを確認します。 PowerShell 2.0 の詳細については、Microsoft サポート技術情報の [記事 968930](http://go.microsoft.com/fwlink/p/?LinkId=226450) を参照してください。|警告|プライマリ サイト|
+|**プライマリ FQDN**|完全修飾ドメイン名 (FQDN) を使用して、コンピューターの NetBIOS 名がコンピューターのローカル ホスト名 (FQDN の最初のラベル) に一致するかどうか確認します。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト、 <br>SQL Server|
+|**セカンダリ サイトの WMI へのリモート接続**|セカンダリ サイトの WMI へのリモート接続をチェックします。|警告|セカンダリ サイト|
+|**SQL Server の必須の照合順序**|SQL Server インスタンスと Configuration Manager サイト データベース (インストール済みの場合) が、SQL_Latin1_General_CP1_CI_AS 照合順序を使用するように構成されているかどうかを確認します。ただし、中国語のオペレーティング システムを使用していて、GB18030 のサポートが必要な場合はこの例外となります。<br><br>SQL Server インスタンスとデータベースの照合順序の変更方法の詳細については、SQL Server 2008 R2 オンライン ブックの「[照合順序の設定と変更](http://go.microsoft.com/fwlink/p/?LinkID=234541)」を参照してください。  GB18030 サポートの有効化の詳細については、「[System Center Configuration Manager のインターナショナル サポート](../../../../core/plan-design/hierarchy/international-support.md)」を参照してください。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト|
+|**セットアップのソース フォルダー**|セカンダリ サイトのコンピューター アカウントに、セットアップ ソースのあるフォルダーまたは共有に対する NTFS ファイル システムの **読み取り** アクセス許可と共有に対する **読み取り** アクセス許可が割り当てられていることを確認します。<br><br>**注**: 管理用共有 (C$ や D$ など) を使用している場合は、セカンダリ サイトのコンピューター アカウントはコンピューターの**管理者**ユーザーでなければなりません。|エラー|セカンダリ サイト|
+|**セットアップ ソースのバージョン**|セカンダリ サイトのインストール用に指定したソース フォルダーの Configuration Manager バージョンが、プライマリ サイトの Configuration Manager バージョンに一致することを確認します。|エラー|セカンダリ サイト|
+|**使用中のサイト コード**|指定したサイト コードが Configuration Manager 階層内で既に使用されていないかどうか確認します。 このサイトで一意のサイト コードを指定する必要があります。|エラー|プライマリ サイト|
+|**SMS プロバイダーのマシンにサイト サーバーと同じドメインがあります**|SMS プロバイダーのインスタンスを実行するコンピューターのドメインがサイト サーバーと同じであるかどうかを確認します。|エラー|SMS プロバイダー|
+|**SQL Server のエディション**|サイトの SQL Server のエディションが SQL Server Express でないことを確認します。|エラー|SQL Server|
+|**セカンダリ サイトの SQL Server Express**|SQL Server Express をセカンダリ サイトのサイト サーバー コンピューターに正常にインストールできることを確認します。|エラー|セカンダリ サイト|
+|**セカンダリ サイト コンピューターの SQL Server**|SQL Server がセカンダリ サイト コンピューターにインストールされているかどうかチェックします。 リモート サイト システムに、SQL Server をインストールすることはできません。<br><br>**警告**: この確認は、セットアップで既存の SQL Server インスタンスを使用するように選択した場合にのみ適用されます。|エラー|セカンダリ サイト|
+|**SQL Server プロセスのメモリの割り当て**|SQL Server が、中央管理サイトとプライマリ サイトには少なくとも 8 GB、セカンダリ サイトには 4 GB のメモリを割り当てていることを確認します。 SQL Server Management Studio を使用して、固定量のメモリを設定する方法の詳細については、「[固定量のメモリを設定する方法 (SQL Server Management Studio)](http://go.microsoft.com/fwlink/p/?LinkId=233759)」を参照してください。<br><br>**注**: セカンダリ サイトの SQL Server Express では、割り当てられるメモリが 1 GB に制限されるため、この確認は適用されません。|警告|SQL Server|
+|**SQL Server サービスの実行アカウント**|SQL Server サービスのログオン アカウントに、ローカル ユーザー アカウントまたはローカル サービスが使用されていないことを確認します。 SQL Server サービスは、有効なドメイン アカウント、ネットワーク サービス、またはローカル システムを使用するように構成する必要があります。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト|
+|**SQL Server の TCP ポート**|TCP が SQL Server インスタンスに対して有効になっており、静的ポートを使用するように設定されていることを確認します。|エラー|SQL Server|
+|**SQL Server バージョン**|指定したサイト データベース サーバーに、サポートされるバージョンの SQL Server がインストールされていることを確認します。 詳細については、「[System Center Configuration Manager の SQL Server バージョンのサポート](../../../../core/plan-design/configs/support-for-sql-server-versions.md)」を参照してください。|エラー|SQL Server|
+|**アップグレードでサポートされていないサイト システムのオペレーティング システムのバージョン**|アップグレード中に、このルールにより、配布ポイント以外のサイト システムの役割が、Windows Server 2008 以前のバージョンを実行するコンピューターにインストールされているかどうかが確認されます。<br><br>**注**: このチェックでは、Azure にインストールされているサイト システムの役割、または Microsoft Intune と Configuration Manager を統合するときに Microsoft Intune によって使用されるクラウド ストレージ用のサイト システムの役割の状態を解決できないため、これらの役割に対する誤検知としての警告を無視することができます。|警告|プライマリ サイト、 <br>セカンダリ サイト|
+|**展開プライマリ サイトに、サポートされていないサイト システムの役割 '資産インテリジェンス同期ポイント'**|展開するスタンドアロン プライマリ サイトに資産インテリジェンス同期ポイントのサイト システムの役割がインストールされていないことを確認します。|エラー|中央管理サイト|
+|**展開プライマリ サイトでサポートされていないサイト システムの役割 'Endpoint Protection ポイント'**|展開するスタンドアロン プライマリサイトに Endpoint Protection ポイントのサイト システムの役割がインストールされていないことを確認します。|エラー|中央管理サイト|
+|**展開プライマリ サイトでサポートされていないサイト システムの役割 'Microsoft Intune コネクタ'**|展開するスタンドアロン プライマリ サイトに Microsoft Intune コネクタのサイト システムの役割がインストールされていないことを確認します。|エラー|中央管理サイト|
+|**ユーザー状態移行ツール (USMT) のインストール**|Windows 8.1 用 Windows アセスメント & デプロイメント キット (ADK) のユーザー状態移行ツール (USMT) コンポーネントがインストールされているかどうかを確認します。|エラー|中央管理サイト、 <br>プライマリ サイト (スタンドアロンのみ)|  
+|**SQL Server コンピューターの FQDN の検証**|SQL Server コンピューターに対して指定された FQDN が有効かどうかをチェックします。|エラー|SQL Server|
+|**中央管理サイトのバージョンの確認**|中央管理サイトの Configuration Manager のバージョンが同じであることを確認します。|エラー|プライマリ サイト|
+|**Active Directory に発行するためのサイト サーバーのアクセス許可の確認**|サイト サーバーのコンピューター アカウントに、Active Directory ドメイン内の **System Management** コンテナーに対する [ **フル コントロール** ] アクセス許可が割り当てられていることを確認します。 必要なアクセス許可の構成オプションの詳細については、「[サイト発行のために Active Directory を準備する](../../../../core/plan-design/network/extend-the-active-directory-schema.md)」を参照してください。<br><br>**注**: これらのアクセス許可を手動で確認済みの場合は、この警告を無視できます。|警告|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト|
+|**Windows 展開ツールのインストール**|Windows 10 用 Windows ADK の Windows 展開ツール コンポーネントがインストールされているかどうかを確認します。|エラー|SMS プロバイダー|
+|**Windows フェールオーバー クラスター**|管理ポイントまたは配布ポイントを備えたコンピューターが Windows クラスターに含まれていないことを確認します。|エラー|管理ポイント<br>配布ポイント|
+|**Windows プレインストール環境のインストール**|Windows 10 用 Windows ADK の Windows プレインストール環境コンポーネントがインストールされているかどうかを確認します。|エラー|SMS プロバイダー|
+|**Windows Remote Management (WinRM) v1.1**|プライマリ サイト サーバーまたは Configuration Manager コンソール コンピューターに、帯域外管理コンソールの実行に必要な WinRM 1.1 がインストールされていることを確認します。 WinRM 1.1 のダウンロード方法の詳細については、Microsoft サポート技術情報の [記事 936059](https://support.microsoft.com/en-us/kb/936059) を参照してください。|警告|プライマリ サイト、 <br>Configuration Manager コンソール|
+|**サイト サーバー上の WSUS**|Windows Server Update Services (WSUS) 3.0 Service Pack 2 (SP2) がサイト サーバーにインストールされていることを確認します。 サイト サーバー以外のコンピューターでソフトウェアの更新ポイントを使用する場合は、サイト サーバーに WSUS 管理コンソールをインストールする必要があります。 WSUS の詳細については、「[Windows Server Update Services](http://go.microsoft.com/fwlink/p/?LinkID=79477)」を参照してください。|警告|中央管理サイト、 <br>プライマリ サイト|  
 
-##  <a name="BKMK_Requirements"></a> Controlli dei prerequisiti per i requisiti di sistema  
-Nella tabella seguente sono elencati i controlli eseguiti dal controllo dei prerequisiti per i requisiti di sistema.  
+##  <a name="BKMK_Requirements"></a> システム要件の前提条件の確認  
+次の表に、前提条件チェッカーが実行するシステム要件の確認を示します。  
 
-|Controllo eseguito|Spiegazione|Gravità|Applicabilità del sito|
+|実行される確認|説明|重大度|サイトの適用性|
 |---|---|---|---|
-|**Controllo del livello di funzionalità del dominio di Active Directory**|Verifica che il livello funzionale del dominio di Active Directory sia almeno Windows Server 2008 R2.|Avviso|Sito di amministrazione centrale, <br>Sito primario|
-|**Verifica esecuzione del servizio Server**|Verifica che il servizio Server sia avviato.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|  
-|**Appartenenza al dominio**|Verifica che il computer di Configuration Manager sia membro di un dominio di Windows.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario, <br>Provider SMS, <br>SQL Server|
-|**Appartenenza al dominio**|Verifica che il computer di Configuration Manager sia membro di un dominio di Windows.|Avviso|Punto di gestione, <br>Punto di distribuzione|
-|**Unità FAT nel server del sito**|Verifica se l'unità disco è formattata con il file system FAT. Per una protezione migliore, installare i componenti del server del sito in unità disco formattate con il file system NTFS.|Avviso|Sito primario|
-|**Spazio su disco disponibile nel server del sito**|Per installare il server del sito, il computer server del sito deve avere almeno 15 GB di spazio libero su disco. Se si installa il ruolo del sistema del sito Provider SMS nello stesso computer, sarà necessario disporre di 1 GB aggiuntivo di spazio libero.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|
-|**Riavvio del sistema in sospeso**|Verifica se un altro programma necessita del riavvio del server prima dell'esecuzione del programma di installazione.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario, <br>Console di Configuration Manager, <br>Provider SMS, <br>SQL Server, <br>Punto di gestione, <br>Punto di distribuzione|
-|**Controller di dominio di sola lettura**|I server di database del sito e i server dei siti secondari non sono supportati in un controller di dominio di sola lettura. Per altre informazioni, vedere l'articolo relativo ai [problemi riscontrati durante l'installazione di SQL Server in un controller di dominio](http://go.microsoft.com/fwlink/p/?LinkId=264856) nella Microsoft Knowledge Base.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|
-|**Estensioni dello schema**|Determina se lo schema di Servizi di dominio Active Directory è stato esteso e, in tale caso, determina la versione delle estensioni dello schema usate. Le estensioni dello schema di Active Directory di Configuration Manager non sono necessarie per l'installazione del server del sito, ma sono consigliate per un uso più completo di tutte le funzionalità di Configuration Manager. Per altre informazioni sui vantaggi offerti dall'estensione dello schema, vedere [Preparare Active Directory per la pubblicazione di siti](../../../../core/plan-design/network/extend-the-active-directory-schema.md).|Avviso|Sito di amministrazione centrale, <br>Sito primario|
-|**Lunghezza FQDN server del sito**|Verifica la lunghezza del nome FQDN del computer del server del sito.|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario|
-|**Sistema operativo della console di Configuration Manager non supportato**|Verifica che la console di Configuration Manager possa essere installata nei computer che eseguono una versione supportata del sistema operativo. Per altre informazioni, vedere [Sistemi operativi supportati per le console di System Center Configuration Manager](/sccm/core/plan-design/configs/supported-operating-systems-consoles).|Errore|Console di Configuration Manager|
-|**Versione del sistema operativo del server del sito non supportata per l'installazione**|Verifica che un sistema operativo supportato sia in esecuzione sul server. Per altre informazioni, vedere [Sistemi operativi supportati per i server dei sistemi del sito di System Center Configuration Manager](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers.md).|Errore|Sito di amministrazione centrale, <br>Sito primario, <br>Sito secondario, <br>Console di Configuration Manager, <br>Punto di gestione, <br>Punto di distribuzione|
-|**Verifica coerenza database**|A partire dalla versione 1602 questo controllo verifica la coerenza del database.|Errore|Sito di amministrazione centrale, <br>Sito primario|  
-
+|**Active Directory ドメインの機能レベルの確認**|Active Directory ドメインの機能レベルが最小要件の Windows Server 2008 R2 以降であることを確認します。|警告|中央管理サイト、 <br>プライマリ サイト|
+|**サーバー サービスが実行されていることの確認**|サーバー サービスが開始していることを確認します。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト|  
+|**ドメインのメンバーシップ**|Configuration Manager コンピューターが Windows ドメインのメンバーであることを確認します。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト、 <br>SMS プロバイダー、 <br>SQL Server|
+|**ドメインのメンバーシップ**|Configuration Manager コンピューターが Windows ドメインのメンバーであることを確認します。|警告|管理ポイント、 <br>配布ポイント|
+|**サイト サーバー上の FAT ドライブ**|ディスク ドライブが FAT ファイル システムでフォーマットされているかどうかを確認します。 セキュリティを強化するには、NTFS ファイル システムでフォーマットされたディスク ドライブにサイト サーバー コンポーネントをインストールします。|警告|プライマリ サイト|
+|**サイト サーバーの空きディスク領域**|サイト サーバーをインストールするには、サイト サーバー コンピューターに少なくとも 15 GB の空きディスク領域が必要です。 同じコンピューターに SMS プロバイダーのサイト システムの役割をインストールする場合は、さらに 1 GB の空きディスク領域が必要です。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト|
+|**保留中のシステムの再起動**|セットアップを実行する前にサーバーを再起動することが別のプログラムで要求されているかどうかをチェックします。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト、 <br>Configuration Manager コンソール、 <br>SMS プロバイダー、 <br>SQL Server、 <br>管理ポイント、 <br>配布ポイント|
+|**読み取り専用のドメイン コントローラー**|サイト データベース サーバーとセカンダリ サイト サーバーは、読み取り専用のドメイン コントローラー (RODC) ではサポートされていません。 詳細については、Microsoft サポート技術情報の「[You may encounter problems when installing SQL Server on a domain controller (ドメイン コントローラーに SQL Server をインストールすると問題が発生する)](http://go.microsoft.com/fwlink/p/?LinkId=264856)」を参照してください。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト|
+|**スキーマ拡張**|Active Directory ドメイン サービスのスキーマが拡張されているかどうかを判定し、拡張されている場合は、使用されたスキーマ拡張のバージョンを確認します。 Configuration Manager の Active Directory スキーマ拡張は、サイト サーバーのインストールには必要ありませんが、Configuration Manager のすべての機能を利用するためには、スキーマの拡張をお勧めします。 スキーマ拡張の詳細については、「[サイト発行のために Active Directory を準備する](../../../../core/plan-design/network/extend-the-active-directory-schema.md)」を参照してください。|警告|中央管理サイト、 <br>プライマリ サイト|
+|**サイト サーバーの FQDN の長さ**|サイト サーバー コンピューターの FQDN の長さを確認します。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト|
+|**サポートされていない Configuration Manager コンソールのオペレーティング システム**|Configuration Manager コンソールを、サポートされるオペレーティング システムのバージョンを実行するコンピューターにインストールできることを確認します。 詳細については、「[System Center Configuration Manager コンソールのサポートされるオペレーティング システム](/sccm/core/plan-design/configs/supported-operating-systems-consoles)」を参照してください。|エラー|Configuration Manager コンソール|
+|**セットアップでサポートされていないサイト サーバーのオペレーティング システムのバージョン**|サーバーでサポートされているオペレーティング システムが実行されていることを確認します。 詳細については、「[System Center Configuration Manager サイト システム サーバーのサポートされるオペレーティング システム](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)」を参照してください。|エラー|中央管理サイト、 <br>プライマリ サイト、 <br>セカンダリ サイト、 <br>Configuration Manager コンソール、 <br>管理ポイント、 <br>配布ポイント|
+|**データベースの整合性の検証**|バージョン 1602 以降で、このチェックによりデータベースの整合性が検証されます。|エラー|中央管理サイト、 <br>プライマリ サイト|  

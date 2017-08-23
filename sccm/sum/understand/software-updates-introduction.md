@@ -1,7 +1,6 @@
 ---
-
-title: Introduzione agli aggiornamenti software | Documentazione Microsoft
-description: Informazioni di base sugli aggiornamenti software in System Center Configuration Manager.
+title: "ソフトウェア更新プログラムの概要 | Microsoft Docs"
+description: "System Center Configuration Manager でのソフトウェア更新プログラムの基礎について説明します。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -10,281 +9,273 @@ ms.date: 10/06/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
-translationtype: Human Translation
-ms.sourcegitcommit: d8cace9edd58e8fa438dbb43e54e57cd0dc55d2b
 ms.openlocfilehash: 2904b904bbaf155f016f55fbd36af80308a42d76
-
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>Introduzione agli aggiornamenti software in System Center Configuration Manager
+# <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>System Center Configuration Manager のソフトウェア更新プログラムの概要
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Gli aggiornamenti software in System Center Configuration Manager offrono un set di strumenti e risorse che consentono di gestire la complessa attività di monitoraggio e applicazione degli aggiornamenti software ai computer client dell'azienda. Un processo di gestione efficiente degli aggiornamenti software è necessario per mantenere l'efficienza operativa, risolvere i problemi di sicurezza e mantenere la stabilità dell'infrastruttura di rete. Tuttavia, a causa della natura mutevole della tecnologia e della continua comparsa di nuove minacce per la sicurezza, una gestione efficiente degli aggiornamenti software richiede un'attenzione costante e ininterrotta.  
+System Center Configuration Manager のソフトウェア更新プログラムには、企業のソフトウェア更新プログラムを追跡し、クライアント コンピューターにプログラムを適用する複雑なタスクの管理に役立つツールとリソースのセットが用意されています。 運用効率を維持し、セキュリティ上の問題を解決し、さらにネットワーク インフラストラクチャの安定性を維持するには、効果的なソフトウェア更新プログラムの管理プロセスが必要です。 ただし、テクノロジは常に変化し、新しいセキュリティ上の脅威が絶え間なく出現するために、効果的なソフトウェア更新プログラムの管理には、一貫した継続的な注意が必要です。  
 
-Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiornamenti software nell'ambiente, vedere [Example scenario to deploy security software updates](../deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md) (Scenario di esempio per distribuire aggiornamenti di sicurezza del software).  
+ご使用の環境でのソフトウェア更新プログラムの展開方法を示したサンプル シナリオについては、「[Example scenario to deploy security software updates](../deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md)」(セキュリティ ソフトウェア更新プログラムを展開するためのサンプル シナリオ) を参照してください。  
 
-##  <a name="a-namebkmksynchronizationa-software-updates-synchronization"></a><a name="BKMK_Synchronization"></a> Sincronizzazione degli aggiornamenti software  
- La sincronizzazione degli aggiornamenti software in Configuration Manager avviene mediante la connessione a Microsoft Update per recuperare i metadati degli aggiornamenti software. Il sito di livello superiore, un sito di amministrazione centrale o un sito primario autonomo, vengono sincronizzati con Microsoft Update in base a una pianificazione o quando si avvia manualmente la sincronizzazione dalla console di Configuration Manager. Quando Configuration Manager termina la sincronizzazione degli aggiornamenti software nel sito di livello superiore, la sincronizzazione degli aggiornamenti software viene avviata nei siti figlio, se esistenti. Dopo che la sincronizzazione è stata completata in ogni sito primario o secondario, vengono creati criteri a livello di sito che forniscono ai computer client la posizione dei punti di aggiornamento software.  
-
-> [!NOTE]  
->  Per impostazione predefinita, gli aggiornamenti software sono abilitati nelle impostazioni client. Se, tuttavia, si imposta l'impostazione client **Abilitare aggiornamento software nei client** su **No** per disabilitare gli aggiornamenti software in una raccolta o nelle impostazioni predefinite, la posizione dei punti di aggiornamento software non viene inviata ai client associati. Per altre informazioni, vedere le impostazioni del client per gli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
-
- Dopo aver ricevuto i criteri, il client avvia un'analisi della conformità degli aggiornamenti software e scrive le informazioni in Strumentazione gestione Windows (WMI). Le informazioni sulla conformità vengono quindi inviate al punto di gestione che le invia infine al server del sito. Per altre informazioni sulla valutazione della conformità, vedere la sezione [Software updates compliance assessment](#BKMK_SUMCompliance) in questo argomento.  
-
- È possibile installare più punti di aggiornamento software in un sito primario. Il primo punto di aggiornamento software installato viene configurato come origine della sincronizzazione. Ciò consente la sincronizzazione da Microsoft Update o da un server WSUS non presente nella gerarchia di Configuration Manager. Gli altri punti di aggiornamento software nel sito usano il primo punto di aggiornamento software come origine della sincronizzazione.  
+##  <a name="BKMK_Synchronization"></a> ソフトウェア更新プログラムの同期  
+ Configuration Manager でのソフトウェア更新プログラムの同期では、Microsoft Update に接続してソフトウェア更新プログラムのメタデータを取得します。 最上位サイト (中央管理サイトまたはスタンドアロン プライマリ サイト) は、スケジュールに従って、または Configuration Manager コンソールで手動で同期を開始した際に、Microsoft Update と同期します。 Configuration Manager で、最上位サイトでのソフトウェア更新プログラムの同期が完了すると、子サイトでのソフトウェア更新プログラムの同期が開始されます (子サイトが存在する場合)。 各プライマリ サイトまたはセカンダリ サイトで同期が完了すると、クライアント コンピューターにソフトウェアの更新ポイントの場所を通知するサイト全体のポリシーが作成されます。  
 
 > [!NOTE]  
->  Al termine del processo di sincronizzazione degli aggiornamenti software nel sito di livello superiore, i metadati degli aggiornamenti software vengono replicati nei siti figlio usando la replica di database. Quando si connette una console di Configuration Manager al sito figlio, in Configuration Manager vengono visualizzati i metadati degli aggiornamenti software. Finché tuttavia non si installa e configura un punto di aggiornamento software nel sito, i client non analizzeranno la conformità degli aggiornamenti software né comunicheranno le informazioni sulla conformità a Configuration Manager e non sarà possibile distribuire correttamente gli aggiornamenti software.  
+>  ソフトウェア更新プログラムは、既定ではクライアント設定で有効です。 ただし、[ **クライアントのソフトウェア更新プログラムを有効にする** ] クライアント設定を [ **いいえ** ] に設定して、コレクションまたは既定の設定でソフトウェア更新プログラムを無効にすると、ソフトウェアの更新ポイントの場所は、関連付けられたクライアントに送信されません。 詳細については、「[software updates client settings](../../core/clients/deploy/about-client-settings.md#software-updates)」(ソフトウェア更新プログラムのクライアント設定) を参照してください。  
 
-### <a name="synchronization-on-the-top-level-site"></a>Sincronizzazione nel sito principale  
- Il processo di sincronizzazione degli aggiornamenti software nel sito di livello superiore recupera da Microsoft Update i metadati degli aggiornamenti software che soddisfano i criteri specificati in Proprietà del componente del punto di aggiornamento software. È possibile configurare i criteri solo nel sito di livello superiore.  
+ ポリシーを受信した後、クライアントは、ソフトウェア更新プログラムのコンプライアンス対応スキャンを開始し、情報を Windows Management Instrumentation (WMI) に書き込みます。 コンプライアンス情報は、次に管理ポイントに送信され、そこからサイト サーバーに送信されます。 コンプライアンス対応評価の詳細については、このトピックの「 [Software updates compliance assessment](#BKMK_SUMCompliance) 」セクションを参照してください。  
 
-> [!NOTE]  
->  Come origine della sincronizzazione è possibile specificare un server WSUS esistente non presente nella gerarchia di Configuration Manager, anziché Microsoft Update.  
-
- Nell'elenco seguente vengono descritti i passaggi fondamentali per il processo di sincronizzazione nel sito di livello superiore:  
-
-1.  Viene avviata la sincronizzazione degli aggiornamenti software.  
-
-2.  Gestione sincronizzazione WSUS invia a WSUS in esecuzione sul punto di aggiornamento software una richiesta di avvio della sincronizzazione con Microsoft Update.  
-
-3.  I metadati degli aggiornamenti software vengono sincronizzati da Microsoft Update e le modifiche vengono inserite o aggiornate nel database WSUS.  
-
-4.  Quando WSUS ha terminato la sincronizzazione, Gestione sincronizzazione WSUS sincronizza i metadati degli aggiornamenti software dal database WSUS al database di Configuration Manager e le modifiche successive all'ultima sincronizzazione vengono inserite o aggiornate nel database del sito. I metadati degli aggiornamenti software vengono archiviati nel database del sito come elemento di configurazione.  
-
-5.  Gli elementi di configurazione degli aggiornamenti software vengono inviati ai siti figli usando la replica di database.  
-
-6.  Al termine della sincronizzazione, Gestione sincronizzazione WSUS crea il messaggio di stato 6702.  
-
-7.  Gestione sincronizzazione WSUS invia una richiesta di sincronizzazione a tutti i siti figlio.  
-
-8.  Gestione sincronizzazione WSUS invia una richiesta alla volta per WSUS in esecuzione su altri punti di aggiornamento software nel sito. I server WSUS negli altri punti di aggiornamento software vengono configurati come repliche di WSUS in esecuzione sul punto di aggiornamento software predefinito nel sito.  
-
-### <a name="synchronization-on-child-primary-and-secondary-sites"></a>Sincronizzazione in siti figlio primari e secondari  
- Durante il processo di sincronizzazione degli aggiornamenti software nel sito di livello superiore, gli elementi di configurazione degli aggiornamenti software vengono replicati nei siti figlio usando la replica di database. Al termine del processo, il sito di livello superiore invia una richiesta di sincronizzazione al sito figlio e il sito figlio avvia la sincronizzazione WSUS. L'elenco seguente include i passaggi fondamentali per il processo di sincronizzazione in un sito primario figlio o in un sito secondario:  
-
-1.  Gestione sincronizzazione WSUS riceve una richiesta di sincronizzazione dal sito di livello superiore.  
-
-2.  Viene avviata la sincronizzazione degli aggiornamenti software.  
-
-3.  Gestione sincronizzazione WSUS effettua una richiesta di avvio della sincronizzazione a WSUS in esecuzione sul punto di aggiornamento software.  
-
-4.  WSUS in esecuzione sul punto di aggiornamento software nel sito figlio sincronizza i metadati degli aggiornamenti software da WSUS in esecuzione sul punto di aggiornamento software nel sito padre.  
-
-5.  Al termine della sincronizzazione, Gestione sincronizzazione WSUS crea il messaggio di stato 6702.  
-
-6.  Da un sito primario Gestione sincronizzazione WSUS invia una richiesta di sincronizzazione ai siti secondari figlio. Il sito secondario avvia la sincronizzazione degli aggiornamenti software con il sito primario padre. Il sito secondario viene configurato come replica di WSUS in esecuzione sul sito padre.  
-
-7.  Gestione sincronizzazione WSUS invia una richiesta alla volta per WSUS in esecuzione su altri punti di aggiornamento software nel sito. I server WSUS negli altri punti di aggiornamento software vengono configurati come repliche di WSUS in esecuzione sul punto di aggiornamento software predefinito nel sito.  
-
-##  <a name="a-namebkmksumcompliancea-software-updates-compliance-assessment"></a><a name="BKMK_SUMCompliance"></a> Software updates compliance assessment  
- Prima di distribuire gli aggiornamenti software nei computer client in Configuration Manager, avviare un'analisi della conformità degli aggiornamenti software nei computer client. Per ogni aggiornamento software, viene creato un messaggio di stato contenente lo stato di conformità per l'aggiornamento. I messaggi di stato vengono inviati in blocco al punto di gestione e quindi al server del sito, dove lo stato di conformità viene inserito nel database del sito. Lo stato di conformità per gli aggiornamenti software viene visualizzato nella console di Configuration Manager. È possibile distribuire e installare gli aggiornamenti software nei computer che richiedono gli aggiornamenti. Nelle sezioni seguenti vengono fornite informazioni sugli stati di conformità e viene descritto il processo di analisi della conformità degli aggiornamenti software.  
-
-### <a name="software-updates-compliance-states"></a>Stati di conformità degli aggiornamenti software  
- Di seguito viene elencato e descritto ogni stato di conformità visualizzato nella console di Configuration Manager per gli aggiornamenti software.  
-
--   **Richiesto**  
-
-     Specifica che l'aggiornamento software è applicabile e richiesto nel computer client. Una delle seguenti condizioni può essere vera quando lo stato dell'aggiornamento software è **Richiesto**:  
-
-    -   L'aggiornamento software non è stato distribuito nel computer client.  
-
-    -   L'aggiornamento software è stato installato nel computer client. Tuttavia, il messaggio di stato più recente non è stato ancora inserito nel database sul server del sito. Il computer client analizza nuovamente l'aggiornamento dopo l'installazione. Potrebbero trascorrere fino a due minuti prima che il client invii lo stato aggiornato al punto di gestione che quindi inoltra lo stato aggiornato al server del sito.  
-
-    -   L'aggiornamento software è stato installato nel computer client. Tuttavia, l'installazione dell'aggiornamento software richiede un riavvio del computer prima che venga completato l'aggiornamento.  
-
-    -   L'aggiornamento software è stato distribuito nel computer client, ma non è ancora stato installato.  
-
--   **Non richiesto**  
-
-     Specifica che l'aggiornamento software non è applicabile nel computer client. Pertanto, l'aggiornamento software non è richiesto.  
-
--   **Installato**  
-
-     Specifica che l'aggiornamento software è applicabile nel computer client e che è già installato nel computer client.  
-
--   **Sconosciuto**  
-
-     Specifica che il server del sito non ha ricevuto un messaggio di stato dal computer client, in genere per uno dei motivi seguenti:  
-
-    -   La conformità degli aggiornamenti software non è stata analizzata correttamente nel computer client.  
-
-    -   L'analisi è stata completata nel computer client. Tuttavia, il messaggio di stato non è ancora stato elaborato sul server del sito, probabilmente a causa di un backlog del messaggio di stato.  
-
-    -   L'analisi è stata completata nel computer client, ma il messaggio di stato non è stato ricevuto dal sito figlio.  
-
-    -   L'analisi è stata completata nel computer client, ma il file del messaggio di stato è stato danneggiato e non può essere elaborato.  
-
-### <a name="scan-for-software-updates-compliance-process"></a>Analisi del processo di conformità degli aggiornamenti software  
- Quando il punto di aggiornamento software viene installato e sincronizzato, vengono creati criteri del computer a livello di sito che informano i computer client che gli aggiornamenti software di Configuration Manager sono stati abilitati per il sito. Quando un client riceve i criteri del computer, viene programmata un'analisi di valutazione della conformità con avvio casuale entro due ore. Quando l'analisi viene avviata, un processo di Agente client aggiornamenti software cancella la cronologia dell'analisi, invia una richiesta per trovare il server WSUS da usare per l'analisi e aggiorna i Criteri di gruppo locali con il percorso del server WSUS.  
+ 1 つのプライマリ サイトに複数のソフトウェアの更新ポイントをインストールできます。 インストールする最初のソフトウェアの更新ポイントは、同期ソースとして構成されます。 同期は、Microsoft Update、または、Configuration Manager 階層内にない WSUS サーバーから行われます。 サイトのその他のソフトウェアの更新ポイントは、最初のソフトウェアの更新ポイントを同期ソースとして使用します。  
 
 > [!NOTE]  
->  I client basati su Internet devono connettersi al server WSUS usando SSL.  
+>  最上位のサイトでソフトウェア更新プログラムの同期プロセスが完了すると、データベースのレプリケーションを使用して、ソフトウェア更新プログラムのメタデータが子サイトにレプリケートされます。 子サイトに Configuration Manager コンソールを接続すると、Configuration Manager にソフトウェア更新プログラムのメタデータが表示されます。 ただし、サイトでソフトウェアの更新ポイントをインストールして構成するまで、クライアントはソフトウェア更新プログラムのコンプライアンス対応スキャンを実行せず、Configuration Manager にコンプライアンス情報をレポートしません。また、ソフトウェア更新プログラムを正常に展開できません。  
 
- Una richiesta di analisi viene passata all'agente di Windows Update (WUA). L'agente WUA si connette quindi al percorso del server WSUS elencato nei criteri locali, recupera i metadati degli aggiornamenti software sincronizzati nel server WSUS e analizza il computer client alla ricerca di aggiornamenti. Un processo di Agente client aggiornamenti software rileva che la verifica della conformità è stata completata e crea messaggi di stato per ciascun aggiornamento software il cui stato di conformità è stato modificato dall'ultima analisi. I messaggi di stato vengono inviati in blocco al punto di gestione ogni 15 minuti. Il punto di gestione inoltra quindi i messaggi di stato al server del sito, dove vengono inseriti all'interno del relativo database.  
+### <a name="synchronization-on-the-top-level-site"></a>最上位サイトでの同期  
+ 最上位サイトでのソフトウェア更新プログラムの同期プロセスでは、[ソフトウェアの更新ポイント コンポーネント] プロパティで指定した条件に合ったソフトウェア更新プログラムのメタデータを、Microsoft Update から取得します。 この条件は、最上位サイトでのみ構成します。  
 
- Dopo l'analisi iniziale per la conformità degli aggiornamenti software, l'analisi viene avviata in base a una pianificazione configurata. Tuttavia, se il client ha analizzato la conformità degli aggiornamenti software nell'intervallo di tempo indicato dal valore Durata (TTL), utilizzerà i metadati degli aggiornamenti software memorizzati in locale. Quando l'ultima analisi non rientra nell'intervallo TTL, il client deve connettersi a WSUS in esecuzione sul punto di aggiornamento software e aggiornare i metadati degli aggiornamenti software nel client.  
+> [!NOTE]  
+>  Microsoft Update の代わりに、Configuration Manager 階層にない既存の WSUS サーバーを同期ソースとして指定できます。  
 
- L'analisi per la conformità degli aggiornamenti software, inclusa la relativa pianificazione, può iniziare nei modi seguenti:  
+ 次の一覧では、最上位サイトでの同期プロセスの基本的な手順について説明します。  
 
--   **Pianificazione dell'analisi degli aggiornamenti software**: l'analisi per la conformità degli aggiornamenti software inizia in base alla pianificazione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
+1.  ソフトウェア更新プログラムの同期が開始されます。  
 
--   **Azione Proprietà di Configuration Manager**: l'utente può avviare l'azione **Ciclo di analisi per aggiornamenti software** o **Ciclo di valutazione distribuzione aggiornamenti software** nella scheda **Azione** della finestra di dialogo **Proprietà di Configuration Manager** nel computer client.  
+2.  WSUS 同期マネージャーが、ソフトウェアの更新ポイントで実行されている WSUS に対し、Microsoft Update との同期を開始するように要求を送信します。  
 
--   **Pianificazione della rivalutazione della distribuzione**: la valutazione della distribuzione e l'analisi per la conformità degli aggiornamenti software iniziano in base alla pianificazione della rivalutazione della distribuzione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
+3.  ソフトウェア更新プログラムのメタデータが Microsoft Update から同期され、すべての変更が WSUS データベースに挿入または更新されます。  
 
--   **Prima del download dei file di aggiornamento**: quando un computer client riceve un criterio di assegnazione per una nuova distribuzione richiesta, Agente client aggiornamenti software scarica i file di aggiornamento software nella cache del client locale. Prima di scaricare i file di aggiornamento software, l'agente client avvia un'analisi per verificare che l'aggiornamento software sia ancora necessario.  
+4.  WSUS で同期が完了すると、WSUS 同期マネージャーが、ソフトウェア更新プログラムのメタデータと、前回の同期でサイト データベースに挿入または更新された後に行われたすべての変更を、WSUS データベースから Configuration Manager データベースに同期します。 ソフトウェア更新プログラムのメタデータは、構成項目としてサイト データベースに保存されます。  
 
--   **Prima dell'installazione dell'aggiornamento software**: prima dell'installazione dell'aggiornamento software, Agente client aggiornamenti software avvia un'analisi per verificare che gli aggiornamenti software siano ancora necessari.  
+5.  ソフトウェア更新プログラムの構成項目は、データベースのレプリケーションを使用して子サイトに送信されます。  
 
--   **Dopo l'installazione dell'aggiornamento software**: dopo il completamento dell'installazione di un aggiornamento software, Agente client aggiornamenti software avvia un'analisi per verificare che non siano più necessari aggiornamenti software e crea un nuovo messaggio di stato che indica che l'aggiornamento software è installato. Quando l'installazione è terminata, ma è necessario un riavvio, il messaggio di stato indica che il computer client è in attesa di un riavvio.  
+6.  同期が正常に完了すると、WSUS 同期マネージャーはステータス メッセージ 6702 を作成します。  
 
--   **Dopo il riavvio del sistema**: quando un computer client è in attesa di un riavvio del sistema per completare l'installazione dell'aggiornamento software, Agente client aggiornamenti software avvia un'analisi dopo il riavvio per verificare che l'aggiornamento software non sia più richiesto e crea un messaggio di stato che indica che l'aggiornamento software è installato.  
+7.  WSUS 同期マネージャーがすべての子サイトに同期要求を送信します。  
 
-#### <a name="time-to-live-value"></a>Valore di durata  
- I metadati degli aggiornamenti software richiesti per l'analisi della conformità degli aggiornamenti software vengono memorizzati nel computer client locale e, per impostazione predefinita, sono rilevanti per un massimo di 24 ore. Questo valore è noto come Durata (TTL).  
+8.  WSUS 同期マネージャーは、サイトのその他のソフトウェアの更新ポイントで実行されている WSUS に、一度に 1 つの要求を送信します。 その他のソフトウェアの更新ポイントの WSUS サーバーは、サイトの既定のソフトウェアの更新ポイントで実行されている WSUS のレプリカとして構成されています。  
 
-#### <a name="scan-for-software-updates-compliance-types"></a>Analisi dei tipi di conformità degli aggiornamenti software  
- I client analizzano la conformità degli aggiornamenti software usando un'analisi online o offline e un'analisi forzata o non forzata, in base al modo in cui l'analisi per la conformità degli aggiornamenti software viene avviata. Di seguito vengono descritti i metodi di avvio dell'analisi online e offline e viene specificato se l'analisi è forzata o non forzata.  
+### <a name="synchronization-on-child-primary-and-secondary-sites"></a>子プライマリ サイトとセカンダリ サイトでの同期  
+ 最上位のサイトでソフトウェア更新プログラムの同期プロセス中、データベースのレプリケーションを使用して、ソフトウェア更新プログラムの構成項目が子サイトにレプリケートされます。 処理の最後に、最上位のサイトが子サイトに同期要求を送信し、子サイトが WSUS 同期を開始します。 次のリストでは、子プライマリ サイトまたはセカンダリ サイトでの同期プロセスの基本的な手順について説明します。  
 
--   **Pianificazione analisi aggiornamento software** (analisi online non forzata)  
+1.  WSUS 同期マネージャーは、最上位のサイトから同期要求を受信します。  
 
-     Nella pianificazione analisi configurata, il client si connette a WSUS in esecuzione sul punto di aggiornamento software per recuperare i metadati degli aggiornamenti software solo quando l'ultima analisi non rientra nell'intervallo TTL.  
+2.  ソフトウェア更新プログラムの同期が開始されます。  
 
--   **Ciclo di analisi per aggiornamenti software** o **Ciclo di valutazione distribuzione aggiornamenti software** (analisi online forzata)  
+3.  WSUS 同期マネージャーがソフトウェアの更新ポイントで実行されている WSUS に対し、Microsoft Update との同期を開始するように要求を作成します。  
 
-     Il computer client si connette sempre a WSUS in esecuzione sul punto di aggiornamento software per recuperare i metadati degli aggiornamenti software prima che il computer client analizzi la conformità degli aggiornamenti software. Al termine dell'analisi, il contatore TTL viene reimpostato. Ad esempio, se il valore TTL è 24 ore, dopo che un utente avvia un'analisi per la conformità degli aggiornamenti software, tale valore viene reimpostato su 24 ore.  
+4.  子サイトのソフトウェア更新ポイントで実行されている WSUS が、親サイトのソフトウェア更新ポイントで実行されている WSUS からソフトウェア更新プログラムのメタデータを同期します。  
 
--   **Pianificazione della rivalutazione della distribuzione** (analisi online non forzata)  
+5.  同期が正常に完了すると、WSUS 同期マネージャーはステータス メッセージ 6702 を作成します。  
 
-     Nella pianificazione della rivalutazione della distribuzione configurata, il client si connette a WSUS in esecuzione sul punto di aggiornamento software per recuperare i metadati degli aggiornamenti software solo quando l'ultima analisi non rientra nell'intervallo TTL.  
+6.  プライマリ サイトから、WSUS 同期マネージャーがすべての子セカンダリ サイトに同期要求を送信します。 セカンダリ サイトは、親プライマリ サイトとのソフトウェア更新プログラムの同期を開始します。 セカンダリ サイトは、親サイトで実行されている WSUS のレプリカとして構成されています。  
 
--   **Prima di scaricare i file di aggiornamento** (analisi online non forzata)  
+7.  WSUS 同期マネージャーは、サイトのその他のソフトウェアの更新ポイントで実行されている WSUS に、一度に 1 つの要求を送信します。 その他のソフトウェアの更新ポイントの WSUS サーバーは、サイトの既定のソフトウェアの更新ポイントで実行されている WSUS のレプリカとして構成されています。  
 
-     Prima che il client possa scaricare i file di aggiornamento nelle distribuzioni richieste, si connette a WSUS in esecuzione sul punto di aggiornamento software per recuperare i metadati degli aggiornamenti software solo quando l'ultima analisi non rientra nell'intervallo TTL.  
+##  <a name="BKMK_SUMCompliance"></a> Software updates compliance assessment  
+ ソフトウェアの更新プログラムを Configuration Manager 内のクライアント コンピューターに展開する前に、クライアント コンピューター上でソフトウェア更新プログラムのコンプライアンス対応状態のスキャンを開始します。 ソフトウェア更新プログラムごとに、コンプライアンス対応状態を示す状態メッセージが作成されます。 状態メッセージは一括して管理ポイントに送信されてからサイト サーバーに送信され、そこでコンプライアンス対応状態がサイト データベースに挿入されます。 ソフトウェア更新プログラムのコンプライアンス対応状態が Configuration Manager コンソールに表示されます。 更新プログラムが必要なコンピューターでソフトウェア更新プログラムを展開してインストールできます。 次の各セクションには、コンプライアンス対応状態に関する情報を示し、ソフトウェア更新プログラムのコンプライアンス対応のスキャン手順について説明します。  
 
--   **Prima dell'installazione dell'aggiornamento software** (analisi online non forzata)  
+### <a name="software-updates-compliance-states"></a>ソフトウェア更新プログラムのコンプライアンス対応状態  
+ 次の表に、Configuration Manager コンソールに表示される、ソフトウェア更新プログラムの各対応状態とその説明を示します。  
 
-     Prima che il client installi gli aggiornamenti software nelle distribuzioni richieste, si connette a WSUS in esecuzione sul punto di aggiornamento software per recuperare i metadati degli aggiornamenti software solo quando l'ultima analisi non rientra nell'intervallo TTL.  
+-   **必須**  
 
--   **Dopo l'installazione dell'aggiornamento software** (analisi offline forzata)  
+     ソフトウェア更新プログラムが適用可能で、クライアント コンピューターで必須であることを指定します。 ソフトウェア更新プログラムの状態が [ **必須**] である場合、次の状況のいずれかに該当します。  
 
-     Dopo aver installato un aggiornamento software, l'Agente client aggiornamenti software avvia un'analisi usando i metadati locali. Il client non si connette mai a WSUS in esecuzione sul punto di aggiornamento software per recuperare i metadati degli aggiornamenti software.  
+    -   クライアント コンピューターにソフトウェア更新プログラムが展開されていない。  
 
--   **Dopo il riavvio del sistema** (analisi offline forzata)  
+    -   クライアント コンピューターにソフトウェア更新プログラムがインストールされているが、 サイト サーバーのデータベースに最新の状態メッセージがまだ挿入されていない。 インストールが完了した後、クライアント コンピューターが更新プログラムを再スキャンする。 更新された状態がクライアントから管理ポイントに送信されるまで、最大 2 分の遅延が発生する可能性があり、その後、更新された状態がサイト サーバーへと転送されます。  
 
-     Dopo aver installato un aggiornamento software e riavviato il computer, l'Agente client aggiornamenti software avvia un'analisi usando i metadati locali. Il client non si connette mai a WSUS in esecuzione sul punto di aggiornamento software per recuperare i metadati degli aggiornamenti software.  
+    -   クライアント コンピューターにソフトウェア更新プログラムがインストールされているが、 ソフトウェア更新プログラムのインストールを完了するには、コンピューターを再起動する必要がある。  
 
-##  <a name="a-namebkmkdeploymentpackagesa-software-update-deployment-packages"></a><a name="BKMK_DeploymentPackages"></a> Pacchetti di distribuzione degli aggiornamenti software  
- Un pacchetto di distribuzione degli aggiornamenti software rappresenta il mezzo usato per scaricare tali aggiornamenti in una cartella di rete condivisa nonché copiare i file di origine aggiornamento software nella raccolta contenuto nei server del sito e nei punti di distribuzione definiti nella distribuzione. Usando il Download guidato degli aggiornamenti, è possibile scaricare gli aggiornamenti software e aggiungerli ai pacchetti di distribuzione prima di distribuirli. La procedura guidata consente di effettuare il provisioning degli aggiornamenti software nei punti di distribuzione e di verificare che questa parte del processo di distribuzione sia eseguita correttamente prima di distribuire gli aggiornamenti software nei client.  
+    -   ソフトウェア更新プログラムがクライアント コンピューターに展開されたが、まだインストールされていない。  
 
- Quando vengono distribuiti gli aggiornamenti software scaricati tramite la Distribuzione guidata degli aggiornamenti software, la distribuzione usa automaticamente il pacchetto di distribuzione contenente gli aggiornamenti software. Quando vengono distribuiti aggiornamenti software che non sono stati scaricati, è necessario specificare un pacchetto di distribuzione nuovo o esistente nella Distribuzione guidata degli aggiornamenti software e gli aggiornamenti software vengono scaricati al termine della procedura.  
+-   **必要なし**  
+
+     ソフトウェア更新プログラムがクライアント コンピューターで適用可能でないことを指定します。 このため、ソフトウェア更新プログラムは不要です。  
+
+-   **インストール済み**  
+
+     クライアント コンピューターがソフトウェア更新プログラムの適用対象で、クライアント コンピューターには既にソフトウェア更新プログラムがインストールされていることを示します。  
+
+-   **不明**  
+
+     サイト サーバーがクライアント コンピューターから状態メッセージを受信していないことを示します。一般に、次のいずれかの原因が考えられます。  
+
+    -   クライアント コンピューターでソフトウェア更新プログラムのコンプライアンス対応を正常にスキャンできなかった。  
+
+    -   クライアント コンピューターでのスキャンは正常に完了したが、 おそらく状態メッセージのバックログのため、サイト サーバー上で状態メッセージがまだ処理されていない。  
+
+    -   クライアント コンピューターでのスキャンは正常に完了したが、状態メッセージが子サイトからまだ受信されていない。  
+
+    -   クライアント コンピューターでのスキャンは正常に完了したが、何らかの操作で状態メッセージ ファイルが破れ、処理できなかった。  
+
+### <a name="scan-for-software-updates-compliance-process"></a>ソフトウェア更新プログラムのコンプライアンス対応のスキャン手順  
+ ソフトウェアの更新ポイントがインストールおよび同期されている場合、Configuration Manager ソフトウェア更新プログラムがサイトで有効になったことをクライアント コンピューターに通知する、サイト全体のコンピューター ポリシーが作成されます。 クライアントがコンピューター ポリシーを受信すると、コンプライアンス対応評価スキャンが次の 2 時間以内にランダムで開始するようスケジュールされます。 スキャンが開始されると、ソフトウェアの更新クライアント エージェントはスキャン履歴をクリアし、スキャンで使用すべき WSUS サーバーを探す要求を送信して、WSUS サーバーの場所をローカルのグループ ポリシーで更新します。  
+
+> [!NOTE]  
+>  インターネット ベースのクライアントは、SSL を使用して WSUS に接続する必要があります。  
+
+ スキャン要求は、Windows Update エージェント (WUA) に渡されます。 その後、WUA はローカル ポリシーの一覧にある WSUS サーバーの場所に接続し、WSUS サーバー上で同期したソフトウェア更新プログラムのメタデータを取得して、更新プログラムが必要かどうかをクライアント コンピューターでスキャンします。 ソフトウェアの更新クライアント エージェントは、コンプライアンス対応のスキャンが完了したことを検知し、最後にスキャンしたときからコンプライアンス対応状態が変更された各ソフトウェア更新プログラムの状態メッセージを作成します。 状態メッセージは、15 分ごとに一括して管理ポイントに送信されます。 その後、管理ポイントは状態メッセージをサイト サーバーへ転送し、状態メッセージはサイト サーバー データベースへ挿入されます。  
+
+ ソフトウェア更新プログラムのコンプライアンス対応状態の最初のスキャン後は、構成されたスキャン スケジュールに従ってスキャンが開始されます。 ただし、クライアントが有効期限 (TTL) の値で示される時間帯内でソフトウェア更新プログラムのコンプライアンス対応をスキャンした場合、クライアントはローカルに保存されているソフトウェア更新プログラムのメタデータを使用します。 前回のスキャンが TTL 範囲外の場合、クライアントがソフトウェアの更新ポイントで実行されている WSUS に接続して、クライアントに保存されているソフトウェア更新プログラムのメタデータを更新する必要があります。  
+
+ スキャン スケジュールも含め、ソフトウェア更新プログラムのコンプライアンス対応のスキャンは、次の方法で開始できます。  
+
+-   **ソフトウェア更新プログラムのスキャンのスケジュール**: ソフトウェア更新プログラムのコンプライアンス対応のスキャンは、ソフトウェアの更新クライアント エージェント設定で構成されるスキャン スケジュールで指定された時刻に実行されます。 ソフトウェア更新プログラムのクライアント設定の構成方法の詳細については、「[software updates client settings](../../core/clients/deploy/about-client-settings.md#software-updates)」(ソフトウェア更新プログラムのクライアント設定) を参照してください。  
+
+-   **Configuration Manager のプロパティの操作**: ユーザーは、クライアント コンピューターの **[Configuration Manager のプロパティ]** ダイアログ ボックスの **[操作]** タブから **[ソフトウェア更新プログラムのスキャン サイクル]** 操作または **[ソフトウェア更新プログラムの展開評価サイクル]** 操作を開始できます。  
+
+-   **展開の再評価スケジュール**: ソフトウェア更新プログラムのコンプライアンス対応の展開評価とスキャンは、ソフトウェアの更新クライアント エージェント設定で構成される展開再評価スケジュールで指定された時刻に実行されます。 ソフトウェア更新プログラムのクライアント設定の詳細については、「[software updates client settings](../../core/clients/deploy/about-client-settings.md#software-updates)」(ソフトウェア更新プログラムのクライアント設定) を参照してください。  
+
+-   **更新プログラム ファイルのダウンロード前**: クライアント コンピューターが新しい必須の展開の割り当てポリシーを受信すると、ソフトウェア更新クライアント エージェントは、ソフトウェア更新プログラム ファイルをローカル クライアント キャッシュにダウンロードします。 ソフトウェア更新プログラム ファイルをダウンロードする前に、クライアント エージェントは、スキャンを開始し、ソフトウェア更新プログラムがまだ必要であることを確認します。  
+
+-   **ソフトウェア更新プログラムのインストール前**: ソフトウェア更新プログラムをインストールする直前に、ソフトウェア更新クライアント エージェントは、スキャンを開始し、ソフトウェア更新プログラムがまだ必要であることを確認します。  
+
+-   **ソフトウェア更新プログラムのインストール後**: ソフトウェア更新プログラムのインストール直後、ソフトウェア更新クライアント エージェントは、スキャンを開始してソフトウェア更新プログラムが現在必要でないことを確認し、ソフトウェア更新プログラムがインストールされたことを示す新しい状態メッセージを作成します。 インストールの完了後に再起動が必要な場合は、クライアント コンピューターが再起動を保留中であることが状態メッセージに示されます。  
+
+-   **システムの再起動後**: ソフトウェア更新プログラムのインストールを完了するためにクライアント コンピューターがシステムの再起動を保留している場合は、再起動後にソフトウェア更新クライアント エージェントがスキャンを開始してソフトウェア更新プログラムが必要でないことを確認し、ソフトウェア更新プログラムがインストールされたことを示す状態メッセージを作成します。  
+
+#### <a name="time-to-live-value"></a>Time to Live の値  
+ ソフトウェアの更新プログラムのコンプライアンス対応のスキャンに必要なソフトウェア更新プログラムのメタデータは、ローカル クライアント コンピューターに保存され、既定で最大 24 時間保持されます。 この値は待機時間 (TTL) とも呼ばれます。  
+
+#### <a name="scan-for-software-updates-compliance-types"></a>ソフトウェア更新プログラムのコンプライアンス対応スキャンの種類  
+ クライアントは、ソフトウェア更新プログラムのコンプライアンス対応スキャンが開始された方法により、オンライン スキャンまたはオフライン スキャンおよび強制スキャンまたは非強制スキャンを使用します。 次に、スキャンの開始方法に対応するオンラインとオフラインの別、および強制と非強制の別を示して説明します。  
+
+-   **ソフトウェア更新プログラムのスキャンのスケジュール** (非強制オンライン スキャン)  
+
+     構成済みのスキャン スケジュールに従って、前回のスキャンが TTL 外の場合のみ、クライアントはソフトウェア更新ポイントで実行されている WSUS に接続して、ソフトウェア更新プログラムのメタデータを取得します。  
+
+-   **ソフトウェア更新プログラムのスキャン サイクル**または**ソフトウェア更新プログラムの展開評価サイクル** (強制オンライン スキャン)  
+
+     クライアント コンピューターは常に、ソフトウェア更新プログラムのコンプライアンス対応のスキャンの前に、アクティブなソフトウェアの更新ポイントで実行されている WSUS に接続して、ソフトウェア更新プログラムのメタデータを取得します。 スキャンが完了すると、TTL カウンターがリセットされます。 たとえば、TTL が 24 時間の場合、ユーザーがソフトウェア更新プログラムのコンプライアンス対応のスキャンを開始した後、TTL は 24 時間にリセットされます。  
+
+-   **展開の再評価スケジュール** (非強制オンライン スキャン)  
+
+     構成済みの展開の再評価スケジュールに従って、前回のスキャンが TTL 外の場合のみ、クライアントはソフトウェアの更新ポイントで実行されている WSUS に接続して、ソフトウェア更新プログラムのメタデータを取得します。  
+
+-   **更新プログラム ファイルのダウンロード前** (非強制オンライン スキャン)  
+
+     必須の展開に含まれる更新プログラム ファイルをダウンロードするには、その前に、前回のスキャンが TTL 外の場合のみ、クライアントはソフトウェアの更新ポイントで実行されている WSUS に接続して、ソフトウェア更新プログラムのメタデータを取得する必要があります。  
+
+-   **ソフトウェア更新プログラムのインストール前**(非強制オンライン スキャン)  
+
+     必須の展開に含まれるソフトウェア更新プログラムをインストールするには、その前に、前回のスキャンが TTL 外の場合のみ、クライアントはソフトウェアの更新ポイントで実行されている WSUS に接続して、ソフトウェア更新プログラムのメタデータを取得する必要があります。  
+
+-   **ソフトウェア更新プログラムのインストール後**(強制オフライン スキャン)  
+
+     ソフトウェア更新プログラムがインストールされた後、ソフトウェアの更新クライアント エージェントは、ローカル メタデータを使用してスキャンを開始します。 クライアントが、ソフトウェアの更新ポイントで実行されている WSUS に接続して、ソフトウェア更新プログラムのメタデータを取得することはありません。  
+
+-   **システムの再起動後** (強制オフライン スキャン)  
+
+     ソフトウェア更新プログラムがインストールされ、コンピューターが再起動された後、ソフトウェアの更新クライアント エージェントは、ローカル メタデータを使用してスキャンを開始します。 クライアントが、ソフトウェアの更新ポイントで実行されている WSUS に接続して、ソフトウェア更新プログラムのメタデータを取得することはありません。  
+
+##  <a name="BKMK_DeploymentPackages"></a> ソフトウェア更新プログラムの展開パッケージ  
+ ソフトウェア更新プログラムの展開パッケージは、ソフトウェア更新プログラムをネットワーク共有フォルダーにダウンロードし、サイト サーバーと展開で定義される配布ポイント上のコンテンツ ライブラリに、ソフトウェア更新プログラムのソース ファイルをコピーするためのツールです。 更新プログラムのダウンロード ウィザードを使用して、ソフトウェア更新プログラムをダウンロードし、展開する前に展開パッケージに追加できます。 このウィザードでは、ソフトウェア更新プログラムをクライアントに展開する前に、配布ポイント上でソフトウェア更新プログラムをプロビジョニングし、その部分の展開プロセスが正常に行われることを確認できます。  
+
+ ソフトウェア更新プログラムの展開ウィザードを使用してダウンロード済みのソフトウェア更新プログラムを展開する場合は、展開で各ソフトウェア更新プログラムが含まれる展開パッケージが自動的に使用されます。 ダウンロードしていないソフトウェア更新プログラムを展開する場合は、ソフトウェア更新プログラムの展開ウィザードで新規または既存の展開パッケージを指定する必要があります。ウィザードの完了時にソフトウェア更新プログラムがパッケージにダウンロードされます。  
 
 > [!IMPORTANT]  
->  È necessario creare manualmente la cartella di rete condivisa per i file di origine del pacchetto di distribuzione prima di specificarla nella procedura guidata. Ogni pacchetto di distribuzione deve usare una cartella di rete condivisa diversa.  
+>  ウィザードで指定する前に、展開パッケージのソース ファイル用の共有ネットワーク フォルダーを手動で作成する必要があります。 展開パッケージごとに異なる共有ネットワーク フォルダーを使用する必要があります。  
 
 > [!IMPORTANT]  
->  L'account computer del provider SMS e l'utente amministratore che scarica effettivamente gli aggiornamenti software richiedono entrambi le autorizzazioni di **Scrittura** nell'origine del pacchetto. Limitare l'accesso all'origine del pacchetto consente di ridurre il rischio di manomissioni da parte di utenti malintenzionati dei file di origine degli aggiornamenti software nell'origine del pacchetto.  
+>  ソフトウェアの更新プログラムを実際にダウンロードする SMS プロバイダー コンピューター アカウントと管理者ユーザーのどちらにも、パッケージ ソースへの **書き込み** アクセス許可が必要です。 パッケージ ソースへのアクセスを制限して、パッケージ ソース内のソフトウェア更新プログラムのソース ファイルが攻撃者により改ざんされるリスクを低減します。  
 
- Quando viene creato un nuovo pacchetto di distribuzione, la versione del contenuto è impostata su 1 prima che venga scaricato qualsiasi aggiornamento software. Quando i file di aggiornamento software vengono scaricati usando il pacchetto, la versione del contenuto viene aumentata a 2. Pertanto, tutti i nuovi pacchetti di distribuzione iniziano con una versione del contenuto pari a 2. Ogni volta che il contenuto viene modificato in un pacchetto di distribuzione, la versione del contenuto viene incrementata di 1. Per altre informazioni su BranchCache, vedere [Fundamental concepts for content management](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) (Concetti di base per la gestione dei contenuti).  
+ 新しい展開パッケージを作成すると、ソフトウェア更新プログラムがダウンロードされるまではコンテンツ バージョンが 1 に設定されます。 パッケージを使用してソフトウェアの更新ファイルをダウンロードすると、コンテンツ バージョンは 2 に上がります。 そのため、すべての新しい展開パッケージは、コンテンツ バージョン 2 から開始します。 展開パッケージでコンテンツが変更されるたびに、コンテンツ バージョンは 1 ずつ上がります。 詳しくは、「[コンテンツ管理の基本的な概念](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)」を参照してください。  
 
- I client installano gli aggiornamenti software in una distribuzione tramite un punto di distribuzione con aggiornamenti software disponibili, indipendentemente dal pacchetto di distribuzione. Anche se un pacchetto di distribuzione viene eliminato per una distribuzione attiva, i client sono ancora in grado di installare gli aggiornamenti software nella distribuzione finché ciascun aggiornamento non è stato scaricato in almeno un altro pacchetto di distribuzione ed è disponibile in un punto di distribuzione accessibile dal client. Quando l'ultimo pacchetto di distribuzione contenente un aggiornamento software viene eliminato, i computer client non sono in grado di recuperare l'aggiornamento software finché non viene scaricato nuovamente in un pacchetto di distribuzione. Gli aggiornamenti software vengono visualizzati con una freccia rossa nella console di Configuration Manager quando i file di aggiornamento non si trovano in alcun pacchetto di distribuzione. Le distribuzioni vengono visualizzate con una doppia freccia rossa se contengono aggiornamenti in questa condizione.  
+ クライアントでは、展開パッケージに関係なく、ソフトウェア更新プログラムが利用可能な任意の配布ポイントを使用して、展開内のソフトウェア更新プログラムをインストールします。 アクティブな展開の展開パッケージが削除された場合でも、各更新プログラムが他の展開パッケージの少なくとも 1 つにダウンロードされており、クライアントからアクセスできる配布ポイントで利用可能である限り、クライアントで展開のソフトウェア更新プログラムをインストールできます。 ソフトウェア更新プログラムを含む最後の展開パッケージが削除されると、ソフトウェア更新プログラムが再度展開パッケージにダウンロードされるまで、クライアント コンピューターはソフトウェア更新プログラムを取得できません。 更新プログラム ファイルがどの展開パッケージにもない場合、ソフトウェア更新プログラムは Configuration Manager コンソールに赤い矢印付きで表示されます。 このような状態の更新プログラムを含む展開には赤色の二重矢印が表示されます。  
 
-##  <a name="a-namebkmkdeploymentworkflowsa-software-update-deployment-workflows"></a><a name="BKMK_DeploymentWorkflows"></a> Flussi di lavoro di distribuzione degli aggiornamenti software  
- Esistono due scenari principali per la distribuzione di aggiornamenti software nell'ambiente, la distribuzione manuale e la distribuzione automatica. In genere, si effettuerà la distribuzione manuale degli aggiornamenti software per creare una linea di base per i computer client, quindi si gestiranno gli aggiornamenti software nei client usando la distribuzione automatica. Le sezioni seguenti forniscono un riepilogo del flusso di lavoro per la distribuzione manuale e automatica degli aggiornamenti software.  
+##  <a name="BKMK_DeploymentWorkflows"></a> ソフトウェア更新プログラムの展開ワークフロー  
+ 環境にソフトウェア更新プログラムを展開する主な方法には、手動展開と自動展開の 2 種類があります。 通常、ソフトウェア更新プログラムを手動で展開してクライアント コンピューターのベースラインを作成し、次に、自動展開を使用してクライアントのソフトウェア更新を管理します。 以下のセクションで、ソフトウェア更新プログラムの手動展開と自動展開のワークフローの概要を説明します。  
 
-###  <a name="a-namebkmkmanualdeploymenta-manual-deployment-of-software-updates"></a><a name="BKMK_ManualDeployment"></a> Distribuzione manuale degli aggiornamenti software  
- La distribuzione manuale degli aggiornamenti software consiste nel processo di selezione di aggiornamenti software nella console di Configuration Manager e di avvio manuale del processo di distribuzione. In genere si utilizzerà questo metodo di distribuzione per mantenere aggiornati i computer client con gli aggiornamenti software richiesti prima di creare regole di distribuzione automatica che gestiranno le distribuzioni degli aggiornamenti software in corso a cadenza mensile e per distribuire i requisiti di aggiornamento software fuori banda. Il seguente elenco descrive il flusso di lavoro generale per la distribuzione manuale degli aggiornamenti software:  
+###  <a name="BKMK_ManualDeployment"></a> ソフトウェア更新プログラムの手動展開  
+ ソフトウェア更新プログラムの手動展開は、Configuration Manager コンソールでソフトウェア更新プログラムを選択し、展開プロセスを手動で開始するプロセスです。 継続的な月ごとのソフトウェア更新プログラムの展開を管理する自動展開規則を作成する前に、必要なソフトウェア更新プログラムでクライアントを最新の状態にする場合と、帯域外のソフトウェア更新プログラム要件を展開する場合は、通常、この展開方法を使用します。 次の一覧に、ソフトウェア更新プログラムの手動展開の一般的なワークフローを示します。  
 
-1.  Filtrare gli aggiornamenti software che usano requisiti specifici. Ad esempio, è possibile fornire criteri per il recupero di tutti gli aggiornamenti software critici o della sicurezza necessari su più di 50 computer client.  
+1.  特定の要件を使用するソフトウェア更新プログラムをフィルター処理します。 たとえば、50 を超えるクライアント コンピューターで必要なすべてのセキュリティまたは重要なソフトウェア更新プログラムを取得する条件を指定できます。  
 
-2.  Creare un gruppo di aggiornamenti software che contenga gli aggiornamenti software.  
+2.  ソフトウェア更新プログラムを格納するソフトウェア更新プログラム グループを作成します。  
 
-3.  Scaricare il contenuto per gli aggiornamenti software nel gruppo di aggiornamenti software.  
+3.  ソフトウェア更新プログラム グループにソフトウェア更新プログラムのコンテンツをダウンロードします。  
 
-4.  Distribuire manualmente il gruppo di aggiornamenti software.  
+4.  手動でソフトウェア更新プログラム グループを展開します。  
 
-###  <a name="a-namebkmkautomaticdeploymenta-automatic-deployment-of-software-updates"></a><a name="BKMK_AutomaticDeployment"></a> Distribuzione automatica degli aggiornamenti software  
- La distribuzione automatica degli aggiornamenti software viene configurata con una regola di distribuzione automatica. Questo metodo di distribuzione viene in genere usato per gli aggiornamenti software mensili (comunemente noti come Patch martedì) e per la gestione degli aggiornamenti delle definizioni. Quando si esegue la regola, gli aggiornamenti software vengono rimossi dal gruppo di aggiornamenti software (se si usa un gruppo esistente), gli aggiornamenti software che soddisfano un criterio specificato (ad esempio, tutti gli aggiornamenti software della sicurezza rilasciati la settimana precedente) vengono aggiunti a un gruppo di aggiornamenti software, i file di contenuto per gli aggiornamenti software vengono scaricati e copiati nei punti di distribuzione e gli aggiornamenti software vengono distribuiti nei computer client nella raccolta di destinazione. Il seguente elenco descrive il flusso di lavoro generale per la distribuzione automatica degli aggiornamenti software:  
+###  <a name="BKMK_AutomaticDeployment"></a> ソフトウェア更新プログラムの自動展開  
+ ソフトウェア更新プログラムの自動展開は自動展開規則 (ADR) を使用して構成します。 月ごとのソフトウェア更新プログラム (一般的に、月例修正ファイルとして知られています) と、定義の更新の管理には、通常、この展開方法を使用します。 ルールの実行時、ソフトウェアの更新プログラムがソフトウェアの更新プログラム グループから削除され (既存グループを使用する場合)、指定した基準 (たとえば、先週リリースされたすべてのセキュリティ ソフトウェア更新プログラム) を満たすソフトウェアの更新プログラムがソフトウェアの更新プログラム グループに追加され、ソフトウェアの更新プログラムのコンテンツ ファイルがダウンロードされ、配布ポイントにコピーされ、ソフトウェアの更新プログラムがターゲット コレクションのクライアント コンピューターに展開されます。 次の一覧に、ソフトウェア更新プログラムの自動展開の一般的なワークフローを示します。  
 
-1.  Creare una regola di distribuzione automatica che specifica le impostazioni di distribuzione, tra cui:  
+1.  次のような展開設定を指定する ADR を作成します。  
 
-    -   Raccolta di destinazione  
+    -   ターゲット コレクション  
 
-    -   Decidere se abilitare la distribuzione o il report sulla conformità degli aggiornamenti software per i computer client nella raccolta di destinazione  
+    -   展開を有効にするか、ターゲット コレクションに含まれるクライアント コンピューターのソフトウェア更新プログラム対応についてレポートするかを決定します。  
 
-    -   Criteri degli aggiornamenti software  
+    -   ソフトウェア更新条件  
 
-    -   Pianificazioni di valutazione e distribuzione  
+    -   評価および展開のスケジュール  
 
-    -   Esperienza utente  
+    -   ユーザー側の表示と操作  
 
-    -   Proprietà di download  
+    -   ダウンロードのプロパティ  
 
-2.  Gli aggiornamenti software vengono aggiunti a un gruppo di aggiornamenti software.  
+2.  ソフトウェア更新プログラムがソフトウェア更新プログラム グループに追加されます。  
 
-3.  Il gruppo di aggiornamenti software viene distribuito ai computer client nella raccolta di destinazione, se specificato.  
+3.  ソフトウェア更新プログラム グループは、ターゲット コレクションが指定されている場合、そのターゲット コレクションのクライアント コンピューターに展開されます。  
 
- È necessario determinare la strategia di distribuzione da usare nel proprio ambiente. Ad esempio, è possibile creare la regola di distribuzione automatica e trovare una raccolta di destinazione dei client di prova. Dopo aver verificato che gli aggiornamenti software siano installati nel gruppo di prova, è possibile aggiungere una nuova distribuzione alla regola o modificare la raccolta nella distribuzione esistente in una raccolta di destinazione che include un set di client più ampio. Gli oggetti di aggiornamento software creati dalle regole di distribuzione automatica sono interattivi.  
+ 環境で使用する展開戦略を決定する必要があります。 たとえば、ADR を作成して、テスト用クライアントのコレクションをターゲットにします。 ソフトウェア更新プログラムがテスト グループにインストールされることを確認した後で、規則に新しい展開を追加したり、この既存の展開規則に指定したコレクションを、さらに多くのクライアントが含まれるターゲット コレクションに変更したりすることができます。 ADR で作成されるソフトウェア更新プログラムのオブジェクトは双方向です。  
 
--   Gli aggiornamenti software distribuiti usando una regola di distribuzione automatica vengono distribuiti automaticamente nei nuovi client aggiunti alla raccolta di destinazione.  
+-   ADR を使用して展開されたソフトウェア更新プログラムは、ターゲット コレクションに追加された新しいクライアントに自動的に展開されます。  
 
--   I nuovi aggiornamenti software aggiunti a un gruppo di aggiornamenti software vengono distribuiti automaticamente ai client nella raccolta di destinazione.  
+-   ソフトウェア更新プログラム グループに追加された新しいソフトウェア更新プログラムは、ターゲット コレクションのクライアントに自動的に展開されます。  
 
--   È possibile abilitare o disabilitare le distribuzioni in qualsiasi momento per la regola di distribuzione automatica.  
+-   ADR では、展開をいつでも有効または無効にできます。  
 
- Dopo aver creato una regola di distribuzione automatica, è possibile aggiungere altre distribuzioni alla regola. Ciò consente di gestire la complessità della distribuzione di aggiornamenti diversi a raccolte differenti. Ogni nuova distribuzione include l'intera gamma dell'esperienza di monitoraggio di funzionalità e distribuzione. Ogni nuova distribuzione aggiunta:  
+ ADR を作成した後、ルールにさらに他の展開を追加できます。 これにより、コレクションごとに異なる更新プログラムを展開する複雑さが軽減されます。 それぞれの新しい展開がさまざまな機能と展開監視エクスペリエンスを備え、追加するそれぞれの新しい展開には次の機能があります。  
 
--   Utilizza lo stesso gruppo e lo stesso pacchetto di aggiornamento creato alla prima esecuzione di ADR  
+-   ADR を初めて実行したときに作成されたものと同じ更新グループとパッケージを使用します。  
 
--   Può specificare una raccolta diversa  
+-   別のコレクションを指定することができます。  
 
--   Supporta proprietà di distribuzione univoca tra cui:  
+-   次のような独自の展開プロパティをサポートします。  
 
-    -   Ora attivazione  
+    -   アクティベーション時間  
 
-    -   Scadenza  
+    -   期限  
 
-    -   Mostra o nascondi l'esperienza dell'utente finale  
+    -   エンド ユーザー エクスペリエンスの表示/非表示  
 
-    -   Avvisi separati per questa distribuzione  
+    -   この展開の個別のアラート  
 
-##  <a name="a-namebkmkdeploymentprocessa-software-update-deployment-process"></a><a name="BKMK_DeploymentProcess"></a> Processo di distribuzione degli aggiornamenti software  
- Dopo aver distribuito gli aggiornamenti software oppure quando viene eseguita una regola di distribuzione automatica e vengono distribuiti gli aggiornamenti software, viene aggiunto un criterio di assegnazione distribuzione ai criteri del computer per il sito. Gli aggiornamenti software vengono scaricati dal percorso download, Internet o dalla cartella di rete condivisa nell'origine del pacchetto. Gli aggiornamenti software vengono copiati dall'origine del pacchetto nella raccolta contenuto nel server del sito, quindi nella raccolta contenuto nel punto di distribuzione.  
+##  <a name="BKMK_DeploymentProcess"></a> ソフトウェア更新プログラムの展開プロセス  
+ ソフトウェア更新プログラムを展開した後、または、自動展開規則が実行されソフトウェア更新プログラムが展開されるときに、展開割り当てポリシーがサイトのコンピューター ポリシーに追加されます。 ソフトウェア更新プログラムは、ダウンロード先、インターネット、または、ネットワーク共有フォルダーからパッケージ ソースにダウンロードされます。 ソフトウェア更新プログラムはパッケージ ソースからサイト サーバーのコンテンツ ライブラリにコピーされ、次に、配布ポイントのコンテンツ ライブラリにコピーされます。  
 
- Quando un computer client nella raccolta di destinazione per la distribuzione riceve dei criteri del computer, l'Agente client aggiornamenti software avvia un'analisi di valutazione. L'agente client scarica il contenuto per gli aggiornamenti software richiesti da un punto di distribuzione nella cache del client locale poco dopo aver ricevuto la distribuzione, ma attende fin dopo l'impostazione di **Tempo disponibile software** per la distribuzione prima che gli aggiornamenti software siano disponibili per l'installazione. Gli aggiornamenti software nelle distribuzioni facoltative (distribuzioni che non hanno una scadenza dell'installazione) non vengono scaricati fino a quando un utente non avvia manualmente l'installazione.  
+ 展開のターゲット コレクションのクライアント コンピューターがコンピューター ポリシーを受け取ると、ソフトウェア更新クライアント エージェントが評価スキャンを開始します。 クライアント エージェントは、展開を受信した後すぐに、必要なソフトウェア更新プログラムのコンテンツを配布ポイントからローカルのクライアント キャッシュにダウンロードします。ただし、ソフトウェア更新プログラムをインストールに使用できるようになるまで、展開に設定された [ **ソフトウェアが使用可能な時間** ] が経過するまで待機します。 オプションの展開 (インストールの期限がない展開) のソフトウェア更新プログラムはユーザーが手動でインストールを開始するまでダウンロードされません。  
 
- Una volta trascorsa la scadenza configurata, l'Agente client aggiornamenti software esegue un'analisi per verificare che gli aggiornamenti software siano ancora necessari. Quindi controlla la cache locale sul computer client per verificare che i file di origine degli aggiornamenti software siano ancora disponibili. Infine, il client installa gli aggiornamenti software. Se il contenuto è stato eliminato dalla cache client per far spazio a un'altra distribuzione, il client scarica nuovamente gli aggiornamenti software dal punto di distribuzione nella cache client. Gli aggiornamenti software vengono sempre scaricati nella cache del client, indipendentemente dalla dimensione massima della cache client configurata. Al termine dell'installazione, l'agente client verifica che gli aggiornamenti software non siano più necessari e invia un messaggio di stato al punto di gestione per indicare che gli aggiornamenti software sono ora installati sul client.  
+ 構成した期限が過ぎると、ソフトウェア更新クライアント エージェントはスキャンを実行して、まだソフトウェア更新プログラムが必要かどうかを検証します。 その後、クライアント コンピューターのローカル キャッシュを確認して、ソフトウェア更新プログラムのソース ファイルがまだ利用可能かどうかを検証します。 最後に、クライアントがソフトウェア更新プログラムをインストールします。 別の展開用の空き領域を確保するためにコンテンツがクライアント キャッシュから削除された場合、クライアントはソフトウェア更新プログラムを配布ポイントからクライアント キャッシュに再ダウンロードします。 構成された最大クライアント キャッシュ サイズに関係なく、ソフトウェア更新プログラムは常にクライアント キャッシュにダウンロードされます。 インストールが完了すると、クライアント エージェントはソフトウェア更新プログラムが必要なくなったことを検証し、ソフトウェア更新プログラムがクライアントにインストールされたことを示す状態メッセージを管理ポイントに送信します。  
 
-### <a name="required-system-restart"></a>Riavvio del sistema richiesto  
- Per impostazione predefinita, viene avviato un riavvio del sistema se richiesto per il completamento dell'installazione di aggiornamenti software da una distribuzione richiesta in un computer client. Per gli aggiornamenti software installati prima della scadenza, il riavvio automatico del sistema viene posticipato fino a tale data, a meno che non si verifichi prima per qualche altro motivo. Il riavvio del sistema può essere inibito per server e workstation. Queste impostazioni sono configurate nella pagina **Esperienza utente** della Distribuzione guidata degli aggiornamenti software o Creazione guidata della regola degli aggiornamenti automatici.  
+### <a name="required-system-restart"></a>必要なシステムの再起動  
+ 既定では、必要な展開からのソフトウェア更新プログラムがクライアント コンピューターにインストールされたときに、インストールを完了するためにシステムの再起動が必要な場合、システムの再起動が開始されます。 期限の前にインストールされたソフトウェア更新プログラムの場合、コンピューターが他の理由で期限の前に再起動されない限り、自動でのシステムの再起動は期限まで延期されます。 サーバーおよびワークステーションに対しては、システムの再起動を抑制できます。 これらの設定は、ソフトウェア更新プログラムの展開ウィザードまたは自動更新規則の作成ウィザードの [ **ユーザー側の表示と操作** ] ページで構成します。  
 
-### <a name="deployment-reevaluation-cycle"></a>Ciclo di rivalutazione della distribuzione  
- Per impostazione predefinita, i computer client avviano un ciclo di rivalutazione della distribuzione ogni 7 giorni. Durante tale ciclo, il computer client analizza di aggiornamenti software precedentemente distribuiti e installati. Se degli aggiornamenti software risultano mancanti, vengono reinstallati dalla cache locale. Se un aggiornamento software non è più disponibile nella cache locale, viene scaricato da un punto di distribuzione e quindi installato. È possibile configurare la pianificazione di rivalutazione nella pagina **Aggiornamenti software** nelle impostazioni client per il sito.  
+### <a name="deployment-reevaluation-cycle"></a>展開再評価サイクル  
+ 既定では、クライアント コンピューターは、展開再評価サイクルを 7 日ごとに開始します。 この評価サイクル中に、クライアント コンピューターは、以前に展開およびインストールされたソフトウェア更新プログラムをスキャンします。 不足しているソフトウェア更新プログラムがある場合、そのソフトウェア更新プログラムがローカル キャッシュから再インストールされます。 ソフトウェア更新プログラムがローカル キャッシュで利用できなくなっている場合、配布ポイントからダウンロードされ、インストールされます。 サイトのクライアント設定の [ **ソフトウェア更新プログラム** ] ページで、再評価のスケジュールを構成できます。  
 
-##  <a name="a-namebkmkembeddeddevicesa-support-for-windows-embedded-devices-that-use-write-filters"></a><a name="BKMK_EmbeddedDevices"></a> Supporto per dispositivi con Windows Embedded che usano filtri di scrittura  
- Quando si distribuiscono aggiornamenti software a dispositivi con Windows Embedded abilitati ai filtri di scrittura, è possibile specificare se disabilitare il filtro sul dispositivo durante la distribuzione, riavviando il dispositivo al termine di tale operazione. Se il filtro di scrittura non è disabilitato, il software viene distribuito in una sovrapposizione temporanea e non sarà più installato al riavvio del dispositivo, a meno che un'altra distribuzione forzi le modifiche per renderle permanenti.  
+##  <a name="BKMK_EmbeddedDevices"></a> 書き込みフィルターを使用する Windows Embedded デバイスのサポート  
+ 書き込みフィルターが有効にされた Windows Embedded デバイスにソフトウェア更新プログラムを展開するときに、展開中にデバイスで書き込みフィルターを無効にし、展開後にデバイスを再起動するかどうかを指定できます。 書き込みフィルターが有効な場合、ソフトウェアは一時オーバーレイに展開され、別の展開によって変更の保持が強制されない限り、デバイスの再起動時にインストールされません。  
 
 > [!NOTE]  
->  Quando si distribuisce un aggiornamento software in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta che dispone di una finestra di manutenzione configurata. Ciò consente di decidere quando abilitare o disabilitare il filtro di scrittura nonché quando riavviare il dispositivo.  
+>  ソフトウェア更新プログラムを Windows Embedded デバイスに展開する場合、デバイスが、メンテナンス期間が構成されたコレクションのメンバーであることを確認します。 これにより、書き込みフィルターを無効または有効にするタイミングと、デバイスを再起動するタイミングを管理できます。  
 
- L'impostazione dell'esperienza utente che consente di controllare il comportamento del filtro di scrittura è una casella di controllo denominata **Invia modifiche alla scadenza o in una finestra di manutenzione (riavvio necessario)**.  
+ 書き込みフィルターの動作を制御するユーザー エクスペリエンス設定は、[ **メンテナンスの期限または期間中の変更を確定する (再起動が必要)**] という名前のチェック ボックスです。  
 
- Per altre informazioni sul modo in cui Configuration Manager gestisce dispositivi Windows Embedded che usano filtri di scrittura, vedere [Planning for client deployment to Windows Embedded devices in System Center Configuration Manager](../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md) (Pianificazione della distribuzione di client in dispositivi Windows Embedded in System Center Configuration Manager).  
+ 書き込みフィルターを使用する内蔵デバイスを Configuration Manager が管理するしくみの詳細については、「[Planning for client deployment to Windows Embedded devices](../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md)」(Windows Embedded デバイスへのクライアント展開の計画) を参照してください。  
 
-##  <a name="a-namebkmkextendsoftwareupdatesa-extend-software-updates-in-configuration-manager"></a><a name="BKMK_ExtendSoftwareUpdates"></a> Estendere gli aggiornamenti software in Configuration Manager  
- Usare System Center Updates Publisher per gestire gli aggiornamenti software che non sono disponibili da Microsoft Update. Dopo aver pubblicato gli aggiornamenti software nel server di aggiornamento e averli sincronizzati in Configuration Manager, è possibile distribuire gli aggiornamenti software nei client di Configuration Manager. Per altre informazioni su System Center Updates Publisher, vedere [Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=252947).  
+##  <a name="BKMK_ExtendSoftwareUpdates"></a> Configuration Manager でのソフトウェア更新プログラムの拡張  
+ Microsoft Update から利用できないソフトウェア更新プログラムを管理するには、System Center Updates Publisher を使用します。 ソフトウェア更新プログラムを更新サーバーに公開し、Configuration Manager でソフトウェア更新プログラムを同期した後で、そのソフトウェア更新プログラムを Configuration Manager クライアントに展開できます。 Updates Publisher の詳細については、「[Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=252947)」を参照してください。  
 
-## <a name="next-steps"></a>Passaggi successivi
-[Plan for software updates](../plan-design/plan-for-software-updates.md) (Pianificare gli aggiornamenti del software)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+## <a name="next-steps"></a>次のステップ
+[ソフトウェア更新プログラムの計画](../plan-design/plan-for-software-updates.md)

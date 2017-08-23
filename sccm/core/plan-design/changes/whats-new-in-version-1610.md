@@ -1,319 +1,316 @@
 ---
-title: Nuova versione 1610 | Documentazione Microsoft
-description: "Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1610 di System Center Configuration Manager."
+title: "新しいバージョン 1610 |Microsoft Docs"
+description: "System Center Configuration Manager のバージョン 1610 の変更点および導入された新機能について詳しく説明します。"
 ms.custom: na
 ms.date: 11/23/2016
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f7eb0803-3f8f-4ab6-825a-99ac11f5ba7d
-caps.latest.revision: 40
+caps.latest.revision: "40"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ROBOTS: NOINDEX, NOFOLLOW
-ms.translationtype: Human Translation
-ms.sourcegitcommit: db673277d1cc2d24e8dba2439b2b1891c883ebd0
 ms.openlocfilehash: 8b80f4d14eafa4cbbfb083178a118bc0e71f4019
-ms.contentlocale: it-it
-ms.lasthandoff: 06/16/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="what39s-new-in-version-1610-of-system-center-configuration-manager"></a>Novità della versione 1610 di System Center Configuration Manager
+# <a name="what39s-new-in-version-1610-of-system-center-configuration-manager"></a>System Center Configuration Manager のバージョン 1610 の新機能
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-L'aggiornamento 1610 per System Center Configuration Manager (Current Branch) è disponibile come aggiornamento nella console per siti installati in precedenza che eseguono la versione 1511, 1602 o 1606.
+System Center Configuration Manager の現在のブランチの更新プログラム 1610 は、以前にインストールされておりバージョン 1511、1602、または 1606 を実行するサイトを対象とする、コンソール内の更新プログラムとして使用可能です。
 
 
 > [!TIP]  
-> Per installare un nuovo sito, è necessario usare una versione base di Configuration Manager.  
->  Sono disponibili altre informazioni su:    
->  -   [Installing new sites](https://technet.microsoft.com/library/mt590197.aspx) (Installare nuovi siti)  
->  -   [Installing updates at sites](https://technet.microsoft.com/library/mt607046.aspx) (Installare aggiornamenti nei siti)  
->  -   [Baseline and update versions](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions) (Versioni di base e di aggiornamento)  
+> 新しいサイトをインストールするには、Configuration Manager の基準バージョンを使用する必要があります。  
+>  詳細については、下記のリンクをクリックしてください。    
+>  -   [新しいサイトのインストール](https://technet.microsoft.com/library/mt590197.aspx)  
+>  -   [サイトで更新プログラムをインストールする](https://technet.microsoft.com/library/mt607046.aspx)  
+>  -   [基準バージョンと更新プログラムのバージョン](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions)  
 
-Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1610 di Configuration Manager.  
-
-
-## <a name="in-console-monitoring-of-update-installation-status"></a>Monitoraggio dello stato di installazione dell'aggiornamento nella console  
-A partire dalla versione 1610, quando si installa un pacchetto di aggiornamento e si esegue il monitoraggio dell'installazione nella console, viene attivata una nuova fase: la **post-installazione**. Questa fase include lo stato di attività quali il riavvio dei servizi principali e l'inizializzazione del monitoraggio delle repliche. Questa fase è disponibile nella console solo dopo l'aggiornamento del sito alla versione 1610. Per altre informazioni sullo stato di installazione dell'aggiornamento, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates).
+以降のセクションでは、Configuration Manager のバージョン 1610 の変更点および導入された新機能について詳しく説明します。  
 
 
-## <a name="exclude-clients-from-automatic-upgrade"></a>Impedire l'aggiornamento automatico dei client
-È possibile escludere i client Windows dall'aggiornamento con nuove versioni del software client. Per eseguire questa operazione includere i computer client in una raccolta per la quale è specificata l'esclusione dall'aggiornamento. I client presenti nella raccolta esclusa ignorano le richieste di aggiornamento del software client.  Per altre informazioni, vedere [Escludere i client Windows dagli aggiornamenti](../../clients/manage/upgrade/exclude-clients-windows.md).
+## <a name="in-console-monitoring-of-update-installation-status"></a>更新プログラムのインストール状態をコンソール内で監視する  
+バージョン 1610 以降、更新プログラム パックをインストールし、コンソールでインストールを監視すると、**[Post Installation (インストール後)]** という新しいフェーズが表示されるようになります。 このフェーズには、主要なサービスの再起動、レプリケーション監視の初期化など、タスクの状態が含まれます (このフェーズを使用するには、サイトをバージョン 1610 に更新する必要があります)。更新プログラムのインストール状態の詳細については、「[Install in-console updates](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates)」(コンソール内の更新プログラムのインストール) を参照してください。
 
 
-## <a name="improvements-for-boundary-groups"></a>Miglioramenti ai gruppi limite
-La versione 1610 introduce importanti modifiche ai gruppi di limiti e al loro funzionamento con i punti di distribuzione. Queste modifiche possono semplificare la progettazione dell'infrastruttura del contenuto, offrendo maggiore controllo su come e quando i client eseguono il fallback per la ricerca di punti di distribuzione aggiuntivi come percorsi di origine del contenuto. Sono inclusi i punti di distribuzione in locale e su cloud.
-Questi miglioramenti sostituiscono concetti e comportamenti correnti, come la configurazione della velocità o della lentezza dei punti di distribuzione. Il nuovo modello assicura maggiore facilità di configurazione e gestione. Queste modifiche costituiscono anche un presupposto per modifiche future che miglioreranno altri ruoli del sistema del sito associati ai gruppi di limiti.
-
-Durante l'aggiornamento alla versione 1610 le configurazioni dei gruppi di limiti correnti vengono convertite per adattarle al nuovo modello, per evitare che le modifiche alterino le configurazioni di distribuzione del contenuto.
-
-Per altre informazioni, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#a-namebkmkboundarygroupsa-boundary-groups).
+## <a name="exclude-clients-from-automatic-upgrade"></a>自動アップグレードからクライアントを除外する
+新しいバージョンのクライアント ソフトウェアで、自動アップグレードから Windows クライアントを除外することができます。 除外するには、アップグレードから除外するように指定したコレクションにクライアント コンピューターを含めます。 除外されるコレクションのクライアントは、クライアント ソフトウェアを更新する要求を無視します。  詳細については、「[Exclude Windows clients from upgrades](../../clients/manage/upgrade/exclude-clients-windows.md)」(アップグレードから Windows クライアントを除外する) を参照してください。
 
 
-## <a name="peer-cache-for-content-distribution-to-clients"></a>Peer cache per la distribuzione del contenuto ai client
-A partire dalla versione 1610, la **peer cache** client consente di gestire la distribuzione di contenuti ai client in posizioni remote. La peer cache è una soluzione di Configuration Manager integrata che consente ai client di condividere i contenuti con altri client direttamente dalla cache locale.
+## <a name="improvements-for-boundary-groups"></a>境界グループの機能強化
+バージョン 1610 では、境界グループとそれらが配布ポイントを扱う方法に重要な変更が加えられています。 これらの変更によって、コンテンツ インフラストラクチャの設計が単純化されると共に、クライアントがいつどのようにフォールバックしてコンテンツ ソースの場所となる他の配布ポイントを検索するかをより細かく制御することができます。 これには、オンプレミスとクラウド ベースの配布ポイントの両方が含まれます。
+従来からある概念や動作は、これらの機能強化によって一新されます (配布ポイントの [高速] と [低速] の構成など)。 セットアップとメンテナンスは、新しいモデルによって省力化されると考えられます。 これらの変更も、境界グループに関連付けるその他のサイト システムの役割を向上させる将来の変更のための基礎です。
 
-Dopo aver distribuito le impostazioni client che abilitano la peer cache per una raccolta, i membri di tale raccolta possono fungere da origine di contenuto peer per altri client nello stesso gruppo di limiti.
+バージョン 1610 への更新時に、これらの変更が既存のコンテンツの配布の構成を妨げないように、アップグレードによって現在の境界グループ構成が新しいモデルに適合するように変換されます。
 
-È anche possibile usare il nuovo dashboard **Origini dati del client** per informazioni sull'uso di origini di contenuto peer cache nell'ambiente.
+詳細については、「[境界グループ](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#a-namebkmkboundarygroupsa-boundary-groups)」を参照してください。
+
+
+## <a name="peer-cache-for-content-distribution-to-clients"></a>クライアントへのコンテンツ配布のピア キャッシュ
+バージョン 1610 より、クライアントの**ピア キャッシュ**をリモート クライアントへのコンテンツ展開の管理に使用できるようになりました。 クライアントがローカル キャッシュから直接他のクライアントとコンテンツを共有するための組み込みの Configuration Manager ソリューションである、ピア キャッシュです。
+
+ピア キャッシュを有効にするクライアント設定をコレクションに展開すると、そのコレクションのメンバーは同じ境界グループ内の他のクライアントのピア コンテンツ ソースとして動作できます。
+
+また、新しい**クライアント データ ソース** ダッシュボードを使用して、環境内のピア キャッシュ コンテンツ ソースの使用状況を把握することもできます。
 
 > [!TIP]  
-> Con la versione 1610, la peer cache e il dashboard Origini dati del client sono funzionalità di versioni non definitive. Per abilitarle, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
+> バージョン 1610 では、ピア キャッシュとクライアント データ ソースのダッシュボードは、プレリリース機能です。 有効にするには、「[更新プログラムからのプレリリース機能の使用](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease)」をご覧ください。
 
-Per altre informazioni, vedere [Peer cache per i client di Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache) e [Dashboard Origini dati del client](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard).
+詳細については、「[Configuration Manager クライアントのピア キャッシュ](/sccm/core/plan-design/hierarchy/client-peer-cache)」と「[クライアント データ ソース ダッシュボード](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard)」を参照してください。
 
 
-## <a name="migrate-multiple-shared-distribution-points-at-the-same-time"></a>Eseguire la migrazione simultanea di più punti di distribuzione condivisi
-È ora possibile usare l'opzione **Riassegna punto di distribuzione** in modo che Configuration Manager elabori in parallelo la riassegnazione simultanea di un massimo di 50 punti di distribuzione condivisi. Prima di questa versione, i punti di distribuzione riassegnati venivano elaborati uno alla volta. Per altre informazioni, vedere, [Eseguire la migrazione simultanea di più punti di distribuzione condivisi](/sccm/core/migration/planning-a-content-deployment-migration-strategy#migrate-multiple-shared-distribution-points-at-the-same-time).
+## <a name="migrate-multiple-shared-distribution-points-at-the-same-time"></a>複数の共有配布ポイントを同時に移行する
+**配布ポイントを再割り当てする**オプションを利用し、Configuration Manager に、最大 50 の共有配布ポイントの同時再割り当てを並列処理させることができます。 このリリースの前のバージョンでは、再割り当てされた配布ポイントは、同時に処理されていました。 詳細については、「[複数の共有配布ポイントを同時に移行する](/sccm/core/migration/planning-a-content-deployment-migration-strategy#migrate-multiple-shared-distribution-points-at-the-same-time)」を参照してください。
 
-## <a name="cloud-management-gateway-for-managing-internet-based-clients"></a>Gateway di gestione cloud per la gestione di client su Internet
+## <a name="cloud-management-gateway-for-managing-internet-based-clients"></a>インターネットベースのクライアントを管理するためのクラウド管理ゲートウェイ
 
-Il gateway di gestione cloud consente di gestire i client di Configuration Manager su Internet in modo semplice. Il servizio gateway di gestione cloud, che viene distribuito in Microsoft Azure e richiede una sottoscrizione di Azure, si connette all'infrastruttura locale di Configuration Manager usando un nuovo ruolo, denominato punto di connessione del gateway di gestione cloud. Dopo che il servizio è stato completamente distribuito e configurato, i client possono comunicare con i ruoli di sistema del sito di Configuration Manager e i punti di distribuzione cloud, indipendentemente dal fatto che siano connessi sulla rete privata interna o su Internet. Per altre informazioni e per confrontare il gateway di gestione cloud con la gestione client su Internet, vedere [Manage clients on the Internet](/sccm/core/clients/manage/manage-clients-internet) (Gestire i client su Internet).
+クラウド管理ゲートウェイは、インターネット上で Configuration Manager クライアントを管理する簡単な方法を提供します。 Microsoft Azure にデプロイされ、Azure サブスクリプションを必要とするクラウド管理ゲートウェイ サービスは、クラウド管理ゲートウェイ接続ポイントと呼ばれる新しい役割を使用して、オンプレミスの Configuration Manager インフラストラクチャに接続します。 完全にデプロイされ、構成されると、クライアントは内部のプライベート ネットワークに接続しているかどうか、またはインターネット上にあるかどうかに関係なく、オンプレミスの Configuration Manager サイト システムの役割およびクラウドベースの配布ポイントと通信できるようになります。 詳細と、クラウド管理ゲートウェイがインターネットベースのクライアント管理を比較する方法については、「[Manage clients on the Internet](/sccm/core/clients/manage/manage-clients-internet)」(インターネット上のクライアントの管理) を参照してください。
 
-## <a name="improvements-to-the-windows-10-edition-upgrade-policy"></a>Miglioramenti al criterio di aggiornamento edizione di Windows 10
-In questa versione sono stati apportati i miglioramenti seguenti a questo tipo di criteri:
+## <a name="improvements-to-the-windows-10-edition-upgrade-policy"></a>Windows 10 のエディションのアップグレード ポリシーの改善
+このリリースでは、次の機能強化がこのポリシーの種類に加えられています。
 
-- È ora possibile usare i criteri di aggiornamento edizione con PC Windows 10 che eseguono il client di Configuration Manager, oltre che con PC Windows 10 registrati con Microsoft Intune.
-- È possibile eseguire l'aggiornamento da Windows 10 Professional a una qualsiasi delle piattaforme nella procedura guidata compatibili con l'hardware in uso.
+- Microsoft Intune に登録された Windows 10 PC に加え、Configuration Manager クライアントを実行している Windows 10 PC で、エディションのアップグレード ポリシーを使用できるようになりました。
+- Windows 10 Professional から、ハードウェアと互換性がある、ウィザードのプラットフォームのいずれかにアップグレードすることができます。
 
-## <a name="manage-hardware-identifiers"></a>Gestire gli ID hardware
-Ora è possibile specificare un elenco di ID hardware che dovranno essere ignorati da Configuration Manager ai fini dell'avvio PXE e della registrazione di client. Questa possibilità contribuisce a risolvere due problemi comuni:
+## <a name="manage-hardware-identifiers"></a>ハードウェア ID の管理
+PXE ブートとクライアント登録で Configuration Manager が無視するハードウェア ID の一覧を指定できるようになりました。 それにより 2 つの一般的な問題に対処できます。
 
-1. Molti dispositivi, ad esempio Surface Pro 3, non sono dotati di una porta Ethernet incorporata. In genere viene usato un adattatore da USB a Ethernet per stabilire una connessione cablata per la distribuzione del sistema operativo. Tuttavia, per motivi di costi e usabilità generale, si tratta spesso di adattatori condivisi. Poiché per identificare il dispositivo viene usato l'indirizzo MAC dell'adattatore, risulta problematico riusare l'adattatore senza interventi aggiuntivi dell'amministratore tra le diverse distribuzioni. In Configuration Manager 1610 è ora possibile escludere l'indirizzo MAC dell'adattatore in modo da poterlo riusare facilmente in questo scenario.
-2. L'ID SMBIOS dovrebbe essere un identificatore hardware univoco, ma alcuni dispositivi hardware speciali sono realizzati con ID duplicati. È possibile che questo problema non sia comune come lo scenario dell'adattatore da USB a Ethernet sopra descritto, ma è possibile risolverlo usando l'elenco degli ID hardware esclusi.
+1. Surface Pro 3 など、デバイスの多くにオンボード イーサネット ポートが含まれません。 オペレーティング システムの展開で有線接続を確立するとき、一般的に USB/イーサネット アダプターが使用されます。 しかしながら、コストや汎用性に起因し、多くの場合、共有アダプターになります。 そのアダプターの MAC アドレスを利用してデバイスを識別するため、展開ごとに管理者による追加措置がないと、アダプターの再利用が問題になります。 Configuration Manager Version 1610 では、このアダプターの MAC アドレスを除外できます。そのため、このシナリオで簡単に再利用できます。
+2. SMBIOS ID は一意のハードウェア識別子ですが、専門的なハードウェア デバイスには ID が重複するものもあります。 この問題は、前述の USB/イーサネット アダプターのシナリオほどよく起こることではありませんが、除外するハードウェア ID の一覧を使用することによって解決できます。
 
-Per informazioni dettagliate, vedere [Manage duplicate hardware identifiers](/sccm/core/clients/manage/manage-clients#manage-duplicate-hardware-identifiers) (Gestire gli identificatori hardware duplicati).
+詳細については、「[Manage duplicate hardware identifiers](/sccm/core/clients/manage/manage-clients#manage-duplicate-hardware-identifiers)」(重複するハードウェア識別子を管理する) を参照してください。
 
-## <a name="enhancements-to-windows-store-for-business-integration-with-configuration-manager"></a>Miglioramenti all'integrazione di Windows Store per le aziende con Configuration Manager
-Modifiche in questa versione:
-- In precedenza, era possibile distribuire solo app gratuite da Windows Store per le aziende. Configuration Manager ora supporta anche la distribuzione di app con licenza online a pagamento (solo per dispositivi registrati con Intune).
-- Ora è possibile avviare una sincronizzazione immediata tra Windows Store per le aziende e Configuration Manager.
-- È ora possibile modificare la chiave privata del client ottenuta da Azure Active Directory.
-- È possibile eliminare una sottoscrizione a Windows Store.
+## <a name="enhancements-to-windows-store-for-business-integration-with-configuration-manager"></a>ビジネス向け Windows ストアと Configuration Manager のとの統合の強化
+このリリースの変更点:
+- 以前は、ビジネス向け Windows ストアから無料のアプリの展開のみができました。 さらに、Configuration Manager で有償のオンライン ライセンス付きアプリ (Intune に登録されているデバイスのみ) も展開できるようになりました。
+- ビジネス向け Windows ストアと Configuration Manager との即時同期を開始できるようになりました。
+- Azure Active Directory から取得したクライアントの秘密鍵を変更できるようになりました。
+- ストアに対するサブスクリプションを削除できるようになりました。
 
-Per informazioni dettagliate, vedere [Gestire le app da Windows Store per le aziende con System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
+詳細については、「[System Center Configuration Manager によるビジネス向け Windows ストアからのアプリの管理](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)」をご覧ください。
 
 
-## <a name="policy-sync-for-intune-enrolled-devices"></a>Sincronizzazione criteri per i dispositivi registrati in Intune
-È ora possibile richiedere una sincronizzazione dei criteri per un dispositivo registrato in Intune dalla console di Configuration Manager, senza dover richiedere la sincronizzazione dall'app Portale aziendale sul dispositivo stesso. Le informazioni sullo stato della richiesta di sincronizzazione sono disponibili nelle visualizzazioni del dispositivo come nuova colonna, denominata **Remote Sync State** (Stato sincronizzazione remota). Queste informazioni sono disponibili anche nella sezione Dati di individuazione della finestra di dialogo **Proprietà** di ogni dispositivo.
-Per informazioni dettagliate, vedere [Sincronizzare in remoto i criteri in dispositivi registrati in Intune dalla console di Configuration Manager](/sccm/mdm/deploy-use/sync-intune-device).
+## <a name="policy-sync-for-intune-enrolled-devices"></a>Intune に登録されたデバイスのポリシー同期
+デバイス自体のポータル サイト アプリから同期を要求するのではなく、Configuration Manager コンソールから Intune に登録されたデバイスのポリシー同期を要求できるようになりました。 同期要求の状態に関する情報は、デバイス ビュー内に 「**Remote Sync State**」 (リモート同期の状態) と呼ばれる新しい列として表示されます。 この情報は、各デバイスの **[プロパティ]** ダイアログ ボックスの [探索データ] セクションにも表示されます。
+詳細については、「[Intune に登録されたデバイスのポリシーを Configuration Manager コンソールからリモートで同期する](/sccm/mdm/deploy-use/sync-intune-device)」を参照してください。
 
 
-## <a name="use-compliance-settings-to-configure-windows-defender-settings"></a>Usare le impostazioni di conformità per configurare le impostazioni di Windows Defender
-È ora possibile configurare le impostazioni del client di Windows Defender nei computer Windows 10 registrati in Intune usando gli elementi di configurazione nella console di Configuration Manager.
-Per informazioni dettagliate, vedere la sezione **Windows Defender** dell'argomento [Creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client di System Center Configuration Manager](/sccm/compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client).
+## <a name="use-compliance-settings-to-configure-windows-defender-settings"></a>コンプライアンス設定を使用して Windows Defender 設定を構成する
+Configuration Manager コンソールの構成項目を使用して、Intune に登録されている Windows 10 コンピューターで Windows Defender クライアント設定を構成できるようになりました。
+詳細については、「[System Center Configuration Manager クライアントを使用せずに管理されている Windows 8.1 デバイスと Windows 10 デバイスの構成項目を作成する](/sccm/compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client)」の「**Windows Defender**」セクションを参照してください。
 
 
 
-## <a name="general-improvements-to-software-center"></a>Miglioramenti generali a Software Center
-- Gli utenti possono ora richiedere app da Software Center, oltre che dal Catalogo applicazioni.
-- Miglioramenti per segnalare agli utenti il software nuovo e importante.
+## <a name="general-improvements-to-software-center"></a>ソフトウェア センターの全般的な機能強化
+- ユーザーは、ソフトウェア センターだけでなく、アプリケーション カタログからアプリを要求できるようになりました。
+- 新規のソフトウェアと関連性のあるソフトウェアを把握しやすくなりました。
 
-## <a name="new-columns-in-device-collection-views"></a>Nuove colonne nelle visualizzazioni raccolta dispositivi
-Ora è possibile visualizzare le colonne **IMEI** e **Numero di serie** (per i dispositivi iOS) nelle visualizzazioni raccolta dispositivi.
-Per informazioni dettagliate, vedere [Predichiarare dispositivi con i numeri di serie IMEI o iOS](https://docs.microsoft.com/sccm/mdm/deploy-use/predeclare-devices-with-hardware-id).
+## <a name="new-columns-in-device-collection-views"></a>デバイス コレクション ビューの新しい列
+デバイス コレクション ビューで **IMEI** と**シリアル番号** (iOS デバイス) の列を表示できるようになりました。
+詳細については、「[IMEI または iOS シリアル番号によるデバイスの事前宣言](https://docs.microsoft.com/sccm/mdm/deploy-use/predeclare-devices-with-hardware-id)」をご覧ください。
 
-## <a name="customizable-branding-for-software-center-dialogs"></a>Personalizzazione delle finestre di dialogo di Software Center
-In Configuration Manager versione 1602 è stata introdotta la personalizzazione per Software Center. Nella versione 1610 la personalizzazione viene ora estesa a tutte le finestre di dialogo associate, in modo da offrire agli utenti di Software Center un'esperienza più uniforme.
+## <a name="customizable-branding-for-software-center-dialogs"></a>ソフトウェア センター ダイアログにおけるカスタマイズ可能なブランド
+ソフトウェア センターのカスタム ブランド設定は、Configuration Manager バージョン 1602 で導入されました。 バージョン 1610 では、ソフトウェア センターのユーザーにより一貫性のあるエクスペリエンスを提供するため、このブランド設定が関連するすべてのダイアログ ボックスに拡張されています。
 
-In Software Center la personalizzazione viene applicata secondo le regole seguenti:
+ソフトウェア センターのカスタム ブランド設定は、次の規則に従って適用されます。
 
-- Se il ruolo del server del sito punto per siti Web del Catalogo applicazioni non è installato, Software Center visualizza il nome dell'organizzazione specificato nell'impostazione **Nome organizzazione visualizzato in Software Center** del client **Agente computer**. Per istruzioni, vedere [Come configurare le impostazioni client](../../clients/deploy/configure-client-settings.md).
+- アプリケーション カタログ Web サイトのポイント サイト サーバーの役割がインストールされていない場合は、**[ソフトウェア センターに表示される組織名]** という **[コンピューター エージェント]** クライアント設定で指定された組織名がソフトウェア センターに表示されます。 手順については、「[クライアント設定を構成する方法](../../clients/deploy/configure-client-settings.md)」をご覧ください。
 
-- Se il ruolo del server del sito punto per siti Web del Catalogo applicazioni è installato, Software Center visualizza il nome dell'organizzazione e il colore specificati nelle proprietà del ruolo del server del sito punto per siti Web del Catalogo applicazioni. Per altre informazioni, vedere [Configuration options for Application Catalog website point](/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#Application-Catalog-website-point) (Opzioni di configurazione per il punto per siti Web del Catalogo applicazioni).
+- アプリケーション カタログ Web サイトのポイント サイト サーバーの役割がインストールされている場合は、アプリケーション カタログ Web サイトのポイント サイト サーバーの役割プロパティに指定されている組織名と色がソフトウェア センターに表示されます。 詳細については、「[Configuration options for Application Catalog website point](/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#Application-Catalog-website-point)」(アプリケーション カタログ Web サイト ポイントの構成オプション) をご覧ください。
 
-- Se una sottoscrizione di Microsoft Intune è configurata e connessa all'ambiente Configuration Manager, Software Center visualizza il nome dell'organizzazione, il colore e il logo aziendale specificati nelle proprietà della sottoscrizione di Intune. Per ulteriori informazioni, vedere [Configuring the Microsoft Intune subscription](/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription).
+- Microsoft Intune サブスクリプションが構成されていて Configuration Manager 環境に接続されている場合は、Intune サブスクリプションのプロパティに指定されている組織名、色、および会社のロゴがソフトウェア センターに表示されます。 詳細については、「 [Configuring the Microsoft Intune subscription](/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription)」をご覧ください。
 
 
-## <a name="enforcement-grace-period-for-required-application-and-software-update-deployments"></a>Periodo di tolleranza per l'imposizione delle distribuzioni di applicazioni e aggiornamenti software obbligatorie
-In alcuni casi, è possibile concedere agli utenti più tempo per l'installazione di distribuzioni di applicazioni o aggiornamenti del software obbligatori, anche oltre eventuali scadenze impostate. Questo accorgimento potrebbe essere opportuno, ad esempio, quando un computer è stato disattivato per un lungo periodo di tempo ed è necessario installare un numero elevato di distribuzioni di applicazioni o aggiornamenti. Ad esempio, se un utente finale è appena tornato da una vacanza, potrebbe dover attendere un po' tempo mentre vengono installate le distribuzioni delle applicazioni scadute. Per risolvere il problema ora è possibile definire un periodo di tolleranza di imposizione distribuendo le impostazioni del client di Configuration Manager a una raccolta. 
+## <a name="enforcement-grace-period-for-required-application-and-software-update-deployments"></a>必要なアプリケーションとソフトウェア更新プログラムを展開するための適用猶予期間
+場合によっては、必要なアプリケーション展開またはソフトウェア更新プログラムをインストールできるように、設定期限よりも長い時間をユーザーに与える必要があります。 これは、たとえばコンピューターが長期間オフになっていて、多数のアプリケーションや更新プログラムの展開をインストールする必要がある場合に必要になります。 たとえば、エンド ユーザーが休暇から戻って来たばかりの場合、期限切れのアプリケーションの展開がインストールされるまで、長時間待たなければならない場合があります。 この問題を解決するため、Configuration Manager クライアント設定をコレクションに展開することで、適用猶予期間を定義できるようになりました。 
 
-Per configurare il periodo di tolleranza eseguire le operazioni seguenti:
-1.      Nella pagina **Agente computer** delle impostazioni del client configurare la nuova proprietà **Periodo di tolleranza per l'imposizione dopo la scadenza della distribuzione (ore)** con un valore compreso tra **1** e **120** ore.
-2.      In una nuova distribuzione richiesta dell'applicazione o nelle proprietà di una distribuzione esistente, nella pagina **Pianificazione** selezionare la casella di controllo **Ritardare l'imposizione di questa distribuzione in base alle preferenze dell'utente, fino al periodo di tolleranza massimo definito nelle impostazioni del client**. Tutte le distribuzioni con questa casella di controllo selezionata e destinate a dispositivi in cui è stata distribuita anche l'impostazione del client useranno il periodo di tolleranza per l'imposizione.
+猶予期間を設定するには、次の操作を実行します。
+1.      クライアント設定の [**コンピューター エージェント**] ページで、新しいプロパティ [**展開期限後の実施の猶予期間 (時間)**] の値を **1** ～ **120** 時間で設定します。
+2.      新しい必須アプリケーションの展開または既存の展開のプロパティの **[スケジュール]** ページで、**[Delay enforcement of this deployment according to user preferences, up to the grace period defined in client settings (ユーザー設定に従い、クライアント設定で定義された猶予期間が終了するまでこの展開の実施を延期する)]** チェック ボックスをオンにします。 このチェック ボックスがオンになっていて、クライアント設定も展開するデバイスを対象としているすべての展開が、適用猶予期間を使用します。
 
-Se si configura un periodo di tolleranza di imposizione e si seleziona la casella di controllo, quando si raggiunge la scadenza dell'installazione dell'applicazione, essa verrà installata nella prima finestra non aziendale che l'utente ha configurato fino al periodo di grazia. Tuttavia l'utente può comunque aprire Software Center e installare l'applicazione in qualsiasi momento. Una volta scaduto il periodo di tolleranza, le distribuzioni scadute torneranno al normale comportamento. Opzioni simili sono state aggiunte alla procedura guidata di distribuzione degli aggiornamenti software, alla procedura guidata di creazione delle regole di distribuzione automatica e alle pagine delle proprietà.
+適用猶予期間を構成し、チェック ボックスをオンにすると、アプリケーションのインストール期限になると、ユーザーがその猶予期間までに設定した最初の非ビジネス ウィンドウで、アプリケーションがインストールされます。 ただし、ユーザーはソフトウェア センターを開いて、いつでもアプリケーションをインストールすることもできます。 猶予期間が切れると、適用は期限切れの展開に対する通常の動作に戻ります。 ソフトウェア更新プログラムの展開ウィザード、自動展開規則の作成ウィザード、およびプロパティ ページに、同様のオプションが追加されています。
 
 
 
-## <a name="improved-functionality-in-dialog-boxes-about-required-software"></a>Funzionalità migliorate nelle finestre di dialogo relative al software necessario
-Quando si riceve il software necessario, dall'impostazione **Posponi e ricorda tra:** è possibile selezionare un'opzione dall'elenco di valori a discesa seguente: 
-- **In seguito**. Specifica che le notifiche vengono pianificate in base alle impostazioni di notifica configurate nell'agente client.
-- **Orario fisso**. Specifica che viene pianificata una nuova visualizzazione della notifica dopo l'ora selezionata, ad esempio entro 30 minuti.
+## <a name="improved-functionality-in-dialog-boxes-about-required-software"></a>必要なソフトウェアに関するダイアログ ボックスで改善された機能
+ユーザーが必要なソフトウェアを受け取ったときに、[**次の時間が経過したら再通知する**] 設定で、次のドロップダウン リストから値を選択できます。 
+- **[後で]**:  クライアント エージェント設定で構成されている通知の設定に基づいて通知をスケジュールすることを指定します。
+- **[定時]**:  選択した時間後にもう一度通知を表示するように指定します (30 分後など)。
 
-![Pagina dell'agente computer nelle impostazioni dell'agente client](media/client-notification-settings.png)
+![クライアント エージェント設定の [コンピューター エージェント] ページ](media/client-notification-settings.png)
 
-Il tempo di posticipo massimo è basato sui valori di notifica configurati nelle impostazioni dell'agente client. Ad esempio, se l'impostazione nella pagina dell'agente computer **Più di 24 ore alla scadenza di distribuzione. Avvisare l'utente ogni (ore)** è configurata per 10 ore e alla scadenza mancano più di 24 ore, l'utente visualizzerà un set di opzioni di posticipo, ma mai superiori a 10 ore. Con l'avvicinarsi della scadenza saranno disponibili meno opzioni, in accordo con le impostazioni dell'agente client pertinente per ogni componente della cronologia di distribuzione.
+最大の再通知時間は、クライアント エージェント設定で構成された値に基づきます。 たとえば、[コンピューター エージェント] ページで **[Deployment deadline greater than 24 hours, remind users every (hours) (展開期限まで 24 時間以上の場合に、ユーザーに通知する間隔 (時間))]** 設定が 10 時間に設定されていて、期限まで 24 時間以上ある場合は、ユーザーに最大で 10 時間以内の再通知を設定するオプションが表示されます。 期限が近づくにつれ、展開タイムラインの各コンポーネントに関連するクライアント エージェント設定に合わせて、選択できるオプションが減っていきます。
 
-Per una distribuzione ad alto rischio, ad esempio una sequenza di attività che distribuisce un sistema operativo, l'esperienza di notifica dell'utente è ora più invasiva. Ogni volta che l'utente viene informato della necessità di manutenzione critica del software, invece di una notifica temporanea sulla barra delle applicazioni, nel computer dell'utente viene visualizzata una finestra di dialogo simile alla seguente:
+さらに、オペレーティング システムを展開するタスク シーケンスなど、危険度の高い展開に対しては、ユーザー通知のエクスペリエンスがより煩わしいものになりました。 一時的なタスク バーの代わりに、重要なソフトウェア メンテナンスが必要なことがユーザーに通知されるたび、次のようなダイアログ ボックスがユーザーのコンピューターに表示されます。
 
-![Finestra di dialogo del software richiesto](media/client-toast-notification.png)
+![必要なソフトウェアのダイアログ](media/client-toast-notification.png)
 
 
-Per ulteriori informazioni:
-- [Impostazioni per gestire le distribuzioni ad alto rischio](../../../protect/understand/settings-to-manage-high-risk-deployments.md)
-- [Come configurare le impostazioni client](../../clients/deploy/configure-client-settings.md)
+詳細情報:
+- [危険度の高い展開を管理するための設定](../../../protect/understand/settings-to-manage-high-risk-deployments.md)
+- [クライアント設定を構成する方法](../../clients/deploy/configure-client-settings.md)
 
-## <a name="software-updates-dashboard"></a>Dashboard Aggiornamenti software
-Usare il nuovo dashboard Aggiornamenti software per visualizzare lo stato di conformità corrente dei dispositivi dell'organizzazione e analizzare rapidamente i dati per vedere quali dispositivi sono a rischio. Per visualizzare il dashboard, scegliere **Monitoraggio** > **Panoramica** > **Sicurezza** > **Software Updates Dashboard** (Dashboard Aggiornamenti software).
+## <a name="software-updates-dashboard"></a>ソフトウェア更新プログラム ダッシュボード
+新しいソフトウェア更新プログラム ダッシュボードを使用すると、組織内にあるデバイスの現在のコンプライアンス状態を確認し、データをすばやく分析して危険な状態のデバイスを確認できます。 ダッシュボードを表示するには、**[監視]** > **[概要]** > **[セキュリティ]** > **[ソフトウェア更新プログラム ダッシュボード]** に移動します。
 
-Per informazioni dettagliate, vedere [Monitorare gli aggiornamenti software](/sccm/sum/deploy-use/monitor-software-updates).
+詳細については、「[Monitor software updates](/sccm/sum/deploy-use/monitor-software-updates)」(ソフトウェア更新プログラムの監視) を参照してください。
 
 
-## <a name="improvements-to-the-application-request-process"></a>Miglioramenti al processo di richiesta dell'applicazione
-Dopo avere approvato un'applicazione per l'installazione, è possibile scegliere di negare la richiesta facendo clic su **Nega** nella console di Configuration Manager. In precedenza questo pulsante era disabilitato dopo l'approvazione.
+## <a name="improvements-to-the-application-request-process"></a>アプリケーション要求プロセスの改善
+アプリケーションのインストールを承認した後は、要求を拒否するには、Configuration Manager コンソールで **[拒否]** をクリックします。 以前は、承認後にこのボタンが淡色表示されていました。
 
-Questa azione non comporta la disinstallazione dell'applicazione dal dispositivo. Tuttavia, impedisce agli utenti di installare nuove copie dell'applicazione da Software Center.
+この操作で、アプリケーションがデバイスからアンインストールされることはありませんが、 ユーザーはソフトウェア センターからアプリケーションの新しいコピーをインストールできなくなります。
 
-## <a name="filter-by-content-size-in-automatic-deployment-rules"></a>Filtrare per dimensioni del contenuto nelle regole di distribuzione automatica
-È ora possibile filtrare le dimensioni del contenuto per gli aggiornamenti software nelle regole di distribuzione automatica. Ad esempio, per scaricare solo gli aggiornamenti software inferiori a 2 MB, è possibile impostare il filtro **Dimensioni contenuto (KB)** su **< 2048**. Questo filtro impedisce che vengano scaricati in automatico gli aggiornamenti software di grandi dimensioni, al fine di migliorare il supporto della manutenzione Windows semplificata di livello inferiore quando la larghezza di banda è limitata. Per informazioni, vedere:
-- [Configuration Manager and Simplified Windows Servicing on Down Level Operating Systems](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/) (Configuration Manager e manutenzione Windows semplificata su sistemi operativi di versioni precedenti)
-- [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates)
+## <a name="filter-by-content-size-in-automatic-deployment-rules"></a>自動展開規則でコンテンツのサイズでフィルター処理する
+自動展開規則でソフトウェア更新プログラムのコンテンツのサイズでフィルター処理できるようになりました。 たとえば、2 MB 未満のソフトウェア更新プログラムだけをダウンロードするには、**[コンテンツ サイズ (KB)]** フィルターを **[< 2048]** に設定します。 ネットワーク帯域幅が制限されている場合に、下位レベルの簡素化された Windows サービスのよりよいサポートのため、このフィルターを使用して、サイズの大きいソフトウェア更新プログラムが自動的にダウンロードされるのを防止します。 詳細については、以下を参照してください。
+- [Configuration Manager と下位レベルのオペレーティング システムでの簡素化された Windows サービス](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/)
+- [ソフトウェア更新プログラムの自動展開](/sccm/sum/deploy-use/automatically-deploy-software-updates)
 
-Per configurare il campo **Dimensioni contenuto (KB)**, eseguire una delle operazioni seguenti:
-- Quando si crea una regola di distribuzione automatica, nella Creazione regola di distribuzione automatica passare alla pagina **Aggiornamenti software**.
-- Nelle proprietà di una regola di distribuzione automatica esistente passare alla scheda **Aggiornamenti software**.
+**[コンテンツ サイズ (KB)]** フィールドを構成するには、次のいずれかを実行します。
+- 自動展開規則を作成するときに、自動展開規則の作成ウィザードの **[ソフトウェア更新プログラム]** ページにアクセスします。
+- 既にある自動展開規則のプロパティの **[ソフトウェア更新プログラム]** タブにアクセスします。
 
-## <a name="office-365-client-management-dashboard"></a>Dashboard di Gestione client di Office 365
-Il dashboard di gestione client di Office 365 è ora disponibile nella console di Configuration Manager. Per visualizzare il dashboard, passare a **Raccolta software** > **Panoramica** > **Gestione client di Office 365**.
+## <a name="office-365-client-management-dashboard"></a>Office 365 クライアント管理ダッシュボード
+Configuration Manager コンソールで Office 365 クライアント管理ダッシュボードを使用できるようになりました。 このダッシュボードを表示するには、**[ソフトウェア ライブラリ]** > **[概要]** > **[Office 365 クライアント管理]** に移動します。
 
-Nel dashboard vengono visualizzati i grafici per:
+ダッシュボードには、次のチャートが表示されます。
 
-- Numero di client di Office 365
-- Versioni dei client di Office 365
-- Lingue dei client di Office 365
-- Canali dei client di Office 365     
+- Office 365 クライアントの数
+- Office 365 クライアントのバージョン
+- Office 365 クライアントの言語
+- Office 365 クライアントのチャネル     
 
-Per informazioni dettagliate, vedere [Gestire gli aggiornamenti di Office 365 ProPlus](/sccm/sum/deploy-use/manage-office-365-proplus-updates).
+詳細については、[Office 365 ProPlus の更新プログラムの管理](/sccm/sum/deploy-use/manage-office-365-proplus-updates)に関するページを参照してください。
 
-## <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>Passaggi della sequenza di attività per la gestione della conversione da BIOS a UEFI
-È ora possibile personalizzare una sequenza di attività di distribuzione del sistema operativo con una nuova variabile, TSUEFIDrive, in modo che il passaggio **Riavvia computer** prepari una partizione FAT32 sul disco rigido per la transizione a UEFI. La procedura seguente fornisce un esempio sulle modalità di creazione dei passaggi della sequenza di attività per preparare il disco rigido alla conversione da BIOS a UEFI. Per informazioni dettagliate, vedere [Passaggi della sequenza di attività per la gestione della conversione da BIOS a UEFI](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion).
+## <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>BIOS からUEFI への変換を管理するためのタスク シーケンス手順
+**コンピューターの再起動**のステップで、UEFI に移行するためにハード ドライブに FAT32 パーティションを準備するため、新しい変数 TSUEFIDrive を使用して、オペレーティング システムの展開タスク シーケンスをカスタマイズできるようになりました。 次の手順では、タスク シーケンスのステップを作成して BIOS からUEFI への変換のためにハード ドライブを準備する方法の例を示します。 詳細については、「[BIOS から UEFI への変換を管理するためのタスク シーケンス手順](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion)」を参照してください。
 
-##  <a name="improvements-to-the-task-sequence-step-prepare-configmgr-client-for-capture"></a>Miglioramenti del passaggio della sequenza di attività Prepara client ConfigMgr per l'acquisizione  
-Il passaggio Prepara client ConfigMgr a questo punto rimuove completamente il client di Configuration Manager, invece di rimuovere solo le informazioni sulla chiave. Quando la sequenza di attività distribuisce l'immagine del sistema operativo acquisita, verrà installato ogni volta un nuovo client di Configuration Manager. Per informazioni dettagliate, vedere [Passaggi della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareConfigMgrClientforCapture).
-
-
-
-## <a name="intune-compliance-policy-charts"></a>Grafici dei criteri di conformità di Intune
-È ora possibile ottenere una panoramica della conformità generale dei dispositivi e dei motivi principali della non conformità grazie a nuovi grafici, disponibili nell'area di lavoro **Monitoraggio** della console di Configuration Manager. È possibile fare clic su una sezione del grafico per eseguire il drill-down in un elenco dei dispositivi della categoria corrispondente. Per informazioni dettagliate, vedere [Monitorare i criteri di conformità](/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy).
-
-
-## <a name="lookout-integration-for-hybrid-implementations-to-protect-ios-and-android-devices"></a>Integrazione di Lookout nelle implementazioni ibride per la protezione di dispositivi iOS e Android
-Microsoft si integra con la soluzione di protezione dalle minacce Lookout per proteggere i dispositivi mobili iOS e Android mediante il rilevamento di malware, app rischiose e altre minacce nei dispositivi. La soluzione Lookout consente di determinare il livello di minaccia, che è configurabile. È possibile creare una regola dei criteri di conformità in System Center Configuration Manager per determinare la conformità del dispositivo in base alla valutazione dei rischi di Lookout. Tramite criteri di accesso condizionale, è possibile consentire o bloccare l'accesso alle risorse aziendali in base allo stato di conformità del dispositivo. Per informazioni sull'integrazione e sul suo funzionamento, vedere [Gestire l'accesso in base a dispositivo, rete e rischio dell'applicazione](/sccm/protect/deploy-use/manage-access-based-on-device-network-app-risk).
-
-Agli utenti dei dispositivi iOS non conformi verrà richiesto di effettuare la registrazione. Verrà inoltre richiesto di installare l'applicazione Lookout for Work, di attivare l'app e di correggere le minacce segnalate da Lookout for Work per poter accedere ai dati aziendali. Per altre informazioni, vedere [Configurare e distribuire l'app Lookout for Work](/sccm/protect/deploy-use/configure-and-deploy-lookout-for-work-apps).
-
-
-
-## <a name="new-compliance-settings-for-configuration-items"></a>Nuove impostazioni di conformità per gli elementi di configurazione
-Sono disponibili molte nuove impostazioni che è possibile usare negli elementi di configurazione relativi a diverse piattaforme per dispositivi. Si tratta di impostazioni che in precedenza esistevano nella configurazione autonoma di Microsoft Intune, rese ora disponibili per Intune con Configuration Manager.
-Per informazioni dettagliate, vedere [Elementi di configurazione per dispositivi gestiti senza il client di System Center Configuration Manager](/sccm/compliance/deploy-use/configuration-items-for-devices-managed-without-the-client).
-
-### <a name="new-settings-for-android-devices"></a>Nuove impostazioni per i dispositivi Android
-#### <a name="password-settings"></a>Impostazioni della password
-- **Ricorda cronologia password**
-- **Consenti sblocco delle impronte digitali**
-
-#### <a name="security-settings"></a>Impostazioni di sicurezza
-- **Richiedi crittografia sulle schede di memoria**
-- **Consenti acquisizione schermo**
-- **Consenti invio dati di diagnostica**
-
-#### <a name="browser-settings"></a>Impostazioni del browser
-- **Consenti browser Web**
-- **Consenti riempimento automatico**
-- **Consenti blocco popup**
-- **Consenti cookie**
-- **Consenti scripting**
-
-#### <a name="app-settings"></a>Impostazioni delle app
-- **Consenti archivio Google Play**
-
-#### <a name="device-capability-settings"></a>Impostazioni relative alle funzionalità dei dispositivi
-- **Consenti archivi rimovibili**
-- **Consenti tethering Wi-Fi**
-- **Consenti georilevazione**
-- **Consenti NFC**
-- **Consenti Bluetooth**
-- **Consenti roaming vocale**
-- **Consenti dati in roaming**
-- **Consenti messaggi SMS/MMS**
-- **Consenti assistente vocale**
-- **Consenti composizione vocale**
-- **Consenti copia e incolla**
-
-### <a name="new-settings-for-ios-devices"></a>Nuove impostazioni per i dispositivi iOS
-#### <a name="password-settings"></a>Impostazioni della password
-- **Numero di caratteri complessi richiesti nella password**
-- **Consenti password semplici**
-- **Minuti di inattività prima che venga richiesta la password**
-- **Ricorda cronologia password**
-
-### <a name="new-settings-for-mac-os-x-devices"></a>Nuove impostazioni per i dispositivi Mac OS X
-#### <a name="password-settings"></a>Impostazioni della password
-- **Numero di caratteri complessi richiesti nella password**
-- **Consenti password semplici**
-- **Ricorda cronologia password**
-- **Minuti di inattività prima dell'attivazione dello screen saver**
-
-### <a name="new-settings-for-windows-10-desktop-and-mobile-devices"></a>Nuove impostazioni per i dispositivi Windows 10 Desktop e mobili
-#### <a name="password-settings"></a>Impostazioni della password
-- **Numero minimo di set di caratteri**
-- **Ricorda cronologia password**
-- **Richiedi una password quando il dispositivo torna attivo dopo uno stato di inattività**
-
-#### <a name="security-settings"></a>Impostazioni di sicurezza
-- **Richiedi crittografia sui dispositivi mobili**
-- **Consenti l'annullamento della registrazione manuale**
-
-#### <a name="device-capability-settings"></a>Impostazioni relative alle funzionalità dei dispositivi
-- **Consenti VPN su rete cellulare**
-- **Consenti roaming VPN su rete cellulare**
-- **Consenti ripristino del telefono**
-- **Consenti connessione USB**
-- **Consenti Cortana**
-- **Consenti notifiche del Centro operativo**
-
-### <a name="new-settings-for-windows-10-team-devices"></a>Nuove impostazioni per i dispositivi Windows 10 Team
-#### <a name="device-settings"></a>Impostazioni del dispositivo
-- **Abilita Azure Operational Insights**
-- **Abilita proiezione wireless Miracast**
-- **Scegli le informazioni sulla riunione visualizzate nella schermata iniziale**
-- **URL dell'immagine di sfondo per la schermata di blocco**
-
-### <a name="new-settings-for-windows-81-devices"></a>Nuove impostazioni per i dispositivi Windows 8.1
-#### <a name="applicability-settings"></a>Impostazioni di applicabilità
-- **Applica tutte le configurazioni a Windows 10**
-
-#### <a name="password-settings"></a>Impostazioni della password
-- **Tipo di password richiesto**
-- **Numero minimo di set di caratteri**
-- **Lunghezza minima password**
-- **Numero di errori di accesso ripetuti consentiti prima della cancellazione del dispositivo**
-- **Minuti di inattività prima dello spegnimento dello schermo**
-- **Scadenza password (giorni)**
-- **Ricorda cronologia password**
-- **Impedisci riutilizzo delle password precedenti**
-- **Consenti password grafica e PIN**
-
-#### <a name="browser-settings"></a>Impostazioni del browser
-- **Consenti rilevamento automatico della rete Intranet**
-
-### <a name="new-settings-for-windows-phone-81-devices"></a>Nuove impostazioni per i dispositivi Windows Phone 8.1
-#### <a name="applicability-settings"></a>Impostazioni di applicabilità
-- **Applica tutte le configurazioni a Windows 10**
-
-#### <a name="password-settings"></a>Impostazioni della password
-- **Numero minimo di set di caratteri**
-- **Consenti password semplici**
-- **Ricorda cronologia password**
-
-#### <a name="device-capability-settings"></a>Impostazioni relative alle funzionalità dei dispositivi
-- **Consenti connessione automatica agli hotspot Wi-Fi gratuiti**
-
+##  <a name="improvements-to-the-task-sequence-step-prepare-configmgr-client-for-capture"></a>タスク シーケンス ステップの向上: ConfigMgr クライアントのキャプチャの準備  
+ConfigMgr クライアントの準備手順で、キー情報だけではなく、Configuration Manager クライアントが完全に削除されるようになりました。 タスク シーケンスでキャプチャしたオペレーティング システム イメージを展開すると、毎回新しい Configuration Manager クライアントがインストールされます。 詳細については、「[Task sequence steps](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareConfigMgrClientforCapture)」(タスク シーケンスのステップ) を参照してください。
+
+
+
+## <a name="intune-compliance-policy-charts"></a>Intune コンプライアンス ポリシー グラフ
+Configuration Manager コンソールの **[監視]** ワークスペースで新しいチャートを使用して、デバイスの全体の準拠と非準拠の主な理由をすばやく表示することができるようになりました。 いずれかのチャートのセクションをクリックすると、そのカテゴリ内のデバイスのリストまでドリル ダウンすることができます。 詳細については、「[Monitor the compliance policy](/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy)」(コンプライアンス ポリシーの監視) を参照してください。
+
+
+## <a name="lookout-integration-for-hybrid-implementations-to-protect-ios-and-android-devices"></a>iOS デバイスと Android デバイスを保護するハイブリッド実装のための Lookout 統合
+Microsoft は、デバイス上のマルウェアやリスクの高いアプリなどを検出して iOS および Android モバイル デバイスを保護するため、Lookout のモバイル脅威保護ソリューションに統合しています。 Lookout のソリューションにより、構成可能な脅威レベルを決定できます。 System Center Configuration Manager に、Lookout によるリスク評価に基づいてデバイスのコンプライアンスを判断するためのコンプライアンス ポリシー規則を作成できます。 条件付きアクセス ポリシーを使用すると、デバイスのコンプライアンス状態に基づいて、会社のリソースへのアクセスを許可したりブロックしたりできます。 統合とそのしくみの詳細については、「[Manage access based on device, network, and application risk](/sccm/protect/deploy-use/manage-access-based-on-device-network-app-risk)」(デバイス、ネットワーク、アプリケーションのリスクに基づいたアクセスの管理) を参照してください。
+
+コンプライアンスを満たしていない iOS デバイスのユーザーには登録が求められます。 会社のデータへのアクセス権を得るにはデバイスへの Lookout for Work アプリのインストール、アプリのアクティブ化、Lookout for Work アプリケーションで報告された脅威の修復が必要となります。 詳細については、「[Configure and deploy Lookout for Work apps](/sccm/protect/deploy-use/configure-and-deploy-lookout-for-work-apps)」(Lookout for Work アプリの構成と展開) を参照してください。
+
+
+
+## <a name="new-compliance-settings-for-configuration-items"></a>構成アイテムの新しいコンプライアンス設定
+さまざまなデバイス プラットフォームの構成アイテムで使用できる多くの新しい設定が追加されました。 これらの設定は、以前はスタンドアロン構成での Microsoft Intune にありましたが、Intune を Configuration Manager で使用する際にも使用できるようになりました。
+詳細については、「[Configuration items for devices managed without the System Center Configuration Manager client](/sccm/compliance/deploy-use/configuration-items-for-devices-managed-without-the-client)」(System Center Configuration Manager クライアントを使用せずに管理されているデバイスの構成項目) を参照してください。
+
+### <a name="new-settings-for-android-devices"></a>Android デバイス向けの新しい設定
+#### <a name="password-settings"></a>パスワードの設定
+- **パスワードの履歴を記憶する**
+- **指紋によるロック解除を使用する**
+
+#### <a name="security-settings"></a>セキュリティ設定
+- **メモリ カードの暗号化を必要とする**
+- **画面のキャプチャを許可する**
+- **診断データの送信を使用する**
+
+#### <a name="browser-settings"></a>ブラウザーの設定
+- **Web ブラウザーを許可する**
+- **オートコンプリートを使用する**
+- **ポップアップ ブロックを使用する**
+- **Cookie を使用する**
+- **アクティブ スクリプティングを使用する**
+
+#### <a name="app-settings"></a>アプリの設定
+- **Google Play ストアを使用する**
+
+#### <a name="device-capability-settings"></a>デバイスの機能の設定
+- **リムーバブル記憶域を許可する**
+- **Wi-Fi テザリングを許可する**
+- **位置情報を許可する**
+- **NFC を許可する**
+- **Bluetooth を許可する**
+- **音声通話ローミングを許可する**
+- **データ ローミングを許可する**
+- **SMS/MMS メッセージングを許可する**
+- **音声アシスタントを使用する**
+- **音声による発信を使用する**
+- **コピーと貼り付けを許可する**
+
+### <a name="new-settings-for-ios-devices"></a>iOS デバイスの新しい設定
+#### <a name="password-settings"></a>パスワードの設定
+- **パスワードに必要な複雑な文字の数**
+- **単純なパスワードを許可する**
+- **パスワードが必要になるまでの非アクティブ状態の時間 (分)**
+- **パスワードの履歴を記憶する**
+
+### <a name="new-settings-for-mac-os-x-devices"></a>Mac OS X デバイスの新しい設定
+#### <a name="password-settings"></a>パスワードの設定
+- **パスワードに必要な複雑な文字の数**
+- **単純なパスワードを許可する**
+- **パスワードの履歴を記憶する**
+- **スクリーンセーバーがアクティブになるまでの非アクティブな時間 (分)**
+
+### <a name="new-settings-for-windows-10-desktop-and-mobile-devices"></a>Windows 10 デスクトップおよびモバイル デバイスの新しい設定
+#### <a name="password-settings"></a>パスワードの設定
+- **文字セットの最小数**
+- **パスワードの履歴を記憶する**
+- **デバイスがアイドル状態から戻るときにパスワードを必須とする**
+
+#### <a name="security-settings"></a>セキュリティ設定
+- **モバイル デバイスの暗号化を要求する**
+- **手動での登録解除を許可する**
+
+#### <a name="device-capability-settings"></a>デバイスの機能の設定
+- **移動体通信で VPN を許可する**
+- **移動体通信で VPN ローミングを許可する**
+- **電話リセットを許可する**
+- **USB 接続を許可する**
+- **Cortana を許可する**
+- **アクション センターの通知を許可する**
+
+### <a name="new-settings-for-windows-10-team-devices"></a>Windows 10 Team デバイスの新しい設定
+#### <a name="device-settings"></a>デバイスの設定
+- **Azure Operational Insights を有効にする**
+- **Miracast ワイヤレス投影を有効にする**
+- **[ようこそ] 画面に表示される会議の情報を選択する**
+- **ロック画面の背景画像 URL**
+
+### <a name="new-settings-for-windows-81-devices"></a>Windows 8.1 デバイスの新しい設定
+#### <a name="applicability-settings"></a>適用性の設定
+- **Windows 10 にすべての構成を適用する**
+
+#### <a name="password-settings"></a>パスワードの設定
+- **必要なパスワードの種類**
+- **文字セットの最小数**
+- **最小のパスワードの長さ**
+- **デバイスをワイプするまでの連続サインイン エラーの数**
+- **画面がオフになるまでの非アクティブな時間 (分)**
+- **パスワードの有効期限 (日)**
+- **パスワードの履歴を記憶する**
+- **前のパスワードの再利用を防止**
+- **ピクチャ パスワードと PIN を許可する**
+
+#### <a name="browser-settings"></a>ブラウザーの設定
+- **イントラネット ネットワークの自動検出を使用する**
+
+### <a name="new-settings-for-windows-phone-81-devices"></a>Windows Phone 8.1 デバイスの新しい設定
+#### <a name="applicability-settings"></a>適用性の設定
+- **Windows 10 にすべての構成を適用する**
+
+#### <a name="password-settings"></a>パスワードの設定
+- **文字セットの最小数**
+- **単純なパスワードを許可する**
+- **パスワードの履歴を記憶する**
+
+#### <a name="device-capability-settings"></a>デバイスの機能の設定
+- **無料 Wi-Fi スポットへの自動接続を許可する**

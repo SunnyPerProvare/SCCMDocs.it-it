@@ -1,110 +1,106 @@
 ---
-title: Usare PXE per distribuire Windows in rete | Documentazione Microsoft
-description: Usare le distribuzioni del sistema operativo avviate da PXE per aggiornare il sistema operativo di un computer o per installare una nuova versione di Windows in un nuovo computer.
+title: "PXE を使用したネットワーク経由での Windows の展開 | Microsoft ドキュメント"
+description: "PXE によるオペレーティング システムの展開を使用して、コンピューターのオペレーティング システムを更新するか、新しいコンピューターに新しいバージョンの Windows をインストールします。"
 ms.custom: na
 ms.date: 06/15/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da5f8b61-2386-4530-ad54-1a5c51911f07
-caps.latest.revision: 19
-caps.handback.revision: 0
+caps.latest.revision: "19"
+caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
 ms.openlocfilehash: b88ab3799027c78a8c605e934b247097b31e1d21
-ms.contentlocale: it-it
-ms.lasthandoff: 06/28/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-pxe-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Usare PXE per distribuire Windows in rete con System Center Configuration Manager
+# <a name="use-pxe-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>System Center Configuration Manager で PXE を使用してネットワーク経由で Windows を展開する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Le distribuzioni del sistema operativo avviate da Pre-Boot eXecution Environment (PXE) in System Center Configuration Manager consentono ai computer client di richiedere e distribuire sistemi operativi in rete. In questo scenario di distribuzione l'immagine del sistema operativo e le immagini d'avvio di Windows PE, sia x86 che x64, vengono inviate a un punto di distribuzione configurato per accettare le richieste di avvio PXE.
+System Center Configuration Manager での PXE (Preboot execution environment) によるオペレーティング システムの展開では、クライアント コンピューターはネットワーク経由でオペレーティング システムを要求し、展開することができます。 この展開シナリオでは、オペレーティング システム イメージ、および x86 と x64 の Windows PE ブート イメージを、PXE ブート要求を許可するように構成された配布ポイントに送信します。
 
 > [!NOTE]  
->  Quando si crea una distribuzione del sistema operativo destinata solo a computer BIOS x64, nel punto di distribuzione devono essere disponibili sia l'immagine di avvio x64 che l'immagine di avvio x86.
+>  x64 BIOS コンピューターのみを対象とするオペレーティング システムの展開を作成する場合は、配布ポイントに x64 ブート イメージと x86 ブート イメージの両方を用意する必要があります。
 
-È possibile usare distribuzioni del sistema operativo avviate da PXE negli scenari di distribuzione del sistema operativo seguenti:
+次のオペレーティング システムの展開シナリオでは、PXE によるオペレーティング システムの展開を使用できます。
 
--   [Aggiornare un computer esistente con una nuova versione di Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
+-   [新しいバージョンの Windows で既存のコンピューターを更新する](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
 
--   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
+-   [新しいコンピューター (ベア メタル) に新しいバージョンの Windows をインストールする](install-new-windows-version-new-computer-bare-metal.md)  
 
-Completare i passaggi in uno degli scenari di distribuzione del sistema operativo e quindi usare le sezioni seguenti per preparare le distribuzioni avviate da PXE.
+いずれかのオペレーティング システムの展開シナリオのステップを完了させてから、次のセクションを参照して、PXE による展開を準備します。
 
-##  <a name="BKMK_Configure"></a> Configurare almeno un punto di distribuzione per accettare le richieste PXE
-Per distribuire i sistemi operativi ai client che eseguono richieste di avvio PXE, usare uno o più punti di distribuzioni configurati per rispondere alle richieste di avvio PXE. Per i passaggi relativi all'abilitazione di PXE per un punto di distribuzione, vedere [Configurazione dei punti di distribuzione per accettare le richieste PXE](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint).
+##  <a name="BKMK_Configure"></a> PXE 要求を許可するために少なくとも 1 つの配布ポイントを構成する
+PXE ブート要求を作成するクライアントにオペレーティング システムを展開するには、PXE ブート要求に応答するように構成された 1 つ以上の配布ポイントを使用します。 配布ポイントで PXE を有効にする手順については、「[PXE 要求を受け入れるための配布ポイントの構成](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint)」を参照してください。
 
-## <a name="prepare-a-pxe-enabled-boot-image"></a>Preparare un'immagine d'avvio che supporta PXE
-Per usare PXE per distribuire un sistema operativo, è necessario avere immagini d'avvio che supportano PXE sia x86 sia x64, distribuite in uno o più punti di distribuzione che supportano PXE. Usare le informazioni per abilitare PXE in un'immagine d'avvio e distribuirla nei punti di distribuzione:
+## <a name="prepare-a-pxe-enabled-boot-image"></a>PXE 対応のブート イメージの作成
+PXE を使用してオペレーティング システムを展開するには、1 つ以上の PXE 対応配布ポイントに配布される、x86 と x64 の両方の PXE 対応ブート イメージが必要です。 この情報を使用して、ブート イメージで PXE を有効にして、配布ポイントにブート イメージを配布します。
 
--   Per abilitare PXE in un'immagine d'avvio, selezionare **Distribuire questa immagine d'avvio dal punto di distribuzione che supporta PXE** nella scheda **Origine dati** nelle proprietà dell'immagine d'avvio.
+-   ブート イメージで PXE を有効にするには、**[データ ソース]** タブのブート イメージ プロパティで、**[このブート イメージを PXE 対応の配布ポイントから展開する]** を選択します。
 
--   Se si modificano le proprietà per l'immagine d'avvio, ridistribuirla nei punti di distribuzione. Per altre informazioni, vedere [Distribuire il contenuto](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).
+-   ブート イメージのプロパティを変更する場合は、再配布ポイントにブート イメージを再配布します。 詳細については、「[コンテンツの配布](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content)」をご覧ください。
 
-##  <a name="BKMK_PXEExclusionList"></a> Creare un elenco di esclusione per le distribuzioni PXE
-Quando si distribuiscono sistemi operativi con PXE, è possibile creare un elenco di esclusione in ogni punto di distribuzione. Aggiungere gli indirizzi MAC all'elenco di esclusione dei computer che si vuole vengano ignorati dal punto di distribuzione. I computer elencati non riceveranno le sequenze di attività di distribuzione usate da Configuration Manager per la distribuzione PXE.
+##  <a name="BKMK_PXEExclusionList"></a> PXE 展開の除外リストの作成
+PXE を使用してオペレーティング システムを展開する場合、配布ポイントで除外リストを作成できます。 除外リストには、配布ポイントが無視すべきコンピューターの MAC アドレスを追加します。 リストに追加されたコンピューターは、Configuration Manager が PXE 展開で使用する展開タスク シーケンスを受け取りません。
 
-#### <a name="to-create-the-exclusion-list"></a>Per creare l'elenco di esclusione
+#### <a name="to-create-the-exclusion-list"></a>除外リストを作成するには
 
-1.  Creare un file di testo nel punto di distribuzione che supporta PXE. Ad esempio, assegnare al file di testo il nome **pxeExceptions.txt**.
+1.  PXE 対応の配布ポイントにテキスト ファイルを作成します。 例として、このテキスト ファイルを **pxeExceptions.txt**と名づけます。
 
-2.  Usare un editor di testo semplice, ad esempio Blocco note, e aggiungere gli indirizzi MAC dei computer che il punto di distribuzione che supporta PXE deve ignorare. Separare i valori degli indirizzi MAC con i due punti e immettere ogni indirizzo in una riga separata. Ad esempio: `01:23:45:67:89:ab`
+2.  メモ帳などのプレーン テキスト エディターを使用して、PXE 対応配布ポイントが無視するべきコンピューターの MAC アドレスを追加します。 MAC アドレス値はコロンを使って区切り、各アドレスを別の行に入力します。 例: `01:23:45:67:89:ab`
 
-3.  Salvare il file di testo nel server del sistema del sito del punto distribuzione che supporta PXE. Il file di testo può essere salvato in qualsiasi posizione nel server.
+3.  PXE 対応の配布ポイント サイト システム サーバーにテキスト ファイルを保存します。 テキスト ファイルはサーバーの任意の場所に保存できます。
 
-4.  Modificare il Registro di sistema del punto di distribuzione che supporta PXE per creare una chiave del Registro di sistema **MACIgnoreListFile**. Aggiungere il valore della stringa del percorso completo per il file di testo nel server del sistema del sito del punto distribuzione che supporta PXE. Utilizzare il seguente percorso del Registro di sistema:
+4.  PXE 対応配布ポイントのレジストリを編集して、**MACIgnoreListFile** レジストリ キーを作成します。 PXE 対応の配布ポイント サイト システム サーバーでテキスト ファイルのフル パスの文字列値を追加します。 次のレジストリ パスを使用します。
 
      **HKLM\Software\Microsoft\SMS\DP**  
 
     > [!WARNING]  
-    >  L'errato utilizzo dell'editor del Registro di sistema può provocare gravi problemi che potrebbero richiedere la reinstallazione del sistema operativo. La risoluzione dei problemi derivanti dall'errato utilizzo dell'editor del Registro di sistema non è garantita. L'utilizzo dell'editor del Registro di sistema è a rischio dell'utente.
+    >  レジストリ エディターの使用方法を誤ると、重大な問題が発生し、オペレーティング システムの再インストールが必要になることがあります。 レジストリ エディターの使用方法を誤った結果生じた問題については、解決できる保証はありません。 レジストリ エディターは、ご自身の責任において使用してください。
 
-     Non è necessario riavviare il server dopo aver modificato il Registro di sistema.
+     このレジストリの変更を行った後、サーバーの再起動は必要ありません。
 
-##  <a name="BKMK_RamDiskTFTP"></a>Dimensioni del blocco e della finestra TFTP RamDisk
-È possibile personalizzare le dimensioni del blocco TFTP RamDisk e, a partire da Configuration Manager versione 1606, le dimensioni della finestra per i punti di distribuzione abilitati per PXE. Se la rete è stata personalizzata, il download dell'immagine di avvio potrebbe non riuscire a causa di un errore di timeout perché le dimensioni del blocco o della finestra sono troppo grandi. La personalizzazione delle dimensioni della finestra e del blocco TFTP RamDisk consentono di ottimizzare il traffico TFTP quando si usa PXE per soddisfare requisiti di rete specifici. Testare le impostazioni personalizzate nel proprio ambiente per stabilire quale sia il metodo più efficiente. Per altre informazioni, vedere [Personalizzare le dimensioni della finestra e del blocco TFTP RamDisk nei punti di distribuzione abilitati per PXE](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_RamDiskTFTP).
+##  <a name="BKMK_RamDiskTFTP"></a>RamDisk TFTP ブロック サイズとウィンドウ サイズ
+Configuration Manager バージョン 1606 では、PXE 対応配布ポイントの RamDisk TFTP ブロック サイズとウィンドウ サイズをカスタマイズできます。 ネットワークをカスタマイズしている場合、ブロックまたはウィンドウのサイズが大きすぎるために、ブート イメージのダウンロードがタイムアウト エラーで失敗する可能性があります。 RamDisk TFTP ブロック サイズとウィンドウ サイズのカスタマイズにより、特定のネットワーク要件に対応する PXE を使用する場合に、TFTP トラフィックを最適化できます。 最も効率的な方法を確認するために、環境内でカスタマイズした設定をテストします。 詳細については、「[PXE 対応配布ポイント上の RamDisk TFTP ブロック サイズとウィンドウ サイズのカスタマイズ](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_RamDiskTFTP)」を参照してください。
 
-## <a name="configure-deployment-settings"></a>Configurare le impostazioni di distribuzione
-Per usare la distribuzione del sistema operativo avviata da PXE, è necessario configurarla per rendere disponibile il sistema operativo per le richieste di avvio PXE. È possibile configurare i sistemi operativi disponibili nella pagina **Impostazioni di distribuzione** della Distribuzione guidata del software o nella scheda **Impostazioni di distribuzione** nelle proprietà della distribuzione. Per l'impostazione **Rendi disponibile per** , configurare uno degli elementi seguenti:
+## <a name="configure-deployment-settings"></a>展開の設定の構成
+PXE によるオペレーティング システムの展開を使用する場合、オペレーティング システムを PXE ブート要求から使用できるように展開を構成する必要があります。 ソフトウェアの展開ウィザードの **[展開の設定]** ページか展開のプロパティの **[配置の設定]** タブで使用可能なオペレーティング システムを構成することができます。 **[利用できるようにする項目]** の設定では、次のいずれかを設定します。
 
--   Client di Configuration Manager, supporti e PXE
+-   Configuration Manager クライアント、メディア、PXE
 
--   Solo supporti e PXE
+-   メディアと PXE のみ
 
--   Solo supporti e PXE (nascosto)
+-   メディアと PXE のみ (非表示)
 
-##  <a name="BKMK_Deploy"></a> Distribuire la sequenza di attività
-Distribuire il sistema operativo in una raccolta di destinazione. Per altre informazioni, vedere [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS). Quando si distribuiscono sistemi operativi tramite PXE, è possibile specificare se la distribuzione è obbligatoria o disponibile.
+##  <a name="BKMK_Deploy"></a> タスク シーケンスの展開
+オペレーティング システムをターゲット コレクションに展開します。 詳細については、「 [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)」をご覧ください。 PXE を使用してオペレーティング システムを展開するとき、展開が必須か使用可能かを設定することができます。
 
--   **Distribuzione richiesta**: le distribuzioni richieste usano PXE senza alcun intervento da parte dell'utente. L'utente non sarà in grado di ignorare l'avvio di PXE. Tuttavia, se l'utente annulla l'avvio di PXE prima della risposta del punto di distribuzione, il sistema operativo non verrà distribuito.
+-   **必要な展開**: 必要な展開では、ユーザーの介入なしに、PXE を使用します。 ユーザーは PXE ブートをバイパスできません。 しかし、ユーザーが配布ポイントが応答する前に PXE ブートをキャンセルすれば、オペレーティング システムは展開されません。
 
--   **Distribuzione disponibile**: le distribuzioni disponibili richiedono che l'utente sia presente sul computer di destinazione, per poter premere il tasto F12 per continuare il processo di avvio PXE. Se l'utente non è presente per premere F12, il computer avvierà il sistema operativo corrente oppure verrà avviato dal dispositivo di avvio successivo disponibile.
+-   **利用可能な展開**: 利用可能な展開では、PXE ブート プロセスを続けるために F12 キーを押すユーザーがセットアップ先のコンピューターにいる必要があります。 F12 を押すユーザーがいない場合、コンピューターは現在のオペレーティング システム、または次に利用可能なブート デバイスから起動します。
 
-È possibile ridistribuire una distribuzione PXE richiesta cancellando lo stato dell'ultima distribuzione PXE assegnato a una raccolta di Configuration Manager o a un computer. Questa azione consente di reimpostare lo stato di quella distribuzione e reinstalla le distribuzioni richieste più recenti.
+Configuration Manager コレクションまたはコンピューターに割り当てられた最終の PXE 展開の状態をクリアすることにより、必要な PXE 展開を再展開することができます。 この操作でその展開の状態がリセットされ、最新の必要な展開が再インストールされます。
 
 > [!IMPORTANT]
-> Il protocollo PXE non è sicuro. Assicurarsi che il server PXE e il client PXE si trovino su una rete fisicamente protetta, come ad esempio in un data center, per evitare accessi non autorizzati al sito.
+> PXE プロトコルはセキュリティ保護されていません。 PXE サーバーと PXE クライアントのどちらも、サイトへの不正なアクセスを防御するデータセンターといった物理的に安全なネットワークに置かれていることを確認します。
 
-##  <a name="how-is-the-boot-image-selected-for-clients-booting-with-pxe"></a>Come viene selezionata l'immagine di avvio per i client avviati con PXE?
-Quando un client viene avviato con PXE Configuration Manager rende disponibile per il client un'immagine di avvio. A partire dalla versione 1606, Configuration Manager usa un'immagine di avvio con un'architettura esattamente corrispondente. Se non è disponibile un'immagine di avvio con l'architettura esatta, Configuration Manager usa un'immagine di avvio con un'architettura compatibile. L'elenco seguente contiene informazioni dettagliate sulle modalità di selezione di un'immagine di avvio per i client avviati con PXE.
-1. Configuration Manager cerca nel database del sito il record di sistema corrispondente all'indirizzo MAC o al SMBIOS del client che sta tentando di eseguire l'avvio.  
+##  <a name="how-is-the-boot-image-selected-for-clients-booting-with-pxe"></a>PXE ブートのクライアントが使用するブート イメージの選択方法
+クライアントが PXE で起動する場合、使用するブート イメージが Configuration Manager によってクライアントに提供されます。 Configuration Manager バージョン 1606 以降、Configuration Manager は、アーキテクチャが厳密に一致するブート イメージを使用します。 正確なアーキテクチャのブート イメージがない場合、Configuration Manager は、互換性のあるアーキテクチャを持つブート イメージを使用します。 次の一覧では、PXE ブートのクライアントが使用するブート イメージがどのように選択されるかについて説明します。
+1. Configuration Manager は、ブートしようとしているクライアントの MAC アドレスまたは SMBIOS に一致するシステム レコードをサイト データベースで検索します。  
 
     > [!NOTE]
-    > Se un computer assegnato a un sito viene avviato in PXE per un sito diverso, i criteri non sono visibili per il computer. Ad esempio, se un client è già assegnato al sito A, il punto di gestione e il punto di distribuzione per il sito B non saranno in grado di accedere ai criteri dal sito A. Il client non riuscirà a completare l'avvio di PXE.
+    > サイトに割り当てられているコンピューターを、別のサイトの PXE にブートした場合、そのコンピューターでポリシーを表示できません。 たとえば、クライアントが既にサイト A に割り当てられている場合、サイト B の管理ポイントと配布ポイントは、サイト A のポリシーにアクセスできず、クライアントは正常に PXE ブートしません。
 
-2. Configuration Manager cerca le sequenze di attività che vengono distribuite nel record di sistema menzionato nel passaggio 1.
+2. Configuration Manager は、手順 1 で見つかったシステム レコードに展開されているタスク シーケンスを探します。
 
-3. Nell'elenco di sequenze di attività menzionato nel passaggio 2 Configuration Manager cerca un'immagine di avvio corrispondente all'architettura del client che sta tentando di eseguire l'avvio. Se viene trovata un'immagine di avvio con la stessa architettura, verrà usata quell'immagine.
+3. 手順 2 で見つかったタスク シーケンスの一覧で、Configuration Manager はブートしようとしているクライアントのアーキテクチャに一致するブート イメージを探します。 同じアーキテクチャのブート イメージが見つかった場合は、そのブート イメージを使用します。
 
-4. Se non viene trovata un'immagine di avvio con la stessa architettura, Configuration Manager cerca un'immagine di avvio compatibile con l'architettura del client. Esegue la ricerca nell'elenco di sequenze di attività indicato nel passaggio 2. Ad esempio, un client a 64 bit è compatibile con immagini di avvio a 32 bit e 64 bit. Un client a 32 bit è compatibile solo con le immagini di avvio a 32 bit. Un client UEFI è compatibile solo con le immagini di avvio a 64 bit.
-
+4. 同じアーキテクチャのブート イメージが見つからなかった場合、Configuration Manager は、クライアントのアーキテクチャと互換性があるブート イメージを探します。 手順 2. で見つかったタスク シーケンスの一覧で探します。 たとえば、64 ビット クライアントは、32 ビットおよび 64 ビットのブート イメージと互換性があります。 32 ビット クライアントは、32 ビットのブート イメージのみと互換性があります。 UEFI クライアントは、64 ビットのブート イメージのみと互換性があります。

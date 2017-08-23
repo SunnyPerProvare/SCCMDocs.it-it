@@ -1,148 +1,144 @@
 ---
-title: Gestire le app da Windows Store per le aziende | Microsoft Docs
-description: Gestire e distribuire le app da Windows Store per le aziende usando System Center Configuration Manager.
+title: "ビジネス向け Windows ストアからのアプリの管理 | Microsoft Docs"
+description: "System Center Configuration Manager を使用してビジネス向け Windows ストアからアプリを管理および展開します。"
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8cdb22a6-72d7-41f5-9bed-c098b1bcf675
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: 369b6a82a20a90ca534f9484c0be71096dd35a30
-ms.contentlocale: it-it
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="manage-apps-from-the-windows-store-for-business-with-system-center-configuration-manager"></a>System Center Configuration Manager によるビジネス向け Windows ストアからのアプリの管理
+[ビジネス向け Windows ストア](https://www.microsoft.com/business-store)は、組織向けの Windows アプリを検索して、個別に、または一括で購入できる場所です。 Configuration Manager にストアを接続することで、購入したアプリの一覧と Configuration Manager を同期できます。 同期後、Configuration Manager コンソールでアプリを表示し、他のアプリを展開する場合と同様に展開できます。
 
-# <a name="manage-apps-from-the-windows-store-for-business-with-system-center-configuration-manager"></a>Gestire le app da Windows Store per le aziende con System Center Configuration Manager
-In [Windows Store per le aziende](https://www.microsoft.com/business-store) è possibile trovare e acquistare app Windows per l'organizzazione, singolarmente o con Volume Purchase Program. Connettendo lo Store a Configuration Manager, è possibile sincronizzare l'elenco delle app acquistate con Configuration Manager. È quindi possibile visualizzare le app nella console di Configuration Manager e distribuirle come si distribuisce qualsiasi altra app.
 
+## <a name="online-and-offline-apps"></a>オンライン アプリとオフライン アプリ
 
-## <a name="online-and-offline-apps"></a>App online e offline
+ビジネス向け Windows ストアは、次の 2 種類のアプリをサポートしています。
 
-Windows Store per le aziende supporta due tipi di app:
+- **オンライン** - この種類のライセンスでは、ユーザーとデバイスはストアに接続してアプリとそのライセンスを取得する必要があります。 Windows 10 デバイスは、Azure Active Directory ドメインに参加している必要があります。
+- **オフライン** - ストアに接続したり、インターネットに接続したりせずに、アプリとライセンスをキャッシュし、オンプレミス ネットワーク内で直接展開できます。
 
-- **Online**: con questo tipo di licenza è necessario che gli utenti e i dispositivi si connettano allo Store per ottenere un'app e la relativa licenza. I dispositivi Windows 10 devono appartenere a un dominio Azure Active Directory.
-- **Offline**: consente di memorizzare nella cache le app e le licenze da distribuire direttamente nella rete locale senza connettersi allo Store o avere una connessione Internet.
+ビジネス向け Windows ストアの詳細については、[こちら](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview?f=255&MSPPError=-2147217396)を参照してください。
 
-[Altre informazioni](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview?f=255&MSPPError=-2147217396) su Windows Store per le aziende.
-
-Configuration Manager supporta la gestione delle app di Windows Store per le aziende su dispositivi Windows 10 che eseguono il client di Configuration Manager e su dispositivi Windows 10 registrati in Microsoft Intune (configurazione ibrida). Configuration Manager offre le funzionalità seguenti per le app online e offline.
+Configuration Manager では、Configuration Manager クライアントを実行している Windows 10 デバイスと、Microsoft Intune に登録されている Windows 10 デバイスの両方でビジネス向け Windows ストアのアプリを管理できます (ハイブリッド構成と呼ばれます)。 Configuration Manager は、オンラインおよびオフライン アプリ向けに次の機能を提供します。
 
 > [!IMPORTANT]
-> Per usare questa funzionalità, è necessario che i dispositivi Windows 10 eseguano la versione di novembre 2015 (1511) o una versione successiva.
+> この機能を使用するには、Windows 10 デバイスで 2015 年 11 月 (1511) リリース以降が実行されている必要があります。
 
 
-|Funzionalità|App offline|App online|
+|機能|オフライン アプリ|オンライン アプリ|
 |------------|------------|------------|
-|Sincronizzazione dei dati delle app in Configuration Manager<br>(la sincronizzazione viene eseguita ogni 24 ore)|Sì|Sì|
-|Creazione di applicazioni di Configuration Manager dalle app dello Store|Sì|Sì|
-|Supporto delle app gratuite dello Store|Sì|Sì|
-|Supporto delle app a pagamento dello Store|No|Sì|
-|Supporto delle distribuzioni richieste nelle raccolte di utenti e dispositivi|Sì|Sì|
-|Supporto delle distribuzioni disponibili nelle raccolte di utenti e dispositivi|Sì|Sì|
-|Supporto delle app line-of-business dello Store|Sì|Sì|
+|アプリ データと Configuration Manager の同期<br>(同期は 24 時間ごとに発生)|○|○|
+|ストア アプリからの Configuration Manager アプリケーションの作成|○|○|
+|ストアからの無料アプリのサポート|○|○|
+|ストアからの有料アプリのサポート|×|○|
+|ユーザーまたはデバイス コレクションへの必要な展開のサポート|○|○|
+|ユーザーまたはデバイス コレクションへの利用可能な展開のサポート|○|○|
+|ストアからの基幹業務アプリのサポート|○|○|
 
-Per distribuire app con licenza online a PC Windows 10 con il client di Configuration Manager, è necessario che sia in esecuzione Windows 10 Creators Update o versione successiva.
+Configuration Manager クライアントを含む Windows 10 PC にオンライン ライセンス アプリを展開するには、Windows 10 Creators Update 以降を実行する必要があります。
 
-## <a name="deploying-online-apps-using-the-windows-store-for-business-with-pcs-that-run-the-configuration-manager-client"></a>Distribuzione di app online tramite Windows Store per le aziende con PC che eseguono il client di Configuration Manager
-Prima di distribuire app di Windows Store per le aziende a PC che eseguono il client completo di Configuration Manager, considerare quanto segue:
+## <a name="deploying-online-apps-using-the-windows-store-for-business-with-pcs-that-run-the-configuration-manager-client"></a>Configuration Manager クライアントを実行している PC でのビジネス向け Windows ストアを使用したオンライン アプリの展開
+完全な Configuration Manager クライアントを実行している PC にビジネス向け Windows ストア アプリを展開する前に、次のことを考慮してください。
 
-- Per la funzionalità completa, nei PC deve essere in esecuzione Windows 10 Creators Update o versione successiva.
-- I PC devono essere aggiunti all'area di lavoro di Azure Active Directory e devono trovarsi nello stesso tenant di AAD in cui Windows Store per le aziende è stato registrato come strumento di gestione.
-- Quando i PC sono connessi con l'account Administrator predefinito, non possono accedere alle app di Windows Store per le aziende.
-- I PC devono avere una connessione Internet dinamica a Windows Store per le aziende.
+- すべての機能を利用するには、PC で Windows 10 Creators Update 以降を実行する必要があります。
+- PC は Azure Active Directory に社内参加済みで、管理ツールとしてビジネス向け Windows ストアを登録したのと同じ AAD テナントにある必要があります。
+- PC は、組み込み管理者アカウントでログインしているときに、ビジネス向け Windows ストア アプリにアクセスできません。
+- PC にはビジネス向け Windows ストアへのライブ インターネット接続が必要です。
 
-### <a name="notes-for-pcs-running-earlier-versions-of-windows-10"></a>Note per i PC che eseguono versioni precedenti di Windows 10
-Nei PC che eseguono una versione di Windows 10 precedente la versione Creators Update (con il client di Configuration Manager) si verifica quanto segue:
-
-
-- Quando l'installazione è imposta dall'utente che installa l'applicazione, dall'applicazione che ha raggiunto il termine di scadenza dell'installazione o dalla rivalutazione post-installazione per le distribuzioni richieste:
-    - L'applicazione viene "imposta" dall'avvio dell'app di Windows Store per le aziende. 
-    - L'utente finale deve quindi completare l'installazione dallo Store prima che l'app venga installata
-    - Lo stato dell'applicazione nella console di Configuration Manager indica l'esito negativo con l'errore "L'app di Windows Store è stata aperta nel computer client ed è in attesa del completamento dell'installazione da parte dell'utente".
-- Al successivo ciclo di valutazione dell'applicazione:
-    - Se l'applicazione è stata installata dall'utente finale dallo Store, lo stato indica che l'**operazione è riuscita**. 
-    - Se l'utente finale non ha provato a installare l'app dallo Store:
-        - Le distribuzioni richieste proveranno ad avviare lo Store e a imporre nuovamente l'installazione dell'applicazione.
-        - Le distribuzioni disponibili non vengono nuovamente imposte.
-
-#### <a name="further-notes-for-pcs-running-earlier-versions-of-windows-10"></a>Altre note per i PC che eseguono versioni precedenti di Windows 10:
-
-- Non è possibile distribuire app line-of-business da Windows Store per le aziende
-- Quando si distribuiscono app a pagamento dallo Store, gli utenti finali devono accedere allo Store e acquistare le app.
-- Se sono stati distribuiti criteri di gruppo che disabilitano l'accesso alla versione consumer di Windows Store, le distribuzioni di Windows Store per le aziende non funzionano, anche se Windows Store per le aziende è abilitato.
+### <a name="notes-for-pcs-running-earlier-versions-of-windows-10"></a>以前のバージョンの Windows 10 を実行している PC に関する注記
+(Configuration Manager クライアントを含む) Creators Update より前のバージョンの Windows 10 を実行している PC では、次の機能が適用されます。
 
 
-## <a name="set-up-windows-store-for-business-synchronization"></a>Configurare la sincronizzazione di Windows Store per le aziende
+- アプリケーションをインストールするユーザー、インストール期限に達するアプリケーション、必須の展開のインストール後の再評価によりインストールが実行された場合:
+    - アプリケーションはビジネス向け Windows ストア アプリを起動することで "実行" されます。 
+    - したがって、アプリがインストールされる前に、エンド ユーザーはストアからインストールを完了する必要があります。
+    - Configuration Manager コンソールではアプリケーション ステータスは失敗と報告され、"Windows Store アプリをクライアント PC で開いています。ユーザーがインストールを完了するのを待機しています" というエラーが表示されます。
+- 次のアプリケーションの評価サイクル時:
+    - アプリケーションがストアからエンド ユーザーによってインストールされた場合、そのアプリケーションで報告されるステータスは **[成功]** となります。 
+    - エンド ユーザーがストアからのアプリのインストールを試行しなかった場合:
+        - 必須の展開でストアの起動が試行され、アプリケーションのインストールが再度実行されます。
+        - 利用可能な展開は再実行されません。
 
-### <a name="for-configuration-manager-versions-prior-to-1706"></a>Per le versioni di Configuration Manager precedenti alla versione 1706
+#### <a name="further-notes-for-pcs-running-earlier-versions-of-windows-10"></a>以前のバージョンの Windows 10 を実行している PC についてのその他の注記:
 
-**In Azure Active Directory registrare Configuration Manager come strumento di gestione "Applicazione Web e/o API Web". Questa azione rende disponibile un ID client che sarà necessario in un secondo tempo.**
-1. Nel nodo Active Directory di [https://manage.windowsazure.com](https://manage.windowsazure.com) selezionare Azure Active Directory e quindi fare clic su **Applicazioni** > **Aggiungi**.
-2.  Fare clic su **Aggiungi un'applicazione che l'organizzazione sta sviluppando**.
-3.  Immettere un nome per l'applicazione, selezionare **Applicazione Web** e/o **API Web** e quindi fare clic sulla freccia **Avanti**.
-4.  Immettere lo stesso URL per **URL accesso** e **URI ID app**. L'URL può essere di qualsiasi tipo e non è necessario che venga risolto in un indirizzo reale. Ad esempio, è possibile immettere *https://dominio/sccm*.
-5.  Completare la procedura guidata.
-
-**In Azure Active Directory creare una chiave client per lo strumento di gestione registrato**
-1.  Evidenziare l'applicazione creata e fare clic su **Configura**.
-2.  In **Chiavi** selezionare una durata nell'elenco e fare clic su **Salva**. Questa azione crea una nuova chiave client. Non uscire dalla pagina fino a quando non è stato completato il caricamento di Windows Store per le aziende in Configuration Manager.
-
-**In Windows Store per le aziende configurare Configuration Manager come strumento di gestione dello Store**
-1.  Aprire [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/en-us/managementtools) e, se richiesto, eseguire l'accesso.
-2.  Accettare le condizioni per l'utilizzo, se necessario.
-3.  In **Management Tools** (Strumenti di gestione) fare clic su **Add a management tool** (Aggiungi strumento di gestione).
-4.  In **Search for the tool by name** digitare il nome dell'applicazione creata in precedenza in AAD e quindi fare clic su **Add**.
-5.  Fare clic su **Activate** (Attiva) accanto all'applicazione importata.
-6.  Nella pagina **Manage > Account Information** (Gestisci > Informazioni account) selezionare **Show Offline-Licensed Apps** (Mostra app con licenza offline) per consentire l'acquisto di app con licenza offline.
-
-**Aggiungere l'account dello Store in Configuration Manager**
-
-1. Verificare di avere acquistato almeno un'app da Windows Store per le aziende. Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e quindi fare clic su **Windows Store per le aziende**.
-2.  Nella scheda **Home** nel gruppo **Windows Store per le aziende** fare clic su **Aggiungere un account di Windows Store per le aziende**. 
-3.  Aggiungere l'ID tenant, l'ID client e la chiave client da Azure Active Directory, quindi completare la procedura guidata.
-4. Al termine viene visualizzato l'account configurato nell'elenco di **Windows Store per le aziende** nella console di Configuration Manager.
-
-### <a name="for-configuration-manager-version-1706-and-later"></a>Per Configuration Manager versione 1706 e successive
-
-1. Nella console passare a **Amministrazione** > **Panoramica** > **Cloud Services Management (Gestione dei servizi cloud)** > **Azure** > **Servizi di Azure** e quindi scegliere **Configure Azure Services (Configura servizi di Azure)** per avviare **Azure Services Wizard (Configurazione guidata servizi di Azure)**.
-2. Nella pagina **Servizi di Azure** selezionare il servizio che si vuole configurare e quindi fare clic su **Avanti**.
-3. Nella pagina **Generale** specificare un nome descrittivo per il servizio di Azure e una descrizione facoltativa, quindi fare clic su **Avanti**.
-4. Nella pagina **App** specificare l'ambiente di Azure e quindi fare clic su **Sfoglia** per aprire la finestra **App server**.
-5. Nella finestra **Server App** (App server) selezionare l'app server che si vuole usare e quindi fare clic su **OK**. Le app server sono app Web di Azure che contengono le configurazioni per l'account Azure, inclusi ID del tenant, ID client e una chiave privata per i client. Se non è disponibile un'app server, usare una delle opzioni seguenti:
-    - **Crea:** per creare una nuova app server, fare clic su **Crea**. Specificare un nome descrittivo per l'app e il tenant. Quindi, dopo avere effettuato l'accesso ad Azure, Configuration Manager crea l'app Web in Azure, inclusi l'ID Client e la chiave privata da usare con l'app Web. In un secondo momento, è possibile visualizzare queste informazioni dal portale di Azure.
-    - **Importa:** per usare un'app Web già esistente nella sottoscrizione di Azure, fare clic su **Importa**. Specificare un nome descrittivo per l'app e il tenant, quindi specificare ID tenant, ID client e chiave privata per l'app Web di Azure che si vuole rendere disponibile per l'uso con Configuration Manager. Dopo aver fatto clic su **Verifica** per verificare le informazioni, fare clic su **OK** per continuare. 
-6. Controllare la pagina **Informazioni** ed eseguire gli eventuali passaggi aggiuntivi e le configurazioni indicati. Queste configurazioni sono necessarie per usare il servizio con Configuration Manager. Ad esempio, per configurare Windows Store per le aziende:
-    - In Azure è necessario registrare Configuration Manager come applicazione Web o API Web e registrare l'ID client. È anche necessario specificare una chiave client utilizzabile dallo strumento di gestione, ovvero Configuration Manager.
-    - Nella console di Windows Store per le aziende è necessario configurare Configuration Manager come strumento di gestione dello Store, abilitare il supporto per le app con licenza offline e quindi acquistare almeno un'app. 
-7. Quando si è pronti per continuare, fare clic su **Avanti**.
-8. Nella pagina **Configurazioni dell'applicazione** completare le configurazioni per il catalogo app e la lingua per il servizio, quindi fare clic su **Avanti**.
-9. Al termine della procedura guidata, nella console di Configuration Manager viene indicato che **Windows Store per le aziende** è stato configurato come **Tipo di servizio cloud**.
+- ビジネス向け Windows ストアから基幹業務アプリを展開することはできません。
+- ストアから有料アプリを展開する場合、エンド ユーザーはストアにログインし、アプリ自体を購入する必要があります。
+- コンシューマー バージョンの Windows Store へのアクセスを無効にしてグループ ポリシーを展開した場合、ビジネス向け Windows ストアが有効な場合でも、ビジネス向け Windows ストアから展開することはできません。
 
 
+## <a name="set-up-windows-store-for-business-synchronization"></a>ビジネス向け Windows ストアの同期の設定
+
+### <a name="for-configuration-manager-versions-prior-to-1706"></a>1706 より前の Configuration Manager バージョンの場合
+
+**Azure Active Directory で、"Web アプリケーションや Web API" 管理ツールとして Configuration Manager を登録します。これで、後で必要になるクライアント ID が与えられます。**
+1. [https://manage.windowsazure.com](https://manage.windowsazure.com) の Active Directory ノードで、Azure Active Directory を選択し、[**アプリケーション**]  >  [**追加**] をクリックします。
+2.  **[組織で開発中のアプリケーションを追加]** をクリックします。
+3.  アプリケーションの名前を入力し、**[Web アプリケーション]** または **[Web API]**、あるいはその両方を選択し、**次へ進む**矢印をクリックします。
+4.  **[サインオン URL]** と **[アプリケーション ID/URI]** の両方に同じ URL を入力します。 URL はあらゆるものを使用でき、実際のアドレスに解決する必要はありません。 たとえば、*https://yourdomain/sccm*を入力できます。
+5.  ウィザードを完了します。
+
+**Azure Active Directory で、登録済み管理ツールのクライアント キーを作成します。**
+1.  作成したアプリケーションを強調表示し、**[構成]** をクリックします。
+2.  **[キー]** で、リストから期間を選択して、**[保存]** をクリックします。 これで新しいクライアント キーが作成されます。 ビジネス向け Windows ストアを Configuration Manager に正常にオンボードするまで、このページから移動しないでください。
+
+**ビジネス向け Windows ストアで、ストア管理ツールとして Configuration Manager を構成します。**
+1.  [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/en-us/managementtools) を開き、サインインを求められたらサインインします。
+2.  要求された場合は、使用条件に同意します。
+3.  **[管理ツール]** で、**[Add a management tool]** (管理ツールを追加) をクリックします。
+4.  **[Search for the tool by name]** (名前でツールを検索) で、先ほど AAD で作成したアプリケーションの名前を入力して、**[追加]** クリックします。
+5.  インポートしたアプリケーションの横にある **[アクティブ化]** をクリックします。
+6.  オフラインでライセンスされるアプリケーションを購入する場合、**[管理] > [アカウント情報]** ページで、**[オフラインでライセンスされたアプリの表示]** をクリックします。
+
+**ストアのアカウントを Configuration Manager に追加します。**
+
+1. ビジネス向け Windows ストアから少なくとも 1 つのアプリを購入したことを確認します。 Configuration Manager コンソールの**管理**ワークスペースで、[**Cloud Services**] を展開して、[**ビジネス向け Windows ストア**] をクリックします。
+2.  **[ホーム]** タブの**[ビジネス向け Windows ストア]** グループで、**[ビジネス向け Windows ストア アカウントの追加]** をクリックします。 
+3.  Azure Active Directory からテナント ID、クライアント ID、クライアント キーを追加し、ウィザードを完了します。
+4. 完了した時点で、Configuration Manager コンソールの **[ビジネス向け Windows ストア]** で構成されたアカウントが表示されます。
+
+### <a name="for-configuration-manager-version-1706-and-later"></a>1706 以降の Configuration Manager バージョンの場合
+
+1. コンソールで、**[管理]** > **[概要]** > **[クラウド サービスの管理]** > **[Azure]** > **[Azure サービス]** に移動し、**[Azure サービスの構成]** を選択して、**Azure サービス ウィザード**を開始します。
+2. **[Azure サービス]** ページで、構成するサービスを選択し、**[次へ]** をクリックします。
+3. **[全般]** ページで、[Azure サービス名] のフレンドリ名とオプションの説明を入力し、**[次へ]** をクリックします。
+4. **[アプリ]** ページで、Azure 環境を指定し、**[参照]** をクリックして **[サーバー アプリ]** ウィンドウを開きます。
+5. **[サーバー アプリ]** ウィンドウで、使用するサーバー アプリを選択し、**[OK]** をクリックします。 サーバー アプリとは、Azure アカウントの構成 (クライアントのテナント ID、クライアント ID、シークレット キーなど) を格納する Azure Web アプリです。 利用可能なサーバー アプリがない場合は、次のいずれかを使用します。
+    - **作成**: 新しいセッションを作成するには、**[作成]** をクリックします。 アプリとテナントのフレンドリ名を指定します。 次に、Azure にサインインすると、Configuration Manager によって、Azure で Web アプリと、Web アプリで使用するクライアント ID やシークレット キーが作成されます。 その後、Azure Portal からこれらを表示できます。
+    - **インポート**: Azure サブスクリプションに既に存在する Web アプリを使用するには、**[インポート]** をクリックします。 アプリとテナントのフレンドリ名を指定し、Configuration Manager で使用する Azure Web アプリのテナント ID、クライアント ID、シークレット キーを指定します。 情報を**確認**した後、**[OK]** をクリックして続行します。 
+6. **[情報]** ページを確認し、指示に従って、追加の手順と構成を完了します。 これらの構成は、Configuration Manager でサービスを使用するために必要です。 たとえば、ビジネス向け Windows ストアを構成するには
+    - Azure で、Configuration Manager を Web アプリケーションまたは Web API 管理ツールとして登録し、クライアント ID を記録します。 また、管理ツール (Configuration Manager) で使用するためのクライアント キーを指定します。
+    - ビジネス向け Windows ストア コンソールで、ストアの管理ツールとして Configuration Manager を構成し、オフラインのライセンスされたアプリのサポートを有効にするには、少なくとも 1 つのアプリを購入する必要があります。 
+7. 操作を続行する準備ができたら **[次へ]** をクリックします。
+8. **[アプリケーションの構成]** ページで、このサービスのアプリケーション カタログと言語の構成を完了し、**[次へ]** をクリックします。
+9. ウィザードが完了したのち、Configuration Manager コンソールに**ビジネス向け Windows ストア**を**クラウド サービスの種類**として構成したことが示されます。
 
 
-## <a name="create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-app"></a>Creare e distribuire un'applicazione di Configuration Manager da un'app di Windows Store per le aziende.
-1.  Nell'area di lavoro **Raccolta software** della console di Configuration Manager espandere **Gestione delle applicazioni** e fare clic su **Informazioni di licenza per le app dello Store**.
-2.  Scegliere l'app che si vuole distribuire quindi nella scheda **Home** nel gruppo **Crea** fare clic su **Crea applicazione**.
-Viene creata un'applicazione di Configuration Manager contenente l'archivio di Windows per l'applicazione aziendale. Sarà quindi possibile distribuire e monitorare l'applicazione come qualsiasi altra applicazione di Configuration Manager.
+
+
+## <a name="create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-app"></a>ビジネス向け Windows ストアのアプリから Configuration Manager アプリケーションを作成して展開します。
+1.  Configuration Manager コンソールの **[ソフトウェア ライブラリ]** ワークスペースで **[アプリケーション管理]** を展開し、**[ストア アプリのライセンス情報]** をクリックします。
+2.  展開するアプリを選び、**[ホーム]** タブの **[作成]** グループで、**[アプリケーションの作成]** をクリックします。
+ビジネス向け Windows ストアのアプリを含む Configuration Manager アプリケーションが作成されます。 他の Configuration Manager のアプリケーションと同様に、このアプリケーションを展開して監視できます。
 
 > [!IMPORTANT]
-> Per i dispositivi registrati in Intune, le app distribuite sono disponibili solo per l'utente che ha originariamente registrato il dispositivo. Nessun altro utente può accedere all'app.
+> Intune に登録されたデバイスの場合、展開されたアプリは当初デバイスを登録したユーザーのみが利用できます。 それ以外のユーザーはアプリにアクセスできません。
 
-## <a name="next-steps"></a>Passaggi successivi
+## <a name="next-steps"></a>次のステップ
 
-Nell'area di lavoro **Raccolta software** espandere **Gestione delle applicazioni** e fare clic su **Informazioni di licenza per le app dello Store**.
+**[ソフトウェア ライブラリ]** ワークスペースで **[アプリケーション管理]** を展開し、**[ストア アプリのライセンス情報]** をクリックします。
 
-Per ogni app dello Store gestita è possibile visualizzare informazioni che includono nome, piattaforma, numero di licenze per l'app acquistate e numero di licenze disponibili.
-
+管理するストア アプリごとに、アプリの情報を表示できます。これには、アプリの名前、プラットフォーム、所有しているアプリのライセンスの数、利用可能なライセンスの数が含まれます。

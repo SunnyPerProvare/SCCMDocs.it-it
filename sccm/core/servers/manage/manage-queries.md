@@ -1,52 +1,45 @@
 ---
-title: Gestire le query | Microsoft Docs
-description: Informazioni su come gestire le query. Include una tabella di riferimento dettagliata.
+title: "クエリの管理 | Microsoft Docs"
+description: "クエリを管理する方法について説明します。 詳しい参照情報を記載した表が含まれています。"
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e562e2a0-8df8-4952-952f-e8c38461c612
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
 ms.openlocfilehash: 738dcf0b52f18b38b732bf8ca5d7a87369b1c468
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-manage-queries-in-system-center-configuration-manager"></a>Come gestire le query in System Center Configuration Manager
+# <a name="how-to-manage-queries-in-system-center-configuration-manager"></a>System Center Configuration Manager でクエリを管理する方法
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Usare le informazioni in questo argomento per gestire le query in System Center Configuration Manager.  
+このトピックでは、System Center Configuration Manager でクエリを管理する方法について説明します。  
 
- Per informazioni su come creare le query, vedere [Come creare query in Configuration Manager](../../../core/servers/manage/create-queries.md).  
+ クエリの作成方法については、「[System Center Configuration Manager でクエリを管理する方法](../../../core/servers/manage/create-queries.md)」を参照してください。  
 
-## <a name="how-to-manage-queries"></a>Come gestire le query  
- Nell'area di lavoro **Monitoraggio** selezionare **Query**, selezionare la query da gestire e quindi selezionare un'attività di gestione.  
+## <a name="how-to-manage-queries"></a>クエリを管理する方法  
+ [監視] **** ワークスペースで [クエリ] ****を選択し、管理するクエリと管理タスクを選択します。  
 
- Per altre informazioni sulle attività di gestione che potrebbero richiedere alcune informazioni prima della relativa selezione, usare la seguente tabella.  
+ 次の表で、管理タスクに関する詳細と、各タスクを選択する前に必要となる追加情報について説明します。  
 
-|Attività di gestione|Dettagli|Altre informazioni|  
+|管理タスク|説明|説明|  
 |---------------------|-------------|----------------------|  
-|**Esegui**|Esegue la query selezionata e visualizza i risultati nella console di Configuration Manager.|Nessuna informazione aggiuntiva.|  
-|**Installa client**|Apre la **procedura guidata di installazione client** che consente di installare il client di Configuration Manager nei computer restituiti dalla query selezionata.<br /><br /> Questa opzione non è disponibile per le query che restituiscono dispositivi mobili, utenti o gruppi di utenti.|Per altre informazioni su come installare i client di Configuration Manager usando push client, vedere [Come distribuire i client nei computer Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).|  
-|**Export**|Apre l' **Esportazione guidata oggetti** , che consente di esportare questa query in un file MOF (Managed Object Format) che può quindi essere importato in un altro sito.|Nessuna informazione aggiuntiva.|  
-|**Sposta**|Apre la finestra di dialogo **Sposta elementi selezionati** in cui è possibile spostare la query selezionata in una cartella creata in precedenza nel nodo **Query** .|Nessuna informazione aggiuntiva.|  
+|**実行**|Configuration Manager コンソールで選択されたクエリを実行し、結果を表示します。|詳細情報はありません。|  
+|**クライアントのインストール**|**クライアントのインストール ウィザード** を開くと、クエリによって戻されたコンピューターに Configuration Manager クライアントをインストールできます。<br /><br /> このオプションは、モバイル デバイスやユーザー、またはユーザー グループを返すクエリでは使用できません。|クライアント プッシュで Configuration Manager をインストールする方法の詳細については、「[How to deploy clients to Windows computers](/sccm/core/clients/deploy/deploy-clients-to-windows-computers)」 (Windows コンピューターにクライアントを展開する方法) を参照してください。|  
+|**エクスポート**|別のサイトへインポートができる Managed Object Format (MOF) と呼ばれる形式のファイルにクエリをエクスポートするオブジェクトのエクスポート ウィザード **** を開きます。|詳細情報はありません。|  
+|**移動**|選択したクエリを [クエリ] **** ノードの下に作成されたフォルダーに移動する [選択した項目の移動] **** ダイアログ ボックスを開きます。|詳細情報はありません。|  
 
-## <a name="see-also"></a>Vedere anche  
- [Operazioni e manutenzione per le query in System Center Configuration Manager](../../../core/servers/manage/operations-and-maintenance-for-queries.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-
+## <a name="see-also"></a>関連項目  
+ [System Center Configuration Manager でのクエリの操作とメンテナンス](../../../core/servers/manage/operations-and-maintenance-for-queries.md)

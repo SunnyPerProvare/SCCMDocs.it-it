@@ -1,6 +1,6 @@
 ---
-title: Pianificare gli aggiornamenti del software | Microsoft Docs
-description: "Una pianificazione per l'infrastruttura del punto di aggiornamento software è essenziale prima di usare gli aggiornamenti software in un ambiente di produzione di System Center Configuration Manager."
+title: "ソフトウェア更新プログラムの計画 | Microsoft Docs"
+description: "System Center Configuration Manager の実稼働環境でソフトウェア更新プログラムを使用する前に、ソフトウェアの更新ポイント インフラストラクチャを計画する必要があります。"
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -9,184 +9,181 @@ ms.date: 06/27/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
-ms.translationtype: HT
-ms.sourcegitcommit: afe0ecc4230733fa76e41bf08df5ccfb221da7c8
 ms.openlocfilehash: 8b739a01a6bb5cacf0f7109e2e6fa3b31dd666d3
-ms.contentlocale: it-it
-ms.lasthandoff: 08/04/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="plan-for-software-updates-in-system-center-configuration-manager"></a>System Center Configuration Manager でのソフトウェア更新プログラムの計画
 
-# <a name="plan-for-software-updates-in-system-center-configuration-manager"></a>Pianificare gli aggiornamenti software in System Center Configuration Manager
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+System Center Configuration Manager の実稼働環境でソフトウェア更新プログラムを使用する前に、計画の段階を経ることが重要です。 ソフトウェアの更新プログラムの実装を成功させるには、適切なソフトウェアの更新ポイント インフラストラクチャの計画があることが不可欠です。
 
-Prima di usare gli aggiornamenti software in un ambiente di produzione di System Center Configuration Manager, è importante eseguire il processo di pianificazione. La definizione di una pianificazione valida per l'infrastruttura del punto di aggiornamento software è fondamentale per un'implementazione corretta di aggiornamenti software.
+## <a name="capacity-planning-recommendations-for-software-updates"></a>ソフトウェア更新プログラムの容量計画に関する推奨事項  
+ 組織に適したソフトウェア更新プログラムの容量計画に必要な情報を特定する基準として、次の推奨事項を使用できます。 実際の容量要件は、個々のネットワーク環境、ソフトウェアの更新ポイント サイト システムのホストに使用するハードウェア、インストールされるクライアントの数、およびサーバーにインストールされるサイト システムの役割といった条件によって、このトピックに記載されている推奨事項とは異なる場合があります。  
 
-## <a name="capacity-planning-recommendations-for-software-updates"></a>Raccomandazioni per la pianificazione della capacità per gli aggiornamenti software  
- È possibile utilizzare le seguenti raccomandazioni come linea di base di ausilio per determinare le informazioni relative alla pianificazione della capacità degli aggiornamenti software appropriate per la propria organizzazione. I requisiti di capacità specifici possono variare dai suggerimenti elencati in questo argomento a seconda dei seguenti criteri: l'ambiente di rete specifico, l'hardware usato per ospitare il sistema del sito del punto di aggiornamento software, il numero di client installati e i ruoli del sistema del sito installati sul server.  
+###  <a name="BKMK_SUMCapacity"></a> ソフトウェアの更新ポイントの容量計画  
+ サポートされるクライアントの数は、ソフトウェアの更新ポイントで実行されている Windows Server Update Services (WSUS) のバージョンと、ソフトウェアの更新ポイント サイト システムの役割がその他のサイト システムの役割と共存しているかどうかによって決まります。  
 
-###  <a name="BKMK_SUMCapacity"></a> Pianificazione della capacità per il punto di aggiornamento software  
- Il numero di client supportati dipende dalla versione di Windows Server Update Services (WSUS) in esecuzione nel punto di aggiornamento software e dall'eventuale coesistenza del ruolo del sistema del sito del punto di aggiornamento software con un altro ruolo del sistema del sito:  
+-   WSUS がソフトウェアの更新ポイント コンピューター上で実行されていて、ソフトウェアの更新ポイントがその他のサイト システムの役割と共存している場合、ソフトウェアの更新ポイントは、最大で 25,000 のクライアントをサポートできます。  
 
--   Il punto di aggiornamento software è in grado di supportare fino a 25.000 client quando WSUS è in esecuzione nel computer del punto di aggiornamento software e tale punto coesiste con un altro ruolo del sistema del sito.  
+-   リモート コンピューターが WSUS の要件を満たしている場合、ソフトウェアの更新ポイントは最大クライアントを 150,000 までサポートできます。WSUS は Configuration Manager で使用し、次を構成します。
 
--   Il punto di aggiornamento software può supportare fino a 150.000 client se il computer remoto soddisfa i requisiti di WSUS, se WSUS viene usato con Configuration Manager e se si configurano le opzioni seguenti:
+    IIS アプリケーション プール:
+    - WsusPool キューの長さを 2000 に増やす
+    - WsusPool プライベート メモリの制限を 4 倍に増やすか、0 (無制限) に設定する      
 
-    Pool di applicazioni IIS:
-    - Aumentare la lunghezza della coda WsusPool a 2000
-    - Aumentare il limite di memoria privata WsusPool di 4 volte oppure impostarlo su 0 (illimitato)      
+    ソフトウェアの更新ポイントのハードウェア要件の詳細については、「[Recommended hardware for site systems](/sccm/core/plan-design/configs/recommended-hardware#a-namebkmkscalesiesystemsa-site-systems)」 (サイト システムに推奨されるハードウェア) を参照してください。
 
-    Per informazioni dettagliate sui requisiti hardware per il punto di aggiornamento software, vedere [Recommended hardware for site systems](/sccm/core/plan-design/configs/recommended-hardware#a-namebkmkscalesiesystemsa-site-systems) (Hardware consigliato per i sistemi del sito).
+-   既定で、Configuration Manager はソフトウェアの更新ポイントを NLB クラスターとして構成することはサポートされていません。 Configuration Manager バージョン 1702 より前のバージョンでは、Configuration Manager SDK を使用して、NLB クラスターに最大 4 つのソフトウェアの更新ポイントを構成できました。 しかし、Configuration Manager バージョン 1702 以降では、ソフトウェアの更新ポイントは NLB クラスターとしてサポートされず、この構成が検出された場合は Configuration Manager バージョン 1702 へのアップグレードがブロックされます。
 
--   Per impostazione predefinita, Configuration Manager non supporta la configurazione di punti di aggiornamento software come cluster di bilanciamento del carico di rete. Prima di Configuration Manager versione 1702, è possibile usare Configuration Manager SDK per configurare un massimo di quattro punti di aggiornamento software in un cluster di bilanciamento del carico di rete. Tuttavia, a partire da Configuration Manager versione 1702, i punti di aggiornamento software non sono supportati come cluster di bilanciamento del carico di rete e gli aggiornamenti a Configuration Manager versione 1702 verranno bloccati se viene rilevata questa configurazione.
+### <a name="capacity-planning-for-software-updates-objects"></a>ソフトウェア更新オブジェクトの容量計画  
+ 次の容量情報を参照して、ソフトウェア更新オブジェクトの計画を立てます。  
 
-### <a name="capacity-planning-for-software-updates-objects"></a>Pianificazione della capacità per gli oggetti degli aggiornamenti software  
- Utilizzare le seguenti informazioni sulla capacità per la pianificazione degli oggetti degli aggiornamenti software.  
+-   **展開内のソフトウェア更新プログラムの数を 1000 以下にする**  
 
--   **Limite di 1000 aggiornamenti software in una distribuzione**  
+     ソフトウェア更新プログラムの展開ごとのソフトウェア更新プログラムの数を 1000 以下にする必要があります。 自動展開規則を作成する場合、返されるソフトウェア更新プログラムの数を制限する条件を指定します。 指定した条件で 1,000 を超えるソフトウェア更新プログラムが返されると、自動展開規則は失敗します。 自動展開規則の状態は、Configuration Manager コンソールの [**自動展開規則**] ノードから確認できます。 ソフトウェア更新プログラムを手動で展開する場合は、1000 を超える更新プログラムを展開対象として選択しないでください。  
 
-     È necessario limitare il numero di aggiornamenti software a 1000 per ogni distribuzione degli aggiornamenti software. Quando si crea una regola di distribuzione automatica, specificare un criterio che limiti il numero di aggiornamenti software restituiti. La regola di distribuzione automatica presenta un errore se i criteri specificati restituiscono più di 1000 aggiornamenti software. È possibile controllare lo stato della regola di distribuzione automatica dal nodo **Regole di distribuzione automatica** nella console di Configuration Manager. Durante la distribuzione manuale degli aggiornamenti software, non selezionare più di 1000 aggiornamenti per la distribuzione.  
+     構成基準で、ソフトウェアの更新プログラムを 1000 に制限する必要もあります。 詳細については、「[Create configuration baselines](../../compliance/deploy-use/create-configuration-baselines.md)」 (構成基準を作成する) を参照してください。
 
-     È anche necessario limitare il numero di aggiornamenti software a 1000 in una configurazione di base. Per altre informazioni, vedere [Creare configurazioni di base](../../compliance/deploy-use/create-configuration-baselines.md).
+##  <a name="BKMK_SUPInfrastructure"></a> ソフトウェアの更新ポイントのインフラストラクチャを決定する  
+ 中央管理サイトおよびすべての子プライマリ サイトには、ソフトウェア更新プログラムを展開するソフトウェアの更新ポイントが必要です。 ソフトウェアの更新ポイントのインフラストラクチャを計画する場合、依存関係 -
+ - サイトのソフトウェア更新ポイントをインストールする場所。
+ - インター ネット ベースのクライアントからの通信を受け入れるソフトウェアの更新ポイントが必要なサイト。
+ - セカンダリ サイトでソフトウェア更新ポイントが必要かどうか。
 
-##  <a name="BKMK_SUPInfrastructure"></a> Determinare l'infrastruttura del punto di aggiornamento software  
- Il sito di amministrazione centrale e tutti i siti primari figlio devono disporre di un punto di aggiornamento software in cui verranno distribuiti gli aggiornamenti software. Quando si pianifica l'infrastruttura del punto di aggiornamento software, è necessario determinare le dipendenze seguenti:
- - la posizione in cui installare il punto di aggiornamento software per il sito
- - quali siti richiedono un punto di aggiornamento software che accetta la comunicazione da client basati su Internet
- - se è necessario un punto di aggiornamento software in un sito secondario
-
-Utilizzare le sezioni seguenti per determinare l'infrastruttura del punto di aggiornamento software.  
+以下のセクションを参照して、ソフトウェアの更新ポイントのインフラストラクチャを決定します。  
 
 > [!IMPORTANT]  
->  Per informazioni sulle dipendenze interne ed esterne necessarie per gli aggiornamenti software, vedere [Prerequisiti per gli aggiornamenti software](prerequisites-for-software-updates.md).  
+>  ソフトウェア更新プログラムに必要な内部依存関係と外部依存関係の詳細については、「[ソフトウェア更新プログラムの前提条件](prerequisites-for-software-updates.md)」を参照してください。  
 
- È possibile aggiungere più punti di aggiornamento software in un sito primario di Configuration Manager. La possibilità di disporre di più punti di aggiornamento software in un sito fornisce la tolleranza d'errore senza la complessità del Bilanciamento carico di rete. Tuttavia, il failover ricevuto con più punti di aggiornamento software non è così solido come NLB per il puro bilanciamento del carico, ma è piuttosto progettato per la tolleranza d'errore. Inoltre, la struttura del failover del punto di aggiornamento software è diversa dal modello di pura sequenza casuale utilizzato nella struttura dei punti di gestione. A differenza di questi ultimi, il passaggio a un nuovo punto di aggiornamento software comporta dei costi in termini di prestazioni di rete e client. Quando il client passa a un nuovo server WSUS per analizzare gli aggiornamenti software, il risultato è un incremento nella dimensione del catalogo e nelle richieste in termini di prestazioni di rete e lato client associate. Di conseguenza, il client mantiene affinità con l'ultimo punto di aggiornamento software per il quale ha eseguito correttamente l'analisi.  
+ 1 つの Configuration Manager プライマリ サイトに、複数のソフトウェアの更新ポイントを追加できます。 1 つのサイトに複数のソフトウェアの更新ポイントを追加できるため、複雑な NLB を使用しなくてもフォールト トレランスを確保できます。 ただし、複数のソフトウェアの更新ポイントによるフェールオーバーは、純粋な負荷分散という点では NLB ほど強固ではなく、フォールト トレランスを目的として設計されています。 また、ソフトウェアの更新ポイントのフェールオーバー設計は、管理ポイントの設計で使用される純粋なランダム化モデルとは異なります。 管理ポイントの設計とは異なり、ソフトウェアの更新ポイントでは、新しいソフトウェアの更新ポイントへの切り替えに関するクライアントとネットワークのパフォーマンス コストが存在します。 クライアントがソフトウェア更新プログラムのスキャンのために新しい WSUS サーバーに切り替えると、結果として、カタログのサイズと、関連するクライアント側およびネットワークのパフォーマンス要求が増大します。 そのため、クライアントは、正常にスキャンした最後のソフトウェアの更新ポイントとのアフィニティを維持します。  
 
- Il primo punto di aggiornamento software installato su un sito primario è l'origine di sincronizzazione per tutti gli ulteriori punti di aggiornamento software aggiunti nel sito primario. Dopo aver aggiunto i punti di aggiornamento software e aver avviato la sincronizzazione degli aggiornamenti software, è possibile visualizzare lo stato dei punti di aggiornamento software e l'origine di sincronizzazione dal nodo **Stato di sincronizzazione del punto di aggiornamento software** nell'area di lavoro **Monitoraggio** .  
+ プライマリ サイトにインストールする最初のソフトウェアの更新ポイントは、プライマリ サイトに追加するすべての追加ソフトウェアの更新ポイントの同期ソースになります。 ソフトウェアの更新ポイントを追加し、ソフトウェア更新プログラムの同期を開始した後で、[ **監視** ] ワークスペースの [ **ソフトウェアの更新ポイントの同期ステータス** ] ノードから、ソフトウェアの更新ポイントのステータスと同期ソースを確認できます。  
 
- Quando un punto di aggiornamento software presenta un'anomalia, ed è configurato come origine di sincronizzazione per gli altri punti di aggiornamento software del sito, è necessario rimuovere manualmente tale punto e selezionarne uno nuovo da utilizzare come origine di sincronizzazione. Per altre informazioni sulla rimozione di un punto di aggiornamento software, vedere [Rimuovere il ruolo di sistema del sito del punto di aggiornamento software](../get-started/remove-a-software-update-point.md).  
+ ソフトウェアの更新ポイントでエラーが発生し、そのソフトウェアの更新ポイントが、サイトのその他のソフトウェアの更新ポイントの同期ソースとして構成されている場合、エラーが発生したソフトウェアの更新ポイントを手動で削除し、同期ソースとして使用する新しいソフトウェアの更新ポイントを選択する必要があります。 ソフトウェアの更新ポイントを削除する方法の詳細については、「[ソフトウェアの更新ポイント サイト システムの役割を削除する](../get-started/remove-a-software-update-point.md)」を参照してください。  
 
-###  <a name="BKMK_SUPList"></a> Elenco dei punti di aggiornamento software  
- Configuration Manager offre al client un elenco di punti di aggiornamento software nei seguenti scenari: quando un nuovo client riceve i criteri di abilitazione degli aggiornamenti software oppure quando un client non può contattare il proprio punto di aggiornamento software e deve passare a un altro punto. Il client seleziona un punto di aggiornamento software nell'elenco in modo casuale, assegnando la priorità ai punti che si trovano nella stessa foresta. Configuration Manager offre ai client un elenco diverso a seconda del tipo di client.  
+###  <a name="BKMK_SUPList"></a> ソフトウェアの更新ポイントの一覧  
+ 新しいクライアントがソフトウェア更新プログラムを有効にするポリシーを受け取る場合や、クライアントが割り当てられたソフトウェアの更新ポイントに接続できず、別のソフトウェアの更新ポイントに切り替える必要がある場合に、Configuration Manager はソフトウェアの更新ポイントの一覧をクライアントに提供します。 クライアントは、一覧からランダムにソフトウェアの更新ポイントを選択し、同一のフォレストにあるソフトウェアの更新ポイントを優先します。 Configuration Manager は、クライアントの種類に応じて、異なる一覧をクライアントに提供します。  
 
--   **Client basati su intranet**: si riceve un elenco di punti di aggiornamento software che è possibile configurare per consentire solo connessioni dalla intranet oppure un elenco di punti di aggiornamento software che consentono connessioni client Internet e intranet.  
+-   **イントラネット ベースのクライアント**:イントラネットからの接続のみを受け入れるように構成できるソフトウェアの更新ポイントの一覧、または、インターネットとイントラネットのクライアントの接続を受け入れるソフトウェアの更新ポイントの一覧を受け取ります。  
 
--   **Client basati su Internet**: ricevono un elenco di punti di aggiornamento software che è possibile configurare per consentire solo le connessioni da Internet oppure un elenco di punti di aggiornamento software che consentono connessioni client Internet e Intranet.  
+-   **インターネット ベースのクライアント**: インターネットからの接続のみを受け入れるように構成したソフトウェアの更新ポイントの一覧、または、インターネットとイントラネットのクライアントの接続を受け入れるソフトウェアの更新ポイントの一覧を受け取ります。  
 
-###  <a name="BKMK_SUPSwitching"></a> Passaggio a un nuovo punto di aggiornamento software  
+###  <a name="BKMK_SUPSwitching"></a> ソフトウェアの更新ポイントの切り替え  
 > [!NOTE]
-> A partire dalla versione 1702, i client usano i gruppi di limiti per trovare un nuovo punto di aggiornamento software se quello corrente non è più disponibile. È possibile aggiungere singoli punti di aggiornamento software a diversi gruppi di limiti per controllare quali server possono essere trovati da un client. Per altre informazioni, vedere la sezione [Punti di aggiornamento software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points) dell'argomento [Configurare gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups).
+> バージョン 1702 以降では、クライアントは境界グループを使用して、新しいソフトウェアの更新ポイントを検索します。また、現在のソフトウェアの更新ポイントにアクセスできなくなっている場合は、フォールバックして新しいソフトウェアの更新ポイントを検索します。 ソフトウェアの更新ポイントをそれぞれ異なる境界グループに追加して、クライアントで検索できるサーバーを制御できます。 詳細については、[境界グループの構成](/sccm/core/servers/deploy/configure/boundary-groups)に関するトピックの[ソフトウェアの更新ポイント](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points)の記述を参照してください。
 
-Se si dispone di più punti di aggiornamento software in un sito, e uno di questi presenta un'anomalia o non è più disponibile, i client si connetteranno a un altro punto di aggiornamento software e continueranno ad analizzare gli ultimi aggiornamenti. Quando un client viene inizialmente assegnato a un punto di aggiornamento software, vi resta assegnato salvo errore durante l'analisi degli aggiornamenti software su quel punto.  
+1 つのサイトに複数のソフトウェアの更新ポイントがあり、1 つでエラーが発生するか、使用不可になった場合、クライアントは、別のソフトウェアの更新ポイントに接続し、最新のソフトウェア更新プログラムのスキャンを継続します。 クライアントに最初にソフトウェアの更新ポイントが割り当てられると、そのソフトウェアの更新ポイントでソフトウェア更新プログラムのスキャンが失敗しない限り、割り当てが維持されます。  
 
-L'analisi degli aggiornamenti software può avere un esito negativo con una serie di diversi codici di errore relativi a nuovi tentativi o mancati tentativi. In caso di analisi non riuscita con un codice di errore di nuovi tentativi, il client avvia un processo di nuovi tentativi di analisi degli aggiornamenti software sul relativo punto. Le condizioni di alto livello che generano tale codice di errore sono spesso attribuibili a un server WSUS non disponibile o temporaneamente sovraccarico. Quando non è possibile analizzare gli aggiornamenti software, il client utilizza il seguente processo:  
+ソフトウェア更新プログラムのスキャンは、失敗して、さまざまな再試行および再試行なしのエラー コードが返されることがあります。 スキャンが失敗して、再試行エラー コードが返された場合、クライアントは、ソフトウェアの更新ポイントでソフトウェア更新プログラムをスキャンする再試行処理を開始します。 再試行エラー コードが返される状況の一般的な原因は、WSUS サーバーが利用できないか、一時的に過負荷状態になっていることです。 ソフトウェア更新プログラムのスキャンに失敗した場合、クライアントは次の処理を行います。  
 
-1.  Analizza gli aggiornamenti software all'orario pianificato, quando viene avviato attraverso il Pannello di controllo del client oppure utilizzando l'SDK. Se l'analisi ha esito negativo, il client attende 30 minuti per ripetere l'operazione e utilizza lo stesso punto di aggiornamento software.  
+1.  クライアントは、スケジュールされた時刻、または、クライアントのコントロール パネルか、SDK を使用して開始された場合、ソフトウェア更新プログラムをスキャンします。 スキャンが失敗した場合、クライアントは、30 分間スキャンの再試行を待機し、同じソフトウェアの更新ポイントを使用します。  
 
-2.  Il client esegue almeno quattro tentativi a intervalli di 30 minuti. Al quarto tentativo non riuscito, e dopo aver atteso altri due minuti, il client passerà al successivo punto di aggiornamento software nel relativo elenco.  
+2.  クライアントは、30 分間隔で最小 4 回再試行します。 4 回目が失敗した場合、クライアントはさらに 2 分間待機して、ソフトウェアの更新ポイントの一覧にある次のソフトウェアの更新ポイントに移動します。  
 
-3.  Il client segue lo stesso processo nel nuovo punto di aggiornamento software. Al termine di un'analisi eseguita correttamente, il client continuerà a connettersi al nuovo punto di aggiornamento software.
+3.  クライアントはソフトウェアの新しい更新ポイント上でも同じプロセスをたどります。 スキャンが成功すると、クライアントは引き続きソフトウェアの新しい更新ポイントへの接続を行います。
 
- Nell'elenco che segue vengono fornite informazioni aggiuntive utili in caso di tentativi di connessione a un punto di aggiornamento software e in scenari di passaggio:  
+ ソフトウェアの更新ポイントの再試行と切り替えのシナリオで考慮できる追加情報を、次の一覧に示します。  
 
--   Se un client è disconnesso dalla intranet aziendale e non riesce ad analizzare gli aggiornamenti software, non passerà a un altro punto di aggiornamento software. Si tratta di un errore previsto, perché il client non è in grado di raggiungere la rete aziendale o il punto di aggiornamento software che consente la connessione dalla intranet. Il client di Configuration Manager determina la disponibilità del punto di aggiornamento software intranet.  
+-   クライアントが企業イントラネットから切断され、ソフトウェア更新プログラムのスキャンが失敗した場合、別のソフトウェアの更新ポイントに切り替えられない。 これは想定済みのエラーです。クライアントが、企業ネットワーク、または、イントラネットからの接続を受け入れるソフトウェアの更新ポイントに到達できないためです。 Configuration Manager クライアントは、イントラネットのソフトウェアの更新ポイントが利用できるかどうかを特定します。  
 
--   Se la gestione client basata su Internet è abilitata, e sono presenti più punti di aggiornamento software configurati per l'accettazione delle comunicazioni da client su Internet, il processo di passaggio seguirà il processo di nuovi tentativi standard descritto nello scenario precedente.  
+-   インターネット ベースのクライアント管理が有効で、インターネット上のクライアントからの通信を受け入れるように構成されているソフトウェアの更新ポイントが複数ある場合、切り替え処理は前のシナリオで説明した標準の再試行処理に従う。  
 
--   Uno scenario in cui il processo di analisi viene avviato, ma il client viene spento prima del relativo completamento, non è da considerarsi una condizione di errore di analisi e non rientra nei quattro tentativi disponibili.  
+-   スキャン処理が開始されたが、スキャンが完了する前にクライアントの電源がオフになった場合、スキャンの失敗とされず、4 回の再試行の 1 回としてカウントされない。  
 
-Se l'agente di Windows Update invia a Configuration Manager uno dei codici di errore seguenti, il client tenterà di riconnettersi:  
+Configuration Manager は、次に示す Windows Update エージェントのエラー コードのいずれかを受信すると、クライアントに接続を再試行するよう指示します。  
 
 2149842970, 2147954429, 2149859352, 2149859362, 2149859338, 2149859344, 2147954430, 2147747475, 2149842974, 2149859342, 2149859372, 2149859341, 2149904388, 2149859371, 2149859367, 2149859366, 2149859364, 2149859363, 2149859361, 2149859360, 2149859359, 2149859358, 2149859357, 2149859356, 2149859354, 2149859353, 2149859350, 2149859349, 2149859340, 2149859339, 2149859332, 2149859333, 2149859334, 2149859337, 2149859336, 2149859335
 
-Per conoscere il significato di un codice di errore, convertire il codice di errore decimale in formato esadecimale e cercare il valore esadecimale in un sito, ad esempio [Windows Update Agent - Error Codes Wiki](https://social.technet.microsoft.com/wiki/contents/articles/15260.windows-update-agent-error-codes.aspx) (Agente di Windows Update: wiki codici di errore).
+エラー コードの意味を調べるには、10 進数のエラー コードを 16 進数のエラーコードに変換し、[Windows Update Agent - Error Codes Wiki](https://social.technet.microsoft.com/wiki/contents/articles/15260.windows-update-agent-error-codes.aspx) (Windows Update エージェント - エラー コード Wiki) などのサイトで 16 進数値を検索してください。
 
 
-###  <a name="BKMK_ManuallySwitchSUPs"></a> Passaggio manuale dei client a un nuovo punto di aggiornamento software
-A partire da Configuration Manager versione 1606 è possibile abilitare l'opzione per consentire ai client di Configuration Manager di passare a un nuovo punto di aggiornamento software quando si verificano problemi con il punto di aggiornamento software attivo. Questa opzione comporta modifiche solo se un client riceve più punti di aggiornamento software da un punto di gestione.
+###  <a name="BKMK_ManuallySwitchSUPs"></a> 手動でのクライアントの新しいソフトウェアの更新ポイントへの切り替え
+Configuration Manager バージョン 1606 から、アクティブなソフトウェア更新ポイントに問題がある場合に、Configuration Manager クライアントが新しいソフトウェア更新ポイントに切り替えるためのオプションを有効にできます。 このオプションでは、クライアントが管理ポイントから複数のソフトウェア更新ポイントを受信した場合にのみ変更が加えられます。
 
 > [!IMPORTANT]    
-> Quando si passa a un altro dispositivo per usare un nuovo server, i dispositivi trovano il nuovo server tramite fallback. Esaminare quindi le configurazioni dei gruppi di limiti e assicurarsi che i punti di aggiornamento software siano nei gruppi di limite corretti prima di avviare questa modifica. Per informazioni dettagliate, vedere[Punti di aggiornamento software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points).
+> 新しいサーバーを使用するようにデバイスを切り替えると、デバイスは、フォールバックを使用して、その新しいサーバーを検索します。 そのため、この変更に取り掛かる前に、境界グループ構成を確認し、ソフトウェアの更新ポイントが正しい境界グループにあることを確認してください。 詳細については、「[ソフトウェアの更新ポイント](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points)」を参照してください。
 >
-> Il passaggio a un nuovo punto di aggiornamento software genera traffico di rete aggiuntivo. La quantità di traffico dipende dalle impostazioni di configurazione di WSUS (Windows Server Update Services), ad esempio dalle classificazioni degli aggiornamenti, dai prodotti, dalla condivisione o meno di un database WSUS da parte dei punti di aggiornamento software e così via. Se si prevede di passare da uno all'altro di più di due dispositivi, è consigliabile eseguire l'operazione all'interno delle finestre di manutenzione, per ridurre l'impatto sulla rete durante la sincronizzazione del nuovo server del punto di aggiornamento software.
+> 新しいソフトウェアの更新ポイントへの切り替えにより、追加のネットワーク トラフィックが発生します。 トラフィックの量は WSUS の構成設定によって異なります (更新プログラムの分類、製品、ソフトウェアの更新ポイントが WSUS データベースを共有するかどうかなど)。 複数のデバイスを切り替える予定がある場合は、Windows のメンテナンス中に行い、新しいソフトウェアの更新ポイント サーバーとの同期時のネットワークへの影響を軽減することを考慮してください。
 
-#### <a name="to-enable-the-option-to-switch-software-update-points"></a>Per abilitare l'opzione per il passaggio tra punti di aggiornamento software  
-Abilitare questa opzione in una raccolta di dispositivi o in un set di dispositivi selezionati. Dopo che l'opzione è stata abilitata, in occasione dell'analisi successiva il client cercherà un altro punto di aggiornamento software.
+#### <a name="to-enable-the-option-to-switch-software-update-points"></a>ソフトウェア更新ポイントを切り替えるオプションを有効にするには  
+デバイス コレクションまたは選択したデバイスのセットでこのオプションを有効にします。 有効にすると、クライアントは次のスキャンにおいて他のソフトウェア更新ポイントを探します。
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità > Panoramica > Raccolte dispositivi**.  
+1.  Configuration Manager コンソールで、**[資産とコンプライアンス] > [概要] > [デバイス コレクション]** に移動します。  
 
-2.  Nel gruppo **Raccolta** della scheda **Home** fare clic su **Notifica client**e quindi su **Passare al punto di aggiornamento software successivo**.  
+2.  **[ホーム]** タブの **[コレクション]** グループで、 **[クライアント通知]**をクリックして、 **[次のソフトウェアの更新ポイントに切り替える]**をクリックします。  
 
 
-###  <a name="BKMK_SUP_CrossForest"></a> Punti di aggiornamento software in una foresta non trusted  
- È possibile creare uno o più punti di aggiornamento software in un sito per supportare client in una foresta non trusted. Per aggiungere un punto di aggiornamento software in un'altra foresta, è necessario innanzitutto installare e configurare un server WSUS nella foresta. Avviare quindi la procedura guidata per aggiungere un server del sito di Configuration Manager con il ruolo di sistema del sito del punto di aggiornamento software. Nella procedura guidata, configurare le seguenti impostazioni per connettersi al server WSUS nella foresta non trusted:  
+###  <a name="BKMK_SUP_CrossForest"></a> 信頼されていないフォレストにあるソフトウェアの更新ポイント  
+ 信頼されないフォレストのクライアントをサポートする、1 つまたは複数のソフトウェアの更新ポイントをサイトに作成できます。 別のフォレストにソフトウェアの更新ポイントを追加するには、最初にフォレストに WSUS サーバーをインストールして構成する必要があります。 次に、ウィザードを開始して、Configuration Manager サイト サーバーにソフトウェアの更新ポイントのサイト システムの役割を追加します。 ウィザードで、信頼されないフォレストの WSUS に正常に接続するには、次の設定を構成します。  
 
--   Specificare un account di installazione del sistema del sito che possa accedere al server WSUS nella foresta.  
+-   フォレストの WSUS サーバーにアクセスできる、サイト システムのインストール アカウントを指定します。  
 
--   Specificare l'account di connessione al server WSUS da utilizzare per connettersi a tale server.  
+-   WSUS サーバーへの接続に使用する WSUS サーバー接続アカウントを指定します。  
 
- Ad esempio, si dispone di un sito primario nella foresta A con due punti di aggiornamento software (SUP01 e SUP02). Inoltre, per lo stesso sito primario vi sono due punti di aggiornamento software (SUP03 e SUP04) nella foresta B. Quando si verifica il passaggio in un tale scenario, viene attribuita la priorità ai punti di aggiornamento software della stessa foresta del client.  
+ たとえば、2 つのソフトウェアの更新ポイント (SUP01 および SUP02) があるフォレスト A に、プライマリ サイトがあるとします。 また、同一のプライマリ サイトに対して、フォレスト B に 2 つのソフトウェアの更新ポイント (SUP03 および SUP04) があるとします。この例で切り替えが発生した場合、クライアントと同じフォレストにあるソフトウェアの更新ポイントが最初に優先されます。  
 
-###  <a name="BKMK_WSUSSyncSource"></a> Uso di un server WSUS esistente come origine di sincronizzazione nel sito principale  
- In genere, il sito di livello superiore della gerarchia è configurato per sincronizzare i metadati degli aggiornamenti software con Microsoft Update. Se i criteri di sicurezza aziendali non consentono l'accesso a Internet dal sito principale, è possibile configurare l'origine di sincronizzazione per il sito principale per usare un server WSUS esistente non presente nella gerarchia di Configuration Manager. Ad esempio, nella rete perimetrale potrebbe essere installato un server WSUS con accesso a Internet, accesso di cui non dispone il sito di livello superiore. È possibile configurare il server WSUS nella rete perimetrale come origine di sincronizzazione per i metadati degli aggiornamenti software. È necessario verificare che il server WSUS nella rete perimetrale sincronizzi gli aggiornamenti software conformi ai criteri necessari nella gerarchia di Configuration Manager. In caso contrario, il sito di livello superiore potrebbe non essere in grado di sincronizzare gli aggiornamenti software previsti. Quando si installa il punto di aggiornamento software, configurare un account di connessione WSUS con accesso al server WSUS nella rete perimetrale e verificare che il firewall consenta il traffico per le porte appropriate. Per altre informazioni, esaminare le [porte usate dal punto di aggiornamento software per l'origine di sincronizzazione](../../core/plan-design/hierarchy/ports.md#BKMK_PortsSUP-WSUS).  
+###  <a name="BKMK_WSUSSyncSource"></a> 最上位のサイトで同期ソースとして既存の WSUS サーバーを使う  
+ 通常、階層内の最上位のサイトは、Microsoft Update とソフトウェア更新プログラムのメタデータを同期するように構成されています。 企業のセキュリティ ポリシーで、最上位サイトからインターネットへのアクセスが許可されていない場合、最上位サイトの同期ソースとして、Configuration Manager 階層にない既存の WSUS サーバーを使用するように構成できます。 たとえば、インターネットにアクセスできる境界ネットワーク に WSUS サーバーがインストールされていて、最上位サイトにはないとします。 この境界ネットワークの WSUS サーバーを、ソフトウェア更新プログラムのメタデータの同期ソースとして構成できます。 境界ネットワークの WSUS サーバーが、Configuration Manager 階層で必要な条件を満たすソフトウェア更新プログラムを同期するようにします。 そうしないと、最上位サイトが必要なソフトウェア更新プログラムを同期できないことがあります。 ソフトウェアの更新ポイントをインストールする場合、境界ネットワークの WSUS サーバーにアクセスする権限を持つ WSUS 接続アカウントを構成し、ファイアウォールで適切なポートのトラフィックを許可します。 詳細については、[ソフトウェアの更新ポイントから同期ソースへの接続に使うポート](../../core/plan-design/hierarchy/ports.md#BKMK_PortsSUP-WSUS)に関する説明を参照してください。  
 
-###  <a name="BKMK_NLBSUPSP1"></a> Punto di aggiornamento software configurato per l'uso di Bilanciamento carico di rete  
- Il passaggio a un altro punto di aggiornamento software risponderà con tutta probabilità alle richieste di tolleranza d'errore degli utenti. Per impostazione predefinita, Configuration Manager non supporta la configurazione di punti di aggiornamento software come cluster di bilanciamento del carico di rete. Prima di Configuration Manager versione 1702, è possibile usare Configuration Manager SDK per configurare un massimo di quattro punti di aggiornamento software in un cluster di bilanciamento del carico di rete. Tuttavia, a partire da Configuration Manager versione 1702, i punti di aggiornamento software non sono supportati come cluster di bilanciamento del carico di rete e gli aggiornamenti a Configuration Manager versione 1702 verranno bloccati se viene rilevata questa configurazione. Per altre informazioni sul cmdlet Set-CMSoftwareUpdatePoint di PowerShell, vedere [Set-CMSoftwareUpdatePoint](http://go.microsoft.com/fwlink/?LinkId=276834).
+###  <a name="BKMK_NLBSUPSP1"></a> NLB を使うように構成されたソフトウェアの更新ポイント  
+ ソフトウェアの更新ポイントの切り替えによって、一般的なフォールト トレランスのニーズに対応できます。 既定で、Configuration Manager はソフトウェアの更新ポイントを NLB クラスターとして構成することはサポートされていません。 Configuration Manager バージョン 1702 より前のバージョンでは、Configuration Manager SDK を使用して、NLB クラスターに最大 4 つのソフトウェアの更新ポイントを構成できました。 しかし、Configuration Manager バージョン 1702 以降では、ソフトウェアの更新ポイントは NLB クラスターとしてサポートされず、この構成が検出された場合は Configuration Manager バージョン 1702 へのアップグレードがブロックされます。 Set-CMSoftwareUpdatePoint PowerShell コマンドレットについて詳しくは、「[Set-CMSoftwareUpdatePoint](http://go.microsoft.com/fwlink/?LinkId=276834)」を参照してください。
 
-###  <a name="BKMK_SUPSecSite"></a> Punto di aggiornamento software in un sito secondario  
- Il punto di aggiornamento software è facoltativo in un sito secondario. Quando si installa un punto di aggiornamento software in un sito secondario, il database WSUS viene configurato come una replica del punto di aggiornamento software predefinito nel sito primario padre. È possibile installare un solo punto di aggiornamento software in un sito secondario. I dispositivi assegnati a un sito secondario sono configurati per l'utilizzo di un punto di aggiornamento software nel sito padre quando tale punto non è installato nel sito secondario. In genere, un punto di aggiornamento software viene installato in un sito secondario in presenza di una larghezza di banda della rete limitata tra i dispositivi assegnati al sito secondario e i punti di aggiornamento software nel sito primario padre, oppure quando il punto di aggiornamento software sta per raggiungere il limite di capacità. Dopo l'installazione e la configurazione di un punto di aggiornamento software in un sito secondario, vengono aggiornati dei criteri a livello di sito per i computer client assegnati a tale sito, che inizieranno a utilizzare il nuovo punto di aggiornamento software.  
+###  <a name="BKMK_SUPSecSite"></a> セカンダリ サイト上のソフトウェアの更新ポイント  
+ セカンダリ サイトについては、ソフトウェアの更新ポイントを使用するかどうかは任意です。 セカンダリ サイトにソフトウェアの更新ポイントをインストールすると、WSUS データベースが、親プライマリ サイトの既定のソフトウェアの更新ポイントのレプリカとして構成されます。 セカンダリ サイトにインストールできるソフトウェアの更新ポイントは 1 つだけです。 セカンダリ サイトに割り当てられているデバイスは、セカンダリ サイトにソフトウェアの更新ポイントがインストールされていない場合、親サイトのソフトウェアの更新ポイントを使用するように構成されます。 通常は、セカンダリ サイトに割り当てられているデバイスと親プライマリ サイトのソフトウェアの更新ポイント間のネットワーク帯域幅が限られている場合や、ソフトウェアの更新ポイントが容量制限に近づいている場合に、ソフトウェアの更新ポイントをセカンダリ サイトにインストールします。 セカンダリ サイトにソフトウェアの更新ポイントが正常にインストールされて構成されると、そのセカンダリ サイトに割り当てられているクライアント コンピューターに対してサイト全体のポリシーが更新され、新しいソフトウェアの更新ポイントの使用が開始されます。  
 
-##  <a name="BKMK_SUPInstallation"></a> Pianificare l'installazione del punto di aggiornamento software  
- Prima di creare un ruolo di sistema del sito del punto di aggiornamento software in Configuration Manager, è necessario prendere in considerazione diversi requisiti in base all'infrastruttura di Configuration Manager. Quando si configura il punto di aggiornamento software per comunicare tramite SSL, è particolarmente importante esaminare questa sezione perché sono necessari dei passaggi aggiuntivi per garantire il funzionamento corretto dei punti di aggiornamento software nella gerarchia. In questa sezione vengono fornite informazioni sui passaggi da effettuare per poter pianificare e preparare l'installazione del punto di aggiornamento software.  
+##  <a name="BKMK_SUPInstallation"></a> ソフトウェアの更新ポイントのインストールの計画  
+ Configuration Manager でソフトウェアの更新ポイント サイト システムの役割を作成する前に、Configuration Manager のインフラストラクチャに応じて、考慮する必要がある要件がいくつかあります。 SSL を使用して通信するようにソフトウェアの更新ポイントを構成する場合、階層内のソフトウェアの更新ポイントを正常に機能させるには、追加手順を実行する必要があるので、このセクションの内容を特に注意して確認してください。 このセクションでは、ソフトウェアの更新ポイントのインストールに関する計画と準備を適切に行うために必要な手順について説明します。  
 
-###  <a name="BKMK_SUPSystemRequirements"></a> Requisiti per il punto di aggiornamento software  
- Il ruolo di sistema del sito del punto di aggiornamento software deve essere installato in un sistema del sito conforme ai requisiti minimi per WSUS e alle configurazioni supportate per i sistemi del sito di Configuration Manager.  
+###  <a name="BKMK_SUPSystemRequirements"></a> ソフトウェアの更新ポイントの要件  
+ ソフトウェアの更新ポイント サイト システムの役割は、WSUS の最小要件を満たし、Configuration Manager サイト システムでサポートされている構成のサイト システムにインストールする必要があります。  
 
--   Per altre informazioni sui requisiti minimi per il ruolo del server WSUS in Windows Server 2012, vedere [Rivedere le considerazioni e i requisiti di sistema](https://technet.microsoft.com/library/hh852344.aspx#BKMK_1.1) nella libreria della documentazione di Windows Server 2012.  
+-   Windows Server 2012 での WSUS サーバーの役割の最小要件の詳細については、Windows Server 2012 ドキュメント ライブラリの「[考慮事項とシステム要件を確認する](https://technet.microsoft.com/library/hh852344.aspx#BKMK_1.1)」を参照してください。  
 
--   Per altre informazioni sulle configurazioni supportate per i sistemi del sito di Configuration Manager, vedere [Prerequisiti del sito e di sistema del sito](../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
+-   Configuration Manager サイト システムでサポートされる構成の詳細については、「[Site and site system prerequisites](../../core/plan-design/configs/site-and-site-system-prerequisites.md)」 (サイトおよびサイト システムの前提条件) を参照してください。  
 
-###  <a name="BKMK_PlanningForWSUS"></a> Pianificare l'installazione di WSUS  
+###  <a name="BKMK_PlanningForWSUS"></a> WSUS インストールの計画  
 
-Gli aggiornamenti software richiedono che su tutti i server del sistema del sito sia installata una versione supportata di WSUS configurata per il ruolo del sistema sito del punto di aggiornamento software. Inoltre, quando non si installa il punto di aggiornamento software nel server del sito, è necessario installare la console di amministrazione WSUS sul computer del server del sito, se non già installata. In questo modo il server del sito può comunicare con WSUS in esecuzione sul punto di aggiornamento software.  
+ソフトウェアを更新するには、ソフトウェアの更新ポイント サイト システムの役割を構成するすべてのサイト システム サーバーに、サポートされているバージョンの WSUS がインストールされている必要があります。 また、サイト サーバーにソフトウェアの更新ポイントをインストールしない場合は、WSUS 管理コンソールがサイト サーバー コンピューターにまだインストールされていなければ、インストールする必要があります。 そのようにすることで、サイト サーバーが、ソフトウェアの更新ポイントで実行されている WSUS と通信できるようになります。  
 
- Quando si usa WSUS in Windows Server 2012, è necessario configurare autorizzazioni aggiuntive per consentire a **WSUS Configuration Manager** in Configuration Manager di connettersi al WSUS per eseguire controlli di integrità periodici. Scegliere una delle seguenti opzioni per configurare le autorizzazioni:  
+ Windows Server 2012 で WSUS を使う場合、正常性チェックを定期的に行うために、Configuration Manager の **WSUS Configuration Manager** に WSUS への接続を許可する追加のアクセス許可を構成する必要があります。 権限を構成するには、次のいずれかのオプションを選択します。  
 
--   Aggiungere l'account **SYSTEM** per il gruppo **WSUS Administrators**  
+-   **WSUS 管理者** グループに **SYSTEM** アカウントを追加する  
 
--   Aggiungere l'account **NT AUTHORITY\SYSTEM** come un utente per il database WSUS (SUSDB) e configurare un minimo per l'appartenenza al ruolo del database webService  
+-   **NT AUTHORITY\SYSTEM** アカウントを WSUS データベース (SUSDB) のユーザーとして追加し、最小限の webService データベースの役割のメンバーシップを構成します。  
 
- Per ulteriori informazioni sull'installazione di WSUS su Windows Server 2012, vedere [Installare il ruolo server WSUS](http://go.microsoft.com/fwlink/p/?LinkId=272355) nella libreria della documentazione di Windows Server 2012.  
+ Windows Server 2012 に WSUS をインストールする方法の詳細については、Windows Server 2012 ドキュメント ライブラリの「 [WSUS サーバーの役割をインストールする](http://go.microsoft.com/fwlink/p/?LinkId=272355) 」を参照してください。  
 
- In caso di installazione di più di un punto di aggiornamento software in un sito primario, utilizzare lo stesso database WSUS per ciascun punto di aggiornamento software nella stessa foresta Active Directory. Condividendo lo stesso database, si limita notevolmente, ma non si elimina completamente, l'impatto sulle prestazioni dei client e della rete che potrebbe essere avvertito quando i client passano a un nuovo punto di aggiornamento software. Quando un client esegue il passaggio a un nuovo punto di aggiornamento software che condivide un database con il punto di aggiornamento software precedente, viene comunque eseguita una scansione differenziale. Tuttavia, tale scansione è molto ridotta rispetto a come sarebbe se il server WSUS disponesse di un proprio database.  
+ プライマリ サイトに複数のソフトウェアの更新ポイントをインストールする場合、同じ Active Directory フォレストの各ソフトウェアの更新ポイントで、同じ WSUS データベースを使用します。 同じデータベースを共有すると、クライアントが新しいソフトウェアの更新ポイントに切り替えるときに発生することがあるネットワークのパフォーマンスへの影響を大幅に低減できますが、完全に排除することはできません。 クライアントが、古いソフトウェアの更新ポイントとデータベースを共有する新しいソフトウェアの更新ポイントに切り替えるときには、やはりデルタ スキャンが発生しますが、WSUS サーバーが固有のデータベースを持っている場合よりも、スキャンは大幅に軽くなります。  
 
-####  <a name="BKMK_CustomWebSite"></a> Configurazione di WSUS per l'uso di un sito Web personalizzato  
- Quando si installa WSUS, è possibile utilizzare il sito Web predefinito IIS esistente o creare un sito Web di WSUS personalizzato. Creare un sito Web personalizzato per WSUS in modo che IIS ospiti i servizi WSUS in un sito Web virtuale dedicato invece di condividere lo stesso sito Web usato dagli altri sistemi del sito di Configuration Manager o da altre applicazioni. Ciò vale soprattutto quando si installa il ruolo del sistema sito del punto di aggiornamento software sul server del sito. Quando si esegue WSUS in Windows Server 2012 o Windows Server 2016, WSUS viene configurato per impostazione predefinita per l'uso della porta 8530 per HTTP e della porta 8531 per HTTPS. Quando viene creato il punto di aggiornamento software in un sito, è necessario specificare queste impostazioni porta.  
+####  <a name="BKMK_CustomWebSite"></a> WSUS がカスタム Web サイトを使用するように構成する  
+ WSUS をインストールするときに、既存の既定の IIS Web サイトを使用するか、カスタムの WSUS Web サイトを作成するかを選択できます。 他の Configuration Manager サイト システムまたは他のアプリケーションで使用されているのと同じ Web サイトを共有せずに、WSUS サービスが IIS によって専用の仮想 Web サイトでホストされるようにするには、WSUS のカスタム Web サイトを作成してください。 このことは、特に、ソフトウェアの更新ポイント サイト システムの役割をサイト サーバーにインストールする場合に重要です。 Windows Server 2012 または Windows Server 2016 で WSUS を実行する場合、WSUS は既定で HTTP にはポート 8530 を、HTTPS にはポート 8531 を使うように構成されています。 サイトにソフトウェアの更新のポイントを作成するときに、これらのポート番号の設定を指定する必要があります。  
 
-####  <a name="BKMK_WSUSInfrastructure"></a> Uso di un'infrastruttura WSUS esistente  
- È possibile usare un server WSUS che era attivo nell'ambiente prima dell'installazione di Configuration Manager come punto di aggiornamento software. Quando il punto di aggiornamento software è configurato, è necessario specificare le impostazioni di sincronizzazione. Configuration Manager si connette al server WSUS eseguito nel punto di aggiornamento software e lo configura con le stesse impostazioni. Se prima di essere configurato come punto di aggiornamento software il server WSUS è stato sincronizzato con prodotti o classificazioni non configurati come parte delle impostazioni di sincronizzazione del punto di aggiornamento software, i metadati degli aggiornamenti software per i prodotti e le classificazioni vengono sincronizzati per tutti i metadati degli aggiornamenti software nel database di WSUS, indipendentemente dalle impostazioni di sincronizzazione configurate per il punto di aggiornamento software. Ciò potrebbe comportare dei metadati degli aggiornamenti software imprevisti nel database del sito. Lo stesso comportamento sarà registrato in caso di aggiunta di prodotti o classificazioni direttamente nella console di amministrazione di WSUS e di successivo avvio immediato di una sincronizzazione. Per impostazione predefinita, Configuration Manager si connette ogni ora a WSUS in un punto di aggiornamento software e reimposta qualsiasi impostazione modificata al di fuori di Configuration Manager. Per gli aggiornamenti software non conformi ai prodotti e alle classificazioni specificati nelle impostazioni di sincronizzazione sono previste l'impostazione della scadenza e quindi la relativa rimozione dal database del sito.
+####  <a name="BKMK_WSUSInfrastructure"></a> 既存の WSUS インフラストラクチャを使う  
+ ソフトウェアの更新ポイントとして Configuration Manager をインストールする前に、使用する環境内で既にアクティブだった WSUS サーバーを選択することができます。 ソフトウェアの更新ポイントが構成されている場合、同期設定を指定する必要があります。 Configuration Manager は、ソフトウェアの更新ポイントで実行されている WSUS サーバーに接続し、同じ設定を使用して WSUS を構成します。 WSUS が、ソフトウェアの更新ポイントとして構成される前に、ソフトウェアの更新ポイントの同期設定の一部として構成されていない製品または分類と同期されている場合、ソフトウェアの更新ポイントに対して構成した同期設定にかかわらず、その製品および分類のソフトウェア更新プログラムのメタデータは、WSUS データベース内のすべてのソフトウェア更新プログラムのメタデータと同期されます。 これにより、サイト データベースに、予期しないソフトウェア更新プログラムのメタデータが存在することになる可能性があります。 製品または分類を、直接、WSUS 管理コンソールに追加して、すぐに同期を開始すると同じ動作が実行されます。 既定では、Configuration Manager は 1 時間ごとに、ソフトウェアの更新ポイントの WSUS に接続し、Configuration Manager の外部で変更されたすべての設定をリセットします。 同期設定で指定した製品と分類を満たしていないソフトウェア更新プログラムは期限切れとして設定され、サイト データベースから削除されます。
 
- Quando un server WSUS è configurato come punto di aggiornamento software, non è più possibile usarlo come server WSUS autonomo. Se è necessario un server WSUS autonomo separato, non gestito da Configuration Manager, è necessario configurarlo in un server diverso.
+ WSUS サーバーがソフトウェアの更新ポイントとして構成されている場合、スタンドアロンの WSUS サーバーとして使用できなくなります。 Configuration Manager で管理されていない別のスタンドアロンの WSUS サーバーが必要な場合は、別のサーバーで構成する必要があります。
 
-####  <a name="BKMK_WSUSAsReplica"></a> Configurare WSUS come server di replica  
- Quando si crea un ruolo del sistema sito del punto di aggiornamento software in un server del sito primario, non è possibile usare un server WSUS configurato come una replica. Se il server WSUS viene configurato come server di replica, Configuration Manager non riesce a configurarlo e non è possibile completare neanche la sincronizzazione di WSUS. Se un punto di aggiornamento software viene creato in un sito secondario, Configuration Manager configura WSUS come server di replica di WSUS eseguito nel punto di aggiornamento software del sito primario padre. Il primo punto di aggiornamento software installato in un sito primario è il punto predefinito. I punti di aggiornamento software aggiuntivi nel sito sono configurati come repliche del punto di aggiornamento software predefinito.  
+####  <a name="BKMK_WSUSAsReplica"></a> WSUS をレプリカ サーバーとして構成する  
+ プライマリ サイト サーバーにソフトウェアの更新ポイント サイト システムの役割を作成する場合、レプリカとして構成されている WSUS サーバーを使用することはできません。 WSUS サーバーがレプリカとして構成されていると、Configuration Manager で、WSUS サーバーの構成と WSUS の同期が失敗します。 ソフトウェアの更新ポイントをセカンダリ サイトに作成すると、Configuration Manager は、親であるプライマリ サイトのソフトウェアの更新ポイントで実行している WSUS のレプリカ サーバーとして、WSUS を構成します。 プライマリ サイトにインストールする最初のソフトウェアの更新ポイントは、既定のソフトウェアの更新ポイントになります。 サイトの追加のソフトウェアの更新ポイントは、既定のソフトウェアの更新ポイントのレプリカとして構成されます。  
 
-####  <a name="BKMK_WSUSandSSL"></a> Decidere se configurare WSUS per l'uso di SSL  
- È possibile utilizzare il protocollo SSL per proteggere WSUS in esecuzione nel punto di aggiornamento software. WSUS utilizza SSL per l'autenticazione tra computer client e server WSUS downstream e il server WSUS. WSUS utilizza inoltre SSL per crittografare i metadati dell'aggiornamento software. Quando si sceglie di proteggere WSUS con SSL, è necessario preparare il server WSUS prima di installare il punto di aggiornamento software.  
+####  <a name="BKMK_WSUSandSSL"></a> SSL を使うように WSUS を構成するかどうかを決定する  
+ ソフトウェアの更新ポイントで実行される WSUS を保護するため、SSL プロトコルを使用することができます。 WSUS は、SSL を使用して、クライアント コンピューターおよび WSUS サーバーの下流 WSUS サーバーを認証します。 また、WSUS は、ソフトウェア更新プログラムのメタデータの暗号化にも SSL を使用します。 SSL を使用して WSUS を保護する場合は、ソフトウェアの更新ポイントをインストールする前に WSUS サーバーを準備する必要があります。  
 
- Quando si installa e configura il punto di aggiornamento software, è necessario selezionare l'impostazione **Abilita le comunicazioni SSL per il server WSUS** . In caso contrario, Configuration Manager configurerà WSUS in modo che non usi SSL. Quando si abilita SSL per WSUS in esecuzione in un punto di aggiornamento software, anche WSUS in esecuzione nel punto di aggiornamento software in qualsiasi sito figlio deve essere configurato per l'utilizzo di SSL.  
+ ソフトウェアの更新ポイントをインストールして構成する場合、[ **WSUS サーバーの SSL 通信を有効にする** ] 設定を選択する必要があります。 それ以外の場合は、Configuration Manager は SSL を使用しないように WSUS を構成します。 ソフトウェアの更新ポイントで実行されている WSUS に対して SSL を有効にする場合は、すべての子サイトのソフトウェアの更新ポイントで実行されている WSUS も SSL を使用するように構成する必要があります。  
 
-###  <a name="BKMK_ConfigureFirewalls"></a> Configurare i firewall  
- Gli aggiornamenti software in un sito di amministrazione centrale di Configuration Manager comunicano con WSUS eseguito nel punto di aggiornamento software, il quale a sua volta comunica con l'origine di sincronizzazione per sincronizzare i metadati degli aggiornamenti software. I punti di aggiornamento software in un sito figlio comunicano con il punto di aggiornamento software nel sito padre. Quando è presente più di un punto di aggiornamento software in un sito primario, i punti di aggiornamento software aggiuntivi devono comunicare con il primo punto installato nel sito, ovvero il punto di aggiornamento software predefinito.  
+###  <a name="BKMK_ConfigureFirewalls"></a> ファイアウォールの構成  
+ Configuration Manager の中央管理サイトのソフトウェア更新プログラムは、ソフトウェアの更新ポイントで実行されている WSUS と通信し、さらにその WSUS が同期ソースと通信して、ソフトウェア更新プログラムのメタデータが同期されます。 子サイトのソフトウェアの更新ポイントは、親サイトのソフトウェアの更新ポイントと通信します。 プライマリ サイトに複数のソフトウェアの更新ポイントが存在する場合、追加のソフトウェアの更新ポイントは、サイトにインストールされている最初のソフトウェアの更新ポイント (既定のソフトウェアの更新ポイント) と通信する必要があります。  
 
- Potrebbe essere necessario configurare il firewall affinché accetti le porte HTTP o HTTPS usate da WSUS negli scenari seguenti: quando si ha un firewall aziendale tra il punto di aggiornamento software di Configuration Manager e Internet, in presenza di un punto di aggiornamento software e della relativa origine di sincronizzazione upstream o in presenza di punti di aggiornamento software aggiuntivi. La connessione a Microsoft Update viene sempre configurata per utilizzare la porta 80 per HTTP e la porta 443 per HTTPS. È possibile utilizzare una porta personalizzata per la connessione da WSUS in esecuzione sul punto di aggiornamento software in un sito figlio a WSUS in esecuzione sul punto di aggiornamento software nel sito padre. Quando i criteri di sicurezza non consentono la connessione, è necessario usare il metodo di sincronizzazione esportazione e importazione. Per altre informazioni, vedere la sezione [Origine di sincronizzazione](#BKMK_SyncSource) in questo argomento. Per altre informazioni sulle porte usate da WSUS, vedere [Come determinare le impostazioni della porta usate da WSUS in System Center Configuration Manager](../get-started/install-a-software-update-point.md#wsus-settings).  
+ Configuration Manager のソフトウェアの更新ポイントとインターネット間の企業ファイアウォールがある場合、ソフトウェアの更新ポイントとそのアップストリーム更新ソースがある場合、追加のソフトウェアの更新ポイントがある場合には、ファイアウォールは WSUS で使う HTTP や HTTPS ポートを許可するように構成する必要があります。 Microsoft Update への接続は、ポート 80 を HTTP に、ポート 443 を HTTPS を使用するように常に構成されます。 子サイトのソフトウェアの更新ポイントで実行されている WSUS から親サイトのソフトウェアの更新ポイントで実行されている WSUS への接続には、カスタム ポートを使用することができます。 セキュリティ ポリシーによって接続が許可されない場合は、同期の手段としてエクスポートとインポートを使う必要があります。 詳細については、このトピックの「 [同期ソース](#BKMK_SyncSource) 」セクションを参照してください。 WSUS で使用されるポートの詳細については、「[System Center Configuration Manager において、WSUS で使用するポート設定を特定する方法](../get-started/install-a-software-update-point.md#wsus-settings)」を参照してください。  
 
-#### <a name="restrict-access-to-specific-domains"></a>Limitazione dell'accesso a domini specifici  
- Se la propria organizzazione non consente l'apertura delle porte e dei protocolli a tutti gli indirizzi nel firewall tra il punto di aggiornamento software attivo e Internet, è possibile limitare l'accesso ai seguenti domini, in modo da consentire la comunicazione di WSUS e Aggiornamenti automatici con Microsoft Update:  
+#### <a name="restrict-access-to-specific-domains"></a>特定のドメインに対するアクセスを制限する  
+ アクティブなソフトウェアの更新ポイントとインターネットの間のファイアウォールで、これらのポートとプロトコルをすべてのアドレスに対して開放できない場合は、WSUS と自動更新で Microsoft Update と通信できるようにするため、アクセスを次のドメインに限定することができます。  
 
 -   http://windowsupdate.microsoft.com
 
@@ -210,121 +207,120 @@ Gli aggiornamenti software richiedono che su tutti i server del sistema del sito
 
 -   http://ntservicepack.microsoft.com  
 
- Potrebbe essere necessario aggiungere i seguenti indirizzi al firewall che si trova tra i due sistemi del sito nei seguenti casi: se i siti figlio dispongono di un punto di aggiornamento software o se è presente un punto di aggiornamento software basato su Internet attivo remoto in un sito:  
+ 子サイトにアクティブなソフトウェアの更新ポイントがある場合や、サイトにリモートのアクティブなインターネット ベースのソフトウェアの更新ポイントがある場合は、それら 2 つのサイト システムの間に設置されているファイアウォールに次のアドレスも追加することが必要になる可能性があります。  
 
- **Punto di aggiornamento software nel sito secondario**  
+ **子サイトのソフトウェアの更新ポイント**  
 
--   http://<*FQDN per il punto di aggiornamento software nel sito figlio*>  
+-   http://<*子サイト上のソフトウェアの更新ポイントの FQDN*>  
 
--   https://<*FQDN per il punto di aggiornamento software nel sito figlio*>  
+-   https://<*子サイト上のソフトウェアの更新ポイントの FQDN*>  
 
--   http://<*FQDN per il punto di aggiornamento software nel sito padre*>  
+-   http://<*親サイト上のソフトウェアの更新ポイントの FQDN*>  
 
--   https://<*FQDN per il punto di aggiornamento software nel sito padre*>  
+-   https://<*親サイト上のソフトウェアの更新ポイントの FQDN*>  
 
-##  <a name="BKMK_SyncSettings"></a> Pianificare le impostazioni di sincronizzazione  
- La sincronizzazione degli aggiornamenti software in Configuration Manager è il processo di recupero dei metadati degli aggiornamenti software in base ai criteri configurati. Il sito di livello superiore della gerarchia, il sito di amministrazione centrale o il sito primario autonomo consente di sincronizzare gli aggiornamenti software da Microsoft Update. È possibile scegliere di configurare il punto di aggiornamento software nel sito principale per la sincronizzazione con un server WSUS esistente, non nella gerarchia di Configuration Manager. I siti primari figlio sincronizzano i metadati degli aggiornamenti software dal punto di aggiornamento software nel sito di amministrazione centrale. Prima di installare e configurare un punto di aggiornamento software, utilizzare questa sezione per pianificare le impostazioni di sincronizzazione.  
+##  <a name="BKMK_SyncSettings"></a> 同期設定の計画  
+ Configuration Manager でのソフトウェア更新プログラムの同期は、構成した基準に基づいてソフトウェア更新プログラムのメタデータを取得するプロセスです。 階層内の最上位サイト、中央管理サイト、または、スタンドアロン プライマリ サイトでは、ソフトウェア更新プログラムは Microsoft Update と同期されます。 最上位サイトのソフトウェアの更新ポイントを、Configuration Manager 階層内ではなく、既存の WSUS サーバーと同期するように構成できます。 子プライマリ サイトでは、ソフトウェア更新プログラムのメタデータが、中央管理サイトのソフトウェアの更新ポイントと同期されます。 ソフトウェアの更新ポイントをインストールして構成する前に、このセクションを参考にして、同期設定を計画してください。  
 
-###  <a name="BKMK_SyncSource"></a> Origine di sincronizzazione  
- Le impostazioni dell'origine di sincronizzazione per il punto di aggiornamento software specificano il percorso in cui il punto di aggiornamento software recupera i metadati degli aggiornamenti software e indicano se gli eventi di reporting WSUS sono creati durante il processo di sincronizzazione.  
+###  <a name="BKMK_SyncSource"></a> 同期ソース  
+ ソフトウェアの更新ポイントの同期ソースの設定は、ソフトウェアの更新ポイントがソフトウェア更新プログラムのメタデータを取得する場所と、同期中に WSUS のレポート イベントを生成するかどうかを指定します。  
 
--   **Origine sincronizzazione:** il punto di aggiornamento software nel sito di livello superiore configura l'origine della sincronizzazione per Microsoft Update per impostazione predefinita. È possibile sincronizzare il sito principale con un server WSUS esistente. Per impostazione predefinita, il punto di aggiornamento software in un sito primario figlio configura l'origine di sincronizzazione come il punto di aggiornamento software nel sito di amministrazione centrale.  
+-   **同期ソース:** 最上位サイトのソフトウェアの更新ポイントでは、既定で、Microsoft Update が同期ソースとして構成されます。 最上位サイトを既存の WSUS サーバーと同期することもできます。 子プライマリ サイトのソフトウェアの更新ポイントは、既定で、中央管理サイトのソフトウェアの更新ポイントが同期ソースとして構成されます。  
 
     > [!NOTE]  
-    >  Il primo punto di aggiornamento software installato in un sito primario, ovvero il punto predefinito, si sincronizza con il sito di amministrazione centrale. I punti di aggiornamento software aggiuntivi nel sito primario si sincronizzano con il punto di aggiornamento software predefinito nel sito primario.  
+    >  プライマリ サイトにインストールする最初のソフトウェアの更新ポイントは、既定のソフトウェアの更新ポイントになり、中央管理サイトと同期されます。 プライマリ サイトの追加のソフトウェアの更新ポイントは、プライマリ サイトの既定のソフトウェアの更新ポイントと同期されます。  
 
-     Quando un punto di aggiornamento software è disconnesso da Microsoft Update o dal server aggiornamenti upstream, è possibile configurare l'origine di sincronizzazione non per la sincronizzazione con un'origine di sincronizzazione configurata ma per l'utilizzo della funzione di esportazione e importazione dello strumento WSUSUtil per la sincronizzazione degli aggiornamenti software. Per altre informazioni, vedere [Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso](../get-started/synchronize-software-updates-disconnected.md).  
+     ソフトウェアの更新ポイントが Microsoft Update またはアップストリームの更新サーバーから切断されている場合、構成された同期ソースと同期せずに、WSUSUtil ツールのエクスポートおよびインポート機能を使用してソフトウェア更新プログラムを同期するように、同期ソースを構成できます。 詳細については、「[切断されているソフトウェアの更新ポイントからのソフトウェア更新プログラムの同期](../get-started/synchronize-software-updates-disconnected.md)」を参照してください。  
 
--   **Eventi di reporting WSUS:** L'Agente di Windows Update nei computer client è in grado di creare messaggi di eventi usati per la creazione di report di WSUS. Questi eventi non vengono usati dall'aggiornamento software in Configuration Manager e pertanto l'opzione **Non creare eventi di reporting WSUS** viene selezionata per impostazione predefinita. Quando questi eventi non vengono creati, il computer client deve connettersi al server WSUS solo durante la valutazione dell'aggiornamento software e le analisi di conformità. Se questi eventi sono necessari per il reporting esterno agli aggiornamenti software in Configuration Manager, sarà necessario modificare questa impostazione per creare gli eventi di reporting WSUS.  
+-   **WSUS レポート イベント:** クライアント コンピューターの Windows Update エージェントは、WSUS レポートに使用されるイベント メッセージを作成できます。 これらのイベントは Configuration Manager のソフトウェアの更新プログラムでは使用されないため、[**WSUS レポート イベントを作成しない**] オプションは既定で選択されます。 これらのイベントが作成されていない場合、クライアント コンピューターが WSUS サーバーに接続するのは、ソフトウェアの更新プログラムの評価および対応スキャンの間のみです。 Configuration Manager のソフトウェアの更新プログラム以外のレポートでこれらのイベントが必要な場合は、この設定を変更して、WSUS レポート イベントを作成する必要があります。  
 
-###  <a name="BKMK_SyncSchedule"></a> Pianificazione della sincronizzazione  
- È possibile configurare la pianificazione della sincronizzazione solo nel punto di aggiornamento software del sito principale della gerarchia di Configuration Manager. Quando si configura la pianificazione della sincronizzazione, il punto di aggiornamento software si sincronizza con l'origine di sincronizzazione alla data e all'ora specificata. La pianificazione personalizzata consente di sincronizzare gli aggiornamenti software in una data e a un orario in cui le richieste dal server WSUS, dal server del sito e dalla rete sono ridotte, come alle 2.00 una volta a settimana. In alternativa, è possibile avviare la sincronizzazione nel sito principale usando l'azione **Sincronizzazione degli aggiornamenti software** dal nodo **Tutti gli aggiornamenti software** o **Gruppi di aggiornamenti software** nella console di Configuration Manager.  
+###  <a name="BKMK_SyncSchedule"></a> 同期スケジュール  
+ Configuration Manager 階層内の最上位サイトのソフトウェアの更新ポイントでのみ、同期スケジュールを構成できます。 同期スケジュールを構成すると、指定した日時に、ソフトウェアの更新ポイントが同期ソースと同期されます。 カスタム スケジュールを使用すると、WSUS サーバー、サイト サーバー、およびネットワークからの要求が低い日時 (たとえば週に 1 回、午前 2:00) にソフトウェア更新プログラムを同期することができます。 あるいは、Configuration Manager コンソールの [**すべてのソフトウェア更新**] または [**ソフトウェア更新プログラム グループ**] ノードから、[**ソフトウェア更新プログラムの同期**] アクションを使用して、最上位サイトで同期を開始できます。  
 
 > [!TIP]  
->  Pianificare la sincronizzazione degli aggiornamenti software da eseguire usando un intervallo di tempo appropriato per l'ambiente. Un tipico scenario è quello che prevede di impostare l'esecuzione della pianificazione della sincronizzazione degli aggiornamenti software poco dopo il normale rilascio di aggiornamenti della protezione Microsoft il secondo martedì di ogni mese, noto come Patch martedì. Un altro scenario frequente prevede di impostare l'esecuzione giornaliera della pianificazione della sincronizzazione degli aggiornamenti software quando si utilizzano tali aggiornamenti per fornire aggiornamenti del motore e delle definizioni di Endpoint Protection.  
+>  環境に合った期間内に、ソフトウェア更新プログラムの同期をスケジュールします。 一般的なシナリオの 1 つは、"月例パッチ" と呼ばれる毎月第 2 火曜日にリリースされる Microsoft の定期セキュリティ更新プログラムのすぐ後に、ソフトウェア更新プログラムの同期が実行されるようにスケジュールを設定することです。 もう 1 つの一般的なシナリオは、ソフトウェア更新プログラムを使用して Endpoint Protection 定義とエンジン更新プログラムを配信するときに、毎日ソフトウェア更新プログラムの同期が実行されるようにスケジュールを設定することです。  
 
- Dopo il completamento della sincronizzazione del punto di aggiornamento software, viene inviata una richiesta di sincronizzazione ai siti figlio. Se sono disponibili punti di aggiornamento software aggiuntivi in un sito primario, la richiesta di sincronizzazione viene inviata a ogni punto di aggiornamento software. Il processo viene ripetuto in ogni sito nella gerarchia.  
+ ソフトウェアの更新ポイントで正常に同期が完了した後で、同期要求が子サイトに送信されます。 プライマリ サイトに追加のソフトウェアの更新ポイントがある場合、同期要求は各ソフトウェアの更新ポイントに送信されます。 このプロセスは階層内のすべてのサイトで繰り返されます。  
 
-###  <a name="BKMK_UpdateClassifications"></a> Classificazioni degli aggiornamenti  
- Ogni aggiornamento software viene definito in base a una classificazione di aggiornamento che consente di organizzare i diversi tipi di aggiornamenti. Durante il processo di sincronizzazione, verranno sincronizzati i metadati degli aggiornamenti software per le classificazioni selezionate. Configuration Manager consente di sincronizzare gli aggiornamenti software con le classificazioni di aggiornamenti seguenti:  
+###  <a name="BKMK_UpdateClassifications"></a> 更新プログラムの分類  
+ すべてのソフトウェア更新プログラムは、各種の更新プログラムを整理するための更新プログラムの分類により定義されます。 同期プロセス中に、指定した分類のソフトウェアの更新プログラムのメタデータが同期されます。 Configuration Manager では次の更新プログラムの分類でソフトウェアの更新を同期できます。  
 
--   **Aggiornamenti critici:** specifica un aggiornamento rilasciato su vasta scala per un problema specifico, che risolve un bug critico, non correlato alla sicurezza.  
+-   **重要な更新:** セキュリティに関連しない重要な不具合に対処する、特定の問題を解決するために広範にリリースされる更新プログラムを示します。  
 
--   **Aggiornamenti delle definizioni:** specifica un aggiornamento a un virus o ad altri file di definizione.  
+-   **定義ファイルの更新:** ウイルスまたはその他の定義ファイルの更新を示します。  
 
--   **Feature Pack:** specifica le nuove funzionalità del prodotto distribuite al di fuori di una versione del prodotto e che in genere sono incluse nella versione successiva del prodotto completa.  
+-   **Feature Pack:** 製品リリースに先立って配布され、通常は次回の製品版リリースに含まれる、製品の新機能を示します。  
 
--   **Aggiornamenti della sicurezza:** specifica un aggiornamento rilasciato su vasta scala per un problema specifico del prodotto e correlato alla sicurezza.  
+-   **セキュリティ更新プログラム:** 製品固有でセキュリティに関係する問題に対して、広範にリリースされた更新を示します。  
 
--   **Service Pack:** specifica un set cumulativo di aggiornamenti rapidi applicati a un'applicazione. Questi aggiornamenti rapidi possono includere aggiornamenti della sicurezza, aggiornamenti critici, aggiornamenti software e così via.  
+-   **Service Pack:** アプリケーションに適用される修正プログラムを累積したセットを示します。 これらの修正プログラムには、セキュリティの更新プログラム、重要な更新プログラム、ソフトウェア更新プログラムなどが含まれています。  
 
--   **Strumenti:** specifica un'utilità o una funzionalità che consente di completare una o più attività.  
+-   **ツール:** 1 つまたは複数のタスクを完了するためのユーティリティまたは機能を示します。  
 
--   **Aggiornamenti cumulativi:** specifica un set cumulativo di aggiornamenti rapidi inclusi nello stesso pacchetto per facilitarne la distribuzione. Questi aggiornamenti rapidi possono includere aggiornamenti della sicurezza, aggiornamenti critici, aggiornamenti e così via. Un aggiornamento cumulativo è relativo in genere a un'area specifica, ad esempio la sicurezza o un componente del prodotto.  
+-   **更新プログラムのロールアップ:** 容易に展開できるようにパッケージにまとめられた修正プログラムを累積したセットを示します。 これらの修正プログラムには、セキュリティの更新プログラム、重要な更新プログラム、更新プログラムなどが含まれています。 更新プログラムのロールアップは、通常セキュリティまたは製品コンポーネントなど特定の領域に対応します。  
 
--   **Aggiornamenti:** specifica un aggiornamento di un'applicazione o un file attualmente installato.  
+-   **更新プログラム:** 現在インストールされているアプリケーションまたはファイルの更新プログラムを示します。  
 
- Le impostazioni delle classificazioni di aggiornamento vengono configurate solo nel sito di livello superiore. Tali impostazioni non vengono configurate nel punto di aggiornamento software dei siti figlio poiché i metadati degli aggiornamenti software vengono replicati dal sito di livello superiore nei siti primari figlio. Quando si selezionano le classificazioni di aggiornamento, tenere presente che quante più classificazioni vengono selezionate tanto maggiore sarà il tempo richiesto per la sincronizzazione dei metadati degli aggiornamenti software.  
+ 更新プログラムの分類設定は、最上位サイトでのみ構成します。 ソフトウェア更新プログラムのメタデータは、最上位サイトから子プライマリ サイトにレプリケートされるため、更新プログラムの分類設定は子サイトのソフトウェアの更新ポイントで構成しません。 更新プログラムの分類を選択する場合、選択する分類が多くなるほど、ソフトウェア更新プログラムのメタデータの同期に必要な時間が長くなることに注意してください。  
 
 > [!WARNING]  
->  È consigliabile deselezionare tutte le classificazioni prima di sincronizzare gli aggiornamenti software per la prima volta. Dopo la sincronizzazione iniziale, selezionare le classificazioni dalle Proprietà del componente del punto di aggiornamento software, quindi riavviare la sincronizzazione.  
+>  ベスト プラクティスとして、初めてソフトウェア更新プログラムを同期する前にすべての分類を消去します。 最初の同期の後、[ソフトウェアの更新ポイント コンポーネント] プロパティから分類を選択し、同期を再開します。  
 
-###  <a name="BKMK_UpdateProducts"></a> Prodotti  
- I metadati per ogni aggiornamento software definiscono uno o più prodotti per i quali l'aggiornamento è applicabile. Un prodotto è un'edizione specifica di un sistema operativo o di un'applicazione. Un esempio di un prodotto è Microsoft Windows Server 2008. Una famiglia di prodotti è il sistema operativo o l'applicazione di base da cui derivano i singoli prodotti. Un esempio di famiglia di prodotti è Microsoft Windows, di cui Microsoft Windows Server 2008 è membro. È possibile specificare una famiglia di prodotti o singoli prodotti all'interno di una famiglia di prodotti.  
+###  <a name="BKMK_UpdateProducts"></a> 製品  
+ 各ソフトウェア更新プログラムのメタデータは、更新プログラムが適用される 1 つまたは複数の製品を定義します。 製品は、オペレーティング システムまたはアプリケーションの特定のエディションです。 製品の例として、Microsoft Windows Server 2008 があります。 製品ファミリは、個々の製品が派生する基礎となるオペレーティング システムまたはアプリケーションです。 製品ファミリの例として Microsoft Windows があり、Microsoft Windows Server 2008 はそのメンバーです。 製品ファミリまたは製品ファミリ内の個別製品を指定できます。  
 
- Se gli aggiornamenti software sono applicabili a più prodotti e almeno uno dei prodotti è selezionato per la sincronizzazione, tutti i prodotti verranno visualizzati nella console di Configuration Manager anche se alcuni prodotti non sono stati selezionati. Se, ad esempio, Windows Server 2012 è il solo sistema operativo sottoscritto e se un aggiornamento software si applica a Windows Server 2012 e Windows Server 2012 Datacenter Edition, entrambi i prodotti si troveranno nel database del sito.  
+ ソフトウェア更新プログラムが複数の製品に適用可能な状態で、少なくとも 1 つの製品の同期を選択している場合、選択されていない製品も含めてすべての製品が Configuration Manager コンソールに表示されます。 たとえば、サブスクライブしているオペレーティング システムが Windows Server 2012 だけで、ソフトウェア更新プログラムが Windows Server 2012 と Windows Server 2012 Datacenter Edition に適用される場合、サイト データベースには両方の製品が含まれます。  
 
- Solo nel sito di livello superiore vengono configurate le impostazioni del prodotto. Tali impostazioni non vengono configurate nel punto di aggiornamento software per i siti figlio poiché i metadati degli aggiornamenti software vengono replicati dal sito di livello superiore ai siti primari figlio. Quando si selezionano i prodotti, tenere presente che quanti più prodotti vengono selezionati tanto maggiore sarà il tempo richiesto per la sincronizzazione dei metadati degli aggiornamenti software.  
+ 製品設定は、最上位サイトでのみ構成します。 ソフトウェア更新プログラムのメタデータは、最上位サイトから子プライマリ サイトにレプリケートされるため、製品設定は子サイトのソフトウェアの更新ポイントで構成しません。 製品を選択する場合、選択する製品が多くなるほど、ソフトウェア更新プログラムのメタデータの同期に必要な時間が長くなることに注意してください。  
 
 > [!IMPORTANT]  
->  Configuration Manager archivia un elenco di prodotti e di famiglie di prodotti tra cui è possibile scegliere quando si installa per la prima volta il punto di aggiornamento software. È possibile che i prodotti e le famiglie di prodotti pubblicati dopo il rilascio di Configuration Manager non siano disponibili per la selezione finché non si completa la sincronizzazione degli aggiornamenti software, che aggiorna l'elenco di prodotti e famiglie di prodotti disponibili tra cui è possibile scegliere. È consigliabile deselezionare tutti i prodotti prima di sincronizzare gli aggiornamenti software per la prima volta. Dopo la sincronizzazione iniziale, selezionare i prodotti dalle Proprietà del componente del punto di aggiornamento software, quindi riavviare la sincronizzazione.  
+>  Configuration Manager は、ソフトウェアの更新ポイントを初めてインストールするときに選択できる製品と製品ファミリのリストを保存します。 Configuration Manager のリリース後にリリースされる製品と製品ファミリは、選択できる使用可能な製品と製品ファミリのリストを更新する、ソフトウェア更新プログラムの同期を完了するまでは選択できない可能性があります。 ベスト プラクティスとして、初めてソフトウェア更新プログラムを同期する前にすべての製品をクリアします。 最初の同期の後、[ソフトウェアの更新ポイント コンポーネント] プロパティから製品を選択し、同期を再開します。  
 
-###  <a name="BKMK_SupersedenceRules"></a> Regole di sostituzione  
- In genere, un aggiornamento software che sostituisce un altro aggiornamento software consente di effettuare una o più delle seguenti azioni:  
+###  <a name="BKMK_SupersedenceRules"></a>置き換え規則  
+ 一般的に、別のソフトウェア更新プログラムを置き換えるソフトウェア更新プログラムでは、次の 1 つまたは複数の処理を実行します。  
 
--   Migliora o aggiorna la correzione fornita da uno o più aggiornamenti rilasciati in precedenza.  
+-   以前にリリースされた 1 つまたは複数の更新プログラムで提供された修正を強化、改善、または更新します。  
 
--   Migliora l'efficienza del pacchetto dei file di aggiornamento sostituito, che viene installato sui computer client se l'aggiornamento viene approvato per l'installazione. Ad esempio, l'aggiornamento sostituito potrebbe contenere file che non sono più rilevanti per la correzione o i sistemi operativi supportati dal nuovo aggiornamento, quindi tali file non sono inclusi nel pacchetto di file sostituito dell'aggiornamento.  
+-   更新プログラムのインストールが承認された場合にクライアント コンピューターにインストールされる置き換えの更新ファイル パッケージの効率性を向上させます。 たとえば、置き換えられる更新プログラムに、修正、または新しい更新プログラムで現在サポートされているオペレーティング システムには関係のないファイルが含まれていることがあり、それらのファイルは、置き換わる更新プログラムのファイル パッケージには含まれません。  
 
--   Aggiorna versioni più recenti di un prodotto. In altre parole, aggiorna le versioni che non sono più applicabili alle versioni o configurazioni di un prodotto precedenti. Gli aggiornamenti possono anche sostituire altri aggiornamenti, se sono state apportate modifiche per espandere il supporto della lingua. Ad esempio, una revisione recente di un aggiornamento prodotto per Microsoft Office potrebbe rimuovere il supporto per un sistema operativo precedente, ma potrebbe aggiungere supporto aggiuntivo per nuove lingue nel rilascio di aggiornamenti iniziale.  
+-   新しいバージョンの製品を更新します。 つまり、古いバージョンまたは構成の製品には適用できなくなったバージョンを更新します。 また、言語サポートの拡張のために変更が加えられた場合に、更新プログラムによって他の更新プログラムが置き換えられることがあります。 たとえば、Microsoft Office 用の比較的新しいバージョンの製品更新プログラムにより、古いオペレーティング システムがサポートされなくなり、代わりに、初期更新プログラム リリースで新しい言語が追加サポートされるようになる場合があります。  
 
- Nelle proprietà del punto di aggiornamento software, è possibile specificare di applicare immediatamente la scadenza agli aggiornamenti software sostituiti, impedendo in tal modo che siano inclusi nelle nuove distribuzioni e contrassegnando queste ultime per indicare che gli aggiornamenti software sostituiti contengono uno o più aggiornamenti scaduti. In alternativa, è possibile specificare un periodo di tempo prima della scadenza degli aggiornamenti software sostituiti, che consente di continuare a distribuirli. Prendere in considerazione i seguenti scenari in cui potrebbe essere necessario distribuire un aggiornamento software sostituito:  
+ ソフトウェアの更新ポイントのプロパティでは、置き換えられたソフトウェア更新プログラムが即時期限切れになるように指定できます。これにより、古いソフトウェア更新プログラムが新しい展開に含まれないようにし、既存の展開に 1 つ以上の期限切れのソフトウェア更新プログラムが含まれていることを示すフラグを付けることができます。 または、置き換えられるソフトウェア更新プログラムが期限切れになるまでの期間を指定することができます。その場合、これらのプログラムを引き続き展開することができます。 置き換えられるソフトウェア更新プログラムの展開が必要になる場合のシナリオとして、次のものが考えられます。  
 
--   Se l'aggiornamento software che sostituisce supporta solo versioni più recenti di un sistema operativo e alcuni dei computer client eseguono versioni precedenti del sistema operativo.  
+-   置き換える方のソフトウェア更新プログラムが新しいバージョンのオペレーティング システムのみをサポートし、クライアント コンピューターの一部が古いバージョンのオペレーティング システムを実行している場合。  
 
--   Se l'aggiornamento software che sostituisce ha un'applicabilità più limitata dell'aggiornamento software sostituito. Questo potrebbe renderlo inappropriato per alcuni computer client.  
+-   置き換える方のソフトウェア更新プログラムに、置き換えられるソフトウェア更新プログラムよりも適用性の制限が多い場合があります。 この場合、一部のクライアント コンピューターには不適切になります。  
 
--   Se l'aggiornamento software che sostituisce non è stato approvato per la distribuzione nell'ambiente di produzione.  
+-   置き換える方のソフトウェア更新プログラムが稼動環境での展開に承認されていない場合。  
 
     > [!NOTE]  
-    > Quando Configuration Manager imposta un aggiornamento software sostituito su **Scaduto**, non imposta l'aggiornamento su **Rifiutato** in WSUS. Quando però viene eseguita l'attività di pulizia di WSUS, gli aggiornamenti impostati su **Scaduto** in Configuration Manager vengono impostati su **Rifiutato** nel server WSUS e l'agente di Windows Update nei computer non effettuerà più l'analisi di questi aggiornamenti. I client continueranno quindi ad eseguire l'analisi per un aggiornamento scaduto fino all'esecuzione dell'attività di pulizia. Per informazioni sull'attività di pulizia di WSUS, vedere [Manutenzione degli aggiornamenti software](/sccm/sum/deploy-use/software-updates-maintenance).
+    > Configuration Manager で、置き換えられたソフトウェアの更新プログラムが**期限切れ**に設定されたときに、WSUS でその更新プログラムが**拒否済み**に設定されることはありません。 ただし、WSUS クリーンアップ タスクが実行されると、Configuration Manager で**期限切れ**に設定されている更新プログラムは、WSUS サーバー上で**拒否済み**の状態に設定され、コンピューター上の Windows Update Agent が、これらの更新プログラムをスキャンすることはなくなります。 つまり、クライアントは、クリーンアップ タスクが実行されるまでスキャンを続けるということです。 WSUS クリーンアップ タスクの詳細については、「[ソフトウェア更新プログラムのメンテナンス](/sccm/sum/deploy-use/software-updates-maintenance)」を参照してください。
 
-###  <a name="BKMK_UpdateLanguages"></a> Lingue  
- Le impostazioni della lingua per il punto di aggiornamento software consentono di configurare le lingue per cui sono sincronizzati i dettagli di riepilogo (metadati degli aggiornamenti software) per gli aggiornamenti software e le lingue dei file di aggiornamento software che saranno scaricate per gli aggiornamenti software.  
+###  <a name="BKMK_UpdateLanguages"></a> 言語  
+ ソフトウェアの更新ポイントの言語設定を使用すると、ソフトウェア更新プログラムに同期される概要詳細 (ソフトウェア更新プログラムのメタデータ) の言語、およびソフトウェア更新プログラムにダウンロードされるソフトウェア更新ファイルの言語を構成できます。  
 
-#### <a name="software-update-file"></a>File di aggiornamento software  
- Le lingue configurate per l'impostazione **File di aggiornamento software** nelle proprietà per il punto di aggiornamento software forniscono l'impostazione predefinita delle lingue quando si scaricano gli aggiornamenti software in un sito. È possibile modificare le lingue selezionate per impostazione predefinita ogni volta che gli aggiornamenti software vengono scaricati o distribuiti. Durante il processo di download, i file di aggiornamento software per le lingue configurate vengono scaricati nel percorso di origine del pacchetto di distribuzione, se i file di aggiornamento software sono disponibili nella lingua selezionata. Quindi, vengono copiati nella raccolta contenuto nel server del sito e poi nei punti di distribuzione configurati per il pacchetto.  
+#### <a name="software-update-file"></a>ソフトウェア更新ファイル  
+ ソフトウェアの更新ポイントのプロパティの [ **ソフトウェア更新ファイル** ] 設定で構成した言語は、サイトでソフトウェア更新プログラムをダウンロードするときに使用可能な既定の言語セットを提供します。 ソフトウェア更新プログラムがダウンロードまたは展開されるたびに既定で選択される言語を変更できます。 ソフトウェア更新プログラム ファイルが選択した言語で使用できる場合、ダウンロード プロセスで、構成した言語のソフトウェア更新プログラム ファイルが展開パッケージのソース場所にダウンロードされます。 ダウンロードしたファイルはサイト サーバーのコンテンツ ライブラリにコピーされ、パッケージ用に構成される配布ポイントにコピーされます。  
 
- Le impostazioni della lingua dei file di aggiornamento software devono essere configurate con le lingue che vengono più spesso utilizzate nell'ambiente. Ad esempio, se i computer client assegnati al sito utilizzano di più l'inglese e il giapponese per il sistema operativo e le applicazioni e nel sito vengono utilizzate pochissime altre lingue, selezionare l'inglese e il giapponese nella colonna **File di aggiornamento software** quando si scarica o si distribuisce l'aggiornamento software e deselezionare le altre lingue. Questo consente di utilizzare le impostazioni predefinite nella pagina **Selezione lingua** della distribuzione e di scaricare le procedure guidate. Ciò impedisce inoltre il download di file di aggiornamento che non sono necessari. Questa impostazione è configurata in ogni punto di aggiornamento software della gerarchia di Configuration Manager.  
+ ソフトウェア更新ファイルの言語設定は、環境で最も使用される言語に設定してください。 たとえば、サイト内のクライアント コンピューターのオペレーティング システムまたはアプリケーションで主に英語と日本語を使用し、サイト内で他の言語をほとんど使用しない場合は、ソフトウェア更新プログラムのダウンロードまたは展開時に [ **ソフトウェア更新ファイル** ] 列で英語と日本語を選択して他の言語をクリアします。 展開の [ **言語の選択** ] ページで既定の設定を使用して、ウィザードをダウンロードすることができます。 また、これによって、不要な更新プログラム ファイルがダウンロードされなくなります。 この設定は、Configuration Manager 階層内の各ソフトウェアの更新ポイントで構成されます。  
 
-#### <a name="summary-details"></a>Dettagli di riepilogo  
- Durante il processo di sincronizzazione, le informazioni dei dettagli di riepilogo (metadati degli aggiornamenti software) vengono aggiornate per gli aggiornamenti software nelle lingue specificate. I metadati forniscono le informazioni sull'aggiornamento software, come il nome, la descrizione, i prodotti supportati dall'aggiornamento, la classificazione dell'aggiornamento, l'ID articolo, l'URL di download, le regole di applicabilità e così via.  
+#### <a name="summary-details"></a>概要詳細  
+ 同期プロセス中、概要詳細の情報 (ソフトウェア更新プログラムのメタデータ) が、指定された言語のソフトウェアの更新プログラムに対して更新されます。 メタデータは、ソフトウェア更新プログラムに関する情報を提供します。たとえば、名前、説明、更新によってサポートされる製品、更新分類、アーティクル ID、ダウンロード URL、適用規則などです。  
 
- Solo nel sito di livello superiore vengono configurate le impostazioni dei dettagli di riepilogo. I dettagli di riepilogo non vengono configurati nel punto di aggiornamento software nei siti figlio poiché i metadati degli aggiornamenti software vengono replicati dal sito di amministrazione centrale in tali siti utilizzando la replica basata su file. Quando si selezionano le lingue dei dettagli di riepilogo, selezionare solo le lingue necessarie per l'ambiente. Più lingue vengono selezionate, maggiore è il tempo necessario per sincronizzare i metadati degli aggiornamenti software. Configuration Manager consente di visualizzare i metadati degli aggiornamenti software nelle impostazioni locali del sistema operativo in cui viene eseguita la console di Configuration Manager. Se le proprietà localizzate per gli aggiornamenti software non sono disponibili in locale nel sistema operativo, le informazioni degli aggiornamenti software vengono visualizzate in inglese.  
+ 概要情報設定は、最上位サイトでのみ構成します。 概要情報は、子サイトのソフトウェアの更新ポイントでは構成されません。これは、ファイルベースのレプリケーションを使用して、ソフトウェア更新プログラムのメタデータが中央管理サイトから子サイトにレプリケートされるためです。 概要詳細の言語を選択するときは、環境内で必要な言語のみを選択します。 選択する言語が多いほど、ソフトウェア更新プログラムのメタデータの同期に必要な時間が長くなります。 Configuration Manager では、Configuration Manager コンソールが実行されているオペレーティング システムのロケールのソフトウェア更新プログラムのメタデータが表示されます。 ソフトウェア更新プログラムのローカライズされたプロパティがオペレーティング システムのロケールで使用できない場合、ソフトウェア更新情報が英語で表示されます。  
 
 > [!IMPORTANT]  
->  È importante selezionare tutte le lingue dei dettagli di riepilogo che saranno necessarie nella gerarchia di Configuration Manager. Quando il punto di aggiornamento software nel sito di livello superiore viene sincronizzato con l'origine di sincronizzazione, le lingue dei dettagli di riepilogo selezionate determinano i metadati degli aggiornamenti software recuperati. Se si modificano le lingue dei dettagli di riepilogo dopo che la sincronizzazione è stata eseguita almeno una volta, i metadati degli aggiornamenti software vengono recuperati per le lingue dei dettagli di riepilogo modificate solo per aggiornamenti software nuovi o modificati. Gli aggiornamenti software che sono già stati sincronizzati non vengono aggiornati con i nuovi metadati per le lingue modificate a meno che non ci sia una modifica all'aggiornamento software nell'origine di sincronizzazione.  
+>  重要なのは、Configuration Manager の階層で必要な概要詳細の言語をすべて選択することです。 最上位サイトのソフトウェアの更新プログラムが同期ソースと同期すると、選択した概要情報の言語によって、取得されるソフトウェア更新プログラムのメタデータが決まります。 同期を少なくとも 1 回実行した後に概要詳細の言語を変更すると、ソフトウェア更新プログラムのメタデータは、新しいソフトウェア更新プログラムまたは更新されたソフトウェア更新プログラムにのみ、変更された概要詳細の言語で取得されます。 既に同期されているソフトウェア更新プログラムでは、同期ソースのソフトウェア更新プログラムに変更がない限り、変更された言語の新しいメタデータは更新されません。  
 
-##  <a name="BKMK_MaintenanceWindow"></a> Piano per una finestra di manutenzione di aggiornamenti software  
- È possibile aggiungere una finestra di manutenzione dedicata per l'installazione di aggiornamenti software. Consente di configurare una finestra di manutenzione generale e una finestra di manutenzione diversa per gli aggiornamenti software. Quando una finestra di manutenzione generale e una finestra di manutenzione degli aggiornamenti software sono entrambe configurate, i client installano aggiornamenti software solo nella finestra di manutenzione degli aggiornamenti software. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](../../core/clients/manage/collections/use-maintenance-windows.md).  
+##  <a name="BKMK_MaintenanceWindow"></a> ソフトウェア更新プログラムのメンテナンス期間の計画  
+ ソフトウェア更新プログラムのインストール専用のメンテナンス期間を追加できます。 この機能により、一般的なメンテナンス期間と、ソフトウェア更新プログラム用のメンテナンス期間を別に構成できます。 一般的なメンテナンス期間とソフトウェア更新プログラムのメンテナンス期間の両方を構成すると、クライアントは、ソフトウェア更新プログラムのメンテナンス期間中にのみ、ソフトウェア更新プログラムをインストールします。 メンテナンス期間について詳しくは、「[メンテナンス期間を使用する方法](../../core/clients/manage/collections/use-maintenance-windows.md)」を参照してください。  
 
-##  <a name="BKMK_RestartOptions"></a> Opzioni di riavvio per i client Windows 10 dopo l'installazione degli aggiornamenti software
-Quando un aggiornamento software che richiede il riavvio viene distribuito tramite Configuration Manager e viene installato in un computer, viene pianificato un riavvio in sospeso e viene visualizzata una finestra di dialogo di riavvio.
+##  <a name="BKMK_RestartOptions"></a> Windows 10 クライアントにおけるソフトウェア更新プログラムのインストール後の再起動オプション
+再起動の必要なソフトウェア更新プログラムが Configuration Manager により展開され、コンピューターにインストールされた場合、再起動が保留中としてスケジュールされ、再起動のダイアログ ボックスが表示されます。
 
-A partire da Configuration Manager versione 1606, ogni volta che è pianificato un riavvio in sospeso per un aggiornamento software di Configuration Manager nei computer Windows 10 tra le opzioni di risparmio energia di Windows sono disponibili le opzioni **Aggiorna e riavvia**e **Aggiorna e arresta** . Dopo che una di queste opzioni è stata usata e il computer è stato riavviato, la finestra di dialogo di riavvio non verrà visualizzata.
+Configuration Manager バージョン 1606 から、Configuration Manager ソフトウェアの更新のために再起動が保留中となっているときはいつでも Windows 10 コンピューターの Windows 電源オプションで **[更新と再起動]**および **[更新とシャットダウン]** のオプションを利用できるようになりました。 これらのオプションのいずれかを使用した場合、コンピューターの再起動後に再起動ダイアログは表示されません。
 
-Nelle versioni precedenti di Configuration Manager, se in un computer Windows 8 e versioni successive è presente un riavvio in sospeso e se si arresta o si riavvia il computer tramite le opzioni di risparmio energia di Windows, anziché dalla finestra di dialogo di riavvio, la finestra di dialogo di riavvio viene ancora visualizzata dopo il riavvio del computer e sarà necessario riavviare di nuovo il computer in corrispondenza della scadenza configurata.
+Configuration Manager の以前のバージョンでは、Windows 8 およびそれ以降のコンピューターにおいて再起動が保留中となっているときに、(再起動ダイアログから行う代わりに) Windows 電源オプションを使用してコンピューターをシャットダウンまたは再起動する場合、再起動ダイアログはコンピューターの再起動後もそのまま表示され、コンピューターも構成された期限までに再起動が必要なままとなります。
 
-## <a name="next-steps"></a>Passaggi successivi
-Quando si pianificano gli aggiornamenti software, vedere [Preparare la gestione degli aggiornamenti software](../get-started/prepare-for-software-updates-management.md).
-
+## <a name="next-steps"></a>次のステップ
+ソフトウェアの更新プログラムを計画する場合、「[Prepare for software updates management](../get-started/prepare-for-software-updates-management.md)」 (ソフトウェア更新プログラムの管理の準備) を参照してください。

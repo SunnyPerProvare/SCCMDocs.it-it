@@ -1,69 +1,66 @@
 ---
-title: Creare applicazioni Android | Microsoft Docs
-description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni per i dispositivi Android.
+title: "Android アプリケーションの作成 | Microsoft Docs"
+description: "Android デバイス用アプリケーションを作成して展開するときに検討する必要がある考慮事項について説明します。"
 ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e025c48c-1514-4ab7-836c-e0635aaa993a
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: 3a89abc81cd70f4e499bf4e3087fd53915377c44
-ms.contentlocale: it-it
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-android-applications-with-system-center-configuration-manager"></a>Creare applicazioni Android con System Center Configuration Manager
+# <a name="create-android-applications-with-system-center-configuration-manager"></a>System Center Configuration Manager で Android アプリケーションを作成する
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*適用対象: System Center Configuration Manager (Current Branch)*
 
-Le applicazioni di System Center Configuration Manager hanno uno o più tipi di distribuzione. I tipi di distribuzione comprendono i file di installazione e le informazioni necessarie per la distribuzione di software a un dispositivo. Un tipo di distribuzione contiene anche le regole che specificano quando e come deve essere distribuito il software.  
+System Center Configuration Manager アプリケーションには、1 つ以上の展開の種類があります。 展開の種類は、インストール ファイルとデバイスにソフトウェアを展開するために必要な情報で構成されています。 また、展開の種類には、ソフトウェアを展開するタイミングと方法を指定する規則があります。  
 
- È possibile creare applicazioni usando due metodi:  
+ アプリケーションを作成するには、次の 2 通りの方法があります。  
 
--   Creare automaticamente i tipi di applicazione e di distribuzione leggendo i file di installazione dell'applicazione.  
--   Creare manualmente l'applicazione e quindi aggiungere tipi di distribuzione in un secondo momento.  
--   Importare un'applicazione da un file.  
+-   アプリケーション インストール ファイルを読み取って、アプリケーションおよび展開の種類を自動的に作成する。  
+-   アプリケーションを手動で作成してから、後で展開の種類を追加する。  
+-   アプリケーションをファイルからインポートする。  
 
-Per la procedura necessaria per creare le applicazioni e i tipi di distribuzione di Configuration Manager, vedere [Avviare la Creazione guidata applicazione](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard). Inoltre, quando si creano e si distribuiscono applicazioni per i dispositivi Android, tenere presenti le considerazioni seguenti.  
+Configuration Manager アプリケーションと展開の種類の作成に必要な手順については、「[アプリケーションの作成ウィザードを開始する](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard)」を参照してください。 また、Android デバイス用アプリケーションを作成して展開するときに、以下の考慮事項について留意してください。  
 
-## <a name="general-considerations-for-android-apps"></a>Considerazioni generali per le app Android
+## <a name="general-considerations-for-android-apps"></a>Android アプリに関する一般的な考慮事項
 
-Configuration Manager supporta la distribuzione dei seguenti tipi di app per Android:
+Configuration Manager では、Android 用の次のアプリの種類の展開がサポートされています。
 
-|Tipo di dispositivo|File supportati|
+|デバイスの種類|サポートされているファイル|
 |-|-|
 |Android|.apk|
 
-Sono supportate le azioni di distribuzione seguenti:
+次の展開操作がサポートされています。
 
-|Tipo di dispositivo|Azioni supportate|
+|デバイスの種類|サポートされている操作|
 |-|-|
-|Android|**Disponibile**, **Richiesto** L'utente deve acconsentire all'installazione e alla disinstallazione.|
-|Android for Work | **Richiesto** |
+|Android|**利用可能**、**必須** インストールとアンインストールの両方に、ユーザーが同意する必要があります。|
+|Android for Work | **必須** |
 
-## <a name="approve-and-deploy-android-for-work-apps"></a>Approvare e distribuire le applicazioni Android for Work
-Gli amministratori di Configuration Manager possono anche approvare le app nel [sito Web Play for Work](https://play.google.com/work) e distribuirle in dispositivi Android for Work gestiti.
+## <a name="approve-and-deploy-android-for-work-apps"></a>Android for Work アプリの承認と展開
+Configuration Manager の管理者は、[Play for Work Web サイト](https://play.google.com/work)でアプリを承認したり、管理対象の Android for Work デバイスにそれらのアプリを展開したりすることもできます。
 
-Attenersi alla procedura seguente per approvare le applicazioni nello store di Play for Work, sincronizzarle con la console di Configuration Manager e quindi distribuirle ai dispositivi Android for Work gestiti. Per distribuire applicazioni a profili di lavoro degli utenti, è necessario approvarle in Play for Work e quindi sincronizzarle con la console di Configuration Manager.
+Play for Work ストアのアプリを承認し、Configuration Manager コンソールと同期し、管理対象の Android for Work デバイスに展開するには、次の手順を実行します。 アプリをユーザーの仕事用プロファイルに展開するには、Play for Work でアプリを承認し、アプリを Configuration Manager コンソールと同期する必要があります。
 
-1. Aprire un browser e passare a: https://play.google.com/work.
-2. Accedere usando l'account di amministratore di Google associato al tenant di Intune.
-3. Cercare le app che si vuole distribuire nell'ambiente e scegliere **Approva** per ognuna di esse per renderle disponibili per Android for Work.
-4. Nella console di Configuration Manager passare a **Amministratore** > **Panoramica** > **Servizi cloud** > **Android for Work** e scegliere **Sincronizza**.
-5. Attendere fino a 10 minuti che le applicazioni si sincronizzino e passare a **Raccolta software** > **Panoramica** > **Gestione applicazioni** > **Informazioni di licenza per le app dello Store**.
-6. Scegliere un'app sincronizzata da Play for Work e quindi scegliere **Crea applicazione**.
-7. Completare la procedura guidata e scegliere **Chiudi**.
-8. Passare a **Raccolta software** > **Panoramica** > **Gestione applicazioni** > **Applicazioni**, scegliere un'applicazione Android for Work e distribuire come di consueto.
+1. ブラウザーを開き、https://play.google.com/work にアクセスします。
+2. Intune テナントにバインドした Google 管理者アカウントを使用してサインインします。
+3. 環境に展開するアプリを参照し、各アプリについて **[承認]** を選択して、Android for Work でアプリを使用できるようにします。
+4. Configuration Manager コンソールで **[管理者]** > **[概要]** > **[クラウド サービス]** > **[Android for Work]** の順にクリックし、**[同期]** を選択します。
+5. アプリが同期されるまで 10 分間待ってから **[ソフトウェア ライブラリ]** > **[概要]** > **[アプリケーション管理]** > **[ストア アプリのライセンス情報]** の順に選択します。
+6. Play for Work から同期したアプリを選択してから **[アプリケーションの作成]** をクリックします。
+7. ウィザードを終了して、**[閉じる]** を選択します。
+8. **[ソフトウェア ライブラリ]** > **[概要]** > **[アプリケーション管理]** > **[アプリケーション]** の順に選択し、Android for Work アプリを選択して、通常どおりに展開します。
 
-Per eseguire la sincronizzazione delle app Play for Work con Configuration Manager, è necessario prima approvare almeno un'app sul sito Web Play for Work.
-
+Play for Work アプリを Configuration Manager と同期するには、最初に少なくとも 1 つのアプリを Play for Work Web サイトで承認する必要があります。
