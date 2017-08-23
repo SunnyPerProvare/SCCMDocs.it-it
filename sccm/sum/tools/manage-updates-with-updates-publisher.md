@@ -1,6 +1,6 @@
 ---
-title: "更新プログラムの管理 | Microsoft Docs"
-description: "System Center Updates Publisher で展開し作成した更新プログラムを管理する"
+title: Gestire gli aggiornamenti | Microsoft Docs
+description: Gestire gli aggiornamenti distribuiti e creati con System Center Updates Publisher
 ms.custom: na
 ms.date: 4/29/2017
 ms.prod: configuration-manager
@@ -18,121 +18,121 @@ robots: NOINDEX, NOFOLLOW
 ms.openlocfilehash: 1d6c3b1db14867bdbc5cae8ded099d9024a79549
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-software-updates-in-updates-publisher"></a>Updates Publisher のソフトウェア更新プログラムの管理
+# <a name="manage-software-updates-in-updates-publisher"></a>Distribuire e gestire gli aggiornamenti software
 
-*適用対象: System Center Updates Publisher*     
+*Si applica a: System Center Updates Publisher*     
 
-System Center Updates Publisher で、リポジトリにインポートしたソフトウェア更新プログラムとバンドルを管理するため、**[更新プログラム] ワークスペース**を使用します。  
+In System Center Updates Publisher l'**area di lavoro Aggiornamenti** viene usata per gestire le aggregazioni e gli aggiornamenti software importati nel repository.  
 
-管理タスクには、更新プログラムとバンドルの複製、編集、期限切れまたは再アクティブ化、パブリケーションへの割り当てが含まれます。 その他の Updates Publisher のインストールで使用するカスタム カタログをエクスポートすることもできます。
+Le attività di gestione includono la duplicazione, la modifica, la cancellazione o la riattivazione di aggiornamenti e aggregazioni, nonché l'assegnazione di aggiornamenti e aggregazioni alla pubblicazione. È inoltre possibile esportare cataloghi personalizzati per usarli con le altre installazioni di Updates Publisher.
 
-管理できる更新プログラムを取得するには:
--  Updates Publisher のインストールに[更新プログラム カタログを追加](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs)します。
--  このカタログからリポジトリに更新プログラムを[インポート](/sccm/sum/tools/updates-publisher-catalogs#import-updates)します。
+Per ottenere aggiornamenti che è possibile gestire, effettuare le operazioni seguenti:
+-  [Aggiungere un catalogo di aggiornamenti](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) all'installazione di Updates Publisher
+-  [Importare](/sccm/sum/tools/updates-publisher-catalogs#import-updates) gli aggiornamenti dal catalogo nel repository.
 
-[独自の更新プログラムを作成する](/sccm/sum/tools/create-updates-with-updates-publisher)こともできます。
+È anche possibile [creare aggiornamenti personalizzati](/sccm/sum/tools/create-updates-with-updates-publisher).
 
 
 
-## <a name="create-a-duplicate-of-an-update"></a>更新プログラムの複製の作成
-リポジトリにある更新プログラムの複製またはコピーを作成できます。 これにより、元の更新プログラムをする代わりにコピーを変更できます。 更新プログラムのバンドルのコピーは作成できません。
+## <a name="create-a-duplicate-of-an-update"></a>Creare un duplicato di un aggiornamento
+È possibile creare duplicati, o copie, degli aggiornamenti presenti nel repository. È quindi possibile modificare la copia anziché l'aggiornamento originale. Non è possibile creare copie di aggregazioni di aggiornamenti.
 
-コピーを作成するには、**[更新プログラム] ワークスペース**で更新プログラムを選択し、**[複製]** を選択します。 更新プログラムのコピーは、更新プログラムの名前に *Copy of (～のコピー)* が追加されて、[更新プログラム] ワークスペース内の同じ場所に表示されます。
+To creare una copia, selezionare un aggiornamento nell'**area di lavoro Aggiornamenti** e quindi scegliere **Duplica**. La copia dell'aggiornamento viene visualizzata nella stessa posizione all'interno dell'area di lavoro Aggiornamenti, con la dicitura *Copy of* (Copia di) aggiunta al nome.
 
-作成した新しいコピーは、**Unexpired (有効期限内)** の状態になっていますが、それ以外は元の設定を保持しています。
+Una nuova copia ha lo stato **Unexpired** (Non scaduto) e mantiene le impostazioni dell'originale.
 
-## <a name="edit-updates-and-bundles"></a>更新プログラムとバンドルの編集
-リポジトリ内の更新プログラムとバンドルを選択し、変更できます。
+## <a name="edit-updates-and-bundles"></a>Modificare aggiornamenti e aggregazioni
+È possibile selezionare aggiornamenti e aggregazioni presenti nel repository per modificarli.
 
-**[更新プログラム] ワークスペース**で、更新プログラムまたはバンドルを選択し、**[ホーム]** タブの **[編集]** を選択して編集ウィザードを開きます。 更新プログラムのウィザードとバンドルのウィザードはそれぞれ独立していますが密接に関連しており、この 2 つのウィザードには、[[Create Update]\(更新プログラムの作成)](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard) ウィザードまたは [[バンドルの作成]](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-bundle-wizard) ウィザードに表示されるオプションと同じものが表示されます。
+Nell'**area di lavoro Aggiornamenti** selezionare un aggiornamento o un'aggregazione e quindi selezionare **Modifica** nella scheda **Home** per aprire la Modifica guidata. Per gli aggiornamenti e le aggregazioni sono disponibili procedure guidate separate, ma strettamente correlate, che presentano le stesse opzioni della [Creazione guidata aggiornamento](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard) o della [Creazione guidata aggregazione](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-bundle-wizard).
 
-編集する際は、更新プログラムまたはバンドルについての詳細をお使いの環境で使用できるように変更できます。 たとえば、適用性や優先順位のルールの編集や、言語の変更ができます。 また、製品やベンダーを変更することで、更新プログラムやバンドルをカスタム フォルダーに移動させ、個人用に更新プログラムをグループ化することもできます。
+Quando si apportano modifiche, è possibile cambiare qualsiasi dettaglio riguardante l'aggiornamento o l'aggregazione così da consentirne l'utilizzo nell'ambiente in uso. È possibile, ad esempio, modificare le regole di precedenza o applicabilità oppure cambiare la lingua. È inoltre possibile cambiare il prodotto e il fornitore per spostare l'aggiornamento o l'aggregazione in una cartella personalizzata, in modo da raggruppare gli aggiornamenti per uso personale.
 
-## <a name="assign-updates-and-bundles-to-a-publication"></a>更新プログラムとバンドルをパブリケーションに割り当てる
-**[更新プログラム] ワークスペース**で更新プログラムとバンドルを選択し、リボンの **[ホーム]** タブにある **[割り当て]** を選択してパブリケーションに追加します。 **[Assign Software Updates]\(ソフトウェア更新プログラムの割り当て)** ウィザードが開始します。
--  更新プログラムとバンドルを単一タスクとして選択して発行する方法については、「[Publish updates and bundles (更新プログラムとバンドルの発行)](#publish-updates-and-bundles-from-the-updates-workspace)」をご覧ください。
--  更新プログラムとバンドルのグループを単一オブジェクトとして管理する方法については、「[Manage publications (パブリケーションの管理)](/sccm/sum/tools/updates-publisher-publications)」をご覧ください。 更新プログラムをパブリケーションに割り当てると、そのパブリケーションとパブリケーションに割り当てられたすべての更新プログラムを管理できるようになります。
+## <a name="assign-updates-and-bundles-to-a-publication"></a>Assegnare aggiornamenti e aggregazioni a una pubblicazione
+È possibile selezionare aggiornamenti e aggregazioni nell'**area di lavoro Aggiornamenti** e quindi scegliere **Assegna** nella scheda **Home** della barra multifunzione per aggiungerli a una pubblicazione. Questa operazione avvia l'**Assegnazione guidata aggiornamenti software**.
+-  Per informazioni su come selezionare e pubblicare aggiornamenti e aggregazioni come singola attività, vedere [Pubblicare aggiornamenti e aggregazioni](#publish-updates-and-bundles-from-the-updates-workspace).
+-  Per informazioni su come gestire gruppi di aggiornamenti e aggregazioni come singolo oggetto, vedere [Manage publications](/sccm/sum/tools/updates-publisher-publications) (Gestire le pubblicazioni). Dopo aver assegnato gli aggiornamenti a una pubblicazione, è possibile gestirla. La pubblicazione include tutti gli aggiornamenti che le sono stati assegnati.
 
-更新プログラムをパブリケーションに割り当てるとき:
+Quando si assegnano aggiornamenti a una pubblicazione, tenere presente quanto segue:
 
--   期限切れまたは期限切れでない更新プログラムとバンドルをどちらも同じパブリケーションに含めることができます。
+-   È possibile includere nella stessa pubblicazione aggregazioni e aggiornamenti sia scaduti che non scaduti.
 
--   パブリケーションの種類を指定します。
+-   Specificare il tipo di pubblicazione:
 
-    -   **[Full Content]\(すべてのコンテンツ)** – WSUS サーバーに更新プログラムのすべてのコンテンツを発行します。 これにはメタデータと更新プログラム バイナリも含まれます。
+    -   **Full Content** (Contenuto completo): l'intero contenuto dell'aggiornamento viene pubblicato nel server WSUS. Sono inclusi i metadati e i file binari dell'aggiornamento.
 
-    -   **[Metadata only]\(メタデータのみ)** – メタデータのみを発行します。更新プログラム バイナリは発行されません。 コンプライアンス対応データを収集する場合に、このオプションが必要になる場合があります。
+    -   **Metadata only** (Solo metadati): vengono pubblicati soltanto i metadati, non i file binari. È possibile scegliere questa opzione quando si desiderano raccogliere dati di conformità.
 
-    -   **[自動]** – このモードは、Updates Publisher を Configuration Manager に接続した場合にのみ使用可能です (詳しくは、[ConfigMgr サーバー](/sccm/sum/tools/updates-publisher-options#configmgr-server) オプションに関する記事をご覧ください)。
+    -   **Automatic** (Automatica): questa modalità è disponibile solo quando si è collegato Updates Publisher a Configuration Manager. Vedere l'opzione [ConfigMgr Server](/sccm/sum/tools/updates-publisher-options#configmgr-server) (Server ConfigMgr).
 
-    この種類を使用して、Updates Publisher は Configuration Manager に照会し、更新プログラムまたはバンドルのすべてのコンテンツを発行するか、メタデータのみを発行するかを判断します。 更新プログラムのすべてのコンテンツは、その更新プログラムが **[Requested client count threshold]\(要求したクライアント数のしきい値)** と **[Package source size threshold] \(パッケージ ソースのサイズのしきい値)** の条件を満たしているときにのみ発行されます (この 2 つのしきい値は、Updates Publisher オプションの **[ConfigMgr サーバー]** ページで指定します)。
+    Con questo tipo di pubblicazione, Updates Publisher esegue una query in Configuration Manager per stabilire se le aggregazioni o gli aggiornamenti devono essere pubblicati con il contenuto completo o solo con i metadati. Il contenuto completo di un aggiornamento viene pubblicato solo quando quest'ultimo soddisfa i requisiti **Requested client count threshold** (Soglia numero di client con richiesta) e **Package source size threshold** (Soglia dimensioni di origine del pacchetto) specificati nella pagina **ConfigMgr Server** (Server ConfigMgr) delle opzioni di Updates Publisher.
 
--   パブリケーションを選択します。
+-   Selezionare una pubblicazione:
 
-    -   使用するパブリケーションを既に作成してある場合は、**[Assign software update to existing publications]\(ソフトウェア更新プログラムを既存のパブリケーションに割り当てる)** を使用します。 このオプションを使用するには、パブリケーションが少なくとも 1 つ存在する必要があります。
+    -   Quando l'applicazione che si vuole usare è già stata creata, usare l'opzione **Assign software update to existing publications** (Assegna aggiornamento software a pubblicazioni esistenti). Questa opzione è disponibile solo se è presente almeno una pubblicazione.
 
-    -   適切なパブリケーションがない場合は、**[Assign software update to a new publication]\(ソフトウェア更新プログラムを新しいパブリケーションに割り当てる)** を使用します。 これにより、指定した名前で新しいパブリケーションが作成されます。
+    -   Se non sono disponibili pubblicazioni appropriate, usare l'opzione **Assign software update to a new publication** (Assegna aggiornamento software a nuova pubblicazione). In questo modo viene creata una nuova pubblicazione con il nome specificato.
 
-更新プログラムをパブリケーションに割り当てると、**[パブリケーション] ワークスペース**を使用して、パブリケーションをグループとして[発行](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations)または[エクスポート](/sccm/sum/tools/updates-publisher-publications#export-a-pubilcation)できます。
+Dopo aver assegnato gli aggiornamenti a una pubblicazione, è possibile usare l'**area di lavoro Pubblicazioni** per [pubblicare](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations) o [esportare](/sccm/sum/tools/updates-publisher-publications#export-a-pubilcation) la pubblicazione come gruppo.
 
-## <a name="publish-updates-and-bundles-from-the-updates-workspace"></a>[更新プログラム] ワークスペースから更新プログラムとバンドルを発行する
-更新プログラムとバンドルを発行するとき、これらの更新プログラムとバンドルに関する情報 (メタデータ) と、場合によっては更新プログラムのバイナリ (すべてのコンテンツ) が、デバイスへの展開のために Updates Publisher によって更新サーバーに追加されます。
+## <a name="publish-updates-and-bundles-from-the-updates-workspace"></a>Pubblicare aggiornamenti e aggregazioni dall'area di lavoro Aggiornamenti
+Quando si pubblicano aggiornamenti e aggregazioni, Updates Publisher aggiunge informazioni sugli aggiornamenti e le aggregazioni (metadati) e, se possibile, i file binari degli aggiornamenti (contenuto completo) a un server di aggiornamento per la distribuzione ai dispositivi.
 
-発行に関するオプションを設定する前に、Updates Publisher の [[更新サーバー]](/sccm/sum/tools/updates-publisher-options#update-server) オプションを構成する必要があります。 この構成オプションを開くには、**[更新プログラム] ワークスペース** &gt; **[概要]** に移動し、**[Configure WSUS and Signing Certificate]\(WSUS と署名証明書の構成)** を選択します。 また、Updates Publisher オプションの [更新サーバー] ページに移動できます。
+Per poter eseguire la pubblicazione, è prima necessario configurare l'opzione [Server di aggiornamento](/sccm/sum/tools/updates-publisher-options#update-server) per Updates Publisher. Per aprire questa opzione di configurazione, passare all'**area di lavoro Aggiornamenti** &gt; **Panoramica** e selezionare **Configure WSUS and Signing Certificate** (Configura WSUS e certificato di firma). È inoltre possibile passare alla pagina Server di aggiornamento nelle opzioni di Updates Publisher.
 
-更新プログラムとバンドルを発行する方法は 2 つあります。
--   [更新プログラム] ワークスペースから直接 (*更新プログラムとバンドルを発行する*には、次の手順に従います)。
--   [パブリケーション] ワークスペースから [パブリケーション](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations)として。  
+Esistono due modi per pubblicare gli aggiornamenti e le aggregazioni:
+-   Direttamente dall'area di lavoro Aggiornamenti. Vedere la procedura seguente, *Per pubblicare aggiornamenti e aggregazioni*.
+-   Come [pubblicazione](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations) dall'area di lavoro Pubblicazioni.  
 
 > [!NOTE]   
-> Updates Publisher では、375 メガバイト (MB) 以下のサイズの更新プログラムのみを発行できます。
+> Updates Publisher può pubblicare soltanto aggiornamenti di dimensioni pari o inferiori a 375 megabyte (MB).
 
-### <a name="to-publish-updates-and-bundles"></a>更新プログラムとバンドルを発行するには
-1.  **[更新プログラム] ワークスペース**に移動し、発行する更新プログラムとバンドルを 1 つまたは複数選択します。 次に、リボンの **[ホーム]** タブで **[発行]** を選択します。
+### <a name="to-publish-updates-and-bundles"></a>Per pubblicare aggiornamenti e aggregazioni
+1.  Passare all'**area di lavoro Aggiornamenti** e selezionare uno o più aggiornamenti e aggregazioni da pubblicare. Scegliere quindi **Pubblica** nella scheda **Home** della barra multifunzione.
 
-2.  **[発行]** ウィザードの **[選択]** ページで、更新プログラムの発行方法を選択します。 オプションは[更新プログラムの割り当て](#assign-updates-and-bundles-to-a-publication)と同じ次の 3 つです: **[Full Content]\(すべてのコンテンツ)**、**[Metadata only]\(メタデータのみ)**、**[自動]**。
+2.  Nella pagina **Seleziona** della Pubblicazione guidata selezionare la modalità di pubblicazione degli aggiornamenti. Le opzioni disponibili coincidono con quelle disponibili per l'[assegnazione di aggiornamenti](#assign-updates-and-bundles-to-a-publication): **Full Content** (Contenuto completo), **Metadata only** (Solo metadati) o **Automatic** (Automatica).
 
-    また、すべての更新プログラムを新しい発行元証明書で署名することも選択できます。
+    È anche possibile scegliere di firmare tutti gli aggiornamenti con un nuovo certificato di pubblicazione.
 
-3.  ウィザードを完了します。
+3.  Completare la procedura guidata.
 
-発行が失敗した場合は、多くの情報が得られる UpdatesPublisher.log ファイルへのリンクが表示されます。
+Se la pubblicazione ha esito negativo, viene visualizzato un collegamento al file UpdatesPublisher.log in cui sono disponibili maggiori informazioni.
 
-## <a name="export-updates"></a>更新プログラムのエクスポート
-更新プログラムとバンドルを Updates Publisher リポジトリからエクスポートして、カスタム更新カタログを作成できます。 次に、このカタログを Updates Publisher の別のインスタンスに[追加](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs)して[インポート](/sccm/sum/tools/updates-publisher-catalogs#mport-updates)できます。 ([更新プログラムをパブリケーションとしてエクスポート](/sccm/sum/tools/updates-publisher-publications##export-a-publication)することもできます)。
+## <a name="export-updates"></a>Esportare gli aggiornamenti
+È possibile esportare aggiornamenti e aggregazioni dal repository di Updates Publisher per creare un catalogo di aggiornamenti personalizzato. È possibile [aggiungere](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) e quindi [importare](/sccm/sum/tools/updates-publisher-catalogs#mport-updates) tale catalogo in un'altra istanza di Updates Publisher. È anche possibile [esportare gli aggiornamenti come una pubblicazione](/sccm/sum/tools/updates-publisher-publications##export-a-publication).
 
-直接エクスポートするには、**[更新プログラム] ワークスペース** > **[すべてのソフトウェア更新プログラム]** に移動し、1 つまたは複数の更新プログラムとバンドルを選択します。 ベンダーや製品のフォルダーをエクスポートすることはできませんが、フォルダーを選択してからフォルダー内の更新プログラムをエクスポート用に選択できます。
+Per esportarli direttamente, passare all'**area di lavoro Aggiornamenti** > **All Software Updates** (Tutti gli aggiornamenti software) e selezionare uno o più aggiornamenti o aggregazioni. Non è possibile esportare una cartella di fornitori o prodotti, ma è possibile selezionare una cartella e quindi selezionare gli aggiornamenti in essa presenti per esportarli.
 
-1 つまたは複数の更新プログラムを選択したら、リボンの **[ホーム]** タブで **[エクスポート]** を選択し、次にカタログのエクスポート先のパスとファイル名を入力します。
+Dopo aver selezionato uno o più aggiornamenti, scegliere **Esporta** nella scheda **Home** della barra multifunzione e specificare un percorso e un nome file per l'esportazione del catalogo.
 
-依存するソフトウェア更新プログラムをエクスポート (インクルード) するオプションもあります。
+È possibile esportare (includere) aggiornamenti software dipendenti.
 
-## <a name="delete-updates-and-bundles"></a>更新プログラムとバンドルの削除
-更新プログラムとバンドルを削除して、Updates Publisher リポジトリから取り除くことができます。
+## <a name="delete-updates-and-bundles"></a>Eliminare aggiornamenti e aggregazioni
+È possibile eliminare aggiornamenti e aggregazioni di aggiornamenti per rimuoverli dal repository di Updates Publisher.
 
-**[更新プログラム] ワークスペース** > **[すべてのソフトウェア更新プログラム]** に移動し、1 つまたは複数の個々の更新プログラムを選択します。 次に、リボンの **[ホーム]** タブで **[削除]** を選択します。
+Passare all'**area di lavoro Aggiornamenti** > **All Software Updates** (Tutti gli aggiornamenti software) e selezionare uno o più aggiornamenti. Scegliere quindi **Elimina** nella scheda **Home** della barra multifunzione.
 
--   選択した更新プログラムの中に、未発行か期限切れの更新プログラムやバンドルしか含まれてない場合は、取り除く前に削除の確認を求められます。
+-   Se la selezione contiene solo aggregazioni o aggiornamenti non pubblicati o scaduti, prima che vengano rimossi viene chiesto di confermare l'eliminazione.
 
--   選択した更新プログラムの中に、発行済みか有効期限内の更新プログラムやバンドルが含まれている場合は、警告が表示されます。 リポジトリから削除する前に、更新プログラムを[期限切れ](/sccm/sum/tools/updates-publisher-pubilcations#expire-or-reactivate-updates-and-bundles)の状態にしてからその変更を発行する必要があります。  
+-   Se la selezione include un'aggregazione o un aggiornamento pubblicato e non ancora scaduto, viene visualizzato un avviso. È necessario impostare tali aggiornamenti come [scaduti](/sccm/sum/tools/updates-publisher-pubilcations#expire-or-reactivate-updates-and-bundles) e quindi pubblicare la modifica prima di eliminarli dal repository.  
 
-ベンダーから更新プログラムまたはバンドルを削除してからカタログをインポートした場合、その更新プログラムはリポジトリに格納されます。
+Se si elimina un aggiornamento o un'aggregazione di un particolare fornitore e quindi si importa di nuovo il catalogo, l'aggiornamento viene ripristinato nel repository.
 
-## <a name="manage-vendor-and-product-folders"></a>ベンダーと製品のフォルダーの管理
-更新プログラムのインポート先または作成先のベンダーと各ベンダーの製品の一覧を表示するには、**[更新プログラム] ワークスペース** > **[概要]** > **[すべてのソフトウェア更新プログラム]** に移動します。
+## <a name="manage-vendor-and-product-folders"></a>Gestire cartelle di fornitori e prodotti
+Per visualizzare un elenco dei fornitori e i prodotti di ciascun fornitore per i quali sono stati importati o creati aggiornamenti, passare all'**area di lavoro Aggiornamenti** > **Panoramica** > **All Software Updates** (Tutti gli aggiornamenti software).
 
-ベンダーと製品のフォルダーは、ウィザードを使用してソフトウェア更新プログラムやバンドルのインポートまたは作成を行う際に、Updates Publisher によって自動で作成されます。 これらのフォルダーは手動でも作成できます。
+Le cartelle dei fornitori e dei prodotti vengono create automaticamente da Updates Publisher quando si esegue l'importazione o la creazione di un aggiornamento o di un'aggregazione usando una procedura guidata. È possibile creare queste cartelle anche manualmente.
 
--   ベンダーのフォルダーを作成するには、**[更新プログラム] ワークスペース** のナビゲーション ウィンドウで **[すべてのソフトウェア更新プログラム]** を右クリックし、**[Create Vendor]\(ベンダーの作成)** を選択します。
+-   Per creare una cartella di fornitori, nel riquadro di spostamento dell'**area di lavoro Aggiornamenti** fare clic con il pulsante destro del mouse su **All Software Updates** (Tutti gli aggiornamenti software) e scegliere **Create Vendor** (Crea fornitore).
 
--   ベンダーのフォルダーの下に製品のフォルダーを作成するには、ベンダーのフォルダーを右クリックし、**[Create Product]\(製品の作成)** を選択します。
+-   Per creare una cartella di prodotti al di sotto della cartella dei fornitori, fare clic con il pulsante destro del mouse su quest'ultima e scegliere **Create Product** (Crea prodotto).
 
-フォルダーを作成するだけでなく、リポジトリ内のベンダーまたは製品のフォルダー名を変更したり、フォルダーを削除したりできます。 変更、削除するには、フォルダーを右クリックして **[名前の変更]** または **[削除]** を選択します。 フォルダーを削除すると、そのフォルダ内のすべての更新プログラム、バンドル、製品のフォルダーが Updates Publisher リポジトリから削除されます。
+Oltre a creare cartelle, è possibile rinominare o eliminare qualsiasi cartella di fornitori o prodotti presente nel repository. A tale scopo, fare clic con il pulsante destro del mouse e scegliere l'opzione **Rinomina** o **Elimina**. L'eliminazione di una cartella determina la rimozione di tutte le aggregazioni e gli aggiornamenti in essa contenuti, oltre che delle relative cartelle di prodotti, dal repository di Updates Publisher.
 
-ご自身で作成したフォルダーも含め、ベンダーと製品のフォルダー間で更新プログラムを移動できます。 更新プログラムまたはバンドルを新しいフォルダーに移動するには、更新プログラムまたはバンドルを選択してから **[編集]** する必要があります。 次に、[更新プログラムの編集] ウィザードの **[情報]** ページで、ベンダーと製品の再割り当てができます。 **[更新プログラムの編集]** ウィザードが完了したら、新しいフォルダーに変更を適用し、更新プログラムを移動させます。
+È possibile spostare gli aggiornamenti tra le cartelle di fornitori e quelle di prodotti, incluse le cartelle create. Per spostare un aggiornamento o un'aggregazione in una nuova cartella, è necessario selezionare e quindi modificare l'aggiornamento o l'aggregazione usando l'opzione **Modifica**. Nella pagina **Informazioni** della Modifica guidata aggiornamento è quindi possibile riassegnare il fornitore e il prodotto. Al termine della **Modifica guidata aggiornamento** la modifica viene applicata e l'aggiornamento viene spostato nella nuova cartella.
 
-## <a name="view-the-xml-of-an-update-or-bundle"></a>更新プログラムまたはバンドルの XML の表示
-**[更新プログラム] ワークスペース** で更新プログラムまたはバンドルを 1 つ選択し、次に XML の **[表示]** を選択して更新プログラムの XML 構造を表示します。 XML 構造を直接編集するオプションはありません。
+## <a name="view-the-xml-of-an-update-or-bundle"></a>Visualizzare la struttura XML di un aggiornamento o un'aggregazione
+È possibile selezionare un singolo aggiornamento o una singola aggregazione nell'**area di lavoro Aggiornamenti** e quindi scegliere **Visualizza** XML per visualizzare la relativa struttura XML. Non sono disponibili opzioni per la modifica diretta della struttura XML.

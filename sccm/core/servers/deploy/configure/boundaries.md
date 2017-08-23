@@ -1,6 +1,6 @@
 ---
-title: "境界の定義 | Microsoft Docs"
-description: "管理するデバイスを含めることができる、イントラネット上のネットワークの場所を定義する方法について説明します。"
+title: Definire limiti | Microsoft Docs
+description: Di seguito viene spiegato come definire i percorsi di rete nella intranet che possono contenere i dispositivi da gestire.
 ms.custom: na
 ms.date: 3/27/2017
 ms.prod: configuration-manager
@@ -17,70 +17,70 @@ manager: angrobe
 ms.openlocfilehash: bed70809008fde5e2b0215f4dce049402edf83ba
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="define-network-locations-as-boundaries-for-system-center-configuration-manager"></a>System Center Configuration Manager の境界としてネットワークの場所を定義する
+# <a name="define-network-locations-as-boundaries-for-system-center-configuration-manager"></a>Definire percorsi di rete come limiti di System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Configuration Manager の境界は、管理対象のデバイスが含まれる、ネットワーク上の場所です。 デバイスが置かれている境界は、Active Directory サイトか、デバイスにインストールされている Configuration Manager クライアントにより識別されるネットワーク IP アドレスに相当します。
- - 個別の境界を手動で作成できます。 ただし、Configuration Manager では、境界としてスーパーネットを直接入力できません。 代わりに、境界の種類として IP アドレスの範囲を使用してください。
- - [Active Directory フォレスト探索](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutForest)という手法を構成すると、自動検出を実行し、検出された各 IP サブネットと Active Directory サイトに対して境界を作成できます。 Active Directory フォレストの探索によって、Active Directory サイトに割り当てられているスーパーネットが特定されると、Configuration Manager はスーパーネットを IP アドレスの範囲の境界に変換します。  
+I limiti di Configuration Manager sono costituiti dai percorsi di rete in cui sono contenuti i dispositivi da gestire. Il limite di un dispositivo è equivalente al sito di Active Directory o all'indirizzo IP di rete identificato dal client di Configuration Manager installato nel dispositivo.
+ - È possibile creare manualmente i singoli limiti. Configuration Manager, tuttavia, non supporta l'immissione diretta di una supernet come limite. È possibile, invece, usare il tipo di limite Intervallo di indirizzi IP.
+ - È possibile configurare il metodo [Active Directory Forest Discovery](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutForest) per il rilevamento automatico e la creazione di limiti per ogni subnet IP e sito Active Directory individuati. Quando l'individuazione foresta Active Directory individua una supernet assegnata a un sito di Active Directory, Configuration Manager converte la supernet in un limite Intervallo di indirizzi IP.  
 
-Configuration Manager 管理者によって認識されない IP アドレスをデバイスが使用することは珍しくありません。 ネットワークの上でのデバイスの場所に疑問がある場合は、デバイス上で **IPCONFIG** コマンドを使用して、デバイスがレポートする場所を確認します。  
+Non è raro che un dispositivo usi un indirizzo IP sconosciuto all'amministratore di Configuration Manager. Se il percorso di rete del dispositivo non è chiaro, verificare il percorso indicato dal dispositivo usando il comando **IPCONFIG** nel dispositivo.  
 
-境界を作成すると、境界の種類とスコープに基づいて自動的に名前が付けられます。 この名前は変更できません。 代わりに、Configuration Manager コンソールで境界を識別しやすいように説明を入力できます。  
+Quando si crea un limite, viene assegnato automaticamente un nome basato sul tipo e sull'ambito del limite. È impossibile modificare questo nome. Specificare invece una descrizione per identificare più facilmente il limite nella console di Configuration Manager.  
 
-各境界は階層内のすべてのサイトで利用できます。 境界を作成したら、プロパティを変更して次の操作を行うことができます。  
--   1 つまたは複数の境界グループに境界を追加する。  
--   境界の種類またはスコープを変更する。  
--   境界の **[サイト システム]** タブで、境界に関連付けられたサイト システム サーバー (配布ポイント、状態移行ポイント、および管理ポイント) を確認します。  
+Ogni limite può essere usato da tutti i siti compresi nella gerarchia. Dopo aver creato un limite, è possibile modificarne le proprietà per eseguire le operazioni seguenti:  
+-   Aggiungere il limite a uno o più gruppi di limiti.  
+-   Modificare il tipo o l'ambito del limite.  
+-   Visualizzare la scheda **Sistemi del sito** dei limiti per vedere quali server del sistema del sito (punti di distribuzione, punti di migrazione stato e punti di gestione) sono associati al limite.  
 
-## <a name="to-create-a-boundary"></a>境界を作成するには  
+## <a name="to-create-a-boundary"></a>Per creare un limite  
 
-1.  Configuration Manager コンソールで、[**管理**] > [**階層の構成**] > [**境界**] をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Configurazione della gerarchia** > **Limiti**  
 
-2.  **[ホーム]** タブの **[作成]** グループで、 **[作成] Boundary.**をクリックします。  
+2.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea Boundary.**  
 
-3.  [境界の作成] ダイアログ ボックスの **[全般]** タブで、 **[説明]** を指定して、フレンドリ名または参照によって境界を識別します。  
+3.  Nella scheda **Generale** della finestra di dialogo Crea limite è possibile specificare una **Descrizione** per identificare il limite tramite un nome descrittivo o un riferimento.  
 
-4.  この境界の [種類] を選択します。 ****  
+4.  Selezionare un **Tipo** per questo limite:  
 
-    -   **[IP サブネット]**を選択した場合、この境界の **サブネット ID** を指定する必要があります。  
+    -   Se si seleziona **Subnet IP**, è necessario specificare un **ID subnet** per questo limite.  
         > [!TIP]  
-        >  **[ネットワーク]** と **[サブネット マスク]** を指定すると、 **サブネット ID** を自動的に取得できます。 境界を保存すると、サブネット ID 値だけが保存されます。  
+        >  È possibile specificare la **Rete** e la **Subnet Mask** per specificare automaticamente l' **ID subnet** . Quando si salva il limite, viene salvato solo il valore ID subnet.  
 
-    -   **[Active Directory サイト]**を選択した場合、サイト サーバーのローカル フォレスト内の Active Directory サイトを指定するか、その場所を **[参照]** する必要があります。  
+    -   Se si seleziona **Sito Active Directory**, è necessario specificare o utilizzare **Sfoglia** per selezionare un sito Active Directory nella foresta locale del server del sito.  
 
         > [!IMPORTANT]  
-        >  境界の Active Directory サイトを指定すると、Active Directory サイトのメンバーである各 IP サブネットが境界に含まれます。 Active Directory で Active Directory サイトの構成が変更されると、この境界に含まれているネットワークの場所も変更されます。  
+        >  Quando si specifica un sito Active Directory per un limite, il limite include ogni subnet IP appartenente a quel sito Active Directory. Se la configurazione del sito Active Directory viene modificata in Active Directory, verranno modificati anche i percorsi di rete inclusi in questo limite.  
 
-    -   **[IPv6 プレフィックス]**を選択した場合、IPv6 プレフィックス形式で **[プレフィックス]** を指定する必要があります。  
+    -   Se si seleziona **Prefisso IPv6**, è necessario specificare un **Prefisso** nel formato del prefisso IPv6.  
 
-    -   **[IP アドレスの範囲]**を選択した場合、IP サブネットの一部または複数の IP サブネットを含む **[開始 IP アドレス]** と **[終了 IP アドレス]** を指定する必要があります。    
+    -   Se si seleziona **Intervallo indirizzi IP**, è necessario specificare un **Indirizzo IP iniziale** e un **Indirizzo IP finale** che includano parte di una subnet IP o di più subnet IP.    
 
-5.  [OK] をクリックして新しい境界を保存します。 ****  
+5.  Fare clic su **OK** per salvare il nuovo limite.  
 
-## <a name="to-configure-a-boundary"></a>境界を構成するには  
+## <a name="to-configure-a-boundary"></a>Per configurare un limite  
 
-1.  Configuration Manager コンソールで、[**管理**] > [**階層の構成**] > [**境界**] をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Configurazione della gerarchia** > **Limiti**  
 
-2.  変更する境界を選択します。  
+2.  Selezionare il limite da modificare.  
 
-3.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
+3.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
-4.  境界の **[プロパティ]** ダイアログ ボックスで、 **[全般]** タブを選択して、境界の **[説明]** または **[種類]** を編集します。 境界のネットワークの場所を編集して、境界のスコープを変更することもできます。 たとえば、Active Directory サイトの境界の場合、新しい Active Directory サイト名を指定できます。  
+4.  Nella finestra di dialogo **Proprietà** per il limite selezionare la scheda **Generale** per modificare la **Descrizione** o il **Tipo** per il limite. È inoltre possibile modificare l'ambito di un limite modificando i percorsi di rete per il limite. Per un limite del sito Active Directory è possibile ad esempio specificare un nuovo nome del sito Active Directory.  
 
-5.  [サイト システム **** ] タブを選択し、その境界に関連付けられているサイト システムを確認します。 この構成は、境界のプロパティから変更することはできません。  
+5.  Selezionare la scheda **Sistemi del sito** per visualizzare i sistemi del sito associati a questo limite. È impossibile modificare questa configurazione dalle proprietà di un limite.  
 
     > [!TIP]  
-    >  サイト システム サーバーが境界のサイト システムの一覧に表示されるようにするには、サイト システム サーバーが、この境界を含む、少なくとも 1 つの境界グループのサイト システム サーバーとして関連付けられている必要があります。 これは、境界グループの **[参照]** タブで構成されます。  
+    >  Per elencare un server di sistema del sito come sistema del sito per un limite, è necessario associare tale server come server di sistema del sito per almeno un gruppo di limiti che include questo limite. Questo viene configurato nella scheda **Riferimenti** di un gruppo di limiti.  
 
-6.  [境界グループ] タブを選択して、この境界の境界グループ メンバーシップを変更します。 ****  
+6.  Selezionare la scheda **Gruppi di limiti** per modificare l'appartenenza al gruppo di limiti per questo limite:  
 
-    -   この境界を 1 つまたは複数の境界グループに追加するには、 **[追加]**をクリックして、1 つまたは複数の境界グループのチェック ボックスをオンにし、 **[OK]**をクリックします。  
+    -   Per aggiungere questo limite a uno o più gruppi di limiti, fare clic su **Aggiungi**, selezionare la casella di controllo per uno o più gruppi di limiti e quindi fare clic su **OK**.  
 
-    -   この境界を境界グループから削除するには、境界グループを選択して [削除] をクリックします。 ****  
+    -   Per rimuovere questo limite da un gruppo di limiti, selezionare il gruppo di limiti e fare clic su **Rimuovi**.  
 
-7.  [OK] をクリックして境界のプロパティを閉じ、構成を保存します。 ****  
+7.  Fare clic su **OK** per chiudere le proprietà del limite e salvare la configurazione.  
